@@ -10,7 +10,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: true,
     metaTitle: 'Formation Google Gemini Marketing | Masteria',
-    metaDesc: 'Formez vos équipes marketing à Google Gemini : contenus Docs, analyse Sheets, présentations Slides, veille NotebookLM. Qualiopi, OPCO.',
+    metaDesc: 'Formez vos équipes marketing à Google Gemini : contenus Docs, analyse Sheets, présentations Slides, veille Gemini Notebook. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour les équipes Marketing',
     intro: 'Vos équipes marketing passent des heures à produire des contenus, consolider des données de campagnes et préparer des reportings dans Google Workspace. Un article de blog qui prenait 3 heures se produit en 45 minutes avec Gemini dans Docs. Une analyse de campagnes qui monopolisait une matinée dans Sheets se transforme en 30 minutes de travail orienté recommandations. Cette formation de 2 jours transforme vos outils Google quotidiens en moteurs de productivité marketing, sur vos vraies campagnes et vos vrais contenus.',
     audience: [
@@ -45,8 +45,8 @@ export const GEMINI_SPOKES = [
       },
       {
         icon: '🔍',
-        title: 'Veille concurrentielle avec NotebookLM',
-        desc: 'Chargez vos articles, études et rapports sectoriels dans NotebookLM. Interrogez vos sources pour extraire des insights et produire un brief de positionnement en 45 minutes.',
+        title: 'Veille concurrentielle avec Gemini Notebook',
+        desc: 'Chargez vos articles, études et rapports sectoriels dans Gemini Notebook. Interrogez vos sources pour extraire des insights et produire un brief de positionnement en 45 minutes.',
       },
       {
         icon: '📧',
@@ -127,16 +127,16 @@ export const GEMINI_SPOKES = [
       },
       {
         day: 2,
-        title: 'Module 6, Veille concurrentielle avec NotebookLM',
+        title: 'Module 6, Veille concurrentielle avec Gemini Notebook',
         duration: '2h',
-        description: 'Découvrez NotebookLM pour transformer votre veille marketing et concurrentielle en insights actionnables sans passer des heures à lire. Interrogez vos sources en langage naturel.',
+        description: 'Découvrez Gemini Notebook pour transformer votre veille marketing et concurrentielle en insights actionnables sans passer des heures à lire. Interrogez vos sources en langage naturel.',
         items: [
-          'Charger vos sources de veille (articles, rapports, études) dans NotebookLM',
+          'Charger vos sources de veille (articles, rapports, études) dans Gemini Notebook',
           'Interroger vos sources en langage naturel pour extraire les insights pertinents',
           'Comparer les positionnements et messages concurrents sur vos marchés',
           'Créer des briefs de campagne nourris par votre veille concurrentielle enrichie',
         ],
-        exercise: 'Chaque participant charge 3 à 5 sources de veille de son secteur dans NotebookLM et conduit une session d\'analyse comparative qui produit un brief de positionnement de 2 pages en 45 minutes.',
+        exercise: 'Chaque participant charge 3 à 5 sources de veille de son secteur dans Gemini Notebook et conduit une session d\'analyse comparative qui produit un brief de positionnement de 2 pages en 45 minutes.',
       },
       {
         day: 2,
@@ -168,9 +168,9 @@ export const GEMINI_SPOKES = [
     objectives: [
       'Produire des contenus marketing (articles, newsletters, emails, posts) 3x plus vite avec Gemini dans Docs et Gmail en maintenant la cohérence de la ligne éditoriale',
       'Analyser des performances de campagnes dans Sheets en langage naturel et générer des rapports d\'insights avec recommandations actionnables sans maîtrise avancée des formules',
-      'Créer des présentations de campagnes professionnelles dans Slides à partir de données brutes en divisant par 3 le temps de production',
-      'Conduire une veille concurrentielle efficace avec NotebookLM pour extraire les insights de sources multiples en une fraction du temps habituel',
-      'Intégrer Gemini dans tous les workflows marketing Google Workspace pour économiser au minimum 6 heures par semaine sur les tâches de production répétitive',
+      'Créer des présentations de campagnes professionnelles dans Slides à partir de données brutes en réduisant le temps de production',
+      'Conduire une veille concurrentielle efficace avec Gemini Notebook pour extraire les insights de sources multiples en une fraction du temps habituel',
+      'Intégrer Gemini dans tous les workflows marketing Google Workspace pour réduire le temps passé sur les tâches de production répétitive',
     ],
     faq: [
       {
@@ -179,15 +179,15 @@ export const GEMINI_SPOKES = [
       },
       {
         q: 'Faut-il un abonnement Google Workspace Business pour utiliser Gemini ?',
-        a: 'Les fonctionnalités Gemini intégrées dans Docs, Sheets, Slides et Gmail nécessitent un abonnement Google Workspace Business Standard ou supérieur avec le module Gemini activé (environ 20-30 €/mois/utilisateur). Une version gratuite est accessible via gemini.google.com mais sans intégration native aux outils Workspace. Nous faisons le point sur votre situation lors du cadrage préformation.',
+        a: 'Les fonctionnalités Gemini intégrées dans Docs, Sheets, Slides et Gmail nécessitent un abonnement Google Workspace Business Standard ou supérieur, qui inclut Gemini sans module à part (Business Standard à 13,60 € par utilisateur et par mois en engagement annuel, au 7 octobre 2026). Une version gratuite est accessible via gemini.google.com mais sans intégration native aux outils Workspace. Nous faisons le point sur votre situation lors du cadrage préformation.',
       },
       {
         q: 'Gemini peut-il s\'intégrer avec Google Analytics pour analyser les performances ?',
         a: 'Gemini ne se connecte pas directement à Google Analytics 4 en temps réel. En revanche, vous pouvez exporter vos données GA4 dans Google Sheets et utiliser Gemini pour les analyser, les visualiser et en extraire des insights. C\'est exactement ce qui est couvert dans le Module 3 de cette formation.',
       },
       {
-        q: 'NotebookLM nécessite-t-il un abonnement spécifique ?',
-        a: 'NotebookLM est accessible gratuitement avec un compte Google. Une version NotebookLM Plus est disponible dans certains abonnements Google One AI Premium ou Google Workspace. Pour les usages marketing de cette formation, la version gratuite est suffisante. Nous recommandons NotebookLM Plus pour les équipes avec des besoins de veille intensive.',
+        q: 'Gemini Notebook nécessite-t-il un abonnement spécifique ?',
+        a: 'Gemini Notebook (anciennement NotebookLM) est inclus dans les éditions Google Workspace : 100 sources par carnet en Business Starter, 300 dès Business Standard, au 7 octobre 2026. Pour les usages marketing de cette formation, ces plafonds suffisent.',
       },
       {
         q: 'Gemini est-il meilleur que Copilot pour les contenus créatifs ?',
@@ -257,8 +257,8 @@ export const GEMINI_SPOKES = [
       },
       {
         icon: '📚',
-        title: 'Base de connaissance RH avec NotebookLM',
-        desc: 'Centralisez vos politiques RH, conventions collectives et procédures dans NotebookLM. Vos collaborateurs interrogent cette base en langage naturel pour trouver les réponses immédiatement.',
+        title: 'Base de connaissance RH avec Gemini Notebook (anciennement NotebookLM)',
+        desc: 'Centralisez vos politiques RH, conventions collectives et procédures dans Gemini Notebook. Vos collaborateurs interrogent cette base en langage naturel pour trouver les réponses immédiatement.',
       },
     ],
     modules: [
@@ -329,16 +329,16 @@ export const GEMINI_SPOKES = [
       },
       {
         day: 2,
-        title: 'Module 6, Base de connaissance RH avec NotebookLM',
+        title: 'Module 6, Base de connaissance RH avec Gemini Notebook',
         duration: '2h',
-        description: 'Utilisez NotebookLM pour centraliser et interroger vos politiques RH, conventions collectives et procédures internes. Créez un assistant RH disponible 24h/24 pour toute votre organisation.',
+        description: 'Utilisez Gemini Notebook pour centraliser et interroger vos politiques RH, conventions collectives et procédures internes. Créez un assistant RH disponible 24h/24 pour toute votre organisation.',
         items: [
-          'Importer convention collective, règlement intérieur et politiques RH dans NotebookLM',
+          'Importer convention collective, règlement intérieur et politiques RH dans Gemini Notebook',
           'Interroger un document RH de 80 pages pour trouver la réponse à une question précise en 2 minutes',
           'Créer des synthèses de documents complexes pour former les managers',
-          'Utiliser NotebookLM pour la veille RH : tendances marché de l\'emploi, nouvelles réglementations',
+          'Utiliser Gemini Notebook pour la veille RH : tendances marché de l\'emploi, nouvelles réglementations',
         ],
-        exercise: 'Les participants importent une convention collective réelle dans NotebookLM et répondent à 5 questions pratiques de terrain (congés, heures supplémentaires, période d\'essai) en moins de 15 minutes au total.',
+        exercise: 'Les participants importent une convention collective réelle dans Gemini Notebook et répondent à 5 questions pratiques de terrain (congés, heures supplémentaires, période d\'essai) en moins de 15 minutes au total.',
       },
       {
         day: 2,
@@ -372,7 +372,7 @@ export const GEMINI_SPOKES = [
       'Analyser un pipeline de candidatures dans Sheets avec des requêtes en langage naturel et produire des rapports de recrutement actionnables pour la direction',
       'Gérer l\'intégralité des communications RH dans Gmail avec Gemini, de la réception de candidature à la proposition d\'embauche, de manière personnalisée et rapide',
       'Générer automatiquement des comptes-rendus d\'entretiens structurés dans Meet dans les 5 minutes suivant la réunion, et créer des documents d\'onboarding sur mesure',
-      'Utiliser NotebookLM comme base de connaissance RH interactive pour répondre rapidement aux questions pratiques sur la réglementation, les procédures internes et la veille marché',
+      'Utiliser Gemini Notebook comme base de connaissance RH interactive pour répondre rapidement aux questions pratiques sur la réglementation, les procédures internes et la veille marché',
     ],
     faq: [
       {
@@ -381,15 +381,15 @@ export const GEMINI_SPOKES = [
       },
       {
         q: 'Faut-il un abonnement Google Workspace spécifique pour utiliser Gemini en RH ?',
-        a: 'Oui. Les fonctionnalités Gemini intégrées dans Docs, Sheets, Gmail et Meet nécessitent un abonnement Google Workspace Business Standard ou supérieur avec le module Gemini activé. Certaines fonctionnalités de base sont disponibles gratuitement via gemini.google.com. Nous faisons le point sur votre situation de licences lors du cadrage préformation.',
+        a: 'Oui. Les fonctionnalités Gemini intégrées dans Docs, Sheets, Gmail et Meet nécessitent un abonnement Google Workspace Business Standard ou supérieur, qui inclut Gemini sans module à part depuis janvier 2025. Certaines fonctionnalités de base sont disponibles gratuitement via gemini.google.com. Nous faisons le point sur votre situation de licences lors du cadrage préformation.',
       },
       {
         q: 'Quelle est la différence entre Gemini et ChatGPT pour les RH ?',
         a: 'Gemini est intégré dans Google Workspace et accède directement à vos Docs, Sheets et Gmail. ChatGPT est un outil externe qui requiert que vous copiez le contexte manuellement. Pour les RH sur Google Workspace, Gemini est plus pertinent : il peut lire une offre d\'emploi existante dans Docs et la réécrire directement, ou générer un CR depuis une réunion Meet enregistrée.',
       },
       {
-        q: 'NotebookLM peut-il être utilisé pour la formation interne des collaborateurs ?',
-        a: 'Absolument. NotebookLM est l\'un des outils les plus puissants pour la formation interne : vous chargez vos procédures, politiques RH et guides métier, et les collaborateurs peuvent interroger cette base en langage naturel. C\'est un assistant de formation personnalisé disponible 24h/24. Ce cas d\'usage est couvert dans le Module 6.',
+        q: 'Gemini Notebook peut-il être utilisé pour la formation interne des collaborateurs ?',
+        a: 'Absolument. Gemini Notebook est l\'un des outils les plus puissants pour la formation interne : vous chargez vos procédures, politiques RH et guides métier, et les collaborateurs peuvent interroger cette base en langage naturel. C\'est un assistant de formation personnalisé disponible 24h/24. Ce cas d\'usage est couvert dans le Module 6.',
       },
       {
         q: 'Gemini peut-il aider pour les entretiens annuels d\'évaluation ?',
@@ -414,7 +414,7 @@ export const GEMINI_SPOKES = [
     hubSlug: 'formation-gemini-entreprise',
     priority: false,
     metaTitle: 'Formation Google Gemini Finance | Masteria, Qualiopi',
-    metaDesc: 'Formez vos équipes finance à Google Gemini : analyse Sheets, rapports Docs, synthèse NotebookLM, présentations CODIR. Qualiopi, OPCO.',
+    metaDesc: 'Formez vos équipes finance à Google Gemini : analyse Sheets, rapports Docs, synthèse Gemini Notebook (anciennement NotebookLM), présentations CODIR. Qualiopi, OPCO.',
     h1: 'Formation Google Gemini pour la Finance et le Contrôle de Gestion',
     intro: 'Dans les directions financières et les équipes contrôle de gestion, la charge de travail répétitive est massive. Consolidation de tableaux, reformatage de données, rédaction de commentaires de résultats, mise en page de rapports mensuels : ces tâches consomment entre 30 et 50 % du temps disponible. Pourtant, elles sont précisément celles que Gemini sait prendre en charge directement dans vos outils Google Workspace. Un rapport de gestion qui prenait 3 heures se produit en 45 minutes. Une présentation CODIR se construit en 30 minutes depuis votre tableau de bord Sheets.',
     audience: [
@@ -450,7 +450,7 @@ export const GEMINI_SPOKES = [
       {
         icon: '📚',
         title: 'Synthèse de documents comptables',
-        desc: 'Interrogez liasses fiscales, rapports d\'audit et contrats de 80 pages dans NotebookLM. Extraire les 5 points clés d\'un bilan prend 10 minutes, pas une demi-journée.',
+        desc: 'Interrogez liasses fiscales, rapports d\'audit et contrats de 80 pages dans Gemini Notebook. Extraire les 5 points clés d\'un bilan prend 10 minutes, pas une demi-journée.',
       },
       {
         icon: '🎯',
@@ -518,9 +518,9 @@ export const GEMINI_SPOKES = [
       },
       {
         day: 2,
-        title: 'Module 5, Synthèse de documents comptables avec NotebookLM',
+        title: 'Module 5, Synthèse de documents comptables avec Gemini Notebook',
         duration: '1h30',
-        description: 'NotebookLM est l\'outil idéal pour travailler avec des volumes importants de documents financiers. Il répond uniquement à partir des sources que vous lui fournissez, garantissant des réponses ancrées dans vos propres documents.',
+        description: 'Gemini Notebook est l\'outil idéal pour travailler avec des volumes importants de documents financiers. Il répond uniquement à partir des sources que vous lui fournissez, garantissant des réponses ancrées dans vos propres documents.',
         items: [
           'Importer liasses fiscales, rapports d\'audit ou contrats et poser des questions sur leur contenu',
           'Extraire les informations clés d\'un bilan de 80 pages en quelques minutes',
@@ -533,9 +533,9 @@ export const GEMINI_SPOKES = [
         day: 2,
         title: 'Module 6, Préparation des CODIR et conseils d\'administration',
         duration: '2h',
-        description: 'Utilisez NotebookLM pour préparer vos comités financiers et Gemini Slides pour construire vos présentations de résultats. Du tableau de bord à la présentation prête en 30 minutes.',
+        description: 'Utilisez Gemini Notebook pour préparer vos comités financiers et Gemini Slides pour construire vos présentations de résultats. Du tableau de bord à la présentation prête en 30 minutes.',
         items: [
-          'Utiliser NotebookLM pour préparer un comité financier ou un conseil d\'administration',
+          'Utiliser Gemini Notebook pour préparer un comité financier ou un conseil d\'administration',
           'Générer une présentation de résultats financiers à partir d\'un rapport Docs ou d\'un tableau Sheets',
           'Structurer un pitch de résultats pour un CODIR ou un conseil d\'administration',
           'Adapter le niveau de détail et le vocabulaire selon l\'interlocuteur (DG, actionnaires, opérationnels)',
@@ -572,7 +572,7 @@ export const GEMINI_SPOKES = [
     objectives: [
       'Générer des formules et analyses complexes dans Google Sheets en langage naturel sans aide technique ni expertise avancée en tableur',
       'Produire un rapport de gestion narratif structuré en moins d\'une heure à partir de données brutes, avec commentaires de résultats adaptés à chaque audience',
-      'Interroger des documents comptables volumineux avec NotebookLM pour extraire des informations précises en quelques minutes, sans lire le document entier',
+      'Interroger des documents comptables volumineux avec Gemini Notebook pour extraire des informations précises en quelques minutes, sans lire le document entier',
       'Construire une présentation de résultats financiers pour la direction en moins de 30 minutes depuis un tableau de bord Google Sheets',
       'Communiquer efficacement par email sur des sujets financiers complexes avec Gemini, et déployer ces pratiques dans toute l\'équipe avec une politique de confidentialité des données claire',
     ],
@@ -583,7 +583,7 @@ export const GEMINI_SPOKES = [
       },
       {
         q: 'Faut-il obligatoirement un abonnement Google Workspace Business pour accéder à Gemini dans Sheets et Docs ?',
-        a: 'Les fonctionnalités Gemini intégrées à Google Sheets et Docs nécessitent un abonnement Google Workspace Business Standard ou supérieur, ou l\'add-on Gemini for Workspace. Si votre organisation utilise encore la version gratuite, votre formateur vous conseillera sur la solution la plus adaptée lors de l\'appel de cadrage préalable.',
+        a: 'Les fonctionnalités Gemini intégrées à Google Sheets et Docs nécessitent un abonnement Google Workspace Business Standard ou supérieur, qui inclut Gemini sans module à part depuis janvier 2025. Si votre organisation utilise encore la version gratuite, votre formateur vous conseillera sur la solution la plus adaptée lors de l\'appel de cadrage préalable.',
       },
       {
         q: 'Quelle est la différence entre Google Gemini et Microsoft Copilot pour les équipes finance ?',
@@ -591,7 +591,7 @@ export const GEMINI_SPOKES = [
       },
       {
         q: 'Les données comptables sont-elles protégées par le RGPD dans Gemini ?',
-        a: 'Google Workspace est certifié RGPD et les données des clients Workspace Business ne sortent pas de l\'Union européenne. Pour NotebookLM, les documents que vous importez servent uniquement à répondre à vos questions dans votre session : ils ne sont pas utilisés pour améliorer les modèles. Votre formateur fait le point sur ces aspects RGPD en début de session.',
+        a: 'Google s\'engage à ne pas faire relire vos contenus Workspace par des humains ni à les utiliser pour entraîner ses modèles hors de votre domaine sans autorisation, et le même engagement couvre Gemini Notebook avec un compte professionnel. Les réglages de régions de données de Workspace ne s\'appliquent pas à Gemini Notebook : vérifiez ce point avant d\'y déposer des pièces comptables sensibles. Votre formateur fait le point sur ces aspects RGPD en début de session.',
       },
       {
         q: 'Cette formation convient-elle aux équipes qui ne maîtrisent pas bien Google Sheets ?',
@@ -630,7 +630,7 @@ export const GEMINI_SPOKES = [
       },
       {
         title: 'Business developers et account managers',
-        desc: 'Vous gérez des comptes complexes, produisez des propositions sur mesure et préparez des réunions stratégiques. NotebookLM et Gemini Docs transforment la préparation de ces rendez-vous à fort enjeu : 15 minutes au lieu d\'une heure.',
+        desc: 'Vous gérez des comptes complexes, produisez des propositions sur mesure et préparez des réunions stratégiques. Gemini Notebook (anciennement NotebookLM) et Gemini Docs transforment la préparation de ces rendez-vous à fort enjeu : 15 minutes au lieu d\'une heure.',
       },
     ],
     useCases: [
@@ -651,8 +651,8 @@ export const GEMINI_SPOKES = [
       },
       {
         icon: '🔍',
-        title: 'Préparation RDV avec NotebookLM',
-        desc: 'Importez le site web, le rapport annuel et les communiqués de presse d\'un prospect dans NotebookLM. Préparez votre réunion stratégique en 15 minutes : enjeux, actualités et angles d\'accroche.',
+        title: 'Préparation RDV avec Gemini Notebook',
+        desc: 'Importez le site web, le rapport annuel et les communiqués de presse d\'un prospect dans Gemini Notebook. Préparez votre réunion stratégique en 15 minutes : enjeux, actualités et angles d\'accroche.',
       },
       {
         icon: '📊',
@@ -720,16 +720,16 @@ export const GEMINI_SPOKES = [
       },
       {
         day: 2,
-        title: 'Module 5, Préparation de rendez-vous stratégiques avec NotebookLM',
+        title: 'Module 5, Préparation de rendez-vous stratégiques avec Gemini Notebook',
         duration: '1h30',
-        description: 'NotebookLM transforme la préparation des rendez-vous à fort enjeu. En 15 minutes, analysez les enjeux de votre prospect, son actualité et construisez vos angles d\'accroche.',
+        description: 'Gemini Notebook transforme la préparation des rendez-vous à fort enjeu. En 15 minutes, analysez les enjeux de votre prospect, son actualité et construisez vos angles d\'accroche.',
         items: [
-          'Importer le site web, les rapports annuels et les communiqués de presse d\'un prospect dans NotebookLM',
+          'Importer le site web, les rapports annuels et les communiqués de presse d\'un prospect dans Gemini Notebook',
           'Préparer un rendez-vous stratégique : enjeux du prospect, actualités, angles d\'accroche',
           'Construire un dossier de préparation pour une soutenance d\'appel d\'offres',
           'Identifier les signaux d\'achat et les objections probables à partir des documents prospects',
         ],
-        exercise: 'Un commercial prépare en 15 minutes sa réunion avec un grand compte en analysant le rapport annuel, les actualités presse et les derniers appels d\'offres de son prospect avec NotebookLM.',
+        exercise: 'Un commercial prépare en 15 minutes sa réunion avec un grand compte en analysant le rapport annuel, les actualités presse et les derniers appels d\'offres de son prospect avec Gemini Notebook.',
       },
       {
         day: 2,
@@ -750,7 +750,7 @@ export const GEMINI_SPOKES = [
         duration: '2h',
         description: 'Montez en puissance sur la personnalisation de vos approches commerciales. Gemini comme assistant de recherche, de contextualisation et de rédaction à grande échelle.',
         items: [
-          'Combiner les données LinkedIn et NotebookLM pour hyper-personnaliser vos approches',
+          'Combiner les données LinkedIn et Gemini Notebook pour hyper-personnaliser vos approches',
           'Rédiger des séquences de prospection multicanal (email + LinkedIn + téléphone)',
           'Adapter vos propositions commerciales selon le secteur et les enjeux spécifiques de chaque prospect',
           'Créer des contenus de nurturing pour les prospects en phase de réflexion',
@@ -775,7 +775,7 @@ export const GEMINI_SPOKES = [
       'Rédiger des emails de prospection personnalisés à grande échelle depuis Gmail en quelques minutes, avec séquences de relance et gestion des objections',
       'Produire une proposition commerciale complète et structurée à partir d\'un brief ou de notes de rendez-vous en moins de 45 minutes',
       'Construire une présentation de soutenance d\'offre convaincante en moins de 30 minutes depuis une proposition commerciale existante',
-      'Préparer n\'importe quel rendez-vous stratégique en 15 minutes avec NotebookLM en analysant les documents publics et privés du prospect',
+      'Préparer n\'importe quel rendez-vous stratégique en 15 minutes avec Gemini Notebook en analysant les documents publics et privés du prospect',
       'Tenir son pipeline commercial à jour dans Sheets, analyser ses performances sans aide technique et produire son reporting hebdomadaire en moins de 15 minutes',
     ],
     faq: [
@@ -789,11 +789,11 @@ export const GEMINI_SPOKES = [
       },
       {
         q: 'Faut-il un abonnement Google Workspace pour accéder à Gemini dans Gmail et Docs ?',
-        a: 'Les fonctionnalités Gemini intégrées à Gmail, Docs et Sheets nécessitent un abonnement Google Workspace Business Standard ou supérieur, ou l\'add-on Gemini for Workspace. Si votre organisation utilise la version gratuite de Gmail, votre formateur vous conseillera sur la solution la plus adaptée lors de l\'appel de cadrage.',
+        a: 'Les fonctionnalités Gemini intégrées à Gmail, Docs et Sheets nécessitent un abonnement Google Workspace Business Standard ou supérieur, qui inclut Gemini sans module à part depuis janvier 2025. Si votre organisation utilise la version gratuite de Gmail, votre formateur vous conseillera sur la solution la plus adaptée lors de l\'appel de cadrage.',
       },
       {
         q: 'Les données de nos prospects sont-elles protégées avec Gemini ?',
-        a: 'Avec Google Workspace Business, les données saisies dans Gemini for Workspace ne sont pas utilisées pour entraîner les modèles de Google. Elles restent dans votre environnement Workspace. Pour NotebookLM, les documents importés (profils prospects, rapports annuels) servent uniquement à votre session. Votre formateur fait le point sur les bonnes pratiques de confidentialité en début de session.',
+        a: 'Avec Google Workspace Business, les données saisies dans Gemini for Workspace ne sont pas utilisées pour entraîner les modèles de Google. Elles restent dans votre environnement Workspace. Pour Gemini Notebook, les documents importés (profils prospects, rapports annuels) servent uniquement à votre session. Votre formateur fait le point sur les bonnes pratiques de confidentialité en début de session.',
       },
       {
         q: 'La formation est-elle adaptée aux commerciaux peu à l\'aise avec les outils digitaux ?',
@@ -858,8 +858,8 @@ export const GEMINI_SPOKES = [
       },
       {
         icon: '🔍',
-        title: 'Veille sectorielle avec NotebookLM',
-        desc: 'Importez revues de presse, rapports sectoriels et études dans NotebookLM. Générez une synthèse de veille hebdomadaire depuis un corpus de documents en 20 minutes au lieu de plusieurs heures.',
+        title: 'Veille sectorielle avec Gemini Notebook (anciennement NotebookLM)',
+        desc: 'Importez revues de presse, rapports sectoriels et études dans Gemini Notebook. Générez une synthèse de veille hebdomadaire depuis un corpus de documents en 20 minutes au lieu de plusieurs heures.',
       },
       {
         icon: '🎤',
@@ -922,16 +922,16 @@ export const GEMINI_SPOKES = [
       },
       {
         day: 2,
-        title: 'Module 5, Veille sectorielle avec NotebookLM',
+        title: 'Module 5, Veille sectorielle avec Gemini Notebook',
         duration: '1h30',
-        description: 'NotebookLM est particulièrement puissant pour les équipes communication qui travaillent avec des volumes importants d\'articles, rapports et revues de presse. Interrogez vos sources en langage naturel.',
+        description: 'Gemini Notebook est particulièrement puissant pour les équipes communication qui travaillent avec des volumes importants d\'articles, rapports et revues de presse. Interrogez vos sources en langage naturel.',
         items: [
-          'Importer des revues de presse, rapports sectoriels et études dans NotebookLM',
+          'Importer des revues de presse, rapports sectoriels et études dans Gemini Notebook',
           'Poser des questions sur l\'évolution d\'un secteur à partir de vos propres sources documentaires',
           'Générer une synthèse de veille hebdomadaire ou mensuelle depuis un corpus de documents',
           'Créer un résumé audio de documents pour une écoute en mobilité',
         ],
-        exercise: 'Chaque participant charge 5 articles ou rapports de son secteur dans NotebookLM et produit une synthèse de veille structurée de 2 pages avec angles d\'actualité et opportunités de prise de parole, en 30 minutes.',
+        exercise: 'Chaque participant charge 5 articles ou rapports de son secteur dans Gemini Notebook et produit une synthèse de veille structurée de 2 pages avec angles d\'actualité et opportunités de prise de parole, en 30 minutes.',
       },
       {
         day: 2,
@@ -955,7 +955,7 @@ export const GEMINI_SPOKES = [
           'Structurer et rédiger des rapports RSE ou de développement durable avec Gemini',
           'Préparer des discours de direction pour des assemblées générales ou des événements internes',
           'Rédiger des lettres aux parties prenantes (actionnaires, partenaires, communautés locales)',
-          'Produire des livres blancs sectoriels à partir d\'un corpus de sources NotebookLM',
+          'Produire des livres blancs sectoriels à partir d\'un corpus de sources Gemini Notebook',
         ],
         exercise: 'Chaque participant produit la structure et 2 chapitres d\'un contenu long institutionnel (rapport annuel, livre blanc, lettre parties prenantes) à partir de ses propres documents sources, en 90 minutes.',
       },
@@ -977,7 +977,7 @@ export const GEMINI_SPOKES = [
       'Produire des communiqués de presse, tribunes et éléments de langage professionnels en deux fois moins de temps, avec une cohérence de voix de marque garantie par un guide de prompts',
       'Décliner un message clé sur tous les canaux de communication (réseaux sociaux, newsletter, interne) à partir d\'un seul brief, adapté à chaque audience et chaque plateforme',
       'Rédiger des communications internes adaptées à différentes audiences dans des contextes sensibles (changement, crise, transformation) avec le bon registre à chaque fois',
-      'Analyser un corpus de documents de veille avec NotebookLM et produire une synthèse structurée prête à diffuser en moins de 30 minutes',
+      'Analyser un corpus de documents de veille avec Gemini Notebook et produire une synthèse structurée prête à diffuser en moins de 30 minutes',
       'Préparer et gérer une communication de crise avec des éléments de réponse prêts à déployer pour chaque partie prenante, rédigés sous pression en quelques minutes',
     ],
     faq: [
@@ -1013,9 +1013,9 @@ export const GEMINI_SPOKES = [
   {
     slug: 'formation-gemini-management',
     metaTitle: 'Formation Gemini Management | Workspace, IA | Masteria',
-    metaDesc: "Formez vos managers à Google Gemini en 2 jours : Workspace, NotebookLM, board packs, plans dans Docs/Slides. Qualiopi, finançable OPCO.",
+    metaDesc: "Formez vos managers à Google Gemini en 2 jours : Workspace, Gemini Notebook (anciennement NotebookLM), board packs, plans dans Docs/Slides. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les Managers et Dirigeants',
-    intro: "Pour les managers et dirigeants travaillant sous Google Workspace, Gemini est l'outil naturel d'industrialisation : intégré nativement à Gmail, Docs, Sheets, Slides, Drive. Avec NotebookLM, vous pouvez transformer vos sources internes en synthèses stratégiques. La fenêtre de 2M tokens permet d'avaler des dossiers très longs.",
+    intro: "Pour les managers et dirigeants travaillant sous Google Workspace, Gemini est l'outil naturel d'industrialisation : intégré nativement à Gmail, Docs, Sheets, Slides, Drive. Avec Gemini Notebook, vous pouvez transformer vos sources internes en synthèses stratégiques. La fenêtre de 2M tokens permet d'avaler des dossiers très longs.",
     audience: [
       { title: 'Dirigeants et CEO sur Google Workspace', desc: "Vous prenez des décisions structurantes. Gemini intégré à Workspace s'adapte à vos rituels existants." },
       { title: "Managers d'équipe et directeurs métiers", desc: "Vous pilotez des équipes via Gmail, Docs, Meet. Gemini accélère sans changer d'outil." },
@@ -1023,16 +1023,16 @@ export const GEMINI_SPOKES = [
     ],
     useCases: [
       { icon: '📊', title: 'Board packs dans Docs/Slides', desc: "Préparez les board packs directement dans Google Docs et Slides." },
-      { icon: '🧠', title: 'NotebookLM pour la stratégie', desc: "Synthétisez vos sources stratégiques (rapports, mémos) via NotebookLM." },
+      { icon: '🧠', title: 'Gemini Notebook pour la stratégie', desc: "Synthétisez vos sources stratégiques (rapports, mémos) via Gemini Notebook." },
       { icon: '🔄', title: 'Plans de transformation', desc: "Élaborez des plans de transformation dans Docs avec collaboration native." },
       { icon: '📋', title: 'Notes de cadrage M&A', desc: "Rédigez les notes M&A dans Docs avec contexte du Drive." },
       { icon: '🎤', title: 'Préparation de board meetings', desc: "Préparez les conseils avec accès au Drive et Calendar." },
       { icon: '📚', title: 'Synthèse multi-source 2M tokens', desc: "Consolidez 100+ documents stratégiques en synthèse cohérente." },
     ],
     modules: [
-      { day: 1, title: 'Module 1 · Gemini pour les profils décisionnels', duration: '1h30', description: "Configurer Gemini pour les workflows managériaux.", items: ["Panorama : Gemini dans Gmail/Docs/Sheets/Slides + NotebookLM + Live", "Cartographie des cas d'usage par application", "Configurer NotebookLM pour vos sources stratégiques", "Bonnes pratiques de gouvernance des informations stratégiques"], exercise: "Configurer un NotebookLM avec votre vision et contexte stratégique." },
+      { day: 1, title: 'Module 1 · Gemini pour les profils décisionnels', duration: '1h30', description: "Configurer Gemini pour les workflows managériaux.", items: ["Panorama : Gemini dans Gmail/Docs/Sheets/Slides + Gemini Notebook + Live", "Cartographie des cas d'usage par application", "Configurer Gemini Notebook pour vos sources stratégiques", "Bonnes pratiques de gouvernance des informations stratégiques"], exercise: "Configurer un Gemini Notebook avec votre vision et contexte stratégique." },
       { day: 1, title: 'Module 2 · Board packs dans Docs et Slides', duration: '2h', description: "Préparer des livrables exécutifs dans Workspace.", items: ["Structurer un board pack dans Google Docs", "Générer une présentation Slides à partir d'un Doc", "Adapter ton et profondeur selon l'audience", "Anticiper les questions du board"], exercise: "Construire un board pack complet dans Docs + Slides." },
-      { day: 1, title: 'Module 3 · NotebookLM pour la stratégie', duration: '2h', description: "Exploiter NotebookLM pour les analyses stratégiques.", items: ["Charger 50+ sources stratégiques dans NotebookLM", "Générer synthèses, FAQ, mind maps automatiquement", "Identifier les patterns et signaux faibles", "Préparer les notes pour le COMEX"], exercise: "Construire un NotebookLM stratégique sur un sujet réel et générer 3 synthèses." },
+      { day: 1, title: 'Module 3 · Gemini Notebook pour la stratégie', duration: '2h', description: "Exploiter Gemini Notebook pour les analyses stratégiques.", items: ["Charger 50+ sources stratégiques dans Gemini Notebook", "Générer synthèses, FAQ, mind maps automatiquement", "Identifier les patterns et signaux faibles", "Préparer les notes pour le COMEX"], exercise: "Construire un Gemini Notebook stratégique sur un sujet réel et générer 3 synthèses." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque managériale.", items: ["Revue des livrables", "Bibliothèque de prompts management partagée", "Identification des cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "Préparer les 5 prompts management prioritaires." },
       { day: 2, title: 'Module 5 · Plans de transformation collaboratifs', duration: '1h30', description: "Élaborer des plans de transformation avec Workspace.", items: ["Structurer un plan de transformation dans Docs", "Anticiper les résistances au changement", "Construire le plan de communication interne", "Définir indicateurs et jalons clés"], exercise: "Élaborer un plan de transformation partiel sur un sujet réel." },
       { day: 2, title: 'Module 6 · Préparation de board meetings', duration: '2h', description: "Préparer efficacement les instances dans Workspace.", items: ["Préparer dossier complet (Slides, Docs, annexes)", "Synthétiser les comptes-rendus de board précédents", "Anticiper les questions des administrateurs", "Préserver la confidentialité"], exercise: "Préparer un dossier complet pour un conseil fictif." },
@@ -1041,17 +1041,17 @@ export const GEMINI_SPOKES = [
     ],
     objectives: [
       "Préparer des board packs dans Google Docs et Slides intégrés à votre Workspace",
-      "Exploiter NotebookLM pour les analyses stratégiques multi-sources",
+      "Exploiter Gemini Notebook pour les analyses stratégiques multi-sources",
       "Élaborer des plans de transformation collaboratifs",
       "Préparer les conseils d'administration avec accès au Drive et Calendar",
       "Consolider 100+ documents stratégiques avec la fenêtre 2M tokens de Gemini",
     ],
     faq: [
       { q: "Pourquoi Gemini plutôt que Copilot pour les managers ?", a: "Si votre stack est Google Workspace, Gemini évite les ruptures de workflow. Si vous êtes sur Microsoft 365, Copilot reste l'option naturelle." },
-      { q: "NotebookLM est-il vraiment utile pour les dirigeants ?", a: "Oui, c'est l'un des outils Gemini les plus différenciants. NotebookLM génère synthèses, FAQ, mind maps depuis vos sources internes en quelques minutes." },
-      { q: "La fenêtre 2M tokens de Gemini est-elle vraiment utilisable ?", a: "Oui, Gemini 3 Pro permet d'avaler un dossier de 100+ documents en une requête. C'est le plus grand contexte du marché en 2026." },
+      { q: "Gemini Notebook est-il vraiment utile pour les dirigeants ?", a: "Oui, c'est l'un des outils Gemini les plus différenciants. Gemini Notebook génère synthèses, FAQ, mind maps depuis vos sources internes en quelques minutes." },
+      { q: "La fenêtre d'un million de tokens de Gemini est-elle vraiment utilisable ?", a: "Oui. Dès Business Standard, l'application Gemini lit un million de tokens par échange (relevé du 7 octobre 2026), de quoi traiter un dossier de plusieurs dizaines de documents en une requête. Business Starter reste limité à 32 000 tokens." },
       { q: "Mes informations confidentielles sont-elles protégées ?", a: "Sur Workspace Enterprise avec Gemini Pro, oui : engagement contractuel de Google de non-utilisation pour l'entraînement." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi : la formation est finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-gemini-finance', 'formation-claude-management', 'formation-chatgpt-management'],
   },
@@ -1060,7 +1060,7 @@ export const GEMINI_SPOKES = [
   {
     slug: 'formation-gemini-assistante',
     metaTitle: 'Formation Gemini Assistante | Gmail, Docs, Meet | Masteria',
-    metaDesc: "Formez les assistantes à Google Gemini en 2 jours : Gmail, Docs, Calendar, Meet, NotebookLM. Qualiopi, finançable OPCO.",
+    metaDesc: "Formez les assistantes à Google Gemini en 2 jours : Gmail, Docs, Calendar, Meet, Gemini Notebook (anciennement NotebookLM). Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les Assistantes de direction',
     intro: "Les assistantes de direction sur Google Workspace bénéficient d'une intégration native exceptionnelle avec Gemini : Gmail, Calendar, Docs, Meet, Drive sont tous accessibles directement.",
     audience: [
@@ -1071,17 +1071,17 @@ export const GEMINI_SPOKES = [
     useCases: [
       { icon: '📋', title: 'Notes de briefing depuis Drive', desc: "Préparez les notes de briefing avec accès direct au Drive du dirigeant." },
       { icon: '🎤', title: 'Comptes-rendus Meet', desc: "Synthétisez automatiquement les réunions Google Meet enregistrées." },
-      { icon: '📚', title: 'Recherche dans Drive avec NotebookLM', desc: "Trouvez l'information dans le Drive complet via NotebookLM." },
+      { icon: '📚', title: 'Recherche dans Drive avec Gemini Notebook', desc: "Trouvez l'information dans le Drive complet via Gemini Notebook." },
       { icon: '✉️', title: 'Communications dans Gmail', desc: "Rédigez les mails sensibles directement depuis Gmail." },
       { icon: '🎯', title: 'Coordination Calendar et Tasks', desc: "Coordonnez les agendas et les tâches via les intégrations natives." },
       { icon: '📊', title: 'Tableaux de bord dans Sheets', desc: "Construisez des tableaux de bord administratifs dans Sheets." },
     ],
     modules: [
-      { day: 1, title: 'Module 1 · Gemini pour les assistantes', duration: '1h30', description: "Cadrer l'usage de Gemini dans le quotidien d'une assistante.", items: ["Panorama : Gemini dans Gmail/Docs/Calendar/Meet/Drive", "NotebookLM pour la recherche dans la documentation", "Configurer les références (préférences du dirigeant) via Drive", "Confidentialité et bonnes pratiques"], exercise: "Configurer un workflow Gemini Assistante pour votre dirigeant." },
+      { day: 1, title: 'Module 1 · Gemini pour les assistantes', duration: '1h30', description: "Cadrer l'usage de Gemini dans le quotidien d'une assistante.", items: ["Panorama : Gemini dans Gmail/Docs/Calendar/Meet/Drive", "Gemini Notebook pour la recherche dans la documentation", "Configurer les références (préférences du dirigeant) via Drive", "Confidentialité et bonnes pratiques"], exercise: "Configurer un workflow Gemini Assistante pour votre dirigeant." },
       { day: 1, title: 'Module 2 · Notes de briefing depuis Drive', duration: '2h', description: "Préparer les notes de briefing en exploitant le Drive.", items: ["Structurer une note de briefing avant un rendez-vous", "Compiler les informations dispersées (Drive, mails, web)", "Adapter le ton selon le dirigeant", "Anticiper les questions et préparer les éléments de réponse"], exercise: "Préparer une note de briefing complète pour un rendez-vous fictif." },
       { day: 1, title: 'Module 3 · Comptes-rendus Meet', duration: '2h', description: "Exploiter les transcripts Meet pour les CRs.", items: ["Activer la transcription automatique des Meet", "Synthétiser un CR structuré depuis le transcript", "Identifier décisions, actions, points de vigilance", "Adapter le format selon l'audience"], exercise: "Synthétiser une transcription Meet en 3 formats." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque assistantes.", items: ["Revue des livrables", "Bibliothèque partagée", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "5 prompts prioritaires." },
-      { day: 2, title: 'Module 5 · NotebookLM pour la recherche documentaire', duration: '1h30', description: "Retrouver l'information dans le Drive complet.", items: ["Charger 100+ documents dans NotebookLM", "Poser des questions ciblées et obtenir les références précises", "Construire des fiches synthèse sur des sujets récurrents", "Maintenir une base de connaissances exploitable"], exercise: "Construire un NotebookLM et faire 5 recherches précises." },
+      { day: 2, title: 'Module 5 · Gemini Notebook pour la recherche documentaire', duration: '1h30', description: "Retrouver l'information dans le Drive complet.", items: ["Charger 100+ documents dans Gemini Notebook", "Poser des questions ciblées et obtenir les références précises", "Construire des fiches synthèse sur des sujets récurrents", "Maintenir une base de connaissances exploitable"], exercise: "Construire un Gemini Notebook et faire 5 recherches précises." },
       { day: 2, title: 'Module 6 · Communications Gmail dirigeant', duration: '2h', description: "Rédiger des mails respectant le ton du dirigeant.", items: ["Encoder le ton de voix de votre dirigeant via exemples", "Rédiger des mails sensibles directement dans Gmail", "Préparer des prises de parole courtes", "Validation et calibrage avec le dirigeant"], exercise: "Rédiger 3 mails sensibles dans Gmail." },
       { day: 2, title: 'Module 7 · Coordination Calendar et Tasks', duration: '2h', description: "Coordonner agendas et tâches via les intégrations natives.", items: ["Optimiser la préparation des rendez-vous via Calendar", "Coordonner les projets transverses via Tasks", "Synthétiser les comptes-rendus successifs", "Anticiper les blocages et préparer les escalades"], exercise: "Configurer un workflow de coordination complet." },
       { day: 2, title: "Module 8 · Plan d'action 30 jours", duration: '1h30', description: "Finaliser la bibliothèque et planifier le déploiement.", items: ["Organiser la bibliothèque", "Règles d'usage et de validation", "Quick wins activables", "Plan 30 jours"], exercise: "Bibliothèque Gemini assistante structurée." },
@@ -1089,16 +1089,16 @@ export const GEMINI_SPOKES = [
     objectives: [
       "Préparer des notes de briefing dirigeant à partir du Drive",
       "Synthétiser les réunions Google Meet en CRs structurés",
-      "Trouver l'information dans le Drive complet via NotebookLM",
+      "Trouver l'information dans le Drive complet via Gemini Notebook",
       "Rédiger des communications dans Gmail respectant le ton du dirigeant",
       "Coordonner agendas et tâches via les intégrations natives Workspace",
     ],
     faq: [
       { q: "Pourquoi Gemini plutôt que Copilot pour les assistantes ?", a: "Si votre stack est Google Workspace, Gemini est l'option naturelle. Sur Microsoft 365, Copilot." },
       { q: "Les transcripts Meet sont-ils protégés ?", a: "Oui, sur Workspace Enterprise les transcripts restent dans votre domaine." },
-      { q: "NotebookLM peut-il accéder à tout le Drive ?", a: "Vous chargez les documents pertinents dans NotebookLM. C'est plus efficace qu'une recherche Drive classique." },
+      { q: "Gemini Notebook peut-il accéder à tout le Drive ?", a: "Vous chargez les documents pertinents dans Gemini Notebook. C'est plus efficace qu'une recherche Drive classique." },
       { q: "Peut-on travailler sur nos vrais documents pendant la formation ?", a: "Oui." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-gemini-management', 'formation-claude-assistante', 'formation-chatgpt-assistante'],
   },
@@ -1111,7 +1111,7 @@ export const GEMINI_SPOKES = [
   // ── Gemini × SEO ────────────────────────────────────────────────────────
   {
     slug: 'formation-gemini-seo',
-    metaTitle: 'Formation Gemini SEO | Workspace, NotebookLM | Masteria',
+    metaTitle: 'Formation Gemini SEO | Workspace, Gemini Notebook (anciennement NotebookLM) | Masteria',
     metaDesc: "Formez vos équipes SEO à Google Gemini en 2 jours : audits, articles, SGE/AI Overviews, intégration Workspace. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes SEO',
     intro: "Pour les équipes SEO, Gemini est doublement stratégique : c'est l'IA de Google (donc directement en lien avec les SGE / AI Overviews qui transforment le SEO en 2026), et la fenêtre 2M tokens permet d'avaler des sites entiers pour des audits sémantiques.",
@@ -1126,7 +1126,7 @@ export const GEMINI_SPOKES = [
       { icon: '📝', title: 'Articles SEO dans Docs', desc: "Rédigez les articles SEO directement dans Google Docs." },
       { icon: '📊', title: 'Suivi de performance dans Sheets', desc: "Analysez Search Console et Analytics dans Sheets avec Gemini." },
       { icon: '🔍', title: 'Recherche concurrentielle', desc: "Analysez les sites concurrents et identifiez les angles de différenciation." },
-      { icon: '🎯', title: 'NotebookLM pour la stratégie', desc: "Construisez votre stratégie SEO via NotebookLM (centaines de sources)." },
+      { icon: '🎯', title: 'Gemini Notebook pour la stratégie', desc: "Construisez votre stratégie SEO via Gemini Notebook (centaines de sources)." },
     ],
     modules: [
       { day: 1, title: 'Module 1 · Gemini et le SEO en 2026', duration: '1h30', description: "Comprendre l'évolution du SEO avec les SGE / AI Overviews.", items: ["Évolution du SEO 2024-2026 : SGE, AI Overviews, IA Search", "Gemini comme IA de Google : implications stratégiques", "Cas d'usage Gemini SEO vs Claude (piliers longs) vs ChatGPT (visuels)", "Configurer un workflow SEO dans Workspace"], exercise: "Configurer un workflow Gemini SEO pour votre site." },
@@ -1135,7 +1135,7 @@ export const GEMINI_SPOKES = [
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque SEO.", items: ["Revue des livrables", "Bibliothèque partagée", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "5 prompts SEO prioritaires." },
       { day: 2, title: 'Module 5 · Articles SEO dans Docs', duration: '1h30', description: "Industrialiser la rédaction SEO dans Google Docs.", items: ["Structurer un article SEO selon l'intention", "Optimiser pour featured snippets et People Also Ask", "Intégrer mots-clés sémantiques", "Adapter le ton à la marque"], exercise: "Produire un article SEO complet (1 500 mots) dans Docs." },
       { day: 2, title: 'Module 6 · Suivi de performance dans Sheets', duration: '2h', description: "Analyser les KPIs SEO dans Google Sheets.", items: ["Importer Search Console et Analytics dans Sheets", "Analyser les variations avec Gemini natif", "Construire des tableaux de bord automatiques", "Identifier opportunités et régressions"], exercise: "Construire un tableau de bord SEO complet dans Sheets." },
-      { day: 2, title: 'Module 7 · NotebookLM pour la stratégie SEO', duration: '2h', description: "Exploiter NotebookLM pour bâtir une stratégie SEO data-driven.", items: ["Charger les rapports SEO, études de mots-clés, audits dans NotebookLM", "Générer synthèses et FAQ pour l'équipe", "Identifier les patterns sémantiques", "Préparer les recommandations stratégiques"], exercise: "Construire un NotebookLM stratégique SEO." },
+      { day: 2, title: 'Module 7 · Gemini Notebook pour la stratégie SEO', duration: '2h', description: "Exploiter Gemini Notebook pour bâtir une stratégie SEO data-driven.", items: ["Charger les rapports SEO, études de mots-clés, audits dans Gemini Notebook", "Générer synthèses et FAQ pour l'équipe", "Identifier les patterns sémantiques", "Préparer les recommandations stratégiques"], exercise: "Construire un Gemini Notebook stratégique SEO." },
       { day: 2, title: "Module 8 · Plan d'action 30 jours SEO", duration: '1h30', description: "Finaliser la bibliothèque et planifier le déploiement.", items: ["Organiser la bibliothèque", "Règles de qualité éditoriale", "Quick wins activables", "Plan 30 jours"], exercise: "Bibliothèque Gemini SEO structurée." },
     ],
     objectives: [
@@ -1143,14 +1143,14 @@ export const GEMINI_SPOKES = [
       "Auditer un site complet en une requête grâce à la fenêtre 2M tokens",
       "Rédiger des articles SEO directement dans Google Docs",
       "Analyser les KPIs SEO dans Sheets avec Gemini natif",
-      "Bâtir une stratégie SEO data-driven via NotebookLM",
+      "Bâtir une stratégie SEO data-driven via Gemini Notebook",
     ],
     faq: [
       { q: "Gemini optimise-t-il vraiment pour SGE ?", a: "Pas directement, mais comprendre comment Gemini choisit ses sources donne un avantage stratégique pour optimiser pour SGE." },
       { q: "La fenêtre 2M tokens change-t-elle vraiment la donne pour les audits ?", a: "Oui. Pouvoir avaler un site complet en une requête transforme la pratique de l'audit SEO." },
-      { q: "NotebookLM est-il vraiment utile pour le SEO ?", a: "Oui, surtout pour les analyses sémantiques approfondies." },
+      { q: "Gemini Notebook est-il vraiment utile pour le SEO ?", a: "Oui, surtout pour les analyses sémantiques approfondies." },
       { q: "Peut-on travailler sur nos vrais sites pendant la formation ?", a: "Oui." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-gemini-marketing', 'formation-claude-seo', 'formation-chatgpt-seo'],
   },
@@ -1159,26 +1159,26 @@ export const GEMINI_SPOKES = [
   {
     slug: 'formation-gemini-service-client',
     metaTitle: 'Formation Gemini Service Client | Workspace | Masteria',
-    metaDesc: "Formez vos équipes service client à Google Gemini en 2 jours : Gmail, Meet, NotebookLM, analyse multilingue. Qualiopi, finançable OPCO.",
+    metaDesc: "Formez vos équipes service client à Google Gemini en 2 jours : Gmail, Meet, Gemini Notebook (anciennement NotebookLM), analyse multilingue. Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes Service Client',
-    intro: "Pour les équipes service client sur Google Workspace, Gemini permet de traiter rapidement les demandes (Gmail), animer les sessions support (Meet), et analyser les feedbacks à grande échelle (NotebookLM, fenêtre 2M tokens).",
+    intro: "Pour les équipes service client sur Google Workspace, Gemini permet de traiter rapidement les demandes (Gmail), animer les sessions support (Meet), et analyser les feedbacks à grande échelle (Gemini Notebook, fenêtre 2M tokens).",
     audience: [
       { title: 'Directeurs service client sur Workspace', desc: "Vous pilotez le SC dans un environnement Google. Gemini s'intègre nativement." },
-      { title: 'Responsables qualité', desc: "Vous analysez les feedbacks. NotebookLM permet d'avaler des centaines de verbatims." },
+      { title: 'Responsables qualité', desc: "Vous analysez les feedbacks. Gemini Notebook permet d'avaler des centaines de verbatims." },
       { title: 'Conseillers et téléconseillers', desc: "Vous traitez les demandes via Gmail. Gemini accélère sans changer d'outil." },
     ],
     useCases: [
       { icon: '✉️', title: 'Réponses dans Gmail', desc: "Répondez aux demandes en 30 secondes avec contexte des échanges." },
       { icon: '🎤', title: 'Sessions support via Meet', desc: "Animez les sessions support avec transcripts et synthèses automatiques." },
-      { icon: '📊', title: 'Analyse de verbatims via NotebookLM', desc: "Synthétisez 500+ verbatims clients en thèmes priorisés." },
+      { icon: '📊', title: 'Analyse de verbatims via Gemini Notebook', desc: "Synthétisez 500+ verbatims clients en thèmes priorisés." },
       { icon: '🌍', title: 'Support multilingue', desc: "Gemini est excellent en multilingue : traduction et adaptation culturelle." },
       { icon: '📋', title: 'Procédures dans Docs', desc: "Maintenez les scripts et procédures dans Google Docs." },
       { icon: '🤖', title: 'Cartographie parcours client', desc: "Identifiez les frictions à partir des feedbacks Workspace." },
     ],
     modules: [
-      { day: 1, title: 'Module 1 · Gemini pour le SC en environnement Workspace', duration: '1h30', description: "Cadrer l'usage de Gemini en service client.", items: ["Panorama : Gemini dans Gmail/Meet/Docs", "NotebookLM pour les analyses qualitatives", "Configurer les références (charte de réponse, FAQ) via Drive", "Bonnes pratiques de gouvernance"], exercise: "Configurer un workflow Gemini SC pour votre tenant." },
+      { day: 1, title: 'Module 1 · Gemini pour le SC en environnement Workspace', duration: '1h30', description: "Cadrer l'usage de Gemini en service client.", items: ["Panorama : Gemini dans Gmail/Meet/Docs", "Gemini Notebook pour les analyses qualitatives", "Configurer les références (charte de réponse, FAQ) via Drive", "Bonnes pratiques de gouvernance"], exercise: "Configurer un workflow Gemini SC pour votre tenant." },
       { day: 1, title: 'Module 2 · Réponses dans Gmail', duration: '2h', description: "Industrialiser les réponses dans Gmail avec contexte.", items: ["Cartographier les motifs de contact les plus fréquents", "Construire les templates de réponse dans le contexte des échanges", "Adapter le ton selon le profil du client", "Personnaliser sans dégrader la productivité"], exercise: "Construire les templates de réponse pour 10 motifs de contact." },
-      { day: 1, title: "Module 3 · Analyse de verbatims via NotebookLM", duration: '2h', description: "Transformer les feedbacks en insights via NotebookLM.", items: ["Charger 200+ verbatims dans NotebookLM", "Identifier les thèmes principaux par fréquence", "Extraire les verbatims exacts par thème", "Construire matrice frustration × fréquence"], exercise: "Analyser un lot de 100 verbatims fournis et produire la note d'insights." },
+      { day: 1, title: "Module 3 · Analyse de verbatims via Gemini Notebook", duration: '2h', description: "Transformer les feedbacks en insights via Gemini Notebook.", items: ["Charger 200+ verbatims dans Gemini Notebook", "Identifier les thèmes principaux par fréquence", "Extraire les verbatims exacts par thème", "Construire matrice frustration × fréquence"], exercise: "Analyser un lot de 100 verbatims fournis et produire la note d'insights." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque SC.", items: ["Revue des livrables", "Bibliothèque SC partagée", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "5 prompts SC prioritaires." },
       { day: 2, title: 'Module 5 · Sessions support via Meet', duration: '1h30', description: "Animer les sessions support avec Gemini.", items: ["Activer la transcription Meet", "Synthétiser une session de support en CR structuré", "Identifier décisions et actions", "Documenter les résolutions dans Drive"], exercise: "Synthétiser une session Meet en CR structuré." },
       { day: 2, title: "Module 6 · Support multilingue", duration: '2h', description: "Exploiter les capacités multilingues de Gemini.", items: ["Traduction et adaptation culturelle de réponses", "Adaptation de scripts pour différents marchés", "Analyse multilingue de verbatims", "Production de FAQ multilingues"], exercise: "Adapter une FAQ existante en 3 langues européennes." },
@@ -1188,7 +1188,7 @@ export const GEMINI_SPOKES = [
     objectives: [
       "Industrialiser les réponses dans Gmail avec contexte",
       "Animer les sessions support via Google Meet",
-      "Analyser des centaines de verbatims clients via NotebookLM",
+      "Analyser des centaines de verbatims clients via Gemini Notebook",
       "Exploiter les capacités multilingues de Gemini",
       "Cartographier le parcours client et identifier les frictions",
     ],
@@ -1197,7 +1197,7 @@ export const GEMINI_SPOKES = [
       { q: "Les sessions Meet sont-elles protégées ?", a: "Oui, sur Workspace Enterprise les transcripts restent dans votre domaine." },
       { q: "Gemini est-il aussi bon en multilingue que ChatGPT ?", a: "Très comparable, et même meilleur sur certaines langues asiatiques. Bon en français." },
       { q: "Peut-on travailler sur nos vrais verbatims pendant la formation ?", a: "Oui, anonymisés." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-gemini-marketing', 'formation-claude-service-client', 'formation-chatgpt-service-client'],
   },
@@ -1223,7 +1223,7 @@ export const GEMINI_SPOKES = [
       { icon: '🔒', title: 'Audit Workspace admin', desc: "Auditez les permissions et configuration Workspace." },
     ],
     modules: [
-      { day: 1, title: 'Module 1 · Gemini pour les profils IT en environnement Google', duration: '1h30', description: "Cadrer l'usage de Gemini dans les équipes IT.", items: ["Panorama : Gemini Code Assist + Cloud Code + NotebookLM + Workspace admin", "Cas d'usage Gemini IT vs Claude (refactor) vs Copilot (M365)", "Configurer Gemini Code Assist dans VS Code", "Bonnes pratiques de gouvernance code"], exercise: "Configurer Gemini Code Assist pour votre stack." },
+      { day: 1, title: 'Module 1 · Gemini pour les profils IT en environnement Google', duration: '1h30', description: "Cadrer l'usage de Gemini dans les équipes IT.", items: ["Panorama : Gemini Code Assist + Cloud Code + Gemini Notebook (anciennement NotebookLM) + Workspace admin", "Cas d'usage Gemini IT vs Claude (refactor) vs Copilot (M365)", "Configurer Gemini Code Assist dans VS Code", "Bonnes pratiques de gouvernance code"], exercise: "Configurer Gemini Code Assist pour votre stack." },
       { day: 1, title: 'Module 2 · Code avec Gemini Code Assist', duration: '2h', description: "Maîtriser Gemini pour la productivité code.", items: ["Auto-complétion dans VS Code, JetBrains, Cloud Code", "Production de fonctions, API, scripts", "Adapter selon le langage (Python, JavaScript, Go, Java)", "Itérer avec Gemini Pro vs Flash"], exercise: "Coder une mini API REST avec Gemini Code Assist." },
       { day: 1, title: 'Module 3 · Google Cloud avec Gemini', duration: '2h', description: "Exploiter Gemini dans l'écosystème GCP.", items: ["Cloud Functions et Cloud Run avec Gemini", "BigQuery avec Gemini pour les analyses SQL", "Cloud Storage et data pipelines", "Monitoring et alerting"], exercise: "Construire une Cloud Function complète avec Gemini." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque IT.", items: ["Revue des livrables", "Bibliothèque IT partagée", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "5 prompts IT prioritaires." },
@@ -1244,7 +1244,7 @@ export const GEMINI_SPOKES = [
       { q: "Mon code propriétaire est-il protégé ?", a: "Sur Gemini Code Assist Enterprise, oui : engagement contractuel de Google et indexation privée." },
       { q: "Apps Script remplace-t-il Power Automate ?", a: "Pour les automatisations Workspace, oui. Pour les workflows multi-applications complexes, Power Automate ou Zapier restent souvent plus matures." },
       { q: "Peut-on déployer Gemini en self-hosted ?", a: "Non, Gemini est uniquement disponible via API ou Workspace. Pour le self-hosted, considérez Mistral ou Llama." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-gemini-management', 'formation-claude-informatique', 'formation-chatgpt-informatique'],
   },
@@ -1253,7 +1253,7 @@ export const GEMINI_SPOKES = [
   {
     slug: 'formation-gemini-pedagogique',
     metaTitle: 'Formation Gemini Pédagogique | Workspace, Imagen | Masteria',
-    metaDesc: "Formez vos équipes formation à Google Gemini en 2 jours : Docs, Slides, Forms, Imagen 4, NotebookLM. Qualiopi, finançable OPCO.",
+    metaDesc: "Formez vos équipes formation à Google Gemini en 2 jours : Docs, Slides, Forms, Vids, Gemini Notebook (anciennement NotebookLM). Qualiopi, finançable OPCO.",
     h1: 'Formation Google Gemini pour les équipes Pédagogiques',
     intro: "Pour les équipes formation sur Google Workspace, Gemini s'intègre nativement à Docs, Slides, Forms, Meet pour la production et l'animation pédagogique.",
     audience: [
@@ -1263,35 +1263,35 @@ export const GEMINI_SPOKES = [
     ],
     useCases: [
       { icon: '📚', title: 'Programmes dans Docs', desc: "Concevez des programmes complets dans Google Docs." },
-      { icon: '📊', title: 'Supports Slides avec Imagen 4', desc: "Produisez les supports avec visuels Imagen 4 intégrés." },
+      { icon: '📊', title: 'Supports Slides illustrés', desc: "Produisez les supports avec des visuels générés dans Slides (modèle Nano Banana Pro)." },
       { icon: '📋', title: 'Évaluations dans Forms', desc: "Construisez QCM et évaluations dans Google Forms." },
-      { icon: '🎬', title: 'Vidéos pédagogiques avec Veo 3', desc: "Générez des capsules vidéo pédagogiques courtes." },
-      { icon: '🤖', title: 'Tuteurs via NotebookLM', desc: "Construisez des tuteurs IA basés sur vos supports." },
+      { icon: '🎬', title: 'Vidéos pédagogiques avec Vids', desc: "Générez des capsules vidéo pédagogiques courtes." },
+      { icon: '🤖', title: 'Tuteurs via Gemini Notebook', desc: "Construisez des tuteurs IA basés sur vos supports." },
       { icon: '💬', title: 'Animation Meet avec transcripts', desc: "Animez les sessions Meet avec transcription automatique." },
     ],
     modules: [
-      { day: 1, title: 'Module 1 · Gemini pour la pédagogie Workspace', duration: '1h30', description: "Configurer Gemini pour les workflows pédagogiques.", items: ["Cas d'usage Gemini pédagogie", "Imagen 4 pour les visuels, Veo 3 pour les vidéos", "Configurer les références via Drive", "NotebookLM pour les tuteurs IA"], exercise: "Configurer un workflow Gemini Pédagogie." },
+      { day: 1, title: 'Module 1 · Gemini pour la pédagogie Workspace', duration: '1h30', description: "Configurer Gemini pour les workflows pédagogiques.", items: ["Cas d'usage Gemini pédagogie", "Nano Banana Pro pour les visuels, Vids pour les vidéos", "Configurer les références via Drive", "Gemini Notebook pour les tuteurs IA"], exercise: "Configurer un workflow Gemini Pédagogie." },
       { day: 1, title: 'Module 2 · Conception de programmes dans Docs', duration: '2h', description: "Concevoir des programmes structurés dans Google Docs.", items: ["Structurer un programme", "Concevoir un parcours sur 5 jours", "Décliner en supports détaillés", "Adapter selon les profils apprenants"], exercise: "Concevoir un programme de 3 jours complet." },
-      { day: 1, title: 'Module 3 · Supports Slides avec Imagen 4', duration: '2h', description: "Produire les supports avec visuels intégrés.", items: ["Générer une présentation Slides depuis un programme Docs", "Produire visuels avec Imagen 4 (illustrations, schémas)", "Construire les notes formateur", "Préparer les versions handout"], exercise: "Créer un support Slides complet (30 slides) avec visuels Imagen 4." },
+      { day: 1, title: 'Module 3 · Supports Slides illustrés', duration: '2h', description: "Produire les supports avec visuels intégrés.", items: ["Générer une présentation Slides depuis un programme Docs", "Produire des visuels avec Nano Banana Pro (illustrations, schémas)", "Construire les notes formateur", "Préparer les versions handout"], exercise: "Créer un support Slides complet (30 slides) avec des visuels générés." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque pédagogique.", items: ["Revue des livrables", "Bibliothèque partagée", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "5 prompts prioritaires." },
       { day: 2, title: 'Module 5 · Évaluations dans Forms', duration: '1h30', description: "Construire les QCM dans Google Forms.", items: ["Aligner évaluations et objectifs pédagogiques", "Concevoir des QCM pertinents avec Gemini", "Préparer corrections et feedbacks", "Diffuser via Workspace"], exercise: "Construire un QCM complet dans Forms." },
-      { day: 2, title: "Module 6 · Vidéos pédagogiques avec Veo 3", duration: '2h', description: "Générer des capsules vidéo pédagogiques.", items: ["Veo 3 : capacités et limites", "Construire des capsules de 30-60 secondes", "Adapter selon le sujet et le public", "Intégrer dans les parcours blended"], exercise: "Produire 2 capsules vidéo pédagogiques courtes avec Veo 3." },
-      { day: 2, title: "Module 7 · Tuteurs via NotebookLM", duration: '2h', description: "Construire des tuteurs IA pour les apprenants.", items: ["Charger les supports dans NotebookLM", "Configurer un tuteur IA pour répondre aux questions", "Tester sur des cas réels", "Déployer pour les apprenants"], exercise: "Construire un tuteur NotebookLM sur un de vos sujets de formation." },
+      { day: 2, title: "Module 6 · Vidéos pédagogiques avec Vids", duration: '2h', description: "Générer des capsules vidéo pédagogiques.", items: ["Vids : capacités et limites (500 secondes de vidéo générée par mois en Business Standard)", "Construire des capsules de 30-60 secondes", "Adapter selon le sujet et le public", "Intégrer dans les parcours blended"], exercise: "Produire 2 capsules vidéo pédagogiques courtes avec Vids." },
+      { day: 2, title: "Module 7 · Tuteurs via Gemini Notebook", duration: '2h', description: "Construire des tuteurs IA pour les apprenants.", items: ["Charger les supports dans Gemini Notebook", "Configurer un tuteur IA pour répondre aux questions", "Tester sur des cas réels", "Déployer pour les apprenants"], exercise: "Construire un tuteur Gemini Notebook sur un de vos sujets de formation." },
       { day: 2, title: "Module 8 · Plan d'action 30 jours pédagogique", duration: '1h30', description: "Finaliser la bibliothèque et planifier le déploiement.", items: ["Organiser la bibliothèque", "Règles de qualité pédagogique", "Quick wins activables", "Plan 30 jours"], exercise: "Bibliothèque Gemini pédagogie structurée." },
     ],
     objectives: [
       "Concevoir des programmes de formation dans Google Docs",
-      "Produire des supports Slides enrichis avec Imagen 4",
+      "Produire des supports Slides enrichis de visuels générés",
       "Construire des évaluations dans Google Forms",
-      "Générer des capsules vidéo pédagogiques avec Veo 3",
-      "Construire des tuteurs IA via NotebookLM pour les apprenants",
+      "Générer des capsules vidéo pédagogiques avec Vids",
+      "Construire des tuteurs IA via Gemini Notebook pour les apprenants",
     ],
     faq: [
       { q: "Pourquoi Gemini plutôt que Copilot pour la pédagogie ?", a: "Si votre stack est Google Workspace, Gemini est l'option naturelle." },
-      { q: "Imagen 4 est-il vraiment exploitable pour la pédagogie ?", a: "Oui, qualité comparable à GPT Image 2. Bien adapté aux illustrations pédagogiques." },
-      { q: "Veo 3 produit-il vraiment des vidéos pédagogiques ?", a: "Pour des capsules courtes (30-60 secondes), oui. Pour des vidéos longues, des outils dédiés (Synthesia, Heygen) restent plus adaptés." },
-      { q: "NotebookLM peut-il vraiment être un tuteur ?", a: "Oui, pour répondre aux questions des apprenants à partir de vos supports." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "Les images générées dans Slides sont-elles exploitables pour la pédagogie ?", a: "Oui, pour les illustrations pédagogiques. En Business Standard, Google fixe le plafond à 30 images par mois avec Nano Banana Pro, au 7 octobre 2026 ; au-delà, un modèle plus ancien prend le relais." },
+      { q: "Vids produit-il vraiment des vidéos pédagogiques ?", a: "Pour des capsules courtes, oui, dans la limite de 500 secondes de vidéo générée par mois en Business Standard au 7 octobre 2026. Pour des vidéos longues, des outils dédiés (Synthesia, Heygen) restent plus adaptés." },
+      { q: "Gemini Notebook peut-il vraiment être un tuteur ?", a: "Oui, pour répondre aux questions des apprenants à partir de vos supports." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-gemini-management', 'formation-claude-pedagogique', 'formation-chatgpt-pedagogique'],
   },

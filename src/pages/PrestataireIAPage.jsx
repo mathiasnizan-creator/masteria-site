@@ -2,44 +2,39 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Handshake, Building2, GraduationCap,
-  MapPin, Check, ListChecks, ShieldCheck, Landmark, Scale,
+  MapPin, Check, ListChecks, ShieldCheck, Landmark, Scale, FolderSearch,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page hybride guide de choix + positionnement — « prestataire IA »
- * (slug /prestataire-ia). Cible la grappe (Semrush 2026-08-10) :
- * « prestataire ia » (90/mois, KD 30, CPC 9,18 $ !), « prestataire de
- * solution ia » (40), « prestataires solutions ia sur mesure » (40),
- * « prestataires accompagnement ia personnalisées » (30), « prestataires
- * si innovations ia 12 mois » (40). SERP vérifiée le 2026-08-10 : guide
- * Rouge Hexagone en tête, annuaires (entreprise-ia, cartographie France
- * Num : 972 acteurs), pages de service (Baker Tilly), annonceurs Keyrus.
+ * Page hybride guide de choix + positionnement : « prestataire IA »
+ * (slug /prestataire-ia). Grappe Semrush du 2026-08-10 : « prestataire ia »,
+ * « prestataire de solution ia », « prestataires solutions ia sur mesure »,
+ * « prestataires accompagnement ia personnalisées ».
  *
  * RÉPARTITION D'INTENTIONS (ne pas cannibaliser) :
- *  - /meilleure-agence-ia = comparer les AGENCES (classements, critères) ;
- *  - /meilleur-cabinet-conseil-ia = choisir un CABINET DE CONSEIL ;
- *  - /prestataire-ia = CETTE page : la typologie COMPLÈTE des prestataires
- *    (agence, cabinet, ESN/intégrateur, organisme de formation, indépendant),
- *    les critères transverses et les questions à poser. Elle renvoie aux
- *    deux pages « meilleur* » pour l'approfondissement par type.
+ *  - /meilleure-agence-ia = juger une AGENCE (développement, intégration) ;
+ *  - /meilleur-cabinet-conseil-ia = choisir un CABINET (conseil, gouvernance) ;
+ *  - /prestataire-ia = CETTE page : la typologie COMPLÈTE des cinq familles,
+ *    six critères communs et sept questions. Elle renvoie aux guides par famille.
  *
- * INTÉGRITÉ : guide honnête (on cite la cartographie France Num et les
- * annuaires, on ne prétend pas être neutres : bloc « qui sommes-nous pour
- * le dire » + FounderNote), aucun classement nominatif de concurrents,
- * aucun prix inventé (renvoi /prix-projet-ia), posture capacité.
+ * Réécrite le 07/10/2026 pour le texte propre : FounderNote, CaseStudyCards et
+ * OfficialSources remplacés par des blocs écrits pour la page ; trois missions
+ * résumées avec leur ancre (faits de src/data/etudes-de-cas.js). Guide assumé
+ * comme écrit par un prestataire, renvoi à la cartographie France Num, aucun
+ * classement nominatif de concurrents, prix en fourchettes à plafond ouvert.
  */
 
 const SLUG = 'prestataire-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const DATE_PUBLISHED = '2026-08-10'
+const DATE_MODIFIED = '2026-10-07'
+const RDV_URL = '/contact?type=projet&rdv=30'
 
 const META_TITLE = "Prestataire IA : les 5 types et comment choisir | Masteria"
-const META_DESC = "Prestataire IA : agence, cabinet de conseil, intégrateur, organisme de formation ou indépendant. Les critères qui comptent, les questions à poser, les pièges."
+const META_DESC = "Prestataire IA : agence, cabinet, intégrateur, organisme de formation ou indépendant. Quelle famille choisir, six critères communs, sept questions à poser."
 const KEYWORDS = "prestataire ia, prestataire intelligence artificielle, prestataire de solution ia, prestataires solutions ia sur mesure, prestataire accompagnement ia, choisir prestataire ia"
 
 /* ───────── Styles partagés (calque cluster conseil) ───────── */
@@ -60,98 +55,122 @@ function Kicker({ children }) {
 }
 
 const HERO_BADGES = [
-  { icon: Scale, label: '5 types de prestataires comparés' },
-  { icon: ListChecks, label: 'Les questions à poser avant de signer' },
-  { icon: ShieldCheck, label: 'Guide honnête : nous sommes juge et partie' },
+  { icon: Scale, label: 'Cinq familles comparées' },
+  { icon: ListChecks, label: 'Sept questions à poser avant la signature' },
+  { icon: ShieldCheck, label: 'Écrit par un prestataire, et dit comme tel' },
   { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Définition', value: "Un prestataire IA est une structure ou un expert externe qui conçoit, déploie ou fait adopter l'intelligence artificielle dans votre organisation" },
-  { label: 'Les 5 types', value: "Agence de développement, cabinet de conseil, ESN / intégrateur, organisme de formation, indépendant" },
-  { label: 'Critères clés', value: "Cas démontrés sur votre métier, indépendance vis-à-vis des éditeurs, propriété et réversibilité, sécurité des données, capacité à former vos équipes" },
-  { label: 'Où chercher', value: "La cartographie France Num recense les acteurs français ; les annuaires spécialisés complètent" },
-  { label: 'Les pièges', value: "Le prestataire mono-outil commissionné, le rapport sans exécution, le projet qui ne forme personne, la dépendance sans réversibilité" },
-  { label: 'Masteria', value: "Prestataire aux trois casquettes : conseil, développement sur mesure et formation certifiée Qualiopi" },
+  { label: 'Définition', value: "Une entreprise ou un expert extérieur qui vous aide à décider, construire, intégrer ou faire adopter l'intelligence artificielle" },
+  { label: 'Les 5 familles', value: "Agence de développement, cabinet de conseil, ESN ou intégrateur, organisme de formation, indépendant" },
+  { label: 'Critères communs', value: "Missions comparables racontées en détail, liens avec les éditeurs déclarés, livrables à votre nom, données protégées, équipes formées, suivi après la mise en service" },
+  { label: 'Où chercher', value: "La cartographie publique de France Num pour un premier tour du marché, puis deux ou trois rendez-vous de cadrage" },
+  { label: 'Les pièges', value: "Le revendeur qui se présente en conseiller, le rapport que personne n'exécute, l'outil livré sans formation, le contrat sans clause de sortie" },
+  { label: 'Masteria', value: "Un prestataire qui réunit trois familles : conseil, outils développés pour vous, formations certifiées Qualiopi" },
 ]
 
-/* ───────── Les 5 types de prestataires (tableau citable) ───────── */
+/* ───────── Les 5 familles de prestataires (tableau citable) ───────── */
 
 const TYPES = [
   {
     type: 'Agence de développement IA',
-    livre: "Agents, outils sur mesure, intégrations, automatisations",
-    quand: "Vous savez quoi construire et cherchez qui le construit bien",
+    livre: "Assistants, agents, automatisations et intégrations construits pour vous",
+    quand: "L'outil à construire est identifié ; reste à trouver qui le fera bien",
   },
   {
     type: 'Cabinet de conseil IA',
-    livre: "Stratégie, audit, feuille de route, gouvernance",
-    quand: "La décision n'est pas prise ou l'organisation n'est pas prête",
+    livre: "Diagnostic, priorités, feuille de route, règles d'usage",
+    quand: "Vous ignorez encore quoi lancer, ou l'organisation n'est pas prête",
   },
   {
-    type: 'ESN / intégrateur SI',
-    livre: "Intégration à grande échelle, régie, tierce maintenance",
-    quand: "Grands comptes, SI complexe, trajectoire sur 12 mois et plus",
+    type: 'ESN ou intégrateur',
+    livre: "Raccordement au système d'information, régie, maintenance applicative",
+    quand: "Grand compte, système d'information complexe, chantier de plus d'un an",
   },
   {
     type: 'Organisme de formation',
-    livre: "Montée en compétence des équipes, acculturation, parcours métier",
-    quand: "Le frein est humain : les outils sont là, les usages manquent",
+    livre: "Formations par outil et par métier, acculturation des équipes",
+    quand: "Les licences sont achetées, les usages ne suivent pas",
   },
   {
-    type: 'Indépendant / freelance',
-    livre: "Expertise pointue, missions courtes et ciblées",
-    quand: "Besoin précis, budget contenu, pilotage interne solide",
+    type: 'Indépendant',
+    livre: "Une expertise pointue sur une mission courte",
+    quand: "Besoin précis, budget serré, pilotage interne solide",
   },
 ]
 
-/* ───────── Les critères de choix (6 cartes) ───────── */
+/* ───────── Six critères communs aux cinq familles ───────── */
 
 const CRITERES = [
   {
     icon: ListChecks,
-    title: 'Des cas démontrés sur votre type de besoin',
-    desc: "Pas un portfolio de logos : des cas d'usage expliqués, avec le problème de départ, ce qui a été construit et ce qui a changé. Un prestataire sérieux sait raconter trois missions comparables à la vôtre, et vous dit aussi ce qui a été difficile.",
+    title: 'Des missions comparables, racontées en détail',
+    desc: "Une page de logos ne prouve rien. Demandez trois missions proches de la vôtre, avec la situation de départ, ce qui a été livré, ce qui a changé ensuite et ce qui a résisté. Un prestataire qui parle aussi de ses difficultés vous donne une information fiable.",
   },
   {
     icon: Scale,
-    title: "L'indépendance vis-à-vis des éditeurs",
-    desc: "Demandez si le prestataire est commissionné ou partenaire exclusif d'un éditeur. Une recommandation mono-outil n'est pas forcément mauvaise, mais vous devez savoir d'où elle parle. Les besoins réels sont souvent multi-outils.",
+    title: 'Des liens avec les éditeurs déclarés',
+    desc: "Partenaire exclusif, revendeur de licences, commissionné sur les abonnements : ces statuts sont légaux, à condition d'être annoncés. Un conseil qui ne connaît qu'un outil peut convenir, à condition que vous sachiez d'où il parle.",
   },
   {
     icon: ShieldCheck,
-    title: 'La propriété et la réversibilité',
-    desc: "Qui possède le code, les prompts, les configurations et les données à la fin ? Un livrable qui ne fonctionne qu'avec son auteur n'est pas un livrable. La réversibilité s'écrit au contrat, avant de commencer.",
+    title: 'Des livrables qui vous appartiennent',
+    desc: "Code, prompts, paramétrages, abonnements souscrits auprès des fournisseurs de modèles, documentation : tout doit vous revenir et pouvoir passer à une autre équipe. La clause de réversibilité se négocie avant le premier jour de travail.",
   },
   {
     icon: Building2,
-    title: 'La sécurité et la conformité',
-    desc: "Où passent vos données, quelles offres entreprise sont utilisées, comment le RGPD et le règlement européen sur l'IA sont traités. Un prestataire qui élude ces questions vous expose à sa place.",
+    title: 'Des données traitées avec soin',
+    desc: "Par quels serveurs passent vos documents, sous quelle offre d'entreprise, combien de temps sont-ils conservés, servent-ils à entraîner un modèle ? Un prestataire qui esquive ces questions reporte le risque sur vous, RGPD et AI Act compris.",
   },
   {
     icon: GraduationCap,
-    title: 'La capacité à former vos équipes',
-    desc: "Un outil déployé sans montée en compétence meurt en trois mois. Vérifiez que le prestataire forme (et comment c'est financé) ou qu'il s'articule avec un organisme qui le fait. C'est le critère le plus oublié des appels d'offres.",
+    title: 'Des équipes formées à se servir du livrable',
+    desc: "Un outil que personne n'a appris à utiliser tombe en désuétude en quelques semaines. Vérifiez que le prestataire forme lui-même, ou qu'il s'associe à un organisme titulaire de Qualiopi : cette certification conditionne un éventuel financement de cette partie par l'OPCO. Beaucoup d'appels d'offres l'oublient.",
   },
   {
     icon: Handshake,
-    title: 'La présence après la mise en production',
-    desc: "Qui répond quand ça dérive, qui fait évoluer, qui mesure l'adoption ? Clarifiez le modèle d'engagement dans la durée : forfait, régie, accompagnement. Le projet ne s'arrête pas à la recette.",
+    title: 'Un suivi prévu après la mise en service',
+    desc: "Qui réagit quand les réponses se dégradent, qui suit l'usage, qui adapte l'outil quand le fournisseur change de modèle ? Faites écrire le format de suivi (forfait mensuel, régie, accompagnement) et son prix avant de signer.",
   },
 ]
 
-/* ───────── Les questions à poser (liste citable) ───────── */
+/* ───────── Les sept questions (liste citable) ───────── */
 
 const QUESTIONS = [
-  "Sur quels cas comparables au nôtre avez-vous travaillé, et qu'est-ce qui a été difficile ?",
-  "Êtes-vous partenaire ou commissionné par un éditeur ? Lequel ?",
-  "Qui possède le code, les prompts et les configurations à la fin de la mission ?",
-  "Comment nos données sont-elles traitées, et avec quelles offres entreprise ?",
-  "Qui forme nos équipes, et ce volet est-il finançable par notre OPCO ?",
-  "Que se passe-t-il après la mise en production : qui maintient, qui mesure, à quel coût ?",
-  "Que nous déconseillez-vous de lancer, et pourquoi ?",
+  "Quelle mission proche de la nôtre avez-vous menée, et qu'est-ce qui a résisté ?",
+  "Avez-vous un statut de partenaire, de revendeur ou une commission chez un éditeur ? Lequel ?",
+  "À la fin du contrat, que posséderons-nous : code, prompts, paramétrages, comptes ?",
+  "Par où transitent nos données, sous quelle offre, et servent-elles à entraîner les modèles ?",
+  "Qui forme nos équipes, et notre OPCO financera-t-il cette partie ?",
+  "Après la mise en service, qui surveille l'outil, qui le fait évoluer, et pour quel budget mensuel ?",
+  "Que nous déconseillez-vous de lancer, et pour quelle raison ?",
+]
+
+/* ───────── Trois missions où un même prestataire a tenu plusieurs rôles
+   (faits relus dans src/data/etudes-de-cas.js le 07/10/2026) ───────── */
+
+const CASES = [
+  {
+    anchor: 'conseil-financier',
+    tag: 'Conseil, construction, formation',
+    text: "Un cabinet de conseil financier au service du secteur public a d'abord fait cadrer ses pratiques de rédaction, puis construire quatre assistants pour ses mémoires techniques, avant une journée de formation pour tous ses consultants, sur ses sites de Paris et de Lyon.",
+    link: 'Les trois temps de la mission',
+  },
+  {
+    anchor: 'industrie',
+    tag: 'Formation, puis décisions',
+    text: "Pour un groupe industriel aux sites répartis entre l'Europe, les États-Unis et l'Inde, le même prestataire a formé 24 managers pilotes, puis réuni le comité de direction pour une matinée de décisions. Les prochaines sessions auront lieu en octobre 2026 aux États-Unis et au Mexique, en décembre en Inde.",
+    link: 'Le déploiement par paliers',
+  },
+  {
+    anchor: 'photovoltaique',
+    tag: 'Diagnostic, puis outillage',
+    text: "Une PME de distribution photovoltaïque a commencé par un diagnostic présenté en septembre 2026. Les assistants à construire et les deux journées de formation dans ses locaux, prévues en octobre, en découlent, avec une première mesure des gains un mois plus tard.",
+    link: 'Du diagnostic au plan à 90 jours',
+  },
 ]
 
 /* ───────── FAQ ───────── */
@@ -159,39 +178,39 @@ const QUESTIONS = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'un prestataire IA ?",
-    a: "C'est une structure ou un expert externe qui apporte à votre organisation des compétences en intelligence artificielle : cadrage stratégique, conception et développement de solutions, intégration au système d'information, formation des équipes ou gouvernance. Le terme recouvre cinq familles aux métiers différents : les agences de développement, les cabinets de conseil, les ESN et intégrateurs, les organismes de formation et les indépendants. Le bon choix dépend de votre besoin réel : construire, décider, intégrer à l'échelle, former, ou une expertise ponctuelle.",
+    a: "C'est une entreprise ou un expert extérieur à qui vous confiez une partie de votre projet d'intelligence artificielle : décider des priorités, concevoir et développer des outils, les brancher sur votre système d'information, former les équipes ou poser les règles d'usage. Le mot recouvre cinq familles aux métiers distincts : les agences de développement, les cabinets de conseil, les ESN et intégrateurs, les organismes de formation et les indépendants. Le bon choix dépend de ce qui bloque chez vous.",
   },
   {
-    q: "Quel type de prestataire IA choisir ?",
-    a: "Partez du frein réel. Si la décision n'est pas prise (quoi faire, dans quel ordre, avec quel budget), un cabinet de conseil ou un diagnostic court. Si vous savez quoi construire, une agence de développement. Si l'enjeu est l'intégration à un SI complexe sur douze mois ou plus, une ESN ou un intégrateur. Si les outils sont là et que les usages manquent, un organisme de formation. Si le besoin est pointu et cadré, un indépendant. Beaucoup de projets combinent plusieurs types ; certains prestataires, dont Masteria, couvrent plusieurs casquettes sous un même toit, ce qui évite les frictions entre intervenants.",
+    q: 'Quel type de prestataire IA choisir ?',
+    a: "Partez de ce qui bloque. Vous ne savez pas quoi lancer, dans quel ordre ni avec quel budget : faites appel à un cabinet de conseil ; un diagnostic court peut suffire. Vous savez quoi construire : une agence de développement. Il faut raccorder l'outil à un système d'information complexe pendant plus d'un an : une ESN ou un intégrateur. Les licences sont là mais personne ne s'en sert : un organisme de formation. Le besoin est pointu et bien délimité : un indépendant. Beaucoup de projets combinent deux familles ou plus ; certains prestataires, comme Masteria, en réunissent plusieurs, ce qui évite les passages de relais entre intervenants.",
   },
   {
-    q: "Où trouver des prestataires IA en France ?",
-    a: "La cartographie de France Num, portée par le ministère de l'Économie, recense plusieurs centaines d'acteurs français de l'IA et permet de filtrer par besoin : c'est le point de départ le plus neutre. Les annuaires spécialisés privés complètent, avec la prudence d'usage sur les classements sponsorisés. Ensuite, rien ne remplace deux ou trois échanges de cadrage : la plupart des prestataires sérieux, nous compris, offrent ce premier échange, et la façon dont ils le mènent vous en dit plus qu'un annuaire.",
+    q: 'Où trouver des prestataires IA en France ?',
+    a: "La cartographie publiée par France Num, le programme du ministère de l'Économie pour le numérique des petites entreprises, recense plusieurs centaines d'acteurs français de l'IA et se filtre par besoin : aucune source n'est plus neutre pour commencer. Les annuaires privés complètent, avec prudence sur les classements payés. Ensuite, rien ne vaut deux ou trois rendez-vous de cadrage : la manière dont un prestataire mène ce premier échange en dit plus long que sa fiche.",
   },
   {
-    q: "Combien coûte un prestataire IA ?",
-    a: "Tout dépend du type de prestation : une mission de conseil cadrée, un développement sur mesure, une intégration à l'échelle et un parcours de formation ne se chiffrent pas pareil. Méfiez-vous des fourchettes publiées sans méthode ni périmètre : elles viennent de sites qui vendent la prestation. Pour vous repérer, nous publions nos ordres de grandeur par type de projet sur la page prix d'un projet IA. Un devis sérieux découle toujours d'un périmètre écrit, jamais l'inverse.",
+    q: 'Combien coûte un prestataire IA ?',
+    a: "Le prix dépend de la famille et du périmètre. Conseil et développement se chiffrent en général au forfait, sur devis après cadrage. Une maquette ou un périmètre réduit reste dans les milliers d'euros ; un outil utilisé en production, en dizaines de milliers ; un déploiement dans tout un groupe dépasse 100 000 € et atteint parfois plusieurs centaines de milliers. Chez Masteria, former une équipe revient à 1 980 € HT par jour. Les postes de coût sont décomposés sur notre page consacrée au prix d'un projet IA ; un devis sérieux découle toujours d'un périmètre écrit.",
   },
   {
-    q: "Quelles questions poser avant de signer avec un prestataire IA ?",
-    a: "Sept questions font le tri : les cas comparables déjà traités (avec les difficultés rencontrées), les liens avec les éditeurs (partenariats, commissions), la propriété du code et des configurations à la fin, le traitement de vos données et la conformité, la formation de vos équipes et son financement, le modèle d'engagement après la mise en production, et ce qu'il vous déconseille de lancer. Cette dernière question est la plus révélatrice : un prestataire qui recommande tout vend un devis, pas un conseil.",
+    q: 'Quelles questions poser avant de signer avec un prestataire IA ?',
+    a: "Sept questions font le tri : une mission comparable et ce qui a résisté, les liens avec les éditeurs, ce que vous posséderez à la fin du contrat, le trajet de vos données, la formation des équipes et son financement, le suivi après la mise en service et son budget, et ce que le prestataire vous déconseille de lancer. Demandez les réponses par écrit pour pouvoir les comparer.",
   },
   {
-    q: "Prestataire de solutions IA sur mesure : que vérifier de plus ?",
-    a: "Trois points spécifiques au sur-mesure. La réversibilité d'abord : le code, les prompts et l'architecture doivent vous appartenir et être documentés pour qu'une autre équipe puisse reprendre. La maintenance ensuite : les modèles évoluent tous les trimestres, un outil sur mesure sans plan de maintenance se dégrade vite. L'intégration enfin : la valeur d'une solution sur mesure vient de sa connexion à vos systèmes réels (CRM, ERP, documents), vérifiez que le prestataire l'a déjà fait sur des environnements comparables au vôtre.",
+    q: 'Prestataire de solutions IA sur mesure : que vérifier en plus ?',
+    a: "Trois points propres au sur-mesure. D'abord la réversibilité : code, prompts et architecture doivent être à vous et documentés, pour qu'une autre équipe puisse reprendre l'outil. La maintenance : les fournisseurs remplacent leurs modèles plusieurs fois par an, et un outil sans plan de suivi se dégrade. Le raccordement : la valeur d'un outil sur mesure tient à sa connexion à vos logiciels (CRM, ERP, gestion documentaire) ; vérifiez que le prestataire l'a déjà fait dans un environnement proche du vôtre.",
   },
   {
-    q: "Qu'est-ce qu'un accompagnement IA personnalisé par un prestataire ?",
-    a: "C'est une présence dans la durée plutôt qu'une mission ponctuelle : le prestataire cadre vos usages, déploie les outils, conduit le changement auprès des équipes et mesure l'adoption, à un rythme adapté à votre organisation. C'est le format le plus adapté quand le frein est autant humain que technique. Chez Masteria, ce format est décrit sur la page accompagnement IA, avec ses quatre phases et ce qui est finançable dedans.",
+    q: "Qu'apporte un accompagnement IA personnalisé ?",
+    a: "Une présence régulière plutôt qu'une intervention isolée : le prestataire cadre les usages, met les outils en service, aide les équipes à changer leurs habitudes et mesure ce qui sert au quotidien, au rythme de votre organisation. C'est le format adapté quand les freins sont autant humains que techniques. Chez Masteria, il est décrit sur la page consacrée à l'accompagnement IA, avec ce que l'OPCO peut financer et ce qu'il ne finance pas.",
   },
   {
-    q: "Prestataire IA, éditeur ou fournisseur de modèles : quelle différence ?",
-    a: "Trois étages qu'il vaut mieux ne pas confondre en rédigeant un appel d'offres. Les fournisseurs de modèles (OpenAI, Anthropic, Google, Mistral) entraînent et exposent les modèles d'IA : vous ne les mandatez pas pour un projet, vous consommez leurs services. Les éditeurs intègrent ces modèles dans des logiciels prêts à l'emploi (Microsoft avec Copilot, les éditeurs métier). Le prestataire IA, lui, est la structure de services qui travaille pour vous : il choisit, assemble, développe, intègre et forme, en s'appuyant sur les deux étages précédents. Cette page traite du troisième étage ; pour choisir l'outil, voyez notre comparateur d'outils IA.",
+    q: 'Prestataire IA, éditeur de logiciel, fournisseur de modèles : qui fait quoi ?',
+    a: "Trois étages à distinguer avant de rédiger un cahier des charges. Les fournisseurs de modèles (OpenAI, Anthropic, Google, Mistral) entraînent les modèles et les vendent sous forme d'abonnements ou d'accès à la consommation. Les éditeurs intègrent ces modèles dans des logiciels prêts à l'emploi, comme Microsoft avec Copilot ou les éditeurs de logiciels métier. Le prestataire IA travaille pour vous : il choisit, assemble, développe, raccorde et forme en s'appuyant sur les deux autres étages. Pour départager les assistants eux-mêmes, voyez notre comparatif.",
   },
   {
-    q: "Pourquoi lire un guide du choix de prestataire écrit par un prestataire ?",
-    a: "Bonne question, et la réponse honnête est : en le sachant. Masteria est prestataire IA (conseil, développement, formation), ce guide n'est donc pas neutre. Nous l'assumons avec deux garde-fous : les critères et les questions listés ici se posent à tout prestataire, nous compris, et nous vous renvoyons vers la cartographie publique France Num pour comparer. Si nos réponses à ces questions vous conviennent, le premier échange de cadrage est gratuit ; sinon, le guide reste utilisable avec n'importe qui d'autre.",
+    q: 'Pourquoi lire un guide de choix écrit par un prestataire ?',
+    a: "En le sachant. Masteria vend du conseil, du développement et de la formation en IA : ce guide n'est donc pas neutre, et nous préférons le dire. Deux garde-fous : les critères et les questions proposés valent pour tout prestataire, nous compris, et nous renvoyons vers la cartographie publique de France Num pour élargir la comparaison. Si nos réponses vous conviennent, 30 minutes de cadrage vous sont offertes ; sinon, le guide reste utilisable avec un autre interlocuteur.",
   },
 ]
 
@@ -200,9 +219,9 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Masteria — Prestataire IA',
+  name: 'Masteria, prestataire IA',
   alternateName: "Prestataire en intelligence artificielle",
-  description: "Prestataire IA aux trois casquettes : cabinet de conseil (diagnostic, audit, stratégie, gouvernance), agence de développement de solutions IA sur mesure (agents, outils, intégrations) et organisme de formation certifié Qualiopi (acculturation, parcours par métier). Indépendant des éditeurs, présent en Europe, aux États-Unis et en Inde.",
+  description: "Prestataire IA qui réunit trois familles : cabinet de conseil (diagnostic, audit, stratégie, règles d'usage), agence de développement d'outils IA sur mesure (agents, assistants, intégrations) et organisme de formation détenteur de Qualiopi. Sans lien commercial avec les éditeurs, actif sur quatre zones : France, Europe, États-Unis, Inde.",
   url: 'https://www.master-ia.fr/prestataire-ia',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/prestataire-ia#webpage' },
   serviceType: 'Prestations en intelligence artificielle',
@@ -210,27 +229,26 @@ const serviceJsonLd = {
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   areaServed: [
     { '@type': 'Country', name: 'France' },
-    { '@type': 'Country', name: 'Suisse' },
-    { '@type': 'Country', name: 'Belgique' },
+    { '@type': 'Place', name: 'Europe' },
     { '@type': 'Country', name: 'États-Unis' },
     { '@type': 'Country', name: 'Inde' },
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Prestations IA',
+    name: 'Prestations IA de Masteria',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Conseil et cadrage', description: "Diagnostic, audit, stratégie et gouvernance de l'IA." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Solutions IA sur mesure', description: "Agents, outils métier, intégrations et automatisations, avec propriété et réversibilité contractuelles." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Formation et accompagnement personnalisé', description: "Acculturation, parcours par métier et accompagnement dans la durée, volet formation certifié Qualiopi finançable OPCO." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Conseil et cadrage', description: "Diagnostic, audit, priorités, feuille de route, charte d'utilisation." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Outils IA sur mesure', description: "Agents, assistants métier, raccordements et automatisations, avec code et prompts remis au client par contrat." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Formation et accompagnement', description: "Acculturation, formations par métier et suivi dans la durée ; la formation détient la certification Qualiopi." } },
     ],
   },
 }
 
-/* Les questions à poser en ItemList (liste citable — GEO). */
+/* Les questions à poser en ItemList (liste citable, GEO). */
 const questionsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Les 7 questions à poser à un prestataire IA avant de signer',
+  name: 'Sept questions à poser à un prestataire IA avant de signer',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: QUESTIONS.map((q, i) => ({
     '@type': 'ListItem',
@@ -244,22 +262,22 @@ const definitionsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': 'https://www.master-ia.fr/prestataire-ia#termes',
-  name: 'Prestataires IA : la typologie',
+  name: 'Les prestataires IA et leur vocabulaire',
   hasDefinedTerm: [
     {
       '@type': 'DefinedTerm',
       name: 'Prestataire IA',
-      description: "Structure ou expert externe qui apporte des compétences en intelligence artificielle à une organisation : conseil, développement, intégration, formation ou gouvernance.",
+      description: "Entreprise ou expert extérieur qui aide une organisation à décider, construire, intégrer ou faire adopter l'intelligence artificielle.",
     },
     {
       '@type': 'DefinedTerm',
-      name: 'ESN / intégrateur IA',
-      description: "Entreprise de services du numérique qui intègre l'IA à un système d'information existant, souvent en régie et à l'échelle de grands comptes, sur des trajectoires de douze mois et plus.",
+      name: 'ESN ou intégrateur IA',
+      description: "Entreprise de services du numérique qui raccorde l'IA à un système d'information existant, souvent en régie, pour de grands comptes et sur des chantiers de plus d'un an.",
     },
     {
       '@type': 'DefinedTerm',
       name: 'Réversibilité',
-      description: "Capacité contractuelle et technique à reprendre ou transférer une solution IA (code, prompts, configurations, documentation) sans dépendre du prestataire qui l'a construite.",
+      description: "Possibilité, prévue au contrat et dans la technique, de reprendre ou de confier à une autre équipe un outil IA (code, prompts, paramétrages, documentation) sans dépendre de son auteur.",
     },
   ],
 }
@@ -269,17 +287,17 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/prestataire-ia#article',
-  headline: 'Prestataire IA : les 5 types, les critères qui comptent et les questions à poser',
+  headline: 'Prestataire IA : cinq familles, six critères communs et sept questions à poser',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
-  datePublished: '2026-08-10',
-  dateModified: '2026-08-10',
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/prestataire-ia#webpage' },
   about: [
-    { '@type': 'Thing', name: 'Prestataire IA', description: "Structure externe apportant des compétences en intelligence artificielle" },
+    { '@type': 'Thing', name: 'Prestataire IA', description: "Entreprise ou expert extérieur qui apporte des compétences en intelligence artificielle" },
     { '@type': 'Thing', name: 'Intelligence artificielle', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle' },
     { '@type': 'Thing', name: 'Entreprise de services du numérique', sameAs: 'https://fr.wikipedia.org/wiki/Entreprise_de_services_du_num%C3%A9rique' },
   ],
@@ -310,11 +328,16 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
-   affichées dans le bloc « Sources et références officielles ». */
-const PAGE_CITATIONS = [
-          { name: "Cartographie des solutions IA françaises — France Num (ministère de l'Économie)", url: 'https://www.francenum.gouv.fr/intelligence-artificielle' },
-        ]
+/* Sources de la page : émises en WebPage.citation (JSON-LD) et affichées avec
+   une note écrite pour la page, à la place du bloc commun OfficialSources. */
+const SOURCES = [
+  { name: 'La cartographie des solutions IA françaises, par France Num', note: "le recensement public des acteurs, à filtrer selon votre besoin avant de prendre rendez-vous.", url: 'https://www.francenum.gouv.fr/intelligence-artificielle' },
+  { name: "L'AI Act (règlement 2024/1689) sur EUR-Lex", note: "le texte à garder en tête quand un prestataire décrit le traitement de vos données et la transparence de ses outils.", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { name: 'Les recommandations IA de la CNIL', note: "les points de vigilance quand un prestataire fait passer des données personnelles par un modèle.", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: 'Qualiopi, présenté par le ministère du Travail', note: "la certification à exiger d'un prestataire qui forme vos équipes, si vous comptez sur l'OPCO.", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { name: 'Les OPCO, page officielle du ministère du Travail', note: "comment votre OPCO décide de financer, ou non, une formation commandée à un prestataire.", url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+]
+const PAGE_CITATIONS = SOURCES.map(s => ({ name: s.name, url: s.url }))
 
 export default function PrestataireIAPage() {
   const isDesktop = useIsDesktop()
@@ -340,10 +363,11 @@ export default function PrestataireIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        datePublished="2026-08-10"
-        dateModified="2026-08-10"
+        datePublished={DATE_PUBLISHED}
+        dateModified={DATE_MODIFIED}
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
+        author
         extraJsonLd={[serviceJsonLd, questionsJsonLd, definitionsJsonLd, articleJsonLd]}
       />
 
@@ -367,36 +391,36 @@ export default function PrestataireIAPage() {
               <Handshake size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Guide de choix · Prestataire IA
+              Guide · cinq familles de prestataires
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
-            Prestataire IA :
+            Prestataire IA&nbsp;:
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>les 5 types, et comment choisir le vôtre</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>les 5 types, et comment trouver le vôtre</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Guide écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · révisé le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un prestataire IA est une structure externe qui conçoit, déploie ou fait adopter l'intelligence artificielle chez vous. Le terme recouvre <strong style={{ color: '#fff', fontWeight: 700 }}>cinq familles aux métiers différents</strong> : agence de développement, cabinet de conseil, ESN / intégrateur, organisme de formation et indépendant. Ce guide donne les critères transverses, les questions à poser et les pièges, avant de dire où nous nous situons.
+            Un prestataire IA est une entreprise ou un expert extérieur à qui vous confiez une partie de votre projet d'intelligence artificielle : le décider, le construire, le brancher sur vos logiciels ou former les équipes. Le mot recouvre <strong style={{ color: '#fff', fontWeight: 700 }}>cinq familles aux métiers distincts</strong> : l'agence de développement, le cabinet de conseil, l'ESN ou intégrateur, l'organisme de formation et l'indépendant. Ce guide aide à choisir la bonne famille, puis à juger un prestataire précis.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Transparence d'abord : Masteria est prestataire en intelligence artificielle, ce guide n'est donc pas neutre et vous le lirez en le sachant. Les critères qui suivent se posent à tout le monde, nous compris, et la cartographie publique France Num vous permet de comparer largement. Un guide honnête vaut mieux qu'une fausse neutralité.
+            Masteria est lui-même prestataire IA : ce guide est écrit par une partie intéressée, et nous préférons le dire d'entrée. Les critères et les questions qui suivent s'appliquent à tous, nous compris, et la cartographie publique de France Num vous permet d'élargir la comparaison bien au-delà de ce que nous écrivons.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <a href="#types" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Comparer les 5 types
+              Comparer les cinq familles
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </a>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Parler de votre besoin
+            <Link to={RDV_URL} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+              Réserver 30 minutes de cadrage
             </Link>
           </div>
 
@@ -412,7 +436,7 @@ export default function PrestataireIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
             <dl style={{ margin: 0 }}>
@@ -427,7 +451,7 @@ export default function PrestataireIAPage() {
         </div>
       </section>
 
-      {/* ── LES 5 TYPES (tableau citable) ── */}
+      {/* ── LES 5 FAMILLES (tableau citable) ── */}
       <section id="types" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>La typologie</Kicker>
@@ -436,16 +460,16 @@ export default function PrestataireIAPage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>Cinq familles de prestataires IA coexistent : l'agence de développement (elle construit), le cabinet de conseil (il éclaire la décision), l'ESN ou intégrateur (il déploie à l'échelle du SI), l'organisme de formation (il fait monter les équipes) et l'indépendant (expertise ciblée). Le bon choix part de votre frein réel, pas du prestataire le plus visible.</strong>
+            <strong>Cinq familles de prestataires IA se partagent le marché : l'agence construit, le cabinet aide à décider, l'ESN intègre à grande échelle, l'organisme de formation fait progresser les équipes et l'indépendant apporte une expertise ciblée. Partez de ce qui bloque chez vous, plutôt que du nom le plus visible.</strong>
           </p>
 
           <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto' }}>
-            <table aria-label="Typologie des prestataires IA : ce qu'ils livrent et quand les choisir" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
+            <table aria-label="Les cinq familles de prestataires IA : ce que chacune livre et dans quelle situation la choisir" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
               <thead>
                 <tr>
-                  <th scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4, width: '26%' }}>Type de prestataire</th>
-                  <th scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4, width: '37%' }}>Ce qu'il livre</th>
-                  <th scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4, width: '37%' }}>Quand le choisir</th>
+                  <th scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4, width: '26%' }}>Famille</th>
+                  <th scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4, width: '37%' }}>Ce qu'elle livre</th>
+                  <th scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4, width: '37%' }}>Votre situation</th>
                 </tr>
               </thead>
               <tbody>
@@ -460,25 +484,25 @@ export default function PrestataireIAPage() {
             </table>
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, marginTop: 20, maxWidth: 880 }}>
-            Pour approfondir par type : notre guide du choix d'une <Link to="/meilleure-agence-ia" style={aStyle}>agence IA</Link> et celui du <Link to="/meilleur-cabinet-conseil-ia" style={aStyle}>meilleur cabinet IA</Link> détaillent les critères propres à chaque famille. Pour explorer largement le marché français, la <a href="https://www.francenum.gouv.fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={aStyle}>cartographie France Num</a> recense les acteurs référencés.
+            Trois familles ont leur guide détaillé : celui de la <Link to="/meilleure-agence-ia" style={aStyle}>meilleure agence IA</Link>, celui du <Link to="/meilleur-cabinet-conseil-ia" style={aStyle}>meilleur cabinet IA</Link> et celui de la <Link to="/meilleure-formation-ia" style={aStyle}>meilleure formation IA</Link>. Pour un premier tour d'horizon des acteurs français, la <a href="https://www.francenum.gouv.fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={aStyle}>cartographie de France Num</a> recense les entreprises référencées ; Masteria fait partie des Activateurs France Num.
           </p>
         </div>
       </section>
 
-      {/* ── LES CRITÈRES (ancre sombre — pivot) ── */}
+      {/* ── LES CRITÈRES (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Les critères</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Six critères communs</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Comment choisir un prestataire IA ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Six critères transverses font le tri, quel que soit le type de prestataire : des cas démontrés sur votre type de besoin, l'indépendance vis-à-vis des éditeurs, la propriété et la réversibilité des livrables, la sécurité des données, la capacité à former vos équipes et la présence après la mise en production. Un prestataire sérieux répond aux six sans se dérober.</strong>
+            <strong style={{ color: '#fff' }}>Quelle que soit la famille, six critères font le tri : des missions comparables racontées en détail, des liens avec les éditeurs déclarés, des livrables qui vous appartiennent, des données traitées avec soin, des équipes formées et un suivi prévu après la mise en service. Un prestataire sérieux accepte d'être jugé sur les six.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
@@ -507,7 +531,7 @@ export default function PrestataireIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Posez ces sept questions à chaque prestataire consulté, nous compris. Les réponses vous en diront plus que n'importe quelle plaquette, et la septième (« que nous déconseillez-vous ? ») est la plus révélatrice : un prestataire qui recommande tout vend un devis, pas un conseil.</strong>
+            <strong>Posez ces sept questions à chaque prestataire rencontré, Masteria compris, et demandez les réponses par écrit. La septième est la plus parlante : un prestataire qui ne déconseille jamais rien cherche surtout à remplir son carnet de commandes.</strong>
           </p>
 
           <ol style={{ margin: 0, padding: 0, listStyle: 'none', counterReset: 'q' }}>
@@ -531,17 +555,17 @@ export default function PrestataireIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Où nous nous situons</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Masteria : un prestataire aux trois casquettes
+                Masteria réunit trois familles sous un même toit
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Dans la typologie ci-dessus, Masteria cumule trois familles : cabinet de conseil (<Link to="/diagnostic-ia" style={aStyle}>diagnostic</Link>, <Link to="/audit-ia" style={aStyle}>audit</Link>, <Link to="/conseil-strategie-ia" style={aStyle}>stratégie</Link>), agence de développement de <Link to="/outils-ia-sur-mesure" style={aStyle}>solutions IA sur mesure</Link> (agents, outils, intégrations, avec propriété et réversibilité au contrat) et organisme de formation certifié Qualiopi (<Link to="/acculturation-ia" style={aStyle}>acculturation</Link>, parcours par métier, finançables OPCO). L'<Link to="/accompagnement-ia" style={aStyle}>accompagnement personnalisé</Link> relie les trois dans la durée. Nous répondons aux sept questions de ce guide au premier rendez-vous, cadrage gratuit compris.
+                Dans cette typologie, Masteria appartient à trois familles. Comme cabinet de conseil, nous menons des <Link to="/diagnostic-ia" style={aStyle}>diagnostics</Link>, des <Link to="/audit-ia" style={aStyle}>audits</Link> et des missions de <Link to="/conseil-strategie-ia" style={aStyle}>stratégie</Link>. Comme agence, nous développons des <Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link> dont le code et les prompts vous reviennent par contrat. Comme organisme certifié Qualiopi au titre des actions de formation, nous formons les équipes, de l'<Link to="/acculturation-ia" style={aStyle}>acculturation</Link> aux parcours par métier. L'<Link to="/accompagnement-ia" style={aStyle}>accompagnement dans la durée</Link> relie les trois. Nous répondons aux sept questions de ce guide dès le premier rendez-vous.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Indépendants des éditeurs, multi-outils',
-                  'Propriété et réversibilité contractuelles',
-                  'Formation certifiée Qualiopi, finançable OPCO',
-                  'Un interlocuteur du cadrage à l\'adoption',
+                  'Aucun lien commercial avec les éditeurs',
+                  'Code et prompts à votre nom, écrits au contrat',
+                  "Formation certifiée, que l'OPCO peut prendre en charge",
+                  "Un seul interlocuteur, du cadrage à l'usage",
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -554,27 +578,46 @@ export default function PrestataireIAPage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['conseil-financier', 'photovoltaique', 'industrie']}
-        title="Trois missions qui montrent ce qu'un prestataire IA doit livrer"
-        intro="Cadrage, conception sur les fichiers de l'entreprise, formation par métier, mesure : trois cas documentés avec leurs résultats pour les équipes et l'organisation."
-      />
+      {/* ── TROIS MISSIONS, PLUSIEURS RÔLES (remplace les cartes communes) ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 6 }}>
+            <FolderSearch size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+            <Kicker>Sur dossier</Kicker>
+          </div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Trois missions où un même prestataire a tenu plusieurs rôles</h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 32px', maxWidth: 760 }}>
+            Les clients ont demandé l'anonymat. Vous trouverez chaque mission en entier, avec ses chiffres, dans nos études de cas.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {CASES.map(k => (
+              <div key={k.anchor} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ ...kickerStyle, fontSize: 12, marginBottom: 12 }}>{k.tag}</div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{k.text}</p>
+                <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {k.link}
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Prestataire IA : les questions fréquentes
+                Prestataire IA : neuf questions avant de choisir
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre consultation de prestataires soulève une autre question ?
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Écrivez-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -588,23 +631,23 @@ export default function PrestataireIAPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Six pages pour préparer votre consultation
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Approfondir le choix par type de prestataire, cadrer votre budget et jauger votre point de départ.
+            Comparer une famille de plus près, estimer un budget, clarifier vos priorités avant le premier rendez-vous.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Meilleure agence IA', href: '/meilleure-agence-ia', tag: 'Guide', desc: "Choisir une agence : les critères, les signaux d'alerte et les questions propres au développement." },
-              { label: 'Meilleur cabinet de conseil IA', href: '/meilleur-cabinet-conseil-ia', tag: 'Guide', desc: "Choisir un cabinet : les trois compétences à exiger et les pièges des missions de conseil." },
-              { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les ordres de grandeur par type de projet, pour lire un devis en connaissance de cause." },
-              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "L'accompagnement personnalisé : cadrage, déploiement, conduite du changement, adoption." },
-              { label: 'Solutions IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Ce que recouvre le développement sur mesure : copilotes, agents, RAG, automatisations." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un format court pour cadrer vos usages avant de consulter des prestataires : le brief s'écrit tout seul." },
+              { label: 'Meilleure agence IA', href: '/meilleure-agence-ia', tag: 'Guide', desc: "Six questions pour juger une agence qui développe et branche l'IA sur vos logiciels." },
+              { label: 'Meilleur cabinet IA', href: '/meilleur-cabinet-conseil-ia', tag: 'Guide', desc: 'Six critères, chacun avec un test, pour départager des cabinets de conseil.' },
+              { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les postes de coût d'un projet, pour lire une proposition ligne par ligne." },
+              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "Un prestataire présent après le lancement : suivi des usages, réglages, formation des nouveaux arrivants." },
+              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: 'Assistants, agents et automatisations bâtis à partir de vos documents, branchés sur vos logiciels.' },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Point de départ', desc: "Une intervention courte pour fixer vos priorités avant de consulter des prestataires." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -620,7 +663,7 @@ export default function PrestataireIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Ouvrir la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -630,26 +673,25 @@ export default function PrestataireIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui écrit ce guide (remplace FounderNote et le bloc commun) ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui intervient</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui écrit ce guide</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Un cabinet spécialisé IA, indépendant des éditeurs
+                Un prestataire qui se soumet à sa propre grille
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                Ce guide est signé par <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria (Lyon, 2022), qui suit lui-même chaque dossier. Il en compose l'équipe avec des consultants, des développeurs et des formateurs indépendants. Masteria compte parmi les Activateurs France Num, et le cabinet a été cité par Les Échos, comme le montre notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> décrivent les missions dans le détail.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Indépendant', 'des éditeurs de solutions'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['3 en 1', 'conseil, développement, formation'],
+                ['≈ 35', 'consultants, développeurs et formateurs indépendants'],
+                ['Qualiopi', 'la certification de nos formations'],
+                ['2022', 'Lyon · Europe · États-Unis · Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -661,8 +703,6 @@ export default function PrestataireIAPage() {
         </div>
       </section>
 
-      <FounderNote />
-
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
@@ -672,23 +712,44 @@ export default function PrestataireIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Et maintenant</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Posez-nous les 7 questions
+              Soumettez-nous les sept questions
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre besoin, nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit. Vous repartez avec nos réponses aux sept questions de ce guide, une lecture de votre besoin et, si un autre type de prestataire vous correspond mieux, nous vous le dirons.
+              Décrivez votre besoin en quelques lignes. En 30 minutes de cadrage offertes, nous répondons aux sept questions de ce guide, nous vous disons quelle famille de prestataire vous convient et, quand une autre que la nôtre serait plus adaptée, vers qui vous tourner.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Parler de votre besoin
+            <Link to={RDV_URL} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Conseil, développement et formation · Lyon, Europe, États-Unis, Inde
+              Échange en visio · un créneau proposé sous 24 heures · conseil, développement et formation sous un même toit
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES (rédigées pour la page, à la place du bloc commun) ── */}
+      <section aria-labelledby="sources-prestataire-ia" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-prestataire-ia" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Les références utiles pour consulter des prestataires
+          </h2>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.6, margin: '0 0 20px' }}>
+            Des sources publiques, à ouvrir pendant la rédaction de votre cahier des charges ou la lecture des propositions reçues.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
+            {SOURCES.map(s => (
+              <li key={s.url} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 15, lineHeight: 1.6 }}>
+                <ShieldCheck size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                <span>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.name}</a>
+                  <span style={{ color: '#6B7280' }}> : {s.note}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

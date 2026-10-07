@@ -6,8 +6,6 @@ import {
   Target, Users, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -23,25 +21,36 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  *    superviser des agents (formation, 2 jours) ;
  *  - /agents-ia-entreprise = le guide côté solutions + faire construire
  *    (ses H2 : « Qu'est-ce qu'un agent IA ? », « cas d'usage », « quels
- *    outils pour déployer » — ne PAS reprendre ces formulations) ;
- *  - /formation-automatisation-ia = les scénarios no-code (Make/Zapier/n8n) ;
+ *    outils pour déployer » : ne PAS reprendre ces formulations) ;
+ *  - /formation-automatisation-ia = les workflows no-code (Make/Zapier/n8n) ;
  *  - /formation-vibe-coding = construire un OUTIL en pilotant l'IA ;
  *  - /formation-claude-code = les agents dans le code, pour les devs.
  *
- * INTÉGRITÉ : faits produit vérifiés août 2026 (agents d'espace de travail
- * ChatGPT, Agent Builder/Copilot Studio, Projets/Skills Claude, Gems/
- * NotebookLM/Workspace Studio selon édition, Vibe pour Mistral). Preuve :
- * uniquement les chiffres publiés sur /etudes-de-cas-ia (11 compétences Claude,
- * distributeur IT B2B). Tarif : 1 980 € HT/jour groupe, jamais de promesse
- * OPCO, pas de CPF. Entités Wikipédia vérifiées (curl 200) le 2026-08-28.
+ * RÉÉCRITURE DU 2026-10-07 (texte propre, faits à jour, source :
+ * scratchpad FAITS-OUTILS-2026-10-07.md et src/data/claude-facts.js) :
+ * - ChatGPT : agents d'espace de travail GA le 21/05/2026 (Business,
+ *   Enterprise, Edu), exécutions en crédits depuis le 06/07/2026 ; GPTs
+ *   retirés le 11/12/2026 (11/02/2027 Enterprise avec délai), migration
+ *   vers des plugins (help.openai.com 20001519, vérifié le 07/10).
+ * - Microsoft Copilot (ex-Microsoft 365 Copilot) : Agent Builder, Copilot
+ *   Studio (licence à part), Copilot Cowork GA (accord avant action sensible).
+ * - Gemini : compétences à la place des Gems (Workspace dès le 05/10/2026,
+ *   fin d'usage des Gems au plus tôt le 01/03/2027 pour les comptes pro) ;
+ *   Workspace Studio. Vibe : Skills à la place des agents le 22/09/2026,
+ *   données hébergées dans l'UE par défaut, entraînement actif par défaut
+ *   sur Team (l'administrateur le coupe).
+ * - AI Act : art. 4 depuis le 02/02/2025, art. 50 depuis le 02/08/2026,
+ *   haut risque annexe III au 02/12/2027.
+ * - Preuves : cas distribution et industrie de src/data/etudes-de-cas.js.
+ * - FounderNote, OfficialSources et bloc « Qui vous forme » remplacés.
  */
 
 const SLUG = 'formation-agents-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Formation agent IA : construire des agents fiables | Masteria'
-const META_DESC = "Formation agents IA : concevoir, tester et superviser des agents fiables sur vos outils (Claude, ChatGPT, Copilot, Gemini, n8n). Qualiopi, OPCO."
+const META_TITLE = 'Formation agent IA : bâtir des agents fiables | Masteria'
+const META_DESC = "Formation agents IA en 2 jours : construire, éprouver et surveiller des agents sans code dans Claude, ChatGPT, Copilot, Gemini ou n8n. Qualiopi, OPCO."
 const KEYWORDS = "formation agent ia, formation agents ia, formation ia agentique, créer un agent ia, construire un agent ia sans coder, agent ia entreprise"
 
 /* ───────── Styles partagés ───────── */
@@ -73,52 +82,53 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: Bot, label: 'Sans code : construit en atelier sur vos outils' },
-  { icon: Building2, label: '2 jours en intra, dans vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: Bot, label: 'Sans code, dans vos propres outils' },
+  { icon: GraduationCap, label: 'Qualiopi · dossier OPCO fourni' },
+  { icon: Building2, label: 'Deux jours, en intra ou en individuel' },
+  { icon: MapPin, label: 'Sur site en France, ou ailleurs sur demande' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── Les points clés (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Durée', value: "2 jours (14 h) en intra ; format 1 jour ou accompagnement individuel possibles au cadrage" },
-  { label: 'Pour qui', value: "Équipes métier, référents IA, managers, responsables de processus ; aucun prérequis technique" },
-  { label: 'Outils', value: "Votre environnement : Claude, ChatGPT, Microsoft Copilot, Gemini, Mistral, et n8n ou Make pour l'orchestration" },
-  { label: 'Méthode', value: "Chaque participant construit, teste et fiabilise un agent sur un processus réel de son poste, sans écrire de code" },
-  { label: 'Livrables', value: "Agents partagés dans vos espaces de travail, gabarits de cadrage et d'instructions, grille d'évaluation, plan de déploiement" },
-  { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable OPCO ; devis sous 24 h" },
+  { label: 'Durée', value: "Deux jours (14 h) ; une journée centrée sur le premier agent, ou un parcours individuel, selon le besoin." },
+  { label: 'Public', value: "Équipes métier, référents IA, managers, responsables de processus ; aucune compétence en programmation." },
+  { label: 'Outils', value: "Ceux de votre entreprise : Claude, ChatGPT, Microsoft Copilot, Gemini ou Vibe, avec n8n ou Make quand l'agent doit traverser plusieurs applications." },
+  { label: 'Méthode', value: "Chacun conçoit un agent pour un processus de son poste, le soumet à un jeu de tests, puis lui fixe ses limites." },
+  { label: 'Livrables', value: "Agents partagés dans vos espaces d'équipe, gabarit de cadrage, modèle d'instructions, grille de recette, plan de déploiement." },
+  { label: 'Financement', value: "Organisme Qualiopi : votre OPCO peut prendre le relais, selon ses règles et ses fonds." },
 ]
 
 /* ───────── Sommaire ───────── */
 
 const SOMMAIRE = [
-  ['#autonomie', 'Agent, assistant, automatisation'],
+  ['#autonomie', 'Assistant, workflow, agent'],
   ['#programme', 'Programme des 2 jours'],
-  ['#outils', 'Vos outils'],
-  ['#fiabilite', 'Fiabilité'],
+  ['#outils', 'Agents par outil'],
+  ['#fin-de-vie', 'Ce qui disparaît'],
+  ['#fiabilite', 'Échecs fréquents'],
   ['#profils', 'Pour qui'],
   ['#tarif', 'Tarif'],
   ['#faq', 'FAQ'],
 ]
 
-/* ───────── Trois niveaux d'autonomie (3 cartes + 1 carte sombre) ───────── */
+/* ───────── Trois degrés d'autonomie (3 cartes + 1 carte sombre) ───────── */
 
 const NIVEAUX = [
   {
     icon: MessagesSquare,
-    title: "L'assistant",
-    desc: "Vous demandez, il produit, vous gardez la main à chaque échange : un brouillon, une synthèse, une analyse. C'est le socle de nos formations par métier, et le point de départ de la plupart des équipes.",
+    title: "L'assistant répond",
+    desc: "Vous posez une question ou confiez une tâche, il produit, et vous reprenez la main à chaque échange. Rédiger, résumer, analyser : c'est par là que commencent la plupart des équipes.",
   },
   {
     icon: Workflow,
-    title: "L'automatisation classique",
-    desc: "Un scénario écrit à l'avance se déroule à l'identique : un formulaire arrive, une ligne se crée, un accusé part. Robuste et prévisible, tant que les cas d'entrée gardent la même forme.",
+    title: 'Le workflow exécute',
+    desc: "Un enchaînement écrit à l'avance se répète à l'identique : un formulaire arrive, une ligne se crée, une notification part. Il reste fiable tant que les entrées gardent la même forme.",
   },
   {
     icon: Bot,
-    title: "L'agent IA",
-    desc: "Il reçoit un objectif : qualifier cette demande, préparer ce dossier, produire ce brief. Il décompose, va chercher l'information dans vos applications, produit, et rend la main sur ce qui engage. Son autonomie se règle.",
+    title: "L'agent poursuit un objectif",
+    desc: "Préparer ce dossier, qualifier cette demande : l'agent découpe la tâche, cherche l'information dans les applications que vous lui ouvrez, produit, puis s'arrête là où une personne doit valider. Son autonomie se règle.",
   },
 ]
 
@@ -128,39 +138,39 @@ const PROGRAMME = [
   {
     jour: 'Jour 1',
     titre: 'Comprendre, cadrer, construire',
-    resume: "De la boucle agentique au premier agent testé sur un cas réel du poste.",
+    resume: "De la mécanique d'un agent au premier agent construit et essayé sur un dossier du poste.",
     matin: [
-      { t: 'La boucle agentique, démontrée en direct', d: "Objectif, décomposition, appel d'outils, vérification : ce qui se passe réellement quand un agent travaille, montré pas à pas sur vos outils." },
-      { t: "Trois niveaux d'autonomie", d: "Assistant, automatisation, agent : une grille simple pour trancher, tâche par tâche, ce qui mérite un agent et ce qui n'en a pas besoin." },
-      { t: 'Ce que vos licences permettent déjà', d: "Panorama de votre environnement réel : Claude, ChatGPT, Microsoft Copilot, Gemini, et ce que chaque édition autorise." },
-      { t: "Cadrer un cas d'usage d'agent", d: "La tâche, les données mobilisées, les applications connectées, le point de validation humaine : un gabarit de cadrage réutilisable en interne." },
-      { t: 'Atelier : qualifier son processus', d: "Chaque participant choisit un processus réel de son poste et le passe à la grille : agent, automatisation ou assistant." },
+      { t: 'Un agent observé pas à pas', d: "Objectif, découpage, appel d'un outil, contrôle du résultat : le formateur fait travailler un agent devant le groupe et commente chaque étape." },
+      { t: "Le bon degré d'autonomie", d: "Pour chaque tâche apportée, on tranche entre assistant, workflow et agent, à l'aide d'une grille de questions simples." },
+      { t: "L'inventaire de vos licences", d: "Ce que vos offres Claude, ChatGPT, Microsoft Copilot ou Gemini permettent de construire, édition par édition, au jour de la session." },
+      { t: "Le cadrage d'un agent", d: "Tâche, données utilisées, applications ouvertes, point de validation humaine : un gabarit d'une page, que vous réutiliserez en interne." },
+      { t: 'Atelier : choisir son processus', d: "Chaque participant passe un processus de son poste à la grille et rédige le cadrage de son futur agent." },
     ],
     apresmidi: [
-      { t: 'Construire son premier agent, sans code', d: "Instructions, connaissances, outils : chacun monte un agent dans votre environnement (agent d'espace de travail, projet et compétences, Gem ou agent Copilot selon le cas)." },
-      { t: 'Le nourrir de vos documents', d: "Gabarits, procédures, exemples maison : l'agent produit dans vos formats et votre ton, pas dans ceux d'un modèle générique." },
-      { t: 'Le connecter à vos applications', d: "Messagerie, agenda, stockage, tableaux : ce que l'agent peut lire et faire selon vos licences, et ce qu'on lui interdit d'emblée." },
-      { t: 'Atelier : premier test en conditions réelles', d: "L'agent traite de vrais cas du poste ; on note ce qui tient, ce qui dérive, ce qui manque." },
-      { t: 'Revue croisée de fin de journée', d: "Chaque agent passe devant le groupe : erreurs typiques, corrections d'instructions, premiers garde-fous." },
+      { t: "Construire l'agent, sans code", d: "Instructions, documents de référence, outils autorisés : chacun monte son agent dans l'environnement retenu (agent d'espace de travail ChatGPT, projet et compétences Claude, compétence Gemini, agent Copilot)." },
+      { t: 'Lui donner vos références', d: "Gabarits, procédures, exemples maison : l'agent écrit dans vos formats et avec le ton de la maison." },
+      { t: 'Les accès aux applications', d: "Messagerie, agenda, stockage, tableurs : ce que l'agent peut lire ou modifier selon vos licences, et ce qui lui reste fermé d'office." },
+      { t: 'Atelier : premier essai sur dossiers', d: "L'agent traite des cas tirés du poste ; on note ce qui tient, ce qui dérive, ce qui manque." },
+      { t: 'Revue en groupe', d: "Chaque agent passe devant les autres : erreurs repérées, instructions corrigées, premières limites posées." },
     ],
   },
   {
     jour: 'Jour 2',
     titre: 'Fiabiliser, orchestrer, gouverner',
-    resume: "Des instructions testées à l'orchestration entre applications, jusqu'au plan de déploiement.",
+    resume: "Des instructions éprouvées au branchement sur vos applications, jusqu'au plan de déploiement.",
     matin: [
-      { t: "Des instructions d'agent qui tiennent", d: "Rôle, périmètre, refus, format de sortie, escalade vers l'humain : la différence entre un agent qui dérive et un agent qui rend service." },
-      { t: 'Évaluer avant de déployer', d: "Un jeu de cas de test, cas pièges compris, et des critères d'acceptation : l'agent se recette comme un travail, jamais sur une démo réussie." },
-      { t: 'Découper un processus complet', d: "Multi-étapes et multi-agents : quand un seul agent suffit, quand il vaut mieux une chaîne d'agents spécialisés qui se contrôlent." },
-      { t: 'Orchestrer entre vos applications', d: "n8n ou Make : déclencheurs, étapes IA, points de contrôle humains ; l'agent s'insère dans le flux réel de l'équipe." },
-      { t: 'Atelier : fiabiliser son agent', d: "Chacun durcit l'agent du jour 1 : instructions révisées, jeu de test, garde-fous, ou extension en chaîne multi-étapes." },
+      { t: 'Écrire des instructions qui tiennent', d: "Rôle, périmètre, cas de refus, format de sortie, moment où l'agent passe la main : ce qui sépare un agent qui dérive d'un agent utile." },
+      { t: 'Recetter avant de déployer', d: "Un jeu de cas de test, pièges compris, et des critères d'acceptation écrits : l'agent se valide comme un livrable." },
+      { t: 'Un agent ou plusieurs', d: "Quand un seul agent suffit, et quand mieux vaut une chaîne d'agents spécialisés qui se contrôlent l'un l'autre." },
+      { t: "Relier l'agent à vos applications", d: "Avec n8n ou Make : un déclencheur, des étapes IA, des points de contrôle humains ; l'agent entre dans le flux de l'équipe." },
+      { t: 'Atelier : durcir son agent', d: "Instructions révisées, jeu de test, limites, ou passage à une chaîne de plusieurs étapes." },
     ],
     apresmidi: [
-      { t: 'Superviser au quotidien', d: "Journal des actions, revue des sorties, traitement des erreurs : qui surveille quoi, à quelle fréquence, et quand on débranche." },
-      { t: 'Le cadre : RGPD, AI Act, propriété', d: "Données autorisées par agent, transparence quand l'agent interagit, littératie de l'article 4, propriété des agents créés : des règles écrites." },
-      { t: "Déployer dans l'équipe", d: "Partage dans vos espaces de travail, référent désigné, montée de version : l'agent devient un outil d'équipe, jamais un secret de poste." },
-      { t: 'Atelier : le plan de déploiement', d: "Pour chaque agent construit : responsable, indicateurs, prochaine itération, date de revue." },
-      { t: "Plan d'action collectif", d: "Les trois agents prioritaires de l'équipe, qui les porte, à quelle échéance ; la liste part avec vous." },
+      { t: 'Surveiller au quotidien', d: "Journal des actions, revue des réponses, traitement des erreurs : qui regarde quoi, à quel rythme, et à quel moment on suspend l'agent." },
+      { t: 'Le cadre écrit', d: "Données autorisées par agent, information des personnes qui dialoguent avec lui, mesures de maîtrise de l'IA (article 4 du règlement européen), propriété des agents créés." },
+      { t: "Passer l'agent à l'équipe", d: "Partage dans l'espace d'équipe, référent nommé, versions successives : l'agent devient un outil commun." },
+      { t: 'Atelier : le plan de déploiement', d: "Pour chaque agent : responsable, indicateurs suivis, prochaine version, date de revue." },
+      { t: 'Les trois agents suivants', d: "L'équipe retient ses trois prochains agents, chacun confié à un responsable, avec sa date." },
     ],
   },
 ]
@@ -168,41 +178,63 @@ const PROGRAMME = [
 /* ───────── Objectifs (6 cartes) ───────── */
 
 const OBJECTIFS = [
-  { icon: Target, title: "Repérer les bons cas d'usage", desc: "Trancher, tâche par tâche, ce qui mérite un agent, ce qui relève d'une automatisation simple et ce qui reste à l'assistant." },
-  { icon: Bot, title: 'Construire un agent sans code', desc: "Monter un agent dans votre environnement : instructions, connaissances, accès aux applications, sur un processus réel du poste." },
-  { icon: ListChecks, title: 'Le tester comme un livrable', desc: "Constituer un jeu de cas de test, cas pièges compris, et prononcer une acceptation sur des critères écrits." },
-  { icon: ShieldCheck, title: 'Poser les garde-fous', desc: "Limiter le périmètre, définir les refus, imposer la validation humaine sur tout ce qui engage l'entreprise." },
-  { icon: Network, title: "L'orchestrer entre vos applications", desc: "Insérer l'agent dans le flux réel de l'équipe avec n8n ou Make : déclencheurs, étapes, points de contrôle." },
-  { icon: Eye, title: 'Le superviser dans la durée', desc: "Lire le journal des actions, organiser la revue des sorties, faire évoluer l'agent sans le laisser dériver." },
+  { icon: Target, title: 'Choisir les bons cas', desc: "Décider, tâche par tâche, ce qui justifie un agent, ce qu'un workflow simple suffit à traiter et ce qui reste à l'assistant." },
+  { icon: Bot, title: 'Monter un agent sans code', desc: "Construire un agent dans votre environnement, avec ses instructions, ses documents de référence et ses accès, sur un processus du poste." },
+  { icon: ListChecks, title: 'Le recetter comme un livrable', desc: "Préparer des cas de test, pièges compris, et prononcer l'acceptation sur des critères écrits." },
+  { icon: ShieldCheck, title: 'Lui fixer des limites', desc: "Borner le périmètre, prévoir les refus, soumettre à une personne toute action qui engage l'entreprise." },
+  { icon: Network, title: 'Le brancher sur vos applications', desc: "Insérer l'agent dans le flux de l'équipe avec n8n ou Make : déclencheurs, étapes, points de contrôle." },
+  { icon: Eye, title: 'Le suivre dans la durée', desc: "Lire le journal des actions, organiser la revue des réponses, faire évoluer l'agent sans qu'il dérive." },
 ]
 
-/* ───────── Quel environnement pour quel agent (tableau) ───────── */
+/* ───────── Agents par outil (tableau, faits au 7 octobre 2026) ───────── */
 
 const OUTILS_TABLE = [
   {
-    env: 'Claude (Team / Enterprise)',
-    build: "Des assistants d'équipe sur vos corpus (Projets), des compétences réutilisables (Skills), des connecteurs vers vos outils",
-    fort: "La qualité de rédaction et les compétences partageables entre collègues",
+    env: 'Claude (Team, Enterprise)',
+    build: "Des projets partagés sur vos documents, des compétences (Skills) au format SKILL.md, des connecteurs MCP vers vos logiciels",
+    fort: "La qualité rédactionnelle et des compétences qui se partagent entre collègues",
   },
   {
     env: 'ChatGPT (Business)',
-    build: "Des agents d'espace de travail (les successeurs des GPTs), des tâches planifiées, de l'analyse de données",
-    fort: "La polyvalence et un magasin d'agents interne à l'entreprise",
+    build: "Des agents d'espace de travail, disponibles depuis le 21 mai 2026 et dont chaque exécution se paie en crédits, des compétences regroupées en plugins, des tâches planifiées",
+    fort: "La polyvalence, et une console où l'administrateur gère les plugins de l'espace depuis le 1er octobre 2026",
   },
   {
     env: 'Microsoft Copilot',
-    build: "Des agents avec Agent Builder, des flux avancés avec Copilot Studio, dans Microsoft 365",
-    fort: "L'ancrage dans Word, Excel, Outlook, Teams et SharePoint",
+    build: "Des agents avec Agent Builder, des agents métier avec Copilot Studio (licence à part), et Copilot Cowork pour des tâches planifiées qui demandent l'accord avant chaque action sensible",
+    fort: "L'ancrage dans Outlook, Teams, Word, Excel et SharePoint",
   },
   {
     env: 'Gemini (Google Workspace)',
-    build: "Des Gems, des corpus NotebookLM, des automatisations Workspace Studio selon votre édition",
-    fort: "L'intégration native à Gmail, Docs et Sheets",
+    build: "Des compétences, qui remplacent les Gems et arrivent dans Workspace depuis le 5 octobre 2026, des carnets Gemini Notebook, des flux Workspace Studio selon l'édition",
+    fort: "L'intégration à Gmail, Docs, Sheets et Drive",
+  },
+  {
+    env: 'Vibe (Mistral)',
+    build: "Des compétences (Skills), qui ont pris la place des agents le 22 septembre 2026, une base de connaissances et des connecteurs",
+    fort: "Un hébergement européen par défaut, chez un éditeur français",
   },
   {
     env: 'n8n ou Make',
-    build: "Des chaînes complètes entre vos applications : déclencheur, étapes IA, points de contrôle humains",
-    fort: "L'orchestration multi-applications, au-delà d'un seul outil",
+    build: "Des chaînes complètes entre applications : déclencheur, étapes IA, agent, points de contrôle humains",
+    fort: "L'orchestration au-delà d'un seul éditeur ; n8n peut exiger un accord humain avant chaque outil",
+  },
+]
+
+/* ───────── Formats en fin de vie (3 cartes) ───────── */
+
+const FIN_DE_VIE = [
+  {
+    title: 'Les GPTs personnalisés de ChatGPT',
+    desc: "Fin de service fixée par OpenAI au 11 décembre 2026, quelle que soit l'offre ; un espace Enterprise ayant négocié un report tient jusqu'au 11 février 2027. Les GPTs migrent vers des plugins : leurs consignes passent dans une compétence, leurs actions personnalisées sont perdues.",
+  },
+  {
+    title: 'Les Gems de Gemini',
+    desc: "Google les remplace par des compétences, arrivées dans Workspace à partir du 5 octobre 2026. Pour les comptes professionnels, leur usage prendra fin le 1er mars 2027 ou plus tard ; les Gems non convertis deviennent alors des brouillons de compétences inactifs.",
+  },
+  {
+    title: 'Les agents de Vibe',
+    desc: "Mistral les a remplacés par des compétences (Skills) dans ses notes de version du 22 septembre 2026 ; la recherche approfondie est désormais une compétence parmi d'autres.",
   },
 ]
 
@@ -210,36 +242,36 @@ const OUTILS_TABLE = [
 
 const ECHECS = [
   {
-    title: "L'agent fourre-tout",
-    desc: "Un agent à qui l'on demande tout ne fait rien de fiable. Un agent par processus, avec un périmètre écrit : c'est la première décision de cadrage, et la plus rentable.",
+    title: "L'agent à tout faire",
+    desc: "Un agent chargé de tout ne fait rien de fiable. Un agent par processus, avec un périmètre écrit : c'est la première décision de cadrage, et celle qui rapporte le plus.",
   },
   {
-    title: "Les instructions d'ambiance",
-    desc: "« Sois professionnel et efficace » ne contraint rien. Rôle, limites, refus, format de sortie, escalade : les instructions se rédigent comme une consigne de travail, puis se testent.",
+    title: 'Des instructions qui ne bornent rien',
+    desc: "« Sois professionnel » ne contraint aucune réponse. Rôle, limites, refus, format, passage de relais : des instructions se rédigent comme une consigne de travail, puis s'éprouvent.",
   },
   {
-    title: 'La démo qui tient lieu de test',
-    desc: "Trois essais réussis devant le groupe ne valident rien. Un agent se recette sur un jeu de cas, cas pièges compris, avec des critères d'acceptation écrits.",
+    title: 'Trois essais réussis pris pour une recette',
+    desc: "Une démonstration qui marche prouve peu de chose. L'agent se valide sur un jeu de cas, pièges compris, avec des critères écrits à l'avance.",
   },
   {
-    title: "L'autonomie sans relecture",
-    desc: "Un agent qui envoie, publie ou engage sans validation humaine finit par le faire de travers. Ce qui engage l'entreprise passe par un humain : c'est une règle de conception, jamais une option.",
+    title: "L'envoi sans relecture",
+    desc: "Un agent qui envoie, publie ou modifie sans accord finira par se tromper devant un client. L'agent prépare, une personne valide : la règle s'inscrit dans la conception.",
   },
   {
-    title: 'Personne ne surveille',
-    desc: "Sans journal des actions ni revue des sorties, la dérive s'installe sans bruit. La supervision se décide à la conception : qui regarde quoi, à quelle fréquence, et quand on débranche.",
+    title: "L'agent que personne ne regarde",
+    desc: "Sans journal ni revue des réponses, la dérive passe inaperçue. Qui surveille quoi, à quel rythme et quand suspendre l'agent se décide dès la conception.",
   },
 ]
 
 /* ───────── Profils (6 cartes) ───────── */
 
 const PROFILS = [
-  { icon: Users, title: 'Équipes métier', desc: "Commercial, RH, finance, marketing, support : les processus répétitifs à plusieurs étapes y font les meilleurs premiers agents." },
-  { icon: Sparkles, title: 'Référents IA', desc: "Ceux qui outillent leur service : ils repartent avec la grille de cadrage, le gabarit d'instructions et la méthode de recette." },
-  { icon: Target, title: 'Managers et chefs de projet', desc: "Pour décider quoi confier à un agent, arbitrer le niveau d'autonomie et porter le plan de déploiement de l'équipe." },
-  { icon: Workflow, title: 'Responsables de processus', desc: "Qualité, ops, ADV : ceux qui possèdent les flux que les agents vont traverser, et les points de contrôle qui vont avec." },
-  { icon: Layers, title: 'PMO et transformation', desc: "Pour cadrer un portefeuille d'agents cohérent, avec des règles communes, au lieu d'initiatives dispersées." },
-  { icon: Building2, title: 'DSI et IT de proximité', desc: "Pour poser licences, connecteurs et périmètres de données, et garder la main sur ce que les agents peuvent toucher." },
+  { icon: Users, title: 'Équipes métier', desc: "Commerce, RH, finance, marketing, support : leurs processus à plusieurs étapes donnent les meilleurs premiers agents." },
+  { icon: Sparkles, title: 'Référents IA', desc: "Ceux qui outillent leur service repartent avec la grille de cadrage, le modèle d'instructions et la méthode de recette." },
+  { icon: Target, title: 'Managers et chefs de projet', desc: "Pour décider ce que l'on confie à un agent, régler son autonomie et porter le plan de déploiement de l'équipe." },
+  { icon: Workflow, title: 'Responsables de processus', desc: "Qualité, opérations, ADV : ceux qui connaissent les flux que les agents traverseront, et les contrôles qui vont avec." },
+  { icon: Layers, title: 'PMO et transformation', desc: "Pour tenir un portefeuille d'agents cohérent, avec des règles communes à toutes les équipes." },
+  { icon: Building2, title: 'DSI et informatique de proximité', desc: "Pour fixer licences, connecteurs et périmètres de données, et garder la main sur ce que les agents peuvent toucher." },
 ]
 
 /* ───────── FAQ ───────── */
@@ -247,77 +279,81 @@ const PROFILS = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une formation agents IA ?",
-    a: "C'est une formation où vos équipes apprennent à concevoir, construire, tester et superviser des agents IA : des systèmes qui enchaînent les étapes d'une tâche (chercher, produire, vérifier, transmettre) en utilisant vos applications, sous le contrôle d'un humain. Chez Masteria, elle dure 2 jours, se tient en intra dans vos locaux ou à distance, et chaque participant construit un agent sur un processus réel de son poste, dans votre environnement : Claude, ChatGPT, Microsoft Copilot, Gemini, avec n8n ou Make pour l'orchestration. Elle est certifiée Qualiopi et finançable par votre OPCO.",
+    a: "Une formation où vos équipes apprennent à concevoir, construire, éprouver et surveiller des agents IA : des systèmes qui enchaînent les étapes d'une tâche (chercher, produire, vérifier, transmettre) dans vos applications, sous le contrôle d'une personne. Chez Masteria, elle dure deux jours, en intra ou à distance, et chaque participant construit un agent pour l'une de ses propres tâches, dans votre environnement : Claude, ChatGPT, Microsoft Copilot, Gemini ou Vibe, avec n8n ou Make pour relier les applications. Masteria est certifiée Qualiopi.",
   },
   {
-    q: 'Quelle différence entre un agent IA et un assistant comme ChatGPT ?',
-    a: "L'assistant répond à vos demandes une par une : vous demandez, il produit, vous reprenez la main. L'agent reçoit un objectif et le poursuit : il décompose la tâche, choisit ses étapes, va chercher l'information dans vos applications, produit le livrable et s'arrête aux points de validation prévus. La frontière est l'autonomie : un agent agit entre deux interventions humaines, un assistant agit pendant l'échange. La formation commence par cette grille, car le premier gain consiste à choisir le bon niveau pour chaque tâche.",
+    q: 'Agent IA ou assistant comme ChatGPT : quelle différence ?',
+    a: "L'assistant répond à vos demandes une par une ; vous reprenez la main après chaque réponse. L'agent reçoit un objectif et le poursuit : il découpe la tâche, choisit ses étapes, cherche l'information dans vos applications, produit le livrable et s'arrête aux points de validation prévus. La frontière tient à l'autonomie entre deux interventions humaines. La formation commence par cette distinction, parce que le premier gain consiste à donner à chaque tâche l'outil qui lui convient.",
   },
   {
-    q: 'Que veut dire « IA agentique » ?',
-    a: "L'IA agentique désigne l'approche où un modèle d'IA poursuit un objectif en plusieurs étapes et utilise des outils pour y arriver : lire une boîte mail, interroger un tableau, remplir un document, déclencher une action. « Agent IA » désigne le système concret construit sur cette logique. La formation démystifie le terme dès la première matinée : la boucle agentique (objectif, décomposition, action, vérification) s'observe en direct sur vos propres outils, puis chacun la met en œuvre.",
+    q: 'Que signifie « IA agentique » ?',
+    a: "L'expression désigne une IA qui poursuit un objectif en plusieurs étapes et se sert d'outils pour l'atteindre : lire une boîte mail, interroger un tableau, remplir un document, déclencher une action. « Agentique » qualifie cette façon de travailler ; « agent » désigne le système construit. La première matinée la rend concrète : on regarde un agent travailler sur vos propres outils, puis chacun en monte un.",
   },
   {
-    q: 'Faut-il savoir coder pour suivre la formation agents IA ?',
-    a: "Non. Tout ce qui se construit pendant les 2 jours se fait sans code : agents d'espace de travail côté ChatGPT, Projets et compétences côté Claude, Agent Builder côté Copilot, Gems côté Gemini, et n8n ou Make en glisser-déposer pour l'orchestration. L'atelier demande d'être à l'aise avec ses outils bureautiques, rien de plus. Les profils qui veulent ensuite passer au code, pour des agents intégrés à un produit ou à un système, poursuivent avec la formation Claude Code ou un développement sur mesure.",
+    q: 'La formation agents IA demande-t-elle de savoir coder ?',
+    a: "Non. Tout ce qui se construit pendant les deux jours se fait sans code : agents d'espace de travail dans ChatGPT, projets et compétences dans Claude, Agent Builder dans Copilot, compétences dans Gemini ou Vibe, et n8n ou Make à la souris pour l'orchestration. Une aisance ordinaire avec les outils de bureau suffit. Les profils qui veulent ensuite intégrer des agents à un produit poursuivent avec la formation Claude Code ou un développement sur mesure.",
   },
   {
     q: 'Quels agents construit-on pendant la formation ?',
-    a: "Ceux de vos postes. Les cas typiques : qualifier et résumer les demandes entrantes avant réponse, préparer un dossier complet (recherche, pièces, synthèse) avant un rendez-vous, produire un premier livrable dans vos gabarits (compte rendu, brief, réponse type), tenir une veille et livrer une synthèse hebdomadaire, préparer les éléments d'un reporting. Le cadrage écarte volontairement les cas qui engagent l'entreprise sans relecture : ils viendront plus tard, quand la supervision aura fait ses preuves.",
+    a: "Ceux de vos postes. Les plus fréquents : qualifier et résumer les demandes entrantes avant réponse, préparer un dossier complet avant un rendez-vous, produire un premier livrable dans vos gabarits (compte rendu, brief, réponse type), tenir une veille et livrer une synthèse chaque semaine, rassembler les éléments d'un reporting. Les cas qui engageraient l'entreprise sans relecture sont écartés au cadrage ; ils viendront quand la surveillance aura fait ses preuves.",
   },
   {
-    q: 'Sur quels outils la formation se déroule-t-elle ?',
-    a: "Sur votre environnement réel, dans ses versions entreprise : Claude (Projets, compétences, connecteurs), ChatGPT (agents d'espace de travail, tâches planifiées), Microsoft Copilot (Agent Builder, Copilot Studio), Gemini (Gems, NotebookLM, Workspace Studio selon édition), Mistral avec Vibe côté assistants, et n8n ou Make pour orchestrer entre applications. Le cadrage recense licences et éditions : la formation travaille sur ce que vos équipes ouvriront le lendemain, avec les droits qu'elles auront réellement.",
+    q: 'Avec quels outils travaille-t-on ?',
+    a: "Sur vos outils, dans leurs versions professionnelles : Claude (projets, compétences, connecteurs), ChatGPT Business (agents d'espace de travail, plugins, planification), Microsoft Copilot (Agent Builder, Copilot Studio, Cowork), Gemini (compétences, Gemini Notebook, Workspace Studio selon l'édition), Vibe de Mistral (compétences), et n8n ou Make pour relier les applications. Le cadrage recense vos licences : la formation travaille sur ce que vos équipes ouvriront le lendemain, avec leurs droits.",
+  },
+  {
+    q: 'Nos GPTs et nos Gems vont-ils disparaître ?',
+    a: "Oui, selon un calendrier connu. OpenAI éteint les GPTs personnalisés le 11 décembre 2026, ou le 11 février 2027 pour un espace Enterprise bénéficiant d'un report, et les transforme en plugins. Google remplace les Gems par des compétences ; sur les comptes professionnels, ils cesseront de fonctionner, pas avant le 1er mars 2027. Chez Mistral, les compétences ont pris la place des agents de Vibe le 22 septembre 2026. La formation part donc du format compétence, qui se recopie d'un outil à l'autre.",
   },
   {
     q: 'Un agent IA peut-il travailler seul, sans validation humaine ?',
-    a: "Techniquement oui, et c'est justement ce que la formation encadre. La règle enseignée est simple : tout ce qui engage l'entreprise (envoyer, publier, répondre à un client, modifier un dossier) passe par une validation humaine ; l'agent prépare, l'humain décide. L'autonomie complète se réserve aux tâches sans enjeu d'engagement, avec un journal des actions et une revue régulière des sorties. Le niveau d'autonomie est une décision de conception, qui se revoit à mesure que l'agent fait ses preuves.",
+    a: "Techniquement, oui ; c'est précisément ce que la formation encadre. La règle enseignée : ce qui engage l'entreprise (envoyer, publier, répondre à un client, modifier un dossier) passe par une personne, l'agent préparant le travail. L'autonomie complète se réserve aux tâches sans enjeu, avec un journal des actions et une revue régulière. Le degré d'autonomie se décide à la conception et se révise à mesure que l'agent fait ses preuves.",
   },
   {
     q: 'Quel cadre RGPD et AI Act pour des agents IA ?',
-    a: "Deux étages. Côté données : les ateliers se font sur les offres entreprise, qui n'entraînent pas les modèles sur vos données, et chaque agent reçoit un périmètre écrit (ce qu'il peut lire, où il peut écrire, ce qui est exclu), en s'appuyant sur les recommandations de la CNIL. Côté règlement européen : l'article 4 demande de soutenir la littératie IA des utilisateurs, ce qu'une formation documentée couvre, et la transparence se prévoit quand un agent interagit avec des personnes. Rien de bloquant : tout se traite au cadrage.",
+    a: "Côté données, chaque agent reçoit un périmètre écrit (ce qu'il lit, où il écrit, ce qui lui est interdit), et les ateliers se font sur des offres professionnelles où l'entraînement sur vos échanges est coupé ; chez Vibe Team, c'est à l'administrateur de le désactiver. Côté règlement européen, l'article 4, applicable depuis février 2025, pousse les entreprises à développer la culture IA de leurs équipes, ce qu'une formation documentée appuie, et l'article 50 oblige, depuis le 2 août 2026, à prévenir les gens qu'ils échangent avec une IA. Les recommandations de la CNIL servent de repère.",
   },
   {
-    q: 'La formation agents IA est-elle finançable par notre OPCO ?',
-    a: "Oui : Masteria est certifiée Qualiopi, condition pour mobiliser votre OPCO dans le cadre du plan de développement des compétences. Nous préparons le dossier avec vous : programme détaillé, objectifs pédagogiques, modalités d'évaluation. La décision et le niveau de prise en charge appartiennent à votre opérateur, selon votre branche et votre budget formation. Pas d'éligibilité CPF : c'est une formation d'équipe, qui relève du budget formation de l'entreprise.",
+    q: 'Qui peut financer la formation agents IA ?',
+    a: "Votre OPCO de branche, en premier lieu : Masteria étant certifiée Qualiopi, la session lui est éligible, et l'opérateur tranche selon ses règles et ses fonds. Nous fournissons le programme détaillé, les objectifs, les modalités d'évaluation et la convention. À Genève et à Bruxelles, hors du système des OPCO, nous chiffrons en euros HT.",
   },
   {
-    q: 'Peut-on suivre la formation à distance ou en individuel ?',
-    a: "Oui. Le format de référence est l'intra en présentiel, dans vos locaux, jusqu'à 12 personnes par session ; le même programme se tient à distance en classe virtuelle, souvent en demi-journées. En individuel, un référent ou un dirigeant avance en tête-à-tête sur ses propres processus, au même tarif journalier. Partout en France et à l'international, en Europe, aux États-Unis et en Inde.",
+    q: 'Distanciel, individuel : quels autres formats ?',
+    a: "Oui. Le format de référence réunit jusqu'à douze personnes chez vous ; le programme existe aussi en visioconférence, découpé si besoin en séquences d'une demi-journée. En individuel, un référent ou un dirigeant suit le programme seul, appliqué à ses propres dossiers, au même tarif journalier. Nous organisons aussi des sessions hors de France, en anglais si besoin.",
   },
   {
-    q: "Que reste-t-il dans l'entreprise après les 2 jours ?",
-    a: "Les agents construits en atelier, partagés dans vos espaces de travail plutôt que sur des comptes individuels ; le gabarit de cadrage et le gabarit d'instructions, réutilisables pour les agents suivants ; la grille d'évaluation et les jeux de test ; les règles écrites (données, validation humaine, supervision) ; et le plan de déploiement de l'équipe : les trois agents prioritaires, qui les porte, à quelle échéance.",
+    q: 'Que garde l\'entreprise après les deux jours ?',
+    a: "Les agents construits en atelier, rangés dans vos espaces d'équipe, à l'abri du départ d'un salarié ; le gabarit de cadrage et le modèle d'instructions pour les agents suivants ; la grille de recette et les jeux de test ; les règles écrites (données, validation, surveillance) ; et le plan de déploiement : les trois prochains agents, leur porteur, leur échéance.",
   },
   {
     q: 'Et si nous voulons faire construire nos agents plutôt que former nos équipes ?',
-    a: "Les deux chemins existent et se combinent. Quand l'agent traverse plusieurs systèmes, demande des connecteurs spécifiques ou doit tenir une charge importante, nous le construisons en mission : c'est l'objet de notre offre agents IA en entreprise. La formation garde tout son sens dans ce cas : les équipes qui comprennent la boucle agentique cadrent mieux le besoin, recettent mieux le livrable et supervisent mieux les agents qu'on leur confie.",
+    a: "Les deux chemins existent et se combinent. Quand l'agent traverse plusieurs systèmes, demande des connecteurs spécifiques ou doit tenir une forte charge, nous le construisons en mission ; notre offre agents IA en entreprise couvre ce cas, une prestation de développement pas finançable par votre OPCO. Former l'équipe reste utile : une équipe qui comprend le fonctionnement d'un agent cadre mieux le besoin et surveille mieux ce qu'on lui confie.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation agents IA — Masteria',
-  description: "Formation agents IA en 2 jours : comprendre la boucle agentique, cadrer les cas d'usage, construire des agents sans code dans votre environnement (Claude, ChatGPT, Microsoft Copilot, Gemini), les fiabiliser (instructions, jeux de test, garde-fous), les orchestrer avec n8n ou Make et organiser la supervision. En intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  name: 'Formation agents IA, Masteria',
+  description: "Formation agents IA en 2 jours : fonctionnement d'un agent, choix du degré d'autonomie, cadrage d'un cas d'usage, construction sans code dans Claude, ChatGPT, Microsoft Copilot, Gemini ou Vibe, recette (instructions, jeux de test, limites), orchestration avec n8n ou Make, surveillance et gouvernance. Pour un groupe intra ou une personne seule, chez vous ou en visioconférence ; organisme Qualiopi.",
   level: 'Tous niveaux',
   teaches: [
-    "Distinguer assistant, automatisation et agent, et choisir le bon niveau d'autonomie par tâche",
+    "Distinguer assistant, workflow et agent, et choisir le degré d'autonomie de chaque tâche",
     "Cadrer un cas d'usage d'agent : tâche, données, applications, point de validation humaine",
-    "Construire un agent sans code dans son environnement (Claude, ChatGPT, Copilot, Gemini)",
-    "Fiabiliser un agent : instructions testables, jeu de cas de test, garde-fous",
-    "Orchestrer un agent entre plusieurs applications avec n8n ou Make",
-    "Superviser des agents en production : journal des actions, revue des sorties, gouvernance",
+    "Construire un agent sans code dans son environnement (Claude, ChatGPT, Copilot, Gemini, Vibe)",
+    "Recetter un agent : instructions éprouvées, jeu de cas de test, limites",
+    "Relier un agent à plusieurs applications avec n8n ou Make",
+    "Surveiller des agents en service : journal des actions, revue des réponses, gouvernance",
   ],
   about: "Agents d'intelligence artificielle (IA agentique)",
   timeRequired: 'PT14H',
   duration: 'PT14H',
   prerequisites: "Aucun prérequis technique ; une pratique, même récente, d'un assistant IA aide.",
   audience: 'Équipes métier, référents IA, managers, responsables de processus, PMO, DSI',
-  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
+  locationName: 'Masteria, intra ou individuel, présentiel ou visioconférence',
 }
 
-/* Le programme en ItemList (séquence citable — GEO). */
+/* Le programme en ItemList (séquence citable, GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -327,13 +363,13 @@ const programmeJsonLd = {
     {
       '@type': 'ListItem',
       position: di * 2 + 1,
-      name: `${day.jour} · Matin — ${day.titre}`,
+      name: `${day.jour} · Matin · ${day.titre}`,
       description: day.matin.map(m => m.t).join(' ; '),
     },
     {
       '@type': 'ListItem',
       position: di * 2 + 2,
-      name: `${day.jour} · Après-midi — ${day.titre}`,
+      name: `${day.jour} · Après-midi · ${day.titre}`,
       description: day.apresmidi.map(m => m.t).join(' ; '),
     },
   ]),
@@ -350,7 +386,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-28',
-  dateModified: '2026-08-28',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-agents-ia#webpage' },
   /* Entités liées à Wikipédia (sameAs) : désambiguïsation pour les moteurs
@@ -363,22 +399,22 @@ const articleJsonLd = {
   ],
 }
 
-/* ── GEO : lexique structuré des termes de la page (DefinedTermSet) ── */
+/* ── GEO : vocabulaire des agents (DefinedTermSet, JSON-LD seul) ── */
 const SITE = 'https://www.master-ia.fr'
 const termsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': `${SITE}/${SLUG}#lexique`,
-  name: 'Lexique des agents IA',
+  name: 'Vocabulaire des agents IA',
   hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Agent IA', description: "Système qui poursuit un objectif confié par un humain : il décompose la tâche, utilise des applications (lire, chercher, produire, transmettre) et s'arrête aux points de validation prévus. Se distingue de l'assistant, qui agit pendant l'échange, et de l'automatisation, qui déroule un scénario figé." },
-    { '@type': 'DefinedTerm', name: 'IA agentique', description: "Approche où un modèle d'IA enchaîne des étapes et mobilise des outils pour atteindre un objectif, au lieu de produire une seule réponse. « Agentique » qualifie l'approche ; « agent » désigne le système construit." },
-    { '@type': 'DefinedTerm', name: 'Boucle agentique', description: "Cycle de travail d'un agent : comprendre l'objectif, décomposer, agir avec un outil, vérifier le résultat, recommencer ou rendre la main. C'est la notion centrale du jour 1 de la formation." },
-    { '@type': 'DefinedTerm', name: 'Orchestrateur', description: "Outil qui relie les applications entre elles et y insère des étapes d'IA, comme n8n ou Make. Il porte les déclencheurs, les enchaînements et les points de contrôle humains d'un processus." },
-    { '@type': 'DefinedTerm', name: 'Connecteur', description: "Accès donné à un agent vers une application (messagerie, agenda, stockage, tableur, CRM), en lecture ou en écriture. Le périmètre des connecteurs d'un agent se décide au cadrage et s'écrit." },
-    { '@type': 'DefinedTerm', name: 'Garde-fou', description: "Règle de conception qui borne un agent : périmètre de données, cas de refus, format imposé, validation humaine obligatoire sur ce qui engage l'entreprise, journal des actions." },
-    { '@type': 'DefinedTerm', name: "Agent d'espace de travail", description: "Agent partagé dans l'environnement d'équipe d'un outil (ChatGPT Business, Claude Team ou Enterprise, Copilot, Gemini) : instructions et connaissances communes, disponible pour toute l'équipe." },
-    { '@type': 'DefinedTerm', name: 'Multi-agents', description: "Organisation où plusieurs agents spécialisés se répartissent un processus (l'un qualifie, l'autre produit, un troisième contrôle), reliés par un orchestrateur. Abordée au jour 2, après la fiabilisation du premier agent." },
+    { '@type': 'DefinedTerm', name: 'Agent IA', description: "Système qui poursuit un objectif confié par une personne : il découpe la tâche, se sert d'applications (lire, chercher, produire, transmettre) et s'arrête aux points de validation prévus." },
+    { '@type': 'DefinedTerm', name: 'IA agentique', description: "Façon de travailler où un modèle d'IA enchaîne des étapes et mobilise des outils pour atteindre un objectif, au lieu de produire une seule réponse." },
+    { '@type': 'DefinedTerm', name: 'Boucle agentique', description: "Le cycle d'un agent : comprendre l'objectif, découper, agir avec un outil, contrôler le résultat, recommencer ou rendre la main." },
+    { '@type': 'DefinedTerm', name: 'Compétence (skill)', description: "Procédure écrite une fois, souvent dans un fichier SKILL.md, que l'assistant charge quand la demande s'y prête. Format adopté par Anthropic, OpenAI, Google, Microsoft et Mistral." },
+    { '@type': 'DefinedTerm', name: 'Orchestrateur', description: "Outil qui relie les applications et y insère des étapes d'IA, comme n8n ou Make : il porte les déclencheurs, les enchaînements et les contrôles humains d'un processus." },
+    { '@type': 'DefinedTerm', name: 'Connecteur', description: "Accès donné à un agent vers une application (messagerie, agenda, stockage, tableur, CRM), en lecture ou en écriture, décidé au cadrage." },
+    { '@type': 'DefinedTerm', name: 'Garde-fou', description: "Règle de conception qui borne un agent : périmètre de données, cas de refus, format imposé, validation humaine sur ce qui engage, journal des actions." },
+    { '@type': 'DefinedTerm', name: 'Multi-agents', description: "Organisation où plusieurs agents spécialisés se répartissent un processus (trier, rédiger, contrôler), reliés par un orchestrateur." },
   ],
 }
 
@@ -405,12 +441,16 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
-   affichées dans le bloc « Sources et références officielles ». */
+/* Sources de la page : émises en WebPage.citation (JSON-LD) et affichées en fin de page. */
 const PAGE_CITATIONS = [
-  { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-  { name: "CNIL — Intelligence artificielle : recommandations et dossiers", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+  { name: 'OpenAI, retrait des GPTs personnalisés et migration vers des plugins', url: 'https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq' },
+  { name: 'Google Workspace, arrivée des compétences et fin des Gems', url: 'https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html' },
+  { name: 'Google Workspace, calendrier de transition des Gems', url: 'https://knowledge.workspace.google.com/p/gems-migration' },
+  { name: 'Mistral, notes de version (compétences de Vibe)', url: 'https://docs.mistral.ai/resources/release-notes' },
+  { name: 'Microsoft Learn, Copilot Cowork', url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/' },
+  { name: "Règlement (UE) 2024/1689, dit AI Act, sur EUR-Lex", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "CNIL, recommandations sur l'intelligence artificielle", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: 'Qualiopi expliquée par le ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
 ]
 
 export default function FormationAgentsIAPage() {
@@ -439,7 +479,7 @@ export default function FormationAgentsIAPage() {
         courseData={COURSE_DATA}
         faqItems={FAQ}
         datePublished="2026-08-28"
-        dateModified="2026-08-28"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[programmeJsonLd, articleJsonLd, termsJsonLd]}
@@ -476,25 +516,25 @@ export default function FormationAgentsIAPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Signée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · fonctions d'agents des cinq assistants vérifiées le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation agents IA apprend à vos équipes à construire des agents : des IA qui enchaînent les étapes d'une tâche, utilisent vos applications et rendent compte, sous le contrôle d'un humain. <strong style={{ color: '#fff', fontWeight: 700 }}>En 2 jours, chaque participant conçoit, teste et fiabilise un agent sur un processus réel de son poste, sans écrire de code</strong>, dans votre environnement : Claude, ChatGPT, Microsoft Copilot ou Gemini, avec n8n ou Make pour l'orchestration. Certifiée Qualiopi, finançable OPCO.
+            Avec la formation agents IA de Masteria, vos équipes apprennent à construire des agents : des IA qui enchaînent les étapes d'une tâche, se servent de vos applications et rendent compte à une personne. <strong style={{ color: '#fff', fontWeight: 700 }}>Pendant deux jours, chaque participant conçoit, éprouve et borne un agent pour un processus de son poste, sans écrire de code</strong>, dans l'outil de l'entreprise : Microsoft Copilot (anciennement Microsoft 365 Copilot), Claude, ChatGPT, Gemini ou Vibe, avec n8n ou Make pour relier les applications. Organisme certifié Qualiopi ; financement OPCO possible.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Les agents sont l'étape d'après pour les équipes qui pratiquent déjà un assistant IA : l'outil prend en charge un enchaînement complet, de la demande au livrable. Cette autonomie rend service à une condition : des instructions nettes, des tests sérieux et une supervision humaine. La formation installe les trois.
+            Les agents prolongent le travail des équipes qui utilisent déjà un assistant : ils prennent en charge un enchaînement entier, de la demande au livrable. Cette autonomie rend service à trois conditions, que la formation installe une à une : des instructions précises, une recette sérieuse, une surveillance humaine.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un devis sous 24 h
+              Monter votre formation agents IA
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#programme" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le programme
+              Parcourir le programme
             </a>
           </div>
 
@@ -510,9 +550,9 @@ export default function FormationAgentsIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* Les points clés : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Les points clés</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -535,20 +575,20 @@ export default function FormationAgentsIAPage() {
         </div>
       </nav>
 
-      {/* ── AGENT / ASSISTANT / AUTOMATISATION (éditorial asymétrique) ── */}
+      {/* ── ASSISTANT / WORKFLOW / AGENT (éditorial asymétrique) ── */}
       <section id="autonomie" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>Les notions</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Agent IA, assistant, automatisation : trois niveaux d'autonomie
+                Assistant, workflow, agent : trois degrés d'autonomie à distinguer
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Un assistant répond à vos demandes, une automatisation déroule un scénario écrit à l'avance, un agent IA poursuit un objectif : il décompose la tâche, choisit ses étapes, utilise vos applications et s'arrête quand un humain doit valider. La formation apprend à choisir le bon niveau pour chaque tâche, puis à construire les agents qui le méritent.</strong>
+                <strong>Un assistant répond pendant l'échange, un workflow déroule un scénario fixé d'avance, un agent IA vise un objectif : il choisit ses étapes, utilise vos applications et rend la main quand une décision engage l'entreprise. La formation apprend d'abord à placer chaque tâche au bon degré, puis à construire les agents qui le justifient.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                « IA agentique » désigne simplement cette approche par objectifs. Le terme impressionne, la logique se comprend en une matinée ; rendre un agent fiable demande davantage de travail, et c'est là que la formation passe le plus de temps. Si vous cherchez plutôt à faire construire vos agents, notre offre <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link> décrit les déploiements sur mesure.
+                On parle d'IA agentique pour désigner cette façon de travailler par objectifs. Le principe se comprend en une matinée ; rendre un agent fiable prend plus de temps, et l'essentiel des deux jours y est consacré. Pour confier la construction de vos agents à notre équipe, voyez notre offre <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>.
               </p>
             </div>
 
@@ -570,9 +610,9 @@ export default function FormationAgentsIAPage() {
                       <Sparkles size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
                     </div>
                   </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Et le multi-agents ?</h3>
+                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Plusieurs agents en relais ?</h3>
                   <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                    Plusieurs agents spécialisés se passent le travail : l'un qualifie, l'autre rédige, un troisième contrôle. Utile sur les processus longs ; la formation l'aborde au jour 2, une fois le premier agent fiabilisé.
+                    Un agent trie, un deuxième rédige, un troisième vérifie. Ce découpage sert sur les processus longs ; nous l'abordons le deuxième jour, quand un premier agent a déjà fait ses preuves.
                   </p>
                 </div>
               </div>
@@ -581,7 +621,7 @@ export default function FormationAgentsIAPage() {
         </div>
       </section>
 
-      {/* ── LE PROGRAMME (ancre sombre — pivot) ── */}
+      {/* ── LE PROGRAMME (ancre sombre, pivot) ── */}
       <section id="programme" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden', scrollMarginTop: 96 }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -590,11 +630,11 @@ export default function FormationAgentsIAPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Le programme des 2 jours : du premier agent au plan de déploiement
+            Du premier agent au plan de déploiement, en deux journées
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : comprendre ce qu'est un agent, cadrer un cas d'usage sérieux et construire un premier agent sans code dans votre environnement. Jour 2 : le fiabiliser (instructions, jeux de test, garde-fous), l'orchestrer entre vos applications avec n8n ou Make, et organiser la supervision. Chaque participant travaille sur un processus réel de son poste.</strong>
+            <strong style={{ color: '#fff' }}>Jour 1 : comprendre ce que fait un agent, cadrer un cas d'usage, puis construire un premier agent sans code dans votre environnement. Jour 2 : l'éprouver (instructions, tests, limites), le relier à vos applications avec n8n ou Make, puis organiser sa surveillance. Les exercices portent sur les processus des participants.</strong>
           </p>
 
           <div style={{ display: 'grid', gap: 22 }}>
@@ -628,7 +668,7 @@ export default function FormationAgentsIAPage() {
           </div>
 
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 800 }}>
-            Le programme s'ajuste au cadrage, qui est gratuit : niveau réel des participants, licences en place, processus visés. En 1 jour, on s'arrête au premier agent testé ; les 2 jours vont jusqu'à l'orchestration et au plan de déploiement.
+            Nous ajustons le programme avant la session : niveau du groupe, licences en place, processus visés. En une journée, on s'arrête au premier agent éprouvé ; la deuxième journée ajoute l'orchestration et le plan de déploiement.
           </p>
         </div>
       </section>
@@ -638,11 +678,11 @@ export default function FormationAgentsIAPage() {
         <div style={wrap}>
           <Kicker>Les objectifs</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que vos équipes sauront faire
+            Six savoir-faire acquis à la fin de la formation
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>À la fin de la formation, chaque participant sait cadrer un cas d'usage d'agent, construire l'agent sans code dans votre environnement, le tester sur un jeu de cas, le border par des garde-fous et organiser sa supervision. L'équipe repart avec ses agents en état de marche et un plan de déploiement.</strong>
+            <strong>Au terme des deux jours, chaque participant sait cadrer un agent, le construire sans code, l'éprouver sur un jeu de cas, lui fixer des limites et organiser sa surveillance. L'équipe repart avec des agents en service et un plan pour les suivants.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -659,16 +699,16 @@ export default function FormationAgentsIAPage() {
         </div>
       </section>
 
-      {/* ── VOS OUTILS (tableau) ── */}
+      {/* ── AGENTS PAR OUTIL (tableau) ── */}
       <section id="outils" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Vos outils</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Sur quoi l'on construit : le bon environnement pour chaque agent
+            Chaque assistant construit ses agents à sa manière
           </h2>
 
           <p style={answerStyle}>
-            <strong>La formation se fait sur les outils que vos équipes ont déjà, dans leurs versions entreprise. Chaque environnement a sa manière de construire un agent ; le tableau résume ce qu'on y monte en atelier, et n8n ou Make prend le relais quand l'agent doit traverser plusieurs applications.</strong>
+            <strong>Nous travaillons sur les logiciels dont vos équipes disposent, dans leurs versions professionnelles. Chaque éditeur a sa façon de monter un agent ; le tableau résume ce qu'on y construit en atelier au 7 octobre 2026, et n8n ou Make prennent le relais quand l'agent doit traverser plusieurs applications.</strong>
           </p>
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
@@ -676,8 +716,8 @@ export default function FormationAgentsIAPage() {
               <thead>
                 <tr>
                   <th style={thStyle} scope="col">Environnement</th>
-                  <th style={thStyle} scope="col">Ce qu'on construit en atelier</th>
-                  <th style={thStyle} scope="col">Ce qui le distingue</th>
+                  <th style={thStyle} scope="col">Ce que l'on y construit</th>
+                  <th style={thStyle} scope="col">Son point fort</th>
                 </tr>
               </thead>
               <tbody>
@@ -693,20 +733,44 @@ export default function FormationAgentsIAPage() {
           </div>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '24px 0 0', maxWidth: 880 }}>
-            Mistral a sa place quand c'est votre environnement : Vibe (anciennement Le Chat) porte projets et bibliothèques, et l'orchestrateur prend le relais pour les enchaînements. Pour aller au fond de l'orchestrateur, la <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> y consacre 2 jours ; le versant scénarios répétitifs est couvert par la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> ; et si vos développeurs veulent dépasser le sans-code, la <Link to="/formation-claude-code" style={aStyle}>formation Claude Code</Link> couvre les agents dans le code.
+            Pour aller au fond de l'orchestration, la <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> y consacre deux jours ; les tâches répétitives qui n'appellent pas d'agent relèvent de la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> ; et si vos développeurs veulent programmer leurs agents, la <Link to="/formation-claude-code" style={aStyle}>formation Claude Code</Link> prend le relais.
+          </p>
+        </div>
+      </section>
+
+      {/* ── FORMATS EN FIN DE VIE ── */}
+      <section id="fin-de-vie" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Calendrier des éditeurs</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Trois formats d'assistants s'arrêtent : bâtissez sur les compétences
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Les GPTs personnalisés, les Gems et les agents de Vibe ont tous une date de fin. Leur remplaçant se ressemble d'un éditeur à l'autre : la compétence, une procédure écrite une fois, souvent dans un fichier SKILL.md, que l'assistant charge quand la demande s'y prête. Les agents construits pendant la formation partent de ce format.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
+            {FIN_DE_VIE.map(item => (
+              <div key={item.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
+                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
+            Une compétence bien rédigée se recopie d'un outil à l'autre : Claude, ChatGPT, Gemini, Copilot et Vibe lisent désormais ce type de procédure. C'est l'argument le plus solide pour fonder vos agents sur ce socle commun aux éditeurs.
           </p>
         </div>
       </section>
 
       {/* ── CE QUI FAIT ÉCHOUER UN AGENT ── */}
-      <section id="fiabilite" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="fiabilite" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Ce qui fait échouer</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Cinq raisons pour lesquelles un agent IA échoue en production
+            Cinq défauts expliquent la plupart des agents qui déçoivent
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un agent qui déçoit a presque toujours l'une de ces cinq causes : un périmètre fourre-tout, des instructions vagues, une validation à la démo, une autonomie sans relecture humaine, ou l'absence de supervision. Le jour 2 de la formation est construit sur leurs antidotes.</strong>
+          <p style={answerStyle}>
+            <strong>Un agent qui déçoit une fois en service souffre presque toujours de l'un de ces cinq défauts : un périmètre fourre-tout, des instructions vagues, une validation sur simple démonstration, une autonomie sans relecture ou une absence de surveillance. Le deuxième jour de la formation est construit autour de leurs parades.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {ECHECS.map((item, i) => (
@@ -717,21 +781,21 @@ export default function FormationAgentsIAPage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
-            Cette exigence vient du terrain : chez un distributeur IT B2B, onze compétences Claude ont été conçues avec dix référents et validées par la direction avant tout déploiement. La démarche est détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas</Link>.
+            Ces règles viennent du terrain. Dans une société de distribution informatique B2B de 58 personnes, dix référents ont été formés en deux jours en juin 2026 ; ensemble, ils ont bâti onze compétences Claude, validées par la direction avant diffusion, et le reste de l'entreprise doit en bénéficier entre octobre et décembre 2026 (<Link to="/etudes-de-cas-ia#distribution" style={{ color: c, fontWeight: 600 }}>le cas détaillé</Link>).
           </p>
         </div>
       </section>
 
       {/* ── POUR QUI ── */}
-      <section id="profils" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+      <section id="profils" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Pour qui</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            À qui s'adresse la formation agents IA ?
+            Six profils pour qui la formation agents IA est conçue
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Aux équipes qui pratiquent déjà un assistant IA et veulent passer aux agents, comme aux référents chargés d'outiller leur service. Aucun prérequis technique : tout se construit sans code. Les profils techniques y trouvent le cadre et la méthode, puis poursuivent côté code s'ils le souhaitent.</strong>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>La formation s'adresse aux équipes qui pratiquent déjà un assistant IA et veulent passer aux agents, ainsi qu'aux référents chargés d'outiller leur service. Aucun prérequis technique : tout se construit sans code. Les profils techniques en retirent la méthode et le cadre, avant de passer au code s'ils le souhaitent.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -749,22 +813,22 @@ export default function FormationAgentsIAPage() {
       </section>
 
       {/* ── LE CADRE : DONNÉES, VALIDATION HUMAINE, CONFORMITÉ ── */}
-      <section id="cadre" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="cadre" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Le cadre</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Des agents sous contrôle : données, validation humaine, conformité
+            Un agent agit davantage qu'un assistant : son cadre doit être plus net
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un agent a plus d'autonomie qu'un assistant ; le cadre se durcit d'autant. Les ateliers se font sur les offres entreprise, qui n'entraînent pas les modèles sur vos données ; chaque agent reçoit un périmètre de données écrit ; et tout ce qui engage l'entreprise passe par une validation humaine.</strong>
+          <p style={answerStyle}>
+            <strong>Chaque agent reçoit un périmètre de données écrit, travaille sur une offre professionnelle et passe la main à une personne pour tout ce qui engage l'entreprise. Les obligations de l'AI Act arrivent par étapes ; la formation dit ce qui vaut aujourd'hui.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
             {[
-              { icon: ShieldCheck, title: 'Données et RGPD', desc: "Le cadrage fixe, agent par agent, ce qu'il peut lire et où il peut écrire : quelles données, quelles applications, quelles exclusions. Les recommandations de la CNIL sur l'IA servent de référence de travail, et les versions gratuites sont écartées pour toute donnée sensible." },
-              { icon: Eye, title: 'La validation humaine', desc: "Envoyer un courrier, répondre à un client, modifier un dossier : ce qui engage passe par un humain, et l'agent prépare au lieu d'exécuter. Le niveau d'autonomie est une décision, revue à mesure que la confiance s'installe." },
-              { icon: Scale, title: "L'AI Act, sans dramatiser", desc: "L'article 4 du règlement européen demande de soutenir la montée en compétence des personnes qui utilisent des systèmes d'IA : une formation documentée y répond. Et quand un agent interagit avec des personnes, la transparence se prévoit dès la conception. Le sujet complet est traité dans la formation AI Act.", link: { href: '/formation-ai-act', label: 'Voir la formation AI Act' } },
+              { icon: ShieldCheck, title: 'Les données', desc: "Pour chaque agent, le cadrage fixe ce qu'il lit et où il écrit. Les ateliers se tiennent sur des offres professionnelles où l'entraînement sur vos échanges est coupé ; il l'est par défaut chez la plupart des éditeurs, et chez Vibe Team, l'administrateur doit le désactiver. Les recommandations de la CNIL servent de repère." },
+              { icon: Eye, title: 'La validation humaine', desc: "Envoyer un courrier, répondre à un client, modifier un dossier : l'agent prépare, une personne décide. Le degré d'autonomie se fixe à la conception et se révise à mesure que la confiance s'installe." },
+              { icon: Scale, title: "L'AI Act, sans dramatiser", desc: "L'article 4, applicable depuis le 2 février 2025, attend des entreprises qu'elles fassent progresser la maîtrise de l'IA dans leurs équipes ; une formation documentée y contribue. L'article 50, en vigueur depuis le 2 août 2026, exige d'informer les personnes qui dialoguent avec un système d'IA. Les obligations du haut risque (recrutement, évaluation des salariés) sont reportées à décembre 2027.", link: { href: '/formation-ai-act', label: 'La formation AI Act' } },
             ].map(card => {
               const Icon = card.icon
               return (
@@ -788,26 +852,26 @@ export default function FormationAgentsIAPage() {
       </section>
 
       {/* ── TARIF ET FINANCEMENT ── */}
-      <section id="tarif" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+      <section id="tarif" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <div style={{ ...cardStyle, background: '#fff', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <Landmark size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT par jour de formation, pour le groupe
+                Une journée de formation agents IA coûte 1 980 € HT
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le tarif de la formation agents IA suit la grille unique de Masteria : 1 980 € HT par jour de formation en intra, pour l'ensemble du groupe (jusqu'à 12 personnes par session), soit 3 960 € HT les 2 jours. Le format se cale au cadrage : 2 jours complets, 1 jour centré sur le premier agent, ou un accompagnement individuel pour un référent. Masteria est certifiée Qualiopi : la formation est finançable par votre OPCO dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous, la décision de prise en charge restant à votre opérateur. Pas d'éligibilité CPF. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Pour une équipe de douze au plus, réunie en intra, les deux jours reviennent à 3 960 € HT ; le même tarif journalier vaut pour un parcours individuel, destiné à un référent ou à un dirigeant. Les licences des outils restent à votre charge. Masteria détenant la certification Qualiopi, ces journées peuvent être financées par votre OPCO, au regard de ses règles et du budget dont il dispose ; nous lui fournissons programme, objectifs, modalités d'évaluation et convention. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les règles.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  "1 980 € HT par jour, pour le groupe (jusqu'à 12 personnes)",
-                  '2 jours recommandés : orchestration et plan de déploiement compris',
-                  'Qualiopi : finançable OPCO, dossier préparé ensemble',
-                  'Devis sous 24 h après un cadrage gratuit',
+                  'Deux jours en intra : 3 960 € HT',
+                  'Parcours individuel au même tarif journalier',
+                  'Licences des outils non comprises',
+                  "Objectifs et évaluation prêts pour l'OPCO",
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -820,25 +884,25 @@ export default function FormationAgentsIAPage() {
         </div>
       </section>
 
-      {/* ── E-E-A-T : l'expérience derrière la page ── */}
+      {/* ── E-E-A-T : qui forme vos équipes ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui forme vos équipes</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Des formateurs qui déploient des agents en entreprise
+                Des formateurs qui conçoivent des agents pour des clients
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les agents montrés en formation ressemblent à ceux que nous construisons en mission : chez un distributeur IT B2B, onze compétences Claude conçues avec dix référents et validées par la direction avant leur déploiement, une démarche détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues.
+                À la tête de Masteria, cabinet lyonnais créé en 2022 qui ne travaille que sur l'intelligence artificielle, sans attache avec un éditeur, Mathias Nizan pilote chaque session ; les formateurs du réseau, une vingtaine d'indépendants, conçoivent eux aussi des agents en mission. Dans un groupe industriel international du packaging, par exemple, les sessions des 24 managers pilotes comprenaient la création d'assistants Copilot sur les fichiers du groupe, l'un d'eux préparant la fiche fournisseur dès réception d'un mail (<Link to="/etudes-de-cas-ia#industrie" style={{ color: '#93C5FD', fontWeight: 600 }}>le cas complet</Link>).
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Qualiopi', 'actions de formation certifiées'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['11', 'compétences Claude construites avec dix référents'],
+                ['24', 'managers pilotes formés dans un groupe industriel'],
+                ['5', 'assistants du marché couverts en atelier'],
+                ['2', 'orchestrateurs pour relier les agents : n8n, Make'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -851,19 +915,19 @@ export default function FormationAgentsIAPage() {
       </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section id="faq" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      <section id="faq" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Formation agents IA : les questions fréquentes
+                Formation agents IA : les réponses aux questions courantes
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre outil ou votre processus n'apparaît pas ici ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Décrivez-le-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -877,25 +941,25 @@ export default function FormationAgentsIAPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pages liées</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Autour des agents : automatisation, prompts, construction
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Les agents s'articulent avec l'automatisation, les fondamentaux du prompt et, quand il faut du sur-mesure, nos missions de construction.
+            Les agents se combinent avec l'automatisation, reposent sur des instructions bien écrites et, pour les besoins spécifiques, sur nos missions de construction.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Faire construire', desc: "Le guide des agents côté déploiement : cas d'usage par fonction, outils, gouvernance, et nos missions sur mesure." },
-              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Automatisation', desc: "Automatiser les tâches répétitives avec Make, Zapier ou n8n : le versant scénarios, complémentaire des agents." },
-              { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Construire', desc: "Construire un outil ou un prototype en pilotant l'IA, sans être développeur : l'étape d'après côté création." },
-              { label: 'Formation Claude Code', href: '/formation-claude-code', tag: 'Développeurs', desc: "Les agents dans le code, pour les équipes de développement : production, revue, industrialisation." },
-              { label: 'Formation prompt engineering', href: '/formation-prompt-engineering', tag: 'Fondamentaux', desc: "Formuler des demandes précises : le socle qui rend les instructions d'agents nettes et testables." },
-              { label: 'Quel est le meilleur agent IA ?', href: '/meilleur-agent-ia', tag: 'Comparatif', desc: "Le panorama des agents du marché, pour situer ce que vous construirez en formation." },
-              { label: 'Formation IA en entreprise', href: '/formation-ia-entreprise', tag: 'Déploiement', desc: "Former vos équipes en intra, du sprint de 3 h au parcours par métier : le cadre général de nos interventions." },
-              { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, plan de développement des compétences : les dispositifs qui financent la formation agents IA." },
+              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Faire construire', desc: "Les agents vus côté déploiement : usages par fonction, gouvernance, et nos missions sur mesure." },
+              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Workflows', desc: "Les tâches répétitives confiées à Make, Zapier ou n8n, en complément des agents." },
+              { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Créer un outil', desc: "Piloter l'IA pour produire un prototype ou un petit outil, sans être développeur." },
+              { label: 'Formation Claude Code', href: '/formation-claude-code', tag: 'Développeurs', desc: "Des agents programmés et relus par vos développeurs." },
+              { label: 'Formation prompt engineering', href: '/formation-prompt-engineering', tag: 'Fondamentaux', desc: "Écrire des demandes précises, base d'instructions d'agent qui se testent." },
+              { label: 'Meilleur agent IA : le comparatif', href: '/meilleur-agent-ia', tag: 'Comparatif', desc: "Les agents du marché passés en revue, pour situer ce que vous construirez." },
+              { label: 'Formation IA en entreprise', href: '/formation-ia-entreprise', tag: 'Déploiement', desc: "Le cadre général de nos sessions en entreprise, par métier et par outil." },
+              { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "Comment un OPCO prend en charge une formation d'équipe, pièces à l'appui." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -910,10 +974,7 @@ export default function FormationAgentsIAPage() {
                     {rel.label}
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </span>
+                  <ArrowRight size={16} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
                 </div>
               </Link>
             ))}
@@ -921,8 +982,14 @@ export default function FormationAgentsIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Dernière révision le 7 octobre 2026, par Mathias Nizan : fonctions d'agents vérifiées chez OpenAI, Anthropic, Microsoft, Google et Mistral, ainsi que le calendrier de retrait des GPTs et des Gems. Son parcours est décrit sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page de fondateur</Link>.
+          </p>
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -933,23 +1000,40 @@ export default function FormationAgentsIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation agents IA</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Passez de l'assistant à l'agent, sans lâcher le contrôle
+              Passez de l'assistant à l'agent, en gardant la décision
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos processus, vos outils et le niveau de vos équipes. Nous revenons sous 24 heures avec un programme cadré, un calendrier et le devis, dossier OPCO compris. Le premier agent de vos équipes peut être en test dans le mois.
+              Décrivez vos processus, vos outils et le niveau de vos équipes. Sous 24 heures, vous recevez un programme cadré, des dates possibles et le devis, avec les pièces pour votre OPCO.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un devis sous 24 h
+              Monter votre formation agents IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
+              Qualiopi · deux jours ou un parcours individuel · Claude, ChatGPT, Copilot, Gemini, Vibe
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES DE LA PAGE ── */}
+      <section aria-labelledby="sources-agents" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-agents" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Sur quoi s'appuient les dates et les fonctions citées
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Annonces et documentation des éditeurs consultées le 7 octobre 2026, règlement européen sur l'IA, recommandations de la CNIL.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {PAGE_CITATIONS.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

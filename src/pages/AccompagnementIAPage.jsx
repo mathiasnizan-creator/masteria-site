@@ -2,49 +2,42 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Compass, Route as RouteIcon, Users, GraduationCap,
-  MapPin, Check, Landmark, HeartHandshake, BarChart3,
+  MapPin, Check, Landmark, HeartHandshake, BarChart3, Factory, Bot, Sun,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Money page « accompagnement IA » (slug /accompagnement-ia) — cluster conseil.
- * Cible la grappe (Semrush 2026-08-10) : « accompagnement ia » (90, KD 22,
- * CPC 1,03), « accompagnement entreprises ia générative » (70), « agence
- * accompagnement ia » (70), + les intentions adoption pliées en sections :
- * « accompagnement au changement ia » (50, KD 10), « conduite du changement
- * ia » (50), « adoption ia entreprise » (50). SERP vérifiée le 2026-08-10 :
- * pages de service classées (Kayro, Sigma, TalenCo), 4 annonceurs,
- * economie.gouv en tête sur l'angle aides publiques ; l'AI Overview décrit
- * la séquence diagnostic → formation → déploiement → suivi.
+ * Money page « accompagnement IA » (slug /accompagnement-ia), cluster conseil.
+ * Grappe Semrush (2026-08-10) : « accompagnement ia » (90, KD 22),
+ * « accompagnement entreprises ia générative » (70), « agence accompagnement
+ * ia » (70), puis les intentions d'adoption pliées en sections :
+ * « accompagnement au changement ia », « conduite du changement ia »,
+ * « adoption ia entreprise ».
  *
  * RÉPARTITION D'INTENTIONS (à ne pas casser) :
  *  - /conseil-intelligence-artificielle = l'expertise et la stratégie ;
  *  - /accompagnement-ia = CETTE page : la présence dans la durée, du cadrage
- *    à l'adoption par les équipes (le fil rouge qui relie diagnostic, audit,
- *    méthode, développement et formation) ;
- *  - /acculturation-ia = la montée en compétence collective (côté formation,
- *    OPCO/Qualiopi visibles) — page sœur créée le même jour.
+ *    à l'adoption par les équipes ;
+ *  - /acculturation-ia = la montée en compétence collective (formation).
  *
- * INTÉGRITÉ (ligne maison) : posture capacité, aucun cas client nommé, aucun
- * chiffre de résultat inventé, pas de prix ferme. Le conseil n'est pas
- * finançable par votre OPCO (réservé formation) ; le volet formation de
- * l'accompagnement l'est (Qualiopi). Aides publiques : formulation GÉNÉRIQUE
- * uniquement (« selon votre profil et votre région, détaillé au cadrage »).
- * CONSIGNE Mathias 2026-08-10 : ne JAMAIS nommer Bpifrance / Diag Data IA sur
- * le site — ça envoie les prospects faire leur audit ailleurs. En devis, les
- * dispositifs restent mobilisables (mémoire financement conseil).
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards ni
+ * de FounderNote ; trois cas cités en deux phrases avec lien vers leur ancre
+ * (faits de src/data/etudes-de-cas.js, révisés le 05/10/2026) ; signature à la
+ * première personne ; offre d'entrée « 30 minutes de cadrage offertes ».
+ * Aides publiques : formulation générique uniquement, aucun dispositif nommé
+ * (consigne de Mathias du 2026-08-10).
  */
 
 const SLUG = 'accompagnement-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const RDV = '/contact?type=projet&rdv=30'
 
 const META_TITLE = "Accompagnement IA : du cadrage à l'adoption | Masteria"
-const META_DESC = "Accompagnement IA en entreprise : cadrage, choix des outils, déploiement, conduite du changement et formation des équipes. Présence dans la durée, cadrage gratuit."
+const META_DESC = "Accompagnement IA en entreprise : choix des usages et des outils, référents, formation par métier, mesure de l'usage. 30 minutes de cadrage offertes."
 const KEYWORDS = "accompagnement ia, accompagnement intelligence artificielle, accompagnement entreprises ia générative, agence accompagnement ia, accompagnement au changement ia, conduite du changement ia, adoption ia entreprise"
 
 /* ───────── Styles partagés (calque cluster conseil) ───────── */
@@ -64,150 +57,142 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
-}
-
 const HERO_BADGES = [
-  { icon: RouteIcon, label: 'Du cadrage à l\'adoption' },
-  { icon: GraduationCap, label: 'Volet formation Qualiopi, finançable OPCO' },
-  { icon: HeartHandshake, label: 'Un interlocuteur, dans la durée' },
-  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: RouteIcon, label: "De la décision à l'usage quotidien" },
+  { icon: GraduationCap, label: "Journées de formation éligibles à votre OPCO" },
+  { icon: HeartHandshake, label: 'Le même interlocuteur pendant des mois' },
+  { icon: MapPin, label: "Lyon, puis l'Europe, les États-Unis, l'Inde" },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Mission', value: "Une présence dans la durée : cadrer, choisir, déployer, conduire le changement, former, mesurer" },
-  { label: 'Format', value: "Rythme adapté à votre organisation : points réguliers, jalons décisionnels, présence sur site ou à distance" },
-  { label: 'Adoption', value: "Conduite du changement intégrée : communication, référents internes, formation par métier, mesure d'usage" },
-  { label: 'Différence', value: "Le maillon formation est certifié Qualiopi et finançable par votre OPCO ; le conseil ne l'est pas" },
-  { label: 'Prix', value: "Sur devis selon le périmètre et la durée ; premier échange de cadrage gratuit" },
-  { label: 'Et après', value: "L'objectif est votre autonomie : des équipes formées et des usages qui tiennent sans nous" },
+  { label: 'Mission', value: "Suivre votre entreprise pendant plusieurs mois : choisir les usages, installer les outils, faire adopter, mesurer, jusqu'à ce que vos équipes avancent seules" },
+  { label: 'Rythme', value: "Des jalons serrés au démarrage, puis un point régulier ; sur site pour les lancements, à distance pour le suivi" },
+  { label: 'Adoption', value: "Des référents choisis dans vos équipes, des formations construites sur leurs dossiers, une règle d'usage écrite, un suivi de l'usage" },
+  { label: 'Financement', value: "L'OPCO dont relève votre entreprise peut financer les journées de formation, dans la limite de ses critères et de son budget ; le conseil n'est pas finançable par votre OPCO" },
+  { label: 'Prix', value: "Un forfait écrit par étape, arrêté une fois vos 30 minutes de cadrage offertes passées" },
+  { label: 'Fin de mission', value: "Elle arrive quand vos référents tiennent le sujet : c'est inscrit dans la proposition dès le départ" },
 ]
 
-/* ───────── Les 4 phases (renvoient vers les pages existantes) ───────── */
+/* ───────── Les quatre temps (renvoient vers les pages existantes) ───────── */
 
 const PHASES = [
   {
     num: '01',
-    title: 'Cadrer : où l\'IA crée de la valeur chez vous',
-    desc: "État des lieux de vos usages, de vos processus et de vos contraintes, priorisation par impact et par effort. Selon la profondeur voulue, cette phase prend la forme de notre diagnostic IA, une intervention courte, ou d'un audit complet.",
+    title: "Cadrer : repérer les tâches où l'IA rapporte chez vous",
+    desc: "Nous écoutons les personnes qui font le travail, nous regardons leurs fichiers et leurs logiciels, puis nous classons les usages possibles selon le temps qu'ils rendent et la difficulté de les mettre en place. Pour un premier regard, le Diagnostic IA suffit ; le cadrage arrête sa durée et son prix. Pour un état des lieux de toute l'organisation, l'audit prend le relais.",
     links: [
-      { label: 'Diagnostic IA', href: '/diagnostic-ia' },
-      { label: 'Audit IA complet', href: '/audit-ia' },
-      { label: 'Conseil en transformation IA', href: '/conseil-transformation-ia' },
+      { label: 'Le Diagnostic IA', href: '/diagnostic-ia' },
+      { label: "L'audit IA de l'organisation", href: '/audit-ia' },
+      { label: 'La transformation IA', href: '/conseil-transformation-ia' },
     ],
   },
   {
     num: '02',
-    title: 'Choisir et déployer les bons outils',
-    desc: "Choix des outils adaptés à vos métiers et à vos contraintes de données (nous sommes indépendants des éditeurs), configuration, intégrations et développements sur mesure quand le besoin le justifie. Le déploiement suit un ordre : d'abord les cas qui prouvent la valeur.",
+    title: 'Équiper : choisir les outils et les installer',
+    desc: "Nous ne revendons aucune licence : l'outil retenu dépend de vos métiers, du niveau de confidentialité de vos données et des logiciels déjà en place. Nous le configurons, nous le relions à vos sources et nous construisons un outil sur mesure seulement quand une tâche le demande. Les premiers usages déployés sont ceux qui montrent vite un résultat.",
     links: [
-      { label: 'Quel outil IA choisir', href: '/quel-outil-ia' },
-      { label: 'Développement sur mesure', href: '/agence-developpement-ia' },
+      { label: "Comparer les outils d'IA", href: '/quel-outil-ia' },
+      { label: 'Faire développer un outil', href: '/agence-developpement-ia' },
     ],
   },
   {
     num: '03',
-    title: 'Conduire le changement et former',
-    desc: "C'est le maillon où la plupart des projets IA meurent. Communication qui donne du sens, réseau de référents internes, formation par métier sur les cas réels des équipes, cadre d'usage clair (charte, RGPD, AI Act). Notre volet formation est certifié Qualiopi et finançable par votre OPCO.",
+    title: "Faire adopter : référents, formation et règle d'usage",
+    desc: "Le moment le plus fragile d'un projet d'IA arrive après l'installation. Des référents nommés dans chaque équipe, des ateliers construits avec les documents de l'équipe et une charte qui dit ce qui est permis font passer l'outil de la démonstration au réflexe. Ces journées de formation relèvent de notre certification Qualiopi.",
     links: [
-      { label: 'Acculturation IA', href: '/acculturation-ia' },
-      { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise' },
+      { label: "L'acculturation des équipes", href: '/acculturation-ia' },
+      { label: "Rédiger une charte d'usage", href: '/charte-ia-entreprise' },
     ],
   },
   {
     num: '04',
-    title: 'Ancrer et mesurer l\'adoption',
-    desc: "Suivi des usages réels, retours d'expérience, ajustements, extension aux cas suivants. L'accompagnement se pilote sur des indicateurs d'adoption, pas sur un sentiment : qui utilise quoi, sur quels processus, avec quel gain constaté par les équipes.",
+    title: "Mesurer : suivre l'usage et corriger le tir",
+    desc: "Chaque mois, nous regardons qui se sert de quoi, sur quelles tâches, et ce que les équipes déclarent y gagner. Les blocages remontés aux référents deviennent la liste des corrections. Un usage qui progresse ouvre la porte au cas suivant ; un usage qui stagne se reprend avant de s'éteindre.",
     links: [
-      { label: 'Gouvernance de l\'IA', href: '/gouvernance-ia' },
+      { label: "Gouverner l'IA dans la durée", href: '/gouvernance-ia' },
     ],
   },
 ]
 
-/* ───────── Conduite du changement (4 leviers) ───────── */
+/* ───────── Conduite du changement (quatre leviers) ───────── */
 
 const CHANGEMENT = [
   {
     icon: Users,
-    title: 'Un réseau de référents internes',
-    desc: "Nous identifions et formons des référents IA dans vos équipes : les collègues vers qui on se tourne au quotidien, qui font remonter les cas d'usage et entretiennent la dynamique après notre passage. C'est le levier d'ancrage le plus efficace que nous connaissions.",
+    title: 'Des référents dans chaque équipe',
+    desc: "Nous formons en premier quelques collègues volontaires, ceux vers qui les autres se tournent déjà. Ils testent, ils dépannent leurs voisins de bureau et ils nous signalent ce qui coince. Quand la mission s'achève, ce sont eux qui gardent le sujet vivant.",
   },
   {
     icon: HeartHandshake,
-    title: 'Une communication qui donne du sens',
-    desc: "Les résistances à l'IA sont rationnelles : peur du remplacement, crainte de la surveillance, lassitude des outils imposés. On ne les traite pas par l'enthousiasme forcé : on explique ce que l'outil change pour chacun, ce qu'il ne fera pas, et qui décide de quoi.",
+    title: 'Une parole franche sur ce qui change',
+    desc: "Les salariés craignent d'être remplacés, surveillés ou noyés sous un outil de plus. Ces craintes se comprennent. Nous aidons la direction à dire pour chaque poste ce que l'IA prendra, ce qu'elle ne touchera pas et qui décide, avant le premier déploiement.",
   },
   {
     icon: GraduationCap,
-    title: 'Une formation par métier, sur vos cas réels',
-    desc: "Une démonstration générique ne change pas les pratiques. Chaque équipe est formée sur ses propres situations de travail : les documents, les processus et les outils qu'elle manipule vraiment. C'est ce qui transforme la curiosité en réflexe quotidien.",
+    title: 'Des formations taillées dans les dossiers du service',
+    desc: "Un commercial apprend sur ses devis, une comptable sur ses rapprochements, un juriste sur ses contrats : chacun sur sa matière. Chaque atelier part des fichiers et des logiciels de l'équipe formée, et chacun repart avec un usage installé sur son poste.",
   },
   {
     icon: BarChart3,
-    title: "Une adoption qui se mesure",
-    desc: "Taux d'usage par équipe, cas d'usage actifs, temps gagné déclaré, questions remontées aux référents : l'adoption se suit avec des indicateurs simples, revus à intervalle régulier. Ce qui ne se mesure pas s'éteint en trois mois.",
+    title: "Un tableau de bord de l'usage",
+    desc: "Nombre de personnes actives par équipe, tâches outillées, temps gagné déclaré, questions reçues par les référents : quatre relevés simples, revus à date fixe. Un usage que personne ne regarde disparaît en quelques mois.",
   },
 ]
 
-/* ───────── Pourquoi les projets IA échouent (5 causes, citable) ───────── */
+/* ───────── Pourquoi les projets IA échouent (cinq causes, citable) ───────── */
 
 const ECHECS = [
   {
     num: '1',
-    title: "L'outil avant l'usage",
-    cause: "Des licences achetées à l'échelle avant de savoir qui s'en servira, pour quoi faire. Six mois plus tard, les tableaux de bord d'usage font mal, et l'IA passe pour un échec alors que c'est le déploiement qui en est un.",
-    parade: "L'accompagnement inverse l'ordre : d'abord le cadrage des usages qui créent de la valeur, ensuite l'outillage dimensionné sur ces usages.",
+    title: 'Des licences achetées avant de savoir pour quoi faire',
+    cause: "L'entreprise équipe tout le monde, puis découvre au premier bilan que l'outil sert à une poignée de personnes. On conclut que l'IA ne marche pas, alors que personne n'avait choisi les tâches à outiller.",
+    parade: "Nous commençons par les tâches qui méritent l'IA, puis nous dimensionnons les licences sur ces tâches.",
   },
   {
     num: '2',
-    title: 'Le POC éternel',
-    cause: "Un prototype convaincant, une démonstration applaudie, puis rien : pas de responsable de l'industrialisation, pas de budget de passage à l'échelle, pas de plan d'intégration au quotidien des équipes.",
-    parade: "Chaque phase de l'accompagnement se termine par une décision explicite : on industrialise, on ajuste ou on arrête. Un POC sans suite décidée est un POC raté, même réussi techniquement.",
+    title: 'Le prototype qui ne quitte jamais la salle de réunion',
+    cause: "La démonstration impressionne le comité, puis le projet s'arrête : personne pour le faire entrer dans la production, aucun budget pour passer à l'échelle, aucune place dans le travail des équipes.",
+    parade: "Chaque étape se clôt sur une décision écrite : on déploie, on ajuste ou on arrête. Un prototype sans décision reste un coût.",
   },
   {
     num: '3',
-    title: 'Personne ne porte le sujet',
-    cause: "Sans sponsor de direction ni relais de terrain, le sujet IA appartient à tout le monde, donc à personne. Les initiatives individuelles s'essoufflent, les questions restent sans réponse, les pratiques divergent.",
-    parade: "Le dispositif d'accompagnement installe les deux étages : un sponsor qui arbitre, des référents formés qui font vivre le sujet au quotidien.",
+    title: "Un sujet qui n'a pas de porteur",
+    cause: "Sans sponsor à la direction ni relais dans les équipes, chacun bricole de son côté. Les pratiques divergent, les questions restent en suspens et l'élan retombe avec le premier imprévu.",
+    parade: "Nous installons deux étages dès le départ : un sponsor qui tranche, des référents formés qui font vivre le sujet au jour le jour.",
   },
   {
     num: '4',
-    title: 'La formation générique qui ne change rien',
-    cause: "Une journée de sensibilisation sur des exemples hors sol, un quiz, un certificat. Deux semaines après, aucun usage n'a bougé : les équipes n'ont pas vu leur métier dans ce qu'on leur a montré.",
-    parade: "La formation de l'accompagnement part des cas réels de chaque équipe, ses documents et ses processus, et se mesure sur les usages installés, jamais sur la satisfaction en sortie de salle.",
+    title: 'Une formation qui ne parle pas du métier',
+    cause: "Une journée d'exemples hors sujet, un questionnaire de fin, puis rien ne bouge : les participants n'ont reconnu ni leurs dossiers ni leurs logiciels dans ce qu'on leur a montré.",
+    parade: "Nos ateliers partent des documents de l'équipe et se jugent sur les usages installés quelques semaines plus tard.",
   },
   {
     num: '5',
-    title: "L'adoption jamais mesurée",
-    cause: "Sans indicateurs, l'échec est invisible jusqu'au renouvellement des licences. On découvre alors que 15 personnes sur 200 utilisent l'outil, sans savoir ni pourquoi ni depuis quand.",
-    parade: "La mesure d'adoption fait partie du dispositif dès le premier jour : taux d'usage, cas actifs, temps gagné déclaré, questions remontées. Ce qui dérive se voit, donc se corrige.",
+    title: "Un usage que personne ne mesure",
+    cause: "Sans relevé, l'échec reste invisible jusqu'au renouvellement des abonnements. On apprend alors qu'une petite minorité se sert de l'outil, sans savoir pourquoi les autres l'ont lâché.",
+    parade: "Le suivi de l'usage démarre avec le premier déploiement : ce qui décroche se voit tôt et se corrige.",
   },
 ]
 
-/* ───────── Un accompagnement type, trimestre par trimestre ───────── */
+/* ───────── Un accompagnement représentatif, trimestre par trimestre ───────── */
 
 const TRIMESTRES = [
   {
-    periode: 'Premier trimestre',
-    title: 'Cadrer et prouver',
-    desc: "Cadrage des usages (diagnostic ou audit selon la profondeur), choix des outils, conférence de lancement pour embarquer largement, et un ou deux cas d'usage déployés en pilote sur une équipe volontaire. Objectif : une première preuve de valeur visible en interne, sur laquelle tout le reste s'appuie.",
+    periode: 'Trimestre 1',
+    title: 'Choisir et prouver',
+    desc: "Cadrage des usages, choix de l'outil, réunion de lancement avec les équipes concernées, puis un ou deux usages mis en service dans une équipe volontaire. À la fin du trimestre, un résultat visible en interne sert d'argument pour la suite.",
   },
   {
-    periode: 'Deuxième trimestre',
-    title: 'Déployer et former',
-    desc: "Extension aux équipes prioritaires par vagues : formation sur les cas réels de chacune, installation des référents internes, cadre d'usage posé (charte, données, conformité). Les premiers indicateurs d'adoption tournent et orientent les ajustements.",
+    periode: 'Trimestre 2',
+    title: 'Étendre et former',
+    desc: "Les équipes prioritaires suivent, par vagues. Chacune reçoit sa formation sur ses propres dossiers, ses référents et la charte d'usage. Les premiers relevés d'usage orientent les corrections.",
   },
   {
-    periode: 'Troisième trimestre',
-    title: 'Ancrer et transmettre',
-    desc: "Montée en autonomie : les référents prennent le relais du quotidien, les cas suivants s'industrialisent, la gouvernance se stabilise. Notre présence s'espace volontairement ; elle se prolonge ensuite par des points d'ancrage à la demande, pas par une dépendance.",
+    periode: 'Trimestre 3',
+    title: 'Transmettre',
+    desc: "Les référents prennent la main sur le quotidien, les usages suivants passent en service, les règles se stabilisent. Nos visites s'espacent à dessein ; ensuite, un point ponctuel à votre demande suffit.",
   },
 ]
 
@@ -215,28 +200,57 @@ const TRIMESTRES = [
 
 const COMPARATIF = [
   {
-    critere: 'Objectif',
-    conseil: "Éclairer une décision : stratégie, cas d'usage, feuille de route",
-    accompagnement: "Faire aboutir la transformation, du cadrage à l'adoption",
-    acculturation: "Faire comprendre et utiliser l'IA par toutes les équipes",
+    critere: 'Ce que vous obtenez',
+    conseil: "Une décision éclairée : priorités, outils, feuille de route",
+    accompagnement: "Des usages installés, suivis jusqu'à ce que les équipes les tiennent",
+    acculturation: "Des équipes qui comprennent l'IA et savent s'en servir",
   },
   {
     critere: 'Durée',
-    conseil: "Missions cadrées : de quelques jours à quelques semaines",
-    accompagnement: "Dans la durée : plusieurs mois, à un rythme adapté",
-    acculturation: "Un programme : conférences, ateliers et parcours répartis",
+    conseil: "Quelques jours à quelques semaines",
+    accompagnement: "Plusieurs mois, à un rythme qui suit vos jalons",
+    acculturation: "Un programme réparti : conférences, ateliers, parcours",
   },
   {
-    critere: 'Livrable',
-    conseil: "Rapport, feuille de route, arbitrages documentés",
-    accompagnement: "Des outils en production et des équipes qui s'en servent",
-    acculturation: "Des équipes formées, des référents, un langage commun",
+    critere: 'À la fin',
+    conseil: "Un document qui tranche et chiffre",
+    accompagnement: "Des outils en service, des référents, des relevés d'usage",
+    acculturation: "Un vocabulaire commun et des référents formés",
   },
   {
-    critere: 'Financement',
-    conseil: "Non finançable par votre OPCO ; dispositifs publics selon profil",
-    accompagnement: "Volet formation finançable OPCO ; volet conseil non",
-    acculturation: "Formation certifiée Qualiopi, finançable par votre OPCO",
+    critere: 'Prise en charge',
+    conseil: "Pas finançable par votre OPCO",
+    accompagnement: "Journées de formation éligibles à l'OPCO ; cadrage et outils payés par l'entreprise",
+    acculturation: "Programme de formation, donc éligible à une prise en charge par l'OPCO",
+  },
+]
+
+/* ───────── Trois accompagnements cités (faits : src/data/etudes-de-cas.js, révisés le 05/10/2026) ───────── */
+
+const CAS = [
+  {
+    id: 'industrie',
+    icon: Factory,
+    sector: 'Packaging · groupe international',
+    figure: '24',
+    figureLabel: 'managers pilotes avant tout passage à l\'échelle',
+    text: "Évaluée à chaud, la première session a changé trois choses dans la deuxième : contrôler les licences en amont, composer les tables par métier, garder du temps pour construire les assistants. Entre juillet et septembre 2026, le groupe a suivi cinq sessions de deux jours ; ses équipes américaines et mexicaines enchaînent en octobre, celles d'Inde en décembre.",
+  },
+  {
+    id: 'distribution',
+    icon: Bot,
+    sector: 'Distribution IT B2B · 58 salariés',
+    figure: '10',
+    figureLabel: 'référents formés en juin 2026, un projet chacun',
+    text: "Les référents ont conçu avec nous onze compétences Claude sur la cotation, les relances et les cahiers des charges. Ce sont eux qui porteront le déploiement vers leurs collègues, prévu d'octobre à décembre 2026.",
+  },
+  {
+    id: 'photovoltaique',
+    icon: Sun,
+    sector: 'Distribution photovoltaïque · équipe de trois',
+    figure: '90 j',
+    figureLabel: 'pour passer de la décision à une première mesure',
+    text: "Une charte signée avant la formation, un référent qui administre les comptes et un point mensuel encadrent l'usage. Les deux jours sur site sont prévus en octobre 2026, avec un bilan un mois plus tard sur le délai des devis et le temps passé avec les transporteurs.",
   },
 ]
 
@@ -245,51 +259,51 @@ const COMPARATIF = [
 const FAQ = [
   {
     q: "En quoi consiste un accompagnement IA ?",
-    a: "C'est une présence dans la durée, qui couvre les quatre maillons d'une adoption réussie : cadrer les usages qui créent de la valeur chez vous, choisir et déployer les bons outils, conduire le changement auprès des équipes (communication, référents, formation), puis mesurer l'adoption et ajuster. La différence avec une mission de conseil ponctuelle tient dans ce dernier kilomètre : l'accompagnement ne s'arrête pas à la recommandation, il reste jusqu'à ce que les usages tiennent dans le quotidien des équipes.",
+    a: "Masteria reste à vos côtés plusieurs mois pour faire entrer l'IA dans le travail de vos équipes. Nous choisissons avec vous les tâches à outiller, nous installons et configurons l'outil, nous formons des référents et chaque métier sur ses propres dossiers, puis nous suivons l'usage chaque mois. La mission s'arrête quand vos référents n'ont plus besoin de nous.",
   },
   {
     q: "Quelle est la différence entre conseil IA et accompagnement IA ?",
-    a: "Le conseil éclaire une décision : audit, stratégie, feuille de route, arbitrages. Il se termine par un livrable. L'accompagnement prend la suite et porte la transformation dans la durée : déploiement des outils, conduite du changement, formation des équipes, mesure de l'adoption. Beaucoup de nos accompagnements commencent par une mission de conseil courte (un diagnostic ou un audit) qui fixe le cap ; l'accompagnement transforme ensuite ce cap en usages réels.",
+    a: "Une mission de conseil répond à une question de direction (quelles priorités, quel outil, quel budget) et se termine par un document qui tranche. L'accompagnement commence souvent là où ce document s'arrête : il met les décisions en œuvre, forme les équipes et vérifie dans le temps que les usages prennent. Beaucoup de nos accompagnements démarrent par un Diagnostic IA court, puis enchaînent.",
   },
   {
     q: "Comment se conduit le changement autour de l'IA ?",
-    a: "Avec quatre leviers, dans cet ordre d'importance : un réseau de référents internes formés, qui portent le sujet au quotidien ; une communication honnête qui explique ce que l'outil change pour chacun et ce qu'il ne fera pas ; une formation par métier sur les cas réels des équipes, jamais sur des démonstrations génériques ; et des indicateurs d'adoption suivis dans le temps. Les résistances à l'IA sont rationnelles : elles se traitent par la clarté et la preuve d'utilité, pas par l'injonction.",
+    a: "Par quatre moyens, dans cet ordre : des référents nommés dans chaque équipe, une parole claire de la direction sur ce que l'IA fera et ne fera pas pour chaque poste, des formations bâties sur les documents de chaque métier, puis un suivi de l'usage à date fixe. Les réticences des salariés ont des raisons ; elles reculent devant des réponses précises et des résultats visibles, rarement devant une consigne.",
   },
   {
     q: "Comment mesure-t-on l'adoption de l'IA par les équipes ?",
-    a: "Avec des indicateurs simples, relevés à intervalle régulier : taux d'utilisation par équipe, nombre de cas d'usage actifs, temps gagné déclaré par les utilisateurs, volume et nature des questions remontées aux référents. On y ajoute des retours qualitatifs en atelier : ce qui marche, ce qui bloque, ce qui manque. Un usage qui n'est pas mesuré s'éteint en quelques mois ; un usage mesuré s'améliore, parce que les blocages remontent et se traitent.",
+    a: "Avec quatre relevés : le nombre de personnes actives par équipe, les tâches outillées qui tournent, le temps gagné déclaré par les utilisateurs et les questions reçues par les référents. Nous les complétons par un tour de table en atelier sur ce qui avance et ce qui bloque. Ces chiffres servent à décider : étendre, corriger ou arrêter un usage.",
   },
   {
     q: "Combien de temps dure un accompagnement IA ?",
-    a: "Plusieurs mois dans la plupart des cas, à un rythme adapté à votre organisation : des jalons denses au démarrage (cadrage, premiers déploiements, premières formations), puis un rythme de croisière fait de points réguliers, d'ateliers et de mesures d'adoption. La bonne durée est celle qui rend l'accompagnement inutile : notre objectif contractuel est votre autonomie, avec des référents internes qui prennent le relais.",
+    a: "En général deux à trois trimestres. Le démarrage est dense (cadrage, premiers déploiements, premières formations), puis le rythme s'espace : un point régulier, quelques ateliers, les relevés d'usage. La durée se règle au cadrage avec des jalons de décision, et la proposition prévoit dès le début le moment où vos référents prennent le relais.",
   },
   {
     q: "Combien coûte un accompagnement IA ?",
-    a: "Sur devis, selon le périmètre (nombre d'équipes, de sites, de cas d'usage) et la durée. Le premier échange de cadrage est gratuit et sans engagement. Deux repères pour budgéter : le volet formation de l'accompagnement est finançable par votre OPCO, Masteria étant certifiée Qualiopi ; et selon votre profil et votre région, des dispositifs publics de soutien au conseil peuvent alléger le reste. Nous faisons le point sur les financements mobilisables dès le cadrage.",
+    a: "Chaque étape reçoit un forfait écrit, que nous chiffrons une fois le cadrage fait. Le montant dépend du nombre d'équipes, de sites et d'usages : un budget de quelques milliers d'euros suffit à un périmètre resserré, des dizaines de milliers pour un déploiement sur plusieurs services, plus de 100 000 € quand un groupe couvre plusieurs pays. Les journées de formation, elles, ont un tarif fixe : 1 980 € HT l'une, 3 960 € HT pour deux.",
   },
   {
     q: "Peut-on faire financer un accompagnement IA ?",
-    a: "En partie. Le volet conseil et déploiement n'est pas finançable par votre OPCO, qui couvre la formation : tout le volet formation de l'accompagnement (parcours par métier, acculturation des équipes) l'est en revanche, Masteria étant certifiée Qualiopi. Côté dispositifs publics, des aides au conseil et à la transformation numérique existent selon votre taille, votre secteur et votre région. Le tour des financements applicables à votre situation se fait au cadrage, c'est compris dedans.",
+    a: "En partie. L'OPCO dont dépend votre entreprise peut payer les journées de formation, d'après ses propres critères et le budget qu'il lui reste : Masteria est certifiée Qualiopi, dans la catégorie « actions de formation ». Pour le cadrage et la construction d'outils, la réponse est non : ils ne sont pas finançables par votre OPCO. Selon votre région et votre taille, une aide publique au conseil peut parfois s'ajouter : nous vérifions ce point avec vous pendant le cadrage, sans le promettre d'avance.",
   },
   {
     q: "Travaillez-vous avec un outil IA en particulier ?",
-    a: "Non, et c'est un point de méthode : nous accompagnons les entreprises sur l'IA générative dans son ensemble, indépendants des éditeurs et multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). Le choix se fait sur vos critères : métiers concernés, contraintes de données et de sécurité, écosystème logiciel existant, budget. Quand un outil est déjà déployé chez vous, l'accompagnement part de l'existant plutôt que de tout remplacer. Notre recommandation est argumentée et jamais commissionnée.",
+    a: "Non. Masteria ne dépend d'aucun éditeur et travaille avec ChatGPT, Microsoft Copilot, Claude, Gemini et Vibe de Mistral. Le choix se fait sur vos métiers, vos contraintes de données, vos logiciels en place et votre budget. Un outil déjà en place chez vous sert de point de départ ; le remplacer est rarement la bonne première décision.",
   },
   {
     q: "Nous avons déjà déployé un outil d'IA et il n'a pas pris : que faire ?",
-    a: "C'est la situation de départ la plus fréquente de nos accompagnements, et elle se rattrape. Le schéma classique : l'outil a été déployé avant les usages, la formation a été générique, personne ne porte le sujet et rien ne se mesure. On reprend dans l'ordre : un cadrage court pour identifier les usages à valeur pour vos équipes, une relance ciblée sur une ou deux équipes volontaires avec une formation sur leurs cas réels, des référents pour tenir la dynamique, et des indicateurs pour objectiver la reprise. Relancer un outil déjà payé coûte bien moins cher que l'abandonner et recommencer dans deux ans.",
+    a: "C'est une situation de départ fréquente, et elle se rattrape. L'histoire se ressemble souvent : l'outil est arrivé avant les usages, la formation est restée générale, personne ne portait le sujet et aucun relevé n'existait. Nous reprenons dans l'ordre : un cadrage court, une relance dans une ou deux équipes volontaires formées sur leurs propres dossiers, des référents, des relevés d'usage. Relancer un abonnement déjà payé coûte moins cher que l'abandonner pour tout recommencer plus tard.",
   },
   {
     q: "Faut-il associer le CSE et les équipes à la démarche ?",
-    a: "Oui, et tôt. Sur le plan légal d'abord : le code du travail prévoit l'information et la consultation du CSE sur l'introduction de nouvelles technologies, et l'IA en relève pleinement ; un déploiement qui l'ignore s'expose à repartir de zéro. Sur le plan pratique ensuite : les craintes des équipes (remplacement, surveillance, charge) sont rationnelles et s'adressent de front, pas par une communication descendante. Nous aidons à préparer ces échanges : ce que l'outil fera, ce qu'il ne fera pas, ce qui est mesuré et ce qui ne l'est pas. Un déploiement co-construit avec les représentants du personnel avance plus vite qu'un déploiement subi.",
+    a: "Oui, et dès le début. À partir de 50 salariés, le CSE doit être informé puis consulté avant l'arrivée d'une nouvelle technologie (article L. 2312-8 du code du travail), ce qui vise un outil d'IA. Sur le terrain, un projet présenté tôt aux représentants du personnel avance plus vite qu'un projet découvert après coup. Nous aidons la direction à préparer ces échanges : ce que l'outil fera, ce qu'il ne fera pas, ce qui sera mesuré et ce qui ne le sera pas.",
   },
   {
     q: "Comment gérez-vous un accompagnement multi-sites ?",
-    a: "Par vagues, avec un site pilote. Le pilote essuie les plâtres et fournit la preuve interne : des collègues, pas des consultants, racontent ce qui a changé pour eux. Les vagues suivantes réutilisent ce qui est validé (cas d'usage, supports, cadre) en l'adaptant aux spécificités locales, et chaque site a son référent. Le distanciel couvre bien le suivi et une partie des formations ; les lancements de site gagnent à se faire sur place. Ce fonctionnement par vagues lisse aussi le budget et la charge des équipes centrales.",
+    a: "Un site pilote passe en premier. Ses collègues racontent ensuite aux autres sites ce qui a changé pour eux, ce qui convainc mieux qu'un consultant. Les vagues suivantes reprennent ce qui a été validé (usages, supports, règles) en l'adaptant au contexte local, avec un référent par site. Le suivi et une partie des formations se font à distance ; un lancement de site gagne à se faire sur place.",
   },
   {
     q: "L'accompagnement convient-il à une PME ?",
-    a: "Oui, il se dimensionne. Une PME n'a pas besoin d'un dispositif de grand groupe : un cadrage court, un ou deux cas d'usage bien choisis, une formation des équipes concernées et un référent interne suffisent souvent à installer des usages durables. Une ETI ou un grand groupe demandera un dispositif plus structuré (plusieurs métiers, gouvernance, charte, réseau de référents). Dans les deux cas, le principe reste le même : partir du réel, prouver la valeur, ancrer.",
+    a: "Oui, en le taillant à sa mesure. Une PME a souvent besoin d'un cadrage court, d'un ou deux usages bien choisis, d'une formation de l'équipe et d'un référent interne. Une ETI ou un groupe demandera plusieurs métiers, une charte, un réseau de référents et un pilotage plus formel. La logique reste identique : partir du travail de l'équipe, montrer un résultat, puis transmettre.",
   },
 ]
 
@@ -298,9 +312,9 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Accompagnement IA — Masteria',
+  name: 'Accompagnement IA (Masteria)',
   alternateName: "Accompagnement à l'adoption de l'intelligence artificielle",
-  description: "Accompagnement IA en entreprise dans la durée : cadrage des usages, choix et déploiement des outils, conduite du changement (référents internes, communication, formation par métier certifiée Qualiopi), mesure de l'adoption. De la décision aux usages qui tiennent.",
+  description: "Accompagnement IA en entreprise sur plusieurs mois : choix des usages et des outils, installation, référents internes, formation par métier certifiée Qualiopi, suivi de l'usage jusqu'à l'autonomie des équipes.",
   url: 'https://www.master-ia.fr/accompagnement-ia',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/accompagnement-ia#webpage' },
   serviceType: "Accompagnement à l'adoption de l'IA",
@@ -315,25 +329,25 @@ const serviceJsonLd = {
   ],
   audience: {
     '@type': 'BusinessAudience',
-    name: 'PME, ETI et grands groupes · directions générales et métier',
+    name: 'PME, ETI et grands groupes, directions générales et métiers',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Accompagnement IA',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Cadrage et priorisation des usages', description: "Diagnostic ou audit selon la profondeur : processus, données, contraintes, cas d'usage priorisés par impact et par effort." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Choix et déploiement des outils', description: "Sélection indépendante des éditeurs, configuration, intégrations et développements sur mesure quand le besoin le justifie." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Conduite du changement et formation', description: "Réseau de référents internes, communication, formation par métier certifiée Qualiopi et finançable OPCO, cadre d'usage RGPD et AI Act." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Mesure de l'adoption", description: "Indicateurs d'usage par équipe, retours d'expérience, ajustements et extension aux cas suivants." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Cadrage des usages', description: "Écoute des équipes, lecture des fichiers et des logiciels, classement des usages selon le temps rendu et la difficulté." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Choix et installation des outils', description: "Choix indépendant des éditeurs, configuration, raccordement aux sources, outil sur mesure quand une tâche le demande." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Adoption et formation', description: "Référents internes, formations bâties sur les documents de chaque métier, charte d'usage, prise en charge possible par l'OPCO pour la formation." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Suivi de l'usage", description: "Relevés mensuels par équipe, corrections, ouverture des usages suivants." } },
     ],
   },
 }
 
-/* Les 4 phases en ItemList (séquence citable — GEO). */
+/* Les quatre temps en ItemList (séquence citable, GEO). */
 const processJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Les 4 phases de l'accompagnement IA Masteria",
+  name: "Les quatre temps de l'accompagnement IA Masteria",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PHASES.map((step, i) => ({
     '@type': 'ListItem',
@@ -343,8 +357,7 @@ const processJsonLd = {
   })),
 }
 
-/* DefinedTermSet : les termes de l'accompagnement (distincts de ceux portés
-   par /acculturation-ia — un seul balisage par entité sur le site). */
+/* DefinedTermSet : termes de l'accompagnement (distincts de /acculturation-ia). */
 const definitionsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
@@ -354,24 +367,22 @@ const definitionsJsonLd = {
     {
       '@type': 'DefinedTerm',
       name: 'Accompagnement IA',
-      description: "Prestation continue qui couvre les quatre maillons d'une adoption de l'IA en entreprise : cadrage des usages, choix et déploiement des outils, conduite du changement (communication, référents, formation) et mesure de l'adoption dans la durée.",
+      description: "Prestation menée sur plusieurs mois pour faire entrer l'IA dans le travail des équipes : choix des usages, installation des outils, référents et formation, suivi de l'usage jusqu'à l'autonomie.",
     },
     {
       '@type': 'DefinedTerm',
       name: 'Conduite du changement IA',
-      description: "Ensemble des actions qui font passer une organisation de l'outil déployé à l'outil utilisé : communication qui donne du sens, réseau de référents internes, formation par métier sur les cas réels et traitement des résistances.",
+      description: "Ce qui fait passer un outil d'IA de l'installation à l'usage : référents dans les équipes, parole claire de la direction, formations sur les documents de chaque métier, suivi à date fixe.",
     },
     {
       '@type': 'DefinedTerm',
       name: "Adoption de l'IA",
-      description: "Degré d'usage réel des outils d'IA par les équipes, mesuré par des indicateurs simples : taux d'utilisation par équipe, cas d'usage actifs, temps gagné déclaré, questions remontées aux référents.",
+      description: "Part des équipes qui se servent des outils d'IA dans leur travail, suivie par quelques relevés : personnes actives, tâches outillées, temps gagné déclaré, questions reçues par les référents.",
     },
   ],
 }
 
-/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO).
-   `about` en entités liées à Wikipédia (sameAs) : désambiguïsation pour les
-   moteurs génératifs et le Knowledge Graph. URLs vérifiées le 2026-08-10. */
+/* Article : auteur (Mathias Nizan) et dates (E-E-A-T, fraîcheur GEO). */
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -382,11 +393,11 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-10',
-  dateModified: '2026-08-10',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/accompagnement-ia#webpage' },
   about: [
-    { '@type': 'Thing', name: 'Accompagnement IA', description: "Prestation continue d'adoption de l'intelligence artificielle en entreprise" },
+    { '@type': 'Thing', name: 'Accompagnement IA', description: "Prestation d'adoption de l'intelligence artificielle en entreprise, menée sur plusieurs mois" },
     { '@type': 'Thing', name: 'Conduite du changement', sameAs: 'https://fr.wikipedia.org/wiki/Conduite_du_changement' },
     { '@type': 'Thing', name: 'Intelligence artificielle', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle' },
     { '@type': 'Thing', name: 'Intelligence artificielle générative', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle_g%C3%A9n%C3%A9rative' },
@@ -419,10 +430,11 @@ function FAQItem({ q, a, color }) {
 }
 
 /* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
-   affichées dans le bloc « Sources et références officielles ». */
+   affichées dans le bloc des sources, en version courte (lean). */
 const PAGE_CITATIONS = [
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-        ]
+  { name: "Texte de l'AI Act publié sur EUR-Lex, règlement (UE) 2024/1689", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Règlement (UE) 2026/1744 dit Omnibus, qui a modifié l'AI Act en juillet 2026", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+]
 
 export default function AccompagnementIAPage() {
   const isDesktop = useIsDesktop()
@@ -449,7 +461,7 @@ export default function AccompagnementIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-08-10"
-        dateModified="2026-08-10"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
@@ -475,7 +487,7 @@ export default function AccompagnementIAPage() {
               <Compass size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Dans la durée · Accompagnement IA
+              Plusieurs mois à vos côtés · Accompagnement IA
             </span>
           </div>
 
@@ -486,25 +498,25 @@ export default function AccompagnementIAPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Signé <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote les accompagnements de Masteria · texte revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'accompagnement IA de Masteria est un conseil en transformation IA de bout en bout : il couvre les quatre maillons d'une adoption réussie,<strong style={{ color: '#fff', fontWeight: 700 }}>cadrer les usages, choisir et déployer les outils, conduire le changement, mesurer l'adoption</strong>. Une présence dans la durée, avec un volet formation certifié Qualiopi et finançable par votre OPCO, jusqu'à ce que les usages tiennent sans nous.
+            Un accompagnement IA, chez Masteria, suit votre entreprise pendant plusieurs mois, de la première décision jusqu'au jour où vos équipes se servent de l'IA sans nous. Il enchaîne quatre temps : <strong style={{ color: '#fff', fontWeight: 700 }}>choisir les usages, installer les outils, faire adopter, mesurer</strong>. Votre OPCO peut financer les journées de formation ; le conseil reste à votre charge.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            La plupart des projets IA ne meurent pas sur la technique : ils meurent au dernier kilomètre, quand les outils sont là et que personne ne s'en sert. C'est précisément ce maillon que notre accompagnement sécurise, de l'IA générative aux agents, en combinant conseil, déploiement et formation sous un même toit. Cabinet et agence d'accompagnement à la fois, indépendants des éditeurs.
+            Un projet d'IA s'enlise rarement sur la technique. Il s'arrête plutôt le jour où l'outil est installé et où chacun retourne à ses habitudes. Notre accompagnement prend en charge ce moment-là, avec le conseil, la construction d'outils et la formation réunis dans un cabinet qui ne dépend d'aucun éditeur.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre accompagnement
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#phases" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir les 4 phases
+              Les quatre temps de la démarche
             </a>
           </div>
 
@@ -520,13 +532,13 @@ export default function AccompagnementIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'essentiel</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 100px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
                   <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
                 </div>
               ))}
@@ -535,16 +547,16 @@ export default function AccompagnementIAPage() {
         </div>
       </section>
 
-      {/* ── LES 4 PHASES (timeline avec renvois) ── */}
+      {/* ── LES QUATRE TEMPS (timeline avec renvois) ── */}
       <section id="phases" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>Les 4 phases</Kicker>
+          <Kicker>Quatre temps</Kicker>
           <h2 style={h2Style}>
-            Que couvre un accompagnement IA complet ?
+            Un accompagnement IA complet tient en quatre temps
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Un accompagnement IA complet couvre quatre phases : le cadrage des usages (diagnostic ou audit), le choix et le déploiement des outils, la conduite du changement avec la formation des équipes, puis la mesure de l'adoption. Chaque phase produit un résultat vérifiable avant de passer à la suivante.</strong>
+            <strong>Cadrer les usages, équiper les équipes, faire adopter, mesurer : chaque temps se termine par un résultat que vous pouvez constater avant d'engager le suivant. Vous gardez la main sur chaque passage d'un temps à l'autre.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -578,7 +590,7 @@ export default function AccompagnementIAPage() {
         </div>
       </section>
 
-      {/* ── CONDUITE DU CHANGEMENT (ancre sombre — pivot) ── */}
+      {/* ── CONDUITE DU CHANGEMENT (ancre sombre, pivot) ── */}
       <section id="changement" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -587,11 +599,11 @@ export default function AccompagnementIAPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Conduite du changement</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            L'accompagnement au changement, le maillon qui décide de tout
+            L'accompagnement au changement se joue après l'installation de l'outil
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>L'accompagnement au changement autour de l'IA repose sur quatre leviers : un réseau de référents internes, une communication qui donne du sens, une formation par métier sur les cas réels, et une mesure d'adoption suivie dans le temps. Les résistances sont rationnelles : elles se traitent par la clarté et la preuve d'utilité, pas par l'injonction.</strong>
+            <strong style={{ color: '#fff' }}>Quatre leviers font passer un outil d'IA de l'installation à l'usage : des référents dans chaque équipe, une parole franche de la direction, des formations construites avec les fichiers de chaque service et un suivi de l'usage à date fixe. Les réticences des salariés ont des raisons ; on y répond par des faits.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
@@ -608,26 +620,26 @@ export default function AccompagnementIAPage() {
               )
             })}
           </div>
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            La montée en compétence collective a sa démarche propre, l'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation IA</Link> : conférences, ateliers et parcours par métier, certifiés Qualiopi et finançables par votre OPCO.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 24, maxWidth: 820 }}>
+            Le règlement européen pousse dans le même sens : son article 4, en vigueur depuis le 2 février 2025, attend des entreprises qui utilisent l'IA qu'elles aident leurs salariés à maîtriser ces outils, et l'Omnibus de juillet 2026 a précisé qu'on y attend des efforts plutôt qu'un résultat. Former chaque métier sur ses propres dossiers y répond. Quand l'objectif est d'abord de faire monter toutes les équipes en compétence, voyez notre démarche d'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation à l'IA</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── POURQUOI LES PROJETS IA ÉCHOUENT (citable + E-E-A-T terrain) ── */}
+      {/* ── POURQUOI LES PROJETS IA ÉCHOUENT (citable, terrain) ── */}
       <section id="echecs" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>Ce que le terrain apprend</Kicker>
+          <Kicker>Ce que les missions enseignent</Kicker>
           <h2 style={h2Style}>
-            Pourquoi les projets IA échouent, et ce qui l'évite
+            Cinq raisons font échouer un projet d'IA, et aucune n'est technique
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Cinq causes reviennent dans la quasi-totalité des projets IA qui échouent : l'outil acheté avant l'usage, le POC jamais industrialisé, l'absence de porteur interne, la formation générique qui ne change rien, et l'adoption jamais mesurée. Aucune n'est technique. C'est précisément ce que l'accompagnement traite.</strong>
+            <strong>Des licences achetées avant les usages, un prototype jamais mis en service, un sujet sans porteur, une formation qui ignore le métier, un usage que personne ne relève : ces cinq causes reviennent d'un projet à l'autre. L'accompagnement existe pour les traiter une par une.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px' }}>
-            Nous observons ces cinq schémas depuis 2022, en formant et en accompagnant plus de 1 500 professionnels, du COMEX aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> en montrent l'envers : ce qui se passe quand ces cinq points sont traités.
+            Nous retrouvons ces schémas depuis 2022, chez une équipe de trois comme chez un industriel implanté sur trois continents. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> racontent ce qui se passe quand on les traite dès le départ.
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -638,7 +650,7 @@ export default function AccompagnementIAPage() {
                   <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 6 }}>{item.title}</h3>
                   <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 8px' }}>{item.cause}</p>
                   <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
-                    <strong style={{ color: c }}>La parade :</strong> {item.parade}
+                    <strong style={{ color: c }}>Notre réponse :</strong> {item.parade}
                   </p>
                 </div>
               </div>
@@ -647,16 +659,16 @@ export default function AccompagnementIAPage() {
         </div>
       </section>
 
-      {/* ── UN ACCOMPAGNEMENT TYPE (posture capacité) ── */}
+      {/* ── UN ACCOMPAGNEMENT REPRÉSENTATIF ── */}
       <section id="deroule-type" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>À quoi ça ressemble</Kicker>
+          <Kicker>Le déroulé</Kicker>
           <h2 style={h2Style}>
-            Un accompagnement type, trimestre par trimestre
+            Trois trimestres suffisent le plus souvent
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Un accompagnement représentatif s'étale sur trois trimestres : cadrer et prouver la valeur sur un pilote, déployer et former par vagues avec les référents, puis ancrer et transmettre jusqu'à l'autonomie. Le rythme s'ajuste à chaque organisation ; la logique, elle, ne change pas : chaque trimestre livre un résultat visible.</strong>
+            <strong>Le premier trimestre choisit et prouve sur une équipe pilote, le deuxième étend et forme par vagues, le troisième transmet aux référents. Chaque trimestre livre un résultat que la direction peut constater.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginTop: 12 }}>
@@ -669,21 +681,21 @@ export default function AccompagnementIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Ce déroulé est représentatif, pas contractuel : une PME sur un périmètre net va plus vite, un groupe multi-sites étale davantage. Le rythme exact se pose au cadrage, avec les jalons de décision.
+            Ce calendrier donne un ordre de grandeur. Une PME au périmètre net le parcourt plus vite ; un groupe à plusieurs sites l'étire. Le vôtre se fixe au cadrage, avec ses dates de décision.
           </p>
         </div>
       </section>
 
-      {/* ── CONSEIL VS ACCOMPAGNEMENT VS ACCULTURATION (tableau citable) ── */}
+      {/* ── CONSEIL, ACCOMPAGNEMENT OU ACCULTURATION (tableau citable) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Bien choisir</Kicker>
+          <Kicker>Choisir la bonne porte</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Conseil, accompagnement ou acculturation : de quoi avez-vous besoin ?
+            Conseil, accompagnement ou acculturation : trois besoins distincts
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le conseil éclaire une décision et se termine par un livrable. L'accompagnement porte la transformation dans la durée, jusqu'aux usages installés. L'acculturation fait monter toutes les équipes en compétence. Les trois se combinent, et le volet formation est le seul finançable par votre OPCO.</strong>
+            <strong>Le conseil aide la direction à décider. L'accompagnement fait aboutir cette décision dans les équipes, sur plusieurs mois. L'acculturation donne à tous un socle commun. Les trois se combinent ; seules les journées de formation peuvent être financées par l'OPCO.</strong>
           </p>
 
           <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto', background: '#fff' }}>
@@ -709,12 +721,12 @@ export default function AccompagnementIAPage() {
             </table>
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, marginTop: 20, maxWidth: 880 }}>
-            Les trois entrées mènent au même endroit : des usages qui tiennent. Commencez par le <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil</Link> si la décision n'est pas prise, par l'<Link to="/acculturation-ia" style={aStyle}>acculturation</Link> si vos équipes partent de zéro, par l'accompagnement si vous voulez les deux, tenus dans la durée.
+            Si la décision reste à prendre, passez par notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>. Si vos équipes partent de zéro, l'<Link to="/acculturation-ia" style={aStyle}>acculturation</Link> pose le socle. Si vous voulez la décision et sa mise en œuvre tenues par le même interlocuteur, l'accompagnement réunit les deux.
           </p>
         </div>
       </section>
 
-      {/* ── AIDES & FINANCEMENT ── */}
+      {/* ── FINANCEMENT ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -722,19 +734,19 @@ export default function AccompagnementIAPage() {
               <Landmark size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Aides et financement</Kicker>
+              <Kicker>Financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Ce qui se finance dans un accompagnement IA
+                Les journées de formation peuvent être financées, le conseil non
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le volet formation est finançable par votre OPCO : Masteria est certifiée Qualiopi, et la conduite du changement passe en grande partie par la formation des équipes. Le volet conseil et déploiement n'est pas finançable par votre OPCO ; selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil et à la transformation numérique peuvent s'appliquer. Nous faisons le point sur les financements mobilisables dès le cadrage, c'est compris dedans.
+                La certification Qualiopi de Masteria porte sur ses actions de formation. Chaque journée d'atelier peut donc être financée par l'OPCO de votre secteur, aux conditions qu'il fixe et tant que son enveloppe le permet. Le cadrage, le conseil et la construction d'outils ne sont pas finançables par votre OPCO. Selon la région et la taille de l'entreprise, une aide publique au conseil existe parfois ; nous regardons ce point avec vous au cadrage.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Formation des équipes : OPCO (Qualiopi)',
-                  'Dispositifs publics selon votre profil et votre secteur',
-                  'Aides régionales selon votre territoire',
-                  'Tour des dispositifs fait au cadrage, sans surcoût',
+                  '1 980 € HT par journée de formation',
+                  '3 960 € HT pour un parcours de deux jours',
+                  "Jusqu'à 12 participants par groupe intra",
+                  "Dossier OPCO préparé avec vous",
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -747,27 +759,52 @@ export default function AccompagnementIAPage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['industrie', 'distribution', 'conseil-financier']}
-        title="Trois accompagnements dans la durée, documentés"
-        intro="Un déploiement par paliers du comité de direction aux sites internationaux, une force commerciale dont dix référents portent onze compétences Claude avant le déploiement à toute l'entreprise, un cabinet dont les consultants font évoluer leurs assistants seuls : la méthode en six temps et ses résultats."
-      />
+      {/* ── ÉTUDES DE CAS (texte propre à la page, liens vers les ancres de /etudes-de-cas-ia) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
+          <Kicker>Trois accompagnements en cours</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Des référents, des paliers, une mesure : trois clients en 2026</h2>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Leurs noms restent confidentiels, à leur demande. Chaque fiche sépare ce qui est fait de ce qui reste à venir, dates à l'appui.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+            {CAS.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
+              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
+                  Voir la fiche complète
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Accompagnement IA : les questions fréquentes
+                Accompagnement IA : vos questions, nos réponses
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une autre question sur la conduite du projet ? Gardez-la pour le cadrage, ou écrivez-nous.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Écrire à Masteria
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -781,24 +818,24 @@ export default function AccompagnementIAPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pages liées</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Les autres briques de la démarche
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            L'accompagnement relie les briques du dispositif : cadrage, outils, changement, formation, gouvernance.
+            Chacune peut se commander seule ; l'accompagnement les enchaîne dans le bon ordre.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "La montée en compétence collective : conférences, ateliers et parcours métier, finançables OPCO." },
-              { label: 'Coaching IA individuel', href: '/coaching-ia', tag: 'Individuel', desc: "Pour les dirigeants et profils clés : le tête-à-tête sur leurs cas réels, au rythme de leur agenda." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Le cadrage court qui ouvre la plupart de nos accompagnements." },
-              { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "L'état des lieux complet quand la direction veut une vision exhaustive avant d'engager." },
-              { label: 'Méthode & modèles d\'engagement', href: '/methode-projet-ia', tag: 'Méthode', desc: "Forfait, régie ou accompagnement : comment nous contractualisons la présence dans la durée." },
-              { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le cadre d'usage qui sécurise l'adoption : ce que les équipes peuvent faire, et comment." },
-              { label: 'Prix d\'un projet IA', href: '/prix-projet-ia', tag: 'Budget', desc: "Les ordres de grandeur pour anticiper le budget des outils et développements." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Point de départ', desc: "Une intervention courte pour choisir les premiers usages ; durée et forfait fixés au cadrage." },
+              { label: 'Audit IA', href: '/audit-ia', tag: 'État des lieux', desc: "Toute l'organisation passée en revue quand la direction veut décider sur une vue d'ensemble." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Socle commun', desc: "Conférences, ateliers et parcours par métier pour que chacun parle le même langage." },
+              { label: 'Coaching IA individuel', href: '/coaching-ia', tag: 'Dirigeants', desc: "Des séances en tête-à-tête, calées sur l'agenda d'un dirigeant ou d'un profil clé." },
+              { label: 'Méthode projet IA', href: '/methode-projet-ia', tag: 'Contrat', desc: "Forfait, régie ou présence suivie : la façon dont nous contractualisons une mission longue." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Règles', desc: "Ce que les salariés peuvent faire avec l'IA, sur quelles données, et à qui demander." },
+              { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Des fourchettes pour anticiper ce que coûtent outils, construction et formation." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -814,7 +851,7 @@ export default function AccompagnementIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Ouvrir la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -824,35 +861,71 @@ export default function AccompagnementIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            J'ai créé Masteria à Lyon en 2022 et je suis chaque accompagnement de près, du premier rendez-vous au dernier point d'étape avec vos référents. Ce que cette page décrit, je le vois chaque mois chez nos clients : l'outil compte moins que la façon dont une équipe se l'approprie. Mon parcours est détaillé sur <Link to="/mathias-nizan" style={aStyle}>ma page de fondateur</Link>.
+          </p>
+          <p style={{ fontSize: 14, color: '#6B7280', margin: 0, fontWeight: 600 }}>Mathias Nizan, fondateur de Masteria</p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
-      <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
+      <section style={{ background: '#fff', padding: 'clamp(24px, 4vw, 48px) 24px clamp(64px, 9vw, 110px)' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Accompagnement IA</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Parlons de votre trajectoire IA
+              Dites-nous où en est l'IA chez vous
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous où vous en êtes : rien n'est lancé, des outils sont là mais peu utilisés, ou un projet patine. Nous revenons vers vous sous 24 heures avec une proposition de cadrage adaptée à votre situation, financements mobilisables compris. L'objectif final ne change pas : des équipes autonomes.
+              Rien n'est lancé, des licences dorment, ou un projet piétine : chaque point de départ se travaille. Pendant une demi-heure, en visio ou au téléphone, nous regardons votre situation et vous repartez avec une première idée de la marche à suivre, même si la suite se fait sans nous.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un accompagnement IA
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Multi-outils, indépendants des éditeurs · Lyon, Europe, États-Unis, Inde
+              Conseil, outils et formation sous un même toit · aucun éditeur à vous vendre · des équipes autonomes comme objectif
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── E-E-A-T : l'équipe mobilisée ── */}
+      <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
+        <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
+          <div style={{ flex: '1 1 380px', minWidth: 300 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui vous accompagne</div>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
+              Une équipe composée pour votre projet, un pilote constant
+            </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
+              Mathias Nizan reste votre interlocuteur du début à la fin. Autour de lui, Masteria mobilise selon les besoins de la mission des consultants IA (une dizaine dans son réseau), des développeurs (environ cinq) et des formateurs (une vingtaine), qui exercent tous en indépendants. Les missions ont lieu en France et ailleurs en Europe, aux États-Unis comme en Inde ; nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
+            {[
+              ['Qualiopi', 'pour nos actions de formation'],
+              ['France Num', 'Masteria y est Activateur'],
+              ['+100', 'formations au catalogue, par outil et par métier'],
+              ['0', "licence revendue, aucune commission d'éditeur"],
+            ].map(([k, v]) => (
+              <div key={k}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
+                <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <OfficialSources lean extra={PAGE_CITATIONS} />
     </>
   )
 }

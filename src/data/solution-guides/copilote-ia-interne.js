@@ -2,7 +2,123 @@
 // Vérifié le 03/10/2026 : Microsoft Learn (confidentialité de Microsoft Copilot, Restricted Content Discovery, socle de gouvernance), centre d'aide Claude (connecteur Microsoft 365), Légifrance (L2312-8, L2312-38, L1222-4), CNIL, guide ANSSI IA générative, étude de cas industrie.
 export default {
   slug: 'copilote-ia-interne',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    directAnswer: "Un copilote IA interne est un assistant installé dans les outils d'une équipe (Outlook, Teams, le CRM, un logiciel métier) qui répond, rédige et prépare des actions avec les droits de chaque utilisateur. Masteria configure le produit du marché quand il suffit, et développe le reste pour vous en remettre le code.",
+    howWeBuild: [
+      {
+        title: "Délimiter ce que le copilote lit et fait",
+        desc: "Avec l'équipe pilote, nous listons ses tâches récurrentes, les sources que le copilote pourra lire et les actions qu'il n'aura pas le droit de faire. Ce périmètre s'écrit avant la première configuration.",
+      },
+      {
+        title: "Tester sur les fichiers de l'équipe",
+        desc: "Une première version tourne sur les documents et les logiciels de l'équipe pilote. Ses membres comparent les réponses à ce qu'ils auraient écrit eux-mêmes, et nous corrigeons les consignes avec eux.",
+      },
+      {
+        title: "Brancher les logiciels métier",
+        desc: "Quand un connecteur standard manque, nous le développons, en lecture d'abord. Chaque action d'écriture passe par la validation de l'utilisateur et s'inscrit dans un journal consultable par l'administrateur.",
+      },
+      {
+        title: "Passer la main à l'équipe et à la DSI",
+        desc: "L'équipe pilote est formée sur ses cas, le référent sait corriger une consigne, et votre DSI reçoit les connecteurs, leur code et leur documentation.",
+      },
+    ],
+  },
+  hero: {
+    chips: [
+      "Outlook, Teams, CRM, logiciels métier",
+      "Droits de chaque salarié respectés",
+      "Achat, configuration ou développement",
+      "Code remis à votre DSI",
+    ],
+    lien: "Voir comment nous bâtissons le copilote",
+    enBref: [
+      {
+        label: "Budget",
+        value: "Configuration d'un produit du marché en jours de conseil ; copilote développé à partir de 15 000 € environ ; au-delà de 100 000 € sur plusieurs métiers",
+      },
+      {
+        label: "Démarrage",
+        value: "Une équipe pilote, ses tâches récurrentes et la revue des droits avant toute ouverture",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Assistants configurés, connecteurs développés, code et documentation",
+      },
+      {
+        label: "Propriété",
+        value: "Le code et les réglages restent à votre entreprise",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Un copilote interne, et ce qui le distingue d'un assistant générique",
+  },
+  etapesBloc: {
+    kicker: "Déploiement",
+    h2: "Les cinq étapes d'un déploiement de copilote",
+  },
+  etapesNote: {
+    texte: "Quand plusieurs équipes réclament un copilote en même temps, nous les départageons d'abord par un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers pour construire votre copilote",
+  },
+  technique: {
+    kicker: "Sous le capot",
+    texte: "Le modèle se choisit tâche par tâche : un modèle rapide pour trier les mails, un modèle plus puissant pour rédiger une synthèse, une région d'exécution européenne quand les données l'exigent. La recherche s'appuie sur les documents que l'utilisateur peut déjà ouvrir, et les connecteurs vers les logiciels métier passent par leurs API ou par MCP, un protocole ouvert qui relie un modèle à des outils. Aucune écriture ne part sans la validation de la personne qui utilise le copilote.",
+    h2: "Les briques techniques d'un copilote",
+    lead: "Un copilote réunit quatre éléments : le modèle retenu pour chaque tâche (Claude, GPT ou Mistral), une recherche dans vos documents qui fournit les sources, des connecteurs vers Microsoft 365 et vos logiciels métier, et des règles qui imposent la validation de l'utilisateur avant toute écriture.",
+    chips: [
+      "Modèle choisi tâche par tâche",
+      "Recherche sourcée dans vos fichiers",
+      "Connecteurs Graph, API et MCP",
+      "Validation avant écriture",
+      "Journal des actions",
+    ],
+    note: {
+      texte: "Notre façon de concevoir, de tester et de documenter un développement est décrite sur la page de notre",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "agence de développement IA",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par équipe",
+    h2: "Un copilote selon le métier qui l'utilise",
+    intro: "Quatre exemples d'équipes et de ce que leur copilote prépare. Le cadrage les adapte à vos logiciels et à vos règles.",
+  },
+  regieBloc: {
+    kicker: "Développeur détaché",
+    h2: "Un développeur auprès de vos administrateurs Microsoft 365",
+    lien: "Notre méthode de projet",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Copilote interne : les questions des DSI et des métiers",
+    texte: "Votre environnement Microsoft 365 a une particularité ?",
+    lien: "Dites-nous laquelle",
+  },
+  maillage: {
+    kicker: "Autour du copilote",
+    h2: "Les solutions qui complètent un copilote",
+  },
+  cta: {
+    titre: "Quelle équipe équiper d'un copilote en premier ?",
+    texte: "Dites-nous quelle équipe vous visez, ses logiciels et l'état de vos partages Microsoft 365. Une réponse vous parvient sous 24 heures avec une date pour les 30 minutes de cadrage offertes ; le code développé ensuite vous appartiendra.",
+  },
+  equipe: {
+    titre: "Un fondateur qui pilote, des spécialistes qui configurent et développent",
+    texte: "Mathias Nizan a fondé Masteria à Lyon en 2022 et pilote chaque projet. Pour un copilote, il réunit un consultant qui revoit les droits et prépare le dossier du CSE, des développeurs qui écrivent les connecteurs vers vos logiciels métier et un formateur pour l'équipe pilote, tous indépendants. Masteria ne revend aucune licence de Microsoft, d'Anthropic ou d'OpenAI, ce qui laisse libre la recommandation entre achat et développement.",
+  },
   intro: "Une équipe commerciale, RH ou juridique veut un assistant dans ses outils de tous les jours : Outlook, Teams, le navigateur ou son CRM. Le copilote répond, rédige et prépare des actions, avec les droits de chaque utilisateur. Souvent, un produit du marché bien configuré suffit, et nous vous le disons ; le développement commence quand vos données vivent dans un logiciel métier ou quand le copilote doit y agir. Pour une réponse sourcée dans un corpus, voyez l'assistant documentaire ; pour brancher un modèle dans un logiciel que vous avez déjà, voyez l'intégration LLM et RAG.",
 
   etapes: [
@@ -29,7 +145,16 @@ export default {
   ],
 
   cout: {
-    lead: "Deux budgets coexistent. Quand un produit du marché suffit, la dépense porte sur la configuration, la gouvernance des droits et la formation. Un copilote sur mesure démarre autour de 15 000 € pour une équipe et un premier logiciel branché ; un déploiement sur plusieurs métiers, avec des intégrations multiples, dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros.",
+    kicker: "Budget du copilote",
+    h2: "Le budget d'un copilote interne",
+    note: {
+      texte: "Pour situer votre projet parmi d'autres, voyez nos repères de",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "prix d'un projet IA",
+      },
+    },
+    lead: "Deux budgets coexistent. Quand un produit du marché suffit, la dépense porte sur la configuration, la gouvernance des droits et la formation. Un copilote sur mesure démarre autour de 15 000 € pour une équipe et un premier logiciel branché ; un déploiement sur plusieurs métiers, avec des intégrations multiples, passe au-delà de 100 000 € et se compte parfois en centaines de milliers d'euros.",
     paras: [
       "Le devis suit le cadrage et décrit un périmètre écrit : équipes, logiciels branchés, actions autorisées, livrables de gouvernance. S'il faut des licences, vous les achetez auprès de l'éditeur ou de votre revendeur habituel : Masteria n'en revend aucune. La formation se chiffre à part, au tarif intra de 1 980 € HT par journée, et votre OPCO peut la financer, ce qui n'est pas le cas du conseil ni du développement.",
     ],
@@ -59,6 +184,8 @@ export default {
   ],
 
   comparatif: {
+    kicker: "Acheter ou développer",
+    caption: "Copilote du marché et copilote développé, situation par situation.",
     intro: "L'assistant générique a changé : ses versions entreprise, comme Microsoft Copilot ou Claude avec son connecteur Microsoft 365, lisent les fichiers de l'entreprise en reprenant les droits de chaque salarié. Pour rédiger, résumer et chercher dans les fichiers bureautiques, il suffit souvent. Le développement prend le relais quand le copilote doit lire ou agir dans un logiciel métier, appliquer des règles testées ou tourner sur un modèle et une région que vous choisissez.",
     rows: [
       { aspect: "Fichiers bureautiques", off: "Lus dans les versions entreprise, avec les droits de chaque salarié", custom: "Lus de la même façon, sur un périmètre restreint si nécessaire" },
@@ -124,17 +251,17 @@ export default {
       ],
     },
     cas: {
-      h3: "Retour de mission : Microsoft 365 Copilot cadré sur OneDrive et SharePoint dans un groupe industriel",
-      contexte: "Un groupe international du packaging a préféré Microsoft 365 Copilot à l'assistant conversationnel qu'il avait bâti en interne. Ses plusieurs milliers de salariés se répartissent entre l'Europe, l'Inde et les États-Unis, et le déploiement a lieu en pleine migration vers S/4HANA, l'ERP de SAP dans sa version actuelle. Avant de généraliser, le groupe voulait que des managers pilotes repartent avec des usages applicables dès leur retour au bureau.",
+      h3: "Retour de mission : Microsoft Copilot cadré sur OneDrive et SharePoint dans un groupe industriel",
+      contexte: "Un groupe international du packaging a préféré Copilot à l'assistant conversationnel qu'il avait bâti en interne. Ses plusieurs milliers de salariés se répartissent entre l'Europe, l'Inde et les États-Unis, et le déploiement a lieu en pleine migration vers S/4HANA, l'ERP de SAP dans sa version actuelle. Avant de généraliser, le groupe voulait que des managers pilotes repartent avec des usages applicables dès leur retour au bureau.",
       etapes: [
         "Au cadrage, les référents métiers et le Data manager écrivent ce que Copilot pourra lire : OneDrive et SharePoint, et rien sur les serveurs partagés.",
         "Les usages se construisent dans treize ateliers, à partir des fichiers du groupe : de gros tableaux Excel, des documents Word, la messagerie Outlook, des présentations PowerPoint à la charte.",
         "Deux ateliers portent sur des assistants ; l'un d'eux lit le mail d'un fournisseur et en tire les contacts, le RIB et l'extrait Kbis qui alimentent sa fiche dans SAP.",
         "Entre les deux sessions de managers, le bilan à chaud entraîne trois corrections : licences Copilot vérifiées, tables organisées par métier, plage protégée pour les assistants à la fin du second jour.",
-        "Le Data manager devient le gardien de la politique d'usage et des prompts partagés entre les 24 managers pilotes ; trois sessions suivent en septembre 2026, dont deux en anglais, avant les sites des États-Unis et du Mexique, prévus en octobre 2026, puis de l'Inde, en décembre 2026.",
+        "Le Data manager devient le gardien de la politique d'usage et des prompts partagés entre les 24 managers pilotes. Trois autres sessions se tiennent en septembre 2026, deux en anglais ; les sites américains et mexicains suivent en octobre, l'Inde en décembre.",
       ],
-      resultat: "Quatre participants sur onze de la session pilote réclament déjà la suite : les données SAP, Power Platform (les outils d'automatisation de Microsoft), des assistants plus poussés ; un module avancé est cadré pour y répondre. Cette demande montre où s'arrête le copilote du marché : il couvre les fichiers bureautiques, et l'accès aux données de gestion demande un travail de connexion.",
-      lien: { href: "/etudes-de-cas-ia#industrie", label: "Lire l'étude de cas complète" },
+      resultat: "Une partie des participants réclame déjà la suite : les données SAP, Power Platform (les outils d'automatisation de Microsoft), des assistants plus poussés ; un module avancé est cadré pour y répondre. Cette demande montre où s'arrête le copilote du marché : il couvre les fichiers bureautiques, et l'accès aux données de gestion demande un travail de connexion.",
+      lien: { href: "/etudes-de-cas-ia#industrie", label: "Le palier pilote du groupe du packaging" },
     },
     pieges: [
       {
@@ -162,7 +289,7 @@ export default {
 
   faq: [
     {
-      q: "Faut-il développer un copilote si nous avons déjà Microsoft 365 Copilot ?",
+      q: "Faut-il développer un copilote si nous avons déjà Microsoft Copilot ?",
       a: "Pour rédiger, résumer ou chercher dans vos fichiers Office, le produit suffit, et le travail porte sur la configuration, les droits et la formation. Le développement se justifie pour atteindre un logiciel que Copilot ne lit pas, comme un ERP sans connecteur, ou pour une action métier à valider et à journaliser. Dans le groupe industriel de notre étude de cas, cette frontière est apparue quand des managers pilotes ont demandé l'accès aux données SAP.",
     },
     {
@@ -204,6 +331,6 @@ export default {
     { name: "Légifrance : Code du travail, article L2312-38", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000035610275/" },
     { name: "Légifrance : Code du travail, article L1222-4", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006900861" },
     { name: "CNIL : Les questions-réponses de la CNIL sur l'utilisation d'un système d'IA générative (18 juillet 2024)", url: "https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative" },
-    { name: "ANSSI : Recommandations de sécurité pour un système d'IA générative (29 avril 2024)", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
+    { name: "ANSSI, recommandations du 29 avril 2024 : revoir les droits d'un outil d'IA générative (R35)", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
   ],
 }

@@ -1,5 +1,6 @@
 // Pages comparatifs IA : données des sept guides (face-à-face et panoramas).
-// Faits produit, fenêtres de contexte et tarifs revérifiés le 3 octobre 2026
+// Faits produit, fenêtres de contexte et tarifs revérifiés le 3 octobre 2026, puis le 7 octobre 2026
+// (fiche FAITS-OUTILS du 07/10) pour les six comparatifs autres que chatgpt-vs-claude,
 // sur les pages officielles des éditeurs, listées dans `citations` de chaque entrée.
 //
 // Convention :
@@ -33,7 +34,7 @@ export const COMPARISONS = {
     lastUpdate: "Octobre 2026",
     verifiedOn: "5 octobre 2026",
     datePublished: "2026-05-04",
-    dateModified: "2026-10-05",
+    dateModified: "2026-10-07",
     readTime: "10 minutes",
     keywords:
       "chatgpt vs claude, comparatif chatgpt claude 2026, claude opus 5.5, claude sonnet 5.5, claude fable 5.1, gpt-5.6, gpt-6, quel assistant ia entreprise, claude ou chatgpt entreprise, prix claude team, prix chatgpt business",
@@ -167,7 +168,7 @@ export const COMPARISONS = {
       {
         title: "Écosystème, connecteurs et intégrations",
         descriptionA:
-          "Depuis le 9 juillet 2026, un répertoire de plugins remplace celui des applications : chaque plugin rassemble des compétences et des accès à vos outils, par exemple Gmail, Slack, Dropbox, Box, SharePoint ou Google Drive. Des extensions officielles amènent ChatGPT dans Word, Excel et PowerPoint. À surveiller : le 11 septembre 2026, OpenAI a annoncé que les GPTs personnalisés disparaîtraient peu à peu, avec une migration à prévoir vers les plugins.",
+          "Depuis le 9 juillet 2026, un répertoire de plugins remplace celui des applications : chaque plugin rassemble des compétences et des accès à vos outils, par exemple Gmail, Slack, Dropbox, Box, SharePoint ou Google Drive. Des extensions officielles amènent ChatGPT dans Word, Excel et PowerPoint. À surveiller : les GPTs personnalisés disparaissent de toutes les offres le 11 décembre 2026, sauf dans les espaces Enterprise dotés d'un délai, qui les gardent jusqu'au 11 février 2027 ; ces espaces Enterprise ne pourront plus en créer après le 26 octobre. OpenAI organise leur migration vers les plugins.",
         descriptionB:
           "Claude se relie à vos logiciels grâce à MCP (pour Model Context Protocol), standard ouvert qu'Anthropic a conçu pour brancher un assistant sur les outils de l'entreprise et que ChatGPT, Gemini et Microsoft Copilot ont repris. Depuis le 7 mai 2026, chaque abonnement payant permet d'ajouter Claude à Word, à Excel et à PowerPoint, Outlook restant en bêta. Depuis juillet 2026, une fois l'administrateur d'accord, le connecteur Microsoft 365 rédige et envoie des courriels ou met à jour des fichiers.",
         winner: "tie",
@@ -246,8 +247,9 @@ export const COMPARISONS = {
       items: [
         { date: "Septembre 2026", text: "Chez Anthropic, trois modèles sont sortis en septembre : le 1er pour Fable 5.1, le 22 pour Opus 5.5, le 28 pour Sonnet 5.5. Avec un abonnement payant, chacun accepte un million de tokens dans un même échange." },
         { date: "Septembre 2026", text: "Côté OpenAI, GPT-6 Astra a été dévoilé le 3 septembre ; le 22 sont arrivés GPT-6 Sol ainsi que GPT-6 Luna, puis le 29 GPT-6.1 Sol, tous réservés à ChatGPT Work et à Codex. Le chat conserve GPT-5.6 et propose GPT-6 Pro aux abonnés Pro, Business et Enterprise." },
-        { date: "Septembre 2026", text: "Le 16 septembre, Anthropic a fondu Cowork dans la conversation de Claude et ouvert Claude Docs et Claude Slides en bêta. Le 11 septembre, OpenAI a annoncé le retrait progressif des GPTs personnalisés au profit des plugins." },
+        { date: "Septembre 2026", text: "Le 16 septembre, Anthropic a fondu Cowork dans la conversation de Claude et ouvert Claude Docs et Claude Slides en bêta. OpenAI a fixé au 11 décembre 2026 le retrait des GPTs personnalisés, au profit des plugins ; dans les espaces Enterprise, leur création doit cesser dès le 26 octobre." },
         { date: "5 octobre 2026", text: "Notre revérification apporte trois précisions. Depuis le 7 mai 2026, tout abonnement payant permet d'ajouter Claude à Word, à Excel et à PowerPoint, et Outlook reste en bêta. Claude dans Chrome est en disponibilité générale depuis le 26 août 2026. Les applications d'Anthropic n'ont aucune région européenne, mais AWS Bedrock et Google Cloud Vertex AI permettent d'héberger Claude en Europe." },
+        { date: "7 octobre 2026", text: "Précision sur les GPTs personnalisés, d'après le centre d'aide d'OpenAI consulté ce jour : la disparition prévue le 11 décembre 2026 vaut pour toutes les offres, tandis que l'arrêt des créations, programmé le 26 octobre, ne vise que les espaces Enterprise." },
         { date: "Correction", text: "Une version précédente présentait Claude Code comme accessible sans abonnement. La page tarifs d'Anthropic le réserve aux abonnés Pro, Max, Team et Enterprise." },
         { date: "Correction", text: "Notre ancienne version mentionnait Sora 2 pour créer des vidéos dans ChatGPT. L'application Sora a fermé le 26 avril 2026 et son API le 24 septembre 2026 : ChatGPT ne produit plus aucune vidéo." },
         { date: "Correction", text: "Nous avions rangé les échanges Pro et Max de Claude parmi ceux qui échappent d'office à l'entraînement. Sur ces abonnements individuels, l'utilisateur doit refuser lui-même cet usage dans les paramètres ; seuls Team et Enterprise en sont exclus par défaut." },
@@ -387,7 +389,7 @@ export const COMPARISONS = {
       { name: "Perplexity", summary: "Moteur de recherche conversationnel qui cite ses sources, utile en complément pour la veille." },
       { name: "Vibe (Mistral AI)", summary: "Nom porté depuis le 28 mai 2026 par l'ancien Le Chat. Mistral AI, éditeur français, stocke les données de Vibe sur le sol de l'Union européenne, sauf demande contraire. Comparaison détaillée : [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
       { name: "Google Gemini", summary: "Compris dans les abonnements Google Workspace ; à partir de Business Standard, le contexte de l'application Gemini atteint le million de tokens. Comparaison détaillée : [Gemini vs Copilot](/gemini-vs-copilot)." },
-      { name: "Microsoft 365 Copilot", summary: "L'alternative logique quand le travail se fait dans Outlook, Word et Teams : Copilot puise dans Microsoft Graph et donne aussi accès à des modèles d'Anthropic. Comparaison détaillée : [Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
+      { name: "Microsoft Copilot (anciennement Microsoft 365 Copilot)", summary: "L'alternative logique quand le travail se fait dans Outlook, Word et Teams : Copilot puise dans Microsoft Graph et donne aussi accès à des modèles d'Anthropic. Comparaison détaillée : [Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
     ],
 
     faq: [
@@ -458,41 +460,66 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   "copilot-vs-chatgpt": {
     slug: "copilot-vs-chatgpt",
-    metaTitle: "Copilot vs ChatGPT 2026 : lequel choisir ? | Comparatif Masteria",
+    metaTitle: "Copilot vs ChatGPT 2026 : lequel choisir ? | Masteria",
     metaDesc:
-      "Microsoft 365 Copilot ou ChatGPT (GPT-5.6, GPT-6) : vos données via Graph, contexte réel, agents, prix par siège. Comparatif vérifié le 3 octobre 2026.",
-    h1: "Microsoft Copilot vs ChatGPT : quel outil IA pour votre entreprise ?",
+      "Microsoft Copilot ou ChatGPT : données Microsoft 365, agents, Cowork, prix par siège en France. Comparatif mis à jour le 7 octobre 2026.",
+    h1: "Microsoft Copilot vs ChatGPT : quel assistant IA pour votre entreprise en 2026 ?",
     intro:
-      "Microsoft Copilot et ChatGPT servent deux besoins distincts. **Copilot** travaille à l'intérieur de Microsoft 365 : avec la licence complète, il lit vos mails Outlook, vos fichiers SharePoint et vos réunions Teams, avec les permissions déjà en place, et propose des modèles d'OpenAI comme d'Anthropic. **ChatGPT** est un assistant autonome qui couvre un périmètre plus large : images, tâches longues avec ChatGPT Work, agents d'équipe, code avec Codex, et désormais des extensions pour Word, Excel et PowerPoint. Le bon arbitrage dépend de la part de votre travail qui se passe dans Office.",
+      "Une question tranche souvent le débat : combien d'heures vos équipes passent-elles chaque jour dans Outlook, Word, Excel et Teams ? **Microsoft Copilot** (anciennement Microsoft 365 Copilot) vit dans ces applications. Avec sa licence, il s'appuie sur vos mails, vos fichiers SharePoint et vos réunions, dans la limite des droits de chaque personne, et il fait travailler des modèles d'OpenAI comme d'Anthropic. **ChatGPT** part de sa propre application : il dessine des images, conduit des tâches longues avec ChatGPT Work, confie la programmation à Codex et s'installe désormais dans Word, Excel et PowerPoint grâce à une extension. Dix critères et huit situations de bureau les départagent ci-dessous, d'après un relevé du 7 octobre 2026.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "3 octobre 2026",
+    verifiedOn: "7 octobre 2026",
     datePublished: "2026-05-04",
-    dateModified: "2026-10-03",
-    readTime: "9 minutes",
+    dateModified: "2026-10-07",
+    readTime: "10 minutes",
     keywords:
-      "copilot vs chatgpt, microsoft 365 copilot prix, copilot business prix, chatgpt business prix, comparatif copilot chatgpt 2026, gpt-5.6, gpt-6, copilot ou chatgpt entreprise, microsoft graph ia",
+      "copilot vs chatgpt, microsoft copilot prix, copilot business prix, chatgpt business prix, comparatif copilot chatgpt 2026, gpt-5.6, gpt-6, copilot ou chatgpt entreprise, microsoft graph ia, copilot cowork",
+
+    // ─── Textes de section propres à ce comparatif (lus par ComparisonPage via `textes`)
+    textes: {
+      legende: "Microsoft Copilot (Microsoft) et ChatGPT (OpenAI) mis côte à côte le 7 octobre 2026, avec les prix publiés pour la France.",
+      criteres: "Dix critères repris un à un : ce que publient Microsoft et OpenAI au 7 octobre 2026, et ce que nous observons quand une équipe apprend l'un ou l'autre.",
+      casTitre: "Huit situations de bureau, un verdict pour chacune",
+      cas: "Des demandes que nos stagiaires apportent en formation Copilot ou ChatGPT : la boîte de réception du matin, un mémo à transformer en présentation, un fichier de ventes, une série de visuels, des relances, des propositions commerciales, le point d'équipe du lundi, une campagne à imaginer.",
+      metiersTitre: "Quel outil pour quelle fonction",
+      metiers: "Notre conseil pour chaque fonction, tiré des sessions Copilot et ChatGPT que nous animons auprès de la finance, du marketing, de l'assistanat ou des équipes support.",
+      erreursTitre: "Sept faux pas au moment d'arbitrer entre Copilot et ChatGPT",
+      erreurs: "Ces erreurs reviennent chaque fois qu'une direction hésite entre une licence Microsoft et des sièges ChatGPT.",
+      alternativesTitre: "Quatre autres outils à connaître avant de signer",
+      alternatives: "Selon votre environnement, un troisième outil complète le duo, ou le remplace.",
+      ctaTitre: "Mettez Copilot et ChatGPT entre les mains de vos équipes avant d'acheter",
+      ctaTexte: "En deux jours de formation multi-outils, vos collaborateurs traitent leurs propres mails, tableaux et présentations avec Copilot, ChatGPT et trois autres assistants, puis vous décidez sur pièces. Masteria étant certifié Qualiopi au titre des actions de formation, une prise en charge de ces deux journées par votre OPCO de branche est envisageable si ses règles le permettent.",
+    },
+
+    // ─── Ce que nos formations Copilot ont montré (sources : etudes-de-cas.js, cas `industrie`, et missions-formation.js)
+    terrain: {
+      titre: "Les leçons tirées de nos sessions Copilot",
+      paras: [
+        "Entre juillet et septembre 2026, un groupe international du packaging a suivi cinq sessions de deux jours sur Microsoft Copilot, dont deux en anglais ; les deux premières ont formé [24 managers pilotes](/etudes-de-cas-ia#industrie). Les treize ateliers partaient des fichiers du groupe (prix, coûts, base RH, présentations à la charte), jamais d'exemples tirés d'un manuel. Les implantations américaines et mexicaines suivent en octobre 2026, celles de l'Inde en décembre.",
+        "Une [assistante de direction](/etudes-de-cas-ia#mission-assistanat-direction), employée par un éditeur de logiciels B2B, a appris en septembre 2026 à répartir son travail entre Copilot et Claude avec une règle simple : l'interne et le nominatif restent dans Copilot, le texte public ou anonymisé peut partir dans l'autre outil, et le moindre doute renvoie vers Copilot. Entre Copilot et ChatGPT, le raisonnement est le même : le périmètre des données se décide avant la qualité des réponses.",
+      ],
+    },
 
     // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
     answerBox: {
-      question: "Copilot ou ChatGPT : lequel choisir en 2026 ?",
+      question: "Faut-il équiper vos équipes de Copilot ou de ChatGPT ?",
       answer:
-        "Prenez **Microsoft 365 Copilot** si vos équipes vivent dans Outlook, Word, Excel et Teams : avec la licence complète, il accède à vos données via Microsoft Graph, applique vos permissions et garde les traitements dans le périmètre de Microsoft 365. Comptez **26 € HT par utilisateur et par mois** en paiement annuel, ou **18,20 € HT** avec Copilot Business pour les organisations jusqu'à 300 utilisateurs, en plus de la licence Microsoft 365. Prenez **ChatGPT** si vous cherchez la couverture la plus large pour **21 € par utilisateur et par mois** sur l'offre Business en annuel : GPT-5.6 Sol et GPT-6 Pro, ChatGPT Images 2.5, ChatGPT Work pour les livrables complets, agents d'espace de travail et Codex. Les deux répondent à des questions différentes : une configuration courante associe Copilot pour le quotidien bureautique et ChatGPT pour ce qui sort d'Office.",
+        "Choisissez **Microsoft Copilot** quand la journée de vos équipes se passe dans Outlook, Word, Excel et Teams : sa licence relie les réponses à Microsoft Graph, c'est-à-dire à vos mails, fichiers, réunions et agendas, avec les droits d'accès déjà en place. En France, Microsoft la facture **26 € HT par siège et par mois** sur un engagement annuel ; une organisation de 300 utilisateurs au plus peut prendre **Copilot Business à 18,20 € HT**, toujours en plus de son abonnement Microsoft 365. Choisissez **ChatGPT** quand le travail déborde d'Office : des visuels grâce à ChatGPT Images 2.5, des livrables complets grâce à ChatGPT Work, du code grâce à Codex, des agents d'équipe lancés depuis Slack. Son offre Business est affichée **21 € mensuels par siège** pour la France, réglés à l'année. Beaucoup d'entreprises donnent Copilot à tout le monde et ouvrent quelques sièges ChatGPT aux profils créatifs ou techniques.",
       bullets: [
-        "Mails, documents, réunions et tableurs Microsoft : Copilot",
-        "Images et livrables complets hors Office : ChatGPT",
-        "Recherche dans l'intranet et les fichiers d'équipe : Copilot",
-        "Code, prototypage et automatisations hors Microsoft : ChatGPT",
-        "Budget : Copilot Business à 18,20 € HT, ChatGPT Business à 21 €, licences Microsoft 365 en plus pour Copilot",
+        "Boîte de réception, agenda, réunions Teams : Copilot",
+        "Visuels de campagne et pages web légères : ChatGPT",
+        "Questions posées aux fichiers SharePoint et OneDrive : Copilot",
+        "Programmation et automatisations reliées à Slack ou GitHub : ChatGPT",
+        "Budget par siège : 26 € HT ou 18,20 € HT pour Copilot, abonnement Microsoft 365 en plus ; 21 € pour ChatGPT Business en annuel",
       ],
     },
 
     toolA: {
       id: "copilot",
-      name: "Microsoft 365 Copilot",
+      name: "Microsoft Copilot",
       editor: "Microsoft",
-      currentModel: "Modèles d'OpenAI et d'Anthropic, routage automatique, ancrage Microsoft Graph",
+      currentModel: "Routage entre modèles d'OpenAI et d'Anthropic, réponses ancrées dans vos données Microsoft 365",
       country: "États-Unis",
-      pricing: "26 € HT/utilisateur/mois (grandes entreprises) · 18,20 € HT (Copilot Business, jusqu'à 300 utilisateurs), en plus de Microsoft 365",
+      pricing: "Licence à 26 € HT par mois en paiement annuel · Copilot Business à 18,20 € HT jusqu'à 300 utilisateurs · abonnement Microsoft 365 à prévoir",
       foundedAI: "2023",
       color: "#0078D4",
     },
@@ -500,320 +527,321 @@ export const COMPARISONS = {
       id: "chatgpt",
       name: "ChatGPT",
       editor: "OpenAI",
-      currentModel: "GPT-5.6 dans la conversation · GPT-6 Astra et GPT-6.1 Sol dans Work et Codex",
+      currentModel: "GPT-5.6 Sol pour dialoguer ; GPT-6 Astra et GPT-6.1 Sol réservés à Work et à Codex",
       country: "États-Unis",
-      pricing: "Go 8 € · Plus 23 € · Pro dès 103 € · Business 21 €/utilisateur en annuel (prix France)",
+      pricing: "Plus 23 € · Business 21 € par utilisateur en annuel, 26 € au mois · Pro à partir de 103 € (prix publiés pour la France)",
       foundedAI: "2022",
       color: "#10A37F",
     },
 
     // ─── GEO : tableau de faits datés, lisible en HTML brut par un moteur génératif
     keyFacts: {
-      title: "L'essentiel en un tableau",
-      note: "Faits vérifiés le 3 octobre 2026 sur les pages officielles de Microsoft et d'OpenAI, avec les prix affichés pour la France. Microsoft affiche ses prix hors taxes.",
+      title: "Copilot et ChatGPT, ligne par ligne",
+      note: "Chiffres et fonctions repris le 7 octobre 2026 chez Microsoft et chez OpenAI. Microsoft affiche ses prix hors taxes et présente encore, sur sa page tarifs française, la licence sous son ancien nom ; la page française d'OpenAI ne dit pas si ses montants s'entendent HT ou TTC.",
       rows: [
-        { criterion: "Modèles actuels", a: "Modèles d'OpenAI et d'Anthropic, avec un sélecteur et un routage automatique ; dans l'UE, ceux d'Anthropic sont désactivés par défaut", b: "GPT-5.6 Sol dans la conversation, GPT-6 Pro sur Business et Enterprise, GPT-6 Astra et GPT-6.1 Sol dans Work et Codex" },
-        { criterion: "Accès à vos données internes", a: "Oui avec la licence complète : mails, fichiers SharePoint et OneDrive, réunions Teams et agenda via Microsoft Graph, dans la limite des permissions", b: "Par connecteurs que chaque utilisateur branche : Google Drive, SharePoint, Box, Dropbox, Gmail ou Outlook" },
-        { criterion: "Inclus sans licence Copilot", a: "Copilot Chat et, selon votre abonnement Microsoft 365, un accès standard à Copilot dans Word, Excel, PowerPoint et OneNote", b: "Sans objet : ChatGPT s'achète par siège" },
-        { criterion: "Contexte dans la conversation", a: "Non publié par Microsoft : Graph va chercher le passage utile dans vos fichiers", b: "54 000 tokens en mode instantané, 256 000 en mode raisonnement sur Business ; 128 000 et 256 000 sur Enterprise" },
-        { criterion: "Génération d'images", a: "Oui dans Copilot Chat, si l'administrateur l'autorise", b: "Oui, ChatGPT Images 2.5 ; plus de vidéo depuis l'arrêt de Sora le 26 avril 2026" },
-        { criterion: "Mode agent", a: "Copilot Studio pour les agents métier ; Copilot Cowork pour exécuter des tâches dans Microsoft 365, facturé à l'usage", b: "ChatGPT Work et agents d'espace de travail, payés en crédits au-delà de l'enveloppe incluse" },
-        { criterion: "Assistant de code", a: "Non. Microsoft vend GitHub Copilot à part (Business à 19 $ par siège)", b: "Codex, inclus avec des limites dès l'offre gratuite" },
-        { criterion: "Entrée individuelle", a: "Microsoft 365 Premium à 22 €/mois ou 219 €/an, pour 1 à 6 personnes, IA réservée au titulaire", b: "Go à 8 €/mois, Plus à 23 €/mois" },
-        { criterion: "Offre équipe", a: "26 € HT/utilisateur/mois en annuel (27,30 € en mensuel), ou Copilot Business à 18,20 € HT jusqu'à 300 utilisateurs, en plus d'une licence Microsoft 365 éligible", b: "Business à 21 €/utilisateur/mois en annuel, 26 € en mensuel, dès deux sièges" },
-        { criterion: "Localisation des traitements", a: "Périmètre du service Microsoft 365 ; trafic des utilisateurs européens maintenu dans l'EU Data Boundary (le périmètre européen de traitement de Microsoft), hors modèles d'Anthropic", b: "Chez OpenAI ; stockage en Europe en déploiement sur Business, stockage et inférence en Europe sur Enterprise (clients éligibles)" },
+        { criterion: "Modèles", a: "Sélecteur Auto, réponse rapide ou réflexion approfondie ; modèles d'OpenAI et d'Anthropic, ces derniers coupés dans l'UE tant que l'administrateur ne les active pas", b: "GPT-5.6 Sol en dialogue ; GPT-6 Pro réservé à Business et Enterprise ; famille GPT-6 dans Work et Codex" },
+        { criterion: "Vos données internes", a: "Avec la licence : mails, fichiers SharePoint et OneDrive, réunions et agenda, lus par Microsoft Graph et Work IQ dans la limite des droits de chacun", b: "Par des connecteurs que l'utilisateur active : SharePoint, Google Drive, Box, Dropbox, Gmail, Outlook" },
+        { criterion: "Sans licence payante", a: "Copilot Chat, compris dans Microsoft 365 : réponses tirées du web, fichiers déposés, contenu ouvert dans Outlook ou Teams", b: "Formule gratuite, aux quotas plus serrés ; aucune version comprise dans une suite bureautique" },
+        { criterion: "Texte gardé en tête", a: "Aucun chiffre publié : Graph extrait le passage utile au lieu de charger le dossier entier", b: "Compte Business : 54 000 tokens en instantané, 256 000 en raisonnement ; compte Enterprise : 128 000 et 256 000" },
+        { criterion: "Images et vidéo", a: "Images dans Copilot Chat quand l'administrateur les autorise", b: "ChatGPT Images 2.5 ; vidéo impossible depuis l'arrêt de Sora (application en avril, API le 24 septembre 2026)" },
+        { criterion: "Agents", a: "Copilot Studio pour les agents métier ; Copilot Cowork, en disponibilité générale, agit dans Microsoft 365 et se facture à l'usage", b: "ChatGPT Work pour les tâches longues ; agents d'équipe payés en crédits une fois l'enveloppe du siège consommée" },
+        { criterion: "Programmation", a: "Hors du périmètre : GitHub Copilot, vendu séparément (Business à 19 $ le siège)", b: "Codex, avec un quota dès la formule gratuite" },
+        { criterion: "Pour un particulier", a: "Microsoft 365 Premium : 22 € par mois ou 219 € par an", b: "Go à 8 €, Plus à 23 € par mois" },
+        { criterion: "Prix pour une équipe", a: "Licence : 26 € HT mensuels réglés à l'année, 27,30 € HT réglés au mois ; Copilot Business 18,20 € HT en annuel, 21,84 € HT en paiement mensuel ; Microsoft 365 en sus", b: "Business : 21 € par mois en annuel, 26 € au mois, deux sièges au minimum" },
+        { criterion: "Lieu des traitements", a: "Service Microsoft 365 ; les requêtes d'Europe restent dans l'EU Data Boundary, modèles d'Anthropic exceptés", b: "Serveurs d'OpenAI ; résidence européenne complète pour Enterprise et Edu éligibles, stockage seul et progressif pour Business" },
       ],
     },
 
     verdict: {
-      title: "Verdict en 30 secondes",
+      title: "Ce qu'il faut retenir avant d'aller plus loin",
       summary:
-        "**Copilot** travaille dans votre environnement Microsoft. Si vos équipes vivent dans Outlook, Word, Excel et Teams, la licence complète fait gagner du temps là où elles passent leurs journées, avec des réponses ancrées dans leurs mails, fichiers et réunions, et des traitements qui restent dans le périmètre de Microsoft 365. **ChatGPT** couvre un périmètre plus large hors Office : génération d'images, ChatGPT Work pour les livrables complets, Codex pour le code, agents d'équipe déclenchés depuis Slack. Les deux se rapprochent : ChatGPT s'installe désormais dans Word, Excel et PowerPoint, et Copilot propose des modèles d'Anthropic. Le bon arbitrage dépend de la part de votre travail qui se passe dans Microsoft 365.",
-      recommendA: ["Environnement Microsoft 365 dominant", "Recherche dans les mails, fichiers et réunions", "Traitements dans le périmètre de Microsoft 365", "Gouvernance IT centralisée (Purview, Copilot Studio)"],
-      recommendB: ["Images et contenus visuels", "Livrables complets avec ChatGPT Work", "Code avec Codex", "Outils hors Microsoft (Google Drive, Slack, Box)"],
+        "**Copilot** rend service là où vos équipes travaillent déjà : il résume un fil Outlook, transforme un document Word en présentation, retrouve une décision prise en réunion, et les données restent dans le service Microsoft 365. **ChatGPT** va plus loin hors d'Office : visuels, livrables complets, code, agents d'équipe. Les frontières bougent des deux côtés, puisque ChatGPT s'installe dans Word, Excel et PowerPoint et que Copilot propose des modèles d'Anthropic. Mesurez d'abord la part de la journée passée dans la suite Microsoft : c'est elle qui tranche. Pour apprendre l'un ou l'autre, voyez notre [formation Microsoft Copilot](/formation-microsoft-copilot) et notre [formation ChatGPT](/formation-chatgpt).",
+      recommendA: ["Vos équipes passent leurs journées dans Outlook, Word, Excel et Teams", "Vous voulez interroger mails, fichiers et réunions sans rien téléverser", "Vos données doivent rester dans le service Microsoft 365", "Votre service informatique gouverne déjà Microsoft 365 avec Purview"],
+      recommendB: ["Vous produisez des visuels et des contenus de campagne", "Vous attendez de l'outil des livrables complets", "Vos développeurs veulent Codex", "Vos fichiers vivent hors de Microsoft : Google Drive, Slack, Box"],
     },
 
     criteria: [
       {
-        title: "Intégration aux outils de travail",
+        title: "Présence dans les outils de travail",
         descriptionA:
-          "Copilot est intégré à Word, Excel, PowerPoint, Outlook, Teams et OneNote. Avec la licence complète, il agit sur le document ouvert et va chercher le contexte dans Microsoft Graph : « résume ce fil », « prépare une présentation à partir de ce document ».",
+          "Copilot apparaît dans Word, Excel, PowerPoint, Outlook, Teams et OneNote. Avec la licence, il travaille sur le document ouvert et puise le contexte dans Microsoft Graph : vous lui demandez de résumer un fil de discussion ou de bâtir des diapositives à partir d'une note, sans quitter l'application.",
         descriptionB:
-          "ChatGPT travaille dans son application (web, ordinateur, mobile) et, depuis 2026, dans Word, Excel et PowerPoint grâce à une extension officielle ouverte à toutes les offres. L'extension travaille sur le document ouvert ; l'accès à Outlook ou à SharePoint passe par des connecteurs à brancher.",
+          "ChatGPT se pratique dans son application (web, ordinateur, mobile) et, grâce à une extension officielle, dans Word, Excel et PowerPoint. L'extension agit sur le fichier ouvert ; pour atteindre Outlook ou SharePoint, il faut brancher des connecteurs.",
         winner: "a",
-        winnerText: "Avantage Copilot pour les utilisateurs de Microsoft 365",
+        winnerText: "Avantage Copilot chez les équipes équipées de Microsoft 365",
       },
       {
-        title: "Fenêtre de contexte disponible dans votre offre",
+        title: "Quantité de texte prise en compte",
         descriptionA:
-          "Microsoft ne publie pas de fenêtre de contexte par offre : la valeur vient de l'ancrage dans Graph, qui va chercher le bon passage dans le bon fichier au lieu d'avaler le document entier.",
+          "Microsoft ne communique aucune fenêtre de contexte, cette quantité de texte que l'outil garde en tête pendant un échange. Copilot procède autrement : il cherche dans Graph le passage pertinent du bon fichier au lieu de lire tout le dossier.",
         descriptionB:
-          "Sur Business, 54 000 tokens en mode instantané et 256 000 en mode raisonnement, soit environ 320 pages selon OpenAI ; via l'API, les modèles GPT-6 atteignent 1 050 000 tokens. Ces deux chiffres décrivent deux produits : la conversation de vos équipes et l'intégration d'un développeur.",
+          "Sur Business, ChatGPT garde 54 000 tokens en mode instantané et 256 000 en mode raisonnement, soit à peu près 320 pages selon l'éditeur. Côté API, la famille GPT-6 accepte 1 050 000 tokens, un chiffre qui concerne les développeurs et non la conversation de vos équipes.",
         winner: "tie",
-        winnerText: "Match nul : deux façons d'atteindre le bon document",
+        winnerText: "Match nul : deux manières d'atteindre l'information",
       },
       {
-        title: "Accès aux données de l'entreprise (Microsoft Graph)",
+        title: "Lecture des données de l'entreprise",
         descriptionA:
-          "Avec la licence Microsoft 365 Copilot, les réponses s'appuient sur Microsoft Graph et Work IQ, la couche de Microsoft qui raisonne sur vos données de travail : mails, fichiers, réunions, agenda, relations dans l'organisation, toujours dans la limite des permissions de l'utilisateur.",
+          "La licence relie Copilot à Microsoft Graph et à Work IQ, la couche qui raisonne sur vos données de travail : mails, fichiers, réunions, agenda, organigramme. Chaque réponse respecte les droits de l'utilisateur, et l'administrateur peut désactiver Work IQ.",
         descriptionB:
-          "ChatGPT accède à vos contenus par des connecteurs que chaque utilisateur branche : Google Drive, SharePoint, Box et Dropbox dans sa bibliothèque, Gmail ou Outlook pour la messagerie. Le résultat dépend de ce qui est connecté et autorisé.",
+          "ChatGPT atteint vos contenus par des connecteurs que chacun active : SharePoint, Google Drive, Box ou Dropbox pour les fichiers, Gmail ou Outlook pour la messagerie. La qualité de la réponse suit ce qui a été branché et autorisé.",
         winner: "a",
-        winnerText: "Avantage décisif Copilot sur le contexte interne",
+        winnerText: "Avantage net Copilot sur le contexte interne",
       },
       {
-        title: "Confidentialité et souveraineté des données",
+        title: "Données et lieu de traitement",
         descriptionA:
-          "Prompts et réponses restent dans le périmètre du service Microsoft 365, sous vos règles de conservation et Purview, sans servir à entraîner les modèles. Le trafic des utilisateurs européens reste dans l'EU Data Boundary, à une exception près : les modèles d'Anthropic, désactivés par défaut dans l'UE, en sortent si l'administrateur les active.",
+          "Prompts et réponses restent dans le service Microsoft 365, sous vos règles de conservation et Purview, et n'entraînent pas les modèles. Pour un utilisateur situé en Europe, le trafic ne sort pas de l'EU Data Boundary, la frontière de données que Microsoft a tracée autour de l'Union. Exception à connaître : les modèles d'Anthropic, coupés par défaut dans l'UE, sortent de ce périmètre une fois activés.",
         descriptionB:
-          "OpenAI n'entraîne pas ses modèles sur Business et Enterprise. Enterprise et Edu peuvent stocker et traiter les contenus en Europe pour les clients éligibles ; sur Business, le stockage en Europe se déploie progressivement, l'inférence reste hors région et une copie des échanges est conservée un temps aux États-Unis.",
+          "OpenAI n'utilise pas les échanges Business et Enterprise pour l'entraînement. Enterprise et Edu peuvent stocker et calculer les réponses en Europe pour les clients éligibles. Sur Business, le stockage européen arrive par étapes, le calcul reste hors région et OpenAI garde un temps une copie aux États-Unis pour lutter contre les abus.",
         winner: "a",
-        winnerText: "Avantage Copilot pour les données en Europe",
+        winnerText: "Avantage Copilot pour garder les traitements en Europe",
       },
       {
-        title: "Capacités créatives",
+        title: "Création visuelle",
         descriptionA:
-          "Copilot génère des images dans Copilot Chat quand l'administrateur l'autorise, et travaille les présentations dans PowerPoint : création à partir d'un document, ajout d'images, mise en forme de tout le fichier.",
+          "Copilot Chat produit des images à condition que l'administrateur ait ouvert cette fonction. Dans PowerPoint, il bâtit une présentation à partir d'un fichier, ajoute des images et met en forme l'ensemble du document.",
         descriptionB:
-          "ChatGPT Images 2.5 crée et retouche des images à partir d'un modèle ou d'un croquis ; la vidéo a disparu avec l'arrêt de Sora en avril 2026. ChatGPT Work produit aussi des sites légers et des pages partageables.",
+          "ChatGPT Images 2.5, en service depuis le 8 septembre 2026, fabrique ou reprend une image en s'inspirant d'un visuel fourni ou d'un croquis. Pour la vidéo, plus rien depuis l'arrêt de Sora. ChatGPT Work sait aussi produire un site simple.",
         winner: "b",
-        winnerText: "Avantage ChatGPT sur la création visuelle",
+        winnerText: "Avantage ChatGPT sur les visuels",
       },
       {
-        title: "Agents et automatisation du travail",
+        title: "Agents et automatisations",
         descriptionA:
-          "Copilot Studio monte des agents métier en low-code (avec peu de code), connectés à vos sources de données, dont SharePoint. Les agents publiés dans Microsoft 365 Copilot sont inclus pour les détenteurs de la licence ; les agents autonomes ou ouverts sur des canaux externes se paient en crédits Copilot. Copilot Cowork exécute des tâches dans Microsoft 365 (mails, réunions, documents) après validation de chaque action, en facturation à l'usage.",
+          "Avec Copilot Studio, on monte des agents métier en low-code, en programmant peu ou pas, reliés à SharePoint et à vos sources. Un agent publié dans Microsoft Copilot est compris pour les titulaires de la licence ; les agents autonomes ou ouverts à l'extérieur consomment des crédits, vendus par packs de 25 000 à 173,30 € HT par mois ou à l'usage. Copilot Cowork, ouvert à tous les comptes professionnels, envoie des mails, planifie des réunions et crée des documents, en demandant votre accord avant chaque action sensible.",
         descriptionB:
-          "Les agents d'espace de travail, en disponibilité générale depuis le 21 mai 2026 sur Business et Enterprise, se décrivent en langage naturel, se partagent, se planifient, répondent dans Slack et se déclenchent par API. Depuis le 6 juillet 2026, leurs exécutions consomment des crédits, pris d'abord sur l'enveloppe incluse dans le siège.",
+          "Sur Business et Enterprise, un agent d'espace de travail se décrit avec des phrases ordinaires, puis se partage, se planifie, répond dans Slack ou démarre par API ; tous les clients de ces offres y ont accès depuis le 21 mai 2026. Depuis le 6 juillet 2026, chaque exécution est décomptée en crédits, pris d'abord sur l'enveloppe du siège.",
         winner: "tie",
-        winnerText: "Match nul : gouvernance chez Microsoft, rapidité de montage chez OpenAI",
+        winnerText: "Match nul : gouvernance côté Microsoft, mise en route rapide côté OpenAI",
       },
       {
-        title: "Code et développement",
+        title: "Développement logiciel",
         descriptionA:
-          "Microsoft 365 Copilot n'est pas conçu pour le développement. Microsoft vend GitHub Copilot à part : Business à 19 $ par siège et par mois, Enterprise à 39 $, avec des modèles d'Anthropic, d'OpenAI et de Google au choix.",
+          "Microsoft Copilot ne vise pas les développeurs. Pour eux, Microsoft vend GitHub Copilot : 19 $ mensuels par siège en Business, 39 $ en Enterprise, avec un sélecteur qui mêle Anthropic, OpenAI et Google.",
         descriptionB:
-          "Codex exécute des tâches de développement en autonomie, en local ou dans le cloud, et il est inclus dans les offres ChatGPT avec des limites. GPT-6.1 Sol y arrive progressivement depuis le 29 septembre 2026.",
+          "Codex exécute seul des chantiers de code, en local comme dans le cloud, et figure dans les offres ChatGPT avec des limites d'usage. GPT-6.1 Sol y est déployé depuis le 29 septembre 2026.",
         winner: "b",
-        winnerText: "ChatGPT mieux placé sur le développement",
+        winnerText: "Avantage ChatGPT pour les développeurs",
       },
       {
-        title: "Tarifs et coût réel par siège",
+        title: "Prix et coût d'un siège",
         descriptionA:
-          "Microsoft 365 Copilot coûte 26 € HT par utilisateur et par mois en paiement annuel (27,30 € en mensuel), en plus d'une licence Microsoft 365 éligible. Jusqu'à 300 utilisateurs, Copilot Business coûte 18,20 € HT, ramenés à 15,60 € la première année pour les clients existants qui souscrivent entre le 1er juillet et le 31 décembre 2026. Copilot Studio et Cowork se facturent à l'usage.",
+          "Sur la page tarifs France, qui garde encore l'ancien nom, la licence Microsoft Copilot vaut 26 € HT mensuels par personne si l'on règle l'année, 27,30 € HT si l'on règle chaque mois, en plus d'un abonnement Microsoft 365 éligible. Copilot Business, réservé aux organisations de 300 utilisateurs au plus, vaut 18,20 € HT en annuel et 21,84 € HT en mensuel ; un client Microsoft 365 existant qui ouvre un nouvel abonnement annuel paie 15,60 € HT la première année, jusqu'au 31 décembre 2026. Studio et Cowork s'ajoutent à l'usage.",
         descriptionB:
-          "En France : Go à 8 €, Plus à 23 €, Pro à partir de 103 € par mois ; Business à 21 € par utilisateur et par mois en annuel (26 € en mensuel) ; Enterprise sur devis. ChatGPT Work, Codex et les agents se paient en crédits au-delà de l'enveloppe incluse.",
+          "Grille française : Go 8 €, Plus 23 €, Pro à partir de 103 € par mois. Un siège Business revient à 21 € par mois réglés à l'année, 26 € si l'on paie mensuellement ; Enterprise se négocie. Une fois l'enveloppe du siège consommée, ChatGPT Work, Codex et les agents se paient en crédits.",
         winner: "tie",
-        winnerText: "Match nul : Copilot Business moins cher, licence Microsoft 365 en plus",
+        winnerText: "Match nul : Copilot Business coûte moins, mais suppose Microsoft 365",
       },
       {
-        title: "Adoption et formation des équipes",
+        title: "Prise en main par les équipes",
         descriptionA:
-          "Copilot se retrouve dans Word, Excel, PowerPoint, Outlook, Teams, OneNote et Forms, avec un comportement propre à chaque application : la formation se construit application par application, sur les documents de l'équipe.",
+          "Copilot se comporte différemment dans chaque application : Word, Excel, PowerPoint, Outlook, Teams, OneNote, Forms. Dans Excel, il propose trois modes de travail (édition, plan, conversation), et la fonction =COPILOT() a disparu le 14 septembre 2026. Une formation utile avance donc application par application, sur les fichiers du service.",
         descriptionB:
-          "ChatGPT s'apprend dans une interface unique, avec deux modes (Chat pour les questions, Work pour les tâches longues) et Codex pour les développeurs. En mise en situation, la prise en main est plus rapide.",
+          "ChatGPT s'apprend dans une seule interface : la conversation pour les questions, ChatGPT Work pour les tâches longues, Codex pour les développeurs. En atelier, les participants gagnent leur autonomie plus vite.",
         winner: "b",
-        winnerText: "ChatGPT plus rapide à prendre en main",
+        winnerText: "Avantage ChatGPT sur la vitesse d'apprentissage",
       },
       {
-        title: "Modèles et capacités avancées",
+        title: "Choix du modèle",
         descriptionA:
-          "Copilot choisit le modèle par un routage automatique, propose un mode de réflexion approfondie et laisse l'utilisateur choisir Claude dans certaines fonctions, comme Researcher. Les agents Researcher et Analyst prennent en charge les recherches et les analyses de données longues.",
+          "En mode Auto, Copilot choisit le modèle à votre place, et la réflexion approfondie pousse l'analyse. Claude se sélectionne dans « Modifier avec Copilot » de Word et dans l'agent Researcher, une fois Anthropic activé par l'administrateur. Depuis le 6 octobre 2026, sur le web, un clic relance la réponse en changeant de modèle.",
         descriptionB:
-          "Les nouveaux modèles d'OpenAI arrivent dans ChatGPT dès leur sortie : GPT-6 Astra le 3 septembre 2026, GPT-6.1 Sol le 29 septembre, d'abord sur l'offre Pro. GPT-6 Pro est accessible dans la conversation sur Business et Enterprise.",
+          "OpenAI ouvre ses nouveaux modèles dans ChatGPT dès leur sortie : GPT-6 Astra le 3 septembre 2026, GPT-6.1 Sol le 29. Dans la conversation, GPT-6 Pro est réservé à Pro, Business et Enterprise, tandis que GPT-5.6 Sol laisse doser la profondeur de réflexion.",
         winner: "tie",
-        winnerText: "Match nul : routage automatique chez Microsoft, choix explicite chez OpenAI",
+        winnerText: "Match nul : routage automatique chez Microsoft, choix manuel chez OpenAI",
       },
     ],
 
     useCases: [
-      { metier: "Productivité quotidienne (mails, documents, présentations)", recommendation: "a", why: "Copilot travaille dans Outlook, Word et PowerPoint, sur le document ouvert et avec le contexte de vos mails et réunions." },
-      { metier: "Brainstorming et créativité", recommendation: "b", why: "ChatGPT varie plus vite les angles et produit les visuels associés avec ChatGPT Images 2.5." },
-      { metier: "Analyse documentaire interne", recommendation: "a", why: "Copilot interroge SharePoint et OneDrive sans téléversement, dans la limite des permissions." },
-      { metier: "Génération d'images", recommendation: "b", why: "ChatGPT Images 2.5 accepte modèles, croquis et retouches ciblées." },
-      { metier: "Code et développement", recommendation: "b", why: "Codex est inclus dans ChatGPT ; pour l'environnement de développement, GitHub Copilot reste un produit séparé." },
-      { metier: "Service client", recommendation: "tie", why: "Copilot Studio pour un agent ouvert à vos clients sur le site web, agents ChatGPT pour une équipe support outillée sur Slack." },
-      { metier: "Sensibilité forte aux données (santé, finance, défense)", recommendation: "a", why: "Traitements dans le périmètre de Microsoft 365 et EU Data Boundary pour les utilisateurs européens." },
+      { metier: "Mails, documents et présentations au quotidien", recommendation: "a", why: "Copilot agit dans Outlook, Word et PowerPoint sur le fichier ouvert, avec le contexte de vos échanges et de vos réunions." },
+      { metier: "Recherche d'idées et créativité", recommendation: "b", why: "ChatGPT multiplie les angles plus vite et passe aux visuels avec ChatGPT Images 2.5." },
+      { metier: "Recherche dans les documents internes", recommendation: "a", why: "Copilot lit SharePoint et OneDrive sans téléversement, en respectant les droits de chacun." },
+      { metier: "Visuels et illustrations", recommendation: "b", why: "ChatGPT Images 2.5 prend un visuel de référence pour point de départ et retouche une zone choisie." },
+      { metier: "Développement", recommendation: "b", why: "Codex fait partie des offres ChatGPT ; côté Microsoft, il faudrait acheter GitHub Copilot." },
+      { metier: "Support client", recommendation: "tie", why: "Copilot Studio pour un agent visible par vos clients sur votre site, agents ChatGPT pour une équipe support qui vit dans Slack." },
+      { metier: "Données sensibles (santé, finance, défense)", recommendation: "a", why: "Service Microsoft 365 et EU Data Boundary : les traitements des utilisateurs européens restent en Europe, hors modèles d'Anthropic." },
     ],
 
     // ─── GEO : delta daté, très citable par les moteurs génératifs
     changelog: {
-      title: "Ce qui a changé depuis notre version d'août 2026",
+      title: "Les changements intégrés depuis la version d'août 2026",
       items: [
-        { date: "Septembre 2026", text: "OpenAI a présenté GPT-6 Astra le 3 septembre et GPT-6.1 Sol le 29 septembre ; GPT-6 Pro est accessible dans la conversation sur Business et Enterprise. Depuis le 17 septembre, ChatGPT s'installe aussi dans Word, après Excel et PowerPoint." },
-        { date: "Octobre 2026", text: "Au 3 octobre 2026, la documentation de Microsoft distingue Copilot Chat, Microsoft 365 Copilot (Basic) et Microsoft 365 Copilot (Premium), décrit Copilot Cowork et propose des modèles d'Anthropic, désactivés par défaut dans l'UE. Microsoft y désigne désormais son produit sous le nom de Microsoft Copilot." },
-        { date: "Juillet 2026", text: "Depuis le 6 juillet, les exécutions des agents d'espace de travail ChatGPT consomment des crédits, d'abord sur l'enveloppe incluse dans le siège Business. Microsoft propose à ses clients existants Copilot Business à 15,60 € HT la première année pour les souscriptions du 1er juillet au 31 décembre 2026." },
-        { date: "Correction", text: "Nous citions Sora 2 pour la vidéo dans ChatGPT : OpenAI a fermé l'application Sora le 26 avril 2026. Nous écrivions aussi que ChatGPT n'avait aucune intégration native dans Word ou Excel : OpenAI publie des extensions officielles pour Word, Excel et PowerPoint." },
-        { date: "Correction", text: "Nous écrivions que Copilot exigeait Microsoft 365 Business Standard ou supérieur : Business Basic, E3, E5 et Office 365 E1 figurent aussi parmi les licences éligibles. Nous présentions enfin Copilot Pro à 20 $ par mois pour les particuliers : la boutique Microsoft renvoie désormais vers Microsoft 365 Premium, à 22 € par mois." },
+        { date: "7 octobre 2026", text: "Nouvelle vérification des prix et des fonctions. Pour Copilot Business, la page française indique désormais 21,84 € HT en paiement mensuel, à côté des 18,20 € HT en annuel. Microsoft documente depuis le 29 septembre la disponibilité générale de Copilot Cowork, qui demande votre accord avant chaque action sensible. Le 6 octobre, Microsoft a ajouté sur le web de quoi relancer une réponse en changeant de modèle." },
+        { date: "Septembre 2026", text: "La documentation de Microsoft appelle désormais la licence Microsoft Copilot et la version incluse Copilot Chat. La fonction =COPILOT() d'Excel a été retirée le 14 septembre. Côté OpenAI, GPT-6 Astra (3 septembre) puis GPT-6.1 Sol (29 septembre) sont arrivés, et ChatGPT s'installe dans Word depuis le 17 septembre." },
+        { date: "Juillet 2026", text: "Depuis le 6 juillet, faire tourner un agent ChatGPT coûte des crédits, prélevés d'abord sur l'enveloppe du siège Business. Microsoft accorde aux clients existants Copilot Business à 15,60 € HT la première année, pour un abonnement annuel souscrit d'ici le 31 décembre 2026." },
+        { date: "Correction", text: "Une version antérieure citait Sora 2 pour produire des vidéos dans ChatGPT, alors que l'application n'existe plus depuis le 26 avril 2026. Elle affirmait aussi que ChatGPT ne s'intégrait ni à Word ni à Excel : OpenAI publie des extensions officielles pour Word, Excel et PowerPoint." },
+        { date: "Correction", text: "Nous réservions Copilot aux abonnés Microsoft 365 Business Standard ou supérieur ; Business Basic, E3, E5 et Office 365 E1 sont aussi éligibles. Nous présentions Copilot Pro à 20 $ par mois aux particuliers, mais la boutique Microsoft renvoie vers Microsoft 365 Premium, à 22 € par mois." },
+        { date: "Correction", text: "Nous écrivions que Copilot Cowork faisait valider chacune de ses actions. Microsoft précise qu'il demande l'accord avant chaque action sensible, en affichant un niveau de risque." },
       ],
     },
 
     methodology:
-      "Ce comparatif est rédigé par Masteria, cabinet lyonnais spécialisé en intelligence artificielle depuis 2022, qui forme les équipes à Microsoft Copilot comme à ChatGPT. Les verdicts reposent sur des mises en situation de formation construites sur des tâches de bureau réelles. Les faits produit et les tarifs ont été revérifiés le **3 octobre 2026** sur les pages officielles de Microsoft et d'OpenAI listées ci-dessous. Versions de référence : **Microsoft 365 Copilot** avec licence complète et **ChatGPT Business** (GPT-5.6 Sol, GPT-6 Pro).",
+      "Masteria, cabinet lyonnais d'intelligence artificielle fondé en 2022, anime des formations Microsoft Copilot et ChatGPT ; ce comparatif en reprend les exercices de bureau (tri de mails, présentations, tableaux, relances). Le **7 octobre 2026**, nous avons contrôlé prix, modèles et fonctions sur les pages de Microsoft et d'OpenAI citées plus bas. OpenAI ne précise pas sur sa page française si ses prix en euros s'entendent HT ou TTC : nous les reprenons tels qu'affichés. Versions comparées : **Microsoft Copilot** avec licence et **ChatGPT Business** (GPT-5.6 Sol et GPT-6 Pro).",
 
     citations: [
-      { name: "Microsoft : tarifs de Microsoft 365 Copilot pour les grandes entreprises (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
-      { name: "Microsoft : Microsoft 365 Copilot Business pour les PME (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
-      { name: "Microsoft Learn : présentation de Microsoft Copilot", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
-      { name: "Microsoft Learn : licences prérequises", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing" },
-      { name: "Microsoft Learn : modèles d'Anthropic dans les services Microsoft", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
-      { name: "Microsoft Learn : Copilot Cowork", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
-      { name: "Microsoft Learn : configuration requise", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements" },
-      { name: "Microsoft : Copilot Studio, offres et tarifs (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
-      { name: "Microsoft Store : Microsoft 365 Premium", url: "https://www.microsoft.com/fr-fr/microsoft-365/p/microsoft-365-premium/cfq7ttc11z3q" },
-      { name: "GitHub : offres Copilot (documentation)", url: "https://docs.github.com/en/copilot/get-started/plans" },
-      { name: "OpenAI : tarifs de ChatGPT (page France)", url: "https://chatgpt.com/fr-FR/pricing/" },
-      { name: "OpenAI : notes de version de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
-      { name: "OpenAI : GPT-5.6 et GPT-6 Pro dans ChatGPT", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
-      { name: "OpenAI : présentation de ChatGPT Business", url: "https://help.openai.com/en/articles/8792828-chatgpt-business-overview" },
-      { name: "OpenAI : notes de version de ChatGPT Business", url: "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" },
-      { name: "OpenAI : agents d'espace de travail (Business et Enterprise)", url: "https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business" },
-      { name: "OpenAI : arrêt de Sora", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" },
-      { name: "OpenAI : résidence des données et de l'inférence", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
-      { name: "OpenAI : stockage des contenus de ChatGPT Business", url: "https://help.openai.com/en/articles/20001418-where-your-chatgpt-business-content-is-stored" },
+      { name: "Prix de la licence Copilot pour les grandes entreprises, page France de Microsoft", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
+      { name: "Copilot Business pour 300 utilisateurs au plus, page France de Microsoft", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
+      { name: "Ce que couvrent Copilot Chat et la licence Copilot (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
+      { name: "Abonnements qui ouvrent droit à Copilot (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-licensing" },
+      { name: "Activer Anthropic comme sous-traitant de Copilot (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
+      { name: "Actions et validations de Copilot Cowork (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+      { name: "Prérequis techniques avant d'ouvrir Copilot (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements" },
+      { name: "Packs de crédits Copilot Studio, page France de Microsoft", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
+      { name: "Microsoft 365 Premium dans la boutique Microsoft", url: "https://www.microsoft.com/fr-fr/microsoft-365/p/microsoft-365-premium/cfq7ttc11z3q" },
+      { name: "Offres GitHub Copilot pour les développeurs (documentation GitHub)", url: "https://docs.github.com/en/copilot/get-started/plans" },
+      { name: "Prix de ChatGPT publiés pour la France (chatgpt.com)", url: "https://chatgpt.com/fr-FR/pricing/" },
+      { name: "Journal des nouveautés de ChatGPT, tenu par OpenAI", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+      { name: "GPT-5.6 et GPT-6 Pro dans la conversation ChatGPT (OpenAI)", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
+      { name: "Contenu de l'offre ChatGPT Business, selon OpenAI", url: "https://help.openai.com/en/articles/8792828-chatgpt-business-overview" },
+      { name: "Évolutions récentes de ChatGPT Business (OpenAI)", url: "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" },
+      { name: "Agents d'espace de travail ChatGPT pour Business et Enterprise", url: "https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business" },
+      { name: "Fermeture de Sora, qui prive ChatGPT de vidéo (OpenAI)", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" },
+      { name: "Stockage et calcul des réponses ChatGPT en Europe (OpenAI)", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
+      { name: "Où sont conservés les contenus d'un espace Business (OpenAI)", url: "https://help.openai.com/en/articles/20001418-where-your-chatgpt-business-content-is-stored" },
     ],
 
     realCases: [
       {
         scenario: "Préparer sa journée à partir de ses mails Outlook reçus pendant la nuit",
-        feature: "Copilot dans Outlook et Microsoft Graph · ChatGPT avec connecteur Outlook",
+        feature: "Copilot dans Outlook, relié à Graph · ChatGPT et son connecteur Outlook",
         prompt: "Trie mes 30 courriels non lus reçus depuis hier 18 h : urgent, important ou pour information. Extrais les 3 courriels qui demandent une réponse aujourd'hui, propose un brouillon pour chacun et signale les conflits avec mon agenda du jour.",
-        verdictText: "**Copilot gagne**. Avec la licence complète, il lit la boîte Outlook, l'agenda et les conversations Teams via Microsoft Graph, repère les fils qui attendent une réponse et les croise avec le planning du jour. ChatGPT y arrive en connectant Outlook, avec un résultat qui dépend des connecteurs branchés par chaque utilisateur.",
+        verdictText: "**Copilot l'emporte**. Avec la licence, il parcourt la boîte, l'agenda et les conversations Teams grâce à Microsoft Graph, repère les fils en attente de réponse et les confronte au planning de la journée. ChatGPT approche ce résultat une fois le connecteur Outlook activé, mais il dépend de ce que chaque utilisateur a relié.",
         winner: "a",
       },
       {
-        scenario: "Créer une présentation PowerPoint à partir d'un document Word",
-        feature: "Copilot dans PowerPoint · extension ChatGPT pour PowerPoint",
+        scenario: "Transformer un mémo Word en présentation PowerPoint",
+        feature: "Copilot dans PowerPoint · extension PowerPoint de ChatGPT",
         prompt: "À partir de ce mémo Word de 12 pages (notre stratégie 2027), crée une présentation de 10 diapositives : un message par diapositive, des visuels sobres, une diapositive de chiffres clés avec graphiques et une diapositive finale de décision.",
-        verdictText: "**Copilot prend l'avantage** dans PowerPoint : il construit la présentation à partir du document et applique la mise en forme à tout le fichier, avec le contexte des fichiers de l'organisation. L'extension PowerPoint de ChatGPT fait désormais le même travail ; OpenAI signale lui-même que la correspondance au modèle de l'entreprise demande encore une relecture.",
+        verdictText: "**Avantage Copilot** : dans PowerPoint, il construit le support à partir du mémo, met en forme l'ensemble du fichier et s'appuie sur les documents de l'organisation. L'extension de ChatGPT sait mener le même travail ; OpenAI reconnaît que le respect du modèle de l'entreprise demande encore une relecture.",
         winner: "a",
       },
       {
         scenario: "Analyser ses ventes du trimestre dans un fichier Excel",
         feature: "Copilot dans Excel · ChatGPT pour Excel et analyse de données",
         prompt: "Sur ce fichier des ventes du trimestre (15 000 lignes) : les 10 premiers produits par chiffre d'affaires, l'évolution mensuelle, les clients en croissance et en recul, une colonne « à relancer » pour les clients sans commande depuis 60 jours, et un graphique lisible en 30 secondes.",
-        verdictText: "**Match nul**. Copilot analyse les données, crée formules et graphiques dans Excel. ChatGPT pour Excel travaille aussi dans le classeur, et l'analyse de données de ChatGPT exécute du code pour les traitements lourds. Pour l'usage quotidien dans Excel, l'outil déjà installé l'emporte.",
+        verdictText: "**Match nul**. Dans Excel, Copilot analyse les données, écrit les formules et trace les graphiques, avec ses modes édition, plan et conversation. ChatGPT pour Excel opère aussi dans le classeur, et son analyse de données exécute du code pour les calculs lourds. Au quotidien, l'outil déjà installé sur le poste gagne.",
         winner: "tie",
       },
       {
         scenario: "Générer 5 visuels pour une publication LinkedIn d'entreprise",
         feature: "Copilot Chat et génération d'images · ChatGPT Images 2.5",
         prompt: "Je publie sur LinkedIn le bilan de notre programme de formation à l'IA : génère 5 visuels carrés (1080×1080) qui illustrent ce bilan, style minimaliste, palette bleu et orange de notre charte, aucun visage, ton professionnel.",
-        verdictText: "**ChatGPT prend l'avantage** : ChatGPT Images 2.5 propose des modèles, le croquis et la retouche ciblée, ce qui aide à tenir une charte sur une série. Copilot génère aussi des images dans Copilot Chat quand l'administrateur l'autorise.",
+        verdictText: "**ChatGPT prend l'avantage** : ChatGPT Images 2.5 s'appuie sur un modèle ou un dessin à main levée et reprend une zone précise, ce qui aide à tenir une charte sur cinq visuels. Copilot produit lui aussi des images dans Copilot Chat, une fois la fonction ouverte par l'administrateur.",
         winner: "b",
       },
       {
         scenario: "Construire un agent qui suit les relances clients",
-        feature: "Copilot Studio · agents d'espace de travail ChatGPT",
+        feature: "Copilot Studio · agent d'équipe ChatGPT",
         prompt: "Construis un agent qui, chaque semaine, repère dans le CRM les prospects sans échange depuis 14 jours, prépare une relance personnalisée selon leur dernière conversation et m'envoie la liste chaque lundi à 9 h pour validation avant envoi.",
-        verdictText: "**Match nul**, l'arbitrage se fait sur votre environnement. **Copilot Studio** monte l'agent dans le périmètre Microsoft, avec un accès natif à Outlook et Teams ; publié dans Microsoft 365 Copilot, son usage est inclus pour les détenteurs de la licence. Un **agent d'espace de travail ChatGPT** se décrit en langage naturel, se planifie chaque lundi et peut publier sa liste dans Slack ; chaque exécution consomme des crédits, à chiffrer avant de valider.",
+        verdictText: "**Match nul** : votre environnement tranche. **Copilot Studio** construit l'agent dans le périmètre Microsoft, avec Outlook et Teams à portée de main ; publié dans Microsoft Copilot, il ne coûte rien de plus aux titulaires de la licence. Un **agent ChatGPT** se décrit en langage courant, tourne chaque lundi et dépose sa liste dans Slack ; chaque exécution consomme des crédits, à estimer avant de lancer le projet.",
         winner: "tie",
       },
       {
         scenario: "Rédiger 10 documents Word standardisés (proposition commerciale, contrat type, mémo)",
-        feature: "Copilot dans Word · extension ChatGPT pour Word",
+        feature: "Modifier avec Copilot dans Word · extension ChatGPT pour Word",
         prompt: "À partir de notre modèle de proposition commerciale et des informations de chaque prospect, génère 10 documents personnalisés : reprends notre style, prépare le bloc tarifaire et signale les paragraphes à personnaliser à la main.",
-        verdictText: "**Copilot prend l'avantage** dans Word : il rédige et réécrit à partir des documents de l'organisation, accessibles via Graph. ChatGPT pour Word rédige, révise et ajuste titres et mise en forme depuis son panneau latéral, avec les informations que vous lui fournissez ou que ses connecteurs atteignent.",
+        verdictText: "**Avantage Copilot** dans Word : « Modifier avec Copilot » rédige et réécrit à partir des documents de l'organisation que Graph lui ouvre. ChatGPT pour Word rédige, révise et ajuste titres et mise en forme depuis son panneau latéral, avec ce que vous lui donnez ou ce que ses connecteurs atteignent.",
         winner: "a",
       },
       {
         scenario: "Préparer le brief hebdomadaire de l'équipe à partir de Teams",
         feature: "Copilot dans Teams et agent Researcher · ChatGPT avec connecteurs",
         prompt: "Pour mon point d'équipe de lundi 9 h, synthétise les décisions prises dans nos 5 canaux Teams la semaine dernière, les sujets en attente de réponse, les points bloquants signalés par les managers, et propose 3 sujets pour l'ordre du jour. Format : une page.",
-        verdictText: "**Copilot gagne** : Teams résume les réunions et capte les actions à suivre, et l'agent Researcher croise canaux, mails et documents SharePoint avec la licence complète. ChatGPT dépend des connecteurs disponibles dans votre espace de travail.",
+        verdictText: "**Copilot l'emporte** : Teams résume les réunions et relève les actions à suivre, et l'agent Researcher croise canaux, mails et documents SharePoint pour les titulaires de la licence. ChatGPT dépend des connecteurs ouverts dans votre espace.",
         winner: "a",
       },
       {
         scenario: "Trouver 20 idées de campagne pour un lancement de produit",
         feature: "ChatGPT (GPT-5.6 Sol) · Copilot Chat",
         prompt: "Nous lançons une gamme de yaourts bio haut de gamme destinée aux jeunes parents urbains. Propose 20 angles de communication, 10 slogans au ton décalé mais haut de gamme, 5 animations en magasin et 3 concepts pour des micro-influenceurs parents.",
-        verdictText: "**ChatGPT prend l'avantage** en mise en situation : il varie davantage les angles et enchaîne sur les visuels. Copilot reste plus proche des documents de l'entreprise, ce qui sert quand la campagne doit coller à une stratégie déjà écrite.",
+        verdictText: "**Avantage ChatGPT** lors de nos exercices : les angles proposés sont plus variés, et le passage aux visuels se fait dans la même conversation. Copilot colle davantage aux documents internes, ce qui aide quand la campagne doit respecter une stratégie déjà rédigée.",
         winner: "b",
       },
     ],
 
     mistakes: [
       {
-        title: "Acheter Copilot pour des équipes qui travaillent peu dans Office",
-        desc: "La licence complète prend sa valeur dans Outlook, Word, Excel, PowerPoint et Teams. Si vos équipes vivent surtout dans un CRM ou des outils métier, mesurez d'abord l'usage réel d'Office : 26 € HT par mois et par utilisateur se justifient mal sur un poste qui ouvre rarement Word.",
+        title: "Acheter Copilot pour des équipes qui ouvrent rarement Office",
+        desc: "La licence prend sa valeur dans Outlook, Word, Excel, PowerPoint et Teams. Si vos équipes passent leurs journées dans un CRM ou un logiciel métier, mesurez d'abord leur usage d'Office : 26 € HT mensuels par personne se justifient mal sur un poste qui lance Word deux fois par semaine.",
       },
       {
-        title: "Penser que Copilot suffit et se priver de ChatGPT",
-        desc: "ChatGPT garde l'avantage sur la création visuelle, le code et les tâches hors Microsoft 365. À 21 € par utilisateur et par mois en annuel, ChatGPT Business couvre ces usages pour les profils qui en ont besoin.",
+        title: "Équiper tout le monde de Copilot et oublier ChatGPT",
+        desc: "Les visuels, le code et les tâches hors Microsoft 365 restent le terrain de ChatGPT. Quelques sièges Business, affichés 21 € mensuels en formule annuelle, suffisent souvent pour ceux qui en ont l'usage.",
       },
       {
-        title: "Comparer une fenêtre de contexte d'API avec celle de l'interface",
-        desc: "Les modèles GPT-6 lisent 1 050 000 tokens via l'API, mais ChatGPT Business s'arrête à 54 000 en mode instantané et 256 000 en raisonnement. Microsoft ne publie pas de fenêtre pour Copilot, qui va chercher le passage utile dans Graph. Comparez ce dont vos utilisateurs disposent.",
+        title: "Mettre en regard la fenêtre de l'API et celle de la conversation",
+        desc: "Par l'API, un modèle GPT-6 accepte 1 050 000 tokens, alors que ChatGPT Business s'arrête à 54 000 en instantané et à 256 000 en raisonnement. Copilot ne publie aucun chiffre et procède par recherche dans Graph. Comparez ce que vos utilisateurs auront sous les yeux.",
       },
       {
-        title: "Budgéter les licences sans les agents",
-        desc: "Les deux éditeurs facturent l'automatisation à part. Copilot Studio se paie en crédits pour les agents autonomes ou ouverts sur l'extérieur, et Copilot Cowork à l'usage. Chez OpenAI, ChatGPT Work, Codex et les agents d'espace de travail consomment des crédits au-delà de l'enveloppe incluse depuis le 6 juillet 2026.",
+        title: "Chiffrer les licences sans les automatisations",
+        desc: "Les deux éditeurs facturent l'automatisation en plus. Chez Microsoft, Copilot Studio se règle en crédits pour les agents autonomes ou ouverts à l'extérieur, et Cowork à l'usage. Chez OpenAI, ChatGPT Work, Codex et les agents puisent dans des crédits une fois l'enveloppe du siège épuisée.",
       },
       {
-        title: "Sous-estimer le temps de formation à Copilot",
-        desc: "Copilot se comporte différemment dans Word, Excel, Outlook et Teams : une formation par application, sur les documents de l'équipe, évite que l'outil reste sous-utilisé.",
+        title: "Former à Copilot en une heure de démonstration",
+        desc: "Copilot n'a pas le même comportement dans Word, Excel, Outlook et Teams. Une formation par application, sur les documents de l'équipe, évite qu'il reste une icône que personne ne clique.",
       },
       {
-        title: "Oublier la sécurité de Microsoft Graph",
-        desc: "Copilot accède à tout ce que l'utilisateur peut techniquement voir. Si des sites SharePoint sont partagés trop largement, il peut faire remonter des documents que personne n'aurait ouverts à la main. Microsoft fournit SharePoint Advanced Management et la restriction de découverte de contenu pour nettoyer ces accès avant le déploiement.",
+        title: "Ouvrir Copilot sans revoir les droits SharePoint",
+        desc: "Copilot atteint chaque fichier que la personne est autorisée à ouvrir. Un site SharePoint partagé trop largement depuis des années peut faire remonter des documents que personne n'aurait trouvés à la main. SharePoint Advanced Management et la restriction de découverte de contenu servent à corriger ces accès avant l'ouverture.",
       },
       {
-        title: "Confondre GitHub Copilot et Microsoft 365 Copilot",
-        desc: "Ce sont deux produits. GitHub Copilot sert les développeurs (Pro à 10 $ par mois, Business à 19 $ par siège, Enterprise à 39 $). Microsoft 365 Copilot sert les utilisateurs d'Office. Pour vos développeurs, achetez GitHub Copilot.",
+        title: "Confondre GitHub Copilot et Microsoft Copilot",
+        desc: "Deux produits, deux publics. GitHub Copilot équipe les développeurs (Pro à 10 $ par mois, Business à 19 $ par siège, Enterprise à 39 $) ; Microsoft Copilot équipe les utilisateurs d'Office. Vos développeurs ont besoin du premier.",
       },
     ],
 
     alsoConsidered: [
-      { name: "GitHub Copilot", summary: "L'achat Microsoft pour le code : Business à 19 $ par siège et par mois, avec des modèles d'Anthropic, d'OpenAI et de Google au choix. Distinct de Microsoft 365 Copilot." },
-      { name: "Google Gemini", summary: "L'équivalent de Copilot pour Google Workspace, inclus dans les forfaits dès Business Starter. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
-      { name: "Claude", summary: "Un million de tokens par conversation sur les offres payantes et Claude Code dès l'offre Pro. Voir notre [comparatif ChatGPT vs Claude](/chatgpt-vs-claude)." },
-      { name: "Vibe (Mistral AI)", summary: "Anciennement Le Chat, renommé le 28 mai 2026, avec des données hébergées dans l'Union européenne par défaut. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+      { name: "GitHub Copilot", summary: "Le produit Microsoft destiné aux développeurs, vendu 19 $ par mois le siège Business ; on y choisit son modèle chez Anthropic, OpenAI ou Google. Un achat séparé de Microsoft Copilot." },
+      { name: "Google Gemini", summary: "Le pendant de Copilot chez Google, compris dans les forfaits Workspace dès Business Starter. Détails dans [Gemini vs Copilot](/gemini-vs-copilot)." },
+      { name: "Claude", summary: "Microsoft le propose déjà comme modèle dans Copilot ; utilisé seul, il accepte un million de tokens par échange dès l'abonnement Pro, qui comprend aussi Claude Code. Voir [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: "Vibe (Mistral AI)", summary: "L'assistant de Mistral AI, anciennement Le Chat, héberge d'office ses données en Europe. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
     ],
 
     faq: [
       {
         q: "Si l'entreprise a déjà Microsoft 365, Copilot remplace-t-il ChatGPT ?",
-        a: "Pas entièrement. Copilot excelle dans Office et sur vos données internes ; ChatGPT garde l'avantage sur l'image, le code et les tâches hors Microsoft 365. Une configuration courante équipe tout le monde de Copilot et réserve ChatGPT aux profils qui en ont l'usage.",
+        a: "Rarement en totalité. Copilot brille dans Office et sur vos données internes ; ChatGPT reste devant pour l'image, le code et les tâches qui sortent de Microsoft 365. Beaucoup d'organisations donnent Copilot à tous et quelques sièges ChatGPT aux profils qui en ont besoin.",
       },
       {
-        q: "Copilot est-il plus sécurisé que ChatGPT ?",
-        a: "Pour les données en Europe, Copilot part avec une longueur d'avance : traitements dans le périmètre de Microsoft 365 et EU Data Boundary pour les utilisateurs européens, hors modèles d'Anthropic. ChatGPT Enterprise offre le stockage et l'inférence en Europe aux clients éligibles ; ChatGPT Business stocke en Europe en déploiement progressif, sans inférence européenne. Aucun des deux n'entraîne ses modèles sur vos données d'entreprise.",
+        q: "Copilot protège-t-il mieux les données que ChatGPT ?",
+        a: "Pour garder les traitements en Europe, Copilot part devant : service Microsoft 365 et EU Data Boundary pour les utilisateurs européens, à l'exception des modèles d'Anthropic. ChatGPT Enterprise peut héberger et calculer en Europe si le client y est éligible ; ChatGPT Business n'offre qu'un stockage européen, ouvert progressivement. Ni Microsoft ni OpenAI n'entraînent leurs modèles sur ces données d'entreprise.",
       },
       {
         q: "Faut-il Microsoft 365 pour utiliser Copilot ?",
-        a: "Oui pour la version entreprise : Microsoft 365 Copilot s'ajoute à une licence éligible, de Business Basic à Microsoft 365 E5, en passant par Office 365 E1, E3 et E5. Copilot Chat est inclus avec les abonnements Microsoft 365 éligibles. Pour un particulier, Microsoft vend Microsoft 365 Premium à 22 € par mois.",
+        a: "Pour la version entreprise, oui : la licence Microsoft Copilot s'ajoute à un abonnement éligible, de Business Basic jusqu'à Microsoft 365 E5, Office 365 E1, E3 et E5 compris, et Microsoft 365 E7 l'inclut d'office. Copilot Chat est compris dans les abonnements Microsoft 365 éligibles. Un particulier passe par Microsoft 365 Premium, à 22 € par mois.",
       },
       {
-        q: "Quelle est la fenêtre de contexte de ChatGPT, et Copilot en a-t-il une ?",
-        a: "Chez ChatGPT, il faut distinguer **l'interface** (54 000 tokens en mode instantané et 256 000 en raisonnement sur Business ; 128 000 et 256 000 sur Enterprise) et **l'API** (1 050 000 tokens pour les modèles GPT-6). Microsoft ne publie pas de fenêtre pour Copilot : l'outil s'appuie sur Microsoft Graph pour aller chercher le passage pertinent dans vos fichiers, une logique de recherche plus que d'ingestion.",
+        q: "Copilot a-t-il une fenêtre de contexte, comme ChatGPT ?",
+        a: "ChatGPT en publie deux sortes. **Dans l'interface**, un compte Business dispose de 54 000 tokens en réponse instantanée et de 256 000 en raisonnement, un compte Enterprise de 128 000 et 256 000. **Par l'API**, la famille GPT-6 accepte 1 050 000 tokens. Microsoft ne donne aucun chiffre pour Copilot, qui interroge Microsoft Graph pour retrouver le passage pertinent dans vos fichiers : il cherche au lieu de tout lire d'un bloc.",
       },
       {
-        q: "Quel est le coût annuel de Copilot et de ChatGPT pour 50 collaborateurs ?",
-        a: "**ChatGPT Business** : 50 × 21 € × 12 = 12 600 € par an en facturation annuelle. **Microsoft 365 Copilot Business** (jusqu'à 300 utilisateurs) : 50 × 18,20 € HT × 12 = 10 920 € HT par an, en plus des licences Microsoft 365, ou 9 360 € HT la première année avec la remise ouverte aux souscriptions du 1er juillet au 31 décembre 2026. **Les deux** : de l'ordre de 23 500 € par an. Ajoutez les crédits d'agents si vous automatisez.",
+        q: "Combien coûtent Copilot et ChatGPT pour 50 personnes sur un an ?",
+        a: "**Copilot Business** (300 utilisateurs au plus) : 50 × 18,20 € HT × 12 = 10 920 € HT par an, abonnements Microsoft 365 non compris ; 9 360 € HT sur la première année si vous êtes déjà client Microsoft 365 et souscrivez avant le 31 décembre 2026. **ChatGPT Business** : 50 × 21 € × 12 = 12 600 € par an, sur la base du prix affiché pour la France. Si vous automatisez, ajoutez les crédits des agents des deux côtés.",
       },
       {
         q: "L'offre ChatGPT Team existe-t-elle encore ?",
-        a: "Non. OpenAI a renommé ChatGPT Team en **ChatGPT Business** le 29 août 2025. Le principe reste le même (espace de travail partagé, connecteurs, aucun entraînement sur vos données), avec depuis le 24 août 2026 des sièges Premium à 100 $ par mois en annuel pour les profils intensifs.",
+        a: "Non : depuis août 2025, elle s'appelle **ChatGPT Business**. On y retrouve l'espace partagé, les connecteurs et l'absence d'entraînement sur vos échanges, avec des sièges Premium (100 $ par mois en annuel, 125 $ au mois) pour les usages intensifs.",
       },
       {
-        q: "Faut-il former différemment les équipes à Copilot et à ChatGPT ?",
-        a: "Oui. Une formation ChatGPT travaille la formulation des demandes, les projets, ChatGPT Work et les agents. Une formation Copilot se construit application par application (Word, Excel, Outlook, Teams), sur les documents de l'équipe. Masteria propose les deux, et une formation multi-outils de deux jours si le choix n'est pas fait.",
+        q: "Une formation Copilot ressemble-t-elle à une formation ChatGPT ?",
+        a: "Non. Une formation ChatGPT travaille la façon de formuler une demande, les projets, ChatGPT Work et les agents. Une formation Copilot avance application par application (Word, Excel, Outlook, Teams), sur les fichiers de l'équipe. Masteria propose les deux, et une formation multi-outils de deux jours quand le choix reste ouvert.",
       },
       {
         q: "Copilot fonctionne-t-il sur Mac ?",
-        a: "Oui pour les usages documentés par Microsoft : Copilot fonctionne dans Outlook pour Windows et Mac, et dans Teams sur Windows, Mac, le web, Android et iOS. Vérifiez la version d'Office installée sur les postes avant le déploiement.",
+        a: "Oui pour les usages que Microsoft documente : Outlook pour Windows et Mac, Teams sur Windows, Mac, le web, Android et iOS. L'édition d'un classeur avec Copilot se déploie sur Windows, Mac, le web, iPad et iPhone. Contrôlez la version d'Office des postes avant l'ouverture.",
       },
       {
-        q: "Quelle est la différence entre Microsoft 365 Premium et Microsoft 365 Copilot ?",
-        a: "**Microsoft 365 Premium** (22 € par mois ou 219 € par an) est l'abonnement grand public, pour 1 à 6 personnes, avec l'IA réservée au titulaire ; la page Copilot Pro de la boutique Microsoft renvoie désormais vers lui. **Microsoft 365 Copilot** (26 € HT par utilisateur et par mois en annuel) est la licence entreprise qui s'ajoute à votre abonnement professionnel et ancre les réponses dans Microsoft Graph.",
+        q: "Microsoft 365 Premium ou licence Microsoft Copilot : quelle différence ?",
+        a: "**Microsoft 365 Premium** (22 € par mois ou 219 € par an) s'adresse aux particuliers, pour une à six personnes, l'IA étant réservée au titulaire ; la page Copilot Pro de la boutique Microsoft renvoie vers lui. La **licence Microsoft Copilot** (26 € HT mensuels par siège, engagement d'un an) se greffe sur un abonnement professionnel et ancre les réponses dans Microsoft Graph.",
       },
       {
-        q: "Microsoft a-t-il accès à mes données via Copilot ?",
-        a: "Microsoft indique que les prompts et réponses de Copilot restent dans le périmètre du service Microsoft 365, sous vos règles de conservation, et ne servent pas à entraîner les grands modèles de langage. Point à connaître : si vous activez les modèles d'Anthropic, Anthropic intervient comme sous-traitant de Microsoft, et ces traitements sortent de l'EU Data Boundary.",
+        q: "Microsoft lit-il mes données quand j'utilise Copilot ?",
+        a: "D'après Microsoft, prompts et réponses restent dans le service Microsoft 365, sous vos règles de conservation, avec les engagements qui protègent déjà vos boîtes Exchange et vos bibliothèques SharePoint, et ils n'entraînent pas les modèles. Si vous activez les modèles d'Anthropic, Anthropic intervient comme sous-traitant de Microsoft et ces traitements quittent l'EU Data Boundary.",
       },
       {
-        q: "Peut-on déployer Copilot progressivement ?",
-        a: "Oui. Les licences s'attribuent utilisateur par utilisateur depuis le centre d'administration Microsoft 365 : commencez par un groupe pilote, suivez l'usage avec les rapports d'adoption, puis étendez.",
+        q: "Peut-on ouvrir Copilot à un petit groupe d'abord ?",
+        a: "Oui. Les licences s'attribuent personne par personne dans le centre d'administration : démarrez avec un groupe pilote, suivez l'usage dans les rapports d'adoption, puis élargissez. Le rôle « AI Administrator » permet de confier ce pilotage sans droits d'administrateur global.",
       },
     ],
 
@@ -834,53 +862,78 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   "meilleure-ia-entreprise-2026": {
     slug: "meilleure-ia-entreprise-2026",
-    metaTitle: "Meilleure IA entreprise 2026 : comparatif de 5 outils | Masteria",
+    metaTitle: "Meilleure IA entreprise 2026 : 5 outils comparés | Masteria",
     metaDesc:
-      "ChatGPT, Claude, Microsoft Copilot, Gemini et Mistral (Vibe) : contexte réel, agents, prix par siège, hébergement. Comparatif vérifié le 3 octobre 2026.",
+      "ChatGPT, Claude, Microsoft Copilot, Gemini ou Mistral (Vibe) : quelle IA pour votre entreprise ? Suite, métier, données, prix par siège au 7 octobre 2026.",
     h1: "Quelle est la meilleure IA pour votre entreprise en 2026 ?",
     intro:
-      "Vous voulez équiper vos équipes d'un outil d'IA et vous hésitez entre **ChatGPT**, **Claude**, **Microsoft Copilot**, **Google Gemini** et **Mistral AI** ? La réponse dépend de trois choses : votre suite bureautique, le métier dominant de vos équipes et vos contraintes réglementaires. Ce guide donne les critères de décision, avec les modèles, les prix et les fenêtres de contexte vérifiés le 3 octobre 2026 sur les pages officielles des cinq éditeurs.",
+      "Vous hésitez entre **ChatGPT**, **Claude**, **Microsoft Copilot**, **Google Gemini** et **Mistral AI** pour équiper vos équipes ? Trois questions départagent la plupart des entreprises : quelle suite bureautique vous utilisez, quel métier pèse le plus dans vos usages, quelles règles s'appliquent à vos données. Ce panorama y répond outil par outil, avec les modèles, les prix par siège et la quantité de texte que chacun accepte, relevés le 7 octobre 2026 sur les pages des cinq éditeurs.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "3 octobre 2026",
+    verifiedOn: "7 octobre 2026",
     datePublished: "2026-05-04",
-    dateModified: "2026-10-03",
+    dateModified: "2026-10-07",
     readTime: "13 minutes",
     keywords:
       "benchmark ia 2026, benchmark ia entreprise, benchmark des ia, meilleure ia entreprise 2026, comparatif chatgpt claude copilot gemini mistral, quelle ia choisir entreprise, gpt-6, claude opus 5.5, gemini 3, vibe mistral, prix ia entreprise par siège",
     isPanorama: true,
 
+    // ─── Textes de section propres à ce panorama (lus par ComparisonPage via `textes`)
+    textes: {
+      legende: "Les cinq assistants critère par critère, d'après les pages des éditeurs au 7 octobre 2026.",
+      analyseTitre: "Les cinq outils vus de près",
+      analyse: "Pour chacun : ce qu'il fait mieux que les autres, ce qui le freine et l'équipe à qui il convient.",
+      casTitre: "Huit tâches d'entreprise, et l'outil qui s'en sort le mieux",
+      cas: "Huit demandes qui reviennent dans nos formations multi-outils, de la présentation client au refactoring de code, tranchées entre les cinq assistants dans leurs offres professionnelles.",
+      coutTitre: "Ce que coûte l'équipement d'une entreprise, selon sa taille",
+      cout: "Budget annuel des seuls abonnements, calculé sur les prix publics en paiement annuel ; formation et accompagnement viennent en plus.",
+      aRetenir: "un abonnement ne produit rien tant que l'équipe ne sait pas s'en servir. Inscrivez la formation dans le budget dès le départ : chez Masteria, la journée intra (douze participants au plus) est facturée 1 980 € HT, somme que l'OPCO de votre branche peut prendre en charge selon ses propres règles. Le retour sur investissement se mesure ensuite sur vos propres tâches.",
+      erreursTitre: "Cinq erreurs qui faussent le choix d'une IA d'entreprise",
+      erreurs: "Les pièges que nous voyons le plus souvent quand une entreprise choisit son outil sans l'avoir mis à l'épreuve.",
+      ctaTitre: "Comparez les cinq outils sur les dossiers de vos équipes",
+      ctaTexte: "Notre formation multi-outils réunit vos collaborateurs pendant deux jours autour de ChatGPT, Claude, Copilot, Gemini et Mistral, chacun sur ses propres tâches. Vous repartez avec une grille de choix remplie par ceux qui feront le travail. Côté financement, Qualiopi (au titre des actions de formation) rend possible un financement de votre OPCO de branche, selon ses propres critères.",
+    },
+
+    // ─── Ce que nos formations multi-outils ont montré (sources : missions-formation.js, etudes-de-cas.js cas `photovoltaique`)
+    terrain: {
+      titre: "Ce que nos formations multi-outils montrent",
+      paras: [
+        "En septembre 2026, seize salariés d'une [interprofession agricole](/etudes-de-cas-ia#mission-interprofession-agricole) ont comparé six assistants en plénière (ChatGPT, Claude, Gemini, Perplexity, Copilot et Vibe) sur des documents publics de leur filière. La journée s'est conclue sur une grille de choix que le groupe a remplie lui-même, avant deux ateliers métier, l'un en marketing, l'autre en gestion.",
+        "Une [PME de distribution photovoltaïque](/etudes-de-cas-ia#photovoltaique) a pris le chemin inverse du réflexe habituel : un diagnostic par flux de travail d'abord, puis le choix d'des comptes d'équipe gérés par la société, qui ont remplacé les abonnements personnels. L'outil vient après la cartographie des tâches, jamais avant.",
+      ],
+    },
+
     // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
     answerBox: {
-      question: "Quelle IA choisir pour son entreprise en 2026 ?",
+      question: "Quelle IA choisir pour équiper son entreprise en 2026 ?",
       answer:
-        "Aucun outil ne gagne partout : les cinq répondent à des questions différentes. Sur **Microsoft 365**, prenez **Copilot** (26 € HT par utilisateur et par mois, ou 18,20 € HT avec Copilot Business jusqu'à 300 utilisateurs) : il lit vos mails, vos fichiers et vos réunions via Microsoft Graph. Sur **Google Workspace**, prenez **Gemini**, inclus dans les forfaits, avec un million de tokens de contexte dans l'application Gemini dès Business Standard. Pour les documents longs et le code, prenez **Claude** : un million de tokens par conversation sur ses offres payantes et Claude Code dès l'offre Pro. Pour la création visuelle et les agents d'équipe montés sans code, prenez **ChatGPT**. Pour un hébergement européen par défaut et des modèles à poids ouverts déployables chez vous, prenez **Mistral AI** et son assistant **Vibe**.",
+        "Personne ne gagne sur tous les terrains : chaque outil répond à une situation précise. Si votre entreprise vit dans **Microsoft 365**, **Copilot** puise dans votre messagerie, vos documents et vos réunions grâce à Microsoft Graph ; comptez 26 € HT par personne chaque mois, ou 18,20 € HT avec Copilot Business tant que vous restez sous 300 utilisateurs. Si elle vit dans **Google Workspace**, **Gemini** est déjà compris dans vos forfaits, et son application traite un million de tokens dès l'édition Business Standard. Pour des équipes qui manient de longs dossiers ou du code, **Claude** absorbe un dossier d'un million de tokens dès qu'on paie un abonnement, et l'offre Pro donne déjà Claude Code. Pour produire des visuels et monter des agents sans programmer, **ChatGPT**. Pour des données qui doivent rester en Europe, voire chez vous, **Mistral AI**, son assistant **Vibe** et ses modèles à poids ouverts.",
       bullets: [
-        "Stack Microsoft 365 : Copilot, 26 € HT par utilisateur ou 18,20 € HT en Copilot Business",
-        "Stack Google Workspace : Gemini, inclus dans les forfaits",
-        "Documents longs, contrats, code : Claude, un million de tokens par conversation",
-        "Images et agents d'équipe sans code : ChatGPT",
-        "Hébergement européen et poids ouverts : Mistral AI (Vibe)",
+        "Entreprise sous Microsoft 365 : Copilot, 26 € HT le siège, 18,20 € HT en Copilot Business",
+        "Entreprise sous Google Workspace : Gemini, compris dans le forfait",
+        "Contrats, rapports, code : Claude et son million de tokens",
+        "Visuels et agents d'équipe sans code : ChatGPT",
+        "Données gardées en Europe ou sur vos serveurs : Mistral AI et Vibe",
       ],
     },
 
     tools: [
-      { id: "chatgpt", name: "ChatGPT", editor: "OpenAI", country: "États-Unis", strengths: "Images, ChatGPT Work, agents d'équipe, Codex", priceMonthly: "23 € Plus · 21 € Business", color: "#10A37F" },
-      { id: "claude", name: "Claude", editor: "Anthropic", country: "États-Unis", strengths: "Un million de tokens, Claude Code, Cowork intégré", priceMonthly: "20 $ Pro · 25 $ Team", color: "#D97706" },
-      { id: "copilot", name: "Microsoft Copilot", editor: "Microsoft", country: "États-Unis", strengths: "Ancrage Microsoft Graph, Copilot Studio, gouvernance", priceMonthly: "26 € HT + licence M365", color: "#0078D4" },
-      { id: "gemini", name: "Google Gemini", editor: "Google", country: "États-Unis", strengths: "Inclus dans Workspace, Gemini Notebook, vidéo avec Vids", priceMonthly: "inclus dans Workspace", color: "#4285F4" },
-      { id: "mistral", name: "Mistral AI (Vibe)", editor: "Mistral AI", country: "France", strengths: "Hébergement UE par défaut, poids ouverts, Vibe Work et Code", priceMonthly: "17,99 € TTC Pro", color: "#FA500F" },
+      { id: "chatgpt", name: "ChatGPT", editor: "OpenAI", country: "États-Unis", strengths: "Visuels, tâches longues avec Work, agents d'équipe, Codex", priceMonthly: "23 € Plus · 21 € Business", color: "#10A37F" },
+      { id: "claude", name: "Claude", editor: "Anthropic", country: "États-Unis", strengths: "Dossiers d'un million de tokens, Claude Code, Cowork dans la conversation", priceMonthly: "20 $ Pro · 25 $ Team", color: "#D97706" },
+      { id: "copilot", name: "Microsoft Copilot", editor: "Microsoft", country: "États-Unis", strengths: "Vos mails et fichiers via Graph, Copilot Studio, Cowork", priceMonthly: "26 € HT + Microsoft 365", color: "#0078D4" },
+      { id: "gemini", name: "Google Gemini", editor: "Google", country: "États-Unis", strengths: "Compris dans Workspace, Gemini Notebook, vidéos dans Vids", priceMonthly: "13,60 € Business Standard", color: "#4285F4" },
+      { id: "mistral", name: "Mistral AI (Vibe)", editor: "Mistral AI", country: "France", strengths: "Données en Europe par défaut, poids ouverts, Vibe Work et Code", priceMonthly: "17,99 € TTC Pro", color: "#FA500F" },
     ],
 
     verdict: {
-      title: "Verdict express : 5 profils, 5 recommandations",
+      title: "Cinq profils d'entreprise, cinq choix",
       summary:
-        "La meilleure IA de 2026 est celle qui correspond à votre contexte. Cinq profils, cinq recommandations :",
+        "Votre point de départ décide. Pour chaque profil, l'outil que nous conseillons :",
       profiles: [
-        { profile: "Entreprise sur Microsoft 365", tool: "Microsoft Copilot", why: "Ancré dans Microsoft Graph : vos mails, vos fichiers et vos réunions, avec les permissions déjà en place. 26 € HT par utilisateur et par mois, ou 18,20 € HT en Copilot Business jusqu'à 300 utilisateurs." },
-        { profile: "Entreprise sur Google Workspace", tool: "Google Gemini", why: "Même logique dans Gmail, Docs et Sheets, inclus dans les forfaits Workspace, avec un million de tokens de contexte dès Business Standard." },
-        { profile: "Marketing, communication, créatif", tool: "ChatGPT", why: "ChatGPT Images 2.5 pour les visuels, ChatGPT Work pour les livrables complets, agents d'équipe montés en langage naturel." },
-        { profile: "Code, analyse, documents longs", tool: "Claude", why: "Un million de tokens par conversation sur les offres payantes, Claude Code dès l'offre Pro, Cowork intégré à la conversation." },
-        { profile: "Hébergement européen et secteur sensible", tool: "Mistral AI (Vibe)", why: "Éditeur français, données hébergées dans l'UE par défaut, modèles à poids ouverts et déploiement sur site dans l'offre Enterprise." },
+        { profile: "Entreprise sous Microsoft 365", tool: "Microsoft Copilot", why: "Ses réponses s'appuient sur vos mails, fichiers et réunions, avec les droits déjà en place. Licence à 26 € HT mensuels en formule annuelle ; Copilot Business descend à 18,20 € HT pour 300 utilisateurs au plus." },
+        { profile: "Entreprise sous Google Workspace", tool: "Google Gemini", why: "La même logique dans Gmail, Docs et Sheets, sans supplément : Gemini est compris dans les forfaits, avec un million de tokens dès Business Standard." },
+        { profile: "Marketing, communication, création", tool: "ChatGPT", why: "ChatGPT Images 2.5 pour les visuels de campagne, ChatGPT Work pour des fichiers finis, des agents d'équipe écrits en phrases simples." },
+        { profile: "Code, analyse, gros dossiers", tool: "Claude", why: "Un million de tokens par échange sur les offres payantes, Claude Code dès Pro, Cowork intégré à chaque conversation." },
+        { profile: "Données sensibles, secteur public", tool: "Mistral AI (Vibe)", why: "Un éditeur français qui stocke vos données dans l'Union sauf demande contraire, publie des modèles à poids ouverts et s'installe sur site avec l'offre Enterprise." },
       ],
     },
 
@@ -888,92 +941,92 @@ export const COMPARISONS = {
       {
         tool: "chatgpt",
         title: "ChatGPT (OpenAI)",
-        position: "Le généraliste le plus complet",
+        position: "Le généraliste au périmètre le plus large",
         pros: [
-          "ChatGPT Work (9 juillet 2026) mène une tâche longue jusqu'au livrable : document, tableur, présentation ou site",
-          "Agents d'espace de travail partagés, planifiés, déclenchés depuis Slack ou par API (Business et Enterprise)",
-          "ChatGPT Images 2.5 pour créer et retoucher des images",
-          "GPT-5.6 Sol dans la conversation, GPT-6 Pro sur Business et Enterprise, GPT-6 Astra et GPT-6.1 Sol dans Work et Codex",
-          "Extensions officielles pour Word, Excel et PowerPoint, ouvertes à toutes les offres",
+          "Depuis juillet 2026, ChatGPT Work mène une demande jusqu'au fichier final : document, tableur, présentation ou site",
+          "Agents d'équipe partagés, planifiés, lancés depuis Slack ou par API sur Business et Enterprise",
+          "ChatGPT Images 2.5 crée et retouche des visuels",
+          "Modèles : GPT-5.6 Sol dans le dialogue, GPT-6 Pro ajouté pour Business et Enterprise, la famille GPT-6 au service de Work et de Codex",
+          "Extensions officielles pour Word, Excel et PowerPoint, dès la formule gratuite",
         ],
         cons: [
-          "54 000 tokens en mode instantané et 256 000 en raisonnement sur Business, loin du million de Claude ou de Gemini",
-          "Plus de génération vidéo depuis l'arrêt de Sora le 26 avril 2026",
-          "Au-delà de l'enveloppe incluse, Work, Codex et les agents se paient en crédits",
-          "Sur Business, stockage en Europe en déploiement et inférence hors région",
+          "Côté contexte, un compte Business s'arrête à 256 000 tokens avec raisonnement et à 54 000 sans : près de quatre fois moins que Claude ou Gemini",
+          "Aucune vidéo depuis la fermeture de Sora, le 26 avril 2026",
+          "Work, Codex et les agents passent en crédits une fois l'enveloppe consommée",
+          "Sur Business, stockage européen en cours de déploiement et calcul des réponses hors d'Europe",
         ],
-        idealFor: "Marketing, communication, équipes créatives, PME et start-up, automatisations d'équipe",
+        idealFor: "Marketing, communication, équipes créatives, PME et start-up qui automatisent leurs routines",
       },
       {
         tool: "claude",
         title: "Claude (Anthropic)",
-        position: "La référence documentaire et technique",
+        position: "Le spécialiste des gros dossiers et du code",
         pros: [
-          "Un million de tokens par conversation sur les offres payantes avec Fable 5.1, Opus 5.5 et Sonnet 5.5",
-          "Claude Code inclus dans Pro, Max, Team et Enterprise",
-          "Cowork intégré à la conversation depuis le 16 septembre 2026 : fichiers, applications connectées, tâches planifiées",
-          "Claude Slides, Docs et Design (en bêta) pour produire des présentations et des documents exportables",
-          "MCP, le standard ouvert de connexion aux outils créé par Anthropic, adopté par ChatGPT, Gemini et Microsoft Copilot",
+          "Avec un abonnement payant, Sonnet 5.5, Fable 5.1 et Opus 5.5 acceptent un million de tokens par échange",
+          "Claude Code compris dans Pro, Max, Team et Enterprise",
+          "Depuis le 16 septembre 2026, Cowork travaille dans chaque conversation : fichiers, applications connectées, tâches planifiées",
+          "Claude Slides, Docs et Design, en bêta, pour des présentations et des documents exportables",
+          "MCP, standard ouvert de connexion inventé par Anthropic, repris par ChatGPT, Gemini et Microsoft Copilot",
         ],
         cons: [
-          "Aucune génération de photos ni d'illustrations",
-          "Aucune région européenne chez Anthropic : en Europe, passer par AWS Bedrock ou Google Cloud Vertex AI",
-          "Claude Code absent de l'offre gratuite",
+          "Aucune image produite : ni photo, ni illustration",
+          "Les applications d'Anthropic tournent hors d'Europe ; une installation européenne suppose AWS Bedrock ou Google Cloud Vertex AI",
+          "Pas de Claude Code dans la formule gratuite",
         ],
-        idealFor: "Développement, analyse documentaire, juridique, finance, appels d'offres",
+        idealFor: "Développement, juridique, finance, appels d'offres, analyse de documents longs",
       },
       {
         tool: "copilot",
-        title: "Microsoft 365 Copilot",
-        position: "Le choix par défaut en environnement Microsoft",
+        title: "Microsoft Copilot (anciennement Microsoft 365 Copilot)",
+        position: "Le réflexe des entreprises sous Microsoft 365",
         pros: [
-          "Intégré à Word, Excel, PowerPoint, Outlook, Teams et OneNote",
-          "Réponses ancrées dans Microsoft Graph et Work IQ : mails, fichiers, réunions, agenda, avec vos permissions",
-          "Modèles d'OpenAI et d'Anthropic au choix, avec routage automatique",
-          "Copilot Studio pour les agents métier, Copilot Cowork pour exécuter des tâches avec validation de chaque action",
-          "EU Data Boundary (le périmètre européen de traitement de Microsoft) pour les utilisateurs européens, hors modèles d'Anthropic",
+          "Disponible dans Outlook, Teams, Word, Excel, PowerPoint et OneNote",
+          "Réponses tirées de Microsoft Graph et de Work IQ : mails, fichiers, réunions, agenda, dans la limite des droits",
+          "Un mode Auto répartit les demandes entre les modèles OpenAI et, si l'administrateur les active, ceux d'Anthropic",
+          "Agents métier dans Copilot Studio ; dans Microsoft 365, Copilot Cowork agit et réclame votre accord avant toute action sensible",
+          "Pour les utilisateurs européens, traitement dans l'EU Data Boundary, à l'exception de Claude",
         ],
         cons: [
-          "Licence complète à 26 € HT par utilisateur et par mois, en plus de Microsoft 365",
-          "Agents autonomes et Copilot Cowork facturés en plus de la licence",
-          "Modèles d'Anthropic désactivés par défaut dans l'UE et exclus de l'EU Data Boundary",
-          "Audit des permissions SharePoint indispensable avant le déploiement",
+          "26 € HT mensuels par personne pour la licence, sans compter l'abonnement Microsoft 365",
+          "Agents autonomes et Cowork facturés à l'usage, en plus de la licence",
+          "Claude reste éteint par défaut pour les clients européens, et ses requêtes quittent l'EU Data Boundary dès qu'on l'allume",
+          "Droits SharePoint à auditer avant l'ouverture",
         ],
-        idealFor: "Grandes entreprises sous Microsoft 365, secteurs régulés, productivité Office au quotidien",
+        idealFor: "ETI et grands groupes sous Microsoft 365, secteurs régulés, bureautique quotidienne",
       },
       {
         tool: "gemini",
         title: "Google Gemini",
-        position: "Le pendant Google de Copilot",
+        position: "L'équivalent de Copilot chez Google",
         pros: [
-          "Intégré à Gmail, Docs, Sheets, Slides, Vids, Drive, Meet et Chat",
-          "Inclus dans les forfaits Workspace : Business Standard à 13,60 € HT par utilisateur et par mois en annuel",
-          "Un million de tokens de contexte dans l'application Gemini dès Business Standard",
-          "Gemini Notebook (anciennement NotebookLM) : 300 sources par carnet, avec citation du passage d'origine",
-          "Vidéo générée dans Vids et dans l'application Gemini",
+          "Dès Business Standard, Gemini répond dans Gmail, Meet, Drive, Docs, Sheets, Slides, Vids et Chat",
+          "Aucun supplément : le forfait Business Standard, à 13,60 € mensuels en engagement annuel, comprend Gemini",
+          "Contexte d'un million de tokens dans l'application Gemini, à partir de Business Standard",
+          "Gemini Notebook (anciennement NotebookLM) : 300 sources par carnet, et des réponses qui citent le passage source",
+          "Les compétences, procédures réutilisables, succèdent aux Gems à partir du 5 octobre 2026",
         ],
         cons: [
-          "Business Starter limité : accès restreint dans les applications, 32 000 tokens, 50 sources par carnet",
-          "L'atelier d'agents Workflow Builder relève de Gemini Enterprise, licence distincte à partir de 21 $ par siège",
-          "Modèle Pro plafonné à 25 requêtes par tranche de 4 heures en Business Standard",
+          "Business Starter bridé : Gemini seulement dans Gmail et dans son application, 32 000 tokens, 100 sources par carnet",
+          "L'atelier d'agents Workflow Builder relève de Gemini Enterprise, une licence Google Cloud facturée à partir de 21 $ le siège",
+          "Modèle Pro limité à 200 requêtes par jour en Business Standard (relevé du 7 octobre 2026)",
         ],
-        idealFor: "Entreprises sur Google Workspace, médias, éducation, équipes qui travaillent sur corpus",
+        idealFor: "Entreprises sous Google Workspace, éducation, médias, équipes qui travaillent sur des corpus",
       },
       {
         tool: "mistral",
         title: "Mistral AI (Vibe)",
-        position: "La carte de l'hébergement européen",
+        position: "Le choix des données gardées en Europe",
         pros: [
-          "Données hébergées dans l'Union européenne par défaut",
-          "Modèles à poids ouverts (téléchargeables et exécutables chez vous) : Mistral Medium 3.5, Mistral Large 3, Mistral Small 4",
-          "Déploiement sur site ou en cloud privé dans l'offre Enterprise",
-          "Vibe réunit un mode Work (recherche, documents, tâches planifiées) et un mode Code (terminal, VS Code, JetBrains)",
-          "Prix d'entrée bas : Pro à 17,99 € TTC par mois, Team à 29,99 € TTC par utilisateur",
+          "Stockage dans l'Union européenne, sauf demande contraire",
+          "Modèles à poids ouverts, que vous téléchargez et faites tourner chez vous : Mistral Medium 3.5, Mistral Large 3, Mistral Small 4",
+          "Installation sur site ou en cloud privé avec l'offre Enterprise",
+          "Vibe a fusionné conversation et mode Work le 22 septembre 2026, avec un interrupteur Fast ou Think ; Vibe Code s'adresse aux développeurs",
+          "Pro à 17,99 € TTC par mois, Team à 29,99 € TTC par utilisateur",
         ],
         cons: [
-          "Échanges Vibe utilisés pour l'entraînement par défaut hors Enterprise, à désactiver",
-          "Connecteurs et MCP personnalisés encore en bêta",
-          "Fenêtre de contexte de l'interface non détaillée par offre",
+          "Hors Enterprise, Mistral entraîne ses modèles sur vos échanges par défaut ; l'administrateur d'une offre Team peut désactiver ce réglage pour tous",
+          "Pas de connecteur natif vers un CRM ou un ERP : il faut un MCP ajouté par l'administrateur",
+          "Taille de contexte de l'interface non publiée par offre",
         ],
         idealFor: "Secteur public, défense, santé, finance régulée, R&D confidentielle",
       },
@@ -989,196 +1042,197 @@ export const COMPARISONS = {
 
     // ─── GEO : titre et note du tableau N colonnes (équivalent panorama de keyFacts)
     comparisonTableMeta: {
-      title: "L'essentiel en un tableau",
-      note: "Faits vérifiés le 3 octobre 2026 sur les pages officielles des cinq éditeurs. Les deux lignes de contexte sont séparées à dessein : celle de l'interface décrit ce dont disposent vos équipes, celle de l'API ce qu'obtient un développeur. Les prix sont ceux affichés pour la France, sauf Claude, affiché en dollars hors taxes.",
+      title: "Les cinq outils dans un même tableau",
+      note: "Vérifié le 7 octobre 2026 auprès des cinq éditeurs, sur leurs pages officielles. La ligne « contexte dans l'interface » décrit ce dont disposent vos équipes ; la ligne « contexte via API », ce qu'obtient un développeur qui intègre le modèle. Prix publiés pour la France, sauf Claude (dollars hors taxes) ; OpenAI ne précise pas s'il affiche HT ou TTC.",
     },
     comparisonTable: [
-      { criterion: "Modèles actuels", chatgpt: "GPT-5.6 Sol, GPT-6 Pro ; GPT-6 Astra et GPT-6.1 Sol dans Work et Codex", claude: "Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 4.5", copilot: "Modèles d'OpenAI et d'Anthropic, routage automatique", gemini: "Famille Gemini 3 (3.1 Pro et 3.8 Flash côté API)", mistral: "Medium 3.5, Large 3, Small 4" },
-      { criterion: "Prix mensuel par utilisateur", chatgpt: "23 € Plus · 21 € Business en annuel", claude: "20 $ Pro · 25 $ Team (20 $ en annuel)", copilot: "26 € HT + licence M365 · 18,20 € HT en Copilot Business", gemini: "Inclus : Business Standard à 13,60 € HT en annuel", mistral: "17,99 € TTC Pro · 29,99 € TTC Team" },
-      { criterion: "Contexte dans l'interface", chatgpt: "54 000 tokens, 256 000 en raisonnement (Plus, Business)", claude: "1 000 000 de tokens sur les offres payantes", copilot: "Non publié : ancrage Graph", gemini: "1 000 000 dès Business Standard, 32 000 en Starter", mistral: "Non détaillé par offre" },
-      { criterion: "Contexte via API", chatgpt: "1 050 000 tokens (GPT-6)", claude: "1 000 000 de tokens", copilot: "Sans objet : Copilot s'utilise comme produit", gemini: "Selon le modèle de l'API Gemini", mistral: "256 000 tokens (Medium 3.5, Large 3)" },
-      { criterion: "Génération d'images", chatgpt: "Oui, ChatGPT Images 2.5", claude: "Non : schémas et maquettes seulement", copilot: "Oui dans Copilot Chat, si l'administrateur l'autorise", gemini: "Oui, Nano Banana dans l'application Gemini", mistral: "Oui, dans Vibe" },
-      { criterion: "Mode agent", chatgpt: "ChatGPT Work et agents d'espace de travail, crédits au-delà de l'enveloppe", claude: "Cowork intégré à la conversation, dès Pro", copilot: "Copilot Studio et Copilot Cowork (à l'usage)", gemini: "Workspace Studio ; Workflow Builder via Gemini Enterprise", mistral: "Vibe Work, tâches planifiées, workflows depuis Mistral Studio" },
-      { criterion: "Assistant de code inclus", chatgpt: "Codex, avec des limites dès l'offre gratuite", claude: "Claude Code, dès Pro", copilot: "Non : GitHub Copilot vendu à part", gemini: "Import de dépôts GitHub dans l'application Gemini", mistral: "Vibe Code (terminal, VS Code), Devstral 2 en poids ouverts" },
-      { criterion: "Hébergement en Europe", chatgpt: "Enterprise et Edu (clients éligibles) ; stockage seul, en déploiement, sur Business", claude: "Non : États-Unis ou infrastructure mondiale", copilot: "Oui, EU Data Boundary (hors modèles d'Anthropic)", gemini: "Régions de données sur les éditions Enterprise", mistral: "Oui, par défaut" },
-      { criterion: "Entraînement sur vos données (offre équipe)", chatgpt: "Non par défaut (Business, Enterprise)", claude: "Non par défaut (Team, Enterprise)", copilot: "Non", gemini: "Non (éditions Workspace)", mistral: "Oui par défaut sur Team, désactivable ; non sur Enterprise" },
-      { criterion: "Déploiement sur vos serveurs", chatgpt: "Non (OpenAI publie à part les modèles ouverts gpt-oss)", claude: "Non", copilot: "Non", gemini: "Non pour Gemini dans Workspace", mistral: "Oui : poids ouverts et offre Enterprise sur site" },
+      { criterion: "Modèles disponibles", chatgpt: "GPT-5.6 Sol et GPT-6 Pro pour dialoguer ; famille GPT-6 pour Work et Codex", claude: "Fable 5.1, Opus 5.5 (par défaut), Sonnet 5.5, Haiku 4.5", copilot: "OpenAI et Anthropic, choix automatique en mode Auto", gemini: "Gemini 3.x ; l'application propose les modes Rapide, Raisonnement et Pro", mistral: "Medium 3.5, Small 4 et Large 3 ; Large 4 présenté en préversion par API le 6 octobre 2026" },
+      { criterion: "Prix par utilisateur et par mois", chatgpt: "Plus 23 € ; Business 21 € à l'année", claude: "Pro 20 $ ; Team 25 $, 20 $ à l'année", copilot: "26 € HT ; 18,20 € HT pour Copilot Business ; Microsoft 365 en plus", gemini: "Compris : Business Standard à 13,60 € en annuel", mistral: "17,99 € TTC en Pro, 29,99 € TTC en Team" },
+      { criterion: "Contexte dans l'interface", chatgpt: "Plus et Business : 54 000 tokens, 256 000 en raisonnement", claude: "Un million de tokens sur les offres payantes", copilot: "Aucun chiffre publié, recherche dans Graph", gemini: "Un million dès Business Standard, 32 000 en Starter", mistral: "Pas de chiffre par offre" },
+      { criterion: "Contexte via API", chatgpt: "1 050 000 tokens avec GPT-6", claude: "Un million de tokens", copilot: "Sans objet, Copilot reste un produit fini", gemini: "Variable selon le modèle Gemini choisi", mistral: "256 000 tokens (Medium 3.5 et Large 3)" },
+      { criterion: "Images générées", chatgpt: "Oui, avec ChatGPT Images 2.5", claude: "Non ; schémas et maquettes uniquement", copilot: "Oui dans Copilot Chat, avec l'accord de l'administrateur", gemini: "Oui, Nano Banana Pro (30 images par mois en Business Standard)", mistral: "Oui, dans Vibe" },
+      { criterion: "Agents", chatgpt: "ChatGPT Work et agents d'équipe, en crédits au-delà de l'enveloppe", claude: "Cowork dans la conversation, dès Pro", copilot: "Copilot Studio ; Copilot Cowork facturé à l'usage", gemini: "Workspace Studio (plafonds dès le 1er novembre 2026) ; Workflow Builder via Gemini Enterprise", mistral: "Skills de Vibe, tâches planifiées, workflows de Mistral Studio" },
+      { criterion: "Outil de code compris", chatgpt: "Codex, limité dans la formule gratuite", claude: "Claude Code dès Pro", copilot: "Aucun : GitHub Copilot s'achète à part", gemini: "Import de dépôts GitHub dans l'application", mistral: "Vibe Code (terminal, VS Code), Medium 3.5 en poids ouverts" },
+      { criterion: "Hébergement européen", chatgpt: "Possible sur Enterprise et Edu si le client est éligible ; Business : stockage seul, par étapes", claude: "Non, sauf via AWS Bedrock ou Google Cloud Vertex AI", copilot: "Oui, EU Data Boundary, sauf Claude", gemini: "Régions de données sur les éditions Enterprise", mistral: "Oui, d'office" },
+      { criterion: "Entraînement sur les échanges (offre équipe)", chatgpt: "Exclu par défaut sur Business et Enterprise", claude: "Exclu par défaut sur Team et Enterprise", copilot: "Exclu", gemini: "Exclu dans les éditions Workspace", mistral: "Actif par défaut sur Team, coupé par l'administrateur ; exclu sur Enterprise" },
+      { criterion: "Installation sur vos serveurs", chatgpt: "Non ; OpenAI publie à part les modèles ouverts gpt-oss", claude: "Non", copilot: "Non", gemini: "Non pour Gemini dans Workspace", mistral: "Oui, poids ouverts et offre Enterprise sur site" },
     ],
 
     faq: [
       {
-        q: "Peut-on utiliser plusieurs IA en même temps dans une entreprise ?",
-        a: "Oui. Une configuration possible associe le copilote de votre suite (Copilot ou Gemini) pour le quotidien, un assistant généraliste (ChatGPT ou Claude) pour les tâches créatives ou longues, et Mistral pour les flux sensibles. Chiffrez le surcoût : un assistant généraliste en offre équipe coûte autour de 20 à 25 par siège et par mois, en euros chez OpenAI, en dollars chez Anthropic.",
+        q: "Peut-on faire cohabiter plusieurs IA dans une même entreprise ?",
+        a: "Oui, et c'est fréquent. Le copilote de votre suite (Copilot ou Gemini) couvre la bureautique quotidienne, un assistant généraliste (ChatGPT ou Claude) prend les tâches créatives et les dossiers longs, et Mistral peut traiter les flux sensibles. Comptez, pour un siège de généraliste, 21 € mensuels chez OpenAI ou 20 $ chez Anthropic, sur facturation annuelle.",
       },
       {
-        q: "Comment choisir son IA d'entreprise si l'on n'a pas encore de suite dominante ?",
-        a: "Commencez par un assistant généraliste en offre équipe, **ChatGPT Business** (21 € par utilisateur et par mois en annuel) ou **Claude Team** (20 $ en annuel), selon le métier dominant. Réévaluez au bout de trois à six mois selon ce qui remonte du terrain : besoin d'intégration à Office vers Copilot, documents longs et code vers Claude, contraintes d'hébergement vers Mistral.",
+        q: "Par quel outil commencer quand aucune suite ne domine ?",
+        a: "Par un assistant généraliste en offre équipe, choisi d'après le métier qui pèse le plus : **ChatGPT Business** (21 € mensuels le siège, facturés à l'année) pour la polyvalence, **Claude Team** (20 $ en annuel) pour les dossiers longs et le code. Faites le point après trois à six mois : un besoin d'intégration à Office oriente vers Copilot, des contraintes d'hébergement vers Mistral.",
       },
       {
-        q: "Quelle IA accepte les documents les plus longs ?",
-        a: "Dans l'interface, **Claude** et **Gemini** sont à égalité : un million de tokens par conversation sur les offres payantes de Claude, et dans l'application Gemini dès Business Standard (32 000 en Business Starter). ChatGPT Plus et Business s'arrêtent à 54 000 tokens en mode instantané et 256 000 en raisonnement. Microsoft ne publie pas de limite pour Copilot, qui va chercher le passage utile dans vos fichiers. Les chiffres de l'API concernent les développeurs ; vérifiez toujours la limite de l'offre que vos équipes utilisent.",
+        q: "Quelle IA lit les documents les plus longs ?",
+        a: "Dans l'interface, **Claude** et **Gemini** font jeu égal avec un million de tokens : Claude sur ses offres payantes, Gemini dès l'édition Business Standard, l'édition Starter étant bridée à 32 000. Côté ChatGPT, Plus et Business plafonnent à 256 000 tokens pour un modèle qui raisonne, 54 000 pour une réponse immédiate. Microsoft ne publie pas de limite pour Copilot, qui va chercher l'extrait utile dans vos fichiers. Les chiffres de l'API concernent les développeurs : vérifiez la limite de l'offre que vos équipes auront entre les mains.",
       },
       {
-        q: "Combien coûte une formation pour comparer les cinq outils d'IA ?",
-        a: "Notre formation multi-outils de deux jours fait tester les cinq outils sur les cas d'usage de vos équipes. Tarif : **1 980 € HT la journée** en intra pour le groupe (jusqu'à 12 participants), au même tarif en individuel, TVA de 20 % en sus. Selon votre branche, votre OPCO peut la financer : nous préparons le programme et la convention, et l'entreprise dépose sa demande avant la session.",
+        q: "Combien coûte une formation pour comparer les cinq outils ?",
+        a: "Notre formation multi-outils dure deux jours : vos équipes essaient les cinq assistants sur leurs propres tâches. La facture s'élève à **1 980 € HT** par journée, à majorer de 20 % de TVA, que vous inscriviez un groupe intra (douze personnes au maximum) ou une seule personne. L'OPCO de votre branche peut la financer selon ses règles : Le programme et la convention sont préparés par nos soins ; à vous d'envoyer la demande à l'OPCO avant la première journée.",
       },
       {
-        q: "Et l'IA chinoise (DeepSeek, Qwen) pour une entreprise française ?",
-        a: "Posez les mêmes questions qu'à tout éditeur : lieu de traitement des données, droit applicable, garanties contractuelles, usage des échanges pour l'entraînement. Un modèle à poids ouverts exécuté sur votre propre infrastructure n'envoie rien à l'éditeur, quel que soit son pays d'origine ; une application en ligne, si.",
+        q: "Et les IA chinoises, comme DeepSeek ou Qwen ?",
+        a: "Interrogez-les comme n'importe quel éditeur : où les données sont traitées, quel droit s'applique, quelles garanties figurent au contrat, si vos échanges servent à l'entraînement. Un modèle à poids ouverts que vous faites tourner sur vos propres serveurs ne transmet rien à son éditeur, quelle que soit sa nationalité ; une application en ligne reçoit tout ce que vous tapez.",
       },
       {
         q: "Existe-t-il un benchmark IA 2026 fiable pour choisir son outil ?",
-        a: "Aucun ne suffit seul, et c'est le piège. Les classements publics (arènes de préférence, tests académiques, tableaux des éditeurs) mesurent des modèles sur des exercices standardisés, à une date donnée, souvent dans une version absente de l'offre entreprise. Ils changent tous les mois et ne disent rien de l'intégration à vos outils, de la gouvernance des données ni du prix par siège. Un benchmark utile se fait sur vos propres cas : cinq à dix tâches réelles (un courriel client, un compte rendu, une analyse de tableau, une synthèse de contrat), soumises aux outils candidats dans leur version entreprise et notées par les personnes qui feront le travail. Quand nous citons une étude, nous indiquons le modèle testé et la période de collecte.",
+        a: "Aucun ne suffit seul, et c'est le piège. Les classements publics (arènes de préférence, tests académiques, tableaux des éditeurs) mesurent des modèles sur des exercices standardisés, à une date donnée, souvent dans une version absente de l'offre entreprise. Ils changent tous les mois et ne disent rien de l'intégration à vos outils, de la gouvernance des données ni du prix par siège. Un benchmark utile se fait sur vos propres cas : cinq à dix tâches courantes (un courriel client, un compte rendu, une analyse de tableau, une synthèse de contrat), soumises aux outils candidats dans leur version entreprise et notées par les personnes qui feront le travail. Quand nous citons une étude, nous indiquons le modèle testé et la période de collecte.",
       },
       {
         q: "Quel est le retour sur investissement d'un déploiement d'IA en entreprise ?",
-        a: "Aucun chiffre moyen ne vaut pour votre entreprise. Mesurez le temps passé sur cinq à dix tâches récurrentes avant et après le déploiement, puis décidez de ce que devient le temps libéré : c'est ce choix qui fait apparaître le retour sur investissement. Notre page sur le ROI de l'IA en entreprise détaille la méthode.",
+        a: "Aucun chiffre moyen ne vaut pour votre entreprise. Mesurez le temps passé sur cinq à dix tâches récurrentes avant et après le déploiement, puis décidez de ce que devient le temps libéré : c'est ce choix qui fait apparaître le retour sur investissement. La méthode complète figure sur notre page consacrée au ROI de l'IA.",
       },
     ],
 
     // ─── GEO : delta daté, très citable par les moteurs génératifs
     changelog: {
-      title: "Ce qui a changé depuis notre version d'août 2026",
+      title: "Ce qui a bougé depuis notre panorama d'août",
       items: [
-        { date: "Septembre 2026", text: "Anthropic a lancé Claude Fable 5.1 le 1er septembre, Opus 5.5 le 22 et Sonnet 5.5 le 28 ; les trois lisent un million de tokens par conversation sur les offres payantes. Le 16 septembre, Cowork a rejoint la conversation de Claude." },
-        { date: "Septembre 2026", text: "OpenAI a présenté GPT-6 Astra le 3 septembre, puis GPT-6 Sol, GPT-6 Luna et GPT-6.1 Sol pour ChatGPT Work et Codex ; la conversation reste sur GPT-5.6, avec GPT-6 Pro sur Business et Enterprise." },
-        { date: "Octobre 2026", text: "Au 3 octobre 2026, Google renomme NotebookLM en Gemini Notebook, avec 300 sources par carnet dès Business Standard, et l'application Gemini lit un million de tokens sur ces éditions. Chez Microsoft, Copilot Business coûte 18,20 € HT jusqu'à 300 utilisateurs et propose des modèles d'Anthropic." },
-        { date: "Mai 2026", text: "Mistral AI a renommé son assistant Le Chat en Vibe le 28 mai. La gamme de modèles s'articule désormais autour de Mistral Medium 3.5, Large 3 et Small 4 ; les modèles de raisonnement Magistral sont dépréciés." },
-        { date: "Correction", text: "Nous annoncions NotebookLM Plus limité à 100 sources par carnet. La documentation de Google donne 300 sources en Business Standard, Business Plus et Enterprise, et 50 en Business Starter." },
-        { date: "Correction", text: "Nous écrivions que Mistral était le seul du panorama à publier des modèles à poids ouverts : OpenAI a publié les siens (gpt-oss) en août 2025. Nous citions aussi Sora 2 pour la vidéo dans ChatGPT (application fermée le 26 avril 2026), un hébergement européen en option chez Claude (il n'existe pas) et Claude Code dans l'offre gratuite (il n'y figure pas)." },
+        { date: "7 octobre 2026", text: "Revue des prix et des plafonds. En Business Standard, Google autorise désormais chaque jour 200 questions au modèle Pro, 600 en mode Thinking et 20 rapports Deep Research ; un carnet Gemini Notebook de Business Starter monte à 100 sources. Microsoft affiche Copilot Business à 21,84 € HT en paiement mensuel. Mistral a présenté Mistral Large 4 en préversion par API le 6 octobre." },
+        { date: "Septembre 2026", text: "Trois modèles chez Anthropic : Fable 5.1 le 1er, Opus 5.5 le 22, Sonnet 5.5 le 28, tous dotés d'un million de tokens pour les abonnés payants ; Cowork s'est fondu dans la conversation le 16. Chez OpenAI, la famille GPT-6 (Astra, Sol, Luna, puis GPT-6.1 Sol le 29) sert ChatGPT Work et Codex, la conversation restant sur GPT-5.6." },
+        { date: "Septembre et octobre 2026", text: "Chez Google, les compétences prennent la relève des Gems depuis le 5 octobre, et Workspace Studio appliquera ses plafonds à partir du 1er novembre. Chez Mistral, Vibe a fusionné sa conversation et son mode Work le 22 septembre, et les Skills y ont pris la place des agents." },
+        { date: "Mai 2026", text: "Le 28 mai, Mistral AI a donné le nom de Vibe à son assistant, anciennement Le Chat. Sa gamme s'appuie désormais sur Medium 3.5, Small 4 et Large 3 ; Magistral est déprécié." },
+        { date: "Correction", text: "Nous limitions à 100 sources les carnets de l'outil documentaire de Google. Gemini Notebook en accepte 300 dans les éditions Business Standard, Business Plus et Enterprise, Business Starter étant passé à 100 le 7 octobre 2026." },
+        { date: "Correction", text: "Pour Business Standard, nous citions 25 requêtes Pro toutes les 4 heures : ce plafond vaut pour Business Starter. Nous présentions aussi Devstral 2 comme le modèle de code de Mistral, alors que l'éditeur l'a déprécié le 22 mai 2026 et recommande désormais Medium 3.5." },
+        { date: "Correction", text: "Nous présentions Mistral comme le seul du panorama à publier des modèles à poids ouverts, alors qu'OpenAI a publié gpt-oss en août 2025. Nous citions aussi Sora 2 pour la vidéo dans ChatGPT (application fermée le 26 avril 2026), une région européenne en option chez Claude (elle n'existe pas) et Claude Code dans l'offre gratuite (il en est absent)." },
       ],
     },
 
     methodology:
-      "Ce panorama est rédigé par Masteria, cabinet lyonnais spécialisé en intelligence artificielle depuis 2022, qui forme les équipes aux cinq outils comparés. Les verdicts par cas reposent sur des mises en situation de formation construites sur des tâches réelles (marketing, RH, finance, juridique, bureautique). Les faits produit, les fenêtres de contexte et les tarifs ont été revérifiés le **3 octobre 2026** sur les pages officielles des cinq éditeurs listées ci-dessous. Versions de référence : **GPT-5.6 Sol et GPT-6 Pro**, **Claude Opus 5.5 et Sonnet 5.5**, **Microsoft 365 Copilot**, **Gemini pour Workspace (Business Standard)**, **Mistral Medium 3.5 et Vibe**.",
+      "Masteria, cabinet d'intelligence artificielle installé à Lyon depuis 2022, forme des équipes aux cinq outils de ce panorama. Les verdicts par tâche viennent d'exercices de formation tirés du travail de bureau : marketing, RH, finance, juridique. Le **7 octobre 2026**, nous avons repris modèles, prix et limites de texte chez les cinq éditeurs, d'après les pages listées ci-dessous ; pour Claude, notre relevé du 5 octobre reste valable, Anthropic n'ayant rien publié de nouveau depuis. Versions de référence : **GPT-5.6 Sol et GPT-6 Pro**, **Claude Sonnet 5.5 et Opus 5.5**, **Microsoft Copilot**, **Gemini dans Workspace Business Standard**, **Mistral Medium 3.5 et Vibe**.",
 
     citations: [
-      { name: "OpenAI : tarifs de ChatGPT (page France)", url: "https://chatgpt.com/fr-FR/pricing/" },
-      { name: "OpenAI : notes de version de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
-      { name: "OpenAI : notes de version des modèles (gpt-oss, août 2025)", url: "https://help.openai.com/en/articles/9624314-model-release-notes" },
-      { name: "OpenAI : GPT-5.6 et GPT-6 Pro dans ChatGPT", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
-      { name: "OpenAI : arrêt de Sora", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" },
-      { name: "OpenAI : résidence des données et de l'inférence", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
-      { name: "OpenAI : modèles de l'API", url: "https://developers.openai.com/api/docs/models" },
-      { name: "Anthropic : offres et tarifs de Claude", url: "https://claude.com/pricing" },
-      { name: "Anthropic : fenêtre de contexte des offres payantes (centre d'aide)", url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans" },
-      { name: "Anthropic : notes de version des applications Claude", url: "https://support.claude.com/en/articles/12138966-release-notes" },
-      { name: "Anthropic : résidence des données (documentation de la plateforme)", url: "https://platform.claude.com/docs/en/manage-claude/data-residency" },
-      { name: "Microsoft : tarifs de Microsoft 365 Copilot pour les grandes entreprises (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
-      { name: "Microsoft : Microsoft 365 Copilot Business pour les PME (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
-      { name: "Microsoft Learn : présentation de Microsoft Copilot", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
-      { name: "Microsoft Learn : modèles d'Anthropic dans les services Microsoft", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
-      { name: "Google Workspace : tarifs (France)", url: "https://workspace.google.com/intl/fr/pricing" },
-      { name: "Google : application Gemini avec un compte professionnel, limites par édition", url: "https://support.google.com/gemini/answer/14620100?hl=en&co=DASHER._Family%3DBusiness-Enterprise" },
-      { name: "Google Workspace : Gemini Notebook par édition", url: "https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/turn-gemini-notebook-on-or-off-for-users" },
-      { name: "Google Workspace : limites d'usage de l'IA par édition", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/about-ai-usage-limits" },
-      { name: "Google Cloud : Gemini Enterprise", url: "https://cloud.google.com/gemini-enterprise" },
-      { name: "Google : modèles de l'API Gemini", url: "https://ai.google.dev/gemini-api/docs/models" },
-      { name: "Mistral AI : tarifs", url: "https://mistral.ai/pricing" },
-      { name: "Mistral AI : modèles", url: "https://mistral.ai/models" },
-      { name: "Mistral AI : Le Chat devient Vibe (centre d'aide)", url: "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" },
-      { name: "Mistral AI : utilisation des données pour l'entraînement", url: "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
-      { name: "Mistral AI : lieu de stockage des données", url: "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
+      { name: "ChatGPT : prix publiés pour la France", url: "https://chatgpt.com/fr-FR/pricing/" },
+      { name: "ChatGPT : historique des nouveautés", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+      { name: "OpenAI : sortie des modèles ouverts gpt-oss en août 2025", url: "https://help.openai.com/en/articles/9624314-model-release-notes" },
+      { name: "ChatGPT : GPT-5.6 et GPT-6 Pro selon l'offre", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
+      { name: "ChatGPT : fin de Sora et de la vidéo", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" },
+      { name: "ChatGPT : options de résidence des données en Europe", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
+      { name: "OpenAI : catalogue des modèles pour développeurs", url: "https://developers.openai.com/api/docs/models" },
+      { name: "Claude : grille Free, Pro, Max, Team et Enterprise", url: "https://claude.com/pricing" },
+      { name: "Claude : un million de tokens sur les offres payantes", url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans" },
+      { name: "Claude : nouveautés publiées par Anthropic", url: "https://support.claude.com/en/articles/12138966-release-notes" },
+      { name: "Claude : hébergement régional des données", url: "https://platform.claude.com/docs/en/manage-claude/data-residency" },
+      { name: "Copilot : prix France pour les grandes entreprises", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
+      { name: "Copilot : prix France de l'offre Business", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
+      { name: "Copilot : fonctions par niveau de licence", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
+      { name: "Copilot : Anthropic comme sous-traitant, désactivé dans l'UE", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
+      { name: "Gemini : forfaits Google Workspace en France", url: "https://workspace.google.com/intl/fr/pricing" },
+      { name: "Gemini : quotas de l'application par édition", url: "https://support.google.com/gemini/answer/14620100?hl=en&co=DASHER._Family%3DBusiness-Enterprise" },
+      { name: "Gemini Notebook : sources et carnets par édition", url: "https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/turn-gemini-notebook-on-or-off-for-users" },
+      { name: "Gemini : plafonds d'usage de l'IA dans Workspace", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/about-ai-usage-limits" },
+      { name: "Gemini Enterprise : la licence de Google Cloud", url: "https://cloud.google.com/gemini-enterprise" },
+      { name: "Gemini : modèles disponibles par API", url: "https://ai.google.dev/gemini-api/docs/models" },
+      { name: "Mistral : prix de Vibe et de l'API", url: "https://mistral.ai/pricing" },
+      { name: "Mistral : gamme de modèles en service", url: "https://mistral.ai/models" },
+      { name: "Mistral : l'assistant prend le nom de Vibe", url: "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" },
+      { name: "Mistral : réglages d'entraînement sur vos échanges", url: "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
+      { name: "Mistral : hébergement des données dans l'UE", url: "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
     ],
 
     realCases: [
       {
         scenario: "Préparer une présentation client de 10 diapositives",
-        feature: "Tâche du quotidien : construire une présentation à partir d'un document Word",
-        verdictText: "**Microsoft Copilot prend l'avantage** si vous travaillez dans PowerPoint : il construit la présentation depuis le document et met en forme tout le fichier. **Gemini** fait l'équivalent dans Slides. **ChatGPT** et **Claude** produisent aussi des présentations, l'un par son extension PowerPoint, l'autre avec Claude Slides (en bêta), exportable en PowerPoint.",
+        feature: "À partir d'un document Word, dans l'outil de présentation de l'entreprise",
+        verdictText: "**Microsoft Copilot l'emporte** si vos supports naissent dans PowerPoint : il bâtit la présentation depuis le document et met en forme tout le fichier. **Gemini** fait de même dans Slides, dans la limite de 100 diapositives générées par mois en Business Standard. **ChatGPT** passe par son extension PowerPoint, **Claude** par Claude Slides (en bêta), exportable en PowerPoint.",
         winner: "copilot",
       },
       {
         scenario: "Générer 5 visuels marketing pour LinkedIn",
-        feature: "Tâche du quotidien : production de visuels de communication",
-        verdictText: "**ChatGPT gagne** avec ChatGPT Images 2.5, qui part d'un modèle ou d'un croquis et accepte des retouches ciblées. **Gemini** génère aussi des images (Nano Banana dans l'application Gemini, images dans Slides). **Vibe** génère des images. **Claude** ne produit ni photos ni illustrations.",
+        feature: "Visuels de communication qui respectent une charte",
+        verdictText: "**ChatGPT gagne** : ChatGPT Images 2.5 reprend la charte d'un visuel existant et corrige une zone isolée. **Gemini** produit aussi des images avec Nano Banana Pro, 30 par mois en Business Standard. **Vibe** en génère également. **Claude**, lui, s'en tient aux schémas.",
         winner: "chatgpt",
       },
       {
         scenario: "Analyser un rapport de 400 pages et en faire la synthèse",
-        feature: "Tâche du quotidien : digestion de documents longs",
-        verdictText: "**Match nul entre Claude et Gemini** : les deux lisent un million de tokens par conversation, Claude sur ses offres payantes, Gemini dès Business Standard, et le rapport entier passe en une fois. **Gemini Notebook** ajoute un carnet de 300 sources avec citation du passage. **ChatGPT** s'arrête à 256 000 tokens en raisonnement sur Plus et Business, soit environ 320 pages selon OpenAI : au-delà, il faut découper.",
+        feature: "Lecture d'un document long, d'un seul tenant",
+        verdictText: "**Claude et Gemini à égalité** : un million de tokens chacun, sur les offres payantes de Claude et dès Business Standard pour Gemini, si bien que le rapport entre en une fois. **Gemini Notebook** y ajoute un carnet de 300 sources qui renvoie au passage cité. **ChatGPT** plafonne à 256 000 tokens en raisonnement sur Plus et Business, de quoi couvrir quelque 320 pages : les 80 dernières obligent à couper le rapport en deux.",
         winner: "tie",
       },
       {
         scenario: "Trier ses 30 courriels du matin et préparer ses brouillons",
-        feature: "Tâche du quotidien : gestion de la boîte de réception",
-        verdictText: "**Microsoft Copilot gagne dans Outlook** grâce à l'accès à la boîte mail et à l'agenda via Microsoft Graph. **Gemini** est l'équivalent dans Gmail. **ChatGPT** et **Claude** y arrivent par des connecteurs, avec un résultat qui dépend de ce que chaque utilisateur a branché.",
+        feature: "Boîte de réception et agenda",
+        verdictText: "**Microsoft Copilot gagne dans Outlook**, parce qu'il lit la boîte et l'agenda par Microsoft Graph. **Gemini** joue le même rôle dans Gmail. **ChatGPT** et **Claude** y parviennent par des connecteurs, avec un résultat qui dépend de ce que chacun a branché.",
         winner: "copilot",
       },
       {
         scenario: "Construire un budget prévisionnel sur Excel ou Google Sheets",
-        feature: "Tâche du quotidien : modélisation financière simple",
-        verdictText: "**Match nul** : Copilot travaille dans Excel, Gemini dans Sheets (création et modification de feuilles, 100 par mois en Business Standard), et ChatGPT comme Claude disposent d'une extension pour Excel. La relecture des formules reste à votre charge.",
+        feature: "Modélisation financière simple dans un tableur",
+        verdictText: "**Match nul** : Copilot travaille dans Excel, Gemini dans Sheets (100 créations ou modifications de feuilles par mois en Business Standard), ChatGPT et Claude par leur extension pour Excel. Dans tous les cas, quelqu'un relit les formules.",
         winner: "tie",
       },
       {
         scenario: "Construire un agent simple pour automatiser une tâche récurrente",
-        feature: "Tâche pro : monter un petit agent métier sans code",
-        verdictText: "**Les agents d'espace de travail ChatGPT** se montent le plus vite : rôle, déclencheur et étapes se décrivent en langage naturel ; depuis le 6 juillet 2026, leurs exécutions consomment des crédits. **Microsoft Copilot Studio** est l'équivalent gouverné dans l'écosystème Microsoft. **Gemini** propose Workspace Studio pour des flux décrits en langage naturel. **Claude** planifie des tâches depuis la conversation, la connexion aux outils passant par MCP.",
+        feature: "Petit agent métier monté sans programmer",
+        verdictText: "**Les agents ChatGPT** se montent le plus vite : rôle, déclencheur et étapes s'écrivent en phrases ordinaires, et chaque exécution consomme des crédits depuis le 6 juillet 2026. **Copilot Studio** offre l'équivalent gouverné chez Microsoft. **Gemini** propose Workspace Studio, qui appliquera ses plafonds à partir du 1er novembre 2026. **Claude** planifie des tâches depuis la conversation et se relie à vos outils par MCP.",
         winner: "chatgpt",
       },
       {
         scenario: "Refactorer 1 000 lignes de code ancien",
-        feature: "Tâche pro : refactoring et qualité de code",
-        verdictText: "**Claude gagne** : Claude Code, inclus dès l'offre Pro, lit le module entier avec une fenêtre d'un million de tokens, et Anthropic présente Opus 5.5 comme son meilleur modèle Opus en programmation agentique. ChatGPT reste compétitif avec Codex. Microsoft 365 Copilot n'est pas conçu pour cette mission : Microsoft vend GitHub Copilot à part.",
+        feature: "Reprise et qualité de code",
+        verdictText: "**Claude gagne** : Claude Code, compris dès Pro, charge le module entier dans un million de tokens, et Anthropic présente Opus 5.5 comme son modèle Opus le plus fort en programmation agentique. Codex garde ChatGPT dans la course. Microsoft Copilot sort de son rôle ici : Microsoft vend GitHub Copilot séparément.",
         winner: "claude",
       },
       {
         scenario: "Garantir que mes données restent en France ou en Europe",
-        feature: "Contrainte réglementaire : localisation des données",
-        verdictText: "**Mistral AI gagne** : données hébergées dans l'UE par défaut, modèles à poids ouverts, déploiement sur site dans l'offre Enterprise ; réglez l'entraînement, actif par défaut sur Vibe hors Enterprise. **Microsoft Copilot** garde le trafic des utilisateurs européens dans l'EU Data Boundary, hors modèles d'Anthropic. **ChatGPT Enterprise** propose stockage et inférence en Europe aux clients éligibles. **Claude** n'offre pas de région européenne.",
+        feature: "Contrainte réglementaire sur la localisation",
+        verdictText: "**Mistral AI gagne** : hébergement dans l'Union européenne par défaut, modèles à poids ouverts, installation sur site avec Enterprise ; pensez seulement à couper l'entraînement sur Vibe, activé d'office hors Enterprise. **Microsoft Copilot** traite les requêtes européennes dans l'EU Data Boundary, Claude excepté. **ChatGPT Enterprise** propose stockage et calcul européens aux clients qui y ont droit. Les applications de **Claude** n'offrent aucune région en Europe.",
         winner: "mistral",
       },
     ],
 
     mistakes: [
       {
-        title: "Choisir le « meilleur » outil dans l'absolu plutôt que le bon pour son contexte",
-        desc: "La question de la meilleure IA n'a pas de réponse unique. Le bon outil dépend de votre suite (Microsoft, Google ou aucune), de votre métier dominant et de vos contraintes. Choisir ChatGPT pour une entreprise qui vit dans Microsoft 365, c'est se priver de l'ancrage de Copilot dans les mails et les fichiers.",
+        title: "Chercher la meilleure IA dans l'absolu",
+        desc: "La question n'a pas de réponse universelle. Le bon outil dépend de votre suite (Microsoft, Google ou aucune), du métier qui domine et de vos contraintes de données. Une entreprise qui vit dans Microsoft 365 et choisit ChatGPT se prive de l'ancrage de Copilot dans ses mails et ses fichiers.",
       },
       {
-        title: "N'évaluer qu'un seul outil avant de décider",
-        desc: "L'outil le plus connu s'impose souvent sans test. Sur les documents longs, le code ou l'analyse, l'écart entre outils se voit pourtant vite. Testez au moins deux outils sur deux ou trois tâches réelles avant de signer.",
+        title: "Signer après avoir essayé un seul outil",
+        desc: "L'outil le plus connu s'impose souvent sans essai. Sur les dossiers longs, le code ou l'analyse, les écarts apparaissent pourtant en quelques heures. Faites passer deux ou trois tâches courantes à au moins deux outils avant de signer.",
       },
       {
-        title: "Sous-estimer le coût de la non-formation",
-        desc: "Un abonnement sans formation reste sous-exploité. Le retour sur investissement vient de l'appropriation : formulation des demandes, choix du bon mode, vérification des sorties. Budgétez la formation avec les licences.",
+        title: "Payer les licences et faire l'impasse sur la formation",
+        desc: "Un abonnement que personne n'a appris à utiliser rapporte peu. Le retour sur investissement vient de la façon de formuler les demandes, du choix du bon mode et de la relecture des sorties : inscrivez la formation dans le même budget que les licences.",
       },
       {
-        title: "Vouloir un outil unique « définitif »",
-        desc: "Le marché bouge chaque trimestre : en septembre 2026, Anthropic a sorti trois modèles et OpenAI a lancé la famille GPT-6. Verrouiller un choix pour cinq ans expose à payer le mauvais outil. Équipez vos équipes de deux outils complémentaires et réévaluez chaque année.",
+        title: "Verrouiller un outil pour cinq ans",
+        desc: "Le marché change chaque trimestre : rien qu'en septembre 2026, Anthropic a publié trois modèles et OpenAI sa famille GPT-6. Un engagement de cinq ans fait courir le risque de payer le mauvais outil. Deux outils complémentaires et une revue annuelle protègent mieux.",
       },
       {
-        title: "Oublier les contraintes réglementaires de votre secteur",
-        desc: "En santé, défense, finance régulée ou secteur public, l'hébergement et la gouvernance des données changent le bon choix. Mistral héberge dans l'UE par défaut et propose le déploiement sur site ; Copilot reste dans l'EU Data Boundary ; ChatGPT Enterprise offre stockage et inférence en Europe aux clients éligibles ; Claude n'a pas de région européenne.",
+        title: "Ignorer les règles propres à votre secteur",
+        desc: "Santé, défense, finance régulée, secteur public : l'hébergement des données y change la réponse. Mistral garde d'office vos données dans l'Union et peut s'installer chez vous ; Copilot traite dans l'EU Data Boundary ; ChatGPT Enterprise ouvre une résidence européenne aux clients admissibles ; Anthropic ne propose aucune région européenne pour Claude.",
       },
     ],
 
     costScenarios: [
       {
-        size: "Start-up ou TPE (10 collaborateurs)",
+        size: "TPE ou start-up (10 personnes)",
         recommendation: "ChatGPT Business",
         annualCost: "2 520 €/an",
-        rationale: "10 sièges à 21 € par mois en facturation annuelle. Couverture large pour un ticket d'entrée bas ; réévaluez au bout de six à douze mois selon les usages.",
+        rationale: "Dix sièges ChatGPT Business, affichés 21 € par mois en formule annuelle. Un outil polyvalent pour un petit budget, à revoir après six à douze mois d'usage.",
       },
       {
-        size: "PME (50 collaborateurs)",
+        size: "PME (50 personnes)",
         recommendation: "ChatGPT Business pour 40 personnes, Claude Team pour 10 profils techniques et juridiques",
         annualCost: "10 080 € + 2 400 $/an",
-        rationale: "40 sièges ChatGPT Business à 21 € par mois et 10 sièges Claude Team à 20 $ par mois, en facturation annuelle. Claude couvre les documents longs et le code, ChatGPT le reste de l'équipe.",
+        rationale: "Quarante sièges ChatGPT Business à 21 € et dix sièges Claude Team à 20 $ par mois, en paiement annuel. Claude prend les dossiers longs et le code, ChatGPT le reste de l'équipe.",
       },
       {
-        size: "ETI (200 collaborateurs sur Microsoft 365)",
+        size: "ETI (200 personnes sous Microsoft 365)",
         recommendation: "Copilot Business pour tous, ChatGPT Business pour 30 profils créatifs ou techniques",
         annualCost: "51 240 €/an",
-        rationale: "200 licences Copilot Business à 18,20 € HT par mois (offre réservée aux organisations jusqu'à 300 utilisateurs) et 30 sièges ChatGPT Business à 21 €, en annuel, hors licences Microsoft 365 et hors crédits d'agents.",
+        rationale: "Deux cents licences Copilot Business à 18,20 € HT par mois (offre limitée à 300 utilisateurs), soit 43 680 € HT, et trente sièges ChatGPT Business à 21 €, soit 7 560 €, en paiement annuel. Abonnements Microsoft 365 et crédits d'agents non compris.",
       },
       {
-        size: "Grand groupe (1 000 collaborateurs)",
-        recommendation: "Copilot ou Gemini pour tous, Claude et Mistral pour les métiers concernés",
+        size: "Grand groupe (1 000 personnes)",
+        recommendation: "Copilot ou Gemini pour tous, Claude et Mistral pour les métiers qui en ont besoin",
         annualCost: "312 000 € HT/an et plus",
-        rationale: "1 000 licences Microsoft 365 Copilot à 26 € HT par mois en annuel représentent 312 000 € HT, avant les sièges spécialisés : Claude pour le juridique, la technique et la finance, Mistral pour les entités soumises à des contraintes d'hébergement. Un cadrage en amont évite de payer des licences inutilisées.",
+        rationale: "Mille licences Microsoft Copilot à 26 € HT chaque mois, en engagement annuel, font 312 000 € HT, avant les sièges spécialisés : Claude pour le juridique, la technique et la finance, Mistral pour les entités tenues de garder leurs données en Europe. Un cadrage préalable évite de payer des licences qui dorment.",
       },
     ],
 
@@ -1203,24 +1257,46 @@ export const COMPARISONS = {
     slug: "meilleure-ia-pour-coder",
     metaTitle: "Meilleure IA pour coder en 2026 : comparatif | Masteria",
     metaDesc:
-      "Claude Code (Opus 5.5), GitHub Copilot, Cursor ou ChatGPT (Codex) : contexte, agents, éditeurs, prix par développeur. Comparatif vérifié le 3 octobre 2026.",
+      "Claude Code (Opus 5.5), GitHub Copilot, Cursor ou Codex : contexte, agents, éditeurs, prix par développeur. Comparatif mis à jour le 7 octobre 2026.",
     h1: "Quelle est la meilleure IA pour coder en 2026 ?",
     intro:
-      "Si vous équipez une équipe technique en 2026, le choix de l'IA de codage engage votre budget et votre vitesse de livraison. **Claude Code** s'appuie sur Opus 5.5 et Fable 5.1, avec une fenêtre d'un million de tokens, et il est inclus dans les offres Pro, Max, Team et Enterprise d'Anthropic. **GitHub Copilot** s'installe dans les éditeurs existants, avec le choix du modèle et le ticket d'entrée le plus bas. **Cursor** propose un éditeur bâti autour de l'agent. **ChatGPT** délègue des tâches de développement à **Codex**, inclus dans ses offres. Ce guide compare ces quatre outils, avec les prix et les modèles vérifiés le 3 octobre 2026.",
+      "Si vous équipez une équipe technique en 2026, le choix de l'IA de codage engage votre budget et votre vitesse de livraison. **Claude Code** s'appuie sur Opus 5.5 et Fable 5.1, lit des dépôts d'un million de tokens et figure dans les abonnements Claude Pro, Max, Team et Enterprise. **GitHub Copilot** s'installe dans les éditeurs existants, avec le choix du modèle et le ticket d'entrée le plus bas. **Cursor** propose un éditeur bâti autour de l'agent. **ChatGPT** délègue des tâches de développement à **Codex**, inclus dans ses offres. Ce guide compare ces quatre outils ; les données d'Anthropic et d'OpenAI ont été relues le 7 octobre 2026, celles de GitHub et de Cursor le 3.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "3 octobre 2026",
+    verifiedOn: "7 octobre 2026 (GitHub et Cursor : 3 octobre)",
     datePublished: "2026-05-04",
-    dateModified: "2026-10-03",
+    dateModified: "2026-10-07",
     readTime: "11 minutes",
     keywords:
       "meilleure ia pour coder 2026, claude code prix, github copilot vs claude, cursor prix, codex openai, ia refactoring code, comparatif ia développement, opus 5.5, gpt-6.1 sol",
     isPanorama: true,
 
+    // ─── Textes de section propres à ce panorama (lus par ComparisonPage via `textes`)
+    textes: {
+      legende: "Quatre outils de code comparés : Anthropic et OpenAI relus le 7 octobre 2026, GitHub et Cursor le 3 octobre.",
+      analyseTitre: "Chaque outil de code en détail",
+      analyse: "Points forts, limites et développeur type, outil par outil.",
+      casTitre: "Huit tâches de développement, un vainqueur pour chacune",
+      cas: "Des situations que nous reproduisons avec les équipes techniques : complétion, refactoring, fonctionnalité complète, tests, incident en production, présentation à la direction, revue de pull request, documentation.",
+      erreursTitre: "Six erreurs quand on équipe des développeurs",
+      erreurs: "Elles coûtent des licences inutilisées ou des heures de revue, et se repèrent dès le cadrage.",
+      ctaTitre: "Formez vos développeurs à travailler avec un agent de code",
+      ctaTexte: "Nos formations Claude Code et IA informatique se déroulent sur votre dépôt : cadrage des tâches confiées à l'agent, revue de ses modifications, règles de sécurité. Pour comparer d'abord les assistants généralistes, la formation multi-outils les met deux jours à l'essai. Masteria, certifié Qualiopi au titre des actions de formation, prépare le dossier ; l'OPCO de votre branche décide du financement selon ses règles.",
+    },
+
+    // ─── Terrain (sources : missions-formation.js, mission `editeur-pole-formation` ; équipe Masteria du brief commun)
+    terrain: {
+      titre: "Ce que nous voyons chez les équipes qui codent avec l'IA",
+      paras: [
+        "Le [pôle formation d'un éditeur de logiciels B2B](/etudes-de-cas-ia#mission-editeur-pole-formation), formé à Claude en septembre 2026, a terminé ses deux jours par un premier essai de Claude Code, avec sa responsable et deux ingénieures pédagogiques. L'outil s'ouvre donc à d'autres profils que les développeurs, à condition de cadrer ce qu'on lui confie.",
+        "Pour ses propres projets, Masteria mobilise environ cinq développeurs IA indépendants, et Mathias Nizan pilote chaque mission. Le conseil que nous donnons aux équipes techniques en découle : un outil d'éditeur pour le quotidien, un agent en ligne de commande pour les chantiers de fond, et une revue humaine avant chaque fusion de code.",
+      ],
+    },
+
     // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
     answerBox: {
       question: "Quelle IA choisir pour coder en 2026 ?",
       answer:
-        "**Claude Code** (Anthropic) est le choix des missions lourdes : refactoring de gros dépôts, architecture, débogage profond. Il tourne sur **Opus 5.5** et **Fable 5.1**, lit **un million de tokens** et il est inclus dans les offres Pro (20 $ par mois), Max, Team et Enterprise. **GitHub Copilot** reste le meilleur choix pour la complétion pendant la frappe dans VS Code, Visual Studio ou JetBrains, à 10 $ par mois en individuel et 19 $ par siège en Business, avec des modèles d'Anthropic, d'OpenAI et de Google au choix. **Cursor** convient aux développeurs qui veulent un éditeur agentique, où l'agent modifie plusieurs fichiers et lance les tests, à 20 $ par mois. **ChatGPT** couvre les profils mixtes et délègue des tâches de code à **Codex**, en local ou dans le cloud. Une association possible : Copilot pour toute l'équipe, Claude Code pour les missions de fond. Pour l'adopter en équipe sur votre dépôt, voir notre [formation Claude Code](/formation-claude-code).",
+        "**Claude Code** (Anthropic) est le choix des missions lourdes : refactoring de gros dépôts, architecture, débogage profond. Il tourne sur **Opus 5.5** et **Fable 5.1**, lit **un million de tokens** et il est inclus dans les offres Pro (20 $ par mois), Max, Team et Enterprise. **GitHub Copilot** reste le meilleur choix pour la complétion pendant la frappe dans VS Code, Visual Studio ou JetBrains, à 10 $ par mois en individuel et 19 $ par siège en Business, avec un sélecteur qui propose Claude, GPT ou Gemini. **Cursor** convient aux développeurs qui veulent un éditeur agentique, où l'agent modifie plusieurs fichiers et lance les tests, à 20 $ par mois. **ChatGPT** couvre les profils mixtes et délègue des tâches de code à **Codex**, en local ou dans le cloud. Une association possible : Copilot pour toute l'équipe, Claude Code pour les missions de fond. Pour l'adopter en équipe sur votre dépôt, voir notre [formation Claude Code](/formation-claude-code).",
       bullets: [
         "Refactoring, architecture, débogage profond : Claude Code",
         "Complétion pendant la frappe dans VS Code ou JetBrains : GitHub Copilot",
@@ -1238,7 +1314,7 @@ export const COMPARISONS = {
     ],
 
     verdict: {
-      title: "Verdict express : 4 outils, 4 profils",
+      title: "Quatre outils, quatre profils de développeur",
       summary:
         "Le meilleur outil de code est celui qui épouse votre façon de travailler. **Claude Code** pour les dépôts complexes et les missions longues, **GitHub Copilot** pour la productivité quotidienne dans l'éditeur, **Cursor** pour un éditeur conçu autour de l'agent, **ChatGPT** pour les tâches qui mêlent code, documentation et analyse. Les quatre donnent accès aux modèles les plus récents : la différence se fait sur l'outillage autour.",
       profiles: [
@@ -1254,10 +1330,10 @@ export const COMPARISONS = {
       {
         tool: "claude",
         title: "Claude Code (Anthropic)",
-        position: "La référence sur les missions de fond",
+        position: "Le spécialiste des chantiers de fond",
         pros: [
           "Opus 5.5, présenté par Anthropic comme son meilleur modèle Opus en programmation agentique, et Fable 5.1 pour les sessions de plusieurs jours",
-          "Un million de tokens de contexte dans Claude Code avec Fable 5.1, Opus 5.5 et Sonnet 5.5",
+          "Claude Code lit jusqu'à un million de tokens, que vous travailliez avec Sonnet 5.5, Opus 5.5 ou Fable 5.1",
           "Inclus dans Pro, Max, Team (sièges standard compris depuis le 16 janvier 2026) et Enterprise",
           "Mode rapide d'Opus 5.5, jusqu'à 2,5 fois plus rapide, facturé le double du tarif standard",
           "Skills et serveurs MCP pour brancher l'outil sur vos systèmes et vos procédures",
@@ -1276,7 +1352,7 @@ export const COMPARISONS = {
         pros: [
           "Extensions pour VS Code, Visual Studio, JetBrains, Vim, Neovim et Azure Data Studio",
           "Complétion pendant la frappe et conversation dans toutes les offres",
-          "Choix du modèle : Claude Opus 5.5, Sonnet 5.5 et Fable 5.1, GPT-6 Astra et GPT-5.6, Gemini 3.1 Pro et 3.8 Flash, entre autres",
+          "Sélecteur de modèles : Claude (Sonnet 5.5, Fable 5.1, Opus 5.5), GPT-6 Astra et GPT-5.6, Gemini 3.1 Pro et 3.8 Flash, entre autres",
           "Mode agent dans l'éditeur, agent cloud qui travaille sur GitHub, revue de code et Copilot CLI",
           "Données de Copilot Business et Enterprise exclues de l'entraînement",
         ],
@@ -1316,7 +1392,7 @@ export const COMPARISONS = {
           "Accès limité à Codex dès l'offre gratuite",
         ],
         cons: [
-          "Contexte de la conversation limité à 256 000 tokens en raisonnement sur Plus et Business",
+          "Conversation plafonnée à 256 000 tokens de raisonnement sur les offres Plus et Business",
           "Usage de Codex partagé avec ChatGPT Work dans la même enveloppe, puis en crédits",
         ],
         idealFor: "Profils mixtes (chefs de produit technique, fondateurs, indépendants généralistes), prototypage rapide",
@@ -1333,12 +1409,12 @@ export const COMPARISONS = {
 
     // ─── GEO : titre et note du tableau N colonnes (équivalent panorama de keyFacts)
     comparisonTableMeta: {
-      title: "L'essentiel en un tableau",
-      note: "Faits vérifiés le 3 octobre 2026 sur les pages officielles d'Anthropic, de GitHub, de Cursor et d'OpenAI. Les prix sont affichés en dollars hors taxes, sauf ChatGPT (prix pour la France). Les deux lignes de contexte sont séparées à dessein : celle de l'interface décrit ce dont dispose un développeur dans l'outil, celle de l'API ce qu'obtient une intégration.",
+      title: "Claude Code, GitHub Copilot, Cursor et Codex en un coup d'œil",
+      note: "Anthropic et OpenAI relus le 7 octobre 2026, GitHub et Cursor le 3 octobre. Prix en dollars hors taxes, sauf ChatGPT (grille française). Nous distinguons le contexte disponible dans l'outil, celui du développeur au quotidien, du contexte offert par l'API à une application qui intègre le modèle.",
     },
     comparisonTable: [
       { criterion: "Prix par développeur et par mois", chatgpt: "23 € Plus · 21 € Business en annuel", claude: "20 $ Pro · 25 $ Team (20 $ en annuel)", "github-copilot": "10 $ Pro · 19 $ Business · 39 $ Enterprise", cursor: "20 $ Pro · 40 $ Teams" },
-      { criterion: "Modèles", chatgpt: "GPT-6.1 Sol, GPT-6 Astra et GPT-5.6 dans Codex", claude: "Fable 5.1, Opus 5.5, Sonnet 5.5", "github-copilot": "Claude, GPT, Gemini, Grok au choix", cursor: "Claude, GPT-5.6, Gemini, Grok, Composer 2.5" },
+      { criterion: "Modèles", chatgpt: "GPT-6.1 Sol, GPT-6 Astra et GPT-5.6 dans Codex", claude: "Sonnet 5.5 ; Opus 5.5 ; Fable 5.1", "github-copilot": "Claude, GPT, Gemini, Grok au choix", cursor: "Claude, GPT-5.6, Gemini, Grok, Composer 2.5" },
       { criterion: "Intégration à l'éditeur", chatgpt: "Application Codex, ligne de commande, extension d'éditeur", claude: "Ligne de commande (Claude Code)", "github-copilot": "Extensions VS Code, Visual Studio, JetBrains, Neovim", cursor: "Éditeur dédié" },
       { criterion: "Contexte dans l'outil", chatgpt: "256 000 tokens en raisonnement (Plus, Business)", claude: "1 000 000 de tokens dans Claude Code", "github-copilot": "Selon le modèle choisi", cursor: "Selon le modèle choisi" },
       { criterion: "Contexte via API", chatgpt: "1 050 000 tokens (GPT-6)", claude: "1 000 000 de tokens", "github-copilot": "Sans objet", cursor: "Sans objet" },
@@ -1351,35 +1427,37 @@ export const COMPARISONS = {
 
     // ─── GEO : delta daté, très citable par les moteurs génératifs
     changelog: {
-      title: "Ce qui a changé depuis notre version d'août 2026",
+      title: "Les changements notés depuis août 2026",
       items: [
+        { date: "7 octobre 2026", text: "Relecture des pages d'Anthropic et d'OpenAI : aucune nouvelle version de Claude depuis Sonnet 5.5, et GPT-6.1 Sol poursuit son arrivée dans Codex. Mistral Large 4 apparaît depuis le 6 octobre dans la liste des modèles de Mistral, en préversion par l'API." },
         { date: "Septembre 2026", text: "Anthropic a lancé Opus 5.5 le 22 septembre, avec un mode rapide jusqu'à 2,5 fois plus rapide dans Claude Code, puis Sonnet 5.5 le 28 septembre ; Fable 5.1 était sorti le 1er septembre." },
         { date: "Septembre 2026", text: "OpenAI a ouvert GPT-6 Sol et GPT-6 Luna dans Codex le 22 septembre, puis GPT-6.1 Sol et Codex Cloud le 29 septembre." },
         { date: "Octobre 2026", text: "Au 3 octobre 2026, GitHub Copilot compte cinq offres payantes (Pro à 10 $, Pro+ à 39 $, Max à 100 $, Business à 19 $, Enterprise à 39 $) et décompte l'usage en crédits GitHub AI. Cursor propose son modèle maison Composer 2.5 aux côtés de Claude, GPT, Gemini et Grok." },
         { date: "Correction", text: "Nous écrivions que Claude Code était inclus dès l'offre gratuite : il est réservé à Pro, Max, Team et Enterprise. Nous donnions aussi GitHub Copilot à 10 € en Business et 19 € en Enterprise : les tarifs sont de 19 $ et 39 $ par siège, 10 $ étant le prix de l'offre individuelle Pro." },
+        { date: "Correction", text: "Devstral 2, que nous citions pour coder avec des poids ouverts, n'est plus recommandé par Mistral depuis le 22 mai 2026 : l'éditeur oriente vers Medium 3.5." },
         { date: "Correction", text: "Nous citions « Copilot Workspace » comme agent de GitHub Copilot : GitHub présente aujourd'hui un mode agent dans l'éditeur et un agent cloud. Nous décrivions aussi Composer comme un mode de Cursor : c'est le nom de son modèle maison." },
       ],
     },
 
     methodology:
-      "Ce comparatif est rédigé par Masteria, cabinet lyonnais spécialisé en intelligence artificielle depuis 2022, qui développe des outils sur mesure et forme des équipes techniques. Les verdicts reposent sur des mises en situation : refactoring TypeScript, débogage Python, génération de tests, conception d'API REST, revue de code, migrations SQL. Les faits produit et les tarifs ont été revérifiés le **3 octobre 2026** sur les pages officielles des quatre éditeurs. Versions de référence : **Claude Code avec Opus 5.5**, **GitHub Copilot** avec choix du modèle, **Cursor**, **ChatGPT avec Codex**.",
+      "Créé à Lyon en 2022, Masteria développe des outils sur mesure et forme des équipes techniques. Nos verdicts viennent de mises en situation : refactoring TypeScript, débogage Python, écriture de tests, conception d'une API REST, revue de code, migrations SQL. Les pages d'Anthropic et d'OpenAI ont été relues le **7 octobre 2026**, celles de GitHub et de Cursor le **3 octobre**. Versions de référence : **Claude Code avec Opus 5.5**, **GitHub Copilot** et son sélecteur de modèles, **Cursor**, **ChatGPT avec Codex**.",
 
     citations: [
-      { name: "Anthropic : offres et tarifs de Claude", url: "https://claude.com/pricing" },
-      { name: "Anthropic : fenêtre de contexte des offres payantes, Claude Code compris", url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans" },
-      { name: "Anthropic : Claude Opus 5.5 (22 septembre 2026)", url: "https://www.anthropic.com/claude-opus-5-5" },
-      { name: "Anthropic : vue d'ensemble des modèles Claude", url: "https://platform.claude.com/docs/en/about-claude/models/overview" },
-      { name: "Anthropic : notes de version des applications Claude", url: "https://support.claude.com/en/articles/12138966-release-notes" },
-      { name: "GitHub : offres Copilot (documentation)", url: "https://docs.github.com/en/copilot/get-started/plans" },
-      { name: "GitHub : modèles pris en charge par Copilot", url: "https://docs.github.com/en/copilot/reference/ai-models/supported-models" },
-      { name: "GitHub : offres et questions fréquentes de Copilot", url: "https://github.com/features/copilot/plans" },
-      { name: "Cursor : tarifs", url: "https://cursor.com/pricing" },
-      { name: "Cursor : modèles et tarifs (documentation)", url: "https://cursor.com/docs/models-and-pricing" },
-      { name: "OpenAI : ChatGPT Work et Codex", url: "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" },
-      { name: "OpenAI : notes de version de ChatGPT (Codex Cloud, GPT-6.1 Sol)", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
-      { name: "OpenAI : tarifs de ChatGPT (page France)", url: "https://chatgpt.com/fr-FR/pricing/" },
-      { name: "OpenAI : modèles de l'API", url: "https://developers.openai.com/api/docs/models" },
-      { name: "Mistral AI : modèles (Devstral 2, Medium 3.5)", url: "https://mistral.ai/models" },
+      { name: "Abonnements Claude qui incluent Claude Code", url: "https://claude.com/pricing" },
+      { name: "Taille du contexte de Claude Code sur les offres payantes", url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans" },
+      { name: "Opus 5.5 et la programmation agentique, selon Anthropic", url: "https://www.anthropic.com/claude-opus-5-5" },
+      { name: "Gamme des modèles Claude pour développeurs", url: "https://platform.claude.com/docs/en/about-claude/models/overview" },
+      { name: "Historique des nouveautés de Claude", url: "https://support.claude.com/en/articles/12138966-release-notes" },
+      { name: "Offres GitHub Copilot, de Pro à Enterprise", url: "https://docs.github.com/en/copilot/get-started/plans" },
+      { name: "Modèles sélectionnables dans GitHub Copilot", url: "https://docs.github.com/en/copilot/reference/ai-models/supported-models" },
+      { name: "Questions fréquentes sur les offres GitHub Copilot", url: "https://github.com/features/copilot/plans" },
+      { name: "Prix de Cursor Pro et Teams", url: "https://cursor.com/pricing" },
+      { name: "Modèles et facturation à l'usage dans Cursor", url: "https://cursor.com/docs/models-and-pricing" },
+      { name: "Codex et ChatGPT Work, d'après OpenAI", url: "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" },
+      { name: "Codex Cloud et GPT-6.1 Sol dans le journal de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+      { name: "Grille ChatGPT pour la France, Codex compris", url: "https://chatgpt.com/fr-FR/pricing/" },
+      { name: "Fenêtre de contexte des modèles GPT-6 par API", url: "https://developers.openai.com/api/docs/models" },
+      { name: "Modèles à poids ouverts de Mistral AI pour le code", url: "https://mistral.ai/models" },
     ],
 
     realCases: [
@@ -1398,7 +1476,7 @@ export const COMPARISONS = {
       {
         scenario: "Transformer une demande métier en fonctionnalité complète sur plusieurs fichiers",
         feature: "Tâche pro : implémentation autonome d'une fonctionnalité",
-        verdictText: "**Cursor prend l'avantage** pour qui veut rester dans l'éditeur : l'agent modifie plusieurs fichiers, lance les tests et itère sous vos yeux. Claude Code fait le même travail en ligne de commande, GitHub Copilot en mode agent ou avec son agent cloud, et Codex en local ou dans le cloud.",
+        verdictText: "**Cursor prend l'avantage** pour qui veut rester dans l'éditeur : l'agent retouche plusieurs fichiers, exécute les tests puis recommence sous vos yeux. Claude Code fait le même travail en ligne de commande, GitHub Copilot en mode agent ou avec son agent cloud, et Codex en local ou dans le cloud.",
         winner: "cursor",
       },
       {
@@ -1452,7 +1530,7 @@ export const COMPARISONS = {
       },
       {
         title: "Ignorer la question de la souveraineté du code",
-        desc: "Les outils en ligne transmettent vos prompts et votre code aux serveurs de l'éditeur. Pour les bases de code sensibles (défense, santé, finance régulée), deux voies : des contrats d'entreprise avec garanties, ou des modèles à poids ouverts déployés chez vous, comme Devstral 2 de Mistral.",
+        desc: "Les outils en ligne transmettent vos prompts et votre code aux serveurs de l'éditeur. Pour les bases de code sensibles (défense, santé, finance régulée), deux voies : des contrats d'entreprise avec garanties, ou des modèles à poids ouverts déployés chez vous, comme Mistral Medium 3.5.",
       },
       {
         title: "Acheter sans former les équipes",
@@ -1462,7 +1540,7 @@ export const COMPARISONS = {
 
     faq: [
       {
-        q: "Quelle est la meilleure IA pour coder en 2026 ?",
+        q: "Quel outil d'IA retenir pour programmer en 2026 ?",
         a: "**Claude Code** est le choix des missions lourdes : refactoring, architecture, débogage profond. Il tourne sur **Opus 5.5** et **Fable 5.1**, lit un million de tokens et il est inclus dans les offres Pro, Max, Team et Enterprise d'Anthropic. **GitHub Copilot** reste le standard de la productivité quotidienne dans l'éditeur, à 10 $ par mois en individuel et 19 $ par siège en Business. **Cursor** est l'éditeur conçu pour l'agent. **ChatGPT** couvre les profils mixtes, avec **Codex** pour l'exécution autonome. Le bon choix suit le profil : missions de fond vers Claude Code, développement quotidien vers Copilot, autonomie complète vers Cursor.",
       },
       {
@@ -1491,7 +1569,7 @@ export const COMPARISONS = {
       },
       {
         q: "Peut-on coder avec une IA sans envoyer le code aux éditeurs ?",
-        a: "Oui, avec des modèles à poids ouverts déployés sur votre infrastructure : **Devstral 2** de Mistral, spécialisé dans le code agentique, ou **Mistral Medium 3.5**, publié sous licence MIT modifiée. La ligne de commande Vibe Code de Mistral accepte aussi tout modèle servi derrière une API compatible avec celle d'OpenAI, y compris hors ligne. C'est la solution pour les bases de code qui ne doivent pas quitter le réseau.",
+        a: "Oui, avec des modèles à poids ouverts déployés sur votre infrastructure : **Mistral Medium 3.5**, publié sous licence MIT modifiée, vers lequel Mistral renvoie depuis la dépréciation de Devstral 2 le 22 mai 2026. La ligne de commande Vibe Code de Mistral accepte aussi tout modèle servi derrière une API compatible avec celle d'OpenAI, y compris hors ligne. C'est la solution pour les bases de code qui ne doivent pas quitter le réseau.",
       },
       {
         q: "Quelle IA pour coder en TypeScript, React ou Next.js ?",
@@ -1499,7 +1577,7 @@ export const COMPARISONS = {
       },
       {
         q: "Comment former une équipe de développeurs aux IA de codage ?",
-        a: "Notre formation IA informatique couvre le cadrage des tâches confiées à un agent, l'intégration aux éditeurs, la revue des modifications et la sécurité. Comptez **1 980 € HT la journée** en intra pour le groupe (jusqu'à 12 participants), TVA de 20 % en sus. Selon votre branche, votre OPCO peut financer la session.",
+        a: "Notre formation IA informatique couvre le cadrage des tâches confiées à un agent, l'intégration aux éditeurs, la revue des modifications et la sécurité ; la formation Claude Code travaille directement sur votre dépôt. La journée est à **1 980 € HT** (TVA de 20 % en plus) pour un groupe intra de douze développeurs au maximum ; votre OPCO de branche examine la prise en charge d'après ses critères.",
       },
     ],
 
@@ -1521,27 +1599,49 @@ export const COMPARISONS = {
     slug: "meilleur-agent-ia",
     metaTitle: "Meilleur agent IA en 2026 : comparatif | Masteria",
     metaDesc:
-      "Claude Cowork, agents ChatGPT, Manus, Copilot Studio : autonomie, validation, gouvernance, coût des exécutions. Comparatif vérifié le 3 octobre 2026.",
+      "Claude Cowork, agents ChatGPT, Manus, Copilot Studio : autonomie, validation, gouvernance, coût des exécutions. Comparatif mis à jour le 7 octobre 2026.",
     h1: "Quel est le meilleur agent IA pour votre entreprise en 2026 ?",
     intro:
       "Un agent IA exécute une tâche en plusieurs étapes sans qu'on le relance : il lit, décide, agit, recommence. En 2026, les quatre grandes offres ont changé de forme. Chez Anthropic, **Cowork** a rejoint la conversation de Claude le 16 septembre. Chez OpenAI, **ChatGPT Work** et les **agents d'espace de travail** se partagent le terrain. **Microsoft Copilot Studio** s'accompagne désormais de **Copilot Cowork**, et **Manus** a lancé sa version 2.0 le 28 septembre, après avoir repris son indépendance. Ce guide aide à choisir, et surtout à chiffrer ce que chacun coûte en production.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "3 octobre 2026",
+    verifiedOn: "7 octobre 2026 (Manus : 3 octobre)",
     datePublished: "2026-05-04",
-    dateModified: "2026-10-03",
+    dateModified: "2026-10-07",
     readTime: "11 minutes",
     keywords:
       "meilleur agent ia 2026, claude cowork, agents espace de travail chatgpt, chatgpt work, copilot studio prix, copilot cowork, manus 2.0, mcp model context protocol, agent ia entreprise gouvernance",
     isPanorama: true,
 
+    // ─── Textes de section propres à ce panorama (lus par ComparisonPage via `textes`)
+    textes: {
+      legende: "Les quatre plateformes d'agents comparées au 7 octobre 2026 (Manus : relevé du 3 octobre).",
+      analyseTitre: "Les quatre plateformes, une par une",
+      analyse: "Ce que chacune automatise bien, où elle coince, et pour quelle équipe.",
+      casTitre: "Huit agents d'entreprise mis à l'épreuve",
+      cas: "Des automatisations que nos clients nous demandent de construire ou d'enseigner : prospects entrants, préparation de la journée, veille, support, relances, voyages, circuit d'approbation, prix des concurrents.",
+      erreursTitre: "Sept erreurs qui font échouer un projet d'agent",
+      erreurs: "Ce sont les erreurs que nous corrigeons le plus souvent au moment de cadrer un projet d'agent.",
+      ctaTitre: "Apprenez à vos équipes à confier une tâche à un agent",
+      ctaTexte: "Notre formation multi-outils consacre deux jours à Claude, ChatGPT, Copilot, Gemini et Mistral, des demandes simples jusqu'aux premiers agents, avec la validation humaine et la gouvernance qui les accompagnent. Pour le financement, notre certification Qualiopi au titre des actions de formation autorise l'OPCO de votre branche à examiner une prise en charge.",
+    },
+
+    // ─── Ce que nos projets d'agents ont montré (sources : etudes-de-cas.js, cas `conseil-financier` et `photovoltaique`, missions-formation.js)
+    terrain: {
+      titre: "Ce que nos projets d'agents nous ont appris",
+      paras: [
+        "Un [cabinet de conseil financier](/etudes-de-cas-ia#conseil-financier), habitué des appels d'offres publics, nous a confié la conception de quatre assistants, un par famille de marchés, construits avec ses consultants au fil de quatre séances de deux heures. Une règle est écrite dans chacun : avant de rédiger, l'assistant interroge le consultant sur le client, les priorités, les références et l'équipe. L'agent prépare, la personne décide.",
+        "Chez une [PME de distribution photovoltaïque](/etudes-de-cas-ia#photovoltaique), le diagnostic a conduit à trois assistants, construits sur les fichiers de l'entreprise : un pour interroger les transporteurs, un pour importer dans Odoo les réceptions d'entrepôt, un pour les devis et les relances, chacun confié à un porteur nommé. Pendant sa formation Claude de septembre 2026, l'[équipe pédagogique d'un éditeur de logiciels](/etudes-de-cas-ia#mission-editeur-pole-formation) a délégué à Cowork tout le travail préparatoire d'une session.",
+      ],
+    },
+
     // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
     answerBox: {
       question: "Quel agent IA choisir pour son entreprise en 2026 ?",
       answer:
-        "**Claude** est le plus direct pour agir sur des fichiers et des applications connectées : depuis le 16 septembre 2026, ce que faisait Cowork est disponible dans n'importe quelle conversation, avec une demande de validation avant d'agir par défaut et des tâches planifiées, dès l'offre **Pro à 20 $**. Les **agents d'espace de travail ChatGPT** (Business et Enterprise) se décrivent en langage naturel, se partagent, répondent dans Slack et se déclenchent par API ; depuis le 6 juillet 2026, leurs exécutions consomment des crédits. **Microsoft Copilot Studio** reste le choix des organisations sur Microsoft 365 qui veulent une gouvernance centralisée, complété par **Copilot Cowork**, facturé à l'usage. **Manus** enchaîne les tâches longues en autonomie ; son retour à l'indépendance le 1er septembre 2026, après l'annonce de son rapprochement avec Meta fin 2025, invite à la prudence pour un usage d'entreprise.",
+        "**Claude** est le plus direct pour agir sur des fichiers et des applications connectées : depuis le 16 septembre 2026, ce que faisait Cowork est disponible dans n'importe quelle conversation, avec une demande de validation avant d'agir par défaut et des tâches planifiées, dès l'offre **Pro à 20 $**. Sur Business et Enterprise, les **agents ChatGPT** se décrivent en langage naturel, se partagent, répondent dans Slack et démarrent par API ; chaque exécution puise dans des crédits depuis l'été 2026. **Microsoft Copilot Studio** reste le choix des organisations sur Microsoft 365 qui veulent une gouvernance centralisée, complété par **Copilot Cowork**, qui agit dans Microsoft 365 contre une facturation à l'usage. **Manus** enchaîne les tâches longues en autonomie ; son retour à l'indépendance le 1er septembre 2026, après l'annonce de son rapprochement avec Meta fin 2025, invite à la prudence pour un usage d'entreprise.",
       bullets: [
         "Agir sur des fichiers et des applications, avec validation : Claude, dès l'offre Pro",
-        "Agent d'équipe monté en langage naturel, dans Slack ou par API : agents d'espace de travail ChatGPT",
+        "Agent d'équipe monté en langage naturel, dans Slack ou par API : agents ChatGPT",
         "Gouvernance IT et environnement Microsoft 365 : Copilot Studio et Copilot Cowork",
         "Connexion à vos outils internes : MCP, le standard ouvert créé par Anthropic",
         "Coût réel : chiffrez les exécutions en plus des licences",
@@ -1556,14 +1656,14 @@ export const COMPARISONS = {
     ],
 
     verdict: {
-      title: "Verdict express : 4 agents, 4 cas d'usage",
+      title: "Quatre agents, quatre usages : notre verdict",
       summary:
-        "**Claude** agit sur vos fichiers et enchaîne les étapes d'une tâche depuis n'importe quelle conversation, dès l'offre Pro. Les **agents d'espace de travail ChatGPT** se construisent en langage naturel et conviennent aux équipes non techniques, avec des exécutions payées en crédits depuis juillet 2026. **Microsoft Copilot Studio** reste le choix par défaut des organisations sur Microsoft 365 qui veulent une gouvernance centralisée. **Manus** tient les tâches longues en autonomie, avec moins de garanties d'entreprise. Le bon agent dépend de votre cas d'usage et du niveau de contrôle que votre service informatique exige.",
+        "**Claude** agit sur vos fichiers et enchaîne les étapes d'une tâche depuis n'importe quelle conversation, dès l'offre Pro. Les **agents ChatGPT** se construisent en langage naturel et conviennent aux équipes non techniques ; leurs exécutions se paient en crédits depuis juillet 2026. **Microsoft Copilot Studio** reste le choix par défaut des organisations sur Microsoft 365 qui veulent une gouvernance centralisée. **Manus** tient les tâches longues en autonomie, avec moins de garanties d'entreprise. Le bon agent dépend de votre cas d'usage et du niveau de contrôle que votre service informatique exige.",
       profiles: [
         { profile: "Agir sur des fichiers et automatiser un travail de bureau", tool: "Claude Cowork", why: "Lit, modifie et crée des fichiers, demande avant d'agir par défaut et planifie des tâches qui tournent sans ordinateur allumé. Dès l'offre Pro." },
         { profile: "Agent monté par un profil non technique", tool: "Agents ChatGPT", why: "Rôle, déclencheur, outils et règles se décrivent en langage naturel ou partent d'un modèle. Disponibles sur Business et Enterprise depuis le 21 mai 2026." },
         { profile: "Intégration à vos outils et bases internes", tool: "Claude + MCP", why: "MCP est le standard ouvert de connexion aux outils créé par Anthropic, adopté par ChatGPT, Cursor, Gemini et Microsoft Copilot. Demande une mise en place technique." },
-        { profile: "Stack Microsoft 365 et informatique centralisée", tool: "Microsoft Copilot Studio", why: "Gouvernance unifiée, traitements dans Microsoft 365, agents publiés dans Copilot inclus avec la licence, Copilot Cowork pour exécuter des tâches validées une à une." },
+        { profile: "Stack Microsoft 365 et informatique centralisée", tool: "Microsoft Copilot Studio", why: "Gouvernance unifiée, données traitées dans Microsoft 365, agents publiés dans Copilot sans surcoût, et Copilot Cowork, qui s'interrompt pour un accord dès qu'une action est sensible." },
         { profile: "Tâches longues autonomes, usage individuel", tool: "Manus", why: "Bon sur les enchaînements recherche, synthèse et livrable, avec des automatisations sur événement. Garanties d'entreprise à évaluer avant tout déploiement." },
       ],
     },
@@ -1596,7 +1696,7 @@ export const COMPARISONS = {
           "Création en langage naturel ou depuis un modèle, avec aperçu avant publication",
           "Partage dans l'équipe, planification, canal Slack et déclenchement par API",
           "Contraintes sur les actions des connecteurs (n'écrire qu'à un domaine, ne lire qu'un document) et validation des écritures par défaut",
-          "ChatGPT Work pour les tâches longues, déclenchables par un courriel Gmail, un message Slack ou une pull request GitHub",
+          "ChatGPT Work pour les tâches longues, qui peuvent démarrer à l'arrivée d'un courriel Gmail, d'un message Slack ou d'une pull request GitHub",
           "Historique des versions et édition à plusieurs",
         ],
         cons: [
@@ -1630,14 +1730,14 @@ export const COMPARISONS = {
         position: "Le choix des services informatiques centralisés",
         pros: [
           "Atelier low-code : un profil fonctionnel formé monte un agent avec peu ou pas de code",
-          "Agents publiés dans Microsoft 365 Copilot inclus pour les détenteurs de la licence",
-          "Copilot Cowork exécute des tâches dans Microsoft 365 (courriels, réunions, documents, Teams) après validation de chaque action",
-          "Traitements dans le périmètre de Microsoft 365, gouvernance par l'administrateur",
+          "Agents publiés dans Microsoft Copilot (anciennement Microsoft 365 Copilot) compris pour les titulaires de la licence",
+          "Copilot Cowork, ouvert aux comptes professionnels depuis le 29 septembre 2026, envoie des courriels, planifie des réunions, crée des documents et publie dans Teams, en demandant l'accord avant chaque action sensible ; il accepte jusqu'à 50 compétences personnalisées",
+          "Données traitées dans Microsoft 365, sous la gouvernance de l'administrateur",
           "Choix du modèle à la création de l'agent, dont des modèles d'Anthropic",
         ],
         cons: [
-          "Agents autonomes et canaux externes facturés en crédits Copilot, abonnement Azure requis",
-          "Copilot Cowork facturé à l'usage, en plus de la licence",
+          "Agents autonomes et canaux externes payés en crédits Copilot (pack de 25 000 crédits à 173,30 € HT par mois, ou paiement à l'usage), abonnement Azure requis",
+          "Cowork se règle à la consommation, par-dessus la licence",
           "Intégrations hors Microsoft à construire par connecteurs",
         ],
         idealFor: "ETI et grands groupes sur Microsoft 365, services informatiques centralisés, agents métier industrialisés",
@@ -1654,72 +1754,73 @@ export const COMPARISONS = {
 
     // ─── GEO : titre et note du tableau N colonnes (équivalent panorama de keyFacts)
     comparisonTableMeta: {
-      title: "L'essentiel en un tableau",
-      note: "Faits vérifiés le 3 octobre 2026 sur les pages officielles d'Anthropic, d'OpenAI, de Microsoft et de Manus. Attention à la ligne « coût des exécutions » : chez OpenAI comme chez Microsoft, l'exécution des agents se facture en dehors du prix du siège.",
+      title: "Quatre plateformes d'agents, ligne par ligne",
+      note: "Anthropic, OpenAI et Microsoft relus le 7 octobre 2026, Manus le 3 octobre. Regardez d'abord la ligne « coût des exécutions » : chez OpenAI comme chez Microsoft, faire tourner un agent se paie en plus du siège.",
     },
     comparisonTable: [
       { criterion: "Nom exact du produit", chatgpt: "Agents d'espace de travail et ChatGPT Work", claude: "Claude, qui intègre Cowork", manus: "Manus 2.0", copilot: "Copilot Studio et Copilot Cowork" },
-      { criterion: "Jalons", chatgpt: "Agents en disponibilité générale le 21 mai 2026, ChatGPT Work le 9 juillet 2026", claude: "Cowork en disponibilité générale le 9 avril 2026, intégré à la conversation le 16 septembre 2026", manus: "Version 2.0 le 28 septembre 2026", copilot: "Copilot Cowork en disponibilité générale pour les comptes professionnels" },
-      { criterion: "Offre minimum", chatgpt: "Business, 21 € par utilisateur en annuel", claude: "Pro à 20 $", manus: "Forfait mensuel en crédits", copilot: "Licence Microsoft 365 Copilot (26 € HT) ou Copilot Studio à l'usage" },
+      { criterion: "Jalons", chatgpt: "Agents en disponibilité générale le 21 mai 2026, ChatGPT Work le 9 juillet 2026", claude: "Cowork en disponibilité générale le 9 avril 2026, intégré à la conversation le 16 septembre 2026", manus: "Version 2.0 le 28 septembre 2026", copilot: "Copilot Cowork en disponibilité générale le 29 septembre 2026" },
+      { criterion: "Offre minimum", chatgpt: "Business, 21 € le siège en formule annuelle", claude: "Pro à 20 $", manus: "Forfait mensuel en crédits", copilot: "Licence Microsoft Copilot (26 € HT) ou Copilot Studio à l'usage" },
       { criterion: "Coût des exécutions", chatgpt: "Crédits depuis le 6 juillet 2026, au-delà de l'enveloppe incluse", claude: "Compris dans les limites de l'offre, usage supplémentaire possible", manus: "Crédits du forfait", copilot: "Crédits Copilot pour les agents autonomes, Cowork à l'usage" },
       { criterion: "Agit sur des fichiers locaux", chatgpt: "Oui avec Work dans l'application de bureau, avec votre accord", claude: "Oui, cœur de Cowork", manus: "Oui, avec l'accès à votre ordinateur", copilot: "Fichiers OneDrive et SharePoint" },
       { criterion: "Création sans code", chatgpt: "Oui, en langage naturel ou depuis un modèle", claude: "Oui pour les tâches ; connecteurs MCP à configurer", manus: "Oui, en une instruction", copilot: "Oui, atelier low-code" },
-      { criterion: "Tâches planifiées ou déclenchées", chatgpt: "Oui : planification, Slack et API", claude: "Oui, tâches planifiées", manus: "Oui, planifiées et sur événement", copilot: "Oui, invites planifiées dans Cowork" },
+      { criterion: "Tâches planifiées ou déclenchées", chatgpt: "Oui : planification, Slack et API", claude: "Oui, tâches planifiées", manus: "Oui, planifiées et sur événement", copilot: "Oui : Cowork planifie, ou démarre quand arrive un courriel ou une conversation Teams" },
       { criterion: "Standard MCP", chatgpt: "Oui, MCP personnalisés dans les agents", claude: "Oui, standard créé par Anthropic", manus: "Connecteurs propres (Gmail, Notion, Slack, Google Drive)", copilot: "Oui, MCP adopté par Microsoft Copilot" },
-      { criterion: "Validation humaine des actions", chatgpt: "Écritures soumises à validation par défaut", claude: "Demande avant d'agir par défaut", manus: "Non documentée sur les pages consultées", copilot: "Chaque action de Cowork validée avant exécution" },
+      { criterion: "Validation humaine des actions", chatgpt: "Écritures soumises à validation par défaut", claude: "Demande avant d'agir par défaut", manus: "Rien de publié à ce sujet", copilot: "Cowork demande l'accord avant toute action sensible, niveau de risque affiché" },
       { criterion: "Gouvernance et journaux", chatgpt: "Rôles par fonction, analytique des agents, console d'administration", claude: "Journaux d'audit et API de conformité sur Enterprise", manus: "Offre équipe avec authentification unique", copilot: "Supervision par l'administrateur, Purview" },
     ],
 
     // ─── GEO : delta daté, très citable par les moteurs génératifs
     changelog: {
-      title: "Ce qui a changé depuis notre version d'août 2026",
+      title: "Les nouveautés intégrées depuis août 2026",
       items: [
+        { date: "7 octobre 2026", text: "Microsoft documente Copilot Cowork en disponibilité générale depuis le 29 septembre : l'agent sollicite votre feu vert pour toute action sensible, niveau de risque à l'appui, se déclenche sur réception d'un courriel ou d'un message Teams et accepte jusqu'à 50 compétences personnalisées. Chez OpenAI, la fin des GPTs personnalisés est fixée au 11 décembre 2026 : chaque GPT migre vers un plugin, ses instructions devenant une compétence." },
         { date: "Septembre 2026", text: "Anthropic a intégré Cowork à la conversation de Claude le 16 septembre. Manus a repris ses activités indépendantes le 1er septembre, puis lancé Manus 2.0 le 28 septembre avec des automatisations déclenchées par événement." },
         { date: "Juillet 2026", text: "OpenAI a lancé ChatGPT Work le 9 juillet. Depuis le 6 juillet, les exécutions des agents d'espace de travail consomment des crédits, d'abord sur l'enveloppe incluse dans le siège Business." },
-        { date: "Mai 2026", text: "Les agents d'espace de travail ChatGPT sont passés en disponibilité générale le 21 mai sur Business, Enterprise et Edu." },
-        { date: "Octobre 2026", text: "Au 3 octobre 2026, Microsoft documente Copilot Cowork, qui exécute des tâches dans Microsoft 365 avec validation de chaque action, en facturation à l'usage." },
-        { date: "Correction", text: "Nous présentions les Skills comme une brique propre à chaque éditeur : Anthropic a publié le format Agent Skills en standard ouvert le 18 décembre 2025, et Manus l'a adopté en janvier 2026." },
+        { date: "Mai 2026", text: "Disponibilité générale des agents ChatGPT sur Business, Enterprise et Edu le 21 mai." },
+                { date: "Correction", text: "Nous présentions les Skills comme une brique propre à chaque éditeur : Anthropic a publié le format Agent Skills en standard ouvert le 18 décembre 2025, et Manus l'a adopté en janvier 2026." },
+        { date: "Correction", text: "Une version précédente prêtait à Copilot Cowork une validation systématique de chaque action ; la documentation de Microsoft limite cette demande aux actions sensibles, avec un niveau de risque." },
       ],
     },
 
     methodology:
-      "Ce comparatif est rédigé par Masteria, cabinet lyonnais spécialisé en intelligence artificielle depuis 2022, qui conçoit des agents sur mesure et forme les équipes à leur usage. Les quatre plateformes ont été mises en situation sur des cas fréquents en entreprise : qualification de prospects, traitement de courriels, production de rapports, automatisation de processus. Les faits produit et les tarifs ont été revérifiés le **3 octobre 2026** sur les pages officielles des éditeurs. Versions de référence : **Claude avec Opus 5.5**, **agents d'espace de travail ChatGPT sur Business**, **Manus 2.0**, **Microsoft Copilot Studio et Copilot Cowork**.",
+      "Masteria conçoit des agents sur mesure et apprend aux équipes de ses clients à s'en servir ; le cabinet est né à Lyon en 2022. Nous avons éprouvé les quatre plateformes sur des cas courants : tri de prospects, courriels, rapports, circuits de validation. Les fonctions et les prix d'Anthropic, d'OpenAI et de Microsoft ont été relus le **7 octobre 2026** ; ceux de Manus datent de notre relevé du **3 octobre**. Versions de référence : **Claude avec Opus 5.5**, **agents ChatGPT sur Business**, **Manus 2.0**, **Microsoft Copilot Studio et Copilot Cowork**.",
 
     citations: [
-      { name: "Anthropic : Cowork et la conversation réunis dans Claude (16 septembre 2026)", url: "https://claude.com/blog/cowork-is-now-claude" },
-      { name: "Anthropic : Claude Cowork, page produit", url: "https://claude.com/product/cowork" },
-      { name: "Anthropic : notes de version des applications Claude", url: "https://support.claude.com/en/articles/12138966-release-notes" },
-      { name: "Anthropic : offres et tarifs de Claude", url: "https://claude.com/pricing" },
-      { name: "Anthropic : Claude Fable 5.1 et Mythos 5.1 (septembre 2026)", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1" },
-      { name: "Anthropic : Agent Skills, standard ouvert depuis le 18 décembre 2025", url: "https://claude.com/blog/skills" },
-      { name: "Anthropic : lancement de MCP (25 novembre 2024)", url: "https://www.anthropic.com/news/model-context-protocol" },
-      { name: "Anthropic : don de MCP à l'Agentic AI Foundation (9 décembre 2025)", url: "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" },
-      { name: "OpenAI : agents d'espace de travail (Business et Enterprise)", url: "https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business" },
-      { name: "OpenAI : notes de version de ChatGPT Business", url: "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" },
-      { name: "OpenAI : grille de crédits Business et Enterprise", url: "https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu-credit-based-pricing" },
-      { name: "OpenAI : ChatGPT Work et Codex", url: "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" },
-      { name: "OpenAI : notes de version de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
-      { name: "Microsoft : Copilot Studio, offres et tarifs (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
-      { name: "Microsoft Learn : Copilot Cowork", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
-      { name: "Microsoft Learn : présentation de Microsoft Copilot", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
-      { name: "Microsoft Learn : modèles d'Anthropic dans les services Microsoft", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
-      { name: "Manus : présentation de Manus 2.0 (28 septembre 2026)", url: "https://manus.im/fr/blog/introducing-manus-2-0" },
-      { name: "Manus : reprise des activités indépendantes (1er septembre 2026)", url: "https://manus.im/fr/blog/manus-resumes-independent-operations" },
-      { name: "Manus : rapprochement avec Meta (29 décembre 2025)", url: "https://manus.im/fr/blog/manus-joins-meta-for-next-era-of-innovation" },
-      { name: "Manus : offres et tarifs", url: "https://manus.im/pricing" },
+      { name: "Billet d'Anthropic : Cowork rejoint chaque conversation (16 septembre 2026)", url: "https://claude.com/blog/cowork-is-now-claude" },
+      { name: "Page produit de Claude Cowork", url: "https://claude.com/product/cowork" },
+      { name: "Mises à jour publiées pour les applications Claude", url: "https://support.claude.com/en/articles/12138966-release-notes" },
+      { name: "Prix de Claude Pro, Max, Team et Enterprise", url: "https://claude.com/pricing" },
+      { name: "Annonce de Fable 5.1, pensé pour les travaux de plusieurs heures", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1" },
+      { name: "Le format Agent Skills rendu public par Anthropic", url: "https://claude.com/blog/skills" },
+      { name: "Naissance du protocole MCP, novembre 2024", url: "https://www.anthropic.com/news/model-context-protocol" },
+      { name: "MCP confié à une fondation ouverte, décembre 2025", url: "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" },
+      { name: "Mode d'emploi des agents ChatGPT pour Business et Enterprise", url: "https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business" },
+      { name: "Nouveautés de l'offre Business, côté administrateurs", url: "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" },
+      { name: "Combien de crédits consomme un agent ChatGPT", url: "https://help.openai.com/en/articles/11481834-chatgpt-rate-card-business-enterpriseedu-credit-based-pricing" },
+      { name: "Tâches longues avec ChatGPT Work et Codex", url: "https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex" },
+      { name: "Chronologie des versions de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+      { name: "Crédits et prix de Copilot Studio en France", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
+      { name: "Copilot Cowork : actions, accords et tâches planifiées", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+      { name: "Copilot Chat, licence Copilot et agents compris", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
+      { name: "Claude chez Microsoft : sous-traitance et réglages pour l'Europe", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
+      { name: "Lancement de Manus 2.0, 28 septembre 2026", url: "https://manus.im/fr/blog/introducing-manus-2-0" },
+      { name: "Manus redevient indépendant, 1er septembre 2026", url: "https://manus.im/fr/blog/manus-resumes-independent-operations" },
+      { name: "Annonce du rapprochement de Manus avec Meta, décembre 2025", url: "https://manus.im/fr/blog/manus-joins-meta-for-next-era-of-innovation" },
+      { name: "Forfaits en crédits de Manus", url: "https://manus.im/pricing" },
     ],
 
     realCases: [
       {
         scenario: "Agent qui qualifie automatiquement les prospects entrants (200 par semaine)",
         feature: "Cas commercial : tri, enrichissement, notification",
-        verdictText: "**Microsoft Copilot Studio gagne** si vous êtes sur Microsoft 365 : gouvernance centralisée, agents publiés dans Copilot inclus avec la licence, crédits pour les agents autonomes. Un **agent d'espace de travail ChatGPT** monte le même cas sans code et se déclenche par API depuis votre formulaire ; chiffrez les crédits de 200 exécutions par semaine, sachant qu'OpenAI estime une exécution typique entre 5 et 25 crédits. Pour un branchement sur une API interne, **Claude avec MCP** reste le plus souple.",
+        verdictText: "**Microsoft Copilot Studio gagne** si vous êtes sur Microsoft 365 : gouvernance centralisée, agents publiés dans Copilot compris dans la licence, crédits pour les agents autonomes. Côté OpenAI, un **agent ChatGPT** monte le même cas sans code et démarre par API depuis votre formulaire ; chiffrez les crédits de 200 exécutions par semaine, sachant qu'OpenAI estime une exécution typique entre 5 et 25 crédits. Pour un branchement sur une API interne, **Claude avec MCP** reste le plus souple.",
         winner: "copilot",
       },
       {
         scenario: "Agent qui prépare votre journée chaque matin (courriels, agenda, priorités)",
         feature: "Cas quotidien : assistant personnel",
-        verdictText: "**Les agents ChatGPT gagnent** sur la simplicité : déclencheur à 7 h, sources (messagerie, agenda) et format se décrivent en langage naturel. **Microsoft Copilot** fait l'équivalent dans Outlook avec Cowork et ses invites planifiées. **Claude** planifie aussi la tâche depuis la conversation, avec ses connecteurs de messagerie.",
+        verdictText: "**Les agents ChatGPT gagnent** sur la simplicité : déclencheur à 7 h, sources (messagerie, agenda) et format se décrivent en langage naturel. **Microsoft Copilot** fait l'équivalent dans Outlook, grâce aux tâches planifiées de Cowork. **Claude** planifie aussi la tâche depuis la conversation, avec ses connecteurs de messagerie.",
         winner: "chatgpt",
       },
       {
@@ -1731,7 +1832,7 @@ export const COMPARISONS = {
       {
         scenario: "Agent qui gère le support client de premier niveau (questions fréquentes et escalade)",
         feature: "Cas service client : support automatisé",
-        verdictText: "**Microsoft Copilot Studio** est le plus outillé pour un agent ouvert à vos clients sur le site web : canaux externes, supervision par l'administrateur, crédits Copilot à prévoir. Un **agent d'espace de travail ChatGPT** connecté au CRM et à Slack convient à une équipe support interne ; surveillez la consommation de crédits sur un canal qui tourne en continu.",
+        verdictText: "**Microsoft Copilot Studio** est le plus outillé pour un agent ouvert à vos clients sur le site web : canaux externes, supervision par l'administrateur, crédits Copilot à prévoir. Un **agent ChatGPT** relié au CRM et à Slack convient à une équipe support interne ; surveillez la consommation de crédits sur un canal qui tourne en continu.",
         winner: "copilot",
       },
       {
@@ -1749,7 +1850,7 @@ export const COMPARISONS = {
       {
         scenario: "Agent qui automatise un processus métier interne (validation et circuit d'approbation)",
         feature: "Cas d'entreprise : industrialisation d'un processus",
-        verdictText: "**Microsoft Copilot Studio gagne** pour les entreprises sur Microsoft 365 : atelier low-code, gouvernance, agents publiés dans Copilot inclus avec la licence. C'est le terrain pour lequel Microsoft a construit cet outil.",
+        verdictText: "**Microsoft Copilot Studio gagne** pour les entreprises sur Microsoft 365 : atelier low-code, gouvernance, agents publiés dans Copilot sans surcoût pour les titulaires de la licence. C'est le terrain pour lequel Microsoft a construit cet outil.",
         winner: "copilot",
       },
       {
@@ -1767,19 +1868,19 @@ export const COMPARISONS = {
       },
       {
         title: "Budgéter les licences sans budgéter les exécutions",
-        desc: "L'écart entre le devis et la facture vient presque toujours de là. Depuis le 6 juillet 2026, les exécutions d'agents ChatGPT consomment des crédits au-delà de l'enveloppe incluse ; Copilot Studio se paie en crédits pour les agents autonomes, et Copilot Cowork à l'usage. Un agent qui tourne toutes les heures ne coûte pas le prix d'un agent hebdomadaire : chiffrez le volume d'exécutions avant de valider.",
+        desc: "L'écart entre le devis et la facture vient presque toujours de là. Depuis le 6 juillet 2026, chaque exécution d'un agent ChatGPT entame un stock de crédits dès que l'enveloppe comprise dans le siège est vide ; chez Microsoft, les agents autonomes de Copilot Studio vident un pack de crédits et Copilot Cowork se facture à la consommation. Un agent qui tourne toutes les heures ne coûte pas le prix d'un agent hebdomadaire : chiffrez le volume d'exécutions avant de valider.",
       },
       {
         title: "Croire que les Skills sont une invention d'OpenAI",
-        desc: "Anthropic a lancé les Skills le 16 octobre 2025 et publié leur format, Agent Skills, en standard ouvert le 18 décembre 2025 ; Manus l'a adopté en janvier 2026. Même logique pour MCP, le standard de connexion aux outils créé par Anthropic et adopté par ChatGPT, Gemini et Microsoft Copilot. Cadrez vos automatisations sur ces formats ouverts pour limiter la dépendance à un atelier propriétaire.",
+        desc: "Anthropic a lancé les Skills le 16 octobre 2025 et publié leur format, Agent Skills, en standard ouvert le 18 décembre 2025 ; Manus l'a adopté en janvier 2026. Même logique pour MCP, le protocole de connexion aux outils qu'Anthropic a conçu et que ses concurrents (ChatGPT, Gemini, Microsoft Copilot) ont adopté. Cadrez vos automatisations sur ces formats ouverts pour limiter la dépendance à un atelier propriétaire.",
       },
       {
         title: "Négliger la gouvernance des données",
-        desc: "Un agent qui accède à vos courriels, votre CRM ou votre intranet dispose d'un niveau de privilège élevé : il peut écrire à des clients, modifier des données, déclencher des achats. Fixez un périmètre d'action, une validation humaine pour toute action irréversible et des journaux. Les éditeurs vont dans ce sens : Claude demande avant d'agir, ChatGPT soumet les écritures à validation, Copilot Cowork fait approuver chaque action.",
+        desc: "Un agent qui accède à vos courriels, votre CRM ou votre intranet dispose d'un niveau de privilège élevé : il peut écrire à des clients, modifier des données, déclencher des achats. Fixez un périmètre d'action, une validation humaine pour toute action irréversible et des journaux. Les éditeurs vont dans ce sens : Claude demande avant d'agir, ChatGPT soumet les écritures à validation, Copilot Cowork réclame un accord avant toute action sensible.",
       },
       {
         title: "Sous-estimer les coûts cachés",
-        desc: "Les agents d'espace de travail ChatGPT supposent l'offre Business, plus des crédits au-delà de l'enveloppe. Copilot Studio se facture en crédits hors des agents publiés dans Copilot. Claude est inclus dès l'offre Pro, mais un branchement MCP sur vos outils internes demande du travail technique. Ajoutez la mise en place et la formation au budget.",
+        desc: "Côté OpenAI, il faut l'offre Business, puis des crédits une fois l'enveloppe consommée. Copilot Studio se facture en crédits hors des agents publiés dans Copilot. Claude est inclus dès l'offre Pro, mais un branchement MCP sur vos outils internes demande du travail technique. Ajoutez la mise en place et la formation au budget.",
       },
       {
         title: "Penser qu'un agent IA remplace une équipe",
@@ -1787,26 +1888,26 @@ export const COMPARISONS = {
       },
       {
         title: "Ignorer la localisation des données traitées par l'agent",
-        desc: "Un agent transmet les données qu'il manipule aux serveurs de l'éditeur. Copilot garde le trafic des utilisateurs européens dans l'EU Data Boundary (le périmètre européen de traitement de Microsoft), hors modèles d'Anthropic ; ChatGPT Enterprise propose stockage et inférence en Europe aux clients éligibles ; Anthropic n'a pas de région européenne. Pour les flux les plus sensibles, un agent sur un modèle à poids ouverts hébergé chez vous reste l'option la plus sûre.",
+        desc: "Un agent transmet les données qu'il manipule aux serveurs de l'éditeur. Copilot traite les demandes européennes dans l'EU Data Boundary, la zone de traitement que Microsoft réserve à l'Europe, sauf quand un modèle d'Anthropic répond ; ChatGPT Enterprise ouvre stockage et calcul européens aux clients admissibles ; Claude n'a aucune région en Europe dans les applications d'Anthropic. Pour les flux les plus sensibles, un agent sur un modèle à poids ouverts hébergé chez vous reste l'option la plus sûre.",
       },
     ],
 
     faq: [
       {
-        q: "Qu'est-ce qu'un agent IA ?",
-        a: "Un agent IA est un système fondé sur un grand modèle de langage qui **agit** en plus de rédiger : il envoie un courriel, consulte un CRM, navigue sur le web ou manipule des fichiers, en enchaînant les étapes sans relance. C'est ce qui le distingue d'un assistant de conversation classique. Notre glossaire IA en donne la définition complète.",
+        q: "Qu'appelle-t-on un agent IA ?",
+        a: "C'est un programme construit autour d'un modèle de langage qui **passe à l'action** : il envoie un courriel, interroge un CRM, navigue sur le web ou modifie des fichiers, et enchaîne ces étapes sans attendre qu'on le relance. Un assistant de conversation classique répond, puis s'arrête. Notre glossaire IA en donne la définition complète.",
       },
       {
         q: "Quel est le meilleur agent IA pour une PME française en 2026 ?",
-        a: "Sur Microsoft 365 : **Copilot Studio**, pour la gouvernance, avec Copilot Cowork pour exécuter des tâches. Sur une pile hétérogène : les **agents d'espace de travail ChatGPT**, sur l'offre Business, les plus rapides à monter sans code. Pour automatiser un travail de bureau sur des fichiers : **Claude**, dès l'offre Pro à 20 $. Pour brancher l'agent sur vos outils internes : **Claude avec MCP**. Pour des essais individuels : **Manus**.",
+        a: "Sur Microsoft 365 : **Copilot Studio**, pour la gouvernance, avec Copilot Cowork pour exécuter des tâches. Sur un parc d'outils hétérogène : les **agents ChatGPT** de l'offre Business, les plus rapides à monter sans code. Pour automatiser un travail de bureau sur des fichiers : **Claude**, dès l'offre Pro à 20 $. Pour brancher l'agent sur vos outils internes : **Claude avec MCP**. Pour des essais individuels : **Manus**.",
       },
       {
         q: "Combien coûte un agent IA en entreprise ?",
-        a: "La licence n'est que la première ligne. **ChatGPT** : Business à 21 € par utilisateur et par mois en annuel, plus des crédits au-delà de l'enveloppe incluse (OpenAI estime une exécution typique d'agent entre 5 et 25 crédits). **Microsoft** : licence Microsoft 365 Copilot à 26 € HT, crédits Copilot pour les agents autonomes, Copilot Cowork à l'usage. **Claude** : dès l'offre Pro à 20 $. S'ajoutent la mise en place (connexion aux outils, tests, gouvernance) et la formation des équipes.",
+        a: "La licence n'est que la première ligne. **ChatGPT** : Business à 21 € le siège chaque mois en formule annuelle, puis des crédits une fois l'enveloppe consommée (de 5 à 25 crédits pour une exécution typique, d'après OpenAI). **Microsoft** : licence Microsoft Copilot à 26 € HT, crédits Copilot pour les agents autonomes, Copilot Cowork à la consommation. **Claude** : dès l'offre Pro à 20 $. Viennent ensuite la mise en place (connexion aux outils, tests, gouvernance) et l'apprentissage par les utilisateurs.",
       },
       {
-        q: "Quelle est la différence entre Claude Cowork et les agents d'espace de travail ChatGPT ?",
-        a: "**Cowork** agit sur des fichiers et des applications : il ouvre vos documents, les modifie, en crée de nouveaux et enchaîne les étapes ; depuis le 16 septembre 2026, ces capacités sont disponibles dans n'importe quelle conversation de Claude, dès l'offre Pro. Les **agents d'espace de travail ChatGPT** vivent dans le cloud : on décrit leur rôle, leur déclencheur et leurs règles, on les partage dans l'équipe et on les planifie ; ils supposent l'offre Business et consomment des crédits depuis juillet 2026. Résumé pratique : Claude pour produire des livrables, les agents ChatGPT pour orchestrer un processus d'équipe.",
+        q: "Claude Cowork ou agents ChatGPT : en quoi diffèrent-ils ?",
+        a: "**Cowork** agit sur des fichiers et des applications : il ouvre vos documents, les modifie, en crée de nouveaux et enchaîne les étapes ; depuis le 16 septembre 2026, ces capacités sont disponibles dans n'importe quelle conversation de Claude, dès l'offre Pro. Les **agents ChatGPT** vivent dans le cloud : on décrit leur rôle, leur déclencheur et leurs règles, on les partage dans l'équipe et on les planifie ; ils supposent l'offre Business et consomment des crédits depuis juillet 2026. Résumé pratique : Claude pour produire des livrables, les agents ChatGPT pour orchestrer un processus d'équipe.",
       },
       {
         q: "Les Skills sont-elles une nouveauté d'OpenAI ?",
@@ -1814,19 +1915,19 @@ export const COMPARISONS = {
       },
       {
         q: "Les agents IA sont-ils sûrs en entreprise ?",
-        a: "Tout dépend de la gouvernance mise en place : périmètre d'action limité, validation humaine pour toute action irréversible, journaux détaillés, tests réguliers, charte d'usage. Les éditeurs fournissent les garde-fous : Claude demande avant d'agir par défaut, ChatGPT soumet les écritures des agents à validation et OpenAI recommande des comptes de service pour les connexions partagées, Copilot Cowork fait approuver chaque action.",
+        a: "Tout dépend de la gouvernance mise en place : périmètre d'action limité, validation humaine pour toute action irréversible, journaux détaillés, tests réguliers, charte d'usage. Les éditeurs fournissent les garde-fous : Claude demande avant d'agir par défaut, ChatGPT soumet les écritures des agents à validation et OpenAI recommande des comptes de service pour les connexions partagées, Copilot Cowork demande l'accord avant chaque action sensible.",
       },
       {
         q: "Qu'est-ce que MCP (Model Context Protocol) ?",
-        a: "MCP est un standard ouvert lancé par Anthropic le 25 novembre 2024 pour connecter un assistant à des outils tiers (bases de données, API, fichiers) de façon uniforme. Anthropic l'a confié le 9 décembre 2025 à l'Agentic AI Foundation, un fonds de la Linux Foundation cofondé avec Block et OpenAI ; ChatGPT, Cursor, Gemini et Microsoft Copilot l'ont adopté. On le compare souvent à un port USB-C pour les agents.",
+        a: "MCP est un standard ouvert lancé par Anthropic le 25 novembre 2024 pour connecter un assistant à des outils tiers (bases de données, API, fichiers) de façon uniforme. Depuis décembre 2025, une fondation hébergée par la Linux Foundation, l'Agentic AI Foundation, que Block et OpenAI ont cofondée avec Anthropic, en assure la gouvernance ; ChatGPT, Cursor, Gemini et Microsoft Copilot l'ont adopté. On le compare souvent à un port USB-C pour les agents.",
       },
       {
         q: "Faut-il des compétences techniques pour déployer un agent IA ?",
-        a: "Pas nécessairement. **Microsoft Copilot Studio** (low-code), les **agents d'espace de travail ChatGPT** (description en langage naturel) et **Manus** sont accessibles à des profils fonctionnels formés. **Claude** s'utilise sans code sur des tâches de bureau, mais brancher MCP sur vos outils internes demande un profil technique. Une progression sûre : un agent simple sur un cas balisé, puis la montée en complexité une fois la valeur prouvée.",
+        a: "Pas nécessairement. **Microsoft Copilot Studio** (low-code), les **agents ChatGPT** (description en langage naturel) et **Manus** sont accessibles à des profils fonctionnels formés. **Claude** s'utilise sans code sur des tâches de bureau, mais brancher MCP sur vos outils internes demande un profil technique. Une progression sûre : un agent simple sur un cas balisé, puis la montée en complexité une fois la valeur prouvée.",
       },
       {
         q: "Comment former une équipe à utiliser des agents IA ?",
-        a: "La formation part des usages de base (formulation des demandes, procédures réutilisables) avant les agents autonomes, puis couvre la gouvernance : périmètre d'action, validation humaine, journaux. Masteria facture **1 980 € HT la journée** en intra pour le groupe (jusqu'à 12 participants), TVA de 20 % en sus ; selon votre branche, votre OPCO peut financer la session.",
+        a: "On commence par les bases (formuler une demande, écrire une procédure réutilisable) avant de passer aux agents autonomes, puis on traite la gouvernance : périmètre d'action, validation humaine, journaux. Chez Masteria, la journée intra se facture **1 980 € HT**, TVA de 20 % à ajouter, pour douze personnes au maximum ; l'OPCO de votre branche décidera de la financer ou non selon ses critères.",
       },
       {
         q: "Manus est-il une alternative sérieuse aux agents ChatGPT ?",
@@ -1853,29 +1954,54 @@ export const COMPARISONS = {
     slug: "mistral-vs-chatgpt",
     metaTitle: "Mistral (Vibe) vs ChatGPT 2026 : lequel choisir ? | Masteria",
     metaDesc:
-      "Mistral AI (Vibe) ou ChatGPT : hébergement UE, modèles à poids ouverts, entraînement sur vos données, fonctions, prix. Comparatif vérifié le 3 octobre 2026.",
+      "Mistral AI (Vibe) ou ChatGPT : données dans l'UE, poids ouverts, entraînement sur vos échanges, fonctions et prix. Comparatif revu le 7 octobre 2026.",
     h1: "Mistral AI vs ChatGPT : souveraineté française ou écosystème américain ?",
     intro:
-      "**Mistral AI**, dont l'assistant **Vibe** a remplacé Le Chat le 28 mai 2026, face à **ChatGPT** (OpenAI), qui tourne sur **GPT-5.6** dans la conversation et sur **GPT-6** dans son mode Work : sous la question patriotique se cache un choix structurant. Où sont traitées vos données, ce que vous pouvez déployer dans votre propre infrastructure, ce que chaque outil fait au-delà de la rédaction, et ce qu'il fait de vos échanges. Comparatif établi par une équipe qui forme aux deux outils.",
+      "Depuis le 28 mai 2026, l'assistant de **Mistral AI** s'appelle **Vibe**. En face, **ChatGPT** (OpenAI) converse avec **GPT-5.6** et confie ses tâches longues à la famille **GPT-6**. Derrière le réflexe patriotique, le choix tient en quatre questions concrètes : où vos données sont traitées, ce que vous pouvez installer sur vos propres serveurs, ce que l'outil sait faire au-delà de la rédaction, et l'usage qu'il fait de vos échanges. Nous formons des équipes aux deux outils ; ce comparatif rassemble ce que nous en retenons au 7 octobre 2026.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "3 octobre 2026",
+    verifiedOn: "7 octobre 2026",
     datePublished: "2026-06-02",
-    dateModified: "2026-10-03",
+    dateModified: "2026-10-07",
     readTime: "9 minutes",
     keywords:
-      "mistral vs chatgpt, vibe mistral, le chat renommé vibe, ia souveraine française, mistral poids ouverts, mistral medium 3.5, comparatif mistral chatgpt 2026, gpt-6, ia hébergée en europe",
+      "mistral vs chatgpt, vibe mistral, le chat renommé vibe, ia souveraine française, mistral poids ouverts, mistral medium 3.5, mistral large 4, comparatif mistral chatgpt 2026, gpt-6, ia hébergée en europe",
+
+    // ─── Textes de section propres à ce comparatif (lus par ComparisonPage via `textes`)
+    textes: {
+      legende: "Mistral AI et ChatGPT au 7 octobre 2026, d'après les pages de Mistral AI et d'OpenAI.",
+      criteres: "Sept critères, du lieu de traitement des données au prix d'un siège, établis à partir des pages officielles et de nos sessions sur Vibe et ChatGPT.",
+      casTitre: "Trois dossiers où la question des données change le verdict",
+      cas: "Un appel d'offres public, une campagne multicanal, des rapports de R&D confidentiels : trois demandes où l'hébergement compte autant que la qualité du texte.",
+      metiersTitre: "Le bon choix selon votre secteur ou votre fonction",
+      metiers: "Nos recommandations varient avec le secteur et la sensibilité des fichiers manipulés ; elles viennent des formations Mistral et ChatGPT que nous animons.",
+      erreursTitre: "Quatre erreurs quand on oppose Mistral et ChatGPT",
+      erreurs: "Ces confusions reviennent dès qu'une équipe parle d'IA souveraine.",
+      alternativesTitre: "Trois autres options à mettre dans la balance",
+      alternatives: "Si ni Mistral ni ChatGPT ne coche toutes vos cases, ces outils méritent un essai.",
+      ctaTitre: "Essayez Vibe et ChatGPT sur vos propres documents",
+      ctaTexte: "La formation multi-outils de Masteria fait travailler vos équipes deux jours sur Vibe, ChatGPT, Claude, Copilot et Gemini, avec leurs dossiers et une règle nette sur les informations autorisées à quitter l'entreprise. Organisme certifié Qualiopi au titre des actions de formation, Masteria prépare programme et convention ; l'OPCO de votre branche décide ensuite s'il finance la session, selon ses règles.",
+    },
+
+    // ─── Ce que nos formations ont montré (sources : missions-formation.js, etudes-de-cas.js cas `photovoltaique`)
+    terrain: {
+      titre: "Ce que nos formations Mistral et ChatGPT ont montré",
+      paras: [
+        "En septembre 2026, une [interprofession agricole](/etudes-de-cas-ia#mission-interprofession-agricole) et son syndicat de producteurs ont mis Vibe et ChatGPT côte à côte, avec quatre autres assistants, sur des documents publics du secteur. Le groupe a terminé la plénière avec sa propre grille de choix, puis chaque participant a appris à ranger ses situations en trois cases (autorisé, à vérifier, interdit) selon le compte utilisé et la nature des données.",
+        "Chez une [PME de distribution photovoltaïque](/etudes-de-cas-ia#photovoltaique), la confidentialité a été posée comme condition de départ : abandon des abonnements personnels au profit de comptes que l'entreprise administre, aucune donnée réutilisée pour entraîner les modèles, et une inscription au registre RGPD. Sur Vibe, c'est le premier réglage que nous faisons vérifier, puisque l'entraînement y reste actif par défaut hors offre Enterprise.",
+      ],
+    },
 
     // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
     answerBox: {
-      question: "Mistral (Vibe) ou ChatGPT : lequel choisir en 2026 ?",
+      question: "Vibe ou ChatGPT : que choisir pour vos équipes en 2026 ?",
       answer:
-        "Choisissez **Mistral AI** si la localisation des données est une contrainte : éditeur français, données hébergées dans l'Union européenne par défaut, et des modèles à poids ouverts (téléchargeables et exécutables sur vos serveurs) jusqu'à son modèle phare, **Mistral Medium 3.5**. Point à régler dès le départ : hors offre Enterprise, Mistral utilise les échanges Vibe pour entraîner ses modèles tant que l'utilisateur ne s'y oppose pas. Choisissez **ChatGPT** pour la couverture fonctionnelle la plus large : GPT-5.6 Sol dans la conversation, GPT-6 dans ChatGPT Work et Codex, ChatGPT Images 2.5, agents d'espace de travail. Une stratégie efficace consiste à cartographier les flux : ce qui est sensible part chez Mistral ou en interne, le reste va à l'outil préféré des équipes.",
+        "Prenez **Mistral AI** quand l'endroit où vivent vos données pèse dans la décision : l'éditeur est français, Vibe stocke par défaut dans l'Union européenne, et ses modèles à poids ouverts (téléchargeables pour tourner sur vos serveurs) vont jusqu'à **Mistral Medium 3.5**, son modèle phare. Un réglage s'impose dès l'ouverture : hors Enterprise, Mistral entraîne ses modèles sur les échanges Vibe sauf refus de l'utilisateur, et sur Team l'administrateur peut couper cet usage pour tout le monde. Prenez **ChatGPT** pour l'étendue des fonctions : GPT-5.6 Sol dans la conversation, famille GPT-6 dans ChatGPT Work et Codex, ChatGPT Images 2.5, agents d'équipe. La méthode qui fonctionne consiste à classer vos flux : le sensible va chez Mistral ou reste en interne, le reste suit l'outil que les équipes préfèrent.",
       bullets: [
-        "Secteur public, défense, santé, données à garder dans l'UE : Mistral",
-        "Déploiement sur votre propre infrastructure : Mistral, avec ses modèles à poids ouverts",
-        "Images et écosystème de plugins : ChatGPT",
-        "Agents d'équipe clés en main : ChatGPT",
-        "Rédaction professionnelle courante en français : les deux",
+        "Secteur public, défense, santé : Mistral, données dans l'UE",
+        "Modèle installé sur vos propres serveurs : Mistral et ses poids ouverts",
+        "Visuels et plugins : ChatGPT",
+        "Agents d'équipe prêts à l'emploi : ChatGPT",
+        "Courriels, notes et synthèses en français : l'un ou l'autre",
       ],
     },
 
@@ -1883,9 +2009,9 @@ export const COMPARISONS = {
       id: "mistral",
       name: "Mistral AI",
       editor: "Mistral AI",
-      currentModel: "Mistral Medium 3.5 · Large 3 · Small 4 · assistant Vibe",
+      currentModel: "Medium 3.5, Large 3, Small 4, Large 4 en préversion par API · assistant Vibe",
       country: "France",
-      pricing: "Vibe gratuit · Pro 17,99 € TTC/mois · Team 29,99 € TTC/utilisateur · Enterprise sur devis · modèles à poids ouverts",
+      pricing: "Vibe gratuit · Pro 17,99 € TTC par mois · Team 29,99 € TTC par utilisateur · Enterprise sur devis · poids ouverts téléchargeables",
       foundedAI: "2023",
       color: "#FF7000",
     },
@@ -1893,234 +2019,235 @@ export const COMPARISONS = {
       id: "chatgpt",
       name: "ChatGPT",
       editor: "OpenAI",
-      currentModel: "GPT-5.6 dans la conversation · GPT-6 Astra et GPT-6.1 Sol dans Work et Codex",
+      currentModel: "Échanges sur GPT-5.6 Sol, tâches longues et code sur la famille GPT-6",
       country: "États-Unis",
-      pricing: "Go 8 € · Plus 23 € · Pro dès 103 € · Business 21 €/utilisateur en annuel (prix France)",
+      pricing: "Go 8 € · Plus 23 € · Business 21 € par siège (annuel) · Pro dès 103 € · grille France",
       foundedAI: "2022",
       color: "#10A37F",
     },
 
     // ─── GEO : tableau de faits datés, lisible en HTML brut par un moteur génératif
     keyFacts: {
-      title: "L'essentiel en un tableau",
-      note: "Faits vérifiés le 3 octobre 2026 sur les pages officielles de Mistral AI et d'OpenAI, avec les prix affichés pour la France. Mistral affiche ses prix toutes taxes comprises ou hors taxes au choix ; nous retenons le prix TTC.",
+      title: "Mistral et ChatGPT en dix lignes",
+      note: "Données relues le 7 octobre 2026 chez Mistral AI et chez OpenAI. Mistral affiche ses prix hors taxes en dollars (Pro 14,99 $, Team 24,99 $) ; les montants toutes taxes comprises en euros proviennent de notre relevé du 3 octobre. OpenAI ne dit pas si sa grille française s'entend HT ou TTC.",
       rows: [
-        { criterion: "Assistant grand public", a: "Vibe, anciennement Le Chat, depuis le 28 mai 2026, en modes Work, Code et Chat", b: "ChatGPT, en modes Chat et Work, plus Codex" },
-        { criterion: "Modèles actuels", a: "Mistral Medium 3.5, Mistral Large 3, Mistral Small 4, Devstral 2 pour le code", b: "GPT-5.6 Sol dans la conversation, GPT-6 Pro sur Business, GPT-6 Astra et GPT-6.1 Sol dans Work et Codex" },
-        { criterion: "Contexte dans le chat", a: "Non détaillé par offre", b: "54 000 tokens en mode instantané, 256 000 en raisonnement (Plus, Business)" },
-        { criterion: "Contexte via API", a: "256 000 tokens (Medium 3.5, Large 3)", b: "1 050 000 tokens (modèles GPT-6)" },
-        { criterion: "Déploiement sur vos serveurs", a: "Oui : modèles à poids ouverts et offre Enterprise sur site ou en cloud privé", b: "Non pour ChatGPT ; modèles ouverts gpt-oss publiés à part en août 2025" },
-        { criterion: "Hébergement par défaut", a: "Union européenne, avec des transferts ponctuels possibles selon la fonction", b: "Hors Europe ; stockage et inférence en Europe sur Enterprise et Edu (clients éligibles)" },
-        { criterion: "Entraînement sur vos échanges", a: "Oui par défaut hors Enterprise, désactivable ; non par défaut sur Enterprise", b: "Non sur Business et Enterprise ; refus possible sur les offres individuelles" },
-        { criterion: "Génération d'images et de vidéo", a: "Images dans Vibe", b: "Images avec ChatGPT Images 2.5 ; plus de vidéo depuis l'arrêt de Sora le 26 avril 2026" },
-        { criterion: "Mode agent", a: "Vibe Work : outils, étapes, tâches planifiées ; connecteurs et MCP personnalisés en bêta", b: "ChatGPT Work et agents d'espace de travail, crédits au-delà de l'enveloppe incluse" },
-        { criterion: "Prix", a: "Pro 17,99 € TTC, Team 29,99 € TTC par utilisateur et par mois", b: "Plus 23 €, Business 21 € par utilisateur et par mois en annuel" },
+        { criterion: "Assistant", a: "Vibe depuis le 28 mai 2026 ; conversation et mode Work réunis le 22 septembre, Vibe Code pour les développeurs", b: "ChatGPT : conversation, ChatGPT Work, Codex" },
+        { criterion: "Modèles", a: "Mistral Medium 3.5 (code compris), Large 3, Small 4 ; Large 4 en préversion par API", b: "GPT-5.6 Sol en conversation ; GPT-6 Pro ajouté pour Business ; Astra et GPT-6.1 Sol dans Work et Codex" },
+        { criterion: "Contexte dans l'interface", a: "Non publié par offre", b: "Plus et Business : 256 000 tokens si le modèle raisonne, 54 000 en réponse rapide" },
+        { criterion: "Contexte par l'API", a: "256 000 tokens pour Medium 3.5 et Large 3", b: "1 050 000 tokens pour la famille GPT-6" },
+        { criterion: "Installation chez vous", a: "Oui : poids ouverts, ou offre Enterprise sur site et en cloud privé", b: "Pas pour ChatGPT ; gpt-oss, modèles ouverts publiés en août 2025" },
+        { criterion: "Lieu de stockage", a: "Union européenne par défaut, transferts ponctuels selon la fonction", b: "Hors d'Europe par défaut ; Enterprise et Edu peuvent tout garder en Europe" },
+        { criterion: "Entraînement sur vos échanges", a: "Actif par défaut sauf Enterprise ; coupé par l'utilisateur, ou par l'administrateur sur Team", b: "Exclu sur Business et Enterprise ; refus possible sur les offres individuelles" },
+        { criterion: "Images et vidéo", a: "Images générées dans Vibe", b: "ChatGPT Images 2.5 ; vidéo arrêtée avec Sora en 2026" },
+        { criterion: "Agents et automatisations", a: "Skills (à la place des agents depuis le 22 septembre), tâches planifiées, MCP ajoutés par l'administrateur", b: "ChatGPT Work et agents d'équipe, payés en crédits passé l'enveloppe du siège" },
+        { criterion: "Prix mensuel", a: "Pro 17,99 € TTC ; Team 29,99 € TTC par utilisateur", b: "Plus 23 € ; Business 21 € le siège en formule annuelle" },
       ],
     },
 
     verdict: {
-      title: "Verdict en 30 secondes",
+      title: "Notre lecture en trente secondes",
       summary:
-        "**Mistral AI** est le choix de l'hébergement européen et de la maîtrise : éditeur français, données dans l'UE par défaut, modèles à poids ouverts déployables dans votre infrastructure, offre Enterprise sur site. Son assistant **Vibe** a remplacé Le Chat le 28 mai 2026 et réunit un mode Work et un mode Code. **ChatGPT** garde l'avantage sur l'étendue fonctionnelle : ChatGPT Work, ChatGPT Images 2.5, agents d'espace de travail, Codex. Pour les secteurs régulés et la commande publique, Mistral coche plus de cases ; pour la couverture la plus large au quotidien, ChatGPT reste devant. Dans les deux cas, réglez l'usage des données pour l'entraînement, actif par défaut sur Vibe hors Enterprise.",
-      recommendA: ["Secteur public et défense", "Données sensibles (santé, juridique, banque)", "Exigence RGPD stricte ou hébergement dans l'UE", "Déploiement sur site ou auto-hébergé"],
-      recommendB: ["Polyvalence maximale au quotidien", "Images et contenus visuels", "Agents d'équipe et plugins", "Équipes déjà habituées à ChatGPT"],
+        "**Mistral AI** l'emporte quand vous devez garder la main sur vos données : éditeur français, stockage dans l'UE par défaut, modèles à poids ouverts installables chez vous, offre Enterprise sur site. Son assistant **Vibe** rassemble depuis le 22 septembre 2026 la conversation et le mode Work, avec Vibe Code pour les développeurs. **ChatGPT** reste devant sur l'étendue des fonctions : ChatGPT Work, ChatGPT Images 2.5, agents d'équipe, Codex. Secteurs régulés et commande publique penchent vers Mistral ; un usage polyvalent au quotidien penche vers ChatGPT. Dans les deux cas, vérifiez si vos échanges servent à entraîner les modèles : c'est le cas par défaut sur Vibe, hors Enterprise. Pour passer à la pratique : [formation Mistral AI](/formation-mistral-ai) ou [formation ChatGPT](/formation-chatgpt).",
+      recommendA: ["Administrations et défense", "Fichiers sensibles : santé, droit, banque", "Hébergement imposé dans l'Union européenne", "Modèle installé sur vos propres machines"],
+      recommendB: ["Un outil unique pour des usages variés", "Visuels et contenus de campagne", "Agents d'équipe et plugins", "Équipes déjà formées à ChatGPT"],
     },
 
     criteria: [
       {
-        title: "Souveraineté et hébergement des données",
+        title: "Où vivent vos données",
         descriptionA:
-          "Entreprise française, données hébergées dans l'Union européenne par défaut ; certaines fonctions peuvent transférer ponctuellement des données vers des sous-traitants hors UE, encadrés par les clauses contractuelles types de la Commission. Surtout, les modèles à poids ouverts tournent dans votre propre centre de données, et l'offre Enterprise propose un déploiement sur site ou en cloud privé.",
+          "Mistral AI, société française, conserve d'office les données sur le territoire de l'Union européenne. Elles ne rejoignent les États-Unis que si vous optez pour l'adresse américaine de l'API ; quelques fonctions font aussi appel à des sous-traitants hors UE, qu'un client Enterprise peut faire désactiver. Les modèles à poids ouverts tournent dans votre propre centre de données, et l'offre Enterprise s'installe sur site ou en cloud privé.",
         descriptionB:
-          "Données traitées par OpenAI hors d'Europe par défaut. ChatGPT Enterprise et Edu peuvent stocker et traiter les contenus en Europe pour les clients éligibles ; Business propose le stockage en Europe en déploiement, sans inférence européenne. ChatGPT ne s'installe pas chez vous.",
+          "OpenAI traite les données hors d'Europe par défaut. Un client Enterprise ou Edu qui y a droit peut stocker ses contenus et faire calculer les réponses en Europe ; Business propose un stockage européen en cours de déploiement, sans calcul européen. ChatGPT ne s'installe pas sur vos serveurs.",
         winner: "a",
-        winnerText: "Avantage net Mistral, seul des deux à proposer l'auto-hébergement de l'assistant",
+        winnerText: "Net avantage Mistral, seul des deux à s'installer chez vous",
       },
       {
-        title: "Qualité en français et rédaction",
+        title: "Rédaction en français",
         descriptionA:
-          "Bon niveau sur la rédaction professionnelle courante : courriels, notes, synthèses. En mise en situation, l'écart avec ChatGPT ne se voit pas sur ces formats.",
+          "Bon niveau sur les écrits professionnels du quotidien : courriels, notes, synthèses. En atelier, la différence avec ChatGPT ne se voit pas sur ces formats.",
         descriptionB:
-          "Bon niveau aussi, avec un avantage sur les formats créatifs et les textes longs en mise en situation.",
+          "Bon niveau aussi, avec un léger avantage en atelier sur les formats créatifs et les textes longs.",
         winner: "tie",
-        winnerText: "Match nul sur le français professionnel courant",
+        winnerText: "Égalité sur le français de tous les jours",
       },
       {
-        title: "Fonctionnalités et écosystème",
+        title: "Fonctions et écosystème",
         descriptionA:
-          "Vibe réunit recherche web, génération d'images, Canvas (documents, présentations, maquettes), bibliothèques de documents, tâches planifiées et Skills, avec des connecteurs et des MCP personnalisés en bêta. Le mode Code travaille en ligne de commande ou dans VS Code et JetBrains.",
+          "Vibe réunit recherche web, images, Canvas de mini-applications, bibliothèques de documents avec citations, tâches planifiées et Skills ; depuis le 22 septembre 2026, il analyse aussi des fichiers Excel et CSV et crée des classeurs avec formules. Il se connecte à Outlook, Gmail, SharePoint, Slack et GitHub, et l'administrateur peut ajouter des MCP. Vibe Code travaille en ligne de commande, dans VS Code ou sur le web.",
         descriptionB:
-          "ChatGPT ajoute ChatGPT Work pour les livrables complets, des agents d'espace de travail partagés, les Sites et les Pages, des extensions Word, Excel et PowerPoint, la recherche approfondie et un répertoire de plugins.",
+          "ChatGPT ajoute ChatGPT Work pour les livrables complets, des agents d'équipe partagés, des extensions Word, Excel et PowerPoint, la recherche approfondie et des plugins que l'administrateur Business gère depuis le 1er octobre 2026.",
         winner: "b",
-        winnerText: "Avantage ChatGPT sur la richesse fonctionnelle",
+        winnerText: "Avantage ChatGPT sur l'étendue des fonctions",
       },
       {
-        title: "Performance des modèles",
+        title: "Modèles",
         descriptionA:
-          "Mistral présente Medium 3.5 comme un modèle de classe frontière, optimisé pour les agents et le code, qui réunit instruction, raisonnement et programmation avec un effort de raisonnement réglable. Les modèles de raisonnement Magistral sont dépréciés au profit de cette approche unifiée.",
+          "Mistral décrit Medium 3.5 comme un modèle de classe frontière, multimodal, taillé pour les agents et le code. Small 4 rassemble dans un même modèle le suivi d'instructions, le raisonnement et le code, sous licence Apache 2.0, et Magistral est déprécié. Le 6 octobre 2026, Mistral a ajouté Large 4 à sa documentation, en préversion par API.",
         descriptionB:
-          "OpenAI présente GPT-6 Astra comme son modèle le plus capable pour les travaux exigeants, et GPT-6.1 Sol comme proche d'Astra pour un coût inférieur.",
+          "OpenAI présente GPT-6 Astra comme son modèle le plus capable pour les travaux exigeants, et GPT-6.1 Sol comme un proche d'Astra à moindre coût. Dans la conversation des abonnés payants, GPT-5.6 Sol reste le modèle de base.",
         winner: "tie",
-        winnerText: "Match nul sur les tâches courantes, à tester sur vos cas les plus exigeants",
+        winnerText: "Égalité sur le courant ; testez vos cas les plus durs",
       },
       {
-        title: "Confidentialité et conformité (RGPD, AI Act)",
+        title: "RGPD, AI Act et confidentialité",
         descriptionA:
-          "Éditeur européen soumis au RGPD et à l'AI Act, données dans l'UE par défaut, conformité SOC 2 Type II et ISO 27001/27701. Point à régler : hors Enterprise, les échanges Vibe servent à l'entraînement par défaut, et chaque utilisateur doit s'y opposer dans ses réglages.",
+          "Éditeur européen soumis au RGPD et à l'AI Act, données dans l'Union par défaut, certifications ISO 27001 et 27701 et SOC 2 Type II. Point de vigilance : hors Enterprise, les échanges Vibe entraînent les modèles si personne ne refuse ; sur Team, l'administrateur peut couper ce réglage pour toute l'organisation.",
         descriptionB:
-          "OpenAI n'entraîne pas ses modèles sur Business et Enterprise et publie SOC 2 Type II et ISO 27001, 27017, 27018 et 27701. Le transfert vers un acteur américain se documente dans l'analyse d'impact.",
+          "OpenAI exclut les échanges Business et Enterprise de l'entraînement et affiche SOC 2 Type II, ISO 27001, 27017, 27018 et 27701. Le transfert de données vers un prestataire américain s'écrit noir sur blanc dans votre analyse d'impact.",
         winner: "tie",
-        winnerText: "Match nul : hébergement européen chez Mistral, entraînement exclu par défaut chez OpenAI",
+        winnerText: "Égalité : stockage européen chez Mistral, entraînement exclu d'office chez OpenAI",
       },
       {
-        title: "Code et développement",
+        title: "Code",
         descriptionA:
-          "Vibe Code travaille dans le terminal, VS Code ou JetBrains avec Devstral, modèle de code à poids ouverts, et sa ligne de commande accepte tout modèle servi derrière une API compatible avec celle d'OpenAI, y compris hors ligne.",
+          "Vibe Code s'appuie sur Mistral Medium 3.5, puisque l'éditeur a déprécié Devstral 2 le 22 mai 2026. Sa ligne de commande accepte n'importe quel modèle exposé par une API au format d'OpenAI, même sans connexion à internet.",
         descriptionB:
-          "Codex délègue des tâches de développement en local ou dans le cloud, avec GPT-6.1 Sol en cours de déploiement, et propose la revue de pull requests.",
+          "Codex mène des tâches de développement sur le poste ou dans le cloud, relit les pull requests et reçoit GPT-6.1 Sol depuis le 29 septembre 2026.",
         winner: "tie",
-        winnerText: "Match nul : modèles ouverts chez Mistral, agent cloud chez OpenAI",
+        winnerText: "Égalité : modèles ouverts côté Mistral, agent cloud côté OpenAI",
       },
       {
-        title: "Tarifs et coût réel par siège",
+        title: "Prix d'un siège",
         descriptionA:
-          "En France : Pro à 17,99 € TTC par mois (14,99 $ hors taxes en dollars), Team à 29,99 € TTC par utilisateur et par mois, Enterprise sur devis. L'API se facture au token : Mistral Large 3 coûte 0,5 $ le million de tokens en entrée et 1,5 $ en sortie.",
+          "L'abonnement Pro revient à 17,99 € TTC par mois (14,99 $ hors taxes), le siège Team à 29,99 € TTC (facture d'au moins 50 $ par mois), Enterprise sur devis. Par l'API, Mistral Large 3 revient à 0,5 $ le million de tokens lus et à 1,5 $ le million de tokens produits.",
         descriptionB:
-          "En France : Go à 8 €, Plus à 23 €, Pro à partir de 103 € par mois ; Business à 21 € par utilisateur et par mois en annuel ; Enterprise sur devis. ChatGPT Work, Codex et les agents se paient en crédits au-delà de l'enveloppe incluse.",
+          "En France, l'offre Go coûte 8 € par mois, Plus 23 €, Pro à partir de 103 € ; un siège Business coûte 21 € en formule annuelle ou 26 € au mois, et Enterprise se négocie. Au-delà de l'enveloppe comprise, Work, Codex et les agents consomment des crédits.",
         winner: "tie",
-        winnerText: "Avantage Mistral en individuel, match nul en équipe",
+        winnerText: "Mistral moins cher en individuel, ChatGPT Business moins cher en équipe à l'année",
       },
     ],
 
     useCases: [
-      { metier: "Secteur public et parapublic", recommendation: "a", why: "Hébergement dans l'UE par défaut et déploiement sur site possible : le dossier de conformité se construit plus vite." },
-      { metier: "Juridique, santé, banque (données sensibles)", recommendation: "a", why: "Modèles à poids ouverts déployables en interne pour les flux les plus sensibles." },
-      { metier: "Marketing et communication", recommendation: "b", why: "Génération d'images, ChatGPT Work et extensions Office." },
-      { metier: "Industrie et R&D confidentielle", recommendation: "a", why: "L'auto-hébergement traite plans, brevets et données de procédé sans qu'aucune donnée ne sorte." },
-      { metier: "Développement logiciel", recommendation: "tie", why: "Codex pour l'agent cloud ; Vibe Code et Devstral 2 si le code ne doit pas quitter l'infrastructure." },
-      { metier: "Direction générale", recommendation: "tie", why: "ChatGPT pour la polyvalence, Mistral pour les flux sensibles." },
+      { metier: "Secteur public et parapublic", recommendation: "a", why: "Données stockées dans l'Union par défaut et installation sur site possible : le dossier de conformité avance plus vite." },
+      { metier: "Juridique, santé, banque (données sensibles)", recommendation: "a", why: "Les poids ouverts permettent de traiter en interne les dossiers les plus sensibles." },
+      { metier: "Marketing et communication", recommendation: "b", why: "Images, ChatGPT Work et extensions Office dans un même abonnement." },
+      { metier: "Industrie et R&D confidentielle", recommendation: "a", why: "Plans, brevets et données de procédé restent sur vos serveurs avec un modèle auto-hébergé." },
+      { metier: "Développement logiciel", recommendation: "tie", why: "Codex pour déléguer dans le cloud ; Vibe Code et Medium 3.5 quand le code ne doit pas sortir." },
+      { metier: "Direction générale", recommendation: "tie", why: "ChatGPT pour la polyvalence, Mistral pour les sujets confidentiels." },
     ],
 
     // ─── GEO : delta daté, très citable par les moteurs génératifs
     changelog: {
-      title: "Ce qui a changé depuis notre version d'août 2026",
+      title: "Les évolutions suivies depuis août 2026",
       items: [
-        { date: "Septembre 2026", text: "OpenAI a présenté GPT-6 Astra le 3 septembre, puis GPT-6 Sol, GPT-6 Luna et GPT-6.1 Sol pour ChatGPT Work et Codex ; la conversation reste sur GPT-5.6." },
-        { date: "Mai 2026", text: "Mistral AI a renommé Le Chat en Vibe le 28 mai. Vibe se décline en trois modes : Work pour les tâches en plusieurs étapes, Code pour le développement, Chat pour la conversation." },
-        { date: "Correction", text: "Nous citions Mistral Large et Magistral : Magistral est déprécié, et la gamme actuelle s'articule autour de Mistral Medium 3.5, Mistral Large 3 et Mistral Small 4. Nous donnions aussi 128 000 tokens pour Mistral Large via l'API : Medium 3.5 et Large 3 en lisent 256 000." },
-        { date: "Correction", text: "Nous écrivions que les modèles à poids ouverts n'avaient « aucun équivalent chez les acteurs américains » : OpenAI a publié gpt-oss en août 2025. Nous ne signalions pas non plus que les échanges Vibe servent à l'entraînement par défaut hors Enterprise." },
-        { date: "Correction", text: "Nous citions Sora 2 pour la vidéo dans ChatGPT : OpenAI a fermé l'application Sora le 26 avril 2026." },
+        { date: "7 octobre 2026", text: "Mistral a ajouté Mistral Large 4 à sa documentation le 6 octobre, en préversion par API. Nous avons aussi précisé le réglage d'entraînement de l'offre Team : l'administrateur peut le couper pour toute l'organisation, sans attendre que chaque utilisateur le fasse." },
+        { date: "Septembre 2026", text: "Le 22 septembre, Vibe a fusionné conversation et mode Work, avec une bascule Fast ou Think ; les Skills y remplacent les agents et une Knowledge Base remplace les mémoires. Vibe lit aussi Excel et CSV et crée des classeurs. Chez OpenAI, la famille GPT-6 a rejoint ChatGPT Work et Codex entre le 3 et le 29 septembre, tandis que la conversation gardait GPT-5.6." },
+        { date: "Mai 2026", text: "Lancement du nom Vibe le 28 mai : l'assistant de Mistral AI gagne un mode Work pour les tâches en plusieurs étapes et un mode Code pour le développement. Compte, offre et historique ont été conservés." },
+        { date: "Correction", text: "Nous citions Mistral Large et Magistral comme modèles actuels. Magistral est déprécié et la gamme s'organise autour de Medium 3.5, Large 3 et Small 4 ; par l'API, Medium 3.5 et Large 3 lisent 256 000 tokens, et non 128 000 comme nous l'écrivions." },
+        { date: "Correction", text: "Nous affirmions que les modèles à poids ouverts n'avaient aucun équivalent américain, alors qu'OpenAI a mis gpt-oss en ligne en août 2025. Nous passions aussi sous silence l'entraînement par défaut sur les échanges Vibe hors Enterprise." },
+        { date: "Correction", text: "Deux mentions périmées ont disparu : Sora 2, que nous citions pour produire des vidéos dans ChatGPT (application arrêtée en avril 2026), et Devstral 2 pour le code chez Mistral, que l'éditeur a déprécié le 22 mai 2026 au profit de Medium 3.5." },
       ],
     },
 
     methodology:
-      "Ce comparatif est rédigé par Masteria, cabinet lyonnais spécialisé en intelligence artificielle depuis 2022, qui forme les équipes à Mistral AI comme à ChatGPT. Les verdicts reposent sur des mises en situation de formation. Les faits produit et les tarifs ont été revérifiés le **3 octobre 2026** sur les pages officielles de Mistral AI et d'OpenAI listées ci-dessous. Versions évaluées : **Vibe Pro et Mistral Medium 3.5** face à **ChatGPT Plus et Business (GPT-5.6 Sol)**.",
+      "Masteria forme des équipes à Mistral AI comme à ChatGPT depuis Lyon, où le cabinet est né en 2022. Les verdicts de cette page viennent de mises en situation de formation, et les faits ont été contrôlés le **7 octobre 2026** à partir des pages de Mistral AI et d'OpenAI citées plus bas ; les prix de Mistral en euros reprennent notre relevé du 3 octobre, ces montants n'ayant pas pu être relus le 7. Versions comparées : **Vibe Pro avec Mistral Medium 3.5** face à **ChatGPT Plus et Business sur GPT-5.6 Sol**.",
 
     citations: [
-      { name: "Mistral AI : tarifs", url: "https://mistral.ai/pricing" },
-      { name: "Mistral AI : modèles", url: "https://mistral.ai/models" },
-      { name: "Mistral AI : fiche Mistral Medium 3.5", url: "https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04" },
-      { name: "Mistral AI : fiche Mistral Large 3", url: "https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12" },
-      { name: "Mistral AI : vue d'ensemble de la plateforme (Vibe Work, Vibe Code)", url: "https://docs.mistral.ai/getting-started/platform-overview" },
-      { name: "Mistral AI : Le Chat devient Vibe (centre d'aide)", url: "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" },
-      { name: "Mistral AI : utilisation des données pour l'entraînement", url: "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
-      { name: "Mistral AI : lieu de stockage des données", url: "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
-      { name: "Mistral AI : licences des modèles ouverts", url: "https://help.mistral.ai/en/articles/347393-under-which-license-are-mistral-s-open-models-available" },
-      { name: "Mistral AI : certifications SOC 2 et ISO 27001", url: "https://help.mistral.ai/en/articles/347638-do-you-have-soc-2-or-iso-27001-certification" },
-      { name: "Mistral AI : raisonnement natif (Magistral) déprécié", url: "https://docs.mistral.ai/resources/deprecated/native-reasoning" },
-      { name: "OpenAI : tarifs de ChatGPT (page France)", url: "https://chatgpt.com/fr-FR/pricing/" },
-      { name: "OpenAI : notes de version de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
-      { name: "OpenAI : notes de version des modèles (gpt-oss, août 2025)", url: "https://help.openai.com/en/articles/9624314-model-release-notes" },
-      { name: "OpenAI : GPT-5.6 et GPT-6 Pro dans ChatGPT", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
-      { name: "OpenAI : présentation de ChatGPT Business", url: "https://help.openai.com/en/articles/8792828-chatgpt-business-overview" },
-      { name: "OpenAI : résidence des données et de l'inférence", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
-      { name: "OpenAI : stockage des contenus de ChatGPT Business", url: "https://help.openai.com/en/articles/20001418-where-your-chatgpt-business-content-is-stored" },
-      { name: "OpenAI : arrêt de Sora", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" },
-      { name: "OpenAI : modèles de l'API", url: "https://developers.openai.com/api/docs/models" },
-      { name: "EUR-Lex : règlement (UE) 2026/1744, nouvel article 4 de l'AI Act", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+      { name: "Mistral AI, grille des offres Vibe et de l'API", url: "https://mistral.ai/pricing" },
+      { name: "Mistral AI, catalogue de ses modèles", url: "https://mistral.ai/models" },
+      { name: "Fiche technique de Mistral Medium 3.5", url: "https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04" },
+      { name: "Fiche technique de Mistral Large 3", url: "https://docs.mistral.ai/models/model-cards/mistral-large-3-25-12" },
+      { name: "Vibe Work et Vibe Code dans la documentation de Mistral AI", url: "https://docs.mistral.ai/getting-started/platform-overview" },
+      { name: "Mistral AI explique le passage au nom Vibe", url: "https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe" },
+      { name: "Mistral AI et l'entraînement sur les données des utilisateurs", url: "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models" },
+      { name: "Mistral AI : pays où sont stockées les données", url: "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
+      { name: "Mistral AI : licences de ses modèles ouverts", url: "https://help.mistral.ai/en/articles/347393-under-which-license-are-mistral-s-open-models-available" },
+      { name: "Mistral AI : certifications SOC 2 et ISO", url: "https://help.mistral.ai/en/articles/347638-do-you-have-soc-2-or-iso-27001-certification" },
+      { name: "Mistral AI : fin des modèles de raisonnement Magistral", url: "https://docs.mistral.ai/resources/deprecated/native-reasoning" },
+      { name: "OpenAI, grille française de ChatGPT", url: "https://chatgpt.com/fr-FR/pricing/" },
+      { name: "OpenAI, chronologie des mises à jour de ChatGPT", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes" },
+      { name: "OpenAI et la publication de gpt-oss (août 2025)", url: "https://help.openai.com/en/articles/9624314-model-release-notes" },
+      { name: "OpenAI, modèles de conversation par offre", url: "https://help.openai.com/en/articles/20001354-gpt-56-and-gpt-6-pro-in-chatgpt" },
+      { name: "OpenAI, fiche de l'offre ChatGPT Business", url: "https://help.openai.com/en/articles/8792828-chatgpt-business-overview" },
+      { name: "OpenAI, résidence européenne des données et des calculs", url: "https://help.openai.com/en/articles/9903489-data-residency-and-inference-residency-for-chatgpt" },
+      { name: "OpenAI, stockage des contenus Business", url: "https://help.openai.com/en/articles/20001418-where-your-chatgpt-business-content-is-stored" },
+      { name: "OpenAI, arrêt de l'application Sora", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation" },
+      { name: "OpenAI, modèles proposés aux développeurs", url: "https://developers.openai.com/api/docs/models" },
+      { name: "Texte du règlement (UE) 2026/1744 modifiant l'AI Act", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
     ],
 
     realCases: [
       {
         scenario: "Répondre à un appel d'offres public avec exigence de souveraineté",
-        feature: "Mistral (hébergement UE, déploiement sur site) · ChatGPT Enterprise (résidence en Europe)",
+        feature: "Mistral : hébergement dans l'UE, installation sur site · ChatGPT Enterprise : résidence européenne",
         prompt: "Notre collectivité exige que les données des usagers restent dans l'Union européenne et privilégie les solutions souveraines. Quelle architecture d'IA proposer pour un assistant de réponse aux usagers ?",
-        verdictText: "**Mistral gagne** : hébergement européen par défaut et possibilité de déployer un modèle à poids ouverts dans l'infrastructure de la collectivité. Avec ChatGPT, le même dossier suppose l'offre Enterprise pour stocker et traiter les données en Europe, plus une analyse des transferts vers un acteur américain.",
+        verdictText: "**Mistral l'emporte** : stockage européen par défaut, et la possibilité d'installer un modèle à poids ouverts dans l'infrastructure de la collectivité. Côté ChatGPT, le même dossier exige l'offre Enterprise pour stocker et calculer en Europe, puis une analyse des transferts vers une société américaine.",
         winner: "a",
       },
       {
         scenario: "Produire une campagne multicanal complète avec visuels",
-        feature: "ChatGPT Images 2.5 et ChatGPT Work · Vibe avec génération d'images",
+        feature: "ChatGPT Images 2.5 et ChatGPT Work · Vibe et ses images",
         prompt: "Lance la campagne de notre nouveau service : page d'atterrissage, séquence de 4 courriels, 6 publications LinkedIn, 8 visuels carrés cohérents avec notre charte (bleu nuit, minimaliste) et un script vidéo de 45 secondes.",
-        verdictText: "**ChatGPT prend l'avantage** : textes, visuels cohérents avec ChatGPT Images 2.5, script et itérations tiennent dans un seul outil, et ChatGPT Work peut assembler le tout. Vibe couvre les textes et génère des images, avec plus d'allers-retours pour tenir une charte sur huit visuels. La vidéo elle-même sort du périmètre de ChatGPT depuis l'arrêt de Sora.",
+        verdictText: "**ChatGPT prend l'avantage** : textes, visuels fidèles à la charte grâce à ChatGPT Images 2.5, script et retouches restent dans un seul outil, que ChatGPT Work peut assembler. Vibe écrit les textes et génère des images, au prix de plus d'allers-retours pour garder huit visuels cohérents. Le film lui-même sort du périmètre de ChatGPT depuis l'arrêt de Sora.",
         winner: "b",
       },
       {
         scenario: "Analyser des documents de R&D confidentiels sans sortie de données",
-        feature: "Mistral à poids ouverts, auto-hébergé · ChatGPT Enterprise",
+        feature: "Mistral à poids ouverts, sur vos serveurs · ChatGPT Enterprise",
         prompt: "Synthétise ces 30 rapports d'essais internes et identifie les 5 pistes d'amélioration de procédé les plus prometteuses. Contrainte absolue : aucune donnée ne doit quitter notre réseau.",
-        verdictText: "**Mistral est le seul à répondre à la contrainte telle quelle** : un modèle à poids ouverts déployé sur l'infrastructure interne traite les documents sans aucun flux sortant. ChatGPT Enterprise offre des garanties contractuelles et l'hébergement en Europe, mais les données passent par les serveurs d'OpenAI, ce que la contrainte excluait d'emblée.",
+        verdictText: "**Seul Mistral respecte la consigne à la lettre** : un modèle à poids ouverts installé sur l'infrastructure interne lit les rapports sans qu'aucune donnée ne sorte. ChatGPT Enterprise apporte des garanties contractuelles et un hébergement européen, mais les documents transitent par les serveurs d'OpenAI, ce que la consigne interdisait.",
         winner: "a",
       },
     ],
 
     mistakes: [
       {
-        title: "Croire que souverain signifie moins performant partout",
-        desc: "Mistral présente Medium 3.5 comme un modèle de classe frontière pour les agents et le code. Sur les tâches d'entreprise courantes (rédaction, synthèse, analyse de documents), testez-le sur vos propres cas avant de conclure.",
+        title: "Croire qu'un outil souverain est forcément moins bon",
+        desc: "Mistral présente Medium 3.5 comme un modèle de classe frontière pour les agents et le code. Sur la rédaction, la synthèse ou l'analyse de documents, jugez sur vos propres dossiers plutôt que sur une réputation.",
       },
       {
-        title: "Comparer Vibe gratuit à ChatGPT Plus",
-        desc: "L'erreur symétrique du comparatif ChatGPT vs Claude : les versions gratuites sont bridées. Pour un test honnête, comparez Vibe Pro à ChatGPT Plus, sur vos cas d'usage réels, pendant deux semaines.",
+        title: "Comparer Vibe gratuit et ChatGPT Plus",
+        desc: "Une formule gratuite est bridée, chez Mistral comme chez OpenAI. Pour un essai loyal, mettez Vibe Pro face à ChatGPT Plus, sur vos usages, pendant deux semaines.",
       },
       {
-        title: "Choisir la souveraineté par principe sans cartographier ses flux",
-        desc: "Tous vos usages n'ont pas le même niveau de sensibilité. Routez les flux sensibles vers Mistral ou un déploiement interne, et laissez les usages courants sur l'outil préféré des équipes. La cartographie précède le choix.",
+        title: "Choisir la souveraineté par principe, sans regarder vos flux",
+        desc: "Vos usages n'ont pas tous la même sensibilité. Envoyez les flux sensibles vers Mistral ou vers un modèle installé chez vous, et laissez le reste sur l'outil que vos équipes préfèrent : la cartographie vient avant le choix.",
       },
       {
-        title: "Oublier le réglage d'entraînement de Vibe",
-        desc: "Hors offre Enterprise, Mistral utilise par défaut les échanges Vibe pour entraîner ses modèles, sauf opposition de l'utilisateur. Sur l'offre Team, faites désactiver ce réglage par chaque utilisateur, ou passez à Enterprise, où l'exclusion est la règle.",
+        title: "Laisser l'entraînement actif sur Vibe",
+        desc: "Hors Enterprise, Mistral entraîne ses modèles sur les échanges Vibe par défaut, sauf opposition. Sur Team, un administrateur désactive l'option pour tout le monde en une fois ; sur Enterprise, vos échanges sont exclus d'office.",
       },
     ],
 
     alsoConsidered: [
-      { name: "Claude (Anthropic)", summary: "Un million de tokens par conversation sur les offres payantes et Claude Code dès l'offre Pro ; aucune région européenne. Voir notre [comparatif ChatGPT vs Claude](/chatgpt-vs-claude)." },
-      { name: "Gemini (Google)", summary: "Pertinent si vous êtes sur Google Workspace, où Gemini est inclus dans les forfaits. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
-      { name: "gpt-oss (OpenAI)", summary: "Modèles à poids ouverts publiés par OpenAI en août 2025, pour un déploiement en interne sans passer par ChatGPT." },
+      { name: "Claude (Anthropic)", summary: "Avale un million de tokens par conversation quand on paie un abonnement, mais n'offre aucune région européenne : à réserver aux données qui peuvent quitter l'Union. Voir [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: "Gemini (Google)", summary: "Compris dans les forfaits Google Workspace : le choix logique si votre messagerie est Gmail. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
+      { name: "gpt-oss (OpenAI)", summary: "Les modèles à poids ouverts d'OpenAI, publiés en août 2025, pour un usage interne qui ne passe pas par ChatGPT." },
     ],
 
     faq: [
       {
         q: "Mistral est-il 100 % souverain ?",
-        a: "Mistral AI est une entreprise française ; ses données sont hébergées dans l'Union européenne par défaut, et ses modèles à poids ouverts peuvent tourner dans votre infrastructure. Nuances honnêtes : certaines fonctions transfèrent ponctuellement des données vers des sous-traitants hors UE, et l'API propose aussi un point d'accès américain. La souveraineté effective dépend du mode de déploiement que vous choisissez.",
+        a: "Mistral AI est une société française qui héberge par défaut les données de ses clients dans l'Union européenne, et ses modèles à poids ouverts peuvent tourner chez vous. Trois nuances honnêtes : certaines fonctions passent ponctuellement par des sous-traitants hors UE, l'API propose aussi un point d'accès américain, et seul un client Enterprise peut faire désactiver les fonctions concernées. Votre niveau de souveraineté dépend donc du mode de déploiement retenu.",
       },
       {
-        q: "Que signifie « poids ouverts » et pourquoi est-ce important ?",
-        a: "Un modèle à poids ouverts publie ses poids (les paramètres appris pendant l'entraînement) : vous pouvez le télécharger et le faire tourner sur vos serveurs sans envoyer de données à l'éditeur. La plupart des modèles ouverts de Mistral sont sous licence Apache 2.0 ; certains, comme Medium 3.5, relèvent d'une licence MIT modifiée qui impose une licence commerciale aux entreprises de plus de 20 millions de dollars de chiffre d'affaires mensuel, sauf usage via Mistral Studio.",
+        q: "« Poids ouverts » : de quoi parle-t-on ?",
+        a: "Un modèle à poids ouverts publie ses poids, ces paramètres appris pendant l'entraînement : vous le téléchargez et le faites tourner sur vos serveurs, sans rien envoyer à l'éditeur. Small 4 et Large 3 sont sous licence Apache 2.0 ; Medium 3.5 relève d'une licence MIT modifiée, qui impose une licence commerciale aux entreprises dépassant 20 millions de dollars de chiffre d'affaires mensuel, sauf usage par Mistral Studio.",
       },
       {
         q: "Pourquoi Le Chat s'appelle-t-il maintenant Vibe ?",
-        a: "Mistral AI a renommé son assistant **Le Chat en Vibe le 28 mai 2026**, avec une offre élargie : Vibe Work pour les tâches de bureau en plusieurs étapes, Vibe Code pour le développement, Vibe Chat pour la conversation classique. Compte, offre, historique et réglages sont conservés, et l'adresse chat.mistral.ai reste la porte d'entrée.",
+        a: "Mistral AI a donné le nom **Vibe** à son assistant le **28 mai 2026**, en élargissant l'offre : un mode Work pour les tâches de bureau en plusieurs étapes, un mode Code pour le développement. Depuis le 22 septembre 2026, la conversation et le mode Work ne forment plus qu'une seule expérience, avec un interrupteur qui passe d'une réponse rapide à une réflexion plus longue. Compte, abonnement, historique et réglages ont suivi, et l'adresse chat.mistral.ai n'a pas changé.",
       },
       {
         q: "Vibe peut-il remplacer ChatGPT au quotidien ?",
-        a: "Pour la rédaction, la synthèse, l'analyse de documents et la traduction, oui. Les écarts tiennent aux fonctions propres à ChatGPT : ChatGPT Work, agents d'espace de travail partagés, extensions Office, Sites. Listez vos usages réels avant de trancher, c'est l'exercice que nous faisons en formation multi-outils.",
+        a: "Pour rédiger, synthétiser, analyser un document ou traduire, oui. L'écart tient aux fonctions propres à ChatGPT : ChatGPT Work, agents d'équipe partagés, extensions Office, génération de sites. Faites la liste de vos usages avant de trancher ; c'est l'exercice d'ouverture de notre formation multi-outils.",
       },
       {
-        q: "Quelle est la fenêtre de contexte de Vibe et de ChatGPT ?",
-        a: "Côté ChatGPT : 54 000 tokens en mode instantané et 256 000 en raisonnement sur Plus et Business, 1 050 000 via l'API pour les modèles GPT-6. Côté Mistral : 256 000 tokens via l'API pour Medium 3.5 et Large 3 ; la limite de l'interface Vibe n'est pas détaillée par offre. Pour un document unique volumineux, Claude et Gemini (dès Business Standard) lisent un million de tokens dans leur interface.",
+        q: "Combien de texte Vibe et ChatGPT lisent-ils d'un coup ?",
+        a: "Sur ChatGPT Plus et Business, la conversation garde 256 000 tokens quand le modèle raisonne et 54 000 en mode rapide ; par l'API, la famille GPT-6 monte à 1 050 000. Chez Mistral, Medium 3.5 et Large 3 lisent 256 000 tokens par l'API, et l'interface Vibe ne publie pas de limite par offre. Pour un document unique de plusieurs centaines de pages, Claude et Gemini (dès Business Standard) acceptent un million de tokens dans leur interface.",
       },
       {
-        q: "Quel est le meilleur choix au regard du RGPD et de l'AI Act ?",
-        a: "Les deux peuvent être conformes. Avec Mistral, l'hébergement européen par défaut raccourcit l'analyse des transferts, à condition de désactiver l'entraînement sur les échanges hors Enterprise. Avec ChatGPT, l'offre Enterprise permet le stockage et l'inférence en Europe. Dans les deux cas, l'article 4 de l'AI Act, réécrit par le règlement (UE) 2026/1744 du 8 juillet 2026, demande de prendre des mesures pour développer la maîtrise de l'IA des équipes.",
+        q: "RGPD et AI Act : lequel choisir ?",
+        a: "Les deux peuvent être conformes. Le stockage européen de Mistral simplifie l'analyse des transferts, à condition de couper l'entraînement sur les échanges hors Enterprise. Chez OpenAI, l'offre Enterprise permet de stocker et de calculer en Europe. Dans les deux cas, l'AI Act s'applique : son article 4, que le règlement (UE) 2026/1744 a réécrit avec effet au 27 juillet 2026, demande aux entreprises des mesures concrètes pour que leurs salariés comprennent et maîtrisent les outils d'IA qu'ils utilisent.",
       },
       {
-        q: "Peut-on déployer Mistral et ChatGPT en parallèle ?",
-        a: "Oui : ChatGPT (ou Claude) pour la polyvalence quotidienne, Mistral pour les flux sensibles et les métiers régulés. La formation des équipes couvre les deux logiques de demande, proches en pratique.",
+        q: "Peut-on utiliser Mistral et ChatGPT en parallèle ?",
+        a: "Oui : ChatGPT, ou Claude, pour la polyvalence de tous les jours, Mistral pour les flux sensibles et les métiers régulés. Les deux se pilotent avec des demandes formulées de la même façon, ce qui allège la formation.",
       },
       {
-        q: "Combien coûte la formation de mes équipes à Mistral ou à ChatGPT ?",
-        a: "Une journée de formation Mistral AI ou ChatGPT coûte **1 980 € HT** en intra pour le groupe (jusqu'à 12 participants), au même tarif en individuel, TVA de 20 % en sus. Masteria est certifié Qualiopi : selon votre branche, votre OPCO peut financer la session. Le format multi-outils permet de comparer les deux sur vos cas réels avant de choisir.",
+        q: "Combien coûte une formation Mistral ou ChatGPT pour mes équipes ?",
+        a: "Une journée de formation à Mistral AI ou à ChatGPT coûte **1 980 € HT** chez Masteria, TVA en sus au taux de 20 %, que ce soit pour un groupe intra de douze participants au plus ou pour un stagiaire seul. Notre certification Qualiopi permet à votre OPCO de branche d'accepter de la financer, selon ses règles. Le format multi-outils compare les deux sur vos dossiers avant que vous choisissiez.",
       },
     ],
 
@@ -2139,31 +2266,56 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   "gemini-vs-copilot": {
     slug: "gemini-vs-copilot",
-    metaTitle: "Gemini vs Copilot 2026 : lequel choisir ? | Comparatif Masteria",
+    metaTitle: "Gemini vs Copilot 2026 : lequel choisir ? | Masteria",
     metaDesc:
-      "Google Gemini ou Microsoft 365 Copilot : intégration Workspace ou M365, coût réel par siège, agents, Gemini Notebook. Comparatif vérifié le 3 octobre 2026.",
+      "Google Gemini ou Microsoft Copilot : Workspace ou Microsoft 365, coût par siège, agents, Gemini Notebook, compétences. Comparatif revu le 7 octobre 2026.",
     h1: "Google Gemini vs Microsoft Copilot : le match des suites bureautiques",
     intro:
-      "En 2026, le choix entre **Gemini** (Google) et **Microsoft Copilot** se joue sur votre suite bureautique bien plus que sur les modèles. Gemini vit dans Google Workspace (Gmail, Docs, Sheets, Meet) et se trouve inclus dans les forfaits, de Business Starter à Enterprise. Copilot vit dans Microsoft 365 (Outlook, Word, Excel, Teams) : Copilot Chat est inclus, et la licence complète coûte 26 € HT par utilisateur et par mois, ou 18,20 € HT avec Copilot Business jusqu'à 300 utilisateurs. Ce comparatif détaille ce que chacun fait bien, ce qu'il coûte une fois les options ajoutées, et comment trancher en environnement mixte.",
+      "Entre **Gemini** (Google) et **Microsoft Copilot** (anciennement Microsoft 365 Copilot), la suite bureautique que vous payez déjà décide presque tout. Gemini travaille dans Google Workspace (Gmail, Docs, Sheets, Meet) et figure dans chaque forfait, de Business Starter à Enterprise. Copilot travaille dans Microsoft 365 (Outlook, Word, Excel, Teams) : Copilot Chat est compris, la licence complète coûte 26 € HT par mois et par siège, ou 18,20 € HT avec Copilot Business pour les structures de 300 utilisateurs au plus. Mis à jour le 7 octobre 2026, ce comparatif détaille ce que chacun fait bien, ce qu'il coûte une fois les options ajoutées, et la marche à suivre quand votre parc mélange les deux mondes.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "3 octobre 2026",
+    verifiedOn: "7 octobre 2026",
     datePublished: "2026-06-02",
-    dateModified: "2026-10-03",
+    dateModified: "2026-10-07",
     readTime: "9 minutes",
     keywords:
-      "gemini vs copilot, gemini workspace, microsoft 365 copilot prix, copilot business prix, gemini notebook 300 sources, workspace studio, gemini enterprise, workflow builder, comparatif gemini copilot 2026",
+      "gemini vs copilot, gemini workspace, microsoft copilot prix, copilot business prix, gemini notebook 300 sources, workspace studio, gemini enterprise, workflow builder, compétences gemini, comparatif gemini copilot 2026",
+
+    // ─── Textes de section propres à ce comparatif (lus par ComparisonPage via `textes`)
+    textes: {
+      legende: "Gemini dans Workspace et Copilot dans Microsoft 365, relevé du 7 octobre 2026 (prix France en engagement annuel, Gemini Enterprise en dollars).",
+      criteres: "Huit critères, de l'intégration aux réunions jusqu'au coût par siège, vérifiés chez Google et chez Microsoft puis éprouvés dans nos formations sur les deux suites.",
+      casTitre: "Trois chantiers de bureau, deux suites face à face",
+      cas: "Une réunion à résumer, une note à transformer en présentation, un agent RH à ouvrir à toute l'entreprise : trois demandes où la suite installée pèse lourd.",
+      metiersTitre: "Gemini ou Copilot, selon votre organisation",
+      metiers: "Le bon copilote dépend d'abord de votre parc logiciel, ensuite des métiers ; ces choix viennent de nos sessions Gemini et Copilot.",
+      erreursTitre: "Quatre pièges du choix entre Gemini et Copilot",
+      erreurs: "Ils coûtent souvent plus cher que la licence elle-même.",
+      alternativesTitre: "Ce qui complète un copilote de suite",
+      alternatives: "Un assistant généraliste s'ajoute souvent au copilote de la suite, pour les personnes qui s'en serviront.",
+      ctaTitre: "Gemini ou Copilot : laissez vos équipes juger sur leurs fichiers",
+      ctaTexte: "Pendant deux jours, la formation multi-outils fait travailler Gemini, Copilot, ChatGPT, Claude et Mistral sur les mails, les tableaux et les comptes rendus de vos collaborateurs. Masteria, certifié Qualiopi au titre des actions de formation, fournit programme et convention ; à l'OPCO de votre branche ensuite de statuer sur le financement, d'après ses règles.",
+    },
+
+    // ─── Ce que nos formations ont montré (sources : missions-formation.js, mission `franchise-gemini`, et etudes-de-cas.js, cas `industrie`)
+    terrain: {
+      titre: "Les deux suites vues depuis nos formations",
+      paras: [
+        "En septembre 2026, huit membres de la direction d'un [réseau de franchise B2B](/etudes-de-cas-ia#mission-franchise-gemini), installé sous Google Workspace Business Standard, ont passé deux jours avec Gemini dans Gmail, Meet, Sheets, Docs et Slides. Ils ont bâti un flux Workspace Studio qui, une fois par semaine, prépare les relances des devis sans retour, et un carnet Gemini Notebook nourri des procédures du réseau. Leurs deux administrateurs ont consacré une troisième journée à la console, à la sécurité et à une charte d'usage.",
+        "Côté Microsoft, un groupe international du packaging a fait suivre à [24 managers pilotes](/etudes-de-cas-ia#industrie) deux jours de formation à Copilot, sur treize ateliers bâtis à partir de documents du groupe. Dans leurs retours écrits, les participants citent d'abord ce point : chaque atelier partait d'un document qu'ils manipulent au travail.",
+      ],
+    },
 
     // ─── GEO : réponse directe citable, autoportante (entités nommées, chiffres datés)
     answerBox: {
-      question: "Gemini ou Copilot : lequel choisir en 2026 ?",
+      question: "Gemini ou Copilot : lequel retenir en 2026 ?",
       answer:
-        "Votre suite décide. Organisation sur **Google Workspace** : prenez **Gemini**, inclus dans les forfaits ; dès Business Standard (13,60 € HT par utilisateur et par mois en annuel), l'application Gemini lit **un million de tokens**, Gemini Notebook (anciennement NotebookLM) interroge **300 sources par carnet** et Workspace Studio automatise des enchaînements décrits en langage naturel. Organisation sur **Microsoft 365** : prenez **Copilot**, dont la licence complète (26 € HT, ou 18,20 € HT en Copilot Business jusqu'à 300 utilisateurs) ancre les réponses dans Microsoft Graph, avec Copilot Studio pour les agents métier. Deux pièges de budget : côté Google, l'atelier d'agents Workflow Builder relève de **Gemini Enterprise**, une licence distincte à partir de 21 $ par siège ; côté Microsoft, les agents autonomes et Copilot Cowork se facturent à l'usage.",
+        "Votre suite tranche. Sous **Google Workspace**, prenez **Gemini**, compris dans les forfaits : dès Business Standard (13,60 € par utilisateur et par mois en engagement annuel), l'application Gemini accepte **un million de tokens**, Gemini Notebook (anciennement NotebookLM) interroge **300 sources par carnet** et Workspace Studio enchaîne des actions décrites en phrases ordinaires. Sous **Microsoft 365**, prenez **Copilot** : sa licence (26 € HT par siège, 18,20 € HT pour Copilot Business sous le seuil de 300 utilisateurs) ancre les réponses dans Microsoft Graph, et Copilot Studio fabrique les agents métier. Deux pièges budgétaires : chez Google, l'atelier d'agents Workflow Builder suppose **Gemini Enterprise**, licence distincte à partir de 21 $ par siège ; chez Microsoft, les agents autonomes et Copilot Cowork se paient à l'usage.",
       bullets: [
-        "Gmail, Docs, Sheets, Meet au quotidien : Gemini, déjà inclus dans le forfait",
-        "Outlook, Word, Excel, Teams au quotidien : Copilot",
-        "Corpus documentaires à interroger : Gemini Notebook, 300 sources par carnet dès Business Standard",
-        "Agents métier gouvernés par l'informatique : Copilot Studio, en crédits hors agents publiés dans Copilot",
-        "Environnement mixte : comparez sur trois cas réels et chiffrez la licence complète",
+        "Courriels Gmail, documents Docs, réunions Meet : Gemini, déjà payé avec le forfait",
+        "Outlook, Word, Excel et Teams au quotidien : Copilot",
+        "Corpus à interroger avec citations : Gemini Notebook, jusqu'à 300 sources dans un carnet en Business Standard",
+        "Agents métier sous contrôle du service informatique : Copilot Studio",
+        "Parc mixte : trois cas d'usage testés sur chaque suite, licence complète chiffrée",
       ],
     },
 
@@ -2171,9 +2323,9 @@ export const COMPARISONS = {
       id: "gemini",
       name: "Google Gemini",
       editor: "Google",
-      currentModel: "Famille Gemini 3 (modèles Pro, Thinking et Fast dans l'application)",
+      currentModel: "Modèles Gemini 3.x : Rapide, Raisonnement et Pro dans l'application",
       country: "États-Unis",
-      pricing: "Inclus dans Workspace : Business Standard à 13,60 € HT/utilisateur/mois en annuel · Gemini Enterprise dès 21 $ pour l'atelier d'agents",
+      pricing: "Compris dans Workspace : Business Standard à 13,60 € par utilisateur et par mois (annuel) · Gemini Enterprise dès 21 $ pour l'atelier d'agents",
       foundedAI: "2023",
       color: "#4285F4",
     },
@@ -2181,154 +2333,155 @@ export const COMPARISONS = {
       id: "copilot",
       name: "Microsoft Copilot",
       editor: "Microsoft",
-      currentModel: "Modèles d'OpenAI et d'Anthropic, routage automatique, ancrage Microsoft Graph",
+      currentModel: "Mode Auto, modèles OpenAI ou Anthropic selon la tâche, réponses ancrées dans Graph",
       country: "États-Unis",
-      pricing: "Copilot Chat inclus · 26 € HT/utilisateur/mois · Copilot Business 18,20 € HT jusqu'à 300 utilisateurs",
+      pricing: "Copilot Chat compris · licence à 26 € HT mensuels le siège · Copilot Business à 18,20 € HT (300 utilisateurs au plus)",
       foundedAI: "2023",
       color: "#0078D4",
     },
 
     // ─── GEO : tableau de faits datés, lisible en HTML brut par un moteur génératif
     keyFacts: {
-      title: "L'essentiel en un tableau",
-      note: "Faits vérifiés le 3 octobre 2026 sur les pages officielles de Google Workspace, de Google Cloud et de Microsoft. Les tarifs s'entendent hors taxes, en paiement annuel, pour la France, sauf Gemini Enterprise, affiché en dollars.",
+      title: "Gemini et Copilot, point par point",
+      note: "Relevé du 7 octobre 2026 chez Google Workspace, Google Cloud et Microsoft. Prix pour la France en engagement annuel, hors taxes chez Microsoft ; Google ne précise pas HT ou TTC sur sa grille, et Gemini Enterprise s'affiche en dollars.",
       rows: [
-        { criterion: "Modèles actuels", a: "Famille Gemini 3 : Gemini 3.1 Pro et 3.8 Flash côté API ; modèles Pro, Thinking et Fast dans l'application", b: "Modèles d'OpenAI et d'Anthropic, routage automatique ; ceux d'Anthropic désactivés par défaut dans l'UE" },
-        { criterion: "Coût pour une équipe", a: "Inclus dans les forfaits Workspace : Starter 6,80 €, Standard 13,60 €, Plus 21,10 € HT par utilisateur et par mois", b: "26 € HT par utilisateur et par mois en plus de la licence Microsoft 365, ou 18,20 € HT en Copilot Business" },
-        { criterion: "Applications couvertes", a: "Gmail, Docs, Sheets, Slides, Vids, Drive, Meet, Chat ; accès restreint en Business Starter", b: "Outlook, Word, Excel, PowerPoint, Teams, OneNote, Forms" },
-        { criterion: "Contexte dans l'application", a: "1 000 000 de tokens dès Business Standard, 32 000 en Business Starter", b: "Non publié : ancrage dans Microsoft Graph" },
-        { criterion: "Accès à vos données internes", a: "Oui, dans le périmètre des permissions Drive et des applications connectées", b: "Oui, via Microsoft Graph et Work IQ, avec la licence complète" },
-        { criterion: "Bases documentaires", a: "Gemini Notebook : 300 sources par carnet dès Business Standard, 50 en Starter", b: "Copilot Search et indexation sémantique des contenus Microsoft 365" },
-        { criterion: "Automatisations sans code", a: "Workspace Studio : flux décrits en langage naturel", b: "Copilot Studio (low-code) et invites planifiées de Copilot Cowork" },
-        { criterion: "Atelier d'agents métier", a: "Workflow Builder, dans Gemini Enterprise : licence distincte dès 21 $ par siège", b: "Copilot Studio : agents publiés dans Copilot inclus avec la licence, autres usages en crédits" },
-        { criterion: "Génération d'images et de vidéo", a: "Images (Nano Banana), vidéos dans Vids (500 secondes par mois en Business Standard) et dans l'application Gemini", b: "Images dans Copilot Chat si l'administrateur l'autorise" },
-        { criterion: "Entraînement sur vos données", a: "Non : échanges ni relus par des humains ni utilisés pour améliorer les modèles", b: "Non : prompts et réponses exclus de l'entraînement" },
-        { criterion: "Prérequis avant déploiement", a: "Vérifier les partages Drive trop larges", b: "Auditer les permissions SharePoint : Graph révèle les sur-partages" },
+        { criterion: "Modèles", a: "Gemini 3.x : 3.8 Flash et 3.1 Pro côté API ; dans l'application, trois modes (Rapide, Raisonnement, Pro)", b: "Mode Auto entre OpenAI et Anthropic ; Claude coupé par défaut pour les clients européens" },
+        { criterion: "Prix pour une équipe", a: "Compris dans Workspace : Starter 6,80 €, Standard 13,60 €, Plus 21,10 € par utilisateur et par mois", b: "26 € HT par siège en plus de Microsoft 365, ou 18,20 € HT en Copilot Business" },
+        { criterion: "Applications couvertes", a: "Gmail, Chat, Meet, Drive, Docs, Sheets, Slides et Vids ; Starter limité à Gmail et à l'application", b: "Teams, Outlook, Word, Excel, PowerPoint, OneNote, Forms" },
+        { criterion: "Contexte dans l'application", a: "Un million de tokens à partir de Business Standard ; Business Starter reste à 32 000", b: "Aucune fenêtre publiée ; Graph extrait le passage utile" },
+        { criterion: "Accès aux données internes", a: "Dans la limite des droits Drive et des applications connectées", b: "Par Microsoft Graph et Work IQ, avec la licence" },
+        { criterion: "Corpus documentaire", a: "Gemini Notebook : 300 sources par carnet en Standard et Plus, 100 en Starter", b: "Copilot Search et index sémantique des contenus Microsoft 365" },
+        { criterion: "Automatisations sans code", a: "Workspace Studio, flux décrits en langage naturel ; limites effectives au 1er novembre 2026", b: "Copilot Studio (low-code) ; tâches planifiées ou déclenchées par un mail dans Copilot Cowork" },
+        { criterion: "Atelier d'agents métier", a: "Workflow Builder, réservé à Gemini Enterprise (dès 21 $ par siège)", b: "Copilot Studio : publication dans Copilot sans surcoût pour les porteurs de licence ; crédits pour le reste" },
+        { criterion: "Images et vidéo", a: "Images Nano Banana Pro, 30 par mois en Standard ; Vids : 500 secondes de vidéo mensuelles", b: "Images dans Copilot Chat si l'administrateur l'autorise" },
+        { criterion: "Entraînement sur vos données", a: "Non : aucun humain ne relit vos contenus, et ils ne servent à aucun entraînement hors de votre domaine", b: "Non : prompts et réponses exclus de l'entraînement" },
+        { criterion: "À faire avant d'ouvrir", a: "Repérer les partages Drive trop larges", b: "Auditer SharePoint : Graph met au jour les sur-partages" },
       ],
     },
 
     verdict: {
-      title: "Verdict en 30 secondes",
+      title: "Le verdict en une minute",
       summary:
-        "La règle simple tient : **votre suite décide**. Sur Google Workspace, prenez Gemini, inclus dans les forfaits, avec un million de tokens de contexte et Gemini Notebook dès Business Standard. Sur Microsoft 365, prenez Copilot, plus cher avec la licence complète, en échange d'un ancrage profond dans Outlook, Teams et Excel et de l'atelier d'agents le plus outillé des deux avec Copilot Studio. Dans les deux cas, l'automatisation avancée se facture à part : Workflow Builder suppose une licence Gemini Enterprise, et Copilot Studio comme Copilot Cowork consomment des crédits. En environnement mixte, comparez sur trois cas d'usage réels.",
-      recommendA: ["Organisations sur Google Workspace", "Budget serré (inclus dans les forfaits)", "Documents longs et corpus documentaires", "Équipes Gmail, Docs et Meet au quotidien"],
-      recommendB: ["Organisations sur Microsoft 365", "Usage intensif d'Outlook, de Teams et d'Excel", "Agents métier avec Copilot Studio", "Gouvernance informatique centralisée Microsoft"],
+        "La règle tient en trois mots : **votre suite décide**. Sous Google Workspace, Gemini est compris dans le forfait, avec un million de tokens et Gemini Notebook dès Business Standard. Sous Microsoft 365, Copilot coûte davantage avec sa licence, mais il s'ancre profondément dans Outlook, Teams et Excel et offre, avec Copilot Studio, l'atelier d'agents le mieux outillé des deux. Dans chaque camp, l'automatisation poussée se paie à part : Workflow Builder suppose Gemini Enterprise, Copilot Studio et Copilot Cowork consomment des crédits. Si votre parc mélange les deux suites, testez trois cas d'usage sur chacune. Nos formations [Google Gemini](/formation-gemini-entreprise) et [Microsoft Copilot](/formation-microsoft-copilot) partent de vos propres fichiers.",
+      recommendA: ["Organisation sous Google Workspace", "Budget serré : l'IA est déjà dans le forfait", "Corpus documentaires et documents longs", "Équipes qui vivent dans Gmail, Docs et Meet"],
+      recommendB: ["Organisation sous Microsoft 365", "Usage intensif d'Outlook, de Teams et d'Excel", "Agents métier construits avec Copilot Studio", "Service informatique déjà outillé par Microsoft"],
     },
 
     criteria: [
       {
-        title: "Intégration à la suite bureautique",
+        title: "Place dans la suite bureautique",
         descriptionA:
-          "Gemini est présent dans Gmail, Docs, Sheets, Slides, Vids, Drive, Meet et Chat dès Business Standard ; Business Starter n'a qu'un accès restreint : Gemini dans Gmail, l'application Gemini et des quotas réduits dans Vids.",
+          "À partir de Business Standard, on trouve Gemini dans Gmail, Chat, Meet, Drive, Docs, Sheets, Slides et Vids. Business Starter reste en accès réduit : Gemini dans Gmail, l'application Gemini et des quotas plus bas dans Vids.",
         descriptionB:
-          "Copilot est présent dans Outlook, Word, Excel, PowerPoint, Teams et OneNote. Avec la licence complète, il s'appuie sur Microsoft Graph, donc sur vos mails, fichiers et réunions, avec les permissions existantes.",
+          "Copilot se trouve dans Teams, Outlook, Word, Excel, PowerPoint et OneNote. Avec la licence, il puise dans Microsoft Graph, donc dans vos mails, vos fichiers et vos réunions, sans dépasser les droits existants.",
         winner: "tie",
-        winnerText: "Match nul : chacun excelle dans sa propre suite",
+        winnerText: "Égalité : chacun excelle chez lui",
       },
       {
-        title: "Qualité et capacités des modèles",
+        title: "Modèles et quotas",
         descriptionA:
-          "L'application Gemini lit un million de tokens dès Business Standard et propose un modèle Pro (25 requêtes par tranche de 4 heures), un mode Thinking (300 requêtes par jour) et un mode Fast. Côté API, Google publie Gemini 3.8 Flash et Gemini 3.1 Pro.",
+          "Dès Business Standard, une conversation dans l'application Gemini peut contenir un million de tokens. Au 7 octobre 2026, un compte Business Standard dispose chaque jour de 200 requêtes Pro, de 600 requêtes Thinking et de 20 Deep Research ; Business Starter plafonne à 25 requêtes Pro toutes les quatre heures et à 32 000 tokens. Pour les développeurs, l'API propose Gemini 3.8 Flash en version stable et 3.1 Pro en préversion.",
         descriptionB:
-          "Copilot choisit le modèle par un routage automatique entre modèles d'OpenAI et d'Anthropic, avec un mode de réflexion approfondie. Microsoft ne publie pas de fenêtre de contexte : Graph va chercher le passage utile au lieu d'ingérer le document entier.",
+          "Copilot choisit lui-même le modèle en mode Auto, entre OpenAI et Anthropic, et propose une réflexion approfondie. Microsoft ne publie pas de fenêtre de contexte : Graph sélectionne l'extrait pertinent au lieu de charger le document entier.",
         winner: "a",
-        winnerText: "Avantage Gemini sur le contexte long",
+        winnerText: "Avantage Gemini sur les longs documents",
       },
       {
-        title: "Tarifs et coût réel par siège",
+        title: "Coût réel par siège",
         descriptionA:
-          "Gemini est inclus dans les forfaits Workspace : 13,60 € HT par utilisateur et par mois en Business Standard, 21,10 € en Business Plus, en annuel. Le module AI Expanded Access relève les quotas des utilisateurs intensifs, et Gemini Enterprise, à partir de 21 $ par siège, ouvre l'atelier d'agents.",
+          "Gemini fait partie du forfait Workspace : 13,60 € par utilisateur et par mois en Business Standard, 21,10 € en Business Plus, en engagement annuel. Le module AI Expanded Access relève les plafonds des gros utilisateurs, à un prix que Google ne publie pas, et Gemini Enterprise, dès 21 $ par siège, donne accès à l'atelier d'agents.",
         descriptionB:
-          "Copilot Chat est inclus. La licence complète coûte 26 € HT par utilisateur et par mois en annuel, ou 18,20 € HT en Copilot Business jusqu'à 300 utilisateurs (15,60 € la première année pour les clients existants qui souscrivent entre le 1er juillet et le 31 décembre 2026), en plus de Microsoft 365. Copilot Studio et Copilot Cowork se paient à l'usage.",
+          "Copilot Chat est compris. La licence revient à 26 € HT mensuels par siège sur un an ; Copilot Business, limité à 300 utilisateurs, la ramène à 18,20 € HT (21,84 € HT en paiement mensuel, et une remise à 15,60 € HT pendant un an pour les clients existants qui s'engagent d'ici la fin 2026), toujours en plus de Microsoft 365. Studio et Cowork se règlent à l'usage.",
         winner: "a",
-        winnerText: "Avantage net Gemini : inclus dans Workspace",
+        winnerText: "Net avantage Gemini : il est déjà payé",
       },
       {
         title: "Agents et automatisation",
         descriptionA:
-          "Trois briques incluses : les Gems (assistants personnalisés), Gemini Notebook et Workspace Studio, qui crée des flux sur Gmail, Drive, Chat et des services tiers à partir d'une description. Au-dessus, Workflow Builder, l'atelier sans code de Gemini Enterprise, suppose une licence distincte ; la documentation d'Agent Designer, l'ancien nom souvent cité, renvoie désormais vers lui.",
+          "Trois briques sont comprises. Les compétences, instructions réutilisables qui succèdent aux Gems, arrivent depuis le 5 octobre 2026 dans les domaines Workspace en publication rapide, le 19 octobre dans les autres, et gagnent l'application à partir du 13 octobre. Gemini Notebook organise vos sources. Workspace Studio crée des flux sur Gmail, Drive, Chat et des services tiers à partir d'une simple description. Au-dessus, Workflow Builder, l'atelier sans code de Gemini Enterprise, exige une licence distincte.",
         descriptionB:
-          "Copilot Studio est l'atelier d'agents low-code de Microsoft : agents connectés à vos données, gouvernance centralisée, supervision par l'administrateur. Les agents Researcher et Analyst sont fournis avec la licence, et Copilot Cowork exécute des tâches dans Microsoft 365 après validation de chaque action.",
+          "Copilot Studio est l'atelier d'agents low-code de Microsoft : agents reliés à vos données, gouvernance centrale, supervision par l'administrateur. Researcher et Analyst viennent avec la licence, et Copilot Cowork agit dans Microsoft 365 en s'arrêtant pour obtenir votre accord quand une action est sensible.",
         winner: "b",
         winnerText: "Avantage Copilot sur les agents d'entreprise",
       },
       {
-        title: "Sécurité, permissions et gouvernance",
+        title: "Droits, sécurité, gouvernance",
         descriptionA:
-          "Gemini respecte les permissions Drive existantes ; dans les éditions Workspace, les échanges et fichiers ne sont ni relus par des humains ni utilisés pour améliorer les modèles. La gouvernance passe par la console d'administration.",
+          "Gemini suit les droits Drive existants. Dans les éditions Workspace, échanges et fichiers ne sont ni relus par des humains ni utilisés pour entraîner les modèles en dehors de votre domaine sans autorisation, et la console d'administration pilote l'ensemble.",
         descriptionB:
-          "Même principe via Microsoft Graph, avec un piège connu : Copilot révèle les sur-partages existants. Microsoft fournit SharePoint Advanced Management, la restriction de découverte de contenu et Purview pour les traiter avant le déploiement.",
+          "Même principe avec Microsoft Graph, et un piège bien connu : Copilot rend visibles les partages trop larges. SharePoint Advanced Management, la restriction de découverte de contenu et Purview servent à les corriger avant l'ouverture, et le rôle « AI Administrator » confie Copilot à un responsable sans droits d'administrateur global.",
         winner: "tie",
-        winnerText: "Match nul, avec un prérequis d'audit côté Microsoft",
+        winnerText: "Égalité, avec un audit préalable côté Microsoft",
       },
       {
-        title: "Réunions, mails et quotidien",
+        title: "Réunions et messagerie",
         descriptionA:
-          "Meet : Gemini résume, traduit et prend des notes pendant la réunion. Gmail : recherche, résumé et rédaction des courriels.",
+          "Dans Meet, « Prendre des notes pour moi » rédige le compte rendu pendant la réunion. Dans Gmail, Gemini cherche, résume et rédige les courriels.",
         descriptionB:
-          "Teams : résumés et transcriptions des réunions (jusqu'à 30 jours), actions à suivre. Outlook : brouillons, résumés de fils, conseils sur la clarté et le ton.",
+          "Dans Teams, Copilot résume et transcrit les réunions, jusqu'à trente jours en arrière, et dresse la liste des actions. Dans Outlook, il prépare des brouillons, résume les fils et conseille sur le ton comme sur la clarté.",
         winner: "tie",
-        winnerText: "Équivalents : la qualité dépend de votre suite",
+        winnerText: "Équivalents : votre visioconférence tranche",
       },
       {
-        title: "Création de contenus et multimodalité",
+        title: "Images, vidéo, présentations",
         descriptionA:
-          "Images avec Nano Banana dans l'application, images dans Slides, vidéos générées dans Vids (500 secondes par mois en Business Standard) et dans l'application Gemini (3 par jour avec le modèle Omni).",
+          "En Business Standard, Nano Banana Pro fournit 30 images par mois avant de passer la main à un modèle plus ancien ; Vids produit jusqu'à 500 secondes de vidéo et 25 avatars par mois ; Slides génère au plus 100 diapositives par mois.",
         descriptionB:
-          "Images dans Copilot Chat quand l'administrateur l'autorise, présentations construites et mises en forme dans PowerPoint.",
+          "Copilot Chat produit des images si l'administrateur l'autorise. PowerPoint construit et met en forme des présentations, et accepte depuis le 6 octobre 2026 des compétences personnalisées sur Windows.",
         winner: "a",
         winnerText: "Avantage Gemini sur la création multimodale",
       },
       {
-        title: "Interroger un corpus documentaire",
+        title: "Interroger un corpus",
         descriptionA:
-          "Gemini Notebook, nouveau nom de NotebookLM, interroge jusqu'à 300 sources par carnet dès Business Standard, avec citation du passage d'origine ; Business Starter reste à 50. Au-delà, il faut découper le corpus en plusieurs carnets.",
+          "Un carnet Gemini Notebook accueille 300 sources en Business Standard ou Plus, et Google a porté la limite de Business Starter à 100 le 7 octobre 2026 ; chaque réponse renvoie au passage d'origine. Au-delà, on répartit le corpus entre plusieurs carnets.",
         descriptionB:
-          "Copilot Search et l'indexation sémantique interrogent ce que vous avez déjà dans Microsoft 365, dans la limite de vos permissions, sans corpus à constituer. La contrepartie : un contrôle moins fin sur le périmètre exact d'une réponse.",
+          "Copilot Search et l'index sémantique interrogent ce qui existe déjà dans Microsoft 365, dans la limite de vos droits, sans corpus à constituer ; en contrepartie, le périmètre exact d'une réponse se contrôle moins finement.",
         winner: "tie",
-        winnerText: "Match nul : corpus choisi chez Google, corpus existant chez Microsoft",
+        winnerText: "Égalité : corpus choisi chez Google, corpus existant chez Microsoft",
       },
     ],
 
     useCases: [
-      { metier: "Organisation 100 % Google Workspace", recommendation: "a", why: "Gemini est inclus, intégré à toute la suite dès Business Standard, et s'active depuis la console d'administration." },
-      { metier: "Organisation 100 % Microsoft 365", recommendation: "b", why: "Copilot exploite Microsoft Graph (mails, fichiers, réunions) : la valeur vient de cet ancrage." },
-      { metier: "Finance et analyse (Excel intensif)", recommendation: "b", why: "Copilot travaille dans Excel, où vivent déjà les modèles financiers ; Gemini dans Sheets plafonne à 100 créations ou modifications de feuilles par mois en Business Standard." },
-      { metier: "Data et gros corpus documentaires", recommendation: "a", why: "Un million de tokens dans l'application et Gemini Notebook, qui interroge 300 sources par carnet avec citation du passage d'origine." },
-      { metier: "Service client et processus outillés", recommendation: "b", why: "Copilot Studio construit des agents connectés aux bases internes, gouvernés par l'administrateur." },
-      { metier: "Environnement mixte ou migration en cours", recommendation: "tie", why: "Testez trois cas d'usage réels sur chaque suite avec un pilote de deux semaines, puis chiffrez le coût complet des licences." },
+      { metier: "Organisation entièrement sous Google Workspace", recommendation: "a", why: "Gemini est compris, présent dans toute la suite dès Business Standard, et s'active depuis la console d'administration." },
+      { metier: "Organisation entièrement sous Microsoft 365", recommendation: "b", why: "Copilot tire sa valeur de Microsoft Graph : vos mails, vos fichiers, vos réunions." },
+      { metier: "Finance et analyse (Excel intensif)", recommendation: "b", why: "Copilot travaille dans Excel, où vivent déjà les modèles financiers ; Sheets limite Gemini à 100 feuilles créées ou modifiées chaque mois en Business Standard." },
+      { metier: "Data et gros corpus documentaires", recommendation: "a", why: "Un million de tokens dans l'application et 300 sources par carnet dans Gemini Notebook, citations à l'appui." },
+      { metier: "Service client et processus outillés", recommendation: "b", why: "Copilot Studio branche des agents sur vos bases internes, sous l'œil de l'administrateur." },
+      { metier: "Parc mixte ou migration en cours", recommendation: "tie", why: "Pilote de deux semaines sur trois cas d'usage dans chaque suite, puis calcul du coût complet des licences." },
     ],
 
     // ─── GEO : delta daté, très citable par les moteurs génératifs
     changelog: {
-      title: "Ce qui a changé depuis notre version d'août 2026",
+      title: "Ce que nous avons mis à jour depuis août 2026",
       items: [
-        { date: "Octobre 2026", text: "Au 3 octobre 2026, Google renomme NotebookLM en Gemini Notebook, avec 300 sources par carnet dès Business Standard, et l'application Gemini lit un million de tokens sur ces éditions. La documentation de Gemini Enterprise présente Workflow Builder comme atelier d'agents sans code." },
-        { date: "Octobre 2026", text: "Au 3 octobre 2026, Microsoft distingue Copilot Chat, Microsoft 365 Copilot (Basic) et Microsoft 365 Copilot (Premium), documente Copilot Cowork et propose des modèles d'Anthropic, désactivés par défaut dans l'UE." },
-        { date: "Juillet 2026", text: "Microsoft propose à ses clients existants Copilot Business à 15,60 € HT la première année, au lieu de 18,20 €, pour les souscriptions du 1er juillet au 31 décembre 2026." },
-        { date: "Correction", text: "Nous annoncions NotebookLM Plus limité à 100 sources par carnet : la documentation de Google donne 300 sources en Business Standard, Business Plus et Enterprise." },
-        { date: "Correction", text: "Nous chiffrions Copilot à environ 30 $ par utilisateur : le prix affiché pour la France est de 26 € HT en annuel, et Copilot Business coûte 18,20 € HT jusqu'à 300 utilisateurs. Nous écrivions aussi que Google ne détaillait pas la fenêtre de contexte de Gemini par édition : elle est publiée, d'un million de tokens dès Business Standard." },
+        { date: "7 octobre 2026", text: "Google a révisé ses plafonds : en Business Standard et Plus, 200 requêtes Pro, 600 en Thinking et 20 Deep Research par jour ; un carnet Gemini Notebook accepte 100 sources en Business Starter, et Workspace Studio appliquera ses limites à partir du 1er novembre. Chez Microsoft, PowerPoint accepte des compétences personnalisées depuis le 6 octobre." },
+        { date: "Octobre 2026", text: "Les compétences remplacent les Gems : déploiement dans Workspace depuis le 5 octobre, dans l'application Gemini à partir du 13. Pour les comptes professionnels, les Gems resteront utilisables au moins jusqu'au 1er mars 2027, puis se transformeront en brouillons de compétences désactivés, réactivables par la personne qui les a créés." },
+        { date: "Septembre 2026", text: "Copilot Cowork, l'agent qui agit dans Microsoft 365, est sorti de préversion le 29 septembre pour tous les comptes professionnels, et les pages de Microsoft appellent désormais la licence Microsoft Copilot. Le 15 septembre, Google a ouvert dans Gemini des connecteurs MCP vers Asana, Atlassian Rovo, HubSpot, Intuit, Monday et Salesforce." },
+        { date: "Juillet 2026", text: "Remise de lancement chez Microsoft : un abonné Microsoft 365 qui ajoute Copilot Business à l'année avant la fin de 2026 le paie 15,60 € HT au lieu de 18,20 € pendant douze mois." },
+        { date: "Correction", text: "Une version antérieure limitait le carnet de Google à 100 sources en Business Standard ; la documentation en donne 300 en Business Standard, Business Plus et Enterprise. Nous écrivions aussi 50 sources en Business Starter, quand Google en annonce 100 depuis le 7 octobre 2026." },
+        { date: "Correction", text: "Nous donnions pour Business Standard des plafonds de 25 requêtes Pro par tranche de 4 heures et de 300 requêtes Thinking par jour : ce sont ceux de Business Starter. Nous chiffrions aussi Copilot à environ 30 $ par utilisateur, alors que la page France affiche 26 € HT en annuel, et nous pensions que Google ne publiait pas la fenêtre de contexte de Gemini par édition : elle atteint un million de tokens dès Business Standard." },
       ],
     },
 
     methodology:
-      "Ce comparatif est rédigé par Masteria, cabinet lyonnais spécialisé en intelligence artificielle depuis 2022, qui forme les équipes à Google Gemini comme à Microsoft Copilot. Les verdicts reposent sur des mises en situation de formation sur les deux suites. Les faits produit et les tarifs ont été revérifiés le **3 octobre 2026** sur les pages officielles de Google Workspace, de Google Cloud et de Microsoft listées ci-dessous. Versions évaluées : **Gemini pour Workspace (Business Standard)** et **Microsoft 365 Copilot**.",
+      "Ce comparatif vient de Masteria, cabinet lyonnais fondé en 2022 qui forme des équipes à Google Gemini comme à Microsoft Copilot. Les verdicts reposent sur nos mises en situation sur les deux suites ; faits et prix ont été relus le **7 octobre 2026** chez Google Workspace, Google Cloud et Microsoft, à partir des pages listées ci-dessous, dont les limites d'usage que Google a mises à jour ce jour-là. Versions comparées : **Gemini dans Workspace Business Standard** et **Microsoft Copilot** avec licence.",
 
     citations: [
-      { name: "Google Workspace : tarifs (France)", url: "https://workspace.google.com/intl/fr/pricing" },
-      { name: "Google : application Gemini avec un compte professionnel, limites par édition", url: "https://support.google.com/gemini/answer/14620100?hl=en&co=DASHER._Family%3DBusiness-Enterprise" },
-      { name: "Google Workspace : Gemini Notebook par édition", url: "https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/turn-gemini-notebook-on-or-off-for-users" },
-      { name: "Google Workspace : limites d'usage de l'IA par édition", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/about-ai-usage-limits" },
-      { name: "Google Workspace : Workspace Studio", url: "https://knowledge.workspace.google.com/admin/studio/get-started-workspace-studio-set-up-guide-for-admins" },
-      { name: "Google Cloud : Gemini Enterprise", url: "https://cloud.google.com/gemini-enterprise" },
-      { name: "Google Cloud : Workflow Builder (Gemini Enterprise)", url: "https://docs.cloud.google.com/gemini/enterprise/docs/workflow-builder" },
-      { name: "Google : modèles de l'API Gemini", url: "https://ai.google.dev/gemini-api/docs/models" },
-      { name: "Microsoft : tarifs de Microsoft 365 Copilot pour les grandes entreprises (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
-      { name: "Microsoft : Microsoft 365 Copilot Business pour les PME (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
-      { name: "Microsoft Learn : présentation de Microsoft Copilot", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
-      { name: "Microsoft Learn : modèles d'Anthropic dans les services Microsoft", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
-      { name: "Microsoft Learn : Copilot Cowork", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
-      { name: "Microsoft : Copilot Studio, offres et tarifs (France)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
+      { name: "Grille des forfaits Google Workspace pour la France", url: "https://workspace.google.com/intl/fr/pricing" },
+      { name: "Quotas de l'application Gemini pour les comptes professionnels", url: "https://support.google.com/gemini/answer/14620100?hl=en&co=DASHER._Family%3DBusiness-Enterprise" },
+      { name: "Plafonds de Gemini Notebook selon l'édition Workspace (maj du 7 octobre 2026)", url: "https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/turn-gemini-notebook-on-or-off-for-users" },
+      { name: "Limites d'usage de l'IA dans Workspace (maj du 7 octobre 2026)", url: "https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/about-ai-usage-limits" },
+      { name: "Mise en route de Workspace Studio pour les administrateurs", url: "https://knowledge.workspace.google.com/admin/studio/get-started-workspace-studio-set-up-guide-for-admins" },
+      { name: "Présentation de Gemini Enterprise sur Google Cloud", url: "https://cloud.google.com/gemini-enterprise" },
+      { name: "Documentation de Workflow Builder dans Gemini Enterprise", url: "https://docs.cloud.google.com/gemini/enterprise/docs/workflow-builder" },
+      { name: "Modèles Gemini accessibles aux développeurs", url: "https://ai.google.dev/gemini-api/docs/models" },
+      { name: "Tarif France de la licence Copilot pour les grands comptes", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
+      { name: "Tarif France de Copilot Business pour les PME", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
+      { name: "Ce que la licence Copilot ajoute à Copilot Chat", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
+      { name: "Modèles d'Anthropic proposés dans Copilot et réglages européens", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
+      { name: "Fonctionnement de Copilot Cowork", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+      { name: "Tarif France de Copilot Studio et de ses crédits", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
     ],
 
     realCases: [
@@ -2336,82 +2489,82 @@ export const COMPARISONS = {
         scenario: "Synthèse de réunion et suivi des actions",
         feature: "Gemini dans Meet · Copilot dans Teams",
         prompt: "Réunion de pilotage de 55 minutes. Produis les décisions prises, les actions par responsable avec échéances, les points de blocage, et un brouillon de courriel de synthèse pour les absents.",
-        verdictText: "**Match nul**. Gemini dans Meet résume, traduit et prend des notes ; Copilot dans Teams résume, transcrit et liste les actions à suivre. Le facteur décisif est l'outil de visioconférence que vous utilisez déjà.",
+        verdictText: "**Match nul**. Dans Meet, Gemini prend les notes et rédige le compte rendu ; dans Teams, Copilot résume, transcrit et relève les actions à suivre. L'outil de visioconférence déjà installé fait pencher la balance.",
         winner: "tie",
       },
       {
         scenario: "Construire une présentation à partir d'un document de référence",
         feature: "Gemini dans Slides · Copilot dans PowerPoint",
         prompt: "À partir de cette note stratégique de 12 pages, construis une présentation de 10 diapositives pour le comité de direction : structure claire, un message par diapositive, visuels sobres cohérents avec notre charte.",
-        verdictText: "**Léger avantage Gemini** : un million de tokens dans l'application digère les documents sources volumineux, et Slides génère des images. Copilot construit la présentation dans PowerPoint et met en forme tout le fichier.",
+        verdictText: "**Léger avantage Gemini** : l'application lit d'un bloc un document source volumineux grâce à son million de tokens, et Slides génère des images, dans la limite de 100 diapositives par mois en Business Standard. Copilot bâtit la présentation dans PowerPoint et soigne la mise en page de toutes les diapositives.",
         winner: "a",
       },
       {
         scenario: "Déployer un agent interne de réponse RH (congés, paie, intégration)",
-        feature: "Copilot Studio · Gems, Workspace Studio et Gemini Enterprise",
+        feature: "Copilot Studio · compétences Gemini, Workspace Studio et Gemini Enterprise",
         prompt: "Construis un agent qui répond aux questions RH des collaborateurs à partir de nos accords d'entreprise et procédures internes (SharePoint), avec escalade vers l'équipe RH quand il n'est pas sûr.",
-        verdictText: "**Copilot gagne**. Copilot Studio est construit pour ce cas : connexion à SharePoint, respect des permissions, supervision par l'administrateur ; publié dans Microsoft 365 Copilot, l'agent est inclus pour les détenteurs de la licence. Côté Google, l'équivalent passe par Workflow Builder dans Gemini Enterprise, licence distincte : les Gems seuls ne couvrent pas la gouvernance attendue sur un agent ouvert à toute l'entreprise.",
+        verdictText: "**Copilot gagne**. Copilot Studio est taillé pour ce cas : connexion à SharePoint, respect des droits, supervision par l'administrateur ; une fois publié dans Microsoft Copilot, l'agent n'entraîne aucun surcoût pour qui détient déjà la licence. Chez Google, l'équivalent passe par Workflow Builder dans Gemini Enterprise, licence à part : les compétences Gemini, qui remplacent les Gems, n'apportent pas seules la gouvernance attendue d'un agent ouvert à toute l'entreprise.",
         winner: "b",
       },
     ],
 
     mistakes: [
       {
-        title: "Comparer les modèles au lieu de comparer les intégrations",
-        desc: "Gemini 3 face aux modèles d'OpenAI et d'Anthropic, c'est un débat de classement. Sur le terrain, l'essentiel de la valeur vient de l'intégration à vos mails, vos fichiers et vos réunions. La bonne question : lequel exploite le mieux les données là où elles se trouvent ?",
+        title: "Comparer des modèles au lieu de comparer des suites",
+        desc: "Gemini 3.x face à GPT et Claude : le débat nourrit les classements. Sur le terrain, la valeur vient de l'accès à vos mails, vos fichiers et vos réunions. La question utile : lequel exploite le mieux vos données là où elles se trouvent ?",
       },
       {
-        title: "Croire que l'atelier d'agents est inclus dans votre forfait Workspace",
-        desc: "Les Gems, Gemini Notebook et Workspace Studio sont inclus dans les forfaits concernés. Workflow Builder, l'atelier d'agents sans code, relève de Gemini Enterprise, une licence distincte à partir de 21 $ par siège. Chiffrez-la avant de bâtir un projet d'agents.",
+        title: "Croire l'atelier d'agents compris dans Workspace",
+        desc: "Compétences, Gemini Notebook et Workspace Studio sont compris dans les forfaits concernés. Workflow Builder, l'atelier d'agents sans code, relève de Gemini Enterprise, une licence à part dès 21 $ par siège : chiffrez-la avant de lancer un projet d'agents.",
       },
       {
-        title: "Déployer Copilot sans audit des permissions",
-        desc: "Copilot rend visible tout ce que chaque collaborateur peut techniquement voir, y compris des dossiers partagés trop largement depuis des années. Sans audit préalable (rapports d'accès, SharePoint Advanced Management, Purview), le déploiement peut virer à l'incident interne.",
+        title: "Ouvrir Copilot sans auditer les accès",
+        desc: "Copilot montre à chaque collaborateur tout ce qu'il peut techniquement ouvrir, y compris des dossiers partagés trop largement depuis des années. Sans audit préalable (rapports d'accès, SharePoint Advanced Management, Purview), le lancement peut tourner à l'incident interne.",
       },
       {
-        title: "Ignorer le coût total réel",
-        desc: "Sur 200 personnes, la licence Copilot Business ajoute 43 680 € HT par an (200 × 18,20 € × 12), à comparer à Gemini inclus dans Workspace. Changer de suite pour économiser ce montant engage des coûts de migration et de formation à chiffrer d'abord : le calcul se fait à suite constante, licences d'agents comprises.",
+        title: "Oublier le coût total",
+        desc: "Pour 200 personnes, Copilot Business ajoute 43 680 € HT par an (200 × 18,20 € × 12), quand Gemini est déjà dans le forfait Workspace. Changer de suite pour économiser cette somme engage pourtant des frais de migration et de formation : faites le calcul à suite constante, agents compris.",
       },
     ],
 
     alsoConsidered: [
-      { name: "ChatGPT", summary: "Un complément au copilote de suite pour la création visuelle, les livrables complets et les agents d'équipe. Voir [Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
-      { name: "Claude", summary: "Un million de tokens par conversation sur les offres payantes et Claude Code dès l'offre Pro. Voir [ChatGPT vs Claude](/chatgpt-vs-claude)." },
-      { name: "Mistral AI", summary: "L'option de l'hébergement européen, en complément d'une suite. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+      { name: "ChatGPT", summary: "Complète un copilote de suite pour les visuels, les livrables complets et les agents d'équipe. Comparatif : [Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
+      { name: "Claude", summary: "Sur abonnement payant, des échanges d'un million de tokens, et Claude Code à partir de Pro. Comparatif : [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: "Mistral AI", summary: "L'option des données gardées en Europe, à côté d'une suite. Comparatif : [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
     ],
 
     faq: [
       {
-        q: "Peut-on utiliser Gemini si on est sur Microsoft 365 (et inversement) ?",
-        a: "Oui, via les applications web autonomes (gemini.google.com, application Microsoft Copilot), mais vous perdez l'essentiel : l'accès au contexte de votre suite (mails, fichiers, réunions). L'intérêt d'un copilote de suite tient à cet ancrage. En environnement croisé, un assistant généraliste (ChatGPT, Claude, Mistral) est souvent plus pertinent.",
+        q: "Peut-on utiliser Gemini sous Microsoft 365, ou Copilot sous Google Workspace ?",
+        a: "Oui, par les applications web autonomes (gemini.google.com, application Microsoft Copilot), mais vous perdez l'essentiel : le contexte de votre suite, c'est-à-dire vos mails, vos fichiers et vos réunions. Un copilote de suite vaut par cet ancrage ; en environnement croisé, un assistant généraliste (ChatGPT, Claude ou Mistral) convient souvent mieux.",
       },
       {
         q: "Gemini est-il gratuit avec Google Workspace ?",
-        a: "Gemini est inclus dans les forfaits Workspace, sans module à acheter : 6,80 € HT par utilisateur et par mois en Business Starter (Gemini dans Gmail et l'application, accès restreint ailleurs), 13,60 € en Business Standard (Gemini dans toutes les applications), en annuel. Le coût est donc compris dans le forfait. Les usages intensifs passent par le module AI Expanded Access, et l'atelier d'agents par Gemini Enterprise, licence à part.",
+        a: "Il est compris dans les forfaits, sans module à acheter : Business Starter à 6,80 € par utilisateur et par mois (Gemini dans Gmail et dans l'application, accès réduit ailleurs), Business Standard à 13,60 € (Gemini dans toutes les applications), en engagement annuel. Son coût est donc déjà dans votre facture. Les gros utilisateurs passent par le module AI Expanded Access, et l'atelier d'agents par Gemini Enterprise, licence à part.",
       },
       {
         q: "Combien de documents Gemini Notebook peut-il traiter ?",
-        a: "**Jusqu'à 300 sources par carnet** en Business Standard, Business Plus et Enterprise, 50 en Business Starter, 400 avec le module AI Expanded Access. Chaque réponse cite le passage d'origine, ce qui accélère la vérification humaine.",
+        a: "**Jusqu'à 300 sources par carnet** en Business Standard, Business Plus et Enterprise, 400 avec le module AI Expanded Access ; Business Starter en accepte 100 depuis le 7 octobre 2026. Chaque réponse cite le passage d'origine, ce qui accélère la relecture.",
       },
       {
-        q: "Qu'est-ce que Workflow Builder, et est-il inclus dans mon abonnement Workspace ?",
-        a: "Workflow Builder est l'atelier sans code de **Gemini Enterprise** pour créer des agents conversationnels et des flux, les tester, les partager et les planifier. Il suppose une **licence distincte**, à partir de 21 $ par siège et par mois en édition Business (jusqu'à 300 sièges). Les briques incluses dans votre forfait Workspace sont les Gems, Gemini Notebook et Workspace Studio. La documentation d'Agent Designer, l'ancien nom souvent cité, renvoie désormais vers Workflow Builder.",
+        q: "Workflow Builder fait-il partie de mon abonnement Workspace ?",
+        a: "Non. Workflow Builder est l'atelier sans code de **Gemini Enterprise** : on y crée des agents conversationnels et des flux, on les teste, les partage et les planifie. Il demande une **licence distincte**, à partir de 21 $ par siège et par mois en édition Business, pour 300 sièges au plus. Votre forfait Workspace comprend les compétences (qui succèdent aux Gems depuis le 5 octobre 2026), Gemini Notebook et Workspace Studio.",
       },
       {
-        q: "Gemini ou Copilot : lequel est le meilleur pour Excel et l'analyse de données ?",
-        a: "Copilot dans Excel analyse les données, crée formules et graphiques là où vivent déjà vos modèles. Gemini dans Sheets construit et modifie des feuilles (100 par mois en Business Standard) et propose une fonction IA dans les cellules (5 000 appels par mois). Pour la donnée lourde, les deux écosystèmes renvoient vers leurs plateformes de données.",
+        q: "Gemini ou Copilot pour Excel et l'analyse de données ?",
+        a: "Copilot travaille dans Excel, là où vivent vos modèles : il lit les données, propose des formules et dessine des graphiques, en mode édition, plan ou conversation. Dans Sheets, Gemini crée ou modifie jusqu'à 100 feuilles par mois en Business Standard et propose une fonction d'IA dans les cellules, avec 5 000 appels par mois. Pour les gros volumes, chaque écosystème renvoie vers sa plateforme de données.",
       },
       {
-        q: "Le risque de fuite de données est-il plus élevé avec Gemini ou avec Copilot ?",
-        a: "Les deux respectent les permissions existantes et n'entraînent pas leurs modèles sur vos données d'entreprise. Le risque réel est organisationnel : des permissions internes mal gérées, que Copilot expose davantage car Graph voit tout ce que l'utilisateur peut voir. Auditez les accès avant de déployer, quelle que soit la suite.",
+        q: "Gemini ou Copilot : lequel expose le plus vos données ?",
+        a: "Aucun des deux n'utilise vos données d'entreprise pour entraîner ses modèles, et chacun respecte les droits en place. Le risque tient à l'organisation : des permissions mal tenues, que Copilot rend plus visibles puisque Graph voit tout ce que l'utilisateur peut ouvrir. Auditez les accès avant d'ouvrir l'outil, quelle que soit la suite.",
       },
       {
-        q: "Faut-il ajouter ChatGPT ou Claude en plus du copilote de suite ?",
-        a: "Souvent, oui. Les copilotes de suite excellent sur le contexte interne ; les assistants généralistes gardent l'avantage sur la création visuelle, la rédaction longue et le code. Combiner les deux niveaux coûte un siège de plus pour les profils qui en ont l'usage.",
+        q: "Faut-il ajouter ChatGPT ou Claude au copilote de suite ?",
+        a: "Souvent, oui. Les copilotes de suite brillent sur le contexte interne ; les généralistes restent devant pour les visuels, la rédaction longue et le code. Associer les deux niveaux coûte un siège de plus pour les profils qui en ont besoin.",
       },
       {
-        q: "Combien coûte une formation à Gemini ou à Copilot ?",
-        a: "Une journée de formation Gemini ou Copilot coûte **1 980 € HT** en intra pour le groupe (jusqu'à 12 participants), au même tarif en individuel, TVA de 20 % en sus. Masteria est certifié Qualiopi : selon votre branche, votre OPCO peut financer la session. La formation se construit sur vos données et vos processus, et c'est elle qui décide de l'adoption.",
+        q: "Combien coûte une formation Gemini ou Copilot ?",
+        a: "Comptez **1 980 € HT** par journée sur Gemini ou sur Copilot, TVA à 20 % en plus, que le groupe intra compte douze personnes au plus ou que la session soit individuelle. Notre certification Qualiopi permet de solliciter l'OPCO de votre branche, seul juge du financement. La formation se construit sur vos données et vos processus : c'est elle qui décide de l'adoption.",
       },
     ],
 
@@ -2432,51 +2585,51 @@ export const COMPARISONS_INDEX = [
   {
     slug: "meilleure-ia-entreprise-2026",
     title: "Meilleure IA pour entreprise en 2026",
-    subtitle: "Panorama complet : ChatGPT, Claude, Copilot, Gemini, Mistral",
-    excerpt: "Le guide de référence pour choisir entre les cinq outils d'IA principaux en 2026 : décision selon la suite bureautique, le métier, le budget et l'hébergement des données. Prix et modèles vérifiés le 3 octobre 2026.",
+    subtitle: "Cinq assistants passés en revue, de Copilot à Mistral",
+    excerpt: "Suite bureautique, métier, budget, hébergement des données : les critères qui départagent les cinq grands assistants, avec des prix et des modèles relevés le 7 octobre 2026.",
     badge: "Le guide complet",
     isHero: true,
   },
   {
     slug: "chatgpt-vs-claude",
     title: "ChatGPT vs Claude",
-    subtitle: "Quel modèle IA pour votre entreprise ?",
-    excerpt: "OpenAI ou Anthropic ? Douze critères : contexte réel, code, agents, images, données, hébergement, prix par siège.",
+    subtitle: "OpenAI ou Anthropic pour vos équipes ?",
+    excerpt: "Douze critères passés au crible : volume de texte lu d'un coup, code, agents, images, données, hébergement, prix par siège.",
     badge: "Face-à-face",
   },
   {
     slug: "copilot-vs-chatgpt",
     title: "Microsoft Copilot vs ChatGPT",
     subtitle: "Intégré à Microsoft 365 ou autonome ?",
-    excerpt: "Le bon choix dépend de la part de votre travail qui se passe dans Office, de la sensibilité de vos données et de votre budget.",
+    excerpt: "Tout dépend du temps que vos équipes passent dans Office, de la sensibilité de vos données et du budget par siège.",
     badge: "Face-à-face",
   },
   {
     slug: "meilleure-ia-pour-coder",
-    title: "Quelle est la meilleure IA pour coder ?",
-    subtitle: "Claude Code, GitHub Copilot, Cursor, ChatGPT",
-    excerpt: "Quatre outils de code comparés en 2026 : agents, intégration aux éditeurs, modèles, prix par développeur, cas d'usage par profil.",
+    title: "La meilleure IA pour coder",
+    subtitle: "Quatre outils pour vos développeurs",
+    excerpt: "Claude Code, Cursor, GitHub Copilot et Codex face à face : agents, éditeurs, modèles, prix par développeur, profil par profil.",
     badge: "Spécialisé code",
   },
   {
     slug: "meilleur-agent-ia",
-    title: "Quel est le meilleur agent IA ?",
-    subtitle: "Claude Cowork, agents ChatGPT, Manus, Copilot Studio",
-    excerpt: "Quatre plateformes d'agents IA en 2026 : autonomie réelle, validation des actions, gouvernance, coût des exécutions.",
+    title: "Le meilleur agent IA pour l'entreprise",
+    subtitle: "Quatre plateformes pour automatiser",
+    excerpt: "Claude Cowork, agents ChatGPT, Manus et Copilot Studio : autonomie, validation des actions, gouvernance, coût de chaque exécution.",
     badge: "Spécialisé agents",
   },
   {
     slug: "mistral-vs-chatgpt",
     title: "Mistral AI vs ChatGPT",
-    subtitle: "Souveraineté française ou écosystème américain ?",
-    excerpt: "Hébergement dans l'UE, modèles à poids ouverts, entraînement sur vos échanges, fonctions, prix : le duel des entreprises attentives à leurs données.",
+    subtitle: "Données en Europe ou écosystème le plus large ?",
+    excerpt: "Hébergement dans l'UE, modèles à poids ouverts, réglage d'entraînement sur vos échanges, fonctions et prix : le duel des entreprises attentives à leurs données.",
     badge: "Face-à-face",
   },
   {
     slug: "gemini-vs-copilot",
     title: "Google Gemini vs Microsoft Copilot",
-    subtitle: "Le match des suites bureautiques",
-    excerpt: "Workspace ou Microsoft 365 : intégration, prix réel, sécurité, agents. Comment choisir votre copilote de suite en 2026.",
+    subtitle: "Workspace ou Microsoft 365 : votre suite décide",
+    excerpt: "Intégration, coût par siège, sécurité et agents : comment choisir le copilote de votre suite bureautique en 2026.",
     badge: "Face-à-face",
   },
 ]

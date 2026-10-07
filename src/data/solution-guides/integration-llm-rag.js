@@ -2,7 +2,117 @@
 // Vérifié le 03/10/2026 : spécification MCP (révision 2026-07-28, changelog, sécurité), annonces Anthropic (MCP, Agentic AI Foundation), docs Anthropic (retraits de modèles, cache, résidence), OpenAI (contrôle des données), guide ANSSI IA générative, étude de cas distribution.
 export default {
   slug: 'integration-llm-rag',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    directAnswer: "Intégrer un LLM et du RAG, c'est installer un modèle de langage et une recherche dans vos données à l'intérieur des applications que vos équipes utilisent déjà : CRM, ERP, intranet, votre propre produit. Le livrable est une brique technique que votre DSI exploite, et Masteria vous en remet le code et la procédure de migration.",
+    howWeBuild: [
+      {
+        title: "Repérer les points de branchement",
+        desc: "Nous dressons avec la DSI la carte des applications concernées, de leurs API et des données qu'un modèle aurait le droit de lire, ainsi que les contraintes de sécurité de chacune.",
+      },
+      {
+        title: "Prototyper un branchement",
+        desc: "Un premier point d'intégration fonctionne en conditions réelles, journaux compris, pour valider la valeur pour les utilisateurs et les choix techniques avant d'en ajouter d'autres.",
+      },
+      {
+        title: "Industrialiser",
+        desc: "Identité des utilisateurs, quotas, gestion des erreurs et mode dégradé quand le fournisseur ne répond pas : la brique devient un composant exploitable par votre équipe d'exploitation.",
+      },
+      {
+        title: "Préparer la fin de vie du modèle",
+        desc: "Nous remettons la procédure qui permet de changer de modèle ou de fournisseur sans réécrire les applications, avec le code, la documentation et le jeu de tests à rejouer.",
+      },
+    ],
+  },
+  hero: {
+    chips: [
+      "Brique dans vos applications",
+      "Fournisseur de modèle remplaçable",
+      "Région et conservation choisies",
+      "Procédure de migration remise",
+    ],
+    lien: "Voir comment l'intégration se construit",
+    enBref: [
+      {
+        label: "Budget",
+        value: "Un premier point de branchement à partir de 10 000 € environ ; plusieurs systèmes au-delà de 100 000 €",
+      },
+      {
+        label: "Démarrage",
+        value: "La carte des points d'intégration et le choix du fournisseur et de la région",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Couche d'abstraction, connecteurs, journaux, procédure de migration et documentation",
+      },
+      {
+        label: "Propriété",
+        value: "Votre DSI garde le code, les clés et la procédure",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Ce que recouvre une intégration de LLM et de RAG",
+  },
+  etapesBloc: {
+    kicker: "Mise en service",
+    h2: "Cinq étapes, de la cartographie à la procédure de migration",
+  },
+  etapesNote: {
+    texte: "Si plusieurs applications réclament un modèle de langage, un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA classe les points d'intégration",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers pour intégrer un modèle à votre SI",
+  },
+  technique: {
+    kicker: "Architecture",
+    texte: "Une couche d'abstraction place le fournisseur de modèle derrière une interface stable, ce qui permet d'en changer quand un modèle est retiré. La recherche dans vos données applique les droits de l'utilisateur, les connecteurs passent par vos API ou par MCP, et la mise en cache des consignes réduit le coût des appels répétés. Le fournisseur et la région de traitement se choisissent selon vos règles de conservation des données.",
+    h2: "Les composants d'une intégration",
+    lead: "Une couche d'abstraction isole le fournisseur de modèle, la recherche dans vos données (RAG, la récupération de passages juste avant la réponse) s'appuie sur vos droits, les connecteurs passent par vos API ou par MCP, et chaque appel laisse un journal exploitable par votre DSI.",
+    chips: ["Couche d'abstraction du fournisseur", "RAG avec vos droits", "API et MCP", "Quotas et mode dégradé", "Journaux pour la DSI"],
+    note: {
+      texte: "Notre manière de développer et de documenter est présentée sur la page",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "développement d'agents et d'outils IA",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par application",
+    h2: "Où brancher un modèle selon votre activité",
+    intro: "Le point d'intégration change avec le métier : le CRM d'un distributeur, la GED d'un cabinet, le produit d'un éditeur.",
+  },
+  regieBloc: {
+    kicker: "Renfort d'intégration",
+    h2: "Un développeur dans votre équipe d'intégration",
+    lien: "Notre méthode de projet",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Intégration LLM et RAG : les questions des DSI",
+    texte: "Votre architecture impose une contrainte que nous n'avons pas traitée ?",
+    lien: "Exposez-la-nous",
+  },
+  maillage: {
+    kicker: "Autres solutions",
+    h2: "Les livrables qui s'appuient sur une intégration",
+  },
+  cta: {
+    titre: "Dans quelle application brancher un modèle en premier ?",
+    texte: "Indiquez-nous l'application visée, son API et vos contraintes de région et de conservation des données. Nous vous répondons sous 24 heures pour convenir des 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Une équipe technique qui travaille avec votre DSI",
+    texte: "Mathias Nizan dirige Masteria, qu'il a fondé à Lyon en 2022, et suit chaque projet jusqu'à la passation. Pour une intégration, il réunit des développeurs qui écrivent la couche d'abstraction et les connecteurs, un consultant qui compare les fournisseurs sur la conservation et la région, et un formateur pour vos équipes techniques. Masteria n'a d'accord commercial avec aucun fournisseur de modèle.",
+  },
   intro: "Votre DSI veut qu'un modèle de langage travaille dans les applications que vos équipes ouvrent déjà : le CRM et l'ERP (vos logiciels de relation client et de gestion), l'intranet ou votre propre produit. Le livrable est une brique technique exploitée par vos équipes : appels d'API (l'interface par laquelle un logiciel appelle le modèle), serveur MCP (le protocole qui ouvre vos systèmes aux assistants IA), service de recherche sur vos données. Masteria cadre les droits, la région d'exécution et le cycle de vie du modèle avec votre responsable de la sécurité, puis livre le code et les tests.",
 
   etapes: [
@@ -29,7 +139,16 @@ export default {
   ],
 
   cout: {
-    lead: "Une intégration démarre autour de 10 000 € pour un premier point de branchement. Étendue à plusieurs systèmes, elle dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros, selon le nombre d'applications et le niveau de sécurité exigé.",
+    kicker: "Budget de l'intégration",
+    h2: "Le budget d'une intégration",
+    note: {
+      texte: "Pour les autres familles de projets, nos fourchettes sont sur la page",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "prix d'un projet IA",
+      },
+    },
+    lead: "Une intégration démarre autour de 10 000 € pour un premier point de branchement. Étendue à plusieurs systèmes, elle monte au-delà de 100 000 € et jusqu'à quelques centaines de milliers d'euros, selon le nombre d'applications et le niveau de sécurité exigé.",
     paras: [
       "Le forfait se fixe sur devis après le cadrage, et la proposition écrite décrit le périmètre, les livrables et le calendrier. Le coût d'usage s'y ajoute : nombre d'appels, taille des contextes, part des requêtes servies par le cache. La région d'exécution le modifie aussi, puisque l'inférence limitée aux États-Unis coûte 1,1 fois le tarif standard chez Anthropic. Nous fournissons une estimation mensuelle à partir de vos volumes, puis le tableau de bord qui la vérifie en production.",
     ],
@@ -59,6 +178,8 @@ export default {
   ],
 
   comparatif: {
+    kicker: "Fonction éditeur ou intégration",
+    caption: "Fonction d'IA intégrée à l'éditeur et intégration sur mesure, critère par critère.",
     intro: "ChatGPT, Claude ou Copilot sous licence entreprise restent des applications d'IA séparées : elles se déploient en quelques jours et suffisent pour rédiger, résumer ou explorer un sujet. L'intégration se justifie quand la tâche se répète dans une application métier, sur des données que l'application séparée ne voit pas, ou quand votre DSI doit choisir le modèle et la région d'exécution.",
     rows: [
       { aspect: "Mise en route", off: "Quelques jours : licences, authentification unique, règles d'usage", custom: "Quelques semaines pour un premier point d'intégration, davantage selon les systèmes" },
@@ -134,7 +255,7 @@ export default {
         "Le déploiement de ces mêmes compétences aux quelque cinquante autres collaborateurs est prévu d'octobre à décembre 2026 ; l'équipe de référents prendra ensuite le relais.",
       ],
       resultat: "Les onze compétences couvrent la cotation depuis le mail d'un client, les réponses aux cahiers des charges appuyées sur l'ERP, les relances, et la surveillance de la marge, du stock et des livraisons. Chacune passe en production une fois ses données de démonstration remplacées par celles de l'entreprise. Le but reste une cible, écrite comme telle : que 58 personnes pèsent autant qu'une équipe de 70. Pour une DSI, la pièce la plus utile tient en une liste validée par la direction : pour chaque compétence, les données qu'elle a le droit de lire.",
-      lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#distribution", label: "Les onze compétences branchées sur le CRM et l'ERP" },
     },
     pieges: [
       {
@@ -205,6 +326,6 @@ export default {
     { name: "Claude Platform : Prompt caching", url: "https://platform.claude.com/docs/en/build-with-claude/prompt-caching" },
     { name: "Claude Platform : Data residency", url: "https://platform.claude.com/docs/en/manage-claude/data-residency" },
     { name: "OpenAI API : Data controls in the OpenAI platform", url: "https://developers.openai.com/api/docs/guides/your-data" },
-    { name: "ANSSI : Recommandations de sécurité pour un système d'IA générative (29 avril 2024)", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
+    { name: "ANSSI, recommandations du 29 avril 2024 : intégrer un modèle de langage dans un système d'information", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
   ],
 }

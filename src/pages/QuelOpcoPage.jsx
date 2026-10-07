@@ -335,7 +335,7 @@ export default function QuelOpcoPage() {
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', margin: '0 0 20px' }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi (condition du financement)' },
-              { icon: Wallet, label: "Jusqu'à 100 % pris en charge selon la branche" },
+              { icon: Wallet, label: "Jusqu'à 100 % du coût pédagogique, selon votre branche et ses fonds" },
               { icon: Clock, label: 'Devis et dossier complet sous 24 h ouvrées' },
               { icon: CheckCircle2, label: 'Certifié Qualiopi depuis janvier 2026 (n° 725311-1)' },
             ].map(({ icon: Icon, label }) => (

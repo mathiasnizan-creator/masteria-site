@@ -2,7 +2,55 @@
 // Vérifié le 03/10/2026 : Insee Première n° 2120 (21 juillet 2026), Banque de France (discours de Denis Beau du 9 septembre 2026), EUR-Lex (règlements (UE) 2024/1689, 2026/1744, 2022/2554, 2024/2847 et 1169/2011), Légifrance (code de la santé publique art. L. 1111-8), cnb.avocat.fr (guide IAG de septembre 2024), guides.ia.numerique.gouv.fr (guide d'usage de l'IA des agents de l'État) ; retour de mission : étude de cas « photovoltaique ».
 export default {
   slug: 'ia-secteurs',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  resume: "Masteria conçoit et développe des outils d'IA secteur par secteur. La banque, l'industrie, la santé, le droit, le commerce, la logistique, l'immobilier, le secteur public, le conseil, le tourisme, l'agroalimentaire et l'édition de logiciels ont chacun leur page, avec leurs textes, leurs données sensibles et leur premier cas d'usage.",
+  hero: {
+    chips: ["Douze secteurs B2B", "Textes et données propres à chacun", "Conseil, développement, automatisation"],
+    lien: "Parcourir les douze secteurs",
+  },
+  secteursBloc: {
+    kicker: "Douze pages sectorielles",
+    h2: "Trouvez la page de votre activité",
+    intro: "Chaque page part du texte qui gouverne le secteur, décrit les difficultés que nous y rencontrons, liste les outils que nous y construisons et précise la contrainte de confidentialité ou d'hébergement à respecter.",
+  },
+  approche: {
+    kicker: "Une méthode commune",
+    h2: "Le cadrage change d'un secteur à l'autre, la méthode reste la même",
+    lead: "Nous cadrons le premier cas avec vos équipes, nous le construisons sur vos données, puis nous vous remettons l'outil et son code. D'un secteur à l'autre, seuls changent les textes et les données que le cadrage fait entrer dans le projet.",
+    cartes: [
+      {
+        title: "Cadrer à partir du texte qui s'applique",
+        desc: "Le premier atelier nomme le règlement, la doctrine ou la clause de contrat qui encadre le cas choisi, ainsi que la personne qui la fera respecter.",
+      },
+      {
+        title: "Construire sur vos données",
+        desc: "Assistants, agents et intégrations se développent sur vos documents et vos logiciels, avec les droits d'accès que vous fixez, du prototype à la mise en production.",
+      },
+      {
+        title: "Remettre l'outil à vos équipes",
+        desc: "Le code, la documentation et un référent formé restent chez vous à la fin de la mission, et l'outil continue de tourner sans abonnement à une plateforme.",
+      },
+    ],
+    note: "Nos capacités de développement (agents, automatisations, applications métier, recherche dans vos documents) sont détaillées sur une page dédiée :",
+  },
+  pourquoi: {
+    kicker: "Pourquoi partir du secteur",
+    h2: "Partir du secteur évite de construire un outil que la conformité refusera",
+    lead: "Un assistant qui synthétise un dossier de crédit, un moteur de recherche dans des données de santé et un agent de service client pour un site marchand se conçoivent chacun à leur manière, parce que l'hébergement, les droits d'accès et la trace exigée diffèrent. Les repérer au cadrage prend quelques heures ; les découvrir à la mise en production peut coûter le projet.",
+    points: [
+      "Le premier cas d'usage est choisi parmi ceux que votre secteur autorise déjà.",
+      "Le secret bancaire, l'hébergement des données de santé, le secret de l'avocat ou la doctrine de l'État entrent dans le cahier des charges dès le départ.",
+      "Les livrables reprennent le vocabulaire de vos équipes, ce qui facilite la reprise de l'outil.",
+    ],
+  },
+  faqBloc: {
+    h2: "Les questions qui reviennent, tous secteurs confondus",
+  },
+  cta: {
+    titre: "Votre activité n'a pas encore sa page ?",
+    texte: "La méthode vaut pour toute entreprise B2B. Décrivez votre métier et le flux qui vous coûte du temps : nous revenons vers vous sous 24 heures avec une première lecture des cas possibles, puis nous fixons ensemble les 30 minutes de cadrage offertes.",
+  },
   intro: "Le secteur d'activité décide de trois choses dans un projet d'IA : le texte qui encadre l'outil, les données qu'il a le droit de lire et le premier cas d'usage qui rapporte. Une banque commence par ses réclamations sous le regard de l'ACPR, un ministère par ses pièces de marché selon la doctrine de l'État, un cabinet d'avocats par des dossiers pseudonymisés. Masteria, cabinet IA lyonnais, applique cette lecture aux douze secteurs qu'il couvre et développe dans chacun l'outil que ces règles autorisent.",
 
   guide: {
@@ -55,14 +103,14 @@ export default {
       h3: "Retour de mission : un diagnostic par flux chez un distributeur photovoltaïque",
       contexte: "Un distributeur de solutions photovoltaïques emploie trois personnes, exploite trois entrepôts en France et vend à l'export. Tout passe par Odoo, son ERP (progiciel de gestion intégré), et par deux dirigeants qui se remplacent l'un l'autre. La direction voulait vendre plus sans recruter, à une condition : l'IA n'étant pas une vérité absolue, chaque assistant devait comporter des contrôles. Son quotidien relève de deux de nos pages sectorielles, le commerce et la logistique.",
       etapes: [
-        "Mener trois entretiens en visioconférence, avec la direction, le commercial et les opérations, sur une grille qui suit le travail : qui fait quoi, avec quel outil, à quel rythme.",
+        "Mener trois entretiens, avec la direction, le commercial et les opérations, sur une grille qui suit le travail : qui fait quoi, avec quel outil, à quel rythme.",
         "Décrire quatre flux étape par étape (vendre, livrer et encaisser, développer, piloter) et relever douze gisements de temps avec leur volume déclaré.",
         "Positionner chaque gisement selon son impact et sa faisabilité à trois mois, puis retenir trois chantiers, chacun avec un porteur.",
-        "Définir trois assistants, à construire en une journée avant la formation : consultation des transporteurs avant livraison, conversion des fichiers d'entrepôt en import Odoo avec contrôle des totaux, transformation des demandes entrantes en lignes de devis.",
+        "Définir trois assistants à construire avant la formation : consultation des transporteurs avant livraison, conversion des fichiers d'entrepôt en import Odoo avec contrôle des totaux, transformation des demandes entrantes en lignes de devis.",
         "Poser une charte d'usage, désigner un référent et fixer quelques indicateurs à revoir un mois après la formation.",
       ],
       resultat: "Le diagnostic a été présenté en septembre 2026, et la direction dispose de trois décisions : le socle, les chantiers, la charte. Les objectifs, dont des devis plus rapides et la fin des ressaisies, sont fixés avant la formation d'octobre 2026 ; ce sont des cibles, que le bilan d'un mois confrontera aux mesures. Le flux a désigné les chantiers, et le cadre (charte, référent, ligne au registre RGPD) en a fixé les garde-fous.",
-      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Les douze gisements de temps du distributeur photovoltaïque" },
     },
     pieges: [
       { titre: "Choisir le modèle avant de connaître le régime des données", texte: "Dans la santé, le droit ou le secteur public, le régime des données fixe l'hébergement, et l'hébergement réduit la liste des modèles possibles. Commencer par le modèle oblige à refaire le choix au premier contrôle." },
@@ -99,11 +147,11 @@ export default {
     },
     {
       q: "Combien coûte un projet IA sectoriel ?",
-      a: "Le prix dépend moins du secteur que du périmètre : nombre de flux, systèmes à connecter, régime des données, hébergement. Un premier outil limité à un flux pèse peu dans un budget informatique, alors qu'un déploiement sur plusieurs systèmes passe la barre des 100 000 € et se chiffre parfois en centaines de milliers d'euros. Chaque proposition est forfaitaire, écrite avant signature, et le code vous est livré.",
+      a: "Le prix dépend moins du secteur que du périmètre : nombre de flux, systèmes à connecter, régime des données, hébergement. Un premier outil limité à un flux pèse peu dans un budget informatique, alors qu'un déploiement relié à plusieurs systèmes dépasse souvent 100 000 € et se compte parfois en centaines de milliers d'euros. Chaque proposition est forfaitaire, écrite avant signature, et le code vous est livré.",
     },
     {
       q: "Peut-on financer le conseil et le développement ?",
-      a: "Par un OPCO, non : seule la formation l'est, grâce à la certification Qualiopi que Masteria détient pour ses formations, avec une journée intra à 1 980 € HT. Selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil peuvent s'appliquer ; nous en faisons le tour pendant le cadrage.",
+      a: "Pas par votre OPCO, qui ne prend en charge que la formation : Masteria est certifié Qualiopi au titre des actions de formation, et une journée intra coûte 1 980 € HT. Pour le conseil, certaines aides publiques existent selon la taille de l'entreprise et sa région ; le cadrage sert à vérifier celles qui vous concernent.",
     },
   ],
 
@@ -123,15 +171,15 @@ export default {
   },
 
   sources: [
-    { name: "Insee Première n° 2120 : les technologies de l'information et de la communication dans les entreprises en 2025 (21 juillet 2026)", url: "https://www.insee.fr/fr/statistiques/9025878" },
-    { name: "Banque de France : discours de Denis Beau, « Intelligence artificielle : les nouvelles frontières du risque » (9 septembre 2026)", url: "https://www.banque-france.fr/system/files/2026-09/Discours-D-Beau_2026-09-09_ADB-Conference-IA.pdf" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (article 50, annexe III)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
-    { name: "EUR-Lex : règlement (UE) 2022/2554 sur la résilience opérationnelle numérique du secteur financier (DORA)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32022R2554" },
+    { name: "Insee Première n° 2120 (21 juillet 2026) : taux d'usage de l'IA par secteur en 2025", url: "https://www.insee.fr/fr/statistiques/9025878" },
+    { name: "Banque de France, discours de Denis Beau du 9 septembre 2026 : l'IA en production dans les banques et les assurances", url: "https://www.banque-france.fr/system/files/2026-09/Discours-D-Beau_2026-09-09_ADB-Conference-IA.pdf" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : usages à haut risque par secteur (annexe III) et transparence (article 50)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : la date du 2 décembre 2027 pour l'annexe III", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
+    { name: "EUR-Lex, règlement DORA (UE) 2022/2554 : la finance et ses prestataires informatiques", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32022R2554" },
     { name: "EUR-Lex : règlement (UE) 2024/2847 sur la cyberrésilience (article 71, dates d'application)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R2847" },
-    { name: "EUR-Lex : règlement (UE) n° 1169/2011 concernant l'information des consommateurs sur les denrées alimentaires (annexe II)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32011R1169" },
-    { name: "Légifrance : code de la santé publique, article L. 1111-8 (hébergement des données de santé)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049577902" },
-    { name: "Conseil national des barreaux : guide pratique, utilisation des systèmes d'intelligence artificielle générative (septembre 2024)", url: "https://cnb.avocat.fr/medias/cnb-guidepratique-utilisation-systemes-iag-2024-68f7b1d86e4570.98487114.pdf" },
-    { name: "DINUM : guide d'usage de l'IA pour les agents publics de l'État, partie 3 « les 5 principes fondamentaux »", url: "https://guides.ia.numerique.gouv.fr/guides/guide-dusage-de-lia-pour-les-agents-publics-de-letat/partie-3-les-5-principes-fondamentaux" },
+    { name: "EUR-Lex, règlement (UE) n° 1169/2011 : la liste des allergènes de l'annexe II", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32011R1169" },
+    { name: "Légifrance, article L. 1111-8 du code de la santé publique : l'hébergeur certifié", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049577902" },
+    { name: "Conseil national des barreaux, guide de septembre 2024 : secret professionnel et IA générative", url: "https://cnb.avocat.fr/medias/cnb-guidepratique-utilisation-systemes-iag-2024-68f7b1d86e4570.98487114.pdf" },
+    { name: "DINUM, guide d'usage de l'IA des agents de l'État : les principes qui encadrent les outils commerciaux", url: "https://guides.ia.numerique.gouv.fr/guides/guide-dusage-de-lia-pour-les-agents-publics-de-letat/partie-3-les-5-principes-fondamentaux" },
   ],
 }

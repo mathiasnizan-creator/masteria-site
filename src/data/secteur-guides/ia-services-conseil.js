@@ -2,7 +2,52 @@
 // Vérifié le 03/10/2026 : Insee Première n° 2120 (21 juillet 2026, usage de l'IA par secteur en 2025), Légifrance (code de commerce art. L. 151-1), CNIL (RGPD, chapitre IV, art. 28), OpenAI (page « Confidentialité des entreprises » mise à jour le 8 janvier 2026), guides.ia.numerique.gouv.fr (guide d'usage de l'IA des agents de l'État), EUR-Lex (omnibus (UE) 2026/1744, article 4) ; retour de mission : étude de cas « conseil-financier ».
 export default {
   slug: 'ia-services-conseil',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  secteur: {
+    metaTitle: "IA pour cabinets de conseil : agents et outils | Masteria",
+  },
+  hero: {
+    chips: ["Mémoires, propositions, livrables", "Cloisonnement client par client", "Réponse aux appels d'offres"],
+    lien: "Voir comment capitaliser la matière",
+  },
+  offresTitre: {
+    kicker: "Trois chantiers pour un cabinet",
+    h2: "Inventorier la matière, construire les assistants, automatiser l'avant et l'après mission",
+  },
+  enjeux: {
+    kicker: "Cabinets de conseil et services",
+    h2: "La matière d'un cabinet rapporte quand elle circule, et l'expose quand elle se mélange",
+    difficultes: "Ce qui coûte du temps aux consultants",
+    prestations: "Ce que nous développons pour un cabinet",
+  },
+  regieBloc: {
+    kicker: "Régie dans le cabinet",
+    h2: "Un développeur qui construit avec vos consultants, dans votre périmètre",
+    accroche: "Pour un cabinet aux engagements de confidentialité stricts, ou pour accélérer un programme interne, le développeur IA rejoint vos équipes, sur place ou à distance, et construit au contact de vos méthodes et de votre matière sans l'exposer.",
+    lien: "Comment s'organise une régie",
+  },
+  formationBloc: {
+    kicker: "Former les consultants",
+    h2: "Des ateliers sur vos propres mémoires et livrables",
+    lien: "Voir les programmes de formation",
+  },
+  faqBloc: {
+    h2: "Les questions des cabinets de conseil",
+    texte: "Une clause de vos contrats clients vous fait hésiter ?",
+    lien: "Soumettez-nous la question",
+  },
+  maillage: {
+    h2: "Secteurs proches du conseil",
+  },
+  cta: {
+    titre: "Quelle famille de missions capitaliser en premier ?",
+    texte: "Dites-nous ce que votre cabinet produit le plus souvent (mémoires techniques, propositions, comptes rendus) et où cette matière est rangée. Nous revenons vers vous sous 24 heures pour fixer les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Un cabinet IA qui travaille avec les cabinets",
+    texte: "Masteria, l'entreprise fondée par Mathias Nizan à Lyon en 2022, réunit pour chaque mission des consultants, des développeurs et des formateurs indépendants, sous la direction de Mathias. Pour un cabinet de conseil, ils inventorient la matière réutilisable, écrivent les règles de cloisonnement et construisent les assistants avec vos consultants. Masteria ne revend aucune licence, et vos clients restent les vôtres.",
+  },
   intro: "Un cabinet de conseil vend du temps d'expert et une matière : mémoires techniques, propositions, méthodologies, livrables. L'IA rapporte quand elle réutilise cette matière, et elle expose le cabinet quand elle la mélange d'un client à l'autre. Les deux se règlent au même moment, avant le premier assistant, dans le tri des documents et dans les droits d'accès. Masteria, cabinet IA basé à Lyon, capitalise votre matière par famille de besoin, la cloisonne par client et construit les assistants qui la remettent au travail.",
 
   offresIntro: [
@@ -12,14 +57,21 @@ export default {
 
   offres: [
     {
+      title: "Inventaire et règles de réutilisation",
+      cta: "Notre méthode de conseil",
       desc: "Nous inventorions vos mémoires, propositions, méthodologies et livrables, puis nous les classons selon ce que vos contrats permettent de réutiliser. Le cadrage fixe les familles de besoin, les règles de cloisonnement par client, l'autorisation à demander aux clients pour leurs données personnelles et la charte d'usage des consultants, avec un porteur pour chaque règle.",
       points: ["Inventaire de la matière réutilisable", "Règles de cloisonnement par client", "Charte d'usage des consultants"],
     },
     {
+      title: "Assistants par famille de besoin",
+      cta: "Ce que construisent nos développeurs",
+      secondaryCta: "Outils IA conçus par métier",
       desc: "Nous construisons des assistants par famille de besoin : réponse aux appels d'offres, trame de livrable, préparation d'un comité de pilotage. Chaque assistant interroge le consultant avant de rédiger, s'appuie sur les mémoires les mieux notés et cite ses sources. Il s'intègre à votre stockage documentaire et à votre CRM (le logiciel de gestion de la relation client) quand le cas le demande.",
       points: ["Un assistant par famille de besoin", "Questions au consultant avant rédaction", "Intégration au stockage et au CRM"],
     },
     {
+      title: "Tâches autour de la mission automatisées",
+      cta: "Notre pratique de l'automatisation",
       desc: "Nous automatisons les tâches qui entourent la mission : qualification des avis d'appel public à la concurrence, extraction des pièces d'un dossier de consultation, mise au format des comptes rendus, préparation des fiches de référence à partir des missions terminées. Le consultant valide tout ce qui part vers un client ou vers un acheteur.",
       points: ["Qualification des avis de marché", "Fiches de référence à jour", "Comptes rendus mis au format du cabinet"],
     },
@@ -98,7 +150,7 @@ export default {
         "Former les équipes pendant une journée sur les deux sites, puis remettre un guide d'utilisation qui fixe qui met à jour quoi et les règles de sécurité.",
       ],
       resultat: "Chaque pôle dispose d'assistants qui parlent la langue de ses marchés, nourris de ses mémoires les mieux notés, dans un environnement d'entreprise qui n'entraîne aucun modèle avec les données du cabinet. Les formulations qui ont gagné sont capitalisées par pôle, l'écriture s'homogénéise entre consultants et entre sites, et la compétence reste dans le cabinet : le dispositif évolue sans Masteria.",
-      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Les quatre assistants du cabinet de conseil financier" },
     },
     pieges: [
       { titre: "Verser tous les livrables dans une base unique", texte: "Une base unique mélange les clients et rend intenable la promesse de confidentialité faite à chacun. La capitalisation se fait par famille de besoin, sur des documents triés, après retrait des éléments propres au client." },
@@ -145,11 +197,11 @@ export default {
   ],
 
   sources: [
-    { name: "Insee Première n° 2120 : les technologies de l'information et de la communication dans les entreprises en 2025 (21 juillet 2026)", url: "https://www.insee.fr/fr/statistiques/9025878" },
+    { name: "Insee Première n° 2120 (21 juillet 2026) : l'IA dans les activités spécialisées, scientifiques et techniques", url: "https://www.insee.fr/fr/statistiques/9025878" },
     { name: "Légifrance : code de commerce, article L. 151-1 (secret des affaires)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037266553" },
     { name: "CNIL : règlement général sur la protection des données, chapitre IV (article 28, sous-traitant)", url: "https://www.cnil.fr/fr/reglement-europeen-protection-donnees/chapitre4" },
     { name: "OpenAI : confidentialité des entreprises (mise à jour du 8 janvier 2026)", url: "https://openai.com/fr-FR/enterprise-privacy/" },
     { name: "DINUM : guide d'usage de l'IA pour les agents publics de l'État, partie 3 « les 5 principes fondamentaux »", url: "https://guides.ia.numerique.gouv.fr/guides/guide-dusage-de-lia-pour-les-agents-publics-de-letat/partie-3-les-5-principes-fondamentaux" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA (article 4, maîtrise de l'IA)", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : la nouvelle rédaction de l'article 4 sur la maîtrise de l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
   ],
 }

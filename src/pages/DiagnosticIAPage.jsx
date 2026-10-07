@@ -1,35 +1,34 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Compass, Map as MapIcon, Layers, Target, FileText, ListChecks,
+  ArrowRight, Bot, Compass, Map as MapIcon, Layers, Target, FileText, ListChecks,
   Gauge, Zap, Users, Server, Building2, Calendar, ClipboardCheck, Workflow,
-  Rocket, ShieldCheck, MapPin, Check,
+  Rocket, ShieldCheck, MapPin, Check, Sun, ExternalLink,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import FounderNote from '../components/FounderNote'
-import OfficialSources from '../components/OfficialSources'
+import { PressMention } from '../components/FounderNote'
+import { CADRAGE_COURT } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
 
 /*
- * Page de conversion high-ticket — offre d'entrée productisée « Diagnostic IA »
- * (slug /diagnostic-ia). Objectif : dé-risquer la première étape d'un acheteur
- * high-ticket (COMEX, DSI, directions métier) avec un livrable actionnable au
- * terme d'une intervention courte, faible engagement, sans suite obligatoire.
- * DURÉE : aucune durée chiffrée sur la page ; la durée et le forfait se fixent
- * au cadrage, selon le périmètre (consigne de Mathias du 03/10/2026).
+ * Page de l'offre d'entrée « Diagnostic IA » (slug /diagnostic-ia). Objectif :
+ * rendre la première étape facile pour un acheteur (direction générale, DSI,
+ * direction métier) : une intervention courte, un livrable écrit, aucune suite
+ * obligatoire, précédée de 30 minutes de cadrage offertes.
+ * DURÉE ET PRIX : jamais affichés. La durée et le forfait se fixent au cadrage,
+ * selon le périmètre (décisions de Mathias des 02 et 03/10/2026 ; formulations de
+ * référence dans src/data/offre-entree.js).
  *
- * INTÉGRITÉ : posture orientée capacité. Aucun cas client nommé, aucun chiffre
- * de résultat fabriqué, aucun prix ferme inventé. Le « 1 500 / 98 % » n'est PAS
- * employé ici (chiffre de formation). Le coût est présenté honnêtement : cadrage
- * gratuit OU forfait court selon le périmètre, sans tarif vendu à l'aveugle.
+ * ANGLE (anti-cannibalisation du cluster conseil) : l'OFFRE D'ENTRÉE. La stratégie
+ * complète vit sur /conseil-strategie-ia, l'audit exhaustif sur /audit-ia, le format
+ * PME sur /conseil-ia-pme. Cette page garde l'intention transactionnelle « diagnostic ».
  *
- * Design premium cabinet identique à /agence-developpement-ia : kickers, icônes
- * lucide (zéro emoji), cartes radius 16, réponses directes citables en gras,
- * accent #2563EB, CTA final sombre. Pas d'OPCO/Qualiopi (offre conseil).
- * Maillage : /conseil-strategie-ia, /agence-developpement-ia, /agents-ia-entreprise,
- * /outils-ia-sur-mesure, /methode-projet-ia, /contact.
+ * INTÉGRITÉ : aucun client nommé, aucun chiffre de résultat ni prix inventé. Pas
+ * d'OPCO/Qualiopi en avant (offre de conseil). Cas cités : src/data/etudes-de-cas.js.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards, de
+ * FounderNote ni d'OfficialSources communs ; « quick wins » remplacé par « gains
+ * rapides » (charte de voix).
  */
 
 const SLUG = 'diagnostic-ia'
@@ -37,7 +36,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Diagnostic IA : cas d'usage et feuille de route | Masteria"
-const META_DESC = "Diagnostic IA : processus automatisables, cas d'usage priorisés, feuille de route chiffrée. Durée et forfait fixés lors d'un cadrage de 30 minutes offert."
+const META_DESC = "Diagnostic IA : travail que l'IA peut reprendre, cas d'usage classés, feuille de route chiffrée. Durée et forfait fixés après 30 minutes de cadrage offertes."
 // Répartition des intentions « audit » (depuis 2026-08-10) : la requête
 // transactionnelle « audit ia » est portée par la money page /audit-ia ;
 // l'intention informationnelle (méthode, normes, prix) reste à l'article
@@ -45,7 +44,7 @@ const META_DESC = "Diagnostic IA : processus automatisables, cas d'usage prioris
 // transactionnelle « diagnostic » et renvoie vers les deux.
 const KEYWORDS = "diagnostic ia, diagnostic intelligence artificielle, audit des processus ia, état des lieux ia, diagnostic ia entreprise"
 
-/* ───────── Styles partagés (calque /agence-developpement-ia) ───────── */
+/* ───────── Styles partagés ───────── */
 
 const sectionPad = 'clamp(64px, 9vw, 110px) 24px'
 const wrap = { maxWidth: 1140, margin: '0 auto' }
@@ -72,56 +71,56 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: Calendar, label: 'Intervention courte' },
-  { icon: FileText, label: 'Feuille de route livrée' },
-  { icon: ShieldCheck, label: 'Sans engagement de suite' },
+  { icon: FileText, label: 'Livrable écrit qui vous appartient' },
+  { icon: ShieldCheck, label: 'Aucune suite imposée' },
   { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Premier échange', value: "30 minutes de cadrage, offertes, en visio ou par téléphone" },
-  { label: 'Format', value: "Intervention courte avec vos équipes, préparation et restitution incluses ; durée fixée au cadrage" },
-  { label: 'Tarif', value: "Forfait chiffré lors du cadrage, selon le périmètre" },
-  { label: 'Livrable', value: "Feuille de route IA priorisée, estimations de budget et de délai, quick wins" },
-  { label: 'Engagement', value: "Faible, sans suite obligatoire ; le livrable vous appartient" },
-  { label: 'Pour qui', value: "COMEX, DSI et directions métier · PME, ETI et grands groupes" },
-  { label: 'Modalité', value: "Sur site ou à distance · Lyon, Europe, États-Unis, Inde" },
-  { label: 'Et après', value: "Enchaînement possible sur POC, développement sur mesure ou régie" },
+  { label: 'Avant tout', value: `${CADRAGE_COURT}, en visio ou au téléphone` },
+  { label: 'Format', value: "Une intervention courte avec vos équipes, préparation et restitution comprises" },
+  { label: 'Durée et prix', value: "Fixés lors du cadrage, selon le périmètre retenu ; aucun tarif affiché d'avance" },
+  { label: 'Livrable', value: "Feuille de route classée par priorité, fourchettes de budget et de délai, gains rapides repérés" },
+  { label: 'Engagement', value: "Léger : aucune suite obligatoire, et le document reste à vous" },
+  { label: 'Pour qui', value: "Directions générales, DSI, directions métier · PME, ETI, grands groupes" },
+  { label: 'Où', value: "Chez vous ou à distance, depuis Lyon et jusqu'en Inde" },
+  { label: 'Ensuite', value: "Prototype, développement sur mesure ou appui en régie, si vous le décidez" },
 ]
 
-/* ───────── Diagnostic vs audit vs POC (tableau citable — GEO) ───────── */
+/* ───────── Diagnostic vs audit vs POC (tableau citable, GEO) ───────── */
 
 const COMPARATIF = [
   {
-    critere: 'Objectif',
-    diagnostic: "Cadrer les usages et prioriser les cas d'usage IA",
-    audit: "Évaluer en profondeur la maturité, les données et l'existant",
-    poc: "Prouver la valeur d'un cas d'usage précis en conditions réelles",
+    critere: 'Question posée',
+    diagnostic: "Par quoi commencer, et dans quel ordre ?",
+    audit: "Où en sommes-nous, sur tous les plans ?",
+    poc: "Ce cas précis tient-il ses promesses ?",
   },
   {
     critere: 'Durée',
-    diagnostic: "Courte, fixée au cadrage selon votre périmètre",
-    audit: "De quelques jours à quelques semaines",
-    poc: "Quelques semaines de développement",
+    diagnostic: "Courte, arrêtée pendant le cadrage selon le périmètre",
+    audit: "Plus longue, à la mesure de l'organisation étudiée",
+    poc: "Le temps de construire et d'éprouver un prototype",
   },
   {
-    critere: 'Livrable',
-    diagnostic: "Feuille de route priorisée, estimations, quick wins",
-    audit: "Rapport détaillé de maturité et plan de transformation",
-    poc: "Prototype fonctionnel testé sur un vrai flux",
+    critere: 'Ce que vous recevez',
+    diagnostic: "Une feuille de route classée, des fourchettes, des gains rapides",
+    audit: "Un rapport complet : maturité, données, outils, conformité",
+    poc: "Un prototype testé sur un flux de travail existant",
   },
   {
     critere: 'Engagement',
-    diagnostic: "Faible : un forfait connu d'avance, sans suite obligatoire",
-    audit: "Moyen : mission de conseil cadrée",
-    poc: "Projet de développement engagé sur un cas",
+    diagnostic: "Léger : un forfait connu d'avance, aucune suite imposée",
+    audit: "Une mission de conseil cadrée",
+    poc: "Un projet de développement sur un cas",
   },
   {
-    critere: 'Quand le choisir',
-    diagnostic: "Vous voulez savoir par où commencer",
-    audit: "Vous voulez une vision exhaustive avant d'industrialiser",
-    poc: "Un cas est déjà identifié, vous voulez le valider",
+    critere: 'Moment opportun',
+    diagnostic: "Avant tout projet, pour savoir où porter l'effort",
+    audit: "Avant d'industrialiser, quand la direction veut un constat complet",
+    poc: "Quand un cas est choisi et qu'il faut le valider",
   },
 ]
 
@@ -130,23 +129,23 @@ const COMPARATIF = [
 const COUVERTURE = [
   {
     icon: Target,
-    title: 'Cadrage des usages',
-    desc: "Nous délimitons vos enjeux, vos objectifs et vos contraintes avec les bonnes personnes autour de la table. Le diagnostic part de votre réalité métier, pas d'un catalogue d'idées génériques sur l'intelligence artificielle.",
+    title: 'Les enjeux, posés avec les bonnes personnes',
+    desc: "Objectifs, contraintes, attentes de la direction : nous les écrivons avec ceux qui décident et ceux qui font. Le diagnostic part de votre métier, jamais d'une liste d'idées toutes faites sur l'intelligence artificielle.",
   },
   {
     icon: Workflow,
-    title: 'Cartographie des processus automatisables',
-    desc: "Nous passons en revue vos flux de travail et identifions ceux qui se prêtent à l'IA : tâches répétitives, traitement de documents, qualification, rédaction, recherche d'information. Vous voyez clairement où la valeur se trouve.",
+    title: "Les tâches que l'IA peut reprendre",
+    desc: "Nous passons en revue vos flux de travail et repérons ceux qui se prêtent à l'IA : tâches répétitives, documents à traiter, demandes à qualifier, textes à rédiger, informations à retrouver. Vous voyez où se trouve la valeur, chiffres d'heures à l'appui.",
   },
   {
     icon: Gauge,
-    title: 'Priorisation impact / effort',
-    desc: "Chaque cas d'usage est positionné selon sa valeur attendue et sa difficulté de mise en œuvre. Vous repartez avec un ordre de marche clair : par quoi commencer, quoi reporter, quoi écarter.",
+    title: 'Un classement valeur et effort',
+    desc: "Chaque cas d'usage reçoit une place selon ce qu'il rapporterait et ce qu'il coûterait à mettre en œuvre. Vous repartez avec un ordre de marche : ce qu'on lance, ce qu'on reporte, ce qu'on abandonne.",
   },
   {
     icon: ShieldCheck,
-    title: 'Lecture des contraintes',
-    desc: "Données, sécurité, confidentialité, conformité (RGPD, AI Act), maturité des équipes : nous intégrons vos contraintes réelles dans la trajectoire, pour une feuille de route tenable et non un vœu pieux.",
+    title: 'Les contraintes, sans angle mort',
+    desc: "Données, sécurité, confidentialité, RGPD, AI Act, niveau des équipes : ces contraintes entrent dans la trajectoire dès le départ. La feuille de route peut donc être suivie sans attendre des conditions idéales.",
   },
 ]
 
@@ -155,23 +154,23 @@ const COUVERTURE = [
 const LIVRABLE = [
   {
     icon: MapIcon,
-    title: 'Une feuille de route priorisée',
-    desc: "La liste de vos cas d'usage IA, classés par impact et par effort, avec une recommandation d'ordre de déploiement. C'est le cœur du livrable : savoir quoi faire, dans quel ordre et pourquoi.",
+    title: 'Une feuille de route classée',
+    desc: "Vos cas d'usage IA, rangés selon leur valeur et leur effort, avec l'ordre de déploiement que nous recommandons. C'est le cœur du document : ce qu'il faut lancer, à quel moment, et pour quelles raisons.",
   },
   {
     icon: ListChecks,
-    title: 'Des estimations de budget et de délai',
-    desc: "Pour les cas prioritaires, une fourchette de budget et de délai fondée sur des ordres de grandeur de marché, présentés comme tels. De quoi arbitrer et présenter un dossier en interne, sans engagement de devis ferme.",
+    title: 'Des fourchettes de budget et de délai',
+    desc: "Pour les cas prioritaires, une fourchette de coût et de durée, fondée sur les prix couramment constatés et présentée comme telle. De quoi arbitrer et défendre un dossier en interne, sans devis ferme à ce stade.",
   },
   {
     icon: Zap,
-    title: 'Des quick wins identifiés',
-    desc: "Un ou plusieurs gains rapides activables sans grand projet : ce que vos équipes peuvent mettre en place vite, pour créer de la traction et de l'adhésion autour de l'IA dès les premières semaines.",
+    title: 'Des gains rapides repérés',
+    desc: "Une ou plusieurs actions faciles, sans projet lourd, que vos équipes peuvent engager tout de suite. Elles donnent un premier résultat visible et entraînent l'adhésion autour de l'IA dès les premières semaines.",
   },
   {
     icon: ShieldCheck,
     title: 'Les points de vigilance',
-    desc: "Les risques à surveiller, les prérequis de données et les questions de gouvernance à traiter avant d'industrialiser. Vous avancez les yeux ouverts, pas sur une promesse lissée.",
+    desc: "Les risques à surveiller, les données à remettre en état et les questions de gouvernance à régler avant d'industrialiser. Vous avancez en connaissant les écueils, sans promesse enjolivée.",
   },
 ]
 
@@ -180,41 +179,41 @@ const LIVRABLE = [
 const POUR_QUI = [
   {
     icon: Building2,
-    title: 'COMEX et directions générales',
-    desc: "Vous voulez une lecture lucide de ce que l'IA peut apporter à votre organisation, sans bullshit ni promesse de transformation magique. Le diagnostic vous donne une trajectoire chiffrée à présenter et à arbitrer.",
+    title: 'Directions générales et COMEX',
+    desc: "Vous cherchez une lecture lucide de ce que l'IA peut apporter à votre organisation, sans effet d'annonce. Le diagnostic vous remet une trajectoire chiffrée, prête à présenter et à arbitrer.",
   },
   {
     icon: Server,
     title: 'DSI et directions techniques',
-    desc: "Vous devez cadrer les demandes IA qui remontent des métiers, évaluer la faisabilité et anticiper les contraintes de données et de sécurité. Le diagnostic vous fournit une grille de priorisation et des garde-fous.",
+    desc: "Les demandes d'IA affluent des métiers ; il faut juger leur faisabilité et anticiper ce que les données et la sécurité imposent. Le diagnostic vous donne une grille de tri et des garde-fous.",
   },
   {
     icon: Users,
     title: 'Directions métier',
-    desc: "Vous avez des processus chronophages et l'intuition que l'IA peut aider, mais vous ne savez pas par où commencer. Le diagnostic transforme cette intuition en plan d'action concret et priorisé.",
+    desc: "Vos équipes perdent des heures à des besognes que l'IA pourrait alléger, et vous ne savez pas par où commencer. Le diagnostic change cette intuition en plan d'action classé.",
   },
 ]
 
-/* ───────── Comment ça se déroule (3 étapes avant/pendant/après) ───────── */
+/* ───────── Comment ça se déroule (avant / pendant / après) ───────── */
 
 const DEROULE = [
   {
     num: '01',
     phase: 'Avant',
-    title: 'Préparation et collecte',
-    desc: "Les 30 minutes de cadrage, offertes, fixent le périmètre et identifient les bons interlocuteurs. Nous récupérons les éléments utiles (organigramme des processus concernés, contraintes connues) pour arriver préparés et consacrer tout le temps des ateliers au fond du sujet.",
+    title: 'Le cadrage et la préparation',
+    desc: "Les 30 minutes de cadrage, offertes, délimitent le périmètre, désignent les bons interlocuteurs et fixent la durée comme le forfait. Nous rassemblons ensuite les éléments utiles (processus concernés, contraintes connues, documents types) pour consacrer les séances au fond du sujet.",
   },
   {
     num: '02',
     phase: 'Pendant',
-    title: 'Les ateliers de diagnostic',
-    desc: "Des ateliers avec vos équipes, sur la durée fixée au cadrage : cartographie, identification des cas d'usage, lecture des contraintes, priorisation à chaud. Ils sont conduits par un spécialiste IA, en présentiel ou en distanciel selon votre préférence.",
+    title: 'Les séances de travail',
+    desc: "Des ateliers avec vos équipes, sur la durée arrêtée au cadrage : repérage des tâches, idées de cas d'usage, lecture des contraintes, premier classement à chaud. Un consultant spécialisé en IA les anime, chez vous ou en visio selon votre préférence.",
   },
   {
     num: '03',
     phase: 'Après',
-    title: 'La restitution et le livrable',
-    desc: "Nous formalisons la feuille de route, les estimations et les quick wins dans un livrable écrit, puis nous le présentons. Vous repartez avec un document exploitable en interne, que vous donniez suite avec nous ou non.",
+    title: 'Le livrable et sa restitution',
+    desc: "Nous rédigeons la feuille de route, les fourchettes et les gains rapides dans un document écrit, puis nous vous le présentons. Vous disposez d'un support exploitable en interne, que vous continuiez avec nous ou avec d'autres.",
   },
 ]
 
@@ -223,19 +222,44 @@ const DEROULE = [
 const DEBLOQUE = [
   {
     icon: Rocket,
-    title: 'Le passage au projet',
-    desc: "Le diagnostic identifie le ou les cas prioritaires prêts à passer en prototype. Si vous décidez d'avancer, le cadrage est déjà fait : nous enchaînons sur un POC sans repartir de zéro.",
+    title: 'Un projet prêt à démarrer',
+    desc: "Le diagnostic désigne le ou les cas mûrs pour un prototype. Si vous décidez d'avancer, le cadrage est déjà fait : nous enchaînons sans repartir d'une page blanche.",
   },
   {
     icon: ClipboardCheck,
-    title: 'Une décision documentée',
-    desc: "Vous disposez d'un dossier solide pour arbitrer en interne : où investir, quel budget anticiper, quels gains attendre. La décision se prend sur des faits, pas sur une présentation commerciale.",
+    title: 'Une décision appuyée sur des faits',
+    desc: "Vous détenez un dossier pour arbitrer en interne : où investir, quel budget prévoir, quels gains viser. La direction tranche à partir d'éléments vérifiés, loin du discours d'un commercial.",
   },
   {
     icon: Layers,
-    title: "Une trajectoire à l'échelle",
-    desc: "Au-delà du premier cas, le diagnostic dessine la suite : les usages à industrialiser, la gouvernance à mettre en place, les compétences à développer dans les équipes. Une vision, pas un coup ponctuel.",
+    title: 'La suite déjà esquissée',
+    desc: "Au-delà du premier cas, le document trace la suite : usages à étendre, règles à poser, compétences à développer dans les équipes. Vous voyez plus loin que le prochain trimestre.",
   },
+]
+
+/* ───────── Études de cas (faits : src/data/etudes-de-cas.js, révisés le 05/10/2026) ───────── */
+
+const DIAG_CASES = [
+  {
+    id: 'photovoltaique',
+    icon: Sun,
+    sector: 'Distribution photovoltaïque · PME',
+    text: "Trois entretiens (direction, commercial, opérations) et quatre flux suivis pas à pas ont suffi à repérer douze gisements de temps. Le document remis à la direction en septembre 2026 se lit sans nous ; elle devait y trancher trois points : quel outil partager, quels chantiers ouvrir, quelle charte signer. La formation sur site suit en octobre.",
+  },
+  {
+    id: 'distribution',
+    icon: Bot,
+    sector: 'Distribution IT B2B · 58 salariés',
+    text: "Le cadrage avec la direction a désigné les tâches qui font gagner le plus de temps : chiffrer une cotation, relancer un devis, répondre à un cahier des charges, prospecter, suivre les stocks. De ce tri sont nées onze compétences Claude, portées par les dix référents de l'entreprise, formés en juin 2026 ; le reste des salariés les découvrira d'octobre à décembre 2026.",
+  },
+]
+
+/* ───────── Sources (liens d'autorité propres à la page) ───────── */
+
+const SOURCES = [
+  { label: "L'AI Act (règlement 2024/1689), socle de la lecture réglementaire du diagnostic", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+  { label: "La politique européenne en matière d'IA, telle que la décrit la Commission", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
+  { label: "Les ressources de la CNIL pour concilier IA et protection des données personnelles", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 /* ───────── FAQ ───────── */
@@ -243,39 +267,39 @@ const DEBLOQUE = [
 const FAQ = [
   {
     q: "Combien coûte un diagnostic IA ?",
-    a: "Le diagnostic est une prestation payante, au forfait : une intervention courte avec vos équipes, préparation et restitution incluses. Sa durée et son forfait sont fixés lors du premier échange, selon le périmètre (nombre de processus, d'équipes et de sites concernés). Ce premier échange, 30 minutes de cadrage en visio ou par téléphone, est offert et sans engagement. Nous ne vendons rien à l'aveugle : le périmètre est écrit avant le devis.",
+    a: "Le diagnostic est une prestation payante, vendue au forfait : une intervention courte avec vos équipes, préparation et restitution comprises. Sa durée et son forfait sont fixés lors du cadrage, selon le périmètre (nombre de processus, d'équipes et de sites concernés). Ce cadrage d'une demi-heure, par visio ou par téléphone, vous est offert et n'entraîne aucun engagement. Le périmètre est écrit noir sur blanc avant que vous ne receviez le devis.",
   },
   {
-    q: "Que se passe-t-il si nous ne donnons pas suite après le diagnostic ?",
-    a: "Rien ne vous y oblige. Le diagnostic est conçu comme une offre d'entrée à faible engagement : vous repartez avec un livrable actionnable, exploitable par vos propres équipes ou par un autre prestataire si vous le souhaitez. La feuille de route, les estimations et les quick wins vous appartiennent. Nous préférons une relation qui se prolonge parce qu'elle a de la valeur, pas par contrainte.",
+    q: "Et si nous ne donnons pas suite après le diagnostic ?",
+    a: "Rien ne vous y oblige. Le diagnostic a été pensé comme une porte d'entrée légère : vous repartez avec un document que vos équipes, ou un prestataire de votre choix, peuvent reprendre. La feuille de route, les fourchettes et les gains rapides vous appartiennent. Nous tenons à ce qu'une collaboration se poursuive parce qu'elle vous sert, jamais par obligation.",
   },
   {
     q: "En quoi consiste exactement le livrable ?",
-    a: "Un document écrit qui contient une feuille de route priorisée de vos cas d'usage IA (classés par impact et par effort), des estimations de budget et de délai pour les cas prioritaires (en ordres de grandeur de marché), une liste de quick wins activables rapidement et les points de vigilance à traiter. C'est un support de décision concret, pas une note d'intention.",
+    a: "Un document écrit qui réunit la feuille de route de vos cas d'usage IA (classés selon leur valeur et leur effort), des fourchettes de budget et de délai pour les cas prioritaires (fondées sur les niveaux de prix observés), une liste de gains rapides à engager tout de suite et les points de vigilance à traiter. Votre direction peut décider à partir de ce seul document.",
   },
   {
     q: "Qui doit participer côté entreprise ?",
-    a: "Les bons interlocuteurs selon le périmètre : un sponsor côté direction (COMEX ou direction métier), un référent technique ou DSI si des questions de données et de sécurité se posent, et les opérationnels qui connaissent les processus concernés. Un diagnostic réussi mobilise les personnes qui vivent les processus au quotidien, pas seulement la direction.",
+    a: "Les bons interlocuteurs pour le périmètre retenu : un commanditaire à la direction (générale ou métier), un référent technique ou la DSI si des questions de données et de sécurité se posent, et les opérationnels qui pratiquent les processus examinés. Un diagnostic utile réunit la direction et ceux qui exécutent le travail au quotidien.",
   },
   {
     q: "Le diagnostic se fait-il sur site ou à distance ?",
-    a: "Les deux sont possibles. Masteria est basée à Lyon et intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Les séances de travail peuvent se tenir sur site, ce qui facilite les ateliers et l'implication des équipes, ou en distanciel en visio. La préparation et la restitution se conduisent très bien à distance dans tous les cas.",
+    a: "Les deux formules existent. Le cabinet est basé à Lyon ; ses consultants se rendent partout en France et à l'international (Europe, Amérique du Nord, Inde). Les séances peuvent se tenir dans vos locaux, ce qui facilite les ateliers et l'implication des équipes, ou en visio. La préparation et la restitution se déroulent sans difficulté à distance.",
   },
   {
-    q: "Quelle est la différence entre un diagnostic IA et un audit IA ?",
-    a: "Le diagnostic IA est une intervention courte qui cadre vos usages et priorise les cas d'usage à plus forte valeur pour savoir par où commencer. L'audit IA va plus loin : il évalue en détail votre maturité, vos données, vos outils et votre organisation, sur plusieurs jours ou semaines, et débouche sur un rapport complet et un plan de transformation. Le diagnostic est le point d'entrée le plus rapide et le moins engageant ; l'audit convient quand vous voulez une vision exhaustive avant d'industrialiser. Les deux se complètent : un diagnostic peut précéder un audit ciblé sur les cas retenus.",
+    q: "Diagnostic IA ou audit IA : comment choisir ?",
+    a: "Le diagnostic IA tient en une intervention brève qui recense vos usages et hiérarchise les cas possibles, afin de choisir le point de départ. L'audit IA passe au crible maturité, données, outils et organisation, et aboutit à un rapport complet assorti d'un plan de transformation. Le diagnostic offre l'entrée la plus rapide et la plus légère ; l'audit répond au besoin d'un constat exhaustif avant d'industrialiser. Les deux se complètent : rien n'empêche de faire suivre le diagnostic d'un audit limité aux cas retenus.",
   },
   {
     q: "Le diagnostic IA convient-il à une PME ?",
-    a: "Oui. Le diagnostic est dimensionné selon votre taille et votre périmètre. Une PME y trouve une lecture claire de ce que l'IA peut lui apporter sans lancer un grand chantier, avec des quick wins activables rapidement. Une ETI ou un grand groupe l'utilise plutôt pour cadrer un périmètre précis avant d'industrialiser. Dans tous les cas, le livrable reste le même : une feuille de route priorisée et exploitable en interne.",
+    a: "Oui. Son périmètre suit la taille de votre entreprise. Une PME y trouve une lecture claire de ce que l'IA peut lui apporter sans lancer un grand chantier, avec des gains rapides à la clé ; notre page de conseil IA pour PME décrit la suite habituelle. Les entreprises plus grandes s'en servent plutôt pour cadrer un périmètre précis avant d'industrialiser. Dans tous les cas, le livrable reste le même : une feuille de route classée, utilisable en interne.",
   },
   {
-    q: "Faut-il déjà utiliser l'IA pour faire un diagnostic ?",
-    a: "Non. Le diagnostic s'adresse autant aux organisations qui débutent qu'à celles qui ont déjà quelques usages en place. Si vous partez de zéro, il identifie les premiers cas d'usage et les quick wins. Si vous avez déjà expérimenté, il met de l'ordre dans les initiatives, priorise et corrige la trajectoire. Aucun prérequis technique n'est nécessaire pour y participer.",
+    q: "Doit-on déjà se servir de l'IA avant un diagnostic ?",
+    a: "Non. Le diagnostic sert aussi bien aux organisations qui débutent qu'à celles qui ont déjà quelques usages. Si vous partez de zéro, il désigne les premiers cas d'usage et les gains rapides. Si vous avez déjà expérimenté, il range les initiatives, les classe et corrige la trajectoire. Les participants n'ont besoin d'aucun bagage technique.",
   },
   {
     q: "Combien de temps faut-il entre la demande et la restitution du livrable ?",
-    a: "Le calendrier se fixe lors du premier échange de cadrage, selon le périmètre retenu et les disponibilités de vos équipes. Les séances de travail se planifient à des dates convenues ensemble ; la préparation en amont et la formalisation du livrable en aval s'organisent autour. Après votre demande, nous revenons vers vous sous 24 heures pour fixer le périmètre et le calendrier.",
+    a: "Le calendrier se décide pendant le cadrage, en fonction du périmètre et des disponibilités de vos équipes. Les séances de travail se placent à des dates convenues ensemble ; la préparation en amont et la rédaction du livrable en aval s'organisent autour. Après votre demande, nous reprenons contact sous 24 heures pour fixer le périmètre et les dates.",
   },
 ]
 
@@ -284,9 +308,9 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Diagnostic IA — Masteria',
+  name: 'Diagnostic IA, Masteria',
   alternateName: 'Diagnostic intelligence artificielle',
-  description: "Diagnostic IA productisé, sous la forme d'une intervention courte : cadrage des usages, cartographie des processus automatisables, priorisation impact/effort. Livrable : feuille de route priorisée, estimations de budget et de délai, quick wins. Offre d'entrée à faible engagement, sans suite obligatoire : premier échange de cadrage de 30 minutes offert, au cours duquel la durée et le forfait sont fixés selon le périmètre.",
+  description: "Diagnostic IA sous forme d'intervention courte : enjeux posés, tâches que l'IA peut reprendre, classement des cas d'usage selon leur valeur et leur effort. Livrable : feuille de route classée, fourchettes de budget et de délai, gains rapides. Offre d'entrée sans suite obligatoire, précédée d'un cadrage offert d'une demi-heure, au cours duquel la durée et le forfait sont fixés selon le périmètre.",
   url: 'https://www.master-ia.fr/diagnostic-ia',
   serviceType: "Diagnostic et feuille de route IA",
   category: "Conseil en intelligence artificielle",
@@ -300,20 +324,20 @@ const serviceJsonLd = {
   ],
   audience: {
     '@type': 'BusinessAudience',
-    name: 'COMEX, DSI et directions métier',
+    name: 'Directions générales, DSI et directions métier',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: "Diagnostic IA",
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Cartographie des processus automatisables', description: "Revue des flux de travail et identification des cas d'usage IA à plus forte valeur." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Priorisation impact / effort', description: "Classement des cas d'usage selon leur valeur attendue et leur difficulté de mise en œuvre." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Feuille de route priorisée', description: "Trajectoire chiffrée avec estimations de budget et de délai et quick wins activables." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Repérage des tâches que l'IA peut reprendre", description: "Revue des flux de travail et identification des cas d'usage IA les plus utiles." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Classement valeur et effort', description: "Classement des cas d'usage selon ce qu'ils rapporteraient et ce qu'ils coûteraient à mettre en œuvre." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Feuille de route classée', description: "Trajectoire chiffrée avec fourchettes de budget et de délai et gains rapides à engager." } },
     ],
   },
 }
 
-/* Déroulé du diagnostic en ItemList (séquence citable — GEO ; HowTo volontairement
+/* Déroulé du diagnostic en ItemList (séquence citable, GEO ; HowTo volontairement
    évité, Google ayant retiré les rich results HowTo en 2023). */
 const processJsonLd = {
   '@context': 'https://schema.org',
@@ -323,7 +347,7 @@ const processJsonLd = {
   itemListElement: DEROULE.map((step, i) => ({
     '@type': 'ListItem',
     position: i + 1,
-    name: `${step.phase} — ${step.title}`,
+    name: `${step.phase} : ${step.title}`,
     description: step.desc,
   })),
 }
@@ -339,7 +363,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-13',
-  dateModified: '2026-09-03',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/diagnostic-ia#webpage' },
   about: ['Diagnostic IA', 'Audit de maturité IA', 'Feuille de route IA', 'Conseil en intelligence artificielle'],
@@ -396,7 +420,7 @@ export default function DiagnosticIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-13"
-        dateModified="2026-09-03"
+        dateModified="2026-10-07"
         speakable={['#definition', '#geo-summary']}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd]}
       />
@@ -437,24 +461,24 @@ export default function DiagnosticIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Présenté par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui conduit les cadrages de diagnostic · contenu revu le 7 octobre 2026
           </p>
 
-          {/* GEO : définition autonome (58 mots), citable hors contexte */}
+          {/* GEO : définition autonome, citable hors contexte */}
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
             <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Un diagnostic IA est une intervention courte et ciblée qui cadre les usages de l'intelligence artificielle dans une organisation : processus automatisables, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Il se distingue de l'audit IA par sa durée et son périmètre, et du test de maturité par l'intervention d'un consultant sur vos processus réels.
+              Un diagnostic IA est une intervention courte et ciblée qui fait le point sur la place que l'IA peut prendre dans votre organisation : travail qu'elle peut reprendre, cas d'usage rangés par intérêt et par difficulté, feuille de route chiffrée. Plus bref que l'audit IA, il repose, à la différence d'un test de maturité en ligne, sur le travail d'un consultant avec vos équipes et sur vos dossiers.
             </p>
           </div>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le Diagnostic IA de Masteria réunit vos équipes sur un format court, calibré selon votre périmètre, pour cadrer vos usages, cartographier vos processus automatisables et les prioriser par impact et par effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>livrable concret</strong> : une feuille de route priorisée, des estimations de budget et de délai et des quick wins activables, sans engagement de suite.
+            Le Diagnostic IA de Masteria réunit vos équipes sur un format court, dimensionné pendant le cadrage, pour repérer le travail que l'IA peut reprendre et ordonner les cas d'usage en pesant valeur et effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>document écrit</strong> : une feuille de route classée, des fourchettes de budget et de délai, des gains rapides à engager, et aucune obligation de suite.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            C'est l'étape qui dé-risque votre premier pas vers l'IA. Plutôt que de lancer un projet sur une intuition, vous obtenez une lecture lucide de ce qui mérite d'être fait, dans quel ordre et avec quel budget. Une offre productisée à faible engagement, conçue par un cabinet spécialisé sur l'intelligence artificielle depuis 2022.
+            C'est le premier pas le moins risqué vers l'IA. Au lieu de lancer un projet sur une intuition, vous savez ce qui mérite d'être fait, dans quel ordre et avec quelle enveloppe. La première étape tient en 30 minutes de cadrage, offertes, au terme desquelles la durée et le forfait du diagnostic sont arrêtés d'un commun accord.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -480,13 +504,13 @@ export default function DiagnosticIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref, synthèse citable (GEO), carte sombre */}
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'offre en huit lignes</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 92px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
                   <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
                 </div>
               ))}
@@ -500,15 +524,15 @@ export default function DiagnosticIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Ce que c'est</Kicker>
+              <Kicker>L'offre</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Qu'est-ce que le Diagnostic IA de Masteria ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Le Diagnostic IA est une intervention courte, dimensionnée selon votre périmètre, qui cadre vos usages, réalise un audit de vos processus automatisables et priorise les cas d'usage par impact et par effort. Conduit par un spécialiste IA, il transforme une intuition diffuse en une trajectoire claire, sans engager de projet à ce stade.</strong>
+                <strong>Intervention courte dimensionnée selon votre périmètre, le Diagnostic IA pose vos enjeux, passe en revue vos processus et ordonne les cas d'usage en pesant intérêt et difficulté. Un consultant spécialisé la conduit ; une intuition diffuse en ressort sous forme de trajectoire claire, sans engager de projet à ce stade.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Beaucoup d'organisations savent que l'IA peut les aider, sans savoir par où commencer ni ce que cela représente. Le diagnostic répond à cette question avant tout engagement lourd. C'est un audit des processus, pas un audit de maturité : il regarde ce que vos équipes font chaque semaine et ce qui peut être automatisé, sans évaluer toute l'organisation. Il couvre quatre dimensions. Pour une première photographie en 3 minutes, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> gratuit situe votre profil avant même l'échange de cadrage.
+                Beaucoup de dirigeants pressentent que l'IA peut les aider sans savoir par où commencer ni ce que cela coûtera. Le diagnostic tranche cette question avant tout engagement lourd. Il examine les processus, sans prétendre noter l'organisation entière : ce que vos équipes font chaque semaine, et ce que l'IA pourrait en reprendre. Quatre angles le composent. Pour une première idée de votre profil avant le cadrage, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> tient en huit questions, sans compte ni adresse mail.
               </p>
             </div>
 
@@ -525,27 +549,27 @@ export default function DiagnosticIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Le diagnostic s'inscrit dans une logique plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil stratégie IA</Link>. Quand un cas est prêt, il enchaîne naturellement sur le <Link to="/agence-developpement-ia" style={aStyle}>développement sur mesure</Link>.
+                Le diagnostic ouvre souvent une démarche plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil stratégie IA</Link>. Quand un cas est mûr, il débouche sur le <Link to="/agence-developpement-ia" style={aStyle}>développement d'un outil sur mesure</Link>.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── DIAGNOSTIC VS AUDIT VS POC (ancre sombre — pivot, tableau citable GEO) ── */}
+      {/* ── DIAGNOSTIC VS AUDIT VS POC (ancre sombre, tableau citable GEO) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Diagnostic, audit ou POC</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Trois formats, trois questions</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Diagnostic, audit ou POC : quelle différence ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le diagnostic IA, l'audit IA et le POC répondent à trois besoins distincts. Le diagnostic cadre et priorise vos usages, sur un format court. L'audit évalue en profondeur votre maturité et vos données. Le POC prouve la valeur d'un cas précis en conditions réelles. Pour un premier pas, le diagnostic est le point d'entrée le plus rapide et le moins engageant.</strong>
+            <strong style={{ color: '#fff' }}>Diagnostic IA, audit IA et POC répondent à trois besoins différents. Le diagnostic classe vos usages possibles, sur un format court. L'audit dresse un constat complet sur la maturité et les données de l'entreprise. Le POC éprouve un cas précis sur un flux de travail existant. Pour un premier pas, le diagnostic est l'entrée la plus rapide et la plus légère.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -555,7 +579,7 @@ export default function DiagnosticIAPage() {
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '20%' }}>Critère</th>
                   <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '28%' }}>Diagnostic IA</th>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Audit IA complet</th>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>POC / preuve de concept</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>POC (preuve de concept)</th>
                 </tr>
               </thead>
               <tbody>
@@ -572,8 +596,8 @@ export default function DiagnosticIAPage() {
           </div>
           {/* Renvois : la mission audit vit sur /audit-ia (intention transactionnelle),
               le fond (méthode, normes, prix) sur l'article (intention informationnelle). */}
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Si c'est la vision exhaustive qu'il vous faut, voyez notre <Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit IA</Link> : périmètre, méthode, livrable et repères de prix. Pour le fond du sujet (ce que la loi impose, les normes publiées, les cas où l'audit ne sert à rien), lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={{ color: '#60A5FA', fontWeight: 600 }}>guide complet de l'audit IA</Link>.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            S'il vous faut le constat exhaustif, la page de notre <Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit IA</Link> présente son périmètre, sa démarche, ce qu'il livre et des repères tarifaires. Pour le fond (ce que la loi exige, les normes publiées, les situations où un audit n'apporte rien), notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={{ color: '#60A5FA', fontWeight: 600 }}>guide de l'audit IA en entreprise</Link> fait le tour de la question.
           </p>
         </div>
       </section>
@@ -583,15 +607,15 @@ export default function DiagnosticIAPage() {
         <div style={wrap}>
           <Kicker>Le livrable</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Avec quoi repartez-vous concrètement ?
+            Vous repartez avec un document de décision
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Vous repartez avec un livrable écrit et actionnable : une feuille de route priorisée de vos cas d'usage IA, des estimations de budget et de délai pour les cas prioritaires, une liste de quick wins activables rapidement et les points de vigilance à traiter. Un support de décision exploitable en interne, avec ou sans suite.</strong>
+            <strong>Le diagnostic se conclut par un document écrit : la feuille de route de vos cas d'usage IA, des fourchettes de budget et de délai pour les cas prioritaires, une liste de gains rapides et les points de vigilance à traiter. Votre direction peut s'en servir en interne, avec ou sans suite.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Le diagnostic ne se résume pas à une réunion : il produit un document que vous gardez. Quatre éléments le composent.
+            Le diagnostic va bien au-delà d'une réunion : il laisse un écrit que vous conservez. Quatre parties le composent.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
@@ -617,7 +641,7 @@ export default function DiagnosticIAPage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>Le diagnostic s'adresse aux décideurs qui doivent arbitrer sur l'IA : COMEX et directions générales pour une lecture stratégique, DSI et directions techniques pour cadrer la faisabilité, directions métier pour transformer une intuition en plan d'action. Il mobilise les personnes qui vivent les processus, pas seulement la direction.</strong>
+            <strong>Le diagnostic sert les décideurs qui doivent arbitrer sur l'IA : direction générale pour la lecture d'ensemble, DSI pour la faisabilité, directions métier pour changer une intuition en plan d'action. Les personnes qui font tourner les processus y participent aux côtés de la direction.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
@@ -646,7 +670,7 @@ export default function DiagnosticIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le diagnostic se déroule en trois temps : avant, une préparation et une collecte d'éléments pour arriver cadrés ; pendant, des ateliers avec vos équipes, calibrés selon le périmètre ; après, la formalisation et la restitution du livrable. Le temps d'atelier ne se perd pas en mise en contexte : le travail est utile de bout en bout.</strong>
+            <strong>Trois temps se succèdent. Avant : le cadrage offert, puis la collecte des éléments utiles. Pendant : des séances de travail avec vos équipes, sur la durée arrêtée au cadrage. Après : la rédaction et la restitution du livrable. Aucune séance ne se perd en mise en contexte.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -676,13 +700,13 @@ export default function DiagnosticIAPage() {
       {/* ── CE QUE ÇA DÉBLOQUE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ce que ça débloque</Kicker>
+          <Kicker>Et après</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Que permet le diagnostic une fois livré ?
           </h2>
 
           <p style={answerStyle}>
-            <strong>Le diagnostic débloque le passage au projet : le cas prioritaire est déjà cadré, prêt à enchaîner sur un prototype. Il vous donne aussi une décision documentée pour arbitrer en interne et une trajectoire à l'échelle au-delà du premier cas. Vous avancez sur des faits, pas sur une promesse.</strong>
+            <strong>Le diagnostic prépare le passage au projet : le cas prioritaire est déjà cadré, prêt pour un prototype. Il vous donne aussi un dossier pour arbitrer en interne et une vue de la suite au-delà du premier cas. Vous avancez sur des faits établis.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '12px 0 0' }}>
@@ -699,8 +723,8 @@ export default function DiagnosticIAPage() {
 
           <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: '20px 24px', marginTop: 32 }}>
             <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-              <strong style={{ color: '#0A0A0A' }}>Du diagnostic à la mise en production, sous un même toit.</strong>{' '}
-              Si vous décidez d'avancer, nous enchaînons selon notre <Link to="/methode-projet-ia" style={aStyle}>méthode projet et nos modèles d'engagement</Link> : développement d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, d'<Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link> ou cadrage de gouvernance. Sans suite, le livrable reste le vôtre.
+              <strong style={{ color: '#0A0A0A' }}>Une seule équipe, du diagnostic à la mise en service.</strong>{' '}
+              Si vous décidez d'aller plus loin, nous poursuivons selon notre <Link to="/methode-projet-ia" style={aStyle}>méthode projet et nos formules d'engagement</Link> : développement d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA pour l'entreprise</Link>, d'<Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link> ou mise en place de règles de gouvernance. Sinon, le livrable reste entre vos mains.
             </p>
           </div>
         </div>
@@ -714,19 +738,19 @@ export default function DiagnosticIAPage() {
               <ShieldCheck size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Faible engagement</Kicker>
+              <Kicker>Un risque limité</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Repartir avec de la valeur, même sans suite
+                Un document utile même si vous en restez là
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le diagnostic est volontairement conçu comme un point d'entrée à faible risque. Vous engagez une intervention courte, au forfait fixé d'avance, vous repartez avec un livrable exploitable, et vous restez libre de la suite. C'est la façon la plus saine de tester une collaboration avec un cabinet : sur un résultat tangible, pas sur une promesse commerciale.
+                Nous avons conçu le diagnostic comme une première étape peu risquée. Vous engagez une intervention courte, à un forfait connu d'avance, vous recevez un document exploitable, et la suite reste votre décision. C'est la manière la plus saine d'essayer un cabinet : sur un travail rendu, plutôt que sur une plaquette.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Un livrable actionnable, qu\'il y ait suite ou non',
-                  'Aucun engagement de projet à ce stade',
-                  'Un cadrage déjà fait si vous décidez d\'avancer',
-                  'Un document exploitable par vos propres équipes',
+                  'Un document exploitable, avec ou sans suite',
+                  'Aucun projet engagé à ce stade',
+                  'Un cadrage déjà fait si vous poursuivez',
+                  'Un livrable que vos équipes peuvent reprendre',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -739,27 +763,50 @@ export default function DiagnosticIAPage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['photovoltaique', 'distribution']}
-        title="Ce qu'un cadrage bien mené produit ensuite"
-        intro="Un diagnostic par flux qui débouche sur trois chantiers et une charte, un cadrage de cas d'usage qui débouche sur onze compétences Claude et dix référents formés : deux missions documentées, méthode et résultats."
-      />
+      {/* ── ÉTUDES DE CAS (texte propre à la page, liens vers les ancres de /etudes-de-cas-ia) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Exemples</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Ce qu'un bon cadrage a produit chez deux clients
+          </h2>
+          <p style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Un examen flux par flux qui débouche sur trois chantiers et une charte, un tri des tâches qui débouche sur onze compétences Claude : deux missions de 2026 qui ont commencé par la même question, par quoi commencer. Aucun nom de client n'apparaît.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
+            {DIAG_CASES.map(({ id, icon: Icon, sector, text }) => (
+              <article key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  Consulter l'étude de cas
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Diagnostic IA : les questions fréquentes
+                Diagnostic IA : vos questions avant de réserver
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une réponse vous manque avant de prendre rendez-vous&nbsp;? Écrivez-nous, nous y répondons par écrit.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Poser une question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -773,26 +820,26 @@ export default function DiagnosticIAPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>La suite du parcours</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Après le diagnostic, les pages qui prennent le relais
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Du cadrage stratégique au développement, explorez la suite logique du diagnostic, ou parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA par usage</Link> et l'<Link to="/ia-secteurs" style={aStyle}>IA par secteur d'activité</Link>.
+            Du cadrage stratégique jusqu'au développement, voici les suites possibles ; vous pouvez aussi parcourir nos <Link to="/solutions-ia" style={aStyle}>solutions IA classées par usage</Link> et l'<Link to="/ia-secteurs" style={aStyle}>IA vue secteur par secteur</Link>.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "Quand il faut la vision exhaustive : maturité, données, conformité et feuille de route chiffrée." },
-              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "Après le cadrage : déploiement, conduite du changement et adoption, tenus dans la durée." },
-              { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cadrage stratégique dans lequel s'inscrit le diagnostic, à l'échelle de l'entreprise." },
-              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand un cas est prêt : conception et développement de la solution, de l'idée au déploiement." },
-              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Déployer des agents IA sur les cas prioritaires que le diagnostic fait remonter." },
-              { label: 'Cas d\'usage de l\'IA en entreprise', href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Les cas d'usage de l'IA en entreprise que le diagnostic aide à identifier et à prioriser." },
-              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'Génératif', desc: "Cadrer l'IA générative en entreprise : ce qu'elle permet et où elle crée vraiment de la valeur." },
-              { label: 'Prix d\'un projet IA', href: '/prix-projet-ia', tag: 'Budget', desc: "Après le diagnostic vient le chiffrage : les ordres de grandeur du prix d'un projet IA." },
-              { label: 'Méthode & modèles d\'engagement', href: '/methode-projet-ia', tag: 'Méthode', desc: "Comment nous travaillons après le diagnostic : forfait, régie ou accompagnement conseil." },
+              { label: 'Audit IA', href: '/audit-ia', tag: 'Constat complet', desc: "Pour aller au fond : maturité, données, conformité et calendrier chiffré, à l'échelle de toute l'organisation." },
+              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "Une fois les priorités fixées : déploiement, conduite du changement et adoption, suivis mois après mois." },
+              { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Cap', desc: "La démarche de direction dans laquelle le diagnostic s'insère souvent, à l'échelle de l'entreprise." },
+              { label: 'Conseil IA pour PME', href: '/conseil-ia-pme', tag: 'PME et TPE', desc: "Le format court qui enchaîne diagnostic, processus outillés et formation du dirigeant." },
+              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand un cas est prêt : conception de l'outil, de l'idée à l'outil en service." },
+              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Des agents construits pour les cas prioritaires que le diagnostic a fait ressortir." },
+              { label: "Cas d'usage IA, service par service", href: '/cas-usage-ia-entreprise', tag: 'Exemples', desc: "Des exemples d'usages, service par service, pour nourrir vos idées avant les séances." },
+              { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les fourchettes de coût d'un projet d'IA, pour situer le chiffrage qui suit le diagnostic." },
+              { label: "Méthode et formules d'engagement", href: '/methode-projet-ia', tag: 'Méthode', desc: "Forfait, régie ou appui conseil : la façon dont nous travaillons une fois le diagnostic rendu." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -808,13 +855,23 @@ export default function DiagnosticIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Consulter
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan mène les 30 minutes de cadrage et relit chaque livrable de diagnostic avant sa restitution. La version du 7 octobre 2026 de ce texte porte sa relecture ; <Link to="/mathias-nizan" style={aStyle}>sa biographie</Link> détaille son parcours.
+          </p>
+          <PressMention />
         </div>
       </section>
 
@@ -830,37 +887,37 @@ export default function DiagnosticIAPage() {
               Commencez par un diagnostic
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Tout commence par 30 minutes de cadrage, offertes : votre contexte, les processus à examiner, le périmètre du diagnostic. Vous recevez ensuite sa durée, son forfait et des dates. Vous repartez avec une feuille de route claire, que vous donniez suite ou non.
+              Le premier rendez-vous dure 30 minutes et vous est offert : votre contexte, les processus à examiner, le périmètre du diagnostic. Vous recevez ensuite une proposition avec la durée, le forfait et des dates. À la fin, vous détenez une feuille de route claire, que la collaboration continue ou s'arrête là.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un diagnostic IA
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Cadrage offert · Forfait selon le périmètre · Livrable actionnable · Lyon, Europe, États-Unis, Inde
+              Cadrage offert · forfait arrêté selon le périmètre · document remis en fin de mission
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui mène le diagnostic ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui mène le diagnostic</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Un consultant spécialisé en IA, choisi pour votre secteur
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Mathias Nizan a fondé Masteria pour ne traiter qu'un sujet, l'intelligence artificielle ; le cabinet est lyonnais et date de 2022. Il cadre chaque diagnostic et confie les séances, selon votre secteur et votre langue de travail, à lui-même ou à un consultant indépendant parmi la dizaine qui l'entourent. Si la suite demande un outil, environ cinq développeurs prennent le relais ; si elle demande de la formation, une vingtaine de formateurs. Le cabinet ne touche rien d'aucun éditeur : la feuille de route nomme l'outil qui vous convient. Exemples datés dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, articles dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['30 min', 'de cadrage, offertes'],
+              ['1 livrable', 'écrit, à vous'],
+              ['≈ 10', 'consultants pour les séances'],
+              ['Aucun', 'éditeur rémunérateur'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -871,9 +928,26 @@ export default function DiagnosticIAPage() {
         </div>
       </section>
 
-      <FounderNote />
-
-      <OfficialSources />
+      {/* ── SOURCES (propres à la page) ── */}
+      <section aria-labelledby="sources-diagnostic" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-diagnostic" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Textes de référence pour la lecture des contraintes
+          </h2>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.6, margin: '0 0 20px' }}>
+            La partie réglementaire du diagnostic s'appuie sur ces sources officielles, consultées le 7 octobre 2026.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {SOURCES.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

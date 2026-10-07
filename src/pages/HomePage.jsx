@@ -13,8 +13,6 @@ import EquipeMasteria from '../components/EquipeMasteria'
 import ParcoursExpertises from '../components/ParcoursExpertises'
 import AvisGoogle from '../components/AvisGoogle'
 import { HUBS, METIERS } from '../data/catalog-meta'
-import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
-import { FAQ_GENERAL } from '../components/screens2'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -29,6 +27,10 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * déformé), 23 mm de large au minimum selon la charte, soit 87 px ou plus.
  * INTÉGRITÉ : tous les chiffres viennent de src/data/etudes-de-cas.js ou de faits
  * déjà publiés ; aucun nom de client.
+ * TEXTE PROPRE (07/10/2026) : la méthode, la FAQ, les missions, le bloc équipe, le mot
+ * du fondateur et la liste des métiers sont écrits ici pour la home, au lieu de
+ * reprendre METHODE_COMMUNE, FAQ_GENERAL, les teasers des cas ou FounderNote, copiés
+ * sur des dizaines de pages. Faits à jour au 7 octobre 2026 ; plus de « +1 500 ».
  */
 
 const TOOL_HUBS = HUBS.filter(h => h.id !== 'metiers')
@@ -63,25 +65,56 @@ const METIER_ICONS = {
   transverse: Layers,
 }
 
-/* Sous-titres courts des hubs formation, pour la liste de la home. */
+/* Sous-titres courts des hubs formation, pour la liste de la home (noms d'outils au
+   7 octobre 2026 : ChatGPT Business, Microsoft Copilot, Gemini Notebook, Vibe). Ils
+   servent aussi de description aux cours du JSON-LD de la page. */
 const TOOL_LIGNES = {
-  chatgpt: 'Rédaction, analyse, projets partagés et GPT d\'équipe',
-  copilot: 'Dans Word, Excel, Outlook, Teams et PowerPoint',
-  gemini: 'Dans Gmail, Docs, Sheets et Google Workspace',
+  chatgpt: 'Projets partagés, Skills et analyse de fichiers sur ChatGPT Business',
+  copilot: 'Copilot dans Outlook, Teams, Excel, Word et PowerPoint',
+  gemini: 'Gmail, Docs, Sheets et Gemini Notebook dans Google Workspace',
   claude: 'Documents longs, analyse fine, projets et artefacts',
-  mistral: 'Le modèle européen, hébergement et conformité UE',
+  mistral: "Vibe, avec des données stockées dans l'UE sauf demande contraire",
   'sprint-ia': 'Ateliers de 3 h, de 12 à 500 collaborateurs',
-  'multi-outils': 'Comparer les cinq IA sur vos cas avant de choisir',
+  'multi-outils': "Tester cinq assistants sur vos cas avant d'en retenir un",
 }
+
+/* Métiers, regroupés par famille et nommés pour la home : la liste brute de
+   catalog-meta.js est reprise telle quelle sur une quarantaine de pages. */
+const METIERS_HOME = [
+  ['commercial', 'Vente et prospection'],
+  ['marketing', 'Marketing'],
+  ['communication', 'Communication et relations presse'],
+  ['seo', 'Référencement et contenus web'],
+  ['service-client', 'Relation client'],
+  ['commerce', 'Magasins et e-commerce'],
+  ['ressources-humaines', 'RH et recrutement'],
+  ['finance', 'Finance et contrôle de gestion'],
+  ['comptabilite', 'Services comptables'],
+  ['achats', 'Achats et fournisseurs'],
+  ['juridique', 'Juristes'],
+  ['assistante', 'Assistanat de direction'],
+  ['management', 'Managers'],
+  ['gestion-de-projet', 'Chefs de projet'],
+  ['informatique', 'DSI et équipes IT'],
+  ['qse', 'Qualité, sécurité, environnement'],
+  ['pedagogique', 'Équipes de formation'],
+  ['marche-public', "Appels d'offres publics"],
+  ['immobilier', 'Agents immobiliers et syndics'],
+  ['sante', 'Santé et médico-social'],
+  ['assurance', 'Assureurs'],
+  ['btp', 'BTP'],
+  ['tourisme', 'Hôtellerie et tourisme'],
+  ['transverse', 'Tous les collaborateurs'],
+].map(([slug, label]) => ({ slug, label, desc: METIERS.find(m => m.slug === slug)?.desc }))
 
 /* Bandeau sous le hero (Mathias, 02/10/2026) : deux reconnaissances (badge officiel
    Activateur France Num, logo Les Échos) et deux repères avec picto. Qualiopi n'y figure
    plus : la carte du hero le porte déjà. */
 const BANDEAU = [
   { id: 'francenum', href: 'https://www.francenum.gouv.fr/activateurs/masteria', label: 'Référencé pour accompagner les TPE et PME dans leur transition numérique' },
-  { id: 'lesechos', to: '/presse', label: "Mathias Nizan cité sur le choix des outils d'IA en entreprise" },
+  { id: 'lesechos', to: '/presse', label: "Mathias Nizan y explique comment choisir un outil d'IA, métier par métier" },
   { id: 'programmes', Icon: GraduationCap, titre: 'Plus de 100 programmes', to: '/formation-intelligence-artificielle', label: 'de formation IA, par outil et par métier' },
-  { id: 'international', Icon: Globe, titre: 'International', label: 'Présents en Europe, aux États-Unis et en Inde' },
+  { id: 'international', Icon: Globe, titre: 'International', label: 'Des missions conduites en Europe, aux États-Unis comme en Inde' },
 ]
 
 /* Logos clients, affichés à la demande de Mathias (02/10/2026). Hauteurs réglées à l'œil. */
@@ -90,7 +123,7 @@ const CLIENTS = [
   { name: 'EET', src: '/assets/clients/eet.png', webp: '/assets/clients/eet.webp', h: 44, w: 67 },
   { name: 'Signarama', src: '/assets/clients/signarama.svg', h: 40, w: 91 },
 ]
-const SECTEURS_LIGNE = "et des PME, ETI et grands groupes de l'industrie, de la distribution, de l'énergie, de l'immobilier, de l'assurance, du conseil et de la santé"
+const SECTEURS_LIGNE = "ainsi que des entreprises de toutes tailles, de la PME au groupe international, dans l'industrie, la distribution, l'énergie, l'immobilier, l'assurance, le conseil et la santé"
 
 /* Offres conseil et développement, déclarées en ItemList (JSON-LD) ; les liens visibles
    sont portés par le parcours des expertises et la section « Explorer Masteria ». */
@@ -107,30 +140,138 @@ const SERVICES_CONSEIL_DEV = [
   ['Solutions IA par type de livrable', '/solutions-ia'],
 ]
 
-/* Études de cas, présentées en liste discrète plus bas dans la page. */
-const CAS_LISTE = ['industrie', 'photovoltaique', 'conseil-financier', 'distribution']
+/* Méthode en six temps, écrite pour la home : mêmes étapes que METHODE_COMMUNE
+   (data/etudes-de-cas.js), formulées autrement pour ne pas recopier le texte des
+   études de cas et des pages agences. */
+const METHODE_HOME = [
+  { num: '01', title: 'Fixer le cadre avec la direction', desc: "Nous établissons avec vous pourquoi la demande arrive maintenant, ce qui entre dans le périmètre et ce qui en sort, et la décision que vous attendez au bout. Toute la mission se règle ensuite sur ce cadrage." },
+  { num: '02', title: 'Regarder comment le travail se fait', desc: "Nous interrogeons les équipes qui font le travail au quotidien et décrivons chaque flux, tâche par tâche\u00a0: logiciels en place, ressaisies, usages de l'IA apparus sans règle." },
+  { num: '03', title: 'Classer les gains possibles', desc: "Chaque gisement de temps, une tâche où l'IA peut vous rendre des heures, reçoit un volume déclaré, une difficulté, ses dépendances et une place dans les trois prochains mois. Ce que nous écartons reste noté, avec la raison." },
+  { num: '04', title: 'Construire sur vos propres fichiers', desc: "Assistants, agents et ateliers partent de vos documents, de vos logiciels et de vos données. Chaque outil a un porteur, et une personne valide chaque décision qui engage l'entreprise." },
+  { num: '05', title: 'Former chaque métier, écrire les règles', desc: "Chaque fonction s'entraîne sur ses propres cas. Une charte d'usage écrite, un référent dans l'équipe et des supports consultables après la session gardent la compétence chez vous." },
+  { num: '06', title: 'Mesurer, puis lancer la vague suivante', desc: "Nous relevons les points de départ en séance et les revoyons à J+30. Le bilan, à chaud puis à froid, désigne ce qui mérite une deuxième vague." },
+]
+
+/* Bloc équipe : textes propres à la home, passés au composant partagé EquipeMasteria
+   (ses textes par défaut restent ceux de /mathias-nizan). */
+const EQUIPE_HOME = {
+  titre: 'Votre projet réunit les profils dont il a besoin',
+  intro: "Mathias Nizan dirige chaque mission de bout en bout. Il s'entoure d'indépendants expérimentés, appelés selon le besoin\u00a0: une dizaine de consultants IA, cinq développeurs spécialisés en IA environ et près de vingt formateurs. Chacun entre au moment où son métier sert le projet.",
+  fondateurLigne: 'Fondateur · pilote de chaque mission',
+  lignes: [
+    "Ils conduisent les audits, construisent la stratégie et les règles de gouvernance, puis aident vos équipes à changer leur façon de travailler, dans toute la France.",
+    "Ils conçoivent les agents (des assistants qui enchaînent seuls plusieurs tâches), les automatisations et les assistants qui lisent vos documents, puis les relient à votre CRM (le fichier clients) ou à votre ERP (le logiciel de gestion). Ils peuvent travailler dans vos locaux.",
+    "Praticiens autant que pédagogues, ils animent les parcours par outil et par fonction, sur les dossiers de vos équipes.",
+  ],
+  tableauTitre: 'Les profils engagés selon le type de projet',
+  legende: { coeur: 'rôle principal', appui: 'en renfort', absent: 'pas mobilisé' },
+  caption: 'Rôle de chaque profil Masteria selon le type de projet',
+  colonnes: ['Pilotage', 'Conseil', 'Développement', 'Formation'],
+  projets: ['Audit, diagnostic ou conseil', 'Outil ou agent construit pour vous', 'Formation de vos équipes'],
+  note: "Cette répartition est indicative et se fixe au cadrage. Vous n'avez qu'un interlocuteur\u00a0: Masteria signe le contrat, répartit le travail entre les intervenants et en répond.",
+}
+
+/* Études de cas, en liste discrète plus bas dans la page. Une ligne écrite pour la
+   home par cas (faits de data/etudes-de-cas.js, révisés le 05/10/2026), lien vers
+   l'ancre du cas. Ce qui est à venir s'écrit au futur ou « prévu ». */
+const CAS_HOME = [
+  {
+    id: 'industrie',
+    secteur: 'Packaging · groupe international',
+    titre: 'Microsoft Copilot déployé par paliers, des managers pilotes aux sites étrangers',
+    ligne: "De juillet à septembre 2026, les managers ont suivi cinq sessions de deux jours, deux d'entre elles en anglais, et le comité de direction a eu sa matinée stratégique. Les sites américains et mexicains sont prévus en octobre 2026, les sites indiens en décembre.",
+  },
+  {
+    id: 'photovoltaique',
+    secteur: 'Énergie solaire · PME de distribution',
+    titre: 'Vendre davantage avec la même équipe de trois personnes, en suivant un plan sur 90 jours',
+    ligne: "Trois entretiens et quatre flux cartographiés ont fait ressortir douze gisements de temps, dont trois chantiers prioritaires restitués en septembre 2026 à la direction. La formation sur site, sur deux jours, aura lieu en octobre, avant une première mesure des gains.",
+  },
+  {
+    id: 'conseil-financier',
+    secteur: 'Conseil financier · marchés publics',
+    titre: "Des assistants qui interrogent le consultant avant d'écrire un mémoire",
+    ligne: "Un assistant pour chaque famille de marchés publics, quatre en tout, conçus avec les consultants au fil de quatre ateliers de deux heures et alimentés par les mémoires notés le plus haut par les jurys et par les références du cabinet.",
+  },
+  {
+    id: 'distribution',
+    secteur: 'Distribution informatique · 58 salariés',
+    titre: "Dix référents formés à Claude, avant un déploiement dans toute l'entreprise",
+    ligne: "Formés en deux jours en juin 2026, les référents ont conçu avec Masteria onze compétences Claude (des procédures que l'assistant applique de lui-même), notamment pour la cotation, les stocks, les relances de devis et les cahiers des charges à remplir. Les autres collaborateurs y auront accès d'octobre à décembre 2026, au fil du déploiement.",
+  },
+]
 
 /* Par où commencer : l'offre d'entrée, identique sur tout le site (data/offre-entree.js). */
 const ETAPES = [
-  { n: '1', badge: 'Offert', title: '30 minutes de cadrage', desc: "En visio ou par téléphone\u00a0: votre contexte, vos processus, ce que vous attendez de l'IA. Vous savez ensuite par où commencer." },
-  { n: '2', badge: 'Au forfait', title: 'Le Diagnostic IA', desc: "Ateliers avec vos équipes, cas d'usage priorisés par impact et par effort, feuille de route chiffrée. Durée et forfait fixés lors du cadrage, selon votre périmètre." },
-  { n: '3', badge: 'Forfait ou régie', title: 'Le projet', desc: "Audit approfondi, construction de l'outil, accompagnement ou formation. Le code et les livrables vous appartiennent." },
+  { n: '1', badge: 'Offert', title: '30 minutes de cadrage', desc: "Un échange en visio ou au téléphone\u00a0: vous décrivez votre activité et vos attentes envers l'IA, nous vous indiquons le premier pas utile." },
+  { n: '2', badge: 'Au forfait', title: 'Le Diagnostic IA', desc: "Des ateliers avec vos équipes repèrent les usages utiles, les classent selon leur effet et l'effort qu'ils demandent, puis les chiffrent dans une feuille de route. Durée et forfait se fixent au cadrage." },
+  { n: '3', badge: 'Sur devis', title: 'Le projet', desc: "La feuille de route indique la suite\u00a0: un audit plus poussé, un outil à construire, un accompagnement ou une formation. Le code et les livrables restent votre propriété." },
 ]
 
 const ENGAGEMENTS = [
-  { Icon: Handshake, title: 'Indépendant des éditeurs', desc: 'La recommandation suit votre cas, votre budget et vos contraintes.' },
-  { Icon: Code2, title: 'Le code vous appartient', desc: 'Code, prompts, documentation et livrables vous sont remis.' },
-  { Icon: Users, title: 'Ceux qui construisent forment', desc: "L'usage s'installe, le projet ne reste pas un pilote." },
-  { Icon: ShieldCheck, title: 'Conformité dès le cadrage', desc: 'RGPD, AI Act, accord de confidentialité sur demande.' },
+  { Icon: Handshake, title: 'Indépendant des éditeurs', desc: "Aucune commission d'éditeur\u00a0: l'outil conseillé dépend de votre cas, de votre budget et de vos contraintes." },
+  { Icon: Code2, title: 'Le code vous appartient', desc: 'Code source, prompts, documentation\u00a0: tout vous est remis à la livraison.' },
+  { Icon: Users, title: 'Ceux qui construisent forment', desc: "Les personnes qui ont bâti l'outil apprennent à vos équipes à l'utiliser, pour que l'usage dure après le pilote." },
+  { Icon: ShieldCheck, title: 'Conformité dès le cadrage', desc: "La protection des données personnelles (RGPD) et les règles de l'AI Act sont examinées dès le premier atelier. Un accord de confidentialité est signé si vous le souhaitez." },
 ]
 
-/* Questions conseil & développement d'abord, puis les questions formation. */
-const FAQ_CONSEIL = [
-  { q: "Combien coûte un projet d'IA avec Masteria\u00a0?", a: "Le premier échange, 30 minutes de cadrage, est offert. Le Diagnostic IA est un forfait dont la durée et le prix se fixent lors de ce cadrage, selon votre périmètre. Un audit ou un développement se chiffre au forfait, après cadrage\u00a0: à partir de quelques milliers d'euros pour un premier outil, jusqu'à 100 000 € et plus pour un déploiement à l'échelle. Les formations sont à 1 980 € HT la journée, finançables par votre OPCO." },
-  { q: 'À qui appartient le code des outils que vous développez ?', a: "À vous. Le code, les prompts, la documentation et les livrables vous sont remis. Vos équipes sont formées à l'outil, et vous restez libres de le faire évoluer en interne ou avec un autre prestataire." },
-  { q: 'Combien de temps pour un premier outil en production ?', a: "Un prototype ou une première version utile se construit généralement en quelques semaines, selon la complexité et la disponibilité de vos données. Nous livrons d'abord le cas prioritaire, puis nous élargissons." },
+/* FAQ de la home, écrite pour elle (07/10/2026) : conseil et développement d'abord,
+   puis la formation. Elle remplace FAQ_GENERAL (screens2.jsx), copiée sur plus de cent
+   pages. Le JSON-LD FAQPage reprend ce tableau tel quel (SEOHead, faqItems). */
+const FAQ_HOME = [
+  { q: "Combien coûte un projet d'IA avec Masteria\u00a0?", a: "Les 30 minutes de cadrage sont offertes. Le Diagnostic IA est un forfait\u00a0: sa durée et son prix se fixent pendant ce cadrage, d'après votre périmètre. Un audit ou un développement se chiffre sur devis, au forfait\u00a0: un prototype démarre à quelques milliers d'euros, un outil en production se compte en dizaines de milliers, et un grand déploiement commence au-delà de 100 000 € et peut monter, selon son ampleur, à plusieurs centaines de milliers. Ces prestations ne sont pas finançables par votre OPCO. Côté formation, le tarif est simple\u00a0: 1 980 € HT la journée\u00a0; l'OPCO de votre branche décide de sa prise en charge selon ses règles et ses fonds." },
+  { q: 'Qui est propriétaire des outils que Masteria développe\u00a0?', a: "Vous. Code source, documentation, prompts et livrables vous reviennent en fin de projet. Vos équipes apprennent à se servir de l'outil, et vous restez libres de le faire évoluer seuls ou avec un autre prestataire." },
+  { q: 'En combien de temps un premier outil est-il utilisable\u00a0?', a: "Une première version qui rend déjà service, ou un simple prototype, demande quelques semaines. Le délai tient à la complexité du cas et à l'état de vos données. Le cas prioritaire est livré en premier, puis l'outil s'étend aux suivants." },
+  { q: 'Faut-il commencer par un audit ou par une formation\u00a0?', a: "Le cadrage de 30 minutes sert à trancher. Si vous ne savez pas encore où l'IA vous ferait gagner du temps, commencez par le Diagnostic IA, qui le montre flux par flux. Si les usages sont connus et que vos équipes doivent apprendre, la formation peut démarrer tout de suite." },
+  { q: 'Que couvre votre certification Qualiopi\u00a0?', a: "La formation. Le certificat Qualiopi de Masteria couvre une seule catégorie, les actions de formation, et c'est lui qui permet à votre OPCO d'étudier une prise en charge. L'audit, le conseil et le développement d'outils sortent de ce périmètre\u00a0: ils se règlent au forfait, sans financement de l'OPCO." },
+  { q: "Comment l'OPCO finance-t-il une formation\u00a0?", a: "L'opérateur de compétences (OPCO) de votre branche finance la formation selon ses règles et ses fonds\u00a0: mieux vaut l'interroger avant de fixer les dates. Nous préparons le programme, la convention de formation et le devis qu'il demande, et nous suivons avec vous le dossier. Pour une formation à Genève ou à Bruxelles, le système des OPCO ne s'applique pas\u00a0: le devis se fait en euros HT." },
+  { q: 'Faut-il un niveau technique pour suivre une formation\u00a0?', a: "Aucun. Savoir se servir d'un ordinateur suffit. Un questionnaire de positionnement mesure le niveau de chacun avant la session\u00a0; les exercices partent ensuite des tâches de son métier." },
+  { q: 'Où et sous quel format intervenez-vous\u00a0?', a: "Dans vos locaux partout en France, ou en classe virtuelle à distance. À l'étranger, nos missions vont de l'Europe aux États-Unis et jusqu'en Inde, en français ou en anglais\u00a0: deux sessions pour un groupe industriel se sont tenues en anglais en septembre 2026." },
+  { q: 'Sous quel délai une formation peut-elle commencer\u00a0?', a: "Une à deux semaines pour un accompagnement individuel. Pour une session intra-entreprise, prévoyez deux à quatre semaines\u00a0: le temps de construire le programme sur vos dossiers et de caler les dates." },
 ]
 
+/* Explorer Masteria (maillage interne) : intitulés et ordre propres à la home, pour ne
+   pas reproduire mot pour mot les listes de liens des pages villes et agences. */
+const EXPLORER = [
+  { title: 'Conseil et audit', links: [
+    ['Conseil en intelligence artificielle', '/conseil-intelligence-artificielle'],
+    ['Audit IA', '/audit-ia'],
+    ['Diagnostic IA', '/diagnostic-ia'],
+    ['Accompagnement IA', '/accompagnement-ia'],
+    ['Gouvernance IA', '/gouvernance-ia'],
+    ['Études de cas IA', '/etudes-de-cas-ia'],
+  ] },
+  { title: 'Développement', links: [
+    ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
+    ['Agents IA pour votre entreprise', '/agents-ia-entreprise'],
+    ['Agence de développement IA', '/agence-developpement-ia'],
+    ["Automatisation par l'IA", '/agence-automatisation-ia'],
+    ['Agence IA à Lyon', '/agence-ia'],
+    ["Prix d'un projet IA", '/prix-projet-ia'],
+    ["Calculer le ROI de l'IA", '/roi-ia-entreprise'],
+  ] },
+  { title: 'Formation par outil', links: [
+    ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
+    ['Formation Claude IA', '/formation-claude-ia'],
+    ['Formation ChatGPT', '/formation-chatgpt'],
+    ['Formation Mistral AI', '/formation-mistral-ai'],
+    ['Formation Google Gemini', '/formation-gemini-entreprise'],
+  ] },
+  { title: 'Formation par ville', links: [
+    ['Formation IA à Lyon', '/formation-ia-lyon'],
+    ['Formation IA à Paris', '/formation-ia-paris'],
+    ['Formation IA à Marseille', '/formation-ia-marseille'],
+    ['Formation IA à Genève', '/formation-ia-geneve'],
+    ['Formation IA à Bruxelles', '/formation-ia-bruxelles'],
+  ] },
+]
+
+/* Repères de la carte de contact finale. */
+const REPERES_CONTACT = [
+  { Icon: Code2, label: 'Le code vous appartient' },
+  { Icon: BadgeCheck, label: 'Formation certifiée Qualiopi' },
+  { Icon: Globe, label: 'Europe · États-Unis · Inde' },
+]
 
 /* ─── Éléments de composition ─── */
 
@@ -200,8 +341,6 @@ function FaqAccordion({ items }) {
 
 export default function HomePage() {
   const isDesktop = useIsDesktop()
-  const homeFaq = [...FAQ_CONSEIL, ...FAQ_GENERAL]
-  const casListe = CAS_LISTE.map(id => CASES.find(k => k.id === id)).filter(Boolean)
 
   /* ── JSON-LD pour SEO & AI overviews ───────────────────────────── */
   // Note: Organization, WebSite, Person et FAQPage sont déjà injectés par SEOHead
@@ -231,8 +370,10 @@ export default function HomePage() {
       position: i + 1,
       item: {
         '@type': 'Course',
-        name: h.h1,
-        description: h.metaDesc,
+        // Nom et description tirés de la liste visible de la home : les metaDesc du
+        // catalogue portaient encore « +1 500 formés » et d'anciens noms d'outils.
+        name: `Formation ${h.tool}`,
+        description: `${TOOL_LIGNES[h.id] || 'Programmes par outil et par métier'}. Formation certifiée Qualiopi, en intra ou en individuel.`,
         url: `https://www.master-ia.fr/${h.slug}`,
         provider: { '@type': 'Organization', name: 'Masteria' },
       },
@@ -249,7 +390,7 @@ export default function HomePage() {
         description="Cabinet IA à Lyon : audit IA, conseil, développement d'outils et d'agents sur mesure, formation de vos équipes certifiée Qualiopi. Devis sous 24 h."
         slug=""
         keywords="cabinet IA Lyon, audit IA, conseil IA, développement IA sur mesure, agents IA entreprise, formation IA entreprise, formation ChatGPT, formation Copilot, Qualiopi"
-        faqItems={homeFaq}
+        faqItems={FAQ_HOME}
         speakable={['#definition']}
         extraJsonLd={[jsonLdServiceList, jsonLdCourseList]}
       />
@@ -360,11 +501,11 @@ export default function HomePage() {
               <h2 style={{ ...h2Style, margin: 0 }}>Six temps, les mêmes sur chaque mission</h2>
             </div>
             <p style={leadStyle}>
-              Qu'il s'agisse d'un diagnostic court ou d'un déploiement international, chaque mission avance dans cet ordre. C'est ce qui rend les résultats comparables, et la suite facile à décider.
+              Du diagnostic court au déploiement sur plusieurs continents, chaque mission suit cet ordre. Les résultats se comparent d'une mission à l'autre, et la suite se décide sur des faits mesurés.
             </p>
           </div>
           <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${BLEU_FILET}`, borderLeft: isDesktop ? `1px solid ${BLEU_FILET}` : 'none' }}>
-            {METHODE_COMMUNE.map(m => (
+            {METHODE_HOME.map(m => (
               <li key={m.num} style={{ padding: 'clamp(22px, 3vw, 32px)', borderRight: isDesktop ? `1px solid ${BLEU_FILET}` : 'none', borderBottom: `1px solid ${BLEU_FILET}` }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: '50%', border: `1.5px solid ${c}`, color: c, fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 900, marginBottom: 16, fontVariantNumeric: 'tabular-nums' }}>{m.num}</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: '0 0 8px' }}>{m.title}</h3>
@@ -376,7 +517,7 @@ export default function HomePage() {
       </section>
 
       {/* ════════════════════════ L'ÉQUIPE ════════════════════════ */}
-      <EquipeMasteria bg="#fff" />
+      <EquipeMasteria bg="#fff" {...EQUIPE_HOME} />
 
       {/* ════════════════════════ PAR OÙ COMMENCER (fond beige) ════════════════════════ */}
       <section style={{ position: 'relative', background: BEIGE, padding: SECTION_PAD, overflow: 'hidden' }}>
@@ -387,7 +528,7 @@ export default function HomePage() {
               <h2 style={{ ...h2Style, margin: 0 }}>Trente minutes pour savoir par où commencer</h2>
             </div>
             <p style={leadStyle}>
-              Vous savez que l'IA peut vous aider sans savoir par où commencer&nbsp;: c'est le cas de la plupart de nos clients au premier échange.
+              La plupart de nos clients arrivent avec la même intuition&nbsp;: l'IA peut leur faire gagner du temps, reste à savoir où. Le premier échange sert à le trouver.
             </p>
           </div>
 
@@ -435,7 +576,7 @@ export default function HomePage() {
               <Kicker>Former vos équipes</Kicker>
               <h2 style={h2Style}>Tous les LLM du marché, plus de 100 programmes</h2>
               <p style={{ ...leadStyle, marginBottom: 24 }}>
-                ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI&nbsp;: nous formons vos équipes sur tous les LLM du marché, par outil et par métier, à partir de leurs propres dossiers. En présentiel ou à distance, en intra-entreprise ou en accompagnement individuel. Plus de 1 500 professionnels formés depuis 2022.
+                Nous formons vos équipes aux grands modèles de langage (les LLM, ces moteurs qui font tourner les assistants d'IA)&nbsp;: Microsoft Copilot, ChatGPT, Claude, Gemini chez Google et Vibe chez Mistral AI. Chaque programme se décline par outil ou par métier et part des dossiers de vos collaborateurs. Vous choisissez le lieu, vos locaux ou la visio, et le format&nbsp;: douze participants au plus en intra, ou un seul participant en individuel.
               </p>
               <div style={{ padding: '22px 24px', border: `1px solid ${LINE}`, borderRadius: 14, background: '#fff', marginBottom: 26 }}>
                 {/* Logo à la même taille que dans le hero (168 px) : à 120 px, Mathias le jugeait illisible (05/10/2026). */}
@@ -444,7 +585,7 @@ export default function HomePage() {
                   <img src="/assets/qualiopi-logo.png" alt="Certification Qualiopi des actions de formation de Masteria" width="842" height="509" loading="lazy" decoding="async" style={{ display: 'block', width: '100%', height: 'auto' }} />
                 </picture>
                 <p style={{ fontSize: 14, color: TEXT, lineHeight: 1.6, margin: 0 }}>
-                  Certification qualité délivrée au titre des actions de formation. Finançable par votre OPCO.
+                  Certification qualité délivrée pour une catégorie d'action&nbsp;: actions de formation. Votre OPCO décide du financement selon ses règles et ses fonds.
                 </p>
               </div>
               <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap' }}>
@@ -481,7 +622,7 @@ export default function HomePage() {
 
               <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: MUTED, marginBottom: 12 }}>Par métier</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-                {METIERS.map(m => {
+                {METIERS_HOME.map(m => {
                   const Icon = METIER_ICONS[m.slug]
                   return (
                     <li key={m.slug}>
@@ -510,20 +651,20 @@ export default function HomePage() {
             <Kicker>Références</Kicker>
             <h2 style={{ ...h2Style, fontSize: 'clamp(24px, 2.8vw, 34px)' }}>Quelques missions récentes</h2>
             <p style={{ fontSize: 15, color: TEXT, lineHeight: 1.7, margin: '0 0 18px' }}>
-              Présentées sans nom de client&nbsp;: secteur, taille et chiffres issus des dossiers de mission. Mise en relation possible en privé, sous accord de confidentialité.
+              Nos clients restent anonymes sur ce site. Les secteurs, les tailles et les chiffres viennent des dossiers de chaque mission&nbsp;; sur demande, nous organisons un échange privé avec eux, sous accord de confidentialité.
             </p>
             <Link to="/etudes-de-cas-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
               Toutes les études de cas <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
             </Link>
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${LINE}` }}>
-            {casListe.map(k => (
+            {CAS_HOME.map(k => (
               <li key={k.id} style={{ borderBottom: `1px solid ${LINE}` }}>
                 <Link to={`/etudes-de-cas-ia#${k.id}`} style={{ display: 'grid', gridTemplateColumns: isDesktop ? '190px 1fr 20px' : '1fr', gap: isDesktop ? 28 : 6, alignItems: 'baseline', padding: '22px 0', textDecoration: 'none' }}>
-                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: MUTED, lineHeight: 1.5 }}>{k.sector}</span>
+                  <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: MUTED, lineHeight: 1.5 }}>{k.secteur}</span>
                   <span>
-                    <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: INK, lineHeight: 1.4 }}>{k.title}</span>
-                    <span style={{ display: 'block', fontSize: 14, color: MUTED, lineHeight: 1.65, marginTop: 6 }}>{k.teaser}</span>
+                    <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: INK, lineHeight: 1.4 }}>{k.titre}</span>
+                    <span style={{ display: 'block', fontSize: 14, color: MUTED, lineHeight: 1.65, marginTop: 6 }}>{k.ligne}</span>
                   </span>
                   {isDesktop && <ArrowRight size={16} strokeWidth={2.2} style={{ color: '#9CA3AF', alignSelf: 'center' }} aria-hidden="true" />}
                 </Link>
@@ -549,20 +690,20 @@ export default function HomePage() {
             </picture>
           </div>
           <div>
-            <Kicker>Le mot du fondateur</Kicker>
+            <Kicker>La conviction de Mathias Nizan</Kicker>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 2.8vw, 34px)', fontWeight: 800, color: INK, lineHeight: 1.3, margin: '0 0 28px', letterSpacing: '-0.015em' }}>
               « L'intelligence artificielle ne remplace pas les humains. Elle <span style={{ color: c }}>décuple leur potentiel</span>. »
             </p>
             <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, margin: '0 0 14px', maxWidth: 640 }}>
-              Je suis convaincu que l'IA ne doit pas être réservée à une élite technologique. Elle peut, et doit, devenir un levier de transformation pour tous les professionnels, quels que soient leur métier ou leur niveau de départ.
+              Un outil d'IA vaut ce qu'en font les personnes qui l'utilisent. L'abonnement s'achète en un après-midi&nbsp;; l'usage s'installe quand chacun voit ce que l'outil change dans son métier, sur ses propres fichiers.
             </p>
             <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, margin: '0 0 30px', maxWidth: 640 }}>
-              C'est pour cela que j'ai fondé <strong style={{ color: INK }}>Masteria</strong>, un cabinet spécialisé en intelligence artificielle&nbsp;: nous auditons vos usages, nous construisons les outils qui manquent et nous formons les équipes qui vont s'en servir.
+              En 2022, à Lyon, j'ai fondé <strong style={{ color: INK }}>Masteria</strong> pour relier la technologie et les équipes&nbsp;: nous examinons votre façon de travailler, nous construisons les outils qui vous manquent, puis nous formons celles et ceux qui s'en serviront.
             </p>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 20, flexWrap: 'wrap', paddingTop: 22, borderTop: `1px solid ${LINE}` }}>
               <div>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: INK }}>Mathias Nizan</div>
-                <div style={{ fontSize: 14, color: MUTED, marginTop: 2 }}>Fondateur de Masteria · Conseil et architecture de solutions IA</div>
+                <div style={{ fontSize: 14, color: MUTED, marginTop: 2 }}>Fondateur de Masteria · Lyon</div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: MUTED }}>
@@ -582,15 +723,15 @@ export default function HomePage() {
         <div style={{ maxWidth: 1180, margin: '0 auto', display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 360px) 1fr' : '1fr', gap: 'clamp(32px, 6vw, 88px)' }}>
           <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : undefined}>
             <Kicker>Questions fréquentes</Kicker>
-            <h2 style={h2Style}>Ce qu'on nous demande avant de démarrer</h2>
+            <h2 style={h2Style}>Ce que nos clients demandent avant de démarrer</h2>
             <p style={{ ...leadStyle, fontSize: 15.5, marginBottom: 20 }}>
-              Une question qui n'est pas dans la liste ? Posez-la pendant les 30 minutes de cadrage.
+              Votre question manque&nbsp;? Apportez-la au cadrage de 30 minutes, Mathias Nizan y répond de vive voix.
             </p>
             <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
               Réserver 30 minutes de cadrage <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
           </div>
-          <FaqAccordion items={homeFaq} />
+          <FaqAccordion items={FAQ_HOME} />
         </div>
       </section>
 
@@ -599,39 +740,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1180, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: INK, margin: '0 0 32px' }}>Explorer Masteria</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 32 }}>
-            {[
-              { title: 'Conseil et audit', links: [
-                ['Conseil en intelligence artificielle', '/conseil-intelligence-artificielle'],
-                ['Audit IA', '/audit-ia'],
-                ['Diagnostic IA', '/diagnostic-ia'],
-                ['Accompagnement IA', '/accompagnement-ia'],
-                ['Gouvernance IA', '/gouvernance-ia'],
-                ['Études de cas IA', '/etudes-de-cas-ia'],
-              ] },
-              { title: 'Développement', links: [
-                ['Agence de développement IA', '/agence-developpement-ia'],
-                ['Outils IA sur mesure', '/outils-ia-sur-mesure'],
-                ['Agents IA en entreprise', '/agents-ia-entreprise'],
-                ['Automatisation IA', '/agence-automatisation-ia'],
-                ['Agence IA à Lyon', '/agence-ia'],
-                ["Prix d'un projet IA", '/prix-projet-ia'],
-                ["ROI de l'IA en entreprise", '/roi-ia-entreprise'],
-              ] },
-              { title: 'Formation par outil', links: [
-                ['Formation ChatGPT', '/formation-chatgpt'],
-                ['Formation Microsoft Copilot', '/formation-microsoft-copilot'],
-                ['Formation Claude IA', '/formation-claude-ia'],
-                ['Formation Google Gemini', '/formation-gemini-entreprise'],
-                ['Formation Mistral AI', '/formation-mistral-ai'],
-              ] },
-              { title: 'Formation par ville', links: [
-                ['Formation IA Lyon', '/formation-ia-lyon'],
-                ['Formation IA Paris', '/formation-ia-paris'],
-                ['Formation IA Marseille', '/formation-ia-marseille'],
-                ['Formation IA Genève', '/formation-ia-geneve'],
-                ['Formation IA Bruxelles', '/formation-ia-bruxelles'],
-              ] },
-            ].map(col => (
+            {EXPLORER.map(col => (
               <div key={col.title}>
                 <h3 style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, margin: '0 0 16px' }}>{col.title}</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -661,14 +770,10 @@ export default function HomePage() {
             <Kicker color="#60A5FA">Contact</Kicker>
             <h2 style={{ ...h2Style, color: '#fff' }}>Parlons de votre projet IA</h2>
             <p style={{ fontSize: 17, color: '#CBD5E1', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 560 }}>
-              Trente minutes pour poser votre contexte et voir par où commencer&nbsp;: audit, diagnostic, outil sur mesure ou formation de vos équipes. L'échange est offert.
+              Racontez-nous votre activité et ce qui vous prend du temps. En trente minutes, nous voyons avec vous s'il faut commencer par un audit, un diagnostic, un outil sur mesure ou une formation. Cet échange est offert.
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-              {[
-                { Icon: Code2, label: 'Le code vous appartient' },
-                { Icon: BadgeCheck, label: 'Formation certifiée Qualiopi' },
-                { Icon: Globe, label: 'Europe · États-Unis · Inde' },
-              ].map(({ Icon, label }) => (
+              {REPERES_CONTACT.map(({ Icon, label }) => (
                 <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 13, fontWeight: 600, color: '#E2E8F0', background: 'rgba(255,255,255,0.05)', border: '1px solid #1E293B', borderRadius: 99, padding: '7px 14px' }}>
                   <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                   {label}
@@ -679,7 +784,7 @@ export default function HomePage() {
 
           <div style={{ background: '#fff', borderRadius: 22, padding: 'clamp(24px, 3vw, 32px)', boxShadow: '0 30px 70px -30px rgba(0,0,0,0.6)' }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: INK, marginBottom: 6 }}>Prendre rendez-vous</div>
-            <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.6, margin: '0 0 20px' }}>En visio ou par téléphone, avec Mathias Nizan.</p>
+            <p style={{ fontSize: 14, color: MUTED, lineHeight: 1.6, margin: '0 0 20px' }}>Avec Mathias Nizan, en visio ou au téléphone.</p>
             <CadrageLink style={{ ...btnPrimary, width: '100%', justifyContent: 'center', boxSizing: 'border-box', marginBottom: 20 }}>
               Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />

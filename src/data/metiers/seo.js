@@ -1,322 +1,326 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-seo (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Reçoit depuis le 07/10 les anciennes pages Gemini × SEO et Mistral × SEO (redirections 308).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation SEO IA : contenu, technique et GEO | Masteria",
-  "metaDesc": "Formation SEO IA sur vos propres mots-clés et pages : recherche d'intentions, briefs et contenu outillés par l'IA, technique et données structurées, GEO pour être cité par ChatGPT et Google. Qualiopi, OPCO.",
-  "keywords": "formation seo ia, formation ia seo, formation seo intelligence artificielle, formation geo, formation référencement ia, formation seo chatgpt, formation generative engine optimization",
-  "h1": "Formation SEO IA : le référencement outillé par l'IA, et le GEO pour être cité par les IA",
+  "metaTitle": "Formation SEO IA : référencement et GEO | Masteria",
+  "metaDesc": "Formation SEO IA en intra sur vos pages : intentions, briefs, rédaction relue, données structurées, GEO pour être cité par ChatGPT et Google. Qualiopi.",
+  "keywords": "formation seo ia, formation ia seo, formation seo intelligence artificielle, formation geo, formation référencement ia, formation seo chatgpt, formation generative engine optimization, formation gemini seo, formation mistral seo",
+  "h1": "Formation SEO IA : référencer vos pages avec l'IA, et les faire citer par les assistants",
   "h1a": "Formation SEO IA :",
-  "h1b": "le référencement outillé par l'IA, et le GEO pour être cité par les IA",
-  "eyebrow": "Formation métier · SEO & GEO",
-  "badge3": "Sur vos mots-clés, vos pages et votre marché",
-  "geo": "La formation SEO IA de Masteria apprend à vos équipes, sur vos propres mots-clés et pages, à outiller tout le référencement avec l'IA générative (recherche d'intentions, briefs, contenu relu, technique, données structurées, mesure) et à occuper le nouveau front : le GEO, être cité dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "Le SEO change deux fois à la fois : l'IA accélère toute la chaîne de production, et une part croissante des recherches reçoit une réponse directe d'une IA, sans clic. La formation traite les deux mouvements ensemble, avec la discipline qui les rend durables : jamais de contenu à l'échelle sans valeur, relecture humaine, mesure en tendance. Transmise par une équipe qui pratique le SEO et le GEO pour ses clients et pour elle-même.",
-  "intro": "La formation SEO IA de Masteria apprend à vos équipes, sur vos propres mots-clés et pages, à outiller tout le référencement avec l'IA générative (recherche d'intentions, briefs, contenu relu, technique, données structurées, mesure) et à occuper le nouveau front : le GEO, être cité dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO."
+  "h1b": "référencer vos pages avec l'IA, et les faire citer par les assistants",
+  "eyebrow": "Formation métier · SEO et GEO",
+  "badge3": "Sur vos requêtes, vos pages et vos concurrents",
+  "geo": "Avec la formation SEO IA de Masteria, une équipe de référencement outille son travail grâce à l'IA générative (recherche d'intentions, briefs, rédaction relue, données structurées, maillage, suivi) et s'attaque au GEO, c'est-à-dire la présence de ses pages dans les réponses des AI Overviews de Google, de Perplexity, de ChatGPT ou de Gemini. Le parcours dure deux jours en intra et part de vos requêtes et de vos pages ; il se déroule dans votre assistant habituel, Claude, ChatGPT, Vibe (anciennement Le Chat), Gemini ou Microsoft Copilot (anciennement Microsoft 365 Copilot), à côté de la Search Console et de vos outils SEO. Un financement par votre OPCO est envisageable, Masteria étant certifiée Qualiopi ; l'opérateur en fixe le montant.",
+  "sub": "Le référencement vit deux mouvements simultanés : l'IA accélère toute la production, et une part des recherches trouve sa réponse sans clic. Selon une étude du Pew Research Center publiée en juillet 2025 sur des internautes américains, on clique sur un résultat dans 8 % des visites où Google affiche un résumé IA, contre 15 % sans résumé. La formation aborde l'un et l'autre avec la discipline qui les rend durables : aucun contenu publié en série pour remplir, une relecture humaine, une mesure en tendance.",
+  "intro": "Avec la formation SEO IA de Masteria, une équipe de référencement outille son travail grâce à l'IA générative et apprend à faire citer ses pages par les assistants, sur ses propres requêtes."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré (contenu ou GEO)"
+   "value": "Deux jours en intra, quatorze heures ; une seule journée quand l'équipe choisit un terrain, la production ou le GEO"
   },
   {
    "label": "Pour qui",
-   "value": "Équipes SEO et contenu, responsables acquisition, chargés de marketing digital, rédacteurs web, consultants SEO en agence"
+   "value": "Équipes SEO et acquisition, rédacteurs web, responsables marketing digital, consultants SEO en agence"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec vos outils SEO (Search Console, Semrush ou équivalents)"
+   "value": "ChatGPT, Claude, Gemini, Vibe ou Microsoft Copilot, reliés à la Search Console et à vos outils SEO par des exports"
   },
   {
-   "label": "Deux fronts",
-   "value": "Le SEO outillé par l'IA (recherche, briefs, contenu, technique) et le GEO : être cité dans les réponses de ChatGPT, Perplexity, Gemini et les AI Overviews"
+   "label": "Deux terrains",
+   "value": "Le référencement outillé par l'IA, et la place de vos pages dans ce que répondent les assistants et les AI Overviews"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts SEO, gabarits de brief et de page citable, check-list technique GEO, corpus de mesure des citations IA"
+   "value": "Prompts SEO, gabarits de brief et de page citable, check-list des données structurées, corpus de suivi des citations"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Organisme certifié Qualiopi : l'OPCO de l'entreprise peut prendre en charge le parcours, d'après ses critères"
   }
  ],
  "missionsHead": {
-  "kicker": "Activité par activité",
-  "h2": "Que change l'IA dans le travail d'une équipe SEO ?",
-  "answer": "L'IA générative touche six activités du SEO : la recherche de mots-clés et d'intentions, les briefs et la production de contenu, le GEO (être cité par les IA), la technique et les données structurées, l'architecture sémantique, la mesure et les automatisations. Dans chacune, elle accélère et structure ; l'arbitrage éditorial, la relecture et la vérification restent aux professionnels.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre équipe au cadrage. Pour déléguer plutôt que former, voyez notre {/agence-seo-ia|agence SEO IA} ; pour mesurer votre point de départ, l'{/audit-seo-ia|audit SEO IA & GEO}."
+  "kicker": "De la requête à la citation",
+  "h2": "Six chantiers du référencement transformés par l'IA générative",
+  "answer": "La recherche de mots-clés et d'intentions, les briefs et la rédaction, le GEO, la technique et les données structurées, l'architecture sémantique, le suivi et les tâches récurrentes : l'IA générative accélère et structure chacun de ces chantiers. L'arbitrage éditorial, la relecture et la vérification dans les données de la Search Console restent le travail des spécialistes.",
+  "foot": "Selon vos priorités, le cadrage donne plus ou moins de place à chaque chantier. Pour confier le travail plutôt que former l'équipe, voyez notre {/agence-seo-ia|agence SEO IA} ; pour connaître votre point de départ, l'{/audit-seo-ia|audit SEO IA et GEO}."
  },
  "missions": [
   {
    "icon": "Search",
-   "title": "Recherche de mots-clés et d'intentions",
-   "desc": "Grappes sémantiques, intentions derrière les requêtes, questions à couvrir, clusters pilier et pages liées : l'IA structure en minutes ce qui prenait des heures de tableur, à partir de vos exports Search Console et de vos outils. La formation apprend à cadrer cette recherche et à la vérifier contre les données réelles."
+   "title": "Mots-clés et intentions",
+   "desc": "Grappes de requêtes, intention derrière chacune, questions à couvrir, page pilier et pages filles : l'IA structure en quelques minutes ce qui demandait des heures de tableur, à partir de vos exports de la Search Console. Volumes et positions se vérifient ensuite dans vos données, jamais dans la réponse du modèle."
   },
   {
    "icon": "PenLine",
-   "title": "Briefs et production de contenu",
-   "desc": "Briefs structurés (intention, plan, entités, questions, maillage), premiers jets à votre ton, variantes de titres et de métas, FAQ, réécritures : la vitesse de l'IA au service d'un contenu utile, relu et enrichi par des humains. Jamais de ferme de contenu : Google et les IA le sanctionnent, la formation le démontre."
+   "title": "Briefs et rédaction",
+   "desc": "Un brief complet (intention, plan, entités, questions, liens internes), un premier jet dans le ton du site, des titres, des méta-descriptions, une FAQ : l'IA fournit la matière, le rédacteur apporte l'expérience, les données maison et les sources. Des textes creux publiés en série exposent le site aux règles anti-spam de Google."
   },
   {
    "icon": "Bot",
-   "title": "Le GEO : être cité par les IA",
-   "desc": "Le versant nouveau du métier. Comprendre comment ChatGPT, Perplexity, Gemini et les AI Overviews sélectionnent leurs sources ; structurer une page citable (réponse directe, entités, données structurées, format) ; ouvrir ou non son site aux robots des IA ; mesurer sa part de voix sur un corpus de questions. La formation en fait un savoir-faire, pas un mot à la mode."
+   "title": "GEO : être cité par les assistants",
+   "desc": "Comprendre comment Perplexity, les AI Overviews, Gemini ou ChatGPT choisissent leurs sources, écrire une page qu'ils peuvent citer (réponse directe en tête, entités nommées, données structurées), décider d'ouvrir ou non le site à leurs robots, suivre la part de citations sur un corpus de questions. Le GEO devient un savoir-faire de l'équipe."
   },
   {
    "icon": "Gauge",
    "title": "Technique et données structurées",
-   "desc": "Audit outillé par l'IA (indexation, performance, balisage), génération et contrôle des données structurées Schema.org, maillage interne, corrections priorisées par impact. L'IA écrit le JSON-LD et explique le rapport de crawl ; vous décidez et vérifiez."
+   "desc": "Lecture d'un rapport d'exploration, problèmes d'indexation, balisage Schema.org écrit en JSON-LD (le format de données structurées que lisent les moteurs), corrections classées par impact : l'IA rédige le code et explique le rapport, l'équipe décide et teste avant la mise en ligne."
   },
   {
    "icon": "Network",
-   "title": "Architecture sémantique et entités",
-   "desc": "Cartographie des sujets et des entités de votre domaine, cocon et maillage, cohérence thématique du site : ce qui fait comprendre votre expertise à Google comme aux modèles. L'IA aide à cartographier ; l'arbitrage éditorial reste le vôtre."
+   "title": "Architecture et entités",
+   "desc": "Carte des sujets et des entités de votre domaine, cocon sémantique, liens internes, cohérence thématique : autant de signaux qui montrent à Google et aux modèles de langage ce que vous maîtrisez. L'IA propose la carte, l'équipe tranche les arbitrages éditoriaux."
   },
   {
    "icon": "BarChart3",
-   "title": "Mesure, reporting et automatisations",
-   "desc": "Lecture d'un export de positions, synthèse mensuelle, suivi des citations IA sur un corpus stable, alertes : l'IA commente les données et automatise le récurrent. Avec la règle : positions et citations se mesurent en tendance, jamais en promesse."
+   "title": "Suivi et tâches récurrentes",
+   "desc": "Commentaire d'un export de positions, synthèse mensuelle, relevé régulier des citations dans les assistants, alertes : l'IA lit les données et prend en charge le récurrent. Positions et citations se lisent en tendance, sur plusieurs semaines."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une équipe SEO",
-  "answer": "Six gains : deux fronts couverts (le SEO outillé et le GEO) au lieu d'un, la vitesse sans le générique, la technique démystifiée, une mesure GEO qui tient la route, une transmission par des praticiens, et des livrables applicables dès la semaine suivante sur vos propres pages.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : ni les positions ni les citations ne se garantissent, les algorithmes et les modèles évoluant sans cesse. Ce qui se garantit, c'est la méthode, la mesure et la capacité de vos équipes à itérer. C'est exactement ce que la formation transmet."
+  "kicker": "Pour l'équipe SEO",
+  "h2": "Six bénéfices de l'IA générative pour une équipe de référencement",
+  "answer": "Deux terrains couverts au lieu d'un (le moteur de recherche et les assistants), une production plus rapide qui garde sa valeur, une technique accessible aux profils éditoriaux, un suivi des citations qui tient la route, une méthode transmise par des praticiens et des livrables applicables à vos pages dès la semaine suivante.",
+  "foot": "Personne ne peut garantir une position ou une citation : Google et les modèles changent sans prévenir. La formation transmet ce qui se maîtrise, une méthode, une mesure et l'habitude d'itérer. L'enjeu se chiffre : Google revendiquait en mai 2026 plus de 2,5 milliards d'utilisateurs mensuels pour ses AI Overviews, soit presque un Terrien sur trois, et OpenAI déclarait le 29 septembre 2026 que ChatGPT servait 1,2 milliard de personnes chaque semaine."
  },
  "atouts": [
   {
-   "title": "Deux fronts couverts, pas un seul",
-   "desc": "La plupart des formations SEO IA enseignent à produire plus vite. Celle-ci ajoute ce qui décide de la visibilité de demain : être cité dans les réponses des IA. Vos équipes repartent avec les deux, et la façon dont ils se renforcent."
+   "title": "Deux terrains couverts",
+   "desc": "Les pages travaillées pour Google le sont aussi pour les assistants qui répondent sans clic. L'équipe apprend où les deux exigences se rejoignent et où elles divergent."
   },
   {
-   "title": "La vitesse sans le générique",
-   "desc": "L'IA mal utilisée produit du contenu que Google déclasse et que les IA ignorent. La formation apprend le contraire : briefs riches en entités, premiers jets relus et enrichis, sources citées. Ce qui tient face aux mises à jour et devient citable."
+   "title": "La vitesse, avec la valeur",
+   "desc": "Briefs riches en entités, premiers jets relus et enrichis, sources citées : le contenu sort plus vite et résiste mieux aux mises à jour de Google."
   },
   {
-   "title": "La technique démystifiée",
-   "desc": "Données structurées, JSON-LD, robots.txt, balisage : l'IA écrit et explique, vos équipes comprennent et contrôlent. Le fossé entre le SEO éditorial et le SEO technique se réduit."
+   "title": "Une technique à la portée des rédacteurs",
+   "desc": "Données structurées, robots.txt, balisage : l'IA écrit et explique, l'équipe comprend et contrôle. L'écart entre profils éditoriaux et techniques se réduit."
   },
   {
-   "title": "Une mesure GEO qui tient la route",
-   "desc": "Un corpus de questions stable, des relevés répétés, une part de voix en tendance : la méthode que nous appliquons dans nos audits, transmise à vos équipes pour qu'elles la fassent vivre."
+   "title": "Un suivi des citations fiable",
+   "desc": "Un corpus de questions stable, des relevés répétés, une part de citations suivie en tendance : la méthode employée dans nos audits, confiée à vos équipes."
   },
   {
-   "title": "Formés par ceux qui le pratiquent",
-   "desc": "Masteria opère du SEO et du GEO pour ses clients et pour elle-même : la formation transmet une pratique, avec ses réussites et ses limites, pas une théorie de plaquette."
+   "title": "Une pratique transmise par ceux qui l'exercent",
+   "desc": "Masteria travaille le référencement et le GEO pour ses clients et pour son propre site : la formation transmet les réussites et les échecs de ce travail."
   },
   {
-   "title": "Des livrables qui servent le lendemain",
-   "desc": "Bibliothèque de prompts SEO, gabarits de brief et de page citable, check-list GEO, corpus de mesure : de quoi appliquer dès la semaine suivante sur vos propres pages."
+   "title": "Des livrables utiles dès lundi",
+   "desc": "Prompts, gabarits de brief et de page citable, check-list technique, corpus de suivi : tout s'applique à vos pages la semaine suivante."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation SEO IA sur 2 jours",
-  "answer": "Jour 1 : ce que les modèles font et ne font pas pour le SEO, le panorama des outils articulés avec Search Console, la demande efficace sur un brief, votre ligne éditoriale encodée, la recherche d'intentions sur vos exports, puis les ateliers brief, contenu relu, technique assisté, le projet partagé par cluster et le cadre d'usage. Jour 2 : le GEO (comment les IA citent, la page citable en co-édition, le corpus de mesure), la recherche approfondie et l'architecture sémantique, la mesure, puis les compétences (Skills), les assistants et agents, les tâches planifiées d'alertes, la gouvernance et votre plan d'action.",
-  "foot": "Le programme s'ajuste au cadrage : une équipe contenu approfondit le jour 1, une équipe acquisition ou une agence le GEO, les agents et les automatisations du jour 2 ; la version 1 jour choisit un front, le contenu outillé par l'IA ou le GEO. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Le programme de la formation SEO IA en deux journées",
+  "answer": "Jour 1, le référencement outillé : forces et limites des modèles pour le SEO, assistants reliés à la Search Console, demande construite sur un brief, ligne éditoriale dans les instructions, recherche d'intentions sur vos exports, puis ateliers brief complet, rédaction relue, technique assistée, espace partagé par grappe et règles d'usage. Jour 2, la visibilité dans les assistants : fonctionnement des citations, page citable écrite à plusieurs, corpus de suivi, carte des entités en recherche approfondie, rapport mensuel, puis compétences, migration des GPTs et des Gems, alertes planifiées, organisation de l'équipe et plan du mois suivant.",
+  "foot": "Des rédacteurs restent plus longtemps sur le premier jour ; une équipe acquisition ou une agence, sur le second. En une journée, il faut choisir un terrain : la production outillée ou le GEO. Notre relevé des fonctions date du 7 octobre 2026 ; ce que vos abonnements ne permettent pas encore est montré par le formateur, avec une solution de repli dans vos outils."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "SEO outillé par l'IA : recherche, briefs, contenu, technique",
+   "titre": "Le référencement outillé : intentions, briefs, rédaction, technique",
    "matin": [
     {
-     "t": "Ce que les modèles font pour le SEO",
-     "d": "Capacités et limites sur vos tâches : regrouper des requêtes par intention, expliquer un rapport de crawl, écrire du JSON-LD, mais aussi les volumes inventés, les entités approximatives, le contenu à l'échelle que Google sanctionne. On fixe ce qui se vérifie dans vos données."
+     "t": "Ce que les modèles apportent au SEO, et leurs pièges",
+     "d": "Regrouper des requêtes par intention, expliquer un rapport d'exploration, écrire du JSON-LD : les modèles le font bien. Ils inventent aussi des volumes de recherche, confondent des entités et produisent volontiers le texte en série que Google classe comme spam. Le groupe liste ce qui se vérifie toujours dans vos données."
     },
     {
-     "t": "Panorama des outils et articulation SEO",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini dans Workspace, Vibe (anciennement Le Chat) de Mistral : lequel pour quelle tâche SEO, où vont les données, comment ils s'articulent avec Search Console, Semrush ou vos équivalents, par export ou par app en lecture."
+     "t": "Les assistants face aux outils SEO",
+     "d": "ChatGPT Business, Claude, Gemini, Vibe de Mistral et Microsoft Copilot : l'apport de chacun au référencement, la destination des données, la façon de les relier à la Search Console, à Semrush ou à Ahrefs par export de fichiers. Les exports de la Search Console restent dans une offre entreprise."
     },
     {
-     "t": "La demande efficace sur un brief SEO",
-     "d": "Contexte, intention, entités, format, itération, relecture : la méthode appliquée à un mot-clé réel, de la demande initiale au brief exploitable par un rédacteur. On compare deux outils sur la même requête pour voir ce qui change dans la couverture des questions et des entités."
+     "t": "La demande, pas à pas, sur un brief",
+     "d": "Contexte, intention, entités, format, exemple d'un bon brief maison, puis itérations : la méthode s'applique à l'une de vos requêtes, jusqu'au brief qu'un rédacteur peut suivre. Deux assistants traitent la même requête pour comparer leur couverture des questions et des entités."
     },
     {
-     "t": "Encoder votre ligne éditoriale SEO",
-     "d": "Instructions personnalisées, mémoire, styles : ton du site, règles de rédaction, structure type d'une page, format de brief et de méta encodés dans le compte de chaque participant, puis testés sur une page existante. Le réglage que chaque demande réutilise ensuite."
+     "t": "La ligne éditoriale dans les instructions",
+     "d": "Ton du site, règles de rédaction, structure type d'une page, format du brief et des balises rejoignent les réglages personnels de chaque compte. Le réglage se teste sur une page déjà en ligne, que l'outil doit retravailler sans en trahir le style."
     },
     {
-     "t": "Atelier recherche d'intentions sur vos exports",
-     "d": "À partir de vos exports Search Console : grappes de mots-clés, intentions, questions à couvrir, plan de cluster pilier et pages liées ; l'analyse de données de ChatGPT ou Claude lit l'export propre, vous vérifiez volumes et positions dans vos données réelles."
+     "t": "Atelier intentions sur vos exports",
+     "d": "À partir de vos requêtes de la Search Console : grappes, intentions, questions à couvrir, plan d'une page pilier et de ses pages filles. L'outil lit l'export ; volumes et positions se contrôlent dans vos propres données."
     }
    ],
    "apresmidi": [
     {
      "t": "Atelier brief complet",
-     "d": "Sur l'un de vos mots-clés : intention, plan, entités, questions, maillage interne, longueur indicative, balises title et méta, dans votre gabarit de brief ; le brief est confronté aux pages qui se positionnent pour repérer ce qu'elles couvrent et ce qu'elles oublient."
+     "d": "Pour une requête de votre marché : intention, plan, entités, questions, liens internes, longueur indicative, balise title et méta-description, dans votre gabarit. Le brief est confronté aux pages déjà classées, pour voir ce qu'elles traitent et ce qu'elles oublient."
     },
     {
-     "t": "Atelier contenu relu et enrichi",
-     "d": "Du brief au premier jet à votre ton, FAQ, visuel d'illustration et attribut alt avec la génération d'images ; puis la relecture et l'enrichissement humains : expérience propre, données maison, sources citées. L'écart entre contenu utile et contenu à l'échelle se voit sur place."
+     "t": "Atelier rédaction relue et enrichie",
+     "d": "Du brief au premier jet dans votre ton, avec FAQ, image d'illustration et texte alternatif ; puis l'apport humain : expérience vécue, données maison, sources citées. L'écart entre une page utile et un texte de remplissage devient visible à l'écran."
     },
     {
-     "t": "Atelier technique assisté",
-     "d": "Lire un rapport de crawl ou un export d'indexation avec l'IA, générer et contrôler des données structurées Schema.org en JSON-LD, proposer un maillage interne, prioriser les correctifs par impact ; l'IA écrit et explique, vous décidez et testez avant mise en ligne."
+     "t": "Atelier technique assistée",
+     "d": "Lecture d'un rapport d'exploration ou d'un export d'indexation, balisage Schema.org écrit puis contrôlé, propositions de liens internes, correctifs classés par impact. L'outil écrit et explique ; l'équipe décide, puis teste avant toute mise en ligne."
     },
     {
-     "t": "Projets partagés par cluster ou par site",
-     "d": "Un projet partagé ChatGPT ou Claude (Projet et Bibliothèque dans Vibe) par site ou par cluster : instructions communes, ligne éditoriale, gabarits de brief, export de mots-clés et pages de référence en fichiers, mémoire propre au projet, droits lecture et écriture pour l'équipe ou l'agence."
+     "t": "Un espace partagé par site ou par grappe",
+     "d": "La Bibliothèque de Vibe, un projet Claude, un projet ChatGPT ou Gemini Notebook (anciennement NotebookLM) : ligne éditoriale, gabarits de brief, export de requêtes et pages de référence réunis, avec des droits distincts pour l'équipe, l'agence ou le client."
     },
     {
-     "t": "Cadre : contenu utile, sources, données",
-     "d": "Cadre d'usage : contenu utile contre contenu à l'échelle, relecture systématique, sources citées, mention de l'IA quand elle s'impose, aucune donnée client dans un prompt, exports Search Console réservés aux offres entreprise. Ce qu'on ne publie jamais avant vérification : chiffres, entités, liens."
+     "t": "Règles : contenu utile, sources, données",
+     "d": "Ce qui sépare une page utile d'un contenu produit en série, la relecture humaine avant publication, les sources citées, l'IA signalée lorsque c'est requis, aucune donnée client dans une demande, les exports réservés aux offres entreprise. Avant la mise en ligne, l'équipe vérifie trois choses : chiffres, entités, liens."
     }
    ]
   },
   {
    "jour": "Jour 2",
-   "titre": "Le GEO, l'architecture sémantique, la mesure et l'industrialisation",
+   "titre": "Le GEO, les entités, le suivi et l'organisation",
    "matin": [
     {
-     "t": "Le GEO en clair",
-     "d": "Comment ChatGPT, Perplexity, Gemini et les AI Overviews sélectionnent leurs sources, ce qu'un contenu citable contient (réponse directe, entités, données structurées, format), ouvrir ou non son site aux robots des IA ; positions et citations se mesurent en tendance, elles ne se promettent jamais."
+     "t": "Le GEO expliqué simplement",
+     "d": "La manière dont les assistants et les AI Overviews retiennent les pages qu'ils citent, ce que contient un contenu citable (réponse directe, entités, données structurées, format lisible), quels robots d'assistants autoriser ou non dans le fichier robots.txt. Une citation se mesure ; personne ne peut la promettre."
     },
     {
      "t": "Atelier page citable",
-     "d": "Restructurer une de vos pages pour la rendre citable : réponse directe en tête, entités, données structurées, FAQ, format lisible par les moteurs de réponse ; travail en co-édition dans Canvas, Artifacts ou Copilot Pages, puis vérification de l'accès des robots IA dans votre robots.txt."
+     "d": "L'une de vos pages est restructurée à plusieurs dans un document partagé : réponse directe en tête, entités nommées, FAQ, balisage, paragraphes courts et autonomes. Le groupe vérifie ensuite dans votre robots.txt ce que les robots des assistants ont le droit de lire."
     },
     {
-     "t": "Atelier corpus de mesure des citations",
-     "d": "Construire un corpus de questions représentatif de vos intentions, relever sur plusieurs moteurs de réponse qui est cité et comment, calculer une part de voix et la suivre dans le temps ; l'analyse de données met le relevé en tableau, vous gardez la lecture."
+     "t": "Atelier corpus de suivi des citations",
+     "d": "Une liste de questions fidèle à vos intentions, posée à plusieurs assistants : qui est cité, à quel rang, avec quelle formulation. La part de citations se calcule et se suit dans le temps ; l'outil range le relevé en tableau, l'équipe garde la lecture."
     },
     {
-     "t": "Recherche approfondie et architecture sémantique",
-     "d": "Deep Research de ChatGPT ou Gemini, recherche approfondie de Claude pour cartographier les entités et les sujets de votre domaine, puis cocon, maillage et cohérence thématique du site ; NotebookLM ou les Notebooks Copilot pour interroger votre corpus de pages et de briefs."
+     "t": "Entités et architecture en recherche approfondie",
+     "d": "La recherche approfondie de Claude, de Gemini ou de ChatGPT cartographie les sujets et les entités de votre domaine ; l'équipe en déduit cocon, liens internes et cohérence thématique. Un projet Claude ou Gemini Notebook permet ensuite d'interroger l'ensemble de vos pages et de vos briefs."
     },
     {
-     "t": "Atelier mesure et reporting",
-     "d": "Commenter un export de positions propre, comparer deux périodes, rédiger la synthèse mensuelle pour la direction ou le client, suivre les citations IA en tendance ; Copilot dans Excel ou l'analyse de données de ChatGPT et Claude lisent le fichier, vous gardez les chiffres."
+     "t": "Atelier rapport mensuel",
+     "d": "Sur un export de positions : comparaison de deux mois, pages qui montent ou décrochent, synthèse pour la direction ou le client, suivi des citations en tendance. Les tableurs de Vibe, Excel avec Copilot, Sheets avec Gemini, ou ChatGPT et Claude sur le fichier joint font les calculs ; les chiffres sont recontrôlés."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) : votre procédure de brief",
-     "d": "Transformer une procédure du métier, par exemple la checklist de relecture GEO, en compétence réutilisable : en langage naturel dans ChatGPT Business, via un dossier SKILL.md dans Claude, testée par un membre puis provisionnée par l'owner ; elle se déclenche quand la demande correspond."
+     "t": "Votre check-list GEO devenue compétence",
+     "d": "La relecture GEO d'une page, ou votre trame de brief, prend la forme d'une compétence que l'assistant mobilise pour chaque nouvelle page. Le format SKILL.md d'Anthropic se retrouve chez Google, qui le déploie pour ses compétences Gemini à partir du 5 octobre 2026, et chez Microsoft dans Cowork ; une même procédure sert ainsi dans plusieurs assistants."
     },
     {
-     "t": "Assistants et agents, lequel pour quoi",
-     "d": "On reprend vos GPTs existants ; le neuf se construit en projet partagé, compétence ou agent d'espace de travail ChatGPT (rôle, déclencheur, étapes, règles, crédits décomptés), Gems ou Workspace Studio, Agent Builder sur SharePoint, Workflows Vibe. Copilot Studio et l'écriture dans votre CMS restent un projet."
+     "t": "Assistants SEO à migrer ou à construire",
+     "d": "Chaque GPT de l'équipe se convertit en plugin, faute de quoi il disparaît le 11 décembre 2026 ; les Gems cèdent la place aux compétences Gemini ; les agents de Vibe ont laissé place aux Skills le 22 septembre 2026. Un agent qui écrit dans votre CMS suppose un développement, au-delà de la formation."
     },
     {
-     "t": "Tâches planifiées : alertes et briefs en série",
-     "d": "Créer en une phrase une veille hebdomadaire sur vos requêtes et vos concurrents ou un relevé des citations IA sur votre corpus, dans ChatGPT (au plus une exécution par heure, tâches actives plafonnées) ou dans les Tâches planifiées de Vibe ; relecture humaine avant d'agir."
+     "t": "Tâches planifiées et alertes",
+     "d": "Une veille hebdomadaire sur vos requêtes et vos concurrents, un relevé mensuel des citations sur votre corpus, une alerte quand une page décroche : la tâche se décrit en une phrase dans ChatGPT, dans Workspace Studio ou dans Vibe. Une personne relit avant toute action."
     },
     {
      "t": "Gouvernance et indicateurs",
-     "d": "Un propriétaire nommé pour chaque projet partagé, compétence et agent, registre, droits admin, règles de partage avec l'agence ou le client, revue trimestrielle ; indicateurs suivis dans vos outils : pages publiées après relecture, couverture du corpus, part de voix IA, délais de brief."
+     "d": "Un responsable pour chaque espace, compétence ou assistant, un registre, des règles de partage avec l'agence ou le client, une revue tous les trois mois. Les indicateurs : pages publiées après relecture, couverture du corpus, part de citations, délai de production d'un brief."
     },
     {
-     "t": "Plan d'action, évaluation, livrables",
-     "d": "Les trois usages à installer dans le mois, qui les porte, comment on mesure ; évaluation des acquis ; remise de la bibliothèque de prompts SEO, des gabarits (brief, page citable), de la check-list technique GEO, du corpus de mesure des citations et des compétences construites."
+     "t": "Plan d'action et livrables",
+     "d": "Trois chantiers pour le mois suivant, un porteur et une mesure pour chacun. Une fois l'évaluation passée, chaque participant repart avec les prompts SEO, ses gabarits de brief et de page citable, la check-list technique, le corpus de suivi des citations et les compétences construites."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation SEO IA ?",
-  "answer": "À ceux qui font ou pilotent le référencement : équipes SEO et acquisition, rédacteurs web et équipes contenu, consultants SEO en agence qui veulent industrialiser et ajouter le GEO à leur offre, responsables marketing digital qui arbitrent les efforts. Sans prérequis technique : la pratique du SEO, du contenu ou du marketing digital suffit."
+  "h2": "Qui suit la formation SEO IA ?",
+  "answer": "Les personnes qui font ou pilotent le référencement : équipes SEO et acquisition, rédacteurs web, consultants en agence qui veulent industrialiser leurs livrables et ajouter le GEO à leur offre, responsables marketing digital qui arbitrent les efforts. Une pratique du SEO, du contenu ou du marketing digital suffit ; aucune compétence en code n'est demandée."
  },
  "profils": [
   {
    "icon": "Search",
    "title": "Équipes SEO et acquisition",
-   "desc": "Recherche, briefs, technique, mesure : les usages qui multiplient votre capacité sans dégrader la qualité, et le GEO comme nouveau territoire à occuper avant les concurrents. Le cœur des ateliers est fait pour vous."
+   "desc": "Recherche, briefs, technique, suivi : votre capacité augmente sans perte de qualité, et le GEO s'ajoute comme un terrain à occuper avant vos concurrents."
   },
   {
    "icon": "PenLine",
-   "title": "Rédacteurs web et équipes contenu",
-   "desc": "Produire mieux et plus vite à partir de briefs riches, écrire citable pour les IA sans écrire pour les robots, relire et enrichir : la méthode qui protège votre valeur ajoutée."
+   "title": "Rédacteurs web",
+   "desc": "Des briefs plus riches, une écriture citable par les assistants et agréable pour un lecteur humain, une relecture qui protège votre valeur ajoutée."
   },
   {
    "icon": "Bot",
    "title": "Consultants SEO en agence",
-   "desc": "Industrialiser vos livrables (audits, briefs, reportings), ajouter le GEO à votre offre, former vos clients : la formation vous donne la méthode et les gabarits, sans vous rendre dépendants d'un outil."
+   "desc": "Audits, briefs et rapports industrialisés, une offre GEO à proposer à vos clients, des gabarits qui ne vous lient à aucun outil."
   },
   {
    "icon": "Users",
    "title": "Responsables marketing digital",
-   "desc": "Comprendre où va la visibilité (Google et IA), arbitrer les efforts, mesurer honnêtement, fixer le cadre d'usage de l'équipe. La lecture d'ensemble sans jargon."
+   "desc": "Comprendre où se gagne l'audience, dans la recherche classique comme dans les assistants, arbitrer les efforts, mesurer honnêtement, donner un cadre à l'équipe."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Contenu utile, sources, mention de l'IA : ce que la formation pose noir sur blanc",
-  "p": "Le SEO outillé par l'IA a une réputation à tenir face à Google et face aux lecteurs. La formation formalise avec vous un cadre d'usage : ce qui distingue un contenu utile d'un contenu à l'échelle sans valeur (et ce que Google en fait), la relecture et l'enrichissement humains systématiques, les sources citées, la mention de l'IA quand elle s'impose, l'originalité et les droits sur les contenus générés, les données clients qu'on ne met jamais dans un prompt. Ce cadre est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous pratiquons le SEO et le GEO au quotidien, pour nos clients et pour notre propre site : la formation transmet une pratique, avec ses réussites et ses limites.",
+  "kicker": "Qualité et règles",
+  "h2": "Contenu utile, sources citées, données protégées : une charte pour le référencement assisté",
+  "p": "Le référencement assisté par l'IA a une réputation à défendre, devant Google comme devant les lecteurs. Au fil des ateliers, l'équipe met par écrit ce qui sépare une page utile d'un contenu produit en série et ce que Google en fait, la relecture et l'enrichissement humains avant chaque publication, la règle des sources citées, le signalement de l'IA quand la loi ou la plateforme l'exige, les droits sur un texte ou un visuel produits par l'IA, l'interdiction de placer une donnée client dans une demande. Le document complète votre {/charte-ia-entreprise|charte IA d'entreprise}. Masteria pratique le SEO et le GEO pour ses clients et pour son propre site : la formation transmet une pratique, ses réussites comme ses échecs.",
   "points": [
-   "Contenu utile vs contenu à l'échelle : la ligne que Google trace",
-   "Relecture et enrichissement humains, systématiques",
-   "Sources citées, mention de l'IA quand elle s'impose",
-   "Aucune donnée client dans un prompt"
+   "Page utile ou contenu en série : la ligne que trace Google",
+   "Relecture et apport humain avant chaque publication",
+   "Sources citées, IA mentionnée quand il le faut",
+   "Aucune donnée client dans une demande"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (exports SEO, pages représentatives, charte éditoriale, concurrents), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts SEO, gabarits de brief et de page citable, check-list GEO, corpus de mesure), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Prix de la formation SEO IA et prise en charge",
+  "answer": "Masteria facture chaque jour de formation 1 980 € HT pour votre équipe, douze personnes au plus, et le parcours complet 3 960 € HT. Un responsable SEO ou un consultant peut aussi suivre la formation seul, aux mêmes conditions tarifaires. Votre OPCO peut intervenir puisque Masteria est certifiée Qualiopi ; il fixe sa participation selon ses règles. Réponse et devis sous 24 heures.",
+  "inclus": "Le cadrage sur vos exports SEO, quelques pages représentatives, votre charte éditoriale et vos concurrents ; deux jours d'ateliers, sur place ou en classe virtuelle ; supports et livrables (prompts SEO, gabarits de brief et de page citable, check-list technique, corpus de suivi) ; l'évaluation finale et le certificat de réalisation. Loin de la région lyonnaise, le déplacement du formateur figure au devis.",
+  "financement": "{/quel-opco|Quel OPCO ?} retrouve l'opérateur dont dépend votre entreprise, et notre guide {/financement-formation-ia|pour financer une formation IA} présente les dispositifs. Programme, convention et pièces justificatives accompagnent le devis ; la demande part chez l'OPCO avant la formation. Le CPF ne couvre pas ce parcours."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation SEO IA ?",
-   "a": "Deux choses, sur vos propres mots-clés et pages. D'abord le SEO outillé par l'IA : recherche d'intentions et clusters, briefs riches en entités, production de contenu relue et enrichie, technique et données structurées, mesure et automatisations. Ensuite le GEO (Generative Engine Optimization) : comprendre comment les IA sélectionnent leurs sources, structurer des pages citables, ouvrir ou non son site aux robots des IA, mesurer sa part de voix dans ChatGPT, Perplexity, Gemini et les AI Overviews. Et surtout la discipline qui rend tout cela durable : jamais de contenu à l'échelle sans valeur, relecture humaine, sources."
+   "q": "Que contient une formation SEO IA ?",
+   "a": "Deux savoir-faire, travaillés sur vos requêtes et vos pages. Le référencement outillé par l'IA d'abord : grappes et intentions, briefs riches en entités, rédaction relue et enrichie, données structurées, suivi et tâches récurrentes. Le GEO ensuite : la façon dont les assistants choisissent leurs sources, l'écriture de pages citables, l'accès de leurs robots au site, la mesure de vos citations dans Gemini, Perplexity, ChatGPT et les AI Overviews. Le tout avec une règle : rien ne se publie sans relecture humaine ni source."
   },
   {
-   "q": "Qu'est-ce que le GEO, et pourquoi le traiter dans une formation SEO ?",
-   "a": "Le GEO (Generative Engine Optimization, parfois AEO) est l'optimisation pour être cité dans les réponses générées par les IA : ChatGPT, Perplexity, Gemini, les AI Overviews de Google. Une part croissante des recherches reçoit une réponse directe sans clic ; sur ces requêtes, être absent des réponses revient à être absent. Les fondamentaux se recouvrent avec le SEO (contenu clair, site sain, données structurées), mais le GEO ajoute ses leviers : entités, formats citables, accès des robots IA, autorité, mesure sur corpus. Le traiter dans la même formation évite deux silos et deux prestataires."
+   "q": "Qu'est-ce que le GEO, et pourquoi l'associer au SEO ?",
+   "a": "Le GEO (Generative Engine Optimization, parfois appelé AEO) vise la citation dans les réponses que rédigent les assistants, des AI Overviews de Google à ChatGPT en passant par Perplexity et Gemini. Sur une partie des requêtes, la réponse s'affiche sans clic, et une marque absente de cette réponse disparaît du parcours de l'internaute. Les fondations sont communes au SEO (des textes clairs, un site en bonne santé technique, un balisage structuré) ; le GEO y ajoute le travail des entités, des formats faciles à citer, l'accès des robots des assistants et la mesure sur corpus. Les traiter ensemble évite deux équipes et deux prestataires."
   },
   {
-   "q": "L'IA ne va-t-elle pas produire du contenu que Google pénalise ?",
-   "a": "Si on l'utilise mal, oui : du contenu à l'échelle sans valeur ajoutée est ce que Google déclasse depuis ses mises à jour sur le contenu utile, et ce que les IA ignorent. La formation enseigne l'inverse : des briefs riches en intentions et en entités, un premier jet à votre ton, une relecture et un enrichissement humains, des sources citées, une information réelle. L'IA accélère la production d'un contenu qui aurait été bon de toute façon ; elle ne transforme pas du vide en visibilité."
+   "q": "L'IA ne risque-t-elle pas de produire des pages que Google pénalise ?",
+   "a": "Mal employée, oui : les pages produites en série pour remplir tombent sous le coup des politiques de Google contre le spam et n'intéressent pas les assistants. La formation fait l'inverse : brief riche en intentions et en entités, premier jet dans votre ton, apport humain (expérience, données maison), sources citées. L'IA accélère la production d'une page qui aurait été bonne de toute façon ; elle ne donne aucune visibilité à un texte vide."
   },
   {
-   "q": "Garantissez-vous des positions ou des citations dans les IA ?",
-   "a": "Non, et personne de sérieux ne le peut : les algorithmes de Google et les modèles d'IA évoluent en permanence. Ce que la formation garantit, c'est la méthode et la mesure : des actions qui augmentent objectivement vos chances (contenu citable, entités, données structurées, technique saine), une mesure honnête en tendance (positions, trafic, part de voix IA sur un corpus stable), et la capacité de vos équipes à itérer. Une formation qui vous promet la première position vous promet ce qui ne dépend pas d'elle."
+   "q": "Pouvez-vous garantir des positions ou des citations ?",
+   "a": "Personne ne le peut honnêtement : Google et les modèles évoluent sans cesse. La formation apporte des actions qui améliorent vos chances (pages citables, entités, données structurées, technique saine), une mesure honnête en tendance (positions, trafic, part de citations sur un corpus stable) et une équipe capable d'itérer. Une promesse de première position porte sur ce que le formateur ne contrôle pas."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur les IA génératives que votre équipe utilisera (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral) et sur leur articulation avec vos outils SEO existants : Search Console, Semrush, Ahrefs ou équivalents, votre CMS. Nous sommes indépendants des éditeurs : quand un outil est déployé, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Pour approfondir un outil, voyez nos formations ChatGPT SEO ou Claude SEO ; pour un comparatif complet, notre panorama IA SEO."
+   "q": "Gemini ou Vibe peuvent-ils servir au référencement ?",
+   "a": "Oui, et la formation peut s'y dérouler. Sous Google Workspace Business Standard, la fonction IA de Sheets peut être appelée 5 000 fois chaque mois (plafond relevé le 7 octobre 2026), de quoi préparer des méta-descriptions en série que l'équipe relit ensuite, et un carnet Gemini Notebook accueille 300 sources. Vibe, l'assistant de Mistral, analyse un export Excel ou CSV et crée des classeurs avec formules depuis le 22 septembre 2026, avec un hébergement européen par défaut."
   },
   {
-   "q": "La formation travaille-t-elle sur nos vrais mots-clés et nos vraies pages ?",
-   "a": "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : exports Search Console ou de votre outil SEO, deux ou trois pages représentatives, votre charte éditoriale, votre marché et vos concurrents. Chaque atelier part de là : votre grappe à structurer, votre brief à produire, votre page à rendre citable, votre corpus de questions. Les participants repartent avec des livrables directement utilisables."
+   "q": "Avec quels outils travaille-t-on ?",
+   "a": "Avec les assistants de votre équipe (ChatGPT, Claude, Gemini, Vibe ou Microsoft Copilot) et leur articulation avec vos outils de référencement : la Search Console, Semrush, Ahrefs ou leurs équivalents, votre CMS. Indépendante des éditeurs, Masteria part de ce que l'équipe utilise ; si plusieurs outils coexistent, la première matinée les compare sur vos requêtes. Des parcours ChatGPT, Claude ou Copilot pour le SEO, et un panorama multi-outils, permettent ensuite d'approfondir."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra-entreprise, en présentiel ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un périmètre resserré : le contenu outillé par l'IA seul, ou le GEO seul. Un accompagnement individuel est possible pour un responsable SEO ou un consultant. Les journées pleines alternent apports courts et ateliers pratiques, matin et après-midi."
+   "q": "Travaille-t-on sur nos requêtes et nos pages ?",
+   "a": "Oui. Le cadrage réunit des exports de la Search Console ou d'un autre outil SEO, deux ou trois pages représentatives, votre charte éditoriale, votre marché et vos concurrents. Chaque atelier en découle : la grappe à structurer, le brief à écrire, la page à rendre citable, le corpus à suivre."
   },
   {
-   "q": "Combien coûte une formation SEO IA ?",
-   "a": "Le tarif intra-entreprise est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT pour l'équipe. La formation étant certifiée Qualiopi, votre OPCO peut la prendre en charge dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis détaillé sous 24 heures."
+   "q": "Quels formats et quel prix ?",
+   "a": "Deux journées en intra, sur site ou en ligne, avec douze personnes au maximum ; chaque journée coûte 1 980 € HT au groupe, soit 3 960 € HT au total. Une journée seule convient pour un terrain unique, la production ou le GEO, et un responsable SEO peut être formé individuellement. Le devis part sous 24 heures. Masteria étant certifiée Qualiopi, l'OPCO de votre branche peut financer la formation selon ses règles ; le CPF, en revanche, ne s'applique pas."
   },
   {
    "q": "Quelle différence avec votre agence SEO IA ?",
-   "a": "L'agence fait pour vous ; la formation apprend à vos équipes à faire. Beaucoup de clients combinent les deux : un audit SEO IA pour mesurer le point de départ et fixer les priorités, la formation pour que l'équipe interne exécute et fasse vivre, et un accompagnement plus léger ensuite. Si vous préférez déléguer entièrement, c'est le rôle de notre agence SEO IA. Le cadrage gratuit sert à choisir le bon montage."
+   "a": "L'agence travaille à votre place ; la formation donne à votre équipe les moyens de faire elle-même. Beaucoup d'entreprises combinent les deux : un audit SEO IA pour mesurer le point de départ et fixer les priorités, la formation pour que l'équipe exécute, puis un accompagnement plus léger. Pour trouver le bon montage, réservez les 30 minutes de cadrage offertes par Masteria."
   }
  ],
  "course": {
-  "name": "Formation SEO IA — Masteria",
-  "description": "Formation au référencement à l'ère de l'IA générative, sur les mots-clés et pages réels des participants : recherche d'intentions et clusters, briefs et contenu outillés par l'IA avec relecture humaine, technique et données structurées, GEO (être cité par ChatGPT, Perplexity, Gemini et les AI Overviews), architecture sémantique, mesure et automatisations. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation SEO IA (Masteria)",
+  "description": "Formation au référencement à l'ère de l'IA générative, sur les requêtes et les pages des participants : intentions et grappes, briefs et rédaction relue, technique et données structurées, GEO (être cité par ChatGPT, Perplexity, Gemini et les AI Overviews), architecture sémantique, suivi et tâches récurrentes. Outils : ChatGPT, Claude, Gemini, Vibe, Microsoft Copilot. Deux jours en intra, en présentiel ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Structurer une recherche de mots-clés et d'intentions avec l'IA à partir de données réelles",
-   "Produire des briefs riches en entités et un contenu relu, citable et utile",
-   "Générer et contrôler des données structurées, lire un audit technique avec l'IA",
-   "Rendre une page citable par les IA et mesurer sa part de voix sur un corpus stable",
-   "Automatiser le reporting et les tâches SEO récurrentes"
+   "Structurer une recherche d'intentions à partir d'un export de la Search Console",
+   "Rédiger un brief riche en entités et un contenu relu, sourcé et utile",
+   "Écrire et contrôler un balisage Schema.org en JSON-LD",
+   "Rendre une page citable par les assistants et suivre une part de citations",
+   "Automatiser le rapport mensuel et les relevés récurrents"
   ],
   "about": "Référencement naturel et optimisation pour les moteurs génératifs (SEO et GEO)",
   "timeRequired": "PT14H",
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique du SEO, du contenu ou du marketing digital.",
   "audience": "Équipes SEO et contenu, acquisition, marketing digital, consultants SEO",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "locationName": "Masteria : intra-entreprise, en présentiel (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation SEO IA : le référencement outillé par l'IA et le GEO, sur vos propres pages",
+  "headline": "Formation SEO IA : référencer vos pages avec l'IA, et les faire citer par les assistants",
   "datePublished": "2025-10-05",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -337,15 +341,15 @@ export default {
  },
  "citations": [
   {
-   "name": "Google Search Central — AI features and your website",
+   "name": "Google Search Central : AI features and your website",
    "url": "https://developers.google.com/search/docs/appearance/ai-features"
   },
   {
-   "name": "Google Search Central — SEO Starter Guide",
+   "name": "Google Search Central : SEO Starter Guide",
    "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide"
   },
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   }
  ],
@@ -354,53 +358,118 @@ export default {
    "label": "Agence SEO IA",
    "href": "/agence-seo-ia",
    "tag": "Déléguer",
-   "desc": "Quand vous préférez confier le SEO et le GEO : l'accompagnement opéré pour vous."
+   "desc": "Le SEO et le GEO confiés à Masteria."
   },
   {
    "label": "Audit SEO IA",
    "href": "/audit-seo-ia",
    "tag": "Point de départ",
-   "desc": "Mesurer votre visibilité sur Google et dans les IA avant de former : les priorités objectivées."
+   "desc": "Le point de départ avant de former."
   },
   {
    "label": "Audit GEO",
    "href": "/audit-geo-ia",
    "tag": "Visibilité IA",
-   "desc": "Le versant IA seul : taux de citation, part de voix, robots IA, plan pour devenir citable."
+   "desc": "La visibilité dans les assistants, mesurée."
   },
   {
    "label": "Formation ChatGPT SEO",
    "href": "/formation-chatgpt-seo",
    "tag": "Par outil",
-   "desc": "Approfondir ChatGPT pour le SEO : GPTs, projets, recherche, analyse de fichiers."
+   "desc": "ChatGPT pour le référencement."
   },
   {
    "label": "Formation Claude SEO",
    "href": "/formation-claude-seo",
    "tag": "Par outil",
-   "desc": "Claude pour la rédaction longue, les projets par site et les compétences réutilisables."
+   "desc": "Claude pour les briefs et les projets par site."
   },
   {
-   "label": "Panorama IA SEO (5 outils)",
+   "label": "Formation Copilot SEO",
+   "href": "/formation-copilot-seo",
+   "tag": "Par outil",
+   "desc": "Copilot dans Excel et Word pour le référencement."
+  },
+  {
+   "label": "Panorama IA SEO (multi-outils)",
    "href": "/formation-multi-outils-seo",
    "tag": "Comparatif",
-   "desc": "Quand le choix d'outil est ouvert : les cinq IA comparées sur vos cas SEO en 2 jours."
+   "desc": "Cinq assistants mis en concurrence pour le SEO."
+  },
+  {
+   "label": "Formation Gemini en entreprise",
+   "href": "/formation-gemini-entreprise",
+   "tag": "Par outil",
+   "desc": "Gemini dans Google Workspace."
   },
   {
    "label": "Formation IA marketing",
    "href": "/formation-ia-marketing",
    "tag": "Métier voisin",
-   "desc": "L'IA pour toute l'équipe marketing : contenu, campagnes, réseaux, analyse."
+   "desc": "Contenus, campagnes et analyse pour l'équipe marketing."
   },
   {
    "label": "Bibliothèque de prompts",
    "href": "/bibliotheque-de-prompts",
    "tag": "Ressource",
-   "desc": "Des modèles de prompts SEO et contenu pour prolonger la formation au quotidien."
+   "desc": "Des prompts SEO pour continuer après la formation."
   }
  ],
+ "bibliotheque": "Avant la session, testez la {/bibliotheque-de-prompts#seo|bibliothèque de prompts SEO} : lire l'intention derrière une requête, écrire un brief qui évite le texte passe-partout, comprendre pourquoi une page stagne en deuxième page, rendre une page lisible par les assistants qui répondent. Chaque demande s'accompagne de son mode d'emploi.",
+ "ctaMilieu": {
+  "titre": "Un programme bâti sur vos requêtes",
+  "texte": "Indiquez la taille de l'équipe SEO, ses outils et sa priorité (contenu, technique ou GEO) : vous aurez programme, dates et devis le lendemain."
+ },
+ "competences": {
+  "titre": "Les acquis vérifiés en fin de formation",
+  "intro": "Six objectifs liés aux ateliers, contrôlés un par un dans l'évaluation finale.",
+  "items": [
+   "Structurer une recherche d'intentions à partir d'un export de la Search Console",
+   "Rédiger un brief riche en entités et un contenu relu, sourcé, utile",
+   "Écrire et contrôler un balisage Schema.org en JSON-LD",
+   "Restructurer une page pour qu'un assistant puisse la citer",
+   "Construire un corpus de questions et suivre une part de citations",
+   "Commenter un export de positions et automatiser un relevé récurrent"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "ChatGPT, Claude, Gemini, Vibe ou Copilot : l'assistant d'une équipe SEO",
+  "intro": "Tous savent rédiger un brief ; l'écart se joue sur la lecture des exports, la longueur des documents et l'hébergement des données. Point établi le 7 octobre 2026.",
+  "lignes": [
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business analyse un export de la Search Console joint à la conversation, garde un projet par site et sert de terrain aux tests GEO, puisqu'il fait partie des assistants dont vous cherchez à obtenir des citations. OpenAI supprimera les GPTs le 11 décembre 2026 : ceux de l'équipe SEO sont à transformer en plugins d'ici là. {/formation-chatgpt-seo|ChatGPT pour le SEO}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude lit d'un bloc un long export d'exploration ou un ensemble de pages : sur les offres payantes, un échange peut contenir un million de tokens (l'unité de texte des modèles), d'après notre relevé du 5 octobre 2026 ; il applique vos procédures de brief sous forme de compétences. {/formation-claude-seo|Claude pour le SEO}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Sous Google Workspace Business Standard, la fonction IA de Sheets accepte 5 000 appels par mois, assez pour préparer des balises en série avant relecture, et chaque carnet Gemini Notebook peut réunir 300 sources (plafonds en vigueur au 7 octobre 2026). Les AI Overviews relèvent d'un autre produit, la recherche Google, que l'atelier GEO apprend à viser. {/formation-gemini-entreprise|Gemini en entreprise}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Chez Mistral, Vibe conserve par défaut vos exports sur des serveurs de l'Union européenne ; ses tableurs, livrés le 22 septembre 2026, lisent un CSV de requêtes et produisent un classeur avec formules. En offre Team (24,99 $ HT par mois et par siège), l'entraînement sur vos données reste à désactiver par l'administrateur. {/formation-mistral-ai|Mistral AI en entreprise}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Dans Excel, Microsoft Copilot propose un mode édition, un mode plan et un mode conversation. La fonction =COPILOT(), dont certaines équipes se servaient pour générer des balises cellule par cellule, a été retirée le 14 septembre 2026 : les cellules recalculées affichent désormais #NOM?. {/formation-copilot-seo|Copilot pour le SEO}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Formés par une équipe qui pratique le GEO",
+  "texte": "Depuis sa création en 2022, Masteria conduit des audits SEO et GEO et suit la présence de son propre site dans les réponses des assistants. Mathias Nizan, son fondateur, pilote chaque session SEO : il l'anime, ou s'appuie sur un formateur indépendant qu'il sélectionne pour sa pratique du référencement. Les méthodes enseignées, du corpus de questions à la page citable, sont celles des {/audit-geo-ia|audits GEO} réalisés pour les clients."
+ },
+ "apres": {
+  "titre": "Un outil de suivi des citations à votre nom",
+  "texte": "Après la formation, certaines équipes veulent automatiser : un relevé régulier de leurs citations dans les assistants, ou un générateur de données structurées relié au CMS. Masteria cadre le besoin, développe l'outil et le connecte à vos sources. Ce développement se chiffre au forfait après le cadrage ; il n'est pas finançable par votre OPCO, dont le rôle se limite à la formation."
+ },
+ "faqTitre": "Formation SEO IA : questions fréquentes",
  "cta": {
-  "h2": "Formons votre équipe SEO sur ses vrais mots-clés",
-  "p": "Décrivez-nous votre équipe, vos outils, votre marché et vos enjeux du moment (contenu, technique, GEO). Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Formons votre équipe SEO sur ses propres requêtes",
+  "p": "Expliquez-nous qui travaille le référencement, avec quels outils, sur quel marché, et ce qui vous préoccupe le plus (production, technique ou GEO). Sous 24 heures, programme ajusté, dates et devis sont dans votre boîte, avec le dossier de financement."
  }
 }

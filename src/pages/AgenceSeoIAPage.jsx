@@ -1,44 +1,48 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Search, Bot, Cpu, Network, Workflow,
+  ArrowRight, Search, Bot, Cpu, Network, Workflow, PenLine, Braces,
   BarChart3, Target, Gauge, Globe, MapPin, GraduationCap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page pilier « agence SEO IA » (slug /agence-seo-ia). Comble un gap du cluster
- * high-ticket : « agence seo ia » (320, KD14, CPC 9 $), « agences seo ia » (110),
- * « agence ia seo » (50), « agence référencement ia lyon » (40), « référencement ia ».
+ * Page pilier « agence SEO IA » (slug /agence-seo-ia). Requêtes visées : « seo ia »,
+ * « agence seo ia », « agence de référencement ia », « agence seo chatgpt »,
+ * « agences seo ia », « agence ia seo », « freelance seo ia ».
  *
- * POSITIONNEMENT : la requête « agence seo ia » couvre deux intentions, on adresse
- * les DEUX depuis l'angle d'un cabinet IA, pas d'une agence SEO classique :
- *  - SEO augmenté par l'IA (production de contenu, clusters, audits techniques outillés) ;
- *  - GEO / AEO = être cité PAR les IA (ChatGPT, Perplexity, Google AI Overviews, Gemini).
+ * POSITIONNEMENT : les deux intentions sur les mêmes pages, vues par un cabinet IA :
+ *  - SEO outillé par IA (production relue, maillage, technique, données structurées) ;
+ *  - GEO / AEO : être cité par ChatGPT, Perplexity, Gemini, AI Overviews et Mode IA.
+ * Les audits seuls vivent sur /audit-seo-ia et /audit-geo-ia : cette page décrit le
+ * travail suivi, au quotidien, et renvoie vers eux.
  *
- * INTÉGRITÉ : posture orientée capacité. Aucun cas client nommé, aucune position ni
- * chiffre de résultat fabriqué, aucun prix inventé. On décrit compétences, méthode,
- * stack. Pas de promesse de PBN / black-hat. PAS d'OPCO/Qualiopi mis en avant (le SEO
- * n'est pas finançable ; seule la formation associée l'est, dans le bloc secondaire).
- *
- * Design premium identique à /agence-developpement-ia : icônes lucide (zéro emoji),
- * kickers, réponses directes citables en gras, accent bleu #2563EB, CTA finale sombre.
- *
- * Depuis 2026-08-10, l'offre d'entrée du cluster vit sur /audit-seo-ia (requêtes
- * « audit ia seo » et « audit geo ia ») : cette page reste le pilier « agence »,
- * l'audit convertit et renvoie ici pour l'accompagnement.
+ * RÉÉCRITURE DU 2026-10-07 (texte propre au moins 90 %) : plus de FounderNote ni de
+ * formule entité commune ; chiffres GEO repris de reference_chiffres_geo_2026 avec
+ * leur source ; consignes Google et OpenAI vérifiées sur la documentation le 07/10.
+ * INTÉGRITÉ : aucun client nommé, aucun résultat client chiffré, aucun prix ferme
+ * (fourchettes larges, au forfait après cadrage). Prestation SEO et GEO : pas
+ * finançable par votre OPCO ; seule la formation associée l est.
  */
 
 const SLUG = 'agence-seo-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const DATE_MODIFIED = '2026-10-07'
 
 const META_TITLE = "Agence SEO IA : référencement et visibilité IA | Masteria"
-const META_DESC = "Agence SEO IA à Lyon : référencement Google augmenté par l'IA et optimisation GEO pour être cité dans ChatGPT, Perplexity et les AI Overviews de Google."
-const KEYWORDS = "agence seo ia, seo ia, ia seo, référencement ia, geo generative engine optimization, seo intelligence artificielle"
+const META_DESC = "Agence SEO IA à Lyon : contenus, maillage, données structurées et suivi de vos citations par ChatGPT, Gemini, Perplexity et les AI Overviews."
+const KEYWORDS = "agence seo ia, seo ia, agence de référencement ia, agence seo chatgpt, agence ia seo, freelance seo ia, geo generative engine optimization, référencement ia"
+
+/* Sources citées par la page (WebPage.citation + bloc OfficialSources). Vérifiées le 07/10/2026. */
+const PAGE_CITATIONS = [
+  { name: "Google Search Central : les fonctions d'IA de la recherche (AI Overviews, Mode IA) et votre site", url: 'https://developers.google.com/search/docs/appearance/ai-features' },
+  { name: "Google Search Central : ses consignes pour les sites qui publient des textes rédigés avec une IA", url: 'https://developers.google.com/search/docs/fundamentals/using-gen-ai-content' },
+  { name: "OpenAI : le rôle de ses robots OAI-SearchBot (recherche ChatGPT) et GPTBot (entraînement)", url: 'https://developers.openai.com/api/docs/bots' },
+  { name: "Pew Research Center : les internautes cliquent moins quand un résumé IA s'affiche (22 juillet 2025)", url: 'https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -66,44 +70,44 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Search,  label: 'SEO + GEO' },
-  { icon: Bot,     label: 'Visible dans ChatGPT, Perplexity, Gemini' },
-  { icon: Cpu,     label: "SEO outillé par l'IA" },
-  { icon: MapPin,  label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: Search,  label: 'Google et moteurs génératifs' },
+  { icon: Bot,     label: 'Citations suivies dans ChatGPT, Perplexity, Gemini' },
+  { icon: Cpu,     label: 'Rédaction outillée, relue par un humain' },
+  { icon: MapPin,  label: 'Lyon, France · Europe · États-Unis · Inde' },
 ]
 
-/* ───────── Ce que fait une agence SEO IA (6 cartes) ───────── */
+/* ───────── Le travail au quotidien (6 cartes) ───────── */
 
 const LIVRABLES = [
   {
-    icon: Search,
-    title: "SEO augmenté par l'IA",
-    desc: "Référencement naturel accéléré par l'intelligence artificielle : analyse de la SERP et des intentions, briefs de contenu structurés, production à grande échelle relue et validée par des humains. La vitesse de l'IA au service d'un contenu réellement utile, jamais du remplissage.",
-  },
-  {
-    icon: Bot,
-    title: 'GEO / référencement génératif',
-    desc: "L'optimisation pour les moteurs de réponse (AEO) : être cité dans ChatGPT, Perplexity, Google AI Overviews et Gemini. Contenu citable, entités claires, données structurées et autorité de marque, pour apparaître là où vos clients posent désormais leurs questions.",
-  },
-  {
-    icon: Gauge,
-    title: 'Audit SEO technique outillé IA',
-    desc: "Exploration, indexation, performance (Core Web Vitals), données structurées et maillage passés au crible avec l'aide de l'IA. Vous obtenez une liste de correctifs priorisés par impact, pas un rapport de 80 pages illisible.",
+    icon: PenLine,
+    title: 'Écrire les pages qui répondent',
+    desc: "Chaque intention de recherche reçoit un brief : la question exacte, la réponse attendue en tête de page, les sources à citer, les pages à relier. Un assistant IA écrit une première version d'après ce brief ; un rédacteur la corrige, ajoute vos exemples et vos chiffres, puis la prépare pour la mise en ligne.",
   },
   {
     icon: Network,
-    title: 'Architecture sémantique & cocon',
-    desc: "Cartographie de vos mots-clés en clusters thématiques (pilier et pages liées), structuration du maillage interne et couverture des entités de votre domaine. L'architecture qui fait comprendre votre expertise à Google comme aux modèles.",
+    title: 'Relier les pages entre elles',
+    desc: "Le maillage interne (les liens qui mènent d'une de vos pages à une autre) indique à Google quelle page fait référence sur quel sujet. Nous dessinons une page pilier par thème, ses pages filles, et des ancres de lien qui décrivent la destination au lieu d'un « cliquez ici ».",
   },
   {
-    icon: Workflow,
-    title: 'Automatisations SEO',
-    desc: "Surveillance des positions et des citations IA, alertes, reporting et workflows de production reliés à vos outils. En tant qu'agence de développement, nous construisons ces automatisations au lieu de tout faire à la main.",
+    icon: Braces,
+    title: 'Baliser votre entreprise pour les machines',
+    desc: "Les données structurées (un balisage Schema.org invisible pour le lecteur) déclarent qui vous êtes, qui signe la page, ce que vous vendez et à quelles questions elle répond. Google précise qu'aucun balisage spécial n'est exigé pour ses AI Overviews : ce travail sert surtout à lever les ambiguïtés sur votre marque.",
   },
   {
     icon: BarChart3,
-    title: 'Mesure de visibilité IA',
-    desc: "Au-delà des positions Google, nous suivons votre présence dans les réponses génératives : sur quelles questions votre marque est citée, par quels moteurs, et comment cette part de voix évolue dans le temps.",
+    title: 'Mesurer votre présence dans les IA',
+    desc: "Nous tenons avec vous la liste des questions que posent vos clients, et nous la soumettons à date fixe à ChatGPT, Perplexity, Gemini et aux AI Overviews. Pour chaque réponse, on note si votre marque apparaît, si un lien pointe vers votre site et quel concurrent est cité à votre place.",
+  },
+  {
+    icon: Gauge,
+    title: 'Tenir la technique à jour',
+    desc: "Indexation, vitesse d'affichage, pages en double, redirections : la technique décide si une page peut être lue. Nous relisons aussi le fichier robots.txt (les consignes données aux robots d'exploration) : un site qui bloque OAI-SearchBot, le robot de recherche d'OpenAI, sort des réponses de recherche de ChatGPT.",
+  },
+  {
+    icon: Workflow,
+    title: 'Automatiser le suivi',
+    desc: "Les relevés de positions, la Search Console (l'outil de Google qui compte vos clics et vos apparitions) et les tests de citations alimentent un tableau de bord qui se met à jour seul, avec une alerte quand une page clé recule. Nos développeurs IA construisent ces flux ; votre équipe garde les décisions.",
   },
 ]
 
@@ -112,28 +116,53 @@ const LIVRABLES = [
 const ETAPES = [
   {
     num: '01',
-    title: 'Audit de visibilité (Google + IA)',
-    desc: "Nous mesurons votre point de départ sur les deux fronts : positions et couverture sur Google, et présence réelle dans les réponses de ChatGPT, Perplexity, Gemini et des AI Overviews. Nous identifions les écarts à plus fort potentiel.",
+    title: 'Mesurer le point de départ',
+    desc: "Nous relevons vos positions et vos clics dans la Search Console, puis nous posons aux moteurs génératifs la liste de questions choisie avec vous. Ce relevé daté sert de référence pour toute la mission. Si vous voulez cette étape et rien d'autre, elle existe seule : c'est l'audit SEO IA.",
   },
   {
     num: '02',
-    title: "Stratégie d'entités et de contenu",
-    desc: "Nous construisons la carte des sujets et des entités de votre domaine, priorisée par impact business et faisabilité. C'est la trajectoire éditoriale qui couvre les requêtes classiques et les questions posées aux IA.",
+    title: 'Cartographier les sujets et les entités',
+    desc: "Pour un moteur, une entité est une chose identifiable : votre marque, un produit, un dirigeant, une norme. Nous listons celles de votre domaine et les questions qui s'y rattachent, puis nous les classons par valeur commerciale et par effort. Le résultat prend la forme d'un plan éditorial daté.",
   },
   {
     num: '03',
-    title: "Production outillée par l'IA",
-    desc: "Nous produisons les contenus avec l'aide de l'IA, à partir de briefs précis, puis nous les relisons et les enrichissons humainement. Objectif : un contenu juste, sourcé et citable, qui tient la qualité dans la durée.",
+    title: "Produire avec l'IA, publier après relecture",
+    desc: "Les briefs partent de la carte des sujets. L'IA accélère la recherche et le premier jet ; la relecture vérifie les faits, ajoute ce que seul votre métier sait et retire les généralités. Google le rappelle dans ses consignes : publier en masse des pages générées sans valeur ajoutée peut enfreindre sa règle contre les contenus produits à grande échelle.",
   },
   {
     num: '04',
-    title: 'Technique, données structurées & maillage',
-    desc: "Nous traitons le socle technique : performance, indexation, balisage Schema.org, formats citables par les IA et maillage interne. Le contenu ne sert que s'il est trouvable et compréhensible par les machines.",
+    title: 'Régler la technique et le maillage',
+    desc: "Indexation, vitesse, balisage Schema.org, liens internes, accès des robots d'exploration : nous corrigeons dans votre CMS (l'outil où vous éditez le site) ou nous rédigeons des tickets précis pour votre développeur.",
   },
   {
     num: '05',
-    title: 'Mesure & itération',
-    desc: "Nous suivons les positions, le trafic et les citations dans les IA, puis nous itérons sur ce qui progresse. Chaque cycle s'appuie sur des données réelles, pas sur des promesses de classement.",
+    title: 'Relever, comparer, ajuster',
+    desc: "À date fixe, le même relevé qu'au départ : positions, clics, citations moteur par moteur. Les pages qui progressent servent de modèle, celles qui stagnent sont reprises. Chaque bilan se termine par les décisions à prendre pour le cycle suivant.",
+  },
+]
+
+/* ───────── Chiffres GEO (source : reference_chiffres_geo_2026, vérifiés le 30/09/2026) ───────── */
+
+const CHIFFRES = [
+  {
+    v: '8 % au lieu de 15 %',
+    l: "Sur cent visites Google qui affichent un résumé IA, huit se terminent par un clic vers un résultat, contre quinze sans résumé. Un clic sur une source citée dans le résumé n'intervient que dans 1 % des visites.",
+    s: 'Pew Research Center, 22 juillet 2025 : 900 adultes américains, 68 879 recherches de mars 2025.',
+  },
+  {
+    v: '2,5 milliards',
+    l: "d'utilisateurs chaque mois pour les AI Overviews de Google, près d'un humain sur trois. Le Mode IA dépasse le milliard d'utilisateurs mensuels.",
+    s: 'Google, conférence I/O, mai 2026.',
+  },
+  {
+    v: '1,2 milliard',
+    l: "d'utilisateurs de ChatGPT chaque semaine, environ un habitant de la planète sur sept, contre 400 millions en février 2025.",
+    s: 'OpenAI, DevDay du 29 septembre 2026, chiffre rapporté par Engadget ; 400 millions annoncés par OpenAI en février 2025.',
+  },
+  {
+    v: '59 %',
+    l: "des personnes interrogées en France passent par un moteur de recherche pour s'informer, contre 28 % par l'IA générative : la recherche classique reste la première porte d'entrée.",
+    s: 'Crédoc, Baromètre du numérique 2026 (Arcep, Arcom, CGE, ANCT) : 4 145 personnes de 12 ans et plus, terrain de juin 2025.',
   },
 ]
 
@@ -141,38 +170,38 @@ const ETAPES = [
 
 const TABLE = [
   {
-    critere: 'Objectif',
-    classique: 'Se classer dans les résultats Google',
-    augmente: 'Se classer plus vite et mieux, à plus grande échelle',
-    geo: 'Être cité dans les réponses générées par les IA',
+    critere: 'Ce que vous cherchez',
+    classique: 'Une bonne place dans la liste de liens de Google',
+    augmente: 'La même place, atteinte plus vite et sur un plus grand nombre de pages',
+    geo: "Être la source que l'IA nomme ou met en lien dans sa réponse",
   },
   {
-    critere: 'Où vous gagnez en visibilité',
-    classique: 'Pages de résultats classiques (liens bleus)',
-    augmente: 'SERP classiques + featured snippets',
-    geo: 'ChatGPT, Perplexity, Gemini, Google AI Overviews',
+    critere: "Où l'on vous voit",
+    classique: 'Résultats naturels de Google et de Bing',
+    augmente: 'Résultats naturels, extraits mis en avant, AI Overviews',
+    geo: 'ChatGPT, Gemini, Perplexity, Claude, le Mode IA et les AI Overviews de Google',
   },
   {
-    critere: 'Leviers principaux',
-    classique: 'Contenu, technique, popularité',
-    augmente: "Contenu et audits produits avec l'IA, automatisations",
-    geo: 'Entités, données structurées, contenu citable, autorité',
+    critere: 'Ce que l’on travaille',
+    classique: 'Contenu, technique, liens venus d’autres sites',
+    augmente: "Briefs, premiers jets et audits préparés par l'IA, relus par un humain",
+    geo: 'Entités nommées, réponse en tête de page, sources citées, mentions de la marque hors du site',
   },
   {
     critere: 'Comment on mesure',
-    classique: 'Positions, trafic organique',
-    augmente: 'Positions, trafic, productivité éditoriale',
-    geo: 'Part de citations dans les réponses IA',
+    classique: 'Positions et clics dans la Search Console',
+    augmente: 'Positions, clics, pages publiées par mois',
+    geo: 'Part des questions suivies dont la réponse vous nomme, moteur par moteur',
   },
 ]
 
 /* ───────── Pourquoi une agence IA pour le SEO ───────── */
 
 const WHY = [
-  { icon: Cpu, title: "Nous comprenons comment les IA citent", desc: "Notre cœur de métier, c'est l'IA : modèles, RAG, entités, manière dont un moteur de réponse sélectionne et cite une source. Cette lecture interne du fonctionnement des LLM est précisément ce que le GEO demande, et qu'une agence SEO généraliste découvre seulement." },
-  { icon: Workflow, title: 'Nous construisons les automatisations', desc: "Au-delà des recommandations, nous développons les workflows : surveillance des citations IA, reporting, pipelines de production. Notre nature d'agence de développement IA transforme la stratégie SEO en outils qui tournent." },
-  { icon: Globe, title: 'Plusieurs moteurs, pas un seul', desc: "Multi-LLM par principe : nous optimisons votre visibilité pour Google et pour plusieurs moteurs de réponse, sans miser sur une seule plateforme dont l'algorithme peut changer du jour au lendemain." },
-  { icon: Target, title: 'Du contenu durable, pas du spam', desc: "Pas de fermes de contenu ni de réseaux de liens artificiels : ces approches se retournent contre vous. Nous misons sur un contenu utile, sourcé et bien structuré, le seul qui tienne face aux mises à jour de Google et aux IA." },
+  { icon: Cpu, title: 'Nous savons comment un modèle choisit une source', desc: "Un moteur comme Perplexity lance des recherches, lit quelques pages et rédige une synthèse en citant celles dont la réponse est la plus nette. Masteria construit pour ses clients des assistants qui fonctionnent sur ce principe : nous voyons de près quelles pages ils retiennent et lesquelles ils laissent de côté." },
+  { icon: Workflow, title: 'Le suivi tourne sans saisie manuelle', desc: "Relevés de citations, positions, alertes : nos développeurs IA relient ces données dans un tableau qui se met à jour seul. Vous lisez l'évolution d'un coup d'œil, sans compiler d'exports chaque mois." },
+  { icon: Globe, title: 'Chaque moteur est suivi à part', desc: "Gemini, ChatGPT, Perplexity et les AI Overviews ne citent pas les mêmes sources pour une même question. Nous mesurons moteur par moteur, pour éviter de tout miser sur une plateforme dont les règles bougent souvent." },
+  { icon: Target, title: 'Aucun raccourci qui se retourne contre vous', desc: "Les pages générées par centaines et les liens achetés enfreignent les règles anti-spam de Google, qui peut les déclasser. Nous publions moins de pages, chacune vérifiée et signée, pour qu'elles tiennent d'une mise à jour de l'algorithme à l'autre." },
 ]
 
 /* ───────── FAQ ───────── */
@@ -180,39 +209,47 @@ const WHY = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une agence SEO IA ?",
-    a: "Une agence SEO IA, ou agence de référencement IA, combine le référencement naturel et l'intelligence artificielle de deux façons. D'abord, elle utilise l'IA pour produire du contenu, des briefs et des audits techniques plus vite et à plus grande échelle : c'est le SEO augmenté par l'IA. Ensuite, elle optimise votre présence dans les réponses générées par les IA elles-mêmes (ChatGPT, Perplexity, Google AI Overviews, Gemini) : c'est le GEO, ou référencement génératif. Masteria couvre les deux, depuis l'angle d'un cabinet spécialisé sur l'IA.",
+    a: "Une agence SEO IA, ou agence de référencement IA, mène deux chantiers sur les mêmes pages. Le premier est le référencement naturel outillé par l'IA : recherche de mots-clés, briefs, premiers jets et audits techniques préparés plus vite, puis relus. Le second est le GEO : faire en sorte que Gemini, ChatGPT, Perplexity et les AI Overviews nomment votre marque quand ils répondent à une question de votre marché. Masteria, cabinet lyonnais dédié à l'IA, mène les deux et mesure les résultats de chacun à part.",
   },
   {
     q: "SEO et GEO : quelle est la différence ?",
-    a: "Le SEO (Search Engine Optimization) vise à se classer dans les résultats des moteurs de recherche classiques, Google en tête. Le GEO (Generative Engine Optimization), aussi appelé AEO (Answer Engine Optimization), vise à être cité dans les réponses générées par les IA conversationnelles et les AI Overviews de Google. Les deux se renforcent : un contenu clair, structuré et faisant autorité aide Google à vous classer et les modèles à vous citer. La différence se joue surtout sur les entités, les données structurées et le format citable du contenu.",
+    a: "Le SEO (search engine optimization) travaille votre place dans la liste de résultats de Google. Le GEO (generative engine optimization), qu'on appelle aussi AEO pour answer engine optimization, travaille votre présence dans la réponse rédigée par une IA. Les fondations sont communes : une page indexable, une réponse nette en tête, des faits sourcés. Le GEO insiste davantage sur des entités sans ambiguïté, sur des passages qu'un modèle peut reprendre tels quels et sur les mentions de votre marque hors de votre site.",
   },
   {
     q: "L'IA va-t-elle remplacer le SEO ?",
-    a: "Non, elle le déplace. Une part croissante des recherches reçoit une réponse directe d'une IA, sans clic vers un site. Le SEO classique reste utile pour les requêtes transactionnelles et la marque, mais la visibilité dans les réponses génératives devient un enjeu à part entière. Travailler les deux, SEO et GEO, est la façon réaliste de rester visible quand vos clients passent autant par Google que par ChatGPT ou Perplexity.",
+    a: "Elle en change le terrain. D'après le Pew Research Center (juillet 2025, recherches de mars 2025 aux États-Unis), un résumé IA en haut de page fait tomber la part des visites suivies d'un clic vers un site de 15 % à 8 %. En France, le Crédoc mesure pourtant que 59 % des personnes passent encore par un moteur de recherche pour s'informer, contre 28 % par l'IA générative (Baromètre du numérique 2026). Le moteur de recherche reste la première porte d'entrée, et la réponse sans clic grignote une partie de ses visites : il faut travailler les deux.",
   },
   {
-    q: "Comment être cité par ChatGPT, Perplexity ou les AI Overviews de Google ?",
-    a: "Les moteurs de réponse privilégient des sources claires, structurées et faisant autorité sur un sujet. Concrètement : un contenu qui répond directement à la question dès les premières lignes, des entités bien définies, des données structurées (Schema.org), une cohérence thématique sur l'ensemble du site et des signaux d'autorité réels. Nous auditons votre présence actuelle dans ces moteurs, puis nous travaillons le contenu et la technique pour augmenter vos chances d'être sélectionné et cité.",
+    q: "Comment être cité par ChatGPT, Gemini, Perplexity ou les résumés IA de Google ?",
+    a: "Les robots doivent d'abord pouvoir lire vos pages. OpenAI précise qu'un site qui bloque son robot OAI-SearchBot n'apparaît pas dans les réponses de recherche de ChatGPT, et Google demande qu'une page soit indexée et éligible à un extrait pour servir de source à ses AI Overviews. La page doit ensuite répondre en clair dès ses premières lignes, avec des faits sourcés et une date. Les mentions de votre marque sur d'autres sites (presse, annuaires professionnels, comparatifs) aident les moteurs à vous reconnaître comme source. Google indique qu'aucun fichier ni balisage spécial n'est requis pour ses fonctions d'IA.",
+  },
+  {
+    q: "Une agence SEO ChatGPT, est-ce un métier à part ?",
+    a: "Le terme désigne une agence qui travaille votre présence parmi les sources que cite ChatGPT. Isoler ChatGPT a peu de sens en pratique. Avec 1,2 milliard d'utilisateurs par semaine annoncés par OpenAI fin septembre 2026, il pèse lourd, mais vos clients consultent aussi Gemini, Perplexity et les résumés IA de Google, les AI Overviews, utilisés par plus de 2,5 milliards de personnes chaque mois selon Google (I/O, mai 2026). Masteria suit ces moteurs avec la même liste de questions et rend compte moteur par moteur.",
   },
   {
     q: "Combien coûte une prestation de SEO IA ?",
-    a: "La prestation se chiffre sur devis, selon le périmètre : un audit ponctuel, un accompagnement éditorial récurrent ou un programme combinant SEO, GEO et automatisations ne représentent pas le même engagement. Nous établissons une proposition après un premier échange qui cadre vos objectifs, votre marché et votre point de départ. Nous ne vendons pas de pack à l'aveugle ni de garantie de position, qu'aucune agence sérieuse ne peut promettre.",
+    a: "Chaque mission est chiffrée au forfait. Le cadrage arrête d'abord son étendue : volume de pages, langues, moteurs suivis, part de rédaction confiée à votre équipe. Les ordres de grandeur sont larges. Un audit ou un premier lot de pages démarre à quelques milliers d'euros ; un programme de plusieurs mois, production et suivi compris, se compte en dizaines de milliers d'euros ; un déploiement multisite ou multilingue peut dépasser 100 000 €. Aucune position n'est garantie : personne ne contrôle l'algorithme de Google ni la réponse d'un modèle.",
   },
   {
-    q: "Intervenez-vous à Lyon et à distance ?",
-    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. Le travail de SEO et de GEO se mène très bien à distance, par points réguliers ; les phases de cadrage ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
+    q: "Agence ou freelance SEO IA : que choisir ?",
+    a: "Un freelance SEO IA convient à un site de taille modeste et à un besoin précis, la rédaction ou la technique. Une agence devient utile quand plusieurs compétences doivent avancer ensemble : rédaction, développement des outils de suivi, données structurées, formation de votre équipe. Masteria travaille avec des consultants, des développeurs et des formateurs IA indépendants, mobilisés selon le projet et pilotés par Mathias Nizan : vous gardez un seul interlocuteur, et l'équipe s'ajuste au volume.",
+  },
+  {
+    q: "Travaillez-vous sur place à Lyon ou à distance ?",
+    a: "La plupart des missions combinent les deux. Le cadrage et les ateliers avec votre équipe se tiennent volontiers en présentiel, à Lyon ou dans vos locaux ; la production, la technique et les relevés se font à distance, avec des points planifiés. Les missions se mènent depuis Lyon pour la France, l'Europe, les États-Unis et l'Inde : un site en anglais ou multilingue se suit avec la même méthode, langue par langue.",
   },
   {
     q: "Proposez-vous du référencement IA à Lyon ?",
-    a: "Oui. Masteria est une agence de référencement IA basée à Lyon : nous accompagnons les entreprises de la métropole lyonnaise et de la région Auvergne-Rhône-Alpes sur le référencement naturel augmenté par l'IA et sur le GEO, en présentiel pour les temps de cadrage et en distanciel pour la production et le suivi. Le référencement IA ne se limite pas à une zone : nous travaillons aussi dans toute la France et à l'international (Europe, États-Unis, Inde), la visibilité dans Google comme dans les moteurs de réponse n'ayant pas de frontière géographique.",
+    a: "Oui. Les entreprises de la métropole lyonnaise et d'Auvergne-Rhône-Alpes peuvent tenir leurs ateliers de cadrage en face à face, puis suivre le reste à distance. Un site local gagne à soigner sa fiche d'établissement Google, ses pages par ville ou par agence et les mentions de son nom dans la presse régionale : les moteurs génératifs peuvent reprendre ces informations quand on leur demande un prestataire près de chez soi.",
   },
   {
-    q: "Combien de temps pour voir des résultats en SEO IA ?",
-    a: "Le SEO et le GEO sont des leviers de fond, pas des interrupteurs : les premiers effets sur la visibilité apparaissent généralement en quelques semaines pour la partie technique et les contenus à faible concurrence, et se consolident sur plusieurs mois pour les requêtes disputées. La visibilité dans les réponses des IA peut évoluer plus vite sur des sujets de niche bien traités. Nous mesurons le point de départ dès l'audit, puis suivons les positions, le trafic et les citations IA à intervalle régulier. Aucune agence sérieuse ne garantit un classement ni un délai ferme.",
+    q: "En combien de temps le SEO IA donne-t-il des résultats ?",
+    a: "Les corrections techniques et les pages sur des requêtes peu disputées bougent souvent en quelques semaines. Les requêtes concurrentielles demandent plusieurs mois. Côté IA, une page qui devient la meilleure réponse à une question de niche peut être citée plus tôt, puis perdre sa place si un concurrent publie mieux. Le relevé de départ permet de comparer à date fixe, et aucun délai ferme n'est promis.",
   },
   {
     q: "Comment choisir parmi les agences SEO IA ?",
-    a: "Sur des critères vérifiables plutôt que sur les classements : les palmarès des « meilleures agences SEO IA » publiés en ligne sont déclaratifs ou sponsorisés. Une agence experte en IA et SEO se reconnaît à des choses concrètes : elle montre sa propre visibilité (positions et citations dans les moteurs de réponse), elle explique sa méthode sur vos pages plutôt qu'en généralités, elle écrit ce qu'elle ne garantit pas, et elle sait dire où finit le SEO et où commence le GEO. Que vous cherchiez une agence IA SEO pour un audit ponctuel ou un accompagnement continu, le cadrage gratuit permet de juger sur pièces.",
+    a: "Les classements des « meilleures agences SEO IA » qu'on trouve en ligne sont souvent déclaratifs ou payés. Posez plutôt quatre questions à l'agence : quelle est sa propre visibilité, dans Google comme dans les réponses des IA ; comment elle mesure vos citations, moteur par moteur ; qui relit les textes rédigés avec l'IA ; ce qu'elle refuse de garantir. Nos 30 minutes de cadrage offertes servent à cela : juger la méthode sur vos pages avant de signer.",
   },
 ]
 
@@ -221,8 +258,8 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Agence SEO IA — Masteria',
-  description: "Agence SEO IA : référencement naturel augmenté par l'intelligence artificielle et optimisation GEO/AEO pour la visibilité dans les moteurs de réponse (ChatGPT, Perplexity, Google AI Overviews, Gemini). Audit, contenu, technique et automatisations SEO.",
+  name: 'Agence SEO IA de Masteria',
+  description: "Référencement naturel outillé par l'IA, plus présence comme source dans les réponses des assistants (Gemini, ChatGPT, Perplexity) et des AI Overviews : production de pages relues, maillage interne, données structurées, technique et suivi des citations.",
   url: 'https://www.master-ia.fr/agence-seo-ia',
   serviceType: 'Référencement SEO et GEO assisté par IA',
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -235,44 +272,45 @@ const serviceJsonLd = {
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Prestations de SEO et GEO assistées par IA',
+    name: 'Prestations SEO et GEO de Masteria',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "SEO augmenté par l'IA", description: "Production de contenu, briefs et stratégie éditoriale accélérés par l'IA, relus par des humains." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'GEO / référencement génératif (AEO)', description: "Optimisation de la visibilité dans ChatGPT, Perplexity, Google AI Overviews et Gemini." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Audit SEO technique outillé IA', description: "Exploration, indexation, performance, données structurées et maillage, priorisés par impact." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Architecture sémantique & cocon', description: "Clustering des mots-clés, couverture des entités et maillage interne." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatisations SEO', description: "Surveillance des positions et des citations IA, reporting et workflows de production." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Production éditoriale outillée par l'IA", description: "Briefs par intention de recherche, premiers jets assistés par l'IA, vérification des faits par un rédacteur avant mise en ligne." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Maillage interne', description: "Pages piliers, pages filles et ancres de lien descriptives, thème par thème." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Données structurées Schema.org', description: "Balisage de l'organisation, des auteurs, des offres et des questions-réponses pour lever les ambiguïtés sur la marque." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Mesure des citations IA', description: "Relevé à date fixe des réponses de ChatGPT, de Gemini, de Perplexity et des AI Overviews où votre marque apparaît." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Technique SEO', description: "Indexation, vitesse, doublons, redirections et accès des robots d'exploration, dont OAI-SearchBot." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatisation du suivi', description: "Tableau de bord alimenté par la Search Console, les relevés de positions et les tests de citations, avec alertes." } },
     ],
   },
 }
 
-/* DefinedTermSet : définitions citables (GEO) de SEO, SEO augmenté, GEO et AEO.
-   Reprend en données structurées le comparatif déjà présent sur la page. */
+/* DefinedTermSet : définitions citables (GEO) de SEO, SEO augmenté, GEO et AEO,
+   reprises du comparatif visible sur la page. */
 const DEFINITIONS_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': 'https://www.master-ia.fr/agence-seo-ia#glossaire',
-  name: 'Glossaire — SEO, SEO augmenté par l\'IA, GEO et AEO',
+  name: "Glossaire de la page agence SEO IA : SEO, GEO, AEO et SEO outillé par l'IA",
   hasDefinedTerm: [
     {
       '@type': 'DefinedTerm',
       name: 'SEO (Search Engine Optimization)',
-      description: "Référencement naturel : ensemble des techniques visant à positionner un site dans les résultats des moteurs de recherche classiques comme Google, via le contenu, la technique et la popularité.",
+      description: "Référencement naturel : travail du contenu, de la technique et des liens pour qu'un site occupe une bonne place dans la liste de résultats de Google ou de Bing.",
     },
     {
       '@type': 'DefinedTerm',
       name: "SEO augmenté par l'IA",
-      description: "Pratique du référencement naturel accélérée par l'intelligence artificielle : production de contenu, briefs, clusters sémantiques et audits techniques réalisés plus vite et à plus grande échelle, avec relecture humaine.",
+      description: "Référencement naturel dont la recherche de mots-clés, les briefs, les premiers jets et les audits sont préparés avec des outils d'IA, puis vérifiés par un rédacteur avant publication.",
     },
     {
       '@type': 'DefinedTerm',
       name: 'GEO (Generative Engine Optimization)',
-      description: "Optimisation pour les moteurs génératifs : ensemble des techniques visant à être cité dans les réponses générées par les IA (ChatGPT, Perplexity, Google AI Overviews, Gemini), via des entités claires, des données structurées et un contenu citable faisant autorité.",
+      description: "Travail des pages, des entités et des mentions de marque pour qu'une IA comme ChatGPT, Gemini, Perplexity ou les résumés IA de Google cite le site comme source dans sa réponse.",
     },
     {
       '@type': 'DefinedTerm',
       name: 'AEO (Answer Engine Optimization)',
-      description: "Optimisation pour les moteurs de réponse, synonyme proche du GEO : structurer le contenu pour répondre directement aux questions et maximiser les chances d'être sélectionné comme source par une IA conversationnelle.",
+      description: "Terme voisin du GEO, centré sur les moteurs de réponse : il insiste sur des réponses nettes en tête de page, que l'IA peut reprendre telles quelles.",
     },
   ],
 }
@@ -288,7 +326,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-14',
-  dateModified: '2026-07-30',
+  dateModified: DATE_MODIFIED,
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-seo-ia#webpage' },
   about: ['SEO (Search Engine Optimization)', 'GEO (Generative Engine Optimization)', "Référencement naturel augmenté par l'IA", 'Moteurs de réponse IA'],
@@ -345,7 +383,8 @@ export default function AgenceSeoIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-14"
-        dateModified="2026-07-30"
+        dateModified={DATE_MODIFIED}
+        citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, DEFINITIONS_JSONLD, articleJsonLd]}
       />
 
@@ -373,7 +412,7 @@ export default function AgenceSeoIAPage() {
               <Search size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              SEO & référencement génératif
+              SEO, GEO et suivi des citations
             </span>
           </div>
 
@@ -385,25 +424,25 @@ export default function AgenceSeoIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote les missions SEO et GEO du cabinet · Texte revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une agence SEO IA combine le référencement naturel et l'intelligence artificielle pour vous rendre visible sur Google et dans les réponses des IA (ChatGPT, Perplexity, Google AI Overviews, Gemini). <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria met son expertise des modèles au service de votre visibilité</strong> : SEO accéléré par l'IA, et GEO pour être cité par les moteurs de réponse.
+            Une agence SEO IA travaille votre visibilité sur deux surfaces : la liste de résultats de Google, et les réponses que rédigent ChatGPT, Gemini, Perplexity ou Google dans ses AI Overviews. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria produit vos pages, règle la technique et relève dans le temps les questions qui font apparaître votre marque</strong>, avec des outils d'IA qui accélèrent le travail et une relecture humaine avant chaque mise en ligne.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Vos clients ne cherchent plus seulement sur Google : ils posent leurs questions à des IA qui répondent directement. Notre approche du référencement IA travaille les deux terrains à la fois. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon, nous combinons le référencement naturel classique et la visibilité dans les réponses génératives, avec une lecture interne du fonctionnement des modèles.
+            Masteria est un cabinet consacré à l'intelligence artificielle, que Mathias Nizan a créé à Lyon en 2022. Le référencement en découle : savoir comment un modèle de langage (le moteur qui rédige la réponse de ChatGPT ou de Gemini) choisit ses sources aide à écrire des pages qu'il retient. La méthode s'applique d'abord à master-ia.fr, où chaque intention de recherche a sa page et sa réponse dès la première phrase.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Auditer votre visibilité IA
+            <Link to="/contact?type=projet&rdv=30" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Ce que nous faisons
+              Voir le travail au quotidien
             </a>
           </div>
 
@@ -422,20 +461,20 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      {/* ── CE QUE FAIT UNE AGENCE SEO IA (éditorial asymétrique) ── */}
+      {/* ── LE TRAVAIL AU QUOTIDIEN (éditorial asymétrique) ── */}
       <section id="prestations" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Nos prestations</Kicker>
+              <Kicker>Au quotidien</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que fait une agence SEO IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une agence SEO IA travaille votre visibilité sur deux fronts : le SEO augmenté par l'IA (contenu, audits techniques et clusters produits plus vite et à plus grande échelle) et le GEO, l'optimisation pour être cité dans les réponses des IA. Masteria couvre l'audit, le contenu, la technique, l'architecture sémantique et les automatisations de suivi.</strong>
+                <strong>Une agence SEO IA écrit et met à jour vos pages, les relie entre elles, balise vos informations clés pour les machines et vérifie à intervalle régulier si Gemini, ChatGPT, Perplexity et les AI Overviews vous citent. Chez Masteria, l'IA prépare les briefs et les premiers jets, un rédacteur relit et vérifie les faits, et un tableau de suivi montre ce qui progresse.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Six familles de prestations reviennent dans la plupart des missions. Elles se combinent selon votre maturité : certains partent d'un audit, d'autres d'un besoin de contenu, d'autres encore de la visibilité dans les IA.
+                Six chantiers composent l'essentiel d'une mission suivie. Leur dosage dépend de votre site : quarante pages bien écrites ont surtout besoin de maillage et de mesure, un catalogue de deux mille fiches produits commence souvent par la technique.
               </p>
             </div>
 
@@ -452,7 +491,7 @@ export default function AgenceSeoIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Le point d'entrée le plus fréquent est l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> : un état des lieux chiffré de votre visibilité sur Google et dans les IA, dont découle le reste. Pour le seul versant IA, l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> mesure vos citations et votre part de voix en profondeur. Le volet automatisation s'appuie sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Si votre enjeu est plus large que la visibilité, notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> couvre l'ensemble du marketing assisté par IA.
+                Pour un état des lieux sans mission de suivi, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> dresse le bilan Google et IA de votre site, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link> se concentre sur vos citations dans les moteurs génératifs. Le rôle du <Link to="/consultant-visibilite-ia" style={aStyle}>consultant en visibilité IA</Link> est détaillé sur sa propre page, utile avant de choisir un prestataire. Les tableaux de suivi s'appuient sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et, pour les outils plus lourds, sur notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Quand le besoin dépasse le référencement (campagnes, réseaux sociaux, acquisition payante), notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> prend le relais.
               </p>
             </div>
           </div>
@@ -468,11 +507,11 @@ export default function AgenceSeoIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Une mission suit cinq étapes : audit de votre visibilité sur Google et dans les IA, stratégie d'entités et de contenu, production outillée par l'IA et relue par des humains, optimisation technique et maillage, puis mesure des positions et des citations IA. Vous décidez à chaque étape, sur des éléments concrets.</strong>
+            <strong>Une mission commence par une mesure de départ, puis enchaîne la carte des sujets, la production, la technique et un relevé à date fixe des positions et des citations. Chaque étape se termine par un livrable que vous validez avant la suivante.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
-            Le même chemin pour chaque mission : mesurer le point de départ, cadrer la stratégie, produire, optimiser la technique, puis itérer sur les données réelles. Pas de garantie de classement promise à l'aveugle, des progrès mesurés.
+            Le rythme des points se fixe au cadrage, selon le volume de pages à produire. Aucun classement n'est promis : Masteria s'engage sur le travail livré et sur une mesure honnête de ses effets.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -498,28 +537,40 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      {/* ── SEO vs SEO augmenté vs GEO (ancre sombre — pivot) ── */}
+      {/* ── SEO vs SEO augmenté vs GEO (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>SEO, SEO augmenté &amp; GEO</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>SEO, SEO outillé &amp; GEO</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Référencement classique, SEO augmenté par l'IA et GEO : que choisir ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le SEO classique vise un bon classement sur Google. Le SEO augmenté par l'IA fait la même chose plus vite et à plus grande échelle. Le GEO vise une autre surface : être cité dans les réponses générées par les IA. Les trois se complètent, et c'est leur combinaison qui sécurise votre visibilité quand les usages de recherche se partagent entre Google et les IA.</strong>
+            <strong style={{ color: '#fff' }}>Le référencement classique cherche une place dans la liste de liens de Google. Le SEO augmenté par l'IA poursuit ce but avec des outils qui accélèrent la recherche, la rédaction et les audits. Le GEO (generative engine optimization, l'optimisation pour les moteurs génératifs) vise la réponse rédigée par une IA, où votre marque doit apparaître comme source. Une page bien construite sert les trois.</strong>
           </p>
 
+          <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 17, margin: '0 0 16px' }}>
+            Quatre chiffres datés expliquent pourquoi on travaille Google et les IA ensemble
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 230px), 1fr))', gap: 16, marginBottom: 24 }}>
+            {CHIFFRES.map(item => (
+              <div key={item.v} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderRadius: 14, padding: 20 }}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.2vw, 26px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.01em', marginBottom: 8 }}>{item.v}</div>
+                <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 10px' }}>{item.l}</p>
+                <p style={{ fontSize: 12.5, color: '#8392A8', lineHeight: 1.5, margin: 0 }}>{item.s}</p>
+              </div>
+            ))}
+          </div>
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            Voici la lecture des trois approches, critère par critère, pour situer celle qui correspond à votre besoin.
+            Pour une entreprise française, la lecture tient en deux phrases. Le moteur de recherche garde la première place, et une part grandissante des réponses se lit désormais sans clic. Il faut donc des pages qui se classent et des pages qu'une IA peut citer : ce sont le plus souvent les mêmes, mieux construites. Le tableau ci-dessous situe les trois approches critère par critère.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
-            <table aria-label="Comparatif entre SEO classique, SEO augmenté par l'IA et GEO" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
+            <table aria-label="Tableau comparant le SEO classique, le SEO outillé par l'IA et le GEO" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
               <thead>
                 <tr>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '22%' }}>Critère</th>
@@ -552,7 +603,7 @@ export default function AgenceSeoIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Parce que la visibilité se joue désormais autant dans les réponses des IA que sur Google, et que cela demande de comprendre de l'intérieur comment les modèles sélectionnent et citent une source. Masteria est spécialisée sur l'IA depuis 2022 : nous appliquons cette expertise au référencement et nous construisons les automatisations qui le font tenir.</strong>
+            <strong>Parce qu'une partie de vos clients lit la réponse d'une IA avant de voir le moindre lien, et que pour y figurer il faut comprendre comment un modèle choisit ses sources. Masteria se consacre à l'IA depuis sa création en 2022 : modèles, recherche augmentée (un modèle qui lit des documents avant de répondre), agents. Le référencement profite de cette connaissance, et nos développeurs IA construisent les automatisations de suivi propres à votre site.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, margin: '32px 0' }}>
@@ -564,7 +615,7 @@ export default function AgenceSeoIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            Si votre besoin commence en amont (stratégie de présence, gouvernance de contenu, priorisation), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> intervient en premier. Pour une vue d'ensemble de nos accompagnements à Lyon et en France, parcourez notre <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
+            Si la question porte d'abord sur la stratégie (quelle place donner à l'IA dans votre marketing, quelles règles de rédaction fixer), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> la traite en amont. Les entreprises de la région peuvent passer par notre <Link to="/agence-ia-lyon" style={aStyle}>agence IA à Lyon</Link> pour des ateliers de cadrage en présentiel, et l'ensemble des métiers du cabinet figure sur la page <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
           </p>
         </div>
       </section>
@@ -579,13 +630,16 @@ export default function AgenceSeoIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Former vos équipes</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                On peut aussi former vos équipes au SEO et au GEO à l'ère de l'IA
+                Votre équipe peut aussi apprendre à écrire pour Google et pour les IA
               </h2>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Au-delà de la prestation, nous formons vos équipes marketing et contenu à produire avec l'IA, à structurer un contenu citable et à suivre leur visibilité dans les moteurs de réponse. Le volet formation est certifié Qualiopi et finançable par votre OPCO en France. À noter : les prestations de SEO et de GEO restent des services, non finançables par l'OPCO.
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 760 }}>
+                Certaines entreprises préfèrent garder la rédaction en interne. Nous formons alors les responsables marketing et les rédacteurs à préparer un brief, à faire produire un premier jet par un assistant IA, à le vérifier, puis à relever eux-mêmes leurs citations dans les moteurs génératifs. Comptez 1 980 € HT par journée, que la formation réunisse en interne 12 personnes au plus ou une seule. Masteria détient la certification Qualiopi au titre des actions de formation : votre OPCO de branche peut prendre en charge ce module, selon ses règles et ses fonds. La prestation de référencement relève du conseil et de la production : elle n'est donc pas finançable par votre OPCO.
               </p>
-              <Link to="/formation-intelligence-artificielle" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Découvrir nos formations à l'intelligence artificielle
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
+                En septembre 2026, l'atelier marketing et communication d'une interprofession agricole a produit une page destinée au référencement, avec le calendrier éditorial qui l'accompagne : <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>le récit de cette mission</Link>. Le <Link to="/formation-intelligence-artificielle" style={aStyle}>catalogue de formations</Link> compte plus de 100 programmes.
+              </p>
+              <Link to="/formation-ia-seo" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Voir la formation IA pour le SEO
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -600,13 +654,13 @@ export default function AgenceSeoIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Agence SEO IA : les questions fréquentes
+                Agence SEO IA : vos questions avant le premier rendez-vous
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une question manque à la liste ? Envoyez-la avec l'adresse de votre site.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Écrire à Masteria
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -624,27 +678,27 @@ export default function AgenceSeoIAPage() {
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Pages voisines pour approfondir le sujet
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Explorer nos autres expertises IA, du conseil au déploiement.
+            Les audits proposés seuls, le métier, la formation, puis les autres services du cabinet qui touchent à votre visibilité.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Référencement AIO : le guide', href: '/blog/referencement-aio-strategie-contenu-ia', tag: 'Guide', desc: "AIO, GEO, AEO face au SEO, les AI Overviews de Google et la stratégie de contenu en cinq décisions." },
-              { label: 'Audit SEO IA', href: '/audit-seo-ia', tag: "Offre d'entrée", desc: "L'état des lieux chiffré de votre visibilité sur Google et dans les IA, avec correctifs priorisés." },
-              { label: 'Consultant visibilité IA', href: '/consultant-visibilite-ia', tag: 'Le métier', desc: "Mesure de citation datée par modèle, contenus citables, autorité : le rôle et ses critères de choix." },
-              { label: 'Audit GEO', href: '/audit-geo-ia', tag: 'Visibilité IA', desc: "Le versant IA seul : taux de citation, part de voix face aux concurrents et plan pour devenir citable." },
-              { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Marketing', desc: "Le marketing assisté par IA dans son ensemble : contenu, acquisition, growth, au-delà du seul SEO." },
-              { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Les workflows et automatisations qui font tourner votre suivi SEO et votre production de contenu." },
-              { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Agents, intégrations et outils sur mesure, dont les automatisations de monitoring de visibilité." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité et vos priorités, visibilité comprise." },
-              { label: 'Agence IA Lyon', href: '/agence-ia-lyon', tag: 'Agence', desc: "Notre agence IA basée à Lyon : conseil, développement et formation, en France et au-delà." },
-              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
-              { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Notre lecture des enjeux et cas d'usage IA propres à chaque secteur d'activité." },
-              { label: "IA générative en entreprise", href: '/ia-generative-entreprise', tag: 'IA générative', desc: "Les modèles génératifs qui alimentent la production de contenu et la visibilité dans les moteurs de réponse." },
-              { label: "Cas d'usage de l'IA en entreprise", href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Un panorama des usages concrets de l'IA en entreprise, au-delà du seul référencement." },
+              { label: 'Référencement AIO : le guide', href: '/blog/referencement-aio-strategie-contenu-ia', tag: 'Guide', desc: "Cinq décisions éditoriales pour écrire des pages que les résumés de Google et les assistants reprennent." },
+              { label: 'Audit SEO IA', href: '/audit-seo-ia', tag: 'Audit seul', desc: "Le bilan daté de votre site, côté Google et côté IA, quand vous voulez commencer par un constat." },
+              { label: 'Audit GEO', href: '/audit-geo-ia', tag: 'Audit des citations', desc: "Vos citations dans les moteurs génératifs, mesurées question par question, et ce qui manque pour être retenu." },
+              { label: 'Consultant visibilité IA', href: '/consultant-visibilite-ia', tag: 'Métier', desc: "Ce que fait ce consultant, ce qu'il livre et les questions à lui poser avant de l'engager." },
+              { label: 'Formation IA pour le SEO', href: '/formation-ia-seo', tag: 'Formation', desc: "Pour les équipes qui gardent la rédaction : brief, premier jet assisté, vérification, relevé des citations." },
+              { label: 'Agence IA marketing', href: '/agence-ia-marketing', tag: 'Au-delà du SEO', desc: "Campagnes, contenus de marque et acquisition, quand votre besoin déborde du référencement." },
+              { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Suivi automatisé', desc: "Les flux qui relient Search Console, relevés de citations et alertes dans un même tableau." },
+              { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Outils', desc: "Assistants, connecteurs et applications métier, dont les outils de suivi de visibilité les plus poussés." },
+              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Stratégie', desc: "La place de l'IA dans votre organisation, vos règles d'usage et l'ordre des projets à lancer." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Premier pas', desc: "Une intervention courte pour situer vos usages de l'IA ; sa durée et son forfait se fixent au cadrage." },
+              { label: 'Agence IA Lyon', href: '/agence-ia-lyon', tag: 'Lyon', desc: "Le cabinet côté lyonnais : ateliers en présentiel pour les équipes de la région, missions partout en France." },
+              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Un outil construit pour votre métier et branché sur vos données, quand aucun logiciel du marché ne convient." },
+              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'IA générative', desc: "Comment fonctionnent les modèles qui rédigent les réponses de ChatGPT ou de Gemini, et ce qu'ils changent au travail." },
+              { label: 'Études de cas', href: '/etudes-de-cas-ia', tag: 'Références', desc: "Quatre cas anonymisés et six missions de formation récentes, avec ce qui a été livré et la suite prévue." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -660,7 +714,7 @@ export default function AgenceSeoIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Ouvrir la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -670,8 +724,14 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (remplace FounderNote, texte propre à la page) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 64px) 24px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 820, margin: '0 auto' }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            <Link to="/mathias-nizan" style={aStyle}>Mathias Nizan</Link> dirige chaque mission SEO et GEO de Masteria et choisit les intervenants selon le site à traiter. Sur master-ia.fr, il applique la règle qu'il propose à ses clients : une intention de recherche, une page, et la réponse dès la première phrase.
+          </p>
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -681,40 +741,40 @@ export default function AgenceSeoIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Parlons de votre visibilité dans l'IA
+              Faisons le point sur votre visibilité, Google et IA compris
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Décrivez-nous votre marché et vos objectifs de visibilité. Nous revenons vers vous sous 24 heures avec une première lecture de votre présence sur Google et dans les IA, et une proposition de cadrage. Aucune garantie de classement promise, des leviers concrets et mesurables.
+              Envoyez l'adresse de votre site et les trois questions qui reviennent le plus chez vos clients. Sous 24 heures, une réponse vous arrive avec nos premières observations et une date de rendez-vous : 30 minutes de cadrage offertes pour décider de la suite.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Auditer votre visibilité IA
+            <Link to="/contact?type=projet&rdv=30" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · SEO + GEO · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
+              Cabinet IA fondé en 2022 · SEO et GEO sur les mêmes pages · France, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui travaille sur votre référencement ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'équipe</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Qui travaille sur votre référencement
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Mathias Nizan cadre la mission et en reste responsable jusqu'au bilan. Selon le volume, il mobilise des consultants IA pour la stratégie et la rédaction, des développeurs IA pour les automatisations de suivi et des formateurs quand votre équipe reprend la main. Ces intervenants sont des indépendants expérimentés. Le cabinet ne dépend d'aucun éditeur de logiciels : l'outil de suivi se choisit avec vous, selon votre budget. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>, dont une citation dans Les Échos, montrent le cabinet au travail.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['2022', 'fondation du cabinet à Lyon'],
+              ['~10', 'consultants IA mobilisables'],
+              ['~5', 'développeurs IA pour le suivi'],
+              ['4 zones', 'France, Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -725,7 +785,7 @@ export default function AgenceSeoIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources lean extra={PAGE_CITATIONS} />
     </>
   )
 }

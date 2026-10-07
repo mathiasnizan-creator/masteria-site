@@ -1,54 +1,55 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, ShieldCheck, ScrollText, ListChecks, Users, Eye, FileText,
-  Scale, Map, Layers, Target, Workflow, Lock, Gauge, Check, BookOpen,
-  ExternalLink, AlertTriangle, GraduationCap, ClipboardCheck, Building2,
+  ArrowRight, ShieldCheck, ScrollText, ListChecks, Users, Eye,
+  Scale, Map, Layers, Workflow, Lock, Gauge, Check, BookOpen,
+  ExternalLink, AlertTriangle, GraduationCap, ClipboardCheck, CalendarDays,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page pilier « gouvernance de l'IA » (slug /gouvernance-ia). Cible le vent porteur
- * AI Act : « gouvernance ia », « gouvernance de l'intelligence artificielle »,
- * « conformité ia », « ai act entreprise », « mise en conformité ia »,
- * « gouvernance de l'ia », « politique ia entreprise », « comité ia »,
- * « gouvernance de l'ia en entreprise », « gouvernance des données pour l'ia »,
- * « mise en œuvre de la gouvernance de l'ia », « calendrier ai act ».
+ * Page pilier « gouvernance de l'IA » (slug /gouvernance-ia). Cible : « gouvernance ia »,
+ * « gouvernance de l'intelligence artificielle », « conformité ia », « ai act entreprise »,
+ * « mise en conformité ia », « politique ia entreprise », « comité ia », « monitoring ia »,
+ * « outil de gouvernance des modèles », « calendrier ai act ».
  *
- * POSITIONNEMENT : CONSEIL et accompagnement en gouvernance / conformité IA.
- * DISTINCT de /formation-ai-act (qui est de la formation finançable). Ici, c'est du
- * conseil : audit de conformité, cadrage, mise en place du dispositif de gouvernance.
+ * ANGLE PROPRE (07/10/2026) : l'organisation et les rôles. Qui décide d'un usage, qui en
+ * répond, qui le contrôle. Les pages voisines gardent leur angle : /charte-ia-entreprise
+ * (le document), /ia-et-rgpd (les données personnelles), /ia-responsable (éthique et
+ * impact), /formation-ai-act (la formation au règlement).
  *
- * INTÉGRITÉ : posture capacité. Aucun cas client nommé, aucun chiffre de résultat ni
- * prix inventé. Faits réglementaires sourcés et vérifiables uniquement (AI Act,
- * RGPD, Gartner). Le conseil pur n'est pas finançable OPCO ; pas de Qualiopi mis en
- * avant (la page n'est pas une page formation). Seule la formation associée (lien
- * vers /formation-ai-act) relève du financement.
+ * POSITIONNEMENT : conseil au forfait, pas finançable par l'OPCO. La formation (AI Act,
+ * gouvernance IA) porte le volet finançable.
  *
- * ENRICHISSEMENT 2026-09-03 (Semrush FR) : « monitoring ia » (110, KD 7) et
- * « outil de gouvernance des modèles » (110, KD 9). Réponse : section « Monitoring
- * et outillage » (4 cartes) + 2 FAQ. Aucun éditeur d'outil nommé (indépendance).
- *
- * Design premium identique à /agence-developpement-ia et /conseil-data-ia : hero
- * sombre, icônes lucide (zéro emoji), kickers, réponses directes citables, accent
- * #2563EB uniquement, une ancre sombre sur la section technique (classification des
- * risques), patron éditorial asymétrique sticky, familles de cartes variées.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards, de FounderNote
+ * ni d'OfficialSources ; statistique Gartner et « +1 500 » retirés. Calendrier AI Act
+ * vérifié au 07/10/2026 : règlement (UE) 2024/1689 modifié par le règlement (UE) 2026/1744
+ * (en vigueur le 27/07/2026), article 50 depuis le 02/08/2026, annexe III au 02/12/2027,
+ * annexe I au 02/08/2028 ; Q&R CNIL mises à jour le 17/08/2026 ; Q&R Commission sur la
+ * maîtrise de l'IA du 27/07/2026 ; contrôles CNIL 2026 annoncés le 03/04/2026.
  */
 
 const SLUG = 'gouvernance-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const RDV = '/contact?type=projet&rdv=30'
 
 const META_TITLE = "Gouvernance de l'IA & conformité AI Act | Masteria"
-const META_DESC = "Gouvernance de l'IA en entreprise : mise en conformité AI Act, audit, registre des usages, politique IA, comité, monitoring des systèmes et outils de gouvernance des modèles. Cadrage gratuit."
-const KEYWORDS = "gouvernance ia, monitoring ia, outil de gouvernance des modèles, gouvernance des modèles ia, supervision des systèmes ia, gouvernance de l'intelligence artificielle, conformité ia, conformité ia entreprise, ai act entreprise, ia act, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, dispositif de gouvernance ia, calendrier ai act, calendrier ia act"
+const META_DESC = "Gouvernance de l'IA : rôles, registre des usages, comité, supervision et calendrier AI Act vérifié au 7 octobre 2026. 30 minutes de cadrage offertes."
+const KEYWORDS = "gouvernance ia, monitoring ia, outil de gouvernance des modèles, gouvernance des modèles ia, supervision des systèmes ia, gouvernance de l'intelligence artificielle, conformité ia entreprise, conformité ia, ai act entreprise, ia act, mise en conformité ia, gouvernance de l'ia, gouvernance de l'ia en entreprise, gouvernance des données pour l'ia, mise en œuvre de la gouvernance de l'ia, politique ia entreprise, comité ia, référent ia, dispositif de gouvernance ia, calendrier ai act, calendrier ia act"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
+
+const PAGE_CITATIONS = [
+  { name: "L'AI Act au Journal officiel de l'Union : le règlement (UE) 2024/1689 sur EUR-Lex", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Omnibus de juillet 2026, règlement (UE) 2026/1744 : article 4 réécrit, haut risque décalé", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "La CNIL répond aux questions sur le règlement IA (page revue le 17 août 2026)", url: 'https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil' },
+  { name: "Maîtrise de l'IA : la foire aux questions de la Commission (27 juillet 2026)", url: 'https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers' },
+  { name: "Les contrôles de la CNIL pour 2026, recrutement en tête", url: 'https://www.cnil.fr/fr/controles-prioritaires-2026' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -76,55 +77,55 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Scale,       label: 'AI Act & RGPD' },
-  { icon: Map,         label: 'Registre des usages IA' },
-  { icon: ScrollText,  label: 'Politique & charte IA' },
-  { icon: Users,       label: 'Comité de gouvernance' },
+  { icon: Users,       label: 'Rôles et comité IA' },
+  { icon: Map,         label: 'Registre des usages' },
+  { icon: Scale,       label: 'AI Act post-Omnibus' },
+  { icon: Eye,         label: 'Supervision et monitoring' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Cadre couvert', value: "AI Act (Règlement UE 2024/1689) et RGPD : classification des risques, obligations applicables, gouvernance des données pour l'IA et conformité des traitements" },
-  { label: 'Livrables', value: "Audit de conformité, cartographie et registre des usages IA, politique et charte IA, dispositif de comité de gouvernance, plan de mise en conformité" },
-  { label: 'Ce que nous faisons', value: "Conseil et accompagnement : cadrage, audit, mise en place du dispositif et supervision humaine, pas une formation" },
-  { label: 'Posture', value: "Capacité et méthode : nous décrivons l'accompagnement, sans cas client ni résultat inventé" },
-  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel ponctuel" },
-  { label: 'Formation associée', value: "Le volet montée en compétences passe par notre formation AI Act, distincte du conseil" },
+  { label: 'Objet', value: "Chaque usage d'IA de l'organisation, de l'assistant inclus dans la suite bureautique au modèle développé en interne, avec un propriétaire, des données connues et un niveau de risque" },
+  { label: 'Rôles posés', value: "Une direction qui arbitre, un comité qui instruit, un référent IA chargé des demandes, un propriétaire par système, le DPO pour les données personnelles, la DSI pour les consoles" },
+  { label: 'Textes suivis', value: "AI Act (règlement (UE) 2024/1689, dans sa version issue de l'Omnibus de juillet 2026) et RGPD, calendrier relu au 7 octobre 2026" },
+  { label: 'Livrables', value: "Inventaire classé par risque, registre des usages, politique et charte, circuit de validation, plan de mise en conformité avec porteurs et échéances" },
+  { label: 'Nature', value: "Mission de conseil au forfait, chiffrée après 30 minutes de cadrage offertes ; elle n'est pas finançable par votre OPCO" },
+  { label: 'Zones', value: "France, Europe · États-Unis · Inde, dans vos locaux ou en visioconférence" },
 ]
 
-/* ───────── Prestations / piliers de la gouvernance (6 cartes) ───────── */
+/* ───────── Les six pièces du dispositif ───────── */
 
 const PILIERS = [
   {
     icon: ClipboardCheck,
-    title: 'Audit de conformité IA',
-    desc: "Nous mesurons votre exposition au regard de l'AI Act et du RGPD : usages d'IA en place, niveaux de risque, traitements de données concernés, écarts par rapport aux obligations. L'audit donne une photographie nette de ce qui est conforme, de ce qui ne l'est pas encore et de ce qui appelle une décision.",
+    title: 'Inventaire et audit de conformité',
+    desc: "Nous recensons ce qui tourne déjà, comptes personnels compris, et confrontons chaque usage à l'AI Act et au RGPD. Le rapport sépare trois piles : ce qui est en règle, ce qui demande une correction, ce qui attend une décision de la direction.",
   },
   {
     icon: Map,
-    title: 'Registre & cartographie des usages IA',
-    desc: "Nous recensons l'ensemble des systèmes et usages d'IA de l'organisation, du copilote bureautique à l'outil métier, et les classons par niveau de risque. Ce registre vivant est le socle de la gouvernance : on ne gouverne que ce que l'on a d'abord cartographié.",
+    title: 'Registre des usages',
+    desc: "Une ligne par système : finalité, service, outil et offre souscrite, données, niveau de risque, propriétaire, date de la prochaine revue. Le registre dit qui répond de quoi ; le comité s'en sert comme d'un tableau de pilotage.",
   },
   {
     icon: ScrollText,
-    title: 'Politique & charte IA internes',
-    desc: "Nous rédigeons la politique IA et la charte d'usage qui fixent ce qui est autorisé, encadré ou interdit, les règles de confidentialité et la responsabilité de chacun. Un cadre lisible qui sécurise les usages sans bloquer l'adoption.",
+    title: 'Politique et charte',
+    desc: "La politique engage la direction sur des principes et des responsabilités. La charte les traduit en consignes que chaque salarié peut appliquer devant son écran ; notre page dédiée à la charte IA détaille ses rubriques.",
   },
   {
     icon: Users,
-    title: 'Comité de gouvernance IA',
-    desc: "Nous aidons à constituer le comité IA : composition, rôles, fréquence, processus de validation des nouveaux usages et d'arbitrage. L'instance qui maintient la gouvernance dans le temps plutôt qu'un document figé après un audit.",
+    title: 'Comité et référent IA',
+    desc: "Le comité réunit à date fixe la direction, les métiers, la DSI et le DPO. Le référent IA reçoit les demandes, prépare une fiche par dossier et annonce aux équipes un délai de réponse, pour que personne ne contourne la règle faute d'interlocuteur.",
   },
   {
     icon: Eye,
-    title: 'Supervision humaine & traçabilité',
-    desc: "Nous posons les points de contrôle humain sur les décisions sensibles, la journalisation des usages et la documentation exigée par l'AI Act. La supervision humaine et la traçabilité transforment une obligation réglementaire en pratique opérationnelle.",
+    title: 'Supervision humaine et traces',
+    desc: "Pour chaque décision sensible, une personne nommée valide avant l'envoi ou l'action. Les usages à enjeu laissent une trace consultable : qui a demandé, qui a validé, avec quelle version du modèle et à quelle date.",
   },
   {
     icon: ShieldCheck,
-    title: "Gouvernance des données pour l'IA",
-    desc: "La gouvernance IA s'appuie sur un socle data conforme : base légale des traitements au sens du RGPD, qualité des données mobilisées, minimisation, cloisonnement des données sensibles. Nous relions le dispositif IA à votre conformité RGPD, en lien avec notre conseil data & IA.",
+    title: 'Données et éditeurs',
+    desc: "Le registre des usages se raccorde au registre RGPD : base légale, catégories de données, contrat signé avec l'éditeur, lieu d'hébergement, réglage d'entraînement. Notre page IA et RGPD reprend ce volet article par article.",
   },
 ]
 
@@ -133,28 +134,28 @@ const PILIERS = [
 const ETAPES = [
   {
     num: '01',
-    title: 'Cadrage & périmètre',
-    desc: "Nous délimitons le périmètre : entités concernées, usages d'IA déjà en place, projets à venir, enjeux propres à votre secteur. Ce premier travail fixe les objectifs de conformité et le niveau d'exigence attendu avant tout audit.",
+    title: 'Cadrer le périmètre et les interlocuteurs',
+    desc: "Nous fixons avec vous les entités concernées, les métiers à entendre et la personne qui portera le dispositif côté direction. Ce cadrage décide aussi du niveau d'exigence : une PME qui utilise deux assistants du marché ne se gouverne pas comme un groupe qui entraîne ses propres modèles.",
   },
   {
     num: '02',
-    title: 'Audit & classification des risques',
-    desc: "Nous auditons les usages d'IA et les classons selon les catégories de l'AI Act (interdit, haut risque, risque limité, risque minimal), puis croisons avec vos traitements de données au regard du RGPD. Les écarts deviennent visibles et priorisables.",
+    title: 'Inventorier et classer',
+    desc: "Entretiens avec les métiers, questionnaire anonyme sur les outils que chacun a ouverts, lecture des contrats des éditeurs. Chaque usage reçoit son niveau dans la grille de l'AI Act et sa qualification RGPD ; les écarts apparaissent ligne par ligne.",
   },
   {
     num: '03',
-    title: 'Registre & cartographie',
-    desc: "Nous construisons le registre des usages IA : inventaire, propriétaires, finalités, niveau de risque, données mobilisées. Ce registre vivant devient le référentiel partagé de la gouvernance, mis à jour à chaque nouvel usage.",
+    title: 'Ouvrir le registre et nommer les propriétaires',
+    desc: "L'inventaire devient un registre vivant, où chaque système a un propriétaire et une date de revue. Ce nom inscrit en face de l'outil change les comportements : quelqu'un sait qu'il en répond, et le comité sait qui interroger.",
   },
   {
     num: '04',
-    title: 'Dispositif & documents',
-    desc: "Nous posons le dispositif : politique et charte IA, processus de validation des nouveaux usages, points de supervision humaine, traçabilité. Nous aidons à constituer le comité de gouvernance qui portera le tout dans la durée.",
+    title: 'Écrire les règles et installer le comité',
+    desc: "Politique, charte, circuit de validation des nouveaux usages, points de supervision humaine. Le comité tient sa première séance avec nous, sur des demandes déjà en attente, pour que le circuit soit éprouvé avant d'être annoncé aux équipes.",
   },
   {
     num: '05',
-    title: 'Mise en conformité & suivi',
-    desc: "Nous établissons le plan de mise en conformité priorisé, accompagnons sa mise en œuvre et calons le rythme de revue. La gouvernance n'est pas un livrable unique mais un dispositif qui vit au rythme de vos usages et de l'application progressive de l'AI Act.",
+    title: 'Planifier la mise en conformité et les revues',
+    desc: "Le plan liste les actions, leurs porteurs et leurs échéances, calées sur le calendrier du règlement. Nous fixons le rythme des revues du registre et, si vous le souhaitez, assistons aux premières séances du comité jusqu'à ce que vos équipes le tiennent seules.",
   },
 ]
 
@@ -163,118 +164,141 @@ const ETAPES = [
 const RISK_TABLE = [
   {
     niveau: 'Risque inacceptable',
-    statut: 'Interdit',
-    desc: "Pratiques jugées contraires aux valeurs de l'Union (notation sociale généralisée, manipulation, certaines formes d'identification biométrique). Ces systèmes ne peuvent pas être déployés.",
+    statut: 'Interdit depuis le 2 février 2025',
+    desc: "Notation sociale, manipulation qui exploite une vulnérabilité, reconnaissance des émotions au travail ou à l'école (hors raisons médicales ou de sécurité), bases faciales constituées par moissonnage d'images. Une interdiction supplémentaire vise à partir du 2 décembre 2026 les systèmes conçus pour fabriquer des images intimes non consenties ou des contenus pédocriminels.",
   },
   {
     niveau: 'Haut risque',
-    statut: 'Obligations renforcées',
-    desc: "Systèmes utilisés dans des domaines sensibles (emploi, accès aux services essentiels, infrastructures critiques, etc.). Soumis à des exigences strictes : gestion des risques, documentation, supervision humaine, traçabilité.",
+    statut: 'Obligations renforcées au 2 décembre 2027 (annexe III)',
+    desc: "Recrutement et gestion du personnel, accès à l'éducation, octroi de crédit, accès aux services essentiels, entre autres. Le déployeur devra confier la supervision à des personnes compétentes, garder les journaux six mois au minimum et prévenir les représentants du personnel avant toute mise en service sur le lieu de travail. Les produits réglementés de l'annexe I suivent le 2 août 2028.",
   },
   {
     niveau: 'Risque limité',
-    statut: 'Obligations de transparence',
-    desc: "Systèmes interagissant avec des personnes (agents conversationnels, contenus générés). L'utilisateur doit savoir qu'il interagit avec une IA ou que le contenu est généré.",
+    statut: 'Transparence depuis le 2 août 2026',
+    desc: "Un agent conversationnel qui dialogue avec des personnes doit se présenter comme une IA ; un hypertrucage diffusé doit être signalé ; un texte généré publié pour tenir le public informé d'affaires d'intérêt public aussi, sauf relecture humaine sous responsabilité éditoriale.",
   },
   {
     niveau: 'Risque minimal',
-    statut: "Pas d'obligation spécifique",
-    desc: "La grande majorité des usages courants (filtres, assistants bureautiques simples). Aucune obligation particulière au titre de l'AI Act, mais la gouvernance interne et le RGPD continuent de s'appliquer.",
+    statut: 'Aucune obligation propre',
+    desc: "Rédiger un mail, résumer un rapport, analyser un tableur avec un assistant du marché. Le règlement n'ajoute rien de spécifique ; l'article 4, qui vise la compétence du personnel en matière d'IA, le RGPD et vos règles internes continuent de jouer.",
   },
 ]
 
-/* ───────── Calendrier d'application de l'AI Act (paliers — GEO citable) ───────── */
+/* ───────── Calendrier d'application (vérifié au 07/10/2026) ───────── */
 
 const CALENDRIER = [
-  { date: '1ᵉʳ août 2024', desc: "Entrée en vigueur du Règlement (UE) 2024/1689." },
-  { date: '2 février 2025', desc: "Interdiction des pratiques à risque inacceptable et obligation de littératie IA des équipes (article 4)." },
-  { date: '2 août 2025', desc: "Obligations applicables aux modèles d'IA à usage général (GPAI) et mise en place de la gouvernance européenne." },
-  { date: '2 août 2026', desc: "Application générale du règlement, dont l'essentiel des obligations des systèmes à haut risque." },
-  { date: '2 août 2027', desc: "Échéance pour les systèmes à haut risque intégrés à des produits déjà couverts par une réglementation européenne (annexe I)." },
+  { date: '1ᵉʳ août 2024', desc: "Le règlement (UE) 2024/1689 commence à courir. Point de départ des délais : aucune obligation ne s'applique encore ce jour-là." },
+  { date: '2 février 2025', desc: "Pratiques interdites (article 5) et maîtrise de l'IA des équipes (article 4). Côté gouvernance : une liste des usages proscrits et un plan de formation documenté." },
+  { date: '2 août 2025', desc: "Règles des modèles d'IA à usage général, à la charge de leurs fournisseurs. Côté gouvernance : savoir quel modèle sert chaque ligne du registre." },
+  { date: '27 juillet 2026', desc: "L'Omnibus (règlement (UE) 2026/1744) entre en vigueur. L'article 4 se lit désormais comme une obligation de moyens : aucun niveau individuel exigé, aucun certificat à produire." },
+  { date: '2 août 2026', desc: "L'essentiel du règlement s'applique, hors reports, et avec lui l'article 50 : agents conversationnels annoncés, hypertrucages signalés." },
+  { date: '2 décembre 2026', desc: "Les générateurs de contenus commercialisés avant le 2 août 2026 doivent marquer leurs sorties dans un format lisible par machine ; une interdiction nouvelle frappe les images intimes non consenties." },
+  { date: '2 décembre 2027', desc: "Annexe III, celle des usages sensibles. Côté gouvernance : supervision humaine nommée, journaux conservés, représentants du personnel informés." },
+  { date: '2 août 2028', desc: "Annexe I : l'IA embarquée dans des produits déjà soumis à une réglementation européenne, comme les machines, les jouets ou les dispositifs médicaux." },
 ]
 
-/* ───────── Gouvernance des données pour l'IA (4 dimensions) ───────── */
+/* ───────── Gouvernance des données pour l'IA (4 repères) ───────── */
 
 const DATA_GOUV = [
   {
     icon: Scale,
-    title: 'Base légale et finalités',
-    desc: "Utiliser un outil d'IA sur des données personnelles reste un traitement au sens du RGPD : chaque usage repose sur une base légale et une finalité déclarée. Nous vérifions ce socle pour chacun des systèmes recensés au registre.",
+    title: 'Une base légale par usage',
+    desc: "Chaque ligne du registre qui touche des données personnelles renvoie à sa base légale (article 6 du RGPD) et à sa finalité. Tant qu'elle manque, l'usage reste au stade de l'essai.",
   },
   {
     icon: Gauge,
-    title: 'Qualité et cycle de vie des données',
-    desc: "La fiabilité d'un système d'IA dépend des données qui l'alimentent : origine, fraîcheur, représentativité. La gouvernance des données pour l'IA documente ce cycle de vie, des sources jusqu'aux sorties du modèle.",
+    title: 'Des corpus dont on connaît la source',
+    desc: "Un assistant documentaire répond avec la qualité des documents qu'on lui confie. Le registre note l'origine de chaque corpus, le jour où il a été rafraîchi et la personne qui le tient propre.",
   },
   {
     icon: Lock,
-    title: 'Minimisation et cloisonnement',
-    desc: "Les données sensibles restent hors des prompts et des outils non validés. Le dispositif définit ce qui peut circuler vers quel outil, avec quels périmètres d'accès et quelles règles d'anonymisation ou de pseudonymisation.",
+    title: 'Ce qui ne sort jamais',
+    desc: "La politique liste les catégories qui restent hors des outils non validés : santé, dossiers RH, secrets d'affaires, données clients identifiantes. Les consoles d'administration appliquent ces interdits quand l'éditeur le permet.",
   },
   {
     icon: Workflow,
-    title: 'Traçabilité des flux vers les fournisseurs',
-    desc: "Savoir quelles données sortent de l'organisation, vers quels fournisseurs d'IA, sous quel contrat et quel hébergement. Cette cartographie des flux alimente le registre des usages et les analyses d'impact.",
+    title: 'Le chemin vers chaque éditeur',
+    desc: "Pour chaque outil : contrat de traitement signé, hébergement, réglage d'entraînement par défaut, sous-traitants ultérieurs. Ces conditions changent souvent ; le registre date chaque vérification.",
   },
 ]
 
-/* ───────── Monitoring IA et outillage de la gouvernance des modèles ───────── */
+/* ───────── Monitoring IA et outillage ───────── */
 
 const MONITORING = [
   {
     icon: Eye,
-    title: 'Monitoring IA : surveiller ce que les systèmes produisent',
-    desc: "Un système d'IA validé un jour ne le reste pas : le modèle change de version, les données dérivent, les usages s'étendent. Le monitoring IA suit dans le temps la qualité des réponses, les refus et les erreurs signalées, les incidents, les volumes et les coûts. Les indicateurs diffèrent selon l'usage : un assistant documentaire se surveille sur la justesse des sources, un agent sur les actions qu'il déclenche, un modèle prédictif sur la dérive de ses résultats.",
+    title: 'Ce que le monitoring IA surveille',
+    desc: "Un système validé en janvier peut dériver en juin : nouvelle version du modèle, documents périmés, usage étendu à un autre service. Le monitoring suit la justesse des réponses sur un échantillon relu, les incidents signalés, les volumes et le coût, avec des indicateurs choisis pour chaque usage. Un assistant documentaire se juge sur ses sources, un agent sur les actions qu'il déclenche, un modèle prédictif sur l'écart entre ses prévisions et la réalité.",
   },
   {
     icon: ListChecks,
-    title: 'Le registre des usages, colonne vertébrale de l\'outillage',
-    desc: "Avant tout outil de gouvernance des modèles, il faut un registre : pour chaque système, son propriétaire, sa finalité, son niveau de risque, les données mobilisées, le fournisseur et la version du modèle, la date de la dernière revue. C'est ce registre qui dit quoi surveiller et à quel rythme ; un outil qui n'en découle pas produit des tableaux de bord que personne ne lit.",
+    title: 'Le registre décide de ce qu\'on surveille',
+    desc: "Avant d'acheter un outil de gouvernance des modèles, relisez le registre : il dit quels systèmes comptent, à quel rythme les revoir et qui reçoit l'alerte. Un tableau de bord qui n'en découle pas finit sans lecteur, et l'alerte qu'il émet n'arrive chez personne.",
   },
   {
     icon: Gauge,
     title: 'Quel outil de gouvernance des modèles choisir ?',
-    desc: "Trois niveaux, selon le nombre de systèmes et leur risque. Un registre partagé et des revues planifiées suffisent à une PME qui utilise quelques assistants du marché. Une plateforme de gouvernance, souvent celle de votre fournisseur cloud, s'impose quand les modèles se multiplient et que la traçabilité doit être automatisée. Une instrumentation sur mesure (journalisation par API, alertes, tableaux de bord) convient aux systèmes développés en interne. Nous restons indépendants des éditeurs : l'outil suit le dispositif, jamais l'inverse.",
+    desc: "Trois paliers selon le volume et le risque. Un registre partagé et des revues planifiées suffisent à une PME qui utilise quelques assistants du marché. Une plateforme, souvent celle de votre fournisseur cloud, se justifie quand les modèles se multiplient et que la traçabilité doit sortir automatiquement. Une journalisation sur mesure par API convient aux systèmes développés chez vous. Masteria ne revend aucune plateforme.",
   },
   {
     icon: ScrollText,
-    title: 'Journalisation et supervision humaine',
-    desc: "Conserver les prompts et les réponses des usages sensibles, tracer qui a validé quoi, poser des points de contrôle humain sur les décisions qui engagent l'organisation, déclencher une alerte quand un indicateur sort de sa plage : c'est la grille que le règlement européen prévoit pour les systèmes à haut risque, dont le calendrier a été reporté, et qui donne dès aujourd'hui la bonne structure à tout dispositif.",
+    title: 'Traces et validation humaine',
+    desc: "Conserver les échanges des usages sensibles, noter qui a validé quoi, déclencher une alerte quand un indicateur sort de sa plage. Dès décembre 2027, le règlement demandera aux déployeurs d'usages classés à haut risque de garder ces journaux six mois au moins ; prendre l'habitude aujourd'hui coûte peu et profite à tous les autres usages.",
   },
 ]
 
-/* ───────── Pourquoi maintenant (4 raisons) ───────── */
+/* ───────── Pourquoi maintenant (4 raisons datées) ───────── */
 
 const WHY = [
-  { icon: Scale, title: "L'AI Act entre en application par paliers", desc: "Le Règlement (UE) 2024/1689, entré en vigueur le 1ᵉʳ août 2024, s'applique progressivement. Les organisations ont besoin de temps pour cartographier leurs usages, les classer et se mettre en conformité : commencer tôt évite de subir l'échéance." },
-  { icon: ShieldCheck, title: 'Le RGPD reste le socle', desc: "Appliqué depuis le 25 mai 2018, le RGPD encadre tout traitement de données personnelles, y compris par un système d'IA. La gouvernance IA s'articule avec votre conformité existante plutôt que de la doubler." },
-  { icon: AlertTriangle, title: 'Les usages se multiplient sans cadre', desc: "Les copilotes et outils d'IA se diffusent vite dans les équipes, souvent plus vite que les règles. Sans cartographie ni politique, l'organisation perd la visibilité sur ce qui est utilisé, avec quelles données et quels risques." },
-  { icon: Target, title: "Gouverner pour sécuriser l'adoption", desc: "Un cadre clair ne freine pas l'IA, il la sécurise : les équipes savent ce qu'elles peuvent faire, la direction garde la visibilité et la conformité devient un atout de confiance vis-à-vis des clients et partenaires." },
+  { icon: CalendarDays, title: 'Trois paliers sont déjà en application', desc: "Février 2025 a ouvert le bal avec les interdictions et l'article 4 ; août 2025 a visé les fournisseurs de modèles à usage général ; août 2026 a rendu la transparence obligatoire. Une organisation qui n'a encore rien écrit rattrape trois échéances d'un coup." },
+  { icon: Scale, title: 'Le haut risque a désormais une date', desc: "L'Omnibus, entré en vigueur le 27 juillet 2026, renvoie au 2 décembre 2027 les obligations de l'annexe III (recrutement, évaluation des salariés, crédit, éducation) et au 2 août 2028 celles de l'annexe I. Quatorze mois séparent cette page de la première échéance : le temps d'un inventaire, d'un registre et d'un comité rodé." },
+  { icon: AlertTriangle, title: 'Les comptes personnels prennent de l\'avance', desc: "Quand la règle tarde, les salariés ouvrent des comptes gratuits et y déposent des documents de travail. Chaque mois sans cadre ajoute des usages invisibles qu'il faudra ensuite retrouver, un par un." },
+  { icon: ShieldCheck, title: 'La CNIL contrôle en 2026', desc: "Le RGPD régit depuis le 25 mai 2018 toute donnée personnelle confiée à une IA. Publié le 3 avril 2026, le programme de contrôles de la CNIL place le recrutement en tête : décisions automatisées, information des candidats, durées de conservation." },
 ]
 
-/* ───────── Ce que Masteria accompagne (3 modes d'intervention) ───────── */
+/* ───────── Ce que Masteria accompagne (3 temps) ───────── */
 
 const ACCOMPAGNE = [
   {
     icon: ClipboardCheck,
     tag: 'Auditer',
     title: 'Audit de conformité IA',
-    desc: "Le point de départ : nous mesurons votre exposition au regard de l'AI Act et du RGPD, cartographions les usages et identifions les écarts. Vous obtenez une photographie nette de votre conformité et des priorités à traiter.",
-    points: ['Inventaire et classification des usages IA', 'Lecture AI Act et RGPD', 'Écarts et risques priorisés'],
+    desc: "Un état des lieux daté : usages recensés, niveau de risque de chacun, écarts face à l'AI Act et au RGPD, décisions à soumettre à la direction. Il prépare la suite, ou suffit si votre exposition se révèle faible.",
+    points: ['Inventaire, comptes personnels compris', 'Classement par niveau de risque', 'Écarts et décisions à prendre'],
   },
   {
     icon: Layers,
-    tag: 'Cadrer',
-    title: 'Cadrage du dispositif de gouvernance',
-    desc: "Nous concevons le dispositif adapté à votre organisation : politique et charte IA, registre des usages, processus de validation, points de supervision humaine. Un cadre proportionné à votre taille et à votre secteur, pas une usine à gaz.",
-    points: ['Politique et charte IA internes', 'Registre des usages IA', 'Processus de validation et de supervision'],
+    tag: 'Concevoir',
+    title: 'Conception du dispositif',
+    desc: "Nous dessinons le dispositif à votre échelle : rôles, registre, politique, charte, circuit de validation. Une PME repart avec deux pages de charte et un référent ; un groupe, avec un comité central et un propriétaire par filiale.",
+    points: ['Rôles et circuit de décision', 'Registre prêt à remplir', 'Politique et charte rédigées ensemble'],
   },
   {
     icon: Workflow,
-    tag: 'Déployer',
-    title: 'Mise en place et comité de gouvernance',
-    desc: "Nous accompagnons la mise en œuvre du plan de conformité et la constitution du comité IA : composition, rôles, rythme de revue. La gouvernance s'installe comme une pratique vivante, portée par vos équipes.",
-    points: ['Plan de mise en conformité priorisé', 'Constitution du comité IA', 'Rythme de revue et suivi'],
+    tag: 'Installer',
+    title: 'Mise en place et premières séances',
+    desc: "Nous accompagnons la mise en œuvre du plan, les premières séances du comité et les premières revues du registre. Le but est un dispositif que vos équipes tiennent sans nous au bout de quelques mois.",
+    points: ['Plan daté avec porteurs', 'Premières séances du comité', 'Passation aux équipes internes'],
+  },
+]
+
+/* ───────── Études de cas citées (faits de src/data/etudes-de-cas.js) ───────── */
+
+const CAS = [
+  {
+    id: 'industrie',
+    titre: "Un groupe industriel confie la politique d'usage à son Data manager",
+    texte: "Dans un groupe international du packaging, Copilot s'est déployé par paliers : 24 managers pilotes, cinq sessions de juillet à fin septembre 2026, l'anglais étant la langue de deux d'entre elles, avant l'ouverture des sites mexicain et américain en octobre 2026 puis indien en décembre. La politique d'usage a un porteur, le Data manager du groupe, qui tient aussi la bibliothèque de prompts des pilotes ; le comité de direction est reparti de sa matinée stratégique avec ses décisions à prendre, dont les données exclues et l'audit des accès.",
+  },
+  {
+    id: 'distribution',
+    titre: 'Un distributeur IT nomme un propriétaire par compétence',
+    texte: "Chez un distributeur de 58 salariés, dix référents formés en juin 2026 font vivre onze compétences Claude. La règle tient en quatre points écrits : la direction valide, un propriétaire est désigné, une revue revient chaque trimestre, chaque version est archivée. Les autres salariés doivent suivre entre octobre et décembre 2026.",
+  },
+  {
+    id: 'conseil-financier',
+    titre: 'Un cabinet de conseil écrit qui met à jour quoi',
+    texte: "Un cabinet qui conseille le secteur public sur ses montages financiers, une vingtaine de personnes à Paris et à Lyon, a reçu avec ses assistants dédiés aux marchés publics un guide qui fixe les règles d'utilisation, la confidentialité des dossiers et le responsable de chaque mise à jour. Le dispositif évolue depuis sans Masteria.",
   },
 ]
 
@@ -282,74 +306,78 @@ const ACCOMPAGNE = [
 
 const FAQ = [
   {
-    q: "Qu'est-ce que la gouvernance de l'IA ?",
-    a: "La gouvernance de l'IA est l'ensemble des règles, des processus et des instances qui encadrent l'usage de l'intelligence artificielle dans une organisation : cartographie et registre des usages, classification des risques, politique et charte IA, supervision humaine, traçabilité et conformité (AI Act, RGPD). Elle vise à sécuriser et à fiabiliser les usages d'IA sans bloquer leur adoption. Chez Masteria, c'est une prestation de conseil et d'accompagnement : nous auditons, cadrons puis aidons à mettre en place le dispositif, instance de pilotage comprise.",
+    q: "En quoi consiste la gouvernance de l'IA, sur le terrain ?",
+    a: "Elle répartit par écrit les décisions autour de l'intelligence artificielle : qui autorise un nouvel usage, qui en répond au quotidien, qui le contrôle et selon quelles règles. Un dispositif de gouvernance réunit un inventaire des usages classés par risque, un registre où chaque système a un propriétaire, une politique et sa charte, un comité épaulé par un référent IA, des points de supervision humaine et un volet données relié au RGPD. Masteria l'installe en mission de conseil, de l'audit de départ jusqu'aux premières séances du comité.",
   },
   {
-    q: "L'AI Act s'applique-t-il à mon entreprise ?",
-    a: "L'AI Act (souvent écrit « IA Act » en français), le Règlement (UE) 2024/1689, encadre la mise sur le marché et l'usage des systèmes d'IA dans l'Union européenne. Il concerne aussi bien les fournisseurs que les organisations qui déploient de l'IA, y compris en utilisant des outils tiers. Entré en vigueur le 1ᵉʳ août 2024, il s'applique par paliers. Les obligations dépendent du niveau de risque de chaque usage : interdit, haut risque, risque limité ou risque minimal. La première étape consiste donc à cartographier et classer vos usages pour savoir précisément ce qui s'applique à vous. C'est l'objet de notre audit de conformité.",
+    q: "Mon entreprise est-elle concernée par l'AI Act ?",
+    a: "Oui, dès que vos équipes utilisent un outil d'IA dans leur travail. Le règlement (UE) 2024/1689 vise les fournisseurs de systèmes d'IA et aussi leurs déployeurs, terme qui désigne les organisations qui s'en servent dans un cadre professionnel, y compris avec un assistant acheté sur étagère. Les obligations varient selon l'usage : l'article 4, consacré à la maîtrise de l'IA, concerne tout le monde, la transparence de l'article 50 touche les agents conversationnels et les contenus diffusés, le haut risque ne vise que certaines finalités comme le recrutement ou le crédit. L'inventaire de vos usages dit lesquelles s'appliquent chez vous.",
   },
   {
-    q: "Quelle différence entre gouvernance IA et conformité IA ?",
-    a: "La conformité IA consiste à respecter les obligations réglementaires applicables, notamment celles de l'AI Act et du RGPD : classer les usages par risque, documenter, assurer la transparence et la supervision humaine. La gouvernance de l'IA est plus large : c'est le dispositif durable qui rend cette conformité tenable et qui encadre tous les usages d'IA, conformité comprise mais aussi politique interne, charte, comité de pilotage et arbitrage des nouveaux usages. Autrement dit, la conformité est une exigence à atteindre, la gouvernance est le système qui permet de l'atteindre et de la maintenir dans le temps.",
+    q: "Gouvernance IA et conformité IA : où passe la frontière ?",
+    a: "La conformité est un résultat : chaque usage respecte ce que l'AI Act et le RGPD exigent de lui, et vous pouvez le prouver. La gouvernance est l'organisation qui produit ce résultat et le maintient quand les outils changent : des rôles, un registre, un circuit de validation, des revues. Une conformité que personne n'entretient se périme au premier nouvel outil ; une gouvernance qui ne vise aucune obligation tourne à vide. Les deux se construisent dans la même mission.",
   },
   {
-    q: "Comment se mettre en conformité avec l'AI Act ?",
-    a: "La mise en conformité suit une logique simple : cartographier l'ensemble de vos usages d'IA, les classer selon les niveaux de risque de l'AI Act, identifier les obligations applicables à chacun (transparence, documentation, supervision humaine, gestion des risques pour le haut risque), puis combler les écarts par un plan priorisé. En parallèle, la conformité RGPD des traitements de données est vérifiée. Masteria accompagne ces étapes par un audit de conformité, la construction du registre des usages et la mise en place du dispositif de gouvernance, sans promettre de raccourci : la conformité se construit usage par usage.",
+    q: "Par quoi commencer une mise en conformité AI Act ?",
+    a: "Par l'inventaire. Recensez les outils et les usages, y compris les comptes ouverts par les salariés, puis classez chacun selon les quatre niveaux du règlement. Viennent ensuite les obligations propres à chaque ligne (transparence, supervision humaine, documentation), les écarts, et un plan daté qui confie chaque action à un porteur. En parallèle, vérifiez la base légale des traitements de données personnelles au sens du RGPD. Masteria mène ces étapes en audit, puis installe le registre et le comité qui tiendront le résultat.",
   },
   {
-    q: "Gouvernance IA ou formation AI Act : que choisir ?",
-    a: "Les deux répondent à des besoins différents et complémentaires. La gouvernance de l'IA est une prestation de conseil : nous auditons, cadrons et mettons en place le dispositif (registre, politique, comité, plan de conformité) pour l'organisation. La formation AI Act, elle, vise la montée en compétences de vos équipes sur le règlement et ses implications ; c'est une action de formation, distincte du conseil et finançable. En pratique, beaucoup d'organisations combinent les deux : le conseil installe le dispositif, la formation rend les équipes autonomes pour le faire vivre.",
+    q: "Faut-il choisir entre le conseil en gouvernance et la formation AI Act ?",
+    a: "Non, ils se complètent et se financent différemment. Le conseil installe le dispositif pour l'organisation : audit, registre, politique, comité, plan de conformité ; réglé au forfait, ce conseil n'entre pas dans ce que l'OPCO prend en charge. À l'inverse, la formation AI Act apprend aux personnes qui tiendront ce dispositif à lire le règlement et à classer un usage ; couverte par la certification Qualiopi de Masteria, elle se soumet à l'OPCO de votre branche, seul juge d'après ses critères et son budget. Beaucoup d'organisations enchaînent les deux.",
   },
   {
-    q: "Qu'est-ce que la gouvernance des données pour l'IA ?",
-    a: "La gouvernance des données pour l'IA désigne les règles et les processus qui encadrent les données mobilisées par vos systèmes d'IA : base légale et finalité des traitements au sens du RGPD, qualité et cycle de vie des données, minimisation, cloisonnement des données sensibles et traçabilité des flux vers les fournisseurs d'IA. C'est le volet data de la gouvernance IA : le registre des usages documente, pour chaque système, quelles données il consomme et sous quelles garanties. Chez Masteria, ce volet est traité lors de l'audit de conformité et se prolonge par notre conseil data & IA.",
+    q: "Que couvre la gouvernance des données pour l'IA ?",
+    a: "Elle suit les données consommées par chaque système d'IA : leur base légale et leur finalité au sens du RGPD, leur origine et leur fraîcheur, leur sensibilité, et le chemin qu'elles prennent vers l'éditeur (contrat, hébergement, réglage d'entraînement). En pratique, chaque ligne du registre des usages renvoie à une ligne du registre des traitements. Notre page IA et RGPD détaille la méthode ; le conseil data & IA prend le relais quand la qualité ou l'architecture des données posent problème.",
   },
   {
-    q: "Quel est le calendrier d'application de l'AI Act ?",
-    a: "L'AI Act est entré en vigueur le 1ᵉʳ août 2024 et s'applique par paliers. Depuis le 2 février 2025, les pratiques à risque inacceptable sont interdites et l'obligation de littératie IA s'applique aux organisations qui déploient de l'IA. Depuis le 2 août 2025, les obligations des modèles d'IA à usage général (GPAI) sont en place. Le 2 août 2026 marque l'application générale du règlement, dont l'essentiel des obligations pour les systèmes à haut risque. Le 2 août 2027 concerne les systèmes à haut risque intégrés à des produits déjà couverts par une réglementation européenne. Ce calendrier fixe l'ordre des chantiers : cartographier et classer vos usages d'abord, pour savoir quelles échéances s'appliquent à vous.",
+    q: "Quelles dates de l'AI Act retenir au 7 octobre 2026 ?",
+    a: "Le texte court depuis le 1ᵉʳ août 2024. Trois paliers sont passés : interdictions et article 4 en février 2025, fournisseurs de modèles à usage général en août 2025, transparence de l'article 50 en août 2026. En vigueur depuis le 27 juillet 2026, l'Omnibus (règlement (UE) 2026/1744) a fait de l'article 4 une obligation de moyens et décalé le haut risque : annexe III le 2 décembre 2027, annexe I le 2 août 2028. Entre les deux, le 2 décembre 2026 clôt le sursis accordé aux générateurs déjà commercialisés pour marquer leurs contenus, et ajoute une interdiction sur les images intimes non consenties.",
   },
   {
-    q: "La gouvernance de l'IA concerne-t-elle aussi le secteur public ?",
-    a: "Oui. L'AI Act s'applique aux administrations, collectivités, établissements publics et hôpitaux qui déploient des systèmes d'IA, au même titre qu'aux entreprises privées. Le secteur public est même particulièrement exposé : beaucoup de ses usages touchent des domaines que le règlement classe à haut risque (accès aux services essentiels, éducation, santé, emploi public) et la transparence attendue vis-à-vis des citoyens y est plus forte. Registre des usages, supervision humaine et gouvernance des données s'y appliquent pleinement. L'accompagnement s'adapte à ce cadre : périmètre, instances existantes, contraintes de l'achat public.",
+    q: "Le secteur public est-il soumis aux mêmes règles ?",
+    a: "Oui, et parfois à davantage. Administrations, collectivités, hôpitaux et établissements publics sont des déployeurs comme les entreprises. Beaucoup de leurs usages touchent des domaines classés à haut risque (accès aux prestations, éducation, emploi public), et l'article 27 leur demandera, quand l'annexe III s'appliquera en décembre 2027, d'étudier l'effet du système sur les droits fondamentaux avant sa mise en service. La gouvernance s'adapte aux instances existantes et aux contraintes de l'achat public.",
   },
   {
-    q: "Qu'est-ce que le monitoring IA, et que faut-il surveiller ?",
-    a: "Le monitoring IA est la surveillance dans le temps des systèmes d'IA en production : ce qu'ils produisent, à quel coût, avec quels incidents. Quatre familles d'indicateurs couvrent la plupart des cas. La qualité : justesse des réponses sur un échantillon relu, taux de sources correctes pour un assistant documentaire, erreurs signalées par les utilisateurs. La sécurité : refus contournés, données sensibles détectées dans les prompts, accès anormaux. L'usage : volumes par équipe, cas d'usage réellement actifs, adoption. Et l'économie : coût par requête et par cas d'usage. Pour un modèle prédictif s'ajoute la dérive : l'écart entre les prédictions et la réalité observée. Le rythme de revue se fixe dans le registre des usages, système par système.",
+    q: "Que mesure un monitoring IA ?",
+    a: "Quatre familles d'indicateurs couvrent la plupart des usages. La qualité : justesse des réponses sur un échantillon relu, part des sources correctes pour un assistant documentaire, erreurs signalées. La sécurité : données sensibles repérées dans les requêtes, accès anormaux, consignes contournées. L'usage : volumes par équipe, cas d'usage en service. Le coût : dépense par requête et par cas d'usage. Un modèle prédictif ajoute la dérive, l'écart entre ses prévisions et ce qui se produit. Le registre fixe, système par système, le rythme de lecture et la personne qui reçoit l'alerte.",
   },
   {
-    q: "Faut-il un outil de gouvernance des modèles pour être conforme ?",
-    a: "Non, pas dans la plupart des situations. La conformité repose sur un dispositif : un registre des usages, des rôles, des règles de validation, des revues, une documentation. Un outil de gouvernance des modèles automatise ce dispositif quand les systèmes se multiplient ou quand la traçabilité doit être produite à la demande, ce qui concerne d'abord les systèmes à haut risque et les modèles développés en interne. Une PME qui utilise quelques assistants du marché tient sa gouvernance avec un registre partagé et des revues planifiées. Nous ne vendons aucun outil : nous dimensionnons l'outillage à votre dispositif, et nous le disons quand un tableur suffit.",
+    q: "Un outil de gouvernance des modèles est-il indispensable ?",
+    a: "Rarement. La conformité repose sur des rôles, un registre, des règles de validation, des revues et une documentation ; un outil automatise ce travail quand les systèmes se comptent par dizaines ou quand la traçabilité doit sortir à la demande, ce qui concerne surtout les modèles développés en interne et les futurs systèmes à haut risque. Une PME qui utilise trois assistants du marché tient sa gouvernance avec un tableur partagé et un comité trimestriel. Nous le disons quand c'est le cas : Masteria ne vend aucun logiciel.",
   },
   {
-    q: "Combien de temps pour mettre en place un dispositif de gouvernance IA ?",
-    a: "Cela dépend de la taille de l'organisation, du nombre d'usages d'IA déjà en place et de votre niveau de départ en matière de conformité. Un audit et une première cartographie des usages se mènent généralement en quelques semaines ; la mise en place complète du dispositif (politique, registre, comité, plan de conformité) s'étale ensuite selon le périmètre. La gouvernance n'est pas un livrable ponctuel mais un dispositif qui vit : le rythme de revue se cale sur l'évolution de vos usages et l'application progressive de l'AI Act. Nous proposons un cadrage avant tout chiffrage, pour adapter l'effort à votre réalité.",
+    q: "Combien de temps faut-il pour installer la gouvernance ?",
+    a: "Tout dépend du nombre d'entités, du nombre d'usages déjà en place et de votre point de départ en conformité. L'audit et le premier inventaire se mènent en général en quelques semaines. Le registre, la charte et le comité suivent, puis le plan de conformité s'étale selon les échéances qui vous concernent, dont la plus proche pour le haut risque tombe le 2 décembre 2027. Nous estimons cet effort pendant la demi-heure de cadrage, avant tout devis.",
+  },
+  {
+    q: "Qui doit porter la gouvernance de l'IA en interne ?",
+    a: "Un membre de la direction la porte, parce que les arbitrages engagent l'organisation. Autour de lui, un référent IA reçoit les demandes et anime le registre, le DPO veille sur les données personnelles, la DSI règle les consoles des outils, et chaque système a un propriétaire métier qui en répond. Dans une PME, deux personnes cumulent souvent ces rôles ; dans un groupe, chaque filiale nomme les siens. Quand le poste de responsable de l'IA n'existe pas encore, notre page Chief AI Officer décrit les options, dont le temps partagé.",
   },
 ]
 
-/* ───────── Repères chiffrés (faits sourcés, citables) ───────── */
+/* ───────── Repères datés (faits sourcés, citables) ───────── */
 
 const MARKET_STATS = [
   {
     icon: Scale,
-    stat: '1ᵉʳ août 2024',
-    label: "entrée en vigueur de l'AI Act européen (Règlement UE 2024/1689), première réglementation transversale de l'IA, en application par paliers",
-    source: 'EUR-Lex, Règlement (UE) 2024/1689',
-    sourceUrl: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689',
+    stat: '27 juillet 2026',
+    label: "l'Omnibus devient applicable : article 4 réécrit, obligations du haut risque décalées à la fin 2027 pour l'annexe III et à l'été 2028 pour l'annexe I",
+    source: 'EUR-Lex, règlement (UE) 2026/1744',
+    sourceUrl: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj',
   },
   {
     icon: ShieldCheck,
-    stat: '25 mai 2018',
-    label: "application du RGPD, socle de conformité de tout traitement de données personnelles, y compris par un système d'IA",
+    stat: '17 août 2026',
+    label: "la CNIL actualise sa foire aux questions sur le règlement IA et y reporte le calendrier fixé par l'Omnibus",
     source: 'CNIL',
-    sourceUrl: 'https://www.cnil.fr/fr/intelligence-artificielle',
+    sourceUrl: 'https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil',
   },
   {
     icon: AlertTriangle,
-    stat: '≥ 30 %',
-    label: "des projets d'IA générative pourraient être abandonnés après le POC d'ici fin 2025, faute de cadrage et de valeur démontrée",
-    source: 'Gartner, juillet 2024',
-    sourceUrl: 'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025',
+    stat: '3 avril 2026',
+    label: "annonce des contrôles CNIL de l'année, dont le recrutement : décisions automatisées, information des candidats, durées de conservation",
+    source: 'CNIL, contrôles 2026',
+    sourceUrl: 'https://www.cnil.fr/fr/controles-prioritaires-2026',
   },
 ]
 
@@ -358,40 +386,36 @@ const MARKET_STATS = [
 const GLOSSARY = [
   {
     term: "Gouvernance de l'IA",
-    def: "Ensemble des règles, processus et instances qui encadrent l'usage de l'intelligence artificielle dans une organisation : registre des usages, classification des risques, politique et charte, supervision humaine, traçabilité et conformité.",
+    def: "Partage écrit des décisions qu'une organisation prend sur ses usages d'intelligence artificielle : qui autorise un usage, qui en répond, qui le contrôle, selon quelles règles et à quel rythme de revue.",
   },
   {
-    term: 'AI Act (Règlement UE 2024/1689)',
-    def: "Première réglementation transversale de l'IA dans l'Union européenne, entrée en vigueur le 1ᵉʳ août 2024 et applicable par paliers. Elle classe les systèmes d'IA par niveau de risque et fixe des obligations proportionnées.",
+    term: 'AI Act',
+    def: "Nom courant du règlement européen (UE) 2024/1689 relatif à l'IA, qui court depuis le 1ᵉʳ août 2024 et a été retouché par l'Omnibus de juillet 2026. Il proportionne ce qu'il exige au risque que présente chaque usage, et vise les fournisseurs comme les déployeurs.",
   },
   {
     term: 'Conformité IA',
-    def: "Respect des obligations réglementaires applicables aux systèmes d'IA, principalement l'AI Act et le RGPD : classification des usages par risque, documentation, transparence, supervision humaine et conformité des traitements de données.",
+    def: "Situation d'une organisation qui satisfait, usage par usage, à ce que l'AI Act et le RGPD lui demandent, et peut le démontrer avec son registre, ses règles et ses traces.",
   },
   {
     term: 'Supervision humaine',
-    def: "Maintien d'un contrôle humain sur les décisions prises ou assistées par un système d'IA, en particulier sur les usages sensibles. Exigence centrale de l'AI Act pour les systèmes à haut risque.",
+    def: "Contrôle exercé sur un système d'IA par une personne compétente, formée et nommée, qui peut en écarter le résultat. L'article 26 de l'AI Act en fera une obligation pour les déployeurs d'usages classés à haut risque.",
   },
   {
     term: 'Registre des usages IA',
-    def: "Inventaire vivant des systèmes et usages d'IA de l'organisation, avec leurs finalités, propriétaires, données mobilisées et niveau de risque. Socle opérationnel de la gouvernance.",
+    def: "Tableau tenu à jour qui décrit chaque système d'IA de l'organisation : finalité, service, outil et offre, données, niveau de risque, propriétaire, date de la prochaine revue.",
+  },
+  {
+    term: 'Propriétaire d\'un système',
+    def: "Personne inscrite au registre qui répond d'un système d'IA : elle suit ses indicateurs, signale ses incidents au référent et demande sa revue quand l'usage change.",
   },
   {
     term: "Gouvernance des données pour l'IA",
-    def: "Règles et processus qui encadrent les données mobilisées par les systèmes d'IA : base légale des traitements, qualité et cycle de vie, minimisation, cloisonnement des données sensibles et traçabilité des flux vers les fournisseurs. Volet data de la gouvernance IA, au croisement du RGPD et de l'AI Act.",
+    def: "Volet de la gouvernance qui suit les données consommées par chaque système : base légale, origine, sensibilité, contrat et hébergement chez l'éditeur. Il raccorde le registre des usages IA à celui des traitements.",
   },
   {
     term: 'Comité de gouvernance IA',
-    def: "Instance interne qui pilote la gouvernance de l'IA dans la durée : validation des nouveaux usages, arbitrage des risques, suivi du registre et du plan de conformité. Sa composition croise directions métier, juridique, données et systèmes d'information.",
+    def: "Instance qui instruit les demandes de nouveaux usages, arbitre les risques et relit le registre à date fixe. Elle associe en général la direction, des responsables métier, la DSI, le juridique et le DPO.",
   },
-]
-
-/* ───────── Sources de référence (liens d'autorité, suivis) ───────── */
-
-const REFERENCES = [
-  { label: "AI Act — texte officiel (EUR-Lex, Règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
-  { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
-  { label: "Intelligence artificielle et RGPD — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -399,8 +423,8 @@ const REFERENCES = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: "Gouvernance de l'IA & mise en conformité AI Act — Masteria",
-  description: "Conseil et accompagnement en gouvernance de l'intelligence artificielle et mise en conformité AI Act pour les entreprises : audit de conformité, registre et cartographie des usages IA, politique et charte IA, comité de gouvernance, supervision humaine et gouvernance des données pour l'IA (RGPD).",
+  name: "Gouvernance de l'IA et mise en conformité AI Act, par Masteria",
+  description: "Mission de conseil qui installe la gouvernance de l'intelligence artificielle : inventaire et audit de conformité AI Act et RGPD, registre des usages avec un propriétaire par système, politique et charte, comité et référent IA, supervision humaine, monitoring et gouvernance des données.",
   url: 'https://www.master-ia.fr/gouvernance-ia',
   serviceType: "Gouvernance et conformité de l'intelligence artificielle",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -414,14 +438,14 @@ const serviceJsonLd = {
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: "Prestations de gouvernance et de conformité IA",
+    name: "Missions de gouvernance et de conformité IA",
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Audit de conformité IA', description: "Mesure de l'exposition au regard de l'AI Act et du RGPD, cartographie des usages et identification des écarts." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Registre & cartographie des usages IA', description: "Inventaire des systèmes d'IA classés par niveau de risque, socle vivant de la gouvernance." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Politique & charte IA internes', description: "Rédaction des règles d'usage, de confidentialité et de responsabilité encadrant l'IA dans l'organisation." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comité de gouvernance IA', description: "Constitution de l'instance de pilotage : composition, rôles, validation des usages et arbitrage." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Supervision humaine & traçabilité', description: "Points de contrôle humain, journalisation et documentation exigés par l'AI Act." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Gouvernance des données pour l'IA", description: "Base légale des traitements, qualité et cycle de vie des données, minimisation, cloisonnement des données sensibles et traçabilité des flux vers les fournisseurs d'IA." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Audit de conformité IA', description: "État des lieux daté des usages d'IA, classés par niveau de risque, avec les écarts constatés face à l'AI Act et au RGPD." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Registre des usages IA', description: "Une ligne par système, avec son propriétaire, ses données, son niveau de risque et sa date de revue." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Politique et charte IA', description: "Engagements de la direction et consignes d'usage rédigés avec les métiers." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Comité et référent IA', description: "Composition, circuit de validation des nouveaux usages, délai de réponse et premières séances accompagnées." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Supervision humaine et monitoring', description: "Validation humaine des décisions sensibles, traces conservées et indicateurs suivis système par système." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Gouvernance des données pour l'IA", description: "Base légale, origine, sensibilité des données et conditions de chaque éditeur, reliées au registre RGPD." } },
     ],
   },
 }
@@ -431,16 +455,16 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: "Gouvernance de l'IA en entreprise : cadrer, sécuriser et mettre en conformité vos usages",
+  headline: "Gouvernance de l'IA : qui décide, qui contrôle et qui répond de vos usages",
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-06-15',
-  dateModified: '2026-09-03',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
-  about: ["Gouvernance de l'intelligence artificielle", 'Conformité AI Act', "Gouvernance des données pour l'IA", 'RGPD'],
+  about: ["Gouvernance de l'intelligence artificielle", 'Conformité AI Act', 'Comité IA', "Gouvernance des données pour l'IA", 'RGPD'],
 }
 
 const definedTermSetJsonLd = {
@@ -503,8 +527,9 @@ export default function GouvernanceIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        citations={PAGE_CITATIONS}
         datePublished="2026-06-15"
-        dateModified="2026-09-03"
+        dateModified="2026-10-07"
         extraJsonLd={[serviceJsonLd, definedTermSetJsonLd, articleJsonLd]}
       />
 
@@ -530,37 +555,37 @@ export default function GouvernanceIAPage() {
               <ShieldCheck size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Conseil en gouvernance & conformité IA
+              Conseil · rôles, registre et conformité de l'IA
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Gouvernance de l'IA
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>cadrer, sécuriser et mettre en conformité vos usages</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>qui décide, qui contrôle et qui répond de vos usages</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
+            Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui conduit les missions de gouvernance de Masteria · calendrier AI Act relu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La gouvernance de l'IA encadre l'usage de l'intelligence artificielle dans votre organisation : cartographie des usages, classification des risques, politique interne, supervision humaine et conformité AI Act et RGPD. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria audite, cadre et met en place le dispositif.</strong>
+            La gouvernance de l'IA répartit les rôles autour de chaque usage d'intelligence artificielle : une direction qui arbitre, un référent qui instruit les demandes, un propriétaire qui répond de chaque système, un registre qui garde la trace. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria l'installe avec vous, du premier inventaire au comité qui la fait vivre.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Avec l'AI Act, la gouvernance de l'intelligence artificielle devient un sujet de direction. Cabinet spécialisé sur l'IA depuis 2022, fondé à Lyon, nous accompagnons la conformité IA en entreprise : audit, registre des usages, politique et charte, comité de gouvernance. Un dispositif proportionné, pas une usine à gaz.
+            L'AI Act a rendu le sujet concret. Les interdictions et l'article 4 sont opposables depuis février 2025, l'obligation de transparence depuis août 2026, et les usages sensibles de l'annexe III entreront dans le régime du haut risque le 2 décembre 2027. Cabinet lyonnais créé en 2022 et indépendant des éditeurs, nous taillons le dispositif à votre organisation : deux pages de règles et un référent pour une PME, un comité et des propriétaires par filiale pour un groupe.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre gouvernance IA
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#piliers" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Ce que nous accompagnons
+              Les six pièces du dispositif
             </a>
           </div>
 
@@ -577,7 +602,7 @@ export default function GouvernanceIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
             <dl style={{ margin: 0 }}>
@@ -592,20 +617,20 @@ export default function GouvernanceIAPage() {
         </div>
       </section>
 
-      {/* ── PILIERS DE LA GOUVERNANCE (éditorial asymétrique) ── */}
+      {/* ── LES SIX PIÈCES DU DISPOSITIF (éditorial asymétrique) ── */}
       <section id="piliers" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Ce que nous accompagnons</Kicker>
+              <Kicker>Le dispositif</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Que recouvre la gouvernance de l'IA en entreprise ?
+                Que met-on derrière la gouvernance de l'IA en entreprise ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>La gouvernance de l'IA en entreprise recouvre l'audit de conformité, le registre et la cartographie des usages, la politique et la charte IA, le comité de gouvernance, la supervision humaine et la traçabilité, ainsi que la gouvernance des données pour l'IA (RGPD). L'objectif est constant : sécuriser et fiabiliser les usages d'IA tout en respectant l'AI Act.</strong>
+                <strong>La gouvernance de l'IA en entreprise met un nom en face de chaque décision : autoriser un usage, le surveiller, en répondre. Elle repose sur six pièces, de l'inventaire audité au volet données relié au RGPD, en passant par le registre, la charte, le comité et la supervision humaine.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Six piliers structurent un dispositif de gouvernance. Ils se combinent selon votre maturité : certaines organisations partent d'un audit, d'autres d'un besoin de politique IA, d'autres encore d'un comité à constituer face à la multiplication des usages.
+                L'ordre d'assemblage dépend de votre point de départ. Une PME de trente personnes commence souvent par la charte et le référent ; un groupe multi-sites commence par l'inventaire, parce que personne ne sait combien d'outils tournent déjà dans ses filiales.
               </p>
             </div>
 
@@ -622,7 +647,7 @@ export default function GouvernanceIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                La gouvernance s'appuie sur un socle data conforme : pour la conformité des traitements, voyez notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link>. Pour situer votre point de départ, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> cadre la maturité de l'organisation, gouvernance comprise.
+                Le contenu de la charte est détaillé sur notre page <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>, le volet données personnelles sur <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>. Si vous ignorez encore par où commencer, le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> mesure votre maturité, règles d'usage comprises, avant toute mission plus longue.
               </p>
             </div>
           </div>
@@ -634,12 +659,12 @@ export default function GouvernanceIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Pourquoi maintenant</Kicker>
+              <Kicker>Le calendrier presse</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Pourquoi mettre en place une gouvernance de l'IA dès maintenant ?
+                Pourquoi installer la gouvernance de l'IA dès 2026 ?
               </h2>
               <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que l'AI Act s'applique par paliers depuis le 1ᵉʳ août 2024, que le RGPD encadre déjà les données et que les usages d'IA se diffusent plus vite que les règles. Cartographier, classer et cadrer tôt évite de subir l'échéance et sécurise l'adoption au lieu de la freiner.</strong>
+                <strong>Trois paliers de l'AI Act sont déjà en application, le haut risque arrive le 2 décembre 2027 et la CNIL contrôle cette année les outils de recrutement. Une gouvernance posée maintenant se construit au calme ; posée à l'automne 2027, elle se bâtira sous la pression de l'échéance.</strong>
               </p>
             </div>
 
@@ -656,7 +681,7 @@ export default function GouvernanceIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Pour la montée en compétences de vos équipes sur le règlement, le conseil se prolonge par notre <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link>, distincte de cet accompagnement. Pour la stratégie d'ensemble, voyez notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>.
+                Les personnes qui tiendront le dispositif apprennent à lire le règlement dans notre <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link>. Pour relier la gouvernance à vos choix de direction et à votre feuille de route, voyez le <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>.
               </p>
             </div>
           </div>
@@ -672,11 +697,11 @@ export default function GouvernanceIAPage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>La mise en œuvre de la gouvernance de l'IA suit cinq étapes : cadrage et périmètre, audit et classification des risques selon l'AI Act, construction du registre des usages, mise en place du dispositif (politique, charte, comité, supervision), puis plan de mise en conformité et suivi. Chaque étape produit un livrable concret et un point de décision.</strong>
+            <strong>La mise en œuvre de la gouvernance de l'IA avance en cinq étapes : cadrer le périmètre, inventorier et classer les usages, ouvrir le registre avec un propriétaire par système, écrire les règles et installer le comité, puis planifier la mise en conformité et les revues. Chaque étape s'achève sur une décision prise par votre direction.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
-            Le même chemin pour chaque organisation : cadrer, auditer, cartographier, outiller, mettre en conformité. La gouvernance s'installe comme un dispositif vivant, pas comme un classeur refermé après l'audit.
+            L'ordre a une raison. On ne nomme pas de propriétaire pour un outil qu'on n'a pas recensé, et un comité privé de registre débat dans le vide.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -702,7 +727,7 @@ export default function GouvernanceIAPage() {
         </div>
       </section>
 
-      {/* ── CLASSIFICATION DES RISQUES AI ACT (ancre sombre — pivot) ── */}
+      {/* ── CLASSIFICATION DES RISQUES AI ACT (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -715,20 +740,20 @@ export default function GouvernanceIAPage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>L'AI Act répartit les systèmes d'IA en quatre niveaux de risque : inacceptable (interdit), haut risque (obligations renforcées), risque limité (obligations de transparence) et risque minimal (pas d'obligation spécifique). Les obligations sont proportionnées au risque : classer chaque usage est donc la première étape de la mise en conformité.</strong>
+            <strong style={{ color: '#fff' }}>L'AI Act range chaque usage d'IA dans l'un de quatre niveaux : interdit, haut risque, transparence, risque minimal. Le niveau dépend de ce qu'on confie au système. Le même assistant reste au risque minimal quand il rédige un compte rendu et entre dans le haut risque s'il sert à trier des candidatures.</strong>
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            Le tableau résume les quatre catégories du Règlement (UE) 2024/1689 et ce qu'elles impliquent. La classification de vos usages se fait lors de l'audit, en croisant chaque système avec ces niveaux et avec vos traitements de données au regard du RGPD.
+            Le tableau reprend le texte de 2024 dans sa rédaction issue de l'Omnibus. Pendant l'audit, chaque ligne de votre inventaire est rapprochée de ces quatre niveaux et de vos traitements de données au sens du RGPD.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
-            <table aria-label="Classification des systèmes d'IA par niveau de risque selon l'AI Act" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
+            <table aria-label="Les quatre niveaux de risque de l'AI Act, avec leur date d'application" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
               <thead>
                 <tr>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '22%' }}>Niveau de risque</th>
-                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Statut</th>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '52%' }}>Ce que cela implique</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '20%' }}>Niveau de risque</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '24%' }}>Régime et date</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '56%' }}>Exemples et conséquences pour vous</th>
                 </tr>
               </thead>
               <tbody>
@@ -744,15 +769,15 @@ export default function GouvernanceIAPage() {
           </div>
 
           <p style={{ color: '#94A3B8', fontSize: 13.5, lineHeight: 1.7, margin: '18px 0 0', maxWidth: 880 }}>
-            Synthèse indicative des catégories de l'AI Act. La classification précise d'un usage donné dépend de sa finalité et de son contexte ; elle s'établit au cas par cas lors de l'audit, en s'appuyant sur le texte officiel du Règlement (UE) 2024/1689.
+            Ce tableau simplifie le texte pour donner des repères. Une finalité précise peut faire passer un usage d'une ligne à l'autre ; en cas de doute, l'audit tranche avec le texte officiel et, pour les usages RH, avec votre conseil juridique.
           </p>
 
-          {/* Calendrier d'application par paliers — donne les échéances concrètes (GEO citable) */}
+          {/* Calendrier d'application par paliers (GEO citable) */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#F8FAFC', margin: '52px 0 10px', letterSpacing: '-0.01em' }}>
-            Le calendrier d'application de l'AI Act
+            Le calendrier de l'AI Act, vu depuis votre dispositif
           </h3>
           <p style={{ color: '#B4C0D3', fontSize: 15, margin: '0 0 22px', lineHeight: 1.7, maxWidth: 880 }}>
-            Le règlement s'applique par paliers et chaque échéance ouvre des chantiers à mener en amont. La cartographie et la classification de vos usages déterminent les échéances qui vous concernent.
+            À chaque date correspond une pièce de la gouvernance à tenir prête. Ces échéances ont été relues le 7 octobre 2026 sur le texte de l'Omnibus et sur la page de questions-réponses que la CNIL a actualisée le 17 août 2026.
           </p>
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflow: 'hidden' }}>
             {CALENDRIER.map((row, i) => (
@@ -774,11 +799,11 @@ export default function GouvernanceIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La gouvernance des données pour l'IA organise la façon dont les données alimentent vos systèmes d'IA : base légale et finalités des traitements, qualité et cycle de vie, minimisation et cloisonnement des données sensibles, traçabilité des flux vers les fournisseurs. C'est le volet data de la gouvernance IA, au croisement du RGPD et de l'AI Act.</strong>
+            <strong>La gouvernance des données pour l'IA rattache chaque usage du registre aux données qu'il consomme : leur base légale, leur origine, leur sensibilité et le chemin qu'elles prennent jusqu'à l'éditeur. Elle fait la jonction entre le registre des usages IA et le registre des traitements que le RGPD impose.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 880 }}>
-            Gouverner l'IA commence par gouverner les données qu'elle consomme. Un copilote bureautique branché sur la messagerie, un agent connecté au CRM ou un modèle affiné sur des documents internes posent d'abord des questions de données : lesquelles, pour quoi faire, avec quelles garanties. Quatre dimensions structurent ce volet.
+            Un copilote branché sur la messagerie, un agent relié au CRM, un modèle ajusté sur vos procédures : chacun pose les mêmes questions sur des données différentes. Quatre repères suffisent à la gouvernance ; la méthode RGPD complète, articles à l'appui, figure sur notre page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
@@ -794,12 +819,12 @@ export default function GouvernanceIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Ce volet data est traité lors de l'audit de conformité, puis inscrit au registre des usages. Pour aller plus loin sur la qualité, l'architecture et la conformité de vos données, voyez notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link> ; sur la sécurité des données face aux outils d'IA générative, notre page <Link to="/securite-claude-entreprise" style={aStyle}>sécurité de Claude en entreprise</Link> détaille un cas concret.
+            Quand la qualité ou l'architecture des données freinent les projets, notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link> reprend le chantier. Pour un exemple détaillé des garanties d'un assistant d'IA générative en entreprise, lisez notre analyse de la <Link to="/securite-claude-entreprise" style={aStyle}>sécurité de Claude en entreprise</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── CE QUE MASTERIA ACCOMPAGNE (auditer / cadrer / déployer) ── */}
+      {/* ── CE QUE MASTERIA ACCOMPAGNE (auditer / concevoir / installer) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Notre accompagnement</Kicker>
@@ -808,11 +833,11 @@ export default function GouvernanceIAPage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>Masteria intervient en conseil sur trois temps : auditer votre conformité IA, cadrer le dispositif de gouvernance, puis accompagner sa mise en place, comité compris. C'est un accompagnement, pas une formation : il installe le dispositif, là où la formation rend ensuite vos équipes autonomes.</strong>
+            <strong>Masteria intervient en conseil, au forfait, sur trois temps : auditer votre situation, concevoir le dispositif, puis l'installer jusqu'aux premières séances du comité. La montée en compétences des équipes passe par des formations distinctes, certifiées Qualiopi.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Le point d'entrée se décide au cadrage, selon votre maturité et l'urgence réglementaire. Beaucoup d'organisations commencent par l'audit pour objectiver leur exposition, puis enchaînent sur le cadrage et le déploiement.
+            Nous choisissons ensemble le point d'entrée pendant une demi-heure d'échange offerte. Le forfait vient ensuite, sur devis : quelques milliers d'euros suffisent quand l'audit porte sur un périmètre restreint ; un dispositif complet couvrant plusieurs entités se chiffre en dizaines de milliers.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginBottom: 32 }}>
@@ -839,20 +864,20 @@ export default function GouvernanceIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            Le conseil en gouvernance IA est une prestation de service. Pour la montée en compétences de vos équipes, la <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link>, certifiée Qualiopi, est l'action de formation associée et finançable. À noter : le conseil et l'accompagnement décrits ici ne sont pas finançables par l'OPCO.
+            Le conseil sort du champ de l'OPCO ; seule la <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link> relève de la certification Qualiopi de Masteria (catégorie « actions de formation ») et ouvre une demande de prise en charge, que l'OPCO de votre branche instruit d'après ses critères et son budget. Pour l'audit seul, centré sur le règlement, voyez aussi notre <Link to="/audit-conformite-ai-act" style={aStyle}>audit de conformité AI Act</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── MONITORING IA & OUTILLAGE (requêtes « monitoring ia », « outil de gouvernance des modèles ») ── */}
+      {/* ── MONITORING IA & OUTILLAGE (« monitoring ia », « outil de gouvernance des modèles ») ── */}
       <section id="monitoring" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Monitoring et outillage</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Monitoring IA et outils de gouvernance des modèles : surveiller après avoir cadré
+            Monitoring IA et outils de gouvernance des modèles : la surveillance après le cadrage
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La gouvernance ne s'arrête pas à la charte et au comité : elle suppose un monitoring IA des systèmes en production et un outillage proportionné, du registre partagé à la plateforme de gouvernance des modèles.</strong> Nous dimensionnons cet outillage à votre dispositif et à vos risques, sans vendre de plateforme.
+            <strong>Le monitoring IA suit dans le temps ce que vos systèmes produisent ; un outil de gouvernance des modèles automatise ce suivi quand le volume l'exige.</strong> Nous dimensionnons l'un et l'autre à partir de votre registre, sans plateforme à vous vendre.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
             {MONITORING.map(card => {
@@ -869,35 +894,35 @@ export default function GouvernanceIAPage() {
             })}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Le monitoring se prépare dès le cadrage du dispositif et se met en place avec le comité ; pour les systèmes développés sur mesure, il s'intègre au projet lui-même, voyez notre <Link to="/methode-projet-ia" style={aStyle}>méthode projet IA</Link>.
+            Les indicateurs se choisissent au moment de concevoir le dispositif, et le comité les relit à chaque séance. Pour un système développé sur mesure, la journalisation fait partie du projet lui-même : notre <Link to="/methode-projet-ia" style={aStyle}>méthode projet IA</Link> la prévoit dès la conception.
           </p>
         </div>
       </section>
 
-      {/* ── CONTEXTE & REPÈRES : stats sourcées + définitions + sources (SEO + GEO) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      {/* ── CONTEXTE & REPÈRES : faits datés + définitions + sources (SEO + GEO) ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <Kicker>Contexte & repères</Kicker>
+          <Kicker>Repères datés</Kicker>
           <h2 style={h2Style}>
-            Le cadre réglementaire qui rend la gouvernance IA incontournable
+            Deux règlements encadrent la gouvernance de l'IA
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Deux textes structurent la conformité IA en Europe : l'AI Act (Règlement UE 2024/1689), entré en vigueur le 1ᵉʳ août 2024 et appliqué par paliers, et le RGPD, en application depuis le 25 mai 2018. Le premier classe les systèmes d'IA par risque ; le second encadre les traitements de données personnelles, y compris par l'IA.</strong>
+          <p style={answerStyle}>
+            <strong>L'AI Act, retouché par l'Omnibus signé le 8 juillet 2026, classe les usages d'IA selon le risque qu'ils font courir aux personnes. Le RGPD, dont l'application remonte au 25 mai 2018, régit les données personnelles qu'ils traitent. La CNIL contrôle le second et publie déjà sa lecture du premier.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            À ce cadre s'ajoute une réalité de terrain : beaucoup de projets d'IA n'aboutissent pas faute de cadrage et de valeur démontrée. La gouvernance n'est donc pas qu'une obligation réglementaire, c'est aussi ce qui fiabilise les usages et sécurise le passage à l'échelle.
+            Les textes fixent le minimum. Une gouvernance utile répond aussi à une question de gestion : quels usages méritent une revue mensuelle, et lesquels peuvent tourner sous une règle simple relue une fois par an.
           </p>
 
-          {/* Repères chiffrés sourcés — citables par les moteurs de réponse */}
+          {/* Repères datés et sourcés, citables par les moteurs de réponse */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '0 0 32px' }}>
             {MARKET_STATS.map((s, i) => (
               <div key={i} style={{ ...cardStyle, padding: 24 }}>
                 <div style={{ marginBottom: 14 }}>
                   <IconTile icon={s.icon} />
                 </div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
                 <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
                 <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>
                   Source : <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.source}</a>
@@ -906,9 +931,9 @@ export default function GouvernanceIAPage() {
             ))}
           </div>
 
-          {/* Définitions clés — ancrage d'entités */}
+          {/* Définitions clés, ancrage d'entités */}
           <h3 style={{ ...h3Style, fontSize: 20, margin: '8px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Le vocabulaire de la gouvernance
           </h3>
           <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
             {GLOSSARY.map((g, i) => (
@@ -919,19 +944,44 @@ export default function GouvernanceIAPage() {
             ))}
           </dl>
 
-          {/* Sources de référence — liens d'autorité suivis */}
+          {/* Textes et lectures officielles, liens suivis */}
           <h3 style={{ ...h3Style, fontSize: 20, margin: '44px 0 16px' }}>
-            Sources de référence
+            Textes et lectures officielles consultés pour cette page
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
-            {REFERENCES.map((r, i) => (
-              <li key={i}>
-                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
-                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+            {PAGE_CITATIONS.map(r => (
+              <li key={r.url}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'flex-start', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} style={{ flexShrink: 0, marginTop: 4 }} aria-hidden="true" /> {r.name}
                 </a>
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* ── SUR LE TERRAIN (cas anonymisés, remplace CaseStudyCards) ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Sur le terrain</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Trois organisations, trois façons de répartir les rôles
+          </h2>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>
+            Nos études de cas anonymisées montrent la gouvernance là où elle se joue : dans le nom écrit à côté de chaque outil et dans la règle qui dit qui le fait évoluer.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {CAS.map(cas => (
+              <div key={cas.id} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>{cas.titre}</h3>
+                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{cas.texte}</p>
+                <Link to={`/etudes-de-cas-ia#${cas.id}`} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  Lire l'étude de cas
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -943,20 +993,20 @@ export default function GouvernanceIAPage() {
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Conseil et formation, distincts</Kicker>
+              <Kicker>Après la mission</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Le conseil installe le dispositif, la formation rend vos équipes autonomes
+                Deux formations transmettent le dispositif à ceux qui le tiendront
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La gouvernance de l'IA décrite sur cette page est un accompagnement de conseil. Pour la montée en compétences, deux formations certifiées Qualiopi et finançables OPCO le complètent : la formation AI Act, qui donne à vos équipes la maîtrise du règlement et de ses obligations, et la formation gouvernance IA, qui apprend à construire et faire vivre le dispositif (registre, charte, comité) en autonomie. Le conseil et l'accompagnement, eux, restent des prestations de service non finançables par l'OPCO.
+                Cette page décrit une mission de conseil. Quand vos équipes doivent faire vivre seules le registre et le comité, deux formations couvertes par la certification Qualiopi de Masteria (catégorie « actions de formation ») prennent le relais, facturées 1 980 € HT par journée, en intra ou en individuel : la formation AI Act, qui apprend à lire le règlement et à classer un usage, et la formation gouvernance IA, qui construit en une journée le registre, la trame de charte et le fonctionnement du comité. Leur prise en charge relève de l'OPCO de votre branche, qui l'accorde d'après ses critères et son budget.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/formation-ai-act" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                  Découvrir la formation AI Act
+                  Voir la formation AI Act
                   <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                 </Link>
                 <Link to="/formation-gouvernance-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                  Découvrir la formation gouvernance IA
+                  Programme de la formation gouvernance IA
                   <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                 </Link>
               </div>
@@ -965,13 +1015,6 @@ export default function GouvernanceIAPage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['industrie', 'photovoltaique']}
-        title="Deux gouvernances installées, du comité de direction à la PME"
-        intro="Un Data manager qui porte la politique d'usage d'un groupe international, un référent IA et une charte d'usage dans une PME de trois personnes : la méthode en six temps et ce qu'elle a changé pour les équipes et l'organisation."
-      />
-
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
@@ -979,13 +1022,13 @@ export default function GouvernanceIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Gouvernance de l'IA : les questions fréquentes
+                Gouvernance de l'IA : vos questions, nos réponses
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre organisation pose un cas particulier, une filiale à l'étranger ou un usage RH ?
               </p>
-              <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+              <Link to={RDV} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Exposez-le pendant le cadrage offert
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -1003,32 +1046,27 @@ export default function GouvernanceIAPage() {
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Les pages qui prolongent la gouvernance
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Explorer nos autres expertises IA, du conseil à la formation.
+            Chacune traite une pièce du dispositif sous son propre angle : le document, les données, l'éthique, la formation, les rôles.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "La montée en compétences de vos équipes sur le règlement, distincte du conseil et finançable." },
-              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Formation', desc: "Une journée pour apprendre à construire registre, charte et comité IA en autonomie, finançable OPCO." },
-              { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Conseil', desc: "Le socle data conforme sur lequel s'appuie la gouvernance : audit, qualité, RGPD." },
-              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Guide', desc: "Ce que doit contenir une charte IA, rubrique par rubrique, avec des exemples de formulation." },
-              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Les principes RGPD appliqués à l'IA et les garanties à vérifier avant de choisir un outil." },
-              { label: 'IA responsable', href: '/ia-responsable', tag: 'Guide', desc: "Passer des principes à la pratique : supervision, biais, transparence, ISO/IEC 42001." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, gouvernance et conformité comprises." },
-              { label: 'Audit IA', href: '/audit-ia', tag: 'Conseil', desc: "L'état des lieux exhaustif : maturité, données, écarts RGPD et AI Act, feuille de route chiffrée." },
-              { label: "Stratégie IA d'entreprise : le guide", href: '/blog/strategie-ia-entreprise-guide', tag: 'Guide', desc: "Six composantes, cinq étapes, un exemple sur 90 jours : ce que contient une stratégie IA et comment l'écrire." },
-              { label: 'Chief AI Officer', href: '/chief-ai-officer', tag: 'Rôle', desc: "Qui tient la gouvernance : le rôle, ses missions, et l'option à temps partagé quand le poste n'existe pas encore." },
-              { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Le cap avant le dispositif : cas d'usage priorisés, feuille de route à 90 jours et à 12 mois, arbitrages de direction." },
-              { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "La mission qui précède la gouvernance : inventaire des systèmes, niveaux de risque, écarts et plan de mise en conformité daté." },
-              { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Le développement de solutions IA, conçues avec garde-fous, supervision et traçabilité." },
-              { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Les enjeux de gouvernance et de conformité propres à chaque secteur d'activité." },
-              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Des agents déployés avec les garde-fous et la supervision humaine que cela exige." },
-              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'Usages', desc: "Les usages d'IA générative à cadrer dans le registre et la politique de gouvernance." },
-              { label: "Cas d'usage de l'IA en entreprise", href: '/cas-usage-ia-entreprise', tag: 'Usages', desc: "Les cas d'usage concrets que la gouvernance recense, classe par risque et encadre." },
-              { label: 'Centre de formation IA', href: '/centre-formation-ia-entreprise', tag: 'Formation', desc: "L'organisme certifié Qualiopi qui forme vos équipes à l'IA et à ses cadres." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Document', desc: "Huit rubriques, une formulation proposée pour chacune, et la méthode pour que les salariés lisent le texte jusqu'au bout." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Données', desc: "Articles du RGPD appliqués aux assistants, analyse d'impact, garanties de cinq éditeurs relues au 7 octobre 2026." },
+              { label: 'IA responsable', href: '/ia-responsable', tag: 'Éthique', desc: "Des principes aux preuves : supervision, biais, impacts sur les personnes, normes ISO/IEC 42001 et 42005." },
+              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "Le règlement expliqué en sept heures, vos usages classés, la trame d'un plan de conformité en main." },
+              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Formation', desc: "Une journée où vos équipes montent elles-mêmes leur registre, leur charte et leur comité." },
+              { label: 'Audit de conformité AI Act', href: '/audit-conformite-ai-act', tag: 'Audit', desc: "Inventaire des systèmes, niveaux de risque, écarts et plan daté, quand l'audit seul suffit." },
+              { label: 'Chief AI Officer', href: '/chief-ai-officer', tag: 'Rôle', desc: "Qui porte la gouvernance quand le poste n'existe pas encore, y compris en temps partagé." },
+              { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Données', desc: "Qualité, architecture et conformité des données sur lesquelles reposent vos systèmes." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Point d'entrée", desc: "Mesurer votre maturité avant d'engager une mission, règles d'usage et sécurité comprises." },
+              { label: 'Audit IA', href: '/audit-ia', tag: 'Audit', desc: "État des lieux global : usages, données, écarts réglementaires et feuille de route chiffrée." },
+              { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Stratégie', desc: "Choisir les cas d'usage qui méritent un dispositif avant de bâtir le dispositif lui-même." },
+              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Ce qu'un agent qui agit dans vos logiciels exige en supervision et en traces." },
+              { label: "Rendre un système d'IA auditable : le guide", href: '/blog/auditabilite-systeme-ia', tag: 'Article', desc: "Journaux, versions, preuves : ce qu'il faut conserver pour qu'un contrôle se passe bien." },
+              { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Des systèmes construits avec leurs garde-fous, leur journalisation et leur propriétaire désigné." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -1043,10 +1081,7 @@ export default function GouvernanceIAPage() {
                     {rel.label}
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </span>
+                  <ArrowRight size={15} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
                 </div>
               </Link>
             ))}
@@ -1054,8 +1089,15 @@ export default function GouvernanceIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan mène lui-même les missions de gouvernance du cabinet, de l'inventaire jusqu'à la première séance du comité. Il a revu cette page le 7 octobre 2026, dates de l'Omnibus comprises ; son parcours est retracé sur <Link to="/mathias-nizan" style={aStyle}>sa page de fondateur</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -1064,41 +1106,42 @@ export default function GouvernanceIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Cadrons votre gouvernance de l'IA
+              Mettons un nom en face de chacun de vos usages d'IA
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos usages d'IA et votre niveau de conformité actuel. Nous revenons vers vous sous 24 heures avec une première lecture de votre exposition à l'AI Act et au RGPD, et une proposition de cadrage : périmètre, priorités, dispositif envisageable. Vous repartez avec une vision claire de votre mise en conformité.
+              Dites-nous quels outils tournent chez vous et qui s'en occupe aujourd'hui. En une demi-heure, par visioconférence ou par téléphone, nous situons votre exposition à l'AI Act et au RGPD et le premier chantier à ouvrir. Cette lecture vous appartient, avec ou sans Masteria pour la suite.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Cadrer votre gouvernance IA
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Audit, registre, comité IA · AI Act & RGPD · Lyon, Europe, États-Unis, Inde
+              Conseil au forfait · inventaire, registre, comité · AI Act et RGPD · France, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : l'équipe de la mission ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'équipe de la mission</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Des consultants réunis pour votre dispositif, sous la conduite du fondateur
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              C'est à Lyon, en 2022, que Mathias Nizan a créé Masteria, une entreprise individuelle tournée vers la seule intelligence artificielle. Pour une mission de gouvernance, il réunit selon le besoin des consultants IA (une dizaine dans son réseau), des développeurs quand il faut instrumenter le suivi (cinq environ) et des formateurs (une vingtaine), tous indépendants. Masteria ne dépend d'aucun éditeur, si bien que l'outil de suivi se choisit d'après votre registre. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['2022', 'création du cabinet, à Lyon'],
+              ['≈ 10', 'consultants IA indépendants'],
+              ['France Num', 'Masteria y est Activateur'],
+              ['3 continents', 'Europe, États-Unis, Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -1108,8 +1151,6 @@ export default function GouvernanceIAPage() {
           </div>
         </div>
       </section>
-
-      <OfficialSources />
     </>
   )
 }

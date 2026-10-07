@@ -2,7 +2,83 @@
 // Vérifié le 03/10/2026 : port de Marseille Fos (chiffres 2025 de la page d'accueil, dossier de presse du 20/01/2026, page filière numérique), douane.gouv.fr (RTC), règlement (UE) 2024/1689 lu sur le Publications Office de l'UE (articles 3, 50 et 113), cyber.gouv.fr (II 901), airbus.com (Airbus en France), docs.mistral.ai (licences des modèles), ouigo.com (durée Lyon-Marseille).
 export default {
   slug: 'agence-ia-marseille',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: [
+      "Port, logistique, tourisme, santé",
+      "Lyon à 1 h 40 en TGV",
+      "Ateliers sur site, code à distance",
+      "Clients étrangers servis dans leur langue",
+    ],
+    lien: "Voir l'offre pour Marseille",
+  },
+  ville: {
+    heroSubtitle: "Sur le port, à l'hôtel ou au laboratoire, le temps part dans les mêmes gestes : recopier un document, répondre au même message, relancer un partenaire. Nous repérons ces gestes avec vos équipes à Marseille, puis nous écrivons depuis Lyon les outils qui les prennent en charge.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Repérage des gestes répétitifs, agents reliés à vos logiciels, automatisation des documents de transport et des messages de clients",
+      },
+      {
+        label: "Venir à Marseille",
+        value: "Environ 1 h 40 de TGV direct depuis Lyon, pour chaque atelier et chaque comité de pilotage",
+      },
+      {
+        label: "Pour qui",
+        value: "Maritime et logistique portuaire, tourisme et hôtellerie, santé et biotech, industrie et aéronautique",
+      },
+      {
+        label: "Pour commencer",
+        value: "Un échange de 30 minutes offert, puis une proposition écrite au forfait",
+      },
+    ],
+    presence: "L'équipe Masteria travaille depuis Lyon, à environ 1 h 40 de Marseille en TGV direct. Nous descendons dans la métropole, de la Joliette à Aix et jusqu'à Fos, chaque fois qu'un atelier, un comité ou la remise d'un outil le demande. Le reste du temps, les développeurs avancent à distance et vous montrent chaque version en visio. Nous n'avons pas de bureau à Marseille.",
+  },
+  offresTitre: {
+    kicker: "Notre offre à Marseille",
+    h2: "Conseil, développement et automatisation pour la métropole marseillaise",
+  },
+  offresNote: {
+    titre: "Du conseil à l'outil, sans changer d'équipe.",
+    texte: "Les personnes qui cadrent votre premier chantier suivent sa construction, et vos équipes reçoivent l'outil avec son code et sa documentation.",
+  },
+  ancrage: {
+    kicker: "Aix-Marseille-Provence",
+    h2: "Pourquoi une agence IA pour les entreprises de la métropole marseillaise ?",
+    economie: "Le tissu économique d'Aix-Marseille",
+    presence: "Comment nous intervenons à Marseille",
+    prestations: "Trois chantiers typiques dans la métropole",
+  },
+  formationBloc: {
+    kicker: "Former sur place",
+    h2: "Des sessions à Marseille, sur vos dossiers",
+    lien: "Toutes les formations IA",
+  },
+  etapesBloc: {
+    kicker: "Le déroulé",
+    h2: "Cinq étapes pour un projet mené à Marseille",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises marseillaises",
+    texte: "Vous comparez des agences ? Nos critères figurent dans",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "le guide de choix d'une agence IA",
+    },
+  },
+  maillage: {
+    villes: "Masteria dans d'autres villes",
+    expertises: "Pages utiles avant le cadrage",
+  },
+  cta: {
+    titre: "Un premier flux à outiller à Marseille ?",
+    texte: "Dites-nous quel flux vous coûte du temps (cotations, documents de transport, messages de clients) et les logiciels qui le portent. Notre réponse part dans les 24 heures, et un premier échange de 30 minutes, offert, se cale dans la foulée.",
+  },
+  equipe: {
+    titre: "Une équipe réunie pour votre projet marseillais",
+    texte: "Mathias Nizan, qui a lancé Masteria à Lyon en 2022, dirige les missions marseillaises lui-même. Il s'entoure, selon le dossier, d'un consultant qui cartographie les flux documentaires, de développeurs et d'un formateur, tous indépendants. Aucun d'eux n'a de logiciel portuaire, hôtelier ou médical à placer chez vous.",
+  },
   intro: "À Marseille, une entreprise de transport, de négoce ou de tourisme passe ses journées sur des documents qu'elle n'a pas écrits : l'avis d'arrivée d'un armateur, la demande de cotation d'un chargeur, la question d'un passager qui part pour Bastia ou pour Alger. Un projet d'IA y rend du temps à l'endroit où ces documents entrent dans vos systèmes. Masteria, cabinet d'IA installé à Lyon, à moins de deux heures de train, mène le cadrage chez vous, développe les outils à distance et vous en remet le code.",
   offresIntro: [
     "À Marseille, nos trois métiers s'appliquent aux échanges avec des tiers : armateurs, agents maritimes, transitaires, transporteurs, douane, passagers, donneurs d'ordres de l'aéronautique.",
@@ -10,14 +86,21 @@ export default {
   ],
   offres: [
     {
+      title: "Cadrage des flux prioritaires",
+      cta: "Le conseil IA chez Masteria",
       desc: "Pour un transitaire, un armement, un logisticien de Fos ou une agence de voyages, le conseil commence par la carte des documents reçus : qui les envoie, par quel canal (mail, EDI, portail, Ci5), à quel volume. La feuille de route classe ces flux par temps passé et par risque, et sépare ce qu'un outil prépare de ce qu'un déclarant ou un exploitant signe.",
       points: ["Carte des documents reçus des tiers", "Partage des rôles avec le déclarant", "Feuille de route calée sur la saison"],
     },
     {
+      title: "Agents et outils sur mesure",
+      cta: "Notre agence de développement IA",
+      secondaryCta: "Outils IA par fonction",
       desc: "Nous développons des agents, c'est-à-dire des programmes qui lisent un document, le rapprochent d'un dossier et préparent une saisie, pour les demandes de cotation et les avis d'arrivée. Nous construisons aussi des assistants de réponse aux passagers qui annoncent qu'ils sont une IA, et des outils installés chez vous pour les pièces qui ne peuvent pas sortir. Chacun est testé sur les documents de votre dernière saison.",
       points: ["Lecture des cotations et des avis d'arrivée", "Assistant passagers conforme à l'article 50", "Installation sur vos serveurs si nécessaire"],
     },
     {
+      title: "Automatisation des documents et des messages",
+      cta: "Notre approche de l'automatisation",
       desc: "Reprise des fichiers d'entrepôt dans votre logiciel de gestion avec contrôle des totaux, consultation des transporteurs, relances, préparation des données avant une déclaration en douane : chaque automatisation garde un point de contrôle humain et passe par les échanges que vos partenaires autorisent.",
       points: ["Imports contrôlés par les totaux", "Consultation des transporteurs", "Échanges EDI ou interfaces documentées"],
     },
@@ -98,19 +181,19 @@ export default {
       h3: "Retour de mission : transporteurs, fichiers d'entrepôt et demandes de clients, trois points d'entrée à outiller",
       contexte: "Trois personnes, trois entrepôts en France, des clients à l'export et un seul logiciel de gestion, Odoo. Chez ce distributeur photovoltaïque, le temps partait à recopier ce que d'autres envoyaient. Les devis naissaient de mails ressaisis ligne à ligne. Quinze jours avant chaque livraison, la consultation des transporteurs se faisait à la main. Les numéros de série étaient retapés, la scannette ne sachant pas lire les fichiers venus des entrepôts. Un commissionnaire marseillais retrouvera là ses propres points d'entrée.",
       etapes: [
-        "Les trois responsables de l'entreprise (direction, ventes, opérations) ont été interrogés en visio, chacun sur ses flux ; parmi les pièces étudiées figuraient le mail type d'un transporteur et les fichiers des entrepôts.",
+        "Les trois responsables de l'entreprise (direction, ventes, opérations) ont été interrogés, chacun sur ses flux ; parmi les pièces étudiées figuraient le mail type d'un transporteur et les fichiers des entrepôts.",
         "La vente, la livraison avec l'encaissement, le développement commercial et le pilotage ont été décrits étape par étape ; douze gisements de temps en sont sortis, rangés par impact et par faisabilité sur trois mois.",
-        "Trois assistants sont à construire en une journée sur les fichiers de l'entreprise, avant la formation : l'un consultera les transporteurs à J-15 et proposera un choix, un autre convertira les fichiers d'entrepôt au format d'import d'Odoo en contrôlant les totaux, le troisième transformera les demandes reçues des clients en lignes de devis.",
+        "Trois assistants sont à construire sur les fichiers de l'entreprise avant la formation : l'un consultera les transporteurs à J-15 et proposera un choix, un autre convertira les fichiers d'entrepôt au format d'import d'Odoo en contrôlant les totaux, le troisième transformera les demandes reçues des clients en lignes de devis.",
         "Le diagnostic propose de remplacer les comptes individuels par un abonnement collectif administré par l'entreprise, avec une charte d'usage signée avant la formation, et un référent IA chargé des signalements d'erreur.",
-        "Le plan d'action tient en 90 jours et se termine par une mesure à J+30 de cinq indicateurs, dont l'usage hebdomadaire des assistants par l'équipe.",
+        "Le plan d'action tient en 90 jours et se termine, un mois après la formation, par une mesure de quelques indicateurs simples, dont l'usage des assistants par l'équipe.",
       ],
-      resultat: "La direction dispose depuis septembre 2026 d'un diagnostic et de trois décisions : l'outillage commun, les trois chantiers et la charte d'usage. La formation de deux jours sur site est prévue en octobre 2026. Les objectifs à trois mois, posés avant la formation, restent des cibles tant que la mesure de J+30 n'a pas eu lieu : douze heures au plus entre une demande et l'envoi du devis, deux fois moins de temps passé à consulter les transporteurs, 80 % des réceptions traitées sans ressaisie. Un transitaire marseillais peut en retenir le principe : l'assistant prépare, une personne valide.",
-      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
+      resultat: "La direction dispose depuis septembre 2026 d'un diagnostic et de trois décisions : l'outillage commun, les trois chantiers et la charte d'usage. La formation de deux jours sur site est prévue en octobre 2026. Les objectifs à trois mois, posés avant la formation, restent des cibles tant que la mesure d'un mois n'a pas eu lieu : des devis plus rapides, moins de temps passé à consulter les transporteurs, la fin des ressaisies. Un transitaire marseillais peut en retenir le principe : l'assistant prépare, une personne valide.",
+      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Les trois points d'entrée du distributeur photovoltaïque" },
     },
     pieges: [
       { titre: "Faire recopier l'écran d'un portail par un robot", texte: "Un script qui lit et remplit les champs d'un portail d'armateur ou de transporteur casse à la première mise à jour de l'interface. Les échanges EDI et les interfaces documentées par l'opérateur tiennent dans la durée ; nous vérifions leur existence au cadrage." },
       { titre: "Laisser l'outil choisir le code douanier", texte: "Un code de nomenclature proposé par un modèle reste une suggestion. Le déclarant le valide ou le corrige, et pour un produit récurrent, l'entreprise demande un RTC, valable trois ans dans toute l'Union." },
-      { titre: "Mettre en ligne un assistant passagers qui ne se présente pas", texte: "L'article 50 de l'AI Act est en application depuis le 2 août 2026 : le passager doit savoir qu'il échange avec une IA. L'entreprise qui commande l'assistant et le déploie sous sa marque porte cette obligation." },
+      { titre: "Mettre en ligne un assistant passagers qui ne se présente pas", texte: "Depuis le 2 août 2026, l'AI Act l'exige dans son article 50 : le passager doit savoir qu'il échange avec une IA. L'entreprise qui commande l'assistant et le déploie sous sa marque porte cette obligation." },
       { titre: "Coller un document Diffusion Restreinte dans un service en ligne", texte: "Ces documents relèvent de l'instruction interministérielle n° 901 et d'un système homologué. Un assistant ouvert au public sort de ce cadre ; un outil installé sur vos serveurs, avec un modèle à poids ouverts, peut y entrer." },
       { titre: "Mettre en service au plus fort de la saison", texte: "Un outil lancé quand les volumes culminent n'a pas le temps d'être corrigé, et l'équipe n'a pas le temps de l'apprendre. Les tests se font sur les documents de la saison passée, la mise en service avant la pointe suivante." },
     ],
@@ -154,7 +237,7 @@ export default {
     { name: "Port de Marseille Fos : dossier de presse, résultats 2025 (20 janvier 2026)", url: "https://www.marseille-port.fr/sites/default/files/2026-01/DP_RESULTATS_2025_200126_FR.pdf" },
     { name: "Port de Marseille Fos : filière numérique, Ci5 et MGI", url: "https://www.marseille-port.fr/en/filieres/digital" },
     { name: "douane.gouv.fr : obtenir un renseignement tarifaire contraignant (RTC)", url: "https://www.douane.gouv.fr/demarche/obtenir-un-renseignement-tarifaire-contraignant-rtc-pour-securiser-votre-nomenclature" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (articles 3, 50 et 113)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : déployeur (article 3), information du client (article 50), calendrier (article 113)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
     { name: "Cyber.gouv.fr (ANSSI) : instruction interministérielle n° 901/SGDSN/ANSSI", url: "https://cyber.gouv.fr/instruction-interministerielle-n901" },
     { name: "Airbus : Airbus en France", url: "https://www.airbus.com/en/about-us/our-worldwide-presence/airbus-in-europe/airbus-in-france" },
     { name: "Mistral AI Docs : vue d'ensemble des modèles et de leurs licences", url: "https://docs.mistral.ai/getting-started/models/models_overview/" },

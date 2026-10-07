@@ -147,10 +147,11 @@ const geoIaCities = [...geoCities, 'nantes', 'nice', 'lille', 'bordeaux', 'toulo
 const geoIaSlugs = geoIaCities.map(c => `formation-ia-${c}`)
 
 // Spokes multi-outils (générés dynamiquement depuis METIERS_SPEC)
+// finance, communication, informatique et pedagogique : fusionnées le 07/10/2026 dans leur page métier (308)
 const multiOutilsMetiers = [
-  'marketing', 'ressources-humaines', 'finance', 'commercial',
-  'communication', 'management', 'assistante',
-  'seo', 'service-client', 'informatique', 'pedagogique',
+  'marketing', 'ressources-humaines', 'commercial',
+  'management', 'assistante',
+  'seo', 'service-client',
 ];
 for (const met of multiOutilsMetiers) spokeSet.add(`formation-multi-outils-${met}`);
 

@@ -2,33 +2,39 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Building2, Check, Eye, GraduationCap, Landmark, Layers,
-  ListChecks, MapPin, Network, Scale, ShieldCheck, Sparkles, Target, Workflow, Zap,
+  ListChecks, Network, ShieldCheck, Target, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Money page « formation n8n » (slug /formation-n8n), côté FORMATION
  * (OPCO/Qualiopi visibles).
  * Cible (Semrush fr, relevé 2026-08-28) : « formation n8n » (1 000/mois,
- * KD 23) — le plus gros volume outil non couvert du site.
+ * KD 23), le plus gros volume outil non couvert du site.
  *
  * RÉPARTITION D'INTENTIONS (anti-cannibalisation) :
  *  - /formation-n8n = CETTE page : MAÎTRISER n8n (2 jours, workflows + IA
- *    + agents + fiabilisation) ; porte le tableau comparatif n8n/Make/Zapier ;
- *  - /formation-make et /formation-zapier = les pages sœurs (tableaux
- *    DIVERGENTS : Make = scénarios par métier, Zapier = « suffit ou pas ») ;
- *  - /formation-automatisation-ia = le panorama de la démarche (quoi
- *    automatiser, 3 paliers) ;
- *  - /formation-agents-ia = concevoir des agents dans les outils bureau ;
+ *    + agents + exploitation) ; porte le tableau comparatif n8n/Make/Zapier ;
+ *  - /formation-make et /formation-zapier = les pages sœurs (fiches outil et
+ *    tableaux propres à chaque outil) ;
+ *  - /formation-automatisation-ia = la démarche (quoi automatiser, 3 paliers) ;
+ *  - /formation-agents-ia = concevoir des agents dans les assistants ;
  *  - /agence-automatisation-ia = FAIRE CONSTRUIRE (mission, pas formation).
  *
- * INTÉGRITÉ : faits produit sobres (auto-hébergeable, licence fair-code,
- * éditeur berlinois, nœuds IA et agents, facturation à l'exécution en cloud,
- * version auto-hébergée communautaire gratuite) — pas de compte d'intégrations
- * précis ni de prix éditeur. Tarif Masteria : 1 980 € HT/jour groupe, 2 jours.
+ * RÉÉCRITURE DU 2026-10-07 (texte propre, faits à jour) :
+ * - Relevé n8n.io/pricing le 07/10/2026 : Starter 20 €/mois (2 500 exécutions),
+ *   Pro 50 €/mois (10 000), prix en paiement annuel ; Business 667 €/mois
+ *   (40 000, auto-hébergé, < 100 salariés) ; Enterprise sur devis ; Community
+ *   Edition gratuite (GitHub) ; utilisateurs et workflows illimités ; cloud
+ *   stocké dans l'UE à Francfort ; nœud AI Agent, MCP, validation humaine
+ *   des appels d'outils, tables de données.
+ * - Licence : Sustainable Use License (LICENSE.md du dépôt n8n-io/n8n), usage
+ *   interne ou non commercial.
+ * - Make : crédits (make.com/en/credits) ; Zapier : tâches, AWS États-Unis,
+ *   DPF (zapier.com/pricing et /legal/data-privacy), relevés le 07/10/2026.
+ * - FounderNote, OfficialSources et bloc « Qui vous forme » remplacés par des
+ *   textes propres à la page. Masteria : 1 980 € HT/jour, 2 jours.
  * Entité Wikipédia N8n vérifiée 200 le 2026-08-30.
  */
 
@@ -36,8 +42,8 @@ const SLUG = 'formation-n8n'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Formation n8n : workflows, IA et agents, sans code | Masteria'
-const META_DESC = "Formation n8n en 2 jours : construire des workflows fiables, y brancher l'IA et des agents, auto-héberger en Europe, superviser. Qualiopi, finançable OPCO."
+const META_TITLE = 'Formation n8n : workflows, IA et agents | Masteria'
+const META_DESC = "Formation n8n en 2 jours : workflows fiables, nœuds IA et agents, cloud à Francfort ou auto-hébergement, supervision. Qualiopi, finançable par votre OPCO."
 const KEYWORDS = "formation n8n, formation n8n français, apprendre n8n, formation automatisation n8n, n8n agents ia, formation n8n entreprise"
 
 /* ───────── Styles partagés ───────── */
@@ -69,33 +75,34 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: Workflow, label: 'Low-code : ateliers sur vos processus réels' },
-  { icon: Building2, label: '2 jours en intra, dans vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: GraduationCap, label: 'Organisme Qualiopi · demande OPCO préparée' },
+  { icon: Workflow, label: 'Low-code : un workflow construit par participant' },
+  { icon: ShieldCheck, label: "Cloud européen ou serveurs de l'entreprise" },
+  { icon: Building2, label: 'Deux jours, sur site ou en visioconférence' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── L'essentiel (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Durée', value: "2 jours (14 h) en intra ; format 1 jour « premiers workflows » possible au cadrage" },
-  { label: 'Pour qui', value: "Référents IA, ops, équipes métier outillées, IT de proximité ; à l'aise avec ses outils numériques, sans être développeur" },
-  { label: 'Outil', value: "n8n en version cloud ou auto-hébergée sur vos serveurs (un atout pour les données sensibles), connecté à vos applications" },
-  { label: 'Méthode', value: "Chaque participant construit, teste et fiabilise un workflow complet sur un processus réel de son poste, étapes IA comprises" },
-  { label: 'Livrables', value: "Workflows en état de marche, conventions de nommage et gabarits, gestion d'erreurs posée, plan d'automatisation de l'équipe" },
-  { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable OPCO ; devis sous 24 h" },
+  { label: 'Durée', value: "Deux jours, soit 14 heures ; une journée centrée sur les premiers workflows reste possible." },
+  { label: 'Public', value: "Référents IA, responsables des opérations, profils à l'aise avec la logique d'un tableur avancé ; aucun développeur requis." },
+  { label: 'Environnement', value: "n8n Cloud (données stockées à Francfort) ou instance installée chez vous, choisi avant la session avec votre service informatique." },
+  { label: 'Méthode', value: "Chacun construit un workflow sur un processus de son poste, y ajoute une étape IA, puis le prépare à tourner sans lui." },
+  { label: 'Livrables', value: "Workflows exportés et commentés, un workflow d'erreur commun, des règles d'accès aux credentials, le plan des trois workflows suivants." },
+  { label: 'Financement', value: "Votre OPCO peut couvrir tout ou partie du coût ; ses règles et son budget en décident." },
 ]
 
 /* ───────── Sommaire ───────── */
 
 const SOMMAIRE = [
   ['#pourquoi', 'Pourquoi n8n'],
+  ['#fiche', 'n8n en octobre 2026'],
   ['#programme', 'Programme des 2 jours'],
   ['#comparatif', 'n8n, Make ou Zapier'],
-  ['#cas-usage', "Cas d'usage"],
-  ['#pieges', 'Les pièges'],
+  ['#cas-usage', 'Workflows types'],
+  ['#pieges', 'Écueils'],
   ['#tarif', 'Tarif'],
-  ['#lexique', 'Lexique'],
+  ['#lexique', 'Vocabulaire'],
   ['#faq', 'FAQ'],
 ]
 
@@ -103,25 +110,38 @@ const SOMMAIRE = [
 
 const POURQUOI = [
   {
-    icon: Network,
-    title: 'Des workflows sans plafond',
-    desc: "Déclencheurs, branches, boucles, transformations, appels d'API : n8n encaisse les processus complexes que les outils plus simples finissent par bloquer. Le nœud Code reste disponible pour le dernier kilomètre, sans jamais être obligatoire.",
-  },
-  {
-    icon: Bot,
-    title: "L'IA et les agents intégrés",
-    desc: "n8n embarque des nœuds dédiés à l'IA et aux agents : résumer, extraire, classer, décider d'une étape, interroger vos documents. C'est l'outil naturel pour orchestrer des workflows où l'IA travaille sous contrôle humain.",
-  },
-  {
     icon: ShieldCheck,
-    title: 'Auto-hébergeable, en Europe',
-    desc: "n8n s'installe sur vos serveurs ou chez votre hébergeur européen : les données de vos workflows restent chez vous. Pour les secteurs sensibles, c'est souvent l'argument qui fait choisir n8n, et la version auto-hébergée communautaire est gratuite.",
+    title: 'Vos données restent dans votre périmètre',
+    desc: "La Community Edition s'installe sur une machine de l'entreprise ou chez un hébergeur européen, sans frais de licence pour un usage interne. Le cloud de n8n conserve, lui, les données à Francfort.",
   },
   {
     icon: Layers,
-    title: 'Un coût qui tient à volume',
-    desc: "En cloud, n8n se facture à l'exécution de workflow plutôt qu'à la tâche unitaire : un processus de vingt étapes qui tourne mille fois reste prévisible. À volumétrie croissante, la différence avec les outils facturés à la tâche devient structurante.",
+    title: "Une exécution, quel que soit le nombre d'étapes",
+    desc: "Un workflow de trente étapes lancé mille fois compte mille exécutions. Quand les volumes montent, cette règle rend la facture plus prévisible qu'une facturation à l'étape.",
   },
+  {
+    icon: Bot,
+    title: 'Des agents qui demandent la permission',
+    desc: "Le nœud AI Agent reçoit un objectif et des outils, et n8n peut exiger l'accord d'une personne avant chaque appel d'outil. Le serveur et le client MCP (le protocole qui relie un modèle d'IA à des logiciels) ouvrent vos agents à d'autres applications.",
+  },
+  {
+    icon: Network,
+    title: 'Du code quand le visuel ne suffit plus',
+    desc: "Une étape Code accepte du JavaScript ou du Python, et le nœud HTTP Request appelle n'importe quelle API. Les profils non développeurs s'en passent ; la porte reste ouverte pour les cas particuliers.",
+  },
+]
+
+/* ───────── n8n au 7 octobre 2026 (fiche outil) ───────── */
+
+const FICHE = [
+  { k: 'Éditeur', v: "n8n GmbH, entreprise berlinoise. Le code est publié sous Sustainable Use License, une licence dite fair-code : usage libre pour les besoins internes d'une entreprise, revente de n8n comme service interdite." },
+  { k: 'Facturation', v: "À l'exécution de workflow, quel que soit le nombre d'étapes. Utilisateurs, workflows et intégrations sont illimités sur toutes les offres." },
+  { k: 'Version gratuite', v: "La Community Edition, publiée sur GitHub, que vous installez et maintenez vous-même." },
+  { k: 'Offres cloud', v: "Starter à 20 € par mois pour 2 500 exécutions, Pro à 50 € par mois pour 10 000 exécutions, montants affichés en paiement annuel ; données stockées à Francfort." },
+  { k: 'Offres auto-hébergées', v: "Business à 667 € par mois en paiement annuel pour 40 000 exécutions, pour les entreprises de moins de 100 salariés ; Enterprise sur devis, chez vous ou hébergée par n8n." },
+  { k: 'Intelligence artificielle', v: "Nœud AI Agent et étapes IA, serveur et client MCP, validation humaine avant l'appel d'un outil, tables de données intégrées ; un assistant de construction, en préversion, sur les offres cloud." },
+  { k: 'Points forts', v: "La maîtrise des données, un coût prévisible à volume, des agents outillés, du code possible à chaque étape." },
+  { k: 'Limites', v: "Une interface en anglais et une prise en main plus longue que Make ou Zapier. Une instance auto-hébergée réclame quelqu'un pour les mises à jour, les sauvegardes et la sécurité." },
 ]
 
 /* ───────── Programme 2 jours (Matin / Après-midi) ───────── */
@@ -129,40 +149,40 @@ const POURQUOI = [
 const PROGRAMME = [
   {
     jour: 'Jour 1',
-    titre: 'Prendre en main, construire ses premiers workflows',
-    resume: "De la logique de n8n au premier workflow fiable sur un cas réel du poste.",
+    titre: 'Poser le cadre, construire le premier workflow',
+    resume: "Choisir où tourne n8n, brancher vos applications, puis livrer un workflow doté d'une étape IA.",
     matin: [
-      { t: 'n8n démontré en direct', d: "Workflows, nœuds, exécutions, credentials : la logique de l'outil montrée sur des cas concrets avant de toucher au clavier." },
-      { t: 'Cloud ou auto-hébergé : poser le cadre', d: "Où tournent vos workflows, où passent vos données, qui a accès : le choix d'hébergement et la gestion des credentials se décident en premier." },
-      { t: 'Connecter vos applications', d: "Messagerie, agenda, stockage, tableurs, CRM : brancher les applications réelles de l'équipe, proprement, avec des accès nominatifs." },
-      { t: "L'anatomie d'un workflow fiable", d: "Déclencheur, étapes, transformations, sorties : la structure de référence, et les conventions de nommage qui gardent l'ensemble lisible." },
-      { t: 'Atelier : le premier workflow', d: "Chaque participant choisit une tâche répétitive réelle de son poste et la monte de bout en bout, d'une page blanche ou d'un modèle de la bibliothèque de templates n8n adapté à son cas." },
+      { t: "Un workflow lu à l'écran", d: "Nœuds, connexions, données qui passent d'une étape à l'autre : le formateur fait tourner un workflow complet et ouvre le détail de chaque exécution." },
+      { t: 'Cloud ou instance maison', d: "Où tourne n8n, où vont les données, qui administre : la décision se prend en début de session, avec les critères de votre service informatique." },
+      { t: 'Des credentials rangés dès le départ', d: "Chaque accès à une application s'enregistre une fois, au nom d'un compte de service ou d'une personne, et se partage avec ceux qui en ont l'usage." },
+      { t: 'Expressions et structure des données', d: "Lire un objet JSON, pointer le bon champ, convertir une date : trois gestes qui débloquent la plupart des workflows." },
+      { t: 'Atelier : le workflow de chacun', d: "Chacun rend automatique une tâche de son propre poste, en partant de zéro ou d'un modèle de la communauté n8n relu avec le formateur." },
     ],
     apresmidi: [
-      { t: 'Transformer les données', d: "Filtres, mappings, boucles, fusions : le cœur du travail réel, là où la plupart des workflows se jouent." },
-      { t: "Brancher l'IA dans le flux", d: "Les nœuds IA de n8n sur des cas concrets : résumer un document entrant, extraire des champs, classer une demande, rédiger un brouillon." },
-      { t: 'Webhooks et déclencheurs avancés', d: "Réagir à un événement extérieur : formulaire, email entrant, changement dans une application tierce. Le nœud HTTP Request ouvre le reste : toute application dotée d'une API devient connectable." },
-      { t: 'Atelier : une étape IA dans son workflow', d: "Chacun ajoute une étape IA utile à son workflow du matin, avec un format de sortie imposé et vérifiable." },
-      { t: 'Revue croisée de fin de journée', d: "Chaque workflow passe devant le groupe : lisibilité, robustesse, ce qui casserait en production." },
+      { t: 'Boucles, fusions, conditions', d: "Traiter une liste élément par élément, rapprocher deux sources, aiguiller selon une valeur : la mécanique qui fait tenir un workflow face à des données variées." },
+      { t: 'Le nœud HTTP Request', d: "Une application dotée d'une API devient joignable, même absente du catalogue de n8n ; on apprend à lire une documentation d'API sans être développeur." },
+      { t: "L'étape IA", d: "Condenser un courrier reçu, isoler les champs utiles, ranger une demande dans la bonne catégorie, avec un modèle choisi et une sortie structurée que l'étape suivante contrôle." },
+      { t: "Atelier : ajouter l'étape IA", d: "Chacun insère une étape IA dans son workflow du matin et vérifie la sortie sur dix cas différents." },
+      { t: 'Revue croisée', d: "Les workflows passent de main en main : ce qui casserait en production, ce qu'un collègue ne comprendrait pas." },
     ],
   },
   {
     jour: 'Jour 2',
-    titre: 'Agents, fiabilisation, supervision',
-    resume: "Des agents IA sous garde-fous à la supervision quotidienne des exécutions.",
+    titre: 'Agents, erreurs, exploitation',
+    resume: "Ajouter un agent sous contrôle, rendre chaque échec visible, organiser la vie de l'instance.",
     matin: [
-      { t: 'Les agents IA dans n8n', d: "Quand une étape IA ne suffit plus : donner un objectif, des outils et des limites à un agent, et décider ce qu'il a le droit de faire seul." },
-      { t: 'Interroger vos documents', d: "Brancher un corpus de référence (procédures, gabarits, historiques) pour que les étapes IA répondent avec vos contenus, pas de mémoire." },
-      { t: "La gestion d'erreurs, systématique", d: "Workflows d'erreur, reprises, alertes : un échec silencieux est le pire scénario d'une automatisation ; on rend chaque échec visible." },
-      { t: 'Sécurité et RGPD dans les workflows', d: "Quelles données transitent, où elles sont stockées, qui accède aux credentials : le cadre écrit, aligné sur les recommandations de la CNIL." },
-      { t: 'Atelier : fiabiliser son workflow', d: "Gestion d'erreurs, garde-fous sur les étapes IA, test des cas limites : le workflow du jour 1 devient présentable en production." },
+      { t: 'Le nœud AI Agent', d: "Un objectif, des outils (lire une boîte mail, chercher dans une table, écrire dans un tableur) et des limites : l'agent choisit seul la séquence à suivre." },
+      { t: "L'accord avant l'outil", d: "n8n peut suspendre l'agent avant un appel d'outil et attendre la réponse d'une personne : on règle ce qui passe seul et ce qui attend un feu vert." },
+      { t: 'Vos documents comme référence', d: "Brancher un corpus (procédures, gabarits, historiques) pour que l'agent réponde en s'appuyant sur vos textes." },
+      { t: "Le workflow d'erreur", d: "Un workflow dédié reçoit chaque échec, prévient la bonne personne et garde la trace ; les nouvelles tentatives se règlent nœud par nœud." },
+      { t: 'Atelier : durcir son workflow', d: "Gestion d'erreurs, limites de l'agent, tests sur les cas qui fâchent : le workflow du premier jour devient présentable." },
     ],
     apresmidi: [
-      { t: 'Superviser au quotidien', d: "Lire les exécutions, repérer les dérives, décider quand on répare et quand on débranche : la supervision se rode en atelier." },
-      { t: 'Industrialiser', d: "Sous-workflows réutilisables, conventions d'équipe, documentation légère : ce qui différencie trois workflows qui durent de trente qui meurent." },
-      { t: 'Gouvernance des automatisations', d: "Qui crée, qui valide, qui possède : les règles d'équipe, la validation humaine sur ce qui engage, le registre des workflows actifs." },
-      { t: 'Atelier : le plan de déploiement', d: "Pour chaque workflow construit : responsable, supervision, prochaine itération." },
-      { t: "Plan d'automatisation de l'équipe", d: "Les trois processus prioritaires à automatiser ensuite, qui les porte, à quelle échéance ; la liste part avec vous." },
+      { t: 'Lire le journal des exécutions', d: "Repérer un workflow qui ralentit, une donnée qui change de forme, un volume qui grimpe, et décider quand on suspend un workflow." },
+      { t: 'Sous-workflows et tables de données', d: "Mettre en commun ce qui se répète (notification, journalisation, contrôle) et garder un état sans base externe." },
+      { t: 'Exploiter une instance', d: "Mises à jour, sauvegardes, historique des versions, séparation entre test et production : le minimum vital d'une instance auto-hébergée." },
+      { t: "Atelier : le registre de l'équipe", d: "Chaque workflow reçoit un propriétaire, une description, un niveau de criticité et une date de revue." },
+      { t: 'Les trois workflows suivants', d: "Le groupe arrête la suite, avec un porteur et une échéance pour chacun." },
     ],
   },
 ]
@@ -172,69 +192,75 @@ const PROGRAMME = [
 const COMPARATIF = [
   {
     critere: 'Prise en main',
-    n8n: "Exigeante mais structurante : la logique de nœuds s'apprend en une journée encadrée",
-    make: "Visuelle et rapide : le canevas de scénarios parle tout de suite",
-    zapier: "La plus simple du marché : un Zap se monte en quelques minutes",
+    n8n: "La plus exigeante des trois : comptez une journée encadrée pour être à l'aise",
+    make: "Rapide, grâce au canevas visuel",
+    zapier: "Immédiate pour une automatisation simple",
   },
   {
-    critere: 'Hébergement des données',
-    n8n: "Cloud, ou auto-hébergé sur vos serveurs européens : les flux restent chez vous",
-    make: "Cloud (éditeur européen)",
-    zapier: "Cloud (éditeur américain) : les transferts de données se cadrent au préalable",
+    critere: 'Unité facturée',
+    n8n: "L'exécution de workflow, quel que soit le nombre d'étapes",
+    make: "Le crédit, ex-opération, en général un par action de module",
+    zapier: "La tâche, y compris pour les étapes IA et le code",
   },
   {
-    critere: 'Modèle de coût',
-    n8n: "À l'exécution de workflow en cloud ; version auto-hébergée communautaire gratuite",
-    make: "À l'opération : chaque module exécuté compte",
-    zapier: "À la tâche : simple au départ, le budget monte vite à volume",
+    critere: 'Premier prix payant',
+    n8n: "Cloud Starter, 20 € par mois en paiement annuel",
+    make: "Core : 9 $ mensuels pour 10 000 crédits, avec engagement annuel",
+    zapier: "Professional : 19,99 $ par mois au minimum, en paiement annuel",
   },
   {
-    critere: 'IA et agents',
-    n8n: "Nœuds IA et agents natifs, les plus complets des trois : extraction, classification, agents outillés, corpus",
-    make: "Modules IA solides pour insérer des étapes intelligentes dans les scénarios",
-    zapier: "Étapes IA et agents simples, suffisants pour les premiers cas",
+    critere: 'Hébergement',
+    n8n: "Cloud à Francfort, ou vos propres serveurs",
+    make: "Serveurs AWS européens ou nord-américains, au choix",
+    zapier: "AWS aux États-Unis, sous le Data Privacy Framework",
   },
   {
-    critere: 'Le bon choix quand',
-    n8n: "Processus complexes, données sensibles, volumétrie, agents IA sérieux",
-    make: "L'équilibre visuel-puissance pour le marketing et les ops",
-    zapier: "Premiers pas, petits volumes, équipes non techniques",
+    critere: 'Agents IA',
+    n8n: "Nœud AI Agent, MCP, accord humain avant l'appel d'un outil",
+    make: "Make AI Agents, présentés en bêta",
+    zapier: "Zapier Agents, décomptés en activités à part",
+  },
+  {
+    critere: 'À retenir quand',
+    n8n: "Les données sont sensibles, les volumes élevés, un profil technique est disponible",
+    make: "Des équipes métier tiennent à garder la main sur leurs scénarios",
+    zapier: "Les automatisations sont courtes et l'équipe n'a aucun profil technique",
   },
 ]
 
-/* ───────── Cas d'usage (6 cartes) ───────── */
+/* ───────── Workflows types (6 cartes) ───────── */
 
 const CAS_USAGE = [
-  { icon: Target, title: 'Qualifier les demandes entrantes', desc: "Un email ou un formulaire arrive : l'étape IA classe, résume, rapproche du dossier existant, et le workflow route vers la bonne personne avec un brouillon prêt." },
-  { icon: Eye, title: 'La veille livrée chaque semaine', desc: "Collecter vos sources, écarter le bruit, faire résumer par l'IA, livrer une synthèse dans la messagerie de l'équipe : le workflow type du jour 1." },
-  { icon: ListChecks, title: 'Le reporting préparé', desc: "Exports collectés, indicateurs calculés, commentaire pré-rédigé dans votre gabarit : le responsable relit et diffuse, au lieu de compiler." },
-  { icon: Layers, title: 'Les dossiers assemblés', desc: "Avant un rendez-vous ou une échéance, le workflow rassemble pièces, historique et synthèse IA dans un document prêt à relire." },
-  { icon: Network, title: 'Les applications synchronisées', desc: "CRM, facturation, tableurs : les doubles saisies disparaissent, avec des règles écrites sur qui fait foi en cas de conflit." },
-  { icon: Bot, title: "L'agent de tri sous contrôle", desc: "Un agent n8n traite une boîte générique : il prépare réponses et classements, un humain valide ce qui engage. Le garde-fou est dans le workflow." },
+  { icon: Target, title: "Les appels d'offres présélectionnés", desc: "Chaque matin, le workflow récupère les avis publiés la veille, écarte ceux qui sortent du périmètre et résume les autres pour le responsable commercial." },
+  { icon: Eye, title: 'La veille réglementaire classée', desc: "Les publications de vos sources sont collectées, dédoublonnées, résumées et rangées par thème dans une table que l'équipe juridique consulte." },
+  { icon: ListChecks, title: 'Commandes et factures rapprochées', desc: "Les commandes de l'ERP et les factures reçues sont comparées ; seuls les écarts remontent, avec le détail utile pour trancher." },
+  { icon: Layers, title: 'Le dossier de rendez-vous', desc: "La veille d'un rendez-vous client, le workflow rassemble l'historique du CRM, les derniers échanges et une synthèse à relire." },
+  { icon: Network, title: 'Le support de premier niveau', desc: "Un ticket arrive, l'agent cherche la réponse dans la base de connaissances et prépare une proposition que le conseiller valide avant envoi." },
+  { icon: Bot, title: "L'agent qui propose la mise à jour du CRM", desc: "Après un rendez-vous, l'agent lit le compte rendu et propose les champs à modifier ; rien ne change dans le CRM sans l'accord du commercial." },
 ]
 
-/* ───────── Les pièges (5 cartes) ───────── */
+/* ───────── Les écueils (5 cartes) ───────── */
 
 const PIEGES = [
   {
     title: 'Le workflow-spaghetti',
-    desc: "Quarante nœuds sans structure, illisibles trois semaines plus tard. La parade s'apprend au jour 2 : sous-workflows, conventions de nommage, documentation légère.",
+    desc: "Quarante nœuds sans découpage, que personne ne relit trois semaines plus tard. Sous-workflows, noms explicites et notes posées sur le canevas règlent le problème.",
   },
   {
-    title: 'Les credentials partagés à la va-vite',
-    desc: "Un compte personnel branché partout, et l'automatisation meurt au premier départ. Les accès se posent proprement dès le jour 1 : nominatifs, périmétrés, révocables.",
+    title: 'Le credential personnel branché partout',
+    desc: "Un compte personnel sert à tout, et l'automatisation s'arrête le jour où son titulaire part. On crée des accès dédiés, limités et révocables.",
   },
   {
-    title: "L'échec silencieux",
-    desc: "Sans gestion d'erreurs, un workflow qui casse ne prévient personne, et l'équipe découvre le trou des semaines plus tard. Chaque workflow de la formation sort avec ses alertes.",
+    title: "L'instance laissée sans mises à jour",
+    desc: "Une instance auto-hébergée vieillit vite : correctifs de sécurité non appliqués, sauvegardes absentes. Un responsable et un calendrier de mise à jour sont désignés avant la mise en service.",
   },
   {
-    title: "L'IA sans garde-fou",
-    desc: "Une étape IA qui envoie ou modifie sans validation finira par le faire de travers. Ce qui engage passe par un humain : c'est une règle de conception, posée dans le flux lui-même.",
+    title: "L'échec que personne ne voit",
+    desc: "Sans workflow d'erreur, un échec dort dans le journal sans prévenir qui que ce soit. Chaque workflow de la session est relié à une alerte nominative.",
   },
   {
-    title: 'Personne ne supervise',
-    desc: "Des workflows jamais relus dérivent sans bruit : données qui changent de forme, volumes qui explosent. La supervision (exécutions, alertes, revue) se décide à la conception.",
+    title: "L'agent laissé sans validation",
+    desc: "Un agent qui envoie ou modifie sans accord finit par se tromper au mauvais moment. L'accord humain avant les outils sensibles se règle dans n8n lui-même.",
   },
 ]
 
@@ -242,93 +268,89 @@ const PIEGES = [
 
 const FAQ = [
   {
-    q: "Qu'est-ce que la formation n8n de Masteria ?",
-    a: "Deux jours pour maîtriser n8n en entreprise : comprendre la logique de workflows et de nœuds, connecter vos applications réelles, construire des workflows fiables (gestion d'erreurs comprise), y brancher des étapes IA et des agents sous garde-fous, puis organiser la supervision et la gouvernance. Chaque participant travaille sur un processus réel de son poste et repart avec des workflows en état de marche. La formation est certifiée Qualiopi et finançable par votre OPCO.",
+    q: 'Que couvre la formation n8n de Masteria ?',
+    a: "En deux journées, l'équipe apprend à construire, sécuriser et exploiter des workflows n8n : choix de l'hébergement, credentials, transformation des données, étape IA, agent soumis à validation, workflow d'erreur, journal des exécutions et registre des workflows. Chacun s'exerce sur un processus qu'il connaît par cœur et repart avec un workflow exporté et commenté. Pour le financement, votre OPCO tranche dans les limites de ses règles et de ses fonds ; la certification Qualiopi de Masteria rend la demande recevable.",
   },
   {
-    q: "C'est quoi n8n, exactement ?",
-    a: "n8n est un outil d'automatisation de workflows édité à Berlin : on y assemble visuellement des nœuds (déclencheurs, applications, transformations, étapes IA) pour automatiser des processus entre vos outils. Sa particularité dans le paysage : il est auto-hébergeable sur vos propres serveurs, sa version communautaire auto-hébergée est gratuite, et ses nœuds IA et agents sont parmi les plus complets du marché. C'est l'outil que nous recommandons le plus souvent pour les processus complexes et les données sensibles.",
+    q: "Qu'est-ce que n8n ?",
+    a: "Un outil d'automatisation édité par une entreprise berlinoise, n8n GmbH. On y assemble des nœuds (déclencheurs, applications, transformations, étapes IA, agents) pour faire circuler l'information entre vos logiciels. Il se distingue de Make et de Zapier par deux traits : on peut l'installer sur ses propres serveurs, et il facture à l'exécution de workflow, sans compter les étapes.",
   },
   {
-    q: 'Faut-il savoir coder pour suivre la formation n8n ?',
-    a: "Non. n8n se pratique en low-code : l'essentiel se construit visuellement, nœud par nœud. Il faut être à l'aise avec ses outils numériques et ne pas craindre la logique (conditions, boucles, structures de données simples) ; c'est le profil type d'un référent IA, d'un ops ou d'un power user métier. Le nœud Code existe pour aller plus loin, il est montré en option et jamais requis. Les développeurs qui veulent pousser l'outil y trouvent aussi leur compte, le cadrage ajuste le niveau.",
+    q: 'Faut-il être développeur pour suivre la formation ?',
+    a: "Non. n8n se pratique en low-code : l'essentiel se monte nœud par nœud, à la souris. Il faut en revanche aimer la logique (conditions, boucles, données structurées) : c'est le profil d'un référent IA, d'un responsable des opérations ou d'un utilisateur avancé d'Excel. Les étapes Code en JavaScript ou en Python sont montrées en option, jamais exigées. Un développeur suit aussi avec profit : le cadrage ajuste le niveau du groupe.",
+  },
+  {
+    q: 'Combien coûte n8n ?',
+    a: "Relevés le 7 octobre 2026 sur le site de n8n, en paiement annuel : Starter à 20 € par mois pour 2 500 exécutions, Pro à 50 € par mois pour 10 000 exécutions, Business à 667 € par mois pour 40 000 exécutions en auto-hébergement ; Enterprise est sur devis. La Community Edition, installée chez vous, ne coûte rien en licence : le budget passe alors dans le serveur et le temps de maintenance. La formation se facture à part.",
+  },
+  {
+    q: 'La version auto-hébergée est-elle gratuite ?',
+    a: "Pour un usage interne, oui. La Sustainable Use License autorise une entreprise à utiliser et modifier n8n pour ses propres besoins, sans redevance. Elle interdit en revanche de revendre n8n comme un service à des tiers. Certaines fonctions (SSO, environnements multiples, gestion de versions par Git) relèvent des offres payantes Business et Enterprise.",
   },
   {
     q: 'n8n, Make ou Zapier : lequel choisir ?',
-    a: "n8n quand les processus sont complexes, les données sensibles (auto-hébergement européen) ou les volumes importants, et quand vous voulez des agents IA sérieux. Make pour l'équilibre entre puissance et prise en main visuelle, très apprécié des équipes marketing et ops. Zapier pour démarrer simplement sur de petits volumes. Le tableau comparatif de cette page détaille les critères ; et si votre choix est déjà fait pour Make ou Zapier, chacun a sa formation dédiée.",
+    a: "n8n quand les données doivent rester chez vous, quand les volumes montent ou quand vous voulez des agents outillés, à condition d'avoir un profil à l'aise avec la technique. Make si l'équipe métier souhaite relire et ajuster ses scénarios sans aide. Zapier pour des automatisations courtes, lancées vite. Le tableau de cette page les met côte à côte sur six critères, prix relevés le 7 octobre 2026.",
   },
   {
-    q: "L'auto-hébergement de n8n est-il un vrai avantage RGPD ?",
-    a: "Oui, et c'est souvent décisif : auto-hébergé sur vos serveurs ou chez votre hébergeur européen, n8n fait transiter les données de vos workflows chez vous, pas chez un tiers. Cela ne dispense pas du travail RGPD (minimisation, accès, durées de conservation, registre), que la formation traite concrètement en s'appuyant sur les recommandations de la CNIL, mais cela simplifie nettement le dossier pour les secteurs sensibles. La version cloud de n8n reste une option légitime quand l'auto-hébergement n'est pas justifié.",
+    q: "L'auto-hébergement règle-t-il la question du RGPD ?",
+    a: "Il simplifie le dossier sans le régler entièrement. Installé sur vos serveurs, n8n ne fait pas transiter vos données chez un tiers ; mais un workflow qui appelle un modèle d'IA externe envoie quand même du texte à ce fournisseur. Restent donc la minimisation, les accès, les durées de conservation et le registre, que la formation traite en suivant les fiches de la CNIL sur l'IA. Le cloud de n8n, hébergé à Francfort, reste une option raisonnable quand l'auto-hébergement ne se justifie pas.",
   },
   {
-    q: 'Peut-on vraiment construire des agents IA dans n8n ?',
-    a: "Oui : n8n propose des nœuds d'agents auxquels on donne un objectif, des outils (lire une boîte mail, chercher dans un corpus, écrire dans un tableau) et des limites. La formation y consacre la matinée du jour 2, avec la règle que nous appliquons partout : l'agent prépare, l'humain valide ce qui engage. Pour concevoir des agents dans vos outils bureautiques (ChatGPT, Claude, Copilot, Gemini) plutôt que dans l'orchestrateur, c'est la formation agents IA qui couvre le sujet.",
+    q: 'Comment construit-on un agent IA dans n8n ?',
+    a: "Avec le nœud AI Agent : on lui fixe un objectif, on lui donne des outils (lire une boîte mail, interroger une table, écrire dans un tableur, appeler un serveur MCP) et des limites. n8n peut suspendre l'agent avant un appel d'outil pour attendre l'accord d'une personne. Nous y passons la matinée du deuxième jour. Pour des agents bâtis directement dans les assistants conversationnels de l'entreprise, voyez la formation agents IA.",
   },
   {
-    q: 'Combien de temps pour un premier workflow utile ?',
-    a: "En formation, chaque participant a un workflow réel qui tourne à la fin du jour 1 : une tâche répétitive de son poste, automatisée de bout en bout, souvent avec une étape IA. Le jour 2 le rend robuste (gestion d'erreurs, garde-fous, supervision), ce qui est la vraie différence entre une démo et une automatisation qui dure. Comptez ensuite quelques semaines de pratique pour que l'équipe enchaîne en autonomie sur son plan d'automatisation.",
+    q: "Comment installe-t-on n8n ?",
+    a: "Trois voies : le cloud de n8n, le plus rapide pour démarrer ; une installation sur vos serveurs, en général avec Docker, pour garder les données chez vous ; ou un hébergeur européen qui opère l'instance pour votre compte. La formation démarre sur l'environnement choisi avant la session. L'installation elle-même revient à votre service informatique ou à notre agence ; elle ne fait pas partie des deux jours.",
   },
   {
-    q: 'La formation n8n est-elle finançable par notre OPCO ?',
-    a: "Oui : Masteria est certifiée Qualiopi, condition pour mobiliser votre OPCO dans le cadre du plan de développement des compétences. Nous préparons le dossier avec vous (programme détaillé, objectifs, modalités d'évaluation) ; la décision et le niveau de prise en charge appartiennent à votre opérateur. Pas d'éligibilité CPF : c'est une formation d'équipe, qui relève du budget formation de l'entreprise.",
+    q: "L'interface en anglais gêne-t-elle les équipes ?",
+    a: "Rarement. Le vocabulaire utile tient en une vingtaine de mots (workflow, node, trigger, credential, execution), que nous traduisons dès la première heure et que la page reprend dans son vocabulaire. Les supports, les ateliers et la documentation que vous produisez pendant la session sont en français.",
   },
   {
-    q: 'Peut-on suivre la formation à distance ?',
-    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; le même programme se tient à distance en classe virtuelle, souvent en demi-journées, ce qui convient bien à n8n (chacun garde son environnement sous les yeux). En individuel, un référent avance en tête-à-tête sur ses propres processus. Partout en France et à l'international, en Europe, aux États-Unis et en Inde.",
+    q: 'La formation existe-t-elle à distance ou en tête-à-tête ?',
+    a: "Oui. En intra, jusqu'à douze personnes travaillent dans vos locaux ou en visioconférence ; à distance, nous découpons volontiers les deux jours en demi-journées, chacun gardant son instance sous les yeux. En individuel, un référent travaille seul avec le formateur sur ses workflows, pour le même prix par jour. Nous formons sur place partout en France, et jusqu'aux États-Unis et en Inde.",
   },
   {
-    q: "Que reste-t-il dans l'entreprise après les 2 jours ?",
-    a: "Les workflows construits en atelier, en état de marche et documentés ; les conventions d'équipe (nommage, structure, sous-workflows) ; la gestion d'erreurs et les alertes posées ; les règles écrites sur les données, les credentials et la validation humaine ; et le plan d'automatisation de l'équipe : les trois processus suivants, qui les porte, à quelle échéance.",
+    q: 'Que reste-t-il à l\'équipe après les deux jours ?',
+    a: "Des workflows exportés, commentés et reliés à une alerte ; un workflow d'erreur commun ; des credentials rangés et nominatifs ; un registre qui donne pour chaque workflow son propriétaire, sa criticité et sa date de revue ; le plan des trois workflows suivants, chacun avec son porteur.",
   },
   {
-    q: "Comment installe-t-on n8n : cloud, Docker ou hébergeur ?",
-    a: "Trois voies : le cloud n8n, le plus rapide pour démarrer ; l'auto-hébergement sur vos serveurs, le plus souvent via Docker, pour garder les données chez vous ; ou un prestataire européen qui opère n8n pour votre compte. La formation démarre sur l'environnement retenu au cadrage ; quand la question n'est pas tranchée, la première matinée pose les critères (données, volumes, compétences internes). L'installation elle-même relève de votre IT ou de notre agence, pas des deux jours de formation.",
-  },
-  {
-    q: "n8n est en anglais : est-ce un obstacle pour mes équipes ?",
-    a: "L'interface de n8n est en anglais, comme la plupart des orchestrateurs. En pratique, ce n'est pas un obstacle : le vocabulaire utile tient en une vingtaine de termes (workflow, node, trigger, credential, execution), que la formation installe dès la première heure, en français, avec le lexique de cette page. Les ateliers, les supports et la documentation d'équipe que vous construisez sont intégralement en français.",
-  },
-  {
-    q: 'Et si nous préférons faire construire nos workflows n8n ?',
-    a: "C'est une mission, pas une formation : notre agence d'automatisation IA conçoit, construit et maintient des workflows n8n ou Make pour vous, avec la même exigence de supervision et de garde-fous. Les deux se combinent bien : les équipes formées cadrent mieux le besoin et supervisent mieux ce qu'on leur livre. Le cadrage, gratuit, oriente vers la bonne formule.",
-  },
-  {
-    q: 'Combien coûte la formation n8n ?',
-    a: "1 980 € HT par jour de formation en intra, pour l'ensemble du groupe (jusqu'à 12 participants), soit 3 960 € HT les 2 jours. Un format d'une journée centré sur les premiers workflows se cale au cadrage quand le besoin est plus court. Le devis arrive sous 24 heures, dossier OPCO préparé avec vous. Côté licences n8n, la version auto-hébergée communautaire est gratuite et le cloud a ses propres tarifs éditeur, indépendants de la formation.",
+    q: 'Peut-on confier la construction des workflows à Masteria ?',
+    a: "Notre agence d'automatisation installe, sécurise et maintient des instances n8n et construit les workflows pour vous. Il s'agit d'un projet de développement, pas finançable par votre OPCO, distinct de la formation. Former l'équipe garde son intérêt dans ce cas : elle décrit mieux ses processus et surveille mieux ce qui tourne.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation n8n — Masteria',
-  description: "Formation n8n en 2 jours : logique de workflows et de nœuds, connexion de vos applications, construction de workflows fiables avec gestion d'erreurs, étapes IA et agents sous garde-fous, auto-hébergement et RGPD, supervision et gouvernance. Chaque participant automatise un processus réel de son poste. En intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
-  level: "Intermédiaire : à l'aise avec ses outils numériques",
+  name: 'Formation n8n, Masteria',
+  description: "Formation n8n en 2 jours : choix entre cloud et instance interne, credentials, expressions et données, nœud HTTP Request, étape IA, nœud AI Agent avec validation humaine, workflow d'erreur, sous-workflows et tables de données, exploitation d'une instance et registre des workflows. Les participants travaillent chacun sur un de leurs processus. Groupes intra ou formations individuelles, en présentiel comme en visioconférence ; Masteria est un organisme Qualiopi.",
+  level: 'Intermédiaire : pratique courante des outils numériques',
   teaches: [
-    "Comprendre la logique n8n : workflows, nœuds, déclencheurs, exécutions, credentials",
-    "Construire un workflow fiable de bout en bout sur un processus réel, gestion d'erreurs comprise",
-    "Brancher des étapes IA (résumé, extraction, classification) et des agents sous garde-fous",
-    "Choisir et cadrer l'hébergement : cloud ou auto-hébergement européen, credentials, RGPD",
-    "Superviser et industrialiser : exécutions, alertes, sous-workflows, conventions, gouvernance",
+    "Choisir entre n8n Cloud et une instance auto-hébergée, et ranger les credentials",
+    "Construire un workflow complet : déclencheur, expressions, boucles, conditions, HTTP Request",
+    "Ajouter une étape IA à sortie structurée et un agent soumis à validation humaine",
+    "Rendre chaque échec visible avec un workflow d'erreur et lire le journal des exécutions",
+    "Exploiter une instance et tenir le registre des workflows de l'équipe",
   ],
   about: "n8n (automatisation de workflows et agents IA)",
   timeRequired: 'PT14H',
   duration: 'PT14H',
-  prerequisites: "Être à l'aise avec ses outils numériques ; aucune compétence en programmation requise.",
-  audience: 'Référents IA, ops, équipes métier outillées, IT de proximité',
-  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
+  prerequisites: "Pratique courante d'un tableur et des applications de travail ; aucune programmation.",
+  audience: 'Référents IA, responsables des opérations, utilisateurs avancés, informatique de proximité',
+  locationName: 'Masteria, sessions intra ou individuelles, sur site ou à distance',
 }
 
-/* Le programme en ItemList (séquence citable — GEO). */
+/* Le programme en ItemList (séquence citable, GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Le programme de la formation n8n (2 jours)',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((day, di) => [
-    { '@type': 'ListItem', position: di * 2 + 1, name: `${day.jour} · Matin — ${day.titre}`, description: day.matin.map(m => m.t).join(' ; ') },
-    { '@type': 'ListItem', position: di * 2 + 2, name: `${day.jour} · Après-midi — ${day.titre}`, description: day.apresmidi.map(m => m.t).join(' ; ') },
+    { '@type': 'ListItem', position: di * 2 + 1, name: `${day.jour} · Matin · ${day.titre}`, description: day.matin.map(m => m.t).join(' ; ') },
+    { '@type': 'ListItem', position: di * 2 + 2, name: `${day.jour} · Après-midi · ${day.titre}`, description: day.apresmidi.map(m => m.t).join(' ; ') },
   ]),
 }
 
@@ -337,13 +359,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/formation-n8n#article',
-  headline: 'Formation n8n : workflows, IA et agents, sous contrôle',
+  headline: 'Formation n8n : des workflows et des agents IA que vous hébergez',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-30',
-  dateModified: '2026-08-30',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-n8n#webpage' },
   /* Entités Wikipédia vérifiées (curl 200) le 2026-08-30. */
@@ -355,22 +377,22 @@ const articleJsonLd = {
   ],
 }
 
-/* ── GEO : lexique n8n (DefinedTermSet) ── */
+/* ── GEO : vocabulaire n8n (DefinedTermSet) ── */
 const SITE = 'https://www.master-ia.fr'
 const termsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': `${SITE}/${SLUG}#lexique`,
-  name: 'Lexique n8n',
+  name: 'Vocabulaire de n8n',
   hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Workflow', description: "Enchaînement automatisé d'étapes dans n8n, du déclencheur à la sortie : c'est l'unité de travail que l'on construit, teste, supervise et documente." },
-    { '@type': 'DefinedTerm', name: 'Nœud', description: "Brique d'un workflow n8n : un déclencheur, une application connectée, une transformation de données, une étape IA ou un agent. Les workflows s'assemblent nœud par nœud, visuellement." },
-    { '@type': 'DefinedTerm', name: 'Déclencheur', description: "Le nœud qui lance un workflow : un horaire, un webhook, un email entrant, un changement dans une application. Bien choisir le déclencheur conditionne la fiabilité de l'ensemble." },
-    { '@type': 'DefinedTerm', name: 'Credential', description: "Accès enregistré vers une application (compte, clé, autorisation) que les nœuds utilisent. Les credentials se gèrent nominativement et se périmètrent : c'est un sujet de sécurité, traité au jour 1." },
-    { '@type': 'DefinedTerm', name: 'Exécution', description: "Une occurrence d'un workflow qui a tourné, avec son détail étape par étape. Le journal des exécutions est l'outil de supervision quotidien : c'est là qu'on voit les échecs et les dérives." },
-    { '@type': 'DefinedTerm', name: 'Sous-workflow', description: "Workflow appelé par un autre, pour réutiliser une logique commune (notification, journalisation, contrôle). C'est la parade principale au workflow-spaghetti." },
-    { '@type': 'DefinedTerm', name: 'Auto-hébergement', description: "Installation de n8n sur vos propres serveurs ou chez votre hébergeur européen : les données des workflows restent dans votre périmètre. La version communautaire auto-hébergée est gratuite." },
-    { '@type': 'DefinedTerm', name: 'Agent IA (n8n)', description: "Nœud qui poursuit un objectif en utilisant des outils (lire, chercher, écrire) dans les limites qu'on lui fixe. Dans nos formations, un agent prépare ; un humain valide ce qui engage." },
+    { '@type': 'DefinedTerm', name: 'Workflow', description: "L'automatisation complète, du déclencheur au dernier nœud. C'est aussi l'unité que n8n facture : une exécution par lancement, quel que soit le nombre d'étapes." },
+    { '@type': 'DefinedTerm', name: 'Nœud (node)', description: "Une étape du workflow : déclencheur, application, transformation, étape IA ou agent. Les données passent d'un nœud au suivant sous forme d'objets JSON." },
+    { '@type': 'DefinedTerm', name: 'Déclencheur (trigger)', description: "Le nœud qui lance le workflow : un horaire, un webhook, un mail reçu, une ligne ajoutée. Un déclencheur mal choisi lance des exécutions inutiles." },
+    { '@type': 'DefinedTerm', name: 'Credential', description: "L'accès enregistré vers une application (identifiant, clé, autorisation). On le crée une fois, on le partage avec parcimonie, on le révoque au départ de son titulaire." },
+    { '@type': 'DefinedTerm', name: 'Exécution', description: "Un passage du workflow, consigné étape par étape dans le journal. C'est l'outil de surveillance quotidien, et la base de la facturation." },
+    { '@type': 'DefinedTerm', name: 'Sous-workflow', description: "Un workflow appelé par d'autres pour une tâche commune (notifier, journaliser, contrôler). Il évite de recopier la même logique à dix endroits." },
+    { '@type': 'DefinedTerm', name: "Workflow d'erreur", description: "Le workflow qui reçoit les échecs des autres : il prévient la bonne personne et garde la trace. Sans lui, un échec reste muet." },
+    { '@type': 'DefinedTerm', name: 'Agent IA (nœud AI Agent)', description: "Le nœud qui poursuit un objectif avec les outils qu'on lui ouvre. n8n peut lui imposer l'accord d'une personne avant chaque appel d'outil sensible." },
   ],
 }
 
@@ -393,11 +415,16 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité : WebPage.citation + bloc visible. */
+/* Sources de la page : WebPage.citation (JSON-LD) + bloc visible en fin de page. */
 const PAGE_CITATIONS = [
-  { name: "CNIL — Intelligence artificielle : recommandations et dossiers", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-  { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+  { name: "n8n, page tarifs (offres, exécutions, hébergement à Francfort), relevée le 7 octobre 2026", url: 'https://n8n.io/pricing/' },
+  { name: 'n8n, texte de la Sustainable Use License sur le dépôt GitHub', url: 'https://github.com/n8n-io/n8n/blob/master/LICENSE.md' },
+  { name: 'n8n, documentation officielle', url: 'https://docs.n8n.io/' },
+  { name: "Make, page tarifs relevée le 7 octobre 2026", url: 'https://www.make.com/en/pricing' },
+  { name: "Zapier, page tarifs relevée le 7 octobre 2026", url: 'https://zapier.com/pricing' },
+  { name: 'Zapier, hébergement et confidentialité des données', url: 'https://zapier.com/legal/data-privacy' },
+  { name: "CNIL, fiches pratiques sur l'intelligence artificielle", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: 'Qualiopi, présentation par le ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
 ]
 
 export default function FormationN8nPage() {
@@ -426,7 +453,7 @@ export default function FormationN8nPage() {
         courseData={COURSE_DATA}
         faqItems={FAQ}
         datePublished="2026-08-30"
-        dateModified="2026-08-30"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[programmeJsonLd, articleJsonLd, termsJsonLd]}
@@ -459,29 +486,29 @@ export default function FormationN8nPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Formation n8n :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>workflows, IA et agents, sous contrôle</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>des workflows et des agents IA que vous hébergez</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Rédigée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · offres et licence de n8n contrôlées le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation n8n apprend à vos équipes à automatiser leurs processus avec n8n, l'outil de workflows auto-hébergeable aux nœuds IA et agents les plus complets du marché. <strong style={{ color: '#fff', fontWeight: 700 }}>En 2 jours, chaque participant construit, fiabilise et supervise un workflow réel de son poste, étapes IA comprises</strong>, avec la gestion d'erreurs, les garde-fous et la gouvernance qui font durer une automatisation. Certifiée Qualiopi, finançable OPCO.
+            La formation n8n prépare vos équipes à construire et à exploiter des workflows avec n8n, l'outil d'automatisation qu'une entreprise peut héberger elle-même. <strong style={{ color: '#fff', fontWeight: 700 }}>Sur deux jours, chacun bâtit un workflow tiré de son poste, y ajoute une étape IA puis un agent soumis à validation humaine</strong>, et apprend à surveiller les exécutions. Le financement par votre OPCO est possible : Masteria est certifiée Qualiopi.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            n8n est l'orchestrateur que nous installons le plus souvent après les assistants : assez puissant pour les processus complets, auto-hébergeable en Europe pour les données sensibles, et taillé pour faire travailler l'IA dans le flux, sous validation humaine. La formation vise une seule chose : des workflows qui tournent encore dans six mois.
+            Après les assistants conversationnels, n8n est l'outil d'orchestration que nous déployons le plus souvent, parce qu'il tient des processus longs et garde les données en Europe ou chez vous ; l'IA y travaille à l'intérieur du flux. Notre critère de réussite pour la session tient en une phrase. Les workflows tournent toujours six mois plus tard.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un devis sous 24 h
+              Organiser la formation n8n
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#programme" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le programme
+              Voir les deux journées
             </a>
           </div>
 
@@ -494,9 +521,9 @@ export default function FormationN8nPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* L'essentiel : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'essentiel avant de réserver</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -526,13 +553,13 @@ export default function FormationN8nPage() {
             <div style={editorialAside}>
               <Kicker>L'outil</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Pourquoi apprendre n8n plutôt qu'un autre outil d'automatisation ?
+                n8n garde vos workflows chez vous et facture à l'exécution
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Parce que n8n cumule quatre atouts rares : des workflows sans plafond de complexité, des nœuds IA et agents natifs, l'auto-hébergement sur vos serveurs européens, et un modèle de coût qui tient à volume. C'est l'outil des automatisations sérieuses, et il s'apprend très bien en deux jours encadrés.</strong>
+                <strong>Des trois grands outils d'automatisation, n8n est le seul qu'une entreprise peut faire tourner sur ses propres machines, sans licence à payer pour un usage interne. Il compte des exécutions de workflow quel que soit le nombre d'étapes, et ses agents IA peuvent attendre l'accord d'une personne avant d'agir. En contrepartie, il demande plus d'apprentissage que Make ou Zapier : deux jours encadrés suffisent pour le prendre en main.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Si vous cherchez d'abord à savoir quoi automatiser, la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> pose le panorama ; cette page suppose que l'outil sera n8n, ou vous aide à le confirmer avec le comparatif ci-dessous.
+                Vous ne savez pas encore quoi automatiser ? Commencez par la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link>. Si votre équipe vit surtout dans ChatGPT, Claude, Copilot ou Gemini, la <Link to="/formation-agents-ia" style={aStyle}>formation agents IA</Link> construit les agents dans ces assistants.
               </p>
             </div>
 
@@ -553,7 +580,41 @@ export default function FormationN8nPage() {
         </div>
       </section>
 
-      {/* ── LE PROGRAMME (ancre sombre — pivot) ── */}
+      {/* ── FICHE OUTIL : N8N AU 7 OCTOBRE 2026 ── */}
+      <section id="fiche" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Fiche outil</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Offres, licence et hébergement de n8n relevés le 7 octobre 2026
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>n8n est gratuit en Community Edition pour un usage interne, coûte à partir de 20 € par mois dans son cloud européen et 667 € par mois pour l'offre Business auto-hébergée. Le tableau rassemble ce que nous avons vérifié sur la page tarifs de l'éditeur et sur sa licence.</strong>
+          </p>
+          <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+              <thead>
+                <tr>
+                  <th style={thStyle} scope="col">Sujet</th>
+                  <th style={thStyle} scope="col">Situation au 7 octobre 2026</th>
+                </tr>
+              </thead>
+              <tbody>
+                {FICHE.map((row, i) => (
+                  <tr key={row.k}>
+                    <td style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A', whiteSpace: 'nowrap', borderBottom: i === FICHE.length - 1 ? 'none' : tdStyle.borderBottom }}>{row.k}</td>
+                    <td style={{ ...tdStyle, borderBottom: i === FICHE.length - 1 ? 'none' : tdStyle.borderBottom }}>{row.v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.7, margin: '20px 0 0', maxWidth: 880 }}>
+            La page tarifs de n8n affiche ses prix en euros, en paiement annuel, sans préciser le traitement de la TVA ; l'offre mensuelle coûte plus cher. La licence citée est celle du dépôt GitHub de n8n.
+          </p>
+        </div>
+      </section>
+
+      {/* ── LE PROGRAMME (ancre sombre, pivot) ── */}
       <section id="programme" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden', scrollMarginTop: 96 }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -562,11 +623,11 @@ export default function FormationN8nPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Le programme des 2 jours : du premier workflow à la supervision
+            Du premier workflow à l'agent supervisé, en deux journées
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : comprendre la logique n8n, poser le cadre d'hébergement et de données, connecter vos applications et construire un premier workflow réel avec une étape IA. Jour 2 : les agents sous garde-fous, la gestion d'erreurs systématique, la supervision et la gouvernance. Chaque participant travaille sur un processus de son poste.</strong>
+            <strong style={{ color: '#fff' }}>Jour 1 : l'hébergement et les accès se décident, les applications se branchent, et chaque participant livre un workflow doté d'une étape IA. Jour 2 : un agent soumis à validation humaine, un workflow d'erreur commun, l'exploitation de l'instance et le registre des workflows de l'équipe.</strong>
           </p>
 
           <div style={{ display: 'grid', gap: 22 }}>
@@ -600,7 +661,7 @@ export default function FormationN8nPage() {
           </div>
 
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 800 }}>
-            Le programme s'ajuste au cadrage, qui est gratuit : niveau réel des participants, hébergement retenu, processus visés. En 1 jour, on s'arrête aux premiers workflows fiables ; les 2 jours vont jusqu'aux agents, à la supervision et au plan d'automatisation.
+            Avant la session, un échange avec votre service informatique fixe l'environnement (cloud ou instance interne) et les accès de test. Une version d'une journée couvre le premier workflow et son étape IA ; la seconde journée ajoute les agents, les erreurs et l'exploitation.
           </p>
         </div>
       </section>
@@ -610,11 +671,11 @@ export default function FormationN8nPage() {
         <div style={wrap}>
           <Kicker>Bien choisir</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            n8n, Make ou Zapier : le comparatif honnête
+            n8n, Make ou Zapier : six critères pour trancher
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>n8n pour les processus complexes, les données sensibles (auto-hébergement européen) et les agents IA sérieux ; Make pour l'équilibre visuel-puissance des équipes marketing et ops ; Zapier pour démarrer simplement sur de petits volumes. Les trois se forment chez Masteria : le bon outil dépend de vos processus, et le cadrage tranche sur pièces.</strong>
+            <strong>Les trois outils relient vos applications, mais ils ne facturent pas la même unité et n'hébergent pas les données au même endroit. n8n s'impose quand les données doivent rester chez vous ou que les volumes montent ; Make, quand une équipe métier veut garder la main sur des scénarios à branches ; Zapier, pour des automatisations courtes lancées dans la journée.</strong>
           </p>
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
@@ -641,21 +702,21 @@ export default function FormationN8nPage() {
           </div>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '24px 0 0', maxWidth: 880 }}>
-            Votre choix est déjà fait pour un autre outil ? Les pages <Link to="/formation-make" style={aStyle}>formation Make</Link> et <Link to="/formation-zapier" style={aStyle}>formation Zapier</Link> détaillent leurs programmes respectifs, et les trois formations partagent la même exigence : gestion d'erreurs, garde-fous IA, supervision.
+            Prix relevés le 7 octobre 2026 sur les pages tarifs des trois éditeurs. Si votre choix est déjà fait, la <Link to="/formation-make" style={aStyle}>formation Make</Link> et la <Link to="/formation-zapier" style={aStyle}>formation Zapier</Link> présentent leurs propres programmes, avec la fiche de chaque outil.
           </p>
         </div>
       </section>
 
-      {/* ── CAS D'USAGE ── */}
+      {/* ── WORKFLOWS TYPES ── */}
       <section id="cas-usage" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Ce qu'on automatise</Kicker>
+          <Kicker>Workflows types</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que vos équipes construisent en atelier avec n8n
+            Six workflows n8n que les équipes construisent en atelier
           </h2>
 
           <p style={answerStyle}>
-            <strong>Les ateliers partent des processus réels de vos équipes. Six familles reviennent le plus souvent : la qualification des demandes entrantes, la veille livrée, le reporting préparé, les dossiers assemblés, les synchronisations entre applications et les agents de tri sous validation humaine.</strong>
+            <strong>Les ateliers partent des processus de l'équipe. Six reviennent souvent : la présélection des appels d'offres, la veille réglementaire, le rapprochement des commandes et des factures, le dossier préparé avant un rendez-vous, le support de premier niveau et la mise à jour du CRM proposée par un agent.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -672,15 +733,15 @@ export default function FormationN8nPage() {
         </div>
       </section>
 
-      {/* ── LES PIÈGES ── */}
+      {/* ── LES ÉCUEILS ── */}
       <section id="pieges" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Ce qui fait échouer</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Cinq pièges qui tuent les déploiements n8n
+            Cinq écueils font dérailler un déploiement n8n
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un déploiement n8n qui meurt a presque toujours l'une de ces cinq causes : le workflow-spaghetti, les credentials bricolés, l'échec silencieux, l'étape IA sans garde-fou, l'absence de supervision. La formation traite chacun à l'endroit du programme où il se joue.</strong>
+            <strong>Un déploiement n8n qui s'essouffle bute en général sur l'un de ces cinq écueils. Chacun a sa parade, et le programme la met en place pendant l'atelier, sur le workflow du participant.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {PIEGES.map((item, i) => (
@@ -691,7 +752,7 @@ export default function FormationN8nPage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
-            Cette exigence vient de nos missions de construction : les workflows que nous livrons en <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation</Link> vivent avec ces règles, et la formation transmet exactement les mêmes.
+            Notre <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation</Link> exploite des instances n8n pour ses clients selon ces mêmes règles ; la session les transmet sans les simplifier.
           </p>
         </div>
       </section>
@@ -706,17 +767,17 @@ export default function FormationN8nPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT par jour de formation, pour le groupe
+                Chaque journée de formation n8n est facturée 1 980 € HT
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La formation n8n suit la grille unique de Masteria : 1 980 € HT par jour en intra, pour l'ensemble du groupe (jusqu'à 12 participants), soit 3 960 € HT les 2 jours ; le format d'une journée « premiers workflows » se cale au cadrage. Masteria est certifiée Qualiopi : la formation est finançable par votre OPCO dans le cadre du plan de développement des compétences, nous préparons le dossier avec vous et la décision de prise en charge reste à votre opérateur. Pas d'éligibilité CPF. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Les deux jours en intra (douze participants au plus) ou en individuel reviennent à 3 960 € HT ; une journée seule, à 1 980 € HT. Ce prix ne comprend ni abonnement ni hébergement n8n : la Community Edition ne coûte rien en licence pour un usage interne, le cloud se règle directement à l'éditeur. Certifiée Qualiopi, Masteria établit le programme et la convention que vous déposerez auprès de votre OPCO ; celui-ci arrête le montant financé d'après ses règles et ses fonds. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur à partir de votre activité, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> décrit les dispositifs.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  "1 980 € HT par jour, pour le groupe (jusqu'à 12 personnes)",
-                  '2 jours recommandés : agents, supervision et plan compris',
-                  'Qualiopi : finançable OPCO, dossier préparé ensemble',
-                  'Devis sous 24 h après un cadrage gratuit',
+                  'Deux jours : 3 960 € HT ; une journée : 1 980 € HT',
+                  'Douze participants au plus en intra',
+                  'Licence et hébergement n8n en sus',
+                  'Dossier de prise en charge prêt à déposer',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -729,25 +790,25 @@ export default function FormationN8nPage() {
         </div>
       </section>
 
-      {/* ── E-E-A-T ── */}
+      {/* ── E-E-A-T : les formateurs n8n ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Les formateurs</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Des formateurs qui construisent des workflows en mission
+                Des formateurs qui exploitent n8n en mission
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. L'orchestration n8n et Make est le palier que nous installons après les assistants dans nos déploiements ; les règles enseignées (gestion d'erreurs, garde-fous IA, supervision) sont celles de nos propres <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link>. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
+                Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session n8n : il l'anime ou en charge un formateur indépendant du réseau, rompu à l'outil. Quand une question dépasse la formation (installation, sécurité de l'instance), les cinq développeurs IA environ qui travaillent avec le cabinet prennent le relais en mission. Exemple de terrain : chez un distributeur photovoltaïque, notre diagnostic a désigné la consultation des transporteurs et l'import des réceptions d'entrepôt dans l'ERP comme premières tâches à outiller (<Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: '#93C5FD', fontWeight: 600 }}>le cas complet</Link>).
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Qualiopi', 'actions de formation certifiées'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['Francfort', 'lieu de stockage du cloud n8n'],
+                ['0 €', 'de licence en Community Edition, usage interne'],
+                ['2 jours', "du premier workflow à l'agent supervisé"],
+                ['≈ 5', 'développeurs IA en renfort pour les installations'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -759,15 +820,15 @@ export default function FormationN8nPage() {
         </div>
       </section>
 
-      {/* ── LEXIQUE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
+      {/* ── VOCABULAIRE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
       <section id="lexique" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Le vocabulaire</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Parler n8n couramment : les huit termes à connaître
+            L'interface est en anglais : huit termes suffisent pour s'y repérer
           </h2>
           <p style={answerStyle}>
-            <strong>Huit termes suffisent pour suivre une conversation n8n et lire sa documentation : workflow, nœud, déclencheur, credential, exécution, sous-workflow, auto-hébergement, agent. La formation les installe dès la première heure, en français ; les voici tels que nous les enseignons.</strong>
+            <strong>Workflow, nœud, déclencheur, credential, exécution, sous-workflow, workflow d'erreur, agent : ces huit termes couvrent l'essentiel de l'interface de n8n et de sa documentation. Nous les traduisons et les illustrons dès la première heure.</strong>
           </p>
           <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
             {termsJsonLd.hasDefinedTerm.map(t => (
@@ -787,13 +848,13 @@ export default function FormationN8nPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Formation n8n : les questions fréquentes
+                Les questions posées avant une formation n8n
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Un doute sur l'hébergement, la licence ou le niveau requis ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Posez-la à l'équipe
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -809,21 +870,21 @@ export default function FormationN8nPage() {
       {/* ── MAILLAGE INTERNE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>À lire ensuite</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Les pages qui prolongent la formation n8n
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            n8n s'articule avec la démarche d'automatisation, les agents dans vos outils bureau et, quand il faut du sur-mesure, nos missions de construction.
+            n8n orchestre ; d'autres pages traitent du choix des tâches, des agents dans les assistants et de la construction confiée à notre équipe.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Panorama', desc: "Quoi automatiser et comment s'y prendre : la démarche complète, des outils natifs aux orchestrateurs." },
-              { label: 'Formation agents IA', href: '/formation-agents-ia', tag: 'Agents', desc: "Concevoir des agents dans vos outils bureau (ChatGPT, Claude, Copilot, Gemini), complément naturel de n8n." },
-              { label: 'Formation Make', href: '/formation-make', tag: 'Outil', desc: "L'alternative visuelle : scénarios, modules et étapes IA, le favori des équipes marketing et ops." },
-              { label: 'Formation Zapier', href: '/formation-zapier', tag: 'Outil', desc: "La porte d'entrée de l'automatisation : des Zaps utiles en une journée, et les limites à connaître." },
-              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Faire construire', desc: "Vos workflows n8n ou Make conçus, construits et maintenus en mission, avec la même exigence." },
-              { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, plan de développement des compétences : les dispositifs qui financent la formation n8n." },
+              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Méthode', desc: "Décider quoi automatiser, puis à quel palier d'outil, avant de construire quoi que ce soit." },
+              { label: 'Formation agents IA', href: '/formation-agents-ia', tag: 'Agents', desc: "Des agents dans les assistants du quotidien, que n8n complète pour les enchaînements longs." },
+              { label: 'Formation Make', href: '/formation-make', tag: 'Alternative', desc: "Le canevas visuel facturé en crédits, pensé pour les équipes métier." },
+              { label: 'Formation Zapier', href: '/formation-zapier', tag: 'Démarrage rapide', desc: "Une journée de Zaps pour les besoins simples et les petits volumes." },
+              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Faire construire', desc: "Installation, sécurisation et maintenance d'une instance n8n par notre équipe." },
+              { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, Qualiopi, conventions : comment se finance une formation d'équipe." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -838,10 +899,7 @@ export default function FormationN8nPage() {
                     {rel.label}
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </span>
+                  <ArrowRight size={16} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
                 </div>
               </Link>
             ))}
@@ -849,8 +907,14 @@ export default function FormationN8nPage() {
         </div>
       </section>
 
-      {/* ── FONDATEUR ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mise à jour par Mathias Nizan le 7 octobre 2026 : tarifs, offres et lieu de stockage vérifiés sur le site de n8n, licence relue sur son dépôt GitHub, prix de Make et de Zapier relevés le même jour. Son parcours est retracé sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>la page de Mathias Nizan</Link>.
+          </p>
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -861,23 +925,40 @@ export default function FormationN8nPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation n8n</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Des workflows qui tournent encore dans six mois
+              Des workflows qui tournent encore quand leur auteur est en congés
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos processus répétitifs, vos applications et le niveau de vos équipes. Nous revenons sous 24 heures avec un programme cadré, la question de l'hébergement posée, et le devis, dossier OPCO compris.
+              Dites-nous quels processus vous voulez automatiser, quelles applications ils traversent et où n8n doit tourner. Sous 24 heures, vous recevez une proposition de programme, le devis et les documents destinés à votre OPCO.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un devis sous 24 h
+              Organiser la formation n8n
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
+              Qualiopi · cloud européen ou instance interne · en intra, en individuel ou à distance
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES DE LA PAGE ── */}
+      <section aria-labelledby="sources-n8n" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-n8n" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Les sources consultées pour cette page
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Pages des éditeurs relevées le 7 octobre 2026, licence de n8n, règles de la formation professionnelle et de la protection des données.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {PAGE_CITATIONS.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

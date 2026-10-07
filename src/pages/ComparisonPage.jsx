@@ -28,7 +28,12 @@ export default function ComparisonPage({ slug: propSlug }) {
   const slug = propSlug || params.slug
 
   const data = COMPARISONS[slug]
-  // Textes de section propres à ce comparatif (sinon formulations communes à tous les comparatifs)
+  // Textes de section propres à ce comparatif (sinon formulations communes à tous les comparatifs).
+  // Clés reconnues dans `data.textes` (toutes facultatives, chaînes) :
+  //   cas, casTitre · metiers, metiersTitre · erreurs, erreursTitre · alternatives, alternativesTitre
+  //   criteres (intro du comparatif détaillé) · legende (légende du tableau de faits ou de synthèse)
+  //   analyse, analyseTitre (panoramas : analyse par outil) · cout, coutTitre, aRetenir (panoramas : coûts)
+  //   ctaTitre, ctaTexte (bloc final). Sans clé, la formulation commune s'affiche comme avant.
   const T = data?.textes || {}
   if (!data) {
     return (
@@ -280,7 +285,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                   captionSide: 'bottom', textAlign: 'left', fontSize: 12.5,
                   color: '#6B7280', padding: '12px 18px', lineHeight: 1.5,
                 }}>
-                  {data.toolA.name} ({data.toolA.editor}) face à {data.toolB.name} ({data.toolB.editor}){data.verifiedOn ? `, situation au ${data.verifiedOn}` : ''}.
+                  {T.legende || `${data.toolA.name} (${data.toolA.editor}) face à ${data.toolB.name} (${data.toolB.editor})${data.verifiedOn ? `, situation au ${data.verifiedOn}` : ''}.`}
                 </caption>
                 <thead>
                   <tr style={{ background: '#FAFAF7' }}>
@@ -468,7 +473,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 56px',
             }}>
-              {data.criteria.length} critères, vérifiés sur les sources des éditeurs et confrontés à nos formations sur les deux outils.
+              {T.criteres || `${data.criteria.length} critères, vérifiés sur les sources des éditeurs et confrontés à nos formations sur les deux outils.`}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
@@ -549,13 +554,13 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {/* Compte dynamique : meilleure-ia-pour-coder et meilleur-agent-ia
                   n'ont que 4 outils, le libellé « 5 outils » était faux sur ces pages. */}
-              Analyse approfondie des {data.deepDive.length} outils
+              {T.analyseTitre || `Analyse approfondie des ${data.deepDive.length} outils`}
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 56px',
             }}>
-              Forces, faiblesses et profil idéal pour chaque outil.
+              {T.analyse || 'Forces, faiblesses et profil idéal pour chaque outil.'}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
@@ -664,7 +669,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                   captionSide: 'bottom', textAlign: 'left', fontSize: 12.5,
                   color: '#6B7280', padding: '12px 18px', lineHeight: 1.5,
                 }}>
-                  {data.tools.map(t => t.name).join(', ')} comparés critère par critère{data.verifiedOn ? `, situation au ${data.verifiedOn}` : ''}.
+                  {T.legende || `${data.tools.map(t => t.name).join(', ')} comparés critère par critère${data.verifiedOn ? `, situation au ${data.verifiedOn}` : ''}.`}
                 </caption>
                 <thead>
                   <tr style={{ background: '#FAFAF7' }}>
@@ -807,7 +812,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              Cas pratiques : qui gagne sur vos vrais usages ?
+              {T.casTitre || 'Cas pratiques : qui gagne sur vos vrais usages ?'}
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
@@ -930,7 +935,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              Notre recommandation par métier
+              {T.metiersTitre || 'Notre recommandation par métier'}
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
@@ -993,13 +998,13 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              Combien ça coûte ?
+              {T.coutTitre || 'Combien ça coûte ?'}
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 700, margin: '0 auto 48px',
             }}>
-              Estimations annuelles selon la taille de l'entreprise (abonnement uniquement, hors formation et accompagnement).
+              {T.cout || "Estimations annuelles selon la taille de l'entreprise (abonnement uniquement, hors formation et accompagnement)."}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -1061,7 +1066,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               <span style={{ display: 'inline-flex', verticalAlign: 'text-bottom', marginRight: 6 }}>
                 <Pictogram emoji="\u{1F4A1}" size={15} color="#1E3A8A" />
               </span>
-              <strong>À retenir :</strong> le coût d'un outil ne se limite pas à l'abonnement. La formation d'une équipe (1 980 € HT la journée pour un groupe de 12 au plus en intra) et l'adoption au quotidien décident du retour sur investissement, qui se mesure sur vos propres tâches.
+              <strong>À retenir :</strong> {T.aRetenir || "le coût d'un outil ne se limite pas à l'abonnement. La formation d'une équipe (1 980 € HT la journée pour un groupe de 12 au plus en intra) et l'adoption au quotidien décident du retour sur investissement, qui se mesure sur vos propres tâches."}
             </div>
           </div>
         </section>
@@ -1081,7 +1086,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 16, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              {data.mistakes.length} erreurs fréquentes à éviter
+              {T.erreursTitre || `${data.mistakes.length} erreurs fréquentes à éviter`}
             </h2>
             <p style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
@@ -1143,7 +1148,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.02em',
               textAlign: 'center',
             }}>
-              Et les autres outils alors&nbsp;?
+              {T.alternativesTitre || 'Et les autres outils alors\u00a0?'}
             </h2>
             <p style={{
               fontSize: 15, color: '#6B7280', lineHeight: 1.6,

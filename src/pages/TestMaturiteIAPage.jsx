@@ -72,7 +72,7 @@ const FAQ = [
   { q: "Combien de temps faut-il pour passer au niveau suivant ?", a: "Cela dépend du point de départ et des moyens engagés, mais l'ordre de grandeur observé en mission tient en trimestres, pas en années : poser un cadre et former une première équipe se fait en quelques semaines ; structurer la mesure et les actifs partagés demande un ou deux trimestres ; le déploiement outillé (agents, intégrations) est un chantier continu. Le facteur décisif est moins la taille de l'entreprise que le portage par la direction." },
   { q: 'Ce test remplace-t-il un audit de maturité IA ?', a: "Non. Le test photographie la situation en 8 questions déclaratives ; un audit examine les processus, les données, les outils et les usages réels sur pièces et sur entretiens. Utilisez le test pour situer le point de départ et cadrer la discussion, le diagnostic IA pour obtenir une feuille de route engageante." },
   { q: 'Mes réponses sont-elles enregistrées ?', a: 'Non. Le test fonctionne entièrement dans votre navigateur : aucune réponse ne quitte votre poste, aucun compte ni email n\'est demandé pour voir le résultat.' },
-  { q: 'Que faire de mon résultat ?', a: "Chaque profil vient avec trois priorités concrètes et l'offre Masteria correspondante : sensibilisation pour le profil Découverte, diagnostic pour l'Exploration, conseil pour la Structuration, développement sur mesure pour le Déploiement. Le premier échange de cadrage est gratuit." },
+  { q: 'Que faire de mon résultat ?', a: "Chaque profil vient avec trois priorités concrètes et l'offre Masteria correspondante : sensibilisation pour le profil Découverte, diagnostic pour l'Exploration, conseil pour la Structuration, développement sur mesure pour le Déploiement. Les 30 premières minutes de cadrage sont offertes." },
   { q: 'Le test vaut-il pour une PME comme pour un grand groupe ?', a: "Oui, les dimensions évaluées sont les mêmes ; seule l'ampleur des réponses change. Une PME de 30 personnes atteint le profil Structuration avec des moyens légers, là où un groupe devra outiller chaque direction. Les recommandations s'adaptent lors du cadrage." },
 ]
 
@@ -149,7 +149,7 @@ export default function TestMaturiteIAPage() {
         slug="test-maturite-ia"
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
-        keywords="audit de maturité ia, test maturité ia, maturité ia entreprise, évaluer maturité intelligence artificielle, audit ia gratuit, niveau ia entreprise"
+        keywords="audit de maturité ia, test maturité ia, maturité ia entreprise, évaluer maturité intelligence artificielle, test maturité ia gratuit, niveau ia entreprise"
         datePublished="2026-08-06"
         dateModified="2026-08-07"
         speakable={['#geo-summary', '#profils']}

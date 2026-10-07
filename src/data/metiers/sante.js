@@ -1,120 +1,127 @@
-/* Contenu enrichi SEO+GEO de /formation-ia-sante (template MetierPage).
- * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+/* Contenu de /formation-ia-sante (gabarit MetierPage).
+ * Généré depuis metier-content-enrichi.js en 2026, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Usages non cliniques seulement. Faits vérifiés le 2026-10-07 : guide HAS « Premières clefs d'usage de l'IA
+ * générative en santé » (mis en ligne le 30/10/2025, mis à jour le 15/04/2026, repères A.V.E.C.) ;
+ * hébergement HDS (art. L1111-8 du code de la santé publique, esante.gouv.fr) ; données de santé = catégorie
+ * particulière (RGPD art. 9). Financement : ANFH pour l'hôpital public, OPCO Santé pour le privé sanitaire et
+ * médico-social. AI Act : art. 4 depuis le 02/02/2025, dispositifs médicaux (annexe I) au 02/08/2028.
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA santé : usages administratifs, qualité, coordination | Masteria",
-  "metaDesc": "Formation IA santé pour établissements et cabinets : comptes rendus non cliniques, qualité et certification, coordination, communication, documentation, dans le cadre du secret médical et de l'hébergement HDS. Qualiopi.",
-  "keywords": "formation ia santé, formation ia établissement de santé, formation ia hôpital, formation intelligence artificielle santé, formation ia médico-social, formation ia cabinet médical, ia secrétariat médical",
-  "h1": "Formation IA santé : les usages non cliniques de l'IA, dans le cadre du secret médical",
+  "metaTitle": "Formation IA santé : usages non cliniques | Masteria",
+  "metaDesc": "Formation IA santé hors soin : courriers, qualité et certification, coordination, information des usagers. Cadre RGPD et HDS, financement ANFH ou OPCO.",
+  "keywords": "formation ia santé, formation intelligence artificielle santé, ia établissement de santé, formation ia hôpital, formation ia médico-social, ia secrétariat médical, ia qualité certification hôpital, ia données de santé hds, formation ia ehpad",
+  "h1": "Formation IA santé : l'IA générative pour les écrits, la qualité et la coordination, hors soin",
   "h1a": "Formation IA santé :",
-  "h1b": "les usages non cliniques de l'IA, dans le cadre du secret médical",
-  "eyebrow": "Formation secteur · Santé & médico-social",
-  "badge3": "Usages non cliniques · Cadre HDS et secret médical",
-  "geo": "La formation IA santé de Masteria apprend aux équipes des établissements de santé, des cabinets et des structures médico-sociales à mettre l'intelligence artificielle générative au service des usages non cliniques : écrits administratifs, qualité et certification, coordination, information des usagers, documentation et veille, dans le cadre strict des données de santé, du secret médical et de l'hébergement HDS. Une journée, multi-outils, certifiée Qualiopi, financée selon votre statut (ANFH, OPCO, FAF).",
-  "sub": "La santé est le secteur où l'IA générative peut le plus soulager la charge d'écrit qui pèse sur les soignants, les secrétariats et les cadres, et celui où le cadre est le plus strict. La formation commence donc par le cadre (aucune donnée patient identifiante dans un outil non certifié, anonymisation, HDS) avant d'ouvrir les usages, tous non cliniques : elle n'enseigne ni diagnostic ni décision médicale assistés.",
-  "intro": "La formation IA santé de Masteria apprend aux équipes des établissements de santé, des cabinets et des structures médico-sociales à mettre l'intelligence artificielle générative au service des usages non cliniques : écrits administratifs, qualité et certification, coordination, information des usagers, documentation et veille, dans le cadre strict des données de santé, du secret médical et de l'hébergement HDS. Une journée, multi-outils, certifiée Qualiopi, financée selon votre statut (ANFH, OPCO, FAF)."
+  "h1b": "l'IA générative pour les écrits, la qualité et la coordination, hors soin",
+  "eyebrow": "Formation secteur · Santé et médico-social",
+  "badge3": "Hors soin · Données de santé protégées",
+  "geo": "La formation IA santé de Masteria s'adresse aux directions, aux cadres, aux équipes qualité, aux secrétariats et aux services de coordination des hôpitaux, cliniques, établissements médico-sociaux et maisons de santé. Elle couvre ce qui entoure le soin : courriers non médicaux, procédures et préparation de la certification, comptes rendus d'instances, documents d'information en langage clair, veille réglementaire. Elle s'ouvre sur le cadre propre au secteur : données de santé (catégorie particulière du RGPD), secret professionnel, hébergement certifié HDS. Une journée en intra, deux sur demande ; le financement passe par l'ANFH pour l'hôpital public et par l'OPCO Santé pour le privé.",
+  "sub": "Dans un établissement de santé, une part du temps des secrétariats, des cadres et des équipes qualité part dans l'écrit : convocations, réponses aux familles, procédures, comptes rendus de réunion, dossiers de certification. L'IA générative peut alléger cette charge, à condition de ne jamais toucher une donnée de patient identifiable hors d'un environnement autorisé. La journée commence donc par le cadre, puis ouvre les usages, tous non cliniques : ni aide au diagnostic, ni décision médicale.",
+  "intro": "La formation IA santé de Masteria apprend aux équipes non soignantes et à l'encadrement des hôpitaux, cliniques et structures médico-sociales à utiliser l'IA générative pour leurs écrits, leur démarche qualité et leur coordination, en respectant les règles propres aux données de santé."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "1 jour (7 h) en intra ; format 2 jours possible avec ateliers approfondis par service"
+   "value": "Une journée en intra (7 heures) ; une seconde journée sur demande, avec des ateliers approfondis par service"
   },
   {
    "label": "Pour qui",
-   "value": "Directions et cadres d'établissements de santé et médico-sociaux, qualité et gestion des risques, secrétariats médicaux, coordination, communication, cabinets et maisons de santé, associations et fédérations"
+   "value": "Directions et cadres, qualité et gestion des risques, secrétariats médicaux et services administratifs, coordination, communication, maisons de santé, fédérations"
   },
   {
    "label": "Périmètre",
-   "value": "Les usages non cliniques : écrits administratifs, qualité et certification, coordination, communication, documentation, veille. Pas de diagnostic ni de décision clinique assistée"
+   "value": "Usages non cliniques : écrits, qualité et certification, coordination, information des usagers, veille. Aucune aide au diagnostic, aucune décision médicale"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, avec le cadre HDS et anonymisation pour toute donnée de santé"
+   "value": "Ceux que votre DSI et votre DPO ont validés : Vibe (anciennement Le Chat), Claude, ChatGPT, Gemini et, si l'établissement vit sous Microsoft 365, la solution Microsoft Copilot (anciennement Microsoft 365 Copilot), avec des documents anonymisés ou non nominatifs"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts par service, gabarits outillés (procédure, courrier, note, support), cadre d'usage données de santé et secret médical"
+   "value": "Prompts par service, gabarits (convocation, réponse aux familles, procédure, livret d'accueil), règles d'usage des données de santé"
   },
   {
    "label": "Financement",
-   "value": "Certifiée Qualiopi : ANFH et plan de formation pour l'hôpital public, OPCO Santé ou FAF pour le privé et le libéral, selon votre statut vérifié au cadrage"
+   "value": "Hôpital public : plan de formation et ANFH. Clinique ou médico-social privé : OPCO Santé. Libéraux : leur fonds d'assurance formation"
   }
  ],
  "missionsHead": {
-  "kicker": "Activité par activité",
-  "h2": "Que change l'IA dans le travail non clinique d'un établissement de santé ?",
-  "answer": "L'IA générative touche cinq activités non cliniques du secteur : les écrits administratifs et les secrétariats, la qualité et la certification, la coordination et les parcours, la documentation et la veille, l'information des usagers. Dans chacune, elle rédige, structure et clarifie ; le soin, le diagnostic et la décision restent aux professionnels de santé. Le sixième volet, traité en premier, est le cadre : données de santé, secret médical, HDS.",
-  "foot": "La formation couvre ces volets avec un poids ajusté à votre structure au cadrage. Pour des solutions IA sur mesure dans la santé et la pharma (conseil, développement), voyez notre page {/ia-sante-pharma|IA pour la santé et la pharma}."
+  "kicker": "Tout ce qui entoure le soin",
+  "h2": "Les écrits et la coordination d'un établissement de santé, sans toucher au soin",
+  "answer": "Cinq domaines non cliniques s'y prêtent : les écrits administratifs et le travail des secrétariats, la qualité, la gestion des risques et la certification, la coordination entre services et avec les partenaires, la veille et la documentation, l'information des patients et des familles. L'outil rédige, structure et clarifie ; le soin, le diagnostic et toute décision de prise en charge restent aux professionnels de santé. Le sixième volet, traité en premier, fixe le cadre des données.",
+  "foot": "Au cadrage, chaque domaine reçoit le temps qui correspond à votre structure. Un assistant documentaire hébergé dans un environnement certifié, ou tout autre outil développé pour la santé, dépend de notre activité de conseil et de développement : voir la page {/ia-sante-pharma|IA santé et pharma}."
  },
  "missions": [
   {
-   "icon": "FileText",
+   "icon": "Mail",
    "title": "Écrits administratifs et secrétariats",
-   "desc": "Courriers aux patients et aux familles (non médicaux), convocations, réponses aux demandes, notes internes, comptes rendus de réunion : la production écrite qui charge les secrétariats et les cadres, traitée plus vite et plus clairement. Toujours sans donnée patient identifiante dans un outil non certifié HDS : la formation l'apprend d'abord."
+   "desc": "Convocations, réponses aux demandes des familles sans contenu médical, notes de service, comptes rendus de réunion : l'outil prépare le texte dans le gabarit de l'établissement, le secrétariat ajuste et envoie. Aucune donnée qui permettrait d'identifier un patient n'entre dans un outil non autorisé par l'établissement pour cet usage."
   },
   {
    "icon": "ClipboardCheck",
    "title": "Qualité, gestion des risques, certification",
-   "desc": "Procédures et protocoles rédigés ou révisés à partir de notes, analyses d'événements indésirables structurées (à partir de faits anonymisés), préparation des audits et de la certification, plans d'action, comptes rendus de CREX et de RMM anonymisés. La démarche qualité gagne en rigueur documentaire et en réactivité."
+   "desc": "Procédures et protocoles révisés à partir de notes, analyse d'un événement indésirable décrit sans élément identifiant, compte rendu de CREX, plan d'action pour la visite de certification. Moins d'heures passent dans la mise en forme, davantage dans l'analyse."
   },
   {
-   "icon": "Users2",
+   "icon": "Network",
    "title": "Coordination et parcours",
-   "desc": "Synthèses de réunions de coordination, préparation de staffs non cliniques, communication entre services, documents de parcours et d'orientation à destination des usagers, réponses aux partenaires (ville, médico-social, autorités). L'IA rédige et structure ; les décisions de prise en charge restent aux soignants."
+   "desc": "Synthèse d'une réunion de coordination, préparation d'une commission, échanges avec la médecine de ville, le médico-social ou l'ARS, documents d'orientation pour les usagers. L'outil met en forme ; les décisions de prise en charge restent aux soignants."
   },
   {
-   "icon": "ScrollText",
-   "title": "Documentation, veille et réglementaire",
-   "desc": "Synthèse d'une recommandation, d'un texte réglementaire ou d'une instruction, note d'impact pour la direction, préparation d'une réponse à une autorité, veille sur les évolutions du secteur. À valider contre les sources officielles (HAS, ministère, ARS) avant diffusion : l'IA aide à comprendre et formuler, elle ne fait pas autorité."
+   "icon": "BookOpen",
+   "title": "Veille, recommandations et réglementaire",
+   "desc": "Résumé d'une recommandation de la HAS, d'une instruction ministérielle ou d'un décret, note pour la direction sur ses effets, réponse structurée à une autorité. Chaque point se vérifie sur la source officielle avant diffusion : l'outil aide à lire et à formuler, il ne fait pas foi."
   },
   {
-   "icon": "HeartPulse",
-   "title": "Communication et information des usagers",
-   "desc": "Livrets d'accueil, affiches, contenus web, réponses aux questions fréquentes, supports en langage clair et accessibles (facile à lire et à comprendre), déclinaisons multilingues à faire valider. L'information des patients et des familles gagne en clarté et en homogénéité."
+   "icon": "MessageSquareHeart",
+   "title": "Information des patients et des familles",
+   "desc": "Livret d'accueil, affiche, page du site, réponses aux questions fréquentes, version FALC écrite pour les lecteurs en difficulté, traductions relues par une personne qui parle la langue. L'établissement parle d'une même voix, dans une langue que chacun comprend."
   },
   {
    "icon": "ShieldCheck",
-   "title": "Le cadre : données de santé, secret, HDS",
-   "desc": "Le sujet le plus sensible du secteur, traité en premier et en atelier : ce qu'est une donnée de santé à caractère personnel, le secret médical, l'obligation d'hébergement HDS, l'anonymisation avant tout traitement, les offres entreprise et les déploiements dédiés, ce qu'on ne confie jamais. Vous repartez avec un cadre écrit, défendable devant votre DPO et votre direction."
+   "title": "Le cadre des données de santé",
+   "desc": "Traité en premier et en atelier : ce qu'est une donnée de santé à caractère personnel, le secret professionnel, l'hébergement certifié HDS, l'anonymisation avant tout usage, les environnements que la DSI et le DPO autorisent, et les documents qui n'entrent dans aucun outil. Le service repart avec des règles écrites, qu'il peut défendre devant sa direction."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour un établissement de santé",
-  "answer": "Six gains : des secrétariats et des cadres soulagés de la charge d'écrit, une démarche qualité plus réactive et plus rigoureuse, une information des usagers claire et homogène, une veille réglementaire enfin tenable, un cadre qui protège l'établissement et les patients, et un financement adapté à votre statut (ANFH, OPCO Santé, FAF).",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut inventer une recommandation ou confondre des textes. Donnez-lui le document source, demandez la référence de chaque point repris, validez contre la HAS, le ministère ou l'ARS avant diffusion, et n'y mettez jamais de donnée patient identifiante : le reste, elle le fait remarquablement bien."
+  "kicker": "Pour la direction, la qualité et les secrétariats",
+  "h2": "Six gains pour un établissement de santé ou médico-social",
+  "answer": "Des secrétariats et des cadres qui écrivent plus vite, une démarche qualité moins bousculée avant la visite de certification, des documents d'information que les familles comprennent, une veille réglementaire enfin suivie, des règles de données qui protègent les patients et l'établissement, et pour chaque statut le bon financeur.",
+  "foot": "L'outil peut inventer une recommandation, mélanger deux textes ou citer une version périmée. La parade tient en trois gestes : joindre le document source, exiger pour chaque affirmation l'endroit du texte d'où elle vient, vérifier auprès de la HAS, du ministère ou de l'ARS avant de diffuser. Et aucune donnée de patient identifiable hors d'un environnement autorisé."
  },
  "atouts": [
   {
-   "title": "Des secrétariats et des cadres soulagés de la charge d'écrit",
-   "desc": "Courriers, convocations, notes, comptes rendus : la production écrite non clinique se fait en un temps réduit et avec plus de clarté. Le temps rendu va à l'accueil, à la coordination et aux équipes."
+   "title": "Des secrétariats qui écrivent plus vite",
+   "desc": "Convocations, réponses, notes, comptes rendus : le premier jet arrive en quelques secondes dans le gabarit maison. Le temps rendu va à l'accueil au téléphone et au guichet."
   },
   {
-   "title": "Une démarche qualité plus réactive et plus rigoureuse",
-   "desc": "Procédures à jour, analyses d'événements structurées, préparation d'audit et de certification outillée : la qualité redevient un levier plutôt qu'une course documentaire avant l'échéance."
+   "title": "Une certification préparée sans course finale",
+   "desc": "Procédures tenues à jour, analyses d'événements structurées, plans d'action rédigés au fil de l'eau : la préparation de la visite s'étale au lieu de se concentrer sur les dernières semaines."
   },
   {
-   "title": "Une information des usagers claire et homogène",
-   "desc": "Livrets, affiches, contenus, langage clair, accessibilité : l'établissement parle d'une seule voix, compréhensible par tous, sans mobiliser des semaines de rédaction."
+   "title": "Des documents que les familles comprennent",
+   "desc": "Livret d'accueil, affiches, réponses types en langage clair et en version FALC : l'information devient lisible par tous, sans mobiliser des semaines de rédaction."
   },
   {
-   "title": "Une veille et une réglementation enfin tenables",
-   "desc": "Recommandations, instructions, textes : ce que personne n'a le temps de lire est digéré et restitué pour votre établissement, à valider contre les sources officielles."
+   "title": "Une veille réglementaire enfin suivie",
+   "desc": "Recommandations, instructions, décrets : ce que personne n'avait le temps de lire arrive résumé et rapporté à votre établissement, à vérifier sur la source avant toute décision."
   },
   {
-   "title": "Un cadre qui protège l'établissement et les patients",
-   "desc": "Données de santé, secret médical, HDS, anonymisation : la formation pose le cadre le plus strict du site, écrit et applicable, pour que les usages soient défendables devant le DPO, la direction et les autorités."
+   "title": "Des règles qui protègent patients et établissement",
+   "desc": "Secret professionnel, hébergement HDS, anonymisation, catégories particulières du RGPD : des règles écrites et applicables, que la direction et le DPO peuvent défendre devant une autorité."
   },
   {
-   "title": "Un financement adapté à votre statut",
-   "desc": "Hôpital public, établissement privé, cabinet libéral, structure médico-sociale : les dispositifs diffèrent (ANFH, OPCO Santé, FAF), et nous montons le dossier dans le bon cadre, vérifié avant le devis."
+   "title": "Un financement adapté au statut",
+   "desc": "Hôpital public, clinique, établissement médico-social associatif, cabinet libéral : chacun a son financeur (ANFH, OPCO Santé, fonds d'assurance formation), que nous identifions avant le devis."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA santé sur 1 jour",
-  "answer": "Matin : ce que les modèles font et ne font pas en santé et ce que la formation ne couvre pas (aucun usage clinique), le cadre en atelier (données de santé, secret médical, hébergement HDS, anonymisation), le panorama des outils validés, la méthode de la demande efficace encodée dans vos gabarits, un premier atelier d'écrits administratifs, puis le projet partagé du service. Après-midi : trois ateliers sur vos documents anonymisés, qualité et certification, coordination et information des usagers, veille avec la recherche approfondie (Deep Research), puis les fonctionnalités avancées condensées : compétences (Skills), assistants et agents, tâches planifiées, gouvernance, et votre plan d'action avec l'évaluation des acquis.",
-  "foot": "Le programme s'ajuste au cadrage : la qualité approfondit les analyses d'événements et la certification, les secrétariats les courriers et les convocations, la direction les notes et les instances ; en format 2 jours, la seconde journée reprend les fonctionnalités avancées en atelier, service par service. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Une journée de formation IA santé : le cadre le matin, les ateliers l'après-midi",
+  "answer": "Le matin : ce que la formation couvre et ce qu'elle laisse aux dispositifs médicaux, les règles des données de santé en atelier, les outils validés par votre établissement, une demande bien posée sur un courrier non médical, un premier atelier de secrétariat et un espace de travail pour le service qualité. L'après-midi : trois ateliers sur des documents anonymisés (qualité et certification, coordination et information des usagers, veille et recommandations), puis compétences (Skills) et assistants, tâches programmées, règles de gouvernance et engagements de chacun, avant le contrôle des acquis.",
+  "foot": "Le cadrage règle les dosages : la qualité approfondit les événements indésirables et la certification, les secrétariats les courriers et les convocations, la direction les notes et les instances. La seconde journée, sur demande, reprend les fonctions avancées en atelier, service par service. Les fonctions présentées correspondent à ce que nous avons vérifié le 7 octobre 2026 ; lorsqu'une fonction n'est pas ouverte sur vos comptes, le formateur la fait voir sur le sien, puis l'équipe la transpose sur ses outils validés."
  },
  "programme": [
   {
@@ -122,161 +129,170 @@ export default {
    "titre": "Le cadre d'abord, puis les usages non cliniques",
    "matin": [
     {
-     "t": "Capacités et limites de l'IA en santé",
-     "d": "Capacités des modèles sur les écrits du secteur : rédiger, reformuler en langage clair, synthétiser une recommandation, structurer un compte rendu ; limites sur les gros tableaux et sur tout ce qui engage. La formation ne couvre aucun usage clinique : ni aide au diagnostic, ni décision médicale."
+     "t": "Ce que couvre la journée, et ce qu'elle exclut",
+     "d": "Les modèles rédigent, reformulent en langage clair, résument une recommandation, structurent un compte rendu. Ils se trompent sur les gros tableaux et inventent quand la source manque. La formation n'aborde aucun usage clinique : l'aide au diagnostic relève des dispositifs médicaux, évalués et encadrés à part, dont les obligations de haut risque prévues par l'AI Act s'appliqueront au 2 août 2028."
     },
     {
-     "t": "Le cadre en atelier : données de santé, HDS",
-     "d": "Ce qu'est une donnée de santé à caractère personnel, le secret médical, l'obligation d'hébergement HDS, l'anonymisation avant tout traitement, les offres entreprise et les déploiements dédiés. Aucune donnée patient identifiante dans un outil non certifié HDS : vous repartez avec un cadre écrit, défendable devant votre DPO."
+     "t": "Atelier : les données de santé et leurs règles",
+     "d": "Les informations de santé sur une personne font partie des catégories particulières que protège le RGPD (article 9) ; le secret professionnel les couvre, et un établissement qui les confie à un tiers doit choisir un hébergeur certifié HDS, comme le prévoit l'article L1111-8 du code de la santé publique. On en tire des règles : anonymisation avant tout usage, environnements que la DSI et le DPO ont autorisés, liste de ce qui n'entre nulle part."
     },
     {
-     "t": "Panorama des outils validés par la DSI",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini, Vibe (anciennement Le Chat) de Mistral, hébergé en Europe : lequel pour quel écrit, où vont les données, ce qui reste interdit. Les offres entreprise n'entraînent pas les modèles sur vos données ; les versions gratuites sont exclues de tout usage professionnel."
+     "t": "Les outils validés par l'établissement",
+     "d": "Côté Microsoft, Copilot sous compte professionnel ; ensuite Claude Team, ChatGPT Business, Gemini pour les comptes Workspace et Vibe, que Mistral héberge en Europe : ce que chacun permet, où vont les données, ce qui reste interdit. Les versions gratuites sont exclues de tout usage professionnel, et un document anonymisé reste la règle."
     },
     {
-     "t": "La demande efficace, puis vos gabarits encodés",
-     "d": "Contexte, destinataire, format, langage clair, exemples issus de vos courriers, itération puis relecture : la méthode appliquée à un courrier non médical et à une note interne, sur des cas anonymisés. Puis l'encoder dans les instructions personnalisées et la mémoire : gabarits de convocation, de réponse et de note."
+     "t": "Une demande bien posée sur un courrier non médical",
+     "d": "Le destinataire, l'objet, le ton, le niveau de langue, un courrier de l'établissement comme modèle, puis deux ou trois reprises et une relecture : la méthode s'applique à une réponse aux familles et à une note interne, sur des cas anonymisés. Elle se range ensuite dans les réglages de l'assistant, avec les gabarits de convocation et de réponse."
     },
     {
-     "t": "Premier atelier : écrits administratifs et secrétariat",
-     "d": "Courrier aux familles, convocation, réponse à une demande, compte rendu de réunion de service, à partir de vos gabarits et de cas anonymisés. Copilot dans Outlook et Word ou Gemini dans Gmail et Docs rédigent le premier jet ; le secrétariat relit, ajuste le ton et garde la main."
+     "t": "Atelier secrétariat",
+     "d": "Courrier aux familles, convocation, réponse à une demande, compte rendu d'une réunion d'équipe, à partir de vos gabarits. Copilot (Outlook, Word) ou Gemini (Gmail, Docs) proposent le texte ; le secrétariat relit, ajuste le ton et décide de l'envoi."
     },
     {
-     "t": "Projets et espaces de travail par service",
-     "d": "Monter le projet « Qualité et certification » : instructions communes, procédures et gabarits en fichiers de connaissance, mémoire propre au projet, droits de lecture ou d'écriture, jamais de dossier patient. Projets partagés de ChatGPT Business, Projets de Claude, Notebooks de Copilot, NotebookLM sur vos recommandations, Projets et Bibliothèques de Vibe."
+     "t": "Un espace de travail pour le service qualité",
+     "d": "L'espace « Qualité et certification » réunit consignes communes, procédures, gabarits et recommandations de référence, avec des accès réglés pour chacun, et jamais de dossier patient. Selon l'outil validé : carnet Gemini Notebook (anciennement NotebookLM) nourri de vos recommandations, projet ChatGPT Business ou Claude, bloc-notes Copilot, projet Vibe."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier qualité, gestion des risques, certification",
-     "d": "Réviser un protocole à partir de notes, structurer l'analyse d'un événement indésirable anonymisé et le compte rendu de CREX, préparer le plan d'action attendu pour la certification. Copilot dans Excel ou l'analyse de données de ChatGPT et Claude lisent l'export anonymisé des signalements ; les conclusions restent les vôtres."
+     "t": "Atelier qualité et gestion des risques",
+     "d": "Réviser un protocole à partir de notes, structurer l'analyse d'un événement indésirable décrit sans élément identifiant, rédiger le compte rendu de CREX, préparer le plan d'action pour la certification. Un export anonymisé des signalements passe dans Copilot sous Excel ou en pièce jointe dans ChatGPT et Claude ; les conclusions appartiennent à l'équipe qualité."
     },
     {
      "t": "Atelier coordination et information des usagers",
-     "d": "Synthétiser une réunion de coordination depuis le récapitulatif de Copilot dans Teams ou de Gemini dans Meet, puis répondre à un partenaire. Co-éditer dans Canvas, Artifacts ou Copilot Pages un livret d'accueil en langage clair, sa version facile à lire et à comprendre, les déclinaisons multilingues à faire valider."
+     "d": "Une réunion de coordination résumée à partir du compte rendu automatique de Teams ou des notes prises par Gemini dans Meet, sans nom de patient, puis la réponse à un partenaire. On rédige ensuite à plusieurs un livret d'accueil en langage clair, sa version FALC et ses traductions, que relira un locuteur."
     },
     {
-     "t": "Atelier veille, recommandations et réglementaire",
-     "d": "Synthétiser une recommandation de la HAS ou un texte réglementaire, rédiger la note d'impact pour la direction, préparer une réponse à une autorité. La recherche approfondie de ChatGPT, Claude ou Gemini et l'agent Researcher de Copilot collectent ; chaque point se vérifie contre la HAS, le ministère et l'ARS avant diffusion."
+     "t": "Atelier veille et recommandations",
+     "d": "Résumer une recommandation de la HAS ou un texte réglementaire, rédiger la note d'impact pour la direction, préparer une réponse à une autorité. ChatGPT, Claude et Gemini en recherche approfondie, ou Researcher dans Copilot, rassemblent les sources ; chaque point se contrôle sur le site de la HAS, du ministère ou de l'ARS."
     },
     {
-     "t": "Compétences, assistants et agents : quoi pour quoi",
-     "d": "Une compétence (Skill) naît de votre check-list de relecture d'un courrier et s'active d'elle-même quand la demande correspond. Trier ensuite les GPTs existants, que l'éditeur fait converger vers les agents d'espace de travail, puis situer Agent Builder de Copilot (assistant sur vos documents SharePoint), Copilot Studio (un projet) et Gems."
+     "t": "Compétences, assistants et agents",
+     "d": "La grille de relecture d'un courrier se transforme en compétence (Skill) : l'outil l'applique de lui-même à chaque courrier. On trie ensuite les GPTs existants, qu'OpenAI supprime le 11 décembre 2026 ; on distingue enfin trois niveaux : l'assistant bâti dans Copilot sur des documents SharePoint, un projet Copilot Studio à part entière, les compétences Gemini qui succèdent aux Gems."
     },
     {
-     "t": "Tâches planifiées et automatisations légères",
-     "d": "Planifier en une phrase une veille hebdomadaire sur les publications de la HAS et de l'ARS, un rappel des échéances de certification ou la trame mensuelle du tableau de bord qualité. Tâches planifiées de ChatGPT et de Vibe, Workflows, Workspace Studio, Power Automate : un humain relit avant envoi."
+     "t": "Tâches programmées sans donnée de patient",
+     "d": "La veille hebdomadaire des publications de la HAS et de l'ARS, le rappel des échéances de la certification ou la trame mensuelle du tableau de bord qualité se programment d'une simple phrase, avec ChatGPT, Vibe ou Workspace Studio. Une personne relit avant tout envoi, et aucune tâche ne manipule de donnée de patient."
     },
     {
-     "t": "Gouvernance, plan d'action et évaluation des acquis",
-     "d": "Un propriétaire nommé par projet, compétence et assistant, un registre tenu, le partage et les droits admin réglés, une revue trimestrielle et des indicateurs suivis. Puis votre plan d'action : trois usages à installer dans le mois, qui les porte, comment on mesure ; évaluation des acquis, remise des livrables."
+     "t": "Gouvernance, plan d'action, évaluation",
+     "d": "Chaque espace, compétence et assistant a un responsable ; le service tient un registre, fixe les droits avec la DSI et réexamine le tout tous les trois mois. Chacun choisit deux usages à installer dans le mois et la façon de les mesurer ; puis vient l'évaluation des acquis, et les gabarits, prompts et règles écrites sont remis à la fin."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA santé ?",
-  "answer": "Aux fonctions non cliniques et d'encadrement du secteur : directions et cadres d'établissements de santé et médico-sociaux, qualité et gestion des risques, secrétariats médicaux et services administratifs, coordination et communication, cabinets, maisons de santé et structures médico-sociales, associations et fédérations. Sans prérequis technique. Les usages cliniques ne sont pas couverts."
+  "h2": "Pour qui, à l'hôpital, en clinique et dans le médico-social ?",
+  "answer": "Pour les fonctions d'encadrement et les métiers non soignants : directions et cadres d'établissements sanitaires et médico-sociaux, équipes qualité et gestion des risques, secrétariats médicaux et services administratifs, coordination et communication, maisons de santé, cabinets, associations et fédérations. Aucun prérequis technique. Les usages cliniques ne sont pas traités."
  },
  "profils": [
   {
-   "icon": "Landmark",
-   "title": "Directions et cadres d'établissements",
-   "desc": "Direction, cadres de santé et administratifs, cadres de pôle : fixer le cadre d'usage, arbitrer les outils, outiller les services. La formation vous donne la lecture d'ensemble et le cadre écrit, dans le respect du secret médical et de l'HDS."
+   "icon": "Building2",
+   "title": "Directions et cadres",
+   "desc": "Direction, cadres de santé et administratifs, cadres de pôle : vous fixez les règles d'usage, choisissez les outils avec la DSI et outillez les services. La journée vous donne une lecture globale et des règles écrites, compatibles avec le secret professionnel."
   },
   {
    "icon": "ClipboardCheck",
-   "title": "Qualité, gestion des risques, certification",
-   "desc": "Procédures, événements indésirables, audits, certification, plans d'action : les usages qui rendent la démarche qualité plus réactive et plus rigoureuse, avec l'anonymisation en préalable."
+   "title": "Qualité, risques, certification",
+   "desc": "Procédures, événements indésirables, CREX, plans d'action, visite de certification : les ateliers de l'après-midi vous concernent, avec l'anonymisation comme préalable."
   },
   {
-   "icon": "FileText",
-   "title": "Secrétariats médicaux et services administratifs",
-   "desc": "Courriers non médicaux, convocations, réponses, notes, comptes rendus : la charge d'écrit qui pèse sur les secrétariats, traitée plus vite, sans jamais mettre de donnée patient identifiante dans un outil non certifié."
+   "icon": "Mail",
+   "title": "Secrétariats et services administratifs",
+   "desc": "Courriers non médicaux, convocations, réponses, notes : le volume d'écrit des secrétariats, traité plus vite, sans jamais faire entrer une donnée de patient identifiable dans un outil non autorisé."
   },
   {
-   "icon": "Stethoscope",
-   "title": "Cabinets, maisons de santé, médico-social",
-   "desc": "Structures de ville et médico-sociales : information des usagers, coordination, documentation, réglementaire, sur des usages non cliniques et dans un cadre adapté à votre taille et à votre statut."
+   "icon": "HeartPulse",
+   "title": "Maisons de santé, cabinets, médico-social",
+   "desc": "Information des usagers, coordination avec la ville, réglementaire, organisation : une version de la journée adaptée à une petite structure, avec des règles de données à sa mesure."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Données de santé, secret médical, HDS : ce que la formation pose en premier",
-  "p": "Le secteur manipule ce que le droit protège le plus : des données de santé à caractère personnel, catégorie particulière au sens du RGPD, couvertes par le secret médical et soumises à l'obligation d'hébergement HDS. La formation commence par là et le formalise avec vous : ce qu'est une donnée de santé identifiante, l'anonymisation systématique avant tout traitement, les offres entreprise et déploiements dédiés validés par la DSI et le DPO, ce qu'on ne confie jamais à un outil non certifié, et où s'arrête l'assistance (l'IA rédige et structure des écrits non cliniques ; le soin, le diagnostic et la décision restent aux professionnels de santé). Ce cadre est un livrable, écrit et applicable, à intégrer à votre {/charte-ia-entreprise|charte IA d'établissement}. Nous formons des équipes du secteur de la santé et du médico-social depuis 2022 : les mêmes questions reviennent, et elles ont des réponses pratiques.",
+  "kicker": "Données de santé",
+  "h2": "Données de santé, secret professionnel, HDS : le cadre posé en premier",
+  "p": "Le secteur manipule ce que le droit protège le plus : des informations de santé sur des personnes, rangées par le RGPD parmi les catégories particulières (article 9), protégées par le secret professionnel, et dont l'hébergement pour un établissement exige un prestataire certifié HDS, installé dans l'Espace économique européen selon le référentiel actuel. La journée part de là. Ensemble, vous écrivez ce qu'est une donnée identifiante, la façon d'anonymiser un document, les environnements que la DSI et le DPO acceptent, les documents qui ne vont dans aucun outil, et le partage des rôles : l'IA rédige et structure des écrits non cliniques, le soin et la décision restent aux professionnels. Le guide de la HAS publié le 30 octobre 2025 (Apprendre, Vérifier, Estimer, Communiquer) sert de fil conducteur, et vos règles complètent ensuite la {/charte-ia-entreprise|charte IA de l'établissement}.",
   "points": [
-   "Aucune donnée patient identifiante dans un outil non certifié HDS",
-   "Anonymisation systématique avant tout traitement",
-   "Usages non cliniques uniquement : ni diagnostic ni décision médicale",
-   "Validation contre la HAS, le ministère et l'ARS avant diffusion"
+   "Aucune donnée de patient identifiable hors d'un environnement autorisé",
+   "Anonymisation avant tout usage, même dans un outil validé",
+   "Usages non cliniques seulement : ni diagnostic ni décision médicale",
+   "Vérification sur la HAS, le ministère ou l'ARS avant diffusion"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT la journée de formation en intra, pour le groupe (jusqu'à 10 participants) ; 3 960 € HT le format deux jours. Certifiée Qualiopi, la formation relève de l'ANFH et du plan de formation pour l'hôpital public, de votre OPCO (OPCO Santé selon la convention) pour le privé et le médico-social privé, d'un fonds d'assurance formation pour le libéral : le bon cadre se vérifie au cadrage, et le devis est établi dans les formes attendues par votre financeur, sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (gabarits, procédures, cas anonymisés, outils validés par votre DSI), l'animation de la journée en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts par service, gabarits outillés, cadre d'usage données de santé), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Coût de la formation et financement selon votre statut",
+  "answer": "Pour 12 participants au maximum, la journée en intra est proposée à 1 980 € HT ; avec la seconde journée, le parcours atteint 3 960 € HT. Les financeurs exigent la certification Qualiopi, que Masteria a obtenue pour ses actions de formation. À l'hôpital public, le plan de formation de l'établissement porte la session, avec l'appui possible de l'ANFH ; une clinique ou un établissement médico-social privé se tourne vers l'OPCO Santé ; un professionnel libéral, vers son fonds d'assurance formation. Quand l'établissement ne récupère pas la TVA, le devis mentionne aussi le TTC.",
+  "inclus": "Le cadrage sur vos gabarits, vos procédures, des cas anonymisés et les outils validés par votre DSI ; la journée sur site ou à distance, supports fournis ; les livrables (prompts par service, gabarits, règles d'usage des données de santé) ; enfin un quiz final et le certificat de réalisation propre à chaque participant. Si le formateur se déplace, son trajet figure sur le devis.",
+  "financement": "Pour un établissement privé ou associatif, {/quel-opco|Quel OPCO ?} confirme l'opérateur d'après la convention collective, et notre page {/financement-formation-ia|sur le financement} décrit les dispositifs. Pour un hôpital public, la demande suit le circuit du plan de formation et de l'ANFH. Nous préparons programme, convention et justificatifs dans la forme demandée par votre financeur ; aucun recours au CPF n'est possible."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA santé ?",
-   "a": "À utiliser l'intelligence artificielle générative sur les usages non cliniques d'un établissement de santé, d'un cabinet ou d'une structure médico-sociale : écrits administratifs et secrétariats, démarche qualité et certification (procédures, analyses d'événements anonymisés, audits), coordination et parcours, information des usagers en langage clair, documentation et veille réglementaire. Et, en premier, le cadre : données de santé, secret médical, hébergement HDS, anonymisation, ce qu'on ne confie jamais. La formation ne couvre aucun usage clinique ou diagnostique."
+   "q": "Que contient une formation IA santé ?",
+   "a": "Les apports de l'IA générative hors du soin dans un établissement de santé, un cabinet ou une structure médico-sociale : écrits administratifs et secrétariats, qualité et certification (procédures, événements indésirables anonymisés, plans d'action), coordination, documents destinés aux patients en langage clair, veille réglementaire. La journée commence par les règles qui protègent les données de santé : catégorie particulière du RGPD, secret professionnel, hébergement HDS, anonymisation. Aucun usage clinique ou diagnostique n'est abordé."
   },
   {
-   "q": "La formation aborde-t-elle l'IA pour le diagnostic ou la décision médicale ?",
-   "a": "Non, et c'est un choix assumé. Les usages cliniques de l'IA (aide au diagnostic, imagerie, aide à la prescription) relèvent de dispositifs médicaux encadrés, évalués et déployés dans un cadre réglementaire propre ; ils ne s'apprennent pas en une journée avec un outil généraliste, et nous ne les vendons pas. Cette formation couvre tout ce qui entoure le soin : l'écrit administratif, la qualité, la coordination, l'information des usagers, la documentation, la veille. C'est là que l'IA générative fait gagner du temps sans risque clinique."
+   "q": "La formation traite-t-elle de l'IA pour le diagnostic ou la décision médicale ?",
+   "a": "Non, par choix. Les usages cliniques (aide au diagnostic, imagerie, aide à la prescription) relèvent de dispositifs médicaux évalués et encadrés, soumis aux obligations de haut risque prévues par le règlement européen à partir du 2 août 2028 ; ils ne s'apprennent pas en une journée sur un outil généraliste, et nous ne les vendons pas. La formation couvre ce qui entoure le soin : l'écrit, la qualité, la coordination, l'information des usagers, la veille."
   },
   {
    "q": "Peut-on utiliser ChatGPT ou Copilot avec des données de patients ?",
-   "a": "Pas avec des données identifiantes dans un outil non certifié HDS, et la formation en fait la règle numéro un. Les données de santé à caractère personnel sont une catégorie particulière au sens du RGPD, couvertes par le secret médical, et leur hébergement exige un prestataire certifié HDS. En pratique : anonymisation systématique avant tout traitement (aucun nom, date de naissance, numéro, élément permettant d'identifier), usage d'offres entreprise ou de déploiements dédiés validés par votre DSI et votre DPO pour ce qui reste, et jamais de version gratuite. Sur des documents anonymisés ou non nominatifs (procédures, livrets, notes, textes), les usages sont larges et sûrs."
+   "a": "Pas avec des données identifiables hors d'un environnement autorisé : la journée commence par cette règle. Les données de santé relèvent des catégories particulières du RGPD et du secret professionnel, et leur hébergement par un tiers exige un prestataire certifié HDS. En pratique : anonymisation avant tout usage (ni nom, ni date de naissance, ni numéro, ni détail qui permettrait de reconnaître quelqu'un), outils acceptés par votre DSI et votre DPO, aucune version gratuite. Sur des documents non nominatifs (procédures, livrets, notes, textes), les usages sont larges."
   },
   {
    "q": "L'IA peut-elle rédiger des comptes rendus médicaux ?",
-   "a": "Ce n'est pas l'objet de cette formation. Les comptes rendus cliniques relèvent d'outils dédiés (dictée et structuration médicales) déployés dans un cadre HDS et validés par l'établissement ; leur usage se forme avec l'éditeur et la DSI. Ce que la formation couvre : les comptes rendus non cliniques (réunions, instances, coordination, CREX et RMM anonymisés), les courriers non médicaux, les notes et procédures. La frontière est posée dès le cadrage, et rappelée dans le cadre d'usage livré."
+   "a": "Cette formation ne porte pas sur eux. Les comptes rendus cliniques passent par des outils dédiés (dictée et structuration médicales) déployés dans un environnement certifié et validés par l'établissement, que l'éditeur et la DSI forment à utiliser. Nous traitons les comptes rendus non cliniques (réunions, instances, coordination, CREX anonymisés), les courriers non médicaux, les notes et les procédures. La frontière est posée dès le cadrage et rappelée dans les règles remises."
   },
   {
-   "q": "Comment la formation est-elle financée pour un hôpital public ?",
-   "a": "Par le plan de formation de l'établissement et l'ANFH, l'organisme paritaire de la fonction publique hospitalière ; jamais par un OPCO, qui ne concerne pas l'hôpital public. Nous fournissons la convention, le programme et les pièces dans les formes attendues par l'ANFH et par votre direction des ressources humaines ou de la formation. Pour un établissement privé ou une structure médico-sociale privée, c'est votre OPCO (OPCO Santé pour la plupart des conventions du secteur) ; pour un professionnel libéral, un fonds d'assurance formation selon votre statut. Le bon cadre se vérifie au cadrage, avant le devis."
+   "q": "Que recommande la HAS sur l'IA générative ?",
+   "a": "La Haute Autorité de santé a mis en ligne le 30 octobre 2025, puis actualisé le 15 avril 2026, un guide de premières clefs d'usage destiné aux professionnels du sanitaire, du social et du médico-social. Il s'organise autour de quatre repères : apprendre le fonctionnement de l'outil, vérifier ce qu'il produit, estimer s'il répond au besoin, communiquer avec les autres utilisateurs. La journée s'appuie sur ces repères et les applique à vos documents."
   },
   {
-   "q": "La formation convient-elle à un cabinet médical ou une maison de santé ?",
-   "a": "Oui, en version d'une journée adaptée à la taille : information des patients en langage clair, courriers non médicaux, organisation, veille, coordination avec la ville et le médico-social, avec le cadre données de santé et secret médical posé pour une petite structure. Le financement passe par votre OPCO ou votre fonds d'assurance formation selon le statut des participants (salariés, libéraux), ce que nous vérifions avant le devis."
+   "q": "Comment un hôpital public finance-t-il la formation ?",
+   "a": "Par son plan de formation et par l'ANFH, l'organisme paritaire de la fonction publique hospitalière ; un OPCO n'intervient pas pour un hôpital public. Nous fournissons la convention, le programme et les justificatifs dans la forme attendue par l'ANFH et par la direction des ressources humaines. L'achat se fait sur bon de commande ; comme l'établissement ne récupère en général pas la TVA, le devis affiche le montant TTC à côté du HT."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre établissement a validés. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral. En santé, la question n'est pas seulement l'outil mais son cadre de déploiement : offre entreprise ou déploiement dédié validé par la DSI et le DPO, hébergement HDS pour toute donnée de santé, souveraineté quand elle est exigée. La formation part de ce que vous avez le droit d'utiliser, et le cadre d'usage livré le formalise."
+   "q": "Et pour une clinique ou un établissement médico-social privé ?",
+   "a": "L'opérateur est en général l'OPCO Santé, qui couvre les branches sanitaires, sociales et médico-sociales privées ; il décide de son financement selon son barème et son budget. Une association gestionnaire, qui en général ne déduit pas la TVA, reçoit un devis en HT et en TTC. Un professionnel libéral sollicite le fonds d'assurance formation dont relève sa profession. Le bon interlocuteur se vérifie au cadrage, avant le devis."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est d'une journée (7 heures) en intra, en présentiel dans l'établissement ou à distance, pour un groupe de 4 à 10 personnes des fonctions concernées. Un format de deux jours ajoute des ateliers approfondis par service (qualité, secrétariats, communication, direction). Pour un groupe hospitalier ou une fédération, la formation se déploie par vagues d'établissements ou de services, avec des livrables communs."
+   "q": "Une maison de santé ou un cabinet peut-il suivre la formation ?",
+   "a": "Oui, en une journée adaptée à la taille de la structure : information des patients en langage clair, courriers non médicaux, organisation du secrétariat, veille, coordination avec l'hôpital et le médico-social, avec des règles de données taillées pour une petite équipe. Le financement dépend du statut des participants (salariés, libéraux), que nous vérifions avant le devis."
   },
   {
-   "q": "Combien coûte la formation IA santé ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : la journée représente 1 980 € HT, le format deux jours 3 960 € HT. Certifiée Qualiopi, la formation relève de l'ANFH et du plan de formation pour l'hôpital public, de votre OPCO pour le privé, d'un fonds d'assurance formation pour le libéral. Nous établissons le devis dans les formes attendues par votre financeur, sous 24 heures. La formation n'est pas éligible au CPF."
+   "q": "Sur quels outils porte la journée ?",
+   "a": "Sur ceux que votre établissement a validés. Masteria, sans lien avec les éditeurs, forme à Claude, à Gemini, à Vibe, à ChatGPT et à Microsoft Copilot. En santé, la question porte autant sur l'environnement de déploiement que sur l'outil : compte professionnel validé par votre DSI et votre DPO, hébergement certifié pour toute donnée de santé, hébergement européen quand il est exigé. Les ateliers partent des outils autorisés chez vous."
+  },
+  {
+   "q": "Quelle durée et quel budget pour une formation IA santé ?",
+   "a": "Une journée de sept heures en intra, dans l'établissement ou par visioconférence, pour 4 à 12 personnes des fonctions concernées : 1 980 € HT, et 3 960 € HT avec la seconde journée d'ateliers par service. Un groupe hospitalier ou une fédération peut déployer la formation par vagues d'établissements, avec des livrables communs. Votre devis suit sous 24 heures, conforme à ce qu'attend votre financeur."
+  },
+  {
+   "q": "Que change l'AI Act pour un établissement qui utilise l'IA générative ?",
+   "a": "Depuis février 2025, son article 4 demande à toute organisation qui emploie des systèmes d'IA de faire progresser la culture de l'IA de ses salariés, sans qu'aucun certificat ne soit exigé. Rédiger un courrier ou résumer une note présente un risque minimal. Les obligations lourdes visent d'autres usages : les dispositifs médicaux intégrant de l'IA, classés à haut risque, au 2 août 2028."
   }
  ],
  "course": {
-  "name": "Formation IA santé — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée aux usages non cliniques des établissements de santé, cabinets et structures médico-sociales : écrits administratifs et secrétariats, qualité, gestion des risques et certification, coordination et parcours, information des usagers en langage clair, documentation et veille réglementaire, dans le cadre des données de santé, du secret médical et de l'hébergement HDS. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 1 jour en intra (2 jours possibles), présentiel ou distanciel. Certifiée Qualiopi.",
+  "name": "Formation IA santé (Masteria)",
+  "description": "Formation à l'IA générative pour les usages non cliniques des établissements de santé, cabinets et structures médico-sociales : écrits administratifs et secrétariats, qualité, gestion des risques et certification, coordination, information des usagers en langage clair et en FALC, veille réglementaire, sous le régime des données de santé (RGPD, secret professionnel, hébergement HDS). Outils : Microsoft Copilot, ChatGPT, Claude, Gemini, Vibe. Une journée en intra, deux sur demande. Organisme certifié Qualiopi ; financement ANFH ou OPCO Santé selon le statut.",
   "level": "Tous niveaux",
   "teaches": [
-   "Appliquer le cadre données de santé, secret médical et HDS aux usages de l'IA générative",
-   "Produire les écrits administratifs non cliniques plus vite et plus clairement",
-   "Outiller la démarche qualité : procédures, analyses d'événements anonymisés, préparation d'audit",
-   "Rédiger l'information des usagers en langage clair et accessible",
-   "Synthétiser recommandations et textes réglementaires et les valider contre les sources officielles"
+   "Appliquer les règles des données de santé, du secret professionnel et de l'hébergement HDS à l'usage de l'IA",
+   "Rédiger plus vite les écrits administratifs non cliniques d'un service",
+   "Outiller la démarche qualité : procédures, événements indésirables anonymisés, plan d'action de certification",
+   "Écrire l'information des usagers en langage clair et en version FALC",
+   "Résumer une recommandation ou un texte réglementaire et le vérifier sur la source officielle"
   ],
-  "about": "Intelligence artificielle générative appliquée aux usages non cliniques du secteur de la santé",
+  "about": "Intelligence artificielle générative appliquée aux usages non cliniques de la santé",
   "timeRequired": "PT7H",
   "duration": "PT7H",
   "prerequisites": "Aucun prérequis technique. Exercice dans un établissement, un cabinet ou une structure de santé ou médico-sociale.",
-  "audience": "Directions et cadres d'établissements, qualité et gestion des risques, secrétariats, coordination, communication, cabinets et médico-social",
-  "locationName": "Masteria — intra-établissement, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "audience": "Directions et cadres, qualité et gestion des risques, secrétariats, coordination, communication, maisons de santé et médico-social",
+  "locationName": "Masteria, en intra dans l'établissement, en France ou ailleurs, ou en classe virtuelle"
  },
  "article": {
-  "headline": "Formation IA santé : les usages non cliniques de l'IA générative, dans le cadre du secret médical et de l'HDS",
-  "datePublished": "2026-08-10",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "headline": "Formation IA santé : l'IA générative pour les écrits, la qualité et la coordination, hors soin",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -286,7 +302,7 @@ export default {
    {
     "@type": "Thing",
     "name": "Secret médical",
-    "sameAs": "https://fr.wikipedia.org/wiki/Secret_m%C3%A9dical"
+    "sameAs": "https://fr.wikipedia.org/wiki/Secret_m%C3%A9dical_en_France"
    },
    {
     "@type": "Thing",
@@ -297,11 +313,15 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "L'hébergement des données de santé (certification HDS) — esante.gouv.fr",
+   "name": "Guide de la HAS sur l'IA générative en santé (octobre 2025, mis à jour en avril 2026)",
+   "url": "https://has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante"
+  },
+  {
+   "name": "Certification des hébergeurs de données de santé (esante.gouv.fr)",
    "url": "https://esante.gouv.fr/produits-services/hds"
   }
  ],
@@ -309,54 +329,99 @@ export default {
   {
    "label": "IA pour la santé et la pharma",
    "href": "/ia-sante-pharma",
-   "tag": "Secteur",
-   "desc": "Conseil et développement de solutions IA pour les acteurs de la santé et de la pharma."
+   "tag": "Secteur"
   },
   {
-   "label": "Formation IA pour responsable QSE",
+   "label": "Audit IA médico-social",
+   "href": "/audit-ia-medico-social",
+   "tag": "Audit"
+  },
+  {
+   "label": "Formation IA QSE",
    "href": "/formation-ia-qse",
-   "tag": "Métier voisin",
-   "desc": "Qualité, sécurité, environnement : la démarche qualité outillée par l'IA, avec le cadre données de santé sur les accidents."
+   "tag": "Métier voisin"
   },
   {
    "label": "Formation IA assistanat",
    "href": "/formation-ia-assistante",
-   "tag": "Métier voisin",
-   "desc": "Pour les secrétariats et assistants : courriers, agendas, comptes rendus, organisation avec l'IA."
-  },
-  {
-   "label": "Formation IA écrits professionnels",
-   "href": "/formation-ia-ecrits-pro",
-   "tag": "Compétence",
-   "desc": "Rédiger mieux et plus vite : notes, courriers, comptes rendus, synthèses, langage clair."
+   "tag": "Métier voisin"
   },
   {
    "label": "Formation IA communication",
    "href": "/formation-ia-communication",
-   "tag": "Métier voisin",
-   "desc": "L'information et la communication institutionnelle avec l'IA : contenus, supports, relations presse."
+   "tag": "Métier voisin"
   },
   {
    "label": "IA et RGPD",
    "href": "/ia-et-rgpd",
-   "tag": "Cadre",
-   "desc": "Les principes RGPD appliqués à l'IA, l'analyse d'impact et les garanties à vérifier outil par outil."
+   "tag": "Cadre"
   },
   {
-   "label": "Formation AI Act",
-   "href": "/formation-ai-act",
-   "tag": "Conformité",
-   "desc": "Ce que le règlement européen impose à vos usages de l'IA, avec la santé parmi les domaines à haut risque à connaître."
+   "label": "Charte IA d'entreprise",
+   "href": "/charte-ia-entreprise",
+   "tag": "Cadre"
   },
   {
    "label": "Acculturation IA",
    "href": "/acculturation-ia",
-   "tag": "Établissement",
-   "desc": "Quand c'est tout l'établissement ou le groupe qu'il faut embarquer, par vagues de services."
+   "tag": "Établissement"
   }
  ],
+ "bibliotheque": "Pour découvrir la méthode, la {/bibliotheque-de-prompts#assistante|bibliothèque de prompts, rubrique assistanat} propose des demandes utiles aux secrétariats : préparer un dossier de réunion, rédiger un compte rendu, décliner une demande sans froisser. Elles s'emploient sur des documents non nominatifs, et une ligne sous chacune explique sa logique.",
+ "ctaMilieu": {
+  "titre": "Une journée calée sur votre calendrier de certification",
+  "texte": "Précisez votre statut, les services concernés et les outils validés par votre DSI : le programme, des règles de données adaptées et le devis vous parviennent le lendemain."
+ },
+ "competences": {
+  "titre": "Les acquis de la journée, objectif par objectif",
+  "intro": "Six objectifs, un par séquence ; l'évaluation finale pose une question sur chacun.",
+  "items": [
+   "Dire si une donnée est une donnée de santé identifiable et l'anonymiser avant usage",
+   "Rédiger un courrier non médical ou une convocation dans le gabarit de l'établissement",
+   "Structurer l'analyse d'un événement indésirable anonymisé et son plan d'action",
+   "Produire un document d'information en langage clair et sa version FALC",
+   "Résumer une recommandation de la HAS et vérifier chaque point sur la source",
+   "Appliquer à chaque outil validé les consignes internes de l'établissement"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Vibe, Copilot, Claude, Gemini ou ChatGPT dans un établissement de santé",
+  "intro": "En santé, on choisit d'abord un environnement : compte professionnel, accord de la DSI et du DPO, lieu d'hébergement. L'apport de chaque assistant aux usages non cliniques, au 7 octobre 2026 :",
+  "lignes": [
+   {
+    "outil": "copilot",
+    "texte": "Sous Microsoft 365, Copilot s'utilise dans Outlook, Teams et Word. La protection des données d'entreprise couvre les échanges d'un compte professionnel au même titre que les mails et les fichiers, et le trafic européen reste dans l'EU Data Boundary ; les modèles d'Anthropic, qui en sont exclus, restent désactivés d'office dans l'Union. {/formation-microsoft-copilot|Formation Copilot}"
+   },
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business exclut par défaut les conversations de l'organisation de tout entraînement et range les procédures d'un service dans un projet partagé. Pour Business, le stockage au repos en Europe se déploie progressivement : point à vérifier avec votre DPO avant tout usage. {/formation-chatgpt|Formation ChatGPT}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude lit d'un bloc une recommandation longue ou un référentiel de certification et rédige des procédures structurées ; les offres Team et Enterprise ne versent pas vos échanges à l'apprentissage des modèles, sauf accord. Anthropic ne propose pas d'hébergement en Europe ; un fournisseur cloud tiers (Amazon Bedrock, Vertex AI) comble ce manque. {/formation-claude-ia|Formation Claude}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Sous Google Workspace, Gemini aide dans Gmail et Docs, et Gemini Notebook répond sur un corpus de recommandations en citant ses sources (300 par carnet en Business Standard). D'après Google, les contenus Workspace ne sont pas relus par des personnes, et leur usage pour l'entraînement en dehors de votre organisation suppose votre accord. {/formation-gemini-entreprise|Formation Gemini}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Mistral stocke les données de Vibe en Europe sauf choix contraire, critère que regardent souvent les DPO du secteur. Sur l'offre Team, la désactivation de l'entraînement se règle par l'administrateur, pour tous les comptes ; sur l'offre Enterprise, l'exclusion est d'office. {/formation-mistral-ai|Formation Vibe}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Des formateurs qui connaissent les contraintes du secteur",
+  "texte": "Mathias Nizan, fondateur de Masteria, se porte garant de chaque session santé ; il l'anime ou choisit un formateur indépendant qui connaît les établissements et leurs règles. La méthode de tri des données enseignée ici vient d'une autre mission : une {/etudes-de-cas-ia#mission-assistanat-direction|assistante de direction} formée seule a retenu une règle de tri en trois branches : les contenus internes ou nominatifs passent par Copilot, les textes publics ou anonymisés peuvent aller dans Claude, et en cas d'hésitation on revient à Copilot. En santé, la même logique s'écrit avec votre DPO, outil par outil."
+ },
+ "apres": {
+  "titre": "Un assistant documentaire hébergé dans le bon cadre",
+  "texte": "Après la journée, certains établissements veulent un outil à eux : un assistant qui répond aux équipes à partir des procédures et des protocoles de l'établissement, hébergé dans un environnement qu'acceptent votre DSI et votre DPO. Masteria cadre le projet, le construit et le raccorde à vos outils documentaires. Chiffré au forfait, ce projet n'est pas finançable par votre OPCO ni par l'ANFH."
+ },
+ "faqTitre": "Formation IA santé : les questions des établissements",
  "cta": {
-  "h2": "Formons vos équipes non cliniques, dans le bon cadre",
-  "p": "Décrivez-nous votre structure (établissement public ou privé, cabinet, médico-social), les services concernés, vos outils validés et votre statut. Nous revenons vers vous sous 24 heures avec un programme ajusté, le cadre d'usage adapté et le devis dans les formes attendues par votre financeur (ANFH, OPCO, FAF)."
+  "h2": "Formons vos équipes non soignantes, en protégeant les données de santé",
+  "p": "Décrivez votre structure (hôpital public, clinique, établissement médico-social, maison de santé), les services concernés, vos outils validés et votre statut. Un programme ajusté, les règles de données adaptées et le devis vous parviennent sous 24 heures, au format attendu par l'ANFH ou par votre OPCO."
  }
 }

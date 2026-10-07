@@ -8,7 +8,7 @@ import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import VeilleNav from '../components/VeilleNav'
 import VeilleLangSwitch from '../components/VeilleLangSwitch'
-import { strings, baseVeille, baseData, alternatesVeille } from '../data/veille-i18n'
+import { strings, baseVeille, baseData, alternatesVeille, moisVeille, inLanguageVeille } from '../data/veille-i18n'
 
 /**
  * VeillePublicationsPage — toutes les publications de la Veille IA, avec recherche.
@@ -21,6 +21,13 @@ import { strings, baseVeille, baseData, alternatesVeille } from '../data/veille-
  * La donnée vient de /veille-data/archives.json, écrite par publish.py :
  * titres d'items, zones et sources de chaque édition, pour que la recherche
  * porte sur le contenu réel et pas seulement sur les titres d'éditions.
+ *
+ * Rôle distinct depuis le 07/10/2026 : l'archive complète (date et titre de
+ * chaque édition, filtres). La liste est un ensemble de liens vers les
+ * éditions, balisée en <nav> ; les titres appartiennent aux éditions datées.
+ * La présentation de la veille vit sur /veille-ia, pas ici. Libellés en deux
+ * langues dans TEXTES, mois recalculés depuis la clé AAAA-MM (les données
+ * anglaises portent des noms de mois français).
  */
 
 const c = '#2563EB'
@@ -36,13 +43,90 @@ const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadiu
 const SITE = 'https://www.master-ia.fr'
 
 const ZONES = {
-  une: { libelle: "En tête d'affiche", icon: Flame },
-  europe: { libelle: 'Europe et France', icon: Landmark },
-  international: { libelle: 'International', icon: Globe },
-  chine: { libelle: 'Chine et Asie', icon: Compass },
-  recherche: { libelle: 'Recherche et publications', icon: FlaskConical },
-  bref: { libelle: 'En bref', icon: Zap },
-  autre: { libelle: 'Autre', icon: Newspaper },
+  une: { icon: Flame },
+  europe: { icon: Landmark },
+  international: { icon: Globe },
+  chine: { icon: Compass },
+  recherche: { icon: FlaskConical },
+  bref: { icon: Zap },
+  autre: { icon: Newspaper },
+}
+
+const TEXTES = {
+  fr: {
+    titre: 'Toutes les publications de la Veille IA | Masteria',
+    description: meta => (meta
+      ? `Toutes les éditions de la Veille IA depuis le ${meta.premiereDateAffichee} : ${meta.totalItems} actualités analysées et sourcées, avec recherche par sujet, zone et mois.`
+      : 'Toutes les éditions de la Veille IA Masteria, avec recherche par sujet, zone géographique et mois.'),
+    keywords: 'veille ia, toutes les publications veille ia, historique actualité intelligence artificielle, recherche actualité ia',
+    nomCollection: 'Toutes les publications de la Veille IA Masteria',
+    kicker: 'Archives',
+    h1: 'Toutes les publications de la Veille IA',
+    h1Suite: meta => (meta
+      ? `${meta.totalEditions} édition${meta.totalEditions > 1 ? 's' : ''}, ${meta.totalItems} actualités analysées`
+      : 'les parutions depuis juillet 2026'),
+    intro: meta => `Cette page rassemble la collection entière${meta ? `, de la première parution du ${meta.premiereDateAffichee} à la plus récente` : ''}. Chaque ligne mène à l'édition datée, avec son texte, ses sources et son analyse.`,
+    aide: "Pour retrouver un dossier, tapez le nom d'un acteur, d'un texte de loi ou d'un média : la recherche lit les titres des éditions, ceux de chaque actualité et le nom des sources. Les filtres par mois et par zone se combinent avec elle.",
+    erreurTitre: 'Les publications ne sont pas accessibles pour le moment',
+    erreurTexte: 'Rechargez la page pour réessayer, ou repassez par la page principale de la veille.',
+    retour: 'Retour à la Veille IA',
+    placeholder: 'Un sujet, un acteur, une source (CNIL, Mistral, AI Act…)',
+    rechercheAria: 'Rechercher dans les publications',
+    moisAria: 'Filtrer par mois',
+    tousMois: 'Tous les mois',
+    zones: { europe: 'Europe', international: 'International', chine: 'Chine et Asie', recherche: 'Recherche', bref: 'Brèves' },
+    effacer: 'Effacer les filtres',
+    aucune: 'Aucune édition ne correspond',
+    aucuneTexte: 'Aucune édition ne correspond à cette recherche.',
+    compte: (n, filtre, nb) => `${n} édition${n > 1 ? 's' : ''}${filtre ? ` trouvée${n > 1 ? 's' : ''}` : ''} · ${nb} actualité${nb > 1 ? 's' : ''} au total`,
+    editions: n => `${n} édition${n > 1 ? 's' : ''}`,
+    ligne: (n, t) => `${n} actualités · ${t} min`,
+    autres: n => `et ${n} autre${n > 1 ? 's' : ''} dans cette édition`,
+    listeAria: 'Archive des éditions',
+    suivreAvant: 'Pour ne rien manquer, abonnez-vous au ',
+    suivreRss: 'flux RSS',
+    suivreMilieu: " ; la parution du jour s'ouvre depuis ",
+    suivreLien: 'la page principale de la veille',
+    ctaTitre: 'Un sujet de ces publications concerne vos équipes ?',
+    ctaTexte: "Les archives montrent comment un dossier évolue sur plusieurs semaines, de l'AI Act aux tarifs des assistants. Nous aidons vos équipes à en tirer des décisions, par la formation ou par un projet bâti sur vos outils.",
+  },
+  en: {
+    titre: 'All AI Watch editions | Masteria',
+    description: meta => (meta
+      ? `Every AI Watch edition since ${meta.premiereDateAffichee}: ${meta.totalItems} stories, analysed and sourced, searchable by topic, region and month.`
+      : 'Every edition of Masteria AI Watch, searchable by topic, region and month.'),
+    keywords: 'ai watch archive, ai news archive, artificial intelligence news history, ai news search',
+    nomCollection: 'All editions of Masteria AI Watch',
+    kicker: 'Archive',
+    h1: 'All AI Watch editions',
+    h1Suite: meta => (meta
+      ? `${meta.totalEditions} edition${meta.totalEditions > 1 ? 's' : ''}, ${meta.totalItems} stories analysed`
+      : 'every issue since August 2026'),
+    intro: meta => `This page gathers the whole collection${meta ? `, from the first issue on ${meta.premiereDateAffichee} to the latest one` : ''}. Each line leads to the dated edition, with its text, its sources and its analysis.`,
+    aide: 'To find a story, type the name of a company, a law or a news outlet: the search reads edition headlines, the title of every story and the names of the sources. Month and region filters work alongside it.',
+    erreurTitre: 'The archive cannot be loaded right now',
+    erreurTexte: 'Reload the page to try again, or go back to the AI Watch home page.',
+    retour: 'Back to AI Watch',
+    placeholder: 'A topic, a company, a source (CNIL, Mistral, AI Act…)',
+    rechercheAria: 'Search the archive',
+    moisAria: 'Filter by month',
+    tousMois: 'All months',
+    zones: { europe: 'Europe', international: 'International', chine: 'China and Asia', recherche: 'Research', bref: 'Briefs' },
+    effacer: 'Clear filters',
+    aucune: 'No edition matches',
+    aucuneTexte: 'No edition matches this search.',
+    compte: (n, filtre, nb) => `${n} edition${n > 1 ? 's' : ''}${filtre ? ' found' : ''} · ${nb} stor${nb > 1 ? 'ies' : 'y'} in total`,
+    editions: n => `${n} edition${n > 1 ? 's' : ''}`,
+    ligne: (n, t) => `${n} stories · ${t} min`,
+    autres: n => `and ${n} more in this edition`,
+    listeAria: 'Edition archive',
+    suivreAvant: 'To keep up, subscribe to the ',
+    suivreRss: 'RSS feed (French edition)',
+    suivreMilieu: "; today's issue opens from ",
+    suivreLien: 'the AI Watch home page',
+    ctaTitre: 'Does one of these stories concern your teams?',
+    ctaTexte: 'The archive shows how a story develops over several weeks, from the AI Act to assistant pricing. We help your teams turn it into decisions, through training or a project built on your own tools.',
+  },
 }
 // Pills de filtre : les zones éditoriales, la une étant transverse.
 const ZONES_FILTRE = ['europe', 'international', 'chine', 'recherche', 'bref']
@@ -62,6 +146,7 @@ function norm(s) {
 
 export default function VeillePublicationsPage({ lang = 'fr' }) {
   const L = strings(lang)
+  const T = TEXTES[lang] || TEXTES.fr
   const base = baseVeille(lang)
   const isDesktop = useIsDesktop()
   const [data, setData] = useState(null)
@@ -122,9 +207,9 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
 
   const moisDisponibles = useMemo(() => {
     const vus = new Map()
-    editions.forEach(e => { if (!vus.has(e.mois)) vus.set(e.mois, e.moisAffiche) })
+    editions.forEach(e => { if (!vus.has(e.mois)) vus.set(e.mois, moisVeille(e.mois, lang) || e.moisAffiche) })
     return [...vus.entries()]
-  }, [editions])
+  }, [editions, lang])
 
   const nq = norm(q).trim()
   const filtreActif = nq !== '' || zonesActives.length > 0 || mois !== 'tous'
@@ -150,10 +235,10 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
     resultats.forEach(r => {
       const dernier = gs[gs.length - 1]
       if (dernier && dernier.mois === r.e.mois) dernier.items.push(r)
-      else gs.push({ mois: r.e.mois, moisAffiche: r.e.moisAffiche, items: [r] })
+      else gs.push({ mois: r.e.mois, moisAffiche: moisVeille(r.e.mois, lang) || r.e.moisAffiche, items: [r] })
     })
     return gs
-  }, [resultats])
+  }, [resultats, lang])
 
   const basculerZone = z => setZonesActives(prev =>
     prev.includes(z) ? prev.filter(x => x !== z) : [...prev, z])
@@ -168,9 +253,9 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
     {
       '@context': 'https://schema.org', '@type': 'CollectionPage',
       '@id': `${SITE}${base}/publications#collection`,
-      name: 'Toutes les publications de la Veille IA Masteria',
+      name: T.nomCollection,
       url: `${SITE}${base}/publications`,
-      inLanguage: 'fr-FR', isAccessibleForFree: true,
+      inLanguage: inLanguageVeille(lang), isAccessibleForFree: true,
       isPartOf: { '@id': `${SITE}${base}#collection` },
       author: { '@id': `${SITE}/#organization` },
       editor: { '@id': `${SITE}/#mathias-nizan` },
@@ -194,27 +279,23 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
   return (
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
       <SEOHead
-        title={lang === 'en'
-          ? 'All AI Watch editions | Masteria'
-          : 'Toutes les publications de la Veille IA | Masteria'}
-        description={meta
-          ? `Toutes les éditions de la Veille IA depuis le ${meta.premiereDateAffichee} : ${meta.totalItems} actualités analysées et sourcées, avec recherche par sujet, zone et mois.`
-          : "Toutes les éditions de la Veille IA Masteria, avec recherche par sujet, zone géographique et mois."}
+        title={T.titre}
+        description={T.description(meta)}
         slug={`${base.slice(1)}/publications`}
         alternates={alternatesVeille('publications')}
         htmlLang={L.htmlLang}
-        keywords="veille ia, toutes les publications veille ia, historique actualité intelligence artificielle, recherche actualité ia"
+        keywords={T.keywords}
         breadcrumbs={[
-          { name: 'Accueil', slug: '' },
-          { name: 'Veille IA', slug: base.slice(1) },
-          { name: 'Toutes les publications', slug: 'veille-ia/publications' },
+          { name: L.accueil, slug: '' },
+          { name: L.rubrique, slug: base.slice(1) },
+          { name: L.toutesPublications, slug: `${base.slice(1)}/publications` },
         ]}
         datePublished={meta ? meta.premiereDate : undefined}
         dateModified={meta ? meta.derniereDate : undefined}
         extraJsonLd={jsonLd}
       />
 
-      <VeilleNav lang={lang} active={"publications"} />
+      <VeilleNav lang={lang} active="publications" />
 
       {/* ── 1. HERO SOMBRE (compact) ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(44px, 6vw, 64px) 24px clamp(44px, 6vw, 64px)', overflow: 'hidden' }}>
@@ -236,24 +317,23 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
               <Library size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Toutes les publications
+              {T.kicker}
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.4vw, 44px)', fontWeight: 900, lineHeight: 1.08, marginBottom: 16, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 900 }}>
-            Toutes les publications de la Veille IA
+            {T.h1}
             <br />
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>
-              {meta
-                ? `${meta.totalEditions} édition${meta.totalEditions > 1 ? 's' : ''}, ${meta.totalItems} actualités analysées`
-                : 'chaque édition reste en ligne avec ses sources'}
+              {T.h1Suite(meta)}
             </span>
           </h1>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            {T.intro(meta)}
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: 0, maxWidth: 680 }}>
-            Chaque édition garde son adresse, ses sources et son analyse
-            {meta ? ` depuis le ${meta.premiereDateAffichee}` : ''}. La recherche porte sur les titres,
-            les actualités et les sources citées.
+            {T.aide}
           </p>
         </div>
       </section>
@@ -264,12 +344,12 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
 
           {etat === 'erreur' && (
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}`, maxWidth: 720 }}>
-              <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)' }}>Les publications ne sont pas accessibles pour le moment</h2>
+              <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)' }}>{T.erreurTitre}</h2>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
-                Rechargez la page pour réessayer, ou repassez par la page principale de la veille.
+                {T.erreurTexte}
               </p>
               <Link to={base} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700 }}>
-                Retour à la Veille IA
+                {T.retour}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -290,18 +370,18 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                       type="search"
                       value={q}
                       onChange={e => setQ(e.target.value)}
-                      placeholder="Un sujet, un acteur, une source (CNIL, Mistral, AI Act…)"
-                      aria-label="Rechercher dans les publications"
+                      placeholder={T.placeholder}
+                      aria-label={T.rechercheAria}
                       style={{ width: '100%', boxSizing: 'border-box', padding: '11px 14px 11px 40px', fontSize: 16, color: '#0A0A0A', background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 10, fontFamily: 'inherit' }}
                     />
                   </div>
                   <select
                     value={mois}
                     onChange={e => setMois(e.target.value)}
-                    aria-label="Filtrer par mois"
+                    aria-label={T.moisAria}
                     style={{ padding: '11px 14px', fontSize: 14, color: '#374151', background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 10, fontFamily: 'inherit' }}
                   >
-                    <option value="tous">Tous les mois</option>
+                    <option value="tous">{T.tousMois}</option>
                     {moisDisponibles.map(([cle, libelle]) => (
                       <option key={cle} value={cle}>{libelle}</option>
                     ))}
@@ -329,7 +409,7 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                         }}
                       >
                         <Icon size={14} strokeWidth={2.2} aria-hidden="true" />
-                        {ZONES[z].libelle}
+                        {T.zones[z]}
                       </button>
                     )
                   })}
@@ -340,7 +420,7 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                       style={{ display: 'inline-flex', alignItems: 'center', gap: 5, cursor: 'pointer', fontSize: 13, fontWeight: 700, fontFamily: 'inherit', color: '#6B7280', background: 'none', border: 'none', padding: '7px 10px' }}
                     >
                       <X size={14} strokeWidth={2.4} aria-hidden="true" />
-                      Effacer les filtres
+                      {T.effacer}
                     </button>
                   )}
                 </div>
@@ -350,29 +430,29 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                   entendre le changement. Le texte reste juste dans les deux cas. */}
               <p aria-live="polite" style={{ fontSize: 14, color: '#6B7280', margin: '0 0 24px' }}>
                 {resultats.length === 0
-                  ? 'Aucune édition ne correspond'
-                  : `${resultats.length} édition${resultats.length > 1 ? 's' : ''}${filtreActif ? ' trouvée' + (resultats.length > 1 ? 's' : '') : ''} · ${nbActualites} actualité${nbActualites > 1 ? 's' : ''} au total`}
+                  ? T.aucune
+                  : T.compte(resultats.length, filtreActif, nbActualites)}
               </p>
 
               {resultats.length === 0 && (
                 <div style={{ ...cardStyle, padding: 28, maxWidth: 640 }}>
                   <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }}>
-                    Aucune édition ne correspond à cette recherche.
+                    {T.aucuneTexte}
                   </p>
                   <button type="button" onClick={reinitialiser}
                     style={{ ...aStyle, cursor: 'pointer', fontSize: 14.5, fontWeight: 700, background: 'none', border: 'none', padding: 0, fontFamily: 'inherit' }}>
-                    Effacer les filtres
+                    {T.effacer}
                   </button>
                 </div>
               )}
 
               {groupes.length > 0 && (
-                <div style={{ ...cardStyle, padding: 0, overflow: 'hidden' }}>
+                <nav aria-label={T.listeAria} style={{ ...cardStyle, padding: 0, overflow: 'hidden' }}>
                   {groupes.map((g, k) => (
                     <div key={g.mois}>
                       <div style={{ background: '#F9FAFB', borderTop: k === 0 ? 'none' : '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <span style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 13, color: '#0A0A0A', letterSpacing: '.02em' }}>{g.moisAffiche}</span>
-                        <span style={{ fontSize: 12.5, color: '#6B7280' }}>{g.items.length} édition{g.items.length > 1 ? 's' : ''}</span>
+                        <span style={{ fontSize: 12.5, color: '#6B7280' }}>{T.editions(g.items.length)}</span>
                       </div>
                       {g.items.map(({ e, itemsTrouves }) => (
                         <div key={e.date} style={{ borderTop: '1px solid #E5E7EB' }}>
@@ -385,7 +465,7 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                               <time dateTime={e.date} style={{ fontSize: 13, fontWeight: 600, color: '#6B7280' }}>{e.dateCourte}</time>
                               <span style={{ fontSize: 15.5, fontWeight: 700, color: '#0A0A0A', lineHeight: 1.45 }}>{e.titreEditorial}</span>
                               {isDesktop && (
-                                <span style={{ fontSize: 12.5, color: '#6B7280' }}>{e.nbItems} actualités · {e.tempsLecture} min</span>
+                                <span style={{ fontSize: 12.5, color: '#6B7280' }}>{T.ligne(e.nbItems, e.tempsLecture)}</span>
                               )}
                             </div>
                           </Link>
@@ -400,9 +480,9 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                                 </Link>
                               ))}
                               {itemsTrouves.length > 5 && (
-                                <p style={{ fontSize: 12.5, color: '#6B7280', margin: '4px 0 0 45px' }}>
-                                  et {itemsTrouves.length - 5} autre{itemsTrouves.length - 5 > 1 ? 's' : ''} dans cette édition
-                                </p>
+                                <span style={{ display: 'block', fontSize: 12.5, color: '#6B7280', margin: '4px 0 0 45px' }}>
+                                  {T.autres(itemsTrouves.length - 5)}
+                                </span>
                               )}
                             </div>
                           )}
@@ -410,17 +490,17 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
                       ))}
                     </div>
                   ))}
-                </div>
+                </nav>
               )}
 
               <p style={{ fontSize: 14, color: '#6B7280', marginTop: 24 }}>
-                La rubrique se suit aussi par{' '}
+                {T.suivreAvant}
                 <a href="/veille.xml" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-                  flux RSS
+                  {T.suivreRss}
                   <Rss size={13} strokeWidth={2.2} aria-hidden="true" />
                 </a>
-                , et l'édition du jour est sur{' '}
-                <Link to={base} style={aStyle}>la page principale de la veille</Link>.
+                {T.suivreMilieu}
+                <Link to={base} style={aStyle}>{T.suivreLien}</Link>.
               </p>
             </>
           )}
@@ -435,19 +515,15 @@ export default function VeillePublicationsPage({ lang = 'fr' }) {
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', margin: '0 0 16px' }}>
-              Un sujet de ces publications concerne vos équipes ?
+              {T.ctaTitre}
             </h2>
-            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Masteria forme dirigeants, chefs de projet, développeurs et juristes sur l'IA générative, et
-              développe les solutions qui vont avec.
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 640 }}>
+              {T.ctaTexte}
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Parler de votre projet
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+              {L.ctaBouton}
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Organisme certifié Qualiopi · Lyon, Europe, États-Unis, Inde
-            </p>
           </div>
         </div>
       </section>

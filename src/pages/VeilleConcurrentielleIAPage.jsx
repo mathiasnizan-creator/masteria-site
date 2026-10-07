@@ -4,10 +4,9 @@ import {
   Crosshair, Filter, PenLine, Send, Scale, AlertTriangle, Compass, Newspaper,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import FounderNote from '../components/FounderNote'
 
 /**
- * VeilleConcurrentielleIAPage — page sœur du cluster veille. Cible « veille
+ * VeilleConcurrentielleIAPage : page sœur du cluster veille. Cible « veille
  * concurrentielle » (2400/mois, KD36) par l'angle IA, qui nous différencie des
  * gros logiciels (Digimind, Meltwater) sur le terme générique. Angle USAGE
  * métier : que surveiller, comment, et dans quel cadre. Divergent de la pilier
@@ -17,6 +16,8 @@ import FounderNote from '../components/FounderNote'
 const SITE = 'https://www.master-ia.fr'
 const SLUG = 'veille-concurrentielle-ia'
 const PUBLISHED = '2026-07-24'
+const MODIFIED = '2026-10-07'
+const RDV = '/contact?type=projet&rdv=30'
 const c = '#2563EB'
 
 const wrap = { maxWidth: 1140, margin: '0 auto' }
@@ -26,53 +27,54 @@ const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw
 const pStyle = { fontSize: 17, color: '#374151', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 780 }
 
 const EN_BREF = [
-  ['La définition', "Suivre en continu ce que font vos concurrents pour décider plus vite et plus juste."],
-  ['Ce que l\'IA change', "Elle absorbe la collecte et la synthèse. L'interprétation, elle, reste à vous."],
-  ['Ce qu\'on surveille', "Prix, offres, contenus, recrutements, prises de parole : les signaux, pas le bruit."],
-  ['La limite à tenir', "Données publiques seulement. Surveiller n'est pas espionner, ni copier."],
+  ['La définition', "Suivre de façon régulière les décisions visibles de vos concurrents, pour décider plus tôt et sur des faits."],
+  ['Ce que l\'IA change', "Elle prend en charge la collecte et le premier résumé. Le sens à donner aux signaux reste votre affaire."],
+  ['Ce qu\'on surveille', "Prix, offres, contenus, recrutements, prises de parole et avis clients : six signaux, séparés du bruit."],
+  ['La limite à tenir', "Des informations publiques, obtenues loyalement. Observer un concurrent ne donne aucun droit de l'imiter."],
 ]
 
 const SURVEILLER = [
-  { Icon: Tag, t: 'Offres et prix', d: "Changements de tarifs, promotions, nouvelles formules. Le signal le plus direct d'un mouvement commercial." },
-  { Icon: Package, t: 'Produits et nouveautés', d: "Lancements, fonctionnalités, retraits. Ce qui indique où un concurrent investit et où il renonce." },
-  { Icon: Search, t: 'Contenus et SEO', d: "Sujets publiés, mots-clés visés, pages créées. Une lecture fine de leur stratégie d'acquisition." },
-  { Icon: Users, t: 'Recrutements', d: "Les postes ouverts trahissent la direction prise : un concurrent qui recrute des data engineers prépare autre chose qu'un qui recrute des commerciaux." },
-  { Icon: Mic, t: 'Prises de parole', d: "Interviews de dirigeants, posts LinkedIn, presse. Le discours précède souvent l'action." },
-  { Icon: Star, t: 'Avis clients', d: "Ce que leurs clients louent et reprochent. Une carte de leurs forces et de vos ouvertures." },
+  { Icon: Tag, t: 'Offres et prix', d: "Hausse ou baisse de tarif, promotion, nouvelle formule d'abonnement : le signal le plus direct d'un mouvement commercial." },
+  { Icon: Package, t: 'Produits et nouveautés', d: "Lancements, fonctions ajoutées, gammes retirées. On y lit où un concurrent investit et ce qu'il abandonne." },
+  { Icon: Search, t: 'Contenus et SEO', d: "Sujets publiés, mots-clés visés, nouvelles pages : une lecture précise de la façon dont il cherche ses clients." },
+  { Icon: Users, t: 'Recrutements', d: "Les offres d'emploi annoncent la direction prise : un concurrent qui recrute des ingénieurs de données prépare autre chose qu'un concurrent qui recrute des commerciaux." },
+  { Icon: Mic, t: 'Prises de parole', d: "Entretiens de dirigeants, publications LinkedIn, articles de presse. Le discours annonce souvent la décision de quelques mois." },
+  { Icon: Star, t: 'Avis clients', d: "Ce que ses clients saluent et ce qu'ils lui reprochent dessine une carte de ses forces, et des places à prendre pour vous." },
 ]
 
 const ETAPES = [
-  { Icon: Crosshair, t: 'Cadrer', d: "Listez cinq à dix concurrents réels et ce qui compte pour chacun. Une veille concurrentielle sans périmètre clair se noie dès la première semaine." },
-  { Icon: Newspaper, t: 'Collecter', d: "Automatisez le suivi des sources publiques : sites, réseaux sociaux, presse, plateformes d'avis. L'IA et les agents no-code font ce travail en continu." },
-  { Icon: Filter, t: 'Filtrer', d: "Écartez le bruit et les doublons pour ne garder que les signaux. Un changement de prix compte, un énième communiqué recyclé, non." },
-  { Icon: PenLine, t: 'Analyser', d: "L'IA résume et compare, vous interprétez. Un fait n'a de valeur que replacé dans une trajectoire : hausse, repli, changement de cap." },
-  { Icon: Send, t: 'Diffuser', d: "Une synthèse régulière aux équipes concernées, commercial, produit, direction. Une veille qui reste dans un fichier ne sert personne." },
+  { Icon: Crosshair, t: 'Cadrer', d: "Nommez cinq à dix concurrents et, pour chacun, ce qui compte. Sans périmètre écrit, la veille déborde dès la première semaine." },
+  { Icon: Newspaper, t: 'Collecter', d: "Confiez le relevé des sources publiques à un flux automatisé : sites, réseaux sociaux, presse, plateformes d'avis, offres d'emploi. Un outil comme Make ou n8n, associé à un assistant IA, le fait en continu." },
+  { Icon: Filter, t: 'Filtrer', d: "Écartez le bruit et les doublons pour garder les signaux. Une nouvelle grille tarifaire mérite votre attention ; le dixième communiqué recyclé, non." },
+  { Icon: PenLine, t: 'Analyser', d: "L'IA résume et compare, vous interprétez. Un fait isolé dit peu de chose ; replacé dans une trajectoire, il révèle une hausse, un repli ou un changement de cap." },
+  { Icon: Send, t: 'Diffuser', d: "Une synthèse à date fixe pour les équipes concernées : commerce, produit, direction. Une veille rangée dans un dossier partagé que personne n'ouvre ne sert à rien." },
 ]
 
 const LIMITES = [
-  { Icon: Scale, t: 'Le cadre légal', d: "La veille concurrentielle est légale tant qu'elle porte sur des informations publiques. Elle le cesse dès qu'elle recourt à la fausse identité, au vol de secrets d'affaires ou au contournement délibéré de conditions d'accès. Dans le doute, restez sur ce qui est ouvert à tous." },
-  { Icon: AlertTriangle, t: 'La fiabilité', d: "Une IA peut affirmer un fait inexact sur un concurrent avec aplomb. Avant de décider sur cette base, vérifiez la source. Une veille qui se trompe oriente mal, c'est pire que pas de veille." },
-  { Icon: Compass, t: 'Le bon dosage', d: "Surveiller n'est pas copier. L'obsession du concurrent fait perdre son cap : la veille éclaire vos décisions, elle ne les dicte pas. Gardez votre propre trajectoire au centre." },
+  { Icon: Scale, t: 'Le cadre légal', d: "La veille concurrentielle est légale tant qu'elle porte sur des informations publiques. Elle cesse de l'être avec une fausse identité, un accès frauduleux ou l'obtention d'un secret d'affaires, protégé en France par la loi du 30 juillet 2018. Suivre des personnes nommées, comme des dirigeants, revient aussi à traiter des données personnelles, soumises au RGPD." },
+  { Icon: AlertTriangle, t: 'La fiabilité', d: "Un assistant IA peut prêter à un concurrent un prix ou une déclaration qui n'existe pas, et l'écrire avec assurance. Ouvrez la source avant de décider : une veille qui se trompe oriente plus mal qu'une absence de veille." },
+  { Icon: Compass, t: 'Le bon dosage', d: "À force de regarder le concurrent, on finit par oublier sa propre route. La veille éclaire vos décisions ; votre stratégie reste au centre, et l'imitation n'y a pas sa place." },
 ]
 
 const FAQ = [
-  { q: "Qu'est-ce que la veille concurrentielle ?", a: "C'est le suivi organisé et continu de ce que font vos concurrents (offres, prix, produits, communication, recrutements) pour éclairer vos décisions commerciales et stratégiques. Elle ne vise pas à copier, mais à repérer tôt les mouvements qui vous obligeront à réagir ou vous ouvriront une opportunité." },
-  { q: "Comment faire une veille concurrentielle avec l'IA ?", a: "En cinq temps : cadrez vos concurrents et ce qui compte, automatisez la collecte de sources publiques avec des agents ou un assistant IA, filtrez pour ne garder que les signaux, faites résumer et comparer par l'IA, puis diffusez une synthèse aux équipes. L'IA fait gagner le temps de la collecte ; l'interprétation reste humaine." },
-  { q: "La veille concurrentielle est-elle légale ?", a: "Oui, tant qu'elle s'appuie sur des informations publiques et loyalement accessibles : sites, réseaux sociaux, presse, avis clients. Elle devient illégale si elle recourt à l'usurpation d'identité, à l'accès frauduleux, ou à la captation de secrets d'affaires. La frontière est celle de la concurrence déloyale : surveiller ce qui est public, oui ; obtenir par ruse ce qui ne l'est pas, non." },
-  { q: "Quels outils pour la veille concurrentielle par l'IA ?", a: "Pour démarrer, un agrégateur et un assistant comme Perplexity. Pour automatiser, un agent Make ou n8n qui suit sites et réseaux. Pour une veille à l'échelle, une plateforme professionnelle. Le choix dépend de votre volume et de votre budget : nous détaillons les familles d'outils dans notre comparatif dédié." },
-  { q: "Que faut-il surveiller chez un concurrent ?", a: "En priorité : ses prix et offres, ses lancements de produits, ses contenus et mots-clés SEO, ses recrutements, ses prises de parole et les avis de ses clients. Chacun est un signal : les recrutements révèlent une direction, les avis clients pointent des forces à égaler et des faiblesses à exploiter." },
-  { q: "Quelle différence entre veille concurrentielle et veille stratégique ?", a: "La veille concurrentielle se concentre sur des acteurs identifiés, vos concurrents directs. La veille stratégique est plus large : elle couvre aussi les évolutions du marché, les technologies, la réglementation et les nouveaux entrants. La première alimente la seconde, qui elle-même nourrit vos décisions de long terme." },
-  { q: "À quelle fréquence faire sa veille concurrentielle ?", a: "En continu pour la collecte, qui tourne seule une fois automatisée, et à intervalle régulier pour l'analyse : une synthèse hebdomadaire convient à la plupart des équipes, resserrée en période de mouvement (lancement, campagne). L'important est la régularité, pas l'exhaustivité." },
+  { q: "Qu'est-ce que la veille concurrentielle ?", a: "Le suivi méthodique des décisions visibles de vos concurrents (prix, offres, produits, communication, embauches), mené pour nourrir vos choix commerciaux et stratégiques. Elle sert à repérer tôt ce qui vous forcera à réagir ou vous ouvrira une porte ; l'imitation reste hors de son champ." },
+  { q: "Comment faire une veille concurrentielle avec l'IA ?", a: "En cinq étapes : choisir les concurrents et ce qui compte chez chacun, confier le relevé des sources publiques à un assistant ou à un flux Make ou n8n, écarter le bruit, faire résumer et comparer par l'IA, puis envoyer une synthèse aux équipes concernées. L'IA économise surtout les heures de collecte ; le jugement sur ce que signifient les signaux reste humain." },
+  { q: "La veille concurrentielle est-elle légale ?", a: "Oui, tant qu'elle repose sur des informations publiques obtenues loyalement : sites, réseaux sociaux, presse, avis clients, offres d'emploi. Elle devient illégale avec une fausse identité, un accès frauduleux à un système ou l'appropriation d'un secret d'affaires, protégé en France depuis la loi du 30 juillet 2018 (articles L. 151-1 et suivants du Code de commerce). Lorsque vous suivez des personnes nommées, leurs publications restent des données personnelles, soumises au RGPD." },
+  { q: "Quels outils pour la veille concurrentielle par l'IA ?", a: "Pour commencer, un agrégateur et un assistant de recherche comme Perplexity. Pour automatiser, un flux Make ou n8n qui relève sites, réseaux et avis. Pour suivre de nombreux marchés, une plateforme professionnelle. Le volume et le budget tranchent ; notre comparatif des outils de veille IA décrit chaque famille, faits datés à l'appui." },
+  { q: "Que surveiller en priorité chez un concurrent ?", a: "Ses prix et ses offres, ses lancements, ses contenus et les mots-clés qu'il vise, ses recrutements, les interventions de ses dirigeants et les avis de ses clients. Chaque signal se lit à sa manière : une vague d'embauches dit où il investit, une plainte qui revient dans les avis montre une faiblesse que vous pouvez combler." },
+  { q: "Veille concurrentielle et veille stratégique : quelle différence ?", a: "La veille concurrentielle suit des acteurs nommés, vos concurrents directs. La veille stratégique couvre un champ plus large : marché, technologies, réglementation, nouveaux entrants. La première alimente la seconde, qui éclaire les décisions prises pour plusieurs années." },
+  { q: "À quel rythme faire sa veille concurrentielle ?", a: "La collecte tourne en continu une fois automatisée ; l'analyse suit un rythme fixe. Une synthèse par semaine convient à la plupart des équipes, plus serrée pendant un lancement ou une campagne. Une note courte qui paraît chaque semaine sert davantage qu'un dossier complet publié une fois par trimestre." },
+  { q: "L'IA peut-elle se tromper sur un concurrent ?", a: "Oui. Un assistant peut attribuer à un concurrent un tarif, un produit ou une déclaration inventés, avec le même aplomb qu'un fait vérifié. Exigez la source de chaque information, ouvrez-la avant de décider, et gardez une trace datée de ce que vous avez contrôlé." },
 ]
 
 const RESSOURCES = [
-  { tag: 'Méthode', titre: 'Automatiser sa veille IA', desc: "Le guide complet de la veille IA : approches, méthode en 5 étapes et pièges.", href: '/automatiser-sa-veille-ia', cta: 'Lire le guide' },
-  { tag: 'Outils', titre: 'Outils de veille IA', desc: "Le comparatif par familles pour choisir l'outil adapté à votre veille concurrentielle.", href: '/outils-veille-ia', cta: 'Voir le comparatif' },
-  { tag: 'En accès libre', titre: 'Notre veille IA quotidienne', desc: "Un exemple de veille automatisée, produite et publiée chaque matin ouvré.", href: '/veille-ia', cta: 'La lire' },
+  { tag: 'Méthode', titre: 'Automatiser sa veille IA', desc: "Monter un dispositif de veille complet : les approches possibles, cinq étapes et les erreurs qui font perdre du temps.", href: '/automatiser-sa-veille-ia', cta: 'Lire le guide' },
+  { tag: 'Outils', titre: 'Outils de veille IA', desc: "Agrégateurs, assistants, flux automatisés, plateformes ou sur-mesure : quelle famille d'outils pour suivre vos concurrents.", href: '/outils-veille-ia', cta: 'Comparer les outils' },
+  { tag: 'En accès libre', titre: 'La Veille IA de Masteria', desc: "Une veille automatisée puis relue chaque jour ouvré, sources citées et analyse signée, en français et en anglais.", href: '/veille-ia', cta: "Lire l'édition du jour" },
 ]
 
 export default function VeilleConcurrentielleIAPage() {
-  const metaTitle = "Veille concurrentielle par l'IA : méthode et cadre | Masteria"
+  const metaTitle = "Veille concurrentielle IA : méthode et cadre | Masteria"
   const metaDescription = "Faire sa veille concurrentielle avec l'IA : que surveiller chez vos concurrents, la méthode en 5 étapes, les outils et le cadre légal à respecter."
 
   const jsonLd = [
@@ -84,7 +86,7 @@ export default function VeilleConcurrentielleIAPage() {
       author: { '@id': `${SITE}/#mathias-nizan` },
       editor: { '@id': `${SITE}/#mathias-nizan` },
       publisher: { '@id': `${SITE}/#organization` },
-      datePublished: PUBLISHED, dateModified: PUBLISHED,
+      datePublished: PUBLISHED, dateModified: MODIFIED,
       inLanguage: 'fr-FR', isAccessibleForFree: true,
       mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE}/${SLUG}` },
       about: ['Veille concurrentielle', 'Intelligence économique', 'Veille IA', 'Veille stratégique'],
@@ -112,7 +114,7 @@ export default function VeilleConcurrentielleIAPage() {
         breadcrumbs={[{ name: 'Accueil', slug: '' }, { name: 'Veille concurrentielle par l\'IA', slug: SLUG }]}
         faqItems={FAQ}
         datePublished={PUBLISHED}
-        dateModified={PUBLISHED}
+        dateModified={MODIFIED}
         extraJsonLd={jsonLd}
       />
 
@@ -138,21 +140,21 @@ export default function VeilleConcurrentielleIAPage() {
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 52px)', fontWeight: 900, lineHeight: 1.06, margin: 0, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 900 }}>
             Veille concurrentielle<br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce que l&apos;IA change vraiment</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce que l&apos;IA y change</span>
           </h1>
 
           <p className="veille-lede" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '26px 0 30px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Surveiller ses concurrents a toujours pris du temps. L&apos;IA absorbe la collecte et la synthèse,
-            et rend l&apos;interprétation à l&apos;humain. Voici quoi surveiller, comment s&apos;y prendre, et la
-            ligne à ne pas franchir.
+            Suivre ses concurrents a toujours dévoré des heures. L&apos;IA prend désormais en charge la collecte
+            et le premier résumé, et laisse l&apos;interprétation à vos équipes. Vous trouverez ici les six signaux
+            à suivre, une méthode en cinq étapes et la limite légale à ne pas franchir.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <a href="#surveiller" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Que surveiller <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </a>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.06)', color: '#F8FAFC', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700, border: '1px solid rgba(255,255,255,0.14)' }}>
-              Mettre en place la vôtre
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.06)', color: '#F8FAFC', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700, border: '1px solid rgba(255,255,255,0.14)' }}>
+              Faire construire la vôtre
             </Link>
           </div>
 
@@ -173,15 +175,15 @@ export default function VeilleConcurrentielleIAPage() {
           <div style={kicker}>Le point de départ</div>
           <h2 style={h2Style}>Veille concurrentielle : la définition, et ce que l&apos;IA y change</h2>
           <p style={pStyle}>
-            La veille concurrentielle est le suivi organisé et continu de ce que font vos concurrents, pour
-            éclairer vos décisions commerciales et stratégiques. Elle ne cherche pas à copier, mais à repérer
-            tôt le mouvement qui compte : une baisse de prix, un lancement, un virage de discours.
+            La veille concurrentielle consiste à suivre, avec méthode et dans la durée, les décisions visibles
+            de vos concurrents, afin de nourrir vos choix commerciaux et stratégiques. Elle sert à repérer tôt
+            le mouvement qui compte : une baisse de prix, un lancement, un virage dans le discours.
           </p>
           <p style={pStyle}>
-            Ce que l&apos;IA change tient en une phrase : elle prend en charge la partie chronophage, la collecte
-            et la synthèse, et vous laisse le temps de l&apos;interprétation. Un agent suit les sources publiques
-            en continu, un assistant résume et compare. Vous, vous décidez de ce que ces signaux impliquent
-            pour votre trajectoire. Le gain n&apos;est pas de tout savoir, c&apos;est de voir juste, plus tôt.
+            L&apos;IA déplace la charge de travail. Un flux automatisé relève les sources publiques sans
+            interruption, un assistant résume et compare, et vos équipes consacrent leur temps à décider ce que
+            ces signaux impliquent pour l&apos;entreprise. Le bénéfice se mesure en avance : voir juste, et
+            quelques semaines plus tôt.
           </p>
         </div>
       </section>
@@ -254,14 +256,24 @@ export default function VeilleConcurrentielleIAPage() {
         </div>
       </section>
 
-      {/* ── FOUNDER NOTE ── */}
-      <FounderNote bg="#fff" />
+      {/* ── SIGNATURE (remplace le bloc fondateur commun) ── */}
+      <section style={{ padding: 'clamp(36px, 5vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', borderLeft: `3px solid ${c}`, paddingLeft: 22 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan, fondateur de Masteria, a rédigé cette méthode à partir des dispositifs de veille que
+            le cabinet conçoit, dont la veille IA qu&apos;il publie chaque jour ouvré. Le texte date du
+            7 octobre 2026, et{' '}
+            <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>la page de Mathias Nizan</Link>{' '}
+            détaille son parcours.
+          </p>
+        </div>
+      </section>
 
       {/* ── FAQ ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <div style={{ ...kicker, textAlign: 'center' }}>Questions fréquentes</div>
-          <h2 style={{ ...h2Style, textAlign: 'center', marginBottom: 36 }}>Veille concurrentielle : vos questions</h2>
+          <div style={{ ...kicker, textAlign: 'center' }}>Vos questions</div>
+          <h2 style={{ ...h2Style, textAlign: 'center', marginBottom: 36 }}>Veille concurrentielle et IA : ce qu&apos;on nous demande</h2>
           {FAQ.map((item, i) => (
             <details key={i} style={{ borderBottom: '1px solid #E5E7EB', padding: '20px 0' }}>
               <summary style={{ cursor: 'pointer', fontWeight: 700, fontSize: 17, color: '#0A0A0A', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
@@ -277,8 +289,8 @@ export default function VeilleConcurrentielleIAPage() {
       {/* ── RESSOURCES ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <div style={kicker}>Dans le même thème</div>
-          <h2 style={{ ...h2Style, marginBottom: 32 }}>Continuer sur la veille IA</h2>
+          <div style={kicker}>Sur le même sujet</div>
+          <h2 style={{ ...h2Style, marginBottom: 32 }}>Pour compléter cette méthode</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
             {RESSOURCES.map((r, i) => (
               <Link key={i} to={r.href} style={{ display: 'flex', flexDirection: 'column', background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 16, padding: 26, textDecoration: 'none' }}>
@@ -302,11 +314,12 @@ export default function VeilleConcurrentielleIAPage() {
             Une veille concurrentielle qui tourne toute seule
           </h2>
           <p style={{ fontSize: 17, color: '#D1D5DB', marginBottom: 30, lineHeight: 1.6 }}>
-            Nous mettons en place le système qui suit vos concurrents sur vos critères et vous livre une
-            synthèse régulière, sans y passer vos journées. Parlons de qui vous voulez surveiller.
+            Masteria construit le dispositif qui suit vos concurrents selon vos critères et livre à vos équipes
+            une synthèse à date fixe. Dites-nous qui vous voulez suivre : le cadrage de 30 minutes est
+            offert, puis le dispositif fait l&apos;objet d&apos;un forfait sur devis.
           </p>
-          <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#fff', color: '#0A0A0A', padding: '16px 32px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
-            Demander un échange <ArrowRight size={18} aria-hidden="true" />
+          <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#fff', color: '#0A0A0A', padding: '16px 32px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none' }}>
+            Réserver 30 minutes de cadrage <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
       </section>

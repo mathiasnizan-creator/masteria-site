@@ -2,7 +2,84 @@
 // Vérifié le 03/10/2026 : Insee (dossier complet Nantes Métropole, établissements et postes salariés fin 2024, source Flores), impots.gouv.fr (FAQ « Tout savoir sur la facturation électronique », pages modifiées le 01/09/2026), entreprendre.service-public.gouv.fr (F31808, vérifiée le 11/08/2026), règlements (UE) 2024/1689 et 2026/1744 lus sur le Publications Office de l'UE, Commission européenne (calendrier de l'AI Act).
 export default {
   slug: 'agence-ia-nantes',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: [
+      "Numérique, aéronautique, navale",
+      "Coopératives et tertiaire",
+      "Ateliers sur site, code à distance",
+      "Performance commerciale",
+    ],
+    lien: "Voir l'offre pour Nantes",
+  },
+  ville: {
+    localEconomy: "Nantes est la première métropole du Grand Ouest. Son économie mêle un numérique très actif, parmi les premières villes labellisées French Tech, une filière aéronautique et navale organisée autour d'Airbus Atlantic à Bouguenais et des Chantiers de l'Atlantique à Saint-Nazaire, des coopératives agroalimentaires comme Terrena, et un quartier d'affaires, Euronantes, qui réunit banques, assureurs, cabinets de conseil et directions régionales. Les ETI, les PME et les scale-ups de ce tissu ont des tâches précises à outiller.",
+    heroSubtitle: "À Nantes, la question posée à l'IA est souvent celle de la performance commerciale : combien de devis, de relances et de réponses aux consultations une équipe peut-elle traiter sans recruter ? Nous y répondons avec des outils construits sur vos logiciels, remis avec leur code, puis enseignés à ceux qui s'en servent.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Stratégie de l'IA, agents pour les ventes et la documentation, automatisation, formation des équipes",
+      },
+      {
+        label: "Venir à Nantes",
+        value: "Environ 4 h de TGV direct depuis Lyon : visites planifiées, consultant du réseau sur place si besoin",
+      },
+      {
+        label: "Pour qui",
+        value: "Éditeurs et scale-ups, aéronautique et navale, coopératives agroalimentaires, banques et services d'Euronantes",
+      },
+      {
+        label: "Pour commencer",
+        value: "30 minutes offertes, puis un forfait écrit avant toute signature",
+      },
+    ],
+    presence: "L'équipe Masteria travaille depuis Lyon. Ses déplacements à Nantes, de l'île de Nantes à Bouguenais et jusqu'à Saint-Nazaire, se concentrent sur trois moments : le cadrage, les comités et la remise de l'outil. Entre deux, le travail avance en visio. Selon la mission, un consultant du réseau Masteria assure les temps sur site. Nous n'avons pas de bureau à Nantes, et nous ne le prétendons pas.",
+  },
+  offresTitre: {
+    kicker: "Notre offre nantaise",
+    h2: "Trois façons d'outiller une entreprise nantaise",
+  },
+  offresNote: {
+    titre: "Une équipe qui va jusqu'à l'outil.",
+    texte: "La recommandation débouche sur une construction menée par les mêmes personnes, puis sur une passation à vos équipes, code et documentation compris.",
+  },
+  ancrage: {
+    kicker: "Nantes et le Grand Ouest",
+    h2: "Pourquoi une agence IA pour les entreprises nantaises ?",
+    economie: "Le tissu économique nantais",
+    presence: "Comment nous intervenons à Nantes",
+    prestations: "Trois chantiers typiques dans la métropole nantaise",
+  },
+  formationBloc: {
+    kicker: "Former les équipes",
+    h2: "Des sessions à Nantes sur l'outil livré",
+    lien: "Toutes nos formations",
+  },
+  etapesBloc: {
+    kicker: "Le déroulé",
+    h2: "Cinq étapes pour un projet nantais",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises nantaises",
+    texte: "Vous mettez plusieurs agences en concurrence ? Nos critères sont expliqués dans",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "le guide pour choisir son agence IA",
+    },
+  },
+  maillage: {
+    villes: "Masteria dans d'autres régions",
+    expertises: "Lectures utiles avant le cadrage",
+  },
+  cta: {
+    titre: "Une tâche commerciale ou documentaire à outiller à Nantes ?",
+    texte: "Dites-nous quelle tâche vous coûte le plus, et dans quel logiciel elle se fait. Comptez 24 heures pour notre réponse, puis un premier échange de 30 minutes, offert, en visio ou chez vous.",
+  },
+  equipe: {
+    titre: "Des intervenants réunis pour votre projet nantais",
+    texte: "Les missions nantaises sont dirigées par Mathias Nizan, qui a fondé Masteria en 2022 à Lyon. Il compose l'équipe pour chacune, avec parfois un consultant du réseau pour les temps sur site, un ou deux développeurs et un formateur, tous indépendants. N'ayant aucun éditeur à représenter, Masteria recommande l'outil qui sert vos ventes.",
+  },
   intro: "Pour une PME ou une ETI nantaise, améliorer la performance avec l'IA commence par une mesure : les heures passées sur les devis, les relances, les factures et les comptes rendus, flux par flux. Masteria, cabinet d'IA créé à Lyon en 2022, conduit ce conseil dans vos locaux nantais, construit ensuite les outils retenus et relève avec vous, trente jours après leur mise en service, les heures rendues sur votre périmètre. La facture électronique, que toute entreprise doit pouvoir recevoir depuis le 1er septembre 2026, change déjà l'ordre de ces chantiers.",
   offresIntro: [
     "À Nantes, nos trois métiers répondent à deux attentes voisines : améliorer la performance d'une PME, poser la stratégie IA d'une ETI ou d'un groupe de la métropole.",
@@ -10,14 +87,21 @@ export default {
   ],
   offres: [
     {
+      title: "Conseil et stratégie IA",
+      cta: "Le conseil en intelligence artificielle",
       desc: "Mission de stratégie pour une ETI de la métropole ou conseil en performance pour une PME : les deux partent d'un relevé du temps passé par flux (vendre, livrer, facturer, piloter) et aboutissent à une feuille de route où chaque chantier a un porteur, un délai et un indicateur relevé trente jours après la mise en service.",
       points: ["Relevé du temps par flux", "Trois chantiers au plus, un porteur chacun", "Indicateurs relevés à J+30"],
     },
     {
+      title: "Agents et outils sur vos logiciels",
+      cta: "Notre agence de développement",
+      secondaryCta: "Outils IA par métier",
       desc: "Assistants de cotation et de relance de devis branchés sur votre ERP, votre base articles et votre CRM, réponses aux cahiers des charges construites à partir de vos réponses passées, préparation des comités : chaque outil est testé sur vos dossiers du dernier trimestre, puis livré avec son code et sa documentation.",
       points: ["Cotation et relances de devis", "Réponses aux cahiers des charges", "Code et documentation remis"],
     },
     {
+      title: "Automatisation des tâches répétitives",
+      cta: "L'agence d'automatisation IA",
       desc: "Vos fournisseurs grandes entreprises et ETI émettent leurs factures en format structuré depuis le 1er septembre 2026. Nous automatisons ce qui suit leur réception (rapprochement avec la commande, alerte d'écart) et nous réservons l'effort d'IA aux flux qui restent en texte libre : demandes de clients, relances, reporting de direction.",
       points: ["Rapprochement facture et commande", "Relances préparées depuis le CRM", "Reporting hebdomadaire de direction"],
     },
@@ -100,12 +184,12 @@ export default {
       etapes: [
         "Cadrage avec la direction : choix des tâches au meilleur rendement (cotation, relances, cahiers des charges, prospection, stocks) et circuit de validation, avec les logiciels déjà en service.",
         "Deux jours de formation en juin 2026 pour dix volontaires, les référents : chacun repart avec une compétence Claude (un assistant réglé pour une tâche précise) conçue sur son propre flux de travail, avec des données de démonstration.",
-        "Relecture et validation de chaque compétence par la direction : données autorisées, sources citées, ce qui reste à la main du commercial.",
-        "Un déploiement aux quelque cinquante autres collaborateurs, prévu d'octobre à décembre 2026 avec les référents, sur les mêmes compétences.",
-        "Avant la production, chaque référent remplace les données de démonstration par celles de l'entreprise ; la relance des devis a été validée sur de vrais devis avant la formation, et les référents corrigent puis enrichissent l'ensemble des onze.",
+        "Relecture de chaque compétence par la direction, qui arrête les données qu'elle peut lire, les sources qu'elle doit citer et les décisions laissées au commercial.",
+        "Un passage des mêmes compétences aux quelque cinquante autres salariés, d'octobre à décembre 2026, avec les référents comme relais.",
+        "Chaque compétence bascule ensuite sur les données de l'entreprise ; la relance des devis, première éprouvée sur des devis du distributeur, l'avait été dès avant la formation, et les référents améliorent depuis l'ensemble des onze.",
       ],
-      resultat: "Les dix référents sont formés depuis juin 2026, et la relance des devis a été validée sur de vrais devis avant la formation ; le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. L'objectif reste un objectif : la force de frappe d'une équipe de 70 avec 58 personnes, à effectif constant. Pour une PME nantaise, la leçon porte sur l'ordre des chantiers : la relance de devis passe en premier parce qu'elle se compte chaque semaine.",
-      lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
+      resultat: "Les dix référents ont achevé leur formation en juin 2026, et l'extension à leurs collègues est programmée d'octobre à décembre 2026. L'objectif reste un objectif : produire avec 58 personnes ce qu'une équipe de 70 produirait, sans recrutement. Pour une PME nantaise, la leçon porte sur l'ordre des chantiers : la relance de devis passe en premier parce qu'elle se compte chaque semaine.",
+      lien: { href: "/etudes-de-cas-ia#distribution", label: "Les relances de devis du distributeur de 58 salariés" },
     },
     pieges: [
       { titre: "Promettre un pourcentage avant d'avoir mesuré", texte: "Un gain annoncé avant toute mesure initiale reste invérifiable. Les indicateurs se relèvent avant la mise en service, puis à J+30, sur le périmètre réel ; la direction convertit ensuite les heures en euros." },
@@ -155,8 +239,8 @@ export default {
     { name: "impots.gouv.fr : je passe à la facturation électronique (page modifiée le 1er septembre 2026)", url: "https://www.impots.gouv.fr/professionnel/je-passe-la-facturation-electronique" },
     { name: "impots.gouv.fr : facturation électronique et plateformes agréées", url: "https://www.impots.gouv.fr/facturation-electronique-et-plateformes-agreees" },
     { name: "Entreprendre.service-public.gouv.fr : mentions obligatoires sur une facture (vérifiée le 11 août 2026)", url: "https://entreprendre.service-public.gouv.fr/vosdroits/F31808" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, omnibus numérique sur l'IA (article 4 réécrit)", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : obligations des entreprises qui déploient l'IA", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : la nouvelle rédaction de l'article 4 sur la maîtrise de l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
     { name: "Commission européenne : cadre réglementaire de l'IA et calendrier d'application", url: "https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai" },
   ],
 }

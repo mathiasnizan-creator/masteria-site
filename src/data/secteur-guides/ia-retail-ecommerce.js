@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : Fevad (bilan 2025), INSEE Première n° 2120, EUR-Lex (règlement (UE) 2023/988 art. 19, directive (UE) 2024/825), Assemblée nationale et Sénat (projet de loi DDADUE, art. 20), DGCCRF, Google Merchant Center, Légifrance (L.221-18, L.221-21).
 export default {
   slug: 'ia-retail-ecommerce',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Catalogue, PIM, places de marché", "Fiches multilingues sous règles", "Service client relié aux commandes"],
+    lien: "Voir les enjeux du catalogue",
+  },
+  offresTitre: {
+    kicker: "Trois chantiers",
+    h2: "Auditer le catalogue, brancher le générateur, fiabiliser l'entrée des fournisseurs",
+  },
+  enjeux: {
+    kicker: "Commerce et e-commerce",
+    h2: "La qualité du référentiel décide de la qualité des fiches",
+    difficultes: "Ce qui ralentit une enseigne ou un site marchand",
+    prestations: "Ce que nous développons pour le commerce",
+  },
+  regieBloc: {
+    kicker: "Régie dans l'équipe e-commerce",
+    h2: "Un développeur au plus près de votre PIM et de votre CRM",
+    accroche: "Pour intégrer l'IA à votre plateforme e-commerce, à votre PIM (le référentiel des données produit) et à votre CRM, le développeur IA rejoint votre équipe et construit au contact de vos données produit et client.",
+    lien: "Comment se cadre la régie",
+  },
+  formationBloc: {
+    kicker: "Former catalogue et service client",
+    h2: "Des ateliers sur vos fiches produit et vos demandes clients",
+    lien: "Voir le catalogue de formations",
+  },
+  faqBloc: {
+    h2: "Commerce et e-commerce : vos questions",
+    texte: "Votre catalogue ou vos canaux posent une question absente de cette liste ?",
+    lien: "Envoyez-la-nous",
+  },
+  maillage: {
+    h2: "Secteurs voisins du commerce",
+  },
+  cta: {
+    titre: "Par quelle catégorie de votre catalogue commencer ?",
+    texte: "Indiquez-nous le nombre de références, les langues de vente et les canaux à alimenter. Nous revenons vers vous sous 24 heures pour fixer les 30 minutes de cadrage offertes et choisir la catégorie pilote.",
+  },
+  equipe: {
+    titre: "Une équipe montée pour votre catalogue",
+    texte: "Mathias Nizan a créé Masteria à Lyon en 2022 et dirige chaque mission. Pour une enseigne ou un site marchand, il réunit des consultants qui auditent le référentiel produit, des développeurs qui branchent le générateur sur votre PIM et des formateurs qui travaillent avec vos équipes catalogue et service client. Ces intervenants sont indépendants des éditeurs de plateformes.",
+  },
   intro: "En retail et en e-commerce, l'IA rapporte d'abord sur le catalogue : des milliers de descriptions à écrire et à maintenir dans chaque langue de vente, et des demandes de clients qui portent sur une commande précise. Une fiche publiée engage pourtant le vendeur, et le droit européen en encadre désormais le contenu, des avertissements de sécurité aux allégations environnementales. Masteria construit des générateurs qui écrivent à partir de votre référentiel produit et de vos règles, avec une validation avant publication, et des agents de service client qui lisent la commande avant de répondre.",
 
   offresIntro: [
@@ -11,14 +53,21 @@ export default {
   ],
   offres: [
     {
+      title: "Audit du référentiel produit",
+      cta: "La démarche de conseil",
       desc: "Nous auditons un échantillon de votre catalogue : attributs renseignés, coordonnées du fabricant et avertissements présents, allégations environnementales, textes alternatifs des images. Nous chiffrons ensuite ce qu'une génération assistée peut produire et ce qui doit d'abord être collecté auprès des fournisseurs. La feuille de route sépare les chantiers de données des chantiers d'IA.",
       points: ["Audit de complétude du catalogue", "Revue des mentions obligatoires", "Feuille de route données puis IA"],
     },
     {
+      title: "Générateur de fiches et agent de service client",
+      cta: "Le développement sur mesure chez Masteria",
+      secondaryCta: "Outils IA par fonction",
       desc: "Nous développons le générateur de fiches branché sur votre PIM, avec ses règles par catégorie, son glossaire de marque et sa liste de formulations bloquées, puis l'agent de service client qui consulte la commande, le suivi du transporteur et vos conditions de retour avant de répondre. Toutes les sorties passent par une file de validation dans vos outils.",
       points: ["Générateur de fiches sous règles", "Agent relié aux commandes", "File de validation avant publication"],
     },
     {
+      title: "Entrée automatisée des données fournisseurs",
+      cta: "Nos automatisations IA",
       desc: "Nous automatisons l'entrée des données fournisseurs : lecture des fichiers reçus, extraction des attributs, rapprochement avec le référentiel, signalement des manques à l'acheteur. Les mêmes chaînes préparent les flux vers les places de marché et les comparateurs de prix, avec un contrôle de cohérence avant chaque envoi.",
       points: ["Intégration des fichiers fournisseurs", "Flux vers les places de marché", "Contrôle de cohérence avant envoi"],
     },
@@ -95,7 +144,7 @@ export default {
         "Démarrer par la relance de devis, validée sur de vrais devis avant la formation, puis brancher les autres compétences sur les données de l'entreprise à la place des données de démonstration, sous la garde des référents.",
       ],
       resultat: "Les onze compétences sont conçues pour lire la base articles, l'ERP et le CRM, et l'une d'elles propose de remplacer une référence par une marque propre du distributeur, un geste de merchandising qu'un catalogue structuré rend possible. La relance des devis a été validée sur de vrais devis avant la formation, et le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. La direction vise une cible fixée au départ : que 58 salariés produisent comme une équipe de 70, sans embauche.",
-      lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#distribution", label: "Les onze compétences du distributeur informatique" },
     },
     pieges: [
       { titre: "Laisser le générateur compléter un attribut manquant", texte: "Un modèle de langage comble un vide avec une valeur plausible : une dimension, une compatibilité, une composition. La règle s'écrit dès la conception et se teste sur un échantillon : un attribut absent du référentiel bloque la fiche, et l'acheteur le réclame au fournisseur." },

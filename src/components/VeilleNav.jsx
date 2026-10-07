@@ -41,7 +41,7 @@ export default function VeilleNav({ active = null, lang = 'fr' }) {
             paddingRight: 8, flexShrink: 0,
           }}
         >
-          Veille IA
+          {lang === 'en' ? 'AI Watch' : 'Veille IA'}
         </Link>
 
         <div style={{ display: 'flex', alignItems: 'stretch', gap: 4 }}>

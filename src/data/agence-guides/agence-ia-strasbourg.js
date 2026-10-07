@@ -2,7 +2,84 @@
 // Vérifié le 03/10/2026 : Insee Focus n° 368 (emploi sous contrôle étranger 2023), Légifrance (L1226-23, version du 27/06/2026), livrefoncier.fr, service-public.gouv.fr (F1119), gesetze-im-internet.de (BetrVG § 80 et § 90, BGB § 443), textes européens lus sur le Publications Office de l'UE (règlements 2024/1689, 2026/1744 et 2022/2554, résultat de la première lecture du Parlement européen).
 export default {
   slug: 'agence-ia-strasbourg',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: [
+      "Bassin rhénan, français et allemand",
+      "Banque mutualiste, industrie, affaires européennes",
+      "Ateliers sur site, code à distance",
+      "Glossaires bilingues tenus",
+    ],
+    lien: "Voir l'offre pour Strasbourg",
+  },
+  ville: {
+    heroSubtitle: "Une notice à traduire, un contrat à relire dans les deux langues, un courrier de mutuelle à rédiger au ton de la maison : dans le bassin rhénan, l'IA rapporte d'abord sur ces documents. Nous construisons les outils qui les préparent, avec un glossaire tenu à jour, et nous formons les équipes qui les relisent.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Agents pour les documents bilingues, automatisation des courriers et des dossiers, conseil et formation",
+      },
+      {
+        label: "Venir à Strasbourg",
+        value: "Déplacements planifiés depuis Lyon, frais écrits dans la proposition",
+      },
+      {
+        label: "Pour qui",
+        value: "Banque et assurance mutualistes, industrie et pharma, affaires européennes, entreprises transfrontalières",
+      },
+      {
+        label: "Pour commencer",
+        value: "Un échange offert de 30 minutes, puis un forfait écrit, frais de déplacement compris",
+      },
+    ],
+    whyHere: "Dans le bassin rhénan, une grande partie des documents existe en deux langues : notices techniques, contrats, courriers, supports commerciaux. C'est le premier terrain des agents IA, à condition de tenir un glossaire maison pour la terminologie. S'y ajoutent les dossiers de conformité du secteur mutualiste et la veille sur les textes européens, suivie à la source. Nous aidons à choisir le premier chantier, puis nous le construisons.",
+    presence: "L'équipe Masteria travaille depuis Lyon. Ses venues à Strasbourg, dans l'Eurométropole et jusqu'à Haguenau, se planifient autour de l'observation du travail, des ateliers et de la remise de l'outil ; les versions intermédiaires se présentent en visio. Nous n'avons pas de bureau en Alsace, et les frais de déplacement figurent en clair dans la proposition.",
+  },
+  offresTitre: {
+    kicker: "Notre offre en Alsace",
+    h2: "De la gouvernance aux outils bilingues, ce que nous faisons en Alsace",
+  },
+  offresNote: {
+    titre: "De la recommandation à l'outil bilingue.",
+    texte: "La même équipe cadre le projet, construit l'outil avec ses glossaires et le remet à vos équipes, avec son code et sa documentation.",
+  },
+  ancrage: {
+    kicker: "Strasbourg et le Bas-Rhin",
+    h2: "Pourquoi une agence IA pour les entreprises strasbourgeoises ?",
+    economie: "Le tissu économique strasbourgeois",
+    presence: "Comment nous intervenons en Alsace",
+    prestations: "Trois chantiers typiques dans le bassin rhénan",
+  },
+  formationBloc: {
+    kicker: "Former les équipes",
+    h2: "Des sessions à Strasbourg, sur l'outil livré",
+    lien: "Le catalogue complet des formations",
+  },
+  etapesBloc: {
+    kicker: "Le déroulé",
+    h2: "Cinq étapes pour un projet mené en Alsace",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises alsaciennes",
+    texte: "Plusieurs prestataires sont en lice ? Nos critères de choix sont réunis dans",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "le comparatif pour choisir une agence IA",
+    },
+  },
+  maillage: {
+    villes: "Masteria dans d'autres villes de France et de Suisse",
+    expertises: "Lectures pour préparer le cadrage",
+  },
+  cta: {
+    titre: "Des documents bilingues à traiter plus vite ?",
+    texte: "Envoyez-nous un exemple de document et la langue dans laquelle il doit sortir. Nous revenons vers vous en 24 heures au plus pour organiser un échange de 30 minutes, offert.",
+  },
+  equipe: {
+    titre: "Une équipe réunie pour les entreprises du bassin rhénan",
+    texte: "Mathias Nizan, qui a fondé Masteria à Lyon en 2022, conduit chaque mission alsacienne. Il fait appel, selon le besoin, à un consultant pour le cadrage, à des développeurs et à un formateur, tous indépendants. Masteria ne place aucune licence, Copilot comprise : le choix de l'outil reste le vôtre.",
+  },
   intro: "À Strasbourg, un projet d'IA se décide souvent à deux niveaux : l'outil vient du siège d'un groupe, allemand, suisse ou américain, et ses usages obéissent au droit local d'Alsace-Moselle. Masteria, cabinet d'IA lyonnais, conduit le cadrage dans vos locaux strasbourgeois, développe à distance les assistants et les automatisations retenus, puis vous remet le code et la documentation. Nous ne revendons aucune licence : nous partons de l'outil choisi par votre groupe, ou nous comparons les options quand rien n'est encore décidé.",
   offresIntro: [
     "À Strasbourg, nos trois métiers servent des projets qui dépassent l'établissement : l'outil se décide souvent au siège du groupe, et ses règles d'usage se fixent ici, avec le droit local et les représentants du personnel.",
@@ -10,14 +87,21 @@ export default {
   ],
   offres: [
     {
+      title: "Conseil et gouvernance de l'IA",
+      cta: "Le conseil IA en pratique",
       desc: "Pour une filiale de groupe ou une entreprise installée des deux côtés du Rhin, le conseil commence par l'inventaire de ce que le siège a déjà tranché : outil, licences, règles d'accès aux données. Nous écrivons ensuite ce qui reste à décider à Strasbourg, du traitement du droit local au calendrier des instances du personnel, dans une feuille de route qui s'emboîte dans celle du groupe.",
       points: ["Inventaire des choix du groupe", "Droit local et instances du personnel", "Feuille de route par établissement"],
     },
     {
+      title: "Agents et outils bilingues",
+      cta: "Notre agence de développement IA",
+      secondaryCta: "Outils IA par métier",
       desc: "Nous développons des assistants documentaires nourris de vos procédures et des textes du droit local, chacun daté et sourcé, des agents branchés sur l'ERP du groupe (le logiciel de gestion commun à ses filiales) et des outils de lecture de contrats bilingues. Chaque outil passe une série de tests sur vos propres dossiers avant sa mise en service.",
       points: ["Base documentaire datée, droit local inclus", "Connexion à l'ERP du groupe", "Tests sur vos dossiers français et allemands"],
     },
     {
+      title: "Automatisation des courriers et des dossiers",
+      cta: "L'automatisation chez Masteria",
       desc: "Chez une banque mutualiste ou un assureur du bassin, chaque automatisation se prépare sous DORA, le règlement européen sur la résilience numérique du secteur financier : fiche de registre, clauses de sortie, lieux de traitement des données. Pour un industriel, nous automatisons la reprise des pièces fournisseurs dans le progiciel du groupe, avec un contrôle humain avant toute écriture.",
       points: ["Dossier DORA prêt pour la conformité", "Pièces fournisseurs reprises dans l'ERP", "Validation avant toute écriture"],
     },
@@ -103,16 +187,16 @@ export default {
     },
     cas: {
       h3: "Retour de mission : Copilot choisi par le siège, adopté palier par palier",
-      contexte: "Dans ce groupe international du packaging, qui emploie plusieurs milliers de personnes sur trois continents (Europe, États-Unis, Inde), l'outil était décidé : la direction informatique avait choisi Microsoft 365 Copilot, qui succédait à un assistant conversationnel développé en interne, en pleine bascule vers S/4HANA (l'ERP de SAP de dernière génération). Il restait à prouver son utilité sur un premier cercle avant de l'étendre. Une filiale strasbourgeoise dont le siège a déjà choisi l'outil se reconnaîtra dans cette situation.",
+      contexte: "Dans ce groupe international du packaging, qui emploie plusieurs milliers de personnes sur trois continents (Europe, États-Unis, Inde), l'outil était décidé : la direction informatique avait choisi Microsoft Copilot (anciennement Microsoft 365 Copilot), qui succédait à un assistant conversationnel développé en interne, en pleine bascule vers S/4HANA (l'ERP de SAP de dernière génération). Il restait à prouver son utilité sur un premier cercle avant de l'étendre. Une filiale strasbourgeoise dont le siège a déjà choisi l'outil se reconnaîtra dans cette situation.",
       etapes: [
         "Entretiens à distance, puis journée pilote sur site, menés avec le Data manager du groupe et les référents de chaque métier : ils ont fixé les cas d'usage par fonction et ce que Copilot pouvait lire, OneDrive et SharePoint, les serveurs partagés restant hors de portée.",
         "Treize ateliers, tous bâtis sur des fichiers du groupe : tableaux Excel volumineux, documents Word, flux Outlook, présentations PowerPoint à la charte maison.",
-        "Un des deux assistants construits traite le mail d'un fournisseur : il en sort l'extrait Kbis, les coordonnées bancaires (RIB) et les contacts qui alimentent la fiche fournisseur dans SAP.",
-        "La première session de deux jours a été évaluée à chaud, et son bilan, rendu sous cinq jours, a fait vérifier les licences et regrouper les participants par métier ; douze autres managers ont ensuite suivi le parcours corrigé, soit 24 pilotes.",
-        "Le comité de direction, six à huit dirigeants avec le Data manager, a consacré une matinée en anglais au vocabulaire de l'IA, au cadre AI Act et RGPD et au coût des agents ; après trois sessions en septembre 2026, dont deux en anglais, le dispositif sert de base aux sites des États-Unis et du Mexique, prévus en octobre 2026, puis de l'Inde, en décembre 2026.",
+        "L'un des assistants construits traite le mail d'un fournisseur : il en sort l'extrait Kbis, les coordonnées bancaires (RIB) et les contacts qui alimentent la fiche fournisseur dans SAP.",
+        "La première session de deux jours a été évaluée à chaud, et son bilan a fait vérifier les licences, regrouper les participants par métier et réserver du temps aux assistants ; douze autres managers ont ensuite suivi le parcours corrigé, soit 24 pilotes.",
+        "Le comité de direction, avec le Data manager, a consacré une matinée en anglais au vocabulaire de l'IA, au cadre AI Act et RGPD et au coût des agents. Trois sessions ont suivi en septembre 2026, deux d'entre elles en anglais, et les sites américains et mexicains prennent le relais en octobre, l'Inde en décembre.",
       ],
-      resultat: "Deux mois après, des managers décrivent ce qu'ils en font : l'analyse de fichiers, la préparation d'un retour sur investissement pour le déploiement d'outils RH, une présentation pour un directeur d'usine, l'analyse d'un appel d'offres. Le Data manager tient désormais les règles d'usage et le recueil de prompts des 24 pilotes. Pour une filiale strasbourgeoise, l'enseignement porte sur la langue : la direction a été réunie dans sa langue de travail, l'anglais, et ce qui a été validé en France sert de base aux autres pays du groupe.",
-      lien: { href: "/etudes-de-cas-ia#industrie", label: "Lire l'étude de cas complète" },
+      resultat: "Deux mois plus tard, les managers citent leurs usages : un fichier analysé, le calcul d'un retour sur investissement pour des outils RH, une présentation préparée pour un directeur d'usine, un appel d'offres décortiqué. Le Data manager tient désormais les règles d'usage et le recueil de prompts des 24 pilotes. Pour une filiale strasbourgeoise, l'enseignement porte sur la langue : la direction a été réunie dans sa langue de travail, l'anglais, et ce qui a été validé en France sert de base aux autres pays du groupe.",
+      lien: { href: "/etudes-de-cas-ia#industrie", label: "Le déploiement de Copilot dans le groupe du packaging" },
     },
     pieges: [
       { titre: "Brancher un assistant RH sur le seul droit général", texte: "Interrogé sur l'absence d'un salarié de Haguenau, un modèle généraliste décrit le régime de droit commun. L'article L1226-23 s'applique pourtant, tel que la loi du 25 juin 2026 l'a modifié. La base documentaire doit contenir ce texte, et la série de tests doit poser la question." },
@@ -125,7 +209,7 @@ export default {
   faq: [
     {
       q: "Notre filiale strasbourgeoise utilise l'outil d'IA imposé par le groupe : que peut apporter une agence ?",
-      a: "Elle traite ce que le siège ne règle pas : les usages propres à l'établissement, les textes du droit local, les documents reçus en allemand, le calendrier des représentants du personnel. Nous ne revendons aucune licence, donc l'outil retenu par le groupe, Microsoft 365 Copilot ou un autre, reste notre point de départ. Notre retour de mission dans un groupe industriel du packaging montre ce travail par paliers, du comité de direction aux managers pilotes.",
+      a: "Elle traite ce que le siège ne règle pas : les usages propres à l'établissement, les textes du droit local, les documents reçus en allemand, le calendrier des représentants du personnel. Nous ne revendons aucune licence, donc l'outil retenu par le groupe, Microsoft Copilot ou un autre, reste notre point de départ. Notre retour de mission dans un groupe industriel du packaging montre ce travail par paliers, du comité de direction aux managers pilotes.",
     },
     {
       q: "Un assistant juridique ou RH peut-il répondre sur le droit local d'Alsace-Moselle ?",
@@ -163,9 +247,9 @@ export default {
     { name: "Service-public.gouv.fr : déclaration initiale d'une association, cas de l'Alsace-Moselle", url: "https://www.service-public.gouv.fr/associations/vosdroits/F1119" },
     { name: "gesetze-im-internet.de : Betriebsverfassungsgesetz, § 90 (et § 80, alinéa 3)", url: "https://www.gesetze-im-internet.de/betrvg/__90.html" },
     { name: "gesetze-im-internet.de : Bürgerliches Gesetzbuch, § 443 (Garantie)", url: "https://www.gesetze-im-internet.de/bgb/__443.html" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
-    { name: "EUR-Lex : règlement (UE) 2022/2554 sur la résilience opérationnelle numérique (DORA)", url: "https://eur-lex.europa.eu/eli/reg/2022/2554/oj" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : le recrutement et la gestion du personnel parmi les usages à haut risque", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : l'échéance du 2 décembre 2027", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+    { name: "EUR-Lex, DORA (UE) 2022/2554 : les obligations des banques et assurances mutualistes envers leurs prestataires", url: "https://eur-lex.europa.eu/eli/reg/2022/2554/oj" },
     { name: "Office des publications de l'UE : résultat de la première lecture du Parlement européen sur l'IA (Strasbourg, 11-14 mars 2024)", url: "https://op.europa.eu/en/publication-detail/-/publication/604fd72c-e6dd-11ee-9ea8-01aa75ed71a1/language-fr" },
   ],
 }

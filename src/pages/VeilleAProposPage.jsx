@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Info, Rss, Filter, PenLine, ShieldCheck, Landmark,
-  Globe, Compass, FlaskConical, Mail,
+  Globe, Compass, FlaskConical, Mail, Languages,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import VeilleNav from '../components/VeilleNav'
@@ -43,8 +43,8 @@ function IconTile({ icon: Icon }) {
 }
 
 const ETAPES = [
-  { icon: Filter, titre: 'Sélection', desc: "Trente-huit flux RSS de médias, de sources officielles, de laboratoires et de revues de recherche sont dépouillés chaque matin ouvré. Dix à quatorze actualités sont retenues, réparties entre l'Europe et la France, l'international, la Chine et l'Asie. La priorité va à ce qui n'a pas encore été traité en français." },
-  { icon: PenLine, titre: 'Rédaction et analyse', desc: "Chaque actualité est résumée dans nos propres mots et reliée à sa source d'origine par un lien direct. L'analyse du jour est écrite après la sélection, jamais avant, pour qu'elle parte des faits et non d'une idée préconçue." },
+  { icon: Filter, titre: 'Sélection', desc: "Trente-huit flux RSS de médias, de sources officielles, de laboratoires et de revues de recherche sont dépouillés chaque matin ouvré. Douze à quatorze actualités sont retenues, réparties entre l'Europe et la France, l'international, la Chine et l'Asie. La priorité va à ce qui n'a pas encore été traité en français." },
+  { icon: PenLine, titre: 'Rédaction et analyse', desc: "Chaque actualité est résumée dans nos propres mots et reliée à sa source d'origine par un lien direct. L'analyse du jour est écrite après la sélection, jamais avant, pour qu'elle parte des faits observés ce jour-là." },
   { icon: ShieldCheck, titre: 'Contrôle avant publication', desc: "Une relecture et un contrôle de style automatisé précèdent la mise en ligne. Une édition qui ne passe pas ce contrôle ne sort pas. Les rumeurs et les fuites non confirmées sont signalées comme telles ou écartées." },
 ]
 
@@ -95,7 +95,7 @@ export default function VeilleAProposPage() {
         extraJsonLd={jsonLd}
       />
 
-      <VeilleNav active={"apropos"} />
+      <VeilleNav active="apropos" />
 
       {/* ── 1. HERO SOMBRE ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(44px, 6vw, 64px) 24px clamp(44px, 6vw, 64px)', overflow: 'hidden' }}>
@@ -128,9 +128,9 @@ export default function VeilleAProposPage() {
           </h1>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: 0, maxWidth: 700 }}>
-            La Veille IA est une rubrique quotidienne de Masteria, organisme de formation et de conseil en
-            intelligence artificielle. Cette page décrit qui la produit, selon quelle méthode, et les
-            engagements qui la régissent.
+            La Veille IA est une rubrique quotidienne de Masteria, cabinet d'intelligence artificielle fondé
+            à Lyon en 2022. Cette page décrit qui la produit, selon quelle méthode, et les engagements qui
+            la régissent.
           </p>
         </div>
       </section>
@@ -142,19 +142,19 @@ export default function VeilleAProposPage() {
           <h2 style={h2Style}>Qui écrit la Veille IA</h2>
           <p style={{ ...answerStyle }}>
             <strong>
-              La Veille IA est écrite par l'équipe éditoriale de Masteria, sous la direction de Mathias Nizan,
-              fondateur de l'organisme. Elle est publiée chaque matin ouvré et engage la rédaction, pas un
-              annonceur.
+              La Veille IA est écrite par l'équipe éditoriale de Masteria, que dirige Mathias Nizan, fondateur
+              du cabinet. Elle paraît chaque jour ouvré et n'engage que sa rédaction : aucun annonceur n'y
+              intervient.
             </strong>
           </p>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>
-            Masteria forme depuis 2022 des dirigeants, chefs de projet, développeurs et juristes à l'IA
-            générative, et développe des solutions sur mesure. La veille prolonge ce travail : elle sert à
-            comprendre l'actualité que nos formations et nos missions doivent intégrer. C'est aussi ce qui
-            garantit qu'elle est écrite par des gens qui pratiquent le sujet, pas seulement qui le relaient.
+            Depuis 2022, Masteria audite, conseille, construit des outils d'IA sur mesure et forme les équipes
+            qui s'en servent. La veille prolonge ce travail : elle sert à comprendre l'actualité que nos
+            formations et nos missions doivent intégrer, et ceux qui l'écrivent pratiquent le sujet chaque
+            semaine chez des clients.
           </p>
-          <Link to="/centre-formation-ia-entreprise" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700, textDecoration: 'none' }}>
-            Le parcours de Mathias Nizan et de Masteria
+          <Link to="/mathias-nizan" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700, textDecoration: 'none' }}>
+            Le parcours de Mathias Nizan
             <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
           </Link>
         </div>
@@ -251,6 +251,9 @@ export default function VeilleAProposPage() {
             <a href="/veille.xml" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 15.5, fontWeight: 700 }}>
               <Rss size={16} strokeWidth={2.4} aria-hidden="true" /> Flux RSS
             </a>
+            <Link to="/en/ai-watch" hrefLang="en" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 15.5, fontWeight: 700, textDecoration: 'none' }}>
+              <Languages size={16} strokeWidth={2.4} aria-hidden="true" /> L'édition anglaise, AI Watch
+            </Link>
             <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 15.5, fontWeight: 700, textDecoration: 'none' }}>
               <Mail size={16} strokeWidth={2.4} aria-hidden="true" /> Nous signaler une erreur ou une source
             </Link>
@@ -266,19 +269,16 @@ export default function VeilleAProposPage() {
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', margin: '0 0 16px' }}>
-              Former vos équipes sur ce que vous lisez ici
+              Une actualité de la veille vous concerne de près ?
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              L'actualité suivie chaque matin nourrit nos formations et nos missions de conseil. Masteria
-              accompagne dirigeants, chefs de projet, développeurs et juristes sur l'IA générative depuis 2022.
+              Elle peut devenir une formation pour vos équipes ou le point de départ d'une mission de conseil.
+              Décrivez-nous la situation, nous vous dirons ce que Masteria peut faire pour vous.
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
               Parler de votre projet
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Organisme certifié Qualiopi · Lyon, Europe, États-Unis, Inde
-            </p>
           </div>
         </div>
       </section>

@@ -28,7 +28,46 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * Design premium identique à /agence-developpement-ia et /agence-ia : kickers
  * uppercase #2563EB, icônes lucide (zéro emoji), cartes radius 16 bordées
  * #E5E7EB, réponses directes citables en gras, CTA final bandeau sombre #0A0A0A.
+ *
+ * MODE PAGE PROPRE (drapeau `pagePropre: true` dans solution-guides/<slug>.js) :
+ * le guide fournit tout le texte, le gabarit masque ses phrases communes aux
+ * autres pages. Champs reconnus (tous facultatifs, repli sur le texte d'origine) :
+ *   hero { chips: string[], lien, enBref: [{ label, value }] }   hero (chips, bouton #methode, carte « En bref »)
+ *   solution { …champs de solution-ia-data.js }   remplace les champs de données
+ *     (whatItIs, keyTakeaways, howWeBuild, techApproach, useCasesBySector…)
+ *   (chaque bloc ci-dessous accepte aussi `kicker`, le surtitre de sa section)
+ *   presentation { h2 }                           titre de la section « Ce que c'est »
+ *   etapesBloc { h2 }                             titre du déroulé (étapes dans `etapes`)
+ *   etapesNote { texte, lien: { href, label } }   remplace la phrase « audit IA » sous le déroulé
+ *   methodeBloc { h2, lead }                      section #methode
+ *   technique { h2, lead, texte, chips: string[], note: { texte, lien } }  approche technique (texte remplace techApproach)
+ *   secteursBloc { h2, intro }                    exemples par secteur (liens sectoriels dans un <nav>)
+ *   comparatif { intro, rows, caption }           comparatif sur étagère / sur mesure
+ *   cout { h2, lead, paras, facteurs, note: { texte, lien } }   budget (note remplace le renvoi au prix)
+ *   regieBloc { kicker, h2, lien }                bandeau régie (paragraphes dans `regie`)
+ *   faqBloc { h2, texte, lien }                   aside de la FAQ
+ *   maillage { kicker, h2, texte }                solutions liées : cartes et liens dans un <nav>, sans résumé
+ *   cta { titre, texte, ligne }                   CTA final (bouton inchangé, ligne masquée si absente)
+ *   equipe { titre, texte, chiffres }             « Qui intervient » (chiffres masqués si absents)
+ * Masqués : signature « Mis à jour en… » (remplacée par la date de revue), FounderNote,
+ * réponses-types communes (approche technique, méthode), paragraphe commun
+ * « Qui intervient » et ses chiffres. OfficialSources passe en `lean`.
  */
+
+/* Paragraphe de guide suivi d'un lien interne facultatif : { texte, lien: { href, label } } */
+function TexteLien({ bloc, style, linkStyle }) {
+  if (!bloc?.texte) return null
+  return (
+    <p style={style}>
+      {bloc.texte}
+      {bloc.lien?.href && <>{' '}<Link to={bloc.lien.href} style={linkStyle}>{bloc.lien.label}</Link>.</>}
+    </p>
+  )
+}
+
+const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+/* « 2026-10-07 » → « 7 octobre 2026 » (signature des pages propres) */
+const dateFr = iso => `${Number(iso.slice(8, 10))} ${MOIS_FR[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`
 
 const c = '#2563EB'
 const cLight = '#DBEAFE'
@@ -245,12 +284,16 @@ export default function SolutionIAPage() {
 
   const location = useLocation()
   const slug = location.pathname.replace(/^\//, '')
-  const solution = getSolution(slug)
   // Texte propre à la page (src/data/solution-guides/<slug>.js) : quand il existe, il
   // remplace tous les blocs communs du gabarit (typologies, déroulé, erreurs, comparatif,
   // budget, régie, FAQ transverse) par un contenu écrit pour cette solution seule.
   const guidePromise = solutionGuidePromise(slug)
   const guide = guidePromise ? use(guidePromise) : null
+  // Page propre : le guide fournit tout le texte, y compris les titres et les blocs de fin
+  const propre = Boolean(guide?.pagePropre)
+  const solutionBase = getSolution(slug)
+  const solution = solutionBase && propre && guide.solution ? { ...solutionBase, ...guide.solution } : solutionBase
+  const MaillageWrap = propre ? 'nav' : 'div'
 
   if (!solution) {
     return (
@@ -302,7 +345,7 @@ export default function SolutionIAPage() {
     '@context': 'https://schema.org',
     '@type': ['Service', 'ProfessionalService'],
     '@id': `https://www.master-ia.fr/${solution.slug}#service`,
-    name: `${solution.name} sur mesure — Masteria`,
+    name: `${solution.name} sur mesure · Masteria`,
     description: solution.metaDesc,
     url: `https://www.master-ia.fr/${solution.slug}`,
     serviceType: solution.name,
@@ -413,7 +456,7 @@ export default function SolutionIAPage() {
             <>
               {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
               <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 18px' }}>
-                Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
+                Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>{propre ? <> · revu le {dateFr(MODIFIED)}</> : <>, fondateur de Masteria · Mis à jour en {modifiedLabel}</>}
               </p>
               {guide.intro && <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 30px', maxWidth: 700 }}>{guide.intro}</p>}
             </>
@@ -425,18 +468,18 @@ export default function SolutionIAPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
             <a href="#methode" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Comment nous le construisons
+              {propre && guide.hero?.lien ? guide.hero.lien : 'Comment nous le construisons'}
             </a>
           </div>
 
           {/* chips de compétences (sombres) */}
           <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: 40 }}>
-            {[
+            {(propre && guide.hero?.chips ? guide.hero.chips.map((label, k) => ({ icon: [Cpu, Database, KeyRound, MapPin][k % 4], label })) : [
               { icon: Cpu, label: 'Multi-LLM (Claude, GPT, Mistral)' },
               { icon: Database, label: 'RAG sur vos données' },
               { icon: KeyRound, label: 'Code livré au client' },
               { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
-            ].map(({ icon: Icon, label }) => (
+            ]).map(({ icon: Icon, label }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
                 <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
@@ -448,12 +491,12 @@ export default function SolutionIAPage() {
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
             <dl style={{ margin: 0 }}>
-              {[
+              {(propre && guide.hero?.enBref ? guide.hero.enBref.map((f, k) => ({ icon: [Coins, Clock, FileCode2, KeyRound][k % 4], ...f })) : [
                 { icon: Coins, label: 'Budget indicatif', value: solution.budgetRange },
                 { icon: Clock, label: 'Mise en route', value: solution.timeline },
                 { icon: FileCode2, label: 'Livrable', value: 'Code source livré et documenté' },
                 { icon: KeyRound, label: 'Propriété', value: 'Vous, le client' },
-              ].map(({ icon: Icon, label, value }, i) => (
+              ]).map(({ icon: Icon, label, value }, i) => (
                 <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'baseline', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ flex: '0 0 150px', display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>
                     <Icon size={15} strokeWidth={2.2} style={{ color: '#60A5FA', flexShrink: 0 }} aria-hidden="true" />
@@ -472,9 +515,9 @@ export default function SolutionIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>Ce que c'est</div>
+              <div style={kickerStyle}>{propre && guide.presentation?.kicker ? guide.presentation.kicker : "Ce que c'est"}</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                {`${solution.name} : de quoi parle-t-on ?`}
+                {propre && guide.presentation?.h2 ? guide.presentation.h2 : `${solution.name} : de quoi parle-t-on ?`}
               </h2>
               {/* Aussi appelé : synonymes / requêtes proches (couverture sémantique SEO) */}
               {solution.alsoKnownAs && solution.alsoKnownAs.length > 0 && (
@@ -559,9 +602,9 @@ export default function SolutionIAPage() {
       {/* ── DÉROULÉ D'UN PROJET (cinq étapes, une décision par palier) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <div style={kickerStyle}>Déroulé</div>
+          <div style={kickerStyle}>{propre && guide.etapesBloc?.kicker ? guide.etapesBloc.kicker : 'Déroulé'}</div>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            {guide?.etapes ? `Le déroulé d'un projet de ${solution.name.toLowerCase()}` : "Le déroulé d'un projet solution IA"}
+            {propre && guide.etapesBloc?.h2 ? guide.etapesBloc.h2 : guide?.etapes ? `Le déroulé d'un projet de ${solution.name.toLowerCase()}` : "Le déroulé d'un projet solution IA"}
           </h2>
           {!guide?.etapes && <p style={answerStyle}>
             <strong>Un projet solution IA avance en cinq étapes : cadrage sur un cas d'usage priorisé, maquette ou POC sur vos données réelles, décision d'industrialisation sur critères, construction et intégration, puis run avec mesure et gouvernance. Chaque étape se conclut par une décision, prise sur des éléments concrets.</strong>
@@ -589,19 +632,26 @@ export default function SolutionIAPage() {
             </div>
             </>
           )}
+          {propre ? (
+            <TexteLien bloc={guide.etapesNote} style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }} linkStyle={aStyle} />
+          ) : (
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Quand les cas d'usage candidats sont nombreux, un <Link to="/audit-ia" style={aStyle}>audit IA</Link> structure l'inventaire et la priorisation avant d'engager le premier POC.
           </p>
+          )}
         </div>
       </section>
 
       {/* ── COMMENT ON LE CONSTRUIT (timeline à rail) ── */}
       <section id="methode" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <div style={kickerStyle}>Méthode</div>
+          <div style={kickerStyle}>{propre && guide.methodeBloc?.kicker ? guide.methodeBloc.kicker : 'Méthode'}</div>
           <h2 style={h2Style}>
-            Comment nous construisons votre {solution.name.toLowerCase()}
+            {propre && guide.methodeBloc?.h2 ? guide.methodeBloc.h2 : <>Comment nous construisons votre {solution.name.toLowerCase()}</>}
           </h2>
+          {propre && guide.methodeBloc?.lead && (
+            <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}><strong>{guide.methodeBloc.lead}</strong></p>
+          )}
           {!guide && (
             <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
               <strong>Quatre étapes, un livrable à chaque palier : cadrage du périmètre, prototype sur un cas réel, développement et intégration à vos outils, puis déploiement et transfert. Vous décidez à chaque étape, sur des éléments concrets, et vous repartez propriétaire du code.</strong>
@@ -633,46 +683,56 @@ export default function SolutionIAPage() {
       {/* ── APPROCHE TECHNIQUE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <div style={kickerStyle}>Approche technique</div>
+          <div style={kickerStyle}>{propre && guide.technique?.kicker ? guide.technique.kicker : 'Approche technique'}</div>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Sur quelles briques techniques ?
+            {propre && guide.technique?.h2 ? guide.technique.h2 : 'Sur quelles briques techniques ?'}
           </h2>
+          {(!propre || guide.technique?.lead) && (
           <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>Sur quatre briques : une approche multi-LLM (le bon modèle au bon endroit), du RAG pour ancrer les réponses dans vos données avec sources, des connecteurs API et MCP vers vos outils, et des garde-fous avec validation humaine. Hébergement dans l'Union européenne possible selon vos exigences de conformité.</strong>
+            <strong>{propre ? guide.technique.lead : "Sur quatre briques : une approche multi-LLM (le bon modèle au bon endroit), du RAG pour ancrer les réponses dans vos données avec sources, des connecteurs API et MCP vers vos outils, et des garde-fous avec validation humaine. Hébergement dans l'Union européenne possible selon vos exigences de conformité."}</strong>
           </p>
+          )}
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
-            {solution.techApproach}
+            {propre && guide.technique?.texte ? guide.technique.texte : solution.techApproach}
           </p>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            {[
+            {(propre && guide.technique?.chips ? guide.technique.chips.map((label, k) => ({ icon: [Cpu, Database, Plug, ShieldCheck, Server][k % 5], label })) : propre ? [] : [
               { icon: Cpu, label: 'Multi-LLM, le bon modèle au bon endroit' },
               { icon: Database, label: 'RAG : réponses sourcées sur vos données' },
               { icon: Plug, label: 'Connecteurs API & MCP' },
               { icon: ShieldCheck, label: 'Garde-fous & validation humaine' },
               { icon: Server, label: 'Hébergement UE possible' },
-            ].map(({ icon: Icon, label }) => (
+            ]).map(({ icon: Icon, label }) => (
               <span key={label} style={{ background: '#F9FAFB', color: '#374151', padding: '9px 14px', borderRadius: 8, fontSize: 13.5, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
                 <Icon size={16} strokeWidth={2.1} style={{ color: c }} aria-hidden="true" />
                 {label}
               </span>
             ))}
           </div>
+          {propre ? (
+            <TexteLien bloc={guide.technique?.note} style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }} linkStyle={aStyle} />
+          ) : (
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Pour le détail de notre stack et de notre méthode d'ingénierie, parcourez notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>.
           </p>
+          )}
         </div>
       </section>
 
       {/* ── CAS PAR SECTEUR ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <div style={kickerStyle}>Cas d'usage</div>
+          <div style={kickerStyle}>{propre && guide.secteursBloc?.kicker ? guide.secteursBloc.kicker : "Cas d'usage"}</div>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            {`${solution.name} : exemples par secteur`}
+            {propre && guide.secteursBloc?.h2 ? guide.secteursBloc.h2 : `${solution.name} : exemples par secteur`}
           </h2>
+          {propre ? (guide.secteursBloc?.intro && (
+            <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 880 }}>{guide.secteursBloc.intro}</p>
+          )) : (
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 880 }}>
             Quelques exemples génériques de ce que cette solution permet selon le métier. Ils illustrent des usages possibles, à adapter à votre contexte lors du cadrage. Pour un panorama plus large, parcourez nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link>.
           </p>
+          )}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
             {solution.useCasesBySector.map(uc => (
               <div key={uc.sector} style={{ ...cardStyle, padding: 28 }}>
@@ -684,7 +744,18 @@ export default function SolutionIAPage() {
               </div>
             ))}
           </div>
-          {solution.sectorLinks && solution.sectorLinks.length > 0 && (
+          {solution.sectorLinks && solution.sectorLinks.length > 0 && propre && (
+            <nav aria-label="Pages sectorielles liées" style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
+              Par secteur :{' '}
+              {solution.sectorLinks.map((lnk, i) => (
+                <span key={lnk.href}>
+                  <Link to={lnk.href} style={aStyle}>{lnk.label}</Link>
+                  {i < solution.sectorLinks.length - 1 ? ' · ' : ''}
+                </span>
+              ))}
+            </nav>
+          )}
+          {solution.sectorLinks && solution.sectorLinks.length > 0 && !propre && (
             <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
               Votre secteur en particulier :{' '}
               {solution.sectorLinks.map((lnk, i) => (
@@ -737,7 +808,7 @@ export default function SolutionIAPage() {
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Comparatif</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>{propre && guide.comparatif?.kicker ? guide.comparatif.kicker : 'Comparatif'}</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             {`${solution.offTheShelfLabel} ou ${solution.name.replace(/\s+sur mesure$/i, '')} sur mesure ?`}
           </h2>
@@ -751,7 +822,7 @@ export default function SolutionIAPage() {
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label={`Comparatif entre ${solution.offTheShelfLabel} et une solution ${solution.name} sur mesure développée par Masteria`} style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
               <caption style={{ captionSide: 'top', textAlign: 'left', padding: '0 0 16px', fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6 }}>
-                Sur étagère contre sur mesure, critère par critère.
+                {propre && guide.comparatif?.caption ? guide.comparatif.caption : 'Sur étagère contre sur mesure, critère par critère.'}
               </caption>
               <thead>
                 <tr>
@@ -787,9 +858,9 @@ export default function SolutionIAPage() {
       {/* ── COMBIEN ÇA COÛTE (fourchettes ouvertes, devis après cadrage) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <div style={kickerStyle}>Budget</div>
+          <div style={kickerStyle}>{propre && guide.cout?.kicker ? guide.cout.kicker : 'Budget'}</div>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            {guide?.cout ? `Combien coûte un projet ${/^[aeiouéèh]/i.test(solution.name) ? "d'" : 'de '}${solution.name.charAt(0).toLowerCase()}${solution.name.slice(1)} ?` : 'Combien coûte une solution IA ?'}
+            {propre && guide.cout?.h2 ? guide.cout.h2 : guide?.cout ? `Combien coûte un projet ${/^[aeiouéèh]/i.test(solution.name) ? "d'" : 'de '}${solution.name.charAt(0).toLowerCase()}${solution.name.slice(1)} ?` : 'Combien coûte une solution IA ?'}
           </h2>
           {guide?.cout ? (
             <>
@@ -801,7 +872,7 @@ export default function SolutionIAPage() {
           ) : (
             <>
               <p style={{ ...answerStyle, background: '#fff' }}>
-                <strong>Un POC se chiffre en milliers d'euros, un déploiement en production en dizaines de milliers, et un programme complet (plusieurs métiers, intégrations multiples, équipe dédiée) peut dépasser 100 000 €. Le devis est établi après le cadrage, sur un périmètre écrit ; le premier échange est gratuit.</strong>
+                <strong>Un POC se chiffre en milliers d'euros, un déploiement en production en dizaines de milliers, et un programme complet (plusieurs métiers, intégrations multiples, équipe dédiée) peut dépasser 100 000 €. Le devis est établi après le cadrage, sur un périmètre écrit ; les 30 premières minutes sont offertes.</strong>
               </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
                 Les fourchettes restent larges parce que le prix d'une solution IA dépend du périmètre davantage que de la technologie. Le budget s'engage par paliers : le POC mobilise un montant limité, et la décision d'industrialiser se prend avec ses résultats en main. Quatre facteurs font varier le devis.
@@ -824,9 +895,13 @@ export default function SolutionIAPage() {
               Le devis qui suit le cadrage décrit un périmètre écrit : les livrables de chaque palier, les hypothèses retenues (sources connectées, volumes, environnements) et ce qui reste hors périmètre. Un chiffre annoncé avant d'avoir vu vos données et vos systèmes a peu de valeur ; le devis engage sur un périmètre décrit noir sur blanc. Les montants de cette page sont des repères d'échelle, le devis remis après cadrage fait foi.
             </p>
           )}
+          {propre ? (
+            <TexteLien bloc={guide.cout?.note} style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }} linkStyle={aStyle} />
+          ) : (
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Les ordres de grandeur détaillés, les modèles d'engagement et la façon de lire un devis sont expliqués sur notre page <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>.
           </p>
+          )}
         </div>
       </section>
 
@@ -838,9 +913,9 @@ export default function SolutionIAPage() {
               <Users size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <div style={kickerStyle}>Modèle d'engagement</div>
+              <div style={kickerStyle}>{propre && guide.regieBloc?.kicker ? guide.regieBloc.kicker : "Modèle d'engagement"}</div>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Des développeurs IA chez vous, sur site ou à distance
+                {propre && guide.regieBloc?.h2 ? guide.regieBloc.h2 : 'Des développeurs IA chez vous, sur site ou à distance'}
               </h2>
               {guide?.regie ? guide.regie.map((para, k) => (
                 <p key={k} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>{para}</p>
@@ -850,7 +925,7 @@ export default function SolutionIAPage() {
                 </p>
               )}
               <Link to="/methode-projet-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Voir notre méthode de projet IA
+                {propre && guide.regieBloc?.lien ? guide.regieBloc.lien : 'Voir notre méthode de projet IA'}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -863,15 +938,15 @@ export default function SolutionIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>FAQ</div>
+              <div style={kickerStyle}>{propre && guide.faqBloc?.kicker ? guide.faqBloc.kicker : 'FAQ'}</div>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                {`${solution.name} : questions fréquentes`}
+                {propre && guide.faqBloc?.h2 ? guide.faqBloc.h2 : `${solution.name} : questions fréquentes`}
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                {propre && guide.faqBloc?.texte ? guide.faqBloc.texte : 'Vous ne trouvez pas votre réponse ici ?'}
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                {propre && guide.faqBloc?.lien ? guide.faqBloc.lien : 'Posez-nous votre question'}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -887,13 +962,18 @@ export default function SolutionIAPage() {
       {/* ── MAILLAGE : SOLUTIONS LIÉES + HUB ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <div style={kickerStyle}>Solutions liées</div>
+          <div style={kickerStyle}>{propre && guide.maillage?.kicker ? guide.maillage.kicker : 'Solutions liées'}</div>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            D'autres solutions IA sur mesure
+            {propre && guide.maillage?.h2 ? guide.maillage.h2 : "D'autres solutions IA sur mesure"}
           </h2>
+          {propre ? (guide.maillage?.texte && (
+            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>{guide.maillage.texte}</p>
+          )) : (
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>
             Selon votre besoin, ces livrables se combinent. Explorez les solutions proches, ou revenez au panorama complet.
           </p>
+          )}
+          <MaillageWrap {...(propre ? { 'aria-label': 'Solutions proches et pages liées' } : {})}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 32 }}>
             {related.map(rel => {
               const RelIcon = ICONS[rel.icon] || Bot
@@ -910,7 +990,7 @@ export default function SolutionIAPage() {
                     <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>
                       {rel.name}
                     </h3>
-                    <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.cardSummary}</p>
+                    {!propre && <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.cardSummary}</p>}
                     <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                       Découvrir
                       <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -937,6 +1017,7 @@ export default function SolutionIAPage() {
               <Coins size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Prix d'un projet IA
             </Link>
           </div>
+          </MaillageWrap>
         </div>
       </section>
 
@@ -949,18 +1030,20 @@ export default function SolutionIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              {`Parlons de votre ${solution.name.toLowerCase()}`}
+              {propre && guide.cta?.titre ? guide.cta.titre : `Parlons de votre ${solution.name.toLowerCase()}`}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Décrivez votre contexte et vos contraintes. Nous revenons vers vous sous 24 heures avec une lecture du périmètre, un premier prototype envisageable et une proposition de cadrage. Vous repartez avec une vision claire de ce qu'il est possible de développer, et vous restez propriétaire du code.
+              {propre && guide.cta?.texte ? guide.cta.texte : "Décrivez votre contexte et vos contraintes. Nous revenons vers vous sous 24 heures avec une lecture du périmètre, un premier prototype envisageable et une proposition de cadrage. Vous repartez avec une vision claire de ce qu'il est possible de développer, et vous restez propriétaire du code."}
             </p>
-            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: propre && !guide.cta?.ligne ? 0 : 24 }}>
               {CADRAGE_LABEL}
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, Europe, États-Unis, Inde
-            </p>
+            {(!propre || guide.cta?.ligne) && (
+              <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+                {propre ? guide.cta.ligne : 'Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, Europe, États-Unis, Inde'}
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -971,31 +1054,44 @@ export default function SolutionIAPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              {propre && guide.equipe?.titre ? guide.equipe.titre : 'Un cabinet spécialisé IA, indépendant des éditeurs'}
             </h2>
+            {propre && guide.equipe?.texte ? (
+              <>
+                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }}>{guide.equipe.texte}</p>
+                <nav aria-label="Preuves" style={{ display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 14 }}>
+                  <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>Études de cas</Link>
+                  <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>Revue de presse</Link>
+                  <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>
+                </nav>
+              </>
+            ) : (
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
               Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
+            )}
           </div>
+          {(!propre || guide.equipe?.chiffres) && (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
-            {[
+            {(propre ? guide.equipe.chiffres : [
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
               ['International', 'Europe, États-Unis, Inde'],
-            ].map(([k, v]) => (
+            ]).map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
-      <FounderNote />
+      {!propre && <FounderNote />}
 
-      <OfficialSources />
+      <OfficialSources lean={propre} />
     </>
   )
 }

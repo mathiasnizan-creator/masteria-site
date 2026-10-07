@@ -135,7 +135,7 @@ export const AGENCE_GEO_CITIES = [
       },
       {
         q: 'Travaillez-vous avec les PME et ETI de Haute-Savoie ?',
-        a: "Oui. Nos offres sont dimensionnées pour les PME et les ETI du bassin annécien : cadrage gratuit, missions forfaitaires courtes et priorité aux cas d'usage à retour rapide. Les secteurs mécatronique, outdoor, banque privée et tourisme de la région présentent des processus documentaires et de relation client très adaptés à l'IA générative et à l'automatisation.",
+        a: "Oui. Nos offres sont dimensionnées pour les PME et les ETI du bassin annécien : 30 minutes de cadrage offertes, missions forfaitaires courtes et priorité aux cas d'usage à retour rapide. Les secteurs mécatronique, outdoor, banque privée et tourisme de la région présentent des processus documentaires et de relation client très adaptés à l'IA générative et à l'automatisation.",
       },
       {
         q: "Accompagnez-vous l'industrie et la mécatronique du bassin annécien ?",
@@ -316,7 +316,7 @@ export const AGENCE_GEO_CITIES = [
       },
       {
         q: "Proposez-vous aussi le référencement IA (SEO et GEO) à Strasbourg ?",
-        a: "Oui : notre offre d'agence SEO IA couvre le référencement naturel outillé par l'IA et la visibilité dans les moteurs de réponse (GEO), pour les entreprises strasbourgeoises comme pour le reste de la France. C'est une mission distincte du développement d'agents et d'automatisations, décrite sur sa page dédiée, et le cadrage gratuit permet de combiner les deux quand votre priorité est double.",
+        a: "Oui : notre offre d'agence SEO IA couvre le référencement naturel outillé par l'IA et la visibilité dans les moteurs de réponse (GEO), pour les entreprises strasbourgeoises comme pour le reste de la France. C'est une mission distincte du développement d'agents et d'automatisations, décrite sur sa page dédiée, et les 30 minutes de cadrage offertes permettent de combiner les deux quand votre priorité est double.",
       },
     ],
   },
@@ -370,7 +370,7 @@ export const AGENCE_GEO_CITIES = [
       },
       {
         q: 'Travaillez-vous avec les entreprises de la région Sud ?',
-        a: "Oui. Nous accompagnons les PME, ETI et directions de la métropole Aix-Marseille-Provence, avec une attention aux spécificités régionales : maritime et logistique, tourisme, santé, industrie. Cadrage gratuit, missions forfaitaires et priorité aux cas d'usage à retour rapide. Tout existe aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
+        a: "Oui. Nous accompagnons les PME, ETI et directions de la métropole Aix-Marseille-Provence, avec une attention aux spécificités régionales : maritime et logistique, tourisme, santé, industrie. 30 minutes de cadrage offertes, missions forfaitaires et priorité aux cas d'usage à retour rapide. Tout existe aussi en distanciel, avec les mêmes contenus et les mêmes livrables.",
       },
       {
         q: 'Intervenez-vous au-delà de Marseille, ailleurs en région Sud ?',
@@ -434,7 +434,7 @@ export const AGENCE_GEO_CITIES = [
       },
       {
         q: "Faites-vous du conseil en stratégie IA à Nantes ?",
-        a: "Oui. Pour une ETI ou un groupe de la métropole, la mission de conseil en stratégie IA fixe le cap : diagnostic de maturité, cas d'usage priorisés par gain et faisabilité, feuille de route, gouvernance. Elle se prolonge par le développement des solutions retenues et par la formation des équipes, portés par la même équipe. Le cadrage est gratuit et la proposition, forfaitaire, arrive sous 24 heures.",
+        a: "Oui. Pour une ETI ou un groupe de la métropole, la mission de conseil en stratégie IA fixe le cap : diagnostic de maturité, cas d'usage priorisés par gain et faisabilité, feuille de route, gouvernance. Elle se prolonge par le développement des solutions retenues et par la formation des équipes, portés par la même équipe. Les 30 premières minutes de cadrage sont offertes et la proposition, forfaitaire, arrive sous 24 heures.",
       },
       {
         q: "Intervenez-vous au-delà de Nantes, dans le Grand Ouest ?",

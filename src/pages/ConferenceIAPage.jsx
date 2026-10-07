@@ -5,39 +5,34 @@ import {
   Sparkles, MessagesSquare, ShieldCheck, Landmark, BarChart3, FileText,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Money page « conférence IA » (slug /conference-ia) — côté FORMATION.
- * Créée le 2026-09-04 depuis l'analyse Semrush du 03/09 : « conférence ia »
- * (260/mois, KD 14, CPC 4,19 $, intention commerciale), aucune page dédiée
- * jusque-là ; le format n'existait que comme carte de /acculturation-ia.
+ * Money page « conférence IA » (slug /conference-ia), côté FORMATION.
+ * Créée le 2026-09-04 (Semrush du 03/09 : « conférence ia », 260/mois, KD 14).
+ * Réécrite le 2026-10-07 en texte propre (exigence ≥ 90 % de 6-grammes uniques).
  *
- * RÉPARTITION D'INTENTIONS :
- *  - /conference-ia = CETTE page : le format « une session » (plénière, séminaire,
- *    COMEX, convention, webinaire interne), son déroulé, sa préparation ;
- *  - /acculturation-ia = la démarche d'ensemble dans laquelle la conférence
- *    s'inscrit (vagues, parcours, référents) ;
- *  - /formation-ia-comex = le produit exécutif d'une matinée (pas une conférence) ;
- *  - /formation-sprint-ia-sensibilisation = l'atelier de 3 h avec manipulation.
+ * ANGLE PROPRE À CETTE PAGE : l'intervention devant un grand public interne (plénière
+ * d'entreprise, convention, comité de direction, webinaire multi-sites), sa préparation
+ * et son déroulé. Voisines : /sensibilisation-ia (la première prise de conscience, trois
+ * formats), /acculturation-ia (l'organisation par vagues), /atelier-intelligence-
+ * artificielle (la pratique en petit groupe), /coaching-ia (l'individuel),
+ * /formation-ia-comex (la matinée exécutive).
  *
- * INTÉGRITÉ : multi-outils, indépendance éditeurs, aucun client nommé, aucun
- * chiffre de résultat inventé, aucun prix affiché (forfait à la demi-journée
- * d'intervention, devis après cadrage). Littératie IA = obligation de MOYENS
- * (art. 4, précisée juillet 2026) : une conférence est un premier acte, pas une
- * conformité. Jamais Bpifrance sur le site.
- * Voix : verdict d'abord, phrases courtes, pas de tirets cadratins.
+ * FAITS : prix au forfait sur devis (base : demi-journée d'intervention) ; la remise sur
+ * cycle de l'ancienne version est retirée (absente des faits du 07/10). AI Act : fiche de
+ * faits du 07/10, section 7. Cas : « industrie » de src/data/etudes-de-cas.js (matinée du
+ * comité de direction, en anglais). « Séminaire » banni du texte (règle Masteria).
  */
 
 const SLUG = 'conference-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Conférence IA en entreprise : plénière, séminaire, COMEX | Masteria"
-const META_DESC = "Conférence IA en entreprise : une session de 1 à 2 heures pour faire comprendre l'intelligence artificielle générative à vos équipes, avec des démonstrations sur vos cas réels. Plénière, séminaire, COMEX, convention. Devis sous 24 h."
-const KEYWORDS = "conférence ia, conférence intelligence artificielle, conférence ia entreprise, conférencier ia, conférence ia séminaire, conférence ia comex, intervenant ia séminaire, keynote ia entreprise, conférence acculturation ia"
+const META_TITLE = "Conférence IA en entreprise : plénière, COMEX | Masteria"
+const META_DESC = "Conférence IA en entreprise : une à deux heures devant le personnel, des démonstrations sur vos documents, les règles d'usage. Plénière, COMEX, visio."
+const KEYWORDS = "conférence ia, conférence intelligence artificielle, conférence ia entreprise, conférencier ia, conférence ia convention, conférence ia comex, intervenant ia entreprise, keynote ia entreprise, conférence acculturation ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -65,21 +60,21 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Presentation, label: '1 h à 2 h · de 20 à plusieurs centaines de personnes' },
-  { icon: Sparkles, label: 'Démonstrations en direct sur vos cas' },
-  { icon: Users, label: 'COMEX, plénière, séminaire, convention' },
-  { icon: MapPin, label: 'Sur site en Europe, aux États-Unis et en Inde, ou en visio' },
+  { icon: Presentation, label: '60 à 120 minutes, salle de toute taille' },
+  { icon: Sparkles, label: 'Démonstrations en direct sur vos pièces' },
+  { icon: Users, label: 'Plénière, convention, comité de direction' },
+  { icon: MapPin, label: 'Europe · États-Unis · Inde, sur scène ou à l\'écran' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Format', value: "Une session de 1 h à 2 h, en plénière, en séminaire, en COMEX ou en convention ; en visio pour les organisations multi-sites" },
-  { label: 'Public', value: "De vingt personnes à plusieurs centaines : dirigeants, managers, équipes terrain, réseau de franchisés ou d'adhérents" },
-  { label: 'Contenu', value: "Ce que l'IA générative fait vraiment, ce qu'elle ne fait pas, démonstrations sur vos documents, cadre d'usage, questions ouvertes" },
-  { label: 'Outils', value: "Multi-outils et indépendant des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, sur ceux que vous avez déjà" },
-  { label: 'Préparation', value: "Un cadrage de 30 minutes et trois documents réels, anonymisés : la conférence se construit dessus" },
-  { label: 'Et après', value: "Trois usages à tester la semaine suivante, puis des ateliers ou des parcours par métier si vous le décidez" },
+  { label: 'Format', value: "Une intervention de 60 à 120 minutes lors d'une plénière, d'une convention, d'un comité de direction, ou diffusée en ligne pour plusieurs sites" },
+  { label: 'Public', value: "De vingt à plusieurs centaines de personnes : direction, encadrement, équipes de terrain, membres d'un réseau ou d'une fédération" },
+  { label: 'Contenu', value: "L'état des outils en octobre 2026, des démonstrations sur vos documents, les erreurs à surveiller, les règles d'usage, un temps de questions" },
+  { label: 'Outils', value: "Celui que vos équipes utilisent déjà, ou plusieurs assistants côte à côte si le choix reste ouvert ; aucun éditeur ne finance nos interventions" },
+  { label: 'Préparation', value: "Trente minutes de cadrage deux semaines avant, trois à cinq documents anonymisés une semaine avant" },
+  { label: 'Ensuite', value: "Trois usages à essayer dans la semaine, puis des ateliers ou des formations par métier si vous le décidez" },
 ]
 
 /* ───────── Les formats (4 cartes) ───────── */
@@ -87,98 +82,98 @@ const EN_BREF = [
 const FORMATS = [
   {
     icon: Presentation,
-    title: "La plénière de séminaire d'entreprise",
-    desc: "Le format le plus demandé : une heure à une heure et demie devant toute l'entreprise, au milieu d'un séminaire annuel ou d'une convention interne. Tout le monde entend la même chose, le langage commun s'installe, les idées reçues tombent devant une démonstration sur vos propres documents.",
+    title: "La plénière de l'entreprise",
+    desc: "Le cas le plus fréquent : 60 à 90 minutes devant tout le personnel, pendant la journée annuelle de l'entreprise ou une convention interne. Une démonstration sur un document que chacun connaît fait plus pour l'adoption qu'une heure de théorie.",
   },
   {
     icon: BarChart3,
-    title: "La conférence COMEX ou conseil d'administration",
-    desc: "Une session courte pour les décideurs : capacités réelles, limites, risques, ce que font les concurrents, ce qu'il faut décider en premier. Sans jargon et sans démonstration de gadgets. Quand le comité veut aller plus loin, la formation IA COMEX prend le relais sur une matinée.",
+    title: "La séance du comité de direction ou du conseil",
+    desc: "Une intervention courte pour ceux qui décident : ce que les outils savent faire en octobre 2026, leurs limites, les risques à arbitrer, ce que font les concurrents, les premières décisions à prendre. Un comité qui veut construire sa feuille de route poursuit avec la formation IA COMEX.",
   },
   {
     icon: Users,
-    title: 'La convention commerciale ou de réseau',
-    desc: "Fédérations, réseaux de franchisés, clubs de dirigeants, associations professionnelles : une conférence adaptée au métier de la salle, avec des démonstrations sur les situations que vos membres vivent. Le format qui donne envie de se former, sans vendre de licence.",
+    title: 'La convention de réseau ou de fédération',
+    desc: "Franchiseurs, fédérations professionnelles, clubs de dirigeants, groupements d'adhérents : l'intervention reprend les situations que vivent les membres dans leur métier. Elle donne envie de se former, sans qu'aucune licence ne soit vendue à la sortie.",
   },
   {
     icon: Video,
-    title: 'Le webinaire interne multi-sites',
-    desc: "Pour les organisations réparties sur plusieurs sites ou pays : une conférence en visio, enregistrée si vous le souhaitez, avec des questions modérées. Le contenu reste le même, la logistique disparaît. Elle sert souvent de lancement avant des ateliers en présentiel par site.",
+    title: 'Le webinaire pour plusieurs sites',
+    desc: "Quand les équipes sont réparties entre plusieurs sites ou plusieurs pays : la même intervention, diffusée en ligne, enregistrable avec votre accord, avec des questions écrites et triées par un modérateur. Elle précède souvent des ateliers organisés sur place, site par site.",
   },
 ]
 
-/* ───────── Le déroulé (4 temps, ancre sombre) ───────── */
+/* ───────── Le déroulé (4 temps) ───────── */
 
 const DEROULE = [
   {
     num: '01',
-    title: "Ouvrir : l'état de l'art sans jargon",
-    desc: "Quinze minutes pour poser ce qu'est l'IA générative en 2026, ce qui a changé en deux ans, ce que font les outils que vos équipes ont déjà sous la main. Pas de théorie sur les réseaux de neurones : ce qui compte, c'est ce que cela change dans une journée de travail.",
+    title: "Ouvrir sur l'état des outils, sans jargon",
+    desc: "Un quart d'heure pour dire ce qu'est l'IA générative en octobre 2026 et ce qui a changé depuis deux ans, à partir des outils que vos salariés ont déjà sur leur poste. Aucune théorie sur les réseaux de neurones : seulement ce que cela change dans une journée de travail.",
   },
   {
     num: '02',
-    title: 'Montrer : des démonstrations sur vos cas',
-    desc: "Le cœur de la conférence, trente minutes. Un compte rendu, un mail difficile, un tableau, un appel d'offres, un document technique : les vôtres, anonymisés. La salle voit l'outil produire, se tromper, être corrigé. C'est là que les idées reçues tombent, dans les deux sens.",
+    title: 'Montrer, sur des documents internes',
+    desc: "Trente minutes au cœur de l'intervention. Un compte rendu, un courriel tendu, un tableau, un cahier des charges, une note technique : vos pièces, anonymisées. La salle voit l'assistant produire, se tromper, puis être corrigé, et les idées toutes faites tombent dans les deux sens.",
   },
   {
     num: '03',
-    title: 'Cadrer : limites, risques et règles du jeu',
-    desc: "Vingt minutes sur ce que l'IA ne sait pas faire, les erreurs qu'elle produit avec assurance, les données qu'on ne lui confie pas, et le cadre d'usage que l'entreprise pose. Les questions qui fâchent y ont leur place : remplacement, surveillance, fiabilité.",
+    title: 'Poser les limites et les règles du jeu',
+    desc: "Vingt minutes sur ce que l'outil ignore, les fautes qu'il fait sans hésiter, les informations qu'il ne doit jamais recevoir et les consignes internes sur son emploi. Les questions sensibles y trouvent leur place : emploi, surveillance, fiabilité des réponses.",
   },
   {
     num: '04',
-    title: 'Conclure : trois usages à tester lundi',
-    desc: "Les questions de la salle, puis une conclusion opérationnelle : trois usages concrets que chacun peut essayer la semaine suivante, sur l'outil déjà disponible dans l'entreprise, avec la règle à respecter. C'est ce qui distingue une conférence d'un divertissement.",
+    title: 'Conclure par trois essais pour la semaine',
+    desc: "Les questions de la salle, puis trois usages simples que chacun pourra tenter dans les jours suivants sur l'outil de l'entreprise, avec la règle qui s'y attache. Sans cette conclusion pratique, une conférence reste un bon moment sans lendemain.",
   },
 ]
 
-/* ───────── La préparation (timeline J-15 → J+7) ───────── */
+/* ───────── La préparation (J-15 → J+7) ───────── */
 
 const PREPARATION = [
   {
     periode: 'J-15',
-    title: 'Cadrage de 30 minutes',
-    desc: "Un échange avec le commanditaire : le public, ce qu'il sait déjà, les outils déployés ou interdits, les sujets sensibles, le message que la direction veut faire passer, la place de la conférence dans votre événement. C'est là que se décide le ton, du très débutant au public averti.",
+    title: 'Trente minutes pour cadrer',
+    desc: "Un échange avec la personne qui organise : qui sera dans la salle, ce que ce public sait déjà, les outils autorisés ou interdits, les sujets délicats, le message que la direction veut porter, la place de l'intervention dans le programme de la journée. Le ton se décide à ce moment.",
   },
   {
     periode: 'J-7',
-    title: 'Vos documents, anonymisés',
-    desc: "Trois à cinq documents représentatifs du travail réel : un compte rendu, un mail, un tableau, une procédure, une offre. Vous les anonymisez, nous construisons les démonstrations dessus. Une conférence sur des exemples génériques est une conférence dont personne ne se souvient.",
+    title: 'Trois à cinq documents anonymisés',
+    desc: "Des pièces représentatives du travail de vos équipes : une note de service, un courriel de relance, un fichier de reporting, un devis. Vous retirez les noms ; nous construisons les démonstrations à partir d'elles. Une démonstration sur un exemple de manuel ne laisse aucun souvenir.",
   },
   {
     periode: 'Jour J',
-    title: 'La conférence',
-    desc: "Une heure à deux heures selon le format retenu, avec les démonstrations en direct, les questions de la salle et la conclusion en trois usages. En présentiel, nous arrivons en avance pour tester l'écran et le réseau ; en visio, un test technique se fait la veille.",
+    title: "L'intervention elle-même",
+    desc: "De 60 à 120 minutes selon le format choisi, démonstrations en direct, questions et conclusion pratique comprises. Sur place, l'intervenant arrive en avance pour essayer l'écran et la connexion ; en ligne, un test technique a lieu la veille avec votre équipe.",
   },
   {
     periode: 'J+7',
-    title: 'La suite, décidée avec vous',
-    desc: "Un retour à chaud : les questions posées, les usages qui ont accroché, les résistances entendues. Puis la décision de la suite : rien, des ateliers par métier, un programme d'acculturation, une formation COMEX. La conférence a fait son travail si cette décision est facile à prendre.",
+    title: 'Un retour, puis votre décision',
+    desc: "Une synthèse : les questions posées, les usages qui ont suscité l'intérêt, les réticences entendues. Vous décidez ensuite de la suite, qui peut être rien du tout, une charte d'usage, des ateliers par service ou une démarche d'acculturation. L'intervention a rempli son rôle si ce choix vous paraît simple.",
   },
 ]
 
-/* ───────── Les erreurs qui font rater une conférence IA (citable) ───────── */
+/* ───────── Les erreurs (citable) ───────── */
 
 const ERREURS = [
   {
-    title: 'Le show de démonstrations génériques',
-    desc: "Une heure d'images générées, de poèmes et de vidéos spectaculaires : la salle applaudit et ne change rien le lendemain. Une conférence utile montre l'IA sur le travail réel des participants, y compris quand elle se trompe.",
+    title: 'Le spectacle de démonstrations hors sujet',
+    desc: "Une heure d'images générées, de poèmes et de vidéos bluffantes : la salle applaudit et le lundi ressemble au vendredi. Une intervention utile montre l'outil sur le travail des participants, y compris au moment où il se trompe.",
   },
   {
-    title: 'Le conférencier qui vend son outil',
-    desc: "Un intervenant sponsorisé par un éditeur présente une solution, pas un sujet. Vos équipes le sentent et se ferment. Nous sommes indépendants des éditeurs et nous démontrons sur les outils que vous avez déjà, ou sur plusieurs, pour comparer.",
+    title: "L'intervenant qui représente un éditeur",
+    desc: "Un conférencier payé par un fournisseur présente un produit, et le public le sent vite. Masteria ne dépend d'aucun éditeur : nos démonstrations utilisent l'outil que vous avez, ou plusieurs outils côte à côte pour que la comparaison reste honnête.",
   },
   {
-    title: "L'événement sans suite",
-    desc: "La conférence lance ; elle ne forme pas. Sans ateliers, parcours ou référents derrière, l'enthousiasme retombe en quinze jours et le sujet passe pour une mode. La suite se décide avant la conférence, même si elle reste modeste.",
+    title: 'La conférence que rien ne suit',
+    desc: "L'intervention lance un mouvement sans former personne. Sans ateliers, formations ni référents prévus derrière, l'intérêt se dissipe en deux semaines et l'IA passe pour une mode. Décidez de la suite avant la date, même modeste.",
   },
   {
-    title: 'Le public mélangé sans adaptation',
-    desc: "Le COMEX, les managers et les équipes terrain n'ont ni les mêmes questions ni le même niveau de départ. Une plénière commune est possible, à condition d'adresser chaque public par des exemples qui lui parlent, et de ne pas parler stratégie à ceux qui veulent savoir quoi faire lundi.",
+    title: 'Un seul discours pour des publics différents',
+    desc: "Un directeur, un chef d'équipe et un technicien n'attendent pas la même chose. Une plénière commune fonctionne si chacun y trouve un exemple de son métier, et si personne ne parle stratégie à ceux qui veulent savoir quoi faire le lendemain.",
   },
   {
-    title: 'Le cadre oublié',
-    desc: "Une conférence qui donne envie sans dire ce qu'on ne fait pas produit, la semaine suivante, des données clients collées dans un outil grand public. Le cadre d'usage fait partie de la conférence, en vingt minutes, sans jargon juridique.",
+    title: 'Les règles passées sous silence',
+    desc: "Une intervention qui enthousiasme sans tracer de limites produit, dans la semaine, des fichiers clients collés dans des comptes gratuits. Les règles d'usage tiennent en vingt minutes, en langage courant, et font partie de la conférence.",
   },
 ]
 
@@ -187,51 +182,51 @@ const ERREURS = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une conférence IA en entreprise ?",
-    a: "C'est une session d'une à deux heures, devant un public large, qui fait comprendre ce que l'intelligence artificielle générative change dans le travail : ce que les outils font vraiment, ce qu'ils ne font pas, comment les utiliser avec un regard critique et dans quel cadre. Elle se tient en plénière de séminaire, en comité de direction, en convention de réseau ou en webinaire interne. Chez Masteria, elle repose sur des démonstrations en direct construites sur vos documents, et se conclut par trois usages concrets que chacun peut tester la semaine suivante. Elle ouvre une démarche ; elle ne remplace pas une formation.",
+    a: "C'est une intervention de 60 à 120 minutes devant un public nombreux, qui montre ce que l'intelligence artificielle générative change au travail : ce que les outils réussissent, ce qu'ils ratent, comment s'en servir avec discernement et dans quelles règles. Elle se tient lors d'une plénière, d'une convention, devant un comité de direction ou en ligne. Chez Masteria, elle s'appuie sur des démonstrations en direct construites à partir de vos documents et s'achève sur trois usages à tester dans la semaine. Elle ouvre une démarche ; la formation vient ensuite.",
   },
   {
     q: "Combien de temps dure une conférence IA ?",
-    a: "Entre une heure et deux heures. Le format d'une heure convient à une plénière de séminaire où la conférence est l'un des temps de la journée ; il tient l'état de l'art, deux ou trois démonstrations et les questions. Le format d'une heure et demie à deux heures permet davantage de démonstrations sur vos cas, un vrai temps sur le cadre d'usage et une séquence de questions plus longue. Au-delà de deux heures, on n'est plus dans une conférence mais dans un atelier : c'est le Sprint IA Sensibilisation de trois heures, avec manipulation par les participants.",
+    a: "Entre une et deux heures. Une heure suffit lorsque l'intervention est un moment parmi d'autres dans une journée d'entreprise : l'état des outils, deux ou trois démonstrations, quelques questions. Une heure et demie à deux heures laisse place à davantage de démonstrations, à un vrai passage sur les règles et à un échange plus long avec la salle. Au-delà, le format change de nature : on entre dans l'atelier de trois heures, où chacun manipule l'outil.",
   },
   {
     q: "Combien de personnes peut-on réunir ?",
-    a: "De vingt personnes à plusieurs centaines. Le format conférence est justement celui qui n'a pas de jauge naturelle : une plénière de quatre cents personnes fonctionne, à condition d'adapter les exemples aux publics présents et de modérer les questions. En dessous de vingt personnes, un atelier avec manipulation est plus efficace qu'une conférence, et nous vous le dirons au cadrage. En visio, le nombre de participants est sans limite technique ; la qualité tient à la modération des questions.",
+    a: "De vingt à plusieurs centaines. La conférence est le seul format sans plafond naturel : une plénière de quatre cents personnes fonctionne si les exemples parlent à chacun des publics présents et si les questions sont triées. En dessous de vingt personnes, un atelier où chacun pratique donne de meilleurs résultats, et nous vous le dirons lors du cadrage. En ligne, la limite est technique et dépend de votre outil de visioconférence.",
   },
   {
-    q: "Conférence IA ou formation IA : quelle différence ?",
-    a: "La conférence fait comprendre ; la formation fait faire. En conférence, les participants écoutent, voient des démonstrations, posent des questions et repartent avec des usages à tester. En formation, ils manipulent les outils sur leurs propres livrables, avec des exercices, des corrections et une évaluation des acquis, sur une demi-journée à deux jours. La conférence est le bon point d'entrée pour un public large ou une organisation qui démarre ; la formation prend le relais pour les équipes qui vont utiliser l'IA chaque jour. Les deux s'enchaînent dans une démarche d'acculturation.",
+    q: "Conférence ou formation à l'IA : laquelle prévoir ?",
+    a: "La conférence ouvre les yeux, la formation donne la main. Pendant une conférence, les participants regardent, écoutent, posent leurs questions et repartent avec des idées d'usage. Pendant une formation, ils prennent l'outil en main sur leurs propres livrables, s'exercent, sont corrigés et évalués, sur une à deux journées. La conférence convient au lancement ou à un public large ; la formation s'adresse aux équipes dont l'IA sera l'outil de tous les jours. Une démarche d'acculturation les enchaîne.",
   },
   {
-    q: "La conférence est-elle personnalisée à notre entreprise ?",
-    a: "Oui, et c'est ce qui la distingue d'une keynote de salon. Le cadrage de trente minutes fixe le public, le niveau, les outils déployés et les sujets sensibles. Vous nous transmettez ensuite trois à cinq documents réels, anonymisés : un compte rendu, un mail, un tableau, une procédure, une offre. Les démonstrations se construisent dessus. La trame reste la même d'une entreprise à l'autre, parce qu'elle fonctionne ; le contenu des démonstrations et des exemples est le vôtre.",
+    q: "La conférence est-elle construite pour notre entreprise ?",
+    a: "Oui, et c'est ce qui la sépare d'une intervention de salon. Les trente minutes de cadrage fixent le public, son niveau, les outils en place et les sujets délicats. Vous transmettez ensuite trois à cinq documents anonymisés, et les démonstrations se construisent à partir d'eux. La trame reste stable d'une entreprise à l'autre, éprouvée par des dizaines d'interventions ; les exemples, le vocabulaire et la profondeur des démonstrations sont les vôtres.",
   },
   {
     q: "Sur quels outils d'IA porte la conférence ?",
-    a: "Sur ceux que vos équipes utiliseront réellement. Si votre entreprise a déployé Microsoft Copilot, Gemini, ChatGPT, Claude ou Mistral, les démonstrations se font dessus, dans la version que vos équipes ont. Si aucun outil n'est déployé, nous montrons plusieurs outils sur les mêmes cas, ce qui donne à la direction une base de comparaison honnête. Nous sommes indépendants des éditeurs : aucune conférence n'est sponsorisée, et aucune licence n'est vendue à la fin.",
+    a: "Sur celui que vos salariés vont utiliser. Si l'entreprise a déployé Gemini, ChatGPT, Claude, Vibe ou Microsoft Copilot (anciennement Microsoft 365 Copilot), l'intervenant fait ses démonstrations dans la version dont disposent vos équipes. Si rien n'est encore choisi, il soumet la même tâche à plusieurs assistants pour donner à la direction une base de comparaison loyale. Aucun éditeur ne finance nos conférences, et aucune licence n'est proposée à la sortie.",
   },
   {
     q: "Combien coûte une conférence IA ?",
-    a: "Un forfait, établi sur une demi-journée d'intervention, préparation sur vos cas comprise : cadrage, construction des démonstrations, conférence et retour à chaud. Les frais de déplacement s'ajoutent en dehors de Lyon, au réel. Une conférence en visio n'en comporte pas. Le devis arrive sous 24 heures après le cadrage, qui est gratuit. Pour un cycle de plusieurs conférences (plusieurs sites, plusieurs publics), le forfait se dégrade à partir de la deuxième session.",
+    a: "Un forfait, établi sur la base d'une demi-journée d'intervention, qui comprend le cadrage, la construction des démonstrations sur vos documents, l'intervention et la synthèse de la semaine suivante. Vous découvrez ce montant dans le devis, reçu dans la journée ouvrée qui suit le cadrage. Le déplacement de l'intervenant vous est facturé au prix réel quand la conférence a lieu chez vous ; une intervention en ligne ne coûte aucun trajet.",
   },
   {
-    q: "Une conférence IA est-elle finançable par l'OPCO ?",
-    a: "Souvent, oui, quand elle est construite comme une action de formation courte : objectifs pédagogiques écrits, contenu structuré, feuille d'émargement, attestation de fin. Masteria est certifiée Qualiopi et prépare le dossier avec vous ; la prise en charge dépend ensuite de votre OPCO et de votre branche, nous le confirmons au cadrage. Une conférence de convention ouverte à un public externe, ou purement événementielle, relève d'une prestation classique, hors financement formation.",
+    q: "Votre OPCO peut-il payer une conférence IA ?",
+    a: "Souvent, à condition qu'elle prenne la forme d'une action de formation courte : objectifs pédagogiques écrits, contenu structuré, feuille d'émargement, attestation. Masteria, dont la certification Qualiopi couvre les actions de formation, rassemble les pièces avec vous ; votre opérateur de compétences décide ensuite, d'après ses règles et ses fonds, et nous vous indiquons au cadrage ce qui est envisageable. Une intervention ouverte à des invités extérieurs, ou purement événementielle, sort du champ de la formation.",
   },
   {
-    q: "Peut-on organiser la conférence en visio ?",
-    a: "Oui. Le webinaire interne est le format naturel des organisations multi-sites ou multi-pays : mêmes contenus, mêmes démonstrations en direct, questions écrites et modérées. Nous faisons un test technique la veille avec votre équipe, et la session peut être enregistrée pour les absents, avec votre accord sur la diffusion. La visio perd un peu de l'énergie de la salle ; elle gagne en portée et en coût, sans déplacement.",
+    q: "Peut-on organiser la conférence en ligne ?",
+    a: "Oui. Le webinaire est le format naturel des organisations réparties sur plusieurs sites ou plusieurs pays : même contenu, mêmes démonstrations en direct, questions écrites et triées. Un essai technique a lieu la veille avec votre équipe, et l'enregistrement peut être conservé pour les absents si vous en acceptez la diffusion. La distance coûte un peu d'énergie collective ; elle rapporte en portée, sans aucun déplacement.",
   },
   {
     q: "Qui intervient ?",
-    a: "Mathias Nizan, fondateur de Masteria, anime la plupart des conférences : il forme des dirigeants, des managers et des équipes terrain à l'IA générative depuis 2022, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Selon le lieu, la langue et la date, un formateur du réseau Masteria peut intervenir : des indépendants expérimentés, sélectionnés sur leur pratique, qui animent avec la même trame et les mêmes démonstrations sur vos cas. Le nom de l'intervenant figure sur le devis.",
+    a: "Mathias Nizan, fondateur de Masteria, assure la plupart des conférences ; il forme depuis 2022 des directions, des managers et des équipes de terrain, auprès d'industriels, de distributeurs, de cabinets de conseil et de fédérations. Selon la ville, la langue et la date, un formateur du réseau Masteria peut intervenir à sa place : un professionnel indépendant, retenu pour sa pratique, qui suit la même trame et utilise les démonstrations préparées sur vos documents. Le devis indique le nom de l'intervenant.",
   },
   {
-    q: "Que se passe-t-il après la conférence ?",
-    a: "Un retour à chaud sous une semaine : les questions posées, les usages qui ont accroché, les résistances entendues. Puis une décision, la vôtre. Beaucoup d'organisations enchaînent sur des ateliers par métier ou un programme d'acculturation complet ; d'autres s'arrêtent à la conférence et à la charte d'usage, ce qui est cohérent quand l'outil n'est pas encore déployé. Nous ne conditionnons pas la conférence à une suite ; nous vous la recommandons quand elle est utile.",
+    q: "Et après la conférence ?",
+    a: "Une synthèse vous parvient dans la semaine : questions posées, usages qui ont retenu l'attention, réticences exprimées. La suite vous appartient. Beaucoup d'organisations poursuivent avec des ateliers par service ou une démarche d'acculturation ; d'autres s'arrêtent à la conférence et à une charte d'usage, ce qui se justifie quand l'outil n'est pas encore déployé. Nous ne conditionnons jamais l'intervention à une commande ultérieure.",
   },
   {
-    q: "Une conférence suffit-elle pour l'obligation de littératie IA du règlement européen ?",
-    a: "Non, mais elle en est un premier acte documenté. L'article 4 du règlement européen sur l'IA demande, depuis le 2 février 2025, que les organisations soutiennent la montée en compétence des personnes qui utilisent des systèmes d'IA ; le paquet législatif de juillet 2026 a précisé qu'il s'agit d'une obligation de moyens. Une conférence avec objectifs, contenu et attestation montre que la démarche est engagée. Pour les équipes qui utilisent l'IA au quotidien, une formation par métier complète le dispositif. Personne ne peut vous promettre une conformité en une heure.",
+    q: "Une conférence suffit-elle au regard de l'article 4 de l'AI Act ?",
+    a: "Elle constitue une première mesure, datée et documentée, sans couvrir tout le besoin. En vigueur depuis février 2025, puis reformulé par le règlement 2026/1744 fin juillet 2026, cet article attend de l'employeur des actions pour que ceux qui utilisent l'IA pour son compte la maîtrisent : il impose des moyens, sans réclamer de certificat. Une conférence avec objectifs, contenu et attestation trouve sa place dans votre registre interne. Les équipes qui travaillent avec l'IA chaque jour ont besoin d'une formation en plus, et personne ne peut promettre la conformité en une heure.",
   },
 ]
 
@@ -241,11 +236,11 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'EducationalOrganization'],
   name: 'Conférence IA en entreprise (Masteria)',
-  alternateName: "Conférence sur l'intelligence artificielle générative pour les entreprises",
-  description: "Conférence IA en entreprise d'une à deux heures : état de l'art sans jargon, démonstrations en direct sur les documents de l'entreprise, cadre d'usage, questions ouvertes et trois usages à tester. En plénière, séminaire, COMEX, convention ou webinaire interne. Multi-outils (ChatGPT, Copilot, Claude, Gemini, Mistral), indépendant des éditeurs.",
+  alternateName: "Intervention sur l'intelligence artificielle générative devant le personnel d'une entreprise",
+  description: "Conférence IA de 60 à 120 minutes devant un public interne : état des outils, démonstrations en direct sur des pièces fournies par l'entreprise, règles d'usage, questions et trois usages à tester. En plénière, convention, comité de direction ou en ligne. L'outil de l'entreprise ou plusieurs assistants comparés, sans lien avec un éditeur.",
   url: 'https://www.master-ia.fr/conference-ia',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conference-ia#webpage' },
-  serviceType: "Conférence et sensibilisation à l'intelligence artificielle",
+  serviceType: "Conférence sur l'intelligence artificielle en entreprise",
   category: 'Formation professionnelle en intelligence artificielle',
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   areaServed: [
@@ -257,26 +252,21 @@ const serviceJsonLd = {
   ],
   audience: {
     '@type': 'EducationalAudience',
-    educationalRole: "Dirigeants, managers, équipes opérationnelles, réseaux professionnels",
+    educationalRole: "Direction, encadrement, équipes de terrain, réseaux professionnels",
     audienceType: 'B2B',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Formats de conférence IA',
-    itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Plénière de séminaire d'entreprise", description: "Une heure à une heure et demie devant toute l'entreprise, démonstrations sur ses documents." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Conférence COMEX ou conseil d'administration", description: "Session courte pour les décideurs : capacités, limites, risques, décisions à prendre." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Convention commerciale ou de réseau', description: "Conférence adaptée au métier d'une fédération, d'un réseau de franchisés ou d'un club." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Webinaire interne multi-sites', description: "La conférence en visio pour les organisations réparties, enregistrable, questions modérées." } },
-    ],
+    itemListElement: FORMATS.map(f => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: f.title, description: f.desc } })),
   },
 }
 
-/* Le déroulé en ItemList (séquence citable — GEO). */
+/* Le déroulé en ItemList (séquence citable, GEO). */
 const processJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Le déroulé d'une conférence IA Masteria",
+  name: "Les quatre temps d'une conférence IA Masteria",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: DEROULE.map((step, i) => ({
     '@type': 'ListItem',
@@ -291,44 +281,44 @@ const definitionsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': 'https://www.master-ia.fr/conference-ia#termes',
-  name: 'Conférence IA : les termes',
+  name: 'Conférence IA : définitions',
   hasDefinedTerm: [
     {
       '@type': 'DefinedTerm',
       name: 'Conférence IA',
-      description: "Session d'une à deux heures devant un public large, qui fait comprendre ce que l'IA générative change dans le travail : capacités réelles, limites, démonstrations sur les cas de l'entreprise, cadre d'usage. Elle ouvre une démarche et ne remplace pas une formation.",
+      description: "Intervention de 60 à 120 minutes devant un public nombreux, qui montre à partir de documents internes ce que l'IA générative réussit et rate, et rappelle les règles d'usage. Elle lance une démarche, la formation prend la suite.",
     },
     {
       '@type': 'DefinedTerm',
-      name: 'Sensibilisation IA',
-      description: "Premier temps d'une acculturation : conférences et sessions courtes qui démystifient l'IA, montrent des usages concrets et installent un langage commun, sans viser encore l'autonomie des participants.",
+      name: 'Webinaire interne',
+      description: "Conférence diffusée en ligne pour une organisation répartie sur plusieurs sites, avec questions écrites triées par un modérateur et enregistrement possible.",
     },
     {
       '@type': 'DefinedTerm',
       name: 'Littératie IA',
-      description: "Capacité à comprendre, utiliser et évaluer de façon critique les systèmes d'IA. L'article 4 du règlement européen sur l'IA en fait une obligation de moyens pour les organisations depuis le 2 février 2025.",
+      description: "Aptitude du personnel à utiliser les outils d'IA et à juger leurs résultats ; l'AI Act confie à l'employeur le soin de la développer.",
     },
   ],
 }
 
-/* Article : auteur (Mathias Nizan) et dates (E-E-A-T + fraîcheur GEO). */
+/* Article : auteur (Mathias Nizan) et dates. */
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/conference-ia#article',
-  headline: "Conférence IA en entreprise : une session pour embarquer toute l'organisation",
+  headline: "Conférence IA en entreprise : une intervention, toute la salle au même niveau",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-09-04',
-  dateModified: '2026-09-04',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conference-ia#webpage' },
   about: [
     { '@type': 'Thing', name: 'Intelligence artificielle générative', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle_g%C3%A9n%C3%A9rative' },
     { '@type': 'Thing', name: 'Conférence', sameAs: 'https://fr.wikipedia.org/wiki/Conf%C3%A9rence' },
-    { '@type': 'Thing', name: 'Littératie IA', description: "Capacité à comprendre, utiliser et évaluer de façon critique les systèmes d'IA (article 4 du règlement européen)" },
+    { '@type': 'Thing', name: 'Littératie IA', description: "Aptitude du personnel à manier l'IA, dont le développement revient à l'employeur selon l'article 4" },
   ],
 }
 
@@ -358,9 +348,10 @@ function FAQItem({ q, a, color }) {
 }
 
 const PAGE_CITATIONS = [
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-          { name: "Acculturer à l'IA : partir du réel, expérimenter, partager — Mission innovation, economie.gouv.fr", url: 'https://www.economie.gouv.fr/mission-innovation/acculturer-lia-partir-du-reel-experimenter-partager' },
-        ]
+  { name: "EUR-Lex, journal officiel de l'Union : le texte de 2024 sur l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Journal officiel de l'Union : l'Omnibus IA de 2026, qui a réécrit l'article 4", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "Ministère de l'Économie, Mission innovation : comment acculturer des équipes à l'IA", url: 'https://www.economie.gouv.fr/mission-innovation/acculturer-lia-partir-du-reel-experimenter-partager' },
+]
 
 export default function ConferenceIAPage() {
   const isDesktop = useIsDesktop()
@@ -387,7 +378,7 @@ export default function ConferenceIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-09-04"
-        dateModified="2026-09-04"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
@@ -420,29 +411,29 @@ export default function ConferenceIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Conférence IA en entreprise :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>une session pour embarquer toute l'organisation</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>une intervention, toute la salle au même niveau</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
+            Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui donne la plupart de ces conférences · publiée en septembre, mise à jour le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une conférence IA fait comprendre à un public large ce que l'intelligence artificielle générative change dans le travail : <strong style={{ color: '#fff', fontWeight: 700 }}>ce que les outils font vraiment, ce qu'ils ne font pas, des démonstrations en direct sur vos documents, et le cadre pour s'en servir</strong>. En une à deux heures, en plénière, en COMEX, en convention ou en visio.
+            Une conférence IA montre en 60 à 120 minutes, devant un public nombreux, ce que l'intelligence artificielle générative change au travail : <strong style={{ color: '#fff', fontWeight: 700 }}>les tâches que l'outil réussit, celles qu'il rate, des démonstrations en direct sur vos documents et les règles pour s'en servir</strong>. Elle se tient en plénière, en convention, devant un comité de direction ou en ligne.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Une conférence ne forme pas ; elle lance. Bien faite, elle fait tomber les idées reçues dans les deux sens, donne un langage commun à l'entreprise et rend la suite facile à décider. Mal faite, c'est un spectacle de démonstrations dont personne ne se souvient le lundi.
+            La conférence a un rôle précis : réunir tout le monde au même point de départ, le même jour. Réussie, elle dissipe les idées toutes faites, des plus inquiètes aux plus naïves, donne un vocabulaire commun et rend la décision suivante évidente. Ratée, elle laisse le souvenir d'un spectacle et rien sur les postes de travail.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander une conférence
+              Réserver une date
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#deroule" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le déroulé
+              Lire le déroulé
             </a>
           </div>
 
@@ -458,7 +449,7 @@ export default function ConferenceIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
             <dl style={{ margin: 0 }}>
@@ -483,10 +474,10 @@ export default function ConferenceIAPage() {
                 Quelle conférence IA pour quel public ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Quatre formats couvrent les demandes : la plénière de séminaire pour embarquer toute l'entreprise, la conférence COMEX pour les décideurs, la convention de réseau pour une fédération ou des franchisés, et le webinaire interne pour les organisations réparties. La trame est commune ; les exemples, le niveau et le ton changent.</strong>
+                <strong>Quatre situations reviennent : la plénière où toute l'entreprise est réunie, la séance réservée aux dirigeants, la convention d'un réseau ou d'une fédération, le webinaire qui relie plusieurs sites. La trame ne change pas ; les exemples, la profondeur et le registre s'ajustent à la salle.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Quand la salle doit manipuler, le format bascule vers l'atelier de trois heures du <Link to="/formation-sprint-ia-sensibilisation" style={aStyle}>Sprint IA Sensibilisation</Link> ; quand le comité veut décider, vers la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link>.
+                Si la salle doit manipuler, le bon format devient l'<Link to="/atelier-intelligence-artificielle" style={aStyle}>atelier intelligence artificielle</Link> ou un <Link to="/formation-sprint-ia" style={aStyle}>Sprint IA de trois heures</Link> ; si le comité doit trancher, la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link>.
               </p>
             </div>
 
@@ -508,18 +499,21 @@ export default function ConferenceIAPage() {
                       <ShieldCheck size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
                     </div>
                   </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Le cadre : un premier acte de littératie IA</h3>
+                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Une ligne dans votre registre AI Act</h3>
                   <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                    Depuis février 2025, l'article 4 du règlement européen demande aux organisations de soutenir la montée en compétence IA de leurs équipes, une obligation de moyens précisée en juillet 2026. Une conférence documentée en est le premier acte ; elle ne suffit pas seule, et personne ne devrait vous dire le contraire.
+                    Depuis le 27 juillet 2026 et sa réécriture par l'Omnibus, l'article 4 du règlement sur l'IA impose à l'employeur d'agir pour que ses salariés sachent manier les outils d'IA. Une conférence datée, avec émargement, en est une trace ; les équipes qui s'en servent chaque jour auront besoin d'une formation complémentaire, quoi qu'on vous dise.
                   </p>
                 </div>
               </div>
+              <p style={{ color: '#4B5563', fontSize: 14.5, lineHeight: 1.7, margin: '22px 0 0' }}>
+                Exemple de séance pour décideurs : les dirigeants d'un groupe du packaging présent sur plusieurs continents ont suivi en 2026 une matinée en anglais sur les mots de l'IA, du modèle jusqu'à l'agent, les obligations européennes et le RGPD, puis ce que coûtent les agents, avant que le groupe étende Copilot à ses sites étrangers. Le détail figure dans l'<Link to="/etudes-de-cas-ia#industrie" style={aStyle}>étude de cas industrie</Link>.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── LE DÉROULÉ (ancre sombre — pivot) ── */}
+      {/* ── LE DÉROULÉ (ancre sombre, pivot) ── */}
       <section id="deroule" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -532,7 +526,7 @@ export default function ConferenceIAPage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Quatre temps : ouvrir sur l'état de l'art sans jargon, montrer l'IA sur vos documents, cadrer les limites et les règles du jeu, conclure par trois usages à tester la semaine suivante. Les démonstrations occupent le tiers du temps ; c'est là que la salle bascule.</strong>
+            <strong style={{ color: '#fff' }}>En quatre temps : l'état des outils sans jargon, des démonstrations sur vos documents, les limites et les règles, puis trois essais à faire dans la semaine. Les démonstrations prennent un tiers de la durée, et c'est pendant ce tiers que la salle change d'avis.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
@@ -546,13 +540,13 @@ export default function ConferenceIAPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            En une heure, le déroulé se resserre sur deux démonstrations et un cadre plus court ; en deux heures, il gagne des démonstrations et une séquence de questions plus longue. La conférence s'inscrit ensuite, si vous le décidez, dans une démarche d'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation IA</Link>.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            Sur une heure, le plan se resserre autour de deux démonstrations et d'un passage plus bref sur les règles ; sur deux heures, il s'enrichit de démonstrations et d'un temps d'échange plus long. Si vous le décidez, la conférence ouvre ensuite une démarche d'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation IA</Link> sur un trimestre.
           </p>
         </div>
       </section>
 
-      {/* ── LA PRÉPARATION (timeline J-15 → J+7) ── */}
+      {/* ── LA PRÉPARATION (J-15 → J+7) ── */}
       <section id="preparation" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <Kicker>La préparation</Kicker>
@@ -561,7 +555,7 @@ export default function ConferenceIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Peu de choses, mais les bonnes : trente minutes de cadrage deux semaines avant, trois à cinq documents réels anonymisés une semaine avant, et un retour à chaud la semaine suivante pour décider de la suite. Une conférence construite sur vos cas demande cette préparation ; c'est elle qui fait la différence avec une keynote de salon.</strong>
+            <strong>Peu de choses, mais à la bonne date : trente minutes de cadrage deux semaines avant, trois à cinq documents anonymisés une semaine avant, puis une synthèse la semaine suivante pour décider de la suite. Cette préparation sépare une conférence construite pour vous d'une intervention de salon.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -586,25 +580,25 @@ export default function ConferenceIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Une conférence peut se tenir plus vite quand l'agenda l'impose ; la qualité des démonstrations dépend alors des documents que vous pouvez transmettre dans le délai. Nous le disons au cadrage, qui est gratuit.
+            Une conférence peut se monter en moins de deux semaines quand l'agenda l'exige ; la qualité des démonstrations dépend alors des documents que vous parvenez à transmettre dans ce délai. Nous vous le disons dès le premier échange.
           </p>
         </div>
       </section>
 
-      {/* ── LES ERREURS CLASSIQUES (citable + E-E-A-T terrain) ── */}
+      {/* ── LES ERREURS CLASSIQUES ── */}
       <section id="erreurs" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Ce que le terrain apprend</Kicker>
+          <Kicker>Les écueils</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Les cinq erreurs qui font rater une conférence IA
+            Pourquoi tant de conférences IA ne changent rien
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Cinq erreurs reviennent dans les conférences IA qui ne changent rien : le show de démonstrations génériques, le conférencier qui vend son outil, l'événement sans suite, le public mélangé sans adaptation et le cadre oublié. Aucune n'est une question de budget ; toutes sont une question de préparation.</strong>
+            <strong>Cinq causes reviennent : un spectacle de démonstrations hors sujet, un intervenant lié à un éditeur, une conférence que rien ne suit, un seul discours pour des publics différents, des règles passées sous silence. Aucune ne tient au budget ; toutes tiennent à la préparation.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
-            Ce sont des schémas que nous observons depuis 2022, en formant plus de 1 500 professionnels du COMEX aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> montrent ce que produit une conférence suivie d'une vraie démarche.
+            Nous les observons depuis 2022, devant des directions comme devant des équipes de production, dans des usines, des réseaux de distribution, des cabinets ou des fédérations. Les <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> montrent ce que devient une intervention lorsqu'une démarche la prolonge.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -621,20 +615,20 @@ export default function ConferenceIAPage() {
       {/* ── QUI INTERVIENT (E-E-A-T) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Qui intervient</Kicker>
+          <Kicker>L'intervenant</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Un conférencier IA qui forme des équipes toute l'année
+            Un conférencier IA qui forme des équipes le reste de l'année
           </h2>
 
           <p style={answerStyle}>
-            <strong>Une conférence IA est crédible quand l'intervenant fait le travail le reste de l'année. Mathias Nizan anime la plupart des conférences Masteria et forme des dirigeants, des managers et des équipes terrain depuis 2022 ; selon le lieu, la langue et la date, un formateur du réseau Masteria intervient avec la même trame et les mêmes démonstrations sur vos cas.</strong>
+            <strong>Une conférence sur l'IA gagne en crédit quand l'intervenant passe le reste de l'année à former des salariés. Mathias Nizan donne la plupart des conférences Masteria ; selon la ville, la langue ou la date, un formateur du réseau prend sa place, avec la même trame et les démonstrations préparées sur vos documents.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
             {[
-              { icon: Mic, title: 'Mathias Nizan, fondateur de Masteria', desc: "Formateur et consultant IA depuis 2022, il a formé plus de 1 500 professionnels du comité exécutif aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Il démontre en direct, sur vos documents, et répond aux questions qui fâchent." },
-              { icon: Users, title: 'Le réseau de formateurs Masteria', desc: "Des indépendants expérimentés, sélectionnés sur leur pratique en entreprise, qui interviennent près de chez vous ou dans votre langue. Ils animent avec la trame Masteria et les démonstrations préparées sur vos cas. Le nom de l'intervenant figure sur le devis." },
-              { icon: ShieldCheck, title: 'Ce que nous refusons', desc: "Les conférences sponsorisées par un éditeur, les promesses chiffrées de productivité, les démonstrations sur des exemples que personne ne reconnaît. Nous sommes indépendants des éditeurs, nous montrons l'IA quand elle se trompe, et nous disons quand une conférence n'est pas le bon format." },
+              { icon: Mic, title: 'Mathias Nizan, fondateur de Masteria', desc: "Il a fondé le cabinet à Lyon en 2022 et forme depuis des comités de direction, des managers et des équipes de terrain. Sur scène, il travaille en direct sur vos documents et répond aux questions qui dérangent." },
+              { icon: Users, title: 'Le réseau de formateurs', desc: "Une vingtaine d'indépendants retenus pour leur pratique en entreprise, qui interviennent près de chez vous ou dans votre langue. Ils suivent la trame Masteria et utilisent les démonstrations préparées à partir de vos pièces. Le devis indique leur nom." },
+              { icon: ShieldCheck, title: 'Ce que nous refusons', desc: "Les interventions financées par un éditeur, les promesses chiffrées de productivité, les démonstrations sur des cas que personne ne reconnaît. Nous montrons aussi l'outil quand il se trompe, et nous vous disons quand une conférence n'est pas le format qu'il vous faut." },
             ].map(card => {
               const Icon = card.icon
               return (
@@ -656,18 +650,18 @@ export default function ConferenceIAPage() {
         <div style={wrap}>
           <Kicker>Et après</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Que se passe-t-il après la conférence ?
+            Et une fois la conférence passée ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une décision, la vôtre. La conférence a fait son travail si la suite est facile à choisir : rien pour l'instant, une charte d'usage, des ateliers par métier, ou un programme d'acculturation complet. Nous ne conditionnons pas la conférence à une suite ; nous la recommandons quand elle est utile.</strong>
+            <strong>Vous décidez, sur la base de la synthèse remise dans la semaine. Les options vont de ne rien faire pour l'instant à une démarche complète, en passant par une charte d'usage ou des ateliers par service. Nous ne faisons jamais d'une conférence la condition d'une autre commande.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
             {[
-              { icon: FileText, title: "La charte d'usage", desc: "Le minimum après une conférence : ce qu'on peut confier aux outils, ce qui reste interdit, comment vérifier une réponse. Une page, écrite avec vous, qui évite les accidents de la semaine suivante.", href: '/charte-ia-entreprise', cta: "Voir la charte IA d'entreprise" },
-              { icon: GraduationCap, title: 'Les ateliers et parcours par métier', desc: "Pour les équipes qui vont utiliser l'IA chaque jour : des sessions en petits groupes, sur leurs livrables réels, avec évaluation des acquis. Certifiées Qualiopi, finançables par votre OPCO.", href: '/formation-intelligence-artificielle', cta: 'Voir les formations par métier' },
-              { icon: MessagesSquare, title: "La démarche d'acculturation", desc: "Quand toute l'organisation doit monter en compétence : vagues de sessions, programme management, référents internes, mesure des usages. La conférence en est le lancement.", href: '/acculturation-ia', cta: "Voir l'acculturation IA" },
+              { icon: FileText, title: "Une charte d'usage", desc: "La suite la plus légère : une page qui liste les informations autorisées dans l'outil, celles qui n'y entrent jamais et les vérifications à faire sur une réponse. Elle s'écrit avec vous et prévient les maladresses de la semaine suivante.", href: '/charte-ia-entreprise', cta: "Lire la page sur la charte IA" },
+              { icon: GraduationCap, title: 'Des ateliers par service', desc: "Pour les services dont l'IA deviendra un outil quotidien : des groupes de douze, sur leurs propres documents, pendant trois heures ou une journée, avec attestation. Une demande de prise en charge auprès de l'OPCO reste possible.", href: '/atelier-intelligence-artificielle', cta: 'Voir les ateliers IA' },
+              { icon: MessagesSquare, title: "Une démarche d'acculturation", desc: "Quand toute l'organisation doit monter en compétence : ateliers par vagues, formations métier, sessions pour les managers, référents et suivi des usages. La conférence en marque le coup d'envoi.", href: '/acculturation-ia', cta: "Découvrir l'acculturation IA" },
             ].map(card => {
               const Icon = card.icon
               return (
@@ -698,17 +692,17 @@ export default function ConferenceIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Un forfait, et souvent une prise en charge OPCO
+                Un forfait, et souvent une prise en charge par l'OPCO
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La conférence se chiffre au forfait, sur une demi-journée d'intervention, préparation sur vos cas comprise ; le devis arrive sous 24 heures après le cadrage. Construite comme une action de formation courte (objectifs, contenu, émargement, attestation), elle peut être prise en charge par votre OPCO dans le plan de développement des compétences : Masteria est certifiée Qualiopi et prépare le dossier avec vous. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous répond en deux minutes.
+                Nous facturons la conférence au forfait, sur une base d'une demi-journée d'intervention, préparation des démonstrations comprise ; le devis vous parvient dans les 24 heures qui suivent le cadrage. Lorsqu'elle est organisée comme une action de formation courte (objectifs, contenu, émargement, attestation), elle peut s'ajouter aux formations prévues dans l'année et être présentée à l'OPCO, qui fixe sa participation. Masteria, certifiée Qualiopi, monte la demande avec vous. Le simulateur <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> donne le nom de votre opérateur à partir de votre branche.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Forfait à la demi-journée, préparation comprise',
-                  'Action de formation courte certifiée Qualiopi',
-                  'Prise en charge OPCO confirmée au cadrage',
-                  'Devis sous 24 h après cadrage gratuit',
+                  'Forfait sur une demi-journée, préparation incluse',
+                  'Format de formation courte possible',
+                  'Financement à confirmer avec votre OPCO',
+                  'Aucun frais de déplacement en ligne',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -728,13 +722,13 @@ export default function ConferenceIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Conférence IA : les questions fréquentes
+                Conférence IA : ce que les organisateurs nous demandent
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre événement a une contrainte particulière ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Parlons-en
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -752,24 +746,24 @@ export default function ConferenceIAPage() {
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Prolonger la conférence
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            La conférence ouvre ; les formats qui suivent installent les usages, alignent la direction et posent le cadre.
+            La conférence lance le mouvement ; ces formats l'installent dans le travail, alignent la direction et fixent les règles.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Sensibilisation IA', href: '/sensibilisation-ia', tag: 'La démarche courte', desc: "Conférence, atelier de 3 h ou programme par vagues : ce que contient une sensibilisation qui change quelque chose." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'La démarche', desc: "Conférence, ateliers, parcours par métier, référents : la montée en compétence de toute l'organisation." },
-              { label: 'Ateliers IA', href: '/atelier-intelligence-artificielle', tag: 'Pratiquer', desc: "Quand la salle doit manipuler : six ateliers de 3 h à une journée, douze personnes, sur leurs propres documents." },
-              { label: 'Sprint IA Sensibilisation', href: '/formation-sprint-ia-sensibilisation', tag: 'Atelier 3 h', desc: "Quand la salle doit manipuler : trois heures, en petits groupes ou en webinaire, avec prompts à emporter." },
-              { label: 'Formation IA COMEX', href: '/formation-ia-comex', tag: 'Comité exécutif', desc: "La matinée exécutive qui aligne le comité : état de l'art, arbitrages, feuille de route." },
-              { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'Dirigeants', desc: "Le programme dédié aux directions : lecture stratégique, cadre, pilotage de la transformation." },
-              { label: 'Formation intelligence artificielle', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Les parcours par métier qui prolongent la conférence : assistanat, commerce, RH, finance, marketing." },
-              { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Cadre', desc: "Le cadre d'usage à poser après la conférence : ce qu'on peut confier aux outils, et comment." },
-              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Conformité', desc: "Pour aller au fond du règlement européen : obligations réelles, calendrier, littératie IA." },
-              { label: 'Quel outil IA choisir', href: '/quel-outil-ia', tag: 'Outils', desc: "ChatGPT, Copilot, Claude, Gemini ou Mistral : le comparatif qui suit souvent une conférence." },
-              { label: 'Salons IA 2026-2027', href: '/salons-ia', tag: 'Agenda', desc: "Les salons data, IA et industrie de la saison, dates vérifiées, et la conférence de retour de salon." },
+              { label: 'Sensibilisation IA', href: '/sensibilisation-ia', tag: 'Premier contact', desc: "Conférence, Sprint ou programme par vagues : ce qu'une première séance doit contenir." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Sur un trimestre', desc: "La démarche complète dont la conférence est souvent le coup d'envoi." },
+              { label: 'Atelier intelligence artificielle', href: '/atelier-intelligence-artificielle', tag: 'Pratiquer', desc: "Les ateliers où chacun travaille ses propres documents, en groupe de douze." },
+              { label: 'Sprint IA', href: '/formation-sprint-ia', tag: 'Trois heures', desc: "Les séances courtes où la salle manipule, en présentiel ou à distance." },
+              { label: 'Formation IA COMEX', href: '/formation-ia-comex', tag: 'Comité exécutif', desc: "Une matinée pour que le comité arrête sa feuille de route." },
+              { label: 'Formation IA dirigeants', href: '/formation-ia-dirigeants', tag: 'Direction', desc: "Le programme des dirigeants : décider, budgéter, piloter l'adoption." },
+              { label: 'Formation intelligence artificielle', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Les formations par métier qui prennent le relais de la conférence." },
+              { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Règles', desc: "La page de règles à rédiger juste après l'intervention." },
+              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Réglementation', desc: "Le texte européen en détail, pour ceux qui portent la conformité." },
+              { label: 'Quel outil IA choisir', href: '/quel-outil-ia', tag: 'Choix de l\'outil', desc: "Le comparateur que l'on consulte souvent après une conférence." },
+              { label: 'Salons IA 2026-2027', href: '/salons-ia', tag: 'Agenda', desc: "Le calendrier des salons data et IA de la saison, dates vérifiées." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -785,7 +779,7 @@ export default function ConferenceIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Aller à la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -795,8 +789,15 @@ export default function ConferenceIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan a écrit cette page à partir des conférences qu'il donne depuis la création de Masteria, et l'a mise à jour le 7 octobre 2026. Pour connaître son parcours avant de l'inviter, consultez <Link to="/mathias-nizan" style={aStyle}>sa page personnelle</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -807,23 +808,39 @@ export default function ConferenceIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Conférence IA</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Lançons votre démarche IA par une conférence
+              Donnez à toute la salle le même point de départ
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Dites-nous le public, la date et le cadre de votre événement : plénière, séminaire, COMEX, convention ou visio. Nous revenons vers vous sous 24 heures avec le format recommandé, le nom de l'intervenant et le devis, prise en charge OPCO comprise quand elle s'applique.
+              Indiquez-nous le public attendu, la date et le cadre de l'événement : plénière, convention, comité de direction ou diffusion en ligne. Sous 24 heures, nous revenons vers vous avec le format conseillé, le nom de l'intervenant et un devis qui précise ce que l'OPCO pourrait financer.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander une conférence IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Lyon, Europe, États-Unis, Inde, ou en visio
+              Interventions possibles en anglais · sur scène ou en ligne · cabinet cité dans Les Échos
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES (propres à la page) ── */}
+      <section aria-labelledby="sources-conference" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-conference" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>Références citées</h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>Les textes européens évoqués dans la conférence, un document public du ministère de l'Économie et la certification de Masteria.</p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {[
+              ...PAGE_CITATIONS,
+              { name: "travail-emploi.gouv.fr : la marque Qualiopi et ce qu'elle garantit", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+            ].map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

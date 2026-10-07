@@ -139,7 +139,7 @@ const BLOG_ARTICLES_BASE = [
     internalLinks: [
       { label: "Agence de développement IA : automatiser vos flux métier", href: '/agence-developpement-ia' },
       { label: "Automatisation documentaire IA", href: '/automatisation-documentaire-ia' },
-      { label: "IA pour les services et le conseil", href: '/ia-secteurs/ia-services-conseil' },
+      { label: "IA pour les services et le conseil", href: '/ia-services-conseil' },
       { label: "Audit IA : ce qu'il contient et ce qu'il coûte", href: '/blog/audit-ia-entreprise-methode-prix' },
       { label: "Formation IA finance, analyse et reporting", href: '/formation-ia-finance' },
     ],
@@ -1772,7 +1772,7 @@ const BLOG_ARTICLES_BASE = [
     datePublished: '2026-05-04',
     dateModified: '2026-05-04',
     readTime: '12 min',
-    excerpt: "Panorama complet des 5 outils IA principaux pour entreprise en 2026. Profils, prix, cas d'usage, recommandations par métier basées sur 1 500 professionnels formés.",
+    excerpt: "Panorama complet des 5 outils IA principaux pour entreprise en 2026. Profils, prix, cas d'usage, recommandations par métier tirées de nos formations.",
   },
   {
     slug: 'chatgpt-vs-claude',
@@ -1824,12 +1824,12 @@ const BLOG_ARTICLES_BASE = [
     tag: 'Comparatif',
     title: "Quel est le meilleur agent IA pour votre entreprise en 2026 ?",
     metaTitle: "Quel est le meilleur agent IA en 2026 ? | Masteria",
-    metaDesc: "Comparatif Claude Computer Use, ChatGPT Operator, Manus, Microsoft Copilot Studio : autonomie, intégrations, gouvernance, prix.",
+    metaDesc: "Comparatif Claude Computer Use, agents ChatGPT, Manus, Microsoft Copilot Studio : autonomie, intégrations, gouvernance, prix.",
     date: '5 mai 2026',
     datePublished: '2026-05-05',
     dateModified: '2026-05-05',
     readTime: '9 min',
-    excerpt: "Claude, ChatGPT Operator, Manus, Copilot Studio : 4 plateformes d'agents IA en 2026. Comment choisir selon votre cas d'usage et votre stack.",
+    excerpt: "Claude, agents ChatGPT, Manus, Copilot Studio : 4 plateformes d'agents IA en 2026. Comment choisir selon votre cas d'usage et votre stack.",
   },
   {
     slug: 'glossaire-ia',
@@ -1917,11 +1917,11 @@ const BLOG_ARTICLES_BASE = [
       { type: 'h3', text: "Ce qu'il faut savoir" },
       { type: 'p', text: "Copilot est moins flexible que ChatGPT en dehors de l'écosystème Microsoft. Pour des usages créatifs avancés, la génération d'images ou l'analyse de données non structurées, ses capacités sont plus limitées. Les questions de souveraineté des données vers les serveurs Microsoft (principalement américains) se posent dans les secteurs très régulés, même si l'option EU Data Boundary existe." },
       { type: 'h3', text: "Versions et tarifs indicatifs" },
-      { type: 'p', text: "Copilot Chat fait partie de Microsoft 365 sans supplément. Pour la version complète, une grande entreprise paie 26 € HT mensuels par utilisateur pour Microsoft 365 Copilot ; jusqu'à 300 utilisateurs, la formule Copilot Business revient à 18,20 € HT par utilisateur. Ces montants s'ajoutent à la licence Microsoft 365. Le détail et les sources figurent dans notre <a href=\"/copilot-vs-chatgpt\">comparatif Copilot vs ChatGPT</a>." },
+      { type: 'p', text: "Copilot Chat fait partie de Microsoft 365 sans supplément. Pour la version complète, une grande entreprise paie 26 € HT mensuels par utilisateur pour la licence Microsoft Copilot, que la page tarifs France affiche encore sous le nom Microsoft 365 Copilot ; jusqu'à 300 utilisateurs, la formule Copilot Business revient à 18,20 € HT par utilisateur. Ces montants s'ajoutent à la licence Microsoft 365. Le détail et les sources figurent dans notre <a href=\"/copilot-vs-chatgpt\">comparatif Copilot vs ChatGPT</a>." },
 
       { type: 'h2', text: "Google Gemini : l'outil pour les organisations sur Google Workspace" },
       { type: 'p', text: "Gemini joue le même rôle que Copilot dans l'écosystème Google. Il vit dans Gmail, Google Docs, Sheets, Slides, Drive et Meet. La différence tient au public : Google équipe plus souvent les PME, les startups, les cabinets et toutes les structures sans infrastructure informatique lourde." },
-      { type: 'p', text: "Sa particularité par rapport à Copilot : NotebookLM. Cet outil, intégré dans l'écosystème Google, permet d'importer ses propres documents et de les interroger avec des réponses sourcées. Quand une équipe brasse beaucoup de documentation interne (procédures, rapports, études sectorielles), cette capacité rend de grands services, et Microsoft n'a pas d'équivalent direct." },
+      { type: 'p', text: "Sa particularité par rapport à Copilot : Gemini Notebook (anciennement NotebookLM). Cet outil, intégré dans l'écosystème Google, permet d'importer ses propres documents et de les interroger avec des réponses sourcées. Quand une équipe brasse beaucoup de documentation interne (procédures, rapports, études sectorielles), cette capacité rend de grands services, et Microsoft n'a pas d'équivalent direct." },
       { type: 'h3', text: "Où Gemini est clairement le bon choix" },
       {
         type: 'ul',
@@ -1987,7 +1987,7 @@ const BLOG_ARTICLES_BASE = [
           ['Offre équipe (prix public, octobre 2026)', 'Business 21 €/u/mois en annuel', 'Copilot Business 18,20 € HT/u/mois', 'Inclus dans Workspace', 'Team 20 à 25 $/siège/mois', 'Team 29,99 € TTC/u/mois'],
           ['Contexte par conversation (offre équipe)', '256 000 tokens en raisonnement', 'Selon l\'application Microsoft', '1 million de tokens dans l\'app Gemini', 'Un million de tokens', 'Voir le comparatif Mistral'],
           ['Adoption prévisible', 'Moyenne (externe)', 'Forte (intégré MS365)', 'Forte (intégré G Suite)', 'Moyenne (externe)', 'Moyenne (externe)'],
-          ['Documents de plus de 50 pages (avis Masteria)', 'Moyen', 'Moyen', 'Bien (NotebookLM)', 'Très bien', 'Bien'],
+          ['Documents de plus de 50 pages (avis Masteria)', 'Moyen', 'Moyen', 'Bien (Gemini Notebook)', 'Très bien', 'Bien'],
         ],
       },
 
@@ -2185,12 +2185,12 @@ const BLOG_ARTICLES_BASE = [
     tag: 'Financement',
     title: "Financer sa formation IA avec son OPCO : ce qu'il faut savoir avant de se lancer",
     metaTitle: "Financer une formation IA avec son OPCO | Guide Masteria",
-    metaDesc: "Votre OPCO peut financer 100 % de votre formation IA. Ce que garantit Qualiopi, comment monter le dossier et les erreurs qui font refuser les demandes.",
+    metaDesc: "Votre OPCO peut financer votre formation IA selon votre branche. Ce que garantit Qualiopi, comment monter le dossier et les erreurs qui font refuser les demandes.",
     date: '7 avril 2026',
     datePublished: '2026-04-07',
     dateModified: '2026-04-26',
     readTime: '9 min',
-    excerpt: "Votre OPCO peut financer 100 % de votre formation IA. Voici ce que garantit Qualiopi, comment monter le dossier et les erreurs qui font refuser les demandes.",
+    excerpt: "Votre OPCO peut financer votre formation IA, selon votre branche et ses fonds. Voici ce que garantit Qualiopi, comment monter le dossier et les erreurs qui font refuser les demandes.",
     intro: "La plupart des responsables formation savent que les OPCO peuvent financer les formations IA. Beaucoup finissent quand même par ne pas en profiter, parce que le dossier paraît compliqué, parce qu'il y a eu un refus une fois, ou parce qu'on n'a jamais vraiment pris le temps de comprendre comment ça marche. Ce guide explique le système tel qu'il est : ce que la certification Qualiopi garantit réellement, quels dispositifs s'appliquent à quelle situation, et comment monter un dossier qui ne finit pas dans la corbeille de l'OPCO.",
     blocks: [
       { type: 'h2', text: "Ce que Qualiopi garantit, et ce qu'il ne garantit pas" },
@@ -2252,7 +2252,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'h3', text: "Avez-vous des références dans notre secteur d'activité ?" },
       { type: 'p', text: "Pas pour vérifier la taille du client, mais pour vérifier que le formateur comprend les enjeux concrets de votre métier." },
       { type: 'h3', text: "Que se passe-t-il si l'outil évolue significativement après la formation ?" },
-      { type: 'p', text: "GPT-5, Gemini 3, Copilot Wave 3 : ces mises à jour changent parfois les interfaces et les capacités. Un organisme sérieux actualise ses contenus et peut prévoir une session de suivi." },
+      { type: 'p', text: "GPT-6, Gemini 3.x, le renommage de Microsoft Copilot : ces mises à jour changent parfois les interfaces et les capacités. Un organisme sérieux actualise ses contenus et peut prévoir une session de suivi." },
     ],
     faq: [
       {
@@ -2504,7 +2504,7 @@ const BLOG_ARTICLES_BASE = [
           ['Google Workspace (Gmail, Docs, Sheets)', 'Gemini'],
           ['Microsoft 365 (Outlook, Teams, Word, Excel)', 'Microsoft Copilot'],
           ['Pas de stack bureautique imposée', 'ChatGPT (version Team ou Enterprise)'],
-          ['Beaucoup de documents internes à analyser', 'NotebookLM en complément'],
+          ['Beaucoup de documents internes à analyser', 'Gemini Notebook (anciennement NotebookLM) en complément'],
         ],
       },
       { type: 'p', text: "Ce tableau n'est pas une loi. Une équipe équipée Microsoft 365 peut très bien utiliser ChatGPT pour certaines tâches. Mais pour un premier plan de formation, la règle du moindre changement reste la plus efficace pour l'adoption." },
@@ -2567,11 +2567,11 @@ const BLOG_ARTICLES_BASE = [
       },
       {
         q: "Quel budget prévoir pour un plan de formation IA annuel ?",
-        a: "Compter entre 1 200 et 2 500 € HT par participant pour un programme bien construit (intra), incluant cadrage, journée de formation, livrables et suivi à 30 jours. Sur un effectif de 100 collaborateurs à former en 12 mois, le budget total se situe entre 120 et 250 K€. Avec une prise en charge OPCO à 70-100 %, le coût net pour l'entreprise est souvent réduit de moitié. Voir notre méthode pour construire un plan de formation IA annuel.",
+        a: "Compter entre 1 200 et 2 500 € HT par participant pour un programme bien construit (intra), incluant cadrage, journée de formation, livrables et suivi à 30 jours. Sur un effectif de 100 collaborateurs à former en 12 mois, le budget total se situe entre 120 et 250 K€. La prise en charge par l'OPCO, selon votre branche et ses fonds, réduit d'autant le coût net pour l'entreprise. Voir notre méthode pour construire un plan de formation IA annuel.",
       },
       {
         q: "Comment justifier l'investissement formation IA face à la direction financière ?",
-        a: "Trois leviers chiffrés : 1) Gain de temps mesurable — 6 à 8 heures par semaine et par collaborateur formé, soit l'équivalent de 30 à 40 K€ de productivité annuelle par personne ; 2) Conformité AI Act (obligation légale depuis février 2025) — l'absence de formation expose à des sanctions ; 3) Rétention des talents — les collaborateurs qui voient leur employeur investir dans l'IA restent en moyenne 1,4 fois plus longtemps. La méthode complète de calcul du ROI est détaillée dans notre article dédié.",
+        a: "Trois leviers chiffrés : 1) Gain de temps mesurable, relevé par collaborateur formé sur les tâches ciblées, avant et après la formation ; 2) Conformité AI Act (obligation légale depuis février 2025) — l'absence de formation expose à des sanctions ; 3) Rétention des talents — les collaborateurs qui voient leur employeur investir dans l'IA restent en moyenne 1,4 fois plus longtemps. La méthode complète de calcul du ROI est détaillée dans notre article dédié.",
       },
     ],
     cta: {
@@ -2613,7 +2613,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'h3', text: "La rédaction d'e-mails complexes" },
       { type: 'p', text: "C'est presque toujours le premier usage adopté, avec des résultats visibles dès le jour 1. Mail de refus à un candidat, relance client qui n'a pas répondu, réponse à un prospect difficile : reformuler un brouillon en trois à quatre variantes de ton différent prend 30 secondes avec un outil bien utilisé. Les participants qui étaient réticents avant la session deviennent souvent les plus enthousiastes dans la semaine qui suit." },
       { type: 'h3', text: "La synthèse de documents longs" },
-      { type: 'p', text: "Rapports annuels, comptes-rendus de 20 pages, contrats de 40 pages, études de marché. Extraire les cinq points clés d'un document long est un gain de temps massif, particulièrement pour les managers et les directions qui reçoivent beaucoup de documents à lire rapidement. NotebookLM apporte ici une valeur spécifique, en citant les passages exacts du document qui ont servi à construire le résumé." },
+      { type: 'p', text: "Rapports annuels, comptes-rendus de 20 pages, contrats de 40 pages, études de marché. Extraire les cinq points clés d'un document long est un gain de temps massif, particulièrement pour les managers et les directions qui reçoivent beaucoup de documents à lire rapidement. Gemini Notebook (anciennement NotebookLM) apporte ici une valeur spécifique, en citant les passages exacts du document qui ont servi à construire le résumé." },
       { type: 'h3', text: "La préparation de réunions" },
       { type: 'p', text: "Construire un ordre du jour à partir d'une note, préparer une liste de questions à poser dans un entretien, rechercher le contexte sur un prospect avant un rendez-vous. Ce sont des tâches qu'on faisait déjà, juste plus lentement. Le gain de temps cumulé sur une semaine, pour un manager qui enchaîne les réunions, dépasse facilement deux heures." },
 
@@ -2667,7 +2667,7 @@ const BLOG_ARTICLES_BASE = [
           ['Automatisation/agents simples', '2-3 mois', 'Variable', 'Profils techniques'],
         ],
       },
-      { type: 'p', text: "Cumul moyen sur l'ensemble des cas d'usage à 90 jours : 6 à 10 heures gagnées par semaine et par collaborateur formé. Sur une équipe de 20 personnes, l'équivalent de 4 à 5 ETP réinvestis sur les missions à valeur ajoutée." },
+      { type: 'p', text: "Cumul sur l'ensemble des cas d'usage à 90 jours : le temps gagné se mesure par collaborateur formé, avant et après, sur les tâches ciblées. Sur une équipe de 20 personnes, ce temps cumulé se réinvestit sur les missions à valeur ajoutée." },
     ],
     faq: [
       {
@@ -2747,7 +2747,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'h3', text: "Votre équipe est-elle spécialisée IA ou est-ce une offre parmi d'autres ?" },
       { type: 'p', text: "Un cabinet qui fait aussi du conseil SI, du cloud, de la transformation digitale et de la cybersécurité peut parfaitement faire de l'IA. Mais il faut vérifier que l'équipe qui va intervenir chez vous consacre la majorité de son temps à l'IA, pas le reliquat de ses autres missions." },
       { type: 'h3', text: "Que se passe-t-il si les outils évoluent pendant la mission ?" },
-      { type: 'p', text: "Les mises à jour majeures de ChatGPT, Gemini et Copilot arrivent toutes les 8 à 12 semaines. Une mission de quatre mois peut commencer sur GPT-4 et finir sur GPT-5. Un cabinet sérieux a une réponse claire sur sa veille, son processus d'actualisation et ce qu'il inclut dans la mission initiale." },
+      { type: 'p', text: "Les mises à jour majeures de ChatGPT, Gemini et Copilot arrivent toutes les 8 à 12 semaines. Une mission de quatre mois peut commencer sur GPT-5.6 et finir sur GPT-6. Un cabinet sérieux a une réponse claire sur sa veille, son processus d'actualisation et ce qu'il inclut dans la mission initiale." },
 
       { type: 'h2', text: "Les red flags à repérer" },
       {
@@ -2862,12 +2862,12 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Analyser un DCE sans prendre de risque sur la confidentialité" },
       { type: 'h3', text: "Quelle version d'outil utiliser" },
-      { type: 'p', text: "Jamais la version gratuite publique pour un DCE confidentiel. Les conversations alimentent potentiellement les modèles et peuvent ressortir ailleurs. Utilisez ChatGPT Team ou Enterprise, Microsoft Copilot Business, ou Gemini dans Google Workspace Enterprise. Ces versions garantissent que vos données ne sont pas utilisées pour l'entraînement." },
+      { type: 'p', text: "Jamais la version gratuite publique pour un DCE confidentiel. Les conversations alimentent potentiellement les modèles et peuvent ressortir ailleurs. Utilisez ChatGPT Business ou Enterprise, Microsoft Copilot Business, ou Gemini dans Google Workspace Enterprise. Ces versions garantissent que vos données ne sont pas utilisées pour l'entraînement." },
       { type: 'h3', text: "Quelle séquence pour analyser un DCE" },
       {
         type: 'ol',
         items: [
-          "Importez le DCE complet dans NotebookLM ou dans un espace de projet ChatGPT dédié à cet AO.",
+          "Importez le DCE complet dans Gemini Notebook (anciennement NotebookLM) ou dans un espace de projet ChatGPT dédié à cet AO.",
           "Demandez une extraction structurée : « Liste tous les critères de notation mentionnés dans le RC avec leur pondération. »",
           "Demandez un résumé du CCTP : « Résume en 15 points les exigences techniques, en précisant celles qui sont obligatoires et celles qui sont souhaitables. »",
           "Posez les questions ouvertes : « Y a-t-il des contraintes de délai ou de lieu qui méritent attention ? »",
@@ -2907,7 +2907,7 @@ const BLOG_ARTICLES_BASE = [
         type: 'ul',
         items: [
           "<strong>N'utilisez jamais</strong> la version gratuite publique de ChatGPT, Gemini ou Claude pour un DCE en cours.",
-          "<strong>Vérifiez dans les conditions d'utilisation</strong> de votre version payante que vos données ne sont pas utilisées pour l'entraînement. C'est le cas pour ChatGPT Team, Enterprise, Copilot Business et Gemini Workspace Enterprise. Ce n'est pas le cas pour toutes les versions.",
+          "<strong>Vérifiez dans les conditions d'utilisation</strong> de votre version payante que vos données ne sont pas utilisées pour l'entraînement. C'est le cas pour ChatGPT Business, Enterprise, Copilot Business et Gemini Workspace Enterprise. Ce n'est pas le cas pour toutes les versions.",
           "<strong>Créez un espace projet dédié</strong> à chaque AO, que vous archivez ou supprimez après la remise de l'offre.",
           "<strong>Ne collez jamais</strong> votre grille tarifaire ou vos chiffres confidentiels dans un outil non sécurisé.",
         ],
@@ -2947,7 +2947,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation IA pour les marchés publics et appels d'offres", href: '/formation-ia-marche-public' },
       { label: "Financer une formation IA via son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
-      { label: "Custom GPT entreprise : créer ses propres assistants ChatGPT", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Formation IA commerciaux : prospection, relance, closing", href: '/formation-ia-commercial' },
     ],
   },
@@ -2984,7 +2984,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'h3', text: "Adaptation de ton selon le canal" },
       { type: 'p', text: "Passer d'un communiqué de presse formel à un post LinkedIn conversationnel, puis à un e-mail court pour un CRM. Gain de temps réel, qualité homogène, voix de marque préservée si le prompt inclut des exemples de textes validés." },
       { type: 'h3', text: "Synthèse de rapports de performance" },
-      { type: 'p', text: "Particulièrement utile avec NotebookLM. Vous importez trois mois de reportings campaign, vous demandez les tendances principales, les écarts atypiques, les recommandations. Le responsable marketing gagne plusieurs heures chaque mois sur cette tâche." },
+      { type: 'p', text: "Particulièrement utile avec Gemini Notebook (anciennement NotebookLM). Vous importez trois mois de reportings campaign, vous demandez les tendances principales, les écarts atypiques, les recommandations. Le responsable marketing gagne plusieurs heures chaque mois sur cette tâche." },
       { type: 'h3', text: "Rédaction de briefs créatifs à partir de données brutes" },
       { type: 'p', text: "Vos insights utilisateurs + vos objectifs de campagne + votre identité de marque = un brief structuré que vous pouvez envoyer à une agence externe ou à votre studio interne. Le temps de rédaction d'un brief passe de deux heures à trente minutes." },
 
@@ -3021,9 +3021,9 @@ const BLOG_ARTICLES_BASE = [
           ['Adaptation multi-canal d\'un contenu', 'Hebdomadaire', '70-80 %', 'ChatGPT / Gemini'],
           ['Rédaction posts LinkedIn entreprise', 'Quotidien', '50-60 %', 'ChatGPT + voix de marque'],
           ['Brief créatif structuré (agence)', 'Mensuel', '60-75 %', 'Claude'],
-          ['Synthèse rapports campaign', 'Mensuel', '70-80 %', 'NotebookLM / Gemini'],
+          ['Synthèse rapports campaign', 'Mensuel', '70-80 %', 'Gemini Notebook / Gemini'],
           ['Analyse de données Sheets/Excel', 'Hebdomadaire', '50-70 %', 'Gemini / Copilot'],
-          ['Génération visuels concept', 'Mensuel', '50 %', 'Midjourney / DALL·E'],
+          ['Génération visuels concept', 'Mensuel', '50 %', 'Midjourney / ChatGPT Images'],
           ['Personas et études concurrent', 'Trimestriel', '40-50 %', 'Claude (longs docs)'],
         ],
       },
@@ -3064,7 +3064,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation IA pour le marketing", href: '/formation-ia-marketing' },
       { label: "Formations IA par métier", href: '/formation-intelligence-artificielle' },
       { label: "Former ses équipes à l'IA : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
-      { label: "Custom GPT entreprise : créer ses propres assistants ChatGPT", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Prompt engineering : le guide pratique", href: '/blog/prompt-engineering-guide-entreprise' },
     ],
   },
@@ -3099,7 +3099,7 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Synthèse de documents" },
       { type: 'h3', text: "Résumer un rapport de 50 pages en 5 points clés" },
-      { type: 'p', text: "ChatGPT accepte les PDF volumineux dans ses versions récentes. NotebookLM, de Google, est encore plus adapté pour cette tâche : il cite les passages exacts du document, ce qui vous permet de vérifier rapidement la fiabilité du résumé." },
+      { type: 'p', text: "ChatGPT accepte les PDF volumineux dans ses versions récentes. Gemini Notebook (anciennement NotebookLM), de Google, est encore plus adapté pour cette tâche : il cite les passages exacts du document, ce qui vous permet de vérifier rapidement la fiabilité du résumé." },
       { type: 'h3', text: "Extraire toutes les dates et obligations d'un contrat" },
       { type: 'callout', text: "« Voici un contrat de 25 pages. Extrais toutes les dates mentionnées (échéances, délais, renouvellements), toutes les obligations du signataire (indique quelle partie), et toutes les pénalités ou clauses résolutoires. Présente le résultat sous forme de tableau. »" },
       { type: 'p', text: "Utile pour la relecture rapide d'un contrat avant signature. À ne jamais utiliser comme substitut à une relecture juridique." },
@@ -3167,12 +3167,12 @@ const BLOG_ARTICLES_BASE = [
           ['Brief pré-RDV client', 'Hebdo', '20 min', 'Facile'],
         ],
       },
-      { type: 'p', text: "Cumul typique : 6 à 10 heures gagnées par semaine et par collaborateur après formation. Sur une équipe de 20 personnes, ça représente l'équivalent de 4 à 5 ETP réinvestis sur les missions à valeur ajoutée." },
+      { type: 'p', text: "Le temps gagné se mesure par collaborateur, avant et après la formation, sur les tâches ciblées. Sur une équipe de 20 personnes, ce temps cumulé se réinvestit sur les missions à valeur ajoutée." },
     ],
     faq: [
       {
         q: "Faut-il ChatGPT Plus (payant) pour ces cas d'usage ?",
-        a: "Pour un usage personnel basique, la version gratuite suffit. Pour un usage professionnel sérieux avec des données d'entreprise, non : passez sur ChatGPT Team ou Enterprise. Ce ne sont pas juste des fonctionnalités supplémentaires, c'est une garantie que vos données ne sont pas utilisées pour entraîner les modèles publics.",
+        a: "Pour un usage personnel basique, la version gratuite suffit. Pour un usage professionnel sérieux avec des données d'entreprise, non : passez sur ChatGPT Business ou Enterprise. Ce ne sont pas juste des fonctionnalités supplémentaires, c'est une garantie que vos données ne sont pas utilisées pour entraîner les modèles publics.",
       },
       {
         q: "Nos données sont-elles en sécurité si on utilise ChatGPT au travail ?",
@@ -3203,7 +3203,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Formation Google Gemini", href: '/formation-gemini-entreprise' },
       { label: "Former ses équipes à l'IA : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
-      { label: "Custom GPT entreprise : créer ses propres assistants ChatGPT", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "ROI d'une formation IA : comment le mesurer", href: '/blog/roi-formation-ia-entreprise-mesurer' },
     ],
   },
@@ -3248,7 +3248,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "La question à poser à l'organisme : est-ce que la formation se déroule dans notre environnement de travail (notre tenant M365, notre Google Workspace) ou dans un environnement de démonstration générique ?" },
 
       { type: 'h2', text: "Critère 6 : le financement" },
-      { type: 'p', text: "Si l'organisme est certifié Qualiopi, votre OPCO peut financer jusqu'à 100 % du coût. La condition : déposer la demande avant le démarrage de la formation. Un bon organisme vous accompagne dans ce processus et vous fournit tous les documents nécessaires (convention, programme détaillé, devis conforme aux exigences OPCO)." },
+      { type: 'p', text: "Si l'organisme est certifié Qualiopi, votre OPCO peut financer la formation, selon les règles et les fonds de votre branche. La condition : déposer la demande avant le démarrage de la formation. Un bon organisme vous accompagne dans ce processus et vous fournit tous les documents nécessaires (convention, programme détaillé, devis conforme aux exigences OPCO)." },
 
       { type: 'h2', text: "Le tableau de décision" },
       {
@@ -3337,14 +3337,14 @@ const BLOG_ARTICLES_BASE = [
     ],
     faq: [
       { q: "Une formation Qualiopi est-elle reconnue par mon employeur ?", a: "Oui. L'attestation Qualiopi est reconnue dans tous les bilans de compétences, les dossiers OPCO et les plans de développement des compétences. Elle prouve formellement qu'une formation a été suivie et évaluée dans un cadre qualité officiel." },
-      { q: "Puis-je financer une formation Masteria via mon CPF ?", a: "Non. Nos formations ne sont pas inscrites au RNCP ou au RS. Elles sont finançables via votre OPCO, votre plan de développement des compétences ou sur fonds propres. L'OPCO peut couvrir jusqu'à 100 % du coût." },
+      { q: "Puis-je financer une formation Masteria via mon CPF ?", a: "Non. Nos formations ne sont pas inscrites au RNCP ou au RS. Elles sont finançables via votre OPCO, votre plan de développement des compétences ou sur fonds propres. Le niveau de prise en charge dépend des règles et des fonds de votre OPCO." },
       { q: "Existe-t-il des formations IA certifiantes RNCP courtes ?", a: "Pas vraiment. Les formations RNCP en IA durent entre 3 et 12 mois et visent des métiers de développeur ou data scientist. Pour un usage opérationnel de l'IA (ChatGPT au quotidien, automatisation de tâches), une formation courte Qualiopi est beaucoup plus adaptée." },
       { q: "Qu'est-ce que le Référentiel National Qualité (RNQ) sur lequel repose Qualiopi ?", a: "Le RNQ est l'ensemble des 7 critères et 32 indicateurs qu'un organisme de formation doit respecter pour obtenir Qualiopi. Il couvre l'analyse des besoins, la conception pédagogique, l'adaptation aux apprenants, la qualification des formateurs, l'environnement de formation, la mesure de satisfaction et l'amélioration continue. Un audit externe est réalisé tous les 18 mois pour vérifier le respect du RNQ. C'est ce qui permet à l'État de garantir aux financeurs (OPCO, France Travail) la qualité des organismes éligibles." },
-      { q: "L'AI Act européen change-t-il quelque chose à la certification des formations IA ?", a: "L'AI Act ne crée pas de certification spécifique à la formation IA mais rend la formation des collaborateurs obligatoire dès février 2025 pour toute entreprise utilisant un système d'IA (article 4). Cette obligation rend la certification Qualiopi de l'organisme formateur d'autant plus importante : elle atteste de la qualité de la formation que vous mettez en œuvre pour répondre à l'obligation légale. Voir notre article dédié à l'AI Act et à la formation IA obligatoire." },
+      { q: "L'AI Act européen change-t-il quelque chose à la certification des formations IA ?", a: "L'AI Act ne crée pas de certification spécifique à la formation IA mais demande depuis février 2025 à toute entreprise utilisant un système d'IA de prendre des mesures pour développer la maîtrise de l'IA de ses collaborateurs (article 4, réécrit par l'Omnibus en juillet 2026). Cette obligation rend la certification Qualiopi de l'organisme formateur d'autant plus importante : elle atteste de la qualité de la formation que vous mettez en œuvre pour répondre à l'obligation légale. Voir notre article dédié à l'AI Act et à la formation IA obligatoire." },
     ],
     cta: {
       title: "Former vos équipes à l'IA — certifié Qualiopi",
-      desc: "Masteria délivre une attestation de formation Qualiopi à chaque participant. Financement OPCO jusqu'à 100 %, accompagnement du dossier inclus.",
+      desc: "Masteria délivre une attestation de formation Qualiopi à chaque participant. Finançable par votre OPCO selon votre branche, accompagnement du dossier inclus.",
       buttons: [
         { label: "Demander un devis", href: '/contact', primary: true },
         { label: "En savoir plus sur le financement", href: '/financement-formation-ia' },
@@ -3380,7 +3380,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Une IA générative rédige une offre d'emploi structurée, inclusive et optimisée pour les job boards en moins de 3 minutes à partir d'un brief de 5 lignes. Ce qui prend habituellement 45 minutes à un chargé de recrutement. Le gain de temps n'est pas l'essentiel : la qualité s'améliore aussi, car l'IA peut générer plusieurs variantes pour tester différents angles d'accroche ou adapter le ton (startup vs grand groupe, profil technique vs commercial)." },
 
       { type: 'h2', text: "Cas d'usage 2 : analyser et trier les candidatures" },
-      { type: 'p', text: "En collant le texte d'une offre et plusieurs CVs dans une interface comme Claude ou ChatGPT Team, un recruteur peut obtenir une analyse comparative structurée des candidatures en quelques secondes. Attention : l'IA doit être utilisée comme outil d'aide à la décision, pas comme décideur. Les obligations légales sur la non-discrimination dans le recrutement s'appliquent pleinement. La formation doit inclure ce cadre éthique et juridique." },
+      { type: 'p', text: "En collant le texte d'une offre et plusieurs CVs dans une interface comme Claude ou ChatGPT Business, un recruteur peut obtenir une analyse comparative structurée des candidatures en quelques secondes. Attention : l'IA doit être utilisée comme outil d'aide à la décision, pas comme décideur. Les obligations légales sur la non-discrimination dans le recrutement s'appliquent pleinement. La formation doit inclure ce cadre éthique et juridique." },
 
       { type: 'h2', text: "Cas d'usage 3 : préparer et synthétiser les entretiens" },
       { type: 'p', text: "Avant un entretien, l'IA génère une grille de questions comportementales adaptées au profil et au poste. Après l'entretien, elle synthétise les notes prises pendant l'échange en un compte-rendu structuré avec forces, points de vigilance et recommandation. Ce cas d'usage est particulièrement apprécié par les managers non-RH qui conduisent des entretiens sans être formés aux techniques d'évaluation." },
@@ -3419,10 +3419,10 @@ const BLOG_ARTICLES_BASE = [
           ['Rédaction d\'offres d\'emploi', '40 min → 3 min', 'ChatGPT / Gemini', 'Vérifier l\'inclusivité'],
           ['Tri initial des candidatures', '90 min → 10 min', 'Claude (longs CV)', 'Décision finale humaine (RGPD)'],
           ['Synthèse d\'entretiens', '30 min → 5 min', 'ChatGPT Enterprise', 'Anonymiser si nécessaire'],
-          ['Documents d\'onboarding', '2 j → 2 h', 'Copilot M365', 'Charte interne'],
+          ['Documents d\'onboarding', '2 j → 2 h', 'Microsoft Copilot', 'Charte interne'],
           ['Communication RH (notes, emails)', '20 min → 5 min', 'ChatGPT / Copilot', 'Relire le ton'],
           ['Analyse données RH (turnover…)', '4 h → 30 min', 'Copilot Excel', 'Pas de données nominatives'],
-          ['GPEC & entretiens annuels', '1 j → 2 h', 'ChatGPT Team', 'Validation par manager'],
+          ['GPEC & entretiens annuels', '1 j → 2 h', 'ChatGPT Business', 'Validation par manager'],
           ['Veille juridique RH (1er niveau)', '1 h → 10 min', 'Claude / Mistral', 'Toujours vérifier la source'],
         ],
       },
@@ -3430,10 +3430,10 @@ const BLOG_ARTICLES_BASE = [
     ],
     faq: [
       { q: "L'IA va-t-elle remplacer les RH ?", a: "Non. Elle automatise des tâches répétitives à faible valeur ajoutée (rédaction de templates, tri initial, synthèse) pour libérer les RH sur des missions à forte valeur : écoute, décision, accompagnement humain. Les compétences relationnelles et éthiques des RH ne sont pas automatisables." },
-      { q: "Peut-on utiliser ChatGPT pour analyser des données de salariés ?", a: "Pas dans la version gratuite publique. Il faut utiliser des versions Enterprise avec zero data retention (ChatGPT Enterprise, Claude for Work) ou des outils intégrés à votre tenant M365 (Copilot) qui garantissent que vos données restent dans votre environnement. La formation doit couvrir ce point obligatoirement." },
+      { q: "Peut-on utiliser ChatGPT pour analyser des données de salariés ?", a: "Pas dans la version gratuite publique. Il faut utiliser des versions Enterprise avec zero data retention (ChatGPT Enterprise, Claude Enterprise) ou des outils intégrés à votre tenant M365 (Copilot) qui garantissent que vos données restent dans votre environnement. La formation doit couvrir ce point obligatoirement." },
       { q: "Combien de temps dure une formation IA pour les RH ?", a: "Une journée pour couvrir les 5 cas d'usage essentiels (recrutement, communication, synthèse, onboarding, entretiens). Deux jours pour un programme complet incluant l'analyse de données RH, la GPEC et le prompt engineering avancé." },
       { q: "Quelles sont les obligations RGPD spécifiques à l'usage de l'IA en recrutement ?", a: "Trois obligations clés : 1) Information transparente du candidat sur l'usage d'un outil IA dans le tri (article 22 RGPD) ; 2) Pas de décision automatisée seule — un humain valide ; 3) Tenue d'un registre des traitements pour le DPO. L'AI Act renforce ces obligations en classant les outils IA de recrutement comme « à haut risque ». Une charte interne signée par les recruteurs est fortement recommandée." },
-      { q: "Quels OPCO financent une formation IA pour les RH ?", a: "Tous les OPCO peuvent financer une formation IA RH si l'organisme est Qualiopi : OPCO Atlas (services financiers), AKTO (services), OPCO 2i (industrie), OPCO Mobilités, AFDAS (culture, médias). Le coût est généralement pris en charge à 100 % dans le plan de développement des compétences. Masteria accompagne le montage du dossier et fournit tous les justificatifs requis." },
+      { q: "Quels OPCO financent une formation IA pour les RH ?", a: "Tous les OPCO peuvent financer une formation IA RH si l'organisme est Qualiopi : OPCO Atlas (services financiers), AKTO (services), OPCO 2i (industrie), OPCO Mobilités, AFDAS (culture, médias). La prise en charge passe par le plan de développement des compétences, selon les règles et les fonds de votre branche. Masteria accompagne le montage du dossier et fournit tous les justificatifs requis." },
     ],
     cta: {
       title: "Former vos équipes RH à l'IA",
@@ -3490,7 +3490,7 @@ const BLOG_ARTICLES_BASE = [
       {
         type: 'ul',
         items: [
-          "Utiliser uniquement les versions Enterprise avec zero data retention (ChatGPT Enterprise, Claude for Work)",
+          "Utiliser uniquement les versions Enterprise avec zero data retention (ChatGPT Enterprise, Claude Enterprise)",
           "Préférer Mistral AI pour les données sensibles : hébergement européen, conformité RGPD native",
           "Ne jamais entrer de données identifiantes de tiers (clients, fournisseurs) dans un outil grand public",
           "Vérifier systématiquement les chiffres produits par l'IA : le risque d'hallucination sur des données numériques existe",
@@ -3502,7 +3502,7 @@ const BLOG_ARTICLES_BASE = [
         type: 'table',
         headers: ['Cas d\'usage', 'Outil recommandé', 'Raison'],
         rows: [
-          ['Commentaires de clôture', 'ChatGPT Team / Claude for Work', 'Rédaction fluide et rapide'],
+          ['Commentaires de clôture', 'ChatGPT Business / Claude Team', 'Rédaction fluide et rapide'],
           ['Analyse de documents longs', 'Claude (1 million de tokens)', 'Meilleure gestion des longs documents'],
           ['Reporting réglementaire (données sensibles)', 'Mistral AI', 'Hébergement Europe, conformité RGPD'],
           ['Excel, Power BI, M365', 'Microsoft Copilot', 'Intégration native dans la suite Microsoft'],
@@ -3515,7 +3515,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Est-ce que Mistral est vraiment plus sécurisé que ChatGPT pour la finance ?", a: "Les deux ont des versions Enterprise sécurisées avec zero data retention. Mistral AI est hébergé en Europe (Scaleway et OVHcloud), ce qui simplifie la conformité RGPD et évite le recours à des clauses de transfert hors UE. Pour des données très sensibles dans des secteurs réglementés (banque, assurance), Mistral est souvent le choix le plus simple à valider en interne." },
       { q: "La formation IA finance est-elle finançable OPCO ?", a: "Oui, si l'organisme est certifié Qualiopi. L'OPCO ATLAS couvre notamment les entreprises du secteur finance, banque et assurance. Masteria est certifié Qualiopi et accompagne la constitution du dossier." },
       { q: "Quels reportings réglementaires peut-on automatiser avec l'IA ?", a: "L'IA accélère la rédaction narrative des rapports CSRD, SFDR, Pilier 3, DORA et des annexes ESG, mais ne génère pas seule les chiffres réglementaires (ils restent extraits du SI ou de l'ERP). Concrètement, l'IA prend les données chiffrées validées et produit le narratif explicatif demandé par chaque référentiel. Gain typique : 40 à 60 % du temps de rédaction. La validation finale par le directeur financier ou le contrôle interne reste obligatoire." },
-      { q: "Comment l'IA s'intègre-t-elle avec les ERP type SAP, Sage ou Oracle ?", a: "Trois niveaux d'intégration : 1) Copier-coller manuel des extracts ERP vers ChatGPT pour analyse — fonctionne immédiatement, sans IT ; 2) Copilot M365 connecté à Excel et Power BI lit directement les fichiers de l'ERP ; 3) Intégration API native via les modules IA des éditeurs (SAP Joule, Oracle AI). Pour démarrer, le niveau 1 ou 2 suffit dans 90 % des cas. Mesurer le ROI sur 90 jours avant d'investir dans une intégration plus complexe." },
+      { q: "Comment l'IA s'intègre-t-elle avec les ERP type SAP, Sage ou Oracle ?", a: "Trois niveaux d'intégration : 1) Copier-coller manuel des extracts ERP vers ChatGPT pour analyse — fonctionne immédiatement, sans IT ; 2) Microsoft Copilot connecté à Excel et Power BI lit directement les fichiers de l'ERP ; 3) Intégration API native via les modules IA des éditeurs (SAP Joule, Oracle AI). Pour démarrer, le niveau 1 ou 2 suffit dans 90 % des cas. Mesurer le ROI sur 90 jours avant d'investir dans une intégration plus complexe." },
     ],
     cta: {
       title: "Former vos équipes finance à l'IA",
@@ -3528,7 +3528,7 @@ const BLOG_ARTICLES_BASE = [
     internalLinks: [
       { label: "Formation IA pour la finance", href: '/formation-ia-finance' },
       { label: "Formation Mistral AI (souveraineté)", href: '/formation-mistral-ai' },
-      { label: "Formation Copilot Microsoft 365", href: '/formation-microsoft-copilot' },
+      { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
       { label: "Mistral AI entreprise : la souveraineté française expliquée", href: '/blog/mistral-ai-souverainete-entreprise' },
       { label: "Sécurité IA & RGPD : le guide DSI 2026", href: '/blog/securite-ia-entreprise-rgpd' },
     ],
@@ -3540,8 +3540,8 @@ const BLOG_ARTICLES_BASE = [
   {
     slug: 'formation-ia-chef-de-projet',
     tag: 'Métier',
-    title: "Chef de projet et IA : les compétences à développer en 2025",
-    metaTitle: "Formation IA chef de projet : cas d’usage 2025 | Masteria",
+    title: "Chef de projet et IA : les compétences à développer en 2026",
+    metaTitle: "Formation IA chef de projet : cas d’usage 2026 | Masteria",
     metaDesc: "Formation IA pour chefs de projet : planification, reporting, gestion des risques, communication. Les cas d’usage IA les plus utiles en gestion de projet.",
     date: '26 avril 2026',
     datePublished: '2026-04-26',
@@ -3577,13 +3577,13 @@ const BLOG_ARTICLES_BASE = [
         rows: [
           ['Compte-rendu de réunion (1h)', '30 min', '5 min', 'Copilot dans Teams'],
           ['Plan de projet à partir d\'un brief', '3 h', '20 min', 'ChatGPT / Claude'],
-          ['Reporting COPIL mensuel', '2 h', '30 min', 'ChatGPT Team'],
+          ['Reporting COPIL mensuel', '2 h', '30 min', 'ChatGPT Business'],
           ['Registre des risques (atelier)', '2 h', '40 min', 'ChatGPT / Claude'],
           ['Email de recadrage prestataire', '20 min', '5 min', 'ChatGPT / Claude'],
           ['Synthèse appel d\'offres (50p)', '4 h', '15 min', 'Claude (1 million de tokens)'],
         ],
       },
-      { type: 'p', text: "Sur une base de 8 livrables documentaires par semaine, un chef de projet formé à l'IA gagne en moyenne 6 à 8 heures hebdomadaires — soit l'équivalent d'une journée par semaine réinvestie sur le pilotage et les parties prenantes." },
+      { type: 'p', text: "Sur une base de 8 livrables documentaires par semaine, un chef de projet formé à l'IA récupère du temps chaque semaine, à mesurer avant et après la formation, et le réinvestit sur le pilotage et les parties prenantes." },
     ],
     faq: [
       { q: "L'IA peut-elle gérer un projet à ma place ?", a: "Non. Elle automatise des tâches de production documentaire et d'aide à la réflexion. Les décisions, la gestion des relations humaines et la résolution de problèmes restent entièrement la responsabilité du chef de projet." },
@@ -3659,7 +3659,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Pour les tâches complexes, la technique la plus efficace est le chaînage de prompts : décomposer la tâche en plusieurs étapes et faire valider chaque étape avant de passer à la suivante. Exemple pour un rapport stratégique : 1) 'Liste les 5 points clés à aborder dans mon rapport sur X' → validation → 2) 'Développe le point 1 en 3 paragraphes' → validation → 3) 'Rédige l'introduction du rapport en intégrant ces points clés'. Résultat bien supérieur à 'Rédige un rapport complet sur X'." },
 
       { type: 'h2', text: "Mémoriser le contexte : le system prompt" },
-      { type: 'p', text: "Dans les versions professionnelles de ChatGPT (GPT personnalisé) ou Claude (Projects), il est possible de définir un 'system prompt' permanent qui décrit votre contexte, votre rôle, votre entreprise et vos préférences de format. L'IA intègre ces informations dans chaque conversation. C'est l'équivalent d'avoir un assistant qui vous connaît vraiment — pas besoin de réexpliquer chaque fois qui vous êtes et ce que vous faites." },
+      { type: 'p', text: "Dans les versions professionnelles de ChatGPT (projets et compétences) ou Claude (Projects), il est possible de définir un 'system prompt' permanent qui décrit votre contexte, votre rôle, votre entreprise et vos préférences de format. L'IA intègre ces informations dans chaque conversation. C'est l'équivalent d'avoir un assistant qui vous connaît vraiment — pas besoin de réexpliquer chaque fois qui vous êtes et ce que vous faites." },
 
       { type: 'h2', text: "Bilan : prompt vague vs prompt CRTF" },
       {
@@ -3680,7 +3680,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Le prompt engineering va-t-il devenir inutile avec les nouvelles IA ?", a: "Non. Les modèles deviennent plus intelligents mais le principe reste le même : une demande précise produit un meilleur résultat. La différence, c'est que les nouveaux modèles tolèrent mieux les prompts approximatifs — mais ils excellent toujours sur les prompts bien construits." },
       { q: "Faut-il apprendre le prompt engineering en anglais ?", a: "Non. Les modèles comme ChatGPT, Claude et Mistral maîtrisent le français à un niveau excellent. Toutes les techniques présentées ici fonctionnent en français. Certains cas d'usage spécifiques (accès à de la documentation technique anglophone) peuvent bénéficier d'un prompt en anglais, mais ce n'est pas la règle." },
       { q: "Combien de temps pour maîtriser le prompt engineering ?", a: "Les bases (structure CRTF, 5 erreurs à éviter) s'apprennent en 2 heures et permettent d'améliorer immédiatement la qualité des résultats obtenus. La maîtrise avancée (chaînage, system prompts, RAG) demande 1 à 2 jours de pratique guidée." },
-      { q: "Quelle différence entre prompt engineering et création d'un GPT personnalisé ?", a: "Le prompt engineering, c'est l'art de bien formuler une demande ponctuelle. Un GPT personnalisé (ou Custom GPT) capitalise un prompt complexe sous forme d'assistant réutilisable par toute une équipe : le contexte, le rôle et les instructions sont mémorisés une fois pour toutes. Le second est l'industrialisation du premier. Voir notre guide sur les Custom GPT pour entreprise." },
+      { q: "Quelle différence entre prompt engineering et création d'une compétence ?", a: "Le prompt engineering, c'est l'art de bien formuler une demande ponctuelle. Une compétence, qui remplace le GPT personnalisé retiré le 11 décembre 2026, capitalise un prompt complexe sous forme d'assistant réutilisable par toute une équipe : le contexte, le rôle et les instructions sont mémorisés une fois pour toutes. Le second est l'industrialisation du premier. Voir notre guide sur les Custom GPTs et leur migration." },
       { q: "Existe-t-il des bibliothèques de prompts prêts à l'emploi ?", a: "Oui — sur des sites comme PromptHub, Prompt Library d'OpenAI, ou Anthropic Cookbook. Mais leur utilité en entreprise est limitée : un prompt vraiment performant intègre votre contexte spécifique (secteur, ton de marque, données internes). Les meilleures bibliothèques de prompts sont celles que vos équipes construisent elles-mêmes après une formation, sur leurs propres cas d'usage. C'est exactement ce que Masteria livre en fin de session." },
     ],
     cta: {
@@ -3695,7 +3695,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Formation Claude IA", href: '/formation-claude-ia' },
       { label: "Former ses équipes à l'IA : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
-      { label: "Custom GPT entreprise : créer ses propres assistants", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Microsoft Copilot en entreprise : guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
     ],
   },
@@ -3716,11 +3716,11 @@ const BLOG_ARTICLES_BASE = [
     excerpt: "Microsoft Copilot vit dans Word, Excel, Outlook et Teams. Voici les cas d'usage concrets par application, les prompts qui marchent, les tarifs et comment former vos équipes.",
     intro: "Microsoft Copilot est un assistant IA intégré directement dans Microsoft 365 : il fonctionne dans Word, Excel, PowerPoint, Outlook, Teams et SharePoint sans changer d'interface. Pour les organisations déjà sur Microsoft 365, c'est l'outil avec le taux d'adoption le plus élevé, parce qu'il s'installe dans les habitudes de travail existantes au lieu d'en créer de nouvelles.",
     blocks: [
-      { type: 'p', text: "Ce guide pratique couvre les cas d'usage qui justifient une licence Copilot for Microsoft 365 (environ 30 €/utilisateur/mois) et donne des prompts concrets pour chaque application. Il s'adresse aux responsables formation, DSI et managers qui évaluent ou déploient Copilot." },
+      { type: 'p', text: "Ce guide pratique couvre les cas d'usage qui justifient une licence Microsoft Copilot (anciennement Microsoft 365 Copilot), à 26 € HT par utilisateur et par mois en paiement annuel au 7 octobre 2026, et donne des prompts concrets pour chaque application. Il s'adresse aux responsables formation, DSI et managers qui évaluent ou déploient Copilot." },
 
       { type: 'h2', text: "Qu'est-ce que Microsoft Copilot exactement ?" },
-      { type: 'p', text: "Microsoft Copilot for Microsoft 365 est un assistant IA basé sur les modèles GPT-5 d'OpenAI, intégré dans les applications Microsoft 365. Il accède à vos documents, e-mails, réunions et fichiers SharePoint pour générer du contenu contextualisé, sans copier-coller manuel." },
-      { type: 'p', text: "À ne pas confondre avec Copilot Chat (le chatbot gratuit accessible sur copilot.microsoft.com) ni avec GitHub Copilot (l'assistant pour développeurs). Cet article couvre uniquement Copilot for Microsoft 365, la version professionnelle intégrée à la suite bureautique." },
+      { type: 'p', text: "Microsoft Copilot est un assistant IA intégré dans les applications Microsoft 365, qui s'appuie sur des modèles d'OpenAI et, si l'administrateur les active, d'Anthropic. Il accède à vos documents, e-mails, réunions et fichiers SharePoint pour générer du contenu contextualisé, sans copier-coller manuel." },
+      { type: 'p', text: "À ne pas confondre avec Copilot Chat (inclus dans Microsoft 365, ancré sur le web) ni avec GitHub Copilot (l'assistant pour développeurs). Cet article couvre uniquement la licence Microsoft Copilot, la version professionnelle intégrée à la suite bureautique." },
 
       { type: 'h2', text: "Copilot dans Word : rédiger, reformuler, synthétiser" },
       { type: 'p', text: "Word est l'application où Copilot offre le gain de temps le plus immédiat. Les usages les plus efficaces concernent la rédaction de premières versions, la reformulation et la synthèse de documents longs." },
@@ -3795,14 +3795,14 @@ const BLOG_ARTICLES_BASE = [
       },
 
       { type: 'h2', text: "Tarifs et licences : ce qu'il faut savoir avant de déployer" },
-      { type: 'p', text: "Copilot for Microsoft 365 coûte environ 30 €/utilisateur/mois en abonnement annuel, en plus de la licence Microsoft 365 (Business Standard ou supérieur). Ce coût n'est pas inclus dans les licences Office 365 standard." },
+      { type: 'p', text: "Au 7 octobre 2026, la licence Microsoft Copilot coûte 26 € HT par utilisateur et par mois en paiement annuel (27,30 € HT en mensuel) ; jusqu'à 300 utilisateurs, Microsoft Copilot Business coûte 18,20 € HT. La page tarifs France l'affiche encore sous le nom Microsoft 365 Copilot. Elle s'ajoute à une licence Microsoft 365 éligible, dès Business Basic. Ce coût n'est pas inclus dans les licences Office 365 standard." },
       {
         type: 'ul',
         items: [
-          "Pour une équipe de 50 utilisateurs : ~18 000 € HT/an de licences Copilot",
+          "Pour une équipe de 50 utilisateurs : 10 920 € HT par an avec Copilot Business, 15 600 € HT avec la licence grandes entreprises",
           "Souvent éligible aux plans de formation OPCO si combiné à un programme de formation à l'usage",
           "L'option EU Data Boundary garantit que les données restent en Europe (à activer côté admin)",
-          "Les utilisateurs sans licence M365 Business Standard ou E3/E5 ne peuvent pas utiliser Copilot",
+          "Les utilisateurs sans licence Microsoft 365 éligible (Business Basic, Standard ou Premium, E3, E5…) ne peuvent pas recevoir la licence Copilot",
         ],
       },
 
@@ -3814,9 +3814,9 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Cette section répond aux questions les plus fréquemment posées par les responsables formation et DSI lors de l'évaluation de Copilot. Pour aller plus loin, consultez nos formations dédiées par application Microsoft." },
     ],
     faq: [
-      { q: "Microsoft Copilot est-il compatible RGPD ?", a: "Oui, Copilot for Microsoft 365 est compatible RGPD avec l'option EU Data Boundary activée, qui garantit que les données restent en Europe. Les conversations ne sont pas utilisées pour entraîner les modèles. C'est l'une des raisons pour lesquelles il est plus adapté aux entreprises européennes que la version gratuite de ChatGPT." },
-      { q: "Quelle différence entre Copilot Chat (gratuit) et Copilot for Microsoft 365 ?", a: "Copilot Chat est le chatbot gratuit accessible sur copilot.microsoft.com, équivalent à ChatGPT en plus limité. Copilot for Microsoft 365 (~30 €/u/mois) est l'assistant intégré dans Word, Excel, Outlook, Teams qui accède à vos documents et e-mails professionnels. Ce sont deux produits très différents." },
-      { q: "Faut-il avoir Microsoft 365 pour utiliser Copilot ?", a: "Pour Copilot for Microsoft 365 : oui, il faut une licence Microsoft 365 Business Standard, Business Premium, E3 ou E5 active. Sans cela, vous ne pouvez utiliser que Copilot Chat (la version gratuite hors applications)." },
+      { q: "Microsoft Copilot est-il compatible RGPD ?", a: "Oui, Microsoft Copilot relève de l'EU Data Boundary : le trafic des utilisateurs européens reste dans l'Union, à l'exception des modèles d'Anthropic, désactivés par défaut en Europe. Les conversations ne sont pas utilisées pour entraîner les modèles. C'est l'une des raisons pour lesquelles il est plus adapté aux entreprises européennes que la version gratuite de ChatGPT." },
+      { q: "Quelle différence entre Copilot Chat et la licence Microsoft Copilot ?", a: "Copilot Chat est inclus dans les abonnements Microsoft 365 : ses réponses s'appuient sur le web et sur les fichiers que vous lui confiez. La licence Microsoft Copilot (26 € HT par utilisateur et par mois en annuel) ajoute l'assistant qui accède à vos documents et e-mails professionnels dans Word, Excel, Outlook et Teams. Ce sont deux produits très différents." },
+      { q: "Faut-il avoir Microsoft 365 pour utiliser Copilot ?", a: "Pour la licence Microsoft Copilot : oui, il faut une licence Microsoft 365 éligible, de Business Basic à E5. Sans la licence Copilot, vos équipes disposent de Copilot Chat, inclus dans Microsoft 365, dont les réponses s'appuient sur le web." },
       { q: "En combien de temps voit-on un retour sur investissement avec Copilot ?", a: "Avec une formation d'accompagnement, le ROI est typiquement atteint entre 3 et 6 mois pour des utilisateurs intensifs (forte utilisation d'Outlook, Word, Teams). Sans formation, le ROI peut ne jamais être atteint car ~40 % des utilisateurs n'activent pas la licence après 3 mois." },
       { q: "Copilot peut-il fonctionner sur Mac ?", a: "Oui, Copilot fonctionne sur Word, Excel, PowerPoint et Outlook pour Mac, à condition d'avoir une licence Microsoft 365 active et la dernière version des applications. L'expérience est très proche de la version Windows." },
     ],
@@ -3857,7 +3857,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Cet article répond aux questions concrètes que se posent les responsables formation et DRH parisiens : quels outils choisir, comment organiser une session intra ou un accompagnement individuel, quels OPCO financent quoi, et où se former à Paris en 2026." },
 
       { type: 'h2', text: "Pourquoi former à l'IA est une priorité à Paris en 2026" },
-      { type: 'p', text: "Trois facteurs convergent. D'abord, l'AI Act européen impose depuis février 2025 que les organisations qui utilisent des systèmes d'IA forment leurs collaborateurs. Les sanctions associées (jusqu'à 35 M€ ou 7 % du CA mondial) deviennent applicables en août 2026." },
+      { type: 'p', text: "Trois facteurs convergent. D'abord, l'article 4 de l'AI Act demande depuis février 2025 aux organisations qui utilisent des systèmes d'IA de prendre des mesures pour développer la maîtrise de l'IA de leurs collaborateurs, et les autorités nationales de surveillance en contrôlent l'application depuis le 2 août 2026." },
       { type: 'p', text: "Ensuite, la concentration de sièges sociaux à Paris signifie que les politiques de déploiement IA se décident au siège mais doivent être appliquées dans toutes les filiales. La formation siège est souvent le déclencheur du programme groupe." },
       { type: 'p', text: "Enfin, le marché du travail francilien valorise désormais les compétences IA : selon LinkedIn Workforce Report 2026, les annonces d'emploi mentionnant une compétence en IA générative ont augmenté de 240 % à Paris en 18 mois." },
 
@@ -3901,7 +3901,7 @@ const BLOG_ARTICLES_BASE = [
           "Accompagnement individuel sur mesure : 1 980 €/jour",
           "Intra-entreprises (groupe dédié, vos locaux ou les nôtres) : 1 980 €/jour pour le groupe (jusqu'à 12 personnes)",
           "Conseil et audit IA : 1 200 à 1 800 €/jour selon le périmètre",
-          "Pris en charge OPCO : la majorité des dossiers Masteria sont financés à 100 % du coût pédagogique",
+          "Finançable par votre OPCO selon votre branche : Masteria prépare avec vous le programme et la convention",
         ],
       },
 
@@ -3971,20 +3971,21 @@ const BLOG_ARTICLES_BASE = [
   {
     slug: 'custom-gpt-entreprise-creer-assistants-chatgpt',
     tag: 'Outils',
-    title: "Custom GPTs : créer ses propres assistants ChatGPT pour son entreprise",
-    metaTitle: "Custom GPT entreprise : ses assistants ChatGPT | Masteria",
-    metaDesc: "Custom GPTs : comment créer un assistant ChatGPT sur mesure pour votre entreprise. Guide pas-à-pas, cas d'usage métier, sécurité des données et formation.",
+    title: "Custom GPTs en entreprise : concevoir ses assistants ChatGPT et préparer leur retrait",
+    metaTitle: "Custom GPT entreprise : retrait et migration | Masteria",
+    metaDesc: "Custom GPTs en entreprise : retrait le 11 décembre 2026, migration vers les compétences, méthode pour concevoir un assistant ChatGPT et sécurité.",
     date: '24 avril 2026',
     datePublished: '2026-04-24',
-    dateModified: '2026-04-26',
+    dateModified: '2026-10-07',
     readTime: '10 min',
-    excerpt: "Un Custom GPT est un assistant ChatGPT préparamétré sur vos documents, votre ton et vos workflows. Voici comment en créer un, pour quels métiers et quelles précautions.",
+    excerpt: "Un Custom GPT est un assistant ChatGPT préparamétré sur vos documents, votre ton et vos workflows. OpenAI les retire le 11 décembre 2026 : voici comment migrer les vôtres et concevoir la suite.",
     intro: "Un Custom GPT est un assistant ChatGPT que vous configurez vous-même, sans coder, en lui donnant un rôle précis, des instructions permanentes, des fichiers de référence et parfois l'accès à des outils externes. Une fois créé, il devient un raccourci métier accessible à toute l'organisation, qui répond systématiquement dans le ton, la structure et le périmètre que vous avez définis.",
     blocks: [
-      { type: 'p', text: "Cette fonctionnalité, disponible dans ChatGPT Team, Enterprise et Plus, transforme la façon dont les équipes utilisent l'IA. Au lieu de réécrire le même prompt long à chaque nouvelle tâche, elles ouvrent leur Custom GPT et obtiennent une réponse calibrée en quelques secondes. Ce guide explique comment créer un Custom GPT utile, sécurisé et adopté par les équipes." },
+      { type: 'callout', text: "Mise à jour du 7 octobre 2026 : OpenAI retire les GPTs personnalisés de toutes les offres le 11 décembre 2026 (le 11 février 2027 pour les espaces Enterprise qui ont obtenu un délai), et prévoit d'arrêter la création de nouveaux GPTs le 26 octobre 2026 dans les espaces Enterprise. Lors de la migration vers un plugin, les instructions d'un GPT deviennent une compétence et ses fichiers de connaissance des fichiers de référence ; les actions personnalisées ne suivent pas, et le plugin n'est partagé avec personne tant que vous ne le décidez pas. Les conversations passées restent consultables. La méthode décrite ci-dessous vaut pour les compétences et les projets partagés qui prennent le relais." },
+      { type: 'p', text: "Cette fonctionnalité, ouverte jusqu'ici sur ChatGPT Business (ex-Team), Enterprise et Plus, a changé la façon dont les équipes utilisent l'IA. Au lieu de réécrire le même prompt long à chaque nouvelle tâche, elles ouvrent leur assistant et obtiennent une réponse calibrée en quelques secondes. Ce guide explique comment concevoir un assistant utile, sécurisé et adopté par les équipes, et comment migrer vos GPTs existants." },
 
       { type: 'h2', text: "Qu'est-ce qu'un Custom GPT exactement ?" },
-      { type: 'p', text: "Un Custom GPT est une instance préparamétrée de ChatGPT. Il garde le même moteur (GPT-5 ou supérieur), mais reçoit en permanence trois éléments supplémentaires : des instructions système (qui définissent son rôle et ses règles), des fichiers de connaissance (que vous chargez : guide de style, documents métier, FAQ interne), et éventuellement des actions (appels à des API externes pour aller chercher des données en temps réel)." },
+      { type: 'p', text: "Un Custom GPT est une instance préparamétrée de ChatGPT. Il s'appuie sur les modèles de ChatGPT, mais reçoit en permanence trois éléments supplémentaires : des instructions système (qui définissent son rôle et ses règles), des fichiers de connaissance (que vous chargez : guide de style, documents métier, FAQ interne), et éventuellement des actions (appels à des API externes pour aller chercher des données en temps réel)." },
       { type: 'p', text: "Concrètement, un commercial qui ouvre le Custom GPT « Réponse appel d'offres » n'a plus à expliquer à chaque fois la structure de l'entreprise, le ton attendu ou la trame standard : tout est déjà dans le contexte permanent de l'assistant." },
 
       { type: 'h2', text: "Pourquoi un Custom GPT plutôt qu'un prompt classique ?" },
@@ -4016,53 +4017,54 @@ const BLOG_ARTICLES_BASE = [
         ],
       },
 
-      { type: 'h2', text: "Comment créer un Custom GPT en 6 étapes" },
+      { type: 'h2', text: "Concevoir un assistant en 6 étapes, GPT existant ou compétence" },
       { type: 'h3', text: "Étape 1 : définir le rôle et le périmètre" },
       { type: 'p', text: "Avant d'ouvrir l'éditeur, écrivez en une phrase ce que doit faire votre GPT et ce qu'il ne doit jamais faire. Exemple : « Cet assistant aide à rédiger des réponses commerciales pour le marché public, dans le ton Masteria. Il refuse les questions sur la stratégie tarifaire et les sujets RH. »" },
       { type: 'h3', text: "Étape 2 : rédiger les instructions système" },
-      { type: 'p', text: "Dans ChatGPT, allez dans « Mes GPTs > Créer un GPT > Configure ». Les instructions système (3 000 caractères max) couvrent : rôle, contexte, ton, format attendu, règles de refus. Plus elles sont précises, plus le GPT est utile." },
+      { type: 'p', text: "Pour un GPT existant, l'éditeur se trouve dans « Mes GPTs » ; pour une compétence, dans Plugins, onglet Compétences, « Créer avec le chat ». Les instructions couvrent : rôle, contexte, ton, format attendu, règles de refus. Plus elles sont précises, plus l'assistant est utile." },
       { type: 'h3', text: "Étape 3 : ajouter des fichiers de connaissance" },
-      { type: 'p', text: "Chargez les documents que le GPT doit connaître en permanence : guide de style, FAQ interne, exemples types, glossaire métier. Limite : 20 fichiers, 512 Mo chacun. Privilégiez le format PDF ou Word avec une structure claire (titres, listes)." },
+      { type: 'p', text: "Chargez les documents que l'assistant doit connaître en permanence : guide de style, FAQ interne, exemples types, glossaire métier. Un GPT accepte 20 fichiers de 512 Mo au plus. Privilégiez le format PDF ou Word avec une structure claire (titres, listes)." },
       { type: 'h3', text: "Étape 4 : tester avec des cas réels" },
       { type: 'p', text: "Testez avec 10 à 15 questions représentatives, dont des cas limites (questions hors périmètre, demandes ambiguës, formulations imprécises). Ajustez les instructions à chaque test." },
       { type: 'h3', text: "Étape 5 : partager au sein de l'organisation" },
-      { type: 'p', text: "En version ChatGPT Team ou Enterprise, vous pouvez partager le GPT en interne uniquement (pas publiquement). Donnez-lui un nom métier clair et une description courte qui explique quand l'utiliser." },
+      { type: 'p', text: "Sur ChatGPT Business (ex-Team) ou Enterprise, la compétence se partage avec l'espace de travail, comme le GPT avant elle. Donnez-lui un nom métier clair et une description courte qui explique quand l'utiliser." },
       { type: 'h3', text: "Étape 6 : maintenir et faire évoluer" },
-      { type: 'p', text: "Un Custom GPT n'est pas figé. Mettez à jour les fichiers de connaissance tous les 1 à 3 mois, ajustez les instructions selon les retours utilisateurs, supprimez les GPTs obsolètes pour ne pas saturer l'interface." },
+      { type: 'p', text: "Un assistant n'est pas figé. Mettez à jour les fichiers de connaissance tous les 1 à 3 mois, ajustez les instructions selon les retours utilisateurs, supprimez les GPTs obsolètes pour ne pas saturer l'interface." },
 
       { type: 'h2', text: "Sécurité des données : ce qu'il faut absolument savoir" },
       { type: 'p', text: "Trois précautions critiques avant de déployer des Custom GPTs en entreprise :" },
       {
         type: 'ul',
         items: [
-          "Ne créez vos GPTs métier qu'en version ChatGPT Team ou Enterprise. Les conversations en version Plus peuvent être utilisées pour entraîner les modèles d'OpenAI, ce qui est inacceptable pour des données d'entreprise.",
+          "Ne construisez vos assistants métier que sur ChatGPT Business (ex-Team) ou Enterprise. Sur Plus, les conversations servent à entraîner les modèles d'OpenAI tant que l'utilisateur n'a pas coupé l'option, ce qui est inacceptable pour des données d'entreprise.",
           "Les fichiers de connaissance que vous chargez sont stockés sur les serveurs OpenAI. Ne chargez jamais de données personnelles non anonymisées (clients, salariés), de données financières confidentielles ou d'informations soumises à secret professionnel.",
-          "Activez l'option « Don't share data with OpenAI for model training » au niveau de l'admin du compte Team ou Enterprise. Cette option est désactivée par défaut sur les comptes individuels.",
+          "Sur Business et Enterprise, OpenAI n'entraîne pas ses modèles sur vos données par défaut. Sur un compte individuel, coupez « Améliorer le modèle pour tous » dans Paramètres, Contrôles des données.",
         ],
       },
 
-      { type: 'h2', text: "Custom GPTs vs alternatives : Copilot Studio, Claude Projects, Mistral Agents" },
+      { type: 'h2', text: "Custom GPTs et alternatives : compétences ChatGPT, Copilot Studio, Claude Projects, Skills de Vibe" },
       {
         type: 'table',
         headers: ['Solution', 'Forces', 'Limites'],
         rows: [
-          ['Custom GPT (ChatGPT)', 'Le plus simple, le plus mature, énorme écosystème', 'Données chez OpenAI, pas d\'on-premise'],
+          ['Custom GPT (ChatGPT)', 'Le plus simple, très répandu', 'Retrait le 11 décembre 2026, migration vers les plugins'],
+          ['Compétences ChatGPT', 'Successeur des GPTs, format SKILL.md réutilisable', 'Offres Business, Enterprise, Healthcare et Edu'],
           ['Copilot Studio (Microsoft)', 'Intégration Microsoft 365, EU Data Boundary', 'Plus complexe, nécessite licence dédiée'],
-          ['Claude Projects', 'Excellent sur documents longs, qualité du français', 'Moins d\'intégrations externes que GPTs'],
-          ['Mistral Agents', 'Souveraineté française, on-premise possible', 'Écosystème encore en construction'],
+          ['Claude Projects', 'Excellent sur documents longs, qualité du français', 'Moins d\'intégrations externes que ChatGPT'],
+          ['Skills de Vibe (Mistral)', 'Données hébergées dans l\'UE, déploiement sur site en Enterprise', 'Remplacent les agents depuis le 22 septembre 2026'],
         ],
       },
     ],
     faq: [
       { q: "Faut-il savoir coder pour créer un Custom GPT ?", a: "Non. La création de base se fait en langage naturel, dans une interface conversationnelle. Seules les Actions (appels à des API externes) demandent un minimum de connaissance technique, mais elles sont optionnelles : 90 % des cas d'usage en entreprise n'en ont pas besoin." },
-      { q: "Combien de Custom GPTs peut-on créer dans une équipe ?", a: "Le nombre n'est pas limité dans ChatGPT Team et Enterprise. Mais une bonne pratique consiste à ne pas dépasser 10-15 GPTs métier actifs : au-delà, les utilisateurs ne savent plus lequel utiliser quand. Mieux vaut quelques GPTs très utilisés que cinquante GPTs inutilisés." },
-      { q: "Peut-on connecter un Custom GPT à des données internes (CRM, base produit) ?", a: "Oui, via les Actions (appels API). Cela demande qu'un développeur expose les données souhaitées via une API REST. Cas typiques : connecter le GPT à HubSpot, Salesforce, Notion, Airtable. Avant de connecter, faites une revue de sécurité avec votre DSI." },
+      { q: "Combien de Custom GPTs peut-on créer dans une équipe ?", a: "La question ne se pose plus : OpenAI retire les GPTs le 11 décembre 2026 et, dans les espaces Enterprise, prévoit d'en arrêter la création dès le 26 octobre. Pour les compétences qui prennent le relais, la bonne pratique reste de ne pas dépasser 10-15 assistants métier actifs : au-delà, les utilisateurs ne savent plus lequel utiliser quand. Mieux vaut quelques assistants très utilisés que cinquante inutilisés." },
+      { q: "Peut-on connecter un Custom GPT à des données internes (CRM, base produit) ?", a: "Oui, via les Actions (appels API). Cela demande qu'un développeur expose les données souhaitées via une API REST. Cas typiques : connecter le GPT à HubSpot, Salesforce, Notion, Airtable. Avant de connecter, faites une revue de sécurité avec votre DSI. Les actions personnalisées ne suivent pas la migration vers les plugins : reconstruisez-les avant le retrait du 11 décembre 2026." },
       { q: "Un Custom GPT peut-il halluciner moins qu'un ChatGPT classique ?", a: "Oui, parce que vous lui donnez des fichiers de connaissance qui font référence. Quand l'utilisateur pose une question couverte par les fichiers, le GPT cite la source plutôt que d'inventer. C'est l'un des intérêts majeurs en entreprise : réduire les hallucinations sur les sujets internes." },
       { q: "Combien de temps pour créer un Custom GPT vraiment utile ?", a: "Une première version fonctionnelle se crée en 1 à 2 heures. Une version aboutie qui sera adoptée par l'équipe demande 1 à 2 jours de calibrage : rédaction des instructions, sélection des bons fichiers de connaissance, tests avec des cas réels et itération sur les retours utilisateurs." },
     ],
     cta: {
-      title: "Construire vos premiers Custom GPTs avec Masteria",
-      desc: "Notre formation « Custom GPTs en entreprise » couvre la conception, la sécurité et le déploiement, avec création de votre premier GPT métier en fin de session. Une journée, certifiée Qualiopi, finançable OPCO.",
+      title: "Migrer vos Custom GPTs avec Masteria",
+      desc: "Notre formation ChatGPT couvre la conception, la sécurité et le déploiement d'assistants métier : migration de vos GPTs existants et création de votre première compétence en fin de session. Une journée, certifiée Qualiopi, finançable par votre OPCO selon votre branche.",
       buttons: [
         { label: "Demander un devis", href: '/contact', primary: true },
         { label: "Voir la formation ChatGPT", href: '/formation-chatgpt' },
@@ -4121,9 +4123,9 @@ const BLOG_ARTICLES_BASE = [
         headers: ['Solution', 'Localisation données', 'Entraînement par défaut', 'Adapté secteur régulé ?'],
         rows: [
           ['ChatGPT Free / Plus', 'USA principalement', 'Oui (opt-out possible)', 'Non'],
-          ['ChatGPT Team', 'USA principalement', 'Non (par défaut)', 'Oui sauf souveraineté stricte'],
+          ['ChatGPT Business', 'USA principalement', 'Non (par défaut)', 'Oui sauf souveraineté stricte'],
           ['ChatGPT Enterprise', 'USA + options SCC', 'Non', 'Oui sauf souveraineté stricte'],
-          ['Microsoft Copilot M365', 'EU Data Boundary disponible', 'Non', 'Oui (largement déployé)'],
+          ['Microsoft Copilot', 'EU Data Boundary disponible', 'Non', 'Oui (largement déployé)'],
           ['Google Gemini Workspace', 'Multi-régions, options EU', 'Non en Workspace', 'Oui sauf souveraineté stricte'],
           ['Claude Team / Enterprise', 'USA principalement', 'Non', 'Oui sauf souveraineté stricte'],
           ['Mistral Vibe Pro / Enterprise', 'Europe (UE)', 'Non', 'Oui (recommandé secteurs régulés)'],
@@ -4132,7 +4134,7 @@ const BLOG_ARTICLES_BASE = [
       },
 
       { type: 'h2', text: "Peut-on utiliser ChatGPT avec des données clients ?" },
-      { type: 'p', text: "La réponse rapide : oui sur ChatGPT Team ou Enterprise avec un encadrement précis ; non sur la version Plus grand public. Détaillons :" },
+      { type: 'p', text: "La réponse rapide : oui sur ChatGPT Business ou Enterprise avec un encadrement précis ; non sur la version Plus grand public. Détaillons :" },
       {
         type: 'ul',
         items: [
@@ -4158,11 +4160,11 @@ const BLOG_ARTICLES_BASE = [
       ] },
 
       { type: 'h2', text: "Que dit l'AI Act sur la sécurité de l'IA en entreprise ?" },
-      { type: 'p', text: "L'AI Act européen (Règlement (UE) 2024/1689), pleinement applicable en août 2026, ajoute trois obligations directement liées à la sécurité :" },
+      { type: 'p', text: "L'AI Act européen (règlement (UE) 2024/1689), qui s'applique par paliers de février 2025 à août 2028 depuis l'Omnibus (règlement (UE) 2026/1744), ajoute trois obligations directement liées à la sécurité :" },
       {
         type: 'ul',
         items: [
-          "Formation obligatoire des utilisateurs : tout collaborateur qui utilise un système d'IA dans le cadre professionnel doit avoir reçu une formation appropriée",
+          "Maîtrise de l'IA (article 4, depuis février 2025) : l'entreprise prend des mesures pour former les collaborateurs qui utilisent un système d'IA dans le cadre professionnel, sans certificat ni niveau individuel imposé",
           "Documentation technique : pour les systèmes à risque élevé, l'entreprise doit pouvoir documenter le fonctionnement, les données d'entraînement et les mesures de mitigation",
           "Gouvernance : désignation d'un référent IA, registre des systèmes utilisés, procédure d'incident",
         ],
@@ -4170,9 +4172,9 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Sanctions associées : jusqu'à 35 M€ ou 7 % du CA mondial pour les violations les plus graves. Le pendant pratique : la formation à l'IA n'est plus une option, c'est une obligation légale." },
     ],
     faq: [
-      { q: "ChatGPT est-il conforme au RGPD ?", a: "Pas dans sa version Free ou Plus pour un usage professionnel impliquant des données personnelles, car les conversations peuvent être utilisées pour entraîner les modèles. ChatGPT Team et Enterprise peuvent l'être après évaluation DPO et signature des Standard Contractual Clauses, mais des doutes subsistent pour les secteurs à souveraineté stricte." },
-      { q: "Peut-on coller un contrat client dans ChatGPT pour le faire analyser ?", a: "Non sur ChatGPT Plus grand public. Oui sur ChatGPT Team ou Enterprise après anonymisation des éléments nominatifs, ou sur Mistral Enterprise pour les contraintes de souveraineté forte. Dans tous les cas, vérifier la conformité avec votre DPO avant déploiement." },
-      { q: "Quelle solution IA pour un cabinet d'avocats soumis au secret professionnel ?", a: "Les options privilégiées sont Mistral Enterprise on-premise, Microsoft Copilot M365 avec EU Data Boundary activée, ou des solutions verticales métier disposant d'un hébergement Europe certifié. Le secret professionnel renforcé impose souvent un déploiement souverain et un audit DPO préalable." },
+      { q: "ChatGPT est-il conforme au RGPD ?", a: "Pas dans sa version Free ou Plus pour un usage professionnel impliquant des données personnelles, car les conversations peuvent être utilisées pour entraîner les modèles. ChatGPT Business et Enterprise peuvent l'être après évaluation DPO et signature des Standard Contractual Clauses, mais des doutes subsistent pour les secteurs à souveraineté stricte." },
+      { q: "Peut-on coller un contrat client dans ChatGPT pour le faire analyser ?", a: "Non sur ChatGPT Plus grand public. Oui sur ChatGPT Business ou Enterprise après anonymisation des éléments nominatifs, ou sur Mistral Enterprise pour les contraintes de souveraineté forte. Dans tous les cas, vérifier la conformité avec votre DPO avant déploiement." },
+      { q: "Quelle solution IA pour un cabinet d'avocats soumis au secret professionnel ?", a: "Les options privilégiées sont Mistral Enterprise on-premise, Microsoft Copilot dans l'EU Data Boundary, ou des solutions verticales métier disposant d'un hébergement Europe certifié. Le secret professionnel renforcé impose souvent un déploiement souverain et un audit DPO préalable." },
       { q: "Faut-il déclarer l'utilisation d'une IA à la CNIL ?", a: "Pas en tant que telle. En revanche, si vous utilisez l'IA pour traiter des données personnelles, ce traitement doit figurer dans votre registre RGPD (article 30) et faire l'objet d'une analyse d'impact (AIPD) si le traitement présente un risque élevé pour les droits des personnes." },
       { q: "Que faire en cas de fuite de données via une IA générative ?", a: "Activer immédiatement votre procédure de notification de violation : information du DPO, évaluation du risque pour les personnes concernées, notification à la CNIL dans les 72 heures si le risque est avéré, communication aux personnes si le risque est élevé. La traçabilité des prompts est essentielle pour reconstituer le périmètre de la fuite." },
     ],
@@ -4189,7 +4191,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation Mistral AI (souveraineté FR)", href: '/formation-mistral-ai' },
       { label: "AI Act et formation IA obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
       { label: "Mistral AI : la souveraineté française", href: '/blog/mistral-ai-souverainete-entreprise' },
-      { label: "Custom GPTs : créer ses assistants ChatGPT", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
     ],
   },
 
@@ -4227,7 +4229,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Prompt type (Copilot dans Excel) : « Score les leads de cette feuille selon les critères suivants : taille d'entreprise, secteur, fonction du contact, signal d'achat. Donne un score sur 100 et un commentaire de 2 lignes par lead. »" },
 
       { type: 'h2', text: "Cas n°4 : préparation de réponses aux objections" },
-      { type: 'p', text: "Les nouvelles recrues commerciales mettent souvent 3 à 6 mois à maîtriser les objections récurrentes. Un Custom GPT dédié peut accélérer cet apprentissage en proposant des éléments de réponse calibrés sur le ton et l'argumentaire de l'entreprise." },
+      { type: 'p', text: "Les nouvelles recrues commerciales mettent souvent 3 à 6 mois à maîtriser les objections récurrentes. Une compétence ChatGPT dédiée peut accélérer cet apprentissage en proposant des éléments de réponse calibrés sur le ton et l'argumentaire de l'entreprise." },
       { type: 'p', text: "Prompt type : « Un prospect dit : ‹ Vos concurrents sont 30 % moins chers, pourquoi devrais-je choisir votre solution ? › Donne-moi 3 angles de réponse différents, dans un ton consultatif, qui pivotent vers la valeur plutôt que la défense du prix. »" },
 
       { type: 'h2', text: "Cas n°5 : relance commerciale efficace" },
@@ -4235,7 +4237,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Prompt type : « Voici le CR de notre réunion du 15 mars avec [Client] (collé). Rédige un mail de relance qui rappelle les 2 points clés discutés, propose 3 créneaux pour un point dans les 10 prochains jours et conclut par une question ouverte qui invite à répondre. »" },
 
       { type: 'h2', text: "Cas n°6 : propositions commerciales personnalisées" },
-      { type: 'p', text: "C'est l'un des cas d'usage avec le plus fort ROI. Avec un Custom GPT chargé du modèle de proposition de l'entreprise, le commercial peut générer une première version cohérente en 10 minutes, là où il en passait précédemment 2 à 3 heures." },
+      { type: 'p', text: "C'est l'un des cas d'usage avec le plus fort ROI. Avec une compétence ou un projet qui contient le modèle de proposition de l'entreprise, le commercial peut générer une première version cohérente en 10 minutes, là où il en passait précédemment 2 à 3 heures." },
       { type: 'p', text: "Prompt type : « Sur la base de ce brief client (collé), rédige la proposition commerciale en suivant la trame standard : contexte, problématique, solution, livrables, planning, prix. Adopte le ton consultatif et inclus les sections type marquées dans le modèle. »" },
 
       { type: 'h2', text: "Tableau récapitulatif des gains" },
@@ -4257,7 +4259,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Programme type : matinée fondamentaux (prompt engineering appliqué à la vente, choix d'outil, sécurité données clients) ; après-midi cas pratiques sur vos vrais prospects et propositions, avec création de votre première bibliothèque de prompts métier." },
     ],
     faq: [
-      { q: "Quel outil IA choisir pour une équipe commerciale ?", a: "Le choix dépend de votre stack. Sur Microsoft 365 : Copilot pour intégrer dans Outlook et Word. Sur Google Workspace : Gemini. Sans stack imposée : ChatGPT Team, le plus polyvalent et le mieux documenté en français. Pour les secteurs régulés (banque, santé) : Mistral pour la souveraineté." },
+      { q: "Quel outil IA choisir pour une équipe commerciale ?", a: "Le choix dépend de votre stack. Sur Microsoft 365 : Copilot pour intégrer dans Outlook et Word. Sur Google Workspace : Gemini. Sans stack imposée : ChatGPT Business, le plus polyvalent et le mieux documenté en français. Pour les secteurs régulés (banque, santé) : Mistral pour la souveraineté." },
       { q: "Comment former une équipe commerciale qui n'a jamais utilisé l'IA ?", a: "Format recommandé : 1 journée d'initiation suivie d'un suivi à 30 jours pour vérifier l'ancrage. La journée combine fondamentaux (prompt engineering) et cas pratiques sur les vrais prospects/propositions. Le suivi à 30 jours mesure l'adoption réelle et corrige les blocages." },
       { q: "L'IA peut-elle remplacer un commercial ?", a: "Non. L'IA accélère les tâches préparatoires (recherche, rédaction, mise en forme) mais ne remplace ni la relation client, ni la négociation, ni le closing. Les équipes formées vendent plus parce qu'elles passent plus de temps en contact direct, pas parce que l'IA vend à leur place." },
       { q: "Comment éviter que les commerciaux utilisent l'IA pour des tâches inappropriées ?", a: "Une charte d'usage IA spécifique aux fonctions commerciales doit définir : ce qui peut être collé dans l'IA (informations publiques, données anonymisées) versus ce qui ne doit pas l'être (contrats signés, données nominatives clients, prix négociés). La formation inclut systématiquement ce volet sécurité." },
@@ -4275,7 +4277,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation IA pour la vente", href: '/formation-ia-commercial' },
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
-      { label: "Custom GPTs en entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
     ],
   },
 
@@ -4299,7 +4301,7 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Qui est Mistral AI ?" },
       { type: 'p', text: "Fondée à Paris en 2023 par d'anciens chercheurs de Meta et Google DeepMind, Mistral AI a levé plus de 2 milliards d'euros et est aujourd'hui valorisée à environ 12 milliards d'euros (mars 2026). Ses modèles open weight (Mistral 7B, Mixtral, Mistral Small, Mistral Large) ont été parmi les premiers à concurrencer GPT-4 sur des tâches généralistes." },
-      { type: 'p', text: "Son produit grand public, Vibe (anciennement Le Chat), est disponible en versions Free, Pro (15 €/mois) et Enterprise. Ses modèles sont également distribués via API sur AWS, Azure et Google Cloud, ce qui simplifie leur intégration pour les entreprises déjà clientes de ces plateformes." },
+      { type: 'p', text: "Son produit grand public, Vibe (anciennement Le Chat), est disponible en versions Free, Pro (17,99 € TTC par mois en France), Team et Enterprise. Ses modèles sont également distribués via API sur AWS, Azure et Google Cloud, ce qui simplifie leur intégration pour les entreprises déjà clientes de ces plateformes." },
 
       { type: 'h2', text: "Le différenciateur clé : la souveraineté des données" },
       { type: 'p', text: "Trois caractéristiques font de Mistral l'option naturelle pour les entreprises européennes soumises à des contraintes de souveraineté :" },
@@ -4322,12 +4324,12 @@ const BLOG_ARTICLES_BASE = [
           ['Qualité du français', 'Excellente (natif)', 'Très bonne'],
           ['Vitesse de réponse', 'Plus rapide en moyenne', 'Standard'],
           ['Tâches complexes (raisonnement, code avancé)', 'Bonne, légèrement en retrait sur les benchmarks', 'Référence du marché'],
-          ['Polyvalence (texte, image, vidéo, voix)', 'Texte + images, en construction', 'Très large : texte, image, voix, vidéo'],
+          ['Polyvalence (texte, image, vidéo, voix)', 'Texte + images, en construction', 'Très large : texte, image, voix (plus de vidéo depuis la fin de Sora)'],
           ['Écosystème de tutoriels FR', 'En croissance', 'Très riche, mature'],
           ['Souveraineté données', 'Oui (Europe)', 'Non (USA)'],
           ['Déploiement on-premise', 'Oui (Enterprise)', 'Non'],
-          ['Tarif Pro', '15 €/mois', '20 €/mois'],
-          ['Tarif Team', '~25 €/utilisateur/mois', '~30 €/utilisateur/mois'],
+          ['Tarif individuel (octobre 2026)', 'Pro : 17,99 € TTC par mois', 'Plus : 23 € par mois'],
+          ['Tarif équipe (octobre 2026)', 'Team : 29,99 € TTC par utilisateur et par mois', 'Business : 21 € par utilisateur et par mois en annuel'],
         ],
       },
 
@@ -4369,7 +4371,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Mistral est-il moins cher que ChatGPT ?", a: "Pour un abonnement individuel, oui. Vibe (anciennement Le Chat) Pro est à 17,99 € TTC par mois, contre 23 € pour ChatGPT Plus (prix France au 3 octobre 2026). En équipe, Vibe Team coûte 29,99 € TTC par utilisateur, ChatGPT Business 21 € par utilisateur en annuel : comparez sur votre volume réel. Sur l'API, les tarifs de Mistral comptent parmi les plus bas du marché." },
       { q: "Mistral est-il certifié pour le secteur santé (HDS) ?", a: "Mistral propose des options de déploiement compatibles avec la certification HDS via ses partenaires cloud (notamment OVHcloud et Outscale). Pour un usage en hôpital ou en clinique, prévoir un audit de conformité avec votre DPO et votre RSSI avant déploiement." },
       { q: "Peut-on entraîner Mistral sur ses propres données ?", a: "Oui, pour les clients Enterprise. Mistral propose du fine-tuning sur les modèles ouverts (Mistral 7B, Mixtral) et des options de personnalisation pour adapter un modèle à votre vocabulaire métier ou à votre base de connaissances. Cette option est particulièrement utile dans les secteurs où la terminologie est très spécifique (juridique, médical, financier)." },
-      { q: "Mistral propose-t-il un équivalent aux Custom GPTs de ChatGPT ?", a: "Oui, via la fonctionnalité Agents disponible dans Vibe (anciennement Le Chat) Enterprise et l'API. Le principe est similaire : créer un assistant préparamétré avec un rôle, des instructions et des fichiers de référence. L'écosystème est plus jeune que celui des Custom GPTs mais évolue vite." },
+      { q: "Mistral propose-t-il un équivalent aux Custom GPTs de ChatGPT ?", a: "Oui. Depuis le 22 septembre 2026, les Skills de Vibe (anciennement Le Chat) remplacent les agents : une Skill garde une méthode réutilisable et se partage avec l'espace de travail. Côté OpenAI, les Custom GPTs sont retirés le 11 décembre 2026 au profit des compétences." },
     ],
     cta: {
       title: "Former vos équipes à Mistral AI",
@@ -4401,7 +4403,7 @@ const BLOG_ARTICLES_BASE = [
     dateModified: '2026-04-26',
     readTime: '11 min',
     excerpt: "Mesurer le ROI d'une formation IA en entreprise : KPIs concrets, formules de calcul et template d'évaluation à 30, 90 et 180 jours. Pour CFO, DRH et responsables formation.",
-    intro: "Le ROI d'une formation IA est mesurable, à condition de poser les bons KPIs avant la formation et pas après. La règle de base : pour un budget moyen de 1 980 €/jour de formation et un coût utilisateur d'environ 30 €/mois pour une licence Copilot ou ChatGPT Team, le seuil de rentabilité est atteint avec moins d'une heure gagnée par semaine et par collaborateur. Encore faut-il mesurer ce gain rigoureusement.",
+    intro: "Le ROI d'une formation IA est mesurable, à condition de poser les bons KPIs avant la formation et pas après. La règle de base : pour un budget moyen de 1 980 €/jour de formation et un coût de licence de 21 à 26 € par utilisateur et par mois (ChatGPT Business ou Microsoft Copilot, tarifs annuels au 7 octobre 2026), le seuil de rentabilité est atteint avec moins d'une heure gagnée par semaine et par collaborateur. Encore faut-il mesurer ce gain rigoureusement.",
     blocks: [
       { type: 'p', text: "Cet article donne une méthode opérationnelle utilisée par nos clients DRH et CFO pour évaluer le retour sur investissement d'un programme de formation IA, à 30, 90 et 180 jours. Il inclut un template de KPIs et des formules de calcul prêtes à appliquer." },
 
@@ -4419,7 +4421,7 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Les 5 KPIs à poser avant la formation" },
       { type: 'h3', text: "KPI 1 : Taux d'utilisation active à 30 jours" },
-      { type: 'p', text: "Définition : pourcentage de collaborateurs formés qui ont utilisé l'outil IA au moins 5 fois par semaine pendant les 4 semaines suivant la formation. Source : journaux d'utilisation de la licence (Copilot, ChatGPT Team, Mistral, etc.). Cible standard : 70-80 % à 30 jours." },
+      { type: 'p', text: "Définition : pourcentage de collaborateurs formés qui ont utilisé l'outil IA au moins 5 fois par semaine pendant les 4 semaines suivant la formation. Source : journaux d'utilisation de la licence (Copilot, ChatGPT Business, Mistral, etc.). Cible standard : 70-80 % à 30 jours." },
       { type: 'h3', text: "KPI 2 : Gain de temps déclaré par utilisation" },
       { type: 'p', text: "Définition : temps moyen estimé gagné par utilisation, mesuré par auto-déclaration via un mini-sondage hebdomadaire (3 questions, 1 minute). Cible standard : 8 à 15 minutes par utilisation après 30 jours, 15 à 25 minutes après 90 jours." },
       { type: 'h3', text: "KPI 3 : Volume de production sur tâches ciblées" },
@@ -4430,17 +4432,17 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Définition : nombre de collaborateurs non-formés qui ont demandé à utiliser l'outil ou à être formés à leur tour, suite aux retours positifs des premiers formés. Indicateur fort de propagation organique. Cible standard : 15-30 % de demandes additionnelles à 90 jours." },
 
       { type: 'h2', text: "Formule de calcul du ROI à 6 mois" },
-      { type: 'p', text: "Pour un programme de formation de 10 collaborateurs en intra (1 980 €/jour) avec licences Copilot Team (30 €/u/mois) :" },
+      { type: 'p', text: "Pour un programme de formation de 10 collaborateurs en intra (1 980 € HT la journée) avec des licences Microsoft Copilot (26 € HT par utilisateur et par mois en annuel) :" },
       {
         type: 'ul',
         items: [
-          "Coût formation : 1 980 € (1 jour, financé OPCO dans la majorité des cas, donc reste à charge ≈ 0 €)",
-          "Coût licences 6 mois : 10 utilisateurs × 30 € × 6 mois = 1 800 €",
-          "Coût total à 6 mois : 1 800 € (hors temps de formation comptabilisé en heures travaillées)",
+          "Coût formation : 1 980 € HT (1 jour), finançable par votre OPCO selon votre branche",
+          "Coût licences 6 mois : 10 utilisateurs × 26 € × 6 mois = 1 560 € HT",
+          "Coût total à 6 mois : 3 540 € HT avant prise en charge par l'OPCO (hors temps de formation comptabilisé en heures travaillées)",
         ],
       },
       { type: 'p', text: "Côté gains, en supposant 8 minutes gagnées par utilisation × 5 utilisations par jour × 22 jours/mois × 6 mois = 88 heures gagnées par collaborateur sur 6 mois. Pour 10 collaborateurs à un coût horaire chargé moyen de 50 €/h : 88 × 10 × 50 = 44 000 € de valeur produite." },
-      { type: 'p', text: "ROI brut à 6 mois : (44 000 - 1 800) / 1 800 = 23,4 (soit un ROI de 2 340 %). Ces chiffres correspondent à une moyenne observée chez nos clients ETI ; ils peuvent varier selon les profils de poste et l'intensité d'utilisation." },
+      { type: 'p', text: "ROI brut à 6 mois : (44 000 - 3 540) / 3 540 ≈ 11,4 (soit un ROI d'environ 1 140 %). Ces chiffres sont une hypothèse de calcul ; ils varient selon les profils de poste et l'intensité d'utilisation." },
 
       { type: 'h2', text: "Cas concret : ETI services, 50 collaborateurs formés" },
       { type: 'p', text: "Une ETI cliente de Masteria (services aux entreprises, 320 collaborateurs au total, dont 50 formés en 2025) a mesuré les KPIs suivants à 6 mois post-formation :" },
@@ -4471,7 +4473,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Quel est le ROI moyen d'une formation IA en entreprise ?", a: "Sur les programmes Masteria 2025, le ROI moyen mesuré à 6 mois est compris entre 800 % et 2 500 %, principalement porté par le gain de temps (8 à 17 minutes par utilisation, plusieurs fois par jour). Le seuil de rentabilité est typiquement atteint en moins de 6 semaines après la formation." },
       { q: "Combien de temps après la formation faut-il attendre pour mesurer le ROI ?", a: "Trois moments clés : à 30 jours (vérifier l'adoption initiale), à 90 jours (bilan principal, les habitudes sont stabilisées), à 180 jours (durabilité et propagation organique). À moins de 30 jours, les utilisateurs sont encore en apprentissage et les gains sont sous-estimés." },
       { q: "Comment mesurer le gain de temps si les collaborateurs ne tracent pas leur activité ?", a: "Le sondage hebdomadaire de 3 questions (« Combien de fois avez-vous utilisé l'IA cette semaine ? Sur quelles tâches principalement ? Combien de temps économisé par utilisation, en moyenne ? ») prend 1 minute, génère un taux de réponse > 70 % et donne une mesure exploitable même sans tracking automatique." },
-      { q: "Le ROI inclut-il les licences ou seulement la formation ?", a: "Le ROI complet doit inclure les deux : coût de formation (souvent financé OPCO) + coût des licences logicielles (Copilot, ChatGPT Team, etc.). C'est cet ensemble qu'il faut comparer aux gains de temps et de productivité. Une formation sans licence professionnelle (ou inversement) ne génère pas le ROI attendu." },
+      { q: "Le ROI inclut-il les licences ou seulement la formation ?", a: "Le ROI complet doit inclure les deux : coût de formation (souvent financé OPCO) + coût des licences logicielles (Copilot, ChatGPT Business, etc.). C'est cet ensemble qu'il faut comparer aux gains de temps et de productivité. Une formation sans licence professionnelle (ou inversement) ne génère pas le ROI attendu." },
       { q: "La formation IA crée-t-elle des suppressions de poste ?", a: "Aucun de nos clients n'a réduit ses effectifs suite à une formation IA. Le gain de temps est typiquement réinvesti dans des activités à plus forte valeur ajoutée (relation client, vente directe, projets stratégiques). C'est plutôt un levier de productivité qualitative que de réduction d'effectifs." },
     ],
     cta: {
@@ -4550,7 +4552,7 @@ const BLOG_ARTICLES_BASE = [
       {
         type: 'ul',
         items: [
-          "Stack Microsoft 365 : prioriser Copilot pour les fonctions support, ajouter ChatGPT Team pour les fonctions créatives",
+          "Stack Microsoft 365 : prioriser Copilot pour les fonctions support, ajouter ChatGPT Business pour les fonctions créatives",
           "Stack Google Workspace : prioriser Gemini, ajouter ChatGPT pour les usages avancés",
           "Multi-stack ou contrainte de souveraineté : Mistral en premier choix pour les secteurs régulés, ChatGPT pour les fonctions exposées au marché",
         ],
@@ -4602,7 +4604,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Combien coûte un plan de formation IA pour une entreprise de 200 personnes ?", a: "Pour un déploiement progressif sur 12 mois (50-70 % des effectifs formés en première année, en cohortes métier), comptez entre 50 000 € et 100 000 € selon les outils retenus, le format (intra/inter/distanciel) et l'inclusion de l'audit + accompagnement. La majorité de ce budget est éligible au financement OPCO." },
       { q: "Faut-il former tout le monde la première année ?", a: "Non. La bonne séquence : commencer par le COMEX (alignement stratégique), puis les managers (capacité à porter le programme), puis les équipes opérationnelles par cohortes prioritaires (celles avec le plus fort potentiel de gain). Les équipes à faible exposition IA peuvent attendre l'année 2." },
       { q: "Comment intégrer le plan IA dans le plan de développement des compétences classique ?", a: "Le plan IA s'inscrit dans le plan de développement des compétences existant, comme une thématique transverse. Il ne remplace pas les autres formations métier mais les complète. La déclaration OPCO se fait avec les codes habituels, en précisant la nature « IA générative ». Notre certification Qualiopi rend l'éligibilité automatique." },
-      { q: "Que faire des collaborateurs qui refusent la formation IA ?", a: "Le refus est rare quand la formation est bien présentée comme une opportunité (pas une menace). Pour les cas isolés : entretien individuel avec le manager pour comprendre les craintes, proposer un format adapté (1-to-1, en petit groupe), valoriser les premiers résultats observés sur les collègues. La formation devient obligatoire à partir d'août 2026 dans le cadre de l'AI Act pour les utilisateurs effectifs d'IA." },
+      { q: "Que faire des collaborateurs qui refusent la formation IA ?", a: "Le refus est rare quand la formation est bien présentée comme une opportunité (pas une menace). Pour les cas isolés : entretien individuel avec le manager pour comprendre les craintes, proposer un format adapté (1-to-1, en petit groupe), valoriser les premiers résultats observés sur les collègues. L'article 4 de l'AI Act, applicable depuis le 2 février 2025, demande déjà à l'entreprise de prendre des mesures pour développer la maîtrise de l'IA de ses utilisateurs." },
       { q: "Comment mesurer la conformité AI Act dans le plan ?", a: "Trois indicateurs : (1) registre des systèmes IA utilisés dans l'entreprise et leur classification de risque, (2) taux de couverture formation des utilisateurs effectifs, (3) traçabilité des sessions (Qualiopi facilite). Ces éléments doivent être documentés et accessibles en cas d'audit autorité de contrôle." },
     ],
     cta: {
@@ -4700,10 +4702,10 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Cette grille permet à un manager ou à un DRH d'identifier en 10 minutes le profil de résistance dominant dans son équipe, et donc le levier prioritaire à activer dans son plan de déploiement IA." },
     ],
     faq: [
-      { q: "Faut-il rendre la formation IA obligatoire ?", a: "L'AI Act la rend obligatoire à partir d'août 2026 pour les utilisateurs effectifs d'IA. Sur le plan managérial, l'obligation directive marche moins bien que la combinaison « inscription au plan formation officiel + accompagnement personnalisé pour les profils résistants ». L'obligation pure crée de la résistance passive (présence sans engagement)." },
+      { q: "Faut-il rendre la formation IA obligatoire ?", a: "L'article 4 de l'AI Act, applicable depuis le 2 février 2025, demande à l'entreprise de prendre des mesures pour développer la maîtrise de l'IA de ses utilisateurs, sans certificat imposé. Sur le plan managérial, l'obligation directive marche moins bien que la combinaison « inscription au plan formation officiel + accompagnement personnalisé pour les profils résistants ». L'obligation pure crée de la résistance passive (présence sans engagement)." },
       { q: "Comment gérer un manager qui refuse de former son équipe à l'IA ?", a: "C'est un cas plus complexe que le refus individuel. Souvent, le manager craint de perdre la maîtrise de son équipe ou doute de ses propres compétences IA. La bonne séquence : commencer par former le manager (en 1-to-1 ou en très petit groupe homogène de pairs), avant de proposer la formation aux collaborateurs. Le manager devient alors prescripteur, pas obstacle." },
       { q: "Combien de temps faut-il pour faire évoluer la culture IA d'une équipe ?", a: "Compter 6 à 12 mois pour qu'une équipe passe de la résistance à l'adoption naturelle. Cycle typique : formation initiale (mois 1), période d'expérimentation (mois 2-3), premiers résultats visibles (mois 4-6), propagation et nouvelles demandes (mois 6-12). Au-delà de 12 mois, l'IA est intégrée dans les processus." },
-      { q: "Comment éviter le shadow IA (utilisation cachée par les équipes) ?", a: "Le shadow IA naît quand l'organisation ne propose pas d'outil officiel ou quand les outils officiels sont moins bons que ce que les collaborateurs trouvent gratuitement en ligne. La solution : déployer une version professionnelle (ChatGPT Team, Copilot, Mistral) avec des conditions au moins équivalentes, et former les équipes pour qu'elles n'aient pas besoin d'aller chercher ailleurs." },
+      { q: "Comment éviter le shadow IA (utilisation cachée par les équipes) ?", a: "Le shadow IA naît quand l'organisation ne propose pas d'outil officiel ou quand les outils officiels sont moins bons que ce que les collaborateurs trouvent gratuitement en ligne. La solution : déployer une version professionnelle (ChatGPT Business, Copilot, Mistral) avec des conditions au moins équivalentes, et former les équipes pour qu'elles n'aient pas besoin d'aller chercher ailleurs." },
       { q: "Faut-il accompagner spécifiquement les collaborateurs seniors ?", a: "Oui, mais pas sur le plan technique : nos statistiques montrent que les > 50 ans réussissent aussi bien la formation IA que les < 30 ans. La différence est sur l'intégration dans les workflows existants : les seniors ont plus de réflexes établis, et la formation doit prévoir un temps spécifique pour adapter ces réflexes plutôt que les remplacer." },
     ],
     cta: {
@@ -4891,7 +4893,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Pour un salarié, la voie privilégiée est <strong>le plan de développement des compétences de l'employeur, financé par l'OPCO</strong>. C'est l'employeur qui paie via sa cotisation OPCO, le salarié se forme sur son temps de travail, et il n'y a pas de plafond CPF qui s'applique." },
 
       { type: 'h2', text: "OPCO : la voie réelle pour la majorité des formations IA en entreprise" },
-      { type: 'p', text: "Les OPCO (Opérateurs de Compétences) financent jusqu'à 100 % les formations des salariés des entreprises adhérentes. Pour la formation IA en 2026, les principaux OPCO impliqués sont :" },
+      { type: 'p', text: "Les OPCO (Opérateurs de Compétences) financent les formations des salariés des entreprises adhérentes, selon les règles et les fonds de chaque branche. Pour la formation IA en 2026, les principaux OPCO impliqués sont :" },
       {
         type: 'table',
         headers: ['OPCO', 'Secteurs couverts', 'Niveau de prise en charge IA'],
@@ -4904,7 +4906,7 @@ const BLOG_ARTICLES_BASE = [
           ['CONSTRUCTYS', 'BTP', 'Modéré : prises en charge ciblées'],
         ],
       },
-      { type: 'callout', text: "Une formation IA Masteria à 1 980 €/jour en intra-entreprise (jusqu'à 12 participants) peut être prise en charge à 100 % par un OPCO comme ATLAS, sans aucun reste à charge pour l'entreprise. Le dossier OPCO se monte en 5 à 10 jours ouvrés." },
+      { type: 'callout', text: "Une formation IA Masteria à 1 980 €/jour en intra-entreprise (jusqu'à 12 participants) peut être prise en charge par un OPCO comme ATLAS, selon les règles et les fonds de votre branche. Le dossier OPCO se monte en 5 à 10 jours ouvrés." },
 
       { type: 'h2', text: "Le piège des formations « 100 % CPF gratuit »" },
       { type: 'p', text: "Sur Google, on voit régulièrement des publicités du type « Formation IA 100 % CPF, 0 € reste à charge ». Trois choses à savoir :" },
@@ -4920,11 +4922,11 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Cas d'usage réels : quelle voie de financement choisir ?" },
       { type: 'h3', text: "Cas 1 — Salarié dans une PME, l'employeur veut former l'équipe" },
-      { type: 'p', text: "Voie : <strong>OPCO via plan de développement des compétences</strong>. L'employeur dépose la demande (Masteria prépare avec lui le programme et la convention), prise en charge jusqu'à 100 %, formation sur le temps de travail, programme construit sur les vrais cas d'usage de l'entreprise." },
+      { type: 'p', text: "Voie : <strong>OPCO via plan de développement des compétences</strong>. L'employeur dépose la demande (Masteria prépare avec lui le programme et la convention), prise en charge selon les règles de la branche, formation sur le temps de travail, programme construit sur les vrais cas d'usage de l'entreprise." },
       { type: 'h3', text: "Cas 2 — Indépendant ou freelance qui veut se former" },
       { type: 'p', text: "Voie : <strong>FAF (Fonds d'Assurance Formation)</strong> selon votre statut — FIF-PL pour professions libérales, AGEFICE pour commerçants, FAFCEA pour artisans. Prise en charge variable mais souvent intéressante. Le CPF reste une option si la certification ciblée est éligible." },
       { type: 'h3', text: "Cas 3 — Demandeur d'emploi en reconversion vers les métiers de l'IA" },
-      { type: 'p', text: "Voie : <strong>CPF + abondement France Travail</strong>. Une formation longue RNCP de 6 à 12 mois (développeur IA, data analyst, AI engineer) est typiquement prise en charge à 100 %, sans le forfait de 100 €." },
+      { type: 'p', text: "Voie : <strong>CPF + abondement France Travail</strong>. Une formation longue RNCP de 6 à 12 mois (développeur IA, data analyst, AI engineer) peut être financée par ces deux voies, sans le forfait de 100 €." },
       { type: 'h3', text: "Cas 4 — Cadre supérieur ou dirigeant qui veut une formation courte exécutive" },
       { type: 'p', text: "Voie : <strong>plan de l'entreprise</strong> (financement direct ou OPCO). Le CPF n'est pas adapté aux formations courtes exécutives ciblées sur le COMEX. La logique est plutôt budgétaire interne ou via OPCO selon la convention collective." },
 
@@ -4940,7 +4942,7 @@ const BLOG_ARTICLES_BASE = [
           ['Salarié, formation pour son poste actuel', 'OPCO via employeur', 'Pas de plafond CPF, sur temps de travail'],
           ['Salarié en reconversion vers métier IA', 'CPF + projet de transition pro', 'Adapté aux formations longues RNCP'],
           ['Indépendant / freelance', 'FAF (FIF-PL, AGEFICE…)', 'Spécifique aux indépendants'],
-          ['Demandeur d\'emploi', 'CPF + France Travail', 'Cumul possible, prise en charge intégrale'],
+          ['Demandeur d\'emploi', 'CPF + France Travail', 'Cumul possible des deux financements'],
           ['Dirigeant / cadre supérieur', 'Plan entreprise ou OPCO', 'Formations exécutives non standardisées'],
         ],
       },
@@ -4978,13 +4980,13 @@ const BLOG_ARTICLES_BASE = [
     tag: 'Outils',
     title: "Formation IA générative : texte, image, vidéo — ce que vos équipes doivent vraiment maîtriser",
     metaTitle: "Formation IA générative 2026 : texte, image | Masteria",
-    metaDesc: "Formation IA générative pour entreprises : ChatGPT, Midjourney, Sora, Veo, Adobe Firefly. Programme, durée, cas d'usage métier, financement OPCO.",
+    metaDesc: "Formation IA générative pour entreprises : ChatGPT, Midjourney, Veo, Runway, Adobe Firefly. Programme, durée, cas d'usage métier, financement OPCO.",
     date: '26 avril 2026',
     datePublished: '2026-04-26',
     dateModified: '2026-04-26',
     readTime: '12 min',
     excerpt: "L'IA générative ne se limite pas à ChatGPT. Texte, image, vidéo, son : voici ce que vos équipes doivent maîtriser et ce qu'on enseigne en 2 jours.",
-    intro: "L'expression « IA générative » couvre aujourd'hui quatre univers : la génération de texte (ChatGPT, Claude, Gemini, Mistral), la génération d'images (Midjourney, DALL·E, Adobe Firefly, Stable Diffusion), la génération de vidéos (Sora, Veo, Runway, Kling), et la génération de son et de voix (ElevenLabs, Suno, Udio). Une formation IA générative en 2026 ne peut plus se contenter de ChatGPT — mais elle ne peut pas non plus tout couvrir en surface.",
+    intro: "L'expression « IA générative » couvre aujourd'hui quatre univers : la génération de texte (ChatGPT, Claude, Gemini, Mistral), la génération d'images (Midjourney, ChatGPT Images, Adobe Firefly, Stable Diffusion), la génération de vidéos (Veo, Runway, Kling), et la génération de son et de voix (ElevenLabs, Suno, Udio). Une formation IA générative en 2026 ne peut plus se contenter de ChatGPT — mais elle ne peut pas non plus tout couvrir en surface.",
     blocks: [
       { type: 'p', text: "Cet article décrit ce qu'une formation IA générative en entreprise devrait couvrir en 2026, comment hiérarchiser entre les 4 univers, et quels cas d'usage concrets en tirer pour des équipes marketing, communication, RH ou commerciales." },
 
@@ -4994,8 +4996,8 @@ const BLOG_ARTICLES_BASE = [
         headers: ['Univers', 'Outils de référence', 'Maturité entreprise', 'Cas d\'usage typiques'],
         rows: [
           ['Texte', 'ChatGPT, Claude, Gemini, Mistral, Copilot', 'Très élevée', 'Rédaction, synthèse, traduction, analyse'],
-          ['Image', 'Midjourney, DALL·E, Adobe Firefly, Stable Diffusion', 'Élevée', 'Visuels marketing, illustrations, moodboards'],
-          ['Vidéo', 'Sora (OpenAI), Veo 3 (Google), Runway, Kling, Hailuo', 'Émergente', 'Pubs courtes, storyboards, contenus sociaux'],
+          ['Image', 'Midjourney, ChatGPT Images, Adobe Firefly, Stable Diffusion', 'Élevée', 'Visuels marketing, illustrations, moodboards'],
+          ['Vidéo', 'Veo 3.1 (Google), Runway, Kling, Hailuo', 'Émergente', 'Pubs courtes, storyboards, contenus sociaux'],
           ['Son / voix', 'ElevenLabs, Suno, Udio, Adobe Speech', 'Émergente', 'Voix off, podcasts, jingles, dubbing multilingue'],
         ],
       },
@@ -5007,8 +5009,8 @@ const BLOG_ARTICLES_BASE = [
         type: 'ul',
         items: [
           "<strong>Les cas d'usage sont de plus en plus multimodaux.</strong> Une équipe marketing qui rédige un post LinkedIn génère aussi le visuel — et de plus en plus, la courte vidéo qui l'accompagne",
-          "<strong>Les modèles eux-mêmes deviennent multimodaux.</strong> ChatGPT-5 et Gemini 3 génèrent texte, image et bientôt vidéo dans la même interface. Un utilisateur formé uniquement à la rédaction passe à côté d'une grande partie de la valeur",
-          "<strong>L'arbitrage outil dépend du cas d'usage.</strong> Pour un visuel marketing, Midjourney reste le plus créatif, Firefly est le plus sûr juridiquement, DALL·E est le plus intégré dans ChatGPT — chaque outil a sa zone d'excellence",
+          "<strong>Les modèles eux-mêmes deviennent multimodaux.</strong> ChatGPT et Gemini génèrent texte et image dans la même interface, et Gemini produit aussi de la vidéo dans Vids. Un utilisateur formé uniquement à la rédaction passe à côté d'une grande partie de la valeur",
+          "<strong>L'arbitrage outil dépend du cas d'usage.</strong> Pour un visuel marketing, Midjourney reste le plus créatif, Firefly est le plus sûr juridiquement, ChatGPT Images 2.5 est le plus intégré au travail dans ChatGPT — chaque outil a sa zone d'excellence",
         ],
       },
 
@@ -5018,20 +5020,20 @@ const BLOG_ARTICLES_BASE = [
         type: 'ul',
         items: [
           "<strong>Le prompting structuré</strong> (méthodes CRTF, RACE, RTF) — pour passer du « je tape une question » à des prompts qui donnent des résultats utilisables sans 5 itérations",
-          "<strong>Les Custom GPT et les Projets</strong> — pour transformer un prompt récurrent en assistant réutilisable par toute l'équipe",
+          "<strong>Les compétences et les Projets</strong> — pour transformer un prompt récurrent en assistant réutilisable par toute l'équipe",
           "<strong>L'analyse de documents</strong> — uploader un rapport, un appel d'offres, un contrat et obtenir une synthèse exploitable",
           "<strong>Les modes Recherche et Recherche approfondie</strong> — savoir quand activer la recherche web et comment vérifier les sources citées",
           "<strong>Les limites et pièges</strong> — hallucinations, biais, données confidentielles, droits d'auteur sur les sorties",
         ],
       },
 
-      { type: 'h2', text: "Image : Midjourney, DALL·E, Firefly, Stable Diffusion — qui pour quoi ?" },
+      { type: 'h2', text: "Image : Midjourney, ChatGPT Images, Firefly, Stable Diffusion, qui pour quoi ?" },
       {
         type: 'table',
         headers: ['Outil', 'Force principale', 'Limite', 'Recommandé pour'],
         rows: [
           ['Midjourney', 'Qualité esthétique, style éditorial', 'Pas d\'API officielle, contrôle limité', 'Communication, marketing, créatifs'],
-          ['DALL·E (dans ChatGPT)', 'Intégration directe dans le flux texte', 'Moins esthétique que Midjourney', 'Mockups rapides, présentations'],
+          ['ChatGPT Images 2.5 (dans ChatGPT)', 'Intégration directe dans le flux texte', 'Moins esthétique que Midjourney', 'Mockups rapides, présentations'],
           ['Adobe Firefly', 'Entraîné uniquement sur images licenciées', 'Moins polyvalent', 'Communication corporate, droits d\'auteur stricts'],
           ['Stable Diffusion (local)', 'Open source, contrôle total, sans envoi cloud', 'Configuration technique', 'Secteurs régulés, données très confidentielles'],
         ],
@@ -5043,7 +5045,7 @@ const BLOG_ARTICLES_BASE = [
       {
         type: 'ul',
         items: [
-          "<strong>Durée :</strong> 8 à 20 secondes maximum par clip généré (quelques minutes pour les modèles haut de gamme comme Sora 2 ou Veo 3)",
+          "<strong>Durée :</strong> 8 à 20 secondes maximum par clip généré (quelques minutes pour les modèles haut de gamme comme Veo 3.1)",
           "<strong>Cohérence :</strong> les visages, les vêtements et les décors changent légèrement d'un clip à l'autre — il faut accepter cette imprévisibilité",
           "<strong>Coût :</strong> 0,30 € à 1 € par seconde de vidéo générée, soit 30 à 60 € pour une vidéo d'une minute",
           "<strong>Édition :</strong> les outils d'édition vidéo IA (CapCut, Runway Editor) sont indispensables pour assembler les clips en un format diffusable",
@@ -5070,9 +5072,9 @@ const BLOG_ARTICLES_BASE = [
         type: 'table',
         headers: ['Demi-journée', 'Univers', 'Contenu'],
         rows: [
-          ['Jour 1 matin', 'Texte', 'Prompting structuré, Custom GPT, analyse de documents, recherche web'],
-          ['Jour 1 après-midi', 'Image', 'Midjourney, Firefly, DALL·E — comparaison sur cas d\'usage métier'],
-          ['Jour 2 matin', 'Vidéo', 'Sora, Veo, Runway, Kling — workflow complet pub courte'],
+          ['Jour 1 matin', 'Texte', 'Prompting structuré, compétences, analyse de documents, recherche web'],
+          ['Jour 1 après-midi', 'Image', 'Midjourney, Firefly, ChatGPT Images : comparaison sur cas d\'usage métier'],
+          ['Jour 2 matin', 'Vidéo', 'Veo, Runway, Kling : workflow complet pub courte'],
           ['Jour 2 après-midi', 'Son + intégration', 'ElevenLabs, Suno, montage final multimodal sur cas d\'usage du groupe'],
         ],
       },
@@ -5080,28 +5082,28 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Cas d'usage par métier" },
       { type: 'h3', text: "Équipe marketing / communication" },
-      { type: 'p', text: "Mix texte + image + vidéo. Un cas d'usage réel : générer un calendrier de 30 posts LinkedIn (texte) avec leurs visuels (Midjourney) et 5 vidéos courtes (Sora) en une demi-journée — au lieu d'une semaine de travail manuel." },
+      { type: 'p', text: "Mix texte + image + vidéo. Un cas d'usage réel : générer un calendrier de 30 posts LinkedIn (texte) avec leurs visuels (Midjourney) et 5 vidéos courtes (Veo) en une demi-journée — au lieu d'une semaine de travail manuel." },
       { type: 'h3', text: "Équipe formation interne" },
       { type: 'p', text: "Mix texte + son + image. Génération de modules e-learning : texte pédagogique structuré (ChatGPT), voix off multilingue (ElevenLabs), illustrations (Firefly), assemblage dans un outil comme Articulate ou Rise." },
       { type: 'h3', text: "Équipe RH" },
       { type: 'p', text: "Texte principalement. Rédaction d'offres d'emploi, scénarios d'entretien, kits d'onboarding, scripts de feedback. Image et vidéo restent secondaires." },
       { type: 'h3', text: "Équipe commerciale" },
-      { type: 'p', text: "Texte + image. Personnalisation à grande échelle de propositions commerciales (texte), création rapide de visuels pour démos clients (Firefly), pitch decks générés (PPT + DALL·E)." },
+      { type: 'p', text: "Texte + image. Personnalisation à grande échelle de propositions commerciales (texte), création rapide de visuels pour démos clients (Firefly), pitch decks générés (PPT + ChatGPT Images)." },
 
       { type: 'h2', text: "Le piège des formations « 100 % ChatGPT »" },
-      { type: 'p', text: "Si vous voyez sur Google une formation « IA générative » qui ne parle que de ChatGPT pendant 7 heures, c'est un signal de retard. ChatGPT est un excellent outil texte (et d'image via DALL·E), mais une formation IA générative en 2026 doit ouvrir au moins sur Midjourney/Firefly côté image, et idéalement sur Sora ou Veo côté vidéo." },
+      { type: 'p', text: "Si vous voyez sur Google une formation « IA générative » qui ne parle que de ChatGPT pendant 7 heures, c'est un signal de retard. ChatGPT est un excellent outil texte (et d'image avec ChatGPT Images 2.5), mais une formation IA générative en 2026 doit ouvrir au moins sur Midjourney/Firefly côté image, et idéalement sur Veo ou Runway côté vidéo." },
       { type: 'p', text: "À l'inverse, une formation qui essaie de tout couvrir en une journée est souvent superficielle. La règle réaliste : 2 jours minimum pour une vraie maîtrise multimodale, 1 jour si vous restez sur un seul univers (texte ou image)." },
     ],
     faq: [
-      { q: "Une formation IA générative est-elle finançable par l'OPCO ?", a: "Oui. Une formation IA générative de 1 à 2 jours est typiquement prise en charge à 100 % par les OPCO (ATLAS, AKTO, OPCO 2i, AFDAS) pour les salariés en poste. Le tarif est de 1 980 €/jour quel que soit le format (individuel ou intra) ; le niveau de prise en charge dépend de votre convention collective. Masteria monte le dossier OPCO en 5 à 10 jours ouvrés." },
-      { q: "ChatGPT, Midjourney, Sora : faut-il acheter des licences avant de former l'équipe ?", a: "Pas pour la formation elle-même — Masteria fournit des accès temporaires durant la session. Pour l'usage post-formation, oui : compter 20 à 30 €/utilisateur/mois pour ChatGPT Plus ou Team, 10 à 60 €/utilisateur/mois pour Midjourney, 20 à 200 € pour les outils vidéo selon le volume. La formation aide à arbitrer quels outils méritent la licence et lesquels peuvent rester en version gratuite." },
+      { q: "Une formation IA générative est-elle finançable par l'OPCO ?", a: "Oui. Une formation IA générative de 1 à 2 jours peut être prise en charge par les OPCO (ATLAS, AKTO, OPCO 2i, AFDAS) pour les salariés en poste. Le tarif est de 1 980 €/jour quel que soit le format (individuel ou intra) ; le niveau de prise en charge dépend de votre convention collective. Masteria monte le dossier OPCO en 5 à 10 jours ouvrés." },
+      { q: "ChatGPT, Midjourney, Veo : faut-il acheter des licences avant de former l'équipe ?", a: "Pas pour la formation elle-même — Masteria fournit des accès temporaires durant la session. Pour l'usage post-formation, oui : compter 20 à 30 €/utilisateur/mois pour ChatGPT Plus ou Business, 10 à 60 €/utilisateur/mois pour Midjourney, 20 à 200 € pour les outils vidéo selon le volume. La formation aide à arbitrer quels outils méritent la licence et lesquels peuvent rester en version gratuite." },
       { q: "L'IA générative pose-t-elle un problème de droits d'auteur sur les visuels créés ?", a: "Oui, et c'est un vrai sujet. Les images Midjourney sont théoriquement libres pour un usage commercial selon ses CGU, mais la question des données d'entraînement reste juridiquement floue. Pour une communication corporate sensible (rapport annuel, campagne presse), Adobe Firefly est plus sûr car entraîné uniquement sur des images licenciées. Toute formation sérieuse doit couvrir ce point." },
       { q: "Peut-on former des équipes non créatives à l'IA générative image et vidéo ?", a: "Oui, et c'est même recommandé. Un commercial qui sait générer en 5 minutes un visuel pour sa proposition client gagne énormément de temps face à un commercial qui doit attendre 3 jours qu'un graphiste lui en fasse un. La formation IA générative n'est pas réservée aux équipes créatives — elle redistribue la création visuelle dans toute l'organisation." },
       { q: "L'IA générative remplace-t-elle les graphistes et les vidéastes ?", a: "Non, elle déplace leur rôle. Les graphistes deviennent directeurs artistiques IA : ils ne font plus eux-mêmes les visuels simples (illustrations basiques, mockups, posts sociaux), mais ils dirigent, sélectionnent et finalisent ce que l'IA produit. Pour les contenus complexes (identité visuelle, films corporate, design système), l'humain reste irremplaçable." },
     ],
     cta: {
       title: "Former vos équipes à l'IA générative",
-      desc: "1 à 2 jours, en présentiel ou distanciel, programme adapté à votre métier (marketing, comm, RH, formation interne). Certifié Qualiopi, finançable OPCO jusqu'à 100 %.",
+      desc: "1 à 2 jours, en présentiel ou distanciel, programme adapté à votre métier (marketing, comm, RH, formation interne). Certifié Qualiopi, finançable par votre OPCO selon votre branche.",
       buttons: [
         { label: "Demander un programme", href: '/contact', primary: true },
         { label: "Voir les formations", href: '/formation-intelligence-artificielle' },
@@ -5110,7 +5112,7 @@ const BLOG_ARTICLES_BASE = [
     internalLinks: [
       { label: "ChatGPT, Copilot, Gemini, Claude ou Mistral : lequel choisir ?", href: '/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
-      { label: "Custom GPT pour entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Formation IA marketing", href: '/blog/formation-ia-marketing-equipes' },
       { label: "Microsoft Copilot guide pratique", href: '/blog/microsoft-copilot-entreprise-guide-pratique' },
     ],
@@ -5412,7 +5414,7 @@ const BLOG_ARTICLES_BASE = [
         items: [
           "FAQ structurée (FAQPage Schema.org) : les LLM puisent massivement dans les pages FAQ pour répondre aux questions de leurs utilisateurs. Une page sans FAQ est invisible à GEO.",
           "Tableaux comparatifs : les LLM extraient les colonnes structurées et les réutilisent dans leurs réponses synthétiques. Un tableau bien construit est cité plusieurs fois par mois.",
-          "Données chiffrées explicites : « +1 500 clients formés » et « 98 % de satisfaction » sont citables ; « beaucoup de clients satisfaits » ne l'est pas. Soyez précis.",
+          "Données chiffrées explicites : « plus de 100 programmes de formation au catalogue » est citable ; « beaucoup de clients satisfaits » ne l'est pas. Soyez précis.",
           "Réponses directes en début de paragraphe : les LLM aiment les phrases qui répondent à la question dans les 2 premières lignes. Évitez les introductions narratives.",
           "Auteur identifié et bio : les modèles privilégient les contenus signés par un expert nommé. Une bio enrichie sur la page renforce l'E-E-A-T.",
           "Données structurées Schema.org (Organization, FAQPage, Article, Course, Person) : c'est ce qui permet à un crawler LLM de comprendre la nature de la page.",
@@ -5457,7 +5459,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation IA marketing", href: '/blog/formation-ia-marketing-equipes' },
       { label: "Formation IA générative", href: '/blog/formation-ia-generative-chatgpt-midjourney' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
-      { label: "Custom GPT en entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
     ],
   },
 
@@ -5494,13 +5496,13 @@ const BLOG_ARTICLES_BASE = [
       { type: 'h3', text: "1. Recherche de mots-clés et clusters" },
       { type: 'p', text: "ChatGPT et Claude excellent pour l'idéation de mots-clés et la construction de clusters thématiques. Combinés à Ahrefs, Semrush ou Google Search Console (pour les volumes), ils divisent par 3 le temps de recherche. La règle : l'IA propose, l'humain valide avec les vrais volumes." },
       { type: 'h3', text: "2. Brief éditorial" },
-      { type: 'p', text: "C'est l'usage à plus haut ROI. Un bon prompt structuré (intention, persona, mots-clés primaires/secondaires, structure h2/h3, longueur, ton) produit un brief en 5 minutes au lieu de 45. Custom GPT dédié = encore plus rapide pour les équipes qui en font 50/mois." },
+      { type: 'p', text: "C'est l'usage à plus haut ROI. Un bon prompt structuré (intention, persona, mots-clés primaires/secondaires, structure h2/h3, longueur, ton) produit un brief en 5 minutes au lieu de 45. Une compétence dédiée va encore plus vite pour les équipes qui en font 50 par mois." },
       { type: 'h3', text: "3. Rédaction" },
       { type: 'p', text: "C'est là qu'il faut être prudent. La rédaction 100 % IA passe rarement la barre qualité Google + GEO. Le bon usage : l'IA rédige une première version structurée, le rédacteur humain l'enrichit (anecdotes, exemples, données internes, ton de marque, expertise réelle). Cette combinaison divise le temps de rédaction par 2 sans perte de qualité." },
       { type: 'h3', text: "4. Optimisation on-page" },
       { type: 'p', text: "L'IA gère très bien les checklists d'optimisation : meta-titre/description, balisage Hn, density mots-clés, alt-images, FAQ, données structurées Schema.org. Outils dédiés en 2026 : Frase, Surfer SEO, NeuronWriter, Outranking — tous intègrent leurs propres LLM." },
       { type: 'h3', text: "5. Maillage interne" },
-      { type: 'p', text: "Un Custom GPT entraîné sur votre arborescence de site peut suggérer des liens internes pertinents en lisant chaque nouvel article. Gain de temps énorme et amélioration mesurable du link graph interne. Voir notre article sur les Custom GPT." },
+      { type: 'p', text: "Une compétence ou un projet qui contient votre arborescence de site peut suggérer des liens internes pertinents en lisant chaque nouvel article. Gain de temps énorme et amélioration mesurable du link graph interne. Voir notre article sur les Custom GPTs et leur migration." },
 
       { type: 'h2', text: "Le programme de formation type" },
       { type: 'p', text: "Une équipe content de 3 à 8 personnes peut être formée efficacement en 2 jours sur ces nouvelles compétences :" },
@@ -5516,9 +5518,9 @@ const BLOG_ARTICLES_BASE = [
     ],
     faq: [
       { q: "Google pénalise-t-il vraiment le contenu IA en 2026 ?", a: "Google pénalise le contenu de basse qualité, qu'il soit généré par IA ou non. Un contenu IA bien relu et enrichi par un humain (E-E-A-T) n'est pas pénalisé. La règle : le critère est la valeur ajoutée pour l'utilisateur, pas la méthode de production." },
-      { q: "Quel est l'outil IA le plus efficace pour le SEO en 2026 ?", a: "Pour la recherche et le brief : Claude (longueur de contexte) ou ChatGPT. Pour la rédaction : ChatGPT avec Custom GPT entraîné sur votre style. Pour l'optimisation on-page : outils SEO IA dédiés (Frase, Surfer, NeuronWriter). Aucun outil ne fait tout, le combo est plus efficace qu'un outil unique." },
+      { q: "Quel est l'outil IA le plus efficace pour le SEO en 2026 ?", a: "Pour la recherche et le brief : Claude (longueur de contexte) ou ChatGPT. Pour la rédaction : ChatGPT avec une compétence nourrie de votre style. Pour l'optimisation on-page : outils SEO IA dédiés (Frase, Surfer, NeuronWriter). Aucun outil ne fait tout, le combo est plus efficace qu'un outil unique." },
       { q: "Combien de temps gagne une équipe content avec l'IA ?", a: "Sur les déploiements documentés en 2025-2026 : 30 à 50 % de temps gagné sur la production globale, sans perte de qualité, à condition d'avoir formé l'équipe. Sans formation, le gain est nul (les rédacteurs perdent autant de temps à corriger les hallucinations qu'ils en gagnent à générer)." },
-      { q: "Une formation SEO + IA est-elle finançable OPCO ?", a: "Oui, comme toute formation IA dispensée par un organisme certifié Qualiopi. La prise en charge OPCO peut couvrir 50 à 100 % du coût pédagogique selon votre branche et votre effectif." },
+      { q: "Une formation SEO + IA est-elle finançable OPCO ?", a: "Oui, comme toute formation IA dispensée par un organisme certifié Qualiopi. Le niveau de prise en charge dépend de votre branche, de votre effectif et des fonds de votre OPCO." },
       { q: "Faut-il abandonner le SEO classique pour le GEO ?", a: "Non, les deux se cumulent. Tant que Google génère 70-80 % du trafic web, le SEO reste prioritaire. Le GEO devient une couche supplémentaire à intégrer, pas un remplacement. Un site bien optimisé SEO est aussi mieux indexé par les LLM." },
     ],
     cta: {
@@ -5535,7 +5537,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Référencement AIO : définition et stratégie de contenu", href: '/blog/referencement-aio-strategie-contenu-ia' },
       { label: "Stratégie marketing IA : humains et IA, social media", href: '/blog/strategie-marketing-ia-humains-social-media' },
       { label: "Formation IA marketing", href: '/blog/formation-ia-marketing-equipes' },
-      { label: "Custom GPT pour entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
       { label: "Formation IA générative", href: '/blog/formation-ia-generative-chatgpt-midjourney' },
     ],
@@ -5546,13 +5548,13 @@ const BLOG_ARTICLES_BASE = [
     tag: 'Conformité',
     title: "AI Act pour les RH : conformité 2026 sur le recrutement, l'évaluation et la formation",
     metaTitle: "AI Act RH : conformité recrutement et évaluation (2026)",
-    metaDesc: "L'AI Act classe les outils IA RH en haut risque. Recrutement, évaluation, formation : ce qui change en 2026 pour les DRH et juristes RH.",
+    metaDesc: "L'AI Act classe les outils IA RH en haut risque. Recrutement, évaluation, formation : ce qui s'applique déjà et ce qui arrive fin 2027.",
     date: '26 avril 2026',
     datePublished: '2026-04-26',
     dateModified: '2026-04-26',
     readTime: '12 min',
-    excerpt: "L'AI Act classe le recrutement et l'évaluation IA en « haut risque ». Les obligations 2026 que tout DRH doit connaître pour rester en conformité.",
-    intro: "L'AI Act européen est pleinement applicable en 2026. Pour les RH, c'est sans doute la fonction la plus impactée de l'entreprise : le recrutement assisté par IA, le scoring des candidats, l'évaluation des performances et même certains outils de formation sont classés en « haut risque » par le règlement. Concrètement, ça signifie des obligations précises de transparence, de documentation et de supervision humaine. Cet article fait le tour des règles applicables et de ce que les DRH doivent mettre en place.",
+    excerpt: "L'AI Act classe le recrutement et l'évaluation IA en « haut risque ». Ce qui s'applique déjà et ce qui arrive le 2 décembre 2027, pour que tout DRH prépare sa conformité.",
+    intro: "L'AI Act européen s'applique par paliers, et les obligations du haut risque, celles qui visent les outils RH, sont reportées au 2 décembre 2027 par l'Omnibus (règlement (UE) 2026/1744). Pour les RH, c'est sans doute la fonction la plus impactée de l'entreprise : le recrutement assisté par IA, le scoring des candidats, l'évaluation des performances et même certains outils de formation sont classés en « haut risque » par le règlement. Concrètement, ça signifie des obligations précises de transparence, de documentation et de supervision humaine. Cet article fait le tour des règles applicables et de ce que les DRH doivent mettre en place.",
     blocks: [
       { type: 'p', text: "Avant l'AI Act, les outils IA RH évoluaient dans une zone grise : RGPD oui, mais peu de règles spécifiques. Avec l'AI Act, les obligations deviennent explicites et les sanctions très lourdes (jusqu'à 7 % du CA mondial pour les manquements les plus graves)." },
 
@@ -5570,9 +5572,9 @@ const BLOG_ARTICLES_BASE = [
           ['Chatbot RH simple FAQ', 'Risque minimal', 'Bonnes pratiques recommandées'],
         ],
       },
-      { type: 'p', text: "Les outils RH les plus utilisés en 2026 — Hiretual, HireVue, LinkedIn Recruiter avec scoring IA, Workday — sont tous concernés par les obligations « haut risque » dès lors qu'ils participent à une décision de sélection ou d'évaluation." },
+      { type: 'p', text: "Les outils RH les plus utilisés en 2026 — Hiretual, HireVue, LinkedIn Recruiter avec scoring IA, Workday — sont tous concernés par les obligations « haut risque », applicables le 2 décembre 2027, dès lors qu'ils participent à une décision de sélection ou d'évaluation." },
 
-      { type: 'h2', text: "Les 5 obligations clés pour les DRH en 2026" },
+      { type: 'h2', text: "Les 5 obligations clés à préparer pour décembre 2027" },
       { type: 'h3', text: "1. Documentation et registre IA" },
       { type: 'p', text: "Pour chaque outil IA utilisé en RH, l'entreprise doit documenter : la finalité, les données d'entrée, les critères de décision, les risques identifiés, les mesures de mitigation. Un « registre des systèmes IA » (équivalent du registre RGPD) est devenu un standard." },
       { type: 'h3', text: "2. Transparence vis-à-vis des candidats et salariés" },
@@ -5606,7 +5608,7 @@ const BLOG_ARTICLES_BASE = [
     faq: [
       { q: "Qui est responsable de la conformité AI Act en entreprise ?", a: "Selon la taille de l'entreprise, c'est le DRH (en lien avec le DPO et le juridique), un référent IA dédié, ou un comité IA pluridisciplinaire. La responsabilité ultime reste celle de la direction générale, qui peut être mise en cause personnellement en cas de manquement grave." },
       { q: "L'AI Act s'applique-t-il aux outils IA utilisés dans les formations RH ?", a: "Oui mais avec un niveau de risque limité, sauf si l'outil prend des décisions sur l'apprenant (notation automatique influençant le poste, recommandation d'évolution). Les formations IA simples (apprentissage avec ChatGPT) sont en risque minimal." },
-      { q: "Les LLM grand public (ChatGPT, Claude) peuvent-ils être utilisés en RH ?", a: "Oui, à condition qu'aucune donnée personnelle de candidat ou de salarié ne soit transmise sans encadrement. La règle pratique : utiliser des versions Enterprise (ChatGPT Enterprise, Claude for Work) qui ne réutilisent pas vos données pour l'entraînement, et limiter strictement les données entrées." },
+      { q: "Les LLM grand public (ChatGPT, Claude) peuvent-ils être utilisés en RH ?", a: "Oui, à condition qu'aucune donnée personnelle de candidat ou de salarié ne soit transmise sans encadrement. La règle pratique : utiliser des versions Enterprise (ChatGPT Enterprise, Claude Enterprise) qui ne réutilisent pas vos données pour l'entraînement, et limiter strictement les données entrées." },
       { q: "Un outil RH américain est-il conforme à l'AI Act ?", a: "L'AI Act s'applique à tous les outils utilisés en Europe, qu'ils soient européens ou non. Un outil RH américain doit donc respecter l'AI Act pour être commercialisé en Europe. Vérifier que l'éditeur fournit la documentation de conformité (CE marking pour les systèmes haut risque)." },
       { q: "Combien coûte la mise en conformité AI Act RH d'une PME ?", a: "Pour une PME de 50 à 500 salariés, comptez 8 000 à 25 000 € pour un audit + mise en conformité complète sur 6 mois (interne + externe). Pour une ETI ou grande entreprise, c'est plutôt 30 000 à 100 000 €. Une partie est finançable via les budgets formation (OPCO)." },
       { q: "Quelle formation pour les équipes RH ?", a: "Une formation AI Act + RH d'une journée pour les DRH et juristes, complétée par une demi-journée pour les recruteurs et gestionnaires opérationnels. Masteria propose ce programme intégré, certifié Qualiopi, finançable OPCO." },
@@ -5681,12 +5683,12 @@ const BLOG_ARTICLES_BASE = [
 
       { type: 'h2', text: "Coût et financement" },
       { type: 'p', text: "En intra-entreprise, un Sprint IA coûte 1 980 € HT par session jusqu'à 12 participants (3h). En accompagnement individuel sur mesure, le tarif est de 1 980 € HT par session. Pour les déploiements de plusieurs sessions (acculturation grande échelle), des packages dégressifs sont disponibles à partir de 5 sessions." },
-      { type: 'p', text: "Le format 3h est éligible OPCO : le financement couvre l'intégralité du coût pédagogique pour les entreprises adhérentes (selon branche et effectif). Mêmes tarifs que les formations longues : Masteria applique un prix unique par participant inter ou par session intra, indépendamment de la durée." },
+      { type: 'p', text: "Le format 3h est éligible OPCO : le financement couvre le coût pédagogique selon les règles de la branche, l'effectif et les fonds de l'OPCO. Mêmes tarifs que les formations longues : Masteria applique un prix unique par participant inter ou par session intra, indépendamment de la durée." },
     ],
     faq: [
       { q: "Un Sprint IA de 3h suffit-il pour rendre une équipe autonome ?", a: "Pour un objectif ciblé (par exemple écrire de meilleurs prompts ou utiliser Copilot Excel), oui, le format 3h est suffisant à condition d'être pratique et d'avoir des cas concrets. Pour une transformation profonde des usages, il faut enchaîner avec une formation 1 ou 2 jours classique." },
       { q: "Peut-on combiner plusieurs Sprints IA ?", a: "Oui, c'est même fréquent. Beaucoup de clients déploient une séquence : Sensibilisation → Prompts → Copilot Excel sur 4 à 6 semaines, soit 9 heures cumulées en trois sessions étalées. C'est plus efficace qu'un format 1 jour bloqué." },
-      { q: "Le Sprint IA est-il éligible OPCO ?", a: "Oui, comme toute formation dispensée par Masteria (organisme certifié Qualiopi). La prise en charge OPCO peut couvrir 50 à 100 % du coût selon votre branche. Le format court n'a aucune incidence négative sur le financement." },
+      { q: "Le Sprint IA est-il éligible OPCO ?", a: "Oui, comme toute formation dispensée par Masteria (organisme certifié Qualiopi). Le niveau de prise en charge dépend des règles et des fonds de votre branche. Le format court n'a aucune incidence négative sur le financement." },
       { q: "Combien de participants maximum sur un Sprint IA ?", a: "12 à 15 pour conserver l'interaction et l'animation pratique. Pour des déploiements grand public (200+), nous proposons un format webinar Sprint IA Sensibilisation à 30-50 participants, avec un Q&A structuré." },
       { q: "Peut-on adapter un Sprint IA à un secteur ou métier précis ?", a: "Oui, c'est même la valeur ajoutée du format intra-entreprise. Un Sprint IA Prompts pour une équipe juridique n'a pas les mêmes cas d'usage qu'un Sprint IA Prompts pour une équipe commerciale. Nous adaptons les exemples et les ateliers à votre secteur." },
     ],
@@ -5710,7 +5712,7 @@ const BLOG_ARTICLES_BASE = [
     slug: 'formation-ia-assistante-direction-office-manager',
     externalPath: '/formation-ia-assistante',
     tag: 'Métiers',
-    title: "Formation IA pour assistante de direction et office manager : 1 jour pour gagner 6h par semaine",
+    title: "Formation IA pour assistante de direction et office manager : une journée sur vos tâches récurrentes",
     metaTitle: "Formation IA assistante de direction 2026 | Masteria",
     metaDesc: "Formation IA dédiée assistantes de direction et office managers. 1 jour, finançable OPCO, certifié Qualiopi. ChatGPT, Copilot, automatisations.",
     date: '26 avril 2026',
@@ -6026,7 +6028,7 @@ const BLOG_ARTICLES_BASE = [
     datePublished: '2026-04-26',
     dateModified: '2026-04-26',
     readTime: '11 min',
-    excerpt: "Selon Gartner, 70 % des projets IA n'atteignent pas leur ROI prévu. Cette formation de 2 jours donne la méthode pour faire partie des 30 % qui réussissent.",
+    excerpt: "Deux jours pour cadrer un projet IA comme un projet tout court : objectif mesurable, données disponibles, pilote limité, décision de passage à l'échelle prise sur des chiffres relevés.",
     intro: "Lancer un projet IA, c'est jongler avec le métier, la data, l'IT, la conformité, le RH et le financement. Aucun chef de projet n'a appris ça dans son cursus. Cette formation 2 jours donne le cadre méthodologique complet : du cas d'usage au déploiement à grande échelle, en passant par la conduite du changement et la conformité AI Act.",
     blocks: [
       { type: 'callout', italic: false, title: 'Voir la fiche formation', text: "Programme détaillé, tarif et inscription : <a href='/formation-ia-gestion-de-projet' style='color:#2563EB;font-weight:700;text-decoration:underline'>Formation Piloter un projet IA en entreprise →</a>" },
@@ -6159,7 +6161,7 @@ const BLOG_ARTICLES_BASE = [
     ],
     faq: [
       { q: "Faut-il déjà connaître l'IA ?", a: "Non. La formation est dimensionnée pour un DRH non-utilisateur d'IA. Les bases sont posées le matin du Jour 1." },
-      { q: "Comment financer un plan IA ?", a: "OPCO en majorité (jusqu'à 100 % pour les TPE/PME), CPF (sur les formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
+      { q: "Comment financer un plan IA ?", a: "OPCO en majorité (selon les règles et les fonds de votre branche), CPF (sur les formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
       { q: "Quelle est l'obligation AI Act pour les RH ?", a: "L'article 4 de l'AI Act impose que toute personne utilisant un système d'IA dans son travail dispose d'un niveau de littératie IA suffisant. Cela ne définit pas une formation obligatoire stricto sensu, mais ouvre une responsabilité de l'employeur. La formation détaille les implications pratiques." },
       { q: "Comment mesurer l'impact ?", a: "3 niveaux de mesure : opérationnel (gain de temps, qualité), business (ROI, satisfaction client), stratégique (capacité IA de l'entreprise). Le Jour 2 donne des grilles concrètes par niveau." },
       { q: "Combien ça coûte ?", a: "3 960 € / groupe intra-entreprise pour 2 jours (jusqu'à 12 DRH/RRH, soit 1 980 € / jour). 3 960 € en accompagnement individuel pour 2 jours (1 980 € / jour). Finançable OPCO." },
@@ -6186,7 +6188,7 @@ const BLOG_ARTICLES_BASE = [
     tag: 'Guide pratique',
     title: "Apprendre l'automatisation IA : par où commencer en 2026",
     metaTitle: "Apprendre l’automatisation IA : par où commencer | Masteria",
-    metaDesc: "Parcours progressif pour apprendre l’automatisation IA sans coder : prompts, GPTs, Make, Zapier, n8n, agents. Durées réalistes et erreurs à éviter.",
+    metaDesc: "Parcours progressif pour apprendre l’automatisation IA sans coder : prompts, compétences, Make, Zapier, n8n, agents. Durées réalistes et erreurs à éviter.",
     date: '12 juin 2026',
     datePublished: '2026-06-12',
     dateModified: '2026-07-30',
@@ -6194,7 +6196,7 @@ const BLOG_ARTICLES_BASE = [
     excerpt: "Un parcours en 4 paliers pour apprendre l'automatisation IA sans bagage technique : prompts, automatisations natives, plateformes no-code, agents supervisés. Avec des durées honnêtes par palier et les 5 erreurs de débutant à éviter.",
     intro: "Trier des e-mails, produire des comptes rendus, relancer des clients, alimenter un reporting : une grande partie de ces tâches peut aujourd'hui s'automatiser avec l'IA, sans écrire une ligne de code. Encore faut-il apprendre dans le bon ordre. Ce guide propose un parcours en quatre paliers, avec des durées réalistes, les erreurs classiques de débutant et les ressources pour pratiquer.",
     blocks: [
-      { type: 'p', text: "<strong>Par où commencer ? Maîtrisez d'abord un assistant IA généraliste comme ChatGPT ou Claude, et apprenez à écrire des prompts fiables. Automatisez ensuite dans l'outil lui-même grâce aux GPTs, aux Projects et aux tâches planifiées. Passez alors à une plateforme no-code comme Make, Zapier ou n8n. Les agents IA supervisés viennent en dernier, une fois ces bases acquises.</strong>" },
+      { type: 'p', text: "<strong>Par où commencer ? Maîtrisez d'abord un assistant IA généraliste comme ChatGPT ou Claude, et apprenez à écrire des prompts fiables. Automatisez ensuite dans l'outil lui-même grâce aux compétences, aux projets et aux tâches planifiées. Passez alors à une plateforme no-code comme Make, Zapier ou n8n. Les agents IA supervisés viennent en dernier, une fois ces bases acquises.</strong>" },
       { type: 'p', text: "Ce guide détaille ce parcours palier par palier : ce que vous devez savoir faire à chaque étape, le temps de pratique réaliste avant de passer au palier suivant, les erreurs qui font perdre des semaines et les ressources pour progresser. Il s'adresse aux profils non techniques comme aux profils déjà à l'aise avec les outils numériques." },
 
       { type: 'h2', text: "À qui s'adresse l'apprentissage de l'automatisation IA" },
@@ -6215,7 +6217,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "L'erreur la plus répandue consiste à attaquer directement une plateforme comme Make ou n8n sans maîtriser au préalable les assistants IA. On se retrouve alors à construire des scénarios dont le cœur, l'étape IA, produit des résultats médiocres. Le parcours qui fonctionne suit une progression logique :" },
       { type: 'ol', items: [
         "Maîtriser un assistant IA et le prompt : obtenir des résultats fiables et reproductibles avec ChatGPT, Claude ou Gemini sur ses tâches quotidiennes",
-        "Exploiter les automatisations natives des assistants : créer des GPTs personnalisés, organiser ses Projects, programmer des tâches planifiées",
+        "Exploiter les automatisations natives des assistants : créer des compétences, organiser ses projets, programmer des tâches planifiées",
         "Construire des scénarios sur une plateforme no-code : relier ses applications entre elles avec Make, Zapier, n8n ou Power Automate",
         "Déployer des agents IA supervisés : confier des séquences complètes à un agent, avec des points de validation humaine",
       ] },
@@ -6230,7 +6232,7 @@ const BLOG_ARTICLES_BASE = [
       { type: 'p', text: "Avant d'ajouter une plateforme externe, exploitez ce que votre assistant IA propose déjà. Cette étape est très largement sous-estimée : elle couvre une part importante des besoins réels d'un professionnel, sans abonnement supplémentaire ni nouvel outil à apprendre." },
       { type: 'p', text: "Trois briques sont à maîtriser :" },
       { type: 'ul', items: [
-        "<strong>Les assistants personnalisés</strong> (GPTs chez OpenAI, Gems chez Google) : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis vous réutilisez l'assistant à volonté. Un GPT « rédacteur de comptes rendus » bien configuré remplace un prompt de vingt lignes recopié à chaque réunion.",
+        "<strong>Les assistants personnalisés</strong> (compétences chez OpenAI comme chez Google, qui remplacent les GPTs et les Gems) : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis vous réutilisez l'assistant à volonté. Une compétence « rédacteur de comptes rendus » bien configurée remplace un prompt de vingt lignes recopié à chaque réunion.",
         "<strong>Les espaces de travail persistants</strong> (Projects chez ChatGPT comme chez Claude) : ils conservent vos fichiers et vos instructions par dossier client ou par mission, ce qui évite de tout réexpliquer à chaque conversation.",
         "<strong>Les tâches planifiées</strong> : ChatGPT permet de programmer des actions récurrentes, comme une synthèse d'actualité chaque matin ou un point structuré chaque lundi. C'est votre première vraie automatisation : elle s'exécute sans vous.",
       ] },
@@ -6608,7 +6610,7 @@ const BLOG_ARTICLES_BASE = [
       { q: "Faut-il savoir coder pour construire des agents IA ?", a: "Non, et c'est tout l'intérêt des outils no-code en 2026. Make, n8n et Zapier permettent de construire des agents IA fonctionnels en glissant-déposant des étapes visuelles. Du code (Python, JavaScript) reste utile pour les cas avancés, mais 80 % des cas d'usage entreprise se construisent sans une ligne de code." },
       { q: "Combien coûtent les outils d'automatisation no-code ?", a: "n8n Cloud : à partir de 24 €/mois (auto-hébergé : gratuit). Make : à partir de 9 €/mois. Zapier : à partir de 20 €/mois mais grimpe vite (les forfaits Pro avec multi-utilisateurs vont de 50 à 200 €/mois). Pour un usage entreprise sérieux, compter un budget de 50 à 150 €/mois cumulés sur les outils + les API LLM (ChatGPT, Claude) selon le volume." },
       { q: "Un agent IA peut-il vraiment remplacer un poste humain ?", a: "Non, pas en 2026. Un agent IA remplace des <strong>tâches</strong>, pas des postes. Une assistante de direction garde son poste mais voit ses tâches répétitives (organisation d'agendas, prise de RDV, comptes-rendus, mise à jour de bases) automatisées à 60-70 %. Le temps libéré sert à des missions à plus forte valeur (relations clients, projets transverses). C'est un effet de productivité, pas de remplacement." },
-      { q: "Quelle est la différence entre OpenAI Agents Builder et n8n / Make ?", a: "OpenAI Agents Builder est natif à l'écosystème OpenAI (ChatGPT, GPT-5, GPT-5 Pro). Il est plus puissant pour les agents purs (raisonnement, web browsing, code Python intégré), mais moins flexible pour orchestrer 200 outils SaaS différents. n8n et Make sont des plateformes d'automatisation universelles avec 1 500+ intégrations. La règle pratique : OpenAI Agents pour des agents IA pure (raisonnement complexe), n8n/Make pour relier vos outils SaaS existants." },
+      { q: "Quelle est la différence entre les agents ChatGPT et n8n / Make ?", a: "Les agents d'espace de travail de ChatGPT sont natifs à l'écosystème OpenAI : créés en langage naturel, ils raisonnent, cherchent sur le web et exécutent du code, et chaque exécution consomme des crédits. Ils sont moins flexibles pour orchestrer 200 outils SaaS différents. n8n et Make sont des plateformes d'automatisation universelles avec 1 500+ intégrations. La règle pratique : un agent ChatGPT pour un raisonnement complexe, n8n ou Make pour relier vos outils SaaS existants." },
       { q: "Un agent IA peut-il agir directement sur des emails clients sans validation humaine ?", a: "Techniquement oui, mais c'est rarement une bonne idée en 2026. La règle pratique : pour les emails sortants à des clients ou des candidats, l'agent IA <strong>prépare</strong> la réponse, un humain <strong>valide</strong> avant envoi. Pour les actions internes (classement, alertes, mises à jour CRM), l'agent peut agir seul. La distinction critique = sortie externe ou action interne." },
     ],
     cta: {
@@ -6621,7 +6623,7 @@ const BLOG_ARTICLES_BASE = [
     },
     internalLinks: [
       { label: "Automatiser ses tâches répétitives avec ChatGPT", href: '/blog/automatiser-taches-repetitives-chatgpt' },
-      { label: "Custom GPT pour entreprise", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
+      { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
       { label: "Prompt engineering en entreprise", href: '/blog/prompt-engineering-guide-entreprise' },
       { label: "Sécurité et RGPD de l'IA en entreprise", href: '/blog/securite-ia-entreprise-rgpd' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },

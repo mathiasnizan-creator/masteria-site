@@ -162,7 +162,7 @@ const BASE_SPOKES = [
       },
     ],
     faq: [
-      { q: 'Faut-il avoir Microsoft 365 Copilot pour suivre cette formation ?', a: 'Oui, Copilot nécessite un abonnement Microsoft 365 Copilot (environ 30€/mois/utilisateur). Alternativement, si votre entreprise ne l\'a pas encore, nous adaptons la formation avec des équivalents accessibles (ChatGPT pour l\'analyse, etc.).' },
+      { q: 'Faut-il avoir la licence Microsoft Copilot pour suivre cette formation ?', a: 'Oui, Copilot dans Excel demande la licence Microsoft Copilot (anciennement Microsoft 365 Copilot), à 26 € HT par utilisateur et par mois en paiement annuel au 7 octobre 2026. Alternativement, si votre entreprise ne l\'a pas encore, nous adaptons la formation avec des équivalents accessibles (ChatGPT pour l\'analyse, etc.).' },
       { q: 'La formation couvre-t-elle des logiciels comptables spécifiques (Sage, Cegid) ?', a: 'La formation se concentre sur les outils Microsoft 365. Pour les intégrations avec des ERP spécifiques, nous proposons un format intra-entreprise personnalisé qui peut inclure vos outils métier.' },
       { q: 'Nos données financières sont-elles sécurisées avec Copilot ?', a: 'Microsoft Copilot Enterprise garantit que vos données ne servent pas à entraîner les modèles IA et restent dans votre tenant Microsoft. Nous couvrons ces aspects de sécurité et conformité en formation.' },
     ],
@@ -761,155 +761,11 @@ const BASE_SPOKES = [
     faq: [
       { q: 'Gemini est-il meilleur que ChatGPT pour le marketing ?', a: 'Pas forcément "meilleur", mais plus intégré si vous travaillez dans Google Workspace. L\'avantage de Gemini est son accès natif à vos fichiers Google et au web en temps réel. ChatGPT reste plus polyvalent en standalone.' },
     ],
-    relatedSpokes: ['formation-chatgpt-marketing', 'formation-copilot-marketing', 'formation-gemini-rh'],
+    relatedSpokes: ['formation-chatgpt-marketing', 'formation-copilot-marketing'],
   },
 
-  // ── Gemini × RH ──────────────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-rh',
-    tool: 'Google Gemini',
-    toolSlug: 'gemini',
-    toolColor: '#ea4335',
-    toolColorLight: '#fee2e2',
-    metier: 'Ressources Humaines',
-    metierSlug: 'rh',
-    hubSlug: 'formation-gemini-entreprise',
-    priority: false,
-    metaTitle: 'Formation Gemini RH | Masteria',
-    metaDesc: "Formation Gemini pour les équipes RH. Google Docs, Gmail, Meet, Sheets. Recrutement et onboarding assistés. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Google Gemini pour les équipes RH',
-    intro: "Pour les équipes RH qui utilisent Google Workspace, Gemini transforme le quotidien : rédaction d'offres dans Docs, communication candidats dans Gmail, synthèse d'entretiens Meet, analyse dans Sheets. L'IA directement là où vous travaillez.",
-    useCases: [
-      { icon: '📝', title: "Offres dans Google Docs", desc: "Rédigez des offres attractives directement dans Google Docs avec Gemini." },
-      { icon: '📧', title: "Emails candidats dans Gmail", desc: "Communications de recrutement personnalisées dans Gmail." },
-      { icon: '👥', title: "Synthèse d'entretiens Meet", desc: "Résumés automatiques de vos entretiens Google Meet." },
-      { icon: '📊', title: "Reporting RH dans Sheets", desc: "Tableaux de bord et analyses collaborateurs dans Google Sheets." },
-      { icon: '📋', title: "Documents RH dans Docs", desc: "Fiches de poste, livrets d'accueil, procédures." },
-      { icon: '🤝', title: "Onboarding dans Google", desc: "Parcours d'intégration dans Sites et Classroom Google." },
-    ],
-    program: [
-      {
-        title: 'Matin, Recrutement dans Google Workspace',
-        items: [
-          'Gemini dans Google Docs : offres d\'emploi et fiches de poste',
-          'Gemini dans Gmail : emails de sourcing et communication candidats',
-          'Gemini dans Meet : synthèse d\'entretiens automatique',
-          'Créer des grilles d\'évaluation dans Sheets',
-        ],
-      },
-      {
-        title: 'Après-midi, RH opérationnel et onboarding',
-        items: [
-          'Gemini dans Docs : contrats, procédures et livrets d\'accueil',
-          'Gemini dans Sheets : reporting RH et analyse de données',
-          'Communication RH interne : annonces et notes de direction',
-          'Intégrer Gemini dans votre workflow RH Google',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'Gemini a-t-il accès à nos données Google Workspace existantes ?', a: 'Oui, Gemini for Google Workspace peut accéder à vos fichiers Drive, emails Gmail et historiques Meet pour les synthétiser et les utiliser comme contexte. C\'est un avantage majeur pour les équipes RH avec des dossiers dans Drive.' },
-    ],
-    relatedSpokes: ['formation-chatgpt-ressources-humaines', 'formation-copilot-rh', 'formation-gemini-marketing'],
-  },
 
-  // ── Gemini × Finance ─────────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-finance',
-    tool: 'Google Gemini',
-    toolSlug: 'gemini',
-    toolColor: '#ea4335',
-    toolColorLight: '#fee2e2',
-    metier: 'Finance',
-    metierSlug: 'finance',
-    hubSlug: 'formation-gemini-entreprise',
-    priority: false,
-    metaTitle: 'Formation Gemini Finance | Masteria',
-    metaDesc: "Formation Gemini pour les équipes finance. Analyse dans Google Sheets, synthèse Docs, reporting. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Google Gemini pour les équipes Finance',
-    intro: "Pour les équipes finance travaillant dans Google Workspace, Gemini apporte l'IA directement dans Sheets, Docs et Gmail. Analysez vos données financières, rédigez vos rapports et communiquez avec les dirigeants, sans changer vos outils.",
-    useCases: [
-      { icon: '📊', title: 'Analyse dans Sheets', desc: 'Analysez vos données financières en posant des questions à Gemini.' },
-      { icon: '📄', title: 'Rapports dans Docs', desc: 'Rédigez vos rapports et commentaires d\'analyse dans Google Docs.' },
-      { icon: '📧', title: 'Communication dans Gmail', desc: 'Emails professionnels vers les dirigeants, banques et partenaires.' },
-      { icon: '📋', title: 'Synthèses de documents', desc: 'Résumez contrats et rapports stockés dans votre Drive.' },
-      { icon: '🎨', title: 'Présentations Slides', desc: 'Slides de reporting financier à partir de vos données Sheets.' },
-      { icon: '🔍', title: 'Veille en temps réel', desc: 'Gemini accède au web pour enrichir vos analyses de données marché.' },
-    ],
-    program: [
-      {
-        title: 'Matin, Analyse et données dans Google Sheets',
-        items: [
-          'Gemini dans Sheets : analyser des données en langage naturel',
-          'Générer des formules et visualisations automatiquement',
-          'Identifier des tendances et anomalies dans vos données financières',
-          'Créer des tableaux de bord et reportings dynamiques',
-        ],
-      },
-      {
-        title: 'Après-midi, Reporting et communication financière',
-        items: [
-          'Gemini dans Docs : rédiger rapports et notes de synthèse financière',
-          'Synthétiser des documents longs depuis Drive',
-          'Gemini dans Gmail : communication professionnelle finance',
-          'Gemini dans Slides : présenter vos résultats à la direction',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'Gemini peut-il accéder à nos fichiers financiers dans Drive ?', a: 'Oui, Gemini for Workspace peut lire et analyser les fichiers de votre Drive (Sheets, Docs, PDF). C\'est particulièrement utile pour croiser des données financières entre plusieurs fichiers.' },
-    ],
-    relatedSpokes: ['formation-copilot-finance', 'formation-chatgpt-finance', 'formation-gemini-commercial'],
-  },
 
-  // ── Gemini × Commercial ──────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-commercial',
-    tool: 'Google Gemini',
-    toolSlug: 'gemini',
-    toolColor: '#ea4335',
-    toolColorLight: '#fee2e2',
-    metier: 'Commercial',
-    metierSlug: 'commercial',
-    hubSlug: 'formation-gemini-entreprise',
-    priority: false,
-    metaTitle: 'Formation Gemini Commerciaux | Masteria',
-    metaDesc: "Formation Gemini pour les équipes commerciales. Propositions dans Docs, présentations Slides, emails Gmail. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Google Gemini pour les équipes Commerciales',
-    intro: "Les commerciaux sur Google Workspace peuvent utiliser Gemini pour rédiger leurs propositions dans Docs, créer leurs présentations dans Slides et gérer leur prospection dans Gmail, avec l'avantage de Gemini : un accès temps réel au web pour enrichir leurs recherches prospects.",
-    useCases: [
-      { icon: '📋', title: 'Propositions dans Docs', desc: 'Propositions commerciales et devis rédigés dans Google Docs.' },
-      { icon: '🎨', title: 'Décks dans Slides', desc: 'Présentations client percutantes générées dans Google Slides.' },
-      { icon: '📧', title: 'Prospection Gmail', desc: 'Emails de prospection personnalisés directement dans Gmail.' },
-      { icon: '🔍', title: 'Recherche prospects', desc: 'Gemini accède au web pour vous fournir des infos sur vos prospects.' },
-      { icon: '👥', title: 'CR de réunion Meet', desc: 'Comptes-rendus de RDV client depuis Google Meet.' },
-      { icon: '📊', title: 'Pipeline dans Sheets', desc: 'Analysez et pilotez votre pipeline commercial dans Sheets.' },
-    ],
-    program: [
-      {
-        title: 'Matin, Prospection et propositions',
-        items: [
-          'Gemini dans Gmail : emails de prospection et relances',
-          'Gemini dans Docs : propositions commerciales et devis',
-          'Gemini dans Slides : présentations client',
-          'Recherche prospects avec Gemini et son accès web',
-        ],
-      },
-      {
-        title: 'Après-midi, Suivi et pilotage',
-        items: [
-          'Gemini dans Meet : CR de réunion client automatiques',
-          'Gemini dans Sheets : analyse pipeline et indicateurs commerciaux',
-          'Intégrer Gemini dans votre process commercial Google',
-          'Kit de prompts commerciaux pour Google Workspace',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'Gemini peut-il se connecter à notre CRM Google ?', a: 'Gemini for Workspace s\'intègre avec des CRM comme HubSpot via des connecteurs. Pour Salesforce, des intégrations spécifiques existent. Nous abordons les possibilités d\'intégration selon votre stack commercial.' },
-    ],
-    relatedSpokes: ['formation-chatgpt-commercial', 'formation-copilot-commercial', 'formation-gemini-marketing'],
-  },
 
   // ── Gemini × Communication ───────────────────────────────────────────────
   {
@@ -1009,54 +865,6 @@ const BASE_SPOKES = [
     relatedSpokes: ['formation-chatgpt-communication', 'formation-gemini-communication', 'formation-copilot-marketing'],
   },
 
-  // ── Gemini × Management ──────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-management',
-    tool: 'Google Gemini',
-    toolSlug: 'gemini',
-    toolColor: '#ea4335',
-    toolColorLight: '#fee2e2',
-    metier: 'Management',
-    metierSlug: 'management',
-    hubSlug: 'formation-gemini-entreprise',
-    priority: false,
-    metaTitle: 'Formation Gemini Managers | Masteria',
-    metaDesc: "Formation Gemini pour les managers. Réunions Meet, reporting Sheets, communication Gmail. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Google Gemini pour les Managers',
-    intro: "Les managers sur Google Workspace peuvent s'appuyer sur Gemini pour gagner du temps sur les tâches administratives et se concentrer sur le pilotage de leurs équipes. Synthèse de réunions Meet, reporting dans Sheets, communication dans Gmail, Gemini s'intègre dans votre quotidien de manager sans effort.",
-    useCases: [
-      { icon: '👥', title: 'Synthèse de réunions Meet', desc: 'Comptes-rendus automatiques de vos réunions d\'équipe Google Meet.' },
-      { icon: '📊', title: 'Reporting dans Sheets', desc: 'Tableaux de bord de suivi d\'équipe et de performance dans Google Sheets.' },
-      { icon: '📧', title: 'Communication Gmail', desc: 'Emails d\'équipe, feedbacks et communications managériales dans Gmail.' },
-      { icon: '📋', title: 'Documents de travail Docs', desc: 'Ordres du jour, comptes-rendus et plans d\'action dans Google Docs.' },
-      { icon: '🎨', title: 'Présentations Slides', desc: 'Présentations de résultats et de bilans pour la direction.' },
-      { icon: '🔍', title: 'Veille sectorielle', desc: 'Gemini accède au web pour enrichir vos analyses de marché et benchmarks.' },
-    ],
-    program: [
-      {
-        title: 'Matin, Pilotage d\'équipe avec Gemini',
-        items: [
-          'Gemini dans Meet : synthèse de réunions et extraction des décisions',
-          'Gemini dans Docs : ordres du jour, comptes-rendus et plans d\'action',
-          'Gemini dans Sheets : tableaux de bord équipe et suivi des objectifs',
-          'Préparer et animer des réunions plus efficaces avec Gemini',
-        ],
-      },
-      {
-        title: 'Après-midi, Communication et reporting',
-        items: [
-          'Gemini dans Gmail : communications d\'équipe et feedbacks',
-          'Gemini dans Slides : présentations de performance pour la direction',
-          'Délégation et suivi de projets dans Google Workspace',
-          'Veille sectorielle : rester informé sans perdre de temps',
-        ],
-      },
-    ],
-    faq: [
-      { q: 'Gemini peut-il accéder aux fichiers partagés de mon équipe ?', a: 'Oui, Gemini for Workspace peut accéder aux Drive partagés et fichiers de votre équipe, selon vos droits. C\'est utile pour synthétiser des rapports d\'équipe ou analyser des données de performance consolidées.' },
-    ],
-    relatedSpokes: ['formation-chatgpt-management', 'formation-copilot-management', 'formation-gemini-commercial'],
-  },
 
   // ── Gemini × Assistante ──────────────────────────────────────────────────
   {
@@ -1104,7 +912,7 @@ const BASE_SPOKES = [
     faq: [
       { q: 'Gemini peut-il accéder à l\'agenda Google Calendar de la direction ?', a: 'Gemini peut interagir avec Google Calendar pour proposer des créneaux et synthétiser l\'agenda. Les fonctionnalités d\'accès à l\'agenda varient selon la version de Gemini for Workspace de votre organisation.' },
     ],
-    relatedSpokes: ['formation-chatgpt-assistante', 'formation-copilot-assistante', 'formation-gemini-rh'],
+    relatedSpokes: ['formation-chatgpt-assistante', 'formation-copilot-assistante'],
   },
 
   // ══ CLAUDE (ANTHROPIC) ════════════════════════════════════════════════════
@@ -1240,7 +1048,7 @@ const BASE_SPOKES = [
     faq: [
       { q: 'Claude peut-il traiter des données RH confidentielles ?', a: 'Il est recommandé d\'anonymiser les données personnelles avant de les soumettre à Claude (ou tout autre LLM). Utilisez Claude.ai for Work ou l\'API Anthropic avec les garanties de confidentialité business pour les données sensibles.' },
     ],
-    relatedSpokes: ['formation-chatgpt-ressources-humaines', 'formation-copilot-rh', 'formation-gemini-rh'],
+    relatedSpokes: ['formation-chatgpt-ressources-humaines', 'formation-copilot-rh'],
   },
 
   // ── Claude × Commercial ──────────────────────────────────────────────────
@@ -1307,7 +1115,7 @@ const BASE_SPOKES = [
     faq: [
       { q: 'Claude est-il meilleur que ChatGPT pour les appels d\'offres ?', a: 'Pour les réponses longues (>10 pages), Claude est généralement préférable : il maintient mieux la cohérence et le fil directeur sur de longs documents. ChatGPT est plus adapté pour les propositions courtes et créatives. Nos formateurs vous apprennent à utiliser les deux en complémentarité.' },
     ],
-    relatedSpokes: ['formation-chatgpt-commercial', 'formation-copilot-commercial', 'formation-gemini-commercial'],
+    relatedSpokes: ['formation-chatgpt-commercial', 'formation-copilot-commercial'],
   },
 
   // ── Claude × Finance ─────────────────────────────────────────────────────
@@ -1374,7 +1182,7 @@ const BASE_SPOKES = [
     faq: [
       { q: 'Claude peut-il lire des fichiers Excel ou PDF financiers ?', a: 'Claude peut analyser des PDF et des données tabulaires que vous copiez-collez ou uploadez. Pour une intégration directe avec vos fichiers Excel, utilisez l\'API Claude avec des connecteurs adaptés. En formation, nous vous apprenons les meilleures méthodes pour chaque cas d\'usage.' },
     ],
-    relatedSpokes: ['formation-chatgpt-finance', 'formation-copilot-finance', 'formation-gemini-finance'],
+    relatedSpokes: ['formation-chatgpt-finance', 'formation-copilot-finance'],
   },
 
   // ── Claude × Communication ───────────────────────────────────────────────
@@ -1508,7 +1316,7 @@ const BASE_SPOKES = [
     faq: [
       { q: 'L\'IA peut-elle vraiment aider dans des situations RH délicates ?', a: 'Claude peut vous aider à structurer votre pensée, trouver les bons mots et anticiper les réactions, mais la décision et la relation humaine restent votre responsabilité. En formation, on insiste sur l\'usage de Claude comme aide à la réflexion, pas comme substitut au jugement managérial.' },
     ],
-    relatedSpokes: ['formation-chatgpt-management', 'formation-copilot-management', 'formation-gemini-management'],
+    relatedSpokes: ['formation-chatgpt-management', 'formation-copilot-management'],
   },
 
   // ── Claude × Assistante ──────────────────────────────────────────────────
@@ -1580,139 +1388,7 @@ const BASE_SPOKES = [
 
   // ══ MISTRAL AI ════════════════════════════════════════════════════════════
 
-  // ── Mistral × Marketing ──────────────────────────────────────────────────
-  {
-    slug: 'formation-mistral-marketing',
-    tool: 'Mistral AI',
-    toolSlug: 'mistral',
-    toolColor: '#fa500a',
-    toolColorLight: '#fed7aa',
-    metier: 'Marketing',
-    metierSlug: 'marketing',
-    hubSlug: 'formation-mistral-ai',
-    priority: false,
-    metaTitle: 'Formation Mistral Marketing | Masteria',
-    metaDesc: "Formation Mistral AI pour les marketeurs. Contenus en français, campagnes, hébergement souverain. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Mistral AI pour les équipes Marketing',
-    intro: "Mistral AI est l'IA française par excellence : ses modèles ont été entraînés avec un soin particulier pour la langue française, et ses contenus sonnent naturellement hexagonaux. Pour les équipes marketing qui produisent des contenus en français et pour un public français, Mistral offre une qualité linguistique et culturelle difficile à égaler avec les modèles américains.",
-    useCases: [
-      { icon: '✍️', title: 'Contenus en français natif', desc: 'Posts, articles et campagnes avec des tournures et références culturelles françaises.' },
-      { icon: '📣', title: 'Copywriting localisé', desc: 'Accroches et messages publicitaires adaptés aux codes et références du marché français.' },
-      { icon: '📋', title: 'Briefs et plannings éditoriaux', desc: 'Briefs créatifs et plannings cohérents avec votre ligne éditoriale française.' },
-      { icon: '🔍', title: 'Analyse de marché français', desc: 'Synthèses de tendances et études de marché ancrées dans le contexte français.' },
-      { icon: '🎯', title: 'SEO francophone', desc: 'Optimisation pour les recherches françaises avec les bons champs lexicaux.' },
-      { icon: '🔒', title: 'RGPD et souveraineté', desc: 'Traitez vos données marketing sur une IA européenne, conforme au RGPD par conception.' },
-    ],
-    program: [
-      {
-        title: 'Jour 1 · Matin, Production de contenus marketing avec Mistral',
-        items: [
-          "Découvrir Vibe (anciennement Le Chat) et les modèles Mistral : forces sur le français",
-          "Rédiger des contenus marketing en français naturel et culturellement adapté",
-          "Encoder votre brand voice pour des productions cohérentes",
-          "Décliner un message sur plusieurs canaux et formats",
-        ],
-      },
-      {
-        title: 'Jour 1 · Après-midi, Atelier : premiers livrables marketing',
-        items: [
-          "Atelier : produire un post LinkedIn et une newsletter en français hexagonal sur un brief réel",
-          "Revue croisée des productions entre participants et formateur",
-          "Correction des erreurs classiques : tournures calquées de l'anglais, ton incohérent",
-          "Premiers prompts Mistral marketing réutilisables par l'équipe",
-        ],
-      },
-      {
-        title: 'Jour 2 · Matin, Stratégie, analyse et souveraineté',
-        items: [
-          "Construire une stratégie de contenu appuyée sur Mistral",
-          "Analyser des données de marché et des retours clients en français",
-          "Comparer Mistral à ChatGPT sur les tâches marketing courantes",
-          "RGPD, confidentialité et hébergement UE : bonnes pratiques",
-        ],
-      },
-      {
-        title: 'Jour 2 · Après-midi, Déploiement et plan d\'action',
-        items: [
-          "Construire votre bibliothèque de prompts Mistral marketing partagée par l'équipe",
-          "Définir les règles d'usage, les garde-fous qualité et la politique de confidentialité",
-          "Identifier les 3 cas d'usage prioritaires qui génèrent le plus de gains en semaine 1",
-          "Plan d'action 30 jours : intégration dans les rituels et KPI de suivi",
-        ],
-      },
-    ],
-    faq: [
-      { q: "Mistral est-il meilleur que ChatGPT pour rédiger en français ?", a: "Sur les tournures idiomatiques et les références culturelles françaises, Mistral produit souvent des textes plus naturels que les modèles américains, qui peuvent sonner légèrement traduits. Sur les tâches génériques, les deux outils sont très proches. La formation vous apprend à identifier les cas où Mistral apporte un vrai différentiel." },
-    ],
-    relatedSpokes: ['formation-chatgpt-marketing', 'formation-claude-marketing', 'formation-gemini-marketing'],
-  },
 
-  // ── Mistral × Ressources Humaines ────────────────────────────────────────
-  {
-    slug: 'formation-mistral-ressources-humaines',
-    tool: 'Mistral AI',
-    toolSlug: 'mistral',
-    toolColor: '#fa500a',
-    toolColorLight: '#fed7aa',
-    metier: 'Ressources Humaines',
-    metierSlug: 'ressources-humaines',
-    hubSlug: 'formation-mistral-ai',
-    priority: false,
-    metaTitle: 'Formation Mistral RH | Masteria',
-    metaDesc: "Formation Mistral AI pour les RH. Offres, analyse CV, documents RH en IA européenne. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Mistral AI pour les équipes RH',
-    intro: "Les équipes RH traitent des données personnelles sensibles au quotidien : CV, dossiers candidats, évaluations. Mistral AI, hébergée en Europe et conforme RGPD par conception, permet aux RH d'exploiter l'IA sans sortir les données personnelles du périmètre européen, un enjeu central pour les DPO et les directions juridiques.",
-    useCases: [
-      { icon: '📝', title: 'Offres d\'emploi en français', desc: 'Offres attractives avec un français soigné et inclusif.' },
-      { icon: '🔎', title: 'Analyse de CV en local', desc: 'Analyse assistée de candidatures avec des modèles hébergés en Europe.' },
-      { icon: '📋', title: 'Documents RH types', desc: 'Fiches de poste, procédures, règlements intérieurs en français professionnel.' },
-      { icon: '🤝', title: 'Onboarding', desc: 'Parcours d\'intégration et livrets d\'accueil complets.' },
-      { icon: '📢', title: 'Communication interne', desc: 'Annonces RH et communications délicates rédigées avec le bon ton.' },
-      { icon: '🔒', title: 'Conformité RGPD', desc: 'Traitement des données personnelles sur une infrastructure européenne.' },
-    ],
-    program: [
-      {
-        title: 'Jour 1 · Matin, Recrutement et analyse documentaire',
-        items: [
-          "Mistral AI pour les RH : pourquoi le choix européen fait sens",
-          "Rédiger des offres d'emploi et messages de sourcing en français naturel",
-          "Anonymisation et analyse de CV dans le respect du RGPD",
-          "Préparer des grilles d'entretien structurées",
-        ],
-      },
-      {
-        title: 'Jour 1 · Après-midi, Atelier : premiers livrables RH',
-        items: [
-          "Atelier : produire une offre d'emploi et une fiche de poste à partir de vos documents",
-          "Revue croisée des productions entre participants et formateur",
-          "Correction des erreurs classiques : RGPD, biais, données personnelles hors UE",
-          "Premiers prompts Mistral RH réutilisables par l'équipe",
-        ],
-      },
-      {
-        title: 'Jour 2 · Matin, Rédaction RH et conformité',
-        items: [
-          "Produire fiches de poste, procédures et documents RH",
-          "Rédiger des communications internes sensibles",
-          "Cadrage RGPD : ce qui change avec une IA hébergée en Europe",
-          "Déploiement On-premise de Mistral : cas d'usage et arbitrages",
-        ],
-      },
-      {
-        title: 'Jour 2 · Après-midi, Déploiement et plan d\'action',
-        items: [
-          "Construire votre bibliothèque de prompts Mistral RH partagée par l'équipe",
-          "Définir les règles d'usage, les garde-fous qualité et la politique de confidentialité",
-          "Identifier les 3 cas d'usage prioritaires qui génèrent le plus de gains en semaine 1",
-          "Plan d'action 30 jours : intégration dans les rituels et KPI de suivi",
-        ],
-      },
-    ],
-    faq: [
-      { q: "Mistral est-il plus adapté au RGPD que ChatGPT ou Claude ?", a: "Mistral AI est une société française avec hébergement en Europe et une approche RGPD native. Les versions entreprise de ChatGPT et Claude offrent également des garanties fortes, mais Mistral a l'avantage supplémentaire de la souveraineté européenne et d'options de déploiement on-premise sur vos propres serveurs. La formation couvre les critères de choix selon votre contexte." },
-    ],
-    relatedSpokes: ['formation-chatgpt-ressources-humaines', 'formation-claude-ressources-humaines', 'formation-copilot-rh'],
-  },
 
   // ── Mistral × Commercial ─────────────────────────────────────────────────
   {
@@ -1915,72 +1591,6 @@ const BASE_SPOKES = [
     relatedSpokes: ['formation-chatgpt-communication', 'formation-claude-communication', 'formation-gemini-communication'],
   },
 
-  // ── Mistral × Management ─────────────────────────────────────────────────
-  {
-    slug: 'formation-mistral-management',
-    tool: 'Mistral AI',
-    toolSlug: 'mistral',
-    toolColor: '#fa500a',
-    toolColorLight: '#fed7aa',
-    metier: 'Management',
-    metierSlug: 'management',
-    hubSlug: 'formation-mistral-ai',
-    priority: false,
-    metaTitle: 'Formation Mistral Managers | Masteria',
-    metaDesc: "Formation Mistral AI pour les managers. Réunions, reporting, communication d'équipe. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Mistral AI pour les Managers',
-    intro: "Les managers rédigent une grande quantité de documents en français : comptes-rendus, synthèses, communications d'équipe, évaluations. Mistral AI offre la qualité linguistique dont ces documents ont besoin, combinée à une garantie de confidentialité européenne pour les données sensibles de management (évaluations, plans de développement, décisions RH).",
-    useCases: [
-      { icon: '📊', title: 'Rapports de management', desc: 'Synthèses opérationnelles et rapports pour N+1 et comités de direction.' },
-      { icon: '📋', title: 'Entretiens annuels', desc: 'Préparation et rédaction d\'évaluations annuelles équilibrées.' },
-      { icon: '✍️', title: 'Plans de développement', desc: 'Plans de formation et de montée en compétences personnalisés.' },
-      { icon: '📧', title: 'Communication managériale', desc: 'Messages délicats, recadrages et communications d\'équipe avec le bon ton.' },
-      { icon: '🎯', title: 'Objectifs SMART', desc: 'Formulation d\'objectifs clairs, mesurables et motivants pour vos équipes.' },
-      { icon: '🔒', title: 'Données RH sensibles', desc: 'Traitement des évaluations et données d\'équipe sur une IA européenne.' },
-    ],
-    program: [
-      {
-        title: 'Jour 1 · Matin, Pilotage et rédaction manager',
-        items: [
-          "Mistral AI pour les managers : gains quotidiens et cadre d'usage",
-          "Rédiger des rapports de management clairs et synthétiques",
-          "Préparer et rédiger des évaluations annuelles structurées",
-          "Objectifs SMART et plans de développement",
-        ],
-      },
-      {
-        title: 'Jour 1 · Après-midi, Atelier : premiers livrables managériaux',
-        items: [
-          "Atelier : préparer un entretien 1-1 et produire un feedback structuré sur un cas réel",
-          "Revue croisée des productions entre participants et formateur",
-          "Correction des erreurs classiques : feedback trop générique, manque de concret",
-          "Premiers prompts Mistral managériaux réutilisables par l'équipe",
-        ],
-      },
-      {
-        title: 'Jour 2 · Matin, Communication et situations sensibles',
-        items: [
-          "Communication d'équipe : annonces, changements, reconnaissance",
-          "Messages délicats et situations difficiles : trouver le juste ton",
-          "Confidentialité des données RH : les bons réflexes",
-          "Limites de l'IA en management : préserver le jugement humain",
-        ],
-      },
-      {
-        title: 'Jour 2 · Après-midi, Déploiement et plan d\'action',
-        items: [
-          "Construire votre bibliothèque de prompts Mistral managériaux partagée par l'équipe",
-          "Définir les règles d'usage, les garde-fous qualité et la politique de confidentialité",
-          "Identifier les 3 cas d'usage prioritaires qui génèrent le plus de gains en semaine 1",
-          "Plan d'action 30 jours : intégration dans les rituels et KPI de suivi",
-        ],
-      },
-    ],
-    faq: [
-      { q: "Peut-on saisir des données d'évaluation d'équipe dans Mistral sans risque ?", a: "Mistral AI propose des offres entreprise avec garanties de confidentialité (données non utilisées pour entraîner les modèles, hébergement UE, DPA). Pour les données RH les plus sensibles, on privilégie les noms anonymisés ou le déploiement on-premise. La formation couvre les bonnes pratiques selon le niveau de sensibilité." },
-    ],
-    relatedSpokes: ['formation-chatgpt-management', 'formation-claude-management', 'formation-copilot-management'],
-  },
 
   // ── Mistral × Assistante ─────────────────────────────────────────────────
   {
@@ -2073,7 +1683,7 @@ const BASE_SPOKES = [
       { title: 'Après-midi, Production et optimisation', items: ['Rédiger des contenus longs SEO de qualité', 'Générer des balises méta pour des lots de pages', 'Optimiser des contenus existants avec ChatGPT', 'Construire une stratégie de maillage interne'] },
     ],
     faq: [{ q: 'Le contenu généré par ChatGPT est-il pénalisé par Google ?', a: 'Google pénalise les contenus créés uniquement pour manipuler son classement, pas l\'IA en soi. Un contenu utile, original et bien structuré, même aidé par l\'IA, peut très bien se classer. La formation insiste sur la supervision humaine : ChatGPT accélère, vous validez et enrichissez.' }],
-    relatedSpokes: ['formation-copilot-seo', 'formation-gemini-seo', 'formation-claude-seo'],
+    relatedSpokes: ['formation-copilot-seo', 'formation-claude-seo'],
   },
 
   // ── Copilot × SEO ────────────────────────────────────────────────────────
@@ -2098,33 +1708,9 @@ const BASE_SPOKES = [
       { title: 'Après-midi, Analyse et reporting SEO dans Excel', items: ['Copilot dans Excel : analyser des exports d\'outils SEO', 'Identifier les opportunités de mots-clés depuis vos données', 'Reporting SEO : de l\'analyse brute au rapport synthétique', 'Coordination éditoriale avec Copilot dans Outlook'] },
     ],
     faq: [{ q: 'Copilot peut-il lire mes exports Semrush ou Google Search Console ?', a: 'Oui, Copilot dans Excel peut analyser vos fichiers CSV/Excel exportés de Semrush, Ahrefs ou Search Console. Il vous aide à interpréter les données en langage naturel et à identifier les priorités d\'action.' }],
-    relatedSpokes: ['formation-chatgpt-seo', 'formation-gemini-seo', 'formation-claude-seo'],
+    relatedSpokes: ['formation-chatgpt-seo', 'formation-claude-seo'],
   },
 
-  // ── Gemini × SEO ─────────────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-seo',
-    tool: 'Google Gemini', toolSlug: 'gemini', toolColor: '#ea4335', toolColorLight: '#fee2e2',
-    metier: 'SEO', metierSlug: 'seo', hubSlug: 'formation-gemini-entreprise', priority: false,
-    metaTitle: 'Formation Gemini SEO | Masteria',
-    metaDesc: 'Formation Gemini pour les équipes SEO. Rédaction dans Docs, analyse dans Sheets, données Search Console. Certifié Qualiopi, finançable OPCO.',
-    h1: 'Formation Google Gemini pour les équipes SEO',
-    intro: "Gemini est l'outil SEO naturel des équipes Google Workspace : il accède aux données Google Search Console, s'intègre dans Docs pour la rédaction et dans Sheets pour l'analyse. Sa connexion native à la recherche Google en fait un outil idéal pour comprendre l'intention de recherche en temps réel.",
-    useCases: [
-      { icon: '✍️', title: 'Rédaction dans Google Docs', desc: 'Contenus SEO optimisés directement dans Docs avec accès web temps réel.' },
-      { icon: '🔍', title: 'Intention de recherche', desc: 'Gemini accède au web pour analyser les résultats de recherche actuels.' },
-      { icon: '📊', title: 'Analyse dans Sheets', desc: 'Analyse de données Search Console et exports d\'outils SEO dans Sheets.' },
-      { icon: '🏷️', title: 'Balises méta en masse', desc: 'Génération de balises pour des listes de pages dans Google Sheets.' },
-      { icon: '📋', title: 'Briefs éditoriaux dans Docs', desc: 'Briefs SEO complets pour vos rédacteurs directement dans Google Docs.' },
-      { icon: '📑', title: 'Rapports SEO', desc: 'Rapports mensuels en combinant Sheets pour les données et Docs pour la synthèse.' },
-    ],
-    program: [
-      { title: 'Matin, Stratégie et rédaction SEO avec Gemini', items: ['Gemini et l\'accès temps réel au web : avantage pour le SEO', 'Analyser l\'intention de recherche et la SERP avec Gemini', 'Rédiger des contenus SEO dans Google Docs', 'Générer des briefs éditoriaux complets'] },
-      { title: 'Après-midi, Analyse et optimisation dans Google Workspace', items: ['Sheets : analyser des données Search Console et SEO', 'Génération de balises méta pour des catalogues de pages', 'Optimiser des contenus existants stockés dans Drive', 'Automatiser le reporting SEO mensuel'] },
-    ],
-    faq: [{ q: 'Gemini a-t-il accès aux données de Google Search Console ?', a: 'Gemini peut analyser les fichiers que vous exportez de Search Console et importez dans Sheets. Des connecteurs directs sont en cours de développement chez Google. La formation vous enseigne les meilleures pratiques pour intégrer vos données SEO dans l\'écosystème Gemini.' }],
-    relatedSpokes: ['formation-chatgpt-seo', 'formation-copilot-seo', 'formation-claude-seo'],
-  },
 
   // ── Claude × SEO ─────────────────────────────────────────────────────────
   {
@@ -2150,35 +1736,9 @@ const BASE_SPOKES = [
       { title: 'Jour 2 · Après-midi, Déploiement et plan d\'action', items: ['Construire votre bibliothèque de prompts Claude SEO partagée par l\'équipe', 'Définir les règles d\'usage, les garde-fous qualité et la politique de confidentialité', 'Identifier les 3 cas d\'usage prioritaires qui génèrent le plus de gains en semaine 1', 'Plan d\'action 30 jours : intégration dans les rituels et KPI de suivi'] },
     ],
     faq: [{ q: 'Claude est-il meilleur que ChatGPT pour les contenus SEO longs ?', a: 'Pour les contenus de 3 000 mots et plus, Claude maintient mieux la cohérence, évite les répétitions et conserve le fil narratif. ChatGPT est préférable pour les contenus courts et créatifs. La formation vous apprend à choisir l\'outil selon la longueur et le type de contenu.' }],
-    relatedSpokes: ['formation-chatgpt-seo', 'formation-copilot-seo', 'formation-gemini-seo'],
+    relatedSpokes: ['formation-chatgpt-seo', 'formation-copilot-seo'],
   },
 
-  // ── Mistral × SEO ────────────────────────────────────────────────────────
-  {
-    slug: 'formation-mistral-seo',
-    tool: 'Mistral AI', toolSlug: 'mistral', toolColor: '#fa500a', toolColorLight: '#fed7aa',
-    metier: 'SEO', metierSlug: 'seo', hubSlug: 'formation-mistral-ai', priority: false,
-    metaTitle: 'Formation Mistral SEO | Masteria',
-    metaDesc: "Formation Mistral AI pour les équipes SEO. Rédaction française native, champs lexicaux, maillage. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Mistral AI pour les équipes SEO',
-    intro: "Pour les équipes SEO qui produisent des contenus en français et ciblent des requêtes francophones, Mistral AI offre un avantage distinctif : la qualité naturelle du français produit, les champs lexicaux authentiquement hexagonaux et une meilleure adaptation aux intentions de recherche des internautes français.",
-    useCases: [
-      { icon: '✍️', title: 'Contenus SEO français natifs', desc: 'Articles, guides et pages piliers avec un français qui sonne naturellement hexagonal.' },
-      { icon: '🔍', title: 'Champs lexicaux français', desc: 'Vocabulaire et tournures correspondant réellement à ce que tapent vos cibles françaises.' },
-      { icon: '🏷️', title: 'Balises méta & titres', desc: 'Title, description et H1 optimisés pour les SERP françaises.' },
-      { icon: '🔗', title: 'Maillage interne', desc: 'Stratégie de liens internes et ancres adaptées à votre architecture.' },
-      { icon: '📋', title: 'Briefs SEO', desc: 'Briefs éditoriaux complets pour vos rédacteurs français.' },
-      { icon: '📊', title: 'Analyse de SERP FR', desc: 'Synthèses des concurrents sur les SERP françaises pour trouver l\'angle différenciant.' },
-    ],
-    program: [
-      { title: 'Jour 1 · Matin, Stratégie de contenu SEO français avec Mistral', items: ['Comprendre les avantages de Mistral sur les requêtes francophones', "Recherche de mots-clés et intentions de recherche en français", 'Rédiger des briefs SEO complets et actionnables', 'Architecture de contenu et cocons sémantiques'] },
-      { title: 'Jour 1 · Après-midi, Atelier : premiers livrables SEO', items: ['Atelier : produire un brief SEO complet et un article pilier de 1 500+ mots en français hexagonal', 'Revue croisée des productions entre participants et formateur', 'Correction des erreurs classiques : densité keyword, maillage, structure Hn, tournures calquées', 'Premiers prompts Mistral SEO réutilisables par l\'équipe éditoriale'] },
-      { title: 'Jour 2 · Matin, Production et optimisation', items: ['Rédaction de contenus longs SEO en français soigné', 'Balises méta pour des lots de pages', 'Optimisation de contenus existants avec Mistral', 'Stratégie de maillage interne'] },
-      { title: 'Jour 2 · Après-midi, Déploiement et plan d\'action', items: ['Construire votre bibliothèque de prompts Mistral SEO partagée par l\'équipe', 'Définir les règles d\'usage, les garde-fous qualité et la politique de confidentialité', 'Identifier les 3 cas d\'usage prioritaires qui génèrent le plus de gains en semaine 1', 'Plan d\'action 30 jours : intégration dans les rituels et KPI de suivi'] },
-    ],
-    faq: [{ q: "Mistral a-t-il vraiment un avantage SEO sur les marchés francophones ?", a: "Sur les requêtes francophones, Mistral produit des contenus avec des tournures et un vocabulaire plus naturellement français. Pour le SEO local France, Belgique francophone, Suisse romande et Québec, c'est un vrai atout. La formation vous montre comment évaluer l'écart qualitatif sur vos propres requêtes." }],
-    relatedSpokes: ['formation-chatgpt-seo', 'formation-copilot-seo', 'formation-gemini-seo'],
-  },
 
   // ══ SERVICE CLIENT ════════════════════════════════════════════════════════
 
@@ -2204,7 +1764,7 @@ const BASE_SPOKES = [
       { title: 'Après-midi, Analyse et amélioration continue', items: ['Analyser des verbatims et identifier les tendances', 'Alimenter et enrichir la base de connaissances', 'Créer des supports de formation pour les équipes', 'Gouvernance : définir les bons usages IA en service client'] },
     ],
     faq: [{ q: 'ChatGPT peut-il répondre directement aux clients à notre place ?', a: 'Non, et la formation insiste sur ce point. ChatGPT est un outil d\'aide à la rédaction pour les agents, pas un chatbot autonome. Chaque réponse doit être relue et validée par un agent avant envoi. L\'objectif est d\'accélérer les agents, pas de les remplacer.' }],
-    relatedSpokes: ['formation-copilot-service-client', 'formation-gemini-service-client', 'formation-claude-service-client'],
+    relatedSpokes: ['formation-copilot-service-client', 'formation-claude-service-client'],
   },
 
   // ── Copilot × Service Client ─────────────────────────────────────────────
@@ -2229,33 +1789,9 @@ const BASE_SPOKES = [
       { title: 'Après-midi, Documentation et analyse', items: ['Word : créer et mettre à jour les procédures et scripts agents', 'Excel : analyser les KPIs et tendances du service client', 'OneNote : organisation des notes d\'interaction', 'Reporting service client avec Copilot'] },
     ],
     faq: [{ q: 'Copilot peut-il lire l\'historique de nos échanges Teams avec les clients ?', a: 'Oui, Copilot peut accéder aux conversations Teams auxquelles vous participez et en faire des synthèses. C\'est particulièrement utile pour les comptes-rendus d\'appels clients et le suivi des engagements pris.' }],
-    relatedSpokes: ['formation-chatgpt-service-client', 'formation-gemini-service-client', 'formation-claude-service-client'],
+    relatedSpokes: ['formation-chatgpt-service-client', 'formation-claude-service-client'],
   },
 
-  // ── Gemini × Service Client ──────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-service-client',
-    tool: 'Google Gemini', toolSlug: 'gemini', toolColor: '#ea4335', toolColorLight: '#fee2e2',
-    metier: 'Service Client', metierSlug: 'service-client', hubSlug: 'formation-gemini-entreprise', priority: false,
-    metaTitle: 'Formation Gemini Service Client | Masteria',
-    metaDesc: 'Formation Gemini pour les équipes service client. Réponses Gmail, synthèse Meet, documentation Docs. Certifié Qualiopi, finançable OPCO.',
-    h1: 'Formation Google Gemini pour les équipes Service Client',
-    intro: "Les équipes service client sur Google Workspace utilisent Gmail, Meet et Docs au quotidien. Gemini s'intègre dans ces outils pour accélérer les réponses, synthétiser les appels et documenter les procédures, sans quitter l'environnement Google.",
-    useCases: [
-      { icon: '📧', title: 'Réponses dans Gmail', desc: 'Rédigez des réponses aux tickets clients directement dans Gmail avec Gemini.' },
-      { icon: '👥', title: 'Synthèse d\'appels Meet', desc: 'Résumés automatiques de vos appels clients Google Meet avec les actions.' },
-      { icon: '📋', title: 'Documentation dans Docs', desc: 'Procédures agents, scripts et FAQ rédigés dans Google Docs.' },
-      { icon: '📊', title: 'Analyse dans Sheets', desc: 'KPIs, volumes de contacts et motifs d\'appel analysés dans Sheets.' },
-      { icon: '📑', title: 'Rapports d\'activité', desc: 'Rapports de service client dans Docs à partir des données Sheets.' },
-      { icon: '🔍', title: 'Recherche de solutions', desc: 'Gemini accède au web pour trouver des solutions aux problèmes complexes.' },
-    ],
-    program: [
-      { title: 'Matin, Gestion des demandes avec Gemini', items: ['Gemini dans Gmail : répondre aux demandes clients efficacement', 'Gérer le ton selon le motif : réclamation, info, demande technique', 'Gemini dans Meet : synthèse d\'appels et suivi des engagements', 'Créer des modèles de réponses dans Gmail'] },
-      { title: 'Après-midi, Documentation et amélioration continue', items: ['Gemini dans Docs : créer et maintenir la base de connaissances', 'Sheets : analyser les volumes et motifs de contact', 'Rapports service client dans Google Workspace', 'Intégrer Gemini dans le workflow quotidien du service'] },
-    ],
-    faq: [{ q: 'Gemini peut-il synthétiser des échanges Gmail anciens avec un client ?', a: 'Oui, Gemini for Workspace peut accéder à votre historique Gmail et en faire des synthèses. C\'est très utile pour préparer un rappel client ou retrouver rapidement le contexte d\'un dossier complexe.' }],
-    relatedSpokes: ['formation-chatgpt-service-client', 'formation-copilot-service-client', 'formation-claude-service-client'],
-  },
 
   // ── Claude × Service Client ──────────────────────────────────────────────
   {
@@ -2281,35 +1817,9 @@ const BASE_SPOKES = [
       { title: 'Jour 2 · Après-midi, Déploiement et plan d\'action', items: ['Construire votre bibliothèque de prompts Claude service client partagée par l\'équipe', 'Définir les règles d\'usage, les garde-fous qualité et la politique de confidentialité', 'Identifier les 3 cas d\'usage prioritaires qui génèrent le plus de gains en semaine 1', 'Plan d\'action 30 jours : intégration dans les rituels et KPI de suivi'] },
     ],
     faq: [{ q: 'Claude est-il vraiment meilleur que ChatGPT pour les réclamations ?', a: 'Claude tend à produire des réponses plus nuancées sur les sujets émotionnels et à mieux calibrer le registre de politesse selon le contexte. ChatGPT est très efficace pour les cas standards. La formation vous apprend à utiliser chacun selon le type d\'interaction.' }],
-    relatedSpokes: ['formation-chatgpt-service-client', 'formation-copilot-service-client', 'formation-gemini-service-client'],
+    relatedSpokes: ['formation-chatgpt-service-client', 'formation-copilot-service-client'],
   },
 
-  // ── Mistral × Service Client ─────────────────────────────────────────────
-  {
-    slug: 'formation-mistral-service-client',
-    tool: 'Mistral AI', toolSlug: 'mistral', toolColor: '#fa500a', toolColorLight: '#fed7aa',
-    metier: 'Service Client', metierSlug: 'service-client', hubSlug: 'formation-mistral-ai', priority: false,
-    metaTitle: 'Formation Mistral Service Client | Masteria',
-    metaDesc: "Formation Mistral AI pour les équipes service client. Réponses en français natif, scripts, souveraineté. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Mistral AI pour les équipes Service Client',
-    intro: "Pour les équipes service client qui interagissent en français avec des clients français, Mistral AI produit des réponses qui sonnent humaines et naturelles, là où les modèles américains peuvent parfois trahir leur origine par des tournures calquées. Combinée à la souveraineté européenne des données clients, c'est le choix pertinent pour les services clients français.",
-    useCases: [
-      { icon: '💬', title: 'Réponses aux tickets', desc: 'Réponses en français naturel, loin du style traduit ou robotique.' },
-      { icon: '📋', title: 'Scripts d\'agents', desc: 'Scripts voix, chat et email qui conservent un ton humain et français.' },
-      { icon: '🔄', title: 'Réclamations', desc: 'Réponses empathiques calibrées pour la culture client française.' },
-      { icon: '📚', title: 'Base de connaissances', desc: 'FAQ et knowledge base rédigés en français accessible et précis.' },
-      { icon: '📊', title: 'Analyse des verbatims', desc: 'Synthèse des retours clients français et identification des motifs récurrents.' },
-      { icon: '🔒', title: 'Données clients en UE', desc: 'Traitement des interactions sur une infrastructure européenne.' },
-    ],
-    program: [
-      { title: 'Jour 1 · Matin, Réponses et scripts avec Mistral', items: ['Bibliothèque de réponses types personnalisables en français naturel', 'Adapter le ton selon le canal et le profil client', "Scripts d'agents pour les cas courants", 'Gérer les réclamations et situations émotionnelles'] },
-      { title: 'Jour 1 · Après-midi, Atelier : premiers livrables service client', items: ['Atelier : rédiger des réponses types à 5 tickets clients complexes fournis par le formateur', 'Revue croisée des productions entre participants et formateur', 'Correction des erreurs classiques : ton trop formel, manque d\'empathie, tournures robotiques', 'Premiers prompts Mistral service client réutilisables par l\'équipe'] },
-      { title: 'Jour 2 · Matin, Analyse et amélioration continue', items: ['Analyse de verbatims et tendances du service', 'Enrichissement de la base de connaissances', 'Supports de formation pour les nouveaux agents', 'Confidentialité des données clients : bonnes pratiques'] },
-      { title: 'Jour 2 · Après-midi, Déploiement et plan d\'action', items: ['Construire votre bibliothèque de prompts Mistral service client partagée par l\'équipe', 'Définir les règles d\'usage, les garde-fous qualité et la politique de confidentialité', 'Identifier les 3 cas d\'usage prioritaires qui génèrent le plus de gains en semaine 1', 'Plan d\'action 30 jours : intégration dans les rituels et KPI de suivi'] },
-    ],
-    faq: [{ q: "Mistral est-il adapté à une hotline client française ?", a: "Oui, et c'est même un cas d'usage où Mistral se distingue. La qualité du français et la cohérence culturelle apportent un vrai plus dans les interactions clients francophones. La formation présente aussi les limites : toute réponse générée doit être relue par un agent avant envoi." }],
-    relatedSpokes: ['formation-chatgpt-service-client', 'formation-copilot-service-client', 'formation-claude-service-client'],
-  },
 
   // ══ INFORMATIQUE / DSI ════════════════════════════════════════════════════
 
@@ -2415,32 +1925,6 @@ const BASE_SPOKES = [
     relatedSpokes: ['formation-vibe-coding', 'formation-claude-code', 'formation-chatgpt-informatique'],
   },
 
-  // ── Mistral × Informatique ───────────────────────────────────────────────
-  {
-    slug: 'formation-mistral-informatique',
-    tool: 'Mistral AI', toolSlug: 'mistral', toolColor: '#fa500a', toolColorLight: '#fed7aa',
-    metier: 'Informatique / DSI', metierSlug: 'informatique', hubSlug: 'formation-mistral-ai', priority: false,
-    metaTitle: 'Formation Mistral IT & DSI | Masteria',
-    metaDesc: "Formation Mistral AI pour les DSI. Modèles open source, déploiement on-premise, API souveraine. Certifié Qualiopi, finançable OPCO.",
-    h1: 'Formation Mistral AI pour les équipes Informatique / DSI',
-    intro: "Pour les DSI, Mistral AI présente un profil unique : modèles ouverts (Mistral 7B, Mixtral) disponibles en open source, options de déploiement on-premise, API souveraine hébergée en Europe. C'est la solution qui concilie puissance technique et conformité pour les organisations soumises à des exigences de sécurité et de souveraineté.",
-    useCases: [
-      { icon: '💻', title: 'Génération de code', desc: 'Assistant de développement avec les modèles Mistral (Codestral, Mistral Large).' },
-      { icon: '📄', title: 'Documentation technique', desc: 'Spécifications, ADR, README et wikis rédigés en français soigné.' },
-      { icon: '🏗️', title: 'Architecture et revue de code', desc: 'Analyse d\'architecture et review de code avec des modèles performants.' },
-      { icon: '🛡️', title: 'Modèles open source', desc: 'Déployez des modèles Mistral sur vos propres serveurs pour un contrôle total.' },
-      { icon: '⚙️', title: 'API et intégrations', desc: 'Intégrez Mistral dans vos outils internes via l\'API La Plateforme.' },
-      { icon: '🔒', title: 'Souveraineté numérique', desc: 'Architecture IA conforme aux exigences françaises et européennes de souveraineté.' },
-    ],
-    program: [
-      { title: 'Jour 1 · Matin, Développement et usages IT avec Mistral', items: ['Mistral AI pour l\'IT : Codestral, Mistral Large et les modèles ouverts', "Génération, review et documentation de code", "Analyse d'architecture et aide à la décision technique", "API La Plateforme : intégrer Mistral dans vos outils internes"] },
-      { title: 'Jour 1 · Après-midi, Atelier : premiers livrables IT', items: ['Atelier : analyser un incident réel et rédiger un rapport post-mortem avec Codestral/Mistral Large', 'Revue croisée des productions entre participants et formateur', 'Correction des erreurs classiques : manque de détails techniques, confidentialité du code', 'Premiers prompts Mistral IT réutilisables par l\'équipe dev'] },
-      { title: 'Jour 2 · Matin, Déploiement et gouvernance', items: ['Déploiement on-premise et cloud privé : cas d\'usage et modalités', "Modèles ouverts (Mistral 7B, Mixtral) : avantages et limites", "Sécurité, confidentialité et souveraineté numérique", "Politique d'usage IA pour les équipes métier"] },
-      { title: 'Jour 2 · Après-midi, Déploiement et plan d\'action', items: ['Construire votre bibliothèque de prompts Mistral IT partagée par l\'équipe', 'Définir les règles d\'usage, les garde-fous qualité et la politique de confidentialité du code', 'Identifier les 3 cas d\'usage prioritaires qui génèrent le plus de gains en semaine 1', 'Plan d\'action 30 jours : intégration dans les workflows CI/CD et rituels de dev'] },
-    ],
-    faq: [{ q: "Peut-on vraiment déployer Mistral on-premise sur nos propres serveurs ?", a: "Oui, c'est un vrai différentiel de Mistral. Les modèles ouverts (Mistral 7B, Mixtral) peuvent être déployés sur votre infrastructure, et Mistral propose des licences commerciales pour ses modèles plus performants avec déploiement on-premise. La formation présente les options et les critères de choix selon vos contraintes." }],
-    relatedSpokes: ['formation-chatgpt-informatique', 'formation-copilot-informatique', 'formation-claude-informatique'],
-  },
 
   // ══ ÉQUIPES PÉDAGOGIQUES ══════════════════════════════════════════════════
 
@@ -2466,7 +1950,7 @@ const BASE_SPOKES = [
       { title: 'Après-midi, Évaluations et individualisation', items: ['Générer des QCM, études de cas et situations problèmes', 'Adapter les contenus selon le niveau et le profil apprenant', 'Créer des parcours différenciés pour des audiences mixtes', 'Intégrer ChatGPT dans votre processus d\'ingénierie pédagogique'] },
     ],
     faq: [{ q: 'ChatGPT peut-il remplacer l\'ingénieur pédagogique ?', a: 'Non, et la formation le dit clairement. ChatGPT accélère la production et génère des brouillons, mais la valeur ajoutée de l\'ingénieur pédagogique reste entière : analyse des besoins, design du parcours, adaptation au contexte, validation pédagogique et animation. ChatGPT est un outil de productivité, pas de substitution.' }],
-    relatedSpokes: ['formation-copilot-pedagogique', 'formation-gemini-pedagogique', 'formation-claude-pedagogique'],
+    relatedSpokes: ['formation-copilot-pedagogique', 'formation-claude-pedagogique'],
   },
 
   // ── Copilot × Pédagogique ────────────────────────────────────────────────
@@ -2491,33 +1975,9 @@ const BASE_SPOKES = [
       { title: 'Après-midi, Animation et suivi de formation', items: ['Copilot dans Teams : animer, sonder et synthétiser les sessions', 'Excel : tableau de bord de suivi des apprenants', 'Outlook : communication pédagogique personnalisée', 'Construire un dispositif de formation hybride sur Microsoft 365'] },
     ],
     faq: [{ q: 'Copilot dans PowerPoint peut-il créer une présentation de formation complète ?', a: 'Copilot peut générer une présentation structurée depuis un prompt décrivant le sujet, le niveau et les objectifs. Vous obtenez un plan et des slides de base que vous finalisez. La formation vous apprend à faire des briefs efficaces pour obtenir des résultats directement utilisables.' }],
-    relatedSpokes: ['formation-chatgpt-pedagogique', 'formation-gemini-pedagogique', 'formation-claude-pedagogique'],
+    relatedSpokes: ['formation-chatgpt-pedagogique', 'formation-claude-pedagogique'],
   },
 
-  // ── Gemini × Pédagogique ─────────────────────────────────────────────────
-  {
-    slug: 'formation-gemini-pedagogique',
-    tool: 'Google Gemini', toolSlug: 'gemini', toolColor: '#ea4335', toolColorLight: '#fee2e2',
-    metier: 'Équipes Pédagogiques', metierSlug: 'pedagogique', hubSlug: 'formation-gemini-entreprise', priority: false,
-    metaTitle: 'Formation Gemini Pédagogiques | Masteria',
-    metaDesc: 'Formation Gemini pour les formateurs. Supports dans Slides, contenus dans Docs, suivi dans Classroom. Certifié Qualiopi, finançable OPCO.',
-    h1: 'Formation Google Gemini pour les équipes Pédagogiques',
-    intro: "Les équipes pédagogiques sur Google Workspace utilisent Gemini pour créer leurs supports dans Slides, rédiger leurs contenus dans Docs et organiser leurs parcours dans Google Classroom. Avec l'accès natif au web, Gemini enrichit les contenus avec des exemples et ressources actualisées.",
-    useCases: [
-      { icon: '🎨', title: 'Supports dans Google Slides', desc: 'Présentations de formation et diaporamas créés avec Gemini dans Slides.' },
-      { icon: '📄', title: 'Contenus dans Google Docs', desc: 'Guides, fiches, cas pratiques et ressources pédagogiques dans Docs.' },
-      { icon: '✅', title: 'Évaluations dans Docs & Forms', desc: 'QCM, questionnaires et études de cas dans Google Docs et Forms.' },
-      { icon: '🎓', title: 'Google Classroom', desc: 'Organisation des parcours, devoirs et ressources dans Classroom.' },
-      { icon: '📊', title: 'Suivi dans Sheets', desc: 'Tableau de bord de suivi apprenants et résultats dans Google Sheets.' },
-      { icon: '🔍', title: 'Ressources actualisées', desc: 'Gemini accède au web pour enrichir les contenus avec des exemples récents.' },
-    ],
-    program: [
-      { title: 'Matin, Conception pédagogique avec Gemini', items: ['Gemini dans Docs : concevoir des modules et guides apprenants', 'Gemini dans Slides : créer des présentations de formation', 'Générer des évaluations dans Docs et Google Forms', 'Utiliser la recherche web de Gemini pour enrichir les contenus'] },
-      { title: 'Après-midi, Déploiement et suivi dans Google Workspace', items: ['Google Classroom : organiser et déployer des parcours de formation', 'Sheets : suivi de la progression et des résultats apprenants', 'Meet : animer des formations synchrones et synthétiser les échanges', 'Personnaliser les parcours selon les profils dans l\'écosystème Google'] },
-    ],
-    faq: [{ q: 'Google Classroom peut-il être utilisé pour des formations en entreprise ?', a: 'Oui, Google Classroom (disponible dans Workspace for Education et certaines versions entreprise) peut être utilisé pour des parcours de formation internes. Pour les entreprises sans licence éducation, des outils comme Google Sites et Drive peuvent remplir un rôle similaire.' }],
-    relatedSpokes: ['formation-chatgpt-pedagogique', 'formation-copilot-pedagogique', 'formation-claude-pedagogique'],
-  },
 
   // ── Claude × Pédagogique ─────────────────────────────────────────────────
   {
@@ -2543,7 +2003,7 @@ const BASE_SPOKES = [
       { title: 'Jour 2 · Après-midi, Déploiement et plan d\'action', items: ['Construire votre bibliothèque de prompts Claude pédagogiques partagée par l\'équipe', 'Définir les règles d\'usage, les garde-fous qualité et la politique de confidentialité', 'Identifier les 3 cas d\'usage prioritaires qui génèrent le plus de gains en semaine 1', 'Plan d\'action 30 jours : intégration dans vos processus de conception'] },
     ],
     faq: [{ q: 'Claude peut-il vraiment concevoir une formation complète ?', a: 'Claude peut produire une architecture complète, des objectifs, des contenus, des activités et des évaluations cohérentes, mais la valeur pédagogique vient de l\'expertise et du jugement de l\'ingénieur pédagogique. La formation vous apprend à utiliser Claude comme accélérateur, pas comme substitut à l\'expertise métier.' }],
-    relatedSpokes: ['formation-chatgpt-pedagogique', 'formation-copilot-pedagogique', 'formation-gemini-pedagogique'],
+    relatedSpokes: ['formation-chatgpt-pedagogique', 'formation-copilot-pedagogique'],
   },
 
   // ── Mistral × Pédagogique ────────────────────────────────────────────────
@@ -2671,7 +2131,7 @@ const BASE_SPOKES = [
       { q: "Données confidentielles ?", a: "Avec ChatGPT Enterprise / Copilot, oui. Avec ChatGPT gratuit, non. La formation rappelle ces règles le matin du Jour 1." },
       { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
-    relatedSpokes: ['formation-copilot-finance', 'formation-multi-outils-finance', 'formation-sprint-ia-excel'],
+    relatedSpokes: ['formation-copilot-finance', 'formation-sprint-ia-excel'],
   },
 
   // ── Multi-outils × Créativité (Marketing) ───────────────────────────────
@@ -2737,7 +2197,7 @@ const BASE_SPOKES = [
       { q: "Faut-il Microsoft Copilot ?", a: "Pas obligatoire. ChatGPT seul couvre 80 % des cas. Copilot ajoute la fluidité d'avoir l'IA directement dans Outlook, Word et Teams." },
       { q: "Combien ça coûte ?", a: "1 980 €/jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable OPCO." },
     ],
-    relatedSpokes: ['formation-chatgpt-redaction', 'formation-multi-outils-communication', 'formation-ia-creativite'],
+    relatedSpokes: ['formation-chatgpt-redaction', 'formation-ia-creativite'],
   },
 
   // ── Multi-outils × Plan compétences DRH (RH) ────────────────────────────
@@ -2764,7 +2224,7 @@ const BASE_SPOKES = [
     ],
     faq: [
       { q: "Faut-il déjà connaître l'IA ?", a: "Non. La formation est dimensionnée pour un DRH non-utilisateur. Les bases sont posées le matin du Jour 1." },
-      { q: "Comment financer un plan IA ?", a: "OPCO en majorité (jusqu'à 100 % pour les TPE/PME), CPF (formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
+      { q: "Comment financer un plan IA ?", a: "OPCO en majorité (selon les règles et les fonds de votre branche), CPF (formations certifiantes éligibles), ProA et Pro-Transition pour les reconversions, FNE-Formation pour les entreprises en mutation. La formation détaille chaque dispositif." },
       { q: "Quelle obligation AI Act pour les RH ?", a: "L'article 4 impose que toute personne utilisant un système d'IA dispose d'un niveau de littératie IA suffisant. Cela ouvre une responsabilité de l'employeur, détaillée dans la formation." },
       { q: "Comment mesurer l'impact ?", a: "3 niveaux : opérationnel (gain de temps, qualité), business (ROI, satisfaction), stratégique (capacité IA de l'entreprise). Le Jour 2 fournit des grilles concrètes." },
       { q: "Combien ça coûte ?", a: "3 960 € pour 2 jours (soit 1 980 €/jour), en intra-entreprise (jusqu'à 12 DRH/RRH) comme en accompagnement individuel. Finançable OPCO." },
@@ -2776,70 +2236,7 @@ const BASE_SPOKES = [
   // ── Sprint IA × 6 formats courts (3 h) ──────────────────────────────────
   // ═════════════════════════════════════════════════════════════════════════
 
-  // ── Sprint IA × Sensibilisation ─────────────────────────────────────────
-  {
-    slug: 'formation-sprint-ia-sensibilisation',
-    label: "Sprint IA Sensibilisation",
-    tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
-    metier: 'Tous publics', metierSlug: 'transverse', hubSlug: 'formation-sprint-ia', priority: true,
-    metaTitle: "Sprint IA Sensibilisation : l'atelier de 3 h pour acculturer vos équipes | Masteria",
-    metaDesc: "Sensibilisation IA en entreprise : le Sprint de 3 heures pour acculturer une équipe ou toute l'organisation à l'IA générative. Webinar ou présentiel. OPCO, Qualiopi.",
-    keywords: "sprint ia sensibilisation, atelier sensibilisation ia 3 heures, atelier ia 3h, sensibilisation ia format court, acculturation ia 3 heures",
-    h1: "Sprint IA Sensibilisation : 3 heures pour acculturer vos équipes",
-    intro: "Sprint IA Sensibilisation est le format de masse Masteria : 3 heures, ciblé, pratique, conçu pour acculturer rapidement plusieurs centaines de collaborateurs sans bloquer leur agenda. C'est le bon point d'entrée pour une convention annuelle, une association professionnelle, une communauté métier interne ou un déploiement IA d'entreprise à grande échelle.",
-    useCases: [
-      { icon: '🌐', title: 'Acculturation grande échelle', desc: "200 à 2 000 collaborateurs en quelques semaines avec sessions enchaînées." },
-      { icon: '🎤', title: 'Convention annuelle', desc: "Un format prêt-à-livrer de 3 h pour une plénière de séminaire d'entreprise." },
-      { icon: '🤝', title: 'Communauté métier', desc: "Format adapté à une association professionnelle, un club CFO, un club RH." },
-      { icon: '📱', title: 'Manipulation guidée', desc: "Chaque participant teste ChatGPT et Copilot en direct sur ses cas." },
-      { icon: '⚖️', title: 'AI Act flash', desc: "5 minutes pour comprendre les obligations 2026 et le cadre de conformité." },
-      { icon: '🔄', title: 'Sessions répliquables', desc: "Packages dégressifs à partir de 5 sessions pour les déploiements." },
-    ],
-    program: [
-      { title: '1ère heure, Comprendre l\'IA générative en 2026', items: ["Panorama : ChatGPT, Copilot, Gemini, Claude, Mistral", "Ce que l'IA peut faire / ne peut pas faire dans le travail pro", "Confidentialité, RGPD, AI Act : règles d'or"] },
-      { title: '2e et 3e heures, Premières manipulations + Q&A', items: ["Atelier : chaque participant prompte sur ses propres cas", "Bibliothèque de 10 prompts à emporter", "Q&A et plan d'action individuel : 3 cas d'usage à tester la semaine prochaine"] },
-    ],
-    faq: [
-      { q: "3 heures suffisent pour une vraie sensibilisation ?", a: "Oui pour un objectif d'acculturation : comprendre, manipuler, repartir avec 3 cas d'usage à tester. Pour une transformation profonde, enchaîner avec une formation 1 ou 2 jours." },
-      { q: "Format webinar ou présentiel ?", a: "Les deux. Webinar pour 30 à 50 participants avec Q&A structuré. Présentiel ou distanciel interactif pour 12 à 15 (manipulation possible)." },
-      { q: "Est-ce finançable OPCO ?", a: "Oui, comme toute formation Masteria (organisme certifié Qualiopi). Le format court n'a aucune incidence négative sur le financement." },
-      { q: "Sensibilisation IA ou formation IA : quelle différence ?", a: "La sensibilisation IA ouvre le sujet : en 3 heures, les participants comprennent ce que l'IA générative fait et ne fait pas, manipulent sur leurs cas et repartent avec quelques usages à tester et un cadre. La formation installe des compétences sur un ou deux jours, par métier, avec des exercices sur les livrables réels et une évaluation des acquis. La sensibilisation est le bon point d'entrée pour un large public ou une organisation qui démarre ; la formation prend le relais pour les équipes qui vont utiliser l'IA chaque jour. Les deux s'enchaînent dans une démarche d'acculturation IA complète." },
-      { q: "Comment organiser une sensibilisation à l'IA pour toute l'entreprise ?", a: "Par vagues, avec un même contenu et des exemples adaptés à chaque public. Le schéma courant : une session pour le comité de direction en premier, pour qu'il porte la démarche et fixe le cadre ; puis des sessions par métier ou par site, en présentiel pour ceux qui manipulent, en webinar pour les grands effectifs ; enfin un relais interne (référents) et une mesure simple des usages à un mois. Un cadrage de 30 minutes avec vous suffit pour caler les publics, les outils déjà disponibles et le calendrier ; les packages dégressifs couvrent les déploiements à partir de 5 sessions." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants, 3 h) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements grande échelle. Finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-sprint-ia-prompts', 'formation-intelligence-artificielle'],
-  },
 
-  // ── Sprint IA × Prompts ─────────────────────────────────────────────────
-  {
-    slug: 'formation-sprint-ia-prompts',
-    label: "Sprint IA Prompts",
-    tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
-    metier: 'Tous publics', metierSlug: 'transverse', hubSlug: 'formation-sprint-ia', priority: true,
-    metaTitle: "Sprint IA Prompts (3 h) | Masteria",
-    metaDesc: "Sprint IA Prompts : 3 heures pour passer de prompts à 1 ligne à des prompts structurés et performants. ChatGPT, Copilot. OPCO.",
-    h1: "Sprint IA Prompts, 3 heures pour écrire des prompts qui marchent",
-    intro: "Sprint IA Prompts cible les collaborateurs qui utilisent déjà ChatGPT ou Microsoft Copilot mais sans méthode. Ils écrivent des prompts à 1 ligne, obtiennent des résultats moyens, et s'en contentent. En 3 heures, ils passent à des prompts structurés (méthode CRTF : Contexte, Rôle, Tâche, Format) et produisent des résultats utilisables sans retouche.",
-    useCases: [
-      { icon: '✍️', title: 'Méthode CRTF', desc: "Contexte, Rôle, Tâche, Format : la structure universelle d'un bon prompt." },
-      { icon: '🎯', title: 'Prompts métier', desc: "10 prompts adaptés au métier des participants, prêts à l'emploi." },
-      { icon: '🔁', title: 'Prompts itératifs', desc: "Critique, raffinage, reformulation : faire mieux à la 3e tentative." },
-      { icon: '🎨', title: 'Prompts de style', desc: "Imposer un ton, un registre, des tics de style pour rester soi-même." },
-      { icon: '🛡️', title: 'Garde-fous', desc: "Éviter les hallucinations : contraintes, sources, vérification." },
-      { icon: '📚', title: 'Bibliothèque', desc: "Chacun repart avec sa bibliothèque de prompts personnels." },
-    ],
-    program: [
-      { title: '1ère heure, Méthode CRTF', items: ["Anatomie d'un prompt qui marche", "Méthode CRTF : Contexte, Rôle, Tâche, Format", "Détecter et corriger un mauvais prompt"] },
-      { title: '2e et 3e heures, Atelier prompts métier', items: ["Construire 5 prompts adaptés à son métier", "Prompts itératifs : critique et raffinage", "Constituer sa bibliothèque personnelle de prompts"] },
-    ],
-    faq: [
-      { q: "Pré-requis ?", a: "Avoir déjà ouvert ChatGPT ou Copilot au moins une fois. Pas besoin d'être expert : c'est justement le but du Sprint." },
-      { q: "Marche pour Copilot autant que ChatGPT ?", a: "Oui. La méthode CRTF est universelle. La bibliothèque produite est adaptée à l'outil utilisé par les participants." },
-      { q: "Format présentiel ou distanciel ?", a: "Les deux fonctionnent. Le distanciel marche très bien pour ce format court car les ateliers sont individuels avec partage." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. Finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-prompt-engineering', 'formation-sprint-ia-sensibilisation', 'formation-ia-ecrits-pro'],
-  },
 
   // ── Sprint IA × Excel ───────────────────────────────────────────────────
   {
@@ -2865,44 +2262,14 @@ const BASE_SPOKES = [
       { title: '2e et 3e heures, Atelier sur fichiers réels', items: ["Tableau croisé en 10 minutes", "Détection d'anomalies budgétaires", "Premier mini-dashboard mensuel", "Bibliothèque de prompts Excel à emporter"] },
     ],
     faq: [
-      { q: "Faut-il avoir Microsoft 365 Copilot ?", a: "Non, le Sprint s'adapte à votre stack. Avec Copilot dans Excel (env. 30 €/mois/utilisateur), tout se passe nativement. Sans Copilot, on travaille avec ChatGPT côté à côte d'Excel : 90 % des cas d'usage restent couverts." },
+      { q: "Faut-il avoir la licence Microsoft Copilot ?", a: "Non, le Sprint s'adapte à votre stack. Avec Copilot dans Excel (licence Microsoft Copilot, 26 € HT par utilisateur et par mois en annuel), tout se passe nativement. Sans Copilot, on travaille avec ChatGPT côté à côte d'Excel : 90 % des cas d'usage restent couverts." },
       { q: "Niveau Excel requis ?", a: "Niveau intermédiaire : tableaux croisés, fonctions de base. Le Sprint ne forme pas à Excel, il forme à l'IA appliquée à Excel." },
       { q: "Sur ses propres fichiers ?", a: "Oui, c'est le mode opératoire. Chaque participant apporte un fichier Excel professionnel et l'utilise pendant l'atelier." },
       { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. Finançable OPCO." },
     ],
-    relatedSpokes: ['formation-copilot-finance', 'formation-ia-analyse-donnees', 'formation-sprint-ia-prompts'],
+    relatedSpokes: ['formation-copilot-finance', 'formation-ia-analyse-donnees'],
   },
 
-  // ── Sprint IA × Managers ────────────────────────────────────────────────
-  {
-    slug: 'formation-sprint-ia-managers',
-    label: "Sprint IA Managers",
-    tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
-    metier: 'Management', metierSlug: 'management', hubSlug: 'formation-sprint-ia', priority: true,
-    metaTitle: "Sprint IA Managers (3 h) | Masteria",
-    metaDesc: "Sprint IA Managers : 3 heures pour donner aux managers les bons réflexes pour piloter une équipe utilisatrice d'IA. OPCO, Qualiopi.",
-    h1: "Sprint IA Managers, 3 heures pour piloter une équipe IA",
-    intro: "Sprint IA Managers est le format court pour aligner toute la ligne managériale en quelques semaines. Il complète parfaitement la formation 2 jours « Manager avec l'IA » lorsqu'il faut toucher 50 à 200 managers en cascade. Objectif : donner les 5 réflexes du manager augmenté + le cadre de conformité (RGPD, AI Act, PI, secret pro).",
-    useCases: [
-      { icon: '👤', title: 'Exemplarité', desc: "Le manager utilise ChatGPT/Copilot devant son équipe, sans honte." },
-      { icon: '🎯', title: 'Cartographie des usages', desc: "Identifier où l'IA aide vraiment dans son équipe." },
-      { icon: '🎯', title: 'Objectifs IA', desc: "Inscrire un objectif IA dans les entretiens annuels." },
-      { icon: '📊', title: 'Mesure', desc: "Suivre le gain de temps moyen, pas le nombre de prompts." },
-      { icon: '🛡️', title: 'Cadre conformité', desc: "Charte IA d'équipe : ce qui est OK, ce qui ne l'est pas." },
-      { icon: '🗣️', title: 'Conduite du changement', desc: "4 profils de résistance et leviers à activer." },
-    ],
-    program: [
-      { title: "1ère heure, Le manager utilisateur", items: ["ChatGPT et Copilot dans le quotidien du manager", "Synthèse, point d'équipe, arbitrage en 5 minutes", "Donner l'exemple : pourquoi c'est décisif"] },
-      { title: "2e et 3e heures, Le manager pilote", items: ["Cartographier les usages IA dans son équipe", "Fixer un objectif IA dans les entretiens annuels", "Conformité : 5 règles à connaître", "Plan d'action 30 jours"] },
-    ],
-    faq: [
-      { q: "Différence avec la formation 2 jours ?", a: "Le Sprint donne les bons réflexes. La formation 2 jours forme en profondeur. On peut les combiner : 2 jours pour les 20 managers clés, Sprint 3 h pour les 200 autres." },
-      { q: "Format présentiel ou distanciel ?", a: "Les deux fonctionnent. Pour les managers de proximité dispersés géographiquement, le distanciel est souvent plus efficace pour atteindre toute la ligne." },
-      { q: "Combien de managers par session ?", a: "12 à 15 maximum pour conserver l'interaction. Pour des déploiements à 100+ managers, on enchaîne 8 à 10 sessions sur 3 à 4 semaines." },
-      { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions pour les déploiements managériaux. Finançable OPCO." },
-    ],
-    relatedSpokes: ['formation-multi-outils-management'],
-  },
 
   // ── Sprint IA × Veille ──────────────────────────────────────────────────
   {
@@ -2933,7 +2300,7 @@ const BASE_SPOKES = [
       { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions. Finançable OPCO." },
       { q: "Différence avec la formation Veille 1 jour ?", a: "Le Sprint donne le combo et la première synthèse. La journée complète va plus loin : automatisation, dashboards, articulation avec stratégie marketing." },
     ],
-    relatedSpokes: ['formation-ia-veille', 'formation-sprint-ia-prompts', 'formation-multi-outils-marketing'],
+    relatedSpokes: ['formation-ia-veille', 'formation-multi-outils-marketing'],
   },
 
   // ── Sprint IA × AI Act ──────────────────────────────────────────────────
@@ -2947,9 +2314,9 @@ const BASE_SPOKES = [
     h1: "Sprint IA AI Act, 3 heures pour la conformité IA Act",
     intro: "Sprint IA AI Act est le format flash signé Masteria pour mettre toute une organisation en conformité avec le règlement européen sur l'intelligence artificielle (AI Act). En 3 heures, les participants comprennent le périmètre du règlement, les classifications de risque, l'article 4 sur la littératie IA, le calendrier 2026 / 2027 et les obligations concrètes pour leur métier. Cible : DSI, DPO, juristes, RH, managers, dirigeants. Combinable avec Sprint IA Sensibilisation pour couvrir l'obligation de littératie IA à l'échelle d'une entreprise.",
     useCases: [
-      { icon: '⚖️', title: "Article 4 : littératie IA", desc: "L'obligation de niveau de connaissances suffisant pour toute personne utilisant un système d'IA, applicable depuis février 2025." },
+      { icon: '⚖️', title: "Article 4 : littératie IA", desc: "L'obligation de prendre des mesures pour développer la maîtrise de l'IA de toute personne utilisant un système d'IA, applicable depuis février 2025 et réécrite par l'Omnibus en juillet 2026." },
       { icon: '🚦', title: 'Classifications de risque', desc: "Risque inacceptable, risque élevé, risque limité, risque minimal : ce qui change pour vos cas d'usage." },
-      { icon: '📅', title: 'Calendrier 2026 / 2027', desc: "Les échéances clés à anticiper, en particulier sur les systèmes à haut risque et les modèles à usage général." },
+      { icon: '📅', title: 'Calendrier 2025 à 2028', desc: "Les échéances clés à anticiper, en particulier sur les systèmes à haut risque (reportés à décembre 2027 et août 2028) et les modèles à usage général." },
       { icon: '🛡️', title: 'Gouvernance interne', desc: "Charte IA, registre des usages, points de contrôle DPO / DSI : les briques minimales à mettre en place." },
       { icon: '🏛️', title: 'Articulation RGPD', desc: "Comment l'AI Act s'empile avec le RGPD, la directive NIS 2 et les obligations sectorielles existantes." },
       { icon: '✅', title: 'Plan de conformité', desc: "Repartir avec un mini plan d'action 90 jours pour aligner ses pratiques IA sur le règlement." },
@@ -2961,11 +2328,11 @@ const BASE_SPOKES = [
     ],
     faq: [
       { q: "Pour qui ce Sprint AI Act ?", a: "DSI, DPO, juristes, responsables conformité, RH, managers et dirigeants qui doivent piloter la conformité IA Act dans leur périmètre. Aucun prérequis juridique : la formation explique les notions clés à partir d'exemples concrets." },
-      { q: "Qu'est-ce que l'article 4 sur la littératie IA ?", a: "L'article 4 de l'AI Act impose à toute organisation utilisant un système d'IA de garantir que ses collaborateurs disposent d'un niveau de connaissances suffisant. Il s'agit d'une obligation de moyens, pas de résultat, mais qui ouvre la responsabilité de l'employeur. Sprint IA AI Act + Sprint IA Sensibilisation couvrent ensemble cette obligation." },
+      { q: "Qu'est-ce que l'article 4 sur la littératie IA ?", a: "L'article 4 de l'AI Act demande à toute organisation utilisant un système d'IA de prendre des mesures pour développer la maîtrise de l'IA de ses collaborateurs. Depuis l'Omnibus de juillet 2026, le texte n'exige plus de niveau individuel garanti ; l'obligation de moyens engage la responsabilité de l'employeur. Sprint IA AI Act + Sprint IA Sensibilisation couvrent ensemble cette obligation." },
       { q: "Comment articuler avec le RGPD ?", a: "L'AI Act et le RGPD se cumulent : un système d'IA traitant des données personnelles doit respecter les deux. Le Sprint explique comment construire un dossier de conformité unifié plutôt que deux silos parallèles." },
       { q: "Combien ça coûte ?", a: "1 980 €/session, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Packages dégressifs à partir de 5 sessions, particulièrement pertinent pour cascader la conformité dans une grande organisation. Finançable OPCO." },
     ],
-    relatedSpokes: ['formation-ai-act', 'formation-sprint-ia-sensibilisation', 'formation-sprint-ia-managers'],
+    relatedSpokes: ['formation-ai-act'],
   },
 
   // ── Claude Code × Développement ──────────────────────────────────────────
@@ -3138,7 +2505,7 @@ const BASE_SPOKES = [
       { q: 'Quel niveau faut-il pour suivre ?', a: "Avoir déjà utilisé un assistant IA, même occasionnellement, suffit. La formation ne demande aucune compétence technique : le prompt engineering est une compétence de formulation et de méthode, pas de programmation." },
       { q: 'Quelle différence avec une formation ChatGPT ou Copilot classique ?', a: "Une formation outil couvre l'écosystème d'un produit (fonctionnalités, intégrations, cas métier). Cette formation creuse LA compétence transversale qui conditionne la qualité des résultats sur tous les outils. Les deux se complètent : beaucoup de clients enchaînent formation outil puis prompt engineering pour les référents." },
       { q: 'Le prompt engineering sert-il encore avec les modèles récents ?', a: "Oui, et de plus en plus. Les modèles récents comprennent mieux les demandes vagues, mais l'écart entre un prompt moyen et un prompt expert reste majeur dès que la tâche est précise : format imposé, ton de marque, données internes, raisonnement multi-étapes. C'est exactement le périmètre des usages professionnels." },
-      { q: 'Combien coûte la formation ?', a: "1 980 € la journée, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Certifiée Qualiopi, finançable par votre OPCO jusqu'à 100 %." },
+      { q: 'Combien coûte la formation ?', a: "1 980 € la journée, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Certifiée Qualiopi, finançable par votre OPCO selon votre branche." },
       { q: 'Formation prompt IA et formation prompt engineering : est-ce la même chose ?', a: "Oui. « Prompt engineering » est le terme d'origine anglaise, « formation prompt IA » sa formulation française courante : dans les deux cas, il s'agit d'apprendre à concevoir des prompts qui produisent des résultats fiables et directement exploitables sur ChatGPT, Claude, Copilot, Gemini ou Mistral. Le programme couvre la méthode complète, de la structure d'un prompt professionnel à la bibliothèque de prompts partagée de l'équipe." },
     ],
     relatedSpokes: ['formation-claude-code', 'formation-vibe-coding', 'formation-chatgpt-marketing'],
@@ -3251,7 +2618,7 @@ const BASE_SPOKES = [
       { q: 'Combien de participants maximum ?', a: "Jusqu'à 12 participants pour préserver les échanges entre pairs, ce qui couvre la plupart des COMEX et CODIR. Au-delà (top 30, top 50), nous construisons un dispositif en cascade : journée COMEX puis sessions managers." },
       { q: 'Est-ce finançable par notre OPCO ?', a: "Oui. La formation est certifiée Qualiopi et donc finançable par votre OPCO au titre du plan de développement des compétences, y compris pour les dirigeants salariés. 1 980 € la journée en intra. Nous gérons le dossier de prise en charge." },
     ],
-    relatedSpokes: ['formation-ai-act', 'formation-sprint-ia-managers', 'formation-multi-outils-management'],
+    relatedSpokes: ['formation-ai-act', 'formation-multi-outils-management'],
   },
 
   // ── AI Act × Conformité ──────────────────────────────────────────────────
@@ -3270,7 +2637,7 @@ const BASE_SPOKES = [
     metaTitle: 'Formation AI Act : conformité IA · Qualiopi | Masteria',
     metaDesc: "Formation AI Act 1 jour : obligations réelles, cartographie des risques, article 4, plan de conformité et gouvernance IA. Qualiopi, finançable OPCO.",
     h1: 'Formation AI Act : mettez votre entreprise en conformité avec le règlement européen',
-    intro: "Le règlement européen sur l'IA (AI Act, souvent écrit « IA Act ») s'applique par paliers depuis février 2025 : pratiques interdites, obligation de maîtrise de l'IA pour les collaborateurs (article 4), puis obligations renforcées sur les systèmes à haut risque en 2026 et 2027. Cette formation d'1 jour transforme le texte en plan de conformité opérationnel : cartographie de vos usages, obligations réelles selon votre rôle, gouvernance, registre et formation des équipes.",
+    intro: "Le règlement européen sur l'IA (AI Act, souvent écrit « IA Act ») s'applique par paliers depuis février 2025 : pratiques interdites, obligation de maîtrise de l'IA pour les collaborateurs (article 4), transparence (article 50) depuis août 2026, puis obligations sur les systèmes à haut risque, reportées à décembre 2027 et août 2028 par l'Omnibus (règlement (UE) 2026/1744). Cette formation d'1 jour transforme le texte en plan de conformité opérationnel : cartographie de vos usages, obligations réelles selon votre rôle, gouvernance, registre et formation des équipes.",
     audience: [
       { title: 'DPO, juristes et responsables conformité', desc: "Vous devez articuler AI Act et RGPD sans doubler les dispositifs. La formation détaille les obligations par rôle (fournisseur, déployeur) et la construction d'un dossier de conformité unifié." },
       { title: 'DSI et responsables IA', desc: "Vous tenez l'inventaire des systèmes et outils IA, officiels ou non. Vous apprenez à cartographier, classifier par niveau de risque et documenter sans paralyser les usages." },
@@ -3285,7 +2652,7 @@ const BASE_SPOKES = [
       { icon: '🛡️', title: 'Gouvernance durable', desc: 'Charte IA, comité de gouvernance, processus d\'homologation des nouveaux usages.' },
     ],
     modules: [
-      { day: 1, title: 'Module 1, Comprendre le règlement et son calendrier', duration: '1h45', description: "Acquérir la logique du texte pour savoir ce qui s'applique à vous, et quand.", items: ["La logique par niveaux de risque : ce que le règlement interdit, encadre ou laisse libre", 'Calendrier réel : février 2025 (interdictions, article 4), août 2025 (modèles), 2026-2027 (haut risque)', 'Qui est concerné : fournisseur, déployeur, importateur, et ce que ça change pour une PME', "Sanctions : jusqu'à 35 M€ ou 7 % du chiffre d'affaires mondial selon les manquements"], exercise: 'Quiz de positionnement : situer votre entreprise dans le règlement (rôles, échéances applicables).' },
+      { day: 1, title: 'Module 1, Comprendre le règlement et son calendrier', duration: '1h45', description: "Acquérir la logique du texte pour savoir ce qui s'applique à vous, et quand.", items: ["La logique par niveaux de risque : ce que le règlement interdit, encadre ou laisse libre", 'Calendrier : février 2025 (interdictions, article 4), août 2025 (modèles), août 2026 (transparence), décembre 2027 et août 2028 (haut risque)', 'Qui est concerné : fournisseur, déployeur, importateur, et ce que ça change pour une PME', "Sanctions : jusqu'à 35 M€ ou 7 % du chiffre d'affaires mondial selon les manquements"], exercise: 'Quiz de positionnement : situer votre entreprise dans le règlement (rôles, échéances applicables).' },
       { day: 1, title: 'Module 2, Cartographier vos systèmes et classifier les risques', duration: '1h45', description: 'Passer du texte à votre réalité : inventaire et classification de VOS usages.', items: ["Méthode d'inventaire : usages officiels, IA embarquée dans les logiciels métier, shadow IT", 'Atelier de classification sur cas concrets : RH et recrutement, scoring, marketing, chatbots', 'Zoom haut risque : RH, éducation, crédit, infrastructures, et les exigences associées', "Transparence : quand faut-il dire qu'un contenu ou une interaction vient d'une IA"], exercise: 'Construire la première version de la cartographie IA de votre entreprise, classée par risque.' },
       { day: 1, title: 'Module 3, Vos obligations opérationnelles, dont l\'article 4', duration: '1h45', description: 'Détailler ce que vous devez faire concrètement, fonction par fonction.', items: ["Article 4 : l'obligation de maîtrise de l'IA des collaborateurs, en vigueur depuis février 2025", 'Construire le plan de formation conforme : qui former, à quoi, avec quelle preuve', "Obligations du déployeur : usage conforme, supervision humaine, surveillance et signalement", 'Documentation et registre : modèles de documents et niveau de détail attendu'], exercise: "Rédiger la trame du plan de formation article 4 de votre organisation (publics, contenus, preuves)." },
       { day: 1, title: 'Module 4, Plan de conformité et gouvernance', duration: '1h45', description: "Repartir avec un dispositif complet, daté et soutenable dans la durée.", items: ['Charte IA : règles d\'usage, données autorisées, validation humaine, outils approuvés', "Gouvernance : comité IA, processus d'homologation des nouveaux usages, revue périodique", 'Articulation AI Act et RGPD : un dossier unifié, AIPD et documentation croisées', 'Feuille de route 90 jours : actions, responsables, échéances réglementaires'], exercise: 'Chaque participant repart avec son plan de conformité 90 jours et les gabarits de documents.' },
@@ -3298,7 +2665,7 @@ const BASE_SPOKES = [
     ],
     faq: [
       { q: "L'AI Act concerne-t-il vraiment les PME qui ne font qu'utiliser ChatGPT ?", a: "Oui. Toute organisation qui utilise des systèmes d'IA est « déployeur » au sens du règlement. À minima, l'article 4 (maîtrise de l'IA des collaborateurs) s'applique depuis le 2 février 2025, et les obligations de transparence concernent les contenus générés. Les obligations lourdes restent toutefois concentrées sur les systèmes à haut risque." },
-      { q: "La formation des collaborateurs est-elle vraiment obligatoire ?", a: "L'article 4 impose de garantir un « niveau suffisant de maîtrise de l'IA » aux personnes qui utilisent des systèmes d'IA pour votre compte. C'est une obligation de moyens : il faut un dispositif proportionné et documenté (formations, chartes, preuves). Cette journée vous donne le plan ; nos formations métier constituent ensuite la mise en œuvre, finançable OPCO." },
+      { q: "La formation des collaborateurs est-elle vraiment obligatoire ?", a: "L'article 4, réécrit par l'Omnibus en juillet 2026, impose de prendre des mesures pour développer la maîtrise de l'IA des personnes qui utilisent des systèmes d'IA pour votre compte. C'est une obligation de moyens : il faut un dispositif proportionné et documenté (formations, chartes, preuves). Cette journée vous donne le plan ; nos formations métier constituent ensuite la mise en œuvre, finançable OPCO." },
       { q: 'Quelles sont les sanctions encourues ?', a: "Le plafond atteint 35 M€ ou 7 % du chiffre d'affaires mondial pour les pratiques interdites, et 15 M€ ou 3 % pour la plupart des autres manquements. Les autorités de surveillance nationales montent en puissance sur 2026 : le risque réel à court terme est surtout réputationnel et commercial (appels d'offres, clients grands comptes qui auditent leurs fournisseurs)." },
       { q: 'Faut-il être juriste pour suivre la formation ?', a: "Non. La formation est conçue pour des profils mixtes (conformité, DSI, RH, direction) et explique chaque notion juridique à partir de cas concrets. Les juristes y trouvent la traduction opérationnelle ; les opérationnels, la compréhension du cadre." },
       { q: 'Quelle différence avec votre Sprint IA AI Act de 3 heures ?', a: "Le Sprint de 3 h sensibilise et donne les réflexes essentiels, idéal pour toucher largement les équipes. Cette journée complète outille les responsables de la conformité : cartographie, plan article 4, gouvernance, gabarits de documents. Beaucoup de clients combinent les deux : la journée pour le noyau conformité, le Sprint en cascade pour les équipes." },

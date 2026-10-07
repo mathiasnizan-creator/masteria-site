@@ -1,37 +1,38 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Sparkles, Workflow, FileText, MessagesSquare, Database, Search,
-  Target, FlaskConical, Rocket, ShieldCheck, Scale, Cpu, Boxes, Check,
-  Lock, AlertTriangle, GraduationCap, Compass, Layers, BookOpen, ExternalLink,
+  ArrowRight, Sparkles, FileText, MessagesSquare, Database, Search,
+  Rocket, ShieldCheck, Scale, Cpu, Boxes, Check, Lock, AlertTriangle,
+  GraduationCap, Compass, Layers, BookOpen, ExternalLink, Landmark, Factory,
+  Sprout, Presentation,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page pilier « IA générative en entreprise » (slug /ia-generative-entreprise).
- * Cible mid-funnel large. Mots-clés confirmés : « ia générative entreprise » (140, KD 24),
- * « ia générative en entreprise » (110, KD 25). Tissés : « déploiement ia générative »,
- * « intégration ia générative », « ia générative pour les entreprises »,
- * « solutions ia générative entreprise », « mettre en place l'ia générative ».
- * Anti-cannibalisation : on reste sur la tête « IA générative » (pas d'agence/cabinet/
- * développement dans H1/title — ces têtes appartiennent à d'autres pages du cluster).
- * Posture CAPACITÉ : aucun cas client ni chiffre inventé. Faits sourcés réels uniquement
- * (AI Act 2024/1689, Gartner). Formation = offre SECONDAIRE, non mise en avant comme finançable.
- * Maillage : /cas-usage-ia-entreprise, /solutions-ia, /agents-ia-entreprise, /gouvernance-ia,
- * /diagnostic-ia, /conseil-intelligence-artificielle, /prix-projet-ia, /contact.
- * Design : mirror AgenceDeveloppementIAPage (hero sombre, rythme, accent #2563EB, zéro emoji).
+ * Mots-clés : « ia générative entreprise » (140, KD 24), « ia générative en
+ * entreprise » (110, KD 25) ; tissés : « déploiement ia générative »,
+ * « intégration ia générative », « mettre en place l'ia générative ».
+ * Anti-cannibalisation : la tête reste « IA générative » (agence, cabinet et
+ * développement appartiennent à d'autres pages). Les usages sont classés par
+ * nature de travail ; le panorama par fonction vit sur /cas-usage-ia-entreprise.
+ *
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards, de
+ * FounderNote ni de chiffre Gartner ; modèles et AI Act datés au 7 octobre 2026
+ * (fiche FAITS-OUTILS du 07/10, src/data/claude-facts.js) ; repères chiffrés
+ * sourcés (Crédoc, OpenAI DevDay) ; cas cités en deux phrases avec lien.
+ * Formation = offre secondaire ici.
  */
 
 const SLUG = 'ia-generative-entreprise'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const RDV = '/contact?type=projet&rdv=30'
 
 const META_TITLE = "IA générative en entreprise : la déployer | Masteria"
-const META_DESC = "IA générative en entreprise : cas d'usage, déploiement maîtrisé du POC à la production, garde-fous RGPD et AI Act. Cadrage gratuit avec Masteria."
+const META_DESC = "IA générative en entreprise : usages, déploiement du prototype à la production, RGPD et AI Act, modèles au 7 octobre 2026. 30 min de cadrage offertes."
 
 /* ───────── Styles partagés ───────── */
 
@@ -59,106 +60,107 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_CHIPS = [
-  { icon: MessagesSquare, label: 'Cas d\'usage' },
-  { icon: Rocket,         label: 'Déploiement' },
-  { icon: ShieldCheck,    label: 'Garde-fous' },
-  { icon: Scale,          label: 'RGPD & AI Act' },
+  { icon: MessagesSquare, label: 'Usages par nature de travail' },
+  { icon: Rocket,         label: 'Du prototype à la production' },
+  { icon: ShieldCheck,    label: 'Relecture humaine' },
+  { icon: Scale,          label: 'RGPD et AI Act à jour' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Définition', value: "L'IA générative produit textes, code, images et synthèses à partir d'une consigne ; en entreprise, elle s'intègre aux processus métier pour faire gagner du temps" },
-  { label: 'Usages', value: "Rédaction et reformulation, synthèse documentaire, recherche dans vos données, support, assistance au code, première version de livrables" },
-  { label: 'Déploiement', value: "Quatre temps : cadrage des cas d'usage, POC sur un périmètre réel, mise en production intégrée, gouvernance dans la durée" },
-  { label: 'Garde-fous', value: "Confidentialité des données, contrôle des hallucinations, validation humaine, conformité RGPD et AI Act (règlement 2024/1689)" },
-  { label: 'Masteria', value: "Conseil, développement de solutions sur mesure et formation des équipes, du cas d'usage au déploiement maîtrisé" },
-  { label: 'Zone', value: "Lyon, Europe, États-Unis, Inde · distanciel et présentiel ponctuel" },
+  { label: 'Définition', value: "Des modèles qui écrivent, résument, traduisent, analysent des chiffres ou programment à partir d'une demande formulée en langage courant" },
+  { label: 'Où elle rapporte', value: "Les tâches fréquentes, documentées et faciles à relire : courrier, recherche documentaire, préparation de réunions, analyse de tableaux, supports, code" },
+  { label: 'Déploiement', value: "Choisir un usage, le tester sur vos fichiers, l'installer dans vos logiciels, puis l'encadrer dans la durée" },
+  { label: 'Garde-fous', value: "Version entreprise de l'outil, sources citées, relecture humaine de ce qui engage, règles RGPD et AI Act écrites" },
+  { label: 'Modèles', value: "Claude, ChatGPT, Gemini, Mistral et Microsoft Copilot (anciennement Microsoft 365 Copilot) changent de version tous les deux ou trois mois ; repères datés du 7 octobre 2026 plus bas" },
+  { label: 'Masteria', value: "Cabinet lyonnais spécialisé en IA depuis 2022 : conseil, construction d'outils et formation des équipes, sans lien avec un éditeur" },
 ]
 
-/* ───────── Ce qu'elle change (gains / limites honnêtes) ───────── */
+/* ───────── Ce qu'elle apporte / ses limites ───────── */
 
 const GAINS = [
-  { icon: FileText, title: 'Rédaction et reformulation', desc: "Premières versions de notes, emails, comptes rendus et supports, à relire et valider. Le modèle accélère la mise en forme ; le fond et la décision restent humains." },
-  { icon: Search, title: 'Recherche et synthèse documentaire', desc: "Interrogation de volumes de documents impossibles à traiter manuellement, avec restitution synthétique. Ancrée sur vos contenus via du RAG, la réponse devient sourçable." },
-  { icon: MessagesSquare, title: 'Assistance au support et au métier', desc: "Aide à la réponse client, qualification de demandes, préparation de dossiers. L'IA propose, l'équipe arbitre, ce qui réduit le temps de traitement sur les tâches répétitives." },
-  { icon: Cpu, title: 'Assistance au code et aux données', desc: "Génération, explication et revue de code, transformation de données, scripts d'automatisation. Un appui pour les équipes techniques, pas un remplacement du jugement d'ingénierie." },
+  { icon: FileText, title: 'Écrire et reformuler', desc: "Un premier jet de note, de réponse ou de procédure en quelques secondes, dans le ton demandé. La personne garde le fond et corrige la forme ; elle ne part plus d'une page vide." },
+  { icon: Search, title: 'Lire des volumes que personne ne lit', desc: "Cent pages de contrat, un an de comptes rendus, un dossier d'appel d'offres : le modèle en extrait ce qui compte et répond aux questions qu'on lui pose. Branché sur vos documents, il cite le passage d'où vient chaque réponse." },
+  { icon: Database, title: 'Faire parler un tableau', desc: "Des questions posées en français sur un fichier Excel ou un export de logiciel, des graphiques, des formules proposées puis vérifiées. Plusieurs assistants livrent directement le classeur, le document ou la présentation." },
+  { icon: Cpu, title: 'Programmer et automatiser', desc: "Des agents de code comme Claude Code ou Codex lisent un dépôt, proposent une modification et écrivent les tests ; un développeur relit avant de fusionner. Les mêmes modèles écrivent les petits scripts qui relient deux logiciels." },
 ]
 
 const LIMITES = [
-  { icon: AlertTriangle, title: 'Hallucinations', desc: "Un modèle peut produire une réponse fausse formulée avec assurance. Sans ancrage sur vos données ni validation humaine, le risque d'erreur reste réel sur les sujets sensibles." },
-  { icon: Lock, title: 'Confidentialité', desc: "Saisir des données sensibles dans un outil non maîtrisé expose l'entreprise. Le périmètre des données, le choix de l'hébergement et les accès se cadrent avant tout usage." },
-  { icon: Scale, title: 'Conformité', desc: "Le RGPD encadre tout traitement de données personnelles ; l'AI Act impose documentation et classification par niveau de risque. L'usage doit être tracé, pas improvisé." },
+  { icon: AlertTriangle, title: 'Erreurs dites avec aplomb', desc: "Un modèle peut sortir une référence fausse, un chiffre faux ou une clause imaginaire sur le même ton qu'une réponse juste. Ancrer les réponses dans vos documents et faire relire ce qui engage réduit ce risque sans l'annuler." },
+  { icon: Lock, title: 'Données confiées au mauvais compte', desc: "Sur les offres grand public, vos échanges peuvent nourrir l'entraînement des modèles, sauf si la personne coche le refus dans ses réglages. Les versions entreprise (ChatGPT Business, Claude Team, Gemini dans Workspace, Microsoft Copilot) excluent cet usage par défaut." },
+  { icon: Scale, title: 'Obligations légales', desc: "Le RGPD entre en jeu au premier nom ou au premier numéro de téléphone saisi dans l'outil. L'AI Act ajoute des devoirs qui varient selon l'usage : faible pour un mail, lourd pour un tri de candidatures." },
 ]
 
-/* ───────── Cas d'usage transverses (6 fonctions) ───────── */
+/* ───────── Six usages qui reviennent partout (par nature de travail) ───────── */
 
 const USAGES = [
-  { icon: MessagesSquare, fn: 'Marketing & communication', desc: "Première version de contenus, déclinaison de messages, synthèse de retours et veille. L'IA accélère la production, la ligne éditoriale reste tenue par l'équipe." },
-  { icon: FileText, fn: 'Commercial & relation client', desc: "Préparation de propositions, qualification de demandes, réponses types, comptes rendus d'échanges. Le temps gagné se reporte sur la relation et la négociation." },
-  { icon: Search, fn: 'Juridique & conformité', desc: "Lecture et synthèse de contrats, recherche dans un corpus, repérage de clauses. Toujours avec relecture experte : l'IA dégrossit, le juriste tranche." },
-  { icon: Database, fn: 'RH & support interne', desc: "Réponses aux questions récurrentes, aide à la rédaction d'offres et de comptes rendus, assistance documentaire pour les collaborateurs." },
-  { icon: Cpu, fn: 'IT & data', desc: "Assistance au développement, transformation de données, documentation technique, automatisation de tâches d'exploitation répétitives." },
-  { icon: Layers, fn: 'Direction & pilotage', desc: "Synthèse de documents de gestion, préparation de réunions, première lecture de masses d'informations pour décider plus vite, sans déléguer la décision." },
+  { icon: MessagesSquare, fn: 'Courrier entrant · relation client', desc: "Un brouillon de réponse rédigé à partir du message reçu et de l'historique du dossier, avec les formules habituelles de l'entreprise ; le conseiller relit, ajuste et envoie." },
+  { icon: BookOpen, fn: 'Savoir interne · RH, qualité, juridique', desc: "Un assistant relié à vos procédures internes, à vos accords collectifs et à vos notes de service, qui répond en citant la page. Les questions répétées cessent de remonter au service expert." },
+  { icon: Layers, fn: 'Réunions · direction et encadrement', desc: "Ordre du jour, note préparatoire, compte rendu de décisions et d'actions : l'outil met en forme, la personne qui anime tranche ce qui est retenu." },
+  { icon: Database, fn: 'Chiffres · finance et contrôle de gestion', desc: "Un export interrogé en français, des écarts repérés, un commentaire de premier niveau ; le contrôleur vérifie les calculs avant diffusion." },
+  { icon: Presentation, fn: 'Supports · marketing et formation', desc: "Une présentation montée sur votre modèle de diapositives depuis un document source, déclinée par public ou par langue, relue avant d'être projetée." },
+  { icon: Cpu, fn: 'Code · équipes techniques', desc: "Revue de code, documentation d'un module ancien, tests manquants, scripts de reprise de données : l'agent prépare, le développeur valide." },
 ]
 
-/* ───────── Comment la déployer (timeline 4 étapes) ───────── */
+/* ───────── Comment la déployer (quatre étapes) ───────── */
 
 const ETAPES = [
   {
     num: '01',
-    title: 'Cadrage des cas d\'usage',
-    desc: "Nous identifions les cas à plus forte valeur, leur faisabilité et leurs contraintes de données. Ce travail fixe le périmètre, le critère de réussite et le niveau de risque, avant tout déploiement. Mieux vaut prioriser un usage utile que multiplier les pilotes sans suite.",
+    title: "Choisir l'usage à tester",
+    desc: "Nous retenons une tâche fréquente, documentée et facile à vérifier, puis nous écrivons ce que serait un succès : temps rendu, qualité attendue, données autorisées. Un seul usage bien choisi apprend plus que dix pilotes lancés ensemble.",
   },
   {
     num: '02',
-    title: 'Preuve de concept (POC)',
-    desc: "Nous construisons un prototype sur le cas prioritaire, en conditions réelles, pour mesurer la valeur sur un vrai flux. Le POC valide les choix techniques et expose les limites avant d'engager une mise en production complète.",
+    title: 'Le tester sur vos fichiers',
+    desc: "Un prototype tourne quelques semaines sur vos propres documents, avec les personnes qui feront la tâche. On y voit ce qui marche, ce qui se trompe et ce qu'il faudra brancher. Le prototype se juge sur ce relevé, jamais sur une démonstration.",
   },
   {
     num: '03',
-    title: 'Mise en production',
-    desc: "Nous intégrons la solution à vos outils et à votre environnement, posons les garde-fous, la supervision et l'ancrage sur vos données. C'est l'étape où la plupart des projets d'IA générative s'arrêtent faute de préparation ; nous la traitons comme un projet à part entière.",
+    title: "L'installer dans vos logiciels",
+    desc: "L'usage retenu passe dans l'outil d'entreprise que vos équipes ouvrent déjà, relié à vos sources, avec ses règles d'accès et ses points de relecture. Beaucoup de projets s'arrêtent à cette étape faute de responsable ; nous la traitons comme un chantier à part, avec ses dates.",
   },
   {
     num: '04',
-    title: 'Gouvernance dans la durée',
-    desc: "Nous mettons en place la charte d'usage, le suivi de la qualité, la conformité RGPD et AI Act et la formation des équipes. L'objectif est un usage maîtrisé qui tient, pas une démonstration ponctuelle.",
+    title: "L'encadrer dans la durée",
+    desc: "Une charte d'usage, un référent, un suivi de la qualité des réponses et une formation des utilisateurs gardent l'usage fiable quand les modèles changent de version, ce qui arrive tous les deux ou trois mois.",
   },
 ]
 
-/* ───────── Modèles disponibles (familles, sans comparatif biaisé) ───────── */
+/* ───────── Modèles au 7 octobre 2026 (sources : fiche FAITS-OUTILS du 07/10, claude-facts.js) ───────── */
 
 const MODELES = [
-  { fam: 'Claude (Anthropic)', desc: "Famille de modèles orientée raisonnement, rédaction longue et tâches outillées. Adaptée aux usages exigeant de la rigueur et un cadre de sécurité." },
-  { fam: 'GPT (OpenAI)', desc: "Famille généraliste très répandue, disponible via API et intégrée à de nombreux outils, dont l'écosystème Microsoft Copilot." },
-  { fam: 'Gemini (Google)', desc: "Famille multimodale intégrée à l'écosystème Google Workspace, utile lorsque la suite collaborative Google est déjà en place." },
-  { fam: 'Mistral', desc: "Famille de modèles européenne, propriétaire et open source, pertinente quand la souveraineté et l'hébergement en Europe sont prioritaires." },
+  { fam: 'Claude (Anthropic)', desc: "Opus 5.5 (paru le 22 septembre 2026) sert par défaut ; Sonnet 5.5 (28 septembre) va plus vite, Fable 5.1 (1er septembre) tient les travaux longs. Les offres payantes acceptent un million de tokens dans une même conversation. Pas d'entraînement par défaut sur Team et Enterprise." },
+  { fam: 'ChatGPT (OpenAI)', desc: "La conversation tourne sur GPT-5.6 ; les tâches longues de ChatGPT Work et le code de Codex passent par la famille GPT-6 ; la version 6.1 Sol y est arrivée le 29 septembre 2026. ChatGPT Business, l'ancienne offre Team, n'entraîne pas les modèles sur vos échanges par défaut." },
+  { fam: 'Gemini (Google)', desc: "Inclus dans les éditions Google Workspace, en modes Rapide, Raisonnement et Pro (modèles Gemini 3.x). À partir de Business Standard, l'application accepte un contexte d'un million de tokens. Le bon choix quand l'entreprise vit déjà dans Gmail, Docs et Drive." },
+  { fam: 'Mistral', desc: "Éditeur français. Son assistant s'appelle Vibe depuis mai 2026 et héberge les données dans l'Union européenne par défaut. Ses modèles actuels s'appellent Medium 3.5 et Small 4 ; Large 4, présenté le 6 octobre 2026, est en préversion par API, avec des poids ouverts annoncés pour le 27 octobre." },
+  { fam: 'Microsoft Copilot', desc: "L'assistant de Microsoft fait tourner des modèles OpenAI et Anthropic. Dans l'Union européenne, les modèles Claude restent désactivés tant que l'administrateur ne les ouvre pas, parce qu'ils sortent du périmètre européen de stockage garanti par Microsoft (EU Data Boundary)." },
 ]
 
-/* ───────── Comment Masteria accompagne (3 leviers) ───────── */
+/* ───────── Comment Masteria intervient (trois leviers) ───────── */
 
 const LEVIERS = [
   {
     icon: Compass,
     tag: 'Conseil',
-    title: 'Cadrer les usages et la gouvernance',
-    desc: "Nous identifions les cas d'usage à fort retour, cadrons les données et posons la gouvernance (charte, RGPD, AI Act). Vous décidez sur des arbitrages objectivés, indépendants des éditeurs.",
-    points: ['Cartographie des cas d\'usage prioritaires', 'Cadrage RGPD et AI Act', 'Choix des modèles sans dépendance'],
+    title: 'Décider quoi faire, et dans quel cadre',
+    desc: "Nous classons vos usages possibles, nous recommandons un outil sans commission d'éditeur et nous écrivons les règles : données autorisées, relecture, conformité. La direction tranche sur des éléments vérifiables.",
+    points: ['Usages classés par temps rendu et difficulté', 'Règles RGPD et AI Act écrites', "Choix d'outil argumenté"],
   },
   {
     icon: Boxes,
-    tag: 'Développement',
-    title: 'Construire la solution sur mesure',
-    desc: "Du POC à la mise en production : agents, intégrations LLM/RAG sur vos données, connecteurs à vos outils. Vous restez propriétaire du code et des données.",
-    points: ['POC en conditions réelles', 'Intégration à votre existant', 'Code et données au client'],
+    tag: 'Construction',
+    title: 'Fabriquer ce qui manque',
+    desc: "Assistants configurés, compétences, branchements sur vos sources, agents : nous construisons du prototype jusqu'à la mise en service. Le code, les réglages et les données restent votre propriété.",
+    points: ['Prototype testé sur vos fichiers', 'Raccordement à vos logiciels', 'Passation documentée'],
   },
   {
     icon: GraduationCap,
     tag: 'Formation',
-    title: 'Rendre les équipes autonomes',
-    desc: "En offre secondaire, nous formons vos équipes à utiliser l'IA générative avec méthode et garde-fous, pour ancrer l'usage une fois la solution déployée.",
-    points: ['Bonnes pratiques et garde-fous', 'Montée en compétence par métier', 'Autonomie sur les outils déployés'],
+    title: 'Rendre les utilisateurs autonomes',
+    desc: "Une fois l'outil en service, nous formons les personnes qui s'en servent, sur leurs propres dossiers. Ces journées relèvent de notre certification Qualiopi.",
+    points: ['Ateliers sur les dossiers de chaque métier', 'Bonnes pratiques de relecture', 'Référents capables de transmettre'],
   },
 ]
 
@@ -166,53 +168,81 @@ const LEVIERS = [
 
 const MARKET_STATS = [
   {
-    stat: '≥ 30 %',
-    label: "des projets d'IA générative seraient abandonnés après la preuve de concept d'ici fin 2025, le plus souvent pour des raisons organisationnelles",
-    source: 'Gartner, 2024',
+    stat: '48 %',
+    label: "de la population française âgée d'au moins 12 ans se servait de l'IA générative lors de l'enquête de juin 2025 ; la part n'atteignait que 20 % deux ans plus tôt",
+    source: 'Crédoc, Baromètre du numérique 2026 (publié le 9 février 2026)',
   },
   {
-    stat: '1ᵉʳ août 2024',
-    label: "entrée en vigueur de l'AI Act européen (règlement 2024/1689), qui encadre les usages d'IA par niveau de risque",
-    source: 'Commission européenne',
+    stat: '1,2 milliard',
+    label: "d'utilisateurs chaque semaine pour ChatGPT, selon le chiffre montré par OpenAI à son DevDay du 29 septembre 2026",
+    source: 'OpenAI, DevDay 2026, rapporté par Engadget',
   },
   {
-    stat: '25 mai 2018',
-    label: "application du RGPD, cadre de conformité de tout traitement de données personnelles par un système d'IA",
-    source: 'CNIL',
+    stat: '2 déc. 2027',
+    label: "date à laquelle s'appliqueront les règles de l'AI Act pour les usages classés « à haut risque » par son annexe III (embauche, éducation, crédit)",
+    source: 'Règlement (UE) 2026/1744, dit Omnibus',
   },
 ]
 
-/* ───────── Définitions clés (ancrage d'entités — GEO) ───────── */
+/* ───────── Définitions clés (ancrage d'entités, GEO) ───────── */
 
 const GLOSSARY = [
   {
     term: 'IA générative',
-    def: "Catégorie d'intelligence artificielle qui produit du contenu nouveau (texte, code, image, synthèse) à partir d'une consigne, en s'appuyant sur des modèles entraînés sur de grands volumes de données.",
+    def: "Famille de systèmes d'IA qui créent un contenu nouveau (texte, image, code, tableau) à partir d'une demande, en s'appuyant sur des modèles entraînés sur d'immenses corpus.",
   },
   {
     term: 'LLM (grand modèle de langage)',
-    def: "Modèle entraîné à prédire et générer du langage naturel, socle de la plupart des usages d'IA générative en entreprise (Claude, GPT, Gemini, Mistral).",
+    def: "Le moteur de la plupart de ces outils : un modèle qui prédit la suite d'un texte mot après mot. Claude, GPT, Gemini et Mistral en sont des familles.",
   },
   {
-    term: 'RAG (retrieval-augmented generation)',
-    def: "Technique qui ancre les réponses d'un modèle dans vos propres documents et bases, pour des réponses sourcées et limiter les approximations.",
+    term: 'RAG (génération augmentée par la recherche)',
+    def: "Méthode qui va chercher dans vos documents les passages utiles avant de répondre, pour que la réponse s'appuie sur eux et puisse les citer.",
   },
   {
     term: 'Hallucination',
-    def: "Réponse fausse mais formulée avec assurance par un modèle. Elle se maîtrise par l'ancrage sur des données fiables et la validation humaine.",
+    def: "Réponse fausse présentée avec assurance. Elle recule quand le modèle travaille sur des sources fiables et qu'une personne relit ce qui engage.",
   },
   {
-    term: 'Fine-tuning',
-    def: "Ajustement d'un modèle existant sur des données spécifiques pour l'adapter à un domaine ou à un style, en complément ou en alternative au RAG.",
+    term: 'Compétence (skill)',
+    def: "Procédure rédigée une fois dans un fichier SKILL.md, que l'assistant charge dès qu'une demande la concerne. Anthropic a ouvert ce format à tous le 18 décembre 2025 ; Google, Microsoft, OpenAI et Mistral l'ont adopté depuis.",
+  },
+  {
+    term: 'Agent',
+    def: "Système qui enchaîne lui-même plusieurs actions dans vos logiciels pour atteindre un objectif, sous des règles de validation humaine fixées à l'avance.",
   },
 ]
 
-/* ───────── Sources de référence (liens d'autorité) ───────── */
+/* ───────── Sources de référence (liens d'autorité, aussi émis en JSON-LD) ───────── */
 
-const REFERENCES = [
-  { label: "AI Act — texte officiel (EUR-Lex, règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
-  { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
-  { label: "Intelligence artificielle — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+const PAGE_CITATIONS = [
+  { name: "AI Act : règlement (UE) 2024/1689, texte publié sur EUR-Lex", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Règlement (UE) 2026/1744 modifiant l'AI Act, dit Omnibus", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "Commission européenne : le cadre réglementaire de l'IA", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
+  { name: "CNIL : ses recommandations sur l'intelligence artificielle", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+]
+
+/* ───────── Deux missions citées (faits : src/data/etudes-de-cas.js et missions-formation.js) ───────── */
+
+const CAS = [
+  {
+    href: '/etudes-de-cas-ia#conseil-financier',
+    icon: Landmark,
+    sector: 'Conseil financier au secteur public',
+    text: "Quatre assistants écrivent les réponses aux marchés publics d'un cabinet de conseil financier qui compte vingt consultants environ, alimentés par les mémoires que les jurys avaient le mieux notés. Avant d'écrire, chacun questionne le consultant sur le client et les références à citer : le texte part du dossier, pas d'une trame vide.",
+  },
+  {
+    href: '/etudes-de-cas-ia#industrie',
+    icon: Factory,
+    sector: 'Groupe industriel du packaging',
+    text: "Le groupe a remplacé son assistant maison par Copilot. Ses 24 managers pilotes ont travaillé treize ateliers taillés dans les propres fichiers de l'entreprise (prix, coûts, base RH), avant l'ouverture aux sites américains et mexicains en octobre 2026.",
+  },
+  {
+    href: '/etudes-de-cas-ia#mission-interprofession-agricole',
+    icon: Sprout,
+    sector: 'Interprofession agricole, septembre 2026',
+    text: "Seize salariés ont construit un premier assistant, puis lui ont posé une question dont la réponse ne figurait nulle part dans ses documents, pour voir s'il avouait ne pas savoir. Ce test simple apprend plus sur les hallucinations qu'un exposé.",
+  },
 ]
 
 /* ───────── FAQ ───────── */
@@ -220,41 +250,41 @@ const REFERENCES = [
 const FAQ = [
   {
     q: "Qu'est-ce que l'IA générative en entreprise ?",
-    a: "L'IA générative en entreprise désigne l'usage de modèles capables de produire du contenu (texte, code, image, synthèse) à partir d'une consigne, intégré aux processus métier d'une organisation. Concrètement, elle aide à rédiger, reformuler, résumer, rechercher dans des documents et assister le support ou le développement. Sa valeur ne vient pas de l'outil seul mais de son intégration à vos données et à vos flux, avec des garde-fous. Masteria accompagne ce passage du cas d'usage au déploiement maîtrisé, du conseil à la solution en production.",
+    a: "C'est l'usage, dans le travail quotidien d'une organisation, de modèles qui écrivent, résument, traduisent, analysent des chiffres ou programment à partir d'une demande en langage courant. Elle rapporte quand elle travaille sur les documents et dans les logiciels de l'entreprise, avec des règles sur les données et une relecture de ce qui engage. Masteria aide à choisir les usages, construit les outils qui manquent et forme les utilisateurs.",
   },
   {
-    q: "Quels cas d'usage de l'IA générative pour les entreprises ?",
-    a: "Les cas d'usage transverses reviennent dans la plupart des fonctions : rédaction et reformulation, synthèse documentaire, recherche dans vos données, assistance au support client, préparation de propositions commerciales, lecture de contrats côté juridique, assistance au code et à la data côté IT. Le bon point de départ est un cas prioritaire à forte valeur et à faible risque, plutôt qu'un déploiement tous azimuts. Pour des exemples par fonction et par secteur, voyez nos cas d'usage de l'IA en entreprise et nos solutions IA types.",
+    q: "Quels cas d'usage de l'IA générative reviennent le plus souvent ?",
+    a: "Six familles reviennent partout : répondre au courrier entrant, retrouver une règle dans la documentation interne, préparer et résumer les réunions, analyser un tableau de chiffres, produire des supports dans vos gabarits, écrire et relire du code. Le meilleur départ reste une tâche fréquente et facile à vérifier. Une page dédiée les reprend fonction par fonction, du marketing à la direction.",
   },
   {
     q: "Comment déployer l'IA générative en entreprise ?",
-    a: "Le déploiement suit quatre temps : cadrer les cas d'usage prioritaires et leurs contraintes de données, prouver la valeur sur un POC en conditions réelles, mettre en production en intégrant la solution à vos outils avec les garde-fous nécessaires, puis gouverner dans la durée (charte d'usage, suivi de qualité, conformité, formation). L'étape la plus négligée est la mise en production : beaucoup de pilotes prometteurs ne passent jamais à l'échelle faute de préparation. Mettre en place l'IA générative est un projet à part entière, pas une simple souscription d'outil.",
+    a: "En quatre étapes : choisir un usage et écrire ce que serait un succès, le tester quelques semaines sur vos fichiers avec les futurs utilisateurs, l'installer dans l'outil d'entreprise relié à vos sources, puis l'encadrer avec une charte, un référent et une formation. L'installation est l'étape la plus souvent négligée : un prototype réussi qui n'a pas de responsable ne sert personne.",
   },
   {
     q: "Quels risques et quelle conformité RGPD / AI Act ?",
-    a: "Trois risques principaux : les hallucinations (réponses fausses formulées avec assurance), la confidentialité des données saisies dans des outils non maîtrisés, et la conformité réglementaire. Le RGPD encadre tout traitement de données personnelles ; l'AI Act, règlement (UE) 2024/1689 entré en vigueur le 1ᵉʳ août 2024, impose une documentation des usages et une classification par niveau de risque. Les garde-fous se cadrent en amont : périmètre des données, ancrage sur vos contenus, validation humaine, traçabilité. Notre offre de gouvernance IA détaille ce cadre.",
+    a: "Trois risques dominent : des erreurs énoncées avec aplomb, des données confiées à un compte grand public, des obligations légales ignorées. Le RGPD s'applique depuis le 25 mai 2018 à toute donnée personnelle. L'AI Act, dont l'entrée en vigueur remonte au 1er août 2024, attend depuis le 2 février 2025 que les entreprises aident leurs utilisateurs à maîtriser ces outils (article 4) et fixe depuis le 2 août 2026 des règles de transparence (article 50) ; les obligations des usages « à haut risque », comme le tri de candidatures, ont été reportées au 2 décembre 2027 par le règlement (UE) 2026/1744. Notre page sur la gouvernance de l'IA détaille le cadre à poser.",
   },
   {
     q: "Quel modèle d'IA générative choisir ?",
-    a: "Il n'existe pas de meilleur modèle dans l'absolu : le choix dépend du cas d'usage, du coût, de la sensibilité des données et de votre écosystème existant. Les principales familles sont Claude (Anthropic), GPT (OpenAI), Gemini (Google) et Mistral, propriétaires ou open source. Nous travaillons sans dépendance à un fournisseur unique et recommandons le modèle adapté à votre contexte, en pondérant performance, coût d'usage, conformité et capacité d'intégration. Une approche multi-modèle évite de s'enfermer dans un choix qui vieillit vite.",
+    a: "Le meilleur modèle n'existe que pour une tâche donnée. Au 7 octobre 2026, Claude (Opus 5.5, Sonnet 5.5) excelle sur les longs documents et le code, ChatGPT sur les images et les agents d'équipe, Gemini dans Google Workspace, Microsoft Copilot dans Outlook, Word et Teams, Mistral quand l'hébergement européen prime. Nous comparons sur vos propres fichiers, en pesant la qualité, le coût par siège, la gestion des données et les logiciels déjà en place. Les versions changent tous les deux ou trois mois : un choix se revoit chaque année.",
   },
   {
     q: "Combien coûte un projet d'IA générative en entreprise ?",
-    a: "Un projet d'IA générative se chiffre sur devis, selon son périmètre : un POC sur un cas unique, une intégration sur vos données ou une solution complète mise en production n'engagent pas le même travail. Le coût se précise après un cadrage qui fixe le périmètre, les données et le critère de réussite. Pour des repères de budget et la logique de chiffrage, consultez notre page sur le prix d'un projet IA. Notre diagnostic IA cadre le besoin avant tout engagement.",
+    a: "Deux postes s'additionnent. Les abonnements d'abord, de 15 € à 30 € environ par utilisateur et par mois pour les offres entreprise des grands assistants, d'après les grilles relevées le 7 octobre 2026. Le travail de mise en œuvre ensuite, chiffré au forfait une fois le périmètre connu : un prototype se compte en milliers d'euros, un outil raccordé à vos logiciels en dizaines de milliers, un déploiement multi-pays dépasse les 100 000 €. Les 30 minutes de cadrage sont offertes.",
   },
   {
     q: "L'IA générative remplace-t-elle les équipes ?",
-    a: "Non. En entreprise, l'IA générative est un appui qui accélère des tâches répétitives et dégrossit le travail : elle propose, l'équipe arbitre. Les usages sérieux gardent une validation humaine sur les décisions sensibles, parce que le modèle peut se tromper. L'enjeu est moins de remplacer que de redéployer du temps vers ce qui demande du jugement, de la relation et de l'expertise.",
+    a: "Elle remplace des tâches, rarement des postes. Les minutes gagnées sur un premier jet, une recherche ou une mise en page vont à ce que le modèle fait mal : juger, négocier, décider, répondre de son travail. Les usages sérieux gardent une personne qui relit ce qui engage l'entreprise, parce que le modèle se trompe parfois sans le signaler.",
   },
 ]
 
-/* ───────── JSON-LD (tableau : Service + DefinedTermSet) ───────── */
+/* ───────── JSON-LD ───────── */
 
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: "IA générative en entreprise — Masteria",
-  description: "Accompagnement au déploiement de l'IA générative en entreprise : cadrage des cas d'usage, POC, mise en production et gouvernance (RGPD, AI Act). Conseil, développement de solutions sur mesure et formation des équipes.",
+  name: "IA générative en entreprise (Masteria)",
+  description: "Déploiement de l'IA générative en entreprise : choix des usages, prototype sur les fichiers du client, mise en service dans ses logiciels, cadre RGPD et AI Act, formation des utilisateurs.",
   url: 'https://www.master-ia.fr/ia-generative-entreprise',
   serviceType: "Déploiement et intégration de l'IA générative",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -269,11 +299,11 @@ const serviceJsonLd = {
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: "Accompagnement IA générative en entreprise",
+    name: "Déploiement de l'IA générative en entreprise",
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Cadrage des cas d'usage IA générative", description: "Identification et priorisation des cas d'usage à fort retour, contraintes de données et niveau de risque." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Déploiement et mise en production", description: "Du POC à la production : intégration aux outils, ancrage RAG, garde-fous et supervision." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Gouvernance IA (RGPD, AI Act)", description: "Charte d'usage, conformité RGPD et AI Act, validation humaine et traçabilité." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Choix des usages", description: "Usages classés par temps rendu et difficulté, données autorisées, critère de succès écrit." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Prototype et mise en service", description: "Test sur les fichiers du client, installation dans ses logiciels, raccordement à ses sources, points de relecture." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Cadre RGPD et AI Act", description: "Charte d'usage, règles sur les données, relecture humaine, suivi de la qualité des réponses." } },
     ],
   },
 }
@@ -291,18 +321,18 @@ const definedTermSetJsonLd = {
   })),
 }
 
-/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+/* Article : auteur (Mathias Nizan) et dates (E-E-A-T, fraîcheur GEO). */
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/ia-generative-entreprise#article',
-  headline: "IA générative en entreprise : du cas d'usage au déploiement maîtrisé",
+  headline: "IA générative en entreprise : de l'essai au déploiement encadré",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-15',
-  dateModified: '2026-07-02',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/ia-generative-entreprise#webpage' },
   about: ['IA générative', "Déploiement de l'IA en entreprise", 'RGPD', 'AI Act'],
@@ -361,7 +391,8 @@ export default function IAGenerativeEntreprisePage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-15"
-        dateModified="2026-07-02"
+        dateModified="2026-10-07"
+        citations={PAGE_CITATIONS}
         extraJsonLd={extraJsonLd}
         keywords="ia générative entreprise, ia générative en entreprise, déploiement ia générative, intégration ia générative, ia générative pour les entreprises, solutions ia générative entreprise, mettre en place l'ia générative, RGPD, AI Act"
       />
@@ -387,37 +418,37 @@ export default function IAGenerativeEntreprisePage() {
               <Sparkles size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              IA générative en entreprise
+              Le guide du dirigeant
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             IA générative en entreprise
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>du cas d'usage au déploiement maîtrisé</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>de l'essai au déploiement encadré</span>
           </h1>
 
-          {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
+          {/* Byline E-E-A-T : auteur identifié et fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · modèles, prix et AI Act revus le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>L'IA générative produit textes, code et synthèses à partir d'une consigne. En entreprise, sa valeur vient de son intégration à vos données et à vos processus, avec des garde-fous.</strong> Masteria vous accompagne du cas d'usage au déploiement maîtrisé.
+            <strong style={{ color: '#fff', fontWeight: 700 }}>L'IA générative rédige, résume, traduit, analyse un tableau ou écrit du code à partir d'une demande en langage courant. Dans une entreprise, elle rapporte quand elle travaille sur vos documents et dans vos logiciels, avec des règles sur les données et une relecture de ce qui engage.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon par Mathias Nizan. Nous cadrons les usages, développons les solutions sur mesure et formons les équipes, en France et à l'international (Europe, États-Unis, Inde).
+            Ce guide dit ce qu'elle sait faire, où elle se trompe, comment la déployer en quatre étapes et quel modèle choisir au 7 octobre 2026. Masteria, que Mathias Nizan a ouvert à Lyon en 2022, choisit les usages avec vous, construit les outils, puis apprend à leurs utilisateurs à s'en servir.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre projet IA
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#deploiement" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Comment la déployer
+              Les quatre étapes du déploiement
             </a>
           </div>
 
@@ -434,13 +465,13 @@ export default function IAGenerativeEntreprisePage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>À retenir</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
+                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
                   <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
                 </div>
               ))}
@@ -449,49 +480,49 @@ export default function IAGenerativeEntreprisePage() {
         </div>
       </section>
 
-      {/* ── QU'EST-CE QUE L'IA GÉNÉRATIVE EN ENTREPRISE (éditorial asymétrique) ── */}
+      {/* ── DÉFINITION (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>Définition</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Qu'est-ce que l'IA générative en entreprise ?
+                L'IA générative en entreprise, c'est un modèle mis au travail sur vos dossiers
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>L'IA générative en entreprise désigne l'usage de modèles capables de produire du contenu (texte, code, image, synthèse) à partir d'une consigne, intégré aux processus métier. Sa valeur ne tient pas à l'outil seul mais à son intégration à vos données et à vos flux, avec des garde-fous.</strong>
+                <strong>On parle d'IA générative en entreprise quand des modèles capables de produire du texte, du code, des images ou des tableaux sont branchés sur le travail d'une organisation. Leur valeur dépend de trois choses : les documents auxquels ils ont accès, les logiciels dans lesquels ils agissent, les règles qui encadrent leur usage.</strong>
               </p>
             </div>
 
             <div style={{ color: '#374151', fontSize: 16, lineHeight: 1.75 }}>
               <p style={{ marginTop: 0, marginBottom: 20 }}>
-                Depuis la diffusion massive des modèles de langage, la technologie est accessible à toutes les entreprises. La difficulté s'est déplacée : ce n'est plus l'accès à l'IA générative qui distingue les organisations, mais la qualité de son intégration aux processus, son ancrage sur les données réelles et la maîtrise de ses limites.
+                Toute entreprise peut ouvrir un abonnement à ChatGPT, Claude ou Gemini en dix minutes. L'accès a cessé d'être un sujet. Ce qui sépare un essai sans lendemain d'un usage installé, c'est le travail fait autour : choisir les bonnes tâches, relier l'outil aux bons fichiers, apprendre aux équipes à relire.
               </p>
               <p style={{ marginBottom: 20 }}>
-                Concrètement, l'IA générative pour les entreprises s'appuie sur des grands modèles de langage (LLM) reliés à vos contenus, souvent via du RAG (retrieval-augmented generation) pour produire des réponses sourcées. Elle assiste la rédaction, la synthèse, la recherche documentaire, le support et le développement, là où ces tâches sont répétitives et chronophages.
+                Sous le capot, un grand modèle de langage (LLM, le moteur qui prédit la suite d'un texte) reçoit votre demande et le contexte qu'on lui fournit. Ce contexte peut être un fichier joint, un dossier partagé ou une base documentaire interrogée à la volée, la technique dite RAG. Plus il est précis, plus la réponse colle à votre réalité et peut citer ses sources.
               </p>
               <p style={{ marginBottom: 0 }}>
-                Un usage sérieux garde l'humain dans la boucle sur les décisions sensibles. L'IA propose, l'équipe arbitre. C'est cette articulation, et non l'outil lui-même, qui fait la différence entre une démonstration et un usage qui tient dans la durée. Pour des exemples concrets, parcourez nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link> et nos <Link to="/solutions-ia" style={aStyle}>solutions IA types</Link>.
+                Le modèle propose, une personne décide : cette règle tient pour tout ce qui part chez un client, engage un budget ou touche un salarié. Les exemples par service se trouvent dans <Link to="/cas-usage-ia-entreprise" style={aStyle}>notre panorama des usages, service par service</Link>, les outils types sur la page de nos <Link to="/solutions-ia" style={aStyle}>solutions IA</Link>.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── CE QU'ELLE CHANGE : GAINS & LIMITES HONNÊTES ── */}
+      {/* ── CE QU'ELLE APPORTE ET SES LIMITES ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Ce qu'elle change</Kicker>
+          <Kicker>Apports et limites</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que l'IA générative apporte, et ce qu'elle ne fait pas
+            Ce que l'IA générative sait faire pour vous, et là où elle trébuche
           </h2>
 
           <p style={answerStyle}>
-            <strong>L'IA générative fait gagner du temps sur la rédaction, la synthèse, la recherche documentaire et l'assistance au support ou au code. Elle ne décide pas à votre place et peut se tromper : les gains réels supposent un ancrage sur vos données et une validation humaine.</strong>
+            <strong>Elle accélère l'écriture, la lecture de gros volumes, l'analyse de tableaux et la programmation. Elle se trompe parfois sans prévenir, ne connaît de votre entreprise que ce qu'on lui montre et ne décide de rien : ses apports supposent vos documents et une relecture.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Les bénéfices sont concrets quand l'usage est cadré. Les limites le sont tout autant : les passer sous silence, c'est préparer un projet qui déçoit. Voici les deux faces, sans survente.
+            Taire les limites prépare une déception au premier bilan. Les deux colonnes suivantes se lisent ensemble.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20, marginBottom: 44 }}>
@@ -506,7 +537,7 @@ export default function IAGenerativeEntreprisePage() {
             ))}
           </div>
 
-          <h3 style={{ ...h3Style, fontSize: 18, marginBottom: 16 }}>Les limites à garder en tête</h3>
+          <h3 style={{ ...h3Style, fontSize: 18, marginBottom: 16 }}>Trois limites à connaître avant de commencer</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
             {LIMITES.map(item => (
               <div key={item.title} style={{ ...cardStyle, padding: 24, borderLeft: `3px solid ${c}` }}>
@@ -521,17 +552,17 @@ export default function IAGenerativeEntreprisePage() {
         </div>
       </section>
 
-      {/* ── CAS D'USAGE TRANSVERSES ── */}
+      {/* ── SIX USAGES PAR NATURE DE TRAVAIL ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Cas d'usage transverses</Kicker>
+              <Kicker>Usages transverses</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Quels cas d'usage de l'IA générative pour les entreprises ?
+                Six usages de l'IA générative reviennent dans toutes les entreprises
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Les cas d'usage transverses reviennent dans toutes les fonctions : rédaction, synthèse documentaire, recherche dans vos données, support, préparation de propositions, lecture de contrats, assistance au code. Le bon point de départ est un cas prioritaire, à forte valeur et faible risque.</strong>
+                <strong>Répondre au courrier, interroger le savoir interne, préparer les réunions, faire parler les chiffres, produire des supports, écrire du code. Commencez par celui qui revient le plus souvent dans la semaine de vos équipes et qui se vérifie le plus facilement.</strong>
               </p>
             </div>
 
@@ -548,14 +579,14 @@ export default function IAGenerativeEntreprisePage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Selon le besoin, ces usages prennent la forme d'un <Link to="/agents-ia-entreprise" style={aStyle}>agent IA pour votre entreprise</Link> ou d'une solution dédiée à un métier. Pour un panorama par cas, voyez nos <Link to="/solutions-ia" style={aStyle}>solutions IA</Link> et nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link>.
+                Quand une tâche demande d'enchaîner plusieurs actions dans vos logiciels, l'usage prend la forme d'un <Link to="/agents-ia-entreprise" style={aStyle}>agent IA d'entreprise</Link>. Les déclinaisons métier par métier sont rassemblées dans nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages par service</Link>, et les outils prêts à adapter dans nos <Link to="/solutions-ia" style={aStyle}>solutions IA types</Link>.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── COMMENT LA DÉPLOYER (ancre sombre — section la plus technique) ── */}
+      {/* ── COMMENT LA DÉPLOYER (ancre sombre) ── */}
       <section id="deploiement" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -564,15 +595,15 @@ export default function IAGenerativeEntreprisePage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Déploiement</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Comment déployer l'IA générative en entreprise ?
+            Déployer l'IA générative en entreprise prend quatre étapes
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le déploiement de l'IA générative suit quatre temps : cadrer les cas d'usage, prouver la valeur sur un POC en conditions réelles, mettre en production en l'intégrant à vos outils, puis gouverner dans la durée. L'étape la plus négligée est la mise en production.</strong>
+            <strong style={{ color: '#fff' }}>Choisir un usage, le tester sur vos fichiers, l'installer dans vos logiciels, l'encadrer dans la durée. La troisième étape décide du sort du projet : un prototype applaudi qui n'a ni responsable ni place dans les outils du quotidien s'éteint en quelques mois.</strong>
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 12, lineHeight: 1.7, maxWidth: 880 }}>
-            Selon Gartner, au moins 30 % des projets d'IA générative seraient abandonnés après la preuve de concept d'ici fin 2025, le plus souvent pour des raisons organisationnelles. Mettre en place l'IA générative est un projet à part entière, pas une souscription d'outil.
+            Mettre en place l'IA générative ressemble davantage à un projet d'organisation qu'à un achat de logiciel. Le budget le plus sous-estimé est rarement celui des licences : c'est le temps passé à relier l'outil à vos données et à former ceux qui s'en servent.
           </p>
 
           <div style={{ position: 'relative', marginTop: 40, maxWidth: 880 }}>
@@ -597,57 +628,57 @@ export default function IAGenerativeEntreprisePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '36px 0 0', maxWidth: 880 }}>
-            Pour cadrer le besoin avant tout déploiement, notre <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>diagnostic IA</Link> est l'offre d'entrée. Pour la trajectoire au niveau direction, voyez notre <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>.
+            Pour choisir le premier usage, le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>Diagnostic IA</Link> fait l'affaire : une intervention courte, calibrée lors du cadrage. Pour une feuille de route à l'échelle de la direction, voyez notre <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── RISQUES & GARDE-FOUS ── */}
+      {/* ── RISQUES ET GARDE-FOUS ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Risques & garde-fous</Kicker>
+              <Kicker>RGPD et AI Act</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Quels risques et quelle conformité RGPD / AI Act ?
+                Deux textes encadrent l'IA générative : le RGPD et l'AI Act
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Trois risques cadrent l'usage : hallucinations, confidentialité des données et conformité réglementaire. Le RGPD encadre les données personnelles ; l'AI Act, règlement (UE) 2024/1689 en vigueur depuis le 1ᵉʳ août 2024, impose documentation et classification par niveau de risque.</strong>
+                <strong>Le RGPD protège les données personnelles depuis le 25 mai 2018. L'AI Act, qui s'applique par étapes depuis son entrée en vigueur le 1er août 2024 et que l'Omnibus a modifié en juillet 2026, ajoute des devoirs gradués selon l'usage : formation des utilisateurs, transparence sur les contenus générés, exigences fortes pour les usages « à haut risque ».</strong>
               </p>
             </div>
 
             <div style={{ color: '#374151', fontSize: 16, lineHeight: 1.75 }}>
               <p style={{ marginTop: 0, marginBottom: 20 }}>
-                Les garde-fous se posent en amont, pas après l'incident. Côté hallucinations, l'ancrage des réponses sur vos données fiables (RAG) et la validation humaine sur les sujets sensibles réduisent fortement le risque d'erreur. Côté confidentialité, le périmètre des données, le choix de l'hébergement et la maîtrise des accès se décident avant le moindre usage en production.
+                Les précautions se prennent avant le premier incident. Pour limiter les erreurs, on donne au modèle des sources fiables et on fait relire tout ce qui sort de l'entreprise. Pour protéger les données, on choisit une offre entreprise, on décide quelles informations peuvent y entrer et qui y accède.
               </p>
               <p style={{ marginBottom: 20 }}>
-                Côté conformité, deux cadres se cumulent. Le RGPD, appliqué depuis le 25 mai 2018, encadre tout traitement de données personnelles par un système d'IA. L'AI Act, règlement européen 2024/1689 entré en vigueur le 1ᵉʳ août 2024, classe les systèmes par niveau de risque et impose documentation, traçabilité et garde-fous. Concrètement, l'entreprise doit savoir quels usages d'IA elle déploie, sur quelles données, et le tracer.
+                Côté AI Act, trois dates comptent au 7 octobre 2026. L'article 4 vaut depuis le 2 février 2025 : l'entreprise doit aider ses salariés à maîtriser les outils qu'ils utilisent ; l'Omnibus en a fait une obligation de moyens. Depuis le 2 août 2026, l'article 50 oblige à avertir l'utilisateur qu'il converse avec une machine, et à signaler les hypertrucages ainsi que certains textes générés publiés pour informer le public. Les usages classés « à haut risque » (annexe III), tels le tri de candidatures ou l'évaluation de salariés, attendront le 2 décembre 2027 : l'Omnibus, règlement (UE) 2026/1744, a repoussé cette échéance.
               </p>
               <p style={{ marginBottom: 0 }}>
-                Une charte d'usage interne, un registre des systèmes d'IA et des procédures de revue humaine transforment ces obligations en cadre opérationnel. C'est l'objet de notre offre de <Link to="/gouvernance-ia" style={aStyle}>gouvernance IA</Link>, qui structure un déploiement maîtrisé de l'IA générative.
+                Une charte d'usage, un registre des outils et des usages, et une règle de relecture par type de document traduisent ces textes en consignes que chacun comprend. Notre page sur la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> détaille ce cadre, et celle sur l'<Link to="/ia-et-rgpd" style={aStyle}>IA et le RGPD</Link> les règles propres aux données personnelles.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── MODÈLES DISPONIBLES ── */}
+      {/* ── MODÈLES AU 7 OCTOBRE 2026 ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Modèles disponibles</Kicker>
+          <Kicker>Modèles au 7 octobre 2026</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Quel modèle d'IA générative choisir ?
+            Cinq familles de modèles se partagent le marché, et aucune ne gagne partout
           </h2>
 
           <p style={answerStyle}>
-            <strong>Il n'existe pas de meilleur modèle dans l'absolu : le choix dépend du cas d'usage, du coût, de la sensibilité des données et de votre écosystème. Les principales familles sont Claude (Anthropic), GPT (OpenAI), Gemini (Google) et Mistral. Nous travaillons sans dépendance à un fournisseur unique.</strong>
+            <strong>Claude, ChatGPT, Gemini, Mistral et Microsoft Copilot se valent sur l'essentiel et se distinguent à l'usage : volume de documents accepté, intégration à vos logiciels, hébergement des données, prix par siège. Nous comparons sur vos fichiers et ne touchons aucune commission d'éditeur.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Le marché évolue vite, et un choix figé vieillit mal. Une approche multi-modèle permet de retenir le modèle adapté à chaque cas, en pondérant performance, coût d'usage, conformité et capacité d'intégration. Voici les grandes familles, sans classement marketing.
+            Les fiches ci-dessous datent du 7 octobre 2026. Une nouvelle version sort chez l'un ou l'autre éditeur presque chaque mois : un choix d'outil se réexamine au moins une fois par an.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
             {MODELES.map(m => (
               <div key={m.fam} style={{ ...cardStyle, padding: 24 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
@@ -660,25 +691,25 @@ export default function IAGenerativeEntreprisePage() {
           </div>
 
           <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: '24px 0 0', maxWidth: 880 }}>
-            Cette présentation est volontairement factuelle et sans comparatif biaisé : le bon modèle se détermine au cas par cas, en fonction de votre contexte réel.
+            Pour une comparaison détaillée par usage, notre page <Link to="/quel-outil-ia" style={aStyle}>quel outil d'IA choisir</Link> confronte les assistants tâche par tâche.
           </p>
         </div>
       </section>
 
-      {/* ── COMMENT MASTERIA ACCOMPAGNE ── */}
+      {/* ── COMMENT MASTERIA INTERVIENT ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Notre accompagnement</Kicker>
+          <Kicker>Notre rôle</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Comment Masteria vous accompagne sur l'IA générative
+            Masteria décide avec vous, construit, puis forme
           </h2>
 
           <p style={answerStyle}>
-            <strong>Masteria couvre le chemin complet : conseil pour cadrer les usages et la gouvernance, développement des solutions sur mesure du POC à la production, et formation des équipes en offre secondaire pour ancrer l'usage. Vous restez propriétaire du code et des données.</strong>
+            <strong>Trois métiers dans un même cabinet : le conseil pour choisir les usages et poser les règles, la construction pour fabriquer et installer les outils, la formation pour rendre les utilisateurs autonomes. Le code et les réglages livrés vous appartiennent.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
-            Spécialiste de l'IA depuis 2022, indépendant des éditeurs, le cabinet objective les arbitrages et conçoit pour la production, pas pour la démonstration. Trois leviers se combinent selon votre besoin.
+            Selon votre point de départ, un seul levier suffit ou les trois s'enchaînent.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
@@ -705,21 +736,21 @@ export default function IAGenerativeEntreprisePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            La formation est ici une offre secondaire, mobilisée une fois la solution déployée pour rendre les équipes autonomes. Le cœur du sujet reste le passage du cas d'usage au déploiement, via notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en IA</Link> et nos <Link to="/solutions-ia" style={aStyle}>solutions IA</Link>.
+            Sur cette page, la formation arrive en dernier, une fois l'outil en service. L'essentiel du travail consiste à faire d'une idée un outil utilisé chaque jour, ce que décrivent notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en IA</Link> et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── REPÈRES, DÉFINITIONS & SOURCES (SEO + GEO) ── */}
+      {/* ── REPÈRES, DÉFINITIONS ET SOURCES (SEO, GEO) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <Kicker>Repères du marché</Kicker>
+          <Kicker>Repères chiffrés</Kicker>
           <h2 style={h2Style}>
-            L'IA générative en entreprise : ce que disent les chiffres
+            Trois chiffres situent l'IA générative en 2026
           </h2>
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, maxWidth: 820, marginBottom: 32 }}>
-            <strong style={{ color: '#0A0A0A' }}>La technologie est accessible à toutes les entreprises ; c'est son intégration et sa conformité qui font la différence.</strong>{' '}
-            Trois repères vérifiables cadrent l'enjeu et expliquent pourquoi le déploiement et la gouvernance sont déterminants.
+            <strong style={{ color: '#0A0A0A' }}>Les salariés s'en servent déjà, souvent avec leurs comptes personnels ; la loi européenne fixe le calendrier.</strong>{' '}
+            Chaque repère est daté et sourcé.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginBottom: 40 }}>
@@ -733,7 +764,7 @@ export default function IAGenerativeEntreprisePage() {
           </div>
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', letterSpacing: '-0.01em', margin: '0 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Six mots à connaître
           </h3>
           <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
             {GLOSSARY.map((g, i) => (
@@ -745,13 +776,13 @@ export default function IAGenerativeEntreprisePage() {
           </dl>
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', letterSpacing: '-0.01em', margin: '44px 0 16px' }}>
-            Sources de référence
+            Textes officiels cités
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
-            {REFERENCES.map((r, i) => (
+            {PAGE_CITATIONS.map((r, i) => (
               <li key={i}>
                 <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
-                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.name}
                 </a>
               </li>
             ))}
@@ -759,45 +790,66 @@ export default function IAGenerativeEntreprisePage() {
         </div>
       </section>
 
-      {/* ── BUDGET (renvoi prix) ── */}
+      {/* ── BUDGET ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Budget</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Combien coûte un projet d'IA générative ?
+            Un projet d'IA générative se paie en abonnements et en mise en œuvre
           </h2>
 
           <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>Un projet d'IA générative se chiffre sur devis, selon le périmètre : un POC sur un cas unique, une intégration sur vos données ou une solution complète en production n'engagent pas le même travail. Le coût se précise après un cadrage qui fixe le périmètre, les données et le critère de réussite.</strong>
+            <strong>Les abonnements entreprise des grands assistants coûtent de 15 € à 30 € environ par utilisateur et par mois (grilles du 7 octobre 2026). La mise en œuvre se chiffre au forfait : en milliers d'euros pour un prototype, en dizaines de milliers pour un outil raccordé à vos logiciels, au-delà de 100 000 € pour un déploiement sur plusieurs sites.</strong>
           </p>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            Nous ne publions pas de prix type, car un tarif à l'aveugle ne veut rien dire sur un projet sur mesure. Pour des repères de budget et la logique de chiffrage, consultez notre page sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>. Pour situer votre point de départ sans engagement, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> cadre le besoin avant tout chiffrage.
+            Ces fourchettes restent larges, parce que deux projets qui portent le même nom n'ont parfois rien en commun. Le détail de ce qui fait varier la facture figure dans notre guide du <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>. Une demi-heure de cadrage, offerte, suffit à placer votre projet dans ces fourchettes.
           </p>
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['industrie', 'conseil-financier', 'photovoltaique']}
-        title="Trois missions d'IA générative, méthode et résultats"
-        intro="Comité de direction et managers d'un groupe industriel, consultants d'un cabinet de conseil financier, PME de la distribution photovoltaïque : la même méthode en six temps, avec ce que chaque mission a changé."
-      />
+      {/* ── ÉTUDES DE CAS (texte propre à la page, liens vers les ancres) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
+          <Kicker>Sur le terrain</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>L'IA générative à l'œuvre chez trois clients</h2>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Un cabinet de conseil, un industriel, une interprofession : trois façons d'ancrer un modèle dans les documents de l'organisation. Les clients restent anonymes à leur demande.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+            {CAS.map(({ href, icon: Icon, sector, text }) => (
+              <article key={href} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
+                  Lire le récit de la mission
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                IA générative en entreprise : les questions fréquentes
+                Sept questions sur l'IA générative en entreprise
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                La vôtre n'y figure pas ? Posez-la par écrit, nous répondons sous 24 heures.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Envoyer ma question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -811,24 +863,24 @@ export default function IAGenerativeEntreprisePage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pour continuer</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Sept pages pour passer de la lecture à l'action
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Explorer nos expertises IA, du cadrage au déploiement.
+            Des exemples, des règles, un budget : de quoi préparer votre premier usage.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: "Cas d'usage de l'IA en entreprise", href: '/cas-usage-ia-entreprise', tag: "Cas d'usage", desc: "Des exemples concrets d'IA générative par fonction et par secteur, pour identifier vos priorités." },
-              { label: 'Solutions IA types', href: '/solutions-ia', tag: 'Solutions', desc: "Un panorama de nos solutions IA par cas d'usage, des agents aux applications métier." },
-              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand et comment déployer des agents IA, avec les garde-fous que cela exige." },
-              { label: 'Gouvernance IA', href: '/gouvernance-ia', tag: 'Conformité', desc: "Charte d'usage, RGPD, AI Act et validation humaine pour un déploiement maîtrisé." },
-              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Guide', desc: "Les 8 rubriques d'une charte d'utilisation de l'IA, avec des exemples de formulation." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Le point de départ : un diagnostic qui cadre le besoin avant tout déploiement." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
+              { label: 'Panorama des usages par service', href: '/cas-usage-ia-entreprise', tag: 'Exemples', desc: "Huit services passés en revue, trois usages pour chacun, et les briques techniques qui les portent." },
+              { label: 'Solutions IA', href: '/solutions-ia', tag: 'Outils types', desc: "Des outils déjà conçus, à ajuster à votre activité plutôt qu'à inventer." },
+              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Aller plus loin', desc: "Quand l'IA enchaîne elle-même des actions dans vos logiciels, et les règles que cela impose." },
+              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Cadre', desc: "Rôles, registre, relecture et conformité pour que l'usage reste maîtrisé." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Modèle', desc: "Les rubriques d'une charte d'utilisation, avec des formulations à reprendre." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: 'Premier pas', desc: "Repérer le bon premier usage avant d'investir, sur une durée convenue ensemble." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Données', desc: "Ce que la loi demande dès qu'une donnée personnelle passe par un assistant." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -844,7 +896,7 @@ export default function IAGenerativeEntreprisePage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Consulter
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -854,56 +906,65 @@ export default function IAGenerativeEntreprisePage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Je relis ce guide chaque fois qu'un éditeur change de modèle ou que le droit européen bouge ; la dernière révision date du 7 octobre 2026. Depuis la création de Masteria en 2022, j'ai vu l'IA générative passer de la curiosité au poste de travail, et le même constat revient : les entreprises qui en tirent quelque chose ont d'abord choisi leurs usages. Mon parcours figure sur <Link to="/mathias-nizan" style={aStyle}>ma page de fondateur</Link>.
+          </p>
+          <p style={{ fontSize: 14, color: '#6B7280', margin: 0, fontWeight: 600 }}>Mathias Nizan, fondateur de Masteria</p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE (#0A0F1E) ── */}
-      <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
+      <section style={{ background: '#fff', padding: 'clamp(24px, 4vw, 48px) 24px clamp(64px, 9vw, 110px)' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Passez du cas d'usage au déploiement
+              Choisissons ensemble votre premier usage
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Décrivez-nous le cas d'usage d'IA générative que vous voulez adresser et vos contraintes. Nous revenons vers vous sous 24 heures avec une lecture du périmètre et une proposition de cadrage : faisabilité, garde-fous, premier POC envisageable.
+              Décrivez la tâche que vous aimeriez confier à l'IA générative, les logiciels concernés et vos contraintes de données. En une demi-heure, nous regardons si elle s'y prête, ce qu'il faudrait tester d'abord et dans quel cadre.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
-              <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
-                Cadrer votre projet IA
+              <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+                Réserver 30 minutes de cadrage
                 <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
               </Link>
-              <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#E2E8F0', padding: '16px 30px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, border: '1px solid #2A3650' }}>
-                Nous contacter
+              <Link to="/diagnostic-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: '#E2E8F0', padding: '16px 30px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, border: '1px solid #2A3650' }}>
+                Découvrir le Diagnostic IA
               </Link>
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Spécialistes IA depuis 2022 · Multi-modèle · Lyon, Europe, États-Unis, Inde
+              Visio ou téléphone · Claude, ChatGPT, Gemini, Mistral, Copilot comparés sans parti pris · clients français et internationaux
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui intervient ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Derrière ce guide</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Des praticiens qui déploient ces outils chaque semaine
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria ne travaille que sur l'intelligence artificielle. Pour chaque projet, Mathias Nizan constitue l'équipe utile parmi un réseau d'indépendants : une vingtaine de formateurs, une dizaine de consultants spécialisés et cinq développeurs environ. Aucun éditeur ne finance nos recommandations. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail daté et sourcé.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['5', 'familles de modèles suivies au mois le mois'],
+              ['2022', 'année où le cabinet a ouvert, à Lyon'],
+              ['Les Échos', 'ont cité Mathias Nizan sur le choix des outils'],
+              ['Inde', 'et États-Unis : nos missions hors d\'Europe'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -913,8 +974,6 @@ export default function IAGenerativeEntreprisePage() {
           </div>
         </div>
       </section>
-
-      <OfficialSources />
     </>
   )
 }

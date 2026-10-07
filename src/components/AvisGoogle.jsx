@@ -136,9 +136,9 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff', priorite,
   // Mode « pertinents » (pages propres) : les avis les plus proches de la page en extraits dans le
   // HTML, les autres affichés à la demande (jamais au prérendu) ; tous restent accessibles.
   const score = scorer(priorite)
-  const enTete = pertinents
-    ? (avis.filter(a => score(a) > 0).length ? avis.filter(a => score(a) > 0) : avis).slice(0, pertinents)
-    : []
+  // Aucun avis ne parle de la page : pas d'extrait mis en avant (07/10/2026). Les trois mêmes
+  // extraits par défaut se répétaient sur près de 90 pages ; tous les avis restent à un clic.
+  const enTete = pertinents ? avis.filter(a => score(a) > 0).slice(0, pertinents) : []
   const autres = pertinents ? avis.filter(a => !enTete.includes(a)) : []
   const grille = pertinents && (
     <div style={{ marginTop: 24 }}>
@@ -147,7 +147,7 @@ export default function AvisGoogle({ variant = 'section', bg = '#fff', priorite,
       </div>
       {!tous && autres.length > 0 && (
         <button type="button" onClick={() => setTous(true)} style={{ marginTop: 16, background: '#fff', border: `1px solid ${LINE}`, borderRadius: 99, padding: '8px 16px', fontSize: 13.5, fontWeight: 700, color: BLUE, cursor: 'pointer' }}>
-          Voir les {autres.length} autres avis
+          {enTete.length ? `Voir les ${autres.length} autres avis` : `Lire les ${autres.length} avis`}
         </button>
       )}
     </div>

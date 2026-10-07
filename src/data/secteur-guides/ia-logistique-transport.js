@@ -2,7 +2,52 @@
 // Vérifié le 03/10/2026 : Code de commerce L133-3 et L133-6 et Code des transports L3222-1 sur Légifrance, convention CMR (texte publié par UNIDROIT), Service Public F39785 (facturation électronique, vérifié le 07/08/2026), ministère de la Transition écologique (information GES), Insee Première n° 2120, règlements (UE) 2024/1689 et 2026/1744 sur EUR-Lex (via le Cellar) ; retour de mission : étude de cas « photovoltaïque ».
 export default {
   slug: 'ia-logistique-transport',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  secteur: {
+    metaTitle: "IA logistique & transport : conseil supply chain | Masteria",
+  },
+  hero: {
+    chips: ["Réserves, factures, preuves de livraison", "TMS et WMS reliés", "Consultation des transporteurs"],
+    lien: "Voir les délais et les écarts traités",
+  },
+  offresTitre: {
+    kicker: "Trois chantiers d'exploitation",
+    h2: "Suivre l'expédition, outiller l'exploitation, automatiser les quais",
+  },
+  enjeux: {
+    kicker: "Transport et logistique",
+    h2: "Chaque délai manqué et chaque écart non suivi coûte de l'argent",
+    difficultes: "Ce qui échappe aux équipes d'exploitation",
+    prestations: "Ce que nous construisons pour un chargeur ou un transporteur",
+  },
+  regieBloc: {
+    kicker: "Régie sur site logistique",
+    h2: "Un développeur au contact de votre TMS et de votre WMS",
+    accroche: "Pour brancher l'IA au cœur de l'exploitation, le développeur IA rejoint vos équipes sur un site logistique ou au siège et travaille directement avec votre TMS (le logiciel de gestion du transport), votre WMS (celui de l'entrepôt) et vos flux de documents.",
+    lien: "Nos modèles d'engagement en régie",
+  },
+  formationBloc: {
+    kicker: "Former l'exploitation",
+    h2: "Des ateliers sur vos lettres de voiture et vos factures de transporteurs",
+    lien: "Parcourir les formations IA",
+  },
+  faqBloc: {
+    h2: "Transport et logistique : questions fréquentes",
+    texte: "Votre flux de transport ne ressemble à aucun de ces cas ?",
+    lien: "Décrivez-le-nous",
+  },
+  maillage: {
+    h2: "Secteurs voisins de la logistique",
+  },
+  cta: {
+    titre: "Quel écart de transport suivre en premier ?",
+    texte: "Factures à rapprocher, réserves à notifier, transporteurs à consulter : indiquez-nous le flux qui vous échappe et les outils qui le portent. Nous revenons vers vous sous 24 heures pour organiser les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Des intervenants réunis pour votre exploitation",
+    texte: "Pour chaque mission, Mathias Nizan, qui a créé Masteria à Lyon en 2022, assemble une équipe d'indépendants qu'il dirige jusqu'à la passation. En logistique, ce sont des consultants qui suivent une expédition de la commande à l'encaissement, des développeurs qui se branchent sur votre TMS et votre WMS, et des formateurs qui partent de vos documents de transport. Aucun ne vend de logiciel ni d'abonnement.",
+  },
   intro: "En logistique, l'IA générative rapporte là où un délai ou un écart coûte de l'argent : la protestation à notifier dans les trois jours qui suivent une livraison abîmée, la facture d'un transporteur à rapprocher de la commande et de l'indexation énergie, la consultation des transporteurs avant une expédition. Depuis le 1er septembre 2026, chaque entreprise doit pouvoir recevoir ses factures au format électronique, ce qui change la façon de les contrôler. Masteria cadre ces flux avec l'exploitation, la comptabilité et le service client, puis construit les assistants dans vos outils.",
 
   offresIntro: [
@@ -12,14 +57,21 @@ export default {
 
   offres: [
     {
+      title: "Diagnostic de la commande à l'encaissement",
+      cta: "Le conseil IA en pratique",
       desc: "Nous suivons une expédition de la commande à l'encaissement : prise de commande, consultation des transporteurs, préparation, livraison, réserves, facturation. Pour chaque étape, nous relevons le temps passé, les ressaisies et les délais légaux en jeu. Vous recevez une matrice des cas classés par gain et par faisabilité, avec les indicateurs à relever avant tout développement.",
       points: ["Lecture du flux jusqu'à l'encaissement", "Délais légaux cartographiés", "Indicateurs relevés avant le projet"],
     },
     {
+      title: "Assistants pour l'exploitation et l'ADV",
+      cta: "Notre équipe de développement IA",
+      secondaryCta: "Outils sur mesure par métier",
       desc: "Nous développons des assistants pour l'exploitation et l'administration des ventes : consultation des transporteurs avec comparaison des offres, dossier de litige assemblé à partir de la lettre de voiture et des photos, contrôle d'une facture contre la commande et la clause d'indexation. Chaque assistant cite ses pièces et laisse la décision à l'exploitant ou au comptable.",
       points: ["Consultation et comparaison des transporteurs", "Dossiers de litige pièces à l'appui", "Contrôle des factures de transport"],
     },
     {
+      title: "Automatisations des quais et des bureaux",
+      cta: "L'agence d'automatisation",
       desc: "Nous automatisons ce qui tourne chaque jour sur les quais et dans les bureaux : conversion d'un fichier d'entrepôt en import ERP avec contrôle des totaux, réponse aux demandes de statut, alerte avant l'échéance d'une réserve, calcul de l'information sur les gaz à effet de serre de chaque prestation. Les automatisations écrivent dans vos outils après contrôle, et chaque écart remonte à une personne nommée.",
       points: ["Imports d'entrepôt contrôlés", "Alerte avant chaque échéance de réserve", "Information GES calculée par prestation"],
     },
@@ -91,14 +143,14 @@ export default {
       h3: "Retour de mission : un distributeur photovoltaïque fait de ses consultations de transporteurs un chantier prioritaire",
       contexte: "Le point de départ est une PME de trois personnes qui distribue des solutions photovoltaïques depuis trois entrepôts français vers des clients à l'export, avec Odoo pour ERP. Côté transport, deux gestes coûtent cher. Chaque livraison donne lieu à une consultation manuelle des transporteurs, quinze jours avant le départ. Chaque réception oblige à recopier des numéros de série, parce que la scannette ne lit pas le fichier de l'entrepôt. La direction accepte l'IA à une condition : elle prépare, quelqu'un contrôle.",
       etapes: [
-        "Le flux « livrer et encaisser » est décrit geste par geste, à partir de trois entretiens à distance (direction, commerce, opérations) et des pièces de l'entreprise, dont le mail que l'équipe envoie d'habitude aux transporteurs.",
+        "Le flux « livrer et encaisser » est décrit geste par geste, à partir de trois entretiens (direction, commerce, opérations) et des pièces de l'entreprise, dont le mail que l'équipe envoie d'habitude aux transporteurs.",
         "Les tâches sont ensuite pesées une à une (volume déclaré, lien avec Odoo) et classées par impact et faisabilité à trois mois.",
         "Deux des trois assistants à construire avant la formation touchent la logistique : l'un rédigera la consultation des transporteurs quinze jours avant la livraison et proposera un choix ; l'autre transformera le fichier de l'entrepôt en import Odoo et vérifiera les totaux avant l'intégration.",
         "Un cadre accompagne les outils : une charte d'usage, un référent IA qui reçoit les erreurs signalées et un point mensuel.",
         "Le calendrier prévoit 90 jours. Les points de départ seront relevés pendant la formation d'octobre 2026, et le bilan, un mois plus tard, porte sur quelques indicateurs simples, dont la durée d'une consultation et les réceptions saisies sans reprise.",
       ],
-      resultat: "À ce stade, le diagnostic a été présenté à la direction en septembre 2026 et trois décisions l'attendent. Les objectifs à trois mois restent des cibles jusqu'au bilan : diviser par deux le temps de consultation des transporteurs, réussir huit réceptions sur dix sans ressaisie. La leçon vaut pour tout chargeur : le temps de départ se relève avant de construire quoi que ce soit.",
-      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
+      resultat: "À ce stade, le diagnostic a été présenté à la direction en septembre 2026 et trois décisions l'attendent. Les objectifs à trois mois restent des cibles jusqu'au bilan : moins de temps passé avec les transporteurs, des réceptions intégrées sans ressaisie. La leçon vaut pour tout chargeur : le temps de départ se relève avant de construire quoi que ce soit.",
+      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Le diagnostic par flux du distributeur photovoltaïque" },
     },
     pieges: [
       {
@@ -143,7 +195,7 @@ export default {
     },
     {
       q: "Combien coûte un projet IA en logistique ?",
-      a: "Le coût dépend des flux couverts (litiges, factures, consultations), des outils à raccorder (TMS, WMS, ERP, plateforme de facturation) et du volume mensuel de pièces. La proposition, forfaitaire, liste les flux, les contrôles et les indicateurs relevés avant le démarrage. Un assistant de consultation des transporteurs reste un engagement contenu ; un déploiement sur plusieurs entrepôts et plusieurs outils dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros. Le point de départ se décide pendant les 30 minutes de cadrage offertes.",
+      a: "Le coût dépend des flux couverts (litiges, factures, consultations), des outils à raccorder (TMS, WMS, ERP, plateforme de facturation) et du volume mensuel de pièces. La proposition, forfaitaire, liste les flux, les contrôles et les indicateurs relevés avant le démarrage. Un assistant de consultation des transporteurs reste un engagement contenu ; un déploiement sur plusieurs entrepôts et plusieurs outils franchit les 100 000 € et peut atteindre quelques centaines de milliers d'euros. Le point de départ se décide pendant les 30 minutes de cadrage offertes.",
     },
     {
       q: "Nos données de clients et de chauffeurs sortent-elles de l'entreprise ?",
@@ -160,14 +212,14 @@ export default {
   ],
 
   sources: [
-    { name: "Insee Première n° 2120 : les technologies de l'information et de la communication dans les entreprises en 2025", url: "https://www.insee.fr/fr/statistiques/9025878" },
+    { name: "Insee Première n° 2120 (juillet 2026) : l'IA dans les transports et l'entreposage", url: "https://www.insee.fr/fr/statistiques/9025878" },
     { name: "Légifrance : Code de commerce, article L133-3 (protestation dans les trois jours)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000020899366" },
     { name: "Légifrance : Code de commerce, article L133-6 (prescription d'un an)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000017853204" },
     { name: "UNIDROIT : convention relative au contrat de transport international de marchandises par route (CMR), articles 30 et 32", url: "https://www.unidroit.org/french/conventions/1956cmr/cmr_f.pdf" },
     { name: "Légifrance : Code des transports, article L3222-1 (révision du prix selon l'énergie)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000046194417" },
     { name: "Service Public Entreprendre : se mettre en conformité avec l'obligation de facturation électronique", url: "https://entreprendre.service-public.gouv.fr/vosdroits/F39785" },
     { name: "Ministère de la Transition écologique : information GES des prestations de transport", url: "https://www.ecologie.gouv.fr/politiques-publiques/information-ges-prestations-transport" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (annexe III)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : trafic routier et infrastructures critiques dans l'annexe III", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : obligations à haut risque décalées à décembre 2027", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
   ],
 }

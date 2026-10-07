@@ -2,11 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Building2, Check, Eye, GraduationCap, Landmark, Layers,
-  ListChecks, MapPin, Network, ShieldCheck, Target, Workflow, Zap,
+  ListChecks, MapPin, Network, ShieldCheck, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -15,13 +13,21 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * « formation integromat » capté par « (ex-Integromat) » dans title/FAQ.
  *
  * ANTI-CANNIBALISATION : le comparatif n8n/Make/Zapier vit sur /formation-n8n ;
- * CETTE page porte un tableau DIVERGENT « quel scénario Make pour quel
- * métier ». /formation-automatisation-ia = panorama ; /formation-zapier et
- * /formation-n8n = pages sœurs ; /agence-automatisation-ia = faire construire.
+ * CETTE page porte la fiche Make (prix, hébergement, forces, limites) et un
+ * tableau « quel scénario Make pour quelle équipe ». /formation-automatisation-ia
+ * = démarche ; /formation-zapier et /formation-n8n = pages sœurs ;
+ * /agence-automatisation-ia = faire construire.
  *
- * INTÉGRITÉ : faits sobres (ex-Integromat, éditeur européen, modèle par
- * opérations, canevas visuel de scénarios, modules IA) — pas de compte
- * d'applications précis ni de tarifs éditeur. Masteria : 1 980 € HT/j, 2 jours.
+ * RÉÉCRITURE DU 2026-10-07 (texte propre, faits à jour) :
+ * - Make facture en CRÉDITS depuis le 27/08/2025 (ex-opérations, 1 pour 1) :
+ *   make.com/en/credits, relevé le 07/10/2026.
+ * - Offres relevées le 07/10/2026 sur make.com/en/pricing : Free 1 000 crédits/mois,
+ *   2 scénarios actifs, intervalle mini 15 min ; Core 9 $, Pro 16 $, Teams 29 $
+ *   par mois pour 10 000 crédits (paiement annuel, confirmé par relevés tiers) ;
+ *   Enterprise sur devis ; hébergement AWS Europe / Amérique du Nord ;
+ *   Make AI Agents (bêta) sur toutes les offres ; agent sur site en Enterprise.
+ * - FounderNote, OfficialSources et bloc « Qui vous forme » remplacés par des
+ *   textes propres à la page. Masteria : 1 980 € HT/jour, 2 jours.
  */
 
 const SLUG = 'formation-make'
@@ -29,7 +35,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Formation Make (ex-Integromat) : scénarios et IA | Masteria'
-const META_DESC = "Formation Make (ex-Integromat) en 2 jours : construire des scénarios fiables, maîtriser modules et opérations, insérer l'IA, superviser. Qualiopi, OPCO."
+const META_DESC = "Formation Make (ex-Integromat) en 2 jours : scénarios fiables, crédits maîtrisés, étapes IA et agents sous contrôle. Qualiopi, finançable par votre OPCO."
 const KEYWORDS = "formation make, formation integromat, apprendre make, formation make automatisation, make ia, formation make entreprise"
 
 /* ───────── Styles partagés ───────── */
@@ -61,33 +67,34 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: Network, label: 'Sans code : ateliers sur vos processus réels' },
-  { icon: Building2, label: '2 jours en intra, dans vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: GraduationCap, label: 'Qualiopi · prise en charge OPCO possible' },
+  { icon: Network, label: 'Ateliers montés sur les applications de vos équipes' },
+  { icon: MapPin, label: 'France · Europe · États-Unis · Inde' },
+  { icon: Building2, label: 'Deux jours, en groupe intra ou en individuel' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── La session en résumé (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Durée', value: "2 jours (14 h) en intra ; format 1 jour « premiers scénarios » possible au cadrage" },
-  { label: 'Pour qui', value: "Équipes marketing, ventes, ADV, ops, RH et référents IA ; aucun prérequis technique" },
-  { label: 'Outil', value: "Make (anciennement Integromat), connecté aux applications réelles de vos équipes" },
-  { label: 'Méthode', value: "Chaque participant construit, teste et fiabilise un scénario complet sur un processus réel de son poste, étape IA comprise" },
-  { label: 'Livrables', value: "Scénarios en état de marche, gestion d'erreurs posée, conventions d'équipe, plan d'automatisation" },
-  { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable OPCO ; devis sous 24 h" },
+  { label: 'Durée', value: "Deux jours (14 h). Une seule journée suffit quand l'équipe vise ses premiers scénarios : le cadrage le dira." },
+  { label: 'Public', value: "Marketing, ventes, ADV, comptabilité fournisseurs, RH, opérations ; savoir manier un tableur suffit." },
+  { label: 'Version', value: "Make tel qu'il est vendu au 7 octobre 2026 : facturation en crédits, modules IA, Make AI Agents." },
+  { label: 'Méthode', value: "Un scénario par participant, tiré d'une tâche de sa semaine, monté puis éprouvé sur des cas limites." },
+  { label: 'Ce qui reste', value: "Des scénarios documentés, leurs gestionnaires d'erreurs, un nommage commun et les trois chantiers suivants." },
+  { label: 'Financement', value: "Organisme Qualiopi : la session est finançable par votre OPCO, selon ses règles et ses fonds." },
 ]
 
 /* ───────── Sommaire ───────── */
 
 const SOMMAIRE = [
   ['#pourquoi', 'Pourquoi Make'],
+  ['#fiche', 'Make en octobre 2026'],
   ['#programme', 'Programme des 2 jours'],
-  ['#metiers', 'Scénarios par métier'],
-  ['#cas-usage', "Cas d'usage"],
-  ['#pieges', 'Les pièges'],
+  ['#metiers', 'Scénarios par équipe'],
+  ['#cas-usage', 'Ateliers types'],
+  ['#pieges', 'Erreurs fréquentes'],
   ['#tarif', 'Tarif'],
-  ['#lexique', 'Lexique'],
+  ['#lexique', 'Vocabulaire'],
   ['#faq', 'FAQ'],
 ]
 
@@ -96,24 +103,37 @@ const SOMMAIRE = [
 const POURQUOI = [
   {
     icon: Network,
-    title: "Le visuel qui passe à l'échelle",
-    desc: "Les scénarios Make se construisent sur un canevas : chaque module se voit, chaque flux se suit. Cette lisibilité, rare à ce niveau de puissance, fait de Make l'outil où les équipes métier deviennent réellement autonomes.",
+    title: 'Un scénario se relit comme un schéma',
+    desc: "Chaque module apparaît sur le canevas avec ses liaisons. Une responsable ADV relit le scénario d'un collègue et comprend en deux minutes ce qui part, vers quelle application et à quel moment. Le jour où l'auteur change de poste, la passation tient en une conversation.",
   },
   {
     icon: Layers,
-    title: 'Le juste milieu du marché',
-    desc: "Nettement plus puissant que les outils d'entrée de gamme (routeurs, itérateurs, data stores, webhooks), nettement plus accessible que les orchestrateurs techniques : Make est le point d'équilibre pour la plupart des PME et ETI.",
+    title: 'Des briques pour les processus tortueux',
+    desc: "Le routeur sépare les cas, l'itérateur traite une liste ligne à ligne, l'agrégateur recompose le tout, le data store garde la trace d'une exécution à l'autre. Make tient des enchaînements qu'un outil plus simple obligerait à couper en plusieurs morceaux.",
   },
   {
     icon: Bot,
-    title: "L'IA insérée dans les scénarios",
-    desc: "Résumer un document entrant, extraire des champs, classer une demande, rédiger un brouillon : les modules IA s'insèrent comme n'importe quelle étape, avec un format de sortie imposé et une validation humaine là où ça engage.",
+    title: "L'IA posée au milieu du flux",
+    desc: "Un module IA résume une pièce jointe, extrait les champs d'une facture ou classe un message, avec le fournisseur d'IA de Make ou votre propre clé de modèle. Les Make AI Agents choisissent eux-mêmes parmi les outils que vous leur ouvrez. Dans les deux cas, la réponse suit un format fixé à l'avance.",
   },
   {
-    icon: Zap,
-    title: 'Un écosystème très large',
-    desc: "Des milliers d'applications connectées, des webhooks pour tout le reste, et un éditeur européen : vos scénarios parlent à votre CRM, votre facturation, vos tableurs et vos messageries sans développement.",
+    icon: ShieldCheck,
+    title: 'Une zone européenne pour vos données',
+    desc: "Make tourne sur AWS, avec une zone en Europe et une autre en Amérique du Nord. Une organisation française retient en général la zone européenne. Le reste du sujet (ce qui transite, qui accède, ce qu'on inscrit au registre) se règle pendant la formation.",
   },
+]
+
+/* ───────── Make au 7 octobre 2026 (fiche outil) ───────── */
+
+const FICHE = [
+  { k: 'Éditeur', v: "Make, lancé à Prague sous le nom d'Integromat et rebaptisé en 2022, appartient au groupe Celonis." },
+  { k: 'Unité de facturation', v: "Le crédit, qui a remplacé l'opération le 27 août 2025, à raison d'un pour un. La plupart des actions d'un module coûtent un crédit ; un module qui appelle l'IA de Make consomme selon le modèle et la quantité de texte traitée." },
+  { k: 'Offre gratuite', v: "1 000 crédits par mois, deux scénarios actifs, un déclenchement toutes les 15 minutes au plus court." },
+  { k: 'Offres payantes', v: "Core, Pro et Teams démarrent à 9, 16 et 29 dollars par mois pour 10 000 crédits, en paiement annuel ; le prix monte avec le volume de crédits. Enterprise se négocie sur devis." },
+  { k: 'Hébergement', v: "Infrastructure AWS, zone Europe ou Amérique du Nord. L'offre Enterprise ajoute un agent installé sur site pour atteindre un réseau local." },
+  { k: 'Intelligence artificielle', v: "Modules IA et Make AI Agents, encore présentés en bêta, sur toutes les offres. Make Grid donne une vue d'ensemble des scénarios et des agents d'une organisation." },
+  { k: 'Points forts', v: "La lisibilité du canevas, la richesse des fonctions de transformation, l'historique détaillé de chaque exécution." },
+  { k: 'Limites', v: "La plateforme tourne uniquement dans le cloud de Make. Les boucles sur de gros fichiers font grimper la consommation. Les agents sont plus jeunes que ceux de n8n." },
 ]
 
 /* ───────── Programme 2 jours (Matin / Après-midi) ───────── */
@@ -121,102 +141,107 @@ const POURQUOI = [
 const PROGRAMME = [
   {
     jour: 'Jour 1',
-    titre: 'Prendre en main, construire ses premiers scénarios',
-    resume: "De la logique de Make au premier scénario fiable sur un cas réel du poste.",
+    titre: 'Lire, connecter, construire',
+    resume: "Comprendre comment Make raisonne, puis monter un scénario sur une tâche du poste.",
     matin: [
-      { t: 'Make démontré en direct', d: "Scénarios, modules, opérations, exécutions : la logique de l'outil montrée sur des cas concrets avant de toucher au clavier." },
-      { t: 'Connecter vos applications', d: "CRM, messagerie, tableurs, facturation : brancher les applications réelles de l'équipe avec des accès propres et nominatifs." },
-      { t: "L'anatomie d'un scénario fiable", d: "Déclencheur, filtres, modules, sorties : la structure de référence, et le réflexe de nommage qui garde l'ensemble lisible." },
-      { t: 'Comprendre le modèle par opérations', d: "Chaque module exécuté compte : on apprend à lire sa consommation dès le premier jour, pour concevoir des scénarios sobres." },
-      { t: 'Atelier : le premier scénario', d: "Chaque participant choisit une tâche répétitive réelle de son poste et la monte de bout en bout, d'une page blanche ou d'un template Make adapté à son cas." },
+      { t: 'Un scénario démonté devant le groupe', d: "Le formateur ouvre un scénario qui tourne chez un client fictif et le parcourt module par module : déclencheur, filtres, transformations, historique des exécutions." },
+      { t: "Les connexions de l'équipe", d: "Messagerie, tableur, CRM, facturation : chaque connexion se fait avec un compte nominatif, que l'on peut révoquer le jour où quelqu'un quitte l'entreprise." },
+      { t: 'Le crédit, unité de compte', d: "Ce que coûte une exécution, pourquoi un filtre placé tôt allège la facture, où lire la consommation de chaque scénario dans l'organisation." },
+      { t: 'Les modèles de Make, relus avant usage', d: "Partir d'un modèle proposé par Make fait gagner une heure ; le relire module par module évite d'hériter de ses angles morts." },
+      { t: 'Atelier : un scénario par participant', d: "Chacun automatise une tâche répétitive de sa semaine, du déclencheur au résultat, et la fait tourner sur trois cas tirés de ses propres dossiers." },
     ],
     apresmidi: [
-      { t: 'Transformer les données', d: "Mapping, fonctions, formats de date et de texte : le cœur du travail réel, là où la plupart des scénarios se jouent." },
-      { t: 'Routeurs et chemins', d: "Un flux qui se sépare selon des conditions : le routeur, les filtres par branche, et les cas qui ne rentrent dans aucune case." },
-      { t: 'Webhooks : réagir à un événement', d: "Formulaire soumis, paiement reçu, email entrant : déclencher un scénario depuis l'extérieur, proprement." },
-      { t: 'Atelier : le scénario multi-branches', d: "Chacun enrichit son scénario du matin avec un routeur et des chemins selon les cas réels rencontrés." },
-      { t: 'Revue croisée de fin de journée', d: "Chaque scénario passe devant le groupe : lisibilité, robustesse, consommation d'opérations." },
+      { t: 'Mapping et fonctions', d: "Dates au format français, textes à nettoyer, montants à arrondir : les fonctions intégrées règlent la plupart des écarts entre deux applications." },
+      { t: 'Le routeur et ses branches', d: "Séparer les demandes selon leur nature, réserver une branche aux cas imprévus, empêcher qu'un même enregistrement passe deux fois." },
+      { t: 'Webhooks et formulaires', d: "Lancer un scénario à la seconde où un formulaire arrive ou un paiement tombe, puis vérifier le contenu exact de ce que l'application envoie." },
+      { t: 'Atelier : ajouter une branche', d: "Le scénario du matin reçoit un routeur pour traiter le deuxième cas le plus fréquent de la semaine du participant." },
+      { t: 'Relecture en binôme', d: "Chacun relit le scénario d'un voisin : nommage, cas oubliés, crédits consommés pour cent exécutions." },
     ],
   },
   {
     jour: 'Jour 2',
-    titre: 'IA, fiabilisation, supervision',
-    resume: "Des étapes IA sous garde-fous à la supervision et au plan d'automatisation de l'équipe.",
+    titre: "IA, erreurs, passage à l'équipe",
+    resume: "Confier une part du travail à l'IA sans perdre la main, puis préparer la vie du scénario après la session.",
     matin: [
-      { t: "Insérer l'IA dans un scénario", d: "Les modules IA sur des cas concrets : résumer, extraire des champs, classer une demande, rédiger un brouillon dans votre gabarit." },
-      { t: "L'étape IA sous garde-fou", d: "Format de sortie imposé, cas de refus, validation humaine sur ce qui engage : l'IA prépare, l'humain décide, et c'est écrit dans le scénario." },
-      { t: 'Data stores et mémoire', d: "Stocker un état entre deux exécutions : suivis, déduplication, historiques légers, sans monter une base de données." },
-      { t: "La gestion d'erreurs, systématique", d: "Gestionnaires d'erreurs, exécutions incomplètes, reprises : un scénario qui casse en silence est le pire scénario ; chaque échec devient visible." },
-      { t: 'Atelier : fiabiliser son scénario', d: "Gestion d'erreurs, garde-fous IA, test des cas limites : le scénario du jour 1 devient présentable en production." },
+      { t: 'Les modules IA dans le flux', d: "Résumer une pièce jointe, extraire les champs d'une facture, classer un message entrant, avec une réponse en JSON (un format de données structuré) que le module suivant sait lire." },
+      { t: 'Make AI Agents, mis à l\'essai', d: "Fixer un objectif à un agent, lui ouvrir deux ou trois outils, puis comparer avec un scénario classique : l'agent consomme selon le texte traité et se relit moins facilement." },
+      { t: "Les gestionnaires d'erreurs", d: "Sur chaque module sensible, une conduite à tenir : ignorer, reprendre plus tard, annuler. Les exécutions incomplètes sont conservées et une personne nommée reçoit l'alerte." },
+      { t: 'Le data store contre les doublons', d: "Garder la trace de ce qui a déjà été traité, sans monter de base de données." },
+      { t: 'Atelier : fiabiliser', d: "Chaque scénario reçoit sa gestion d'erreurs, un garde-fou sur l'étape IA et un test sur des cas limites proposés par le groupe." },
     ],
     apresmidi: [
-      { t: 'Optimiser les opérations', d: "Boucles sur gros volumes, appels évitables, agrégations : les techniques qui divisent la consommation, donc la facture, à service égal." },
-      { t: "Organiser le travail d'équipe", d: "Nommage, dossiers, documentation légère, propriétaire par scénario, export des blueprints pour sauvegarder et versionner : ce qui différencie trois scénarios qui durent de trente qui meurent." },
-      { t: 'Données et RGPD', d: "Quelles données transitent par Make, quelles minimisations, quels accès : le cadre écrit, aligné sur les recommandations de la CNIL." },
-      { t: 'Atelier : le plan de déploiement', d: "Pour chaque scénario construit : responsable, supervision, prochaine itération." },
-      { t: "Plan d'automatisation de l'équipe", d: "Les trois processus prioritaires à automatiser ensuite, qui les porte, à quelle échéance ; la liste part avec vous." },
+      { t: 'Réduire la consommation', d: "Agréger avant d'écrire, filtrer avant d'appeler l'IA, espacer les déclenchements : on mesure l'effet sur le scénario construit la veille." },
+      { t: "Ranger l'organisation", d: "Dossiers par équipe, nommage commun, un propriétaire par scénario, export du blueprint (le fichier de sauvegarde d'un scénario) avant chaque modification importante." },
+      { t: 'Les données personnelles', d: "Ce qui transite par Make, la zone d'hébergement retenue, la ligne à ajouter au registre des traitements, avec les recommandations de la CNIL en appui." },
+      { t: 'Atelier : la fiche de chaque scénario', d: "Responsable, rythme de surveillance, seuil d'alerte, prochaine évolution : une page par scénario, rangée avec lui." },
+      { t: 'Les trois chantiers suivants', d: "Le groupe choisit les trois processus à automatiser ensuite, avec un porteur et une date pour chacun." },
     ],
   },
 ]
 
-/* ───────── Quel scénario Make pour quel métier (tableau divergent) ───────── */
+/* ───────── Quel scénario Make pour quelle équipe ───────── */
 
 const METIERS_TABLE = [
   {
     equipe: 'Marketing',
-    scenarios: "Leads entrants vers le CRM avec enrichissement, publication multicanal préparée, collecte des retours de campagne",
-    coeur: "Webhooks, routeurs, modules IA pour qualifier et rédiger",
+    scenarios: "Un lead de formulaire enrichi, dédoublonné puis créé dans le CRM ; le bilan hebdomadaire des campagnes posté dans le canal de l'équipe",
+    coeur: "Webhook, data store pour les doublons, module IA de synthèse",
   },
   {
-    equipe: 'Ventes & ADV',
-    scenarios: "Du devis signé à la facturation sans ressaisie, relances programmées, alertes sur le pipeline",
-    coeur: "Filtres, data stores pour le suivi, notifications ciblées",
+    equipe: 'Ventes et ADV',
+    scenarios: "Le devis signé crée la commande et prévient la comptabilité ; les devis restés sans réponse depuis dix jours remontent au commercial",
+    coeur: "Filtres, planification quotidienne, notification ciblée",
   },
   {
-    equipe: 'Finance',
-    scenarios: "Factures entrantes extraites et classées, rapprochements préparés, exports comptables planifiés",
-    coeur: "Modules IA d'extraction, itérateurs et agrégateurs",
+    equipe: 'Comptabilité fournisseurs',
+    scenarios: "La facture reçue par mail est lue, ses champs extraits, le PDF rangé, et une ligne attend la saisie",
+    coeur: "Module IA d'extraction, itérateur sur les pièces jointes, routeur pour les anomalies",
   },
   {
-    equipe: 'Ops & RH',
-    scenarios: "Onboarding orchestré (comptes, accès, documents), collecte de pièces, notifications d'équipe avec synthèse",
-    coeur: "Déclencheurs planifiés, formulaires, étapes de validation humaine",
+    equipe: 'RH et opérations',
+    scenarios: "L'arrivée d'un salarié déclenche la création des comptes, l'envoi des documents et les rappels du premier mois",
+    coeur: "Déclencheur planifié, étapes de validation humaine, gestion d'erreurs",
+  },
+  {
+    equipe: 'Service client',
+    scenarios: "Les demandes entrantes sont classées par motif ; un brouillon de réponse attend la relecture du conseiller",
+    coeur: "Module IA de classement, routeur par motif, envoi toujours manuel",
   },
 ]
 
-/* ───────── Cas d'usage (6 cartes) ───────── */
+/* ───────── Ateliers types (6 cartes) ───────── */
 
 const CAS_USAGE = [
-  { icon: Target, title: 'Les leads sans ressaisie', desc: "Un formulaire ou une campagne génère un lead : le scénario l'enrichit, le crée dans le CRM, notifie le bon commercial avec un résumé IA du contexte." },
-  { icon: Eye, title: 'La publication multicanal', desc: "Un contenu validé se décline et se programme sur chaque canal dans le bon format, avec un brouillon IA par déclinaison, relu avant envoi." },
-  { icon: ListChecks, title: 'Les factures qui se classent', desc: "Une facture arrive : les champs sont extraits, le document est rangé, la ligne est préparée pour la compta, l'anomalie est signalée." },
-  { icon: Layers, title: "L'onboarding orchestré", desc: "Un client ou un collaborateur arrive : comptes, accès, documents et messages de bienvenue s'enchaînent, avec des points de validation humaine." },
-  { icon: Network, title: 'Les fichiers enrichis', desc: "Un tableau de contacts ou de produits s'enrichit automatiquement : données complétées, doublons signalés, formats normalisés." },
-  { icon: Bot, title: "Les notifications intelligentes", desc: "Au lieu d'un flux brut, l'équipe reçoit des alertes triées et résumées par l'IA : l'information utile, au bon endroit, sans bruit." },
+  { icon: Target, title: 'Le formulaire qui alimente le CRM', desc: "Chaque demande de contact devient une fiche complète, avec la campagne d'origine et un résumé de la demande pour le commercial qui la reprend." },
+  { icon: ListChecks, title: 'La facture fournisseur pré-saisie', desc: "Montant, date, fournisseur et numéro sont extraits du PDF ; la ligne attend le feu vert du comptable avant d'entrer dans l'outil de comptabilité." },
+  { icon: Eye, title: 'La synthèse du lundi', desc: "Ventes, tickets et leads de la semaine arrivent dans le canal de l'équipe, commentés en trois phrases par un module IA." },
+  { icon: Layers, title: "Le dossier d'arrivée", desc: "Comptes, accès, documents à signer et messages d'accueil partent dans l'ordre, après accord du manager sur l'ouverture des droits." },
+  { icon: Network, title: 'La base produits tenue à jour', desc: "Une modification dans le tableur des prix se répercute dans la boutique en ligne et le CRM, avec un journal des changements." },
+  { icon: Bot, title: 'La boîte générique triée', desc: "Les messages sont classés par motif et par urgence ; ceux qui appellent une réponse reçoivent un brouillon que le conseiller relit." },
 ]
 
-/* ───────── Les pièges (5 cartes) ───────── */
+/* ───────── Les erreurs fréquentes (5 cartes) ───────── */
 
 const PIEGES = [
   {
-    title: 'Le scénario géant',
-    desc: "Tout le processus dans un seul scénario tentaculaire, impossible à maintenir. La parade : découper par responsabilité, relier par webhooks, nommer proprement.",
+    title: 'Le scénario qui fait tout',
+    desc: "Vingt-cinq modules pour un processus entier deviennent illisibles au premier changement. On découpe par étape métier et on relie les scénarios par webhook.",
   },
   {
-    title: 'Les exécutions incomplètes ignorées',
-    desc: "Make met de côté les exécutions qui échouent à mi-course ; personne ne les regarde, les données divergent. La formation en fait un rituel de supervision.",
+    title: 'Les exécutions incomplètes oubliées',
+    desc: "Quand un module échoue, Make peut garder l'exécution en attente de reprise. Si personne ne consulte cette liste, les applications cessent de dire la même chose. La formation en fait une revue hebdomadaire.",
   },
   {
-    title: 'Le mapping fragile',
-    desc: "Un champ renommé dans une application, et le scénario casse ou, pire, écrit faux. On apprend à mapper défensivement et à tester les cas limites.",
+    title: 'La colonne renommée',
+    desc: "Une colonne change de nom dans le tableur et le scénario écrit dans le vide. Valeurs par défaut, contrôle de présence et test sur une donnée incomplète évitent l'écriture fausse.",
   },
   {
-    title: 'Les opérations qui explosent',
-    desc: "Une boucle sur un gros fichier et la consommation s'envole avec la facture. La sobriété se conçoit : agréger, filtrer tôt, éviter les appels inutiles.",
+    title: 'La boucle qui vide le forfait',
+    desc: "Un itérateur sur un fichier de 5 000 lignes coûte au moins 5 000 crédits pour chaque module placé après lui. Filtrer avant la boucle et agréger avant l'écriture ramènent la dépense à sa juste mesure.",
   },
   {
-    title: 'Le scénario orphelin',
-    desc: "Sans propriétaire ni documentation, un scénario survit à son créateur puis meurt à la première évolution. Chaque scénario de la formation sort avec un responsable et trois lignes de doc.",
+    title: 'Le scénario sans propriétaire',
+    desc: "Son auteur quitte l'équipe et plus personne n'ose y toucher. Chaque scénario sort de la formation avec un responsable nommé et sa fiche d'une page.",
   },
 ]
 
@@ -224,81 +249,82 @@ const PIEGES = [
 
 const FAQ = [
   {
-    q: "Qu'est-ce que la formation Make de Masteria ?",
-    a: "Deux jours pour maîtriser Make en entreprise : comprendre la logique de scénarios, de modules et d'opérations, connecter vos applications réelles, construire des scénarios fiables avec gestion d'erreurs, y insérer des étapes IA sous garde-fous, puis organiser la supervision et le plan d'automatisation de l'équipe. Chaque participant travaille sur un processus réel de son poste. La formation est certifiée Qualiopi et finançable par votre OPCO.",
+    q: 'Que contient la formation Make de Masteria ?',
+    a: "Deux jours pour qu'une équipe automatise ses tâches répétitives avec Make : la logique des scénarios et des modules, les connexions à vos applications, la gestion d'erreurs, les étapes IA, la lecture des crédits consommés et l'organisation qui permet de reprendre un scénario après son auteur. Chaque participant part d'une tâche de son poste et quitte la salle avec un scénario qui tourne. Masteria étant certifiée Qualiopi, votre OPCO peut financer ces deux jours selon ses règles et ses fonds.",
   },
   {
-    q: 'Make et Integromat, est-ce le même outil ?',
-    a: "Oui : Integromat a été renommé Make en 2022. Si vos équipes ont connu Integromat, elles retrouveront la même logique de scénarios visuels, dans une interface modernisée. La formation couvre l'outil actuel, et les recherches « formation Integromat » mènent au même programme.",
+    q: 'Make et Integromat désignent-ils le même outil ?',
+    a: "Oui. Integromat, créé à Prague, a pris le nom de Make en 2022. La logique des scénarios visuels est restée ; l'interface, l'offre IA et l'unité de facturation ont changé depuis. La formation porte sur la version vendue aujourd'hui, et les personnes qui cherchent une formation Integromat y trouvent le même outil.",
   },
   {
-    q: 'Faut-il savoir coder pour suivre la formation Make ?',
-    a: "Non, et c'est la force de Make : tout se construit visuellement, du déclencheur aux modules, avec des fonctions de transformation accessibles sans programmation. Il faut être à l'aise avec ses outils numériques du quotidien, rien de plus. C'est la formation d'automatisation que nous recommandons aux équipes marketing, ventes, ADV, ops et RH qui veulent devenir autonomes.",
+    q: 'Faut-il savoir programmer pour suivre la session ?',
+    a: "Non. Tout se construit sur le canevas, et les fonctions de transformation s'écrivent comme une formule de tableur. Une personne à l'aise avec Excel et ses applications de travail suit sans difficulté. Les ateliers demandent surtout de bien connaître sa propre tâche : ses étapes, ses exceptions, ce qui la fait échouer aujourd'hui.",
   },
   {
-    q: "C'est quoi, une « opération », et pourquoi ça compte ?",
-    a: "Une opération est l'exécution d'un module dans un scénario : c'est l'unité de facturation de Make. Un scénario mal conçu peut consommer dix fois plus d'opérations qu'un scénario sobre, pour le même service rendu. La formation intègre cette lecture dès le premier jour : filtrer tôt, agréger, éviter les appels inutiles, et lire sa consommation comme on lit un compteur.",
+    q: "Qu'est-ce qu'un crédit Make ?",
+    a: "Depuis le 27 août 2025, Make facture en crédits, qui ont remplacé les opérations à raison d'un pour un. La plupart des actions d'un module coûtent un crédit ; les modules qui font appel à l'IA de Make consomment selon le modèle et la quantité de texte. Un scénario qui boucle sans filtre dépense bien plus que nécessaire : la formation apprend à lire la consommation de chaque scénario et à la réduire.",
   },
   {
-    q: 'Make, n8n ou Zapier : comment choisir ?',
-    a: "Make est le point d'équilibre : plus puissant que Zapier (routeurs, itérateurs, data stores), plus accessible que n8n, avec un vrai canevas visuel. n8n prend l'avantage sur les processus très complexes, les données sensibles (auto-hébergement européen) et les agents IA avancés ; Zapier sur la simplicité pure. Le comparatif détaillé des trois est sur la page formation n8n, et le cadrage tranche sur vos cas réels.",
+    q: 'Combien coûte Make ?',
+    a: "Relevée le 7 octobre 2026, la grille de Make affiche une offre gratuite (1 000 crédits par mois, deux scénarios actifs) et des offres Core, Pro et Teams à partir de 9, 16 et 29 dollars par mois pour 10 000 crédits, en paiement annuel ; Enterprise est sur devis. Ces montants bougent souvent : vérifiez-les avant de budgéter. Ils s'ajoutent au prix de la formation, qui ne comprend aucune licence.",
   },
   {
-    q: "Peut-on utiliser l'IA dans Make ?",
-    a: "Oui : des modules IA s'insèrent dans les scénarios comme n'importe quelle étape, pour résumer un document entrant, extraire des champs, classer une demande ou rédiger un brouillon dans votre gabarit ; Make propose aussi ses propres agents IA pour les cas simples. La formation y consacre la matinée du jour 2, avec la règle appliquée partout chez Masteria : format de sortie imposé, et validation humaine sur tout ce qui engage l'entreprise.",
+    q: 'Make, n8n ou Zapier : lequel retenir ?',
+    a: "Make convient quand une équipe métier veut lire et modifier ses scénarios elle-même, sur des processus à plusieurs branches. n8n prend l'avantage si les données doivent rester sur vos serveurs, si les volumes sont élevés ou si vous voulez des agents outillés. Zapier reste le plus rapide pour des automatisations courtes entre applications courantes. La page formation n8n compare les trois, critère par critère.",
   },
   {
-    q: 'Quel cadre RGPD pour des scénarios Make ?',
-    a: "Make est un service cloud d'un éditeur européen : les données de vos scénarios y transitent, ce qui se cadre plutôt que s'improvise. La formation traite le sujet concrètement : minimiser les données qui circulent, gérer les accès et les connexions nominativement, documenter les flux dans le registre de traitements, en s'appuyant sur les recommandations de la CNIL. Pour les cas où les données ne doivent pas sortir de votre périmètre, l'auto-hébergement de n8n est l'alternative que nous présentons honnêtement.",
+    q: 'Que permettent les Make AI Agents ?',
+    a: "Un agent reçoit un objectif et un jeu d'outils que vous définissez, puis décide lui-même de l'ordre des actions. Au 7 octobre 2026, Make les présente en bêta, sur toutes les offres, avec son propre fournisseur d'IA ou votre clé de modèle. Nous les abordons au deuxième jour, après les modules IA classiques, avec une règle simple : ce qui engage l'entreprise attend la validation d'une personne.",
   },
   {
-    q: 'La formation Make est-elle finançable par notre OPCO ?',
-    a: "Oui : Masteria est certifiée Qualiopi, condition pour mobiliser votre OPCO dans le cadre du plan de développement des compétences. Nous préparons le dossier avec vous ; la décision et le niveau de prise en charge appartiennent à votre opérateur. Pas d'éligibilité CPF : c'est une formation d'équipe, qui relève du budget formation de l'entreprise.",
+    q: 'Où sont hébergées les données de nos scénarios ?',
+    a: "Make fonctionne sur AWS, avec une zone européenne et une zone nord-américaine ; une organisation française retient en général la zone européenne. Les données traversent malgré tout le service : la formation apprend à limiter ce qui transite, à attribuer des connexions nominatives et à inscrire chaque scénario au registre des traitements, avec les recommandations de la CNIL comme référence. Si rien ne doit sortir de votre infrastructure, n8n installé sur vos serveurs répond mieux.",
   },
   {
-    q: 'Peut-on suivre la formation à distance ?',
-    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; le même programme se tient à distance en classe virtuelle, souvent en demi-journées. En individuel, un référent avance en tête-à-tête sur ses propres processus. Partout en France et à l'international, en Europe, aux États-Unis et en Inde.",
+    q: 'La session peut-elle se tenir à distance ou en individuel ?',
+    a: "Oui. En intra, un groupe d'au plus douze personnes se réunit sur votre site ou en visioconférence, et la version distante se découpe volontiers en quatre demi-journées. Seul avec le formateur, un référent avance sur ses propres scénarios, au même tarif journalier. Nos formateurs se déplacent partout en France et à l'étranger, de l'Europe aux États-Unis et à l'Inde.",
   },
   {
-    q: "Que reste-t-il dans l'entreprise après les 2 jours ?",
-    a: "Les scénarios construits en atelier, en état de marche, avec leur gestion d'erreurs ; les conventions d'équipe (nommage, découpage, documentation légère, propriétaire par scénario) ; les règles écrites sur les données et la validation humaine ; la lecture de la consommation d'opérations ; et le plan d'automatisation de l'équipe : les trois processus suivants, qui les porte, à quelle échéance.",
+    q: 'Que garde l\'équipe à la fin des deux jours ?',
+    a: "Un scénario par participant, en service et documenté ; des conventions de nommage et de rangement ; une gestion d'erreurs où chaque alerte a un destinataire ; une fiche par scénario (responsable, surveillance, prochaine évolution) ; et les trois chantiers suivants, chacun avec son porteur et sa date.",
   },
   {
-    q: 'Et si nous préférons faire construire nos scénarios Make ?',
-    a: "C'est une mission, pas une formation : notre agence d'automatisation IA conçoit, construit et maintient des scénarios Make ou des workflows n8n pour vous, avec la même exigence de gestion d'erreurs et de supervision. Les deux se combinent bien : une équipe formée cadre mieux le besoin et supervise mieux ce qu'on lui livre. Le cadrage, gratuit, oriente vers la bonne formule.",
+    q: 'Et si nous préférons confier la construction de nos scénarios ?',
+    a: "Notre agence d'automatisation conçoit, construit et maintient des scénarios Make ou des workflows n8n pour votre compte. C'est une prestation de développement, distincte de la formation et pas finançable par votre OPCO. Les deux se complètent : une équipe formée décrit mieux son besoin et reprend plus vite ce qu'on lui livre.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation Make (ex-Integromat) — Masteria',
-  description: "Formation Make en 2 jours : logique de scénarios, modules et opérations, connexion de vos applications, construction de scénarios fiables avec gestion d'erreurs, étapes IA sous garde-fous, data stores, optimisation des opérations, supervision et gouvernance. Chaque participant automatise un processus réel de son poste. En intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  name: 'Formation Make (ex-Integromat), Masteria',
+  description: "Formation Make en 2 jours : scénarios et modules, connexions aux applications de l'équipe, mapping et routeurs, webhooks, modules IA et Make AI Agents, gestionnaires d'erreurs, data stores, lecture et réduction des crédits consommés, organisation et passation. Chaque participant automatise une tâche de son poste. En intra ou en individuel, sur site ou à distance. Masteria est certifiée Qualiopi.",
   level: 'Tous niveaux, aucun prérequis technique',
   teaches: [
-    "Comprendre la logique Make : scénarios, modules, opérations, exécutions",
-    "Construire un scénario fiable de bout en bout sur un processus réel, gestion d'erreurs comprise",
-    "Insérer des étapes IA (résumé, extraction, classification, rédaction) sous garde-fous",
-    "Maîtriser routeurs, webhooks, data stores et mapping défensif",
-    "Optimiser la consommation d'opérations et organiser la supervision d'équipe",
+    "Lire et construire un scénario Make : déclencheur, modules, filtres, routeurs",
+    "Connecter les applications de l'équipe avec des comptes nominatifs",
+    "Encadrer un module IA ou un agent Make par un format de sortie imposé",
+    "Poser des gestionnaires d'erreurs et surveiller les exécutions incomplètes",
+    "Lire et réduire la consommation de crédits d'un scénario",
+    "Documenter et transmettre un scénario à l'équipe",
   ],
-  about: "Make, anciennement Integromat (automatisation de scénarios)",
+  about: "Make, anciennement Integromat (automatisation par scénarios visuels)",
   timeRequired: 'PT14H',
   duration: 'PT14H',
-  prerequisites: "Aucun prérequis technique ; être à l'aise avec ses outils numériques du quotidien.",
-  audience: 'Équipes marketing, ventes, ADV, ops, RH, référents IA',
-  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
+  prerequisites: "Aucun prérequis technique ; être à l'aise avec un tableur et ses applications de travail.",
+  audience: 'Marketing, ventes, ADV, comptabilité fournisseurs, RH, opérations, référents IA',
+  locationName: 'Masteria, en intra ou en individuel, sur site ou en visioconférence',
 }
 
-/* Le programme en ItemList (séquence citable — GEO). */
+/* Le programme en ItemList (séquence citable, GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Le programme de la formation Make (2 jours)',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((day, di) => [
-    { '@type': 'ListItem', position: di * 2 + 1, name: `${day.jour} · Matin — ${day.titre}`, description: day.matin.map(m => m.t).join(' ; ') },
-    { '@type': 'ListItem', position: di * 2 + 2, name: `${day.jour} · Après-midi — ${day.titre}`, description: day.apresmidi.map(m => m.t).join(' ; ') },
+    { '@type': 'ListItem', position: di * 2 + 1, name: `${day.jour} · Matin · ${day.titre}`, description: day.matin.map(m => m.t).join(' ; ') },
+    { '@type': 'ListItem', position: di * 2 + 2, name: `${day.jour} · Après-midi · ${day.titre}`, description: day.apresmidi.map(m => m.t).join(' ; ') },
   ]),
 }
 
@@ -307,13 +333,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/formation-make#article',
-  headline: "Formation Make : des scénarios d'automatisation construits et fiabilisés",
+  headline: 'Formation Make : des scénarios qui tiennent en production',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-30',
-  dateModified: '2026-08-30',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-make#webpage' },
   /* Entités Wikipédia vérifiées (curl 200) le 2026-08-30 ; Make n'a pas
@@ -326,22 +352,22 @@ const articleJsonLd = {
   ],
 }
 
-/* ── GEO : lexique Make (DefinedTermSet) ── */
+/* ── GEO : vocabulaire Make (DefinedTermSet) ── */
 const SITE = 'https://www.master-ia.fr'
 const termsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': `${SITE}/${SLUG}#lexique`,
-  name: 'Lexique Make',
+  name: 'Vocabulaire de Make',
   hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Scénario', description: "Enchaînement automatisé de modules dans Make, du déclencheur aux sorties : c'est l'unité que l'on construit, teste, documente et supervise." },
-    { '@type': 'DefinedTerm', name: 'Module', description: "Brique d'un scénario : une action dans une application, une transformation, une étape IA. Les modules s'assemblent visuellement sur le canevas." },
-    { '@type': 'DefinedTerm', name: 'Opération', description: "Exécution d'un module : l'unité de consommation et de facturation de Make. Concevoir sobre (filtrer tôt, agréger) divise la consommation à service égal." },
-    { '@type': 'DefinedTerm', name: 'Routeur', description: "Module qui sépare un flux en plusieurs chemins selon des conditions : le cœur des scénarios qui traitent des cas différents." },
-    { '@type': 'DefinedTerm', name: 'Webhook', description: "Adresse qui déclenche un scénario depuis un événement extérieur : formulaire soumis, paiement reçu, message entrant." },
-    { '@type': 'DefinedTerm', name: 'Data store', description: "Petite base intégrée à Make pour garder un état entre deux exécutions : suivis, déduplication, historiques légers." },
-    { '@type': 'DefinedTerm', name: 'Mapping', description: "Correspondance entre les champs d'une étape et ceux de la suivante. Un mapping défensif (valeurs par défaut, contrôles) évite les écritures fausses quand une source change." },
-    { '@type': 'DefinedTerm', name: 'Itérateur et agrégateur', description: "Modules qui décomposent une liste en éléments, puis les regroupent : indispensables sur les volumes, et premier levier d'optimisation des opérations." },
+    { '@type': 'DefinedTerm', name: 'Scénario', description: "L'automatisation telle que Make la dessine : un déclencheur, puis une suite de modules reliés sur le canevas. On le construit, on le teste, on lui donne un responsable." },
+    { '@type': 'DefinedTerm', name: 'Module', description: "Une case du scénario : une action dans une application, une transformation de données, un appel à l'IA. Chaque action d'un module consomme des crédits." },
+    { '@type': 'DefinedTerm', name: 'Crédit', description: "L'unité de facturation de Make depuis le 27 août 2025, à la place de l'opération. Une action courante coûte un crédit ; un module IA consomme selon le texte traité." },
+    { '@type': 'DefinedTerm', name: 'Routeur', description: "Le module qui ouvre plusieurs branches selon des conditions, pour traiter différemment une commande, une réclamation ou une demande de devis." },
+    { '@type': 'DefinedTerm', name: 'Webhook', description: "Une adresse que Make écoute : dès qu'une application y envoie un événement (formulaire, paiement, ticket), le scénario démarre." },
+    { '@type': 'DefinedTerm', name: 'Data store', description: "Une petite table intégrée à Make pour se souvenir d'une exécution à l'autre : identifiants déjà traités, compteurs, derniers états connus." },
+    { '@type': 'DefinedTerm', name: "Gestionnaire d'erreurs", description: "La conduite fixée pour un module qui échoue : ignorer, reprendre plus tard, annuler, prévenir quelqu'un. Sans lui, l'échec passe inaperçu." },
+    { '@type': 'DefinedTerm', name: 'Itérateur et agrégateur', description: "Le premier découpe une liste en éléments traités un par un, le second les rassemble. Leur placement décide d'une bonne part des crédits consommés." },
   ],
 }
 
@@ -364,10 +390,14 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité : WebPage.citation + bloc visible. */
+/* Sources de la page : WebPage.citation (JSON-LD) + bloc visible en fin de page. */
 const PAGE_CITATIONS = [
-  { name: "CNIL — Intelligence artificielle : recommandations et dossiers", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+  { name: 'Make, page tarifs (offres, crédits, hébergement), relevée le 7 octobre 2026', url: 'https://www.make.com/en/pricing' },
+  { name: "Make, passage des opérations aux crédits au 27 août 2025", url: 'https://www.make.com/en/credits' },
+  { name: "Make, centre d'aide et documentation", url: 'https://help.make.com/' },
+  { name: 'CNIL, dossiers et recommandations sur l\'intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: 'Ministère du Travail, la certification Qualiopi', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { name: 'Plan de développement des compétences : la fiche du ministère du Travail', url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
 ]
 
 export default function FormationMakePage() {
@@ -396,7 +426,7 @@ export default function FormationMakePage() {
         courseData={COURSE_DATA}
         faqItems={FAQ}
         datePublished="2026-08-30"
-        dateModified="2026-08-30"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[programmeJsonLd, articleJsonLd, termsJsonLd]}
@@ -429,29 +459,29 @@ export default function FormationMakePage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Formation Make :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>vos scénarios d'automatisation, construits et fiabilisés</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>des scénarios qui tiennent en production</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Page signée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · tarifs de Make vérifiés le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation Make apprend à vos équipes à automatiser leurs processus avec Make (anciennement Integromat), l'outil de scénarios visuels le plus équilibré du marché. <strong style={{ color: '#fff', fontWeight: 700 }}>En 2 jours, chaque participant construit, fiabilise et supervise un scénario réel de son poste, étape IA comprise</strong>, en maîtrisant modules, routeurs, gestion d'erreurs et consommation d'opérations. Certifiée Qualiopi, finançable OPCO.
+            La formation Make met vos équipes en mesure d'automatiser elles-mêmes leur travail répétitif avec Make, l'ancien Integromat, sur un canevas où chaque module se voit. <strong style={{ color: '#fff', fontWeight: 700 }}>En deux jours, chaque participant monte, fiabilise et documente un scénario tiré de son poste, avec une étape IA</strong> et une lecture précise des crédits qu'il consomme. Organisme certifié Qualiopi, Masteria vous aide à faire financer la session par votre OPCO.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Make est l'outil où les équipes métier deviennent réellement autonomes sur l'automatisation : assez visuel pour se prendre en main vite, assez puissant pour tenir de vrais processus. La formation vise une seule chose : des scénarios propres, supervisés, qui ne cassent pas en silence.
+            Make convient aux équipes métier qui veulent automatiser sans attendre le service informatique : le scénario se lit comme un plan, et il tient des processus à plusieurs branches. Pour ces deux jours, nous visons un résultat précis. Chaque scénario prévient quelqu'un le jour où il échoue.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un devis sous 24 h
+              Préparer votre session Make
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#programme" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le programme
+              Lire le programme
             </a>
           </div>
 
@@ -464,9 +494,9 @@ export default function FormationMakePage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* La session en résumé : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La session Make en six lignes</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -496,13 +526,13 @@ export default function FormationMakePage() {
             <div style={editorialAside}>
               <Kicker>L'outil</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Pourquoi Make est l'outil d'automatisation des équipes métier
+                Make donne aux équipes métier un outil qu'elles savent relire
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Parce que Make tient l'équilibre que les autres n'ont pas : un canevas visuel qui se prend en main en une matinée, et la puissance (routeurs, itérateurs, data stores, webhooks, modules IA) pour tenir de vrais processus. C'est l'outil où marketing, ventes, ADV et ops deviennent autonomes sans dépendre de l'IT.</strong>
+                <strong>Le scénario s'affiche comme un schéma, module par module, et l'historique de chaque exécution montre où la donnée a changé. Make va pourtant assez loin pour des processus à branches, avec routeurs, itérateurs, data stores, webhooks et agents IA intégrés. Une équipe marketing ou ADV y gagne son autonomie, sans ticket au service informatique pour chaque changement.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Pour situer Make face aux alternatives, le comparatif complet n8n / Make / Zapier est sur la page <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> ; et pour la démarche d'ensemble (quoi automatiser, dans quel ordre), voir la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link>.
+                Vous hésitez encore entre plusieurs outils ? Le tableau comparatif de la <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> met Make face à n8n et Zapier. Vous ne savez pas encore quelles tâches confier à l'automatisation ? La <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> commence par cette question.
               </p>
             </div>
 
@@ -523,6 +553,40 @@ export default function FormationMakePage() {
         </div>
       </section>
 
+      {/* ── FICHE OUTIL : MAKE AU 7 OCTOBRE 2026 ── */}
+      <section id="fiche" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <Kicker>Fiche outil</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Ce que Make facture, héberge et propose au 7 octobre 2026
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Make facture en crédits depuis août 2025, propose une offre gratuite de 1 000 crédits par mois et des offres payantes à partir de 9 dollars par mois, et héberge vos scénarios sur AWS en Europe ou en Amérique du Nord. Nous avons relevé ces informations sur le site de l'éditeur avant de mettre la page à jour.</strong>
+          </p>
+          <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+              <thead>
+                <tr>
+                  <th style={thStyle} scope="col">Point</th>
+                  <th style={thStyle} scope="col">Ce que nous avons relevé</th>
+                </tr>
+              </thead>
+              <tbody>
+                {FICHE.map((row, i) => (
+                  <tr key={row.k}>
+                    <td style={{ ...tdStyle, fontWeight: 700, color: '#0A0A0A', whiteSpace: 'nowrap', borderBottom: i === FICHE.length - 1 ? 'none' : tdStyle.borderBottom }}>{row.k}</td>
+                    <td style={{ ...tdStyle, borderBottom: i === FICHE.length - 1 ? 'none' : tdStyle.borderBottom }}>{row.v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.7, margin: '20px 0 0', maxWidth: 880 }}>
+            Les prix sont publiés en dollars hors taxes et l'éditeur les révise régulièrement : refaites le calcul sur sa page tarifs avant de signer. Ils ne comprennent pas la formation, et la formation ne comprend aucune licence.
+          </p>
+        </div>
+      </section>
+
       {/* ── LE PROGRAMME (ancre sombre) ── */}
       <section id="programme" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden', scrollMarginTop: 96 }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
@@ -532,11 +596,11 @@ export default function FormationMakePage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Le programme des 2 jours : du premier scénario à la supervision
+            Deux jours pour passer du premier scénario à sa passation
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : la logique de Make, vos applications connectées, le modèle d'opérations compris, et un premier scénario réel multi-branches. Jour 2 : les étapes IA sous garde-fous, la gestion d'erreurs systématique, l'optimisation des opérations et le plan d'automatisation de l'équipe. Chaque participant travaille sur un processus de son poste.</strong>
+            <strong style={{ color: '#fff' }}>Le premier jour installe la logique de Make, les connexions et un scénario par participant, enrichi d'une branche l'après-midi. Le second ajoute l'IA, la gestion d'erreurs, la réduction des crédits consommés et la fiche qui permettra à un collègue de reprendre chaque scénario.</strong>
           </p>
 
           <div style={{ display: 'grid', gap: 22 }}>
@@ -570,21 +634,21 @@ export default function FormationMakePage() {
           </div>
 
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 800 }}>
-            Le programme s'ajuste au cadrage, qui est gratuit : niveau réel des participants, applications en place, processus visés. En 1 jour, on s'arrête aux premiers scénarios fiables ; les 2 jours vont jusqu'à l'IA, l'optimisation et le plan d'automatisation.
+            Le contenu se règle avec vous avant la session : applications en place, niveau du groupe, processus visés. La version d'une journée s'arrête aux scénarios fiables ; la seconde journée apporte l'IA, la réduction de consommation et la passation.
           </p>
         </div>
       </section>
 
-      {/* ── SCÉNARIOS PAR MÉTIER (tableau divergent) ── */}
+      {/* ── SCÉNARIOS PAR ÉQUIPE ── */}
       <section id="metiers" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Par métier</Kicker>
+          <Kicker>Par équipe</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Quel scénario Make pour quelle équipe ?
+            Chaque équipe a son premier scénario Make
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Make brille là où les processus traversent plusieurs applications : marketing, ventes et ADV, finance, ops et RH. Le tableau résume les scénarios types que nous construisons en atelier avec chaque équipe, et les briques Make qui les portent.</strong>
+            <strong>Make rend le plus de services aux équipes dont le travail traverse trois ou quatre applications : un formulaire, un CRM, un tableur, une messagerie. Le tableau reprend les scénarios que nous montons le plus souvent en atelier, avec les briques de Make qui les font tourner.</strong>
           </p>
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
@@ -592,8 +656,8 @@ export default function FormationMakePage() {
               <thead>
                 <tr>
                   <th style={thStyle} scope="col">Équipe</th>
-                  <th style={thStyle} scope="col">Scénarios types construits en atelier</th>
-                  <th style={thStyle} scope="col">Les briques Make au cœur</th>
+                  <th style={thStyle} scope="col">Scénario monté en atelier</th>
+                  <th style={thStyle} scope="col">Briques Make mobilisées</th>
                 </tr>
               </thead>
               <tbody>
@@ -610,16 +674,16 @@ export default function FormationMakePage() {
         </div>
       </section>
 
-      {/* ── CAS D'USAGE ── */}
+      {/* ── ATELIERS TYPES ── */}
       <section id="cas-usage" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Ce qu'on automatise</Kicker>
+          <Kicker>Ateliers types</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que vos équipes construisent en atelier avec Make
+            Six scénarios reviennent d'une session Make à l'autre
           </h2>
 
           <p style={answerStyle}>
-            <strong>Les ateliers partent des processus réels de vos équipes. Six familles reviennent le plus souvent : les leads sans ressaisie, la publication multicanal, les factures qui se classent, l'onboarding orchestré, les fichiers enrichis et les notifications intelligentes.</strong>
+            <strong>Chaque atelier part d'une tâche que le participant fait toutes les semaines. Six scénarios reviennent souvent : le formulaire qui alimente le CRM, la facture pré-saisie, la synthèse du lundi, le dossier d'arrivée, la base produits tenue à jour et la boîte générique triée.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -636,15 +700,15 @@ export default function FormationMakePage() {
         </div>
       </section>
 
-      {/* ── LES PIÈGES ── */}
+      {/* ── LES ERREURS FRÉQUENTES ── */}
       <section id="pieges" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Ce qui fait échouer</Kicker>
+          <Kicker>Ce qui fait tomber un scénario</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Cinq pièges qui tuent les scénarios Make
+            Cinq erreurs mettent un scénario Make hors service
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un déploiement Make qui déçoit a presque toujours l'une de ces cinq causes : le scénario géant, les exécutions incomplètes ignorées, le mapping fragile, les opérations qui explosent, le scénario orphelin. La formation traite chacun à l'endroit du programme où il se joue.</strong>
+            <strong>Quand un scénario Make finit désactivé, l'arrêt remonte le plus souvent à l'une de ces cinq erreurs. Le programme traite chacune au moment où elle apparaît dans l'atelier, sur le scénario du participant.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {PIEGES.map((item, i) => (
@@ -655,7 +719,7 @@ export default function FormationMakePage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
-            Ces règles viennent de nos missions : les scénarios que nous livrons en <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation</Link> vivent avec, et la formation transmet exactement les mêmes.
+            Notre <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation</Link> applique ces règles aux scénarios qu'elle construit et maintient pour ses clients ; la formation les enseigne telles quelles.
           </p>
         </div>
       </section>
@@ -670,17 +734,17 @@ export default function FormationMakePage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT par jour de formation, pour le groupe
+                1 980 € HT la journée de session Make, en groupe comme en individuel
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La formation Make suit la grille unique de Masteria : 1 980 € HT par jour en intra, pour l'ensemble du groupe (jusqu'à 12 participants), soit 3 960 € HT les 2 jours ; le format d'une journée « premiers scénarios » se cale au cadrage. Masteria est certifiée Qualiopi : la formation est finançable par votre OPCO dans le cadre du plan de développement des compétences, nous préparons le dossier avec vous et la décision reste à votre opérateur. Pas d'éligibilité CPF. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Le prix est le même pour un groupe en intra (12 participants au plus) ou pour une personne seule en individuel : 1 980 € HT la journée, 3 960 € HT pour les deux jours recommandés. Les abonnements Make restent à votre charge. Qualiopi certifie Masteria au titre des actions de formation : votre OPCO décide de prendre en charge tout ou partie de la session, selon ses critères et l'état de ses fonds, et nous préparons programme et convention pour votre demande. Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous oriente ; les règles de prise en charge sont détaillées sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  "1 980 € HT par jour, pour le groupe (jusqu'à 12 personnes)",
-                  '2 jours recommandés : IA, optimisation et plan compris',
-                  'Qualiopi : finançable OPCO, dossier préparé ensemble',
-                  'Devis sous 24 h après un cadrage gratuit',
+                  '1 980 € HT la journée, en groupe ou en individuel',
+                  'Deux jours recommandés : 3 960 € HT',
+                  'Abonnements Make en dehors du prix',
+                  'Programme et convention prêts pour votre OPCO',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -693,25 +757,25 @@ export default function FormationMakePage() {
         </div>
       </section>
 
-      {/* ── E-E-A-T ── */}
+      {/* ── E-E-A-T : qui anime la formation Make ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui anime la session</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Des formateurs qui construisent des scénarios en mission
+                Des formateurs qui entretiennent des scénarios chez des clients
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. Les scénarios montrés en formation appliquent les règles de nos propres <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link> : gestion d'erreurs, garde-fous IA, sobriété des opérations, supervision. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
+                Masteria est née à Lyon en 2022 : Mathias Nizan l'a créée pour se consacrer à l'intelligence artificielle, sans lien avec un éditeur. Il pilote chaque session Make ; l'animation revient à lui ou à l'un des quelque vingt formateurs indépendants du réseau, retenu selon l'outil et le métier du groupe. Les règles transmises (gestion d'erreurs, sobriété, responsable nommé) sont celles de nos missions, racontées dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Qualiopi', 'actions de formation certifiées'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['1', 'scénario en service par participant'],
+                ['12', 'personnes au plus dans un groupe intra'],
+                ['3', 'chantiers datés avant de se quitter'],
+                ['FR · EN', 'animation en français ou en anglais'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -723,15 +787,15 @@ export default function FormationMakePage() {
         </div>
       </section>
 
-      {/* ── LEXIQUE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
+      {/* ── VOCABULAIRE VISIBLE (mêmes termes que le DefinedTermSet JSON-LD) ── */}
       <section id="lexique" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>Le vocabulaire</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Parler Make couramment : les huit termes à connaître
+            Huit mots de Make à connaître avant la première matinée
           </h2>
           <p style={answerStyle}>
-            <strong>Huit termes suffisent pour suivre une conversation Make et lire sa documentation : scénario, module, opération, routeur, webhook, data store, mapping, itérateur. La formation les installe dès la première heure ; les voici tels que nous les enseignons.</strong>
+            <strong>Scénario, module, crédit, routeur, webhook, data store, gestionnaire d'erreurs, itérateur : avec ces huit mots, la documentation de Make et ses forums deviennent lisibles. Nous les posons dès la première heure, avec les définitions ci-dessous.</strong>
           </p>
           <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
             {termsJsonLd.hasDefinedTerm.map(t => (
@@ -751,13 +815,13 @@ export default function FormationMakePage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Formation Make : les questions fréquentes
+                Formation Make : vos questions, nos réponses
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une question sur votre compte Make ou sur votre processus ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Écrivez-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -773,21 +837,21 @@ export default function FormationMakePage() {
       {/* ── MAILLAGE INTERNE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pages voisines</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Selon votre besoin, un autre point de départ peut mieux convenir
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Make s'articule avec la démarche d'automatisation, les orchestrateurs voisins et, quand il faut du sur-mesure, nos missions de construction.
+            Selon vos données, vos volumes et le profil de l'équipe, une de ces pages vous servira peut-être mieux.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Panorama', desc: "Quoi automatiser et comment s'y prendre : la démarche complète, des outils natifs aux orchestrateurs." },
-              { label: 'Formation n8n', href: '/formation-n8n', tag: 'Outil', desc: "L'orchestrateur auto-hébergeable aux agents IA les plus complets, et le comparatif n8n / Make / Zapier." },
-              { label: 'Formation Zapier', href: '/formation-zapier', tag: 'Outil', desc: "La porte d'entrée de l'automatisation : des Zaps utiles en une journée, et les limites à connaître." },
-              { label: 'Formation agents IA', href: '/formation-agents-ia', tag: 'Agents', desc: "Concevoir des agents dans vos outils bureau (ChatGPT, Claude, Copilot, Gemini), complément des scénarios." },
-              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Faire construire', desc: "Vos scénarios Make ou workflows n8n conçus, construits et maintenus en mission." },
-              { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, plan de développement des compétences : les dispositifs qui financent la formation Make." },
+              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Démarche', desc: "Choisir les tâches à automatiser et le niveau d'outil adapté avant d'ouvrir Make." },
+              { label: 'Formation n8n', href: '/formation-n8n', tag: 'Alternative', desc: "Héberger ses workflows chez soi, et le tableau qui compare n8n, Make et Zapier point par point." },
+              { label: 'Formation Zapier', href: '/formation-zapier', tag: 'Plus simple', desc: "Une journée pour des automatisations courtes entre des applications courantes." },
+              { label: 'Formation agents IA', href: '/formation-agents-ia', tag: 'Agents', desc: "Des agents conçus dans l'assistant que l'équipe utilise déjà, en complément des scénarios." },
+              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Faire construire', desc: "Des scénarios conçus et entretenus par notre équipe quand le temps manque en interne." },
+              { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "Ce que les OPCO financent, et comment monter la demande de prise en charge." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -802,10 +866,7 @@ export default function FormationMakePage() {
                     {rel.label}
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </span>
+                  <ArrowRight size={16} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
                 </div>
               </Link>
             ))}
@@ -813,8 +874,14 @@ export default function FormationMakePage() {
         </div>
       </section>
 
-      {/* ── FONDATEUR ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan a relu cette page le 7 octobre 2026, après avoir contrôlé sur le site de Make les tarifs et le passage aux crédits. Il pilote les formations d'automatisation de Masteria ; son parcours figure sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page de fondateur</Link>.
+          </p>
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -825,23 +892,40 @@ export default function FormationMakePage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation Make</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Des scénarios propres, qui ne cassent pas en silence
+              Le soir du deuxième jour, chaque participant laisse un scénario en service
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos processus répétitifs, vos applications et vos équipes. Nous revenons sous 24 heures avec un programme cadré et le devis, dossier OPCO compris.
+              Envoyez-nous la liste des tâches répétitives de l'équipe et les applications qu'elle utilise. Vous recevez sous 24 heures un programme ajusté, le devis et les pièces utiles à votre demande de prise en charge.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un devis sous 24 h
+              Préparer votre session Make
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
+              Organisme certifié Qualiopi · sur site ou en visioconférence, en France comme à l'étranger
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES DE LA PAGE ── */}
+      <section aria-labelledby="sources-make" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-make" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Où vérifier les informations de cette page
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Tarifs et fonctions de Make relevés le 7 octobre 2026 ; cadre de la formation et des données personnelles.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {PAGE_CITATIONS.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

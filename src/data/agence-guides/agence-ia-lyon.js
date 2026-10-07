@@ -2,7 +2,83 @@
 // Vérifié le 03/10/2026 : Insee (dossiers complets Métropole de Lyon et France, tables Flores fin 2024), Auvergne-Rhône-Alpes Entreprises (chiffres clés du Rhône, mars 2026), CNIL (registre des traitements, page IA), modelcontextprotocol.io ; retour de mission tiré de src/data/etudes-de-cas.js (conseil-financier).
 export default {
   slug: 'agence-ia-lyon',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: [
+      "Bureaux rue d'Algérie, Lyon 1er",
+      "Ateliers dans vos locaux",
+      "Code et documentation remis",
+      "Conseil, développement, formation",
+    ],
+    lien: "Voir ce que nous faisons à Lyon",
+  },
+  ville: {
+    heroSubtitle: "Nos bureaux sont dans la presqu'île : un atelier à Gerland, à Vaise ou à Villeurbanne s'organise sans billet de train. Nous décidons avec vous de ce qui mérite d'être outillé, nous construisons les assistants et les automatisations qui en découlent, puis nous formons les personnes qui les feront vivre.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Conseil et gouvernance de l'IA (RGPD, AI Act), assistants et agents développés pour vos logiciels, automatisations, formation des équipes",
+      },
+      {
+        label: "Où nous trouver",
+        value: "17 rue d'Algérie, Lyon 1er : ateliers chez vous ou chez nous, sans frais de déplacement dans la métropole",
+      },
+      {
+        label: "Pour qui",
+        value: "Laboratoires et établissements de santé, industriels, banques et assureurs, entreprises de services B2B",
+      },
+      {
+        label: "Pour commencer",
+        value: "Un échange de 30 minutes, offert, puis un forfait écrit avant toute signature",
+      },
+    ],
+    presence: "Masteria a ses bureaux au 17 rue d'Algérie, dans le 1er arrondissement ; son numéro de déclaration d'activité de formation est le 84 69 23218 69. Les ateliers, l'observation du travail au poste, les points d'avancement et la passation se tiennent dans vos locaux, d'un bout à l'autre de la métropole, ou chez nous. Saint-Étienne, Grenoble, Valence et Clermont-Ferrand restent à portée de journée.",
+  },
+  offresTitre: {
+    kicker: "Depuis la presqu'île",
+    h2: "Ce que notre agence IA fait pour les entreprises lyonnaises",
+  },
+  offresNote: {
+    titre: "Une seule équipe, de la décision au code.",
+    texte: "Le consultant qui a lu vos flux suit le développeur qui écrit l'outil, et la formation reprend les dossiers sur lesquels l'outil a été testé. Rien ne se perd entre la recommandation et la livraison.",
+  },
+  ancrage: {
+    kicker: "Ancrage lyonnais",
+    h2: "Pourquoi travailler avec une agence IA installée à Lyon ?",
+    economie: "Ce que pèse la métropole",
+    presence: "Où nous travaillons",
+    prestations: "Trois chantiers typiques dans l'agglomération",
+  },
+  formationBloc: {
+    kicker: "Former après la livraison",
+    h2: "Des sessions dans vos locaux, sur l'outil livré",
+    lien: "Le catalogue national des formations",
+  },
+  etapesBloc: {
+    kicker: "Notre déroulé",
+    h2: "Cinq étapes, de l'échange de trente minutes à la remise de l'outil",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises lyonnaises",
+    texte: "Vous comparez plusieurs agences ? Notre grille de choix est publiée sur la page",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "comment choisir une agence IA",
+    },
+  },
+  maillage: {
+    villes: "Nos pages pour d'autres villes",
+    expertises: "Pour approfondir avant l'atelier",
+  },
+  cta: {
+    titre: "Un projet d'IA à Lyon ? Passons vous voir.",
+    texte: "Décrivez en quelques lignes le flux qui vous coûte du temps et les logiciels qui le portent. Nous vous répondons sous 24 heures ; les 30 minutes de cadrage offertes peuvent se tenir rue d'Algérie, chez vous ou en visio.",
+  },
+  equipe: {
+    titre: "Une équipe lyonnaise, pilotée par son fondateur",
+    texte: "Mathias Nizan a fondé Masteria à Lyon en 2022 et suit chaque mission depuis la rue d'Algérie. Selon le projet, il réunit des consultants, des développeurs et des formateurs indépendants, et choisit ceux qui viendront chez vous. Masteria ne revend aucun logiciel : la recommandation suit vos contraintes, et le code livré vous appartient.",
+  },
   intro: "Masteria a ses bureaux à Lyon, au 17 rue d'Algérie (1er arrondissement), et y mène ses missions de conseil et de développement au contact des équipes : ateliers dans vos locaux ou dans les nôtres, observation du travail au poste, passation sur votre site. Fin 2024, la métropole comptait 9 755 établissements de 10 à 49 salariés, et ceux de 100 salariés ou plus employaient près d'un salarié sur deux. Pour ces deux mondes, nous construisons des assistants et des automatisations reliés à vos logiciels, puis nous vous remettons leur code.",
   offresIntro: [
     "Depuis la presqu'île, nous décidons avec vous de ce qui mérite d'être outillé, puis nous le construisons et le branchons sur les logiciels que vos équipes ouvrent chaque matin, de Vaise à Gerland et de Villeurbanne à Vénissieux.",
@@ -10,14 +86,21 @@ export default {
   ],
   offres: [
     {
+      title: "Conseil et gouvernance, au contact des équipes",
+      cta: "Le conseil en intelligence artificielle",
       desc: "Le conseil commence chez vous par la lecture des flux : qui saisit quoi, dans quel logiciel, à quel moment du mois. Il débouche sur une feuille de route ordonnée par gain attendu et par difficulté, sur des règles d'usage de l'IA et sur la liste des points de conformité à régler avant de construire : registre des traitements, RGPD, AI Act (le règlement européen sur l'IA).",
       points: ["Lecture des flux dans vos locaux", "Feuille de route ordonnée par priorité", "Règles d'usage et points de conformité"],
     },
     {
+      title: "Assistants reliés à vos logiciels",
+      cta: "Développement d'agents sur mesure",
+      secondaryCta: "Outils IA par métier",
       desc: "Nous développons des assistants et des agents, ces programmes d'IA capables d'enchaîner plusieurs actions, reliés à votre ERP (le logiciel qui tient commandes, stocks et factures), à votre gestion documentaire ou à votre fichier clients. Le prototype se teste sur vos dossiers avec ceux qui s'en serviront, et la version livrée arrive avec son code, sa documentation et ses accès.",
       points: ["Assistants reliés à vos logiciels", "Prototype testé sur vos dossiers", "Code et documentation livrés"],
     },
     {
+      title: "Automatisation des tâches de la semaine",
+      cta: "Notre agence d'automatisation",
       desc: "L'automatisation vise les tâches qui reviennent chaque semaine : une commande reçue par courriel à saisir, un devis à relancer, deux fichiers à rapprocher, un compte rendu à préparer. Une personne relit tout ce qui engage l'entreprise, et le temps gagné se compare avant et après le lancement, sur vos propres volumes.",
       points: ["Tâches répétitives repérées au poste", "Relecture humaine avant tout envoi", "Temps comparé sur vos volumes"],
     },
@@ -71,7 +154,7 @@ export default {
       caption: "Six organisations lyonnaises : ce que nous observons sur place et le premier outil à construire",
       headers: ["Organisation", "Ce que nous observons sur place", "Premier outil à construire", "Condition préalable"],
       rows: [
-        ["Hôpital, clinique ou établissement médico-social", "Le circuit d'un courrier ou d'une réclamation entre l'accueil, l'encadrement et la direction", "Assistant qui résume le dossier et prépare la réponse type", "Hébergement validé par la DSI et le délégué à la protection des données avant toute donnée de patient"],
+        ["Hôpital, clinique ou établissement médico-social", "Le circuit d'un courrier ou d'une réclamation entre l'accueil, l'encadrement et la direction", "Assistant qui résume le dossier et prépare la réponse type", "Hébergement approuvé par la DSI et par le délégué à la protection des données avant la première donnée de patient"],
         ["Site industriel de l'agglomération", "La rédaction des non-conformités et leur transmission au service qualité", "Assistant qui met en forme la fiche de non-conformité à partir des notes de l'atelier", "Modèle de fiche validé par la qualité"],
         ["Direction régionale de banque ou d'assurance", "Le tri des courriers et des réclamations entrants", "Classement et préparation des réponses, décision laissée au conseiller", "Accord écrit de la conformité sur les données utilisées"],
         ["PME de négoce ou de distribution", "La copie des commandes reçues par courriel vers le logiciel de gestion", "Transformation d'une demande en lignes de devis à valider", "Fiches articles propres et à jour"],
@@ -90,7 +173,7 @@ export default {
         "Former les deux bureaux, à Paris et à Lyon, lors d'une journée commune, et laisser un guide qui attribue chaque mise à jour à une personne.",
       ],
       resultat: "Les consultants passent leur temps sur l'analyse du dossier et la stratégie de réponse ; la structure du mémoire, les passages récurrents et les reformulations sortent de l'assistant de leur pôle. Les formulations qui ont convaincu des jurys restent rangées par famille de marchés. Le tout tourne sur une offre professionnelle qui n'entraîne pas les modèles avec les données du cabinet, et celui-ci fait évoluer ses assistants seul, guide en main.",
-      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Les quatre assistants du cabinet de Paris et de Lyon" },
     },
     pieges: [
       { titre: "Choisir une agence lyonnaise et tout traiter en visio", texte: "La proximité ne sert que si elle se traduit en visites. Demandez que la proposition date au moins une observation au poste et une passation sur votre site." },
@@ -101,7 +184,7 @@ export default {
     ],
   },
   faq: [
-    { q: "Où vous trouver à Lyon ?", a: "Au 17 rue d'Algérie, Lyon 1er, en presqu'île, près de la place des Terreaux. Masteria a été fondé à Lyon en 2022 par Mathias Nizan. Les ateliers d'une mission se tiennent dans vos locaux ou dans les nôtres, selon ce qui arrange vos équipes ; l'observation au poste et la remise de l'outil ont lieu chez vous, partout dans la métropole." },
+    { q: "Où vous trouver à Lyon ?", a: "Au 17 rue d'Algérie, Lyon 1er, en presqu'île, près de la place des Terreaux. C'est là que Mathias Nizan a installé Masteria en 2022. Les ateliers d'une mission se tiennent dans vos locaux ou dans les nôtres, selon ce qui arrange vos équipes ; l'observation au poste et la remise de l'outil ont lieu chez vous, partout dans la métropole." },
     { q: "Une PME lyonnaise de vingt salariés peut-elle lancer un projet d'IA sur mesure ?", a: "Oui, si le projet vise un flux précis : les devis, les commandes reçues par courriel, les relances, un rapprochement de fichiers. L'échange de cadrage de 30 minutes, offert, sert à le repérer. Si le besoin reste flou, le Diagnostic IA le précise ; c'est une prestation payante, dont la durée et le forfait se fixent au cadrage selon votre périmètre." },
     { q: "Travaillez-vous avec notre prestataire informatique ou notre intégrateur ERP ?", a: "Oui, et le plus tôt possible : il connaît vos logiciels, leurs versions et leurs accès. Nous l'invitons à l'atelier où se décide le branchement, par API, par export de fichiers ou par connecteur, et il reçoit la documentation technique en fin de mission. Il peut alors reprendre l'outil si vous le décidez." },
     { q: "Pouvez-vous traiter plusieurs sites de l'agglomération dans une même mission ?", a: "Oui. Un siège à la Part-Dieu, un entrepôt dans l'est lyonnais et une agence en centre-ville entrent dans la même proposition, avec une observation sur chaque site concerné. Brancher un assistant sur un seul logiciel demande moins de travail que de déployer un outil sur trois sites, et le forfait suit cet écart." },
@@ -113,7 +196,7 @@ export default {
   sources: [
     { name: "Insee : dossier complet, Métropole de Lyon (établissements et effectifs salariés fin 2024, source Flores)", url: "https://www.insee.fr/fr/statistiques/2011101?geo=EPCI-200046977" },
     { name: "Insee : dossier complet, France entière (établissements et effectifs salariés fin 2024, source Flores)", url: "https://www.insee.fr/fr/statistiques/2011101?geo=FE-1" },
-    { name: "Auvergne-Rhône-Alpes Entreprises : chiffres clés du Rhône et de la Métropole de Lyon, édition 2026", url: "https://plateforme-iet.auvergnerhonealpes-entreprises.fr/informations-economiques/publications/chiffres-cles-du-rhone-et-de-la-metropole-de-lyon-edition-2026" },
+    { name: "Auvergne-Rhône-Alpes Entreprises, édition 2026 : les 10 787 établissements industriels du Rhône", url: "https://plateforme-iet.auvergnerhonealpes-entreprises.fr/informations-economiques/publications/chiffres-cles-du-rhone-et-de-la-metropole-de-lyon-edition-2026" },
     { name: "CNIL : le registre des activités de traitement", url: "https://www.cnil.fr/fr/RGDP-le-registre-des-activites-de-traitement" },
     { name: "CNIL : intelligence artificielle (dont la note exploratoire sur l'IA agentique, 20 juillet 2026)", url: "https://www.cnil.fr/fr/intelligence-artificielle" },
     { name: "Model Context Protocol : What is MCP?", url: "https://modelcontextprotocol.io/docs/getting-started/intro" },

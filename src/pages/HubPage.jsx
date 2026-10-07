@@ -12,6 +12,7 @@ import FounderNote from '../components/FounderNote'
 import ToolLogo from '../components/ToolLogo'
 import { HUBS, SPOKES, METIERS } from '../data/seo-pages'
 import { HUB_CONTENT } from '../data/hub-content'
+import { HUB_GUIDES } from '../data/hub-guides'
 import { GEO_CITIES, GEO_TOOLS, geoSlug, geoPageExists } from '../data/geo-data'
 import ApresLaFormation from '../components/ApresLaFormation'
 import { PressMention } from '../components/FounderNote'
@@ -83,7 +84,10 @@ function FaqItem({ q, a }) {
 export default function HubPage() {
   const location = useLocation()
   const hubSlug = location.pathname.replace(/^\//, '')
-  const hub = HUBS.find(h => h.slug === hubSlug)
+  const hubBase = HUBS.find(h => h.slug === hubSlug)
+  // Texte propre du hub (data/hub-guides) : chaque champ du guide remplace celui du catalogue
+  const guide = (hubBase && HUB_GUIDES[hubBase.id]) || {}
+  const hub = hubBase && { ...hubBase, ...guide }
 
   if (!hub) {
     return (
@@ -95,13 +99,16 @@ export default function HubPage() {
   }
 
   const spokes      = SPOKES.filter(s => s.hubSlug === hub.slug)
-  const hubContent  = HUB_CONTENT[hub.id] || {}
+  const hubContent  = { ...HUB_CONTENT[hub.id] }
+  for (const k of ['why', 'programme', 'faq']) if (guide[k]) hubContent[k] = guide[k]
   const { why = [], programme = [], faq = [] } = hubContent
+  const titres = hub.titres || {}
 
   // Nom court de l'outil (sans parenthèses) pour les titres H2 et CTA.
   // "Claude (Anthropic)" → "Claude IA" / "Microsoft Copilot" → "Microsoft 365 Copilot"
   const toolShort = (() => {
     const base = (hub.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()
+    if (hub.outilCourt) return hub.outilCourt
     if ((hub.id === 'claude' || hub.id === 'claude-ia')) return 'Claude IA'
     if (hub.id === 'copilot') return 'Microsoft 365 Copilot'
     if (hub.id === 'gemini') return 'Google Gemini'
@@ -125,14 +132,14 @@ export default function HubPage() {
     level: 'Intermédiaire',
     tool: hub.tool,
     audience: 'Professionnels en entreprise (B2B)',
-    teaches: hubContent?.programme?.flatMap(p => p.items) || undefined,
-    modules: hubContent?.programme?.flatMap((p, dayIdx) =>
+    teaches: programme.length ? programme.flatMap(p => p.items) : undefined,
+    modules: programme.length ? programme.flatMap((p, dayIdx) =>
       (p.items || []).map((item) => ({
         day: p.day || dayIdx + 1,
         title: item.split(':')[0]?.trim() || item.slice(0, 60),
         description: item,
       }))
-    ) || undefined,
+    ) : undefined,
     about: `Formation ${hub.tool} pour les entreprises`,
     prerequisites: 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
   }
@@ -303,7 +310,7 @@ export default function HubPage() {
               fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
               fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
             }}>
-              Pourquoi former vos équipes à {toolShort} ?
+              {titres.why || `Pourquoi former vos équipes à ${toolShort} ?`}
             </h2>
             {!propre && (
               <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
@@ -351,7 +358,7 @@ export default function HubPage() {
           fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800,
           fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
         }}>
-          {toolShort} adapté à chaque métier
+          {titres.spokes || `${toolShort} adapté à chaque métier`}
         </h2>
         <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: propre ? 760 : 600 }}>
           {propre && hub.spokesIntro ? hub.spokesIntro : "Chaque formation est construite autour des cas d'usage réels de votre fonction."}
@@ -377,7 +384,7 @@ export default function HubPage() {
             if ((hub.id === 'claude' || hub.id === 'claude-ia')) {
               cardTitle = `Formation Claude IA pour les équipes ${spoke.metier}`
             }
-            if (propre) cardTitle = spoke.toolSlug === 'claude-code' ? 'Claude Code, pour les développeurs' : `Claude et le métier : ${spoke.metier}`
+            if (propre) cardTitle = hub.carteTitres?.[spoke.slug] || (spoke.toolSlug === 'claude-code' ? 'Claude Code, pour les développeurs' : `${hub.carteOutil || toolShort} et le métier : ${spoke.metier}`)
             return (
               <Link
                 key={spoke.slug}
@@ -583,7 +590,7 @@ export default function HubPage() {
               fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
               fontFamily: 'Nunito, sans-serif', marginBottom: 12,
             }}>
-              Programme de formation {toolShort}
+              {titres.programme || `Programme de formation ${toolShort}`}
             </h2>
             {!propre && (
             <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
@@ -644,11 +651,11 @@ export default function HubPage() {
 
       {/* ── ÉTUDES DE CAS ET RETOURS DES PARTICIPANTS ── */}
       {outilMissions && (
-        <MissionsRecentes page={hub.slug} outil={outilMissions} casIds={hub.casIds || []} color={hub.color} compact titre={propre ? 'Ce que disent les participants de nos formations Claude' : undefined} />
+        <MissionsRecentes page={hub.slug} outil={outilMissions} casIds={hub.casIds || []} color={hub.color} compact titre={propre ? hub.missionsTitre : undefined} />
       )}
 
       {/* ── AVIS GOOGLE ── tous les avis, les plus proches de l'outil en tête */}
-      <AvisGoogle bg="#F5F3EE" priorite={hub.avisPriorite || (outilMissions ? [outilMissions] : undefined)} pertinents={3} titre={propre ? 'Les avis Google qui parlent de nos formations Claude' : undefined} />
+      <AvisGoogle bg="#F5F3EE" priorite={hub.avisPriorite || (outilMissions ? [outilMissions] : undefined)} pertinents={3} titre={propre ? hub.avisTitre : undefined} />
 
       {propre && hub.apres ? (
         <section style={{ padding: '64px 40px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
@@ -674,7 +681,7 @@ export default function HubPage() {
               fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
               fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
             }}>
-              Questions fréquentes sur la formation {toolShort}
+              {titres.faq || `Questions fréquentes sur la formation ${toolShort}`}
             </h2>
             {!propre && (
               <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 40, maxWidth: 580 }}>

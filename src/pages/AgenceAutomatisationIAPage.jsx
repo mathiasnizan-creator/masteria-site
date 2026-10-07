@@ -3,23 +3,31 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Check, Cog, Compass, FileText, Key,
   Mail, MapPin, PenLine, Plug, Receipt, RefreshCw, Rocket, Target, Workflow,
+  Sun, Bot,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
 
 /*
  * Page offre « agence d'automatisation IA » (slug /agence-automatisation-ia).
- * Cible : « agence automatisation ia » (390/mois, KD 10), « agence d'automatisation ia »,
- * « conseil automatisation ia ». Positionnement : Masteria cadre et déploie
- * l'automatisation AVEC les équipes du client (formation intégrée, autonomie finale).
+ * Cible : « agence automatisation ia », « agence d'automatisation ia »,
+ * « conseil automatisation ia ». Angle propre à la page : l'AUTOMATISATION DES
+ * PROCESSUS (repérage des tâches qui reviennent, construction, raccordement aux
+ * logiciels, passation aux référents).
  * Maillage : /automatisation-ia (guide pilier), /formation-automatisation-ia,
- * /agents-ia-entreprise, /agence-ia, /conseil-intelligence-artificielle,
- * /blog/automatisation-ia-pme-processus-prioritaires, /contact.
- * Design premium : icônes lucide (zéro emoji), kickers, tableau « faire faire vs
- * faire avec vos équipes », réponses directes citables. Accent bleu Masteria (#2563EB).
+ * /agents-ia-entreprise, /agence-developpement-ia, /outils-ia-sur-mesure,
+ * /conseil-intelligence-artificielle, /blog/automatisation-ia-pme-processus-prioritaires.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de FounderNote ; retrait
+ * du « +1 500 », du « plusieurs heures par semaine » non sourcé, du « Gratuit »
+ * et de l'offre « audit gratuit » (seules les 30 minutes de cadrage sont
+ * offertes, le repérage des processus est le premier temps payant de la mission) ;
+ * prix en fourchettes larges au forfait ; formation 1 980 € HT finançable par
+ * l'OPCO selon ses règles et ses fonds, automatisation pas finançable par l'OPCO ;
+ * deux exemples tirés de src/data/etudes-de-cas.js.
+ * Design premium : icônes lucide (zéro emoji), kickers, accent bleu #2563EB.
  */
 
 const SLUG = 'agence-automatisation-ia'
@@ -27,8 +35,8 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence automatisation IA · Cadrage & déploiement | Masteria"
-const META_DESC = "Agence d'automatisation IA : conception, développement et déploiement de vos automatisations sur mesure, intégrées à vos outils. Cadrage initial gratuit."
-const KEYWORDS = "agence automatisation ia, automatisation ia, automatisation intelligente, automatiser avec l'ia, workflows ia, agence rpa ia"
+const META_DESC = "Agence d'automatisation IA : vos processus répétitifs repérés, automatisés et reliés à vos logiciels, puis remis à vos équipes. 30 min de cadrage offertes."
+const KEYWORDS = "agence automatisation ia, agence d'automatisation ia, automatisation ia, conseil automatisation ia, automatisation intelligente, workflows ia, agence rpa ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -59,118 +67,144 @@ function IconBox({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Cog,    label: 'Développement sur mesure' },
-  { icon: Plug,   label: 'Intégré à vos outils (API, MCP)' },
+  { icon: Cog,    label: 'Automatisations construites pour vous' },
+  { icon: Plug,   label: 'Reliées à vos logiciels (API, MCP)' },
   { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
-  { icon: Key,    label: 'Vous restez propriétaire du système' },
+  { icon: Key,    label: 'Système remis à votre équipe' },
 ]
 
-/* ───────── Méthode en 4 temps ───────── */
+/* ───────── Chiffres clés ───────── */
+
+const KEY_FIGURES = [
+  { num: '4', label: 'temps par mission, du repérage à la passation' },
+  { num: '2 à 4', label: 'semaines pour un premier prototype' },
+  { num: '30 min', label: 'de cadrage offertes pour démarrer' },
+  { num: '2022', label: 'création du cabinet, à Lyon' },
+]
+
+/* ───────── Les quatre temps d'une mission ───────── */
 
 const METHODE = [
   {
     num: '01',
-    title: 'Audit et architecture',
-    badge: 'Cadrage initial gratuit',
-    desc: "Nous cartographions les tâches répétitives de chaque équipe, scorons chaque candidate selon son impact et sa faisabilité, puis concevons l'architecture cible : déclencheurs, traitements IA, intégrations, points de contrôle. Ce travail évite l'erreur classique : automatiser ce qui est facile au lieu de ce qui rapporte.",
-    livrable: "Une feuille de route priorisée et chiffrée, qui vous appartient, que vous poursuiviez avec nous ou non.",
+    title: 'Repérage et architecture',
+    badge: 'Premier temps de la mission',
+    desc: "Nous dressons avec chaque service la liste des tâches répétitives, estimons pour chacune le temps qu'elle prend et la difficulté à l'automatiser, puis dessinons l'architecture : déclencheurs, traitements par l'IA, logiciels à relier, points de contrôle humain. On évite ainsi d'automatiser d'abord ce qui est facile au détriment de ce qui compte.",
+    livrable: "Une feuille de route classée et chiffrée, qui vous appartient même si vous la réalisez sans nous.",
   },
   {
     num: '02',
-    title: 'Prototypage sur 1 ou 2 cas',
+    title: 'Prototype sur un ou deux flux',
     badge: '2 à 4 semaines',
-    desc: "Nous développons un prototype fonctionnel sur un ou deux processus prioritaires, en conditions réelles, avec mesure du temps passé avant et après. Vous constatez la valeur sur un vrai flux avant d'engager le déploiement complet.",
-    livrable: "Une automatisation qui tourne sur un processus réel et des chiffres pour décider de la suite.",
+    desc: "Nous automatisons un ou deux processus prioritaires sur vos données, en relevant le temps passé avant et après. Vous voyez le résultat sur un flux qui compte avant d'engager la suite.",
+    livrable: "Un flux automatisé en service, et des mesures pour décider.",
   },
   {
     num: '03',
-    title: 'Développement et intégration',
+    title: 'Construction et raccordement',
     badge: 'Sur mesure',
-    desc: "Nos équipes construisent les automatisations retenues (workflows orchestrés, assistants spécialisés, agents), les raccordent à vos applications via API et MCP, et posent les garde-fous : validation humaine sur les décisions sensibles, traçabilité, conformité RGPD.",
-    livrable: "Des automatisations sur mesure, documentées et intégrées à votre système d'information.",
+    desc: "Nous construisons les automatisations retenues (enchaînements, assistants, agents), les relions à vos logiciels par API ou par MCP, puis installons les garde-fous : une personne valide avant tout envoi ou paiement, chaque action est journalisée, le RGPD est respecté.",
+    livrable: "Des automatisations documentées, reliées à votre système d'information.",
   },
   {
     num: '04',
-    title: 'Déploiement et passation',
-    badge: 'Mise en production',
-    desc: "Mise en production progressive, mesure des gains réels et documentation complète. Nous vous remettons un système supervisé dont vous gardez la propriété, et formons vos référents en complément pour qu'ils sachent le faire vivre.",
-    livrable: "Des automatisations en production, supervisées, et une équipe propriétaire de son système.",
+    title: 'Mise en production et passation',
+    badge: 'Remise du système',
+    desc: "Nous mettons en production par étapes, mesurons ce que chaque flux fait gagner et remettons la documentation complète. Vos référents apprennent à surveiller, corriger et étendre le système.",
+    livrable: "Un système surveillé, dont votre équipe est propriétaire et qu'elle sait faire vivre.",
   },
 ]
 
-/* ───────── Faire faire vs faire avec vos équipes (tableau) ───────── */
+/* ───────── Faire soi-même vs faire construire (tableau) ───────── */
 
 const TABLE_AUTONOMIE = [
   {
     critere: 'Conception et fiabilité',
-    classique: 'Bricolée au fil de l\'eau, fragile sur les cas limites',
-    masteria: 'Architecture pensée, traitements fiabilisés, garde-fous posés',
+    classique: "Construite au fil de l'eau, fragile sur les cas particuliers",
+    masteria: 'Architecture pensée d\'abord, contrôles et reprise sur erreur prévus',
   },
   {
-    critere: 'Intégration au système d\'information',
-    classique: 'Limitée aux connecteurs prêts à l\'emploi',
-    masteria: 'Sur mesure via API et MCP, raccordée à vos outils métier',
+    critere: 'Branchement sur vos logiciels',
+    classique: 'Limité aux connecteurs proposés par la plateforme',
+    masteria: 'Sur mesure, par API ou MCP, jusque dans vos logiciels métier',
   },
   {
-    critere: 'Temps avant production',
-    classique: 'Long : vos équipes apprennent en construisant',
-    masteria: 'Court : une équipe qui développe ce type de système tous les jours',
+    critere: 'Délai avant production',
+    classique: "Long : l'équipe apprend en construisant",
+    masteria: 'Court : une équipe qui monte ce type de système en continu',
   },
   {
-    critere: 'Mobilisation de vos équipes',
-    classique: 'Forte : elles portent tout le chantier',
-    masteria: 'Maîtrisée : nous construisons, vous validez et pilotez',
+    critere: 'Charge pour vos équipes',
+    classique: 'Lourde : elles portent tout le chantier',
+    masteria: 'Mesurée : nous construisons, vous validez',
   },
   {
-    critere: 'Propriété du système',
-    classique: 'Vôtre, mais dépendante de la personne qui l\'a monté',
-    masteria: 'Vôtre, documentée, avec passation et référents formés',
+    critere: 'Propriété et suite',
+    classique: "À vous, mais dépendante de son auteur",
+    masteria: 'À vous, documentée, avec des référents formés',
   },
 ]
 
-/* ───────── Ce qu'on automatise le plus souvent ───────── */
+/* ───────── Les processus automatisés le plus souvent ───────── */
 
 const AUTOMATISATIONS = [
-  { icon: Mail, title: 'Emails et demandes entrantes', desc: "Classement par nature, projet de réponse préparé, routage vers la bonne personne. La boîte générique cesse d'être un goulot d'étranglement." },
-  { icon: Receipt, title: 'Factures et relances', desc: "Extraction des données de factures, rapprochement avec les commandes, relances d'impayés rédigées et programmées automatiquement." },
-  { icon: FileText, title: 'Comptes rendus et reporting', desc: "Réunions transcrites et synthétisées, reporting hebdomadaire consolidé et commenté à partir de vos outils existants." },
-  { icon: Target, title: 'Qualification des leads', desc: "Lecture de la demande, scoring selon vos critères, fiche de synthèse et routage au bon commercial, CRM mis à jour sans saisie." },
-  { icon: PenLine, title: 'Contenus récurrents', desc: "Déclinaison de vos contenus piliers en posts, newsletters et fiches produit, dans votre charte éditoriale, avec validation humaine." },
-  { icon: RefreshCw, title: 'Synchronisation entre outils', desc: "CRM, tableurs, outils métier : les informations circulent sans ressaisie, les doublons et les oublis disparaissent." },
+  { icon: Mail, title: 'Courriels et demandes entrantes', desc: "Chaque message est classé, un projet de réponse est préparé et la demande part vers la bonne personne. La boîte partagée cesse de déborder." },
+  { icon: Receipt, title: 'Factures et relances', desc: "Les données des factures sont extraites et rapprochées des commandes ; les relances d'impayés sont rédigées, puis envoyées après validation." },
+  { icon: FileText, title: 'Comptes rendus et reporting', desc: "Les réunions sont résumées, et le reporting de la semaine se consolide à partir de vos outils pour arriver commenté le lundi matin." },
+  { icon: Target, title: 'Qualification des demandes commerciales', desc: "La demande est lue, notée selon vos critères, résumée en une fiche et confiée au bon commercial ; le CRM se met à jour sans saisie." },
+  { icon: PenLine, title: 'Contenus récurrents', desc: "Un contenu de fond se décline en publications, lettres d'information ou fiches produits, dans votre ton, avec relecture humaine avant diffusion." },
+  { icon: RefreshCw, title: 'Échanges entre logiciels', desc: "CRM, tableurs, logiciels métier : les informations passent de l'un à l'autre sans ressaisie, et les doublons disparaissent." },
 ]
 
-/* ───────── On le construit pour vous (build steps) ───────── */
+/* ───────── Deux exemples tirés de nos missions (faits : src/data/etudes-de-cas.js) ───────── */
+
+const EXEMPLES = [
+  {
+    id: 'photovoltaique',
+    icon: Sun,
+    sector: 'Distribution photovoltaïque · trois personnes',
+    text: "Autour d'Odoo, le progiciel de gestion où tout se passe dans cette PME, trois assistants sont prévus : le premier consultera les transporteurs avant chaque livraison, le deuxième saisira dans Odoo les arrivées en entrepôt, le troisième se chargera des devis puis des relances. Une formation sur place est programmée en octobre 2026.",
+  },
+  {
+    id: 'distribution',
+    icon: Bot,
+    sector: 'Distribution IT B2B · 58 salariés',
+    text: "Avant même la formation des dix référents, en juin 2026, la compétence qui rédige les relances de devis avait été éprouvée sur des devis de l'entreprise. D'autres compétences Claude bâtissent une cotation dès qu'un client écrit ; leur diffusion au reste des salariés est programmée entre octobre et décembre 2026.",
+  },
+]
+
+/* ───────── Nous le construisons pour vous ───────── */
 
 const BUILD_STEPS = [
   {
     icon: Compass,
     title: 'Cadrage et architecture',
-    desc: "Nous traduisons vos processus en spécifications : déclencheurs, traitements IA, intégrations, points de validation humaine.",
+    desc: "Vos processus deviennent un cahier précis : déclencheurs, traitements par l'IA, logiciels à relier, étapes de validation humaine.",
   },
   {
     icon: Cog,
-    title: 'Développement',
-    desc: "Workflows orchestrés, assistants spécialisés, agents connectés à vos outils. Du sur mesure, pas un gabarit générique.",
+    title: 'Construction',
+    desc: "Enchaînements, assistants spécialisés, agents reliés à vos outils : chaque brique est écrite pour votre processus.",
   },
   {
     icon: Plug,
-    title: 'Intégration API et MCP',
-    desc: "Raccordement à votre CRM, ERP, messagerie et outils métier, avec traçabilité et conformité RGPD.",
+    title: 'Raccordement API et MCP',
+    desc: "Branchement sur la gestion commerciale, l'ERP, la messagerie et les logiciels métier, avec journal des actions et respect du RGPD.",
   },
   {
     icon: Rocket,
     title: 'Mise en production',
-    desc: "Déploiement progressif, mesure des gains réels, documentation et passation à vos référents.",
+    desc: "Ouverture progressive, mesure des gains, documentation et passation à vos référents.",
   },
 ]
 
 /* ───────── Pourquoi Masteria ───────── */
 
 const WHY_MASTERIA = [
-  { icon: Target, title: "Spécialisés à 100 % sur l'IA", desc: "Masteria travaille sur l'intelligence artificielle depuis 2022, du conseil en automatisation IA au développement. Les outils, les pièges et les raccourcis du sujet font notre quotidien." },
-  { icon: Cog, title: "De la conception à la production", desc: "Nous ne nous arrêtons pas au schéma : nous développons, intégrons via API et MCP, fiabilisons et déployons. Vous récupérez un système qui tourne, pas un prototype." },
-  { icon: Key, title: "Vous restez propriétaire", desc: "Code, configurations et documentation vous appartiennent. Vos référents peuvent reprendre la main, et nous les formons en complément s'ils le souhaitent." },
-  { icon: MapPin, title: "Lyon, la France entière et l'international", desc: "Basés à Lyon, nous intervenons sur site dans toute la France ainsi qu'à l'international (Europe, États-Unis, Inde), et à distance pour le suivi." },
+  { icon: Target, title: "Un seul métier : l'IA", desc: "Depuis 2022, Masteria ne fait que de l'intelligence artificielle, du conseil en automatisation jusqu'à la construction. Les outils du marché, leurs limites et leurs pièges font partie de notre quotidien." },
+  { icon: Cog, title: "Jusqu'à la production", desc: "Nous construisons, raccordons par API et MCP, testons et mettons en service : vous recevez un système qui tourne, documentation comprise." },
+  { icon: Key, title: 'Vous restez propriétaire', desc: "Code, paramétrages et documentation vous appartiennent. Vos référents peuvent reprendre la main, et nous les formons s'ils le souhaitent." },
+  { icon: MapPin, title: 'Depuis Lyon, là où sont vos équipes', desc: "Installés à Lyon, nous intervenons sur site dans toute la France, et au-delà quand vos équipes y travaillent, puis suivons les déploiements à distance." },
 ]
 
 /* ───────── FAQ ───────── */
@@ -178,43 +212,43 @@ const WHY_MASTERIA = [
 const FAQ = [
   {
     q: "Que fait une agence d'automatisation IA ?",
-    a: "Elle identifie les processus automatisables d'une entreprise, conçoit l'architecture, développe les automatisations (workflows, assistants IA, agents) et les intègre aux outils existants jusqu'à la mise en production. Chez Masteria, nous menons ce développement sur mesure de bout en bout : vous récupérez un système qui tourne et dont vous gardez la propriété. Vos équipes peuvent se former en complément pour le faire évoluer.",
+    a: "Elle repère les processus qui peuvent s'automatiser, conçoit l'architecture, construit les automatisations (enchaînements, assistants, agents) et les relie aux logiciels de l'entreprise jusqu'à la mise en production. Masteria mène ce travail de bout en bout, puis remet un système documenté dont vous êtes propriétaire ; vos équipes peuvent se former pour le faire évoluer.",
   },
   {
     q: "Automatisation classique ou automatisation par l'IA : que choisir ?",
-    a: "L'automatisation classique (RPA, workflows no-code type Make ou Zapier) suffit pour des tâches répétitives et bien structurées : copier des données d'un outil à un autre, envoyer un rappel, mettre à jour un tableau. L'automatisation par l'IA prend le relais dès qu'il faut comprendre un texte, trier des demandes, rédiger, extraire une information d'un document ou décider selon un contexte. En pratique, une bonne agence d'automatisation combine les deux : le no-code pour la plomberie, l'IA pour l'intelligence de la tâche. Masteria conçoit ces systèmes hybrides et vous en laisse la propriété.",
+    a: "L'automatisation classique, avec la RPA (des robots logiciels qui reproduisent les clics d'un utilisateur) ou des enchaînements sans code dans Make ou Zapier, suffit pour des tâches répétitives et bien structurées : recopier une donnée, envoyer un rappel, mettre à jour un tableau. L'IA prend le relais quand il faut lire un texte, trier des demandes, rédiger, extraire une information d'un document ou décider selon le contexte. La plupart des systèmes associent les deux : la tuyauterie sans code, la compréhension par l'IA.",
   },
   {
     q: "Quelle différence entre Masteria et une agence d'automatisation classique ?",
-    a: "Beaucoup d'agences livrent un prototype no-code et s'arrêtent là, ou facturent ensuite chaque évolution. Masteria conçoit, développe et intègre des automatisations fiabilisées, jusqu'à la production, et vous remet le système documenté dont vous restez propriétaire. Spécialisés sur l'IA depuis 2022, nous pouvons aussi former vos référents en complément pour qu'ils prennent la main.",
+    a: "Beaucoup d'agences livrent un prototype sans code, puis facturent chaque évolution. Masteria conçoit, construit et raccorde des automatisations testées jusqu'à la production, remet le système documenté et peut former vos référents. Le cabinet, né en 2022, n'a jamais travaillé que sur l'IA ; le choix des outils suit votre existant, sans attache avec un éditeur.",
   },
   {
-    q: "Combien coûte un accompagnement en automatisation IA ?",
-    a: "Le cadrage initial est gratuit. Le développement sur mesure (prototypage, construction, intégration, déploiement) est chiffré sur devis après ce cadrage, selon le nombre de processus, les intégrations et le niveau d'autonomie visé. Une formation des équipes peut s'ajouter en complément, à 1 980 € HT par jour, finançable par votre OPCO grâce à notre certification Qualiopi. Le développement et l'intégration ne sont pas éligibles OPCO : seule la formation l'est, et nous ne promettons jamais l'inverse.",
+    q: "Combien coûte une mission d'automatisation IA ?",
+    a: "La première demi-heure de cadrage est offerte. Le forfait de la mission dépend ensuite du nombre de processus, des logiciels à relier et de l'autonomie laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble en production, et un programme couvrant plusieurs sites dépasse 100 000 €. La formation des équipes, facturée 1 980 € HT la journée, relève du budget formation, que l'OPCO de votre branche couvre à hauteur de ce qu'autorisent ses règles et ses fonds ; quant à l'automatisation, elle n'est pas finançable par votre OPCO.",
   },
   {
     q: "Intervenez-vous à distance ou sur site ?",
-    a: "Les deux. Masteria est basée à Lyon et intervient sur site dans toute la France et à l'international (Europe, États-Unis, Inde), ainsi qu'à distance. Le format se choisit selon vos contraintes : les audits et les formations gagnent souvent à se faire sur site, le suivi de déploiement fonctionne très bien en visio.",
+    a: "Les deux. Le repérage des processus et la formation gagnent à se faire dans vos locaux ; le suivi du déploiement fonctionne bien en visio. Depuis sa base lyonnaise, Masteria se déplace partout en France ; à l'étranger aussi, lorsque vos sites s'y trouvent.",
   },
   {
     q: "Avec quels outils travaillez-vous ?",
-    a: "Make, Zapier, n8n et Power Automate pour les workflows, ainsi que les assistants IA du marché (ChatGPT, Claude, Gemini, Copilot) et leurs automatisations natives. Nous partons toujours de votre existant : si vos équipes vivent dans Microsoft 365, Power Automate s'impose souvent ; si la confidentialité exige un hébergement maîtrisé, n8n est un bon candidat. L'outil découle du besoin, jamais l'inverse.",
+    a: "Make, n8n, Power Automate et Zapier pour les enchaînements ; pour la partie IA, les assistants et modèles du marché (Claude, ChatGPT, Gemini, ceux de Microsoft et de Mistral AI). Nous partons de votre existant : une société déjà équipée de Microsoft 365 se tourne souvent vers Power Automate, et si les données doivent rester sur vos machines, n8n s'installe chez vous. L'outil découle du besoin.",
   },
   {
-    q: "Proposez-vous du conseil en automatisation IA, ou seulement du développement ?",
-    a: "Les deux. Le cadrage initial gratuit est déjà une mission de conseil : nous auditons vos processus, priorisons les automatisations à plus fort rendement et vous remettons une feuille de route, que vous poursuiviez avec nous ou non. Le conseil en automatisation IA se prolonge naturellement par le développement, mais vous restez libre de vous arrêter au plan.",
+    q: "Proposez-vous du conseil en automatisation IA, ou seulement de la construction ?",
+    a: "Les deux. Le repérage des processus relève déjà du conseil : nous classons les automatisations selon ce qu'elles rapportent et ce qu'elles coûtent à construire, puis remettons une feuille de route qui vous appartient. Libre à vous de la mettre en œuvre avec nous, en interne ou avec un autre prestataire. Comme la construction, ce travail de repérage n'est pas finançable par votre OPCO.",
   },
   {
-    q: "Pouvez-vous automatiser les process métier de mon entreprise ?",
-    a: "Oui. Nous automatisons les process d'entreprise avec l'IA fonction par fonction : finance, RH, service client, commercial, administratif. La démarche part de vos outils existants, sans refonte de votre système d'information, et chaque process automatisé conserve une validation humaine sur les actions sensibles (paiement, envoi externe, décision affectant une personne).",
+    q: "Pouvez-vous automatiser les processus métier de mon entreprise ?",
+    a: "Oui, fonction par fonction : finance, ressources humaines, service client, ventes, administration. Nous partons de vos logiciels actuels, sans refonte, et chaque processus automatisé garde un contrôle humain avant toute action sensible : un paiement, un envoi à l'extérieur, une décision touchant un salarié ou un client.",
   },
   {
     q: "Combien de temps dure une mission d'automatisation IA ?",
-    a: "Le cadrage initial se mène en quelques jours. Un premier prototype tourne en deux à quatre semaines. Le développement et l'intégration complète d'un ou plusieurs process s'étalent ensuite selon le périmètre retenu, fixé après le cadrage. Nous avançons par paliers, avec un livrable concret à chaque étape pour que vous décidiez de la suite.",
+    a: "Le repérage des processus se mène en quelques jours. Un premier prototype tourne en deux à quatre semaines. La construction et le raccordement de l'ensemble suivent, selon le périmètre fixé après le cadrage ; chaque palier livre un résultat qui vous permet de décider de la suite.",
   },
   {
     q: "Comment choisir son agence d'automatisation IA ?",
-    a: "Vérifiez trois points. L'agence va-t-elle jusqu'à la mise en production ou s'arrête-t-elle au prototype ? Restez-vous propriétaire du code et de la documentation ? Le financement annoncé est-il honnête, sachant que le développement n'est pas éligible OPCO et que seule la formation l'est ? Un cadrage gratuit et une feuille de route qui vous appartient sont de bons signaux de sérieux.",
+    a: "Vérifiez trois points : que l'agence va jusqu'au bout, mise en production comprise, que code et documentation vous reviennent, et que le financement annoncé est exact, l'automatisation n'étant pas finançable par votre OPCO, au contraire des journées de formation. Une demi-heure de cadrage offerte, puis une feuille de route que vous gardez, sont de bons indices de sérieux.",
   },
 ]
 
@@ -224,7 +258,7 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: "Agence d'automatisation IA",
-  description: "Conception, développement et déploiement d'automatisations IA sur mesure : audit des processus, architecture, construction des workflows, assistants et agents, intégration aux outils (Make, Zapier, n8n, Power Automate, API, MCP) et mise en production.",
+  description: "Repérage des processus répétitifs, architecture, construction d'enchaînements, d'assistants et d'agents, raccordement aux logiciels de l'entreprise (Make, n8n, Power Automate, Zapier, API, MCP), mise en production et passation aux référents.",
   url: 'https://www.master-ia.fr/agence-automatisation-ia',
   serviceType: 'Automatisation par intelligence artificielle',
   category: "Automatisation de processus d'entreprise par IA",
@@ -237,29 +271,29 @@ const serviceJsonLd = {
     { '@type': 'City', name: 'Lyon' },
   ],
   audience: { '@type': 'BusinessAudience', name: 'PME, ETI et grands comptes' },
-  serviceOutput: "Automatisations IA en production, documentées, supervisées et dont le client garde la propriété",
+  serviceOutput: "Automatisations en production, documentées, surveillées, dont le client garde la propriété",
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   brand: { '@id': 'https://www.master-ia.fr/#organization' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: "Prestations d'automatisation IA",
+    name: "Offres d'automatisation IA",
     itemListElement: [
       {
         '@type': 'Offer',
-        name: 'Cadrage initial : audit des processus',
-        description: "Analyse des processus et des outils, feuille de route priorisée et chiffrée, sans engagement.",
+        name: '30 minutes de cadrage offertes',
+        description: "Premier échange en visio ou au téléphone pour situer vos processus et les premiers flux à automatiser, sans engagement.",
         price: '0',
         priceCurrency: 'EUR',
       },
       {
         '@type': 'Offer',
-        name: 'Développement et déploiement sur mesure',
-        description: "Sur devis après cadrage, selon le nombre de processus, les intégrations et le niveau d'autonomie visé.",
+        name: "Mission d'automatisation au forfait",
+        description: "Repérage, prototype, construction, raccordement et mise en production, chiffrés au forfait après cadrage selon le nombre de processus et de logiciels.",
       },
       {
         '@type': 'Offer',
-        name: 'Formation des équipes (en complément, certifiée Qualiopi)',
-        description: "1 980 € HT par jour, en intra-entreprise ou en individuel, finançable OPCO.",
+        name: 'Formation des équipes (Qualiopi, actions de formation)',
+        description: "Journée à 1 980 € HT ; groupe interne de douze personnes au plus, ou séance individuelle ; financement selon les règles et les fonds disponibles chez l'OPCO.",
         price: '1980',
         priceCurrency: 'EUR',
       },
@@ -278,14 +312,14 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-12',
-  dateModified: '2026-07-30',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-automatisation-ia#webpage' },
   about: [
     "Automatisation par intelligence artificielle",
-    "Workflows automatisés avec l'IA",
+    "Enchaînements automatisés avec l'IA",
     'Agents IA en entreprise',
-    "Intégration d'applications via API et MCP",
+    "Raccordement d'applications par API et MCP",
   ],
 }
 
@@ -315,7 +349,7 @@ function FAQItem({ q, a, color }) {
 
 export default function AgenceAutomatisationIAPage() {
   const isDesktop = useIsDesktop()
-  // Patron éditorial asymétrique réutilisable (sections cas fréquents / pourquoi / FAQ)
+  // Patron éditorial asymétrique réutilisable (sections processus / pourquoi / FAQ)
   const editorialGrid = isDesktop
     ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
     : {}
@@ -339,7 +373,7 @@ export default function AgenceAutomatisationIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-12"
-        dateModified="2026-07-30"
+        dateModified="2026-10-07"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -368,11 +402,11 @@ export default function AgenceAutomatisationIAPage() {
                 <Workflow size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
               </span>
               <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-                Accompagnement opérationnel
+                Automatisation des processus
               </span>
             </span>
             <span style={{ display: 'inline-flex', alignItems: 'center', fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 14px' }}>
-              Cadrage initial gratuit
+              30 minutes de cadrage offertes
             </span>
           </div>
 
@@ -384,25 +418,25 @@ export default function AgenceAutomatisationIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · mis à jour le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria conçoit, développe et déploie vos automatisations IA sur mesure : audit des processus, architecture, construction des workflows, assistants et agents, intégration à vos outils (Make, Zapier, n8n, Power Automate, API, MCP) et mise en production. Vous récupérez un <strong style={{ color: '#fff', fontWeight: 700 }}>système qui tourne et dont vous gardez la propriété</strong>. Le cadrage initial est gratuit.
+            Masteria repère les tâches répétitives de vos équipes, conçoit et construit les automatisations qui les prennent en charge, les relie à vos logiciels (Make, n8n, Power Automate, Zapier, API, MCP) et les met en service. <strong style={{ color: '#fff', fontWeight: 700 }}>Vous gardez la propriété d'un système documenté, que vos référents savent faire évoluer.</strong> Le premier échange, une demi-heure de cadrage, vous est offert.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Le no-code seul ne suffit pas à fiabiliser un processus qui compte : il faut concevoir l'architecture, raccorder vos outils, gérer les cas limites et poser les garde-fous. Nous prenons en charge cette ingénierie de bout en bout et vous livrons des automatisations en production, documentées et supervisées. Masteria travaille sur l'IA depuis 2022, a accompagné plus de 1 500 professionnels et intervient en France comme à l'international (Europe, États-Unis, Inde).
+            Un outil sans code suffit pour copier une ligne d'un tableur à un autre. Dès qu'un processus touche à vos clients, à vos factures ou à vos stocks, il faut penser les cas particuliers, les contrôles et la reprise après erreur. Nous prenons en charge ce travail d'ingénierie, puis nous formons vos référents pour que l'automatisation ne dépende pas de nous.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Discutons de votre projet
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#methode" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir la méthode
+              Voir les quatre temps
             </a>
           </div>
 
@@ -424,12 +458,7 @@ export default function AgenceAutomatisationIAPage() {
       {/* ── CHIFFRES CLÉS ── */}
       <section style={{ background: '#fff', padding: 'clamp(40px, 5vw, 56px) 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ ...wrap, display: 'flex', justifyContent: 'center', gap: 'clamp(32px, 6vw, 64px)', flexWrap: 'wrap' }}>
-          {[
-            { num: '+1 500', label: "professionnels formés à l'IA" },
-            { num: '98 %', label: 'de taux de satisfaction' },
-            { num: '2022', label: 'année de création de Masteria' },
-            { num: 'Gratuit', label: 'le cadrage initial de votre projet' },
-          ].map(s => (
+          {KEY_FIGURES.map(s => (
             <div key={s.num} style={{ textAlign: 'center' }}>
               <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: '#0A0A0A', margin: 0, lineHeight: 1, letterSpacing: '-0.01em' }}>{s.num}</p>
               <p style={{ fontSize: 13, color: '#6B7280', margin: '6px 0 0' }}>{s.label}</p>
@@ -438,23 +467,23 @@ export default function AgenceAutomatisationIAPage() {
         </div>
       </section>
 
-      {/* ── MÉTHODE EN 4 TEMPS (timeline à rail) ── */}
+      {/* ── LES QUATRE TEMPS (timeline à rail) ── */}
       <section id="methode" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <Kicker>Méthode</Kicker>
+          <Kicker>Les quatre temps</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
             Comment se déroule une mission d'automatisation IA ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Chaque mission suit quatre temps : un audit des processus et la conception de l'architecture, avec cadrage initial gratuit ; un prototypage de deux à quatre semaines sur un ou deux cas réels ; le développement et l'intégration des automatisations à vos outils ; puis la mise en production, avec passation à vos équipes pour qu'elles gardent la main.</strong>
+            <strong>Quatre temps : un repérage des processus et une architecture, un prototype de deux à quatre semaines sur un ou deux flux, la construction et le raccordement à vos logiciels, puis la mise en production et la passation à vos référents. Avant le premier temps, une demi-heure de cadrage offerte permet de vérifier que l'automatisation est la bonne réponse.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 12, lineHeight: 1.7 }}>
-            Le même chemin pour chaque mission : comprendre, prouver, déployer, transmettre. Chaque temps produit un livrable concret et vous décidez de continuer ou non à chaque étape.
+            Chaque temps se termine par un résultat visible, et vous décidez à chaque fois de la suite.
           </p>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 44, lineHeight: 1.7 }}>
-            Vous découvrez le sujet ? Notre <Link to="/automatisation-ia" style={aStyle}>guide complet de l'automatisation IA</Link> pose les bases : définition, cas d'usage par fonction, outils et budgets.
+            Vous découvrez le sujet ? Notre <Link to="/automatisation-ia" style={aStyle}>guide de l'automatisation IA</Link> en pose les bases : définitions, usages par fonction, outils et budgets.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -477,7 +506,7 @@ export default function AgenceAutomatisationIAPage() {
                   </div>
                   <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', maxWidth: 700 }}>{step.desc}</p>
                   <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10, padding: '12px 16px' }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', display: 'block', marginBottom: 4 }}>CE QUE VOUS OBTENEZ</span>
+                    <span style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', display: 'block', marginBottom: 4 }}>À LA FIN DE CE TEMPS</span>
                     <span style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{step.livrable}</span>
                   </div>
                 </div>
@@ -487,29 +516,29 @@ export default function AgenceAutomatisationIAPage() {
         </div>
       </section>
 
-      {/* ── FAIRE FAIRE VS FAIRE AVEC VOS ÉQUIPES ── */}
+      {/* ── FAIRE SOI-MÊME OU FAIRE CONSTRUIRE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Positionnement</Kicker>
+          <Kicker>Faire soi-même ou faire construire</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Le faire soi-même en no-code ou le faire construire sur mesure ?
+            Monter vos automatisations vous-même ou les faire construire ?
           </h2>
 
           <p style={answerStyle}>
-            <strong>Monter ses automatisations soi-même en no-code dépanne sur des flux simples, mais montre vite ses limites dès qu'un processus compte vraiment : cas limites mal gérés, intégrations bloquées, fiabilité incertaine. Faire développer sur mesure mobilise moins vos équipes, sécurise l'architecture et vous laisse propriétaire d'un système robuste, documenté et tenu en production.</strong>
+            <strong>Un outil sans code dépanne sur des flux simples. Pour un processus qui engage l'entreprise, les cas particuliers, les branchements et la fiabilité demandent un travail d'ingénierie : le confier à une équipe qui le pratique chaque semaine mobilise moins vos salariés et vous laisse un système documenté.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
-            Les deux approches coexistent, et la différence se voit dès qu'on quitte le flux jouet pour un processus qui engage l'entreprise. Voici le comparatif honnête, critère par critère.
+            Les deux approches cohabitent souvent dans une même entreprise. Le tableau les compare sur cinq critères.
           </p>
 
           <div style={{ ...cardStyle, overflowX: 'auto', marginBottom: 20 }}>
-            <table aria-label="Comparatif entre construire ses automatisations soi-même en no-code et les faire développer sur mesure" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+            <table aria-label="Comparatif entre monter ses automatisations soi-même sans code et les faire construire par Masteria" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
               <thead>
                 <tr>
                   <th scope="col" style={{ ...thStyle, width: '26%' }}>Critère</th>
-                  <th scope="col" style={{ ...thStyle, width: '37%' }}>Le faire soi-même (no-code seul)</th>
-                  <th scope="col" style={{ ...thStyle, width: '37%', color: c }}>Le faire construire (Masteria)</th>
+                  <th scope="col" style={{ ...thStyle, width: '37%' }}>Vous-même, sans code</th>
+                  <th scope="col" style={{ ...thStyle, width: '37%', color: c }}>Construit par Masteria</th>
                 </tr>
               </thead>
               <tbody>
@@ -526,22 +555,22 @@ export default function AgenceAutomatisationIAPage() {
 
           <p style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 860 }}>
             <Check size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-            <span>Notre conviction : une automatisation qui touche à un processus qui compte mérite d'être conçue, développée et fiabilisée par des spécialistes. Vous en restez propriétaire, et vos équipes peuvent se former en complément pour la faire évoluer.</span>
+            <span>Notre position : un processus qui touche vos clients, vos factures ou vos stocks mérite une automatisation conçue et testée par des spécialistes. Vous en restez propriétaire, et vos équipes peuvent se former pour la faire évoluer.</span>
           </p>
         </div>
       </section>
 
-      {/* ── CE QU'ON AUTOMATISE LE PLUS SOUVENT (éditorial asymétrique) ── */}
+      {/* ── PROCESSUS FRÉQUENTS (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Cas fréquents</Kicker>
+              <Kicker>Processus fréquents</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Ce que nous automatisons le plus souvent
+                Quels processus automatisons-nous le plus souvent ?
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Six familles de processus reviennent dans la majorité des missions. Chaque déploiement part de vos outils existants, sans refonte de votre système d'information, et chaque flux mis en production fait gagner plusieurs heures par semaine à l'équipe concernée.
+                Six familles reviennent d'une mission à l'autre. Chacune part des logiciels que vous utilisez déjà, qu'il n'est pas question de remplacer, et garde un contrôle humain sur ce qui engage l'entreprise.
               </p>
             </div>
 
@@ -557,15 +586,36 @@ export default function AgenceAutomatisationIAPage() {
                   </div>
                 ))}
               </div>
+
+              {/* Deux exemples tirés de nos missions */}
+              <h3 style={{ ...h3Style, fontSize: 17, margin: '36px 0 16px' }}>Deux exemples tirés de nos missions de 2026</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+                {EXEMPLES.map(({ id, icon: Icon, sector, text }) => (
+                  <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                      </span>
+                      <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                    </div>
+                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                    <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                      Lire l'étude de cas
+                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                    </Link>
+                  </article>
+                ))}
+              </div>
+
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Pour prioriser dans votre contexte, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité dans une PME</Link> donne des repères concrets. Pour des exemples détaillés au-delà de ces six familles, parcourez nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link>. Selon votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent ces automatisations métier par métier. Et quand un scénario fixe ne suffit plus, nous évaluons avec vous l'opportunité d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, avec les garde-fous qu'ils exigent.
+                Pour choisir par où commencer dans une PME, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité</Link> donne des repères. Vous trouverez d'autres idées dans nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages par fonction</Link> et sur nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link>. Quand un enchaînement figé ne suffit plus, nous examinons avec vous l'intérêt d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, encadrés par des garde-fous adaptés.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── ON LE CONSTRUIT POUR VOUS (ancre sombre — pivot service) ── */}
+      {/* ── NOUS LE CONSTRUISONS POUR VOUS (ancre sombre, pivot service) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', color: '#fff', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -576,15 +626,15 @@ export default function AgenceAutomatisationIAPage() {
             Nous le construisons pour vous
           </div>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.4vw, 38px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 18px', lineHeight: 1.2, letterSpacing: '-0.02em', maxWidth: 820 }}>
-            Confiez-nous le développement de vos automatisations
+            Confiez-nous la construction de vos automatisations
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Vous n'avez pas à monter vos automatisations vous-même. Nous concevons l'architecture, développons les workflows, assistants et agents adaptés à vos processus, les intégrons à vos outils via API et MCP, puis les déployons en production. Vous récupérez un système qui tourne, documenté et supervisé, dont vous gardez la propriété.</strong>
+            <strong style={{ color: '#fff' }}>Vous décrivez le résultat attendu. Nous concevons l'architecture, construisons les enchaînements, les assistants et les agents, les relions à vos logiciels par API ou MCP, puis les mettons en production. Vous recevez un système en service, documenté et surveillé, dont vous êtes propriétaire.</strong>
           </p>
 
           <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
-            C'est notre offre principale : un développement sur mesure, mené par une équipe spécialisée sur l'IA depuis 2022. Vous décrivez le résultat attendu, nous prenons en charge l'ingénierie de bout en bout.
+            C'est le cœur de cette offre : un travail de construction confié à une équipe spécialisée en IA depuis la création du cabinet, en 2022. Vos équipes valident les étapes et gardent la main sur les décisions.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
@@ -604,10 +654,10 @@ export default function AgenceAutomatisationIAPage() {
           </div>
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
-              Discutons de votre projet
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <Link to="/agence-developpement-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: '#fff', padding: '15px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700, border: '1px solid rgba(255,255,255,0.3)' }}>
               Notre agence de développement IA
               <ArrowRight size={17} strokeWidth={2.2} aria-hidden="true" />
@@ -615,7 +665,7 @@ export default function AgenceAutomatisationIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
-            Votre besoin va au-delà du flux et appelle un véritable logiciel ? Nous concevons aussi des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link>, pensés pour vos cas d'usage propres.
+            Votre besoin dépasse l'enchaînement de tâches et demande un logiciel à part entière ? La page <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>développement IA sur mesure</Link> décrit les outils que nous construisons dans ce cas.
           </p>
         </div>
       </section>
@@ -630,7 +680,7 @@ export default function AgenceAutomatisationIAPage() {
                 Pourquoi choisir Masteria comme agence d'automatisation IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que nous menons le projet de la conception à la mise en production : Masteria conçoit, développe et intègre vos automatisations sur mesure, là où beaucoup de prestataires s'arrêtent aux recommandations. Spécialisés sur l'IA depuis 2022 et présents en Europe, aux États-Unis et en Inde, nous avons accompagné plus de 1 500 professionnels, et vous restez propriétaire du système livré.</strong>
+                <strong>Parce que nous allons jusqu'à la mise en production : Masteria conçoit, construit et raccorde vos automatisations, là où beaucoup de prestataires s'arrêtent au schéma ou au prototype. Le cabinet travaille sur l'IA depuis 2022, intervient chez des clients de France, d'Europe, des États-Unis et d'Inde, et vous laisse propriétaire de ce qu'il livre.</strong>
               </p>
             </div>
 
@@ -644,14 +694,14 @@ export default function AgenceAutomatisationIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Si votre besoin dépasse l'automatisation (stratégie IA globale, gouvernance, conformité, feuille de route à l'échelle de l'entreprise), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> prend le relais. Pour une vue d'ensemble de nos accompagnements, de la formation au déploiement, parcourez nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>, et démarrez par <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> pour situer vos priorités.
+                Si votre besoin dépasse l'automatisation (stratégie d'ensemble, gouvernance, conformité), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> prend le relais. Nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link> donnent la vue d'ensemble, et <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent pour situer vos priorités.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── TARIFICATION TRANSPARENTE ── */}
+      {/* ── TARIFS ── */}
       <section id="tarifs" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Tarifs</Kicker>
@@ -660,15 +710,15 @@ export default function AgenceAutomatisationIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', marginBottom: 36 }}>
-            <strong>Chez Masteria, le cadrage initial est gratuit et le développement sur mesure se chiffre sur devis après cadrage, selon le nombre de processus, les intégrations et le niveau d'autonomie visé. Une formation des équipes peut s'ajouter en complément, à 1 980 € HT par jour. Aucun forfait n'est vendu avant l'analyse de vos processus.</strong>
+            <strong>Chez Masteria, la première demi-heure de cadrage est offerte. La mission se chiffre ensuite au forfait, selon le nombre de processus, le nombre de logiciels concernés et la marge d'action laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble de processus en production, et un programme multi-sites passe au-delà de 100 000 €. La formation des équipes peut s'y ajouter, à 1 980 € HT la journée.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
             <div style={{ ...cardStyle, padding: 32 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>Cadrage initial</div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 20, letterSpacing: '-0.01em' }}>Gratuit</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>30 minutes de cadrage</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 20, letterSpacing: '-0.01em' }}>Offertes</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {['Analyse de vos processus et de vos outils', 'Architecture cible et feuille de route', "Chiffrage détaillé du développement", 'Sans engagement'].map(item => (
+                {['Vos processus et vos logiciels passés en revue', 'Les premiers flux à automatiser repérés', 'Une idée du budget et des étapes', 'Sans engagement'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 10, lineHeight: 1.6 }}>
                     <Check size={16} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
                     <span>{item}</span>
@@ -677,10 +727,10 @@ export default function AgenceAutomatisationIAPage() {
               </ul>
             </div>
             <div style={{ ...cardStyle, padding: 32, border: `2px solid ${c}` }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>Développement sur mesure</div>
-              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 20, letterSpacing: '-0.01em' }}>Sur devis</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>Mission d'automatisation</div>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 20, letterSpacing: '-0.01em' }}>Au forfait</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {['Prototypage sur 1 ou 2 cas prioritaires', 'Développement et intégration via API, MCP', 'Mise en production, documentation, garde-fous', 'Périmètre et budget fixés après cadrage'].map(item => (
+                {['Repérage des processus et architecture', 'Prototype sur un ou deux flux', 'Construction et raccordement par API, MCP', 'Mise en production, documentation, passation'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 10, lineHeight: 1.6 }}>
                     <Check size={16} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
                     <span>{item}</span>
@@ -695,7 +745,7 @@ export default function AgenceAutomatisationIAPage() {
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>/ jour HT</div>
               </div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {["Pour rendre vos référents autonomes", "Intra (jusqu'à 12 participants) ou individuel", 'Certifié Qualiopi, finançable OPCO', 'Montage du dossier pris en charge'].map(item => (
+                {['Pour rendre vos référents autonomes', "Intra (jusqu'à 12 participants) ou individuel", 'Qualiopi au titre des actions de formation', "Financement OPCO selon ses règles et ses fonds"].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 10, lineHeight: 1.6 }}>
                     <Check size={16} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
                     <span>{item}</span>
@@ -705,7 +755,7 @@ export default function AgenceAutomatisationIAPage() {
             </div>
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Pour situer le budget d'une mission avant le cadrage, notre repère sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link> détaille les fourchettes selon le périmètre. Un point d'honnêteté sur le financement : le développement et l'intégration ne sont pas finançables par votre OPCO. Seule la formation l'est, grâce à notre certification Qualiopi, et un prestataire qui vous promet l'inverse vous expose à un refus de prise en charge. Si vous souhaitez former vos équipes en complément du déploiement, le détail figure sur la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link>.
+            Pour situer le budget avant le cadrage, notre page sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link> détaille les ordres de grandeur. Côté financement, la règle est simple : une mission d'automatisation n'est pas finançable par votre OPCO ; seuls les jours de formation peuvent l'être, et un prestataire qui promet le contraire vous expose à un refus de prise en charge. Pour former vos équipes en parallèle du déploiement, la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> présente le programme de deux jours.
           </p>
         </div>
       </section>
@@ -717,13 +767,13 @@ export default function AgenceAutomatisationIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Agence d'automatisation IA : les questions fréquentes
+                Agence d'automatisation IA : vos questions
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Un processus particulier vous préoccupe ? Décrivez-le-nous, nous vous dirons s'il s'automatise.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Décrire un processus
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -741,17 +791,17 @@ export default function AgenceAutomatisationIAPage() {
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Pour aller plus loin sur l'automatisation
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Faire développer vos solutions sur mesure, comprendre le sujet ou former vos équipes en complément.
+            Faire construire un outil complet, comprendre le sujet ou former vos équipes en parallèle.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Sur mesure', desc: "Conception et développement de bout en bout de vos solutions IA, jusqu'à la production." },
-              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Au-delà du flux : applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage." },
-              { label: 'Automatisation IA : le guide complet', href: '/automatisation-ia', tag: 'Guide', desc: "Définition, cas d'usage par fonction, outils, méthode en 5 étapes et budgets." },
-              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "En complément du déploiement, 2 jours pour rendre vos équipes autonomes. Finançable OPCO." },
+              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand le besoin dépasse l'enchaînement de tâches : agents, applications, connecteurs." },
+              { label: 'Développement IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Les outils que nous livrons quand un logiciel à part entière s'impose." },
+              { label: "Automatisation IA : le guide", href: '/automatisation-ia', tag: 'Guide', desc: "Définitions, usages par fonction, outils et budgets, pour poser les bases." },
+              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "Deux jours pour que vos équipes montent leurs propres enchaînements ; financement OPCO selon ses règles." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -767,13 +817,23 @@ export default function AgenceAutomatisationIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Découvrir
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan, fondateur de Masteria, pilote chaque mission d'automatisation, du repérage des processus jusqu'à la passation. Il a mis cette page à jour le 7 octobre 2026 ; son parcours se lit sur <Link to="/mathias-nizan" style={aStyle}>sa page</Link>.
+          </p>
+          <PressMention />
         </div>
       </section>
 
@@ -784,41 +844,42 @@ export default function AgenceAutomatisationIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               Parlons de vos processus
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 580 }}>
-              Décrivez-nous les tâches qui consomment le plus de temps dans vos équipes. Nous revenons vers vous sous 24 heures avec un créneau pour le cadrage gratuit : analyse de vos processus, feuille de route priorisée, chiffrage. Vous repartez avec un plan, avec ou sans nous.
+              Dites-nous quelles tâches prennent le plus de temps à vos équipes, et dans quels logiciels elles se passent. Nous vous proposons sous 24 heures un créneau pour la demi-heure de cadrage offerte ; viennent ensuite, si vous le souhaitez, le repérage des processus, la feuille de route et le chiffrage.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un cadrage gratuit
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · +1 500 professionnels formés · Lyon, Europe, États-Unis, Inde
+              Agence d'automatisation IA basée à Lyon · système remis à votre équipe · formation en complément, certifiée Qualiopi (actions de formation)
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui construit vos automatisations (fondateur + réseau, preuves) ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui construit vos automatisations</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Des spécialistes de l'automatisation, réunis par le fondateur
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Pour chaque mission, Mathias Nizan puise dans le réseau d'indépendants de Masteria : cinq développeurs IA environ construisent et raccordent, une dizaine de consultants repèrent les processus, une vingtaine de formateurs assurent la passation. Il suit lui-même la mission jusqu'au bout. Masteria est Activateur France Num, sans attache avec un éditeur. Consultez nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['4', 'temps, du repérage à la passation'],
+              ['API · MCP', 'pour relier vos logiciels'],
+              ['Activateur', 'France Num'],
+              ['2022', 'année de création, à Lyon'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -829,9 +890,7 @@ export default function AgenceAutomatisationIAPage() {
         </div>
       </section>
 
-      <FounderNote />
-
-      <OfficialSources />
+      <OfficialSources lean />
     </>
   )
 }

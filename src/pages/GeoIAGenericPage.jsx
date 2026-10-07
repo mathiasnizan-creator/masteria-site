@@ -20,6 +20,25 @@ import { METIERS } from '../data/catalog-meta'
 // ToolLogo attend 'chatgpt' ou 'claude' — notre slug est 'claude-ia' (URL friendly)
 const toolLogoSlug = (slug) => slug === 'claude-ia' ? 'claude' : slug
 
+/* Mode page propre (07/10/2026), sur le modèle de GeoPage : drapeau `pagePropre: true`
+   dans le guide src/data/geo-guides/formation-ia-<ville>.js. Le guide fournit alors le
+   texte des blocs que le gabarit répète d'une ville à l'autre.
+   Champs reconnus :
+   - resume : string, résumé citable du hero (#geo-summary), à la place de geoSummary ;
+   - programme : { titre, intro?, items[] }, section #programme (remplace le déroulé type,
+     « Formats & tarifs » et le tableau comparatif) ;
+   - formats, references, acces, financement : { titre, paras[], liens?[{ label, href }] },
+     sections #formats, #references, #acces (remplace « Zones desservies et accès ») et
+     #financement (remplace le texte OPCO de geo-data) ;
+   - proof : même forme que city.proof, section #organisme (aucune carte sans ce champ) ;
+   - situations : même forme que city.situations (à défaut, celui de la ville est gardé) ;
+   - cta.fin : { titre, texte }, titre et texte du bandeau final (boutons inchangés).
+   Masqués en mode propre : description de ville, pastilles et encart « En bref » du hero,
+   secteurs et chiffres clés, textes des cartes outils et de la grille des métiers (ces
+   deux listes de liens passent en <nav>), CaseStudyCards, FounderNote, écosystème local.
+   Le maillage de fin passe en <nav>, OfficialSources en version courte (lean).
+   Sans le drapeau, la page s'affiche comme avant. */
+
 // Icônes des cartes « organisme vérifiable » (city.proof), nommées dans geo-data.js
 const PROOF_ICONS = { MapPin, BadgeCheck, FileCheck, Newspaper, Star }
 const MOIS_FR = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
@@ -54,6 +73,8 @@ export default function GeoIAGenericPage() {
   // intro, sections, cas pratique, pièges, FAQ et sources écrits pour cette page seule.
   const guidePromise = geoGuidePromise(slug)
   const guide = guidePromise ? use(guidePromise) : null
+  // Page propre : le guide fournit le texte, le gabarit masque ses blocs communs (cf. en-tête)
+  const propre = Boolean(guide?.pagePropre)
 
   if (!city) {
     return (
@@ -73,7 +94,7 @@ export default function GeoIAGenericPage() {
   // Meta description ≤ ~155 car. (l'argument financement n'est plus tronqué par Google).
   // Le volet financement est conditionnel : pas d'OPCO hors France (cf. CH / BE).
   const financePhrase = isFrance
-    ? "Certifié Qualiopi, finançable OPCO jusqu'à 100 %."
+    ? "Certifié Qualiopi, finançable par votre OPCO."
     : 'Certifié Qualiopi, formation finançable.'
   const metaDesc = guide?.metaDesc || city.metaDescOverride || `Formation IA ${city.nameLoc} pour entreprises : ChatGPT, Claude et plus de 100 programmes par métier. ${financePhrase} Devis sous 24 h.`
 
@@ -245,7 +266,7 @@ export default function GeoIAGenericPage() {
         : `Quels formats de formation sont disponibles ${city.nameLoc} ?`,
       a: isCountry || city.intraOnly
         ? `Nous privilégions l'intra-entreprise à ${city.name} : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour les profils dirigeants ou experts qui souhaitent un format 1-to-1, l'accompagnement individuel sur mesure est disponible en présentiel ou en distanciel.`
-        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants, et accompagnement individuel sur mesure 1-to-1 en présentiel ou en distanciel, au même tarif de 1 980 €/jour. Les deux formats sont éligibles au financement OPCO jusqu'à 100 %.`,
+        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants, et accompagnement individuel sur mesure 1-to-1 en présentiel ou en distanciel, au même tarif de 1 980 €/jour. Les deux formats sont finançables par votre OPCO selon votre branche.`,
     },
     {
       q: `Combien de temps dure une formation IA ?`,
@@ -257,7 +278,7 @@ export default function GeoIAGenericPage() {
     },
     {
       q: `Combien coûte une formation IA ${city.nameLoc} ?`,
-      a: `Le tarif intra-entreprise est de 1 980 € par jour pour un groupe (jusqu'à 12 participants), soit 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) est à 1 980 € par jour. ${isFrance ? "Ces montants sont finançables jusqu'à 100 % par votre OPCO : selon votre prise en charge, le reste à charge peut être nul ou fortement réduit." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
+      a: `Le tarif intra-entreprise est de 1 980 € par jour pour un groupe (jusqu'à 12 participants), soit 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) est à 1 980 € par jour. ${isFrance ? "Ces montants sont finançables par votre OPCO selon votre branche : le reste à charge dépend de ses règles et de ses fonds." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
     },
     {
       q: `Peut-on suivre la formation IA à distance depuis ${city.name} ?`,
@@ -272,6 +293,29 @@ export default function GeoIAGenericPage() {
 
   // Autres villes pour le maillage interne
   const otherDestinations = GEO_DESTINATIONS.filter(c => c.slug !== city.slug).slice(0, 8)
+
+  // Mode propre : blocs fournis par le guide (cf. en-tête du fichier)
+  const situations = propre ? (guide.situations || city.situations) : city.situations
+  const proof = propre ? guide.proof : city.proof
+  const blocPropre = (id, b) => b && { id, ...b }
+  // Listes de liens (outils, métiers, autres villes) : <nav> en mode propre, <section> sinon
+  const OutilsTag = propre ? 'nav' : 'section'
+  const lienPropreStyle = { display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }
+  const renderBlocPropre = (b, k) => (
+    <section key={b.id} id={b.id} style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: k % 2 ? '#fff' : '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
+      <div style={{ maxWidth: 860, margin: '0 auto' }}>
+        <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 21 : 27, fontWeight: 900, color: '#0A0A0A', marginBottom: 14 }}>{b.titre}</h2>
+        {(b.paras || []).map((t, i) => <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{t}</p>)}
+        {b.liens?.length > 0 && (
+          <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginTop: 8 }}>
+            {b.liens.map(l => (
+              <Link key={l.href} to={l.href} style={lienPropreStyle}>{l.label} <ArrowRight size={14} /></Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )
 
   return (
     <>
@@ -311,11 +355,11 @@ export default function GeoIAGenericPage() {
             fontSize: 12.5, fontWeight: 700, color: '#1E40AF',
           }}>
             <MapPin size={13} />
-            Formation IA {city.nameLoc} — Certifié Qualiopi
+            Formation IA {city.nameLoc}{propre ? ' · ' : ' — '}Certifié Qualiopi
           </div>
 
           <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
-            {city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. ${isFrance ? "Certifié Qualiopi, finançable par votre OPCO jusqu'à 100 %." : 'Certifié Qualiopi en France ; hors de France, la formation relève du budget formation de votre entreprise.'} Devis personnalisé sous 24 h.`}
+            {propre && guide.resume ? guide.resume : (city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. ${isFrance ? "Certifié Qualiopi, finançable par votre OPCO selon votre branche." : 'Certifié Qualiopi en France ; hors de France, la formation relève du budget formation de votre entreprise.'} Devis personnalisé sous 24 h.`)}
           </p>
 
           <h1 style={{
@@ -338,7 +382,19 @@ export default function GeoIAGenericPage() {
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
-            {[
+            {(propre ? [
+              situations ? ['Pour qui', '#pour-qui'] : null,
+              guide.guide ? ['Guide terrain', '#guide'] : null,
+              ['Outils', '#outils'],
+              ['Métiers', '#metiers'],
+              guide.programme ? ['Programme', '#programme'] : null,
+              guide.formats ? ['Formats', '#formats'] : null,
+              proof ? ['Organisme', '#organisme'] : null,
+              guide.references ? ['Références', '#references'] : null,
+              guide.acces ? ['Accès', '#acces'] : null,
+              guide.financement ? ['Financement', '#financement'] : null,
+              ['FAQ', '#geo-faq'],
+            ] : [
               city.situations ? ['Pour qui', '#pour-qui'] : null,
               guide?.guide ? ['Guide terrain', '#guide'] : null,
               city.industriesDeep?.length ? ['Secteurs', '#secteurs'] : null,
@@ -349,7 +405,7 @@ export default function GeoIAGenericPage() {
               city.caseStudies ? ['Références', '#etudes-de-cas'] : null,
               ['Financement', '#financement'],
               ['FAQ', '#geo-faq'],
-            ].filter(Boolean).map(([label, href]) => (
+            ]).filter(Boolean).map(([label, href]) => (
               <a key={href} href={href} style={{
                 fontSize: 12.5, fontWeight: 600, color: '#374151', textDecoration: 'none',
                 background: '#fff', border: '1px solid #E5E7EB', borderRadius: 99, padding: '6px 12px',
@@ -359,10 +415,13 @@ export default function GeoIAGenericPage() {
             ))}
           </nav>
 
+          {!propre && (
           <p style={{ fontSize: isMobile ? 15 : 17, color: '#4B5563', lineHeight: 1.7, marginBottom: 32, maxWidth: 700 }}>
             {city.desc}
           </p>
+          )}
 
+          {!propre && (
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 32 }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi' },
@@ -379,6 +438,7 @@ export default function GeoIAGenericPage() {
               </span>
             ))}
           </div>
+          )}
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Link to="/contact" style={{
@@ -401,14 +461,15 @@ export default function GeoIAGenericPage() {
             </Link>
           </div>
 
-          {/* En bref — synthèse citable (GEO) */}
+          {/* En bref — synthèse citable (GEO) ; en mode propre, le résumé du guide (#geo-summary) en tient lieu */}
+          {!propre && (
           <div style={{ background: '#fff', border: '1px solid #DBEAFE', borderRadius: 14, padding: isMobile ? '16px 18px' : '20px 26px', marginTop: 32, maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 12 }}>En bref</div>
             <dl style={{ margin: 0 }}>
               {[
                 { label: 'Formats', value: `Intra-entreprise dans vos locaux ${city.nameLoc} (jusqu'à 12 participants), accompagnement individuel sur mesure, distanciel` },
                 { label: 'Tarif', value: '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
-                { label: 'Financement', value: isFrance ? `Certifié Qualiopi, finançable OPCO jusqu'à 100 % (${city.region})` : 'Certifié Qualiopi · dispositifs de financement selon votre pays, orientation lors du cadrage' },
+                { label: 'Financement', value: isFrance ? `Certifié Qualiopi, finançable par votre OPCO selon votre branche (${city.region})` : 'Certifié Qualiopi · dispositifs de financement selon votre pays, orientation lors du cadrage' },
                 { label: 'Outils', value: 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI' },
                 { label: 'Métiers', value: '24 métiers couverts, plus de 100 programmes au catalogue' },
                 { label: 'Zone', value: city.zones },
@@ -421,20 +482,21 @@ export default function GeoIAGenericPage() {
               ))}
             </dl>
           </div>
+          )}
         </div>
       </section>
 
       {/* ── POUR QUI : la même requête, des besoins différents (villes qui déclarent `situations`) ── */}
-      {city.situations && (
+      {situations && (
         <section id="pour-qui" style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#fff', borderBottom: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>{city.situations.kicker}</div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>{situations.kicker}</div>
               <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
-                {city.situations.h2}
+                {situations.h2}
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 24, maxWidth: 760 }}>
-                {city.situations.intro}
+                {situations.intro}
               </p>
             </FadeIn>
             <FadeIn delay={80}>
@@ -448,7 +510,7 @@ export default function GeoIAGenericPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {city.situations.rows.map(row => (
+                    {situations.rows.map(row => (
                       <tr key={row.who} style={{ background: row.masteria ? '#fff' : '#FAFAF7' }}>
                         <th scope="row" style={{ textAlign: 'left', padding: '14px 16px', color: '#0A0A0A', fontWeight: 700, lineHeight: 1.5, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top', fontFamily: 'DM Sans, sans-serif', minWidth: 200 }}>{row.who}</th>
                         <td style={{ padding: '14px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{row.need}</td>
@@ -463,8 +525,8 @@ export default function GeoIAGenericPage() {
                   </tbody>
                 </table>
               </div>
-              {city.situations.note && (
-                <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '10px 0 0' }}>{city.situations.note}</p>
+              {situations.note && (
+                <p style={{ fontSize: 12.5, color: '#6B7280', lineHeight: 1.6, margin: '10px 0 0' }}>{situations.note}</p>
               )}
             </FadeIn>
           </div>
@@ -474,8 +536,8 @@ export default function GeoIAGenericPage() {
       {/* ── GUIDE TERRAIN : contenu propre à la ville ── */}
       <TerrainGuide guide={guide?.guide} sources={guide?.sources} color="#2563EB" background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
 
-      {/* ── INDUSTRIES & TISSU LOCAL ── */}
-      {city.industriesDeep && city.industriesDeep.length > 0 && (
+      {/* ── INDUSTRIES & TISSU LOCAL ── (masqué en mode propre : le guide terrain traite le tissu local) */}
+      {!propre && city.industriesDeep && city.industriesDeep.length > 0 && (
         <section id="secteurs" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
@@ -532,17 +594,19 @@ export default function GeoIAGenericPage() {
         </section>
       )}
 
-      {/* ── OUTILS DÉDIÉS ── */}
-      <section id="outils" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
+      {/* ── OUTILS DÉDIÉS ── (mode propre : liste de liens balisée en <nav>, sans les textes communs) */}
+      <OutilsTag id="outils" aria-label={propre ? `Formations par outil ${city.nameLoc}` : undefined} style={{ display: 'block', padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Outils IA dédiés</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
               Pages dédiées : ChatGPT et Claude IA {city.nameLoc}
             </h2>
+            {!propre && (
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 32, maxWidth: 760 }}>
               ChatGPT et Claude IA sont nos deux formations phare avec contenu local approfondi. Pour les autres outils (Microsoft Copilot, Google Gemini, Mistral AI), nous intervenons aussi en intra dans vos locaux : il suffit de demander un devis. Le programme et la qualité pédagogique sont identiques.
             </p>
+            )}
           </FadeIn>
           <FadeIn delay={80}>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
@@ -565,9 +629,11 @@ export default function GeoIAGenericPage() {
                     <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 8 }}>
                       Formation {tool.shortName} {city.nameLoc}
                     </h3>
+                    {!propre && (
                     <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.6, marginBottom: 14 }}>
                       {tool.pitch}
                     </p>
+                    )}
                     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 13, fontWeight: 700, color: '#2563EB' }}>
                       Voir le programme local <ArrowRight size={13} />
                     </span>
@@ -590,9 +656,11 @@ export default function GeoIAGenericPage() {
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 8 }}>
                   Copilot, Gemini, Mistral
                 </h3>
+                {!propre && (
                 <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.6, marginBottom: 14 }}>
                   Mêmes programmes en intra dans vos locaux {city.nameLoc}, devis sur demande.
                 </p>
+                )}
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontSize: 13, fontWeight: 700, color: '#2563EB' }}>
                   Voir le catalogue complet <ArrowRight size={13} />
                 </span>
@@ -600,19 +668,21 @@ export default function GeoIAGenericPage() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </OutilsTag>
 
-      {/* ── 13 MÉTIERS ── */}
-      <section id="metiers" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
+      {/* ── 13 MÉTIERS ── (mode propre : liste de liens balisée en <nav>, sans le paragraphe commun) */}
+      <OutilsTag id="metiers" aria-label={propre ? 'Formations IA par métier' : undefined} style={{ display: 'block', padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <FadeIn>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>24 métiers couverts</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
               Formation IA par métier {city.nameLoc}
             </h2>
+            {propre ? <div style={{ height: 18 }} /> : (
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 32, maxWidth: 760 }}>
               Chaque programme est construit autour des cas d'usage réels de la fonction visée : marketing, ressources humaines, finance, commercial, communication, management, assistanat de direction, SEO, service client, informatique, formation, achats, QSE, gestion de projet, marchés publics, immobilier, commerce, santé, juridique, comptabilité, assurance, BTP, tourisme, et un socle transverse pour tous publics.
             </p>
+            )}
           </FadeIn>
           <FadeIn delay={80}>
             <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(auto-fit, minmax(180px, 1fr))', gap: 10 }}>
@@ -630,9 +700,24 @@ export default function GeoIAGenericPage() {
             </div>
           </FadeIn>
         </div>
-      </section>
+      </OutilsTag>
+
+      {/* ── PROGRAMME (mode propre) et blocs du guide qui le suivent ── */}
+      {propre && guide.programme && (
+        <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 12 }}>{guide.programme.titre}</h2>
+            {guide.programme.intro && <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }}>{guide.programme.intro}</p>}
+            <ul style={{ margin: 0, paddingLeft: 20, display: 'grid', gap: 10, fontSize: 15, color: '#374151', lineHeight: 1.65 }}>
+              {(guide.programme.items || []).map(it => <li key={it}>{it}</li>)}
+            </ul>
+          </div>
+        </section>
+      )}
+      {propre && [blocPropre('formats', guide.formats)].filter(Boolean).map(renderBlocPropre)}
 
       {/* ── PROGRAMME, DURÉE & TARIFS ── */}
+      {!propre && (
       <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 980, margin: '0 auto' }}>
           <FadeIn>
@@ -686,7 +771,7 @@ export default function GeoIAGenericPage() {
                       ? 'Intra 1 980 €/jour pour le groupe (≈ 165 €/personne). Accompagnement individuel sur mesure 1 980 €/jour.'
                       : 'Intra 1 980 €/jour pour le groupe. Accompagnement individuel sur mesure 1 980 €/jour. Facturation adaptée à votre pays.'],
                     ['Financement', isFrance
-                      ? "Jusqu'à 100 % par votre OPCO, selon votre branche. Nous préparons le dossier avec vous."
+                      ? "Par votre OPCO, selon les règles et les fonds de votre branche. Nous préparons le dossier avec vous."
                       : 'Dispositifs de financement locaux selon votre pays ; nous vous orientons lors du cadrage.'],
                   ].map(([t, d]) => (
                     <div key={t} style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -724,10 +809,10 @@ export default function GeoIAGenericPage() {
                 </thead>
                 <tbody>
                   {[
-                    ['Intra-entreprise', `Une équipe, dans vos locaux ${city.nameLoc} (jusqu'à 12 participants)`, '1 jour (7 h), extensible à 2-3 jours', '1 980 €/jour pour le groupe', isFrance ? "OPCO jusqu'à 100 %" : 'Adaptée à votre pays'],
-                    ['Individuel sur mesure', 'Dirigeants, experts métier, profils stratégiques (1-to-1)', '1 jour, séquençable en demi-journées', '1 980 €/jour', isFrance ? "OPCO jusqu'à 100 %" : 'Adaptée à votre pays'],
+                    ['Intra-entreprise', `Une équipe, dans vos locaux ${city.nameLoc} (jusqu'à 12 participants)`, '1 jour (7 h), extensible à 2-3 jours', '1 980 €/jour pour le groupe', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
+                    ['Individuel sur mesure', 'Dirigeants, experts métier, profils stratégiques (1-to-1)', '1 jour, séquençable en demi-journées', '1 980 €/jour', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
                     ['Sprint IA', "Sensibilisation à grande échelle (jusqu'à 100 participants)", '3 h', 'Sur devis', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
-                    ['Distanciel', 'Équipes réparties sur plusieurs sites, suivis individuels', 'Identique au présentiel', '1 980 €/jour', isFrance ? "OPCO jusqu'à 100 %" : 'Adaptée à votre pays'],
+                    ['Distanciel', 'Équipes réparties sur plusieurs sites, suivis individuels', 'Identique au présentiel', '1 980 €/jour', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
                   ].map(row => (
                     <tr key={row[0]}>
                       {row.map((cell, i) => (
@@ -744,23 +829,24 @@ export default function GeoIAGenericPage() {
           </FadeIn>
         </div>
       </section>
+      )}
 
       {/* ── ORGANISME VÉRIFIABLE (E-E-A-T) : preuves contrôlables hors du site (villes qui déclarent `proof`) ── */}
-      {city.proof && (
+      {proof && (
         <section id="organisme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#fff', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 980, margin: '0 auto' }}>
             <FadeIn>
-              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>{city.proof.kicker}</div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>{proof.kicker}</div>
               <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 14, letterSpacing: '-0.01em' }}>
-                {city.proof.h2}
+                {proof.h2}
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, marginBottom: 28, maxWidth: 760 }}>
-                {city.proof.intro}
+                {proof.intro}
               </p>
             </FadeIn>
             <FadeIn delay={80}>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16 }}>
-                {city.proof.items.map(item => {
+                {proof.items.map(item => {
                   const Icon = PROOF_ICONS[item.icon] || BadgeCheck
                   return (
                     <div key={item.label} style={{ background: '#F9FAFB', borderRadius: 14, padding: '22px 24px', border: '1px solid #E5E7EB', display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -790,12 +876,16 @@ export default function GeoIAGenericPage() {
       )}
 
       {/* ── RÉFÉRENCES DOCUMENTÉES + FONDATEUR (villes qui les déclarent) ── */}
-      {city.caseStudies && (
+      {!propre && city.caseStudies && (
         <CaseStudyCards ids={city.caseStudies.ids} kicker={city.caseStudies.kicker || 'Références'} title={city.caseStudies.title} intro={city.caseStudies.intro} bg="#F9FAFB" />
       )}
-      {city.founderNote && <FounderNote bg="#fff" />}
+      {!propre && city.founderNote && <FounderNote bg="#fff" />}
+
+      {/* Mode propre : références, accès et financement écrits pour la ville (guide) */}
+      {propre && [blocPropre('references', guide.references), blocPropre('acces', guide.acces), blocPropre('financement', guide.financement)].filter(Boolean).map(renderBlocPropre)}
 
       {/* ── COUVERTURE & ACCÈS ── */}
+      {!propre && (
       <section style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
@@ -828,8 +918,10 @@ export default function GeoIAGenericPage() {
           </FadeIn>
         </div>
       </section>
+      )}
 
       {/* ── FINANCEMENT ── */}
+      {!propre && (
       <section id="financement" style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
@@ -847,7 +939,7 @@ export default function GeoIAGenericPage() {
             </p>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 18 }}>
               {(city.countryCode === 'FR'
-                ? ["OPCO (jusqu'à 100 %)", 'Plan de développement des compétences', 'Autofinancement']
+                ? ['OPCO (selon votre branche)', 'Plan de développement des compétences', 'Autofinancement']
                 : ["Budget formation de l'entreprise", 'Dispositifs locaux selon éligibilité', 'Autofinancement']
               ).map(f => (
                 <span key={f} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 99, padding: '7px 14px', fontSize: 13, fontWeight: 600, color: '#1E40AF' }}>
@@ -861,9 +953,10 @@ export default function GeoIAGenericPage() {
           </FadeIn>
         </div>
       </section>
+      )}
 
-      {/* ── ÉCOSYSTÈME LOCAL ── */}
-      {city.localExperts && city.localExperts.length > 0 && (
+      {/* ── ÉCOSYSTÈME LOCAL ── (masqué en mode propre) */}
+      {!propre && city.localExperts && city.localExperts.length > 0 && (
         <section style={{ padding: isMobile ? '40px 20px' : '56px 32px', background: '#fff' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
             <FadeIn>
@@ -893,15 +986,15 @@ export default function GeoIAGenericPage() {
         <div style={{ maxWidth: 720, margin: '0 auto' }}>
           <FadeIn>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 28, fontWeight: 900, color: '#0A0A0A', marginBottom: 32, letterSpacing: '-0.01em' }}>
-              Questions fréquentes — Formation IA {city.nameLoc}
+              {propre ? `Questions fréquentes : formation IA ${city.nameLoc}` : `Questions fréquentes — Formation IA ${city.nameLoc}`}
             </h2>
             {faqItems.map((item, i) => <FaqItem key={i} q={item.q} a={item.a} />)}
           </FadeIn>
         </div>
       </section>
 
-      {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: isMobile ? '40px 20px' : '52px 32px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
+      {/* ── MAILLAGE INTERNE ── (mode propre : balisé en <nav>) */}
+      <OutilsTag aria-label={propre ? `Formation IA dans d'autres villes` : undefined} style={{ display: 'block', padding: isMobile ? '40px 20px' : '52px 32px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <FadeIn>
             <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 12 }}>
@@ -935,16 +1028,16 @@ export default function GeoIAGenericPage() {
             )}
           </FadeIn>
         </div>
-      </section>
+      </OutilsTag>
 
       {/* ── CTA FINAL ── */}
       <section style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#0A0A0A', textAlign: 'center' }}>
         <div style={{ maxWidth: 560, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 24 : 34, fontWeight: 900, color: '#fff', marginBottom: 12, letterSpacing: '-0.02em' }}>
-            Former vos équipes à l'IA {city.nameLoc} ?
+            {propre && guide.cta?.fin?.titre ? guide.cta.fin.titre : `Former vos équipes à l'IA ${city.nameLoc} ?`}
           </h2>
           <p style={{ fontSize: 16, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 28 }}>
-            Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. {isFrance ? `Finançable par votre OPCO en ${city.region}.` : 'Intra dans vos locaux ou distanciel.'}
+            {propre && guide.cta?.fin?.texte ? guide.cta.fin.texte : `Devis personnalisé sous 24 h. Programme construit sur vos cas d'usage réels. ${isFrance ? `Finançable par votre OPCO en ${city.region}.` : 'Intra dans vos locaux ou distanciel.'}`}
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#fff', color: '#0A0A0A', padding: '15px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 800, fontFamily: 'DM Sans, sans-serif' }}>
@@ -957,7 +1050,7 @@ export default function GeoIAGenericPage() {
         </div>
       </section>
 
-      <OfficialSources france={isFrance} />
+      <OfficialSources france={isFrance} lean={propre} />
     </>
   )
 }

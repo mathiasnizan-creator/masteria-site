@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight, BadgeCheck, ShieldCheck, Lock, Quote, Users, Building2 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import FounderNote from '../components/FounderNote'
-import OfficialSources from '../components/OfficialSources'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
 import MissionsFormationDetail from '../components/MissionsFormationDetail'
@@ -20,6 +19,10 @@ import { MISSIONS } from '../data/missions-formation'
  * RÉSULTATS pour les équipes et pour l'organisation ; les données vivent dans
  * src/data/etudes-de-cas.js, partagées avec le composant CaseStudyCards des
  * pages money. Accent bleu #2563EB, gabarit money pages.
+ * Réécrite le 07/10/2026 (texte propre à la page) : intro, En bref, méthode,
+ * cadre, FAQ et CTA écrits pour elle ; FounderNote remplacé par une signature,
+ * OfficialSources retiré. Les faits des cas (src/data/etudes-de-cas.js et
+ * missions-formation.js, révisés le 05/10) ne sont pas modifiés ici.
  */
 
 const SITE = 'https://www.master-ia.fr'
@@ -29,7 +32,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Études de cas IA : 10 missions en entreprise | Masteria'
-const META_DESC = "Dix missions IA anonymisées : Copilot dans l'industrie, compétences Claude pour des commerciaux, diagnostic d'une PME, formations Claude et Gemini."
+const META_DESC = "Quatre missions de conseil et six formations IA anonymisées : Copilot dans l'industrie, compétences Claude, diagnostic d'une PME, appels d'offres."
 const KEYWORDS = "étude de cas ia, études de cas ia entreprise, cas client ia, exemple déploiement ia entreprise, étude de cas conseil ia, exemple audit ia, retour d'expérience ia, assistants ia entreprise, projet ia entreprise exemple, adoption ia entreprise"
 
 /* ── Design system local (aligné sur les pages money) ── */
@@ -64,38 +67,77 @@ const PILIER_LIENS = {
   ],
 }
 
+/* Leçon de chaque cas, écrite pour cette page (le récit factuel vit dans data/etudes-de-cas.js). */
+const LECONS = {
+  distribution: "Former d'abord une poignée de référents, chacun sur un projet de son quotidien, donne à l'entreprise des relais qui font vivre les outils après le départ du formateur. Le reste des équipes arrive ensuite sur des compétences déjà éprouvées, avec des collègues pour répondre à leurs questions.",
+  industrie: "Dans un grand groupe, un premier palier mesuré prépare la suite mieux qu'un lancement général. Les corrections apportées entre deux sessions pilotes (licences vérifiées, groupes composés par métier, temps réservé aux assistants) servent ensuite à chaque pays.",
+  'conseil-financier': "Un assistant qui questionne d'abord le consultant produit un mémoire ancré dans le dossier du client. Séparer les assistants par famille de marchés garde à chaque domaine son vocabulaire et ses formulations gagnantes.",
+  photovoltaique: "Une petite équipe gagne davantage à traiter trois tâches à fond qu'à disperser l'IA sur tout son travail. Le plan se termine par une mesure, car un gain jamais relevé ne se défend pas devant la direction.",
+}
+
+/* Vue d'ensemble des dix missions, écrite pour cette page à partir des fichiers de données
+   (faits du 05/10, statut au 7 octobre 2026). Ancres : #<cas> et #mission-<id>. */
+const APERCU = [
+  { ancre: 'distribution', nom: 'Cas 01 · Distribution IT', qui: 'Distributeur IT B2B, 58 salariés', outil: 'Claude', format: 'Deux jours pour dix référents, juin 2026', statut: "Onze compétences construites ; les autres collaborateurs suivront d'octobre à décembre 2026" },
+  { ancre: 'industrie', nom: 'Cas 02 · Industrie', qui: 'Groupe international du packaging, plusieurs milliers de salariés', outil: 'Microsoft Copilot', format: 'Cinq sessions de deux jours (juillet à septembre 2026) et une matinée pour le comité de direction', statut: "Mexique et États-Unis prévus en octobre 2026, Inde en décembre" },
+  { ancre: 'conseil-financier', nom: 'Cas 03 · Conseil financier', qui: "Cabinet de conseil du secteur public, une vingtaine de consultants", outil: "ChatGPT, en offre d'équipe", format: "Quatre ateliers de deux heures, puis une journée de formation à Paris et à Lyon", statut: "Quatre assistants en service, que le cabinet fait évoluer sans Masteria" },
+  { ancre: 'photovoltaique', nom: 'Cas 04 · Photovoltaïque', qui: 'Distributeur photovoltaïque, trois personnes', outil: "Un outil d'équipe unique, au choix de la direction", format: 'Diagnostic présenté en septembre 2026', statut: "Formation sur site prévue en octobre 2026, puis un bilan un mois plus tard" },
+  { ancre: 'mission-editeur-pole-formation', nom: 'Formation · pôle pédagogique', qui: "Éditeur de logiciels B2B, trois personnes du pôle formation", outil: 'Claude et Claude Code', format: 'Intra à distance, deux jours, septembre 2026', statut: "Bilan à froid prévu un mois après la session" },
+  { ancre: 'mission-immobilier-etudes', nom: 'Formation · études et données', qui: 'Groupe immobilier, une responsable études', outil: 'Claude', format: 'Individuel à distance, un jour, septembre 2026', statut: "Note de lecture, deck et première compétence livrés" },
+  { ancre: 'mission-gerance-cabinet', nom: 'Formation · gérance', qui: 'Cabinet de géomètres-experts, son gérant', outil: 'Claude', format: 'Individuel à distance, deux jours, août 2026', statut: "Seconde étape envisagée, après une journée de cadrage" },
+  { ancre: 'mission-assistanat-direction', nom: 'Formation · assistanat', qui: 'Éditeur de logiciels B2B, une assistante de direction', outil: 'Copilot et Claude', format: 'Individuel à distance, un jour, septembre 2026', statut: "Un plan sur 30 jours, puis une mesure du gain au bout d'un mois" },
+  { ancre: 'mission-interprofession-agricole', nom: 'Formation · interprofession', qui: 'Interprofession agricole, seize salariés', outil: 'Six assistants comparés', format: 'Intra sur site, trois jours, septembre 2026', statut: "Grille de choix des outils et assistants métier remis au groupe" },
+  { ancre: 'mission-franchise-gemini', nom: 'Formation · réseau de franchise', qui: 'Siège d\'un réseau de franchise B2B, huit membres de la direction', outil: 'Gemini', format: 'Deux jours sur site, puis un jour en classe virtuelle, septembre 2026', statut: "Plan à 30, 60 et 90 jours confié aux administrateurs" },
+]
+
+/* Conventions de lecture et décisions préalables : texte propre à cette page. */
+const CONVENTIONS = [
+  "Chaque chiffre sort d'un dossier de mission (proposition, livrable, compte rendu), sans arrondi flatteur.",
+  "Une étape future est écrite au futur ou marquée « prévue ».",
+  "Un objectif chiffré reste un objectif tant que personne ne l'a mesuré.",
+  "Les retours de participants sont recopiés sans correction ; un mot ajouté pour la lecture apparaît entre crochets.",
+  "Les dates sont données au mois, et aucune note de satisfaction n'est publiée : seuls les commentaires écrits le sont.",
+]
+const DECISIONS = [
+  { t: 'Nommez la tâche qui coûte le plus de temps', d: "Chez le distributeur photovoltaïque, c'étaient les échanges avec les transporteurs et les ressaisies dans Odoo. Partir d'une tâche précise donne un gain que l'on peut relever.", ancre: 'photovoltaique' },
+  { t: "Désignez qui portera l'outil en interne", d: "Le distributeur IT a choisi dix référents, un par projet. Ce sont eux qui feront vivre les compétences quand Masteria ne sera plus là.", ancre: 'distribution' },
+  { t: 'Fixez les comptes et les données autorisées', d: "Le cabinet de conseil financier a travaillé dès le premier palier sous des règles de confidentialité strictes : ses dossiers de marchés publics ne devaient pas circuler.", ancre: 'conseil-financier' },
+  { t: "Partez de l'outil déjà déployé quand il suffit", d: "Les équipes informatiques du groupe industriel avaient retenu Copilot ; les ateliers se sont construits dans cet environnement plutôt que d'en ajouter un autre.", ancre: 'industrie' },
+  { t: 'Décidez de la mesure avant la session', d: "L'assistante de direction est repartie avec un plan à 30 jours et une mesure du gain à un mois. Sans point de départ noté, aucun progrès ne se démontre.", ancre: 'mission-assistanat-direction' },
+]
+
 const FAQ = [
   {
-    q: 'Pourquoi vos études de cas IA sont-elles anonymisées ?',
-    a: "Parce que nos clients considèrent leur avance sur l'IA comme un avantage concurrentiel et préfèrent ne pas communiquer publiquement dessus. Nous respectons ce choix : chaque cas est décrit par son secteur, sa taille, sa méthode et ses résultats, sans nommer l'entreprise ni les personnes. Tous les chiffres publiés viennent des dossiers de mission : propositions, livrables, fiches de satisfaction, comptes rendus.",
+    q: 'Pourquoi ces études de cas IA ne citent-elles aucun nom ?',
+    a: "Les clients l'ont demandé : la plupart voient leur avance sur l'IA comme un atout face à leurs concurrents. Chaque cas indique donc le secteur, la taille, ce qui a été fait et où en est la mission, sans nom d'entreprise ni de personne. Les chiffres sortent des dossiers de mission (propositions, livrables, comptes rendus), et les retours de participants sont recopiés tels qu'ils ont été écrits.",
   },
   {
-    q: 'Peut-on vérifier ces références ou parler à vos clients ?',
-    a: "Oui. Sur demande, dans le cadre d'une discussion commerciale avancée, nous organisons une mise en relation avec un client comparable à votre situation, sous accord de confidentialité. C'est la contrepartie de l'anonymat public : la vérification se fait en privé.",
+    q: 'Peut-on vérifier une de ces références ?',
+    a: "Oui, en privé. Quand une discussion commerciale avance, Masteria peut organiser un échange avec un client dont la situation ressemble à la vôtre, une fois un accord de confidentialité signé. L'anonymat vaut pour le public ; la vérification reste possible pour vous.",
   },
   {
-    q: "Quelle est la méthode d'accompagnement de Masteria ?",
-    a: "Six temps, quel que soit le secteur : cadrer avec la direction, cartographier les flux de travail avec les personnes qui font le travail, prioriser les gisements par impact et faisabilité à trois mois, concevoir les assistants et les ateliers sur les fichiers de l'entreprise, former par métier en posant le cadre d'usage, puis mesurer à J+30 et relancer une deuxième vague. Chaque étude de cas ci-dessus détaille ces six temps tels qu'ils ont été menés ou prévus.",
+    q: 'Comment se déroule une mission Masteria ?',
+    a: "Le même déroulé sert partout. La direction cadre la demande, les personnes qui exécutent le travail décrivent leurs flux, les priorités se classent par impact et par faisabilité à trois mois, les assistants et les ateliers se conçoivent à partir des documents internes, la formation se fait par métier avec un cadre d'usage, puis une mesure un mois plus tard ouvre la deuxième vague. Chaque cas de cette page montre ces six étapes, faites ou prévues.",
   },
   {
-    q: "Quels types d'entreprises accompagnez-vous ?",
-    a: "Des PME de quelques personnes, des ETI et des groupes internationaux. Les quatre cas présentés couvrent un distributeur IT B2B (58 salariés), un groupe industriel international (comité de direction, managers pilotes, sites à l'étranger), un cabinet indépendant de conseil financier (une vingtaine de consultants sur deux sites) et un distributeur photovoltaïque de trois personnes. Le dispositif s'adapte à la taille : équipe de référents chez le distributeur, déploiement par paliers chez l'industriel, assistants par pôle au cabinet, trois chantiers et une charte chez le distributeur photovoltaïque.",
+    q: 'Cette méthode convient-elle à une petite entreprise ?',
+    a: "Oui. Le plus petit cas compte trois personnes, le plus grand plusieurs milliers de salariés. Le dispositif s'ajuste à l'échelle : trois chantiers et une charte pour la PME du photovoltaïque, une équipe de dix référents chez le distributeur IT, un assistant par famille de marchés au cabinet de conseil, des paliers successifs dans le groupe industriel.",
   },
   {
-    q: "Comment mesurez-vous les résultats ?",
-    a: "À chaud, par des fiches de satisfaction détaillées question par question, et par un bilan écrit sous cinq jours qui corrige la session suivante. Sur les missions de conseil, par des indicateurs relevés en séance (point de départ) et revus à J+30, avec une cible par tâche : délai de réponse à une demande, temps par consultation, part des réceptions traitées sans ressaisie. Un gain qui n'est pas mesuré est écrit comme une cible, jamais comme un résultat.",
+    q: 'Comment les résultats sont-ils mesurés ?',
+    a: "En formation, par une fiche de satisfaction remplie en fin de session et, sur certaines missions, par un retour à froid deux mois plus tard. En conseil, par un état initial noté pendant la formation puis revu un mois après, tâche par tâche : le temps pour sortir un devis, les heures passées avec les transporteurs, les relances, les ressaisies. Tant qu'un gain n'a pas été mesuré, il apparaît comme une cible.",
   },
   {
-    q: 'Quels outils utilisez-vous : Claude, Copilot, ChatGPT ?',
-    a: "Le choix découle du contexte, jamais l'inverse. Les assistants métier sur documents et données de l'entreprise s'appuient souvent sur Claude (projets, compétences personnalisées). Quand les équipes vivent dans Microsoft 365, Copilot s'impose par son intégration native, comme pour le groupe industriel. Les assistants d'appels d'offres du cabinet de conseil vivent dans un environnement ChatGPT d'équipe. Nous restons indépendants des éditeurs et formons aussi sur Gemini et Mistral.",
+    q: 'Quels outils ces missions utilisent-elles ?',
+    a: "Celui qui colle au contexte. Le groupe industriel vit dans Microsoft 365, ses managers travaillent donc avec Microsoft Copilot. Le distributeur IT a construit ses compétences dans Claude. Les assistants d'appels d'offres du cabinet de conseil tournent dans ChatGPT, en offre d'équipe. Les missions de formation couvrent aussi Gemini dans Google Workspace, ainsi que Vibe, chez Mistral. Le cabinet reste indépendant des éditeurs.",
   },
   {
-    q: 'Ces dispositifs sont-ils finançables par un OPCO ?',
-    a: "Le volet formation, oui : Masteria est certifié Qualiopi, les sessions sont finançables par votre OPCO ou votre plan de développement des compétences, à 1 980 € HT par jour en intra. Le diagnostic, la conception et le déploiement des assistants relèvent du conseil et du développement, qui ne sont pas éligibles OPCO. Nous ne promettons jamais l'inverse.",
+    q: 'Un OPCO peut-il financer ces missions ?',
+    a: "Le volet formation peut l'être. Côté formation, l'organisme Masteria est certifié Qualiopi au titre de ses formations ; la prise en charge revient à votre OPCO, qui l'accorde selon ses propres règles et dans la limite de ses fonds. Côté prix, une journée se facture 1 980 € HT, pour un groupe intra comme pour une personne seule. Le diagnostic, puis concevoir et déployer les assistants, sont du conseil ou du développement : ils ne sont donc pas finançables par votre OPCO.",
   },
   {
-    q: 'Comment garantissez-vous la confidentialité des données pendant ces missions ?',
-    a: "Chaque mission démarre par un cadre d'usage écrit : offres entreprise dont les données ne servent pas à entraîner les modèles, règles sur les données sensibles, sources citées et validation humaine sur ce qui engage l'entreprise. C'est ce cadre qui permet à un cabinet travaillant sur des marchés publics, à un groupe industriel ou à un distributeur qui manipule des stocks de déployer l'IA sans exposer leurs informations.",
+    q: 'Comment les données restent-elles protégées pendant une mission ?',
+    a: "Un cadre d'usage est écrit avant le premier atelier : comptes d'entreprise dont le contenu n'entraîne aucun modèle, règles pour les informations sensibles, sources citées, et une personne qui approuve tout ce qui engage la société. Vous pouvez aussi demander un accord de confidentialité avant d'envoyer le premier document. C'est ce cadre qui a permis à un cabinet qui répond à des marchés publics comme à un distributeur qui gère des stocks d'utiliser l'IA sans exposer leurs dossiers.",
   },
 ]
 
@@ -105,13 +147,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: 'Études de cas IA en entreprise : quatre missions documentées, méthode et résultats',
+  headline: 'Études de cas IA en entreprise : quatre missions de conseil et six missions de formation',
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-07-30',
-  dateModified: '2026-09-03',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
   about: ["Étude de cas IA", "Conseil en intelligence artificielle", "Déploiement d'assistants IA en entreprise", "Formation IA en entreprise", "Audit IA"],
@@ -259,7 +301,7 @@ function CaseSection({ k, index, isDesktop }) {
         {/* RÉSULTATS pour les équipes / pour l'organisation */}
         {k.resultats && (
           <div style={{ marginTop: 40 }}>
-            <div style={label}>Ce que ça change</div>
+            <div style={label}>Ce que la mission change</div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 16 }}>
               {[
                 { icon: Users, t: 'Pour les équipes', items: k.resultats.equipes },
@@ -283,6 +325,14 @@ function CaseSection({ k, index, isDesktop }) {
                 </div>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* Leçon du cas, propre à cette page */}
+        {LECONS[k.id] && (
+          <div style={{ marginTop: 32, background: dark ? 'rgba(37,99,235,0.12)' : cLight, borderRadius: 14, padding: '18px 22px' }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: dark ? '#93C5FD' : '#1E40AF', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>À retenir pour votre organisation</div>
+            <p style={{ fontSize: 15, color: dark ? '#E2E8F0' : '#0A0A0A', lineHeight: 1.7, margin: 0 }}>{LECONS[k.id]}</p>
           </div>
         )}
 
@@ -352,7 +402,7 @@ export default function EtudesDeCasIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-07-30"
-        dateModified="2026-10-05"
+        dateModified="2026-10-07"
         extraJsonLd={[articleJsonLd, casesJsonLd, methodeJsonLd, missionsJsonLd].filter(Boolean)}
       />
 
@@ -381,29 +431,29 @@ export default function EtudesDeCasIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.7vw, 48px)', fontWeight: 900, lineHeight: 1.06, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 860 }}>
             Études de cas IA en entreprise
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>quatre accompagnements en six temps, six formations récentes, des résultats pour les équipes et l'organisation</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>quatre missions suivies depuis le cadrage, six formations récentes, avec leurs chiffres et leur suite</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en juillet 2026, mis à jour en octobre 2026
+            Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui a piloté ces missions · première version en juillet 2026, actualisée le 7 octobre 2026
           </p>
 
           {/* GEO : réponse directe citable */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le comité de direction et les managers d'un groupe industriel international, les consultants d'un cabinet de conseil financier qui répondent à des appels d'offres, un distributeur photovoltaïque de trois personnes, la force de vente d'un distributeur IT : <strong style={{ color: '#fff', fontWeight: 700 }}>quatre organisations accompagnées de bout en bout par Masteria</strong>, avec la même méthode. Cadrer, cartographier, prioriser, concevoir sur leurs fichiers, former par métier, mesurer.
+            Un groupe industriel international et ses managers, un cabinet de conseil financier du secteur public qui rédige ses réponses aux marchés, une PME photovoltaïque de trois personnes, dix référents chez un distributeur IT B2B : <strong style={{ color: '#fff', fontWeight: 700 }}>quatre organisations accompagnées par Masteria depuis le cadrage</strong>, sur un déroulé commun en six temps. Six missions de formation récentes complètent la page, avec les retours écrits des participants.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 700 }}>
-            Nos clients considèrent leur avance sur l'IA comme un avantage concurrentiel et ne communiquent pas publiquement dessus. Ces études de cas sont donc anonymisées : secteur, taille, méthode et chiffres, sans les noms. La mise en relation avec un client reste possible en privé, sous accord de confidentialité.
+            Aucun nom n'apparaît : ces clients voient leur avance sur l'IA comme un atout et préfèrent la garder pour eux. Chaque cas donne le secteur, la taille, la méthode et les chiffres ; un échange avec le client peut s'organiser en privé, une fois un accord de confidentialité signé.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
-            <a href="#industrie" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Lire les 4 études de cas
+            <a href="#distribution" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Lire les quatre cas
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </a>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Parler de votre projet
+              Décrire votre projet
             </Link>
           </div>
 
@@ -412,11 +462,12 @@ export default function EtudesDeCasIAPage() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
-                ['Industrie · groupe international', "Cadrage, 24 managers pilotes formés sur 13 ateliers construits avec les fichiers du groupe, matinée stratégique du comité de direction, trois sessions en septembre 2026 dont deux en anglais, puis les sites des États-Unis et du Mexique prévus en octobre 2026 et de l'Inde en décembre."],
-                ['Conseil financier · secteur public', "Quatre assistants d'appels d'offres par pôle d'expertise, co-construits en quatre ateliers avec les consultants, une journée de formation sur des marchés récents."],
-                ['Distribution photovoltaïque · PME', "Diagnostic par flux de travail, trois chantiers avec un porteur chacun, une charte d'usage et une feuille de route de 90 jours, avant une formation sur site en octobre 2026."],
-                ['Distribution IT B2B', "Dix référents formés en juin 2026, onze compétences Claude construites avec eux, puis un déploiement à toute l'entreprise prévu d'octobre à décembre 2026."],
-                ['Pourquoi anonymisées ?', "À la demande des clients, qui ne communiquent pas sur leur avance IA. Références vérifiables en privé, sous NDA."],
+                ['Industrie · groupe international', "Copilot déployé par paliers : cadrage avec le Data manager, une matinée pour le comité de direction, 24 managers pilotes, 13 ateliers bâtis sur les tableaux et documents du groupe ; au total, cinq sessions de deux jours, dont deux en anglais, se sont étalées entre juillet et fin septembre 2026 ; le Mexique et les États-Unis sont prévus en octobre 2026, l'Inde en décembre."],
+                ['Conseil financier · secteur public', "Quatre assistants dédiés aux appels d'offres, chacun propre à une famille de marchés, conçus avec les consultants en quatre séances de travail de deux heures, puis une journée de formation sur des dossiers récents."],
+                ['Distribution photovoltaïque · PME', "Un diagnostic lu flux par flux, trois chantiers confiés chacun à un porteur, une charte d'usage, puis un plan sur 90 jours ; la formation sur site est programmée pour octobre 2026."],
+                ['Distribution IT B2B', "Dix référents formés en juin 2026 ont conçu onze compétences Claude ; les autres salariés en profiteront à leur tour, d'octobre à décembre 2026, lors du déploiement prévu."],
+                ['Missions de formation', "Six formations menées en août et septembre 2026, en intra ou en individuel : Claude, Copilot, Gemini et un panorama multi-outils, avec les retours écrits des participants."],
+                ['Pourquoi anonymisées ?', "Les clients l'ont demandé. Une référence se vérifie en privé, sous un accord de confidentialité signé au préalable."],
               ].map(([k, v], i) => (
                 <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
@@ -433,6 +484,7 @@ export default function EtudesDeCasIAPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 4, overflowX: 'auto', whiteSpace: 'nowrap' }}>
           <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#9CA3AF', paddingRight: 8, flexShrink: 0 }}>Sur cette page</span>
           {[
+            ['#apercu', "Vue d'ensemble"],
             ['#methode', 'La méthode'],
             ['#distribution', 'Cas 01 · Distribution'],
             ['#industrie', 'Cas 02 · Industrie'],
@@ -453,7 +505,7 @@ export default function EtudesDeCasIAPage() {
           <div style={kickerStyle}>La méthode</div>
           <h2 style={h2Style}>Six temps, quelle que soit la mission</h2>
           <p style={leadStyle}>
-            Une PME de trois personnes et un groupe de plusieurs milliers de salariés ne reçoivent pas le même dispositif. Ils reçoivent la même méthode : on cadre avec la direction, on cartographie les flux avec ceux qui font le travail, on priorise à trois mois, on construit sur les fichiers de l'entreprise, on forme par métier en posant le cadre, on mesure. Chaque étude de cas ci-dessous déroule ces six temps tels qu'ils ont été menés ou prévus.
+            Trois personnes ou plusieurs milliers de salariés : le dispositif change d'échelle, le déroulé reste le même. La direction cadre, les personnes qui font tourner l'activité décrivent leurs flux, les priorités se classent à trois mois, les outils se construisent à partir des fichiers du client, la formation se fait par métier avec un cadre d'usage, puis vient la mesure. Les quatre cas suivent ces six temps, faits ou prévus.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18, marginTop: 28 }}>
             {METHODE_COMMUNE.map(s => (
@@ -465,6 +517,48 @@ export default function EtudesDeCasIAPage() {
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{s.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── VUE D'ENSEMBLE DES DIX MISSIONS (propre à la page) ── */}
+      <section id="apercu" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={kickerStyle}>Vue d'ensemble</div>
+          <h2 style={h2Style}>Les dix missions en un tableau, au 7 octobre 2026</h2>
+          <p style={leadStyle}>
+            Quatre accompagnements complets, puis six formations plus courtes : le tableau donne pour chacune le client, l'outil, le format et l'étape atteinte. Un clic sur le nom mène au récit détaillé plus bas. La prochaine mise à jour suivra les sessions d'octobre au Mexique et aux États-Unis, puis le bilan à un mois du distributeur photovoltaïque.
+          </p>
+          <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, marginTop: 24 }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760, fontSize: 14 }}>
+              <caption style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)' }}>Les dix missions décrites sur cette page, avec leur statut au 7 octobre 2026</caption>
+              <thead>
+                <tr>
+                  {['Mission', 'Client', 'Outil', 'Format et date', 'Où en est-on'].map(h => (
+                    <th key={h} scope="col" style={{ textAlign: 'left', padding: '14px 16px', fontSize: 12, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#6B7280', borderBottom: '1px solid #E5E7EB', fontFamily: 'Nunito, sans-serif' }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {APERCU.map(r => (
+                  <tr key={r.ancre}>
+                    <th scope="row" style={{ textAlign: 'left', padding: '14px 16px', borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>
+                      <a href={`#${r.ancre}`} style={{ color: c, fontWeight: 700, textDecoration: 'none' }}>{r.nom}</a>
+                    </th>
+                    <td style={{ padding: '14px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{r.qui}</td>
+                    <td style={{ padding: '14px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{r.outil}</td>
+                    <td style={{ padding: '14px 16px', color: '#374151', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{r.format}</td>
+                    <td style={{ padding: '14px 16px', color: '#0A0A0A', lineHeight: 1.55, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }}>{r.statut}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '18px 22px', marginTop: 24 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 10 }}>Comment lire ces études de cas</div>
+            <ul style={{ margin: 0, paddingLeft: 18, display: 'grid', gap: 6, fontSize: 14.5, color: '#374151', lineHeight: 1.65 }}>
+              {CONVENTIONS.map(t => <li key={t}>{t}</li>)}
+            </ul>
           </div>
         </div>
       </section>
@@ -481,16 +575,16 @@ export default function EtudesDeCasIAPage() {
           <div style={kickerStyle}>Notre cadre</div>
           <h2 style={h2Style}>Ce que ces quatre missions ont en commun</h2>
           <p style={leadStyle}>
-            Quatre secteurs, quatre tailles d'organisation, un même fil conducteur : sur chaque mission, Masteria articule le conseil (cadrer avec la direction, prioriser, poser le cadre), la construction (des assistants conçus pour les données de l'entreprise) et la formation (des équipes capables de faire vivre le dispositif), puis mesure le résultat et le dit tel qu'il est.
+            Les secteurs et les tailles diffèrent, le fil reste le même. Le conseil cadre et priorise, la construction fait travailler les assistants sur les données du client, la formation rend les équipes capables de faire vivre le dispositif seules. Le résultat est ensuite mesuré, et écrit tel qu'il est.
           </p>
           <p style={mutedStyle}>
-            Et une règle que nous assumons : la discrétion. Nos clients gardent leur avance pour eux, nous gardons leurs noms pour nous.
+            Une règle complète les autres, la discrétion : nos clients gardent leur avance, nous gardons leurs noms.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
             {[
-              { icon: BadgeCheck, t: "Sur les dossiers de l'entreprise", d: "Chaque atelier et chaque assistant est conçu pour les fichiers, données et documents de l'entreprise, jamais pour des exemples génériques." },
-              { icon: ShieldCheck, t: 'Un cadre de confidentialité écrit', d: "Offres entreprise sans entraînement sur vos données, règles d'usage, sources citées, validation humaine sur ce qui engage : le cadre est posé avant le premier prompt." },
-              { icon: Lock, t: 'Anonymat public, vérification privée', d: "Les cas sont anonymisés à la demande des clients. En discussion avancée, nous organisons une mise en relation sous accord de confidentialité." },
+              { icon: BadgeCheck, t: "Les fichiers du client comme matière", d: "Ateliers et assistants partent des documents, des données et des outils du client ; un exemple générique ne sert qu'à expliquer une notion." },
+              { icon: ShieldCheck, t: 'Une confidentialité écrite', d: "Comptes professionnels sans réutilisation pour l'entraînement, règles d'usage, sources citées, une personne qui valide ce qui engage le client : tout est fixé avant le premier atelier." },
+              { icon: Lock, t: 'Anonymes en public, vérifiables en privé', d: "Les cas restent anonymes parce que les clients l'ont voulu. Quand la discussion avance, un échange avec l'un d'eux s'organise sous accord de confidentialité." },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
                 <div style={{ width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
@@ -502,13 +596,43 @@ export default function EtudesDeCasIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '30px 0 0', maxWidth: 860 }}>
-            Envie du même type de dispositif ? Commencez par un <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, plus court, ou un <Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> complet, voyez notre <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> pour un comité de direction, notre <Link to="/accompagnement-ia" style={{ color: c, fontWeight: 600 }}>accompagnement IA</Link> pour un déploiement par paliers, ou comment nous déployons des <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>. Pour situer le budget, nos repères sur le <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link> donnent les fourchettes. Pour la montée en compétence des équipes, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils, avec un format dédié à la <Link to="/formation-ia-comex" style={{ color: c, fontWeight: 600 }}>formation IA du comité de direction</Link>.
+            Pour un dispositif comparable, le point de départ dépend de votre situation. Le <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> donne une lecture courte, l'<Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> une lecture complète ; le <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> sert au comité de direction, l'<Link to="/accompagnement-ia" style={{ color: c, fontWeight: 600 }}>accompagnement IA</Link> à un déploiement par paliers, et la page sur les <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link> montre ce qui se construit. Les fourchettes de budget figurent sur la page <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link>. Côté compétences, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils, et la <Link to="/formation-ia-comex" style={{ color: c, fontWeight: 600 }}>formation IA du comité de direction</Link> a son format propre.
           </p>
         </div>
       </section>
 
-      {/* ── FONDATEUR (E-E-A-T) ── */}
-      <FounderNote bg="#fff" />
+      {/* ── CINQ DÉCISIONS AVANT UN DISPOSITIF COMPARABLE (propre à la page) ── */}
+      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <div style={kickerStyle}>Avant de vous lancer</div>
+          <h2 style={h2Style}>Cinq décisions que ces missions ont rendues décisives</h2>
+          <p style={leadStyle}>
+            Chacune a pesé sur l'un des cas de cette page. Les prendre avant le premier atelier évite de construire un outil que personne ne portera.
+          </p>
+          <ol style={{ listStyle: 'none', padding: 0, margin: '24px 0 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 16 }}>
+            {DECISIONS.map((d, i) => (
+              <li key={d.t} style={{ ...cardStyle, padding: 22, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c }}>{`0${i + 1}`}</span>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{d.t}</h3>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{d.d}</p>
+                <a href={`#${d.ancre}`} style={{ fontSize: 13.5, fontWeight: 700, color: c, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  Revoir ce cas <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan a piloté chacune de ces missions et reprend cette page à chaque étape franchie par un client ; la dernière révision date du 7 octobre 2026. Pour connaître son parcours, voyez <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page de fondateur</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── FAQ ── */}
       <section id="faq" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
@@ -527,23 +651,21 @@ export default function EtudesDeCasIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Votre cas, maintenant</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Et si la prochaine étude de cas, c'était vous ?
+              Décrivez votre situation, nous vous dirons quel dispositif lui convient
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-              Décrivez votre contexte en quelques lignes. Lors d'un échange de cadrage gratuit, nous vous disons quel dispositif correspond à votre situation, avec la même méthode et la même discrétion que pour nos clients actuels.
+              Le premier pas : 30 minutes de cadrage offertes. Pendant cet échange, vous présentez le contexte et nous vous indiquons le dispositif adapté, avec la méthode et la discrétion appliquées aux clients de cette page.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
-              Demander un cadrage gratuit
+            <Link to="/contact?type=projet&rdv=30" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Échange gratuit et sans engagement · Réponse sous 24 h · Certifié Qualiopi
+              Une réponse vous parvient sous un jour ouvré, sans engagement
             </p>
           </div>
         </div>
       </section>
-
-      <OfficialSources />
     </>
   )
 }

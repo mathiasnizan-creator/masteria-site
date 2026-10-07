@@ -10,7 +10,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Marketing',
     metaTitle: 'Formation Copilot Marketing | Masteria Qualiopi',
     metaDescription:
-      'Microsoft 365 Copilot pour créer contenus, analyses et campagnes marketing en moitié moins de temps. Formation 2 jours, Qualiopi, OPCO.',
+      'Microsoft Copilot pour créer contenus, analyses et campagnes marketing en moitié moins de temps. Formation 2 jours, Qualiopi, OPCO.',
     priority: true,
     color: '#2563EB',
     audience: [
@@ -171,8 +171,8 @@ export const COPILOT_SPOKES = [
     ],
     faq: [
       {
-        q: 'Faut-il avoir une licence Microsoft 365 Copilot pour suivre cette formation ?',
-        a: "Oui, Microsoft 365 Copilot est une licence supplémentaire (environ 30 €/mois/utilisateur). Masteria peut vous aider à évaluer si l'investissement est pertinent avant la formation. En intra-entreprise, nous pouvons organiser la formation en utilisant les licences existantes de votre entreprise.",
+        q: 'Faut-il avoir une licence Microsoft Copilot pour suivre cette formation ?',
+        a: "Oui, Microsoft Copilot (anciennement Microsoft 365 Copilot) est une licence supplémentaire : 26 € HT par utilisateur et par mois en paiement annuel, 18,20 € HT avec Copilot Business jusqu'à 300 utilisateurs, au 7 octobre 2026. Masteria peut vous aider à évaluer si l'investissement est pertinent avant la formation. En intra-entreprise, nous pouvons organiser la formation en utilisant les licences existantes de votre entreprise.",
       },
       {
         q: 'Quelle est la différence entre cette formation et une formation ChatGPT pour le marketing ?',
@@ -180,7 +180,7 @@ export const COPILOT_SPOKES = [
       },
       {
         q: 'Nos données marketing sont-elles sécurisées avec Copilot ?',
-        a: "Oui. Microsoft 365 Copilot utilise uniquement les données auxquelles vous avez accès dans votre tenant M365, hébergées dans votre environnement Microsoft. Vos données ne sont pas utilisées pour entraîner les modèles IA. La formation inclut un module de gouvernance sur ce sujet.",
+        a: "Oui. Microsoft Copilot utilise uniquement les données auxquelles vous avez accès dans votre tenant M365, hébergées dans votre environnement Microsoft. Vos données ne sont pas utilisées pour entraîner les modèles IA. La formation inclut un module de gouvernance sur ce sujet.",
       },
       {
         q: 'La formation est-elle adaptée aux PME qui ont peu de ressources marketing ?',
@@ -203,7 +203,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot RH',
     metaTitle: 'Formation Microsoft Copilot RH | Masteria, Certifié Qualiopi',
     metaDescription:
-      'Optimisez recrutement, formation et gestion administrative RH avec Microsoft 365 Copilot. Formation 2 jours pratique, certifiée Qualiopi, finançable OPCO.',
+      'Optimisez recrutement, formation et gestion administrative RH avec Microsoft Copilot. Formation 2 jours pratique, certifiée Qualiopi, finançable OPCO.',
     priority: false,
     color: '#7C3AED',
     audience: [
@@ -396,7 +396,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Commercial',
     metaTitle: 'Formation Copilot Commercial | Masteria Qualiopi',
     metaDescription:
-      'Accélérez votre cycle de vente avec Microsoft 365 Copilot : propositions, relances, prépa RDV. Formation 2 jours, Qualiopi, OPCO.',
+      'Accélérez votre cycle de vente avec Microsoft Copilot : propositions, relances, prépa RDV. Formation 2 jours, Qualiopi, OPCO.',
     priority: true,
     color: '#059669',
     audience: [
@@ -440,7 +440,7 @@ export const COPILOT_SPOKES = [
         description:
           "Découvrir comment Copilot s'intègre dans les outils du commercial : Outlook pour la communication, Teams pour les réunions, Word pour les propositions, Excel pour le pipeline.",
         items: [
-          'Panorama Copilot M365 vu du commercial : quels outils, quels gains',
+          'Panorama Microsoft Copilot vu du commercial : quels outils, quels gains',
           'Accès aux données client dans Copilot : emails, réunions, fichiers',
           'Premiers prompts commerciaux : préparer un RDV, rédiger un email',
           'Copilot vs outils CRM IA : complémentarité et limites',
@@ -574,7 +574,7 @@ export const COPILOT_SPOKES = [
       },
       {
         q: 'Combien de temps par semaine peut-on espérer gagner en tant que commercial ?',
-        a: "Microsoft estime à 4-6 heures par semaine le gain de productivité moyen pour les commerciaux utilisant Copilot. Nos participants constatent des gains rapides sur la rédaction de propositions (-60% de temps) et la préparation de RDV (-70%). Le ROI dépend de votre niveau d'adoption.",
+        a: "Le gain dépend des tâches ciblées et de votre niveau d'adoption. Nos participants voient les premiers effets sur la rédaction de propositions et la préparation de rendez-vous ; la formation vous apprend à mesurer ce temps gagné, avant et après.",
       },
     ],
   },
@@ -589,7 +589,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Word & Excel',
     metaTitle: 'Formation Copilot Word et Excel | Masteria Qualiopi',
     metaDescription:
-      'Microsoft 365 Copilot dans Word et Excel pour rédiger, analyser et synthétiser 3× plus vite. Formation 2 jours, certifiée Qualiopi, OPCO.',
+      'Microsoft Copilot dans Word et Excel pour rédiger, analyser et synthétiser 3× plus vite. Formation 2 jours, certifiée Qualiopi, OPCO.',
     priority: false,
     color: '#DC2626',
     audience: [
@@ -782,7 +782,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Management',
     metaTitle: 'Formation Copilot Managers | Masteria Qualiopi',
     metaDescription:
-      'Microsoft 365 Copilot pour piloter votre équipe, préparer vos comités et gagner du temps sur la communication. Formation 2 jours, Qualiopi.',
+      'Microsoft Copilot pour piloter votre équipe, préparer vos comités et gagner du temps sur la communication. Formation 2 jours, Qualiopi.',
     priority: false,
     color: '#D97706',
     audience: [
@@ -975,7 +975,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Finance',
     metaTitle: 'Formation Copilot Finance | Masteria Qualiopi',
     metaDescription:
-      'Microsoft 365 Copilot pour accélérer analyses financières, reportings et budgets. Formation 2 jours équipes finance, Qualiopi, OPCO.',
+      'Microsoft Copilot pour accélérer analyses financières, reportings et budgets. Formation 2 jours équipes finance, Qualiopi, OPCO.',
     priority: true,
     color: '#0891B2',
     audience: [
@@ -1014,13 +1014,13 @@ export const COPILOT_SPOKES = [
       // JOUR 1
       {
         day: 1,
-        title: 'Copilot M365 pour la finance : configuration et panorama',
+        title: 'Microsoft Copilot pour la finance : configuration et panorama',
         duration: '1h30',
         description:
           "Comprendre les capacités de Copilot dans le contexte financier. Configuration pour l'accès aux données financières M365. Sécurité et conformité pour les données sensibles.",
         items: [
           'Panorama Copilot finance : Excel, Word, PowerPoint, Teams, Outlook',
-          'Sécurité des données financières dans Copilot M365',
+          'Sécurité des données financières dans Microsoft Copilot',
           'Premiers prompts financiers : analyse, synthèse, commentaire',
           'Limites de Copilot en finance : ce qu\'il sait et ne sait pas faire',
         ],
@@ -1137,11 +1137,11 @@ export const COPILOT_SPOKES = [
     faq: [
       {
         q: 'Copilot peut-il accéder à notre ERP ou logiciel comptable ?',
-        a: "Copilot M365 accède aux données dans votre environnement Microsoft 365 : fichiers OneDrive, SharePoint, emails. Il n'a pas accès direct à SAP, Sage, Cegid ou autres ERP. Cependant, vous pouvez exporter vos données ERP en Excel et les analyser avec Copilot, ce que la formation couvre en détail.",
+        a: "Microsoft Copilot (anciennement Microsoft 365 Copilot) accède aux données dans votre environnement Microsoft 365 : fichiers OneDrive, SharePoint, emails. Il n'a pas accès direct à SAP, Sage, Cegid ou autres ERP. Cependant, vous pouvez exporter vos données ERP en Excel et les analyser avec Copilot, ce que la formation couvre en détail.",
       },
       {
         q: 'Les données financières confidentielles sont-elles sécurisées avec Copilot ?',
-        a: "Oui, Microsoft 365 Copilot est hébergé dans votre tenant Microsoft, respecte vos permissions SharePoint/OneDrive et est conforme RGPD. Vos données financières ne quittent pas votre environnement Microsoft. La formation inclut un module sur la gouvernance des données sensibles.",
+        a: "Oui, Microsoft Copilot fonctionne dans votre tenant Microsoft, respecte vos permissions SharePoint/OneDrive et est conforme RGPD. Vos données financières ne quittent pas votre environnement Microsoft. La formation inclut un module sur la gouvernance des données sensibles.",
       },
       {
         q: 'Copilot peut-il remplacer un analyste financier ?',
@@ -1168,7 +1168,7 @@ export const COPILOT_SPOKES = [
     shortTitle: 'Copilot Assistanat',
     metaTitle: 'Formation Copilot Assistanat | Masteria Qualiopi',
     metaDescription:
-      'Microsoft 365 Copilot pour les assistants de direction : emails, organisation, rédaction, suivi de projets. Formation 2 jours, Qualiopi.',
+      'Microsoft Copilot pour les assistants de direction : emails, organisation, rédaction, suivi de projets. Formation 2 jours, Qualiopi.',
     priority: false,
     color: '#BE185D',
     audience: [
@@ -1355,9 +1355,9 @@ export const COPILOT_SPOKES = [
   {
     slug: 'formation-copilot-communication',
     metaTitle: 'Formation Copilot Communication | M365 | Masteria',
-    metaDesc: "Formez vos équipes com à Microsoft 365 Copilot en 2 jours : Researcher, Pages, Designer, communications dans le tenant. Qualiopi, OPCO.",
-    h1: 'Formation Microsoft 365 Copilot pour les équipes Communication',
-    intro: "Les équipes communication produisent en permanence des supports, communiqués, présentations, mails dirigeants. Microsoft 365 Copilot est l'outil le plus naturel pour ces livrables quand votre stack est Microsoft : il travaille directement dans Word, PowerPoint, Outlook, accède au tenant pour contextualiser, et Researcher synthétise les sources internes en quelques minutes.",
+    metaDesc: "Formez vos équipes com à Microsoft Copilot en 2 jours : Researcher, Pages, espace Créer, communications dans le tenant. Qualiopi, OPCO.",
+    h1: 'Formation Microsoft Copilot pour les équipes Communication',
+    intro: "Les équipes communication produisent en permanence des supports, communiqués, présentations, mails dirigeants. Microsoft Copilot (anciennement Microsoft 365 Copilot) est l'outil le plus naturel pour ces livrables quand votre stack est Microsoft : il travaille directement dans Word, PowerPoint, Outlook, accède au tenant pour contextualiser, et Researcher synthétise les sources internes en quelques minutes.",
     audience: [
       { title: 'DIRCOM et directeurs de la communication', desc: "Vous pilotez la communication dans une entreprise sur Microsoft 365. Copilot intégré à votre stack vous fait gagner des heures sur la production." },
       { title: "Chargés de communication interne et externe", desc: "Vous travaillez dans Word, PowerPoint, Outlook au quotidien. Copilot vous évite les copier-coller et accède aux documents du tenant." },
@@ -1374,7 +1374,7 @@ export const COPILOT_SPOKES = [
     modules: [
       { day: 1, title: 'Module 1 · Copilot pour la communication M365', duration: '1h30', description: "Configurer Copilot pour les usages communication.", items: ["Panorama : Copilot dans Word/PowerPoint/Outlook/Teams + Researcher + Pages", "Cartographie des cas d'usage communication par application", "Encoder le ton de marque dans les prompts (références SharePoint)", "Bonnes pratiques de gouvernance des contenus communication"], exercise: "Configurer un workflow Copilot Communication pour votre tenant." },
       { day: 1, title: 'Module 2 · Discours et prises de parole dans Word', duration: '2h', description: "Rédiger les discours dirigeants directement dans Word.", items: ["Structurer un discours selon l'audience depuis un brief court", "Référencer les éléments de contexte du tenant (rapports, mémos)", "Itérer rapidement sur le ton et la longueur", "Préparer les Q&A et éléments de langage associés"], exercise: "Rédiger un discours dirigeant complet pour un événement réel ou fictif (1 500 mots)." },
-      { day: 1, title: 'Module 3 · Présentations PowerPoint corporate', duration: '2h', description: "Produire des présentations alignées sur la charte de l'entreprise.", items: ["Générer une présentation à partir d'un mémo Word ou d'un brief", "Application automatique de la charte du tenant (couleurs, fonts, layouts)", "Insérer visuels via Designer (basé sur GPT Image)", "Préparer les notes orateur et les versions handout"], exercise: "Créer une présentation corporate de 12 slides à partir d'un mémo." },
+      { day: 1, title: 'Module 3 · Présentations PowerPoint corporate', duration: '2h', description: "Produire des présentations alignées sur la charte de l'entreprise.", items: ["Générer une présentation à partir d'un mémo Word ou d'un brief", "Application automatique de la charte du tenant (couleurs, fonts, layouts)", "Insérer des visuels créés dans l'espace Créer de Copilot", "Préparer les notes orateur et les versions handout"], exercise: "Créer une présentation corporate de 12 slides à partir d'un mémo." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque communication.", items: ["Revue des livrables", "Bibliothèque de prompts communication partagée", "Identification des cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "Chaque participant prépare ses 5 prompts communication prioritaires." },
       { day: 2, title: 'Module 5 · Communication de crise dans le tenant', duration: '1h30', description: "Préparer les plans de crise dans un environnement Microsoft sécurisé.", items: ["Construire le kit de crise (annonce, FAQ, lignes de défense)", "Utiliser Researcher pour synthétiser les éléments factuels du tenant", "Préparer les éléments de communication pour Teams et Outlook", "Anticiper les questions médias et préparer les réponses"], exercise: "Construire un kit de crise complet pour un scénario fourni." },
       { day: 2, title: "Module 6 · Communication interne via Teams", duration: '2h', description: "Industrialiser les communications internes via Teams et Outlook.", items: ["Rédiger les annonces de transformation/réorganisation", "Préparer les kits managers (message + FAQ + email de relais)", "Diffuser via Teams (channels, posts, annonces)", "Mesurer les taux de lecture et engagement"], exercise: "Construire un kit de communication interne pour un changement organisationnel." },
@@ -1402,8 +1402,8 @@ export const COPILOT_SPOKES = [
   {
     slug: 'formation-copilot-seo',
     metaTitle: 'Formation Copilot SEO | M365 | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes SEO à Microsoft 365 Copilot en 2 jours : briefs, articles, optimisation, intégration M365. Qualiopi, finançable OPCO.",
-    h1: 'Formation Microsoft 365 Copilot pour les équipes SEO',
+    metaDesc: "Formez vos équipes SEO à Microsoft Copilot en 2 jours : briefs, articles, optimisation, intégration M365. Qualiopi, finançable OPCO.",
+    h1: 'Formation Microsoft Copilot pour les équipes SEO',
     intro: "Pour les équipes SEO travaillant dans un environnement Microsoft 365, Copilot est l'outil de productivité qui s'intègre nativement aux workflows existants : production dans Word, suivi dans Excel, collaboration via Teams, gouvernance via SharePoint.",
     audience: [
       { title: 'Responsables SEO et content managers', desc: "Vous pilotez la stratégie SEO dans un environnement Microsoft 365. Copilot s'intègre à vos rituels existants." },
@@ -1440,7 +1440,7 @@ export const COPILOT_SPOKES = [
       { q: "Copilot peut-il analyser un export Search Console ?", a: "Oui, dans Excel directement." },
       { q: "Mes données SEO sont-elles protégées ?", a: "Oui, elles restent dans votre tenant M365. Important pour les agences qui gèrent plusieurs clients." },
       { q: "Peut-on travailler sur nos vrais articles pendant la formation ?", a: "Oui." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, Masteria est certifié Qualiopi : la formation est finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-copilot-marketing', 'formation-claude-seo', 'formation-chatgpt-seo'],
   },
@@ -1449,9 +1449,9 @@ export const COPILOT_SPOKES = [
   {
     slug: 'formation-copilot-service-client',
     metaTitle: 'Formation Copilot Service Client | Dynamics 365 | Masteria',
-    metaDesc: "Formez vos équipes service client à Microsoft 365 Copilot en 2 jours : Dynamics 365, Teams, Outlook, agents Copilot Studio. Qualiopi, OPCO.",
-    h1: 'Formation Microsoft 365 Copilot pour les équipes Service Client',
-    intro: "Microsoft 365 Copilot est particulièrement pertinent pour les équipes service client qui utilisent Dynamics 365, Teams, Outlook au quotidien. Avec Copilot Studio, vous pouvez aussi construire des agents de SAV qui restent dans votre tenant Microsoft.",
+    metaDesc: "Formez vos équipes service client à Microsoft Copilot en 2 jours : Dynamics 365, Teams, Outlook, agents Copilot Studio. Qualiopi, OPCO.",
+    h1: 'Formation Microsoft Copilot pour les équipes Service Client',
+    intro: "Microsoft Copilot (anciennement Microsoft 365 Copilot) est particulièrement pertinent pour les équipes service client qui utilisent Dynamics 365, Teams, Outlook au quotidien. Avec Copilot Studio, vous pouvez aussi construire des agents de SAV qui restent dans votre tenant Microsoft.",
     audience: [
       { title: 'Directeurs service client', desc: "Vous pilotez le SC dans un environnement Microsoft. Copilot s'intègre à Dynamics, Teams, Outlook." },
       { title: 'Responsables qualité et superviseurs', desc: "Vous garantissez la cohérence des réponses. Copilot dans Outlook accélère sans changer d'outil." },
@@ -1483,7 +1483,7 @@ export const COPILOT_SPOKES = [
       "Analyser les KPIs SAV dans Excel pour le pilotage mensuel",
     ],
     faq: [
-      { q: "Pourquoi Copilot plutôt que ChatGPT pour le service client ?", a: "Si votre stack est Microsoft (Dynamics, Outlook, Teams), Copilot évite les ruptures. ChatGPT reste pertinent pour les volumétries très élevées et les Custom GPTs spécialisés." },
+      { q: "Pourquoi Copilot plutôt que ChatGPT pour le service client ?", a: "Si votre stack est Microsoft (Dynamics, Outlook, Teams), Copilot évite les ruptures. ChatGPT reste pertinent pour les volumétries très élevées et les compétences partagées." },
       { q: "Copilot Studio remplace-t-il un outil de chatbot dédié ?", a: "Pour les agents simples, oui. Pour des chatbots à très haute volumétrie, des solutions dédiées (Genesys, Salesforce, Zendesk) restent souvent plus matures." },
       { q: "Mes données clients Dynamics sont-elles protégées ?", a: "Oui, elles restent dans votre tenant Microsoft sous votre gouvernance." },
       { q: "Peut-on travailler sur nos vraies réclamations pendant la formation ?", a: "Oui, anonymisez les données identifiables avant la session." },
@@ -1496,7 +1496,7 @@ export const COPILOT_SPOKES = [
   {
     slug: 'formation-copilot-informatique',
     metaTitle: 'Formation Copilot Informatique | GitHub Copilot | Masteria',
-    metaDesc: "Formez vos équipes IT à Microsoft 365 Copilot et GitHub Copilot en 2 jours : code, infrastructure, automatisation, agents Copilot Studio. Qualiopi, OPCO.",
+    metaDesc: "Formez vos équipes IT à Microsoft Copilot et GitHub Copilot en 2 jours : code, infrastructure, automatisation, agents Copilot Studio. Qualiopi, OPCO.",
     h1: 'Formation Microsoft Copilot pour les équipes Informatique & DSI',
     intro: "Microsoft propose deux Copilots distincts pour l'IT : M365 Copilot pour la productivité bureautique, GitHub Copilot pour le développement. Cette formation couvre les deux et apprend à les exploiter en complémentarité.",
     audience: [
@@ -1534,7 +1534,7 @@ export const COPILOT_SPOKES = [
       { q: "GitHub Copilot vs Claude Code : qui gagne ?", a: "GitHub Copilot domine sur l'auto-complétion en IDE. Claude Code est meilleur sur les missions de fond (refactor, architecture). Beaucoup d'équipes utilisent les deux." },
       { q: "Mon code propriétaire est-il protégé ?", a: "Sur GitHub Copilot Business / Enterprise, oui : engagement contractuel et indexation privée des repos." },
       { q: "Peut-on construire un agent qui ouvre des tickets Jira ?", a: "Oui, via Copilot Studio + Power Automate." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-copilot-management', 'formation-claude-informatique', 'formation-chatgpt-informatique'],
   },
@@ -1543,8 +1543,8 @@ export const COPILOT_SPOKES = [
   {
     slug: 'formation-copilot-pedagogique',
     metaTitle: 'Formation Copilot Pédagogique | M365, Teams | Masteria',
-    metaDesc: "Formez vos équipes formation à Microsoft 365 Copilot en 2 jours : programmes Word, supports PowerPoint, suivi Excel, Teams. Qualiopi, finançable OPCO.",
-    h1: 'Formation Microsoft 365 Copilot pour les équipes Pédagogiques',
+    metaDesc: "Formez vos équipes formation à Microsoft Copilot en 2 jours : programmes Word, supports PowerPoint, suivi Excel, Teams. Qualiopi, finançable OPCO.",
+    h1: 'Formation Microsoft Copilot pour les équipes Pédagogiques',
     intro: "Pour les équipes formation qui produisent en environnement Microsoft 365 (programmes dans Word, supports PowerPoint, suivi Excel, animation Teams), Copilot est l'outil naturel d'industrialisation.",
     audience: [
       { title: 'Responsables formation', desc: "Vous concevez programmes et supports dans M365. Copilot industrialise sans changer d'outil." },
@@ -1562,7 +1562,7 @@ export const COPILOT_SPOKES = [
     modules: [
       { day: 1, title: 'Module 1 · Copilot pour la pédagogie M365', duration: '1h30', description: "Configurer Copilot pour les workflows pédagogiques.", items: ["Cas d'usage Copilot pédagogie", "Configurer les références via SharePoint", "Bonnes pratiques de gouvernance"], exercise: "Configurer un workflow Copilot Pédagogie." },
       { day: 1, title: 'Module 2 · Conception de programmes dans Word', duration: '2h', description: "Concevoir des programmes structurés dans Word.", items: ["Structurer un programme", "Concevoir un parcours sur 5 jours", "Décliner en supports détaillés", "Adapter selon les profils apprenants"], exercise: "Concevoir un programme de 3 jours complet." },
-      { day: 1, title: 'Module 3 · Supports PowerPoint corporate', duration: '2h', description: "Produire les supports alignés sur la charte.", items: ["Générer une présentation depuis un programme Word", "Application automatique de la charte du tenant", "Insérer visuels via Designer", "Préparer notes formateur et handouts"], exercise: "Créer un support PowerPoint complet (30 slides)." },
+      { day: 1, title: 'Module 3 · Supports PowerPoint corporate', duration: '2h', description: "Produire les supports alignés sur la charte.", items: ["Générer une présentation depuis un programme Word", "Application automatique de la charte du tenant", "Insérer des visuels créés dans l'espace Créer de Copilot", "Préparer notes formateur et handouts"], exercise: "Créer un support PowerPoint complet (30 slides)." },
       { day: 1, title: 'Module 4 · Synthèse Jour 1', duration: '1h30', description: "Consolider la bibliothèque pédagogique.", items: ["Revue des livrables", "Bibliothèque partagée", "Cas d'usage prioritaires", "Plan d'action Jour 2"], exercise: "Préparer les 5 prompts prioritaires." },
       { day: 2, title: 'Module 5 · Évaluations dans Forms', duration: '1h30', description: "Construire les QCM dans Microsoft Forms.", items: ["Aligner évaluations et objectifs pédagogiques", "Concevoir des QCM pertinents avec Copilot", "Préparer corrections et feedbacks", "Diffuser via Teams"], exercise: "Construire un QCM complet dans Forms." },
       { day: 2, title: "Module 6 · Suivi apprenants dans Excel", duration: '2h', description: "Suivre la progression dans Excel.", items: ["Importer les résultats Forms dans Excel", "Construire des tableaux de bord pédagogiques", "Identifier les apprenants en difficulté", "Adapter les parcours individualisés"], exercise: "Construire un tableau de bord de suivi pédagogique." },
@@ -1577,11 +1577,11 @@ export const COPILOT_SPOKES = [
       "Construire un tuteur Copilot Studio pour répondre aux questions",
     ],
     faq: [
-      { q: "Pourquoi Copilot plutôt que Claude/ChatGPT pour la pédagogie ?", a: "Si votre stack est M365, Copilot évite les ruptures de workflow. Pour les programmes très longs, Claude reste meilleur. Pour les visuels, ChatGPT (GPT Image 2)." },
-      { q: "Designer (génération d'images) est-il suffisant pour la pédagogie ?", a: "Pour les visuels corporate, oui. Pour des illustrations créatives plus audacieuses, ChatGPT direct (GPT Image 2)." },
+      { q: "Pourquoi Copilot plutôt que Claude/ChatGPT pour la pédagogie ?", a: "Si votre stack est M365, Copilot évite les ruptures de workflow. Pour les programmes très longs, Claude reste meilleur. Pour les visuels, ChatGPT (ChatGPT Images 2.5)." },
+      { q: "L'espace Créer de Copilot (génération d'images) suffit-il pour la pédagogie ?", a: "Pour les visuels corporate, oui. Pour des illustrations créatives plus audacieuses, ChatGPT (ChatGPT Images 2.5)." },
       { q: "Mes supports confidentiels sont-ils protégés ?", a: "Oui, ils restent dans votre tenant Microsoft 365." },
       { q: "Peut-on construire un tuteur qui répond aux apprenants ?", a: "Oui, via Copilot Studio." },
-      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable 100% par les OPCO." },
+      { q: "La formation est-elle éligible OPCO ?", a: "Oui, finançable par votre OPCO selon votre branche." },
     ],
     relatedSpokes: ['formation-copilot-management', 'formation-claude-pedagogique', 'formation-chatgpt-pedagogique'],
   },

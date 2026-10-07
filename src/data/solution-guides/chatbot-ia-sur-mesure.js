@@ -2,7 +2,112 @@
 // Vérifié le 03/10/2026 : règlement (UE) 2024/1689 (art. 3, 50, 99) dans son texte officiel via l'Office des publications, lignes directrices C(2026) 5054 et FAQ de la Commission sur l'article 50 (juillet 2026), fiche CNIL sur les chatbots (19/02/2021), guide ANSSI IA générative (29/04/2024, R25 et R33), OpenAI Safety best practices, Légifrance (L. 121-2, L. 132-2, décret 2023-931, loi 2023-171 art. 16).
 export default {
   slug: 'chatbot-ia-sur-mesure',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    directAnswer: "Un chatbot IA sur mesure répond aux visiteurs de votre site avec ce que vous publiez déjà, refuse les sujets que vous lui interdisez, annonce qu'il est une IA et transmet les demandes au bon service. Masteria l'écrit, le teste contre les détournements et vous remet son code, sans abonnement à une plateforme.",
+    howWeBuild: [
+      {
+        title: "Écrire le périmètre et les refus",
+        desc: "Nous listons avec vous les sujets que le chatbot traite, ceux qu'il refuse et les demandes qu'il transmet, avec le service destinataire. Ce document sert ensuite de référence pour chaque test.",
+      },
+      {
+        title: "Construire sur les contenus validés",
+        desc: "Le chatbot répond uniquement à partir des pages et documents que vous avez validés. Vos équipes le testent sur les vraies questions de vos visiteurs, recueillies dans vos formulaires et votre recherche interne.",
+      },
+      {
+        title: "Attaquer avant d'ouvrir",
+        desc: "Nous tentons de le faire sortir de son périmètre : consignes cachées, questions pièges, demandes de prix ou de conseil. Chaque faille trouvée se corrige avant la mise en ligne.",
+      },
+      {
+        title: "Ouvrir section par section",
+        desc: "Le widget s'intègre à votre charte et aux règles d'accessibilité, puis s'ouvre section après section. Votre équipe web reçoit le code, les contenus et la procédure de mise à jour.",
+      },
+    ],
+  },
+  hero: {
+    chips: ["Réponses tirées de vos pages", "Refus écrits à l'avance", "Passage au bon service", "Accessible et à votre charte"],
+    lien: "Voir comment le chatbot se construit",
+    enBref: [
+      {
+        label: "Budget",
+        value: "Un contenu restreint sans action dans vos logiciels à partir de 8 000 € environ ; multilingue et relié à vos outils au-delà de 100 000 €",
+      },
+      {
+        label: "Démarrage",
+        value: "Les questions réelles de vos visiteurs et la liste des contenus validés",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Chatbot intégré au site, périmètre et refus écrits, tests d'attaque, documentation",
+      },
+      {
+        label: "Propriété",
+        value: "Le chatbot, ses contenus et son code restent à vous",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Ce qu'est un chatbot de site sur mesure",
+  },
+  etapesBloc: {
+    kicker: "Mise en ligne",
+    h2: "Cinq étapes, des questions des visiteurs à l'ouverture",
+  },
+  etapesNote: {
+    texte: "Si le chatbot n'est qu'une des idées sur la table, un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA les compare avant de choisir",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers pour mettre le chatbot en ligne",
+  },
+  technique: {
+    kicker: "Ce qui le tient",
+    texte: "Le chatbot puise ses réponses dans un index de vos contenus validés, jamais dans la mémoire générale du modèle, et ses instructions fixent le ton, les sujets refusés et les règles de transfert. Le modèle (Claude, GPT ou Mistral selon les langues et le coût) est choisi après les tests d'attaque. Le widget annonce la nature de l'échange dès le premier message, et les conversations se conservent selon la durée que vous fixez avec votre délégué à la protection des données.",
+    h2: "Ce qui fait tenir un chatbot de site",
+    lead: "Le chatbot répond uniquement à partir des contenus que vous avez validés, refuse les sujets écrits à l'avance, annonce qu'il est une IA et transmet les demandes au bon service ; il est attaqué avant l'ouverture pour vérifier qu'il ne sort pas de ce cadre.",
+    chips: ["Contenus validés seulement", "Liste de refus", "Annonce IA visible", "Tests d'attaque avant ouverture", "Widget accessible"],
+    note: {
+      texte: "Le détail de nos pratiques de développement figure sur la page de notre",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "atelier de développement IA",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par type de site",
+    h2: "Un chatbot selon ce que vos visiteurs demandent",
+    intro: "Un site de fabricant, de service ou d'organisme public reçoit des questions différentes ; les limites du chatbot s'écrivent pour chacun.",
+  },
+  regieBloc: {
+    kicker: "Renfort web",
+    h2: "Un développeur auprès de votre équipe web",
+    lien: "Comment se déroule un projet",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Chatbot sur mesure : les questions fréquentes",
+    texte: "Votre site a une contrainte d'accessibilité ou de langue particulière ?",
+    lien: "Précisez-la-nous",
+  },
+  maillage: {
+    kicker: "Livrables voisins",
+    h2: "Quand un chatbot ne suffit pas",
+  },
+  cta: {
+    titre: "Quelles questions de vos visiteurs confier à un chatbot ?",
+    texte: "Envoyez-nous les questions qui arrivent par votre formulaire de contact et la liste des pages que le chatbot pourrait citer. Une réponse vous parvient sous 24 heures pour programmer les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Des intervenants qui écrivent les limites avant le ton",
+    texte: "Mathias Nizan, fondateur de Masteria en 2022 à Lyon, compose l'équipe de chaque projet et la dirige jusqu'à la mise en ligne. Pour un chatbot de site, il fait appel à un consultant qui écrit le périmètre et les refus, à des développeurs qui construisent et attaquent le chatbot, et à un formateur pour l'équipe qui le fera vivre. Ces intervenants sont indépendants de toute plateforme de chatbot.",
+  },
   intro: "Un chatbot sur mesure répond aux visiteurs de votre site avec ce que vous publiez déjà : fiches produits, notices, conditions de vente, pages d'aide. Il oriente, recueille une demande et passe la main au bon service pour tout ce qui touche à un dossier personnel. En le faisant développer puis en le mettant en ligne sous votre nom, votre entreprise devient « fournisseur » au sens du règlement européen sur l'IA : à elle d'annoncer l'IA dès le premier message. Nous intégrons cette obligation, les traceurs et l'accessibilité dès la maquette.",
   guide: {
     kicker: "Guide projet · chatbot de site",
@@ -85,7 +190,16 @@ export default {
     { title: "Intégrer au site et ouvrir par section", desc: "Widget à votre charte, traceur déposé à l'ouverture, test d'accessibilité, plafonds de messages. Mise en ligne section par section, revue hebdomadaire des questions sans réponse, puis remise du code et de la documentation." },
   ],
   cout: {
-    lead: "Un chatbot sur mesure fait l'objet d'un forfait, chiffré après cadrage sur un périmètre écrit. Un premier chatbot, sur un contenu restreint et sans action dans vos logiciels, démarre autour de 8 000 € ; un assistant multilingue, relié à plusieurs systèmes et exposé à un fort trafic, dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros.",
+    kicker: "Budget du chatbot",
+    h2: "Le budget d'un chatbot sur mesure",
+    note: {
+      texte: "Pour situer ce budget parmi d'autres projets, consultez la page",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "coût d'un projet IA",
+      },
+    },
+    lead: "Un chatbot sur mesure fait l'objet d'un forfait, chiffré après cadrage sur un périmètre écrit. Un premier chatbot, sur un contenu restreint et sans action dans vos logiciels, démarre autour de 8 000 € ; un assistant multilingue, relié à plusieurs systèmes et exposé à un fort trafic, dépasse les 100 000 € et se compte parfois en centaines de milliers d'euros.",
     paras: [
       "L'écart tient d'abord au contenu. Un site de quelques dizaines de pages tenues à jour s'indexe vite ; un catalogue de fiches techniques en PDF, en plusieurs langues, avec des versions qui se contredisent, demande un tri avant toute construction. Le fonctionnement s'ajoute ensuite chaque mois : appels au modèle, hébergement, lecture des conversations. Sur un site public, chaque visiteur déclenche des appels payants ; les plafonds par session et le budget mensuel visé figurent donc dans le devis.",
       "Le forfait couvre le tri des contenus, la construction, le widget à votre charte, l'annonce de l'IA, les jeux de tests et la documentation, dont le code vous revient. Les 30 minutes de cadrage offertes (visio ou téléphone) servent à regarder l'état de vos contenus avant tout chiffrage : c'est le premier facteur de prix, et il se lit en quelques pages.",
@@ -102,6 +216,8 @@ export default {
     "Ce modèle convient aux entreprises qui publient beaucoup : nouvelles collections, catalogues saisonniers, conditions commerciales révisées. Le développeur travaille sur vos dépôts de code, avec vos outils, et documente chaque modification ; vos équipes reprennent la maintenance quand le rythme des publications ralentit.",
   ],
   comparatif: {
+    kicker: "Plateforme ou sur mesure",
+    caption: "Chatbot de plateforme et chatbot sur mesure, critère par critère.",
     intro: "Un chatbot SaaS, un logiciel loué en ligne et prêt à configurer, se branche vite sur les pages d'un site et convient à une FAQ stable. Comme nous ne vendons aucune licence, le premier échange sert aussi à vous dire si un outil loué suffit. Le sur mesure se justifie quand le contenu est volumineux ou technique, quand les réponses doivent suivre des règles écrites et testées, quand les conversations et les traceurs doivent rester sous votre contrôle, ou quand le volume rend l'abonnement plus cher qu'un code qui vous appartient.",
     rows: [
       { aspect: "Mise en ligne", off: "Rapide : une adresse de site ou quelques PDF suffisent à démarrer", custom: "Quelques semaines : tri des contenus, périmètre écrit, tests adverses" },
@@ -123,11 +239,11 @@ export default {
     { q: "Faut-il un chatbot si notre site a déjà une bonne FAQ ?", a: "Pas toujours. Une FAQ claire et un moteur de recherche interne suffisent quand les questions sont peu nombreuses et appellent une réponse unique. Le chatbot apporte quelque chose quand une question croise plusieurs critères (une dimension, un usage, une compatibilité), quand le catalogue est trop vaste pour une FAQ, ou quand le visiteur doit être orienté selon son cas. Les requêtes tapées dans la recherche de votre site montrent de quel côté vous êtes." },
   ],
   sources: [
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (articles 3 et 50)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr" },
-    { name: "Commission européenne : lignes directrices sur les obligations de transparence de l'article 50 (20 juillet 2026)", url: "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : qui est fournisseur d'un chatbot (article 3), ce qu'il doit annoncer (article 50)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr" },
+    { name: "Commission européenne, lignes directrices du 20 juillet 2026 : l'annonce d'un chatbot aux visiteurs", url: "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" },
     { name: "Commission européenne : FAQ sur les obligations de transparence de l'article 50 (24 juillet 2026)", url: "https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act" },
     { name: "CNIL : Chatbots, les conseils de la CNIL pour respecter les droits des personnes (19 février 2021)", url: "https://www.cnil.fr/fr/chatbots-les-conseils-de-la-cnil-pour-respecter-les-droits-des-personnes" },
-    { name: "ANSSI : Recommandations de sécurité pour un système d'IA générative (29 avril 2024)", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
+    { name: "ANSSI, recommandations du 29 avril 2024 : exposer un système d'IA générative au public", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
     { name: "OpenAI API : Safety best practices", url: "https://developers.openai.com/api/docs/guides/safety-best-practices" },
     { name: "Légifrance : article L. 121-2 du Code de la consommation (pratiques commerciales trompeuses)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044563114" },
     { name: "Légifrance : article L. 132-2 du Code de la consommation (sanctions, version du 12 mai 2024)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049532070" },

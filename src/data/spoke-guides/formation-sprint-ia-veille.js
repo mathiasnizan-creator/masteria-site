@@ -1,12 +1,27 @@
-// Contenu propre à /formation-sprint-ia-veille (guide terrain). Rendu par SpokePage.
+// Contenu propre à /formation-sprint-ia-veille (page propre). Rendu par SpokePage.
 // Sprint de 3 h : la veille personnelle d'un participant sur un seul sujet.
 // La formation d'un jour (formation-ia-veille) traite le dispositif d'une équipe.
+// Guide terrain du 03/10/2026 (aides OpenAI, Anthropic, Google, Microsoft, Mistral, étude UER-BBC), revu le 07/10/2026 :
+// noms d'outils (Vibe, Microsoft Copilot), champs de la page propre, retour de mission de septembre 2026.
 export default {
   slug: 'formation-sprint-ia-veille',
-  updatedAt: '2026-10-03',
-  updatedLabel: 'Programme à jour · octobre 2026',
-  metaDesc: "Sprint IA Veille : en 3 heures, une veille personnelle sur un sujet, une recherche programmée chaque semaine dans votre assistant d'IA et une note vérifiée.",
-  intro: "Le Sprint IA Veille dure trois heures et vise un résultat précis : chaque participant repart avec sa veille personnelle déjà en marche. Elle tient en un sujet, une dizaine de sources, une recherche programmée chaque semaine dans l'assistant de l'entreprise et une première note d'une page, vérifiée pendant la séance. Le format convient aux commerciaux, chefs de produit et consultants qui suivent leur marché par eux-mêmes ; la formation veille d'un jour traite le dispositif d'une équipe.",
+  pagePropre: true,
+  updatedAt: '2026-10-07',
+  updatedLabel: 'Revu le 7 octobre 2026',
+  h1: "Sprint IA Veille : trois heures pour mettre en route une veille qui tourne seule",
+  metaTitle: 'Sprint IA Veille : une veille programmée en 3 h | Masteria',
+  metaDesc: "Sprint IA Veille : en 3 heures, une veille sur votre sujet, une recherche programmée chaque semaine dans votre assistant d'IA et une note vérifiée.",
+  keywords: "sprint ia veille, formation veille ia 3 heures, automatiser sa veille avec l'ia, tâche planifiée chatgpt veille, veille concurrentielle ia, note de veille, formation veille courte",
+  resume: "Le Sprint IA Veille met en marche, en trois heures, la veille personnelle de chaque participant : un sujet écrit en une phrase, une dizaine de sources retenues, une recherche que l'assistant de l'entreprise relance de lui-même chaque semaine, et une première note d'une page dont chaque lien a été ouvert. Masteria anime la séance chez vous ou à distance ; elle coûte 1 980 € HT, pour douze stagiaires comme pour un seul ; l'OPCO de votre branche peut la financer s'il juge la demande conforme à ses critères.",
+  enBref: [
+    { label: 'Formation', value: "Une veille personnelle automatisée : un sujet, des sources, une tâche planifiée, une note vérifiée" },
+    { label: 'Durée', value: "Cinq séquences sur trois heures, dont plus d'une heure et demie consacrée à votre propre veille" },
+    { label: 'Outils', value: "L'assistant fourni par l'entreprise (ChatGPT, Claude, Gemini, Microsoft Copilot ou Vibe) et une alerte Google" },
+    { label: 'Tarif', value: "1 980 € HT la séance, montant identique de un à douze stagiaires" },
+    { label: 'Financement', value: "Organisme certifié Qualiopi ; l'OPCO examine la demande d'après les règles de la branche, avant la séance" },
+    { label: 'Prérequis', value: "Venir avec le sujet à suivre, la liste des sources déjà lues et un accès à l'assistant de l'entreprise" },
+  ],
+  intro: "Le Sprint IA Veille dure trois heures et vise un résultat précis : chaque participant repart avec sa veille personnelle déjà en marche. Elle tient en un sujet, une dizaine de sources, une recherche programmée chaque semaine dans l'assistant de l'entreprise et une première note d'une page, vérifiée pendant la séance. Au 7 octobre 2026, les cinq grands assistants savent exécuter une consigne à heure fixe, avec des limites qui varient selon l'offre souscrite : la séance part donc de celui que vous payez déjà. Le format convient aux commerciaux, chefs de produit et consultants qui suivent leur marché par eux-mêmes ; la formation veille d'un jour traite le dispositif d'une équipe.",
   guide: {
     kicker: "Guide terrain",
     h2: "Trois heures suffisent pour mettre une veille personnelle en marche",
@@ -33,6 +48,13 @@ export default {
           "Une tâche planifiée relit la même consigne à chaque exécution. Une consigne qui oublie la période risque de ramener les mêmes pages ; une consigne qui ne nomme aucune source risque de mêler presse spécialisée et contenus promotionnels. La consigne du Sprint précise trois éléments : les informations publiées depuis la dernière exécution, une liste de sources prioritaires, et une note courte où chaque ligne renvoie à sa source datée.",
           "Une alerte Google complète la tâche sur les noms qui comptent le plus pour vous. Elle envoie un e-mail quand la recherche Google trouve de nouveaux résultats, avec une fréquence, une langue, une région et des types de sites réglables.",
           "Pour les questions d'actualité, la recherche web de Mistral Vibe puise chez l'AFP et l'Associated Press, partenaires de l'éditeur. Quel que soit l'outil, demandez dans la consigne le lien et la date de chaque information : la note les reprend tels quels.",
+        ],
+      },
+      {
+        h3: "La note personnelle résume en deux lignes et renvoie à l'article",
+        paras: [
+          "Une note de veille utile résume et pointe vers la source. Recopier des articles entiers dans un document, puis le transmettre à plusieurs collègues, revient à constituer un panorama de presse, que la loi soumet en France à une licence gérée par le Centre français d'exploitation du droit de copie (CFC). Le Sprint fixe donc une règle simple : deux lignes par information, écrites avec vos mots, et le lien vers l'article d'origine.",
+          "La consigne elle-même mérite la même prudence. Elle contient souvent les noms de vos clients, de vos concurrents ou de vos projets, c'est-à-dire une partie de votre stratégie commerciale. Elle se programme depuis le compte professionnel, sur une offre dont les échanges ne servent pas à entraîner les modèles, et chacun vérifie pendant la séance le réglage correspondant de son assistant.",
         ],
       },
       {
@@ -153,6 +175,8 @@ export default {
       items: [
         "Choisir le jour et l'heure de lecture",
         "Ranger les notes dans un même dossier ou un même projet",
+        "Les informations que votre charte interdit de glisser dans une consigne : noms de clients, priorités commerciales",
+        "Rendez-vous à trente jours : garder la tâche, la corriger ou l'arrêter",
         "Savoir quand passer à la formation d'un jour",
       ],
       exercise: "Fixer votre créneau de lecture hebdomadaire et l'emplacement de vos notes.",
@@ -171,7 +195,7 @@ export default {
       a: "Une veille personnelle complète sur un sujet : trois questions, une dizaine de sources, une alerte Google, une recherche programmée chaque semaine dans votre assistant d'IA et une première note vérifiée. La semaine suivante, la note arrive à l'heure choisie, et votre travail se limite à la lire et à ouvrir les liens des informations que vous utilisez.",
     },
     {
-      q: "Le Sprint IA Veille de 3 heures suffit-il, ou faut-il suivre la formation veille d'une journée ?",
+      q: "Trois heures de Sprint IA Veille suffisent-elles, ou faut-il la formation veille d'une journée ?",
       a: "Tout dépend de qui produit la veille et pour qui. Le Sprint sert une personne et un sujet ; la journée sert une équipe et un plan de veille. En trois heures, vous installez votre propre routine. En une journée, une équipe construit un dispositif complet : questions reliées aux décisions de la direction, plusieurs sujets, recherche approfondie, protocole de vérification et règles de diffusion, dont la licence de panorama de presse du CFC.",
     },
     {
@@ -179,21 +203,55 @@ export default {
       a: "ChatGPT propose des tâches planifiées sur toutes ses offres, avec des limites sur l'offre gratuite. Claude les réserve à ses offres Pro, Max, Team et Enterprise. Gemini accepte 10 actions programmées actives, et Microsoft Copilot 10 invites planifiées avec une licence Microsoft Copilot. Mistral Vibe propose des tâches planifiées en préversion publique. Le Sprint se déroule sur l'outil que votre entreprise fournit.",
     },
     {
-      q: "Faut-il un abonnement payant pour suivre le Sprint IA Veille ?",
+      q: "Le Sprint IA Veille demande-t-il un abonnement payant ?",
       a: "Pas forcément, mais l'offre change les possibilités. Sur ChatGPT Free, trois tâches peuvent être actives, chacune limitée à une exécution quotidienne sans heure précise. Claude ne propose la planification que sur ses offres payantes, et Copilot exige une licence Microsoft Copilot. Indiquez votre outil et votre offre avant la session : la séquence de programmation s'y adapte.",
     },
     {
-      q: "Le Sprint IA Veille peut-il se faire à distance ?",
+      q: "Le Sprint IA Veille se déroule-t-il aussi en visioconférence ?",
       a: "Oui. Le Sprint se déroule en présentiel ou en distanciel. Chaque participant travaille sur son propre compte, programme sa tâche pendant la séance et repart avec une veille qui tourne déjà.",
     },
     {
       q: "Combien coûte le Sprint IA Veille et peut-il être pris en charge par un OPCO ?",
-      a: "Le Sprint IA Veille est facturé 1 980 € HT la session de 3 heures, en présentiel ou à distance, jusqu'à 12 participants en intra ; TVA de 20 % en sus. Il fait partie des actions de formation couvertes par la certification Qualiopi de Masteria : votre OPCO peut le financer si les critères de votre branche le permettent, ce qu'il faut vérifier avant toute demande. Masteria vous remet programme et convention ; l'entreprise envoie ensuite son dossier à l'OPCO, avant la date du Sprint.",
+      a: "La séance de trois heures revient à 1 980 € HT hors TVA, sur place ou en visioconférence, et ce montant ne change pas entre un inscrit et douze. Comme toutes les formations de Masteria, organisme certifié Qualiopi, elle peut être financée par votre OPCO lorsque les critères de votre branche le permettent, ce qu'il faut vérifier avant toute demande. Masteria vous remet programme et convention ; l'entreprise envoie ensuite son dossier à l'OPCO, avant la date du Sprint.",
+    },
+    {
+      q: "Le Sprint IA Veille convient-il à une veille réglementaire ?",
+      a: "Oui, pour un périmètre étroit : les publications d'une autorité de votre secteur, les textes d'une famille de normes, les appels d'offres d'une région. La tâche planifiée signale ce qui vient de paraître et le résume. Pour toute décision, l'information se vérifie ensuite dans le texte officiel, sur Légifrance, EUR-Lex ou le site de l'autorité, car un résumé peut omettre une date d'application ou une exception. Une veille juridique complète, avec plusieurs dizaines de sources et une diffusion à toute une direction, relève de la formation d'un jour.",
     },
     {
       q: "Que faut-il préparer avant le Sprint IA Veille ?",
       a: "Apportez le sujet que vous voulez suivre et la liste des sources que vous lisez déjà. Vérifiez aussi votre accès à l'assistant d'IA de l'entreprise : si vous ignorez votre offre (gratuite, Business, licence Copilot), demandez-la à votre service informatique, car les possibilités de planification en dépendent.",
     },
+  ],
+  tarifs: {
+    titre: "Le prix d'un Sprint IA Veille, pour un participant ou pour douze",
+    paras: [
+      "Le tarif de 1 980 € HT vaut pour toute la séance, de un à douze stagiaires. Il inclut l'échange préalable, pendant lequel nous relevons l'assistant et l'offre de chaque participant, puisque les possibilités de planification en dépendent, des exemples de sources choisis dans votre marché, la trame de consigne remise à chacun et l'attestation de fin de séance.",
+      "Prenons une équipe commerciale de huit chargés d'affaires, chacun avec ses propres clients à suivre : la séance revient à 247,50 € HT par personne, et chacun repart avec une tâche déjà programmée. Votre OPCO peut financer la séance si ses critères le permettent ; Masteria, certifié Qualiopi, vous envoie programme et convention, que l'entreprise adresse à l'OPCO avant la date retenue.",
+    ],
+  },
+  cta: {
+    milieu: "Chaque participant repart avec une recherche qui tourne déjà : dites-nous quels sujets vos équipes suivent aujourd'hui à la main.",
+    fin: {
+      titre: "Préparons un Sprint IA Veille autour de vos sujets",
+      texte: "Indiquez le nombre de participants, l'assistant que l'entreprise leur fournit et l'offre souscrite, et deux ou trois sujets qu'ils surveillent déjà : clients, concurrents, appels d'offres, réglementation. Nous proposons une date et un déroulé ajusté à ces sujets.",
+    },
+  },
+  apres: {
+    titre: "Après le Sprint : une veille d'équipe qui alimente un canal partagé",
+    texte: "Quand plusieurs personnes suivent les mêmes concurrents chacune de leur côté, la veille gagne à devenir commune : un agent qui interroge chaque matin les sources retenues, écarte les doublons, classe les informations par sujet et publie une synthèse dans le canal Teams ou Slack de l'équipe, avec le lien de chaque article. Masteria peut construire ce dispositif sur vos outils et former la personne qui le fera évoluer. Pour ce dispositif, qui relève du développement, le principe est simple : il n'est pas finançable par votre OPCO, et son prix forfaitaire se fixe quand les sujets et les sources sont arrêtés.",
+  },
+  terrain: {
+    titre: "Sur le terrain : la planification retenue pour la veille quotidienne",
+    texte: "Une interprofession agricole du Sud a confié à Masteria, pendant trois jours de septembre 2026, la formation de seize personnes, de la promotion à la gestion. Leur atelier de promotion et de communication comportait un exercice de veille. Dans sa fiche de fin de formation, la responsable du numérique a cité la planification des tâches dans ChatGPT comme la fonction qui lui servirait pour sa veille de chaque jour. C'est le geste que le Sprint IA Veille installe en trois heures.",
+    lien: '/etudes-de-cas-ia#mission-interprofession-agricole',
+  },
+  liensAssocies: [
+    { label: "Formation veille avec l'IA : le dispositif d'une équipe en une journée", href: '/formation-ia-veille' },
+    { label: "Automatiser sa veille avec l'IA : notre guide", href: '/automatiser-sa-veille-ia' },
+    { label: "La veille IA que Masteria publie chaque jour ouvré", href: '/veille-ia' },
+    { label: "L'IA pour les équipes communication", href: '/formation-ia-communication' },
+    { label: 'Le Sprint IA et ses six formats', href: '/formation-sprint-ia' },
   ],
   sources: [
     { name: "OpenAI Help Center : Scheduled tasks in ChatGPT", url: "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt" },

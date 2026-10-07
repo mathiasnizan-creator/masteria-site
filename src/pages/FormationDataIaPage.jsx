@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BarChart3, Building2, Check, Eye, FileSpreadsheet, GraduationCap,
+  ArrowRight, BarChart3, Building2, Check, Eye, Factory, FileSpreadsheet, GraduationCap,
   Landmark, Layers, ListChecks, MapPin, ShieldCheck, Target, Workflow,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -17,17 +16,23 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  *
  * ANTI-CANNIBALISATION :
  *  - CETTE page = FORMER les équipes métier à analyser leurs données avec
- *    l'IA générative (fichiers réels, reporting), public non-data ;
+ *    l'IA générative (fichiers de travail, reporting), public non-data ;
+ *  - /formation-gouvernance-donnees = gouverner et fiabiliser les données
+ *    (patrimoine, rôles, référentiels, qualité) : angle distinct, lien croisé ;
  *  - /conseil-data-ia = les MISSIONS data (audit, pipelines, mise en qualité) ;
  *  - /formation-ia-finance = le métier finance complet ;
  *  - /formation-automatisation-ia et /formation-n8n = la collecte automatisée.
  *
  * DOCTRINE CALCUL (mémoire maison) : ne jamais dire « l'IA est faible en
- * calcul » — les assistants analysent en ÉCRIVANT ET EXÉCUTANT du code sur
+ * calcul » : les assistants analysent en ÉCRIVANT ET EXÉCUTANT du code sur
  * le fichier fourni, ce qui rend les agrégats fiables ; les vraies limites
- * sont les très gros volumes et le contrôle de ce qui engage. Le tableau
- * « fiable / à challenger / à proscrire » porte cette doctrine.
- * AUCUN client cité (règle d'anonymat absolue du site).
+ * sont les très gros volumes et le contrôle de ce qui engage.
+ * Réécrite le 07/10/2026 (texte propre, faits datés) : outils au 07/10/2026
+ * (modes de Copilot dans Excel, tableurs de Vibe depuis le 22/09/2026,
+ * FAITS-OUTILS-2026-10-07) ; deux cas cités avec lien vers leur ancre
+ * (mission immobilier-etudes, cas industrie) ; FounderNote et OfficialSources
+ * remplacés par une signature et des sources propres à la page.
+ * AUCUN client nommé (règle d'anonymat absolue du site).
  * Entités Wikipédia vérifiées 200 le 2026-08-30.
  */
 
@@ -35,8 +40,8 @@ const SLUG = 'formation-data-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Formation data IA : analysez vos données sans coder | Masteria'
-const META_DESC = "Formation data IA en 2 jours : analyser vos fichiers réels avec l'IA (exports, tableaux, verbatims), fiabiliser les chiffres, automatiser le reporting. Qualiopi, OPCO."
+const META_TITLE = 'Formation data IA : analyse de données sans code | Masteria'
+const META_DESC = "Formation data IA en 2 jours : analyser vos exports avec l'IA, vérifier chaque chiffre, reconstruire votre reporting. Copilot, ChatGPT, Claude, Gemini."
 const KEYWORDS = "formation data ia, formations data ia, formation data ia entreprise, formation ia analyse de données, analyser ses données avec l'ia, formation ia data"
 
 /* ───────── Styles partagés ───────── */
@@ -51,6 +56,7 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
+const srcLinkStyle = { color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }
 
 const thStyle = { textAlign: 'left', padding: '12px 16px', fontSize: 12.5, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#6B7280', borderBottom: '2px solid #E5E7EB', fontFamily: 'Nunito, sans-serif' }
 const tdStyle = { padding: '14px 16px', fontSize: 14.5, color: '#374151', lineHeight: 1.6, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }
@@ -68,33 +74,33 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: FileSpreadsheet, label: 'Sur vos fichiers réels : exports, tableaux, verbatims' },
-  { icon: Building2, label: '2 jours en intra, dans vos locaux ou à distance' },
-  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: GraduationCap, label: 'Qualiopi · actions de formation' },
+  { icon: FileSpreadsheet, label: 'Vos exports, tableaux et verbatims' },
+  { icon: Building2, label: 'Deux jours en intra, sur site ou en visio' },
+  { icon: MapPin, label: 'France · Europe · États-Unis · Inde' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Durée', value: "2 jours (14 h) en intra ; format 1 jour « analyser ses fichiers » possible au cadrage" },
-  { label: 'Pour qui', value: "Équipes métier qui vivent dans les exports : contrôle de gestion, ops, marketing, commerce, RH, direction ; aucun prérequis data" },
-  { label: 'Outils', value: "Ceux de votre environnement : Copilot dans Excel, ChatGPT et son analyse de fichiers, Claude, Gemini dans Sheets" },
-  { label: 'Méthode', value: "Chaque participant analyse ses propres fichiers, apprend à vérifier les chiffres, puis reconstruit son reporting récurrent" },
-  { label: 'Livrables', value: "Analyses reproductibles, gabarits de reporting outillés, check-list de vérification d'un chiffre, règles d'usage écrites" },
-  { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable OPCO ; devis sous 24 h" },
+  { label: 'Durée', value: "Quatorze heures réparties sur deux journées, en intra ; une version d'une journée centrée sur l'analyse se décide au cadrage" },
+  { label: 'Pour qui', value: "Les services qui vivent dans les exports : contrôle de gestion, opérations, marketing, commerce, RH, direction ; aucun bagage data exigé" },
+  { label: 'Outils', value: "Ceux de vos licences : Copilot dans Excel, ChatGPT et son analyse de fichiers, Claude, Gemini dans Sheets, les tableurs de Vibe" },
+  { label: 'Méthode', value: "Chacun analyse ses propres fichiers, apprend à contrôler un chiffre, puis reconstruit son reporting récurrent" },
+  { label: 'Livrables', value: "Analyses reproductibles, gabarits de reporting, check-list de vérification, page de règles de l'équipe" },
+  { label: 'Tarif', value: "1 980 € HT la journée, facturée au groupe ; 3 960 € HT le programme complet ; devis le lendemain du cadrage" },
 ]
 
 /* ───────── Sommaire ───────── */
 
 const SOMMAIRE = [
   ['#pourquoi', 'Pourquoi maintenant'],
-  ['#programme', 'Programme des 2 jours'],
-  ['#fiabilite', 'Fiable ou pas'],
-  ['#cas-usage', "Cas d'usage"],
-  ['#tarif', 'Tarif'],
-  ['#lexique', 'Lexique'],
-  ['#faq', 'FAQ'],
+  ['#programme', 'Les deux jours'],
+  ['#fiabilite', 'Grille de confiance'],
+  ['#cas-usage', 'Ateliers types'],
+  ['#tarif', 'Prix'],
+  ['#lexique', 'Vocabulaire'],
+  ['#faq', 'Questions'],
 ]
 
 /* ───────── Pourquoi maintenant (4 cartes) ───────── */
@@ -102,23 +108,23 @@ const SOMMAIRE = [
 const POURQUOI = [
   {
     icon: FileSpreadsheet,
-    title: 'Vos données dorment dans des exports',
-    desc: "Ventes, campagnes, tickets, temps, budgets : chaque équipe accumule des fichiers qu'elle n'a ni le temps ni l'outillage d'exploiter. Ce gisement est le premier terrain de jeu de l'IA générative, sans projet data ni infrastructure.",
+    title: 'Les exports dorment dans les dossiers partagés',
+    desc: "Ventes, campagnes, tickets, temps passés, budgets : chaque service accumule des fichiers qu'il n'a ni le temps ni la méthode d'exploiter. C'est le premier terrain de l'IA générative, sans projet data ni infrastructure nouvelle.",
   },
   {
     icon: BarChart3,
-    title: "L'IA analyse en exécutant du code",
-    desc: "Sur un fichier fourni, un assistant moderne n'estime pas les chiffres : il écrit du code, l'exécute sur vos données et restitue le résultat. C'est ce qui rend les agrégats, les tris et les croisements fiables, et c'est la première chose que la formation montre.",
+    title: "L'assistant calcule en exécutant du code",
+    desc: "Devant un fichier fourni, un assistant actuel n'estime pas : il écrit un petit programme, le fait tourner sur vos lignes et rend le résultat. Totaux, tris et croisements sortent donc d'un calcul, et la formation commence par le montrer.",
   },
   {
     icon: Layers,
-    title: 'Les outils sont déjà chez vous',
-    desc: "Copilot dans Excel, l'analyse de fichiers de ChatGPT, Claude et ses artefacts, Gemini dans Sheets : votre environnement actuel sait déjà faire l'essentiel. La formation travaille sur vos licences réelles, pas sur un outil de plus.",
+    title: 'Vos licences savent déjà le faire',
+    desc: "Les tableurs de Vibe depuis le 22 septembre 2026, Gemini dans Sheets, Claude et ses artefacts, ChatGPT et son analyse de fichiers, Copilot intégré à Excel : l'outil est souvent déjà payé. Les ateliers partent de vos licences, sans logiciel supplémentaire.",
   },
   {
     icon: ShieldCheck,
-    title: 'Les vraies limites se gèrent',
-    desc: "Les très gros volumes appellent des outils data dédiés, et tout chiffre qui engage (publication, décision, client) se vérifie avant de circuler. La formation installe précisément ces réflexes : savoir ce qui est fiable, et contrôler le reste.",
+    title: 'Les limites se connaissent et se gèrent',
+    desc: "Les volumes massifs demandent des outils data dédiés, et un chiffre qui engage l'entreprise se vérifie avant de circuler. La formation installe ces deux réflexes : savoir où l'IA est fiable, contrôler le reste.",
   },
 ]
 
@@ -128,39 +134,39 @@ const PROGRAMME = [
   {
     jour: 'Jour 1',
     titre: 'Analyser ses fichiers, vérifier ses chiffres',
-    resume: "De la question de données à l'analyse fiable, sur les exports réels de chaque participant.",
+    resume: "De la question posée à l'analyse vérifiée, sur les exports que chaque participant apporte.",
     matin: [
-      { t: "Préparer un fichier que l'IA comprend", d: "Colonnes nommées, formats propres, une ligne par observation : dix minutes de préparation qui changent toute la qualité des analyses." },
-      { t: 'Poser une vraie question de données', d: "Passer de « analyse ce fichier » à une demande précise : période, segment, indicateur, comparaison attendue, format de sortie." },
-      { t: "Lire ce que l'IA a réellement fait", d: "Le code exécuté, les étapes de calcul, les hypothèses prises : comprendre la mécanique pour pouvoir faire confiance, ou corriger." },
-      { t: 'Graphiques et synthèses qui parlent', d: "Obtenir le bon visuel (évolution, répartition, comparaison) et une synthèse rédigée dans votre format, prête à relire." },
-      { t: 'Atelier : premier export analysé', d: "Chaque participant apporte un fichier réel de son poste et en tire trois enseignements vérifiés avant la pause." },
+      { t: "Rendre un fichier lisible pour l'assistant", d: "Des colonnes nommées, des formats propres, une ligne par observation : dix minutes de préparation qui changent la qualité de tout ce qui suit." },
+      { t: 'Formuler une question de données', d: "Passer de « analyse ce fichier » à une demande précise : période, segment, indicateur, comparaison attendue, forme du résultat." },
+      { t: "Lire ce que l'outil a calculé", d: "Le code exécuté, les étapes, les hypothèses retenues : comprendre la mécanique pour accorder sa confiance, ou corriger." },
+      { t: 'Des graphiques et une synthèse lisibles', d: "Choisir le bon visuel (évolution, répartition, comparaison) et obtenir un commentaire rédigé dans votre format, prêt à relire." },
+      { t: 'Atelier : un premier export passé au crible', d: "Chacun apporte un fichier de son poste et en tire trois constats vérifiés avant la pause." },
     ],
     apresmidi: [
-      { t: 'Croiser deux sources', d: "Ventes et objectifs, tickets et effectifs, campagnes et revenus : la jointure expliquée simplement, avec ses pièges (clés, doublons, périmètres)." },
-      { t: 'Tableaux croisés et cohortes simples', d: "Les analyses qui répondent aux vraies questions du métier : par segment, par période, par équipe, par génération de clients." },
-      { t: 'Les erreurs classiques et comment les voir', d: "Dates mal lues, doublons, colonnes ambiguës, moyennes trompeuses : le bêtisier des analyses fausses, et les contrôles qui les attrapent." },
-      { t: 'Vérifier un chiffre avant de le diffuser', d: "La check-list maison : recouper avec un total connu, refaire le calcul autrement, tester un cas limite. Ce qui engage se vérifie, toujours." },
-      { t: 'Atelier : une analyse complète de bout en bout', d: "Question, préparation, analyse, vérification, synthèse : chacun déroule la méthode entière sur son fichier." },
+      { t: 'Croiser deux sources', d: "Ventes et objectifs, tickets et effectifs, campagnes et chiffre d'affaires : la jointure expliquée simplement, avec ses pièges (clés, doublons, périmètres)." },
+      { t: 'Tableaux croisés et cohortes', d: "Les analyses qui répondent aux questions du métier : par segment, par période, par équipe, par génération de clients." },
+      { t: 'Repérer une analyse fausse', d: "Dates mal lues, doublons, colonnes ambiguës, moyennes trompeuses : les erreurs fréquentes et les contrôles qui les attrapent." },
+      { t: 'Vérifier avant de diffuser', d: "La check-list maison : recouper avec un total connu, refaire le calcul par un autre chemin, tester un cas limite. Tout chiffre qui engage passe par là." },
+      { t: 'Atelier : une analyse complète', d: "Question, préparation, calcul, vérification, synthèse : chacun déroule toute la méthode sur son fichier." },
     ],
   },
   {
     jour: 'Jour 2',
-    titre: 'Industrialiser le reporting, cadrer les données',
-    resume: "Du rapport récurrent reconstruit à la gouvernance des données, jusqu'au plan d'action de l'équipe.",
+    titre: 'Industrialiser le reporting',
+    resume: "Du rapport récurrent reconstruit aux règles de l'équipe, jusqu'au plan d'action.",
     matin: [
-      { t: 'Le rapport récurrent, reconstruit', d: "Votre reporting mensuel ou hebdomadaire refait avec l'IA : gabarit stable, chiffres recalculés à chaque édition, commentaire pré-rédigé à relire." },
-      { t: 'Le contexte externe avec la recherche approfondie', d: "Compléter vos chiffres internes par un état du marché sourcé : la recherche approfondie des assistants, et comment vérifier ses sources." },
-      { t: 'Du tableau à la présentation', d: "Transformer une analyse en support de réunion : messages clés, visuels, structure. Le chiffre devient une décision préparée." },
-      { t: 'Un tableau de bord léger, sans projet BI', d: "Quand un fichier suivi suffit : construire une vue simple et datée qui se met à jour à chaque nouvel export, et savoir quand un vrai outil BI se justifie." },
-      { t: 'Atelier : son reporting reconstruit', d: "Chaque participant repart avec son rapport récurrent outillé : gabarit, demandes types, points de vérification." },
+      { t: "Le rapport récurrent, refait avec l'IA", d: "Votre reporting mensuel ou hebdomadaire reconstruit : gabarit stable, chiffres recalculés à chaque édition, commentaire préparé à relire." },
+      { t: 'Le contexte marché, sourcé', d: "Compléter les chiffres internes par un état du marché grâce à la recherche approfondie des assistants, en vérifiant chacune de ses sources." },
+      { t: "De l'analyse au support de réunion", d: "Messages clés, visuels, structure : transformer un tableau en décision préparée pour le comité ou pour le client." },
+      { t: 'Une vue de suivi sans projet BI', d: "Construire une vue simple et datée, alimentée à chaque nouvel export, et savoir quand un outil d'informatique décisionnelle (BI) devient nécessaire." },
+      { t: 'Atelier : votre reporting outillé', d: "Chacun repart avec son rapport récurrent prêt à servir : gabarit, demandes types, points de contrôle." },
     ],
     apresmidi: [
-      { t: 'Automatiser la collecte, raisonnablement', d: "Quand l'export manuel devient le goulot : ce que les tâches planifiées des assistants couvrent, et quand un orchestrateur comme n8n prend le relais." },
-      { t: 'Gouvernance des données dans les outils IA', d: "Versions entreprise, périmètres d'accès, données personnelles dans les fichiers (RGPD), ce qui ne monte jamais dans un outil : les règles s'écrivent." },
-      { t: "Partager sans perdre la maîtrise", d: "Analyses rangées dans les espaces d'équipe, conventions de nommage, qui met à jour quoi : l'analyse devient un actif collectif." },
-      { t: "Atelier : les règles data de l'équipe", d: "Chaque équipe écrit sa page de règles : fichiers autorisés, vérifications minimales, diffusion." },
-      { t: "Plan d'action collectif", d: "Les trois analyses ou rapports à outiller ensuite, qui les porte, à quelle échéance ; la liste part avec vous." },
+      { t: 'Automatiser la collecte, avec mesure', d: "Quand l'export manuel devient le goulot : ce que couvrent les tâches planifiées des assistants, et quand un orchestrateur comme n8n prend le relais." },
+      { t: "Les fichiers dans les outils IA : les règles", d: "Version professionnelle, droits d'accès, données personnelles présentes dans les fichiers (RGPD), ce qu'on ne confie jamais à un assistant : l'équipe écrit ses règles." },
+      { t: 'Partager les analyses', d: "Espaces d'équipe, conventions de nommage, qui actualise quoi : une analyse utile devient un bien commun." },
+      { t: "Atelier : la page de règles de l'équipe", d: "Chaque équipe rédige sa page : fichiers autorisés, vérifications minimales, circuit de diffusion." },
+      { t: "Le plan d'action", d: "Les trois analyses ou rapports à outiller ensuite, avec un responsable et une date pour chacun." },
     ],
   },
 ]
@@ -169,118 +175,141 @@ const PROGRAMME = [
 
 const FIABILITE_TABLE = [
   {
-    situation: "Calculs, tris et agrégats sur un fichier fourni",
+    situation: 'Calculs, tris et agrégats sur un fichier fourni',
     verdict: 'Fiable',
-    detail: "L'assistant écrit et exécute du code sur vos données : le total, la moyenne, le classement sortent d'un calcul réel, pas d'une estimation. On apprend quand même à lire ce code.",
+    detail: "L'assistant exécute du code sur vos lignes : total, moyenne et classement viennent d'un calcul, sans estimation. On apprend malgré tout à relire ce code.",
   },
   {
-    situation: "Interprétations, tendances et explications",
+    situation: 'Interprétations, tendances, explications',
     verdict: 'À challenger',
-    detail: "L'IA propose des lectures plausibles de vos chiffres ; certaines sont justes, d'autres passent à côté du contexte métier. C'est un brouillon d'analyse, que votre connaissance du terrain valide.",
+    detail: "L'outil propose des lectures plausibles ; certaines tombent juste, d'autres ignorent le contexte métier. Traitez-les comme un brouillon que votre connaissance du terrain valide.",
   },
   {
-    situation: "Chiffres « de mémoire », sans fichier fourni",
+    situation: 'Chiffres « de mémoire », sans fichier',
     verdict: 'À proscrire',
-    detail: "Un chiffre sorti de la mémoire du modèle (marché, statistique, benchmark) peut être daté ou inventé. La règle : pas de fichier ou de source vérifiable, pas de chiffre dans un document.",
+    detail: "Un chiffre tiré de la mémoire du modèle (marché, statistique, comparaison) peut être daté ou inventé. Règle d'équipe : sans fichier ni source vérifiable, aucun chiffre dans un document.",
   },
   {
-    situation: "Très gros volumes et données temps réel",
+    situation: 'Volumes massifs, flux en continu',
     verdict: 'Outil data dédié',
-    detail: "Au-delà des fichiers de travail (des dizaines de milliers de lignes, des flux continus), les outils BI et big data prennent le relais. La formation apprend à reconnaître cette frontière, notre conseil data prend la suite.",
+    detail: "Au-delà des fichiers de travail (des dizaines de milliers de lignes, des flux continus), les outils de BI et les bases de données prennent le relais. La formation apprend à reconnaître cette limite ; notre conseil data s'occupe de la suite.",
   },
   {
-    situation: "Chiffres qui engagent : publication, client, décision",
+    situation: 'Chiffres qui engagent : publication, client, décision',
     verdict: 'Vérification systématique',
-    detail: "Quel que soit l'outil, un chiffre qui sort de l'entreprise ou fonde une décision passe par la check-list de vérification : recoupement, recalcul, cas limite. C'est une règle d'équipe, écrite en formation.",
+    detail: "Avec n'importe quel outil, un chiffre qui sort de l'entreprise ou fonde une décision passe la check-list : recoupement, second calcul, cas limite. L'équipe l'inscrit dans ses règles.",
   },
 ]
 
 /* ───────── Cas d'usage (6 cartes) ───────── */
 
 const CAS_USAGE = [
-  { icon: BarChart3, title: "L'export de ventes qui parle", desc: "Meilleures références, saisonnalité, clients qui décrochent : l'export mensuel devient trois décisions argumentées, chiffres vérifiés." },
-  { icon: ListChecks, title: 'Le reporting mensuel en une heure', desc: "Le rapport récurrent se reconstruit : gabarit stable, calculs refaits à chaque édition, commentaire pré-rédigé qu'on relit au lieu de tout compiler." },
-  { icon: Eye, title: 'Les verbatims clients quantifiés', desc: "Avis, réponses ouvertes, tickets : l'IA classe les motifs, compte les occurrences et illustre chaque thème de citations réelles." },
-  { icon: Target, title: 'Le budget suivi sans y passer ses soirées', desc: "Réalisé contre prévu, écarts expliqués, alertes sur les lignes qui dérivent : le suivi budgétaire outillé sur vos propres tableaux." },
-  { icon: FileSpreadsheet, title: 'Le fichier mis en qualité', desc: "Doublons, formats incohérents, champs manquants : l'IA diagnostique et corrige sous votre contrôle, avant que le fichier serve." },
-  { icon: Workflow, title: 'La vue qui se met à jour', desc: "Un tableau de bord léger, daté, alimenté à chaque nouvel export : la visibilité d'équipe sans lancer un projet BI." },
+  { icon: BarChart3, title: "L'export de ventes qui parle", desc: "Meilleures références, saisonnalité, clients qui décrochent : l'export mensuel débouche sur trois décisions argumentées, chiffres vérifiés." },
+  { icon: ListChecks, title: 'Le reporting mensuel sans copier-coller', desc: "Le rapport récurrent se reconstruit : gabarit stable, calculs refaits à chaque édition, commentaire préparé qu'on relit au lieu de tout compiler." },
+  { icon: Eye, title: 'Les verbatims clients comptés', desc: "Avis, réponses ouvertes, tickets : l'outil classe les motifs, compte les occurrences et illustre chaque thème par des citations tirées du fichier." },
+  { icon: Target, title: 'Le budget suivi sans y passer ses soirées', desc: "Réalisé contre prévu, écarts expliqués, alerte sur les lignes qui dérivent : le suivi budgétaire outillé sur vos propres tableaux." },
+  { icon: FileSpreadsheet, title: 'Le fichier remis en état', desc: "Doublons, formats incohérents, champs vides : l'outil diagnostique et corrige sous votre contrôle, avant que le fichier serve à une analyse." },
+  { icon: Workflow, title: 'La vue qui se met à jour', desc: "Une vue de suivi légère, datée, alimentée à chaque nouvel export : la visibilité d'équipe sans projet de BI." },
+]
+
+/* ───────── Cas publiés (faits de src/data/missions-formation.js et etudes-de-cas.js) ───────── */
+
+const CAS = [
+  {
+    icon: Building2,
+    secteur: 'Groupe immobilier · formation individuelle',
+    texte: "Une journée en tête-à-tête, en septembre 2026, pour la responsable des études d'un groupe immobilier : ses tableaux de ventes et ses parts de marché interrogés en langage courant, le fichier clients rendu anonyme avant tout import. Elle a terminé avec une note de lecture illustrée de graphiques et une présentation des résultats prête pour PowerPoint.",
+    href: '/etudes-de-cas-ia#mission-immobilier-etudes',
+    lien: 'Lire le récit de cette journée',
+  },
+  {
+    icon: Factory,
+    secteur: 'Groupe industriel du packaging · managers',
+    texte: "Les managers pilotes formés à Microsoft Copilot (anciennement Microsoft 365 Copilot) ont fait leurs exercices Excel sur les tableaux internes du groupe, tarifs, volumes d'activité, coûts et fichier du personnel, plutôt que sur des exemples génériques. Dans leurs retours écrits, c'est le point qu'ils citent en premier.",
+    href: '/etudes-de-cas-ia#industrie',
+    lien: 'Lire le cas industriel',
+  },
 ]
 
 /* ───────── FAQ ───────── */
 
 const FAQ = [
   {
-    q: "Qu'est-ce que la formation data IA de Masteria ?",
-    a: "Deux jours pour apprendre aux équipes métier à analyser leurs données avec l'IA générative : préparer un fichier, poser une vraie question de données, lire ce que l'IA a calculé, vérifier un chiffre avant de le diffuser, puis industrialiser le reporting récurrent et écrire les règles data de l'équipe. Chaque participant travaille sur ses propres exports et repart avec son rapport récurrent outillé. La formation est certifiée Qualiopi et finançable par votre OPCO.",
+    q: 'Que couvre la formation data IA de Masteria ?',
+    a: "Deux jours pendant lesquels des équipes métier apprennent à faire parler leurs fichiers avec l'IA générative : préparer un fichier, formuler une question précise, lire ce que l'outil a calculé, vérifier un chiffre avant de le diffuser, puis reconstruire le reporting récurrent et écrire les règles de l'équipe. Chacun travaille sur ses propres exports et repart avec son rapport outillé. La session relève de notre certification Qualiopi.",
   },
   {
-    q: "L'IA est-elle fiable pour analyser des données chiffrées ?",
-    a: "Oui, à une condition que la formation explique en détail : sur un fichier fourni, un assistant moderne ne calcule pas « de tête », il écrit du code, l'exécute sur vos données et restitue le résultat. Les totaux, moyennes, tris et croisements sont donc des calculs réels. Ce qui reste à contrôler : les interprétations (plausibles mais à valider par votre connaissance du métier), les chiffres cités sans fichier source (à proscrire), et tout ce qui engage, qui passe par une check-list de vérification. Le tableau de cette page résume cette grille.",
+    q: "Peut-on se fier à l'IA pour analyser des chiffres ?",
+    a: "Oui, sous une condition expliquée en détail pendant les deux jours : sur un fichier fourni, l'assistant ne calcule pas de tête, il exécute du code sur vos données. Totaux, moyennes, tris et croisements sont donc de vrais calculs. Restent à contrôler les interprétations, plausibles mais à confronter à votre connaissance du métier, les chiffres cités sans fichier, à proscrire, et tout ce qui engage, qui passe par une check-list. La grille de confiance de cette page résume ces règles.",
   },
   {
-    q: 'Faut-il des compétences en data ou en statistiques ?',
-    a: "Non : le public visé est l'équipe métier qui vit dans les exports sans être une équipe data : contrôle de gestion, ops, marketing, commerce, RH, direction. Il faut savoir manipuler ses fichiers du quotidien, rien de plus ; les notions utiles (jointure, cohorte, moyenne trompeuse) sont expliquées simplement, sur vos données. Les profils analystes y trouvent aussi leur compte : le cadrage ajuste le niveau et pousse plus loin sur la vérification et l'industrialisation.",
+    q: 'Faut-il être analyste ou statisticien pour suivre ?',
+    a: "Non. La formation vise les équipes métier qui vivent dans les exports sans être des équipes data : contrôle de gestion, opérations, marketing, commerce, RH, direction. Savoir manipuler ses fichiers du quotidien suffit ; jointure, cohorte ou moyenne trompeuse sont expliquées simplement, sur vos données. Un public d'analystes y trouve aussi son compte : le cadrage relève alors le niveau et insiste sur la vérification et l'industrialisation.",
   },
   {
-    q: 'Sur quels outils la formation se déroule-t-elle ?',
-    a: "Sur votre environnement réel, en versions entreprise : Copilot dans Excel, ChatGPT et son analyse de fichiers, Claude et ses artefacts pour les visualisations, Gemini dans Sheets. Les fondamentaux (préparer un fichier, formuler la demande, vérifier le résultat) sont les mêmes partout ; les ateliers se font sur l'outil que vos équipes ouvriront le lendemain.",
+    q: 'Quels outils utilise-t-on pendant les deux jours ?',
+    a: "Ceux que vous avez, en version professionnelle. Au 7 octobre 2026, cela peut être Copilot dans Excel, avec ses modes édition, plan et conversation ; ChatGPT et son analyse de fichiers ; Claude et ses artefacts pour les visualisations ; Gemini dans Google Sheets ; ou Vibe de Mistral, qui analyse les fichiers Excel et CSV depuis le 22 septembre 2026. Préparer, formuler, vérifier : la méthode ne change pas selon l'outil.",
   },
   {
     q: 'Que deviennent nos données pendant et après la formation ?',
-    a: "Le cadre est posé avant le premier fichier : les sessions utilisent les offres entreprise, qui n'entraînent pas les modèles sur vos données ; les fichiers contenant des données personnelles sont anonymisés ou remplacés par des équivalents ; et la formation débouche sur des règles écrites (ce qui peut monter dans l'outil, ce qui reste hors champ, qui accède à quoi), alignées sur les recommandations de la CNIL. La gouvernance des données est un module du jour 2, pas une note de bas de page.",
+    a: "Le cadre se pose avant d'ouvrir le premier fichier. Les exercices tournent sur des comptes professionnels réglés pour que vos fichiers ne servent pas à entraîner les modèles ; les fichiers qui contiennent des données personnelles sont anonymisés ou remplacés par des équivalents ; et la formation aboutit à des règles écrites (ce qui a le droit d'aller dans l'assistant, ce qui reste dehors, qui accède à quoi), conformes aux recommandations de la CNIL. Ces règles occupent un module entier du jour 2.",
   },
   {
-    q: 'Quelle différence avec votre offre de conseil data & IA ?',
-    a: "Cette page forme vos équipes à analyser elles-mêmes leurs fichiers de travail. Le conseil data & IA est une mission : audit de votre patrimoine de données, mise en qualité, pipelines, projets BI ou IA sur mesure. La frontière est simple : tant que vos questions tiennent dans des fichiers de travail, la formation rend l'équipe autonome ; quand les volumes, les flux ou les enjeux dépassent ce cadre, la mission prend le relais, et la formation vous a appris à reconnaître ce moment.",
+    q: 'Quelle différence avec la formation gouvernance des données ?',
+    a: "Les deux se complètent. Cette formation apprend aux équipes métier à tirer des analyses fiables de leurs fichiers avec l'IA. La formation gouvernance des données s'adresse aux personnes responsables des données de l'entreprise : patrimoine, rôles, qualité des référentiels, RGPD. Quand les fichiers analysés se contredisent entre services, c'est souvent par elle qu'il faut commencer.",
+  },
+  {
+    q: 'Quelle différence avec votre offre de conseil data et IA ?',
+    a: "Ici, vos équipes apprennent à analyser elles-mêmes leurs fichiers de travail. Le conseil data et IA est une mission menée par nos consultants : audit du patrimoine de données, mise en qualité, chaînes d'alimentation, projets de BI ou d'IA sur mesure. Chiffrée au forfait, cette prestation de conseil n'est pas finançable par votre OPCO. Tant que vos questions tiennent dans des fichiers de travail, la formation rend l'équipe autonome ; au-delà, la mission prend le relais.",
   },
   {
     q: 'Peut-on automatiser le reporting après la formation ?',
-    a: "C'est le fil du jour 2 : le rapport récurrent se reconstruit avec un gabarit stable et des demandes types, puis la collecte s'automatise raisonnablement : tâches planifiées des assistants pour les cas simples, orchestrateur pour les enchaînements entre applications. Quand ce second palier devient le besoin principal, les formations automatisation IA et n8n prennent la suite naturellement.",
+    a: "C'est le fil rouge du jour 2 : le rapport récurrent se reconstruit avec un gabarit et des demandes types, puis la collecte s'automatise dans une juste mesure, avec les tâches planifiées des assistants pour les cas simples et un orchestrateur pour les enchaînements entre logiciels. Si ce second palier devient le besoin principal, les formations automatisation IA et n8n prennent la suite.",
   },
   {
-    q: 'La formation data IA est-elle finançable par notre OPCO ?',
-    a: "Oui : Masteria est certifiée Qualiopi, condition pour mobiliser votre OPCO dans le cadre du plan de développement des compétences. Nous préparons le dossier avec vous ; la décision et le niveau de prise en charge appartiennent à votre opérateur. Pas d'éligibilité CPF : c'est une formation d'équipe, qui relève du budget formation de l'entreprise.",
+    q: 'Qui peut financer la formation data IA ?',
+    a: "L'entreprise, avec l'appui possible de son opérateur de compétences. Masteria est certifiée Qualiopi pour ses actions de formation, ce qui permet de déposer un dossier auprès de votre OPCO ; nous le préparons avec vous, et l'opérateur décide du montant en fonction de ses critères et de son enveloppe. Le compte personnel de formation n'entre pas en jeu : il s'agit d'une formation d'équipe, inscrite au plan de formation.",
   },
   {
-    q: 'Peut-on suivre la formation à distance ?',
-    a: "Oui. Le format de référence est l'intra dans vos locaux, jusqu'à 12 participants ; le même programme se tient à distance en classe virtuelle, souvent en demi-journées, chacun gardant ses fichiers sous les yeux. Partout en France et à l'international, en Europe, aux États-Unis et en Inde.",
+    q: 'La formation existe-t-elle en classe virtuelle ?',
+    a: "Oui. L'intra dans vos locaux reste la formule la plus courante, jusqu'à douze participants ; le même programme se donne en classe virtuelle, souvent par demi-journées, chacun gardant ses fichiers ouverts. Nous formons en France et hors de France : Belgique, Suisse, États-Unis, Inde.",
   },
   {
-    q: "Que reste-t-il dans l'équipe après les 2 jours ?",
-    a: "Des analyses reproductibles sur vos fichiers réels, le reporting récurrent de chaque participant reconstruit (gabarit, demandes types, points de vérification), la check-list de vérification d'un chiffre, les règles data écrites de l'équipe, et le plan d'action : les trois analyses ou rapports à outiller ensuite, qui les porte, à quelle échéance.",
+    q: "Avec quoi l'équipe repart-elle ?",
+    a: "Des analyses reproductibles sur ses fichiers, le reporting récurrent de chacun reconstruit (gabarit, demandes types, points de contrôle), la check-list de vérification d'un chiffre, la page de règles de l'équipe et le plan d'action : les trois analyses ou rapports à outiller ensuite, avec un responsable et une date.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation data IA — Masteria',
-  description: "Formation data IA en 2 jours pour les équipes métier : analyser ses fichiers réels avec l'IA générative (préparation, question de données, lecture du code exécuté, vérification des chiffres), croiser des sources, reconstruire le reporting récurrent, poser la gouvernance des données (RGPD, versions entreprise, règles écrites). Sur vos outils : Copilot dans Excel, ChatGPT, Claude, Gemini dans Sheets. Certifiée Qualiopi, finançable OPCO.",
+  name: 'Formation data IA (Masteria)',
+  description: "Formation de deux jours pour les équipes métier : analyser ses propres fichiers avec l'IA générative (préparation, question de données, lecture du code exécuté, contrôle des chiffres), croiser des sources, reconstruire le reporting récurrent et écrire les règles de l'équipe sur l'usage des fichiers. Sur les licences en place : Copilot dans Excel, ChatGPT, Claude, Gemini dans Sheets, Vibe. Couverte par la certification Qualiopi de Masteria.",
   level: 'Tous niveaux, aucun prérequis data',
   teaches: [
-    "Préparer un fichier et formuler une vraie question de données",
-    "Comprendre pourquoi les calculs de l'IA sont fiables (code exécuté) et ce qui reste à contrôler",
-    "Croiser des sources, construire tableaux croisés et cohortes simples sur ses exports réels",
-    "Vérifier un chiffre avant de le diffuser : recoupement, recalcul, cas limite",
-    "Reconstruire son reporting récurrent et poser les règles data de l'équipe (RGPD compris)",
+    "Préparer un fichier et formuler une question de données précise",
+    "Comprendre pourquoi un calcul sur fichier est fiable (code exécuté) et ce qui reste à contrôler",
+    "Croiser des sources, construire tableaux croisés et cohortes sur ses propres exports",
+    "Vérifier un chiffre avant diffusion : recoupement, second calcul, cas limite",
+    "Reconstruire son reporting récurrent et écrire les règles de l'équipe, RGPD compris",
   ],
   about: "Analyse de données avec l'intelligence artificielle générative",
   timeRequired: 'PT14H',
   duration: 'PT14H',
-  prerequisites: "Aucun prérequis data ou statistique ; savoir manipuler ses fichiers du quotidien.",
-  audience: 'Contrôle de gestion, ops, marketing, commerce, RH, direction : les équipes métier qui vivent dans les exports',
-  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
+  prerequisites: "Aucun bagage data ou statistique ; savoir manipuler ses fichiers du quotidien.",
+  audience: 'Contrôle de gestion, opérations, marketing, commerce, RH, direction : les services qui vivent dans les exports',
+  locationName: 'Masteria : intra en présentiel (France, Europe, États-Unis, Inde) ou classe virtuelle',
 }
 
-/* Le programme en ItemList (séquence citable — GEO). */
+/* Le programme en ItemList (séquence citable, GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Le programme de la formation data IA (2 jours)',
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((day, di) => [
-    { '@type': 'ListItem', position: di * 2 + 1, name: `${day.jour} · Matin — ${day.titre}`, description: day.matin.map(m => m.t).join(' ; ') },
-    { '@type': 'ListItem', position: di * 2 + 2, name: `${day.jour} · Après-midi — ${day.titre}`, description: day.apresmidi.map(m => m.t).join(' ; ') },
+    { '@type': 'ListItem', position: di * 2 + 1, name: `${day.jour}, matin : ${day.titre}`, description: day.matin.map(m => m.t).join(' ; ') },
+    { '@type': 'ListItem', position: di * 2 + 2, name: `${day.jour}, après-midi : ${day.titre}`, description: day.apresmidi.map(m => m.t).join(' ; ') },
   ]),
 }
 
@@ -289,13 +318,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/formation-data-ia#article',
-  headline: 'Formation data IA : vos données analysées, vos chiffres vérifiés, sans coder',
+  headline: "Formation data IA : analyser vos données avec l'IA, sans coder",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-30',
-  dateModified: '2026-08-30',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-data-ia#webpage' },
   /* Entités Wikipédia vérifiées (curl 200) le 2026-08-30. */
@@ -307,21 +336,21 @@ const articleJsonLd = {
   ],
 }
 
-/* ── GEO : lexique data & IA (DefinedTermSet) ── */
+/* ── GEO : lexique data & IA (DefinedTermSet, rendu aussi en section visible) ── */
 const SITE = 'https://www.master-ia.fr'
 const termsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': `${SITE}/${SLUG}#lexique`,
-  name: 'Lexique data & IA',
+  name: "Lexique de l'analyse de données avec l'IA",
   hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Code exécuté', description: "La raison pour laquelle les calculs de l'IA sont fiables sur un fichier fourni : l'assistant écrit un petit programme, l'exécute sur vos données et restitue le résultat. Savoir le lire, même en diagonale, change le niveau de confiance." },
+    { '@type': 'DefinedTerm', name: 'Code exécuté', description: "Ce qui rend fiable un calcul sur fichier : l'assistant écrit un petit programme, le lance sur vos données et rend le résultat. Savoir le relire, même en diagonale, change le niveau de confiance." },
     { '@type': 'DefinedTerm', name: 'Ancrage sur fichier', description: "Le principe de base de la formation : chaque chiffre vient d'un fichier fourni, jamais de la mémoire du modèle. Pas de source, pas de chiffre dans un document." },
-    { '@type': 'DefinedTerm', name: 'Question de données', description: "Une demande d'analyse précise : période, segment, indicateur, comparaison, format de sortie. La qualité de l'analyse se joue à la formulation, avant tout calcul." },
-    { '@type': 'DefinedTerm', name: 'Jointure', description: "Le croisement de deux sources par une clé commune (client, date, référence). Puissant et piégeux : doublons et périmètres différents produisent des chiffres faux plausibles, la formation montre les contrôles." },
-    { '@type': 'DefinedTerm', name: 'Cohorte', description: "Un groupe suivi dans le temps (clients arrivés le même mois, dossiers ouverts le même trimestre) : l'analyse simple qui répond aux questions de fidélisation et de délai." },
-    { '@type': 'DefinedTerm', name: 'Hallucination de chiffre', description: "Un chiffre plausible mais inventé ou daté, produit sans fichier source. Le risque principal des usages data de l'IA, neutralisé par l'ancrage sur fichier et la check-list de vérification." },
-    { '@type': 'DefinedTerm', name: 'Gouvernance des données', description: "Les règles écrites de l'équipe : quels fichiers peuvent monter dans quels outils (versions entreprise), quelles données personnelles s'anonymisent, qui accède, qui vérifie, qui diffuse." },
+    { '@type': 'DefinedTerm', name: 'Question de données', description: "Une demande d'analyse précise (période, segment, indicateur, comparaison, forme du résultat). La qualité du résultat se joue dans cette formulation, avant tout calcul." },
+    { '@type': 'DefinedTerm', name: 'Jointure', description: "Le croisement de deux sources par une clé commune (client, date, référence). Utile et piégeux : doublons et périmètres différents donnent des chiffres faux qui semblent justes." },
+    { '@type': 'DefinedTerm', name: 'Cohorte', description: "Un groupe suivi dans le temps, comme les clients arrivés le même mois : l'analyse simple qui répond aux questions de fidélité et de délai." },
+    { '@type': 'DefinedTerm', name: 'Chiffre halluciné', description: "Un chiffre plausible mais inventé ou périmé, produit sans fichier source. Le principal risque des usages data de l'IA, écarté par l'ancrage sur fichier et la check-list." },
+    { '@type': 'DefinedTerm', name: "Règles d'équipe sur les fichiers", description: "Ce que l'équipe écrit en fin de formation : fichiers autorisés dans chaque outil, données personnelles à anonymiser, qui vérifie, qui diffuse. La gouvernance des données à l'échelle de l'entreprise a sa propre formation." },
   ],
 }
 
@@ -344,10 +373,12 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité : WebPage.citation + bloc visible. */
+/* Sources : WebPage.citation + section visible. */
 const PAGE_CITATIONS = [
-  { name: "CNIL — Intelligence artificielle : recommandations et dossiers", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+  { name: "CNIL : dossier intelligence artificielle et recommandations sur les données personnelles", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: "Microsoft : les modes de Copilot dans Excel (page d'aide en anglais)", url: 'https://support.microsoft.com/en-us/office/agent-mode-in-excel-a2fd6fe4-97ac-416b-b89a-22f4d1357c7a' },
+  { name: "Mistral : notes de version de Vibe, dont l'analyse de tableurs du 22 septembre 2026", url: 'https://docs.mistral.ai/resources/release-notes' },
+  { name: "Plan de développement des compétences : fiche officielle du ministère du Travail", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
 ]
 
 export default function FormationDataIaPage() {
@@ -376,7 +407,7 @@ export default function FormationDataIaPage() {
         courseData={COURSE_DATA}
         faqItems={FAQ}
         datePublished="2026-08-30"
-        dateModified="2026-08-30"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[programmeJsonLd, articleJsonLd, termsJsonLd]}
@@ -402,36 +433,36 @@ export default function FormationDataIaPage() {
               <BarChart3 size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Formation · Data & IA
+              Formation · Analyse de données
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
-            Formation data & IA :
+            Formation data IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>vos données analysées, vos chiffres vérifiés, sans coder</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>analyser vos données avec l'IA, sans coder</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Programme rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · fonctions d'analyse des outils relevées le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation data IA apprend aux équipes métier à analyser leurs données avec l'IA générative : exports de ventes, budgets, verbatims clients, fichiers de suivi. <strong style={{ color: '#fff', fontWeight: 700 }}>En 2 jours, chaque participant analyse ses propres fichiers, apprend à vérifier les chiffres et reconstruit son reporting récurrent</strong>, sur les outils déjà en place : Copilot dans Excel, ChatGPT, Claude, Gemini dans Sheets. Certifiée Qualiopi, finançable OPCO.
+            La formation data IA apprend à des équipes métier à exploiter leurs propres fichiers avec l'IA générative : exports de ventes, budgets, verbatims clients, tableaux de suivi. <strong style={{ color: '#fff', fontWeight: 700 }}>En deux jours, chaque participant analyse ses exports, apprend à contrôler un chiffre et reconstruit son reporting récurrent</strong>, dans les outils déjà payés par l'entreprise : Copilot dans Excel, ChatGPT, Claude, Gemini dans Sheets ou Vibe. Masteria est certifiée Qualiopi pour ce type d'action.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Le point que tout le monde sous-estime : sur un fichier fourni, l'IA n'estime pas les chiffres, elle écrit et exécute du code pour les calculer. Bien utilisée, elle rend l'analyse de données accessible à toute équipe métier ; bien encadrée, elle ne laisse passer ni chiffre inventé ni conclusion hâtive. La formation installe les deux.
+            Le point que beaucoup ignorent : devant un fichier, l'IA écrit et exécute du code pour calculer, elle ne devine pas. Bien utilisée, elle ouvre l'analyse de données à tout service ; bien encadrée, elle ne laisse passer ni chiffre inventé ni conclusion hâtive. Les deux jours installent l'usage et l'encadrement.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un devis sous 24 h
+              Programmer la formation data
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#programme" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le programme
+              Détail des deux jours
             </a>
           </div>
 
@@ -444,9 +475,9 @@ export default function FormationDataIaPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Fiche rapide</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -476,13 +507,13 @@ export default function FormationDataIaPage() {
             <div style={editorialAside}>
               <Kicker>Le constat</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Pourquoi former vos équipes métier à la data avec l'IA ?
+                Pourquoi former vos équipes métier à l'analyse de données avec l'IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Parce que le gisement est déjà là : chaque équipe accumule des exports qu'elle n'exploite pas, et les outils déjà en place savent désormais les analyser en exécutant du vrai code. Ce qui manque n'est ni la donnée ni l'outil : c'est la méthode, et les réflexes de vérification. Deux jours suffisent à installer les deux.</strong>
+                <strong>La matière première est déjà là : chaque équipe accumule des exports qu'elle n'exploite pas, et les outils en place savent les analyser en exécutant du code. Il manque une méthode et des réflexes de vérification, et deux jours suffisent à les installer.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Quand les volumes ou les enjeux dépassent les fichiers de travail, notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link> prend le relais côté missions : audit, mise en qualité, projets sur mesure.
+                Si les fichiers se contredisent d'un service à l'autre, commencez par la <Link to="/formation-gouvernance-donnees" style={aStyle}>formation gouvernance des données</Link>. Quand les volumes dépassent les fichiers de travail, notre <Link to="/conseil-data-ia" style={aStyle}>conseil data et IA</Link> prend le relais en mission.
               </p>
             </div>
 
@@ -512,11 +543,11 @@ export default function FormationDataIaPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Le programme des 2 jours : analyser, vérifier, industrialiser
+            Deux jours pour passer de l'export brut au reporting vérifié
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : analyser ses fichiers réels et vérifier ses chiffres : préparation, question de données, lecture du code exécuté, croisements, check-list de vérification. Jour 2 : industrialiser : le reporting récurrent reconstruit, la présentation, l'automatisation raisonnable de la collecte, et la gouvernance des données écrite.</strong>
+            <strong style={{ color: '#fff' }}>Le jour 1 porte sur l'analyse : préparer le fichier, formuler la question, lire le code exécuté, croiser des sources, vérifier les chiffres. Le jour 2 porte sur la durée : reconstruire le reporting récurrent, le présenter, automatiser raisonnablement la collecte, écrire les règles de l'équipe.</strong>
           </p>
 
           <div style={{ display: 'grid', gap: 22 }}>
@@ -550,30 +581,30 @@ export default function FormationDataIaPage() {
           </div>
 
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 800 }}>
-            Le programme s'ajuste au cadrage, qui est gratuit : outils en place, fichiers types de chaque équipe, niveau réel. En 1 jour, on s'arrête à l'analyse vérifiée ; les 2 jours vont jusqu'au reporting industrialisé et aux règles d'équipe.
+            Le cadrage ajuste le programme : outils en place, fichiers types de chaque équipe, niveau de départ. Les trente premières minutes de ce cadrage sont offertes. En une journée, le programme s'arrête à l'analyse vérifiée ; en deux, il va jusqu'au reporting outillé et aux règles d'équipe.
           </p>
         </div>
       </section>
 
-      {/* ── FIABLE OU PAS (tableau divergent — doctrine calcul) ── */}
+      {/* ── FIABLE OU PAS (tableau divergent, doctrine calcul) ── */}
       <section id="fiabilite" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
           <Kicker>La grille de confiance</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce qui est fiable, ce qu'on challenge, ce qu'on proscrit
+            Fiable, à challenger, à proscrire : où placer sa confiance
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La bonne question n'est pas « peut-on faire confiance à l'IA sur les chiffres ? » mais « sur quoi, et à quelles conditions ». Cette grille est la colonne vertébrale de la formation : elle tient en cinq lignes, et elle évite les deux erreurs symétriques : tout croire, ou tout refuser.</strong>
+            <strong>Plutôt que de vous demander si l'on peut croire l'IA sur les chiffres, demandez-vous sur quoi et à quelles conditions. Cette grille de cinq lignes structure toute la formation et évite deux erreurs opposées : tout croire ou tout rejeter.</strong>
           </p>
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
               <thead>
                 <tr>
-                  <th style={thStyle} scope="col">Situation</th>
+                  <th style={thStyle} scope="col">Cas de figure</th>
                   <th style={thStyle} scope="col">Verdict</th>
-                  <th style={thStyle} scope="col">Pourquoi</th>
+                  <th style={thStyle} scope="col">Explication</th>
                 </tr>
               </thead>
               <tbody>
@@ -593,13 +624,13 @@ export default function FormationDataIaPage() {
       {/* ── CAS D'USAGE ── */}
       <section id="cas-usage" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Ce qu'on analyse</Kicker>
+          <Kicker>Ateliers types</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que vos équipes construisent en atelier
+            Six analyses que les équipes construisent en atelier
           </h2>
 
           <p style={answerStyle}>
-            <strong>Les ateliers partent des fichiers réels de chaque participant. Six familles reviennent le plus souvent : l'export de ventes exploité, le reporting mensuel reconstruit, les verbatims quantifiés, le budget suivi, le fichier mis en qualité et la vue d'équipe qui se met à jour.</strong>
+            <strong>Chaque atelier part des fichiers que les participants apportent. Six familles reviennent souvent : l'export de ventes exploité, le reporting mensuel reconstruit, les verbatims comptés, le budget suivi, le fichier remis en état et la vue d'équipe tenue à jour.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -616,27 +647,55 @@ export default function FormationDataIaPage() {
         </div>
       </section>
 
-      {/* ── TARIF ET FINANCEMENT ── */}
-      <section id="tarif" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
+      {/* ── CAS PUBLIÉS ── */}
+      <section id="exemples" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <div style={{ ...cardStyle, borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+          <Kicker>En situation</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Deux formations récentes, sur les fichiers des participants
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Une personne seule ou une équipe de managers : le principe reste de travailler sur ses propres tableaux. Ces deux exemples, anonymisés, sont détaillés dans nos études de cas.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: 20 }}>
+            {CAS.map(cas => (
+              <div key={cas.href} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                  <IconTile icon={cas.icon} />
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.35 }}>{cas.secteur}</div>
+                </div>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{cas.texte}</p>
+                <Link to={cas.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  {cas.lien}
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TARIF ET FINANCEMENT ── */}
+      <section id="tarif" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
+        <div style={wrap}>
+          <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <Landmark size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Tarif et financement</Kicker>
+              <Kicker>Prix et prise en charge</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT par jour de formation, pour le groupe
+                1 980 € HT par journée, soit 3 960 € HT le parcours
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La formation data IA suit la grille unique de Masteria : 1 980 € HT par jour en intra, pour l'ensemble du groupe (jusqu'à 12 participants), soit 3 960 € HT les 2 jours ; le format d'une journée « analyser ses fichiers » se cale au cadrage. Masteria est certifiée Qualiopi : la formation est finançable par votre OPCO dans le cadre du plan de développement des compétences, nous préparons le dossier avec vous et la décision reste à votre opérateur. Pas d'éligibilité CPF. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Le tarif est celui de toutes nos formations : chaque journée est facturée 1 980 € HT au groupe, douze personnes au maximum, et le programme complet revient donc à 3 960 € HT ; la version d'une journée centrée sur l'analyse se décide au cadrage. Notre certification Qualiopi, obtenue pour les actions de formation, permet de soumettre la session à votre opérateur de compétences, qui décide du financement selon ses propres critères ; nous constituons le dossier ensemble. Pas de CPF pour ces formations d'équipe. Pour une entreprise suisse ou belge, à Genève ou à Bruxelles, aucun OPCO n'intervient et le devis est établi en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> passe les dispositifs en revue.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  "1 980 € HT par jour, pour le groupe (jusqu'à 12 personnes)",
-                  '2 jours recommandés : reporting industrialisé et règles comprises',
-                  'Qualiopi : finançable OPCO, dossier préparé ensemble',
-                  'Devis sous 24 h après un cadrage gratuit',
+                  'Une journée : 1 980 € HT pour tout le groupe',
+                  "Deux jours conseillés : jusqu'au reporting outillé",
+                  'Session présentable à votre OPCO',
+                  'Devis le lendemain du cadrage',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -654,20 +713,20 @@ export default function FormationDataIaPage() {
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Les formateurs</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Des formateurs qui analysent des données en mission chaque semaine
+                Des formateurs qui vérifient des chiffres pour leurs clients
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. L'analyse de fichiers réels fait partie de nos parcours métier (finance, commerce, direction) et de nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link> : la check-list de vérification enseignée ici est celle que nous appliquons à nos propres livrables. Les sessions sont animées par Mathias Nizan et un réseau de formateurs indépendants, expérimentés et pédagogues.
+                L'analyse de fichiers revient dans nos parcours métier (finance, commerce, direction) et dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link> : la check-list enseignée ici est celle que nous appliquons à nos propres livrables. Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session ; il l'anime ou en délègue l'animation à un formateur indépendant de son réseau, choisi pour son aisance avec les données. Aucun éditeur de logiciel ne rémunère le cabinet.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Qualiopi', 'actions de formation certifiées'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['2 jours', "de l'export brut au reporting vérifié"],
+                ['5', 'lignes dans la grille de confiance'],
+                ['7', 'notions de vocabulaire data'],
+                ['0', 'ligne de code à écrire vous-même'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -684,10 +743,10 @@ export default function FormationDataIaPage() {
         <div style={wrap}>
           <Kicker>Le vocabulaire</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Parler data couramment : les sept termes à connaître
+            Sept notions pour parler data avec l'IA
           </h2>
           <p style={answerStyle}>
-            <strong>Sept termes suffisent pour analyser sereinement avec l'IA : code exécuté, ancrage sur fichier, question de données, jointure, cohorte, hallucination de chiffre, gouvernance des données. Les voici tels que nous les enseignons.</strong>
+            <strong>Sept notions suffisent pour analyser sereinement avec un assistant : code exécuté, ancrage sur fichier, question de données, jointure, cohorte, chiffre halluciné, règles d'équipe sur les fichiers. Les définitions qui suivent sont celles de nos ateliers.</strong>
           </p>
           <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
             {termsJsonLd.hasDefinedTerm.map(t => (
@@ -707,13 +766,13 @@ export default function FormationDataIaPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Formation data IA : les questions fréquentes
+                Formation data IA : réponses aux questions courantes
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une question sur vos fichiers ou vos outils reste sans réponse ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Envoyez-la-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -729,22 +788,22 @@ export default function FormationDataIaPage() {
       {/* ── MAILLAGE INTERNE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pour prolonger</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Pour prolonger l'analyse de données
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            L'analyse de données s'articule avec les parcours métier, l'automatisation de la collecte et, quand les volumes l'exigent, nos missions data.
+            L'analyse de fichiers rejoint la gouvernance des données, les parcours métier, l'automatisation de la collecte et, quand les volumes l'imposent, nos missions data.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Gouverner', desc: "Avant d'analyser : cartographier le patrimoine, nommer les rôles, gérer les données de référence." },
-              { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Missions', desc: "Quand les fichiers ne suffisent plus : audit du patrimoine de données, mise en qualité, projets sur mesure." },
-              { label: 'Formation IA finance', href: '/formation-ia-finance', tag: 'Métier', desc: "Le parcours complet des équipes finance : reporting, analyses, clôtures, avec le même socle data." },
-              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Métier', desc: "Campagnes, audiences et verbatims : l'analyse de données appliquée au quotidien marketing." },
-              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Automatisation', desc: "Automatiser la collecte et les tâches répétitives autour de vos données : le palier suivant." },
-              { label: 'Formation n8n', href: '/formation-n8n', tag: 'Outil', desc: "L'orchestrateur qui alimente vos reportings automatiquement, workflows et étapes IA comprises." },
-              { label: 'Formation agents IA', href: '/formation-agents-ia', tag: 'Agents', desc: "Des agents qui préparent dossiers et reportings en autonomie surveillée : la suite logique." },
+              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Gouverner', desc: "En amont de l'analyse : cartographier les données, nommer leurs responsables, fiabiliser les référentiels." },
+              { label: 'Conseil data & IA', href: '/conseil-data-ia', tag: 'Missions', desc: "Quand les fichiers ne suffisent plus : audit, mise en qualité, projets sur mesure menés par nos consultants." },
+              { label: 'Formation IA finance', href: '/formation-ia-finance', tag: 'Métier', desc: "Le parcours complet des équipes finance : reporting, analyses, clôtures." },
+              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Métier', desc: "Campagnes, audiences, verbatims : l'analyse appliquée au quotidien du marketing." },
+              { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Automatisation', desc: "Automatiser la collecte et les tâches répétitives autour de vos fichiers." },
+              { label: 'Formation n8n', href: '/formation-n8n', tag: 'Outil', desc: "L'orchestrateur qui alimente vos rapports sans intervention, étapes IA comprises." },
+              { label: 'Formation agents IA', href: '/formation-agents-ia', tag: 'Agents', desc: "Des agents qui préparent dossiers et rapports sous supervision : l'étape suivante." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -760,7 +819,7 @@ export default function FormationDataIaPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Voir cette page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -770,8 +829,15 @@ export default function FormationDataIaPage() {
         </div>
       </section>
 
-      {/* ── FONDATEUR ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan a construit ce programme à partir des analyses que le cabinet produit pour ses propres missions, et il y a intégré le 7 octobre 2026 les fonctions d'analyse disponibles dans chaque outil. <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>Sa page</Link> présente son parcours.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -785,20 +851,37 @@ export default function FormationDataIaPage() {
               Vos exports valent mieux que le fond d'un dossier partagé
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos équipes, leurs fichiers types et leurs outils. Nous revenons sous 24 heures avec un programme cadré et le devis, dossier OPCO compris. Dès le premier matin, chaque participant analyse ses propres données.
+              Parlez-nous de vos équipes, de leurs fichiers types et de leurs outils. Le lendemain, un programme cadré et le devis vous parviennent, dossier OPCO compris. Dès la première matinée, chaque participant travaille sur ses propres données.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un devis sous 24 h
+              Programmer la formation data
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Lyon, Europe, États-Unis, Inde
+              Deux jours · 3 960 € HT pour le groupe · sur site ou en visio · Qualiopi
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES (section propre à la page, remplace OfficialSources) ── */}
+      <section aria-labelledby="sources-data" style={{ padding: '56px 40px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-data" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Où vérifier les informations de cette page
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Protection des données, documentation des éditeurs et financement de la formation :
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {PAGE_CITATIONS.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={srcLinkStyle}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : Légifrance (L.1111-8 CSP, décret n° 2026-209), CNIL (IA et santé, 05/03/2026), Microsoft Learn (périmètre HDS), JOUE (règlement (UE) 2026/1744, règlement (UE) 2017/745), MDCG 2025-6, EMA (GVP module VI rév. 2), Commission (projet d'annexe 22 BPF), HAS (guide du 23/10/2025, lu sur copie archivée : le site impose un CAPTCHA).
 export default {
   slug: 'ia-sante-pharma',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Hébergement HDS", "Dispositif médical ou non", "Pharmacovigilance et dossiers réglementaires"],
+    lien: "Voir les deux questions de départ",
+  },
+  offresTitre: {
+    kicker: "Trois interventions",
+    h2: "Cartographier les flux, outiller la recherche, automatiser la préparation",
+  },
+  enjeux: {
+    kicker: "Santé et pharma",
+    h2: "L'IA prépare, l'expert décide : la règle de chaque projet de santé",
+    difficultes: "Ce qui ralentit laboratoires et établissements",
+    prestations: "Ce que nous développons pour la santé",
+  },
+  regieBloc: {
+    kicker: "Régie dans un périmètre certifié",
+    h2: "Développer dans votre environnement conforme, sans exporter de données",
+    accroche: "Quand les données de santé ne doivent pas quitter un périmètre certifié, le développeur IA rejoint vos équipes, au contact de vos contraintes HDS et de votre système qualité, et code dans votre environnement.",
+    lien: "Les modèles d'engagement",
+  },
+  formationBloc: {
+    kicker: "Former pharmaciens et équipes qualité",
+    h2: "Des exercices sur vos procédures et vos notices",
+    lien: "Explorer les formations IA",
+  },
+  faqBloc: {
+    h2: "Santé et pharma : les questions posées",
+    texte: "Votre système qualité impose une contrainte que nous n'avons pas citée ?",
+    lien: "Expliquez-la-nous",
+  },
+  maillage: {
+    h2: "Secteurs proches de la santé",
+  },
+  cta: {
+    titre: "Quel flux de santé préparer avec l'IA ?",
+    texte: "Précisez le flux (pharmacovigilance, dossier réglementaire, procédures) et l'hébergement actuel de vos données. Nous vous répondons sous 24 heures et fixons avec vous les 30 minutes de cadrage offertes, avec votre responsable qualité si vous le souhaitez.",
+  },
+  equipe: {
+    titre: "Des spécialistes réunis autour de votre système qualité",
+    texte: "Masteria est l'entreprise de Mathias Nizan, lancée à Lyon en 2022, et Mathias pilote chaque mission. En santé, il réunit des consultants qui cartographient les flux de données et de documents, des développeurs qui travaillent dans un environnement conforme et des formateurs qui partent de vos procédures. Tous sont indépendants, et le choix de l'hébergeur ou du modèle se fait sans attache commerciale.",
+  },
   intro: "En santé et en pharma, un projet d'IA se cadre sur deux questions avant le choix du modèle : où les données seront hébergées, et si l'outil devient un dispositif médical. Les réponses fixent l'architecture, le niveau de validation et le calendrier. Masteria les examine avec votre responsable qualité et votre DPO (le délégué à la protection des données), puis développe des assistants documentaires, des outils de pré-tri pour la pharmacovigilance et des automatisations de dossiers réglementaires, sur l'hébergement que vous avez retenu.",
 
   offresIntro: [
@@ -11,14 +53,21 @@ export default {
   ],
   offres: [
     {
+      title: "Cartographie des flux de santé",
+      cta: "Le conseil IA de Masteria",
       desc: "Nous cartographions vos flux de documents et de données (cas de pharmacovigilance, dossiers d'autorisation de mise sur le marché, procédures qualité), puis nous qualifions chaque usage au regard de trois textes : la certification HDS (exigée des hébergeurs de données de santé), le droit des dispositifs médicaux et les bonnes pratiques de fabrication (BPF). La feuille de route classe les cas par valeur et par niveau de preuve à fournir.",
       points: ["Qualification HDS et dispositif médical", "Cartographie des flux documentaires", "Feuille de route défendable en audit"],
     },
     {
+      title: "Assistants sur vos référentiels qualité",
+      cta: "Développer avec nous",
+      secondaryCta: "Outils IA par fonction",
       desc: "Nous développons des assistants qui cherchent dans vos référentiels (procédures, notices, dossiers réglementaires) et citent la version en vigueur du document, ainsi que des outils de pré-tri pour la pharmacovigilance. Le code tourne sur l'hébergement certifié que vous avez retenu, et le dossier de validation est livré avec lui.",
       points: ["Recherche sourcée dans vos référentiels", "Pré-tri avec double lecture humaine", "Code et dossier de validation livrés"],
     },
     {
+      title: "Préparation automatisée des dossiers",
+      cta: "L'automatisation de vos processus",
       desc: "Nous automatisons les gestes de préparation qui entourent l'expertise : extraire les champs d'un formulaire de déclaration, contrôler la complétude d'un dossier, comparer deux versions d'une procédure et en lister les écarts. Chaque étape laisse une trace qu'un auditeur peut suivre, et la décision reste au pharmacien ou au responsable qualité.",
       points: ["Contrôle de complétude des dossiers", "Comparaison de versions documentaires", "Piste d'audit à chaque étape"],
     },
@@ -121,7 +170,7 @@ export default {
     { name: "Microsoft Learn : hébergement de données de santé (HDS) France, périmètre de la certification", url: "https://learn.microsoft.com/fr-fr/compliance/regulatory/offering-hds-france" },
     { name: "EUR-Lex : règlement (UE) 2017/745 relatif aux dispositifs médicaux, annexe VIII", url: "https://eur-lex.europa.eu/eli/reg/2017/745/oj" },
     { name: "Commission européenne : MDCG 2025-6, articulation entre MDR/IVDR et AI Act (juin 2025)", url: "https://health.ec.europa.eu/document/download/b78a17d7-e3cd-4943-851d-e02a2f22bbb4_en?filename=mdcg_2025-6_en.pdf" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744 du 8 juillet 2026, Omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 du 8 juillet 2026 : dispositifs médicaux à base d'IA au 2 août 2028", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
     { name: "EMA : bonnes pratiques de pharmacovigilance, module VI révision 2", url: "https://www.ema.europa.eu/en/documents/regulatory-procedural-guideline/guideline-good-pharmacovigilance-practices-gvp-module-vi-collection-management-submission-reports-suspected-adverse-reactions-medicinal-products-rev-2_en.pdf" },
     { name: "Commission européenne : projet d'annexe 22 des BPF, intelligence artificielle (consultation)", url: "https://health.ec.europa.eu/document/download/5f38a92d-bb8e-4264-8898-ea076e926db6_en?filename=mp_vol4_chap4_annex22_consultation_guideline_en.pdf" },
     { name: "HAS : Premières clefs d'usage de l'IA générative en santé (23 octobre 2025)", url: "https://www.has-sante.fr/upload/docs/application/pdf/2025-10/dir2/premieres_clefs_dusage_de_lia_generative_en_sante_-_guide.pdf" },

@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : règlements (CE) n° 178/2002, (UE) n° 931/2011, (UE) n° 1169/2011, (CE) n° 852/2004, (UE) 2021/382 et directive (UE) 2022/2555 sur EUR-Lex (via le Cellar), arrêté RappelConso du 20/01/2021 sur Légifrance, données ouvertes RappelConso V2 (extraction du 03/10/2026, catégorie « alimentation », fiches publiées en 2025), dossier législatif de l'Assemblée nationale. Aucune étude de cas publiée ne relève du secteur : le cas est une mise en situation.
 export default {
   slug: 'ia-agroalimentaire',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Spécifications, recettes, étiquettes", "Allergènes du règlement INCO", "Traçabilité lot par lot"],
+    lien: "Voir les dossiers qualité concernés",
+  },
+  offresTitre: {
+    kicker: "Trois interventions",
+    h2: "De la carte des circuits qualité aux comparaisons automatiques",
+  },
+  enjeux: {
+    kicker: "Agroalimentaire",
+    h2: "L'IA protège la marge et le consommateur au même endroit : le document",
+    difficultes: "Ce qui pèse sur la qualité et le réglementaire",
+    prestations: "Les outils que nous bâtissons pour un industriel de l'alimentaire",
+  },
+  regieBloc: {
+    kicker: "Développeur chez vous",
+    h2: "Vos formulations restent dans l'usine",
+    accroche: "Quand les recettes, les formulations ou les fiches techniques ne doivent pas sortir de l'entreprise, le développeur IA s'installe auprès de la qualité, de la R&D et du réglementaire, et travaille sur vos référentiels sans les exporter.",
+    lien: "Les conditions d'une régie",
+  },
+  formationBloc: {
+    kicker: "Former qualité et R&D",
+    h2: "Des exercices sur vos fiches techniques et vos étiquettes",
+    lien: "Découvrir le catalogue",
+  },
+  faqBloc: {
+    h2: "Questions des industriels de l'alimentaire",
+    texte: "Une question sur une étiquette, un rappel ou une recette ?",
+    lien: "Écrivez-nous",
+  },
+  maillage: {
+    h2: "Secteurs proches de l'agroalimentaire",
+  },
+  cta: {
+    titre: "Quel dossier qualité comparer en premier ?",
+    texte: "Envoyez-nous le circuit qui vous coûte le plus de relectures : référencement d'un fournisseur, épreuve d'étiquette, questionnaire d'un distributeur. Nous vous répondons sous 24 heures et fixons avec vous les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Des intervenants choisis pour un industriel de l'alimentaire",
+    texte: "Mathias Nizan, qui a fondé Masteria à Lyon en 2022, compose l'équipe de chaque mission et la suit jusqu'à la remise des outils. Dans l'agroalimentaire, il fait appel à des consultants qui cartographient les circuits qualité, à des développeurs qui travaillent sur vos référentiels et à des formateurs qui partent de vos fiches techniques. Tous sont indépendants des éditeurs de logiciels.",
+  },
   intro: "Dans une entreprise agroalimentaire, l'IA générative trouve d'abord sa place dans les dossiers qui engagent la sécurité du consommateur : la spécification d'une matière première, la recette, l'épreuve d'étiquette, l'enregistrement d'un lot. Sur les 2 319 fiches de rappel de produits alimentaires publiées sur RappelConso en 2025, 226 citent un allergène non déclaré ou une anomalie d'étiquetage. Depuis Lyon, Masteria construit avec vos équipes qualité, R&D et réglementaires des contrôles de cohérence qui préparent chaque décision. La signature reste à vos responsables.",
 
   offresIntro: [
@@ -12,14 +54,21 @@ export default {
 
   offres: [
     {
+      title: "Diagnostic des circuits qualité et réglementaires",
+      cta: "Le conseil IA pas à pas",
       desc: "Nous diagnostiquons vos circuits qualité et réglementaires : référencement d'un fournisseur, création d'une fiche technique, validation d'une étiquette, changement de recette, préparation d'un audit client. Nous mesurons les délais et repérons les ressaisies entre le logiciel de formulation, l'ERP (le logiciel de gestion intégré) et les tableurs. La feuille de route classe les cas selon leur effet sur le risque de rappel et sur la charge des équipes.",
       points: ["Revue des circuits de validation", "Carte des ressaisies entre logiciels", "Priorités classées par risque de rappel"],
     },
     {
+      title: "Assistants qui comparent avant signature",
+      cta: "Notre développement sur mesure",
+      secondaryCta: "Outils IA construits par métier",
       desc: "Nous développons des assistants qui comparent avant que vous signiez : une nouvelle spécification fournisseur contre l'ancienne, une recette contre la liste des ingrédients imprimée, une matrice allergènes contre les fiches des matières. Chaque écart sort avec sa ligne et sa page, et l'outil ne modifie aucun document validé. Vous recevez le code et le registre des règles de contrôle, une règle par exigence du règlement INCO ou de vos cahiers des charges.",
       points: ["Comparaison des spécifications fournisseurs", "Contrôle de la recette contre l'étiquette", "Règles de contrôle écrites et remises"],
     },
     {
+      title: "Réponses aux distributeurs sans ressaisie",
+      cta: "Automatiser vos tâches répétitives",
       desc: "Nous automatisons les tâches qui reviennent à chaque lot ou à chaque client : réponse aux questionnaires et cahiers des charges des distributeurs, mise à jour des fiches techniques après validation, assemblage des données de traçabilité d'un lot, préremplissage d'une fiche RappelConso si un rappel survient. L'automatisation prépare ; la personne habilitée valide et diffuse.",
       points: ["Questionnaires des distributeurs", "Données de traçabilité par lot", "Fiche de rappel préparée d'avance"],
     },
@@ -142,7 +191,7 @@ export default {
     },
     {
       q: "Combien coûte un projet IA pour un industriel de l'agroalimentaire ?",
-      a: "Le budget suit votre chaîne documentaire : nombre de références actives, logiciels de formulation et de qualité à raccorder, profondeur de traçabilité attendue. Nous l'arrêtons au forfait quand la liste des documents et des contrôles est écrite, à l'issue du cadrage. Comparer les spécifications d'une gamme reste un engagement contenu ; une chaîne complète, de la spécification fournisseur à la fiche de rappel et sur plusieurs usines, dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros. Tout commence par 30 minutes de cadrage offertes.",
+      a: "Le budget suit votre chaîne documentaire : nombre de références actives, logiciels de formulation et de qualité à raccorder, profondeur de traçabilité attendue. Nous l'arrêtons au forfait quand la liste des documents et des contrôles est écrite, à l'issue du cadrage. Comparer les spécifications d'une gamme reste un engagement contenu ; une chaîne complète, de la spécification fournisseur à la fiche de rappel et sur plusieurs usines, se chiffre au-delà de 100 000 €, parfois en centaines de milliers d'euros. Tout commence par 30 minutes de cadrage offertes.",
     },
     {
       q: "La directive NIS 2 concerne-t-elle notre usine ?",
@@ -161,7 +210,7 @@ export default {
   sources: [
     { name: "EUR-Lex : règlement (CE) n° 178/2002, principes généraux de la législation alimentaire (articles 18 et 19)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32002R0178" },
     { name: "EUR-Lex : règlement d'exécution (UE) n° 931/2011 sur la traçabilité des denrées d'origine animale", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R0931" },
-    { name: "EUR-Lex : règlement (UE) n° 1169/2011 concernant l'information des consommateurs sur les denrées alimentaires (INCO)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169" },
+    { name: "EUR-Lex, règlement INCO (UE) n° 1169/2011 : mentions obligatoires et allergènes de l'annexe II", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32011R1169" },
     { name: "EUR-Lex : règlement (CE) n° 852/2004 relatif à l'hygiène des denrées alimentaires (article 5)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32004R0852" },
     { name: "EUR-Lex : règlement (UE) 2021/382, gestion des allergènes et culture de la sécurité alimentaire", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32021R0382" },
     { name: "Légifrance : arrêté du 20 janvier 2021 relatif à la déclaration dématérialisée des rappels (RappelConso)", url: "https://www.legifrance.gouv.fr/jorf/id/JORFSCTA000043038708" },

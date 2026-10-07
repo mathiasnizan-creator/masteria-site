@@ -1,167 +1,170 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-service-client (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Reçoit depuis le 07/10 les anciennes pages Gemini × service client et Mistral × service client (redirections 308).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA service client : réponses, tickets, qualité | Masteria",
-  "metaDesc": "Formation IA service client sur vos vrais tickets et réclamations : réponses à votre ton, base de connaissances, qualification, réclamations sensibles, mesure de la qualité. ChatGPT, Copilot, Claude. Qualiopi, OPCO.",
-  "keywords": "formation ia service client, formation ia relation client, formation intelligence artificielle service client, formation ia support client, formation ia sav, ia gestion des réclamations",
-  "h1": "Formation IA service client : des réponses justes et humaines, à grande échelle",
+  "metaTitle": "Formation IA service client : réponses et SAV | Masteria",
+  "metaDesc": "Formation IA service client en intra sur vos tickets : réponses, base de connaissances, réclamations, qualité. Gemini, Vibe, Copilot, ChatGPT, Claude.",
+  "keywords": "formation ia service client, formation ia relation client, formation intelligence artificielle service client, formation ia support client, formation ia sav, ia gestion des réclamations, formation gemini service client, formation mistral service client",
+  "h1": "Formation IA service client : des réponses exactes et chaleureuses, même au plus fort du volume",
   "h1a": "Formation IA service client :",
-  "h1b": "des réponses justes et humaines, à grande échelle",
+  "h1b": "des réponses exactes et chaleureuses, même au plus fort du volume",
   "eyebrow": "Formation métier · Service client",
-  "badge3": "Sur vos vrais tickets, réclamations et scripts",
-  "geo": "La formation IA service client de Masteria apprend à vos équipes de relation client à mettre l'intelligence artificielle générative au service de la qualité de réponse : réponses aux demandes et réclamations à votre ton, base de connaissances et FAQ vivantes, qualification et priorisation, traitement des cas sensibles, scripts et formation interne, mesure de la qualité. Deux jours, multi-outils, sur vos vrais tickets, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "Le service client est le métier du volume et du ton juste : beaucoup de demandes, souvent les mêmes, et à chaque fois une personne qui attend d'être comprise. L'IA générative y fait gagner du temps sur la rédaction et la recherche d'information ; elle ne remplace ni l'écoute ni la décision sur un cas sensible. La formation apprend cette répartition, et le cadre RGPD qui va avec.",
-  "intro": "La formation IA service client de Masteria apprend à vos équipes de relation client à mettre l'intelligence artificielle générative au service de la qualité de réponse, sur vos vrais tickets et dans le cadre du RGPD."
+  "badge3": "Sur vos tickets, vos procédures et vos réponses types",
+  "geo": "La formation IA service client de Masteria apprend aux équipes de relation client à faire préparer par l'IA générative leurs réponses écrites, les articles de leur base de connaissances, la qualification des demandes, les réclamations délicates, leurs scripts et l'analyse des verbatims. Le parcours tient en deux journées, en salle ou en classe virtuelle ; il s'appuie sur vos tickets anonymisés et vos procédures, dans l'outil que le service utilise déjà : Gemini, Vibe (anciennement Le Chat), Microsoft Copilot (anciennement Microsoft 365 Copilot), Claude ou ChatGPT, à côté du ticketing. Masteria détenant la certification Qualiopi, votre OPCO a la possibilité de prendre en charge la formation, à la hauteur fixée par son barème.",
+  "sub": "Un service client répond chaque jour aux mêmes questions, et chaque fois à une personne qui veut être comprise. L'IA générative accélère l'écriture des réponses et la recherche dans la documentation ; l'écoute, le geste commercial et la décision sur un cas sensible restent au conseiller. Les deux jours installent ce partage des rôles, avec les règles du RGPD qui s'appliquent à chaque ticket.",
+  "intro": "La formation IA service client de Masteria apprend aux équipes de relation client à faire préparer par l'IA générative leurs réponses, leur base de connaissances et l'analyse de leurs verbatims, sur leurs propres tickets."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré (réponses écrites seules)"
+   "value": "Deux jours de sept heures, en intra ; une journée si l'équipe se limite aux réponses écrites"
   },
   {
    "label": "Pour qui",
-   "value": "Conseillers et chargés de clientèle, superviseurs et responsables de service client, équipes SAV et support, community managers relation client, responsables qualité"
+   "value": "Conseillers et chargés de clientèle, superviseurs, équipes SAV et support technique, responsables qualité et expérience client"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec votre outil de ticketing et votre base de connaissances"
+   "value": "Gemini, Vibe, Copilot, ChatGPT ou Claude, utilisés à côté de votre ticketing et de votre base de connaissances"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos vrais tickets, réclamations, scripts et articles de base de connaissances (anonymisés)"
+   "value": "Un lot de tickets et de réclamations anonymisés, vos procédures, vos réponses types et quelques articles de la base"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts service client, gabarits de réponse par situation, trame d'article de base de connaissances, cadre RGPD et cas sensibles"
+   "value": "Ton de marque encodé, gabarits de réponse par situation, trame d'article de base, règles RGPD et liste des cas sensibles"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Masteria est certifiée Qualiopi : l'OPCO décide du montant qu'il finance, d'après son barème"
   }
  ],
  "missionsHead": {
-  "kicker": "Situation par situation",
-  "h2": "Que change l'IA dans le travail d'un service client ?",
-  "answer": "L'IA générative touche six activités du service client : les réponses aux demandes et réclamations, la base de connaissances et la FAQ, la qualification et la priorisation, le traitement des cas sensibles, les scripts et la formation interne, la mesure et l'amélioration de la qualité. Dans chacune, elle rédige, recherche et structure ; l'écoute, la décision sur un cas sensible et le geste commercial restent au conseiller.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre organisation au cadrage. Si votre besoin est un agent IA qui répond de lui-même à une partie des demandes, c'est une solution à développer : voyez notre page {/agent-support-client-ia|agent de support client IA}."
+  "kicker": "Du ticket à la qualité",
+  "h2": "Six activités du service client où l'IA générative épaule les conseillers",
+  "answer": "Traiter les demandes et les réclamations, tenir la base de connaissances, qualifier les tickets, préparer les cas sensibles, outiller les scripts et la formation des nouveaux, analyser la qualité : l'IA générative rédige, cherche et structure dans chacune de ces activités. L'écoute, le geste commercial et la décision sur un cas délicat appartiennent au conseiller ou au superviseur.",
+  "foot": "Le cadrage règle la place de chaque activité selon votre organisation. Un agent qui répondrait seul à une partie des demandes se développe sur mesure : la page {/agent-support-client-ia|agent de support client IA} en décrit le principe."
  },
  "missions": [
   {
    "icon": "Headphones",
    "title": "Réponses aux demandes et réclamations",
-   "desc": "Rédiger une réponse claire, complète et au ton de la marque à partir du ticket et de la procédure, reformuler une réponse technique en langage client, adapter le ton à l'émotion perçue, traiter en plusieurs langues : la qualité de réponse monte, le temps de rédaction baisse. Avec la règle : le conseiller relit et envoie, l'IA prépare."
+   "desc": "À partir du ticket, de l'historique et de la procédure, l'IA rédige une réponse complète au ton de votre entreprise, reformule une explication technique en mots simples, adapte le registre à l'émotion du client et traduit si besoin. Le conseiller relit, ajuste, puis envoie."
   },
   {
    "icon": "BookOpen",
-   "title": "Base de connaissances et FAQ",
-   "desc": "Rédiger et mettre à jour les articles de la base de connaissances à partir des tickets résolus, produire une FAQ vivante, harmoniser des procédures anciennes : la base devient enfin complète et à jour, et l'IA y puise pour répondre juste."
+   "title": "Base de connaissances",
+   "desc": "Chaque ticket résolu peut nourrir un article (symptôme, cause, solution), deux procédures contradictoires sont réconciliées, une FAQ se met à jour à partir des questions du mois. La base se complète enfin, et l'IA y trouve de quoi répondre juste."
   },
   {
    "icon": "ListFilter",
-   "title": "Qualification et priorisation",
-   "desc": "Comprendre une demande confuse, en extraire l'objet, le niveau d'urgence et les informations manquantes, préparer la question de clarification, orienter vers le bon niveau : la qualification gagne en vitesse et en justesse. Le routage final et l'arbitrage restent humains."
+   "title": "Qualification des demandes",
+   "desc": "Objet, urgence, informations manquantes, question de clarification, orientation proposée : un mail confus ou un message sur les réseaux est démêlé en quelques secondes. Le routage final reste une décision humaine."
   },
   {
    "icon": "ShieldAlert",
-   "title": "Cas sensibles et réclamations difficiles",
-   "desc": "Réclamation grave, client en colère, litige, demande RGPD (accès, suppression), situation de vulnérabilité : l'IA aide à structurer une réponse posée et complète, à ne rien oublier de la procédure. La décision, le geste commercial et l'envoi sur ces cas restent toujours au conseiller ou au superviseur, jamais automatisés."
+   "title": "Cas sensibles",
+   "desc": "Réclamation grave, client exaspéré, litige, demande d'accès ou d'effacement au titre du RGPD, situation de fragilité : l'IA aide à poser une réponse calme et complète, sans sauter d'étape dans la procédure. La décision, le geste et l'envoi restent au conseiller ou au superviseur."
   },
   {
    "icon": "LayoutTemplate",
-   "title": "Scripts, gabarits et formation interne",
-   "desc": "Scripts d'appel, gabarits de réponse par situation, guides pour les nouveaux conseillers, quiz d'entraînement, synthèse d'un cas complexe pour l'équipe : le superviseur outille et forme son équipe plus vite et de façon homogène."
+   "title": "Scripts et formation interne",
+   "desc": "Scripts d'appel, réponses types par situation, guide d'accueil du nouveau conseiller, quiz bâti sur des cas résolus : le superviseur outille son équipe plus vite et de façon homogène."
   },
   {
    "icon": "Gauge",
-   "title": "Mesure et amélioration de la qualité",
-   "desc": "Analyser un lot de tickets ou de verbatims anonymisés pour repérer les motifs récurrents, résumer une enquête de satisfaction, préparer le rapport qualité, identifier les articles de base de connaissances à créer : l'IA lit ce que personne n'a le temps de lire, et le service s'améliore sur des faits."
+   "title": "Mesure de la qualité",
+   "desc": "Un lot de tickets ou de verbatims anonymisés révèle les motifs qui reviennent, les articles qui manquent, les irritants à remonter au produit. L'IA parcourt des centaines de messages qu'aucun superviseur ne lirait en entier, et le service décide sur des faits."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour un service client",
-  "answer": "Six gains : des réponses justes et au bon ton même à fort volume, une base de connaissances enfin complète et vivante, une qualification plus rapide et plus juste, des cas sensibles mieux traités parce que mieux préparés, des équipes outillées et formées plus vite, et une qualité pilotée sur des faits plutôt que sur des impressions.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut inventer une procédure, une garantie ou un délai, et lisser une réponse au point de la rendre froide. Donnez-lui la procédure source, relisez chaque engagement pris, gardez la main sur tout cas sensible : le reste, elle le fait remarquablement bien."
+  "kicker": "Pour la relation client",
+  "h2": "Les gains d'un service client formé à l'IA générative",
+  "answer": "Des réponses justes et au bon ton même quand les tickets s'accumulent, une base de connaissances enfin à jour, des demandes orientées du premier coup, des cas sensibles mieux préparés, des nouveaux conseillers opérationnels plus tôt et une qualité pilotée sur ce que disent les clients.",
+  "foot": "L'IA peut inventer un délai de livraison, une garantie ou une étape de procédure, et refroidir une réponse jusqu'à la rendre administrative. Donnez-lui la procédure source, relisez chaque engagement avant l'envoi, gardez la main sur les cas sensibles : à ces trois conditions, les gains tiennent."
  },
  "atouts": [
   {
-   "title": "Des réponses justes au bon ton, même à fort volume",
-   "desc": "Claires, complètes, à la marque, adaptées à l'émotion du client : la qualité de réponse cesse de dépendre de la fatigue de fin de journée."
+   "title": "Des réponses justes au bon ton",
+   "desc": "Claires, complètes, adaptées à l'émotion du client : la qualité de réponse ne dépend plus de l'heure de la journée ni de la file d'attente."
   },
   {
-   "title": "Une base de connaissances complète et vivante",
-   "desc": "Alimentée à partir des tickets résolus, mise à jour sans douleur : le savoir du service cesse d'être dans la tête de deux personnes."
+   "title": "Une base de connaissances vivante",
+   "desc": "Chaque ticket résolu peut l'enrichir ; le savoir du service quitte la tête de deux experts pour devenir accessible à tous."
   },
   {
-   "title": "Une qualification plus rapide et plus juste",
-   "desc": "Objet, urgence, informations manquantes, question de clarification : le ticket part au bon endroit du premier coup."
+   "title": "Des demandes bien orientées",
+   "desc": "Objet, urgence et informations manquantes repérés d'emblée : le ticket arrive au bon niveau, et le client attend moins."
   },
   {
-   "title": "Des cas sensibles mieux traités",
-   "desc": "Réponse posée, procédure respectée, rien d'oublié : le conseiller aborde le cas difficile préparé, et garde la décision."
+   "title": "Des cas sensibles mieux préparés",
+   "desc": "Réponse posée, procédure suivie point par point : le conseiller aborde le cas difficile avec un plan, et garde la décision."
   },
   {
-   "title": "Des équipes outillées et formées plus vite",
-   "desc": "Scripts, gabarits, guides, quiz : le superviseur équipe et forme de façon homogène, les nouveaux montent en compétence plus vite."
+   "title": "Des nouveaux plus vite autonomes",
+   "desc": "Guides, réponses types et quiz tirés de cas résolus raccourcissent la montée en compétence des recrues."
   },
   {
    "title": "Une qualité pilotée sur des faits",
-   "desc": "Motifs récurrents, verbatims, enquêtes, rapport qualité : le service s'améliore à partir de ce que disent réellement les clients."
+   "desc": "Motifs récurrents, verbatims, enquêtes de satisfaction : le service s'améliore à partir de ce que disent ses clients."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA service client sur 2 jours",
-  "answer": "Jour 1 : ce que l'IA fait et ne fait pas en relation client, le panorama des outils et de leurs versions entreprise, la méthode de la demande appliquée à un ticket, votre ton de marque encodé, puis les ateliers réponses et réclamations, base de connaissances et FAQ, qualification, le Projet partagé du service et le cadre (données clients, transparence, relecture). Jour 2 : les cas sensibles, les scripts et la formation interne, l'analyse d'un lot de tickets, la recherche approfondie et la co-édition, puis les compétences (Skills), les assistants et agents, les tâches planifiées, la gouvernance, la mesure de la qualité et votre plan d'action.",
-  "foot": "Le programme s'ajuste au cadrage : une équipe support technique approfondit la base de connaissances et la reformulation, un service réclamations les cas sensibles et le ton, les superviseurs les compétences et la gouvernance. En version 1 jour, on garde les fondamentaux, le ton encodé, les réponses écrites et le Projet partagé. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Formation IA service client : le programme détaillé des deux jours",
+  "answer": "Le jour 1 pose les bases sur vos tickets : les réussites et les erreurs de l'IA en relation client, le choix d'une offre, une demande montée sur un ticket, votre ton et vos règles dans les instructions, puis ateliers réclamations, base de connaissances et qualification, un espace commun pour tout le service et la protection des données des clients. Le jour 2 aborde les cas sensibles, les scripts et la formation interne, l'analyse d'un lot de verbatims, la recherche sur un point réglementaire, l'IA dans la messagerie, puis les compétences, les assistants et les agents du service, les tâches récurrentes, les indicateurs de qualité et les engagements de chacun pour les semaines qui suivent.",
+  "foot": "Un support technique passe plus de temps sur la base de connaissances et la reformulation ; un service réclamations, sur les cas sensibles et le ton ; les superviseurs, sur les compétences et la gouvernance. Sur une seule journée, on conserve la méthode, le ton encodé, les réponses écrites et l'espace commun. Fonctions vérifiées au 7 octobre 2026 ; celles qui manquent à vos licences sont montrées en séance, puis transposées avec les moyens du service."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Fondamentaux, ton encodé, réponses, base de connaissances, qualification",
+   "titre": "Méthode, ton de marque, réponses, base de connaissances, qualification",
    "matin": [
     {
-     "t": "Ce que l'IA fait dans un service client",
-     "d": "Capacités réelles (reformuler, structurer, traduire, lire un lot de tickets), limites (un délai, une procédure ou un engagement inventés, vos conditions commerciales inconnues de l'outil), ce qui engage la marque ; démonstration en direct sur deux tickets anonymisés de votre service."
+     "t": "L'IA face à un ticket",
+     "d": "Elle reformule, structure, traduit et lit un lot de tickets en quelques minutes. Elle ignore vos conditions commerciales et peut inventer un délai, une garantie ou une étape de procédure. La démonstration porte sur deux tickets anonymisés de votre service, et le groupe liste ce qui engage l'entreprise : remboursement, délai, geste, promesse."
     },
     {
-     "t": "Panorama des outils et versions entreprise",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude Team, Gemini dans Workspace, Vibe (anciennement Le Chat de Mistral) : lequel pour quoi en relation client, où vont les données, pourquoi les versions gratuites sont exclues ; ce que savent déjà faire votre ticketing et votre base de connaissances, en lecture."
+     "t": "Quel outil, sous quelle offre",
+     "d": "Gemini dans Workspace, Vibe de Mistral, Microsoft Copilot, ChatGPT Business, Claude Team : l'apport de chacun pour la relation client, où vont les données, pourquoi aucun ticket n'entre dans un compte gratuit. Les fonctions d'IA déjà présentes dans votre ticketing sont examinées pour ce qu'elles font."
     },
     {
-     "t": "La demande efficace sur un ticket",
-     "d": "La méthode : contexte (ticket, historique, procédure), rôle, format de réponse, exemples tirés de vos meilleures réponses, itération, relecture ; appliquée en direct sur une réclamation anonymisée, en comparant la réponse brute et la réponse cadrée."
+     "t": "Une demande construite sur un ticket",
+     "d": "Ticket, historique, procédure, format attendu, deux de vos meilleures réponses en exemple, puis allers-retours : on travaille en direct sur une réclamation anonymisée. Les deux versions, celle d'une demande vague et celle d'une demande construite, se comparent côte à côte."
     },
     {
-     "t": "Encoder le ton de marque et les règles",
-     "d": "Instructions personnalisées et mémoire : vouvoiement, formules, niveau de langue, ce qu'on promet, ce qu'on ne promet jamais, mentions obligatoires et signature ; chaque participant configure son compte et écrit ses premiers gabarits par situation (accusé de réception, relance, refus)."
+     "t": "Votre ton et vos règles, réglés une fois",
+     "d": "Vouvoiement, formules d'accueil et de conclusion, niveau de langue, promesses permises et interdites, mentions obligatoires, signature : tout rejoint les instructions personnalisées. Chaque participant écrit ses premiers gabarits (accusé de réception, demande de précision, refus motivé)."
     },
     {
-     "t": "Premier atelier : trois tickets anonymisés",
-     "d": "Une demande simple, une question technique à reformuler en langage client, une réponse en anglais ou en espagnol : rédiger avec l'outil, relire, repérer le délai ou l'engagement à vérifier avant envoi ; l'IA prépare, le conseiller envoie."
+     "t": "Premier atelier sur trois tickets",
+     "d": "Une demande simple, une question technique à traduire en langage client, une réponse en anglais ou en espagnol : chacun rédige avec l'outil, relit et repère le délai ou l'engagement à vérifier. L'IA prépare, le conseiller envoie."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier réclamations au ton de la marque",
-     "d": "À partir du ticket, de l'historique et de la procédure : produire une réponse complète, adapter le ton à l'émotion perçue, vérifier chaque engagement (remboursement, délai, geste commercial) ; relecture croisée entre participants, puis comparaison avec la réponse réellement envoyée."
+     "t": "Atelier réclamations",
+     "d": "Ticket, historique et procédure donnent une réponse complète, au ton ajusté à l'émotion du client ; chaque engagement (remboursement, délai, geste) est vérifié. Les participants se relisent entre eux, puis comparent avec la réponse qui avait été envoyée."
     },
     {
-     "t": "Atelier base de connaissances et FAQ",
-     "d": "Transformer un ticket résolu en article (symptôme, cause, résolution, mots-clés), harmoniser deux procédures anciennes qui se contredisent, générer une FAQ à partir d'un lot d'articles ; la trame d'article produite en atelier devient celle de votre base."
+     "t": "Atelier base de connaissances",
+     "d": "Un ticket clos sert de base à un article structuré (symptôme, cause, solution, mots-clés), deux procédures qui se contredisent sont réconciliées, une FAQ naît d'un lot d'articles. La trame produite devient celle de votre base."
     },
     {
-     "t": "Atelier qualification et priorisation",
-     "d": "Sur des demandes confuses (mail long, message sur les réseaux sociaux) : extraire l'objet, le niveau d'urgence et les informations manquantes, rédiger la question de clarification, proposer une orientation ; le routage final et l'arbitrage restent au conseiller ou au superviseur."
+     "t": "Atelier qualification",
+     "d": "Sur des demandes confuses (mail interminable, message sur un réseau social) : objet, urgence, éléments manquants, question de clarification, orientation proposée. Le routage et l'arbitrage restent au conseiller ou au superviseur."
     },
     {
-     "t": "Projets et espaces : le socle du service",
-     "d": "Créer un Projet partagé ChatGPT ou un Projet Claude avec les instructions communes, les procédures, les gabarits validés et le ton de marque, ou une Bibliothèque dans Vibe Work ; droits lecture et écriture ; le service entier répond depuis le même socle, mis à jour par un responsable."
+     "t": "Un espace commun pour tout le service",
+     "d": "Gemini Notebook (anciennement NotebookLM), une Bibliothèque dans Vibe, un projet dans Claude ou dans ChatGPT : l'un de ces espaces réunit procédures, réponses validées et ton de marque, et un référent du service le tient à jour. Tout le service répond à partir de la même base."
     },
     {
-     "t": "Le cadre : données clients et relecture",
-     "d": "Anonymisation avant analyse, offres entreprise uniquement, transparence (le client sait quand il interagit avec une IA, article 50), ce qui reste humain (décision sur un cas sensible, geste commercial, envoi) ; liste de relecture : promesse inventée, délai faux, ton froid."
+     "t": "Données clients et transparence",
+     "d": "Anonymiser avant toute analyse, réserver les tickets aux offres entreprise, prévenir le client qui dialogue avec un agent conversationnel (une exigence de transparence que l'AI Act fait peser sur les entreprises depuis août 2026), garder humains la décision sur un cas sensible, le geste commercial et l'envoi. La grille de relecture repère la promesse inventée, le délai faux et le ton glacial."
     }
    ]
   },
@@ -170,139 +173,140 @@ export default {
    "titre": "Cas sensibles, qualité, compétences, assistants et gouvernance",
    "matin": [
     {
-     "t": "Atelier cas sensibles et réclamations difficiles",
-     "d": "Réclamation grave, client en colère, litige, demande RGPD (accès, suppression), situation de vulnérabilité : structurer une réponse posée et complète avec l'IA, vérifier que la procédure est suivie point par point ; décision, geste commercial et envoi restent au conseiller ou au superviseur."
+     "t": "Atelier cas sensibles",
+     "d": "Réclamation grave, client exaspéré, litige, demande d'accès ou d'effacement de données, situation de fragilité : l'IA aide à poser une réponse calme et complète, et le groupe vérifie que chaque étape de la procédure est respectée. Décision, geste et envoi restent humains."
     },
     {
-     "t": "Atelier scripts, gabarits et formation interne",
-     "d": "Script d'appel, gabarits de réponse par situation, guide du nouveau conseiller, quiz d'entraînement construit sur des cas résolus, synthèse d'un cas complexe pour le point d'équipe ; le superviseur produit, relit, puis dépose le tout dans le Projet partagé."
+     "t": "Atelier scripts et formation interne",
+     "d": "Script d'appel, réponses types par situation, guide d'accueil d'un nouveau conseiller, quiz construit sur des cas résolus, synthèse d'un dossier complexe pour le point d'équipe : le superviseur produit, relit, puis range le tout dans l'espace commun."
     },
     {
      "t": "Analyser un lot de tickets ou de verbatims",
-     "d": "Export anonymisé de votre ticketing ou d'une enquête de satisfaction : l'analyse de données de ChatGPT ou de Claude, ou Copilot dans Excel, classe les motifs, fait ressortir les récurrences et les articles manquants ; vous validez les catégories et gardez la lecture des chiffres."
+     "d": "Un export anonymisé du ticketing ou les réponses d'un questionnaire client : les motifs se classent, les récurrences ressortent, les articles manquants apparaissent. Le tri se fait dans les tableurs de Vibe, dans le classeur Excel avec Copilot, ou en joignant le fichier à Claude ou à ChatGPT ; l'équipe valide les catégories et garde la lecture des chiffres."
     },
     {
-     "t": "Recherche approfondie et documents longs",
-     "d": "Deep Research dans ChatGPT ou Gemini, recherche approfondie de Claude, agent Researcher de Copilot : préparer une réponse sur un point réglementaire (droit de rétractation, délais légaux de remboursement), lire des conditions générales longues et en extraire ce qui s'applique au cas ; sources citées et vérifiées."
+     "t": "Recherche sur un point réglementaire",
+     "d": "Droit de rétractation, délai légal de remboursement, garantie : Researcher dans Copilot, ou le mode de recherche approfondie de Gemini, Claude et ChatGPT, rassemble les textes, et le conseiller extrait de vos conditions générales ce qui s'applique au cas. Chaque source est ouverte et vérifiée."
     },
     {
-     "t": "Co-édition et IA dans vos outils",
-     "d": "Rédiger le rapport qualité ou une communication client dans Canvas (ChatGPT), Artifacts (Claude) ou Copilot Pages ; Copilot dans Outlook sur un fil de réclamation long, récapitulatif d'une réunion qualité dans Teams, Gemini dans Gmail pour les brouillons ; périmètre de données rappelé (OneDrive, SharePoint)."
+     "t": "L'IA dans la messagerie du service",
+     "d": "Copilot dans Outlook résume un long fil de réclamation et propose un brouillon ; Gemini fait de même dans Gmail. Le rapport qualité ou un courrier client important se rédige ensuite à quatre mains, dans Word ou dans Docs, avec un périmètre de données rappelé à chacun."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) : une procédure réutilisable",
-     "d": "Transformer « traiter une réclamation livraison » ou « répondre à une demande RGPD » en compétence : créée en langage naturel dans ChatGPT Business, ou dossier SKILL.md dans Claude (un membre crée et teste, l'owner provisionne et partage) ; elle s'active d'elle-même quand le ticket correspond."
+     "t": "Une procédure devenue compétence",
+     "d": "« Traiter une réclamation de livraison » ou « répondre à une demande RGPD » se change en compétence, que l'assistant déclenche quand le ticket s'y prête. Le format SKILL.md, créé par Anthropic, sert aussi dans Cowork chez Microsoft et dans les compétences Gemini, ouvertes par Google dans Workspace le 5 octobre 2026 ; Vibe a ses Skills depuis le 22 septembre 2026."
     },
     {
-     "t": "Assistants et agents : lequel pour quoi",
-     "d": "GPTs existants traités, le neuf va en Projet partagé, compétence ou agent d'espace de travail (déclencheur, étapes, règles, test avant publication, crédits à budgéter) ; Gems et NotebookLM sur votre base de connaissances ; Agent Builder de Microsoft sur SharePoint, Copilot Studio pour toucher le ticketing : un projet."
+     "t": "Assistant ou agent pour le service",
+     "d": "Les GPTs du service doivent être convertis en plugins, la date de leur suppression étant fixée au 11 décembre 2026 ; un Gem devient une compétence Gemini. Un assistant interne qui interroge vos procédures se construit en atelier ; un agent qui répond seul aux clients, ou qui écrit dans le ticketing, relève d'un projet distinct, avec transparence, escalade vers un humain et mesure."
     },
     {
-     "t": "Tâches planifiées et automatisations légères",
-     "d": "Revue hebdomadaire des motifs de réclamation, rappel de mise à jour des articles, veille sur les avis en ligne : tâches planifiées ChatGPT (une phrase, au plus une exécution par heure) ou Vibe, Workflows Vibe ou Workspace Studio pour une synthèse récurrente ; aucun envoi automatique au client."
+     "t": "Tâches planifiées, sans envoi automatique",
+     "d": "Revue hebdomadaire des motifs de réclamation, rappel des articles à mettre à jour, veille sur les avis laissés en ligne : chacune se programme d'une phrase, avec Workspace Studio, Cowork, Vibe ou ChatGPT. Un conseiller valide toujours un message destiné à un client."
     },
     {
-     "t": "Gouvernance et mesure de la qualité",
-     "d": "Un propriétaire nommé pour chaque compétence et chaque assistant, registre, règles de partage, revue trimestrielle, droits définis par l'admin (parcourir, exécuter, construire, publier) ; indicateurs suivis : délai de première réponse, résolution au premier contact, satisfaction, complétude de la base."
+     "t": "Gouvernance et indicateurs de qualité",
+     "d": "Un responsable pour chaque compétence et chaque assistant, un registre, des droits fixés par l'administrateur (utiliser, construire, publier), un bilan tous les trois mois. À suivre : délai de première réponse, résolution au premier contact, satisfaction, complétude de la base."
     },
     {
-     "t": "Plan d'action, évaluation, livrables",
-     "d": "Les trois usages à installer dans le mois (un article de base par ticket résolu, les gabarits par situation, la revue mensuelle des verbatims), qui les porte, comment on mesure ; évaluation des acquis ; remise de la bibliothèque de prompts, des gabarits, des compétences et du cadre d'usage."
+     "t": "Plan d'action et livrables",
+     "d": "Trois usages pour le mois (un article par ticket résolu, des réponses types par situation, une revue mensuelle des verbatims), confiés chacun à une personne qui en mesure l'effet. Le questionnaire d'évaluation précède la remise des gabarits, de la trame d'article, des compétences et des règles d'usage."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA service client ?",
-  "answer": "À toute la relation client : conseillers et chargés de clientèle, superviseurs et responsables de service client, équipes SAV et support technique, community managers relation client, responsables qualité. Sans prérequis technique : la pratique du métier suffit, en centre de contact comme en petite équipe."
+  "h2": "Pour quels métiers de la relation client ?",
+  "answer": "Toute la relation client : conseillers et chargés de clientèle, superviseurs et responsables de service, équipes SAV et support technique, responsables qualité et expérience client. Connaître le métier suffit, dans un centre de contact comme dans une petite équipe."
  },
  "profils": [
   {
    "icon": "Headphones",
    "title": "Conseillers et chargés de clientèle",
-   "desc": "Réponses, reformulations, recherche dans la base, qualification : les usages qui rendent des minutes sur chaque ticket et améliorent le ton. Le cœur des ateliers est fait pour vous."
+   "desc": "Réponses, reformulations, recherche dans la base, qualification : des minutes gagnées sur chaque ticket et un ton plus juste. La plupart des ateliers partent de votre poste."
   },
   {
    "icon": "Users",
-   "title": "Superviseurs et responsables de service",
-   "desc": "Cas sensibles, scripts, formation des équipes, mesure de la qualité, cadre d'usage : les usages de pilotage et d'homogénéisation, avec la responsabilité de ce que l'IA ne décide pas."
+   "title": "Superviseurs et responsables",
+   "desc": "Cas sensibles, scripts, formation des équipes, qualité, règles d'usage : les usages qui homogénéisent le service, et la garde des décisions qui ne se délèguent pas."
   },
   {
    "icon": "Wrench",
-   "title": "Équipes SAV et support technique",
-   "desc": "Reformuler le technique en langage client, alimenter la base de connaissances, structurer les diagnostics : les usages qui font la différence entre un support subi et un support apprécié."
+   "title": "SAV et support technique",
+   "desc": "Traduire le technique en langage client, enrichir la base, structurer un diagnostic : le support gagne en clarté aux yeux des clients."
   },
   {
    "icon": "Smile",
-   "title": "Responsables qualité et expérience client",
-   "desc": "Analyse des verbatims, motifs récurrents, enquêtes, rapports : piloter la qualité sur des faits, et prioriser les articles et scripts à produire."
+   "title": "Qualité et expérience client",
+   "desc": "Verbatims, motifs récurrents, enquêtes, rapports : une qualité pilotée sur des faits, et des priorités claires pour la base et les scripts."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Données clients, cas sensibles, transparence : ce que la formation pose noir sur blanc",
-  "p": "Le service client manipule des données personnelles à chaque échange et prend des engagements au nom de l'entreprise : garanties, délais, gestes commerciaux. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise uniquement pour toute donnée client, anonymisation avant analyse de lots), où s'arrête l'assistance (l'IA rédige et recherche ; la décision sur un cas sensible, le geste commercial et l'envoi restent au conseiller ou au superviseur), l'obligation d'informer un client quand il interagit avec une IA (article 50 du règlement européen, applicable depuis août 2026), et la relecture de chaque engagement pris. Ce cadre est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des équipes de relation client depuis 2022, dans les services, l'énergie, l'immobilier ou le retail : les mêmes situations reviennent, et elles ont des réponses pratiques.",
+  "kicker": "Données clients et transparence",
+  "h2": "Données personnelles, engagements, information du client : le cadre écrit avec l'équipe",
+  "p": "Un service client traite des données personnelles à chaque échange, parfois sensibles (santé, situation financière), et prend des engagements au nom de l'entreprise : délais, garanties, gestes commerciaux. Pendant la formation, l'équipe décide quel outil reçoit quoi (offres entreprise pour toute donnée client, anonymisation avant l'analyse d'un lot), ce qui revient à l'IA (rédiger, chercher) et ce qui revient aux personnes (la décision sur un cas sensible, le geste, l'envoi), comment informer un client qui échange avec un agent conversationnel, et quels engagements se relisent toujours. Ces règles s'ajoutent à votre {/charte-ia-entreprise|charte IA d'entreprise}, et le délégué à la protection des données de l'entreprise peut les relire.",
   "points": [
-   "Données clients : offres entreprise, anonymisation avant analyse",
+   "Données clients : offre entreprise et anonymisation avant analyse",
    "Cas sensibles et gestes commerciaux : décision et envoi humains",
-   "Transparence : le client sait quand il parle à une IA (art. 50)",
-   "Chaque promesse, délai ou garantie relu avant envoi"
+   "Client informé quand il échange avec une IA",
+   "Délais, garanties et promesses relus avant chaque envoi"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures. Pour un centre de contact, la formation se déploie par vagues d'équipes.",
-  "inclus": "Le cadrage préalable avec vos éléments (tickets et réclamations anonymisés, scripts, articles de base de connaissances, procédures, outils), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts service client, gabarits par situation, trame d'article, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": ""
+  "titre": "Tarif et financement de la formation IA service client",
+  "answer": "Chaque journée revient à 1 980 € HT pour un groupe d'au plus douze conseillers, et le parcours de deux jours à 3 960 € HT. Un centre de contact forme ses équipes par vagues, superviseurs en premier, chaque groupe au même tarif. L'OPCO peut participer au financement de chaque session, puisque Masteria est certifiée Qualiopi, selon son barème et l'enveloppe de l'année. Devis transmis sous 24 heures.",
+  "inclus": "Un cadrage sur un lot de tickets anonymisés, vos procédures, vos réponses types et quelques articles de la base ; les deux journées en présentiel ou en visioconférence ; les supports et livrables (gabarits par situation, trame d'article, règles RGPD) ; un questionnaire d'acquis et une attestation de réalisation remise à chacun. Les frais de déplacement du formateur sont ajoutés quand la session se tient hors de la région lyonnaise.",
+  "financement": "Pour identifier l'opérateur de votre branche, utilisez {/quel-opco|Quel OPCO ?} ; les dispositifs sont détaillés sur {/financement-formation-ia|notre page financement}. Le dossier (programme, convention, justificatifs) vous est remis pour que vous le transmettiez avant la première session. Le CPF ne finance pas ce parcours."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA service client ?",
-   "a": "À mettre l'intelligence artificielle générative au service de la qualité de réponse, sur vos vrais tickets : rédiger des réponses claires et au ton de la marque, reformuler le technique en langage client, alimenter et tenir à jour la base de connaissances, qualifier et prioriser les demandes, préparer le traitement des cas sensibles sans les automatiser, outiller les scripts et la formation interne, analyser les verbatims pour piloter la qualité. Et le cadre en premier : RGPD, ce que l'IA ne décide pas, transparence envers le client."
+   "q": "Que contient une formation IA service client ?",
+   "a": "La façon de faire travailler l'IA générative pour la qualité de réponse, sur vos tickets : rédiger des réponses claires au ton de l'entreprise, traduire le technique en langage client, tenir à jour la base de connaissances, qualifier les demandes, préparer les cas sensibles sans les automatiser, outiller scripts et formation interne, analyser les verbatims. Le cadre ouvre le programme : RGPD, décisions réservées aux personnes, information du client."
   },
   {
    "q": "L'IA va-t-elle répondre aux clients à la place des conseillers ?",
-   "a": "Ce n'est pas l'objet de cette formation, et c'est un choix. Ici, l'IA prépare et le conseiller relit et envoie : sur les cas simples, la validation est rapide ; sur les cas sensibles (réclamation grave, litige, demande RGPD, vulnérabilité), la décision et l'envoi restent humains, toujours. Si votre organisation veut qu'un agent IA réponde de lui-même à une partie des demandes simples, c'est une solution à développer et à cadrer (transparence, escalade, mesure), que couvre notre page agent de support client IA. Les deux se combinent souvent : l'agent traite le simple, les conseillers formés traitent le reste mieux."
+   "a": "Dans cette formation, l'IA prépare et le conseiller relit puis envoie. Sur les demandes simples, la validation prend quelques secondes ; sur les cas sensibles (réclamation grave, litige, demande RGPD, fragilité), décider et envoyer reviennent toujours à une personne. Un agent qui répondrait seul à une partie des demandes demande un projet distinct, avec transparence, escalade et mesure, présenté sur notre page agent de support client IA. Beaucoup de services combinent les deux : l'agent prend le simple, des conseillers formés traitent le reste."
   },
   {
-   "q": "Peut-on confier à l'IA les tickets et les données de nos clients ?",
-   "a": "Sous conditions, posées dès la première heure. Les tickets contiennent des données personnelles : usage exclusif d'offres entreprise qui n'entraînent pas leurs modèles sur vos données et offrent un cadre contractuel, jamais de version gratuite ; anonymisation avant toute analyse de lots (verbatims, motifs récurrents) ; attention particulière aux données sensibles (santé, situation financière) qui peuvent apparaître dans une réclamation. Les IA intégrées à votre outil de ticketing ont leur propre cadre contractuel, à lire. Le cadre écrit est un livrable, à valider avec votre DPO."
+   "q": "Peut-on confier nos tickets et nos données clients à l'IA ?",
+   "a": "Oui, si l'on respecte quelques conditions, fixées le premier matin. Les tickets contiennent des données personnelles : seules des offres entreprise sont admises, avec un contrat et sans réutilisation de vos tickets pour l'entraînement ; une analyse de lot se fait après anonymisation ; les données sensibles qui surgissent dans une réclamation (santé, finances) demandent une vigilance particulière. Les IA intégrées à votre ticketing ont leurs propres conditions, à lire. Les règles écrites font partie des livrables, à valider avec votre DPO."
   },
   {
    "q": "Faut-il dire au client qu'une IA a aidé à rédiger la réponse ?",
-   "a": "Il faut distinguer deux cas. Quand un client interagit directement avec une IA (agent conversationnel, chatbot), l'article 50 du règlement européen sur l'IA impose depuis août 2026 de l'en informer clairement. Quand un conseiller humain utilise l'IA pour préparer une réponse qu'il relit et envoie lui-même, c'est un outil de rédaction comme un autre et l'échange reste humain ; il n'y a pas d'obligation d'information spécifique, mais la responsabilité du contenu est entière. La formation pose cette distinction et ses conséquences pratiques."
+   "a": "Deux situations se distinguent. Quand le client échange directement avec une IA (agent conversationnel, assistant sur le site), il doit le savoir : l'AI Act l'exige depuis le 2 août 2026. Quand un conseiller s'aide de l'IA pour préparer une réponse qu'il relit et envoie, l'échange reste humain et aucune mention spécifique n'est exigée ; le conseiller répond du contenu. La formation pose cette distinction et ses conséquences."
   },
   {
-   "q": "L'IA ne va-t-elle pas rendre nos réponses froides et génériques ?",
-   "a": "C'est le risque numéro un, traité en atelier. Une réponse générée sans cadrage est lisse et impersonnelle ; une réponse produite à partir de votre ton de marque encodé, adaptée à l'émotion perçue dans le ticket, puis relue, est souvent plus chaleureuse qu'une réponse écrite à la hâte en fin de journée. La méthode : encoder le ton et les règles, demander l'adaptation au contexte émotionnel, relire, personnaliser la première et la dernière phrase. Le conseiller garde la relation ; l'IA lui rend le temps de la soigner."
+   "q": "Nos réponses risquent-elles de devenir froides ?",
+   "a": "Sans cadrage, oui : une réponse générée brute est lisse et impersonnelle. Produite à partir de votre ton encodé, adaptée à l'émotion perçue dans le ticket puis relue, elle est souvent plus chaleureuse qu'une réponse tapée à la hâte en fin de journée. La méthode : donner à l'outil votre ton et vos règles, lui demander de tenir compte de l'émotion, relire, personnaliser la première et la dernière phrase. L'IA rend au conseiller le temps de soigner la relation."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre service utilise. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral, articulés avec votre outil de ticketing (les fonctions IA intégrées aux principaux outils du marché sont abordées pour ce qu'elles font réellement) et votre base de connaissances. Si un outil est déployé, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Les fondamentaux valent partout."
+   "q": "Un service équipé de Gemini ou de Vibe peut-il suivre ce parcours ?",
+   "a": "Oui, les ateliers se déroulent aussi bien dans l'un que dans l'autre. Une équipe sous Google Workspace répond depuis Gmail et appuie ses réponses sur un carnet Gemini Notebook nourri des procédures ; une équipe qui a choisi Mistral range ses procédures dans la Knowledge Base de Vibe, hébergée en Europe. La protection des données clients obéit aux mêmes principes dans les deux outils."
   },
   {
-   "q": "La formation travaille-t-elle sur nos vrais tickets ?",
-   "a": "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : un lot de tickets et de réclamations représentatifs anonymisés, vos scripts et gabarits, des articles de base de connaissances, vos procédures, vos outils. Chaque atelier part de là. Trois situations apportées par les participants sont traitées en collectif le jour 2. Les livrables sont directement utilisables le lendemain."
+   "q": "Quels outils utilise-t-on ?",
+   "a": "Ceux du service : Gemini, Vibe, Microsoft Copilot, ChatGPT ou Claude, à côté de votre ticketing (on y regarde aussi ses fonctions d'IA intégrées) et de votre base de connaissances. Masteria n'a d'attache avec aucun éditeur. Un service déjà équipé travaille dans son outil ; un service qui hésite met deux ou trois assistants à l'essai sur ses tickets dès la première matinée."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un périmètre resserré, centré sur les réponses écrites. Pour un centre de contact, la formation se déploie par vagues d'équipes, avec les superviseurs formés en premier. Les journées pleines alternent apports courts et ateliers sur vos tickets réels."
+   "q": "Les exercices utilisent-ils les tickets du service ?",
+   "a": "Oui. Le cadrage réunit un lot de tickets et de réclamations anonymisés, vos réponses types, quelques articles de la base et vos procédures. Les ateliers en sont tirés, et le second jour, le groupe traite ensemble trois cas difficiles apportés par les conseillers. Les gabarits servent dès le lendemain."
   },
   {
-   "q": "Combien coûte une formation IA service client, et est-elle finançable ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT par groupe. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous et notre outil Quel OPCO ? identifie votre opérateur. La formation n'est pas éligible au CPF. Devis sous 24 heures."
+   "q": "Quelle durée, quel format et quel prix ?",
+   "a": "Deux journées pleines, chez vous ou en visioconférence, avec douze personnes au plus ; une journée suffit pour se concentrer sur les réponses écrites. Un centre de contact forme ses équipes par vagues, superviseurs d'abord. La journée est facturée 1 980 € HT à chaque groupe, et l'ensemble du parcours 3 960 € HT, plus le voyage du formateur loin de Lyon. La certification Qualiopi rend l'OPCO compétent pour financer, selon ses règles ; le CPF ne l'est pas. Devis sous 24 heures."
   }
  ],
  "course": {
-  "name": "Formation IA service client — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée au service client et à la relation client, sur les tickets réels des participants : réponses aux demandes et réclamations, base de connaissances et FAQ, qualification et priorisation, cas sensibles, scripts et formation interne, mesure de la qualité, cadre RGPD et transparence. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA service client (Masteria)",
+  "description": "Formation à l'intelligence artificielle générative appliquée au service client, sur les tickets des participants : réponses aux demandes et réclamations, base de connaissances, qualification, cas sensibles, scripts et formation interne, mesure de la qualité, règles RGPD et transparence. Outils : Gemini, Vibe, Microsoft Copilot, ChatGPT, Claude. Deux jours en intra, en présentiel ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Rédiger des réponses claires et au ton de la marque à partir d'un ticket et d'une procédure",
-   "Alimenter et tenir à jour une base de connaissances à partir des tickets résolus",
-   "Qualifier et prioriser une demande avec l'IA sans automatiser les cas sensibles",
-   "Outiller scripts, gabarits et formation interne du service",
+   "Rédiger à partir d'un ticket et d'une procédure une réponse claire, dans le ton de la marque",
+   "Transformer un ticket résolu en article de base de connaissances",
+   "Qualifier une demande et préparer un cas sensible sans l'automatiser",
+   "Outiller scripts, réponses types et formation interne du service",
    "Analyser des verbatims anonymisés pour piloter la qualité"
   ],
   "about": "Intelligence artificielle générative appliquée au service client",
@@ -310,13 +314,13 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique de la relation client.",
   "audience": "Conseillers et chargés de clientèle, superviseurs, SAV et support, responsables qualité",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "locationName": "Masteria : intra-entreprise, en présentiel (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA service client : des réponses justes et humaines à grande échelle, dans le cadre du RGPD",
+  "headline": "Formation IA service client : des réponses exactes et chaleureuses, même au plus fort du volume",
   "datePublished": "2025-09-15",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -337,11 +341,11 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "Obtenir des avis clients et y répondre : le guide France Num (ministère de l'Économie)",
+   "name": "France Num : obtenir des avis clients et y répondre",
    "url": "https://www.francenum.gouv.fr/guides-et-conseils/developpement-commercial/gestion-de-la-relation-client/comment-obtenir-des-avis"
   }
  ],
@@ -350,53 +354,118 @@ export default {
    "label": "Agent de support client IA",
    "href": "/agent-support-client-ia",
    "tag": "Solution",
-   "desc": "Quand le besoin est un agent qui répond de lui-même aux demandes simples : le développement sur mesure, cadré."
+   "desc": "Un agent qui répond seul aux demandes simples."
   },
   {
    "label": "Formation Copilot service client",
    "href": "/formation-copilot-service-client",
    "tag": "Par outil",
-   "desc": "Copilot dans Microsoft 365 pour la relation client : Outlook, Teams, Dynamics."
+   "desc": "Copilot dans Outlook et Teams pour la relation client."
   },
   {
    "label": "Formation ChatGPT service client",
    "href": "/formation-chatgpt-service-client",
    "tag": "Par outil",
-   "desc": "Approfondir ChatGPT pour le service client : GPTs personnalisés, base de connaissances, réponses."
+   "desc": "ChatGPT pour les réponses et la base de connaissances."
+  },
+  {
+   "label": "Formation Claude service client",
+   "href": "/formation-claude-service-client",
+   "tag": "Par outil",
+   "desc": "Claude pour les procédures et l'analyse des verbatims."
+  },
+  {
+   "label": "Formation Gemini en entreprise",
+   "href": "/formation-gemini-entreprise",
+   "tag": "Par outil",
+   "desc": "Gemini dans Google Workspace."
+  },
+  {
+   "label": "Panorama IA service client (multi-outils)",
+   "href": "/formation-multi-outils-service-client",
+   "tag": "Comparatif",
+   "desc": "Plusieurs assistants comparés sur des tickets."
   },
   {
    "label": "Formation IA commerce",
    "href": "/formation-ia-commerce",
    "tag": "Métier voisin",
-   "desc": "Pour les enseignes et e-commerçants : avis clients, fiches, marketing point de vente."
-  },
-  {
-   "label": "Formation IA commercial",
-   "href": "/formation-ia-commercial",
-   "tag": "Métier voisin",
-   "desc": "L'IA sur le cycle de vente B2B, en amont de la relation client."
+   "desc": "Avis clients et fiches produits pour les enseignes."
   },
   {
    "label": "Formation IA management",
    "href": "/formation-ia-management",
    "tag": "Superviseurs",
-   "desc": "Pour les superviseurs et responsables : piloter une équipe augmentée, poser le cadre."
+   "desc": "Pour les superviseurs qui pilotent une équipe."
   },
   {
    "label": "IA et RGPD",
    "href": "/ia-et-rgpd",
    "tag": "Cadre",
-   "desc": "Les principes RGPD appliqués à l'IA, l'analyse d'impact et les garanties à vérifier outil par outil."
+   "desc": "Le RGPD appliqué à l'IA, outil par outil."
   },
   {
    "label": "Charte IA d'entreprise",
    "href": "/charte-ia-entreprise",
    "tag": "Cadre",
-   "desc": "Le cadre d'usage qui protège le service et ses clients : ce qu'on confie, comment, à qui."
+   "desc": "Les règles valables dans toute l'entreprise."
   }
  ],
+ "bibliotheque": "Pour vous faire une idée sans attendre, la {/bibliotheque-de-prompts#service-client|bibliothèque de prompts service client} propose des demandes à adapter : remonter à la cause d'une série de tickets, traiter une réclamation sérieuse, rendre plus humaines vos réponses types, préparer une escalade. Chacune indique les informations qu'elle attend de vous.",
+ "ctaMilieu": {
+  "titre": "Une formation taillée pour vos volumes de tickets",
+  "texte": "Décrivez l'équipe, le ticketing et vos volumes : programme, dates et devis arrivent sous 24 heures, plan par vagues compris si besoin."
+ },
+ "competences": {
+  "titre": "Les compétences évaluées à l'issue de la formation",
+  "intro": "Six objectifs, chacun travaillé en atelier puis contrôlé par le questionnaire final.",
+  "items": [
+   "Rédiger à partir d'un ticket et d'une procédure une réponse claire, dans le ton de la marque",
+   "Transformer un ticket résolu en article de base de connaissances",
+   "Qualifier une demande confuse et formuler la question de clarification",
+   "Préparer la réponse à un cas sensible en respectant la procédure",
+   "Analyser un lot de verbatims anonymisés et en tirer des priorités",
+   "Appliquer à chaque usage les règles du RGPD et de transparence"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Gemini, Vibe, Copilot, ChatGPT ou Claude : l'assistant d'un service client",
+  "intro": "Le ticketing et la messagerie du service orientent le choix. Ce que chaque assistant apporte à la relation client, vérifié le 7 octobre 2026 :",
+  "lignes": [
+   {
+    "outil": "gemini",
+    "texte": "Sous Google Workspace, Gemini propose des brouillons dans Gmail, et un carnet Gemini Notebook rassemble 300 procédures et fiches au plus en édition Business Standard, contre 100 en Starter (nouvelles limites du 7 octobre 2026), pour des réponses qui renvoient à leur source. Des connecteurs ajoutés le 15 septembre 2026 donnent accès à Salesforce, à HubSpot ou à Atlassian Rovo. {/formation-gemini-entreprise|Gemini en entreprise}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "L'assistant de Mistral, Vibe, garde d'office les échanges dans l'Union européenne, un point utile quand les tickets contiennent des données personnelles. Sa Knowledge Base, en place depuis le 22 septembre 2026, conserve vos procédures ; sur l'offre Team, il faut que l'administrateur coupe l'entraînement des modèles, activé par défaut. {/formation-mistral-ai|Mistral AI en entreprise}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Microsoft Copilot résume dans Outlook un long fil de réclamation et suggère un brouillon au ton ajusté ; sans licence, Copilot Chat ne voit que le web et les fichiers déposés. Pour un agent branché sur le ticketing, Copilot Studio se licencie à part (25 000 crédits pour 173,30 € HT par mois, tarif France). {/formation-copilot-service-client|Copilot pour le service client}"
+   },
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business range procédures et réponses approuvées dans un projet commun et fait d'une procédure une compétence ; à partir du 1er octobre 2026, l'administrateur gère les plugins dans sa console. Avant le 11 décembre 2026, date de leur disparition, les GPTs de réponse type doivent migrer en plugins. {/formation-chatgpt-service-client|ChatGPT pour le service client}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude lit des conditions générales entières et des lots de verbatims, et applique vos procédures de réclamation sous forme de compétences ; en Team comme en Enterprise, vos conversations sont exclues par défaut de l'entraînement des modèles d'Anthropic. {/formation-claude-service-client|Claude pour le service client}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Un formateur qui connaît la relation client",
+  "texte": "Les sessions service client relèvent de Mathias Nizan, qui a lancé Masteria en 2022 : il les anime ou les confie à un formateur indépendant rompu à la relation client. En septembre 2026, l'équipe dirigeante d'un {/etudes-de-cas-ia#mission-franchise-gemini|réseau de franchise} a travaillé dans Gemini l'assistance aux franchisés, puis rassemblé procédures et fiches techniques dans un carnet unique, éprouvé avec les questions que posent les franchisés. Toute base de connaissances de service client repose sur ce principe."
+ },
+ "apres": {
+  "titre": "Un agent pour les demandes répétitives",
+  "texte": "Une fois l'équipe formée, beaucoup de services visent l'étape suivante : un agent qui répond seul aux demandes simples et transfère le reste à un conseiller, ou un assistant interne qui interroge vos procédures. Masteria le cadre (transparence, escalade, mesure), le construit et le connecte à votre ticketing. Le chiffrage, forfaitaire, intervient après le cadrage ; ce développement n'est pas finançable par votre OPCO."
+ },
+ "faqTitre": "Questions des équipes de relation client",
  "cta": {
-  "h2": "Formons votre service client sur ses vrais tickets",
-  "p": "Décrivez-nous votre organisation (équipe, centre de contact, SAV), vos outils de ticketing et de base de connaissances, vos volumes et vos enjeux du moment. Nous revenons vers vous sous 24 heures avec un programme ajusté, un plan par vagues si besoin, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Organisons la formation de votre service client",
+  "p": "Décrivez votre organisation (équipe, centre de contact ou SAV), vos outils de ticketing et de base de connaissances, vos volumes et vos priorités. Le lendemain, un programme sur mesure vous attend, avec un plan par vagues si nécessaire, des dates, le devis et le dossier pour l'OPCO."
  }
 }

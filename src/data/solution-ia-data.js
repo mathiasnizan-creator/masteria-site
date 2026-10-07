@@ -81,7 +81,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un copilote IA interne sur mesure ?',
-        a: "Le développement se chiffre au forfait, après cadrage. Un copilote en production se situe le plus souvent entre 15 000 et 60 000 € selon le périmètre, le nombre de sources à connecter et le niveau d'intégration ; un prototype ciblé démarre plus bas, et un déploiement à l'échelle (plusieurs métiers, intégrations multiples, équipe en régie) dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le premier échange de cadrage est gratuit et le devis est établi une fois le périmètre défini.",
+        a: "Le développement se chiffre au forfait, après cadrage. Un copilote en production se situe le plus souvent entre 15 000 et 60 000 € selon le périmètre, le nombre de sources à connecter et le niveau d'intégration ; un prototype ciblé démarre plus bas, et un déploiement à l'échelle (plusieurs métiers, intégrations multiples, équipe en régie) dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis est établi une fois le périmètre défini.",
       },
       {
         q: 'À qui appartient le code du copilote ?',
@@ -159,7 +159,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un assistant documentaire IA ?',
-        a: "Le budget se chiffre au forfait après cadrage. Un assistant documentaire en RAG se situe le plus souvent entre 12 000 et 50 000 € selon le volume de documents, la diversité des formats, les droits d'accès à gérer et le niveau d'intégration ; un prototype sur un corpus restreint démarre plus bas, et une couverture large à gros volume dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands déploiements. Chez Masteria, le cadrage initial est gratuit et le devis suit la définition du périmètre.",
+        a: "Le budget se chiffre au forfait après cadrage. Un assistant documentaire en RAG se situe le plus souvent entre 12 000 et 50 000 € selon le volume de documents, la diversité des formats, les droits d'accès à gérer et le niveau d'intégration ; un prototype sur un corpus restreint démarre plus bas, et une couverture large à gros volume dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands déploiements. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis suit la définition du périmètre.",
       },
       {
         q: 'À qui appartient la solution et l\'index ?',
@@ -241,7 +241,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un agent IA de support client ?',
-        a: "Le développement se chiffre au forfait après cadrage. Un agent de support connecté à votre base et à votre outil de ticketing se situe le plus souvent entre 15 000 et 70 000 € selon le nombre de canaux, la complexité des demandes et le niveau d'intégration ; un prototype sur les demandes les plus fréquentes démarre plus bas, et un déploiement multi-canaux à fort volume dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le développement se chiffre au forfait après cadrage. Un agent de support connecté à votre base et à votre outil de ticketing se situe le plus souvent entre 15 000 et 70 000 € selon le nombre de canaux, la complexité des demandes et le niveau d'intégration ; un prototype sur les demandes les plus fréquentes démarre plus bas, et un déploiement multi-canaux à fort volume dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis suit le périmètre.",
       },
       {
         q: 'L\'agent remplace-t-il mes conseillers ?',
@@ -319,7 +319,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte une automatisation du traitement documentaire ?',
-        a: "Le budget se chiffre au forfait après cadrage. Une chaîne de traitement documentaire se situe le plus souvent entre 12 000 et 60 000 € selon le nombre de types de documents, les volumes, les systèmes à connecter et le niveau de contrôle requis ; un prototype sur un seul flux démarre plus bas, et un traitement multi-flux à gros volume relié à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands déploiements. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre défini.",
+        a: "Le budget se chiffre au forfait après cadrage. Une chaîne de traitement documentaire se situe le plus souvent entre 12 000 et 60 000 € selon le nombre de types de documents, les volumes, les systèmes à connecter et le niveau de contrôle requis ; un prototype sur un seul flux démarre plus bas, et un traitement multi-flux à gros volume relié à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands déploiements. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis suit le périmètre défini.",
       },
       {
         q: 'À qui appartient le code de la chaîne ?',
@@ -397,7 +397,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un agent IA commercial sur mesure ?',
-        a: "Le développement se chiffre au forfait après cadrage. Un agent commercial connecté à votre CRM et à vos modèles se situe le plus souvent entre 15 000 et 70 000 € selon le périmètre (prospection, propositions, CRM), le nombre d'outils à connecter et le niveau d'intégration ; un prototype sur une seule étape démarre plus bas, et un déploiement large relié à plusieurs outils dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le développement se chiffre au forfait après cadrage. Un agent commercial connecté à votre CRM et à vos modèles se situe le plus souvent entre 15 000 et 70 000 € selon le périmètre (prospection, propositions, CRM), le nombre d'outils à connecter et le niveau d'intégration ; un prototype sur une seule étape démarre plus bas, et un déploiement large relié à plusieurs outils dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis suit le périmètre.",
       },
       {
         q: 'À qui appartient le code et les données ?',
@@ -475,7 +475,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte un chatbot IA sur mesure ?',
-        a: "Le développement se chiffre au forfait après cadrage. Un chatbot connecté à vos données se situe le plus souvent entre 8 000 et 40 000 € selon le périmètre, le nombre de sources, les intégrations et les garde-fous ; un chatbot d'accueil simple démarre plus bas, et un assistant conversationnel à fort volume relié à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands projets. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le développement se chiffre au forfait après cadrage. Un chatbot connecté à vos données se situe le plus souvent entre 8 000 et 40 000 € selon le périmètre, le nombre de sources, les intégrations et les garde-fous ; un chatbot d'accueil simple démarre plus bas, et un assistant conversationnel à fort volume relié à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands projets. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis suit le périmètre.",
       },
       {
         q: 'À qui appartient le chatbot et son code ?',
@@ -553,7 +553,7 @@ export const SOLUTIONS = [
     faq: [
       {
         q: 'Combien coûte une intégration LLM et RAG ?',
-        a: "Le budget se chiffre au forfait après cadrage. Une intégration LLM/RAG dans des outils existants se situe le plus souvent entre 10 000 et 60 000 € selon le nombre de points d'intégration, la complexité des connecteurs, les volumes de données et les exigences de sécurité ; un premier cas d'intégration démarre plus bas, et une intégration étendue à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands programmes. Chez Masteria, le cadrage est gratuit et le devis suit le périmètre.",
+        a: "Le budget se chiffre au forfait après cadrage. Une intégration LLM/RAG dans des outils existants se situe le plus souvent entre 10 000 et 60 000 € selon le nombre de points d'intégration, la complexité des connecteurs, les volumes de données et les exigences de sécurité ; un premier cas d'intégration démarre plus bas, et une intégration étendue à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros sur les grands programmes. Chez Masteria, les 30 premières minutes de cadrage sont offertes et le devis suit le périmètre.",
       },
       {
         q: 'Faut-il refondre notre système d\'information ?',

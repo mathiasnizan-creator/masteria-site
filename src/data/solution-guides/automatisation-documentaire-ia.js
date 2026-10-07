@@ -2,7 +2,117 @@
 // Vérifié le 03/10/2026 : DGFiP (fiche 1 de juin 2026, guide de démarrage, FAQ du 01/09/2026), service-public.gouv.fr (mentions obligatoires), Microsoft Learn (Document Intelligence), OpenAI (sorties structurées), Anthropic (traitement par lots), Insee (Sirene), Cybermalveillance.gouv.fr, guide ANSSI IA générative, étude de cas photovoltaïque.
 export default {
   slug: 'automatisation-documentaire-ia',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    directAnswer: "L'automatisation documentaire transforme une pièce reçue (facture, bon de livraison, fichier d'entrepôt, demande de devis) en données prêtes pour votre ERP, sans ressaisie. Le modèle lit, vos règles de gestion contrôlent, une personne valide les écarts. Masteria construit cette chaîne avec votre service et vous en remet le code.",
+    howWeBuild: [
+      {
+        title: "Rassembler des pièces réelles",
+        desc: "Nous constituons un échantillon de pièces telles qu'elles arrivent, y compris les mauvaises copies et les formats rares. Le service liste avec nous les champs attendus et les contrôles qu'il fait déjà.",
+      },
+      {
+        title: "Mesurer champ par champ",
+        desc: "La chaîne pilote traite l'échantillon, et chaque champ extrait est comparé à la bonne valeur. Le taux d'exactitude par champ dit ce qui peut passer seul et ce qui doit être relu.",
+      },
+      {
+        title: "Installer la validation et les contrôles",
+        desc: "Les contrôles codés (totaux, identifiants, coordonnées bancaires) s'ajoutent à la lecture, et une file de validation montre à la personne chargée du contrôle la pièce, l'extraction et l'écart.",
+      },
+      {
+        title: "Écrire dans l'ERP par étapes",
+        desc: "La chaîne produit d'abord un fichier d'import relu, puis écrit directement dans l'ERP quand les mesures le permettent. Le service reçoit le code, les règles et leur documentation.",
+      },
+    ],
+  },
+  hero: {
+    chips: [
+      "Factures, bons, fichiers d'entrepôt",
+      "Contrôles écrits avec le service",
+      "File de validation humaine",
+      "Import ERP par paliers",
+    ],
+    lien: "Voir comment la chaîne se construit",
+    enBref: [
+      {
+        label: "Budget",
+        value: "Un premier type de document à partir de 12 000 € environ ; un traitement multi-flux à gros volume au-delà de 100 000 €",
+      },
+      {
+        label: "Démarrage",
+        value: "Un échantillon de pièces réelles et le schéma des champs écrit avec le service",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Chaîne d'extraction, contrôles, file de validation, code et documentation",
+      },
+      {
+        label: "Propriété",
+        value: "Votre service garde la chaîne, ses règles et son code",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Ce qu'automatise une chaîne documentaire",
+  },
+  etapesBloc: {
+    kicker: "Mise en service",
+    h2: "De l'échantillon de pièces à l'import dans l'ERP",
+  },
+  etapesNote: {
+    texte: "Si plusieurs flux de documents se disputent la priorité, un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA mesure leurs volumes avant le premier pilote",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers pour construire la chaîne",
+  },
+  technique: {
+    kicker: "Lecture et contrôles",
+    texte: "Le texte de la pièce est extrait, y compris sur un scan, puis le modèle remplit un schéma de champs imposé et rend une sortie structurée. Les contrôles ne lui reviennent pas : des règles codées vérifient les totaux, l'identifiant de l'entreprise dans la base Sirene et toute coordonnée bancaire nouvelle. Les volumes importants passent en traitement par lots, moins cher, et chaque pièce garde la trace de qui l'a validée.",
+    h2: "Ce qui compose une chaîne de traitement",
+    lead: "Le modèle lit la pièce sans gabarit et remplit un schéma de champs défini avec vous ; des contrôles codés vérifient ensuite les totaux, les identifiants et les coordonnées bancaires, et tout écart part dans une file où une personne valide avant l'écriture dans l'ERP.",
+    chips: ["Lecture sans gabarit", "Schéma de champs imposé", "Contrôles codés", "File de validation", "Traitement par lots"],
+    note: {
+      texte: "Nos pratiques de développement et de recette sont présentées par notre",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "équipe de développement IA",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par type de pièces",
+    h2: "Quels documents automatiser selon votre activité",
+    intro: "Chaque métier reçoit ses propres pièces ; la chaîne lit, contrôle et prépare, et une personne valide.",
+  },
+  regieBloc: {
+    kicker: "Renfort technique",
+    h2: "Un développeur qui branche la chaîne sur votre ERP",
+    lien: "Notre méthode de projet IA",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Automatisation documentaire : les questions fréquentes",
+    texte: "Vos pièces ont un format que nous n'avons pas cité ?",
+    lien: "Envoyez-nous un exemple",
+  },
+  maillage: {
+    kicker: "Autres livrables",
+    h2: "Ce qui prolonge une chaîne documentaire",
+  },
+  cta: {
+    titre: "Quelle famille de pièces cesser de ressaisir ?",
+    texte: "Envoyez-nous quelques pièces anonymisées et le logiciel où elles finissent. Une réponse arrive sous 24 heures avec une proposition de date pour les 30 minutes de cadrage offertes, et la chaîne construite ensuite vous appartiendra.",
+  },
+  equipe: {
+    titre: "Des intervenants qui écrivent les contrôles avec votre service",
+    texte: "Mathias Nizan a créé Masteria à Lyon en 2022 et dirige chaque projet. Pour une chaîne documentaire, il associe un consultant qui écrit le schéma des champs et les contrôles avec votre service, des développeurs qui branchent la chaîne sur l'ERP et un formateur pour les personnes qui valident. Tous sont indépendants, et Masteria ne revend aucun logiciel de capture.",
+  },
   intro: "Factures de fournisseurs étrangers, bons de livraison, fichiers d'entrepôt, demandes de devis : votre service reçoit des pièces qu'il ressaisit dans l'ERP, votre logiciel de gestion. Ici, personne ne converse avec un assistant : chaque pièce entrante est lue, contrôlée par vos règles, puis transformée en données, et une personne tranche les cas douteux. Pour interroger des documents, rédiger dans vos outils ou ajouter un modèle à une application, voyez l'assistant documentaire, le copilote interne ou l'intégration LLM. Depuis le 1er septembre 2026, une partie de vos factures arrive déjà structurée. Masteria redessine ce périmètre avec vous et livre la chaîne.",
 
   etapes: [
@@ -29,7 +139,16 @@ export default {
   ],
 
   cout: {
-    lead: "Une chaîne sur un premier type de document démarre autour de 12 000 €. Un traitement à gros volume, multi-flux et relié à plusieurs logiciels de gestion, dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros. Le nombre de types de documents et les contrôles à coder expliquent l'essentiel de l'écart.",
+    kicker: "Budget de la chaîne",
+    h2: "Le budget d'une chaîne documentaire",
+    note: {
+      texte: "Les repères de prix des autres projets figurent sur la page",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "budget d'un projet IA",
+      },
+    },
+    lead: "Une chaîne sur un premier type de document démarre autour de 12 000 €. Un traitement à gros volume, multi-flux et relié à plusieurs logiciels de gestion, franchit les 100 000 € et peut atteindre quelques centaines de milliers d'euros. Le nombre de types de documents et les contrôles à coder expliquent l'essentiel de l'écart.",
     paras: [
       "Nous fixons le forfait sur devis après le cadrage, à partir de l'échantillon et d'un périmètre écrit. Le fonctionnement se calcule ensuite à la page traitée. Les flux qui supportent un délai passent en traitement par lots : chez Anthropic, l'API de traitement par lots coûte moitié moins cher que l'appel standard, et la plupart des lots se terminent en moins d'une heure, dans une limite de 24 heures. Un traitement de nuit des pièces de la journée en profite.",
     ],
@@ -59,6 +178,8 @@ export default {
   ],
 
   comparatif: {
+    kicker: "Gabarits ou chaîne sur mesure",
+    caption: "Outil de capture à gabarits et chaîne sur mesure, critère par critère.",
     intro: "La reconnaissance optique de caractères (OCR) à gabarits reste la bonne réponse pour un formulaire stable reçu en grand volume : elle coûte peu et rend le même résultat à chaque passage. Les moteurs d'extraction récents y ajoutent des modèles préentraînés, pour les factures par exemple, avec un score de confiance par champ. La chaîne sur mesure se justifie quand les mises en page varient, quand un même envoi mêle mail, pièce jointe et tableur, et quand les contrôles de votre métier doivent décider.",
     rows: [
       { aspect: "Formulaire stable, gros volume", off: "Son point fort : rapide, peu coûteux, prévisible", custom: "Superflue si l'OCR à gabarit donne déjà satisfaction" },
@@ -134,12 +255,12 @@ export default {
       etapes: [
         "La direction, les opérations et le commercial passent chacun un entretien, conduit flux par flux, avec les pièces sur la table : fichiers d'entrepôt, mail type d'un transporteur, suivi des marges.",
         "La cartographie couvre quatre flux et fait apparaître douze gisements de temps, chacun avec le volume annoncé par l'équipe, sa difficulté et ce qu'il doit à l'ERP.",
-        "Trois assistants sont à monter en une seule journée à partir des fichiers de l'entreprise, avant la formation. L'un transformera un fichier d'entrepôt en fichier d'import Odoo et vérifiera les totaux ; un autre tirera des demandes entrantes les lignes d'un devis.",
-        "Partout, l'assistant prépare et une personne valide. Huit règles d'usage tiennent sur une page, et un référent IA reçoit les signalements d'erreur.",
+        "Trois assistants sont à monter à partir des fichiers de l'entreprise, avant la formation. L'un transformera un fichier d'entrepôt en fichier d'import Odoo et vérifiera les totaux ; un autre tirera des demandes entrantes les lignes d'un devis.",
+        "Partout, l'assistant prépare et une personne valide. Une charte d'usage est signée avant la formation, et un référent IA reçoit les signalements d'erreur.",
         "La feuille de route court sur 90 jours : points de départ relevés pendant la formation prévue en octobre 2026, premier bilan un mois plus tard.",
       ],
-      resultat: "Les cibles, posées avant la formation pour un horizon de trois mois, restent des cibles tant qu'aucune mesure ne les confirme : huit réceptions sur dix traitées sans ressaisie, un devis envoyé sous douze heures. L'import direct dans Odoo attend une deuxième vague, déjà cadrée. La chaîne commence donc par un fichier qu'une personne relit avant de l'importer, et l'écriture directe dans l'ERP viendra après les mesures.",
-      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
+      resultat: "Les cibles, posées avant la formation pour un horizon de trois mois, restent des cibles tant qu'aucune mesure ne les confirme : des devis plus rapides et la fin des ressaisies. L'import direct dans Odoo attend une deuxième vague, déjà cadrée. La chaîne commence donc par un fichier qu'une personne relit avant de l'importer, et l'écriture directe dans l'ERP viendra après les mesures.",
+      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Les fichiers d'entrepôt du distributeur photovoltaïque" },
     },
     pieges: [
       {
@@ -210,6 +331,6 @@ export default {
     { name: "Claude Platform : Batch processing", url: "https://platform.claude.com/docs/en/build-with-claude/batch-processing" },
     { name: "Insee : Consulter et télécharger la base Sirene", url: "https://www.insee.fr/fr/information/3591226" },
     { name: "Cybermalveillance.gouv.fr : Que faire en cas de fraude au virement ou au « faux RIB » ? (mise à jour du 7 mai 2026)", url: "https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/que-faire-en-cas-de-fraude-au-virement-ou-au-faux-rib" },
-    { name: "ANSSI : Recommandations de sécurité pour un système d'IA générative (29 avril 2024)", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
+    { name: "ANSSI, recommandations du 29 avril 2024 : sécuriser une chaîne qui alimente un logiciel de gestion", url: "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative" },
   ],
 }

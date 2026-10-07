@@ -2,7 +2,124 @@
 // Vérifié le 03/10/2026 : CNIL (prospection électronique et téléphonique, fiches du 10/06/2026 ; sanction du 05/12/2024 ; référentiel gestion des activités commerciales), Légifrance (L. 223-1 en vigueur au 11/08/2026, Code civil art. 1114, Code du travail L. 1222-4), lignes directrices C(2026) 5054 de la Commission sur l'article 50 (§ 30, 31, 36), Microsoft Learn (Sales Qualification Agent, mis à jour le 20/07/2026), étude de cas distribution et cas conseil financier.
 export default {
   slug: 'agent-commercial-ia',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    metaDesc: "Agent IA commercial : cotation depuis l'e-mail du client, relance des devis, CRM à jour, sur vos prix et stocks. Code livré. 30 min de cadrage offertes.",
+    directAnswer: "Un agent IA commercial prépare ce qui occupe vos vendeurs entre deux rendez-vous : la cotation d'une demande reçue par e-mail, la relance d'un devis, la réponse à un cahier des charges, le compte rendu à verser au CRM. Il lit vos prix et vos stocks, le vendeur valide l'envoi, et Masteria vous remet le code.",
+    howWeBuild: [
+      {
+        title: "Suivre des devis réels",
+        desc: "Nous suivons une dizaine de devis du premier e-mail à la signature pour repérer les étapes qui prennent du temps et les informations que le vendeur va chercher à chaque fois.",
+      },
+      {
+        title: "Écrire les règles avec la direction",
+        desc: "Tarifs par client, remises autorisées, seuil de marge qui déclenche une validation : la direction fixe les règles que l'agent applique, et ce qu'il ne doit jamais proposer.",
+      },
+      {
+        title: "Brancher l'ERP et le CRM en lecture",
+        desc: "L'agent lit la base articles, les stocks, l'historique des devis et les fiches clients. Il prépare des brouillons, et toute écriture dans le CRM reste un geste du vendeur.",
+      },
+      {
+        title: "Confier l'agent aux vendeurs référents",
+        desc: "Quelques commerciaux volontaires l'utilisent d'abord sur leurs propres comptes, puis forment leurs collègues. La direction reçoit le code, les règles et leur documentation.",
+      },
+    ],
+  },
+  hero: {
+    chips: [
+      "Cotation depuis l'e-mail du client",
+      "Relance des devis en attente",
+      "Tarifs et remises de l'ERP",
+      "Le vendeur valide l'envoi",
+    ],
+    lien: "Voir comment l'agent se construit",
+    enBref: [
+      {
+        label: "Budget",
+        value: "La cotation ou la relance à partir de 15 000 € environ ; plusieurs ERP, CRM ou filiales au-delà de 100 000 €",
+      },
+      {
+        label: "Démarrage",
+        value: "Dix devis suivis de bout en bout et des commerciaux référents",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Agent, règles commerciales codées, connecteurs ERP et CRM, documentation",
+      },
+      {
+        label: "Propriété",
+        value: "La direction commerciale garde l'agent et ses règles",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Ce que prépare un agent commercial, et ce qu'il laisse au vendeur",
+  },
+  etapesBloc: {
+    kicker: "Mise en service",
+    h2: "Cinq étapes, des dix premiers devis à toute l'équipe",
+  },
+  etapesNote: {
+    texte: "Si la vente n'est qu'un des services candidats, un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA compare les gisements avant le premier pilote",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers pour mettre l'agent entre les mains des vendeurs",
+  },
+  technique: {
+    kicker: "Sous le capot",
+    texte: "L'agent travaille sur vos sources en lecture seule : base articles, tarifs et stocks de l'ERP, historique des devis, fiches du CRM. Les règles commerciales écrites avec la direction s'appliquent avant toute rédaction, et le modèle (choisi selon la tâche et son coût) rédige le brouillon en citant les lignes de prix utilisées. Les connexions passent par les API de vos logiciels ou par MCP, et l'envoi au client reste une décision du vendeur.",
+    h2: "Les briques d'un agent commercial",
+    lead: "L'agent lit vos sources en lecture seule (base articles, tarifs et stocks de l'ERP, historique des devis, CRM), applique les règles commerciales écrites avec la direction et prépare des brouillons ; l'envoi au client et toute écriture dans le CRM restent un geste du vendeur.",
+    chips: [
+      "ERP et CRM en lecture",
+      "Règles de remise et de marge",
+      "Brouillons à valider",
+      "Journal par compte client",
+      "Modèle choisi selon la tâche",
+    ],
+    note: {
+      texte: "Nos façons de développer, de tester et de documenter sont décrites sur la page",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "développement IA sur mesure",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par façon de vendre",
+    h2: "Un agent commercial selon votre façon de vendre",
+    intro: "Distribution, industrie, services ou négoce : la tâche qui rapporte le plus change, la règle de validation par le vendeur demeure.",
+  },
+  regieBloc: {
+    kicker: "Développeur chez vous",
+    h2: "Un développeur auprès de votre direction commerciale et de votre ERP",
+    lien: "Les modèles d'engagement",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Agent commercial : les questions des directions commerciales",
+    texte: "Votre cycle de vente a une étape que nous n'avons pas citée ?",
+    lien: "Racontez-la-nous",
+  },
+  maillage: {
+    kicker: "Autour de la vente",
+    h2: "D'autres outils pour vos équipes commerciales",
+  },
+  cta: {
+    titre: "Quelle étape de vos ventes confier à un agent ?",
+    texte: "Dites-nous où vos vendeurs perdent du temps (cotation, relance, cahiers des charges) et quels logiciels portent vos prix. Nous vous répondons sous 24 heures et calons avec vous les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Des intervenants qui travaillent avec vos vendeurs",
+    texte: "Masteria, l'entreprise fondée par Mathias Nizan à Lyon en 2022, réunit pour chaque projet des intervenants indépendants que Mathias dirige. Pour un agent commercial, ce sont un consultant qui suit vos devis avec la direction, des développeurs qui branchent l'agent sur l'ERP et le CRM, et un formateur pour les commerciaux référents. Masteria ne revend aucun CRM ni aucune licence.",
+  },
   intro: "Un agent IA commercial prépare ce que vos vendeurs font entre deux rendez-vous : les lignes de devis tirées de l'e-mail d'un client, les relances des devis en attente, les réponses aux cahiers des charges, les comptes rendus versés au CRM, le fichier de vos clients et de vos affaires. Il lit vos prix, vos stocks et votre base articles dans l'ERP, le logiciel de gestion où vivent vos tarifs ; le commercial valide le prix et l'envoi. Nous commençons par la cotation et la relance de devis, l'étape où vos prix et vos stocks pèsent le plus dans la réponse.",
   guide: {
     kicker: "Guide projet · agent commercial",
@@ -68,7 +185,7 @@ export default {
         "Prévoir d'octobre à décembre 2026 le déploiement aux quelque cinquante autres collaborateurs, avec les référents, qui accueilleront ensuite les nouveaux arrivants et feront évoluer les compétences.",
       ],
       resultat: "Les dix référents sont formés et onze compétences Claude sont construites. Pour un commercial, elles couvrent la cotation à partir d'un e-mail client, la relance des devis, la substitution vers les marques propres, les réponses aux cahiers des charges tirées de l'ERP, la prospection et la réactivation de clients, le suivi de la marge, des stocks et des livraisons. Pour chaque compétence, la part qui reste au vendeur est écrite. Le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. La direction vise, avec ses 58 salariés, l'équivalent commercial d'une équipe de 70 personnes : c'est une cible, et la mesure dira si elle est atteinte.",
-      lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#distribution", label: "Les compétences commerciales du distributeur de 58 salariés" },
     },
     pieges: [
       { titre: "Commencer par la prospection à froid", texte: "C'est l'étape la mieux couverte par les outils du marché et la plus encadrée par le droit : consentement des particuliers, opposition des professionnels, annonce de l'IA si l'agent écrit seul. La cotation et la relance travaillent sur des clients qui vous ont déjà écrit, et leur effet se mesure dès le pilote." },
@@ -86,7 +203,16 @@ export default {
     { title: "Étendre aux autres étapes", desc: "Cahiers des charges, préparation des rendez-vous, comptes rendus, puis écriture contrôlée dans le CRM sur les champs autorisés. Le code, les règles et la documentation vous sont remis, et vos référents reprennent la main." },
   ],
   cout: {
-    lead: "Un agent commercial se chiffre au forfait, une fois le cadrage fait et le périmètre écrit. Un premier périmètre, la cotation ou la relance de devis, commence vers 15 000 € ; un agent branché sur plusieurs ERP et CRM, pour plusieurs filiales ou plusieurs pays, dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros.",
+    kicker: "Budget de l'agent commercial",
+    h2: "Le budget d'un agent commercial",
+    note: {
+      texte: "Les ordres de grandeur des autres types de projets sont rassemblés sur la page",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "tarifs des projets IA",
+      },
+    },
+    lead: "Un agent commercial se chiffre au forfait, une fois le cadrage fait et le périmètre écrit. Un premier périmètre, la cotation ou la relance de devis, commence vers 15 000 € ; un agent branché sur plusieurs ERP et CRM, pour plusieurs filiales ou plusieurs pays, passe la barre des 100 000 € et se compte parfois en centaines de milliers d'euros.",
     paras: [
       "Le prix dépend moins du modèle de langage que de vos règles commerciales. Un tarif unique et une base articles propre se lisent vite. Des tarifs par client, des remises par famille de produits et des substitutions entre marques demandent d'écrire chaque règle avec l'administration des ventes, puis de la tester sur vos devis passés. Le coût de fonctionnement suit le nombre de devis et de messages traités ; il se mesure pendant le pilote, sur votre propre volume d'affaires.",
       "La proposition écrite détaille les étapes du cycle couvertes, les logiciels connectés, le niveau d'autonomie retenu, le calendrier du pilote et le budget, palier par palier. Le premier pas consiste en 30 minutes de cadrage offertes, par téléphone ou en visio, pour situer l'étape du cycle de vente où l'agent commencera et le logiciel qu'il devra lire en premier.",
@@ -103,6 +229,8 @@ export default {
     "Ce modèle convient aux entreprises dont l'ERP est hébergé en interne ou dont les conditions tarifaires ne doivent pas sortir du système d'information : le code et les règles restent dans votre périmètre. Le développeur alterne les ateliers sur site avec l'administration des ventes et le travail à distance, et il documente chaque règle pour que votre équipe la maintienne après son départ.",
   ],
   comparatif: {
+    kicker: "Prospection automatique ou agent sur vos prix",
+    caption: "Agent de prospection du marché et agent commercial développé, point par point.",
     intro: "Les outils de prospection du marché trouvent des contacts, enchaînent des séquences d'e-mails et, pour certains, écrivent seuls aux prospects. Si vos pistes commerciales entrantes sont gérées dans Dynamics 365 Sales, l'agent de qualification de Microsoft couvre déjà la recherche et la première approche, et ce choix est raisonnable. Indépendants des éditeurs, nous n'avons aucun intérêt à vous détourner d'un outil qui suffit. Le sur mesure prend le relais quand le temps se perd dans vos devis, vos tarifs, vos stocks et vos cahiers des charges.",
     rows: [
       { aspect: "Point de départ", off: "Une base de contacts et des séquences d'e-mails", custom: "Vos demandes de prix, vos devis en cours et votre historique client" },
@@ -131,8 +259,8 @@ export default {
     { name: "CNIL : référentiel relatif aux traitements mis en œuvre aux fins de gestion des activités commerciales", url: "https://www.cnil.fr/sites/cnil/files/atoms/files/referentiel_traitements-donnees-caractere-personnel_gestion-activites-commerciales.pdf" },
     { name: "Légifrance : article 1114 du Code civil (l'offre)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032040891" },
     { name: "Légifrance : article L. 1222-4 du Code du travail", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006900861" },
-    { name: "Commission européenne : lignes directrices sur les obligations de transparence de l'article 50 (20 juillet 2026)", url: "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (article 50)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr" },
+    { name: "Commission européenne, lignes directrices du 20 juillet 2026 : informer le prospect qu'une IA lui écrit", url: "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689, article 50 : la transparence d'un échange commercial avec une IA", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr" },
     { name: "Microsoft Learn : Sales Qualification Agent overview, Dynamics 365 Sales", url: "https://learn.microsoft.com/en-us/dynamics365/sales/sales-qualification-agent" },
   ],
 }

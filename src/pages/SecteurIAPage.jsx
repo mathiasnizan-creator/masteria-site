@@ -42,10 +42,31 @@ function SectorGlyph({ name, size, color = '#2563EB' }) {
  * Cœur = conseil + dev high-ticket ; formation = bloc secondaire (OPCO seulement FR).
  * Design premium identique à /agence-ia : kickers, pictogrammes lucide, cartes
  * radius 16, CTA final sombre, accent #2563EB.
+ *
+ * MODE PAGE PROPRE (drapeau `pagePropre: true` dans secteur-guides/<slug>.js) :
+ * le guide fournit tout le texte, le gabarit masque ses phrases communes aux
+ * autres pages. Champs reconnus (tous facultatifs, repli sur le texte d'origine) :
+ *   hero.chips (string[]), hero.lien (libellé du bouton vers #secteur)
+ *   offresTitre { kicker, h2 }          section « Nos expertises »
+ *   offres[i] { title, cta, secondaryCta, desc, points } (fusionné avec OFFERS)
+ *   enjeux { kicker, h2, difficultes, prestations }   section #secteur
+ *   secteur { …champs de secteur-ia-data.js }  remplace les champs de données
+ *     (context, painPoints, useCases, constraints, onsiteDev, deepDive…)
+ *   regieBloc { kicker, h2, accroche, lien }   bandeau régie (accroche = onsiteDev)
+ *   formationBloc { kicker, h2, lien }         bloc formation
+ *   faqBloc { h2, texte, lien }                aside de la FAQ
+ *   maillage { h2, texte }                     les liens passent dans un <nav>, sans accroche de carte
+ *   cta { titre, texte, ligne }                CTA final (bouton inchangé, ligne masquée si absente)
+ *   equipe { titre, texte, chiffres: [[valeur, libellé]] }  « Qui intervient » (chiffres masqués si absents)
+ * Masqués : signature « Mis à jour en… » (remplacée par la date de revue),
+ * paragraphe commun « Qui intervient » et ses chiffres, accroches des secteurs liés.
+ * OfficialSources passe en `lean`.
  */
 
 const SITE = 'https://www.master-ia.fr'
 const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+/* « 2026-10-07 » → « 7 octobre 2026 » (signature des pages propres) */
+const dateFr = iso => `${Number(iso.slice(8, 10))} ${MOIS[Number(iso.slice(5, 7)) - 1]} ${iso.slice(0, 4)}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
@@ -124,11 +145,15 @@ export default function SecteurIAPage() {
 
   const location = useLocation()
   const slug = location.pathname.replace(/^\//, '')
-  const secteur = getSecteur(slug)
   // Texte propre à la page (src/data/secteur-guides/<slug>.js) : quand il existe, il
   // remplace les blocs communs du gabarit (offres, régie, formation, FAQ).
   const guidePromise = secteurGuidePromise(slug)
   const guide = guidePromise ? use(guidePromise) : null
+  // Page propre : le guide fournit tout le texte, y compris les titres et les blocs de fin
+  const propre = Boolean(guide?.pagePropre)
+  const secteurBase = getSecteur(slug)
+  const secteur = secteurBase && propre && guide.secteur ? { ...secteurBase, ...guide.secteur } : secteurBase
+  const MaillageWrap = propre ? 'nav' : 'div'
   // FAQ affichée et FAQ balisée (JSON-LD) : la même liste, celle du fichier propre si elle existe
   const faqItems = guide?.faq ?? secteur?.faq ?? []
 
@@ -156,8 +181,8 @@ export default function SecteurIAPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${SITE}/${secteur.slug}#service`,
-    name: `Conseil et développement IA — ${secteur.name}`,
-    serviceType: `Conseil et développement IA — ${secteur.name}`,
+    name: `Conseil et développement IA · ${secteur.name}`,
+    serviceType: `Conseil et développement IA · ${secteur.name}`,
     description: secteur.metaDesc,
     url: `${SITE}/${secteur.slug}`,
     provider: { '@id': `${SITE}/#organization` },
@@ -255,7 +280,7 @@ export default function SecteurIAPage() {
             <>
               {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
               <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 18px' }}>
-                Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {MOIS[Number(guide.dateModified.slice(5, 7)) - 1]} {guide.dateModified.slice(0, 4)}
+                Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>{propre ? <> · revu le {dateFr(guide.dateModified)}</> : <>, fondateur de Masteria · Mis à jour en {MOIS[Number(guide.dateModified.slice(5, 7)) - 1]} {guide.dateModified.slice(0, 4)}</>}
               </p>
               <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>{guide.intro}</p>
             </>
@@ -271,13 +296,13 @@ export default function SecteurIAPage() {
               <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
             <a href="#secteur" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Les enjeux du secteur
+              {propre && guide.hero?.lien ? guide.hero.lien : 'Les enjeux du secteur'}
             </a>
           </div>
 
           {/* chips de positionnement (charte sombre) */}
           <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
-            {['Conseil', 'Développement sur mesure', 'Automatisation'].map(label => (
+            {(propre && guide.hero?.chips ? guide.hero.chips : ['Conseil', 'Développement sur mesure', 'Automatisation']).map(label => (
               <span
                 key={label}
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
@@ -295,8 +320,8 @@ export default function SecteurIAPage() {
         <div style={WRAP}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>Nos expertises</div>
-              <h2 style={{ ...h2Style, marginBottom: 18 }}>Ce que nous faisons pour {secteur.nameWithArticle}</h2>
+              <div style={kickerStyle}>{propre && guide.offresTitre?.kicker ? guide.offresTitre.kicker : 'Nos expertises'}</div>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>{propre && guide.offresTitre?.h2 ? guide.offresTitre.h2 : <>Ce que nous faisons pour {secteur.nameWithArticle}</>}</h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 14px' }}>
                 {guide?.offresIntro ? <strong style={{ color: '#0A0A0A' }}>{guide.offresIntro[0]}</strong> : (
                   <>
@@ -356,13 +381,13 @@ export default function SecteurIAPage() {
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...WRAP, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Enjeux du secteur</div>
-          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>L'IA dans {secteur.nameWithArticle} : où se crée la valeur ?</h2>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>{propre && guide.enjeux?.kicker ? guide.enjeux.kicker : 'Enjeux du secteur'}</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>{propre && guide.enjeux?.h2 ? guide.enjeux.h2 : <>L'IA dans {secteur.nameWithArticle} : où se crée la valeur ?</>}</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 'none' }}>{secteur.context}</p>
 
           {/* Douleurs propres au secteur */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', margin: '40px 0 20px', letterSpacing: '-0.01em' }}>
-            Les difficultés que nous adressons
+            {propre && guide.enjeux?.difficultes ? guide.enjeux.difficultes : 'Les difficultés que nous adressons'}
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20, marginBottom: 8 }}>
             {secteur.painPoints.map((pp, i) => (
@@ -377,7 +402,7 @@ export default function SecteurIAPage() {
 
           {/* Prestations concrètes propres au secteur */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', margin: '48px 0 20px', letterSpacing: '-0.01em' }}>
-            Des prestations concrètes pour {secteur.nameWithArticle}
+            {propre && guide.enjeux?.prestations ? guide.enjeux.prestations : <>Des prestations concrètes pour {secteur.nameWithArticle}</>}
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
             {secteur.useCases.map((uc, i) => (
@@ -456,12 +481,12 @@ export default function SecteurIAPage() {
               <ServerCog size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 300 }}>
-              <div style={kickerStyle}>Développeurs sur site · régie ou équipe dédiée</div>
+              <div style={kickerStyle}>{propre && guide.regieBloc?.kicker ? guide.regieBloc.kicker : 'Développeurs sur site · régie ou équipe dédiée'}</div>
               <h2 style={{ ...h2Style, fontSize: 'clamp(22px, 2.8vw, 30px)', marginBottom: 14 }}>
-                Détacher des développeurs IA dans vos équipes
+                {propre && guide.regieBloc?.h2 ? guide.regieBloc.h2 : 'Détacher des développeurs IA dans vos équipes'}
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 820 }}>
-                <strong style={{ color: '#0A0A0A' }}>{secteur.onsiteDev}</strong>
+                <strong style={{ color: '#0A0A0A' }}>{propre && guide.regieBloc?.accroche ? guide.regieBloc.accroche : secteur.onsiteDev}</strong>
               </p>
               {guide?.regie ? guide.regie.map((para, k) => (
                 <p key={k} style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }}>{para}</p>
@@ -471,7 +496,7 @@ export default function SecteurIAPage() {
                 </p>
               )}
               <Link to="/methode-projet-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
-                Voir notre méthode et nos modèles d'engagement
+                {propre && guide.regieBloc?.lien ? guide.regieBloc.lien : "Voir notre méthode et nos modèles d'engagement"}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -487,8 +512,8 @@ export default function SecteurIAPage() {
               <GraduationCap size={26} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 300 }}>
-              <div style={kickerStyle}>Et la formation des équipes ?</div>
-              <h2 style={{ ...h2Style, fontSize: 'clamp(22px, 2.8vw, 30px)' }}>Ancrer les usages après le déploiement</h2>
+              <div style={kickerStyle}>{propre && guide.formationBloc?.kicker ? guide.formationBloc.kicker : 'Et la formation des équipes ?'}</div>
+              <h2 style={{ ...h2Style, fontSize: 'clamp(22px, 2.8vw, 30px)' }}>{propre && guide.formationBloc?.h2 ? guide.formationBloc.h2 : 'Ancrer les usages après le déploiement'}</h2>
               {guide?.formation ? (
                 <>
                   <p style={answerStyle}><strong style={{ color: '#0A0A0A' }}>{guide.formation[0]}</strong></p>
@@ -506,7 +531,7 @@ export default function SecteurIAPage() {
                 </>
               )}
               <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
-                Découvrir les formations IA
+                {propre && guide.formationBloc?.lien ? guide.formationBloc.lien : 'Découvrir les formations IA'}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -520,12 +545,12 @@ export default function SecteurIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes — IA pour {secteur.nameWithArticle}</h2>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>{propre && guide.faqBloc?.h2 ? guide.faqBloc.h2 : <>Questions fréquentes — IA pour {secteur.nameWithArticle}</>}</h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                {propre && guide.faqBloc?.texte ? guide.faqBloc.texte : 'Vous ne trouvez pas votre réponse ici ?'}
               </p>
               <Link to="/contact?type=projet" style={{ color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                Posez-nous votre question
+                {propre && guide.faqBloc?.lien ? guide.faqBloc.lien : 'Posez-nous votre question'}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -542,11 +567,16 @@ export default function SecteurIAPage() {
       <section style={{ padding: 'clamp(48px, 6vw, 72px) 24px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
         <div style={WRAP}>
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 8, letterSpacing: '-0.01em' }}>
-            Explorer d'autres secteurs
+            {propre && guide.maillage?.h2 ? guide.maillage.h2 : "Explorer d'autres secteurs"}
           </h3>
+          {propre ? (guide.maillage?.texte && (
+            <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 24px', maxWidth: 760 }}>{guide.maillage.texte}</p>
+          )) : (
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 24px', maxWidth: 760 }}>
             L'IA crée de la valeur dans tous les secteurs B2B. Découvrez les enjeux et les prestations propres aux secteurs proches du vôtre.
           </p>
+          )}
+          <MaillageWrap {...(propre ? { 'aria-label': 'Secteurs proches et pages liées' } : {})}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20, marginBottom: 28 }}>
             {related.map(rel => (
               <Link key={rel.slug} to={`/${rel.slug}`} style={{ textDecoration: 'none' }}>
@@ -561,7 +591,7 @@ export default function SecteurIAPage() {
                   <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>
                     IA pour {rel.nameWithArticle}
                   </h4>
-                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: '0 0 12px' }}>{rel.tagline}</p>
+                  {!propre && <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: '0 0 12px' }}>{rel.tagline}</p>}
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                     Voir le secteur
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -599,6 +629,7 @@ export default function SecteurIAPage() {
               <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
           </div>
+          </MaillageWrap>
         </div>
       </section>
 
@@ -611,18 +642,20 @@ export default function SecteurIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Parlons de votre projet IA pour {secteur.nameWithArticle}
+              {propre && guide.cta?.titre ? guide.cta.titre : <>Parlons de votre projet IA pour {secteur.nameWithArticle}</>}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-              Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, contraintes de données. Nous revenons vers vous sous 24 heures et vous proposons 30 minutes de cadrage, offertes et sans engagement.
+              {propre && guide.cta?.texte ? guide.cta.texte : 'Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, contraintes de données. Nous revenons vers vous sous 24 heures et vous proposons 30 minutes de cadrage, offertes et sans engagement.'}
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: propre && !guide.cta?.ligne ? 0 : 24 }}>
               Contacter notre équipe
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              {`IA pour ${secteur.nameWithArticle} · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022`}
-            </p>
+            {(!propre || guide.cta?.ligne) && (
+              <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+                {propre ? guide.cta.ligne : `IA pour ${secteur.nameWithArticle} · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022`}
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -633,29 +666,42 @@ export default function SecteurIAPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              {propre && guide.equipe?.titre ? guide.equipe.titre : 'Un cabinet spécialisé IA, indépendant des éditeurs'}
             </h2>
+            {propre && guide.equipe?.texte ? (
+              <>
+                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }}>{guide.equipe.texte}</p>
+                <nav aria-label="Preuves" style={{ display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 14 }}>
+                  <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>Études de cas</Link>
+                  <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>Revue de presse</Link>
+                  <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>
+                </nav>
+              </>
+            ) : (
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
               Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions et les formations sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues, qui connaissent le secteur. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
+            )}
           </div>
+          {(!propre || guide.equipe?.chiffres) && (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
-            {[
+            {(propre ? guide.equipe.chiffres : [
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
               ['International', 'Europe, États-Unis, Inde'],
-            ].map(([k, v]) => (
+            ]).map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources lean={propre} />
     </>
   )
 }

@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : Légifrance (loi n° 71-1130 art. 66-5, loi n° 2026-122 créant l'art. 58-1, code pénal art. 226-13 et 226-18, décret n° 2023-1297 art. 8, COJ art. L. 111-13), cnb.avocat.fr (guide IAG de septembre 2024, actualité du 18 juin 2025), EUR-Lex (règlement (UE) 2024/1689 annexe III, omnibus (UE) 2026/1744). Aucune étude de cas publiée ne relève du droit : le cas est une mise en situation.
 export default {
   slug: 'ia-juridique',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Secret de l'avocat et du notaire", "Loi du 23 février 2026 sur les juristes", "Pseudonymisation avant traitement"],
+    lien: "Voir les régimes de confidentialité",
+  },
+  offresTitre: {
+    kicker: "Trois interventions",
+    h2: "Classer vos flux par secret, outiller la revue, automatiser la préparation",
+  },
+  enjeux: {
+    kicker: "Professions du droit",
+    h2: "Ce que l'IA change pour les avocats, les notaires et les juristes",
+    difficultes: "Ce qui freine les équipes juridiques",
+    prestations: "Ce que nous développons pour le droit",
+  },
+  regieBloc: {
+    kicker: "Régie en cabinet",
+    h2: "Un développeur auprès de vos dossiers, sans que les pièces sortent",
+    accroche: "Pour un cabinet ou une direction juridique aux règles de confidentialité strictes, le développeur IA travaille dans votre environnement, au contact de vos dossiers et de vos règles déontologiques.",
+    lien: "Les modalités d'une régie",
+  },
+  formationBloc: {
+    kicker: "Former avocats et juristes",
+    h2: "Des cas pratiques sur des pièces pseudonymisées",
+    lien: "Voir nos formations IA",
+  },
+  faqBloc: {
+    h2: "Le droit et l'IA : vos questions",
+    texte: "Votre déontologie soulève une question que cette liste n'aborde pas ?",
+    lien: "Soumettez-la-nous",
+  },
+  maillage: {
+    h2: "Secteurs proches du juridique",
+  },
+  cta: {
+    titre: "Quel flux juridique outiller sans exposer le secret ?",
+    texte: "Dites-nous si vous êtes un cabinet, une étude ou une direction juridique, et quel flux vous occupe : revue de contrats, recherche, préparation d'une data room. Nous vous répondons sous 24 heures pour fixer les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Une équipe composée pour un cabinet ou une direction juridique",
+    texte: "Mathias Nizan dirige Masteria, fondé à Lyon en 2022, et suit chaque mission jusqu'à la passation. Pour les professions du droit, il mobilise des consultants qui classent les flux selon le régime de secret, des développeurs qui construisent les outils dans votre environnement et des formateurs qui travaillent sur des pièces pseudonymisées. Ils sont indépendants, et Masteria ne revend ni base juridique ni outil.",
+  },
   intro: "Un cabinet d'avocats, une étude notariale et une direction juridique lisent les mêmes contrats et la même jurisprudence, et chacun relève pourtant d'un régime de confidentialité différent : le secret de l'avocat couvre toutes les pièces du dossier, celui du notaire est général et absolu, et les consultations du juriste d'entreprise deviennent confidentielles, sous conditions, en vertu d'une loi de février 2026. Masteria, cabinet IA basé à Lyon, part de ce régime pour décider où tournent les modèles, puis développe l'outil de revue, de recherche ou de rédaction dans ce périmètre.",
 
   offresIntro: [
@@ -12,14 +54,21 @@ export default {
 
   offres: [
     {
+      title: "Classement des flux par niveau de secret",
+      cta: "Notre approche du conseil IA",
       desc: "Nous classons vos flux documentaires par niveau de confidentialité : pièces couvertes par le secret, documents publics, modèles internes, consultations du juriste d'entreprise. Pour chaque flux, nous fixons l'outil autorisé, le traitement préalable (pseudonymisation, extraction) et la règle de relecture, dans une charte écrite pour l'associé référent ou la direction juridique, puis nous comparons les outils du marché à un développement sur mesure.",
       points: ["Classement des flux par niveau de secret", "Charte d'usage et règles de relecture", "Comparaison des outils du marché"],
     },
     {
+      title: "Outils de revue sur vos propres références",
+      cta: "Le développement sur mesure",
+      secondaryCta: "Outils IA par métier",
       desc: "Nous développons des outils qui travaillent sur vos propres références : revue de contrats contre votre grille de positions, recherche dans vos consultations et vos notes internes, préparation d'actes à partir de vos modèles. Chaque réponse cite le passage source, et l'outil tourne dans l'hébergement que le régime de vos données autorise, jusqu'à un modèle installé sur vos serveurs.",
       points: ["Revue contre votre grille de positions", "Réponses qui citent la pièce source", "Hébergement choisi selon le secret"],
     },
     {
+      title: "Préparation automatisée des pièces",
+      cta: "L'automatisation chez Masteria",
       desc: "Nous automatisons les étapes qui n'engagent aucune appréciation juridique : pseudonymisation des pièces avant traitement, classement d'une data room (l'espace où un vendeur dépose ses documents), extraction des dates et des montants, préparation des tableaux d'échéances. Le juriste reçoit un dossier prêt à analyser et garde la main sur tout ce qui engage le client.",
       points: ["Pseudonymisation avant traitement", "Classement et extraction en série", "Tableaux d'échéances et de montants"],
     },
@@ -152,7 +201,7 @@ export default {
     { name: "Légifrance : code de l'organisation judiciaire, article L. 111-13", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000038311162" },
     { name: "Conseil national des barreaux : guide pratique, utilisation des systèmes d'intelligence artificielle générative (septembre 2024)", url: "https://cnb.avocat.fr/medias/cnb-guidepratique-utilisation-systemes-iag-2024-68f7b1d86e4570.98487114.pdf" },
     { name: "Conseil national des barreaux : le CNB accompagne la profession dans l'utilisation de l'IA générative (18 juin 2025)", url: "https://cnb.avocat.fr/actualite/le-cnb-accompagne-toujours-plus-la-profession-dans-l-utilisation-de-l-ia-generative" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (annexe III, point 8)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : l'administration de la justice au point 8 de l'annexe III", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : nouveau calendrier des obligations à haut risque", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
   ],
 }

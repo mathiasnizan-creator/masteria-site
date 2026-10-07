@@ -142,7 +142,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour une banque ou un assureur ?",
-        a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration au système d'information. Nous fonctionnons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Le cadrage initial est gratuit et débouche sur un devis ferme.",
+        a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration au système d'information. Nous fonctionnons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Les 30 minutes de cadrage sont offertes et débouchent sur un devis ferme.",
       },
       {
         q: "Un cabinet IA peut-il remplacer un cabinet de conseil bancaire classique ?",
@@ -272,7 +272,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour un industriel ?",
-        a: "Le budget se définit au cas par cas selon le périmètre, la sensibilité de la propriété intellectuelle et le besoin éventuel de déploiement on-premise. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype sur un cas prioritaire (documentation, maintenance) reste un engagement mesuré ; l'industrialisation est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget se définit au cas par cas selon le périmètre, la sensibilité de la propriété intellectuelle et le besoin éventuel de déploiement on-premise. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype sur un cas prioritaire (documentation, maintenance) reste un engagement mesuré ; l'industrialisation est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Êtes-vous un cabinet de conseil industrie ou un cabinet IA ?",
@@ -367,7 +367,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA en santé ou en pharma ?",
-        a: "Le budget dépend du périmètre, des exigences d'hébergement HDS et du niveau de validation à intégrer. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Un assistant documentaire pilote reste un engagement contenu ; une chaîne de pharmacovigilance ou de réglementaire est plus conséquente. Le cadrage initial est gratuit et débouche sur un devis ferme, sans prix sur étagère.",
+        a: "Le budget dépend du périmètre, des exigences d'hébergement HDS et du niveau de validation à intégrer. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Un assistant documentaire pilote reste un engagement contenu ; une chaîne de pharmacovigilance ou de réglementaire est plus conséquente. Les 30 minutes de cadrage sont offertes et débouchent sur un devis ferme, sans prix sur étagère.",
       },
       {
         q: "En quoi votre approche diffère-t-elle d'un éditeur de logiciel santé ?",
@@ -448,7 +448,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour un cabinet ou une direction juridique ?",
-        a: "Le budget se définit selon le périmètre, le niveau de confidentialité exigé et le volume de documents à traiter. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil d'analyse de contrats pilote reste un engagement mesuré ; un copilote branché sur toute votre base est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme, sans tarif sur étagère.",
+        a: "Le budget se définit selon le périmètre, le niveau de confidentialité exigé et le volume de documents à traiter. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil d'analyse de contrats pilote reste un engagement mesuré ; un copilote branché sur toute votre base est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme, sans tarif sur étagère.",
       },
       {
         q: "Pourquoi vous plutôt qu'un outil de legaltech sur le marché ?",
@@ -529,7 +529,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour le retail ou l'e-commerce ?",
-        a: "Le budget dépend du périmètre, du nombre de connecteurs (PIM, e-commerce, CRM) et du volume éditorial à industrialiser. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil d'enrichissement de fiches pilote reste un engagement contenu ; une chaîne complète multilingue est plus large. Le cadrage initial est gratuit et débouche sur un devis ferme.",
+        a: "Le budget dépend du périmètre, du nombre de connecteurs (PIM, e-commerce, CRM) et du volume éditorial à industrialiser. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil d'enrichissement de fiches pilote reste un engagement contenu ; une chaîne complète multilingue est plus large. Les 30 minutes de cadrage sont offertes et débouchent sur un devis ferme.",
       },
       {
         q: "Pourquoi du sur-mesure plutôt qu'un plugin IA du marché ?",
@@ -648,7 +648,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA en logistique ou en transport ?",
-        a: "Le budget se définit selon le périmètre, le nombre de systèmes à connecter (TMS, WMS, télématique) et le volume documentaire à traiter. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Une automatisation documentaire pilote reste un engagement mesuré ; une couche d'exploitation complète est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget se définit selon le périmètre, le nombre de systèmes à connecter (TMS, WMS, télématique) et le volume documentaire à traiter. Nous fonctionnons au forfait, avec périmètre et livrables écrits avant signature. Une automatisation documentaire pilote reste un engagement mesuré ; une couche d'exploitation complète est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Êtes-vous un cabinet de conseil transport ou un cabinet IA ?",
@@ -737,7 +737,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour l'immobilier ou le BTP ?",
-        a: "Le budget dépend du périmètre, des outils métier à connecter (transaction, gestion locative, GED de chantier) et du volume documentaire. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil de rédaction d'annonces pilote reste un engagement contenu ; une chaîne de réponse aux marchés est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget dépend du périmètre, des outils métier à connecter (transaction, gestion locative, GED de chantier) et du volume documentaire. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un outil de rédaction d'annonces pilote reste un engagement contenu ; une chaîne de réponse aux marchés est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Qu'apportez-vous de plus qu'un logiciel métier avec une option IA ?",
@@ -820,7 +820,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour une collectivité ou un établissement public ?",
-        a: "Le budget se définit selon le périmètre, les exigences de souveraineté et l'intégration au système d'information. Nous travaillons au forfait, dans le cadre de la commande publique, avec périmètre et livrables écrits avant signature. Un assistant aux usagers pilote reste un engagement mesuré ; un déploiement multi-services est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget se définit selon le périmètre, les exigences de souveraineté et l'intégration au système d'information. Nous travaillons au forfait, dans le cadre de la commande publique, avec périmètre et livrables écrits avant signature. Un assistant aux usagers pilote reste un engagement mesuré ; un déploiement multi-services est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Pourquoi un cabinet spécialisé plutôt qu'un grand prestataire généraliste ?",
@@ -940,7 +940,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour un cabinet de conseil ?",
-        a: "Le budget dépend du périmètre, du volume de matière à capitaliser et du niveau de cloisonnement par client exigé. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote pilote sur un type de livrable reste un engagement contenu ; un socle de savoir branché sur toutes vos missions est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget dépend du périmètre, du volume de matière à capitaliser et du niveau de cloisonnement par client exigé. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote pilote sur un type de livrable reste un engagement contenu ; un socle de savoir branché sur toutes vos missions est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Quels outils IA choisir pour un cabinet de conseil ?",
@@ -1025,7 +1025,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour un hôtel ou un acteur du tourisme ?",
-        a: "Le budget se définit selon le périmètre, le nombre de langues et de canaux, et les systèmes à connecter (PMS, moteur de réservation, CRM). Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un assistant de relation client pilote reste un engagement contenu ; une chaîne multicanal complète est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget se définit selon le périmètre, le nombre de langues et de canaux, et les systèmes à connecter (PMS, moteur de réservation, CRM). Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un assistant de relation client pilote reste un engagement contenu ; une chaîne multicanal complète est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Pourquoi du sur-mesure plutôt qu'un chatbot hôtelier du marché ?",
@@ -1106,7 +1106,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour un industriel de l'agroalimentaire ?",
-        a: "Le budget dépend du périmètre, de la sensibilité des formulations et du niveau de validation réglementaire à intégrer. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote qualité pilote reste un engagement contenu ; une chaîne complète conformité et fiches techniques est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget dépend du périmètre, de la sensibilité des formulations et du niveau de validation réglementaire à intégrer. Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un copilote qualité pilote reste un engagement contenu ; une chaîne complète conformité et fiches techniques est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Qu'apportez-vous de plus qu'un module qualité avec une option IA ?",
@@ -1189,7 +1189,7 @@ export const SECTEURS = [
       },
       {
         q: "Combien coûte un projet IA pour un éditeur SaaS ?",
-        a: "Le budget dépend du périmètre, de la complexité de la fonctionnalité et du niveau de renfort attendu (build complet ou appui à vos équipes). Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype de fonctionnalité IA reste un engagement contenu ; un build avec garde-fous et évaluation en production est plus large. Le cadrage initial est gratuit et aboutit à un devis ferme.",
+        a: "Le budget dépend du périmètre, de la complexité de la fonctionnalité et du niveau de renfort attendu (build complet ou appui à vos équipes). Nous travaillons au forfait, avec périmètre et livrables écrits avant signature. Un prototype de fonctionnalité IA reste un engagement contenu ; un build avec garde-fous et évaluation en production est plus large. Les 30 minutes de cadrage sont offertes et aboutissent à un devis ferme.",
       },
       {
         q: "Faut-il développer en interne, acheter une brique IA ou vous confier le build ?",

@@ -3,28 +3,30 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, FileSearch, BarChart3, Workflow, Globe, Sparkles,
   Compass, FlaskConical, Code2, Rocket, RefreshCw, ShieldCheck, KeyRound,
-  Server, GraduationCap, MapPin, Building2, Check, Minus,
+  Server, GraduationCap, MapPin, Building2, Check, Minus, Sun, Landmark,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
 
 /*
- * Page offre « outils IA sur mesure » (slug /outils-ia-sur-mesure).
- * Angle : le LIVRABLE — l'outil, l'application, le copilote métier — « de l'idée
- * à l'outil », propriété du code et des données, sécurité, maintenance (TMA).
- * Cibles : « outils ia sur mesure », « application ia sur mesure »,
- * « logiciel ia sur mesure », « développement application ia »,
- * « copilote interne entreprise », « assistant ia interne », sec. « web dev ia ».
- * Anti-cannibalisation : la page /agence-developpement-ia parle de l'AGENCE / du
- * service ; ici on parle du PRODUIT. On LIE vers elle, on ne la duplique pas.
- * Maillage : /agence-developpement-ia, /agence-automatisation-ia,
- * /agents-ia-entreprise, /conseil-intelligence-artificielle, /formation-intelligence-artificielle.
+ * Page offre « développement IA sur mesure » (slug /outils-ia-sur-mesure).
+ * Décision du 02/10/2026 : cette page porte la requête « développement IA sur
+ * mesure » (title et H1) ; /prix-projet-ia y renvoie avec cette ancre exacte ;
+ * /agence-developpement-ia garde « agence développement IA ».
+ * Angle propre à la page : le LIVRABLE (l'outil remis au client), ses formes,
+ * le choix entre logiciel du marché et sur-mesure, la propriété, la maintenance.
+ * Cibles secondaires : « outils ia sur mesure », « ia sur mesure »,
+ * « logiciel ia sur mesure », « copilote interne entreprise », « assistant ia interne ».
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards ni de
+ * FounderNote ; fait daté ajouté sur la fin des GPTs personnalisés (11/12/2026,
+ * vérifié sur help.openai.com le 07/10) et des Gems (au plus tôt le 01/03/2027,
+ * page Google « gems-migration »). Prix en fourchettes larges, développement pas
+ * finançable par l'OPCO, « 30 minutes de cadrage offertes ».
  * Design premium charte Masteria : icônes lucide (zéro emoji), kickers, cartes
- * radius 16, tableau de décision honnête, CTA sombre. Accent bleu #2563EB.
+ * radius 16, tableau de décision, CTA sombre. Accent bleu #2563EB.
  */
 
 const SLUG = 'outils-ia-sur-mesure'
@@ -32,8 +34,14 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Développement IA sur mesure : outils et copilotes | Masteria"
-const META_DESC = "Outils IA sur mesure : copilotes internes, assistants documentaires et applications métier pour vos processus. Code et données qui vous appartiennent."
-const KEYWORDS = "développement ia sur mesure, ia sur mesure, outils ia sur mesure, outil ia personnalisé, solution ia sur mesure, développement outil ia, logiciel ia sur mesure"
+const META_DESC = "Développement IA sur mesure : copilotes, assistants documentaires, applications. Code et données à vous, hébergement en UE. 30 min de cadrage offertes."
+const KEYWORDS = "développement ia sur mesure, outil ia personnalisé, outils ia sur mesure, logiciel ia sur mesure, copilote ia interne, solution ia sur mesure, développement outil ia, ia sur mesure"
+
+/* Sources citées par la page (WebPage.citation + liens visibles). */
+const PAGE_CITATIONS = [
+  { name: "OpenAI, centre d'aide : retrait des GPTs personnalisés et migration vers les plugins", url: 'https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq' },
+  { name: "Google Workspace : passage des Gems aux compétences pour les comptes professionnels", url: 'https://knowledge.workspace.google.com/p/gems-migration' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -63,63 +71,63 @@ function IconBox({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: KeyRound,   label: 'Code et données qui vous appartiennent' },
-  { icon: ShieldCheck, label: 'Hébergement UE possible' },
+  { icon: KeyRound,   label: 'Code et données remis au client' },
+  { icon: ShieldCheck, label: 'Hébergement européen possible' },
   { icon: MapPin,     label: 'Lyon · Europe · États-Unis · Inde' },
-  { icon: Building2,  label: 'Spécialisés IA depuis 2022' },
+  { icon: Building2,  label: "Un seul métier, l'IA, depuis 2022" },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Outils', value: "Copilote interne, assistant documentaire (RAG), application web IA, automatisation métier, agent spécialisé" },
-  { label: 'Démarche', value: "De l'idée à l'outil : cadrage, maquette et POC, développement, mise en service, évolutions" },
-  { label: 'Propriété', value: "Code source et données au client, aucun enfermement chez un éditeur" },
-  { label: 'Confidentialité', value: "Données non utilisées pour entraîner des modèles tiers · hébergement UE possible" },
-  { label: 'Maintenance', value: "TMA (corrections, évolutions, montée de version des modèles) ou transfert à vos équipes" },
-  { label: 'Délai', value: "Premier prototype en quelques semaines · Europe, États-Unis, Inde" },
+  { label: 'Formes', value: "Copilote d'équipe, assistant documentaire (RAG), application web, outil d'analyse, automatisation, agent spécialisé" },
+  { label: 'Démarche', value: "Besoin précisé, maquette, prototype, versions successives, mise en service, évolutions" },
+  { label: 'Propriété', value: "Code source, documentation et données remis au client, sans licence captive" },
+  { label: 'Confidentialité', value: "Des offres où vos données n'entraînent pas les modèles ; hébergement en Europe sur demande" },
+  { label: 'Maintenance', value: "Contrat de maintenance avec nous, ou reprise par votre équipe après passation" },
+  { label: 'Délai et prix', value: "Prototype en quelques semaines ; forfait fixé après cadrage" },
 ]
 
-/* ───────── 1. Quels outils IA construit-on ? (6 cartes IconBox) ───────── */
+/* ───────── 1. Les formes d'un outil sur mesure (6 cartes IconBox) ───────── */
 
 const OUTILS = [
   {
     icon: Bot,
-    title: 'Copilote interne',
-    desc: "Un assistant IA branché sur vos données et vos règles métier : il répond aux questions de vos équipes, rédige avec votre langage et déclenche les bonnes actions, sans recopier des informations dans un outil grand public.",
+    title: "Copilote d'équipe",
+    desc: "Un assistant réservé à vos collaborateurs, qui connaît vos procédures, votre vocabulaire et vos modèles de documents. Il rédige, résume et répond, sans que personne ne colle de données dans un service grand public.",
     href: '/copilote-ia-interne',
-    linkLabel: 'Voir le copilote IA interne',
+    linkLabel: 'Le copilote IA interne en détail',
   },
   {
     icon: FileSearch,
     title: 'Assistant documentaire (RAG)',
-    desc: "Une recherche en langage naturel dans vos documents, contrats, procédures et bases de connaissances. Chaque réponse cite sa source, ce qui rend l'outil vérifiable et fiable au quotidien.",
+    desc: "Une question posée en français, une réponse tirée de vos contrats, procédures ou fiches techniques, avec le lien vers le passage cité. Le collaborateur vérifie la source avant de s'en servir.",
     href: '/assistant-documentaire-ia',
-    linkLabel: "Voir l'assistant documentaire IA",
+    linkLabel: "Voir l'assistant documentaire",
   },
   {
     icon: BarChart3,
-    title: "Outil d'analyse et de reporting IA",
-    desc: "Lecture et synthèse automatiques de vos données : tableaux de bord commentés, détection de signaux, rapports générés à la demande à partir de vos sources existantes.",
+    title: "Outil d'analyse et de reporting",
+    desc: "L'outil lit vos exports et vos tableaux, signale ce qui a bougé et rédige un commentaire que le responsable relit. Le rapport du lundi se prépare pendant la nuit.",
   },
   {
     icon: Workflow,
-    title: 'Automatisation métier',
-    desc: "Un outil qui prend en charge un processus de bout en bout : réception, traitement, contrôle puis restitution, avec une validation humaine sur les décisions sensibles et une traçabilité complète.",
+    title: "Automatisation d'un processus",
+    desc: "Un dossier arrive, l'outil le lit, en extrait les données, les contrôle et prépare la suite. Une personne valide les décisions qui engagent, et chaque étape laisse une trace.",
     href: '/automatisation-documentaire-ia',
-    linkLabel: "Voir l'automatisation documentaire IA",
+    linkLabel: "Voir l'automatisation documentaire",
   },
   {
     icon: Globe,
-    title: 'Application web IA dédiée',
-    desc: "Une interface propre à votre besoin, accessible depuis le navigateur, avec gestion des accès et des rôles. Vos équipes disposent d'un vrai logiciel, pas d'un assemblage fragile de scripts.",
+    title: 'Application web dédiée',
+    desc: "Des écrans conçus pour un service, des comptes par utilisateur, des droits par rôle. Vos équipes travaillent dans un logiciel stable, loin des scripts bricolés qui cassent au premier changement de version.",
   },
   {
     icon: Sparkles,
     title: 'Agent spécialisé',
-    desc: "Un agent IA cadré sur une mission précise, capable d'enchaîner plusieurs étapes pour atteindre un objectif, avec les garde-fous qu'exige toute autonomie confiée à une machine.",
+    desc: "Un agent reçoit un objectif précis et enchaîne plusieurs étapes pour l'atteindre, dans les limites que vous lui fixez. Plus il agit seul, plus ses garde-fous comptent.",
     href: '/agents-ia-entreprise',
-    linkLabel: 'Voir les agents IA en entreprise',
+    linkLabel: 'Les agents IA en entreprise',
   },
 ]
 
@@ -127,34 +135,34 @@ const OUTILS = [
 
 const DECISION_ROWS = [
   {
-    critere: 'Coût initial',
-    saas: { txt: 'Faible : abonnement par utilisateur', tone: 'plus' },
-    nocode: { txt: 'Modéré : licences + mise en place', tone: 'neutral' },
-    surmesure: { txt: 'Élevé : développement à financer', tone: 'minus' },
+    critere: 'Dépense de départ',
+    saas: { txt: 'Faible : un abonnement par utilisateur', tone: 'plus' },
+    nocode: { txt: 'Moyenne : licences et paramétrage', tone: 'neutral' },
+    surmesure: { txt: 'Plus élevée : un développement à financer', tone: 'minus' },
   },
   {
-    critere: 'Adéquation au besoin',
-    saas: { txt: "Standard : vous vous adaptez à l'outil", tone: 'minus' },
-    nocode: { txt: 'Bonne sur des cas simples', tone: 'neutral' },
-    surmesure: { txt: "Totale : l'outil épouse vos processus", tone: 'plus' },
+    critere: 'Ajustement à votre façon de travailler',
+    saas: { txt: "Partiel : l'équipe s'adapte au logiciel", tone: 'minus' },
+    nocode: { txt: 'Correct sur des cas simples', tone: 'neutral' },
+    surmesure: { txt: "Complet : l'outil suit vos étapes", tone: 'plus' },
   },
   {
-    critere: 'Dépendance éditeur',
-    saas: { txt: "Forte : tarifs et roadmap subis", tone: 'minus' },
-    nocode: { txt: 'Réelle : la plateforme reste un tiers', tone: 'neutral' },
-    surmesure: { txt: 'Faible : vous maîtrisez le socle', tone: 'plus' },
+    critere: 'Dépendance à un éditeur',
+    saas: { txt: 'Forte : prix et fonctions décidés ailleurs', tone: 'minus' },
+    nocode: { txt: 'Présente : la plateforme reste un tiers', tone: 'neutral' },
+    surmesure: { txt: 'Faible : le socle vous appartient', tone: 'plus' },
   },
   {
-    critere: 'Confidentialité des données',
-    saas: { txt: 'Variable selon le contrat éditeur', tone: 'neutral' },
-    nocode: { txt: 'Données qui transitent par la plateforme', tone: 'minus' },
-    surmesure: { txt: 'Maîtrisée : hébergement UE possible', tone: 'plus' },
+    critere: 'Confidentialité',
+    saas: { txt: "Fixée par le contrat de l'éditeur", tone: 'neutral' },
+    nocode: { txt: 'Les données passent par la plateforme', tone: 'minus' },
+    surmesure: { txt: 'Choisie : hébergement européen possible', tone: 'plus' },
   },
   {
-    critere: 'Évolutivité',
-    saas: { txt: "Limitée aux options de l'éditeur", tone: 'minus' },
-    nocode: { txt: 'Bornée par la plateforme', tone: 'neutral' },
-    surmesure: { txt: 'Ouverte : on étend ce qui existe', tone: 'plus' },
+    critere: 'Évolutions',
+    saas: { txt: "Celles que l'éditeur programme", tone: 'minus' },
+    nocode: { txt: 'Bornées par la plateforme', tone: 'neutral' },
+    surmesure: { txt: 'Libres : on ajoute ce dont vous avez besoin', tone: 'plus' },
   },
 ]
 
@@ -164,32 +172,32 @@ const PROCESS = [
   {
     num: '01',
     icon: Compass,
-    title: 'Cadrage du besoin',
-    desc: "Nous partons du problème métier, pas de la technologie. Nous identifions l'usage réel, les utilisateurs, les données disponibles et le critère de réussite, puis nous écartons ce qui ne mérite pas d'être construit.",
+    title: 'Préciser le besoin',
+    desc: "Nous partons du travail à faciliter avant de parler technologie : qui utilisera l'outil, sur quelles données, et quel signe montrera qu'il rend service. Ce qui ne mérite pas d'être construit est écarté dès cette étape.",
   },
   {
     num: '02',
     icon: FlaskConical,
-    title: 'Maquette et POC',
-    desc: "Nous produisons rapidement une maquette puis une preuve de concept sur un périmètre réduit. Vous manipulez quelque chose de concret et décidez d'engager le développement sur des bases vérifiées.",
+    title: 'Une maquette, puis un prototype',
+    desc: "La maquette montre les écrans ; le prototype fait ensuite tourner le cœur de l'outil sur une partie de vos données. Vous décidez d'aller plus loin après avoir manipulé quelque chose.",
   },
   {
     num: '03',
     icon: Code2,
-    title: 'Développement',
-    desc: "Nous construisons l'outil par incréments, avec des points réguliers et des versions testables. Le choix du modèle (multi-LLM) et de l'architecture découle du besoin, jamais d'un effet de mode.",
+    title: 'Une construction par livraisons',
+    desc: "L'outil grandit par versions utilisables, chacune présentée en démonstration. Le modèle d'IA et l'architecture découlent du besoin et du budget, jamais de la mode du moment.",
   },
   {
     num: '04',
     icon: Rocket,
-    title: 'Mise en service',
-    desc: "Nous déployons l'outil dans votre environnement, connectons vos applications, posons les accès et les garde-fous, puis accompagnons la prise en main des premiers utilisateurs.",
+    title: 'La mise en service',
+    desc: "Nous installons l'outil dans votre environnement, le relions à vos logiciels, posons les accès et les garde-fous, puis restons aux côtés des premiers utilisateurs pendant leurs premières semaines.",
   },
   {
     num: '05',
     icon: RefreshCw,
-    title: 'Évolutions',
-    desc: "Une fois l'outil en production, nous le faisons vivre : corrections, nouvelles fonctions, montée de version des modèles. Vous restez décisionnaire du rythme et du périmètre.",
+    title: 'Les évolutions',
+    desc: "Une fois en service, l'outil continue d'avancer : corrections, fonctions nouvelles, passage à un modèle plus récent. Vous décidez du rythme et du contenu de chaque évolution.",
   },
 ]
 
@@ -198,23 +206,52 @@ const PROCESS = [
 const PROPRIETE = [
   {
     icon: KeyRound,
-    title: 'Vous possédez le code et les données',
-    desc: "L'outil est le vôtre. Le code source vous revient, vos données restent vos données : aucune dépendance cachée, aucun enfermement chez un éditeur. Vous pouvez le faire évoluer avec nous ou avec une autre équipe.",
+    title: 'Le code et les données sont à vous',
+    desc: "Le dépôt de code vous est transféré et vos données restent les vôtres. Vous pouvez en remettre les clés à d'autres développeurs sans demander d'autorisation ni racheter de licence.",
   },
   {
     icon: ShieldCheck,
-    title: 'Confidentialité par conception',
-    desc: "Vos données ne servent jamais à entraîner des modèles tiers et ne sortent pas de votre périmètre sans raison. Les flux sont tracés, les accès cloisonnés par rôle, et chaque traitement reste documenté.",
+    title: 'Une confidentialité prévue dès la conception',
+    desc: "Les accès sont attribués par rôle, les échanges avec le modèle sont journalisés, et les données sensibles restent à l'écart des traitements qui n'en ont pas besoin.",
   },
   {
     icon: Server,
-    title: 'Hébergement maîtrisé, UE possible',
-    desc: "Selon vos exigences de conformité, l'outil s'héberge dans l'Union européenne, sur votre cloud ou sur une infrastructure dédiée. Le choix se fait avec vous, en fonction de la sensibilité des données traitées.",
+    title: 'Un hébergement choisi avec vous',
+    desc: "Hébergeur européen, cloud de votre entreprise ou serveurs internes : le choix suit la sensibilité des données et votre politique de sécurité, puis il est consigné dans votre registre RGPD.",
   },
   {
     icon: RefreshCw,
-    title: 'Maintenance et évolutions (TMA)',
-    desc: "Un outil IA n'est pas figé : les modèles progressent, vos besoins changent. Nous proposons une maintenance applicative et des évolutions au fil de l'eau, ou un transfert à vos équipes si vous préférez internaliser.",
+    title: 'Maintenance ou reprise interne',
+    desc: "Les modèles changent, vos besoins aussi. Un contrat de maintenance couvre corrections, évolutions et changements de modèle ; vous pouvez aussi reprendre l'outil en interne après la passation.",
+  },
+]
+
+/* ───────── Études de cas (faits : src/data/etudes-de-cas.js, révisés le 05/10/2026) ───────── */
+
+const OUTIL_CASES = [
+  {
+    id: 'photovoltaique',
+    icon: Sun,
+    sector: 'Distribution photovoltaïque · PME',
+    figure: '3',
+    figureLabel: 'assistants à construire, chacun confié à un porteur',
+    text: "Chez ce distributeur où trois personnes font tout tourner autour d'Odoo, les assistants prévus interrogeront les transporteurs, importeront les réceptions d'entrepôt et s'occuperont des devis et des relances. La direction recevra aussi un tableau de bord ; l'outil prépare, l'humain valide.",
+  },
+  {
+    id: 'distribution',
+    icon: Bot,
+    sector: 'Distribution IT B2B',
+    figure: '11',
+    figureLabel: 'compétences Claude installées sur les outils existants',
+    text: "Chiffrer une demande reçue par courriel, relancer un devis, répondre à un cahier des charges en puisant dans l'ERP, suivre les stocks : chaque compétence a été conçue par un référent sur son propre travail. Livrées avec des données fictives, elles passent ensuite sur les fichiers de l'entreprise, juste avant la mise en production.",
+  },
+  {
+    id: 'conseil-financier',
+    icon: Landmark,
+    sector: 'Conseil financier · secteur public',
+    figure: '5',
+    figureLabel: 'livrables, du schéma des assistants au guide de mise à jour',
+    text: "Les quatre assistants conçus pour les appels d'offres du cabinet sont arrivés avec leur base de connaissance, leurs consignes complètes et un guide qui désigne qui met à jour quoi. Le cabinet fait désormais évoluer le dispositif sans Masteria.",
   },
 ]
 
@@ -222,40 +259,44 @@ const PROPRIETE = [
 
 const FAQ = [
   {
-    q: "Qu'est-ce qu'un outil IA sur mesure ?",
-    a: "Un outil IA sur mesure est une application développée spécifiquement pour une entreprise, autour de ses processus et de ses données, plutôt qu'un logiciel standard du marché. Il peut prendre la forme d'un copilote interne, d'un assistant documentaire, d'une application web ou d'un agent spécialisé. Chez Masteria, ces outils s'appuient sur un ou plusieurs grands modèles de langage (LLM), s'intègrent à votre système d'information existant, et leur code comme leurs données restent votre propriété.",
+    q: "Qu'est-ce que le développement IA sur mesure ?",
+    a: "C'est la construction d'un outil propre à une entreprise, autour de ses tâches et de ses données, à la place d'un logiciel standard. L'outil peut être un copilote d'équipe, d'un assistant documentaire, d'une application web ou d'un agent spécialisé ; il s'appuie sur un ou plusieurs modèles de langage et se branche sur votre système d'information. Chez Masteria, le code et les données restent votre propriété.",
   },
   {
-    q: "Quelle différence entre un outil IA sur mesure et un logiciel SaaS du marché ?",
-    a: "Un logiciel SaaS est conçu pour le plus grand nombre : vous adaptez votre fonctionnement à l'outil, vos données transitent par l'éditeur et vous dépendez de sa feuille de route et de ses tarifs. Une application IA sur mesure épouse au contraire vos processus, garde la maîtrise de vos données (hébergement dans l'Union européenne possible) et reste évolutive parce que vous en possédez le socle. Le SaaS suffit quand le besoin est standard ; le sur mesure se justifie dès que l'adéquation au besoin, la confidentialité ou l'évolutivité deviennent décisives.",
+    q: "Outil IA sur mesure ou logiciel SaaS : comment choisir ?",
+    a: "Un logiciel en abonnement (SaaS) vise le plus grand nombre : votre équipe s'adapte à lui, vos données passent chez l'éditeur, et son calendrier s'impose à vous. Un outil sur mesure suit vos étapes, laisse les données là où vous le décidez et grandit avec vous. Pour un besoin courant, prenez le SaaS ; un outil construit pour vous devient pertinent dès que l'ajustement, la confidentialité ou l'évolution dans la durée pèsent dans la décision.",
   },
   {
-    q: "Peut-on développer un copilote IA interne sur mesure pour nos équipes ?",
-    a: "Oui. Le copilote IA interne est l'un des outils que nous développons le plus souvent : un assistant branché sur vos données et vos règles métier, qui répond aux questions de vos collaborateurs, rédige avec votre langage et déclenche les bonnes actions, sans recopier d'informations dans un outil grand public. Les accès sont cloisonnés par rôle et les traitements tracés. C'est l'équivalent privé et maîtrisé d'un assistant IA, conçu pour votre organisation.",
+    q: "Pouvez-vous développer un copilote IA interne pour nos équipes ?",
+    a: "Oui, et on nous le demande souvent. Ce copilote connaît vos procédures et vos modèles de documents, répond aux questions des collaborateurs, rédige dans votre ton et peut déclencher certaines actions. Les droits suivent les rôles, chaque échange est journalisé, et personne n'a besoin de copier des données dans un service grand public.",
   },
   {
     q: "Combien coûte un outil IA sur mesure ?",
-    a: "Le budget dépend du périmètre : un copilote documentaire branché sur quelques sources n'a pas le coût d'une application métier complète avec gestion des accès et intégrations. Nous chiffrons sur devis après un cadrage, et nous commençons souvent par un prototype à coût maîtrisé pour valider la valeur avant d'engager le développement complet. Le développement sur mesure n'est pas finançable par un OPCO ; seul un éventuel volet de formation à l'usage de l'outil peut l'être.",
+    a: "Pour un prototype, prévoyez quelques milliers d'euros ; pour un outil complet utilisé tous les jours, plusieurs dizaines de milliers ; au-dessus de 100 000 € dès que l'outil se déploie sur plusieurs sites. Le forfait exact tombe après le cadrage, et la page consacrée au budget d'un projet IA entre dans le détail de chaque livrable. Côté financement, la formation des utilisateurs peut relever de l'OPCO, mais le développement n'est pas finançable par votre OPCO.",
   },
   {
     q: "Faut-il remplacer nos logiciels actuels ?",
-    a: "Non. Un outil IA sur mesure vient compléter votre système d'information, pas le remplacer. Nous nous intégrons à votre existant (CRM, ERP, messagerie, bases documentaires) et l'outil se branche sur ces sources. L'objectif est d'ajouter une capacité là où le marché ne répond pas, sans refonte de ce qui fonctionne déjà.",
+    a: "Non. L'outil s'ajoute à votre système d'information : il lit et écrit dans les logiciels que vous utilisez déjà (CRM, ERP, messagerie, base documentaire). Il comble un manque que le marché ne couvre pas, et ce qui fonctionne reste en place.",
   },
   {
-    q: "Nos données sont-elles confidentielles ?",
-    a: "Oui, c'est une exigence de conception. Vos données ne servent pas à entraîner des modèles tiers, les accès sont cloisonnés par rôle et les traitements sont tracés. Selon la sensibilité, l'outil s'héberge dans l'Union européenne, sur votre cloud ou sur une infrastructure dédiée. Nous arbitrons ces choix avec vous au cadrage, en fonction de votre politique de sécurité.",
+    q: "Nos données restent-elles confidentielles ?",
+    a: "Oui, c'est une exigence posée dès le cadrage. Nous retenons des offres où vos données n'entraînent pas les modèles, les accès suivent les rôles et les échanges sont journalisés. Selon la sensibilité des informations, il peut être hébergé en Europe, dans le cloud de votre entreprise ou sur vos propres machines.",
   },
   {
-    q: "Qui maintient l'outil ensuite ?",
-    a: "Vous décidez. Le code et les données vous appartiennent, vous n'êtes donc jamais captif. Nous proposons une maintenance applicative et des évolutions au fil de l'eau (corrections, nouvelles fonctions, montée de version des modèles), mais nous pouvons aussi former vos équipes pour qu'elles reprennent la main et internalisent la maintenance.",
+    q: "Qui maintient l'outil après la livraison ?",
+    a: "C'est vous qui décidez. Le code vous appartenant, vous n'êtes lié à personne. Nous proposons un contrat de maintenance (corrections, évolutions, changement de modèle) ; votre équipe peut aussi être formée pour reprendre l'outil en interne.",
   },
   {
-    q: "Combien de temps pour un premier prototype ?",
-    a: "Selon la complexité, un premier prototype manipulable se construit généralement en quelques semaines. Cette étape vise à prouver la valeur sur un périmètre réduit et en conditions réelles, avant d'engager le développement complet. Le calendrier précis se fixe au cadrage, une fois le besoin et les données clarifiés.",
+    q: "Combien de temps pour obtenir un premier prototype ?",
+    a: "Comptez en général quelques semaines ; tout dépend de la complexité et de l'accès à vos données. Le prototype prouve la valeur sur un périmètre réduit avant que vous financiez la suite ; le calendrier précis se fixe pendant le cadrage.",
   },
   {
-    q: "Avec quels modèles d'IA travaillez-vous ?",
-    a: "Nous sommes multi-LLM et indépendants des éditeurs : nous retenons le modèle adapté à chaque usage (ChatGPT, Claude, Gemini, Mistral, ou un modèle hébergé en propre quand la confidentialité l'impose). Le choix du modèle découle du besoin, du niveau de confidentialité et du budget, jamais d'un parti pris commercial.",
+    q: "Avec quels modèles d'IA construisez-vous ces outils ?",
+    a: "Avec celui qui convient à l'usage : Claude, ChatGPT, Gemini, un modèle Mistral AI, voire un modèle hébergé sur vos propres machines quand la confidentialité l'exige. Nous ne dépendons d'aucun éditeur, et l'architecture permet de changer de modèle sans reconstruire l'outil.",
+  },
+  {
+    q: "Que deviennent les GPTs personnalisés et les Gems de nos équipes ?",
+    a: "Les GPTs personnalisés d'OpenAI s'arrêtent le 11 décembre 2026, quelle que soit l'offre, et un report jusqu'au 11 février 2027 existe pour une partie des espaces Enterprise ; chaque GPT peut être migré en plugin, ses instructions devenant une compétence. Google remplace les Gems par des compétences ; les comptes professionnels conservent leurs Gems au moins jusqu'au 1er mars 2027. Si l'un de ces assistants porte un usage important, c'est le moment de le reconstruire : en compétence chez l'éditeur, ou en outil sur mesure dont vous gardez le code.",
   },
 ]
 
@@ -264,10 +305,10 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: "Développement d'outils IA sur mesure",
-  description: "Conception d'outils IA sur mesure : copilotes internes, assistants documentaires (RAG), applications web IA, automatisations métier et agents spécialisés, adaptés aux processus et aux données du client. De l'idée à l'outil, code et données propriété du client, hébergement UE possible, maintenance et évolutions.",
+  name: 'Développement IA sur mesure',
+  description: "Outils d'intelligence artificielle construits pour une entreprise : copilotes d'équipe, assistants documentaires (RAG), outils d'analyse, automatisations, applications web et agents spécialisés. Code, documentation et données remis au client, hébergement européen possible, maintenance ou reprise interne.",
   url: 'https://www.master-ia.fr/outils-ia-sur-mesure',
-  serviceType: "Développement d'outils IA sur mesure",
+  serviceType: 'Développement IA sur mesure',
   areaServed: [
     { '@type': 'Country', name: 'France' },
     { '@type': 'Country', name: 'Suisse' },
@@ -279,14 +320,14 @@ const serviceJsonLd = {
   mainEntityOfPage: 'https://www.master-ia.fr/outils-ia-sur-mesure',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: "Types d'outils IA développés sur mesure",
+    name: 'Formes que prend un outil IA sur mesure',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Copilote IA interne', description: "Assistant IA branché sur vos données et vos règles métier, accès cloisonnés par rôle." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Assistant documentaire IA (RAG)', description: "Recherche en langage naturel dans vos documents, avec réponses sourcées." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Outil d'analyse et de reporting IA", description: "Synthèse de vos données, tableaux de bord commentés et rapports générés à la demande." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Automatisation métier IA', description: "Prise en charge d'un processus de bout en bout, avec validation humaine et traçabilité." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Application web IA dédiée', description: "Interface propre à votre besoin, gestion des accès et des rôles." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Agent IA spécialisé', description: "Agent cadré sur une mission précise, avec garde-fous." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Copilote d'équipe", description: "Assistant réservé aux collaborateurs, nourri de vos procédures et de vos modèles de documents." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Assistant documentaire (RAG)', description: "Réponses tirées de vos documents, avec le lien vers le passage cité." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Outil d'analyse et de reporting", description: "Lecture de vos exports et commentaire rédigé, relu par le responsable." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Automatisation d'un processus", description: "Lecture, extraction et contrôle d'un dossier, validation humaine des décisions qui engagent." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Application web dédiée', description: "Écrans conçus pour un service, comptes par utilisateur et droits par rôle." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Agent spécialisé', description: "Objectif précis atteint en plusieurs étapes, dans des limites fixées par vous." } },
     ],
   },
 }
@@ -296,16 +337,16 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/outils-ia-sur-mesure#article',
-  headline: 'Développement IA sur mesure : des outils et copilotes métier conçus pour vous',
+  headline: 'Développement IA sur mesure : des outils et des copilotes taillés pour votre métier',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-13',
-  dateModified: '2026-07-02',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/outils-ia-sur-mesure#webpage' },
-  about: ['Outils IA sur mesure', "Développement d'applications IA", 'Copilote IA interne', 'Assistant documentaire (RAG)'],
+  about: ['Développement IA sur mesure', "Outils d'intelligence artificielle sur mesure", 'Copilote IA interne', 'Assistant documentaire (RAG)'],
 }
 
 /* ───────── Composants ───────── */
@@ -362,7 +403,7 @@ function DecisionCell({ cell, highlight, dark }) {
 
 export default function OutilsIASurMesurePage() {
   const isDesktop = useIsDesktop()
-  // Patron éditorial asymétrique réutilisable (sections livrables / propriété / FAQ)
+  // Patron éditorial asymétrique réutilisable (sections formes / FAQ)
   const editorialGrid = isDesktop
     ? { display: 'grid', gridTemplateColumns: 'minmax(0, 340px) 1fr', gap: 'clamp(32px, 5vw, 64px)', alignItems: 'start' }
     : {}
@@ -385,8 +426,9 @@ export default function OutilsIASurMesurePage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        citations={PAGE_CITATIONS}
         datePublished="2026-06-13"
-        dateModified="2026-07-02"
+        dateModified="2026-10-07"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -414,35 +456,35 @@ export default function OutilsIASurMesurePage() {
               <Code2 size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Outils IA sur mesure
+              L'outil livré · code et données à vous
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Développement IA sur mesure&nbsp;:
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>des outils et copilotes métier conçus pour vous</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>des outils et des copilotes taillés pour votre métier</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Page tenue par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> (Masteria) · dernière révision le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria conçoit des outils IA sur mesure : copilotes internes, assistants documentaires et applications métier adaptés à vos processus et à vos données, là où les outils du marché ne suffisent pas. Vous obtenez un vrai logiciel, dont le <strong style={{ color: '#fff', fontWeight: 700 }}>code et les données vous appartiennent</strong>.
+            Chez Masteria, le développement IA sur mesure aboutit à un outil que vos équipes ouvrent chaque jour : un copilote nourri de vos règles, un assistant qui cherche dans vos documents, une application conçue pour un seul service. <strong style={{ color: '#fff', fontWeight: 700 }}>Le code, les données et la documentation vous appartiennent</strong>, et vous pouvez faire évoluer l'outil sans nous.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Les solutions du marché couvrent les besoins standards. Dès que votre processus, vos données ou votre niveau de confidentialité sortent du cadre, il faut un outil pensé pour vous. Nous le construisons de l'idée à la mise en service, puis nous le faisons vivre. Spécialistes de l'IA depuis 2022, basés à Lyon, nous intervenons en France et à l'international, en Europe, aux États-Unis et en Inde.
+            Les logiciels du marché couvrent les besoins courants. Quand votre façon de travailler, vos données ou vos exigences de confidentialité sortent de leur cadre, un outil construit pour vous devient la voie raisonnable. Vous verrez ici les formes qu'il peut prendre, comment trancher entre logiciel du marché et sur-mesure, et ce que vous recevez à la livraison.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Décrivez-nous votre besoin
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <a href="#process" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
               Voir la démarche
             </a>
@@ -461,9 +503,9 @@ export default function OutilsIASurMesurePage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'outil en six lignes</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -476,20 +518,20 @@ export default function OutilsIASurMesurePage() {
         </div>
       </section>
 
-      {/* ── 1. QUELS OUTILS IA CONSTRUIT-ON ? (éditorial asymétrique) ── */}
+      {/* ── 1. FORMES D'UN OUTIL SUR MESURE (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Livrables</Kicker>
+              <Kicker>Formes possibles</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Quels outils IA construit-on ?
+                Quelles formes prend un outil IA sur mesure ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Masteria construit six grandes familles d'outils IA : copilote interne branché sur vos données, assistant documentaire avec recherche sourcée (RAG), outil d'analyse et de reporting, automatisation métier de bout en bout, application web IA dédiée et agent spécialisé. Chacun est conçu pour un usage réel, pas pour cocher une case « IA ».</strong>
+                <strong>Six formes reviennent le plus souvent : le copilote d'équipe, l'assistant qui cherche dans vos documents, l'outil d'analyse qui commente vos chiffres, l'automatisation d'un processus, l'application web dédiée et l'agent spécialisé. Le choix dépend de la tâche, de qui s'en sert et de la marge d'action que vous laissez à l'IA.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Le point commun de ces livrables : ils partent de votre besoin et de vos données, et ils s'intègrent à vos outils existants. Voici ce que nous concevons le plus souvent.
+                Toutes partent d'une tâche déjà faite à la main dans votre entreprise, et toutes se branchent sur les logiciels en place.
               </p>
             </div>
 
@@ -513,14 +555,14 @@ export default function OutilsIASurMesurePage() {
               </div>
 
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Certains de ces outils ont leur page dédiée, avec cas d'usage et exemples : <Link to="/chatbot-ia-sur-mesure" style={aStyle}>chatbot IA sur mesure</Link> et <Link to="/integration-llm-rag" style={aStyle}>intégration LLM / RAG</Link>. Pour vous projeter, parcourez nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link>, qui illustrent les outils déjà déployés par métier. Vous cherchez d'abord un partenaire de réalisation plutôt qu'un type d'outil précis ? Notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> détaille la démarche d'ingénierie, l'équipe et les modalités de collaboration. Pour automatiser des processus existants avec des outils du marché, voyez plutôt notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pas encore sûr du périmètre ? <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent souvent à choisir le bon outil ; sinon, un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> le cadre avant tout développement.
+                Deux de ces outils ont une page à part : le <Link to="/chatbot-ia-sur-mesure" style={aStyle}>chatbot IA sur mesure</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration LLM et RAG</Link>. Nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages classés par métier</Link> aident à vous projeter. Pour connaître l'équipe qui construit et le contrat proposé, lisez la page <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> ; pour relier des logiciels existants sans créer d'outil nouveau, celle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Si le périmètre reste à préciser, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent souvent à choisir la bonne forme ; un <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> peut ensuite l'affiner.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── 2. SAAS / NO-CODE / SUR MESURE (ancre sombre — tableau de décision) ── */}
+      {/* ── 2. LOGICIEL DU MARCHÉ / SANS CODE / SUR MESURE (ancre sombre, tableau de décision) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -529,25 +571,25 @@ export default function OutilsIASurMesurePage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Aide à la décision</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 860 }}>
-            Outil du marché, no-code ou sur mesure ?
+            Logiciel du marché, assemblage sans code ou outil sur mesure ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Le sur mesure n'est pas toujours la bonne réponse. Un SaaS du marché suffit quand le besoin est standard ; un assemblage no-code convient à des cas simples ; le développement sur mesure se justifie quand l'adéquation au besoin, la confidentialité des données ou l'évolutivité deviennent décisives. Voici un comparatif honnête pour trancher.</strong>
+            <strong style={{ color: '#fff' }}>Trois situations appellent un outil construit pour vous : une façon de travailler qui n'appartient qu'à votre entreprise, des données qui ne peuvent pas transiter par un tiers, un outil appelé à grandir pendant des années. Pour un besoin courant, un logiciel du marché fait l'affaire ; pour un enchaînement simple, un assemblage sans code suffit.</strong>
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
-            Nous n'avons aucun intérêt à vous vendre du développement si une solution existante fait l'affaire. Ce tableau sert à situer votre besoin, critère par critère, avant d'engager quoi que ce soit.
+            Nous vivons de la construction d'outils, et nous vous dirons pourtant quand un abonnement suffit. Le tableau situe votre besoin, critère par critère, avant toute dépense.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto', marginBottom: 20 }}>
-            <table aria-label="Comparatif entre SaaS du marché, assemblage no-code et développement sur mesure" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
+            <table aria-label="Comparatif entre logiciel du marché, assemblage sans code et outil IA développé sur mesure" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
               <thead>
                 <tr>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '22%' }}>Critère</th>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>SaaS du marché</th>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Assemblage no-code</th>
-                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Développement sur mesure</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Logiciel du marché (SaaS)</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Assemblage sans code</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '26%' }}>Outil sur mesure</th>
                 </tr>
               </thead>
               <tbody>
@@ -563,9 +605,13 @@ export default function OutilsIASurMesurePage() {
             </table>
           </div>
 
+          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '0 0 20px', maxWidth: 860 }}>
+            Un repère daté montre ce que coûte la dépendance à une plateforme. Chez OpenAI, les GPTs personnalisés disparaissent le 11 décembre 2026 pour toutes les offres ; chez Google, les Gems cèdent la place aux compétences, et les comptes professionnels les garderont au moins jusqu'au 1er mars 2027. Un outil dont vous détenez le code repose lui aussi sur un modèle, mais vous choisissez quand et comment en changer.
+          </p>
+
           <p style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: 0, maxWidth: 860 }}>
             <Check size={18} strokeWidth={2.4} style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-            <span>En clair : choisissez le sur mesure quand l'outil doit épouser un processus singulier, quand vos données ne peuvent pas transiter par un tiers, ou quand vous comptez faire évoluer l'outil dans la durée. Sinon, un outil existant fait souvent très bien le travail.</span>
+            <span>Retenez le sur-mesure pour un processus qui vous est propre, des données qui doivent rester chez vous ou un outil appelé à grandir. Dans les autres cas, commencez par ce qui existe.</span>
           </p>
         </div>
       </section>
@@ -575,15 +621,15 @@ export default function OutilsIASurMesurePage() {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Démarche</Kicker>
           <h2 style={h2Style}>
-            De l'idée à l'outil
+            Comment passe-t-on d'une idée à un outil en service ?
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Nous suivons cinq étapes : cadrage du besoin, maquette et preuve de concept, développement par incréments, mise en service dans votre environnement, puis évolutions au fil de l'eau. Vous validez la valeur sur un prototype avant d'engager le développement complet, et vous restez décisionnaire à chaque étape.</strong>
+            <strong>En cinq temps : préciser le besoin, montrer une maquette puis un prototype, construire par livraisons, mettre en service dans votre environnement, puis faire évoluer. Vous jugez la valeur sur le prototype avant de financer la version complète.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
-            La même trajectoire pour chaque projet : comprendre, prouver, construire, déployer, faire vivre. Chaque étape produit quelque chose de concret et conditionne le passage à la suivante.
+            Chaque temps livre quelque chose que vous pouvez voir ou tester. La méthode complète, avec le rythme des démonstrations et les modèles d'engagement, figure sur la page <Link to="/methode-projet-ia" style={aStyle}>méthode d'un projet IA</Link>.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -608,7 +654,7 @@ export default function OutilsIASurMesurePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0' }}>
-            Quand le livrable repose surtout sur de l'autonomie confiée à l'IA, nous évaluons avec vous l'opportunité d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, avec les garde-fous qu'ils exigent.
+            Quand l'outil doit surtout agir seul, nous étudions avec vous l'option d'un agent, décrite sur la page <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, et les garde-fous qu'il réclame.
           </p>
         </div>
       </section>
@@ -616,17 +662,17 @@ export default function OutilsIASurMesurePage() {
       {/* ── 4. PROPRIÉTÉ, SÉCURITÉ ET MAINTENANCE ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Propriété & sécurité</Kicker>
+          <Kicker>Propriété et sécurité</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Propriété, sécurité et maintenance
+            À qui appartient l'outil, où vivent les données, qui le maintient ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un outil sur mesure vous appartient : le code source vous revient, vos données restent les vôtres et ne servent pas à entraîner des modèles tiers. L'hébergement peut se faire dans l'Union européenne, et la maintenance applicative (corrections, évolutions, montée de version des modèles) se poursuit avec nous ou s'internalise dans vos équipes.</strong>
+            <strong>L'outil vous appartient : code source, documentation et données vous reviennent. Nous retenons des offres où vos données n'entraînent pas les modèles, l'hébergement peut rester en Europe, et la maintenance se poursuit avec nous ou passe à votre équipe.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 860 }}>
-            Sur un projet à fort enjeu, ces trois questions comptent autant que les fonctionnalités : à qui appartient l'outil, où vivent les données, et qui le maintient dans le temps. Voici nos réponses.
+            Pour un outil qui touche à vos clients ou à vos chiffres, ces trois questions pèsent autant que les fonctions. Nos réponses tiennent en quatre engagements.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
@@ -639,36 +685,36 @@ export default function OutilsIASurMesurePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
-            Si votre réflexion porte sur la stratégie IA d'ensemble (gouvernance, conformité, feuille de route, choix de faire ou faire faire), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> intervient en amont du choix d'un outil.
+            Si votre question reste stratégique (usages à prioriser, règles, conformité, choix entre faire et faire faire), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> intervient avant le choix d'un outil.
           </p>
         </div>
       </section>
 
-      {/* ── 5. VOS ÉQUIPES MONTENT EN COMPÉTENCE (bloc secondaire formation) ── */}
+      {/* ── 5. ADOPTION (bloc secondaire formation) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Adoption</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Vos équipes montent en compétence
+            Vos équipes prennent l'outil en main
           </h2>
 
           <p style={answerStyle}>
-            <strong>Un outil n'a de valeur que s'il est utilisé. À la mise en service, nous formons vos équipes à l'usage de l'outil que nous avons construit, pour qu'elles l'adoptent vite et en tirent le meilleur. Masteria est aussi un organisme de formation IA, ce qui rend ce transfert de compétence naturel.</strong>
+            <strong>Un outil sert à condition d'être adopté. À la mise en service, les futurs utilisateurs apprennent à s'en servir sur leurs propres dossiers, et un référent apprend à le corriger. Masteria est aussi un organisme de formation, si bien que cette passation fait partie du métier.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 860 }}>
-            Construire l'outil et former à son usage sont deux faces du même projet. Nos formateurs connaissent l'outil de l'intérieur, puisqu'ils l'ont conçu avec vous : la prise en main des premiers utilisateurs en est d'autant plus rapide.
+            Les formateurs qui interviennent connaissent l'outil, puisqu'ils l'ont vu se construire avec vous. La prise en main va plus vite, et les questions trouvent leur réponse sur place.
           </p>
 
           <div style={{ ...cardStyle, borderLeft: `4px solid ${c}`, padding: '28px 30px', display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <IconBox icon={GraduationCap} />
             <div style={{ flex: 1, minWidth: 240 }}>
-              <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>Former vos équipes à l'usage de l'IA</h3>
+              <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>Former vos équipes à l'IA, au-delà de l'outil</h3>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>
-                Au-delà de la prise en main de l'outil, nous formons vos collaborateurs aux usages professionnels de l'IA, pour qu'ils en exploitent tout le potentiel au quotidien. Plus de 1 500 professionnels ont déjà été formés par Masteria.
+                Nous formons aussi vos collaborateurs aux assistants du quotidien et à l'écriture de consignes. La formation est facturée à la journée (1 980 € HT), en groupe interne jusqu'à douze personnes ou en séance individuelle ; l'OPCO de votre secteur peut la financer, si ses règles et ses fonds le permettent. Le développement de l'outil reste hors de ce cadre : il n'est pas finançable par votre OPCO.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
-                Découvrir nos formations à l'intelligence artificielle
+                Parcourir les formations IA
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -676,27 +722,57 @@ export default function OutilsIASurMesurePage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['photovoltaique', 'distribution', 'conseil-financier']}
-        title="Trois outils sur mesure, conçus pour les fichiers de l'entreprise"
-        intro="Trois assistants à construire pour une PME de trois personnes, onze compétences Claude pour une équipe commerciale, quatre assistants pour les appels d'offres d'un cabinet : chaque outil est conçu pour les données en place et se prend en main en formation."
-      />
+      {/* ── ÉTUDES DE CAS (texte propre à la page, liens vers les ancres de /etudes-de-cas-ia) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#F9FAFB', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
+          <Kicker>Études de cas</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 860 }}>
+            Trois outils conçus pour les fichiers de nos clients
+          </h2>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Clients anonymes, faits tirés de nos dossiers de mission. Ce qui reste à faire est écrit au futur.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+            {OUTIL_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
+              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
+                  Ouvrir le cas
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '24px 0 0', maxWidth: 860 }}>
+            Méthode et résultats complets de ces missions : page <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas IA</Link>.
+          </p>
+        </div>
+      </section>
 
       {/* ── 6. FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Outils IA sur mesure : les questions fréquentes
+                Développement IA sur mesure : vos questions
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre outil soulève une question qui n'est pas ici ? Envoyez-la, ou réservez une demi-heure pour en parler.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Envoyer votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -710,24 +786,24 @@ export default function OutilsIASurMesurePage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Aller plus loin sur l'outil sur mesure
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Choisir le bon partenaire, automatiser l'existant, ou cadrer la stratégie IA en amont.
+            Choisir le partenaire, relier des logiciels existants, cadrer la stratégie ou estimer le budget.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Agence', desc: "L'équipe, la démarche d'ingénierie et les modalités pour faire développer votre outil IA." },
-              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Automatiser des processus existants avec les outils du marché, vos équipes restent autonomes." },
-              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand confier une mission autonome à un agent IA, et avec quels garde-fous." },
-              { label: "Prix d'une application IA sur mesure", href: '/prix-projet-ia', tag: 'Budget', desc: "Les fourchettes de prix d'un projet IA sur mesure, du prototype à l'application complète." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA en amont du choix d'un outil." },
-              { label: 'Toutes nos solutions IA', href: '/solutions-ia', tag: 'Solutions IA', desc: "Du diagnostic au déploiement : la vue d'ensemble de nos accompagnements IA pour entreprises." },
-              { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Formation', desc: "Créer soi-même un prototype ou un outil interne en décrivant son besoin à l'IA, avec Lovable, Bolt ou Cursor." },
+              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Agence', desc: "Les personnes qui construisent votre outil, et le contrat qui vous lie à elles." },
+              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Relier entre eux les logiciels en place, sans créer d'outil nouveau." },
+              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Quand confier un objectif à un agent, et quelles limites lui donner." },
+              { label: "Budget d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les ordres de grandeur, du prototype jusqu'à l'application déployée sur plusieurs sites." },
+              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Prioriser les usages et poser les règles avant de choisir un outil." },
+              { label: 'Toutes nos solutions IA', href: '/solutions-ia', tag: 'Solutions IA', desc: "Les outils et accompagnements Masteria, classés par besoin." },
+              { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Formation', desc: "Apprendre à vos équipes produit à monter un prototype avec Lovable, Bolt ou Cursor." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -743,7 +819,7 @@ export default function OutilsIASurMesurePage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Voir la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -753,8 +829,15 @@ export default function OutilsIASurMesurePage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan pilote chaque projet d'outil sur mesure mené par Masteria, de la première question à la remise du code. Il a révisé cette page le 7 octobre 2026 ; son parcours figure sur <Link to="/mathias-nizan" style={aStyle}>sa fiche</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -763,41 +846,42 @@ export default function OutilsIASurMesurePage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Décrivez-nous votre besoin
+              Décrivez l'outil que vous imaginez
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 580 }}>
-              Expliquez-nous le problème métier que vous voulez résoudre et les données dont vous disposez. Nous revenons vers vous sous 24 heures avec une première lecture : faisabilité, périmètre d'un prototype et grandes options. Vous repartez avec une vision claire, avec ou sans nous.
+              Expliquez-nous la tâche à faciliter, les données disponibles et les personnes qui s'en serviraient. En une demi-heure, nous examinons la faisabilité, la forme d'outil la plus adaptée et ce qu'un prototype permettrait de vérifier.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Décrivez-nous votre besoin
+            <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
-            </Link>
+            </CadrageLink>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Code et données qui vous appartiennent · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
+              Code et données remis au client · hébergement européen possible · depuis Lyon, pour des clients jusqu'en Inde et outre-Atlantique
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : l'équipe qui construit (fondateur + réseau, preuves) ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'équipe qui construit</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Développeurs, consultant et formateur réunis autour de votre outil
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Chaque outil sur mesure mobilise un petit groupe tiré du réseau d'indépendants de Masteria, qui réunit, en chiffres arrondis, cinq développeurs IA, dix consultants et vingt formateurs. Mathias Nizan en choisit les membres et répond de la livraison. Le cabinet reste indépendant des éditeurs de modèles. Ses <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et sa <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en témoignent.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['Code', 'remis au client à la livraison'],
+              ['UE', 'hébergement possible sur demande'],
+              ['≈ 5', 'développeurs IA mobilisables'],
+              ['2022', 'naissance du cabinet, à Lyon'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -808,7 +892,7 @@ export default function OutilsIASurMesurePage() {
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources lean extra={PAGE_CITATIONS} />
     </>
   )
 }

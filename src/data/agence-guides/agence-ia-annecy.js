@@ -2,7 +2,84 @@
 // Vérifié le 03/10/2026 : Insee Analyses Auvergne-Rhône-Alpes n° 137 (vallée de l'Arve) et n° 145 (frontaliers), documentation Odoo (import), Microsoft Learn et Anthropic (usage des données pour l'entraînement), AI Act Service Desk (article 6, annexe I), EUR-Lex (règlement 2026/1744) ; retour de mission tiré de src/data/etudes-de-cas.js (photovoltaique).
 export default {
   slug: 'agence-ia-annecy',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: [
+      "Vallée de l'Arve et bassin annécien",
+      "Lyon à 1 h 30 de route",
+      "Ateliers sur site, code à distance",
+      "Industrie, outdoor, tourisme",
+    ],
+    lien: "Voir l'offre pour la Haute-Savoie",
+  },
+  ville: {
+    heroSubtitle: "Un décolleteur de Cluses, un équipementier de montagne et un hôtel du lac n'ont pas le même premier chantier d'IA. Nous le choisissons avec vous sur place, nous le développons depuis Lyon, à une heure et demie de route, et nous revenons pour le remettre à vos équipes.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Choix du premier chantier, agents branchés sur l'ERP, automatisation des devis et de la documentation technique",
+      },
+      {
+        label: "Venir à Annecy",
+        value: "Environ 1 h 30 de route depuis Lyon : nous venons pour les ateliers et la remise de l'outil",
+      },
+      {
+        label: "Pour qui",
+        value: "Mécatronique et décolletage, outdoor et sport, gestion de patrimoine, hôtellerie et tourisme alpin",
+      },
+      {
+        label: "Pour commencer",
+        value: "30 minutes offertes, en visio ou par téléphone, puis une proposition au forfait",
+      },
+    ],
+    whyHere: "Les PME industrielles et les ETI familiales de Haute-Savoie traitent chaque jour des cahiers des charges, de la documentation technique, des dossiers qualité et des devis. Ces flux se prêtent aux agents IA branchés sur l'ERP. La gestion de patrimoine et l'hôtellerie, elles, ont à servir des clients en plusieurs langues. Nous aidons à choisir le premier chantier, puis nous le construisons.",
+    presence: "L'équipe Masteria travaille depuis Lyon, à environ 1 h 30 d'Annecy par la route. Nous venons sur site, à Annecy, à Cluses ou à Thônes, pour les ateliers de cadrage, l'observation du travail et la passation, et nous développons à distance entre deux visites. Nous n'avons pas de bureau en Haute-Savoie, et chaque déplacement figure dans la proposition.",
+  },
+  offresTitre: {
+    kicker: "Pour le bassin annécien",
+    h2: "Trois manières d'avancer pour une entreprise de Haute-Savoie",
+  },
+  offresNote: {
+    titre: "Le même interlocuteur, du cadrage à l'outil.",
+    texte: "Nous ne nous arrêtons pas à une recommandation : la personne qui a cadré le projet suit sa construction, et votre équipe reçoit l'outil, son code et son mode d'emploi.",
+  },
+  ancrage: {
+    kicker: "Haute-Savoie",
+    h2: "Pourquoi une agence IA pour les entreprises d'Annecy et de la vallée de l'Arve ?",
+    economie: "Le tissu économique du bassin annécien",
+    presence: "Comment nous intervenons en Haute-Savoie",
+    prestations: "Trois chantiers typiques en Haute-Savoie",
+  },
+  formationBloc: {
+    kicker: "Former sur place",
+    h2: "Des sessions à Annecy sur l'outil qui vient d'être livré",
+    lien: "L'ensemble de nos formations",
+  },
+  etapesBloc: {
+    kicker: "Le déroulé",
+    h2: "Cinq étapes pour un projet mené en Haute-Savoie",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises haut-savoyardes",
+    texte: "Vous hésitez entre plusieurs prestataires ? Nos critères sont publiés dans",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "le guide pour choisir une agence IA",
+    },
+  },
+  maillage: {
+    villes: "Les autres villes où nous intervenons",
+    expertises: "À lire avant le premier échange",
+  },
+  cta: {
+    titre: "Un premier chantier d'IA en Haute-Savoie ?",
+    texte: "Racontez-nous le flux qui vous pèse (devis, documentation technique, demandes de clients) et le logiciel qui le porte. Dans les 24 heures, nous vous proposons un créneau pour un premier échange de 30 minutes, offert.",
+  },
+  equipe: {
+    titre: "Des intervenants qui viennent jusqu'à vous",
+    texte: "Pour une entreprise haut-savoyarde, Mathias Nizan, fondateur de Masteria en 2022, choisit les intervenants selon le métier : un consultant pour le cadrage sur site, un développeur, un formateur pour les équipes. Tous travaillent en indépendants sous sa direction, et aucun n'a de logiciel à vous vendre.",
+  },
   intro: "Dans le bassin annécien, un outil d'IA doit pouvoir vivre sans son concepteur : les petites entreprises de la sous-traitance n'ont pas toujours d'informaticien, et une partie des ingénieurs du Grand Annecy travaillent en Suisse. Masteria, basé à Lyon à environ 1 h 30, branche des assistants et des automatisations sur votre logiciel de gestion, les éprouve sur vos dossiers et vous laisse le code source avec sa documentation. Le cadrage, l'observation des postes et la passation se font chez vous.",
   offresIntro: [
     "Pour une entreprise du bassin annécien, nous concevons des outils que votre équipe fera vivre seule : peu de briques, des réglages lisibles et une documentation écrite pour la personne qui reprendra l'outil.",
@@ -10,14 +87,21 @@ export default {
   ],
   offres: [
     {
+      title: "Cadrage et feuille de route",
+      cta: "Le conseil IA en détail",
       desc: "Le conseil part d'un flux précis : une demande de prix arrivée avec un plan, une commande de revendeur pour la prochaine collection, une réception d'entrepôt à saisir. Nous mesurons le temps qu'il prend, nous repérons ce que vos contrats clients interdisent d'envoyer à un outil externe, et nous classons les chantiers par gain attendu et par facilité.",
       points: ["Flux mesurés sur place", "Contraintes des contrats clients relevées", "Chantiers classés avant de construire"],
     },
     {
+      title: "Agents et outils sur votre ERP",
+      cta: "Notre développement sur mesure",
+      secondaryCta: "Outils IA par métier",
       desc: "Les assistants que nous développons se branchent sur votre logiciel de gestion, qu'il s'agisse d'Odoo, de SAP ou d'un autre, avec le moins de briques possible. Chaque réglage que votre équipe peut modifier figure dans la documentation, et vous recevez le code source : l'outil ne dépend ni de nous ni d'une seule personne chez vous.",
       points: ["Assistants reliés à votre logiciel de gestion", "Réglages décrits pour votre équipe", "Code source remis en fin de mission"],
     },
     {
+      title: "Automatisation des devis et de la documentation",
+      cta: "L'agence d'automatisation",
       desc: "Nous automatisons les saisies et les contrôles qui reviennent chaque semaine : un fichier d'entrepôt converti en import pour le logiciel, une consultation de transporteurs, une demande de client transformée en lignes de devis. Un contrôle des totaux et une validation humaine précèdent tout ce qui modifie vos données.",
       points: ["Imports préparés et contrôlés", "Consultations et relances préparées", "Validation humaine avant écriture"],
     },
@@ -75,21 +159,21 @@ export default {
         ["Machines spéciales et mécatronique", "Offres techniques et documentation des machines livrées", "Assistant de rédaction appuyé sur les nomenclatures et les notices validées", "Aucune fonction de sécurité confiée à l'IA hors du régime de l'annexe I"],
         ["Marques de sport et d'outdoor", "Retours en garantie et questions des revendeurs", "Tri des retours et brouillon de réponse tiré des fiches techniques", "Référentiel produit unique et à jour"],
         ["Négoce et distribution", "Devis, transport et réceptions d'entrepôt", "Demandes converties en lignes de devis, imports contrôlés", "Fiches articles propres dans le logiciel de gestion"],
-        ["Hôtellerie et loisirs du lac", "Demandes de groupes et de séminaires en plusieurs langues", "Préparation des propositions à partir des tarifs et des disponibilités", "Grille tarifaire et conditions de vente à jour"],
+        ["Hôtellerie et loisirs du lac", "Demandes de groupes et d'événements d'entreprise en plusieurs langues", "Préparation des propositions à partir des tarifs et des disponibilités", "Grille tarifaire et conditions de vente à jour"],
       ],
     },
     cas: {
       h3: "Retour de mission : trois assistants à construire pour une équipe de trois personnes qui travaille sur Odoo",
       contexte: "L'entreprise distribue du matériel photovoltaïque depuis trois entrepôts français vers des clients à l'export. Trois personnes la font tourner, et toute l'activité passe par Odoo ; le directeur commercial et le directeur des opérations se relaient l'un l'autre. La direction cherchait à vendre davantage à effectif égal. Certains salariés passaient déjà par leurs comptes personnels d'IA ; la direction, elle, posait une condition : ne jamais croire l'outil sur parole.",
       etapes: [
-        "Mener trois entretiens en visio, avec la direction puis avec chacun des deux directeurs, et étudier les fichiers d'entrepôt, le suivi des marges et un courriel type adressé aux transporteurs.",
+        "Mener trois entretiens, avec la direction puis avec chacun des deux directeurs, et étudier les fichiers d'entrepôt, le suivi des marges et un courriel type adressé aux transporteurs.",
         "Décrire pas à pas quatre flux (vendre, livrer et encaisser, prospecter, piloter), puis classer douze gisements de temps sur deux axes : le gain possible et la facilité de mise en œuvre à trois mois.",
         "Confier trois chantiers à trois porteurs : faire consulter les transporteurs quinze jours avant chaque livraison, convertir les fichiers d'entrepôt en fichier d'import Odoo après contrôle des totaux, transformer chaque demande entrante en lignes de devis.",
         "Fermer les comptes personnels au profit d'un abonnement d'équipe géré par l'entreprise, et adopter une charte d'usage, sous la responsabilité d'un référent IA.",
         "Suivre un plan sur trois mois : relever les points de départ pendant les deux journées de formation sur site, prévues en octobre 2026, puis mesurer les gains un mois plus tard.",
       ],
-      resultat: "La direction dispose depuis septembre 2026 d'un diagnostic et de trois décisions à prendre : l'outil commun, les chantiers et les règles d'usage. Pour le troisième mois, les cibles sont posées comme telles, à vérifier au bilan : un devis parti en moins de douze heures, la moitié du temps actuel pour interroger les transporteurs, des relances automatiques pour toute la clientèle, huit réceptions sur dix enregistrées sans ressaisie, et les trois utilisateurs concernés qui ouvrent les assistants chaque semaine.",
-      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Lire l'étude de cas complète" },
+      resultat: "La direction dispose depuis septembre 2026 d'un diagnostic et de trois décisions à prendre : l'outil commun, les chantiers et les règles d'usage. Pour le troisième mois, les cibles sont posées comme telles, à vérifier au bilan : des devis plus rapides, moins de temps passé avec les transporteurs, des relances automatiques pour toute la clientèle et la fin des ressaisies.",
+      lien: { href: "/etudes-de-cas-ia#photovoltaique", label: "Le diagnostic du distributeur qui travaille sur Odoo" },
     },
     pieges: [
       { titre: "Envoyer le plan d'un donneur d'ordres dans un assistant grand public", texte: "Un plan coté appartient souvent au client, et l'accord de confidentialité peut interdire sa transmission à un tiers. Microsoft pour Copilot, et Anthropic par défaut pour ses produits commerciaux, s'engagent à ne pas utiliser vos données pour entraîner leurs modèles ; le contrat signé avec le donneur d'ordres reste pourtant la règle qui tranche." },
@@ -113,10 +197,10 @@ export default {
     { name: "Insee Analyses Auvergne-Rhône-Alpes n° 137 : la vallée de l'Arve, une zone d'emploi industrielle de plus en plus ouverte sur l'extérieur (janvier 2022)", url: "https://www.insee.fr/fr/statistiques/6018368" },
     { name: "Insee Analyses Auvergne-Rhône-Alpes n° 145 : travailleurs frontaliers, six profils de navetteurs vers la Suisse (mai 2022)", url: "https://www.insee.fr/fr/statistiques/6444379" },
     { name: "Odoo : documentation, exporter et importer des données", url: "https://www.odoo.com/documentation/18.0/applications/essentials/export_import_data.html" },
-    { name: "Microsoft Learn : données, confidentialité et sécurité de Microsoft Copilot", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" },
+    { name: "Microsoft Learn : ce que Copilot fait des données d'une PME", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-privacy" },
     { name: "Anthropic Privacy Center : usage des données pour l'entraînement des modèles", url: "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" },
     { name: "Commission européenne, AI Act Service Desk : article 6 (classification à haut risque)", url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6" },
     { name: "Commission européenne, AI Act Service Desk : annexe I (législation d'harmonisation, dont le règlement machines)", url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-1" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744 du 8 juillet 2026 (omnibus numérique sur l'IA)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : les machines et l'annexe I du règlement sur l'IA", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
   ],
 }

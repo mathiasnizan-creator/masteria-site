@@ -21,7 +21,7 @@ export const FAQ_FORMATIONS = [
 
 export const FAQ_CONTACT = [
   { q: "Sous quel délai recevrai-je une réponse ?", a: "Nous répondons à toutes les demandes sous 24 heures ouvrées. Pour les projets urgents, mentionnez-le dans votre message et nous ferons notre possible pour vous répondre encore plus vite." },
-  { q: "Le devis est-il vraiment gratuit et sans engagement ?", a: "Oui, totalement. Notre devis est gratuit, personnalisé et sans aucun engagement de votre part. Il détaille le programme, les modalités, les tarifs et les options de financement." },
+  { q: "Le devis vous engage-t-il ?", a: "Non. Notre devis est personnalisé et ne vous engage à rien. Il détaille le programme, les modalités, les tarifs et les options de financement." },
   { q: "Peut-on discuter avant de remplir le formulaire ?", a: "Bien sûr. Vous pouvez nous contacter directement par email à mathias.nizan@master-ia.fr pour un premier échange informel avant toute demande de devis formelle." },
 ];
 
@@ -56,7 +56,7 @@ export function FAQSection({ items, title = "Questions fréquentes", bg = "#F8F8
 export function FormatTabs({ onContact }) {
   const [active, setActive] = useState('intra');
   const formats = [
-    { key: 'intra', label: 'INTRA', fullLabel: 'Intra-entreprise', price: '1 980 €', unit: '/ jour / groupe', desc: "Formation réservée à vos équipes, dans vos locaux ou à distance. Contenu construit sur votre secteur, vos outils internes et vos cas réels. Jusqu'à 12 participants.", details: ['Jusqu\'à 12 participants', 'Dans vos locaux ou distanciel', 'Contenu adapté à votre secteur', 'Finançable OPCO à 100%'] },
+    { key: 'intra', label: 'INTRA', fullLabel: 'Intra-entreprise', price: '1 980 €', unit: '/ jour / groupe', desc: "Formation réservée à vos équipes, dans vos locaux ou à distance. Contenu construit sur votre secteur, vos outils internes et vos cas réels. Jusqu'à 12 participants.", details: ['Jusqu\'à 12 participants', 'Dans vos locaux ou distanciel', 'Contenu adapté à votre secteur', 'Finançable par votre OPCO selon votre branche'] },
     { key: 'individuel', label: 'INDIVIDUEL', fullLabel: 'Accompagnement individuel sur mesure', price: '1 980 €', unit: '/ jour', desc: "Coaching 1-to-1 pour dirigeants, experts métier ou profils stratégiques. Programme conçu autour de vos enjeux personnels, rythme adapté, suivi entre les sessions.", details: ['1 participant', 'En présentiel ou distanciel', 'Programme co-construit', 'Suivi entre les sessions'] },
   ];
   const cur = formats.find(f => f.key === active);
@@ -137,7 +137,7 @@ export function SidebarFormatPicker({ onContact }) {
       ))}
       <div style={{ marginTop: 16 }}>
         <PrimaryBtn onClick={onContact} style={{ width: '100%', display: 'block', textAlign: 'center', fontSize: 14 }}>Contacter notre équipe</PrimaryBtn>
-        <div style={{ marginTop: 8, textAlign: 'center', fontSize: 11, color: '#6B7280' }}>Réponse sous 24h · Gratuit</div>
+        <div style={{ marginTop: 8, textAlign: 'center', fontSize: 11, color: '#6B7280' }}>Réponse sous 24h · Sans engagement</div>
       </div>
     </div>
   );

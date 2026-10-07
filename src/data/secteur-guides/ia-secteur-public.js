@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : Légifrance (décret n° 2025-1386, CCP art. R. 2121-1, R. 2122-8 et R. 2122-9-1, CRPA art. L. 311-3-1 et L. 312-1-3, loi n° 2024-449 art. 31, CCAG-TIC du 30 mars 2021), collectivites-locales.gouv.fr (seuils 2026-2027), guides.ia.numerique.gouv.fr (guide d'usage DINUM mis à jour le 04/06/2026, Albert API), EUR-Lex (règlement (UE) 2024/1689, omnibus (UE) 2026/1744) ; retour de mission : étude de cas « conseil-financier ».
 export default {
   slug: 'ia-secteur-public',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Code de la commande publique", "Guide d'usage de l'État", "Hébergement souverain"],
+    lien: "Voir les trois textes à lire",
+  },
+  offresTitre: {
+    kicker: "Trois interventions",
+    h2: "Cadrer avant la consultation, développer sur vos référentiels, automatiser les circuits",
+  },
+  enjeux: {
+    kicker: "Administrations et collectivités",
+    h2: "Où l'IA soulage les agents sans fragiliser la décision publique",
+    difficultes: "Ce qui freine une administration",
+    prestations: "Ce que nous développons pour le secteur public",
+  },
+  regieBloc: {
+    kicker: "Régie dans votre SI",
+    h2: "Un développeur dans votre environnement souverain",
+    accroche: "Pour une administration ou une collectivité dont les données ne doivent pas quitter un environnement souverain, le développeur IA travaille dans votre système d'information et au contact de vos contraintes, sans aucun export vers l'extérieur.",
+    lien: "Les modalités d'engagement",
+  },
+  formationBloc: {
+    kicker: "Former les agents",
+    h2: "Des ateliers sur vos courriers et vos pièces de marché",
+    lien: "Voir nos formations IA",
+  },
+  faqBloc: {
+    h2: "Secteur public : les questions des acheteurs et des agents",
+    texte: "Votre doctrine interne pose une autre question ?",
+    lien: "Écrivez-nous",
+  },
+  maillage: {
+    h2: "Secteurs voisins du public",
+  },
+  cta: {
+    titre: "Quel circuit administratif soulager en premier ?",
+    texte: "Indiquez-nous le service concerné et la forme d'achat envisagée. Nous vous répondons sous 24 heures pour programmer les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Une équipe indépendante, composée pour une administration",
+    texte: "Mathias Nizan a fondé Masteria en 2022 à Lyon et pilote chaque mission. Pour une administration, il réunit des consultants qui lisent le code de la commande publique et la doctrine de l'État, des développeurs qui livrent un code dont vous restez détenteur et des formateurs qui partent des courriers de vos agents. Masteria ne dépend d'aucun éditeur, ce qui laisse ouvert le choix des outils.",
+  },
   intro: "Un projet d'IA dans une administration se décide avant la première ligne de code, dans trois textes. Le code de la commande publique fixe la façon de l'acheter. Le guide d'usage de l'État, publié par la DINUM en juin 2026, dit quels outils les agents peuvent utiliser et avec quelles données. Le code des relations entre le public et l'administration s'applique dès qu'une décision individuelle s'appuie sur un algorithme. Basé à Lyon, Masteria cadre ces trois points avec vos services juridique, achats et numérique, puis développe l'outil dans l'environnement que vos données autorisent.",
 
   offresIntro: [
@@ -12,14 +54,21 @@ export default {
 
   offres: [
     {
+      title: "Cadrage du besoin avant l'achat",
+      cta: "Notre démarche de conseil IA",
       desc: "Nous cadrons le besoin avant toute consultation : cas d'usage, données concernées, textes applicables (guide d'usage de l'État, RGPD, règlement européen sur l'IA, transparence des algorithmes publics) et estimation de la valeur du besoin avec votre service achats. Vous obtenez une note d'aide à la décision que votre direction peut arbitrer et que votre acheteur peut traduire en procédure.",
       points: ["Cadrage du besoin et des données", "Analyse des textes applicables par usage", "Note d'aide à la décision"],
     },
     {
+      title: "Outils branchés sur vos référentiels",
+      cta: "Le développement sur mesure",
+      secondaryCta: "Outils IA par métier",
       desc: "Nous développons des outils branchés sur vos référentiels : relecture d'un dossier de consultation avant publication, recherche dans vos délibérations et vos règlements, préparation de réponses aux usagers. Pour un ministère ou un opérateur de l'État, l'outil peut appeler Albert API avec la clé de l'administration ; pour une collectivité, nous choisissons avec la DSI un hébergement et un modèle adaptés à ses données.",
       points: ["Outils sur vos référentiels", "Branchement possible sur Albert API", "Journal des échanges dans l'application"],
     },
     {
+      title: "Circuits administratifs automatisés",
+      cta: "L'automatisation chez nous",
       desc: "Nous automatisons les étapes répétitives d'un circuit administratif : contrôle de complétude des pièces d'un dossier, extraction des données d'un formulaire, préparation d'un tableau d'analyse, relance d'un service instructeur. Un agent valide chaque sortie qui part vers un usager ou qui prépare une décision, et chaque automatisation est documentée pour votre contrôle interne.",
       points: ["Contrôle de complétude des dossiers", "Validation par un agent", "Documentation pour le contrôle interne"],
     },
@@ -99,7 +148,7 @@ export default {
         "Écrire et tester les consignes en quatre ateliers de deux heures sur des dossiers récents, puis former les consultants pendant une journée, à Paris et à Lyon, règles de confidentialité comprises.",
       ],
       resultat: "Chaque assistant restitue l'analyse d'un dossier de consultation (exigences, critères de notation, attendus implicites, liste de contrôle) et vérifie la cohérence du mémoire avec ce dossier. Les consultants concentrent leur temps sur l'analyse et la personnalisation ; ils gardent la stratégie de réponse et la relation avec le maître d'ouvrage. Les données des marchés restent dans un environnement d'entreprise qui exclut leur réutilisation pour l'entraînement des modèles.",
-      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Les assistants d'appels d'offres du cabinet de conseil financier" },
     },
     pieges: [
       { titre: "Découper un projet pour rester sous le seuil", texte: "Un pilote suivi d'un déploiement déjà prévu forme un seul besoin. L'article R. 2121-1 fait entrer options et reconductions dans la valeur estimée, et le seuil de 60 000 € HT s'apprécie sur ce total." },
@@ -153,8 +202,8 @@ export default {
     { name: "DINUM : entreprises, se connecter à Albert API", url: "https://guides.ia.numerique.gouv.fr/albert-api/guides/entreprises-se-connecter-a-albert-api" },
     { name: "DINUM : absence de rétention des données métier sur le chemin d'inférence d'Albert API (mise à jour du 2 septembre 2026)", url: "https://guides.ia.numerique.gouv.fr/albert-api/ressources/absence-de-retention-des-donnees-metier-sur-le-chemin-dinference" },
     { name: "Légifrance : loi n° 2024-449 du 21 mai 2024 visant à sécuriser et à réguler l'espace numérique (article 31)", url: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000049563368" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (article 27, annexe III)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : analyse d'impact des organismes publics (article 27) et prestations sociales (annexe III)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : échéances du haut risque pour les administrations", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
     { name: "Légifrance : arrêté du 30 mars 2021 portant approbation du CCAG des marchés publics de techniques de l'information et de la communication", url: "https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000043310689" },
   ],
 }

@@ -1,265 +1,335 @@
-// Contenu propre à /formation-mistral-commercial (guide terrain). Rendu par SpokePage.
+// Texte propre de /formation-mistral-commercial (mode page propre, rendu par SpokePage). Réécrit le 07/10/2026.
+// Faits Mistral : FAITS-OUTILS-2026-10-07, documentation Vibe relue le 07/10/2026 (recherche web et ouverture
+// d'URL, compétences, bibliothèques, connecteurs, accords avant action, Canvas, mode vocal), page tarifs (dollars HT).
+// Règle de prospection : page CNIL sur la prospection par courrier électronique, relue le 07/10/2026.
 export default {
   slug: 'formation-mistral-commercial',
-  updatedAt: '2026-09-28',
-  updatedLabel: 'Programme à jour · septembre 2026',
-  metaDesc: "Formation Mistral pour commerciaux B2B : préparer un rendez-vous, bâtir une proposition et alimenter le CRM avec Vibe, dans le respect des règles CNIL.",
-  intro: "Un cycle de vente B2B se joue en trois moments : la préparation du rendez-vous, la proposition qui suit, la saisie dans le CRM que personne n'aime faire. Vibe, l'assistant de Mistral (anciennement Le Chat), a une fonction pour chacun, avec une limite à connaître sur le CRM. Ce guide suit une chargée d'affaires du premier appel jusqu'à la fiche d'opportunité.",
+  pagePropre: true,
+  auteur: true,
+  updatedAt: '2026-10-07',
+  updatedLabel: 'Revu le 7 octobre 2026',
+  h1: "Formation Mistral AI commerciale : Vibe, du rendez-vous à la proposition",
+  metaTitle: 'Formation Mistral AI commerciale : Vibe en B2B | Masteria',
+  metaDesc: "Vibe pour commerciaux B2B : rendez-vous préparé sur sources datées, proposition co-rédigée, fiche CRM extraite, prospection selon la CNIL. Qualiopi.",
+  keywords: "formation Mistral commercial, formation Vibe commerciaux, Mistral AI vente B2B, préparation rendez-vous IA, proposition commerciale Vibe",
+  resume: "La formation Mistral AI commerciale apprend à une équipe de vente B2B à préparer chaque rendez-vous avec Vibe sur des faits datés et sourcés, à co-rédiger la proposition à partir des mots du client, puis à transformer le compte rendu en fiche d'opportunité pour le CRM. Deux journées de sept heures, en présentiel ou en visioconférence, au prix de 1 980 € HT par jour de session, de deux à douze vendeurs, ou pour un seul. Qualiopi certifie les actions de formation de Masteria, et votre OPCO finance la session suivant les règles fixées pour sa branche et les fonds qui lui restent.",
+  enBref: [
+    { label: 'Formation', value: "Vibe, l'assistant de travail de Mistral AI, au service du cycle de vente B2B" },
+    { label: 'Durée', value: "Deux jours, soit quatorze heures, idéalement avant une campagne ou un salon" },
+    { label: 'Formats', value: "Chez vous ou en visioconférence ; jusqu'à douze vendeurs par session, ou un commercial accompagné seul" },
+    { label: 'Tarif', value: "Forfait de 1 980 € HT par jour, quel que soit l'effectif jusqu'à douze ; licences Vibe facturées par Mistral" },
+    { label: 'Financement', value: "Qualiopi obtenu pour les actions de formation ; décision de financement prise par votre OPCO au vu de ses critères et de l'enveloppe disponible" },
+    { label: 'Prérequis', value: "Vendre en B2B et tenir un CRM ; idéalement un abonnement Vibe Pro, Team ou Enterprise, pour garder des réglages de confidentialité maîtrisés" },
+  ],
+  prerequis: "Vendre en B2B et tenir un CRM ; idéalement un abonnement Vibe Pro, Team ou Enterprise, pour garder des réglages de confidentialité maîtrisés",
+  intro: "Le temps d'un commercial B2B part rarement dans l'e-mail de prospection. Il part dans la lecture du site d'un prospect la veille au soir, dans la recherche de la bonne référence client, dans la proposition recopiée sur celle du mois dernier et dans la saisie du compte rendu que personne ne fait de bon cœur. Vibe (Mistral a rebaptisé ainsi Le Chat le 28 mai 2026) couvre chacun de ces gestes avec sa recherche web nourrie par deux agences de presse, ses bibliothèques, son Canvas et ses compétences. Il lui manque une chose que ce guide, à jour au 7 octobre 2026, regarde en face : aucun CRM du marché ne se branche nativement sur Vibe.",
   guide: {
     kicker: "Guide terrain",
-    h2: "Vibe prépare le rendez-vous, rédige la proposition et remplit la fiche CRM",
-    lead: "Les pages sur l'IA commerciale parlent surtout d'e-mails de prospection. Le temps d'un commercial part ailleurs : lire le site d'un prospect la veille au soir, retrouver la bonne référence client, réécrire une proposition à partir de la précédente, puis ressaisir le compte rendu dans le CRM. Vibe couvre ces gestes avec la recherche web, les Bibliothèques, le Canvas et une compétence d'extraction. Il n'a pas de connecteur natif vers les CRM courants, et cette limite change la façon de travailler.",
+    h2: "Vibe prépare le rendez-vous, rédige la proposition et remplit la fiche d'opportunité",
+    lead: "Un cycle de vente se joue en quatre temps : comprendre le prospect, le rencontrer, lui écrire une proposition, puis consigner ce qui a été dit pour que l'affaire avance. Vibe sert chacun de ces temps avec un outil différent, et chacun demande sa vérification. La recherche web peut remonter un article de trois ans ; une bibliothèque mal tenue cite la grille tarifaire de l'an passé ; le connecteur Outlook peut envoyer un mail au client si on l'y autorise. La formation apprend à placer le contrôle au bon endroit.",
     sections: [
       {
-        h3: "La préparation d'un rendez-vous commence par la recherche web et la lecture d'une page précise",
+        h3: "La veille d'un rendez-vous se prépare avec des sources datées",
         paras: [
-          "La recherche web de Vibe s'active depuis le bouton + ou en tapant /, dans les outils de la conversation. Les réponses portent des liens et un bouton Sources. Mistral a des accords avec l'AFP et l'Associated Press : quand des dépêches entrent dans la réponse, une icône d'actualité l'indique. Pour un prospect, c'est le moyen le plus sûr de retrouver une nomination, un rachat ou un plan social récent.",
-          "La fonction d'ouverture d'URL lit la page que vous collez, par exemple la page « Nos engagements » ou le dernier communiqué du prospect. Elle lit cette page seule et ne parcourt pas le site. Les pages derrière un mot de passe ou un paywall restent inaccessibles, ce qui exclut LinkedIn et la plupart des bases payantes d'informations légales. Mistral livre aussi une compétence intégrée, /meeting-prep, qui prépare un rendez-vous inscrit à votre calendrier connecté.",
+          "La recherche web s'active depuis le bouton + ou la touche /, dans les outils de la conversation. Mistral a passé des accords avec l'AFP et l'américaine Associated Press : quand leurs dépêches nourrissent une réponse, un pictogramme d'actualité apparaît près du globe, et le bouton Sources énumère chaque référence. Pour un prospect, c'est le chemin le plus sûr vers une nomination, un rachat ou un plan d'investissement récent.",
+          "L'ouverture d'URL lit la page que vous collez, et elle seule : elle ne parcourt pas le reste du site et ne franchit ni identifiant ni paywall, ce qui laisse LinkedIn et les bases payantes hors de portée. On peut en revanche coller deux pages produits concurrentes dans la même conversation et demander la comparaison. Mistral fournit enfin /meeting-prep, une compétence qui prépare un rendez-vous inscrit dans votre agenda connecté.",
         ],
       },
       {
-        h3: "Une Bibliothèque commerciale évite de réécrire la même proposition",
+        h3: "Une bibliothèque commerciale garde l'offre, les références et une seule grille",
         paras: [
-          "Une Bibliothèque rassemble des documents que Vibe indexe et cite avec des notes numérotées. Pour une équipe commerciale, elle contient la plaquette d'offre, les fiches de références clients que vous avez le droit de citer, les conditions générales de vente et les trois meilleures propositions de l'année. Elle se partage à toute l'équipe en lecture seule, ce qui évite les versions qui circulent par e-mail.",
-          "Gardez une seule grille tarifaire, celle en vigueur : Vibe citerait la grille de l'an dernier avec la même assurance. Datez chaque fichier dans son nom.",
+          "Une bibliothèque rassemble des documents que Vibe indexe et cite par des notes numérotées. Celle d'une équipe commerciale contient la plaquette d'offre, les fiches de références que vos clients ont accepté de voir citées, les conditions générales de vente et les trois propositions les plus réussies de l'année. Chaque membre y accède comme lecteur ou comme collaborateur, et l'accès peut s'étendre à l'organisation entière, ce qui met fin aux versions qui circulent par mail.",
+          "Une règle protège les marges : une seule grille tarifaire, la grille en vigueur, avec sa date dans le nom du fichier. Vibe citerait l'ancienne avec la même assurance que la nouvelle.",
         ],
       },
       {
-        h3: "Le Canvas porte la proposition, la compétence d'extraction nourrit le CRM",
+        h3: "La proposition s'écrit dans le Canvas, la fiche CRM sort d'une compétence",
         paras: [
-          "La compétence intégrée /doc-coauthoring sert à co-rédiger une proposition : Vibe écrit dans le Canvas, vous corrigez à la main, et les flèches de navigation vous montrent chaque version avec le suivi des modifications. Si le client attend une présentation, le Canvas écrit les diapositives et le bouton d'export les enregistre en PowerPoint.",
-          "Pour le CRM, la compétence /structured-extraction transforme un texte libre en tableau ou en JSON (un format de données que la plupart des outils savent importer). Vous collez vos notes de rendez-vous et Vibe en sort les champs de votre fiche d'opportunité. Les connecteurs mis en avant par Mistral ne comprennent aucun CRM. Un administrateur peut ajouter un connecteur MCP personnalisé (un protocole standard qui relie un assistant à un logiciel) si l'éditeur de votre CRM en publie un. Sinon, le tableau se colle ou s'importe à la main.",
+          "La compétence /doc-coauthoring co-rédige une proposition : Vibe écrit dans le Canvas, vous corrigez à la main, et des flèches font défiler les versions avec l'affichage des modifications. Si le client attend une soutenance, le Canvas compose les diapositives en Marp, une syntaxe texte de présentation, puis un clic sur l'export produit un fichier PowerPoint que vous habillez ensuite aux couleurs de la maison.",
+          "Pour le CRM, /structured-extraction convertit un texte libre en tableau ou en JSON, un format de données que la plupart des logiciels importent. Collez vos notes de rendez-vous, et Vibe en tire les champs de la fiche d'opportunité. Les connecteurs proposés par Mistral comprennent Outlook, Gmail, Slack, Notion ou Stripe pour les paiements, mais aucun CRM. Un administrateur peut ajouter un connecteur MCP personnalisé (un standard ouvert de connexion entre assistants et logiciels) si l'éditeur de votre CRM en publie un ; sinon, le tableau se colle ou s'importe.",
         ],
         list: [
-          "Montant estimé, date de décision annoncée, étape du cycle selon votre nomenclature.",
-          "Interlocuteurs rencontrés avec leur rôle dans la décision : prescripteur, décideur, acheteur, utilisateur.",
-          "Objections entendues, mot pour mot quand c'est possible.",
-          "Prochaine action, avec un porteur et une date.",
+          "Montant estimé, date de décision annoncée et étape du cycle selon votre nomenclature.",
+          "Interlocuteurs rencontrés, avec le poids de chacun dans la décision : prescripteur, décideur, acheteur, utilisateur.",
+          "Objections entendues, si possible mot pour mot.",
+          "Prochaine action, avec un porteur et une échéance.",
         ],
       },
       {
-        h3: "Les règles de prospection s'appliquent aussi à ce que Vibe trouve",
+        h3: "La CNIL encadre la prospection, même quand Vibe trouve l'adresse",
         paras: [
-          "La CNIL admet la prospection B2B par e-mail quand le message concerne la fonction du destinataire et qu'il peut s'y opposer. Elle interdit de prospecter à partir d'adresses collectées sur les sites ou les annuaires en ligne. Une adresse que Vibe retrouve sur le site d'un prospect n'entre donc pas dans votre fichier. La recherche sert à comprendre l'entreprise. Votre fichier se construit avec des contacts informés de leur droit d'opposition au moment où ils vous ont donné leur adresse, ou avec des adresses génériques du type contact@.",
+          "La CNIL admet qu'une entreprise prospecte des professionnels par courrier électronique en s'appuyant sur son intérêt légitime, à une condition : le message doit se rapporter à la fonction de la personne démarchée. Quand l'adresse vient d'un tiers ou d'une source extérieure, l'entreprise vérifie que la personne a été prévenue de cet usage et garde le moyen de le refuser. Une adresse repérée par la recherche de Vibe sur un site ne remplit pas cette condition d'elle-même : la recherche sert à comprendre l'entreprise, le fichier se construit autrement.",
+          "Par le connecteur Outlook, Vibe peut aussi expédier un mail. Avant tout envoi, Vibe demande votre accord avec trois choix : continuer pour cette fois, toujours autoriser pendant la session, ou refuser. Pour une relance client, la bonne réponse reste « continuer », action par action.",
         ],
       },
     ],
     table: {
-      caption: "Le cycle de vente B2B et la fonction de Vibe qui sert chaque étape",
-      headers: ["Étape", "Fonction de Vibe", "Point de vigilance"],
+      caption: "Le cycle de vente B2B, étape par étape, avec l'outil de Vibe correspondant",
+      headers: ["Étape", "Outil de Vibe", "Le contrôle du commercial"],
       rows: [
-        ["Comprendre le prospect avant l'appel", "Recherche web, dépêches AFP et AP, ouverture d'URL", "Vérifiez la date de chaque information : un résultat peut être ancien"],
-        ["Préparer un rendez-vous inscrit à l'agenda", "Compétence /meeting-prep, calendrier connecté", "Les fonctions des interlocuteurs sont à contrôler"],
-        ["Retrouver une référence client citable", "Bibliothèque commerciale, notes numérotées", "Ne citez que les clients qui ont donné leur accord"],
-        ["Rédiger la proposition", "Compétence /doc-coauthoring, Canvas", "Les prix viennent de la grille en vigueur, jamais du texte généré"],
-        ["Anticiper les objections", "Compétence /challenge-my-thinking", "Elle critique votre raisonnement, elle ne connaît pas le client"],
-        ["Mettre à jour le CRM", "Compétence /structured-extraction", "Pas de connecteur CRM natif : collage, import ou connecteur MCP ajouté par l'administrateur"],
+        ["Comprendre le prospect avant l'appel", "Recherche web, dépêches AFP et AP, ouverture d'URL", "La date de chaque fait, vérifiée source ouverte"],
+        ["Préparer un rendez-vous de l'agenda", "Compétence /meeting-prep, calendrier connecté", "Les fonctions des interlocuteurs, souvent tirées d'un ancien fil"],
+        ["Retrouver une référence citable", "Bibliothèque commerciale et ses notes numérotées", "L'accord écrit du client cité"],
+        ["Rédiger la proposition", "Compétence /doc-coauthoring dans le Canvas", "Des prix recopiés depuis votre logiciel de devis"],
+        ["Anticiper les objections", "Compétence /challenge-my-thinking", "Elle éprouve votre raisonnement, elle ne connaît pas l'acheteur"],
+        ["Alimenter le CRM", "Compétence /structured-extraction", "Le collage ou l'import, faute de connecteur CRM natif"],
       ],
     },
     cas: {
-      h3: "Cas pratique : du premier rendez-vous à la fiche d'opportunité",
-      contexte: "Prenons une chargée d'affaires d'une entreprise de maintenance en chauffage, ventilation et climatisation. Elle rencontre jeudi le responsable des services généraux d'une clinique privée de 180 lits, dont le contrat de maintenance arrive à échéance. Elle a une heure pour se préparer et devra rendre une proposition sous dix jours.",
+      h3: "Cas pratique : un renouvellement de contrat de location de chariots élévateurs",
+      contexte: "Prenons une chargée d'affaires d'un loueur de matériel de manutention. Elle rencontre jeudi le directeur logistique d'un entrepôt de 30 000 m² dont le contrat de location de chariots élévateurs arrive à échéance en mars, chez un concurrent. Elle dispose d'une heure pour se préparer et devra rendre une proposition sous dix jours.",
       etapes: [
-        "Ouvrez un projet « Clinique » dans le menu latéral et attachez la Bibliothèque commerciale de l'équipe avec le bouton +.",
-        "Activez la recherche web dans les outils de la conversation, collez l'adresse de la page d'actualités de la clinique et le prompt ci-dessous.",
-        "Après le rendez-vous, dictez vos notes avec le micro de Vibe, relisez la transcription et appelez /structured-extraction pour produire la fiche d'opportunité.",
-        "Appelez /doc-coauthoring pour construire la proposition dans le Canvas à partir de la fiche et de la Bibliothèque.",
-        "Appelez /challenge-my-thinking sur la proposition terminée pour lister les objections probables de l'acheteur.",
+        "Ouvrez un projet au nom du compte, puis rattachez à la conversation, via le bouton +, la bibliothèque commerciale de l'équipe.",
+        "Activez la recherche web dans les outils, collez l'adresse de la page actualités de l'entrepôt, puis le prompt ci-dessous.",
+        "Après le rendez-vous, dictez vos notes avec le mode vocal, relisez la transcription et lancez /structured-extraction pour obtenir la fiche d'opportunité.",
+        "Lancez /doc-coauthoring pour bâtir la proposition dans le Canvas, à partir de la fiche et de la bibliothèque ; laissez les montants en blanc.",
+        "Passez la proposition terminée à /challenge-my-thinking pour dresser la liste des objections probables de l'acheteur.",
       ],
-      prompt: "Je rencontre jeudi le responsable des services généraux d'une clinique privée de 180 lits. Je vends des contrats de maintenance en chauffage, ventilation et climatisation. Leur contrat actuel arrive à échéance en fin d'année.\n\nPrépare-moi une fiche d'une page pour ce rendez-vous.\n\nDans un premier bloc, résume ce que la clinique dit d'elle-même sur la page d'actualités que je t'ai donnée, puis ce que la recherche web et les dépêches récentes apprennent de plus : travaux, extension, changement de direction, rachat par un groupe. Donne la date et la source de chaque information.\n\nDans un deuxième bloc, cherche dans la Bibliothèque les deux références clients les plus proches (établissements de santé, sites qui fonctionnent jour et nuit) et résume ce que nous y avons fait.\n\nDans un troisième bloc, propose six questions à poser pendant le rendez-vous pour comprendre qui décide, ce qui ne va pas avec le prestataire actuel et les contraintes propres à un établissement de santé, comme l'intervention dans des zones occupées par des patients.\n\nN'invente aucun chiffre sur la clinique. Si une information n'est pas trouvée, écris « non trouvé ».",
-      resultat: "Vous obtenez une fiche avec des faits datés et sourcés, deux références tirées de votre Bibliothèque avec renvoi au document, et six questions de découverte. Ouvrez chaque source avant le rendez-vous : un article de trois ans peut remonter en tête. Après le rendez-vous, la compétence d'extraction produit un tableau à coller dans le CRM, et la proposition part d'une base qui reprend les mots du client. Les prix restent à reporter vous-même depuis la grille en vigueur.",
+      prompt: "Je rencontre jeudi le directeur logistique d'un entrepôt de 30 000 m². Je loue du matériel de manutention, et son contrat de location de chariots élévateurs, signé chez un concurrent, se termine en mars.\n\nPrépare une fiche d'une page pour ce rendez-vous, en trois blocs.\n\nBloc 1 : ce que l'entrepôt dit de lui-même sur la page d'actualités que je t'ai donnée, puis ce que le web et l'actualité récente y ajoutent (agrandissement, nouveau client, changement de direction, rachat). Pour chaque fait, donne sa date et l'endroit où tu l'as trouvé.\n\nBloc 2 : dans la bibliothèque, les deux références clients les plus proches (entrepôts de plus de 20 000 m², activité en deux ou trois équipes), avec ce que nous y avons fourni.\n\nBloc 3 : six questions de découverte pour comprendre qui décide, ce qui ne va pas avec le loueur actuel, et les contraintes du site (horaires, allées étroites, charge des batteries).\n\nN'invente aucun chiffre sur l'entrepôt. Quand tu ne trouves pas une information, écris « non trouvé ».",
+      resultat: "Vous obtenez une fiche avec des faits datés et sourcés, deux références tirées de votre bibliothèque avec leur renvoi, et six questions de découverte. Ouvrez chaque source avant le rendez-vous : un article ancien peut remonter en tête. Après la rencontre, la compétence d'extraction produit le tableau à verser dans le CRM, et la proposition démarre sur les mots du client. Les prix, vous les reportez vous-même depuis la grille en vigueur.",
     },
     pieges: [
       {
-        titre: "Une information non datée passe pour une actualité",
-        texte: "La documentation de Mistral prévient que les résultats de recherche peuvent être anciens. Exigez la date et la source de chaque fait dans le prompt, et écartez ce qui n'en a pas. Citer au client un projet abandonné depuis deux ans ruine un premier rendez-vous.",
+        titre: "Une information sans date passe pour une actualité",
+        texte: "Mistral prévient que la recherche peut rendre un contenu ancien ou incomplet. Exigez dans le prompt une date et une provenance pour chaque fait, et écartez ce qui n'en porte pas. Féliciter un prospect pour un projet abandonné depuis deux ans gâche un premier rendez-vous.",
       },
       {
-        titre: "Le prix sort de la conversation au lieu de la grille",
-        texte: "Un assistant qui rédige une proposition peut recalculer une remise ou reprendre un tarif d'une ancienne proposition de la Bibliothèque. Laissez les montants en blanc dans le brouillon et reportez-les depuis votre outil de devis.",
+        titre: "Le prix vient de la conversation au lieu de la grille",
+        texte: "En rédigeant, l'assistant peut recalculer une remise ou reprendre un tarif d'une ancienne proposition de la bibliothèque. Laissez les montants vides dans le brouillon et reportez-les depuis votre outil de devis, qui reste la seule référence.",
       },
       {
-        titre: "Une référence client est citée sans accord",
-        texte: "Vibe cite ce que la Bibliothèque contient. Si une fiche de référence décrit un client qui n'a pas accepté d'être nommé, elle finira dans une proposition. Ne déposez que des références validées, ou anonymisées dès le départ.",
+        titre: "Une référence client sort sans accord",
+        texte: "Vibe cite ce que la bibliothèque contient. Une fiche qui décrit un client n'ayant pas accepté d'être nommé finira tôt ou tard dans une proposition. Ne déposez que des références validées, ou anonymisées dès l'origine.",
+      },
+      {
+        titre: "« Toujours autoriser » laisse partir les relances sans vous",
+        texte: "Accorder « toujours autoriser » à l'envoi Outlook pendant une session supprime la demande d'accord suivante. Sur une relance client, un mail parti avec une erreur de nom ou de prix ne se rattrape pas. Gardez l'accord action par action, et réservez l'autorisation permanente aux fonctions de lecture.",
       },
     ],
   },
   audience: [
     {
-      "title": "Chargés d'affaires et ingénieurs commerciaux B2B",
-      "desc": "Vous enchaînez rendez-vous, propositions et saisie dans le CRM. Vous apprenez à préparer chaque étape avec Vibe en gardant les prix et les engagements sous votre contrôle."
+      title: "Chargés d'affaires et ingénieurs commerciaux B2B",
+      desc: "Rendez-vous, propositions et saisie dans le CRM se succèdent dans votre semaine. Vous apprenez à préparer chaque étape avec Vibe tout en décidant seul des prix et des engagements.",
     },
     {
-      "title": "Responsables grands comptes",
-      "desc": "Vous suivez des comptes à plusieurs interlocuteurs et vous préparez des revues de compte. Vibe rassemble l'actualité du client et vos références dans un projet par compte."
+      title: "Responsables grands comptes",
+      desc: "Vos comptes réunissent plusieurs interlocuteurs et appellent des revues régulières. Un projet Vibe par compte rassemble l'actualité du client, vos références et l'historique des échanges.",
     },
     {
-      "title": "Directions commerciales et avant-vente",
-      "desc": "Vous tenez l'offre, la grille tarifaire et la base de références de l'équipe. Vous apprenez à les partager dans une Bibliothèque à jour et à fixer les règles d'usage."
-    }
+      title: "Directions commerciales, avant-vente et ADV",
+      desc: "L'offre, la grille tarifaire et la base de références de l'équipe dépendent de vous. Vous apprenez à les tenir à jour dans une bibliothèque partagée et à fixer par écrit ce que l'outil peut produire seul.",
+    },
   ],
   useCases: [
     {
-      "icon": "💼",
-      "title": "Premier rendez-vous",
-      "desc": "Une fiche d'une page avec des faits datés et sourcés sur le prospect, les références les plus proches et des questions de découverte."
+      icon: '💼',
+      title: "Fiche de premier rendez-vous",
+      desc: "Une page de faits datés et sourcés sur le prospect, les références voisines et des questions de découverte.",
     },
     {
-      "icon": "📄",
-      "title": "Proposition commerciale",
-      "desc": "La compétence /doc-coauthoring construit la proposition dans le Canvas à partir des mots du client et de votre Bibliothèque."
+      icon: '📄',
+      title: "Proposition co-rédigée",
+      desc: "La compétence /doc-coauthoring bâtit la proposition dans le Canvas à partir des mots du client et de la bibliothèque.",
     },
     {
-      "icon": "📊",
-      "title": "Fiche d'opportunité CRM",
-      "desc": "La compétence /structured-extraction transforme vos notes de rendez-vous en champs prêts à coller ou à importer dans votre CRM."
+      icon: '📊',
+      title: "Fiche d'opportunité pour le CRM",
+      desc: "La compétence /structured-extraction range vos notes dans les champs de votre CRM, prêtes à coller ou à importer.",
     },
     {
-      "icon": "🎤",
-      "title": "Présentation de soutenance",
-      "desc": "Les diapositives se rédigent dans le Canvas et s'exportent en PowerPoint pour reprise dans votre gabarit."
+      icon: '🎤',
+      title: "Diapositives de soutenance",
+      desc: "Des slides écrites en Marp dans le Canvas, exportées en PowerPoint et reprises dans votre gabarit de marque.",
     },
     {
-      "icon": "📋",
-      "title": "Base de références partagée",
-      "desc": "Une Bibliothèque avec l'offre, les références citables, les conditions générales et la seule grille tarifaire en vigueur."
+      icon: '📚',
+      title: "Références et offre partagées",
+      desc: "Une bibliothèque qui réunit l'offre, les références citables, les conditions générales et la seule grille en vigueur.",
     },
     {
-      "icon": "✉️",
-      "title": "Suivi après rendez-vous",
-      "desc": "Un brouillon d'e-mail qui reprend les engagements pris, envoyé depuis le connecteur Outlook après votre accord."
-    }
+      icon: '📧',
+      title: "Relance après rendez-vous",
+      desc: "Un brouillon qui reprend les engagements pris, envoyé par le connecteur Outlook après votre accord explicite.",
+    },
   ],
   modules: [
     {
-      "day": 1,
-      "title": "Module 1 · Poser le cadre d'une équipe commerciale dans Vibe",
-      "duration": "1h30",
-      "description": "Savoir quelles données clients entrent dans l'outil, et dans quelle offre.",
-      "items": [
-        "Offres Free, Pro, Team et Enterprise : réglage de l'entraînement des modèles",
-        "Conditions tarifaires et données clients : ce qui reste hors de l'outil",
-        "Règles de la CNIL pour la prospection B2B par e-mail",
-        "Un projet par compte : instructions, fichiers et conversations au même endroit"
+      day: 1,
+      title: "Module 1 · Poser le cadre d'une équipe commerciale dans Vibe",
+      duration: "1h30",
+      description: "Décider quelles informations clients entrent dans l'outil, et avec quelle offre.",
+      items: [
+        "Free, Pro, Team, Enterprise : qui coupe l'entraînement des modèles, et où",
+        "Conditions tarifaires, marges, coordonnées : ce que l'on garde hors de Vibe au nom du RGPD comme du secret commercial",
+        "Prospection B2B par mail : la règle de la CNIL sur l'intérêt légitime et le droit d'opposition",
+        "Un projet par compte : instructions, fichiers et conversations rangés ensemble",
       ],
-      "exercise": "Vous classez les données de vos comptes selon ce qui peut entrer dans Vibe, et dans quelle offre."
+      exercise: "Vous classez les informations de vos comptes selon ce qui peut entrer dans Vibe, et dans quelle offre.",
     },
     {
-      "day": 1,
-      "title": "Module 2 · Préparer un rendez-vous",
-      "duration": "2h",
-      "description": "Arriver chez le prospect avec des faits vérifiés et les bonnes questions.",
-      "items": [
-        "Recherche web et dépêches de l'AFP et d'AP : dater et sourcer chaque fait",
-        "Ouverture d'URL : une page publique par adresse, ni connexion ni paywall",
+      day: 1,
+      title: "Module 2 · Arriver au rendez-vous avec des faits vérifiés",
+      duration: "2h",
+      description: "Arriver chez le prospect avec des faits datés et les bonnes questions.",
+      items: [
+        "Recherche web et fils d'agence : une date et une provenance pour chaque fait",
+        "Ouverture d'URL : une seule page publique par adresse, sans identifiant ni paywall",
         "La compétence /meeting-prep sur un rendez-vous de l'agenda connecté",
-        "Questions de découverte : décideur, prestataire actuel, contraintes du site"
+        "Questions de découverte : décideur, fournisseur en place, contraintes du site",
       ],
-      "exercise": "Vous préparez la fiche de l'un de vos prochains rendez-vous et vous vérifiez la date de chaque source."
+      exercise: "Vous préparez la fiche d'un rendez-vous de la semaine prochaine et vous contrôlez la date de chaque source.",
     },
     {
-      "day": 1,
-      "title": "Module 3 · Construire la Bibliothèque commerciale",
-      "duration": "2h",
-      "description": "Donner à toute l'équipe les mêmes documents de référence.",
-      "items": [
+      day: 1,
+      title: "Module 3 · Monter la bibliothèque commerciale",
+      duration: "2h",
+      description: "Mettre les mêmes documents de référence entre toutes les mains.",
+      items: [
         "Ce qu'on y dépose : offre, références citables, conditions générales, meilleures propositions",
-        "Une seule grille tarifaire, datée dans le nom du fichier",
-        "Références clients : accord du client ou anonymisation dès le départ",
-        "Partage en lecture seule et lecture des notes numérotées"
+        "Une grille tarifaire unique, datée dans le nom du fichier",
+        "Références clients : accord écrit ou anonymisation dès l'origine",
+        "Droits de lecteur ou de collaborateur, renvois numérotés et bouton Sources",
       ],
-      "exercise": "Vous montez la Bibliothèque de votre offre avec vos propres documents et vous la testez sur des questions de client."
+      exercise: "Vous montez la bibliothèque de votre offre avec vos propres documents, puis vous l'interrogez avec trois questions d'acheteur.",
     },
     {
-      "day": 1,
-      "title": "Module 4 · Du compte rendu à la fiche CRM",
-      "duration": "1h30",
-      "description": "Supprimer la double saisie après chaque rendez-vous.",
-      "items": [
-        "Dicter ses notes avec le mode vocal et relire la transcription",
+      day: 1,
+      title: "Module 4 · Transformer le compte rendu en fiche CRM",
+      duration: "1h30",
+      description: "Supprimer la double saisie après chaque rendez-vous.",
+      items: [
+        "Dicter ses notes en français avec le mode vocal, puis relire la transcription",
         "La compétence /structured-extraction en tableau ou en JSON",
-        "Faire correspondre les champs extraits à ceux de votre CRM",
-        "Import manuel ou connecteur MCP ajouté par l'administrateur si l'éditeur en publie un"
+        "Correspondance entre les champs extraits et ceux de votre CRM",
+        "Import manuel, ou connecteur MCP ajouté par l'administrateur si l'éditeur en publie un",
       ],
-      "exercise": "Vous transformez les notes de l'un de vos rendez-vous récents en fiche d'opportunité prête pour votre CRM."
+      exercise: "Vous convertissez vos notes du dernier rendez-vous en fiche d'opportunité prête pour votre CRM.",
     },
     {
-      "day": 2,
-      "title": "Module 5 · Rédiger la proposition",
-      "duration": "1h30",
-      "description": "Écrire une proposition qui reprend le besoin exprimé par le client.",
-      "items": [
+      day: 2,
+      title: "Module 5 · Rédiger la proposition dans les mots du client",
+      duration: "1h30",
+      description: "Écrire une proposition qui reprend le besoin tel que le client l'a exprimé.",
+      items: [
         "La compétence /doc-coauthoring dans le Canvas",
-        "Reprendre les mots du client relevés en rendez-vous",
-        "Laisser les montants en blanc et les reporter depuis votre outil de devis",
-        "Suivre les versions et les modifications avant envoi"
+        "Les mots du client relevés en rendez-vous, repris tels quels",
+        "Montants laissés en blanc, tirés ensuite de l'outil de chiffrage",
+        "Navigation entre versions et affichage des modifications avant envoi",
       ],
-      "exercise": "Vous rédigez la proposition d'une affaire en cours à partir de votre fiche de rendez-vous."
+      exercise: "Vous rédigez la proposition d'une affaire en cours en partant de la fiche de rendez-vous.",
     },
     {
-      "day": 2,
-      "title": "Module 6 · Présenter l'offre en soutenance",
-      "duration": "2h",
-      "description": "Transformer la proposition écrite en présentation pour le comité de décision.",
-      "items": [
-        "Diapositives rédigées dans le Canvas et exportées en PowerPoint",
-        "Adapter le discours au décideur et à l'acheteur avec /stakeholder-translator",
-        "Visuels produits par la génération d'images de Vibe",
-        "Reprise dans votre gabarit de marque"
+      day: 2,
+      title: "Module 6 · Préparer la soutenance devant le comité d'achat",
+      duration: "2h",
+      description: "Transformer la proposition écrite en présentation pour ceux qui décident.",
+      items: [
+        "Diapositives écrites en Marp dans le Canvas, exportées en PowerPoint",
+        "Un discours pour le décideur, un autre pour l'acheteur, avec /stakeholder-translator",
+        "Visuels produits par la génération d'images, petits textes repris à la main",
+        "Reprise dans votre gabarit de marque",
       ],
-      "exercise": "Vous produisez la présentation de soutenance de l'une de vos propositions."
+      exercise: "Vous produisez la présentation de soutenance de l'une de vos propositions.",
     },
     {
-      "day": 2,
-      "title": "Module 7 · Anticiper les objections et la négociation",
-      "duration": "2h",
-      "description": "Préparer les réponses avant que l'acheteur pose la question.",
-      "items": [
-        "La compétence /challenge-my-thinking sur une proposition terminée",
-        "Les objections probables de chaque interlocuteur",
-        "Des réponses appuyées sur les références de la Bibliothèque",
-        "Les concessions possibles et celles que vous refusez"
+      day: 2,
+      title: "Module 7 · Anticiper les objections et organiser les relances",
+      duration: "2h",
+      description: "Préparer les réponses avant que l'acheteur pose la question, et ne laisser filer aucune relance.",
+      items: [
+        "/challenge-my-thinking appliqué à une proposition terminée",
+        "Réponses appuyées sur les références de la bibliothèque, concessions acceptées et refusées",
+        "Tâche planifiée hebdomadaire : l'actualité de vos grands comptes chaque lundi matin",
+        "Relances rédigées en brouillon, envoyées par Outlook après accord action par action",
       ],
-      "exercise": "Vous préparez la négociation d'une affaire en cours avec la liste des objections probables et vos réponses."
+      exercise: "Vous préparez la négociation d'une affaire en cours, avec les objections probables et vos réponses.",
     },
     {
-      "day": 2,
-      "title": "Module 8 · Fixer les règles de l'équipe commerciale",
-      "duration": "1h30",
-      "description": "Décider ce qui ne sort jamais de Vibe sans relecture.",
-      "items": [
-        "Qui met à jour la grille tarifaire et les références",
-        "Une compétence de proposition maison partagée à l'espace de travail",
-        "Prix, engagements et références : relecture obligatoire avant envoi",
-        "Prospection : aucune adresse collectée sur les sites ou les annuaires"
+      day: 2,
+      title: "Module 8 · Écrire les règles de l'équipe commerciale",
+      duration: "1h30",
+      description: "Décider de ce qui ne quitte jamais Vibe sans relecture.",
+      items: [
+        "Charte d'usage : prix, engagements et références relus avant tout envoi",
+        "Une compétence de proposition maison, partagée à l'espace de travail",
+        "AI Act, article 4 : formations tracées dans un registre, un référent nommé dans l'équipe",
+        "Plan à 30 jours : trois affaires suivies avec Vibe, un bilan à la prochaine revue de pipeline",
       ],
-      "exercise": "Vous rédigez les règles d'usage de votre équipe et la compétence de proposition qu'elle partagera."
-    }
+      exercise: "Vous rédigez les règles d'usage de votre équipe et la compétence de proposition qu'elle partagera.",
+    },
   ],
   objectives: [
-    "Préparer un rendez-vous B2B avec des faits datés et sourcés et des questions de découverte",
-    "Paramétrer une Bibliothèque commerciale partagée qui ne contient que des documents en vigueur",
-    "Transformer des notes de rendez-vous en fiche d'opportunité prête pour le CRM",
-    "Rédiger une proposition et sa présentation dans le Canvas, avec des prix reportés depuis l'outil de devis",
-    "Vérifier qu'une démarche de prospection respecte les règles de la CNIL"
+    "Le participant prépare un rendez-vous B2B avec une fiche de faits datés et sourcés et six questions de découverte.",
+    "Le participant constitue une bibliothèque commerciale partagée qui ne contient que des documents en vigueur.",
+    "Le participant transforme des notes de rendez-vous en fiche d'opportunité prête à importer dans le CRM.",
+    "Le participant rédige une proposition et ses diapositives dans le Canvas, en reportant les prix à la main depuis le devis.",
+    "Le participant vérifie qu'une démarche de prospection par mail respecte la règle de la CNIL sur les professionnels.",
   ],
   faq: [
-    { q: "Vibe se connecte-t-il à Salesforce ou HubSpot ?", a: "Les connecteurs mis en avant dans la documentation de Mistral ne comprennent pas de CRM, en dehors de Stripe pour les paiements. Un administrateur peut ajouter un connecteur MCP personnalisé si l'éditeur du CRM publie un serveur compatible. À défaut, la compétence /structured-extraction produit un tableau ou un JSON que vous collez ou importez." },
-    { q: "Vibe peut-il lire le profil LinkedIn d'un prospect ?", a: "Non. La fonction d'ouverture d'URL ne lit pas les pages qui demandent une connexion, ce qui est le cas de LinkedIn. Elle lit les pages publiques, une par une, sans parcourir tout un site. Pour un prospect, le site de l'entreprise, ses communiqués et les dépêches restent les meilleures sources." },
-    { q: "Vibe produit-il une présentation commerciale en PowerPoint ?", a: "Oui. Le Canvas écrit les diapositives et un bouton d'export les enregistre au format PowerPoint. La mise en forme reste à reprendre dans votre gabarit de marque. Les visuels peuvent venir de la génération d'images de Vibe, qui s'appuie sur des modèles de Black Forest Labs." },
-    { q: "Comment partager une base de propositions avec toute l'équipe ?", a: "Créez une Bibliothèque et partagez-la à l'organisation entière ou à des collègues choisis, en lecture seule ou en modification. Chaque réponse de Vibe renvoie par une note numérotée au document cité. Mettez à jour la Bibliothèque quand une offre change, sinon l'ancienne version continuera d'être citée." },
-    { q: "Peut-on transformer une méthode de proposition maison en outil réutilisable ?", a: "Oui, avec une compétence (skill). Réussissez une proposition dans une conversation, puis écrivez « transforme cette méthode en compétence ». Vibe rédige un fichier d'instructions que vous relisez, enregistrez et partagez à l'espace de travail ; chaque commercial l'appelle ensuite en tapant / suivi de son nom." },
-    { q: "Les échanges avec les connecteurs servent-ils à entraîner les modèles ?", a: "Mistral indique que les données lues par les connecteurs ne sont pas stockées sur ses serveurs et ne servent jamais à entraîner ou affiner ses modèles. Les conversations elles-mêmes suivent le réglage de votre offre : entraînement actif par défaut sur Free et Pro, désactivable dans les réglages, coupé par défaut sur Enterprise." },
-    { q: "Qui finance une formation Vibe pour une équipe commerciale ?", a: "Masteria est certifié Qualiopi : votre OPCO peut financer la formation selon ses critères et ses plafonds. En intra, la session réunit jusqu'à 12 commerciaux, au tarif de 1 980 € HT par jour. Nous préparons avec vous le dossier de prise en charge." },
+    {
+      q: "Peut-on relier Vibe à Salesforce, à HubSpot ou à notre CRM ?",
+      a: "Pas de façon native. La documentation des connecteurs, relue le 7 octobre 2026, cite Outlook, Gmail, les deux agendas, SharePoint, Slack, Notion, Atlassian, Box, GitHub, Linear et Stripe, sans aucun CRM. Un administrateur peut brancher un connecteur MCP personnalisé si l'éditeur de votre CRM publie un serveur compatible. À défaut, la compétence /structured-extraction produit un tableau ou un fichier JSON que vous collez ou importez, ce qui supprime déjà la ressaisie du compte rendu.",
+    },
+    {
+      q: "Vibe peut-il lire le profil LinkedIn d'un prospect ?",
+      a: "Non. L'ouverture d'URL ne lit pas les pages qui exigent une connexion, et LinkedIn en fait partie ; elle lit une page publique, une seule, sans explorer le reste du site. Pour connaître un prospect, le site de l'entreprise, ses communiqués et les articles d'agence que fait remonter la recherche restent les meilleures sources. La formation apprend à exiger une date et une référence pour chaque fait retenu.",
+    },
+    {
+      q: "Peut-on dicter ses notes juste en sortant de chez le client ?",
+      a: "Oui. Le mode vocal de Vibe transcrit votre voix au fil de la parole, grâce aux modèles Voxtral de Mistral ; le français figure parmi ses douze langues. Selon le réglage, le texte part aussitôt ou attend votre relecture : gardez la relecture, car un nom de société mal entendu se propage ensuite dans la fiche CRM. Aucun import de fichier audio n'est prévu par la documentation : un enregistrement de réunion passe donc par la transcription que fournit Teams ou Meet.",
+    },
+    {
+      q: "Vibe envoie-t-il les relances clients à notre place ?",
+      a: "Il le peut, par le connecteur Outlook, et il demande votre accord avant chaque envoi. Trois réponses s'offrent à vous : continuer pour cette fois, toujours autoriser pendant la session, refuser. Une tâche planifiée peut préparer chaque semaine la liste des relances dues, mais un envoi sans vous suppose d'avoir autorisé l'action à l'avance. Sur des mails clients, nous recommandons des brouillons préparés par Vibe et envoyés par le commercial, un par un.",
+    },
+    {
+      q: "Comment garder la même méthode de proposition dans toute l'équipe ?",
+      a: "Avec une Skill, la compétence maison de Vibe. Réussissez une proposition dans une conversation, puis faites-la convertir par Vibe en compétence : il écrit un fichier SKILL.md que vous relisez avant de l'ouvrir à l'espace de travail. Chaque commercial l'appelle en tapant « / » et son nom. Quand elle est active, ses consignes passent devant les préférences de chaque vendeur, ce qui garantit la même structure, le même ton et les mêmes mentions obligatoires d'une proposition à l'autre.",
+    },
+    {
+      q: "Mistral entraîne-t-il ses modèles avec les informations de nos clients ?",
+      a: "Celles que lisent les connecteurs, jamais : Mistral écrit qu'elles ne sont ni stockées sur ses serveurs ni utilisées pour entraîner ou affiner ses modèles, quelle que soit l'offre. Les conversations suivent une autre règle. Sur Free, Pro et Team, elles alimentent par défaut l'entraînement ; chacun refuse sur Free et Pro, l'administrateur coupe pour tous sur Team, et Enterprise l'exclut d'office. La formation commence par ce réglage, avant le premier nom de client saisi.",
+    },
+    {
+      q: "Quel budget prévoir pour former dix commerciaux ?",
+      a: "Le prix se calcule par jour de formation, jamais par tête : 1 980 € HT, que la salle compte deux vendeurs ou douze. Pour dix commerciaux sur deux jours, la facture totale atteint 3 960 € HT ; ramenée à chacun, elle fait 396 € HT. Le financement se demande à l'OPCO dont relève votre entreprise, qui l'accorde suivant ses propres règles et dans la limite de ses fonds ; Masteria détient Qualiopi pour la catégorie des actions de formation et rassemble le dossier avec vous. Les licences Vibe, elles, se règlent auprès de Mistral.",
+    },
+  ],
+  tarifs: {
+    titre: "Ce que paie une direction commerciale, et ce qu'elle obtient",
+    paras: [
+      "Le prix comprend un échange préparatoire sur votre matière : la plaquette d'offre, deux propositions récentes, la liste des champs de votre fiche d'opportunité et un exemple anonymisé de compte rendu. Le formateur s'en sert pour écrire des exercices sur vos affaires, et l'équipe repart avec sa bibliothèque commerciale montée, sa compétence de proposition et ses prompts de préparation.",
+      "Prenons dix commerciaux formés ensemble pendant deux jours : le total de 3 960 € HT, divisé entre eux, donne 396 € HT par vendeur. Un responsable grands comptes accompagné seul paie le même forfait de 1 980 € HT par jour. La demande de financement part vers votre opérateur de compétences (OPCO), qui tranche d'après ses règles et ses fonds ; Masteria vous en fournit les pièces. Les abonnements Vibe restent à souscrire auprès de Mistral.",
+    ],
+  },
+  apres: {
+    titre: "Après la formation, brancher Vibe sur votre CRM",
+    texte: "Une équipe formée bute souvent sur la même limite : l'absence de connecteur CRM. Masteria peut écrire le connecteur MCP qui relie Vibe à votre CRM, construire un agent qui prépare chaque matin les fiches des rendez-vous du jour à partir de l'agenda et de l'historique client, ou un assistant de chiffrage branché sur votre grille tarifaire. Le projet se définit avec votre direction commerciale et votre DSI, s'évalue au forfait une fois le cadrage fait et se réalise avec nos développeurs. Il relève du développement, sort du cadre de la formation et n'est pas finançable par votre OPCO.",
+  },
+  cta: {
+    milieu: "Envoyez-nous la fiche d'opportunité de votre CRM : les exercices partiront de vos propres champs.",
+    fin: {
+      titre: "Préparons la session sur vos affaires en cours",
+      texte: "Dites-nous combien de vendeurs vous comptez former, quel CRM ils utilisent, l'offre Vibe dont vous disposez et deux affaires à travailler en atelier. Vous recevez un programme ajusté et des dates possibles dans la foulée.",
+    },
+  },
+  liensAssocies: [
+    { label: "Formation IA commerciale avec ChatGPT, Copilot, Claude ou Vibe", href: '/formation-ia-commercial' },
+    { label: "Un agent commercial IA construit sur votre CRM et votre offre", href: '/agent-commercial-ia' },
+    { label: "La même fonction commerciale outillée avec Claude", href: '/formation-claude-commercial' },
+    { label: "Mistral AI face à ChatGPT : le comparatif vérifié en octobre 2026", href: '/mistral-vs-chatgpt' },
+    { label: "Le hub Mistral AI : socle de deux jours et programmes par métier", href: '/formation-mistral-ai' },
   ],
   sources: [
-    { name: "Mistral Docs : Web search and Open URL", url: "https://docs.mistral.ai/vibe/work/web-search-open-url" },
-    { name: "Mistral Docs : Skills (compétences intégrées)", url: "https://docs.mistral.ai/vibe/work/skills" },
-    { name: "Mistral Docs : Libraries", url: "https://docs.mistral.ai/vibe/work/libraries" },
-    { name: "Mistral Docs : Connectors", url: "https://docs.mistral.ai/vibe/work/connectors" },
-    { name: "Mistral Docs : MCP Connectors", url: "https://docs.mistral.ai/vibe/work/connectors/mcp-connectors" },
-    { name: "Mistral Docs : Files and Canvas", url: "https://docs.mistral.ai/vibe/work/files-and-canvas" },
-    { name: "CNIL : la prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
-    { name: "Mistral Help Center : désactiver l'usage des données pour l'entraînement", url: "https://help.mistral.ai/en/articles/455207-can-i-opt-out-of-my-input-or-output-data-being-used-for-training" },
+    { name: "Documentation Mistral, recherche web, dépêches AFP et AP, ouverture d'URL", url: "https://docs.mistral.ai/vibe/work/web-search-open-url" },
+    { name: "Documentation Mistral, compétences de Vibe : /meeting-prep, /doc-coauthoring, /structured-extraction", url: "https://docs.mistral.ai/vibe/work/skills" },
+    { name: "Documentation Mistral, bibliothèques partagées et droits d'accès", url: "https://docs.mistral.ai/vibe/work/libraries" },
+    { name: "Documentation Mistral, catalogue des connecteurs de Vibe", url: "https://docs.mistral.ai/vibe/work/connectors" },
+    { name: "Documentation Mistral, connecteurs MCP réservés à l'administrateur", url: "https://docs.mistral.ai/vibe/work/connectors/mcp-connectors" },
+    { name: "Documentation Mistral, accords demandés avant un envoi ou une modification", url: "https://docs.mistral.ai/vibe/work/safety-and-approvals" },
+    { name: "Documentation Mistral, Canvas, versions et export PowerPoint", url: "https://docs.mistral.ai/vibe/work/files-and-canvas" },
+    { name: "Documentation Mistral, mode vocal et ses douze langues", url: "https://docs.mistral.ai/vibe/work/voice-mode" },
+    { name: "CNIL : prospection commerciale par courrier électronique", url: "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique" },
   ],
 }

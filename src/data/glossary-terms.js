@@ -66,7 +66,7 @@ export const GLOSSARY_TERMS = [
     term: 'IA générative',
     category: 'fondamentaux',
     definition:
-      "Catégorie d'IA qui produit du nouveau contenu (texte, image, audio, vidéo, code) à partir de prompts. Par opposition à l'IA prédictive ou classificatrice. ChatGPT, Midjourney, Sora, ElevenLabs sont des IA génératives.",
+      "Catégorie d'IA qui produit du nouveau contenu (texte, image, audio, vidéo, code) à partir de prompts. Par opposition à l'IA prédictive ou classificatrice. ChatGPT, Midjourney, Veo, ElevenLabs sont des IA génératives.",
   },
   {
     id: 'reseau-neurones',
@@ -103,7 +103,7 @@ export const GLOSSARY_TERMS = [
     term: 'GPT',
     category: 'modeles',
     definition:
-      "Generative Pre-trained Transformer. Famille de LLM développée par OpenAI. GPT-3, GPT-4, GPT-4o, GPT-5 sont les versions successives. Alimente ChatGPT et de nombreuses applications via l'API OpenAI.",
+      "Generative Pre-trained Transformer. Famille de LLM développée par OpenAI. Après GPT-3, GPT-4, GPT-4o et GPT-5, OpenAI fait tourner au 7 octobre 2026 GPT-5.6 dans la conversation de ChatGPT et la famille GPT-6 (Astra, Sol, Luna) dans ChatGPT Work et Codex. Alimente ChatGPT et de nombreuses applications via l'API OpenAI.",
   },
   {
     id: 'claude',
@@ -117,21 +117,21 @@ export const GLOSSARY_TERMS = [
     term: 'Gemini',
     category: 'modeles',
     definition:
-      "Famille de LLM multimodaux développée par Google DeepMind. Native dans Workspace (Docs, Gmail, Sheets) et Android. Versions principales : Gemini 3 Pro, Gemini 3 Flash.",
+      "Famille de LLM multimodaux développée par Google DeepMind. Native dans Workspace (Docs, Gmail, Sheets) et Android. Au 7 octobre 2026, l'application Gemini propose les modes Rapide, Raisonnement et Pro sans numéro de version ; côté API, Google publie Gemini 3.8 Flash et Gemini 3.1 Pro en préversion.",
   },
   {
     id: 'mistral',
     term: 'Mistral AI',
     category: 'modeles',
     definition:
-      "Entreprise française fondée en 2023, éditrice des modèles Mistral 7B, Mixtral, Mistral Large, Codestral. Souveraine européenne, propose des modèles open-weight ainsi que des services API hébergés en France.",
+      "Entreprise française fondée en 2023, éditrice de l'assistant Vibe (anciennement Le Chat) et, au 7 octobre 2026, des modèles Mistral Medium 3.5, Mistral Large 3 et Mistral Small 4. Propose des modèles à poids ouverts et des services hébergés dans l'Union européenne par défaut.",
   },
   {
     id: 'copilot',
     term: 'Microsoft Copilot',
     category: 'modeles',
     definition:
-      "Famille de produits IA de Microsoft basée sur GPT-5 (en partenariat avec OpenAI). Intégré nativement à Word, Excel, Teams, Outlook, GitHub. Existe en version Microsoft 365 Copilot (entreprises) et Copilot gratuit.",
+      "Famille de produits IA de Microsoft, qui s'appuie sur des modèles d'OpenAI et, si l'administrateur les active, d'Anthropic. Au 7 octobre 2026, la licence Microsoft Copilot (anciennement Microsoft 365 Copilot) l'intègre à Word, Excel, Teams et Outlook ; Copilot Chat est inclus dans Microsoft 365, et GitHub Copilot sert les développeurs.",
   },
   {
     id: 'llama',
@@ -145,7 +145,7 @@ export const GLOSSARY_TERMS = [
     term: 'Modèle de diffusion',
     category: 'modeles',
     definition:
-      "Architecture utilisée principalement pour générer des images (Stable Diffusion, Midjourney, DALL-E). Le modèle apprend à reconstruire une image à partir de bruit. Aussi utilisé pour la vidéo (Sora, Veo) et l'audio.",
+      "Architecture utilisée principalement pour générer des images (Stable Diffusion, Midjourney, DALL-E). Le modèle apprend à reconstruire une image à partir de bruit. Aussi utilisé pour la vidéo (Veo, Runway) et l'audio.",
   },
   {
     id: 'moe',
@@ -159,7 +159,7 @@ export const GLOSSARY_TERMS = [
     term: 'Modèle multimodal',
     category: 'modeles',
     definition:
-      "Modèle capable de traiter plusieurs types d'entrées : texte, image, audio, vidéo. GPT-4o, Gemini, Claude sont multimodaux. Permet par exemple d'analyser une capture d'écran ou un graphique en plus du texte.",
+      "Modèle capable de traiter plusieurs types d'entrées : texte, image, audio, vidéo. GPT-5.6, Gemini et Claude sont multimodaux. Permet par exemple d'analyser une capture d'écran ou un graphique en plus du texte.",
   },
 
   // ═══════════════════ ENTRAÎNEMENT & APPRENTISSAGE ═══════════════════
@@ -572,7 +572,7 @@ export const GLOSSARY_TERMS = [
     term: 'Computer Vision',
     category: 'multimodal',
     definition:
-      "Branche de l'IA dédiée à l'analyse d'images et vidéos : détection d'objets, reconnaissance faciale, OCR, compréhension de scène. Désormais largement intégrée dans les LLM modernes (GPT-5, Claude, Gemini).",
+      "Branche de l'IA dédiée à l'analyse d'images et vidéos : détection d'objets, reconnaissance faciale, OCR, compréhension de scène. Désormais largement intégrée dans les LLM modernes (GPT-5.6, Claude, Gemini).",
   },
   {
     id: 'tts',
@@ -600,7 +600,7 @@ export const GLOSSARY_TERMS = [
     term: 'Génération d\'image',
     category: 'multimodal',
     definition:
-      "Création d'images à partir de prompts textuels. Midjourney, DALL-E 3, Stable Diffusion, Flux, Imagen sont les principaux modèles. Cas d'usage entreprise : visuels marketing, mockups produit, illustration.",
+      "Création d'images à partir de prompts textuels. Midjourney, ChatGPT Images 2.5, Nano Banana Pro de Google, Stable Diffusion et Flux sont les principaux modèles en octobre 2026. Cas d'usage entreprise : visuels marketing, mockups produit, illustration.",
   },
   {
     id: 'voice-cloning',
@@ -614,7 +614,7 @@ export const GLOSSARY_TERMS = [
     term: 'Génération vidéo',
     category: 'multimodal',
     definition:
-      "Création de vidéos à partir de prompts textuels ou d'images sources. Sora (OpenAI), Veo (Google), Runway, Kling sont les références 2025. Encore coûteux et imparfait, mais qualité en progrès rapide.",
+      "Création de vidéos à partir de prompts textuels ou d'images sources. Veo (Google), Runway et Kling sont les références en octobre 2026 ; OpenAI a fermé Sora (application en avril 2026, API en septembre 2026). Encore coûteux et imparfait, mais qualité en progrès rapide.",
   },
 ]
 

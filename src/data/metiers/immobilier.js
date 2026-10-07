@@ -1,322 +1,331 @@
-/* Contenu enrichi SEO+GEO de /formation-ia-immobilier (template MetierPage).
- * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+/* Contenu de /formation-ia-immobilier (gabarit MetierPage).
+ * Généré depuis metier-content-enrichi.js en 2026, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Faits vérifiés le 2026-10-07 : OPCO EP pour la convention collective de l'immobilier (IDCC 1527) ;
+ * AI Act art. 50 applicable depuis le 02/08/2026 (fiche FAITS-OUTILS du 07/10).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA immobilier : annonces, estimation, gestion, syndic | Masteria",
-  "metaDesc": "Formation IA immobilier sur vos vrais mandats et dossiers : annonces conformes, estimation argumentée, relation acquéreurs et locataires, gestion locative, syndic, promotion. ChatGPT, Copilot, Claude. Qualiopi, OPCO.",
-  "keywords": "formation ia immobilier, formation ia agent immobilier, formation ia agence immobilière, formation intelligence artificielle immobilier, ia gestion locative, ia syndic, formation ia promotion immobilière",
-  "h1": "Formation IA immobilier : l'IA générative de l'annonce à la gestion, sur vos vrais mandats",
+  "metaTitle": "Formation IA immobilier : annonces, syndic | Masteria",
+  "metaDesc": "Formation IA immobilier sur vos mandats : annonces conformes, avis de valeur, réponses aux acquéreurs, gestion locative, syndic, promotion. Qualiopi, OPCO.",
+  "keywords": "formation ia immobilier, formation intelligence artificielle immobilier, ia agent immobilier, formation chatgpt immobilier, ia gestion locative, ia syndic de copropriété, ia annonce immobilière, formation ia agence immobilière, ia promotion immobilière",
+  "h1": "Formation IA immobilier : l'IA générative du mandat à l'assemblée générale",
   "h1a": "Formation IA immobilier :",
-  "h1b": "l'IA générative de l'annonce à la gestion, sur vos vrais mandats",
+  "h1b": "l'IA générative du mandat à l'assemblée générale",
   "eyebrow": "Formation métier · Immobilier",
-  "badge3": "Sur vos mandats, vos annonces et vos dossiers réels",
-  "geo": "La formation IA immobilier de Masteria apprend à vos équipes, sur vos vrais mandats et dossiers, à mettre l'intelligence artificielle générative au service du métier : annonces conformes, avis de valeur argumenté, relation acquéreurs et locataires, gestion locative, syndic, promotion, veille, avec le cadre RGPD et de non-discrimination posé noir sur blanc. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "L'immobilier est un métier d'écrits et de relation, sous contrainte réglementaire forte : c'est exactement là que l'IA générative fait gagner le plus, à condition de savoir ce qu'elle ne fait pas. Elle ne fixe pas un prix, ne sélectionne pas un locataire, ne dispense pas des mentions obligatoires. Elle rédige, structure, personnalise et relit, à votre ton, sur vos dossiers. La formation apprend cette frontière et en tire le maximum.",
-  "intro": "La formation IA immobilier de Masteria apprend à vos équipes, sur vos vrais mandats et dossiers, à mettre l'intelligence artificielle générative au service du métier : annonces conformes, avis de valeur argumenté, relation acquéreurs et locataires, gestion locative, syndic, promotion, veille, avec le cadre RGPD et de non-discrimination posé noir sur blanc. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO."
+  "badge3": "Sur vos mandats, vos baux et vos copropriétés",
+  "geo": "La formation IA immobilier de Masteria fait travailler négociateurs, gestionnaires locatifs, syndics et promoteurs avec l'IA générative sur les dossiers ouverts à l'agence : annonce complète et conforme, avis de valeur argumenté, réponse aux demandes des portails, courriers de gestion, convocation et procès-verbal d'assemblée générale, note sur un foncier. Les règles du métier encadrent chaque atelier : mentions obligatoires, non-discrimination dans le choix d'un locataire, RGPD sur les dossiers de candidature. Deux jours en intra ; les agences couvertes par l'accord de branche de l'immobilier (IDCC 1527) passent en général par l'OPCO EP pour le financement.",
+  "sub": "L'immobilier vit d'écrits : une annonce par mandat, une réponse par demande, un courrier par réclamation, une convocation par copropriété. L'IA générative les prépare en quelques minutes, à votre ton et à partir de vos données. Elle n'arrête aucun prix, ne choisit pas un locataire et ne dispense d'aucune mention légale ; les deux jours apprennent à tracer cette frontière et à en tirer le meilleur sur chaque dossier.",
+  "intro": "Grâce à cette formation IA immobilier, les équipes de transaction, de gestion, de syndic et de promotion confient à l'IA générative leurs écrits courants, dans le respect des règles du métier."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour une agence ou une équipe (transaction seule, ou gestion seule)"
+   "value": "14 heures, réparties en deux journées d'intra ; une journée pour une agence qui ne fait que de la transaction, ou que de la gestion"
   },
   {
    "label": "Pour qui",
-   "value": "Agents et négociateurs, gestionnaires locatifs, syndics de copropriété, promoteurs et foncières, dirigeants d'agence et de réseau, assistants immobiliers"
+   "value": "Négociateurs et agents commerciaux, dirigeants d'agence, gestionnaires locatifs, gestionnaires de copropriété, promoteurs et foncières, assistants d'agence, têtes de réseau"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec votre logiciel métier et vos portails"
+   "value": "L'assistant de l'agence : Claude, ChatGPT, Gemini, Mistral avec Vibe (anciennement Le Chat), ou encore Microsoft Copilot (anciennement Microsoft 365 Copilot), alimenté par ce que sort votre logiciel de transaction ou de gestion"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos vrais mandats, annonces, dossiers de gestion et convocations, jamais sur des exemples génériques"
+   "value": "Des mandats, des baux, des décomptes de charges et des convocations de l'agence servent de matière, données personnelles masquées"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts immobilier, gabarits (annonce conforme, argumentaire d'estimation, réponses locataires, convocations), cadre RGPD et non-discrimination"
+   "value": "Prompts par activité, gabarits (annonce avec ses mentions, avis de valeur, réponses aux locataires, convocation d'assemblée), règles RGPD et non-discrimination"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Organisme certifié Qualiopi : l'OPCO EP, ou celui dont relève votre branche, fixe le montant de sa participation"
   }
  ],
  "missionsHead": {
-  "kicker": "Activité par activité",
-  "h2": "Que change l'IA dans les métiers de l'immobilier ?",
-  "answer": "L'IA générative touche six activités de l'immobilier : les annonces et contenus de biens, l'estimation et son argumentaire, la relation acquéreurs et locataires, la gestion locative et la copropriété, la promotion et le montage, la veille réglementaire. Dans chacune, elle rédige, structure et personnalise ; le prix, la sélection et la décision restent aux professionnels.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre activité au cadrage. Pour des solutions IA sur mesure dans l'immobilier (agents, outils, automatisations), voyez notre page {/ia-immobilier-btp|IA pour l'immobilier et le BTP}."
+  "kicker": "Transaction, gestion, copropriété, promotion",
+  "h2": "Six activités de l'immobilier que l'IA générative allège",
+  "answer": "Les annonces et la présentation des biens, l'avis de valeur, la relation avec les acquéreurs et les locataires, la gestion locative, la copropriété, la promotion et le montage d'opérations. Partout, l'outil rédige, résume et personnalise ; le prix, le choix du locataire, la résolution soumise au vote et la décision d'engager une opération restent aux professionnels.",
+  "foot": "Le cadrage règle la part de chaque activité selon votre métier. Pour un agent qui répond aux copropriétaires, ou un outil qui qualifie les demandes en lien avec votre logiciel, voyez ce que Masteria construit sur la page {/ia-immobilier-btp|IA immobilier et construction}."
  },
  "missions": [
   {
    "icon": "Home",
-   "title": "Annonces et contenus de biens",
-   "desc": "Rédiger une annonce complète, juste et attractive à partir des caractéristiques du bien et des photos, la décliner par portail et par réseau social, produire la fiche et le dossier de présentation. Avec les mentions obligatoires vérifiées (DPE, honoraires, copropriété) : l'IA rédige vite, la formation apprend à ne rien laisser passer."
+   "title": "L'annonce et le dossier de présentation",
+   "desc": "Caractéristiques du bien, photos et points forts relevés en visite donnent une annonce complète, déclinée pour chaque portail et pour les réseaux sociaux, puis la fiche et le dossier remis aux acquéreurs. Le gabarit porte les mentions exigées (classes énergie et climat, estimation des dépenses d'énergie, honoraires et leur charge, informations de copropriété), et rien ne part sans relecture."
+  },
+  {
+   "icon": "Calculator",
+   "title": "L'avis de valeur argumenté",
+   "desc": "Vos comparables, vos observations de visite et votre connaissance du quartier deviennent un avis de valeur lisible par un particulier, avec la synthèse pour le vendeur et les objections à prévoir au rendez-vous. Votre expertise fixe le prix ; l'outil le rend compréhensible et convaincant."
+  },
+  {
+   "icon": "MessagesSquare",
+   "title": "Acquéreurs et candidats locataires",
+   "desc": "Réponse aux demandes des portails, qualification du projet, préparation de la visite, relance personnalisée, explication des pièces à fournir. Le choix d'un locataire reste hors de l'outil : la loi interdit tout motif discriminatoire, et un tri automatisé de dossiers soulève des questions RGPD lourdes."
   },
   {
    "icon": "KeyRound",
-   "title": "Estimation et argumentaire",
-   "desc": "Structurer un avis de valeur argumenté à partir de vos comparables et de votre connaissance du marché : l'IA met en forme, compare, rédige la synthèse pour le vendeur, prépare le rendez-vous d'estimation. Elle ne fixe pas le prix : votre expertise et vos données le font, l'IA les rend lisibles et convaincantes."
+   "title": "La gestion locative au quotidien",
+   "desc": "Courriers aux locataires et aux bailleurs, réponses aux réclamations, régularisation de charges expliquée ligne par ligne à partir du décompte, préparation d'un état des lieux ou d'un congé. Le gestionnaire vérifie chaque montant et chaque date avant l'envoi."
   },
   {
-   "icon": "Users2",
-   "title": "Relation acquéreurs et locataires",
-   "desc": "Réponses aux demandes entrantes, qualification, préparation des visites, suivi personnalisé, relances : les échanges qui font la différence et que le manque de temps rend impersonnels. Avec le cadre : la sélection d'un locataire ne se délègue jamais à l'IA, la non-discrimination et le RGPD encadrent chaque usage."
+   "icon": "Building2",
+   "title": "Copropriété et assemblées générales",
+   "desc": "Convocation et projets de résolution, procès-verbal rédigé à partir des notes de séance, synthèse d'un règlement de copropriété, réponses aux copropriétaires. La convocation doit être notifiée au moins vingt et un jours avant l'assemblée (décret du 17 mars 1967) : l'outil tient aussi ce calendrier."
   },
   {
-   "icon": "Building",
-   "title": "Gestion locative et copropriété",
-   "desc": "Courriers aux locataires et propriétaires, réponses aux réclamations, préparation des états des lieux, régularisations expliquées, convocations et procès-verbaux d'assemblée générale, synthèse d'un règlement de copropriété. Le volume d'écrits normés de la gestion, traité en un temps réduit."
-  },
-  {
-   "icon": "FileSignature",
+   "icon": "Ruler",
    "title": "Promotion, foncières et montage",
-   "desc": "Notes de synthèse sur un foncier ou une opération, lecture de PLU et de documents d'urbanisme, préparation de comités, dossiers de commercialisation, réponses aux appels d'offres. Les documents longs et techniques du montage, digérés et restitués pour décider."
-  },
-  {
-   "icon": "ScrollText",
-   "title": "Veille et réglementaire",
-   "desc": "Évolutions des lois immobilières (Hoguet, ALUR, Climat et résilience, encadrement des loyers, DPE), fiscalité, urbanisme : l'IA synthétise ce qui vous concerne et prépare la note pour l'équipe ou le client. À valider contre les textes et votre juriste, jamais sur la seule foi de l'outil."
+   "desc": "Note de synthèse sur un terrain, lecture d'un règlement de PLU, préparation d'un comité d'engagement, plaquette de commercialisation, réponse à une consultation d'aménageur. Les documents longs sont lus et résumés, et la décision d'engager reste celle du comité."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une agence ou un groupe immobilier",
-  "answer": "Six gains : des annonces qui sortent du lot et conformes du premier coup, une estimation qui convainc le vendeur, une relation client personnalisée à grande échelle, la gestion et le syndic sans les soirées de courriers, un montage qui décide sur des documents lus, et un cadre qui protège l'agence et ses clients.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut inventer une mention, une surface ou une règle. Donnez-lui les données du mandat, encodez vos mentions obligatoires dans le gabarit, relisez avant diffusion : le reste, elle le fait remarquablement bien."
+  "kicker": "Pour l'agence, le cabinet ou le promoteur",
+  "h2": "Six bénéfices pour une agence, un cabinet de gestion ou un promoteur",
+  "answer": "Des biens mis en ligne plus vite avec des annonces conformes, des vendeurs convaincus par un avis de valeur clair, des demandes traitées dans la journée, des courriers de gestion envoyés sans y passer la soirée, des assemblées préparées dans les délais et des opérations décidées sur des documents lus. Les ateliers construisent chacun de ces gains sur vos dossiers.",
+  "foot": "Une surface inventée, une mention oubliée, une règle citée de travers : l'outil se trompe quand on le laisse deviner. Donnez-lui les données du mandat ou du bail, inscrivez les mentions obligatoires dans le gabarit et relisez avant chaque diffusion."
  },
  "atouts": [
   {
-   "title": "Des annonces qui sortent du lot, conformes du premier coup",
-   "desc": "Complètes, justes, déclinées par canal, avec les mentions obligatoires vérifiées : le bien est mieux présenté et mis en ligne plus vite. Le temps gagné va aux visites et aux mandats."
+   "title": "Des biens en ligne plus vite, annonces conformes",
+   "desc": "L'annonce sort complète, déclinée par canal et vérifiée contre la liste des mentions. Le négociateur gagne du temps pour les visites et la prospection de nouveaux mandats."
   },
   {
-   "title": "Une estimation qui convainc le vendeur",
-   "desc": "L'avis de valeur devient un document argumenté, comparables à l'appui, lisible par un particulier. Votre expertise fixe le prix ; l'IA la met en scène et sécurise le rendez-vous d'estimation."
+   "title": "Des vendeurs convaincus par un avis clair",
+   "desc": "L'avis de valeur devient un document argumenté, comparables à l'appui, qu'un particulier comprend. Le rendez-vous d'estimation se prépare, objections comprises."
   },
   {
-   "title": "Une relation client personnalisée à grande échelle",
-   "desc": "Chaque acquéreur et chaque locataire reçoit une réponse rapide et personnelle, même quand l'agence croule sous les demandes. La réactivité redevient un avantage plutôt qu'un vœu."
+   "title": "Des demandes traitées dans la journée",
+   "desc": "Chaque contact venu d'un portail reçoit une réponse personnelle et rapide, même les semaines chargées. La réactivité devient un argument de l'agence face aux vendeurs."
   },
   {
-   "title": "La gestion et le syndic sans les soirées de courriers",
-   "desc": "Réclamations, régularisations, convocations, procès-verbaux : les écrits normés qui font le quotidien de la gestion se produisent en un temps réduit, avec plus de clarté pour les destinataires."
+   "title": "La gestion sans soirées de courriers",
+   "desc": "Réclamations, régularisations, congés, relances d'impayés : les écrits répétitifs de la gestion se préparent en série, et le gestionnaire consacre son temps aux cas qui demandent un échange."
   },
   {
-   "title": "Un montage qui décide sur des documents lus",
-   "desc": "PLU, règlements, foncier, comités : les documents longs sont lus en profondeur et restitués. Le montage gagne en vitesse et en sécurité, la décision reste celle des experts."
+   "title": "Des assemblées préparées dans les délais",
+   "desc": "Convocations, projets de résolution et procès-verbaux suivent des gabarits outillés ; le calendrier légal est tenu et les copropriétaires reçoivent des documents plus lisibles."
   },
   {
-   "title": "Un cadre qui protège l'agence et ses clients",
-   "desc": "Non-discrimination dans la sélection, RGPD sur les dossiers de candidats et de copropriétaires, mentions obligatoires, avis de valeur non automatisé : la formation pose le cadre qui rend l'usage défendable."
+   "title": "Des opérations décidées sur des documents lus",
+   "desc": "PLU, études de sol, rapports de marché : les pièces longues du montage sont lues en entier et restituées pour le comité, qui garde la décision d'engager."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA immobilier sur 2 jours",
-  "answer": "Jour 1 : ce que les modèles font et ne font pas dans l'immobilier, le panorama des outils et de leurs versions entreprise, la méthode de la demande efficace sur une annonce, votre ton d'agence et vos mentions obligatoires encodés, puis les ateliers annonces, estimation, relation acquéreurs et locataires, contenus de prospection, le projet partagé de l'agence et le cadre RGPD et non-discrimination. Jour 2 : gestion locative, syndic et copropriété, promotion et montage avec la recherche approfondie (Deep Research), veille réglementaire, analyse de votre portefeuille en tableau, puis compétences (Skills), assistants et agents, tâches planifiées, gouvernance et votre plan d'action avec l'évaluation des acquis.",
-  "foot": "Le programme s'ajuste à votre activité : une agence de transaction approfondit le jour 1, un administrateur de biens ou un syndic le jour 2, un promoteur le montage ; en version 1 jour, on garde un périmètre, transaction ou gestion, avec les projets partagés et une compétence. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Formation IA immobilier : la transaction le premier jour, la gestion le second",
+  "answer": "Premier jour : où les modèles excellent et où ils trébuchent sur des écrits immobiliers, l'outil retenu et le sort des données des clients, la formulation d'une demande d'annonce, la voix de l'agence et ses mentions obligatoires rangées dans les consignes, puis les ateliers annonce, avis de valeur, demandes entrantes, prospection, un espace commun aux négociateurs et les règles sur les candidats locataires. Second jour : gestion locative, copropriété et assemblée générale, promotion avec la recherche approfondie, veille réglementaire, lecture d'un portefeuille en tableau, puis compétences (Skills), agents, tâches programmées, gouvernance et plan d'action.",
+  "foot": "Une agence de transaction renforce le premier jour, un administrateur de biens ou un syndic le second, un promoteur l'atelier montage. En une seule journée, on traite un métier, transaction ou gestion, avec son espace partagé et une compétence. Nous avons relevé les fonctions des outils le 7 octobre 2026 : quand vos comptes n'y ont pas accès, le formateur les montre sur le sien, puis l'agence les reproduit avec ses moyens."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Fondamentaux, transaction et relation client sur vos mandats",
+   "titre": "Transaction et relation client sur vos mandats",
    "matin": [
     {
-     "t": "Capacités et limites de l'IA dans l'immobilier",
-     "d": "Capacités des modèles sur vos tâches : rédiger une annonce, argumenter un avis de valeur, résumer un règlement de copropriété, répondre à une demande ; limites sur les très gros tableaux et sur tout ce qui engage l'agence. Mentions obligatoires, non-discrimination, prix : l'outil prépare, le professionnel valide et signe."
+     "t": "Où l'IA excelle sur un écrit immobilier, et où elle trébuche",
+     "d": "Une annonce, un argumentaire de prix, le résumé d'un règlement de copropriété, une réponse à un acquéreur : l'outil s'en sort bien. Il invente une surface ou une mention quand la donnée manque, et il ignore l'état du bien. Trois actes engagent l'agence et restent humains : fixer le prix, choisir un locataire, signer."
     },
     {
-     "t": "Panorama des outils et articulation avec votre logiciel",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini, Vibe (anciennement Le Chat) de Mistral : lequel pour quoi, où vont les données, versions gratuites exclues. Le logiciel métier et les portails restent la source : l'IA travaille sur leurs exports, une écriture automatique relève d'un projet à part."
+     "t": "L'outil retenu et le sort des données clients",
+     "d": "Côté Outlook et Word, Microsoft Copilot ; puis Claude, Gemini dans Gmail et Docs, ChatGPT Business et Vibe chez Mistral : ce que chacun offre à une agence, et où partent les coordonnées des vendeurs et les dossiers des candidats. Les comptes professionnels n'apprennent rien de vos échanges, à l'exception de Vibe Team si l'administrateur laisse l'option activée."
     },
     {
-     "t": "La demande efficace appliquée à une annonce",
-     "d": "Contexte du bien et de la cible, rôle, format du portail, exemples de vos meilleures annonces, itération puis relecture : la méthode déroulée sur un vrai mandat, jusqu'au texte prêt à publier. La relecture porte d'abord sur les mentions obligatoires : DPE, honoraires et leur charge, informations de copropriété (loi Alur)."
+     "t": "Formuler la demande d'une annonce",
+     "d": "Le bien, sa cible, le format du portail, trois de vos meilleures annonces comme modèles, puis deux ou trois allers-retours : on déroule la méthode sur un mandat signé la semaine précédente, jusqu'au texte prêt à publier. La relecture commence par les mentions obligatoires."
     },
     {
-     "t": "Votre ton d'agence et vos gabarits encodés",
-     "d": "Instructions personnalisées, mémoire et styles : encoder le ton de l'agence, le vocabulaire du réseau, le gabarit d'annonce avec ses mentions obligatoires, la trame d'argumentaire d'estimation et le modèle de réponse aux demandes entrantes. Chaque outil répond dès lors dans vos formats, et le gabarit relu protège des oublis."
+     "t": "La voix de l'agence et ses mentions dans les consignes",
+     "d": "Les instructions de l'outil reçoivent le ton de l'agence, le vocabulaire du réseau, le gabarit d'annonce avec ses mentions, la trame de l'avis de valeur et le modèle de réponse aux demandes des portails. L'équipe obtient ensuite des textes dans ses formats, sans tout réexpliquer à chaque conversation."
     },
     {
-     "t": "Premier atelier : annonces et dossier de présentation",
-     "d": "À partir d'un vrai mandat et de ses photos, que les outils lisent, rédiger l'annonce, la décliner par portail et pour les réseaux sociaux, produire la fiche et le dossier de présentation. Vérification ligne à ligne des mentions obligatoires, du DPE aux honoraires, avant toute mise en ligne."
+     "t": "Atelier annonce et dossier de présentation",
+     "d": "Un mandat de l'agence et ses photos, que les outils savent lire, donnent l'annonce, ses déclinaisons par portail et pour Instagram ou Facebook, puis la fiche du bien et le dossier pour les acquéreurs. On vérifie ligne à ligne les classes énergie et climat, les honoraires et les informations de copropriété avant la mise en ligne."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier estimation : l'avis de valeur argumenté",
-     "d": "Sur votre tableau de comparables et votre connaissance du secteur, structurer l'avis de valeur, rédiger la synthèse pour le vendeur et préparer le rendez-vous d'estimation. Copilot dans Excel ou l'analyse de données de ChatGPT et Claude lisent le tableau ; le prix reste le vôtre, relu et signé par le professionnel."
+     "t": "Atelier avis de valeur",
+     "d": "Votre tableau de comparables et vos notes de visite donnent la structure de l'avis, la synthèse pour le vendeur et la liste des objections à prévoir. Le tableau s'ouvre dans Excel avec Copilot, ou se joint à ChatGPT ou à Claude ; le prix reste celui que l'agent assume et signe."
     },
     {
-     "t": "Atelier relation acquéreurs et locataires",
-     "d": "Répondre aux demandes entrantes des portails, qualifier le projet, préparer la visite, assurer le suivi personnalisé et les relances, dans le ton de l'agence. Copilot dans Outlook ou Gemini dans Gmail rédigent le premier jet dans votre messagerie ; aucune donnée de prospect ne sort vers un outil grand public."
+     "t": "Atelier demandes des portails et visites",
+     "d": "Répondre à un contact venu d'un portail, qualifier son projet, préparer la visite, relancer après celle-ci, expliquer à un candidat locataire les pièces que le bailleur peut demander, dont la liste est fixée par décret. Dans la messagerie de l'agence, Copilot côté Outlook ou Gemini côté Gmail proposent la réponse, que le négociateur ajuste."
     },
     {
-     "t": "Atelier prospection et contenus de secteur",
-     "d": "Courrier de pige, lettre aux propriétaires du quartier, newsletter de secteur, posts réseaux sociaux et script de vidéo : produire une série cohérente à partir de vos données de marché. Canvas ou Artifacts pour le texte, Google Vids pour la vidéo ; les chiffres cités viennent de vos sources, jamais de l'outil."
+     "t": "Atelier prospection et contenus de quartier",
+     "d": "Courrier aux propriétaires d'un secteur, lettre d'information du quartier, publications pour les réseaux sociaux, script d'une courte vidéo de présentation : une série cohérente sort de vos données de marché. Google Vids aide pour la vidéo, avec un quota mensuel de 500 secondes générées pour un compte Business Standard (page de Google consultée le 7 octobre 2026). Les chiffres cités viennent de vos sources."
     },
     {
-     "t": "Le projet partagé de l'agence",
-     "d": "Monter le projet « Transaction » de l'agence : ton, gabarits d'annonce, grille d'honoraires et mentions obligatoires en fichiers de connaissance, instructions communes, mémoire propre au projet. Projets partagés de ChatGPT Business, Projets de Claude, Notebooks de Copilot, Projets et Bibliothèques de Vibe : l'équipe repart du même socle."
+     "t": "L'espace commun des négociateurs",
+     "d": "Ton de l'agence, gabarits d'annonce, barème d'honoraires et liste des mentions rejoignent un espace commun avec ses consignes : ChatGPT Business (projet partagé), Claude (projet), Copilot (bloc-notes) ou Vibe (projet). Chaque négociateur part du même socle, qu'il soit en agence ou en rendez-vous."
     },
     {
-     "t": "Le cadre : RGPD, non-discrimination, confidentialité des mandats",
-     "d": "Les dossiers de candidats locataires sont des données personnelles sensibles : anonymisation, offres entreprise, durée de conservation. La sélection d'un locataire ne se délègue jamais à l'outil, ni tri ni score, les critères restent ceux de la loi ; mandats, prix et dossiers confidentiels restent hors de tout outil grand public."
+     "t": "RGPD, non-discrimination, confidentialité des mandats",
+     "d": "Les dossiers des candidats contiennent des revenus et des situations familiales : on masque avant tout usage, on reste sur un compte professionnel, on respecte la durée de conservation. Aucun tri, score ou classement de candidats par l'outil, puisque la loi du 6 juillet 1989 interdit de refuser une location pour un motif discriminatoire. Prix négociés et mandats restent hors des outils grand public."
     }
    ]
   },
   {
    "jour": "Jour 2",
-   "titre": "Gestion, syndic, promotion, veille et industrialisation",
+   "titre": "Gestion, copropriété, promotion et outillage de l'agence",
    "matin": [
     {
      "t": "Atelier gestion locative",
-     "d": "Courriers aux locataires et aux propriétaires, réponses aux réclamations, régularisation de charges expliquée à partir du décompte, préparation d'un état des lieux et d'un courrier de fin de bail, dans vos gabarits. Copilot dans Word et Outlook ou Gemini dans Docs rédigent ; le gestionnaire vérifie chaque montant avant envoi."
+     "d": "Courriers aux locataires et aux bailleurs, réponse à une réclamation, régularisation de charges expliquée à partir du décompte, préparation d'un état des lieux de sortie et d'un congé, dans les gabarits du cabinet. Word avec Copilot ou Docs avec Gemini préparent les textes ; le gestionnaire contrôle chaque montant avant l'envoi."
     },
     {
-     "t": "Atelier syndic et copropriété",
-     "d": "Convocation d'assemblée générale avec ordre du jour et projets de résolution, procès-verbal rédigé à partir de vos notes de séance, synthèse d'un règlement de copropriété, réponses aux copropriétaires. Claude et ChatGPT lisent le document long ; le procès-verbal se co-édite dans Canvas, Artifacts ou Copilot Pages avant relecture."
+     "t": "Atelier copropriété et assemblée générale",
+     "d": "Convocation avec ordre du jour et projets de résolution, envoyée au moins vingt et un jours avant la séance, procès-verbal tiré des notes prises en assemblée, synthèse d'un règlement de copropriété, réponses aux copropriétaires. Un règlement de cent pages se lit d'un bloc dans Claude ou ChatGPT ; le procès-verbal se relit à deux avant sa notification."
     },
     {
-     "t": "Atelier promotion, montage et recherche approfondie",
-     "d": "Note de synthèse sur un foncier, lecture d'un règlement de PLU, préparation d'un comité d'engagement, dossier de commercialisation, réponse à une consultation. La recherche approfondie de ChatGPT, Claude ou Gemini et l'agent Researcher de Copilot documentent le secteur ; NotebookLM interroge votre corpus d'urbanisme, sources citées, à vérifier avant de décider."
+     "t": "Atelier promotion et recherche approfondie",
+     "d": "Note sur un terrain, lecture d'un règlement de PLU, préparation d'un comité d'engagement, plaquette de commercialisation. La recherche approfondie (ChatGPT, Claude, Gemini) et Researcher, l'agent de Copilot, documentent le secteur ; versé dans Gemini Notebook (anciennement NotebookLM), votre corpus d'urbanisme devient interrogeable, chaque réponse citant sa source, à vérifier avant le comité."
     },
     {
-     "t": "Atelier veille réglementaire immobilière",
-     "d": "Loi Hoguet, ALUR, Climat et résilience, encadrement des loyers, calendrier DPE, fiscalité : synthétiser une évolution qui touche votre activité et rédiger la note pour l'équipe ou le client. L'outil collecte et met en forme ; chaque point se valide contre le texte et avec votre juriste avant diffusion."
+     "t": "Veille réglementaire du secteur",
+     "d": "Loi Hoguet, loi ALUR, loi Climat et résilience, encadrement des loyers, calendrier de décence énergétique, fiscalité locale : l'outil résume un changement qui concerne votre portefeuille et prépare une note à l'intention des collaborateurs ou d'un bailleur. On confronte chaque affirmation au texte officiel, avec votre juriste ou votre réseau."
     },
     {
-     "t": "Atelier tableaux : portefeuille et indicateurs",
-     "d": "Sur un export de votre logiciel de gestion, repérer les baux qui arrivent à échéance, les logements concernés par le calendrier DPE, les impayés, et rédiger le commentaire pour la direction. Copilot dans Excel ou l'analyse de données de ChatGPT et Claude lisent le fichier ; vous gardez les chiffres."
+     "t": "Atelier portefeuille en tableau",
+     "d": "Sur un export du logiciel de gestion : baux arrivant à échéance, logements dont la classe énergie bloque une relocation, impayés, puis quelques lignes d'analyse destinées au dirigeant. Copilot, ChatGPT ou Claude lisent le fichier ; les chiffres restent ceux du logiciel."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) : encoder une procédure de l'agence",
-     "d": "Transformer la check-list de relecture d'une annonce (mentions obligatoires, DPE, honoraires) ou la trame de régularisation de charges en compétence (Skill) qui s'active d'elle-même quand la demande correspond : décrite en langage naturel dans ChatGPT Business, importée en dossier dans Claude. Un membre crée et teste, l'administrateur partage."
+     "t": "Une compétence (Skill) pour la relecture des annonces",
+     "d": "La relecture d'une annonce (mentions, honoraires, classes énergie et climat) ou la trame d'une régularisation de charges se transforme en compétence, appliquée par l'assistant chaque fois qu'il traite ce genre de document. On la formule en français courant dans ChatGPT Business, on l'importe en dossier SKILL.md dans Claude, et elle existe aussi dans Vibe et Gemini ; un membre la teste, l'administrateur la diffuse."
     },
     {
-     "t": "Assistants et agents : lequel pour quel besoin",
-     "d": "Trier les GPTs existants, que l'éditeur fait converger vers les agents d'espace de travail ; distinguer Agent Builder de Copilot (assistant sur vos documents SharePoint) de Copilot Studio (un projet) ; situer Gems, Workspace Studio et les Workflows de Vibe. Un assistant qui répond aux copropriétaires sur le règlement suffit souvent."
+     "t": "Assistants et agents pour l'agence",
+     "d": "Un assistant qui répond aux copropriétaires sur le règlement suffit souvent ; un agent comme Copilot Cowork enchaîne des actions (un mail, un rendez-vous) après votre accord. Les GPTs de l'agence doivent devenir des plugins avant que l'éditeur ne les supprime, le 11 décembre 2026 ; les Gems de Google disparaîtront à terme au profit des compétences. Toute écriture automatique dans le logiciel métier relève d'un développement."
     },
     {
-     "t": "Tâches planifiées et automatisations légères",
-     "d": "Programmer en une phrase une veille hebdomadaire sur les textes du secteur, un rappel des échéances de baux, d'assemblées générales et de DPE, ou le point des demandes entrantes en attente. Tâches planifiées de ChatGPT et de Vibe, agents planifiables, Workspace Studio, Power Automate : un humain relit avant envoi."
+     "t": "Rappels et veille programmés",
+     "d": "Le rappel hebdomadaire des échéances de baux et d'assemblées, la liste des demandes restées sans réponse ou le résumé de l'actualité réglementaire se programment en une phrase, avec une tâche planifiée de ChatGPT, une tâche de Vibe ou un enchaînement Workspace Studio. Personne n'envoie le résultat à un client sans l'avoir relu."
     },
     {
-     "t": "Gouvernance et mesure",
-     "d": "Nommer un propriétaire par projet, compétence et assistant, tenir le registre, régler le partage et les droits admin, prévoir la revue trimestrielle. Choisir les indicateurs suivis : délai de mise en ligne d'un mandat, réactivité aux demandes entrantes, temps passé sur les écrits de gestion, comparés avant et après."
+     "t": "Gouvernance et mesures",
+     "d": "Une personne répond de chaque espace, compétence et assistant ; l'agence tient la liste, règle les droits de partage et fait le point chaque trimestre. Trois mesures pour commencer : délai de mise en ligne d'un mandat, délai de réponse aux demandes, temps passé sur les courriers de gestion."
     },
     {
-     "t": "Plan d'action, évaluation des acquis, livrables",
-     "d": "Choisir les trois usages à installer dans le mois dans votre agence, qui les porte, comment on mesure. Évaluation des acquis, puis remise des livrables : bibliothèque de prompts immobilier, gabarits d'annonce conforme, d'argumentaire d'estimation, de réponses aux locataires et de convocations, compétences créées, cadre RGPD et non-discrimination écrit."
+     "t": "Plan d'action et livrables",
+     "d": "Chaque collaborateur retient un usage à installer avant la fin du mois, et l'agence désigne qui en assure le suivi. Une fois les acquis évalués, l'équipe repart avec ses prompts par activité, ses gabarits (annonce, avis de valeur, réponses aux locataires, convocation), ses compétences et ses règles RGPD et non-discrimination écrites."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA immobilier ?",
-  "answer": "À tous les métiers de l'immobilier : agents, négociateurs et dirigeants d'agence, gestionnaires locatifs et syndics, promoteurs, foncières et aménageurs, réseaux et têtes de groupe qui veulent équiper leurs agences d'usages homogènes, assistants immobiliers. Sans prérequis technique : la pratique du métier suffit."
+  "h2": "Pour qui, dans les métiers de l'immobilier ?",
+  "answer": "Pour les négociateurs, les agents commerciaux et les dirigeants d'agence, les gestionnaires locatifs et les gestionnaires de copropriété, les promoteurs, foncières et aménageurs, les assistants d'agence et les têtes de réseau qui veulent des usages communs à toutes leurs agences. Aucun prérequis technique : l'exercice du métier suffit."
  },
  "profils": [
   {
    "icon": "Home",
-   "title": "Agents, négociateurs et dirigeants d'agence",
-   "desc": "Annonces, estimation, relation acquéreurs et vendeurs, prospection : les usages qui rendent des heures chaque semaine et améliorent la présentation des biens. Le cœur du jour 1 est fait pour vous."
+   "title": "Négociateurs et dirigeants d'agence",
+   "desc": "Annonces, avis de valeur, demandes des portails, prospection : le premier jour vise les tâches qui occupent vos soirées, sur les mandats que vous venez de rentrer."
   },
   {
-   "icon": "Building",
-   "title": "Gestionnaires locatifs et syndics",
-   "desc": "Courriers, réclamations, régularisations, convocations, procès-verbaux : le volume d'écrits normés de la gestion, traité plus vite et plus clairement, avec le RGPD en garde-fou."
+   "icon": "KeyRound",
+   "title": "Gestionnaires locatifs et de copropriété",
+   "desc": "Réclamations, régularisations, congés, convocations, procès-verbaux : le second jour traite ces écrits répétitifs, avec le RGPD et le calendrier légal en garde-fous."
   },
   {
-   "icon": "FileSignature",
+   "icon": "Ruler",
    "title": "Promoteurs, foncières, aménageurs",
-   "desc": "Notes de synthèse, documents d'urbanisme, comités, commercialisation, appels d'offres : les usages du montage et de la décision, sur vos vraies opérations."
+   "desc": "Notes sur un terrain, documents d'urbanisme, comités d'engagement, commercialisation : les ateliers portent sur une opération en cours, et la décision reste au comité."
   },
   {
-   "icon": "Users",
+   "icon": "Network",
    "title": "Réseaux, franchises et têtes de groupe",
-   "desc": "Vous voulez équiper des dizaines d'agences d'usages homogènes et d'un cadre commun. La formation se déploie par vagues, avec la bibliothèque de prompts et le cadre d'usage du réseau comme livrables."
+   "desc": "Vous voulez des usages homogènes dans des dizaines d'agences. Le déploiement se fait agence par agence, et les prompts, gabarits et règles d'usage du réseau en sont les livrables."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Non-discrimination, RGPD, mentions obligatoires, avis de valeur : ce que la formation pose noir sur blanc",
-  "p": "L'immobilier manipule des données personnelles sensibles (dossiers de candidats, copropriétaires, revenus) et obéit à des règles qui engagent l'agence : non-discrimination dans la sélection, mentions obligatoires des annonces, responsabilité de l'avis de valeur, confidentialité des mandats. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise uniquement pour toute donnée nominative), comment on anonymise, où s'arrête l'assistance (l'IA rédige et structure ; le prix, la sélection et la décision restent humains), et la relecture qui garantit la conformité des annonces. Ce cadre est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des équipes immobilières depuis 2022, en transaction, en gestion et en promotion : les mêmes questions reviennent, et elles ont des réponses pratiques.",
+  "kicker": "Les règles du métier",
+  "h2": "Mentions obligatoires, non-discrimination, RGPD : ce que l'agence fixe pendant la formation",
+  "p": "Une agence manipule des données personnelles sensibles (revenus des candidats, situation des copropriétaires) et répond de règles précises : mentions obligatoires dans chaque annonce, interdiction de tout motif discriminatoire dans le choix d'un locataire, liste fermée des pièces qu'un bailleur peut réclamer, confidentialité des mandats. Une règle européenne complète ce cadre depuis août 2026 : d'après l'AI Act (article 50), une image générée ou retouchée par IA qui pourrait passer pour une vraie photo, comme un séjour meublé virtuellement, doit être signalée. Au fil des deux jours, l'agence arrête quel outil reçoit quelle donnée, comment masquer un dossier et la limite de ce que l'outil peut faire. Le tout rejoint votre {/charte-ia-entreprise|charte IA}.",
   "points": [
-   "La sélection d'un locataire ne se délègue jamais à l'IA",
-   "Dossiers et mandats : offres entreprise, anonymisation",
-   "Mentions obligatoires encodées dans le gabarit, relues",
-   "L'avis de valeur reste le vôtre ; l'IA l'argumente"
+   "Aucun tri ni score de candidats locataires par un outil",
+   "Dossiers et mandats sur comptes professionnels, données masquées",
+   "Mentions obligatoires inscrites dans le gabarit d'annonce",
+   "Photo retouchée par IA signalée comme telle"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (mandats, annonces, gabarits, dossiers de gestion anonymisés, outils), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts immobilier, gabarits outillés, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Tarif de la formation, et rôle de l'OPCO EP",
+  "answer": "Une journée en intra coûte à l'agence 1 980 € HT, pour 12 personnes au maximum ; les deux journées, 3 960 € HT. Un dirigeant d'agence peut suivre le même parcours en individuel, au même tarif par jour. Masteria détient Qualiopi pour les actions de formation, condition d'une prise en charge : l'OPCO EP, dont relève l'accord de branche de l'immobilier, ou l'opérateur de votre secteur décide selon son barème et ses fonds.",
+  "inclus": "Le cadrage sur vos mandats, vos gabarits et des dossiers de gestion masqués, les deux journées à l'agence ou à distance avec leurs supports, les livrables (prompts par activité, gabarits outillés, règles d'usage), puis un questionnaire d'évaluation et un certificat de réalisation remis à chaque collaborateur. Si le formateur vient dans vos murs, son déplacement figure sur le devis.",
+  "financement": "Votre opérateur se déduit de la convention collective, ce que fait {/quel-opco|Quel OPCO ?} en quelques questions ; les dispositifs sont détaillés sur {/financement-formation-ia|cette page}. Masteria prépare le dossier pour vous (programme détaillé, convention, justificatifs), à transmettre avant la première journée. Aucun financement CPF n'est possible ici."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA immobilier ?",
-   "a": "À intégrer l'intelligence artificielle générative dans le quotidien des métiers de l'immobilier, sur vos vrais dossiers : rédiger et décliner des annonces complètes et conformes, structurer un avis de valeur argumenté, personnaliser la relation avec les acquéreurs et les locataires, produire les écrits de la gestion locative et du syndic (courriers, régularisations, convocations, procès-verbaux), préparer les notes et lectures du montage en promotion, tenir la veille réglementaire. Et à poser le cadre propre au métier : non-discrimination, RGPD, mentions obligatoires, avis de valeur qui reste le vôtre."
+   "q": "Que contient une formation IA immobilier ?",
+   "a": "L'IA générative appliquée aux métiers de l'immobilier, travaillée sur vos dossiers : annonces complètes avec leurs mentions, avis de valeur argumentés, réponses aux demandes des portails, courriers de gestion locative, convocations et procès-verbaux d'assemblée générale, notes sur un foncier, veille réglementaire. Le cadre propre au métier accompagne chaque atelier : non-discrimination, RGPD, mentions obligatoires, avis de valeur qui reste celui de l'agent."
   },
   {
-   "q": "L'IA peut-elle estimer un bien à notre place ?",
-   "a": "Non, et il faut le dire à vos vendeurs : l'IA n'a ni vos comparables à jour, ni la connaissance du quartier, ni la vue sur l'état réel du bien. Ce qu'elle fait très bien : structurer votre avis de valeur à partir de vos comparables et de vos observations, rédiger un argumentaire lisible pour un particulier, préparer les objections du rendez-vous d'estimation. La formation apprend cette répartition, et met en garde contre les estimateurs automatiques présentés comme des avis de valeur : c'est votre expertise qui fixe le prix, l'IA la rend convaincante."
+   "q": "L'IA peut-elle estimer un bien à la place de l'agent ?",
+   "a": "Non. Elle n'a ni vos comparables récents, ni la connaissance de la rue, ni la vue sur l'état du bien. Elle met en forme l'avis de valeur que vous construisez, rédige un argumentaire qu'un vendeur comprend et prépare les objections du rendez-vous. La formation alerte aussi sur les estimateurs automatiques présentés comme des avis de valeur : le prix engage l'agent qui le signe."
   },
   {
-   "q": "Peut-on utiliser l'IA pour sélectionner des locataires ?",
-   "a": "Pour trier, comparer ou classer des candidats, non : c'est le terrain de la discrimination, interdite et sévèrement sanctionnée, et un traitement automatisé de ce type pose en plus des questions RGPD lourdes. Ce que l'IA peut faire dans la gestion locative : rédiger les réponses, expliquer les pièces demandées, préparer les états des lieux, produire les courriers et régularisations. La formation trace cette ligne noir sur blanc : la sélection reste une décision humaine sur des critères légaux, l'IA aide sur les écrits."
+   "q": "Peut-on trier des candidats locataires avec l'IA ?",
+   "a": "Non. Trier, comparer ou classer des dossiers de candidats par un outil expose à la discrimination, interdite par la loi du 6 juillet 1989 et le code pénal, et à des difficultés RGPD sérieuses dès qu'un traitement automatisé influe sur une décision. L'IA aide en revanche à répondre aux candidats, à expliquer les pièces que le bailleur peut demander, à préparer l'état des lieux, à rédiger les courriers. Le choix reste humain, sur des critères légaux."
   },
   {
-   "q": "Comment garantir que les annonces générées respectent les mentions obligatoires ?",
-   "a": "En les encodant dans le gabarit, ce que la formation fait en atelier. Les mentions exigées (DPE et classe énergie, honoraires et à la charge de qui, copropriété et charges, statut de l'annonceur, surface au bon référentiel) sont intégrées à l'instruction que l'agence réutilise, et une check-list de relecture ferme la boucle. L'IA rédige vite ; le gabarit et la relecture garantissent la conformité. Nous vous donnons la méthode ; la liste exacte se valide avec votre juriste ou votre réseau selon vos activités."
+   "q": "Comment garantir que les annonces générées contiennent les mentions obligatoires ?",
+   "a": "En les inscrivant dans le gabarit que l'outil applique, puis en relisant avec une liste de contrôle. Classes énergie et climat, estimation des dépenses d'énergie, honoraires et partie qui les paie, nombre de lots et charges de copropriété, procédure en cours le cas échéant : l'atelier les encode avec vous. La liste exacte selon vos activités se valide avec votre juriste ou votre réseau."
   },
   {
-   "q": "Peut-on confier à l'IA nos dossiers de candidats, de copropriétaires ou nos mandats ?",
-   "a": "Sous conditions, et la formation les pose. Les dossiers de candidats et de copropriétaires contiennent des données personnelles, parfois sensibles (revenus, situation familiale) : anonymisation avant tout traitement, offres entreprise uniquement (elles n'entraînent pas leurs modèles sur vos données et offrent un cadre contractuel), jamais de version gratuite. Les mandats et les prix négociés sont confidentiels : même règle. Nous formalisons ensemble ce qu'on confie à quel outil, comment on anonymise, ce qu'on ne confie jamais. C'est un livrable."
+   "q": "Peut-on utiliser une photo retouchée ou meublée par l'IA dans une annonce ?",
+   "a": "Oui, à condition de le dire. Une image générée ou modifiée par IA qui peut passer pour authentique doit être signalée par celui qui la diffuse ; l'AI Act le prévoit depuis le 2 août 2026 (article 50). Une pièce meublée virtuellement ou un ciel refait entrent dans ce cas, et le code de la consommation sanctionne déjà une annonce trompeuse. La formation prévoit une mention type dans le gabarit."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre agence ou votre réseau utilise. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral, articulés avec votre logiciel métier (transaction, gestion, syndic) et vos portails de diffusion. Si un outil est déployé au niveau du réseau, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Les fondamentaux valent partout."
+   "q": "Dossiers de candidats, de copropriétaires, mandats : quelles données l'IA peut-elle recevoir ?",
+   "a": "Beaucoup, sous conditions. Ces dossiers contiennent des données personnelles, parfois sensibles (revenus, situation familiale) : on les masque avant usage, on reste sur un compte professionnel, dont les conversations ne nourrissent pas les modèles, et l'on écarte les versions gratuites. Les mandats et les prix négociés suivent la même règle. L'agence repart avec une grille qui affecte chaque type de donnée à un outil autorisé."
   },
   {
-   "q": "La formation convient-elle à une petite agence indépendante ?",
-   "a": "Oui, en version d'une journée centrée sur la transaction (annonces, estimation, relation client) ou sur la gestion selon votre activité, pour l'équipe complète. Une agence indépendante y trouve les usages qui rendent le plus de temps tout de suite, avec le cadre d'usage pour se protéger. Les réseaux et têtes de groupe déploient plutôt le format deux jours par vagues d'agences, avec des livrables communs."
+   "q": "Sur quels assistants portent les ateliers ?",
+   "a": "Sur ceux de votre agence ou de votre réseau. Indépendante des éditeurs, Masteria forme à ChatGPT comme à Copilot, Claude, Gemini ou Vibe, utilisés à côté de votre logiciel de transaction ou de gestion et de vos portails. Si le réseau impose un outil, les ateliers s'y concentrent ; sinon, on compare deux ou trois assistants sur une de vos annonces dès la première matinée."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel dans vos locaux ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un périmètre resserré : transaction seule, ou gestion et syndic seuls. Un accompagnement individuel est possible pour un dirigeant d'agence. Les journées pleines alternent apports courts et ateliers sur vos mandats et dossiers réels."
+   "q": "Une petite agence indépendante peut-elle suivre la formation ?",
+   "a": "Oui, souvent en une journée centrée sur la transaction (annonces, avis de valeur, demandes) ou sur la gestion, pour toute l'équipe. Les usages les plus rentables à court terme passent en premier, avec des règles d'usage adaptées à une petite structure. Les réseaux préfèrent le format de deux jours, déployé agence par agence."
   },
   {
-   "q": "Combien coûte une formation IA immobilier, et est-elle finançable ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : une journée représente 1 980 € HT, deux jours 3 960 € HT. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences (OPCO EP pour la plupart des agences, selon votre convention collective) ; nous préparons le dossier avec vous et notre outil Quel OPCO ? identifie votre opérateur. La formation n'est pas éligible au CPF. Devis sous 24 heures."
+   "q": "Quelle durée prévoir pour former une agence ?",
+   "a": "Comptez deux journées de sept heures, en agence ou en visioconférence, avec 12 participants au maximum. Pour un seul métier (transaction, ou gestion et copropriété), un jour suffit. Un dirigeant d'agence peut aussi être formé seul. Les apports théoriques tiennent en peu de temps : on travaille surtout sur les dossiers ouverts à l'agence."
+  },
+  {
+   "q": "Combien coûte la formation, et l'OPCO EP la finance-t-il ?",
+   "a": "Le prix ne varie pas avec l'effectif, de 3 à 12 personnes : chaque journée coûte 1 980 € HT et les deux réunies 3 960 € HT. Les entreprises couvertes par l'accord de branche de l'immobilier (IDCC 1527) dépendent de l'OPCO EP ; la session est éligible (Masteria est certifiée Qualiopi), et l'OPCO décide de sa part selon ses règles. Le CPF n'intervient pas. L'outil Quel OPCO ? confirme votre opérateur."
   }
  ],
  "course": {
-  "name": "Formation IA immobilier — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée aux métiers de l'immobilier, sur les mandats et dossiers réels des participants : annonces conformes, avis de valeur argumenté, relation acquéreurs et locataires, gestion locative, syndic de copropriété, promotion et montage, veille réglementaire, cadre RGPD et non-discrimination. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra (1 jour possible), présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA immobilier (Masteria)",
+  "description": "Formation à l'IA générative pour les métiers de l'immobilier, sur les dossiers des participants : annonces et mentions obligatoires, avis de valeur, demandes des acquéreurs et des candidats locataires, gestion locative, copropriété et assemblées générales, promotion et montage, veille réglementaire, règles RGPD et non-discrimination. Outils : ChatGPT, Microsoft Copilot, Claude, Gemini, Vibe. Deux jours en intra, une journée possible. Organisme certifié Qualiopi ; financement par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Rédiger et décliner des annonces complètes et conformes avec l'IA",
-   "Structurer un avis de valeur argumenté à partir de ses comparables",
-   "Personnaliser la relation acquéreurs et locataires dans le cadre RGPD et de non-discrimination",
-   "Produire les écrits de la gestion locative et du syndic (courriers, régularisations, convocations, procès-verbaux)",
-   "Préparer les notes de synthèse et lectures réglementaires du montage et de la veille"
+   "Rédiger et décliner une annonce immobilière avec ses mentions obligatoires",
+   "Mettre en forme un avis de valeur à partir de ses comparables",
+   "Répondre aux acquéreurs et aux candidats locataires sans tri automatisé",
+   "Préparer les écrits de gestion locative et de copropriété, convocations comprises",
+   "Résumer un document d'urbanisme ou une évolution réglementaire pour l'équipe"
   ],
-  "about": "Intelligence artificielle générative appliquée à l'immobilier",
+  "about": "Intelligence artificielle générative appliquée aux métiers de l'immobilier",
   "timeRequired": "PT14H",
   "duration": "PT14H",
-  "prerequisites": "Aucun prérequis technique. Pratique d'un métier de l'immobilier.",
-  "audience": "Agents et négociateurs, gestionnaires locatifs, syndics, promoteurs, dirigeants d'agence et de réseau",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "prerequisites": "Aucun prérequis technique. Exercice d'un métier de l'immobilier.",
+  "audience": "Négociateurs, dirigeants d'agence, gestionnaires locatifs, syndics, promoteurs, têtes de réseau",
+  "locationName": "Masteria, en intra : en agence, en France ou à l'étranger, ou en classe virtuelle"
  },
  "article": {
-  "headline": "Formation IA immobilier : l'IA générative de l'annonce à la gestion, sur vos vrais mandats",
-  "datePublished": "2026-08-10",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "headline": "Formation IA immobilier : l'IA générative du mandat à l'assemblée générale",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -337,11 +346,11 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "Le diagnostic de performance énergétique (DPE) — Service Public",
+   "name": "Diagnostic de performance énergétique, fiche Service Public",
    "url": "https://www.service-public.fr/particuliers/vosdroits/F16096"
   }
  ],
@@ -349,54 +358,104 @@ export default {
   {
    "label": "IA pour l'immobilier et le BTP",
    "href": "/ia-immobilier-btp",
-   "tag": "Secteur",
-   "desc": "Conseil et développement de solutions IA sur mesure pour l'immobilier : agents, outils, automatisations."
+   "tag": "Secteur"
+  },
+  {
+   "label": "Formation IA BTP",
+   "href": "/formation-ia-btp",
+   "tag": "Secteur voisin"
   },
   {
    "label": "Formation IA commercial",
    "href": "/formation-ia-commercial",
-   "tag": "Métier voisin",
-   "desc": "L'IA sur tout le cycle de vente : prospection, préparation de rendez-vous, propositions, relances."
+   "tag": "Métier voisin"
   },
   {
    "label": "Formation IA assistanat",
    "href": "/formation-ia-assistante",
-   "tag": "Métier voisin",
-   "desc": "Pour les assistants d'agence : courriers, agendas, dossiers, comptes rendus avec l'IA."
+   "tag": "Métier voisin"
   },
   {
-   "label": "Formation IA marketing",
-   "href": "/formation-ia-marketing",
-   "tag": "Métier voisin",
-   "desc": "Pour la communication de l'agence ou du réseau : contenus, réseaux sociaux, campagnes."
+   "label": "Formation IA juridique",
+   "href": "/formation-ia-juridique",
+   "tag": "Métier voisin"
   },
   {
    "label": "Formation Microsoft Copilot",
    "href": "/formation-microsoft-copilot",
-   "tag": "Par outil",
-   "desc": "Copilot dans Microsoft 365, souvent déjà déployé dans les groupes immobiliers."
+   "tag": "Par outil"
   },
   {
    "label": "Formation ChatGPT",
    "href": "/formation-chatgpt",
-   "tag": "Par outil",
-   "desc": "L'outil le plus répandu dans les agences : projets, GPTs personnalisés, image."
+   "tag": "Par outil"
   },
   {
    "label": "Charte IA d'entreprise",
    "href": "/charte-ia-entreprise",
-   "tag": "Cadre",
-   "desc": "Le cadre d'usage qui protège l'agence : ce qu'on confie, comment, à qui."
+   "tag": "Cadre"
   },
   {
    "label": "Coaching IA individuel",
    "href": "/coaching-ia",
-   "tag": "Individuel",
-   "desc": "Pour un dirigeant d'agence : le tête-à-tête sur ses mandats et son organisation."
+   "tag": "Individuel"
   }
  ],
+ "bibliotheque": "Pour juger de la méthode, ouvrez la {/bibliotheque-de-prompts#assistante|bibliothèque de prompts, section assistanat} : plusieurs demandes y servent la gestion, comme relancer sans brusquer, refuser en ménageant la relation ou tirer un compte rendu de notes prises en réunion. Une ligne sous chacune explique ce qui la fait fonctionner.",
+ "ctaMilieu": {
+  "titre": "Une session avant le rush des mandats ou la saison des assemblées",
+  "texte": "Indiquez votre métier (transaction, gestion, syndic, promotion), le nombre de collaborateurs et vos logiciels : le lendemain, programme, calendrier et devis vous attendent."
+ },
+ "competences": {
+  "titre": "Ce que l'équipe saura faire à l'issue des deux jours",
+  "intro": "Six objectifs tirés des ateliers, tous vérifiés par l'évaluation finale.",
+  "items": [
+   "Rédiger une annonce selon la trame maison, mentions obligatoires vérifiées",
+   "Mettre en forme un avis de valeur à partir de comparables, sans déléguer le prix",
+   "Répondre aux demandes des portails et aux candidats locataires sans aucun tri automatisé",
+   "Expliquer une régularisation de charges à partir du décompte, montants contrôlés",
+   "Préparer une convocation d'assemblée générale et un procès-verbal à partir des notes",
+   "Appliquer la grille RGPD de l'agence à chaque outil et signaler une image retouchée par IA"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "ChatGPT, Gemini, Copilot, Vibe ou Claude : quel assistant pour une agence immobilière ?",
+  "intro": "Le choix suit souvent la messagerie de l'agence : Outlook ou Gmail. L'apport de chaque assistant aux métiers de l'immobilier, relevé le 7 octobre 2026 :",
+  "lignes": [
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business lit les photos d'un bien pour rédiger l'annonce, conserve la voix de l'agence et ses gabarits dans un projet partagé, et accueille vos procédures sous forme de compétences. Les GPTs créés par les agences ne fonctionneront plus après le 11 décembre 2026 : leur conversion en plugins est à prévoir cet automne. {/formation-chatgpt|La formation ChatGPT}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Dans une agence équipée de Microsoft 365, Copilot sert dans Outlook pour répondre aux demandes, dans Word pour les courriers de gestion (« Modifier avec Copilot ») et dans Excel pour un tableau de comparables. La licence lit vos dossiers SharePoint selon vos droits : les partages se vérifient avant de l'activer. {/formation-microsoft-copilot|La formation Copilot}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Dans une agence sous Google Workspace, Gemini écrit dans Gmail et Docs ; Vids monte une courte vidéo de bien, dans la limite mensuelle de 500 secondes que prévoit l'édition Business Standard. Un carnet Gemini Notebook rassemble un règlement de copropriété et ses procès-verbaux, jusqu'à 300 sources en Standard, et répond en citant la page. {/formation-gemini-entreprise|La formation Gemini}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Vibe héberge les conversations en Europe, sauf choix contraire, ce que regardent les syndics soucieux de leurs fichiers de copropriétaires. Ses tableurs, apparus fin septembre 2026, ouvrent un export de gestion en Excel ou CSV. En Team, désactiver l'entraînement des modèles incombe à l'administrateur. {/formation-mistral-ai|La formation Vibe}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude lit d'une traite un règlement de copropriété, un règlement de PLU ou un bail commercial, structure une note et produit le procès-verbal ou le dossier de présentation en fichier Word ou PowerPoint. Avec Team ou Enterprise, vos conversations restent par défaut hors du jeu d'entraînement d'Anthropic. {/formation-claude-ia|La formation Claude}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Un formateur qui connaît les mandats et les baux",
+  "texte": "Chaque session immobilier est encadrée par Mathias Nizan, fondateur lyonnais de Masteria (2022), qui l'anime lui-même ou s'en remet à un formateur indépendant familier de la transaction et de la gestion. En septembre 2026, la {/etudes-de-cas-ia#mission-immobilier-etudes|responsable des analyses et des données d'un groupe immobilier}, formée seule une journée à distance sur Claude, a interrogé en français ses fichiers de ventes, masqué son fichier clients avant import, produit pour PowerPoint le support de résultats destiné à la direction, puis créé une compétence pour la note qu'elle rédige chaque mois."
+ },
+ "apres": {
+  "titre": "Un agent qui répond aux demandes et aux copropriétaires",
+  "texte": "Une fois les usages installés, l'étape suivante est souvent la connexion à vos logiciels : un agent qui trie et qualifie ce qui arrive des portails, ou un assistant qui répond aux copropriétaires à partir du règlement et des procès-verbaux. Masteria conçoit l'outil, le développe et le connecte à votre logiciel de transaction ou de gestion. Facturé au forfait, un tel développement n'est pas finançable par votre OPCO."
+ },
+ "faqTitre": "Formation IA immobilier : vos questions",
  "cta": {
-  "h2": "Formons votre agence ou votre réseau sur ses vrais mandats",
-  "p": "Décrivez-nous votre activité (transaction, gestion, syndic, promotion), votre équipe, vos outils et vos enjeux du moment. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Formons votre agence sur les mandats et les dossiers du moment",
+  "p": "Présentez-nous votre activité (transaction, gestion, copropriété, promotion), l'équipe, vos logiciels et vos priorités. Le lendemain, programme, dates et devis vous attendent, accompagnés des documents que réclame votre OPCO."
  }
 }

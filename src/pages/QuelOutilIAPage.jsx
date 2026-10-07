@@ -39,8 +39,8 @@ const TOOLS = {
     name: 'ChatGPT', short: 'ChatGPT', logo: 'chatgpt', color: '#10A37F',
     spoke: 'chatgpt', hub: 'formation-chatgpt',
     comparatif: { slug: 'chatgpt-vs-claude', label: 'ChatGPT vs Claude' },
-    pitch: "Le plus polyvalent et le plus adopté, avec l'écosystème le plus riche (GPTs personnalisés, intégrations, API).",
-    astuce: "créez un GPT personnalisé pour réutiliser ces consignes sans les recoller à chaque fois",
+    pitch: "Le plus polyvalent et le plus adopté, avec l'écosystème le plus riche (compétences, plugins, API).",
+    astuce: "créez une compétence ou un projet pour réutiliser ces consignes sans les recoller à chaque fois",
     edge: "des usages variés au quotidien et le besoin d'un écosystème ouvert",
   },
   claude: {
@@ -72,7 +72,7 @@ const TOOLS = {
     spoke: 'mistral', hub: 'formation-mistral-ai',
     comparatif: { slug: 'mistral-vs-chatgpt', label: 'Mistral vs ChatGPT' },
     pitch: "L'acteur français : hébergement et juridiction européens, assistant Vibe (anciennement Le Chat) pour le quotidien.",
-    astuce: "enregistrez-les comme agents dans Vibe pour les relancer en un clic",
+    astuce: "enregistrez-les comme compétences (Skills) dans Vibe pour les relancer en un clic",
     edge: "une exigence de souveraineté ou de juridiction européenne",
   },
 }
@@ -95,7 +95,7 @@ const USAGES = [
     // Microsoft 365 Copilot n'est pas un outil de développement : le produit de
     // référence côté Microsoft est GitHub Copilot, distinct et vendu à part.
     w: { claude: 3, chatgpt: 3, gemini: 2, mistral: 2, copilot: 1 },
-    note: 'Côté Microsoft, le produit pour le code est GitHub Copilot, distinct de Microsoft 365 Copilot évalué ici.' },
+    note: 'Côté Microsoft, le produit pour le code est GitHub Copilot, distinct de Microsoft Copilot (anciennement Microsoft 365 Copilot) évalué ici.' },
   { id: 'client', icon: Headphones, label: 'Répondre à des clients en volume', ex: 'tickets, réclamations, FAQ', short: 'réponses client',
     w: { chatgpt: 3, mistral: 2, claude: 2, gemini: 2, copilot: 2 } },
   { id: 'recherche', icon: Search, label: 'Chercher et faire de la veille', ex: 'marché, réglementation, concurrence', short: 'recherche et veille',
@@ -350,7 +350,7 @@ const FAQ = [
   { q: 'Peut-on utiliser plusieurs outils en même temps ?', a: "Oui, et les organisations matures le font : un outil bureautique intégré (Copilot ou Gemini) pour le quotidien dans les documents, et un assistant généraliste (ChatGPT, Claude ou Mistral) pour les tâches de fond. Le simulateur propose d'ailleurs cette combinaison quand vos réponses la justifient. L'important est un cadre d'usage clair : qui utilise quoi, avec quelles données." },
   { q: 'Faut-il une IA souveraine, et laquelle ?', a: "Tout dépend de ce que recouvre votre exigence, et la confusion coûte cher. Si elle porte sur la localisation des données, les offres entreprise des cinq acteurs permettent un traitement en Europe : le critère ne départage plus grand-chose. Si elle porte sur la nationalité de l'éditeur, parce que vous voulez échapper au droit extraterritorial américain, alors Mistral AI est le seul des cinq à être une société européenne, et le débat s'arrête là. C'est pour cette raison que notre comparateur traite cette exigence comme éliminatoire et non comme un bonus : une obligation réglementaire ne se compense pas par de meilleures performances ailleurs." },
   { q: 'Et la confidentialité des données ?', a: "Elle se règle par le choix de l'offre, pas seulement de l'outil : les offres professionnelles des cinq acteurs excluent par défaut vos données de l'entraînement des modèles, ce que ne garantissent pas les comptes gratuits grand public. La règle d'or : des comptes professionnels administrés, une charte d'usage écrite, et la liste de ce qui ne doit jamais être saisi. Ce cadrage fait partie de chacune de nos formations." },
-  { q: 'Cette recommandation vaut-elle décision définitive ?', a: "Non, elle donne un point de départ argumenté. Le bon choix dépend aussi de vos documents réels, de vos volumes et de vos contraintes d'achat. Pour décider en connaissance de cause : une formation panorama multi-outils qui compare les cinq sur vos propres cas, ou un échange de cadrage gratuit avec Masteria." },
+  { q: 'Cette recommandation vaut-elle décision définitive ?', a: "Non, elle donne un point de départ argumenté. Le bon choix dépend aussi de vos documents réels, de vos volumes et de vos contraintes d'achat. Pour décider en connaissance de cause : une formation panorama multi-outils qui compare les cinq sur vos propres cas, ou un premier échange de 30 minutes, offert par Masteria." },
 ]
 
 function FaqItem({ q, a }) {

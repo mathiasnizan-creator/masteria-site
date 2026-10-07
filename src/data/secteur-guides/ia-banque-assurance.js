@@ -2,7 +2,53 @@
 // Vérifié le 03/10/2026 : EUR-Lex (règlement DORA (UE) 2022/2554 art. 28, 30 et 64 ; règlement (UE) 2024/1689 art. 6, 27, 50, 113 et annexe III ; omnibus (UE) 2026/1744), ACPR (recommandation 2024-R-02 du 2 juillet 2024, qui remplace la 2022-R-01), Légifrance (CMF art. L. 511-33 et L. 561-18, code des assurances art. L. 354-3, arrêté du 3 novembre 2014 art. 232), Banque de France (discours de Denis Beau du 9 septembre 2026), AMF (communiqué du 2 février 2026). Aucune étude de cas publiée ne relève du secteur : le cas est une mise en situation.
 export default {
   slug: 'ia-banque-assurance',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  secteur: {
+    metaTitle: "IA banque & assurance : cabinet conseil IA | Masteria",
+    metaDesc: "IA pour la banque et l'assurance : synthèse de dossiers, conformité LCB-FT, souscription. Conseil et dev sur mesure. 30 min de cadrage offertes.",
+  },
+  hero: {
+    chips: ["DORA et contrats de prestataires", "Réclamations sous la recommandation 2024-R-02", "Secret bancaire préservé"],
+    lien: "Voir les règles qui cadrent le projet",
+  },
+  offresTitre: {
+    kicker: "Trois entrées pour un établissement",
+    h2: "Classer vos cas par texte, outiller les dossiers, automatiser les dépouillements",
+  },
+  enjeux: {
+    kicker: "Banque, assurance, gestion d'actifs",
+    h2: "L'IA rend du temps entre la pièce reçue et la décision",
+    difficultes: "Les points de friction d'un établissement financier",
+    prestations: "Les outils que nous développons pour la finance",
+  },
+  regieBloc: {
+    kicker: "Développeur détaché",
+    h2: "Coder derrière votre pare-feu, à côté de vos équipes conformité",
+    accroche: "Quand les dossiers de crédit, les sinistres ou les échanges avec les clients ne doivent pas sortir de votre système d'information, le développeur IA rejoint vos équipes dans votre environnement contrôlé et documente chaque accès pour votre contrôle interne.",
+    lien: "Les modèles d'engagement possibles",
+  },
+  formationBloc: {
+    kicker: "Former conseillers et gestionnaires",
+    h2: "Des ateliers sur vos réclamations et sur des dossiers anonymisés",
+    lien: "Voir l'offre de formation",
+  },
+  faqBloc: {
+    h2: "Banque et assurance : vos questions",
+    texte: "Un point de conformité vous retient avant de lancer le projet ?",
+    lien: "Posez-le à notre équipe",
+  },
+  maillage: {
+    h2: "D'autres secteurs régulés",
+  },
+  cta: {
+    titre: "Quel dossier de votre établissement outiller en premier ?",
+    texte: "Dites-nous quel flux vous occupe (réclamations, souscription, contrôle interne) et quel texte s'y applique. Nous revenons vers vous sous 24 heures pour caler les 30 minutes de cadrage offertes, avec votre conformité si vous le souhaitez.",
+  },
+  equipe: {
+    titre: "Une équipe réunie autour de votre conformité",
+    texte: "Masteria est l'entreprise de Mathias Nizan, créée à Lyon en 2022. Pour une banque ou un assureur, Mathias constitue l'équipe selon le dossier : un consultant qui traduit DORA et le règlement sur l'IA en exigences de projet, un développeur qui travaille dans votre environnement, un formateur pour les conseillers. Ces intervenants sont indépendants, et aucun ne vend de licence ni de plateforme.",
+  },
   intro: "Dans une banque ou une compagnie d'assurance, un outil d'IA générative entre dans un cadre déjà écrit. Le règlement DORA gouverne le contrat du fournisseur de modèle, les règles d'externalisation fixent ce que le superviseur doit savoir, et le règlement européen sur l'IA encadre tout outil qui note un client. Masteria, cabinet spécialisé en IA fondé à Lyon en 2022, instruit ces points avec votre conformité et votre sécurité informatique avant de développer l'outil chez vous. Nous conseillons de commencer par le traitement des réclamations, un processus déjà daté et mesuré.",
 
   offresIntro: [
@@ -12,14 +58,21 @@ export default {
 
   offres: [
     {
+      title: "Cartographie réglementaire des cas d'usage",
+      cta: "Notre conseil en stratégie IA",
       desc: "Nous classons vos cas d'usage selon le texte qui les gouverne : réclamations sous la recommandation ACPR 2024-R-02, scoring sous l'annexe III du règlement européen sur l'IA, prestataires sous DORA, dossiers de vigilance sous les règles de lutte contre le blanchiment. Chaque cas reçoit un niveau de risque, un porteur métier et une condition de validation, dans une feuille de route que votre comité des risques peut arbitrer.",
       points: ["Classement des cas par texte applicable", "Éléments pour le registre DORA", "Feuille de route arbitrable"],
     },
     {
+      title: "Assistants qui lisent contrats et procédures",
+      cta: "Notre atelier de développement",
+      secondaryCta: "Outils sur mesure par métier",
       desc: "Nous développons des assistants qui lisent vos contrats et vos procédures : qualification et projet de réponse à une réclamation, fiche de synthèse d'un dossier professionnel, comparaison de garanties entre deux contrats. Chaque proposition de l'outil cite la clause ou la pièce source, et l'historique des échanges est journalisé dans votre environnement pour le contrôle permanent.",
       points: ["Projets de réponse sourcés", "Journalisation pour le contrôle permanent", "Déploiement dans votre environnement"],
     },
     {
+      title: "Dépouillements automatisés avant décision",
+      cta: "Automatiser un processus avec nous",
       desc: "Nous automatisons les dépouillements qui précèdent une décision humaine : tri des courriers entrants, extraction des pièces d'un dossier, calcul des échéances réglementaires, préparation des tableaux de suivi du contrôle interne. Aucune réponse ne part vers un client sans la validation d'un gestionnaire, et les automatisations tournées vers le client n'ont jamais accès aux dossiers de vigilance.",
       points: ["Tri et routage des courriers", "Échéances réglementaires calculées", "Périmètres de données cloisonnés"],
     },
@@ -144,11 +197,11 @@ export default {
   ],
 
   sources: [
-    { name: "EUR-Lex : règlement (UE) 2022/2554 sur la résilience opérationnelle numérique du secteur financier (DORA), articles 28, 30 et 64", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32022R2554" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (articles 6, 27, 50 et annexe III)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
+    { name: "EUR-Lex, DORA (règlement (UE) 2022/2554) : contrats avec les prestataires TIC, articles 28, 30 et 64", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32022R2554" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : notation de crédit et tarification d'assurance (annexe III), transparence (article 50)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=CELEX:32024R1689" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : le haut risque bancaire reporté au 2 décembre 2027", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra" },
     { name: "ACPR : recommandation 2024-R-02 du 2 juillet 2024 sur le traitement des réclamations", url: "https://acpr.banque-france.fr/system/files/2024-12/20240702_Recommandation_2024-R-02.pdf" },
-    { name: "Banque de France : discours de Denis Beau, « Intelligence artificielle : les nouvelles frontières du risque » (9 septembre 2026)", url: "https://www.banque-france.fr/system/files/2026-09/Discours-D-Beau_2026-09-09_ADB-Conference-IA.pdf" },
+    { name: "Banque de France : Denis Beau sur les nouvelles frontières du risque lié à l'IA (discours du 9 septembre 2026)", url: "https://www.banque-france.fr/system/files/2026-09/Discours-D-Beau_2026-09-09_ADB-Conference-IA.pdf" },
     { name: "AMF : l'intelligence artificielle déjà largement adoptée par les acteurs des marchés financiers (communiqué du 2 février 2026)", url: "https://www.amf-france.org/fr/actualites-publications/communiques/communiques-de-lamf/lintelligence-artificielle-deja-largement-adoptee-par-les-acteurs-des-marches-financiers-selon-une" },
     { name: "Légifrance : code monétaire et financier, article L. 511-33 (secret professionnel bancaire)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000049391715" },
     { name: "Légifrance : code monétaire et financier, article L. 561-18 (confidentialité de la déclaration de soupçon)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037825428" },

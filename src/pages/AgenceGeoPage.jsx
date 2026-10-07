@@ -25,7 +25,38 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * aucun client nommé, aucune adresse locale inventée. Genève (CH) : pas d'OPCO,
  * cadre suisse. Design premium cabinet identique à /agence-ia (kickers, icônes
  * lucide, cartes radius 16, CTA final sombre, accent #2563EB).
+ *
+ * MODE PAGE PROPRE (drapeau `pagePropre: true` dans agence-guides/<slug>.js) :
+ * le guide fournit tout le texte, le gabarit masque ses phrases communes aux
+ * autres villes. Champs reconnus (tous facultatifs, repli sur le texte d'origine) :
+ *   hero { chips: string[], lien }        chips de présence et bouton vers #offres
+ *   ville { …champs de agence-geo-data.js }   remplace les champs de données
+ *     (heroSubtitle, keyFacts, whyHere, localEconomy, presence, useCasesLocal…)
+ *   offresTitre { kicker, h2 }            section « Nos expertises »
+ *   offres[i] { title, cta, secondaryCta, desc, points } (fusionné avec OFFERS)
+ *   offresNote { titre, texte }           encadré sous les offres (masqué si absent)
+ *   ancrage { kicker, h2, economie, presence, prestations }   section locale
+ *   formationBloc { kicker, h2, lien }    bloc formation (lien = libellé vers le catalogue)
+ *   etapesBloc { kicker, h2 }             déroulé (étapes dans `etapes`)
+ *   faqBloc { h2, texte, lien: { href, label } }   aside de la FAQ
+ *   maillage { villes, expertises }       titres du maillage ; liens dans un <nav>, sans paragraphe
+ *   cta { titre, texte, ligne }           CTA final (bouton inchangé, ligne masquée si absente)
+ *   equipe { titre, texte, chiffres }     « Qui intervient » (chiffres masqués si absents)
+ * Masqués : signature « Mis à jour en… » (remplacée par la date de revue), FounderNote,
+ * paragraphe de liens « Explorer nos expertises », paragraphe commun « Qui intervient »
+ * et ses chiffres. OfficialSources passe en `lean`.
  */
+
+/* Paragraphe de guide suivi d'un lien interne facultatif : { texte, lien: { href, label } } */
+function TexteLien({ bloc, style, linkStyle }) {
+  if (!bloc?.texte) return null
+  return (
+    <p style={style}>
+      {bloc.texte}
+      {bloc.lien?.href && <>{' '}<Link to={bloc.lien.href} style={linkStyle}>{bloc.lien.label}</Link>.</>}
+    </p>
+  )
+}
 
 const c = '#2563EB'
 const cLight = '#DBEAFE'
@@ -103,11 +134,15 @@ export default function AgenceGeoPage() {
   const location = useLocation()
   const isDesktop = useIsDesktop()
   const slug = location.pathname.replace(/^\//, '')
-  const city = getAgenceGeoCity(slug)
   // Texte propre à la page (src/data/agence-guides/<slug>.js) : quand il existe, il
   // remplace tous les blocs de texte communs du gabarit (offres, déroulé, formation, FAQ).
   const guidePromise = agenceGuidePromise(slug)
   const guide = guidePromise ? use(guidePromise) : null
+  // Page propre : le guide fournit tout le texte, y compris les titres et les blocs de fin
+  const propre = Boolean(guide?.pagePropre)
+  const cityBase = getAgenceGeoCity(slug)
+  const city = cityBase && propre && guide.ville ? { ...cityBase, ...guide.ville } : cityBase
+  const MaillageWrap = propre ? 'nav' : 'div'
 
   // Patron éditorial asymétrique réutilisable (offres / FAQ)
   const editorialGrid = isDesktop
@@ -147,6 +182,7 @@ export default function AgenceGeoPage() {
   const MODIFIED = guide?.dateModified || '2026-08-05'
   const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
   const modifiedLabel = `${MOIS[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}`
+  const revueLabel = `${Number(MODIFIED.slice(8, 10))} ${MOIS[Number(MODIFIED.slice(5, 7)) - 1]} ${MODIFIED.slice(0, 4)}`
   const articleJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -168,8 +204,8 @@ export default function AgenceGeoPage() {
     },
     // Sources d'autorité du champ conseil/gouvernance évoqué sur la page
     citation: [
-      { '@type': 'CreativeWork', name: 'Règlement (UE) 2024/1689 — AI Act', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-      { '@type': 'CreativeWork', name: 'CNIL — Intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+      { '@type': 'CreativeWork', name: 'Règlement (UE) 2024/1689 (AI Act)', url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+      { '@type': 'CreativeWork', name: 'CNIL : intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
       ...(guide?.sources || []).map(src => ({ '@type': 'CreativeWork', name: src.name, url: src.url })),
     ],
   }
@@ -179,11 +215,11 @@ export default function AgenceGeoPage() {
     isFR
       ? {
           q: `Combien coûte une agence IA ${city.nameLoc} ?`,
-          a: "Les budgets dépendent de la mission. Ordres de grandeur constatés sur le marché français : 5 000 à 30 000 € pour un audit ou un cadrage stratégique, 15 000 à 80 000 € pour le développement d'un outil ou d'un agent sur mesure, 5 000 à 50 000 € pour l'automatisation d'un périmètre de processus. Chez Masteria, le premier échange de cadrage est gratuit et chaque proposition est forfaitaire. À noter : le conseil et le développement sur mesure ne sont pas finançables par l'OPCO ; seule la formation l'est.",
+          a: "Les budgets dépendent de la mission. Ordres de grandeur constatés sur le marché français : 5 000 à 30 000 € pour un audit ou un cadrage stratégique, 15 000 à 80 000 € pour le développement d'un outil ou d'un agent sur mesure, 5 000 à 50 000 € pour l'automatisation d'un périmètre de processus. Chez Masteria, les 30 premières minutes de cadrage sont offertes et chaque proposition est forfaitaire. À noter : le conseil et le développement sur mesure ne sont pas finançables par l'OPCO ; seule la formation l'est.",
         }
       : {
           q: `Combien coûte une agence IA ${city.nameLoc} et comment se passe la facturation ?`,
-          a: "Les budgets dépendent du périmètre : ordres de grandeur de marché, l'équivalent de quelques milliers à plusieurs dizaines de milliers de francs selon qu'il s'agit d'un cadrage, du développement d'un agent ou de l'automatisation d'un processus. Masteria facture selon le cadre suisse, en CHF ou en EUR selon votre préférence, avec la TVA suisse si vous y êtes assujetti. Il n'existe pas de dispositif de type OPCO en Suisse : chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature. Le premier cadrage est gratuit.",
+          a: "Les budgets dépendent du périmètre : ordres de grandeur de marché, l'équivalent de quelques milliers à plusieurs dizaines de milliers de francs selon qu'il s'agit d'un cadrage, du développement d'un agent ou de l'automatisation d'un processus. Masteria facture selon le cadre suisse, en CHF ou en EUR selon votre préférence, avec la TVA suisse si vous y êtes assujetti. Il n'existe pas de dispositif de type OPCO en Suisse : chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature. Les 30 premières minutes de cadrage sont offertes.",
         },
     {
       q: `Pourquoi choisir Masteria plutôt qu'une autre agence IA ${city.nameLoc} ?`,
@@ -203,7 +239,7 @@ export default function AgenceGeoPage() {
     },
     {
       q: `Travaillez-vous avec les PME ${city.nameLoc} ?`,
-      a: "Oui, l'essentiel de nos missions se mène avec des PME et des ETI. Les cas d'usage les plus rentables s'y trouvent souvent : processus administratifs chargés, équipes réduites, données sous-exploitées. Les propositions forfaitaires et le premier cadrage gratuit sont pensés pour ce format d'entreprise : un périmètre resserré, un budget écrit à l'avance et des résultats mesurables, avec une charge interne réduite pendant la mission.",
+      a: "Oui, l'essentiel de nos missions se mène avec des PME et des ETI. Les cas d'usage les plus rentables s'y trouvent souvent : processus administratifs chargés, équipes réduites, données sous-exploitées. Les propositions forfaitaires et les 30 minutes de cadrage offertes sont pensées pour ce format d'entreprise : un périmètre resserré, un budget écrit à l'avance et des résultats mesurables, avec une charge interne réduite pendant la mission.",
     },
     {
       q: "Faut-il déjà utiliser l'IA en interne pour faire appel à vous ?",
@@ -276,7 +312,7 @@ export default function AgenceGeoPage() {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     '@id': `${SITE}/${city.slug}#service`,
-    name: `Masteria — agence IA ${city.nameLoc}`,
+    name: `Masteria, agence IA ${city.nameLoc}`,
     description: city.metaDesc,
     serviceType: "Conseil et développement IA sur mesure",
     url: `${SITE}/${city.slug}`,
@@ -377,7 +413,7 @@ export default function AgenceGeoPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible (hero sombre) */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 24px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>{propre ? <> · revu le {revueLabel}</> : <>, fondateur de Masteria · Mis à jour en {modifiedLabel}</>}
           </p>
 
           {/* GEO : réponse directe en gras (citable LLM) — accroche */}
@@ -385,7 +421,7 @@ export default function AgenceGeoPage() {
             {guide?.intro ? guide.intro : (
               <>
                 {`Masteria est une agence IA qui intervient ${city.nameLoc} : conseil en stratégie IA et développement d'agents, d'outils et d'automatisations sur mesure, prolongés par la formation des équipes. L'équipe est basée à Lyon et se déplace ${city.nameLoc} en présentiel pour le cadrage et les passations, le reste de la mission se conduisant en distanciel. `}
-                <strong style={{ color: '#fff', fontWeight: 700 }}>Plus de 1 500 professionnels formés, 98 % de satisfaction.</strong>
+                <strong style={{ color: '#fff', fontWeight: 700 }}>Plus de 1 500 professionnels formés.</strong>
               </>
             )}
           </p>
@@ -400,18 +436,18 @@ export default function AgenceGeoPage() {
               <ArrowRight size={16} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
             <a href="#offres" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir nos offres
+              {propre && guide.hero?.lien ? guide.hero.lien : 'Voir nos offres'}
             </a>
           </div>
 
           {/* chips de présence */}
           <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: city.keyFacts && city.keyFacts.length > 0 ? 40 : 0 }}>
-            {[
+            {(propre && guide.hero?.chips ? guide.hero.chips.map((label, k) => ({ icon: [BadgeCheck, Building2, MapPin, MonitorSmartphone][k % 4], label })) : [
               { icon: BadgeCheck, label: 'Spécialiste IA depuis 2022' },
               { icon: Building2, label: 'Équipe basée à Lyon' },
               { icon: MapPin, label: `Présentiel ${city.nameLoc}` },
               { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-            ].map(({ icon: Icon, label }) => (
+            ]).map(({ icon: Icon, label }) => (
               <span key={label} style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
                 <Icon size={14} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
                 {label}
@@ -441,8 +477,8 @@ export default function AgenceGeoPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>Nos expertises</div>
-              <h2 style={{ ...h2Style, marginBottom: 18 }}>Ce que fait notre agence IA {city.nameLoc}</h2>
+              <div style={kickerStyle}>{propre && guide.offresTitre?.kicker ? guide.offresTitre.kicker : 'Nos expertises'}</div>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>{propre && guide.offresTitre?.h2 ? guide.offresTitre.h2 : <>Ce que fait notre agence IA {city.nameLoc}</>}</h2>
               <p style={{ ...answerStyle, background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 'none', margin: '0 0 18px' }}>
                 {guide?.offresIntro ? <strong style={{ color: '#0A0A0A' }}>{guide.offresIntro[0]}</strong> : (
                   <>
@@ -492,6 +528,14 @@ export default function AgenceGeoPage() {
                   </div>
                 ))}
               </div>
+              {propre ? (guide.offresNote?.texte && (
+              <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                  {guide.offresNote.titre && <><strong style={{ color: '#0A0A0A' }}>{guide.offresNote.titre}</strong>{' '}</>}
+                  {guide.offresNote.texte}
+                </p>
+              </div>
+              )) : (
               <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
                   <strong style={{ color: '#0A0A0A' }}>Du conseil à la solution livrée, sous un même toit.</strong>{' '}
@@ -501,6 +545,7 @@ export default function AgenceGeoPage() {
                   <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>automatisation IA</Link>.
                 </p>
               </div>
+              )}
             </div>
           </div>
         </div>
@@ -509,8 +554,8 @@ export default function AgenceGeoPage() {
       {/* ── SECTION LOCALE UNIQUE (anti-doorway, cartes à filet supérieur) ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Ancrage {city.regionLong}</div>
-          <h2 style={h2Style}>Pourquoi une agence IA pour les entreprises {city.nameLoc} ?</h2>
+          <div style={kickerStyle}>{propre && guide.ancrage?.kicker ? guide.ancrage.kicker : <>Ancrage {city.regionLong}</>}</div>
+          <h2 style={h2Style}>{propre && guide.ancrage?.h2 ? guide.ancrage.h2 : <>Pourquoi une agence IA pour les entreprises {city.nameLoc} ?</>}</h2>
           <p style={answerStyle}>
             <strong style={{ color: '#0A0A0A' }}>{city.whyHere}</strong>
           </p>
@@ -522,7 +567,7 @@ export default function AgenceGeoPage() {
                 <Landmark size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
               </div>
               <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>Le tissu économique {city.nameLoc}</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{propre && guide.ancrage?.economie ? guide.ancrage.economie : <>Le tissu économique {city.nameLoc}</>}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{city.localEconomy}</p>
               </div>
             </div>
@@ -531,7 +576,7 @@ export default function AgenceGeoPage() {
                 <MapPin size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
               </div>
               <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>Notre présence {city.nameLoc}</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{propre && guide.ancrage?.presence ? guide.ancrage.presence : <>Notre présence {city.nameLoc}</>}</h3>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{city.presence}</p>
               </div>
             </div>
@@ -539,7 +584,7 @@ export default function AgenceGeoPage() {
 
           {/* Cas d'usage locaux par secteur */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', marginBottom: 20, letterSpacing: '-0.01em' }}>
-            Des prestations adaptées aux secteurs {city.nameLoc}
+            {propre && guide.ancrage?.prestations ? guide.ancrage.prestations : <>Des prestations adaptées aux secteurs {city.nameLoc}</>}
           </h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
             {city.useCasesLocal.map(({ sector, usage }) => (
@@ -566,8 +611,8 @@ export default function AgenceGeoPage() {
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <div style={kickerStyle}>Et la formation des équipes ?</div>
-              <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Ancrer les usages après le déploiement</h2>
+              <div style={kickerStyle}>{propre && guide.formationBloc?.kicker ? guide.formationBloc.kicker : 'Et la formation des équipes ?'}</div>
+              <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>{propre && guide.formationBloc?.h2 ? guide.formationBloc.h2 : 'Ancrer les usages après le déploiement'}</h2>
               {guide?.formation ? (
                 <>
                   <p style={answerStyle}><strong style={{ color: '#0A0A0A' }}>{guide.formation[0]}</strong></p>
@@ -598,7 +643,7 @@ export default function AgenceGeoPage() {
                   </Link>
                 )}
                 <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: city.formationSlug ? '#6B7280' : c, fontWeight: city.formationSlug ? 600 : 700, fontSize: 14, textDecoration: 'none' }}>
-                  {city.formationSlug ? 'Tout le catalogue de formations' : 'Découvrir les formations IA'}
+                  {propre && guide.formationBloc?.lien ? guide.formationBloc.lien : city.formationSlug ? 'Tout le catalogue de formations' : 'Découvrir les formations IA'}
                   <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                 </Link>
               </div>
@@ -610,8 +655,8 @@ export default function AgenceGeoPage() {
       {/* ── DÉROULÉ D'UNE MISSION (timeline à rail) ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <div style={kickerStyle}>Méthode</div>
-          <h2 style={h2Style}>Le déroulé d'une mission {city.nameLoc}</h2>
+          <div style={kickerStyle}>{propre && guide.etapesBloc?.kicker ? guide.etapesBloc.kicker : 'Méthode'}</div>
+          <h2 style={h2Style}>{propre && guide.etapesBloc?.h2 ? guide.etapesBloc.h2 : <>Le déroulé d'une mission {city.nameLoc}</>}</h2>
           {!guide?.etapes && (
             <>
             <p style={{ ...answerStyle, background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', maxWidth: 'none' }}>
@@ -724,11 +769,15 @@ export default function AgenceGeoPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes — agence IA {city.nameLoc}</h2>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>{propre && guide.faqBloc?.h2 ? guide.faqBloc.h2 : <>Questions fréquentes — agence IA {city.nameLoc}</>}</h2>
+              {propre ? (
+                <TexteLien bloc={guide.faqBloc} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} linkStyle={{ color: c, fontWeight: 600 }} />
+              ) : (
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                 Vous comparez plusieurs prestataires ? Lisez notre guide{' '}
                 <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA : comment choisir en 2026</Link>.
               </p>
+              )}
             </div>
             <div>
               {faqItems.map((item, i) => (
@@ -743,9 +792,9 @@ export default function AgenceGeoPage() {
       <section style={{ padding: 'clamp(48px, 6vw, 72px) 24px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 16 }}>
-            Notre agence IA dans d'autres villes
+            {propre && guide.maillage?.villes ? guide.maillage.villes : "Notre agence IA dans d'autres villes"}
           </h3>
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
+          <MaillageWrap {...(propre ? { 'aria-label': 'Nos autres villes' } : {})} style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 28 }}>
             {/* Ancre volontairement non exact-match « Agence IA Lyon » : cette requête
                 appartient à /agence-ia-lyon (chip rendu via otherCities ci-dessous). */}
             <Link to="/agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EFF6FF', border: '1px solid #BFDBFE', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 700, color: '#1E40AF', textDecoration: 'none' }}>
@@ -759,11 +808,28 @@ export default function AgenceGeoPage() {
             <Link to="/meilleure-agence-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
               <Globe size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> Comparatif meilleure agence IA
             </Link>
-          </div>
+          </MaillageWrap>
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 12 }}>
-            Explorer nos expertises et notre méthode
+            {propre && guide.maillage?.expertises ? guide.maillage.expertises : 'Explorer nos expertises et notre méthode'}
           </h3>
+          {propre ? (
+          <nav aria-label="Expertises et méthode" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
+            {[
+              ['/ia-secteurs', "L'IA par secteur"],
+              ['/solutions-ia', 'Les solutions IA par livrable'],
+              ['/methode-projet-ia', 'La méthode de projet IA'],
+              ['/diagnostic-ia', 'Le diagnostic IA'],
+              ['/conseil-ia-pme', 'Le conseil IA pour PME'],
+              ['/chief-ai-officer', 'Chief AI Officer'],
+              ['/contact?type=projet', 'Écrire à notre équipe'],
+            ].map(([href, label]) => (
+              <Link key={href} to={href} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 8, padding: '8px 14px', fontSize: 13.5, fontWeight: 600, color: '#374151', textDecoration: 'none' }}>
+                <ArrowRight size={13} style={{ color: '#6B7280' }} aria-hidden="true" /> {label}
+              </Link>
+            ))}
+          </nav>
+          ) : (
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             {`Pour comprendre comment nous adaptons l'IA à votre activité ${city.nameLoc}, parcourez notre `}
             <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>expertise IA par secteur</Link> et notre panorama de{' '}
@@ -774,6 +840,7 @@ export default function AgenceGeoPage() {
             <Link to="/chief-ai-officer" style={{ color: c, fontWeight: 600 }}>Chief AI Officer</Link>. Une question précise ?{' '}
             <Link to="/contact?type=projet" style={{ color: c, fontWeight: 600 }}>Contactez notre équipe</Link>.
           </p>
+          )}
         </div>
       </section>
 
@@ -786,18 +853,20 @@ export default function AgenceGeoPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Parlons de votre projet IA {city.nameLoc}
+              {propre && guide.cta?.titre ? guide.cta.titre : <>Parlons de votre projet IA {city.nameLoc}</>}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 560, marginLeft: 'auto', marginRight: 'auto' }}>
-              Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, stratégie à cadrer. Nous revenons vers vous sous 24 heures et vous proposons 30 minutes de cadrage, offertes et sans engagement.
+              {propre && guide.cta?.texte ? guide.cta.texte : 'Décrivez votre contexte en quelques lignes : processus chronophages, outils à construire, stratégie à cadrer. Nous revenons vers vous sous 24 heures et vous proposons 30 minutes de cadrage, offertes et sans engagement.'}
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
+            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: propre && !guide.cta?.ligne ? 0 : 24 }}>
               Contacter notre équipe
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              {`Agence IA ${city.nameLoc} · Conseil, développement sur mesure, automatisation · Équipe basée à Lyon`}
-            </p>
+            {(!propre || guide.cta?.ligne) && (
+              <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+                {propre ? guide.cta.ligne : `Agence IA ${city.nameLoc} · Conseil, développement sur mesure, automatisation · Équipe basée à Lyon`}
+              </p>
+            )}
           </div>
         </div>
       </section>
@@ -808,31 +877,44 @@ export default function AgenceGeoPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              {propre && guide.equipe?.titre ? guide.equipe.titre : 'Un cabinet spécialisé IA, indépendant des éditeurs'}
             </h2>
+            {propre && guide.equipe?.texte ? (
+              <>
+                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }}>{guide.equipe.texte}</p>
+                <nav aria-label="Preuves" style={{ display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 14 }}>
+                  <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>Études de cas</Link>
+                  <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>Revue de presse</Link>
+                  <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>
+                </nav>
+              </>
+            ) : (
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
               Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
+            )}
           </div>
+          {(!propre || guide.equipe?.chiffres) && (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
-            {[
+            {(propre ? guide.equipe.chiffres : [
               ['Depuis 2022', 'spécialisé uniquement IA'],
               ['+1 500', 'professionnels formés'],
               ['Indépendant', 'des éditeurs de solutions'],
               ['International', 'Europe, États-Unis, Inde'],
-            ].map(([k, v]) => (
+            ]).map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
                 <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
 
-      <FounderNote />
+      {!propre && <FounderNote />}
 
-      <OfficialSources />
+      <OfficialSources lean={propre} />
     </>
   )
 }

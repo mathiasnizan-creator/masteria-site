@@ -1267,9 +1267,8 @@ export function TrainingCard({ tag, title, desc, price, unit, color, onClick }) 
 export function StatsBar() {
   const stats = [
     { num: '+1 500', label: 'Professionnels formés' },
-    { num: '98%', label: 'Satisfaction' },
-    { num: '100%', label: 'Finançable OPCO' },
-    { num: '+6h', label: 'Productivité / semaine' },
+    { num: '100+', label: 'Programmes au catalogue' },
+    { num: 'OPCO', label: 'Finançable selon votre branche' },
     { num: '3', label: 'Pays couverts' },
   ];
   return (

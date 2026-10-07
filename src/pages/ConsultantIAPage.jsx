@@ -1,23 +1,23 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, Compass, Code2, GraduationCap, ShieldCheck, BookOpen, Users, Target } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Compass, Code2, GraduationCap, ShieldCheck, BookOpen, Users, Target, FolderSearch } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import FounderNote from '../components/FounderNote'
-import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page « Consultant IA » — GUIDE MÉTIER à double tunnel.
- * Intention SERP dominante sur « consultant ia » (720/mois) = métier/emploi
- * (fiche métier, compétences, salaire, comment le devenir), PAS commercial pur.
- * La page colle à cette intention pour être rankable, puis canalise :
- *   - « je veux DEVENIR consultant IA » → formations Masteria
- *   - « je veux RECRUTER un consultant IA » → conseil / cabinet Masteria
- * Capte aussi freelance ia (KD14), expert ia, consultant intelligence artificielle.
- * Distincte de /meilleur-cabinet-conseil-ia (choix d'un cabinet) et
- * /conseil-intelligence-artificielle (offre de conseil). Intégrité : ordres de
- * grandeur de marché, aucun chiffre client inventé. Accent bleu #2563EB.
+ * Page « Consultant IA » : GUIDE MÉTIER à double tunnel.
+ * Intention dominante sur « consultant ia » = métier et emploi (rôle,
+ * compétences, salaire, TJM, comment le devenir), avec un second public qui
+ * veut en faire intervenir un. La page sert les deux :
+ *   - « je veux DEVENIR consultant IA » → formations Masteria ;
+ *   - « je veux FAIRE INTERVENIR un consultant IA » → conseil Masteria.
+ * Distincte de /meilleur-cabinet-conseil-ia (choix d'un cabinet), de
+ * /chief-ai-officer (rôle de direction) et de /conseil-intelligence-artificielle
+ * (offre). Réécrite le 07/10/2026 pour le texte propre : missions, compétences,
+ * repères datés (Crédoc, AI Act après l'omnibus), trois missions résumées avec
+ * leur ancre, sources rédigées pour la page. Salaires et TJM : ordres de
+ * grandeur repris de la version précédente, sans source publiée (à trancher).
+ * Jamais Gartner. Accent bleu #2563EB.
  */
 
 const SITE = 'https://www.master-ia.fr'
@@ -25,9 +25,12 @@ const SLUG = 'consultant-ia'
 const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const DATE_PUBLISHED = '2026-07-30'
+const DATE_MODIFIED = '2026-10-07'
+const RDV_URL = '/contact?type=projet&rdv=30'
 
-const META_TITLE = 'Consultant IA : métier, compétences, TJM et salaire | Masteria'
-const META_DESC = "Consultant IA : rôle, compétences, TJM et salaire, comment le devenir ou en recruter un. Le guide du métier de consultant en intelligence artificielle."
+const META_TITLE = 'Consultant IA : métier, compétences, TJM, salaire | Masteria'
+const META_DESC = "Consultant IA : missions, compétences attendues, salaire et TJM observés en 2026, comment le devenir et comment en recruter un pour votre entreprise."
 const KEYWORDS = 'consultant ia, consultant intelligence artificielle, consultant en ia, expert ia, expert en intelligence artificielle, freelance ia, consultant ia freelance, devenir consultant ia, salaire consultant ia, tjm consultant ia, fiche métier consultant ia, prestataire ia'
 
 /* ── Design system local (aligné sur les pages money) ── */
@@ -43,112 +46,136 @@ const tableWrapStyle = { overflowX: 'auto', background: '#fff', border: '1px sol
 const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #E5E7EB', whiteSpace: 'nowrap' }
 const srOnlyStyle = { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }
 
-/* Les missions d'un consultant IA (le cœur du métier) */
+/* Les cinq missions d'un consultant IA */
 const MISSIONS = [
-  { icon: Compass, title: 'Auditer les usages et les données', body: "Cartographier les processus, les outils et les données de l'organisation pour situer son point de départ et repérer où l'IA a un impact réel." },
-  { icon: Target, title: 'Cadrer et prioriser les cas d\'usage', body: "Trier les idées par valeur et faisabilité, écarter les gadgets, et bâtir une feuille de route que la direction peut réellement tenir." },
-  { icon: Code2, title: 'Choisir les outils et l\'architecture', body: "Sélectionner les modèles et l'architecture (LLM, RAG, agents, intégration au SI) de façon indépendante, selon le contexte et le budget." },
-  { icon: ShieldCheck, title: 'Cadrer la gouvernance', body: "Poser les règles d'usage, la conformité RGPD et AI Act, la sécurité et la supervision humaine des sorties." },
-  { icon: GraduationCap, title: 'Déployer et former les équipes', body: "Accompagner la mise en production et transmettre les compétences pour que les équipes deviennent autonomes." },
+  { icon: Compass, title: 'Observer le travail et les données', body: "Il passe du temps avec les équipes, lit leurs fichiers et leurs procédures, repère les tâches répétitives et l'IA déjà utilisée sans cadre. Toute recommandation part de ce relevé." },
+  { icon: Target, title: "Retenir les cas d'usage qui valent l'effort", body: "Chaque idée passe deux questions : combien d'heures ou d'euros peut-elle rendre, et que demande-t-elle en données, en outils et en habitudes à changer ? La direction reçoit une liste courte, avec la raison de chaque refus." },
+  { icon: Code2, title: "Choisir l'outil le plus simple qui suffit", body: "Assistant du marché, modèle branché sur vos documents par RAG (une recherche dans vos sources avant chaque réponse), agent capable d'agir dans vos logiciels : il retient la solution la plus légère qui fera l'affaire, sans dépendre d'un éditeur." },
+  { icon: ShieldCheck, title: "Écrire des règles qu'un salarié peut suivre", body: "Charte d'usage, registre, liste des données interdites, relecture humaine des réponses qui engagent l'entreprise : il traduit le RGPD et l'AI Act en consignes applicables sans juriste à côté de soi." },
+  { icon: GraduationCap, title: 'Accompagner les débuts et former des relais', body: "Il suit les premières semaines d'usage, corrige ce qui coince et forme des référents capables de reprendre le flambeau. Sa mission est réussie le jour où l'équipe se passe de lui." },
 ]
 
-/* Les 4 familles de compétences (meter 3 niveaux d'importance) */
+/* Les quatre familles de compétences (jauge à trois niveaux d'usage) */
 const SKILLS = [
-  { fam: 'Compétences techniques', level: 3, detail: "Modèles de langage (LLM), prompt engineering, RAG, notions de data et de MLOps, intégration par API et MCP." },
-  { fam: 'Conseil & métier', level: 3, detail: "Analyse de processus, calcul du ROI, priorisation des cas d'usage, conduite du changement." },
-  { fam: 'Réglementaire & sécurité', level: 2, detail: "RGPD, AI Act, souveraineté et sécurité des données, classification des cas d'usage par niveau de risque." },
-  { fam: 'Pédagogie & communication', level: 2, detail: "Vulgariser, convaincre une direction, former et embarquer les équipes sur le terrain." },
+  { fam: 'Socle technique', level: 3, detail: "Modèles de langage et leurs limites, écriture de prompts, RAG, agents, connexion aux logiciels par API ou par MCP (un standard ouvert pour brancher un assistant sur d'autres outils)." },
+  { fam: 'Lecture du métier client', level: 3, detail: "Analyse des processus, chiffrage du temps rendu, priorisation, conduite du changement, aisance avec un directeur financier comme avec un technicien." },
+  { fam: 'Droit et sécurité', level: 2, detail: "RGPD, AI Act et son calendrier, confidentialité des données confiées aux fournisseurs de modèles, classement des usages selon leur niveau de risque." },
+  { fam: 'Pédagogie', level: 2, detail: "Expliquer sans jargon, animer un atelier, convaincre un comité, former des référents qui transmettront à leur tour." },
 ]
 
-/* TJM & salaire — ordres de grandeur du marché français (aucun chiffre inventé) */
+/* Salaires et TJM : ordres de grandeur du marché français, sans valeur de grille */
 const TARIFS = [
-  { profil: 'Consultant IA salarié — junior', montant: '38 000 à 45 000 € / an', note: "0 à 2 ans, souvent un profil data, développement ou métier en évolution." },
-  { profil: 'Consultant IA salarié — confirmé', montant: '50 000 à 70 000 € / an', note: '3 à 6 ans, missions autonomes, expertise sur un domaine.' },
-  { profil: 'Consultant IA salarié — senior / lead', montant: '70 000 à 100 000 € et plus', note: 'Expertise rare, encadrement, souvent en région parisienne.' },
-  { profil: 'Consultant IA freelance (TJM)', montant: '500 à 1 500 € / jour', highlight: true, note: 'Selon la séniorité et la rareté de la compétence ; au-delà pour une expertise pointue (LLM, MLOps).' },
-  { profil: 'Consultant IA via un cabinet', montant: '1 000 à 2 000 € / jour', note: "Facturation d'un cabinet : équipe, méthode, continuité et garanties au-delà d'un profil isolé." },
+  { profil: 'Salarié débutant (0 à 2 ans)', montant: '38 000 à 45 000 € brut / an', note: "Souvent un profil data, développeur ou métier qui s'est spécialisé dans l'IA." },
+  { profil: 'Salarié confirmé (3 à 6 ans)', montant: '50 000 à 70 000 € brut / an', note: 'Missions menées seul, expertise reconnue sur un domaine ou un secteur.' },
+  { profil: "Salarié senior ou responsable d'équipe", montant: '70 000 à 100 000 € et plus', note: "Encadrement et profils rares ; les montants hauts se rencontrent surtout en Île-de-France." },
+  { profil: 'Indépendant, au taux journalier', montant: '500 à 1 500 € / jour', highlight: true, note: "La séniorité et la rareté de la spécialité fixent le prix ; les experts de l'IA générative à grande échelle dépassent ce plafond." },
+  { profil: 'Consultant facturé par un cabinet', montant: '1 000 à 2 000 € / jour', note: "Le tarif couvre une équipe, une méthode, la continuité en cas d'absence et des garanties inscrites au contrat." },
 ]
 
-/* Recruter : freelance vs cabinet vs interne (tableau texte) */
+/* Trois façons de faire intervenir un consultant IA */
 const HIRE = [
-  { voie: 'Freelance indépendant', cout: 'TJM à la journée', force: 'Souplesse, coût maîtrisé sur une mission courte', limite: 'Un seul profil, disponibilité et continuité variables', when: "Un besoin ponctuel, cadré, sur une compétence précise." },
-  { voie: 'Cabinet de conseil IA', cout: 'Forfait ou TJM', force: 'Équipe, méthode, continuité, du cadrage à la formation', limite: 'Coût plus élevé qu\'un freelance', highlight: true, when: "Un projet qui engage plusieurs métiers, dure, ou doit être construit puis transmis." },
-  { voie: 'Recrutement interne', cout: 'Salaire + charges', force: 'Pérennité, connaissance fine de l\'entreprise', limite: 'Profil rare, cher et long à trouver et à garder', when: "Des projets IA continus et nombreux qui justifient un poste à plein temps." },
+  { voie: 'Indépendant', cout: 'Au taux journalier', force: 'Souplesse et coût maîtrisé sur une mission courte', limite: "Un seul profil ; disponibilité et continuité dépendent de lui", when: "Relire une feuille de route, animer un atelier, auditer un outil : une intervention courte." },
+  { voie: 'Cabinet spécialisé IA', cout: 'Forfait ou taux journalier', force: 'Une équipe, une méthode, la continuité, du cadrage à la formation', limite: "Plus cher qu'un indépendant à la journée", highlight: true, when: "Un chantier qui concerne plusieurs services, dure plusieurs mois ou doit aboutir à des outils et à une formation." },
+  { voie: 'Poste interne', cout: 'Salaire et charges', force: 'Présence continue, connaissance fine de la maison', limite: 'Profil rare, long à recruter et difficile à garder', when: "Des projets IA nombreux et continus, qui occupent quelqu'un à plein temps." },
 ]
 
 /* ── Repères citables (GEO) ── */
 const MARKET_STATS = [
-  { value: '2 février 2025', label: "entrée en application de l'article 4 de l'AI Act : les organisations qui déploient de l'IA doivent assurer un niveau de compétence suffisant à leurs équipes, ce qui nourrit la demande de consultants et de formation.", source: 'Union européenne', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
-  { value: '≥ 30 %', label: "des projets d'IA générative seraient abandonnés après le POC, faute de cadrage : c'est précisément le rôle d'un consultant IA de sécuriser ce passage (prévision Gartner publiée en 2024).", source: 'Gartner, 2024', url: 'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025' },
-  { value: '25 mai 2018', label: "application du RGPD, socle de toute mission touchant aux données mobilisées par l'IA.", source: 'CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { value: '48 %', label: "des personnes de 12 ans et plus vivant en France se servaient de l'IA générative en juin 2025, contre 20 % en 2023. Les usages précèdent les règles, et les entreprises cherchent quelqu'un pour les encadrer.", source: 'Crédoc, Baromètre du numérique 2026' },
+  { value: '2 févr. 2025', label: "L'AI Act commence à demander aux entreprises d'agir pour que leurs équipes maîtrisent l'IA (article 4). Dans sa version modifiée par l'omnibus de juillet 2026, ce passage fixe une obligation de moyens, que consultants et formateurs aident à remplir.", source: 'Règlement (UE) 2024/1689', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { value: '2 août 2026', label: "L'information des personnes qui échangent avec une IA devient obligatoire (article 50). Un consultant doit savoir dire lesquels des usages de son client sont concernés.", source: 'Règlement (UE) 2024/1689', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
 ]
 
 const GLOSSARY = [
-  { term: 'Consultant IA', def: "Professionnel qui accompagne les organisations sur l'usage de l'intelligence artificielle : audit, cadrage des cas d'usage, choix des outils, gouvernance et formation. Il peut exercer en indépendant (freelance), au sein d'un cabinet de conseil ou en interne." },
-  { term: 'TJM (taux journalier moyen)', def: "Tarif facturé par jour par un consultant indépendant ou un cabinet. Pour un consultant IA, il varie le plus souvent de 500 à 1 500 € selon la séniorité et la rareté de la compétence." },
-  { term: 'Expert IA', def: "Terme souvent employé comme synonyme de consultant IA, avec un accent plus technique (modèles, architecture, MLOps). Un consultant met davantage l'accent sur la stratégie, le cadrage et la conduite du changement." },
-  { term: 'Freelance / portage salarial', def: "Modes d'exercice indépendants. Le freelance facture en direct ; le portage salarial permet d'exercer en indépendant tout en bénéficiant du statut de salarié porté." },
+  { term: 'Consultant IA', def: "Professionnel qui aide une organisation à adopter l'intelligence artificielle : observation des usages, sélection des usages utiles et des outils, règles, formation. Il exerce en indépendant, dans un cabinet ou comme salarié." },
+  { term: 'TJM (taux journalier moyen)', def: "Prix d'une journée de travail facturée par un indépendant ou un cabinet. Il ne renseigne pas sur le nombre de jours nécessaires : comparez toujours le coût total d'une mission." },
+  { term: 'Expert IA', def: "Terme voisin, à l'accent plus technique : modèles, architecture, mise en production. Le consultant insiste davantage sur le choix des usages et sur l'accompagnement des équipes." },
+  { term: 'Portage salarial', def: "Formule qui permet d'exercer en indépendant tout en restant salarié d'une société de portage, qui facture le client et reverse une rémunération." },
 ]
 
-const REFERENCES = [
-  { label: "Marché de l'emploi des cadres, APEC", url: 'https://www.apec.fr/' },
-  { label: "Règlement européen sur l'IA (AI Act, 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
-  { label: 'Intelligence artificielle, CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { label: 'France Num — transformation numérique des TPE/PME', url: 'https://www.francenum.gouv.fr/' },
+/* Trois missions vues sous l'angle du travail du consultant (faits relus dans
+ * src/data/etudes-de-cas.js le 07/10/2026). */
+const CASES = [
+  {
+    anchor: 'conseil-financier',
+    tag: 'Ateliers',
+    text: "Pour une vingtaine de conseillers financiers du secteur public, la mission s'est déroulée en quatre séances de deux heures : les prompts des assistants qui préparent les réponses aux appels d'offres publics ont été rédigés puis éprouvés avec eux, sur des dossiers récents.",
+    link: 'Voir comment les ateliers se sont déroulés',
+  },
+  {
+    anchor: 'photovoltaique',
+    tag: 'Entretiens',
+    text: "Pour une PME qui vend du matériel solaire, trois entretiens (direction, commercial, opérations) et l'analyse des fichiers de travail ont permis de décrire quatre flux puis de ranger douze gisements de temps par gain attendu et par difficulté sur trois mois.",
+    link: 'Lire le diagnostic par flux',
+  },
+  {
+    anchor: 'distribution',
+    tag: 'Référents',
+    text: "Chez un distributeur informatique de 58 salariés, dix référents ont suivi deux jours de formation en juin 2026, puis conçu onze compétences Claude avec nous. Ce sont ces référents qui accompagneront leurs collègues entre octobre et décembre 2026.",
+    link: 'Découvrir le rôle des dix référents',
+  },
+]
+
+/* Sources de la page (remplacent le bloc commun OfficialSources) */
+const SOURCES = [
+  { name: "L'APEC, observatoire de l'emploi des cadres", note: 'études de rémunération et offres publiées, pour vérifier un salaire avant de le proposer.', url: 'https://www.apec.fr/' },
+  { name: "L'AI Act (règlement 2024/1689) sur EUR-Lex", note: "les articles 4 et 50 que tout consultant doit savoir appliquer aux usages d'un client.", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { name: "La CNIL et l'intelligence artificielle", note: 'les recommandations françaises dès que des données personnelles passent par un modèle.', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: 'France Num, le portail public du numérique pour les TPE et PME', note: "des ressources gratuites pour les petites entreprises qui démarrent avec l'IA.", url: 'https://www.francenum.gouv.fr/' },
 ]
 
 const FAQ = [
   {
     q: "Qu'est-ce qu'un consultant IA ?",
-    a: "Un consultant IA (ou consultant en intelligence artificielle) accompagne les organisations sur l'usage de l'IA : il audite les usages et les données, cadre et priorise les cas d'usage, choisit les outils de façon indépendante, structure la gouvernance (RGPD, AI Act) et forme les équipes. Il peut exercer en indépendant, comme expert conseil IA au sein d'un cabinet, ou en interne. Son rôle n'est pas de coder un modèle, mais de faire en sorte que l'IA produise un résultat utile et adopté sur le terrain.",
+    a: "Un consultant IA, ou consultant en intelligence artificielle, aide une organisation à tirer parti de l'IA. Il observe le travail des équipes, retient les usages qui valent l'effort, choisit les outils sans dépendre d'un éditeur, rédige une charte qui respecte le RGPD comme l'AI Act, puis accompagne et forme les personnes concernées. Il exerce en indépendant, au sein d'un cabinet ou comme salarié d'une entreprise. Le code n'occupe qu'une petite part de son temps : son travail consiste à faire adopter l'IA par des équipes.",
   },
   {
-    q: "Que fait un consultant en intelligence artificielle au quotidien ?",
-    a: "Ses journées alternent des ateliers avec les métiers pour comprendre les processus, l'analyse de la valeur et de la faisabilité des cas d'usage, la rédaction de feuilles de route, la sélection d'outils et d'architectures (LLM, RAG, agents), le cadrage RGPD et AI Act, et l'accompagnement des équipes lors du déploiement. Un bon consultant passe autant de temps à écouter les utilisateurs qu'à manipuler la technologie.",
+    q: 'Que fait un consultant en intelligence artificielle au quotidien ?',
+    a: "Sa semaine alterne des entretiens et des ateliers avec les métiers, l'analyse des tâches et des fichiers, le chiffrage du temps que chaque usage peut rendre, des essais d'outils sur les documents du client, la rédaction des règles d'usage et l'accompagnement des premières semaines d'utilisation. Un consultant utile passe autant de temps à écouter les utilisateurs qu'à tester la technologie.",
   },
   {
-    q: "Quelles compétences faut-il pour être consultant IA ?",
-    a: "Quatre familles se combinent : des compétences techniques (LLM, prompt engineering, RAG, notions de data et de MLOps, intégration par API), des compétences de conseil et métier (analyse de processus, calcul du ROI, priorisation, conduite du changement), une maîtrise du cadre réglementaire (RGPD, AI Act, sécurité des données) et de la pédagogie (vulgariser, convaincre, former). C'est cette combinaison, plus que la seule technique, qui distingue un consultant utile.",
+    q: 'Quelles compétences faut-il pour devenir consultant IA ?',
+    a: "Quatre familles se combinent. Un socle technique : modèles de langage, prompts, RAG, agents, connexions par API ou par MCP. La lecture du métier client : processus, chiffrage, priorisation, conduite du changement. Le droit et la sécurité : RGPD, AI Act, confidentialité des données. La pédagogie : expliquer, animer, convaincre, former. Les clients retiennent surtout la capacité à rattacher chaque outil à une tâche précise et au temps qu'il fera gagner.",
   },
   {
-    q: "Quel est le salaire d'un consultant IA ?",
-    a: "En France, un consultant IA salarié débute le plus souvent entre 38 000 et 45 000 € brut par an, passe à 50 000 à 70 000 € une fois confirmé, et dépasse 70 000 à 100 000 € en profil senior ou lead, davantage pour une expertise rare en région parisienne. Ce sont des ordres de grandeur de marché qui varient selon la formation, le secteur et la localisation.",
+    q: "Quel est le salaire d'un consultant IA en France ?",
+    a: "Sur le marché français, les fourchettes habituelles placent un consultant IA salarié débutant entre 38 000 et 45 000 € brut par an, gagne 50 000 à 70 000 € une fois confirmé, et dépasse 70 000 € comme senior ou responsable d'équipe, au-delà de 100 000 € pour les profils les plus rares, surtout en Île-de-France. Ces montants varient selon la formation, le secteur et la région ; vérifiez-les sur les études de rémunération de l'APEC avant de vous positionner.",
   },
   {
-    q: "Quel TJM pour un consultant IA freelance ?",
-    a: "Le taux journalier moyen d'un consultant IA freelance se situe le plus souvent entre 500 et 1 500 € en France, selon la séniorité et la rareté de la compétence, et davantage pour une expertise pointue (IA générative à l'échelle, MLOps). Un cabinet facture plutôt entre 1 000 et 2 000 € par jour, car le tarif couvre une équipe, une méthode et des garanties au-delà d'un profil isolé.",
+    q: 'Quel TJM pour un consultant IA indépendant ?',
+    a: "Un indépendant facture le plus souvent entre 500 et 1 500 € la journée en France, selon sa séniorité et la rareté de sa spécialité ; les experts de l'IA générative déployée à grande échelle vont au-delà. Un cabinet facture plutôt de 1 000 à 2 000 € par jour, parce que le prix couvre une équipe, une méthode et des garanties. Comparez toujours le coût total d'une mission plutôt que le seul taux journalier.",
   },
   {
-    q: "Comment devenir consultant IA, même sans être développeur ?",
-    a: "Le métier est accessible depuis plusieurs profils : développeurs, data scientists, mais aussi chefs de projet, consultants d'un autre domaine ou experts métier en reconversion. La clé est d'acquérir les quatre familles de compétences et de pratiquer sur des cas réels. Une formation structurée aux outils d'IA générative, au prompt engineering et au cadrage des cas d'usage accélère fortement la montée en compétence. Chez Masteria, nos parcours certifiés Qualiopi couvrent précisément ce socle.",
+    q: 'Peut-on devenir consultant IA sans être développeur ?',
+    a: "Oui. Beaucoup de consultants viennent du conseil, de la gestion de projet ou d'un métier précis (finance, ressources humaines, marketing, juridique). Ils doivent acquérir le socle technique utile au conseil : savoir ce qu'un modèle de langage fait bien et mal, écrire des prompts solides, comprendre le RAG et les agents sans forcément les coder. Une formation structurée, suivie de missions sur des dossiers concrets, raccourcit beaucoup ce chemin.",
   },
   {
-    q: "Peut-on devenir consultant IA en reconversion ?",
-    a: "Oui, et c'est un chemin fréquent. Une personne qui connaît déjà un métier (marketing, finance, RH, juridique, opérations) part avec un avantage : elle comprend les vrais processus à améliorer. Il lui reste à acquérir le socle IA (outils, prompt engineering, cadrage, gouvernance) par la formation et la pratique. Cette double culture, métier plus IA, est très recherchée.",
+    q: 'Peut-on devenir consultant IA en reconversion ?',
+    a: "C'est un chemin fréquent. Une personne qui connaît déjà un métier part avec un avantage : elle sait quelles tâches font perdre du temps et quelles erreurs coûtent cher. Il lui reste à apprendre les outils, l'écriture de prompts, le choix des cas d'usage et le cadre légal, puis à se constituer un premier portfolio, souvent dans son propre service. La double culture, un métier et l'IA, intéresse beaucoup les clients.",
   },
   {
-    q: "Consultant IA freelance ou via un cabinet : que choisir pour mon entreprise ?",
-    a: "Un freelance indépendant apporte de la souplesse et un coût maîtrisé pour une mission courte et bien cadrée, mais vous dépendez d'un seul profil et de sa disponibilité. Un cabinet de conseil IA mobilise une équipe, une méthode et une continuité, et couvre plusieurs compétences ensemble (stratégie, développement, formation). La règle simple : un freelance pour un besoin ponctuel et précis, un cabinet dès que le projet engage plusieurs métiers, s'inscrit dans la durée ou doit être construit puis transmis.",
+    q: 'Consultant IA indépendant ou cabinet : que choisir pour votre entreprise ?',
+    a: "Un indépendant suffit pour une intervention ponctuelle : relire une feuille de route, animer un atelier, auditer un outil. Vous dépendez alors d'une seule personne et de son agenda. Un cabinet devient préférable quand le projet touche plusieurs services, s'étale sur plusieurs mois ou doit aboutir à des outils en service et à une formation des équipes.",
   },
   {
-    q: "Quelle différence entre un consultant IA et un expert IA ?",
-    a: "Les deux termes se recoupent largement. « Expert IA » met souvent l'accent sur la maîtrise technique (modèles, architecture, MLOps). « Consultant IA » insiste davantage sur la stratégie, le cadrage des cas d'usage et la conduite du changement. Dans la pratique, un bon consultant IA réunit les deux dimensions : il comprend la technique et sait la traduire en valeur pour l'organisation.",
+    q: 'Consultant IA ou expert IA : quelle différence ?',
+    a: "Les deux titres se recouvrent largement. « Expert IA » met souvent en avant la technique : modèles, architecture, mise en production. « Consultant IA » insiste sur le choix des usages, les règles et l'accompagnement des équipes. Les meilleurs profils tiennent les deux bouts : ils comprennent la technique et savent la traduire en résultats pour une organisation.",
   },
   {
-    q: "Faut-il un diplôme pour être consultant IA ?",
-    a: "Aucun diplôme n'est légalement obligatoire pour exercer comme consultant IA. Ce qui compte est la maîtrise réelle des compétences et des réalisations concrètes. Une formation reconnue rassure les clients et accélère l'apprentissage, mais un portfolio de projets menés compte souvent davantage qu'un titre.",
+    q: 'Faut-il un diplôme pour être consultant IA ?',
+    a: "Aucun diplôme n'est exigé par la loi. Les clients regardent d'abord les dossiers menés et les résultats obtenus. Une formation reconnue rassure et accélère l'apprentissage, mais un portfolio de missions documentées pèse souvent plus lourd qu'un titre.",
   },
   {
-    q: "Comment recruter un bon consultant IA ?",
-    a: "Vérifiez trois choses : une réalisation déjà menée en production, pas seulement des slides ; la capacité à écarter un cas d'usage mal choisi plutôt que de vendre du volume ; et l'organisation d'un transfert de compétence vers vos équipes. Demandez des références joignables et la spécialisation réelle sur l'IA. Méfiez-vous d'un prestataire qui promet un financement OPCO sur du conseil pur, qui n'est pas finançable.",
+    q: 'Comment bien recruter un consultant IA ?',
+    a: "Demandez-lui de raconter une mission menée jusqu'à l'usage, avec ce qui a été écarté et pourquoi. Vérifiez qu'il prévoit de rendre vos équipes autonomes, qu'il n'est rémunéré par aucun éditeur, et qu'il connaît les échéances de l'AI Act. Appelez un ancien client. Méfiez-vous d'un consultant qui promet que l'OPCO paiera sa mission : votre OPCO finance des formations, jamais du conseil.",
   },
   {
-    q: "Masteria propose-t-il des consultants IA ?",
-    a: "Oui. Masteria est un cabinet de conseil et développement spécialisé en IA : vous n'engagez pas un consultant isolé mais une équipe qui couvre le cadrage stratégique, le développement des solutions et la formation. Nous formons aussi les personnes qui souhaitent devenir consultant ou monter en compétence sur l'IA, via des parcours certifiés Qualiopi. Le premier échange de cadrage est gratuit.",
+    q: 'Masteria met-il des consultants IA à disposition ?',
+    a: "Masteria intervient comme cabinet : un consultant pilote votre mission, épaulé selon les besoins par des développeurs et des formateurs, sous la responsabilité de Mathias Nizan. Le cabinet forme aussi les personnes qui veulent devenir consultant ou monter en compétence, avec des formations certifiées Qualiopi. Pour un projet, le cadrage démarre par 30 minutes offertes.",
   },
   {
-    q: "Un consultant IA intervient-il à Paris, à Lyon ou à distance ?",
-    a: "Les deux fonctionnent. La proximité aide pour les ateliers de cadrage et la conduite du changement ; le distanciel convient au suivi, à la formation et aux missions bien périmétrées. Masteria est basé à Lyon et intervient à Paris, dans toute la France, ainsi qu'à l'international (Europe, États-Unis, Inde), en présentiel comme à distance.",
+    q: 'Un consultant IA peut-il intervenir à distance ?',
+    a: "Oui, pour une bonne part du travail : suivi, ateliers courts, revue des outils, formation en classe virtuelle. Les entretiens de départ et les ateliers de décision se tiennent mieux sur place. Masteria, basé à Lyon, intervient sur place à Paris comme dans les autres régions, et accompagne aussi des entreprises installées hors de France, notamment aux États-Unis et en Inde.",
   },
 ]
 
@@ -157,7 +184,7 @@ const FAQ = [
 const definedTermSetJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
-  name: 'Glossaire du métier de consultant IA',
+  name: 'Vocabulaire du métier de consultant IA',
   hasDefinedTerm: GLOSSARY.map(g => ({ '@type': 'DefinedTerm', name: g.term, description: g.def })),
 }
 
@@ -165,27 +192,24 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: 'Consultant IA : métier, compétences, TJM et salaire',
+  headline: 'Consultant IA : le métier, les compétences et ce qu\'il gagne en 2026',
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
-  datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
-  about: ['Consultant en intelligence artificielle', 'Métier IA', 'Conseil en IA'],
+  about: ['Consultant en intelligence artificielle', 'Métier de l\'IA', 'Conseil en IA'],
   // GEO : passages lus/cités en priorité par les assistants vocaux et génératifs.
   speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
-  citation: [
-    'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689',
-    'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025',
-  ],
+  citation: SOURCES.map(s => s.url),
 }
 
 function Meter({ level, label }) {
   return (
-    <span role="img" aria-label={`${label} : ${level === 3 ? 'essentiel' : 'important'}`} style={{ display: 'inline-flex', gap: 4 }}>
+    <span role="img" aria-label={`${label} : ${level === 3 ? 'utilisée chaque jour' : 'selon les missions'}`} style={{ display: 'inline-flex', gap: 4 }}>
       {[1, 2, 3].map(i => (
         <span key={i} aria-hidden="true" style={{ width: 9, height: 9, borderRadius: '50%', background: i <= level ? c : '#D1D5DB', display: 'inline-block' }} />
       ))}
@@ -248,6 +272,10 @@ export default function ConsultantIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        datePublished={DATE_PUBLISHED}
+        dateModified={DATE_MODIFIED}
+        citations={SOURCES.map(s => ({ name: s.name, url: s.url }))}
+        author
         extraJsonLd={[definedTermSetJsonLd, articleJsonLd]}
       />
 
@@ -271,27 +299,27 @@ export default function ConsultantIAPage() {
               <Users size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Guide métier · 2026
+              Fiche métier · 2026
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 4.7vw, 48px)', fontWeight: 900, lineHeight: 1.06, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.03em', maxWidth: 860 }}>
             Consultant IA
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>le métier, les compétences et le juste tarif</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>le métier, ses compétences et ce qu'il gagne en 2026</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Fiche rédigée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige une équipe de consultants IA indépendants · mise à jour le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — définition */}
+          {/* GEO : réponse directe citable, définition */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Un consultant IA accompagne les organisations sur l'usage de l'intelligence artificielle</strong> : il audite les usages, cadre les cas d'usage à fort impact, choisit les outils, structure la gouvernance et forme les équipes. Son métier n'est pas de coder un modèle, mais de faire en sorte que l'IA produise un résultat utile et adopté.
+            <strong style={{ color: '#fff', fontWeight: 700 }}>Un consultant IA aide une organisation à tirer parti de l'intelligence artificielle</strong> : il observe le travail des équipes, retient les usages qui valent l'effort, choisit les outils sans dépendre d'un éditeur, écrit les règles d'usage et forme les personnes concernées. Le code n'occupe qu'une petite part de son temps ; l'essentiel consiste à faire adopter l'IA par des équipes.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Ce guide couvre le métier, les compétences, le salaire et le TJM en 2026, comment devenir consultant IA et comment en recruter un pour votre entreprise.
+            Cette fiche s'adresse à deux lecteurs : la personne qui envisage d'exercer ce métier, et la direction qui veut en faire intervenir un. Vous y trouverez ses missions, les compétences attendues, les salaires et taux journaliers observés en 2026, le chemin pour y arriver et la manière de bien recruter.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -300,7 +328,7 @@ export default function ConsultantIAPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </a>
             <a href="#recruter" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Recruter un consultant
+              Faire appel à un consultant
             </a>
           </div>
 
@@ -309,11 +337,11 @@ export default function ConsultantIAPage() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
-                ['Le métier', "Auditer, cadrer les cas d'usage, choisir les outils, cadrer la gouvernance et former les équipes à l'IA."],
-                ['Compétences clés', "Technique (LLM, RAG, prompt), conseil et métier, réglementaire (RGPD, AI Act) et pédagogie."],
-                ['Salaire salarié', "Junior 38 000 à 45 000 €, confirmé 50 000 à 70 000 €, senior 70 000 à 100 000 € et plus par an."],
-                ['TJM freelance', "500 à 1 500 € par jour selon la séniorité ; 1 000 à 2 000 € via un cabinet."],
-                ['Devenir ou recruter ?', "Se former pour le devenir (formation certifiée Qualiopi) ; passer par un cabinet ou un freelance pour en recruter un."],
+                ['Le métier', "Observer le travail, retenir les usages utiles, choisir les outils, écrire les règles d'usage, former les équipes."],
+                ['Compétences', "Une base technique (modèles de langage, RAG, prompts), le sens du métier client, la connaissance du RGPD et de l'AI Act, de la pédagogie."],
+                ['Salaire', "De 38 000 € brut par an au début jusqu'à 100 000 € et davantage pour les seniors les plus rares, selon les repères observés en France."],
+                ['Taux journalier', "À partir d'environ 500 € la journée pour un indépendant ; davantage quand la mission passe par un cabinet."],
+                ['Devenir ou recruter ?', "Pour le devenir : une formation, puis des missions sur des dossiers concrets. Pour en faire intervenir un : un indépendant, un cabinet ou un poste interne, selon la durée du besoin."],
               ].map(([k, v], i) => (
                 <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
@@ -330,11 +358,11 @@ export default function ConsultantIAPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 4, overflowX: 'auto', whiteSpace: 'nowrap' }}>
           <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#9CA3AF', paddingRight: 8, flexShrink: 0 }}>Sur cette page</span>
           {[
-            ['#metier', 'Le métier'],
+            ['#metier', 'Missions'],
             ['#competences', 'Compétences'],
-            ['#tarif', 'TJM & salaire'],
+            ['#tarif', 'Salaire et TJM'],
             ['#devenir', 'Devenir consultant'],
-            ['#recruter', 'Freelance ou cabinet'],
+            ['#recruter', 'Recruter'],
             ['#faq', 'FAQ'],
           ].map(([href, label]) => (
             <a key={href} href={href} style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 700, color: '#374151', textDecoration: 'none', padding: '13px 12px', flexShrink: 0 }}>{label}</a>
@@ -345,13 +373,13 @@ export default function ConsultantIAPage() {
       {/* ── LE MÉTIER : missions ── */}
       <section id="metier" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Le métier</div>
+          <div style={kickerStyle}>Les missions</div>
           <h2 style={h2Style}>Que fait un consultant en intelligence artificielle ?</h2>
           <p style={leadStyle}>
-            Le consultant IA fait le lien entre une technologie qui avance vite et des organisations qui doivent en tirer une valeur concrète. Cinq missions reviennent dans presque toutes ses interventions.
+            Le consultant IA traduit une technologie qui change chaque trimestre en décisions qu'une organisation peut tenir. Cinq missions reviennent dans presque toutes ses interventions, de la PME de dix personnes au groupe international.
           </p>
           <p style={mutedStyle}>
-            La technique n'est qu'une partie du métier. L'essentiel se joue dans le choix des bons cas d'usage et dans l'adoption par les équipes.
+            La technique occupe une part de son temps. Le reste se passe en entretiens, en arbitrages et aux côtés des équipes pendant leurs premières semaines d'usage.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
@@ -374,26 +402,26 @@ export default function ConsultantIAPage() {
         </div>
       </section>
 
-      {/* ── COMPÉTENCES (tableau meter) ── */}
+      {/* ── COMPÉTENCES (tableau à jauges) ── */}
       <section id="competences" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>Les compétences</div>
           <h2 style={h2Style}>Les compétences d'un consultant IA</h2>
           <p style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }}>
             <strong>Un bon consultant IA combine quatre familles de compétences.</strong>{' '}
-            Les meilleurs ne sont pas les plus techniques, mais ceux qui savent traduire la technologie en valeur pour l'organisation et embarquer les équipes.
+            Les profils les plus recherchés savent relier une possibilité technique à un gain précis dans le quotidien d'une équipe, puis faire adopter l'outil par ses utilisateurs.
           </p>
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Trois points signalent une compétence essentielle au quotidien, deux une compétence importante.
+            Trois points : une compétence sollicitée chaque jour. Deux points : une compétence importante, mobilisée selon les missions.
           </p>
 
           <div style={tableWrapStyle}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
-              <caption style={srOnlyStyle}>Les quatre familles de compétences d'un consultant IA et leur importance</caption>
+              <caption style={srOnlyStyle}>Les quatre familles de compétences d'un consultant IA, leur poids au quotidien et leur contenu</caption>
               <thead>
                 <tr>
-                  <th scope="col" style={thStyle}>Famille de compétences</th>
-                  <th scope="col" style={{ ...thStyle, textAlign: 'center' }}>Importance</th>
+                  <th scope="col" style={thStyle}>Famille</th>
+                  <th scope="col" style={{ ...thStyle, textAlign: 'center' }}>Poids au quotidien</th>
                   <th scope="col" style={thStyle}>Ce qu'elle recouvre</th>
                 </tr>
               </thead>
@@ -414,7 +442,7 @@ export default function ConsultantIAPage() {
         </div>
       </section>
 
-      {/* ── TJM & SALAIRE (ancre sombre) ── */}
+      {/* ── SALAIRE ET TJM (ancre sombre) ── */}
       <section id="tarif" style={{ scrollMarginTop: 96, position: 'relative', padding: SECTION_PAD, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -424,19 +452,19 @@ export default function ConsultantIAPage() {
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Rémunération 2026</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Salaire et TJM d'un consultant IA en 2026</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Un consultant IA salarié gagne de 38 000 € par an en début de carrière à plus de 100 000 € en profil senior. En freelance, le TJM va de 500 à 1 500 €, et de 1 000 à 2 000 € via un cabinet.</strong>{' '}
-            Ce sont des ordres de grandeur du marché français, qui varient selon la séniorité, le secteur et la localisation.
+            <strong style={{ color: '#fff' }}>Un consultant IA salarié gagne de 38 000 € brut par an en début de carrière jusqu'à 100 000 € et davantage pour les seniors les plus recherchés. Un indépendant facture le plus souvent à partir de 500 € la journée, un cabinet à partir de 1 000 €.</strong>{' '}
+            Ces montants sont des repères observés en France, sans valeur de grille officielle : la séniorité, le secteur et la région les font varier.
           </p>
           <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            La rareté de la compétence tire les tarifs vers le haut, en particulier sur l'IA générative à l'échelle et le MLOps.
+            Plus la spécialité est rare, plus le prix monte : les profils capables de généraliser l'IA générative à tout un groupe ou de superviser des modèles en production (ce qu'on appelle le MLOps) restent les plus chers. Avant de fixer un salaire, comparez avec les études de rémunération de l'APEC.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
-              <caption style={srOnlyStyle}>Salaires et taux journaliers d'un consultant IA constatés en 2026 sur le marché français</caption>
+              <caption style={srOnlyStyle}>Ordres de grandeur 2026 des salaires et taux journaliers d'un consultant IA en France</caption>
               <thead>
                 <tr>
-                  {['Profil', 'Rémunération constatée', 'Précisions'].map(h => (
+                  {['Situation', 'Ordre de grandeur', 'À savoir'].map(h => (
                     <th key={h} scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #1E293B', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
@@ -463,16 +491,16 @@ export default function ConsultantIAPage() {
               <div style={kickerStyle}>Devenir consultant</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Comment devenir consultant IA</h2>
               <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le métier est accessible depuis plusieurs profils. Ce qui compte, c'est le socle de compétences et la pratique sur des cas réels.
+                On y vient par la technique, par le conseil ou par un métier qu'on connaît de l'intérieur. Les clients jugent ensuite sur des dossiers menés jusqu'au bout.
               </p>
             </div>
             <div>
               <div style={{ ...cardStyle, padding: 32, borderTop: `3px solid ${c}` }}>
                 <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'grid', gap: 18 }}>
                   {[
-                    ['Partir de votre profil', "Développeurs, data scientists, chefs de projet, experts métier en reconversion : chacun a un point de départ. Un profil métier comprend déjà les vrais processus à améliorer, ce qui est un atout."],
-                    ['Acquérir le socle IA', "Outils d'IA générative, prompt engineering, cadrage des cas d'usage, notions de RAG et d'agents, gouvernance RGPD et AI Act. C'est le cœur du métier, au-delà d'un seul outil."],
-                    ['Pratiquer sur des cas réels', "Un portfolio de projets menés compte souvent plus qu'un diplôme. Commencez sur vos propres cas d'usage ou ceux d'une première mission."],
+                    ['Partir de ce que vous savez déjà', "Un développeur maîtrise la technique, une cheffe de projet sait conduire un changement, un contrôleur de gestion connaît les processus de son domaine. Chacun part avec un atout et une lacune à combler."],
+                    ['Acquérir le socle IA', "Les assistants du marché et leurs offres d'entreprise, l'écriture de prompts, le choix des cas d'usage, les bases du RAG et des agents, le RGPD et le règlement européen sur l'IA. Ce socle va plus loin que l'usage d'un seul outil."],
+                    ['Pratiquer sur des dossiers concrets', "Aux yeux d'un client, un portfolio de missions pèse plus qu'un diplôme. Commencez par les tâches de votre propre service, notez ce que vous avez changé et mesuré, puis proposez une première mission courte."],
                   ].map(([t, d], i) => (
                     <li key={t} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                       <span aria-hidden="true" style={{ width: 32, height: 32, borderRadius: '50%', background: c, color: '#fff', fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{i + 1}</span>
@@ -486,10 +514,9 @@ export default function ConsultantIAPage() {
                 <div style={{ background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '16px 20px' }}>
                   <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0 }}>
                     <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, verticalAlign: '-2px', marginRight: 6 }} aria-hidden="true" />
-                    <strong>Se former avec Masteria :</strong> nos parcours certifiés Qualiopi couvrent ce socle, à commencer par le{' '}
-                    <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link>, le{' '}
-                    <Link to="/formation-prompt-engineering" style={{ color: c, fontWeight: 600 }}>prompt engineering</Link>{' '}
-                    et, pour les profils techniques, <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link>. Finançables par votre OPCO.
+                    <strong>Se former avec Masteria :</strong> nos formations certifiées Qualiopi couvrent ce socle. Partez du{' '}
+                    <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue des formations en intelligence artificielle</Link>, approfondissez l'<Link to="/formation-prompt-engineering" style={{ color: c, fontWeight: 600 }}>écriture de prompts</Link>{' '}
+                    et, pour les profils techniques, <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link>. La journée est facturée 1 980 € HT, pour un groupe interne ou une personne seule ; pour un salarié, l'OPCO de la branche examine le dossier en appliquant ses propres règles, dans la limite de ses fonds.
                   </p>
                 </div>
               </div>
@@ -498,29 +525,29 @@ export default function ConsultantIAPage() {
         </div>
       </section>
 
-      {/* ── RECRUTER : freelance vs cabinet vs interne (tunnel conseil + capte freelance ia) ── */}
+      {/* ── FAIRE INTERVENIR UN CONSULTANT : trois voies ── */}
       <section id="recruter" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={kickerStyle}>Recruter un consultant</div>
-          <h2 style={h2Style}>Freelance, cabinet ou interne : comment faire appel à un consultant IA</h2>
+          <h2 style={h2Style}>Indépendant, cabinet ou poste interne : comment faire appel à un consultant IA</h2>
           <p style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong>Trois voies pour mobiliser un consultant IA : un freelance indépendant, un cabinet de conseil, ou un recrutement interne.</strong>{' '}
-            Elles se départagent sur le coût, la souplesse, les garanties et l'autonomie qu'elles laissent à vos équipes.
+            <strong>Trois voies s'offrent à vous : un indépendant, un cabinet, ou un poste créé dans l'entreprise.</strong>{' '}
+            Elles diffèrent par le coût, la souplesse, les garanties et ce qu'elles laissent à vos équipes une fois la mission finie.
           </p>
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Un consultant IA freelance convient à un besoin ponctuel ; pour un projet qui dure et engage plusieurs métiers, un cabinet apporte une équipe et une continuité.
+            La durée du besoin tranche le plus souvent : quelques semaines pour un indépendant, plusieurs mois et plusieurs services pour un cabinet, des projets sans fin prévue pour un poste.
           </p>
 
           <div style={tableWrapStyle}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 860 }}>
-              <caption style={srOnlyStyle}>Comparatif des trois voies pour faire appel à un consultant IA : coût, force, limite et besoin adapté</caption>
+              <caption style={srOnlyStyle}>Trois façons de faire intervenir un consultant IA comparées sur le coût, l'atout, la limite et le besoin type</caption>
               <thead>
                 <tr>
                   <th scope="col" style={thStyle}>Voie</th>
-                  <th scope="col" style={thStyle}>Coût</th>
-                  <th scope="col" style={thStyle}>Force</th>
+                  <th scope="col" style={thStyle}>Facturation</th>
+                  <th scope="col" style={thStyle}>Atout</th>
                   <th scope="col" style={thStyle}>Limite</th>
-                  <th scope="col" style={thStyle}>Pour quel besoin</th>
+                  <th scope="col" style={thStyle}>Besoin type</th>
                 </tr>
               </thead>
               <tbody>
@@ -533,7 +560,7 @@ export default function ConsultantIAPage() {
                         {h.highlight && (
                           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: c, color: '#fff', borderRadius: 99, padding: '4px 10px', fontSize: 11.5, fontWeight: 800, marginTop: 10, whiteSpace: 'nowrap' }}>
                             <BadgeCheck size={13} strokeWidth={2.4} aria-hidden="true" />
-                            Le profil de Masteria
+                            Le format de Masteria
                           </span>
                         )}
                       </th>
@@ -549,10 +576,13 @@ export default function ConsultantIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Avec <strong>Masteria</strong>, vous n'engagez pas un consultant isolé mais une équipe qui couvre le cadrage, le développement et la formation. Pour situer votre besoin, commencez par notre{' '}
-            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, voyez le détail de nos{' '}
-            <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>missions de conseil</Link>, ou notre guide pour{' '}
-            <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>choisir le bon cabinet de conseil en IA</Link>.
+            <strong>Masteria</strong> vous apporte une équipe : un consultant pilote la mission, épaulé selon les besoins par des développeurs et des formateurs du cabinet. Si votre besoin reste flou, le{' '}
+            <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> le précise en peu de temps ; le détail de nos{' '}
+            <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>missions de conseil en IA</Link>{' '}
+            et le guide pour{' '}
+            <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>choisir le meilleur cabinet IA</Link>{' '}
+            complètent la lecture. Si le sujet est de confier la direction de l'IA à quelqu'un, voyez le rôle de{' '}
+            <Link to="/chief-ai-officer" style={{ color: c, fontWeight: 600 }}>Chief AI Officer</Link>.
           </p>
         </div>
       </section>
@@ -560,9 +590,9 @@ export default function ConsultantIAPage() {
       {/* ── REPÈRES citables (GEO) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <SectionHeader icon={BookOpen} kicker="Repères" title="Le métier de consultant IA en quelques repères" />
+          <SectionHeader icon={BookOpen} kicker="Repères" title="Trois faits datés qui nourrissent la demande de consultants IA" />
           <p style={answerStyle}>
-            Deux dates et un chiffre pour situer la demande, le vocabulaire du métier, et les sources officielles.
+            Les usages se sont répandus avant les règles, et le droit européen demande désormais aux entreprises de s'en occuper. Le vocabulaire du métier suit, tel qu'on le lit dans les offres de mission.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, margin: '36px 0 44px' }}>
@@ -570,17 +600,21 @@ export default function ConsultantIAPage() {
               <div key={s.value} style={cardStyle}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: c, letterSpacing: '-0.02em', marginBottom: 8 }}>{s.value}</div>
                 <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '0 0 10px' }}>{s.label}</p>
-                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, fontWeight: 700, color: c, textDecoration: 'underline', textUnderlineOffset: 2 }}>Source : {s.source}</a>
+                {s.url ? (
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, fontWeight: 700, color: c, textDecoration: 'underline', textUnderlineOffset: 2 }}>Source : {s.source}</a>
+                ) : (
+                  <span style={{ fontSize: 12.5, fontWeight: 700, color: '#6B7280' }}>Source : {s.source}</span>
+                )}
               </div>
             ))}
           </div>
 
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={{ ...kickerStyle, marginBottom: 10 }}>Définitions</div>
-              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Le vocabulaire du métier</h3>
+              <div style={{ ...kickerStyle, marginBottom: 10 }}>Vocabulaire</div>
+              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Quatre termes à connaître</h3>
               <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Quatre notions reviennent dès qu'on parle de consultant IA.
+                Ils reviennent dès qu'on publie, cherche ou négocie une mission de consultant IA.
               </p>
             </div>
             <div>
@@ -592,29 +626,36 @@ export default function ConsultantIAPage() {
                   </div>
                 ))}
               </dl>
-              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '24px 0 12px', fontWeight: 700 }}>Sources et références</p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
-                {REFERENCES.map(r => (
-                  <li key={r.url} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                    <ShieldCheck size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-                    <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, fontSize: 14.5, textDecoration: 'underline', textUnderlineOffset: 2, lineHeight: 1.6 }}>{r.label}</a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FONDATEUR (E-E-A-T) ── */}
-      <FounderNote bg="#F9FAFB" />
-
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['conseil-financier', 'photovoltaique', 'industrie']}
-        title="Ce qu'un consultant IA livre, sur trois missions documentées"
-        intro="Des assistants d'appels d'offres co-construits avec des consultants, un diagnostic par flux dans une PME, un comité de direction accompagné jusqu'à l'international : la méthode en six temps et ses résultats."
-      />
+      {/* ── TROIS MISSIONS VUES DEPUIS LE TRAVAIL DU CONSULTANT ── */}
+      <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <SectionHeader icon={FolderSearch} kicker="Sur le terrain" title="Le travail d'un consultant IA, vu dans trois de nos missions" />
+          <p style={{ ...mutedStyle, margin: '0 0 32px' }}>
+            Atelier, entretien, formation de référents : trois gestes du métier, observés chez des clients anonymisés à leur demande.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {CASES.map(k => (
+              <div key={k.anchor} style={{ ...cardStyle, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ ...kickerStyle, fontSize: 12, marginBottom: 12 }}>{k.tag}</div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{k.text}</p>
+                <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {k.link}
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 820, fontStyle: 'italic' }}>
+            « Un bon consultant IA sait expliquer à une comptable ce que l'IA va changer dans sa semaine, puis vérifier un mois plus tard que c'est arrivé. »{' '}
+            <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600, fontStyle: 'normal' }}>Mathias Nizan</Link>, fondateur de Masteria
+          </p>
+        </div>
+      </section>
 
       {/* ── FAQ ── */}
       <section id="faq" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#fff' }}>
@@ -622,10 +663,10 @@ export default function ConsultantIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur le métier de consultant IA</h2>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
-              <Link to="/contact?type=projet" style={{ color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, textDecoration: 'none' }}>
-                Posez-nous votre question
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Treize questions sur le métier de consultant IA</h2>
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Votre parcours ou votre projet soulève une autre question ?</p>
+              <Link to="/contact" style={{ color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, textDecoration: 'none' }}>
+                Écrivez-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -638,54 +679,54 @@ export default function ConsultantIAPage() {
         </div>
       </section>
 
-      {/* ── CTA FINALE DOUBLE (se former / recruter) ── */}
+      {/* ── CTA FINALE DOUBLE (se former / faire intervenir) ── */}
       <section style={{ background: '#F9FAFB', padding: SECTION_PAD }}>
         <div style={{ position: 'relative', overflow: 'hidden', maxWidth: 1080, margin: '0 auto', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Deux façons d'avancer</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Deux suites possibles</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Devenir consultant IA, ou en mobiliser un
+              Devenir consultant IA, ou en faire intervenir un
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-              Vous voulez monter en compétence sur l'IA ? Nos formations certifiées Qualiopi couvrent le socle du métier. Vous avez un projet à cadrer et déployer ? Notre équipe de conseil s'en charge.
+              Vous voulez acquérir le socle du métier ? Nos formations certifiées Qualiopi le couvrent, en groupe interne ou en individuel. Vous avez un projet à cadrer ? Un consultant du cabinet en parle avec vous pendant 30 minutes de cadrage offertes.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
               <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 30px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700 }}>
                 Voir les formations
                 <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
               </Link>
-              <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 600, border: '1px solid #2A3650' }}>
-                Parler à notre équipe
+              <Link to={RDV_URL} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 28px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 600, border: '1px solid #2A3650' }}>
+                Réserver 30 minutes de cadrage
               </Link>
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Échange de cadrage gratuit · Réponse sous 24 h · Certifié Qualiopi
+              Formation : devis sur demande depuis la page contact · Projet : échange en visio, créneau proposé sous 24 heures
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui sont nos consultants ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Nos consultants</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Des consultants indépendants, choisis pour chaque mission et pilotés par le fondateur
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Les consultants IA qui interviennent pour Masteria exercent en indépendants ; Mathias Nizan les choisit selon le secteur et le sujet de chaque mission, et en garde la responsabilité. Aucun d'eux n'est payé par un éditeur pour recommander un outil. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link> et les <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>articles qui citent le cabinet</Link> en donnent un aperçu.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['≈ 10', 'consultants IA indépendants'],
+              ['≈ 5', 'développeurs en appui'],
+              ['≈ 20', 'formateurs pour les équipes'],
+              ['Lyon, 2022', 'France · Europe · États-Unis · Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -696,7 +737,28 @@ export default function ConsultantIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      {/* ── SOURCES (rédigées pour la page, à la place du bloc commun) ── */}
+      <section aria-labelledby="sources-consultant-ia" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-consultant-ia" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Pour vérifier et aller plus loin
+          </h2>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.6, margin: '0 0 20px' }}>
+            Les références qu'un futur consultant, comme une entreprise qui recrute, gagne à consulter. Le Baromètre du numérique du Crédoc (février 2026) est publié avec l'Arcep, l'Arcom, le CGE et l'ANCT.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
+            {SOURCES.map(s => (
+              <li key={s.url} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 15, lineHeight: 1.6 }}>
+                <ShieldCheck size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                <span>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.name}</a>
+                  <span style={{ color: '#6B7280' }}> : {s.note}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

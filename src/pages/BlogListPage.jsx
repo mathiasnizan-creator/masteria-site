@@ -2,12 +2,22 @@ import { useState, useMemo, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Search, X, SlidersHorizontal, RotateCcw } from 'lucide-react'
 import { FadeIn } from '../components/components'
-import { FAQSection, FAQ_GENERAL, FAQ_FORMATIONS } from '../components/screens2'
+import { FAQSection } from '../components/screens2'
 import SEOHead from '../components/SEOHead'
 import { BLOG_ARTICLES } from '../data/blog-articles'
 import { getTagColor } from '../data/tag-colors'
 import { META_CATEGORIES, getCategoryForTag } from '../data/blog-categories'
 import { useIsMobile } from '../hooks/useMediaQuery'
+
+// FAQ propre à la page du blog (07/10/2026) : remplace les questions générales
+// partagées avec d'autres pages (FAQ_GENERAL, FAQ_FORMATIONS).
+const BLOG_FAQ = [
+  { q: "Qui écrit les articles du blog ?", a: "Mathias Nizan, fondateur de Masteria, à partir de ce qu'il voit en mission de conseil et en formation. Chaque article affiche sa date de publication, la date de sa révision et, quand il cite un chiffre ou un texte, la source qui permet de le vérifier." },
+  { q: "Les articles sont-ils tenus à jour ?", a: "Oui, quand un fait change : le prix d'une licence, le nom d'un outil, une échéance du règlement européen sur l'IA. La date de la dernière mise à jour figure en tête de l'article, à côté de sa date de publication." },
+  { q: "L'OPCO peut-il financer une formation Masteria ?", a: "La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre l'accès à l'OPCO de votre branche, qui décide selon ses règles et dans la limite de ses fonds. L'article sur le financement par l'OPCO explique comment trouver le vôtre et monter le dossier." },
+  { q: "Faut-il un bagage technique pour suivre une formation ?", a: "Aucun. Les formations partent du métier des participants et de leurs propres fichiers. Savoir se servir d'un ordinateur et d'une messagerie suffit pour commencer." },
+  { q: "Une formation peut-elle être construite pour notre secteur ?", a: "Oui. En intra, jusqu'à 12 participants, le programme reprend vos outils, vos documents et les tâches de vos équipes. La journée coûte 1 980 € HT, et un accompagnement individuel est possible au même tarif." },
+]
 
 const SORT_OPTIONS = [
   { id: 'recent',  label: 'Plus récents' },
@@ -504,7 +514,7 @@ export default function BlogListPage() {
             {[
               { value: ALL.length, label: 'articles' },
               { value: META_CATEGORIES.length, label: 'thématiques' },
-              { value: '1 500+', label: 'pros formés' },
+              { value: '100+', label: 'programmes au catalogue' },
             ].map(({ value, label }) => (
               <div key={label}>
                 <div style={{
@@ -950,7 +960,7 @@ export default function BlogListPage() {
           )}
 
           <FAQSection
-            items={[...FAQ_GENERAL.slice(0, 3), ...FAQ_FORMATIONS.slice(3, 5)]}
+            items={BLOG_FAQ}
             title="Questions fréquentes"
             bg="#fff"
           />

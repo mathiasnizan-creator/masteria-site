@@ -2,7 +2,125 @@
 // Vérifié le 03/10/2026 : Anthropic (contextual retrieval, citations, hallucinations), OpenAI (retrieval), Mistral (mistral-embed), Microsoft Learn (Azure AI Search), OWASP GenAI (LLM08), étude de cas conseil-financier.
 export default {
   slug: 'assistant-documentaire-ia',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    metaTitle: "Assistant documentaire IA et GED intelligente | Masteria",
+    metaDesc: "Assistant documentaire IA (RAG) : réponses sourcées et recherche en langage naturel dans vos documents. Code livré. 30 min de cadrage offertes.",
+    directAnswer: "Un assistant documentaire IA répond aux questions de vos équipes à partir de vos propres documents, et chaque réponse cite la page et la phrase qui la justifient. Masteria le bâtit sur votre corpus, le mesure sur les questions de vos experts et vous remet l'index comme le code.",
+    howWeBuild: [
+      {
+        title: "Choisir le corpus et ses propriétaires",
+        desc: "Nous recensons les documents à couvrir, leurs formats, leurs versions et la personne qui répond de chaque source. Les documents périmés sortent du corpus avant l'indexation.",
+      },
+      {
+        title: "Mesurer sur les questions de vos experts",
+        desc: "Vos experts écrivent les questions qu'ils posent vraiment, avec la bonne réponse. Le premier sous-corpus indexé est jugé sur cette liste, réponse par réponse, citation comprise.",
+      },
+      {
+        title: "Indexer tout le fonds, droits compris",
+        desc: "La chaîne de découpage, d'enrichissement et d'indexation s'étend au corpus complet. La recherche applique les droits de l'utilisateur, et l'assistant s'installe là où vos équipes travaillent.",
+      },
+      {
+        title: "Organiser la mise à jour",
+        desc: "Une règle fixe qui ajoute, remplace ou retire un document, et à quel rythme l'index se reconstruit. Votre équipe reçoit le code, l'index et la liste des questions de référence.",
+      },
+    ],
+  },
+  hero: {
+    chips: [
+      "Réponses qui citent la page",
+      "Corpus découpé et indexé chez vous",
+      "Droits d'accès appliqués à la recherche",
+      "Index et code livrés",
+    ],
+    lien: "Du corpus à l'assistant, étape par étape",
+    enBref: [
+      {
+        label: "Budget",
+        value: "Un corpus délimité à partir de 12 000 € environ ; une couverture multi-directions au-delà de 100 000 €",
+      },
+      {
+        label: "Démarrage",
+        value: "Un sous-corpus et un jeu de questions écrites par vos experts",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Chaîne d'indexation, assistant, jeu de questions de référence et documentation",
+      },
+      {
+        label: "Propriété",
+        value: "Index, code et réglages appartiennent à votre entreprise",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Ce qu'un assistant documentaire fait de votre fonds",
+  },
+  etapesBloc: {
+    kicker: "Mise en service",
+    h2: "Cinq étapes pour ouvrir un assistant documentaire à une équipe",
+  },
+  etapesNote: {
+    texte: "Si plusieurs fonds documentaires se disputent la priorité, un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA les classe avant la première indexation",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers, du corpus à l'assistant en service",
+  },
+  technique: {
+    kicker: "Recherche et citations",
+    texte: "Chaque passage reçoit une courte phrase de contexte avant l'indexation, puis la recherche combine le sens et les mots exacts, ce qui retrouve aussi bien une notion qu'un numéro d'article. Les passages retenus sont filtrés selon les droits de l'utilisateur avant d'atteindre le modèle. Celui-ci (Claude, GPT ou Mistral, choisi sur le corpus) rédige une réponse qui renvoie à chaque extrait utilisé, et l'hébergement peut rester dans l'Union européenne.",
+    h2: "La mécanique d'un assistant documentaire",
+    lead: "La recherche fait la qualité : vos documents sont découpés, enrichis d'un court contexte, indexés par le sens et par les mots, puis retrouvés avec les droits de l'utilisateur. Le modèle de langage (Claude, GPT ou Mistral selon le corpus) rédige ensuite une réponse qui cite chaque passage utilisé.",
+    chips: [
+      "Découpage et contexte par passage",
+      "Recherche hybride sens et mots",
+      "Filtrage par droits d'accès",
+      "Citations vérifiables",
+      "Hébergement dans l'UE possible",
+    ],
+    note: {
+      texte: "Pour nos pratiques de développement et de recette, rendez-vous sur la page de notre",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "agence spécialisée dans le développement IA",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par fonds documentaire",
+    h2: "Quatre fonds documentaires, quatre assistants",
+    intro: "Selon le métier, le corpus et les questions changent ; la règle de citation, elle, reste la même.",
+  },
+  regieBloc: {
+    kicker: "En régie",
+    h2: "Un développeur qui indexe vos documents sans les sortir de chez vous",
+    lien: "Comment se déroule un projet",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Assistant documentaire : les questions fréquentes",
+    texte: "Votre fonds documentaire a un format ou un volume particulier ?",
+    lien: "Décrivez-le-nous",
+  },
+  maillage: {
+    kicker: "Solutions voisines",
+    h2: "Ce qui se construit à côté d'un assistant documentaire",
+  },
+  cta: {
+    titre: "Quel fonds documentaire rendre interrogeable en premier ?",
+    texte: "Indiquez-nous le corpus visé, son volume approximatif et les personnes qui le consultent. Vous recevez une réponse sous 24 heures pour caler les 30 minutes de cadrage offertes, et l'index comme le code resteront chez vous.",
+  },
+  equipe: {
+    titre: "Des intervenants qui partent de vos documents",
+    texte: "Masteria est l'entreprise de Mathias Nizan, créée à Lyon en 2022, et Mathias suit chaque projet. Pour un assistant documentaire, il réunit des consultants qui inventorient le corpus et ses propriétaires, des développeurs qui construisent l'indexation et la recherche, et un formateur pour les utilisateurs, tous indépendants. Masteria ne revend aucune GED ni aucun moteur de recherche.",
+  },
   intro: "Le juriste qui cherche une clause dans des centaines de contrats, l'ingénieur qualité qui vérifie la dernière version d'une procédure : l'assistant documentaire répond à leurs questions et cite la phrase et la page qui justifient chaque réponse. Il travaille sur un corpus délimité et applique les droits de chaque lecteur. Pour un assistant qui rédige dans Outlook ou agit dans votre CRM, voyez le copilote interne ; pour des pièces entrantes à saisir, l'automatisation documentaire ; pour loger la même brique dans une application existante, l'intégration LLM et RAG.",
 
   etapes: [
@@ -29,7 +147,16 @@ export default {
   ],
 
   cout: {
-    lead: "Le corpus fait le prix plus que le modèle. Un premier assistant sur un corpus délimité démarre autour de 12 000 € ; une couverture large, sur plusieurs directions et de gros volumes, dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros.",
+    kicker: "Budget de l'assistant",
+    h2: "Le budget d'un assistant documentaire",
+    note: {
+      texte: "Les fourchettes des autres types de projets sont rassemblées dans notre page",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "combien coûte un projet IA",
+      },
+    },
+    lead: "Le corpus fait le prix plus que le modèle. Un premier assistant sur un corpus délimité démarre autour de 12 000 € ; une couverture large, sur plusieurs directions et de gros volumes, monte au-delà de 100 000 € et jusqu'à quelques centaines de milliers d'euros.",
     paras: [
       "Nous chiffrons au forfait, sur devis, une fois le cadrage fait : la proposition écrite liste les sources couvertes, les volumes, les droits à reproduire et la taille du jeu de questions. Le fonctionnement se paie ensuite à la question et au stockage de l'index. Chez OpenAI, le stockage des index de recherche de fichiers est inclus jusqu'à 1 Go, puis facturé 0,10 dollar par gigaoctet et par jour. Ces coûts d'usage figurent dans la proposition, avec l'hypothèse de volume qui les fonde.",
     ],
@@ -59,6 +186,8 @@ export default {
   ],
 
   comparatif: {
+    kicker: "Recherche classique ou assistant",
+    caption: "Moteur de recherche interne et assistant documentaire, point par point.",
     intro: "Le moteur de recherche interne renvoie des documents, l'assistant renvoie une réponse avec ses preuves. Le moteur classique suffit quand vos utilisateurs savent quel document ils cherchent et le lisent ensuite. L'assistant se justifie quand la réponse est dispersée entre plusieurs documents, ou quand chercher prend plus de temps que décider.",
     rows: [
       { aspect: "Forme de la question", off: "Des mots-clés, avec les termes exacts du document", custom: "Une question en français courant, avec les mots de l'utilisateur" },
@@ -134,7 +263,7 @@ export default {
         "Un guide d'utilisation désigne qui tient chaque document à jour et fixe les règles d'usage et de sécurité.",
       ],
       resultat: "Chaque pôle retrouve ses formulations gagnantes dans ses propres assistants, et les familles de marchés restent séparées. Le consultant garde la main sur l'analyse du dossier, le choix de la réponse et le lien avec le maître d'ouvrage. Le cabinet travaille dans un environnement d'entreprise qui exclut ses données de l'entraînement des modèles. Nous en tirons une règle pour tout assistant documentaire : un corpus par famille de questions, chacun avec son propriétaire.",
-      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "Lire l'étude de cas complète" },
+      lien: { href: "/etudes-de-cas-ia#conseil-financier", label: "La base de connaissance du cabinet de conseil financier" },
     },
     pieges: [
       {

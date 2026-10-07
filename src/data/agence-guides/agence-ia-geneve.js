@@ -3,7 +3,78 @@
 // Aucune étude de cas publiée ne correspond à Genève : le cas est une mise en situation construite. Pas d'OPCO ; facture hors taxes, TVA précisée au devis.
 export default {
   slug: 'agence-ia-geneve',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Bassin lémanique", "LPD suisse et RGPD", "Devis en euros hors taxes", "Lyon à moins de 2 h en train"],
+    lien: "Voir l'offre pour Genève",
+  },
+  ville: {
+    heroSubtitle: "À Genève, la première question d'un projet d'IA porte sur l'endroit où les données seront traitées. Nous l'écrivons noir sur blanc dans la proposition, avec la durée de conservation et la liste des accès, avant de développer pour une banque privée, une société de négoce ou une organisation internationale.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Conseil, agents et automatisations conçus pour des données confidentielles, formation des équipes",
+      },
+      {
+        label: "Venir à Genève",
+        value: "Équipe à Lyon, à moins de deux heures de train direct : ateliers sur le bassin lémanique, développement à distance",
+      },
+      {
+        label: "Pour qui",
+        value: "Banque privée et gestion de fortune, négoce de matières premières, organisations internationales, arômes et parfums",
+      },
+      {
+        label: "Cadre suisse",
+        value: "Devis en euros hors taxes, TVA traitée au devis, pas d'OPCO, LPD prise en compte dès le cadrage",
+      },
+    ],
+    presence: "L'équipe Masteria part de Lyon, à moins de deux heures de Genève en train direct. Les ateliers de cadrage et les points d'avancement se tiennent sur le bassin lémanique ; le développement et le suivi se font à distance. Nous n'avons pas de bureau à Genève, et nos devis sont établis en euros hors taxes, le traitement de la TVA y étant précisé.",
+  },
+  offresTitre: {
+    kicker: "Notre offre genevoise",
+    h2: "Ce que nous construisons pour les entreprises genevoises",
+  },
+  offresNote: {
+    titre: "La confidentialité se décide avant le code.",
+    texte: "Le lieu de traitement, la durée de conservation et les accès s'écrivent dans la proposition, puis la même équipe construit l'outil dans ce cadre et le remet à vos équipes avec son code.",
+  },
+  ancrage: {
+    kicker: "Genève et le bassin lémanique",
+    h2: "Pourquoi une agence IA pour les entreprises genevoises ?",
+    economie: "Le paysage économique genevois",
+    presence: "Comment nous travaillons à Genève",
+    prestations: "Trois chantiers typiques sur la place genevoise",
+  },
+  formationBloc: {
+    kicker: "Former les équipes",
+    h2: "Des sessions en français sur le bassin lémanique",
+    lien: "Le catalogue des formations",
+  },
+  etapesBloc: {
+    kicker: "Le déroulé",
+    h2: "Cinq étapes pour un projet genevois",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises genevoises",
+    texte: "Vous consultez plusieurs prestataires ? Nos critères de choix sont réunis dans",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "le guide de la meilleure agence IA",
+    },
+  },
+  maillage: {
+    villes: "Nos pages en France",
+    expertises: "Pour préparer un projet confidentiel",
+  },
+  cta: {
+    titre: "Un projet d'IA confidentiel à Genève ?",
+    texte: "Indiquez-nous le flux visé et vos exigences sur le lieu de traitement des données. Un créneau pour un premier échange de 30 minutes, offert, vous est proposé dans les 24 heures.",
+  },
+  equipe: {
+    titre: "Une équipe indépendante, attentive au cadre suisse",
+    texte: "Mathias Nizan dirige Masteria, fondé à Lyon en 2022, et suit chaque mission genevoise. Il réunit des consultants qui tiennent compte de la LPD et du RGPD, des développeurs qui choisissent le lieu de traitement avec vous et des formateurs qui interviennent en français. Masteria ne revend aucune licence et n'a d'accord commercial avec aucun fournisseur de modèle.",
+  },
   intro: "À Genève, un outil d'IA sur mesure se dessine à partir des règles de secret et d'externalisation propres à votre activité : loi fédérale sur la protection des données (LPD), circulaire de la FINMA (l'autorité fédérale de surveillance des marchés financiers), secret professionnel des établissements financiers. Masteria, cabinet basé à Lyon, cadre ces règles avec votre conformité, développe l'outil dans leurs limites et vous remet son code et sa documentation. En Suisse, aucun OPCO (l'organisme français qui finance la formation) n'intervient : la mission est facturée hors taxes, avec un devis qui précise le traitement de la TVA.",
   offresIntro: [
     "Pour une banque, une société de négoce, une organisation internationale ou une PME du canton, nos trois métiers partagent une contrainte : chaque traitement de données doit pouvoir être justifié devant votre conformité, votre société d'audit ou votre autorité de surveillance.",
@@ -11,14 +82,21 @@ export default {
   ],
   offres: [
     {
+      title: "Cadrage sous contrainte de confidentialité",
+      cta: "Notre conseil en IA",
       desc: "Le conseil qualifie d'abord votre situation : établissement assujetti à la FINMA ou non, fonction essentielle ou non, données couvertes par un secret légal ou contractuel. Il produit l'inventaire de vos applications d'IA avec leur classement par risque, tel que la FINMA l'examine chez les assujettis, et une feuille de route qui tient compte du calendrier de vos comités.",
       points: ["Qualification réglementaire de chaque usage", "Inventaire et classement des risques", "Feuille de route calée sur vos comités"],
     },
     {
+      title: "Agents et outils qui restent sous contrôle",
+      cta: "Le développement sur mesure",
+      secondaryCta: "Des outils IA par métier",
       desc: "Les assistants et les agents que nous développons ont un lieu de traitement, une durée de conservation et des accès décidés avec votre conformité, puis consignés dans la documentation. Chaque version passe des tests fixés à l'avance, avec leurs indicateurs, et le code source vous est livré, pour que vos équipes ou un autre prestataire puissent reprendre l'outil.",
       points: ["Lieu de traitement choisi et écrit", "Tests et indicateurs fixés à l'avance", "Code remis pour la reprise"],
     },
     {
+      title: "Automatisation des rapprochements et des rapports",
+      cta: "Automatiser avec Masteria",
       desc: "Nous automatisons les contrôles et les saisies qui pèsent sur les équipes d'exploitation : rapprochement de confirmations de transaction, préparation de dossiers d'ouverture de compte, extraction de données de relevés. L'outil signale, la personne décide, et chaque correction manuelle est conservée pour améliorer l'outil.",
       points: ["Rapprochements et contrôles préparés", "Décision laissée au collaborateur", "Corrections conservées et revues"],
     },
@@ -120,7 +198,7 @@ export default {
   sources: [
     { name: "FINMA : circulaire 2018/3 « Outsourcing » (dernière modification du 4 novembre 2020)", url: "https://www.finma.ch/fr/~/media/finma/dokumente/dokumentencenter/myfinma/rundschreiben/finma-rs-2018-03-01012021_de.pdf?la=fr" },
     { name: "FINMA : communication sur la surveillance 08/2024, gouvernance et gestion des risques liés à l'IA (18 décembre 2024)", url: "https://www.finma.ch/fr/~/media/finma/dokumente/dokumentencenter/myfinma/4dokumentation/finma-aufsichtsmitteilungen/20241218-finma-aufsichtsmitteilung-08-2024.pdf?sc_lang=fr&hash=13E1E8A0EBF3AE250A1EB6E26BD3428D" },
-    { name: "Fedlex : loi fédérale sur la protection des données (LPD, RS 235.1), articles 7, 21 et 22", url: "https://www.fedlex.admin.ch/eli/cc/2022/491/fr" },
+    { name: "Fedlex, LPD (RS 235.1) : protection dès la conception, décisions automatisées et analyse d'impact (articles 7, 21 et 22)", url: "https://www.fedlex.admin.ch/eli/cc/2022/491/fr" },
     { name: "PFPDT : la loi sur la protection des données est directement applicable à l'IA (mise à jour du 8 mai 2025)", url: "https://www.edoeb.admin.ch/en/update-current-legislation-directly-applicable-ai" },
     { name: "Conseil fédéral : réglementation de l'IA, ratification de la Convention du Conseil de l'Europe (12 février 2025)", url: "https://www.admin.ch/fr/nsb?id=104110" },
     { name: "OCSTAT : communication statistique n° 77, emploi dans le canton de Genève et ses communes de 1995 à 2023 (mai 2026)", url: "https://statistique.ge.ch/tel/publications/2026/analyses/communications/an-cs-2026-77.pdf" },

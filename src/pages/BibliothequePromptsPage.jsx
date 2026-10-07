@@ -37,7 +37,7 @@ const FAQ = [
   },
   {
     q: 'Ces prompts fonctionnent-ils sur ChatGPT, Claude, Copilot, Gemini et Mistral ?',
-    a: "Oui, ils sont écrits pour être neutres : rôle, contexte, tâche, format et garde-fou sont compris par les cinq outils. Les différences apparaissent sur le confort, pas sur la validité : Claude accepte des documents plus longs, Copilot et Gemini lisent directement le fichier ouvert dans votre suite bureautique, ChatGPT permet d'enregistrer un prompt dans un GPT personnalisé, Mistral dans un agent. Notre comparateur « quel outil IA pour votre métier » aide à choisir celui qui correspond à vos usages.",
+    a: "Oui, ils sont écrits pour être neutres : rôle, contexte, tâche, format et garde-fou sont compris par les cinq outils. Les différences apparaissent sur le confort, pas sur la validité : Claude accepte des documents plus longs, Copilot et Gemini lisent directement le fichier ouvert dans votre suite bureautique, ChatGPT permet d'enregistrer un prompt dans une compétence ou un projet, Vibe de Mistral dans une Skill. Notre comparateur « quel outil IA pour votre métier » aide à choisir celui qui correspond à vos usages.",
   },
   {
     q: 'Pourquoi vos prompts contiennent-ils des crochets à remplir ?',
@@ -70,7 +70,7 @@ const LEXIQUE = [
   { t: 'Contexte', d: "Les éléments que vous fournissez au modèle pour situer la demande : documents, historique, contraintes, public visé. C'est la variable qui fait le plus la différence entre un résultat générique et un résultat utilisable." },
   { t: 'Garde-fou', d: "Une consigne qui limite l'invention : « n'invente aucun chiffre », « écris NON TROUVÉ si l'information est absente », « distingue ce qui est établi de ce qui est supposé »." },
   { t: 'Itération', d: "La correction du résultat dans la conversation plutôt que la réécriture d'un nouveau prompt. C'est la pratique qui distingue le plus nettement les utilisateurs avancés des débutants." },
-  { t: 'Prompt système', d: "Une instruction permanente, enregistrée une fois pour toutes dans un GPT personnalisé, un Projet ou un agent, et appliquée à toutes les conversations qui en dépendent." },
+  { t: 'Prompt système', d: "Une instruction permanente, enregistrée une fois pour toutes dans un projet, une compétence ou un assistant configuré, et appliquée à toutes les conversations qui en dépendent." },
 ]
 
 const itemListJsonLd = {

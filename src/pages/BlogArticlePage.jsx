@@ -1,14 +1,37 @@
+/*
+ * Gabarit des articles du blog : texte propre (retouche du 07/10/2026).
+ * Tout le texte affiché dans le corps vient de l'article ; le gabarit ne garde que
+ * des étiquettes courtes. Champs facultatifs de l'article reconnus :
+ *   - apres : { titre, texte, liens? [{ label, href }] } : section « passer à la
+ *     pratique » (pont vers le conseil et le développement), écrite pour l'article.
+ *     Sans `apres`, la bande ne garde que le bouton de cadrage et les liens vers
+ *     les offres (l'ancien encart fixe ApresLaFormation, identique sur tous les
+ *     articles, n'est plus utilisé sur le blog). `liens` remplace les quatre
+ *     offres proposées par défaut.
+ * Listes de liens balisées en <nav> : sommaire, formations correspondantes,
+ * ressources liées, liens de la signature, autres articles.
+ * Signature de l'auteur : courte, avec lien vers /mathias-nizan (plus de bio
+ * commune ni de badges chiffrés).
+ */
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { ArrowRight, Clock, Calendar, BookOpen, ChevronDown, ChevronUp, Share2, Check, RefreshCw, Star } from 'lucide-react'
+import { ArrowRight, Clock, Calendar, BookOpen, ChevronDown, ChevronUp, Share2, Check, RefreshCw } from 'lucide-react'
 import { FadeIn, PrimaryBtn, SecBtn } from '../components/components'
 import { FAQSection } from '../components/screens2'
 import SEOHead from '../components/SEOHead'
+import CadrageLink from '../components/CadrageLink'
 import { getArticleBySlug, getRelatedArticles, BLOG_ARTICLES } from '../data/blog-articles'
 import { getTagColor } from '../data/tag-colors'
 import { useIsMobile } from '../hooks/useMediaQuery'
-import ApresLaFormation from '../components/ApresLaFormation'
+
+// Offres proposées par défaut sous le texte de `apres` (mêmes ancres que l'ancien encart).
+const APRES_LIENS = [
+  { label: 'Diagnostic IA', href: '/diagnostic-ia' },
+  { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure' },
+  { label: 'Agence de développement IA', href: '/agence-developpement-ia' },
+  { label: 'Audit IA', href: '/audit-ia' },
+]
 
 const SITE_URL = 'https://www.master-ia.fr'
 const LINKEDIN_URL = 'https://www.linkedin.com/in/mathias-nizan/'
@@ -359,7 +382,7 @@ function TableOfContents({ blocks, collapsed, onToggle }) {
   if (headings.length < 2) return null
 
   return (
-    <div style={{
+    <nav aria-label="Sommaire" style={{
       background: '#F8FAFC',
       border: '1px solid #E5E7EB',
       borderRadius: 14,
@@ -417,7 +440,7 @@ function TableOfContents({ blocks, collapsed, onToggle }) {
           ))}
         </ol>
       )}
-    </div>
+    </nav>
   )
 }
 
@@ -427,7 +450,7 @@ function SidebarTOC({ blocks }) {
   if (headings.length < 2) return null
 
   return (
-    <div style={{
+    <nav aria-label="Sommaire" style={{
       position: 'sticky',
       top: 32,
       alignSelf: 'start',
@@ -470,7 +493,7 @@ function SidebarTOC({ blocks }) {
           </li>
         ))}
       </ol>
-    </div>
+    </nav>
   )
 }
 
@@ -879,10 +902,43 @@ export default function BlogArticlePage() {
         );
       })()}
 
-      <ApresLaFormation
-        kicker="Passer à la pratique"
-        intro="Masteria cadre votre besoin, construit l'outil adapté, assistant ou agent branché sur vos documents et vos logiciels, puis forme vos équipes à s'en servir."
-      />
+      {/* ── Passer à la pratique ── pont vers le conseil et le développement.
+          Avec `apres` : titre et texte écrits pour l'article, puis les liens.
+          Sans `apres` : la bande ne garde que les liens (aucun texte commun). */}
+      {(() => {
+        const apres = article.apres?.titre && article.apres?.texte ? article.apres : null
+        return (
+          <section aria-labelledby={apres ? 'apres-article' : undefined} style={{ padding: apres ? 'clamp(48px, 7vw, 80px) clamp(18px, 4vw, 40px)' : 'clamp(28px, 4vw, 40px) clamp(18px, 4vw, 40px)', background: '#EFF6FF', borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE' }}>
+            <div style={{ maxWidth: 760, margin: '0 auto' }}>
+              {apres && (
+                <>
+                  <h2 id="apres-article" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 30px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 14px' }}>
+                    {apres.titre}
+                  </h2>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 22px' }}>
+                    {apres.texte}
+                  </p>
+                </>
+              )}
+              <nav aria-label="Passer à la pratique" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px 18px' }}>
+                {!apres && (
+                  <span style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB' }}>
+                    <span aria-hidden="true" style={{ width: 22, height: 2, background: '#2563EB' }} /> Passer à la pratique
+                  </span>
+                )}
+                <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', padding: '12px 20px', borderRadius: 10, textDecoration: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 14.5, fontWeight: 700 }}>
+                  Réserver 30 minutes de cadrage <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </CadrageLink>
+                {(apres?.liens || APRES_LIENS).map(l => (
+                  <Link key={l.href} to={l.href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14.5, fontWeight: 700, color: '#2563EB', textDecoration: 'none' }}>
+                    {l.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* ── Formations correspondantes ──
           Maillage interne blog → hubs/spokes : 3 formations Masteria mappées au tag de l'article.
@@ -918,7 +974,7 @@ export default function BlogArticlePage() {
           width: 600, height: 200, borderRadius: '50%',
           background: '#F97316', opacity: 0.04, filter: 'blur(80px)', pointerEvents: 'none',
         }} />
-        <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
+        <nav aria-label="Formations correspondantes" style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: 8,
             background: '#fff', border: '1px solid #FED7AA',
@@ -940,18 +996,10 @@ export default function BlogArticlePage() {
             fontWeight: 900, color: '#0A0A0A',
             letterSpacing: '-0.02em',
             lineHeight: 1.2,
-            marginBottom: 10,
+            marginBottom: 32,
           }}>
-            Formations Masteria correspondantes
+            Formations correspondantes
           </h2>
-          <p style={{
-            fontFamily: 'DM Sans, sans-serif',
-            fontSize: 'clamp(14px, 1.7vw, 16px)',
-            color: '#6B7280', lineHeight: 1.7, marginBottom: 32,
-            maxWidth: 620,
-          }}>
-            Trois programmes Masteria pour traduire ce que vous venez de lire en compétences concrètes pour vos équipes. Certifié Qualiopi · Finançable OPCO.
-          </p>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -1026,13 +1074,13 @@ export default function BlogArticlePage() {
               </Link>
             ))}
           </div>
-        </div>
+        </nav>
       </section>
 
       {/* ── Internal links ── */}
       {article.internalLinks && article.internalLinks.length > 0 && (
         <section style={{ padding: 'clamp(40px, 5vw, 64px) clamp(20px, 4vw, 32px)', background: '#fff', borderTop: '1px solid #F1F5F9' }}>
-          <div style={{ maxWidth: 760, margin: '0 auto' }}>
+          <nav aria-label="Ressources liées" style={{ maxWidth: 760, margin: '0 auto' }}>
             <div style={{
               fontSize: 11, fontWeight: 700, letterSpacing: '0.12em',
               textTransform: 'uppercase', color: '#9CA3AF',
@@ -1048,7 +1096,7 @@ export default function BlogArticlePage() {
             }}>
               Ressources liées
             </h2>
-            <nav aria-label="Ressources liées"><ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 8 }}>
               {article.internalLinks.map((l, i) => (
                 <li key={i}>
                   <Link
@@ -1070,34 +1118,28 @@ export default function BlogArticlePage() {
                   </Link>
                 </li>
               ))}
-            </ul></nav>
-          </div>
+            </ul>
+          </nav>
         </section>
       )}
 
-      {/* ── Author bio ──
-          Carte premium avec gradient, badges crédibilité, jobTitle, double CTA.
-          Signal E-E-A-T fort visible : photo + LinkedIn + crédibilité Qualiopi + 500 clients. */}
-      <section style={{ padding: 'clamp(40px, 5vw, 56px) clamp(20px, 4vw, 32px)', background: '#F8FAFC', borderTop: '1px solid #F1F5F9' }}>
+      {/* ── Signature ──
+          Courte et identique d'un article à l'autre : photo, nom, rôle, liens
+          vers le parcours de l'auteur et vers le blog (balisés en <nav>). */}
+      <section style={{ padding: 'clamp(32px, 4vw, 44px) clamp(20px, 4vw, 32px)', background: '#F8FAFC', borderTop: '1px solid #F1F5F9' }}>
         <div style={{
           maxWidth: 760, margin: '0 auto',
           display: 'grid',
           gridTemplateColumns: 'auto 1fr',
-          gap: 24,
+          gap: 20,
           alignItems: 'center',
           background: 'linear-gradient(135deg, #FFFFFF 0%, #FAFBFD 100%)',
           border: '1px solid #E5E7EB',
           borderRadius: 18,
           boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-          padding: 'clamp(18px, 3vw, 28px)',
+          padding: 'clamp(16px, 2.6vw, 22px)',
         }}>
-          {/* Avatar : vraie photo (WebP + JPG fallback) au lieu des initiales.
-              Signal E-E-A-T fort + meilleur taux de clic sur le bloc auteur. */}
-          {/* Avatar : vraie photo (WebP + JPG fallback) au lieu des initiales.
-              Signal E-E-A-T fort + meilleur taux de clic sur le bloc auteur.
-              Halo orange subtil derrière la photo pour l'identité visuelle Masteria. */}
-          <a href={LINKEDIN_URL} target="_blank" rel="author noopener noreferrer"
-             aria-label="Profil LinkedIn de Mathias Nizan"
+          <Link to="/mathias-nizan" aria-label="Parcours de Mathias Nizan"
              style={{ flexShrink: 0, lineHeight: 0, position: 'relative' }}>
             <span aria-hidden="true" style={{
               position: 'absolute', inset: -6,
@@ -1105,85 +1147,46 @@ export default function BlogArticlePage() {
               background: 'linear-gradient(135deg, #F97316 0%, #FB923C 100%)',
               opacity: 0.18, filter: 'blur(8px)', pointerEvents: 'none',
             }} />
-            <picture>
-              <img
-                src="/assets/mathias-nizan@240.jpg"
-                srcSet="/assets/mathias-nizan@120.jpg 120w, /assets/mathias-nizan@240.jpg 240w, /assets/mathias-nizan@360.jpg 360w"
-                sizes="80px"
-                alt="Mathias Nizan, fondateur de Masteria, expert en formation IA"
-                width="80" height="80"
-                loading="lazy" decoding="async"
-                style={{
-                  position: 'relative',
-                  width: 80, height: 80, borderRadius: '50%',
-                  border: '3px solid #fff',
-                  boxShadow: '0 4px 12px rgba(249,115,22,0.25)',
-                  objectFit: 'cover', display: 'block',
-                }}
-              />
-            </picture>
-          </a>
+            <img
+              src="/assets/mathias-nizan@240.jpg"
+              srcSet="/assets/mathias-nizan@120.jpg 120w, /assets/mathias-nizan@240.jpg 240w, /assets/mathias-nizan@360.jpg 360w"
+              sizes="64px"
+              alt="Mathias Nizan"
+              width="64" height="64"
+              loading="lazy" decoding="async"
+              style={{
+                position: 'relative',
+                width: 64, height: 64, borderRadius: '50%',
+                border: '3px solid #fff',
+                boxShadow: '0 4px 12px rgba(249,115,22,0.25)',
+                objectFit: 'cover', display: 'block',
+              }}
+            />
+          </Link>
           <div>
             <div style={{
-              fontFamily: 'DM Sans, sans-serif',
-              fontSize: 10, fontWeight: 800, letterSpacing: '0.14em',
-              textTransform: 'uppercase', color: '#9CA3AF',
-              marginBottom: 4,
-            }}>
-              Écrit par
-            </div>
-            <div style={{
-              fontFamily: 'Nunito, sans-serif', fontSize: 18,
+              fontFamily: 'Nunito, sans-serif', fontSize: 17,
               fontWeight: 900, color: '#0A0A0A', marginBottom: 2,
               letterSpacing: '-0.01em',
             }}>
               <a href={LINKEDIN_URL} target="_blank" rel="author noopener noreferrer"
                  style={{ color: '#0A0A0A', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-                Mathias Nizan <LinkedinIcon size={16} />
+                Mathias Nizan <LinkedinIcon size={15} />
               </a>
             </div>
             <div style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 13,
               color: '#374151', fontWeight: 600, marginBottom: 8,
             }}>
-              Fondateur de Masteria · Conseil et architecture de solutions IA
+              Fondateur de Masteria
             </div>
-            <div style={{
-              fontFamily: 'DM Sans, sans-serif', fontSize: 13,
-              color: '#6B7280', lineHeight: 1.6, marginBottom: 14,
-            }}>
-              Masteria, cabinet spécialisé en IA à Lyon : audit, conseil, outils sur mesure et formation certifiée Qualiopi. Plus de 1 500 professionnels formés depuis 2022 à ChatGPT, Claude, Microsoft Copilot, Gemini et Mistral AI.
-            </div>
-            {/* Badges crédibilité */}
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 14 }}>
-              {[
-                { label: 'Qualiopi', color: '#2563EB', bg: '#EFF6FF', border: '#BFDBFE' },
-                { label: '+1500 formés', color: '#F97316', bg: '#FFF7ED', border: '#FED7AA' },
-                { label: 'Cité dans Les Échos', color: '#16A34A', bg: '#F0FDF4', border: '#BBF7D0' },
-              ].map(b => (
-                <span key={b.label} style={{
-                  fontSize: 11, fontWeight: 700,
-                  padding: '3px 9px', borderRadius: 99,
-                  color: b.color, background: b.bg, border: `1px solid ${b.border}`,
-                  fontFamily: 'DM Sans, sans-serif',
-                  display: 'inline-flex', alignItems: 'center', gap: 3,
-                }}>{b.star && <Star size={14} color="#2563EB" fill="#2563EB" style={{ flexShrink: 0 }} />}{b.label}</span>
-              ))}
-            </div>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+            <nav aria-label="L'auteur et le blog" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
               <Link to="/mathias-nizan" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 5,
                 fontFamily: 'DM Sans, sans-serif', fontSize: 13,
                 fontWeight: 700, color: '#2563EB', textDecoration: 'none',
               }}>
-                Le parcours de l'auteur <ArrowRight size={12} />
-              </Link>
-              <Link to="/centre-formation-ia-entreprise" style={{
-                display: 'inline-flex', alignItems: 'center', gap: 5,
-                fontFamily: 'DM Sans, sans-serif', fontSize: 13,
-                fontWeight: 700, color: '#2563EB', textDecoration: 'none',
-              }}>
-                À propos de Masteria <ArrowRight size={12} />
+                Son parcours <ArrowRight size={12} />
               </Link>
               <Link to="/blog" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 5,
@@ -1192,7 +1195,7 @@ export default function BlogArticlePage() {
               }}>
                 Tous les articles <ArrowRight size={12} />
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       </section>

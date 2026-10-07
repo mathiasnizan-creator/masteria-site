@@ -90,7 +90,7 @@ const APPROCHES = [
   },
   {
     nom: 'Outils IA',
-    detail: 'Perplexity, NotebookLM, agents no-code (Make, n8n).',
+    detail: 'Perplexity, Gemini Notebook (anciennement NotebookLM), agents no-code (Make, n8n).',
     effort: 'Faible une fois réglé',
     fraicheur: 'Très bonne',
     tri: 'Correct, à cadrer',
@@ -138,7 +138,7 @@ const GLOSSAIRE = [
 
 const FAQ = [
   { q: "Comment faire une veille IA efficace ?", a: "Partez de l'usage, pas de l'outil. Définissez les décisions que votre veille doit éclairer (choix d'outils, conformité, opportunités métier), choisissez quelques sources fiables plutôt que beaucoup, et fixez un rythme tenable. L'automatisation vient ensuite, pour collecter et dédoublonner. Le tri et l'analyse, eux, gagnent à rester humains." },
-  { q: "Quels outils pour automatiser sa veille IA ?", a: "Pour démarrer : un agrégateur (Feedly, Google Alertes) et un assistant de synthèse (Perplexity, NotebookLM). Pour aller plus loin : des agents no-code comme Make ou n8n qui collectent, filtrent et vous livrent un résumé. Pour un besoin exigeant, un pipeline sur mesure reste l'option la plus fine, comme celui que nous faisons tourner chaque matin." },
+  { q: "Quels outils pour automatiser sa veille IA ?", a: "Pour démarrer : un agrégateur (Feedly, Google Alertes) et un assistant de synthèse (Perplexity, Gemini Notebook). Pour aller plus loin : des agents no-code comme Make ou n8n qui collectent, filtrent et vous livrent un résumé. Pour un besoin exigeant, un pipeline sur mesure reste l'option la plus fine, comme celui que nous faisons tourner chaque matin." },
   { q: "Quel est le meilleur outil de veille IA ?", a: "Il n'y en a pas un seul : le bon outil dépend de votre usage. Pour une veille ponctuelle, Perplexity ou Google Alertes suffisent. Pour une veille d'équipe régulière, Feedly ou un agent Make/n8n. Pour une veille cadrée sur vos enjeux et livrée à votre format, un système sur mesure. Jugez un outil à la qualité de ce qu'il écarte, pas à sa longueur de fonctionnalités." },
   { q: "Peut-on totalement automatiser sa veille IA ?", a: "La collecte, le dédoublonnage et une première mise en forme, oui. La sélection finale et l'analyse, non, ou alors au prix de la qualité. Les moteurs génératifs se laissent piéger par le « slop » et les hallucinations. Le meilleur rapport effort/valeur combine une automatisation solide en amont et un regard humain en aval." },
   { q: "Comment faire une veille IA avec ChatGPT ou Perplexity ?", a: "Ces outils excellent pour synthétiser, pas pour collecter en continu. La bonne méthode : rassemblez vos sources avec un agrégateur ou un agent, puis demandez à l'assistant de résumer et de comparer les éléments du jour. Vérifiez toujours les sources citées : un assistant peut inventer une référence plausible. Il reste un accélérateur, pas un rédacteur en chef." },

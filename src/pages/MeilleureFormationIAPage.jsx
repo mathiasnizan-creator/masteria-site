@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, BadgeCheck, GraduationCap, ShieldCheck, Target, AlertTriangle, BookOpen } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import FounderNote from '../components/FounderNote'
-import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -28,7 +26,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = 'Meilleure formation IA : comment choisir en 2026 | Masteria'
-const META_DESC = "Meilleure formation IA : les critères qui comptent vraiment, le paysage des organismes de formation, les tarifs 2026 et comment choisir sans se tromper."
+const META_DESC = "Meilleure formation IA en 2026 : trois exigences à vérifier, le panorama des organismes, les tarifs par format et une méthode pour choisir en une semaine."
 const KEYWORDS = 'meilleure formation ia, meilleures formations ia, meilleure formation intelligence artificielle, formation ia entreprise, organisme de formation ia, formation ia qualiopi, formation ia opco, comparatif formation ia, formation ia lyon'
 
 /* ── Design system local (aligné sur les pages money) ── */
@@ -44,28 +42,28 @@ const tableWrapStyle = { overflowX: 'auto', background: '#fff', border: '1px sol
 const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #E5E7EB', whiteSpace: 'nowrap' }
 const srOnlyStyle = { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }
 
-/* Les trois exigences — le cœur de la page (valeur + positionnement) */
+/* Les trois exigences : le cœur de la page (valeur + positionnement) */
 const PILLARS = [
   {
     icon: ShieldCheck,
     tag: 'Le cadre',
-    title: 'Ce que Qualiopi garantit, et ce qu\'elle ne garantit pas',
-    body: "La certification Qualiopi conditionne l'accès aux financements : OPCO, plan de développement des compétences, certains dispositifs publics. Un organisme non certifié reste libre de proposer une bonne formation, mais elle restera entièrement à la charge de l'entreprise. Qualiopi audite un processus (évaluation des besoins, qualification des formateurs, mesure de la satisfaction), pas le contenu pédagogique lui-même. Un organisme Qualiopi peut livrer une session médiocre. Un organisme non Qualiopi peut livrer une excellente session, à vos frais.",
-    masteria: "Chez Masteria : certifié Qualiopi, formations finançables par votre OPCO ou votre plan de développement des compétences, avec un audit des besoins réels avant chaque session.",
+    title: 'Qualiopi ouvre le financement et laisse le contenu hors de son audit',
+    body: "Qualiopi est la certification qualité que l'État exige d'un organisme pour que votre OPCO, ou le budget formation de l'entreprise passé par le plan de compétences, paie la session. Un certificateur accrédité la délivre après avoir audité des procédures : la façon de recueillir vos besoins, de choisir les formateurs, d'évaluer les acquis, de traiter une réclamation. L'auditeur n'assiste à aucune séance et ne note pas la pédagogie. Un organisme certifié peut donc animer une journée médiocre, et un organisme sans certificat une excellente journée que vous paierez seul. Le certificat conditionne l'accès aux fonds ; la valeur de la session se vérifie avec d'autres questions.",
+    masteria: "Chez Masteria : organisme certifié Qualiopi au titre des actions de formation. L'OPCO de votre branche peut prendre la session en charge si ses règles et ses fonds le permettent, et chaque session commence par un recueil écrit de vos besoins.",
   },
   {
     icon: Target,
     tag: 'Le contenu',
-    title: 'Un programme construit sur le poste réel, pas sur l\'outil en général',
-    body: "Une formation générique enseigne à utiliser ChatGPT en général. Une formation utile enseigne à s'en servir pour rédiger une fiche de poste, préparer un entretien budgétaire ou répondre à un appel d'offres, selon le métier formé. Les participants qui ont travaillé sur leurs propres dossiers pendant la session continuent d'appliquer ce qu'ils ont appris une fois de retour au poste. Ceux qui ont suivi une démonstration générique oublient en quelques semaines.",
-    masteria: "Chez Masteria : audit des besoins avant chaque session, contenu construit sur vos dossiers et vos outils réels, formateur qui pratique ces outils dans son propre travail.",
+    title: "Le programme part des dossiers que l'équipe traite cette semaine",
+    body: "Un programme générique montre ce que sait faire un assistant IA. Un programme utile montre à une assistante comment préparer le prochain comité de direction, ou à un contrôleur de gestion comment commenter l'écart budgétaire du mois. L'écart se mesure au retour au poste. Quand l'exercice portait sur un dossier du participant, le geste est déjà rodé et il le refait le lundi. Quand il portait sur un exemple de démonstration, il faut tout transposer à son métier, et la plupart des gens ne le font jamais.",
+    masteria: "Chez Masteria : un questionnaire de positionnement avant la session, des ateliers bâtis sur les documents et les outils de vos équipes, et un formateur qui se sert de ces outils dans son propre métier.",
   },
   {
     icon: GraduationCap,
     tag: 'Le suivi',
-    title: 'Ce qui se passe après la session compte autant que la session',
-    body: "Une journée de formation sans suivi produit un pic d'enthousiasme qui retombe en quelques semaines : rien n'organise la reprise des nouveaux réflexes une fois revenu au poste. Un bon organisme prévoit un point après la session, remet des ressources réutilisables plutôt qu'un support archivé, et reste joignable quand une question se pose sur un cas concret.",
-    masteria: "Chez Masteria : kit de prompts et de ressources propre à chaque métier remis en fin de session, suivi à 30 jours inclus pour mesurer l'adoption réelle.",
+    title: 'Le mois qui suit la session décide de ce qui reste',
+    body: "Après une bonne journée, l'élan tient quelques jours. Les vieilles habitudes reprennent ensuite leur place, faute d'un rendez-vous qui oblige à rouvrir l'outil. Un organisme sérieux fixe ce rendez-vous dans le devis : un point un mois plus tard, des supports que l'on rouvre sans le formateur, une adresse où envoyer la question qui bloque sur un cas précis. Sans ce point, personne ne sait si la formation a servi.",
+    masteria: "Chez Masteria : prompts, gabarits et supports consultables après la session, puis un point à J+30 sur les indicateurs relevés pendant la formation.",
   },
 ]
 
@@ -78,112 +76,115 @@ const LANDSCAPE = [
   { type: 'Organisme spécialisé IA en entreprise', cadre: 3, contenu: 3, suivi: 3, highlight: true, when: 'Faire changer une pratique métier dès la semaine suivant la session.' },
 ]
 
-/* Comparatif factuel d'acteurs réels du marché (panorama, PAS un classement). Neutre,
+/* Comparatif factuel d'acteurs du marché (panorama, PAS un classement). Neutre,
  * descriptif, sans jugement de valeur : conforme au cadre de la publicité comparative
  * et au parti pris d'intégrité (aucune note, aucune hiérarchie). À valider avant prod. */
 const MARKET_ACTORS = [
   { cat: 'MOOC et plateformes e-learning', names: 'OpenClassrooms, Coursera, LinkedIn Learning', best: 'Modules de découverte à bas coût, grands catalogues accessibles seul.', fit: 'Sensibilisation individuelle, budget serré.' },
   { cat: 'Bootcamps reconversion data / IA', names: 'Jedha, DataScientest, Le Wagon', best: 'Parcours longs et certifiants vers un métier data, IA ou développement.', fit: 'Reconversion professionnelle complète.' },
-  { cat: 'Executive education (grandes écoles)', names: 'HEC Executive Education, CentraleSupélec Exed, Mines Paris PSL Executive Education', best: "Vision stratégique de l'IA pour un comité de direction, réseau académique.", fit: 'Programmes dirigeants, budgets de formation cadre.' },
+  { cat: 'Executive education (grandes écoles)', names: 'HEC Executive Education, CentraleSupélec Exed, Mines Paris PSL Executive Education', best: "Lecture stratégique de l'IA destinée aux comités de direction, réseau académique.", fit: 'Programmes dirigeants, budgets de formation cadre.' },
   { cat: 'Organismes de formation généralistes', names: 'Cegos, Orsys, M2i, Comundi', best: 'Larges catalogues multi-thématiques incluant des modules IA, logistique inter-entreprise rodée.', fit: 'Grands comptes avec un fournisseur déjà référencé.' },
-  { cat: 'Organismes spécialisés IA en entreprise', names: 'Structures plus petites et spécialisées (catégorie de Masteria)', best: 'Audit des besoins, contenu sur mesure par métier, formateur en activité, suivi après la session.', fit: 'PME, ETI et directions métier visant un changement de pratique mesurable.' },
+  { cat: 'Organismes spécialisés IA en entreprise', names: "Organismes indépendants centrés sur l'IA au travail, dont Masteria", best: 'Recueil des besoins, ateliers taillés pour chaque métier, formateur en activité, point de suivi après la session.', fit: 'PME, ETI et directions métier qui veulent voir une pratique changer.' },
 ]
 
 /* Les 4 étapes pour choisir, du cadrage à la décision. Section à valeur ajoutée
  * (méthode concrète) qui répond à la thèse de la page. */
 const PROCESS = [
-  { step: 'Cadrer le besoin', goal: "Identifier le métier ou l'équipe à former et ce que « ça a marché » voudrait dire trois mois après.", deliver: 'Une liste des cas d\'usage réels à couvrir, remontée par les équipes elles-mêmes.', duration: '2 à 3 jours', watch: "Consulter uniquement la direction, jamais les équipes formées, produit un programme qui manque sa cible." },
-  { step: 'Présélectionner 2 à 3 organismes', goal: 'Repérer, dans le paysage des organismes, la famille qui correspond à votre situation, puis contacter 2 ou 3 acteurs de cette famille.', deliver: 'Une short-list argumentée, avec pour chacun un programme reçu et un formateur identifié par son nom.', duration: '1 semaine', watch: 'Un organisme qui refuse de nommer le formateur avant la signature mérite une question de plus.' },
-  { step: 'Demander une preuve, pas une brochure', goal: "Vérifier ce que l'organisme avance : attestation Qualiopi à jour, référence vérifiable dans un secteur proche, exemple de kit remis en fin de session.", deliver: 'Une attestation Qualiopi consultée, un client de référence contacté.', duration: '2 à 3 jours', watch: 'Une brochure généraliste ne remplace jamais un exemple concret déjà livré à une entreprise comparable.' },
-  { step: 'Décider et prévoir le suivi', goal: "Signer, en intégrant dès le devis un point de suivi à 30 jours pour vérifier l'adoption réelle.", deliver: 'Convention de formation, programme détaillé, date du point de suivi fixée à l\'avance.', duration: '1 à 2 jours', watch: "Un devis qui ne mentionne aucun suivi post-formation reporte tout le travail d'adoption sur vos équipes, seules." },
+  { step: 'Cadrer le besoin', goal: "Identifier le métier ou l'équipe à former et ce que « ça a marché » voudrait dire trois mois après.", deliver: "La liste des situations de travail à couvrir, remontée par les équipes elles-mêmes.", duration: '2 à 3 jours', watch: "Un programme écrit avec la seule direction, sans entendre les personnes à former, manque presque toujours sa cible." },
+  { step: 'Présélectionner 2 à 3 organismes', goal: "Situer votre besoin dans l'une des cinq familles d'organismes, puis contacter deux ou trois acteurs de celle-ci.", deliver: 'Une courte liste argumentée, avec pour chaque organisme un programme reçu et un formateur désigné par son nom.', duration: '1 semaine', watch: 'Un organisme qui refuse de nommer le formateur avant la signature mérite une question de plus.' },
+  { step: 'Demander des preuves vérifiables', goal: "Contrôler ce que l'organisme avance : certificat Qualiopi en cours de validité, client joignable dans un secteur proche, exemple de supports remis à la fin d'une session.", deliver: 'Un certificat Qualiopi consulté, un client de référence appelé.', duration: '2 à 3 jours', watch: "Une plaquette commerciale ne remplace jamais un exemple déjà livré à une entreprise comparable." },
+  { step: 'Décider et prévoir le suivi', goal: "Signer en inscrivant dans le devis un point à un mois, qui vérifie ce que l'équipe a vraiment repris.", deliver: "Convention de formation, programme détaillé, date du point de suivi fixée d'avance.", duration: '1 à 2 jours', watch: "Un devis muet sur l'après-formation laisse vos équipes seules face au travail d'adoption." },
 ]
 
 const BUDGETS = [
   { mission: 'MOOC ou plateforme e-learning (par mois)', range: 'Gratuit à 50 €', note: 'Accès à un catalogue de vidéos, formateur non inclus.' },
-  { mission: 'Bootcamp reconversion data / IA (parcours complet)', range: '3 000 à 8 000 €', note: 'Par personne, sur plusieurs semaines ; parfois finançable CPF si le parcours est certifiant RNCP.' },
+  { mission: 'Bootcamp reconversion data / IA (parcours complet)', range: '3 000 à 8 000 €', note: 'Par personne, sur plusieurs semaines ; le CPF peut entrer en jeu quand le parcours débouche sur un titre enregistré au RNCP.' },
   { mission: 'Executive education dirigeants (programme court)', range: '3 000 à 12 000 €', note: 'Par personne, sur 2 à 5 jours, selon la grande école.' },
   { mission: 'Organisme généraliste, module IA (par jour, inter-entreprise)', range: '400 à 1 200 €', note: 'Par personne, catalogue multi-thématique.' },
-  { mission: 'Formation intra Masteria (par jour, groupe jusqu\'à 12)', range: '1 980 € / jour', note: 'Tarif HT, finançable par votre OPCO (organisme certifié Qualiopi).' },
-  { mission: 'Formation individuelle Masteria (par jour)', range: '1 980 € / jour', note: "Même tarif que l'intra depuis 2026, cadrage sur mesure inclus." },
+  { mission: "Formation intra Masteria (une journée, jusqu'à 12 participants)", range: '1 980 € HT', note: "Prix de la journée pour tout le groupe, et deux journées pour 3 960 € HT. Votre OPCO de branche peut contribuer, à hauteur de ce que prévoient ses règles et ses fonds." },
+  { mission: 'Formation individuelle Masteria (une journée)', range: '1 980 € HT', note: "Même prix qu'une journée en intra, avec un programme réglé sur le poste de la personne formée." },
 ]
 
 /* ── Repères citables (GEO) : stats sourcées, glossaire d'entités, références ── */
 const MARKET_STATS = [
-  { value: '1er janvier 2022', label: 'date depuis laquelle la certification Qualiopi est obligatoire pour tout organisme de formation qui souhaite accéder aux financements publics ou mutualisés.', source: 'Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-  { value: '2 février 2025', label: "entrée en application de l'article 4 de l'AI Act (règlement 2024/1689) : les entreprises qui déploient de l'IA doivent assurer un niveau de compétence suffisant à leurs équipes.", source: 'Union européenne', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
-  { value: '25 mai 2018', label: 'application du RGPD, qui encadre les données manipulées par les équipes en formation comme en usage courant des outils IA.', source: 'CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { value: '1er janvier 2022', label: "date depuis laquelle seuls les organismes titulaires de Qualiopi voient leurs formations payées par un OPCO ou par de l'argent public.", source: 'Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { value: '2 février 2025', label: "jour où l'article 4 du texte européen sur l'IA, adopté en 2024, a commencé à s'appliquer. Il vise la compréhension de l'IA chez les salariés des entreprises qui s'en servent.", source: 'EUR-Lex', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { value: '27 juillet 2026', label: "date d'effet de l'Omnibus numérique, publié sous le numéro 2026/1744. Il récrit l'article 4 : chaque entreprise agit, par des moyens qu'elle choisit, pour faire progresser la culture IA de ses salariés, sans niveau ni certificat imposés.", source: 'EUR-Lex', url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { value: '25 mai 2018', label: "application du RGPD, qui s'impose dès qu'un participant colle des données personnelles dans un assistant IA, en formation comme au quotidien.", source: 'CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 const GLOSSARY = [
-  { term: 'Qualiopi', def: "Certification d'État attribuée à l'organisme de formation, pas à l'apprenant. Elle atteste d'un processus qualité audité (évaluation des besoins, qualification des formateurs, suivi de la satisfaction) et conditionne l'accès aux financements OPCO, CPF et plan de développement des compétences." },
-  { term: 'OPCO', def: 'Opérateur de compétences. Organisme qui collecte les contributions formation des entreprises et finance tout ou partie des actions de formation, à condition qu\'elles soient dispensées par un organisme certifié Qualiopi.' },
-  { term: "Littératie IA (article 4 de l'AI Act)", def: "Obligation, pour toute organisation qui déploie un système d'IA, d'assurer à son personnel un niveau de compétence et de compréhension suffisant pour l'utiliser. En application depuis le 2 février 2025." },
-  { term: 'Formation intra-entreprise', def: 'Session organisée pour les seuls collaborateurs d\'une même entreprise, sur ses propres cas d\'usage, à la différence d\'une session inter-entreprises qui mélange des participants de plusieurs structures autour d\'un programme générique.' },
+  { term: 'Qualiopi', def: "Marque de certification qualité délivrée à un organisme de formation, jamais à un stagiaire. Un certificateur accrédité audite ses procédures selon un référentiel national. Le certificat précise les catégories d'actions couvertes (pour Masteria, les actions de formation) et donne accès aux fonds des OPCO et aux fonds publics." },
+  { term: 'OPCO', def: "Sigle d'« opérateur de compétences ». Chaque OPCO, agréé par l'État, couvre une ou plusieurs branches professionnelles et finance des formations pour les entreprises de sa branche, selon ses propres règles et dans la limite de ses fonds, à condition que l'organisme retenu soit certifié Qualiopi." },
+  { term: "Maîtrise de l'IA, au sens de l'article 4", def: "Savoir-faire et connaissances qui permettent de se servir d'un outil d'IA en mesurant ce qu'il fait bien et ce qu'il risque. La version de l'article 4 en vigueur au 27 juillet 2026 demande aux fournisseurs et aux entreprises utilisatrices d'agir pour la faire grandir chez leurs salariés. L'obligation porte sur les moyens ; aucun certificat n'est à produire." },
+  { term: 'Formation intra-entreprise', def: "Session réservée aux salariés d'une seule entreprise, construite sur ses documents et ses outils. L'inter-entreprises réunit au contraire des personnes de plusieurs structures autour d'un programme commun ; Masteria n'en organise plus et forme en intra ou en individuel." },
 ]
 
 const REFERENCES = [
   { label: 'Qualiopi, Ministère du Travail', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-  { label: "Règlement européen sur l'IA (AI Act, 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
-  { label: 'Intelligence artificielle, CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { label: 'France Compétences (RNCP)', url: 'https://www.francecompetences.fr/' },
+  { label: 'Ministère du Travail : le rôle des OPCO', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+  { label: 'Texte européen sur l’IA de 2024, version EUR-Lex', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { label: 'Omnibus numérique de 2026, publié au Journal officiel de l’UE', url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { label: 'CNIL, dossier intelligence artificielle', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { label: 'France Compétences, répertoires RNCP et RS', url: 'https://www.francecompetences.fr/' },
 ]
 
 const FAQ = [
   {
-    q: "Qu'est-ce qu'une bonne formation IA en entreprise ?",
-    a: "C'est une formation qui change une pratique de travail après la session, pas seulement une journée qui informe. Elle réunit trois éléments : un cadre Qualiopi qui ouvre le financement, un contenu construit sur les cas d'usage réels des participants, et un suivi organisé après la session pour vérifier que les nouveaux réflexes tiennent.",
+    q: "À quoi reconnaît-on une bonne formation IA en entreprise ?",
+    a: "À ce que les participants font autrement le mois suivant. Une bonne formation réunit trois conditions : un organisme certifié Qualiopi, pour que votre OPCO puisse la financer ; des exercices taillés dans les dossiers de l'équipe ; un rendez-vous de suivi fixé avant la session. Qu'une seule manque, et l'effet s'efface en quelques semaines.",
   },
   {
     q: 'Quelle est la meilleure formation IA en 2026 ?',
-    a: "Aucune autorité ne décerne ce titre et les classements en ligne sont déclaratifs ou sponsorisés. La meilleure formation pour vos équipes est celle qui réunit les trois exigences : un cadre Qualiopi qui ouvre le financement, un contenu construit sur vos cas d'usage réels, un suivi qui ancre la pratique après la session. Présélectionnez deux ou trois organismes du bon profil, demandez le nom du formateur et un exemple de kit remis en fin de session.",
+    a: "Personne ne décerne ce titre. Aucun organisme public ne classe les formations IA, et les palmarès qui circulent sur le web sont rédigés par les organismes eux-mêmes ou payés comme de la publicité. La meilleure formation pour vous est celle qui remplit les trois conditions sur votre métier. Retenez deux ou trois organismes de la bonne famille, puis demandez à chacun le nom du formateur et un exemple de supports remis à une équipe comparable.",
   },
   {
-    q: 'Formation IA, cabinet de conseil ou agence IA : quelle différence ?',
-    a: "La formation transmet une compétence à vos équipes pour qu'elles utilisent les outils IA au quotidien. Le cabinet de conseil porte la stratégie et la gouvernance. L'agence IA construit des solutions sur mesure : agents, automatisations, applications. Un projet de transformation complet mobilise souvent les trois. Pour comparer les acteurs sous l'angle stratégie, consultez notre guide du meilleur cabinet de conseil en IA ; sous l'angle construction d'un outil, notre guide de la meilleure agence IA.",
+    q: 'Formation, cabinet de conseil ou agence IA : qui fait quoi ?',
+    a: "La formation fait monter vos équipes en compétence sur les outils qu'elles utilisent. Le cabinet de conseil aide la direction à fixer ses priorités, ses règles et son calendrier. L'agence construit l'outil lui-même, par exemple un assistant relié à vos fichiers ou une automatisation. Beaucoup d'entreprises commencent par former, puis repèrent en séance ce qui mérite un outil sur mesure. Pour ces deux autres besoins, deux guides du site comparent les cabinets de conseil et les agences.",
   },
   {
-    q: "Une formation IA est-elle obligatoire (article 4 de l'AI Act) ?",
-    a: "Depuis le 2 février 2025, l'article 4 du règlement européen sur l'IA impose à toute organisation qui déploie des systèmes d'IA d'assurer à son personnel un niveau de compétence suffisant pour les utiliser. Le texte n'impose pas un format précis : une formation avec un organisme certifié Qualiopi, une session interne documentée ou un e-learning structuré peuvent y répondre, à condition d'être adaptés aux postes concernés et de laisser une trace.",
+    q: "Former ses salariés à l'IA est-il une obligation légale ?",
+    a: "Oui, au sens d'une obligation de moyens. L'article 4 du texte européen sur l'intelligence artificielle traite de la compréhension de l'IA par les salariés depuis février 2025. L'Omnibus numérique l'a récrit, avec effet au 27 juillet 2026 : toute entreprise qui se sert d'outils d'IA doit agir pour que ses équipes les comprennent, sans résultat chiffré à atteindre. Le texte n'impose ni format ni certificat ; une formation adaptée aux postes, dont vous gardez la trace écrite, montre l'effort accompli.",
   },
   {
-    q: 'Combien coûte une formation IA en entreprise ?',
-    a: "Ordres de grandeur du marché français : gratuit à quelques dizaines d'euros par mois pour un MOOC, 3 000 à 8 000 € par personne pour un bootcamp de reconversion, 3 000 à 12 000 € pour un programme dirigeants en executive education, 400 à 1 200 € par jour et par personne pour un module généraliste en inter-entreprise. La formation intra ou individuelle chez Masteria est à 1 980 € HT par jour, finançable par votre OPCO.",
+    q: 'Quel budget prévoir pour une formation IA ?',
+    a: "Les fourchettes indicatives du marché français vont de la gratuité d'un MOOC à 3 000 à 12 000 € par personne pour un bootcamp de reconversion ou un programme dirigeants de grande école. Un module IA dans le catalogue d'un organisme généraliste se paie souvent quelques centaines d'euros par jour et par personne. Chez Masteria, la journée revient à 1 980 € HT, que la salle compte douze stagiaires ou un seul, et votre OPCO de branche décide de sa participation d'après ses règles et l'état de ses fonds.",
   },
   {
-    q: 'Une formation IA gratuite (MOOC) suffit-elle ?',
-    a: "Un MOOC gratuit convient à une découverte autonome, à son rythme. Il ne remplace pas une session avec un formateur en direct, sur les cas d'usage réels de l'équipe, avec un retour personnalisé. Pour une équipe en poste qui doit changer sa pratique, une formation encadrée reste nécessaire.",
+    q: 'Un MOOC gratuit suffit-il pour former une équipe ?',
+    a: "Pour découvrir seul, à son rythme, oui. Pour changer la manière dont une équipe travaille, rarement : personne ne corrige vos demandes à l'assistant, et les exemples parlent d'un autre métier que le vôtre. Gardez le MOOC comme lecture préalable et réservez le temps d'un formateur aux cas de l'équipe.",
   },
   {
-    q: 'Peut-on financer une formation IA avec le CPF ?',
-    a: "Rarement, pour les formations courtes centrées sur l'usage des outils. Le CPF ne finance que les parcours rattachés à une certification enregistrée au RNCP ou au RS, ce qui concerne surtout les bootcamps longs de reconversion vers un métier data ou développement. Vérifiez sur le site France Compétences que la certification annoncée existe réellement avant de vous engager sur cette base.",
+    q: 'Le compte personnel de formation (CPF) entre-t-il en jeu ?',
+    a: "Seulement si la formation prépare un titre du RNCP ou une certification du Répertoire spécifique, tous deux tenus par France Compétences. Les formations courtes à l'usage des outils en ont rarement une ; les bootcamps longs de reconversion vers la data ou le développement, plus souvent. Si un organisme vous promet le CPF, cherchez le numéro de la certification sur le site de France Compétences avant de signer.",
   },
   {
-    q: 'Formation intra ou formation individuelle : laquelle choisir ?',
-    a: "L'intra rassemble une équipe entière sur ses propres cas d'usage et construit une pratique commune. L'individuel convient à un profil isolé ou à un dirigeant qui veut avancer à son rythme, avec un cadrage sur mesure. Chez Masteria, les deux formats sont au même tarif, 1 980 € HT par jour.",
+    q: 'Intra ou individuel : quel format choisir ?',
+    a: "Une session intra rassemble au plus douze collègues autour des dossiers de leur service et leur donne une méthode commune. Le format individuel sert le dirigeant, la personne seule sur sa fonction, ou le salarié pressé de travailler sur ses propres fichiers. Chez Masteria, le prix de la journée ne change pas d'un format à l'autre : 1 980 € HT.",
   },
   {
-    q: 'Combien de temps pour former une équipe à l\'IA ?',
-    a: "Une journée suffit pour une initiation solide sur un outil. Deux jours permettent un programme multi-outils approfondi. Trois jours ajoutent le prompt engineering avancé et les cas d'usage détaillés par métier.",
+    q: "Combien de jours faut-il à une équipe pour prendre l'IA en main ?",
+    a: "Une journée installe les bases sur un outil : une façon structurée de rédiger ses requêtes, les règles de confidentialité, quelques cas du métier traités de bout en bout. Deux jours donnent l'occasion de bâtir des assistants réutilisables ou de comparer plusieurs outils. Au-delà, espacez les journées de quelques semaines pour que chacun pratique entre deux sessions.",
   },
   {
-    q: "Faut-il former toute l'entreprise d'un coup ou commencer par une équipe pilote ?",
-    a: "Commencer par une équipe pilote est presque toujours le bon choix. Une première équipe formée sur ses cas d'usage réels produit des résultats concrets qui servent d'exemple, révèle les besoins propres à votre organisation avant un déploiement large, et crée des relais internes qui accélèrent l'adoption dans les autres services. Le déploiement à toute l'entreprise se construit ensuite sur ces premiers acquis.",
+    q: "Faut-il former toute l'entreprise d'un coup ?",
+    a: "Un groupe pilote d'abord, presque toujours. Il révèle les besoins propres à votre organisation, produit les premiers exemples internes et forme des relais pour la suite. Chez un distributeur de matériel informatique de 58 salariés, dix référents ont été formés pendant deux jours, en juin 2026 ; ce sont eux qui formeront les quelque cinquante salariés restants, un déploiement programmé d'octobre à décembre 2026.",
   },
   {
-    q: "Comment mesurer le retour sur investissement d'une formation IA ?",
-    a: "En définissant, avant la session, ce que « réussi » veut dire pour vous : temps gagné sur une tâche précise, volume traité, qualité d'un livrable, nombre de collaborateurs qui utilisent réellement l'outil un mois après. Un point de suivi à 30 jours permet de comparer ces indicateurs à la situation de départ. Sans critère fixé en amont, le retour sur investissement reste une impression ; avec, il devient une mesure.",
+    q: "Comment chiffrer ce qu'une formation IA a rapporté ?",
+    a: "Choisissez avant la session deux ou trois indicateurs que l'équipe relève elle-même : le temps passé sur une tâche répétitive, le délai de réponse à un client, le nombre de personnes qui ouvrent encore l'outil chaque semaine. Relevez le point de départ en séance, puis la même mesure un mois plus tard. Le gain se lit d'abord en heures ; la direction peut ensuite le traduire en euros. Le calculateur de ROI de l'IA, sur ce site, aide à poser un ordre de grandeur avant de signer.",
   },
   {
-    q: "Une formation IA doit-elle porter sur un seul outil ou sur plusieurs ?",
-    a: "Cela dépend de votre environnement de travail. Si vos équipes utilisent déjà une suite précise (Microsoft 365 avec Copilot, Google Workspace avec Gemini), une formation centrée sur cet outil s'intègre directement dans leur quotidien. Si le choix n'est pas arrêté, une formation multi-outils aide à comparer ChatGPT, Copilot, Gemini, Claude et Mistral et à décider en connaissance de cause. Le principe : la formation porte sur l'outil que vos équipes utiliseront vraiment après la session.",
+    q: 'Un seul outil ou plusieurs dans la même formation ?',
+    a: "Partez de l'outil déjà installé sur les postes. Si vos équipes vivent dans Microsoft 365 avec la licence Microsoft Copilot, ou dans Google Workspace, dont les éditions professionnelles intègrent Gemini, une formation centrée sur cet outil s'applique dès le lendemain. Si rien n'est décidé, une journée multi-outils confronte ChatGPT, Copilot, Gemini, Claude ainsi que Vibe, chez Mistral AI, à vos documents, et aide à trancher.",
   },
   {
-    q: 'Formation IA pour PME ou pour un grand groupe : comment choisir ?',
-    a: "Une PME a intérêt à un organisme proche du terrain, capable de cadrer vite et de former sur les cas d'usage réels d'une petite équipe. Un grand groupe a souvent besoin d'un organisme qui sait staffer plusieurs sessions en parallèle, s'articuler avec un plan de formation existant et respecter des exigences de confidentialité renforcées. Dans les deux cas, le contenu sur mesure et le suivi après la session restent les critères qui protègent l'investissement.",
+    q: 'PME ou grand groupe : les critères changent-ils ?',
+    a: "Les trois conditions restent les mêmes ; l'organisation change. Une PME a besoin d'un interlocuteur qui cadre vite et forme une petite équipe sur ses dossiers. Un grand groupe cherche un organisme capable d'animer plusieurs sessions en parallèle, dans plusieurs langues si besoin, au sein de son plan de formation et de ses règles de confidentialité. Masteria a formé les managers pilotes d'un industriel de l'emballage présent sur plusieurs continents en cinq sessions, de juillet à septembre 2026 ; deux de ces sessions se sont déroulées en anglais.",
   },
   {
-    q: 'Faut-il suivre sa formation IA à Lyon, à Paris, ou est-ce possible à distance ?',
-    a: "Les deux fonctionnent. La proximité aide pour la cohésion d'équipe et les ateliers pratiques ; le distanciel convient au suivi et aux sessions bien cadrées. Masteria est basé à Lyon et intervient dans toute la France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance.",
+    q: 'Peut-on se former à distance, ou faut-il venir à Lyon ?',
+    a: "Les deux formats fonctionnent. Le présentiel aide quand l'équipe doit construire ensemble ; la visioconférence convient aux personnes réparties sur plusieurs sites et aux journées bien découpées. Masteria a son siège à Lyon et forme des équipes sur quatre zones, la France, le reste de l'Europe, les États-Unis et l'Inde, chez elles ou en visioconférence.",
   },
 ]
 
@@ -191,10 +192,10 @@ const FAQ = [
 
 /* Course : représente l'offre de formation Masteria elle-même (contrairement aux
  * pages /meilleur-cabinet-conseil-ia et /meilleure-agence-ia, qui excluent courseData
- * — le conseil et le build ne sont pas des formations, celle-ci en est une). */
+ * : le conseil et le build ne sont pas des formations, celle-ci en est une). */
 const courseData = {
-  name: 'Formation intelligence artificielle en entreprise, Masteria',
-  description: "Formation sur mesure aux outils d'intelligence artificielle générative (ChatGPT, Copilot, Gemini, Claude, Mistral), construite sur les cas d'usage réels de chaque métier.",
+  name: 'Formations IA en entreprise de Masteria',
+  description: "Formation aux assistants d'IA générative (ChatGPT, Copilot, Gemini, Claude, Vibe), bâtie sur les tâches de chaque métier formé.",
   price: '1980',
   audience: 'Professionnels en entreprise',
   level: 'Tous niveaux',
@@ -218,7 +219,7 @@ const articleJsonLd = {
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-07-30',
-  dateModified: '2026-07-30',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
   about: ['Formation IA en entreprise', 'Qualiopi', 'Financement de la formation professionnelle'],
@@ -226,6 +227,7 @@ const articleJsonLd = {
   speakable: { '@type': 'SpeakableSpecification', cssSelector: ['h1', 'h2'] },
   citation: [
     'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689',
+    'https://eur-lex.europa.eu/eli/reg/2026/1744/oj',
     'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation',
   ],
 }
@@ -306,6 +308,7 @@ export default function MeilleureFormationIAPage() {
         faqItems={FAQ}
         courseData={courseData}
         extraJsonLd={[definedTermSetJsonLd, articleJsonLd, processJsonLd]}
+        dateModified="2026-10-07"
       />
 
       {/* ── HERO sombre premium ── */}
@@ -339,16 +342,16 @@ export default function MeilleureFormationIAPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Guide écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · mis à jour le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — la thèse de la page */}
+          {/* GEO : réponse directe citable, la thèse de la page */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
             Il existe des centaines de formations IA en France, et la plupart partagent le même angle mort : la session se termine, l'enthousiasme retombe, et le lundi suivant personne n'a changé sa façon de travailler. <strong style={{ color: '#fff', fontWeight: 700 }}>La meilleure formation IA se reconnaît à son effet sur le terrain, un changement de pratique mesurable</strong> sur le poste réel de chacun. Le nombre de modules et le prix n'en disent rien.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous trouverez ici les trois exigences non négociables, un panorama factuel des organismes du marché, les tarifs 2026 et une méthode pour trancher en une semaine. Les classements de « la meilleure formation intelligence artificielle » ou des « meilleures formations IA » publiés en ligne sont déclaratifs ou sponsorisés ; ce panorama situe les familles d'organismes par catégorie, sans les noter ni en classer aucune.
+            Ce guide pose les trois exigences à tenir, dresse un panorama des organismes du marché, donne les tarifs 2026 et propose une méthode pour trancher en une semaine. Les listes de « la meilleure formation intelligence artificielle » ou des « meilleures formations IA » qui circulent en ligne sont écrites par les organismes ou achetées comme de la publicité ; le panorama ci-dessous range les organismes par famille et n'en note aucun.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -366,11 +369,11 @@ export default function MeilleureFormationIAPage() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
-                ['Le vrai critère', "Une formation IA se juge sur ce qu'elle change dans le travail réel après la session, pas sur le nombre de modules du programme."],
-                ['Existe-t-il un classement ?', 'Aucun classement officiel en France. Les palmarès en ligne sont déclaratifs ou sponsorisés.'],
-                ["L'obligation à connaître", "Depuis le 2 février 2025, l'article 4 de l'AI Act impose aux entreprises qui utilisent l'IA d'assurer un niveau de compétence suffisant à leurs équipes."],
-                ['Tarifs 2026', 'Formation intra ou individuelle chez Masteria : 1 980 € HT par jour. Organismes généralistes : de gratuit à plusieurs milliers d\'euros selon le format.'],
-                ['Et Masteria ?', "Un organisme certifié Qualiopi, spécialisé uniquement sur l'IA, qui construit chaque session sur les cas d'usage réels de vos équipes."],
+                ['Le critère qui compte', "Ce que les participants font autrement un mois après la session. La longueur du programme n'en dit rien."],
+                ['Existe-t-il un classement ?', "Aucun classement officiel n'existe en France. Les palmarès du web sont rédigés par les organismes ou payés comme de la publicité."],
+                ["Ce que dit l'AI Act", "L'article 4 vise toute entreprise utilisatrice depuis février 2025. Récrit par l'Omnibus avec effet au 27 juillet 2026, il lui demande d'agir pour que ses salariés comprennent les outils d'IA qu'ils emploient."],
+                ['Tarifs au 7 octobre 2026', "Chez Masteria, une journée se facture 1 980 € HT, pour une équipe de douze au plus comme pour une personne seule. Ailleurs, de la gratuité d'un MOOC jusqu'à 12 000 € par personne pour un programme dirigeants."],
+                ['Et Masteria ?', "Un organisme certifié Qualiopi, centré sur l'IA, qui bâtit chaque journée à partir des dossiers de vos équipes."],
               ].map(([k, v], i) => (
                 <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
@@ -403,13 +406,13 @@ export default function MeilleureFormationIAPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <SectionHeader icon={AlertTriangle} kicker="Le vrai problème" title="Pourquoi tant de formations IA ne changent rien au travail réel" />
           <p style={leadStyle}>
-            La technologie n'est pas ce qui coince. Une session se prépare et se donne en quelques jours. Ce qui coince arrive après : les participants retournent à leur poste, l'enthousiasme retombe, et rien n'oblige à changer une habitude installée depuis des années.
+            Préparer et animer une session prend quelques jours. La difficulté commence ensuite : chacun retourne à son poste, l'élan retombe, et aucune contrainte n'oblige à quitter une habitude vieille de plusieurs années.
           </p>
           <p style={answerStyle}>
             Trois pièges expliquent l'essentiel des sessions sans effet. Le programme reste générique et parle d'un cas d'usage abstrait plutôt que du travail réel de l'équipe formée. Le format choisi favorise le confort du calendrier plutôt que la pratique : une vidéo asynchrone regardée seul laisse peu de place à l'entraînement. Et rien n'est prévu après la session pour vérifier que les nouveaux réflexes tiennent au-delà de la première semaine.
           </p>
           <p style={mutedStyle}>
-            Le bon réflexe : juger un organisme sur sa capacité à éviter ces trois pièges, avant même de regarder son catalogue ou son prix. C'est exactement ce que couvrent les trois exigences ci-dessous.
+            Jugez donc un organisme sur sa façon d'éviter ces trois pièges, avant d'ouvrir son catalogue ou de comparer les prix. Les trois exigences qui suivent y répondent une par une.
           </p>
         </div>
       </section>
@@ -417,13 +420,13 @@ export default function MeilleureFormationIAPage() {
       {/* ── LES TROIS EXIGENCES (le cœur) ── */}
       <section id="exigences" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Le vrai critère</div>
+          <div style={kickerStyle}>Trois exigences</div>
           <h2 style={h2Style}>Les trois exigences qu'une formation IA doit réunir</h2>
           <p style={leadStyle}>
-            La plupart des organismes en tiennent une, parfois deux. Ceux qui tiennent les trois sont ceux dont les équipes appliquent encore ce qu'elles ont appris un mois après la session.
+            La plupart des organismes en respectent une, parfois deux. Les équipes qui appliquent encore leurs acquis un mois après la session ont presque toujours été formées par un organisme qui tenait les trois.
           </p>
           <p style={mutedStyle}>
-            Le cadre, le contenu, le suivi. Voici ce que recouvre chacun, et pourquoi l'absence d'un seul fragilise tout le reste.
+            Le cadre, le contenu et le suivi se tiennent : retirez-en un, et les deux autres perdent leur effet.
           </p>
 
           <div style={{ display: 'grid', gap: 22 }}>
@@ -459,16 +462,16 @@ export default function MeilleureFormationIAPage() {
           <h2 style={h2Style}>Qui couvre quoi : MOOC, bootcamp, executive education, organisme généraliste</h2>
           <p style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }}>
             <strong>Cinq familles d'organismes se partagent le marché de la formation IA, et chacune répond à un objectif différent.</strong>{' '}
-            Comparer un MOOC gratuit et un organisme spécialisé sur les mêmes critères n'a pas de sens : ils ne répondent pas au même besoin. Repérez d'abord la famille qui correspond à votre situation.
+            Mettre un MOOC gratuit et un organisme spécialisé dans la même grille fausse la comparaison, puisqu'ils servent deux besoins distincts. Commencez par repérer la famille qui correspond à votre situation.
           </p>
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Le tableau lit chaque famille à travers les trois exigences : le cadre administratif, le contenu sur mesure, le suivi après la session.
+            Chaque ligne situe une famille sur les trois exigences (cadre administratif, contenu taillé pour le poste, suivi après la session) et précise dans quelle situation elle mérite votre attention.
           </p>
 
           <div style={tableWrapStyle}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 860 }}>
               <caption style={srOnlyStyle}>
-                Les familles d'organismes de formation IA lues à travers trois exigences (cadre, contenu, suivi) et le bon moment pour choisir chacune
+                Cinq familles d'organismes de formation IA notées sur le cadre, le contenu et le suivi, avec la situation où chacune convient
               </caption>
               <thead>
                 <tr>
@@ -505,11 +508,11 @@ export default function MeilleureFormationIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
-            Votre besoin porte plutôt sur la stratégie IA de votre organisation ? Notre guide{' '}
+            Si votre question concerne la stratégie IA de l'entreprise, le guide du{' '}
             <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>meilleur cabinet de conseil en IA</Link>{' '}
-            compare les acteurs sous l'angle conseil. Pour un outil ou une application sur mesure,{' '}
-            <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA</Link>{' '}
-            détaille l'angle build. Pour le détail de nos programmes par outil, voyez le{' '}
+            compare les acteurs du conseil. Pour faire construire un outil ou une application, consultez celui de la{' '}
+            <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>meilleure agence IA</Link>.{' '}
+            Le détail de nos programmes, outil par outil et métier par métier, se trouve dans le{' '}
             <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue des formations IA</Link>.
           </p>
         </div>
@@ -519,25 +522,25 @@ export default function MeilleureFormationIAPage() {
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={kickerStyle}>Les organismes du marché</div>
-          <h2 style={h2Style}>La formation IA en France : qui fait quoi</h2>
+          <h2 style={h2Style}>Formation IA en France : les noms derrière chaque famille</h2>
           <p style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong>Plus haut, nous avons lu le marché par exigence. Voici les noms qui peuplent chaque famille.</strong>{' '}
-            Ce tableau n'est ni un classement ni une recommandation : les organismes cités sont des exemples connus de leur catégorie, pour savoir vers qui regarder selon votre besoin.
+            <strong>Le tableau précédent lisait le marché par exigence ; celui-ci met des noms connus sur chaque famille.</strong>{' '}
+            Il ne classe et ne recommande personne : les organismes cités servent de repères pour savoir où chercher selon votre besoin.
           </p>
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Panorama non exhaustif. Vérifiez toujours la réalité du programme, le profil du formateur réellement staffé et les références avant de signer.
+            La liste reste incomplète. Avant de signer, vérifiez le programme proposé, le formateur qui animera la session et au moins une référence dans votre secteur.
           </p>
 
           <div style={tableWrapStyle}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 860 }}>
               <caption style={srOnlyStyle}>
-                Panorama non classé des familles d'organismes de formation IA en France, avec des exemples reconnus, ce qu'ils font le mieux et le profil de client adapté
+                Familles d'organismes de formation IA en France, sans classement : organismes connus, point fort et client type de chaque famille
               </caption>
               <thead>
                 <tr>
                   <th scope="col" style={thStyle}>Catégorie</th>
-                  <th scope="col" style={thStyle}>Exemples d'organismes reconnus</th>
-                  <th scope="col" style={thStyle}>Ce qu'ils font le mieux</th>
+                  <th scope="col" style={thStyle}>Organismes connus</th>
+                  <th scope="col" style={thStyle}>Point fort</th>
                   <th scope="col" style={thStyle}>Plutôt adapté à</th>
                 </tr>
               </thead>
@@ -559,7 +562,7 @@ export default function MeilleureFormationIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            <strong>Masteria</strong> appartient à la dernière famille, les organismes spécialisés qui construisent chaque session sur le métier réel des participants. Nous formons aussi bien des équipes en PME que des directions dans de grandes organisations, en adaptant le format à la taille et à la maturité de chaque structure.
+            <strong>Masteria</strong> se range dans la dernière famille : un organisme centré sur l'IA, qui construit chaque session sur le métier des participants. Il forme aussi bien une petite équipe de PME que les managers d'un groupe implanté sur plusieurs continents, et règle le format sur le niveau de départ de chaque groupe.
           </p>
         </div>
       </section>
@@ -570,10 +573,10 @@ export default function MeilleureFormationIAPage() {
           <div style={kickerStyle}>La méthode</div>
           <h2 style={h2Style}>Comment choisir en pratique : 4 étapes pour trancher en une semaine</h2>
           <p style={leadStyle}>
-            Pas besoin d'un appel d'offres pour choisir une formation IA. Voici le chemin le plus court pour comparer les bons organismes et décider sans attendre le trimestre prochain.
+            Un appel d'offres est rarement nécessaire pour choisir une formation IA. Le chemin qui suit permet de comparer les bons organismes et de décider dans la semaine, sans attendre le trimestre suivant.
           </p>
           <p style={mutedStyle}>
-            Les durées sont indicatives. L'étape 2 est celle que la plupart des entreprises sautent, et c'est celle qui coûte le plus cher à sauter.
+            Les durées sont indicatives. Beaucoup d'entreprises sautent l'étape 2, et c'est l'oubli qui coûte le plus cher.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -608,21 +611,21 @@ export default function MeilleureFormationIAPage() {
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Tarifs 2026</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Combien coûte une formation IA en 2026 (par format) ?</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Comptez de gratuit à quelques dizaines d'euros pour un MOOC, plusieurs milliers d'euros pour un bootcamp de reconversion certifiant, et 1 980 € HT par jour pour une formation intra ou individuelle chez Masteria.</strong>{' '}
-            Seule la formation délivrée par un organisme certifié Qualiopi ouvre droit à un financement OPCO.
+            <strong style={{ color: '#fff' }}>Un MOOC coûte entre zéro et cinquante euros par mois, un bootcamp certifiant de 3 000 à 8 000 € par personne, et une journée chez Masteria 1 980 € HT, quel que soit le format.</strong>{' '}
+            Votre OPCO ne règle que des organismes certifiés Qualiopi, et seulement dans la limite de ce que prévoient ses règles et ses fonds.
           </p>
           <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Ordres de grandeur larges constatés sur le marché français, qui varient selon le format, la durée et le nombre de participants. Pour situer le coût d'un projet IA plus large que la formation, notre guide des{' '}
+            Ces fourchettes indicatives du marché français bougent avec le format, la durée et la taille du groupe. Si votre projet dépasse la formation (un assistant à construire, une automatisation à brancher), le guide du{' '}
             <Link to="/prix-projet-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>prix d'un projet IA</Link>{' '}
-            détaille les postes de coût.
+            décompose ce que coûte chaque étape.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto', marginBottom: 28 }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
-              <caption style={srOnlyStyle}>Tarifs constatés en 2026 par format de formation IA sur le marché français</caption>
+              <caption style={srOnlyStyle}>Fourchettes de prix 2026 par format de formation IA en France, dont les tarifs Masteria</caption>
               <thead>
                 <tr>
-                  {['Format', 'Tarif constaté', 'Précisions'].map(h => (
+                  {['Format', 'Fourchette', 'À savoir'].map(h => (
                     <th key={h} scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #1E293B', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
@@ -641,7 +644,7 @@ export default function MeilleureFormationIAPage() {
 
           <div style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid #1E293B', borderRadius: 12, padding: '18px 22px' }}>
             <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#fff' }}>À savoir pour votre financement :</strong> la certification Qualiopi conditionne l'accès à l'OPCO et au plan de développement des compétences. Le CPF ne finance que les formations rattachées à une certification RNCP ou RS, ce qui exclut la plupart des formations courtes sur l'usage des outils IA au profit des bootcamps longs de reconversion. Un organisme qui promet un financement CPF sur une formation courte à l'usage des outils mérite une vérification attentive.
+              <strong style={{ color: '#fff' }}>Côté financement :</strong> l'OPCO, comme le budget formation passé par le plan de compétences, exige un organisme titulaire de Qualiopi. Le CPF réclame en plus un titre RNCP ou une certification du Répertoire spécifique, rares pour les journées d'initiation aux outils. Une promesse de CPF sur une journée de prise en main de ChatGPT se vérifie donc sur le site de France Compétences avant toute inscription.
             </p>
           </div>
         </div>
@@ -652,9 +655,9 @@ export default function MeilleureFormationIAPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <SectionHeader icon={BookOpen} kicker="Repères" title="La formation IA en quelques repères vérifiables" />
           <p style={answerStyle}>
-            Deux dates pour situer l'obligation et le cadre, le vocabulaire qui revient dans tout choix de formation, et les sources officielles. Pour encadrer vos usages une fois vos équipes formées, notre guide{' '}
-            <Link to="/gouvernance-ia" style={{ color: c, fontWeight: 600 }}>gouvernance de l'IA et AI Act</Link>{' '}
-            détaille le cadre de conformité.
+            Quatre dates situent le cadre légal, quatre définitions éclairent le vocabulaire du financement, et les liens renvoient aux textes officiels. Une fois l'équipe formée, le guide{' '}
+            <Link to="/gouvernance-ia" style={{ color: c, fontWeight: 600 }}>gouvernance de l'IA</Link>{' '}
+            aide à écrire les règles d'usage de l'entreprise.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, margin: '36px 0 44px' }}>
@@ -672,7 +675,7 @@ export default function MeilleureFormationIAPage() {
               <div style={{ ...kickerStyle, marginBottom: 10 }}>Définitions</div>
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Le vocabulaire du financement</h3>
               <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Quatre notions reviennent dans tout choix de formation IA en entreprise.
+                Quatre mots reviennent dans chaque devis de formation ; mieux vaut les connaître avant de signer.
               </p>
             </div>
             <div>
@@ -684,7 +687,7 @@ export default function MeilleureFormationIAPage() {
                   </div>
                 ))}
               </dl>
-              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '24px 0 12px', fontWeight: 700 }}>Sources et références officielles</p>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '24px 0 12px', fontWeight: 700 }}>Textes et sites officiels à consulter</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
                 {REFERENCES.map(r => (
                   <li key={r.url} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
@@ -707,24 +710,25 @@ export default function MeilleureFormationIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Pourquoi Masteria est construit pour ce résultat</h2>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: cLight, color: c, padding: '5px 12px', borderRadius: 99, fontSize: 13, fontWeight: 700, marginBottom: 18 }}>
                 <BadgeCheck size={15} strokeWidth={2.2} aria-hidden="true" />
-                Qualiopi · Sur mesure · Suivi à 30 jours
+                Qualiopi · Ateliers sur vos dossiers · Point à J+30
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Votre question porte plutôt sur les modèles (ChatGPT, Claude, Gemini, Mistral) ? Voyez notre comparatif{' '}
-                <Link to="/quelle-est-la-meilleure-ia" style={{ color: c, fontWeight: 600 }}>quelle est la meilleure IA</Link>.
+                Vous hésitez encore entre les assistants eux-mêmes ? Le comparatif{' '}
+                <Link to="/quelle-est-la-meilleure-ia" style={{ color: c, fontWeight: 600 }}>quelle est la meilleure IA</Link>{' '}
+                met les principaux modèles face à face.
               </p>
             </div>
 
             <div>
               <div style={{ ...cardStyle, padding: 32, borderTop: `3px solid ${c}` }}>
                 <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Mathias Nizan a fondé Masteria à Lyon en 2022, uniquement sur l'intelligence artificielle. Nous construisons chaque session pour qu'elle change une pratique, pas pour qu'elle occupe une journée.
+                  Depuis 2022, année où Mathias Nizan l'a créé à Lyon, Masteria apprend à des équipes à se servir de l'IA. Chaque session se prépare autour d'une seule question : que feront les participants autrement le lundi suivant ?
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 14 }}>
                   {[
-                    ['Le cadre', 'certifié Qualiopi, formations finançables par votre OPCO ou votre plan de développement des compétences.'],
-                    ['Le contenu', 'audit des besoins avant chaque session, programme construit sur les dossiers réels de vos équipes, formateurs qui utilisent ces outils dans leur propre pratique.'],
-                    ['Le suivi', 'kit de prompts et de ressources propre à chaque métier, suivi à 30 jours inclus pour mesurer l\'adoption.'],
+                    ['Le cadre', "une certification Qualiopi obtenue au titre des actions de formation, et environ 20 formateurs indépendants choisis pour leur usage de l'IA dans leur propre métier."],
+                    ['Le contenu', "un catalogue qui dépasse cent programmes, adaptés à chaque client à partir de ses documents, de ses outils et du questionnaire rempli par les stagiaires."],
+                    ['Le suivi', "des supports en ligne que chaque stagiaire garde après la formation, et un bilan un mois plus tard avec la personne qui a commandé la formation."],
                   ].map(([t, d]) => (
                     <li key={t} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                       <BadgeCheck size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
@@ -733,13 +737,17 @@ export default function MeilleureFormationIAPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Nous restons indépendants des éditeurs : nos recommandations d'outils sont argumentées, jamais commissionnées. Interventions en France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance. Mathias Nizan est cité par Les Échos sur le choix des modèles d'IA en entreprise.
+                  Masteria ne perçoit aucune commission d'un éditeur : quand nous conseillons Copilot plutôt que Gemini, c'est que l'entreprise travaille déjà dans Microsoft 365. Nos formateurs interviennent sur place ou en visioconférence, en France, chez nos voisins européens, aux États-Unis et en Inde. Les Échos ont interrogé Mathias Nizan sur la façon de choisir{' '}
+                  <a href="https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741" target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600 }}>un modèle d'IA adapté à son métier</a>.
                 </p>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
-                  Nous formons aussi bien des équipes en PME que des directions dans de grandes organisations, du service opérationnel au comité de direction. Le format s'adapte à la taille et à la maturité de chaque structure. Pour voir le détail de nos programmes, consultez notre{' '}
-                  <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link>, la page{' '}
-                  <Link to="/financement-formation-ia" style={{ color: c, fontWeight: 600 }}>financement</Link> pour identifier les dispositifs mobilisables, ou jugez sur pièces avec nos{' '}
-                  <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>.
+                  Deux missions publiées montrent le suivi à l'œuvre. Chez un industriel international de l'emballage, la session pilote a donné lieu à un bilan à chaud et à trois ajustements avant le groupe de managers suivant ({' '}
+                  <Link to="/etudes-de-cas-ia#industrie" style={{ color: c, fontWeight: 600 }}>lire le cas</Link>). Chez un éditeur de logiciels B2B, une assistante de direction est repartie de sa journée individuelle avec un plan d'action à 30 jours et une mesure du gain prévue à un mois ({' '}
+                  <Link to="/etudes-de-cas-ia#mission-assistanat-direction" style={{ color: c, fontWeight: 600 }}>voir la mission</Link>). Le{' '}
+                  <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link>{' '}
+                  détaille les programmes, et la page{' '}
+                  <Link to="/financement-formation-ia" style={{ color: c, fontWeight: 600 }}>financement</Link>{' '}
+                  explique comment monter le dossier avec votre OPCO.
                 </p>
               </div>
             </div>
@@ -747,8 +755,15 @@ export default function MeilleureFormationIAPage() {
         </div>
       </section>
 
-      {/* ── FONDATEUR (E-E-A-T) ── */}
-      <FounderNote bg="#fff" />
+      {/* ── SIGNATURE (E-E-A-T) : remplace le bloc fondateur commun ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 64px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', borderLeft: `3px solid ${c}`, paddingLeft: 22 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: 0 }}>
+            Mathias Nizan a écrit ce guide à partir des demandes qu'il reçoit chaque semaine d'entreprises qui comparent plusieurs organismes. Il l'a actualisé le 7 octobre 2026, pour tenir compte de l'article 4 de l'AI Act tel que l'Omnibus l'a réécrit. Pour connaître son parcours, voyez{' '}
+            <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>la page qui lui est consacrée</Link>.
+          </p>
+        </div>
+      </section>
 
       {/* ── FAQ ── */}
       <section id="faq" style={{ scrollMarginTop: 96, padding: SECTION_PAD, background: '#F9FAFB' }}>
@@ -756,10 +771,10 @@ export default function MeilleureFormationIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur le choix d'une formation IA</h2>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Vos questions avant de choisir une formation IA</h2>
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Votre cas sort de ces quatorze réponses ?</p>
               <Link to="/contact" style={{ color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, textDecoration: 'none' }}>
-                Posez-nous votre question
+                Décrivez-le en deux lignes
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -779,25 +794,23 @@ export default function MeilleureFormationIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Un avis franc sur votre besoin</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Votre projet de formation</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               Décrivez votre équipe, on vous propose un format
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 580, marginLeft: 'auto', marginRight: 'auto' }}>
-              En quelques lignes, dites-nous quel métier former et ce que vous voulez que ça change. Lors d'un échange de cadrage gratuit, nous vous proposons un format, ou vous orientons vers un autre profil d'organisme si le vôtre correspond mieux.
+              Dites-nous quel métier former, sur quel outil, et ce qui devrait changer dans le travail. Nous répondons avec un format, un programme et un prix, ou avec le type d'organisme à consulter si votre besoin relève plutôt d'un bootcamp ou d'une grande école.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
-              Demander un cadrage gratuit
+              Présenter votre équipe
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Échange gratuit et sans engagement · Réponse sous 24 h · Certifié Qualiopi
+              Journée à 1 980 € HT · douze participants au plus, ou une personne seule · organisme certifié Qualiopi
             </p>
           </div>
         </div>
       </section>
-
-      <OfficialSources />
     </>
   )
 }

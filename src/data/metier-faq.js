@@ -22,7 +22,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA marketing est-elle adaptée aux responsables comme aux opérationnels ?",
-      a: "Oui, notre formation IA marketing est conçue pour un public mixte, ce qui en fait l'une de ses forces pédagogiques. Les responsables marketing apprennent à cadrer les cas d'usage stratégiques, à définir des politiques d'usage de l'IA et à piloter la montée en compétences de leurs équipes. Les opérationnels, chargés de contenu, traffic managers, chefs de projet, repartent avec des techniques directement applicables à leurs tâches quotidiennes. Le format 2 jours en présentiel (14h) permet des ateliers en sous-groupes par niveau, avec plus de 1 500 professionnels formés à ce jour et un taux de satisfaction de 98 %.",
+      a: "Oui, notre formation IA marketing est conçue pour un public mixte, ce qui en fait l'une de ses forces pédagogiques. Les responsables marketing apprennent à cadrer les cas d'usage stratégiques, à définir des politiques d'usage de l'IA et à piloter la montée en compétences de leurs équipes. Les opérationnels, chargés de contenu, traffic managers, chefs de projet, repartent avec des techniques directement applicables à leurs tâches quotidiennes. Le format 2 jours en présentiel (14h) permet des ateliers en sous-groupes par niveau, avec plus de 1 500 professionnels formés à ce jour.",
     },
   ],
 
@@ -126,7 +126,7 @@ export const METIER_FAQ = {
     },
     {
       q: "L'IA juridique est-elle conforme au RGPD ?",
-      a: "La conformité RGPD dépend de l'outil utilisé et de la manière dont il est déployé, pas de l'IA en elle-même. Les versions grand public de ChatGPT ou Claude peuvent entraîner les modèles sur les données saisies si les paramètres de confidentialité ne sont pas correctement configurés, ce qui est incompatible avec le RGPD dès lors que des données personnelles ou des données couvertes par le secret professionnel sont impliquées. Les versions entreprises (ChatGPT Enterprise, Copilot for Microsoft 365, Claude for Work) offrent des garanties contractuelles de non-utilisation des données pour l'entraînement. Notre formation dédie un module entier à la configuration sécurisée des outils en environnement juridique.",
+      a: "La conformité RGPD dépend de l'outil utilisé et de la manière dont il est déployé, pas de l'IA en elle-même. Les versions grand public de ChatGPT ou Claude peuvent entraîner les modèles sur les données saisies si les paramètres de confidentialité ne sont pas correctement configurés, ce qui est incompatible avec le RGPD dès lors que des données personnelles ou des données couvertes par le secret professionnel sont impliquées. Les versions entreprises (ChatGPT Enterprise, Microsoft Copilot, Claude Team ou Enterprise) offrent des garanties contractuelles de non-utilisation des données pour l'entraînement. Notre formation dédie un module entier à la configuration sécurisée des outils en environnement juridique.",
     },
     {
       q: "L'IA peut-elle rédiger des clauses contractuelles ?",
@@ -184,7 +184,7 @@ export const METIER_FAQ = {
     },
     {
       q: "Quel outil IA est le plus adapté aux managers ?",
-      a: "Microsoft Copilot for Microsoft 365 est l'outil le plus pertinent pour la majorité des managers car il s'intègre directement dans leur environnement de travail : résumés de threads Outlook, comptes rendus automatiques de Teams, génération de slides PowerPoint et analyses dans Excel. Pour les managers souhaitant aller au-delà, ChatGPT et Claude offrent une plus grande flexibilité créative pour préparer des discours, des plans de développement individuels ou des communications complexes. Google Gemini est adapté aux managers dans des environnements Google Workspace. Notre formation couvre ces quatre outils sur 2 jours.",
+      a: "Microsoft Copilot (anciennement Microsoft 365 Copilot) est l'outil le plus pertinent pour la majorité des managers car il s'intègre directement dans leur environnement de travail : résumés de threads Outlook, comptes rendus automatiques de Teams, génération de slides PowerPoint et analyses dans Excel. Pour les managers souhaitant aller au-delà, ChatGPT et Claude offrent une plus grande flexibilité créative pour préparer des discours, des plans de développement individuels ou des communications complexes. Google Gemini est adapté aux managers dans des environnements Google Workspace. Notre formation couvre ces quatre outils sur 2 jours.",
     },
     {
       q: "Faut-il rendre l'usage de l'IA obligatoire dans son équipe ?",
@@ -215,7 +215,7 @@ export const METIER_FAQ = {
     },
     {
       q: "Quel outil IA est le plus adapté aux assistants et assistantes de direction ?",
-      a: "Microsoft Copilot for Microsoft 365 est l'outil le plus stratégique pour les assistants et assistantes travaillant dans un environnement Office, car il s'intègre directement dans Outlook, Word, Teams et OneNote, les outils du quotidien. Il résume les fils de discussion, rédige des brouillons d'emails et transcrit les réunions Teams automatiquement. ChatGPT est le complément idéal pour les tâches créatives et de synthèse hors écosystème Microsoft. Claude excelle pour le traitement de documents longs (rapports, dossiers de board). Notre formation 2 jours enseigne l'usage combiné de ces outils pour construire un vrai flux de travail assisté par l'IA.",
+      a: "Microsoft Copilot (anciennement Microsoft 365 Copilot) est l'outil le plus stratégique pour les assistants et assistantes travaillant dans un environnement Office, car il s'intègre directement dans Outlook, Word, Teams et OneNote, les outils du quotidien. Il résume les fils de discussion, rédige des brouillons d'emails et transcrit les réunions Teams automatiquement. ChatGPT est le complément idéal pour les tâches créatives et de synthèse hors écosystème Microsoft. Claude excelle pour le traitement de documents longs (rapports, dossiers de board). Notre formation 2 jours enseigne l'usage combiné de ces outils pour construire un vrai flux de travail assisté par l'IA.",
     },
     {
       q: "L'IA peut-elle générer des compte-rendus depuis des notes de réunion ?",
@@ -277,7 +277,7 @@ export const METIER_FAQ = {
     },
     {
       q: "Quel outil IA est le plus adapté pour le service client ?",
-      a: "Microsoft Copilot est l'outil le plus stratégique pour les équipes service client opérant dans un environnement Microsoft 365, avec une intégration dans Outlook et Teams pour la gestion des demandes internes. ChatGPT est très efficace pour la rédaction de réponses personnalisées et la génération de bases de connaissances. Des plateformes comme Zendesk ou Intercom intègrent désormais des modules IA natifs construits sur GPT-5 qui s'interconnectent directement au CRM et à l'historique client. Notre formation couvre ChatGPT, Copilot et Gemini sur 2 jours, avec des ateliers spécifiques aux cas d'usage du service client.",
+      a: "Microsoft Copilot est l'outil le plus stratégique pour les équipes service client opérant dans un environnement Microsoft 365, avec une intégration dans Outlook et Teams pour la gestion des demandes internes. ChatGPT est très efficace pour la rédaction de réponses personnalisées et la génération de bases de connaissances. Des plateformes comme Zendesk ou Intercom intègrent désormais des modules IA natifs, construits sur les modèles des grands éditeurs, qui s'interconnectent directement au CRM et à l'historique client. Notre formation couvre ChatGPT, Copilot et Gemini sur 2 jours, avec des ateliers spécifiques aux cas d'usage du service client.",
     },
     {
       q: "L'IA risque-t-elle de déshumaniser le service client ?",

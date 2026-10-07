@@ -751,6 +751,106 @@
       "source": "/blog/formation-ecrits-pro-ia-redaction",
       "destination": "/formation-ia-ecrits-pro",
       "permanent": true
+    },
+    {
+      "source": "/formation-sprint-ia-prompts",
+      "destination": "/formation-sprint-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-sprint-ia-managers",
+      "destination": "/formation-sprint-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-sprint-ia-sensibilisation",
+      "destination": "/formation-sprint-ia",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-rh",
+      "destination": "/formation-ia-ressources-humaines",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-commercial",
+      "destination": "/formation-ia-commercial",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-finance",
+      "destination": "/formation-ia-finance",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-management",
+      "destination": "/formation-ia-management",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-pedagogique",
+      "destination": "/formation-ia-pedagogique",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-seo",
+      "destination": "/formation-ia-seo",
+      "permanent": true
+    },
+    {
+      "source": "/formation-gemini-service-client",
+      "destination": "/formation-ia-service-client",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-informatique",
+      "destination": "/formation-ia-informatique",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-management",
+      "destination": "/formation-ia-management",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-marketing",
+      "destination": "/formation-ia-marketing",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-ressources-humaines",
+      "destination": "/formation-ia-ressources-humaines",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-seo",
+      "destination": "/formation-ia-seo",
+      "permanent": true
+    },
+    {
+      "source": "/formation-mistral-service-client",
+      "destination": "/formation-ia-service-client",
+      "permanent": true
+    },
+    {
+      "source": "/formation-multi-outils-communication",
+      "destination": "/formation-ia-communication",
+      "permanent": true
+    },
+    {
+      "source": "/formation-multi-outils-finance",
+      "destination": "/formation-ia-finance",
+      "permanent": true
+    },
+    {
+      "source": "/formation-multi-outils-informatique",
+      "destination": "/formation-ia-informatique",
+      "permanent": true
+    },
+    {
+      "source": "/formation-multi-outils-pedagogique",
+      "destination": "/formation-ia-pedagogique",
+      "permanent": true
     }
   ],
   "headers": [

@@ -25,7 +25,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Automatisation IA : le guide complet | Masteria"
-const META_DESC = "Automatisation IA : définition, exemples par métier, outils, méthode en 5 étapes et budgets pour optimiser et automatiser vos processus. Cadrage initial gratuit."
+const META_DESC = "Automatisation IA : définition, exemples par métier, outils, méthode en 5 étapes et budgets pour optimiser et automatiser vos processus. 30 min de cadrage offertes."
 const KEYWORDS = "automatisation ia, automatisation intelligence artificielle, automatisation des processus ia, automatiser processus, optimiser ses processus avec l'ia, optimisation des processus ia, ia automatisation, outils automatisation ia"
 const H1 = "Automatisation IA : le guide complet pour automatiser vos processus"
 
@@ -43,7 +43,7 @@ const SOMMAIRE = [
 const ESSENTIEL = [
   "L'automatisation IA confie à l'intelligence artificielle des tâches qui demandaient un jugement humain (lire, trier, rédiger, décider), là où la RPA classique n'exécute que des règles fixes.",
   "On automatise en priorité le tri d'emails, le traitement des factures, les comptes rendus, les relances, la qualification des demandes entrantes et le reporting.",
-  "Trois familles d'outils suffisent : les assistants IA (GPTs, Projects, Gems), les plateformes no-code (Make, Zapier, n8n, Power Automate) et les agents IA autonomes.",
+  "Trois familles d'outils suffisent : les assistants IA (projets et compétences de ChatGPT, Claude ou Gemini), les plateformes no-code (Make, Zapier, n8n, Power Automate) et les agents IA autonomes.",
   "La méthode tient en cinq étapes : cartographier, scorer impact et faisabilité, prototyper sur un seul processus, sécuriser données et validation humaine, déployer et former.",
   "Côté budget : 0 à 50 € par mois et par personne pour les outils, un développement sur devis, et 1 980 € HT par jour pour former les équipes, seul poste finançable par l'OPCO.",
 ]
@@ -93,7 +93,7 @@ const TABLE_RPA = [
 const TABLE_FAMILLES = [
   {
     famille: 'Assistants IA personnalisés',
-    sub: 'GPTs, Projects, Gems',
+    sub: 'Projets, compétences',
     besoin: 'Tâche individuelle récurrente : rédaction, synthèse, analyse',
     profil: 'Tout collaborateur, sans compétence technique',
     budget: "Inclus dans l'abonnement existant",
@@ -343,7 +343,7 @@ const faqItems = FAQ.map(f => ({ q: f.q, a: `${f.strong} ${f.rest}` }))
 
 const RELATED = [
   { label: "Agence de développement IA", href: '/agence-developpement-ia', tag: 'Sur mesure', desc: "Nous concevons et développons vos automatisations et vos solutions IA de bout en bout, jusqu'à la mise en production." },
-  { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Service', desc: "Masteria cadre, construit et déploie vos automatisations. Cadrage initial gratuit, vous restez propriétaire du système." },
+  { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Service', desc: "Masteria cadre, construit et déploie vos automatisations. 30 minutes de cadrage offertes, vous restez propriétaire du système." },
   { label: "Outils IA sur mesure", href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Au-delà du flux : des applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage propres." },
   { label: 'Les agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Guide', desc: "Ce que les agents IA autonomes savent faire, leurs limites et les conditions d'un déploiement sûr." },
   { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Formation', desc: "En complément du déploiement, 2 jours pour rendre vos équipes autonomes. Certifié Qualiopi, finançable OPCO." },
@@ -590,7 +590,7 @@ export default function AutomatisationIAGuidePage() {
           </div>
 
           <p style={{ ...pStyle, ...prose, marginTop: 32, marginBottom: 0 }}>
-            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour une vue d'ensemble organisée des <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA par fonction</Link>, et pour les usages propres à votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent l'automatisation métier par métier. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, dont le cadrage initial est gratuit. Pour situer vos priorités, commencez par <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink>, puis par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> si le périmètre le justifie.
+            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour une vue d'ensemble organisée des <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA par fonction</Link>, et pour les usages propres à votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent l'automatisation métier par métier. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pour situer vos priorités, commencez par <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink>, puis par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> si le périmètre le justifie.
           </p>
         </div>
       </section>
@@ -604,7 +604,7 @@ export default function AutomatisationIAGuidePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Quels outils pour automatiser avec l'IA ? Les 3 familles à connaître</h2>
 
               <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Trois familles d'outils couvrent la quasi-totalité des besoins : les assistants IA personnalisés (GPTs, Projects, Gems) pour les tâches individuelles récurrentes, les plateformes no-code (Make, Zapier, n8n, Power Automate) pour les flux entre applications, et les agents IA autonomes pour les objectifs en plusieurs étapes.</strong>
+                <strong>Trois familles d'outils couvrent la quasi-totalité des besoins : les assistants IA personnalisés (projets et compétences) pour les tâches individuelles récurrentes, les plateformes no-code (Make, Zapier, n8n, Power Automate) pour les flux entre applications, et les agents IA autonomes pour les objectifs en plusieurs étapes.</strong>
               </p>
             </div>
 
@@ -623,7 +623,7 @@ export default function AutomatisationIAGuidePage() {
                 </div>
               </div>
               <p style={{ ...pStyle, fontSize: 15 }}>
-                ChatGPT, Claude et Gemini intègrent des fonctions qui automatisent les tâches récurrentes sans aucun outil supplémentaire : les GPTs personnalisés côté ChatGPT, les Projects côté Claude, les Gems côté Gemini. Le principe : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis chaque membre de l'équipe relance la tâche en quelques secondes.
+                ChatGPT, Claude et Gemini intègrent des fonctions qui automatisent les tâches récurrentes sans aucun outil supplémentaire : les projets et les compétences côté ChatGPT et Claude, les compétences côté Gemini. Elles remplacent les GPTs personnalisés, retirés le 11 décembre 2026, et les Gems. Le principe : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis chaque membre de l'équipe relance la tâche en quelques secondes.
               </p>
               <p style={{ ...pStyle, fontSize: 15, marginBottom: 0 }}>
                 C'est la porte d'entrée idéale : coût inclus dans l'abonnement existant, mise en place en une heure, aucun risque technique. La limite est connue : un humain doit déclencher la tâche à chaque fois.
@@ -881,7 +881,7 @@ export default function AutomatisationIAGuidePage() {
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>Sur devis</div>
               </div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Faire concevoir et développer vos automatisations sur mesure se chiffre selon le nombre de processus, les intégrations à votre système d'information et le niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, le cadrage initial est gratuit et débouche sur une <Link to="/agence-developpement-ia" style={aStyle}>feuille de route de développement</Link> chiffrée.
+                Faire concevoir et développer vos automatisations sur mesure se chiffre selon le nombre de processus, les intégrations à votre système d'information et le niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, les 30 minutes de cadrage sont offertes et débouchent sur une <Link to="/agence-developpement-ia" style={aStyle}>feuille de route de développement</Link> chiffrée.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 30, border: `2px solid ${c}` }}>
@@ -980,7 +980,7 @@ export default function AutomatisationIAGuidePage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Organisme certifié Qualiopi · +1 500 professionnels formés · 98 % de satisfaction
+              Organisme certifié Qualiopi · +1 500 professionnels formés
             </p>
           </div>
         </div>

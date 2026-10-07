@@ -1,44 +1,54 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BadgeCheck, ListChecks, Gauge, GraduationCap as Grad, FileText, ShieldCheck, Layers,
+  ArrowRight, BadgeCheck, GraduationCap as Grad, ShieldCheck, Layers, ExternalLink,
   GraduationCap, MapPin, Check, Sparkles, Landmark, Users, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Money page « formation IA Qualiopi » (slug /formation-ia-qualiopi).
- * REFONTE 2026-08-10 : remplace la page dédiée d'origine (259 lignes, hero clair,
- * 8 FAQ) par le patron des money pages formation. Cible « formation ia qualiopi »
- * (170/mois, KD 6, intention I — Semrush 2026-08-10) : l'acheteur cherche « une
- * formation IA qui soit Qualiopi, donc finançable ». La page est un guide-pivot :
- * elle explique Qualiopi et le financement, prouve la certification de Masteria
- * (NDA + catégorie), puis ROUTE vers le catalogue par métier et par outil.
+ * REFONTE 2026-08-10 : patron des money pages formation. Cible « formation ia
+ * qualiopi » (170/mois, KD 6, intention I, Semrush 2026-08-10) : l'acheteur
+ * cherche « une formation IA qui soit Qualiopi, donc finançable ». La page est
+ * un guide-pivot : elle explique Qualiopi et le financement, prouve la
+ * certification de Masteria (certificat, NDA, catégorie), puis ROUTE vers le
+ * catalogue par métier et par outil.
  *
- * INTÉGRITÉ : plus jamais « financement OPCO garanti » ni « 100 % pris en
- * charge » (l'ancienne page le promettait) — la prise en charge dépend de
- * l'OPCO, de la branche, de l'effectif et des plafonds ; on dit « éligible »
- * et « selon votre OPCO ». Jamais de CPF (nos formations n'y sont pas
- * éligibles : pas de certification RNCP). Identité légale : Mathias NIZAN,
- * EI, NDA 84 69 23218 69 (mémoire identité légale / EI sur docs financeur).
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de « +1 500 », groupe
+ * de 12 participants au plus, FounderNote remplacé par une signature, sources
+ * officielles écrites pour la page (section « Vérifier par vous-même »).
+ *
+ * INTÉGRITÉ : jamais « financement OPCO garanti » ni de pourcentage de prise en
+ * charge ; l'OPCO décide selon ses règles et ses fonds. Jamais de CPF (pas de
+ * certification RNCP). Identité légale : Mathias NIZAN, EI, NDA 84 69 23218 69,
+ * certificat Qualiopi n° 725311-1 (Certifopac, 29/01/2026 au 28/01/2029).
+ * Toute mention du NDA porte la formule légale « Cet enregistrement ne vaut pas
+ * agrément de l'État ».
  *
  * ANTI-CANNIBALISATION : /financement-formation-ia = le guide FINANCEMENT
- * (dispositifs, montage du dossier, CII/CIR pour le dev) ; /quel-opco =
- * l'outil ; CETTE page = l'angle « Qualiopi » (ce que c'est, ce que ça
- * garantit, ce que ça permet, notre certification) + porte d'entrée
- * catalogue. Les deux se renvoient sans se recouvrir.
+ * (dispositifs, montage du dossier) ; /quel-opco = l'outil ; CETTE page =
+ * l'angle « Qualiopi » (ce que c'est, ce que ça garantit, ce que ça permet,
+ * notre certification) + porte d'entrée catalogue.
  */
 
 const SLUG = 'formation-ia-qualiopi'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Formation IA certifiée Qualiopi : catalogue et financement | Masteria"
-const META_DESC = "Formation IA Qualiopi : ce que la certification garantit, ce qu'elle permet de financer (OPCO), et notre catalogue par métier et par outil, certifié Qualiopi. Devis sous 24 h."
+const META_TITLE = "Formation IA Qualiopi : garanties et financement | Masteria"
+const META_DESC = "Formation IA Qualiopi : les garanties de la certification, le rôle de votre OPCO, plus de 100 programmes par métier et par outil, à 1 980 € HT/jour."
 const KEYWORDS = "formation ia qualiopi, formation intelligence artificielle qualiopi, formation ia certifiée qualiopi, formation ia finançable opco, organisme formation ia qualiopi, formation ia opco"
+
+/* Sources officielles citées par la page (JSON-LD WebPage.citation + section visible). */
+const SOURCES = [
+  { name: 'Qualiopi, la marque de certification qualité des prestataires de formation (Ministère du Travail)', short: 'Ministère du Travail', desc: "La page officielle de la marque Qualiopi : qui doit être certifié, pour quelles actions, avec quel référentiel.", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { name: 'Les onze OPCO et leur rôle, page du Ministère du Travail', short: 'Ministère du Travail', desc: "Le rôle des onze OPCO et leur place dans le financement de la formation des salariés.", url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+  { name: 'Registre des organismes de formation déclarés, jeu de données public sur data.gouv.fr', short: 'data.gouv.fr', desc: "Le registre où figurent la déclaration d'activité de Masteria et sa certification Qualiopi.", url: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail' },
+  { name: "Fiche MASTERIA à l'Annuaire des entreprises de l'État (SIREN 919 252 403)", short: 'annuaire-entreprises.data.gouv.fr', desc: "La fiche légale de Masteria, entreprise individuelle, avec son SIRET.", url: 'https://annuaire-entreprises.data.gouv.fr/entreprise/919252403' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -66,120 +76,124 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
-  { icon: Target, label: "Toutes nos formations sont certifiées Qualiopi" },
-  { icon: MapPin, label: 'Présentiel & distanciel · Europe · États-Unis · Inde' },
+  { icon: GraduationCap, label: 'Qualiopi · catégorie actions de formation' },
+  { icon: Sparkles, label: 'Claude · ChatGPT · Copilot · Gemini · Mistral' },
+  { icon: Target, label: 'Un catalogue de plus de 100 programmes' },
+  { icon: MapPin, label: 'Intra ou individuel · sur site ou à distance' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Qualiopi', value: "La certification qualité nationale des prestataires d'actions de formation, exigée pour accéder aux financements publics et mutualisés" },
-  { label: 'Masteria', value: "Certifiée Qualiopi au titre des actions de formation, sous le numéro de déclaration d'activité 84 69 23218 69 (préfet de région Auvergne-Rhône-Alpes)" },
-  { label: 'Ce que ça permet', value: "Rendre nos formations IA éligibles à la prise en charge par votre OPCO, selon votre branche, votre effectif et les plafonds en vigueur" },
-  { label: 'Ce que ça ne permet pas', value: "Le CPF : nos formations ne sont pas inscrites au RNCP, donc non éligibles au compte personnel de formation" },
-  { label: 'Catalogue', value: "Formations par métier (marketing, commercial, finance, RH, gestion de projet…), par outil (ChatGPT, Copilot, Claude, Gemini, Mistral) et thématiques (AI Act, dirigeants)" },
-  { label: 'Tarif', value: "1 980 € HT par jour de formation en intra, pour le groupe ; devis et pièces du dossier OPCO sous 24 h" },
+  { label: 'Qualiopi', value: "La marque nationale de certification qualité des organismes de formation, obligatoire depuis le 1er janvier 2022 pour accéder aux fonds publics et mutualisés" },
+  { label: 'Masteria', value: "Certifopac a certifié Masteria sur la catégorie « actions de formation », pour trois ans à compter du 29 janvier 2026 (certificat n° 725311-1)" },
+  { label: 'Ce que ça permet', value: "Présenter la formation à votre OPCO pour une prise en charge, qu'il accorde selon ses règles et ses fonds" },
+  { label: 'Ce que ça ne permet pas', value: "Le CPF : il ne finance que des titres inscrits au RNCP ou au Répertoire spécifique, catégorie dont nos sessions courtes ne relèvent pas" },
+  { label: 'Catalogue', value: "Plus de 100 programmes : par métier (marketing, finance, RH, achats…), par outil (Mistral, Claude, Gemini, ChatGPT, Copilot) et par thème (AI Act, dirigeants)" },
+  { label: 'Tarif', value: "Un jour de session : 1 980 € HT, en intra (jusqu'à douze stagiaires) ou en individuel. Deux jours : 3 960 € HT" },
 ]
 
-/* ───────── Ce que couvre la page (6 cartes) ───────── */
+/* ───────── Ce qu'il faut savoir (6 cartes) ───────── */
 
 const MISSIONS = [
   {
     icon: BadgeCheck,
-    title: 'Ce que Qualiopi certifie réellement',
-    desc: "Qualiopi atteste que l'organisme respecte le référentiel national qualité : information du public, adaptation des prestations aux bénéficiaires, moyens pédagogiques, qualification des formateurs, veille, prise en compte des appréciations. Elle est délivrée par un organisme certificateur accrédité et se contrôle par audits de surveillance. Elle certifie l'organisme et sa méthode, pas un niveau atteint par les stagiaires.",
+    title: 'Ce que Qualiopi contrôle',
+    desc: "Le référentiel national qualité compte sept critères : l'information donnée au public, l'analyse du besoin, l'adaptation au public, les moyens pédagogiques, la qualification des formateurs, la veille, le traitement des avis et des réclamations. Un audit initial, puis un contrôle de surveillance au milieu du cycle de trois ans, en vérifient les preuves. La certification juge l'organisme et sa méthode ; elle ne note pas les stagiaires.",
   },
   {
     icon: Landmark,
-    title: 'Ce que ça change pour votre financement',
-    desc: "Sans Qualiopi, aucun financement public ou mutualisé n'est possible. Avec, nos formations sont éligibles à la prise en charge par votre OPCO au titre du plan de développement des compétences. Le montant dépend de votre OPCO, de votre branche, de votre effectif et des plafonds de l'année : nous ne promettons pas de taux, nous montons le dossier avec vous et vous orientons vers votre opérateur.",
+    title: 'Ce que ça change pour le financement',
+    desc: "Sans certification, aucun fonds public ou mutualisé ne peut payer la formation. Avec elle, votre OPCO peut la financer au titre du PDC, le plan de développement des compétences de votre entreprise. Le montant dépend de sa grille, des fonds disponibles cette année, de l'effectif et de la branche de votre entreprise ; nous préparons le dossier sans annoncer de taux.",
   },
   {
     icon: ShieldCheck,
-    title: 'Ce que ça ne fait pas',
-    desc: "Qualiopi n'ouvre pas le CPF : le compte personnel de formation exige une certification inscrite au RNCP ou au répertoire spécifique, ce que nos formations courtes en entreprise ne sont pas. Elle ne garantit pas non plus une prise en charge à 100 % : cette décision appartient à l'OPCO. Un organisme qui vous promet l'un ou l'autre mérite une question de plus.",
+    title: 'Ce que la certification ne promet pas',
+    desc: "Le CPF exige un titre ou un certificat inscrit au RNCP ou au Répertoire spécifique, et une formation courte en entreprise n'y figure pas. Qualiopi ne fixe pas non plus combien l'OPCO paiera, une décision qui lui revient. Un organisme qui vous garantit l'un ou l'autre mérite une question de plus.",
   },
   {
     icon: Layers,
-    title: 'Le catalogue certifié, par métier',
-    desc: "Marketing, commercial, finance, ressources humaines, gestion de projet, communication, management, assistanat, service client, achats, QSE : chaque formation métier applique l'IA générative aux situations réelles de l'équipe, sur ses propres cas, avec un programme et une évaluation des acquis conformes au référentiel.",
+    title: 'Le catalogue par métier',
+    desc: "Marketing, commercial, finance, ressources humaines, achats, QSE, gestion de projet, juridique, assistanat : chaque programme métier part des documents et des situations de l'équipe, avec des objectifs écrits et, pour chacun, une question qui en vérifie l'acquisition.",
   },
   {
     icon: Sparkles,
-    title: 'Le catalogue certifié, par outil',
-    desc: "ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, et le panorama multi-outils pour les organisations qui n'ont pas encore choisi : indépendants des éditeurs, nous formons sur l'outil que vos équipes utilisent, ou nous comparons sur vos cas d'usage avant de recommander.",
+    title: 'Le catalogue par outil',
+    desc: "Claude, Microsoft Copilot (anciennement Microsoft 365 Copilot), ChatGPT, Gemini, l'assistant Vibe de Mistral, ou un panorama multi-outils pour une organisation encore indécise. Masteria ne dépend d'aucun éditeur : nous formons sur l'outil déjà déployé, ou comparons plusieurs outils sur vos cas avant de recommander.",
   },
   {
     icon: Grad,
-    title: 'Les formations thématiques et sur mesure',
-    desc: "AI Act et gouvernance, dirigeants et COMEX, acculturation d'entreprise, coaching individuel, sprints de trois heures : des formats pour chaque besoin, tous certifiés. Et quand aucune fiche ne correspond, nous construisons le programme sur mesure, dans le même cadre qualité et le même financement.",
+    title: 'Les formats thématiques et sur mesure',
+    desc: "AI Act et gouvernance, comité de direction, acculturation, coaching individuel, Sprint IA de trois heures : chaque format suit le même cadre qualité. Quand aucun programme ne correspond, nous écrivons le vôtre, avec les mêmes pièces pour l'OPCO.",
   },
 ]
 
-/* ───────── Les atouts (6 gains, citables) ───────── */
+/* ───────── Les atouts (6, citables) ───────── */
 
 const ATOUTS = [
   {
-    title: 'Un dossier OPCO monté avec vous',
-    desc: "Programme détaillé, objectifs pédagogiques, modalités d'évaluation, convention, attestations : nous fournissons toutes les pièces au format attendu par votre OPCO, et nous vous accompagnons jusqu'au dépôt, avant le début de la formation.",
+    title: 'Le dossier OPCO préparé avec vous',
+    desc: "Programme, objectifs, modalités d'évaluation, convention, feuilles d'émargement : chaque pièce arrive au format que votre opérateur attend, et nous restons disponibles jusqu'au dépôt, avant le premier jour de formation.",
   },
   {
-    title: 'Un tarif unique et lisible',
-    desc: "1 980 € HT par jour de formation en intra-entreprise, pour le groupe jusqu'à dix participants, quel que soit le métier ou l'outil. Le même tarif en accompagnement individuel. Pas de grille opaque, pas de supplément selon le format.",
+    title: 'Un prix lisible',
+    desc: "Le prix ne change ni avec le métier ni avec l'outil : un jour de session vaut 1 980 € HT, pour une équipe de douze au plus réunie en intra comme pour une seule personne. Deux jours reviennent à 3 960 € HT.",
   },
   {
-    title: 'Le métier avant l\'outil, l\'outil avant la théorie',
-    desc: "Chaque formation part des situations réelles des participants : leurs documents, leurs processus, leurs campagnes, leurs dossiers. Le référentiel exige l'adaptation aux bénéficiaires ; nous en faisons notre méthode.",
+    title: "Le métier d'abord, l'outil ensuite",
+    desc: "Chaque session part de ce que les participants traitent au quotidien : leurs dossiers, leurs tableaux, leurs mails. Le référentiel demande d'adapter la formation à son public ; nous en avons fait la méthode.",
   },
   {
-    title: 'Un organisme spécialisé sur l\'IA depuis 2022',
-    desc: "Plus de 1 500 professionnels formés, du COMEX aux équipes terrain, dans l'industrie, l'énergie, l'immobilier, le juridique ou le secteur public. Formateurs indépendants expérimentés et pédagogues, la force du réseau, mis à jour à chaque évolution des outils.",
+    title: "Une spécialité unique, l'IA",
+    desc: "L'intelligence artificielle est le seul sujet de Masteria depuis sa fondation, à Lyon, en 2022. Une vingtaine de formateurs indépendants animent les sessions, sur des supports mis à jour au fil des versions des outils.",
   },
   {
-    title: 'La certification vérifiable, pas déclarative',
-    desc: "Notre numéro de déclaration d'activité et notre certification sont publics et vérifiables auprès des registres officiels. Nous les mettons sur chaque convention et chaque devis, parce que c'est ce que votre OPCO regarde en premier.",
+    title: 'Une certification que vous vérifiez',
+    desc: "La déclaration d'activité et le certificat figurent dans le registre public des organismes de formation et sur chaque convention. Votre OPCO les contrôle en premier ; vous pouvez le faire avant lui.",
   },
   {
-    title: 'L\'honnêteté sur les limites',
-    desc: "Pas de CPF, pas de taux de prise en charge garanti, pas de certification RNCP : nous le disons avant le devis. Ce que nous garantissons, c'est le cadre qualité, la conformité du dossier et une formation qui change les pratiques.",
+    title: 'Les limites dites avant le devis',
+    desc: "Pas de CPF, aucun taux de prise en charge promis, aucun titre RNCP. Nous nous engageons sur le cadre qualité, sur un dossier conforme et sur une formation construite à partir de votre travail.",
   },
 ]
 
-/* ───────── Programme 2 jours (Matin / Après-midi) ───────── */
+/* ───────── Le parcours en deux étapes (deux colonnes par étape) ───────── */
 
 const PROGRAMME = [
   {
     jour: 'Étape 1',
-    titre: "Du besoin au devis, en 24 heures",
+    titre: 'Avant la formation : du besoin au dossier déposé',
+    colA: 'Avec vous',
+    colB: 'Pour votre OPCO',
     matin: [
-      "Vous décrivez votre équipe, vos outils et vos enjeux ; un échange de cadrage gratuit précise le périmètre",
-      "Nous identifions la formation du catalogue adaptée, ou nous construisons le programme sur mesure",
-      "Devis sous 24 heures au tarif unique de 1 980 € HT par jour, avec le programme détaillé et les objectifs pédagogiques",
-      "Nous vous orientons vers votre OPCO (notre outil Quel OPCO ? le trouve en deux minutes)",
+      "Vous décrivez l'équipe, ses outils et ce qu'elle doit savoir faire ; un premier échange fixe le périmètre",
+      "Nous retenons un programme du catalogue, ou nous écrivons le vôtre",
+      "Le devis arrive sous 24 heures, avec le programme détaillé et ses objectifs évaluables",
+      "Nous vous indiquons votre OPCO ; l'outil Quel OPCO ? le retrouve aussi à partir de votre secteur",
     ],
     apresmidi: [
-      "Convention de formation avec notre identité légale complète et notre certification, comme l'OPCO l'exige",
-      "Pièces du dossier prêtes au format attendu : programme, modalités, évaluation, calendrier",
-      "Dépôt de la demande de prise en charge avant le début de la formation, par vous ou avec notre aide",
-      "Réponse de l'OPCO selon ses délais et ses règles ; nous ajustons si besoin (dates, format, périmètre)",
+      "Une convention qui porte l'identité légale complète de l'organisme et sa certification",
+      "Les pièces au format attendu : programme, modalités d'évaluation, calendrier",
+      "La demande de prise en charge déposée avant le premier jour, par vous ou avec notre aide",
+      "Selon la réponse de l'OPCO, nous ajustons les dates, le format ou le périmètre",
     ],
   },
   {
     jour: 'Étape 2',
-    titre: "La formation, puis les preuves de réalisation",
+    titre: 'Pendant et après : la session, puis les preuves',
+    colA: 'Pendant la session',
+    colB: 'Après la session',
     matin: [
-      "Formation en présentiel dans vos locaux ou à distance, sur vos cas réels, avec le programme validé",
-      "Émargement, positionnement en entrée, évaluation des acquis en sortie : le cadre qualité tenu du début à la fin",
-      "Questionnaire de satisfaction à chaud, exigé par le référentiel et utile pour ajuster la suite",
-      "Certificat de réalisation et attestation d'assiduité, pièces nécessaires au règlement par l'OPCO",
+      "La session a lieu chez vous ou en visioconférence, à partir des dossiers de vos équipes",
+      "Un positionnement en entrée situe chaque participant ; un questionnaire des acquis clôt la session",
+      "Les feuilles d'émargement sont signées par demi-journée",
+      "Un questionnaire de satisfaction recueille l'avis de chacun à chaud",
     ],
     apresmidi: [
-      "Facturation conforme aux attentes de votre OPCO (subrogation possible selon les opérateurs)",
-      "Livrables de la formation transmis aux participants (prompts, gabarits, cadre d'usage)",
-      "Évaluation à froid quelques semaines plus tard : ce qui a pris dans les pratiques, ce qui reste à renforcer",
-      "Suite possible : approfondissement outil, acculturation d'entreprise, coaching individuel",
+      "Le certificat de réalisation et les émargements partent à l'OPCO ; certains pratiquent la subrogation, c'est-à-dire qu'ils paient directement l'organisme",
+      "Les participants gardent les livrables : prompts, gabarits, cadre d'usage",
+      "Une évaluation à froid, quelques semaines plus tard, mesure ce qui est resté dans les pratiques",
+      "Une suite reste possible : approfondissement par outil, acculturation d'autres équipes, coaching individuel",
     ],
   },
 ]
@@ -187,10 +201,10 @@ const PROGRAMME = [
 /* ───────── Pour qui (4 profils) ───────── */
 
 const PROFILS = [
-  { icon: Users, title: 'Responsables formation et RH', desc: "Vous devez financer la montée en compétence IA de vos équipes et sécuriser le dossier OPCO. Vous trouvez ici la preuve de certification, le tarif, les pièces, et le catalogue pour choisir la bonne formation par métier." },
-  { icon: Target, title: 'Dirigeants de PME et de TPE', desc: "Vous voulez former vos équipes sans avancer plus que nécessaire. La certification rend nos formations éligibles à votre OPCO ; nous montons le dossier avec vous et nous vous disons honnêtement ce qui sera pris en charge." },
-  { icon: Layers, title: 'Managers qui portent un projet de formation', desc: "Marketing, commercial, finance, projet : vous cherchez une formation IA appliquée à votre métier et finançable. Le catalogue par métier vous mène directement à la fiche qui vous concerne." },
-  { icon: Landmark, title: 'Acheteurs formation et grands comptes', desc: "Vous consultez plusieurs organismes et vérifiez d'abord la certification, l'identité légale et la conformité du dossier. Tout est ici, vérifiable auprès des registres officiels." },
+  { icon: Users, title: 'Responsables formation et RH', desc: "Vous devez faire monter vos équipes en compétence sur l'IA et présenter un dossier solide à l'OPCO. Vous trouvez ici la preuve de certification, le prix, la liste des pièces et le catalogue par métier." },
+  { icon: Target, title: 'Dirigeants de PME et de TPE', desc: "Vous voulez former l'équipe sans avancer plus que nécessaire. La certification permet une demande à votre OPCO ; nous montons le dossier avec vous et vous disons franchement ce qui a des chances d'être pris en charge." },
+  { icon: Layers, title: 'Managers qui portent un projet de formation', desc: "Marketing, commercial, finance, gestion de projet : vous cherchez une formation IA appliquée à votre fonction et finançable. Les pages métier vous mènent au programme qui vous concerne." },
+  { icon: Landmark, title: 'Acheteurs formation et grands comptes', desc: "Vous comparez plusieurs organismes et contrôlez d'abord la certification, l'identité légale et la conformité du dossier. Chaque élément se vérifie sur un registre public, sans passer par nous." },
 ]
 
 /* ───────── FAQ ───────── */
@@ -198,70 +212,70 @@ const PROFILS = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'une formation IA Qualiopi ?",
-    a: "C'est une formation à l'intelligence artificielle dispensée par un organisme certifié Qualiopi, la certification qualité nationale des prestataires d'actions de formation. Concrètement, cela signifie deux choses : l'organisme respecte le référentiel national qualité (information, adaptation aux bénéficiaires, moyens, formateurs, évaluation, amélioration continue), et ses formations sont éligibles aux financements publics et mutualisés, en premier lieu la prise en charge par votre OPCO. Toutes les formations IA de Masteria sont dans ce cadre.",
+    a: "Une formation à l'intelligence artificielle dispensée par un organisme certifié Qualiopi, la marque qui atteste du respect du référentiel national qualité. Deux conséquences pour vous : l'organisme a prouvé à un auditeur sa façon d'informer, d'adapter, d'évaluer et de s'améliorer, et sa formation peut être présentée à votre OPCO pour une prise en charge. Chez Masteria, chaque programme du catalogue entre dans ce cadre.",
   },
   {
     q: "Masteria est-il certifié Qualiopi ?",
-    a: "Oui. Masteria est certifiée Qualiopi au titre des actions de formation, sous le numéro de déclaration d'activité 84 69 23218 69 enregistré auprès du préfet de la région Auvergne-Rhône-Alpes. La certification est délivrée par un organisme certificateur accrédité et vérifiable auprès des registres officiels. Elle figure, avec notre identité légale complète, sur chaque convention et chaque devis, parce que c'est la première chose que votre OPCO vérifie.",
+    a: "Oui, pour la catégorie « actions de formation ». Certifopac a délivré à Masteria le certificat n° 725311-1, émis le 29 janvier 2026 pour trois ans ; vous pouvez le télécharger en PDF depuis cette page. Le numéro de déclaration d'activité et les liens vers les registres publics figurent sur la page À propos, dans le bloc « Organisme vérifiable ».",
   },
   {
-    q: "Une formation IA Qualiopi est-elle prise en charge à 100 % ?",
-    a: "Pas automatiquement, et méfiez-vous des organismes qui le garantissent. Qualiopi rend la formation éligible ; la décision et le montant de prise en charge appartiennent à votre OPCO, selon votre branche, votre effectif (les entreprises de moins de 50 salariés sont généralement mieux couvertes) et les plafonds de l'année. Nous montons le dossier avec vous pour maximiser la prise en charge, et nous vous disons avant le devis ce qui est probable. Notre guide du financement d'une formation IA détaille les dispositifs.",
+    q: "Une formation IA Qualiopi est-elle prise en charge en totalité ?",
+    a: "Pas automatiquement. La certification rend la demande possible ; votre OPCO en fixe le montant selon sa grille, votre branche, votre effectif et les fonds de l'année. Pour ce type de financement, les structures de moins de cinquante salariés sont en général les mieux servies. Nous préparons le dossier et vous disons, avant le devis, ce qui paraît probable ; notre guide du financement détaille les dispositifs.",
   },
   {
     q: "Peut-on financer une formation IA Masteria avec le CPF ?",
-    a: "Non. Le compte personnel de formation exige une certification inscrite au RNCP ou au répertoire spécifique ; nos formations courtes en entreprise délivrent une attestation et un certificat de réalisation dans le cadre Qualiopi, pas une certification professionnelle. Nos formations sont conçues pour les salariés et dirigeants financés par leur entreprise via l'OPCO. Pour un projet individuel, notre coaching IA peut être structuré en action de formation finançable OPCO ; le CPF reste exclu.",
+    a: "Non. Le compte personnel de formation, ou CPF, ne paie que des titres et certificats inscrits au RNCP ou au Répertoire spécifique, et nos formations courtes en entreprise n'en font pas partie. Elles se terminent par une attestation et un certificat de réalisation, dans le cadre Qualiopi. Elles sont pensées pour des salariés et des dirigeants dont l'entreprise finance la formation, avec l'appui de son OPCO.",
   },
   {
     q: "Quelles formations IA Qualiopi proposez-vous ?",
-    a: "Trois familles, toutes certifiées. Par métier : marketing, commercial, finance, ressources humaines, gestion de projet, communication, management, assistanat, service client, achats, QSE. Par outil : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, et un panorama multi-outils pour comparer. Thématiques et formats : AI Act et gouvernance, dirigeants et COMEX, acculturation d'entreprise, coaching individuel, sprints de trois heures. Et le sur mesure quand aucune fiche ne correspond, dans le même cadre.",
+    a: "Plus de 100 programmes, en trois familles. Par métier : marketing, commercial, finance, ressources humaines, achats, QSE, gestion de projet, juridique ou assistanat, entre autres. Par outil : Gemini, Claude, Microsoft Copilot, Mistral, ChatGPT, ou un panorama multi-outils. Par thème ou par format : AI Act et gouvernance, comité de direction, acculturation, coaching individuel, Sprint IA de trois heures. Un programme sur mesure entre dans le même cadre.",
   },
   {
     q: "Combien coûte une formation IA Qualiopi chez Masteria ?",
-    a: "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à dix participants), quel que soit le métier ou l'outil ; le même tarif journalier en accompagnement individuel. Une formation métier de deux jours représente donc 3 960 € HT pour l'équipe, avant prise en charge par votre OPCO. Le devis, le programme et les pièces du dossier arrivent sous 24 heures ; en présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
+    a: "La journée de session est à 1 980 € HT, sur n'importe quel sujet, pour un groupe intra de douze participants au maximum ou pour une seule personne. Deux journées pour toute l'équipe font 3 960 € HT, avant une éventuelle prise en charge par votre OPCO. Pour une session loin de Lyon, le déplacement du formateur est refacturé au réel. Le devis et le programme vous parviennent en moins de 24 heures.",
   },
   {
     q: "Comment se passe la prise en charge OPCO, concrètement ?",
-    a: "Vous nous décrivez le besoin, nous établissons devis et programme sous 24 heures. Nous fournissons la convention (avec notre identité légale et notre certification) et toutes les pièces au format attendu. Vous déposez la demande auprès de votre OPCO avant le début de la formation, seul ou avec notre aide ; certains OPCO acceptent la subrogation, c'est-à-dire de nous régler directement. Après la formation, émargements, évaluation et certificat de réalisation déclenchent le règlement. Notre outil Quel OPCO ? identifie votre opérateur en deux minutes.",
+    a: "Vous décrivez le besoin ; le devis et le programme suivent sous 24 heures. Nous fournissons la convention, avec notre identité légale et notre certificat, et les pièces au format attendu. Vous déposez la demande, seul ou avec notre aide, avant que la session commence ; certains opérateurs pratiquent la subrogation et règlent directement l'organisme. Après la session, les émargements, l'évaluation et le certificat de réalisation déclenchent le paiement. L'outil Quel OPCO ? vous aide à trouver votre opérateur.",
   },
   {
     q: "Quelle différence entre Qualiopi et une certification RNCP ?",
-    a: "Qualiopi certifie l'organisme de formation et sa qualité de service ; une certification RNCP certifie une compétence acquise par le stagiaire, inscrite dans un répertoire national, et ouvre notamment le CPF. Une formation peut être Qualiopi sans être certifiante (c'est le cas de nos formations courtes en entreprise), et c'est suffisant pour le financement OPCO et le plan de développement des compétences. Si vous cherchez un diplôme ou un titre, il vous faut un parcours long, ce que nous ne proposons pas.",
+    a: "Qualiopi porte sur l'organisme et la qualité de son service. Une certification RNCP porte sur une compétence acquise par la personne, enregistrée dans un répertoire national, et ouvre notamment le CPF. Une formation peut être dispensée par un organisme Qualiopi sans être certifiante, comme nos formations courtes en entreprise, et rester éligible au financement de l'OPCO. Pour obtenir un diplôme ou un titre, il faut un parcours long, que Masteria ne propose pas.",
   },
   {
-    q: "Formez-vous en Suisse et en Belgique ? Le financement y est-il le même ?",
-    a: "Nous formons en France, en Suisse et en Belgique, en présentiel ou à distance. Qualiopi et les OPCO sont des dispositifs français : ils s'appliquent aux entreprises françaises. En Suisse et en Belgique, le cadre de financement diffère (fonds de branche, chèques-formation régionaux selon les régions belges) et se vérifie au cas par cas ; nous ne promettons aucune prise en charge hors de France sans l'avoir vérifiée avec vous.",
+    q: "Formez-vous en Suisse et en Belgique ?",
+    a: "Oui, à Genève, à Bruxelles et ailleurs, sur site ou à distance, comme en France et jusqu'aux États-Unis et en Inde. Qualiopi et les OPCO sont des dispositifs français : aucun OPCO n'existe à Genève ni à Bruxelles, et nos devis y sont libellés en euros HT. Des aides locales existent parfois ; elles se vérifient au cas par cas, et nous n'en promettons aucune sans l'avoir vérifiée avec vous.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formations IA certifiées Qualiopi — Masteria',
-  description: "Catalogue de formations à l'intelligence artificielle générative certifiées Qualiopi (actions de formation, NDA 84 69 23218 69) : par métier (marketing, commercial, finance, RH, gestion de projet, communication, management, assistanat, service client, achats, QSE), par outil (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, multi-outils) et thématiques (AI Act, dirigeants, acculturation, coaching). Éligibles à la prise en charge OPCO. Intra-entreprise, présentiel ou distanciel, Europe, États-Unis, Inde.",
+  name: 'Formations IA certifiées Qualiopi · Masteria',
+  description: "Catalogue de plus de 100 formations à l'intelligence artificielle générative, dispensées par un organisme certifié Qualiopi (certificat n° 725311-1, catégorie actions de formation) : par métier, par outil (ChatGPT, Gemini, Claude, Mistral, Microsoft Copilot) et par thème (AI Act, dirigeants, acculturation, coaching). Un OPCO peut financer ces formations, selon ses critères et dans la limite de ses fonds. Intra-entreprise ou individuel, sur site ou à distance, en France comme hors de France, Europe, Inde et États-Unis compris.",
   level: 'Tous niveaux',
   teaches: [
-    "Appliquer l'IA générative aux situations réelles de son métier",
-    "Maîtriser l'outil déployé dans son entreprise (ChatGPT, Copilot, Claude, Gemini ou Mistral)",
-    "Formuler des demandes efficaces, vérifier les réponses, protéger les données",
+    "Appliquer l'IA générative aux dossiers de son propre métier",
+    "Maîtriser l'outil déployé dans son entreprise (Gemini, Mistral, Claude, Copilot ou ChatGPT)",
+    "Formuler des demandes précises, vérifier les réponses, protéger les données",
     "Installer des usages durables avec un cadre d'usage et une bibliothèque de prompts",
   ],
-  about: 'Formation professionnelle à l\'intelligence artificielle générative',
+  about: "Formation professionnelle à l'intelligence artificielle générative",
   timeRequired: 'PT7H',
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis technique.',
-  audience: 'Salariés, managers et dirigeants d\'entreprises et d\'organisations',
-  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
+  audience: "Salariés, managers et dirigeants d'entreprises et d'organisations",
+  locationName: 'Masteria : intra-entreprise, dans les locaux du client ou en visioconférence',
 }
-/* Programme en ItemList (séquence citable — GEO). */
+/* Parcours en ItemList (séquence citable, GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Parcours d'une formation IA Qualiopi chez Masteria, du devis aux preuves de réalisation",
+  name: "Parcours d'une formation IA Qualiopi chez Masteria, du besoin aux preuves de réalisation",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((j, ji) => [
-    { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: j.matin.join(' ; ') },
-    { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi — ${j.titre}`, description: j.apresmidi.join(' ; ') },
+    { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · ${j.colA} · ${j.titre}`, description: j.matin.join(' ; ') },
+    { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · ${j.colB} · ${j.titre}`, description: j.apresmidi.join(' ; ') },
   ]),
 }
 
@@ -276,7 +290,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2025-06-10',
-  dateModified: '2026-08-10',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-qualiopi#webpage' },
   about: [
@@ -307,10 +321,11 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
+function DayBlock({ jour, titre, colA, colB, matin, apresmidi, isDesktop }) {
   const col = { flex: 1, minWidth: 0 }
   const list = { listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }
   const li = { fontSize: 14.5, color: '#374151', lineHeight: 1.65, display: 'flex', gap: 9, alignItems: 'flex-start' }
+  const colTitle = { fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, fontFamily: 'Nunito, sans-serif' }
   return (
     <div style={{ ...cardStyle, padding: 'clamp(22px, 3vw, 30px)' }}>
       <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, marginBottom: 18, flexWrap: 'wrap' }}>
@@ -319,11 +334,11 @@ function DayBlock({ jour, titre, matin, apresmidi, isDesktop }) {
       </div>
       <div style={{ display: 'flex', gap: isDesktop ? 28 : 20, flexDirection: isDesktop ? 'row' : 'column' }}>
         <div style={col}>
-          <div style={{ fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, fontFamily: 'Nunito, sans-serif' }}>Matin</div>
+          <div style={colTitle}>{colA}</div>
           <ul style={list}>{matin.map((m, i) => <li key={i} style={li}><Check size={16} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{m}</li>)}</ul>
         </div>
         <div style={col}>
-          <div style={{ fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, fontFamily: 'Nunito, sans-serif' }}>Après-midi</div>
+          <div style={colTitle}>{colB}</div>
           <ul style={list}>{apresmidi.map((m, i) => <li key={i} style={li}><Check size={16} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />{m}</li>)}</ul>
         </div>
       </div>
@@ -357,11 +372,9 @@ export default function QualiopiPage() {
         faqItems={FAQ}
         courseData={COURSE_DATA}
         datePublished="2025-06-10"
-        dateModified="2026-08-10"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
-        citations={[
-          { name: 'Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-        ]}
+        citations={SOURCES.map(({ name, url }) => ({ name, url }))}
         extraJsonLd={[programmeJsonLd, articleJsonLd]}
       />
 
@@ -396,15 +409,15 @@ export default function QualiopiPage() {
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mise à jour août 2026
+            Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui conçoit les parcours du catalogue · actualisé le 7 octobre 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA Qualiopi est dispensée par un organisme certifié selon le référentiel national qualité, ce qui la rend <strong style={{ color: '#fff', fontWeight: 700 }}>éligible à la prise en charge par votre OPCO</strong>. Masteria est certifiée Qualiopi au titre des actions de formation (NDA 84 69 23218 69) : toutes nos formations IA, par métier, par outil ou thématiques, sont dans ce cadre, au tarif unique de 1 980 € HT par jour en intra.
+            Une formation IA Qualiopi est dispensée par un organisme dont un auditeur a validé les méthodes au regard du référentiel national qualité, ce qui permet de <strong style={{ color: '#fff', fontWeight: 700 }}>la présenter à votre OPCO pour une prise en charge</strong>. Masteria est certifié sur la catégorie « actions de formation » : ses programmes IA, par métier, par outil ou par thème, entrent tous dans ce cadre et sont facturés 1 980 € HT le jour de session.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Cette page dit ce que Qualiopi garantit et ce qu'elle ne garantit pas (ni le CPF, ni un taux de prise en charge), prouve notre certification de façon vérifiable, puis vous mène à la formation qui correspond à votre équipe. Le dossier OPCO se monte avec nous, avant le début de la formation.
+            Vous trouverez plus bas ce que Qualiopi garantit, ce qu'elle laisse de côté (le CPF, un taux de financement), les preuves de notre certification et le chemin vers le programme qui convient à votre équipe. Le dossier OPCO se prépare avec nous, avant le premier jour de formation.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -413,7 +426,7 @@ export default function QualiopiPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#programme" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le programme
+              Voir le parcours
             </a>
           </div>
 
@@ -440,7 +453,7 @@ export default function QualiopiPage() {
         </div>
       </section>
 
-      {/* ── CE QUE L'IA CHANGE PAR MISSION (éditorial asymétrique) ── */}
+      {/* ── CE QU'IL FAUT SAVOIR (éditorial asymétrique) ── */}
       <section id="missions" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
@@ -450,10 +463,10 @@ export default function QualiopiPage() {
                 Que garantit une formation IA certifiée Qualiopi ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Qualiopi certifie l'organisme et sa méthode selon le référentiel national qualité, et rend ses formations éligibles aux financements publics et mutualisés, l'OPCO en premier lieu. Elle ne garantit ni le CPF (réservé aux certifications RNCP) ni un taux de prise en charge, qui dépend de votre OPCO. Chez Masteria, toutes les formations IA sont dans ce cadre : par métier, par outil, thématiques et sur mesure.</strong>
+                <strong>Qualiopi atteste qu'un organisme respecte le référentiel national qualité, sept critères vérifiés par un certificateur accrédité. C'est la condition pour que votre OPCO examine une demande de prise en charge. La certification n'ouvre pas le CPF et ne fixe aucun taux de financement. Chez Masteria, chaque programme, par métier, par outil ou sur mesure, entre dans ce cadre.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Pour le détail des dispositifs et le montage du dossier, voyez notre guide <Link to="/financement-formation-ia" style={aStyle}>financer une formation IA</Link> ; pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link>.
+                Le montage financier est détaillé dans notre guide <Link to="/financement-formation-ia" style={aStyle}>financer une formation IA</Link> ; pour connaître votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> le retrouve à partir de votre secteur.
               </p>
             </div>
             <div>
@@ -471,7 +484,7 @@ export default function QualiopiPage() {
         </div>
       </section>
 
-      {/* ── LES ATOUTS DE L'IA POUR LA FINANCE ── */}
+      {/* ── POURQUOI MASTERIA ── */}
       <section id="atouts" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Pourquoi Masteria</Kicker>
@@ -479,7 +492,7 @@ export default function QualiopiPage() {
             Ce que vous gagnez à choisir un organisme IA certifié Qualiopi
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six choses : un dossier OPCO monté avec vous jusqu'au dépôt, un tarif unique et lisible, des formations qui partent de votre métier et de vos cas réels, un organisme spécialisé sur l'IA depuis 2022, une certification vérifiable auprès des registres officiels, et l'honnêteté sur les limites du financement avant le devis.</strong>
+            <strong>Un dossier OPCO préparé avec vous jusqu'au dépôt, un prix journalier unique, des programmes construits sur les cas de vos équipes, un organisme dont l'IA est le seul sujet depuis 2022, une certification que vous pouvez contrôler vous-même, et des limites dites avant le devis.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {ATOUTS.map((item, i) => (
@@ -490,28 +503,28 @@ export default function QualiopiPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Un mot d'honnêteté : Qualiopi est une condition nécessaire, pas une garantie de résultat pédagogique. Ce qui fait qu'une formation change les pratiques, c'est le travail sur les cas réels des participants et le suivi des usages ensuite. La certification encadre ; la méthode fait la différence.
+            Qualiopi garantit un processus ; l'effet sur les pratiques dépend d'autre chose. Une formation change le travail quand elle s'appuie sur les dossiers des participants et quand l'usage est suivi après la session. C'est pourquoi chaque formation Masteria prévoit une évaluation à froid quelques semaines plus tard.
           </p>
         </div>
       </section>
 
-      {/* ── PROGRAMME 2 JOURS (ancre sombre — pivot) ── */}
+      {/* ── LE PARCOURS EN DEUX ÉTAPES (ancre sombre, pivot) ── */}
       <section id="programme" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le parcours</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Comment se déroule une formation IA Qualiopi chez Masteria ?
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Étape 1 : du besoin au devis en 24 heures, l'orientation vers votre OPCO, la convention et les pièces du dossier, le dépôt avant le début. Étape 2 : la formation sur vos cas réels avec le cadre qualité tenu (émargement, évaluation, satisfaction), puis les preuves de réalisation qui déclenchent le règlement, et l'évaluation à froid. Un parcours balisé, du premier échange au certificat.</strong>
+            <strong style={{ color: '#fff' }}>Avant la formation, votre besoin devient un devis sous 24 heures, puis un dossier déposé auprès de votre OPCO. Pendant et après, la session se déroule sur vos dossiers avec le cadre qualité tenu, les preuves de réalisation déclenchent le règlement, et une évaluation à froid mesure ce qui reste.</strong>
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {PROGRAMME.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
           </div>
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Le calendrier dépend surtout de votre OPCO : comptez ses délais d'instruction entre le dépôt et l'accord, et prévoyez le dépôt avant la date de formation. Nous vous aidons à caler les dates en conséquence.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            Le délai le plus long est souvent l'instruction par l'OPCO. Déposez la demande bien avant la date de session ; nous calons le calendrier avec vous en conséquence.
           </p>
         </div>
       </section>
@@ -520,9 +533,9 @@ export default function QualiopiPage() {
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Pour qui</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse cette page ?</h2>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui cette page est-elle utile ?</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>À ceux qui doivent financer et sécuriser une formation IA : responsables formation et RH, dirigeants de PME et TPE, managers qui portent un projet pour leur équipe, acheteurs formation de grands comptes qui vérifient d'abord la certification et l'identité légale. Vous trouvez ici la preuve, le tarif, la méthode et le catalogue.</strong>
+            <strong>À toute personne qui doit financer et sécuriser une formation IA : responsables formation et RH, dirigeants de PME et de TPE, managers qui portent un projet pour leur équipe, acheteurs de grands comptes qui contrôlent d'abord la certification et l'identité légale. Elle réunit la preuve, le prix, la méthode et le catalogue.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
             {PROFILS.map(card => {
@@ -541,7 +554,7 @@ export default function QualiopiPage() {
         </div>
       </section>
 
-      {/* ── CADRE : RGPD, DROITS, MARQUE (E-E-A-T + réassurance) ── */}
+      {/* ── CADRE : CE QUE NOUS NE PROMETTONS PAS (E-E-A-T + réassurance) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -554,10 +567,10 @@ export default function QualiopiPage() {
                 Ce que nous ne vous promettons pas, et pourquoi
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Trois promesses circulent chez les organismes de formation et nous ne les faisons pas. « Prise en charge à 100 % garantie » : la décision appartient à votre OPCO, selon votre branche, votre effectif et les plafonds ; nous montons le dossier pour maximiser, sans garantir. « Éligible CPF » : nos formations courtes en entreprise ne sont pas inscrites au RNCP, donc non éligibles ; nous le disons d'emblée. « Certifiante » : nous délivrons une attestation et un certificat de réalisation dans le cadre Qualiopi, pas un titre professionnel. Ce que nous garantissons : la certification vérifiable, la conformité du dossier, l'identité légale complète sur chaque document, et une formation qui part de vos cas réels. Pour cadrer les usages qui suivront, voyez notre <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
+                Trois promesses circulent chez certains organismes, et vous ne les lirez pas ici. Une prise en charge totale garantie : seul votre OPCO décide, selon ses règles et ses fonds. Une éligibilité au CPF : aucune de nos sessions n'est inscrite au RNCP, et nous le disons dès le premier échange. Une formation « certifiante » : vous recevez une attestation et un certificat de réalisation, et aucun titre professionnel n'est délivré. Nous tenons en revanche la certification vérifiable, la conformité du dossier, l'identité légale complète sur chaque document et une formation construite sur vos dossiers. Pour encadrer les usages qui suivront, voyez notre modèle de <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['Prise en charge : éligible, jamais « garantie »', 'CPF : non éligible, dit avant le devis', 'Attestation Qualiopi, pas de titre RNCP', 'Identité légale et certification sur chaque document'].map(pt => (
+                {['Prise en charge : à demander, jamais promise', 'CPF : exclu, et dit avant le devis', 'Attestation et certificat de réalisation, sans titre RNCP', 'Identité légale et certificat sur chaque document'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />{pt}
                   </li>
@@ -568,31 +581,31 @@ export default function QualiopiPage() {
         </div>
       </section>
 
-      {/* ── TARIF & FINANCEMENT ── */}
+      {/* ── PRIX & PRISE EN CHARGE ── */}
       <section id="tarif" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Tarif et financement</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>Combien coûte la formation, et comment la financer ?</h2>
+          <Kicker>Prix et prise en charge</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Ce que coûte une formation IA Qualiopi chez Masteria, et qui peut la payer</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à dix participants), quel que soit le métier ou l'outil ; le même tarif en accompagnement individuel. Certifiées Qualiopi, nos formations sont éligibles à la prise en charge par votre OPCO au titre du plan de développement des compétences, selon votre branche et votre effectif ; nous montons le dossier avec vous. Devis sous 24 heures.</strong>
+            <strong>Une journée de session coûte 1 980 € HT, pour un groupe intra de douze stagiaires tout au plus ou en individuel ; deux journées, 3 960 € HT. Votre OPCO peut la financer selon ses règles et dans la limite de ses fonds ; le dossier se prépare avec nous, et vous avez le devis dans les 24 heures.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <GraduationCap size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que le prix inclut</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le cadrage préalable, l'animation de la formation en présentiel ou à distance, les supports, les livrables (prompts, gabarits, cadre d'usage selon la formation), l'évaluation des acquis, le certificat de réalisation et toutes les pièces du dossier OPCO. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.
+                L'analyse du besoin, l'animation dans vos locaux ou en visioconférence, les supports remis, les livrables (prompts, modèles de documents, cadre d'usage), le questionnaire des acquis, le certificat de réalisation et toutes les pièces du dossier OPCO. Au-delà de Lyon, les frais de déplacement du formateur, depuis sa ville, s'ajoutent au réel.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>La prise en charge OPCO</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>Le rôle de votre OPCO</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et le détail des dispositifs sur <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. Pas d'éligibilité CPF.
+                Pour ce plan de formation, les fonds mutualisés des OPCO vont en règle générale aux employeurs de moins de 50 salariés ; pour les effectifs plus importants, tout dépend des accords de votre branche et des versements volontaires. Retrouvez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et le détail des dispositifs dans <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. À Genève et à Bruxelles, où rien n'équivaut à un OPCO, nos devis sont libellés en euros HT. Le CPF reste exclu.
               </p>
             </div>
           </div>
@@ -606,9 +619,9 @@ export default function QualiopiPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation IA Qualiopi : les questions fréquentes</h2>
-              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>Votre question porte sur un cas particulier (branche, effectif, pays) ? Écrivez-nous, la réponse arrive sous 24 heures.</p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Poser votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -620,21 +633,21 @@ export default function QualiopiPage() {
       {/* ── MAILLAGE INTERNE ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Pour aller plus loin</Kicker>
-          <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Approfondir par outil, ou élargir</h2>
+          <Kicker>Les pages à lire ensuite</Kicker>
+          <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Choisir un programme, puis le financer</h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            La formation métier compare les outils ; les formations par outil approfondissent celui que votre équipe a retenu.
+            Les pages métier montrent le programme de deux jours appliqué à une fonction ; les pages outil vont plus loin sur l'assistant que votre équipe utilise déjà.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Par métier', desc: "Contenu, SEO, campagnes, analyse : l'IA sur vos campagnes réelles, 2 jours." },
-              { label: 'Formation IA commercial', href: '/formation-ia-commercial', tag: 'Par métier', desc: "Prospection, préparation de RDV, propositions, CRM : l'IA sur tout le cycle de vente, 2 jours." },
-              { label: 'Formation IA finance', href: '/formation-ia-finance', tag: 'Par métier', desc: "Excel, reporting, clôture, contrôle de gestion : l'IA sur vos vrais dossiers, 2 jours." },
-              { label: 'Formation IA gestion de projet', href: '/formation-ia-gestion-de-projet', tag: 'Par métier', desc: "Cadrage, comptes rendus, reporting, risques : l'IA du cadrage au reporting, 2 jours." },
-              { label: 'Toutes les formations par métier', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "RH, communication, management, assistanat, service client, achats, QSE et les autres." },
-              { label: 'Formation ChatGPT', href: '/formation-chatgpt', tag: 'Par outil', desc: "L'outil le plus répandu, par métier et par niveau." },
-              { label: 'Formation Microsoft Copilot', href: '/formation-microsoft-copilot', tag: 'Par outil', desc: "Copilot dans Microsoft 365 : Word, Excel, Outlook, Teams, agents." },
-              { label: 'Financer une formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, plan de développement des compétences, montage du dossier : le guide complet." },
+              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Par métier', desc: "Campagnes, contenus, référencement, analyse : deux jours sur les dossiers de votre équipe marketing." },
+              { label: 'Formation IA commercial', href: '/formation-ia-commercial', tag: 'Par métier', desc: "Prospection, préparation des rendez-vous, propositions et suivi dans le CRM, en deux jours." },
+              { label: 'Formation IA finance', href: '/formation-ia-finance', tag: 'Par métier', desc: "Excel, reporting, clôture, contrôle de gestion : deux jours sur vos propres fichiers." },
+              { label: 'Formation IA gestion de projet', href: '/formation-ia-gestion-de-projet', tag: 'Par métier', desc: "Cadrage, comptes rendus, suivi des risques et reporting : deux jours pour les chefs de projet." },
+              { label: 'Toutes les formations par métier', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Ressources humaines, communication, management, assistanat, service client, achats, QSE et d'autres fonctions." },
+              { label: 'Formation ChatGPT', href: '/formation-chatgpt', tag: 'Par outil', desc: "L'assistant le plus répandu, par métier et par niveau, avec les réglages de l'offre ChatGPT Business." },
+              { label: 'Formation Microsoft Copilot', href: '/formation-microsoft-copilot', tag: 'Par outil', desc: "Copilot au quotidien dans Outlook, Teams, Word et Excel, et les agents qui s'y ajoutent." },
+              { label: 'Financer une formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "OPCO, plan de développement des compétences, montage du dossier : le guide du financement." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, padding: 26, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
@@ -643,7 +656,7 @@ export default function QualiopiPage() {
                   <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>{rel.tag}</div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>{rel.label}</h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>En savoir plus<ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" /></span>
+                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>Voir la page<ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" /></span>
                 </div>
               </Link>
             ))}
@@ -651,10 +664,18 @@ export default function QualiopiPage() {
         </div>
       </section>
 
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan, fondateur de Masteria, dessine les parcours du catalogue et répond de leur conformité au référentiel. Il a actualisé cette page le 7 octobre 2026 ; sa vision et son rôle sont présentés sur <Link to="/mathias-nizan" style={aStyle}>sa page de fondateur</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
-      <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
+      <section style={{ background: '#fff', padding: 'clamp(24px, 4vw, 48px) 24px clamp(64px, 9vw, 110px)' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -662,18 +683,39 @@ export default function QualiopiPage() {
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation IA Qualiopi</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Trouvons la formation IA certifiée qui correspond à votre équipe</h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre équipe, vos outils et votre enjeu. Nous revenons vers vous sous 24 heures avec la formation adaptée (ou un programme sur mesure), le devis au tarif unique et les pièces du dossier OPCO. Vous saurez avant de signer ce qui est probable côté prise en charge.
+              Décrivez votre équipe, ses outils et ce qu'elle doit savoir faire. Sous 24 heures, vous recevez la formation proposée (ou un programme écrit pour vous), le devis et les pièces du dossier OPCO, avec notre avis sur la prise en charge probable.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un devis
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Présentiel & distanciel</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Organisme certifié Qualiopi · devis sous 24 heures · sur site ou à distance</p>
           </div>
         </div>
       </section>
 
-      <OfficialSources />
+      {/* ── VÉRIFIER PAR VOUS-MÊME (sources officielles propres à la page) ── */}
+      <section aria-labelledby="verifier-sources" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="verifier-sources" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Vérifier par vous-même
+          </h2>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.6, margin: '0 0 20px' }}>
+            Les règles de Qualiopi et des OPCO, puis la situation légale de Masteria, se contrôlent sur des sites publics, extérieurs au nôtre. Le certificat se télécharge aussi <a href="/assets/qualiopi-certificat-masteria.pdf" style={aStyle}>en PDF</a>.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {SOURCES.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {s.short}
+                  <ExternalLink size={13} strokeWidth={2.2} aria-hidden="true" />
+                </a>
+                <span style={{ color: '#6B7280' }}> : {s.desc}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

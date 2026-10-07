@@ -1,322 +1,322 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-assurance (template MetierPage).
  * Nouveau pilier créé en août 2026 (chantier money pages), à la structure de immobilier.js.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx) ;
+ * faits outils relevés le 7 octobre 2026 (fiche FAITS-OUTILS du 07/10, claude-facts.js du 05/10).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA assurance : sinistres, souscription, courtage | Masteria",
-  "metaDesc": "Formation IA assurance sur vos dossiers réels : gestion des sinistres, souscription, relation assurés, devoir de conseil, courtage. ChatGPT, Copilot, Claude, Gemini, Mistral. 2 jours, certifiée Qualiopi, finançable OPCO.",
-  "keywords": "formation ia assurance, ia assurance, intelligence artificielle assurance, formation ia courtier, ia gestion sinistres",
-  "h1": "Formation IA assurance : l'IA générative du sinistre à la relation assurés, la décision reste au gestionnaire",
+  "metaTitle": "Formation IA assurance : sinistres, souscription | Masteria",
+  "metaDesc": "Formation IA assurance pour compagnies, mutuelles et courtiers : dossiers sinistres, souscription, réclamations, devoir de conseil, AI Act. Qualiopi.",
+  "keywords": "formation ia assurance, ia assurance, intelligence artificielle assurance, formation ia courtier, ia gestion sinistres, formation ia mutuelle",
+  "h1": "Formation IA assurance : l'IA générative instruit le dossier, le gestionnaire décide",
   "h1a": "Formation IA assurance :",
-  "h1b": "l'IA générative du sinistre à la relation assurés, la décision reste au gestionnaire",
+  "h1b": "l'IA générative instruit le dossier, le gestionnaire décide",
   "eyebrow": "Formation métier · Assurance",
-  "badge3": "Sur vos dossiers sinistres, contrats et réclamations",
-  "geo": "La formation IA assurance de Masteria apprend à vos équipes, en compagnie, mutuelle ou cabinet de courtage, à mettre l'intelligence artificielle générative au service du métier, sur vos dossiers anonymisés : synthèse de dossiers sinistres, préparation de la souscription, réponses aux assurés, supports du devoir de conseil, propositions du courtage, veille réglementaire, avec un cadre strict sur les données et les décisions qui engagent. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "L'assurance est un métier de dossiers, d'écrits et de règles : des pièces à lire, des courriers à produire, des notices à tenir à jour, des réclamations à traiter avec soin. C'est exactement le terrain où l'IA générative fait gagner le plus, à condition de savoir où elle s'arrête. Elle ne tarifie pas un risque, ne décide pas d'une indemnisation, ne porte pas le devoir de conseil. Elle lit, synthétise, rédige et prépare, dans vos formats et sous votre relecture. La formation apprend cette frontière et en tire le maximum.",
-  "intro": "La formation IA assurance de Masteria apprend à vos équipes, en compagnie, mutuelle ou cabinet de courtage, à mettre l'intelligence artificielle générative au service du métier, sur vos dossiers anonymisés : synthèse de dossiers sinistres, préparation de la souscription, réponses aux assurés, supports du devoir de conseil, propositions du courtage, veille réglementaire, avec un cadre strict sur les données et les décisions qui engagent. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO."
+  "badge3": "Sur vos sinistres, vos notices et vos réclamations",
+  "geo": "La formation IA assurance de Masteria s'adresse aux compagnies, aux mutuelles, aux cabinets de courtage et aux agences générales. Leurs équipes y mettent l'IA générative au travail sur des dossiers anonymisés : synthèse d'un sinistre et de ses pièces, note de souscription, réponse à une réclamation, notice cohérente avec les conditions générales, comparatif remis au client du courtier, veille réglementaire. Le parcours dure deux jours, sur l'outil déployé chez vous : Microsoft Copilot (anciennement Microsoft 365 Copilot) dans bien des compagnies, sinon ChatGPT, Claude, Gemini ou Vibe. Tarifer, indemniser et conseiller restent des actes humains.",
+  "sub": "Un dossier d'assurance mêle des pièces hétérogènes (déclaration, constat, rapport d'expert, échanges avec l'assuré) et des écrits qui engagent la maison. L'IA générative lit vite ces pièces et rédige proprement, mais elle peut aussi attribuer au contrat une garantie qu'il ne contient pas. La formation apprend à lui fournir les conditions applicables, à exiger la clause qui fonde chaque affirmation, et à garder pour le professionnel la décision et le devoir de conseil.",
+  "intro": "En deux jours, gestionnaires, souscripteurs et courtiers apprennent à laisser l'IA générative lire les pièces et rédiger les écrits du dossier, sans lui céder la tarification, l'indemnisation ni le conseil."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour une équipe (sinistres seuls, ou courtage seul)"
+   "value": "14 heures sur deux jours, au siège, en agence ou en ligne ; un seul jour pour une équipe centrée sur les sinistres ou sur le courtage"
   },
   {
    "label": "Pour qui",
-   "value": "Compagnies et mutuelles, courtiers et agents généraux, gestionnaires de sinistres, souscripteurs, équipes relation assurés et back-office"
+   "value": "Gestionnaires de sinistres, souscripteurs, conseillers relation assurés, courtiers et agents généraux, équipes conformité"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec votre système de gestion et vos extranets"
+   "value": "L'assistant déployé par la compagnie ou le cabinet, articulé avec votre logiciel de gestion et les extranets des assureurs"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos dossiers réels anonymisés : dossier sinistre, notice produit, réclamation, export de portefeuille, jamais sur des exemples génériques"
+   "value": "Un dossier sinistre anonymisé, une notice, une réclamation reçue et un export de portefeuille servent de base aux ateliers"
   },
   {
    "label": "Cadre",
-   "value": "Données personnelles et données de santé des assurés protégées ; tarification, sélection des risques, indemnisation et devoir de conseil restent aux professionnels"
+   "value": "Données de santé protégées, conditions générales fournies à l'outil, décisions de tarification et d'indemnisation jamais déléguées"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Masteria est certifiée Qualiopi ; la plupart des compagnies et des courtiers relèvent de l'OPCO Atlas, qui décide selon ses règles"
   }
  ],
  "missionsHead": {
-  "kicker": "Activité par activité",
-  "h2": "Que change l'IA dans les métiers de l'assurance ?",
-  "answer": "L'IA générative touche six activités de l'assurance : la gestion des sinistres, la souscription et l'analyse de risques, la relation avec les assurés, la documentation produit et la conformité, la rédaction commerciale du courtage, la veille réglementaire. Dans chacune, elle lit, synthétise et rédige ; la tarification, la sélection des risques, l'indemnisation et le conseil restent aux professionnels.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre activité au cadrage. Pour des solutions IA sur mesure dans le secteur (agents, outils, automatisations), voyez notre page {/ia-banque-assurance|IA pour la banque et l'assurance}."
+  "kicker": "Du sinistre au conseil",
+  "h2": "Les six activités de l'assurance que l'IA générative accompagne",
+  "answer": "La gestion des sinistres, la souscription, la relation avec les assurés, la documentation des produits, la rédaction du courtage et la veille réglementaire : dans chacune, l'outil lit les pièces, en tire une synthèse et prépare les écrits. Il ne fixe ni prime ni indemnité, ne sélectionne aucun risque et ne remplace pas l'intermédiaire face à son client.",
+  "foot": "Au cadrage, chaque activité reçoit le temps que justifie votre organisation. Pour un projet construit sur vos systèmes, comme un agent de préqualification des déclarations ou un assistant produits pour le réseau, voyez la page {/ia-banque-assurance|l'IA appliquée à la banque et à l'assurance}."
  },
  "missions": [
   {
    "icon": "FileSearch",
    "title": "Gestion des sinistres",
-   "desc": "Synthétiser un dossier sinistre à partir de ses pièces (déclaration, constat, rapport d'expertise, échanges), reconstituer la chronologie, rédiger les courriers de suivi, les demandes de pièces et les positions d'attente. L'IA prépare un dossier lisible ; la décision d'indemnisation reste au gestionnaire, sur les conditions du contrat."
+   "desc": "Déclaration, constat, rapport d'expertise, photos décrites, échanges avec l'assuré : l'IA reconstitue la chronologie, liste les pièces reçues et manquantes, puis rédige la demande de compléments ou la position d'attente. Le gestionnaire décide de l'indemnisation au regard du contrat et de sa délégation."
   },
   {
    "icon": "Gauge",
-   "title": "Souscription et analyse de risques",
-   "desc": "Préparer un dossier de souscription : lire les pièces transmises (questionnaires, bilans, rapports de visite), en tirer une note structurée, repérer les informations manquantes, rédiger les demandes de compléments. L'IA ne tarifie pas et ne sélectionne pas les risques : elle instruit le dossier que le souscripteur tranche."
+   "title": "Souscription",
+   "desc": "Questionnaire, bilans, rapport de visite de risque : l'outil en extrait une note structurée et repère les informations absentes avant qu'elles ne bloquent l'étude. Il ne tarifie pas et ne sélectionne pas : le souscripteur tranche sur un dossier complet."
   },
   {
    "icon": "MessagesSquare",
    "title": "Relation assurés et réclamations",
-   "desc": "Répondre aux demandes courantes (attestations, vie du contrat, suivi d'un dossier) et aux réclamations, en langage clair et dans le ton de la compagnie ou du cabinet. Les cas sensibles, refus de prise en charge ou résiliation contestée, sont relus avant tout envoi ; la formation trace la ligne."
+   "desc": "Attestation, avenant, suivi d'un dossier, contestation d'un refus : la réponse se rédige en langage clair, au style de la compagnie, avec les voies de recours quand il le faut. Un refus de garantie ou une résiliation contestée passe toujours par une relecture attentive."
   },
   {
    "icon": "BookOpenCheck",
-   "title": "Documentation produit et conformité",
-   "desc": "Rédiger et tenir à jour les notices d'information, les DIPA et les supports du devoir de conseil, vérifier la cohérence entre un document commercial et les conditions du contrat, comparer deux versions d'une couverture. L'IA produit les supports ; le conseil lui-même reste à l'intermédiaire."
+   "title": "Documentation des produits",
+   "desc": "Notice d'information, document d'information normalisé (DIPA), fiche de recueil des besoins : l'IA met à jour un support et vérifie qu'il dit la même chose que les conditions générales. Une incohérence relevée entre deux documents remonte à la conformité."
   },
   {
    "icon": "PenLine",
-   "title": "Rédaction commerciale du courtage",
-   "desc": "Mettre en forme une proposition à partir de votre analyse du risque et des offres reçues, produire le comparatif lisible par le client, rédiger les courriers de renouvellement et les argumentaires de placement. Vos analyses restent la matière ; l'IA les transforme en documents clairs et présentables."
+   "title": "Écrits du courtage",
+   "desc": "Votre analyse du risque et les offres reçues des compagnies deviennent un comparatif lisible, une proposition argumentée et un courrier de renouvellement. Le courtier garde la préconisation, qu'il motive et signe au titre de son devoir de conseil."
   },
   {
    "icon": "ScrollText",
    "title": "Veille réglementaire",
-   "desc": "Suivre les évolutions qui touchent le secteur (distribution, devoir de conseil, protection de la clientèle, données personnelles), synthétiser un texte ou une recommandation, préparer la note pour la conformité ou pour le réseau. À valider contre les textes et avec votre juriste, jamais sur la seule foi de l'outil."
+   "desc": "Distribution d'assurance, protection de la clientèle, données personnelles, AI Act : l'outil résume un texte ou une recommandation et prépare la note pour le réseau. Chaque point se confirme sur la source officielle, avec le juriste de la maison."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une compagnie, une mutuelle ou un cabinet de courtage",
-  "answer": "Six gains : des dossiers sinistres instruits sur des pièces lues, une souscription préparée plus vite, des réponses aux assurés claires et rapides, une documentation produit tenue à jour, un courtage qui met ses analyses en valeur, et un cadre qui protège les données des assurés comme les décisions qui engagent.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut inventer une clause, une couverture ou un montant. Donnez-lui les pièces du dossier, encodez vos trames dans les gabarits, relisez tout écrit qui engage la compagnie ou le cabinet : le reste, elle le fait remarquablement bien."
+  "kicker": "Ce que la maison gagne",
+  "h2": "Des dossiers mieux instruits, des assurés mieux informés",
+  "answer": "Le temps se récupère sur la lecture des pièces et la rédaction : synthèses de sinistres prêtes avant l'appel de l'assuré, notes de souscription structurées, réponses aux réclamations plus rapides, notices tenues à jour, comparatifs de courtage soignés. Ce temps retourne à la décision et à l'échange avec l'assuré.",
+  "foot": "Une réserve s'impose dans ce métier : un modèle peut prêter au contrat une garantie, une franchise ou un plafond qu'il ne comporte pas, sur un ton assuré. D'où la règle de la formation : les conditions applicables sont toujours fournies à l'outil, et chaque affirmation sur une garantie cite l'article qui la porte."
  },
  "atouts": [
   {
-   "title": "Des dossiers sinistres instruits sur des pièces lues",
-   "desc": "La synthèse, la chronologie et les courriers sortent en un temps réduit, à partir des pièces du dossier. Le gestionnaire consacre son temps à ce qui compte : la position à prendre et la relation avec l'assuré."
+   "title": "Le gestionnaire ouvre un dossier déjà synthétisé",
+   "desc": "Faits, chronologie, pièces manquantes et points d'attention tiennent sur une page. L'appel avec l'assuré commence sur une vue complète du sinistre."
   },
   {
-   "title": "Une souscription qui instruit plus vite",
-   "desc": "Les pièces sont lues, la note de synthèse structurée, les compléments demandés tôt. Le souscripteur tranche sur un dossier complet, avec le même niveau d'exigence sur davantage d'affaires."
+   "title": "La souscription reçoit des dossiers complets",
+   "desc": "Les compléments se demandent dès la première lecture, la note suit votre grille, et le souscripteur décide sans relancer trois fois le courtier."
   },
   {
-   "title": "Des assurés qui reçoivent des réponses claires",
-   "desc": "Chaque demande et chaque réclamation reçoit une réponse rapide, en langage clair, dans le ton de la maison. La qualité de service redevient tenable, y compris en période de pointe."
+   "title": "Les réclamations obtiennent une réponse claire",
+   "desc": "La position de la maison s'explique en langage courant, les recours sont indiqués, et le délai de réponse baisse sans sacrifier la relecture des cas sensibles."
   },
   {
-   "title": "Une documentation produit tenue à jour",
-   "desc": "Notices, DIPA, supports du devoir de conseil : les documents restent cohérents entre eux et avec les conditions des contrats, les mises à jour se propagent plus vite, la conformité y gagne."
+   "title": "Les notices disent la même chose que le contrat",
+   "desc": "Notice, DIPA et supports commerciaux se comparent aux conditions générales à chaque mise à jour ; les écarts remontent avant d'atteindre un assuré."
   },
   {
-   "title": "Un courtage qui met ses analyses en valeur",
-   "desc": "Propositions et comparatifs soignés, produits à partir de vos analyses de risques et des offres reçues. Le cabinet montre mieux son travail, et la relation client s'appuie sur des documents lisibles."
+   "title": "Le courtier montre la valeur de son analyse",
+   "desc": "Comparatifs et propositions mettent en forme le travail du cabinet ; le client lit en quelques minutes pourquoi telle garantie lui convient."
   },
   {
-   "title": "Un cadre qui protège les assurés et la structure",
-   "desc": "Données personnelles et données de santé protégées, décisions de tarification et d'indemnisation jamais déléguées, relecture systématique de ce qui engage : la formation pose un cadre d'usage défendable."
+   "title": "La conformité dispose de règles écrites",
+   "desc": "Données de santé, décisions réservées, relecture des écrits engageants, transparence vis-à-vis des assurés : l'usage de l'IA se décrit et se défend devant un contrôle."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA assurance sur 2 jours",
-  "answer": "Jour 1 : ce que les modèles font et ne font pas dans l'assurance, le panorama des outils et de leurs offres entreprise, la méthode de la demande efficace sur un courrier de sinistre, vos trames et votre ton encodés, puis les ateliers sinistres, souscription, relation assurés et réclamations, le projet partagé de l'équipe et le cadre sur les données et les décisions. Jour 2 : documentation produit et devoir de conseil, propositions du courtage, documents longs avec la recherche approfondie (Deep Research), analyse d'un export de portefeuille ou de sinistralité, veille réglementaire, puis compétences (Skills), assistants et agents, tâches planifiées, gouvernance et plan d'action avec l'évaluation des acquis.",
-  "foot": "Le programme s'ajuste à votre activité : une équipe sinistres approfondit le jour 1, un cabinet de courtage les ateliers commerciaux, une direction conformité la documentation produit ; en version 1 jour, on garde un périmètre avec le projet partagé et une compétence. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Deux journées de formation IA assurance, du dossier sinistre à la gouvernance",
+  "answer": "La première journée installe la méthode côté gestion : ce que l'outil sait lire dans un dossier, les offres professionnelles et les données de santé, la demande bien construite, le vocabulaire maison dans les consignes, puis la synthèse d'un sinistre, ses courriers, la note de souscription, la réponse à une réclamation, un projet par ligne de produits et les décisions réservées. La deuxième aborde la notice et le DIPA, au comparatif de courtage, aux conditions générales comparées, à l'export de sinistralité et à la veille, puis à la compétence de synthèse, à la frontière entre assistant interne et agent face aux assurés, aux tâches programmées et à la gouvernance.",
+  "foot": "Un plateau sinistres renforce le premier jour ; un cabinet de courtage, les ateliers commerciaux et la notice ; une direction conformité, la documentation et la veille. Réduit à un jour, le parcours retient la méthode, la synthèse de dossier, la réponse aux réclamations et une compétence. Les fonctions des assistants décrites ici datent de notre vérification du 7 octobre 2026 ; une fonction hors de votre licence est présentée, puis reprise avec votre outil."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Fondamentaux, sinistres et relation assurés sur vos dossiers",
+   "titre": "Méthode, sinistres, souscription et réclamations",
    "matin": [
     {
-     "t": "Capacités et limites de l'IA dans l'assurance",
-     "d": "Capacités des modèles sur vos tâches : synthétiser un dossier sinistre, rédiger un courrier de gestion, expliquer une couverture en langage clair ; limites sur les très gros tableaux et sur tout ce qui engage. Tarification, sélection des risques, indemnisation : l'outil prépare, le professionnel décide et signe."
+     "t": "Ce que l'outil sait lire dans un dossier",
+     "d": "Un assistant résume des pièces hétérogènes, reconstitue une chronologie et rédige un courrier en un instant. Il peut aussi déduire une garantie d'un contrat qui ne la prévoit pas. On le vérifie en direct sur un sinistre anonymisé, puis l'équipe adopte trois réflexes : fournir les conditions applicables, exiger l'article cité, relire tout montant."
     },
     {
-     "t": "Panorama des outils et articulation avec votre système de gestion",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini, Vibe (anciennement Le Chat) de Mistral : lequel pour quoi, où vont les données, versions gratuites exclues. Le système de gestion reste la source : l'IA travaille sur ses exports, une écriture automatique relève d'un projet à part."
+     "t": "Offres professionnelles, données de santé, droits d'accès",
+     "d": "On examine offre par offre l'hébergement, l'entraînement et la journalisation : licence Copilot, ChatGPT Business, Claude Team, Workspace avec Gemini, et Vibe (anciennement Le Chat) dans sa version Team. Copilot lit chaque document SharePoint auquel un salarié a accès ; Microsoft recommande donc d'auditer les partages avant le déploiement. Les dossiers médicaux ne vont jamais vers un compte gratuit."
     },
     {
-     "t": "La demande efficace appliquée à un courrier de sinistre",
-     "d": "Contexte du dossier, rôle, format, exemples de vos meilleurs courriers, itération puis relecture : la méthode déroulée sur un vrai courrier de suivi, de la demande de pièces à la position d'attente. La relecture porte d'abord sur ce qui engage : montants, couvertures citées, délais annoncés."
+     "t": "La méthode sur une demande de pièces",
+     "d": "Contexte du sinistre, rôle confié, format du courrier, deux de vos meilleurs courriers comme modèles : la demande se construit pas à pas, puis le groupe relit d'abord ce qui engage (garanties citées, délais annoncés, montants)."
     },
     {
-     "t": "Votre ton et vos trames encodés",
-     "d": "Instructions personnalisées, mémoire et styles : encoder le ton de la compagnie ou du cabinet, la trame de synthèse de dossier, le modèle de réponse aux assurés et le vocabulaire maison. Chaque outil répond dès lors dans vos formats, et la trame relue protège des oublis."
+     "t": "Le vocabulaire maison dans les consignes",
+     "d": "Consignes permanentes et mémoire reçoivent le ton de la compagnie ou du cabinet, la grille de synthèse d'un dossier, le modèle de réponse aux assurés et les formulations à proscrire. Chacun règle son compte et compare deux réponses, avant et après."
     },
     {
-     "t": "Premier atelier : synthèse d'un dossier sinistre anonymisé",
-     "d": "Sur un dossier sinistre anonymisé apporté par vos équipes, produire la synthèse selon votre grille : faits, pièces reçues et manquantes, chronologie, points d'attention. Claude et ChatGPT lisent l'ensemble des pièces ; le gestionnaire vérifie chaque élément avant de s'appuyer dessus."
+     "t": "Atelier : synthèse d'un dossier sinistre",
+     "d": "Sur un dossier anonymisé et ses pièces, l'outil produit la synthèse selon votre grille : faits, pièces reçues et manquantes, chronologie, points d'attention. Le gestionnaire contrôle chaque élément au regard des pièces avant de s'en servir."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier gestion des sinistres",
-     "d": "Rédiger les écrits du dossier : demande de pièces, courrier de suivi, position d'attente, réponse à l'expert ou au tiers, dans vos trames. Copilot dans Word et Outlook ou Gemini dans Gmail rédigent le premier jet ; la décision d'indemnisation reste au gestionnaire, sur les conditions du contrat."
+     "t": "Atelier : les courriers du sinistre",
+     "d": "Demande de compléments, position d'attente, réponse à l'expert ou au tiers : le premier jet sort de Copilot (Word, Outlook) ou de Gemini (Gmail), calé sur vos trames. La décision d'indemniser et son montant restent au gestionnaire, dans les limites de sa délégation."
     },
     {
-     "t": "Atelier souscription et analyse de risques",
-     "d": "Préparer un dossier de souscription : lire les pièces (questionnaire, bilans, rapport de visite), produire la note structurée, lister les informations manquantes et rédiger la demande de compléments. L'IA ne tarifie pas et ne sélectionne pas : le souscripteur tranche sur le dossier instruit."
+     "t": "Atelier : note de souscription",
+     "d": "Questionnaire, bilans et rapport de visite deviennent une note structurée, avec la liste des informations manquantes et la demande de compléments au courtier. Le souscripteur arbitre l'acceptation et les conditions."
     },
     {
-     "t": "Atelier relation assurés et réclamations",
-     "d": "Répondre à une vraie réclamation en langage clair : reformuler la demande, expliquer la position, indiquer les recours, dans le ton de la maison. Les cas sensibles, refus de prise en charge ou résiliation contestée, sont relus avant envoi ; aucune donnée d'assuré ne sort vers un outil grand public."
+     "t": "Atelier : réponse à une réclamation",
+     "d": "Sur une réclamation reçue et anonymisée : reformuler la demande, expliquer la position de la maison, indiquer les recours, dans un ton posé. Les refus de garantie et les résiliations contestées sont relus par un second regard avant l'envoi."
     },
     {
-     "t": "Le projet partagé de l'équipe",
-     "d": "Monter le projet « Sinistres » ou « Courtage » de l'équipe : trames, grilles de synthèse et extraits de conditions générales en fichiers de connaissance, instructions communes, mémoire propre au projet. Projets partagés de ChatGPT Business, Projets de Claude, Notebooks de Copilot, Projets et Bibliothèques de Vibe : l'équipe repart du même socle."
+     "t": "Un projet par ligne de produits",
+     "d": "Selon l'outil, un projet (Claude, ChatGPT), un bloc-notes Copilot ou une Bibliothèque Vibe accueille les conditions générales, grille de synthèse, modèles de courriers et glossaire de la ligne déposés une fois, puis partagés à l'équipe sinistres ou au cabinet."
     },
     {
-     "t": "Le cadre : données des assurés et décisions qui engagent",
-     "d": "Les dossiers d'assurés contiennent des données personnelles, et en santé ou prévoyance des données de santé : anonymisation stricte, offres entreprise uniquement, durée de conservation. Tarification, sélection des risques, indemnisation, résiliation : ces décisions ne se délèguent jamais ; le devoir de conseil reste à l'humain."
+     "t": "Données des assurés et décisions réservées",
+     "d": "Les éléments à masquer (identité, numéros de contrat, mentions médicales) et la méthode pour le faire, quelle offre reçoit quoi, combien de temps les conversations restent stockées. Liste écrite des décisions réservées aux personnes : tarifer, accepter un risque, indemniser, résilier, conseiller."
     }
    ]
   },
   {
    "jour": "Jour 2",
-   "titre": "Conformité, courtage, analyse et industrialisation",
+   "titre": "Documentation, courtage, portefeuille et automatisations",
    "matin": [
     {
-     "t": "Atelier documentation produit et devoir de conseil",
-     "d": "Mettre à jour une notice d'information, produire un DIPA cohérent avec les conditions du contrat, préparer les supports du devoir de conseil : fiche de recueil des besoins, trame de préconisation motivée. Le document se co-édite dans Canvas, Artifacts ou Copilot Pages ; le conseil lui-même reste à l'intermédiaire."
+     "t": "Atelier : notice, DIPA et conditions générales",
+     "d": "L'outil met à jour une notice d'information, prépare un DIPA, puis confronte chaque affirmation commerciale aux conditions générales et liste les écarts. Le document se reprend à plusieurs avant validation par la conformité ; le conseil au client reste l'acte de l'intermédiaire."
     },
     {
-     "t": "Atelier courtage : propositions et comparatifs",
-     "d": "À partir de votre analyse du risque et des offres reçues des compagnies, mettre en forme la proposition, produire le comparatif lisible par le client et rédiger le courrier de renouvellement. Vos analyses restent la matière ; les montants et les couvertures cités se vérifient ligne à ligne."
+     "t": "Atelier : comparatif et proposition de courtage",
+     "d": "Votre analyse du risque et trois offres reçues donnent un tableau comparatif lisible, une proposition argumentée et le courrier de renouvellement. Primes, franchises et plafonds se vérifient ligne à ligne contre les offres d'origine."
     },
     {
-     "t": "Atelier documents longs et recherche approfondie",
-     "d": "Lire des conditions générales, comparer deux versions d'une couverture, documenter un risque nouveau ou un marché. La recherche approfondie de ChatGPT, Claude ou Gemini et l'agent Researcher de Copilot rassemblent les sources ; NotebookLM interroge votre corpus produits, réponses sourcées, à vérifier avant toute décision."
+     "t": "Atelier : deux versions d'une garantie",
+     "d": "Deux éditions de conditions générales sont mises face à face : garanties ajoutées, exclusions modifiées, plafonds revus. On questionne ensuite le corpus produits avec Gemini Notebook (anciennement NotebookLM) : chaque réponse renvoie à l'article qui la fonde, que l'équipe ouvre pour contrôle."
     },
     {
-     "t": "Atelier tableaux : portefeuille et sinistralité",
-     "d": "Sur un export agrégé de votre portefeuille ou de sinistralité, repérer les échéances de renouvellement, les fréquences par type de contrat, les dossiers restés ouverts, et rédiger le commentaire pour la direction. Copilot dans Excel ou l'analyse de données de ChatGPT et Claude lisent le fichier ; vous gardez les chiffres."
+     "t": "Atelier : lecture d'un export de sinistralité",
+     "d": "Sur un export agrégé et anonymisé : fréquence par type de contrat, dossiers ouverts depuis plus de six mois, renouvellements du trimestre. Les chiffres se préparent avec Copilot sous Excel, ou avec Claude et ChatGPT qui calculent par programme ; le commentaire pour la direction se relit contre la source."
     },
     {
-     "t": "Atelier veille réglementaire assurance",
-     "d": "Distribution, devoir de conseil, protection de la clientèle, données personnelles : synthétiser une évolution qui touche votre activité et rédiger la note pour la conformité ou pour le réseau. L'outil collecte et met en forme ; chaque point se valide contre le texte et avec votre juriste avant diffusion."
+     "t": "Atelier : veille réglementaire du secteur",
+     "d": "Une recommandation de l'autorité de contrôle, une évolution de la distribution d'assurance ou du cadre européen de l'IA devient une note pour le réseau. La recherche approfondie rassemble les textes ; le juriste de la maison valide l'interprétation."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) : encoder une procédure du métier",
-     "d": "Transformer la synthèse de dossier sinistre selon votre grille, ou la check-list de relecture d'une réponse à réclamation, en compétence (Skill) qui s'active d'elle-même quand la demande correspond : décrite en langage naturel dans ChatGPT Business, importée en dossier dans Claude. Un membre crée et teste, l'administrateur partage."
+     "t": "La grille de synthèse sinistre en compétence",
+     "d": "Votre grille prend la forme d'une compétence (Skill), déclenchée par l'assistant à chaque nouveau dossier sans qu'on la nomme. Le format SKILL.md circule désormais entre Claude, Copilot et Gemini : la grille se rédige une fois, se teste sur trois dossiers, puis se partage après validation."
     },
     {
-     "t": "Assistants et agents : lequel pour quel besoin",
-     "d": "Un assistant qui répond aux questions sur vos produits se configure en atelier : Agent Builder de Copilot sur vos documents SharePoint, Gems de Gemini, agents d'espace de travail de ChatGPT, vers lesquels convergent les GPTs. Écrire dans le système de gestion demande Copilot Studio : un projet d'intégration, pas un atelier."
+     "t": "Assistant interne ou agent face aux assurés",
+     "d": "Un assistant qui répond au réseau sur vos produits se monte en atelier (Agent Builder de Copilot, projet partagé, compétence Gemini). Un agent qui dialogue avec les assurés demande un projet à part : les règles de transparence en vigueur depuis août 2026 obligent à leur dire qu'ils parlent à une machine. OpenAI coupera les GPTs encore en service le 11 décembre 2026."
     },
     {
-     "t": "Tâches planifiées et automatisations légères",
-     "d": "Programmer en une phrase une veille hebdomadaire sur les textes du secteur, un rappel des échéances de renouvellement ou le point des réclamations en attente. Tâches planifiées de ChatGPT et de Vibe, agents planifiables, Workspace Studio, Power Automate : un humain relit avant tout envoi."
+     "t": "Tâches programmées du plateau",
+     "d": "Point du lundi sur les réclamations en attente, liste des renouvellements du mois, veille sur les textes du secteur : une phrase crée la tâche dans ChatGPT ou dans Vibe, et Workspace Studio enchaîne les étapes chez Google, avec des plafonds d'usage appliqués au 1er novembre 2026. Chez Microsoft, Cowork, que la documentation dit ouvert aux comptes pros depuis fin septembre 2026, demande une validation avant toute action jugée sensible."
     },
     {
-     "t": "Gouvernance et mesure",
-     "d": "Nommer un propriétaire par projet, compétence et assistant, tenir le registre, régler le partage et les droits admin, prévoir la revue trimestrielle. Choisir les indicateurs suivis : délai de première réponse à une réclamation, temps de constitution d'un dossier de souscription, comparés avant et après."
+     "t": "Gouvernance et indicateurs",
+     "d": "Chaque projet, compétence ou assistant reçoit un responsable ; la conformité peut consulter le registre, les droits de publication sont réservés, et l'équipe fait le point tous les trois mois. On mesure le délai de première réponse à une réclamation, temps de constitution d'un dossier de souscription, corrections relevées en relecture."
     },
     {
-     "t": "Plan d'action, évaluation des acquis, livrables",
-     "d": "Choisir les trois usages à installer dans le mois, qui les porte, comment on mesure. Évaluation des acquis, puis remise des livrables : bibliothèque de prompts assurance, trames outillées (synthèse de dossier, réponses aux assurés, proposition du courtage), compétences créées, cadre d'usage écrit."
+     "t": "Engagements de l'équipe et évaluation",
+     "d": "Chaque participant retient deux usages à adopter avant la fin du mois, ainsi que la personne qui en fera le bilan. L'évaluation des acquis faite, l'équipe repart avec ses livrables : prompts d'assurance, grille de synthèse en compétence, trames de courriers et de réponses, règle écrite sur les données."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA assurance ?",
-  "answer": "À tous les métiers de l'assurance : compagnies et mutuelles qui équipent leurs plateaux de gestion, courtiers et agents généraux, gestionnaires de sinistres et souscripteurs, équipes relation assurés et back-office. Sans prérequis technique : la pratique du métier suffit."
+  "h2": "Quelles équipes de l'assurance suivent cette formation ?",
+  "answer": "Les plateaux de gestion des compagnies et des mutuelles, les souscripteurs, les conseillers en relation assurés, les cabinets de courtage et les agences générales, les équipes conformité. La pratique du métier suffit : aucun prérequis technique n'est attendu."
  },
  "profils": [
   {
    "icon": "Building2",
    "title": "Compagnies et mutuelles",
-   "desc": "Plateaux sinistres, souscription, conformité, relation adhérents : la formation se déploie par équipes, avec des trames communes et un cadre d'usage homogène, en présentiel ou à distance."
+   "desc": "Plateaux sinistres, souscription, conformité, relation adhérents : les groupes se forment par équipe, sur des trames communes et une règle d'usage unique, sur place comme à distance."
   },
   {
    "icon": "Handshake",
    "title": "Courtiers et agents généraux",
-   "desc": "Propositions, comparatifs, renouvellements, réponses aux clients : les usages qui rendent des heures chaque semaine à un cabinet, avec le devoir de conseil traité de front."
+   "desc": "Comparatifs, propositions, renouvellements, réponses aux clients : les écrits d'un cabinet se préparent plus vite, et le devoir de conseil reste traité de front, par l'intermédiaire."
   },
   {
    "icon": "ClipboardCheck",
-   "title": "Gestionnaires de sinistres et souscription",
-   "desc": "Synthèses de dossiers, chronologies, courriers, notes de souscription : le cœur des ateliers travaille sur vos dossiers anonymisés, dans vos grilles et vos trames."
+   "title": "Gestionnaires de sinistres et souscripteurs",
+   "desc": "Synthèses, chronologies, courriers, notes de souscription : le cœur des ateliers suit vos dossiers anonymisés, dans vos grilles."
   },
   {
    "icon": "Headphones",
    "title": "Relation assurés et back-office",
-   "desc": "Demandes courantes, attestations, réclamations, vie du contrat : des réponses claires et rapides dans le ton de la maison, avec les cas sensibles relus avant envoi."
+   "desc": "Attestations, vie du contrat, réclamations : des réponses claires et rapides dans le style de la compagnie, et les cas sensibles relus avant l'envoi."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Données des assurés, décisions qui engagent, devoir de conseil : ce que la formation pose noir sur blanc",
-  "p": "L'assurance manipule des données personnelles, et en santé ou prévoyance des données de santé, parmi les plus protégées du RGPD. Elle enchaîne des décisions qui engagent : tarifer, sélectionner un risque, indemniser, résilier. La formation formalise avec vous ce qu'on peut confier à quel outil (anonymisation stricte, offres entreprise uniquement pour toute donnée nominative), où s'arrête l'assistance (l'IA lit, synthétise et rédige ; la décision reste au gestionnaire, au souscripteur, à l'intermédiaire), et la relecture systématique de tout écrit qui engage la compagnie ou le cabinet. Le devoir de conseil reste à l'humain : l'IA prépare le recueil des besoins et la trame de préconisation, l'intermédiaire les porte et les signe. Ce cadre est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des équipes de la banque, de l'assurance et du courtage depuis 2022 : les mêmes questions reviennent, et elles ont des réponses pratiques.",
+  "kicker": "Données, décisions, transparence",
+  "h2": "La conformité participe à l'écriture des règles, dès la formation",
+  "p": "Un dossier d'assurance contient des données personnelles et, en santé, en prévoyance ou après un accident corporel, des données de santé, que le RGPD range parmi les catégories particulières. La formation fixe avec vous ce qui s'anonymise, quelle offre professionnelle reçoit quel dossier et combien de temps les échanges restent stockés. Elle dresse la liste des décisions réservées à l'humain : tarifer, accepter un risque, indemniser, résilier, conseiller. Elle intègre aussi l'AI Act européen. Son article 4 demande depuis février 2025 que les équipes comprennent les outils qu'elles emploient ; la transparence, exigée à compter du 2 août 2026, oblige à avertir l'assuré qui échange avec un robot ; et l'évaluation comme la tarification des personnes en assurance vie et santé font partie des cas que le texte range dans le haut risque, avec des exigences qui s'appliqueront le 2 décembre 2027. L'ensemble rejoint votre {/charte-ia-entreprise|charte interne sur l'IA}.",
   "points": [
-   "Données de santé des assurés : anonymisation stricte, offres entreprise",
-   "Tarification, sélection, indemnisation, résiliation : jamais déléguées",
-   "Le devoir de conseil reste à l'humain ; l'IA prépare ses supports",
-   "Tout écrit qui engage la compagnie ou le cabinet est relu"
+   "Données de santé anonymisées, offres professionnelles uniquement",
+   "Tarifer, indemniser, résilier, conseiller : jamais délégué",
+   "Assurés informés quand une IA leur répond",
+   "Chaque garantie citée renvoie à l'article du contrat"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (dossiers sinistres anonymisés, notices, trames de courriers, exports de portefeuille, outils), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts assurance, trames outillées, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Le coût d'un groupe et le rôle de l'OPCO Atlas",
+  "answer": "La journée animée pour votre équipe coûte 1 980 € HT, de un à douze participants ; pour le parcours complet, comptez 3 960 € HT. Un plateau de gestion plus large se forme en plusieurs groupes, chacun facturé au même tarif journalier, et un dirigeant de cabinet peut suivre le parcours seul.",
+  "inclus": "Le tarif comprend l'entretien de cadrage (produits, trames, dossiers à anonymiser), deux journées animées dans vos murs ou en ligne, les supports de cours, des livrables (prompts d'assurance, grille de synthèse en compétence, trames de courriers, règle sur les données), une évaluation des compétences et un certificat par participant. Une session dans vos locaux, hors de Lyon, inclut en sus les frais de route du formateur, ajoutés au devis.",
+  "financement": "Les compagnies, les cabinets de courtage et les agences générales relèvent pour la plupart de l'OPCO Atlas ; une mutuelle vérifie son opérateur avec l'outil {/quel-opco|Quel OPCO ?}. Cet opérateur décide seul du montant accordé, d'après ses barèmes annuels. Masteria vous adresse convention, programme et pièces justificatives, à envoyer avant la session ; les autres circuits sont décrits sur {/financement-formation-ia|cette page consacrée au financement}. Le CPF reste hors jeu."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA assurance ?",
-   "a": "À intégrer l'intelligence artificielle générative dans le quotidien des métiers de l'assurance, sur vos dossiers réels : synthétiser un dossier sinistre et sa chronologie, rédiger les courriers de gestion, préparer un dossier de souscription, répondre aux demandes et aux réclamations des assurés en langage clair, tenir à jour notices, DIPA et supports du devoir de conseil, mettre en forme les propositions et comparatifs du courtage, organiser la veille réglementaire. Et à poser le cadre propre au métier : données personnelles et données de santé, décisions qui engagent, relecture de tout écrit qui part vers un assuré."
+   "q": "Que travaille une équipe d'assurance pendant la formation ?",
+   "a": "Les écrits et les lectures de son quotidien, sur ses propres dossiers anonymisés : synthèse d'un sinistre et de ses pièces, courriers de gestion, note de souscription, réponse à une réclamation, mise à jour d'une notice et contrôle de sa cohérence avec les conditions générales, comparatif de courtage, lecture d'un export de sinistralité, note de veille. Le second jour transforme ces usages en outils d'équipe (projet par ligne de produits, compétence, tâche programmée) et pose les règles de gouvernance avec la conformité."
   },
   {
-   "q": "Cette formation prépare-t-elle à l'habilitation IAS ?",
-   "a": "Non. IAS désigne la capacité professionnelle d'intermédiaire en assurance, une habilitation réglementaire exigée pour distribuer des contrats ; notre formation n'y prépare pas et n'en dispense pas. Elle forme à l'intelligence artificielle générative appliquée aux métiers de l'assurance : sinistres, souscription, relation assurés, conformité documentaire, courtage. Les deux n'ont rien à voir, malgré la proximité des acronymes IAS et IA. Si vous cherchez la capacité IAS, tournez-vous vers un organisme spécialisé dans la distribution d'assurances ; si vous voulez que vos équipes travaillent mieux avec l'IA, cette page décrit le bon programme."
+   "q": "Cette formation prépare-t-elle à la capacité professionnelle IAS ?",
+   "a": "Non. La capacité professionnelle d'intermédiaire en assurance (IAS) est une exigence réglementaire pour distribuer des contrats, et sa préparation relève d'organismes spécialisés dans la distribution d'assurance. La formation décrite ici apprend aux métiers de l'assurance l'usage de l'IA générative. La ressemblance entre les sigles IAS et IA crée souvent la confusion dans les recherches : si vous visez l'habilitation, cette page n'est pas la bonne ; si vos équipes doivent travailler mieux avec l'IA, elle l'est."
   },
   {
-   "q": "L'IA peut-elle décider d'une indemnisation ou d'un tarif ?",
-   "a": "Non. Tarifer un risque, accepter ou refuser une affaire, fixer une indemnisation, résilier un contrat : ces décisions engagent la compagnie ou le cabinet, elles sont encadrées, et elles ne se délèguent pas à un outil. Ce que l'IA fait très bien en amont : lire les pièces du dossier, produire la synthèse et la chronologie, signaler les éléments manquants, rédiger les courriers qui accompagnent la décision. La formation installe cette répartition dans les pratiques : l'outil instruit et met en forme, le gestionnaire et le souscripteur décident, sur les conditions du contrat et leurs délégations."
+   "q": "L'IA peut-elle fixer un tarif ou décider d'une indemnisation ?",
+   "a": "Non. Tarifer, accepter un risque, indemniser ou résilier engagent la maison et s'exercent dans le cadre de délégations précises ; la formation les inscrit dans la liste des décisions réservées. L'outil instruit ces décisions : il lit les pièces, produit la synthèse et la chronologie, signale ce qui manque, rédige le courrier qui accompagnera la décision. Un outil qui noterait ou tarifierait des personnes en assurance vie ou santé entrerait dans la catégorie du haut risque définie par l'AI Act, dont les exigences s'appliqueront le 2 décembre 2027."
   },
   {
-   "q": "Peut-on confier à l'IA les données de nos assurés ?",
-   "a": "Sous conditions strictes, et la formation les pose. Les dossiers d'assurés contiennent des données personnelles, et en santé, en prévoyance ou après un accident corporel, des données de santé, parmi les plus protégées du RGPD : anonymisation avant tout traitement, offres entreprise uniquement (elles n'entraînent pas leurs modèles sur vos données et offrent un cadre contractuel), jamais de version gratuite. Nous formalisons ensemble ce qu'on confie à quel outil, comment on anonymise un dossier sinistre ou un questionnaire de santé, ce qu'on ne confie jamais. Ce cadre écrit est un livrable de la formation."
+   "q": "Peut-on traiter des données de santé avec un assistant d'IA ?",
+   "a": "Avec des précautions strictes, que la formation écrit. Les données de santé figurent parmi les catégories particulières du RGPD. Les pièces médicales s'anonymisent avant tout traitement, un dossier ne sort de la maison que pour une offre professionnelle, l'éditeur promettant de ne pas nourrir ses modèles avec vos contenus (chez Vibe Team, l'administrateur doit désactiver cet apprentissage), et certains dossiers n'entrent dans aucun outil. La règle produite précise comment anonymiser un questionnaire de santé ou un rapport d'expertise médicale."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre structure utilise. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral, articulés avec votre système de gestion et vos extranets de compagnies. Si un outil est déployé au niveau du groupe, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Les fondamentaux valent partout, et les fonctions avancées (projets partagés, compétences, assistants, tâches planifiées) existent chez les principaux éditeurs, avec des noms différents que la formation remet à plat."
+   "q": "Que doit savoir un assureur sur l'AI Act ?",
+   "a": "Trois points, au 7 octobre 2026. Depuis février 2025, l'article 4 demande aux organisations de renforcer la compétence de leurs équipes sur l'IA ; une formation documentée y contribue, sans certificat. L'article 50, en vigueur depuis le 2 août 2026, exige qu'une personne sache qu'elle dialogue avec une IA. Enfin, l'annexe III vise l'évaluation et la tarification des personnes physiques en assurance vie et santé, qu'elle classe à haut risque ; le report voté avec le règlement (UE) 2026/1744 fixe leur entrée en application au 2 décembre 2027."
   },
   {
-   "q": "Travaille-t-on vraiment sur nos dossiers ?",
-   "a": "Oui, c'est la méthode. Au cadrage, vous préparez les éléments des ateliers : un dossier sinistre anonymisé avec ses pièces, une notice ou un DIPA, une vraie réclamation, un export agrégé de portefeuille ou de sinistralité. Chaque atelier produit un livrable sur ces éléments, dans vos trames, pas sur des exemples génériques. C'est ce qui rend la formation immédiatement utile : vos équipes repartent avec des synthèses, des courriers et des gabarits directement réutilisables le lendemain, et la bibliothèque de prompts reprend vos cas."
+   "q": "Copilot, ChatGPT ou Claude : lequel pour une compagnie ou un cabinet ?",
+   "a": "Les compagnies équipées de Microsoft 365 choisissent fréquemment Copilot, à condition d'auditer les droits SharePoint avant le déploiement, puisque l'outil atteint chaque fichier auquel le salarié a droit. ChatGPT Business convient à un cabinet de courtage sans suite imposée ; la journalisation d'audit et la gestion des clés relèvent de l'offre Enterprise. Claude se distingue sur les conditions générales les plus volumineuses. Si le choix reste ouvert, le premier matin compare les assistants sur un même dossier."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel dans vos locaux ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un périmètre resserré : les sinistres seuls, ou le courtage seul. Un accompagnement individuel est possible pour un dirigeant de cabinet. Les journées alternent apports courts et ateliers sur vos dossiers ; la seconde journée pousse jusqu'aux compétences, aux assistants et aux tâches planifiées."
+   "q": "Quel prix, quelle durée, quel financement ?",
+   "a": "Deux journées de sept heures, dans vos locaux ou en visio. Le groupe, douze personnes au maximum, paie 1 980 € HT par jour, soit 3 960 € HT pour le programme. Une journée isolée suffit à une équipe centrée sur les sinistres ou sur le courtage. Pour les sociétés d'assurance, les courtiers et les agences générales, l'OPCO Atlas est en général compétent et fixe seul sa participation ; les pièces du dossier sont fournies par Masteria."
   },
   {
-   "q": "Combien coûte une formation IA assurance ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : une journée représente 1 980 € HT, deux jours 3 960 € HT. Le tarif comprend le cadrage préalable, l'animation, les supports, les livrables (bibliothèque de prompts assurance, trames outillées, cadre d'usage) et l'évaluation des acquis. En présentiel hors de Lyon, les frais de déplacement s'ajoutent au réel. Devis sous 24 heures."
-  },
-  {
-   "q": "La formation est-elle finançable par notre OPCO ?",
-   "a": "Oui. Masteria est certifiée Qualiopi : la formation est finançable par votre OPCO au titre du plan de développement des compétences, selon votre branche et votre effectif. Nous fournissons le programme, la convention et les pièces du dossier ; le dépôt se fait avant le début de la formation. Notre outil Quel OPCO ? identifie votre opérateur en quelques questions, et la page financement du site détaille les dispositifs. Pas d'éligibilité CPF. Pour un cabinet de petite taille comme pour un plateau de gestion, nous préparons le dossier avec vous."
+   "q": "Peut-on former un plateau de gestion entier ?",
+   "a": "Oui, en enchaînant des groupes de douze au maximum, qui partagent les mêmes trames et la même règle d'usage. Les premières sessions réunissent souvent des référents, qui accompagnent ensuite leurs collègues et font remonter les cas à améliorer. Les groupes se forment par métier (sinistres, souscription, relation assurés) pour que les ateliers portent sur des dossiers comparables. Le calendrier se construit au cadrage pour ne jamais vider un plateau le même jour."
   }
  ],
  "course": {
-  "name": "Formation IA assurance — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée aux métiers de l'assurance, sur les dossiers réels des participants : synthèse de dossiers sinistres, préparation de la souscription, relation assurés et réclamations, notices, DIPA et supports du devoir de conseil, propositions et comparatifs du courtage, veille réglementaire, cadre sur les données personnelles et les décisions qui engagent. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra (1 jour possible), présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA assurance (Masteria)",
+  "description": "Formation à l'intelligence artificielle générative pour les métiers de l'assurance, sur les dossiers anonymisés des participants : synthèse de sinistres, courriers de gestion, notes de souscription, réponses aux réclamations, notices et DIPA confrontés aux conditions générales, comparatifs de courtage, analyse d'un export de sinistralité, veille réglementaire, compétences et règles sur les données de santé. Outils : Microsoft Copilot, ChatGPT, Claude, Gemini, Vibe. Deux jours en intra. Certifiée Qualiopi, finançable par l'OPCO d'après ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Synthétiser un dossier sinistre et sa chronologie à partir de ses pièces",
-   "Préparer un dossier de souscription : note structurée, pièces manquantes, demandes de compléments",
-   "Répondre aux demandes et réclamations des assurés en langage clair, avec relecture des cas sensibles",
-   "Produire notices, DIPA et supports du devoir de conseil cohérents avec les contrats",
-   "Mettre en forme les propositions et comparatifs du courtage et organiser la veille réglementaire"
+   "Synthétiser un dossier sinistre et rédiger ses courriers avec l'IA",
+   "Préparer une note de souscription et la demande de compléments",
+   "Répondre à une réclamation en langage clair, cas sensibles relus",
+   "Confronter une notice ou un DIPA aux conditions générales",
+   "Appliquer une règle d'usage sur les données de santé et les décisions réservées"
   ],
   "about": "Intelligence artificielle générative appliquée à l'assurance",
   "timeRequired": "PT14H",
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier de l'assurance.",
-  "audience": "Compagnies et mutuelles, courtiers et agents généraux, gestionnaires de sinistres, souscripteurs, équipes relation assurés et back-office",
-  "locationName": "Masteria, intra-entreprise : présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "audience": "Gestionnaires de sinistres, souscripteurs, relation assurés, courtiers, agents généraux, conformité",
+  "locationName": "Masteria : intra-entreprise, sur site (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA assurance : l'IA générative du sinistre à la relation assurés, la décision reste au gestionnaire",
-  "datePublished": "2026-08-19",
-  "dateModified": "2026-08-19",
-  "dateLabel": "août 2026",
+  "headline": "Formation IA assurance : l'IA générative instruit le dossier, le gestionnaire décide",
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -325,8 +325,8 @@ export default {
    },
    {
     "@type": "Thing",
-    "name": "Gestion des risques",
-    "sameAs": "https://fr.wikipedia.org/wiki/Gestion_des_risques"
+    "name": "Courtier en assurances",
+    "sameAs": "https://fr.wikipedia.org/wiki/Courtier_en_assurances"
    },
    {
     "@type": "Thing",
@@ -337,70 +337,127 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "Directive (UE) 2016/97 sur la distribution d'assurances (devoir de conseil, DIPA) — EUR-Lex",
+   "name": "Règlement (UE) 2024/1689 sur l'intelligence artificielle, annexe III",
+   "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+  },
+  {
+   "name": "Directive (UE) 2016/97 sur la distribution d'assurances",
    "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32016L0097"
   },
   {
-   "name": "ACPR, Autorité de contrôle prudentiel et de résolution (supervision banque et assurance)",
+   "name": "ACPR, autorité de contrôle de la banque et de l'assurance",
    "url": "https://acpr.banque-france.fr/"
   }
  ],
  "maillage": [
   {
-   "label": "IA pour la banque et l'assurance",
+   "label": "IA, banque et assurance",
    "href": "/ia-banque-assurance",
    "tag": "Secteur",
-   "desc": "Conseil et développement de solutions IA sur mesure pour le secteur : agents, outils, automatisations."
+   "desc": "Agents et outils construits sur vos systèmes."
+  },
+  {
+   "label": "Formation AI Act",
+   "href": "/formation-ai-act",
+   "tag": "Réglementation",
+   "desc": "Article 4, article 50 et haut risque, dates révisées."
+  },
+  {
+   "label": "IA et RGPD",
+   "href": "/ia-et-rgpd",
+   "tag": "Cadre",
+   "desc": "Données de santé et bases légales."
   },
   {
    "label": "Formation IA service client",
    "href": "/formation-ia-service-client",
    "tag": "Métier voisin",
-   "desc": "Pour les plateaux de relation assurés : réponses, réclamations, ton de la maison à grande échelle."
+   "desc": "Pour les plateaux de relation assurés."
   },
   {
    "label": "Formation IA commercial",
    "href": "/formation-ia-commercial",
    "tag": "Métier voisin",
-   "desc": "L'IA sur tout le cycle de vente : prospection, préparation de rendez-vous, propositions, relances."
-  },
-  {
-   "label": "L'IA et le RGPD",
-   "href": "/ia-et-rgpd",
-   "tag": "Cadre",
-   "desc": "Ce que le RGPD change dans vos usages IA : données personnelles, sous-traitants, bonnes pratiques."
-  },
-  {
-   "label": "Formation AI Act",
-   "href": "/formation-ai-act",
-   "tag": "Cadre",
-   "desc": "Les obligations de l'AI Act pour vos équipes, dont la littératie IA de l'article 4."
-  },
-  {
-   "label": "Charte IA d'entreprise",
-   "href": "/charte-ia-entreprise",
-   "tag": "Cadre",
-   "desc": "Le cadre d'usage qui protège la compagnie ou le cabinet : ce qu'on confie, comment, à qui."
-  },
-  {
-   "label": "Bibliothèque de prompts",
-   "href": "/bibliotheque-de-prompts",
-   "tag": "Ressource",
-   "desc": "Des prompts prêts à copier, tirés de nos formations, avec pour chacun la raison de sa construction."
+   "desc": "Pour les équipes de vente du courtage."
   },
   {
    "label": "Formation Microsoft Copilot",
    "href": "/formation-microsoft-copilot",
    "tag": "Par outil",
-   "desc": "Copilot dans Microsoft 365, souvent déjà déployé dans les compagnies et les grands cabinets."
+   "desc": "Outlook, Word, Teams et Excel."
+  },
+  {
+   "label": "Charte IA d'entreprise",
+   "href": "/charte-ia-entreprise",
+   "tag": "Cadre",
+   "desc": "La règle d'usage validée par la conformité."
+  },
+  {
+   "label": "Prompts service client",
+   "href": "/bibliotheque-de-prompts#service-client",
+   "tag": "Ressource",
+   "desc": "Demandes pour les réclamations et les réponses aux clients."
   }
  ],
+ "bibliotheque": "Pour éprouver la méthode avant la session, les {/bibliotheque-de-prompts#service-client|prompts service client de notre bibliothèque} se transposent aux réclamations d'assurés : analyser un irritant récurrent, répondre à un client mécontent, préparer une réponse délicate. Chacun s'accompagne d'une note qui en explique la construction.",
+ "ctaMilieu": {
+  "titre": "Un programme construit sur vos lignes de produits",
+  "texte": "Indiquez votre activité, les équipes concernées et l'assistant déployé : nous répondons dans les 24 heures avec programme, calendrier et chiffrage."
+ },
+ "competences": {
+  "titre": "Six compétences pour gestionnaires, souscripteurs et courtiers",
+  "intro": "En fin de parcours, une évaluation interroge chaque participant sur ces six objectifs, à partir des dossiers travaillés.",
+  "items": [
+   "Synthétiser un dossier sinistre selon la grille de la maison, pièces citées",
+   "Rédiger une demande de compléments ou une position d'attente dans vos trames",
+   "Construire une note de souscription et lister les informations manquantes",
+   "Répondre à une réclamation en langage clair, recours indiqués",
+   "Vérifier qu'une notice ou un DIPA concorde avec les conditions générales",
+   "Appliquer la règle sur les données de santé et la liste des décisions réservées"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Quel assistant pour une compagnie, une mutuelle ou un cabinet de courtage ?",
+  "intro": "L'environnement informatique et les exigences de la conformité tranchent souvent avant les fonctions. Nos repères, relevés le 7 octobre 2026 :",
+  "lignes": [
+   {
+    "outil": "copilot",
+    "texte": "Microsoft Copilot travaille dans Outlook, Word, Teams et Excel avec les fichiers de la maison, et, grâce à l'EU Data Boundary, le trafic des utilisateurs européens ne quitte pas l'Union. Il atteint tous les documents que les droits d'un salarié lui ouvrent : Microsoft conseille d'auditer les partages SharePoint avant d'attribuer les licences. Dans l'Union, les modèles d'Anthropic qu'il propose restent coupés tant qu'un administrateur ne les active pas. {/formation-microsoft-copilot|Formation Microsoft Copilot}"
+   },
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business offre l'authentification unique (SSO SAML) et tient vos dossiers à l'écart de l'entraînement d'OpenAI ; journaux d'audit, gestion des clés et attribution des droits par rôle sont réservés à l'offre Enterprise. Les GPTs d'un cabinet sont à convertir en plugins, OpenAI les retirant le 11 décembre 2026. {/formation-chatgpt|Formation ChatGPT}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Des conditions générales complètes tiennent dans un seul échange avec Claude. L'offre Team exclut l'entraînement sur les conversations et garde la mémoire coupée jusqu'à décision de l'administrateur ; Anthropic n'héberge pas les données en Europe dans ses applications. {/formation-claude-ia|Formation Claude}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Dans Google Workspace, Gemini écrit dans Gmail comme dans Docs ; Google s'engage à ce que vos contenus n'entraînent aucun modèle hors de votre domaine. Workspace Studio automatise un suivi de réclamations décrit en une phrase ; des plafonds d'usage le limiteront à compter du 1er novembre 2026. {/formation-gemini-entreprise|Formation Gemini}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Mistral AI stocke d'office les échanges de Vibe sur le territoire de l'Union. Avec Enterprise viennent l'authentification SAML et les journaux d'audit, et l'entraînement est exclu sans réglage ; l'offre Team, elle, demande à l'administrateur de le couper. {/formation-mistral-ai|Découvrir la formation Mistral AI}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Des déploiements par étapes, menés dans de grandes organisations",
+  "texte": "Mathias Nizan supervise chaque session depuis le lancement de Masteria, en 2022 ; il l'anime lui-même ou l'attribue à un formateur indépendant du réseau, habitué aux métiers réglementés. Les déploiements par étapes lui sont familiers : chez un {/etudes-de-cas-ia#industrie|industriel de l'emballage implanté sur trois continents}, Copilot a d'abord été mis entre les mains de 24 managers pilotes, qui ont travaillé sur treize ateliers tirés des fichiers maison ; la phase internationale vise les États-Unis et le Mexique en octobre 2026, puis l'Inde au mois de décembre."
+ },
+ "apres": {
+  "titre": "Quand la maison veut un agent relié à ses systèmes",
+  "texte": "Une fois les équipes formées, les demandes suivantes portent souvent sur un agent qui préqualifie les déclarations de sinistre ou sur un assistant produits branché sur la base documentaire du réseau. Masteria cadre le besoin avec vos équipes, conçoit l'outil puis le raccorde à votre logiciel de gestion. Ce projet de développement n'est pas finançable par votre OPCO, n'étant pas une action de formation ; il se règle au forfait, après cadrage."
+ },
+ "faqTitre": "Formation IA assurance : les questions des compagnies et des courtiers",
  "cta": {
-  "h2": "Formons vos équipes sur leurs vrais dossiers",
-  "p": "Décrivez-nous votre activité (compagnie, mutuelle, courtage, agence générale), vos équipes, vos outils et vos enjeux du moment. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Formons vos gestionnaires et vos courtiers sur leurs dossiers",
+  "p": "Décrivez votre activité (compagnie, mutuelle, courtage, agence générale), les équipes à former et l'outil déployé. Dans la journée suivante, un programme construit sur vos lignes de produits, des dates et le devis vous parviennent, prêts pour le dossier de financement."
  }
 }

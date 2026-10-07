@@ -1,326 +1,337 @@
-/* Contenu enrichi SEO+GEO de /formation-ia-marche-public (template MetierPage).
- * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+/* Contenu de /formation-ia-marche-public (gabarit MetierPage).
+ * Généré depuis metier-content-enrichi.js en 2026, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Règles de la commande publique vérifiées le 2026-10-07 : code de la commande publique (Légifrance),
+ * art. L3, L2132-1, R2132-6 ; décret n° 2025-1386 du 29/12/2025 (dispense 60 000 € HT au 01/04/2026,
+ * travaux 100 000 € HT) ; seuils européens 2026-2027 (140 000 / 216 000 / 5 404 000 € HT) ;
+ * critère et condition d'exécution environnementaux au 21/08/2026 (Entreprendre.Service-Public, 18/08/2026).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA marché public : répondre et acheter avec l'IA | Masteria",
-  "metaDesc": "Formation IA marché public sur vos vrais dossiers : analyser un DCE, structurer un mémoire technique, préparer les pièces, et côté acheteur rédiger et analyser dans le cadre de la commande publique. Qualiopi.",
-  "keywords": "formation ia marché public, formation ia marchés publics, formation ia appel d'offres, formation ia réponse appel d'offres, formation ia commande publique, ia mémoire technique, formation ia acheteur public, appel d'offre intelligence artificielle, appel d'offres ia, marché public intelligence artificielle, acheter une solution ia en marché public",
-  "h1": "Formation IA marché public : répondre aux appels d'offres et acheter avec l'IA",
+  "metaTitle": "Formation IA marché public : répondre, acheter | Masteria",
+  "metaDesc": "Formation IA marchés publics : lecture de DCE, mémoire technique, pièces ; côté acheteur, CCTP, critères et analyse des offres. Règles 2026, Qualiopi.",
+  "keywords": "formation ia marché public, formation ia marchés publics, formation intelligence artificielle marchés publics, ia appel d'offres, ia mémoire technique, ia acheteur public, ia commande publique, formation ia réponse appel d'offres, ia dce",
+  "h1": "Formation IA marché public : l'IA générative pour répondre aux consultations et pour acheter",
   "h1a": "Formation IA marché public :",
-  "h1b": "répondre aux appels d'offres et acheter avec l'IA",
+  "h1b": "l'IA générative pour répondre aux consultations et pour acheter",
   "eyebrow": "Formation métier · Marchés publics",
-  "badge3": "Sur vos vrais DCE, mémoires et consultations",
-  "geo": "La formation IA marché public de Masteria apprend, sur vos vrais dossiers, à mettre l'intelligence artificielle générative au service des deux versants de la commande publique : analyser un DCE, décider go / no go, structurer un mémoire technique aligné sur les critères, préparer les pièces côté répondant ; rédiger une consultation claire et préparer l'analyse des offres côté acheteur. Deux jours, multi-outils, certifiée Qualiopi.",
-  "sub": "Les marchés publics sont un métier d'écrit et de délais : des DCE de deux cents pages, des mémoires rendus à minuit, des consultations à rédiger sans ambiguïté. C'est exactement ce que l'IA générative sait assister, à une condition que la formation pose d'emblée : elle structure, accélère et relit, elle ne remplace ni votre offre ni la décision de la commission. Le cadre de la commande publique reste le fil rouge.",
-  "intro": "La formation IA marché public de Masteria apprend, sur vos vrais dossiers, à mettre l'intelligence artificielle générative au service des deux versants de la commande publique : analyser un DCE, décider go / no go, structurer un mémoire technique aligné sur les critères, préparer les pièces côté répondant ; rédiger une consultation claire et préparer l'analyse des offres côté acheteur. Deux jours, multi-outils, certifiée Qualiopi."
+  "badge3": "Sur les DCE, mémoires et consultations de l'équipe",
+  "geo": "Cette formation IA marché public sert les deux côtés de la commande publique. Les entreprises qui répondent apprennent à faire lire un dossier de consultation par l'IA générative, à trancher le go ou no go, à bâtir un mémoire technique qui suit la grille de notation et à contrôler leurs pièces. Les acheteurs publics apprennent à rédiger un besoin et un CCTP sans ambiguïté, à traiter les questions des candidats et à préparer l'analyse des offres, en respectant l'égalité de traitement. Deux jours en intra, sur des dossiers de votre organisation, avec les règles applicables le 7 octobre 2026.",
+  "sub": "Un appel d'offres se gagne ou se rédige sous contrainte de temps : un règlement de consultation à décortiquer, un CCTP de cent pages, un mémoire à rendre avant midi le jour de la clôture. L'IA générative lit, structure et relit plus vite qu'une équipe entière ; elle ne remplace ni votre offre ni le jugement de l'acheteur. Le droit des marchés publics guide les deux journées, avec ses principes et ses changements de 2026 : nouveaux seuils, critère environnemental obligatoire.",
+  "intro": "Cette formation IA marché public apprend aux entreprises qui répondent et aux acheteurs publics à employer l'IA générative sur leurs dossiers de consultation, en respectant les principes posés par le code."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un seul versant (répondre, ou acheter)"
+   "value": "Deux journées en intra (14 heures) ; une seule pour traiter un versant, répondre ou acheter"
   },
   {
    "label": "Pour qui",
-   "value": "Côté répondant : responsables appels d'offres, bid managers, commerciaux grands comptes, dirigeants de PME. Côté acheteur : acheteurs publics, services marchés, directions juridiques"
+   "value": "Côté entreprises : responsables des réponses, bid managers, dirigeants de PME. Côté acheteurs : services de la commande publique, prescripteurs, juristes"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral (souveraineté), avec vos plateformes de dématérialisation"
+   "value": "Celui que votre organisation autorise : Microsoft Copilot (anciennement Microsoft 365 Copilot), Vibe (anciennement Le Chat), Gemini, Claude ou ChatGPT, utilisé à côté des profils d'acheteur et des plateformes de dépôt"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos vrais dossiers : un DCE récent, un mémoire technique passé, une consultation en préparation"
+   "value": "Un DCE récent, un mémoire déjà remis et une consultation en préparation servent de support à chaque atelier"
   },
   {
    "label": "Cadre",
-   "value": "Le code de la commande publique en fil rouge : égalité de traitement, transparence, confidentialité des offres, ce que l'IA ne décide pas"
+   "value": "Égalité de traitement, liberté d'accès, transparence (article L3 du code), confidentialité des offres ; l'IA ne note ni ne classe"
   },
   {
    "label": "Financement",
-   "value": "Certifiée Qualiopi : OPCO pour les entreprises ; pour le secteur public, plan de formation (CNFPT, ANFH selon le versant), détaillé au cadrage"
+   "value": "Entreprises : leur OPCO peut financer, Masteria étant certifiée Qualiopi. Acheteurs publics : budget de formation de l'organisme, ANFH pour un hôpital public"
   }
  ],
  "missionsHead": {
-  "kicker": "Étape par étape",
-  "h2": "Que change l'IA dans les marchés publics ?",
-  "answer": "Six étapes de la commande publique sont transformées : l'analyse du DCE, la rédaction du mémoire technique, la préparation des pièces, et côté acheteur la rédaction de la consultation, la préparation de l'analyse des offres, puis la capitalisation d'une consultation à l'autre. Dans chacune, l'IA lit, structure et relit ; l'offre, la notation et la décision restent humaines.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre versant au cadrage. Pour le conseil et le développement de solutions IA dans le secteur public, voyez notre page {/ia-secteur-public|IA pour le secteur public}."
+  "kicker": "Des deux côtés de la consultation",
+  "h2": "Six étapes d'un marché public où l'IA générative prend sa part",
+  "answer": "Trois étapes côté entreprise (la lecture du DCE, le mémoire technique, la conformité des pièces) et trois côté acheteur (le besoin et le CCTP, l'analyse des offres, la capitalisation d'une procédure à l'autre). L'outil lit, structure et relit ; l'offre engage l'entreprise, et la notation comme l'attribution restent des décisions humaines, motivées et traçables.",
+  "foot": "Le cadrage fixe la part de chaque étape selon votre versant. Pour un outil sur mesure dans une administration (assistant de rédaction, base de clauses, recherche dans les délibérations), la page {/ia-secteur-public|IA pour le secteur public} présente notre offre de conseil et de développement."
  },
  "missions": [
   {
    "icon": "FileSearch",
-   "title": "Analyser un DCE en une heure",
-   "desc": "Règlement de consultation, CCTP, CCAP, annexes : l'IA extrait les critères et leur pondération, les exigences bloquantes, les pièces attendues, le calendrier, les questions à poser. La décision go / no go se prend sur une lecture complète, pas sur un survol. La formation apprend à cadrer cette lecture et à vérifier chaque exigence extraite contre le document source."
+   "title": "Lire un DCE avant de s'engager",
+   "desc": "Règlement de consultation, CCTP, CCAP, bordereau des prix : l'outil extrait les critères et leur pondération, les exigences éliminatoires, les pièces attendues, le calendrier et les points à faire préciser avant la date limite. Le go ou no go se décide sur une lecture complète du dossier, chaque exigence étant pointée sur sa page source."
   },
   {
-   "icon": "FileText",
-   "title": "Structurer et rédiger le mémoire technique",
-   "desc": "Le plan du mémoire aligné sur les critères de jugement, les réponses point par point aux exigences du CCTP, la reformulation de votre offre réelle dans le langage de l'acheteur, la relecture croisée. L'IA ne rédige pas un mémoire générique (celui-là est éliminé) : elle structure, accélère et relit un mémoire qui porte votre offre."
+   "icon": "PenLine",
+   "title": "Écrire un mémoire technique qui répond aux critères",
+   "desc": "Le plan suit les critères de jugement, chaque exigence du CCTP reçoit sa réponse, et votre méthode se reformule dans le vocabulaire de l'acheteur. Depuis le 21 août 2026, chaque nouvelle consultation compte au moins un critère environnemental : le mémoire doit y répondre avec des engagements que l'entreprise tiendra."
   },
   {
    "icon": "ListChecks",
-   "title": "Préparer les pièces et la conformité",
-   "desc": "Check-list des pièces administratives, cohérence entre l'acte d'engagement, le BPU et le mémoire, contrôle des oublis, préparation du dépôt dématérialisé. Les rejets pour non-conformité formelle sont les plus rageants : l'IA sert de second regard systématique."
+   "title": "Déposer un dossier complet et cohérent",
+   "desc": "Formulaires DC1 et DC2 ou DUME, attestations, acte d'engagement, bordereau ou décomposition des prix, mémoire : l'outil vérifie que les montants concordent entre les pièces et qu'aucun document exigé par le règlement ne manque. Une pièce absente peut faire écarter l'offre ; ce second regard systématique protège le travail de l'équipe."
   },
   {
-   "icon": "ClipboardCheck",
-   "title": "Côté acheteur : rédiger la consultation",
-   "desc": "Sourcing et rédaction du besoin, CCTP clair et non discriminatoire, critères de jugement pondérés et objectivables, règlement de consultation, réponses aux questions des candidats. L'IA aide à écrire mieux et plus vite ; le respect du code et l'égalité de traitement guident chaque formulation."
+   "icon": "FileSignature",
+   "title": "Acheteurs : définir le besoin et rédiger le CCTP",
+   "desc": "Synthèse du sourcing, expression du besoin, CCTP rédigé sans marque ni spécification qui écarterait un candidat, critères pondérés et vérifiables, condition d'exécution environnementale désormais obligatoire. L'outil propose des formulations ; l'acheteur les relit au regard de la liberté d'accès et de l'égalité de traitement."
   },
   {
    "icon": "Scale",
-   "title": "Côté acheteur : préparer l'analyse des offres",
-   "desc": "Grille d'analyse alignée sur les critères publiés, extraction structurée de chaque offre, repérage des non-conformités et des points à clarifier, préparation du rapport d'analyse. L'IA prépare la lecture ; la notation et le classement restent à la commission, motivés et traçables."
+   "title": "Acheteurs : préparer l'analyse des offres",
+   "desc": "Grille alignée sur les critères publiés, extraction de chaque offre critère par critère, repérage des documents absents et des prix à éclaircir, trame du rapport d'analyse. La notation, le classement et le choix de l'attributaire reviennent à l'acheteur ou, pour une collectivité, à sa commission d'appel d'offres, avec une motivation écrite."
   },
   {
-   "icon": "Users",
-   "title": "Capitaliser et industrialiser",
-   "desc": "Bibliothèque de réponses types à votre offre, retours d'expérience des consultations passées, veille sur les avis de marchés (BOAMP et plateformes) filtrée par l'IA, gabarits outillés. Chaque consultation nourrit la suivante, au lieu de repartir de zéro."
+   "icon": "Database",
+   "title": "Capitaliser d'une procédure à l'autre",
+   "desc": "Réponses types rangées par famille de marchés, retours des acheteurs sur les offres perdues, clauses et critères qui ont bien fonctionné, veille des avis publiés au BOAMP et sur les profils d'acheteur. Chaque consultation alimente la suivante au lieu de repartir d'un document vide."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour les marchés publics",
-  "answer": "Six gains : un go / no go décidé sur une lecture complète du DCE, un mémoire technique aligné sur les critères sans page blanche, la fin des rejets pour oubli formel, des consultations plus claires côté acheteur, la commande publique respectée plutôt que contournée, et un capital de réponses qui grandit à chaque consultation.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut halluciner une exigence ou en oublier une. Donnez-lui le document source, demandez la référence de chaque point extrait (page, article), relisez contre le DCE avant de décider : le reste, elle le fait remarquablement bien."
+  "kicker": "Pour les répondants et les acheteurs",
+  "h2": "Ce que l'IA générative apporte aux deux versants d'un marché public",
+  "answer": "Côté entreprise : des go ou no go décidés sur pièces, des mémoires qui suivent la grille de l'acheteur, des dossiers déposés sans oubli. Côté acheteur : des CCTP plus lisibles, une analyse des offres mieux documentée, une mémoire des procédures qui grandit. Les deux versants y gagnent un usage de l'IA défendable en cas de recours.",
+  "foot": "Une exigence oubliée dans un dossier volumineux, une référence inventée, un chiffre mal recopié : ce sont les erreurs typiques de l'outil. La parade s'apprend en atelier. On fournit toujours la pièce source, on exige la page de chaque exigence citée, on relit contre le DCE avant de décider."
  },
  "atouts": [
   {
-   "title": "Un go / no go décidé sur une lecture complète",
-   "desc": "Le DCE de deux cents pages est lu, structuré et résumé en une heure : critères, pondérations, exigences bloquantes, pièces, calendrier. Vous répondez aux bons marchés, et vous n'y laissez plus des semaines pour découvrir un critère éliminatoire trop tard."
+   "title": "Des go ou no go décidés sur pièces",
+   "desc": "Critères, pondérations, exigences éliminatoires et calendrier sortent du dossier en une séance de travail. L'entreprise mise ses forces sur les marchés qu'elle peut gagner, et découvre un critère bloquant avant d'avoir écrit la première page."
   },
   {
-   "title": "Un mémoire technique aligné sur les critères, sans page blanche",
-   "desc": "Le plan suit les critères de jugement, chaque exigence trouve sa réponse, l'offre réelle est reformulée dans le langage de l'acheteur. Le temps de rédaction baisse ; la qualité et la pertinence montent, parce que le mémoire est relu deux fois au lieu d'être fini à minuit."
+   "title": "Des mémoires calés sur la grille de l'acheteur",
+   "desc": "Le plan reprend l'ordre des critères, chaque exigence trouve une réponse localisée, la méthode parle la langue du maître d'ouvrage. Le temps libéré sert à la relecture et à la personnalisation, qui départagent souvent des offres proches sur le fond."
   },
   {
-   "title": "Zéro rejet pour un oubli formel",
-   "desc": "Le second regard systématique de l'IA sur les pièces, la cohérence acte d'engagement / BPU / mémoire, la check-list de dépôt : la non-conformité formelle, première cause de rejet évitable, recule."
+   "title": "Des dossiers déposés sans pièce manquante",
+   "desc": "Le contrôle croisé entre règlement, acte d'engagement, bordereau des prix et mémoire devient une routine outillée, rejouée à chaque dépôt et conservée comme gabarit."
   },
   {
-   "title": "Côté acheteur : des consultations plus claires, mieux répondues",
-   "desc": "Un CCTP net et non discriminatoire attire de meilleures offres et moins de questions. Les critères objectivables sécurisent l'analyse et le rapport. L'IA aide à écrire ce que le code demande : clair, égal, transparent."
+   "title": "Acheteurs : des CCTP que les candidats comprennent",
+   "desc": "Un besoin exprimé sans ambiguïté attire des offres comparables et réduit les questions en cours de procédure. Les critères vérifiables simplifient ensuite l'analyse et la rédaction du rapport."
   },
   {
-   "title": "La commande publique respectée, pas contournée",
-   "desc": "L'IA ne note pas les offres et ne choisit pas l'attributaire ; elle prépare la lecture. La formation pose ces limites noir sur blanc, avec la confidentialité des offres et la traçabilité en fil rouge. C'est ce qui rend l'usage défendable en cas de recours."
+   "title": "Un usage de l'IA défendable en cas de recours",
+   "desc": "L'outil prépare la lecture et ne décide de rien ; chaque étape où il intervient est documentée, et la confidentialité des offres est tenue. Un usage décrit ainsi se justifie devant un candidat évincé comme devant un juge."
   },
   {
-   "title": "Un capital qui grandit à chaque consultation",
-   "desc": "Réponses types, retours d'expérience, veille filtrée : l'équipe capitalise au lieu de tout recommencer. La bibliothèque de prompts et les gabarits sont des livrables de la formation."
+   "title": "Une mémoire des procédures qui grandit",
+   "desc": "Réponses types, clauses efficaces, retours d'expérience, veille filtrée : l'équipe accumule un capital au lieu de tout recommencer. Prompts, gabarits et compétences créés en atelier lui restent acquis."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA marché public sur 2 jours",
-  "answer": "Jour 1, côté répondant : ce que les modèles font et ne font pas sur un dossier de consultation, la demande efficace sur une pièce de marché, votre offre encodée dans les instructions personnalisées, l'analyse d'un DCE et le go/no go, le mémoire technique co-édité, la recherche approfondie sur le pouvoir adjudicateur, un Projet partagé sur le dossier de réponse, le cadre de confidentialité. Jour 2, côté acheteur : le code de la commande publique et l'IA, la consultation et le CCTP, les questions des candidats, l'analyse des offres, puis les compétences (Skills), les assistants et agents, les tâches planifiées, la gouvernance et votre plan d'action.",
-  "foot": "Le programme s'ajuste au public : une PME ou un bid manager qui répond approfondit le jour 1, un service marchés ou un acheteur public le jour 2 ; la version 1 jour prend un seul versant, répondre ou acheter, avec le Projet partagé et les compétences de ce versant. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Deux journées sur la commande publique : répondre, puis acheter",
+  "answer": "La première journée suit l'entreprise qui répond : ce que l'IA lit bien ou mal dans un dossier de consultation, l'outil autorisé et le secret de l'offre, la manière de poser une demande sur un extrait de CCTP, votre entreprise décrite une fois pour toutes dans les consignes, puis l'analyse d'un DCE, le mémoire, les pièces, la recherche sur l'acheteur et un espace partagé pour le dossier. La seconde suit l'acheteur public : les principes du code appliqués à l'IA, le besoin et le CCTP, les questions des candidats, l'analyse des offres, un échange croisé entre les deux versants, puis les compétences (Skills), les agents, la veille programmée, les règles de gouvernance et, pour finir, le plan d'action.",
+  "foot": "Une PME qui répond s'attarde sur la première journée ; un service de la commande publique sur la seconde. En version courte, un seul versant est traité, avec son espace partagé et ses compétences. Les règles citées (seuils, critère environnemental, délais) et les fonctions des outils datent du relevé du 7 octobre 2026 ; quand vos licences n'incluent pas une fonction, le formateur la présente avant que l'équipe ne la reproduise."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Répondre aux marchés publics avec l'IA",
+   "titre": "Répondre à une consultation avec l'IA",
    "matin": [
     {
-     "t": "Ce que les modèles font sur un DCE",
-     "d": "Capacités : extraire d'un règlement de consultation et d'un CCTP les critères, les exigences et les pièces, structurer un mémoire, relire une cohérence. Limites : une exigence oubliée dans un dossier volumineux, une référence inventée. Ce qui engage : l'offre signée, le prix, l'engagement sur les moyens."
+     "t": "Ce que l'IA lit bien dans un dossier de consultation",
+     "d": "Elle repère les critères, les exigences et les pièces dans un règlement et un CCTP, propose un plan de mémoire, compare deux documents. Elle peut sauter une exigence enfouie dans une annexe ou inventer une référence. Trois éléments restent hors de sa main : le prix, l'engagement sur les moyens, la signature."
     },
     {
-     "t": "Panorama des outils et confidentialité des offres",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini, Vibe (anciennement Le Chat) hébergé en Europe : lequel pour quelle pièce, comment ils s'articulent avec les plateformes de dématérialisation. Offres entreprise uniquement pour un DCE ou une offre ; outil souverain quand le marché l'exige."
+     "t": "L'outil autorisé et la confidentialité de votre offre",
+     "d": "Vibe, dont Mistral conserve les données en Europe sauf choix contraire, Microsoft Copilot côté Word et Excel, ChatGPT Business, Claude et Gemini : lequel pour quelle pièce, et où vont vos prix et vos méthodes. Un DCE publié peut aller dans tout outil professionnel ; une offre en préparation ne quitte jamais un compte d'entreprise exclu de l'entraînement des modèles."
     },
     {
-     "t": "La demande efficace sur une pièce de marché",
-     "d": "Contexte, document source joint, rôle, format attendu, exemples tirés de vos mémoires passés, itération, relecture contre la pièce : la méthode s'exerce sur un extrait de CCTP. On compare la réponse produite à celle d'un mémoire remis, et on note ce qui manque au modèle."
+     "t": "Poser une demande sur un extrait de CCTP",
+     "d": "La pièce jointe plutôt qu'un résumé, un rôle (acheteur exigeant, rédacteur de mémoire), le format attendu, deux extraits de mémoires que vous avez déjà remis, puis l'itération. On compare la proposition de l'outil à la réponse effectivement déposée, puis on relève les informations qu'il aurait fallu lui donner."
     },
     {
-     "t": "Encoder votre offre dans votre compte",
-     "d": "Instructions personnalisées et mémoire : votre offre réelle, vos moyens humains et matériels, vos références, vos certifications, le vocabulaire de votre secteur et le ton de vos mémoires. Le modèle cesse de produire le mémoire générique que l'acheteur public écarte à la première lecture."
+     "t": "Votre entreprise décrite une fois pour toutes",
+     "d": "Dans les instructions personnalisées, on décrit une fois vos moyens humains et matériels, vos références, vos certifications, votre vocabulaire et le ton de vos mémoires. L'outil cesse de produire le texte passe-partout que les acheteurs repèrent à la première lecture."
     },
     {
-     "t": "Atelier DCE et décision go/no go",
-     "d": "Sur un dossier réel, extraire du règlement de consultation, du CCTP et du CCAP les critères et leur pondération, les exigences bloquantes, le calendrier et les questions à poser. Chaque exigence extraite est vérifiée contre le document source avant de décider le go/no go."
+     "t": "Atelier : décortiquer un DCE et trancher",
+     "d": "Sur un dossier récent, l'équipe extrait du règlement, du CCTP et du CCAP les critères et leur poids, les exigences éliminatoires, le calendrier et les questions à envoyer avant la limite. Chaque point est vérifié sur sa page avant la décision de répondre ou non."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier mémoire technique co-édité",
-     "d": "Plan aligné sur les critères de jugement, réponses point par point aux exigences du CCTP, reformulation de votre offre réelle dans le langage de l'acheteur public. Le mémoire se rédige à plusieurs dans Canvas, Artifacts ou Copilot Pages ; la relecture croisée ferme la séance."
+     "t": "Atelier mémoire technique",
+     "d": "Plan aligné sur les critères de jugement, réponses point par point aux exigences, méthode reformulée pour l'acheteur, réponse argumentée au critère environnemental. La rédaction se partage entre contributeurs dans un document commun (Word avec Copilot, Docs avec Gemini) ; un collègue qui n'a rien écrit assure la relecture croisée."
     },
     {
-     "t": "Atelier pièces et conformité du dépôt",
-     "d": "Check-list des pièces administratives à partir du règlement de consultation, cohérence entre l'acte d'engagement, le BPU ou la DPGF et le mémoire, contrôle des oublis et des signatures, préparation du dépôt dématérialisé. Le modèle sert de second regard systématique ; la check-list devient un gabarit."
+     "t": "Atelier pièces et cohérence du dépôt",
+     "d": "La liste des pièces exigées sort du règlement de consultation ; l'outil contrôle ensuite la concordance des montants entre acte d'engagement, bordereau ou décomposition des prix et mémoire, les signatures et les attestations. Cette vérification devient un gabarit réutilisé à chaque réponse."
     },
     {
-     "t": "Recherche approfondie sur le pouvoir adjudicateur",
-     "d": "Deep Research de ChatGPT et de Gemini, recherche approfondie de Claude, agent Researcher de Copilot : marchés précédents du pouvoir adjudicateur, titulaires sortants, rapports d'activité et délibérations publiques, pour ancrer le mémoire dans son contexte. Chaque information est vérifiée à la source avant d'être écrite."
+     "t": "Connaître l'acheteur avant d'écrire",
+     "d": "Avec la recherche approfondie que proposent ChatGPT, Gemini et Claude, ou avec Researcher côté Copilot, l'équipe réunit les avis d'attribution passés, les rapports d'activité et les délibérations publiques de l'acheteur. Le mémoire s'ancre dans son contexte, et chaque information reprise se vérifie à sa source."
     },
     {
-     "t": "Un Projet partagé pour le dossier de réponse",
-     "d": "Projet partagé ChatGPT, Projet Claude ou Projet et Bibliothèque dans Vibe : le DCE, vos références, les mémoires passés et la bibliothèque de réponses types, avec une mémoire propre au dossier et des droits d'accès. Le bid manager et les contributeurs techniques écrivent au même endroit."
+     "t": "Un espace partagé pour le dossier de réponse",
+     "d": "Le DCE, vos références, les mémoires déjà notés et la bibliothèque de réponses types tiennent dans un même espace, avec des consignes communes et des accès réglés : dans ChatGPT un projet partagé, chez Claude un projet d'équipe, dans Vibe une bibliothèque. Le responsable des réponses et les contributeurs techniques écrivent au même endroit."
     },
     {
-     "t": "Cadre d'usage et relecture",
-     "d": "Confidentialité des offres et prix, données personnelles des équipes proposées, offres entreprise uniquement, Copilot Chat lit OneDrive et SharePoint avec vos droits. Ce qu'on ne confie jamais à un outil grand public ; ce qu'on ne dépose jamais avant d'avoir vérifié chaque exigence contre la pièce source."
+     "t": "Règles d'usage du côté de l'entreprise",
+     "d": "Prix, méthodes et curriculum des intervenants proposés sont des informations sensibles : comptes professionnels seulement, partages SharePoint vérifiés quand Copilot est en place, données personnelles des équipes limitées au nécessaire. Aucune réponse ne part avant que chaque exigence ait été pointée sur la pièce source."
     }
    ]
   },
   {
    "jour": "Jour 2",
-   "titre": "Acheter avec l'IA, puis industrialiser les deux versants",
+   "titre": "Acheter avec l'IA, puis outiller les deux versants",
    "matin": [
     {
-     "t": "Le code de la commande publique et l'IA",
-     "d": "Liberté d'accès, égalité de traitement des candidats, transparence des procédures, confidentialité des offres, traçabilité de chaque décision : ce que ces principes imposent à l'usage d'un modèle par un acheteur public, et ce que l'IA ne décide pas, notation, classement, attribution. Le cadre se formalise en une page."
+     "t": "Les principes du code appliqués à l'IA",
+     "d": "Trois principes ouvrent le code (article L3) : égalité de traitement entre candidats, liberté d'accès, transparence des procédures. L'article L2132-1 interdit de divulguer les informations confidentielles des offres, comme leur montant pendant la procédure. On en déduit ce qu'un acheteur peut confier à un assistant d'IA, et ce qu'il garde : notation, classement, attribution."
     },
     {
-     "t": "Atelier consultation et CCTP co-édité",
-     "d": "Sourcing avec la recherche approfondie, rédaction du besoin, CCTP clair et non discriminatoire, critères de jugement pondérés et objectivables, règlement de consultation. Le CCTP se rédige avec le service prescripteur dans Copilot Pages, Canvas ou Artifacts ; chaque formulation est relue au regard de l'égalité de traitement."
+     "t": "Atelier besoin et CCTP",
+     "d": "Synthèse du sourcing, expression du besoin, CCTP sans référence à une marque, critères pondérés et vérifiables, au moins un critère et une condition d'exécution de nature environnementale pour toute consultation lancée depuis le 21 août 2026. Le CCTP se rédige avec le service prescripteur dans un document partagé, puis se relit phrase par phrase au regard de l'égalité de traitement."
     },
     {
      "t": "Atelier questions des candidats",
-     "d": "Traiter les questions reçues de façon égale et documentée : reformuler la question, préparer une réponse qui ne favorise aucun candidat, vérifier sa cohérence avec le DCE, tenir le registre des échanges publiés sur le profil d'acheteur. Copilot dans Outlook ou Gemini dans Gmail préparent les envois."
+     "d": "Une question reçue se reformule, la réponse se prépare sans avantager personne et se vérifie contre le DCE, puis elle est publiée pour tous les candidats. En procédure formalisée, l'article R2132-6 fixe le tempo : ces renseignements doivent parvenir aux candidats six jours au moins avant la limite de remise, ou quatre si l'urgence a réduit les délais. L'outil tient le registre des échanges."
     },
     {
-     "t": "Atelier analyse des offres avec l'analyse de données",
-     "d": "Grille d'analyse alignée sur les critères publiés, extraction structurée de chaque offre, repérage des non-conformités et des points à clarifier, préparation du rapport d'analyse. Copilot dans Excel ou l'analyse de données de ChatGPT comparent les BPU ; la notation et le classement restent à la commission."
+     "t": "Atelier analyse des offres",
+     "d": "La grille reprend les critères publiés ; l'outil extrait de chaque offre ce qui répond à chaque critère, relève les documents absents et les prix à faire préciser, puis structure le rapport. Copilot dans Excel, ou ChatGPT avec les fichiers en pièce jointe, comparent les bordereaux de prix. La note revient à l'acheteur ou à la commission, motivée par écrit."
     },
     {
-     "t": "Cas croisés entre répondants et acheteurs",
-     "d": "Les répondants relisent une consultation en préparation et signalent ce qui reste flou ; les acheteurs relisent un mémoire technique remis et disent ce qui a convaincu ou manqué. Chaque versant repart avec une liste de points à corriger dans ses gabarits et ses instructions."
+     "t": "Échange croisé entre les deux versants",
+     "d": "Les répondants relisent une consultation en préparation et signalent ce qui reste flou ; les acheteurs relisent un mémoire remis et disent ce qui a convaincu ou manqué. Chacun repart avec une liste de corrections pour ses gabarits et ses consignes."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) pour l'analyse de DCE ou d'offres",
-     "d": "Transformer votre grille d'analyse de DCE, ou votre grille d'analyse des offres, en compétence réutilisable. Sur Claude, un dossier SKILL.md dont le nom et la description servent de déclencheur ; sur ChatGPT Business, une compétence décrite en langage naturel. Elle s'active d'elle-même à la consultation suivante."
+     "t": "Une compétence (Skill) pour l'analyse d'un DCE",
+     "d": "Votre grille de lecture d'un DCE, ou celle d'analyse des offres, se convertit en compétence : l'assistant s'en sert de lui-même à l'arrivée d'un dossier du même type. Chez Claude, le nom et la description inscrits dans le fichier SKILL.md lui indiquent quand l'activer ; ChatGPT Business, Vibe et Gemini suivent la même logique."
     },
     {
-     "t": "Assistants et agents pour les marchés",
-     "d": "GPTs existants, agents d'espace de travail ChatGPT créés en langage naturel et décomptés en crédits, Agent Builder sur SharePoint face à Copilot Studio, Gems, Workflows de Vibe. Un assistant suffit pour relire un mémoire contre le RC ; écrire dans la plateforme de dématérialisation reste un projet d'intégration."
+     "t": "Assistant, agent ou intégration",
+     "d": "Un assistant configuré suffit pour relire un mémoire contre le règlement de consultation. Un agent enchaîne des étapes, par exemple Copilot Cowork, qui prépare un document puis attend votre feu vert pour toute action sensible. OpenAI met fin aux GPTs le 11 décembre 2026 ; l'équipe migre les siens en plugins. Déposer sur une plateforme de dématérialisation relève d'un développement distinct."
     },
     {
-     "t": "Tâches planifiées et veille des avis de marchés",
-     "d": "Créée en une phrase dans ChatGPT (au plus une exécution par heure, nombre de tâches plafonné), dans Vibe ou dans Workspace Studio : synthèse hebdomadaire des avis publiés sur votre périmètre, rappel des dates limites de remise. Chaque avis repéré se vérifie sur la plateforme."
+     "t": "Veille des avis et rappels de dates",
+     "d": "Le lundi matin, la liste des avis publiés sur votre périmètre au BOAMP et le rappel des dates limites de remise sortent d'une tâche planifiée (ChatGPT, Vibe) ou d'un flux Workspace Studio. Chaque avis retenu se vérifie sur la plateforme d'origine avant d'engager du temps."
     },
     {
-     "t": "Gouvernance, traçabilité et mesure",
-     "d": "Un propriétaire nommé par compétence ou agent, un registre des assistants et compétences, les droits fixés par l'admin (parcourir, exécuter, construire, publier), le partage et une revue trimestrielle. Indicateurs suivis : taux de succès et délais de réponse côté répondant, rejets pour non-conformité formelle, questions des candidats."
+     "t": "Gouvernance et traçabilité",
+     "d": "Une personne répond de chaque compétence et de chaque assistant ; un registre décrit à quelle étape l'IA intervient, ce qui sert de trace en cas de recours ; l'administrateur règle qui construit et qui publie ; on fait le ménage tous les trois mois. Côté entreprise, on suit le taux de succès et les rejets pour pièce manquante ; côté acheteur, le nombre de questions reçues par consultation."
     },
     {
-     "t": "Plan d'action avant la prochaine consultation",
-     "d": "Les trois usages à installer dans le mois, qui les porte, comment on mesure à la consultation suivante. Évaluation des acquis, puis remise des livrables : bibliothèque de prompts du versant concerné, gabarits outillés (analyse de DCE, mémoire, check-list, grille d'analyse), compétences créées en atelier, cadre d'usage."
+     "t": "Ce que l'équipe installe d'ici la prochaine consultation",
+     "d": "Chaque participant retient deux usages pour la prochaine consultation et dit ce qu'il mesurera. Une évaluation des acquis termine la session ; l'équipe garde ses prompts, ses gabarits (lecture de DCE, mémoire, contrôle des pièces, grille d'analyse), ses compétences et ses règles d'usage."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA marché public ?",
-  "answer": "Aux deux versants de la commande publique : responsables appels d'offres et bid managers, dirigeants et commerciaux de PME qui répondent sans équipe dédiée, acheteurs publics et services marchés des collectivités, administrations et hôpitaux, directions juridiques et achats qui sécurisent l'usage. Sans prérequis technique : la pratique des marchés publics suffit."
+  "h2": "Pour qui, du côté des entreprises et des acheteurs ?",
+  "answer": "Pour les responsables des réponses et les bid managers, les dirigeants et commerciaux de PME qui répondent sans équipe dédiée, les services de la commande publique des collectivités, des administrations et des hôpitaux, les juristes qui sécurisent les procédures. Aucun prérequis technique : la pratique des marchés publics suffit, quel que soit le versant."
  },
  "profils": [
   {
-   "icon": "FileText",
-   "title": "Responsables appels d'offres et bid managers",
-   "desc": "Vous répondez à des dizaines de consultations par an et le temps manque toujours. Analyse de DCE, mémoire aligné, pièces sans oubli, capitalisation : le cœur du jour 1 est fait pour vous."
+   "icon": "Briefcase",
+   "title": "Responsables des réponses et bid managers",
+   "desc": "Vous enchaînez les consultations et le temps manque à chaque clôture. Lecture de DCE, mémoire calé sur les critères, dépôt sans oubli, réponses types réutilisées : la première journée vous est destinée."
   },
   {
-   "icon": "Target",
+   "icon": "Building",
    "title": "Dirigeants et commerciaux de PME",
-   "desc": "Vous répondez aux marchés publics sans équipe dédiée. La formation vous donne la méthode pour décider vite (go / no go), rédiger juste et déposer conforme, avec l'IA comme second regard."
+   "desc": "Vous répondez aux marchés publics en plus de votre activité. La formation vous donne une méthode pour décider vite, écrire juste et déposer complet, avec l'IA comme relecteur infatigable."
   },
   {
    "icon": "Landmark",
-   "title": "Acheteurs publics et services marchés",
-   "desc": "Collectivités, administrations, hôpitaux, établissements publics : rédiger des consultations claires, traiter les questions, préparer l'analyse dans le respect du code. Le jour 2 est construit pour vous, financement adapté à votre statut."
+   "title": "Services de la commande publique",
+   "desc": "Collectivités, administrations, établissements publics, hôpitaux : définir le besoin, rédiger un CCTP clair, répondre aux candidats, préparer l'analyse. La seconde journée est construite pour vous."
   },
   {
-   "icon": "Scale",
-   "title": "Directions juridiques et achats",
-   "desc": "Sécuriser l'usage de l'IA de part et d'autre : confidentialité, égalité de traitement, traçabilité, données personnelles. Le cadre d'usage est un livrable de la formation."
+   "icon": "Gavel",
+   "title": "Juristes et directions des achats",
+   "desc": "Vous fixez les limites de l'outil dans une procédure : confidentialité, égalité de traitement, traçabilité, données personnelles. Les règles d'usage rédigées en séance vous reviennent en livrable."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Confidentialité des offres, égalité de traitement, ce que l'IA ne décide pas",
-  "p": "Les marchés publics manipulent des informations sensibles (prix, méthodes, données des équipes proposées, offres reçues) et obéissent à des principes qui engagent : égalité de traitement des candidats, transparence, traçabilité des décisions. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise uniquement pour toute donnée d'offre, hébergement souverain quand le marché l'exige), où s'arrête l'assistance (l'IA lit, structure et relit ; elle ne rédige pas votre offre, ne note pas et ne choisit pas), et comment documenter l'usage pour qu'il tienne en cas de recours. Ce cadre est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA}. Nous formons des équipes qui répondent aux appels d'offres et des acteurs publics depuis 2022 : les mêmes questions reviennent, et elles ont des réponses pratiques.",
+  "kicker": "Commande publique",
+  "h2": "Égalité de traitement, confidentialité des offres, décision humaine : le cadre posé dès le premier jour",
+  "p": "Une consultation fait circuler des informations sensibles (prix, méthodes, curriculum des équipes proposées, offres reçues) et obéit à des principes qui engagent l'acheteur comme le candidat : égalité de traitement, liberté d'accès, transparence, traçabilité des décisions. Pendant la formation, vous fixez quel outil reçoit quelle pièce (comptes professionnels seulement pour toute donnée d'offre, hébergement européen si le marché l'impose), la limite du rôle de l'outil (il lit, compare et relit, sans noter ni choisir) et la façon de documenter son usage pour qu'il tienne devant un candidat évincé. Ces règles s'intègrent ensuite à votre {/charte-ia-entreprise|charte IA}.",
   "points": [
-   "Offres et prix : offres entreprise uniquement, souverain si exigé",
-   "L'IA structure et relit ; l'offre et la décision restent humaines",
-   "Égalité de traitement et traçabilité documentées",
-   "Vérification de chaque exigence contre le document source"
+   "Offres et prix : comptes professionnels, jamais d'outil gratuit",
+   "L'IA prépare la lecture ; notation et attribution restent humaines",
+   "Chaque intervention de l'outil consignée dans un registre",
+   "Toute exigence citée vérifiée sur la pièce source"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO pour les entreprises ; pour les collectivités, administrations et hôpitaux, elle relève de votre plan de formation (CNFPT, ANFH ou service selon votre statut), vérifié au cadrage. Devis sous 24 heures, dans les formes attendues par votre financeur.",
-  "inclus": "Le cadrage préalable avec vos éléments (un DCE récent, un mémoire passé, une consultation en préparation, vos outils), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts, gabarits de mémoire et de grille d'analyse, check-list de conformité, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Tarif et financement selon que vous répondez ou que vous achetez",
+  "answer": "Une journée d'intra est facturée 1 980 € HT, 12 participants au plus, et la formation complète 3 960 € HT ; un parcours individuel se règle lui aussi à la journée. Une entreprise qui répond aux marchés peut solliciter son OPCO : Masteria est certifiée Qualiopi, et l'opérateur tranche selon son barème et ses disponibilités. Côté acheteur public, le budget de formation de l'organisme paie la session ; à ce montant, et sauf besoin global plus large, l'achat reste sous les 60 000 € HT en deçà desquels un marché de services se passe sans publicité ni mise en concurrence préalables.",
+  "inclus": "Le prix comprend le cadrage sur vos pièces (un DCE récent, un mémoire remis, une consultation en préparation, vos outils), les deux journées en présentiel comme à distance, supports compris, puis les livrables : prompts, gabarits de lecture de DCE, de mémoire, de contrôle des pièces et de grille d'analyse, règles d'usage. Une évaluation des acquis clôt la formation, et chacun reçoit son certificat de réalisation. Pour une session sur place, le trajet du formateur figure en plus sur le devis.",
+  "financement": "Entreprise privée : votre convention collective désigne l'OPCO, que l'outil {/quel-opco|Quel OPCO ?} retrouve ; {/financement-formation-ia|notre page financement} présente les autres dispositifs. Collectivité ou service de l'État : budget de formation de l'organisme, sur bon de commande. Hôpital public : budget formation de l'hôpital, avec l'ANFH selon ses axes. Programme, convention et justificatifs vous parviennent dans la forme que votre financeur demande ; le CPF reste hors jeu."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA marché public ?",
-   "a": "À utiliser l'intelligence artificielle générative sur les deux versants de la commande publique, sur vos vrais dossiers. Côté répondant : analyser un DCE en une heure (critères, pondérations, exigences bloquantes, pièces), décider go / no go, structurer et rédiger un mémoire technique aligné sur les critères, préparer les pièces sans oubli, capitaliser d'une consultation à l'autre. Côté acheteur : rédiger une consultation claire et non discriminatoire, traiter les questions des candidats, préparer la grille et le rapport d'analyse. Le tout dans le cadre du code de la commande publique, avec ce que l'IA ne doit pas décider."
+   "q": "Que contient une formation IA marché public ?",
+   "a": "Les deux versants de la commande publique, travaillés sur vos dossiers. Côté entreprise : lecture d'un DCE (critères, pondérations, exigences éliminatoires, pièces), décision de répondre ou non, mémoire technique aligné sur la grille de notation, contrôle des pièces, capitalisation. Côté acheteur : expression du besoin, CCTP sans ambiguïté, réponses égales aux questions des candidats, préparation de l'analyse des offres. Le tout encadré par le droit des marchés publics, avec la liste des décisions que l'IA ne prend jamais."
   },
   {
-   "q": "L'IA peut-elle rédiger notre mémoire technique à notre place ?",
-   "a": "Non, et c'est heureux : un mémoire générique est un mémoire éliminé, les acheteurs les reconnaissent au premier paragraphe. Ce que l'IA fait très bien : construire le plan à partir des critères de jugement, vérifier que chaque exigence du CCTP a sa réponse, reformuler votre offre réelle dans le langage de l'acheteur, relire et repérer les incohérences. Le contenu, lui, vient de votre offre, de vos références et de votre méthode. La formation apprend précisément cette répartition : l'IA structure et relit, vous portez la valeur."
+   "q": "L'IA peut-elle écrire notre mémoire technique à notre place ?",
+   "a": "Elle peut en écrire une version, et cette version perdra : un mémoire passe-partout se repère au premier paragraphe. Ce que l'outil fait bien, c'est construire le plan à partir des critères, vérifier que chaque exigence du CCTP a sa réponse, reformuler votre méthode dans la langue de l'acheteur et relever les incohérences. Le contenu vient de votre offre, de vos références et de vos moyens. La formation installe cette répartition : l'outil structure et relit, l'équipe apporte la substance."
   },
   {
-   "q": "Un acheteur public peut-il utiliser l'IA pour analyser les offres ?",
-   "a": "Pour préparer l'analyse, oui, dans un cadre strict que la formation détaille. L'IA peut construire la grille alignée sur les critères publiés, extraire de chaque offre les éléments répondant à chaque critère, repérer les non-conformités et les points à clarifier, structurer le rapport. Ce qu'elle ne fait pas : noter, classer, choisir. La notation et le classement restent à la commission ou au pouvoir adjudicateur, motivés et traçables, dans le respect de l'égalité de traitement et de la transparence. Un usage documenté ainsi est défendable en cas de recours ; un usage opaque ne l'est pas."
+   "q": "Un acheteur public peut-il se faire aider par l'IA pour analyser les offres ?",
+   "a": "Pour préparer l'analyse, oui, dans un cadre précis. L'outil construit la grille à partir des critères publiés, extrait de chaque offre ce qui répond à chaque critère, signale les manques et structure le rapport. Il ne note pas, ne classe pas, ne choisit pas : ces décisions reviennent à l'acheteur ou à sa commission d'appel d'offres, motivées et traçables, dans le respect de l'égalité de traitement. Les offres reçues restent confidentielles au sens de l'article L2132-1 : elles ne vont que dans un outil professionnel validé par l'organisme."
   },
   {
-   "q": "Peut-on confier un DCE ou une offre à un outil d'IA ?",
-   "a": "Selon l'outil et le document. Un DCE publié est un document public : il peut être analysé dans une offre entreprise sans difficulté. Une offre en cours de rédaction contient vos prix, votre méthode et les données de vos équipes : elle ne va que dans une offre entreprise qui n'entraîne pas ses modèles sur vos données et offre un cadre contractuel, jamais dans une version gratuite. Côté acheteur, les offres reçues sont confidentielles : même règle, renforcée, et certains marchés imposent un hébergement souverain, ce que Mistral ou des déploiements dédiés permettent. La formation formalise ce cadre avec vous."
+   "q": "Peut-on confier un DCE ou une offre en cours à un assistant d'IA ?",
+   "a": "Tout dépend de la pièce. Un DCE publié est un document public : un outil professionnel peut l'analyser sans difficulté. Une offre en préparation contient vos prix, votre méthode et les données de vos équipes : elle ne va que dans un compte d'entreprise exclu de l'entraînement des modèles et couvert par un contrat, jamais dans une version gratuite. Quand un marché exige un hébergement européen, Vibe, dont Mistral stocke les données en Europe sauf choix contraire, ou un déploiement dédié répondent à cette contrainte."
   },
   {
-   "q": "La formation convient-elle aux acheteurs publics comme aux entreprises qui répondent ?",
-   "a": "Oui, et c'est voulu : le jour 1 est construit pour les répondants, le jour 2 pour les acheteurs, avec des cas croisés où chacun relit le travail de l'autre versant, ce qui apprend beaucoup aux deux. En intra, la formation s'ajuste au public réel : une PME qui répond prend le jour 1 en priorité, un service marchés le jour 2. Les fondamentaux (demande efficace, vérification, confidentialité, cadre de la commande publique) sont communs."
+   "q": "Quels seuils de la commande publique s'appliquent en 2026 ?",
+   "a": "Depuis le 1er janvier 2026, une procédure formalisée est obligatoire au-delà de 140 000 € HT pour les achats de fournitures et de services de l'État, de 216 000 € HT pour ceux des collectivités territoriales, et de 5 404 000 € HT pour les travaux ; en dessous, la procédure adaptée s'applique. Depuis le 1er avril 2026, un marché de fournitures ou de services de moins de 60 000 € HT peut se conclure sans publicité ni mise en concurrence préalables (100 000 € HT pour les travaux), en vertu du décret du 29 décembre 2025 (n° 2025-1386). L'acheteur doit tout de même choisir une offre pertinente et varier ses prestataires."
   },
   {
-   "q": "Comment la formation est-elle financée pour une collectivité ou un hôpital ?",
-   "a": "Le financement dépend de votre statut, et nous le vérifions au cadrage. Pour les entreprises privées qui répondent aux marchés : OPCO, la formation étant certifiée Qualiopi. Pour les collectivités territoriales : plan de formation de la collectivité, éventuellement CNFPT selon les modalités. Pour les hôpitaux et établissements publics de santé : plan de formation de l'établissement, ANFH selon les cas. Pour l'État et ses opérateurs : plan de formation du service. Nous fournissons dans tous les cas la convention, le programme et les pièces attendues par votre financeur."
+   "q": "Qu'a changé le critère environnemental du 21 août 2026 ?",
+   "a": "Pour toute consultation lancée depuis cette date, l'acheteur doit retenir au moins un critère d'attribution qui prend en compte les caractéristiques environnementales des offres, et prévoir au moins une condition d'exécution de nature environnementale (articles L2152-7 et L2112-2 du code, issus de la loi Climat et résilience du 22 août 2021). Le prix ne peut donc plus être le seul critère. Côté entreprise, le mémoire doit répondre à ce critère par des engagements vérifiables ; côté acheteur, l'outil aide à rédiger un critère lié à l'objet du marché, que le service relit."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre organisation peut utiliser. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral. Pour le secteur public et les marchés sensibles, l'exigence de souveraineté oriente souvent vers Mistral ou des déploiements dédiés ; la formation en tient compte. Nous articulons aussi l'IA avec vos plateformes de dématérialisation et vos outils de veille (BOAMP, profils d'acheteur)."
+   "q": "Faut-il être acheteur ou candidat pour suivre la formation ?",
+   "a": "Les deux publics y ont leur place : la première journée suit l'entreprise, la seconde l'acheteur, et un échange croisé fait relire à chacun le travail de l'autre versant. En intra, le programme se règle sur votre public : une PME qui répond renforce la première journée, un service de la commande publique la seconde. Les deux groupes partagent les bases : poser une demande précise, contrôler ce que l'outil répond, garder les données sensibles à l'abri."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un seul versant : répondre aux marchés (jour 1) ou acheter avec l'IA (jour 2). Un accompagnement individuel est possible pour un responsable appels d'offres ou un acheteur seul sur sa fonction. Les journées pleines alternent apports courts et ateliers sur vos dossiers réels."
+   "q": "Comment une collectivité ou un hôpital finance-t-il la session ?",
+   "a": "Selon son statut, vérifié au cadrage. Une collectivité territoriale ou un service de l'État règle la session sur ses crédits de formation, par bon de commande ; à 3 960 € HT pour deux jours, l'achat se situe sous le seuil de dispense de procédure, apprécié sur l'ensemble de son besoin de même nature. Un hôpital public mobilise son plan de formation, avec l'appui éventuel de l'ANFH. Une entreprise privée passe par son OPCO. Dans tous les cas, nous fournissons convention, programme et justificatifs dans la forme attendue."
   },
   {
-   "q": "Comment cadrer un appel d'offres sur l'intelligence artificielle ?",
-   "a": "Un acheteur public qui lance un appel d'offres sur l'intelligence artificielle, pour une solution, une formation ou un accompagnement, doit cadrer trois points que les DCE oublient souvent. Le besoin réel, exprimé en cas d'usage et en résultats attendus plutôt qu'en technologie : ce que les agents doivent pouvoir faire, sur quelles données, avec quel niveau de contrôle humain. Les exigences de données et d'hébergement : localisation, réversibilité, absence d'entraînement des modèles sur les données de la collectivité, conformité au RGPD et au règlement européen sur l'IA. Et les critères d'analyse : démonstration sur un cas réel de la collectivité, méthode de déploiement et de formation, mesure des usages après mise en service. Côté répondants, la même grille sert à lire un DCE sur l'IA et à décider du go/no go. La formation traite les deux faces, acheteurs et candidats."
+   "q": "Avec quels outils travaillez-vous sur les marchés publics ?",
+   "a": "Avec ceux que votre organisation autorise. Indépendante des éditeurs, Masteria forme aussi bien sur Microsoft Copilot que sur ChatGPT, Claude, Gemini et Vibe. Dans le secteur public et sur les marchés sensibles, l'exigence d'hébergement européen oriente souvent vers Vibe ou un déploiement dédié, et la formation en tient compte. L'IA s'utilise à côté des plateformes de dépôt et des outils de veille (BOAMP, profils d'acheteur), sans s'y substituer."
   },
   {
-   "q": "Combien coûte une formation IA marché public ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT. Pour un organisme public, nous établissons le devis dans les formes attendues (le cas échéant, dans le cadre de vos propres règles d'achat de formation). Certifiée Qualiopi, la formation est finançable par votre OPCO pour les entreprises ; pour le secteur public, selon votre plan de formation. Devis détaillé sous 24 heures."
+   "q": "Comment rédiger un appel d'offres portant sur l'intelligence artificielle ?",
+   "a": "Un acheteur qui consulte pour une solution d'IA, une formation ou un accompagnement gagne à cadrer trois points. Le besoin, décrit en cas d'usage et en résultats attendus plutôt qu'en technologie : ce que les agents devront faire, sur quelles données, avec quel contrôle humain. Les exigences sur les données : lieu d'hébergement, réversibilité, interdiction d'entraîner les modèles avec les données de l'organisme, respect du RGPD comme du règlement européen sur l'IA, dont l'article 4 attend des organisations, depuis février 2025, qu'elles fassent progresser les compétences des agents qui utilisent ces outils. Les critères d'analyse : démonstration sur un cas de l'organisme, méthode de déploiement et de formation, mesure des usages après la mise en service. Côté entreprises, la même grille sert à lire un DCE sur l'IA."
+  },
+  {
+   "q": "Quelle durée et quel prix pour cette formation ?",
+   "a": "La version complète dure deux jours (14 heures), réservés à 12 personnes au plus, sur site ou en visioconférence ; elle est facturée 1 980 € HT par jour, donc 3 960 € HT pour la session complète. Un seul versant, répondre ou acheter, tient en une journée. Une personne qui porte seule la fonction marchés peut suivre un parcours individuel, facturé lui aussi à la journée. Comptez 24 heures pour recevoir le devis, présenté comme l'exige votre financeur."
   }
  ],
  "course": {
-  "name": "Formation IA marché public — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée aux marchés publics, sur les dossiers réels des participants. Côté répondant : analyse de DCE, go / no go, mémoire technique aligné sur les critères, pièces et conformité, capitalisation. Côté acheteur : rédaction de consultation, questions des candidats, préparation de l'analyse des offres dans le cadre du code de la commande publique. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi.",
+  "name": "Formation IA marché public (Masteria)",
+  "description": "Formation à l'IA générative appliquée à la commande publique, sur les dossiers des participants. Côté entreprises : lecture de DCE, décision de répondre, mémoire technique calé sur les critères, contrôle des pièces, capitalisation. Côté acheteurs : besoin et CCTP, critère environnemental, questions des candidats, préparation de l'analyse des offres, dans le respect du code de la commande publique. Outils : Microsoft Copilot, ChatGPT, Claude, Gemini, Vibe. Deux jours en intra. Organisme certifié Qualiopi.",
   "level": "Tous niveaux",
   "teaches": [
-   "Analyser un dossier de consultation et décider go / no go sur une lecture complète",
-   "Structurer et rédiger un mémoire technique aligné sur les critères de jugement",
-   "Préparer les pièces et contrôler la conformité d'une réponse",
-   "Rédiger une consultation claire et non discriminatoire, préparer l'analyse des offres",
-   "Appliquer le cadre de la commande publique et la confidentialité aux usages de l'IA"
+   "Lire un dossier de consultation et décider de répondre sur une lecture complète",
+   "Construire un mémoire technique aligné sur les critères de jugement",
+   "Contrôler la cohérence des pièces d'une réponse avant dépôt",
+   "Rédiger un CCTP sans ambiguïté et préparer l'analyse des offres",
+   "Appliquer les principes de la commande publique et la confidentialité des offres à l'usage de l'IA"
   ],
-  "about": "Intelligence artificielle générative appliquée aux marchés publics et à la commande publique",
+  "about": "Intelligence artificielle générative appliquée aux marchés publics",
   "timeRequired": "PT14H",
   "duration": "PT14H",
-  "prerequisites": "Aucun prérequis technique. Pratique des marchés publics, côté répondant ou côté acheteur.",
-  "audience": "Responsables appels d'offres, bid managers, dirigeants de PME, acheteurs publics, services marchés",
-  "locationName": "Masteria — intra-entreprise et intra-administration, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "prerequisites": "Aucun prérequis technique. Pratique des marchés publics, en entreprise ou chez un acheteur.",
+  "audience": "Responsables des réponses, bid managers, dirigeants de PME, acheteurs publics, juristes de la commande publique",
+  "locationName": "Masteria, en intra pour une entreprise ou une administration : sur place, de la France aux États-Unis et à l'Inde, ou en classe virtuelle"
  },
  "article": {
-  "headline": "Formation IA marché public : répondre aux appels d'offres et acheter avec l'IA, dans le cadre de la commande publique",
-  "datePublished": "2026-08-10",
-  "dateModified": "2026-09-03",
-  "dateLabel": "août 2026",
+  "headline": "Formation IA marché public : l'IA générative pour répondre aux consultations et pour acheter",
+  "datePublished": "2026-06-20",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -341,70 +352,124 @@ export default {
  },
  "citations": [
   {
-   "name": "BOAMP — Bulletin officiel des annonces des marchés publics",
-   "url": "https://www.boamp.fr/"
-  },
-  {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "Les seuils de publicité des marchés publics — Service Public Entreprendre",
-   "url": "https://entreprendre.service-public.fr/vosdroits/F23371"
+   "name": "Code de la commande publique, version en vigueur (Légifrance)",
+   "url": "https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000037701019"
+  },
+  {
+   "name": "Critères environnementaux des marchés publics au 21 août 2026 (Entreprendre Service Public)",
+   "url": "https://entreprendre.service-public.gouv.fr/actualites/A19042"
+  },
+  {
+   "name": "BOAMP, annonces officielles des marchés publics",
+   "url": "https://www.boamp.fr/"
   }
  ],
  "maillage": [
   {
    "label": "IA pour le secteur public",
    "href": "/ia-secteur-public",
-   "tag": "Secteur",
-   "desc": "Conseil et développement de solutions IA pour les collectivités, administrations et établissements publics."
+   "tag": "Secteur"
   },
   {
    "label": "Formation IA achats",
    "href": "/formation-ia-achats",
-   "tag": "Métier voisin",
-   "desc": "L'IA pour les acheteurs privés : sourcing, appels d'offres privés, analyse fournisseurs, contrats."
+   "tag": "Métier voisin"
+  },
+  {
+   "label": "Formation IA juridique",
+   "href": "/formation-ia-juridique",
+   "tag": "Métier voisin"
   },
   {
    "label": "Formation IA commercial",
    "href": "/formation-ia-commercial",
-   "tag": "Métier voisin",
-   "desc": "L'IA sur tout le cycle de vente B2B, en amont des réponses aux consultations."
+   "tag": "Métier voisin"
   },
   {
-   "label": "Formation IA écrits professionnels",
-   "href": "/formation-ia-ecrits-pro",
-   "tag": "Compétence",
-   "desc": "Rédiger mieux et plus vite avec l'IA : notes, courriers, comptes rendus, synthèses."
+   "label": "Formation IA BTP",
+   "href": "/formation-ia-btp",
+   "tag": "Secteur voisin"
   },
   {
    "label": "Formation IA gestion de projet",
    "href": "/formation-ia-gestion-de-projet",
-   "tag": "Métier voisin",
-   "desc": "Après le marché gagné : cadrage, comptes rendus, reporting du projet avec l'IA."
-  },
-  {
-   "label": "Formation AI Act",
-   "href": "/formation-ai-act",
-   "tag": "Conformité",
-   "desc": "Ce que le règlement européen impose à vos propres usages de l'IA, et quand."
+   "tag": "Après l'attribution"
   },
   {
    "label": "Charte IA d'entreprise",
    "href": "/charte-ia-entreprise",
-   "tag": "Cadre",
-   "desc": "Le cadre d'usage qui sécurise l'IA sur les dossiers sensibles."
+   "tag": "Cadre"
+  },
+  {
+   "label": "Étude de cas : réponse aux appels d'offres",
+   "href": "/etudes-de-cas-ia#conseil-financier",
+   "tag": "Cas client"
   },
   {
    "label": "Coaching IA individuel",
    "href": "/coaching-ia",
-   "tag": "Individuel",
-   "desc": "Pour un responsable appels d'offres ou un acheteur seul sur sa fonction : le tête-à-tête sur ses dossiers."
+   "tag": "Individuel"
   }
  ],
+ "bibliotheque": "Pour un aperçu de la méthode côté acheteur, ouvrez la {/bibliotheque-de-prompts#achats|bibliothèque de prompts achats} : rassembler des besoins dispersés en un cahier des charges, mettre côte à côte des offres hétérogènes, tenir une consultation sur une seule page. Chaque demande est suivie d'une ligne qui explique sa construction.",
+ "ctaMilieu": {
+  "titre": "Une session avant votre prochaine date de remise",
+  "texte": "Précisez votre versant, le volume de consultations et les outils autorisés : le programme, les dates possibles et le devis vous attendent le lendemain."
+ },
+ "competences": {
+  "titre": "Ce que les participants sauront faire",
+  "intro": "Six objectifs répartis entre les deux versants ; l'évaluation de fin de session contient une question pour chacun.",
+  "items": [
+   "Extraire d'un DCE critères, pondérations, exigences éliminatoires et pièces, chaque point localisé",
+   "Bâtir le plan d'un mémoire à partir de la grille de notation, sans oublier le critère environnemental",
+   "Contrôler la concordance des montants et des pièces avant un dépôt",
+   "Rédiger un CCTP sans référence discriminante et des critères vérifiables",
+   "Préparer une grille d'analyse des offres sans déléguer la notation",
+   "Appliquer l'égalité de traitement et la confidentialité des offres à chaque usage de l'IA"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Quel assistant d'IA pour les marchés publics : Vibe, Copilot, Claude, ChatGPT ou Gemini ?",
+  "intro": "Dans la commande publique, la question de l'hébergement pèse autant que celle des fonctions. Voici ce que chaque outil apporte aux répondants et aux acheteurs, selon nos vérifications du 7 octobre 2026.",
+  "lignes": [
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Vibe garde ses données sur le territoire de l'Union si l'on ne demande rien d'autre, un argument quand un marché impose un hébergement européen. L'offre Team laisse l'entraînement des modèles en marche tant que l'administrateur n'intervient pas ; l'offre Enterprise l'exclut d'office. Depuis le 22 septembre 2026, des compétences y remplacent les agents. {/formation-mistral-ai|Se former à Vibe}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Copilot travaille dans Word, Excel et Outlook, là où se rédigent le mémoire, le bordereau des prix et les échanges avec les candidats ; il lit SharePoint selon vos droits, d'où un contrôle des partages avant usage. Pour les clients européens, les modèles d'Anthropic restent coupés jusqu'à une activation par l'administrateur, car ils sortent de l'EU Data Boundary. {/formation-microsoft-copilot|Se former à Copilot}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Sur les offres payantes, Claude absorbe en une seule demande un dossier de consultation entier, même volumineux, et range une grille de lecture dans une compétence au format SKILL.md. Anthropic n'héberge pas de données en Europe ; pour une localisation européenne, il faut passer par Amazon Bedrock ou par Vertex AI de Google. {/formation-claude-ia|Se former à Claude}"
+   },
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business réunit le dossier de réponse dans un projet partagé et, par défaut, n'apprend rien de vos échanges. Les GPTs bâtis pour répondre aux consultations sont retirés par OpenAI le 11 décembre 2026 ; à la migration en plugin, leurs instructions deviennent une compétence, mais les actions personnalisées sont perdues. {/formation-chatgpt|Se former à ChatGPT}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Dans Google Workspace, Gemini rédige dans Docs, résume les fils Gmail avec les candidats et compare les offres dans Sheets, et Gemini Notebook (anciennement NotebookLM), alimenté de vos pièces, cite la page d'origine de chaque réponse. Les Gems, eux, s'effacent devant les compétences à l'automne 2026. {/formation-gemini-entreprise|Se former à Gemini}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Des formateurs qui ont écrit des mémoires techniques",
+  "texte": "Chaque session est supervisée par Mathias Nizan, fondateur du cabinet en 2022 à Lyon ; il en assure l'animation ou s'appuie sur un formateur indépendant rompu aux appels d'offres. Un {/etudes-de-cas-ia#conseil-financier|cabinet indépendant qui conseille les collectivités sur leurs finances}, fort d'une vingtaine de consultants implantés à Paris et à Lyon, dispose de quatre assistants de réponse construits avec Masteria, un par famille de marchés, au cours d'ateliers collaboratifs. Chaque assistant interroge d'abord le consultant : le cabinet connaît-il ce client, quelles sont ses attentes, quelles références citer."
+ },
+ "apres": {
+  "titre": "Un assistant de réponse nourri de vos meilleurs mémoires",
+  "texte": "Après les deux jours, certaines équipes veulent aller plus loin : un assistant par famille de marchés, alimenté par vos mémoires les mieux notés, vos références et vos trames, qui analyse un DCE et propose un plan de réponse. Le besoin se cadre avec vous ; Masteria construit ensuite l'assistant et l'installe dans votre environnement. Cette prestation, chiffrée au forfait une fois le périmètre arrêté, n'est pas finançable par votre OPCO."
+ },
+ "faqTitre": "Formation IA marché public : réponses aux questions fréquentes",
  "cta": {
-  "h2": "Formons votre équipe sur ses vrais dossiers de consultation",
-  "p": "Décrivez-nous votre versant (répondant, acheteur, ou les deux), votre volume de consultations, vos outils et votre statut. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis dans les formes attendues par votre financeur."
+  "h2": "Formons votre équipe sur sa prochaine consultation",
+  "p": "Dites-nous si vous répondez, si vous achetez, ou les deux, avec votre volume de procédures, vos outils autorisés et votre statut. Le lendemain, vous disposez d'un programme proposé, de dates et d'un devis adapté à votre financeur."
  }
 }

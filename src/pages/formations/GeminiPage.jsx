@@ -11,9 +11,9 @@ const MODULES = [
   {
     title: "Module 1, Comprendre l'écosystème Gemini de Google",
     duration: '1 h 30',
-    intro: "Avant de commencer à utiliser Gemini, il faut savoir à quoi on a affaire. Gemini.google.com, Gemini for Workspace, NotebookLM, Google AI Studio : ce ne sont pas les mêmes outils et ils ne servent pas aux mêmes choses. Ce module clarifie le terrain.",
+    intro: "Avant de commencer à utiliser Gemini, il faut savoir à quoi on a affaire. Gemini.google.com, Gemini for Workspace, Gemini Notebook (anciennement NotebookLM), Google AI Studio : ce ne sont pas les mêmes outils et ils ne servent pas aux mêmes choses. Ce module clarifie le terrain.",
     items: [
-      "Les différences entre Gemini 3 Flash et Gemini 3 Pro : quand utiliser l'un plutôt que l'autre",
+      "Les modes Rapide, Raisonnement et Pro des modèles Gemini 3.x : quand utiliser l'un plutôt que l'autre",
       "Comment Google traite vos données dans Gemini for Workspace (RGPD, politique de non-utilisation pour l'entraînement des modèles)",
       "Les limites à connaître : inexactitudes factuelles, données en temps réel, informations sensibles",
     ],
@@ -85,11 +85,11 @@ const MODULES = [
     exercise: "Créer une présentation de 10 slides à partir d'un document en moins de 20 minutes.",
   },
   {
-    title: 'Module 7, NotebookLM : travailler avec ses propres documents',
+    title: 'Module 7, Gemini Notebook : travailler avec ses propres documents',
     duration: '1 h',
-    intro: "NotebookLM est peu connu. C'est regrettable, parce que c'est l'un des outils les plus utiles de l'écosystème Google pour les équipes qui travaillent avec beaucoup de documents internes.",
+    intro: "Gemini Notebook est peu connu. C'est regrettable, parce que c'est l'un des outils les plus utiles de l'écosystème Google pour les équipes qui travaillent avec beaucoup de documents internes.",
     items: [
-      "Ce qui distingue NotebookLM de Gemini standard : il ne répond qu'à partir des sources que vous lui donnez",
+      "Ce qui distingue Gemini Notebook de Gemini standard : il ne répond qu'à partir des sources que vous lui donnez",
       'Importer ses propres documents (rapports, contrats, études) et poser des questions sur leur contenu',
       'Générer des résumés audio à partir de documents pour les écouter en déplacement',
       'Créer des cartes mentales et des synthèses automatiques',
@@ -121,7 +121,7 @@ const FAQ = [
   },
   {
     q: "La formation Google Gemini est-elle vraiment finançable OPCO ?",
-    a: "Oui, intégralement. La certification Qualiopi de Masteria rend toutes nos formations éligibles au financement OPCO. Selon votre secteur, vous pouvez financer la totalité du coût via Atlas, Constructys, Uniformation, Opcommerce ou votre propre OPCO. Nous préparons avec vous le programme et la convention ; votre entreprise dépose la demande auprès de son OPCO avant la session.",
+    a: "Oui. La certification Qualiopi de Masteria rend toutes nos formations éligibles au financement OPCO. Selon votre secteur, Atlas, Constructys, Uniformation, Opcommerce ou votre propre OPCO prend en charge la formation selon ses règles et ses fonds. Nous préparons avec vous le programme et la convention ; votre entreprise dépose la demande auprès de son OPCO avant la session.",
   },
   {
     q: "Peut-on former plusieurs équipes de métiers différents ?",
@@ -129,7 +129,7 @@ const FAQ = [
   },
   {
     q: "Quelle durée choisir pour la formation Google Gemini ?",
-    a: "Une journée couvre les modules 1 à 6, soit Gmail, Docs, Sheets, Slides et les bases du prompt. C'est suffisant pour une initiation complète et un usage autonome dès le lendemain. Deux jours permettent d'ajouter NotebookLM et les agents IA. Pour les équipes qui ont déjà utilisé Gemini, un format d'une journée centré sur les cas d'usage avancés de leur métier est également disponible.",
+    a: "Une journée couvre les modules 1 à 6, soit Gmail, Docs, Sheets, Slides et les bases du prompt. C'est suffisant pour une initiation complète et un usage autonome dès le lendemain. Deux jours permettent d'ajouter Gemini Notebook et les agents IA. Pour les équipes qui ont déjà utilisé Gemini, un format d'une journée centré sur les cas d'usage avancés de leur métier est également disponible.",
   },
   {
     q: "La formation est-elle disponible à distance ?",
@@ -142,10 +142,10 @@ const FAQ = [
 ]
 
 const RELATED = [
-  { slug: 'formation-gemini-marketing', label: 'Gemini pour le Marketing', desc: 'Briefs de campagne, idées de contenu, analyse de performances avec NotebookLM.' },
+  { slug: 'formation-gemini-marketing', label: 'Gemini pour le Marketing', desc: 'Briefs de campagne, idées de contenu, analyse de performances avec Gemini Notebook.' },
   { slug: 'formation-gemini-ressources-humaines', label: 'Gemini pour les RH', desc: 'Rédaction de fiches de poste, tri de candidatures, préparation d\'entretiens.' },
-  { slug: 'formation-gemini-finance', label: 'Gemini pour la Finance', desc: 'Rapports Sheets automatisés, analyse de documents comptables, synthèses financières.' },
-  { slug: 'formation-gemini-commercial', label: 'Gemini pour les Commerciaux', desc: 'Argumentaires de vente, propositions personnalisées, préparation des rendez-vous clients.' },
+  { slug: 'formation-ia-finance', label: 'Gemini pour la Finance', desc: 'Rapports Sheets automatisés, analyse de documents comptables, synthèses financières.' },
+  { slug: 'formation-ia-commercial', label: 'Gemini pour les Commerciaux', desc: 'Argumentaires de vente, propositions personnalisées, préparation des rendez-vous clients.' },
 ]
 
 function FAQItem({ q, a }) {
@@ -253,9 +253,8 @@ export default function GeminiPage() {
       <section style={{ background: '#fff', borderBottom: '1px solid #E5E7EB', padding: '40px', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap' }}>
         {[
           { num: '+1 500', label: 'professionnels formés à l\'IA' },
-          { num: '98 %', label: 'de taux de satisfaction' },
-          { num: '100 %', label: 'finançable via votre OPCO' },
-          { num: '+6 h', label: 'gagnées par semaine' },
+          { num: 'OPCO', label: 'finançable selon votre branche' },
+          { num: '2022', label: 'année de création de Masteria' },
         ].map(s => (
           <div key={s.num} style={{ textAlign: 'center' }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: '#0A0A0A', margin: 0, lineHeight: 1 }}>{s.num}</p>
@@ -378,7 +377,7 @@ export default function GeminiPage() {
               'Utilise Gemini seul dans tous ses outils Google Workspace au quotidien',
               'Formule des demandes précises adaptées à son métier et obtient des résultats utilisables',
               'Gagne en moyenne 1 h 30 par jour sur les tâches de rédaction, d\'analyse et de synthèse',
-              'Choisit entre Gemini, NotebookLM et Google AI Studio selon ce qu\'il cherche à faire',
+              'Choisit entre Gemini, Gemini Notebook et Google AI Studio selon ce qu\'il cherche à faire',
               'Sait expliquer la politique de confidentialité des données à son responsable ou à son DSI',
             ].map((obj, i) => (
               <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
@@ -440,8 +439,8 @@ export default function GeminiPage() {
             {[
               { icon: '🎯', title: 'Nos formateurs utilisent Gemini tous les jours', desc: "Masteria est spécialisé à 100 % sur l'IA. Nos formateurs utilisent Gemini dans leur propre travail avant de l'enseigner. La différence se sent dans les exemples qu'ils choisissent et les pièges qu'ils vous évitent." },
               { icon: '📁', title: 'On travaille sur vos fichiers, pas sur des cas fictifs', desc: "Chaque session s'appuie sur les documents réels de vos participants : leurs e-mails, leurs rapports, leurs tableaux. Ce que vos collaborateurs apprennent le matin, ils le réutilisent l'après-midi." },
-              { icon: '👥', title: 'Le programme s\'adapte au métier de chaque groupe', desc: "Un groupe RH et un groupe commercial ne reçoivent pas la même formation. Les cas d'usage, les exercices et les prompts sont construits autour de leurs vraies missions. C'est ce qui explique nos 98 % de satisfaction." },
-              { icon: '💳', title: 'Le financement ne doit pas être un obstacle', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Selon votre secteur, vous pouvez couvrir l'intégralité du coût. On s'occupe du dossier avec vous." },
+              { icon: '👥', title: 'Le programme s\'adapte au métier de chaque groupe', desc: "Un groupe RH et un groupe commercial ne reçoivent pas la même formation. Les cas d'usage, les exercices et les prompts sont construits autour de leurs vraies missions." },
+              { icon: '💳', title: 'Le financement ne doit pas être un obstacle', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Le niveau de prise en charge dépend des règles et des fonds de votre OPCO. On s'occupe du dossier avec vous." },
             ].map(c => (
               <div key={c.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
                 <div style={{ marginBottom: 12 }}><Pictogram emoji={c.icon} tile size={26} /></div>
@@ -513,7 +512,7 @@ export default function GeminiPage() {
             Contacter notre équipe →
           </Link>
           <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Formation certifiée Qualiopi · Finançable OPCO · +1 500 professionnels formés · 98 % de satisfaction
+            Formation certifiée Qualiopi · Finançable OPCO · +1 500 professionnels formés
           </p>
         </div>
       </section>

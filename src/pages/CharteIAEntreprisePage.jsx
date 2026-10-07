@@ -6,9 +6,7 @@ import {
   RefreshCw, ExternalLink, BookOpen,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -16,34 +14,40 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * « charte ia », « charte utilisation ia », « charte ia entreprise »,
  * « charte éthique ia », « politique ia entreprise », « exemple charte ia ».
  *
- * THÈSE : la charte IA est le premier outil d'adoption de l'IA en entreprise.
- * Les équipes utilisent les outils quand les règles sont claires ; une charte
- * efficace décrit d'abord ce qui est autorisé et le circuit pour valider un
- * nouvel usage.
+ * ANGLE PROPRE (07/10/2026) : le document lui-même. Ce qu'il contient, comment
+ * l'écrire, le faire signer et le tenir à jour. Les rôles et le comité sont sur
+ * /gouvernance-ia, les données personnelles sur /ia-et-rgpd, l'éthique sur
+ * /ia-responsable, la formation au règlement sur /formation-ai-act.
  *
- * INTÉGRITÉ : aucun cas client nommé, aucun chiffre de résultat inventé, aucun
- * fichier téléchargeable ni promesse de modèle à télécharger : les exemples de
- * formulation vivent dans la page. Faits sourcés uniquement : AI Act (Règlement
- * UE 2024/1689, EUR-Lex), article 4 littératie IA (2 février 2025), RGPD (CNIL).
- * Conseil non finançable OPCO ; la formation gouvernance IA (Qualiopi,
- * 1 980 € HT/jour) porte le volet finançable.
- *
- * Design : patron de /gouvernance-ia. Hero sombre #0A0F1E, accent unique
- * #2563EB, icônes lucide (zéro emoji), réponses directes citables, une seule
- * ancre sombre en milieu de page (tableau des 8 rubriques), grille éditoriale
- * asymétrique sticky, timeline à rail, FAQ avec maxHeight.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards, de
+ * FounderNote ni d'OfficialSources. Faits datés : article 4 de l'AI Act applicable
+ * depuis le 02/02/2025, réécrit par le règlement (UE) 2026/1744 en vigueur le
+ * 27/07/2026 (obligation de moyens) ; Q&R Commission du 27/07/2026 (pas de
+ * certificat, registre interne) ; article 50 depuis le 02/08/2026 ; Q&R CNIL sur
+ * l'IA générative du 18/07/2024 ; retrait des GPTs personnalisés le 11/12/2026
+ * (help.openai.com, vérifié le 07/10/2026). Cas cités : photovoltaique,
+ * missions franchise-gemini et gerance-cabinet.
  */
 
 const SLUG = 'charte-ia-entreprise'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const RDV = '/contact?type=projet&rdv=30'
 
 const META_TITLE = "Charte IA d'entreprise : exemples et méthode | Masteria"
-const META_DESC = "Charte IA entreprise : les 8 rubriques d'une charte d'utilisation de l'IA, des exemples de formulation et la méthode pour la rédiger et la faire adopter."
-const KEYWORDS = "charte ia, charte utilisation ia, charte ia entreprise, charte d'utilisation de l'ia, charte éthique ia, politique ia entreprise, exemple charte ia, exemple de charte ia, modèle charte ia, rédiger une charte ia, charte ia d'entreprise, littératie ia, article 4 ai act"
+const META_DESC = "Charte IA d'entreprise : 8 rubriques avec une formulation pour chacune, méthode de rédaction en 5 étapes, repères AI Act et RGPD au 7 octobre 2026."
+const KEYWORDS = "charte ia, charte utilisation ia, charte ia entreprise, charte d'utilisation de l'ia, charte éthique ia, politique ia entreprise, exemple charte ia, exemple de charte ia, modèle charte ia, rédiger une charte ia, charte ia d'entreprise, maîtrise de l'ia, littératie ia, article 4 ai act"
 
 const SITE = 'https://www.master-ia.fr'
 const FULL_URL = `${SITE}/${SLUG}`
+
+const PAGE_CITATIONS = [
+  { name: "AI Act, article 4 compris : le règlement (UE) 2024/1689 en ligne sur EUR-Lex", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Omnibus (UE) 2026/1744 : d'où vient la rédaction actuelle de l'article 4", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "Article 4 : la Commission écarte tout certificat et admet un registre interne (27 juillet 2026)", url: 'https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers' },
+  { name: "CNIL, questions-réponses du 18 juillet 2024 sur le recours à l'IA générative", url: 'https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative' },
+  { name: "CNIL, l'espace thématique consacré à l'intelligence artificielle", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -72,20 +76,20 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: ScrollText,    label: "Charte d'utilisation de l'IA" },
-  { icon: ListChecks,    label: '8 rubriques types' },
-  { icon: Workflow,      label: 'Circuit de validation' },
-  { icon: GraduationCap, label: 'Littératie IA (article 4 AI Act)' },
+  { icon: ListChecks,    label: '8 rubriques commentées' },
+  { icon: Workflow,      label: 'Circuit des demandes' },
+  { icon: GraduationCap, label: 'Article 4 et article 50' },
 ]
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Définition', value: "Document interne de deux à six pages qui fixe les règles d'usage de l'IA : outils approuvés, données autorisées, validation humaine, transparence, circuit pour les nouveaux usages" },
-  { label: 'Rôle', value: "Premier levier d'adoption de l'IA : des règles claires font utiliser les outils approuvés ; dans le flou, les équipes passent par des comptes personnels" },
-  { label: 'Obligatoire ?', value: "Pas en tant que telle. L'article 4 de l'AI Act impose la littératie IA depuis le 2 février 2025 ; la charte en est un vecteur documenté" },
-  { label: 'Contenu type', value: "8 rubriques, du périmètre des outils à la gouvernance du document, avec un exemple de formulation pour chacune dans le tableau de cette page" },
-  { label: 'Méthode', value: "5 étapes, du cadrage des usages réels à la revue périodique ; la rédaction part des pratiques constatées dans vos équipes" },
-  { label: 'Accompagnement', value: "Masteria rédige la charte avec vous (conseil) et forme vos équipes avec la formation gouvernance IA (Qualiopi, finançable, 1 980 € HT par jour)" },
+  { label: 'Définition', value: "Texte interne de deux à six pages, annexes à part, qui dit aux salariés quels outils d'IA utiliser, avec quelles données, sous quelle relecture, et à qui s'adresser pour le reste" },
+  { label: 'À quoi elle sert', value: "Donner un permis écrit : quand l'autorisé est clair, les équipes utilisent les comptes fournis et délaissent leurs comptes personnels" },
+  { label: 'Obligatoire ?', value: "Aucun texte ne l'exige sous ce nom. Elle sert de pièce au dossier de maîtrise de l'IA que demande le règlement européen (article 4) et traduit le RGPD en consignes" },
+  { label: 'Contenu', value: "Huit rubriques, du périmètre des outils à la révision du document, chacune assortie dans le tableau d'une formulation à discuter" },
+  { label: 'Méthode', value: "Cinq étapes, de l'écoute des usages existants à la relecture semestrielle" },
+  { label: 'Avec Masteria', value: "Rédaction avec vous en mission de conseil, ou trame construite par vos équipes pendant la formation gouvernance IA (1 980 € HT la journée, certifiée Qualiopi)" },
 ]
 
 /* ───────── Charte / politique / dispositif (3 cartes de comparaison) ───────── */
@@ -94,17 +98,17 @@ const COMPARAISON = [
   {
     icon: ScrollText,
     title: "Charte IA, ou charte d'utilisation de l'IA",
-    desc: "Le document opérationnel destiné à chaque collaborateur. Il liste les outils approuvés, les données autorisées et le circuit de validation des nouveaux usages. C'est le texte le plus court et le plus lu du dispositif : c'est lui que cette page détaille.",
+    desc: "Le document que chaque salarié lit et signe. Il nomme les outils fournis, les données qu'on peut leur confier, la relecture attendue et la porte à laquelle frapper pour un usage nouveau. C'est le plus court des trois, et celui que cette page décortique.",
   },
   {
     icon: FileText,
     title: 'Politique IA d’entreprise',
-    desc: "Le document de niveau direction : engagements de l'organisation, principes, rôles et responsabilités, articulation avec la conformité (AI Act, RGPD). La charte IA en est la traduction concrète pour les équipes.",
+    desc: "Le texte que signe la direction : engagements, principes, partage des responsabilités, lien avec l'AI Act et le RGPD. Il change rarement ; la charte en tire les conséquences pour le travail de tous les jours.",
   },
   {
     icon: Layers,
     title: 'Dispositif de gouvernance IA',
-    desc: "L'ensemble du cadre : registre des usages, comité IA, processus de validation, supervision humaine. La charte IA en est la partie visible par les équipes ; le reste structure le pilotage dans la durée.",
+    desc: "Registre des usages, comité, référent, supervision humaine : la mécanique qui fait respecter la charte et la garde à jour. La page gouvernance de l'IA détaille cette mécanique pièce par pièce.",
   },
 ]
 
@@ -113,11 +117,11 @@ const COMPARAISON = [
 const NOTIONS = [
   {
     term: 'Charte éthique IA',
-    def: "Texte de principes qui exprime les valeurs de l'organisation face à l'IA : respect des personnes, transparence, responsabilité, place de l'humain dans les décisions. Elle se combine souvent avec la charte d'utilisation de l'IA, plus opérationnelle.",
+    def: "Déclaration de valeurs (respect des personnes, transparence, dernier mot laissé à l'humain) que certaines organisations rendent publique. Elle oriente les choix ; la charte d'utilisation les met en pratique au poste de travail.",
   },
   {
-    term: 'Littératie IA',
-    def: "Niveau de compréhension et de compétence des équipes sur les systèmes d'IA qu'elles utilisent. L'article 4 de l'AI Act (Règlement UE 2024/1689) impose aux organisations d'en assurer un niveau suffisant depuis le 2 février 2025.",
+    term: "Maîtrise de l'IA (littératie IA)",
+    def: "Connaissances et savoir-faire dont le personnel a besoin pour utiliser l'IA en sachant ce qu'elle fait bien et ce qu'elle rate. Depuis la réécriture opérée par l'Omnibus au 27 juillet 2026, le règlement IA, en son article 4, attend de chaque organisation des mesures qui aident son personnel à l'acquérir, sans niveau à atteindre.",
   },
 ]
 
@@ -126,27 +130,27 @@ const NOTIONS = [
 const WHY = [
   {
     icon: Scale,
-    title: "L'article 4 de l'AI Act impose la littératie IA",
-    desc: "Depuis le 2 février 2025, le Règlement (UE) 2024/1689 demande aux organisations qui déploient de l'IA d'assurer un niveau suffisant de littératie IA à leurs équipes. Une charte IA rédigée, diffusée et expliquée constitue une pièce documentée de cette démarche.",
-    source: 'EUR-Lex, Règlement (UE) 2024/1689',
-    sourceUrl: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689',
+    title: "L'article 4 attend des mesures, la charte en est une",
+    desc: "Entré en application le 2 février 2025, l'article 4 du texte européen porte sur la compétence des salariés face à l'IA ; l'Omnibus en a fait une obligation de moyens le 27 juillet 2026. Le même jour, la Commission a écrit dans sa foire aux questions qu'aucun certificat n'est attendu : tenir en interne la liste des formations et des autres actions menées suffit, et une charte diffusée et commentée y prend place.",
+    source: "Commission européenne, foire aux questions sur l'article 4",
+    sourceUrl: 'https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers',
   },
   {
     icon: ShieldCheck,
-    title: 'Le RGPD encadre déjà les données',
-    desc: "Utiliser un outil d'IA sur des données personnelles reste un traitement au sens du RGPD, appliqué depuis le 25 mai 2018. La charte traduit ces obligations en consignes applicables : quelles données peuvent entrer dans un prompt, lesquelles restent hors des outils.",
-    source: 'CNIL, intelligence artificielle',
-    sourceUrl: 'https://www.cnil.fr/fr/intelligence-artificielle',
+    title: 'Le RGPD commence au premier prompt',
+    desc: "Un nom de client, un dossier RH ou un numéro de contrat collé dans un assistant, et l'opération devient un traitement de données personnelles, tel que le RGPD le définit (article 4, point 2). La charte dit lesquelles peuvent entrer, et dans quel outil.",
+    source: 'CNIL, questions-réponses sur l’IA générative',
+    sourceUrl: 'https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative',
   },
   {
     icon: AlertTriangle,
-    title: "Le shadow IT s'installe dans le vide",
-    desc: "Quand l'entreprise ne dit rien, les équipes utilisent quand même l'IA, avec des comptes personnels et des données non contrôlées. La charte remplace ce vide par un cadre : des outils approuvés, des règles connues, un endroit où poser la question.",
+    title: 'Le silence pousse vers les comptes personnels',
+    desc: "Sans règle, les salariés ne renoncent pas : ils ouvrent un compte gratuit, dont l'offre peut réutiliser les échanges pour entraîner le modèle, sauf si la personne a désactivé ce réglage. La charte remplace ce silence par une liste d'outils fournis et un interlocuteur.",
   },
   {
     icon: Target,
-    title: "L'adoption suit les règles claires",
-    desc: "Une équipe qui sait ce qui est autorisé ose utiliser les outils. La charte IA d'entreprise agit comme un permis explicite : elle décrit d'abord ce qui est permis, puis le circuit pour faire valider le reste.",
+    title: 'La CNIL conseille des règles écrites',
+    desc: "Dans ses questions-réponses du 18 juillet 2024 sur l'IA générative, la CNIL recommande de définir les usages permis et proscrits, de lister les données à ne pas confier à l'outil et de former les utilisateurs à ses limites. Une charte réunit ces trois conseils dans un seul document.",
   },
 ]
 
@@ -154,44 +158,44 @@ const WHY = [
 
 const RUBRIQUES = [
   {
-    rubrique: 'Périmètre et outils approuvés',
-    couvre: "À qui la charte s'applique, la liste des outils d'IA validés et les conditions d'accès (comptes entreprise, configurations).",
-    exemple: "« La charte s'applique à tout collaborateur, y compris intérimaires et prestataires. Les outils d'IA approuvés figurent en annexe A ; tout usage professionnel passe par un compte entreprise. »",
+    rubrique: 'Périmètre et outils fournis',
+    couvre: "Qui est concerné (salariés, intérimaires, prestataires) et quels outils d'IA l'entreprise met à disposition, avec quel type de compte.",
+    exemple: "« Ces règles valent pour toute personne qui travaille pour nous, prestataires compris. Les assistants autorisés sont listés en annexe 1 ; on s'y connecte uniquement avec son compte professionnel. »",
   },
   {
-    rubrique: 'Données autorisées et interdites',
-    couvre: "Les catégories de données qui peuvent entrer dans un outil d'IA et celles qui en sont exclues, selon leur sensibilité et le RGPD.",
-    exemple: "« Aucune donnée client identifiante, donnée de santé ou information couverte par le secret des affaires n'est saisie dans un outil d'IA, hors configuration validée par la DSI et le DPO. »",
+    rubrique: 'Données : ce qui entre, ce qui reste dehors',
+    couvre: "Ce que l'on a le droit de soumettre à un assistant et ce qui n'y entre jamais, classé selon la sensibilité des informations.",
+    exemple: "« Ne collez jamais dans un assistant un dossier médical, un bulletin de salaire, un numéro de carte bancaire ou un document marqué confidentiel. Les fichiers clients ne vont que dans les outils de l'annexe 1 signalés par un astérisque. »",
   },
   {
-    rubrique: 'Validation humaine',
-    couvre: "La relecture et la responsabilité des contenus produits avec une IA, avant toute diffusion ou décision.",
-    exemple: "« Tout contenu généré avec une IA est relu et validé par son auteur avant envoi à un client, publication ou décision. L'auteur reste responsable du contenu qu'il diffuse. »",
+    rubrique: 'Relecture humaine',
+    couvre: "Qui relit un contenu produit avec l'IA avant qu'il parte, et qui en répond devant le client ou la hiérarchie.",
+    exemple: "« Un texte, un calcul ou un visuel produit avec l'IA est relu par la personne qui l'envoie. Elle en répond comme si elle l'avait écrit seule. »",
   },
   {
     rubrique: 'Transparence',
-    couvre: "Quand et comment signaler qu'un contenu ou une interaction mobilise une IA, en interne et vers l'extérieur.",
-    exemple: "« Lorsqu'un livrable client repose sur une assistance IA substantielle, la mention en est faite si le client le demande ou si le contrat l'exige. Les agents conversationnels destinés au public s'annoncent comme tels. »",
+    couvre: "Quand signaler le recours à l'IA, en interne et à l'extérieur, en intégrant les règles de transparence de l'article 50, opposables depuis août 2026.",
+    exemple: "« Notre agent conversationnel en ligne annonce dès sa première réponse qu'il est une IA. Une image ou une vidéo réaliste fabriquée par IA porte la mention « contenu généré par IA » avant toute publication. »",
   },
   {
-    rubrique: 'Propriété intellectuelle',
-    couvre: "Les droits sur les contenus générés, le respect des droits de tiers et le sort des prompts professionnels.",
-    exemple: "« Les contenus générés destinés à un usage commercial sont vérifiés au regard des droits de tiers avant réutilisation. Les prompts et contenus produits dans le cadre professionnel appartiennent à l'entreprise. »",
+    rubrique: 'Propriété intellectuelle et secret',
+    couvre: "Les droits sur les contenus produits, le respect des œuvres et marques de tiers, la confidentialité des prompts maison.",
+    exemple: "« Avant de publier un visuel généré, vérifiez qu'il ne reprend ni la marque ni l'œuvre d'un tiers. Les prompts et assistants créés pour le travail sont la propriété de l'entreprise et ne quittent pas ses espaces de travail. »",
   },
   {
-    rubrique: 'Signalement des incidents',
-    couvre: "Le réflexe attendu en cas de fuite de données, de sortie erronée ou d'usage non conforme, et à qui s'adresser.",
-    exemple: "« Toute saisie accidentelle de données confidentielles dans un outil d'IA est signalée au référent IA sous 24 heures. Le signalement de bonne foi n'expose à aucune sanction. »",
+    rubrique: 'Incidents',
+    couvre: "La conduite à tenir après une erreur : donnée sensible saisie par mégarde, réponse fausse envoyée, usage imprévu.",
+    exemple: "« Vous avez saisi une donnée confidentielle par erreur ? Prévenez le référent IA dans la journée. Un signalement fait de bonne foi n'entraîne aucune sanction. »",
   },
   {
-    rubrique: 'Formation des équipes',
-    couvre: "La montée en compétences prévue pour répondre à l'exigence de littératie IA de l'article 4 de l'AI Act.",
-    exemple: "« Chaque collaborateur suit une sensibilisation aux outils d'IA à son arrivée. Les référents IA suivent une formation approfondie, renouvelée chaque année. »",
+    rubrique: 'Formation',
+    couvre: "La formation prévue pour chacun, consignée pour prouver ce qui a été fait au titre de l'article 4.",
+    exemple: "« Chaque nouvel arrivant suit une heure d'initiation aux outils autorisés avant l'ouverture de son compte. Les référents IA suivent une journée de formation par an. »",
   },
   {
-    rubrique: 'Gouvernance et mise à jour',
-    couvre: "Qui porte la charte, le circuit de validation des nouveaux usages et le rythme de révision du document.",
-    exemple: "« Toute demande de nouvel outil ou de nouvel usage est adressée au référent IA, qui répond sous dix jours ouvrés. Le comité IA revoit la charte tous les six mois. »",
+    rubrique: 'Gouvernance et révision',
+    couvre: "Qui tient la charte, comment faire valider un outil nouveau, quand le texte est relu.",
+    exemple: "« Une demande d'outil ou d'usage nouveau s'adresse au référent IA, qui répond sous deux semaines. Le comité IA relit la charte chaque semestre, et l'annexe 1 à chaque outil validé. »",
   },
 ]
 
@@ -200,28 +204,28 @@ const RUBRIQUES = [
 const ETAPES = [
   {
     num: '01',
-    title: 'Cadrer les usages réels',
-    desc: "Recensez ce que les équipes font déjà avec l'IA, y compris avec des comptes personnels : outils utilisés, cas d'usage par métier, données concernées. Un questionnaire anonyme ou des entretiens courts suffisent. La charte se rédige à partir de cette photographie.",
+    title: 'Écouter avant d’écrire',
+    desc: "Recensez les usages de l'IA déjà installés dans les équipes, comptes personnels compris : outils, tâches, données en jeu. Un questionnaire anonyme d'une dizaine de questions et trois entretiens par métier donnent une image fidèle ; la charte part de là.",
   },
   {
     num: '02',
-    title: "Écrire les règles, en ouvrant par l'autorisé",
-    desc: "Rédigez rubrique par rubrique, en commençant par la liste des outils approuvés et des usages permis. Les interdictions viennent ensuite, ciblées et motivées. Un langage concret par métier remplace le vocabulaire juridique partout où c'est possible.",
+    title: 'Commencer par ce qui est permis',
+    desc: "Rédigez d'abord la liste des outils fournis et des usages encouragés. Les interdits viennent ensuite, peu nombreux et motivés en une phrase. Préférez les mots des métiers au vocabulaire juridique : « le fichier clients » parle mieux que « les données à caractère personnel ».",
   },
   {
     num: '03',
-    title: 'Définir le circuit de validation',
-    desc: "Nommez un référent IA, fixez un délai de réponse et décrivez le chemin d'une demande : qui propose, qui instruit, qui tranche. Ce circuit absorbe les nouveaux outils au fil de l'eau et évite que la charte soit contournée dès le premier besoin non prévu.",
+    title: 'Écrire le circuit des demandes',
+    desc: "Nommez un référent IA, fixez un délai de réponse et décrivez le chemin d'une demande : qui la dépose, qui l'instruit, qui tranche. Sans ce circuit, le premier outil utile absent de la liste fait sauter la règle.",
   },
   {
     num: '04',
-    title: 'Faire adopter le document',
-    desc: "Présentez la charte en équipe avec des cas concrets tirés du cadrage, recueillez une signature ou un accusé de lecture, intégrez le document au parcours d'arrivée des nouveaux collaborateurs. Cette diffusion documentée alimente votre conformité à l'article 4 de l'AI Act.",
+    title: 'Présenter, faire signer, intégrer à l’arrivée',
+    desc: "Présentez la charte en réunion d'équipe avec trois cas tirés de l'écoute, recueillez un accusé de lecture et glissez le document dans le parcours des nouveaux arrivants. Ces traces alimentent le registre interne que la Commission juge suffisant pour l'article 4.",
   },
   {
     num: '05',
-    title: 'Faire vivre la charte',
-    desc: "Programmez une revue périodique (tous les six mois est un rythme courant), mettez les annexes à jour à chaque outil validé et suivez deux indicateurs simples : les demandes reçues par le référent IA et les incidents signalés. Une charte qui ne bouge plus a cessé de servir.",
+    title: 'Relire tous les six mois',
+    desc: "Fixez une revue semestrielle, tenez l'annexe des outils à jour à chaque validation et suivez deux chiffres : les demandes reçues par le référent, les incidents signalés. Une charte que personne ne modifie a cessé de décrire le travail.",
   },
 ]
 
@@ -231,22 +235,42 @@ const ERREURS = [
   {
     icon: Ban,
     title: 'Tout interdire',
-    desc: "La charte défensive qui interdit l'essentiel produit l'effet inverse de son objectif : les usages continuent avec des comptes personnels, hors de tout contrôle. Décrivez d'abord ce qui est autorisé ; l'interdiction devient une exception motivée, comprise et respectée.",
+    desc: "Une charte qui proscrit presque tout ne fait pas disparaître les usages : elle les envoie vers les comptes personnels, là où l'entreprise ne voit plus rien. Écrivez l'autorisé d'abord ; un interdit rare et expliqué est respecté.",
   },
   {
     icon: Copy,
-    title: 'Recopier un modèle générique',
-    desc: "Un modèle trouvé en ligne parle d'outils que vos équipes n'utilisent pas et ignore leurs cas d'usage. Personne ne s'y reconnaît, le document est classé. Les exemples de formulation de cette page se travaillent en atelier avec vos métiers avant d'entrer dans votre charte.",
+    title: 'Copier un modèle trouvé en ligne',
+    desc: "Le modèle générique cite des outils que vos équipes n'ont pas et ignore les tâches qu'elles accomplissent. Personne ne s'y reconnaît, le fichier dort dans un dossier partagé. Les formulations de cette page sont faites pour être réécrites avec vos métiers.",
   },
   {
     icon: Workflow,
-    title: 'Oublier le circuit de validation',
-    desc: "Une liste de règles figées laisse le collaborateur qui découvre un outil utile face à un mur. Il l'utilisera quand même. Le circuit de validation (un référent identifié, un délai de réponse connu) transforme la charte en outil de travail quotidien.",
+    title: 'Oublier la porte d’entrée',
+    desc: "Une liste figée laisse sans interlocuteur le salarié qui découvre un outil utile ; il s'en servira quand même. Un référent nommé et un délai de réponse annoncé font de la charte un outil de travail.",
   },
   {
     icon: RefreshCw,
-    title: 'Ne jamais mettre à jour',
-    desc: "Une charte qui cite des outils abandonnés perd sa crédibilité, et avec elle toutes ses règles. Fixez un rythme de revue et un responsable ; la mise à jour des annexes (outils, données) peut suivre un circuit allégé pour rester au rythme des usages.",
+    title: 'Laisser vieillir le texte',
+    desc: "Une charte qui cite un outil disparu perd son crédit, et ses autres règles avec elle. Les GPTs personnalisés, que ChatGPT supprime le 11 décembre 2026 quelle que soit l'offre, en donnent l'exemple : toute charte qui les mentionne doit changer d'ici là.",
+  },
+]
+
+/* ───────── Études de cas citées (faits de src/data/etudes-de-cas.js et missions-formation.js) ───────── */
+
+const CAS = [
+  {
+    href: '/etudes-de-cas-ia#photovoltaique',
+    titre: 'Une PME photovoltaïque met la charte au rang des décisions de direction',
+    texte: "Chez un distributeur de trois personnes, le diagnostic présenté en septembre 2026 soumet trois décisions à la direction : l'outil commun, les chantiers prioritaires et la charte d'usage. Le cadre prévu tient en peu de choses : une charte signée avant la formation prévue dans leurs locaux en octobre, un référent qui gère les comptes et collecte les erreurs, un rendez-vous chaque mois.",
+  },
+  {
+    href: '/etudes-de-cas-ia#mission-franchise-gemini',
+    titre: 'Les administrateurs d’un réseau de franchise repartent avec leur charte',
+    texte: "Au siège d'un réseau de franchisés en B2B passé à Gemini, une journée en classe virtuelle a réuni les deux administrateurs de Google Workspace autour de la console, de l'AI Act, du RGPD et de la charte. Leur feuille de route sur trois mois prévoit de publier le texte, puis d'étendre ces règles aux franchisés.",
+  },
+  {
+    href: '/etudes-de-cas-ia#mission-gerance-cabinet',
+    titre: 'Un gérant écrit sa charte personnelle avant le premier exercice',
+    texte: "Formé seul et à distance en août 2026, le gérant d'une structure de géomètres-experts d'environ vingt personnes a ouvert ses deux jours par une charte d'usage personnelle. Ses connecteurs Outlook ont été réglés dans le même esprit : les brouillons préparés par Claude sont relus avant tout envoi.",
   },
 ]
 
@@ -254,32 +278,36 @@ const ERREURS = [
 
 const FAQ = [
   {
-    q: 'Une charte IA est-elle obligatoire ?',
-    a: "Non, aucun texte n'impose la charte IA en tant que telle. L'article 4 de l'AI Act (Règlement UE 2024/1689) impose en pratique, depuis le 2 février 2025, que les organisations qui déploient des systèmes d'IA assurent un niveau suffisant de littératie IA à leurs équipes. Une charte d'utilisation de l'IA rédigée, diffusée et expliquée aux équipes constitue un vecteur documenté de cette obligation : elle montre que l'entreprise a formalisé des règles et les a portées à la connaissance de chacun. Le RGPD, de son côté, encadre les traitements de données personnelles, ce que la charte traduit en consignes opérationnelles. Les entreprises la rédigent aussi parce qu'elle accélère l'adoption : les équipes utilisent les outils quand les règles sont claires.",
+    q: 'La charte IA est-elle une obligation légale ?',
+    a: "Aucun texte n'exige un document intitulé charte IA. Deux obligations la rendent pourtant précieuse. La première tient à l'article 4 de l'AI Act : en application dès février 2025, réécrit par l'Omnibus l'été dernier, il demande à chaque organisation des mesures qui aident son personnel à maîtriser l'IA. La Commission ajoute qu'il ne faut aucun certificat et qu'une trace interne des actions suffit. La seconde vient du RGPD, qui s'applique à chaque donnée personnelle saisie dans un assistant. Une charte diffusée, expliquée et signée documente le premier point et traduit le second en consignes.",
   },
   {
-    q: 'Quelle différence entre charte IA et charte éthique IA ?',
-    a: "La charte IA, ou charte d'utilisation de l'IA, est un document opérationnel : elle dit quels outils utiliser, avec quelles données, sous quelle validation et par quel circuit faire approuver un nouvel usage. La charte éthique IA se situe en amont : elle exprime les principes de l'organisation (respect des personnes, transparence, responsabilité, place de l'humain dans les décisions). Beaucoup d'entreprises réunissent les deux dans un même document, avec une page de principes suivie des règles concrètes. Si vous devez choisir un point de départ, commencez par la charte d'utilisation : les équipes attendent des règles applicables avant des principes généraux.",
+    q: 'Charte IA et charte éthique : quelle différence ?',
+    a: "La charte d'utilisation est un mode d'emploi : quels outils, quelles données, quelle relecture, quel circuit pour un usage nouveau. La charte éthique énonce des valeurs : respect des personnes, transparence, dernier mot laissé à l'humain. Beaucoup d'entreprises réunissent les deux, avec une page de principes en ouverture puis les règles pratiques. S'il faut choisir un point de départ, prenez la charte d'utilisation : les salariés attendent des consignes applicables lundi matin. Notre page IA responsable traite le versant éthique.",
   },
   {
-    q: 'Qui doit rédiger la charte IA ?',
-    a: "Un binôme fonctionne bien : un porteur côté direction (DSI, juridique ou direction générale selon la taille de l'entreprise) et des contributeurs côté métiers, qui apportent les usages réels. Le DPO est associé pour le volet données personnelles. La rédaction par une seule fonction produit des textes déséquilibrés : le juridique seul écrit une charte défensive que les équipes contournent, le métier seul néglige les obligations. Un accompagnement extérieur apporte les formulations éprouvées et la connaissance des outils ; la validation finale reste interne, parce que la charte engage l'organisation.",
+    q: 'Qui rédige la charte IA ?',
+    a: "Un binôme donne les meilleurs textes : un porteur côté direction (DSI, juridique ou direction générale selon la taille) et des contributeurs côté métiers, qui apportent les tâches telles qu'elles se font. Le DPO relit la rubrique données. Confiée au seul service juridique, la charte devient défensive et se fait contourner ; confiée aux seuls métiers, elle oublie des obligations. Un regard extérieur apporte des formulations éprouvées et la connaissance des outils ; la validation finale reste interne, parce que le texte engage l'entreprise.",
   },
   {
-    q: 'Charte IA et RGPD : quel lien ?',
-    a: "Utiliser un outil d'IA sur des données personnelles constitue un traitement au sens du RGPD, appliqué depuis le 25 mai 2018. La charte IA traduit cette réalité en consignes que chacun peut appliquer : quelles catégories de données peuvent entrer dans un prompt, lesquelles sont interdites, quels outils disposent d'une configuration validée (hébergement, contrat, non-réutilisation des données pour l'entraînement des modèles). Les recommandations de la CNIL sur l'intelligence artificielle alimentent utilement cette rubrique. La charte complète le registre des traitements et les analyses d'impact : elle en est la déclinaison lisible pour les équipes.",
+    q: "Que dit le RGPD sur ce qu'on peut saisir dans un assistant ?",
+    a: "Le RGPD ne dresse pas de liste d'outils ; il impose une base légale, une finalité et le minimum de données nécessaire pour chaque traitement. Appliqué à un assistant, cela donne trois consignes que la charte doit écrire : passer par une offre pro adossée à un contrat de traitement, ne saisir que le strict nécessaire, tenir les catégories sensibles hors des outils non validés. Les questions-réponses de la CNIL du 18 juillet 2024 sur l'IA générative en donnent la lecture officielle ; les articles en jeu sont repris sur la page IA et RGPD.",
   },
   {
-    q: "Quelle longueur pour une charte IA d'entreprise ?",
-    a: "De deux à six pages pour le corps du document, avec les listes d'outils et de catégories de données en annexes. Au-delà, le texte cesse d'être lu et perd son effet sur les usages. Les annexes se mettent à jour par un circuit allégé, ce qui évite de refaire valider tout le document à chaque changement d'outil. Une structure courante : une page de principes, les huit rubriques en trois à quatre pages, puis les annexes. La concision est un choix de conception : chaque règle conservée doit pouvoir être citée de mémoire par un collaborateur.",
+    q: "Combien de pages pour une charte IA d'entreprise ?",
+    a: "De deux à six pages pour le corps du texte, avec la liste des outils et des catégories de données en annexes. Au-delà, plus personne ne lit et le document perd son effet sur les pratiques. Les annexes changent par un circuit allégé, ce qui évite de refaire valider toute la charte à chaque nouvel outil. Une structure qui fonctionne : une page de principes, les huit rubriques sur trois à quatre pages, puis les annexes. Chaque règle gardée doit pouvoir être citée de mémoire par un salarié.",
   },
   {
-    q: 'Faut-il faire signer la charte IA aux salariés ?',
-    a: "La signature individuelle ou l'accusé de lecture donnent une valeur probante à la diffusion : l'entreprise peut montrer que chaque collaborateur a eu connaissance des règles, ce qui compte pour la littératie IA de l'article 4 de l'AI Act comme en cas d'incident. Pour rendre la charte opposable en matière disciplinaire, la voie classique passe par le règlement intérieur, avec sa procédure propre (consultation du CSE comprise) ; votre conseil juridique tranchera selon votre contexte. Une signature recueillie en silence produit peu d'effet sur les usages ; une présentation en équipe, avec des cas concrets, change les pratiques.",
+    q: 'Faut-il faire signer la charte et consulter le CSE ?',
+    a: "La signature ou l'accusé de lecture prouve que chaque salarié a reçu les règles, ce qui pèse dans le dossier de maîtrise de l'IA comme en cas d'incident. Pour qu'une règle puisse fonder une sanction, la voie habituelle consiste à en faire une adjonction au règlement intérieur, avec l'avis du CSE et les formalités prévues par le Code du travail (articles L1321-4 et L1321-5). À partir de cinquante salariés, l'arrivée d'un outil d'IA peut aussi relever de l'information-consultation du CSE prévue quand une technologie nouvelle entre dans l'entreprise (article L2312-8). Votre conseil juridique tranchera selon votre situation.",
   },
   {
     q: 'Où trouver un exemple de charte IA ?',
-    a: "Le tableau de cette page fournit un exemple de charte IA rubrique par rubrique : chacune des huit rubriques y est accompagnée d'une formulation concrète, à recopier et à adapter à vos outils et à vos métiers. Un modèle de charte IA générique trouvé en ligne peut servir de point de comparaison pour vérifier que rien n'a été oublié ; le document qui fonctionne se rédige à partir des usages réels de vos équipes, avec vos cas limites et votre circuit de validation. Les cinq étapes de la méthode décrite plus haut couvrent ce chemin, du recensement des usages à la diffusion.",
+    a: "Le tableau de cette page en propose un, rubrique par rubrique : huit formulations à recopier puis à adapter à vos outils et à vos métiers. Un modèle générique pris en ligne sert au mieux de liste de contrôle, pour vérifier qu'aucune rubrique ne manque. Le texte qui marche se rédige à partir des usages de vos équipes, avec vos cas limites et votre circuit de validation ; les cinq étapes de la méthode décrite plus haut couvrent ce chemin.",
+  },
+  {
+    q: 'La fin des GPTs personnalisés change-t-elle quelque chose à la charte ?',
+    a: "Oui, si votre charte ou ses annexes les citent. OpenAI met fin aux GPTs personnalisés : ils disparaissent le 11 décembre 2026 sur toutes ses offres, et tiennent jusqu'au 11 février 2027 dans les espaces Enterprise ayant obtenu un sursis. Ils migrent vers des plugins, où les instructions deviennent une compétence. Mettez à jour l'annexe des outils, renommez les assistants concernés et vérifiez que les règles de partage s'appliquent aux nouveaux objets. Un circuit allégé pour les annexes évite de rouvrir tout le texte pour ce changement.",
   },
 ]
 
@@ -288,20 +316,14 @@ const FAQ = [
 const GLOSSARY = [
   {
     term: 'Charte IA',
-    def: "Document interne qui fixe les règles d'usage de l'intelligence artificielle dans une organisation : outils approuvés, données autorisées et interdites, validation humaine, transparence, propriété intellectuelle, signalement des incidents et circuit de validation des nouveaux usages.",
+    def: "Document interne qui dit aux salariés comment se servir de l'intelligence artificielle au travail : outils fournis, données permises et interdites, relecture humaine, transparence, propriété des contenus, incidents et circuit des demandes nouvelles.",
   },
   {
     term: 'Politique IA',
-    def: "Document de niveau direction qui pose les engagements, les principes, les rôles et les responsabilités de l'organisation en matière d'intelligence artificielle. La charte IA en est la déclinaison opérationnelle pour les équipes.",
+    def: "Texte signé par la direction qui pose les engagements, les principes et le partage des responsabilités de l'organisation face à l'IA. La charte en est la traduction pour le poste de travail.",
   },
-  {
-    term: 'Charte éthique IA',
-    def: "Texte de principes qui exprime les valeurs de l'organisation face à l'IA : respect des personnes, transparence, responsabilité, place de l'humain dans les décisions. Elle se combine souvent avec la charte d'utilisation de l'IA, plus opérationnelle.",
-  },
-  {
-    term: 'Littératie IA',
-    def: "Niveau de compréhension et de compétence des équipes sur les systèmes d'IA qu'elles utilisent. L'article 4 de l'AI Act (Règlement UE 2024/1689) impose aux organisations d'en assurer un niveau suffisant depuis le 2 février 2025.",
-  },
+  NOTIONS[0],
+  NOTIONS[1],
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -311,16 +333,16 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: "Charte IA d'entreprise : ce qu'elle doit contenir et comment la faire adopter",
+  headline: "Charte IA d'entreprise : ce qu'elle doit contenir, rubrique par rubrique",
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-07-02',
-  dateModified: '2026-07-02',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
-  about: ['Charte IA', "Charte d'utilisation de l'IA", 'Politique IA d’entreprise', 'Littératie IA', 'AI Act'],
+  about: ['Charte IA', "Charte d'utilisation de l'IA", 'Politique IA d’entreprise', "Maîtrise de l'IA", 'AI Act'],
 }
 
 const definedTermSetJsonLd = {
@@ -384,8 +406,9 @@ export default function CharteIAEntreprisePage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        citations={PAGE_CITATIONS}
         datePublished="2026-07-02"
-        dateModified="2026-07-02"
+        dateModified="2026-10-07"
         extraJsonLd={[articleJsonLd, definedTermSetJsonLd]}
       />
 
@@ -413,37 +436,37 @@ export default function CharteIAEntreprisePage() {
               <ScrollText size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Charte IA & adoption de l'IA en entreprise
+              Le document qui encadre l'usage de l'IA
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 820 }}>
             Charte IA d'entreprise
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce qu'elle doit contenir et comment la faire adopter</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce qu'elle doit contenir, rubrique par rubrique</span>
           </h1>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui rédige ces chartes avec les clients de Masteria · texte revu le 7 octobre 2026
           </p>
 
           {/* GEO : réponse directe citable, accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une charte IA d'entreprise fixe les règles d'usage de l'intelligence artificielle : outils approuvés, données autorisées, validation humaine et circuit pour les nouveaux usages. <strong style={{ color: '#fff', fontWeight: 700 }}>Des règles claires font utiliser les outils : la charte est le premier levier d'adoption de l'IA.</strong>
+            Une charte IA d'entreprise dit à chaque salarié quels outils d'intelligence artificielle utiliser, avec quelles données, sous quelle relecture, et à qui demander le reste. <strong style={{ color: '#fff', fontWeight: 700 }}>Bien écrite, elle ramène les usages dans les comptes de l'entreprise : c'est le premier levier d'adoption.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Cette page décrit le contenu type d'une charte d'utilisation de l'IA, avec un exemple de formulation pour chacune des huit rubriques, la méthode de rédaction en cinq étapes et les erreurs qui rendent le document inutile. Organisme certifié Qualiopi fondé à Lyon, Masteria rédige des chartes IA avec ses clients et forme les équipes à la gouvernance de l'IA.
+            Vous trouverez ici ce que contient d'ordinaire une charte d'usage de l'IA, une formulation proposée pour chacune des huit rubriques, la méthode de rédaction en cinq étapes et les quatre erreurs qui condamnent le texte. Masteria, cabinet d'IA né à Lyon en 2022, écrit ces chartes aux côtés de ses clients puis forme ceux qui devront les appliquer.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Rédiger votre charte IA
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#contenu" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir les 8 rubriques types
+              Lire les 8 rubriques
             </a>
           </div>
 
@@ -485,10 +508,10 @@ export default function CharteIAEntreprisePage() {
                 Qu'est-ce qu'une charte IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une charte IA est un document interne, généralement de deux à six pages, qui fixe les règles d'usage de l'intelligence artificielle dans l'entreprise : outils approuvés, données autorisées et interdites, validation humaine des contenus, transparence, propriété intellectuelle et circuit pour faire valider un nouvel usage. Elle donne aux équipes un cadre explicite : chacun sait ce qu'il peut faire et à qui s'adresser pour le reste.</strong>
+                <strong>Une charte IA est le texte interne, de deux à six pages, qui dit aux salariés comment se servir de l'intelligence artificielle au travail : outils fournis, données permises et interdites, relecture humaine, transparence, propriété des contenus et marche à suivre pour un usage nouveau. Chacun sait ce qu'il peut faire seul et à qui demander pour le reste.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Le terme recouvre des documents de nature différente. La comparaison ci-contre situe la charte IA parmi ses voisins, du texte de principes au dispositif complet de gouvernance.
+                Le mot recouvre des documents de nature différente. Les trois cartes situent la charte entre la déclaration de la direction et la mécanique qui la fait appliquer.
               </p>
             </div>
 
@@ -505,9 +528,9 @@ export default function CharteIAEntreprisePage() {
                 ))}
               </div>
 
-              {/* Notions voisines : ancrage d'entités (charte éthique IA, littératie IA) */}
+              {/* Notions voisines : ancrage d'entités (charte éthique IA, maîtrise de l'IA) */}
               <h3 style={{ ...h3Style, fontSize: 18, margin: '32px 0 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
-                <BookOpen size={19} color={c} strokeWidth={2.2} aria-hidden="true" /> Deux notions voisines
+                <BookOpen size={19} color={c} strokeWidth={2.2} aria-hidden="true" /> Deux termes qu'on croise en rédigeant
               </h3>
               <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
                 {NOTIONS.map((g, i) => (
@@ -519,7 +542,7 @@ export default function CharteIAEntreprisePage() {
               </dl>
 
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                La charte est la pièce la plus visible d'un ensemble plus large. Pour le dispositif complet (registre des usages, comité IA, supervision humaine), voyez notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> ; pour les principes en amont, notre page <Link to="/ia-responsable" style={aStyle}>IA responsable</Link>.
+                Rôles, comité et registre qui entourent la charte sont décrits sur notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link>. Les valeurs qui l'inspirent, et la façon de les vérifier, sur la page <Link to="/ia-responsable" style={aStyle}>IA responsable</Link>.
               </p>
             </div>
           </div>
@@ -536,7 +559,7 @@ export default function CharteIAEntreprisePage() {
                 Pourquoi une charte IA maintenant ?
               </h2>
               <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que l'article 4 de l'AI Act impose la littératie IA depuis le 2 février 2025, que le RGPD s'applique à tout traitement de données personnelles par un outil d'IA et que les usages non encadrés se développent déjà dans les équipes. Une charte IA claire transforme ces contraintes en cadre d'adoption.</strong>
+                <strong>Parce que trois textes convergent : le règlement IA attend des actions de formation et d'accompagnement (article 4), le RGPD couvre chaque donnée personnelle saisie dans un assistant, et la CNIL recommande depuis juillet 2024 des règles internes écrites. Pendant ce temps, les comptes personnels se multiplient. La charte range ces exigences dans un texte que chacun comprend.</strong>
               </p>
             </div>
 
@@ -558,7 +581,7 @@ export default function CharteIAEntreprisePage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Pour la lecture complète du règlement et de ses échéances, voyez notre <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link> ; pour le volet données personnelles, notre page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link> détaille ce que la CNIL attend des usages d'IA.
+                Pour comprendre le règlement lui-même et classer vos usages, voyez notre <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link>. Pour la rubrique données, la page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link> reprend les articles en jeu et la lecture de la CNIL.
               </p>
             </div>
           </div>
@@ -578,20 +601,20 @@ export default function CharteIAEntreprisePage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Une charte IA d'entreprise couvre huit rubriques : périmètre et outils approuvés, données autorisées et interdites, validation humaine, transparence, propriété intellectuelle, signalement des incidents, formation des équipes, gouvernance et mise à jour. La rubrique décisive est le circuit de validation des nouveaux usages : c'est elle qui garde la charte en prise avec les usages réels.</strong>
+            <strong style={{ color: '#fff' }}>Une charte IA d'entreprise tient en huit rubriques : périmètre et outils fournis, données, relecture humaine, transparence, propriété intellectuelle et secret, incidents, formation, gouvernance et révision. La plus utile est la dernière : le circuit qui fait entrer un outil nouveau évite que la charte soit contournée au premier besoin imprévu.</strong>
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            Le tableau détaille chaque rubrique avec un exemple de formulation prêt à discuter en atelier. Ces exemples se recopient librement ; leur valeur vient de l'adaptation à vos outils, à vos métiers et à votre contexte juridique.
+            Chaque formulation est une base de discussion, à reprendre en atelier avec vos métiers. Recopiez-les librement : leur valeur tient à l'adaptation à vos outils, à vos données et à votre droit du travail.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
-            <table aria-label="Les huit rubriques types d'une charte IA d'entreprise, avec un exemple de formulation pour chacune" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
+            <table aria-label="Les huit rubriques d'une charte IA d'entreprise et une formulation proposée pour chacune" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
               <thead>
                 <tr>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '20%' }}>Rubrique</th>
-                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '32%' }}>Ce qu'elle couvre</th>
-                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '48%' }}>Exemple de formulation</th>
+                  <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '32%' }}>Ce qu'elle règle</th>
+                  <th scope="col" style={{ background: 'rgba(37,99,235,0.12)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#60A5FA', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '48%' }}>Formulation proposée</th>
                 </tr>
               </thead>
               <tbody>
@@ -607,7 +630,7 @@ export default function CharteIAEntreprisePage() {
           </div>
 
           <p style={{ color: '#94A3B8', fontSize: 13.5, lineHeight: 1.7, margin: '18px 0 0', maxWidth: 880 }}>
-            Formulations données à titre d'exemple, à retravailler avec vos parties prenantes. Pour les obligations réglementaires, le texte de référence est le <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer" style={{ color: '#93C5FD', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2, display: 'inline-flex', alignItems: 'center', gap: 5 }}>Règlement (UE) 2024/1689 sur EUR-Lex <ExternalLink size={13} strokeWidth={2.2} aria-hidden="true" /></a>.
+            Formulations proposées pour ouvrir la discussion, à valider avec vos parties prenantes. Pour les obligations, la référence reste le texte de l'AI Act, consultable sur <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer" style={{ color: '#93C5FD', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2, display: 'inline-flex', alignItems: 'center', gap: 5 }}>EUR-Lex <ExternalLink size={13} strokeWidth={2.2} aria-hidden="true" /></a>, et pour les données personnelles la doctrine de la <a href="https://www.cnil.fr/fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={{ color: '#93C5FD', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2, display: 'inline-flex', alignItems: 'center', gap: 5 }}>CNIL <ExternalLink size={13} strokeWidth={2.2} aria-hidden="true" /></a>.
           </p>
         </div>
       </section>
@@ -621,11 +644,11 @@ export default function CharteIAEntreprisePage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>La rédaction d'une charte IA suit cinq étapes : cadrer les usages réels des équipes, écrire les règles en ouvrant par ce qui est autorisé, définir le circuit de validation des nouveaux usages, faire adopter le document, puis le faire vivre par des revues régulières. Comptez quelques semaines entre le cadrage et la diffusion, ateliers métiers compris.</strong>
+            <strong>La rédaction d'une charte IA suit cinq étapes : écouter les usages existants, écrire d'abord ce qui est permis, décrire le circuit des demandes, présenter et faire signer le texte, puis le relire tous les six mois. Comptez quelques semaines entre l'écoute et la diffusion, ateliers avec les métiers compris.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
-            Le point de départ conditionne tout le reste : la charte part des usages réels des équipes, et les cinq étapes s'enchaînent avec les métiers autour de la table.
+            La première étape décide de la qualité de toutes les autres. Une charte rédigée loin des équipes décrit un travail qui n'existe pas.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -656,15 +679,15 @@ export default function CharteIAEntreprisePage() {
         <div style={wrap}>
           <Kicker>Les pièges</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Les erreurs qui rendent une charte inutile
+            Quatre erreurs qui font d'une charte un texte mort
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Quatre erreurs reviennent dans les chartes IA qui échouent : tout interdire, recopier un modèle générique, omettre le circuit de validation des nouveaux usages et laisser le document vieillir. Dans les quatre cas, la charte ne décrit plus la réalité des équipes et n'est plus appliquée.</strong>
+            <strong>Quatre erreurs condamnent une charte IA : tout interdire, copier un modèle générique, oublier le circuit des demandes et laisser le texte vieillir. Dans les quatre cas, le document cesse de décrire le travail et les équipes cessent de le lire.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 880 }}>
-            Ces erreurs partagent une origine : une charte conçue d'abord pour protéger juridiquement l'entreprise. Les quatre correctifs tiennent en une page.
+            Elles ont une racine commune : un texte écrit d'abord pour couvrir l'entreprise, que les salariés reçoivent comme un signe de défiance. Les quatre correctifs tiennent en une page.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
@@ -680,22 +703,18 @@ export default function CharteIAEntreprisePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Une charte IA qui évite ces quatre pièges devient le point d'entrée naturel de la gouvernance : le registre des usages, le comité IA et la supervision humaine s'y raccordent. Notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> décrit ce dispositif complet.
+            Une charte qui échappe à ces pièges devient la porte d'entrée de tout le reste : registre des usages, comité, supervision humaine. Notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> montre comment ces pièces s'y raccordent.
           </p>
 
-          {/* Sources de référence — liens d'autorité suivis (SEO + GEO) */}
+          {/* Textes officiels cités : liens d'autorité suivis (SEO + GEO) */}
           <h3 style={{ ...h3Style, fontSize: 20, margin: '44px 0 16px' }}>
-            Sources de référence
+            Les textes et lectures officielles derrière cette page
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
-            {[
-              { label: "AI Act — texte officiel, dont l'article 4 sur la littératie IA (EUR-Lex, Règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
-              { label: 'Intelligence artificielle et RGPD — recommandations de la CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-              { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
-            ].map((r, i) => (
-              <li key={i}>
-                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 14.5 }}>
-                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {r.label}
+            {PAGE_CITATIONS.map(r => (
+              <li key={r.url}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'flex-start', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} style={{ flexShrink: 0, marginTop: 4 }} aria-hidden="true" /> {r.name}
                 </a>
               </li>
             ))}
@@ -703,27 +722,45 @@ export default function CharteIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['photovoltaique', 'industrie']}
-        title="Deux chartes d'usage nées d'une mission"
-        intro="Huit règles signées avant la formation chez un distributeur photovoltaïque, une charte présentée au comité de direction d'un groupe industriel face au shadow AI : deux cas documentés, méthode et résultats."
-      />
+      {/* ── SUR LE TERRAIN (cas anonymisés, remplace CaseStudyCards) ── */}
+      <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Sur le terrain</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Trois chartes nées d'une mission ou d'une formation
+          </h2>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>
+            Une PME, le siège d'un réseau, un dirigeant seul : la charte change d'échelle, la logique reste la même. Les trois récits ci-dessous sont tirés des cas que nous publions, anonymisés.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {CAS.map(cas => (
+              <div key={cas.href} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>{cas.titre}</h3>
+                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{cas.texte}</p>
+                <Link to={cas.href} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  Le cas en détail
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Charte IA : les questions fréquentes
+                Charte IA : ce que l'on nous demande le plus
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une rubrique vous pose problème, ou votre CSE attend un projet de texte ?
               </p>
-              <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+              <Link to={RDV} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                Parlons-en pendant le cadrage
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -737,27 +774,27 @@ export default function CharteIAEntreprisePage() {
       </section>
 
       {/* ── CONSEIL & FORMATION (bandeau) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Conseil et formation</Kicker>
+              <Kicker>Deux façons de l'écrire</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Rédiger votre charte IA avec Masteria
+                Écrire votre charte IA avec Masteria, ou la construire en formation
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Deux façons de travailler ensemble. En conseil, nous rédigeons la charte avec vous : cadrage des usages, ateliers avec les métiers, rédaction, présentation aux équipes ; cette prestation d'accompagnement reste hors du champ des financements OPCO. En formation, la journée gouvernance IA consacre son module 3 à la rédaction de la charte : vos équipes construisent leur propre document pendant la journée. Elle est certifiée Qualiopi et finançable, au tarif de 1 980 € HT par jour.
+                En mission de conseil, nous écrivons la charte avec vous : écoute des usages, ateliers avec les métiers, rédaction, présentation aux équipes. Le forfait est fixé après le cadrage, et ce conseil reste à votre charge, hors du champ de l'OPCO. En formation, la journée gouvernance IA fait construire à vos équipes la trame de leur propre charte, avec registre des usages et comité en appui ; elle coûte 1 980 € HT, est couverte par la certification Qualiopi que détient Masteria, et son financement peut être demandé à l'OPCO dont dépend votre branche.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-                <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                  Rédiger votre charte avec nous
+                <Link to={RDV} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
+                  Écrire votre charte avec nous
                   <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                 </Link>
                 <Link to="/formation-gouvernance-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                  Découvrir la formation gouvernance IA
+                  La journée gouvernance IA
                   <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
                 </Link>
               </div>
@@ -767,23 +804,23 @@ export default function CharteIAEntreprisePage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Autour de la charte
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            La charte IA s'inscrit dans un cadre plus large : gouvernance, conformité et formation des équipes.
+            Le texte s'appuie sur des rôles, des données bien tenues et des équipes formées : chaque page ci-dessous en traite un aspect.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Conseil', desc: "Le dispositif complet dont la charte est la partie visible : audit, registre des usages, comité IA." },
-              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Formation', desc: "Une journée pour construire registre, charte et comité IA, avec un module dédié à la rédaction de la charte. Finançable OPCO." },
-              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "La maîtrise du Règlement (UE) 2024/1689 et de ses obligations, dont la littératie IA de l'article 4." },
-              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Conformité', desc: "Ce que le RGPD implique pour vos usages d'IA : bases légales, données autorisées, recommandations de la CNIL." },
-              { label: 'IA responsable', href: '/ia-responsable', tag: 'Repères', desc: "Les principes d'une IA digne de confiance, dont la charte éthique IA est l'expression écrite." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, feuille de route et cadrage des usages IA au niveau de la direction." },
+              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Rôles', desc: "Qui tient la charte, qui instruit les demandes, qui répond de chaque outil : la mission de conseil qui pose ces rôles." },
+              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Formation', desc: "Sept heures pour bâtir registre, trame de charte et comité, à partir des outils que vous utilisez." },
+              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "Savoir ce que le règlement exige, usage par usage, et ce que l'article 4 attend de l'entreprise." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Données', desc: "Bases légales, analyse d'impact, garanties des éditeurs : de quoi écrire une rubrique données solide." },
+              { label: 'IA responsable', href: '/ia-responsable', tag: 'Éthique', desc: "Les valeurs qu'une charte éthique affiche, et les preuves qui permettent de les tenir." },
+              { label: 'Formation CSE et IA', href: '/formation-cse-ia', tag: 'Dialogue social', desc: "Préparer les élus à examiner un projet d'outil d'IA et le texte qui l'encadre." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -798,10 +835,7 @@ export default function CharteIAEntreprisePage() {
                     {rel.label}
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </span>
+                  <ArrowRight size={15} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
                 </div>
               </Link>
             ))}
@@ -809,8 +843,15 @@ export default function CharteIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Les formulations de cette page viennent des chartes que Mathias Nizan a rédigées avec des PME, des sièges de réseau et des dirigeants formés seuls. Il les a relues le 7 octobre 2026 à la lumière de l'Omnibus et de la fin annoncée des GPTs ; son parcours est présenté sur <Link to="/mathias-nizan" style={aStyle}>sa page de fondateur</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -819,24 +860,23 @@ export default function CharteIAEntreprisePage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Votre charte IA, rédigée avec vos équipes
+              Une charte écrite à partir de ce que font vos équipes
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos usages d'IA et vos règles actuelles, écrites ou tacites. Sous 24 heures, vous recevez une proposition de cadrage : périmètre de la charte, parties prenantes à réunir, calendrier de rédaction et de diffusion. Vous saurez précisément quel document produire et comment le faire adopter.
+              Racontez-nous les outils déjà utilisés chez vous et les règles en place, écrites ou tacites. En une demi-heure, nous délimitons le périmètre de la charte, les personnes à réunir et le calendrier jusqu'à la signature. Ce plan vous reste acquis, que vous rédigiez ensuite avec nous ou seuls.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Cadrer votre charte IA
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Conseil et formation Qualiopi · Lyon, Europe, États-Unis, Inde
+              Charte écrite avec vos métiers · référent et circuit des demandes · AI Act et RGPD · France et international
             </p>
           </div>
         </div>
       </section>
-
-      <OfficialSources />
     </>
   )
 }

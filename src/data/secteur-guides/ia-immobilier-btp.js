@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : Insee Première n° 2120 (juillet 2026) ; Service Public F16096 (DPE, vérifié le 01/01/2026, arrêtés du 11/06 et du 19/08/2026), F1169 (justificatifs du locataire), F14750 (discrimination) ; Service Public Entreprendre F32130, F32154, F23371 (seuils, vérifié le 21/08/2026), F32137 (sous-traitance), F2034 (garantie décennale). Aucune étude de cas publiée ne relève du secteur : le cas est une mise en situation.
 export default {
   slug: 'ia-immobilier-btp',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Annonces, DPE, dossiers locataires", "Marchés de travaux et sous-traitance", "Contrôle avant envoi"],
+    lien: "Voir les pièces contrôlées",
+  },
+  offresTitre: {
+    kicker: "Trois leviers",
+    h2: "Diagnostiquer chaque métier, contrôler les pièces, automatiser les relances",
+  },
+  enjeux: {
+    kicker: "Immobilier et construction",
+    h2: "De l'annonce au chantier, l'IA vérifie ce que la loi exige",
+    difficultes: "Ce qui encombre agences, gestionnaires et entreprises de travaux",
+    prestations: "Ce que nous développons pour l'immobilier et le BTP",
+  },
+  regieBloc: {
+    kicker: "Régie au siège ou en agence",
+    h2: "Un développeur branché sur votre logiciel de gestion ou de chantier",
+    accroche: "Pour relier l'IA à vos outils métier (logiciel de transaction, gestion locative, GED de chantier), le développeur IA rejoint vos équipes au siège ou en agence et construit au contact de vos données.",
+    lien: "Voir nos modèles d'engagement",
+  },
+  formationBloc: {
+    kicker: "Former négociateurs et conducteurs de travaux",
+    h2: "Chaque métier s'entraîne sur ses propres pièces",
+    lien: "Le catalogue de formations IA",
+  },
+  faqBloc: {
+    h2: "Immobilier et BTP : les questions fréquentes",
+    texte: "Votre agence ou votre chantier a un cas particulier ?",
+    lien: "Parlons-en",
+  },
+  maillage: {
+    h2: "Secteurs liés à l'immobilier",
+  },
+  cta: {
+    titre: "Quelle pièce de votre activité contrôler en premier ?",
+    texte: "Une annonce, un dossier de candidat, un mémoire technique ou une déclaration de sous-traitance : dites-nous laquelle vous prend le plus de temps. Nous revenons vers vous sous 24 heures pour planifier les 30 minutes de cadrage offertes.",
+  },
+  equipe: {
+    titre: "Des spécialistes réunis pour vos agences et vos chantiers",
+    texte: "Mathias Nizan pilote chaque mission de Masteria, l'entreprise qu'il a lancée à Lyon en 2022. Selon le projet, il associe des consultants qui suivent une pièce de sa rédaction à son envoi, des développeurs qui branchent les contrôles sur vos logiciels métier et des formateurs qui travaillent avec vos négociateurs, gestionnaires et conducteurs de travaux. Tous sont indépendants, et aucun ne revend de logiciel.",
+  },
   intro: "Dans l'immobilier comme dans le BTP, l'IA générative rapporte d'abord sur des pièces que la loi encadre : l'annonce et ses mentions énergétiques, le dossier du candidat locataire, le DPE (diagnostic de performance énergétique) d'un logement loué, le dossier de consultation d'un marché de travaux, la déclaration de sous-traitance. Le calendrier se resserre : les logements classés F ne pourront plus être loués à partir de 2028, et le calcul du DPE change de nouveau le 1er janvier 2027. Masteria cadre ces flux avec vos équipes, puis construit des assistants qui contrôlent chaque pièce avant qu'elle engage l'entreprise.",
 
   offresIntro: [
@@ -12,14 +54,21 @@ export default {
 
   offres: [
     {
+      title: "Diagnostic métier par métier",
+      cta: "Le conseil IA chez Masteria",
       desc: "Nous diagnostiquons vos métiers un par un : transaction, gestion locative, réponse aux marchés, conduite de travaux. Une annonce, un dossier de location, un appel d'offres et un chantier sont suivis de bout en bout, puis les cas sont classés par gain et par risque juridique. La feuille de route intègre les échéances qui vous concernent : classe F en 2028, nouveau calcul du DPE en 2027, seuil de 140 000 € HT pour les petits marchés de travaux.",
       points: ["Parcours suivis de bout en bout", "Risques juridiques classés par métier", "Échéances de 2027 et 2028 intégrées"],
     },
     {
+      title: "Contrôle des pièces avant envoi",
+      cta: "Nos développements sur mesure",
+      secondaryCta: "Des outils IA taillés par métier",
       desc: "Les assistants que nous développons contrôlent chaque pièce avant son envoi : une annonce contre les mentions obligatoires, un dossier de candidat contre la liste des justificatifs autorisés, un parc de logements contre les classes et les dates de DPE, un DCE (le dossier de consultation des entreprises) contre votre projet de mémoire technique. Chaque écart cite l'article ou la pièce qui le fonde, et le code vous appartient à la fin du projet.",
       points: ["Contrôle des annonces et des dossiers", "Revue d'un parc au regard du DPE", "Exigences d'un appel d'offres rangées par critère"],
     },
     {
+      title: "Relances des baux et des chantiers",
+      cta: "Notre agence d'automatisation",
       desc: "Chaque bail et chaque chantier génèrent les mêmes relances : pièces manquantes, attestations des sous-traitants à renouveler, déclarations de sous-traitance à préparer, échéancier des réserves après la réception des travaux. Nous les automatisons, et un gestionnaire ou un conducteur de travaux valide chaque envoi.",
       points: ["Relance des pièces manquantes", "Attestations des sous-traitants suivies", "Échéancier après la réception des travaux"],
     },
@@ -146,7 +195,7 @@ export default {
     },
     {
       q: "Combien coûte un projet IA dans l'immobilier ou le BTP ?",
-      a: "Le montant dépend des métiers couverts et des logiciels à raccorder : transaction, gestion locative, chiffrage, GED de chantier. Le nombre de lots gérés ou d'offres remises par an pèse aussi. Après le cadrage, la proposition fixe un forfait et la liste des pièces contrôlées. Contrôler les annonces d'une agence reste un engagement contenu ; une chaîne qui couvre plusieurs agences ou plusieurs métiers dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros. Le premier pas tient en 30 minutes de cadrage offertes.",
+      a: "Le montant dépend des métiers couverts et des logiciels à raccorder : transaction, gestion locative, chiffrage, GED de chantier. Le nombre de lots gérés ou d'offres remises par an pèse aussi. Après le cadrage, la proposition fixe un forfait et la liste des pièces contrôlées. Contrôler les annonces d'une agence reste un engagement contenu ; une chaîne qui couvre plusieurs agences ou plusieurs métiers monte au-delà de 100 000 € et jusqu'à quelques centaines de milliers d'euros. Le premier pas tient en 30 minutes de cadrage offertes.",
     },
     {
       q: "L'OPCO peut-il financer la mission ?",
@@ -159,7 +208,7 @@ export default {
   ],
 
   sources: [
-    { name: "Insee Première n° 2120 : les technologies de l'information et de la communication dans les entreprises en 2025", url: "https://www.insee.fr/fr/statistiques/9025878" },
+    { name: "Insee Première n° 2120 (juillet 2026) : l'usage de l'IA par secteur, construction comprise", url: "https://www.insee.fr/fr/statistiques/9025878" },
     { name: "Service Public : diagnostic de performance énergétique (DPE), annonces et location", url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F16096" },
     { name: "Service Public : justificatifs que le bailleur peut demander au futur locataire", url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F1169" },
     { name: "Service Public : discrimination à la location d'un logement", url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F14750" },

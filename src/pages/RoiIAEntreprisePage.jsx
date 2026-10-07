@@ -6,9 +6,7 @@ import {
   Building2, Ban, GraduationCap, Scale,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -1018,11 +1016,27 @@ export default function RoiIAEntreprisePage() {
       </section>
 
       {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['photovoltaique', 'distribution', 'industrie']}
-        title="Trois missions où le gain est écrit comme une cible avant d'être mesuré"
-        intro="Des indicateurs à relever en séance et à revoir à J+30 dans une PME, onze compétences Claude et une cible écrite comme telle dans une équipe commerciale, une session pilote mesurée question par question dans un groupe industriel : la chaîne de conversion en pratique."
-      />
+      {/* ── MISSIONS : la mesure du gain vue de nos dossiers (texte propre à la page, 07/10/2026) ── */}
+      <section id="missions" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={{ ...wrap, maxWidth: 900 }}>
+          <Kicker>Sur nos missions</Kicker>
+          <h2 style={h2Style}>Trois missions où le gain s&apos;écrit comme une cible avant de se mesurer</h2>
+          <ul style={{ margin: '8px 0 0', paddingLeft: 20, display: 'grid', gap: 14, fontSize: 16, lineHeight: 1.7, color: '#374151' }}>
+            <li>
+              <strong>Une PME de trois personnes dans le photovoltaïque.</strong> Les objectifs à trois mois ont été posés avant la formation d&apos;octobre 2026 : des devis plus rapides, moins d&apos;échanges avec les transporteurs, des relances qui partent seules. Le premier bilan chiffré viendra quatre-vingt-dix jours après la décision.{' '}
+              <Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: c, fontWeight: 600 }}>Lire le cas</Link>
+            </li>
+            <li>
+              <strong>Un distributeur informatique de 58 salariés.</strong> La relance des devis a été validée sur de vrais dossiers avant que les dix référents ne soient formés, en juin 2026. L&apos;objectif d&apos;une équipe qui travaille comme si elle comptait soixante-dix personnes reste une cible, à vérifier quand le reste des équipes aura suivi, d&apos;octobre à décembre 2026.{' '}
+              <Link to="/etudes-de-cas-ia#distribution" style={{ color: c, fontWeight: 600 }}>Lire le cas</Link>
+            </li>
+            <li>
+              <strong>Un groupe industriel international.</strong> Chaque session pilote a été mesurée à chaud, puis corrigée pour la suivante ; deux mois plus tard, des managers racontent l&apos;usage qu&apos;ils en ont gardé, dont la préparation d&apos;un retour sur investissement pour un outil RH.{' '}
+              <Link to="/etudes-de-cas-ia#industrie" style={{ color: c, fontWeight: 600 }}>Lire le cas</Link>
+            </li>
+          </ul>
+        </div>
+      </section>
 
       {/* ── FAQ ── */}
       <section id="faq" style={{ padding: sectionPad, background: '#fff' }}>
@@ -1035,8 +1049,12 @@ export default function RoiIAEntreprisePage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR ── */}
-      <FounderNote />
+      {/* ── SIGNATURE ── */}
+      <section style={{ padding: '0 24px 48px', background: '#fff' }}>
+        <p style={{ ...wrap, maxWidth: 900, fontSize: 15, color: '#4B5563', lineHeight: 1.7, margin: '0 auto' }}>
+          Cette page est tenue par <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria. Il y range les études qui mesurent un gain, avec le modèle testé et la période de collecte, et retire celles qui ne tiennent plus.
+        </p>
+      </section>
 
       {/* ── CTA FINALE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>

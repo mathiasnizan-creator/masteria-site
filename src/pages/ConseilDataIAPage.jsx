@@ -1,51 +1,48 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Database, ShieldCheck, Sparkles, Search, BarChart3, Network,
-  Workflow, Cpu, Server, Lock, FileText, Target, Layers, Gauge, Check,
-  MapPin, GraduationCap, BookOpen, ExternalLink, Scale,
+  ArrowRight, Database, ShieldCheck, Search, BarChart3, Network,
+  Workflow, Cpu, Server, Lock, FileText, Target, Layers, Gauge,
+  MapPin, GraduationCap, BookOpen, ExternalLink, Scale, Sun, Factory, Landmark,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
+import { CADRAGE_HREF, CADRAGE_LABEL } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
  * Page pilier « conseil data & IA » (slug /conseil-data-ia). Comble un gap du
  * cluster conseil : « conseil en données et ia » (70, KD36), « conseil data & ia »
  * (50, KD12), « cabinet de conseil en data et ia » (50, KD29), « conseil en données
- * et ia ». Angle : la donnée est le carburant de l'IA. Un agent, un RAG ou un modèle
- * d'analyse ne tient ses promesses que si les données sont fiables et accessibles.
+ * et ia ». Angle : les DONNÉES. Un agent, un RAG ou un modèle d'analyse ne tient
+ * que si les données qu'il lit sont fiables et accessibles.
  *
  * POSITIONNEMENT : conseil + mise en œuvre, depuis l'identité cabinet IA. Masteria
- * cadre le socle data (audit, gouvernance, qualité, préparation), puis développe les
- * solutions IA qui s'appuient dessus (RAG, agents, analytics). Cœur high-ticket.
+ * cadre le socle de données (inventaire, gouvernance, qualité, préparation), puis
+ * développe les solutions IA qui s'appuient dessus (RAG, agents, analyse).
  *
- * INTÉGRITÉ : posture capacité. Aucun cas client nommé, aucun chiffre de résultat ni
- * prix inventé. On décrit compétences, méthode, livrables. Le conseil pur n'est pas
- * finançable OPCO ; seule la formation associée l'est (bloc secondaire).
+ * ENRICHISSEMENT 2026-09-03 (Semrush FR, export « conseil ») : grappe « data
+ * management » : « data consulting » (320, KD 11), « agence conseil data » (170,
+ * KD 12), « cabinet de conseil data management » (140, KD 11), « consultant big
+ * data » (140, CPC 6), « conseil data management » (110, KD 7), « conseil big
+ * data » (90), « conseil en gestion des données » (70), « gestion des données de
+ * référence » (210, KD 15), « quelles données constituent le patrimoine
+ * informationnel d'une entreprise » (140, KD 15).
  *
- * ENRICHISSEMENT 2026-09-03 (Semrush FR, export « conseil ») : la page absorbe
- * la grappe « data management » : « data consulting » (320, KD 11), « agence
- * conseil data » (170, KD 12), « cabinet de conseil data management » (140,
- * KD 11), « consultant big data » (140, CPC 6), « conseil data management »
- * (110, KD 7), « conseil big data » (90), « conseil en gestion des données »
- * (70), « gestion des données de référence » (210, KD 15), « quelles données
- * constituent le patrimoine informationnel d'une entreprise » (140, KD 15).
- * Réponse : section « Data management » (4 cartes + clarification des
- * appellations), 3 FAQ, offre JSON-LD, liens vers acculturation et formation data.
- *
- * Design premium identique à /agence-developpement-ia et /agence-seo-ia : icônes
- * lucide (zéro emoji), kickers, réponses directes citables, accent #2563EB.
+ * INTÉGRITÉ : aucun client nommé, aucun chiffre de résultat ni prix inventé. Le
+ * conseil n'est pas finançable par l'OPCO ; seule la formation associée l'est.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de CaseStudyCards, de
+ * FounderNote, d'OfficialSources ni de chiffre Anaconda (absent des chiffres
+ * autorisés) ; AI Act au calendrier de l'Omnibus (2026/1744) ; trois cas cités
+ * sous l'angle des données (src/data/etudes-de-cas.js, faits révisés le 05/10).
  */
 
 const SLUG = 'conseil-data-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Conseil data & IA : data management et données prêtes pour l'IA | Masteria"
-const META_DESC = "Cabinet de conseil data & IA (data consulting, data management) : audit, gouvernance, qualité et données de référence pour des projets d'IA fiables (RAG, agents, analytics). Cadrage gratuit."
+const META_TITLE = "Conseil data & IA : des données prêtes pour l'IA | Masteria"
+const META_DESC = "Conseil data & IA et data management : inventaire des sources, règles de gouvernance, référentiels, données prêtes pour un RAG ou des agents. Cadrage offert."
 const KEYWORDS = "conseil data ia, conseil data, data consulting, conseil data management, cabinet de conseil data management, agence conseil data, conseil big data, consultant big data, conseil en gestion des données, gestion des données de référence, patrimoine informationnel, gouvernance des données, qualité des données, audit data, préparation des données ia"
 
 /* ───────── Styles partagés ───────── */
@@ -74,9 +71,9 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Database,    label: 'Audit & gouvernance data' },
-  { icon: Search,      label: 'RAG sur vos données' },
-  { icon: ShieldCheck, label: 'RGPD & AI Act' },
+  { icon: Database,    label: 'Inventaire et gouvernance des données' },
+  { icon: Search,      label: 'RAG branché sur vos documents' },
+  { icon: ShieldCheck, label: 'RGPD et AI Act pris en compte' },
   { icon: MapPin,      label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
@@ -85,33 +82,33 @@ const HERO_BADGES = [
 const LIVRABLES = [
   {
     icon: Gauge,
-    title: 'Audit de maturité data',
-    desc: "Cartographie de vos sources, de leur qualité et de leur accessibilité. Nous identifions ce qui est exploitable par l'IA dès aujourd'hui, ce qui demande un travail de mise en forme et ce qui manque pour vos cas d'usage prioritaires.",
+    title: 'Inventaire de vos sources',
+    desc: "Nous recensons vos sources de données, leur état et la façon d'y accéder. Pour chaque cas d'usage visé, l'inventaire sépare ce qu'un modèle peut lire tel quel, ce qu'il faut remettre en forme et ce qui manque encore.",
   },
   {
     icon: ShieldCheck,
-    title: 'Gouvernance & qualité des données',
-    desc: "Catalogue des données, propriété et responsabilités, règles de qualité, conformité RGPD et lecture de l'AI Act. La gouvernance qui rend vos données fiables, traçables et utilisables sans risque par des systèmes d'IA.",
+    title: 'Gouvernance et qualité',
+    desc: "Un catalogue des données, un propriétaire pour chacune, des règles de qualité, une analyse RGPD et une lecture de l'AI Act. Ce cadre rend vos données traçables et sûres à confier à un système d'IA.",
   },
   {
     icon: Layers,
-    title: "Préparation des données pour l'IA",
-    desc: "Nettoyage, structuration, déduplication et mise en forme de vos contenus et bases pour qu'un modèle puisse les exploiter. La préparation qui sépare une démonstration prometteuse d'un usage réellement fiable.",
+    title: "Préparation pour l'IA",
+    desc: "Nettoyage, structuration, suppression des doublons, mise en forme des contenus et des bases. C'est l'étape qui transforme une démonstration séduisante en usage sur lequel une équipe peut compter.",
   },
   {
     icon: Database,
-    title: 'RAG & exploitation par l\'IA',
-    desc: "Vos documents et vos bases deviennent interrogeables en langage naturel, avec des réponses sourcées. Le RAG (retrieval-augmented generation) ancre l'IA dans votre réalité plutôt que dans une connaissance générale et approximative.",
+    title: 'RAG sur vos documents',
+    desc: "On interroge vos documents et vos bases en français courant, et chaque réponse cite sa source. Le RAG (génération augmentée par la recherche) oblige le modèle à s'appuyer sur vos textes avant de répondre.",
   },
   {
     icon: BarChart3,
-    title: 'Analytics & dataviz augmentés par l\'IA',
-    desc: "Reporting, analyse et copilotes data qui rendent vos chiffres lisibles et interrogeables par les équipes métier. L'IA fait remonter les écarts et les tendances ; vos équipes gardent la décision.",
+    title: 'Analyse et tableaux de bord assistés',
+    desc: "Rapports, analyses et assistants de données qui rendent vos chiffres lisibles et interrogeables par les équipes métier. L'IA signale les écarts et les tendances ; la décision reste à vos responsables.",
   },
   {
     icon: Network,
-    title: 'Architecture & flux de données',
-    desc: "Connecteurs, pipelines et circulation des données entre vos outils, avec un hébergement dans l'Union européenne selon vos exigences. Le socle technique qui alimente vos solutions IA sans ressaisie ni silo.",
+    title: 'Flux et architecture',
+    desc: "Connecteurs, chaînes de traitement et circulation des données entre vos logiciels, avec un hébergement européen quand vos exigences le demandent. La tuyauterie qui alimente vos outils d'IA sans ressaisie ni cloisonnement.",
   },
 ]
 
@@ -120,28 +117,28 @@ const LIVRABLES = [
 const ETAPES = [
   {
     num: '01',
-    title: 'Audit du patrimoine data',
-    desc: "Nous mesurons votre point de départ : sources, qualité, accessibilité, gouvernance existante et conformité. Nous relions chaque constat aux cas d'usage IA que vous visez, pour savoir ce qui bloque réellement.",
+    title: 'Cartographier le patrimoine',
+    desc: "Nous mesurons votre point de départ : sources, qualité, accès, règles existantes et conformité. Chaque constat est rattaché au cas d'usage IA que vous visez, pour savoir ce qui bloque et ce qui ne gêne personne.",
   },
   {
     num: '02',
-    title: 'Cartographie & priorisation',
-    desc: "Nous classons les chantiers data par impact sur vos projets IA et par faisabilité. Vous obtenez une trajectoire claire : ce qu'il faut traiter d'abord pour débloquer le premier cas d'usage à valeur.",
+    title: 'Classer les chantiers',
+    desc: "Les chantiers de données sont rangés selon leur effet sur vos projets d'IA et leur difficulté. Vous savez ce qu'il faut traiter d'abord pour débloquer le premier cas qui rapporte.",
   },
   {
     num: '03',
-    title: 'Gouvernance & qualité',
-    desc: "Nous posons les règles : catalogue, propriété, qualité, RGPD et lecture de l'AI Act. La donnée devient fiable et traçable, condition d'un usage de l'IA maîtrisé et défendable.",
+    title: 'Poser les règles',
+    desc: "Catalogue, propriétaires, contrôles de qualité, analyse RGPD, lecture de l'AI Act. La donnée devient traçable et défendable : un usage de l'IA appuyé sur elle se justifie devant un auditeur comme devant un client.",
   },
   {
     num: '04',
-    title: "Mise à disposition pour l'IA",
-    desc: "Nous préparons et structurons les données, posons les connecteurs et, lorsque le cas l'exige, le RAG. Les données passent d'un état brut à un état réellement exploitable par vos solutions d'IA.",
+    title: 'Rendre les données lisibles par l\'IA',
+    desc: "Nous préparons et structurons les données, installons les connecteurs et, si le cas l'exige, le RAG. Les fichiers passent d'un état brut à un état que vos outils d'IA exploitent sans contresens.",
   },
   {
     num: '05',
-    title: 'Exploitation & mesure',
-    desc: "Nous branchons les cas d'usage (RAG, agents, analytics) sur le socle préparé et mesurons la qualité des résultats. Le travail data se juge à ce qu'il rend possible côté IA, pas en soi.",
+    title: 'Brancher les usages et mesurer',
+    desc: "Les cas d'usage (RAG, agents, analyses) sont raccordés au socle préparé, et la justesse de leurs réponses est contrôlée. Le travail sur les données vaut par ce qu'il rend possible ensuite.",
   },
 ]
 
@@ -150,137 +147,160 @@ const ETAPES = [
 const TABLE = [
   {
     critere: 'Qualité',
-    sans: 'Doublons, champs manquants, formats hétérogènes',
-    avec: 'Données nettoyées, structurées et contrôlées',
+    sans: 'Doublons, champs vides, formats qui changent d\'un fichier à l\'autre',
+    avec: 'Données nettoyées, structurées et vérifiées',
   },
   {
-    critere: 'Accessibilité',
-    sans: 'Données dispersées en silos, difficiles à relier',
-    avec: 'Sources connectées et interrogeables par l\'IA',
+    critere: 'Accès',
+    sans: 'Informations éparpillées entre logiciels, impossibles à relier',
+    avec: "Sources raccordées, interrogeables par l'IA",
   },
   {
     critere: 'Gouvernance',
-    sans: 'Propriété floue, conformité RGPD incertaine',
-    avec: 'Catalogue, responsabilités et conformité posés',
+    sans: 'Personne ne sait qui possède quoi ; le RGPD reste un point d\'interrogation',
+    avec: 'Catalogue, propriétaires et conformité écrits',
   },
   {
-    critere: "Résultat avec l'IA",
-    sans: 'RAG approximatif, réponses non fiables',
-    avec: 'Réponses sourcées, agents et analyses fiables',
+    critere: "Avec l'IA",
+    sans: 'RAG approximatif, réponses sur lesquelles on ne peut pas s\'appuyer',
+    avec: 'Réponses sourcées, agents et analyses dignes de confiance',
   },
 ]
 
 /* ───────── Pourquoi un cabinet IA pour la data ───────── */
 
 const WHY = [
-  { icon: Target, title: "La data au service d'un cas d'usage IA", desc: "Nous ne traitons pas la donnée pour elle-même : chaque chantier data est relié à un cas d'usage IA concret. Vous investissez sur ce qui débloque réellement un agent, un RAG ou une analyse, pas sur un grand projet data sans débouché." },
-  { icon: Workflow, title: 'Nous préparons ET nous exploitons', desc: "Cabinet et agence de développement IA, nous ne nous arrêtons pas au diagnostic : nous préparons les données puis construisons les solutions qui s'appuient dessus, sans passer la main à un intégrateur tiers." },
-  { icon: Cpu, title: 'Expertise RAG et modèles', desc: "Notre cœur de métier, c'est l'IA depuis 2022 : RAG, vectorisation, choix des modèles, garde-fous. Nous savons précisément quelles données préparer, et comment, pour qu'un modèle les exploite correctement." },
-  { icon: Lock, title: 'Conformité et souveraineté', desc: "RGPD, cloisonnement des données sensibles, hébergement dans l'Union européenne possible : la conformité est un critère de conception du socle data, pas une couche ajoutée après coup." },
+  { icon: Target, title: "Chaque chantier sert un cas d'usage", desc: "Nous ne traitons jamais la donnée pour elle-même : chaque chantier est relié à un usage précis de l'IA. Votre budget va à ce qui débloque un agent, un RAG ou une analyse, et non à un grand projet de données sans débouché." },
+  { icon: Workflow, title: 'Préparer, puis exploiter', desc: "Cabinet et atelier de développement, nous allons au-delà du constat : nous préparons les données puis construisons les outils qui les utilisent, sans transmettre le dossier à un intégrateur." },
+  { icon: Cpu, title: 'Le RAG et les modèles, notre quotidien', desc: "Recherche documentaire augmentée, vectorisation, choix des modèles, garde-fous : c'est notre métier depuis 2022. Nous savons quelles données préparer, et de quelle façon, pour qu'un modèle les lise correctement." },
+  { icon: Lock, title: 'Conformité dès la conception', desc: "RGPD, cloisonnement des données sensibles, hébergement dans l'Union européenne si nécessaire : la conformité oriente l'architecture du socle dès le premier jour, au lieu d'arriver en couche finale." },
 ]
-
-/* ───────── FAQ ───────── */
 
 /* ───────── Data management (grappe « conseil data management », « données de référence ») ───────── */
 
 const DATA_MANAGEMENT = [
   {
     icon: Database,
-    title: 'Données de référence : un seul client, un seul produit',
-    desc: "Clients, produits, fournisseurs, sites, articles : les données de référence sont celles que tous les systèmes partagent. Quand elles existent en trois versions dans le CRM, l'ERP et un tableur, l'IA répond faux avec assurance. La gestion des données de référence fixe une source unique, un propriétaire et des règles de mise à jour avant tout projet d'IA.",
+    title: 'Données de référence : une seule fiche par client et par produit',
+    desc: "Clients, produits, fournisseurs, sites, articles : ces fiches circulent entre tous vos logiciels. Quand un même client existe en trois versions (gestion commerciale, logiciel de relation client, tableur), l'IA répond faux avec aplomb. Gérer les données de référence, c'est désigner une source unique, un propriétaire et des règles de mise à jour avant de lancer l'IA.",
   },
   {
     icon: Layers,
-    title: 'Gouvernance et gestion des données au quotidien',
-    desc: "Qui est propriétaire de quelle donnée, qui peut la modifier, combien de temps on la garde, comment on mesure sa qualité : la gouvernance répond à ces questions une fois pour toutes. Nous la dimensionnons à votre taille : trois rôles et un catalogue tenu à jour font plus qu'un comité qui ne se réunit jamais.",
+    title: 'La gestion des données au quotidien',
+    desc: "Qui possède telle donnée, qui peut la modifier, combien de temps on la conserve, comment on mesure sa qualité : la gouvernance tranche ces questions une fois pour toutes. Nous la dimensionnons à votre entreprise ; trois rôles clairs et un catalogue à jour valent mieux qu'un comité qui ne se réunit jamais.",
   },
   {
     icon: Server,
-    title: 'Big data ou données dispersées ? Le bon diagnostic',
-    desc: "La plupart des PME et ETI n'ont pas un problème de volume mais de dispersion : des données utiles, réparties entre logiciels, boîtes mail et fichiers partagés. Un conseil big data classique répond par une architecture ; nous répondons d'abord par un inventaire, et nous ne recommandons une plateforme que si un cas d'usage IA la justifie.",
+    title: 'Big data ou données dispersées ?',
+    desc: "La plupart des PME et des ETI souffrent de dispersion bien plus que de volume : des informations utiles, réparties entre logiciels, boîtes mail et dossiers partagés. Un conseil big data répond par une plateforme ; nous commençons par un inventaire, et nous ne recommandons une plateforme que si un cas d'usage la justifie.",
   },
   {
     icon: FileText,
-    title: 'Le patrimoine informationnel, cartographié',
-    desc: "Données structurées des logiciels métier, documents et contrats, mails, données de capteurs ou de production, données personnelles, savoir-faire non écrit : voilà ce qui constitue le patrimoine informationnel d'une entreprise. Nous le cartographions par source, sensibilité et valeur pour l'IA, ce qui donne la liste des chantiers et leur ordre.",
+    title: 'Le patrimoine informationnel sur une carte',
+    desc: "Bases des logiciels métier, contrats et procédures, mails et tickets, mesures de production, données personnelles, savoir-faire des anciens : voilà ce qui forme le patrimoine informationnel de votre société. Nous le cartographions par source, par sensibilité et par intérêt pour l'IA ; l'ordre des chantiers en découle.",
+  },
+]
+
+/* ───────── Études de cas citées sous l'angle des données (src/data/etudes-de-cas.js, révisés le 05/10/2026) ───────── */
+
+const DATA_CASES = [
+  {
+    id: 'photovoltaique',
+    icon: Sun,
+    sector: 'Distribution photovoltaïque · PME',
+    text: "Ici, tout passe par Odoo, et le temps se perd autour : des numéros de série retapés à la main faute de lecteur capable d'ouvrir les fichiers d'entrepôt, des mails transformés ligne à ligne en devis. Le plan retient un assistant qui importe les réceptions d'entrepôt dans Odoo, et une base commune (catalogue, références, transporteurs) remplace les souvenirs de chacun.",
+  },
+  {
+    id: 'industrie',
+    icon: Factory,
+    sector: 'Industrie · groupe international',
+    text: "Les ateliers Excel partent de fichiers internes au groupe : tarifs, activité, coûts, données RH. Le périmètre de Copilot, l'assistant de Microsoft, a été fixé avant la formation : il n'accède qu'aux documents rangés dans OneDrive et SharePoint, et les serveurs de partage lui restent fermés. Tout cela se passe en pleine bascule vers S/4HANA, et des managers réclament déjà un module sur les données SAP.",
+  },
+  {
+    id: 'conseil-financier',
+    icon: Landmark,
+    sector: "Conseil financier · appels d'offres",
+    text: "Avant d'écrire le moindre prompt, le cabinet a rassemblé sa base de connaissance : une fiche sur son histoire et ses expertises, puis une liste ordonnée de fichiers (trames de mémoires techniques, analyses de dossiers d'appel d'offres, mémoires ayant obtenu les meilleures notes, références détaillées). Les assistants tournent sur une offre professionnelle qui n'utilise pas ces fichiers pour entraîner les modèles.",
   },
 ]
 
 const FAQ = [
   {
-    q: "Qu'est-ce que le conseil data & IA ?",
-    a: "Le conseil data & IA, ou conseil en données et IA, aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Il couvre l'audit du patrimoine de données, la gouvernance et la qualité, la préparation des données pour l'IA et leur exploitation (RAG, agents, analytics). Chez Masteria, ce conseil se prolonge par la mise en œuvre : nous préparons le socle data, puis développons les solutions IA qui s'appuient dessus.",
+    q: "Que recouvre le conseil data & IA ?",
+    a: "Le conseil data & IA, ou conseil en données et IA, aide une entreprise à inventorier, gouverner et préparer ses données pour que ses projets d'intelligence artificielle donnent des résultats fiables. Il couvre l'inventaire des sources, les règles de qualité et de gouvernance, la mise en forme des données à destination de l'IA, puis leur exploitation (RAG, agents, analyse). Chez Masteria, la même équipe passe ensuite à la réalisation : elle prépare le socle, puis développe les outils qui s'en servent.",
   },
   {
     q: "Pourquoi la qualité des données est-elle décisive pour l'IA ?",
-    a: "Parce qu'un modèle d'IA ne vaut que les données auxquelles il accède. Un agent branché sur des données incomplètes, un RAG nourri de documents mal structurés ou une analyse fondée sur des chiffres incohérents produiront des résultats peu fiables, quelle que soit la qualité du modèle. La plupart des projets d'IA qui échouent butent sur la donnée bien avant de buter sur la technologie. Cadrer le socle data en amont est la façon la plus sûre de fiabiliser un projet d'IA.",
+    a: "Un modèle répond avec ce qu'on lui donne à lire. Branché sur des fiches incomplètes, un agent se trompe ; nourri de documents mal rangés, un RAG cite le mauvais passage ; appuyée sur des chiffres incohérents, une analyse conclut de travers, et le meilleur modèle n'y change rien. Les projets d'IA qui déçoivent butent le plus souvent sur leurs données, bien avant la technologie. Remettre le socle d'aplomb en amont reste la meilleure garantie d'un résultat fiable.",
   },
   {
     q: "Faut-il un data lake ou un gros projet data avant de faire de l'IA ?",
-    a: "Pas nécessairement. Un grand chantier data sans cas d'usage défini est un risque classique : beaucoup d'investissement, peu de valeur à l'arrivée. Nous recommandons l'inverse : partir d'un cas d'usage IA prioritaire, identifier les seules données qu'il exige, et les préparer. Le socle data se construit alors par paliers, débloqué cas d'usage par cas d'usage, plutôt qu'en une refonte massive préalable.",
+    a: "Rarement. Un grand chantier de données lancé sans cas d'usage précis coûte cher et rapporte peu. Nous procédons dans l'autre sens : choisir un cas d'usage prioritaire, repérer les seules données dont il a besoin, les préparer. Le socle se construit ensuite par étapes, un cas après l'autre, sans refonte massive préalable.",
   },
   {
     q: "Comment gérez-vous la conformité RGPD et l'AI Act sur les données ?",
-    a: "La conformité est intégrée dès le cadrage. Nous cartographions les données sensibles, posons les règles d'accès et de cloisonnement, et documentons les usages au regard du RGPD et de l'AI Act européen. Un hébergement dans l'Union européenne est possible selon vos exigences. L'objectif est un socle data exploitable par l'IA sans créer de risque réglementaire ni de fuite de données.",
+    a: "Dès le cadrage. Nous repérons les données sensibles, fixons qui peut accéder à quoi, cloisonnons ce qui doit l'être et documentons chaque usage au regard des deux règlements européens, RGPD et AI Act. Si vos exigences l'imposent, les données restent hébergées dans l'Union européenne. Le but : un socle que l'IA peut exploiter sans exposer l'entreprise à un risque réglementaire ou à une fuite.",
   },
   {
     q: "Quelles données constituent le patrimoine informationnel d'une entreprise ?",
-    a: "Six familles, en pratique. Les données structurées des logiciels métier : clients, commandes, factures, stocks, ressources humaines, dans le CRM, l'ERP ou la paie. Les documents : contrats, procédures, offres, rapports, plans, souvent dans des dossiers partagés. Les échanges : mails, tickets, comptes rendus, messageries. Les données techniques : capteurs, machines, logs, mesures de production. Les données personnelles, qui traversent les familles précédentes et relèvent du RGPD. Et le savoir-faire non écrit, celui des personnes expérimentées, que l'IA ne peut exploiter que s'il est formalisé. Une mission de conseil data & IA commence par cartographier ces familles, source par source, avec leur qualité, leur sensibilité et leur valeur pour un cas d'usage IA.",
+    a: "On peut les ranger en six familles. Les bases de vos logiciels de gestion : fiches clients, commandes, factures, niveaux de stock, bulletins de paie, dans la gestion commerciale, l'ERP ou l'outil RH. Les documents : contrats, procédures, offres, rapports, plans, souvent dans des dossiers partagés. Les échanges écrits : courriels, demandes d'assistance, comptes rendus, conversations internes. Les mesures techniques : capteurs, machines, journaux, relevés de production. Les données personnelles, présentes dans plusieurs des familles précédentes et soumises au RGPD. Enfin l'expérience des collaborateurs chevronnés, jamais consignée, que l'IA ne peut exploiter qu'une fois mise par écrit. Une mission de conseil data & IA commence par cartographier ces familles, source après source, avec leur état, leur sensibilité et leur intérêt pour un cas d'usage.",
   },
   {
-    q: "Qu'est-ce que la gestion des données de référence, et pourquoi compte-t-elle pour l'IA ?",
-    a: "Les données de référence sont celles que plusieurs systèmes partagent : la fiche client, la fiche produit, la fiche fournisseur, la liste des sites ou des articles. Les gérer, c'est décider d'une source unique pour chacune, d'un propriétaire, de règles de création et de mise à jour, et d'un contrôle de qualité régulier. Pour l'IA, c'est décisif : un agent qui lit trois fiches client contradictoires, ou un RAG qui trouve deux tarifs pour le même produit, produit des réponses fausses avec une parfaite assurance. La gestion des données de référence n'exige pas forcément un outil dédié : pour une PME, un référentiel tenu dans le logiciel principal et des règles écrites suffisent souvent.",
+    q: "Gérer les données de référence : de quoi parle-t-on, et pourquoi est-ce décisif pour l'IA ?",
+    a: "Les données de référence sont les fiches que plusieurs logiciels partagent : client, produit, fournisseur, liste des sites ou des articles. Les gérer revient à choisir pour chacune une source unique, un propriétaire, des règles de création et de modification, puis à contrôler leur qualité à intervalle régulier. Pour l'IA, l'enjeu est direct : un agent qui trouve trois fiches contradictoires pour un même client, ou un RAG qui lit deux tarifs pour un produit, répond faux sans la moindre hésitation. Un outil spécialisé n'est pas toujours nécessaire ; dans une PME, une fiche maîtresse gérée dans votre logiciel central et quelques règles écrites suffisent souvent.",
   },
   {
     q: "Faut-il un consultant big data pour un projet d'IA ?",
-    a: "Rarement, pour une PME ou une ETI. Le big data désigne des volumes, des vitesses et des variétés de données qui dépassent les outils classiques : c'est le cas des plateformes grand public, des télécoms ou de l'industrie fortement instrumentée. La majorité des entreprises ont un problème différent : des données de taille raisonnable mais dispersées, incomplètes ou contradictoires. Un consultant big data répond par une architecture de plateforme ; le conseil data & IA répond par un inventaire, une gouvernance et une préparation ciblée sur le cas d'usage. Quand le volume justifie réellement une plateforme, nous le disons et nous cadrons le besoin avant que vous n'engagiez un intégrateur.",
+    a: "Rarement, dans une PME ou une ETI. Le big data désigne des volumes, des vitesses et des variétés de données que les outils courants ne savent plus traiter : plateformes grand public, télécoms, industrie bardée de capteurs. La plupart des entreprises ont un autre problème, celui de données de taille raisonnable mais éparpillées, lacunaires ou contradictoires. Un consultant big data propose une architecture de plateforme ; le conseil data & IA propose un inventaire, des règles et une préparation ciblée sur le cas d'usage. Si votre volume justifie une plateforme, nous vous le disons et nous rédigeons le besoin avant que vous ne consultiez un intégrateur.",
   },
   {
-    q: "Combien coûte une mission de conseil data & IA ?",
-    a: "La mission se chiffre sur devis, selon le périmètre : un audit data ponctuel, un chantier de gouvernance ou une préparation complète des données pour un cas d'usage IA ne représentent pas le même engagement. Nous établissons une proposition après un premier échange qui cadre vos objectifs et votre point de départ. Le conseil est une prestation de service, non finançable par l'OPCO ; seule la formation associée, certifiée Qualiopi, l'est.",
+    q: "Quel budget prévoir pour une mission data & IA ?",
+    a: "Le prix est forfaitaire, et le devis arrive quand le périmètre est connu : un inventaire ponctuel, un chantier de gouvernance et la préparation complète des données d'un cas d'usage ne demandent pas le même effort. Le cadrage (30 minutes offertes) le précède ; il porte sur vos objectifs et sur la santé de vos fichiers. Un inventaire resserré se chiffre en milliers d'euros ; un socle mis en production se compte plutôt en dizaines de milliers. La formation qui accompagne la mission peut être financée ; le conseil, prestation de service, n'est pas finançable par votre OPCO.",
   },
   {
     q: "Intervenez-vous à Lyon et à distance ?",
-    a: "Les deux. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, intervient dans toute la France ainsi qu'à l'international, en Europe, aux États-Unis et en Inde. L'essentiel du travail data se mène à distance ; les phases de cadrage, d'ateliers de gouvernance ou de transfert aux équipes peuvent se tenir sur site selon vos préférences.",
+    a: "Oui, des deux façons. Le cabinet a son siège à Lyon et mène des missions sur tout le territoire et hors de France, jusqu'aux États-Unis et en Inde. L'essentiel du travail sur les données se fait à distance, avec des accès que vous ouvrez et refermez ; le cadrage, les ateliers de gouvernance et la passation aux équipes peuvent avoir lieu dans vos locaux si vous le souhaitez.",
   },
   {
     q: "Qu'est-ce que le RAG et pourquoi a-t-il besoin de données préparées ?",
-    a: "Le RAG (retrieval-augmented generation, ou génération augmentée par la recherche) est une technique qui branche un modèle de langage sur vos propres documents et bases : au lieu de répondre depuis sa connaissance générale, le modèle va d'abord retrouver les passages pertinents dans vos données, puis formule une réponse sourcée. Sa fiabilité dépend directement de la qualité des données indexées. Des documents mal structurés, des doublons ou des contenus obsolètes produisent des réponses approximatives. Préparer et structurer les données en amont est donc la condition d'un RAG réellement fiable.",
+    a: "Le RAG (retrieval-augmented generation, ou génération augmentée par la recherche) relie un modèle de langage à vos documents et à vos bases : avant de répondre, le modèle recherche les passages pertinents dans vos données, puis rédige une réponse qui les cite. Sa justesse dépend donc de ce qu'il trouve. Documents mal structurés, doublons ou versions périmées produisent des réponses bancales. La préparation en amont conditionne un RAG sur lequel vos équipes peuvent compter.",
   },
   {
     q: "Combien de temps prend la préparation des données pour un projet IA ?",
-    a: "Cela dépend de l'état de départ et du périmètre du cas d'usage. Un socle déjà propre et bien gouverné peut être rendu exploitable en quelques semaines ; des données dispersées en silos, hétérogènes ou non documentées demandent davantage. La préparation des données reste l'étape la plus chronophage d'un projet d'IA : selon les enquêtes du secteur (Anaconda, State of Data Science), les équipes data y consacrent près de la moitié de leur temps. Notre approche par cas d'usage limite ce coût en ne préparant que les données réellement nécessaires au premier usage à valeur.",
+    a: "Tout dépend de l'état de départ et du périmètre du cas d'usage. Un socle déjà propre et bien tenu devient exploitable en quelques semaines ; des données éparpillées, hétérogènes ou sans documentation demandent davantage. La préparation reste souvent l'étape la plus longue d'un projet d'IA. Notre approche limite ce poste en ne traitant que les données dont le premier usage a besoin ; la durée se précise au cadrage.",
   },
   {
     q: "Faut-il anonymiser les données avant de les utiliser avec l'IA ?",
-    a: "Tout dépend de la sensibilité des données et du cas d'usage. Les données personnelles relèvent du RGPD : leur traitement par un système d'IA suppose une base légale, une minimisation et, selon les cas, une anonymisation ou une pseudonymisation. Nous cartographions les données sensibles dès le cadrage, posons les règles d'accès et de cloisonnement, et privilégions, lorsque c'est requis, un hébergement dans l'Union européenne. L'objectif est un socle exploitable par l'IA sans créer de risque réglementaire ni de fuite de données.",
+    a: "Cela dépend de leur sensibilité et du cas d'usage. Les données personnelles relèvent du RGPD : les confier à un système d'IA suppose une base légale, une minimisation et, selon le cas, une anonymisation ou une pseudonymisation. Nous repérons ces données dès le cadrage, fixons les règles d'accès et de cloisonnement et retenons un hébergement européen quand la situation l'exige.",
   },
   {
     q: "Conseil data & IA ou ESN data : quelle différence ?",
-    a: "Une ESN data fournit des compétences techniques (ingénieurs data, data scientists) pour construire des entrepôts, des pipelines ou des tableaux de bord, souvent indépendamment de l'usage final. Un cabinet de conseil data & IA part de l'inverse : du cas d'usage IA visé, pour ne préparer que les données qu'il exige et éviter les grands chantiers sans débouché. Masteria réunit les deux logiques : nous cadrons le socle data en fonction de l'IA, puis développons nous-mêmes les solutions qui s'appuient dessus, sans passer la main à un intégrateur tiers.",
+    a: "Une ESN data met à disposition des compétences techniques (ingénieurs de données, data scientists) pour bâtir entrepôts, chaînes de traitement ou tableaux de bord, souvent sans partir de l'usage final. Un cabinet de conseil data & IA part du cas d'usage visé et ne prépare que les données qu'il réclame, ce qui évite les grands chantiers sans débouché. Masteria réunit les deux logiques : nous cadrons le socle en fonction de l'IA, puis nous développons nous-mêmes les outils qui l'exploitent.",
   },
 ]
 
-/* ───────── Repères chiffrés (faits sourcés, citables) ───────── */
+/* ───────── Repères datés et sourcés (citables) ───────── */
+/* Calendrier AI Act : brief du 07/10/2026 (Omnibus, règlement (UE) 2026/1744).
+   Article 10 de l'AI Act : données et gouvernance des données des systèmes à haut risque. */
 
 const MARKET_STATS = [
   {
-    icon: Layers,
-    stat: '≈ 50 %',
-    label: "du temps des équipes data consacré à préparer et nettoyer les données avant tout usage",
-    source: 'Anaconda, State of Data Science',
+    icon: ShieldCheck,
+    stat: '25 mai 2018',
+    label: "date d'application du RGPD, qui encadre aussi les données personnelles lues ou produites par un assistant ou un agent",
+    source: 'CNIL',
   },
   {
     icon: Scale,
-    stat: '1ᵉʳ août 2024',
-    label: "entrée en vigueur de l'AI Act européen (règlement 2024/1689) : usages des données par l'IA documentés et classés par risque",
-    source: 'Commission européenne',
+    stat: '2 août 2026',
+    label: "les obligations de transparence (article 50) deviennent applicables : un système qui converse avec le public doit se présenter comme une machine",
+    source: 'Règlement (UE) 2024/1689',
   },
   {
-    icon: ShieldCheck,
-    stat: '25 mai 2018',
-    label: "application du RGPD, socle de conformité de tout traitement de données personnelles par un système d'IA",
-    source: 'CNIL',
+    icon: Layers,
+    stat: 'Décembre 2027',
+    label: "échéance repoussée pour les usages de la liste « haut risque » (annexe III) ; ils devront alors respecter, entre autres, l'article 10 sur la qualité des données",
+    source: 'Règlement (UE) 2026/1744',
   },
 ]
 
@@ -289,32 +309,32 @@ const MARKET_STATS = [
 const GLOSSARY = [
   {
     term: 'RAG (retrieval-augmented generation)',
-    def: "Technique qui branche un modèle de langage sur vos documents et bases : il retrouve les passages pertinents dans vos données, puis formule une réponse sourcée plutôt qu'une connaissance générale et approximative.",
+    def: "Méthode qui relie un modèle de langage à vos documents et à vos bases : il recherche d'abord les passages utiles dans vos fichiers, puis rédige une réponse qui les cite.",
   },
   {
     term: 'Gouvernance des données',
-    def: "Ensemble des règles qui rendent les données fiables et traçables : catalogue, propriété et responsabilités, règles de qualité, conformité RGPD et AI Act.",
+    def: "Les règles qui rendent les données traçables et sûres : catalogue, propriétaires, contrôles de qualité, respect des textes européens (RGPD, AI Act).",
   },
   {
     term: 'Préparation des données',
-    def: "Nettoyage, structuration, déduplication et mise en forme des contenus et bases pour qu'un modèle puisse les exploiter. L'étape qui sépare une démonstration d'un usage fiable.",
+    def: "Nettoyage, structuration, suppression des doublons et mise en forme des contenus pour qu'un modèle puisse les lire sans contresens.",
   },
   {
     term: 'Qualité des données',
-    def: "Niveau de complétude, de cohérence, de fraîcheur et d'homogénéité des données. Un modèle ne vaut que les données auxquelles il accède.",
+    def: "Mesure de la complétude, de la cohérence, de la fraîcheur et de l'homogénéité des informations. Elle borne la qualité de toute réponse de l'IA.",
   },
   {
     term: 'Vectorisation (embeddings)',
-    def: "Conversion de textes ou documents en représentations numériques permettant à l'IA de retrouver les contenus par sens et non par mots-clés exacts. Brique technique du RAG.",
+    def: "Conversion de textes en suites de nombres qui permettent à l'IA de retrouver un passage d'après son sens, même sans les mots exacts. Brique technique du RAG.",
   },
 ]
 
 /* ───────── Sources de référence (liens d'autorité, suivis) ───────── */
 
 const REFERENCES = [
-  { label: "AI Act — texte officiel (EUR-Lex, règlement 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
-  { label: "IA et données personnelles — CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { label: "Cadre réglementaire de l'IA — Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai' },
+  { label: "L'AI Act (règlement n° 2024/1689) dans sa version officielle, sur EUR-Lex", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+  { label: "Le règlement 2026/1744 et son nouveau calendrier du haut risque", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { label: "Les pages de la CNIL consacrées à l'IA et aux données personnelles", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 /* ───────── JSON-LD ───────── */
@@ -322,8 +342,8 @@ const REFERENCES = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Conseil data & IA — Masteria',
-  description: "Conseil data & IA pour les entreprises : audit du patrimoine de données, gouvernance et qualité, préparation des données pour l'IA, RAG, analytics et architecture des flux. Du cadrage à la mise en œuvre des solutions IA.",
+  name: 'Conseil data & IA, Masteria',
+  description: "Conseil data & IA pour les entreprises : inventaire du patrimoine de données, gouvernance et qualité, préparation des données pour l'IA, RAG, analyse assistée et architecture des flux. Du cadrage jusqu'aux outils d'IA en service.",
   url: 'https://www.master-ia.fr/conseil-data-ia',
   serviceType: 'Conseil en données et intelligence artificielle',
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
@@ -338,11 +358,11 @@ const serviceJsonLd = {
     '@type': 'OfferCatalog',
     name: 'Prestations de conseil data & IA',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Audit de maturité data', description: "Cartographie des sources, de leur qualité et de leur accessibilité pour l'IA." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gouvernance & qualité des données', description: "Catalogue, propriété, qualité, conformité RGPD et AI Act." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Préparation des données pour l'IA", description: "Nettoyage, structuration et mise en forme pour exploitation par les modèles." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'RAG & exploitation par l\'IA', description: "Réponses sourcées ancrées dans vos documents et vos bases." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Analytics & dataviz augmentés par l\'IA', description: "Reporting et analyse interrogeables par les équipes métier." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Inventaire des sources de données', description: "Recensement des sources, de leur état et de leur accès, rattaché aux cas d'usage IA." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Gouvernance et qualité des données', description: "Catalogue, propriétaires, contrôles de qualité, conformité RGPD et AI Act." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Préparation des données pour l'IA", description: "Nettoyage, structuration et mise en forme pour que les modèles lisent les données sans contresens." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'RAG sur vos documents', description: "Réponses sourcées, appuyées sur vos documents et vos bases." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Analyse et tableaux de bord assistés par IA', description: "Rapports et analyses interrogeables par les équipes métier." } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Conseil en data management et données de référence', description: "Gestion des données de référence, gouvernance dimensionnée, cartographie du patrimoine informationnel." } },
     ],
   },
@@ -359,7 +379,7 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-14',
-  dateModified: '2026-09-03',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-data-ia#webpage' },
   about: ['Conseil data & IA', 'Data management', 'Gouvernance des données', 'Gestion des données de référence', 'Qualité des données', 'Patrimoine informationnel', 'RAG (retrieval-augmented generation)'],
@@ -416,7 +436,7 @@ export default function ConseilDataIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-06-14"
-        dateModified="2026-09-03"
+        dateModified="2026-10-07"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -456,25 +476,25 @@ export default function ConseilDataIAPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
+            Rédaction : <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui cadre nos missions sur les données · dernière révision le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le conseil data & IA, ou conseil en données et IA, aide les entreprises à structurer, gouverner et valoriser leurs données pour que leurs projets d'intelligence artificielle tiennent leurs promesses. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse reste une démonstration. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria cadre votre socle data, puis développe les solutions IA qui s'appuient dessus.</strong>
+            Le conseil data & IA, ou conseil en données et IA, aide une entreprise à inventorier, gouverner et préparer ses données pour que ses projets d'intelligence artificielle tiennent dans la durée. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse ne dépasse pas le stade de la démonstration. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria remet votre socle de données en ordre, puis développe les outils d'IA qui s'en servent.</strong>
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            La donnée est le carburant de l'IA, et c'est presque toujours là que les projets butent. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon, nous relions chaque chantier data à un cas d'usage IA précis : nous préparons les données utiles, posons la gouvernance, puis construisons les solutions qui les exploitent.
+            Un outil d'IA ne fait jamais mieux que les fichiers qu'on lui confie, et c'est presque toujours là que les projets calent. Depuis 2022, année où Mathias Nizan a ouvert le cabinet à Lyon, nous rattachons chaque chantier de données à un cas d'usage précis : préparer ce qui sert, écrire les règles, puis construire les outils qui exploitent le tout.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre projet data & IA
+            <Link to={CADRAGE_HREF} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Ce que nous faisons
+              Les six prestations
             </a>
           </div>
 
@@ -498,15 +518,15 @@ export default function ConseilDataIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Nos prestations</Kicker>
+              <Kicker>Ce que nous faisons</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Que couvre une mission de conseil data & IA ?
+                Six prestations composent une mission de conseil data & IA
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une mission de conseil data & IA couvre l'audit de votre patrimoine de données, la gouvernance et la qualité, la préparation des données pour l'IA, le RAG, l'analytics augmenté et l'architecture des flux. L'objectif est constant : rendre vos données fiables, accessibles et réellement exploitables par vos solutions d'intelligence artificielle.</strong>
+                <strong>Une mission de conseil data & IA réunit l'inventaire de vos sources, la gouvernance et la qualité, la préparation des fichiers pour les modèles, le RAG, l'analyse assistée et l'architecture des flux. L'objectif ne varie pas : des données fiables, accessibles, et lisibles par vos outils d'intelligence artificielle.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Six familles de prestations reviennent dans la plupart des missions. Elles se combinent selon votre maturité : certains partent d'un audit, d'autres d'un besoin de gouvernance, d'autres encore d'un cas d'usage IA déjà identifié mais bloqué par la donnée.
+                Ces six prestations reviennent dans la plupart de nos missions et se combinent selon votre situation : certains clients partent de l'inventaire, d'autres veulent d'abord des règles, d'autres encore ont choisi un cas d'usage que leurs données empêchent d'avancer.
               </p>
             </div>
 
@@ -523,7 +543,7 @@ export default function ConseilDataIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Une fois le socle préparé, l'exploitation passe par nos solutions : l'<Link to="/assistant-documentaire-ia" style={aStyle}>assistant documentaire IA</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration LLM / RAG</Link> interrogent vos données en langage naturel, et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> construit les outils qui s'appuient dessus.
+                Le socle prêt, trois réalisations prennent le relais : l'<Link to="/assistant-documentaire-ia" style={aStyle}>assistant documentaire IA</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration d'un LLM avec RAG</Link> rendent vos documents interrogeables, et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> fabrique les outils qui s'appuient dessus.
               </p>
             </div>
           </div>
@@ -533,17 +553,17 @@ export default function ConseilDataIAPage() {
       {/* ── MÉTHODE (timeline à rail, rail étroit) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <Kicker>Méthode</Kicker>
+          <Kicker>Cinq étapes</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Comment se déroule une mission data & IA ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Une mission suit cinq étapes : audit du patrimoine de données, cartographie et priorisation des chantiers, mise en place de la gouvernance et de la qualité, préparation et mise à disposition des données pour l'IA, puis exploitation et mesure des résultats. Chaque étape est reliée à un cas d'usage IA concret.</strong>
+            <strong>Cinq étapes se suivent : cartographier le patrimoine de données, classer les chantiers, poser les règles de gouvernance et de qualité, rendre les données lisibles par l'IA, puis brancher les usages et contrôler leurs réponses. Chaque étape répond à un cas d'usage nommé.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
-            Nous partons du cas d'usage, pas de la donnée pour elle-même : c'est ce qui évite les grands chantiers data sans débouché et concentre l'investissement là où il débloque de la valeur.
+            Le point de départ est toujours un usage de l'IA, jamais la donnée en soi : c'est ce qui écarte les grands chantiers sans lendemain et concentre la dépense là où elle débloque un résultat.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -569,24 +589,24 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── DONNÉES BRUTES vs PRÊTES POUR L'IA (ancre sombre — pivot) ── */}
+      {/* ── DONNÉES BRUTES vs PRÊTES POUR L'IA (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Pourquoi la donnée d'abord</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Les données d'abord</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Données laissées en l'état ou cadrées pour l'IA : quelle différence ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Un projet d'IA réussit ou échoue d'abord sur la donnée. Des données dispersées, incomplètes ou mal gouvernées produisent des résultats peu fiables, quel que soit le modèle. Des données nettoyées, accessibles et gouvernées permettent à un RAG, à un agent ou à une analyse de tenir leurs promesses.</strong>
+            <strong style={{ color: '#fff' }}>La réussite d'un projet d'IA se joue d'abord sur ses données. Éparpillées, lacunaires ou sans règles, elles donnent des résultats peu fiables, quel que soit le modèle choisi. Nettoyées, raccordées et gouvernées, elles permettent à un RAG, à un agent ou à une analyse de livrer ce qu'on attend d'eux.</strong>
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            Le tableau résume ce qui change, critère par critère, entre des données laissées en l'état et un socle data cadré pour l'IA.
+            Le tableau compare, critère par critère, des données laissées telles quelles et un socle préparé pour l'IA.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -619,10 +639,10 @@ export default function ConseilDataIAPage() {
             <div style={editorialAside}>
               <Kicker>Pourquoi Masteria</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Pourquoi confier votre data à un cabinet IA plutôt qu'à une ESN data ?
+                Pourquoi confier vos données à un cabinet IA plutôt qu'à une ESN data ?
               </h2>
               <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que nous relions chaque chantier data à un cas d'usage IA concret, et que nous ne nous arrêtons pas au diagnostic : nous préparons les données puis développons les solutions qui s'appuient dessus. Spécialisés sur l'IA depuis 2022, nous savons précisément quelles données préparer, et comment, pour qu'un modèle les exploite.</strong>
+                <strong>Parce que nous rattachons chaque chantier de données à un usage précis de l'IA, et que nous allons jusqu'à l'outil : nous préparons les données, puis nous développons ce qui les exploite. L'IA est notre unique métier depuis 2022 ; nous savons quelles données préparer, et de quelle manière, pour qu'un modèle les lise correctement.</strong>
               </p>
             </div>
 
@@ -636,7 +656,7 @@ export default function ConseilDataIAPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                La data n'est qu'un volet de la transformation : pour la stratégie d'ensemble, voyez notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et pour situer votre point de départ, notre <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link>. La gouvernance des données prolonge directement celle des systèmes d'IA : nos repères sur la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA et l'AI Act</Link> complètent le socle data décrit ici.
+                Les données forment un volet d'une démarche plus large : la vue d'ensemble se trouve sur notre page <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> situe votre point de départ en peu de temps. Les règles qui encadrent vos données rejoignent celles qui encadrent vos systèmes d'IA : nos repères sur la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA et l'AI Act</Link> complètent cette page.
               </p>
             </div>
           </div>
@@ -648,11 +668,11 @@ export default function ConseilDataIAPage() {
         <div style={wrap}>
           <Kicker>Data management</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Conseil en data management : gouverner les données de référence avant l'IA
+            Conseil en data management : remettre d'aplomb les données de référence avant l'IA
           </h2>
 
           <p style={answerStyle}>
-            <strong>Le data management, c'est l'ensemble des décisions qui rendent vos données fiables, accessibles et gouvernées : données de référence, propriété, qualité, cycle de vie.</strong> C'est le socle que tout projet d'IA suppose acquis, et qui ne l'est presque jamais. Notre conseil en data management vise ce socle, dimensionné à votre taille et rattaché à un cas d'usage IA précis, sans programme data hors sol.
+            <strong>Le data management regroupe les décisions qui rendent vos données fiables, accessibles et gouvernées : données de référence, propriétaires, qualité, durée de conservation.</strong> Tout projet d'IA suppose ce socle en place, et il l'est rarement. Notre conseil en data management le construit à votre taille, toujours rattaché à un cas d'usage IA précis, sans programme de données déconnecté du terrain.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
@@ -671,34 +691,34 @@ export default function ConseilDataIAPage() {
           </div>
 
           <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(24px, 3.5vw, 36px)', marginTop: 40, maxWidth: 880 }}>
-            <h3 style={{ ...h3Style, marginBottom: 10 }}>Data consulting, agence conseil data, cabinet de data management : trois noms, une question</h3>
+            <h3 style={{ ...h3Style, marginBottom: 10 }}>Data consulting, agence conseil data, cabinet de data management : trois noms pour une même question</h3>
             <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: '0 0 12px' }}>
-              Les appellations varient, la question du client est la même : mes données sont-elles prêtes pour ce que je veux en faire ? Un cabinet de data consulting vend du diagnostic et de la gouvernance. Une agence conseil data ajoute souvent la mise en œuvre technique. Un cabinet de data management se concentre sur les référentiels et la qualité dans la durée.
+              Les étiquettes changent, la question du client reste la même : mes données sont-elles prêtes pour ce que je veux en faire&nbsp;? Un cabinet de data consulting vend du diagnostic et des règles de gouvernance. Une agence conseil data y ajoute souvent la réalisation technique. Un cabinet de data management se consacre aux référentiels et à leur qualité dans le temps.
             </p>
             <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: 0 }}>
-              Masteria couvre les trois, avec une différence de départ : nous partons du cas d'usage IA, et nous ne traitons que les données qu'il réclame. Pour former vos équipes à lire et vérifier ce que l'IA produit à partir de ces données, le volet data de notre <Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> et la <Link to="/formation-data-ia" style={aStyle}>formation data et IA</Link> prennent le relais.
+              Masteria couvre les trois, avec un point de départ différent : le cas d'usage IA, et lui seul, désigne les données à traiter. Pour apprendre à vos équipes à lire et vérifier ce que l'IA tire de ces données, le volet données de notre <Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> et la <Link to="/formation-data-ia" style={aStyle}>formation data et IA</Link> prennent le relais.
             </p>
           </div>
         </div>
       </section>
 
       {/* ── FORMATION (bloc secondaire) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#fff', paddingTop: 0 }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Former vos équipes</Kicker>
+              <Kicker>Après la mission</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                On peut aussi former vos équipes à exploiter la donnée avec l'IA
+                Vos équipes peuvent apprendre à interroger leurs données avec l'IA
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Au-delà de la mission, nous formons vos équipes data et métier à interroger leurs données avec l'IA, à fiabiliser leurs analyses et à garder la main sur la gouvernance. Le volet formation est certifié Qualiopi et finançable par votre OPCO en France. À noter : le conseil et la préparation des données restent des prestations de service, non finançables par l'OPCO.
+                En complément de la mission, nous formons vos équipes, techniques comme métier, à questionner leurs données avec l'IA, à vérifier un chiffre produit par un assistant et à faire vivre les règles de gouvernance. Comptez 1 980 € HT par journée, en groupe interne ou pour une personne seule. Qualiopi atteste la qualité des actions de formation de Masteria : en France, votre OPCO peut donc financer ce volet selon ses règles et ses fonds. L'inventaire, la gouvernance et la préparation des données relèvent de la prestation de service et restent à votre charge.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Découvrir nos formations à l'intelligence artificielle
+                Voir le catalogue des formations IA
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -706,23 +726,23 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── CONTEXTE & REPÈRES : éditorial + stats sourcées + définitions (SEO + GEO) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      {/* ── CONTEXTE & REPÈRES : éditorial + dates sourcées + définitions (SEO + GEO) ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <Kicker>Contexte & repères</Kicker>
+          <Kicker>Repères datés</Kicker>
           <h2 style={h2Style}>
             Pourquoi la donnée décide du sort des projets d'IA
           </h2>
 
-          <p style={answerStyle}>
-            <strong>La plupart des projets d'IA qui échouent butent sur la donnée bien avant de buter sur la technologie. Un agent branché sur des données incomplètes, un RAG nourri de documents mal structurés ou une analyse fondée sur des chiffres incohérents produisent des résultats peu fiables, quelle que soit la qualité du modèle.</strong>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Les projets d'IA qui échouent butent presque toujours sur leurs données avant de buter sur la technique. Un agent qui lit des fiches incomplètes, un RAG nourri de documents en désordre, une analyse fondée sur des chiffres incohérents donnent des résultats douteux, quel que soit le modèle.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            C'est pourquoi nous traitons la donnée comme un préalable, pas comme un sujet annexe. Préparer le socle data en amont, le gouverner et le mettre en conformité (RGPD, AI Act) est la façon la plus sûre de fiabiliser un projet d'IA et d'en sécuriser le passage à l'échelle.
+            Nous traitons donc la donnée comme un préalable. Préparer le socle, le gouverner et le mettre en règle avec le RGPD comme avec l'AI Act constitue le chemin le moins risqué pour fiabiliser un projet d'IA, puis l'étendre à toute l'entreprise. Trois dates encadrent ce travail au 7 octobre 2026.
           </p>
 
-          {/* Repères chiffrés sourcés — citables par les moteurs de réponse */}
+          {/* Repères datés sourcés, citables par les moteurs de réponse */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '0 0 32px' }}>
             {MARKET_STATS.map((s, i) => (
               <div key={i} style={{ ...cardStyle, padding: 24 }}>
@@ -736,9 +756,9 @@ export default function ConseilDataIAPage() {
             ))}
           </div>
 
-          {/* Définitions clés — ancrage d'entités */}
+          {/* Définitions clés, ancrage d'entités */}
           <h3 style={{ ...h3Style, fontSize: 20, margin: '8px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Définitions clés
+            <BookOpen size={20} color={c} strokeWidth={2.2} aria-hidden="true" /> Le vocabulaire d'une mission sur les données
           </h3>
           <dl style={{ margin: 0, display: 'grid', gap: 16 }}>
             {GLOSSARY.map((g, i) => (
@@ -749,9 +769,9 @@ export default function ConseilDataIAPage() {
             ))}
           </dl>
 
-          {/* Sources de référence — liens d'autorité suivis */}
+          {/* Sources de référence, liens d'autorité suivis */}
           <h3 style={{ ...h3Style, fontSize: 20, margin: '44px 0 16px' }}>
-            Sources de référence
+            Les textes qui font foi
           </h3>
           <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 10 }}>
             {REFERENCES.map((r, i) => (
@@ -765,12 +785,35 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['photovoltaique', 'industrie']}
-        title="Deux missions où la donnée décidait du projet"
-        intro="Un distributeur dont les stocks vivent dans Odoo et dans des fichiers d'entrepôt, un groupe industriel dont les managers analysent des extractions SAP dans Excel : la méthode en six temps et ses résultats, données comprises."
-      />
+      {/* ── ÉTUDES DE CAS (angle données, liens vers les ancres de /etudes-de-cas-ia) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Études de cas</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Trois missions où les données ont dicté l'ordre des travaux
+          </h2>
+          <p style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Un distributeur dont les stocks vivent dans Odoo et dans des fichiers d'entrepôt, un industriel dont les managers travaillent sur des extractions dans Excel, un cabinet qui devait d'abord rassembler ses meilleurs mémoires : à chaque fois, le travail a commencé par les fichiers. Les trois clients restent anonymes.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
+            {DATA_CASES.map(({ id, icon: Icon, sector, text }) => (
+              <article key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  Le récit complet de la mission
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
@@ -779,13 +822,13 @@ export default function ConseilDataIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Conseil data & IA : les questions fréquentes
+                Conseil data & IA : les réponses aux questions courantes
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Vos données soulèvent une question absente de cette liste&nbsp;? Envoyez-la, en précisant l'usage de l'IA envisagé.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Poser une question sur vos données
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -801,28 +844,28 @@ export default function ConseilDataIAPage() {
       {/* ── MAILLAGE INTERNE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>À lire ensuite</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Des données préparées aux outils qui les exploitent
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Explorer nos autres expertises IA, du conseil au déploiement.
+            Solutions, formations et guides en lien direct avec vos données.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Intégration LLM / RAG', href: '/integration-llm-rag', tag: 'RAG', desc: "Rendre vos données interrogeables par un modèle, avec des réponses sourcées." },
-              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'GenAI', desc: "Ce que vos données fiabilisées rendent possible : assistants et contenus générés ancrés dans votre réalité." },
-              { label: 'Assistant documentaire IA', href: '/assistant-documentaire-ia', tag: 'Solution', desc: "Interroger votre base documentaire en langage naturel, une fois le socle data prêt." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "Le volet data et IA de l'acculturation : quelles données confier à l'IA, comment vérifier un chiffre produit." },
-              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Formation', desc: "Deux jours pour cartographier le patrimoine informationnel, poser les rôles et gérer les données de référence." },
-              { label: 'Formation data et IA', href: '/formation-data-ia', tag: 'Formation', desc: "Analyser ses données avec l'IA sans coder, une fois le socle data en place." },
-              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Les principes RGPD appliqués à l'IA, l'AIPD et les garanties à vérifier outil par outil." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "Stratégie, gouvernance et feuille de route IA au niveau de la direction." },
-              { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Conception et développement des solutions IA qui s'appuient sur vos données." },
-              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Des agents branchés sur vos données et vos logiciels métier." },
-              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un point de départ qui cadre votre maturité, données comprises." },
-              { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Les enjeux data et IA propres à chaque secteur d'activité." },
-              { label: 'Agence SEO IA', href: '/agence-seo-ia', tag: 'Visibilité', desc: "Référencement augmenté par l'IA et visibilité dans les moteurs de réponse." },
+              { label: 'Intégration LLM / RAG', href: '/integration-llm-rag', tag: 'RAG', desc: "Relier un modèle à vos bases pour obtenir des réponses qui citent leurs sources." },
+              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'Usages', desc: "Assistants et contenus générés qui s'appuient sur vos propres informations une fois celles-ci fiabilisées." },
+              { label: 'Assistant documentaire IA', href: '/assistant-documentaire-ia', tag: 'Solution', desc: "Questionner votre fonds documentaire en langage courant, dès que le socle est prêt." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "Le module données de l'acculturation : ce qu'on peut confier à l'IA, comment contrôler un chiffre qu'elle avance." },
+              { label: 'Formation gouvernance des données', href: '/formation-gouvernance-donnees', tag: 'Formation', desc: "Deux jours pour dresser la carte de vos informations, nommer les responsables et tenir les référentiels." },
+              { label: 'Formation data et IA', href: '/formation-data-ia', tag: 'Formation', desc: "Explorer ses tableaux et ses bases avec l'IA, sans écrire une ligne de code." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Les règles de protection des données appliquées à l'IA, l'analyse d'impact et les garanties à exiger de chaque outil." },
+              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "La vue d'ensemble de nos missions, dont celle-ci n'est qu'un volet." },
+              { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "La conception des outils d'IA qui puisent dans vos données préparées." },
+              { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Des agents qui lisent vos bases et agissent dans vos logiciels métier." },
+              { label: 'Diagnostic IA', href: '/diagnostic-ia', tag: "Offre d'entrée", desc: "Un premier passage en revue de vos pratiques, données comprises." },
+              { label: 'IA par secteur', href: '/ia-secteurs', tag: 'Secteurs', desc: "Ce que les données et l'IA changent, secteur d'activité par secteur d'activité." },
+              { label: 'Agence SEO IA', href: '/agence-seo-ia', tag: 'Visibilité', desc: "Pour que vos contenus, une fois structurés, soient repris par les moteurs de recherche et les assistants." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -838,7 +881,7 @@ export default function ConseilDataIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Lire la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -848,8 +891,15 @@ export default function ConseilDataIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan cadre lui-même les missions sur les données et valide l'inventaire avant tout développement. Cette page a été revue par ses soins le 7 octobre 2026 ; <Link to="/mathias-nizan" style={aStyle}>son profil</Link> retrace son parcours.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE (charte sombre unique #0A0F1E) ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -858,41 +908,42 @@ export default function ConseilDataIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Un premier échange</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Parlons de vos données et de vos projets IA
+              Parlons de vos données et de l'usage que vous en attendez
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous le cas d'usage IA que vous visez et l'état de vos données. Nous revenons vers vous sous 24 heures avec une première lecture de votre socle data et une proposition de cadrage. Le travail data se juge à ce qu'il rend possible côté IA.
+              Décrivez le cas d'usage visé et l'état de vos fichiers. Le cadrage (30 minutes offertes) nous en donne une première lecture ; une proposition chiffrée suit. Un chantier de données n'a de valeur qu'à travers les usages d'IA qu'il ouvre.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Cadrer votre projet data & IA
+            <Link to={CADRAGE_HREF} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Audit, gouvernance, RAG · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
+              Inventaire, règles, RAG, outils · cabinet né à Lyon, présent bien au-delà
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : l'équipe des missions data ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Les personnes derrière la mission</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Des consultants pour le cadrage, des développeurs pour le socle
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Masteria est née à Lyon en 2022 de la volonté de Mathias Nizan de travailler uniquement sur l'intelligence artificielle. Sur une mission de données, il mène le cadrage et s'appuie, selon l'ampleur du chantier, sur une partie des quelque dix consultants et cinq développeurs indépendants qui composent le réseau ; une vingtaine de formateurs prennent le relais pour les équipes. Le cabinet ne perçoit rien des éditeurs, et l'outil retenu découle de vos données. Exemples à l'appui dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> ; articles réunis dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>rubrique presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['≈ 5', 'développeurs pour les connecteurs'],
+              ['≈ 10', 'consultants pour les ateliers'],
+              ['UE', "hébergement possible des données"],
+              ['RAG', 'expertise maison depuis 2022'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -902,8 +953,6 @@ export default function ConseilDataIAPage() {
           </div>
         </div>
       </section>
-
-      <OfficialSources />
     </>
   )
 }

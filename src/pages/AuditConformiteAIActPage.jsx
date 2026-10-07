@@ -3,41 +3,45 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Scale, Search, ShieldCheck, FileText, ListChecks, XCircle, Presentation,
   Calendar, MapPin, Check, Landmark, Building2, Ban, GraduationCap, Eye, Lock, ClipboardList, Gauge,
+  Sun, Factory,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page de conversion — mission « Audit de conformité IA » (slug /audit-conformite-ai-act).
- * Cible les requêtes « audit de conformité ia » (50/mois), « audit ia act » (30/mois),
- * « audit conformité ia » : intention juridique, distincte de /audit-ia (maturité +
- * opportunité) et de /gouvernance-ia (dispositif dans la durée). Répartition arrêtée
- * le 2026-09-03 (cluster audit IA) : une requête = une page.
+ * Page de conversion de la mission « Audit de conformité IA » (slug /audit-conformite-ai-act).
+ * Requêtes « audit de conformité ia », « audit ia act », « audit conformité ia » :
+ * intention juridique, distincte de /audit-ia (maturité et opportunité) et de
+ * /gouvernance-ia (dispositif durable). Une requête = une page (cluster du 2026-09-03).
  *
- * INTÉGRITÉ (alignée sur /audit-ia et le guide blog, ne pas dévier) :
- * - Calendrier post-Omnibus (règlement (UE) 2026/1744 du 8 juillet 2026) : haut risque
- *   annexe III reporté au 2 décembre 2027, annexe I au 2 août 2028. Applicables
- *   aujourd'hui : pratiques interdites et littératie (2 février 2025), modèles GPAI
- *   (2 août 2025), transparence art. 50 (2 août 2026).
- * - Le règlement n'impose PAS d'audit externe à la majorité des systèmes à haut risque
- *   (contrôle interne, annexe VI). AUCUNE conformité AI Act certifiable (pas de norme
- *   harmonisée citée au JOUE à l'été 2026). Masteria ne certifie rien et ne donne pas
- *   d'avis juridique : elle objective et prépare.
- * - Conseil non finançable par votre OPCO ; jamais nommer un dispositif public concurrent.
+ * RÉÉCRITURE DU 2026-10-07 (texte propre au moins 90 %, calendrier vérifié au 7 octobre 2026,
+ * fiche FAITS-OUTILS-2026-10-07 section 7) :
+ * - règlement (UE) 2026/1744 du 8 juillet 2026, en vigueur le 27 juillet 2026 ;
+ * - article 5 et article 4 depuis le 2 février 2025 ; article 4 réécrit en obligation de
+ *   moyens (aucun certificat, aucun niveau individuel) ; nouvelle interdiction au 2 décembre 2026 ;
+ * - article 50 depuis le 2 août 2026, marquage lisible par machine au 2 décembre 2026 pour
+ *   les systèmes déjà sur le marché ; haut risque annexe III au 2 décembre 2027, annexe I au
+ *   2 août 2028 ; aucune autorité française désignée n'est affirmée ;
+ * - aucune certification AI Act ; pas d'audit externe imposé (contrôle interne, annexe VI) ;
+ * - demande d'audit = audit seul, suite chiffrée après la restitution ; prix en fourchette
+ *   large à plafond ouvert ; conseil pas finançable par votre OPCO, aucun dispositif nommé ;
+ * - FounderNote et CaseStudyCards remplacés par du texte propre à la page (cas photovoltaique
+ *   et industrie, faits de src/data/etudes-de-cas.js).
  */
 
 const SLUG = 'audit-conformite-ai-act'
+const RDV = '/contact?type=projet&rdv=30'
+const DATE_MODIFIED = '2026-10-07'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Audit de conformité IA : RGPD et AI Act, écarts et plan daté | Masteria"
-const META_DESC = "Audit de conformité IA : inventaire des systèmes, qualification par niveau de risque AI Act, écarts RGPD, obligations déjà applicables et plan de mise en conformité daté. Cadrage gratuit."
+const META_TITLE = "Audit de conformité IA : AI Act et RGPD | Masteria"
+const META_DESC = "Audit de conformité IA : systèmes recensés, risque qualifié selon l'AI Act, écarts RGPD, plan daté pour les corriger. Calendrier à jour au 7 octobre 2026."
 const KEYWORDS = "audit de conformité ia, audit ia act, audit conformité ia, audit ai act, conformité ai act entreprise, audit rgpd ia, mise en conformité ia"
 
-/* ───────── Styles partagés (calque /audit-ia) ───────── */
+/* ───────── Styles ───────── */
 
 const sectionPad = 'clamp(64px, 9vw, 110px) 24px'
 const wrap = { maxWidth: 1140, margin: '0 auto' }
@@ -63,203 +67,225 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Calendar, label: 'De quelques jours à quelques semaines' },
-  { icon: FileText, label: 'Plan de mise en conformité daté' },
+  { icon: Calendar, label: 'Calendrier AI Act vérifié le 7 octobre 2026' },
+  { icon: FileText, label: 'Un porteur et une date par correction' },
   { icon: ShieldCheck, label: 'Aucune certification promise' },
-  { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
+  { icon: MapPin, label: 'France · Europe · États-Unis · Inde' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref ───────── */
 
 const EN_BREF = [
-  { label: 'Mission', value: "Inventaire des systèmes d'IA en service, qualification par niveau de risque, écarts RGPD et AI Act, plan de mise en conformité" },
-  { label: 'Cadre', value: "Règlement (UE) 2024/1689 tel que modifié par le règlement (UE) 2026/1744 ; RGPD ; recommandations de la CNIL sur l'IA" },
-  { label: 'Applicable', value: "Aujourd'hui : pratiques interdites, littératie IA, transparence. Haut risque : 2 décembre 2027 (annexe III) et 2 août 2028 (annexe I)" },
-  { label: 'Livrable', value: "Registre des systèmes, matrice de risque, écarts hiérarchisés, plan daté avec porteur, kit documentaire, restitution en direction" },
-  { label: 'Ce que nous ne faisons pas', value: "Certifier une conformité (rien n'est certifiable au titre du règlement IA à ce jour) ni rendre un avis juridique" },
-  { label: 'Prix', value: "Forfait fixé après un cadrage gratuit qui délimite le périmètre : entités, systèmes, traitements" },
+  { label: 'Mission', value: "Recenser vos systèmes d'IA, leur attribuer un niveau de risque, relever les écarts RGPD et AI Act, dater chaque correction" },
+  { label: 'Textes', value: "AI Act, modifié par le règlement (UE) 2026/1744 ; RGPD ; publications de la CNIL sur l'IA" },
+  { label: 'Déjà en vigueur', value: "Articles 5 et 4 (2 février 2025), puis article 50 sur la transparence (2 août 2026)" },
+  { label: 'À préparer', value: "Haut risque : décembre 2027 (annexe III), août 2028 (annexe I)" },
+  { label: 'Livrable', value: "Registre des systèmes, matrice de risque, écarts classés, plan daté avec porteurs, trames de documents, séance d'arbitrage" },
+  { label: 'Hors mission', value: "Certifier le respect de l'AI Act (impossible à ce jour) ou rendre un avis d'avocat" },
+  { label: 'Prix', value: "Forfait fixé au cadrage : dès quelques milliers d'euros, davantage avec un système maison ou plusieurs entités" },
 ]
 
-/* ───────── Ce que la loi impose aujourd'hui / demain (cartes) ───────── */
+/* ───────── Les quatre blocs d'obligations ───────── */
 
 const OBLIGATIONS = [
   {
     id: 'pratiques-interdites',
     icon: Ban,
-    title: 'Pratiques interdites',
-    quand: 'Applicable depuis le 2 février 2025',
-    desc: "Notation sociale, manipulation subliminale, reconnaissance des émotions au travail et dans l'enseignement, identification biométrique à distance hors exceptions. L'audit vérifie qu'aucun usage en service, même expérimental, ne relève de l'article 5.",
+    title: 'Pratiques interdites (article 5)',
+    quand: 'Applicable au 2 février 2025',
+    desc: "Techniques de manipulation, exploitation des vulnérabilités, notation sociale, reconnaissance des émotions au travail ou à l'école, identification biométrique à distance en temps réel hors exceptions. Le 2 décembre 2026, s'y ajouteront les systèmes conçus pour fabriquer des images intimes non consenties ou des contenus pédocriminels. L'audit vérifie qu'aucun usage, même à l'essai, ne tombe sous ce texte.",
   },
   {
     id: 'litteratie',
     icon: GraduationCap,
-    title: 'Littératie IA',
-    quand: 'Applicable depuis le 2 février 2025',
-    desc: "L'article 4 demande à toute organisation qui utilise des systèmes d'IA d'assurer un niveau suffisant de maîtrise à son personnel et à ses prestataires. L'audit mesure la couverture réelle : qui utilise quoi, qui a été formé, ce qui est documenté.",
+    title: "Article 4 : maîtrise de l'IA",
+    quand: "Depuis février 2025 ; texte réécrit par l'Omnibus",
+    desc: "Dans sa rédaction issue du règlement (UE) 2026/1744, l'article 4 demande aux fournisseurs et aux utilisateurs professionnels de prendre des mesures qui aident leur personnel à développer sa compréhension et sa pratique de l'IA. Il s'agit d'une obligation de moyens, sans certificat ni niveau individuel à atteindre. L'audit regarde qui se sert de quoi, qui a été formé et quelle trace en reste.",
   },
   {
     id: 'transparence',
     icon: Eye,
-    title: 'Transparence',
-    quand: 'Applicable depuis le 2 août 2026',
-    desc: "Un agent conversationnel s'annonce comme tel, un contenu généré ou manipulé diffusé au public se signale (article 50). Le marquage lisible par machine est toléré jusqu'au 2 décembre 2026. L'audit passe en revue vos chatbots, vos contenus publiés et vos processus éditoriaux.",
+    title: 'Transparence (article 50)',
+    quand: 'Applicable au 2 août 2026',
+    desc: "Un agent conversationnel indique qu'il est une IA ; un contenu généré ou retouché, diffusé au public, se signale. Pour un système commercialisé avant le 2 août 2026, le marquage lisible par machine doit être en place le 2 décembre 2026, une obligation qui pèse sur le fournisseur. L'audit passe en revue vos chatbots, vos publications et vos circuits de validation éditoriale.",
   },
   {
     id: 'haut-risque',
     icon: Scale,
     title: 'Systèmes à haut risque',
-    quand: 'Reporté au 2 décembre 2027 et au 2 août 2028',
-    desc: "Tri de candidatures, évaluation de salariés, scoring de crédit, accès à des services essentiels : les usages de l'annexe III. Les obligations sont reportées, pas supprimées. L'audit les identifie maintenant, pour que la documentation, la supervision humaine et la journalisation soient en place à l'échéance.",
+    quand: 'Reportés : décembre 2027, puis août 2028',
+    desc: "Tri de CV, évaluation du personnel, notation de crédit, accès à des services essentiels : ces usages de l'annexe III restent encadrés, avec un calendrier décalé. L'audit les repère dès maintenant, pour que documentation, contrôle humain et journaux soient prêts le jour venu.",
   },
 ]
 
-/* ───────── Conformité vs maturité vs gouvernance (tableau citable) ───────── */
+/* ───────── Conformité, maturité, gouvernance (tableau citable) ───────── */
 
 const COMPARATIF = [
   {
     critere: 'Question posée',
-    maturite: "Où en sommes-nous, que peut-on automatiser, dans quel ordre ?",
-    conformite: "Sommes-nous en règle, et que devons-nous corriger avant quelle date ?",
-    gouvernance: "Comment rester en règle dans la durée, avec quelles instances ?",
+    maturite: "Que peut-on automatiser, et dans quel ordre ?",
+    conformite: "Sommes-nous en règle, et que corriger avant quelle date ?",
+    gouvernance: "Comment rester en règle mois après mois ?",
   },
   {
     critere: 'Objet',
     maturite: "Processus, données, outils, organisation, opportunités",
-    conformite: "Systèmes d'IA en service, traitements de données, obligations applicables",
-    gouvernance: "Charte, comité, registre vivant, procédure de validation des usages",
+    conformite: "Systèmes d'IA en service, traitements de données, textes applicables",
+    gouvernance: "Charte, comité, registre tenu à jour, validation des nouveaux usages",
   },
   {
     critere: 'Livrable',
     maturite: "Rapport de maturité et feuille de route chiffrée",
-    conformite: "Registre, matrice de risque, écarts hiérarchisés, plan de mise en conformité daté",
-    gouvernance: "Dispositif installé et documents d'usage",
+    conformite: "Registre, matrice de risque, écarts classés, plan de correction daté",
+    gouvernance: "Dispositif en place et documents d'usage",
   },
   {
     critere: 'Durée',
-    maturite: "De quelques jours à quelques semaines",
-    conformite: "De quelques jours à quelques semaines, selon le nombre de systèmes",
-    gouvernance: "Plusieurs mois, par paliers",
+    maturite: "Quelques jours de travail, étalés sur des semaines",
+    conformite: "Quelques jours à plusieurs semaines, selon le nombre de systèmes",
+    gouvernance: "Plusieurs mois, par étapes",
   },
   {
     critere: 'Quand la choisir',
-    maturite: "Avant d'investir, pour prioriser",
-    conformite: "Avant un contrôle, un appel d'offres, une échéance réglementaire, ou après une alerte interne",
-    gouvernance: "Après l'audit, pour tenir le cap",
+    maturite: "Avant d'investir, pour fixer les priorités",
+    conformite: "Avant un contrôle, un appel d'offres ou une échéance, ou après un incident",
+    gouvernance: "Une fois l'audit rendu, pour tenir dans la durée",
   },
 ]
 
-/* ───────── Ce que l'audit vérifie (6 chantiers) ───────── */
+/* ───────── Les six contrôles ───────── */
 
 const CHANTIERS = [
   {
     icon: Search,
-    title: "Inventaire des systèmes d'IA",
-    desc: "Tout ce qui est en service : outils souscrits par la DSI, fonctions IA activées dans vos logiciels métier et vos suites bureautiques, comptes personnels utilisés par les équipes. Sans inventaire, aucune qualification n'est possible, et l'inventaire réserve toujours des surprises.",
+    title: "Recenser les systèmes d'IA",
+    desc: "Abonnements souscrits par l'informatique, fonctions d'IA apparues avec une mise à jour de logiciel, comptes gratuits ouverts par les salariés. Sans cette liste, aucun niveau de risque ne peut être attribué, et elle réserve en général des surprises.",
   },
   {
     icon: Gauge,
-    title: 'Qualification par niveau de risque',
-    desc: "Chaque usage est classé selon les quatre niveaux du règlement : interdit, haut risque, risque limité, risque minimal. La qualification tient à l'usage, pas à l'outil : le même assistant est à risque minimal pour rédiger un courrier et à haut risque pour trier des candidatures.",
+    title: 'Attribuer un niveau de risque',
+    desc: "Chaque usage est placé sur l'échelle à quatre niveaux du texte européen : pratique interdite, haut risque, risque limité, risque minimal. Le classement dépend de l'usage : le même assistant relève du risque minimal pour rédiger un courrier, du haut risque pour trier des candidatures.",
   },
   {
     icon: Lock,
-    title: 'Écarts RGPD',
-    desc: "Base légale, information des personnes, sous-traitance et transferts, durées de conservation, décisions automatisées de l'article 22, analyse d'impact quand elle est requise. En 2026, les contrôles de la CNIL viennent de là, pas du règlement IA.",
+    title: 'Relever les écarts RGPD',
+    desc: "Base légale, information des personnes, contrats de sous-traitance et transferts hors UE, durées de conservation, décisions automatisées (article 22), analyse d'impact quand elle s'impose. En 2026, c'est sur ces points que la CNIL contrôle.",
   },
   {
     icon: GraduationCap,
-    title: 'Littératie et supervision humaine',
-    desc: "Qui a été formé, sur quoi, avec quelle trace. Qui supervise les sorties des systèmes, avec quel pouvoir de les écarter. L'article 4 s'applique déjà ; l'article 14 sur la supervision humaine s'appliquera aux systèmes à haut risque.",
+    title: 'Formation et contrôle humain',
+    desc: "Qui a été formé, à quoi, avec quelle trace. Qui relit les résultats des systèmes et peut les écarter. L'article 4 s'applique déjà ; l'article 14, consacré au contrôle humain, visera les systèmes à haut risque.",
   },
   {
     icon: Eye,
-    title: 'Transparence et contenus générés',
-    desc: "Chatbots publics, contenus marketing, images et vidéos générées, courriers automatisés : ce qui doit être annoncé, marqué ou signalé au titre de l'article 50, et ce qui est effectivement fait dans vos processus de publication.",
+    title: 'Transparence des contenus',
+    desc: "Chatbots ouverts au public, visuels et vidéos générés, campagnes marketing, courriers automatisés : ce qui doit être annoncé ou marqué en vertu de l'article 50, et ce que vos circuits de publication font aujourd'hui.",
   },
   {
     icon: ClipboardList,
-    title: 'Documentation et traçabilité',
-    desc: "Ce que vous pouvez produire aujourd'hui si on vous le demande : documentation des systèmes, journaux, contrats fournisseurs, politique d'usage. C'est le socle de l'auditabilité, exigée demain pour le haut risque et utile dès maintenant pour tout litige.",
+    title: 'Documentation et traces',
+    desc: "Ce que vous pourriez produire si on vous le demandait demain : fiches des systèmes, journaux, contrats fournisseurs, politique d'usage. Ce socle prépare les obligations du haut risque et vous sert dès aujourd'hui si un litige survient.",
   },
 ]
 
-/* ───────── La méthode en 6 temps ───────── */
+/* ───────── Six temps ───────── */
 
 const METHODE = [
   {
     num: '01',
     title: 'Cadrage',
-    desc: "Entités, systèmes et traitements dans le périmètre, ce qui motive la demande (contrôle, appel d'offres, alerte interne, échéance), format attendu par la direction et par le DPO. Échange gratuit, qui fixe le devis.",
+    desc: "Entités, systèmes et traitements concernés, élément déclencheur (contrôle, appel d'offres, incident, échéance), attentes de la direction et du DPO. Le cadrage commence par 30 minutes offertes, qui servent à fixer le devis.",
   },
   {
     num: '02',
-    title: 'Inventaire',
-    desc: "Recensement des systèmes d'IA en service, y compris les fonctions activées dans vos logiciels existants et les usages nés hors de tout cadre. Questionnaire aux responsables, puis vérification sur les postes et les contrats.",
+    title: 'Recensement',
+    desc: "Questionnaire adressé aux responsables de service, puis vérification sur les postes, dans les consoles d'administration et dans les contrats. Les fonctions d'IA activées sans décision explicite entrent dans la liste.",
   },
   {
     num: '03',
     title: 'Qualification',
-    desc: "Pour chaque système : rôle de votre organisation (fournisseur, déployeur, importateur), niveau de risque, données traitées, décisions produites. Les usages à haut risque ressortent avec leur échéance et leurs obligations futures.",
+    desc: "Pour chaque système : le rôle de votre organisation (fournisseur, déployeur, importateur), le niveau de risque, les données traitées, les décisions produites. Les usages à haut risque ressortent avec leur échéance et leurs obligations à venir.",
   },
   {
     num: '04',
-    title: 'Contrôle des obligations applicables',
-    desc: "Pratiques interdites, littératie, transparence, RGPD : point par point, ce qui est fait, ce qui est documenté, ce qui manque. Chaque écart reçoit un niveau de gravité et un délai de correction raisonnable.",
+    title: 'Contrôle des obligations en vigueur',
+    desc: "Article 5, article 4, article 50 et RGPD, point par point : ce qui est fait, ce qui est documenté, ce qui manque. Chaque écart reçoit une gravité et un délai de correction réaliste.",
   },
   {
     num: '05',
     title: 'Revue des fournisseurs',
-    desc: "Clauses contractuelles, hébergement, réutilisation de vos données pour l'entraînement, journaux disponibles, engagements de conformité des éditeurs. Une part des écarts se règle par un avenant ou un changement de plan, pas par un projet interne.",
+    desc: "Clauses des contrats, lieu d'hébergement, usage de vos données pour l'entraînement des modèles de l'éditeur, journaux accessibles, engagements pris par écrit. Une partie des écarts se règle par un avenant ou un changement d'offre, sans projet interne.",
   },
   {
     num: '06',
-    title: 'Plan de mise en conformité et restitution',
-    desc: "Actions datées, avec un porteur nommé et un ordre de traitement : ce qui se corrige sous trente jours, ce qui se prépare pour 2027, ce qui relève de votre conseil juridique. Restitution en direction, avec le DPO et la DSI.",
+    title: 'Plan et restitution',
+    desc: "Des actions datées, chacune avec son porteur : ce qui se corrige sous trente jours, ce qui se prépare pour 2027 et 2028, ce qui relève de votre avocat. La restitution réunit la direction, le DPO et la DSI.",
   },
 ]
 
-/* ───────── Le livrable (6 cartes) ───────── */
+/* ───────── Les pièces remises ───────── */
 
 const LIVRABLE = [
   {
     icon: ListChecks,
-    title: "Un registre des systèmes d'IA",
-    desc: "Chaque système en service avec son usage, ses données, son fournisseur, son niveau de risque et votre rôle réglementaire. Le registre reste à vous et se met à jour à chaque nouvel usage : c'est la pièce que tout le reste suppose.",
+    title: "Un registre de vos systèmes d'IA",
+    desc: "Pour chaque système en service : l'usage, les données traitées, le fournisseur, le niveau de risque, votre rôle au regard du texte. Le registre vous appartient et s'enrichit à chaque nouvel usage : toutes les autres pièces en dépendent.",
   },
   {
     icon: Gauge,
     title: 'Une matrice de risque',
-    desc: "Les usages positionnés par niveau de risque au sens du règlement et par exposition RGPD, avec les échéances qui s'y attachent. Une lecture d'une page pour la direction, argumentée en annexe pour le DPO.",
+    desc: "Les usages placés selon leur niveau de risque AI Act et leur exposition RGPD, avec les dates qui s'y rattachent. Une page pour la direction, une annexe argumentée pour le DPO.",
   },
   {
     icon: XCircle,
-    title: 'Les écarts, hiérarchisés',
-    desc: "Chaque écart constaté avec sa gravité, l'obligation concernée, l'article cité, la preuve attendue et le délai de correction. Aucun écart inventé pour vendre la suite : les points conformes sont écrits comme tels.",
+    title: 'Des écarts classés par gravité',
+    desc: "Chaque écart avec l'obligation concernée, l'article cité, la preuve attendue et le délai pour corriger. Ce qui est conforme est noté comme conforme : aucun écart n'est grossi pour vendre une suite.",
   },
   {
     icon: FileText,
-    title: 'Un plan de mise en conformité daté',
-    desc: "Par action : un porteur, une échéance, une condition de réussite. Trois horizons : les corrections immédiates, la préparation des échéances 2027 et 2028, et les points à porter à votre conseil juridique.",
+    title: 'Un plan de correction daté',
+    desc: "Chaque action reçoit un porteur, une date et un critère de réussite, sur trois horizons : les corrections immédiates, la préparation de 2027 et 2028, les questions à confier à votre avocat.",
   },
   {
     icon: ClipboardList,
-    title: 'Un kit documentaire',
-    desc: "Trames prêtes à adapter : mentions de transparence pour vos chatbots et contenus, procédure de validation d'un nouvel usage, fiche de supervision humaine, attestation de littératie. De quoi produire une preuve quand on vous la demande.",
+    title: 'Des trames de documents',
+    desc: "Mentions de transparence pour vos chatbots et contenus, procédure de validation d'un nouvel usage, fiche de contrôle humain, registre des formations suivies. De quoi fournir une preuve le jour où on vous la demande.",
   },
   {
     icon: Presentation,
-    title: 'Une restitution en direction',
-    desc: "Le rapport se présente et se discute avec la direction, le DPO et la DSI. La séance sert à arbitrer : ce qu'on corrige, ce qu'on arrête, ce qu'on assume en connaissance de cause. Le support fait partie du livrable.",
+    title: "Une séance d'arbitrage",
+    desc: "Le rapport est présenté à la direction, au DPO et à la DSI. La séance sert à décider : ce qui se corrige, ce qui s'arrête, ce qui s'assume en connaissance de cause. Son support vous reste.",
   },
 ]
 
-/* ───────── Garde-fous ───────── */
+/* ───────── Engagements ───────── */
 
 const GARDE_FOUS = [
-  "Aucune certification promise : rien n'est certifiable au titre du règlement IA à ce jour, et nous vous l'écrivons",
-  "Aucune obligation inventée : le rapport cite l'article et la date d'application de chaque point relevé",
-  "Pas d'avis juridique : sur les questions d'interprétation, nous travaillons avec votre conseil, jamais à sa place",
-  "Le plan est exécutable par votre DPO, votre DSI ou un autre prestataire : il ne dépend pas de nous",
+  "Aucune certification promise, et la raison écrite dans le rapport",
+  "Chaque écart relevé cite son article et sa date d'application",
+  "Aucun avis d'avocat : sur l'interprétation, nous travaillons avec votre conseil",
+  "Le devis couvre l'audit seul ; une suite éventuelle se chiffre après la restitution",
+]
+
+/* ───────── Études de cas (faits de src/data/etudes-de-cas.js) ───────── */
+
+const CAS = [
+  {
+    id: 'photovoltaique',
+    icon: Sun,
+    sector: 'Distribution photovoltaïque · PME',
+    figure: '6',
+    figureLabel: 'dimensions de maturité examinées, sécurité et gouvernance comprises',
+    text: "Des comptes personnels servaient déjà quand la mission a commencé. Le diagnostic remis en septembre 2026 a situé l'entreprise face aux deux textes européens qui la concernent, et prévoit des comptes collectifs gérés par l'entreprise, dont les échanges ne servent pas à entraîner les modèles, avec une ligne au registre RGPD. Une charte doit être signée avant la formation d'octobre, avec un référent IA et un point mensuel.",
+  },
+  {
+    id: 'industrie',
+    icon: Factory,
+    sector: 'Industrie · groupe international',
+    figure: '4',
+    figureLabel: 'décisions mises sur la table du comité de direction',
+    text: "Lors d'une matinée en anglais, le comité de direction de ce groupe international du packaging a travaillé le cadre réglementaire européen avant de généraliser Microsoft Copilot. Il est reparti avec quatre arbitrages à rendre : quelles données tenir à l'écart, comment auditer les accès, quel premier agent tester, comment financer l'adoption. Le dispositif part aux États-Unis et au Mexique en octobre 2026, puis en Inde en décembre.",
+  },
 ]
 
 /* ───────── FAQ ───────── */
@@ -267,35 +293,39 @@ const GARDE_FOUS = [
 const FAQ = [
   {
     q: "Qu'est-ce qu'un audit de conformité IA ?",
-    a: "C'est la vérification de la situation de votre organisation au regard des textes qui encadrent l'intelligence artificielle : le règlement européen sur l'IA, le RGPD et les recommandations de la CNIL. La mission inventorie les systèmes d'IA en service, qualifie chacun par niveau de risque, contrôle les obligations déjà applicables, relève les écarts et produit un plan de mise en conformité daté. Elle se distingue de l'audit de maturité, qui cherche les opportunités, et de la gouvernance, qui installe un dispositif dans la durée.",
+    a: "C'est l'examen de votre situation face aux textes qui encadrent l'intelligence artificielle : le règlement européen sur l'IA, le RGPD, les publications de la CNIL. La mission recense les systèmes d'IA en service, attribue à chacun un niveau de risque, contrôle les obligations déjà en vigueur, relève les écarts et livre un plan daté pour les corriger. L'audit de maturité cherche des opportunités, la gouvernance installe un dispositif durable ; celui-ci répond à la question de savoir si vous êtes en règle.",
   },
   {
-    q: "L'AI Act oblige-t-il mon entreprise à faire un audit ?",
-    a: "Non. Le règlement n'impose pas d'audit externe à la plupart des systèmes à haut risque : il prévoit une évaluation de conformité par contrôle interne, documentée par l'entreprise elle-même. Ces obligations sont en outre reportées au 2 décembre 2027 pour l'annexe III et au 2 août 2028 pour l'annexe I, depuis le règlement (UE) 2026/1744 du 8 juillet 2026. Ce qui s'applique déjà : les pratiques interdites et la littératie IA depuis le 2 février 2025, la transparence de l'article 50 depuis le 2 août 2026. Un audit objective votre situation face à ces obligations ; la loi ne l'exige pas et nous ne vous dirons jamais le contraire.",
+    q: "Mon entreprise est-elle obligée de faire auditer ses usages de l'IA ?",
+    a: "Non. Dans la majorité des cas à haut risque, le texte s'en remet à un contrôle interne : l'entreprise mène l'évaluation et en conserve la preuve. Le règlement (UE) 2026/1744, adopté le 8 juillet 2026, a de plus repoussé ces obligations au 2 décembre 2027 (annexe III) et au 2 août 2028 (annexe I). S'appliquent aujourd'hui les articles 5 et 4 (février 2025) et l'article 50 (août 2026). Un audit objective votre position ; aucun texte ne vous y oblige, et nous ne prétendrons pas le contraire.",
   },
   {
-    q: "Quelles obligations s'appliquent vraiment à une PME qui utilise ChatGPT ou Copilot ?",
-    a: "L'usage bureautique, rédiger un courrier, résumer un document, préparer un tableau, relève du risque minimal : aucune obligation spécifique du règlement IA, en dehors de la littératie de l'article 4 et du RGPD pour les données personnelles saisies. Le risque monte avec l'usage : trier des candidatures ou évaluer des salariés avec le même outil relève du haut risque. L'audit sert précisément à repérer ces usages, souvent nés dans les équipes sans que la direction le sache.",
+    q: "Une PME équipée de ChatGPT ou de Copilot a-t-elle des obligations ?",
+    a: "Rédiger un courrier, résumer un compte rendu, préparer un tableau : ces usages de bureau relèvent du risque minimal et n'entraînent aucune exigence spécifique du règlement européen, hormis l'effort de formation demandé par l'article 4. Le RGPD entre en jeu à la première donnée personnelle saisie. Le risque grimpe avec l'usage : trier des CV ou évaluer des salariés avec ce même outil fait basculer l'usage dans le haut risque. L'audit sert à repérer ces usages, souvent nés dans un service sans que la direction le sache.",
   },
   {
-    q: "Pouvez-vous certifier notre conformité au règlement IA ?",
-    a: "Non, et personne ne le peut à ce jour : aucune norme harmonisée n'a été citée au Journal officiel de l'Union européenne au titre du règlement IA, la présomption de conformité n'existe donc pas encore. La seule certification disponible dans le domaine est ISO/IEC 42001, sur le système de management de l'IA, délivrée par un organisme accrédité, distinct du cabinet qui vous conseille. Nous vous préparons à cette certification si c'est votre objectif, et nous vous disons quand elle ne vous servirait à rien.",
+    q: "Que demande l'article 4 depuis l'Omnibus ?",
+    a: "Le règlement (UE) 2026/1744, entré en vigueur le 27 juillet 2026, a réécrit l'article 4 : fournisseurs et déployeurs prennent des mesures pour aider les personnes qui se servent de leurs systèmes à acquérir les compétences utiles. L'obligation porte sur les moyens ; le texte ne fixe aucun niveau individuel et n'exige aucun certificat. Conserver la liste des formations suivies reste le moyen le plus simple de montrer ce qui a été fait. L'audit vérifie cette trace et signale les formations manquantes.",
+  },
+  {
+    q: "Existe-t-il une certification de conformité à l'AI Act ?",
+    a: "Pas à ce jour. Au cours de l'été 2026, le Journal officiel de l'UE ne référençait encore aucune norme harmonisée pour ce règlement ; sans elle, pas de présomption de conformité. Reste ISO/IEC 42001, une norme de management : elle certifie les règles et les rôles qu'une organisation s'est donnés autour de l'IA, et un organisme accrédité la délivre, distinct du cabinet qui conseille. Nous accompagnons cette démarche quand vous la visez, et nous disons quand elle n'aurait aucune utilité pour vous.",
   },
   {
     q: "Quelle différence entre cet audit et un audit RGPD ?",
-    a: "L'audit RGPD porte sur les traitements de données personnelles, quel que soit l'outil. L'audit de conformité IA porte sur les systèmes d'IA, quelle que soit la donnée, et croise les deux cadres : un même usage peut être conforme au RGPD et relever du haut risque au sens du règlement IA, ou l'inverse. En pratique, les écarts les plus fréquents en 2026 sont des écarts RGPD révélés par l'usage de l'IA : données saisies dans un outil grand public, absence d'information des personnes, sous-traitant hors contrat. Nous les traitons ensemble, avec votre DPO.",
+    a: "L'audit RGPD part des traitements de données personnelles, quel que soit l'outil. L'audit de conformité IA part des systèmes d'IA, quelle que soit la donnée, et croise les deux textes : un usage peut respecter le RGPD et relever du haut risque selon le règlement européen, ou l'inverse. En 2026, les écarts les plus fréquents sont des écarts RGPD révélés par l'IA : données saisies dans un service grand public, personnes non informées, sous-traitant sans contrat. Nous les traitons ensemble, avec votre DPO.",
   },
   {
     q: "Que risque-t-on en cas de manquement ?",
-    a: "Le règlement IA prévoit des amendes administratives pouvant atteindre 35 millions d'euros ou 7 % du chiffre d'affaires mondial pour les pratiques interdites, et 15 millions d'euros ou 3 % pour les autres obligations, avec des plafonds adaptés pour les PME. Ces montants sont des maximums légaux, pas des prévisions. Le risque immédiat pour une entreprise française est ailleurs : un contrôle de la CNIL sur les données, une clause de conformité dans un appel d'offres, une question d'un client grand compte à laquelle personne ne sait répondre.",
+    a: "Pour une pratique interdite, l'amende administrative peut atteindre 35 millions d'euros ou, si ce montant est supérieur, 7 % de son chiffre d'affaires mondial annuel ; pour la plupart des autres manquements, le plafond tombe à 15 millions d'euros ou 3 % du même chiffre. Une PME se voit appliquer le plus faible des deux montants. Ce sont des maximums, que l'on ne peut pas lire comme des prévisions. Pour une entreprise française, le risque le plus proche vient d'ailleurs : un contrôle de la CNIL sur les données, une clause de conformité dans un appel d'offres, la question d'un grand client à laquelle personne ne sait répondre.",
   },
   {
     q: "Combien de temps dure la mission, et qui doit y participer ?",
-    a: "De quelques jours à quelques semaines selon le nombre d'entités et de systèmes. Côté entreprise : un sponsor de direction, le DPO ou la personne qui en tient le rôle, un référent DSI, et les responsables des services qui utilisent l'IA. Les entretiens et la restitution se tiennent sur site ou à distance, sans effet sur le livrable. Masteria est basée à Lyon et intervient en France et à l'international, en Europe, aux États-Unis et en Inde.",
+    a: "De quelques jours à plusieurs semaines, selon le nombre d'entités et de systèmes. Côté entreprise : un sponsor à la direction, le DPO ou la personne qui en tient le rôle, un référent informatique, les responsables des services qui utilisent l'IA. Les entretiens et la séance finale se tiennent sur place ou en visio ; le dossier reste le même. Masteria intervient depuis Lyon dans toute la France et à l'étranger (Europe, Inde, États-Unis).",
   },
   {
     q: "L'audit de conformité peut-il être financé ?",
-    a: "Le conseil n'est pas finançable par votre OPCO, qui couvre la formation. Selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil peuvent s'appliquer : nous faisons le point au cadrage. Le volet formation qui suit souvent l'audit, la littératie IA de l'article 4 notamment, est finançable par votre OPCO : Masteria est certifiée Qualiopi.",
+    a: "Il n'est pas finançable par votre OPCO : seule la formation l'est. En fonction de la taille de l'entreprise, de son secteur et de son implantation, des aides publiques au conseil peuvent jouer ; le cadrage fait le point. La formation qui suit souvent l'audit peut en revanche être financée par l'OPCO de votre branche, dans les limites fixées par celui-ci : Masteria possède la certification Qualiopi au titre des actions de formation.",
   },
 ]
 
@@ -304,9 +334,9 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': ['Service', 'ProfessionalService'],
-  name: 'Audit de conformité IA — Masteria',
+  name: 'Audit de conformité IA, Masteria',
   alternateName: "Audit AI Act et RGPD des systèmes d'intelligence artificielle",
-  description: "Audit de conformité IA : inventaire des systèmes d'IA en service, qualification par niveau de risque au sens du règlement européen sur l'IA, contrôle des obligations applicables (pratiques interdites, littératie, transparence, RGPD), écarts hiérarchisés et plan de mise en conformité daté. Aucune certification promise.",
+  description: "Audit de conformité IA : recensement des systèmes d'IA en service, niveau de risque attribué selon l'AI Act, contrôle des obligations en vigueur (pratiques interdites, maîtrise de l'IA, transparence, RGPD), écarts classés par gravité et plan de correction daté. Aucune certification promise ; devis limité à l'audit.",
   url: `https://www.master-ia.fr/${SLUG}`,
   mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
   serviceType: 'Audit de conformité IA (AI Act et RGPD)',
@@ -321,15 +351,15 @@ const serviceJsonLd = {
   ],
   audience: {
     '@type': 'BusinessAudience',
-    name: 'Directions générales, DPO, DSI, directions juridiques et RH · PME, ETI, grands groupes, secteur public',
+    name: 'Directions générales, DPO, DSI, directions juridiques et RH · PME, ETI, groupes, secteur public',
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Audit de conformité IA',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Inventaire et qualification des systèmes d'IA", description: "Registre des systèmes en service et classement par niveau de risque au sens du règlement (UE) 2024/1689." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Contrôle des obligations applicables', description: "Pratiques interdites, littératie IA, transparence, RGPD : écarts constatés, gravité, article cité, délai de correction." } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Plan de mise en conformité et restitution', description: "Actions datées avec porteur, kit documentaire, restitution en direction avec le DPO et la DSI." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: "Recensement et qualification des systèmes d'IA", description: "Registre des systèmes en service, chacun classé selon les quatre niveaux de risque du règlement (UE) 2024/1689." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Contrôle des obligations en vigueur', description: "Articles 5, 4 et 50, RGPD : écarts relevés, gravité, article cité, délai de correction." } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Plan de correction et séance d’arbitrage', description: "Actions datées avec porteur, trames de documents, restitution devant la direction, le DPO et la DSI." } },
     ],
   },
 }
@@ -337,7 +367,7 @@ const serviceJsonLd = {
 const processJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Méthode de l'audit de conformité IA Masteria",
+  name: "Les six temps de l'audit de conformité IA Masteria",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: METHODE.map((step, i) => ({
     '@type': 'ListItem',
@@ -351,13 +381,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `https://www.master-ia.fr/${SLUG}#article`,
-  headline: "Audit de conformité IA : ce que la loi impose déjà, ce qui arrive en 2027, et le plan pour y être",
+  headline: "Audit de conformité IA : ce qui s'applique déjà, ce qui arrive en 2027 et 2028, et le plan pour être prêt",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-09-03',
-  dateModified: '2026-09-03',
+  dateModified: DATE_MODIFIED,
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `https://www.master-ia.fr/${SLUG}#webpage` },
   about: ['Audit de conformité IA', 'AI Act', 'RGPD', "Règlement européen sur l'intelligence artificielle", 'Conseil en intelligence artificielle'],
@@ -369,14 +399,22 @@ const termsJsonLd = {
   '@id': `https://www.master-ia.fr/${SLUG}#lexique`,
   name: "Lexique de la conformité IA",
   hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'Audit de conformité IA', description: "Vérification de la situation d'une organisation au regard du règlement européen sur l'IA et du RGPD : inventaire des systèmes, qualification par niveau de risque, écarts et plan de mise en conformité daté." },
-    { '@type': 'DefinedTerm', name: 'Déployeur', description: "Au sens du règlement (UE) 2024/1689, toute organisation qui utilise un système d'IA sous sa propre autorité dans le cadre d'une activité professionnelle. La plupart des entreprises sont déployeurs, pas fournisseurs." },
-    { '@type': 'DefinedTerm', name: 'Système à haut risque', description: "Système d'IA relevant de l'annexe I (produits réglementés) ou de l'annexe III (emploi, éducation, crédit, services essentiels, justice notamment). Obligations applicables à partir du 2 décembre 2027 et du 2 août 2028." },
-    { '@type': 'DefinedTerm', name: 'Littératie IA', description: "Niveau de compréhension et de maîtrise de l'IA que l'article 4 du règlement demande aux organisations d'assurer à leur personnel et à leurs prestataires, applicable depuis le 2 février 2025." },
-    { '@type': 'DefinedTerm', name: 'Contrôle interne (annexe VI)', description: "Procédure d'évaluation de la conformité prévue pour la plupart des systèmes à haut risque de l'annexe III : l'organisation évalue et documente elle-même sa conformité, sans organisme notifié." },
-    { '@type': 'DefinedTerm', name: 'Registre des systèmes d\'IA', description: "Inventaire tenu par l'organisation de chaque système d'IA en service, avec son usage, ses données, son fournisseur, son niveau de risque et le rôle réglementaire de l'organisation." },
+    { '@type': 'DefinedTerm', name: 'Audit de conformité IA', description: "Examen de la situation d'une organisation face à l'AI Act et au RGPD : systèmes recensés, niveau de risque attribué, écarts relevés, plan de correction daté." },
+    { '@type': 'DefinedTerm', name: 'Déployeur', description: "Au sens du règlement (UE) 2024/1689, organisation qui utilise un système d'IA sous sa propre autorité dans un cadre professionnel. La plupart des entreprises sont déployeurs et non fournisseurs." },
+    { '@type': 'DefinedTerm', name: 'Système à haut risque', description: "Système d'IA visé par l'annexe I (produits réglementés) ou l'annexe III (embauche, enseignement, crédit, services essentiels, justice, entre autres). Obligations applicables le 2 décembre 2027 (annexe III) et le 2 août 2028 (annexe I)." },
+    { '@type': 'DefinedTerm', name: "Maîtrise de l'IA, article 4 de l'AI Act", description: "Obligation de moyens applicable depuis février 2025 et réécrite par le règlement (UE) 2026/1744 : fournisseurs et déployeurs aident leur personnel à se former à l'IA, sans certificat exigé." },
+    { '@type': 'DefinedTerm', name: 'Contrôle interne (annexe VI)', description: "Procédure qui s'applique à la majorité des usages à haut risque listés à l'annexe III : l'organisation évalue et documente elle-même sa conformité, sans organisme notifié." },
+    { '@type': 'DefinedTerm', name: "Registre des systèmes d'IA", description: "Liste tenue par l'organisation : chaque système d'IA, ce qu'il fait, les données qu'il voit, qui le fournit, son niveau de risque, le rôle réglementaire de l'organisation." },
   ],
 }
+
+const PAGE_CITATIONS = [
+  { name: "Règlement (UE) 2024/1689, version publiée au Journal officiel (EUR-Lex)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Règlement (UE) 2026/1744, dit Omnibus sur l'IA, publié sur EUR-Lex", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "RGPD : règlement (UE) 2016/679 sur EUR-Lex", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679' },
+  { name: "CNIL, dossier consacré à l'intelligence artificielle", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: "ISO, fiche de la norme 42001:2023", url: 'https://www.iso.org/fr/standard/81230.html' },
+]
 
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
@@ -400,13 +438,6 @@ function FAQItem({ q, a, color }) {
     </div>
   )
 }
-
-const PAGE_CITATIONS = [
-  { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-  { name: "Règlement (UE) 2016/679 (RGPD)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679' },
-  { name: "CNIL — Intelligence artificielle : recommandations et fiches pratiques", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { name: "ISO/IEC 42001:2023 — Système de management de l'intelligence artificielle", url: 'https://www.iso.org/fr/standard/81230.html' },
-]
 
 export default function AuditConformiteAIActPage() {
   const isDesktop = useIsDesktop()
@@ -434,13 +465,13 @@ export default function AuditConformiteAIActPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-09-03"
-        dateModified="2026-09-03"
+        dateModified={DATE_MODIFIED}
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd, termsJsonLd]}
       />
 
-      {/* ── HERO sombre premium ── */}
+      {/* ── HERO sombre ── */}
       <section style={{ position: 'relative', background: '#0A0F1E', color: '#F8FAFC', padding: 'clamp(48px, 7vw, 76px) 24px clamp(52px, 8vw, 80px)', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -462,35 +493,35 @@ export default function AuditConformiteAIActPage() {
               <Scale size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Mission de conseil · Audit de conformité IA
+              Mission de conseil · AI Act et RGPD
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Audit de conformité IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>RGPD et AI Act, les écarts réels et le plan pour les corriger</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>vos écarts AI Act et RGPD, et le plan daté pour les corriger</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
+            Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Mis en ligne en septembre 2026, calendrier revérifié le 7 octobre 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit de conformité IA de Masteria inventorie les systèmes d'intelligence artificielle en service dans votre organisation, les qualifie par niveau de risque au sens du règlement européen, contrôle les obligations déjà applicables et vos traitements RGPD, puis livre <strong style={{ color: '#fff', fontWeight: 700 }}>les écarts hiérarchisés et un plan de mise en conformité daté</strong>. Sans certification promise, puisque rien n'est certifiable au titre du règlement IA à ce jour.
+            L'audit de conformité IA recense les systèmes d'intelligence artificielle que votre organisation utilise, attribue à chacun le niveau de risque prévu par l'AI Act, contrôle les obligations déjà en vigueur et vos traitements de données personnelles, puis remet <strong style={{ color: '#fff', fontWeight: 700 }}>la liste des écarts, classés par gravité, et un plan daté pour les corriger</strong>. Aucune certification n'est promise : rien ne permet aujourd'hui de certifier le respect de l'AI Act.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Trois obligations s'appliquent déjà : pratiques interdites et littératie IA depuis le 2 février 2025, transparence depuis le 2 août 2026. Les obligations sur les systèmes à haut risque sont reportées à décembre 2027 et août 2028. La mission sépare ce qui doit être corrigé maintenant de ce qui se prépare, et le dit dans cet ordre.
+            Au 7 octobre 2026, trois blocs d'obligations sont opposables : depuis le 2 février 2025, certaines pratiques sont interdites et la maîtrise de l'IA est exigée ; depuis le 2 août 2026, la transparence l'est aussi. Le haut risque attend le 2 décembre 2027 (annexe III) et le 2 août 2028 (annexe I). La mission traite d'abord ce qui s'applique, puis prépare le reste, dans cet ordre.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre audit de conformité
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#livrable" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le livrable
+              Les pièces remises
             </a>
           </div>
 
@@ -504,7 +535,7 @@ export default function AuditConformiteAIActPage() {
           </div>
 
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La mission en résumé</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -517,20 +548,20 @@ export default function AuditConformiteAIActPage() {
         </div>
       </section>
 
-      {/* ── CE QUE LA LOI IMPOSE (éditorial asymétrique) ── */}
+      {/* ── LES QUATRE BLOCS D'OBLIGATIONS ── */}
       <section id="obligations" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Le calendrier réel</Kicker>
+              <Kicker>Le calendrier au 7 octobre 2026</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que vérifie un audit de conformité IA en 2026 ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Quatre blocs d'obligations, à des dates différentes. Trois s'appliquent déjà : les pratiques interdites et la littératie IA depuis le 2 février 2025, la transparence des contenus et des agents conversationnels depuis le 2 août 2026. Le quatrième, les systèmes à haut risque, est reporté au 2 décembre 2027 et au 2 août 2028 par le règlement (UE) 2026/1744. L'audit contrôle les trois premiers et prépare le quatrième.</strong>
+                <strong>Quatre blocs d'obligations, quatre dates. Trois sont déjà opposables : les articles 5 et 4 s'appliquent depuis février 2025, l'article 50 depuis août 2026. Le quatrième, le haut risque, a été reporté par le règlement (UE) 2026/1744 au 2 décembre 2027 (usages de l'annexe III), puis au 2 août 2028 (produits de l'annexe I). L'audit contrôle les trois premiers et prépare le dernier.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Le RGPD s'ajoute à ces quatre blocs, et c'est lui qui déclenche les contrôles aujourd'hui : données personnelles saisies dans un outil grand public, absence d'information des personnes, sous-traitant hors contrat. Pour le fond des textes et les normes publiées, lisez notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide de l'audit IA</Link>.
+                Le RGPD vient s'y ajouter, et c'est lui qui déclenche aujourd'hui les contrôles : fichiers clients copiés dans une version gratuite d'assistant, personnes concernées jamais informées, sous-traitant sans contrat. Le cadre complet, normes publiées comprises, est développé dans notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide de l'audit IA</Link>.
               </p>
             </div>
 
@@ -548,14 +579,14 @@ export default function AuditConformiteAIActPage() {
                 ))}
               </div>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Si votre question est « où en sommes-nous et que pouvons-nous automatiser », c'est un audit de maturité qu'il vous faut : notre <Link to="/audit-ia" style={aStyle}>audit IA d'entreprise</Link> couvre ce périmètre et intègre la conformité au passage. Cette page décrit la mission dédiée, quand la conformité est la question principale.
+                Vous cherchez plutôt les gains possibles de l'IA dans vos processus ? Il vous faut un audit de maturité : notre <Link to="/audit-ia" style={aStyle}>audit IA d'entreprise</Link> couvre ce terrain et traite la conformité en chemin. La mission décrite ici sert quand la conformité est la question centrale.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── CONFORMITÉ VS MATURITÉ VS GOUVERNANCE (ancre sombre) ── */}
+      {/* ── CONFORMITÉ, MATURITÉ, GOUVERNANCE (ancre sombre) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -564,15 +595,15 @@ export default function AuditConformiteAIActPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Conformité, maturité ou gouvernance</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            L'audit de conformité est-il la bonne mission pour vous ?
+            Conformité, maturité, gouvernance : laquelle traiter d'abord ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>L'audit de conformité convient quand la question est « sommes-nous en règle » : avant un contrôle, un appel d'offres qui exige des garanties, une échéance réglementaire, ou après une alerte interne. Si la question est « que peut-on faire avec l'IA », c'est l'audit de maturité. Si l'audit est fait et qu'il faut tenir dans la durée, c'est la gouvernance.</strong>
+            <strong style={{ color: '#fff' }}>Choisissez l'audit de conformité quand il s'agit de savoir si vous êtes en règle : avant un contrôle, un appel d'offres qui exige des garanties, une échéance du calendrier européen, ou après un incident interne. Pour savoir ce que l'IA peut faire chez vous, l'audit de maturité convient mieux. Une fois l'audit rendu, la gouvernance vous permet de rester en règle dans la durée.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
-            <table aria-label="Comparatif entre audit de maturité, audit de conformité et mise en place de la gouvernance IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
+            <table aria-label="Audit de maturité, audit de conformité IA et gouvernance de l'IA comparés" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
               <thead>
                 <tr>
                   <th scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', borderBottom: '1px solid #1E293B', lineHeight: 1.4, width: '18%' }}>Critère</th>
@@ -594,21 +625,21 @@ export default function AuditConformiteAIActPage() {
             </table>
           </div>
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Les deux autres missions ont leur page : l'<Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit IA de maturité</Link> et la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>gouvernance de l'IA</Link>. Beaucoup d'organisations enchaînent les trois dans cet ordre, sur un an.
+            Les deux autres missions ont chacune leur page : l'<Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>audit IA de maturité</Link> et la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>gouvernance de l'IA</Link>. Elles s'enchaînent souvent dans cet ordre : maturité, conformité, gouvernance.
           </p>
         </div>
       </section>
 
-      {/* ── CE QUE L'AUDIT VÉRIFIE (6 chantiers) ── */}
+      {/* ── LES SIX CONTRÔLES ── */}
       <section id="chantiers" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Le périmètre</Kicker>
+          <Kicker>Six contrôles</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Que contrôle l'audit, point par point ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six chantiers : l'inventaire des systèmes d'IA en service, leur qualification par niveau de risque, les écarts RGPD, la littératie et la supervision humaine, la transparence des contenus générés, et la documentation que vous êtes capable de produire. Chaque chantier ressort avec ses écarts, l'article concerné et un délai de correction.</strong>
+            <strong>Six contrôles : le recensement des systèmes, le niveau de risque de chacun, les écarts RGPD, la formation et le contrôle humain, la transparence des contenus, la documentation disponible. Chacun ressort avec ses écarts, l'article en cause et un délai de correction.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
@@ -628,25 +659,25 @@ export default function AuditConformiteAIActPage() {
               <Landmark size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
             </div>
             <div style={{ flex: 1, minWidth: 260 }}>
-              <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8, color: '#F8FAFC' }}>Ce que la loi n'impose pas</h3>
+              <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8, color: '#F8FAFC' }}>Trois exigences que la loi ne contient pas</h3>
               <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                Aucun audit externe obligatoire pour la plupart des systèmes à haut risque : le règlement prévoit une évaluation par contrôle interne, documentée par l'entreprise. Aucun registre général des systèmes d'IA : l'enregistrement dans la base européenne vise les fournisseurs de systèmes à haut risque et les déployeurs qui sont des autorités publiques. Aucune certification possible à ce jour. Nous auditons pour que vous sachiez où vous en êtes, jamais en agitant une obligation qui n'existe pas.
+                Un système à haut risque n'exige pas, dans la majorité des cas, d'audit externe : l'AI Act se contente d'un contrôle interne documenté par l'entreprise. Aucun registre universel n'est imposé : l'inscription dans la base européenne concerne les fournisseurs de systèmes classés à haut risque et les déployeurs qui sont des autorités publiques. Aucune certification n'est possible à ce jour. Nous auditons pour que vous sachiez où vous en êtes, sans brandir une obligation inexistante.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── LA MÉTHODE EN 6 TEMPS ── */}
+      {/* ── SIX TEMPS ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>La méthode</Kicker>
+          <Kicker>Déroulé</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Comment se déroule l'audit de conformité ?
+            Six temps, avec le DPO du début à la fin
           </h2>
 
           <p style={answerStyle}>
-            <strong>Six temps : cadrage, inventaire, qualification, contrôle des obligations applicables, revue des fournisseurs, puis plan de mise en conformité et restitution. Le DPO et la DSI sont associés du début à la fin. Le référentiel appliqué est nommé dès le devis : règlement (UE) 2024/1689 et ses modifications, RGPD, recommandations de la CNIL, ISO/IEC 42001 quand une certification est visée.</strong>
+            <strong>Cadrage, recensement, qualification, contrôle des obligations en vigueur, revue des fournisseurs, plan et restitution. Le DPO et la DSI suivent chaque temps. Les textes de référence sont nommés dans le devis : AI Act et règlement modificatif de 2026, RGPD, publications de la CNIL, ISO/IEC 42001 si une certification est visée.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -672,16 +703,16 @@ export default function AuditConformiteAIActPage() {
         </div>
       </section>
 
-      {/* ── LE LIVRABLE ── */}
+      {/* ── LES PIÈCES REMISES ── */}
       <section id="livrable" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Le livrable</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Avec quoi repartez-vous ?
+            Les pièces que votre DPO pourra produire demain
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un registre des systèmes d'IA, une matrice de risque, la liste des écarts hiérarchisés avec l'article cité et le délai de correction, un plan de mise en conformité daté avec un porteur par action, un kit documentaire prêt à adapter, et une restitution en direction. Un dossier que votre DPO peut porter seul, ou confier à un autre prestataire.</strong>
+            <strong>Un registre des systèmes, une matrice de risque, des écarts classés avec l'article cité et un délai, un plan daté avec un porteur par action, des trames de documents et une séance d'arbitrage. Votre DPO peut porter ce dossier seul, ou le confier à un autre prestataire.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
@@ -698,7 +729,7 @@ export default function AuditConformiteAIActPage() {
         </div>
       </section>
 
-      {/* ── GARDE-FOUS ── */}
+      {/* ── ENGAGEMENTS ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -706,12 +737,12 @@ export default function AuditConformiteAIActPage() {
               <ShieldCheck size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Nos garde-fous</Kicker>
+              <Kicker>Nos engagements</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Un audit de conformité qui invente des obligations vous coûte deux fois
+                Un audit qui invente des obligations vous fait payer deux fois
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le marché de la conformité IA vend beaucoup de peur : questionnaires qui promettent une certification qui n'existe pas, dates d'application déjà périmées, registres obligatoires pour tout le monde. Vous payez l'audit, puis vous payez des corrections inutiles. Nos engagements se vérifient dans le rapport, ligne à ligne.
+                La conformité IA attire les discours alarmistes : certifications qui n'existent pas, calendriers périmés, registres présentés comme obligatoires pour tous. On paie l'audit, puis des corrections inutiles. Nos engagements se contrôlent dans le rapport, ligne par ligne.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {GARDE_FOUS.map(pt => (
@@ -726,62 +757,89 @@ export default function AuditConformiteAIActPage() {
         </div>
       </section>
 
-      {/* ── PRIX & FINANCEMENT ── */}
+      {/* ── PRIX ET FINANCEMENT ── */}
       <section id="prix" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Prix et financement</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Combien coûte un audit de conformité IA, et qui peut le financer ?
+            Combien coûte un audit de conformité IA, et qui le finance ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La mission se chiffre au forfait, après un cadrage gratuit qui fixe le périmètre : entités, nombre de systèmes, profondeur du volet RGPD. Pour une organisation de taille moyenne qui utilise des outils du marché, l'ordre de grandeur est une poignée de jours d'expertise. Un devis plus lourd s'explique par un système développé en interne, plusieurs entités ou un usage à haut risque à préparer.</strong>
+            <strong>Le montant se décide une fois le cadrage terminé, quand on connaît les entités, le nombre de systèmes et l'ampleur du volet RGPD. Une PME qui utilise des outils du marché paie quelques milliers d'euros ; un groupe, ou une entreprise qui a développé son propre système de notation, monte à plusieurs dizaines de milliers, sans plafond défini d'avance.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <Building2 size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Notre façon de chiffrer</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce qui fait varier le prix</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le nombre de systèmes et de traitements fait le prix, pas la taille de l'entreprise. Une PME de quatre-vingts personnes avec un assistant bureautique et un chatbot public se traite vite ; une ETI qui a développé un outil de scoring interne demande davantage, et cela se lit dans le devis. Nous ne publions pas de fourchette de marché : aucune n'est vérifiable.
+                Le nombre de systèmes et de traitements pèse plus que l'effectif. Une PME de quatre-vingts personnes équipée d'un assistant bureautique et d'un chatbot public se traite vite ; une ETI qui a construit un outil de scoring interne demande davantage, et le devis le montre. Seul l'audit est chiffré : une mise en conformité accompagnée, si vous la souhaitez, fait l'objet d'un devis séparé après la restitution.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Les financements mobilisables</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>Les financements possibles</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le conseil n'est pas finançable par votre OPCO, qui couvre la formation. Selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil peuvent s'appliquer : nous faisons le point au cadrage. Le volet formation qui suit l'audit, la littératie IA de l'article 4 en particulier, reste finançable par votre OPCO : Masteria est certifiée Qualiopi.
+                La mission relève du conseil ; elle n'est donc pas finançable par votre OPCO, lequel couvre la formation. Côté aides, certaines subventions publiques au conseil existent selon l'effectif, le secteur et la région ; le cadrage fait le tri. La formation souvent décidée après l'audit ouvre droit, elle, à un financement de l'OPCO compétent, dans les limites qu'il fixe.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['photovoltaique', 'industrie']}
-        title="Deux missions où le cadre réglementaire a été posé, sans obligation inventée"
-        intro="Le positionnement d'une PME au regard du règlement européen, le cadre AI Act et RGPD présenté à un comité de direction : la méthode en six temps et ses résultats."
-      />
+      {/* ── ÉTUDES DE CAS (texte propre à la page) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#fff', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
+          <Kicker>Études de cas</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Deux missions où le cadre réglementaire a précédé l'outil
+          </h2>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Une PME qui sortait des comptes personnels, un comité de direction qui préparait un déploiement à l'international : dans les deux cas, la question réglementaire a été tranchée avant le choix de l'outil. Les clients restent anonymes ; ce qui reste à venir est écrit au futur.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {CAS.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
+              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
+                  Lire cette mission en entier
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Audit de conformité IA : les questions fréquentes
+                Conformité de l'IA : les questions des DPO et des directions
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Un cas particulier, un texte dont la lecture vous échappe ? Envoyez-le, nous répondons par écrit.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Envoyer votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -795,24 +853,25 @@ export default function AuditConformiteAIActPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pour continuer</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Autres pages sur la conformité de l'IA
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            L'audit de conformité est l'une des missions de notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link>. Il s'enchaîne avec la gouvernance, la charte d'usage et la <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link> de vos équipes.
+            L'audit de conformité fait partie des missions de notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link>. Il se prolonge souvent par la gouvernance, une charte d'usage et la <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link> des équipes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: "Audit IA d'entreprise", href: '/audit-ia', tag: 'Audit', desc: "La mission complète : maturité, processus, données, outils, organisation, avec la conformité intégrée." },
-              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Gouvernance', desc: "Après l'audit : comité, registre vivant, procédure de validation des usages, pour rester en règle dans la durée." },
-              { label: "Auditabilité d'un système d'IA", href: '/blog/auditabilite-systeme-ia', tag: 'Guide', desc: "Ce que vous devez pouvoir prouver : journaux, documentation, supervision, et par où commencer." },
-              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le document d'usage qui suit souvent l'audit : ce que les équipes peuvent faire, avec quels outils et quelles données." },
-              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Conformité', desc: "Les questions de données personnelles que soulève chaque usage d'IA générative, et comment les traiter." },
-              { label: "Formation AI Act", href: '/formation-ai-act', tag: 'Formation', desc: "La littératie IA de l'article 4 pour vos équipes, finançable par votre OPCO." },
-              { label: "Guide de l'audit IA", href: '/blog/audit-ia-entreprise-methode-prix', tag: 'Guide', desc: "Les trois types d'audit, ce que la loi impose vraiment, les normes publiées et les prix." },
+              { label: "Audit IA d'entreprise", href: '/audit-ia', tag: 'Audit', desc: "Maturité, processus, données, outils et organisation, avec un volet réglementaire intégré à l'examen." },
+              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Gouvernance', desc: "Comité, registre tenu à jour, validation des nouveaux usages : rester en règle une fois l'audit rendu." },
+              { label: "Auditabilité d'un système d'IA", href: '/blog/auditabilite-systeme-ia', tag: 'Guide', desc: "Journaux, documentation, contrôle humain : ce qu'il faudra pouvoir montrer, et par où commencer." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le texte qui dit aux équipes quels outils et quelles données utiliser, souvent rédigé juste après l'audit." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Données', desc: "Les questions de données personnelles soulevées par l'IA générative, usage par usage." },
+              { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Formation', desc: "Former vos équipes pour répondre à l'article 4, avec un financement possible par l'OPCO de votre branche." },
+              { label: "Guide de l'audit IA", href: '/blog/audit-ia-entreprise-methode-prix', tag: 'Guide', desc: "Familles d'audit, obligations légales, normes publiées, repères de prix." },
+              { label: 'Audit IA médico-social', href: '/audit-ia-medico-social', tag: 'Secteur', desc: "Données de santé, secret professionnel, hébergement HDS : la conformité vue depuis un établissement." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -828,7 +887,7 @@ export default function AuditConformiteAIActPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Consulter
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -838,25 +897,25 @@ export default function AuditConformiteAIActPage() {
         </div>
       </section>
 
-      {/* ── QUI INTERVIENT (E-E-A-T) ── */}
+      {/* ── QUI MÈNE L'AUDIT ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui intervient</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui mène l'audit</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Un cabinet qui connaît les outils autant que les textes
+                Des auditeurs qui déploient ces outils toute l'année
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, audite, construit et forme, sans dépendre d'un éditeur. La conformité IA se joue dans les usages réels des équipes, pas seulement dans les textes : nos auditeurs forment et déploient ces outils toute l'année, ils savent où les écarts se logent. Sur les points d'interprétation juridique, nous travaillons avec votre conseil. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                Mathias Nizan pilote chaque audit de conformité. Selon les systèmes à examiner, il fait intervenir des consultants IA (une dizaine dans le réseau), des développeurs (cinq environ) pour lire un système construit en interne, et des formateurs (une vingtaine) quand il faut évaluer la formation des équipes ; tous sont indépendants. Ces intervenants installent et enseignent ces outils au quotidien et savent où se logent les écarts. Pour l'interprétation juridique, nous travaillons avec votre avocat ou votre juriste. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> donnent des exemples datés.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Indépendant', 'des éditeurs de solutions'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['≈ 10', 'consultants sollicités selon les systèmes'],
+                ['≈ 5', 'développeurs pour les outils maison'],
+                ['≈ 20', "formateurs à la maîtrise de l'IA"],
+                ['Aucune', "certification promise sur l'AI Act"],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -868,34 +927,42 @@ export default function AuditConformiteAIActPage() {
         </div>
       </section>
 
-      <FounderNote />
+      {/* ── SIGNATURE (remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan, fondateur de Masteria, signe cette page ; il en a contrôlé chaque date le 7 octobre 2026, à la lumière du règlement (UE) 2026/1744. Son parcours est présenté sur <Link to="/mathias-nizan" style={aStyle}>sa page personnelle</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE ── */}
-      <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
+      <section style={{ background: '#fff', padding: 'clamp(24px, 4vw, 48px) 24px clamp(64px, 9vw, 110px)' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Mission de conseil</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               Cadrons votre audit de conformité IA
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre contexte : les outils en service, ce qui motive la demande, l'échéance. Nous revenons vers vous sous 24 heures pour un échange de cadrage gratuit, qui fixe le périmètre et vous dit déjà quelles obligations s'appliquent à vous aujourd'hui. Si un audit ne vous servirait à rien, nous vous le disons à ce moment-là.
+              Listez les outils d'IA que vous savez en service, ce qui déclenche la demande et l'échéance qui vous presse. Pendant ces 30 minutes, le périmètre se fixe et vous repartez en sachant déjà quelles obligations vous visent aujourd'hui. Si un audit ne vous apporterait rien, nous le dirons pendant cet échange.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un audit de conformité
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Aucune certification promise · Lyon, Europe, États-Unis, Inde
+              Calendrier AI Act vérifié le 7 octobre 2026 · devis limité à l'audit · missions menées depuis Lyon, en France et à l'étranger
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      <OfficialSources lean extra={PAGE_CITATIONS} />
     </>
   )
 }

@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : Numeum (Top 250, 6/11/2025), règlement (UE) 2024/1689 (art. 3, 25, 50, annexe III, service desk de la Commission) et règlement (UE) 2026/1744 (JO du 24/07/2026), documentation Anthropic (retraits, tarifs, conservation) et OpenAI (retraits, données), OWASP Top 10 LLM 2025, Commission (Data Act).
 export default {
   slug: 'ia-tech-saas',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Fonctionnalité d'IA dans le produit", "Coût par compte client", "Fournisseur de modèle interchangeable"],
+    lien: "Voir les engagements à cadrer",
+  },
+  offresTitre: {
+    kicker: "Trois interventions pour un éditeur",
+    h2: "Qualifier la fonctionnalité, la coder dans votre dépôt, outiller vos équipes",
+  },
+  enjeux: {
+    kicker: "Éditeurs et SaaS",
+    h2: "Une fonctionnalité d'IA se gère comme une dépendance de votre produit",
+    difficultes: "Ce qui complique la vie d'une équipe produit",
+    prestations: "Ce que nous développons pour un éditeur",
+  },
+  regieBloc: {
+    kicker: "Renfort d'équipe",
+    h2: "Un développeur IA dans votre équipe produit, sur votre base de code",
+    accroche: "Pour tenir une échéance de produit, ou quand le code et les données ne sortent pas de votre périmètre, le développeur IA rejoint votre équipe produit et engineering, sur site ou à distance, et travaille dans votre dépôt selon vos conventions.",
+    lien: "Les formules de renfort",
+  },
+  formationBloc: {
+    kicker: "Former développeurs et support",
+    h2: "Des ateliers sur votre produit et vos tickets",
+    lien: "Découvrir nos formations",
+  },
+  faqBloc: {
+    h2: "Éditeurs de logiciels : vos questions",
+    texte: "Votre architecture pose une question que nous n'avons pas traitée ?",
+    lien: "Parlons-en avec votre CTO",
+  },
+  maillage: {
+    h2: "Secteurs proches de la tech",
+  },
+  cta: {
+    titre: "Quelle fonctionnalité d'IA ajouter à votre produit ?",
+    texte: "Décrivez la fonctionnalité visée, votre stack et vos clients cibles. Nous revenons vers vous sous 24 heures pour organiser les 30 minutes de cadrage offertes, avec votre directeur technique si possible.",
+  },
+  equipe: {
+    titre: "Des développeurs et des consultants réunis pour votre produit",
+    texte: "Mathias Nizan, fondateur de Masteria à Lyon en 2022, compose l'équipe de chaque mission et la dirige. Pour un éditeur, il associe un consultant qui qualifie la fonctionnalité au regard du règlement sur l'IA, des développeurs qui codent dans votre dépôt et un formateur pour vos équipes de support. Tous sont indépendants, et Masteria n'a d'accord commercial avec aucun fournisseur de modèle.",
+  },
   intro: "Pour un éditeur de logiciels, ajouter l'IA générative au produit engage trois choses : des obligations au titre du règlement européen sur l'IA, un contrat avec un fournisseur de modèle qui fixe la conservation et la région des données, et un coût à chaque requête. Masteria cadre ces engagements avec vos équipes produit, puis développe la fonctionnalité dans votre base de code, avec un jeu d'évaluation, un cloisonnement par client et une documentation que votre équipe reprend.",
 
   offresIntro: [
@@ -11,14 +53,21 @@ export default {
   ],
   offres: [
     {
+      title: "Qualification de la fonctionnalité",
+      cta: "Le conseil IA avant le code",
       desc: "Nous qualifions la fonctionnalité au regard du règlement européen sur l'IA, comparons les fournisseurs de modèles sur la conservation des données, la région de traitement et le calendrier de retrait des versions, puis estimons le coût par compte client avant d'écrire une ligne de code. Vous décidez sur un dossier chiffré.",
       points: ["Qualification au regard de l'AI Act", "Comparatif des fournisseurs de modèles", "Coût par compte client estimé"],
     },
     {
+      title: "Développement dans votre dépôt",
+      cta: "Notre agence de développement",
+      secondaryCta: "Outils IA pour vos équipes",
       desc: "Nous développons la fonctionnalité dans votre dépôt, selon vos conventions : une couche qui isole le fournisseur de modèle, une recherche dans les données de chaque client cloisonnée par compte, un jeu d'évaluation rejoué à chaque changement de version et des journaux exploitables par votre support. Le code et sa documentation vous sont livrés.",
       points: ["Fournisseur de modèle interchangeable", "Index cloisonné par client", "Jeu d'évaluation rejoué à chaque version"],
     },
     {
+      title: "Outils pour le support et le produit",
+      cta: "Automatiser le travail interne",
       desc: "Nous outillons vos équipes internes : préparation des réponses du support à partir de votre documentation, notes de version rédigées depuis les tickets livrés, agents reliés à vos outils par MCP (protocole ouvert qui connecte un modèle à des outils et à des données) avec des droits limités au strict nécessaire.",
       points: ["Réponses du support préparées", "Notes de version depuis les tickets", "Agents MCP aux droits limités"],
     },
@@ -116,8 +165,8 @@ export default {
   ],
   sources: [
     { name: "Numeum : panorama Top 250 des éditeurs de logiciels français, 15e édition (6 novembre 2025)", url: "https://numeum.fr/economie-marche/panorama-top-250-des-editeurs-de-logiciels-francais-15eme-edition-lia-entre-au-coeur-du-modele-des-editeurs-francais/" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (articles 3, 25 et 50, annexe III)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744 du 8 juillet 2026, Omnibus numérique sur l'IA (JO du 24 juillet 2026)", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : fournisseur et déployeur (articles 3 et 25), transparence (article 50)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 du 8 juillet 2026 (JO du 24 juillet) : calendrier révisé pour les éditeurs", url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj" },
     { name: "Anthropic : Model deprecations (calendrier de retrait des modèles)", url: "https://platform.claude.com/docs/en/about-claude/model-deprecations" },
     { name: "Anthropic : tarifs de l'API, cache de prompt et traitement par lots", url: "https://platform.claude.com/docs/en/about-claude/pricing" },
     { name: "Anthropic Privacy Center : durée de conservation des données de l'API", url: "https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data" },

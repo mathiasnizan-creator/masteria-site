@@ -4,121 +4,147 @@ import {
   Workflow, BadgeCheck, Wallet, MonitorSmartphone, Building2, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import FounderNote from '../components/FounderNote'
-import OfficialSources from '../components/OfficialSources'
 import Pictogram from '../components/Pictogram'
 
 /*
- * Page formation « automatisation IA » — réplique la structure des pages
- * formation (SpokePage) : hero + tarifs, chiffres clés, audience, cas d'usage,
- * programme J1/J2, CTA milieu, objectifs, tarifs, formateur, pourquoi Masteria,
- * FAQ, formations associées, CTA. Cible le mot-clé « formation automatisation ia ».
- * Accent bleu Masteria (#2563EB), pas d'orange.
+ * Page formation « automatisation IA » : structure des pages formation
+ * (SpokePage) : hero + tarifs, repères, audience, cas d'usage, programme
+ * J1/J2, CTA milieu, chaînes automatisées, paliers, objectifs, tarifs,
+ * fondateur, pourquoi Masteria, erreurs, FAQ, formations associées, CTA.
+ * Cible le mot-clé « formation automatisation ia ». Accent bleu Masteria.
+ *
+ * RÉÉCRITURE DU 2026-10-07 (texte propre, faits à jour, source :
+ * scratchpad FAITS-OUTILS-2026-10-07.md) :
+ * - GPTs personnalisés retirés le 11/12/2026 (11/02/2027 pour les espaces
+ *   Enterprise avec délai), migration vers des plugins ; Gems remplacés par
+ *   les compétences Gemini ; agents de Vibe remplacés par les Skills le 22/09.
+ * - Agents d'espace de travail ChatGPT : GA le 21/05/2026 (Business, Enterprise,
+ *   Edu), exécutions en crédits depuis le 06/07/2026.
+ * - Workspace Studio : accès promotionnel, plafonds dès le 01/11/2026.
+ * - Copilot Cowork : disponibilité générale comptes pro, tâches planifiées ou
+ *   déclenchées par un événement, accord avant chaque action sensible.
+ * - Copilot Studio : pack de 25 000 crédits à 173,30 € HT par mois.
+ * - AI Act : art. 4 depuis le 02/02/2025, art. 50 depuis le 02/08/2026, haut
+ *   risque annexe III reporté au 02/12/2027 (règlement (UE) 2026/1744).
+ * - Retirés : « +1 500 formés », « plusieurs heures par semaine », « nous
+ *   accompagnons gratuitement », citation du fondateur partagée, FounderNote,
+ *   OfficialSources, bloc « Qui intervient » commun.
  */
 
 const SLUG = 'formation-automatisation-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Formation automatisation IA | Workflows, agents & no-code | Masteria"
-const META_DESC = "Formation automatisation IA : automatisez vos tâches et workflows avec l'IA (agents, Make, Power Automate). Certifié Qualiopi, finançable OPCO."
+const META_TITLE = "Formation automatisation IA : workflows et agents | Masteria"
+const META_DESC = "Formation automatisation IA en 2 jours : choisir les tâches, bâtir workflows et agents supervisés, sans code. Qualiopi, finançable par votre OPCO."
 const H1 = "Formation automatisation IA"
-const INTRO = "L'automatisation par l'intelligence artificielle permet de déléguer les tâches répétitives (saisie, relances, reporting, tri d'emails) à des agents et des workflows intelligents. Cette formation apprend à vos équipes à repérer ces tâches, à les automatiser avec les bons outils et à le faire en sécurité, sans écrire une ligne de code."
+const INTRO = "Relances, saisies, tri du courrier entrant, reporting du lundi : une part du travail de bureau suit toujours le même chemin, et l'IA permet désormais d'en confier une partie à des workflows et à des agents. Pendant deux jours, vos équipes apprennent à choisir ces tâches, à les automatiser avec l'outil adapté et à conserver le contrôle de ce qui engage l'entreprise, sans écrire de code."
 
 const HERO_BADGES = [
-  { icon: BadgeCheck,         label: 'Certifié Qualiopi' },
-  { icon: Wallet,             label: 'Finançable OPCO' },
-  { icon: MonitorSmartphone,  label: 'Présentiel & distanciel' },
-  { icon: Building2,          label: 'Intra ou accompagnement individuel' },
+  { icon: BadgeCheck,         label: 'Organisme Qualiopi' },
+  { icon: Wallet,             label: 'Prise en charge OPCO possible' },
+  { icon: MonitorSmartphone,  label: 'Sur site ou en visioconférence' },
+  { icon: Building2,          label: 'Groupe intra ou parcours individuel' },
 ]
 
 const AUDIENCE = [
-  { title: 'Managers et responsables de service', desc: "Vous voulez libérer du temps à votre équipe en automatisant les tâches répétitives, sans dépendre de la DSI ni d'un développeur." },
-  { title: 'Profils opérationnels (marketing, commercial, RH, finance)', desc: "Vous passez trop de temps sur des tâches manuelles à faible valeur : tri d'emails, relances, reporting, mises à jour de fichiers. L'automatisation IA vous les enlève." },
-  { title: 'Assistant(e)s et fonctions support', desc: "Vous orchestrez des flux d'information entre plusieurs outils et personnes. Vous apprenez à les automatiser et à les fiabiliser." },
-  { title: 'DSI, référents IA et chefs de projet', desc: "Vous cadrez le déploiement de l'IA dans l'entreprise et cherchez à industrialiser des automatisations sûres, documentées et conformes." },
+  { title: 'Responsables de service', desc: "Votre équipe perd des heures sur des tâches qui se répètent chaque semaine. Vous voulez savoir lesquelles automatiser d'abord, et comment, sans attendre un projet informatique." },
+  { title: 'Marketing, ventes, RH, finance', desc: "Relances, mises à jour de fichiers, comptes rendus, extractions : vous apprenez à confier ces gestes à un workflow, puis à contrôler le résultat." },
+  { title: 'Assistanat et fonctions support', desc: "Vous faites circuler l'information entre plusieurs outils et plusieurs personnes. Vous repartez avec des automatisations qui tiennent quand vous êtes absent." },
+  { title: 'Référents IA, DSI, chefs de projet', desc: "Vous devez industrialiser sans perdre le contrôle : documentation, propriétaires, données autorisées, revues. La session fournit la méthode et des modèles de fiches." },
 ]
 
 const USE_CASES = [
-  { icon: '\uD83D\uDCE5', title: "Tri et réponses d'emails", desc: "Classez, résumez et préparez automatiquement les réponses aux emails entrants selon des règles claires." },
-  { icon: '\uD83D\uDD01', title: "Connexion de vos applications", desc: "Reliez vos outils entre eux avec Make, Zapier ou n8n et injectez de l'IA à chaque étape du flux." },
-  { icon: '\uD83E\uDD16', title: "Création d'un agent IA", desc: "Concevez un GPT personnalisé ou un agent qui enchaîne plusieurs étapes pour atteindre un objectif." },
-  { icon: '\uD83D\uDCCA', title: "Reporting industrialisé", desc: "Transformez des données brutes en rapport commenté, généré et diffusé automatiquement chaque semaine." },
-  { icon: '\uD83E\uDDE9', title: "Automatisation Microsoft 365", desc: "Automatisez vos flux Outlook, Teams, Excel et SharePoint avec Copilot et Power Automate." },
-  { icon: '\uD83D\uDEE1\uFE0F', title: "Supervision et conformité", desc: "Gardez un contrôle humain sur les décisions sensibles et mettez vos automatisations en conformité RGPD." },
+  { icon: '\uD83D\uDCE5', title: "La boîte mail triée", desc: "Chaque message entrant est classé, résumé et rapproché du bon dossier ; les réponses partent en brouillon, à relire." },
+  { icon: '\uD83D\uDD01', title: "Les applications reliées", desc: "Un formulaire, un tableur, un CRM et une messagerie qui se parlent grâce à Make, Zapier ou n8n, avec une étape IA au milieu." },
+  { icon: '\uD83E\uDD16', title: "Un premier agent", desc: "Un agent qui enchaîne recherche, rédaction et préparation d'une action, et s'arrête avant tout ce qui engage." },
+  { icon: '\uD83D\uDCCA', title: "Le reporting qui se prépare seul", desc: "Les chiffres de la semaine collectés, calculés et commentés dans votre gabarit, prêts à relire le lundi matin." },
+  { icon: '\uD83E\uDDE9', title: "Microsoft 365 et Google Workspace", desc: "Power Automate et Copilot côté Microsoft, Workspace Studio côté Google : ce que vos licences automatisent déjà." },
+  { icon: '\uD83D\uDEE1\uFE0F', title: "Le contrôle humain", desc: "Où placer la validation, quelles données laisser passer, comment tracer : les garde-fous posés dès la conception." },
 ]
 
 const MODULES = [
-  { day: 1, title: "Module 1, Fondamentaux de l'automatisation IA", duration: '2h', description: "Comprendre ce qu'est une automatisation IA et quand l'utiliser sans se mettre en danger.", items: ['Déclencheurs, actions et logique de chaîne', "Différence entre IA générative, automatisation IA et RPA", 'Ce que sont les agents IA et le no-code', 'Limites, risques et garde-fous'], exercise: "Cartographier une première chaîne d'automatisation à partir d'un cas apporté par le participant." },
-  { day: 1, title: 'Module 2, Cartographier ses tâches automatisables', duration: '2h', description: "Identifier les tâches à plus fort retour sur investissement.", items: ['Méthode de priorisation : fréquence, temps consommé, niveau de risque', "Repérer les tâches répétitives dans son quotidien", 'Estimer le temps récupérable', 'Choisir les premiers cas d\'usage'], exercise: "Construire la cartographie des tâches automatisables de son poste et sélectionner 3 priorités." },
-  { day: 1, title: 'Module 3, Premiers workflows no-code', duration: '2h', description: "Construire une automatisation de bout en bout sans coder.", items: ['Prise en main de Make et Zapier', "Lire, résumer, classer puis notifier", 'Connecter une boîte mail à une tâche et à un tableau', 'Tester et corriger un workflow'], exercise: "Automatiser le tri et le résumé d'emails entrants vers un tableau de suivi." },
-  { day: 1, title: 'Module 4, GPTs et assistants personnalisés', duration: '1h', description: "Créer un assistant IA réutilisable par toute l'équipe.", items: ['Concevoir un GPT personnalisé', 'Donner du contexte et des instructions durables', 'Réutiliser et partager ses assistants'], exercise: "Créer un assistant IA dédié à une tâche récurrente de son service." },
-  { day: 2, title: 'Module 5, Automatiser dans son environnement', duration: '2h', description: "Automatiser au sein de la suite bureautique de l'entreprise.", items: ['Power Automate avec Microsoft 365', 'Automatiser Outlook, Teams, Excel et SharePoint', "Cas équivalents sur Google Workspace", 'Choisir le bon outil selon son contexte'], exercise: "Construire un flux Power Automate qui déclenche une action depuis un email ou un formulaire." },
-  { day: 2, title: 'Module 6, Concevoir un agent IA supervisé', duration: '2h', description: "Faire enchaîner plusieurs étapes à l'IA tout en gardant la main.", items: ['Décomposer un objectif en étapes', "Enchaîner recherche, rédaction et action", 'Définir les points de validation humaine', 'Tester un agent sur un cas réel'], exercise: "Construire un agent qui qualifie une demande entrante et prépare une réponse à valider." },
-  { day: 2, title: 'Module 7, Fiabiliser et sécuriser', duration: '2h', description: "Mettre ses automatisations sous contrôle.", items: ['Contrôle humain sur les décisions sensibles', 'Journalisation et traçabilité des actions', "Confidentialité, RGPD et hébergement des données", "Obligations clés de l'AI Act"], exercise: "Auditer un de ses workflows et y ajouter les garde-fous manquants." },
-  { day: 2, title: "Module 8, Déployer à l'échelle de l'équipe", duration: '1h', description: "Passer d'une automatisation isolée à une pratique d'équipe.", items: ['Documenter et nommer ses automatisations', 'Définir qui supervise quoi', 'Construire un kit de modèles réutilisables'], exercise: "Rédiger la fiche de gouvernance d'une automatisation prête à déployer." },
+  { day: 1, title: "Module 1, Ce que l'IA sait automatiser, et ce qu'elle ne doit pas faire seule", duration: '2h', description: "Distinguer ce qui relève d'un assistant, d'un workflow ou d'un agent, et repérer ce qui doit rester à l'humain.", items: ['Déclencheur, étapes, sortie : la mécanique commune à tous les outils', "IA générative, automatisation, RPA (robots logiciels qui imitent les clics) : ce qui les sépare", "L'agent IA : un objectif, des outils, des limites", 'Les risques : erreurs, fuites de données, actions non voulues'], exercise: "Décrire, étape par étape, une tâche répétitive apportée par le participant." },
+  { day: 1, title: 'Module 2, Choisir ses tâches et son palier', duration: '2h', description: "Classer les tâches par fréquence, temps passé et risque, puis les placer sur les trois paliers d'outils.", items: ["Une grille de priorisation : fréquence, durée, risque, données en jeu", 'Mesurer le temps que prend la tâche aujourd\'hui', 'Natif, orchestrateur ou sur-mesure : choisir le palier le plus simple qui tient le besoin', "Écarter ce qui ne doit pas être automatisé"], exercise: "Dresser la carte des tâches automatisables de son poste et retenir trois priorités." },
+  { day: 1, title: 'Module 3, Un premier workflow sans code', duration: '2h', description: "Construire de bout en bout une automatisation qui lit, résume, classe et prévient.", items: ['Prise en main de Make ou de Zapier selon votre contexte', "Une étape IA au milieu du flux, avec un format de sortie fixé", 'Relier une boîte mail, un tableau de suivi et une notification', 'Tester sur des cas tirés de la semaine, puis corriger'], exercise: "Automatiser le tri et le résumé des messages entrants vers un tableau de suivi." },
+  { day: 1, title: 'Module 4, Les compétences, socle des assistants durables', duration: '1h', description: "Écrire une procédure réutilisable par toute l'équipe, au format qui s'impose chez les éditeurs.", items: ["Pourquoi ni les GPTs (retrait au 11 décembre 2026) ni les Gems (remplacés par les compétences Gemini) ne servent plus de base", 'Rédiger une compétence : rôle, étapes, exemples, format de sortie', "Partager, versionner, faire relire"], exercise: "Rédiger une compétence pour une tâche récurrente du service et la tester sur trois cas." },
+  { day: 2, title: 'Module 5, Automatiser dans la suite bureautique', duration: '2h', description: "Tirer parti de ce que vos licences Microsoft 365 ou Google Workspace permettent déjà.", items: ['Power Automate : Outlook, Teams, Excel et SharePoint reliés', 'Copilot Cowork : tâches planifiées ou déclenchées par un mail, accord avant chaque action sensible', 'Workspace Studio : des flux décrits en langage courant sur Gmail, Drive et Chat', 'Choisir entre l\'outil de la suite et un orchestrateur'], exercise: "Construire un flux lancé par l'arrivée d'un mail ou l'envoi d'un formulaire." },
+  { day: 2, title: 'Module 6, Un agent qui travaille sous contrôle', duration: '2h', description: "Confier à un agent un enchaînement d'étapes sans lui laisser le dernier mot.", items: ["Découper l'objectif en étapes vérifiables", 'Chercher, rédiger, préparer : ce que l\'agent fait seul', "Placer les points de validation humaine", "L'éprouver sur des cas tirés de vos dossiers"], exercise: "Construire un agent qui qualifie une demande entrante et prépare la réponse, envoyée seulement après validation." },
+  { day: 2, title: 'Module 7, Fiabilité, données et AI Act', duration: '2h', description: "Rendre chaque automatisation traçable et conforme.", items: ['Validation humaine sur les décisions qui engagent', 'Journal des exécutions et alertes en cas d\'échec', "RGPD : données autorisées, hébergement, registre des traitements", "AI Act, ce qui vous concerne : soutenir la culture IA des équipes (article 4, applicable dès février 2025) et signaler les contenus générés (article 50, depuis août 2026)"], exercise: "Passer l'un de ses workflows à la check-list de fiabilité et ajouter les garde-fous manquants." },
+  { day: 2, title: "Module 8, Faire vivre les automatisations dans l'équipe", duration: '1h', description: "Passer d'une réussite isolée à une pratique partagée.", items: ['Une fiche par automatisation : déclencheur, étapes, accès, propriétaire', 'Désigner la personne qui surveille, et la fréquence des contrôles', 'Une bibliothèque de modèles réutilisables'], exercise: "Remplir la fiche de gouvernance d'une automatisation prête à être déployée." },
 ]
 
 const OBJECTIVES = [
-  "Identifier et prioriser les tâches automatisables à plus fort retour sur investissement",
-  "Construire un workflow d'automatisation IA de bout en bout en no-code",
-  "Concevoir et superviser un agent IA sur un cas réel de son métier",
-  "Connecter ses applications avec Make, Zapier, n8n ou Power Automate",
-  "Sécuriser ses automatisations : contrôle humain, confidentialité, RGPD et AI Act",
-  "Documenter et déployer ses automatisations pour toute l'équipe",
+  "Classer les tâches de son poste et retenir celles qui gagnent à être automatisées",
+  "Construire sans code un workflow complet doté d'une étape IA",
+  "Concevoir un agent qui prépare le travail et attend une validation avant d'agir",
+  "Choisir, selon le contexte, entre fonctions natives, orchestrateurs (Make, Zapier, n8n) et Power Automate",
+  "Encadrer ses automatisations : validation humaine, données, RGPD, AI Act",
+  "Documenter une automatisation pour qu'un collègue puisse la reprendre",
 ]
 
 const FAQ = [
-  { q: "Faut-il savoir coder pour automatiser avec l'IA ?", a: "Non. La grande majorité des automatisations IA se construisent en no-code, par glisser-déposer, avec des outils comme Make, Zapier, n8n ou Power Automate. La formation est accessible à tous les profils métier, sans aucun prérequis en développement. Les deux premiers paliers décrits sur cette page, fonctions natives de vos outils puis plateformes d'orchestration, se pratiquent entièrement sans code ; seul le développement sur mesure mobilise un développeur." },
-  { q: "Quelle différence entre IA générative et automatisation IA ?", a: "L'IA générative produit du contenu à la demande (un texte, une image, une analyse) lorsque vous la sollicitez. L'automatisation IA déclenche et enchaîne ces actions toute seule à partir d'un événement, par exemple résumer et classer chaque email entrant sans intervention. Les deux se combinent : l'automatisation orchestre, le modèle génératif exécute." },
-  { q: "Quels outils d'automatisation IA pour une PME ?", a: "Pour une PME, on démarre souvent avec ChatGPT et des GPTs personnalisés pour les tâches rédactionnelles, Make ou Zapier pour connecter les applications, et Power Automate si l'entreprise est déjà équipée de Microsoft 365. La formation vous aide à choisir selon vos outils existants plutôt qu'à multiplier les abonnements." },
-  { q: "L'automatisation IA va-t-elle supprimer des emplois ?", a: "L'automatisation IA prend en charge les tâches répétitives à faible valeur ajoutée et laisse aux équipes l'analyse, la relation et la décision. Les collaborateurs formés redéploient le temps gagné, qui se compte souvent en plusieurs heures par semaine, vers des missions à plus forte valeur." },
-  { q: "Combien de temps pour former une équipe à l'automatisation IA ?", a: "Le programme de référence se déroule sur 2 jours (14 heures), avec construction de workflows et d'un agent sur vos vrais cas d'usage. Une version d'une journée est possible pour poser les bases et réaliser ses premiers automatismes. Le format s'adapte à votre niveau de maturité." },
-  { q: "Combien de temps faut-il pour une première automatisation utile ?", a: "Une journée de formation en installe déjà. Dès le module 3, chaque participant construit un flux complet sur un cas apporté de son poste, comme le tri et le résumé des emails entrants vers un tableau de suivi. La deuxième journée consolide l'ensemble : agent supervisé, garde-fous, documentation et déploiement à l'équipe." },
-  { q: "Que devient l'automatisation si l'outil change ?", a: "Le travail de fond survit au changement d'outil. Une procédure formalisée, avec son déclencheur, ses étapes, ses règles et ses points de validation, se transpose d'une plateforme à l'autre : la reconstruire dans un nouvel outil va vite quand la logique est documentée. La formation insiste sur la cartographie et la documentation autant que sur la prise en main des outils, précisément pour rendre vos automatisations transportables." },
-  { q: "Formation ou prestation d'automatisation : comment choisir ?", a: "La formation rend votre équipe autonome sur les deux premiers paliers, fonctions natives et plateformes d'orchestration, appliqués à vos propres cas. La prestation prend le relais quand le flux est critique, volumineux ou qu'il doit écrire dans un logiciel métier : notre équipe conçoit alors l'automatisation pour vous, comme un projet cadré. Les deux se combinent bien, la formation permettant ensuite à vos équipes de faire vivre ce qui a été livré." },
-  { q: "La formation automatisation IA est-elle finançable et certifiée Qualiopi ?", a: "Oui. Masteria est certifié Qualiopi, ce qui rend la formation finançable par votre OPCO ou via le plan de développement des compétences. Nous accompagnons gratuitement le montage du dossier de prise en charge." },
+  { q: "Automatiser avec l'IA demande-t-il de savoir coder ?", a: "Non. Les deux premiers paliers présentés sur cette page, fonctions intégrées à vos outils puis orchestrateurs comme Make, Zapier ou n8n, se pratiquent à la souris, sans programmation. Seul le troisième palier, le développement sur mesure, mobilise un développeur. Les deux jours sont ouverts à tous les profils métier." },
+  { q: "IA générative et automatisation IA : quelle différence ?", a: "L'IA générative produit un contenu quand vous le lui demandez : un texte, une synthèse, une analyse. L'automatisation IA déclenche ce travail toute seule, à partir d'un événement, par exemple résumer et classer chaque mail qui arrive. Dans la pratique, l'une s'appuie sur l'autre : le workflow organise, le modèle d'IA rédige ou classe à l'étape prévue." },
+  { q: "Quels outils d'automatisation IA pour une PME ?", a: "Ceux que vous payez déjà, d'abord : Microsoft 365 avec Power Automate et Copilot, Google Workspace avec Workspace Studio, ChatGPT Business avec ses tâches planifiées et ses agents d'espace de travail. Viennent ensuite Make ou Zapier pour relier des applications entre elles, et n8n lorsque l'hébergement interne s'impose. La formation part de votre parc de licences avant de proposer un abonnement de plus." },
+  { q: "Que deviennent nos GPTs personnalisés ?", a: "OpenAI a fixé leur retrait au 11 décembre 2026, toutes offres confondues ; seuls les espaces Enterprise ayant obtenu un report les gardent jusqu'au 11 février 2027. Chaque GPT se convertit en plugin : ses consignes deviennent une compétence et ses documents servent de référence, mais ses actions personnalisées sont perdues. Au module 4, nous réécrivons un GPT en compétence, un format que Google, Microsoft et Mistral ont adopté à leur tour." },
+  { q: "L'automatisation IA supprime-t-elle des postes ?", a: "Elle retire des tâches, rarement des métiers entiers. Ce qui part en premier, c'est la ressaisie, le tri, la mise en forme ; ce qui reste, c'est l'analyse, la relation et la décision. Nous ne promettons pas de gain chiffré à l'avance : le module 2 apprend à mesurer le temps passé avant d'automatiser, pour constater ensuite le gain obtenu." },
+  { q: "En combien de temps une équipe est-elle formée ?", a: "Le programme de référence dure deux jours, soit 14 heures, avec un workflow et un agent construits sur vos cas. Une journée suffit pour poser les bases et mettre en service une première automatisation ; nous la proposons quand l'équipe démarre de zéro." },
+  { q: "Que devient une automatisation si nous changeons d'outil ?", a: "Le travail de fond survit. Une procédure décrite avec son déclencheur, ses étapes, ses règles et ses points de validation se reconstruit vite dans un autre outil. D'où le temps que la formation consacre à la description des tâches et à la documentation qu'à la prise en main des logiciels." },
+  { q: "Formation ou prestation d'automatisation : que choisir ?", a: "Avec la formation, votre équipe devient autonome sur les fonctions natives et les orchestrateurs, appliqués à ses propres tâches. Quand un flux est critique, volumineux ou doit écrire dans un logiciel métier, notre agence le conçoit pour vous, en développement sur devis, pas finançable par votre OPCO. Formation et prestation se combinent : la première permet ensuite de faire vivre ce que livre la seconde." },
+  { q: "La formation est-elle certifiée et finançable ?", a: "Oui. La certification Qualiopi de Masteria, catégorie actions de formation, ouvre droit à un financement des deux jours par l'OPCO de votre branche, qui applique ses propres règles et puise dans ses fonds. Nous établissons le programme, la convention et les documents de fin de formation qu'il réclame." },
 ]
 
 const RELATED = [
-  { label: "Formation n8n", href: "/formation-n8n", tag: "Outil", desc: "Maîtriser l'orchestrateur auto-hébergeable : workflows, IA et agents, supervision." },
-  { label: "Formation Make", href: "/formation-make", tag: "Outil", desc: "Maîtriser Make (ex-Integromat) : scénarios visuels, modules, opérations, étapes IA." },
-  { label: "Formation Zapier", href: "/formation-zapier", tag: "Outil", desc: "Automatiser sans coder en une journée, et savoir quand passer à Make ou n8n." },
-  { label: "Formation agents IA", href: "/formation-agents-ia", tag: "Formation", desc: "Concevoir, tester et superviser des agents qui enchaînent les étapes d'un processus, sans code." },
-  { label: "Formation multi-outils IA", href: "/formation-multi-outils", tag: "Comparatif", desc: "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels." },
-  { label: "Formation IA générative", href: "/formation-intelligence-artificielle-generative", tag: "Éditorial", desc: "Maîtriser les modèles qui produisent textes, images et analyses." },
-  { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot", tag: "Outil", desc: "Automatiser avec Power Automate dans Microsoft 365." },
-  { label: "Quel est le meilleur agent IA ?", href: "/meilleur-agent-ia", tag: "Comparatif", desc: "Le panorama des agents IA pour automatiser des tâches." },
+  { label: "Formation n8n", href: "/formation-n8n", tag: "Outil", desc: "Deux jours sur l'orchestrateur qui s'installe chez vous, agents compris." },
+  { label: "Formation Make", href: "/formation-make", tag: "Outil", desc: "Les scénarios visuels de l'ex-Integromat, facturés en crédits." },
+  { label: "Formation Zapier", href: "/formation-zapier", tag: "Outil", desc: "Zapier en une journée : les tâches simples, et le moment d'en sortir." },
+  { label: "Formation agents IA", href: "/formation-agents-ia", tag: "Agents", desc: "Construire, éprouver et superviser des agents dans vos assistants." },
+  { label: "Formation multi-outils IA", href: "/formation-multi-outils", tag: "Comparatif", desc: "ChatGPT, Copilot, Gemini, Claude et Vibe mis à l'épreuve sur vos dossiers." },
+  { label: "Formation IA générative", href: "/formation-intelligence-artificielle-generative", tag: "Fondamentaux", desc: "Comprendre les modèles qui rédigent, résument et analysent." },
+  { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot", tag: "Outil", desc: "Copilot au quotidien dans la suite Microsoft, agents compris." },
+  { label: "Meilleur agent IA : le comparatif", href: "/meilleur-agent-ia", tag: "Panorama", desc: "Les agents du marché comparés, pour choisir avant d'automatiser." },
 ]
 
 const TRAINER = {
   name: 'Mathias Nizan',
-  role: 'Fondateur de Masteria, conseil et architecture de solutions IA',
-  quote: "L'intelligence artificielle ne remplace pas les humains. Elle décuple leur potentiel.",
-  credentials: ['Expert IA certifié', '+1 500 professionnels formés', 'Fondateur Masteria', 'Certification Qualiopi'],
-  bio: "Mathias Nizan a fondé Masteria en 2022 après 10 ans passés à accompagner des entreprises sur leurs enjeux digitaux. Il conçoit et anime des formations à l'automatisation par l'IA : workflows no-code, agents et intégration de l'IA dans les outils métier. Pour ce programme, il s'appuie sur des déploiements réels chez des PME et ETI, avec une exigence constante de sécurité et de conformité.",
+  role: 'Fondateur de Masteria, il pilote chaque session',
+  credentials: ['Fondateur de Masteria, Lyon, 2022', 'Activateur France Num', 'Cité dans Les Échos', 'Organisme certifié Qualiopi'],
+  bio: "Mathias Nizan a créé Masteria pour accompagner les entreprises sur l'intelligence artificielle, du diagnostic jusqu'à la formation des équipes. Sur ce programme, il s'appuie sur les automatisations que le cabinet conçoit en mission, par exemple chez un distributeur photovoltaïque où le diagnostic a ciblé deux corvées : interroger les transporteurs à la main et ressaisir les réceptions d'entrepôt. Il pilote chaque session, qu'il anime en personne ou qu'il remet à un formateur du réseau.",
 }
 
 const WHY_MASTERIA = [
-  { icon: '\uD83C\uDFAF', title: "Spécialisés à 100 % sur l'IA", desc: "Masteria ne fait que ça. Chaque formateur automatise au quotidien dans des contextes professionnels réels. La différence se sent dans les cas choisis et les pièges anticipés." },
-  { icon: '\uD83D\uDCC1', title: 'On travaille sur vos tâches', desc: "Zéro cas fictif. Chaque participant automatise ses propres tâches répétitives. Ce qu'on construit en formation tourne encore le lendemain au bureau." },
-  { icon: '\uD83D\uDEE1\uFE0F', title: 'Automatisation sous contrôle', desc: "Nous intégrons systématiquement la supervision, la traçabilité et la conformité RGPD. Une automatisation maîtrisée, pas une boîte noire." },
-  { icon: '\uD83D\uDCB3', title: 'Finançable par votre OPCO', desc: "Notre certification Qualiopi rend la formation éligible au financement OPCO, selon votre branche et vos fonds. Nous préparons avec vous le programme et la convention." },
+  { icon: '\uD83C\uDFAF', title: "Un cabinet consacré à la seule IA", desc: "Masteria travaille sur un seul sujet depuis 2022. Les formateurs automatisent en mission, ce qui se voit dans le choix des cas et dans les erreurs qu'ils vous évitent." },
+  { icon: '\uD83D\uDCC1', title: 'Des exercices tirés de vos tâches', desc: "Chacun repart avec l'automatisation d'une tâche de sa propre semaine. Le soir du deuxième jour, son workflow tourne sur ses vrais fichiers." },
+  { icon: '\uD83D\uDEE1\uFE0F', title: 'Des automatisations qui se relisent', desc: "Validation humaine, journal des exécutions, données autorisées : chaque automatisation construite pendant la session est traçable." },
+  { icon: '\uD83D\uDCB3', title: 'Un dossier OPCO prêt', desc: "Programme, convention, émargement, attestations : chaque pièce utile à l'instruction de votre dossier par l'OPCO vous est remise." },
 ]
 
 const AUTOMATION_CASES = [
-  { icon: '\uD83D\uDCE1', title: 'La veille récurrente livrée chaque semaine', desc: "Surveiller vos sources (presse spécialisée, concurrents, réglementation), écarter le bruit, puis livrer une synthèse hiérarchisée chaque semaine dans la boîte mail ou le canal de l'équipe. Le lecteur garde la décision de ce qui mérite une action." },
-  { icon: '\uD83D\uDCC8', title: 'Le rapport périodique pré-rempli', desc: "Partir de l'export de votre outil (ventes, production, support), calculer les indicateurs et pré-remplir le commentaire dans votre gabarit. Le responsable relit les chiffres, ajuste l'analyse et diffuse : la lecture finale reste la sienne." },
-  { icon: '\uD83D\uDCEC', title: 'Le tri des demandes entrantes', desc: "Classer chaque demande reçue par nature et par urgence, la résumer, rassembler les éléments du dossier et préparer un brouillon de réponse. La relecture humaine avant toute réponse est une étape du flux à part entière." },
-  { icon: '\uD83D\uDCC4', title: 'Les documents répétitifs depuis un gabarit', desc: "Générer comptes rendus, courriers types, fiches ou réponses à questionnaires depuis un gabarit approuvé, alimenté par les données du dossier. Le contenu s'adapte à chaque cas, la structure reste conforme à vos modèles." },
-  { icon: '\uD83D\uDD17', title: 'Du document entrant au brouillon de réponse', desc: "Une facture, une réclamation ou une candidature arrive ; les champs utiles sont extraits, rapprochés du dossier existant, et un brouillon de réponse ou de saisie attend la validation d'un humain avant d'aller plus loin." },
+  { icon: '\uD83D\uDCE1', title: 'La veille livrée le lundi', desc: "Vos sources (presse spécialisée, concurrents, textes réglementaires) sont surveillées, filtrées, puis résumées dans une note hiérarchisée qui arrive chaque semaine. Le lecteur décide de ce qui appelle une action." },
+  { icon: '\uD83D\uDCC8', title: 'Le rapport pré-rempli', desc: "L'export de votre outil (ventes, production, support) alimente un calcul d'indicateurs et un commentaire rédigé dans votre gabarit. Le responsable vérifie les chiffres, retouche l'analyse et diffuse." },
+  { icon: '\uD83D\uDCEC', title: 'Les demandes entrantes qualifiées', desc: "Chaque demande est classée par nature et par urgence, résumée, rapprochée de son dossier, et un brouillon de réponse attend. Personne ne répond à la place d'un humain." },
+  { icon: '\uD83D\uDCC4', title: 'Les documents qui partent du gabarit', desc: "Comptes rendus, courriers types, fiches, réponses à questionnaire : le contenu varie selon le dossier, la structure reste celle de vos modèles validés." },
+  { icon: '\uD83D\uDD17', title: 'Du document reçu à la saisie préparée', desc: "Une facture, une réclamation ou une candidature arrive : les champs sont extraits, rapprochés du dossier, et une saisie ou une réponse reste en attente jusqu'au feu vert d'un collaborateur." },
 ]
 
 const PITFALLS = [
-  { num: 'Erreur 1', title: 'Automatiser un processus flou', desc: "Quand personne ne sait décrire les étapes, les exceptions et les responsables, l'automatisation reproduit le désordre en plus rapide. On formalise la procédure d'abord, on automatise ensuite ; c'est le travail de cartographie du module 2." },
-  { num: 'Erreur 2', title: "Aucune relecture sur ce qui part à l'extérieur", desc: "Relire un brouillon avant envoi prend quelques instants ; une réponse erronée partie chez un client se rattrape mal. Tout ce qui sort (email, devis, réponse à un candidat) passe par une validation humaine inscrite comme une étape du flux." },
-  { num: 'Erreur 3', title: "L'automatisation orpheline", desc: "Un flux dont l'auteur a quitté l'entreprise continue de tourner et personne n'ose y toucher. Chaque automatisation reçoit un propriétaire nommé, une fiche qui documente déclencheur, étapes et accès, et une date de revue ; le module 8 installe cette gouvernance." },
-  { num: 'Erreur 4', title: 'Ne jamais mesurer le temps gagné', desc: "Sans mesure, pas d'arbitrage : impossible de dire quels flux maintenir, étendre ou arrêter. On note le temps que prend la tâche manuelle avant d'automatiser, on mesure après, et la revue périodique tranche sur des faits plutôt que sur des impressions." },
+  { num: 'Erreur 1', title: 'Automatiser une procédure floue', desc: "Si personne ne sait décrire les étapes, les exceptions et le responsable, l'automatisation reproduit le désordre, plus vite. La procédure s'écrit d'abord ; c'est l'objet du module 2." },
+  { num: 'Erreur 2', title: 'Laisser partir sans relecture', desc: "Relire un brouillon prend quelques secondes ; rattraper un mail erroné envoyé à un client prend beaucoup plus. Chaque message destiné à l'extérieur passe par une validation inscrite dans le flux." },
+  { num: 'Erreur 3', title: "L'automatisation sans propriétaire", desc: "Son auteur est parti, le flux tourne encore et plus personne n'ose le modifier. Chaque automatisation reçoit un responsable nommé, une fiche et une date de revue au module 8." },
+  { num: 'Erreur 4', title: 'Ne pas mesurer avant', desc: "Sans le temps de départ, impossible de dire ce qu'une automatisation rapporte, ni lesquelles garder. On chronomètre la tâche manuelle, puis on compare après un mois." },
+]
+
+/* Sources de la page (bloc visible en fin de page). */
+const SOURCES = [
+  { name: "OpenAI, FAQ sur le retrait des GPTs personnalisés et leur migration vers des plugins", url: 'https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq' },
+  { name: 'Google Workspace, les compétences dans Gemini et la fin des Gems', url: 'https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html' },
+  { name: 'Google Workspace, plafonds d\'usage de l\'IA (dont Workspace Studio)', url: 'https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/about-ai-usage-limits' },
+  { name: 'Microsoft Learn, Copilot Cowork', url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/' },
+  { name: 'Microsoft, tarifs de Copilot Studio en France', url: 'https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio' },
+  { name: "Règlement 2024/1689 dit AI Act, version publiée sur EUR-Lex", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "CNIL, l'intelligence artificielle", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: 'Ministère du Travail, Qualiopi', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
 ]
 
 function FAQItem({ q, a, color }) {
@@ -155,12 +181,12 @@ export default function AutomatisationIAPage() {
     timeRequired: 'PT14H',
     price: '1980',
     audience: 'Professionnels en entreprise (B2B)',
-    tool: 'Make, Zapier, n8n, Power Automate, GPTs',
+    tool: 'Make, Zapier, n8n, Power Automate, Workspace Studio, compétences des assistants IA',
     teaches: OBJECTIVES,
     objectives: OBJECTIVES,
     modules: MODULES,
     about: "Formation à l'automatisation des tâches et des workflows par l'IA en entreprise",
-    prerequisites: 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
+    prerequisites: 'Aucun prérequis technique ; pratique courante des outils bureautiques.',
   }
 
   const breadcrumbs = [
@@ -178,6 +204,8 @@ export default function AutomatisationIAPage() {
         courseData={courseData}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        dateModified="2026-10-07"
+        citations={SOURCES}
       />
 
       {/* ── HERO clair ── */}
@@ -208,7 +236,7 @@ export default function AutomatisationIAPage() {
 
           {/* GEO : réponse directe pour citation LLM */}
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
-            La formation <strong>automatisation IA</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Financement OPCO 100&nbsp;%. Vos équipes repartent avec leurs premiers workflows opérationnels.
+            La formation <strong>automatisation IA</strong> de Masteria se déroule sur <strong>deux jours (14 heures)</strong>, dans vos locaux comme à distance. Elle coûte <strong>1 980 € HT la journée</strong>, pour un groupe intra (douze participants maximum) comme pour un parcours individuel. Comme Masteria est certifiée Qualiopi, votre OPCO de branche peut y contribuer, selon ses règles et ses fonds. Chaque participant repart avec un workflow et un agent construits sur ses propres tâches.
           </p>
 
           <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
@@ -217,10 +245,10 @@ export default function AutomatisationIAPage() {
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
             <Link to="/contact" style={{ background: c, color: '#fff', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: `0 4px 12px ${c}30` }}>
-              Contacter notre équipe →
+              Parler de vos tâches à automatiser →
             </Link>
             <a href="#tarifs" style={{ background: '#fff', color: '#0A0A0A', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #E5E7EB' }}>
-              Voir les tarifs
+              Tarifs et financement
             </a>
           </div>
 
@@ -238,13 +266,12 @@ export default function AutomatisationIAPage() {
         </div>
       </section>
 
-      {/* ── CHIFFRES CLÉS ── */}
+      {/* ── REPÈRES ── */}
       <section style={{ background: '#fff', padding: '40px', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap', borderBottom: '1px solid #E5E7EB' }}>
         {[
-          { num: '+1 500', label: "professionnels formés à l'IA" },
-          { num: '98 %', label: 'de taux de satisfaction' },
-          { num: '100 %', label: 'finançable via votre OPCO' },
-          { num: '+6 h', label: 'gagnées par semaine' },
+          { num: '3', label: "paliers d'outils, du natif au sur-mesure" },
+          { num: '8', label: 'modules répartis sur deux jours' },
+          { num: '12', label: 'participants au plus en intra' },
         ].map(s => (
           <div key={s.num} style={{ textAlign: 'center' }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: '#0A0A0A', margin: 0, lineHeight: 1 }}>{s.num}</p>
@@ -257,10 +284,10 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            À qui s'adresse cette formation ?
+            Quatre profils tirent le plus de ces deux jours
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
-            Cette formation est conçue pour les professionnels qui veulent automatiser des tâches concrètes, pas suivre une initiation théorique.
+            Le programme s'adresse aux personnes qui ont des tâches précises à automatiser, et qui veulent repartir avec un résultat en service.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
             {AUDIENCE.map((profile, i) => (
@@ -277,10 +304,10 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            Ce que vous allez automatiser
+            Six chantiers que les participants mènent pendant la session
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
-            Des cas d'usage concrets, travaillés sur vos propres tâches pendant les 2 jours.
+            Chacun se travaille sur les tâches apportées par le groupe.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
             {USE_CASES.map((uc, i) => (
@@ -298,10 +325,10 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#F5F3EE', color: '#0A0A0A' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            Programme, 2 jours de formation pratique
+            Le programme : huit modules en deux jours
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 56 }}>
-            14h de formation effective. Chaque module alterne démonstration en direct et exercice sur vos vraies tâches.
+            Quatorze heures de pratique. Chaque module commence par une démonstration courte et se termine par un exercice sur une tâche apportée par le participant.
           </p>
 
           {[{ label: 'Jour 1', modules: modulesJ1 }, { label: 'Jour 2', modules: modulesJ2 }].map(day => (
@@ -334,7 +361,7 @@ export default function AutomatisationIAPage() {
                     )}
                     {mod.exercise && (
                       <div style={{ background: `${c}18`, border: `1px solid ${c}40`, borderRadius: 8, padding: '12px 16px', marginTop: 16 }}>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: c, display: 'block', marginBottom: 4 }}>EXERCICE CONCRET</span>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: c, display: 'block', marginBottom: 4 }}>EXERCICE SUR VOS DOSSIERS</span>
                         <span style={{ fontSize: 13, color: '#374151', lineHeight: 1.6 }}>{mod.exercise}</span>
                       </div>
                     )}
@@ -351,26 +378,26 @@ export default function AutomatisationIAPage() {
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
             <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
-              Prêt à automatiser les tâches de votre équipe&nbsp;?
+              Quelle tâche votre équipe voudrait-elle ne plus faire à la main&nbsp;?
             </h2>
             <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
-              Réponse sous 24h · Programme adapté à votre contexte · Finançable OPCO
+              Décrivez-la en quelques lignes : nous bâtissons le programme autour d'elle.
             </p>
           </div>
           <Link to="/contact" style={{ background: '#fff', color: c, padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
-            Contacter notre équipe →
+            Décrire la tâche →
           </Link>
         </div>
       </section>
 
-      {/* ── CE QU'ON AUTOMATISE VRAIMENT ── */}
+      {/* ── CE QU'ON AUTOMATISE, ET LA LIMITE ── */}
       <section style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            Ce qu'on automatise vraiment (et ce qu'on n'automatise pas)
+            Cinq chaînes que les entreprises automatisent, et une limite qui ne bouge pas
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40, maxWidth: 720, lineHeight: 1.7 }}>
-            Cinq chaînes reviennent dans la grande majorité des entreprises. Leur point commun : un déclencheur clair, des étapes qu'on sait décrire et une relecture humaine placée au bon endroit. Ce sont elles que vous construisez pendant la formation, sur vos propres cas.
+            Ces cinq chaînes reviennent dans presque toutes les organisations. Elles partagent trois traits : un déclencheur net, des étapes que l'on sait décrire, et une relecture humaine placée au bon endroit. Pendant la formation, chacun en construit une sur ses propres dossiers.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20, marginBottom: 32 }}>
             {AUTOMATION_CASES.map((ac, i) => (
@@ -383,16 +410,16 @@ export default function AutomatisationIAPage() {
           </div>
           <div style={{ background: '#0A0F1E', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 10 }}>La limite</div>
-            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#F8FAFC', margin: '0 0 10px' }}>Tout ce qui engage reste à l'humain</h3>
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#F8FAFC', margin: '0 0 10px' }}>Une personne garde la main sur ce qui engage</h3>
             <p style={{ fontSize: 14.5, color: '#94A3B8', lineHeight: 1.75, margin: 0 }}>
-              L'envoi d'un message, la validation d'un montant, une décision qui concerne une personne : ces gestes restent hors du flux automatique, quel que soit l'outil. Quant à l'écriture dans un logiciel métier (CRM, ERP, comptabilité, paie), elle demande des accès, des tests et une responsabilité claire : un projet d'intégration à part entière, chiffré et cadré comme tel. Cette frontière est posée dès le module 1, et chaque automatisation construite pendant les 2 jours la respecte.
+              Envoyer un message à un client, valider un montant, prendre une décision qui touche un salarié : ces gestes sortent du flux automatique, quel que soit l'outil. Écrire dans un logiciel métier (CRM, ERP, comptabilité, paie) demande des accès, des tests et un responsable désigné ; c'est un projet d'intégration, chiffré et cadré comme tel. La règle est posée au module 1 et chaque automatisation des deux jours la respecte.
             </p>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-            La première chaîne est détaillée pas à pas dans notre guide pour{' '}
-            <Link to="/automatiser-sa-veille-ia" style={{ color: c, fontWeight: 600 }}>automatiser sa veille IA</Link>. Pour replacer l'ensemble dans une démarche complète, du cadrage au déploiement, notre{' '}
+            La première chaîne est décrite pas à pas dans notre guide pour{' '}
+            <Link to="/automatiser-sa-veille-ia" style={{ color: c, fontWeight: 600 }}>automatiser sa veille IA</Link>. Pour la démarche complète, du choix des tâches au déploiement, lisez notre{' '}
             <Link to="/automatisation-ia" style={{ color: c, fontWeight: 600 }}>guide de l'automatisation IA en entreprise</Link>{' '}
-            déroule la méthode que nous appliquons en formation.
+            : il reprend la méthode suivie pendant la formation.
           </p>
         </div>
       </section>
@@ -401,30 +428,33 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            Choisir son niveau d'automatisation
+            Trois paliers d'outils, et le plus simple l'emporte
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40, maxWidth: 720, lineHeight: 1.7 }}>
-            Trois paliers couvrent l'essentiel des besoins. La règle enseignée en formation tient en une phrase : le bon palier est le plus simple qui tient le besoin. On monte d'un palier parce que le flux l'exige, jamais par attrait pour l'outil.
+            La règle enseignée tient en une phrase : retenez le palier le plus simple qui tient le besoin. On monte d'un cran quand le flux l'exige, jamais parce qu'un outil fait envie. Faits relevés au 7 octobre 2026.
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20, marginBottom: 28 }}>
             <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB', borderLeftColor: c, borderLeftWidth: 4 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <div style={{ width: 30, height: 30, background: c, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>1</div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Les fonctions natives des outils déjà en place</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Les fonctions déjà incluses dans vos licences</h3>
               </div>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Avant d'ajouter un abonnement, on inventorie ce que vos licences couvrent déjà. ChatGPT Business inclut des tâches planifiées, créées en une phrase et limitées à une exécution par heure, et des agents d'espace de travail dont les exécutions sont décomptées en crédits, donc à budgéter. Côté Google, Workspace Studio construit des automatisations sans code à travers Gmail, Docs, Sheets et Drive. Vibe (anciennement Le Chat) propose des Workflows et des Tâches planifiées. Sous Microsoft 365, Power Automate relie Outlook, Teams, Excel et SharePoint. Ce palier suffit quand le besoin vit dans un environnement unique ; notre page sur les{' '}
+                Avant tout nouvel abonnement, on regarde ce que vous payez déjà. ChatGPT Business propose des tâches planifiées et, depuis le 21 mai 2026, des agents d'espace de travail, dont les exécutions sont payées en crédits depuis le 6 juillet : un poste à budgéter. Chez Google, Workspace Studio crée des flux décrits en langage courant sur Gmail, Drive et Chat ; il reste en accès promotionnel, avec des plafonds appliqués à partir du 1er novembre 2026. Côté Microsoft, Power Automate relie Outlook, Teams, Excel et SharePoint, et Copilot Cowork, disponible pour les comptes professionnels, lance des tâches planifiées ou déclenchées par un mail en demandant l'accord avant chaque action sensible. Vibe, l'assistant de Mistral, a remplacé ses agents par des compétences le 22 septembre 2026. Ce palier suffit quand le besoin reste dans un seul environnement ; notre page sur les{' '}
                 <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>{' '}
-                compare ces briques en détail.
+                compare ces briques.
               </p>
             </div>
             <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB', borderLeftColor: c, borderLeftWidth: 4 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <div style={{ width: 30, height: 30, background: c, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>2</div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Les plateformes d'orchestration</h3>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Les orchestrateurs qui relient vos applications</h3>
               </div>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Quand le flux traverse plusieurs applications, une boîte mail, un tableur, un CRM consulté en lecture, un outil de gestion de projet, on passe par une plateforme d'orchestration comme Make, Zapier ou n8n. Elle écoute un événement déclencheur, enchaîne des étapes dans vos applications et appelle un modèle d'IA au milieu du flux pour lire, résumer, classer ou rédiger. Chaque étape reste visible, testable et modifiable par un profil métier formé. C'est le palier construit au module 3, puis fiabilisé au module 7.
+                Quand le flux traverse plusieurs applications (une boîte mail, un tableur, un CRM consulté en lecture, un outil de gestion de projet), un orchestrateur prend le relais. Il attend un événement, enchaîne des étapes dans vos logiciels et appelle un modèle d'IA au milieu pour lire, résumer, classer ou rédiger. Les trois plus répandus ne facturent pas la même chose : Make compte des crédits, Zapier des tâches, n8n des exécutions de workflow entières. Chacun a sa formation dédiée, en{' '}
+                <Link to="/formation-make" style={{ color: c, fontWeight: 600 }}>Make</Link>,{' '}
+                <Link to="/formation-zapier" style={{ color: c, fontWeight: 600 }}>Zapier</Link> et{' '}
+                <Link to="/formation-n8n" style={{ color: c, fontWeight: 600 }}>n8n</Link>. Ce palier se construit au module 3 et se fiabilise au module 7.
               </p>
             </div>
             <div style={{ background: '#fff', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB', borderLeftColor: c, borderLeftWidth: 4 }}>
@@ -433,16 +463,16 @@ export default function AutomatisationIAPage() {
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Le développement sur mesure</h3>
               </div>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Quand le flux est critique, parce qu'il touche la facturation, des données clients ou une obligation réglementaire, quand les volumes dépassent ce qu'une plateforme absorbe proprement, ou quand il faut écrire dans un logiciel métier, on sort du no-code. Copilot Studio, côté Microsoft, bascule dans cette catégorie dès que l'agent écrit dans le système d'information : c'est un projet, avec son cadrage, ses tests et son budget. Notre{' '}
+                Un flux qui touche la facturation, des données clients ou une obligation réglementaire, des volumes qu'un orchestrateur absorbe mal, une écriture dans un logiciel métier : on quitte alors le sans-code. Copilot Studio, chez Microsoft, entre dans cette catégorie dès que l'agent écrit dans votre système d'information ; il se facture à part : un pack de 25 000 crédits Copilot y coûte 173,30 € HT par mois en France. C'est un projet, avec son cadrage, ses tests et son budget. Notre{' '}
                 <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation IA</Link>{' '}
-                conçoit et opère ces flux ; pour un besoin que les plateformes du marché ne couvrent pas, nos{' '}
+                conçoit et exploite ces flux ; quand aucune plateforme du marché ne convient, nos{' '}
                 <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link>{' '}
                 prennent le relais.
               </p>
             </div>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-            En formation, chaque participant positionne ses cas prioritaires sur ces trois paliers avant de construire : c'est l'objet du module 2. Ce classement décide de l'outil, du niveau de garde-fous et du temps à investir sur chaque flux.
+            Au module 2, chaque participant place ses tâches prioritaires sur ces trois paliers, avant la moindre construction. Ce classement fixe l'outil, le niveau de garde-fous et le temps à consacrer à chaque flux.
           </p>
         </div>
       </section>
@@ -451,7 +481,7 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 32 }}>
-            Ce que vos équipes savent faire à l'issue des 2 jours
+            Six objectifs évalués au terme de la formation
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
             {OBJECTIVES.map((obj, i) => (
@@ -470,18 +500,18 @@ export default function AutomatisationIAPage() {
       <section id="tarifs" style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
-            Modalités et tarifs
+            Deux formats, un même tarif journalier
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 24 }}>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>PARCOURS INDIVIDUEL</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
-                <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>/ jour</div>
+                <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>HT / jour</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours · 1-to-1</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>3 960 € HT les deux jours, en tête-à-tête</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {['2 jours consécutifs ou espacés · 1-to-1', 'Programme co-construit sur vos automatisations', 'Présentiel ou distanciel', 'Suivi entre les sessions'].map(item => (
+                {['Deux jours d\'affilée ou séparés', 'Programme construit sur vos propres automatisations', 'Sur site ou en visioconférence', 'Questions possibles entre les deux journées'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
@@ -489,14 +519,14 @@ export default function AutomatisationIAPage() {
               </ul>
             </div>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${c}` }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>GROUPE INTRA</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
-                <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>/ jour</div>
+                <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>HT / jour</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit 3 960 € pour 2 jours (jusqu'à 12 participants)</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>3 960 € HT les deux jours, jusqu'à 12 personnes</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                {['Réservé à votre équipe', '2 jours sur mesure, dans vos locaux', 'Automatisations construites sur vos outils', 'OPCO, plan de développement des compétences'].map(item => (
+                {['Session réservée à votre équipe', 'Ateliers sur vos outils et vos tâches', 'Chez vous ou en visioconférence', 'Finançable par votre OPCO'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={16} color={c} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 1 }} /><span>{item}</span>
                   </li>
@@ -505,23 +535,23 @@ export default function AutomatisationIAPage() {
             </div>
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>
-            Masteria est certifié Qualiopi : vos formations peuvent être prises en charge par votre OPCO (Atlas, Afdas, Akto, Constructys, Opco 2i…), selon votre branche et vos fonds. Nous préparons avec vous le programme et la convention ; depuis le 1er octobre 2026, la plupart des OPCO remboursent l'entreprise après paiement au lieu de régler l'organisme directement. Chaque participant repart avec ses automatisations fonctionnelles et une bibliothèque de modèles prête à l'emploi.
+            Masteria est certifiée Qualiopi : l'OPCO de votre branche (Atlas, Akto, Afdas, Constructys, Opco 2i ou un autre) peut financer la session, dans la mesure où ses règles et son budget le permettent. Selon l'opérateur et la taille de l'entreprise, il règle directement l'organisme ou vous rembourse après paiement ; nous vérifions ce point avec vous avant de rédiger la convention. Pour Genève ou Bruxelles, où les OPCO n'interviennent pas, le devis est établi en euros HT. Les abonnements aux outils (Make, Zapier, n8n, Copilot Studio) restent hors du prix.
           </p>
         </div>
       </section>
 
-      {/* ── FORMATEUR (E-E-A-T) ── */}
+      {/* ── FONDATEUR (E-E-A-T) ── */}
       <section style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
-            Un mot du fondateur
+            Mathias Nizan pilote chaque session d'automatisation
           </h2>
           <div style={{ display: 'flex', gap: 40, alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div style={{ flexShrink: 0 }}>
               <img
                 src="/assets/mathias-nizan@120.jpg"
                 srcSet="/assets/mathias-nizan@120.jpg 1x, /assets/mathias-nizan@240.jpg 2x"
-                alt="Mathias Nizan, fondateur de Masteria, expert en formation IA"
+                alt="Mathias Nizan, fondateur de Masteria"
                 width="100" height="100"
                 loading="lazy" decoding="async"
                 style={{ width: 100, height: 100, borderRadius: '50%', objectFit: 'cover', display: 'block' }}
@@ -530,7 +560,9 @@ export default function AutomatisationIAPage() {
             <div style={{ flex: 1, minWidth: 260 }}>
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 4px' }}>{TRAINER.name}</h3>
               <p style={{ fontSize: 14, color: c, fontWeight: 600, margin: '0 0 16px' }}>{TRAINER.role}</p>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 20 }}>{TRAINER.bio}</p>
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 20 }}>
+                {TRAINER.bio} Le détail de ce diagnostic figure dans <Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: c, fontWeight: 600 }}>l'étude de cas</Link> ; son parcours, sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page</Link>.
+              </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {TRAINER.credentials.map(cred => (
                   <span key={cred} style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 13, fontWeight: 600 }}>{cred}</span>
@@ -545,7 +577,7 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
-            Pourquoi Masteria pour cette formation automatisation IA ?
+            Pourquoi confier cette formation à Masteria ?
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
             {WHY_MASTERIA.map(card => (
@@ -558,9 +590,9 @@ export default function AutomatisationIAPage() {
           </div>
           <blockquote style={{ borderLeft: `4px solid ${c}`, paddingLeft: 24, margin: 0 }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 700, color: '#0A0A0A', fontStyle: 'italic', marginBottom: 8 }}>
-              "{TRAINER.quote}"
+              Le bon palier est le plus simple qui tient le besoin.
             </p>
-            <cite style={{ fontSize: 14, color: '#6B7280', fontStyle: 'normal' }}>{TRAINER.name}, fondateur de Masteria</cite>
+            <cite style={{ fontSize: 14, color: '#6B7280', fontStyle: 'normal' }}>La règle de choix d'outil enseignée au module 2</cite>
           </blockquote>
         </div>
       </section>
@@ -569,10 +601,10 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#F5F3EE' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            Les erreurs des projets d'automatisation
+            Quatre erreurs condamnent la plupart des automatisations
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40, maxWidth: 720, lineHeight: 1.7 }}>
-            Quatre erreurs expliquent la plupart des automatisations abandonnées en entreprise. Chacune a sa parade, et le programme les traite l'une après l'autre.
+            Les automatisations abandonnées en entreprise tombent presque toutes sur l'une de ces quatre erreurs. Le programme les traite une à une, au module où elles se présentent.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
             {PITFALLS.map(pf => (
@@ -590,7 +622,7 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#fff' }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
-            Questions fréquentes, Formation automatisation IA
+            Formation automatisation IA : vos questions
           </h2>
           <div>
             {FAQ.map((item, i) => (
@@ -604,10 +636,10 @@ export default function AutomatisationIAPage() {
       <section style={{ padding: '80px 40px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            Formations associées
+            Approfondir un outil ou une notion
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32 }}>
-            Compléter votre parcours ou former vos équipes sur un outil précis.
+            Une fois les paliers choisis, ces formations vont plus loin sur un outil ou sur les agents.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 }}>
             {RELATED.map(rel => (
@@ -623,14 +655,14 @@ export default function AutomatisationIAPage() {
                     {rel.label}
                   </h3>
                   <p style={{ fontSize: 13, color: '#6B7280', lineHeight: 1.6, margin: '0 0 10px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700 }}>En savoir plus →</span>
+                  <span aria-hidden="true" style={{ fontSize: 13, color: c, fontWeight: 700 }}>→</span>
                 </div>
               </Link>
             ))}
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', marginTop: 24 }}>
-            Explorer{' '}
-            <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>toutes les formations IA par métier</Link>.
+            Le catalogue complet, classé par métier, se trouve sur la page{' '}
+            <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>formation intelligence artificielle</Link>.
           </p>
         </div>
       </section>
@@ -639,38 +671,38 @@ export default function AutomatisationIAPage() {
       <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
         <div style={{ maxWidth: 580, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2 }}>
-            Parlons de vos tâches à automatiser
+            Choisissons ensemble les premières tâches à automatiser
           </h2>
           <p style={{ color: '#6B7280', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
-            Dites-nous combien de personnes vous souhaitez former et les tâches qui vous coûtent le plus de temps. On revient vers vous sous 24 heures avec un programme adapté sur 2 jours.
+            Indiquez le nombre de personnes à former et les trois tâches qui leur prennent le plus de temps. Vous recevez sous 24 heures une proposition de programme sur deux jours, le devis et la liste des pièces pour votre OPCO.
           </p>
           <Link to="/contact" style={{ display: 'inline-block', background: c, color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
-            Contacter notre équipe →
+            Envoyer vos tâches →
           </Link>
           <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Formation certifiée Qualiopi · Finançable OPCO · +1 500 professionnels formés · 98 % de satisfaction
+            Organisme certifié Qualiopi · 1 980 € HT la journée · intra ou individuel
           </p>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : l'équipe mobilisée ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'équipe mobilisée</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Des formateurs, des consultants et des développeurs qui automatisent en mission
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Autour de Mathias Nizan, Masteria réunit selon les projets une vingtaine de formateurs, une dizaine de consultants IA et environ cinq développeurs, tous indépendants. Ceux qui animent cette formation construisent aussi des automatisations pour des clients, et aucun ne représente un éditeur : l'outil conseillé est celui qui convient à vos tâches. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['2022', 'création du cabinet, à Lyon'],
+              ['≈ 20', 'formateurs indépendants dans le réseau'],
+              ['≈ 10', 'consultants IA mobilisables'],
+              ['≈ 5', 'développeurs pour les flux sur mesure'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -681,9 +713,24 @@ export default function AutomatisationIAPage() {
         </div>
       </section>
 
-      <FounderNote />
-
-      <OfficialSources />
+      {/* ── SOURCES DE LA PAGE ── */}
+      <section aria-labelledby="sources-automatisation" style={{ padding: '56px 40px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-automatisation" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Les documents qui fondent cette page
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Dates de retrait et fonctions des éditeurs vérifiées le 7 octobre 2026, texte de l'AI Act, repères de la CNIL, certification de Masteria.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {SOURCES.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

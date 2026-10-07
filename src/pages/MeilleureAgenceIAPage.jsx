@@ -1,22 +1,19 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, Boxes, Compass, Code2, GraduationCap, AlertTriangle, ShieldCheck, BookOpen } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Boxes, Rocket, Plug, ClipboardCheck, KeyRound, Wallet, GraduationCap, AlertTriangle, ShieldCheck, BookOpen, FolderSearch } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
-import FounderNote from '../components/FounderNote'
-import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Page « Meilleure agence IA » : guide de choix 2026, angle BUILD / exécution.
- * Thèse de la page (valeur réelle + positionnement) : faire une démo d'IA prend
- * un après-midi ; mettre en production un outil que vos équipes utilisent et que
- * vous possédez, c'est un autre métier. La meilleure agence IA franchit ce pas :
- * elle cadre le bon cas d'usage, elle construit proprement (le code vous
- * appartient), elle forme vos équipes à le faire vivre. Masteria couvre les
- * trois. Distincte de /meilleur-cabinet-conseil-ia (angle conseil/stratégie) et
- * de /agence-ia (présentation de l'offre). Intégrité : aucun classement
- * nominatif, aucun chiffre ni cas client inventé. Accent bleu #2563EB.
+ * Page « Meilleure agence IA » : guide de choix 2026, angle AGENCE (qui développe
+ * et intègre des outils IA dans les logiciels du client). Réécrite le 07/10/2026
+ * pour atteindre 90 % de texte propre : grille de six critères propre à la page,
+ * six voies de construction, cinq étapes, budgets à plafond ouvert, trois cas
+ * résumés en une phrase avec leur ancre, sources rédigées pour la page.
+ * Distincte de /meilleur-cabinet-conseil-ia (angle conseil et stratégie), de
+ * /outils-ia-sur-mesure (requête « agence développement ia » depuis le 02/10)
+ * et de /agence-ia (présentation de l'offre). Aucun classement nominatif, aucun
+ * chiffre ni cas client inventé, jamais Gartner. Accent bleu #2563EB.
  */
 
 const SITE = 'https://www.master-ia.fr'
@@ -24,10 +21,13 @@ const SLUG = 'meilleure-agence-ia'
 const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const DATE_PUBLISHED = '2026-06-16'
+const DATE_MODIFIED = '2026-10-07'
+const RDV_URL = '/contact?type=projet&rdv=30'
 
-const META_TITLE = 'Meilleure agence IA : comment choisir en 2026 | Masteria'
-const META_DESC = "Meilleure agence IA : comment choisir celle qui met votre projet en production. Propriété du code, paysage des acteurs et budgets 2026."
-const KEYWORDS = 'meilleure agence ia, agence ia 2026, agence intelligence artificielle, comparatif agences ia, classement agences ia, agence ia france, agence ia lyon, agence automatisation ia'
+const META_TITLE = 'Meilleure agence IA en 2026 : comment la choisir | Masteria'
+const META_DESC = "Six critères pour choisir une agence IA qui branche l'IA sur vos logiciels et vous remet le code, les voies possibles, les étapes et les budgets 2026."
+const KEYWORDS = 'meilleure agence ia, agence ia 2026, agence intelligence artificielle, agence ia en france, agence intégration ia, meilleures agences ia, choisir une agence ia, classement agences ia'
 
 /* ── Design system local (aligné sur les pages money) ── */
 const SECTION_PAD = 'clamp(64px, 9vw, 110px) 24px'
@@ -42,114 +42,171 @@ const tableWrapStyle = { overflowX: 'auto', background: '#fff', border: '1px sol
 const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #E5E7EB', whiteSpace: 'nowrap' }
 const srOnlyStyle = { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }
 
-/* Ce qu'une agence IA doit savoir faire au-delà de coder (les 3 compétences, entrée build) */
-const PILLARS = [
+/* La grille : six critères pour juger une agence qui développe et intègre.
+ * Chaque critère se termine par la question à poser au premier rendez-vous. */
+const CRITERIA = [
   {
-    icon: Compass,
-    tag: 'Cadrer',
-    title: 'Choisir le bon cas d\'usage avant d\'écrire la moindre ligne',
-    body: "Une agence qui code sans avoir compris votre métier livre une démo en quelques jours, puis un problème qui dure des mois. Avant de construire, il faut observer vos processus, écarter les gadgets et prioriser ce qui a un impact mesurable. C'est ce cadrage qui évite de payer pour un outil que personne n'utilisera.",
+    icon: Rocket,
+    tag: 'Preuves',
+    title: 'Elle vous montre un outil en service depuis plusieurs mois',
+    body: "Une vidéo de démonstration prouve qu'une idée a fonctionné une fois, devant une caméra. Demandez à voir un outil livré depuis six mois au moins : ce qu'il fait chaque semaine, combien de personnes l'ouvrent, ce qu'il a fallu corriger après la mise en ligne. Une agence qui a traversé cette période en parle sans se faire prier, parce que c'est là qu'elle a appris son métier.",
+    question: "Quel outil avez-vous livré il y a six mois, et que fait-il aujourd'hui ?",
   },
   {
-    icon: Code2,
-    tag: 'Construire',
-    title: 'Livrer un outil propre, en production, et qui vous appartient',
-    body: "Le cœur du métier : agents, automatisations, applications, RAG sur vos données, intégration des modèles à votre SI, API et MCP. Une bonne agence livre du code documenté, maintenable et dont vous restez propriétaire. Vous le mesurerez le jour où vous voudrez faire évoluer l'outil en interne.",
+    icon: Plug,
+    tag: 'Intégration',
+    title: "Elle sait brancher l'IA sur vos logiciels",
+    body: "Un assistant utile va chercher vos données là où elles vivent : ERP, CRM, gestion documentaire, messagerie. Il y accède par des API (les points d'accès que vos logiciels ouvrent aux autres programmes) ou par MCP, le protocole publié par Anthropic à la fin de 2024 pour relier un modèle à des outils tiers. Une proposition qui ne nomme aucun de vos logiciels n'a pas encore regardé votre système d'information.",
+    question: "Comment l'outil lira-t-il nos données, et avec quels droits d'accès ?",
+  },
+  {
+    icon: ClipboardCheck,
+    tag: 'Tests',
+    title: 'Elle mesure la justesse des réponses avant la mise en service',
+    body: "Un modèle de langage peut se tromper avec le ton le plus assuré. L'agence sérieuse bâtit avec vous un jeu de cas tests tirés de votre activité (demandes clients, devis, dossiers passés), fixe le niveau attendu et le contrôle avant chaque nouvelle version. Faute de ce jeu de tests, personne ne sait si la mise à jour du mois suivant a amélioré l'outil ou l'a abîmé.",
+    question: "Sur quels cas tests validerez-vous l'outil, et qui les choisit chez nous ?",
+  },
+  {
+    icon: KeyRound,
+    tag: 'Réversibilité',
+    title: 'Elle vous remet les clés : code, prompts, accès aux comptes',
+    body: "Le jour où le contrat prend fin, vous devez pouvoir confier l'outil à une autre équipe sans tout reconstruire. Il faut pour cela que le dépôt de code, les prompts, les comptes ouverts chez les fournisseurs de modèles et la documentation soient à votre nom. Méfiez-vous d'une plateforme maison qu'il faudrait louer pour faire tourner ce qu'on a développé pour vous : elle change un projet en abonnement sans terme.",
+    question: "Qu'est-ce qui nous appartiendra à la fin du projet, et sous quelle forme ?",
+  },
+  {
+    icon: Wallet,
+    tag: "Coût d'usage",
+    title: "Elle chiffre ce que l'outil coûtera une fois en service",
+    body: "La facture continue après la livraison : hébergement, appels aux modèles facturés au volume (ce que les éditeurs appellent l'inférence), supervision, corrections, passage à une nouvelle version du modèle. Une proposition solide donne un ordre de grandeur mensuel calculé sur votre volume d'utilisation et dit ce qui le fera monter.",
+    question: 'Combien coûtera l\'outil chaque mois avec notre volume d\'utilisation ?',
   },
   {
     icon: GraduationCap,
-    tag: 'Transmettre',
-    title: 'Former vos équipes pour qu\'elles fassent vivre l\'outil',
-    body: "Un outil que personne ne sait corriger meurt au premier changement de modèle. La meilleure agence forme vos équipes à utiliser, surveiller et ajuster ce qu'elle a livré. C'est la condition pour que l'investissement dure au-delà de la mise en ligne.",
+    tag: 'Transmission',
+    title: "Elle forme les personnes qui feront vivre l'outil",
+    body: "Les prompts vieillissent à mesure que votre activité évolue, et chaque fournisseur remplace ses modèles par de nouvelles versions. Quelqu'un chez vous doit savoir ajuster l'outil sans attendre l'agence. La bonne agence désigne avec vous un ou deux référents, les forme pendant le projet et leur laisse un guide de mise à jour ; les utilisateurs apprennent l'outil sur leurs propres dossiers.",
+    question: "Qui, chez nous, saura modifier l'outil sans vous appeler ?",
   },
 ]
 
-/* Comment faire construire votre IA : 5 voies (tableau texte, axe build) */
+/* Six façons de faire construire un outil IA (tableau texte, axe build) */
 const ROUTES = [
-  { route: 'Équipe interne', speed: 'Lente au démarrage', code: 'À vous', maint: 'À votre charge', skill: 'Forte si l\'équipe existe', when: "Vous avez déjà des développeurs IA et un besoin récurrent." },
-  { route: 'ESN / régie', speed: 'Moyenne', code: 'À vous', maint: 'Tant que la régie dure', skill: 'Variable', when: "Renfort durable sur votre SI, au temps passé." },
-  { route: 'Agence build spécialisée', speed: 'Rapide', code: 'À négocier', maint: 'En option', skill: 'Faible par défaut', when: "Un produit IA pointu à concevoir vite." },
-  { route: 'Plateforme no-code', speed: 'Très rapide', code: 'Dépend de l\'outil', maint: 'Liée à l\'abonnement', skill: 'Moyenne', when: "Automatiser des processus simples à faible budget." },
-  { route: 'Agence full-stack (cadrage + build + formation)', highlight: true, speed: 'Rapide', code: 'À vous', maint: 'Transférée à vos équipes', skill: 'Forte, par conception', when: "Un outil utilisé sur le terrain et des équipes autonomes ensuite." },
+  { route: 'Équipe interne', speed: 'Lente à démarrer (recrutements)', code: 'À vous', maint: 'Vos développeurs', skill: 'Élevée, tant que les profils restent', when: 'Plusieurs projets IA par an et des développeurs déjà en poste.' },
+  { route: 'ESN en régie', speed: 'Moyenne', code: 'À vous en général', maint: 'Tant que les intervenants restent', skill: 'Faible : le savoir repart avec eux', when: "Renforcer la DSI sur un chantier long, facturé au temps passé." },
+  { route: 'Studio produit IA', speed: 'Rapide', code: 'À négocier', maint: 'Contrat de maintenance en option', skill: 'Faible par défaut', when: 'Concevoir un produit IA pointu, destiné à vos propres clients.' },
+  { route: 'Plateforme no-code', speed: 'En quelques jours', code: "L'éditeur garde le moteur", maint: "Liée à l'abonnement", skill: 'Moyenne', when: 'Relier deux ou trois logiciels sur un flux simple, à petit budget.' },
+  { route: 'Logiciel du marché avec IA intégrée', speed: 'Immédiate', code: "Celui de l'éditeur", maint: "Assurée par l'éditeur", skill: 'Limitée à la prise en main', when: "Un besoin courant que l'éditeur couvre déjà : rédiger, résumer, chercher." },
+  { route: 'Agence qui cadre, développe et forme', highlight: true, speed: 'Rapide', code: 'À vous, écrit au contrat', maint: 'Transmise à vos référents', skill: 'Élevée, prévue dès le cadrage', when: 'Un outil branché sur vos logiciels, et une équipe capable de le tenir ensuite.' },
 ]
 
-/* Les 5 étapes d'un projet IA, du cadrage à la production. Section à valeur ajoutée
- * (méthode concrète) qui répond à la thèse de la page : franchir la marche démo→production. */
+/* Les cinq étapes d'un projet confié à une agence IA, du cadrage au suivi. */
 const PROCESS = [
-  { step: 'Cadrage', goal: "Choisir le bon cas d'usage et définir ce que « réussi » veut dire pour vous.", deliver: "Note de cadrage, critères de succès mesurables, estimation de budget et de délai.", duration: '1 à 2 semaines', watch: "Ne pas écrire une ligne de code avant d'avoir tranché le cas d'usage." },
-  { step: 'Prototype', goal: "Valider la faisabilité sur vos vraies données, pas sur une démo générique.", deliver: "Prototype testable et premiers résultats chiffrés.", duration: '2 à 4 semaines', watch: "Un prototype sert à décider, il reste jetable tant que la valeur n'est pas prouvée." },
-  { step: 'Industrialisation', goal: "Transformer le prototype en outil fiable, sécurisé et maintenable.", deliver: "Application ou agent en conditions réelles, intégrations au SI, garde-fous, conformité RGPD et AI Act.", duration: '1 à 3 mois', watch: "Sécurité, supervision et propriété du code se décident à cette étape." },
-  { step: 'Déploiement et adoption', goal: "Mettre l'outil entre les mains des équipes et lever les freins d'usage.", deliver: "Mise en production, formation des utilisateurs, documentation.", duration: '2 à 4 semaines', watch: "Un outil non adopté ne rapporte rien : la conduite du changement compte autant que le code." },
-  { step: 'Run et évolutions', goal: "Faire vivre l'outil dans la durée et le faire progresser.", deliver: "Supervision, maintenance, améliorations, montée en compétence de vos équipes.", duration: 'En continu', watch: "Le budget de run et d'évolutions s'anticipe dès le cadrage." },
+  { step: 'Cadrage', goal: "Choisir un cas d'usage qui rend du temps ou rapporte de l'argent, et écrire ce que « réussi » voudra dire.", deliver: 'Note de cadrage, indicateurs de réussite, liste des données nécessaires, première estimation du budget et du calendrier.', duration: 'Quelques jours à 2 semaines', watch: "Tant que le cas d'usage n'est pas tranché, aucune ligne de code ne devrait s'écrire." },
+  { step: 'Prototype', goal: 'Vérifier la faisabilité sur un échantillon de vos propres dossiers.', deliver: 'Prototype manipulé par quelques utilisateurs, premiers résultats mesurés sur le jeu de cas tests.', duration: '2 à 4 semaines', watch: "Le prototype sert à décider. S'il ne convainc pas, l'arrêter à ce stade coûte peu." },
+  { step: 'Industrialisation', goal: 'Faire du prototype un outil fiable, sécurisé et relié à vos logiciels.', deliver: "Outil hébergé, connecteurs vers votre système d'information, droits d'accès, journal des échanges (pour retrouver qui a demandé quoi), conformité RGPD et AI Act.", duration: '1 à 3 mois', watch: 'La propriété du code, la sécurité et la supervision se décident ici et se rattrapent mal ensuite.' },
+  { step: 'Mise en service et adoption', goal: "Mettre l'outil entre les mains des utilisateurs et lever ce qui les retient.", deliver: "Mise en production, prise en main sur les dossiers des utilisateurs, guide d'usage, référents désignés.", duration: '2 à 4 semaines', watch: "Un outil que personne n'ouvre ne rapporte rien : l'accompagnement des utilisateurs pèse autant que le code." },
+  { step: 'Suivi et évolutions', goal: 'Surveiller la justesse des réponses, corriger, ajouter des fonctions.', deliver: "Suivi de l'usage, rejeu des cas tests à chaque version, évolutions planifiées, passage progressif de la main à vos équipes.", duration: 'En continu', watch: 'Le budget mensuel du suivi se prévoit dès le cadrage, comme celui du développement.' },
 ]
 
+/* Budgets 2026 : ordres de grandeur du marché français, fourchettes larges à plafond ouvert. */
 const BUDGETS = [
-  { mission: "Automatisation d'un processus", range: '3 000 à 50 000 €', note: 'Du workflow simple au déploiement multi-équipes.' },
-  { mission: 'Chatbot ou assistant IA interne', range: '8 000 à 60 000 €', note: 'Selon les sources de données et le niveau d\'intégration.' },
-  { mission: 'Agent IA métier', range: '20 000 à 120 000 €', note: 'Autonomie, outils connectés, garde-fous, supervision.' },
-  { mission: 'Application IA sur mesure ou RAG', range: '30 000 à 300 000 € et plus', note: 'Produit complet, intégrations profondes au SI.' },
-  { mission: 'Maintenance et évolutions (par mois)', range: '2 000 à 15 000 €', note: 'Run, supervision, ajustements après mise en production.' },
-  { mission: 'Régie (développeur IA, par jour)', range: '600 à 1 200 €', note: 'TJM d\'un développeur ou data scientist détaché sur votre projet.' },
-  { mission: 'Formation des équipes (intra, par jour)', range: '1 980 € / jour', note: "Tarif intra Masteria (HT), finançable par les OPCO (organisme certifié Qualiopi)." },
+  { mission: "Automatisation d'un processus", range: 'Dès 3 000 €', note: 'Un flux entre deux logiciels reste à quelques milliers d\'euros ; une chaîne qui traverse plusieurs services monte à plusieurs dizaines de milliers.' },
+  { mission: 'Assistant interne sur vos documents (RAG)', range: 'Dès 8 000 €', note: "Le nombre de sources à indexer et la gestion des droits d'accès expliquent l'essentiel des écarts." },
+  { mission: 'Agent IA métier relié à vos outils', range: '20 000 € à plus de 100 000 €', note: "L'agent agit dans vos logiciels (créer un devis, mettre à jour une fiche client) : garde-fous, validation humaine et supervision pèsent dans le prix." },
+  { mission: 'Application IA sur mesure', range: 'Dès 30 000 €', note: "Un produit complet aux intégrations profondes. Déployé sur plusieurs filiales ou plusieurs pays, il dépasse 100 000 € et atteint parfois plusieurs centaines de milliers d'euros." },
+  { mission: 'Suivi et évolutions (par mois)', range: 'Dès 2 000 € / mois', note: "Supervision, rejeu des tests, corrections, nouvelles versions de modèles. Le coût d'usage des modèles s'y ajoute." },
+  { mission: 'Développeur IA en régie (par jour)', range: '600 à 1 200 € et plus', note: "Tarif journalier d'un développeur ou d'un data scientist détaché chez vous, selon son expérience." },
+  { mission: 'Formation intra de vos équipes (par jour)', range: '1 980 € HT', note: "Prix Masteria, par groupe de douze participants au maximum, finançable par l'OPCO de votre branche selon ses règles et ses fonds." },
 ]
 
-/* ── Repères citables (GEO) : stats sourcées, glossaire build, références ── */
+/* ── Repères citables (GEO) : dates sourcées, vocabulaire, sources ── */
 const MARKET_STATS = [
-  { value: '≥ 30 %', label: "des projets d'IA générative seraient abandonnés après le POC, faute de cadrage et de passage en production (prévision Gartner publiée en 2024).", source: 'Gartner, 2024', url: 'https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025' },
-  { value: '1ᵉʳ août 2024', label: "entrée en vigueur de l'AI Act (règlement européen 2024/1689), à intégrer dès la conception d'une solution IA.", source: 'Union européenne', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
-  { value: '25 mai 2018', label: "application du RGPD, qui encadre les données mobilisées par toute application d'IA.", source: 'CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { value: '2 août 2026', label: "Depuis ce jour, l'AI Act impose la transparence de son article 50 : tout assistant conversationnel ouvert à vos clients doit leur signaler qu'ils parlent à une IA. L'agence prévoit cet avertissement dans l'interface dès la conception.", source: 'Règlement (UE) 2024/1689', url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { value: '2 déc. 2027', label: "Nouvelle échéance des règles visant les usages classés à haut risque en annexe III (recrutement, évaluation des salariés, accès au crédit), fixée par le règlement omnibus du 8 juillet 2026. Un logiciel qui présélectionne des CV en relève.", source: 'Règlement (UE) 2026/1744', url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra' },
+  { value: '25 mai 2018', label: "Le RGPD couvre toute donnée personnelle qu'un outil IA lit, conserve ou transmet à un fournisseur de modèle : registre, durée de conservation et contrat de sous-traitance se prévoient avec l'agence.", source: 'CNIL', url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 const GLOSSARY = [
-  { term: 'Agence IA', def: "Structure qui conçoit et développe des solutions d'IA sur mesure (agents, automatisations, applications, RAG, intégrations). Les agences full-stack y ajoutent le cadrage stratégique et la formation des équipes." },
-  { term: 'RAG (retrieval-augmented generation)', def: "Technique qui connecte un modèle de langage à vos documents pour des réponses ancrées dans vos données, plutôt que sur ses seules connaissances générales." },
-  { term: 'Agent IA', def: "Système qui enchaîne des actions de façon autonome (consulter un outil, décider, exécuter) pour accomplir une tâche, sous garde-fous et supervision humaine." },
-  { term: 'MCP (Model Context Protocol)', def: "Protocole standard pour connecter un modèle d'IA à vos outils et données internes de manière sécurisée et réutilisable." },
+  { term: 'Agence IA', def: "Prestataire qui conçoit, développe et met en service des outils d'intelligence artificielle pour une entreprise : assistants, agents, automatisations, applications. Certaines y ajoutent le cadrage du projet et la formation des utilisateurs." },
+  { term: 'Intégration IA', def: "Travail qui relie un modèle d'IA aux logiciels existants (ERP, CRM, messagerie, gestion documentaire) pour qu'il lise vos données et agisse dans vos outils, avec des droits d'accès contrôlés." },
+  { term: 'RAG (génération augmentée par recherche)', def: "Méthode qui fait chercher au modèle les passages utiles dans vos documents avant qu'il réponde, pour qu'il s'appuie sur vos sources et puisse les citer." },
+  { term: 'Agent IA', def: "Programme qui enchaîne plusieurs actions pour atteindre un but (lire une demande, consulter un logiciel, préparer une réponse), avec des garde-fous et une validation humaine aux étapes sensibles." },
+  { term: 'MCP (Model Context Protocol)', def: "Protocole ouvert qu'Anthropic a rendu public le 25 novembre 2024, repris depuis par OpenAI, Google et Microsoft dans leurs assistants : un connecteur écrit une fois relie vos outils à plusieurs assistants." },
 ]
 
-const REFERENCES = [
-  { label: "Règlement européen sur l'IA (AI Act, 2024/1689)", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
-  { label: "L'intelligence artificielle, Commission européenne", url: 'https://digital-strategy.ec.europa.eu/fr/policies/european-approach-artificial-intelligence' },
-  { label: "Intelligence artificielle, CNIL", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
-  { label: "Qualiopi, Ministère du Travail", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+/* Sources de la page (remplacent le bloc commun OfficialSources) */
+const SOURCES = [
+  { name: "Le texte de l'AI Act (règlement 2024/1689) sur EUR-Lex", note: "son article 50 fixe les règles de transparence des assistants conversationnels.", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=OJ:L_202401689' },
+  { name: "L'omnibus IA adopté le 8 juillet 2026 (règlement 2026/1744), consultable sur EUR-Lex", note: "il décale au 2 décembre 2027 les règles applicables aux usages à haut risque listés en annexe III.", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj/fra' },
+  { name: "Les pages de la CNIL consacrées à l'intelligence artificielle", note: "les recommandations de l'autorité française pour les données personnelles qu'un système d'IA exploite.", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
+  { name: "La stratégie européenne pour l'IA, présentée par la Commission", note: 'le cadre politique et le calendrier vus depuis Bruxelles.', url: 'https://digital-strategy.ec.europa.eu/fr/policies/european-approach-artificial-intelligence' },
+  { name: 'La certification Qualiopi expliquée par le ministère du Travail', note: "ce qu'elle garantit chez un organisme de formation, et pourquoi l'OPCO l'exige avant de payer.", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { name: 'Le rôle des opérateurs de compétences, sur le site du ministère du Travail', note: 'qui sont les OPCO et comment ils paient la formation des salariés.', url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+]
+
+/* Trois missions résumées pour cette page, chacune reliée à son ancre de /etudes-de-cas-ia
+ * (faits relus dans src/data/etudes-de-cas.js le 07/10/2026). */
+const CASES = [
+  {
+    anchor: 'distribution',
+    criterion: 'Critère 6 · Transmission',
+    text: "Chez un distributeur informatique B2B de 58 salariés, dix référents formés sur deux journées en juin 2026 ont mis au point onze compétences Claude (des procédures que l'assistant applique à une tâche donnée) pour la cotation, les relances de devis ou les cahiers des charges. Chaque compétence a un propriétaire nommé et un dépôt versionné, et ce sont ces référents qui emmèneront le reste de l'entreprise entre octobre et décembre 2026.",
+    link: 'Lire le cas du distributeur IT',
+  },
+  {
+    anchor: 'conseil-financier',
+    criterion: 'Critère 3 · Tests',
+    text: "Un cabinet de conseil financier indépendant, qui travaille pour le secteur public, a construit avec nous quatre assistants de réponse aux marchés publics, un par famille de marchés. Ses consultants en ont écrit et testé les prompts pendant quatre ateliers de deux heures, à partir de consultations récentes et des mémoires techniques les mieux classés par les jurys, et un guide désigne qui les tient à jour.",
+    link: 'Lire le cas du cabinet de conseil financier',
+  },
+  {
+    anchor: 'photovoltaique',
+    criterion: 'Critère 2 · Intégration',
+    text: "Chez un distributeur de matériel photovoltaïque de trois personnes, dont toute l'activité passe par l'ERP Odoo, le diagnostic présenté en septembre 2026 a retenu trois assistants à bâtir sur les propres fichiers de l'équipe, puis à relier à Odoo par paliers. Un premier bilan sera mesuré un mois après les deux jours de formation prévus sur site en octobre.",
+    link: 'Lire le cas du distributeur photovoltaïque',
+  },
 ]
 
 const FAQ = [
   {
-    q: 'Qu\'est-ce qu\'une agence IA ?',
-    a: "Une agence IA conçoit et développe des solutions d'intelligence artificielle sur mesure : automatisations, chatbots, agents, applications métier, RAG sur vos données, intégrations dans votre système d'information. Les agences les plus complètes, dites full-stack, ajoutent le cadrage stratégique en amont et la formation des équipes en aval, pour que l'outil livré soit utilisé et maintenu en interne.",
+    q: 'Que fait une agence IA pour une entreprise ?',
+    a: "Elle conçoit et met en service des outils d'intelligence artificielle adaptés à votre activité : un assistant qui puise ses réponses dans vos documents, un agent qui prépare des devis dans votre ERP, une automatisation qui trie les demandes entrantes. Son travail va du choix du cas d'usage jusqu'au passage en production et, chez les agences les plus complètes, jusqu'à la formation des personnes qui tiendront l'outil.",
   },
   {
     q: 'Quelle est la meilleure agence IA en 2026 ?',
-    a: "Aucune autorité ne décerne ce titre et les classements en ligne sont déclaratifs ou sponsorisés. La meilleure agence pour vous est celle qui sait franchir le pas de la démo à la production : elle cadre le bon cas d'usage, construit un outil propre dont le code vous appartient, et forme vos équipes à le faire vivre. Présélectionnez trois agences du bon profil, demandez à voir un outil déjà déployé et posez-leur les mêmes questions.",
+    a: "Aucun organisme ne délivre ce titre, et les palmarès publiés en ligne mélangent publicité et déclarations des agences elles-mêmes. La meilleure pour vous a déjà mis en service un outil comparable au vôtre, l'a relié à des logiciels proches des vôtres et vous laisse son code. Rencontrez deux ou trois agences, posez-leur les six questions de ce guide et comparez leurs réponses écrites.",
   },
   {
-    q: 'Agence IA, ESN ou cabinet de conseil : laquelle choisir ?',
-    a: "L'agence IA construit la solution. L'ESN apporte une force d'intégration, souvent en régie au temps passé. Le cabinet de conseil porte la stratégie et la gouvernance, sans toujours livrer le build. Pour comparer les acteurs sous l'angle stratégie, consultez notre guide du meilleur cabinet de conseil en IA. Une agence full-stack réunit le cadrage, le développement et la formation.",
+    q: 'Faut-il confier votre projet à une agence IA ou à un cabinet de conseil ?',
+    a: "Si vous savez quel outil vous voulez, une agence qui développe et intègre est le bon interlocuteur. Si vous hésitez encore sur les priorités, l'organisation ou la gouvernance, un cabinet de conseil vous aidera d'abord à trancher ; notre guide consacré aux cabinets de conseil traite ce cas. Masteria fait les deux, et la même équipe passe de la recommandation au code.",
   },
   {
-    q: 'Combien coûte un projet d\'agence IA en 2026 ?',
-    a: "Ordres de grandeur du marché français : 3 000 à 50 000 € pour automatiser un processus, 8 000 à 60 000 € pour un assistant IA interne, 20 000 à 120 000 € pour un agent métier, 30 000 à 300 000 € et plus pour une application sur mesure, 2 000 à 15 000 € par mois pour la maintenance. La formation intra chez Masteria est à 1 980 € HT par jour, finançable par votre OPCO car nous sommes certifiés Qualiopi ; le développement ne l'est pas.",
+    q: 'Combien coûte un projet confié à une agence IA ?',
+    a: "Sur le marché français en 2026, comptez dès 3 000 € pour une automatisation simple, entre 20 000 € et plus de 100 000 € s'il s'agit d'un agent relié à vos logiciels, et au-delà de 100 000 €, parfois plusieurs centaines de milliers d'euros, pour une application déployée dans plusieurs filiales. Le suivi mensuel s'ajoute dès la mise en service. Masteria facture le développement au forfait, fixé une fois le cadrage mené ; votre OPCO ne le prend pas en charge, alors que la formation des équipes peut l'être selon les règles et les fonds de l'OPCO de votre branche.",
   },
   {
-    q: 'À qui appartient le code développé par une agence IA ?',
-    a: "Cela se négocie avant la signature, et c'est un critère décisif. Une agence sérieuse vous transfère le code, les prompts, la documentation et les accès, pour que vous puissiez faire évoluer l'outil sans elle. Méfiez-vous des modèles qui gardent le code propriétaire ou imposent un abonnement obligatoire à leurs outils : ils organisent votre dépendance. Chez Masteria, le code vous appartient.",
+    q: 'À qui appartiennent code, prompts et données une fois le projet livré ?',
+    a: "Le contrat doit le dire avant la signature. Exigez que le dépôt de code, les prompts, les comptes chez les fournisseurs de modèles et la documentation soient à votre nom, et qu'aucune de vos données n'alimente l'entraînement des modèles du fournisseur. Une agence qui refuse, ou qui impose sa plateforme payante pour faire tourner l'outil, vous rend dépendant d'elle. Chez Masteria, tout ce qui est livré vous appartient.",
   },
   {
-    q: 'Comment éviter qu\'un projet IA reste au stade du POC ?',
-    a: "Cadrez le cas d'usage et les indicateurs de succès avant de construire, choisissez une agence qui a déjà mis des outils en production, et prévoyez dès le départ la maintenance, la sécurité et la formation des équipes. La plupart des projets abandonnés le sont parce que le passage du prototype à la production n'a jamais été préparé.",
+    q: 'Comment tester une agence IA avant de lui confier un projet ?',
+    a: "Confiez-lui d'abord un périmètre court et payant : un cadrage, ou un prototype sur un échantillon de vos données avec des cas tests que vous choisissez. Vous verrez sur pièces sa compréhension de votre métier, la justesse de ses réponses et la qualité de sa documentation. Si le prototype ne convainc pas, vous vous arrêtez là pour un coût limité.",
   },
   {
-    q: 'Faut-il internaliser le développement IA ou passer par une agence ?',
-    a: "Internaliser a du sens si vous avez déjà une équipe IA et un besoin récurrent. Une agence apporte de la vitesse, une expertise à jour et un transfert de compétence vers vos équipes. La voie la plus sûre pour beaucoup d'entreprises : faire construire par une agence full-stack qui forme vos équipes en chemin, pour internaliser progressivement la maintenance.",
+    q: 'Que recouvre l\'expression « agence d\'intégration IA » ?',
+    a: "Une agence dont le cœur de métier consiste à brancher des modèles d'IA sur les logiciels que vous utilisez déjà : ERP, CRM, messagerie, gestion documentaire. Elle passe par les API de ces logiciels ou par MCP, gère les droits d'accès et garde la trace des échanges, pour que l'IA travaille dans vos outils habituels.",
   },
   {
-    q: 'Agence IA pour PME ou grand groupe : comment choisir ?',
-    a: "Une PME a intérêt à une agence proche du terrain, capable de cadrer vite, de livrer un premier outil utile en quelques semaines et de former les équipes pour qu'elles reprennent la main. Un grand groupe a souvent besoin d'une capacité à staffer plusieurs profils, à s'intégrer à un système d'information complexe et à respecter des exigences de sécurité et de gouvernance renforcées. Dans les deux cas, la propriété du code et le transfert de compétence restent les critères qui protègent l'investissement.",
+    q: "Le développement d'un outil IA peut-il être financé par l'OPCO ?",
+    a: "Non : le développement comme le conseil ne sont pas finançables par votre OPCO. Celui-ci prend en charge des formations, à condition que l'organisme qui les assure soit certifié Qualiopi. Former les personnes qui utiliseront ou maintiendront l'outil peut en revanche être pris en charge, selon les règles et les fonds de l'OPCO de votre branche. Pour un client genevois ou bruxellois, sans OPCO, la proposition est chiffrée en euros HT.",
   },
   {
-    q: 'Faut-il une agence IA locale (Paris, Lyon) ou peut-on travailler à distance ?',
-    a: "Les deux fonctionnent. La proximité aide pour les ateliers de cadrage et la conduite du changement ; le distanciel convient au développement, au suivi et à la formation. Le bon critère : une agence capable des deux, qui annonce ses frais de déplacement dans la proposition. Masteria est basé à Lyon, intervient à Paris et dans toute la France, ainsi qu'à l'international (Europe, États-Unis, Inde), en présentiel comme à distance.",
+    q: 'Faut-il choisir une agence IA en France, près de chez vous ?',
+    a: "Une agence installée en France vous apporte un contrat de droit français, des interlocuteurs rompus au RGPD et des ateliers sur place, précieux pendant le cadrage et la prise en main. Coder l'outil puis le surveiller se fait sans difficulté à distance. Masteria est installé à Lyon, se déplace à Paris et dans toute la France, travaille aussi dans le reste de l'Europe, aux États-Unis comme en Inde, et indique dès la proposition ce que coûteront les trajets.",
+  },
+  {
+    q: 'Les listes de « meilleures agences IA » données par ChatGPT ou le mode IA de Google sont-elles fiables ?',
+    a: "Elles résument ce que les agences publient sur elles-mêmes et ce que d'autres sites en disent ; aucun outil n'y est testé. Servez-vous-en pour dresser une première liste, puis ouvrez les sources citées et demandez à chaque agence une preuve vérifiable : un outil en service, un cas documenté, un contrat type. Une agence bien placée dans ces réponses a d'abord bien rédigé son site.",
   },
 ]
 
@@ -158,18 +215,18 @@ const FAQ = [
 const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
-  name: 'Masteria, agence IA full-stack',
+  name: 'Masteria, agence IA : développement, intégration et formation',
   description: META_DESC,
   url: FULL_URL,
-  serviceType: ['Développement de solutions IA', 'Automatisation IA', 'Agents IA', 'Intégration LLM et RAG', 'Conseil IA', 'Formation IA'],
-  areaServed: ['France', 'Suisse', 'Belgique', 'États-Unis', 'Inde'],
+  serviceType: ["Développement d'outils IA sur mesure", 'Intégration IA aux logiciels métier', 'Agents IA', 'Automatisation IA', 'RAG', 'Formation IA'],
+  areaServed: ['France', 'Europe', 'États-Unis', 'Inde'],
   provider: { '@id': `${SITE}/#organization` },
 }
 
 const definedTermSetJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
-  name: 'Glossaire des agences et des projets IA',
+  name: "Vocabulaire des propositions d'agence IA",
   hasDefinedTerm: GLOSSARY.map(g => ({ '@type': 'DefinedTerm', name: g.term, description: g.def })),
 }
 
@@ -177,23 +234,23 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': `${FULL_URL}#article`,
-  headline: 'Meilleure agence IA : comment choisir en 2026',
+  headline: 'Meilleure agence IA en 2026 : comment la choisir',
   description: META_DESC,
   author: { '@id': `${SITE}/#mathias-nizan` },
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
-  datePublished: '2026-06-16',
-  dateModified: '2026-06-16',
+  datePublished: DATE_PUBLISHED,
+  dateModified: DATE_MODIFIED,
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${FULL_URL}#webpage` },
-  about: ['Agence IA', 'Développement de solutions IA', 'Automatisation IA'],
+  about: ['Agence IA', 'Intégration IA', "Développement d'outils IA"],
 }
 
 /* ItemList : séquence citable des 5 étapes (GEO). HowTo proscrit (Google l'a retiré). */
 const processJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: "Les 5 étapes d'un projet d'agence IA, du cadrage à la production",
+  name: "Les cinq étapes d'un projet confié à une agence IA, du cadrage au suivi",
   itemListElement: PROCESS.map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: p.step, description: p.goal })),
 }
 
@@ -252,6 +309,10 @@ export default function MeilleureAgenceIAPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        datePublished={DATE_PUBLISHED}
+        dateModified={DATE_MODIFIED}
+        citations={SOURCES.map(s => ({ name: s.name, url: s.url }))}
+        author
         extraJsonLd={[serviceJsonLd, definedTermSetJsonLd, articleJsonLd, processJsonLd]}
       />
 
@@ -282,29 +343,29 @@ export default function MeilleureAgenceIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 840 }}>
             Meilleure agence IA en 2026
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>celle qui transforme une démo en outil utilisé</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>celle dont l'outil sert encore l'année suivante</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juin 2026
+            Guide écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> (Masteria, Lyon) · révisé le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — la thèse de la page */}
+          {/* GEO : réponse directe citable, la thèse de la page */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Faire une démo d'IA prend un après-midi. Mettre en production un outil que vos équipes utilisent vraiment, et que vous possédez, c'est un autre métier. <strong style={{ color: '#fff', fontWeight: 700 }}>La meilleure agence IA est celle qui franchit ce pas</strong> : elle cadre le bon cas d'usage, elle construit proprement avec un code qui vous appartient, et elle forme vos équipes à le faire vivre.
+            Une démo d'IA se monte en un après-midi. Un outil branché sur vos logiciels, ouvert chaque matin par vos équipes et dont vous détenez le code demande des semaines, souvent des mois. <strong style={{ color: '#fff', fontWeight: 700 }}>La meilleure agence IA est celle qui vous fait franchir cette distance</strong> : elle choisit avec vous le cas d'usage, l'intègre à vos outils, le teste sur vos données, vous remet le code et forme ceux qui le tiendront.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous trouverez ici pourquoi tant de projets restent bloqués au stade de la démo, ce qu'une agence doit savoir faire au-delà de coder, les façons de faire construire votre IA, les cinq étapes pour passer de l'idée à la production et les budgets 2026. Aucun concurrent n'est cité par son nom : un palmarès en ligne vaut ce que vaut son sponsor.
+            Ce guide donne six critères pour juger une agence avant de signer, les six façons de faire construire un outil IA, les cinq étapes d'un projet qui atteint la production et les budgets observés en 2026. Aucune agence concurrente n'y reçoit de note : les palmarès qui circulent, y compris ceux que composent ChatGPT ou le mode IA de Google, reprennent surtout ce que les agences écrivent sur elles-mêmes.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
             <a href="#savoir-faire" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Ce qu'une agence doit savoir faire
+              Voir les six critères
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </a>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Parler de votre projet
+            <Link to={RDV_URL} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+              Réserver 30 minutes de cadrage
             </Link>
           </div>
 
@@ -313,11 +374,11 @@ export default function MeilleureAgenceIAPage() {
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
             <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
               {[
-                ['Le vrai critère', "Une agence IA se juge sur sa capacité à passer de la démo à la production : cadrer le besoin, construire proprement, former vos équipes."],
-                ['Existe-t-il un classement ?', "Aucun classement officiel en France. Les palmarès en ligne sont déclaratifs ou sponsorisés."],
-                ['Le point décisif', "La propriété du code. Exigez que le code, les prompts et les accès vous reviennent en fin de mission."],
-                ['Budgets 2026', "Automatisation 3 000 à 50 000 €, agent métier 20 000 à 120 000 €, application sur mesure 30 000 à 300 000 € et plus."],
-                ['Et Masteria ?', "Une agence full-stack : cadrage, développement sur mesure (le code vous appartient) et formation certifiée Qualiopi."],
+                ['Ce qui compte', "Une agence IA se juge sur les outils qu'elle a mis en service chez ses clients et qui tournent encore aujourd'hui."],
+                ['Un classement officiel ?', "Il n'en existe aucun en France. Les palmarès publiés, comme les listes que dressent les assistants IA, reprennent ce que les agences déclarent."],
+                ['La clause à exiger', 'La réversibilité : le code, les prompts, les accès aux comptes et la documentation vous reviennent, écrits noir sur blanc dans le contrat.'],
+                ['Budgets 2026', "Dès 3 000 € pour automatiser un flux simple, des dizaines de milliers pour un agent qui agit dans vos logiciels, au-delà de 100 000 € quand une application se déploie dans tout un groupe."],
+                ['Et Masteria ?', 'Un cabinet lyonnais spécialisé en IA qui conçoit des outils sur mesure dont le code vous revient, et qui forme vos équipes à les tenir.'],
               ].map(([k, v], i) => (
                 <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
                   <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
@@ -329,36 +390,36 @@ export default function MeilleureAgenceIAPage() {
         </div>
       </section>
 
-      {/* ── POURQUOI LES PROJETS RESTENT AU STADE DE LA DÉMO (POV) ── */}
+      {/* ── POURQUOI LES PROJETS CALENT ENTRE LA DÉMO ET LA MISE EN SERVICE ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <SectionHeader icon={AlertTriangle} kicker="Le vrai problème" title="Pourquoi la plupart des projets IA ne dépassent jamais la démo" />
+          <SectionHeader icon={AlertTriangle} kicker="Le point de blocage" title="Pourquoi un projet IA cale entre la démo et la mise en service" />
           <p style={leadStyle}>
-            La technologie est rarement le point de blocage. Un prototype impressionnant se construit en quelques jours. Ce qui coince vient après : faire tourner l'outil de façon fiable, le sécuriser, le brancher à vos données réelles, et obtenir que vos équipes s'en servent tous les jours.
+            Le modèle lui-même pose rarement problème. En 2026, un prototype qui résume des contrats ou répond à des questions sur un catalogue se construit en quelques jours. Le travail difficile commence ensuite : brancher l'outil sur votre ERP, votre CRM ou votre gestion documentaire, décider qui a le droit de voir quoi, vérifier que les réponses restent justes sur des centaines de cas, puis convaincre une équipe de changer ses habitudes.
           </p>
           <p style={answerStyle}>
-            Trois pièges expliquent l'essentiel des abandons. Le cas d'usage a été choisi pour son effet « waouh » plutôt que pour son impact. Le passage en production n'a jamais été préparé : pas de maintenance, pas de sécurité, pas de propriété claire du code. Et personne en interne n'a été formé à reprendre la main, donc l'outil meurt au premier changement de modèle ou de besoin.
+            Les projets qui s'arrêtent racontent presque tous la même histoire. Le cas d'usage a été retenu parce qu'il faisait bonne impression en réunion de direction. Le devis couvrait le prototype et laissait de côté l'hébergement, la supervision et le coût d'usage des modèles. Aucun salarié n'a appris à corriger un prompt ou un connecteur, si bien que l'outil perd en qualité au premier changement de version du modèle.
           </p>
           <p style={mutedStyle}>
-            Le bon réflexe : juger une agence à sa capacité à éviter ces trois pièges. C'est exactement ce que recouvrent les trois compétences ci-dessous.
+            Une bonne agence se reconnaît à la façon dont elle prévient ces accidents dès sa proposition commerciale. Les six critères qui suivent permettent de le vérifier.
           </p>
         </div>
       </section>
 
-      {/* ── CE QU'UNE AGENCE DOIT SAVOIR FAIRE AU-DELÀ DE CODER ── */}
+      {/* ── LA GRILLE : SIX CRITÈRES ── */}
       <section id="savoir-faire" style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <div style={kickerStyle}>Au-delà du code</div>
-          <h2 style={h2Style}>Ce qu'une agence IA doit savoir faire, au-delà de coder</h2>
+          <div style={kickerStyle}>La grille</div>
+          <h2 style={h2Style}>Six critères pour juger une agence IA avant de signer</h2>
           <p style={leadStyle}>
-            Coder un modèle est devenu accessible. Livrer un outil qui sert, qui dure et que vous possédez demande trois compétences que peu d'agences réunissent. Les meilleures les tiennent toutes les trois.
+            Chaque critère se résume à une question à poser dès le premier rendez-vous. Une agence solide y répond avec un exemple, un document ou une clause de contrat ; une réponse floue vous renseigne autant qu'une bonne.
           </p>
           <p style={mutedStyle}>
-            Cadrer, construire, transmettre. La construction reste le cœur du métier d'agence, mais elle ne vaut que si elle est encadrée en amont et prolongée en aval.
+            Les deux premiers critères portent sur ce que l'agence a déjà livré, les quatre suivants sur ce qu'elle vous livrera.
           </p>
 
           <div style={{ display: 'grid', gap: 22 }}>
-            {PILLARS.map((p, i) => {
+            {CRITERIA.map((p, i) => {
               const Icon = p.icon
               return (
                 <div key={p.tag} style={{ ...cardStyle, padding: 'clamp(24px, 3vw, 34px)', display: 'grid', gridTemplateColumns: isDesktop ? '52px 1fr' : '1fr', gap: isDesktop ? 24 : 16, borderTop: `3px solid ${c}`, background: '#fff' }}>
@@ -370,41 +431,47 @@ export default function MeilleureAgenceIAPage() {
                       <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: c }}>{`0${i + 1} · ${p.tag}`}</span>
                       <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2.2vw, 22px)', fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }}>{p.title}</h3>
                     </div>
-                    <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>{p.body}</p>
+                    <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px' }}>{p.body}</p>
+                    <p style={{ fontSize: 14.5, lineHeight: 1.6, margin: 0, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 8px 8px 0', padding: '10px 14px' }}>
+                      <strong style={{ color: c }}>La question à poser : </strong><span style={{ color: '#0A0A0A' }}>{p.question}</span>
+                    </p>
                   </div>
                 </div>
               )
             })}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 820 }}>
-            Votre besoin penche d'abord vers la stratégie et la gouvernance ? Notre guide{' '}
-            <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>meilleur cabinet de conseil en IA</Link>{' '}
-            compare les acteurs sous l'angle conseil. Pour le détail de nos réalisations, voyez l'{' '}
-            <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>. Votre besoin porte sur la montée en compétences de vos équipes ? Notre guide{' '}
-            <Link to="/meilleure-formation-ia" style={{ color: c, fontWeight: 600 }}>meilleure formation IA</Link>{' '}
-            compare les organismes sous l'angle transmission. Et pour la vue d'ensemble des cinq familles d'acteurs (agence, cabinet, ESN, formation, indépendant), notre guide du{' '}
-            <Link to="/prestataire-ia" style={{ color: c, fontWeight: 600 }}>prestataire IA</Link> pose les critères transverses.
+            Votre projet commence plutôt par une question de priorités ou de gouvernance ? Le guide qui compare les{' '}
+            <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>cabinets de conseil en intelligence artificielle</Link>{' '}
+            traite cet angle. Si vous savez déjà quel outil vous voulez, la page{' '}
+            <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils et copilotes IA développés sur mesure</Link>{' '}
+            montre ce que nous construisons, et celle de notre{' '}
+            <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>{' '}
+            explique comment nous codons et livrons. Pour brancher un modèle sur vos documents, voyez l'
+            <Link to="/integration-llm-rag" style={{ color: c, fontWeight: 600 }}>intégration de modèles de langage et le RAG</Link>. Les organismes de formation se comparent dans le guide de la{' '}
+            <Link to="/meilleure-formation-ia" style={{ color: c, fontWeight: 600 }}>meilleure formation IA</Link>, et les cinq familles de prestataires dans celui du{' '}
+            <Link to="/prestataire-ia" style={{ color: c, fontWeight: 600 }}>prestataire IA</Link>.
           </p>
         </div>
       </section>
 
-      {/* ── COMMENT FAIRE CONSTRUIRE VOTRE IA (tableau texte, axe build) ── */}
+      {/* ── SIX FAÇONS DE FAIRE CONSTRUIRE VOTRE OUTIL (tableau texte, axe build) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={kickerStyle}>Les voies possibles</div>
-          <h2 style={h2Style}>Internaliser, régie ou agence : comment faire construire votre IA</h2>
+          <h2 style={h2Style}>Six façons de faire construire votre outil IA, et ce que chacune vous laisse</h2>
           <p style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong>Cinq voies mènent à un outil IA : l'équipe interne, l'ESN en régie, l'agence build spécialisée, la plateforme no-code et l'agence full-stack qui cadre, construit et forme.</strong>{' '}
-            Elles se départagent surtout sur quatre points : la vitesse, la propriété du code, la maintenance et l'autonomie qu'elles laissent à vos équipes.
+            <strong>Vous pouvez développer en interne, louer des développeurs à une ESN, confier le produit à un studio spécialisé, assembler l'outil sur une plateforme no-code, acheter la fonction IA d'un logiciel du marché ou passer par une agence qui cadre, développe et forme.</strong>{' '}
+            Le tableau les compare sur ce qui pèse au bout de deux ans : la vitesse de démarrage, la propriété du code, la charge de maintenance et ce que vos équipes sauront faire seules.
           </p>
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Le tableau compare ces voies sur ces critères. La propriété du code et la maintenance sont les deux colonnes qui pèsent le plus sur le coût réel à deux ans.
+            La colonne « Propriété du code » décide de votre liberté future. Quand elle indique « À négocier », la question doit figurer au contrat ; faute de clause, le prestataire conserve la maîtrise du code qu'il a écrit.
           </p>
 
           <div style={tableWrapStyle}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 980 }}>
               <caption style={srOnlyStyle}>
-                Comparatif des cinq voies pour faire construire une solution IA : vitesse, propriété du code, maintenance, montée en compétence interne et besoin adapté
+                Six façons de faire construire un outil d'IA comparées sur la vitesse, la propriété du code, la maintenance, l'autonomie laissée à l'équipe et le besoin type
               </caption>
               <thead>
                 <tr>
@@ -444,16 +511,16 @@ export default function MeilleureAgenceIAPage() {
         </div>
       </section>
 
-      {/* ── DE L'IDÉE À LA PRODUCTION : LES 5 ÉTAPES (timeline, section à valeur ajoutée) ── */}
+      {/* ── DE L'IDÉE À LA PRODUCTION : LES 5 ÉTAPES (timeline) ── */}
       <section id="methode" style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={kickerStyle}>La méthode</div>
-          <h2 style={h2Style}>De l'idée à la production : les 5 étapes d'un projet IA</h2>
+          <h2 style={h2Style}>Les cinq étapes qui mènent un outil IA jusqu'à la production</h2>
           <p style={leadStyle}>
-            C'est là que se gagne ou se perd un projet d'IA. Voici le chemin qu'une agence sérieuse suit pour faire passer une idée du tableau blanc à un outil utilisé tous les jours, sans rester bloqué au stade du prototype.
+            Une agence sérieuse suit à peu près ce chemin, quel que soit le nom qu'elle donne aux étapes. Comparez-le aux propositions que vous recevez : une étape absente du planning se paiera plus tard, en retard ou en avenant.
           </p>
           <p style={mutedStyle}>
-            Les durées sont indicatives et se chevauchent souvent. Le point de vigilance de chaque étape est l'endroit où les projets déraillent le plus.
+            Les durées valent pour un premier outil et se chevauchent souvent. Le point de vigilance signale l'endroit où les projets déraillent le plus.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -486,23 +553,22 @@ export default function MeilleureAgenceIAPage() {
 
         <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Budgets 2026</div>
-          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Combien coûte un projet d'agence IA en 2026 (par type de solution) ?</h2>
+          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Combien coûte un projet confié à une agence IA en 2026 ?</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Comptez 3 000 à 50 000 € pour automatiser un processus, 20 000 à 120 000 € pour un agent métier, 30 000 à 300 000 € et plus pour une application sur mesure, et 2 000 à 15 000 € par mois pour la maintenance.</strong>{' '}
-            Seule la formation délivrée par un organisme certifié Qualiopi ouvre droit à un financement OPCO.
+            <strong style={{ color: '#fff' }}>Une automatisation simple démarre à quelques milliers d'euros ; pour un agent relié à vos logiciels, on parle en dizaines de milliers, et une application déployée dans tout un groupe dépasse 100 000 € pour atteindre parfois plusieurs centaines de milliers d'euros.</strong>{' '}
+            Un budget mensuel de suivi s'y ajoute dès que l'outil est en service.
           </p>
           <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
-            Ordres de grandeur larges constatés sur le marché français. La maintenance et les évolutions, souvent oubliées du premier devis, pèsent lourd à deux ans. Pour chiffrer un projet précis, notre guide des{' '}
-            <Link to="/prix-projet-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>prix d'un projet IA</Link>{' '}
-            détaille les postes de coût.
+            Ces fourchettes donnent des ordres de grandeur du marché français, larges à dessein : le nombre de logiciels à connecter et le volume d'utilisation font varier le prix plus que la technologie retenue. Masteria chiffre le conseil comme le développement au forfait, sur un devis établi après le cadrage. Pour décomposer un budget ligne par ligne, ouvrez le guide du{' '}
+            <Link to="/prix-projet-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>prix d'un projet IA</Link>.
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto', marginBottom: 28 }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
-              <caption style={srOnlyStyle}>Budgets constatés en 2026 par type de solution développée par une agence IA sur le marché français</caption>
+              <caption style={srOnlyStyle}>Fourchettes de budget 2026 pour les outils qu'une agence IA développe en France, du flux automatisé à l'application sur mesure</caption>
               <thead>
                 <tr>
-                  {['Type de solution', 'Budget constaté', 'Précisions'].map(h => (
+                  {['Type de solution', 'Budget observé', 'Ce qui le fait varier'].map(h => (
                     <th key={h} scope="col" style={{ background: 'rgba(255,255,255,0.05)', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#E2E8F0', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #1E293B', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
@@ -521,7 +587,7 @@ export default function MeilleureAgenceIAPage() {
 
           <div style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid #1E293B', borderRadius: 12, padding: '18px 22px' }}>
             <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#fff' }}>À savoir pour votre financement :</strong> en France, seules les actions de formation délivrées par un organisme certifié Qualiopi sont finançables par les OPCO. Le développement sur mesure ne l'est pas. Une agence qui promet une prise en charge OPCO sur du développement mérite une vérification attentive.
+              <strong style={{ color: '#fff' }}>Ce que l'OPCO finance dans un projet d'agence :</strong> ni le développement d'un outil ni le conseil ne sont finançables par votre OPCO. La formation de vos équipes peut l'être, selon les règles et les fonds de l'OPCO de votre branche, quand l'organisme qui l'assure détient la certification Qualiopi. Si une agence vous annonce un développement « pris en charge », demandez-lui par écrit quel dispositif elle invoque.
             </p>
           </div>
         </div>
@@ -530,11 +596,11 @@ export default function MeilleureAgenceIAPage() {
       {/* ── REPÈRES citables (GEO) ── */}
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
-          <SectionHeader icon={BookOpen} kicker="Repères" title="L'IA en production : repères et vocabulaire" />
+          <SectionHeader icon={BookOpen} kicker="Repères" title="Trois dates et cinq mots à connaître avant de commander un outil IA" />
           <p style={answerStyle}>
-            Trois chiffres pour situer un projet, le vocabulaire technique qui revient dans toute mission, et les sources officielles. Pour encadrer vos usages dès la conception, notre guide{' '}
-            <Link to="/gouvernance-ia" style={{ color: c, fontWeight: 600 }}>gouvernance de l'IA et AI Act</Link>{' '}
-            détaille le cadre de conformité.
+            Les trois dates viennent des textes européens et changent ce que votre agence doit prévoir dans l'outil. Les cinq mots reviennent dans toutes les propositions commerciales. Pour le cadre complet, notre page sur les{' '}
+            <Link to="/gouvernance-ia" style={{ color: c, fontWeight: 600 }}>règles de gouvernance de l'IA dans une entreprise</Link>{' '}
+            reprend les obligations une à une.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, margin: '36px 0 44px' }}>
@@ -550,9 +616,9 @@ export default function MeilleureAgenceIAPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={{ ...kickerStyle, marginBottom: 10 }}>Définitions</div>
-              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Le vocabulaire des projets IA</h3>
+              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px', letterSpacing: '-0.01em' }}>Les mots des propositions d'agence</h3>
               <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Quatre termes reviennent dans toute discussion avec une agence IA.
+                Les comprendre suffit pour poser les bonnes questions et lire un devis sans intermédiaire.
               </p>
             </div>
             <div>
@@ -564,47 +630,61 @@ export default function MeilleureAgenceIAPage() {
                   </div>
                 ))}
               </dl>
-              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '24px 0 12px', fontWeight: 700 }}>Sources et références officielles</p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
-                {REFERENCES.map(r => (
-                  <li key={r.url} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                    <ShieldCheck size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-                    <a href={r.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, fontSize: 14.5, textDecoration: 'underline', textUnderlineOffset: 2, lineHeight: 1.6 }}>{r.label}</a>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── MASTERIA ── */}
+      {/* ── TROIS MISSIONS LUES AVEC LA GRILLE (remplace les cartes communes) ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+          <SectionHeader icon={FolderSearch} kicker="Sur pièces" title="Trois missions Masteria relues avec cette grille" />
+          <p style={{ ...mutedStyle, margin: '0 0 32px' }}>
+            Chaque cas est anonymisé à la demande du client et décrit en entier, chiffres compris, sur notre page d'études de cas.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {CASES.map(k => (
+              <div key={k.anchor} style={{ ...cardStyle, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ ...kickerStyle, fontSize: 12, marginBottom: 12 }}>{k.criterion}</div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{k.text}</p>
+                <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {k.link}
+                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── MASTERIA ── */}
+      <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>Notre positionnement</div>
-              <h2 style={{ ...h2Style, marginBottom: 18 }}>Où se situe Masteria</h2>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>Où se place Masteria sur cette grille</h2>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: cLight, color: c, padding: '5px 12px', borderRadius: 99, fontSize: 13, fontWeight: 700, marginBottom: 18 }}>
                 <BadgeCheck size={15} strokeWidth={2.2} aria-hidden="true" />
-                Agence full-stack : cadrage · build · formation
+                Cadrage · développement · formation
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Votre question porte plutôt sur les modèles (ChatGPT, Claude, Gemini, Mistral) ? Voyez notre comparatif{' '}
-                <Link to="/quelle-est-la-meilleure-ia" style={{ color: c, fontWeight: 600 }}>quelle est la meilleure IA</Link>.
+                Vous cherchez plutôt à départager les assistants du marché (ChatGPT, Claude, Gemini, Vibe de Mistral) ? Notre{' '}
+                <Link to="/quelle-est-la-meilleure-ia" style={{ color: c, fontWeight: 600 }}>comparatif des assistants IA</Link>{' '}
+                les met face à face.
               </p>
             </div>
 
             <div>
               <div style={{ ...cardStyle, padding: 32, borderTop: `3px solid ${c}` }}>
                 <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Mathias Nizan a fondé Masteria à Lyon en 2022 sur une conviction : une agence IA n'a de valeur que si l'outil qu'elle livre est utilisé sur le terrain et reste entre vos mains. Nous tenons les trois compétences au même niveau d'exigence.
+                  Mathias Nizan dirige Masteria depuis sa création, à Lyon, en 2022, et le cabinet n'a qu'une spécialité : l'intelligence artificielle. Nous n'avons ni logiciel à vendre ni éditeur à placer : le modèle et l'hébergement se choisissent selon votre projet, et ce que nous livrons reste entre vos mains.
                 </p>
                 <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 14 }}>
                   {[
-                    ['Technique', "développement sur mesure (agents, automatisations, applications métier, RAG, intégration des modèles à votre SI, API et MCP), de l'idée au déploiement. Le code vous appartient, régie possible sur site."],
-                    ['Conseil et accompagnement', "cadrage du cas d'usage, priorisation, gouvernance RGPD et AI Act, conduite du changement jusqu'à l'adoption réelle."],
-                    ['Formation', "parcours certifiés Qualiopi et finançables OPCO ; plus de 1 500 professionnels formés, satisfaction mesurée en fin de session."],
+                    ['Développement', "assistants, agents, automatisations et applications reliés à votre ERP, à votre CRM ou à votre gestion documentaire par API ou par MCP. Code, prompts et documentation vous reviennent ; une régie sur site reste possible."],
+                    ['Cadrage et conseil', "choix du cas d'usage, jeu de cas tests, règles RGPD et AI Act, accompagnement des utilisateurs jusqu'à l'usage quotidien. Votre OPCO ne prend en charge aucune de ces prestations."],
+                    ['Formation', "certifiée Qualiopi pour la catégorie « actions de formation », au tarif journalier de 1 980 € HT, en intra (douze participants au plus par groupe) ou en individuel, et finançable par l'OPCO de votre branche selon ses règles et ses fonds. Le catalogue réunit plus de 100 programmes."],
                   ].map(([t, d]) => (
                     <li key={t} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                       <BadgeCheck size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
@@ -613,13 +693,18 @@ export default function MeilleureAgenceIAPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Nous restons indépendants des éditeurs : nos recommandations d'outils sont argumentées, jamais commissionnées. Interventions en France et à l'international (Europe, États-Unis, Inde), en présentiel comme à distance. Mathias Nizan est cité par Les Échos sur le choix des modèles d'IA en entreprise.
+                  Pour chaque projet, Mathias Nizan réunit les profils utiles parmi environ cinq développeurs IA, une dizaine de consultants et une vingtaine de formateurs, tous indépendants, et pilote lui-même la mission. Masteria est Activateur France Num et a été cité par Les Échos.
                 </p>
-                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
-                  Nous accompagnons aussi bien des PME et des ETI que de grandes organisations, des directions métier au comité de direction, qui veulent un outil adopté et des équipes autonomes ensuite. Nous adaptons le dispositif à votre taille et à votre maturité, et vous dirons franchement au premier rendez-vous si un autre profil d'acteur correspond mieux à votre besoin. Pour situer votre besoin, commencez par notre{' '}
-                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, voyez l'{' '}
-                  <Link to="/agence-ia" style={{ color: c, fontWeight: 600 }}>agence IA à Lyon</Link>, ou jugez sur pièces avec nos{' '}
-                  <Link to="/etudes-de-cas-ia" style={{ color: c, fontWeight: 600 }}>études de cas IA</Link>.
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 20px' }}>
+                  Si votre besoin relève d'un autre profil, une ESN pour un renfort de longue durée ou un éditeur dont le logiciel fait déjà le travail, nous vous le dirons dès le premier rendez-vous de 30 minutes. Pour un premier état des lieux, le{' '}
+                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>{' '}
+                  est une intervention courte dont la durée et le forfait se fixent au cadrage ; la page{' '}
+                  <Link to="/agence-ia" style={{ color: c, fontWeight: 600 }}>agence IA à Lyon</Link>{' '}
+                  présente l'offre dans son ensemble.
+                </p>
+                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.75, margin: 0, paddingTop: 16, borderTop: '1px solid #E5E7EB', fontStyle: 'italic' }}>
+                  « J'ai écrit cette grille pour qu'elle serve aussi face à nos concurrents. Si une agence, la nôtre comprise, bute sur l'une des six questions, prenez le temps de comprendre pourquoi avant de signer. »{' '}
+                  <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600, fontStyle: 'normal' }}>Mathias Nizan</Link>
                 </p>
               </div>
             </div>
@@ -627,26 +712,16 @@ export default function MeilleureAgenceIAPage() {
         </div>
       </section>
 
-      {/* ── FONDATEUR (E-E-A-T) ── */}
-      <FounderNote bg="#fff" />
-
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['distribution', 'photovoltaique', 'industrie']}
-        title="Ce que livre une agence qui construit, forme et mesure"
-        intro="Trois missions anonymisées où la construction, la formation et la mesure s'enchaînent : la méthode en six temps et ses résultats pour les équipes et l'organisation."
-      />
-
       {/* ── FAQ ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur le choix d'une agence IA</h2>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Dix questions avant de confier un projet à une agence IA</h2>
+              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>Votre situation ne rentre dans aucune de ces dix questions ?</p>
               <Link to="/contact?type=projet" style={{ color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, textDecoration: 'none' }}>
-                Posez-nous votre question
+                Décrivez-nous votre projet
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -666,42 +741,42 @@ export default function MeilleureAgenceIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Un avis franc sur votre projet</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              De la démo à la production, parlons-en
+              Passons votre projet au crible des six critères
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 580, marginLeft: 'auto', marginRight: 'auto' }}>
-              Décrivez votre projet en quelques lignes. Lors d'un échange de cadrage gratuit, nous vous disons ce qui est réaliste, à quel budget, et si notre profil correspond à votre besoin.
+              Décrivez en quelques lignes l'outil que vous imaginez et les logiciels qu'il devra toucher. En 30 minutes, nous regardons avec vous ce qui est faisable, l'ordre de grandeur du budget et le type de prestataire qui vous convient, quitte à vous orienter ailleurs.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
-              Demander un cadrage gratuit
+            <Link to={RDV_URL} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Échange gratuit et sans engagement · Réponse sous 24 h · Certifié Qualiopi
+              En visio · vous repartez avec la liste des logiciels à connecter et une première fourchette de budget
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : qui construit votre outil ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui construit votre outil</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Une équipe d'indépendants que son fondateur pilote projet par projet
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Chez Masteria, Mathias Nizan constitue l'équipe de chaque projet selon les logiciels à connecter et le nombre de personnes à former, puis reste votre interlocuteur jusqu'à la passation. Aucun éditeur ne nous rémunère pour recommander son produit. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions détaillées dans nos études de cas</Link> et les <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>articles de presse qui nous citent</Link> montrent cette façon de travailler.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['≈ 5', 'développeurs IA indépendants'],
+              ['≈ 10', 'consultants IA indépendants'],
+              ['≈ 20', 'formateurs indépendants'],
+              ['Lyon, 2022', 'France · Europe · États-Unis · Inde'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -712,7 +787,28 @@ export default function MeilleureAgenceIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      {/* ── SOURCES (rédigées pour la page, à la place du bloc commun) ── */}
+      <section aria-labelledby="sources-agence-ia" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-agence-ia" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Les textes officiels sur lesquels s'appuie ce guide
+          </h2>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.6, margin: '0 0 20px' }}>
+            À garder sous la main pour relire une proposition d'agence ou rédiger votre cahier des charges.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
+            {SOURCES.map(s => (
+              <li key={s.url} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 15, lineHeight: 1.6 }}>
+                <ShieldCheck size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                <span>
+                  <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.name}</a>
+                  <span style={{ color: '#6B7280' }}> : {s.note}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

@@ -42,56 +42,76 @@ const METIER_ICONS = {
 
 
 /* ─────────────────────────────────────────────
+ * Pages fusionnées le 07/10/2026 (redirection 308) : le catalogue ne les
+ * annonce plus, même si une donnée partagée les réintroduisait par erreur.
+ * ───────────────────────────────────────────── */
+const PAGES_FUSIONNEES = new Set([
+  'formation-sprint-ia-prompts', 'formation-sprint-ia-managers', 'formation-sprint-ia-sensibilisation',
+  'formation-gemini-rh', 'formation-gemini-commercial', 'formation-gemini-finance', 'formation-gemini-management',
+  'formation-gemini-pedagogique', 'formation-gemini-seo', 'formation-gemini-service-client',
+  'formation-mistral-informatique', 'formation-mistral-management', 'formation-mistral-marketing',
+  'formation-mistral-ressources-humaines', 'formation-mistral-seo', 'formation-mistral-service-client',
+  'formation-multi-outils-communication', 'formation-multi-outils-finance', 'formation-multi-outils-informatique',
+  'formation-multi-outils-pedagogique',
+])
+const CATALOGUE = SPOKES.filter(s => !PAGES_FUSIONNEES.has(s.slug))
+
+/* Balises propres à la page (le titre et la description du hub partagé
+ * dépassaient 60 et 155 caractères). */
+const META_TITLE = 'Formation intelligence artificielle en entreprise | Masteria'
+const META_DESC = "Formation intelligence artificielle : plus de 100 programmes par outil (ChatGPT, Copilot, Gemini, Claude, Vibe) et par métier, en équipe ou seul."
+
+/* ─────────────────────────────────────────────
  * FAQ ciblée "formation intelligence artificielle"
  * ───────────────────────────────────────────── */
 const FAQ_IA = [
   {
     q: "Qu'est-ce qu'une formation en intelligence artificielle pour entreprise ?",
-    a: "Une formation en intelligence artificielle pour entreprise est un programme pédagogique destiné aux professionnels qui veulent intégrer l'IA dans leurs tâches quotidiennes. Elle couvre généralement l'usage d'outils comme ChatGPT, Microsoft Copilot, Google Gemini, Claude ou Mistral AI, avec des cas pratiques adaptés au métier des participants. Chez Masteria, chaque formation dure une journée complète, alterne théorie et pratique, et s'appuie sur des exercices construits à partir des situations réelles des stagiaires.",
+    a: "C'est un temps de formation, en groupe ou seul avec un formateur, où des salariés apprennent à confier une partie de leur travail à un assistant d'IA générative : rédiger, résumer, analyser un fichier, préparer une réunion. Le programme part d'un outil (ChatGPT, Copilot de Microsoft, Gemini de Google, Claude ou Vibe) et d'un métier, puis les exercices portent sur les documents des participants. Chacun repart avec des demandes types et des gabarits qu'il réutilise dès le lendemain.",
   },
   {
-    q: "Quelle formation intelligence artificielle choisir pour son équipe ?",
-    a: "Le choix dépend de deux critères principaux : l'outil d'IA adapté à votre environnement (ChatGPT, Microsoft Copilot, Google Gemini, Claude ou Mistral AI) et la fonction des apprenants (marketing, RH, finance, commercial, juridique, management, assistantes, etc.). Les filtres en haut de cette page permettent de croiser ces deux critères pour identifier la formation IA la plus adaptée. En cas de doute, notre équipe pédagogique propose un entretien gratuit de cadrage.",
+    q: 'Comment choisir la bonne formation dans ce catalogue ?',
+    a: "Croisez deux critères : l'outil que l'entreprise paie déjà et le métier des personnes à former. Copilot s'impose souvent quand l'entreprise travaille dans Microsoft 365, Gemini quand elle vit dans Google Workspace ; un abonnement ChatGPT, Claude ou Vibe oriente vers l'outil concerné. Les filtres en haut de page font ce croisement en un clic. Si aucun outil n'est encore choisi, partez d'une formation multi-outils, qui fait travailler plusieurs assistants sur vos propres documents.",
   },
   {
-    q: "Les formations Masteria sont-elles certifiées Qualiopi ?",
-    a: "Oui, Masteria est un organisme de formation certifié Qualiopi au titre de la catégorie « actions de formation ». Cette certification garantit la qualité de nos processus pédagogiques et rend nos formations éligibles aux financements publics et paritaires (OPCO, FNE, plan de développement des compétences).",
+    q: 'Masteria est-il certifié Qualiopi ?',
+    a: "Oui. Certifopac a délivré à Masteria son certificat Qualiopi au titre des actions de formation, pour une période qui se termine le 28 janvier 2029. Il atteste des procédures de l'organisme, du recueil de vos besoins à l'évaluation des acquis ; sans lui, aucun OPCO ne réglerait la session.",
   },
   {
-    q: "Les formations sont-elles finançables par un OPCO ?",
-    a: "Oui, toutes nos formations intelligence artificielle sont finançables par les OPCO (Opérateurs de Compétences) au titre du plan de développement des compétences. Nous fournissons un devis, un programme détaillé, une convention de formation et une attestation de présence, documents nécessaires à toute prise en charge. Notre équipe accompagne les entreprises dans le montage des dossiers.",
+    q: 'Votre OPCO peut-il financer ces formations ?',
+    a: "Oui, dans le cadre de ses règles et de ses fonds, qui varient d'une branche professionnelle à l'autre. Pour le dossier, Masteria fournit le devis, le programme jour par jour et la convention, puis, après la session, l'émargement signé par chaque stagiaire et le certificat de réalisation. Le dossier part à l'OPCO avant la session. Une équipe basée à Genève ou à Bruxelles reçoit un devis en euros HT, hors de tout circuit OPCO.",
   },
   {
-    q: "Combien coûte une formation IA en entreprise ?",
-    a: "Nos tarifs dépendent du format. En intra-entreprise, le tarif est de 1 980 € HT par jour pour un groupe jusqu'à 12 participants, dans vos locaux ou en distanciel. En accompagnement individuel sur mesure, le tarif est de 1 980 € HT par jour pour un coaching 1-to-1 (1 participant), en présentiel ou en distanciel, avec un programme co-construit sur vos enjeux. Tous ces montants sont éligibles au financement OPCO.",
+    q: 'Combien Masteria facture-t-il une journée de formation ?',
+    a: "Une journée est facturée 1 980 € HT, pour un groupe intra (douze stagiaires maximum, réunis chez vous ou derrière leurs écrans), comme pour une personne seule avec un programme écrit pour son poste. Pour deux journées, comptez 3 960 € HT. Masteria n'organise plus de sessions inter-entreprises : chaque devis porte sur votre équipe ou sur une personne.",
   },
   {
-    q: "Quels outils IA sont enseignés dans vos formations ?",
-    a: "Masteria forme à cinq outils d'intelligence artificielle générative : ChatGPT (OpenAI), Microsoft Copilot, Google Gemini, Claude (Anthropic) et Mistral AI. Chaque outil fait l'objet d'un parcours dédié, décliné par métier. Le choix de l'outil dépend de l'environnement technique de l'entreprise et des contraintes de confidentialité.",
+    q: "Sur quels outils d'IA portent les formations ?",
+    a: "Le catalogue couvre cinq assistants : ChatGPT d'OpenAI, Microsoft Copilot, Gemini de Google, Claude d'Anthropic et Vibe, développé par Mistral AI. S'y ajoutent des parcours multi-outils, des sprints de trois heures consacrés à un thème, l'automatisation avec n8n, Make ou Zapier, et le développement assisté avec Claude Code ou le vibe coding. L'outil retenu dépend de votre environnement et de vos règles de confidentialité.",
   },
   {
-    q: "Les formations sont-elles dispensées en présentiel ou en distanciel ?",
-    a: "Les deux formats sont possibles. Nous animons les formations intra-entreprise en présentiel dans vos locaux et en distanciel via visioconférence interactive. Les sessions intra-entreprises se déroulent au choix en présentiel dans vos locaux (Europe, États-Unis, Inde) ou en distanciel. Le contenu, le rythme et les exercices sont identiques dans les deux cas.",
+    q: 'Les sessions ont-elles lieu sur place ou à distance ?',
+    a: "Les deux. En présentiel, la session a lieu chez vous, en France, dans d'autres pays d'Europe, aux États-Unis ou en Inde. À distance, elle se tient en visioconférence, avec les mêmes ateliers et les mêmes supports. Les entreprises multisites combinent souvent les deux formats.",
   },
   {
-    q: "Quelle est la durée d'une formation intelligence artificielle chez Masteria ?",
-    a: "Nos formations durent une journée complète (7 heures) pour l'initiation et les parcours métiers. Les formats longs (2 jours) sont disponibles pour les profils avancés ou les entreprises qui veulent aller plus loin sur des cas d'usage complexes. Une phase de préparation asynchrone en amont et un accompagnement post-formation sont inclus.",
+    q: 'Combien de temps dure une formation ?',
+    a: "Trois formats coexistent. Le sprint de trois heures traite un sujet précis, comme Excel, la veille ou l'AI Act. La journée de sept heures installe un outil dans un métier. Deux jours, soit quatorze heures, laissent le temps de construire des assistants et de traiter des cas complexes. Avant la session, chaque participant remplit un questionnaire de positionnement ; un mois après, un point fait le bilan avec le commanditaire.",
   },
   {
-    q: "Faut-il des prérequis pour suivre une formation IA ?",
-    a: "Aucun prérequis technique. Nos formations s'adressent à des professionnels sans bagage informatique particulier. Il suffit de maîtriser son poste de travail habituel (navigateur web, suite bureautique). Pour les formations orientées DSI ou développeurs, un premier niveau de culture technique est utile mais non bloquant.",
+    q: 'Faut-il des prérequis pour suivre une formation IA ?',
+    a: "Aucun prérequis technique pour les parcours métier : savoir se servir d'un navigateur et de la suite bureautique suffit. Les formations destinées aux équipes informatiques, à Claude Code ou à l'automatisation supposent une première culture technique, que le questionnaire de positionnement permet de vérifier avant la session.",
   },
   {
-    q: "Quelles entreprises forment leurs équipes avec Masteria ?",
-    a: "Masteria a formé plus de 1 500 professionnels dans des organisations de toutes tailles : PME, ETI, grands groupes, collectivités, cabinets de conseil, industries, services publics. Nos formations s'adaptent aux contraintes sectorielles spécifiques : confidentialité renforcée pour la santé et le juridique, souveraineté pour le secteur public, conformité RGPD pour les ressources humaines.",
+    q: 'Quelles organisations ont déjà suivi ces formations ?',
+    a: "Des entreprises de toutes tailles, de la PME de quelques salariés au groupe international. Les études de cas publiées sur le site en décrivent plusieurs, anonymisées : un groupe industriel du packaging dont les managers pilotes sont passés par cinq sessions de deux jours, étalées de juillet à septembre 2026, un distributeur informatique de 58 salariés qui a formé dix référents en juin 2026, une interprofession agricole dont seize salariés ont suivi trois jours en septembre 2026, ou encore l'équipe pédagogique d'un éditeur de logiciels.",
   },
   {
-    q: "Comment se déroule une formation intelligence artificielle type ?",
-    a: "Chaque journée alterne des séquences théoriques courtes (15 à 20 minutes) et des ateliers pratiques sur cas d'usage réels apportés par les participants. Un kit de prompts et de ressources propre à chaque métier est remis en fin de session. Un suivi à 30 jours est inclus pour mesurer l'adoption et répondre aux questions post-formation.",
+    q: 'Comment se passe une journée de formation ?',
+    a: "La journée alterne de courts apports (méthode pour rédiger ses demandes, comparaison des outils, règles de confidentialité et AI Act) et des ateliers où chacun travaille sur ses mails, ses tableaux et ses comptes rendus. Le formateur corrige en direct et règle le rythme sur le groupe. Chaque stagiaire garde l'accès aux supports et repart avec ses demandes types et ses gabarits ; un point à J+30 mesure ce qui est entré dans le travail.",
   },
   {
-    q: "Peut-on construire une formation IA sur mesure ?",
-    a: "Oui, nous construisons régulièrement des programmes sur mesure pour les équipes qui ont des besoins spécifiques (secteur régulé, outil interne, cas d'usage pointu). Le format intra-entreprise permet cette personnalisation complète : audit préalable, design pédagogique dédié, livrables adaptés. Contactez-nous pour un cadrage gratuit.",
+    q: 'Pouvez-vous écrire un programme sur mesure ?',
+    a: "Oui, et la plupart des sessions intra en bénéficient : le catalogue sert de point de départ, puis le programme est réécrit sur la base de vos documents, de votre secteur et du niveau relevé avant la session. Un secteur réglementé, un outil interne ou un cas d'usage pointu se traitent de la même façon. Décrivez votre besoin sur la page contact ; la proposition revient avec un programme jour par jour et son prix.",
   },
 ]
 
@@ -160,7 +180,7 @@ export default function MetiersHubPage() {
 
   /* Application des filtres */
   const filteredSpokes = useMemo(() => {
-    return SPOKES.filter(s => {
+    return CATALOGUE.filter(s => {
       if (selectedTools.length && !selectedTools.includes(s.toolSlug)) return false
 
       if (selectedMetiers.length) {
@@ -181,8 +201,8 @@ export default function MetiersHubPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Catalogue des formations intelligence artificielle Masteria',
-    numberOfItems: SPOKES.length,
-    itemListElement: SPOKES.map((s, i) => ({
+    numberOfItems: CATALOGUE.length,
+    itemListElement: CATALOGUE.map((s, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       url: `${SITE_URL}/${s.slug}`,
@@ -198,16 +218,17 @@ export default function MetiersHubPage() {
   return (
     <>
       <SEOHead
-        title={metiersHub.metaTitle}
-        description={metiersHub.metaDesc}
+        title={META_TITLE}
+        description={META_DESC}
         slug={metiersHub.slug}
-        faqItems={FAQ_IA.slice(0, 8).map(f => ({ q: f.q, a: f.a }))}
+        faqItems={FAQ_IA.map(f => ({ q: f.q, a: f.a }))}
         breadcrumbs={breadcrumbs}
         extraJsonLd={itemListJsonLd}
+        dateModified="2026-10-07"
       />
 
       {/* ═══════════════════════════════════════════════════════════
-       * HERO — H1 ciblé "formation intelligence artificielle"
+       * HERO : H1 ciblé "formation intelligence artificielle"
        * ═══════════════════════════════════════════════════════════ */}
       <section style={{
         paddingTop: isMobile ? 80 : 120,
@@ -226,7 +247,7 @@ export default function MetiersHubPage() {
             fontSize: 13, fontWeight: 700, marginBottom: 24,
           }}>
             <Sparkles size={15} strokeWidth={2.2} />
-            <span>Catalogue complet · plus de 100 formations · +1 500 pros formés</span>
+            <span>Catalogue au 7 octobre 2026 · plus de 100 programmes</span>
           </div>
 
           <h1 style={{
@@ -241,15 +262,15 @@ export default function MetiersHubPage() {
             fontSize: 'clamp(16px, 2vw, 19px)', color: '#4B5563',
             maxWidth: 720, margin: '0 auto 18px', lineHeight: 1.65,
           }}>
-            Trouvez la formation IA pour votre entreprise en croisant
-            <strong style={{ color: '#0A0A0A' }}> outil</strong> et
+            Choisissez une formation IA pour votre entreprise en croisant
+            l'<strong style={{ color: '#0A0A0A' }}>outil</strong> et le
             <strong style={{ color: '#0A0A0A' }}> métier</strong>.
-            Masteria conçoit depuis 2022 des programmes opérationnels sur ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI.
-            Vous hésitez encore sur l'outil ? Notre <Link to="/quel-outil-ia" style={{ color: '#2563EB', fontWeight: 600 }}>simulateur « Quel outil IA pour votre métier ? »</Link> répond en 3 questions.
+            Depuis 2022, Masteria écrit des programmes sur ChatGPT, Copilot de Microsoft, Gemini de Google, Claude d'Anthropic et Vibe de Mistral AI, pour des équipes qui veulent s'en servir dès le lendemain.
+            Pas encore d'outil en tête ? Notre <Link to="/quel-outil-ia" style={{ color: '#2563EB', fontWeight: 600 }}>simulateur de choix d'outil</Link> vous oriente en trois questions.
           </p>
 
           <p style={{ fontSize: 15, color: '#92400E', fontWeight: 600, margin: '0 auto 36px', maxWidth: 560 }}>
-            {metiersHub.pitch}
+            Chaque fiche détaille la durée, les objectifs, les ateliers et le prix d'un programme.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
@@ -277,10 +298,10 @@ export default function MetiersHubPage() {
             justifyContent: 'center', marginTop: 36,
           }}>
             {[
-              { icon: BadgeCheck,        label: 'Certifié Qualiopi' },
-              { icon: Wallet,            label: 'Finançable OPCO' },
-              { icon: MonitorSmartphone, label: 'Présentiel & distanciel' },
-              { icon: Building2,         label: 'Intra ou accompagnement individuel' },
+              { icon: BadgeCheck,        label: 'Qualiopi : actions de formation' },
+              { icon: Wallet,            label: 'OPCO de branche mobilisable' },
+              { icon: MonitorSmartphone, label: 'Sur site ou en visioconférence' },
+              { icon: Building2,         label: 'Intra (12 au plus) ou individuel' },
             ].map(({ icon: Icon, label }) => (
               <span key={label} style={{
                 background: '#fff', color: '#374151',
@@ -300,7 +321,7 @@ export default function MetiersHubPage() {
       <section style={{ background: '#0A0F1E', padding: '20px 24px' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 14 }}>
           <p style={{ color: '#CBD5E1', fontSize: 14.5, lineHeight: 1.6, margin: 0, flex: '1 1 480px' }}>
-            <strong style={{ color: '#F8FAFC' }}>Vous cherchez à former toute une entreprise plutôt qu'à choisir un programme ?</strong> Cadrage, sessions par équipe, référents et charte : la démarche complète est décrite sur la page dédiée.
+            <strong style={{ color: '#F8FAFC' }}>Votre projet concerne toute l'entreprise, avec plusieurs équipes et plusieurs vagues ?</strong> Le cadrage, les sessions par service, les référents internes et la charte d'usage sont expliqués sur une page à part.
           </p>
           <Link to="/formation-ia-entreprise" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', borderRadius: 8, padding: '10px 18px', textDecoration: 'none', fontSize: 14, fontWeight: 700, whiteSpace: 'nowrap' }}>
             Formation IA en entreprise →
@@ -318,6 +339,7 @@ export default function MetiersHubPage() {
         maxWidth: 1160, margin: '0 auto',
         scrollMarginTop: 80,
       }}>
+        <nav aria-label="Catalogue des formations IA, filtrable par outil et par métier">
         <div style={{
           background: '#F9FAFB',
           borderRadius: 16,
@@ -334,7 +356,7 @@ export default function MetiersHubPage() {
             </h2>
           </div>
           <p style={{ color: '#6B7280', fontSize: 14, margin: '0 0 28px 32px' }}>
-            Combinez plusieurs critères. Le catalogue se met à jour en temps réel.
+            Cochez un ou plusieurs outils, un ou plusieurs métiers : la liste suit chacun de vos clics.
           </p>
 
           {/* ── Filtre OUTIL ── */}
@@ -413,10 +435,10 @@ export default function MetiersHubPage() {
               background: '#F9FAFB', borderRadius: 12, border: '1px dashed #D1D5DB',
             }}>
               <div style={{ fontSize: 18, fontWeight: 700, color: '#0A0A0A', marginBottom: 8 }}>
-                Aucune formation ne correspond
+                Aucun programme ne croise encore ces critères
               </div>
               <p style={{ color: '#6B7280', fontSize: 14, marginBottom: 20 }}>
-                Nous construisons aussi des programmes sur mesure. Dites-nous vos besoins.
+                Cette combinaison n'existe pas au catalogue ; un programme peut s'écrire pour votre équipe.
               </p>
               <Link to="/contact" style={{
                 display: 'inline-block',
@@ -515,6 +537,7 @@ export default function MetiersHubPage() {
             </div>
           )}
         </div>
+        </nav>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -533,7 +556,7 @@ export default function MetiersHubPage() {
           }}>
             Parcourir les formations par outil IA
           </h2>
-          <div style={{
+          <nav aria-label="Formations par outil IA" style={{
             display: 'grid',
             gridTemplateColumns: `repeat(auto-fit, minmax(${isMobile ? 180 : 200}px, 1fr))`,
             gap: 16,
@@ -561,7 +584,7 @@ export default function MetiersHubPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
@@ -583,31 +606,31 @@ export default function MetiersHubPage() {
             Les formations thématiques et les formats
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, textAlign: 'center', maxWidth: 640, margin: '0 auto 28px', lineHeight: 1.6 }}>
-            Au-delà des parcours par outil et par métier : les compétences transverses (agents, automatisation, prompts, conformité) et les formats qui structurent un déploiement.
+            Certaines formations ne dépendent ni d'un outil ni d'un métier : les agents, l'automatisation, la méthode des prompts, la conformité, ou les formats qui rythment un déploiement dans toute l'entreprise.
           </p>
-          <div style={{
+          <nav aria-label="Formations thématiques et formats" style={{
             display: 'grid',
             gridTemplateColumns: `repeat(auto-fill, minmax(${isMobile ? 220 : 250}px, 1fr))`,
             gap: 16,
           }}>
             {[
-              { label: 'Formation agents IA', slug: 'formation-agents-ia', desc: "Concevoir, tester et superviser des agents sans code, sur vos outils." },
-              { label: 'Formation automatisation IA', slug: 'formation-automatisation-ia', desc: "Automatiser les tâches répétitives : Make, Zapier, n8n, sous contrôle." },
-              { label: 'Formation n8n', slug: 'formation-n8n', desc: "L'orchestrateur auto-hébergeable : workflows, étapes IA et agents fiabilisés." },
-              { label: 'Formation Make', slug: 'formation-make', desc: "Les scénarios visuels (ex-Integromat) : modules, routeurs, IA, opérations maîtrisées." },
-              { label: 'Formation Zapier', slug: 'formation-zapier', desc: "La porte d'entrée sans code : des Zaps utiles et fiables en une journée." },
-              { label: 'Formation prompt engineering', slug: 'formation-prompt-engineering', desc: "La méthode des prompts IA professionnels, valable sur tous les outils." },
-              { label: 'Formation vibe coding', slug: 'formation-vibe-coding', desc: "Construire un outil ou un prototype en pilotant l'IA, sans être développeur." },
-              { label: 'Formation Claude Code', slug: 'formation-claude-code', desc: "Les agents dans le code, pour les équipes de développement." },
-              { label: 'Formation AI Act (IA Act)', slug: 'formation-ai-act', desc: "Le règlement européen : obligations réelles, littératie, plan de conformité." },
+              { label: 'Formation agents IA', slug: 'formation-agents-ia', desc: "Créer un agent qui enchaîne plusieurs tâches, puis le tester et le surveiller." },
+              { label: 'Formation automatisation IA', slug: 'formation-automatisation-ia', desc: "Relier vos applications et confier les tâches répétitives à n8n, Make ou Zapier." },
+              { label: 'Formation n8n', slug: 'formation-n8n', desc: "L'outil d'automatisation installable sur vos propres serveurs, avec ses étapes d'IA." },
+              { label: 'Formation Make', slug: 'formation-make', desc: "Des scénarios visuels (l'ancien Integromat) qui appellent l'IA sans faire exploser le compteur d'opérations." },
+              { label: 'Formation Zapier', slug: 'formation-zapier', desc: "Des premiers Zaps fiables en une journée, pour qui n'a jamais rien automatisé." },
+              { label: 'Formation prompt engineering', slug: 'formation-prompt-engineering', desc: "Une méthode pour formuler ses demandes, transposable d'un assistant à l'autre." },
+              { label: 'Formation vibe coding', slug: 'formation-vibe-coding', desc: "Décrire une application à l'IA et obtenir un prototype qui tourne, sans savoir coder." },
+              { label: 'Formation Claude Code', slug: 'formation-claude-code', desc: "L'agent de programmation d'Anthropic, dans le terminal et l'éditeur des développeurs." },
+              { label: 'Formation AI Act (IA Act)', slug: 'formation-ai-act', desc: "Les obligations de l'AI Act après l'Omnibus de juillet 2026, et le plan d'action qui en découle." },
               { label: 'Formation CSE & IA', slug: 'formation-cse-ia', desc: "Élus et directions au même niveau : consultation, grille d'instruction, avis motivé." },
-              { label: 'Formation data IA', slug: 'formation-data-ia', desc: "Analyser ses fichiers réels avec l'IA, vérifier ses chiffres, industrialiser le reporting." },
-              { label: 'Formation gouvernance IA', slug: 'formation-gouvernance-ia', desc: "Cadre, charte d'usage et pilotage des usages IA de l'organisation." },
-              { label: 'Formation IA générative', slug: 'formation-intelligence-artificielle-generative', desc: "Les fondamentaux des modèles génératifs, pour toutes les équipes." },
-              { label: 'Formation IA COMEX', slug: 'formation-ia-comex', desc: "La session exécutive du comité de direction, en français ou en anglais." },
-              { label: 'Formation IA dirigeants', slug: 'formation-ia-dirigeants', desc: "Décider et piloter : la journée stratégique du dirigeant et de son CODIR." },
-              { label: 'Formation IA en entreprise', slug: 'formation-ia-entreprise', desc: "Former vos équipes en intra, du sprint de 3 h au parcours par métier." },
-              { label: 'Acculturation IA', slug: 'acculturation-ia', desc: "La démarche collective : conférences, vagues, référents, mesure." },
+              { label: 'Formation data IA', slug: 'formation-data-ia', desc: "Faire parler ses fichiers avec l'IA, contrôler les chiffres obtenus, automatiser le reporting." },
+              { label: 'Formation gouvernance IA', slug: 'formation-gouvernance-ia', desc: "Écrire la charte d'usage et organiser le pilotage de l'IA dans l'organisation." },
+              { label: 'Formation IA générative', slug: 'formation-intelligence-artificielle-generative', desc: "Comprendre comment un modèle génératif produit ses réponses, et où il se trompe." },
+              { label: 'Formation IA COMEX', slug: 'formation-ia-comex', desc: "Une session réservée au comité de direction, qui peut se tenir en anglais." },
+              { label: 'Formation IA dirigeants', slug: 'formation-ia-dirigeants', desc: "Ce qu'un dirigeant doit savoir de l'IA pour arbitrer ses budgets et ses priorités." },
+              { label: 'Formation IA en entreprise', slug: 'formation-ia-entreprise', desc: "Former toute l'entreprise par vagues successives, appuyées sur des référents internes et un bilan chiffré." },
+              { label: 'Acculturation IA', slug: 'acculturation-ia', desc: "Donner une culture commune à tous les salariés, par conférences et ateliers courts." },
             ].map(t => (
               <Link key={t.slug} to={`/${t.slug}`} style={{ textDecoration: 'none' }}>
                 <div style={{
@@ -620,7 +643,7 @@ export default function MetiersHubPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
@@ -643,7 +666,7 @@ export default function MetiersHubPage() {
             color: '#6B7280', fontSize: 16, textAlign: 'center',
             maxWidth: 620, margin: '0 auto 48px', lineHeight: 1.6,
           }}>
-            Depuis 2022, nous formons les équipes françaises, suisses et belges à l'intelligence artificielle générative avec une promesse simple : des apprentissages immédiatement applicables dès le lundi matin.
+            Depuis 2022, Masteria forme des équipes à l'IA générative, à Lyon comme loin de Lyon : partout en France, dans les pays voisins, outre-Atlantique et en Inde. Un objectif guide chaque session : que les participants s'en servent le lundi suivant.
           </p>
 
           <div style={{
@@ -654,33 +677,33 @@ export default function MetiersHubPage() {
             {[
               {
                 icon: ShieldCheck, color: '#10a37f',
-                title: 'Organisme certifié Qualiopi',
-                desc: "Certificat Qualiopi n° 725311-1 délivré par Certifopac au titre des actions de formation, valable jusqu'au 28 janvier 2029 avec un audit de surveillance à mi-parcours. Vos formations sont finançables par votre OPCO, selon votre branche et vos fonds.",
+                title: 'Un organisme certifié Qualiopi',
+                desc: "Le certificat n° 725311-1, émis par Certifopac, porte sur les actions de formation et expire le 28 janvier 2029 ; un audit de surveillance a lieu à mi-parcours. Votre OPCO règle la session selon ses critères de prise en charge et l'argent dont il dispose.",
               },
               {
                 icon: UserCheck, color: '#2563EB',
-                title: 'Pédagogie par la pratique',
-                desc: "80 % du temps passé sur des exercices réels issus du quotidien des participants. Kit de prompts métier remis à chaque stagiaire.",
+                title: "La pratique occupe l'essentiel de la journée",
+                desc: "Les apports théoriques durent quelques minutes ; le reste du temps, chacun travaille sur un dossier de son poste. Les demandes types et les gabarits construits en séance restent à chaque stagiaire.",
               },
               {
                 icon: Award, color: '#d97706',
-                title: '+1 500 professionnels formés',
-                desc: "98 % de satisfaction. Une moyenne de 6 heures gagnées par semaine par participant après la formation.",
+                title: 'Des missions publiées, vérifiables',
+                desc: "Quatre études de cas anonymisées et six missions de formation sont décrites sur le site, du distributeur de 58 salariés au groupe industriel implanté sur trois continents.",
               },
               {
                 icon: Zap, color: '#F97316',
-                title: 'Catalogue couvrant 5 outils IA',
-                desc: "ChatGPT, Microsoft Copilot, Google Gemini, Claude et Mistral AI. Nous adaptons le choix de l'outil à votre stack et à vos contraintes.",
+                title: 'Cinq assistants au catalogue',
+                desc: "ChatGPT, Copilot, Gemini, Claude et Vibe, plus des parcours multi-outils qui les comparent. Le choix suit votre environnement de travail et vos règles de confidentialité.",
               },
               {
                 icon: MapPin, color: '#dc2626',
-                title: 'Présentiel partout en France',
-                desc: "Formations animées dans vos locaux, en France comme à l'international (Europe, États-Unis, Inde), ou en distanciel pour les équipes dispersées.",
+                title: 'Sur site ou à distance',
+                desc: "Le formateur anime la session sur votre site, en France comme hors de France, ou en visioconférence quand l'équipe travaille sur plusieurs sites.",
               },
               {
                 icon: Clock, color: '#6366F1',
-                title: 'Formats courts et intensifs',
-                desc: "Une journée suffit pour rendre une équipe autonome sur les cas d'usage clés de son métier. Pas de formation qui traîne sur plusieurs semaines.",
+                title: 'Des formats courts',
+                desc: "Un sprint de trois heures, une journée ou deux : chaque format vise un résultat utilisable la semaine suivante, et les journées d'un même parcours s'espacent pour laisser le temps de pratiquer.",
               },
             ].map(({ icon: Icon, color, title, desc }) => (
               <div key={title} style={{
@@ -711,7 +734,7 @@ export default function MetiersHubPage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-       * MÉTHODE PÉDAGOGIQUE — Content dense pour le SEO
+       * MÉTHODE PÉDAGOGIQUE : contenu propre à la page
        * ═══════════════════════════════════════════════════════════ */}
       <section style={{
         padding: isMobile ? '64px 20px' : '96px 40px',
@@ -727,37 +750,37 @@ export default function MetiersHubPage() {
             Notre méthode de formation en intelligence artificielle
           </h2>
           <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.75, marginBottom: 28 }}>
-            Une formation IA n'a de valeur que si elle produit un changement mesurable dans le quotidien des apprenants. Notre méthode est construite autour de trois principes : <strong style={{ color: '#0A0A0A' }}>apprentissage par la pratique</strong>, <strong style={{ color: '#0A0A0A' }}>cas d'usage réels apportés par les participants</strong>, et <strong style={{ color: '#0A0A0A' }}>kit de prompts métier</strong> directement réutilisables après la session.
+            Une formation IA se juge aux habitudes qu'elle modifie, et ces habitudes se constatent un mois plus tard. La méthode tient en trois principes : <strong style={{ color: '#0A0A0A' }}>la pratique avant la théorie</strong>, <strong style={{ color: '#0A0A0A' }}>les dossiers apportés par les stagiaires</strong> et <strong style={{ color: '#0A0A0A' }}>des ressources qu'ils gardent</strong> après la session.
           </p>
 
           <h3 style={{
             fontSize: 20, fontWeight: 800, fontFamily: 'Nunito, sans-serif',
             marginTop: 32, marginBottom: 14,
           }}>
-            1. Cadrage et design pédagogique
+            1. Le cadrage fixe les cas à traiter
           </h3>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Avant chaque intra-entreprise, un entretien de cadrage permet d'identifier les cas d'usage prioritaires, le niveau de maturité IA des apprenants et les contraintes sectorielles. Le programme est ajusté en conséquence. En accompagnement individuel sur mesure, un brief approfondi en amont permet de calibrer le contenu, le rythme et les exercices sur les enjeux concrets du participant.
+            Avant une session intra, un entretien avec le commanditaire et un questionnaire de positionnement rempli par chaque participant situent le niveau du groupe, les tâches à traiter en priorité et les contraintes du secteur. Le programme du catalogue est ensuite réécrit pour cette équipe. En individuel, le même travail se fait avec la personne formée, à partir de ses dossiers et de son agenda.
           </p>
 
           <h3 style={{
             fontSize: 20, fontWeight: 800, fontFamily: 'Nunito, sans-serif',
             marginTop: 32, marginBottom: 14,
           }}>
-            2. Journée(s) de formation en atelier
+            2. Les ateliers portent sur les dossiers des participants
           </h3>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Une à plusieurs journées d'atelier (selon le programme) alternant séquences théoriques courtes — prompt engineering, comparaison d'outils, cadre réglementaire, RGPD — et mises en situation pratiques. Chaque participant travaille sur ses propres dossiers, ses vrais emails, ses vrais tableaux Excel, ses vrais comptes-rendus. L'objectif n'est pas de montrer ce que fait l'IA, c'est d'apprendre à obtenir un résultat concret sur ses tâches réelles.
+            Selon le programme, une ou plusieurs journées alternent des apports courts (méthode de rédaction des demandes, comparaison des outils, RGPD et AI Act) et des mises en situation. Les stagiaires apportent leurs mails, leurs tableaux Excel, leurs comptes rendus ; le formateur les aide à obtenir un résultat qu'ils sauront reproduire seuls, sur des documents anonymisés quand le sujet est sensible.
           </p>
 
           <h3 style={{
             fontSize: 20, fontWeight: 800, fontFamily: 'Nunito, sans-serif',
             marginTop: 32, marginBottom: 14,
           }}>
-            3. Kit de prompts et ressources
+            3. Les ressources restent après la session
           </h3>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Chaque stagiaire repart avec un kit pédagogique dédié à son métier : bibliothèque de prompts optimisés, guides de bonnes pratiques, matrices de sélection d'outils, checklists de conformité. Ces ressources sont pensées pour être utilisées immédiatement, pas pour être archivées.
+            Chaque stagiaire garde l'accès aux supports de la session, à ses demandes types et aux gabarits construits en atelier, et, selon le programme, à une grille pour choisir entre les outils ou à une charte d'usage. Un point à J+30 avec le commanditaire vérifie ce qui est entré dans le travail quotidien et prépare, s'il le faut, une deuxième vague.
           </p>
 
           <div style={{
@@ -765,18 +788,21 @@ export default function MetiersHubPage() {
             borderRadius: 12, padding: 24,
             boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
           }}>
-            <p style={{ margin: 0, color: '#374151', fontSize: 15, lineHeight: 1.7, fontStyle: 'italic' }}>
-              « Une formation en intelligence artificielle réussie, c'est une formation dont les participants se disent, trois mois plus tard : cela a changé ma façon de travailler. »
+            <p style={{ margin: 0, color: '#374151', fontSize: 15, lineHeight: 1.7 }}>
+              Deux missions récentes montrent ce cadrage à l'œuvre. Dans une interprofession agricole, seize salariés ont d'abord mis six assistants côte à côte en plénière, avant de s'en servir dans un atelier marketing et un atelier gestion ({' '}
+              <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={{ color: '#2563EB', fontWeight: 600 }}>voir la mission</Link>). L'équipe qui forme les clients d'un éditeur de logiciels B2B est passée, en deux jours, de ses projets Claude à des compétences partagées et à Cowork ({' '}
+              <Link to="/etudes-de-cas-ia#mission-editeur-pole-formation" style={{ color: '#2563EB', fontWeight: 600 }}>voir la mission</Link>).
             </p>
-            <p style={{ marginTop: 12, color: '#6B7280', fontSize: 13, fontWeight: 600 }}>
-              — Mathias Nizan, fondateur de Masteria
+            <p style={{ marginTop: 12, marginBottom: 0, color: '#6B7280', fontSize: 13.5, lineHeight: 1.6 }}>
+              Mathias Nizan, fondateur de Masteria, pilote chacune de ces missions ; sa démarche est présentée sur{' '}
+              <Link to="/mathias-nizan" style={{ color: '#2563EB', fontWeight: 600 }}>sa page</Link>.
             </p>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-       * FORMATIONS PAR VILLE — découvrabilité géo
+       * FORMATIONS PAR VILLE : découvrabilité géo
        * ═══════════════════════════════════════════════════════════ */}
       <section style={{
         padding: isMobile ? '56px 20px' : '80px 40px',
@@ -792,10 +818,10 @@ export default function MetiersHubPage() {
               Formation IA dans votre ville
             </h2>
             <p style={{ fontSize: 15, color: '#6B7280', maxWidth: 720, lineHeight: 1.65 }}>
-              Pages dédiées avec contenu local : tissu économique, OPCO régional, cas d'usage par secteur, accès et zones desservies. Toutes nos formations sont aussi disponibles en distanciel, partout en France et à l'international (Europe, États-Unis, Inde).
+              Chaque ville a sa page, avec les secteurs qui comptent sur place et les cas d'usage qui y reviennent. Les mêmes programmes se suivent en visioconférence pour les équipes installées ailleurs, en France ou à l'étranger.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
+          <nav aria-label="Formations IA par ville" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
             {GEO_CITIES.map(city => (
               <Link
                 key={city.slug}
@@ -823,12 +849,12 @@ export default function MetiersHubPage() {
                 </div>
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-       * FAQ — ciblée "formation intelligence artificielle"
+       * FAQ : ciblée "formation intelligence artificielle"
        * ═══════════════════════════════════════════════════════════ */}
       <section style={{
         padding: isMobile ? '64px 20px' : '96px 40px',
@@ -840,7 +866,7 @@ export default function MetiersHubPage() {
             fontFamily: 'Nunito, sans-serif', color: '#0A0A0A',
             marginBottom: 40, textAlign: 'center', letterSpacing: '-0.01em',
           }}>
-            Questions fréquentes sur la formation IA
+            Ce qu'on nous demande avant de réserver une formation IA
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {FAQ_IA.map((item, i) => (
@@ -887,7 +913,7 @@ export default function MetiersHubPage() {
             Pas encore sûr de la bonne formation ?
           </h2>
           <p style={{ color: 'rgba(255,255,255,0.92)', fontSize: 16, marginBottom: 32, lineHeight: 1.65 }}>
-            Notre équipe pédagogique propose un entretien gratuit de 20 minutes pour comprendre vos enjeux et recommander la formation intelligence artificielle la plus adaptée à vos équipes. Aucun engagement.
+            Décrivez votre équipe et l'outil qu'elle utilise en quelques lignes : nous vous indiquons le programme du catalogue qui s'en approche le plus, ce qu'il faudrait y adapter et son prix.
           </p>
           <Link to="/contact" style={{
             display: 'inline-block', background: '#fff', color: '#2563EB',
@@ -895,7 +921,7 @@ export default function MetiersHubPage() {
             fontSize: 16, fontWeight: 800,
             boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
           }}>
-            Obtenir une recommandation gratuite →
+            Demander une recommandation →
           </Link>
           <p style={{ marginTop: 20, fontSize: 13, color: 'rgba(255,255,255,0.75)' }}>
             Ou écrivez-nous directement à{' '}

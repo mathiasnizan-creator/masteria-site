@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Compass, Workflow, Users, MapPin, Check, Layers, Target,
-  ClipboardCheck, Gauge, GraduationCap, ShieldCheck, Cpu, RefreshCw,
+  ArrowRight, Bot, Compass, Workflow, Users, MapPin, Check, Layers, Target,
+  ClipboardCheck, Gauge, GraduationCap, ShieldCheck, Cpu, RefreshCw, Factory, ExternalLink,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
+import { CADRAGE_HREF, CADRAGE_LABEL } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -21,25 +21,28 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * « audit transformation digitale » (50, KD 12), « conseil innovation digitale » (90).
  *
  * RÉPARTITION D'INTENTIONS (anti-cannibalisation) :
- *  - /conseil-strategie-ia = le CAP : diagnostic, cas d'usage priorisés, feuille de route ;
+ *  - /conseil-strategie-ia = le CAP : état des lieux, cas d'usage priorisés, feuille de route ;
  *  - /conseil-transformation-ia = CETTE page : l'ORGANISATION qui change quand l'IA
  *    entre dans le travail : processus reconçus, rôles, modèle opérationnel cible,
  *    gouvernance du programme, mesure ;
+ *  - /conseil-ia-pme = le format court des petites structures ;
  *  - /accompagnement-ia = la PRÉSENCE dans la durée (cadrage, outils, adoption) ;
  *  - /acculturation-ia = la montée en compétence collective (formation).
  *
- * INTÉGRITÉ : posture capacité, aucun client nommé, aucun chiffre de résultat ni
- * prix inventé, jamais Bpifrance sur le site (dispositifs publics en termes
- * génériques). Voix : verdict d'abord, phrases courtes, pas de tirets cadratins.
+ * INTÉGRITÉ : aucun client nommé, aucun chiffre de résultat ni prix inventé, jamais
+ * Bpifrance sur le site (dispositifs publics en termes génériques). Cas cités :
+ * src/data/etudes-de-cas.js (faits révisés le 05/10/2026).
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de FounderNote ni de bloc
+ * « Qui intervient » commun, sources propres à la page, deux cas cités avec lien
+ * vers leur ancre. Voix : verdict d'abord, phrases courtes, pas de tirets cadratins.
  */
 
 const SLUG = 'conseil-transformation-ia'
-const ENTITY = "Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan"
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Conseil en transformation IA : organisation, processus, rôles | Masteria"
-const META_DESC = "Conseil en transformation IA : cadrage du programme, refonte des processus, modèle opérationnel cible, gouvernance et conduite du changement pour une entreprise qui passe à l'IA à l'échelle. Cadrage gratuit."
+const META_TITLE = "Conseil en transformation IA : processus et rôles | Masteria"
+const META_DESC = "Conseil en transformation IA : processus redessinés, rôles clarifiés, modèle opérationnel cible, programme piloté par vagues et mesuré. Cadrage offert."
 const KEYWORDS = "conseil transformation ia, conseil en transformation, conseil transformation, cabinet de conseil transformation, transformation ia entreprise, cabinet de conseil transformation modèle opérationnel, coach transformation digitale, conseil en organisation et management du changement, conseil innovation digitale, audit transformation digitale, programme de transformation ia"
 
 /* ───────── Styles partagés ───────── */
@@ -68,21 +71,21 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Compass, label: 'Cabinet spécialisé IA depuis 2022' },
+  { icon: Compass, label: "Un seul métier : l'IA, depuis 2022" },
   { icon: Workflow, label: 'Processus, rôles, pilotage' },
-  { icon: Users, label: 'Du COMEX aux équipes terrain' },
+  { icon: Users, label: 'De la direction aux équipes' },
   { icon: MapPin, label: 'Lyon · Europe · États-Unis · Inde' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Mission', value: "Réorganiser le travail autour de l'IA : processus reconçus, rôles redéfinis, programme piloté et mesuré" },
-  { label: 'Livrables', value: "Diagnostic de transformation, modèle opérationnel cible, portefeuille de cas d'usage, plan de programme, gouvernance, tableau de mesure" },
-  { label: 'Rythme', value: "Un cadrage de quelques semaines, puis un programme suivi par trimestre, avec un premier gain visible dès le premier cycle" },
-  { label: 'Différence', value: "La stratégie fixe le cap, l'accompagnement assure la présence : la transformation change l'organisation elle-même" },
-  { label: 'Prix', value: "Forfait fixé après un cadrage gratuit ; le conseil n'est pas finançable par votre OPCO, la formation associée l'est" },
-  { label: 'Cabinet', value: ENTITY },
+  { label: 'Mission', value: "Réorganiser le travail autour de ce que l'IA produit : processus reconçus, rôles redéfinis, programme suivi vague après vague" },
+  { label: 'Livrables', value: "Lecture de l'organisation actuelle, modèle opérationnel cible, liste des cas à traiter, plan par vagues, règles de pilotage, tableau de mesure" },
+  { label: 'Rythme', value: "Quelques semaines pour cadrer, puis des cycles trimestriels ; un premier résultat mesuré avant la fin du premier" },
+  { label: 'Périmètre', value: "La stratégie choisit la destination, l'accompagnement assure la présence ; cette mission fait bouger l'organisation elle-même" },
+  { label: 'Prix', value: "Un forfait par phase, établi une fois le cadrage terminé ; seule la formation associée peut être financée par votre OPCO" },
+  { label: 'Qui', value: "Mathias Nizan, qui a créé le cabinet à Lyon en 2022, entouré d'indépendants (conseil, développement, formation) choisis pour votre programme" },
 ]
 
 /* ───────── Prestations (5 cartes) ───────── */
@@ -90,28 +93,28 @@ const EN_BREF = [
 const PRESTATIONS = [
   {
     icon: ClipboardCheck,
-    title: 'Diagnostic de transformation',
-    desc: "Un audit de votre transformation digitale et de vos usages IA réels : ce qui est déployé, ce que les équipes font déjà sans cadre, où le temps se perd, ce que la direction attend. Le diagnostic dit ce qu'il faut transformer en premier, et ce qu'il ne faut pas toucher.",
+    title: 'Lecture de votre transformation',
+    desc: "Un audit de votre transformation digitale vue sous l'angle de l'IA : les outils déployés, les pratiques apparues sans aucune règle, les endroits où les heures s'évaporent, les attentes de la direction. Cette lecture désigne ce qu'il faut transformer en premier, et ce qui doit rester en l'état.",
   },
   {
     icon: Workflow,
-    title: "Refonte des processus avec l'IA",
-    desc: "Processus par processus, nous redessinons le flux quand l'IA en prend une partie : ce qui est produit par l'outil, ce qui est relu, ce qui est décidé par une personne, ce qui disparaît. Avec les équipes qui vivent le processus, jamais sur un schéma en salle.",
+    title: "Processus redessinés autour de l'IA",
+    desc: "Processus après processus, nous redessinons le flux dès que l'IA en reprend une part : ce que l'outil rédige, ce qu'une personne relit, ce qu'un responsable tranche, ce qui disparaît. Ce travail se fait avec les équipes qui vivent le processus, sur leurs dossiers, jamais devant un schéma en salle.",
   },
   {
     icon: Layers,
     title: 'Modèle opérationnel cible',
-    desc: "Quand l'IA fait une partie du travail, les rôles changent : relecteur, superviseur, référent, propriétaire de cas d'usage. Nous décrivons l'organisation cible, les compétences qu'elle suppose, et le chemin depuis l'organisation actuelle, fonction par fonction.",
+    desc: "Les rôles bougent dès que l'IA prend une part du travail : relecteur, superviseur, référent, propriétaire d'un cas d'usage. Nous décrivons l'organisation visée, les compétences qu'elle demande et le chemin pour y parvenir depuis l'organisation actuelle, fonction par fonction.",
   },
   {
     icon: Gauge,
-    title: 'Gouvernance et pilotage du programme',
-    desc: "Un programme de transformation IA se pilote comme un portefeuille : cas d'usage priorisés, comité qui arbitre, rythme de revue, règles d'usage, budget par vague. Nous installons ce pilotage, léger, et nous le tenons avec vous le temps qu'il tienne seul.",
+    title: 'Pilotage du programme',
+    desc: "Un programme de transformation IA se gère comme un portefeuille : des cas classés, un comité qui arbitre, un rythme de revue, des règles d'usage, un budget par vague. Nous installons ce pilotage, volontairement léger, et nous le tenons à vos côtés jusqu'à ce que vos équipes le mènent seules.",
   },
   {
     icon: RefreshCw,
     title: 'Conduite du changement et mesure',
-    desc: "Le changement se conduit par les managers, avec des équipes formées sur leurs cas, et se mesure sur le travail rendu plutôt que sur le taux d'adoption. Nous écrivons la chaîne de conversion au cadrage et nous la relevons à chaque cycle.",
+    desc: "Les managers portent le changement, avec des équipes formées sur leurs propres cas. La mesure porte sur le travail accompli, bien davantage que sur le nombre de connexions : nous écrivons dès le cadrage la façon de convertir le temps gagné en résultat, puis nous la relevons à chaque cycle.",
   },
 ]
 
@@ -120,28 +123,28 @@ const PRESTATIONS = [
 const TABLE = [
   {
     critere: 'Point de départ',
-    sans: "Un outil choisi, déployé, puis une campagne d'adoption",
-    avec: "Des usages qui émergent des équipes, à cadrer et à étendre",
+    sans: "Un logiciel choisi par la direction, déployé, puis une campagne d'adoption",
+    avec: 'Des usages déjà présents dans les équipes, à encadrer puis à étendre',
   },
   {
     critere: 'Rythme',
-    sans: 'Programme pluriannuel, lots, jalons de déploiement',
-    avec: 'Cycles de quelques semaines, un gain mesuré par cycle',
+    sans: 'Programme sur plusieurs années, découpé en lots et en jalons',
+    avec: 'Cycles de quelques semaines, chacun avec un gain relevé',
   },
   {
     critere: 'Rôle des équipes',
     sans: "Utilisateurs d'un logiciel, formés à ses écrans",
-    avec: 'Relecteurs et superviseurs de ce que produit l\'IA',
+    avec: "Relecteurs et superviseurs de ce que l'IA rédige ou calcule",
   },
   {
     critere: 'Risque principal',
-    sans: 'Le projet en retard et le budget dépassé',
-    avec: 'Les données, la qualité des sorties, la dépendance à un éditeur',
+    sans: 'Un projet en retard, un budget dépassé',
+    avec: "Les données exposées, la qualité des réponses, la dépendance envers un éditeur",
   },
   {
     critere: 'Mesure',
     sans: "Taux d'adoption, nombre de licences actives",
-    avec: 'Temps rendu, erreurs évitées, délais raccourcis, par processus',
+    avec: 'Heures rendues, erreurs évitées, délais raccourcis, processus par processus',
   },
 ]
 
@@ -149,88 +152,117 @@ const TABLE = [
 
 const METHODE = [
   {
-    periode: 'Semaines 1-3',
-    title: 'Diagnostic de transformation',
-    desc: "Entretiens avec la direction et les métiers, observation des processus, inventaire des usages IA déjà présents, lecture des données et des outils. Restitution : ce qu'il faut transformer en premier, ce qui relève de la formation, ce qui relève des données.",
+    periode: 'Premières semaines',
+    title: "Lecture de l'organisation",
+    desc: "Entretiens avec les dirigeants et les responsables métier, observation des processus sur place, inventaire des usages IA déjà présents, examen des données et des logiciels. À la restitution : ce qu'il faut transformer d'abord, ce qui relève d'une formation, ce qui relève d'un chantier de données.",
   },
   {
-    periode: 'Semaines 4-6',
-    title: 'Modèle opérationnel cible et portefeuille',
-    desc: "L'organisation cible fonction par fonction, les rôles qui changent, le portefeuille de cas d'usage priorisés par gain et par faisabilité, le plan de programme par vagues, la gouvernance et la chaîne de conversion qui servira à mesurer.",
+    periode: 'Semaines suivantes',
+    title: 'Organisation cible et liste des cas',
+    desc: "L'organisation visée fonction par fonction, les rôles qui changent, les cas d'usage classés selon leur gain et leur faisabilité, le découpage en vagues, les règles de pilotage et la méthode de mesure qui servira tout au long du programme.",
   },
   {
-    periode: 'Trimestre 1',
-    title: 'Première vague : processus reconçus et équipes formées',
-    desc: "Deux à quatre processus reconçus avec les équipes, outillés, mis en production ; les managers et les équipes concernées formés sur leurs cas ; le comité de programme réuni chaque mois pour arbitrer. Un premier gain mesuré avant la fin du trimestre.",
+    periode: 'Premier trimestre',
+    title: 'Première vague : processus reconçus, équipes formées',
+    desc: "Deux à quatre processus reconçus avec les équipes, outillés, mis en service ; les managers et les personnes concernées formés sur leurs cas ; un comité de programme réuni chaque mois pour arbitrer. Un premier résultat mesuré avant la fin du trimestre.",
   },
   {
     periode: 'Trimestres suivants',
-    title: 'Extension, mesure, autonomie',
-    desc: "Les vagues suivantes étendent la transformation à d'autres processus et fonctions ; les référents internes prennent le relais ; la mesure alimente les arbitrages. Notre présence diminue à mesure que le pilotage tient seul.",
+    title: 'Extension et autonomie',
+    desc: "Les vagues suivantes gagnent d'autres processus et d'autres fonctions ; les référents internes prennent la main ; les mesures nourrissent les arbitrages. Notre présence décroît à mesure que votre pilotage tient sans nous.",
   },
 ]
 
 /* ───────── Pourquoi Masteria (4 cartes) ───────── */
 
 const WHY = [
-  { icon: Cpu, title: 'Un cabinet qui ne fait que de l\'IA', desc: "Les cabinets de conseil en transformation traitent l'IA comme un sujet parmi d'autres. Nous ne faisons que cela depuis 2022 : nous savons ce que les outils produisent réellement, où ils se trompent, et ce qu'un processus peut leur confier sans risque." },
-  { icon: Workflow, title: 'Nous transformons et nous construisons', desc: "Quand un processus reconçu demande un agent, une automatisation ou un assistant documentaire, nous le développons. Le conseil ne s'arrête pas à un schéma cible que personne ne sait mettre en œuvre." },
-  { icon: Users, title: 'Un consultant senior, pas une armée', desc: "Une transformation IA se mène avec un intervenant senior qui connaît vos processus et un réseau d'indépendants expérimentés mobilisés à la demande. Vous payez le travail, pas la pyramide d'un grand cabinet." },
-  { icon: ShieldCheck, title: 'Indépendant des éditeurs', desc: "Aucune licence à vendre, aucun partenariat qui oriente la recommandation. L'outil suit le processus reconçu, pas l'inverse ; et nous disons quand l'outil déjà en place suffit." },
+  { icon: Cpu, title: "L'IA comme unique sujet", desc: "Pour un cabinet de transformation généraliste, l'IA reste un chapitre parmi d'autres. Depuis 2022, elle est le seul sujet de Masteria : nous connaissons ce que les modèles rédigent de fiable, les endroits où ils se trompent et la part d'un processus qu'on peut leur confier sans risque." },
+  { icon: Workflow, title: 'Nous reconcevons, puis nous construisons', desc: "Quand un processus reconçu réclame un agent, une automatisation ou un assistant documentaire, nos développeurs le réalisent. Le schéma cible se transforme en outil utilisé, au lieu de rester dans un rapport que personne ne sait mettre en œuvre." },
+  { icon: Users, title: 'Une petite équipe senior', desc: "Mathias Nizan pilote chaque programme et s'adjoint au besoin consultants, développeurs ou formateurs indépendants. Vous rémunérez le travail fourni, sans financer les étages d'un grand cabinet." },
+  { icon: ShieldCheck, title: 'Aucune licence à vendre', desc: "Aucun partenariat commercial n'oriente nos recommandations. L'outil se choisit après le processus reconçu, et nous le disons franchement quand l'outil déjà en place suffit." },
 ]
 
 /* ───────── Les erreurs d'une transformation IA ───────── */
 
 const ERREURS = [
-  { title: "Commencer par l'outil", desc: "Acheter des licences pour toute l'entreprise, puis chercher quoi en faire. Les usages restent individuels, les processus ne bougent pas, et la direction conclut que l'IA ne rend rien. L'ordre inverse fonctionne : le processus d'abord, l'outil ensuite." },
-  { title: 'Déléguer à la DSI seule', desc: "La transformation IA touche le travail des métiers ; la DSI en sécurise les outils et les données, elle ne peut pas redessiner les processus des autres. Le programme se porte par la direction générale, avec les métiers, la DSI en partenaire." },
-  { title: 'Le programme pluriannuel sans premier gain', desc: "Un schéma directeur sur trois ans, des ateliers de cadrage pendant six mois, aucun processus transformé la première année. L'énergie retombe. Un premier gain mesuré dans le premier trimestre est la condition pour que le reste suive." },
-  { title: 'Oublier les rôles', desc: "Mettre l'IA dans un processus sans dire qui relit, qui valide, qui est responsable de ce qu'elle produit. Les erreurs passent, la confiance se perd. Le modèle opérationnel cible existe pour cette raison." },
-  { title: "Mesurer l'adoption au lieu du travail", desc: "Le taux de connexion mesure l'usage d'un logiciel, pas la transformation. Ce qui compte : le temps rendu par processus, les erreurs évitées, les délais raccourcis, et ce que les équipes font de ce temps." },
+  { title: "Commencer par l'outil", desc: "Acheter des licences pour toute l'entreprise, puis chercher à quoi elles serviront. Les usages restent individuels, les processus ne bougent pas, et la direction conclut que l'IA ne rend rien. L'ordre inverse fonctionne : le processus d'abord, l'outil ensuite." },
+  { title: 'Confier le programme à la DSI seule', desc: "La transformation IA touche le travail des métiers. La DSI sécurise les outils et les données ; elle n'a pas la légitimité pour redessiner les processus des autres directions. La direction générale porte le programme avec les métiers, la DSI en partenaire." },
+  { title: 'Un plan sur trois ans sans résultat la première année', desc: "Un schéma directeur pluriannuel, six mois d'ateliers de cadrage, aucun processus transformé avant longtemps : l'énergie retombe. Un premier gain mesuré dès le premier trimestre conditionne la suite." },
+  { title: 'Oublier les rôles', desc: "Introduire l'IA dans un processus sans dire qui relit, qui valide et qui répond de ce qu'elle produit. Les erreurs passent, la confiance s'effrite. Le modèle opérationnel cible sert précisément à écrire ces responsabilités." },
+  { title: "Compter les connexions au lieu du travail", desc: "Le taux de connexion décrit l'usage d'un logiciel ; il ne dit rien de la transformation. Les bons indicateurs : les heures rendues par processus, les erreurs évitées, les délais raccourcis, et l'usage que les équipes font du temps libéré." },
+]
+
+/* ───────── Études de cas citées (faits : src/data/etudes-de-cas.js, révisés le 05/10/2026) ───────── */
+
+const TRANSFO_CASES = [
+  {
+    id: 'industrie',
+    icon: Factory,
+    sector: 'Industrie · groupe international',
+    figure: '3 ajustements',
+    figureLabel: 'apportés entre la session pilote et la suivante',
+    text: "Pour un groupe du packaging, le déploiement avance par paliers mesurés. Après la session pilote, trois corrections ont précédé la seconde : les licences ont été contrôlées, les tables regroupées par métier, et du temps réservé à la construction des assistants. Le Data manager du groupe est devenu le garant des règles d'usage et de la collection de prompts partagée par les 24 pilotes ; le dispositif gagne les sites américains et mexicains en octobre 2026, puis l'Inde en décembre.",
+  },
+  {
+    id: 'distribution',
+    icon: Bot,
+    sector: 'Distribution IT B2B · 58 salariés',
+    figure: '10 référents',
+    figureLabel: 'formés en juin 2026, chacun propriétaire d\'une compétence',
+    text: "Chez ce distributeur, la transformation passe par un rôle nouveau : dix référents, deux jours de formation en juin, un projet chacun. Chacun a bâti une compétence Claude pour une tâche de son poste ; la direction relit et valide avant toute diffusion ; un propriétaire nommé, une revue trimestrielle et un dépôt versionné font vivre l'ensemble. Les autres salariés, une cinquantaine, recevront ces compétences entre octobre et décembre 2026.",
+  },
+]
+
+/* ───────── Sources (liens d'autorité propres à la page) ───────── */
+
+const SOURCES = [
+  { label: "L'AI Act dans sa version officielle (n° 2024/1689), sur le site EUR-Lex", url: 'https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' },
+  { label: "Le règlement 2026/1744, surnommé Omnibus numérique, qui décale les obligations à haut risque", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { label: "Ce que la CNIL demande quand une IA traite des données personnelles", url: 'https://www.cnil.fr/fr/intelligence-artificielle' },
 ]
 
 /* ───────── FAQ ───────── */
 
 const FAQ = [
   {
-    q: "Qu'est-ce que le conseil en transformation IA ?",
-    a: "C'est l'accompagnement d'une entreprise qui réorganise son travail autour de l'intelligence artificielle, au-delà du déploiement d'outils : quels processus reconcevoir et comment, quels rôles changent quand l'IA produit une partie du travail, comment piloter et mesurer un programme qui touche plusieurs fonctions. Chez Masteria, la mission comprend un diagnostic de transformation, un modèle opérationnel cible, un portefeuille de cas d'usage priorisés, la gouvernance du programme et une chaîne de mesure, puis une présence par trimestre pendant les premières vagues. Elle est menée par un cabinet qui ne fait que de l'IA et qui construit aussi les solutions.",
+    q: "En quoi consiste le conseil en transformation IA ?",
+    a: "C'est l'appui d'un cabinet à une entreprise qui réorganise son travail autour de l'intelligence artificielle, bien au-delà du déploiement d'un outil : quels processus reconcevoir et comment, quels rôles changent quand l'IA rédige ou calcule une partie du travail, comment piloter et mesurer un programme qui traverse plusieurs fonctions. Chez Masteria, la mission comprend une lecture de l'organisation, un modèle opérationnel cible, une liste de cas classés, le pilotage du programme et une méthode de mesure, puis une présence trimestrielle pendant les premières vagues. Le même cabinet construit les outils que la transformation demande.",
   },
   {
     q: "Quelle différence avec le conseil en stratégie IA et l'accompagnement IA ?",
-    a: "Trois missions, trois questions. Le conseil en stratégie IA répond à « où aller » : diagnostic de maturité, cas d'usage priorisés, feuille de route. Le conseil en transformation IA répond à « comment l'organisation change » : processus reconçus, rôles, modèle opérationnel cible, pilotage du programme. L'accompagnement IA répond à « qui est là pendant que ça se fait » : cadrage, choix des outils, déploiement, adoption, dans la durée. Une entreprise peut n'avoir besoin que de l'une ; les trois s'enchaînent quand la transformation est réelle.",
+    a: "Trois missions, trois questions. Le conseil en stratégie IA répond à « où aller » : état des lieux, classement des cas, calendrier daté. Le conseil en transformation IA répond à « comment l'organisation change » : les processus à reconcevoir, les rôles, le modèle opérationnel cible, le pilotage. L'accompagnement IA répond à « qui reste à vos côtés pendant le déploiement » : choix des outils, mise en service, adoption. Une entreprise peut n'avoir besoin que de l'une ; les trois s'enchaînent quand l'organisation bouge en profondeur.",
   },
   {
-    q: "En quoi êtes-vous différents d'un cabinet de conseil en transformation classique ?",
-    a: "Par le périmètre et par la méthode. Un cabinet de conseil en transformation traite l'organisation dans son ensemble, avec des équipes nombreuses, sur des programmes longs, et l'IA y est un chapitre. Nous ne faisons que de l'IA depuis 2022 : nous savons ce que les outils produisent réellement et ce qu'un processus peut leur confier. Nous travaillons avec un intervenant senior et un réseau d'indépendants, par cycles courts, avec un premier gain mesuré dans le premier trimestre. Et nous construisons les solutions que la transformation réclame, ce qu'un cabinet de conseil pur ne fait pas.",
+    q: "Comment vous situez-vous face à un cabinet de transformation classique ?",
+    a: "Le périmètre d'abord, la méthode ensuite. Un cabinet de transformation généraliste traite l'organisation entière, avec des équipes nombreuses, sur des programmes longs, et l'IA n'y occupe qu'un chapitre. Masteria travaille sur l'IA seule depuis 2022, par cycles courts, avec un premier gain mesuré au premier trimestre. Mathias Nizan pilote chaque programme avec des indépendants choisis pour lui. Enfin, nous construisons les outils que la transformation réclame, tâche qu'un cabinet purement consultatif laisse à d'autres.",
   },
   {
     q: "Avons-nous besoin d'un coach de transformation digitale ?",
-    a: "Si votre besoin est d'accompagner un dirigeant ou un comité dans le pilotage d'une transformation, c'est bien un rôle de coach de transformation, et nous le tenons : présence au comité de programme, préparation des arbitrages, lecture des signaux faibles, franchise sur ce qui ne marche pas. Ce rôle ne remplace pas le travail sur les processus et les rôles ; il le rend possible. Au cadrage, nous disons si votre situation demande le coaching seul, le programme complet, ou d'abord une formation des dirigeants.",
+    a: "Si votre besoin est d'épauler un dirigeant ou un comité dans le pilotage d'une transformation, il s'agit bien d'un rôle de coach, et nous le tenons : présence au comité de programme, préparation des arbitrages, lecture des signaux faibles, franchise sur ce qui ne marche pas. Ce rôle rend possible le travail sur les processus et les rôles ; il ne le remplace pas. Au cadrage, nous disons si votre situation appelle le coaching seul, le programme complet, ou d'abord une formation des dirigeants.",
   },
   {
-    q: "Combien de temps dure une mission de conseil en transformation IA ?",
-    a: "Le diagnostic et le modèle opérationnel cible se font en quelques semaines. La transformation elle-même se conduit par trimestres : une première vague de processus reconçus et d'équipes formées, puis des vagues d'extension. Notre présence est forte au cadrage et pendant la première vague, puis diminue à mesure que le pilotage interne tient seul. La durée totale dépend du nombre de fonctions concernées ; elle se justifie vague par vague dans la proposition, jamais en engagement pluriannuel signé d'avance.",
+    q: "Quelle durée prévoir pour une transformation IA ?",
+    a: "La lecture de l'organisation et le modèle cible prennent quelques semaines. La transformation elle-même avance par trimestres : une première vague de processus reconçus et d'équipes formées, puis des vagues d'extension. Notre présence est forte au démarrage et pendant la première vague, puis elle diminue à mesure que votre pilotage interne tient. La durée totale dépend du nombre de fonctions concernées ; chaque vague se justifie dans la proposition, sans engagement pluriannuel signé d'avance.",
   },
   {
     q: "Combien coûte une mission, et peut-elle être financée ?",
-    a: "La mission se chiffre au forfait par phase, après un cadrage gratuit qui délimite le périmètre : fonctions, processus, nombre de vagues. Le conseil n'est pas finançable par votre OPCO, qui couvre la formation ; en revanche, le volet formation de la transformation (dirigeants, managers, équipes sur leurs cas) est certifié Qualiopi et finançable. Selon votre taille, votre secteur et votre région, des dispositifs publics de soutien au conseil et à la transformation numérique peuvent s'appliquer ; nous faisons le point sur ceux qui sont mobilisables lors du cadrage.",
+    a: "Chaque phase a son forfait, chiffré après les 30 minutes de cadrage offertes, une fois connus les fonctions, les processus et le nombre de vagues. Pour fixer les idées, une première lecture resserrée se règle en quelques milliers d'euros ; comptez plusieurs dizaines de milliers pour un programme couvrant plusieurs directions. Le conseil n'est pas finançable par votre OPCO, contrairement à la formation, qui peut concerner les dirigeants, les managers puis chaque équipe sur ses cas ; Masteria étant certifiée Qualiopi, votre opérateur de compétences peut en assurer le financement, selon ses règles et ses fonds. D'éventuelles aides publiques au conseil s'examinent aussi pendant le cadrage, selon votre profil.",
   },
   {
     q: "Quelle est la place de la DSI dans une transformation IA ?",
-    a: "Celle d'un partenaire indispensable, pas celle du porteur. La DSI sécurise les outils, les accès et les données, choisit les architectures, intègre les solutions au système d'information et tient la conformité. Elle ne peut pas redessiner les processus des métiers ni décider des rôles dans les équipes. Le programme se porte par la direction générale avec les directions métier ; la DSI y siège avec un droit de veto sur la sécurité et les données. Les transformations qui échouent sont souvent celles qui ont été confiées à la DSI seule, ou menées contre elle.",
+    a: "Celle d'un partenaire indispensable, sans être le porteur. La DSI sécurise les outils, les accès et les données, choisit les architectures, raccorde les solutions au système d'information et veille à la conformité. Elle ne peut pas redessiner les processus des métiers ni décider des rôles dans leurs équipes. La direction générale porte le programme avec les directions métier ; la DSI y siège avec un droit de veto sur la sécurité et les données. Les transformations qui échouent ont souvent été confiées à la DSI seule, ou menées contre elle.",
   },
   {
-    q: "Faut-il vraiment un modèle opérationnel cible ?",
-    a: "Oui, dès que l'IA fait une partie du travail dans plus d'une fonction. Sans description des rôles qui changent, personne ne sait qui relit ce que l'outil produit, qui en est responsable, qui décide d'étendre un usage. Le modèle opérationnel cible n'est pas un organigramme : c'est la description, fonction par fonction, de ce que font les personnes quand l'IA fait le reste, des compétences que cela suppose et du chemin pour y arriver. Pour une PME, il tient en quelques pages ; pour un groupe, il se décline par direction.",
+    q: "Un modèle opérationnel cible est-il indispensable ?",
+    a: "Oui, dès que l'IA prend en charge une part du travail dans plus d'une fonction. Sans description des rôles qui changent, personne ne sait qui relit ce que l'outil produit, qui en répond, qui décide d'étendre un usage. Le modèle opérationnel cible décrit, fonction par fonction, ce que font les personnes quand l'IA fait le reste, les compétences que cela suppose et le chemin pour y arriver ; il va bien plus loin qu'un organigramme. Pour une PME, il tient en quelques pages ; pour un groupe, il se décline par direction.",
   },
   {
     q: "Comment mesurez-vous une transformation IA ?",
-    a: "Sur le travail rendu, processus par processus, avec une chaîne de conversion écrite au cadrage : temps libéré, erreurs évitées, délais raccourcis, puis ce que l'entreprise fait de ce temps (volume traité, qualité, chiffre d'affaires, service). Le taux d'adoption et le nombre de licences actives sont suivis, mais ils ne prouvent rien. Nous refusons les pourcentages de productivité annoncés d'avance : les gains se mesurent après chaque vague, sur vos indicateurs, et ils décident de la vague suivante.",
+    a: "Processus par processus, sur le travail accompli, avec une méthode écrite dès le cadrage : heures libérées, erreurs évitées, délais raccourcis, puis ce que l'entreprise fait de ce temps (volume traité, qualité, chiffre d'affaires, service rendu). Le taux d'adoption et le nombre de licences actives sont suivis, sans servir de preuve. Aucun pourcentage de productivité n'est promis d'avance : les gains se constatent après chaque vague, sur vos indicateurs, et ils orientent la vague suivante.",
   },
   {
     q: "Le conseil en transformation IA concerne-t-il les PME ?",
-    a: "Oui, à leur échelle. Une PME n'a pas besoin d'un programme de groupe : un diagnostic court, deux ou trois processus reconçus, des rôles clarifiés dans une équipe, un dirigeant qui pilote avec un tableau de mesure simple. C'est souvent la transformation la plus rapide, parce que les décisions se prennent vite. Pour une ETI ou un groupe, le programme se structure par directions et par vagues, avec un comité et des référents. Le cadrage, gratuit, dit quel format convient.",
+    a: "Oui, en version resserrée. Dans une PME, la transformation tient souvent en une lecture rapide, deux ou trois processus reconçus, des rôles clarifiés dans une équipe et un dirigeant qui suit un tableau de mesure simple. Les décisions s'y prennent vite, ce qui accélère tout. Dans une ETI ou un groupe, le programme se structure par directions et par vagues, avec un comité et des référents. Le cadrage indique le format adapté ; la page consacrée au conseil IA des PME détaille la version courte.",
   },
 ]
 
@@ -241,7 +273,7 @@ const serviceJsonLd = {
   '@type': 'Service',
   name: 'Conseil en transformation IA (Masteria)',
   alternateName: "Conseil en transformation par l'intelligence artificielle",
-  description: "Conseil en transformation IA pour entreprises : diagnostic de transformation, refonte des processus avec l'IA, modèle opérationnel cible, gouvernance et pilotage du programme, conduite du changement et mesure. Cabinet spécialisé IA, indépendant des éditeurs.",
+  description: "Conseil en transformation IA pour entreprises : lecture de l'organisation, processus redessinés autour de l'IA, modèle opérationnel cible, pilotage du programme par vagues, conduite du changement et mesure. Cabinet spécialisé en IA, indépendant des éditeurs.",
   url: 'https://www.master-ia.fr/conseil-transformation-ia',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-transformation-ia#webpage' },
   serviceType: "Conseil en transformation par l'intelligence artificielle",
@@ -274,13 +306,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/conseil-transformation-ia#article',
-  headline: "Conseil en transformation IA : réorganiser le travail, pas seulement déployer des outils",
+  headline: "Conseil en transformation IA : réorganiser le travail autour de ce que l'IA produit",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-09-04',
-  dateModified: '2026-09-04',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/conseil-transformation-ia#webpage' },
   about: [
@@ -336,7 +368,7 @@ export default function ConseilTransformationIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-09-04"
-        dateModified="2026-09-04"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         extraJsonLd={[serviceJsonLd, processJsonLd, articleJsonLd]}
       />
@@ -368,28 +400,28 @@ export default function ConseilTransformationIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 900 }}>
             Conseil en transformation IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>réorganiser le travail, pas seulement déployer des outils</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>réorganiser le travail autour de ce que l'IA produit</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en septembre 2026
+            Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote nos programmes de transformation · revu le 7 octobre 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le conseil en transformation IA accompagne une entreprise qui réorganise son travail autour de l'intelligence artificielle : <strong style={{ color: '#fff', fontWeight: 700 }}>processus reconçus, rôles redéfinis, programme piloté et mesuré</strong>. {ENTITY.split(',')[0]} mène ce travail avec la direction et les métiers, et construit les solutions que la transformation réclame.
+            Le conseil en transformation IA aide une entreprise à réorganiser son travail une fois que l'intelligence artificielle en assure une part : <strong style={{ color: '#fff', fontWeight: 700 }}>processus reconçus, rôles redéfinis, programme piloté et mesuré</strong>. Masteria mène ce travail avec les dirigeants et les équipes métier, puis construit les outils que la nouvelle organisation réclame.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Une entreprise ne se transforme pas parce qu'elle a déployé un outil d'IA : elle se transforme quand ses processus, ses rôles et son pilotage ont changé pour en tirer parti. C'est ce travail-là, celui de l'organisation, que nous menons. Le cap relève de la stratégie ; la présence dans la durée, de l'accompagnement.
+            Déployer un assistant ne transforme rien tant que les processus, les rôles et le pilotage restent identiques. Notre travail porte sur ces trois dimensions de l'organisation. Le choix du cap relève de la stratégie, et la présence au fil du déploiement, de l'accompagnement ; ici, les équipes changent leur façon de produire.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre transformation
+            <Link to={CADRAGE_HREF} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Ce que nous faisons
+              Les cinq chantiers
             </a>
           </div>
 
@@ -403,7 +435,7 @@ export default function ConseilTransformationIAPage() {
           </div>
 
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La mission en six lignes</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -421,15 +453,15 @@ export default function ConseilTransformationIAPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Nos prestations</Kicker>
+              <Kicker>Cinq chantiers</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que couvre une mission de conseil en transformation IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Cinq chantiers, dans cet ordre : un diagnostic de transformation, la refonte des processus avec l'IA, le modèle opérationnel cible, la gouvernance du programme, puis la conduite du changement et la mesure. Chaque chantier a un livrable et un responsable chez vous.</strong>
+                <strong>Cinq chantiers, menés dans cet ordre : lire l'organisation actuelle, redessiner les processus avec l'IA, décrire le modèle opérationnel cible, installer le pilotage du programme, conduire le changement et le mesurer. Chacun produit un livrable et désigne un responsable chez vous.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Le cap se fixe en amont avec notre <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link> ; la présence pendant le déploiement relève de notre <Link to="/accompagnement-ia" style={aStyle}>accompagnement IA</Link>. Ici, c'est l'organisation qui change.
+                La destination se choisit en amont avec notre <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link> ; la présence au fil du déploiement relève de notre <Link to="/accompagnement-ia" style={aStyle}>accompagnement IA</Link>. Sur cette page, il s'agit de la façon dont vos équipes travaillent.
               </p>
             </div>
 
@@ -450,9 +482,9 @@ export default function ConseilTransformationIAPage() {
                       <Target size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
                     </div>
                   </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Ce que nous ne faisons pas</h3>
+                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Hors de notre champ</h3>
                   <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                    Ni plan social, ni restructuration financière, ni refonte d'un ERP : ce sont d'autres métiers. Nous transformons le travail autour de l'IA, et nous disons quand votre sujet relève d'un autre cabinet.
+                    Plan social, restructuration financière, refonte d'un ERP : d'autres cabinets font ces métiers. Nous transformons le travail autour de l'IA, et nous vous le signalons quand votre sujet relève d'un autre spécialiste.
                   </p>
                 </div>
               </div>
@@ -461,20 +493,20 @@ export default function ConseilTransformationIAPage() {
         </div>
       </section>
 
-      {/* ── DIGITAL CLASSIQUE vs TRANSFORMATION IA (ancre sombre — pivot) ── */}
+      {/* ── DIGITAL CLASSIQUE vs TRANSFORMATION IA (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Pourquoi ce n'est pas une transformation digitale de plus</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Une transformation d'un autre type</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Transformation digitale classique ou transformation IA : quelle différence ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>La transformation digitale déployait un outil puis organisait son adoption. La transformation IA part d'usages qui existent déjà dans les équipes, souvent sans cadre, et change la nature du travail : les personnes relisent et supervisent ce que l'IA produit. Les méthodes de programme classiques, pensées pour des déploiements de logiciels, s'y appliquent mal.</strong>
+            <strong style={{ color: '#fff' }}>La transformation digitale installait un logiciel puis organisait son adoption. La transformation IA part d'usages déjà présents dans les équipes, souvent hors de tout cadre, et change la nature du travail : les personnes relisent et supervisent ce que l'IA rédige ou calcule. Les méthodes de programme conçues pour déployer des logiciels s'y appliquent mal.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -497,8 +529,8 @@ export default function ConseilTransformationIAPage() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Un audit de transformation digitale reste utile : il dit ce que vos outils et vos données permettent. Notre diagnostic le comprend, et ajoute ce que les équipes font déjà avec l'IA.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            Un audit de transformation digitale garde son utilité : il dit ce que vos logiciels et vos données permettent. Notre lecture de l'organisation l'intègre et y ajoute les pratiques d'IA que vos salariés ont déjà adoptées.
           </p>
         </div>
       </section>
@@ -506,13 +538,13 @@ export default function ConseilTransformationIAPage() {
       {/* ── MÉTHODE (timeline) ── */}
       <section id="methode" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>La méthode</Kicker>
+          <Kicker>Le déroulé</Kicker>
           <h2 style={h2Style}>
             Comment se déroule une transformation IA avec Masteria ?
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Un diagnostic de quelques semaines, un modèle opérationnel cible et un portefeuille de cas d'usage, puis des vagues par trimestre : la première reconçoit deux à quatre processus avec les équipes formées, et mesure un premier gain avant sa fin. Les suivantes étendent, et notre présence diminue à mesure que le pilotage tient seul.</strong>
+            <strong>Quelques semaines pour lire l'organisation et décrire la cible, puis des vagues trimestrielles. La première reconçoit deux à quatre processus avec des équipes formées et mesure un premier gain avant sa fin ; les suivantes étendent le périmètre, et notre présence se réduit à mesure que votre pilotage tient seul.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -531,7 +563,7 @@ export default function ConseilTransformationIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Ce déroulé est représentatif, pas contractuel : une PME condense le diagnostic et la première vague en un trimestre ; un groupe étale les vagues par direction. Le rythme se pose au cadrage, gratuit. La mesure suit la chaîne de conversion décrite sur notre page <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link>.
+            Ce calendrier donne un ordre d'idée et n'engage pas : une PME tient souvent la lecture et la première vague dans un même trimestre, un groupe échelonne les vagues direction par direction. Le rythme se décide au cadrage. Pour relier le temps gagné à un résultat chiffré, nous suivons la méthode décrite sur notre page <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link>.
           </p>
         </div>
       </section>
@@ -539,12 +571,12 @@ export default function ConseilTransformationIAPage() {
       {/* ── LES ERREURS D'UNE TRANSFORMATION IA ── */}
       <section id="erreurs" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <Kicker>Ce que le terrain apprend</Kicker>
+          <Kicker>Les pièges</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Les cinq erreurs qui font échouer une transformation IA
+            Cinq erreurs font échouer la plupart des transformations IA
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Commencer par l'outil, déléguer à la DSI seule, lancer un programme pluriannuel sans premier gain, oublier les rôles, mesurer l'adoption au lieu du travail rendu. Aucune n'est une question de budget ; toutes sont une question d'ordre.</strong>
+            <strong>Commencer par l'outil, confier le programme à la DSI seule, viser trois ans sans résultat la première année, oublier les rôles, compter les connexions au lieu du travail rendu. Aucune ne tient au budget ; toutes tiennent à l'ordre dans lequel on fait les choses.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
             {ERREURS.map((item, i) => (
@@ -557,20 +589,54 @@ export default function ConseilTransformationIAPage() {
         </div>
       </section>
 
+      {/* ── ÉTUDES DE CAS (texte propre à la page, liens vers les ancres de /etudes-de-cas-ia) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Sur le terrain</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Deux organisations qui ont changé leurs rôles en 2026
+          </h2>
+          <p style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Un industriel qui corrige son dispositif entre deux sessions, un distributeur qui crée un rôle de référent : dans les deux cas, la transformation a commencé par des personnes à qui l'on confie une responsabilité nouvelle. Les noms des clients restent confidentiels ; les étapes à venir sont écrites au futur.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
+            {TRANSFO_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
+              <article key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                </div>
+                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  Suivre ce cas sur la page dédiée
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── POURQUOI MASTERIA (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>Pourquoi Masteria</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                Pourquoi un cabinet IA plutôt qu'un cabinet de conseil en transformation ?
+                Pourquoi un cabinet IA plutôt qu'un cabinet de transformation généraliste ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Parce que la transformation IA se joue dans le détail de ce que les outils produisent et de ce qu'un processus peut leur confier. Un cabinet qui ne fait que de l'IA depuis 2022, qui construit les solutions et forme les équipes, tient ce détail. Un cabinet généraliste tient le programme.</strong>
+              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px', background: '#fff' }}>
+                <strong>Parce qu'une transformation IA se décide au niveau du détail : la qualité de ce qu'un modèle rédige, la part d'un processus qu'on peut lui confier, le contrôle humain qui reste nécessaire. Un cabinet consacré à l'IA, qui fabrique aussi les outils et assure la formation, maîtrise ce détail ; un généraliste maîtrise le programme d'ensemble.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Les deux peuvent travailler ensemble : le programme d'entreprise chez votre cabinet, le chantier IA chez nous. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> montrent ce que cela produit.
+                Les deux se combinent volontiers : votre cabinet habituel conduit le programme d'entreprise, Masteria prend le chantier IA. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> décrivent ce partage en situation.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
@@ -592,22 +658,22 @@ export default function ConseilTransformationIAPage() {
       </section>
 
       {/* ── FORMATION (bloc secondaire) ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 56, height: 56, borderRadius: 14, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
               <GraduationCap size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Le volet formation</Kicker>
+              <Kicker>Former pour faire tenir</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                La transformation tient quand les équipes sont formées sur leurs cas
+                La transformation tient quand chacun est formé sur ses propres dossiers
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Chaque vague comprend la formation des managers et des équipes concernées, sur les processus reconçus et leurs livrables réels. Ce volet est certifié Qualiopi et finançable par votre OPCO ; le conseil et le développement restent des prestations de service, hors financement formation. Pour embarquer toute l'organisation, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> ouvre souvent le programme.
+                Chaque vague prévoit la formation des managers, puis des équipes touchées, sur les processus reconçus et leurs documents habituels. Ce volet constitue une action de formation au sens de Qualiopi, certification que détient Masteria : votre OPCO peut donc le prendre en charge, à hauteur de ce que permettent ses critères et son budget annuel. Les journées de conseil et le développement des outils se paient hors de ce circuit. Pour ouvrir le programme devant toute l'entreprise, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> sert souvent de point de départ.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['Managers formés avant les équipes', 'Ateliers sur les processus reconçus', 'Référents internes par direction', 'Formation certifiée Qualiopi, finançable OPCO'].map(pt => (
+                {['Les managers passent avant leurs équipes', 'Des ateliers sur les processus redessinés', 'Un référent interne dans chaque direction', 'Journée intra facturée 1 980 € HT'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
                     {pt}
@@ -620,19 +686,19 @@ export default function ConseilTransformationIAPage() {
       </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Conseil en transformation IA : les questions fréquentes
+                Conseil en transformation IA : vos questions
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre organisation a une particularité que ces réponses ne couvrent pas&nbsp;? Décrivez-la en quelques lignes : réponse dans les 24 heures.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Décrire votre situation
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -646,27 +712,27 @@ export default function ConseilTransformationIAPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>Pages voisines</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Ce qui entoure une transformation IA
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            La transformation s'appuie sur un cap, une présence dans la durée, une gouvernance et une mesure.
+            Une destination, une présence au fil des mois, des règles et une mesure : chaque page ci-dessous traite l'un de ces appuis.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Le cap', desc: "Diagnostic de maturité, cas d'usage priorisés, feuille de route : ce qui précède la transformation." },
-              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Dans la durée', desc: "La présence pendant le déploiement : cadrage, choix des outils, adoption, mesure." },
-              { label: 'Conseil IA pour PME', href: '/conseil-ia-pme', tag: 'PME et TPE', desc: "Le format court : un diagnostic resserré, deux ou trois processus, le dirigeant qui décide." },
-              { label: 'Audit IA', href: '/audit-ia', tag: 'État des lieux', desc: "L'évaluation complète, maturité, données, outils, conformité, quand la direction veut une vision opposable." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation', desc: "La montée en compétence collective qui ouvre et soutient le programme : conférence, ateliers, référents." },
-              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Cadre', desc: "Registre des usages, politique IA, comité, conformité au règlement européen : le cadre du programme." },
-              { label: "ROI de l'IA en entreprise", href: '/roi-ia-entreprise', tag: 'Mesure', desc: "La chaîne de conversion qui sert à mesurer une transformation sur le travail rendu." },
-              { label: 'Chief AI Officer à temps partagé', href: '/chief-ai-officer', tag: 'Pilotage', desc: "Qui pilote le programme quand le poste n'existe pas : un mandat, un comité, quelques jours par mois." },
-              { label: 'Méthode projet IA', href: '/methode-projet-ia', tag: 'Construction', desc: "Comment nous construisons les solutions que la transformation réclame : forfait, régie, équipe dédiée." },
-              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Conseil', desc: "L'ensemble de nos missions de conseil IA, du diagnostic au développement." },
+              { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Destination', desc: "État des lieux, cas d'usage classés et calendrier daté : le travail qui précède la réorganisation." },
+              { label: 'Accompagnement IA', href: '/accompagnement-ia', tag: 'Présence', desc: "Un appui suivi pendant le déploiement : choix des outils, mise en service, adoption." },
+              { label: 'Conseil IA pour PME', href: '/conseil-ia-pme', tag: 'Petites structures', desc: "La version resserrée pour les entreprises où le dirigeant décide seul et vite." },
+              { label: 'Audit IA', href: '/audit-ia', tag: 'Évaluation', desc: "Maturité, données, outils et conformité passés en revue, pour une direction qui veut un constat complet." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Formation collective', desc: "Conférence, ateliers et référents pour donner à toute l'entreprise un vocabulaire commun avant les vagues." },
+              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Règles', desc: "Politique d'usage, comité et conformité au règlement européen : le cadre dans lequel le programme avance." },
+              { label: "ROI de l'IA en entreprise", href: '/roi-ia-entreprise', tag: 'Mesure', desc: "Comment passer des heures rendues à un résultat que la direction peut chiffrer." },
+              { label: 'Chief AI Officer à temps partagé', href: '/chief-ai-officer', tag: 'Pilotage', desc: "Un pilote pour le programme quand le poste n'existe pas encore : mandat, comité, quelques jours par mois." },
+              { label: 'Méthode projet IA', href: '/methode-projet-ia', tag: 'Construction', desc: "Forfait, régie ou équipe dédiée : la façon dont nous réalisons les outils demandés par les processus reconçus." },
+              { label: 'Conseil en intelligence artificielle', href: '/conseil-intelligence-artificielle', tag: 'Vue complète', desc: "La page qui présente toutes nos missions de conseil, du premier état des lieux jusqu'aux outils en service." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -678,7 +744,7 @@ export default function ConseilTransformationIAPage() {
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>{rel.label}</h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Ouvrir la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -688,8 +754,15 @@ export default function ConseilTransformationIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan siège aux comités de programme des transformations que Masteria conduit, et il assume les arbitrages proposés. Il a mis cette page à jour le 7 octobre 2026 ; vous trouverez son itinéraire sur <Link to="/mathias-nizan" style={aStyle}>sa page personnelle</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -698,42 +771,42 @@ export default function ConseilTransformationIAPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Conseil en transformation IA</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Avant la première vague</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Cadrons votre transformation IA
+              Cadrons ensemble votre transformation IA
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre organisation, ce que les équipes font déjà avec l'IA et ce que la direction attend. Nous revenons vers vous sous 24 heures avec un format de mission : diagnostic seul, première vague, ou programme complet, avec son forfait par phase.
+              Présentez-nous votre organisation, les usages que vos équipes ont déjà adoptés et le résultat que la direction espère. Une fois le cadrage terminé, vous recevez un format de mission (lecture seule, première vague ou programme complet) et le forfait de chaque phase.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un cadrage gratuit
+            <Link to={CADRAGE_HREF} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              {CADRAGE_LABEL}
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cabinet spécialisé IA depuis 2022 · Lyon, Europe, États-Unis, Inde
+              Processus, rôles et pilotage, puis les outils qui vont avec · cabinet lyonnais qui travaille aussi hors de France
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient ── */}
+      {/* ── E-E-A-T : l'équipe d'une transformation ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'équipe d'un programme</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Un pilote unique, des spécialistes réunis vague par vague
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              {ENTITY} n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              En 2022, à Lyon, Mathias Nizan crée Masteria avec une spécialité unique, l'intelligence artificielle. Il tient le pilotage de chaque transformation du premier comité au dernier. Autour de lui, les consultants (une dizaine), les développeurs (cinq environ) et les formateurs (une vingtaine) sont des indépendants, appelés selon la vague en cours. Masteria ne revend aucune licence : l'outil retenu découle du processus reconçu. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> donnent des exemples datés ; la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link> recense les articles qui parlent du cabinet.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['1 pilote', 'du cadrage au dernier comité'],
+              ['≈ 20', 'formateurs pour les vagues'],
+              ['≈ 10', 'consultants en renfort'],
+              ['0', 'licence revendue'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -744,7 +817,26 @@ export default function ConseilTransformationIAPage() {
         </div>
       </section>
 
-      <OfficialSources />
+      {/* ── SOURCES (propres à la page) ── */}
+      <section aria-labelledby="sources-transformation" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-transformation" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Les textes à garder sous la main pendant le programme
+          </h2>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.6, margin: '0 0 20px' }}>
+            Les règles d'usage écrites pendant la transformation s'appuient sur ces documents officiels.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {SOURCES.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 7 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} aria-hidden="true" /> {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

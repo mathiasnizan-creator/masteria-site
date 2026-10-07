@@ -2,7 +2,118 @@
 // Vérifié le 03/10/2026 : règlement (UE) 2024/1689 et RGPD dans leur texte officiel (lu via l'Office des publications, EUR-Lex opposant un contrôle anti-robot), omnibus (UE) 2026/1744 (art. 50 § 1 inchangé), lignes directrices C(2026) 5054 de la Commission du 20/07/2026, Légifrance (L. 215-1-1, L. 217-3, L. 217-7, L. 221-21 et D. 221-5 en vigueur au 19/06/2026, L. 222-5-1 issu de l'ordonnance 2026-2, L. 612-2), documentation Anthropic sur l'injection de consigne.
 export default {
   slug: 'agent-support-client-ia',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  solution: {
+    directAnswer: "Un agent IA de support client traite les demandes d'un client déjà connu à partir de son dossier : commande, facture, contrat, échanges passés. Il répond quand le motif est prévu, transmet au conseiller quand il ne l'est pas, et annonce qu'il est une IA. Masteria le construit motif par motif et vous en remet le code.",
+    howWeBuild: [
+      {
+        title: "Classer les demandes par motif",
+        desc: "Nous lisons votre historique de tickets et rangeons les demandes par motif de contact, avec leur volume. Chaque motif reçoit un statut : traité par l'agent, préparé pour un conseiller, ou réservé à un humain.",
+      },
+      {
+        title: "Rejouer les tickets passés",
+        desc: "L'agent répond aux demandes déjà traitées par vos conseillers, et l'on compare ses réponses aux leurs. Un motif s'ouvre seulement quand ses réponses tiennent sur cet historique.",
+      },
+      {
+        title: "Relier l'agent à vos outils",
+        desc: "L'agent lit le dossier du client dans votre outil de tickets, votre boutique ou votre ERP, puis répond ou transfère avec un résumé. Les actions sur un dossier restent bornées et journalisées.",
+      },
+      {
+        title: "Ouvrir canal après canal",
+        desc: "L'e-mail ouvre en brouillons validés par un conseiller, puis le chat. Le responsable du service client relit chaque mois les transferts et les réclamations, et reçoit le code et sa documentation.",
+      },
+    ],
+  },
+  hero: {
+    chips: ["Motif par motif", "Commande, facture et contrat du client lus", "Transfert à un conseiller", "Article 50 respecté"],
+    lien: "Le chemin vers un agent en service",
+    enBref: [
+      {
+        label: "Budget",
+        value: "Un premier périmètre à partir de 15 000 € environ ; plusieurs canaux, marques ou pays au-delà de 100 000 €",
+      },
+      {
+        label: "Démarrage",
+        value: "Six à douze mois de tickets classés par motif, puis l'e-mail en brouillons validés",
+      },
+      {
+        label: "Ce que vous recevez",
+        value: "Agent, réponses de référence par motif, tableau des transferts, code et documentation",
+      },
+      {
+        label: "Propriété",
+        value: "Le service client garde l'agent, ses règles et son code",
+      },
+    ],
+  },
+  presentation: {
+    kicker: "Définition",
+    h2: "Ce que fait un agent de support, et où il s'arrête",
+  },
+  etapesBloc: {
+    kicker: "Mise en service",
+    h2: "D'un historique de tickets à un agent qui répond seul",
+  },
+  etapesNote: {
+    texte: "Si le support n'est qu'un des chantiers candidats, un",
+    lien: {
+      href: "/audit-ia",
+      label: "audit IA aide à fixer l'ordre",
+    },
+  },
+  methodeBloc: {
+    kicker: "Construction",
+    h2: "Quatre paliers, du premier motif à l'agent en service",
+  },
+  technique: {
+    kicker: "Sous le capot",
+    texte: "L'agent combine trois lectures avant de répondre : le dossier du client dans vos outils, la réponse de référence du motif et vos conditions de vente. Le modèle (Claude, GPT ou Mistral selon le volume et le coût) rédige à partir de ces trois sources seulement. Les actions sur un dossier passent par des connecteurs API ou MCP au périmètre étroit, et tout ce qui touche à un remboursement, à une réclamation ou à une donnée sensible part vers un conseiller.",
+    h2: "Les briques d'un agent de support",
+    lead: "L'agent lit le dossier du client dans vos outils (commande, facture, contrat, historique), répond à partir de vos réponses de référence et de vos conditions de vente, annonce qu'il est une IA dès le premier message et transmet au conseiller tout ce qui sort de son périmètre.",
+    chips: [
+      "Lecture du dossier client",
+      "Réponses de référence par motif",
+      "Annonce IA au premier message",
+      "Transfert avec résumé",
+      "Journal des échanges",
+    ],
+    note: {
+      texte: "La façon dont nos développeurs testent et documentent un agent est décrite sur la page",
+      lien: {
+        href: "/agence-developpement-ia",
+        label: "agence de développement IA",
+      },
+    },
+  },
+  secteursBloc: {
+    kicker: "Par service client",
+    h2: "Un agent de support selon le service client",
+    intro: "Les motifs de contact changent d'un métier à l'autre ; la règle du transfert à un humain, non.",
+  },
+  regieBloc: {
+    kicker: "Développeur en renfort",
+    h2: "Un développeur au côté de votre service client",
+    lien: "La méthode de projet en détail",
+  },
+  faqBloc: {
+    kicker: "Questions",
+    h2: "Agent de support : les questions des services clients",
+    texte: "Un motif de contact vous paraît trop sensible pour un agent ?",
+    lien: "Parlons-en",
+  },
+  maillage: {
+    kicker: "Livrables proches",
+    h2: "D'autres outils pour la relation client",
+  },
+  cta: {
+    titre: "Quel motif de contact confier en premier à un agent ?",
+    texte: "Envoyez-nous vos principaux motifs de contact et vos volumes par canal. Sous 24 heures, une réponse vous propose un créneau pour les 30 minutes de cadrage offertes ; l'agent et son code vous appartiendront.",
+  },
+  equipe: {
+    titre: "Des intervenants qui construisent avec votre service client",
+    texte: "Mathias Nizan, fondateur de Masteria à Lyon en 2022, compose et dirige l'équipe de chaque projet. Pour un agent de support, ce sont un consultant qui classe vos tickets par motif, des développeurs qui relient l'agent à vos outils et un formateur pour les conseillers qui valident ses brouillons. Tous sont indépendants des éditeurs de logiciels de service client.",
+  },
   intro: "Un agent IA de support client travaille sur le dossier d'un client déjà connu : sa commande, sa facture, son contrat, ses échanges passés avec votre service. Nous le construisons à partir de votre historique de tickets, motif de contact par motif de contact. L'agent prépare d'abord des brouillons que vos conseillers relisent et envoient. Il ne répond seul qu'aux motifs où ces brouillons partent sans retouche, et il s'annonce alors comme une IA, ce que la règle de transparence du règlement européen sur l'IA (article 50) impose depuis le 2 août 2026.",
   guide: {
     kicker: "Guide projet · agent de support",
@@ -85,7 +196,16 @@ export default {
     { title: "Revoir les transferts chaque mois", desc: "Un responsable côté service client lit les transferts et les corrections du mois, ouvre ou referme des motifs, suit les indicateurs fixés au départ. Le code, la base de réponses et la documentation vous appartiennent et vous sont remis." },
   ],
   cout: {
-    lead: "Un agent de support se chiffre au forfait, sur un devis écrit après cadrage. Un premier périmètre démarre autour de 15 000 € ; un déploiement sur plusieurs canaux, plusieurs marques ou plusieurs pays dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros.",
+    kicker: "Budget de l'agent",
+    h2: "Le budget d'un agent de support",
+    note: {
+      texte: "Pour comparer avec d'autres types de projets, consultez les",
+      lien: {
+        href: "/prix-projet-ia",
+        label: "ordres de grandeur d'un projet IA",
+      },
+    },
+    lead: "Un agent de support se chiffre au forfait, sur un devis écrit après cadrage. Un premier périmètre démarre autour de 15 000 € ; un déploiement sur plusieurs canaux, plusieurs marques ou plusieurs pays se chiffre au-delà de 100 000 €, parfois en centaines de milliers d'euros.",
     paras: [
       "Le devis sépare deux dépenses. La construction se paie une fois : lecture de l'historique, base de réponses, connecteurs, jeux de tests, mise en service. Le fonctionnement revient chaque mois : appels au modèle de langage, facturés au volume de texte traité (compté en tokens, des fragments de mots), hébergement, supervision. Si votre éditeur de ticketing propose son propre agent IA, comparez les deux offres avec le même étalon : le coût d'une demande close sans nouveau contact du client.",
       "Avant signature, la proposition liste les motifs couverts, les canaux, les connecteurs, les livrables attendus, le calendrier et le budget de chaque palier. La passation à votre équipe fait partie de la mission : vos superviseurs savent ouvrir un motif, corriger une réponse de référence et relancer les tests. Le premier contact prend la forme de 30 minutes de cadrage offertes, lors d'un appel ou d'une visio.",
@@ -102,6 +222,8 @@ export default {
     "Le détachement se justifie aussi quand le support change souvent : lancement d'un produit, nouvelle offre d'abonnement, changement de transporteur. Chaque changement crée des motifs, et un développeur présent les ajoute avant qu'ils n'encombrent la file des conseillers. Nos développeurs viennent du réseau Masteria, qui compte environ cinq développeurs IA indépendants et expérimentés, et interviennent sur site ou à distance depuis Lyon.",
   ],
   comparatif: {
+    kicker: "FAQ automatique ou agent",
+    caption: "Chatbot de FAQ et agent de support relié à vos données, critère par critère.",
     intro: "Un chatbot de support à scénarios suit un arbre de décision écrit à l'avance : un bouton ou un mot-clé mène à une réponse figée. Les lignes directrices de la Commission rangent les réponses rapides à base de règles parmi les mécanismes qui ne sont pas des systèmes d'IA, si bien qu'un arbre de décision pur échappe à l'article 50. Pour une poignée de motifs stables, ou pour des réponses réglementées à reproduire au mot près, ce choix reste sûr et économique. Masteria ne revend aucune licence ; si votre cas tient dans un arbre, nous vous le dirons.",
     rows: [
       { aspect: "Compréhension de la demande", off: "Boutons et mots-clés ; un message qui mélange deux motifs sort du scénario", custom: "Langage libre, plusieurs motifs dans un même message, pièce jointe lue (photo, facture)" },
@@ -123,8 +245,8 @@ export default {
     { q: "Les données de nos clients partent-elles chez le fournisseur du modèle ?", a: "Les messages et les champs lus transitent par le modèle de langage pour produire la réponse. Le fournisseur intervient en principe comme sous-traitant (article 28 du RGPD), lié par un contrat qui l'oblige à ne traiter ces données que sur vos instructions documentées. Le choix du modèle et de sa région de traitement se fait au cadrage, avec votre DSI. L'agent ne transmet que les champs utiles au motif traité, ce qui réduit ce qui sort de votre système." },
   ],
   sources: [
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (articles 50 et 99)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr" },
-    { name: "Commission européenne : lignes directrices sur les obligations de transparence de l'article 50 (20 juillet 2026)", url: "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : l'information du client (article 50) et les amendes (article 99)", url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj?locale=fr" },
+    { name: "Commission européenne, lignes directrices du 20 juillet 2026 : quand informer le client d'un service après-vente", url: "https://digital-strategy.ec.europa.eu/en/library/guidelines-transparency-obligations-providers-and-deployers-ai-systems" },
     { name: "EUR-Lex : règlement (UE) 2016/679, RGPD (articles 4, 22, 28 et 33)", url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj?locale=fr" },
     { name: "Légifrance : Code de la consommation, obligation de conformité dans les contrats de vente de biens (articles L. 217-1 à L. 217-32)", url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006069565/LEGISCTA000032221261/" },
     { name: "Légifrance : article L. 221-21 du Code de la consommation (exercice de la rétractation, version du 19 juin 2026)", url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044563193" },

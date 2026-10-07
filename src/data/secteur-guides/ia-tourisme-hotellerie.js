@@ -2,7 +2,49 @@
 // Vérifié le 03/10/2026 : INSEE (fréquentation 2025, Insee Focus n° 387 sur l'été 2026), France Travail (BMO 2026), Commission (AI Act art. 50 consolidé, factsheet DMA Booking du 28/09/2026), HOTREC (étude distribution du 15/09/2026), Légifrance (L.311-5-1 du code du tourisme, L.121-4 du code de la consommation), Google (règles sur les avis), GHR (alerte du 22/09/2026).
 export default {
   slug: 'ia-tourisme-hotellerie',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Messages en plusieurs langues", "PMS et moteur de réservation", "Avis et demandes de groupes"],
+    lien: "Voir où les messages arrivent",
+  },
+  offresTitre: {
+    kicker: "Trois interventions",
+    h2: "Lire vos messages, construire l'assistant, automatiser le séjour",
+  },
+  enjeux: {
+    kicker: "Tourisme et hôtellerie",
+    h2: "Une demande sans réponse la nuit est une réservation perdue",
+    difficultes: "Ce qui déborde la réception et la réservation",
+    prestations: "Ce que nous construisons pour un hôtel ou un voyagiste",
+  },
+  regieBloc: {
+    kicker: "Régie auprès de vos équipes",
+    h2: "Un développeur relié à votre PMS et à vos canaux de vente",
+    accroche: "Pour un groupe hôtelier ou un acteur du voyage qui veut relier l'IA à son PMS (le logiciel de gestion de l'hôtel), à son moteur de réservation et à son CRM, le développeur IA rejoint vos équipes et construit au contact de vos systèmes.",
+    lien: "Comment se monte une régie",
+  },
+  formationBloc: {
+    kicker: "Former la réception et le commercial",
+    h2: "Des ateliers sur vos messages de voyageurs et vos demandes de groupes",
+    lien: "Voir le catalogue des formations",
+  },
+  faqBloc: {
+    h2: "Hôtellerie et tourisme : questions fréquentes",
+    texte: "Votre établissement a une particularité que ces réponses ignorent ?",
+    lien: "Racontez-la-nous",
+  },
+  maillage: {
+    h2: "Secteurs voisins du tourisme",
+  },
+  cta: {
+    titre: "Quels messages de voyageurs traiter en premier ?",
+    texte: "Indiquez-nous vos langues de clientèle, votre PMS et votre moteur de réservation. Nous revenons vers vous sous 24 heures pour fixer les 30 minutes de cadrage offertes, de préférence avant le début de votre saison.",
+  },
+  equipe: {
+    titre: "Une équipe réunie pour votre établissement",
+    texte: "Masteria a été créé à Lyon en 2022 par Mathias Nizan, qui pilote chaque mission avec des intervenants indépendants choisis pour le projet. Pour un hôtel ou un voyagiste, ce sont des consultants qui lisent vos messages et vos avis, des développeurs qui relient l'assistant à votre PMS et à votre moteur de réservation, et des formateurs qui préparent l'équipe de la saison. Aucun ne revend de logiciel hôtelier.",
+  },
   intro: "Dans le tourisme et l'hôtellerie, l'IA se rentabilise d'abord sur les messages : une question avant de réserver, une demande pendant le séjour, un avis après le départ, souvent dans une autre langue et hors des heures de réception. Masteria construit des assistants qui répondent à partir de vos données de réservation et d'informations datées, qui disent au voyageur qu'il échange avec une IA, et qui passent la main à la réception selon des règles écrites avec vous.",
 
   offresIntro: [
@@ -11,14 +53,21 @@ export default {
   ],
   offres: [
     {
+      title: "Lecture des messages et des avis",
+      cta: "Notre démarche de conseil",
       desc: "Nous lisons plusieurs mois de messages, d'avis et de demandes de groupes pour mesurer ce qui arrive, dans quelles langues et à quelles heures. Nous en tirons trois listes : les questions qu'un assistant traite seul, celles qu'il prépare pour la réception, celles qui restent humaines. La feuille de route suit votre calendrier de saison.",
       points: ["Analyse des messages et des avis", "Partage des rôles avec la réception", "Calendrier calé sur la saison"],
     },
     {
-      desc: "Nous développons l'assistant multilingue du canal direct (votre site et votre messagerie), relié au moteur de réservation pour les disponibilités et au PMS pour les informations du séjour, et le copilote qui aide le service commercial à chiffrer une demande de groupe ou de séminaire. L'assistant annonce au voyageur qu'il échange avec une IA et passe la main selon des règles écrites.",
+      title: "Assistant multilingue et copilote commercial",
+      cta: "Le développement sur mesure",
+      secondaryCta: "Outils IA par métier",
+      desc: "Nous développons l'assistant multilingue du canal direct (votre site et votre messagerie), relié au moteur de réservation pour les disponibilités et au PMS pour les informations du séjour, et le copilote qui aide le service commercial à chiffrer une demande de groupe ou d'événement d'entreprise. L'assistant annonce au voyageur qu'il échange avec une IA et passe la main selon des règles écrites.",
       points: ["Assistant multilingue du canal direct", "Copilote pour les demandes de groupes", "Passage à la réception selon des règles"],
     },
     {
+      title: "Messages du séjour automatisés",
+      cta: "Notre approche de l'automatisation",
       desc: "Nous automatisons les messages qui jalonnent le séjour (confirmation, informations d'arrivée, enquête de départ) dans la langue de la réservation, le tri des avis par service pour les équipes d'exploitation et la préparation des réponses à valider. Chaque scénario est documenté pour l'équipe de la saison suivante.",
       points: ["Messages du séjour dans la langue du client", "Tri des avis par service", "Scénarios documentés d'une saison à l'autre"],
     },
@@ -27,7 +76,7 @@ export default {
     "Un développeur détaché dans un groupe hôtelier ou chez un voyagiste rejoint l'équipe distribution ou l'équipe digitale, de préférence avant l'ouverture de la saison, quand les liaisons entre le PMS, le moteur de réservation et la messagerie doivent être prêtes. Il travaille avec vos éditeurs de logiciels sur les interfaces existantes et laisse des procédures que votre équipe applique ensuite en pleine saison.",
   ],
   formation: [
-    "Les outils changent le travail de la réception, de la réservation, du service commercial qui traite les groupes et les séminaires, et de la direction qui suit la réputation. Nous les formons à corriger une réponse de l'assistant, à tenir sa base d'informations à jour (horaires, travaux, offres de saison) et à répondre aux avis délicats.",
+    "Les outils changent le travail de la réception, de la réservation, du service commercial qui traite les groupes et les événements d'entreprise, et de la direction qui suit la réputation. Nous les formons à corriger une réponse de l'assistant, à tenir sa base d'informations à jour (horaires, travaux, offres de saison) et à répondre aux avis délicats.",
     "Les sessions se placent entre deux saisons, dans l'établissement ou à distance, et une journée intra coûte 1 980 € HT. La certification Qualiopi de Masteria permet d'en demander la prise en charge à votre OPCO en France ; la conception et le développement de l'assistant restent des prestations de service, hors de ce financement.",
   ],
 
@@ -77,7 +126,7 @@ export default {
       headers: ["Moment", "Ce que l'assistant peut faire", "Donnée ou règle à respecter"],
       rows: [
         ["Avant la réservation", "Répondre sur les disponibilités et proposer le lien de réservation", "Tarif lu dans le moteur de réservation, jamais calculé par le modèle"],
-        ["Demande de groupe ou de séminaire", "Préparer un devis à partir des contraintes de l'événement", "Grille tarifaire des groupes, validation par le service commercial"],
+        ["Demande de groupe ou d'événement d'entreprise", "Préparer un devis à partir des contraintes de l'événement", "Grille tarifaire des groupes, validation par le service commercial"],
         ["Avant l'arrivée", "Envoyer les informations pratiques dans la langue de la réservation", "Base d'informations datée ; canal choisi selon la provenance de la réservation"],
         ["Pendant le séjour", "Traiter les demandes simples et transmettre les autres", "Mention d'IA dès le premier message (article 50), escalade vers la réception ou le veilleur"],
         ["Après le départ", "Solliciter un avis et préparer les réponses", "Même demande à tous, aucune contrepartie, aucun avis modifié"],

@@ -1,322 +1,327 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-informatique (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Reçoit depuis le 07/10 les anciennes pages Mistral × informatique et multi-outils × informatique
+ * (redirections 308) : choisirOutil garde une ligne gemini et une ligne mistral.
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA informatique / DSI : équipes IT et pilotage | Masteria",
-  "metaDesc": "Formation IA informatique et DSI sur vos vrais projets : documentation et spécifications, support et exploitation, code assisté, sécurité et gouvernance, cadrage des usages IA de l'entreprise. Qualiopi, OPCO.",
-  "keywords": "formation ia informatique, formation ia dsi, formation intelligence artificielle dsi, formation ia équipe it, formation ia développeurs, formation ia support informatique, gouvernance ia dsi",
-  "h1": "Formation IA informatique / DSI : outiller les équipes IT et piloter les usages de l'entreprise",
+  "metaTitle": "Formation IA informatique / DSI : outils et cadre | Masteria",
+  "metaDesc": "Formation IA des DSI et équipes IT : tickets, scripts, documentation, choix des licences, sécurité. Copilot, Claude, ChatGPT, Vibe, Gemini. Qualiopi.",
+  "keywords": "formation ia informatique, formation ia dsi, formation intelligence artificielle dsi, formation ia équipe it, formation ia support informatique, formation mistral informatique, formation vibe code, panorama ia dsi, formation multi-outils informatique, gouvernance ia dsi",
+  "h1": "Formation IA informatique / DSI : équiper les équipes IT et cadrer l'IA de l'entreprise",
   "h1a": "Formation IA informatique / DSI :",
-  "h1b": "outiller les équipes IT et piloter les usages de l'entreprise",
-  "eyebrow": "Formation métier · Informatique / DSI",
-  "badge3": "Sur vos projets, vos tickets et votre SI réel",
-  "geo": "La formation IA informatique / DSI de Masteria apprend aux équipes IT à intégrer l'intelligence artificielle générative dans leur travail (documentation et spécifications, support et exploitation, code assisté, gestion de projet SI) et aux DSI à piloter les usages de l'IA dans toute l'entreprise : choix et déploiement des outils, sécurité des données, gouvernance, shadow IA. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "La DSI est doublement concernée : ses propres équipes gagnent beaucoup avec l'IA (documentation, support, code, projets), et c'est elle qui doit encadrer les usages de toute l'entreprise, souvent nés hors de son contrôle. La formation traite les deux versants, avec la sécurité et la gouvernance en fil rouge, et sans confondre outil généraliste et développement.",
-  "intro": "La formation IA informatique / DSI de Masteria apprend aux équipes IT à intégrer l'intelligence artificielle générative dans leur travail et aux DSI à piloter les usages de l'IA dans toute l'entreprise, sécurité et gouvernance en fil rouge."
+  "h1b": "équiper les équipes IT et cadrer l'IA de l'entreprise",
+  "eyebrow": "Formation métier · Informatique et DSI",
+  "badge3": "Sur vos tickets, vos scripts et votre parc applicatif",
+  "geo": "La formation IA informatique / DSI de Masteria s'adresse aux deux métiers que réunit une DSI : les techniciens, administrateurs et chefs de projet qui produisent (procédures, réponses de support, scripts, spécifications), et les responsables qui choisissent les licences, règlent les droits et répondent aux demandes des services. Le parcours compte deux jours d'intra, bâtis sur votre file de tickets et votre parc applicatif, avec l'assistant que l'entreprise a retenu : Microsoft Copilot (anciennement Microsoft 365 Copilot) pour un parc Microsoft, Gemini pour un parc Google, sinon Claude, ChatGPT ou Vibe de Mistral. Organisme certifié Qualiopi, Masteria vous donne accès à une participation de l'OPCO.",
+  "sub": "Une DSI vit l'IA générative des deux côtés du guichet. Ses équipes y trouvent un renfort sur ce qu'elles repoussent depuis des années : la documentation, les post-mortems, les scripts d'administration. Le reste de l'entreprise attend d'elle une réponse nette sur les outils autorisés, souvent après avoir commencé sans elle. Les deux journées traitent ces deux côtés, avec la sécurité des données comme fil conducteur.",
+  "intro": "La formation IA informatique / DSI de Masteria outille les équipes IT sur leurs tâches (support, scripts, documentation) et donne aux responsables de la DSI une méthode pour choisir, configurer et encadrer les assistants d'IA de toute l'entreprise."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un seul versant (équipes IT, ou pilotage DSI)"
+   "value": "Deux jours d'intra, soit 14 heures ; un seul jour quand vous ne retenez qu'un côté (le travail des équipes IT, ou le pilotage par la DSI)"
   },
   {
    "label": "Pour qui",
-   "value": "DSI et RSI, responsables d'équipe IT, support et exploitation, chefs de projet SI, développeurs (usages assistés), RSSI et architectes en lien avec les usages IA"
+   "value": "Techniciens de support et d'exploitation, administrateurs systèmes et réseaux, chefs de projet SI, développeurs, DSI et RSI, RSSI et architectes"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot (M365 et GitHub Copilot), Claude (dont Claude Code), Gemini, Mistral, et leurs déploiements entreprise"
+   "value": "Microsoft Copilot et GitHub Copilot, ChatGPT Business et Codex, Claude et Claude Code, Gemini dans Workspace, Vibe et Vibe Code de Mistral"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos vraies documentations, tickets, spécifications, procédures et arbitrages d'outils (anonymisés)"
+   "value": "Des tickets anonymisés, des scripts de votre exploitation, les procédures à reprendre et l'inventaire des licences et des usages déjà en place"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts IT, gabarits (spécification, procédure, réponse support, note d'arbitrage), grille de sécurité par outil, trame de gouvernance des usages"
+   "value": "Prompts IT classés par tâche, gabarits de procédure et de post-mortem, matrice données × outils, trame pour homologuer un nouvel usage"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "L'OPCO peut couvrir une part de la session, Masteria détenant la certification Qualiopi ; sa participation suit ses propres barèmes"
   }
  ],
  "missionsHead": {
-  "kicker": "Deux versants",
-  "h2": "Que change l'IA pour une DSI et ses équipes ?",
-  "answer": "Deux versants, six activités. Côté équipes IT : la documentation et les spécifications, le support et l'exploitation, le code assisté et les scripts. Côté pilotage DSI : le choix et le déploiement des outils d'IA de l'entreprise, la sécurité des données et la gouvernance, le traitement du shadow IA. Dans chacune, l'IA accélère la production et l'analyse ; l'architecture, la sécurité et les décisions restent à la DSI.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre DSI au cadrage. Pour les développeurs qui veulent aller loin sur le code assisté, la {/formation-claude-code|formation Claude Code} et la {/formation-vibe-coding|formation vibe coding} prennent le relais ; pour le conseil sur vos données, notre {/conseil-data-ia|conseil data & IA}."
+  "kicker": "Côté équipes, côté pilotage",
+  "h2": "Six chantiers de la DSI que l'IA générative transforme",
+  "answer": "Trois chantiers concernent le travail des équipes IT : la documentation et les spécifications, le support et la gestion des incidents, les scripts et le code. Trois autres relèvent du pilotage : le choix des offres et des licences, la sécurité des données et des droits d'accès, la réponse aux usages nés hors de la DSI. Dans les six, l'IA écrit, résume et propose ; l'architecture, la mise en production et l'arbitrage restent à vos équipes.",
+  "foot": "Au cadrage, nous pondérons ces six chantiers selon votre organisation. Des développeurs qui veulent confier des tâches de code à un agent trouveront la suite dans la {/formation-claude-code|formation Claude Code} ; un sujet centré sur la qualité et la circulation des données relève plutôt du {/conseil-data-ia|conseil data et IA}."
  },
  "missions": [
   {
    "icon": "FileCode",
    "title": "Documentation et spécifications",
-   "desc": "Documentation technique et fonctionnelle à partir de notes, d'un code ou d'un existant, spécifications structurées, cahiers des charges, procédures d'exploitation, base de connaissances IT : la dette documentaire, celle que personne n'a le temps de résorber, traitée à l'échelle et relue par ceux qui savent."
+   "desc": "Une procédure d'exploitation tirée de notes de terrain, une spécification fonctionnelle bâtie sur le compte rendu d'un atelier, une page de wiki reconstituée depuis un script commenté : l'IA rédige la première version, la personne qui connaît le système la corrige. La dette documentaire recule, parce que l'effort de départ devient supportable."
   },
   {
    "icon": "Wrench",
-   "title": "Support et exploitation",
-   "desc": "Réponses de niveau 1 et 2 à partir de la base de connaissances, reformulation d'un incident en langage utilisateur, rédaction de comptes rendus d'incident et de post-mortems, procédures de résolution, communication de maintenance : le support gagne en vitesse et en clarté, la connaissance sort des têtes."
+   "title": "Support et incidents",
+   "desc": "Réponse de niveau 1 appuyée sur votre base de connaissances, incident traduit dans les mots de l'utilisateur, message de maintenance, chronologie d'une panne transformée en post-mortem : le support répond plus vite et plus lisiblement. Le technicien relit, complète et reste le seul à écrire dans l'outil de ticketing."
   },
   {
    "icon": "Terminal",
-   "title": "Code assisté et scripts",
-   "desc": "Génération et explication de scripts (PowerShell, Bash, SQL, Python), assistance au code avec GitHub Copilot ou Claude, revue et documentation, tests, migration de fragments : les usages qui accélèrent les équipes techniques, avec la revue humaine comme garde-fou et les règles de propriété du code posées."
+   "title": "Scripts et code sous revue",
+   "desc": "PowerShell, Bash, SQL ou Python : l'IA explique un script hérité, en écrit un nouveau, ajoute commentaires et tests. GitHub Copilot dans l'éditeur, Claude Code, Codex ou Vibe Code depuis le terminal prennent des tâches délimitées. Rien ne part en production sans relecture humaine ni passage sur une machine de test."
   },
   {
    "icon": "Bot",
-   "title": "Choix et déploiement des outils IA de l'entreprise",
-   "desc": "Comparer les offres entreprise (ChatGPT Business, Copilot Microsoft 365, Claude Team, Gemini Workspace, Mistral), lire leurs garanties (données, entraînement, hébergement, DPA), déployer par vagues, former les métiers avec les RH : la DSI devient l'architecte des usages plutôt que le service qui dit non."
+   "title": "Choix des offres et des licences",
+   "desc": "Copilot Chat inclus ou licence Microsoft Copilot, ChatGPT Business, Vibe Team, Claude Team ou Gemini sous Workspace : la DSI compare les garanties écrites (entraînement, hébergement, sous-traitants, journalisation) et le coût par siège, puis rédige une note d'arbitrage que la direction peut signer."
   },
   {
    "icon": "ShieldCheck",
-   "title": "Sécurité des données et gouvernance",
-   "desc": "Grille de sécurité par outil et par type de donnée, classification, configuration des offres entreprise, journalisation, articulation avec le RGPD et le règlement européen (registre, transparence, article 4), charte d'usage : le cadre qui rend les usages défendables et auditable."
+   "title": "Sécurité des données et des droits",
+   "desc": "Un assistant branché sur Microsoft 365 met au jour les dossiers SharePoint partagés trop largement ; un modèle tiers activé sans y penser fait sortir des échanges du périmètre européen de Microsoft. La formation passe ces réglages en revue, console par console, avec la matrice qui dit quelle donnée va où."
   },
   {
    "icon": "Radar",
-   "title": "Shadow IA et accompagnement des métiers",
-   "desc": "Repérer les usages nés hors cadre (comptes personnels, outils gratuits sur des données d'entreprise), les ramener dans un cadre sûr sans les casser, répondre aux demandes des métiers vite et bien : le shadow IA est un signal de besoin, la DSI y répond par une offre plutôt que par une interdiction."
+   "title": "Usages nés hors de la DSI",
+   "desc": "Comptes personnels, extensions de navigateur, outils gratuits nourris de fichiers clients : ces usages signalent un besoin que l'offre interne ne couvre pas encore. La DSI apprend à les repérer, à proposer une solution encadrée et à la faire connaître aux services."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une DSI",
-  "answer": "Six gains : une dette documentaire enfin résorbée, un support plus rapide et plus clair, des équipes techniques accélérées sous revue humaine, une DSI architecte des usages IA de l'entreprise, une sécurité et une gouvernance qui tiennent l'audit, et un shadow IA transformé en offre cadrée plutôt qu'en risque subi.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut produire un script qui marche presque, une procédure plausible et fausse, ou une garantie contractuelle qui n'existe pas. Revue humaine sur tout le code, test sur toute procédure, lecture des DPA plutôt que des plaquettes : le reste, elle le fait remarquablement bien."
+  "kicker": "Les bénéfices",
+  "h2": "Ce que la DSI et ses équipes y gagnent",
+  "answer": "Une documentation qui rattrape le système, un support qui répond vite et dans la langue des utilisateurs, des scripts écrits plus vite et mieux commentés, des licences choisies sur pièces, des réglages de sécurité vérifiés avant le déploiement, et des services qui reviennent vers la DSI au lieu de la contourner.",
+  "foot": "Une réserve accompagne chacun de ces gains : un modèle invente volontiers un paramètre, une option de commande ou une garantie contractuelle. Tout script passe par une machine de test, toute procédure est rejouée par quelqu'un qui ne l'a pas écrite, et toute promesse d'éditeur se vérifie dans le DPA (le contrat qui encadre le traitement des données par le fournisseur)."
  },
  "atouts": [
   {
-   "title": "Une dette documentaire résorbée",
-   "desc": "Documentation, spécifications, procédures, base de connaissances : ce que les équipes repoussent depuis des années se produit à l'échelle et se maintient."
+   "title": "La documentation rattrape le système",
+   "desc": "Procédures, spécifications, pages de wiki : l'écart entre ce qui tourne et ce qui est écrit se réduit, et le savoir d'un administrateur survit à ses congés."
   },
   {
-   "title": "Un support plus rapide et plus clair",
-   "desc": "Réponses de niveau 1 et 2 outillées, incidents reformulés en langage utilisateur, post-mortems structurés : le support gagne en qualité perçue."
+   "title": "Un support plus rapide et plus lisible",
+   "desc": "Les réponses partent plus vite, les incidents sont expliqués sans jargon, les post-mortems sortent dans la semaine plutôt qu'au trimestre suivant."
   },
   {
-   "title": "Des équipes techniques accélérées",
-   "desc": "Scripts, assistance au code, revue, tests, documentation : les développeurs et les administrateurs vont plus vite, sous revue humaine et avec des règles de propriété claires."
+   "title": "Des scripts mieux écrits et mieux relus",
+   "desc": "Génération, explication, commentaires et tests prennent moins de temps, et la revue humaine garde sa place dans la chaîne de mise en production."
   },
   {
-   "title": "La DSI architecte des usages",
-   "desc": "Offres entreprise comparées et lues, déploiement par vagues, métiers accompagnés : la DSI porte l'IA de l'entreprise au lieu de la subir."
+   "title": "Des licences choisies sur pièces",
+   "desc": "Les offres sont comparées sur leurs contrats et leurs consoles d'administration, et la note d'arbitrage s'appuie sur des critères que la direction comprend."
   },
   {
-   "title": "Une sécurité et une gouvernance qui tiennent l'audit",
-   "desc": "Grille par outil, classification, configuration, journalisation, registre, charte : le cadre est écrit, appliqué et défendable devant le RSSI, le DPO et les autorités."
+   "title": "Un déploiement sans mauvaise surprise",
+   "desc": "Droits SharePoint audités, modèles tiers réglés, rôles d'administration attribués : les réglages sont faits avant que les utilisateurs découvrent l'outil."
   },
   {
-   "title": "Le shadow IA transformé en offre",
-   "desc": "Les usages hors cadre sont ramenés dans un cadre sûr, sans casser l'élan des métiers : la DSI répond au besoin plutôt qu'à la faute."
+   "title": "Des services qui reviennent vers la DSI",
+   "desc": "Une offre interne lisible et rapide rend les comptes personnels inutiles, et les demandes des métiers arrivent par le bon canal."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA informatique / DSI sur 2 jours",
-  "answer": "Jour 1, côté équipes IT : ce que les modèles font et ne font pas pour l'IT, les outils et leurs déploiements entreprise (GitHub Copilot, Claude Code, Codex compris), la demande efficace version technique, puis les ateliers documentation et spécifications, support et exploitation, code assisté et scripts, les Projets partagés et le cadre (secrets, production, revue). Jour 2, côté pilotage DSI : le choix des offres entreprise, la sécurité des données, la recherche approfondie, la gouvernance et le shadow IA, puis les compétences (Skills), les assistants et agents (Agent Builder de Microsoft, Copilot Studio, agents d'espace de travail), les tâches planifiées, l'accompagnement des métiers et votre plan d'action.",
-  "foot": "Le programme s'ajuste à la DSI : une équipe support et exploitation approfondit le jour 1, un DSI avec son RSSI et son DPO le jour 2, les développeurs le code assisté et les compétences. En version 1 jour, on prend un versant : outiller les équipes IT, ou piloter les usages de l'entreprise. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Équipes IT le premier jour, pilotage le second : le déroulé",
+  "answer": "Le premier jour équipe les techniciens, administrateurs et développeurs : les capacités d'un modèle face à un ticket ou un script, l'offre de chaque éditeur pour l'IT, la demande technique bien posée, le compte réglé pour votre environnement, puis des ateliers sur la documentation, le support, les post-mortems et le code, un espace partagé par périmètre et les règles sur les secrets. Le second jour sert le pilotage : comparaison des offres entreprise, réglages de sécurité dans chaque console, lecture d'un contrat de traitement, circuit d'homologation, usages hors cadre, puis compétences (Skills), agents, tâches planifiées, mesure de l'adoption et plan d'action.",
+  "foot": "Le cadrage déplace le centre de gravité : une équipe de support prend plus de temps sur la première journée, un DSI accompagné de son RSSI et de son DPO sur la seconde. En format court, on ne traite qu'un côté. Nous avons revérifié chaque fonction citée le 7 octobre 2026 ; si votre abonnement ne la comprend pas, le formateur la montre sur un compte de démonstration, puis l'équipe reprend l'exercice sur ses propres licences."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Outiller les équipes IT : documentation, support, code",
+   "titre": "Équiper les équipes IT : documentation, support, scripts",
    "matin": [
     {
-     "t": "Ce que les modèles font pour l'IT",
-     "d": "Capacités (expliquer un script, rédiger une procédure, lire un journal, reformuler un incident), limites (paramètre, commande ou version inventés, contexte du SI inconnu), ce qui engage (production, sécurité, propriété du code) ; démonstration sur un script et une procédure réels de votre exploitation, anonymisés."
+     "t": "Un modèle face à un ticket ou à un script",
+     "d": "Il lit un journal d'erreurs, explique une commande, reformule un incident, propose une procédure. Il ignore votre architecture, peut inventer une option ou une version, et ne mesure pas l'effet d'une commande destructive. La démonstration part d'un script et d'une procédure de votre exploitation, anonymisés."
     },
     {
-     "t": "Panorama des outils et déploiements entreprise",
-     "d": "ChatGPT Business et Codex, Microsoft 365 Copilot et GitHub Copilot, Claude Team avec Claude Code et Cowork, Gemini dans Workspace, Vibe (anciennement Le Chat de Mistral) hébergé en Europe : où vont les données, ce que chaque éditeur écrit sur l'entraînement et l'hébergement, lequel pour quel usage IT."
+     "t": "L'offre de chaque éditeur pour l'IT",
+     "d": "Chez Microsoft, quatre produits portent le nom Copilot, chacun sous sa licence : Microsoft Copilot, Copilot Chat livré avec Microsoft 365, GitHub Copilot pour le code et Security Copilot pour les analystes sécurité. OpenAI vend ChatGPT Business et Codex, Anthropic Claude et Claude Code ; Google intègre Gemini à Workspace ; Mistral propose Vibe (anciennement Le Chat) et Vibe Code. Pour chacun : son apport à l'IT et le chemin des données."
     },
     {
-     "t": "La demande efficace, version technique",
-     "d": "Contexte (environnement, versions, contraintes), rôle, format attendu (tableau, diff, étapes numérotées), exemples, itération, vérification sur une machine de test ; appliquée à un ticket réel de votre file, en comparant la réponse brute et la réponse cadrée."
+     "t": "Une demande technique bien posée",
+     "d": "Environnement, versions, contraintes, format attendu (étapes numérotées, tableau, diff), exemple tiré de votre dépôt, puis itération et test. L'exercice part d'un ticket de votre file : la réponse obtenue sans contexte est comparée à la réponse cadrée, et l'écart parle de lui-même."
     },
     {
-     "t": "Personnaliser son compte pour l'IT",
-     "d": "Instructions personnalisées et mémoire : stack, conventions de nommage, langue des commentaires, gabarits maison (spécification, procédure, réponse support, post-mortem), styles dans Claude ; chacun configure son outil ; ce que la mémoire ne doit jamais retenir (adresses, comptes, données de production)."
+     "t": "Un compte réglé pour votre environnement",
+     "d": "Instructions personnalisées et mémoire reçoivent la pile technique, les conventions de nommage, la langue des commentaires et vos gabarits de procédure. Chacun règle son outil et apprend ce que la mémoire ne doit jamais garder : adresses IP, identifiants, noms des serveurs de production."
     },
     {
-     "t": "Atelier documentation et spécifications",
-     "d": "Produire une spécification structurée ou une procédure d'exploitation à partir de vos notes, d'un schéma ou d'un code existant ; relecture par la personne qui connaît le système ; plan de maintenance de la documentation ; Copilot dans Word ou Artifacts de Claude pour la mise en forme."
+     "t": "Atelier documentation",
+     "d": "Une spécification ou une procédure d'exploitation se construit depuis vos notes, un schéma ou un script existant ; la mise au propre passe par la fonction « Modifier avec Copilot » de Word ou par un document produit par Claude. Un collègue qui ne l'a pas écrite la rejoue ensuite étape par étape, et chaque écart est corrigé."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier support niveau 1 et 2",
-     "d": "À partir de votre base de connaissances chargée dans un Projet : rédiger la réponse à un ticket, reformuler un incident en langage utilisateur, écrire la communication de maintenance ; aucune écriture dans l'outil ITSM, le technicien copie, vérifie, répond."
+     "t": "Atelier support de niveau 1 et 2",
+     "d": "Votre base de connaissances chargée dans un espace partagé, l'outil propose la réponse au ticket, la reformulation pour l'utilisateur et le message de maintenance. Le technicien vérifie, complète et colle lui-même dans l'outil de ticketing : aucun assistant n'y écrit pendant la formation."
     },
     {
-     "t": "Atelier post-mortem et compte rendu d'incident",
-     "d": "D'une chronologie brute (fil de discussion, journaux expurgés, mails) vers un post-mortem structuré (faits, causes, actions, échéances), puis sa version pour la direction ; Copilot dans Teams pour le récapitulatif de la cellule d'incident ; les témoins relisent les faits."
+     "t": "Atelier post-mortem",
+     "d": "Les messages échangés pendant la crise, des journaux expurgés et quelques mails donnent une chronologie, puis un post-mortem (faits, causes, actions, échéances) et sa version pour la direction. Si la cellule s'est réunie dans Teams, Copilot en fournit le récapitulatif, qui sert de matière première ; les personnes présentes valident les faits."
     },
     {
-     "t": "Atelier code assisté et scripts",
-     "d": "Générer, expliquer, documenter et tester un script réel (PowerShell, Bash, SQL, Python) ; GitHub Copilot dans l'IDE, Claude Code ou Codex côté ChatGPT sur une tâche délimitée ; revue humaine obligatoire avant tout déploiement, règles de propriété et de licence du code posées par écrit."
+     "t": "Atelier scripts et code",
+     "d": "Un script de votre exploitation est expliqué, documenté, testé, puis réécrit. GitHub Copilot dans l'éditeur, Claude Code, Codex ou Vibe Code prennent une tâche bornée sur un dépôt de test. La revue humaine et les règles de licence du code généré sont consignées par écrit."
     },
     {
-     "t": "Projets et espaces de travail par périmètre",
-     "d": "Un Projet partagé ChatGPT ou un Projet Claude par périmètre (exploitation, support, projet SI) avec instructions communes, documentation de référence, droits lecture et écriture ; Bibliothèques et Projets de Vibe Work, Notebooks de Copilot ; ce qu'on y dépose, ce qu'on n'y met jamais."
+     "t": "Un espace partagé par périmètre",
+     "d": "Selon l'outil, l'espace s'appelle projet (ChatGPT, Claude), bibliothèque (Vibe) ou bloc-notes (Copilot) : un pour l'exploitation, un pour le support, un par projet SI, avec consignes communes, documentation de référence et règles d'accès (qui lit, qui modifie). On y écrit aussi la liste des contenus interdits dans ces espaces."
     },
     {
-     "t": "Cadre équipes IT : secrets, production, revue",
-     "d": "Jamais de secret, de mot de passe ni de donnée de production nominative dans un outil ; jeux de test, anonymisation, offres entreprise configurées ; revue humaine sur tout code et toute procédure générés ; liste de relecture technique : commande destructive, version inventée, droits trop larges."
+     "t": "Règles des équipes IT",
+     "d": "Pas de secret, de clé d'API ni de donnée de production nominative dans une conversation ; jeux de test et anonymisation pour le reste. La liste de relecture repère la commande destructive, la version inventée, le droit trop large et la dépendance qui n'est plus maintenue."
     }
    ]
   },
   {
    "jour": "Jour 2",
-   "titre": "Piloter les usages : outils, sécurité, gouvernance, métiers",
+   "titre": "Piloter : offres, sécurité, homologation, agents",
    "matin": [
     {
-     "t": "Atelier choix des offres entreprise",
-     "d": "Comparer ChatGPT Business, Microsoft 365 Copilot, Claude Team ou Enterprise, Gemini Workspace et Vibe sur vos critères (données, entraînement, hébergement, DPA, intégration, droits admin, coût, crédits d'agents) ; lire les engagements contractuels ; Deep Research pour documenter le comparatif ; écrire la note d'arbitrage."
+     "t": "Atelier comparaison des offres entreprise",
+     "d": "Copilot Chat inclus ou licence Microsoft Copilot, Claude en Team ou en Enterprise, ChatGPT Business, Vibe Team ou Enterprise, Gemini sous Workspace : la grille porte sur l'entraînement, l'hébergement, l'authentification unique, la journalisation, l'intégration au SI et le coût par siège. La recherche approfondie documente le comparatif ; la DSI écrit la note d'arbitrage."
     },
     {
-     "t": "Atelier sécurité et classification des données",
-     "d": "Grille par outil et par type de donnée, classification, configuration des offres (périmètre de Copilot Chat limité à OneDrive et SharePoint, oversharing, journalisation), articulation RGPD avec le DPO et règlement européen (registre, transparence, article 4) ; Python dans Excel ou l'analyse de données pour lire les journaux d'usage."
+     "t": "Réglages de sécurité, console par console",
+     "d": "Chez Microsoft : rôle d'administrateur IA, audit des partages SharePoint avant l'ouverture, Claude proposé dans Copilot mais coupé d'office pour les clients européens, et sorti du périmètre européen de traitement dès qu'on l'active. Chez OpenAI : plugins gérés par l'administrateur depuis le 1er octobre 2026. Chez Mistral : l'entraînement à couper sur Vibe Team."
     },
     {
-     "t": "Recherche approfondie et documents longs",
-     "d": "Deep Research dans ChatGPT ou Gemini, recherche approfondie de Claude, agent Researcher de Copilot pour un état de l'art (outil, vulnérabilité) ; lire un DPA ou une licence et en extraire les clauses ; NotebookLM sur un corpus de documentation (50 sources, 100 en Plus) ; sources vérifiées."
+     "t": "Lire un contrat de traitement des données",
+     "d": "Le DPA d'un éditeur et sa liste de sous-traitants passent dans l'outil, qui en extrait les clauses sur la conservation, la localisation et la notification d'incident. Gemini Notebook (anciennement NotebookLM) garde le dossier de chaque éditeur et cite ses sources ; le choix de région des données fait dans Workspace ne couvre pas ce service, un point à porter au registre."
     },
     {
-     "t": "Atelier gouvernance : charte, homologation, registre",
-     "d": "Charte d'usage, processus d'homologation d'un nouvel usage ou d'un assistant, comité, registre des assistants et des compétences, rôle de la DSI ; ce que la DSI décide, ce que les métiers portent ; la charte co-éditée en Canvas, Artifacts ou Copilot Pages pendant l'atelier."
+     "t": "Atelier homologation et registre",
+     "d": "Charte d'usage, circuit pour homologuer un usage inédit ou un assistant, registre des compétences et des agents, répartition des rôles entre DSI, RSSI, DPO et métiers. Le groupe rédige la charte ensemble, sur une page Copilot Pages ou un artefact Claude, avant de l'envoyer au DPO."
     },
     {
-     "t": "Atelier shadow IA",
-     "d": "Repérer les usages nés hors cadre (comptes personnels, outils gratuits sur des données d'entreprise), comprendre le besoin derrière, proposer l'alternative cadrée (licence, Projet partagé, compétence), préparer la communication qui répond par une offre ; cas apportés par les participants."
+     "t": "Atelier usages hors cadre",
+     "d": "Les participants apportent des cas : un service qui colle des contrats dans un outil gratuit, une extension qui lit les mails. Pour chacun, le groupe identifie le besoin, l'alternative encadrée (licence, espace partagé, compétence) et le message aux équipes, formulé autour de ce qui devient possible."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) : de la procédure à l'outil",
-     "d": "Transformer une procédure IT (post-mortem, qualification d'un ticket, revue de script) en compétence : dossier SKILL.md dans Claude (nom et description servent de déclencheur ; un membre crée et teste, l'owner provisionne ; on supprime et ré-importe pour modifier), ou en langage naturel dans ChatGPT Business."
+     "t": "Compétences (Skills) pour les procédures IT",
+     "d": "La procédure de qualification d'un ticket ou de revue d'un script se range dans une compétence, que l'assistant applique de son propre chef quand la situation se présente. Le format SKILL.md, publié en standard ouvert par Anthropic en décembre 2025, a été repris par Microsoft (Cowork, Excel) et par Google, qui l'a ouvert dans Gemini au début d'octobre 2026 ; chez Mistral, les Skills de Vibe datent du 22 septembre. Une procédure bien écrite se transporte ainsi entre assistants."
     },
     {
-     "t": "Assistants et agents : l'arbitrage DSI",
-     "d": "GPTs existants traités, le neuf en Projet partagé, compétence ou agent d'espace de travail (droits et crédits gérés par l'admin) ; Agent Builder de Microsoft, assistant sans code sur SharePoint, ou Copilot Studio pour écrire dans un logiciel (un projet chiffré à part) ; Gems et Workspace Studio."
+     "t": "Agents : ce que la DSI ouvre, ce qu'elle garde",
+     "d": "Chez OpenAI, les agents partagés de l'espace de travail se paient en crédits ; chez Microsoft, Agent Builder et Copilot Studio, vendu par packs mensuels de 25 000 crédits (173,30 € HT) ; chez Google, Workspace Studio, plafonné à compter du 1er novembre 2026. Côté OpenAI, chaque GPT encore utilisé se transforme en plugin avant son retrait, prévu le 11 décembre 2026. Dès qu'un agent doit écrire dans un logiciel métier, on parle de projet d'intégration."
     },
     {
      "t": "Tâches planifiées et automatisations légères",
-     "d": "Veille sécurité, rapport hebdomadaire des tickets, rappel de revue des accès : tâches planifiées ChatGPT (une phrase, au plus une exécution par heure), Tâches planifiées et Workflows de Vibe, Power Automate, Workspace Studio ; Cowork pour un tri de fichiers sous supervision ; tout chiffre produit reste relu."
+     "d": "Veille sur les vulnérabilités de votre parc, synthèse hebdomadaire des tickets, rappel de revue des accès : tâches planifiées de ChatGPT ou de Vibe, Power Automate, Workspace Studio, ou Copilot Cowork, qui sollicite une validation humaine dès qu'une action engage. Chaque chiffre produit est relu avant diffusion."
     },
     {
-     "t": "Accompagner les métiers et mesurer l'adoption",
-     "d": "Répondre vite aux demandes, déployer par vagues avec les RH, former des référents par service, régler les droits admin (parcourir, exécuter, construire, publier), mesurer (licences actives, usages déclarés, assistants au registre, incidents), revue trimestrielle ; la DSI en architecte des usages plutôt qu'en service qui dit non."
+     "t": "Accompagner les services et mesurer",
+     "d": "Déploiement par vagues avec les RH, référents formés dans chaque service, droits d'administration (qui utilise, qui construit, qui publie), indicateurs suivis : licences actives, usages déclarés, assistants au registre, incidents. Une revue trimestrielle remet la liste à jour."
     },
     {
-     "t": "Plan d'action, évaluation, livrables",
-     "d": "Les trois usages à installer côté IT, les trois décisions à prendre côté pilotage, qui les porte, comment on mesure ; évaluation des acquis ; remise de la bibliothèque de prompts IT, des gabarits, de la grille de sécurité, de la trame de gouvernance et des compétences créées."
+     "t": "Plan d'action et évaluation",
+     "d": "Trois usages à installer côté équipes, trois décisions à prendre côté pilotage, un porteur pour chacun et une date de mesure. La journée se clôt sur l'évaluation, suivie de la remise des livrables : prompts IT, gabarits, matrice données × outils, trame d'homologation, compétences créées pendant les ateliers."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA informatique / DSI ?",
-  "answer": "Aux deux versants de la fonction : DSI et RSI, responsables d'équipe IT, RSSI et architectes en lien avec les usages IA (pilotage), et équipes support et exploitation, chefs de projet SI, développeurs pour les usages assistés (équipes IT). Sans prérequis au-delà de la culture technique du poste. Pour le développement approfondi, nos formations Claude Code et vibe coding prennent le relais."
+  "h2": "Quatre profils de la DSI réunis dans la même salle",
+  "answer": "Techniciens et administrateurs, développeurs et chefs de projet SI, responsables de la DSI, gardiens de la sécurité et des données : chacun repart avec ce qui le concerne, et tous avec un vocabulaire commun. La culture technique du poste suffit ; aucun prérequis en développement n'est demandé pour les usages assistés."
  },
  "profils": [
   {
-   "icon": "Server",
-   "title": "DSI, RSI et responsables IT",
-   "desc": "Choisir et déployer les outils IA de l'entreprise, poser la sécurité et la gouvernance, transformer le shadow IA en offre, accompagner les métiers : le jour 2 est construit pour vous, avec les livrables de cadre."
-  },
-  {
    "icon": "Wrench",
-   "title": "Support et exploitation",
-   "desc": "Réponses outillées, base de connaissances, incidents et post-mortems, procédures : les usages qui rendent des heures et améliorent la qualité perçue du support."
+   "title": "Support, exploitation et administration",
+   "desc": "Tickets, incidents, procédures, scripts d'administration : le premier jour est construit sur votre file et votre exploitation, pour que chaque usage serve dès le lundi suivant."
   },
   {
    "icon": "Code2",
-   "title": "Chefs de projet SI et développeurs",
-   "desc": "Spécifications, documentation, scripts, assistance au code sous revue, tests : les usages qui accélèrent sans dégrader, avec les règles de propriété et de sécurité posées."
+   "title": "Développeurs et chefs de projet SI",
+   "desc": "Spécifications, documentation, revue et tests, tâches confiées à un agent de code sur un dépôt de test : la vitesse augmente, la responsabilité de ce qui part en production ne bouge pas."
+  },
+  {
+   "icon": "Server",
+   "title": "DSI, RSI et responsables d'équipe",
+   "desc": "Choix des licences, déploiement par vagues, réponse aux services, indicateurs d'adoption : le second jour vous donne la note d'arbitrage et le circuit d'homologation."
   },
   {
    "icon": "Lock",
    "title": "RSSI, DPO et architectes",
-   "desc": "Grille de sécurité par outil, classification des données, configuration des offres entreprise, articulation RGPD et règlement européen : le cadre qui tient l'audit, construit avec la DSI."
+   "desc": "Réglages des consoles, matrice des données, contrats de traitement, registre : le cadre se construit avec la DSI, et vous en contrôlez la tenue dans la durée."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Secrets, données de production, propriété du code, garanties contractuelles : ce que la formation pose noir sur blanc",
-  "p": "La DSI porte la sécurité de l'entreprise, et l'IA générative y ajoute des risques précis : un secret ou un mot de passe collé dans un prompt, une donnée de production nominative dans un outil grand public, du code généré dont la propriété n'est pas cadrée, une garantie contractuelle lue dans une plaquette plutôt que dans le DPA. La formation formalise avec vous la grille par outil et par type de donnée, la configuration des offres entreprise, la revue humaine systématique sur le code et les procédures, les règles de propriété, et l'articulation avec le RGPD et le règlement européen (registre, transparence, article 4). Ce cadre est un livrable, socle de votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des DSI et des équipes IT depuis 2022, dans l'industrie, l'énergie, les services et le secteur public : les mêmes questions reviennent, et elles ont des réponses pratiques.",
+  "kicker": "Sécurité et conformité",
+  "h2": "Secrets, données de production, code généré, contrats : ce que la DSI fixe par écrit pendant ces deux jours",
+  "p": "Une DSI qui ouvre l'IA générative s'expose à des risques bien identifiés : un jeton d'accès oublié dans une conversation, une base clients copiée dans un outil gratuit, un code généré dont la licence n'est pas tracée, une garantie lue dans une plaquette au lieu du contrat. Ensemble, nous rédigeons la matrice données × outils, les réglages de chaque console, la revue obligatoire du code et des procédures, et le rôle de la DSI vis-à-vis du RGPD comme de l'AI Act, dont trois dates comptent : 2 février 2025 pour la culture IA des salariés (article 4), 2 août 2026 pour la transparence envers les personnes (article 50), 2 décembre 2027 pour les cas énumérés à l'annexe III, dits à haut risque. Ces règles nourriront la {/charte-ia-entreprise|charte IA} que l'entreprise diffusera ensuite.",
   "points": [
-   "Jamais de secret, mot de passe ou donnée de production nominative dans un outil",
-   "Offres entreprise configurées, garanties lues dans les DPA",
-   "Revue humaine sur tout code et toute procédure générés",
-   "Registre, transparence, article 4 : le règlement européen anticipé"
+   "Aucun secret ni donnée de production nominative dans une conversation",
+   "Garanties vérifiées dans le contrat de traitement, console par console",
+   "Relecture et test de tout code ou procédure générés",
+   "Calendrier de l'AI Act daté, sources à l'appui"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (documentations, tickets, spécifications, procédures anonymisés, inventaire des outils IA en place et demandes des métiers), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts IT, gabarits, grille de sécurité, trame de gouvernance), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": ""
+  "titre": "Budget de la formation et financement par l'OPCO",
+  "answer": "En intra, une DSI règle 1 980 € HT chaque jour, pour trois comme pour douze participants ; les deux jours coûtent donc 3 960 € HT. Un DSI ou un RSSI formé seul règle ce même montant par journée. Parce que Masteria est certifiée Qualiopi, votre OPCO peut couvrir une partie de la dépense, selon son barème et ce qui reste de son enveloppe.",
+  "inclus": "En amont, un cadrage sur pièces : tickets et scripts anonymisés, procédures à reprendre, liste des licences et des usages connus. Puis deux jours d'animation, en salle chez vous ou en visioconférence, avec supports, prompts IT, gabarits, matrice données × outils et trame d'homologation. Chaque participant passe une évaluation et reçoit son certificat de réalisation ; quand la session a lieu loin de Lyon, le devis comprend aussi les frais de route du formateur.",
+  "financement": "Pour savoir quel opérateur finance votre branche, l'outil {/quel-opco|Quel OPCO ?} remonte de la convention collective à l'OPCO ; notre page sur le {/financement-formation-ia|financement des formations} détaille les règles. Masteria prépare programme, convention et justificatifs, que vous envoyez à l'OPCO avant le démarrage. Aucun droit CPF ne joue ici."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA informatique / DSI ?",
-   "a": "Deux versants. Côté équipes IT : produire documentation, spécifications et procédures avec l'IA, outiller le support (réponses, incidents, post-mortems), générer et documenter scripts et code sous revue humaine. Côté pilotage : comparer et déployer les offres entreprise d'IA en lisant leurs garanties réelles, poser une grille de sécurité par outil et par donnée, articuler RGPD et règlement européen, bâtir la gouvernance et traiter le shadow IA. La sécurité est le fil rouge des deux journées."
+   "q": "Que couvre une formation IA pour une DSI ?",
+   "a": "Les deux côtés du métier. Pour les équipes : documenter un système, répondre aux tickets, écrire un post-mortem, expliquer et tester un script, confier une tâche délimitée à un agent de code. Pour le pilotage : comparer les offres entreprise sur leurs contrats, régler chaque console, construire la matrice qui associe chaque catégorie de donnée aux outils autorisés, homologuer un nouvel usage et ramener dans un cadre les usages nés hors de la DSI. La sécurité des données traverse les deux journées."
   },
   {
-   "q": "Quelle différence avec une formation au développement assisté (Claude Code, GitHub Copilot) ?",
-   "a": "Le périmètre. Cette formation donne aux équipes IT les usages assistés du quotidien (scripts, assistance au code, revue, documentation) et à la DSI le pilotage des usages de toute l'entreprise. Une formation au développement assisté va beaucoup plus loin sur le code : agents de développement, refactoring, tests, intégration au workflow, sur plusieurs jours. Si vos développeurs veulent ce niveau, notre formation Claude Code (et le vibe coding pour les profils non-développeurs) prend le relais ; les deux se combinent bien : la DSI cadre, les développeurs approfondissent."
+   "q": "En quoi ce parcours diffère-t-il de la formation Claude Code ?",
+   "a": "La profondeur sur le code. Ici, les développeurs travaillent les usages assistés du quotidien (expliquer, documenter, tester, confier une tâche bornée à un agent) au milieu des autres sujets de la DSI. La formation Claude Code consacre plusieurs jours au développement avec un agent : organisation du dépôt, refactorisation, tests, intégration aux pratiques de l'équipe. Beaucoup d'équipes suivent l'une puis l'autre : d'abord le cadre de la DSI, ensuite l'approfondissement des développeurs."
   },
   {
-   "q": "Comment choisir entre ChatGPT Business, Copilot Microsoft 365, Claude Team, Gemini et Mistral pour l'entreprise ?",
-   "a": "Sur vos critères, en lisant les garanties dans les contrats plutôt que dans les plaquettes : traitement et non-entraînement sur vos données, hébergement et localisation, DPA et sous-traitants, intégration à votre SI (Microsoft 365, Google Workspace, outils métier), administration et journalisation, coût par siège, souveraineté quand elle est exigée. La formation vous fait construire cette grille sur votre contexte en atelier ; nous sommes indépendants des éditeurs et n'avons de commission avec aucun. Notre comparateur Quel outil IA ? donne un premier tri en quelques minutes."
+   "q": "Peut-on suivre ce parcours avec Mistral et Vibe uniquement ?",
+   "a": "Oui ; les DSI soucieuses de souveraineté le demandent souvent. Par défaut, Mistral stocke les échanges de Vibe sur des serveurs situés dans l'Union européenne. En Team, Mistral peut apprendre de vos conversations jusqu'à ce que l'administrateur coupe ce réglage pour l'organisation entière ; en Enterprise, cet entraînement est exclu sans réglage, et l'offre ajoute SSO SAML et journaux d'audit. Vibe Code sert le développement (ligne de commande, VS Code, web) ; Mistral Medium 3.5 a succédé à Devstral 2, retiré le 22 mai 2026. Héberger un modèle chez vous, Mistral Large 3 par exemple, publié en poids ouverts (téléchargeables) sous licence Apache 2.0, devient un projet d'intégration ; le Large 4, dévoilé en préversion le 6 octobre 2026, doit suivre, ses poids étant annoncés pour le 27 octobre."
   },
   {
-   "q": "Comment traiter le shadow IA sans braquer les métiers ?",
-   "a": "En le lisant comme un signal de besoin, pas comme une faute. Des collaborateurs qui utilisent un compte personnel sur des données d'entreprise prennent un risque réel, mais ils le prennent parce qu'un besoin n'est pas couvert. La méthode que la formation enseigne : repérer les usages, comprendre le besoin, proposer vite une alternative cadrée (offre entreprise configurée, règles claires, formation), communiquer sur ce qui est possible plutôt que sur ce qui est interdit, et mesurer l'adoption. Une DSI qui répond par une offre récupère la maîtrise ; une DSI qui interdit pousse le shadow plus loin."
+   "q": "Comment comparer ChatGPT, Copilot, Claude, Gemini et Vibe pour l'entreprise ?",
+   "a": "Sur une grille écrite à l'avance et sur les contrats, jamais sur les plaquettes. Les critères qui départagent : la réutilisation de vos conversations pour entraîner les modèles, le lieu d'hébergement, les sous-traitants, l'authentification unique et la création automatique des comptes, la journalisation, l'intégration à Microsoft 365 ou à Google Workspace, le coût par siège. Exemple : ChatGPT Business ouvre l'authentification SAML mais réserve la gestion des clés de chiffrement et les journaux d'audit à l'offre Enterprise. La formation construit la grille sur votre contexte, sans intérêt commercial : aucun éditeur ne rémunère Masteria. Notre comparateur Quel outil IA ? donne un premier tri."
   },
   {
-   "q": "Le règlement européen sur l'IA concerne-t-il la DSI ?",
-   "a": "Oui, sur plusieurs points que la formation situe honnêtement. L'article 4 (littératie IA) est applicable depuis février 2025 en obligation de moyens et concerne toute organisation utilisatrice ; la transparence de l'article 50 s'applique depuis août 2026 quand des personnes interagissent avec une IA ; les obligations sur les systèmes à haut risque sont reportées à décembre 2027 et août 2028, et la bureautique augmentée relève du risque minimal. La DSI tient l'inventaire des systèmes, participe à la classification et à la gouvernance, en lien avec le DPO. Pour aller au fond du texte, notre formation AI Act prend le relais."
+   "q": "Que faire des usages d'IA nés hors de la DSI ?",
+   "a": "Les traiter comme une demande à laquelle personne n'a encore répondu. Le commercial qui dépose un contrat dans un outil gratuit prend un risque, et il le prend parce que son besoin n'a pas de réponse interne. La méthode enseignée : repérer les usages, comprendre le besoin, proposer vite une alternative encadrée (licence, espace partagé, compétence), annoncer ce qui devient possible avant de rappeler ce qui est interdit, puis mesurer. Une interdiction sèche déplace le problème vers les téléphones personnels."
   },
   {
-   "q": "Peut-on utiliser l'IA sur du code propriétaire et des données de production ?",
-   "a": "Sur du code, oui dans un cadre : offre entreprise ou déploiement dédié qui n'entraîne pas ses modèles sur vos données, règles de propriété du code généré posées (licences, revue, tests), jamais de secret ni de clé dans un prompt. Sur des données de production nominatives, non dans un outil généraliste : anonymisation ou jeux de test, et pour les usages qui l'exigent, un déploiement dédié (RAG, agents) dans votre périmètre. La formation pose cette grille par type de donnée et par outil ; c'est l'un de ses livrables."
+   "q": "Quelles obligations l'AI Act fait-il peser sur une DSI ?",
+   "a": "Surtout des obligations d'inventaire et de gouvernance. L'article 4, opposable aux entreprises dès le 2 février 2025, vise la compétence de chacun face à l'IA ; le règlement Omnibus, entré en application le 27 juillet 2026, l'a transformé en devoir d'agir, sans certificat à produire. L'article 50 impose, lui, depuis août 2026, d'avertir la personne qui converse avec une machine et de marquer certains contenus générés. Le tri automatisé de candidatures et les autres systèmes listés à l'annexe III relèveront du haut risque le 2 décembre 2027. La DSI dresse l'inventaire des systèmes et aide le DPO à les classer ; la formation AI Act va plus loin dans le texte."
   },
   {
-   "q": "La formation travaille-t-elle sur notre SI réel ?",
-   "a": "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : documentations et spécifications à produire ou reprendre, tickets et incidents anonymisés, scripts à générer ou expliquer, inventaire des outils IA en place et demandes des métiers, vos contraintes de sécurité. Chaque atelier part de là. Deux problèmes techniques apportés par les participants sont traités en collectif le jour 1."
+   "q": "Peut-on confier du code propriétaire et des données de production à ces outils ?",
+   "a": "Le code, oui, sous conditions : une offre entreprise ou un déploiement dédié dont l'éditeur renonce par contrat à apprendre de vos conversations, des règles écrites sur la licence et la revue du code généré, aucun secret dans un prompt. Les données de production nominatives, non, dans un assistant généraliste : les ateliers utilisent des jeux d'essai ou des extraits anonymisés, et un besoin qui exige les vraies données appelle un déploiement dans votre périmètre. Pour Claude, une exigence d'hébergement européen se règle via Amazon Bedrock ou Vertex AI de Google, Anthropic n'ayant pas de région européenne à son nom."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes de la DSI. Une version d'une journée existe par versant : outiller les équipes IT (jour 1), ou piloter les usages de l'entreprise (jour 2, souvent en petit comité DSI, RSSI, DPO). Un accompagnement individuel est possible pour un DSI ou un RSSI."
+   "q": "Quelle durée, quel lieu, combien de participants ?",
+   "a": "Le format complet occupe deux jours d'intra, en présentiel ou par visioconférence, pour 12 membres de la DSI au maximum. Une journée seule suffit quand un seul côté vous occupe : le travail des équipes IT, ou le pilotage, que suivent souvent en petit comité le DSI, le RSSI et le DPO. Un responsable peut aussi suivre une version individuelle du programme resserré."
   },
   {
-   "q": "Combien coûte une formation IA DSI, et est-elle finançable ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences (ATLAS pour beaucoup de DSI, selon votre convention collective) ; nous préparons le dossier avec vous et notre outil Quel OPCO ? identifie votre opérateur. La formation n'est pas éligible au CPF. Devis sous 24 heures."
+   "q": "Quel budget prévoir, et quel rôle pour l'OPCO ?",
+   "a": "Le tarif ne bouge pas avec le nombre d'inscrits, dans la limite de douze : une journée vaut 1 980 € HT, le parcours entier 3 960 € HT, et le trajet du formateur s'y ajoute si vos bureaux sont loin de Lyon. L'organisme étant certifié Qualiopi, l'OPCO peut inscrire la session dans votre plan de formation et la financer selon ses critères. Programme, convention et justificatifs sont fournis ; le CPF n'intervient pas."
   }
  ],
  "course": {
-  "name": "Formation IA informatique / DSI — Masteria",
-  "description": "Formation à l'intelligence artificielle générative pour les équipes informatiques et le pilotage DSI, sur le SI réel des participants : documentation et spécifications, support et exploitation, code assisté et scripts sous revue, choix et déploiement des offres entreprise, sécurité des données et gouvernance (RGPD, règlement européen), shadow IA et accompagnement des métiers. Multi-outils (ChatGPT, Microsoft Copilot et GitHub Copilot, Claude et Claude Code, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA informatique / DSI (Masteria)",
+  "description": "Formation à l'intelligence artificielle générative pour les équipes informatiques et le pilotage d'une DSI, sur les tickets, scripts et procédures des participants : documentation et spécifications, support et post-mortems, scripts et code sous revue, comparaison des offres entreprise, réglages de sécurité, homologation des usages, compétences et agents. Outils : Microsoft Copilot, GitHub Copilot, ChatGPT et Codex, Claude et Claude Code, Gemini, Vibe et Vibe Code. Deux jours en intra, sur site ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Produire documentation, spécifications et procédures avec l'IA et les maintenir",
-   "Outiller le support et l'exploitation : réponses, incidents, post-mortems",
-   "Générer et documenter scripts et code sous revue humaine, avec des règles de propriété",
-   "Comparer et déployer les offres entreprise d'IA en lisant leurs garanties réelles",
-   "Poser une grille de sécurité par outil et par donnée, et une gouvernance des usages"
+   "Produire procédures et spécifications avec l'IA et les faire vérifier par un tiers",
+   "Répondre aux tickets et rédiger des post-mortems à partir d'une chronologie",
+   "Faire expliquer, documenter et tester des scripts sous revue humaine",
+   "Comparer les offres entreprise d'IA sur leurs contrats et régler leurs consoles",
+   "Homologuer un usage et tenir le registre des compétences et des agents"
   ],
-  "about": "Intelligence artificielle générative appliquée aux systèmes d'information et au pilotage DSI",
+  "about": "Intelligence artificielle générative appliquée aux systèmes d'information et au pilotage d'une DSI",
   "timeRequired": "PT14H",
   "duration": "PT14H",
   "prerequisites": "Culture technique du poste. Aucun prérequis en développement pour les usages assistés.",
-  "audience": "DSI, RSI, responsables IT, support et exploitation, chefs de projet SI, développeurs, RSSI",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "audience": "DSI, RSI, support et exploitation, administrateurs, chefs de projet SI, développeurs, RSSI",
+  "locationName": "Masteria : intra-entreprise, sur site (France, Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA informatique / DSI : outiller les équipes IT et piloter les usages de l'IA dans l'entreprise",
+  "headline": "Formation IA informatique / DSI : équiper les équipes IT et cadrer l'IA de l'entreprise",
   "datePublished": "2025-09-15",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -330,22 +335,26 @@ export default {
    },
    {
     "@type": "Thing",
-    "name": "Règlement général sur la protection des données",
-    "sameAs": "https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es"
+    "name": "Sécurité des systèmes d'information",
+    "sameAs": "https://fr.wikipedia.org/wiki/S%C3%A9curit%C3%A9_des_syst%C3%A8mes_d%27information"
    }
   ]
  },
  "citations": [
   {
-   "name": "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle",
+   "name": "EUR-Lex : texte officiel de l'AI Act, règlement 2024/1689",
    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
   },
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
-   "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
+   "name": "Microsoft Learn : modèles d'Anthropic dans Microsoft Copilot, réglage par l'administrateur",
+   "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor"
   },
   {
-   "name": "ANSSI, Agence nationale de la sécurité des systèmes d'information — cyber.gouv.fr",
+   "name": "Centre d'aide Mistral AI : vos conversations et l'entraînement",
+   "url": "https://help.mistral.ai/en/articles/347617-do-you-use-my-user-data-to-train-your-artificial-intelligence-models"
+  },
+  {
+   "name": "ANSSI, l'agence nationale de la sécurité des systèmes d'information",
    "url": "https://cyber.gouv.fr/"
   }
  ],
@@ -354,53 +363,112 @@ export default {
    "label": "Formation Claude Code",
    "href": "/formation-claude-code",
    "tag": "Développeurs",
-   "desc": "Le développement assisté par agent, en profondeur, pour les équipes qui codent."
+   "desc": "Le développement avec un agent, sur plusieurs jours."
   },
   {
    "label": "Formation vibe coding",
    "href": "/formation-vibe-coding",
-   "tag": "Non-développeurs",
-   "desc": "Créer un outil interne ou un prototype en langage naturel, avec le cadre sécurité de la DSI."
+   "tag": "Prototypes",
+   "desc": "Un outil interne construit en langage naturel, dans le cadre de la DSI."
   },
   {
    "label": "Formation Copilot informatique",
    "href": "/formation-copilot-informatique",
    "tag": "Par outil",
-   "desc": "Copilot Microsoft 365 et GitHub Copilot pour les équipes IT."
+   "desc": "Microsoft Copilot pour les équipes IT."
   },
   {
    "label": "Formation ChatGPT informatique",
    "href": "/formation-chatgpt-informatique",
    "tag": "Par outil",
-   "desc": "Approfondir ChatGPT pour l'IT : projets, GPTs personnalisés, analyse de fichiers, code."
+   "desc": "ChatGPT Business et Codex pour l'IT."
   },
   {
-   "label": "Formation gouvernance IA",
-   "href": "/formation-gouvernance-ia",
-   "tag": "Gouvernance",
-   "desc": "Construire le dispositif : registre des usages, charte, comité, gouvernance des données (DPO/DSI)."
+   "label": "Formation Gemini informatique",
+   "href": "/formation-gemini-informatique",
+   "tag": "Par outil",
+   "desc": "Gemini dans Workspace, côté administrateurs et équipes IT."
+  },
+  {
+   "label": "Formation Claude informatique",
+   "href": "/formation-claude-informatique",
+   "tag": "Par outil",
+   "desc": "Claude pour la documentation et le code."
+  },
+  {
+   "label": "Formation Mistral AI",
+   "href": "/formation-mistral-ai",
+   "tag": "Par outil",
+   "desc": "Vibe et Vibe Code, hébergement européen."
   },
   {
    "label": "Formation AI Act",
    "href": "/formation-ai-act",
    "tag": "Conformité",
-   "desc": "Ce que le règlement européen impose vraiment, et quand, avec le calendrier post-Omnibus."
+   "desc": "Obligations et échéances du règlement européen."
   },
   {
-   "label": "Conseil data & IA",
-   "href": "/conseil-data-ia",
-   "tag": "Conseil",
-   "desc": "Quand le sujet est la donnée : qualité, gouvernance, préparation pour des projets IA (RAG, agents)."
-  },
-  {
-   "label": "Quel outil IA ? (comparateur)",
+   "label": "Quel outil IA ?",
    "href": "/quel-outil-ia",
-   "tag": "Outils",
-   "desc": "Un premier tri des offres entreprise sur vos critères, en quelques minutes."
+   "tag": "Comparateur",
+   "desc": "Un premier tri des offres entreprise."
   }
  ],
+ "bibliotheque": "Un aperçu des ateliers, dès maintenant : la {/bibliotheque-de-prompts#informatique|bibliothèque de prompts pour l'informatique} rassemble des demandes prêtes à l'emploi pour comprendre du code hérité, analyser une trace d'erreur, écrire un plan de tests, documenter pour la personne qui arrive demain ou expliquer un choix technique à une direction. Chacune finit par une étape de vérification.",
+ "ctaMilieu": {
+  "titre": "Un programme taillé pour votre DSI",
+  "texte": "Dites-nous combien vous êtes, quelles licences vous avez et quel côté vous presse : sous 24 heures, nous vous envoyons programme, créneaux et devis."
+ },
+ "competences": {
+  "titre": "Six gestes professionnels, contrôlés à la fin",
+  "intro": "Chaque atelier poursuit un objectif, contrôlé en fin de parcours par une question qui lui est propre.",
+  "items": [
+   "Produire une procédure ou une spécification avec l'IA et la faire rejouer par un collègue",
+   "Répondre à un ticket et rédiger un post-mortem à partir d'une chronologie brute",
+   "Faire expliquer, commenter et tester un script avant toute mise en production",
+   "Comparer des offres entreprise sur leurs contrats et argumenter le choix par écrit",
+   "Régler les paramètres de sécurité d'une console et tenir la matrice données × outils",
+   "Transformer une procédure IT en compétence réutilisable et l'inscrire au registre"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Quel assistant pour une DSI : Copilot, Gemini, Claude, Vibe ou ChatGPT ?",
+  "intro": "Le parc décide souvent, la politique de données tranche le reste. Notre lecture de chaque outil pour l'informatique, à la date du 7 octobre 2026 :",
+  "lignes": [
+   {
+    "outil": "copilot",
+    "texte": "Dans un parc Microsoft 365, Copilot consulte la messagerie, les documents et les réunions auxquels chaque utilisateur a déjà accès : un partage SharePoint trop ouvert devient visible, d'où un audit avant l'ouverture. Le rôle d'administrateur IA évite de distribuer des droits globaux, et GitHub Copilot se licencie à part pour les développeurs. {/formation-copilot-informatique|Formation Copilot pour l'informatique}"
+   },
+   {
+    "outil": "chatgpt",
+    "texte": "Hors suite bureautique imposée, ChatGPT Business apporte des projets communs, Codex pour le code et, depuis le 1er octobre 2026, la gestion des plugins par l'administrateur, dans sa console. Le SSO SAML est inclus ; journaux d'audit et chiffrement sous vos propres clés supposent l'offre Enterprise. {/formation-chatgpt-informatique|Formation ChatGPT pour l'informatique}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude absorbe une documentation entière en une fois (un million de tokens, l'unité de découpage du texte, dans toute offre payante), et Claude Code exécute des tâches de développement depuis le terminal. En Team et en Enterprise, vos échanges restent hors de l'entraînement, sauf accord de votre part. {/formation-claude-informatique|Formation Claude pour l'informatique}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Sous Google Workspace, Gemini ouvre et modifie depuis le 5 octobre 2026 les fichiers Markdown de Drive et de Docs ; des connecteurs, ouverts à la mi-septembre, le relient notamment à Atlassian Rovo. En septembre 2026, les deux administrateurs Workspace du siège d'un {/etudes-de-cas-ia#mission-franchise-gemini|franchiseur B2B} ont consacré une journée à l'activation de Gemini, aux journaux de la console et à leur charte. {/formation-gemini-informatique|Formation Gemini pour l'informatique}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Vibe stocke d'office vos échanges sur des serveurs européens ; une refonte publiée le 22 septembre 2026 a fusionné la conversation et le travail en plusieurs étapes, et des Skills tiennent le rôle des anciens agents. Vibe Code accompagne les développeurs ; sur un compte Team, l'entraînement, actif à l'ouverture, se coupe depuis le panneau d'administration. {/formation-mistral-ai|Formation Mistral AI}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Qui anime la formation de votre DSI",
+  "texte": "Masteria, que Mathias Nizan a créée à Lyon en 2022, s'appuie sur une vingtaine de formateurs indépendants ; pour une DSI, Mathias retient celui qui connaît le mieux les systèmes d'information, ou anime la session en personne, et il en suit chaque étape. Dans un {/etudes-de-cas-ia#industrie|groupe de packaging aux sites européens, américains et indiens}, les équipes IT avaient choisi Copilot pour remplacer leur assistant conversationnel interne : le cadrage, mené avec le Data manager, a fixé le périmètre de l'outil (OneDrive et SharePoint, sans les serveurs partagés) avant de former deux groupes de managers pilotes, puis d'ouvrir d'autres sessions en septembre 2026."
+ },
+ "apres": {
+  "titre": "Quand la DSI veut un assistant branché sur ses propres sources",
+  "texte": "Après la formation, beaucoup de DSI passent à un projet : un assistant de support qui puise ses réponses dans votre base documentaire, un agent qui prépare les comptes rendus d'incident, une recherche documentaire branchée sur votre wiki. Nous en fixons ensemble le périmètre ; Masteria construit l'outil et l'intègre à votre système d'information. Le forfait de ce développement s'établit au terme du cadrage ; votre OPCO, lui, ne peut pas le financer."
+ },
+ "faqTitre": "Questions des DSI et des équipes IT",
  "cta": {
-  "h2": "Formons votre DSI sur ses deux versants",
-  "p": "Décrivez-nous votre DSI (équipes, SI, outils IA en place, demandes des métiers, contraintes de sécurité) et le versant qui vous presse. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Préparons la formation IA de votre DSI",
+  "p": "Décrivez l'équipe, vos licences, les usages déjà repérés et vos contraintes de sécurité. Sous un jour ouvré, un programme qui répartit les deux journées selon vos priorités vous parvient, accompagné de dates possibles, du devis et du dossier à transmettre à l'OPCO."
  }
 }

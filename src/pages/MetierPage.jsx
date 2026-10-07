@@ -34,6 +34,43 @@ const PROMPT_LIB_SLUGS = [
 ]
 import { METIER_FAQ } from '../data/metier-faq'
 import ApresLaFormation from '../components/ApresLaFormation'
+import CadrageLink from '../components/CadrageLink'
+
+/* ── MODE « PAGE PROPRE » ─────────────────────────────────────────────────────
+   Drapeau : `pagePropre: true` à la racine de src/data/metiers/<slug>.js.
+   Sans le drapeau, la page s'affiche exactement comme avant.
+   Avec le drapeau, le gabarit n'affiche plus de texte commun aux autres pages :
+   chaque bloc prend son texte dans le fichier du métier, ou disparaît si le champ manque.
+
+   Champs lus en mode propre (absent = bloc masqué) :
+   - bibliotheque : string, liens {/slug|libellé}       → bandeau « bibliothèque de prompts »
+   - choisirOutil : { titre, intro, lignes: [{ outil, label?, texte }] } → « Quel outil choisir ? »
+                    (outil : chatgpt | copilot | gemini | claude | mistral ; texte avec liens
+                    {/slug|libellé}). C'est ici que la page dit comment Gemini et Vibe servent
+                    le métier, pour les visiteurs des pages Gemini / Mistral fusionnées le 07/10.
+   - ctaMilieu    : { titre, texte }                   → bandeau bleu du milieu (bouton inchangé)
+   - competences  : { titre, intro, items: [string] }  → « Ce que vous saurez faire »
+   - equipe       : { titre, texte, reperes?: [[chiffre, libellé]] } → « Qui vous forme »
+   - apres        : { titre, texte }                   → « Après la formation » (remplace ApresLaFormation)
+   - faqTitre     : string                             → titre de la FAQ
+   - tarif.titre  : string                             → titre de la section tarif ;
+                    tarif.financement devient obligatoire (sinon la carte est masquée)
+   - base.deepDive, deepDiveTitle, deepDiveIntro       → bloc « IA par fonction » (le contenu
+                    historique METIER_CONTENT n'est plus lu en mode propre)
+   - cta : { h2, p } (champ existant)                   → CTA final
+   Masqués d'office : chiffres « +1 500 / OPCO / 2 jours », FounderNote, sous-titre de la FAQ,
+   ligne de réassurance du CTA final, cas d'usage des cartes outil, descriptions du maillage.
+   Balisés en <nav aria-label> (listes de liens, sans paragraphe) : formations par outil,
+   « Pour aller plus loin », autres métiers, offres de « Après la formation ».
+   OfficialSources passe en lean ; JSON-LD du programme sans tiret cadratin. */
+
+/* Offres liées depuis « Après la formation » en mode propre (libellés seuls, dans un <nav>). */
+const OFFRES_APRES = [
+  { Icon: FileSearch, label: 'Diagnostic IA', to: '/diagnostic-ia' },
+  { Icon: Wrench, label: 'Outils IA sur mesure', to: '/outils-ia-sur-mesure' },
+  { Icon: Code2, label: 'Agence de développement IA', to: '/agence-developpement-ia' },
+  { Icon: ClipboardCheck, label: 'Audit IA', to: '/audit-ia' },
+]
 
 // Icônes SVG par métier (lucide-react)
 const METIER_ICONS = {
@@ -424,11 +461,11 @@ function IconTile({ icon: Icon }) {
 }
 
 /* Rend un lien interne inline dans un texte enrichi : "…{/slug|libellé}…" */
-function RichText({ text }) {
+function RichText({ text, linkStyle = aStyle }) {
   const parts = String(text).split(/(\{\/[^|}]+\|[^}]+\})/g)
   return parts.map((part, i) => {
     const m = part.match(/^\{(\/[^|}]+)\|([^}]+)\}$/)
-    return m ? <Link key={i} to={m[1]} style={aStyle}>{m[2]}</Link> : <span key={i}>{part}</span>
+    return m ? <Link key={i} to={m[1]} style={linkStyle}>{m[2]}</Link> : <span key={i}>{part}</span>
   })
 }
 
@@ -503,16 +540,72 @@ function FaqItem({ q, a }) {
   )
 }
 
+/* Ligne « quel outil choisir » : pastille de l'outil + phrase (texte simple ou enrichi de liens). */
+function OutilLigne({ toolSlug, label, children }) {
+  const tc = TOOL_CONFIG[toolSlug]
+  if (!tc) return null
+  return (
+    <div style={{ background: '#fff', borderRadius: 10, padding: '16px 20px', border: '1px solid #E5E7EB', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
+      <div style={{ background: tc.bg, borderRadius: 8, padding: '6px 10px 6px 8px', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
+        <ToolLogo tool={toolSlug} size={20} color={tc.color} />
+        <span style={{ fontSize: 12, fontWeight: 700, color: tc.color }}>{label || tc.label}</span>
+      </div>
+      <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}>{children}</p>
+    </div>
+  )
+}
+
+/* « Après la formation » en mode propre : même rendu que ApresLaFormation, texte du guide,
+   offres en <nav> (libellés seuls, sans description commune aux autres pages). */
+function ApresPropre({ apres }) {
+  return (
+    <section aria-labelledby="apres-la-formation" style={{ padding: 'clamp(48px, 7vw, 80px) clamp(18px, 4vw, 40px)', background: '#EFF6FF', borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE' }}>
+      <div style={{ maxWidth: 1080, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: 'clamp(24px, 4vw, 56px)', alignItems: 'center' }}>
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 12, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: C, marginBottom: 14 }}>
+            <span aria-hidden="true" style={{ width: 22, height: 2, background: C }} /> Après la formation
+          </div>
+          <h2 id="apres-la-formation" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 30px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 14px' }}>
+            {apres.titre}
+          </h2>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 22px' }}><RichText text={apres.texte} /></p>
+          <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: C, color: '#fff', padding: '12px 20px', borderRadius: 10, textDecoration: 'none', fontSize: 14.5, fontWeight: 700 }}>
+            Réserver 30 minutes de cadrage <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+          </CadrageLink>
+        </div>
+        <nav aria-label="Conseil et développement IA">
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, background: '#fff', border: '1px solid #DBEAFE', borderRadius: 16, overflow: 'hidden' }}>
+            {OFFRES_APRES.map(({ Icon, label, to }, i) => (
+              <li key={to} style={{ borderTop: i > 0 ? '1px solid #E5E7EB' : 'none' }}>
+                <Link to={to} style={{ display: 'grid', gridTemplateColumns: '38px 1fr auto', gap: 14, alignItems: 'center', padding: '16px 18px', textDecoration: 'none' }}>
+                  <span aria-hidden="true" style={{ width: 38, height: 38, borderRadius: 10, background: C_LIGHT, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon size={18} strokeWidth={2} style={{ color: C }} />
+                  </span>
+                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A' }}>{label}</span>
+                  <ArrowRight size={16} strokeWidth={2.2} style={{ color: '#9CA3AF' }} aria-hidden="true" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </section>
+  )
+}
+
 export default function MetierPage({ enrichi: enrichiProp = null }) {
   const location = useLocation()
   const isDesktop = useIsDesktop()
   const metier = location.pathname.replace('/formation-ia-', '')
   /* Contenu enrichi fourni par la page-route (src/pages/metiers/<slug>.jsx) : un chunk par métier. */
   const enrichi = enrichiProp
+  // Page propre : chaque texte vient du fichier du métier (voir l'en-tête du gabarit)
+  const propre = Boolean(enrichi?.pagePropre)
   // Le contenu enrichi (src/data/metiers/<slug>.js) prime sur le contenu
   // historique ; un métier enrichi sans entrée historique reste valide.
+  // En mode propre, le contenu historique (METIER_CONTENT) n'est plus lu.
   const content = enrichi
-    ? { ...(METIER_CONTENT[metier] || {}), ...enrichi.base }
+    ? (propre ? { ...enrichi.base } : { ...(METIER_CONTENT[metier] || {}), ...enrichi.base })
     : METIER_CONTENT[metier]
   const metierData = METIERS.find(m => m.slug === metier)
 
@@ -533,6 +626,16 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
     return acc
   }, {})
   const toolSlugs = Object.keys(spokesByTool)
+  // Mode propre : le titre compte les formations réellement affichées (les Sprints n'ont pas de colonne outil)
+  const nbFormations = propre ? toolSlugs.reduce((n, t) => n + spokesByTool[t].length, 0) : spokes.length
+  // Mode propre : les listes de liens deviennent des <nav> (exclues de la mesure du texte propre)
+  const FormationsWrap = propre ? 'nav' : 'div'
+  const MaillageWrap = propre ? 'nav' : 'div'
+  const AutresWrap = propre ? 'nav' : 'div'
+  const skills = propre ? (enrichi.competences?.items || []) : (content.skills || [])
+  const equipeReperes = propre
+    ? (enrichi.equipe?.reperes || [])
+    : [['Depuis 2022', 'spécialisé uniquement IA'], ['+1 500', 'professionnels formés'], ['Qualiopi', 'actions de formation certifiées'], ['International', 'Europe, États-Unis, Inde']]
 
   // Autres métiers pour le maillage interne
   const otherMetiers = METIERS.filter(m => m.slug !== metier)
@@ -568,6 +671,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
 
   /* Blocs JSON-LD enrichis (GEO) : programme en ItemList, Article auteur/dates/entités. */
   const progText = items => items.map(it => (it && typeof it === 'object') ? `${it.t} : ${it.d || ''}`.trim() : it).join(' ; ')
+  const sepProg = propre ? ' · ' : ' — '
   /* Lexique GEO commun aux pages métier : mêmes notions sur chaque pilier. */
   const termsJsonLd = enrichi ? {
     '@context': 'https://schema.org',
@@ -588,8 +692,8 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
   if (termsJsonLd) extraJsonLd.push(termsJsonLd)
   const syllabusSections = enrichi?.programme?.length
     ? enrichi.programme.flatMap(j => [
-        { '@type': 'Syllabus', name: `${j.jour} · Matin — ${j.titre}`, description: progText(j.matin) },
-        { '@type': 'Syllabus', name: `${j.jour} · Après-midi — ${j.titre}`, description: progText(j.apresmidi) },
+        { '@type': 'Syllabus', name: `${j.jour} · Matin${sepProg}${j.titre}`, description: progText(j.matin) },
+        { '@type': 'Syllabus', name: `${j.jour} · Après-midi${sepProg}${j.titre}`, description: progText(j.apresmidi) },
       ])
     : undefined
   if (enrichi?.programme?.length) {
@@ -598,8 +702,8 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
       name: `Programme de la ${content.h1.split(':')[0].trim().toLowerCase()} Masteria`,
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
       itemListElement: enrichi.programme.flatMap((j, ji) => [
-        { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: progText(j.matin) },
-        { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi — ${j.titre}`, description: progText(j.apresmidi) },
+        { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin${sepProg}${j.titre}`, description: progText(j.matin) },
+        { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi${sepProg}${j.titre}`, description: progText(j.apresmidi) },
       ]),
     })
   }
@@ -874,7 +978,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
         <section id="tarif" style={{ padding: sectionPad, background: '#fff' }}>
           <div style={wrap}>
             <div style={kickerStyle}>Tarif et financement</div>
-            <h2 style={{ ...h2Style, maxWidth: 880 }}>Combien coûte la formation, et comment la financer ?</h2>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>{propre && enrichi.tarif.titre ? enrichi.tarif.titre : 'Combien coûte la formation, et comment la financer ?'}</h2>
             <p style={{ ...answerStyle }}><strong>{enrichi.tarif.answer}</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
               <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${C}` }}>
@@ -884,6 +988,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                 </div>
                 <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{enrichi.tarif.inclus}</p>
               </div>
+              {(!propre || enrichi.tarif.financement) && (
               <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${C}` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                   <Landmark size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
@@ -893,24 +998,31 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                   <RichText text={enrichi.tarif.financement || "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."} />
                 </p>
               </div>
+              )}
             </div>
           </div>
         </section>
       )}
 
       {/* ── BIBLIOTHÈQUE DE PROMPTS DU MÉTIER (maillage vers l'actif liable) ── */}
+      {(!propre || enrichi.bibliotheque) && (
       <section style={{ background: '#F9FAFB', padding: '30px 40px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-            <strong style={{ color: '#0A0A0A' }}>Avant même de vous former :</strong>{' '}
-            notre{' '}
-            <Link to={PROMPT_LIB_SLUGS.includes(metier) ? `/bibliotheque-de-prompts#${metier}` : '/bibliotheque-de-prompts'} style={{ color: '#2563EB', fontWeight: 600 }}>
-              bibliothèque de prompts {metierData.label.toLowerCase()}
-            </Link>{' '}
-            rassemble des prompts prêts à copier, tirés de nos formations, avec pour chacun la raison de sa construction.
+            {propre ? <RichText text={enrichi.bibliotheque} /> : (
+              <>
+                <strong style={{ color: '#0A0A0A' }}>Avant même de vous former :</strong>{' '}
+                notre{' '}
+                <Link to={PROMPT_LIB_SLUGS.includes(metier) ? `/bibliotheque-de-prompts#${metier}` : '/bibliotheque-de-prompts'} style={{ color: '#2563EB', fontWeight: 600 }}>
+                  bibliothèque de prompts {metierData.label.toLowerCase()}
+                </Link>{' '}
+                rassemble des prompts prêts à copier, tirés de nos formations, avec pour chacun la raison de sa construction.
+              </>
+            )}
           </p>
         </div>
       </section>
+      )}
 
       {/* ── IA PAR FONCTION MÉTIER (profondeur éditoriale + couverture sémantique) ── */}
       {content.deepDive && (
@@ -937,15 +1049,17 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
       )}
 
       {/* ── FORMATIONS PAR OUTIL (uniquement si le métier a des spokes) ── */}
-      {spokes.length > 0 && (
-      <section id="formations" style={{ padding: '80px 40px', background: '#fff' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
-            {spokes.length} formation{spokes.length > 1 ? 's' : ''} {metierData.label} disponible{spokes.length > 1 ? 's' : ''}
+      {(propre ? nbFormations : spokes.length) > 0 && (
+      <section id="formations"style={{ padding: '80px 40px', background: '#fff' }}>
+        <FormationsWrap {...(propre ? { 'aria-label': `Formations ${metierData.label} par outil` } : {})} style={{ maxWidth: 960, margin: '0 auto' }}>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 800, color: '#0A0A0A', marginBottom: propre ? 40 : 12 }}>
+            {nbFormations} formation{nbFormations > 1 ? 's' : ''} {metierData.label} disponible{nbFormations > 1 ? 's' : ''}
           </h2>
+          {!propre && (
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 56, maxWidth: 640 }}>
             Choisissez l'outil IA adapté à votre environnement de travail. Le programme et les exercices sont identiques dans leur exigence, seul l'outil change.
           </p>
+          )}
 
           {toolSlugs.map(toolSlug => {
             const tc = TOOL_CONFIG[toolSlug]
@@ -967,25 +1081,26 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                 {/* Cartes */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 20 }}>
                   {list.map(spoke => (
-                    <SpokeCard key={spoke.slug} spoke={spoke} tc={tc} />
+                    <SpokeCard key={spoke.slug} spoke={spoke} tc={tc} lean={propre} />
                   ))}
                 </div>
               </div>
             )
           })}
-        </div>
+        </FormationsWrap>
       </section>
       )}
 
       {/* ── CTA MILIEU DE PAGE ── */}
+      {(!propre || enrichi.ctaMilieu) && (
       <section style={{ padding: '48px 40px', background: 'linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)', color: '#fff' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
           <div style={{ flex: '1 1 360px' }}>
             <h2 style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', margin: 0, marginBottom: 8, lineHeight: 1.25 }}>
-              Former votre équipe {metierData.label.toLowerCase()} à l'IA&nbsp;?
+              {propre ? enrichi.ctaMilieu.titre : <>Former votre équipe {metierData.label.toLowerCase()} à l'IA&nbsp;?</>}
             </h2>
             <p style={{ fontSize: 15, opacity: 0.92, margin: 0, lineHeight: 1.6 }}>
-              Devis sous 24h · Certifié Qualiopi · Finançable OPCO · Intra ou accompagnement individuel
+              {propre ? enrichi.ctaMilieu.texte : 'Devis sous 24h · Certifié Qualiopi · Finançable OPCO · Intra ou accompagnement individuel'}
             </p>
           </div>
           <Link to="/contact" style={{ background: '#fff', color: '#2563EB', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 800, whiteSpace: 'nowrap' }}>
@@ -993,19 +1108,22 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           </Link>
         </div>
       </section>
+      )}
 
       {/* ── COMPÉTENCES ACQUISES ── */}
-      {content.skills?.length > 0 && (
+      {skills.length > 0 && (
         <section style={{ padding: '72px 40px', background: '#F9FAFB' }}>
           <div style={{ maxWidth: 960, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 30px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
-              Ce que vous saurez faire après la formation
+              {propre ? enrichi.competences.titre : 'Ce que vous saurez faire après la formation'}
             </h2>
-            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 36, maxWidth: 580 }}>
-              Des compétences concrètes, applicables dès le lendemain de la formation.
+            {(!propre || enrichi.competences.intro) && (
+            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 36, maxWidth: propre ? 720 : 580 }}>
+              {propre ? enrichi.competences.intro : 'Des compétences concrètes, applicables dès le lendemain de la formation.'}
             </p>
+            )}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 14 }}>
-              {content.skills.map((skill, i) => (
+              {skills.map((skill, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: 10, padding: '14px 18px', border: '1px solid #E5E7EB', display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <Check size={16} color="#10B981" strokeWidth={2.75} aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }} />
                   <span style={{ fontSize: 14, color: '#374151', lineHeight: 1.55, fontWeight: 500 }}>{skill}</span>
@@ -1016,8 +1134,24 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
         </section>
       )}
 
-      {/* ── QUEL OUTIL CHOISIR ? ── */}
-      {toolSlugs.length > 1 && (
+      {/* ── QUEL OUTIL CHOISIR ? (mode propre : titre, intro et lignes du guide, Gemini et Vibe compris) ── */}
+      {propre ? (enrichi.choisirOutil?.lignes?.length > 0 && (
+        <section id="choisir-outil" style={{ padding: '72px 40px', background: '#F9FAFB', scrollMarginTop: 96 }}>
+          <div style={{ maxWidth: 800, margin: '0 auto' }}>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 30px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
+              {enrichi.choisirOutil.titre}
+            </h2>
+            {enrichi.choisirOutil.intro && (
+              <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.75, marginBottom: 32 }}><RichText text={enrichi.choisirOutil.intro} /></p>
+            )}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+              {enrichi.choisirOutil.lignes.map(l => (
+                <OutilLigne key={l.outil} toolSlug={l.outil} label={l.label}><RichText text={l.texte} /></OutilLigne>
+              ))}
+            </div>
+          </div>
+        </section>
+      )) : toolSlugs.length > 1 && (
         <section style={{ padding: '72px 40px', background: '#F9FAFB' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 30px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
@@ -1032,30 +1166,21 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                 { toolSlug: 'copilot', when: "Votre équipe travaille dans Microsoft 365 au quotidien : Word, Excel, Outlook, Teams, PowerPoint. Copilot s'intègre directement dans vos outils." },
                 { toolSlug: 'gemini', when: "Votre entreprise est sur Google Workspace : Gmail, Docs, Sheets, Meet, Slides. Gemini est l'IA native de cet environnement." },
                 { toolSlug: 'claude', when: "Vous traitez des documents longs, des analyses complexes ou des textes qui requièrent rigueur et nuance. Claude est l'IA reconnue pour la qualité rédactionnelle et le raisonnement approfondi." },
-              ].filter(r => toolSlugs.includes(r.toolSlug)).map(row => {
-                const tc = TOOL_CONFIG[row.toolSlug]
-                return (
-                  <div key={row.toolSlug} style={{ background: '#fff', borderRadius: 10, padding: '16px 20px', border: '1px solid #E5E7EB', display: 'flex', gap: 16, alignItems: 'flex-start' }}>
-                    <div style={{ background: tc.bg, borderRadius: 8, padding: '6px 10px 6px 8px', flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <ToolLogo tool={row.toolSlug} size={20} color={tc.color} />
-                      <span style={{ fontSize: 12, fontWeight: 700, color: tc.color }}>{tc.label}</span>
-                    </div>
-                    <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}>{row.when}</p>
-                  </div>
-                )
-              })}
+              ].filter(r => toolSlugs.includes(r.toolSlug)).map(row => (
+                <OutilLigne key={row.toolSlug} toolSlug={row.toolSlug}>{row.when}</OutilLigne>
+              ))}
             </div>
           </div>
         </section>
       )}
 
-      {/* ── STATS + CONFIANCE ── */}
+      {/* ── STATS + CONFIANCE (masqué en mode propre) ── */}
+      {!propre && (
       <section style={{ background: '#F5F3EE', padding: '56px 40px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap' }}>
           {[
             { num: '+1 500', label: 'professionnels formés' },
-            { num: '98 %', label: 'taux de satisfaction' },
-            { num: '100 %', label: 'finançable OPCO' },
+            { num: 'OPCO', label: 'finançable selon votre branche' },
             { num: '2 jours', label: 'de formation intensive' },
           ].map(s => (
             <div key={s.num} style={{ textAlign: 'center' }}>
@@ -1065,51 +1190,53 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           ))}
         </div>
       </section>
+      )}
 
-      {/* ── E-E-A-T : qui vous forme (cabinet + réseau, preuves) ── */}
-      {enrichi && (
+      {/* ── E-E-A-T : qui vous forme (cabinet + réseau, preuves ; mode propre : texte du guide) ── */}
+      {enrichi && (!propre || enrichi.equipe) && (
         <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
           <div style={wrap}>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
               <div style={{ flex: '1 1 380px', minWidth: 300 }}>
                 <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui vous forme</div>
                 <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                  Un cabinet spécialisé IA, et des formateurs qui connaissent votre métier
+                  {propre ? enrichi.equipe.titre : 'Un cabinet spécialisé IA, et des formateurs qui connaissent votre métier'}
                 </h2>
                 <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                  Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues, choisis pour leur connaissance du métier formé. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                  {propre ? <RichText text={enrichi.equipe.texte} linkStyle={{ color: '#93C5FD', fontWeight: 600 }} /> : (
+                    <>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues, choisis pour leur connaissance du métier formé. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.</>
+                  )}
                 </p>
               </div>
+              {equipeReperes.length > 0 && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
-                {[
-                  ['Depuis 2022', 'spécialisé uniquement IA'],
-                  ['+1 500', 'professionnels formés'],
-                  ['Qualiopi', 'actions de formation certifiées'],
-                  ['International', 'Europe, États-Unis, Inde'],
-                ].map(([k, v]) => (
+                {equipeReperes.map(([k, v]) => (
                   <div key={k}>
                     <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
                     <div style={{ fontSize: 13, color: '#94A3B8', marginTop: 4 }}>{v}</div>
                   </div>
                 ))}
               </div>
+              )}
             </div>
           </div>
         </section>
       )}
 
-      <ApresLaFormation metierSlug={metier} />
+      {propre ? (enrichi.apres && <ApresPropre apres={enrichi.apres} />) : <ApresLaFormation metierSlug={metier} />}
 
       {/* ── FAQ ── */}
       {faqItems.length > 0 && (
         <section style={{ padding: '80px 40px', background: '#fff' }}>
           <div style={{ maxWidth: 800, margin: '0 auto' }}>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 32px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
-              Questions fréquentes, Formation IA {metierData.label}
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.5vw, 32px)', fontWeight: 800, color: '#0A0A0A', marginBottom: propre ? 32 : 10 }}>
+              {propre && enrichi.faqTitre ? enrichi.faqTitre : `Questions fréquentes, Formation IA ${metierData.label}`}
             </h2>
+            {!propre && (
             <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40, maxWidth: 560 }}>
               Tout ce que vous devez savoir avant de vous inscrire.
             </p>
+            )}
             <div>
               {faqItems.map((item, i) => (
                 <FaqItem key={i} q={item.q} a={item.a} />
@@ -1119,15 +1246,17 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
         </section>
       )}
 
-      {/* ── MAILLAGE ENRICHI (par outil, métiers voisins, ressources) ── */}
+      {/* ── MAILLAGE ENRICHI (par outil, métiers voisins, ressources ; <nav> sans descriptions en mode propre) ── */}
       {enrichi?.maillage?.length > 0 && (
         <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
-          <div style={wrap}>
+          <MaillageWrap {...(propre ? { 'aria-label': 'Pour aller plus loin' } : {})} style={wrap}>
             <div style={kickerStyle}>Pour aller plus loin</div>
-            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Approfondir par outil, ou élargir</h2>
+            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)', ...(propre ? { marginBottom: 28 } : {}) }}>Approfondir par outil, ou élargir</h2>
+            {!propre && (
             <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
               La formation métier compare les outils ; les formations par outil approfondissent celui que votre équipe a retenu.
             </p>
+            )}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
               {enrichi.maillage.map(rel => (
                 <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
@@ -1136,25 +1265,27 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                     onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
                     <div style={{ display: 'inline-block', background: C_LIGHT, color: C, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>{rel.tag}</div>
                     <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>{rel.label}</h3>
-                    <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
+                    {!propre && <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>}
                     <span style={{ fontSize: 13, color: C, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>En savoir plus<ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" /></span>
                   </div>
                 </Link>
               ))}
             </div>
-          </div>
+          </MaillageWrap>
         </section>
       )}
 
-      {/* ── AUTRES MÉTIERS ── */}
+      {/* ── AUTRES MÉTIERS (<nav> sans paragraphe en mode propre) ── */}
       <section style={{ padding: '72px 40px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto' }}>
-          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2.5vw, 26px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>
+        <AutresWrap {...(propre ? { 'aria-label': 'Autres métiers' } : {})} style={{ maxWidth: 960, margin: '0 auto' }}>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2.5vw, 26px)', fontWeight: 800, color: '#0A0A0A', marginBottom: propre ? 24 : 10 }}>
             Explorer d'autres métiers
           </h2>
+          {!propre && (
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 28 }}>
             Former plusieurs équipes ? Chaque formation est adaptée aux cas d'usage spécifiques de chaque fonction.
           </p>
+          )}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: 12 }}>
             {otherMetiers.map(m => (
               <Link key={m.slug} to={`/formation-ia-${m.slug}`} style={{ textDecoration: 'none' }}>
@@ -1168,11 +1299,11 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
               </Link>
             ))}
           </div>
-        </div>
+        </AutresWrap>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── LE FONDATEUR (E-E-A-T ; masqué en mode propre) ── */}
+      {!propre && <FounderNote />}
 
       {/* ── CTA ── */}
       <section style={{ background: '#F5F3EE', color: '#0A0A0A', padding: '80px 40px', textAlign: 'center' }}>
@@ -1183,22 +1314,24 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <p style={{ color: '#4B5563', fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>
             {enrichi?.cta?.p || "Dites-nous votre environnement de travail et le profil de vos participants. On vous recommande la formation la plus adaptée sous 24 heures."}
           </p>
-          <Link to="/contact" style={{ display: 'inline-block', background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: 20 }}>
+          <Link to="/contact" style={{ display: 'inline-block', background: '#2563EB', color: '#fff', padding: '14px 32px', borderRadius: 8, textDecoration: 'none', fontSize: 16, fontWeight: 700, marginBottom: propre ? 0 : 20 }}>
             Contacter notre équipe →
           </Link>
+          {!propre && (
           <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Certifié Qualiopi · Finançable OPCO · +1 500 professionnels formés · 98 % de satisfaction
+            Certifié Qualiopi · Finançable OPCO · +1 500 professionnels formés
           </p>
+          )}
         </div>
       </section>
 
-      <OfficialSources extra={enrichi?.citations} />
+      <OfficialSources extra={enrichi?.citations} lean={propre} />
     </>
   )
 }
 
 // ─── Carte formation ─────────────────────────────────────────────────────────
-function SpokeCard({ spoke, tc }) {
+function SpokeCard({ spoke, tc, lean = false }) {
   const [hovered, setHovered] = useState(false)
 
   // Extraire 3 cas d'usage, toujours convertir en string (useCases et useCasesRaw peuvent être des objets).
@@ -1206,7 +1339,9 @@ function SpokeCard({ spoke, tc }) {
   const toStr = u => stripLeadingEmoji(typeof u === 'string' ? u : (u?.title || u?.desc || ''))
   const rawUC = (spoke.useCasesRaw || []).slice(0, 3).map(toStr).filter(Boolean)
   const objUC = (spoke.useCases || []).slice(0, 3).map(toStr).filter(Boolean)
-  const displayUC = rawUC.length ? rawUC : objUC
+  // Mode propre (lean) : pas de cas d'usage (texte de la page outil, déjà publié là-bas), durée exacte
+  const displayUC = lean ? [] : (rawUC.length ? rawUC : objUC)
+  const duree = lean && spoke.duration === '1j' ? '1 jour' : '2 jours'
 
   return (
     <div
@@ -1230,7 +1365,7 @@ function SpokeCard({ spoke, tc }) {
             {spoke.h1}
           </h3>
           <span style={{ background: '#fff', color: tc.color, padding: '2px 8px', borderRadius: 99, fontSize: 11, fontWeight: 700, flexShrink: 0, border: `1px solid ${tc.color}33` }}>
-            2 jours
+            {duree}
           </span>
         </div>
       </div>

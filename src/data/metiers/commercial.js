@@ -1,167 +1,169 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-commercial (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA commercial : prospection, propositions, RDV | Masteria",
-  "metaDesc": "Formation IA commercial sur vos vrais comptes : prospection, préparation de RDV, propositions, relances, CRM. ChatGPT, Copilot, Claude, Gemini, Mistral. Qualiopi, finançable OPCO.",
+  "metaTitle": "Formation IA commercial : prospecter et vendre | Masteria",
+  "metaDesc": "Formation IA commercial sur vos comptes : prospection, rendez-vous, propositions, relances, CRM. ChatGPT, Copilot, Claude, Gemini, Vibe. Qualiopi, OPCO.",
   "keywords": "formation ia commercial, formation ia commerciaux, formation intelligence artificielle vente, formation ia pour équipe commerciale, formation ia prospection",
   "h1": "Formation IA commercial : l'IA générative sur tout votre cycle de vente",
   "h1a": "Formation IA commercial :",
   "h1b": "l'IA générative sur tout votre cycle de vente",
   "eyebrow": "Formation métier · Commercial",
   "badge3": "Sur vos comptes, vos offres et votre CRM",
-  "geo": "La formation IA commercial de Masteria apprend à vos équipes de vente à intégrer l'intelligence artificielle générative dans chaque étape du cycle : prospection, préparation de rendez-vous, propositions, relances, CRM, négociation, sur vos propres comptes et vos vraies offres. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "La vente est le métier où l'IA fait le plus gagner de temps sur la préparation, et celui où le générique se paie le plus cher : un mail de prospection standard finit à la corbeille. La formation ne se limite pas à « savoir prompter » : elle apprend à rechercher, personnaliser, vérifier et suivre, pour que la vitesse serve la relation au lieu de la dégrader.",
-  "intro": "La formation IA commercial de Masteria apprend à vos équipes de vente à intégrer l'intelligence artificielle générative dans chaque étape du cycle : prospection, préparation de rendez-vous, propositions, relances, CRM, négociation, sur vos propres comptes et vos vraies offres. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO."
+  "geo": "La formation IA commercial de Masteria donne à vos vendeurs une méthode pour se servir de l'IA générative du premier contact jusqu'à la signature : ciblage d'un compte, brief de rendez-vous, proposition, relance, compte rendu dans le CRM, répétition d'une négociation. Deux journées en intra, bâties sur vos comptes et vos offres, avec l'outil de votre équipe : Claude, Gemini, ChatGPT, Vibe ou Microsoft Copilot (anciennement Microsoft 365 Copilot). L'action est certifiée Qualiopi ; son financement relève de votre OPCO, d'après ses propres critères.",
+  "sub": "Un vendeur récupère surtout du temps sur la préparation : la recherche sur un compte, le brief avant le rendez-vous, la première version d'une proposition. La vente punit pourtant le message passe-partout plus durement que tout autre métier, car il finit à la corbeille et grille le contact. Les deux journées apprennent à chercher, personnaliser, vérifier et suivre, pour que la vitesse profite à la relation avec l'acheteur.",
+  "intro": "La formation IA commercial de Masteria donne à vos vendeurs une méthode pour se servir de l'IA générative du premier contact jusqu'à la signature, sur vos comptes et vos offres, en deux journées certifiées Qualiopi."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré"
+   "value": "14 heures réparties sur deux jours en intra ; une seule journée si l'équipe se concentre sur la prospection et les rendez-vous"
   },
   {
    "label": "Pour qui",
-   "value": "Équipes commerciales : commerciaux terrain et sédentaires, business developers, key account managers, directeurs commerciaux"
+   "value": "Vendeurs terrain et sédentaires, business developers et SDR, key account managers, directions commerciales"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec votre CRM"
+   "value": "Ceux de votre équipe, à côté de votre CRM : Copilot, ChatGPT, Vibe (anciennement Le Chat), Gemini ou Claude"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos comptes, vos offres et vos vrais rendez-vous, jamais sur des exemples génériques"
+   "value": "Les ateliers partent de vos comptes cibles, de vos offres et des rendez-vous prévus dans les semaines qui viennent"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, cadre d'usage données clients"
+   "value": "Prompts de vente classés par étape, gabarits de proposition et de relance, règles d'usage des données clients"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Votre OPCO peut prendre en charge cette formation certifiée Qualiopi ; le montant dépend de ses fonds"
   }
  ],
  "missionsHead": {
   "kicker": "Étape par étape",
-  "h2": "Que change l'IA dans le travail d'un commercial ?",
-  "answer": "L'IA générative touche six étapes du cycle de vente : la prospection et le ciblage, la préparation des rendez-vous, les propositions commerciales, les relances et séquences, le CRM et les comptes rendus, la négociation. Dans chacune, elle accélère la préparation et le premier jet ; la valeur reste dans la personnalisation, la vérification et la relation, que la formation travaille autant que la production.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre équipe au cadrage. Si votre besoin est un agent IA qui qualifie ou relance à votre place, c'est une solution à développer : voyez notre page {/agent-commercial-ia|agent commercial IA}."
+  "h2": "Où l'IA intervient dans un cycle de vente",
+  "answer": "Six moments du cycle profitent de l'IA générative : cibler et étudier un compte, préparer le rendez-vous, écrire la proposition, relancer, tenir le CRM, se préparer à négocier. À chaque fois elle se charge de chercher et d'écrire un brouillon, le commercial garde la personnalisation, le contrôle des faits et la relation, et la formation passe autant de temps sur ces trois gestes que sur la production.",
+  "foot": "Le cadrage règle le temps donné à chaque étape d'après votre équipe. Vous cherchez plutôt un agent capable de trier les demandes entrantes ou de relancer à votre place ? Il se construit sur mesure : voyez la page {/agent-commercial-ia|agent commercial IA}."
  },
  "missions": [
   {
    "icon": "Search",
    "title": "Prospection et ciblage",
-   "desc": "Recherche d'un compte, lecture de son actualité, identification des enjeux probables et des interlocuteurs : l'IA prépare en dix minutes ce qui prenait une heure. La formation apprend à cadrer cette recherche et à en vérifier les sorties, car une info fausse dans un mail de prospection se paie cash."
+   "desc": "Actualité d'un compte, organisation, enjeux probables, décideurs : l'IA rassemble en dix minutes ce qui réclamait une heure de recherche. On apprend à cadrer la demande et à contrôler chaque information, parce qu'un fait erroné dans un premier message ferme la porte du prospect."
   },
   {
    "icon": "CalendarCheck",
    "title": "Préparation de rendez-vous",
-   "desc": "Synthèse de l'historique du compte, hypothèses de besoins, questions de découverte, objections probables et réponses : le brief de rendez-vous se construit avec l'IA à partir de vos notes et de vos échanges. Le commercial arrive préparé, et garde l'écoute pour la vraie découverte."
+   "desc": "Historique du compte résumé, besoins supposés, questions de découverte, objections attendues avec leur réponse : le brief se bâtit avec l'IA en s'appuyant sur vos notes et les mails échangés. Le vendeur arrive préparé et consacre le rendez-vous à écouter son client."
   },
   {
    "icon": "FileText",
    "title": "Propositions commerciales",
-   "desc": "À partir de votre trame et du compte rendu de découverte, l'IA produit un premier jet de proposition adapté aux enjeux du prospect, que le commercial affine. Le gain se joue autant sur le temps que sur la personnalisation : chaque proposition parle du client, pas de vous."
+   "desc": "Votre trame et le compte rendu de découverte suffisent à l'IA pour écrire une première version tournée vers les enjeux de l'acheteur, que le commercial reprend ensuite. Le temps gagné compte, la personnalisation encore davantage : la proposition parle du client et de son problème."
   },
   {
    "icon": "RefreshCw",
    "title": "Relances et séquences",
-   "desc": "Séquences de relance multicanal adaptées au profil et à l'étape du cycle, reformulations, variantes de ton, timing : l'IA écrit les variantes, le commercial choisit et personnalise. Avec la règle d'or : jamais un mail envoyé sans relecture humaine."
+   "desc": "Séquences multicanal calées sur le profil et l'étape, variantes de ton, rythme d'envoi : l'IA écrit les options, le commercial choisit et ajuste. Une règle vaut pour toute l'équipe, sans exception : aucun message ne part sans relecture humaine."
   },
   {
    "icon": "Database",
    "title": "CRM et comptes rendus",
-   "desc": "Compte rendu de rendez-vous structuré à partir de notes brutes ou d'une transcription, actions de suivi, mise à jour du CRM : la partie administrative de la vente, celle que les équipes repoussent, se fait en sortant du rendez-vous. Le pipeline devient enfin à jour."
+   "desc": "Des notes prises à la volée, ou la transcription d'une réunion, deviennent un compte rendu avec les actions et la prochaine étape, prêt à saisir dans le CRM. La tâche que chacun repousse se règle en sortant du rendez-vous, et le pipeline décrit enfin la situation du moment."
   },
   {
    "icon": "Handshake",
    "title": "Négociation et objections",
-   "desc": "Entraînement aux objections en jeu de rôle avec l'IA, préparation des arguments de valeur, simulation d'une négociation difficile avant la vraie. Un exercice que peu d'équipes font, faute d'interlocuteur disponible : l'IA en est un, à toute heure."
+   "desc": "Jeu de rôle face à un acheteur simulé, arguments de valeur préparés, répétition d'une négociation tendue avant de la mener pour de bon. Peu d'équipes s'entraînent, faute de partenaire libre au bon moment ; l'IA en tient le rôle à n'importe quelle heure."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une équipe commerciale",
-  "answer": "Six gains : une prospection mieux ciblée et personnalisée, des rendez-vous préparés en profondeur, des propositions commerciales rédigées à partir du besoin réel, des relances qui ne se ressemblent pas, un CRM enfin à jour, et une préparation des objections et de la négociation qui fait gagner en assurance.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut inventer une référence client, une fonctionnalité ou un chiffre. Vérifiez chaque fait avant qu'il n'engage, gardez la relation et le closing humains : le reste, elle le fait remarquablement bien."
+  "kicker": "Les gains",
+  "h2": "Les bénéfices de l'IA générative côté force de vente",
+  "answer": "Une prospection mieux ciblée, des rendez-vous préparés en profondeur, des propositions écrites à partir du besoin exprimé, des relances qui apportent chacune une information nouvelle, un CRM à jour et une négociation répétée à l'avance : six bénéfices que la formation installe sur vos propres comptes.",
+  "foot": "Une limite reste à garder en tête : l'IA peut inventer une référence client, une fonctionnalité ou un chiffre. Chaque fait qui engage l'entreprise se vérifie avant l'envoi, la relation et la signature restent l'affaire du commercial, et sur ce périmètre les bénéfices tiennent dans la durée."
  },
  "atouts": [
   {
-   "title": "Une prospection ciblée, sans copier-coller",
-   "desc": "Recherche sur un compte, un secteur, un décideur ; premier message personnalisé à partir d'un signal réel (actualité, recrutement, appel d'offres) ; séquences déclinées par persona. Plus de messages pertinents, moins de messages génériques."
+   "title": "Une prospection ciblée et personnelle",
+   "desc": "Recherche sur un compte, un secteur ou un décideur, premier message accroché à un signal vérifiable (actualité, recrutement, appel d'offres), séquences déclinées par persona. Les messages pertinents se multiplient, les envois génériques se raréfient."
   },
   {
-   "title": "Des rendez-vous préparés en profondeur",
-   "desc": "Fiche de compte, enjeux du secteur, questions de découverte, hypothèses de besoin, points d'attention : la préparation d'un rendez-vous prend quelques minutes au lieu d'une heure, et vous arrivez avec un plan."
+   "title": "Des rendez-vous préparés à fond",
+   "desc": "Fiche de compte, enjeux du secteur, questions de découverte, hypothèses de besoin, points de vigilance : un quart d'heure de préparation remplace l'heure de recherche, et vous entrez en rendez-vous avec un plan précis."
   },
   {
    "title": "Des propositions qui partent du besoin",
-   "desc": "À partir de vos notes de découverte et de vos gabarits, une proposition structurée, argumentée dans le vocabulaire du client, avec ses options et ses réponses aux objections déjà entendues. Le fond reste le vôtre, la mise en forme s'accélère."
+   "desc": "Vos notes de découverte et vos gabarits donnent une proposition structurée, argumentée avec les mots du client, ses options et la réponse aux objections déjà entendues. Le fond vous appartient, seule la mise en forme s'accélère."
   },
   {
-   "title": "Des relances qui ne se ressemblent pas",
-   "desc": "Relance après devis, après rendez-vous, après silence : chaque message apporte un élément nouveau (cas client, contenu, question) plutôt qu'un simple rappel, dans un ton calibré selon l'interlocuteur."
+   "title": "Des relances qui apportent du neuf",
+   "desc": "Après un devis, un rendez-vous ou un long silence, chaque relance apporte un élément nouveau (un cas client, un contenu, une question), sur un ton ajusté à l'interlocuteur."
   },
   {
-   "title": "Un CRM enfin à jour",
-   "desc": "Compte rendu de rendez-vous dicté ou pris en notes puis structuré en quelques secondes, prochaines étapes extraites, fiche client mise à jour. Le pipeline reflète la réalité et le manager pilote sur des données fraîches."
+   "title": "Un CRM tenu à jour",
+   "desc": "Un compte rendu dicté ou griffonné prend forme en quelques secondes, les prochaines étapes en sont extraites et la fiche client se complète. Le pipeline décrit la situation du jour, et le manager pilote sur des données fraîches."
   },
   {
-   "title": "Une négociation mieux préparée",
-   "desc": "Simulation d'objections, arguments et contre-arguments, scénarios de concession, préparation d'un comité d'achat : l'IA joue le client difficile avant que vous ne le rencontriez."
+   "title": "Une négociation répétée avant le jour J",
+   "desc": "Objections simulées, contre-arguments, scénarios de concession, préparation d'un comité d'achat : l'IA joue le client exigeant avant que vous ne le rencontriez autour de la table."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA commercial sur 2 jours",
-  "answer": "Jour 1 : ce que les modèles font et ne font pas en vente B2B, le panorama des outils, la demande efficace sur un mail de prospection, votre offre et vos personas encodés dans les instructions personnalisées, puis les ateliers approche personnalisée, préparation de rendez-vous et négociation en jeu de rôle, un Projet partagé sur un compte clé et le cadre d'usage des données clients. Jour 2 : la proposition commerciale co-éditée, les séquences de relance, le compte rendu de rendez-vous et le CRM, l'analyse de pipeline, la recherche approfondie, puis les compétences (Skills), les assistants et agents, les tâches planifiées, la gouvernance et votre plan d'action.",
-  "foot": "Le programme s'ajuste au cadrage : une équipe de prospection approfondit le jour 1, des key account managers la proposition, le pipeline et les agents du jour 2 ; la version 1 jour garde les fondamentaux, l'offre encodée, le Projet partagé et deux ateliers au choix. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Deux jours de formation IA commercial, matin et après-midi",
+  "answer": "Le premier jour pose les bases sur un cas de prospection : les capacités des modèles en vente B2B, quel outil pour quelle étape, la méthode de demande appliquée à un mail d'approche, votre offre et vos personas rangés dans les instructions, puis trois ateliers (approche, brief de rendez-vous, négociation), un Projet partagé par compte clé et les règles sur les données clients. Le second jour passe à la proposition écrite à plusieurs, aux relances, au compte rendu, à la revue de pipeline et à la recherche sur un grand compte, avant les compétences (Skills), les assistants, la planification de tâches, les règles de gouvernance et un plan d'action pour l'équipe.",
+  "foot": "Le contenu bouge au cadrage : une équipe de prospection s'attarde sur le premier jour, des key account managers sur la proposition, le pipeline et les agents. La version d'une journée conserve les bases, l'offre encodée, un Projet partagé ainsi que deux ateliers choisis par l'équipe. Les fonctions citées ont été revues le 7 octobre 2026 ; celles que vos licences n'ouvrent pas encore sont montrées en démonstration, puis reproduites avec les outils dont vous disposez."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Fondamentaux, prospection et préparation de rendez-vous",
+   "titre": "Bases, prospection et préparation des rendez-vous",
    "matin": [
     {
-     "t": "Ce que les modèles font en vente B2B",
-     "d": "Capacités : rechercher un compte, structurer un brief de rendez-vous, rédiger une approche, jouer un acheteur en objection. Limites : une actualité, un chiffre ou un interlocuteur inventés, à vérifier avant d'écrire au client. Ce qui engage : le prix, la remise, l'engagement contractuel, tout mail envoyé."
+     "t": "Ce que l'IA sait faire en vente B2B",
+     "d": "Elle sait chercher un compte, structurer un brief, rédiger une approche, jouer un acheteur qui objecte. Elle peut aussi inventer une actualité, un chiffre ou un interlocuteur, d'où la vérification avant tout envoi. Les décisions qui engagent restent au commercial : prix, remise, engagement contractuel, message envoyé."
     },
     {
-     "t": "Panorama des outils du commercial",
-     "d": "ChatGPT Business, Microsoft 365 Copilot dans Outlook et Teams, Claude, Gemini dans Gmail et Meet, Vibe (anciennement Le Chat) : lequel pour quelle étape du cycle, comment ils s'articulent en lecture avec votre CRM, où vont les données. Offres entreprise uniquement pour un fichier client."
+     "t": "Quel outil pour quelle étape du cycle",
+     "d": "Gemini dans Gmail et Meet, Microsoft Copilot dans Outlook et Teams, ChatGPT Business, Claude, Vibe de Mistral : la force de chacun selon l'étape, sa façon de lire votre CRM, la destination des données saisies. Pour un fichier client, seules les offres entreprise conviennent."
     },
     {
-     "t": "La demande efficace sur un mail de prospection",
-     "d": "Contexte du compte, rôle, format, exemples tirés de vos meilleurs mails, itération, relecture : la méthode s'exerce sur un mail d'approche vers un prospect réel. On compare le premier jet à votre meilleure version, et le mail générique est le premier défaut que l'équipe apprend à repérer."
+     "t": "Une méthode de demande, testée sur un mail d'approche",
+     "d": "On donne le contexte du compte, le rôle attendu, le format, un ou deux de vos meilleurs mails en modèle, puis on itère et on relit. L'exercice porte sur un prospect que l'équipe vise en ce moment ; le premier jet est confronté à votre meilleure version, et le message passe-partout devient le premier défaut repéré."
     },
     {
-     "t": "Encoder votre offre et vos personas",
-     "d": "Instructions personnalisées et mémoire : votre offre, vos personas acheteurs (DAF, DSI, directeur des opérations selon vos cibles), vos références, votre ton, la structure de vos propositions et les formulations interdites. Chaque mail, brief et proposition part ensuite de ce socle commun à l'équipe."
+     "t": "Votre offre et vos personas dans les instructions",
+     "d": "Instructions personnalisées et mémoire reçoivent votre offre, vos acheteurs types (DAF, DSI, directeur des opérations selon vos cibles), vos références, votre ton, le plan de vos propositions et les formulations bannies. Mails, briefs et propositions partent ensuite de ce socle, le même pour toute l'équipe."
     },
     {
-     "t": "Premier atelier sur une fiche compte",
-     "d": "Rechercher un compte cible réel : actualité récente, organisation, enjeux probables, interlocuteurs et leur rôle dans la décision, puis produire la fiche compte dans votre format. Chaque information est vérifiée à la source avant d'entrer dans le CRM ou dans un mail."
+     "t": "Atelier fiche compte",
+     "d": "Sur un compte cible choisi par l'équipe : actualité récente, organisation, enjeux probables, décideurs et place de chacun dans l'achat, le tout mis en forme dans votre modèle de fiche. Rien n'entre dans le CRM ni dans un mail avant d'avoir été recoupé à la source."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier approche personnalisée",
-     "d": "À partir de la fiche compte, rédiger le mail ou le message d'approche : accroche ancrée dans l'actualité du prospect, proposition de valeur liée à son enjeu, trois variantes de ton et de longueur. Le commercial choisit, personnalise et relit ; aucun message ne part avant ce passage."
+     "t": "Atelier message d'approche",
+     "d": "La fiche compte nourrit le premier message : une accroche tirée de l'actualité du prospect, une proposition de valeur reliée à son enjeu, trois versions de ton et de longueur. Le commercial choisit, personnalise et relit, et rien ne part avant ce passage."
     },
     {
-     "t": "Atelier préparation de rendez-vous",
-     "d": "À partir de l'historique du compte (notes, mails, export CRM), construire le brief : synthèse de la relation, hypothèses de besoins, questions de découverte, objections probables et réponses préparées. Le commercial arrive préparé et garde l'écoute pour la vraie découverte en rendez-vous."
+     "t": "Atelier brief de rendez-vous",
+     "d": "Notes, mails et export du CRM sur un compte donnent le brief : où en est la relation, quels besoins supposer, quelles questions poser, quelles objections attendre et comment y répondre. Le vendeur arrive avec un plan et réserve son attention à la découverte."
     },
     {
-     "t": "Atelier négociation en jeu de rôle",
-     "d": "Le modèle joue l'acheteur (directeur achats, DSI, dirigeant de PME selon le compte) et oppose les objections habituelles sur le prix, le calendrier et la concurrence ; le commercial s'entraîne à tenir sa valeur. Simulation d'une négociation difficile avant la vraie, puis débrief collectif."
+     "t": "Atelier négociation face à un acheteur simulé",
+     "d": "Le modèle prend le rôle du directeur achats, du DSI ou du dirigeant de PME selon le compte, et oppose les objections habituelles sur le prix, le calendrier et la concurrence. Le commercial s'exerce à défendre sa valeur, puis le groupe tire les leçons de l'échange."
     },
     {
-     "t": "Un Projet partagé pour un compte clé",
-     "d": "Projet partagé ChatGPT, Projet Claude ou Projet et Bibliothèque dans Vibe : instructions communes, plaquettes, grille tarifaire, études de cas, comptes rendus de rendez-vous, mémoire propre au compte, droits de lecture et d'écriture. Le key account manager et l'avant-vente travaillent au même endroit."
+     "t": "Un Projet partagé par compte clé",
+     "d": "Projet partagé dans ChatGPT, Bibliothèque et projet dans Vibe, Projet Claude : consignes communes, plaquettes, grille tarifaire, cas clients, comptes rendus de rendez-vous et droits d'accès. Key account manager et avant-vente travaillent sur un seul dossier, avec la même mémoire du compte."
     },
     {
-     "t": "Cadre d'usage des données clients",
-     "d": "RGPD par outil et par type de donnée, ce que le RGPD impose en prospection B2B, confidentialité des offres et des remises, Copilot Chat qui lit OneDrive et SharePoint avec vos droits existants. Relecture avant envoi : l'information fausse, le générique, le hors-ton, le chiffre qui engage."
+     "t": "Règles d'usage des données clients",
+     "d": "Ce que le RGPD demande en prospection B2B, quelle donnée va dans quel outil, confidentialité des offres et des remises, licence Microsoft Copilot qui lit vos mails et vos fichiers SharePoint selon les droits déjà accordés. La grille de relecture repère l'information fausse, le passe-partout, le ton déplacé et le chiffre qui engage."
     }
    ]
   },
@@ -170,133 +172,134 @@ export default {
    "titre": "Propositions, relances, CRM, pipeline, compétences et agents",
    "matin": [
     {
-     "t": "Atelier proposition commerciale co-éditée",
-     "d": "De votre trame et du compte rendu de découverte au premier jet personnalisé, qui parle du client. La proposition se rédige à plusieurs dans Canvas, Artifacts ou Copilot Pages, puis Claude ou Copilot dans Word produisent le document final ; prix et engagements relus avant envoi."
+     "t": "Atelier proposition écrite à plusieurs",
+     "d": "Votre trame et le compte rendu de découverte donnent une première version qui parle du client. L'équipe la reprend ensemble dans les Artifacts de Claude ou dans Copilot Pages, puis « Modifier avec Copilot » dans Word, ou Claude, produit le document final. Prix et engagements sont relus avant tout envoi."
     },
     {
-     "t": "Atelier séquences de relance",
-     "d": "Séquences multicanal par persona et par étape du cycle, variantes de ton, timing, reformulation d'une relance restée ignorée. Copilot dans Outlook et Gemini dans Gmail rédigent et résument les échanges depuis la boîte mail ; le commercial choisit la variante et la personnalise avant envoi."
+     "t": "Atelier relances",
+     "d": "Séquences par persona et par étape, variantes de ton, rythme, réécriture d'une relance restée sans réponse. Gemini dans Gmail comme Copilot dans Outlook résument le fil et proposent un brouillon depuis la boîte mail ; Copilot Cowork, ouvert aux comptes professionnels fin septembre 2026, prépare une relance planifiée et demande votre accord avant chaque envoi."
     },
     {
      "t": "Atelier compte rendu et CRM",
-     "d": "Des notes brutes ou du récapitulatif de réunion de Copilot dans Teams ou de Gemini dans Meet au compte rendu structuré : décisions, actions, prochaine étape, champs du CRM préparés. La saisie reste dans votre CRM ; l'écriture automatique relève d'un projet d'intégration chiffré à part."
+     "d": "Des notes brutes, ou le récapitulatif produit par Copilot dans Teams ou par Gemini dans Meet, deviennent un compte rendu : décisions, actions, prochaine étape, champs du CRM préremplis. La saisie reste dans votre CRM ; l'écriture automatique demande un projet d'intégration, chiffré séparément."
     },
     {
-     "t": "Analyse de pipeline sur un export CRM",
-     "d": "Sur un export propre de votre CRM, Copilot dans Excel ou l'analyse de données de ChatGPT et de Claude préparent la revue de portefeuille : affaires dormantes, taux de transformation par étape, prévision à challenger. Les chiffres sont relus ; le CRM reste le référentiel."
+     "t": "Revue de pipeline sur un export",
+     "d": "Sur un export propre du CRM, l'analyse de fichiers de Claude ou de ChatGPT, ou bien Copilot dans Excel, prépare la revue : affaires qui dorment, conversion par étape, prévision à discuter en équipe. Les chiffres sont recontrôlés et le CRM demeure la référence."
     },
     {
-     "t": "Recherche approfondie sur un compte stratégique",
-     "d": "Deep Research de ChatGPT et de Gemini, recherche approfondie de Claude, agent Researcher de Copilot : cartographie d'un compte ou d'un secteur, actualité, appels d'offres, signaux d'achat, sources citées. Un Notebook Copilot ou NotebookLM garde le corpus du compte ; tout est vérifié avant d'en parler au client."
+     "t": "Recherche approfondie sur un grand compte",
+     "d": "Agent Researcher de Copilot, Deep Research dans ChatGPT comme dans Gemini, compétence de recherche de Vibe, recherche approfondie de Claude : un compte ou un secteur cartographié avec ses sources, son actualité, ses appels d'offres et ses signaux d'achat. Le corpus du compte se conserve dans un bloc-notes Copilot ou dans Gemini Notebook (anciennement NotebookLM)."
     }
    ],
    "apresmidi": [
     {
      "t": "Compétences (Skills) pour le brief de rendez-vous",
-     "d": "Transformer votre méthode de brief de rendez-vous en compétence réutilisable. Sur Claude, un dossier SKILL.md dont le nom et la description servent de déclencheur ; sur ChatGPT Business, une compétence décrite en langage naturel ; dans Vibe, les skills de l'espace Work. Elle s'active d'elle-même au prochain compte."
+     "d": "Votre méthode de brief devient une compétence que l'outil déclenche seul quand la demande s'y prête. Chez Claude, la compétence est un dossier SKILL.md ; son nom et sa description lui servent de déclencheur. Dans ChatGPT Business, elle se rédige en langage courant ; dans Vibe, les Skills ont succédé aux agents le 22 septembre 2026 ; chez Gemini, les compétences succèdent aux Gems depuis octobre 2026."
     },
     {
-     "t": "Assistants et agents pour l'équipe commerciale",
-     "d": "GPTs existants, agents d'espace de travail ChatGPT créés en langage naturel et décomptés en crédits, Agent Builder sur vos plaquettes SharePoint face à Copilot Studio, Gems, Workflows de Vibe. Un assistant suffit pour qualifier une demande entrante ; écrire dans le CRM reste un projet d'intégration."
+     "t": "Assistant ou agent : lequel pour la vente",
+     "d": "Les GPTs existants passent en plugins avant leur retrait du 11 décembre 2026. Côté agents : ceux de l'espace de travail ChatGPT, facturés en crédits ; l'Agent Builder ou Copilot Studio chez Microsoft, nourris de vos plaquettes SharePoint ; les flux Workspace Studio chez Google. Qualifier une demande entrante tient dans un assistant, écrire dans le CRM suppose un chantier d'intégration."
     },
     {
-     "t": "Tâches planifiées, veille comptes et relances",
-     "d": "Créée en une phrase dans ChatGPT (au plus une exécution par heure, nombre de tâches plafonné), dans Vibe ou dans Workspace Studio : veille hebdomadaire sur vos comptes clés et vos concurrents, rappel des relances en attente, préparation du point pipeline. Tout est relu avant envoi."
+     "t": "Veille des comptes et tâches récurrentes",
+     "d": "Dans Workspace Studio, dans ChatGPT ou dans Vibe, une phrase crée une tâche récurrente : veille du lundi sur vos comptes clés et vos concurrents, liste des relances en attente, préparation du point pipeline. Chaque offre plafonne le nombre de tâches actives, et chaque résultat est relu avant de partir."
     },
     {
-     "t": "Gouvernance et mesure des usages",
-     "d": "Un propriétaire nommé par compétence ou agent, un registre des assistants et compétences, les droits fixés par l'admin (parcourir, exécuter, construire, publier), le partage et une revue trimestrielle. Indicateurs suivis : temps de préparation d'un rendez-vous, délai d'envoi d'une proposition, fraîcheur du CRM, réponses aux séquences."
+     "t": "Gouvernance et indicateurs",
+     "d": "Chaque compétence ou agent a un responsable nommé et figure dans un registre ; l'administrateur fixe qui peut utiliser, construire et publier ; une revue a lieu chaque trimestre. On suit le temps passé à préparer un rendez-vous, le délai d'envoi d'une proposition, la fraîcheur du CRM et les réponses obtenues par les séquences."
     },
     {
-     "t": "Plan d'action pour le mois qui suit",
-     "d": "Les trois usages à installer dans le mois, qui les porte, comment on mesure au prochain point pipeline. Évaluation des acquis, puis remise des livrables : bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, compétences créées en atelier, cadre d'usage des données clients."
+     "t": "Plan d'action du mois suivant",
+     "d": "L'équipe retient trois usages à installer dans les quatre semaines, désigne qui les porte et fixe la mesure du prochain point pipeline. Viennent ensuite l'évaluation des acquis et la remise des livrables : prompts de vente, gabarits de proposition et de relance, compétences créées pendant les ateliers, règles d'usage des données clients."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA commercial ?",
-  "answer": "À toutes les équipes de vente : commerciaux terrain et sédentaires, business developers et SDR, key account managers, directeurs et managers commerciaux qui fixent le cadre et mesurent le gain. Sans prérequis technique : la pratique du métier suffit, en B2B comme en B2C."
+  "h2": "Pour quelles équipes de vente ?",
+  "answer": "Pour toute la chaîne commerciale : vendeurs terrain et sédentaires, business developers et SDR, key account managers, directeurs et managers qui fixent les règles et suivent les résultats. Nul besoin de compétences techniques : l'expérience de la vente suffit, en B2B comme en B2C."
  },
  "profils": [
   {
    "icon": "Briefcase",
    "title": "Commerciaux terrain et sédentaires",
-   "desc": "Prospecter, préparer, proposer, relancer : les usages qui rendent des heures chaque semaine et améliorent la personnalisation. Le cœur des ateliers pratiques est fait pour vous."
+   "desc": "Prospecter, préparer, proposer, relancer : les ateliers pratiques suivent votre semaine type, pour récupérer du temps et mieux personnaliser chaque échange avec vos clients."
   },
   {
    "icon": "Target",
    "title": "Business developers et SDR",
-   "desc": "Ciblage, recherche de comptes, séquences de prospection multicanal, qualification : l'IA industrialise la préparation sans industrialiser le spam, la nuance est tout l'enjeu."
+   "desc": "Ciblage, recherche de comptes, séquences multicanal, qualification : l'IA industrialise la préparation, et la formation veille à ce qu'elle ne pousse pas à l'envoi en masse."
   },
   {
    "icon": "Handshake",
    "title": "Key account managers",
-   "desc": "Revues de compte, synthèses de portefeuille, préparation de négociations complexes, propositions sur mesure : les usages qui servent la profondeur de la relation."
+   "desc": "Revues de compte, synthèses de portefeuille, négociations avec plusieurs interlocuteurs, propositions sur mesure : des usages qui servent la profondeur de la relation sur un petit nombre de comptes."
   },
   {
    "icon": "Users",
    "title": "Directeurs et managers commerciaux",
-   "desc": "Fixer le cadre d'usage de l'équipe, choisir les outils, mesurer le gain, faire vivre la bibliothèque de prompts. La formation vous donne la lecture d'ensemble et les réflexes de pilotage."
+   "desc": "Choisir les outils, écrire les règles de l'équipe, suivre le gain, entretenir la bibliothèque de prompts : vous repartez avec une lecture globale et quelques indicateurs simples à piloter chaque mois."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Données clients, prospection B2B, offres confidentielles : ce que la formation pose noir sur blanc",
-  "p": "La vente manipule des données personnelles (contacts, historiques, échanges) et des informations sensibles (offres, prix, conditions) : les deux appellent un cadre. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise sans entraînement sur vos données, versions gratuites à proscrire pour le confidentiel), comment on anonymise un compte rendu, ce que le RGPD impose en prospection B2B, et comment on garde la relation personnelle quand la préparation accélère. Ce cadre d'usage est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des équipes commerciales depuis 2022, dans l'industrie, les services, l'immobilier ou la tech : les mêmes questions reviennent partout, et elles ont des réponses pratiques.",
+  "kicker": "Données et confidentialité",
+  "h2": "Données clients, prospection B2B, offres confidentielles : les règles écrites pendant la formation",
+  "p": "Un commercial manipule des données personnelles (contacts, historiques, échanges) et des informations sensibles (offres, prix, conditions). Pendant la formation, l'équipe écrit ses règles : quelle donnée va dans quel outil (offres entreprise, dont les modèles n'apprennent pas de vos échanges ; versions gratuites exclues pour tout dossier client), comment anonymiser un compte rendu, ce que le RGPD exige en prospection B2B, comment garder une relation personnelle quand la préparation va plus vite. Ces règles rejoignent ensuite votre {/charte-ia-entreprise|charte IA d'entreprise}. Les équipes commerciales posent ces questions dès la première matinée, et elles repartent avec des réponses écrites.",
   "points": [
-   "Cadre d'usage RGPD par outil et par type de donnée",
-   "Prospection B2B : ce que le RGPD impose vraiment",
-   "Offre et personas encodés, réutilisables",
-   "Relecture : ce qu'on n'envoie jamais sans vérifier"
+   "Une règle claire pour chaque outil et chaque catégorie de donnée client",
+   "Prospection B2B : les obligations du RGPD",
+   "Offre et personas encodés, partagés par toute l'équipe",
+   "Relecture : la liste de ce qu'on vérifie avant d'envoyer"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (offre, trames, personas, comptes), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Prix et prise en charge de la formation IA commercial",
+  "answer": "Une journée animée en intra coûte au total 1 980 € HT, pour un groupe de 12 vendeurs au maximum ; le parcours de deux jours, 3 960 € HT. Avec la certification Qualiopi, votre opérateur de compétences peut financer la formation, d'après ses critères et le budget dont il dispose. Le devis suit sous 24 heures, et nous préparons avec vous les pièces du dossier.",
+  "inclus": "Un cadrage en amont sur votre offre, vos trames, vos personas et quelques comptes, puis les deux journées, sur site ou en visioconférence. S'y ajoutent les supports, les livrables de l'équipe (prompts de vente, gabarits de proposition et de relance, règles d'usage des données clients), une évaluation des acquis puis le certificat de réalisation. Le déplacement du formateur s'ajoute quand la session a lieu sur site, loin de Lyon.",
+  "financement": "L'opérateur compétent se déduit de votre convention collective : l'outil {/quel-opco|Quel OPCO ?} le retrouve, et la page {/financement-formation-ia|financer sa formation IA} détaille les dispositifs. Masteria fournit programme détaillé, convention de formation et justificatifs, à déposer avant la première journée. Cette formation n'ouvre pas de droits CPF."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA commercial ?",
-   "a": "À intégrer l'intelligence artificielle générative dans chaque étape du cycle de vente, sur vos propres comptes : rechercher un prospect et cadrer une approche personnalisée, préparer un rendez-vous (brief, questions, objections), produire une proposition adaptée à partir de votre trame, construire des séquences de relance par profil, structurer un compte rendu et tenir le CRM à jour, s'entraîner à la négociation. Et surtout à vérifier et personnaliser : c'est la différence entre un commercial augmenté et un envoyeur de mails génériques."
+   "q": "Que contient une formation IA pour commerciaux ?",
+   "a": "Comment employer l'IA générative à chaque étape de la vente et sur vos comptes : chercher un prospect et préparer une approche personnalisée, construire le brief d'un rendez-vous avec ses questions et ses objections, tirer une proposition de votre trame, écrire des relances par profil, structurer le compte rendu et tenir le CRM, s'entraîner à négocier. Une bonne moitié du temps porte sur la vérification et la personnalisation, ce qui sépare un vendeur mieux préparé d'un expéditeur de mails en série."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre équipe utilisera réellement. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral, articulés avec votre CRM (les copilotes intégrés aux CRM du marché sont abordés pour ce qu'ils font et ne font pas). Si votre entreprise a déjà déployé un outil, souvent Copilot dans l'écosystème Microsoft, la formation s'y concentre ; sinon la première demi-journée compare sur vos cas. Pour approfondir un outil précis, voyez nos formations ChatGPT commercial ou Copilot commercial."
+   "q": "Avec quels outils travaillez-vous ?",
+   "a": "Avec ceux que votre équipe possède ou va recevoir. Masteria ne dépend d'aucun éditeur et forme sur Copilot, Gemini, Claude, ChatGPT et Vibe de Mistral, à côté de votre CRM ; les assistants intégrés aux CRM du marché sont présentés pour ce qu'ils savent faire. Une équipe déjà équipée, souvent de Copilot chez les clients Microsoft, travaille sur son outil ; une équipe qui hésite compare les assistants sur ses propres cas pendant la première demi-journée. Pour creuser un seul outil, des formations ChatGPT, Copilot, Claude et Mistral existent pour les commerciaux."
   },
   {
-   "q": "La formation travaille-t-elle sur nos vrais comptes et nos vraies offres ?",
-   "a": "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : offre, trames de proposition, personas acheteurs, deux ou trois comptes ou rendez-vous représentatifs (anonymisés si besoin), votre CRM. Chaque atelier part de là : le compte à prospecter, le rendez-vous à préparer, la proposition à produire. Les participants repartent avec des livrables directement utilisables : bibliothèque de prompts commerciaux, gabarits de proposition et de séquence, cadre d'usage."
+   "q": "Travaille-t-on sur nos propres comptes et nos offres ?",
+   "a": "Oui. Avant la session, nous recueillons votre offre, vos trames de proposition, vos personas, deux ou trois comptes ou rendez-vous typiques (anonymisés si vous le souhaitez) et, si l'atelier pipeline est retenu, un export de votre CRM. Chaque atelier en part : le compte à approcher, le rendez-vous à préparer, la proposition à écrire. L'équipe repart avec des prompts, des gabarits et des règles qu'elle applique dès la semaine suivante."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra-entreprise, en présentiel ou à distance, pour un groupe de 4 à 10 commerciaux. Une version d'une journée existe pour un périmètre resserré (prospection et préparation de rendez-vous par exemple). Un accompagnement individuel est possible pour un directeur commercial ou un key account manager. Les journées pleines alternent apports courts et ateliers pratiques, matin et après-midi."
+   "q": "Quelle durée et quel format prévoir ?",
+   "a": "Deux journées de sept heures en intra, sur votre site ou en visioconférence, avec 12 commerciaux au maximum. Une journée unique convient quand l'équipe vise un périmètre étroit, la prospection et les rendez-vous par exemple. Un directeur commercial ou un key account manager peut se former seul, en individuel, sur la base du même prix par jour. Chaque journée alterne de courts apports et des ateliers, le matin comme l'après-midi."
   },
   {
-   "q": "Combien coûte une formation IA commercial ?",
-   "a": "Le tarif intra-entreprise est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT pour l'équipe. La formation étant certifiée Qualiopi, votre OPCO peut la prendre en charge dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis détaillé sous 24 heures."
+   "q": "Combien coûte la formation IA commercial ?",
+   "a": "Le groupe règle 1 980 € HT par journée, de un à 12 participants, et les deux jours font 3 960 € HT. Une session sur site hors de Lyon ajoute le déplacement du formateur. Vous recevez sous 24 heures un devis détaillé et les documents utiles pour solliciter votre OPCO."
   },
   {
-   "q": "La formation est-elle finançable par notre OPCO ?",
-   "a": "Oui. Masteria est certifiée Qualiopi, ce qui rend la formation éligible au financement par votre OPCO au titre du plan de développement des compétences. La prise en charge dépend de votre branche et de la taille de l'entreprise. Nous fournissons le programme, la convention et les pièces du dossier ; le dépôt se fait avant le début de la formation. Notre outil Quel OPCO ? identifie votre opérateur en deux minutes. La formation n'est pas éligible au CPF."
+   "q": "L'OPCO de notre branche prend-il en charge cette formation ?",
+   "a": "Il le peut : la certification Qualiopi de Masteria, obtenue au titre des actions de formation, rend la session éligible. La session entre dans le plan de formation de l'entreprise, et l'opérateur fixe sa participation d'après ses critères, son budget de l'année et votre effectif. Nous vous remettons programme, convention et justificatifs ; la demande se dépose avant le premier jour. Pour savoir de quel OPCO vous dépendez, l'outil Quel OPCO ? vous l'indique en quelques clics. Le CPF ne finance pas cette formation."
   },
   {
-   "q": "Peut-on utiliser l'IA sur nos données clients et nos offres confidentielles ?",
-   "a": "Sous conditions, et la formation les pose clairement. Les offres entreprise des grands éditeurs (ChatGPT Business, Copilot Microsoft 365, Claude Team, Gemini Workspace) n'utilisent pas vos données pour entraîner leurs modèles et offrent un cadre contractuel, contrairement aux versions gratuites. Le RGPD s'applique aux données personnelles de vos clients et prospects, comme pour tout traitement, y compris en prospection B2B. Nous formalisons ensemble un cadre d'usage : ce qu'on peut confier à quel outil, ce qui reste interdit, comment on anonymise. C'est un livrable de la formation."
+   "q": "Nos fichiers clients et nos offres peuvent-ils passer par l'IA ?",
+   "a": "Oui, à des conditions que la formation écrit avec vous. ChatGPT Business, Microsoft Copilot avec un compte professionnel, Claude Team et Gemini dans Workspace ne se servent pas de vos échanges pour entraîner leurs modèles et s'accompagnent d'engagements contractuels ; sur Vibe Team, l'administrateur doit couper l'entraînement, actif par défaut. Les versions gratuites sont à exclure pour tout dossier client, et les données de vos contacts restent soumises au RGPD, en prospection B2B comme ailleurs. L'équipe repart avec un tableau qui dit quelle donnée va dans quel outil, ce qui est proscrit et comment anonymiser."
   },
   {
-   "q": "L'IA ne va-t-elle pas rendre nos mails de prospection encore plus génériques ?",
-   "a": "C'est le risque numéro un, et la formation le traite de front. Un commercial qui demande « écris-moi un mail de prospection » obtient le même mail que ses concurrents. La méthode que nous enseignons inverse la logique : la recherche du compte d'abord (actualité, enjeux, interlocuteurs), la personnalisation ensuite, l'IA comme accélérateur de cette préparation et non comme rédacteur de masse. Le résultat se mesure aux taux de réponse, pas au nombre de mails envoyés. Un mail bien préparé avec l'IA est plus personnel qu'un mail écrit à la main en deux minutes."
+   "q": "L'IA risque-t-elle de rendre nos mails encore plus banals ?",
+   "a": "C'est le premier risque, et la formation commence par lui. Un commercial qui tape « écris-moi un mail de prospection » reçoit le texte que ses concurrents reçoivent aussi. La méthode enseignée renverse l'ordre : la recherche sur le compte d'abord (actualité, enjeux, interlocuteurs), la personnalisation ensuite, l'IA pour accélérer cette préparation. Le résultat se juge au taux de réponse, et un mail préparé ainsi sonne plus personnel qu'un message écrit à la main en deux minutes."
   },
   {
-   "q": "Quelle différence avec une formation ChatGPT ou Copilot pour commerciaux ?",
-   "a": "L'angle. Une formation ChatGPT commercial ou Copilot commercial approfondit un outil précis, ses fonctions et ses limites : c'est le bon choix quand l'outil est déployé et imposé. La formation IA commercial part du métier : elle couvre l'ensemble du cycle de vente et compare les outils sur vos cas, ce qui convient quand l'équipe utilise plusieurs outils ou que le choix reste ouvert. Les deux se combinent bien : la formation métier d'abord, un approfondissement outil ensuite pour les usages intensifs."
+   "q": "Formation IA commercial ou formation à un seul outil : que choisir ?",
+   "a": "Une formation ChatGPT, Copilot ou Claude pour commerciaux creuse un assistant, ses fonctions et ses limites ; elle s'impose quand l'outil est déployé et que l'équipe n'en changera pas. La formation IA commercial part du métier : elle suit tout le cycle de vente et met les outils en balance sur vos cas, ce qui sert une équipe qui en utilise plusieurs ou n'a pas encore choisi. Beaucoup d'équipes enchaînent les deux : d'abord le métier, puis l'outil le plus utilisé."
   }
  ],
  "course": {
-  "name": "Formation IA commercial — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée à la vente, sur les comptes réels des participants : prospection et ciblage, préparation de rendez-vous, propositions commerciales, relances et séquences, CRM et comptes rendus, négociation, cadre RGPD données clients. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA commercial (Masteria)",
+  "description": "Formation à l'intelligence artificielle générative appliquée à la vente, sur les comptes des participants : prospection et ciblage, préparation de rendez-vous, propositions commerciales, relances et séquences, CRM et comptes rendus, négociation, règles RGPD sur les données clients. Outils : ChatGPT, Microsoft Copilot, Claude, Gemini, Vibe. Deux jours en intra, en présentiel ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
    "Rechercher un compte et rédiger une approche de prospection personnalisée avec l'IA",
@@ -310,13 +313,13 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique du métier commercial.",
   "audience": "Équipes commerciales, business developers, key account managers",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "locationName": "Masteria : intra-entreprise, en présentiel (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
   "headline": "Formation IA commercial : l'IA générative sur tout votre cycle de vente",
   "datePublished": "2025-09-15",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -337,11 +340,11 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "La prospection commerciale par courrier électronique : les règles — CNIL",
+   "name": "CNIL : les règles de la prospection commerciale par courrier électronique",
    "url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique"
   }
  ],
@@ -350,53 +353,112 @@ export default {
    "label": "Formation ChatGPT commercial",
    "href": "/formation-chatgpt-commercial",
    "tag": "Par outil",
-   "desc": "Approfondir ChatGPT pour la vente : GPTs personnalisés, projets, recherche web, réglages."
+   "desc": "ChatGPT pour la vente : compétences, projets, recherche web, réglages."
   },
   {
    "label": "Formation Copilot commercial",
    "href": "/formation-copilot-commercial",
    "tag": "Par outil",
-   "desc": "Copilot dans Microsoft 365 pour la vente : Outlook, Teams, Word, Excel, agents."
+   "desc": "Copilot pour la vente dans Outlook, Teams, Word et Excel."
   },
   {
    "label": "Formation Claude commercial",
    "href": "/formation-claude-commercial",
    "tag": "Par outil",
-   "desc": "Claude pour les propositions longues, les projets par compte et les compétences réutilisables."
+   "desc": "Claude pour les propositions longues et les projets par compte."
+  },
+  {
+   "label": "Formation Mistral commercial",
+   "href": "/formation-mistral-commercial",
+   "tag": "Par outil",
+   "desc": "Vibe de Mistral appliqué à la vente."
   },
   {
    "label": "Formation IA marketing",
    "href": "/formation-ia-marketing",
    "tag": "Métier voisin",
-   "desc": "L'IA pour les équipes marketing : contenu, SEO, campagnes, analyse. Souvent formées ensemble."
+   "desc": "Contenus, campagnes et analyse, souvent travaillés avec les équipes de vente."
   },
   {
    "label": "Formation IA management",
    "href": "/formation-ia-management",
    "tag": "Métier voisin",
-   "desc": "Pour les managers commerciaux : piloter une équipe augmentée, fixer le cadre, mesurer."
+   "desc": "Pour les managers commerciaux qui fixent les règles et suivent le gain."
   },
   {
    "label": "Agent commercial IA",
    "href": "/agent-commercial-ia",
    "tag": "Solution",
-   "desc": "Quand le besoin est un agent qui qualifie ou relance à votre place : le développement sur mesure."
+   "desc": "Un agent qui qualifie ou relance à votre place, développé sur mesure."
   },
   {
    "label": "Bibliothèque de prompts",
    "href": "/bibliotheque-de-prompts",
    "tag": "Ressource",
-   "desc": "Des modèles de prompts commerciaux pour prolonger la formation au quotidien."
+   "desc": "Des prompts commerciaux pour continuer après la formation."
   },
   {
    "label": "Coaching IA individuel",
    "href": "/coaching-ia",
    "tag": "Individuel",
-   "desc": "Pour un directeur commercial ou un key account manager : le tête-à-tête sur ses comptes."
+   "desc": "Un directeur commercial ou un key account manager, seul avec un formateur."
   }
  ],
+ "bibliotheque": "Pour juger sur pièces avant la session, la {/bibliotheque-de-prompts#commercial|bibliothèque de prompts commerciaux} propose des demandes prêtes à copier : qualifier un prospect, préparer les objections, relancer après un rendez-vous, débriefer une affaire perdue. Chacune vient avec la logique qui la fait fonctionner.",
+ "ctaMilieu": {
+  "titre": "Un programme calé sur votre cycle de vente",
+  "texte": "Envoyez-nous votre offre, vos outils et la taille de l'équipe : sous 24 heures, vous recevez programme, dates et devis."
+ },
+ "competences": {
+  "titre": "Les savoir-faire acquis par vos commerciaux",
+  "intro": "Les objectifs vérifiés par l'évaluation de fin de formation, un par usage travaillé en atelier.",
+  "items": [
+   "Rechercher un compte et rédiger un premier message accroché à un fait vérifié",
+   "Préparer un rendez-vous : brief, questions de découverte, objections et réponses",
+   "Tirer de sa trame une proposition adaptée au client, prix et engagements relus",
+   "Construire une séquence de relance par persona et par étape du cycle",
+   "Passer de notes de rendez-vous à un compte rendu prêt pour le CRM",
+   "Appliquer les règles d'usage des données clients et la grille de relecture"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "ChatGPT, Copilot, Claude, Gemini ou Vibe : lequel pour vos commerciaux ?",
+  "intro": "Le bon assistant est d'abord celui que votre système d'information accueille déjà. Voici ce que chacun apporte à la vente au 7 octobre 2026.",
+  "lignes": [
+   {
+    "outil": "chatgpt",
+    "texte": "Une équipe sans suite bureautique imposée trouve dans ChatGPT Business des projets partagés par compte, des compétences, la recherche approfondie et l'analyse d'un export du CRM. Vos GPTs actuels doivent devenir des plugins avant la date de retrait fixée au 11 décembre 2026. {/formation-chatgpt-commercial|Formation ChatGPT pour commerciaux}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Microsoft Copilot travaille dans Outlook, Teams, Word et Excel avec vos mails, vos réunions et vos fichiers : résumé d'un fil client, compte rendu de réunion, proposition reprise dans Word, relance préparée par Cowork avec votre accord. {/formation-copilot-commercial|Formation Copilot pour commerciaux}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude sert surtout les propositions longues et les grands comptes : un projet par client, des compétences réutilisables pour le brief ou la relance, des recherches longues accompagnées de leurs sources. {/formation-claude-commercial|Formation Claude pour commerciaux}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Pour une équipe sous Google Workspace, Gemini rédige et résume dans Gmail, prend les notes des rendez-vous Meet et s'appuie sur vos plaquettes dans Docs ; depuis le 15 septembre 2026, des connecteurs le relient à HubSpot ou à Salesforce. Workspace Studio prépare tous les lundis la relance des devis en attente, un flux construit avec {/etudes-de-cas-ia#mission-franchise-gemini|la direction d'un réseau de franchise} en septembre 2026."
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Vibe, l'assistant de Mistral, héberge par défaut vos échanges dans l'Union européenne ; depuis le 22 septembre 2026, ses compétences remplacent les agents et incluent la recherche approfondie, utile pour préparer un compte. Sur l'offre Team, Mistral entraîne ses modèles sur les conversations tant que l'administrateur ne l'a pas interdit pour toute l'organisation. {/formation-mistral-commercial|Formation Mistral pour commerciaux}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Formés par des praticiens de la vente",
+  "texte": "Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session, qu'il anime ou confie à l'un des formateurs indépendants avec qui il travaille, retenu pour sa pratique des métiers commerciaux. Exemple récent : en juin 2026, dix référents d'un {/etudes-de-cas-ia#distribution|distributeur IT B2B} (58 personnes) ont bâti pendant leurs deux jours de formation onze compétences Claude, parmi lesquelles la cotation depuis un mail client et la relance des devis ; leurs collègues doivent les recevoir entre octobre et décembre 2026."
+ },
+ "apres": {
+  "titre": "Quand l'équipe veut un outil relié à son CRM",
+  "texte": "Après la formation, la demande suivante porte souvent sur un agent de devis branché sur le CRM et le catalogue, ou sur un assistant qui qualifie les demandes entrantes. Nous définissons le besoin avec vous, puis nous développons l'outil et le raccordons à vos logiciels. Ce développement fait l'objet d'un forfait fixé après le cadrage ; votre OPCO ne prend pas en charge ce type de prestation."
+ },
+ "faqTitre": "Vos questions sur la formation IA commercial",
  "cta": {
   "h2": "Formons votre équipe de vente sur ses vrais comptes",
-  "p": "Décrivez-nous votre équipe, votre cycle de vente, vos outils et votre CRM. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "p": "Dites-nous qui vend, à qui, avec quels outils et quel CRM. Sous 24 heures, vous recevez un programme ajusté à votre cycle de vente, des dates possibles et le devis, avec le dossier de financement prêt à déposer."
  }
 }

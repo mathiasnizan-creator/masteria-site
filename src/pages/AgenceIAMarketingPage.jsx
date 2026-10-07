@@ -6,7 +6,7 @@ import {
   MapPin, Layers, GraduationCap, Sparkles, AlertTriangle,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
@@ -14,27 +14,38 @@ import CadrageLink from '../components/CadrageLink'
 /*
  * Page offre « agence IA marketing » (slug /agence-ia-marketing).
  * Cible : « agence ia marketing » (70/mois, KD 17), « agence ia marketing suisse » (40).
- * Intention : DÉLÉGUER (done-for-you), pas se former. Vente d'une PRESTATION
- * (on produit et pilote pour vous), distincte de /formation-ia-marketing.
- * Anti-cannibalisation : bloc honnête « déléguer ou former » + lien formation en bas.
+ * Intention : DÉLÉGUER (on produit et pilote pour le client), distincte de
+ * /formation-ia-marketing. Anti-cannibalisation : bloc « déléguer ou former »
+ * et lien formation en bas.
  * Maillage : /agence-developpement-ia, /agence-automatisation-ia,
  * /outils-ia-sur-mesure, /conseil-intelligence-artificielle, /formation-ia-marketing.
- * ENRICHISSEMENT 2026-09-03 (Semrush FR) : grappe « cabinet de conseil marketing
- * digital » (170 + 210), « conseil en stratégie marketing digital » (260),
- * « cabinet de conseil marketing » (260), « consultant marketing automation » (70),
- * « conseil en marketing stratégique » (90). KD 7 à 15. Réponse : section
- * « Conseil ou exécution » (4 cartes) + 2 FAQ, angle IA et automatisation
- * uniquement (pas de conseil marketing générique).
+ * Grappe Semrush du 2026-09-03 : « cabinet de conseil marketing digital »,
+ * « conseil en stratégie marketing digital », « consultant marketing automation » :
+ * section « Conseil ou exécution » (4 cartes) et 2 questions de FAQ, angle IA seulement.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de FounderNote ni de bloc
+ * « Qui intervient » commun, plus de chiffre de professionnels formés, offre d'entrée
+ * « 30 minutes de cadrage offertes », faits outils datés (retrait des GPTs le
+ * 11/12/2026, compétences Google dès le 05/10/2026, Vibe, Microsoft Copilot),
+ * chiffres de marché sourcés (Forrester, Adobe), deux missions marketing citées.
  * Design premium charte Masteria (#2563EB), icônes lucide (zéro emoji).
  */
 
 const SLUG = 'agence-ia-marketing'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
+const RDV = '/contact?type=projet&rdv=30'
 
 const META_TITLE = "Agence IA marketing : contenu, campagnes & SEO | Masteria"
-const META_DESC = "Agence et cabinet de conseil marketing IA : nous produisons et pilotons contenu, SEO/GEO, campagnes, social, marketing automation et reporting augmentés par l'IA. Done-for-you. Europe, États-Unis, Inde."
+const META_DESC = "Agence IA marketing : contenus, SEO et GEO, campagnes, emailing et reporting produits avec l'IA, relus par un consultant. Lyon, Europe, États-Unis, Inde."
 const KEYWORDS = "agence ia marketing, ia marketing, marketing ia, agence marketing intelligence artificielle, ia pour le marketing, cabinet de conseil marketing digital, cabinet conseil marketing ia, conseil en stratégie marketing digital, consultant marketing automation, conseil marketing ia"
+
+/* Sources citées par la page (WebPage.citation + liens visibles en bas de page). */
+const PAGE_CITATIONS = [
+  { name: "Google Search Central : la position de Google sur les pages rédigées par ou avec une IA générative", url: 'https://developers.google.com/search/docs/fundamentals/using-gen-ai-content' },
+  { name: "Google Search Central : les règles anti-spam, dont l'abus de contenu produit à grande échelle", url: 'https://developers.google.com/search/docs/essentials/spam-policies' },
+  { name: "OpenAI : FAQ de fin de vie des GPTs personnalisés, avec la marche à suivre vers les plugins (lue le 7 octobre 2026)", url: 'https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq' },
+  { name: "Google Workspace : le passage des Gems aux compétences, page d'aide aux administrateurs", url: 'https://knowledge.workspace.google.com/p/gems-migration' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -62,21 +73,21 @@ function IconBox({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Layers, label: 'Prestation clé en main (done-for-you)' },
-  { icon: Sparkles, label: 'Multi-LLM (ChatGPT, Claude, Gemini, Copilot)' },
+  { icon: Layers, label: 'Production déléguée, validation chez vous' },
+  { icon: Sparkles, label: 'Claude, ChatGPT, Gemini, Copilot, Vibe' },
   { icon: MapPin, label: 'Europe · États-Unis · Inde' },
-  { icon: Target, label: 'Vous validez, nous produisons et pilotons' },
+  { icon: Target, label: 'Indicateurs fixés dès le cadrage' },
 ]
 
 /* ───────── Ce qu'on prend en charge (6 cartes) ───────── */
 
 const PRESTATIONS = [
-  { icon: PenLine, title: 'Production de contenu', desc: "Articles, pages, fiches produit, livres blancs et newsletters rédigés dans votre ligne éditoriale. L'IA accélère la production, nos consultants relisent et arbitrent avant publication." },
-  { icon: Search, title: 'SEO & GEO', desc: "Recherche de mots-clés, clusters sémantiques, briefs et optimisation on-page, plus le GEO : votre visibilité dans les réponses des IA (ChatGPT, Perplexity, Google AI). Stratégie pilotée, contenus produits." },
-  { icon: Megaphone, title: 'Campagnes & ads', desc: "Conception et déclinaison d'annonces Google Ads et Meta : variantes d'accroches, angles testés à budget constant, audiences et messages adaptés à chaque étape du parcours d'achat." },
-  { icon: Share2, title: 'Social media', desc: "Calendrier éditorial, déclinaison d'un même message sur LinkedIn, Instagram, X et TikTok, adaptation du ton par plateforme. Production cadencée et cohérente avec votre marque." },
-  { icon: Mail, title: 'Emailing & CRM', desc: "Séquences d'emailing, personnalisation par segment, objets testés en A/B, scénarios de marketing automation raccordés à votre CRM pour nourrir et qualifier vos contacts." },
-  { icon: BarChart3, title: 'Reporting & analyse', desc: "Tableaux de bord consolidés, synthèses commentées et recommandations actionnables à partir de vos données de campagne, sans que vos équipes aient à manier la donnée." },
+  { icon: PenLine, title: 'Production de contenu', desc: "Articles de blog, pages de service, fiches produit, livres blancs, newsletters : l'IA prépare les premiers jets à partir de vos sources, un consultant reprend le fond et le ton, puis la version à valider arrive chez vous." },
+  { icon: Search, title: 'SEO & GEO', desc: "Recherche des requêtes, plan de contenus par thème, briefs, reprise des pages existantes. Le GEO (optimiser vos pages pour qu'un assistant d'IA les cite) travaille en plus la manière dont ChatGPT, Perplexity ou les résumés IA de Google parlent de votre marque quand un prospect les interroge." },
+  { icon: Megaphone, title: 'Campagnes & ads', desc: "Annonces pour Google Ads et pour les réseaux de Meta : plusieurs accroches par audience, des angles comparés sans relever le budget, des messages ajustés selon que le prospect découvre votre offre ou s'apprête à commander." },
+  { icon: Share2, title: 'Social media', desc: "Un calendrier éditorial mensuel, un même message réécrit pour LinkedIn, Instagram, X ou TikTok avec le ton de chaque réseau, des visuels préparés aux bons formats. Le rythme de publication se décide au cadrage." },
+  { icon: Mail, title: 'Emailing & CRM', desc: "Séquences de bienvenue, de relance ou de réactivation écrites par segment, objets comparés en test A/B (deux versions envoyées à deux moitiés de la liste), scénarios branchés sur votre CRM, votre base clients, pour suivre chaque contact jusqu'au rendez-vous commercial." },
+  { icon: BarChart3, title: 'Reporting & analyse', desc: "Les exports de Google Analytics, de la Search Console, de vos régies publicitaires et de votre outil d'emailing réunis dans un tableau de bord, avec un commentaire écrit : ce qui monte, ce qui baisse, ce que nous proposons de changer le mois suivant." },
 ]
 
 /* ───────── Comment on travaille (4 temps) ───────── */
@@ -85,30 +96,30 @@ const METHODE = [
   {
     num: '01',
     title: 'Cadrage',
-    badge: 'Échange initial',
-    desc: "Nous clarifions vos objectifs marketing, votre cible, votre positionnement et votre ligne éditoriale, puis cartographions les canaux à prendre en charge. Ce cadrage fixe le périmètre, les priorités et les indicateurs de suivi.",
-    livrable: "Un périmètre d'intervention clair, des objectifs mesurables et une feuille de route validée ensemble.",
+    badge: 'Premier atelier',
+    desc: "Nous partons de vos objectifs commerciaux, de vos clients cibles et de ce qui vous distingue de vos concurrents, puis nous choisissons ensemble les canaux à reprendre. Le cadrage désigne aussi les indicateurs suivis et la personne qui valide chez vous.",
+    livrable: "Un périmètre écrit, des objectifs chiffrés par canal et un calendrier de démarrage accepté par vous.",
   },
   {
     num: '02',
     title: 'Mise en place des outils et automatisations',
-    badge: 'Socle',
-    desc: "Nous configurons le socle de production : sélection des LLM adaptés à chaque usage, encodage de votre charte éditoriale dans des prompts système, automatisations sur mesure raccordées à vos outils (CRM, CMS, planificateurs).",
-    livrable: "Un dispositif de production opérationnel : modèles de prompts, workflows et intégrations à vos outils.",
+    badge: 'Socle de production',
+    desc: "Nous retenons le modèle d'IA adapté à chaque tâche, transcrivons votre charte éditoriale en compétences (des fichiers d'instructions que l'assistant charge à la demande) et branchons les automatisations sur votre CRM, votre CMS (le logiciel qui gère votre site) et vos outils de planification.",
+    livrable: "Des instructions de marque prêtes à servir, des flux de production testés et des connexions documentées avec vos logiciels.",
   },
   {
     num: '03',
     title: 'Production',
-    badge: 'Cadence régulière',
-    desc: "Nos consultants produisent les contenus, campagnes et séquences prévus, à cadence régulière. Chaque livrable passe une relecture humaine et un contrôle de cohérence de marque avant de vous être soumis pour validation.",
-    livrable: "Des livrables prêts à publier, relus et conformes à votre marque, livrés selon le rythme convenu.",
+    badge: 'Rythme convenu',
+    desc: "L'équipe produit les contenus, annonces et séquences inscrits au planning. Chaque pièce passe entre les mains d'un consultant, qui contrôle les faits, les chiffres et le ton, avant d'arriver chez vous pour validation.",
+    livrable: "Des pièces prêtes à publier, relues, remises au rythme arrêté lors du cadrage.",
   },
   {
     num: '04',
     title: 'Pilotage',
-    badge: 'Suivi continu',
-    desc: "Nous mesurons les résultats, ajustons les angles et les canaux, et vous remettons un reporting commenté. Le dispositif évolue au fil des performances observées, avec des points de suivi réguliers.",
-    livrable: "Un reporting régulier, des arbitrages documentés et un dispositif qui s'affine au fil des performances.",
+    badge: 'Bilan mensuel',
+    desc: "Nous relevons les résultats canal par canal, testons d'autres angles là où les chiffres stagnent et vous remettons un bilan commenté. Les priorités du mois suivant se décident avec vous, à partir de ce bilan.",
+    livrable: "Un bilan écrit chaque mois, des décisions tracées et un dispositif qui progresse d'un cycle à l'autre.",
   },
 ]
 
@@ -117,38 +128,43 @@ const METHODE = [
 const TABLE_DELEGUER = [
   {
     critere: 'Qui produit',
-    deleguer: 'Notre équipe produit et pilote pour vous',
-    former: 'Vos équipes produisent, une fois montées en compétence',
+    deleguer: "Notre équipe, qui produit et pilote à votre place",
+    former: 'Vos collaborateurs, après leur montée en compétence',
   },
   {
     critere: 'Délai de mise en route',
-    deleguer: 'Court : nous démarrons la production rapidement',
-    former: 'Le temps de la formation, puis de la prise en main interne',
+    deleguer: 'Court : la production démarre dès que le socle est installé',
+    former: "Le temps des journées de formation, puis celui de la prise en main",
   },
   {
     critere: 'Charge pour vos équipes',
-    deleguer: 'Faible : vous cadrez et validez, sans produire',
-    former: 'Vos équipes portent la production au quotidien',
+    deleguer: 'Légère : vous cadrez et validez, la production reste chez nous',
+    former: 'La production repose sur elles au quotidien',
   },
   {
     critere: 'Montée en autonomie',
-    deleguer: 'Optionnelle, via une passation en fin de mission',
-    former: 'Objectif central : vos équipes deviennent autonomes',
+    deleguer: 'En option, par une passation en fin de mission',
+    former: 'But premier : vos équipes produisent seules',
+  },
+  {
+    critere: 'Prix',
+    deleguer: "Forfait sur devis, rédigé après le cadrage",
+    former: "1 980 € HT la journée de formation, que le groupe compte une personne ou douze",
   },
   {
     critere: 'Financement OPCO',
-    deleguer: "Non éligible : c'est une prestation, pas une formation",
-    former: 'Éligible : la formation est certifiée Qualiopi',
+    deleguer: "Pas finançable par votre OPCO : la prestation relève du conseil et de la production",
+    former: "Votre OPCO de branche peut la financer ; ses règles de prise en charge et ses fonds fixent le montant",
   },
 ]
 
 /* ───────── Outils & approche ───────── */
 
 const OUTILS = [
-  { icon: Sparkles, title: 'Approche multi-LLM', desc: "Nous choisissons le bon modèle pour chaque usage : ChatGPT, Claude, Gemini, Copilot ou Mistral. Le rédactionnel exigeant ne va pas sur le même outil que la production de volume ou l'analyse de données." },
-  { icon: Cog, title: 'Automatisations sur mesure', desc: "Au-delà des prompts, nous construisons les workflows qui font circuler vos contenus de la production à la publication, et qui synchronisent vos outils marketing sans ressaisie." },
-  { icon: PenLine, title: 'Cohérence de marque', desc: "Votre ligne éditoriale est encodée dans des prompts système réutilisables. Chaque livrable passe une relecture humaine : l'IA accélère, le consultant arbitre." },
-  { icon: Target, title: 'Pilotage par les résultats', desc: "Les angles, canaux et formats sont arbitrés en fonction des performances mesurées, pas d'intuitions. Le dispositif s'ajuste en continu." },
+  { icon: Sparkles, title: 'Un modèle choisi pour chaque tâche', desc: "Un texte de fond, cent variantes d'annonces et l'analyse d'un export de campagne ne se confient pas au même outil. Nous comparons les assistants sur vos propres sujets avant de retenir celui qui servira chaque usage." },
+  { icon: Cog, title: 'Automatisations sur mesure', desc: "Les flux que nous montons font passer un contenu du brouillon à la publication et gardent vos outils marketing synchronisés : un contact créé dans le CRM reçoit la bonne séquence, sans ressaisie." },
+  { icon: PenLine, title: 'Cohérence de marque', desc: "Vos règles éditoriales vivent dans des instructions réutilisables, et chaque pièce produite passe par une relecture humaine. L'outil accélère l'écriture ; le consultant valide ce qui vous est envoyé." },
+  { icon: Target, title: 'Pilotage par les résultats', desc: "Formats, angles et canaux gagnent ou perdent leur place selon les chiffres relevés chaque mois. Une hypothèse que les données contredisent sort du plan au cycle suivant." },
 ]
 
 /* ───────── Ce que l'agence construit (livrables concrets) ───────── */
@@ -157,30 +173,30 @@ const CONSTRUIT = [
   {
     icon: Layers,
     title: 'Le socle de contenu assisté',
-    desc: "Votre plateforme de marque (positionnement, ton, lexique, interdits) est encodée dans des instructions réutilisables, déclinée en gabarits par format et rassemblée dans une bibliothèque de prompts propre à votre équipe. Ce socle rend chaque production fidèle à votre voix, quel que soit le canal ou le rédacteur.",
-    link: { href: '/bibliotheque-de-prompts', label: 'Construire votre bibliothèque de prompts' },
+    desc: "Votre plateforme de marque (positionnement, ton, mots à employer et mots bannis) devient un jeu d'instructions que l'assistant applique à chaque demande, avec un gabarit par format : article, post, fiche produit, objet d'email. Une bibliothèque de prompts propre à votre équipe complète l'ensemble, pour qu'un nouveau rédacteur écrive d'emblée dans votre voix.",
+    link: { href: '/bibliotheque-de-prompts', label: 'Bâtir une bibliothèque de prompts' },
   },
   {
     icon: Search,
     title: 'Le SEO et le GEO',
-    desc: "Des pages pensées pour les moteurs de recherche et citables par les moteurs de réponse (ChatGPT, Perplexity, Google AI) : réponse directe en tête de page, données structurées, maillage interne, entités nettes. Le GEO prolonge le travail SEO avec ses propres critères de citation.",
-    link: { href: '/agence-seo-ia', label: "Découvrir l'agence SEO IA" },
+    desc: "Des pages construites pour se classer dans Google et pour être reprises par les moteurs de réponse : la réponse dans les premières lignes, des données structurées, des liens internes organisés par thème, des noms de marque et de produit sans ambiguïté. L'effort se justifie : sur les sites marchands américains, Adobe a mesuré en mars 2026 une conversion supérieure de 42 % pour les visiteurs venus d'une IA (rapport d'avril 2026).",
+    link: { href: '/agence-seo-ia', label: 'Notre agence SEO IA en détail' },
   },
   {
     icon: Workflow,
     title: "L'automatisation marketing raisonnable",
-    desc: "Veille sectorielle résumée à cadence fixe, déclinaisons multi-canaux préparées à partir d'un contenu maître, rapports pré-remplis depuis vos exports. Nous automatisons ce qui se répète, et chaque sortie passe une relecture humaine avant d'être utilisée ou publiée.",
+    desc: "Une veille de votre secteur résumée à date fixe, un contenu principal décliné en posts, en email et en fiche produit, des rapports mensuels préremplis depuis vos exports. L'automatisation porte sur les tâches répétées à l'identique ; un humain relit chaque sortie avant qu'elle serve ou paraisse.",
   },
   {
     icon: BarChart3,
     title: 'La mesure',
-    desc: "Vos exports analytiques sont collectés, analysés et restitués en tableaux commentés : ce qui progresse, ce qui décroche, ce que nous recommandons d'ajuster au cycle suivant. L'IA prépare la matière, la lecture et les recommandations restent un travail de consultant.",
+    desc: "Les exports de vos outils d'analyse sont réunis, croisés et présentés dans un tableau qu'un dirigeant lit sans aide, avec nos recommandations pour le cycle suivant. L'IA prépare les données ; l'interprétation et les choix proposés reviennent au consultant.",
   },
   {
     icon: GraduationCap,
     title: "La formation de l'équipe",
-    desc: "Pour que le dispositif tienne sans nous : vos équipes apprennent à utiliser le socle, les gabarits et la bibliothèque de prompts, jusqu'à reprendre la production en interne. Cette montée en compétence est certifiée Qualiopi et finançable par votre OPCO.",
-    link: { href: '/formation-ia-marketing', label: 'Voir la formation IA marketing' },
+    desc: "Le jour où vous voulez reprendre la main, vos collaborateurs prennent en main le socle, les gabarits et la bibliothèque de prompts, jusqu'à produire sans nous. Cette partie relève de la formation professionnelle : la certification Qualiopi de Masteria, obtenue au titre des actions de formation, couvre ce volet, et l'opérateur de compétences (OPCO) dont dépend votre secteur décide de son financement d'après ses propres critères et son budget.",
+    link: { href: '/formation-ia-marketing', label: 'Le programme de formation IA marketing' },
   },
 ]
 
@@ -189,23 +205,21 @@ const CONSTRUIT = [
 const ERREURS = [
   {
     title: 'Produire plus sans plateforme de marque',
-    desc: "L'IA démultiplie le volume : si le positionnement, le ton et le lexique n'ont pas été encodés en amont, elle démultiplie du générique. Les contenus se ressemblent d'une marque à l'autre et n'installent rien. Le socle éditorial se construit avant d'accélérer la cadence.",
+    desc: "Un modèle multiplie le volume de ce qu'on lui confie. Faute de positionnement, de ton et de vocabulaire écrits au préalable, il multiplie un texte interchangeable que vos clients ont déjà lu chez vos concurrents. La base éditoriale se pose avant de monter la cadence.",
   },
   {
     title: 'Publier sans relecture',
-    desc: "Un modèle génère avec aplomb des chiffres inexacts, des sources approximatives et un ton lissé qui n'appartient à personne. Publier en direct expose votre marque à ces erreurs. Dans notre dispositif, chaque livrable passe un contrôle humain avant de vous être soumis.",
+    desc: "Un modèle peut inventer un chiffre, attribuer une citation à la mauvaise source ou lisser le ton jusqu'à le rendre anonyme. Publié tel quel, chaque écart engage votre marque. Chez nous, aucune pièce ne vous parvient avant d'avoir été vérifiée par un consultant.",
   },
   {
     title: 'Confier le SEO à la seule volumétrie',
-    desc: "Publier des dizaines de pages générées n'installe aucune visibilité durable : les moteurs évaluent l'utilité des contenus, la profondeur du site et sa cohérence. Mieux vaut un corpus resserré, pensé requête par requête, relié par le maillage et entretenu dans le temps.",
+    desc: "Cent pages générées en une semaine n'installent aucune visibilité durable : Google juge l'utilité d'un contenu pour son lecteur, et ses règles anti-spam visent la production de pages à grande échelle. Un ensemble resserré, chaque page pensée pour une requête et reliée aux autres, tient mieux dans le temps.",
   },
   {
     title: "Outiller sans former l'équipe",
-    desc: "Des licences déployées sans accompagnement produisent des usages dispersés : chacun invente ses prompts, la qualité varie, la marque se dilue. L'outillage s'installe avec les gabarits, les règles d'usage et la formation de celles et ceux qui produisent.",
+    desc: "Des licences distribuées sans méthode produisent autant de façons de faire que d'utilisateurs : chacun bricole ses prompts, la qualité varie d'un jour à l'autre, la marque s'effrite. L'outil arrive avec ses gabarits, ses règles d'usage et une formation des personnes qui produisent.",
   },
 ]
-
-/* ───────── FAQ ───────── */
 
 /* ───────── Conseil ou exécution (grappe « cabinet de conseil marketing digital ») ───────── */
 
@@ -213,77 +227,79 @@ const CONSEIL_EXEC = [
   {
     icon: Target,
     title: 'Conseil en stratégie marketing digital, version IA',
-    desc: "Nous ne réécrivons pas votre stratégie marketing : nous disons où l'IA la sert. Quels contenus produire à l'échelle, quels canaux automatiser, quelles données de campagne rendre lisibles, quel cadre poser pour la marque. Le livrable est un plan d'outillage priorisé, chiffré, avec ce qu'il faut écarter.",
+    desc: "Votre stratégie marketing reste la vôtre ; notre travail consiste à repérer où l'IA la sert. Quels contenus produire en volume, quels canaux automatiser, quelles données de campagne rendre lisibles, quelles règles poser pour protéger la marque. Le livrable est un plan d'outillage classé par priorité et chiffré, qui nomme aussi ce qu'il vaut mieux écarter.",
   },
   {
     icon: Workflow,
     title: 'Marketing automation : le consultant qui construit',
-    desc: "Un consultant marketing automation classique paramètre votre outil d'emailing et vos scénarios. Nous allons plus loin : enrichissement des fiches par l'IA, segmentation à partir des comportements, contenus générés par segment, relances rédigées et validées, reporting automatisé. Sur vos outils (HubSpot, Brevo, Mailchimp, votre CRM), sans en imposer un nouveau.",
+    desc: "Un consultant en marketing automation paramètre d'ordinaire votre outil d'emailing et ses scénarios. Nous y ajoutons ce que l'IA permet : fiches contacts enrichies, segments construits sur les comportements, messages rédigés pour chaque segment, relances écrites puis validées, bilans produits sans tableur. Le tout sur HubSpot, Brevo, Mailchimp ou le CRM que vous utilisez déjà.",
   },
   {
     icon: Layers,
     title: 'Cabinet de conseil ou agence : les deux, selon le besoin',
-    desc: "Quand vos équipes peuvent exécuter, nous restons en cabinet de conseil marketing digital : cadrage, choix des outils, gouvernance, formation. Quand elles n'ont pas le temps, l'agence prend la production et le pilotage. Le passage de l'un à l'autre se décide au cadrage, et se révise chaque trimestre.",
+    desc: "Si vos équipes peuvent exécuter, nous gardons un rôle de conseil : cadrage, choix des outils, règles d'usage, formation. Si elles manquent de temps, l'agence reprend la production et le pilotage. La répartition se décide au cadrage et se revoit chaque trimestre.",
   },
   {
     icon: AlertTriangle,
-    title: 'Ce que nous ne faisons pas',
-    desc: "Ni achat média, ni création de marque, ni relations presse : ce sont des métiers d'agences spécialisées, avec qui nous travaillons volontiers. Notre périmètre est l'IA appliquée au marketing : contenu, référencement, automatisation, données. Un cabinet qui prétend tout faire fait tout moyennement.",
+    title: 'Les métiers que nous laissons aux spécialistes',
+    desc: "Achat d'espace média, création d'identité de marque, relations presse : ces métiers ont leurs agences, avec lesquelles nous collaborons volontiers. Notre terrain est l'IA appliquée au marketing (contenu, référencement, automatisation, données), et nous préférons le tenir à fond.",
   },
 ]
 
+/* ───────── FAQ (une seule, JSON-LD identique au visible) ───────── */
+
 const FAQ = [
   {
-    q: "Qu'est-ce qu'une agence IA marketing ?",
-    a: "C'est un prestataire qui produit et pilote vos actions marketing en s'appuyant sur l'intelligence artificielle : contenu, SEO et GEO, campagnes publicitaires, social media, emailing et reporting. Chez Masteria, il s'agit d'une prestation clé en main : nous prenons en charge la production avec nos consultants et nos outils, vous cadrez et validez. L'IA accélère le travail, mais chaque livrable passe une relecture humaine avant publication.",
+    q: "Qu'appelle-t-on une agence IA marketing ?",
+    a: "Un prestataire qui produit et pilote vos actions marketing en s'appuyant sur des outils d'intelligence artificielle : contenus, référencement SEO et GEO, annonces, réseaux sociaux, emailing, reporting. Masteria la propose en prestation déléguée : nos consultants produisent avec leurs outils, vous fixez les objectifs et validez. L'IA abrège le temps d'écriture et de déclinaison, et un consultant relit chaque pièce avant qu'elle vous parvienne.",
   },
   {
-    q: "En quoi est-ce différent d'une formation IA marketing ?",
-    a: "La formation rend vos équipes autonomes pour produire elles-mêmes : c'est une montée en compétence, certifiée Qualiopi et finançable OPCO. L'agence IA marketing fait l'inverse : nous produisons et pilotons à votre place, sans mobiliser vos équipes au quotidien. Si vous préférez internaliser la compétence, notre page formation IA marketing détaille cette voie. Les deux peuvent se combiner : nous produisons, puis nous transmettons en fin de mission.",
+    q: "Quelle différence avec une formation IA marketing ?",
+    a: "Avec la formation, vos équipes apprennent à produire seules. Elle entre dans notre certification Qualiopi, elle se facture 1 980 € HT la journée, et votre OPCO peut en couvrir le coût ; il applique ses propres règles et dépend des fonds qui lui restent. L'agence prend le chemin inverse : nous produisons et pilotons à votre place, sans prendre de temps à vos équipes au quotidien. Les deux s'enchaînent bien, l'agence lançant le dispositif avant de transmettre la méthode à vos collaborateurs.",
   },
   {
     q: "Intervenez-vous en Suisse romande ?",
-    a: "Oui. Masteria est basée à Lyon et intervient en Suisse romande comme en France et en Belgique, à distance pour la production et le pilotage, et en présentiel ponctuel pour les temps de cadrage qui le justifient. Le dispositif se pilote très bien à distance : production, validation et reporting se font en ligne, avec des points de suivi réguliers selon votre fuseau et vos contraintes.",
+    a: "Oui. Depuis Lyon, nous travaillons pour des entreprises de Suisse romande comme pour des clients en France et en Belgique. La production, la validation et le reporting passent par des outils en ligne, avec des points de suivi calés sur votre agenda ; nous venons sur place pour les ateliers de cadrage qui le justifient. Pour une entreprise suisse, nous établissons le devis en euros et hors taxes.",
   },
   {
     q: "Avec quels outils d'IA travaillez-vous ?",
-    a: "Nous sommes multi-LLM : ChatGPT, Claude, Gemini, Copilot et Mistral, choisis selon l'usage. Le rédactionnel exigeant, la production de volume et l'analyse de données n'appellent pas le même modèle. Nous y ajoutons des automatisations sur mesure pour raccorder votre CRM, votre CMS et vos planificateurs, afin que les contenus circulent de la production à la publication sans ressaisie.",
+    a: "Avec plusieurs, choisis selon la tâche : Claude, ChatGPT, Gemini, Microsoft Copilot ou Vibe, le produit de Mistral AI. Un article de fond, une série d'accroches publicitaires et l'analyse d'un export de campagne ne demandent pas le même modèle. Au 7 octobre 2026, nous écrivons vos instructions de marque sous forme de compétences plutôt que de GPTs, qu'OpenAI retire de toutes ses offres le 11 décembre 2026. Des automatisations relient ensuite votre CRM, votre CMS et vos outils de planification, pour que les contenus circulent sans ressaisie.",
   },
   {
     q: "Gardez-vous une relecture humaine sur les contenus produits par l'IA ?",
-    a: "Oui, systématiquement. L'IA accélère la production, mais elle ne publie jamais seule. Chaque livrable passe une relecture humaine et un contrôle de cohérence de marque par nos consultants avant de vous être soumis. Vous gardez la validation finale sur tout ce qui sort sous votre nom.",
+    a: "Oui, sur chaque pièce. L'IA accélère l'écriture et ne publie jamais seule. Un consultant vérifie les faits, les chiffres, les sources et le ton avant de vous soumettre le livrable, et la validation finale de tout ce qui paraît sous votre nom vous appartient.",
   },
   {
     q: "Combien coûte une agence IA marketing ?",
-    a: "Le budget dépend du périmètre : canaux pris en charge, volume de production, niveau de pilotage et automatisations à mettre en place. Nous chiffrons sur devis après le cadrage initial, une fois ces éléments clarifiés. La prestation n'est pas finançable par votre OPCO : seule une formation l'est, et nous ne promettons jamais l'inverse. Si vous préférez former vos équipes, la voie finançable est détaillée sur la page formation IA marketing.",
+    a: "Le prix dépend des canaux confiés, du volume à produire, du niveau de pilotage et des automatisations à construire. Nous rédigeons un forfait après le cadrage : quelques milliers d'euros suffisent à un premier périmètre (un canal, ou le socle de marque), un dispositif complet relié à vos outils se compte en dizaines de milliers, et l'on dépasse 100 000 € quand le dispositif couvre plusieurs pays ou plusieurs marques. Production et pilotage, pas finançables par votre OPCO, se règlent sur le budget marketing. Si vous préférez former vos équipes, la formation IA marketing (1 980 € HT la journée) ouvre droit à une demande auprès de votre OPCO, qui tranche d'après ses règles et ses fonds.",
   },
   {
-    q: "Êtes-vous un cabinet de conseil marketing digital ?",
-    a: "Sur la partie IA du marketing digital, oui. Nous cadrons la stratégie d'outillage (contenus, référencement, automatisation, données), choisissons les outils avec vous, posons la gouvernance et formons les équipes ; c'est le travail d'un cabinet de conseil. Nous ne faisons pas de conseil marketing généraliste : positionnement de marque, plan média, études de marché restent chez les cabinets et agences spécialisés. Ce périmètre resserré est ce qui nous permet de passer du conseil à l'exécution quand vos équipes n'ont pas le temps.",
+    q: "Masteria peut-elle jouer le rôle d'un cabinet de conseil marketing digital ?",
+    a: "Oui, pour la part du marketing digital qui touche à l'IA. Nous cadrons la stratégie d'outillage (contenus, référencement, automatisation, données), choisissons les outils avec vous, posons les règles d'usage et formons les équipes : c'est le travail d'un cabinet de conseil. Le conseil marketing généraliste (positionnement de marque, plan média, études de marché) reste l'affaire des cabinets et agences qui en ont fait leur spécialité. Ce périmètre resserré nous permet de passer du conseil à l'exécution le jour où vos équipes manquent de temps.",
   },
   {
     q: "Que fait un consultant marketing automation avec l'IA ?",
-    a: "Il part de vos scénarios existants et de vos données, et il ajoute ce que l'IA rend possible : enrichissement automatique des contacts, segmentation à partir des comportements réels, rédaction de séquences par segment, relances adaptées au contexte, résumé des performances en langage clair. Concrètement, sur HubSpot, Brevo, Mailchimp ou votre CRM, nous construisons les scénarios, les prompts qui produisent les contenus et les contrôles humains avant envoi. Le résultat se mesure sur des indicateurs que vous suivez déjà : taux d'ouverture, réponses, rendez-vous pris, temps de production d'une campagne.",
+    a: "Il repart de vos scénarios et de vos données, puis ajoute ce que l'IA rend possible : contacts enrichis sans saisie, segments fondés sur le comportement observé, séquences écrites pour chaque segment, relances adaptées au contexte, bilans de performance rédigés en langage clair. Sur HubSpot, Brevo, Mailchimp ou votre CRM, nous construisons les scénarios, les prompts qui rédigent les messages et les contrôles humains placés avant chaque envoi. Le résultat se lit sur des indicateurs que vous suivez déjà : ouvertures, réponses, rendez-vous obtenus, temps passé à monter une campagne.",
   },
   {
     q: "Agence marketing IA ou agence IA marketing : est-ce la même chose ?",
-    a: "Oui, les deux expressions désignent la même réalité : un prestataire qui produit et pilote vos actions marketing en s'appuyant sur l'intelligence artificielle. « Agence marketing IA » et « agence IA marketing » sont des variantes du même besoin, l'ordre des mots ne change rien à la prestation. Chez Masteria, il s'agit dans les deux cas d'une prestation clé en main : contenu, SEO et GEO, campagnes, social media, emailing et reporting augmentés par l'IA, avec relecture humaine sur chaque livrable.",
+    a: "Oui. Les deux formules désignent le même service, un prestataire qui produit et pilote votre marketing avec l'appui de l'intelligence artificielle ; l'ordre des mots varie selon les habitudes de recherche. Chez Masteria, l'une comme l'autre recouvre la même prestation déléguée : contenus, SEO et GEO, campagnes, réseaux sociaux, emailing et reporting, relus par un consultant avant de vous être soumis.",
   },
   {
     q: "Quels résultats attendre d'une agence marketing IA ?",
-    a: "Le gain le plus immédiat est la capacité de production : davantage de contenus et de campagnes à qualité tenue, sans grossir l'équipe. Viennent ensuite la cohérence de marque sur l'ensemble des canaux et un pilotage fondé sur les données mesurées. Nous ne promettons pas de chiffre de performance à l'aveugle : les indicateurs de succès (trafic, visibilité, engagement, conversions selon vos objectifs) sont définis avec vous au cadrage, mesurés en continu et commentés dans un reporting régulier.",
+    a: "Le premier effet se voit sur la capacité de production : davantage de contenus et de campagnes, à qualité égale, sans embaucher. Suivent une marque qui parle de la même voix sur tous les canaux et des décisions prises sur des chiffres. Nous ne promettons aucun chiffre de performance à l'avance : les indicateurs de réussite (trafic, citations par les IA, engagement, demandes de contact, selon vos objectifs) se fixent au cadrage, se relèvent chaque mois et se commentent dans le bilan.",
   },
   {
     q: "L'IA peut-elle produire tout notre contenu ?",
-    a: "Non. L'IA accélère la recherche, les premiers jets, les déclinaisons et les reformulations ; la stratégie éditoriale, les angles, les preuves, la voix de marque et la validation finale restent humaines. C'est le partage que nous appliquons dans chaque mission : votre plateforme de marque encode la voix, nos consultants relisent et arbitrent, vous validez ce qui sort sous votre nom. Un dispositif entièrement automatisé produit vite du volume que personne ne lit et que rien ne distingue.",
+    a: "Non. L'IA prend en charge la recherche, les premiers jets, les déclinaisons et les reformulations ; la stratégie éditoriale, le choix des angles, les preuves, le ton propre à votre marque et le feu vert final restent entre des mains humaines. Chaque mission répartit le travail ainsi : votre plateforme de marque fixe la voix, nos consultants relisent et tranchent, vous validez ce qui sort sous votre nom. Un dispositif sans humain dans la boucle produit vite des textes que personne ne lit.",
   },
   {
     q: "Nos contenus assistés par IA seront-ils pénalisés par Google ?",
-    a: "Les consignes de Google jugent un contenu à sa qualité et à son utilité pour le lecteur, quel que soit son mode de production. Ce qui expose un site aux sanctions : la production en masse de pages sans valeur ajoutée, qu'elles soient générées ou rédigées à la main. Un contenu assisté par l'IA, documenté, relu et utile à son lecteur se positionne dans les mêmes conditions qu'un contenu entièrement manuel. Notre dispositif est construit autour de ces critères : socle de marque, relecture humaine, preuves et maillage interne.",
+    a: "Google Search Central l'écrit dans ses consignes : un contenu est jugé sur sa qualité et son utilité pour le lecteur, quelle que soit la façon dont il a été produit. Google pénalise les pages fabriquées en série pour manipuler le classement, qu'elles sortent d'un modèle ou d'une plume humaine ; ses règles anti-spam rangent cette pratique parmi les abus, sous le nom de contenu produit à grande échelle. Un texte assisté par l'IA, sourcé, relu et utile se positionne aux mêmes conditions qu'un texte écrit à la main. Notre dispositif repose sur ces critères : socle de marque, relecture humaine, preuves et maillage interne.",
   },
   {
     q: "Combien de temps avant de voir des résultats ?",
-    a: "La capacité de production accélère dès les premières semaines : une fois le socle en place, les contenus et les campagnes sortent à cadence régulière. La visibilité organique suit un autre rythme : le SEO et le GEO se mesurent en mois, le temps que les moteurs explorent, évaluent et positionnent les pages. Nous ne promettons aucune position ni aucun délai chiffré ; nous fixons au cadrage les indicateurs suivis (volume produit, trafic, citations dans les moteurs de réponse, conversions) et nous les commentons dans le reporting.",
+    a: "La production prend son rythme dans les premières semaines, sitôt le socle installé. La visibilité organique avance plus lentement : le SEO et le GEO se mesurent en mois, le temps que les moteurs explorent, évaluent et classent les pages. Nous ne promettons ni position ni délai chiffré ; le cadrage fixe les indicateurs suivis (volume produit, trafic, citations dans les moteurs de réponse, demandes entrantes) et le bilan mensuel les commente.",
   },
 ]
 
@@ -293,18 +309,18 @@ const serviceJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   name: 'Agence IA marketing',
-  description: "Prestation clé en main de marketing augmenté par l'IA : production de contenu, SEO et GEO, campagnes et publicité, social media, emailing et CRM, reporting et analyse. Masteria produit et pilote pour vous, avec une approche multi-LLM et des automatisations sur mesure.",
+  description: "Prestation déléguée de marketing produit avec l'IA : contenus éditoriaux, SEO et GEO, campagnes payantes, réseaux sociaux, emailing relié au CRM, mesure et reporting. Masteria produit et pilote pour l'entreprise, avec plusieurs modèles d'IA, des automatisations construites pour ses outils et un consultant qui relit chaque pièce.",
   url: 'https://www.master-ia.fr/agence-ia-marketing',
-  serviceType: "Marketing augmenté par l'IA",
+  serviceType: "Marketing produit avec l'IA",
   areaServed: ['France', 'Suisse', 'Belgique', 'États-Unis', 'Inde'],
   provider: { '@id': 'https://www.master-ia.fr/#organization' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: "Prestations de marketing augmenté par l'IA",
+    name: "Prestations marketing de l'agence IA Masteria",
     itemListElement: [
-      { '@type': 'Offer', name: 'Production de contenu augmentée par l\'IA', description: "Articles, pages, fiches produit et newsletters dans votre ligne éditoriale, avec relecture humaine." },
-      { '@type': 'Offer', name: 'SEO et GEO pilotés par l\'IA', description: "Mots-clés, clusters, briefs, optimisation on-page et visibilité dans les réponses des IA." },
-      { '@type': 'Offer', name: 'Campagnes, social media, emailing et reporting', description: "Conception, déclinaison et pilotage des campagnes, du social media, de l'emailing et du reporting." },
+      { '@type': 'Offer', name: "Contenus éditoriaux produits avec l'IA", description: "Articles, pages, fiches produit et newsletters écrits dans la voix de la marque, relus par un consultant avant validation." },
+      { '@type': 'Offer', name: "Référencement SEO et GEO", description: "Requêtes, plan de contenus par thème, briefs, reprise des pages et citations par ChatGPT, Perplexity ou Gemini." },
+      { '@type': 'Offer', name: 'Campagnes, réseaux sociaux, emailing et reporting', description: "Annonces, calendrier social, séquences d'emailing reliées au CRM et bilan mensuel commenté." },
     ],
   },
 }
@@ -320,10 +336,10 @@ const articleJsonLd = {
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-06-13',
-  dateModified: '2026-09-03',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/agence-ia-marketing#webpage' },
-  about: ["Marketing augmenté par l'IA", 'SEO et GEO', 'IA générative', 'Marketing automation'],
+  about: ["Marketing produit avec l'IA", 'SEO et GEO', 'IA générative', 'Marketing automation'],
 }
 
 /* ───────── Composants ───────── */
@@ -376,8 +392,9 @@ export default function AgenceIAMarketingPage() {
         keywords={KEYWORDS}
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
+        citations={PAGE_CITATIONS}
         datePublished="2026-06-13"
-        dateModified="2026-09-03"
+        dateModified="2026-10-07"
         extraJsonLd={[serviceJsonLd, articleJsonLd]}
       />
 
@@ -410,7 +427,7 @@ export default function AgenceIAMarketingPage() {
               </span>
             </div>
             <span style={{ fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}>
-              Done-for-you, pas une formation
+              Nous produisons, vous validez
             </span>
           </div>
 
@@ -422,25 +439,25 @@ export default function AgenceIAMarketingPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
+            Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria depuis 2022 · relu et actualisé le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe pour citation LLM — accroche */}
+          {/* GEO : réponse directe pour citation LLM (accroche) */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence IA marketing qui produit et pilote vos actions à votre place : contenu, SEO et GEO, campagnes et publicité, social media, emailing et reporting, augmentés par l'intelligence artificielle. C'est une prestation clé en main, multi-LLM, avec <strong style={{ color: '#fff', fontWeight: 700 }}>relecture humaine sur chaque livrable</strong>. Vous cadrez et validez, nous exécutons. Interventions en France et à l'international (Europe, États-Unis, Inde).
+            Masteria est une agence IA marketing qui prend votre production en charge : articles et pages, référencement dans Google comme dans ChatGPT ou Perplexity, annonces, réseaux sociaux, séquences d'emailing et tableaux de bord. Nos consultants s'appuient sur plusieurs modèles d'IA et <strong style={{ color: '#fff', fontWeight: 700 }}>relisent chaque livrable avant de vous le soumettre</strong>. Vous fixez le cap et donnez votre accord ; l'équipe produit, publie si vous le souhaitez et mesure. Depuis Lyon, l'équipe travaille pour des entreprises françaises et pour des clients installés ailleurs en Europe, en Inde ou aux États-Unis.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            L'IA générative démultiplie la capacité de production marketing, à condition de savoir quel modèle utiliser, comment encoder votre marque dans les prompts et où placer le contrôle humain. En tant qu'agence marketing IA, nous prenons en charge cette ingénierie éditoriale de bout en bout et livrons des contenus et campagnes prêts à publier. Masteria travaille sur l'IA depuis 2022 et a accompagné plus de 1 500 professionnels.
+            L'IA générative démultiplie ce qu'une équipe marketing peut sortir en une semaine. Le résultat tient à trois réglages que peu d'équipes ont le temps de poser : le modèle adapté à chaque tâche, une voix de marque écrite noir sur blanc, un contrôle humain placé au bon endroit. Ces réglages occupent Masteria depuis sa fondation lyonnaise en 2022, et vous recevez des contenus et des campagnes prêts à partir.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Discutons de votre marketing
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#prestations" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Ce qu'on prend en charge
+              Voir ce que nous produisons
             </a>
           </div>
 
@@ -463,12 +480,11 @@ export default function AgenceIAMarketingPage() {
       <section style={{ background: '#fff', padding: 'clamp(40px, 5vw, 56px) 24px', borderBottom: '1px solid #E5E7EB' }}>
         <div style={{ ...wrap, display: 'flex', justifyContent: 'center', gap: 'clamp(32px, 6vw, 64px)', flexWrap: 'wrap' }}>
           {[
-            { num: '+1 500', label: "professionnels formés à l'IA" },
-            { num: '98 %', label: 'de satisfaction (formations)' },
-            { num: '2022', label: 'année de création de Masteria' },
-            { num: 'Multi-LLM', label: 'ChatGPT, Claude, Gemini, Copilot, Mistral' },
+            { num: '2022', label: "création du cabinet à Lyon, avec l'IA pour seul sujet" },
+            { num: '6', label: 'familles de prestations, à confier ensemble ou une par une' },
+            { num: '94 %', label: "des acheteurs B2B s'aident de l'IA pour acheter (Forrester, enquête 2025)" },
           ].map(s => (
-            <div key={s.num} style={{ textAlign: 'center' }}>
+            <div key={s.num} style={{ textAlign: 'center', maxWidth: 260 }}>
               <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 36, fontWeight: 900, color: '#0A0A0A', margin: 0, lineHeight: 1, letterSpacing: '-0.01em' }}>{s.num}</p>
               <p style={{ fontSize: 13, color: '#6B7280', margin: '6px 0 0' }}>{s.label}</p>
             </div>
@@ -487,11 +503,11 @@ export default function AgenceIAMarketingPage() {
               </h2>
 
               <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Nous couvrons six familles de prestations, toutes augmentées par l'IA : la production de contenu, le SEO et le GEO, les campagnes et la publicité, le social media, l'emailing et le CRM, le reporting et l'analyse. Vous choisissez le périmètre, nous produisons et pilotons, vos équipes ne portent pas la charge quotidienne.</strong>
+                <strong>Six familles de travaux peuvent nous être confiées : les contenus éditoriaux, le référencement SEO et GEO, les campagnes payantes, les réseaux sociaux, l'emailing relié à votre CRM, la mesure et le reporting. Vous retenez celles qui vous manquent ; l'équipe les produit et les pilote, et vos collaborateurs gardent leur temps pour le reste de leur métier.</strong>
               </p>
 
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Le périmètre se construit avec vous : vous pouvez nous confier l'ensemble du dispositif ou un canal précis. Chaque livrable reste relu par un consultant et fidèle à votre marque.
+                Un client peut nous confier tout son marketing digital ou un seul canal, par exemple la newsletter du mois ou les fiches produit d'un catalogue. Un consultant relit chaque pièce à la lumière de votre charte.
               </p>
             </div>
 
@@ -517,15 +533,15 @@ export default function AgenceIAMarketingPage() {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>Méthode</Kicker>
           <h2 style={h2Style}>
-            Comment se déroule une mission d'agence IA marketing ?
+            Comment se passe une mission d'agence IA marketing ?
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Chaque mission suit quatre temps : un cadrage de vos objectifs et de votre ligne éditoriale, la mise en place des outils et automatisations qui servent de socle de production, la production des contenus et campagnes à cadence régulière avec relecture humaine, puis le pilotage par les résultats avec un reporting commenté.</strong>
+            <strong>Une mission avance en quatre étapes : le cadrage de vos objectifs et de votre voix de marque, l'installation des outils et des automatisations qui serviront à produire, une production à rythme fixe relue par un consultant, puis un pilotage mensuel appuyé sur les chiffres de vos campagnes.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
-            Le même chemin pour chaque mission : cadrer, outiller, produire, piloter. Chaque temps produit un livrable concret et vous gardez la validation à chaque étape.
+            Cadrer, outiller, produire, piloter : chaque étape se conclut par un document ou une pièce que vous approuvez avant que la suivante commence.
           </p>
 
           <div style={{ position: 'relative' }}>
@@ -563,15 +579,15 @@ export default function AgenceIAMarketingPage() {
         <div style={wrap}>
           <Kicker>Livrables</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Ce que l'agence construit, concrètement
+            Ce que l'agence laisse en place chez vous
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une mission laisse cinq choses en place : un socle de contenu assisté propre à votre marque, un dispositif SEO et GEO, des automatisations marketing raisonnables, une mesure commentée des résultats et, si vous le souhaitez, une équipe formée pour reprendre la main. Chaque brique est documentée et reste exploitable après la mission.</strong>
+            <strong>À la fin d'une mission, cinq éléments restent chez vous : une base de contenu assistée à l'image de votre marque, un dispositif SEO et GEO, des automatisations marketing mesurées, un tableau de bord commenté et, si vous le décidez, une équipe formée pour prendre le relais. Chaque élément est documenté et vous appartient.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 860 }}>
-            Ces livrables se construisent dans l'ordre du besoin, le socle en premier : tout le reste s'appuie dessus.
+            Nous les construisons dans l'ordre où ils servent, en commençant par la base de contenu, dont dépend tout le reste.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginBottom: 32 }}>
@@ -593,12 +609,12 @@ export default function AgenceIAMarketingPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Avant d'engager le chantier de visibilité, un état des lieux évite de produire au hasard : notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> mesure votre position dans les moteurs de recherche, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> établit ce que les moteurs de réponse retiennent déjà de votre marque. Les deux se mènent en début de mission et fixent le point de référence de la mesure.
+            Avant de lancer le chantier de visibilité, mieux vaut savoir d'où l'on part. Notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> mesure vos positions dans Google ; l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> relève ce que ChatGPT, Perplexity ou Gemini disent aujourd'hui de votre marque, et à côté de quels concurrents. Menés au démarrage, ces deux audits donnent le point zéro de la mesure.
           </p>
         </div>
       </section>
 
-      {/* ── OUTILS & APPROCHE (ancre sombre — pivot) ── */}
+      {/* ── OUTILS & APPROCHE (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -607,15 +623,15 @@ export default function AgenceIAMarketingPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Outils et approche</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 860 }}>
-            Multi-LLM et automatisations sur mesure, pas un gabarit générique
+            Plusieurs modèles d'IA, des automatisations taillées pour vos outils
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Nous travaillons en multi-LLM (ChatGPT, Claude, Gemini, Copilot, Mistral) en choisissant le bon modèle pour chaque usage, et nous construisons des automatisations sur mesure pour raccorder votre CRM, votre CMS et vos planificateurs. L'IA accélère la production, le consultant arbitre, et le dispositif s'ajuste selon les résultats mesurés.</strong>
+            <strong style={{ color: '#fff' }}>Nous choisissons le modèle selon la tâche entre Microsoft Copilot (anciennement Microsoft 365 Copilot) et ses concurrents Claude, ChatGPT, Gemini ou Vibe, que développe Mistral AI, puis nous relions les automatisations à votre CRM, à votre CMS et à vos outils de planification. L'IA produit vite, le consultant tranche, et les résultats mesurés décident des réglages suivants.</strong>
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
-            Aucun outil n'est imposé par principe : le besoin commande le choix du modèle et de l'automatisation. Cette ingénierie est notre cœur de métier depuis 2022.
+            Ces outils changent vite, et une voix de marque rangée au mauvais endroit peut disparaître avec eux. Au 7 octobre 2026, OpenAI prévoit de retirer les GPTs personnalisés de toutes ses offres le 11 décembre 2026 : leurs instructions deviendront une compétence dans un plugin. Depuis le 5 octobre, Google installe dans Workspace des compétences appelées à remplacer les Gems, et l'assistant de Mistral s'appelle Vibe depuis le 28 mai 2026. Vos règles de marque, nous les écrivons donc sous forme de compétences, un format de fichier (SKILL.md) que Google et Microsoft ont repris dans leurs propres assistants, pour qu'elles survivent à un changement d'outil.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
@@ -634,7 +650,7 @@ export default function AgenceIAMarketingPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
-            Les workflows qui font circuler vos contenus relèvent de notre <Link to="/agence-automatisation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence d'automatisation IA</Link>. Quand le besoin va au-delà du flux et appelle un véritable logiciel, nous concevons des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link> adaptés à vos cas d'usage marketing. Le rédactionnel, la création visuelle et la déclinaison de campagnes reposent sur l'<Link to="/ia-generative-entreprise" style={{ color: '#60A5FA', fontWeight: 600 }}>IA générative en entreprise</Link>, dont nous maîtrisons les modèles et les garde-fous.
+            Les flux qui transportent vos contenus entre vos logiciels sont construits par notre <Link to="/agence-automatisation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence d'automatisation IA</Link>. Si le besoin réclame une application à part entière, par exemple un générateur de fiches produit branché sur votre catalogue, nous développons des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link>. Les modèles qui écrivent, illustrent et déclinent vos campagnes relèvent de l'<Link to="/ia-generative-entreprise" style={{ color: '#60A5FA', fontWeight: 600 }}>IA générative en entreprise</Link>, avec les garde-fous qui l'accompagnent.
           </p>
         </div>
       </section>
@@ -644,15 +660,15 @@ export default function AgenceIAMarketingPage() {
         <div style={wrap}>
           <Kicker>Ce qui fait échouer</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 860 }}>
-            Les erreurs des dispositifs marketing IA
+            Quatre erreurs font échouer un dispositif marketing IA
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Quatre erreurs reviennent dans les dispositifs marketing IA qui déçoivent : produire plus sans plateforme de marque, publier sans relecture, confier le SEO à la seule volumétrie et outiller les équipes sans les former. Notre méthode traite chacune d'elles dès le cadrage.</strong>
+            <strong>Les dispositifs marketing IA qui déçoivent tombent presque toujours dans l'un de ces quatre pièges : accélérer avant d'avoir écrit la marque, publier sans relire, miser sur le nombre de pages pour le SEO, distribuer des licences sans former. Le cadrage de nos missions les traite un par un.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
-            Nous reprenons régulièrement des dispositifs montés dans l'urgence : les symptômes se ressemblent, les causes aussi.
+            Une partie de nos clients arrive avec un dispositif monté à la hâte ; les symptômes se ressemblent chez presque tous, et leurs causes aussi.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
@@ -674,10 +690,10 @@ export default function AgenceIAMarketingPage() {
         <div style={wrap}>
           <Kicker>Conseil ou exécution</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Cabinet de conseil marketing digital ou agence : ce que nous faisons, et ce que nous laissons aux autres
+            Cabinet de conseil marketing digital ou agence : notre périmètre et celui des spécialistes
           </h2>
           <p style={answerStyle}>
-            <strong>Masteria intervient sur le marketing digital par un seul angle, l'IA : conseil en stratégie d'outillage, marketing automation, production et pilotage. Cabinet quand vos équipes exécutent, agence quand elles n'ont pas le temps.</strong> Tout le reste du marketing, nous le laissons aux spécialistes.
+            <strong>Masteria aborde le marketing digital sous un seul angle, celui de l'IA : stratégie d'outillage, marketing automation, production et pilotage. Nous jouons le rôle de cabinet de conseil quand vos équipes ont le temps d'exécuter, et celui d'agence quand elles ne l'ont pas.</strong> Le reste du marketing revient aux spécialistes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
             {CONSEIL_EXEC.map(card => {
@@ -694,7 +710,7 @@ export default function AgenceIAMarketingPage() {
             })}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Pour l'automatisation au-delà du marketing (ventes, administratif, support), voyez notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> ; pour rendre vos équipes autonomes, la <Link to="/formation-ia-marketing" style={aStyle}>formation IA marketing</Link>.
+            Pour automatiser au-delà du marketing (ventes, administration, service client), rendez-vous sur la page de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> ; pour que vos équipes deviennent autonomes, sur celle de la <Link to="/formation-ia-marketing" style={aStyle}>formation IA marketing</Link>.
           </p>
         </div>
       </section>
@@ -708,11 +724,11 @@ export default function AgenceIAMarketingPage() {
           </h2>
 
           <p style={answerStyle}>
-            <strong>Déléguer signifie que nous produisons et pilotons pour vous : peu de charge pour vos équipes, démarrage rapide, mais la prestation n'est pas finançable OPCO. Former signifie rendre vos équipes autonomes pour produire elles-mêmes : c'est une montée en compétence certifiée Qualiopi et finançable. Les deux approches peuvent se combiner.</strong>
+            <strong>Déléguer, c'est nous confier la production et le pilotage : peu de temps pour vos équipes, un démarrage court, et une prestation de service pas finançable par votre OPCO. Former, c'est rendre vos équipes capables de produire elles-mêmes, avec une formation certifiée Qualiopi que votre OPCO peut financer si ses règles de prise en charge et ses fonds de l'année le permettent. Rien n'empêche d'enchaîner les deux.</strong>
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
-            Voici la comparaison honnête, critère par critère, pour choisir la voie adaptée à votre contexte.
+            Le tableau met les deux voies côte à côte sur six critères, pour que vous choisissiez selon le temps et le budget dont vous disposez.
           </p>
 
           <div style={{ ...cardStyle, overflowX: 'auto', marginBottom: 20 }}>
@@ -738,7 +754,7 @@ export default function AgenceIAMarketingPage() {
 
           <p style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 860 }}>
             <GraduationCap size={18} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-            <span>Vous préférez monter la compétence en interne ? Notre <Link to="/formation-ia-marketing" style={aStyle}>formation IA marketing</Link>, certifiée Qualiopi et finançable OPCO, rend vos équipes autonomes sur les mêmes usages. Et rien n'empêche de combiner : nous produisons d'abord, puis nous transmettons à vos équipes en fin de mission.</span>
+            <span>Vous voulez garder la compétence en interne ? La <Link to="/formation-ia-marketing" style={aStyle}>formation IA marketing</Link> apprend à vos équipes les mêmes usages, sur leurs propres contenus. Les deux voies se combinent : l'agence lance la production, puis transmet la méthode à vos collaborateurs avant de se retirer.</span>
           </p>
         </div>
       </section>
@@ -752,15 +768,15 @@ export default function AgenceIAMarketingPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Parce que nous combinons l'expertise IA et l'exigence éditoriale : Masteria travaille sur l'intelligence artificielle depuis 2022, en conseil comme en développement, et a accompagné plus de 1 500 professionnels. Nous produisons et pilotons votre marketing avec une approche multi-LLM, des automatisations sur mesure et une relecture humaine sur chaque livrable.</strong>
+            <strong>Nous réunissons deux exigences que le marketing sépare souvent : une connaissance fine des modèles d'IA et le souci du texte bien écrit. Masteria se consacre à l'intelligence artificielle depuis sa création en 2022, en conseil, en développement et en formation ; l'agence produit et pilote votre marketing avec plusieurs modèles, des automatisations construites pour vos outils et un consultant qui relit tout ce qui sort.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '32px 0' }}>
             {[
-              { icon: Sparkles, title: "Spécialistes de l'IA depuis 2022", desc: "L'IA générative est notre cœur de métier : nous connaissons les forces, les pièges et les bons réglages de chaque modèle, et nous le mettons au service de votre marketing." },
-              { icon: PenLine, title: 'Exigence éditoriale', desc: "Votre marque est encodée dans nos prompts, chaque livrable est relu par un consultant. L'IA accélère, l'humain arbitre : rien ne sort sous votre nom sans validation." },
-              { icon: Workflow, title: 'Du contenu aux automatisations', desc: "Nous ne livrons pas que des textes : nous mettons en place les workflows et intégrations qui font tourner votre dispositif marketing de bout en bout." },
-              { icon: MapPin, title: 'Europe, États-Unis et Inde', desc: "Basés à Lyon, nous intervenons à distance pour la production et le pilotage, et en présentiel ponctuel pour les temps de cadrage qui le justifient." },
+              { icon: Sparkles, title: "L'IA comme seul sujet depuis 2022", desc: "Les modèles, leurs points forts, leurs pièges et leurs réglages font notre quotidien. Votre marketing profite de cette expérience dès le démarrage de la mission." },
+              { icon: PenLine, title: 'Exigence éditoriale', desc: "Votre marque est écrite dans nos instructions et chaque texte passe sous les yeux d'un consultant. Rien ne paraît sous votre nom sans votre feu vert." },
+              { icon: Workflow, title: 'Du contenu aux automatisations', desc: "Nous livrons des textes, et aussi les flux et les connexions qui font tourner le dispositif, du brief jusqu'au reporting." },
+              { icon: MapPin, title: 'Europe, États-Unis et Inde', desc: "Depuis Lyon, la production et le pilotage se font à distance ; nous nous déplaçons pour les ateliers de cadrage qui gagnent à se tenir dans vos locaux." },
             ].map(card => (
               <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
                 <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
@@ -768,8 +784,11 @@ export default function AgenceIAMarketingPage() {
               </div>
             ))}
           </div>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 860 }}>
+            Deux missions de formation récentes montrent ce travail de marque côté marketing. Chez une interprofession agricole formée en septembre 2026, l'équipe promotion et communication a rédigé sa voix de marque une seule fois, l'a confiée à un assistant commun au service, puis en a tiré des contenus en anglais, un calendrier éditorial et un bilan de campagne (<Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>le récit de la mission</Link>). Le même mois, la responsable des études d'un groupe immobilier, rattachée au marketing stratégique, a appris à passer de ses fichiers de ventes à un deck de direction avec Claude (<Link to="/etudes-de-cas-ia#mission-immobilier-etudes" style={aStyle}>le détail de sa journée</Link>).
+          </p>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Votre besoin dépasse le marketing et touche à une stratégie IA d'ensemble (gouvernance, conformité, feuille de route) ? Notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> prend le relais. Pour les développements applicatifs, voyez notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>.
+            Si la question dépasse le marketing et concerne l'IA dans tous vos services (règles d'usage, conformité à l'AI Act, ordre des chantiers), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> s'en charge. Pour une application à développer, notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> prend le relais.
           </p>
         </div>
       </section>
@@ -781,13 +800,13 @@ export default function AgenceIAMarketingPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Agence IA marketing : les questions fréquentes
+                Vos questions sur l'agence IA marketing
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre question n'apparaît pas dans la liste ? Apportez-la lors des 30 minutes de cadrage, ou écrivez-nous avant.
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Envoyer votre question
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -805,21 +824,21 @@ export default function AgenceIAMarketingPage() {
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Les pages à lire ensuite
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Déléguer une partie de votre dispositif, automatiser vos flux, ou former vos équipes en complément. Pour cadrer le périmètre avant de démarrer, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> situent vos priorités marketing ; le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> les transforme ensuite en feuille de route.
+            Elles répondent aux suites possibles : confier une partie du dispositif, automatiser vos flux, former vos équipes en parallèle. Pour situer vos priorités marketing avant de démarrer, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent ; le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link>, dont ce cadrage arrête la durée et le forfait, en tire ensuite une feuille de route.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Stratégie marketing IA : le guide', href: '/blog/strategie-marketing-ia-humains-social-media', tag: 'Guide', desc: "La répartition humains et IA fondée sur les études, cinq décisions, la méthode social media, les outils abordables." },
-              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Sur mesure', desc: "Conception et développement de bout en bout de vos solutions IA, jusqu'à la production." },
-              { label: 'Agence d\'automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Workflows, assistants et agents qui font circuler vos contenus et synchronisent vos outils." },
-              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Applications et outils internes pilotés par l'IA, conçus pour vos cas d'usage marketing." },
-              { label: "Cas d'usage de l'IA en marketing", href: '/cas-usage-ia-entreprise', tag: 'Cas d\'usage', desc: "Des exemples concrets côté marketing : contenu, SEO, campagnes et reporting augmentés par l'IA." },
-              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Formation', desc: "Préférez-vous former vos équipes ? Montée en compétence certifiée Qualiopi, finançable OPCO." },
-              { label: 'Formation multi-outils marketing', href: '/formation-multi-outils-marketing', tag: 'Formation', desc: "Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas marketing pour choisir le bon outil." },
-              { label: 'Formation ChatGPT marketing', href: '/formation-chatgpt-marketing', tag: 'Formation', desc: "Maîtriser ChatGPT pour la production de contenus, les campagnes et l'analyse marketing." },
+              { label: 'Stratégie marketing IA : le guide', href: '/blog/strategie-marketing-ia-humains-social-media', tag: 'Guide', desc: "Le partage du travail entre humains et IA appuyé sur les études, cinq décisions à prendre, une méthode pour les réseaux sociaux et des outils à petit budget." },
+              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Quand le marketing a besoin d'une vraie application (configurateur, générateur de fiches, portail client), l'équipe de développement la conçoit et la met en service." },
+              { label: "Agence d'automatisation IA", href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Des flux, des assistants et des agents qui déplacent vos contenus et vos contacts entre vos logiciels, sans ressaisie." },
+              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Outils', desc: "Des outils internes taillés pour une tâche marketing précise, comme produire les fiches produit d'un catalogue entier dans la voix de la marque." },
+              { label: "Usages de l'IA par service, marketing compris", href: '/cas-usage-ia-entreprise', tag: 'Usages', desc: "Ce que l'IA change dans un service marketing, exemples à l'appui, à côté des ventes, des ressources humaines ou de la finance." },
+              { label: 'Formation IA marketing', href: '/formation-ia-marketing', tag: 'Formation', desc: "Pour que vos équipes produisent elles-mêmes : programme certifié Qualiopi, que votre OPCO peut financer si ses critères et son budget le permettent." },
+              { label: 'Formation multi-outils marketing', href: '/formation-multi-outils-marketing', tag: 'Comparatif', desc: "Les principaux assistants mis à l'épreuve de vos propres sujets marketing, pour choisir le vôtre en connaissance de cause." },
+              { label: 'Formation ChatGPT marketing', href: '/formation-chatgpt-marketing', tag: 'ChatGPT', desc: "ChatGPT au service de la rédaction, des campagnes et de l'analyse, sur les tâches d'une équipe marketing." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -835,7 +854,7 @@ export default function AgenceIAMarketingPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Lire la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -852,41 +871,42 @@ export default function AgenceIAMarketingPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
               Confiez-nous votre marketing IA
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Décrivez-nous vos objectifs et les canaux à prendre en charge. Nous revenons vers vous sous 24 heures avec un créneau de cadrage : périmètre, dispositif de production et indicateurs de suivi. Vous validez, nous produisons et pilotons.
+              Dites-nous quels objectifs vous visez et quels canaux vous aimeriez confier. En une demi-heure, en visio ou au téléphone, nous esquissons ensemble le périmètre, le dispositif de production et les indicateurs à suivre. Vous décidez ensuite de la suite, avec nous ou de votre côté.
             </p>
-            <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Discutons de votre projet
+            <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
+              Réserver 30 minutes de cadrage
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Multi-LLM · Relecture humaine · Europe, États-Unis, Inde
+              Agence basée à Lyon · plusieurs modèles d'IA · relecture par un consultant · France, Europe, États-Unis, Inde
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── E-E-A-T : l'équipe de l'agence marketing (fondateur + intervenants, preuves) ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'équipe marketing IA</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Mathias Nizan pilote, des spécialistes indépendants produisent
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les missions sont menées par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              En créant Masteria à Lyon en 2022, Mathias Nizan a choisi un seul sujet, l'intelligence artificielle ; il suit chaque mission de l'agence. Pour votre marketing, il réunit selon le besoin des consultants IA (une dizaine dans le réseau) pour la stratégie et la relecture, des développeurs (cinq environ) pour les automatisations et les connexions, et des formateurs (une vingtaine) pour la passation à vos équipes ; tous exercent en indépendants. Libres de tout lien avec les éditeurs de logiciels, nous recommandons l'outil qui convient à votre équipe, quelle qu'en soit la marque. Les missions décrites dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et les articles réunis dans notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> permettent de vérifier ce qui précède.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['International', 'Europe, États-Unis, Inde'],
+              ['Une dizaine', 'de consultants IA, stratèges et relecteurs'],
+              ['Cinq', 'développeurs environ, pour les automatisations'],
+              ['Une vingtaine', 'de formateurs pour la passation'],
+              ['Lyon', "point de départ des missions, jusqu'aux États-Unis et en Inde"],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -897,9 +917,17 @@ export default function AgenceIAMarketingPage() {
         </div>
       </section>
 
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan signe cette page et la reprend à chaque évolution notable des outils marketing ; la version du 7 octobre 2026 intègre le calendrier de retrait des GPTs et l'arrivée des compétences chez Google. Son parcours et sa façon de conduire les missions sont décrits sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page de présentation</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
-      <OfficialSources />
+      <OfficialSources lean extra={PAGE_CITATIONS} />
     </>
   )
 }

@@ -2,7 +2,52 @@
 // Vérifié le 03/10/2026 : règlements (UE) 2023/1230, 2026/1744, 2024/1689 et 2023/2854 sur EUR-Lex (via le Cellar de l'Office des publications), Microsoft Learn (Copilot, page mise à jour le 01/10/2026), Insee Première n° 2120 (juillet 2026), Cybermalveillance.gouv.fr, Service Public F31422 ; retour de mission : étude de cas « industrie ».
 export default {
   slug: 'ia-industrie',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  secteur: {
+    metaTitle: "IA industrie & énergie : performance industrielle | Masteria",
+  },
+  hero: {
+    chips: ["Achats, qualité, méthodes, maintenance", "Règlement Machines au 14 janvier 2027", "Code remis à votre équipe"],
+    lien: "Voir les flux d'usine traités",
+  },
+  offresTitre: {
+    kicker: "Trois chantiers pour un site",
+    h2: "Nous lisons vos flux, construisons les assistants et automatisons les circuits",
+  },
+  enjeux: {
+    kicker: "Terrain industriel",
+    h2: "Dans une usine, l'IA rapporte d'abord autour de la ligne",
+    difficultes: "Ce qui ralentit les services d'un site",
+    prestations: "Ce que nous construisons pour un industriel",
+  },
+  regieBloc: {
+    kicker: "Régie sur site",
+    h2: "Un développeur IA détaché auprès de votre informatique industrielle",
+    accroche: "Quand les plans, les gammes ou les relevés de production ne doivent pas quitter l'usine, le développeur travaille chez vous, en atelier ou au bureau d'études, sur vos serveurs et au besoin sur un réseau coupé d'internet.",
+    lien: "Comment se cadre une régie chez un industriel",
+  },
+  formationBloc: {
+    kicker: "Former les services",
+    h2: "Chaque service s'exerce sur ses propres documents",
+    lien: "Parcourir le catalogue des formations",
+  },
+  faqBloc: {
+    h2: "Les questions que posent les industriels",
+    texte: "Votre usine a une contrainte que ces réponses ne couvrent pas ?",
+    lien: "Décrivez-la-nous",
+  },
+  maillage: {
+    h2: "Secteurs voisins de l'industrie",
+  },
+  cta: {
+    titre: "Quel circuit de votre usine outiller en premier ?",
+    texte: "Indiquez-nous le service qui ressaisit le plus et les logiciels qu'il utilise : ERP, GED, MES. Nous vous répondons sous 24 heures pour fixer les 30 minutes de cadrage offertes, et nous choisissons ensemble le premier circuit.",
+  },
+  equipe: {
+    titre: "Un fondateur qui pilote, des spécialistes réunis pour votre site",
+    texte: "Mathias Nizan a fondé Masteria à Lyon en 2022 et pilote chaque mission. Pour un industriel, il réunit selon le projet des consultants qui lisent les flux d'un site, des développeurs qui branchent les assistants sur l'ERP et des formateurs qui animent les ateliers des services, tous indépendants. Masteria ne revend aucune licence : entre Copilot, un modèle hébergé chez vous et un développement, le choix suit vos contraintes.",
+  },
   intro: "Dans une usine, l'IA générative rapporte d'abord dans les bureaux qui entourent la ligne : les achats, la qualité, les méthodes, la maintenance. Elle lit un mail fournisseur, prépare une fiche d'écart ou retrouve la bonne version d'une gamme. Sur la machine, le droit change le 14 janvier 2027, date d'application du règlement (UE) 2023/1230 sur les machines, qui encadre les fonctions de sécurité capables d'apprendre. Masteria est un cabinet IA fondé à Lyon : nous traitons ces deux terrains séparément, développons les outils sur vos fichiers et vos droits d'accès, puis formons les équipes qui les reprennent.",
 
   offresIntro: [
@@ -12,14 +57,21 @@ export default {
 
   offres: [
     {
+      title: "Diagnostic des flux d'un site",
+      cta: "Notre démarche de conseil",
       desc: "Nous diagnostiquons un site ou une fonction flux par flux : achats, qualité, méthodes, maintenance, administration des ventes. Pour chaque service, nous relevons ce qui est ressaisi, cherché ou recopié, puis nous classons les cas par gain et par risque. La feuille de route sépare les usages de bureau des projets qui touchent un équipement, et nomme pour chacun le texte applicable : règlement Machines, Data Act ou règlement sur l'IA.",
       points: ["Lecture des flux entre services", "Revue des droits d'accès avant Copilot", "Calendrier réglementaire 2027-2028"],
     },
     {
+      title: "Des assistants dans vos logiciels de production",
+      cta: "Ce que fait notre équipe de développement",
+      secondaryCta: "Exemples d'outils construits par métier",
       desc: "Nos assistants travaillent dans vos outils : extraction d'un mail fournisseur vers la fiche de l'ERP, recherche dans les gammes et les rapports d'intervention, brouillon d'un rapport 8D (la méthode de traitement d'une réclamation en huit étapes) à partir des relevés. Chaque assistant cite le document source et s'arrête avant toute écriture qui engage : coordonnées bancaires, statut d'un lot, validation d'une gamme. Son code reste chez vous, avec la liste des champs qu'il a le droit de remplir.",
       points: ["Assistants branchés sur l'ERP et la GED", "Arrêt avant chaque écriture sensible", "Code source et documentation remis"],
     },
     {
+      title: "Circuits automatisés entre services",
+      cta: "Comment nous automatisons un processus",
       desc: "Nous automatisons les circuits répétitifs entre services : demande d'achat, création d'article, réclamation client, demande de dérogation qualité. La collecte des pièces, le contrôle de complétude et la relance deviennent automatiques, avec une validation humaine à chaque étape qui l'exige. Le temps rendu se mesure sur vos propres compteurs, relevés avant le démarrage.",
       points: ["Création d'articles et de fournisseurs", "Dérogations et réclamations qualité", "Compteurs relevés avant et après"],
     },
@@ -31,13 +83,13 @@ export default {
 
   formation: [
     "Les usages tiennent quand chaque service a travaillé sur ses propres pièces : l'acheteur sur un vrai mail fournisseur, le qualiticien sur une fiche de non-conformité, le technicien sur un rapport d'intervention, le contrôleur de gestion sur un export de l'ERP. Nous construisons les ateliers sur ces documents, dans l'outil que l'entreprise a retenu, avec un temps réservé à la construction d'un premier assistant par participant.",
-    "Depuis le règlement omnibus de juillet 2026, l'article 4 du règlement sur l'IA demande aux entreprises qui déploient ces outils de prendre des mesures pour favoriser la maîtrise de l'IA par leur personnel. Une formation construite sur vos usages, avec une trace écrite, est l'une de ces mesures. Pour vos acheteurs, qualiticiens et techniciens, la journée en intra est facturée 1 980 € HT ; Masteria est certifié Qualiopi au titre des actions de formation, et votre OPCO peut la prendre en charge, alors que le conseil et le développement restent hors de ce financement.",
+    "L'article 4 du règlement sur l'IA, dans sa rédaction issue de l'omnibus de l'été 2026, demande aux entreprises qui déploient ces outils de prendre des mesures pour que leur personnel maîtrise l'IA. Une formation construite sur vos usages, avec une trace écrite, est l'une de ces mesures. Pour vos acheteurs, qualiticiens et techniciens, une journée en intra coûte 1 980 € HT. Comme Masteria est certifié Qualiopi au titre des actions de formation, l'OPCO de votre branche peut la financer selon ses règles et ses fonds ; le conseil et le développement restent hors de ce financement.",
   ],
 
   guide: {
     kicker: "Guide industrie et énergie",
     h2: "L'IA d'une usine avance sur deux terrains : les documents des services dès maintenant, la machine au rythme du règlement Machines",
-    lead: "En 2025, 17 % des entreprises de l'industrie manufacturière de 10 salariés ou plus déclarent utiliser au moins une technologie d'IA, contre 7 % en 2024, selon l'Insee : le taux a plus que doublé en un an. Sur la machine, le droit avance à son propre rythme. Le règlement (UE) 2023/1230 sur les machines s'applique le 14 janvier 2027, et le règlement omnibus (UE) 2026/1744, en vigueur depuis le 27 juillet 2026, lui confie les exigences visant l'IA qui assure une fonction de sécurité. Un dirigeant industriel gagne à traiter ces deux sujets séparément.",
+    lead: "En 2025, 17 % des entreprises de l'industrie manufacturière de 10 salariés ou plus déclarent utiliser au moins une technologie d'IA, contre 7 % en 2024, selon l'Insee : le taux a plus que doublé en un an. Sur la machine, le droit avance à son propre rythme. Le règlement (UE) 2023/1230 sur les machines s'applique le 14 janvier 2027, et l'omnibus numérique, le règlement (UE) 2026/1744 entré en vigueur le 27 juillet 2026, lui confie les exigences visant l'IA qui assure une fonction de sécurité. Un dirigeant industriel gagne à traiter ces deux sujets séparément.",
     sections: [
       {
         h3: "Le premier gain se trouve dans les échanges entre services",
@@ -49,8 +101,8 @@ export default {
       {
         h3: "Copilot hérite des droits d'accès de chaque salarié",
         paras: [
-          "Dans une entreprise équipée de Microsoft 365, Microsoft Copilot (nouveau nom de Microsoft 365 Copilot) repose sur une règle écrite dans sa documentation : il n'affiche que les données pour lesquelles l'utilisateur dispose au minimum d'un droit de lecture. Il y accède par Microsoft Graph, la couche qui relie les mails, fichiers, agendas et conversations du compte. Les requêtes, les réponses et les données accessibles par ce chemin ne servent pas à entraîner les modèles de base, précise Microsoft.",
-          "Pour une usine, cette règle a deux conséquences. Un site SharePoint partagé trop largement, avec des grilles de salaires ou des prix d'achat, devient interrogeable par tous ceux qui y ont accès. Les plans et procédures rangés sur un serveur de fichiers local restent hors de portée, sauf connecteur. La revue des droits précède donc le déploiement. Microsoft indique aussi que les modèles d'Anthropic proposés dans Copilot sont exclus de la limite des données de l'UE : votre administrateur décide de les activer ou non.",
+          "Dans une entreprise équipée de Microsoft 365, Microsoft Copilot (anciennement Microsoft 365 Copilot) repose sur une règle écrite dans sa documentation : il n'affiche que les données pour lesquelles l'utilisateur dispose au minimum d'un droit de lecture. Il y accède par Microsoft Graph, la couche qui relie les mails, fichiers, agendas et conversations du compte. Microsoft précise que les requêtes, les réponses et les données lues par ce chemin restent hors de l'entraînement de ses modèles de fondation.",
+          "Pour une usine, cette règle a deux conséquences. Un site SharePoint partagé trop largement, avec des grilles de salaires ou des prix d'achat, devient interrogeable par tous ceux qui y ont accès. Les plans et procédures rangés sur un serveur de fichiers local restent hors de portée, sauf connecteur. La revue des droits précède donc le déploiement. Autre détail de la documentation : les modèles d'Anthropic, que Copilot propose en option, sortent de la frontière européenne des données, et votre administrateur choisit de les activer ou non.",
         ],
       },
       {
@@ -90,16 +142,17 @@ export default {
     },
     cas: {
       h3: "Retour de mission : un groupe du packaging prépare Copilot sur ses propres fichiers",
-      contexte: "Le groupe est un industriel international du packaging, avec des sites en Europe, aux États-Unis et en Inde. Le choix de Microsoft 365 Copilot vient de l'informatique du groupe, qui abandonne son assistant conversationnel interne au moment où l'ERP migre vers S/4HANA, la dernière génération de SAP. Le premier palier vise 24 managers pilotes, qui doivent rentrer au bureau avec des usages tirés de leur propre poste.",
+      contexte: "Le groupe est un industriel international du packaging, avec des sites en Europe, aux États-Unis et en Inde. Le choix de Copilot vient de l'informatique du groupe, qui abandonne son assistant conversationnel interne au moment où l'ERP migre vers S/4HANA, la dernière génération de SAP. Le premier palier vise 24 managers pilotes, qui doivent rentrer au bureau avec des usages tirés de leur propre poste.",
       etapes: [
         "Avant tout atelier, le périmètre de Copilot est fixé avec le Data manager et les référents métiers, à distance puis lors d'une journée sur site : OneDrive et SharePoint entrent, les serveurs partagés restent dehors.",
         "Les exercices partent des fichiers du groupe : treize ateliers, dont plusieurs sur de gros classeurs Excel (prix, activité, coûts, base RH).",
-        "Un atelier traite le référencement fournisseur : à partir d'un mail réel, l'assistant isole le Kbis, le RIB et les contacts qui serviront à créer la fiche dans SAP.",
-        "Entre les deux sessions, les fiches de satisfaction de la première servent à corriger l'organisation de la seconde, dans un bilan rendu sous cinq jours.",
+        "Un atelier traite le référencement fournisseur : à partir d'un vrai mail de fournisseur, l'assistant isole le Kbis, le RIB et les contacts qui serviront à créer la fiche dans SAP.",
+        "Entre les deux sessions, le bilan à chaud de la première apporte trois corrections à la seconde : licences vérifiées, tables composées par métier, temps réservé à la construction des assistants.",
         "Le comité de direction consacre ensuite une matinée, en anglais, aux décisions qui lui reviennent : les données à exclure, l'audit des accès, le premier cas d'agent, le financement de l'adoption.",
       ],
-      resultat: "Deux mois après, des managers décrivent ce qu'ils en font : l'analyse de fichiers, une présentation pour un directeur d'usine, l'analyse d'un appel d'offres. Quatre participants de la session pilote demandent déjà le niveau suivant, avec les données SAP et la Power Platform. Le Data manager tient la politique d'usage et la bibliothèque de prompts, et le dispositif, repris en septembre 2026 dans trois sessions dont deux en anglais, sert de socle aux sites des États-Unis et du Mexique, prévus en octobre 2026, puis de l'Inde, en décembre 2026. Pour un autre industriel, l'enseignement est pratique : fixer le périmètre des droits d'accès avant le premier atelier.",
-      lien: { href: "/etudes-de-cas-ia#industrie", label: "Lire l'étude de cas complète" },
+      resultatLabel: "Deux mois plus tard.",
+      resultat: "Les managers citent des usages tirés de leur poste : un fichier d'activité passé au crible, une présentation préparée pour un directeur d'usine, un appel d'offres décortiqué avant la réponse. Une partie des participants réclame déjà le niveau suivant, avec les données SAP et la Power Platform. Le Data manager garde la main sur la politique d'usage et sur les prompts partagés. Trois sessions ont suivi en septembre 2026, dont deux en anglais ; les sites américains et mexicains sont programmés pour octobre 2026, le site indien pour décembre. Pour un autre industriel, l'enseignement tient en une règle : fixer le périmètre des droits d'accès avant le premier atelier.",
+      lien: { href: "/etudes-de-cas-ia#industrie", label: "Le déploiement Copilot du groupe du packaging, palier par palier" },
     },
     pieges: [
       {
@@ -140,11 +193,11 @@ export default {
     },
     {
       q: "Combien coûte un projet IA dans l'industrie ?",
-      a: "Trois éléments font le prix : le nombre de systèmes à raccorder (ERP, GED, MES), l'état des documents et le niveau de contrôle exigé avant chaque écriture. Le forfait se fixe après le cadrage, dans une proposition qui liste les circuits couverts et les compteurs de mesure. Un premier assistant pour la création des fournisseurs reste un engagement mesuré ; un déploiement multisite raccordé à plusieurs systèmes dépasse 100 000 € et peut atteindre plusieurs centaines de milliers d'euros. Les 30 minutes de cadrage offertes servent à choisir le premier circuit.",
+      a: "Trois éléments font le prix : le nombre de systèmes à raccorder (ERP, GED, MES), l'état des documents et le niveau de contrôle exigé avant chaque écriture. Le forfait se fixe après le cadrage, dans une proposition qui liste les circuits couverts et les compteurs de mesure. Un premier assistant pour la création des fournisseurs reste un engagement mesuré ; un déploiement sur plusieurs usines, raccordé à l'ERP et au MES, passe la barre des 100 000 € et peut monter à quelques centaines de milliers d'euros. Le premier circuit se choisit pendant les 30 minutes de cadrage offertes.",
     },
     {
       q: "L'OPCO peut-il financer le conseil ou le développement ?",
-      a: "Non, seule la formation peut l'être. Votre OPCO peut financer les ateliers de vos acheteurs, qualiticiens et techniciens de maintenance, puisque Masteria est certifié Qualiopi pour ses actions de formation. Le diagnostic des flux, la conception des assistants et leur raccordement à l'ERP se facturent comme des prestations de service. Selon votre taille et votre région, des aides publiques au conseil peuvent exister ; le cadrage sert aussi à les identifier.",
+      a: "Non, seule la formation peut l'être. Votre OPCO peut financer les ateliers de vos acheteurs, qualiticiens et techniciens de maintenance, car la certification Qualiopi de Masteria porte sur les actions de formation. Le diagnostic des flux, la conception des assistants et leur raccordement à l'ERP se facturent comme des prestations de service. Selon votre taille et votre région, des aides publiques au conseil peuvent exister ; le cadrage sert aussi à les identifier.",
     },
     {
       q: "Que change le Data Act pour un projet de maintenance ?",
@@ -152,21 +205,21 @@ export default {
     },
     {
       q: "Intervenez-vous sur plusieurs sites, en France et à l'étranger ?",
-      a: "Oui. Depuis nos bureaux de Lyon, nous venons dans l'usine pour le cadrage, l'observation des flux et la passation ; le reste du projet se mène à distance. Le retour de mission présenté plus haut montre un dispositif validé en France, repris en anglais en septembre 2026, puis prévu sur les sites des États-Unis et du Mexique en octobre 2026 et de l'Inde en décembre 2026.",
+      a: "Oui. Depuis nos bureaux de Lyon, nous venons dans l'usine pour le cadrage, l'observation des flux et la passation ; le reste du projet se mène à distance. Le groupe du packaging décrit plus haut a validé son dispositif en France, l'a repris en anglais en septembre 2026, et l'emmène sur ses sites américains et mexicains en octobre 2026, puis en Inde en décembre.",
     },
     {
       q: "Qui garde la main sur l'outil après la mission ?",
-      a: "Votre équipe. À la fin de la mission, vous recevez le code source et sa documentation, et un référent interne a appris à corriger une consigne, à ajouter un type de document et à lire les journaux. Dans le groupe du packaging décrit plus haut, ce rôle revient au Data manager, qui porte la politique d'usage et la bibliothèque de prompts des managers pilotes.",
+      a: "Votre équipe. À la fin de la mission, vous recevez le code source et sa documentation, et un référent interne a appris à corriger une consigne, à ajouter un type de document et à lire les journaux. Chez l'industriel du packaging, c'est le Data manager qui tient ce rôle : il fait vivre la politique d'usage et les prompts des managers pilotes.",
     },
   ],
 
   sources: [
     { name: "EUR-Lex : règlement (UE) 2023/1230 sur les machines (articles 10 et 54, annexe I)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32023R1230" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744, train de mesures omnibus numérique sur l'IA", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
-    { name: "EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle (annexe III)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 : le règlement Machines passe en section B de l'annexe I", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
+    { name: "EUR-Lex, règlement (UE) 2024/1689 : les réseaux d'énergie et d'eau dans l'annexe III", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689" },
     { name: "EUR-Lex : règlement (UE) 2023/2854 sur les données, dit Data Act (articles 3, 4 et 50)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32023R2854" },
-    { name: "Microsoft Learn : données, confidentialité et sécurité pour Microsoft Copilot", url: "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/microsoft-365-copilot-privacy" },
-    { name: "Insee Première n° 2120 : les technologies de l'information et de la communication dans les entreprises en 2025", url: "https://www.insee.fr/fr/statistiques/9025878" },
+    { name: "Microsoft Learn : ce que Copilot lit dans Microsoft Graph, et avec quels droits", url: "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/microsoft-365-copilot-privacy" },
+    { name: "Insee Première n° 2120 (juillet 2026) : l'IA dans l'industrie manufacturière et l'énergie", url: "https://www.insee.fr/fr/statistiques/9025878" },
     { name: "Cybermalveillance.gouv.fr : l'escroquerie aux faux ordres de virement (FOVI)", url: "https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/escroquerie-faux-ordres-virement-fovi" },
     { name: "Service Public Entreprendre : comment obtenir une attestation de vigilance", url: "https://entreprendre.service-public.gouv.fr/vosdroits/F31422" },
   ],

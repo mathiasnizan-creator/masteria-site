@@ -3,41 +3,39 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, UserRound, GraduationCap, MapPin, Sparkles,
   MessagesSquare, Target, Laptop, Landmark, CalendarCheck,
+  BarChart3, Compass, Briefcase,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Money page « coaching IA » (slug /coaching-ia) — côté FORMATION (individuel).
- * Cible la grappe (Semrush 2026-08-10, ~1 670/mois cumulés, KD moyen 10) :
- * « coach ia » (170, KD 12), « coaching ia » (170, KD 9), « ia et coaching »
- * (90, KD 10) + les variantes villes « coaching individuel ia {paris,
- * marseille, toulouse, annecy...} » (70 chacune) — traitées par UNE page
- * avec sections villes + distanciel, PAS de pages doorway par ville.
+ * Money page « coaching IA » (slug /coaching-ia), côté FORMATION (individuel).
+ * Grappe Semrush du 10/08/2026 : « coach ia » (170), « coaching ia » (170),
+ * « ia et coaching » (90), « coaching individuel ia {ville} » (70 chacune), traitée
+ * par UNE page avec villes et distanciel, sans pages satellites par ville.
+ * SERP mixte : coach logiciel (CoachHub AIMY) et coaching humain ; la page vise le
+ * service humain et distingue les deux sens dans un tableau.
+ * Réécrite le 2026-10-07 en texte propre (exigence ≥ 90 % de 6-grammes uniques).
  *
- * SERP vérifiée le 2026-08-10 : intention MIXTE. #1 CoachHub AIMY (coach IA
- * logiciel), #2 Mister IA (coaching individuel HUMAIN sur l'IA, notre offre).
- * La page cible le service humain et DÉSAMBIGUÏSE frontalement les deux sens
- * (tableau coach humain vs coach IA outil) : c'est ce qui capte aussi
- * « ia et coaching » (informationnel) et rend la page citable.
+ * ANGLE PROPRE À CETTE PAGE : l'accompagnement individuel, en tête-à-tête. Voisines :
+ * /sensibilisation-ia, /acculturation-ia, /atelier-intelligence-artificielle et
+ * /conference-ia traitent des formats collectifs.
  *
- * INTÉGRITÉ & FINANCEMENT (mémoire maison) : structuré en action de formation
- * individuelle (programme, objectifs, évaluation) → certifié Qualiopi,
- * finançable OPCO ; jamais de promesse CPF (non éligible). Tarif : parité
- * intra/individuel portée par le schema Course central (1 980 €/jour),
- * pas de prix en dur dans le corps. Multi-outils, indépendance éditeurs.
- * Villes : présence honnête (base Lyon, déplacements + distanciel), pas de
- * fausse agence locale.
+ * FAITS : coaching individuel à 1 980 € HT la journée (brief commun du 07/10), volume
+ * fixé au cadrage ; pas de CPF (formations sur mesure non enregistrées) ; transition
+ * professionnelle : dispositif de la personne, sans le nommer (règle « aucun dispositif
+ * public nommé »). Missions citées : « immobilier-etudes », « gerance-cabinet »,
+ * « assistanat-direction » de src/data/missions-formation.js (formations individuelles
+ * d'août et septembre 2026). Le chiffre « +1 500 formés » est retiré (décision en attente).
  */
 
 const SLUG = 'coaching-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Coaching IA : accompagnement individuel sur mesure | Masteria"
-const META_DESC = "Coaching IA individuel avec un formateur humain : vos cas réels, vos outils, à votre rythme. Dirigeants, managers, professionnels. Qualiopi, finançable OPCO."
+const META_TITLE = "Coaching IA : un formateur pour vous seul | Masteria"
+const META_DESC = "Coaching IA individuel : un formateur humain, vos dossiers, vos outils, votre agenda. Dirigeants, managers, experts. 1 980 € HT/jour, Qualiopi."
 const KEYWORDS = "coaching ia, coach ia, ia et coaching, coaching individuel ia, coaching intelligence artificielle, coaching ia dirigeant, formation ia individuelle"
 
 /* ───────── Styles partagés ───────── */
@@ -66,21 +64,21 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: UserRound, label: 'Un formateur humain, en face à face' },
-  { icon: Target, label: 'Vos cas réels, vos outils, votre rythme' },
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
-  { icon: MapPin, label: 'À distance et sur site · Europe · États-Unis · Inde' },
+  { icon: UserRound, label: 'Un formateur, une seule personne' },
+  { icon: Target, label: 'Vos dossiers de la semaine comme matière' },
+  { icon: GraduationCap, label: 'Organisme certifié Qualiopi' },
+  { icon: MapPin, label: 'En visio partout, sur place selon la ville' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Format', value: "Sessions individuelles avec un formateur humain, sur vos situations de travail réelles" },
-  { label: 'Pour qui', value: "Dirigeants, managers, professionnels en poste ou en transition, indépendants" },
-  { label: 'Outils', value: "Multi-outils selon votre contexte : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral" },
-  { label: 'Où', value: "En visio partout en France et à l'international (Europe, États-Unis, Inde) ; sur site selon les villes (Paris, Lyon, Marseille, Toulouse, Annecy...)" },
-  { label: 'Financement', value: "Structuré en action de formation individuelle : certifié Qualiopi, finançable par votre OPCO" },
-  { label: 'Objectif', value: "L'autonomie : repartir avec des usages installés dans votre quotidien, pas des notes" },
+  { label: 'Format', value: "Des rendez-vous individuels avec un formateur, construits sur les tâches que vous avez à traiter cette semaine" },
+  { label: 'Pour qui', value: "Dirigeants, managers, experts métier, indépendants, personnes en reconversion" },
+  { label: 'Outils', value: "Celui que vous utilisez ou que votre entreprise a choisi, parmi les cinq grands : Copilot, ChatGPT, Gemini, Claude, Vibe" },
+  { label: 'Lieu', value: "À distance depuis n'importe quel pays ; sur place à Paris, Lyon, Marseille, Toulouse, Annecy et dans d'autres métropoles selon les agendas" },
+  { label: 'Prix', value: "Une journée de coaching coûte 1 980 € HT, comme une journée de groupe ; le nombre de séances se fixe au cadrage" },
+  { label: 'But', value: "Que vous continuiez seul : des usages en place, une boîte à outils écrite, des réflexes de vérification" },
 ]
 
 /* ───────── Pour qui (4 profils) ───────── */
@@ -88,53 +86,53 @@ const EN_BREF = [
 const PROFILS = [
   {
     icon: Target,
-    title: 'Dirigeants et cadres dirigeants',
-    desc: "Prendre la mesure de ce que l'IA change pour votre organisation, avec un interlocuteur qui s'adapte à votre agenda et parle stratégie autant qu'outils. Le format discret que beaucoup de dirigeants préfèrent à la formation en groupe.",
+    title: 'Dirigeants et membres de comités exécutifs',
+    desc: "Mesurer les effets de l'IA sur votre secteur et sur votre propre travail, avec un interlocuteur qui suit votre agenda et passe des choix stratégiques aux gestes concrets. Beaucoup de dirigeants préfèrent ce cadre discret à une salle de formation.",
   },
   {
     icon: MessagesSquare,
-    title: 'Managers et responsables d\'équipe',
-    desc: "Piloter des équipes qui utilisent l'IA, arbitrer les demandes, montrer l'exemple. Le coaching part de vos situations de management réelles : préparation d'entretiens, synthèses, communication, cadrage des usages de l'équipe.",
+    title: "Managers et responsables de service",
+    desc: "Encadrer une équipe qui commence à se servir de l'IA, trancher ses demandes d'outils, montrer l'exemple. Les séances partent de vos situations : préparer un entretien, rédiger une synthèse pour la direction, fixer les règles de l'équipe.",
   },
   {
     icon: Laptop,
-    title: 'Professionnels en poste ou en transition',
-    desc: "Monter en compétence sur les outils de votre métier, ou préparer un rebond professionnel avec l'IA dans la boîte à outils. Nous accompagnons aussi des parcours de transition (reconversion, mobilité), avec les financements adaptés à chaque dispositif.",
+    title: 'Experts métier et personnes en transition',
+    desc: "Aller plus loin sur les outils de votre fonction, ou préparer un rebond professionnel avec l'IA parmi vos compétences. Pour une reconversion ou une mobilité, le financement suit le dispositif qui vous accompagne, et nous préparons les pièces qu'il demande.",
   },
   {
     icon: Sparkles,
-    title: 'Indépendants et professions libérales',
-    desc: "Consultants, avocats, experts-comptables, professions du chiffre et du droit : intégrer l'IA à une pratique individuelle exigeante, avec les précautions de confidentialité propres à votre déontologie.",
+    title: 'Indépendants et professions réglementées',
+    desc: "Consultants, avocats, experts-comptables, architectes : faire entrer l'IA dans une pratique exigeante, en respectant le secret professionnel et les règles de confidentialité propres à votre ordre ou à vos clients.",
   },
 ]
 
-/* ───────── Coach humain vs coach IA (tableau citable — désambiguïsation) ───────── */
+/* ───────── Coach humain vs coach IA (tableau citable) ───────── */
 
 const COMPARATIF = [
   {
-    critere: "Ce que c'est",
-    humain: "Un formateur expert qui vous accompagne en sessions individuelles",
-    outil: "Un logiciel conversationnel qui répond 24 h/24",
+    critere: "De quoi il s'agit",
+    humain: "Un formateur expérimenté qui vous suit au fil de séances individuelles",
+    outil: "Un logiciel conversationnel disponible à toute heure",
   },
   {
-    critere: 'Ce qui est personnalisé',
-    humain: "Tout : vos cas réels, vos outils, votre niveau, votre agenda",
-    outil: "Les réponses, dans les limites de ce que l'outil connaît de vous",
+    critere: "Ce qui s'adapte à vous",
+    humain: "Les cas traités, l'outil, le niveau de départ, le rythme et l'agenda",
+    outil: "Les réponses, dans la limite de ce que le logiciel sait de vous",
   },
   {
-    critere: 'Point fort',
-    humain: "Le regard extérieur : il voit ce que vous ne voyez pas, corrige les mauvais réflexes",
-    outil: "La disponibilité permanente et le coût marginal faible",
+    critere: 'Sa force',
+    humain: "Un regard extérieur qui repère vos angles morts et corrige les mauvaises habitudes",
+    outil: "La disponibilité permanente pour un coût d'usage faible",
   },
   {
-    critere: 'Limite',
-    humain: "Des créneaux à planifier, un budget de formation",
-    outil: "Pas de recul sur vos angles morts ; qualité inégale selon les produits",
+    critere: 'Sa limite',
+    humain: "Des créneaux à caler et un budget de formation à prévoir",
+    outil: "Aucun recul sur ce que vous ne voyez pas ; qualité variable d'un produit à l'autre",
   },
   {
     critere: 'Financement',
-    humain: "Finançable OPCO quand structuré en action de formation (Qualiopi)",
-    outil: "Abonnement logiciel, non finançable en formation",
+    humain: "Demande possible auprès de l'OPCO quand le coaching est construit comme une formation",
+    outil: "Abonnement logiciel, hors financement de la formation",
   },
 ]
 
@@ -143,69 +141,92 @@ const COMPARATIF = [
 const DEROULE = [
   {
     num: '01',
-    title: 'Cadrage individuel',
-    desc: "Un échange gratuit pour poser votre contexte : métier, outils disponibles, niveau de départ, objectifs concrets. On en tire un programme personnalisé avec des objectifs évaluables, ce qui structure le coaching en action de formation finançable.",
+    title: 'Un cadrage en tête-à-tête',
+    desc: "Trente minutes offertes pour faire le point : votre métier, les outils auxquels vous avez accès, votre niveau, ce que vous voulez savoir faire dans deux mois. Il en sort un programme écrit, avec des objectifs vérifiables, qui fait du coaching une action de formation.",
   },
   {
     num: '02',
-    title: 'Sessions sur vos cas réels',
-    desc: "Chaque session part de vos situations de travail : vos documents, vos processus, vos écritures. Vous manipulez, le formateur corrige, les réflexes s'installent. Entre les sessions, des mises en pratique choisies ensemble font vivre les acquis.",
+    title: 'Des séances sur vos dossiers',
+    desc: "Chaque séance part d'une tâche qui vous attend : une note à rendre, un tableau à analyser, un courrier délicat. Vous tenez le clavier, le formateur corrige la demande et explique pourquoi. Entre deux séances, vous appliquez sur votre travail ce qui a été vu.",
   },
   {
     num: '03',
-    title: 'Montée en autonomie',
-    desc: "Le contenu s'ajuste à votre progression : on approfondit ce qui sert, on écarte ce qui ne sert pas. Objectif assumé : que vous n'ayez plus besoin de nous, avec une boîte à outils personnelle documentée (prompts, méthodes, garde-fous).",
+    title: 'Une autonomie qui grandit',
+    desc: "Le programme bouge avec vos progrès : on creuse ce qui vous sert, on abandonne ce qui ne vous sert pas. Le but : que vous puissiez vous passer du formateur, avec une boîte à outils écrite : demandes types, méthodes, règles de prudence.",
   },
   {
     num: '04',
-    title: 'Évaluation et suite',
-    desc: "Les acquis s'évaluent sur les objectifs posés au cadrage (exigence Qualiopi, et surtout bon sens). Selon le besoin, la suite peut être un point d'ancrage à distance quelques semaines plus tard, ou rien : le coaching se suffit.",
+    title: 'Une évaluation, et une suite au choix',
+    desc: "Vos acquis sont vérifiés au regard des objectifs du cadrage, comme l'exige Qualiopi. Ensuite, deux options : un point à distance quelques semaines plus tard, ou rien de plus si le coaching a rempli son office.",
   },
 ]
 
-/* ───────── Parcours types (sémantique : à quoi ressemble un coaching IA) ───────── */
+/* ───────── Parcours types ───────── */
 
 const PARCOURS = [
   {
     profil: 'Dirigeant',
     seances: '4 à 5 séances de 1 h 30',
-    contenu: "Lecture stratégique (ce que l'IA change dans votre secteur), prise en main personnelle sur vos dossiers (notes, synthèses, préparation de comités), cadrage de la démarche d'entreprise : par quoi faire commencer les équipes, quelles règles poser, comment arbitrer les demandes d'outils. Dernière séance sur votre feuille de route.",
+    contenu: "Les effets de l'IA sur votre secteur, une pratique personnelle sur vos dossiers (notes, synthèses, préparation de comités), puis la démarche de l'entreprise : par quelles équipes commencer, quelles règles fixer, comment répondre aux demandes d'outils. La dernière séance pose votre feuille de route.",
   },
   {
     profil: 'Manager',
     seances: '4 séances de 1 h 30 à 2 h',
-    contenu: "Vos situations réelles de management : préparation d'entretiens et de feedbacks, comptes rendus et reporting, communication d'équipe, arbitrage des usages IA de l'équipe. Entre les séances, vous appliquez sur votre quotidien ; chaque séance repart de ce qui a marché et de ce qui a résisté.",
+    contenu: "Vos situations d'encadrement : préparer un entretien annuel ou un retour difficile, produire un compte rendu ou un reporting, informer l'équipe, encadrer ses usages de l'IA. Chaque séance repart de ce que vous avez tenté depuis la précédente, réussites et blocages compris.",
   },
   {
     profil: 'Expert métier',
     seances: '5 à 6 séances de 2 h',
-    contenu: "Le fond du métier : vos documents, vos processus, vos outils (ChatGPT, Copilot, Claude, Gemini ou Mistral selon votre environnement), jusqu'aux fonctionnalités avancées (projets, compétences, analyse de données, recherche approfondie). Objectif : des usages installés et une bibliothèque personnelle réutilisable.",
+    contenu: "Le cœur de votre métier, avec l'outil de votre environnement (Gemini, Copilot, Claude, ChatGPT ou Vibe), jusqu'aux fonctions avancées : projets, compétences, analyse de fichiers, recherche approfondie. À la sortie, des usages en place et une bibliothèque personnelle que vous réutilisez.",
   },
   {
     profil: 'Transition professionnelle',
-    seances: '5 à 6 séances réparties sur le dispositif',
-    contenu: "Un socle multi-outils, puis l'application au projet : cible métier, candidatures et entretiens outillés, ou préparation d'une activité indépendante. Le rythme suit votre dispositif d'accompagnement ; le programme se cale sur le projet professionnel, pas l'inverse.",
+    seances: '5 à 6 séances sur la durée du dispositif',
+    contenu: "Un socle commun à plusieurs assistants, puis l'application à votre projet : métier visé, candidatures et entretiens préparés avec l'IA, ou lancement d'une activité indépendante. Le calendrier suit celui de votre dispositif d'accompagnement.",
   },
 ]
 
-/* ───────── Les erreurs qui font perdre le bénéfice d'un coaching IA ───────── */
+/* ───────── Trois parcours individuels récents (missions de formation) ───────── */
+
+const MISSIONS = [
+  {
+    id: 'gerance-cabinet',
+    icon: Compass,
+    titre: 'Un gérant de cabinet de géomètres-experts, en août 2026',
+    texte: "Deux jours à distance avec un formateur du réseau : une compétence qui confronte chaque procès-verbal de bornage au plan et à l'acte, une seconde qui prépare la réponse à chaque demande de devis à partir des trames du cabinet, et sa messagerie Outlook reliée à Claude, chaque envoi restant soumis à sa relecture.",
+  },
+  {
+    id: 'immobilier-etudes',
+    icon: BarChart3,
+    titre: "La responsable études d'un groupe de promotion immobilière, en septembre 2026",
+    texte: "Une journée à distance pour tirer de ses tableaux commerciaux une note de lecture puis une présentation pour la direction, le fichier clients étant anonymisé avant d'entrer dans Claude.",
+  },
+  {
+    id: 'assistanat-direction',
+    icon: Briefcase,
+    titre: "Une assistante de direction dans l'édition logicielle, en septembre 2026",
+    texte: "Une journée consacrée à préparer un comité de direction, de l'ordre du jour au mémo du dirigeant, Copilot servant aux données internes et Claude aux contenus publics ou anonymisés ; elle repart avec ses priorités des trente prochains jours.",
+  },
+]
+
+/* ───────── Les erreurs ───────── */
 
 const ERREURS_COACHING = [
   {
-    title: 'Venir sans cas réels',
-    desc: "Un coaching sur des exemples génériques produit une culture générale, pas des réflexes. Chaque séance part de vos documents et de vos situations de la semaine : c'est la condition pour que les usages tiennent après la dernière séance.",
+    title: 'Arriver sans dossier',
+    desc: "Un coaching nourri d'exemples génériques donne de la culture générale et aucun réflexe. Apportez à chaque séance une tâche de votre semaine : c'est la condition pour que les usages tiennent après la dernière.",
   },
   {
     title: 'Tout concentrer sur une journée',
-    desc: "La progression vient de l'alternance : une séance, des applications réelles entre les séances, un retour sur ce qui a résisté. Des séances espacées d'une à deux semaines produisent plus qu'une journée dense, à volume d'heures égal.",
+    desc: "Les progrès viennent de l'alternance entre séance et pratique. Des séances espacées d'une à deux semaines, avec des essais entre elles, laissent plus de traces qu'une journée dense, pour le même nombre d'heures.",
   },
   {
-    title: "Choisir l'outil avant le besoin",
-    desc: "Le bon outil dépend de votre environnement de travail et de vos cas d'usage, pas de l'actualité. Le cadrage part de votre poste ; l'outil se choisit ensuite, et le programme couvre ses fonctions réelles, limites comprises.",
+    title: "Choisir l'outil avant de connaître le besoin",
+    desc: "Le bon assistant dépend de vos logiciels habituels et de vos tâches, bien plus que de l'actualité. Le cadrage part de votre poste ; l'outil se choisit ensuite, et le programme couvre ses fonctions comme ses limites.",
   },
   {
-    title: 'Ignorer le cadre de confidentialité',
-    desc: "Un usage individuel mal cadré expose autant qu'un usage d'équipe : données clients dans un compte gratuit, document confidentiel dans le mauvais outil. Le cadre (offres à utiliser, données à ne jamais saisir, relecture) fait partie du programme dès la première séance.",
+    title: 'Oublier la confidentialité',
+    desc: "Un usage individuel mal cadré expose autant qu'un usage collectif : un dossier client dans un compte gratuit, une pièce confidentielle dans le mauvais outil. Les règles (offre à utiliser, informations interdites, relecture systématique) entrent au programme dès la première séance.",
   },
 ]
 
@@ -214,68 +235,69 @@ const ERREURS_COACHING = [
 const FAQ = [
   {
     q: "Qu'est-ce que le coaching IA ?",
-    a: "L'expression a deux sens, et cette page les distingue. Le premier, celui de notre offre : un accompagnement individuel par un formateur humain pour maîtriser l'intelligence artificielle dans votre travail, en sessions personnalisées sur vos cas réels. Le second : les « coachs IA », des logiciels conversationnels qui accompagnent un utilisateur en continu (sport, soft skills, préparation commerciale). Les deux ne s'opposent pas : un professionnel bien formé tire ensuite davantage de tous les outils, coachs logiciels compris. Si vous cherchez un accompagnement humain pour progresser sur l'IA, vous êtes au bon endroit.",
+    a: "Le terme recouvre deux réalités, que cette page sépare. La première, celle que propose Masteria : un formateur humain qui vous fait progresser sur l'intelligence artificielle, en séances individuelles bâties sur votre propre travail. La seconde : les « coachs IA », des logiciels conversationnels qui accompagnent un utilisateur en continu, en sport, en prise de parole ou en vente. Les deux se complètent, puisqu'une personne bien formée tire davantage de tout outil, coach logiciel compris. Si vous cherchez un humain pour progresser, vous êtes au bon endroit.",
   },
   {
-    q: "Quelle différence entre un coaching IA et une formation IA classique ?",
-    a: "Le nombre de participants et le point de départ. Une formation collective suit un programme conçu pour un groupe, avec des cas représentatifs du métier. Un coaching individuel part de vous : vos documents, vos processus, votre niveau réel, votre agenda. On avance plus vite sur ce qui vous concerne, on écarte ce qui ne vous sert pas, et les questions que l'on n'ose pas poser en groupe se posent naturellement. Le coaching reste une action de formation au sens réglementaire quand il est structuré avec un programme, des objectifs et une évaluation : c'est ainsi que nous le construisons.",
+    q: "Coaching IA et formation en groupe : qu'est-ce qui change ?",
+    a: "Deux choses : l'effectif et le point de départ. Une formation de groupe suit un programme pensé pour plusieurs personnes, avec des cas représentatifs du métier. Un coaching part de vous : vos fichiers, vos procédures, votre niveau, votre agenda. On avance plus vite sur ce qui vous concerne, on laisse de côté le reste, et les questions qu'on n'ose pas poser devant des collègues trouvent leur réponse. Construit avec un programme, des objectifs et une évaluation, le coaching reste une action de formation au sens réglementaire, et c'est ainsi que nous le bâtissons.",
   },
   {
     q: "Le coaching IA est-il finançable ?",
-    a: "Oui, sous une condition de structure. Construit comme une action de formation individuelle (programme personnalisé, objectifs pédagogiques, évaluation des acquis), le coaching est finançable par votre OPCO dans le cadre du plan de développement des compétences : Masteria est certifiée Qualiopi et prépare le dossier avec vous. Un coaching libre, sans cadre pédagogique, n'est pas finançable par votre OPCO. Nos accompagnements ne sont pas éligibles au CPF. Pour les parcours de transition professionnelle, d'autres dispositifs s'appliquent selon votre situation : on fait le point au cadrage.",
+    a: "Oui, à une condition de forme. Bâti comme une action de formation individuelle (programme personnalisé, objectifs pédagogiques, évaluation des acquis), le coaching peut être financé en tout ou partie par votre OPCO, à sa discrétion et dans la limite de ses fonds ; Masteria, certifiée Qualiopi, constitue la demande à vos côtés. Un accompagnement libre, sans cadre pédagogique, n'est donc pas finançable par votre OPCO. Quant au CPF, il ne s'applique pas : il ne finance que des formations certifiantes enregistrées, et un parcours individuel sur mesure n'en fait pas partie. En transition professionnelle, c'est le dispositif qui vous accompagne qui finance, et nous en parlons au cadrage.",
   },
   {
     q: "Proposez-vous un coaching individuel IA à Paris, Marseille, Toulouse ou Annecy ?",
-    a: "Oui, avec une organisation transparente : Masteria est basée à Lyon et le coaching individuel se déroule d'abord en visio, un format qui se prête très bien au travail en tête-à-tête sur écran partagé. Des sessions sur site se planifient à Paris, Lyon, Marseille, Toulouse, Annecy et dans les autres métropoles selon les agendas, ainsi qu'à l'international (Europe, États-Unis, Inde). Beaucoup de parcours combinent une première session sur site et la suite à distance. La qualité de l'accompagnement ne dépend pas du lieu : elle dépend du travail sur vos cas réels.",
+    a: "Oui, avec une organisation que nous assumons : Masteria est installée à Lyon, et le coaching individuel se fait d'abord à distance, un format qui convient au travail en tête-à-tête sur écran partagé. Des séances sur place s'organisent à Paris, Lyon, Marseille, Toulouse, Annecy et dans d'autres grandes villes selon les agendas, ainsi qu'à l'étranger (Europe, États-Unis, Inde). Beaucoup de parcours commencent par une rencontre sur place et continuent à distance. La qualité dépend du travail mené sur vos dossiers, quel que soit le lieu.",
   },
   {
     q: "Sur quels outils le coaching porte-t-il ?",
-    a: "Sur ceux qui comptent pour vous. Si votre entreprise a déployé un outil (Microsoft Copilot, ChatGPT, Claude, Gemini, Mistral), le coaching s'y concentre et en tire le maximum. Si vous êtes libre de choisir, on compare sur vos cas d'usage avant d'approfondir. Les fondamentaux travaillés valent partout : formuler une demande efficace, structurer un raisonnement avec l'outil, vérifier une réponse, protéger les données confidentielles. Nous sommes indépendants des éditeurs, la recommandation n'est jamais commissionnée.",
+    a: "Sur ceux qui comptent dans votre quotidien. Si votre entreprise a déployé un assistant (ChatGPT, Gemini, Claude, Vibe ou Microsoft Copilot, anciennement Microsoft 365 Copilot), le coaching s'y concentre pour en tirer le meilleur. Si vous choisissez librement, nous comparons deux ou trois outils sur vos tâches avant d'approfondir le plus adapté. Les fondamentaux valent partout : formuler une demande précise, faire raisonner l'outil par étapes, contrôler une réponse, protéger ce qui est confidentiel. Masteria ne touche aucune commission d'éditeur.",
   },
   {
     q: "Combien coûte un coaching IA individuel ?",
-    a: "Le tarif se construit sur le volume de sessions défini au cadrage, sur la base d'un tarif journalier unique : l'accompagnement individuel est aligné sur le tarif de nos formations intra-entreprise, sans supplément lié au format. Le cadrage initial est gratuit et débouche sur un devis sous 24 heures, avec le programme personnalisé et, si vous êtes salarié ou dirigeant d'entreprise, les éléments du dossier OPCO. Le budget final dépend surtout d'une variable : votre objectif d'autonomie, qui détermine le nombre de sessions.",
+    a: "Une journée de coaching revient à 1 980 € HT, au même prix qu'une journée de formation en groupe, sans supplément pour le format individuel. Le nombre de séances, donc le volume total, se fixe au cadrage d'après votre point de départ et votre objectif. Les trente minutes de cadrage sont offertes ; vous recevez ensuite sous 24 heures le programme personnalisé, le devis et, si vous êtes salarié ou dirigeant d'une entreprise, les éléments pour la demande à l'OPCO.",
   },
   {
-    q: "Combien de sessions faut-il pour progresser ?",
-    a: "La plupart des parcours tiennent entre deux et six sessions espacées de une à trois semaines, selon le point de départ et l'objectif. L'espacement est volontaire : les réflexes s'installent entre les sessions, en pratiquant sur votre travail réel, et chaque session suivante s'ajuste sur ce qui a été tenté. Un besoin très ciblé (préparer un usage précis, prendre en main un outil déployé) peut tenir en une session ; une montée en compétence complète de dirigeant en demande davantage. Le cadrage gratuit dimensionne le parcours honnêtement.",
+    q: "Combien de séances faut-il pour progresser ?",
+    a: "La plupart des parcours comptent entre deux et six séances, espacées d'une à trois semaines. Cet espacement est voulu : les réflexes se forment entre deux séances, quand vous pratiquez sur votre travail, et chaque séance s'ajuste sur ce que vous avez tenté. Un besoin précis, comme prendre en main un outil que l'entreprise vient de déployer, peut tenir en une séance ; la montée en compétence complète d'un dirigeant en demande davantage. Le cadrage dimensionne le parcours sans le gonfler.",
   },
   {
     q: "Un coach IA logiciel ne suffit-il pas ?",
-    a: "Pour s'entraîner en continu, c'est un bon complément ; pour progresser vite et bien, rarement. Un logiciel répond à vos questions, mais il ne voit pas vos angles morts : les mauvais réflexes de formulation, les usages risqués avec des données confidentielles, les opportunités que vous ne voyez pas dans votre propre métier. C'est précisément ce que corrige un regard extérieur expert. Notre position est simple : le coaching humain installe les fondations et le regard critique, les outils prolongent ensuite l'entraînement au quotidien.",
+    a: "Pour s'entraîner chaque jour, il complète utilement ; pour progresser vite, il montre ses limites. Un logiciel répond à vos questions, mais il ne voit pas ce que vous ne lui montrez pas : une formulation qui dessert vos demandes, une habitude risquée avec des données confidentielles, un usage évident dans votre métier que vous n'avez pas repéré. Un regard extérieur et expérimenté corrige ces travers. Notre position : le formateur pose les fondations et l'esprit critique, les outils prolongent l'entraînement ensuite.",
   },
   {
     q: "Le coaching convient-il à un vrai débutant ?",
-    a: "C'est même le format idéal pour débuter : personne ne vous regarde, le rythme est le vôtre et tout part de situations que vous connaissez par cœur puisqu'elles viennent de votre poste. Aucun prérequis technique n'est nécessaire au-delà de la bureautique courante. À l'inverse, le coaching sert aussi les profils avancés qui veulent franchir un palier précis : automatiser un processus, structurer une veille, fiabiliser des livrables. Le cadrage situe votre point de départ sans jugement.",
+    a: "C'est même le format le plus confortable pour commencer : personne ne vous observe, le rythme est le vôtre, et tout part de situations que vous connaissez par cœur. Il suffit de savoir utiliser une messagerie et un traitement de texte. Le coaching sert aussi les profils avancés qui veulent franchir un palier précis : automatiser une tâche répétitive, organiser une veille, fiabiliser des livrables. Le cadrage situe votre point de départ, sans jugement.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
-/* Le schema Course (avec Offer 1 980 €/j) est généré par SEOHead via courseData. */
+/* Le schema Course (avec Offer 1 980 €/jour) est généré par SEOHead via courseData. */
 const COURSE_DATA = {
-  name: 'Coaching IA individuel — Masteria',
-  description: "Accompagnement individuel à l'intelligence artificielle avec un formateur humain : sessions personnalisées sur les cas réels du participant, multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral), programme et objectifs définis au cadrage, évaluation des acquis. En visio partout en France et à l'international (Europe, États-Unis, Inde), sur site selon les villes. Certifié Qualiopi, finançable OPCO.",
+  name: 'Coaching IA individuel (Masteria)',
+  description: "Coaching individuel à l'intelligence artificielle avec un formateur humain : séances construites sur les dossiers du participant, avec l'outil de son environnement (Copilot, Gemini, ChatGPT, Claude ou Vibe), programme et objectifs fixés au cadrage, évaluation des acquis. À distance partout, sur place selon les villes. 1 980 € HT la journée.",
   level: 'Tous niveaux',
   teaches: [
-    "Formuler des demandes efficaces et structurer un raisonnement avec l'IA",
-    'Appliquer les outils IA à ses propres situations de travail',
-    'Vérifier les réponses et protéger les données confidentielles',
-    'Installer des usages durables et une boîte à outils personnelle',
+    "Écrire des demandes précises et faire raisonner l'outil par étapes",
+    "Appliquer l'IA à ses propres dossiers et tâches de la semaine",
+    'Contrôler les réponses et protéger les informations confidentielles',
+    'Constituer une boîte à outils personnelle réutilisable',
   ],
-  about: 'Coaching individuel en intelligence artificielle',
+  about: "Coaching individuel en intelligence artificielle",
   timeRequired: 'PT7H',
   duration: 'PT7H',
-  prerequisites: 'Aucun prérequis technique. Maîtrise des outils bureautiques courants.',
-  audience: 'Dirigeants, managers, professionnels et indépendants',
-  locationName: 'Masteria — visio (Europe, États-Unis, Inde) ou sur site selon les villes',
+  prerequisites: 'Aucun prérequis technique. Usage courant de la bureautique.',
+  audience: 'Dirigeants, managers, experts métier, indépendants',
+  locationName: 'Masteria : à distance (Europe, États-Unis, Inde) ou sur place selon les villes',
+  priceDescription: "Coaching individuel : 1 980 € HT la journée, volume fixé au cadrage selon l'objectif.",
 }
 
-/* Déroulé en ItemList (séquence citable — GEO). */
+/* Déroulé en ItemList (séquence citable, GEO). */
 const processJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Le déroulé du coaching IA Masteria',
+  name: "Les quatre étapes d'un coaching IA Masteria",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: DEROULE.map((step, i) => ({
     '@type': 'ListItem',
@@ -285,42 +307,42 @@ const processJsonLd = {
   })),
 }
 
-/* DefinedTermSet : désambiguïsation des deux sens (entité citable). */
+/* DefinedTermSet : les deux sens du terme. */
 const definitionsJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'DefinedTermSet',
   '@id': 'https://www.master-ia.fr/coaching-ia#termes',
-  name: 'Coaching IA : les deux sens du terme',
+  name: 'Coaching IA : deux sens à distinguer',
   hasDefinedTerm: [
     {
       '@type': 'DefinedTerm',
-      name: 'Coaching IA (accompagnement humain)',
-      description: "Accompagnement individuel par un formateur expert pour maîtriser l'intelligence artificielle dans son travail : sessions personnalisées sur les cas réels du participant, avec programme, objectifs et évaluation.",
+      name: 'Coaching IA (formateur humain)',
+      description: "Séances individuelles avec un formateur expérimenté pour maîtriser l'intelligence artificielle dans son travail, à partir de ses propres dossiers, avec programme, objectifs et évaluation.",
     },
     {
       '@type': 'DefinedTerm',
       name: 'Coach IA (logiciel)',
-      description: "Agent conversationnel qui accompagne un utilisateur en continu dans un domaine (soft skills, sport, préparation commerciale) : disponible en permanence, personnalisé dans les limites de ce que l'outil connaît de l'utilisateur.",
+      description: "Agent conversationnel qui suit un utilisateur en continu dans un domaine (prise de parole, sport, vente) : toujours disponible, personnalisé dans la limite de ce qu'il sait de l'utilisateur.",
     },
   ],
 }
 
-/* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
+/* Article : auteur (Mathias Nizan) et dates. */
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/coaching-ia#article',
-  headline: "Coaching IA : un accompagnement individuel humain pour maîtriser l'IA",
+  headline: "Coaching IA : un formateur humain, vos dossiers, votre rythme",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-10',
-  dateModified: '2026-08-10',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/coaching-ia#webpage' },
   about: [
-    { '@type': 'Thing', name: 'Coaching IA', description: "Accompagnement individuel à l'intelligence artificielle" },
+    { '@type': 'Thing', name: 'Coaching IA', description: "Accompagnement individuel d'un professionnel sur l'intelligence artificielle" },
     { '@type': 'Thing', name: 'Coaching', sameAs: 'https://fr.wikipedia.org/wiki/Coaching' },
     { '@type': 'Thing', name: 'Intelligence artificielle', sameAs: 'https://fr.wikipedia.org/wiki/Intelligence_artificielle' },
   ],
@@ -351,11 +373,11 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
-   affichées dans le bloc « Sources et références officielles ». */
+/* Sources de la page : émises en WebPage.citation (JSON-LD) et affichées en bas de page. */
 const PAGE_CITATIONS = [
-          { name: 'Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-        ]
+  { name: "Ce que garantit la marque Qualiopi, selon le ministère du Travail", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { name: "Ministère du Travail : le rôle de l'OPCO dans le plan de formation d'une entreprise", url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+]
 
 export default function CoachingIAPage() {
   const isDesktop = useIsDesktop()
@@ -383,7 +405,7 @@ export default function CoachingIAPage() {
         faqItems={FAQ}
         courseData={COURSE_DATA}
         datePublished="2026-08-10"
-        dateModified="2026-08-10"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[processJsonLd, definitionsJsonLd, articleJsonLd]}
@@ -416,29 +438,29 @@ export default function CoachingIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Coaching IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>un accompagnement individuel, humain, sur vos cas réels</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>un formateur humain, vos dossiers, votre rythme</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Page de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · ouverte en août 2026, réécrite le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le coaching IA de Masteria est un accompagnement individuel par un formateur humain : <strong style={{ color: '#fff', fontWeight: 700 }}>des sessions personnalisées sur vos situations de travail réelles</strong>, avec vos outils, à votre rythme, jusqu'à l'autonomie. Structuré en action de formation, il est certifié Qualiopi et finançable par votre OPCO. En visio partout, sur site selon les villes.
+            Le coaching IA de Masteria met un formateur humain face à une seule personne : <strong style={{ color: '#fff', fontWeight: 700 }}>des séances construites sur les dossiers que vous avez à traiter, avec votre outil et à votre rythme, jusqu'à ce que vous avanciez seul</strong>. Facturé 1 980 € HT par journée, il peut, structuré comme une formation, faire l'objet d'une demande à l'OPCO. À distance partout, sur place selon les villes.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            « Coach IA » désigne aussi des logiciels qui accompagnent en continu : nous comparons honnêtement les deux plus bas, ils ne servent pas la même chose. Ici, il s'agit d'un coach IA humain (nous préférons dire formateur) : un regard extérieur expert en coaching à l'intelligence artificielle, qui part de votre métier, corrige les mauvais réflexes et voit les opportunités que vous ne voyez pas.
+            « Coach IA » désigne aussi des logiciels qui accompagnent un utilisateur en continu ; le tableau plus bas compare honnêtement les deux, qui ne rendent pas le même service. Ici, le coach est une personne, que nous appelons plutôt formateur : un regard extérieur qui part de votre métier, corrige les habitudes qui vous freinent et repère les usages que vous ne voyez pas encore.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Cadrer votre coaching
+              Préparer votre coaching
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#deroule" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le déroulé
+              Les quatre étapes
             </a>
           </div>
 
@@ -454,7 +476,7 @@ export default function CoachingIAPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
             <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
             <dl style={{ margin: 0 }}>
@@ -476,13 +498,13 @@ export default function CoachingIAPage() {
             <div style={editorialAside}>
               <Kicker>Pour qui</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                À qui s'adresse le coaching IA individuel ?
+                Qui a intérêt à un coaching IA individuel ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>À celles et ceux pour qui la formation en groupe n'est pas le bon format : dirigeants qui veulent un cadre discret et un rythme adapté, managers qui pilotent des équipes augmentées, professionnels en poste ou en transition, indépendants aux contraintes de confidentialité fortes. Le point commun : progresser sur ses propres cas, pas sur des exemples génériques.</strong>
+                <strong>Les personnes pour qui une salle de formation ne convient pas : un dirigeant qui veut de la discrétion et un horaire choisi, un manager qui encadre une équipe déjà outillée, un expert ou une personne en reconversion, un indépendant tenu par le secret professionnel. Tous veulent progresser sur leurs propres dossiers.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Pour une équipe entière, la <Link to="/formation-intelligence-artificielle" style={aStyle}>formation par métier</Link> ou l'<Link to="/acculturation-ia" style={aStyle}>acculturation d'entreprise</Link> sont plus adaptées ; le coaching individuel les complète bien pour les profils clés.
+                Pour une équipe entière, la <Link to="/formation-intelligence-artificielle" style={aStyle}>formation par métier</Link> ou l'<Link to="/acculturation-ia" style={aStyle}>acculturation de l'entreprise</Link> conviennent mieux ; le coaching vient alors en complément pour une ou deux personnes clés.
               </p>
             </div>
 
@@ -503,7 +525,7 @@ export default function CoachingIAPage() {
         </div>
       </section>
 
-      {/* ── COACH HUMAIN VS COACH IA (ancre sombre — désambiguïsation citable) ── */}
+      {/* ── COACH HUMAIN VS COACH IA (ancre sombre, désambiguïsation) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -516,7 +538,7 @@ export default function CoachingIAPage() {
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le coaching humain apporte le regard extérieur : il voit vos angles morts, corrige les réflexes et adapte tout à votre métier. Le coach IA logiciel apporte la disponibilité permanente pour s'entraîner en continu. Ils se complètent : l'humain installe les fondations et l'esprit critique, l'outil prolonge la pratique au quotidien.</strong>
+            <strong style={{ color: '#fff' }}>Le formateur humain apporte un regard extérieur : il repère ce que vous ne voyez pas, corrige les habitudes et adapte tout à votre métier. Le coach logiciel apporte une disponibilité permanente pour s'entraîner. Le premier pose les bases et l'esprit critique, le second entretient la pratique au quotidien.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
@@ -539,8 +561,8 @@ export default function CoachingIAPage() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            Et si votre question est « quel outil d'IA choisir pour m'entraîner », notre comparateur <Link to="/quel-outil-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>Quel outil IA ?</Link> répond en quelques minutes.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            Si votre question porte plutôt sur l'assistant à choisir pour vous entraîner seul, le comparateur <Link to="/quel-outil-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>Quel outil IA ?</Link> donne une première réponse en quelques minutes.
           </p>
         </div>
       </section>
@@ -554,7 +576,7 @@ export default function CoachingIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Quatre temps : un cadrage individuel gratuit qui pose le programme et les objectifs, des sessions sur vos cas réels espacées de une à trois semaines, une montée en autonomie avec une boîte à outils personnelle, et une évaluation des acquis sur les objectifs posés. La plupart des parcours tiennent entre deux et six sessions.</strong>
+            <strong>Un cadrage individuel, dont les trente minutes sont offertes, fixe le programme et les objectifs. Suivent des séances sur vos dossiers, espacées d'une à trois semaines, une autonomie qui grandit avec une boîte à outils écrite, puis une évaluation des acquis au regard des objectifs. Deux à six séances suffisent dans la plupart des cas.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
@@ -586,7 +608,7 @@ export default function CoachingIAPage() {
           <Kicker>Parcours types</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>À quoi ressemble un coaching IA, selon votre profil ?</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un coaching IA se construit sur mesure au cadrage, mais quatre parcours reviennent souvent : le dirigeant qui veut une lecture stratégique et une pratique personnelle, le manager qui pilote une équipe augmentée, l'expert métier qui installe des usages avancés, et le professionnel en transition qui outille son projet. De 4 à 6 séances, en visioconférence ou en présentiel.</strong>
+            <strong>Chaque coaching se dessine au cadrage, mais quatre schémas reviennent souvent : le dirigeant qui veut une lecture stratégique et une pratique personnelle, le manager qui encadre une équipe outillée, l'expert qui installe des usages avancés et la personne en transition qui prépare son projet. De quatre à six séances, à distance ou sur place.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {PARCOURS.map((item, i) => (
@@ -600,51 +622,77 @@ export default function CoachingIAPage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 820 }}>
-            Le nombre de séances s'ajuste au cadrage : il dépend du point de départ et des objectifs, pas d'un forfait imposé. Le tarif reste au temps passé, au même barème quel que soit le profil.
+            Le nombre de séances suit votre point de départ et vos objectifs ; aucun forfait n'est imposé. Le tarif journalier, 1 980 € HT, ne varie pas avec le profil.
           </p>
         </div>
       </section>
 
+      {/* ── TROIS PARCOURS INDIVIDUELS RÉCENTS ── */}
+      <section id="parcours-recents" style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={wrap}>
+          <Kicker>Parcours récents</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Trois personnes formées seules, à distance, en 2026</h2>
+          <p style={answerStyle}>
+            <strong>Un gérant, une responsable études et une assistante de direction ont suivi un parcours individuel cet été et cette rentrée. Chacun a travaillé sur ses propres fichiers et repart avec des outils qu'il a lui-même construits.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+            {MISSIONS.map(({ id, icon: Icon, titre, texte }) => (
+              <div key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
+                  <h3 style={{ ...h3Style, fontSize: 16 }}>{titre}</h3>
+                </div>
+                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{texte}</p>
+                <Link to={`/etudes-de-cas-ia#mission-${id}`} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  Lire le déroulé de la mission
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── VILLES & DISTANCIEL + FINANCEMENT ── */}
-      <section style={{ padding: sectionPad, background: '#fff' }}>
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Où et comment</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            À distance partout, sur site selon les villes
+            À distance partout, sur place selon les villes
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le coaching individuel IA se déroule d'abord en visio, un format taillé pour le tête-à-tête sur écran partagé, partout en France et à l'international (Europe, États-Unis, Inde). Des sessions sur site se planifient à Paris, Lyon, Marseille, Toulouse, Annecy et dans les autres métropoles selon les agendas. Beaucoup de parcours combinent une première rencontre sur site et la suite à distance.</strong>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Le coaching individuel IA se fait d'abord en visioconférence, un format adapté au tête-à-tête sur écran partagé, depuis la France comme depuis l'étranger, en Europe, aux États-Unis ou en Inde. Des séances sur place se prévoient à Paris, Lyon, Marseille, Toulouse, Annecy et dans d'autres métropoles selon les agendas. Beaucoup de parcours s'ouvrent par une rencontre en personne et continuent à distance.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <CalendarCheck size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>L'organisation, en pratique</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>Comment s'organisent les séances</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Des sessions de une à trois heures selon votre agenda, espacées pour laisser les réflexes s'installer. Basés à Lyon, nous nous déplaçons pour les sessions sur site ; la visio garantit la même qualité de travail, vos documents et vos outils restant au centre de l'écran partagé.
+                Des séances d'une à trois heures, calées sur votre agenda et espacées pour laisser aux réflexes le temps de s'installer. Masteria est installée à Lyon et le formateur se déplace pour les séances sur place ; à distance, le travail reste aussi précis, puisque vos documents et votre outil occupent l'écran partagé.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Le financement, sans détour</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>Le financement, en clair</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Structuré en action de formation individuelle (programme, objectifs, évaluation), le coaching est certifié Qualiopi et finançable par votre OPCO ; nous préparons le dossier avec vous. Pas d'éligibilité CPF. Parcours de transition professionnelle : les dispositifs varient selon votre situation, on fait le point au cadrage. Identifiez votre opérateur avec notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link>.
+                Monté comme une formation individuelle (programme, objectifs, évaluation), le coaching peut être présenté à l'OPCO de votre entreprise, qui décide de sa prise en charge ; Masteria, certifiée Qualiopi, s'occupe des pièces avec vous. Quant au CPF, ces parcours sur mesure n'y ouvrent pas droit. En reconversion, le dispositif qui vous accompagne prend le relais, et nous lui fournissons les pièces demandées. Le simulateur <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur selon votre domaine d'activité.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── LES ERREURS QUI FONT PERDRE LE BÉNÉFICE ── */}
+      {/* ── LES ERREURS ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ce qui fait la différence</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>Les quatre erreurs qui font perdre le bénéfice d'un coaching IA</h2>
+          <Kicker>Pour en tirer le meilleur</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Quatre erreurs qui gâchent un coaching IA</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 8 }}>
             {ERREURS_COACHING.map((item, i) => (
               <div key={i} style={{ ...cardStyle, padding: 24 }}>
@@ -663,13 +711,13 @@ export default function CoachingIAPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Coaching IA : les questions fréquentes
+                Coaching IA : vos questions, nos réponses
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Une hésitation que ces réponses ne lèvent pas ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Envoyez-nous un message
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -687,19 +735,19 @@ export default function CoachingIAPage() {
         <div style={wrap}>
           <Kicker>Ressources</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            À lire avant ou pendant votre coaching
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Le coaching individuel s'articule avec les formats collectifs et les parcours par métier.
+            Les formats collectifs qui complètent le tête-à-tête, et les outils utiles entre deux séances.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'COMEX', desc: "Le format collectif direction : une journée stratégique pour un CODIR ou un COMEX entier." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Entreprise', desc: "Quand c'est toute l'organisation qu'il faut embarquer : conférences, ateliers, parcours, référents." },
-              { label: 'Formation intelligence artificielle', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Les parcours par métier, en intra ou en individuel : assistanat, commerce, RH, finance, marketing." },
-              { label: 'Quel outil IA choisir', href: '/quel-outil-ia', tag: 'Outils', desc: "ChatGPT, Copilot, Claude, Gemini ou Mistral : situez le bon outil avant ou pendant le coaching." },
-              { label: 'Bibliothèque de prompts', href: '/bibliotheque-de-prompts', tag: 'Pratique', desc: "Des modèles de prompts par métier pour prolonger l'entraînement entre les sessions." },
-              { label: 'Quel OPCO ? (simulateur)', href: '/quel-opco', tag: 'Financement', desc: "Identifiez votre opérateur de compétences en deux minutes pour préparer la prise en charge." },
+              { label: 'Formation IA dirigeants', href: '/formation-ia-dirigeants', tag: 'Direction', desc: "Le format collectif pour un comité de direction entier, quand plusieurs dirigeants avancent ensemble." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Toute l\'entreprise', desc: "Quand c'est l'organisation entière qui doit s'y mettre, service après service." },
+              { label: 'Formation intelligence artificielle', href: '/formation-intelligence-artificielle', tag: 'Catalogue', desc: "Le catalogue complet, plus de 100 programmes, à suivre en groupe ou seul." },
+              { label: 'Formation IA à distance', href: '/formation-intelligence-artificielle-distanciel', tag: 'En visio', desc: "Comment se passe une formation suivie entièrement en ligne, outils et rythme compris." },
+              { label: 'Quel outil IA choisir', href: '/quel-outil-ia', tag: 'Outils', desc: "Pour situer l'assistant le plus adapté avant ou pendant le coaching." },
+              { label: 'Bibliothèque de prompts', href: '/bibliotheque-de-prompts', tag: 'Pratique', desc: "Des demandes types par métier, pour s'exercer entre deux séances." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -715,7 +763,7 @@ export default function CoachingIAPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Découvrir
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -725,26 +773,25 @@ export default function CoachingIAPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      {/* ── E-E-A-T : qui intervient (cabinet + réseau, preuves) ── */}
+      {/* ── QUI INTERVIENT (cabinet + réseau) ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
-              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui intervient</div>
+              <div style={{ ...kickerStyle, color: '#60A5FA' }}>Votre formateur</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Un cabinet spécialisé IA, indépendant des éditeurs
+                Un fondateur qui coache lui-même, un réseau pour les autres langues et métiers
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les accompagnements sont menés par Mathias et par un réseau d'intervenants indépendants, expérimentés et pédagogues. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+                En créant Masteria à Lyon en 2022, Mathias Nizan a choisi de ne travailler que sur l'IA. Il suit lui-même une partie des coachings et confie les autres à l'un des quelque vingt formateurs indépendants du réseau, choisi pour votre métier, votre outil ou votre langue. Aucun éditeur ne rémunère nos recommandations. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link> donnent des exemples datés de ce travail.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
-                ['Indépendant', 'des éditeurs de solutions'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['2022', 'création du cabinet, à Lyon'],
+                ['~20', 'formateurs indépendants dans le réseau'],
+                ['Aucun', "lien commercial avec un éditeur d'IA"],
+                ['3 zones', 'Europe, États-Unis, Inde'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -756,7 +803,15 @@ export default function CoachingIAPage() {
         </div>
       </section>
 
-      <FounderNote />
+      {/* ── SIGNATURE (remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan a repris ce texte le 7 octobre 2026 à partir des parcours individuels menés cette année. Avant un premier échange, vous pouvez lire <Link to="/mathias-nizan" style={aStyle}>son parcours et sa façon de travailler</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -767,23 +822,36 @@ export default function CoachingIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Coaching IA</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Commençons par le cadrage, il est gratuit
+              Commençons par votre prochaine tâche
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre métier, vos outils et ce que vous voulez savoir faire. Nous revenons vers vous sous 24 heures avec un programme personnalisé, le nombre de sessions recommandé et le devis, dossier OPCO compris si vous y êtes éligible. Le reste se joue en tête-à-tête.
+              Dites-nous votre métier, les outils à votre disposition et ce que vous voulez savoir faire dans deux mois. Après trente minutes de cadrage, vous recevez dans les 24 heures un programme personnalisé, le nombre de séances conseillé et le devis, avec les éléments pour l'OPCO si vous y avez droit.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un coaching IA
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Cadrage gratuit · Certifié Qualiopi · Visio partout, sur site selon les villes
+              Tarif journalier de 1 980 € HT · à distance ou sur place · Activateur France Num
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES (propres à la page) ── */}
+      <section aria-labelledby="sources-coaching" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-coaching" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>Pour vérifier le cadre du financement</h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>Deux pages officielles : la certification détenue par Masteria et le fonctionnement des opérateurs de compétences.</p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {PAGE_CITATIONS.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

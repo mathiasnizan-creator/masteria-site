@@ -1,24 +1,26 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-ressources-humaines (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA ressources humaines : recrutement, RH, paie | Masteria",
-  "metaDesc": "Formation IA RH sur vos vrais processus : offres et sourcing, entretiens, onboarding, communication interne, plan de compétences, documents RH. Cadre RGPD et non-discrimination. Qualiopi, OPCO.",
+  "metaTitle": "Formation IA ressources humaines et recrutement | Masteria",
+  "metaDesc": "Formation IA RH en intra : offres, entretiens, intégration, communication interne, plan de compétences. Cadre RGPD et non-discrimination. Qualiopi, OPCO.",
   "keywords": "formation ia ressources humaines, formation ia rh, formation intelligence artificielle rh, formation ia recrutement, formation ia drh, ia gestion des ressources humaines",
   "h1": "Formation IA ressources humaines : l'IA générative du recrutement au plan de compétences",
   "h1a": "Formation IA ressources humaines :",
   "h1b": "l'IA générative du recrutement au plan de compétences",
   "eyebrow": "Formation métier · Ressources humaines",
-  "badge3": "Sur vos offres, vos process et vos documents réels",
-  "geo": "La formation IA ressources humaines de Masteria apprend à vos équipes RH à intégrer l'intelligence artificielle générative dans chaque processus du métier : offres et sourcing, entretiens et évaluations, onboarding, communication interne, plan de développement des compétences, documents et procédures RH, sur vos propres processus et dans le cadre du RGPD et de la non-discrimination. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "Les RH sont le métier où l'IA générative fait gagner le plus sur l'écrit et le plus exposé sur le cadre : données personnelles des candidats et des salariés, décisions qui engagent (recrutement, évaluation), CNIL en contrôle sur le recrutement en 2026. La formation apprend les usages qui rendent des heures, et trace la ligne que l'IA ne franchit pas : elle prépare, elle ne sélectionne pas.",
-  "intro": "La formation IA ressources humaines de Masteria apprend à vos équipes RH à intégrer l'intelligence artificielle générative dans chaque processus du métier, sur vos propres processus et dans le cadre du RGPD et de la non-discrimination."
+  "badge3": "Sur vos offres, vos processus et vos documents",
+  "geo": "La formation IA ressources humaines de Masteria montre à une équipe RH comment confier à l'IA générative l'écrit de ses processus : offres et approche des candidats, grilles d'entretien, intégration des nouveaux arrivants, entretiens annuels, communication interne, plan de développement des compétences, procédures et veille sociale. Elle se déroule sur vos propres cas, sous la règle du RGPD et de la non-discrimination. Le parcours dure deux jours en intra, sur l'assistant que vous utilisez : Gemini, Vibe, Claude, ChatGPT ou Microsoft Copilot (anciennement Microsoft 365 Copilot). Masteria est certifiée Qualiopi, ce qui ouvre la voie à un financement par l'OPCO de votre branche, selon ses règles.",
+  "sub": "Aucune fonction n'écrit autant que les RH, et aucune ne manipule des données aussi sensibles : dossiers de candidats et de salariés, décisions qui engagent l'employeur. Le recrutement figure parmi les thématiques prioritaires de contrôle publiées par la CNIL le 3 avril 2026. La formation installe les usages qui rendent du temps à l'équipe et trace une limite nette : l'IA prépare les documents, elle ne choisit jamais une personne.",
+  "intro": "La formation IA ressources humaines de Masteria montre à une équipe RH comment confier à l'IA générative l'écrit de ses processus, sur ses propres cas, sous la règle du RGPD et de la non-discrimination."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré (recrutement seul, ou administration RH seule)"
+   "value": "Deux jours en intra, soit 14 heures ; une journée peut suffire pour un seul volet, le recrutement ou l'administration RH"
   },
   {
    "label": "Pour qui",
@@ -26,32 +28,32 @@ export default {
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, articulés avec votre SIRH et votre ATS"
+   "value": "L'assistant de votre environnement (Gemini, Copilot, Claude, Vibe, anciennement Le Chat, ou ChatGPT), à côté du SIRH et de l'ATS"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos vraies offres, vos trames d'entretien, vos parcours d'onboarding et vos documents (anonymisés si besoin)"
+   "value": "Vos offres, vos trames d'entretien, vos parcours d'intégration et vos procédures, anonymisés quand il le faut, servent de matière à chaque atelier"
   },
   {
    "label": "Cadre",
-   "value": "RGPD sur les données des candidats et salariés, non-discrimination (la sélection ne se délègue jamais à l'IA), obligation d'information ; contrôles CNIL 2026 sur le recrutement"
+   "value": "RGPD pour les candidats et les salariés, non-discrimination, information des personnes ; choisir un candidat reste l'affaire d'un humain"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Organisme certifié Qualiopi : l'OPCO de la branche décide de sa participation, à hauteur de ce que prévoient ses règles"
   }
  ],
  "missionsHead": {
   "kicker": "Processus par processus",
-  "h2": "Que change l'IA dans le travail d'une équipe RH ?",
-  "answer": "L'IA générative touche six processus RH : le recrutement (offres, sourcing, préparation d'entretiens), l'onboarding et l'intégration, les entretiens et évaluations, la communication interne, le développement des compétences, et les documents et procédures RH. Dans chacune, elle rédige, structure et personnalise ; la sélection, l'évaluation et les décisions restent aux professionnels RH, dans le cadre du RGPD et de la non-discrimination.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre équipe au cadrage. Pour construire le plan de compétences IA de toute l'entreprise, voyez notre {/formation-ia-drh-plan-competences|formation plan de développement des compétences IA pour DRH}."
+  "h2": "Les six processus RH où l'IA générative a sa place",
+  "answer": "Recrutement (offres, sourcing, préparation des entretiens), intégration, entretiens et évaluations, communication interne, développement des compétences, documents et procédures : l'IA générative intervient dans six processus RH. Elle y rédige, met en forme et adapte le texte au destinataire ; la sélection, l'appréciation des personnes et toute décision reviennent aux professionnels RH, sous le RGPD et le principe de non-discrimination.",
+  "foot": "Le cadrage répartit le temps entre ces six processus d'après les priorités de votre équipe. Pour bâtir le plan de compétences IA de toute l'entreprise, la {/formation-ia-drh-plan-competences|formation dédiée aux DRH} prend le relais."
  },
  "missions": [
   {
    "icon": "UserSearch",
    "title": "Recrutement : offres, sourcing, préparation",
-   "desc": "Rédiger une offre claire, attractive et non discriminante à partir de la fiche de poste, la décliner par canal, préparer un message d'approche personnalisé, construire la grille d'entretien et les questions par compétence. L'IA accélère la préparation ; le tri des candidatures et la décision restent humains, la loi l'impose et la formation le rappelle."
+   "desc": "Rédiger une offre claire, attractive et non discriminante en partant de la fiche de poste, la décliner par canal, préparer un message d'approche personnalisé, construire la grille d'entretien et les questions par compétence. L'IA accélère la préparation ; le tri des candidatures et la décision restent humains, la loi l'impose et la formation le rappelle."
   },
   {
    "icon": "DoorOpen",
@@ -71,19 +73,19 @@ export default {
   {
    "icon": "GraduationCap",
    "title": "Développement des compétences",
-   "desc": "Cartographie des compétences, plan de développement, fiches de formation, réponses aux demandes, préparation du dialogue avec les OPCO : l'IA structure et rédige, la stratégie de compétences reste la vôtre. Un usage qui sert directement l'obligation de littératie IA de l'article 4 du règlement européen."
+   "desc": "Cartographie des compétences, plan de développement, fiches de formation, réponses aux demandes des salariés, préparation du dialogue avec l'OPCO : l'IA met en forme et rédige, la stratégie de compétences reste la vôtre. Ce travail sert aussi la maîtrise de l'IA que l'AI Act, en son article 4, attend des employeurs depuis février 2025."
   },
   {
    "icon": "Scale",
    "title": "Documents, procédures et veille sociale",
-   "desc": "Procédures RH, courriers (hors décisions individuelles sensibles), synthèse d'un accord ou d'une évolution du droit du travail, préparation d'un ordre du jour de CSE, note d'impact. À valider avec votre juriste ou votre conseil : l'IA aide à comprendre et formuler, elle ne fait pas le droit."
+   "desc": "Procédures RH, courriers (hors décisions individuelles sensibles), synthèse d'un accord ou d'une évolution du droit du travail, préparation d'un ordre du jour de CSE, note d'impact. À valider avec votre juriste ou votre conseil : l'IA aide à saisir un texte et à le reformuler, le droit reste l'affaire des juristes."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une fonction RH",
-  "answer": "Six gains : des recrutements mieux préparés (offres claires, entretiens structurés), un onboarding enfin complet, des entretiens et feedbacks mieux écrits, une communication interne homogène, un plan de compétences outillé qui répond aussi à l'article 4, et un cadre RGPD et non-discrimination qui protège l'entreprise et les candidats.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut reproduire des biais et inventer une règle de droit du travail. Ne lui confiez jamais le tri ni l'évaluation, anonymisez, validez le juridique avec votre conseil : le reste, elle le fait remarquablement bien."
+  "kicker": "Ce que la fonction RH y gagne",
+  "h2": "Six apports de l'IA générative à la fonction RH",
+  "answer": "Des recrutements mieux préparés (offres claires, entretiens structurés), une intégration enfin complète, des entretiens et des retours mieux écrits, une communication interne cohérente, un plan de compétences outillé qui répond au passage à l'article 4, et un cadre RGPD et non-discrimination qui protège l'entreprise comme les candidats.",
+  "foot": "Deux risques demandent une vigilance constante : l'IA peut reproduire un biais et inventer une règle du droit du travail. Ne lui confiez ni le tri ni l'évaluation, anonymisez, faites valider le juridique par votre conseil ; sur tout le reste, elle rend des heures à l'équipe."
  },
  "atouts": [
   {
@@ -99,52 +101,52 @@ export default {
    "desc": "Préparation structurée, comptes rendus clairs, objectifs bien formulés, feedbacks difficiles préparés : le RH et le manager gagnent en justesse d'écriture, l'évaluation reste humaine."
   },
   {
-   "title": "Une communication interne homogène",
-   "desc": "Notes, annonces, newsletters, FAQ : l'entreprise parle d'une seule voix, adaptée par population, sans mobiliser des jours de rédaction."
+   "title": "Une communication interne cohérente",
+   "desc": "Notes, annonces, newsletters, FAQ : l'entreprise tient un discours cohérent, ajusté à chaque population, sans mobiliser des jours de rédaction."
   },
   {
    "title": "Un plan de compétences outillé, article 4 compris",
-   "desc": "Cartographie, plan de développement, fiches, dialogue OPCO : l'IA structure le travail, et la démarche répond directement à l'obligation de littératie IA du règlement européen."
+   "desc": "Cartographie, plan de développement, fiches, dialogue avec l'OPCO : l'IA structure le travail, et la démarche garde au passage la trace des formations que l'AI Act invite à recenser (article 4)."
   },
   {
    "title": "Un cadre qui protège",
-   "desc": "RGPD candidats et salariés, non-discrimination, information des personnes, contrôles CNIL 2026 : la formation pose le cadre le plus exigeant du site après la santé, écrit et défendable devant le DPO et le CSE."
+   "desc": "RGPD des candidats et des salariés, non-discrimination, information des personnes, priorités de contrôle de la CNIL : la formation écrit un cadre exigeant, que vous pouvez défendre devant le DPO et le CSE."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA ressources humaines sur 2 jours",
-  "answer": "Jour 1 : ce que les modèles font et ne font pas en RH, le cadre RGPD et non-discrimination, la méthode de la demande sur une offre d'emploi réelle, vos gabarits encodés, puis les ateliers recrutement, onboarding et entretiens, les Projets partagés appliqués à un poste à pourvoir et la relecture. Jour 2 : analyse d'un export SIRH anonymisé, synthèse d'un accord collectif, recherche approfondie pour le plan de compétences et l'article 4 de l'AI Act, co-édition d'une communication interne, puis les compétences (Skills), les assistants et agents, les tâches planifiées, la gouvernance et votre plan d'action.",
-  "foot": "Le programme s'ajuste au cadrage : une équipe recrutement approfondit le jour 1, une DRH le plan de compétences, le pilotage et la gouvernance. En version 1 jour, on garde les fondamentaux, le cadre, les gabarits et un périmètre (recrutement, ou administration et développement RH). Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Formation IA ressources humaines : le programme des deux jours",
+  "answer": "Le jour 1 commence par les capacités et les limites des modèles sur les écrits RH, puis les règles RGPD et de non-discrimination, la méthode de demande sur une offre d'emploi de votre entreprise et vos gabarits rangés dans les instructions ; l'après-midi enchaîne les ateliers recrutement, intégration et entretiens, un Projet partagé pour un poste ouvert et la relecture. Le jour 2 traite un export SIRH anonymisé, la synthèse d'un accord collectif, la recherche approfondie au service du plan de compétences et des obligations de l'AI Act sur la maîtrise de l'IA, la communication interne écrite à plusieurs, puis les compétences (Skills), assistants et tâches planifiées, avant la gouvernance et le plan d'action RH.",
+  "foot": "Le cadrage déplace le curseur : une équipe recrutement reste plus longtemps sur le premier jour, une DRH sur le plan de compétences, le pilotage et la gouvernance. En une seule journée, on garde les bases, le cadre, les gabarits et un volet, recrutement ou administration et développement RH. Les fonctions des outils ont été vérifiées le 7 octobre 2026 ; une fonction absente de vos licences est montrée en démonstration, puis rejouée avec ce que vos comptes permettent déjà."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Fondamentaux, cadre RH, recrutement, onboarding, entretiens",
+   "titre": "Bases, cadre RH, recrutement, intégration, entretiens",
    "matin": [
     {
-     "t": "Capacités et limites des modèles en RH",
-     "d": "Capacités réelles sur les écrits RH, limite sur la lecture des très gros fichiers de paie, biais possibles dans une formulation, ce qui engage l'employeur : rédiger une offre se délègue, trier des candidatures ou évaluer une personne jamais, la loi l'impose."
+     "t": "Forces et faiblesses des modèles sur l'écrit RH",
+     "d": "Ils rédigent bien les offres, les courriers et les comptes rendus ; ils peinent sur les fichiers de paie volumineux ; une formulation peut porter un biais. Rédiger une offre se délègue. Trier des candidatures ou évaluer une personne reste une décision humaine : le RGPD encadre strictement la décision automatisée, et l'employeur en répond."
     },
     {
-     "t": "Panorama des outils et de leurs versions entreprise",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini dans Workspace et Mistral Vibe (anciennement Le Chat) : lequel pour quoi en RH, où vont les données des candidats et des salariés, pourquoi les versions gratuites sont proscrites, leur place à côté de votre SIRH et de votre ATS, en lecture seule."
+     "t": "Cinq assistants, et leurs versions pour l'entreprise",
+     "d": "Microsoft Copilot dans Word et Outlook, Gemini dans Docs et Gmail, ChatGPT Business, Claude, Vibe : ce que chacun apporte aux RH, où vont les données des candidats et des salariés, pourquoi une version gratuite n'a pas sa place ici, et comment ces outils travaillent à côté du SIRH et de l'ATS, sans y écrire."
     },
     {
-     "t": "La demande efficace sur une offre d'emploi",
-     "d": "Contexte, rôle, format, exemples, itération, relecture : à partir d'une fiche de poste réelle, obtenir une offre claire, structurée et non discriminante, puis la décliner pour votre site carrières, un jobboard et LinkedIn en gardant les mentions obligatoires."
+     "t": "Bien formuler sa demande : l'exemple d'une offre d'emploi",
+     "d": "Contexte, rôle attendu, format, deux exemples, plusieurs itérations et une relecture : en partant d'une fiche de poste choisie par l'équipe, on obtient une offre claire, structurée et non discriminante, déclinée ensuite pour le site carrières, un jobboard et LinkedIn avec les mentions obligatoires."
     },
     {
-     "t": "Personnaliser son compte avec le ton employeur",
-     "d": "Instructions personnalisées, mémoire et styles : encoder votre marque employeur, vos mentions légales d'offre, vos gabarits (offre, grille d'entretien, mail d'onboarding) et la règle « aucune donnée nominative de candidat » pour que chaque conversation parte de votre cadre."
+     "t": "Le ton employeur réglé une fois pour toutes",
+     "d": "Les instructions personnalisées, la mémoire et les styles reçoivent votre marque employeur, les mentions légales de vos offres, vos gabarits (offre, grille d'entretien, mail d'accueil) et une consigne ferme : aucune donnée nominative de candidat. Chaque échange démarre ensuite dans votre cadre."
     },
     {
      "t": "Premier atelier : le message d'approche",
-     "d": "Sur un poste ouvert chez vous, rédiger un message d'approche personnalisé à partir d'un profil public anonymisé et de votre offre, tester trois variantes de longueur, retenir celle qui sonne juste et la ranger comme gabarit dans la bibliothèque de l'équipe."
+     "d": "Pour un poste ouvert chez vous, rédiger un message d'approche personnalisé à partir d'un profil public anonymisé et de l'offre, comparer trois longueurs, garder celle qui sonne juste et l'enregistrer comme gabarit dans la bibliothèque commune du service."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier recrutement : grille d'entretien par compétence",
+     "t": "Atelier recrutement : une grille d'entretien par compétence",
      "d": "À partir de votre offre et de votre référentiel, construire la grille d'entretien, les questions comportementales par compétence et les critères d'observation ; l'IA propose, vous arbitrez, et le tri des candidatures comme la décision restent humains."
     },
     {
@@ -156,12 +158,12 @@ export default {
      "d": "Préparer un entretien annuel à partir des objectifs de l'année et des faits notés, structurer le compte rendu, formuler des objectifs SMART, préparer un feedback délicat ; l'IA aide à écrire juste, l'évaluation reste un jugement humain, jamais un score généré."
     },
     {
-     "t": "Projets et espaces de travail pour un recrutement",
-     "d": "Créer un Projet partagé (ChatGPT, Claude, Vibe Work) pour un poste à pourvoir : instructions communes, fiche de poste, grille et trame de mails en fichiers de référence, droits de lecture et d'écriture pour le recruteur et le manager ; même logique avec un Notebook Copilot ou NotebookLM."
+     "t": "Un Projet partagé pour un poste à pourvoir",
+     "d": "Dans ChatGPT, Claude ou Vibe, un Projet partagé réunit les consignes communes, la fiche de poste, la grille et les trames de mails, avec des droits distincts pour le recruteur et le manager. Chez Google et chez Microsoft, Gemini Notebook (anciennement NotebookLM) ou un bloc-notes Copilot jouent ce rôle."
     },
     {
      "t": "Le cadre et la relecture en RH",
-     "d": "RGPD sur les données des candidats et des salariés, anonymisation avant toute saisie, information des personnes, contrôles CNIL 2026 sur le recrutement, droit du travail validé avec le juriste : une check-list de relecture pour détecter le biais, le générique et l'affirmation juridique douteuse."
+     "d": "RGPD pour les données des candidats et des salariés, anonymisation avant toute saisie, information des personnes, recrutement inscrit parmi les priorités de contrôle de la CNIL en 2026, droit du travail validé par le juriste : la check-list de relecture repère le biais, la formule creuse et l'affirmation juridique douteuse."
     }
    ]
   },
@@ -171,19 +173,19 @@ export default {
    "matin": [
     {
      "t": "Atelier communication interne par population",
-     "d": "Note de service, annonce d'une réorganisation, newsletter interne, FAQ collaborateurs : partir d'un message réel et le décliner pour les cadres, les équipes terrain et les managers relais, avec Canvas de ChatGPT ou les Artifacts de Claude pour co-éditer la version finale à plusieurs."
+     "d": "Note de service, annonce d'une réorganisation, lettre interne, FAQ des collaborateurs : un message de votre entreprise est décliné pour les cadres, le personnel de terrain et les managers relais ; Copilot Pages ou un Artifact de Claude accueille ensuite la version finale, que l'équipe corrige ensemble."
     },
     {
      "t": "Analyser un export SIRH anonymisé",
-     "d": "Sur un export anonymisé (effectifs, absentéisme, formations suivies), l'analyse de données de ChatGPT ou de Claude, Copilot dans Excel ou Gemini dans Sheets produisent la lecture par service et le graphique ; vous gardez les chiffres, la vérification et le commentaire pour la direction."
+     "d": "Sur un export sans nom (effectifs, absentéisme, formations suivies), Gemini dans Sheets, Copilot dans Excel, les tableurs de Vibe, ChatGPT ou Claude produisent la lecture par service et le graphique ; les chiffres, leur contrôle et le commentaire destiné à la direction restent à l'équipe RH."
     },
     {
      "t": "Documents longs : accord collectif et évolution du droit",
      "d": "Charger un accord d'entreprise ou une nouvelle convention collective, en obtenir la synthèse, les points qui changent pour la paie et une note d'impact, préparer l'ordre du jour du CSE ; chaque affirmation juridique est vérifiée avec votre juriste ou votre conseil."
     },
     {
-     "t": "Recherche approfondie pour le plan de compétences",
-     "d": "Deep Research de ChatGPT, Gemini ou Claude, l'agent Researcher de Copilot : dresser l'état des formations et certifications sur un métier en tension, comparer les offres, préparer le dialogue avec l'OPCO ; l'article 4 de l'AI Act et la littératie IA entrent dans le plan."
+     "t": "Recherche approfondie au service du plan de compétences",
+     "d": "Deep Research de ChatGPT, l'agent Researcher de Copilot, la recherche approfondie de Gemini ou de Claude : faire l'état des formations et certifications sur un métier en tension, comparer les offres, préparer l'échange avec l'OPCO. La maîtrise de l'IA, exigée par l'AI Act, prend sa place dans le plan."
     },
     {
      "t": "Courriers sensibles et cartographie des compétences",
@@ -193,46 +195,46 @@ export default {
    "apresmidi": [
     {
      "t": "Compétences (Skills) : une procédure RH réutilisable",
-     "d": "Transformer votre procédure de réponse aux candidats non retenus ou votre trame d'offre en compétence : un dossier SKILL.md chez Claude, une compétence décrite en langage naturel dans ChatGPT Business ou Vibe, qui se déclenche d'elle-même quand la demande correspond ; un membre crée et teste, l'administrateur partage."
+     "d": "Votre procédure de réponse aux candidats non retenus, ou votre trame d'offre, se transforme en compétence, activée d'elle-même dès qu'une demande lui correspond. Chez Claude, elle prend la forme d'un dossier SKILL.md ; dans ChatGPT Business, Vibe ou Gemini, d'une consigne écrite en langage courant. Un membre de l'équipe la crée et la teste, puis l'administrateur la met à disposition de tous."
     },
     {
-     "t": "Assistants et agents : GPTs, agents d'espace, Gems",
-     "d": "Un assistant « FAQ RH » sur votre livret et vos procédures suffit : projet partagé, Gem, assistant Agent Builder sur SharePoint ; vos GPTs existants sont repris, pas étendus. Un agent d'espace de travail ChatGPT ou Workspace Studio enchaîne des étapes ; Copilot Studio et l'écriture dans le SIRH restent un projet d'intégration."
+     "t": "Assistant FAQ RH ou agent : où placer la limite",
+     "d": "Répondre aux salariés sur la base de votre livret et de vos procédures ne demande qu'un assistant : un projet partagé, une compétence chez Gemini, ou l'Agent Builder de Copilot branché sur SharePoint. Les GPTs déjà créés doivent migrer vers des plugins, puisque OpenAI les retire le 11 décembre 2026. Pour enchaîner plusieurs étapes, on passe aux agents de ChatGPT ou à Workspace Studio ; Copilot Studio, comme toute écriture dans le SIRH, se traite en projet d'intégration à part."
     },
     {
-     "t": "Tâches planifiées : veille sociale et rappels",
-     "d": "Créer en une phrase une tâche planifiée (ChatGPT, Vibe Work) qui livre chaque lundi la veille droit du travail et conventions collectives, ou un rappel des échéances d'entretiens professionnels ; chez ChatGPT, au plus une exécution par heure et un nombre de tâches actives plafonné ; relecture humaine avant diffusion."
+     "t": "Veille sociale et échéances programmées",
+     "d": "Une phrase suffit pour programmer dans ChatGPT ou dans Vibe la veille du lundi sur le droit du travail et vos conventions collectives, ou le rappel des entretiens professionnels à venir. Selon l'offre souscrite, le nombre de tâches actives est limité, et chaque livraison est relue avant diffusion."
     },
     {
      "t": "Gouvernance et mesure des usages RH",
-     "d": "Un propriétaire nommé par assistant et par compétence, un registre tenu par la DRH, des droits d'administration définis (qui construit, qui publie, crédits des agents à budgéter), une revue trimestrielle, et des indicateurs suivis : délai de réponse aux candidats, complétude des parcours d'onboarding, temps de préparation des entretiens."
+     "d": "La DRH tient la liste des assistants et compétences en service, chacun avec un propriétaire nommé ; les droits d'administration précisent qui construit et qui publie, et le budget des crédits d'agents est prévu. Tous les trois mois, l'équipe fait le point sur trois indicateurs : délai de réponse aux candidats, parcours d'intégration complets, temps de préparation des entretiens."
     },
     {
-     "t": "Plan d'action, évaluation et livrables",
-     "d": "Choisir les trois usages à installer dans le mois (par exemple offre, onboarding, veille), nommer qui les porte et comment on mesure ; évaluation des acquis, puis remise de la bibliothèque de prompts RH, des gabarits, des compétences créées et du cadre d'usage RGPD et non-discrimination."
+     "t": "Plan d'action, évaluation et remise des livrables",
+     "d": "L'équipe choisit trois usages à mettre en place dans le mois (par exemple l'offre, l'intégration, la veille), désigne leurs porteurs et la façon de mesurer. La session se termine par l'évaluation des acquis, puis l'équipe reçoit ses prompts RH, ses gabarits, les compétences construites en atelier et son cadre d'usage RGPD et non-discrimination."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA ressources humaines ?",
-  "answer": "À toute la fonction RH : DRH et RRH qui fixent le cadre et pilotent, chargés de recrutement, gestionnaires RH et paie, responsables formation et développement des compétences, communication interne. Sans prérequis technique : la pratique du métier suffit, en PME comme en groupe."
+  "h2": "Quels métiers RH suivent la formation ?",
+  "answer": "Toute la fonction : DRH et RRH qui fixent le cadre et pilotent, chargés de recrutement, gestionnaires RH et paie, responsables formation et développement des compétences, communication interne. Pas de prérequis technique : connaître le métier RH suffit, dans une PME comme dans un groupe."
  },
  "profils": [
   {
    "icon": "Briefcase",
    "title": "DRH et RRH",
-   "desc": "Fixer le cadre d'usage de l'IA dans la fonction, arbitrer les outils, piloter le plan de compétences (article 4 compris), sécuriser le dialogue social. La formation vous donne la lecture d'ensemble et le cadre écrit."
+   "desc": "Décider des usages permis dans la fonction, arbitrer entre les outils, piloter le plan de compétences (article 4 compris), préparer le dialogue social. Vous rentrez avec une lecture complète du sujet et un cadre écrit, prêt à présenter au CSE."
   },
   {
    "icon": "UserSearch",
    "title": "Chargés de recrutement",
-   "desc": "Offres, sourcing, approches personnalisées, grilles d'entretien, réponses aux candidats : les usages qui rendent des heures et améliorent l'expérience candidat, avec la ligne rouge posée : l'IA ne trie pas."
+   "desc": "Offres, sourcing, approches personnalisées, grilles d'entretien, réponses aux candidats : des usages qui libèrent du temps et soignent l'expérience candidat, avec une ligne rouge posée dès le matin : l'IA ne trie pas."
   },
   {
    "icon": "Calculator",
    "title": "Gestionnaires RH et paie",
-   "desc": "Documents, procédures, courriers, réponses aux collaborateurs, onboarding administratif : la charge d'écrit du quotidien RH, traitée plus vite et plus clairement, dans le cadre RGPD."
+   "desc": "Documents, procédures, courriers, réponses aux collaborateurs, formalités d'arrivée : la charge d'écrit du quotidien RH se traite plus vite et plus clairement, dans le respect du RGPD."
   },
   {
    "icon": "GraduationCap",
@@ -241,66 +243,67 @@ export default {
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "RGPD, non-discrimination, décisions RH : ce que la formation pose noir sur blanc",
-  "p": "Les RH manipulent des données personnelles sensibles (candidats, salariés, parfois santé ou situation familiale) et prennent des décisions qui engagent l'employeur : recrutement, évaluation, sanction. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise uniquement pour toute donnée nominative, anonymisation), où s'arrête l'assistance (l'IA rédige et prépare ; le tri, l'évaluation et la décision restent humains, la loi l'impose et la CNIL le contrôle), l'information des personnes concernées, et la validation juridique de tout ce qui touche au droit du travail. Ce cadre est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des équipes RH depuis 2022, dans l'industrie, les services, l'immobilier ou le secteur public : les mêmes questions reviennent, et elles ont des réponses pratiques.",
+  "kicker": "RGPD et non-discrimination",
+  "h2": "Données personnelles, non-discrimination, décisions RH : le cadre que l'équipe écrit pendant la formation",
+  "p": "Une équipe RH traite des données personnelles parfois sensibles (candidats, salariés, santé, situation familiale) et signe des décisions qui engagent l'employeur : recrutement, évaluation, sanction. Pendant les deux jours, elle écrit ses règles : à quel outil confier quoi (une offre entreprise pour toute donnée nominative, après anonymisation), jusqu'où va l'aide de l'IA (elle rédige et prépare ; le tri, l'appréciation et la décision restent humains, puisque le RGPD encadre la décision automatisée et que les contrôles de la CNIL visent le recrutement), comment informer les personnes concernées, quand faire relire un texte de droit du travail par un juriste. Ce cadre vient compléter votre {/charte-ia-entreprise|charte IA d'entreprise} ; votre DPO peut le relire avant diffusion.",
   "points": [
    "Le tri des candidatures et l'évaluation ne se délèguent jamais à l'IA",
-   "Données candidats et salariés : offres entreprise, anonymisation",
-   "Information des personnes et contrôles CNIL 2026 anticipés",
-   "Droit du travail : validation avec le juriste, jamais sur la seule foi de l'outil"
+   "Données des candidats et des salariés : offre entreprise et anonymisation",
+   "Information des personnes, priorités de contrôle de la CNIL anticipées",
+   "Droit du travail : un juriste valide, l'outil propose"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (offres, trames d'entretien, parcours d'onboarding, documents anonymisés, outils), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts RH, gabarits outillés, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": ""
+  "titre": "Combien coûte la formation IA RH, et qui la finance ?",
+  "answer": "L'équipe RH, de un à 12 participants, est formée pour 1 980 € HT la journée : les deux jours reviennent à 3 960 € HT. Comme Masteria est certifiée Qualiopi, l'opérateur de compétences de votre branche peut intervenir, à hauteur de ce que prévoient ses règles et ses fonds. Votre devis part sous 24 heures, programme ajusté compris.",
+  "inclus": "Avant la session, un cadrage sur vos offres, trames d'entretien, parcours d'intégration et documents anonymisés ; ensuite les deux jours d'animation, sur place ou à distance, les supports et les livrables (bibliothèque de prompts RH, gabarits prêts à l'emploi, cadre d'usage RGPD). Chaque participant passe une évaluation des acquis et reçoit un certificat de réalisation. Hors région lyonnaise, le trajet du formateur est ajouté au devis.",
+  "financement": "En RH, le circuit vous est familier : la convention collective désigne l'OPCO, l'outil {/quel-opco|Quel OPCO ?} vous le donne, et {/financement-formation-ia|notre guide du financement} récapitule les dispositifs. Nous fournissons programme, convention et justificatifs, à joindre à la demande avant la session. Pas de prise en charge par le CPF."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA ressources humaines ?",
-   "a": "À intégrer l'intelligence artificielle générative dans les processus RH, sur vos propres processus : rédiger des offres claires et non discriminantes, préparer des approches et des grilles d'entretien, construire des parcours d'onboarding complets, préparer entretiens et feedbacks, produire la communication interne, outiller le plan de développement des compétences, rédiger procédures et synthèses de veille sociale. Et à poser le cadre du métier en premier : RGPD, non-discrimination, information des personnes, ce que l'IA ne décide jamais."
+   "q": "Qu'apprend une équipe RH pendant ces deux jours ?",
+   "a": "L'IA générative appliquée aux processus RH de votre entreprise : rédiger des offres claires et non discriminantes, préparer les approches et les grilles d'entretien, construire des parcours d'intégration complets, préparer les entretiens et les retours, écrire la communication interne, outiller le plan de compétences, rédiger procédures et synthèses de veille sociale. Le cadre passe en premier : RGPD, non-discrimination, information des personnes, et la liste des décisions interdites à l'outil."
   },
   {
-   "q": "Peut-on utiliser l'IA pour trier des CV ou présélectionner des candidats ?",
-   "a": "Non, et la formation en fait sa première règle. Trier, classer ou noter des candidats avec un outil d'IA générative est le terrain de la discrimination et d'un traitement automatisé encadré par le RGPD ; la CNIL a d'ailleurs fait du recrutement une priorité de contrôle en 2026, avec l'analyse d'impact obligatoire pour les algorithmes de sélection. Ce que l'IA fait légitimement : rédiger l'offre, préparer la grille d'entretien, structurer les comptes rendus, répondre aux candidats. La sélection reste un jugement humain sur des critères légaux et documentés."
+   "q": "L'IA peut-elle trier des CV ou présélectionner des candidats ?",
+   "a": "Non, et c'est la première règle de la formation. Trier, classer ou noter des candidats avec un outil d'IA générative expose à la discrimination et à une décision automatisée que le RGPD encadre strictement. Le recrutement figure parmi les thématiques prioritaires de contrôle de la CNIL pour 2026, et une analyse d'impact s'impose pour un algorithme de sélection. L'IA garde un rôle utile : rédiger l'offre, préparer la grille d'entretien, structurer les comptes rendus, répondre aux candidats. Le choix reste un jugement humain, fondé sur des critères légaux et documentés."
   },
   {
-   "q": "Peut-on confier à l'IA des données de candidats ou de salariés ?",
-   "a": "Sous conditions strictes, posées en atelier. Les données RH sont des données personnelles, parfois sensibles : anonymisation avant tout traitement (nom, coordonnées, éléments identifiants), usage exclusif d'offres entreprise qui n'entraînent pas leurs modèles sur vos données et offrent un cadre contractuel, jamais de version gratuite, information des personnes concernées. Sur des documents non nominatifs (offres, procédures, parcours, communication), les usages sont larges et sûrs. Le cadre écrit est un livrable, défendable devant votre DPO et votre CSE."
+   "q": "Peut-on donner à l'IA des données de candidats ou de salariés ?",
+   "a": "Sous des conditions strictes, travaillées en atelier. Les données RH sont personnelles et parfois sensibles : on anonymise avant tout traitement (nom, coordonnées, détails identifiants), on travaille uniquement sur une offre entreprise, sous contrat, dont l'éditeur s'interdit d'entraîner ses modèles avec vos contenus, on exclut toute version gratuite et on informe les personnes concernées. Chez Mistral, Vibe garde les données en Europe sauf réglage contraire, et son offre Team impose de désactiver l'entraînement depuis la console d'administration. Sur les documents sans nom (offres, procédures, parcours, communication), le champ des usages est large. Le cadre écrit fait partie des livrables, et votre DPO comme votre CSE peuvent le consulter."
   },
   {
-   "q": "L'IA peut-elle rédiger nos entretiens annuels ou nos évaluations ?",
-   "a": "Elle peut aider à les préparer et à les écrire, pas à évaluer. À partir des objectifs de l'année et des éléments factuels, l'IA structure la préparation, propose une trame de compte rendu, aide à formuler des objectifs clairs et un feedback difficile de façon respectueuse. L'appréciation elle-même, le jugement sur le travail d'une personne, reste celle du manager et du RH : jamais un score ou une conclusion générés. La formation apprend cette répartition, et la même prudence vaut pour tout courrier sensible (disciplinaire, rupture), où l'IA n'intervient que sur la forme."
+   "q": "L'IA peut-elle écrire nos entretiens annuels ou nos évaluations ?",
+   "a": "Elle aide à les préparer et à les rédiger, sans évaluer. À partir des objectifs de l'année et des faits notés, elle structure la préparation, propose une trame de compte rendu, aide à formuler des objectifs clairs et un retour difficile avec respect. L'appréciation du travail d'une personne reste celle du manager et du RH, jamais un score ou une conclusion générés. La même prudence vaut pour tout courrier sensible (disciplinaire, rupture), où l'IA ne touche qu'à la forme."
   },
   {
-   "q": "La formation aide-t-elle à répondre à l'article 4 du règlement européen sur l'IA ?",
-   "a": "Oui, doublement. D'abord parce que former l'équipe RH à l'IA est en soi une action de littératie ; ensuite parce que le jour 2 outille la construction du plan de développement des compétences IA de toute l'entreprise, ce que l'article 4 attend (obligation de moyens depuis février 2025 : démontrer des actions de sensibilisation et de formation proportionnées). Pour aller plus loin sur ce volet, notre formation plan de compétences IA pour DRH et notre démarche d'acculturation d'entreprise prennent le relais."
+   "q": "La formation compte-t-elle pour l'obligation de maîtrise de l'IA (article 4) ?",
+   "a": "Elle y contribue deux fois. Former l'équipe RH constitue déjà une action de maîtrise de l'IA ; le jour 2 outille en plus la construction du plan de compétences IA de toute l'entreprise. Applicable depuis le 2 février 2025, ce texte attend des actions proportionnées au contexte, sans certificat imposé ; la liste interne des formations suivies permet d'en rendre compte. La formation DRH au plan de compétences IA, puis la démarche d'acculturation, prolongent ce travail."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre entreprise a déployés. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral, articulés avec votre SIRH et votre ATS. Copilot est souvent déjà présent dans les DRH sous Microsoft 365 ; la formation s'y appuie alors. Les fonctions IA intégrées aux ATS sont abordées pour ce qu'elles font, et pour le cadre juridique qu'elles appellent."
+   "q": "Quels outils la formation utilise-t-elle ?",
+   "a": "Ceux que votre entreprise a choisis. Indépendante des éditeurs, Masteria forme sur Microsoft Copilot, Gemini, ChatGPT, Claude et Vibe, utilisés à côté du SIRH et de l'ATS. Dans les DRH équipées de Microsoft 365, Copilot est souvent déjà là, et la formation part de lui ; une équipe sous Google Workspace travaille avec Gemini dans Docs, Gmail et Sheets. Les fonctions d'IA intégrées aux ATS sont présentées pour ce qu'elles savent faire et pour le cadre juridique qu'elles appellent."
   },
   {
-   "q": "La formation travaille-t-elle sur nos vrais processus ?",
-   "a": "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : offres récentes, trames d'entretien, parcours d'onboarding, documents et procédures (anonymisés si besoin), outils. Chaque atelier part de là : votre offre à réécrire, votre entretien à préparer, votre parcours à compléter. Les participants repartent avec des livrables directement utilisables : bibliothèque de prompts RH, gabarits outillés, cadre d'usage."
+   "q": "Les ateliers partent-ils de nos processus ?",
+   "a": "Oui. En amont, nous rassemblons vos offres récentes, vos trames d'entretien, vos parcours d'intégration, vos documents et procédures (anonymisés si besoin) et la liste de vos outils. Chaque atelier s'appuie dessus : l'offre à réécrire, l'entretien à préparer, le parcours à compléter. À la fin, l'équipe dispose de ses prompts RH, de gabarits prêts à servir et de son cadre d'usage."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra, en présentiel ou à distance, pour un groupe de 4 à 10 personnes de la fonction RH. Une version d'une journée existe pour un périmètre resserré : recrutement seul, ou administration et développement RH. Un accompagnement individuel est possible pour un DRH ou un RRH seul sur sa fonction. Les journées pleines alternent apports courts et ateliers sur vos processus réels."
+   "q": "Sur quelle durée, et en quel format ?",
+   "a": "Deux jours de 7 heures, en intra et en présentiel comme à distance, pour 12 personnes de la fonction RH au maximum. Une journée suffit pour un périmètre resserré : le recrutement seul, ou l'administration et le développement RH. Un DRH ou un RRH peut aussi suivre un parcours individuel, centré sur sa propre fonction. Chaque journée mêle de brefs apports et des ateliers sur vos processus."
   },
   {
    "q": "Peut-on centrer la formation sur l'IA et le recrutement ?",
-   "a": "Oui : la formation IA recrutement est l'angle le plus demandé par les équipes RH, et le cadrage peut y consacrer l'essentiel de la journée : rédaction d'offres structurées et relues contre les biais de formulation, sourcing outillé, trames d'entretien, synthèses après échange, réponses aux candidats à votre ton et dans des délais tenus. Le cadre est posé sans détour : le règlement européen sur l'IA encadre spécifiquement les usages RH qui évaluent des personnes (tri automatisé de candidatures, notation), et la non-discrimination reste votre responsabilité pleine. La règle enseignée est simple : l'IA prépare des documents et des synthèses, l'humain décide de chaque étape qui concerne une personne."
+   "a": "Oui : les équipes RH le demandent plus que tout autre thème, et le cadrage peut y consacrer l'essentiel de la journée : offres structurées et relues contre les biais de formulation, sourcing outillé, trames d'entretien, synthèses après échange, réponses aux candidats à votre ton et dans des délais tenus. Le cadre est posé sans détour : les outils qui trient des candidatures ou évaluent des personnes figurent parmi les systèmes à haut risque de l'AI Act, avec des obligations reportées à décembre 2027, et la non-discrimination reste pleinement votre responsabilité. La règle enseignée tient en une phrase : l'IA prépare des documents et des synthèses, l'humain décide de chaque étape qui concerne une personne."
   },
   {
-   "q": "Combien coûte une formation IA RH, et est-elle finançable ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent 3 960 € HT. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; en tant que RH vous connaissez le circuit, nous fournissons programme, convention et pièces, et le dépôt se fait avant le début. La formation n'est pas éligible au CPF. Devis sous 24 heures."
+   "q": "Quel budget prévoir pour former une équipe RH à l'IA ?",
+   "a": "Chaque jour de formation coûte 1 980 € HT au groupe RH (12 personnes au plus), soit 3 960 € HT pour deux jours. Le circuit OPCO vous est familier : nous transmettons programme, convention et pièces, à joindre à une demande faite avant la session. Le CPF ne couvre pas cette formation. Comptez 24 heures pour recevoir le devis."
   }
  ],
  "course": {
-  "name": "Formation IA ressources humaines — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée aux ressources humaines, sur les processus réels des participants : recrutement (offres, sourcing, entretiens), onboarding, entretiens et évaluations, communication interne, développement des compétences et article 4, documents et veille sociale, cadre RGPD et non-discrimination. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA ressources humaines (Masteria)",
+  "description": "Formation à l'intelligence artificielle générative appliquée aux ressources humaines, sur les processus des participants : recrutement (offres, sourcing, entretiens), intégration, entretiens et évaluations, communication interne, développement des compétences et article 4, documents et veille sociale, cadre RGPD et non-discrimination. Outils : Microsoft Copilot, Gemini, ChatGPT, Claude, Vibe. Deux jours en intra, en présentiel ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
    "Rédiger des offres et préparer des entretiens non discriminants avec l'IA",
@@ -314,13 +317,13 @@ export default {
   "duration": "PT14H",
   "prerequisites": "Aucun prérequis technique. Pratique d'un métier des ressources humaines.",
   "audience": "DRH, RRH, chargés de recrutement, gestionnaires RH, responsables formation",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "locationName": "Masteria : intra-entreprise, en présentiel (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
   "headline": "Formation IA ressources humaines : l'IA générative du recrutement au plan de compétences, dans le cadre du RGPD",
   "datePublished": "2025-09-15",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -341,15 +344,15 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "Règlement (UE) 2024/1689 sur l'intelligence artificielle (article 4, littératie IA) — EUR-Lex",
+   "name": "Le texte de l'AI Act au Journal officiel de l'Union européenne (EUR-Lex)",
    "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
   },
   {
-   "name": "Intelligence artificielle : le cadre posé par la CNIL (recrutement et données des personnes)",
+   "name": "CNIL : intelligence artificielle, recrutement et données des personnes",
    "url": "https://www.cnil.fr/fr/intelligence-artificielle"
   }
  ],
@@ -358,53 +361,124 @@ export default {
    "label": "Plan de compétences IA pour DRH",
    "href": "/formation-ia-drh-plan-competences",
    "tag": "Article 4",
-   "desc": "Construire le plan de développement des compétences IA de toute l'entreprise, finançable OPCO."
+   "desc": "Le plan de compétences IA de toute l'entreprise, construit par la DRH."
   },
   {
    "label": "Formation Copilot RH",
    "href": "/formation-copilot-rh",
    "tag": "Par outil",
-   "desc": "Copilot dans Microsoft 365 pour les RH : Word, Outlook, Teams, Excel, agents."
+   "desc": "Copilot pour les RH dans Word, Outlook, Teams et Excel."
   },
   {
    "label": "Formation ChatGPT RH",
    "href": "/formation-chatgpt-ressources-humaines",
    "tag": "Par outil",
-   "desc": "Approfondir ChatGPT pour les RH : projets, GPTs personnalisés, analyse de fichiers."
+   "desc": "ChatGPT pour les RH : projets, compétences, analyse de fichiers."
+  },
+  {
+   "label": "Formation Claude RH",
+   "href": "/formation-claude-ressources-humaines",
+   "tag": "Par outil",
+   "desc": "Claude pour les accords, les conventions et les procédures RH."
+  },
+  {
+   "label": "Formation Gemini en entreprise",
+   "href": "/formation-gemini-entreprise",
+   "tag": "Par outil",
+   "desc": "Gemini dans Google Workspace, pour les équipes RH qui l'utilisent."
+  },
+  {
+   "label": "Formation Mistral AI",
+   "href": "/formation-mistral-ai",
+   "tag": "Par outil",
+   "desc": "Vibe, l'assistant de Mistral, pour une équipe qui l'a choisi."
   },
   {
    "label": "Formation IA management",
    "href": "/formation-ia-management",
    "tag": "Métier voisin",
-   "desc": "Pour les managers qui mènent entretiens et feedbacks : piloter une équipe augmentée."
+   "desc": "Pour les managers qui mènent entretiens et retours."
   },
   {
    "label": "Formation IA communication",
    "href": "/formation-ia-communication",
    "tag": "Métier voisin",
-   "desc": "La communication interne et institutionnelle avec l'IA, souvent partagée avec les RH."
+   "desc": "Communication interne et institutionnelle avec l'IA."
   },
   {
    "label": "Acculturation IA",
    "href": "/acculturation-ia",
    "tag": "Entreprise",
-   "desc": "La démarche de montée en compétence collective, portée par les RH, qui répond à l'article 4."
+   "desc": "Former l'ensemble des salariés, un chantier souvent piloté par les RH."
   },
   {
    "label": "IA et RGPD",
    "href": "/ia-et-rgpd",
    "tag": "Cadre",
-   "desc": "Les principes RGPD appliqués à l'IA, l'analyse d'impact et les garanties à vérifier outil par outil."
+   "desc": "Le RGPD appliqué aux outils d'IA."
   },
   {
    "label": "Charte IA d'entreprise",
    "href": "/charte-ia-entreprise",
    "tag": "Cadre",
-   "desc": "Le cadre d'usage que les RH portent souvent : ce qu'on confie, comment, à qui."
+   "desc": "Les règles d'usage que la DRH porte souvent."
   }
  ],
+ "bibliotheque": "Avant la première journée, parcourez la {/bibliotheque-de-prompts#ressources-humaines|bibliothèque de prompts RH} : une grille pour comparer les candidats après l'entretien, une annonce fidèle au poste, une réponse à une candidature refusée, un plan d'accueil des trois premiers mois. Tous ont été écrits avec l'anonymisation en tête.",
+ "ctaMilieu": {
+  "titre": "Votre équipe RH, formée sur ses propres dossiers",
+  "texte": "Indiquez-nous vos outils (SIRH, ATS, suite bureautique) et vos priorités : en 24 heures, le programme ajusté et le devis sont dans votre boîte mail."
+ },
+ "competences": {
+  "titre": "Les acquis évalués en fin de parcours",
+  "intro": "Six objectifs, chacun relié à un atelier et vérifié par l'évaluation finale.",
+  "items": [
+   "Rédiger une offre d'emploi claire et non discriminante, déclinée par canal",
+   "Bâtir pour chaque compétence ses questions d'entretien, sans déléguer la sélection",
+   "Produire un parcours d'intégration complet pour un poste ouvert",
+   "Préparer un entretien annuel, ses objectifs et un retour difficile",
+   "Analyser un export SIRH anonymisé et en tirer un commentaire pour la direction",
+   "Passer chaque usage de l'IA au crible du RGPD et de la non-discrimination"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Quel assistant d'IA pour une équipe RH : Gemini, Copilot, Claude, ChatGPT ou Vibe ?",
+  "intro": "Votre suite bureautique décide souvent pour vous. Voici comment chaque outil sert les RH, d'après notre relevé du 7 octobre 2026.",
+  "lignes": [
+   {
+    "outil": "copilot",
+    "texte": "Dans une DRH équipée de Microsoft 365, Copilot rédige l'offre dans Word, résume un fil de candidature dans Outlook et tire de Teams le compte rendu d'un comité RH ; l'Agent Builder crée un assistant FAQ RH sur vos procédures SharePoint. {/formation-copilot-rh|Formation Copilot pour les RH}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Sous Google Workspace, Gemini écrit fiches de poste et livrets d'accueil dans Docs, prépare les réponses aux candidats dans Gmail et le reporting RH dans Sheets. Gemini Notebook garde en un même carnet accords d'entreprise et texte de branche, et depuis le 23 septembre 2026 un document Docs peut s'appuyer sur ce carnet en citant ses sources. {/formation-gemini-entreprise|Formation Gemini en entreprise}"
+   },
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business convient aux équipes sans suite imposée : projets partagés par poste à pourvoir, compétences pour les réponses aux candidats, analyse d'un export SIRH anonymisé. {/formation-chatgpt-ressources-humaines|Formation ChatGPT pour les RH}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude s'emploie surtout sur les documents longs (accords d'entreprise, conventions collectives, textes de loi) et sur les procédures à rédiger dans votre ton ; ses compétences transforment une trame RH en réflexe partagé. {/formation-claude-ressources-humaines|Formation Claude pour les RH}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Pour des données RH, Vibe a un atout : leur hébergement européen par défaut. Sa Knowledge Base, qui a remplacé la mémoire le 22 septembre 2026, garde vos procédures, et ses tableurs lisent un export Excel ou CSV ; en Team, pensez à faire désactiver par l'administrateur l'entraînement des modèles, actif d'office. {/formation-mistral-ai|Formation Mistral AI}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Un formateur choisi pour sa connaissance des RH",
+  "texte": "Mathias Nizan, fondateur de Masteria à Lyon depuis 2022, supervise chaque session RH ; il l'anime lui-même ou en charge un formateur indépendant qui connaît la fonction RH. Pour un {/etudes-de-cas-ia#industrie|groupe international du packaging}, deux premières sessions ont fait travailler 24 managers pilotes sur Copilot à partir des fichiers du groupe, base RH comprise, et trois autres ont suivi en septembre 2026 ; la suite se joue aux États-Unis et au Mexique en octobre, puis en Inde en décembre."
+ },
+ "apres": {
+  "titre": "Et si les salariés interrogeaient vos procédures ?",
+  "texte": "Une fois l'équipe formée, le projet suivant porte souvent sur un outil interne : un assistant qui renseigne les salariés à partir de vos procédures, de vos accords et de votre convention collective. Masteria le conçoit avec vous, le construit et le relie à vos outils ; ce développement, chiffré au forfait après un cadrage, n'est pas finançable par votre OPCO."
+ },
+ "faqTitre": "Questions des équipes RH sur la formation",
  "cta": {
-  "h2": "Formons votre équipe RH sur ses vrais processus",
-  "p": "Décrivez-nous votre équipe, vos outils (SIRH, ATS), vos enjeux du moment et votre calendrier. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Préparons la formation de votre équipe RH",
+  "p": "Parlez-nous de l'équipe, de vos outils (SIRH, ATS), de vos chantiers en cours et de votre calendrier. Vous recevez sous 24 heures une proposition de programme, des dates et le devis, avec les pièces pour l'OPCO."
  }
 }

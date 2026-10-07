@@ -1,326 +1,330 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-marketing (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Reçoit depuis le 07/10 l'ancienne page Mistral × marketing (redirection 308).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA marketing : contenu, SEO, campagnes | Masteria",
-  "metaDesc": "Formation IA pour le marketing, sur vos campagnes réelles : contenu, SEO, réseaux sociaux, emailing, growth, analyse. ChatGPT, Claude, Copilot, Gemini. Qualiopi, OPCO.",
-  "keywords": "formation ia marketing, formation intelligence artificielle marketing, formation ia générative marketing, formation ia pour équipe marketing, formation marketing digital ia",
-  "h1": "Formation IA marketing : l'IA générative sur vos campagnes, du contenu à l'analyse",
+  "metaTitle": "Formation IA marketing : contenus, campagnes | Masteria",
+  "metaDesc": "Formation IA marketing en intra : briefs, contenus, emailing, réseaux, visuels, bilans de campagne, sur Copilot, ChatGPT, Gemini, Claude ou Vibe. Qualiopi.",
+  "keywords": "formation ia marketing, formation intelligence artificielle marketing, formation ia générative marketing, formation ia pour équipe marketing, formation marketing digital ia, formation mistral marketing",
+  "h1": "Formation IA marketing : l'IA générative dans chaque campagne, du brief à la mesure",
   "h1a": "Formation IA marketing :",
-  "h1b": "l'IA générative sur vos campagnes, du contenu à l'analyse",
+  "h1b": "l'IA générative dans chaque campagne, du brief à la mesure",
   "eyebrow": "Formation métier · Marketing",
-  "badge3": "Sur vos campagnes et votre charte",
-  "geo": "La formation intelligence artificielle marketing de Masteria apprend à vos équipes à intégrer l'IA générative dans chaque mission du métier : contenu, SEO et GEO, réseaux sociaux, emailing, analyse, créativité, sur vos propres campagnes et à votre ton de marque. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "Le marketing est le métier où l'IA générative a le plus vite trouvé sa place, et celui où le générique se voit le plus. La formation ne se limite pas à « savoir prompter » : elle apprend à cadrer, produire, relire et mesurer, pour que la vitesse ne coûte ni la qualité ni la marque.",
-  "intro": "La formation IA marketing de Masteria apprend à vos équipes à intégrer l'intelligence artificielle générative dans chaque mission du métier : contenu, SEO et GEO, réseaux sociaux, emailing, analyse, créativité, sur vos propres campagnes et à votre ton de marque. Deux jours, multi-outils, certifiée Qualiopi et finançable par votre OPCO."
+  "badge3": "Sur vos campagnes, vos personas et votre charte",
+  "geo": "La formation IA marketing de Masteria apprend à une équipe marketing à confier à l'IA générative le travail qui remplit ses semaines : briefs, contenus et déclinaisons, emailing, réseaux sociaux, visuels, bilans de campagne, visibilité sur Google et dans les réponses des assistants. Deux journées en intra, construites sur vos campagnes en cours et votre plateforme de marque, avec l'outil de l'équipe : Vibe (anciennement Le Chat), Gemini, ChatGPT, Claude ou Microsoft Copilot (anciennement Microsoft 365 Copilot), au choix. Grâce à la certification Qualiopi de Masteria, obtenue pour ses actions de formation, l'opérateur de compétences de votre branche peut prendre en charge une partie du coût, d'après son barème et l'enveloppe dont il dispose.",
+  "sub": "Le marketing compte parmi les premières fonctions à s'être servies de l'IA générative, et c'est chez lui que le texte interchangeable se repère le plus vite : un lecteur reconnaît en deux lignes la newsletter écrite sans brief. Les deux journées installent une discipline simple, du brief jusqu'à la mesure, pour que l'équipe publie davantage sans que la marque perde sa voix ni ses preuves.",
+  "intro": "La formation IA marketing de Masteria apprend à une équipe marketing à confier à l'IA générative ses briefs, ses contenus, son emailing, ses visuels et ses bilans de campagne, sur ses propres campagnes, en deux journées certifiées Qualiopi."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "2 jours (14 h) en intra ; version 1 jour possible pour un périmètre resserré"
+   "value": "Quatorze heures sur deux jours, en intra ; une seule journée si l'équipe vise un volet, contenus ou acquisition"
   },
   {
    "label": "Pour qui",
-   "value": "Équipes marketing, communication et contenu : responsables, chargés, chefs de produit, community managers"
+   "value": "Directions marketing, chargés de contenu et d'acquisition, community managers, responsables CRM et emailing, chefs de produit"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, plus les outils image"
+   "value": "L'assistant retenu par l'entreprise (Claude, Vibe, ChatGPT, Gemini ou Copilot) et la génération d'images incluse dans ces offres"
   },
   {
    "label": "Méthode",
-   "value": "Chaque atelier travaille sur vos campagnes, vos personas et votre charte éditoriale, jamais sur des exemples génériques"
+   "value": "Un brief en préparation, une newsletter, un export de résultats et vos personas fournissent la matière des ateliers"
   },
   {
    "label": "Livrables",
-   "value": "Bibliothèque de prompts marketing à votre marque, ton de marque encodé, cadre d'usage RGPD et droits"
+   "value": "Plateforme de marque rangée dans les instructions, prompts par canal, gabarits de brief, règles sur les droits et les données"
   },
   {
    "label": "Financement",
-   "value": "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h"
+   "value": "Action certifiée Qualiopi, que l'OPCO de la branche peut prendre en charge d'après son barème"
   }
  ],
  "missionsHead": {
-  "kicker": "Mission par mission",
-  "h2": "Que change l'IA dans le travail d'une équipe marketing ?",
-  "answer": "L'IA générative touche six missions du marketing : la production de contenu, la chaîne SEO (et désormais le GEO), les réseaux sociaux, l'emailing, l'analyse de performance et la créativité visuelle. Dans chacune, elle accélère le premier jet et les déclinaisons ; la valeur reste dans le cadrage, la relecture et la mesure, que la formation travaille autant que la production.",
-  "foot": "La formation couvre les six, avec un poids ajusté à votre équipe au cadrage. Pour la prestation plutôt que la formation, voyez notre {/agence-ia-marketing|agence IA marketing}."
+  "kicker": "Du brief à la mesure",
+  "h2": "Six chantiers du marketing que l'IA générative accélère",
+  "answer": "Le brief et la stratégie de contenu, la rédaction et ses déclinaisons, l'emailing et le CRM, les réseaux sociaux, les visuels, puis le bilan des campagnes : ces six chantiers concentrent le temps qu'une équipe marketing récupère avec l'IA générative. Elle propose des pistes, écrit des premières versions et lit des exports ; l'équipe choisit l'angle, apporte les preuves et décide de ce qui part.",
+  "foot": "Le cadrage pèse chaque chantier selon vos priorités du trimestre. Si vous préférez confier la production à un prestataire plutôt que former l'équipe, notre {/agence-ia-marketing|agence IA marketing} s'en charge."
  },
  "missions": [
   {
-   "icon": "PenLine",
-   "title": "Contenu et rédaction",
-   "desc": "Articles, pages web, livres blancs, newsletters : l'IA produit des premiers jets structurés à votre ton de marque, des variantes de titres et des reformulations, que vos équipes affinent au lieu de partir de la page blanche. La formation apprend surtout à cadrer et à relire, là où se joue la qualité."
+   "icon": "Compass",
+   "title": "Brief et stratégie de contenu",
+   "desc": "Un objectif de campagne, une cible et trois preuves suffisent à l'IA pour proposer des angles, un plan éditorial et la liste des questions que se pose votre client. L'équipe tient un brief net avant d'écrire la moindre ligne, et le studio ou l'agence reçoit une commande sans ambiguïté."
   },
   {
-   "icon": "Search",
-   "title": "SEO et contenu de recherche",
-   "desc": "Recherche d'intentions, briefs, plans de contenu, FAQ, balises et données structurées : l'IA accélère toute la chaîne. On y ajoute le versant nouveau du métier : être cité dans les réponses des IA (GEO), qui change ce qu'un contenu doit contenir."
+   "icon": "PenLine",
+   "title": "Rédaction et déclinaisons",
+   "desc": "Article, page produit, livre blanc, script vidéo : le premier jet suit votre plateforme de marque, puis se décline en version courte, en accroches publicitaires et en traduction. L'effort de l'équipe se reporte sur ce que l'outil ignore, l'exemple client, le chiffre vérifié, la nuance qui convainc."
+  },
+  {
+   "icon": "Mail",
+   "title": "Emailing et CRM",
+   "desc": "Objets à tester, séquences d'accueil ou de relance par segment, réécriture d'un message que plus personne n'ouvre : l'IA multiplie les variantes, votre outil d'emailing tranche sur les ouvertures et les clics. Les fichiers de contacts restent hors des versions gratuites, sous les règles du RGPD."
   },
   {
    "icon": "Share2",
    "title": "Réseaux sociaux",
-   "desc": "Déclinaison d'un contenu pilier en posts par plateforme, calendrier éditorial, réponses aux commentaires, veille des tendances : ce qui prenait une matinée se prépare en une heure, avec la validation humaine avant publication."
-  },
-  {
-   "icon": "Mail",
-   "title": "Emailing et automation",
-   "desc": "Séquences de nurturing, objets et pré-en-têtes testables, segmentation des messages par persona, scénarios d'automation documentés. L'IA écrit les variantes ; vos données disent laquelle fonctionne."
-  },
-  {
-   "icon": "BarChart3",
-   "title": "Analyse et reporting",
-   "desc": "Lecture d'un export de campagne, synthèse d'un rapport, comparaison de périodes, rédaction du commentaire de performance pour la direction. Avec la limite honnête : l'IA lit mal les gros tableaux, elle commente bien ce que vous lui donnez propre."
+   "desc": "Un contenu de fond devient une série de publications adaptées à chaque réseau, rangées dans un calendrier calé sur vos temps forts. Pour les commentaires, l'outil propose une réponse et une personne de l'équipe la publie, surtout quand la critique est vive."
   },
   {
    "icon": "Palette",
-   "title": "Créativité et visuels",
-   "desc": "Brainstorming de concepts, angles de campagne, moodboards, premiers visuels et déclinaisons de formats avec les outils image. Avec le cadre indispensable : droits d'auteur, usage des marques, mention de l'IA, cohérence de la charte."
+   "title": "Visuels et créativité",
+   "desc": "Pistes créatives, planches d'ambiance, premières images, formats déclinés : les générateurs inclus dans ChatGPT, Gemini ou Copilot élargissent l'éventail avant la décision. Les règles suivent chaque essai : marques et œuvres de tiers, personnes reconnaissables, cohérence avec la charte graphique."
+  },
+  {
+   "icon": "BarChart3",
+   "title": "Analyse et bilan de campagne",
+   "desc": "Un export propre de votre régie publicitaire ou de votre outil d'emailing permet de comparer deux périodes, d'isoler une anomalie et de rédiger le bilan attendu par la direction. Chaque chiffre repris dans le texte se recontrôle dans le fichier source avant l'envoi."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour une équipe marketing",
-  "answer": "Six gains : un rythme de production de contenu tenable sans perdre la voix de la marque, un SEO qui repart de l'intention de recherche, des réseaux sociaux déclinés en minutes, des campagnes emailing plus fines et testées, une analyse qui commente vos chiffres, et une créativité qui explore plus de pistes avant de trancher.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA écrit vite et lisse tout, et elle peut inventer une donnée de marché ou un chiffre de performance. Gardez votre plateforme de marque en entrée, vérifiez chaque chiffre repris, relisez avec l'œil du client : le reste, elle le fait remarquablement bien."
+  "kicker": "Pour l'équipe marketing",
+  "h2": "Six effets de l'IA générative sur le travail d'une équipe marketing",
+  "answer": "Des briefs plus nets, un calendrier éditorial tenu, des campagnes d'emailing testées sur davantage de variantes, des réseaux alimentés sans y passer les matinées, plus de pistes créatives avant de trancher et des bilans rédigés le jour même : des résultats obtenus en atelier sur vos propres contenus.",
+  "foot": "Deux défauts guettent : un texte lisse que rien ne rattache à votre marque, et une donnée de marché inventée avec aplomb. Les ateliers apprennent à les repérer, à exiger la source de chaque chiffre et à garder une relecture humaine avant toute publication ; c'est à ce prix que les effets durent."
  },
  "atouts": [
   {
-   "title": "Un rythme de contenu tenable",
-   "desc": "Articles, pages, newsletters, scripts vidéo : le premier jet arrive en minutes à partir de votre brief et de votre plateforme de marque. L'équipe passe son temps sur l'angle, la preuve et la relecture, plus sur la page blanche."
+   "title": "Des briefs qui orientent l'écriture",
+   "desc": "Objectif, cible, message clé, preuves et interdits sont posés avant la rédaction. Le premier jet part dans la bonne direction, et la relecture s'attache aux idées plutôt qu'aux virgules."
   },
   {
-   "title": "Un SEO qui repart de l'intention",
-   "desc": "Regrouper les requêtes par intention, bâtir un plan de page, rédiger balises et FAQ, préparer le maillage : l'IA accélère chaque étape du contenu de recherche ; la stratégie et la validation restent chez vous."
+   "title": "Un calendrier éditorial qui tient",
+   "desc": "Vos piliers de contenu, vos temps forts et ce que vous avez déjà publié alimentent un calendrier de plusieurs semaines. L'équipe publie avec régularité sans s'user sur la page blanche."
   },
   {
-   "title": "Des réseaux sociaux déclinés sans y passer la journée",
-   "desc": "Un même message décliné par plateforme, par format et par audience, avec ses variantes à tester ; le calendrier éditorial se remplit à partir de vos temps forts et de vos contenus existants."
+   "title": "Des campagnes d'emailing testées plus large",
+   "desc": "Cinq objets au lieu d'un, une séquence par segment, un message réécrit pour les inactifs : l'outil fournit les variantes, vos statistiques désignent celle qui gagne."
   },
   {
-   "title": "Des campagnes emailing plus fines",
-   "desc": "Objets et pré-en-têtes à tester, séquences par segment, personnalisation à partir de vos données CRM, relances qui ne se ressemblent pas : plus de variantes, mieux ciblées, dans le même temps de production."
+   "title": "Une présence sociale régulière",
+   "desc": "Chaque contenu de fond donne plusieurs publications par réseau, et les réponses aux commentaires partent plus vite, toujours validées par une personne avant d'apparaître."
   },
   {
-   "title": "Une analyse qui parle enfin",
-   "desc": "Exports de campagnes, tableaux d'analytics, résultats de tests A/B : l'IA lit vos données préparées, propose une lecture, rédige le commentaire et la synthèse pour la direction. Vous gardez l'interprétation et la décision."
+   "title": "Plus de pistes créatives sur la table",
+   "desc": "Angles, accroches et premières images s'explorent en une heure, et le brief remis au studio ou à l'agence gagne en précision."
   },
   {
-   "title": "Une créativité qui explore plus de pistes",
-   "desc": "Concepts de campagne, angles, accroches, briefs visuels et premières images : plus d'options sur la table avant de trancher, et un brief plus précis pour l'agence ou le studio."
+   "title": "Des bilans de campagne rédigés à temps",
+   "desc": "L'export du lundi donne le commentaire du lundi : écarts, hypothèses, actions proposées. La lecture finale revient à l'équipe, qui vérifie chaque chiffre cité."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA marketing sur 2 jours",
-  "answer": "Jour 1 : ce que les modèles font et ne font pas en marketing, le panorama des outils et de leurs versions entreprise, la demande efficace sur un brief de campagne, votre plateforme de marque et vos personas encodés, puis les ateliers contenu, déclinaison sociale, emailing, le projet partagé de campagne et le cadre RGPD et droits. Jour 2 : l'analyse de campagne sur vos exports, la recherche approfondie, le SEO et le GEO, la co-édition dans Canvas, Artifacts ou Copilot Pages, les visuels, puis les compétences (Skills), les assistants et agents, les tâches planifiées de veille, la gouvernance et votre plan d'action.",
-  "foot": "Le programme s'ajuste au cadrage : une équipe contenu approfondit le jour 1, une équipe acquisition l'analyse, les agents et les automatisations du jour 2 ; la version 1 jour garde les fondamentaux, la plateforme de marque encodée et deux ateliers au choix. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "Le programme de la formation IA marketing, jour par jour",
+  "answer": "Le premier jour ancre la méthode : les forces et les angles morts des modèles en marketing, le choix de l'outil et des offres entreprise, une demande construite sur un brief de campagne, la plateforme de marque dans les instructions, puis les ateliers contenu, déclinaison sur les réseaux, emailing et réponses publiques, un espace partagé par campagne et les règles sur les droits et les données. Le second jour ouvre l'analyse d'un export, l'étude de marché en recherche approfondie, le référencement et la visibilité dans les assistants, le livre blanc écrit à plusieurs et les visuels, avant les compétences, les GPTs et les Gems à migrer, les tâches récurrentes, les règles de gouvernance puis le plan des quatre semaines suivantes.",
+  "foot": "Au cadrage, une équipe éditoriale prolonge le premier jour ; une équipe d'acquisition consacre plus de temps à l'analyse et aux tâches récurrentes. La version d'une journée garde la méthode, la plateforme de marque encodée et deux ateliers que l'équipe retient au cadrage. Chaque fonction citée a fait l'objet d'un contrôle le 7 octobre 2026 ; quand vos licences n'en ouvrent pas une, le formateur la montre sur son propre compte et l'équipe en obtient l'effet avec ses outils."
  },
  "programme": [
   {
    "jour": "Jour 1",
-   "titre": "Fondamentaux, plateforme de marque et production de contenu",
+   "titre": "Méthode, plateforme de marque et production",
    "matin": [
     {
-     "t": "Ce que les modèles font en marketing",
-     "d": "Capacités et limites sur vos livrables : premier jet d'article tenu, variantes d'objets d'email, synthèse d'un rapport, mais aussi faits inventés, chiffres de marché non sourcés, lecture approximative des très gros exports. On liste ce qui engage la marque et passe par une relecture."
+     "t": "Ce que les modèles savent faire pour une marque, et où ils trébuchent",
+     "d": "Elle tient un plan d'article, propose vingt objets d'email, résume une étude de cinquante pages. Elle invente aussi une part de marché, une citation de client ou une tendance, et lit mal un tableau de dix mille lignes. Le groupe dresse la liste de ce qui engage la marque et passe par une relecture : chiffres, promesses produit, comparaisons avec un concurrent."
     },
     {
-     "t": "Panorama des outils et versions entreprise",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini dans Workspace, Vibe (anciennement Le Chat) de Mistral et les outils image : lequel pour quel livrable marketing, où vont les données, pourquoi les versions gratuites sont proscrites pour vos briefs et vos données clients."
+     "t": "Choisir l'outil et le niveau d'offre",
+     "d": "ChatGPT Business, Microsoft Copilot, Claude, Gemini dans Google Workspace, Vibe de Mistral : ce que chacun apporte au texte, à l'image et à l'analyse, où partent les données saisies, ce que coûte un siège. Un brief non publié ou un fichier clients n'a rien à faire dans une version gratuite."
     },
     {
-     "t": "La demande efficace sur un brief de campagne",
-     "d": "Contexte, rôle, format, exemples, itération, relecture : la méthode appliquée à un vrai brief de campagne, de la première demande à la version bonne à publier. On compare les réponses de deux outils sur le même brief pour comprendre ce qui change."
+     "t": "Une demande construite sur un brief de campagne",
+     "d": "Objectif, cible, message, ton, format, deux exemples tirés de vos meilleures réalisations : la demande se monte pièce par pièce sur une campagne de l'équipe, puis s'améliore par itérations. Le même brief soumis à deux assistants montre où se jouent les écarts de qualité."
     },
     {
-     "t": "Encoder la plateforme de marque",
-     "d": "Instructions personnalisées, mémoire et styles : votre plateforme de marque, vos personas, vos interdits de vocabulaire et vos gabarits (article, post, email) deviennent un réglage permanent du compte. Chaque participant repart avec ses instructions testées sur un texte existant."
+     "t": "La plateforme de marque dans les instructions",
+     "d": "Personas, promesse, preuves, vocabulaire proscrit, gabarits d'article, de publication et d'email s'installent dans les instructions personnalisées de chaque compte, puis dans sa mémoire. Le réglage se teste sur un texte déjà publié : l'outil doit le réécrire sans trahir la marque."
     },
     {
-     "t": "Premier atelier sur un contenu réel",
-     "d": "À partir d'un brief d'article ou de page en cours, produire le plan, le premier jet au ton de marque, trois variantes de titre et la méta-description, puis relire : détecter le générique, le faux et le hors-ton avant toute validation."
+     "t": "Atelier contenu de fond",
+     "d": "Sur un sujet prévu au calendrier : plan, premier jet dans votre ton, trois titres, méta-description, puis une relecture guidée qui traque la phrase creuse, le fait sans source et l'écart de ton. La version retenue rejoint votre bibliothèque de modèles."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier déclinaison du contenu pilier",
-     "d": "Un contenu pilier devient une série de posts par plateforme, une newsletter et des accroches publicitaires, avec le calendrier éditorial associé ; l'IA propose les formats et les angles, vous arbitrez le ton, l'ordre de publication et la validation avant mise en ligne."
+     "t": "Atelier déclinaison sur les réseaux",
+     "d": "Le contenu de fond du matin devient une série de publications par réseau, des accroches publicitaires et une newsletter, calées dans un calendrier de quatre semaines. L'équipe décide de l'ordre de parution et de ce qui mérite un visuel."
     },
     {
-     "t": "Atelier emailing par persona",
-     "d": "Sur une séquence de nurturing réelle : objets et pré-en-têtes à tester, corps du message par persona, scénario d'automation documenté pour votre outil d'emailing. L'IA écrit les variantes, vos données disent laquelle fonctionne ; aucune écriture directe dans l'outil."
+     "t": "Atelier emailing par segment",
+     "d": "Sur une séquence en service : objets et pré-en-têtes à tester, corps de message par persona, version pour les contacts inactifs, scénario d'automatisation décrit pour votre outil d'emailing. L'assistant n'écrit jamais dans cet outil ; l'équipe y importe ce qu'elle a validé."
     },
     {
-     "t": "Atelier réseaux sociaux et commentaires",
-     "d": "Réponses aux commentaires et aux messages à votre ton, y compris les cas délicats, veille des tendances de votre secteur, posts prêts à programmer ; la règle est posée sur place : un humain valide chaque réponse publique, en priorité sur une critique."
+     "t": "Atelier réponses publiques",
+     "d": "Commentaire élogieux, question sur un produit, critique sévère : l'outil prépare des réponses dans votre ton, la personne chargée de la communauté choisit, retouche et publie. Le groupe fixe les cas qui remontent au responsable avant toute réponse."
     },
     {
-     "t": "Projets partagés pour une campagne",
-     "d": "Un projet partagé ChatGPT ou Claude (Projet et Bibliothèque dans Vibe) pour une campagne en cours : instructions communes, plateforme de marque, personas et briefs en fichiers de référence, mémoire propre au projet, droits de lecture et d'écriture. Le socle que toute l'équipe réutilise."
+     "t": "Un espace partagé par campagne",
+     "d": "Projet ChatGPT, Projet Claude, Bibliothèque et projet dans Vibe : consignes communes, plateforme de marque, personas, briefs et visuels de référence, accès en lecture ou en modification selon qu'on appartient à l'équipe ou à l'agence. Toute la campagne repose sur un seul dossier, que chacun retrouve à jour."
     },
     {
-     "t": "Cadre RGPD, droits et relecture",
-     "d": "Cadre d'usage par outil et par type de donnée : fichiers clients et listes d'emailing anonymisés, contenus confidentiels réservés aux offres entreprise, droits d'auteur et marques tierces, mention de l'IA. Ce qu'on ne publie jamais avant vérification : chiffres, citations, promesses produit."
+     "t": "Droits, données et relecture",
+     "d": "Ce que le RGPD impose sur les fichiers de contacts, ce qu'on anonymise avant une analyse, ce que le droit d'auteur protège dans une image générée, quand signaler un contenu synthétique réaliste. La grille de relecture sort de l'atelier : chiffre, citation, promesse produit, marque d'un tiers."
     }
    ]
   },
   {
    "jour": "Jour 2",
-   "titre": "Analyse, recherche, créativité, compétences, agents et pilotage",
+   "titre": "Analyse, visibilité, créativité et organisation de l'équipe",
    "matin": [
     {
-     "t": "Analyse de campagne sur votre export",
-     "d": "Sur un export propre de votre plateforme publicitaire ou d'emailing : comparer deux périodes, formuler les causes d'un écart, rédiger le commentaire de performance pour la direction. Copilot dans Excel ou l'analyse de données de ChatGPT et Claude lisent le fichier, vous gardez les chiffres."
+     "t": "Analyser une campagne sur votre export",
+     "d": "Sur un export de régie publicitaire ou d'emailing : comparaison de deux périodes, segment qui décroche, bilan rédigé pour la direction. Les calculs reviennent à l'outil de l'équipe (Claude ou ChatGPT sur le fichier joint, Copilot pour Excel, Gemini pour Sheets) ; chaque chiffre du commentaire est rapproché de sa source."
     },
     {
-     "t": "Recherche approfondie pour une étude de marché",
-     "d": "Deep Research de ChatGPT ou Gemini, recherche approfondie de Claude sur un sujet réel : tendances d'un segment, concurrents, attentes d'un persona. Cadrer la question, lire le rapport avec ses sources, en garder ce qui entre dans une recommandation argumentée."
+     "t": "Une étude de marché en recherche approfondie",
+     "d": "L'agent Researcher de Copilot, le mode Deep Research que proposent Gemini comme ChatGPT, la recherche longue de Claude ou la compétence de recherche de Vibe : une question bien cadrée sur un segment ou un concurrent produit un rapport sourcé. L'équipe apprend à lire les sources, à écarter ce qui est daté et à garder ce qui nourrit une recommandation."
     },
     {
-     "t": "SEO et GEO avec l'IA",
-     "d": "Recherche d'intentions, brief, plan de contenu et FAQ sur un mot-clé réel, puis la page citable : ce qu'un contenu doit contenir pour être repris dans les réponses de ChatGPT, Perplexity ou les AI Overviews. Positions et citations se mesurent en tendance, jamais en promesse."
+     "t": "Référencement et visibilité dans les assistants",
+     "d": "Intentions de recherche, plan de page, FAQ et balises sur un mot-clé de votre marché, puis les éléments qui rendent une page citable dans les réponses de ChatGPT ou dans les AI Overviews de Google. Positions et citations se suivent dans la durée ; personne ne peut les garantir."
     },
     {
-     "t": "Co-édition du livre blanc ou de la page",
-     "d": "Un document long (livre blanc, page de vente, dossier) travaillé dans Canvas de ChatGPT, Artifacts de Claude ou Copilot Pages : plan, sections réécrites une à une, ton harmonisé, relecture à plusieurs. La co-édition remplace la suite de copier-coller dans le fil de conversation."
+     "t": "Un livre blanc écrit à plusieurs",
+     "d": "Le plan, puis chaque section, se travaillent dans un document partagé : les Artifacts de Claude, ChatGPT pour Word, Gemini dans Docs, ou Word avec « Modifier avec Copilot ». Le ton s'harmonise d'une section à l'autre, et l'équipe relit une version unique au lieu de recoller des morceaux de conversation."
     },
     {
-     "t": "Créativité et visuels encadrés",
-     "d": "Angles de campagne, concepts, moodboard et premiers visuels avec la génération d'images de ChatGPT ou Gemini, vidéo courte avec Google Vids, déclinaison par format. Cadre posé sur place : droits, marques tierces, cohérence de la charte, mention de l'IA quand elle s'impose."
+     "t": "Visuels et vidéo, avec leurs règles",
+     "d": "Planches d'ambiance et premières images tirées de ChatGPT Images 2.5 ou de Gemini, courte vidéo dans Google Vids (plafond de 500 secondes de vidéo générée chaque mois pour un compte Business Standard, relevé le 7 octobre 2026), formats déclinés. ChatGPT ne produit plus de vidéo depuis la fermeture de Sora. Le cadre se pose sur les cas montrés : droit d'auteur, personnes filmées, logos d'autres marques."
     }
    ],
    "apresmidi": [
     {
-     "t": "Compétences (Skills) : votre procédure éditoriale",
-     "d": "Transformer une procédure du métier, par exemple la checklist de publication d'un article, en compétence réutilisable : en langage naturel dans ChatGPT Business, via un dossier SKILL.md dans Claude, testée par un membre puis provisionnée par l'owner ; elle se déclenche automatiquement quand la demande correspond."
+     "t": "Votre procédure éditoriale devenue compétence",
+     "d": "La check-list de publication d'un article, ou la trame d'un brief créatif, devient une compétence que l'assistant applique chaque fois que la demande le justifie. Le principe, né chez Anthropic avec le format SKILL.md, existe aussi chez OpenAI, chez Microsoft, chez Google (déploiement commencé le 5 octobre 2026) et chez Mistral : une procédure écrite une fois se transpose vers un autre assistant."
     },
     {
-     "t": "Assistants et agents : lequel pour quoi",
-     "d": "On reprend vos GPTs existants ; le neuf se construit en projet partagé, compétence ou agent d'espace de travail ChatGPT (rôle, déclencheur, étapes, règles, crédits décomptés), Gems ou Workspace Studio, Agent Builder sur SharePoint, Workflows Vibe. Copilot Studio et l'écriture dans votre CRM restent un projet."
+     "t": "Vos GPTs et vos Gems à migrer",
+     "d": "Le 11 décembre 2026, OpenAI fait disparaître les GPTs de toutes ses offres : chacun migre en plugin, où ses consignes forment une compétence et ses documents servent de référence. Chez Google, les compétences succèdent aux Gems, qui cesseront de fonctionner pour les comptes professionnels à une date qui ne précède pas le 1er mars 2027. L'atelier migre un assistant marketing de l'équipe."
     },
     {
-     "t": "Tâches planifiées : veille et rapports récurrents",
-     "d": "Créer en une phrase une veille hebdomadaire sur vos concurrents, un récapitulatif de performance mensuel ou un rappel de calendrier éditorial, dans ChatGPT (au plus une exécution par heure, tâches actives plafonnées) ou dans les Tâches planifiées de Vibe ; un destinataire relit avant diffusion."
+     "t": "Veille et rapports qui reviennent chaque semaine",
+     "d": "Une tâche planifiée surveille chaque lundi les annonces de trois concurrents, prépare le rappel du calendrier éditorial ou la trame du bilan mensuel, avec Workspace Studio chez Google, dans ChatGPT ou dans Vibe. Le résultat arrive chez un membre de l'équipe, qui le lit avant de le diffuser."
     },
     {
-     "t": "Gouvernance et mesure des usages",
-     "d": "Un propriétaire nommé pour chaque projet partagé, compétence et agent, règles de partage, registre des assistants, droits admin (parcourir, exécuter, construire, publier), revue trimestrielle ; indicateurs suivis dans vos outils : délais de production, régularité des publications, performance des campagnes, temps de validation."
+     "t": "Gouvernance de l'équipe marketing",
+     "d": "Chaque espace partagé, compétence ou assistant figure au registre avec son responsable ; les droits de création et de publication relèvent de l'administrateur ; un point trimestriel fait le ménage. Les indicateurs restent ceux du métier : délai entre brief et publication, régularité du calendrier, résultats des tests, temps de validation."
     },
     {
-     "t": "Plan d'action, évaluation et livrables",
-     "d": "Les trois usages à installer dans le mois, qui les porte, comment on mesure ; évaluation des acquis ; remise de la bibliothèque de prompts marketing, des instructions de plateforme de marque, des gabarits, des compétences construites et du cadre RGPD et droits."
+     "t": "Plan d'action et remise des livrables",
+     "d": "Avant de se quitter, l'équipe retient trois usages pour le mois qui vient, nomme qui les porte et décide comment elle saura qu'ils tiennent. Suivent l'évaluation des acquis puis la remise de la plateforme de marque encodée, des prompts par canal, des gabarits de brief, des compétences créées et des règles sur les droits et les données."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA marketing ?",
-  "answer": "Aux équipes marketing, communication et contenu de toute taille : responsables qui décident quoi automatiser et fixent le cadre, chargés de marketing et de contenu qui produisent, community managers, équipes communication. Sans prérequis technique : la pratique du métier suffit."
+  "h2": "À quels profils marketing s'adresse la formation ?",
+  "answer": "Les directions marketing, qui fixent les règles et choisissent les outils ; les chargés de contenu et d'acquisition, qui produisent ; les community managers ; les responsables CRM et emailing ; les chefs de produit qui écrivent les lancements. Personne n'a besoin de compétences techniques ; la pratique du marketing, auprès d'entreprises ou du grand public, fait l'affaire."
  },
  "profils": [
   {
    "icon": "Megaphone",
-   "title": "Responsables et directeurs marketing",
-   "desc": "Décider quoi automatiser, fixer le cadre d'usage de l'équipe, arbitrer les outils et mesurer le gain. La formation vous donne la lecture d'ensemble et les réflexes de pilotage."
+   "title": "Directions marketing",
+   "desc": "Arbitrer entre les assistants, fixer ce que l'équipe confie à l'IA, suivre l'effet sur les délais et la qualité : vous repartez avec de quoi piloter l'adoption mois après mois."
   },
   {
    "icon": "PenLine",
-   "title": "Chargés de marketing et de contenu",
-   "desc": "Produire plus et mieux : contenus, déclinaisons, emailing, sans y laisser la qualité ni le ton de marque. Le cœur des ateliers pratiques est fait pour vous."
+   "title": "Chargés de contenu et d'acquisition",
+   "desc": "Briefs, articles, pages, emailing, campagnes payantes : les ateliers suivent votre semaine de travail, du premier jet au bilan, avec la relecture comme réflexe."
   },
   {
    "icon": "Share2",
-   "title": "Community managers et social media",
-   "desc": "Calendrier éditorial, déclinaisons par plateforme, réponses, veille : les usages qui rendent des heures chaque semaine, avec la validation humaine comme garde-fou."
+   "title": "Community managers",
+   "desc": "Calendrier, déclinaisons, réponses aux commentaires et veille de vos réseaux : des heures retrouvées chaque semaine, sans rien publier qu'une personne n'ait validé."
   },
   {
-   "icon": "Users",
-   "title": "Équipes communication et agences internes",
-   "desc": "Communication corporate, relations presse, événementiel : les mêmes méthodes appliquées à vos supports, avec le volet droits et mentions de l'IA traité de front."
+   "icon": "Rocket",
+   "title": "Chefs de produit et lancements",
+   "desc": "Argumentaire, page de lancement, FAQ, kit pour les commerciaux : un lancement préparé plus vite, avec des promesses produit vérifiées une à une."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Données clients, droits d'auteur, ton de marque : ce que la formation pose noir sur blanc",
-  "p": "Le marketing manipule des données personnelles (clients, prospects) et produit des contenus publics : les deux appellent un cadre. La formation formalise avec vous ce qu'on peut confier à quel outil (offres entreprise sans entraînement sur vos données, versions gratuites à proscrire pour le confidentiel), comment on anonymise, ce que le droit d'auteur protège ou non dans un contenu généré, et comment on garde le ton de marque quand la production accélère. Ce cadre d'usage est un livrable, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}. Nous formons des équipes marketing depuis 2022, dans l'industrie, les services, l'immobilier ou la tech : les mêmes questions reviennent partout, et elles ont des réponses pratiques.",
+  "kicker": "Droits et données",
+  "h2": "Fichiers clients, droit d'auteur, voix de la marque : les règles posées en atelier",
+  "p": "Une équipe marketing manipule des données personnelles (clients, prospects, abonnés) et publie au nom de l'entreprise. Les ateliers lui font rédiger ses propres règles : quel outil reçoit quelle donnée (une offre entreprise, sans entraînement des modèles sur vos contenus, et aucun fichier clients dans un compte gratuit), comment anonymiser un export avant de l'analyser, ce que le droit d'auteur protège ou laisse libre dans un visuel ou un texte produits par l'IA, quand mentionner l'IA, comment préserver le ton de la marque quand le volume augmente. Votre {/charte-ia-entreprise|charte IA d'entreprise} l'intègre ensuite, après une relecture par le service juridique si vous le souhaitez.",
   "points": [
-   "Cadre d'usage RGPD par outil et par type de donnée",
-   "Règles pratiques droits d'auteur et marques tierces",
-   "Ton de marque encodé et réutilisable",
-   "Relecture : ce qu'on ne publie jamais sans vérifier"
+   "Pour chaque donnée marketing, l'outil autorisé",
+   "Créations générées : droit d'auteur, personnes reconnaissables, logos de tiers",
+   "Plateforme de marque encodée, partagée par toute l'équipe",
+   "Avant publication : chiffre, citation et promesse produit contrôlés"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT par jour de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants), soit 3 960 € HT les deux jours. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (charte, personas, campagnes), l'animation des deux journées en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts à votre marque, ton de marque, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Prix de la formation IA marketing et prise en charge",
+  "answer": "Former l'équipe en intra coûte 1 980 € HT par jour, quel que soit l'effectif jusqu'à 12 personnes ; le parcours complet de deux jours s'élève à 3 960 € HT. Un directeur marketing peut aussi se former seul, au même tarif journalier. La certification Qualiopi de Masteria ouvre la porte à une participation de votre opérateur de compétences, qu'il fixe selon ses règles et les fonds qui lui restent. Comptez 24 heures pour recevoir le devis.",
+  "inclus": "Le cadrage sur votre plateforme de marque, vos personas, une campagne en préparation et un export de résultats ; l'animation sur deux jours, chez vous ou à distance ; les supports et les livrables (plateforme encodée, prompts par canal, gabarits, règles d'usage) ; un test des acquis en fin de parcours, puis un certificat de réalisation par participant. Quand la session se tient loin de Lyon, le voyage du formateur s'ajoute.",
+  "financement": "Notre outil {/quel-opco|Quel OPCO ?} identifie l'opérateur de votre branche, et la page {/financement-formation-ia|financement de la formation IA} décrit les dispositifs. Masteria prépare le programme, la convention et les justificatifs pour un dépôt avant le début de la session. Le compte personnel de formation ne finance pas ce parcours."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA marketing ?",
-   "a": "À intégrer l'intelligence artificielle générative dans chaque mission du métier, sur vos propres campagnes : produire et décliner du contenu à votre ton de marque, accélérer la chaîne SEO (et comprendre le GEO, la visibilité dans les réponses des IA), construire des séquences emailing par persona, préparer les réseaux sociaux, lire et commenter les performances, générer des concepts et des visuels dans un cadre juridique clair. Et surtout à cadrer, relire et vérifier : c'est là que se joue la différence entre un contenu générique et un contenu qui porte votre marque."
+   "q": "Quel est le contenu d'une formation IA marketing ?",
+   "a": "Comment se servir de l'IA générative tout au long d'une campagne, sur vos propres contenus : construire un brief, rédiger et décliner dans votre ton, préparer l'emailing par segment, alimenter les réseaux sociaux, créer des visuels dans un cadre juridique clair, analyser un export et écrire le bilan. La moitié du temps porte sur ce que l'outil ne fait pas seul : choisir l'angle, apporter la preuve, relire avant de publier."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que votre équipe utilisera réellement. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini et Mistral pour le texte et l'analyse, plus les outils de génération d'images. Si votre entreprise a déjà déployé un outil (souvent Copilot dans l'écosystème Microsoft), la formation s'y concentre ; sinon, la première demi-journée compare sur vos cas d'usage. Pour approfondir un outil précis, nous avons aussi des formations dédiées, ChatGPT marketing ou Copilot marketing par exemple."
+   "q": "Quels outils utilise-t-on pendant les ateliers ?",
+   "a": "Celui que votre entreprise a choisi : Vibe de Mistral, Gemini, Claude, Microsoft Copilot ou ChatGPT, avec la génération d'images incluse dans ces offres. Masteria est indépendante des éditeurs. Si l'équipe dispose déjà d'un assistant, les ateliers s'y déroulent ; si elle hésite encore, la première matinée met deux ou trois outils en concurrence sur le même brief. Pour aller plus loin sur un seul outil, il existe des parcours marketing consacrés à ChatGPT, à Copilot, à Claude ou à Gemini."
   },
   {
-   "q": "La formation travaille-t-elle sur nos vraies campagnes ?",
-   "a": "Oui, c'est le principe. Avant la session, nous récupérons vos éléments : charte éditoriale, personas, deux ou trois campagnes ou contenus représentatifs, vos outils. Chaque atelier part de là : votre article à produire, votre newsletter à décliner, votre export de campagne à commenter. Les participants repartent avec des livrables directement utilisables (bibliothèque de prompts à votre marque, ton de marque encodé, cadre d'usage), pas avec des exemples de démonstration."
+   "q": "Travaille-t-on sur les campagnes de l'entreprise ?",
+   "a": "Oui. Au cadrage, nous recueillons votre plateforme de marque, vos personas, une campagne en préparation, une séquence d'emailing et un export de résultats, anonymisé si vous le souhaitez. Chaque atelier en part, et l'équipe repart avec des modèles qu'elle réutilise la semaine suivante."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est de deux jours (14 heures) en intra-entreprise, en présentiel dans vos locaux ou à distance, pour un groupe de 4 à 10 personnes. Une version d'une journée existe pour un périmètre resserré (contenu et réseaux sociaux par exemple). Un accompagnement individuel est possible pour un responsable marketing qui préfère avancer seul sur son plan. Les journées pleines alternent apports courts et ateliers pratiques, matin et après-midi."
+   "q": "Quelle durée, et en présentiel ou à distance ?",
+   "a": "Le parcours compte deux journées pleines, dans vos locaux ou en classe virtuelle, avec un groupe de 12 personnes au maximum. Une journée suffit pour un seul volet, les contenus ou bien l'acquisition et l'analyse. Un responsable marketing peut suivre le parcours seul, en individuel. Chaque demi-journée alterne un apport court et un atelier."
   },
   {
-   "q": "Combien coûte une formation IA marketing ?",
-   "a": "Le tarif intra-entreprise est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : deux jours représentent donc 3 960 € HT pour l'équipe, soit bien moins par personne qu'un inter-entreprise. La formation étant certifiée Qualiopi, votre OPCO peut la prendre en charge dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis détaillé sous 24 heures."
+   "q": "Quel budget prévoir pour une équipe marketing ?",
+   "a": "Le prix est fixé par journée et par groupe : 1 980 € HT, que l'équipe compte trois ou douze personnes, donc 3 960 € HT pour le parcours entier. Les frais de voyage du formateur viennent en plus si la session a lieu sur site, loin de Lyon. Vous avez le devis en main le lendemain de votre demande, accompagné des pièces que réclame l'OPCO."
   },
   {
-   "q": "La formation est-elle finançable par notre OPCO ?",
-   "a": "Oui. Masteria est certifiée Qualiopi, ce qui rend la formation éligible au financement par votre OPCO au titre du plan de développement des compétences. La prise en charge dépend de votre branche et de la taille de l'entreprise (les moins de 50 salariés sont généralement mieux couverts). Nous fournissons le programme, la convention et les pièces du dossier. Notre outil Quel OPCO ? identifie votre opérateur en deux minutes. La formation n'est pas éligible au CPF."
+   "q": "L'OPCO prend-il en charge une formation IA marketing ?",
+   "a": "Il en a la possibilité, car Masteria détient la certification Qualiopi pour ses actions de formation. La session relève du plan de formation de l'entreprise ; chaque opérateur décide ensuite du montant qu'il couvre, selon ses critères, l'enveloppe qui lui reste et la taille de votre entreprise. Le dossier part avant le premier jour, avec le programme, la convention et les pièces justificatives que Masteria prépare. Le CPF, lui, n'intervient pas."
   },
   {
-   "q": "Peut-on utiliser l'IA sur nos données clients et nos contenus confidentiels ?",
-   "a": "Sous conditions, et la formation les pose clairement. Les offres entreprise des grands éditeurs (ChatGPT Business, Copilot Microsoft 365, Claude Team, Gemini Workspace) n'utilisent pas vos données pour entraîner leurs modèles et offrent un cadre contractuel, contrairement aux versions gratuites. Le RGPD s'applique aux données personnelles de vos clients et prospects, comme pour tout traitement. Nous formalisons ensemble un cadre d'usage : ce qu'on peut confier à quel outil, ce qui reste interdit, comment on anonymise. C'est un livrable de la formation."
+   "q": "Peut-on confier nos fichiers clients et nos briefs à l'IA ?",
+   "a": "Avec les bonnes offres et des règles écrites, oui. Claude Team, Gemini inclus dans Workspace, ChatGPT Business et Microsoft Copilot sous compte professionnel n'apprennent rien de vos contenus. Vibe Team fait exception : l'entraînement y est activé d'office, et seul l'administrateur peut le désactiver pour toute l'organisation. Les comptes gratuits restent fermés aux documents internes, et un fichier de contacts s'anonymise avant toute analyse, RGPD oblige. Le tableau des usages autorisés fait partie des livrables."
   },
   {
-   "q": "Qui possède les contenus générés par l'IA ? Y a-t-il des risques juridiques ?",
-   "a": "Le sujet est traité dans la formation parce qu'il conditionne l'usage. En droit français, une œuvre suppose un auteur humain : un contenu généré sans intervention créative n'est pas protégé par le droit d'auteur, ce qui a des conséquences sur vos visuels et vos textes. Les conditions d'utilisation des outils diffèrent aussi sur l'usage commercial. S'ajoutent le respect des marques tierces, le risque de reproduire une œuvre existante et l'obligation de transparence dans certains cas. Nous donnons les règles pratiques par type de contenu, sans faire de droit à la place de votre service juridique."
+   "q": "À qui appartiennent les textes et les images générés ?",
+   "a": "En droit français, une œuvre protégée suppose un auteur humain : un visuel produit sans apport créatif de l'équipe échappe au droit d'auteur, ce qui compte pour une identité visuelle. Les conditions d'utilisation des outils, les marques et œuvres de tiers et l'image des personnes ajoutent leurs propres règles. La formation donne les réflexes par type de contenu ; votre juriste garde le dernier mot sur les cas limites."
   },
   {
-   "q": "Peut-on orienter la journée vers le growth marketing et l'acquisition ?",
-   "a": "Oui : la formation IA growth hacking est une déclinaison fréquente du programme : idéation et priorisation d'expérimentations, pages et messages de test produits plus vite, analyse des résultats de campagnes, enrichissement et segmentation des fichiers, veille concurrentielle outillée. La méthode reste la même : vos canaux réels, vos données, un cadre écrit (respect du RGPD sur la prospection, pas de collecte sauvage), et des expérimentations dont la relecture humaine décide. Le cadrage bascule le programme vers l'acquisition quand c'est votre priorité."
+   "q": "Peut-on orienter le parcours vers l'acquisition et le growth ?",
+   "a": "Oui, le cadrage le permet. Le second jour s'oriente alors vers les tests : idées d'expériences classées par effort et par impact, pages et messages de test écrits plus vite, lecture des résultats, segmentation d'un fichier, veille concurrentielle planifiée. Les règles ne changent pas : RGPD sur la prospection, aucune collecte hors cadre, et une personne qui décide de ce qui part en ligne."
   },
   {
-   "q": "Quelle différence avec une formation ChatGPT ou Copilot pour le marketing ?",
-   "a": "L'angle. Une formation ChatGPT marketing ou Copilot marketing approfondit un outil précis, ses fonctions, ses réglages, ses limites : c'est le bon choix quand l'outil est déjà déployé et imposé. La formation IA marketing part du métier : elle couvre l'ensemble des missions et compare les outils sur vos cas, ce qui convient quand l'équipe utilise plusieurs outils ou que le choix reste ouvert. Les deux se combinent bien : la formation métier d'abord, un approfondissement outil ensuite pour les usages les plus intensifs."
+   "q": "Faut-il préférer une formation centrée sur un seul outil ?",
+   "a": "Un parcours ChatGPT ou Copilot pour le marketing creuse les fonctions et les réglages d'un assistant, ce qui se justifie quand l'outil est installé pour durer. Le parcours IA marketing part des missions de l'équipe et confronte les assistants sur ses dossiers ; il convient mieux quand plusieurs outils cohabitent ou que rien n'est tranché. Les équipes qui suivent les deux passent en général par le métier d'abord."
   }
  ],
  "course": {
-  "name": "Formation IA marketing — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée au marketing, sur les campagnes réelles des participants : contenu, SEO et GEO, réseaux sociaux, emailing, analyse de performance, créativité et visuels, cadre RGPD et droits. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 2 jours en intra, présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  "name": "Formation IA marketing (Masteria)",
+  "description": "Formation à l'intelligence artificielle générative appliquée au marketing, sur les campagnes des participants : briefs, contenus et déclinaisons, emailing, réseaux sociaux, visuels, analyse et bilans de campagne, référencement et visibilité dans les assistants, règles RGPD et droit d'auteur. Outils : ChatGPT, Microsoft Copilot, Claude, Gemini, Vibe. Deux jours en intra, en présentiel ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Produire et décliner des contenus marketing à son ton de marque avec l'IA",
-   "Accélérer la chaîne SEO et comprendre la visibilité dans les réponses des IA (GEO)",
-   "Construire des séquences emailing par persona et préparer les réseaux sociaux",
-   "Lire et commenter les performances d'une campagne avec l'IA",
-   "Appliquer un cadre d'usage RGPD et droits d'auteur aux contenus générés"
+   "Rédiger un brief de campagne qui oriente l'écriture et la création",
+   "Produire un contenu dans la voix de la marque et le décliner par réseau",
+   "Construire une séquence d'emailing par segment avec ses variantes à tester",
+   "Analyser un export de campagne et rédiger un bilan aux chiffres vérifiés",
+   "Appliquer les règles RGPD et de droit d'auteur aux contenus générés"
   ],
   "about": "Intelligence artificielle générative appliquée au marketing",
   "timeRequired": "PT14H",
   "duration": "PT14H",
-  "prerequisites": "Aucun prérequis technique. Pratique du métier marketing ou communication.",
-  "audience": "Équipes marketing, communication et contenu",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "prerequisites": "Aucun prérequis technique. Pratique du métier marketing.",
+  "audience": "Équipes marketing, contenu, acquisition et CRM",
+  "locationName": "Masteria : intra-entreprise, en présentiel (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA marketing : l'IA générative sur vos campagnes, du contenu à l'analyse",
+  "headline": "Formation IA marketing : l'IA générative dans chaque campagne, du brief à la mesure",
   "datePublished": "2025-09-15",
-  "dateModified": "2026-08-10",
-  "dateLabel": "août 2026",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -341,15 +345,15 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "La prospection commerciale par courrier électronique : les règles — CNIL",
+   "name": "CNIL : la prospection commerciale par courrier électronique",
    "url": "https://www.cnil.fr/fr/la-prospection-commerciale-par-courrier-electronique"
   },
   {
-   "name": "ARPP, Autorité de régulation professionnelle de la publicité (déontologie des contenus publicitaires)",
+   "name": "ARPP, Autorité de régulation professionnelle de la publicité",
    "url": "https://www.arpp.org/"
   }
  ],
@@ -358,53 +362,118 @@ export default {
    "label": "Formation ChatGPT marketing",
    "href": "/formation-chatgpt-marketing",
    "tag": "Par outil",
-   "desc": "Approfondir ChatGPT pour le marketing : GPTs personnalisés, projets, image, réglages."
+   "desc": "ChatGPT pour le marketing : projets, compétences, images."
   },
   {
    "label": "Formation Copilot marketing",
    "href": "/formation-copilot-marketing",
    "tag": "Par outil",
-   "desc": "Copilot dans Microsoft 365 pour le marketing : Word, PowerPoint, Outlook, Teams, agents."
+   "desc": "Copilot dans Word, PowerPoint, Outlook et Teams pour le marketing."
   },
   {
    "label": "Formation Claude marketing",
    "href": "/formation-claude-marketing",
    "tag": "Par outil",
-   "desc": "Claude pour la rédaction longue, les projets et les compétences réutilisables de l'équipe."
+   "desc": "Claude, ses projets par marque et ses compétences."
   },
   {
-   "label": "Formation IA commercial",
-   "href": "/formation-ia-commercial",
+   "label": "Formation Gemini marketing",
+   "href": "/formation-gemini-marketing",
+   "tag": "Par outil",
+   "desc": "Gemini dans Docs, Slides, Vids et Gmail pour le marketing."
+  },
+  {
+   "label": "Panorama IA marketing (multi-outils)",
+   "href": "/formation-multi-outils-marketing",
+   "tag": "Comparatif",
+   "desc": "Plusieurs assistants comparés sur vos cas marketing."
+  },
+  {
+   "label": "Formation SEO IA",
+   "href": "/formation-ia-seo",
    "tag": "Métier voisin",
-   "desc": "L'IA pour les équipes de vente : prospection, propositions, préparation de rendez-vous."
+   "desc": "Référencement et visibilité dans les assistants, en deux jours."
   },
   {
    "label": "Formation IA communication",
    "href": "/formation-ia-communication",
    "tag": "Métier voisin",
-   "desc": "Communication corporate, relations presse, événementiel : les usages propres à la com."
+   "desc": "Relations presse, communication interne et prises de parole."
+  },
+  {
+   "label": "Formation IA commercial",
+   "href": "/formation-ia-commercial",
+   "tag": "Métier voisin",
+   "desc": "Prospection, propositions et relances pour les équipes de vente."
   },
   {
    "label": "Agence IA marketing",
    "href": "/agence-ia-marketing",
    "tag": "Prestation",
-   "desc": "Quand vous préférez déléguer : le marketing assisté par IA opéré pour vous."
+   "desc": "La production marketing assistée par IA, confiée à Masteria."
   },
   {
    "label": "Bibliothèque de prompts",
    "href": "/bibliotheque-de-prompts",
    "tag": "Ressource",
-   "desc": "Des modèles de prompts marketing pour prolonger la formation au quotidien."
-  },
-  {
-   "label": "Acculturation IA",
-   "href": "/acculturation-ia",
-   "tag": "Entreprise",
-   "desc": "Quand c'est toute l'organisation, au-delà du marketing, qu'il faut embarquer."
+   "desc": "Des prompts marketing pour continuer après la formation."
   }
  ],
+ "bibliotheque": "Pour juger de la méthode sans attendre, ouvrez la {/bibliotheque-de-prompts#marketing|bibliothèque de prompts marketing} : retrouver le ton de votre marque, présenter une offre sous trois angles, lire les résultats d'une campagne sans complaisance, reprendre une page qui convertit mal. Chaque demande est commentée, pour que vous compreniez pourquoi elle marche.",
+ "ctaMilieu": {
+  "titre": "Un programme bâti sur votre calendrier de campagnes",
+  "texte": "Dites-nous combien de personnes compte l'équipe, quels outils elle utilise et quelle campagne arrive : programme, dates et devis suivent dans les 24 heures."
+ },
+ "competences": {
+  "titre": "Les savoir-faire évalués en fin de formation",
+  "intro": "Six objectifs, un par atelier, chacun vérifié par une question de l'évaluation finale.",
+  "items": [
+   "Rédiger un brief de campagne qui oriente l'écriture et la création",
+   "Produire un contenu de fond fidèle au ton de la marque, puis le décliner par réseau",
+   "Construire une séquence d'emailing par segment, avec ses variantes à tester",
+   "Analyser un export de campagne et rédiger un bilan aux chiffres vérifiés",
+   "Créer des visuels en respectant droit d'auteur, image des personnes et charte",
+   "Savoir quelle donnée marketing peut aller dans quel outil"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "Quel assistant pour une équipe marketing : Gemini, ChatGPT, Copilot, Claude ou Vibe ?",
+  "intro": "L'outil se choisit d'abord selon votre suite bureautique et la place que l'image occupe dans votre production. Voici l'état des lieux au 7 octobre 2026.",
+  "lignes": [
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT Business réunit le texte, l'analyse d'un export et la création d'images, avec le modèle ChatGPT Images 2.5 mis en service le 8 septembre 2026, et propose des projets partagés par campagne. Il ne génère plus de vidéo depuis la fermeture de Sora, et vos GPTs disparaîtront le 11 décembre 2026, d'où une migration en plugins à prévoir. {/formation-chatgpt-marketing|Parcours ChatGPT marketing}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Microsoft Copilot tire une présentation PowerPoint d'un document Word et, d'après les notes de version du 6 octobre 2026, accepte des compétences personnalisées dans PowerPoint sous Windows. Pour une PME, la licence Microsoft Copilot Business s'affiche à 18,20 € HT mensuels par siège avec un engagement d'un an (page tarifs France consultée le 7 octobre 2026, encore sous l'ancien nom). {/formation-copilot-marketing|Parcours Copilot marketing}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude convient aux contenus longs et aux marques exigeantes sur le ton : un projet par marque ou par gamme, des compétences qui appliquent votre check-list éditoriale, la lecture d'une étude entière avant d'en tirer un angle. {/formation-claude-marketing|Parcours Claude marketing}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Sous Google Workspace Business Standard, Gemini écrit dans Docs et Gmail, prépare des diapositives dans Slides et produit dans Vids 500 secondes de vidéo générée chaque mois, avec 30 images Nano Banana Pro (plafonds publiés par Google le 7 octobre 2026). Des connecteurs ouverts le 15 septembre 2026 le relient à HubSpot et à Salesforce. {/formation-gemini-marketing|Parcours Gemini marketing}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Vibe, l'assistant de Mistral, héberge d'office les conversations dans l'Union européenne. Ses notes de version du 22 septembre 2026 remplacent les agents par des Skills et ajoutent des tableurs, capables d'analyser un export Excel ou CSV de campagne. L'offre Team est facturée 24,99 $ HT mensuels par personne, et l'entraînement sur vos conversations y reste actif jusqu'à ce que l'administrateur le désactive. {/formation-mistral-ai|Parcours Mistral AI}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Un formateur qui connaît le marketing de l'intérieur",
+  "texte": "Fondée à Lyon en 2022, Masteria confie chaque session marketing à Mathias Nizan, son fondateur, ou à un formateur indépendant qu'il retient pour son expérience des campagnes, et il en garde le pilotage. Au mois de septembre 2026, le volet marketing d'une {/etudes-de-cas-ia#mission-interprofession-agricole|interprofession agricole} a écrit une fois la voix de sa marque et l'a placée dans un assistant commun au service, puis s'en est servi pour décliner des contenus en anglais, bâtir un calendrier éditorial, optimiser une page pour le référencement et dresser un bilan de campagne."
+ },
+ "apres": {
+  "titre": "Un outil marketing branché sur vos données",
+  "texte": "La formation fait souvent naître un projet : un assistant qui rédige les fiches produit depuis votre catalogue, ou un tableau de bord qui commente chaque lundi les résultats de vos campagnes. Masteria en définit le périmètre avec vous, le développe puis le connecte à votre CMS ou à votre CRM. Le prix se fixe au forfait après le cadrage ; à la différence de la formation, votre OPCO ne peut pas financer ce travail."
+ },
+ "faqTitre": "Formation IA marketing : les questions des équipes",
  "cta": {
-  "h2": "Formons votre équipe marketing sur ses vraies campagnes",
-  "p": "Décrivez-nous votre équipe, vos outils et vos enjeux du moment. Nous revenons vers vous sous 24 heures avec un programme ajusté, les dates possibles et le devis, dossier OPCO compris."
+  "h2": "Formons votre équipe marketing sur sa prochaine campagne",
+  "p": "Présentez-nous l'équipe, ses outils et la campagne qui arrive. Nous revenons vers vous en 24 heures avec un programme taillé pour cette campagne, deux ou trois dates et un devis prêt pour l'OPCO."
  }
 }

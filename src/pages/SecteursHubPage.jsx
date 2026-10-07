@@ -19,6 +19,18 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * /diagnostic-ia, /contact et /agence-developpement-ia.
  * Design premium identique aux pages secteur : kickers, icônes lucide, cartes
  * radius 16, CTA final sombre, accent #2563EB. Zéro emoji affiché.
+ *
+ * MODE PAGE PROPRE (drapeau `pagePropre: true` dans secteur-guides/ia-secteurs.js) :
+ * le guide fournit tout le texte. Champs reconnus (facultatifs) :
+ *   resume (string)                     accroche du hero (remplace la phrase fixe)
+ *   hero { chips: string[], lien }      chips et bouton vers #secteurs
+ *   cartes { [slug]: string }           accroche de chaque carte secteur (déjà lu hors mode propre)
+ *   secteursBloc { kicker, h2, intro }  section de la grille
+ *   approche { kicker, h2, lead, cartes: [{ title, desc }], note }   « Notre approche » (masquée si absente)
+ *   pourquoi { kicker, h2, lead, points: string[] }                  « Approche sectorielle » (masquée si absente)
+ *   faqBloc { h2 }                      titre de la FAQ ; les liens de l'aside passent dans un <nav>
+ *   cta { titre, texte, ligne }         CTA final (boutons inchangés, ligne masquée si absente)
+ * OfficialSources passe en `lean`.
  */
 
 const SITE = 'https://www.master-ia.fr'
@@ -35,7 +47,7 @@ const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadiu
 const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }
 
 const META_TITLE = "IA par secteur d'activité · conseil & dev IA | Masteria"
-const META_DESC = "IA par secteur : banque, industrie, santé, juridique, retail, logistique, secteur public, tech et plus. Conseil et dev sur mesure. 30 min de cadrage offertes."
+const META_DESC = "IA par secteur : banque, industrie, santé, juridique, retail, logistique, secteur public, tech. Conseil et dev sur mesure. 30 min de cadrage offertes."
 const KEYWORDS = "ia par secteur, intelligence artificielle par secteur, ia secteur d'activité, ia banque, ia industrie, ia santé, cas d'usage ia secteur"
 
 /* Article : porte l'auteur (Mathias Nizan) et les dates (E-E-A-T + fraîcheur GEO). */
@@ -75,11 +87,11 @@ const HUB_FAQ = [
   },
   {
     q: "Mon secteur n'a pas de page dédiée : pouvez-vous quand même intervenir ?",
-    a: "Oui. Notre méthode (cadrer, développer, rendre autonome) s'applique à tout secteur B2B, même hors des douze pages publiées. Décrivez votre activité et vos enjeux : nous revenons sous 24 heures avec une première lecture des cas d'usage pertinents et une proposition de cadrage gratuit, sans engagement.",
+    a: "Oui. Notre méthode (cadrer, développer, rendre autonome) s'applique à tout secteur B2B, même hors des douze pages publiées. Décrivez votre activité et vos enjeux : nous revenons sous 24 heures avec une première lecture des cas d'usage pertinents et une proposition de 30 minutes de cadrage offertes, sans engagement.",
   },
   {
     q: "Combien coûte un projet IA par secteur d'activité ?",
-    a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration à vos systèmes. Nous travaillons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Le cadrage initial est gratuit et débouche sur un devis ferme.",
+    a: "Il n'y a pas de prix sur étagère : le budget dépend du périmètre, des contraintes de données et du niveau d'intégration à vos systèmes. Nous travaillons au forfait, avec périmètre, livrables et calendrier écrits avant signature. Un cas pilote cadré reste un engagement contenu ; un déploiement à l'échelle est plus conséquent. Les 30 minutes de cadrage sont offertes et débouchent sur un devis ferme.",
   },
   {
     q: "Qu'est-ce qui distingue Masteria d'une ESN ou d'un éditeur généraliste ?",
@@ -122,6 +134,8 @@ export default function SecteursHubPage() {
   const guide = guidePromise ? use(guidePromise) : null
   const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
   const MODIFIED = guide?.dateModified || '2026-07-02'
+  // Page propre : le guide fournit tout le texte, le gabarit masque ses phrases communes
+  const propre = Boolean(guide?.pagePropre)
   const faqItems = guide?.faq ?? HUB_FAQ
   // Patron éditorial asymétrique réutilisable (intro « Notre approche » + FAQ)
   const editorialGrid = isDesktop
@@ -142,7 +156,7 @@ export default function SecteursHubPage() {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     '@id': `${SITE}/${SLUG}#itemlist`,
-    name: "IA par secteur d'activité — Masteria",
+    name: "IA par secteur d'activité · Masteria",
     description: META_DESC,
     numberOfItems: SECTEURS.length,
     itemListElement: SECTEURS.map((s, i) => ({
@@ -204,12 +218,12 @@ export default function SecteursHubPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {MOIS[Number(MODIFIED.slice(5, 7)) - 1]} {MODIFIED.slice(0, 4)}
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>{propre ? <> · revu le {Number(MODIFIED.slice(8, 10))} {MOIS[Number(MODIFIED.slice(5, 7)) - 1]} {MODIFIED.slice(0, 4)}</> : <>, fondateur de Masteria · Mis à jour en {MOIS[Number(MODIFIED.slice(5, 7)) - 1]} {MODIFIED.slice(0, 4)}</>}
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria conçoit et développe des solutions IA sur mesure secteur par secteur : agents, automatisations et outils adaptés aux cas d'usage et aux contraintes réglementaires de chaque industrie. Banque, industrie, santé, juridique, retail, logistique, immobilier, secteur public, conseil, tourisme, agroalimentaire et tech : <strong style={{ color: '#fff', fontWeight: 700 }}>chaque secteur a sa page dédiée</strong>.
+            {propre && guide.resume ? guide.resume : <>Masteria conçoit et développe des solutions IA sur mesure secteur par secteur : agents, automatisations et outils adaptés aux cas d'usage et aux contraintes réglementaires de chaque industrie. Banque, industrie, santé, juridique, retail, logistique, immobilier, secteur public, conseil, tourisme, agroalimentaire et tech : <strong style={{ color: '#fff', fontWeight: 700 }}>chaque secteur a sa page dédiée</strong>.</>}
           </p>
 
           {guide?.intro ? (
@@ -226,13 +240,13 @@ export default function SecteursHubPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#secteurs" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir les 12 secteurs
+              {propre && guide.hero?.lien ? guide.hero.lien : 'Voir les 12 secteurs'}
             </a>
           </div>
 
           {/* chips de positionnement */}
           <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
-            {['12 secteurs B2B couverts', 'Conseil', 'Développement sur mesure', 'Automatisation'].map((label, i) => (
+            {(propre && guide.hero?.chips ? guide.hero.chips : ['12 secteurs B2B couverts', 'Conseil', 'Développement sur mesure', 'Automatisation']).map((label, i) => (
               <span
                 key={label}
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12.5, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '7px 14px' }}
@@ -252,10 +266,10 @@ export default function SecteursHubPage() {
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...WRAP, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Les secteurs</div>
-          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Choisissez votre secteur d'activité</h2>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>{propre && guide.secteursBloc?.kicker ? guide.secteursBloc.kicker : 'Les secteurs'}</div>
+          <h2 style={{ ...h2Style, color: '#F8FAFC' }}>{propre && guide.secteursBloc?.h2 ? guide.secteursBloc.h2 : "Choisissez votre secteur d'activité"}</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 40px', maxWidth: 880 }}>
-            Chaque page détaille les enjeux propres du secteur, les difficultés que nous adressons, des prestations concrètes (agents, automatisations, copilotes) et la contrainte réglementaire ou de confidentialité à respecter.
+            {propre && guide.secteursBloc?.intro ? guide.secteursBloc.intro : 'Chaque page détaille les enjeux propres du secteur, les difficultés que nous adressons, des prestations concrètes (agents, automatisations, copilotes) et la contrainte réglementaire ou de confidentialité à respecter.'}
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
@@ -291,21 +305,26 @@ export default function SecteursHubPage() {
       <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={c} background="#fff" padding={SECTION_PAD} />
 
       {/* ── NOTRE APPROCHE (éditorial asymétrique) ── */}
+      {(!propre || guide.approche) && (
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={WRAP}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>Notre approche</div>
-              <h2 style={{ ...h2Style, marginBottom: 18 }}>Une même méthode, déclinée par secteur</h2>
+              <div style={kickerStyle}>{propre ? guide.approche.kicker : 'Notre approche'}</div>
+              <h2 style={{ ...h2Style, marginBottom: 18 }}>{propre ? guide.approche.h2 : 'Une même méthode, déclinée par secteur'}</h2>
               <p style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#0A0A0A', margin: 0, maxWidth: 'none' }}>
+                {propre ? <strong style={{ color: '#0A0A0A' }}>{guide.approche.lead}</strong> : (
+                <>
                 <strong style={{ color: '#0A0A0A' }}>Quel que soit le secteur, la logique est la même : cadrer la stratégie, développer les solutions sur mesure, rendre vos équipes autonomes.</strong>{' '}
                 Ce qui change d'un secteur à l'autre, ce sont les cas d'usage et les contraintes, que nous intégrons dès le cadrage.
+                </>
+                )}
               </p>
             </div>
 
             <div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {APPROACH.map(({ icon: Icon, title, desc }) => (
+                {(propre ? guide.approche.cartes.map((k, i) => ({ ...k, icon: APPROACH[i % APPROACH.length].icon })) : APPROACH).map(({ icon: Icon, title, desc }) => (
                   <div key={title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
                     <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
                       <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
@@ -315,31 +334,43 @@ export default function SecteursHubPage() {
                   </div>
                 ))}
               </div>
+              {propre ? (guide.approche.note && (
+                <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
+                  {guide.approche.note}{' '}<Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>Agence de développement IA</Link>.
+                </p>
+              )) : (
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Pour le détail de notre capacité de build (agents, automatisations, applications métier, intégrations LLM/RAG), consultez notre{' '}
                 <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>.
               </p>
+              )}
             </div>
           </div>
         </div>
       </section>
+      )}
 
       {/* ── POURQUOI UNE APPROCHE SECTORIELLE (réponses citables) ── */}
+      {(!propre || guide.pourquoi) && (
       <section style={{ padding: SECTION_PAD, background: '#fff' }}>
         <div style={{ maxWidth: 880, margin: '0 auto' }}>
-          <div style={kickerStyle}>Approche sectorielle</div>
-          <h2 style={{ ...h2Style, marginBottom: 24 }}>Pourquoi une approche IA par secteur d'activité ?</h2>
+          <div style={kickerStyle}>{propre ? guide.pourquoi.kicker : 'Approche sectorielle'}</div>
+          <h2 style={{ ...h2Style, marginBottom: 24 }}>{propre ? guide.pourquoi.h2 : "Pourquoi une approche IA par secteur d'activité ?"}</h2>
+          {propre ? (
+            <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 24px' }}>{guide.pourquoi.lead}</p>
+          ) : (
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 24px' }}>
             <strong style={{ color: '#0A0A0A' }}>Parce que la valeur de l'IA et ses garde-fous dépendent du secteur.</strong>{' '}
             Un agent de synthèse de dossiers de crédit, un assistant documentaire conforme aux données de santé et un copilote de support e-commerce ne posent pas les mêmes questions de conception, de données et de conformité. Partir du secteur, c'est gagner en pertinence sur les{' '}
             <Link to="/cas-usage-ia-entreprise" style={{ color: c, fontWeight: 600 }}>cas d'usage de l'IA en entreprise</Link> et en sécurité sur les contraintes.
           </p>
+          )}
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 14 }}>
-            {[
+            {(propre ? guide.pourquoi.points || [] : [
               "Des cas d'usage concrets et déjà identifiés pour votre métier, directement actionnables.",
               "Les bonnes contraintes intégrées dès le départ : secret bancaire, hébergement HDS, secret professionnel, souveraineté, propriété intellectuelle.",
               "Un vocabulaire et des livrables qui parlent à vos équipes métier, ce qui accélère l'adoption.",
-            ].map((pt, i) => (
+            ]).map((pt, i) => (
               <li key={i} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <Check size={20} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
                 {pt}
@@ -348,6 +379,7 @@ export default function SecteursHubPage() {
           </ul>
         </div>
       </section>
+      )}
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: SECTION_PAD, background: '#F9FAFB' }}>
@@ -355,7 +387,15 @@ export default function SecteursHubPage() {
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Questions fréquentes sur l'IA par secteur</h2>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>{propre && guide.faqBloc?.h2 ? guide.faqBloc.h2 : "Questions fréquentes sur l'IA par secteur"}</h2>
+              {propre ? (
+                <nav aria-label="Pour aller plus loin" style={{ display: 'flex', flexDirection: 'column', gap: 8, fontSize: 14.5 }}>
+                  <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>Diagnostic IA</Link>
+                  <Link to="/ia-generative-entreprise" style={{ color: c, fontWeight: 600 }}>IA générative en entreprise</Link>
+                  <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>Solutions IA sur mesure</Link>
+                  <Link to="/contact?type=projet" style={{ color: c, fontWeight: 600 }}>Écrire à l'équipe</Link>
+                </nav>
+              ) : (
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
                 Pour aller plus loin, faites un{' '}
                 <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link>, découvrez l'apport de l'{' '}
@@ -363,6 +403,7 @@ export default function SecteursHubPage() {
                 <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>toutes nos solutions IA</Link> ou{' '}
                 <Link to="/contact?type=projet" style={{ color: c, fontWeight: 600 }}>contactez notre équipe</Link>.
               </p>
+              )}
             </div>
             <div>
               {faqItems.map((item, i) => (
@@ -382,12 +423,12 @@ export default function SecteursHubPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>{CADRAGE_COURT}</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, marginBottom: 16, lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Votre secteur n'est pas dans la liste ?
+              {propre && guide.cta?.titre ? guide.cta.titre : "Votre secteur n'est pas dans la liste ?"}
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-              Notre méthode s'applique à tout secteur B2B. Décrivez votre activité et vos enjeux : nous revenons vers vous sous 24 heures avec une première lecture des cas d'usage et vous proposons 30 minutes de cadrage, offertes.
+              {propre && guide.cta?.texte ? guide.cta.texte : "Notre méthode s'applique à tout secteur B2B. Décrivez votre activité et vos enjeux : nous revenons vers vous sous 24 heures avec une première lecture des cas d'usage et vous proposons 30 minutes de cadrage, offertes."}
             </p>
-            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: propre && !guide.cta?.ligne ? 0 : 24 }}>
               <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
                 Contacter notre équipe
                 <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
@@ -397,14 +438,16 @@ export default function SecteursHubPage() {
                 Faire un diagnostic IA
               </Link>
             </div>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              IA par secteur · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde
-            </p>
+            {(!propre || guide.cta?.ligne) && (
+              <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
+                {propre ? guide.cta.ligne : 'IA par secteur · Conseil, développement sur mesure, automatisation · Spécialistes IA depuis 2022 · Lyon, Europe, États-Unis, Inde'}
+              </p>
+            )}
           </div>
         </div>
       </section>
 
-      <OfficialSources />
+      <OfficialSources lean={propre} />
     </>
   )
 }

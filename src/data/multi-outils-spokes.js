@@ -79,7 +79,7 @@ const sharedModules = (metierLabel, metierSpec) => [
     description: "Choisir en connaissance de cause selon vos exigences de conformité et de sécurité.",
     items: [
       "Ce qui reste privé vs ce qui alimente les modèles (selon l'outil et l'abonnement)",
-      "Versions entreprise : ChatGPT Enterprise, Copilot for Business, Gemini Business",
+      "Versions entreprise : ChatGPT Business et Enterprise, Microsoft Copilot, Gemini dans Google Workspace",
       "RGPD et hébergement européen : l'avantage Mistral",
       "Politique d'usage interne : bonnes pratiques à déployer auprès de l'équipe",
       "Cas particuliers : données clients, données RH, données financières",
@@ -194,7 +194,7 @@ const METIERS_SPEC = {
     day2Items: [
       "Analyser 20 CV en parallèle avec Claude pour shortlister",
       "Construire un parcours d'onboarding multi-formats avec Copilot",
-      "Rédiger des contenus RH impliquant des données salariés avec Mistral en local",
+      "Rédiger des contenus RH impliquant des données salariés avec un modèle Mistral à poids ouverts installé chez vous",
       "Générer des plans de développement individuels à partir d'entretiens annuels",
     ],
     day2Exercise: "Construire une campagne de recrutement complète en s'appuyant sur 3 outils selon leur force.",
@@ -281,7 +281,7 @@ const METIERS_SPEC = {
     ],
     objectives: [
       "Maîtriser les 5 outils IA pour les tâches commerciales clés",
-      "Gagner en moyenne 6h par semaine sur les tâches rédactionnelles commerciales",
+      "Gagner du temps sur les tâches rédactionnelles commerciales",
       "Personnaliser la prospection et les propositions à grande échelle",
       "Exploiter Claude pour l'analyse d'appels d'offres et Copilot pour les présentations",
       "Construire un workflow commercial IA intégré au CRM de votre entreprise",
@@ -305,7 +305,7 @@ const METIERS_SPEC = {
     faq: [
       { q: "L'IA peut-elle remplacer le travail commercial ?", a: "Non. L'IA automatise les tâches rédactionnelles et analytiques, mais la relation commerciale, la négociation et le closing restent 100% humains. Les commerciaux formés à l'IA vendent plus, pas moins." },
       { q: "Quel outil est le meilleur pour la prospection ?", a: "Cela dépend de votre stack. Si vous êtes sur Microsoft 365, Copilot s'intègre directement dans Outlook. Sinon, ChatGPT offre plus de flexibilité. La formation vous aide à arbitrer selon votre environnement." },
-      { q: "Comment l'IA gère-t-elle les données prospect confidentielles ?", a: "Point critique abordé au Module 7. Certaines données ne doivent jamais sortir de votre infrastructure, d'où l'intérêt des versions entreprise ou de Mistral en local." },
+      { q: "Comment l'IA gère-t-elle les données prospect confidentielles ?", a: "Point critique abordé au Module 7. Certaines données ne doivent jamais sortir de votre infrastructure, d'où l'intérêt des versions entreprise ou d'un modèle Mistral à poids ouverts installé chez vous." },
       { q: "La formation couvre-t-elle les appels d'offres ?", a: "Oui, le Module 5 et l'exercice du Jour 2 sont centrés sur la réponse aux appels d'offres, un cas d'usage majeur pour les équipes commerciales B2B." },
     ],
     related: ['formation-chatgpt-commercial', 'formation-copilot-commercial', 'formation-gemini-commercial'],
@@ -386,7 +386,7 @@ const METIERS_SPEC = {
     objectives: [
       "Maîtriser les 5 outils IA pour les tâches managériales clés",
       "Construire votre propre stack IA de manager selon vos usages",
-      "Libérer 6h par semaine sur les tâches administratives managériales",
+      "Libérer du temps sur les tâches administratives managériales",
       "Améliorer la qualité des communications et reportings produits",
       "Déployer une pratique IA cohérente dans votre équipe",
     ],
@@ -565,7 +565,7 @@ const METIERS_SPEC = {
     faq: [
       { q: "L'IA peut-elle gérer toutes les demandes client ?", a: "Non. L'IA est excellente sur les demandes récurrentes, mais les cas complexes ou émotionnels nécessitent un humain. La formation aide à définir cette frontière." },
       { q: "Comment garantir la cohérence de ton avec l'IA ?", a: "En créant un 'prompt de marque' qui encode votre ton de service. C'est l'un des premiers exercices de la formation." },
-      { q: "Les données client peuvent-elles être utilisées avec l'IA ?", a: "Uniquement avec les versions entreprise ou Mistral en local. Le Module 7 détaille les garanties de chaque solution." },
+      { q: "Les données client peuvent-elles être utilisées avec l'IA ?", a: "Uniquement avec les versions entreprise ou un modèle Mistral à poids ouverts installé chez vous. Le Module 7 détaille les garanties de chaque solution." },
       { q: "L'IA peut-elle détecter la colère ou l'insatisfaction client ?", a: "Oui, avec un bon prompt d'analyse de sentiment. La formation montre comment automatiser cette détection pour prioriser les demandes." },
     ],
     related: ['formation-chatgpt-service-client', 'formation-copilot-service-client', 'formation-gemini-service-client'],
@@ -677,7 +677,10 @@ const METIERS_SPEC = {
 }
 
 // ─── Génération de la liste finale de spokes ─────────────────────────
-export const MULTI_OUTILS_SPOKES = Object.entries(METIERS_SPEC).map(([metierSlug, spec]) => ({
+// Fusionnées le 07/10/2026 dans leur page métier (redirection 308 dans vercel.json, décision de Mathias)
+const FUSIONNES = ['finance', 'communication', 'informatique', 'pedagogique']
+
+export const MULTI_OUTILS_SPOKES = Object.entries(METIERS_SPEC).filter(([metierSlug]) => !FUSIONNES.includes(metierSlug)).map(([metierSlug, spec]) => ({
   ...TOOL,
   slug: `formation-multi-outils-${metierSlug}`,
   metier: spec.metier,

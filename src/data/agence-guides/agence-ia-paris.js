@@ -2,7 +2,78 @@
 // Vérifié le 03/10/2026 : CCI Paris Île-de-France et Insee (chiffres-clés 2025-2026, filiales de groupes étrangers), EIOPA (DORA), EUR-Lex (règlement 2026/1744), AI Act Service Desk de la Commission (annexe III, articles 50 et 113), CNIL (AIPD) ; retour de mission tiré de src/data/etudes-de-cas.js (distribution).
 export default {
   slug: 'agence-ia-paris',
-  dateModified: '2026-10-03',
+  dateModified: '2026-10-07',
+  pagePropre: true,
+  hero: {
+    chips: ["Sièges, directions, filiales", "Comités de pilotage à Paris", "Développement à distance", "Conformité RGPD et AI Act"],
+    lien: "Voir l'offre pour Paris",
+  },
+  ville: {
+    heroSubtitle: "Un comité de direction parisien attend une décision argumentée ; une équipe métier attend un outil qui marche lundi matin. Nous préparons la première, livrons le second, et montons à Paris pour chaque atelier et chaque comité, le code s'écrivant depuis Lyon.",
+    keyFacts: [
+      {
+        label: "Ce que nous faisons",
+        value: "Stratégie et gouvernance de l'IA, agents et outils sur mesure, automatisation, formation des équipes qui reprennent l'outil",
+      },
+      {
+        label: "Venir à Paris",
+        value: "Deux heures de TGV depuis Lyon : nous sommes chez vous pour les comités et les ateliers, à distance entre deux",
+      },
+      {
+        label: "Pour qui",
+        value: "Sièges sociaux et services financiers, cabinets de conseil et médias, commerce et luxe, éditeurs et scale-ups",
+      },
+      {
+        label: "Gouvernance",
+        value: "Analyse d'impact, registre des traitements et calendrier de l'AI Act préparés avec votre DPO",
+      },
+    ],
+    presence: "Masteria n'a pas de bureau à Paris, et nos pages le disent. Nos consultants prennent le TGV de Lyon pour chaque comité de pilotage, chaque atelier de cadrage et la remise de l'outil, dans Paris intra-muros comme à La Défense ou en petite couronne. Entre ces rendez-vous, le développement avance à distance, avec un point hebdomadaire en visio. Chaque déplacement figure dans la proposition.",
+  },
+  offresTitre: {
+    kicker: "Paris et sa région",
+    h2: "Ce que notre agence IA apporte aux directions parisiennes",
+  },
+  offresNote: {
+    titre: "Du comité de direction à l'outil en production.",
+    texte: "La même équipe prépare la décision du comité, construit l'outil qu'il a validé et forme ceux qui l'utiliseront, sans changement d'interlocuteur entre le conseil et le développement.",
+  },
+  ancrage: {
+    kicker: "Paris et Île-de-France",
+    h2: "Pourquoi une agence IA pour les entreprises parisiennes ?",
+    economie: "Le tissu économique francilien",
+    presence: "Comment nous travaillons à Paris",
+    prestations: "Trois types de projets en Île-de-France",
+  },
+  formationBloc: {
+    kicker: "Après la livraison",
+    h2: "Former les équipes parisiennes sur l'outil construit",
+    lien: "Toutes nos formations IA",
+  },
+  etapesBloc: {
+    kicker: "Le déroulé",
+    h2: "Cinq étapes pour une mission menée à Paris",
+  },
+  faqBloc: {
+    h2: "Les questions des entreprises parisiennes",
+    texte: "Plusieurs agences sont sur votre liste ? Nos critères de comparaison sont détaillés dans",
+    lien: {
+      href: "/meilleure-agence-ia",
+      label: "notre guide pour choisir une agence IA",
+    },
+  },
+  maillage: {
+    villes: "Masteria dans d'autres métropoles",
+    expertises: "Ressources pour préparer le cadrage",
+  },
+  cta: {
+    titre: "Une direction parisienne à outiller ?",
+    texte: "Indiquez-nous la direction concernée, le flux visé et l'échéance de votre comité. Nous vous répondons dans les 24 heures, puis nous fixons un premier échange de 30 minutes, offert, en visio ou dans vos bureaux.",
+  },
+  equipe: {
+    titre: "Une équipe réunie pour votre siège",
+    texte: "Chaque mission parisienne est conduite par Mathias Nizan, qui a fondé Masteria à Lyon en 2022. Autour de lui se forme, projet par projet, un petit groupe d'indépendants : un consultant qui prépare les comités de direction, un ou deux développeurs, un formateur. Sans licence à placer ni plateforme à vendre, l'équipe recommande ce qui sert votre siège.",
+  },
   intro: "À Paris, un outil d'IA sur mesure passe devant plusieurs services avant de servir une équipe : achats, sécurité informatique, protection des données, conformité, parfois le groupe. Masteria, cabinet basé à Lyon, prépare ces validations dès le cadrage, développe ensuite les assistants, agents et automatisations retenus, puis vous en remet le code. Nous venons à Paris pour cadrer, observer les processus et passer la main ; le développement se mène depuis Lyon. Pour une banque ou un assureur, le règlement européen DORA, consacré à la résilience numérique de la finance, ajoute ses propres clauses au contrat.",
   offresIntro: [
     "Pour une direction parisienne, nous menons le conseil, le développement et l'automatisation avec une exigence commune : chaque livrable doit passer la revue de la direction informatique (DSI), du délégué à la protection des données et des achats.",
@@ -10,14 +81,21 @@ export default {
   ],
   offres: [
     {
+      title: "Stratégie et gouvernance de l'IA",
+      cta: "Le conseil IA pour les directions",
       desc: "Avant tout chiffrage, le conseil dresse la carte de ceux qui valident : métier, DSI, délégué à la protection des données, conformité, achats, parfois la maison mère. Il en sort une feuille de route triée par gain et faisabilité, le classement de chaque usage au regard de l'AI Act (le règlement qui encadre les systèmes d'IA dans l'Union) et le dossier dont votre comité a besoin pour décider.",
       points: ["Carte des validations internes", "Classement AI Act de chaque usage", "Dossier de décision pour le comité"],
     },
     {
+      title: "Agents et outils sur mesure",
+      cta: "Notre agence de développement",
+      secondaryCta: "Des outils IA par métier",
       desc: "Nous développons des agents et des assistants dans l'environnement que votre groupe autorise, reliés à vos logiciels par leurs interfaces. La documentation décrit l'architecture, les données traitées et les tests réalisés. La sécurité informatique et la conformité réclament ces pièces avant toute mise en production.",
       points: ["Agents dans l'environnement autorisé", "Dossier technique pour la sécurité", "Code source livré avec l'outil"],
     },
     {
+      title: "Automatisation des fonctions support",
+      cta: "L'automatisation chez Masteria",
       desc: "Dans un siège, les tâches répétitives se logent entre deux équipes : questionnaires de sécurité envoyés par les grands clients, consolidation de données venues des filiales, notes préparatoires au comité exécutif. Nous automatisons ces enchaînements en plaçant un contrôle humain aux étapes qui engagent l'entreprise, puis nous mesurons le temps rendu sur votre périmètre.",
       points: ["Enchaînements entre équipes", "Validation humaine aux étapes clés", "Temps rendu mesuré sur votre périmètre"],
     },
@@ -81,22 +159,22 @@ export default {
     },
     cas: {
       h3: "Retour de mission : onze compétences Claude validées par la direction avant d'équiper 58 salariés",
-      contexte: "Le client est un distributeur informatique B2B (qui vend à d'autres entreprises), filiale française d'un groupe européen. Ses 58 salariés perdaient du temps commercial sur des tâches qui se répètent : chiffrer une demande, relancer un devis, rédiger la réponse à un cahier des charges, prospecter, surveiller les stocks. La direction voulait que l'équipe abatte davantage de travail à effectif constant, avec ses logiciels habituels : l'ERP (le logiciel de gestion de l'entreprise), le catalogue d'articles et le CRM (où vit l'historique de chaque client).",
+      contexte: "Le client est un distributeur informatique B2B (qui vend à d'autres entreprises), filiale française d'un groupe européen. Chez lui, 58 salariés voyaient leurs journées commerciales grignotées par les mêmes gestes : chiffrer une demande, relancer un devis, rédiger la réponse à un cahier des charges, prospecter, surveiller les stocks. La direction voulait que l'équipe abatte davantage de travail à effectif constant, avec ses logiciels habituels : l'ERP (le logiciel de gestion de l'entreprise), le catalogue d'articles et le CRM (où vit l'historique de chaque client).",
       etapes: [
         "Sélectionner avec la direction les tâches qui rapportent le plus, et décider qui valide quoi avant toute diffusion.",
         "Former pendant deux jours, en juin 2026, dix référents volontaires, qui construisent chacun une compétence Claude, c'est-à-dire un ensemble d'instructions et de fichiers que l'assistant mobilise pour une tâche, sur leur propre flux de travail.",
         "Soumettre chaque compétence à la direction, qui contrôle les données autorisées, la citation des sources et ce qui reste du ressort du commercial.",
         "Planifier d'octobre à décembre 2026 le déploiement des mêmes onze compétences aux quelque cinquante autres collaborateurs, avec les dix référents.",
-        "Passer en production une fois les données de démonstration remplacées par celles de l'entreprise, la relance des devis ayant déjà été validée sur de vrais devis avant la formation, puis laisser aux référents les mises à jour et l'accueil des nouvelles recrues.",
+        "Basculer chaque compétence sur les données de l'entreprise avant de l'utiliser pour de bon ; la relance des devis avait été éprouvée sur des devis du distributeur dès avant la formation. Les référents gardent ensuite les mises à jour et accueillent les nouvelles recrues.",
       ],
-      resultat: "Les dix référents sont formés depuis juin 2026 ; chacun porte sa compétence et la fait évoluer, et la relance des devis a été validée sur de vrais devis avant la formation. Le déploiement aux autres collaborateurs est prévu d'octobre à décembre 2026. La direction se fixe une cible : obtenir de 58 personnes le volume de travail d'une équipe de 70, à effectif constant. Les indicateurs commerciaux de l'entreprise diront si elle est atteinte.",
-      lien: { href: "/etudes-de-cas-ia#distribution", label: "Lire l'étude de cas complète" },
+      resultat: "Depuis juin 2026, chacun des dix référents fait évoluer la compétence qu'il a construite. L'extension à l'ensemble des équipes est programmée d'octobre à décembre 2026. La cible de la direction reste une cible : que 58 personnes abattent le travail d'une équipe de 70, sans embauche. Les indicateurs commerciaux trancheront.",
+      lien: { href: "/etudes-de-cas-ia#distribution", label: "Les onze compétences du distributeur informatique" },
     },
     pieges: [
       { titre: "Montrer un prototype avant d'avoir lu la politique du groupe", texte: "Une démonstration réussie peut être arrêtée par une règle du groupe sur les données ou sur les éditeurs autorisés. Demandez la politique par écrit au premier atelier et construisez dans ses limites." },
       { titre: "Traiter un outil de tri des candidatures comme un assistant de bureautique", texte: "Le recrutement figure dans la liste de l'annexe III. À partir du 2 décembre 2027, un tel outil devra satisfaire aux exigences du haut risque ; la documentation, les tests et le contrôle humain se préparent dès la conception." },
       { titre: "Signer sans prévoir la reprise de l'outil", texte: "Sans code source ni documentation, l'outil reste attaché à celui qui l'a écrit. Pour une entité soumise à DORA, la question revient au moment de décrire le service dans le registre des prestataires." },
-      { titre: "Oublier d'annoncer l'IA dans un agent tourné vers les clients", texte: "L'article 50 de l'AI Act, en application depuis le 2 août 2026, oblige à prévenir le client qu'une IA lui répond. Le message d'accueil de l'agent le dit, et un conseiller peut reprendre la conversation à la demande du client." },
+      { titre: "Oublier d'annoncer l'IA dans un agent tourné vers les clients", texte: "Depuis le 2 août 2026, l'AI Act impose, dans son article 50, de prévenir le client qu'une IA lui répond. Le message d'accueil de l'agent le dit, et un conseiller peut reprendre la conversation à la demande du client." },
       { titre: "Mesurer l'adoption au lieu du temps rendu", texte: "Un tableau de connexions dit qui ouvre l'outil. Le comité attend le temps gagné sur un dossier type, mesuré sur votre périmètre avant puis après le lancement." },
     ],
   },
@@ -111,9 +189,9 @@ export default {
     { q: "Que devient l'outil si nous changeons de prestataire ?", a: "Vous le gardez : à la passation, dans vos locaux, nous vous remettons le code de l'outil, ses accès et toute sa documentation. Votre équipe, ou le prestataire de votre choix, peut reprendre l'outil sans dépendre de nous ; cette remise figure comme livrable dès la proposition." },
   ],
   sources: [
-    { name: "CCI Paris Île-de-France et Insee : chiffres-clés de la région Île-de-France 2025-2026", url: "https://www.cci-paris-idf.fr/sites/default/files/2025-06/CC2025-BD.pdf" },
+    { name: "CCI Paris Île-de-France et Insee, chiffres-clés 2025-2026 : le poids des sièges et des services en Île-de-France", url: "https://www.cci-paris-idf.fr/sites/default/files/2025-06/CC2025-BD.pdf" },
     { name: "EIOPA : Digital Operational Resilience Act (DORA), règlement (UE) 2022/2554", url: "https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en" },
-    { name: "EUR-Lex : règlement (UE) 2026/1744 du 8 juillet 2026 (omnibus numérique sur l'IA)", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
+    { name: "EUR-Lex, omnibus (UE) 2026/1744 du 8 juillet 2026 : le report des obligations à haut risque", url: "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32026R1744" },
     { name: "Commission européenne, AI Act Service Desk : annexe III (systèmes d'IA à haut risque)", url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3" },
     { name: "Commission européenne, AI Act Service Desk : article 50 (transparence)", url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50" },
     { name: "Commission européenne, AI Act Service Desk : article 113 (entrée en vigueur et application)", url: "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113" },

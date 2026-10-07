@@ -296,7 +296,7 @@ export default {
   },
   liensAssocies: [
     { label: "Le programme IA des dirigeants, pour décider et piloter l'entreprise", href: '/formation-ia-dirigeants' },
-    { label: "Sprint de trois heures pour les managers qui débutent avec l'IA", href: '/formation-sprint-ia-managers' },
+    { label: "Sprint de trois heures pour les managers qui débutent avec l'IA", href: '/formation-sprint-ia' },
     { label: "Former ses managers à l'IA : le déroulé d'un parcours de deux jours", href: '/blog/formation-manager-avec-ia' },
     { label: "AI Act : obligations, calendrier et mise en conformité, en formation", href: '/formation-ai-act' },
   ],

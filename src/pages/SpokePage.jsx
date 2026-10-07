@@ -88,7 +88,7 @@ const WHY_MASTERIA = [
   { icon: '\uD83C\uDFAF', title: 'Spécialisés à 100 % sur l\'IA', desc: "Masteria ne fait que ça. Chaque formateur pratique l'IA au quotidien dans des contextes professionnels réels. La différence se sent dans les exemples choisis, les pièges anticipés et les raccourcis partagés." },
   { icon: '\uD83D\uDCC1', title: 'On travaille sur vos fichiers', desc: "Zéro cas fictif. Chaque exercice s'appuie sur les documents réels de vos participants. Ce que vos équipes apprennent le matin, elles le réutilisent l'après-midi sur leurs vrais sujets." },
   { icon: '\uD83D\uDC65', title: 'Programme construit pour votre métier', desc: "Les cas d'usage, les exercices et les prompts sont sélectionnés autour des vraies missions de votre fonction. C'est ce qui les rend utilisables dès le retour au poste." },
-  { icon: '\uD83D\uDCB3', title: 'Financement intégral possible', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Masteria prend en charge le montage du dossier. Dans la majorité des cas, la formation ne coûte rien à l'entreprise." },
+  { icon: '\uD83D\uDCB3', title: 'Finançable par votre OPCO', desc: "Notre certification Qualiopi rend toutes nos formations éligibles au financement OPCO. Masteria prend en charge le montage du dossier. Le niveau de prise en charge dépend des règles et des fonds de votre branche." },
 ]
 
 const TRAINER = {
@@ -101,7 +101,7 @@ const TRAINER = {
 // Angles spécifiques par outil (pour éviter le duplicate content sur les 73 spokes)
 const TOOL_ANGLES = {
   'ChatGPT': "des déploiements ChatGPT en entreprise, de l'offre Business aux projets partagés et à l'API",
-  'Microsoft Copilot': "des déploiements Microsoft 365 Copilot et Copilot Studio chez des clients PME et ETI",
+  'Microsoft Copilot': "des déploiements Microsoft Copilot et Copilot Studio chez des clients PME et ETI",
   'Google Gemini': "des projets Gemini dans Google Workspace, de Gmail et Docs à la console d'administration",
   'Claude': "des cas d'usage Claude (Anthropic) pour l'analyse de documents longs et l'écriture de qualité",
   'Mistral AI': "l'intégration de Mistral AI et Vibe (anciennement Le Chat) dans des entreprises françaises attachées à la souveraineté",
@@ -184,6 +184,9 @@ export default function SpokePage() {
   const spoke = baseSpoke && guide
     ? {
         ...baseSpoke,
+        h1: guide.h1 ?? baseSpoke.h1,
+        metaTitle: guide.metaTitle ?? baseSpoke.metaTitle,
+        keywords: guide.keywords ?? baseSpoke.keywords,
         metaDesc: guide.metaDesc ?? baseSpoke.metaDesc,
         intro: guide.intro ?? baseSpoke.intro,
         faq: guide.faq ?? baseSpoke.faq,
@@ -205,6 +208,8 @@ export default function SpokePage() {
         terrain: guide.terrain,
         liensAssocies: guide.liensAssocies,
         avisPriorite: guide.avisPriorite ?? baseSpoke.avisPriorite,
+        audienceIntro: guide.audienceIntro,
+        casUsageIntro: guide.casUsageIntro,
       }
     : baseSpoke
 
@@ -452,9 +457,12 @@ export default function SpokePage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
               À qui s'adresse cette formation ?
             </h2>
-            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
-              Cette formation s'adresse à {equipeCible(spoke)}, avec un objectif : repartir avec des résultats concrets sur vos propres dossiers.
-            </p>
+            {/* Page propre : phrase du guide si elle existe, sinon rien (la phrase type se répétait sur 60 pages) */}
+            {(!propre || spoke.audienceIntro) ? (
+              <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
+                {propre ? spoke.audienceIntro : <>Cette formation s'adresse à {equipeCible(spoke)}, avec un objectif : repartir avec des résultats concrets sur vos propres dossiers.</>}
+              </p>
+            ) : <div style={{ height: 28 }} />}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
               {spoke.audience.map((profile, i) => (
                 <div key={i} style={{ background: '#F9FAFB', borderRadius: 12, padding: 28, border: `2px solid ${cLight}`, borderLeftColor: c, borderLeftWidth: 4 }}>
@@ -474,9 +482,11 @@ export default function SpokePage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 12 }}>
               Ce que vous allez maîtriser
             </h2>
-            <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
-              {useCasesIntro}
-            </p>
+            {(!propre || spoke.casUsageIntro) ? (
+              <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
+                {propre ? spoke.casUsageIntro : useCasesIntro}
+              </p>
+            ) : <div style={{ height: 28 }} />}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
               {spoke.useCases.map((uc, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>

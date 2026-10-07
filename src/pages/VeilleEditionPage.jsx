@@ -7,11 +7,20 @@ import {
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import VeilleNav from '../components/VeilleNav'
-import { strings, baseVeille, baseData, alternatesVeille } from '../data/veille-i18n'
+import {
+  strings, baseVeille, baseData, alternatesVeille, dateVeille, jourOuvreSuivant, inLanguageVeille,
+} from '../data/veille-i18n'
 import VeilleLangSwitch from '../components/VeilleLangSwitch'
 
 /**
  * VeilleEditionPage — une édition quotidienne de la Veille IA.
+ *
+ * Texte propre (07/10/2026) : le gabarit n'ajoute presque rien autour du
+ * contenu éditorial, pour que chaque édition reste faite de son propre texte.
+ * Ligne d'auteur courte (lien /mathias-nizan), méthode en une phrase avec lien
+ * vers /veille-ia/a-propos, encart final bâti sur le titre de la une, éditions
+ * voisines et listes de liens en <nav>. Tous les libellés viennent de
+ * veille-i18n.js : la page anglaise ne doit afficher aucun mot de français.
  *
  * Les données viennent de /veille-data/<date>.json, hors du bundle : une
  * publication par jour ouvré changerait sinon le hash des assets et
@@ -35,8 +44,6 @@ const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadiu
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
 
 const SITE = 'https://www.master-ia.fr'
-const MOIS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet',
-  'août', 'septembre', 'octobre', 'novembre', 'décembre']
 
 // Ordre de rendu et pictogrammes. La donnée ne pilote jamais l'ordre : une
 // erreur de publish.py ne peut pas brouiller la page. La différenciation des
@@ -87,18 +94,12 @@ function BlocSources({ sources, variante = 'item' }) {
 // Marqueur de reprise dans l'analyse. Libellé seul : le filet 3 px d'accent
 // est déjà employé par l'accroche du hero, le bloc réponse et le bord de la
 // carte de une ; une occurrence de plus en ferait un tic.
-function MarqueurAnalyse() {
+function MarqueurAnalyse({ libelle }) {
   return (
     <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, display: 'block', marginBottom: 6 }}>
-      Repris dans l'analyse
+      {libelle}
     </span>
   )
-}
-
-function dateLisible(iso) {
-  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '')
-  if (!m) return ''
-  return `${Number(m[3])} ${MOIS[Number(m[2]) - 1]} ${m[1]}`
 }
 
 function texteNu(html) {
@@ -154,42 +155,6 @@ function titreEdition(dateAffichee, titreEditorial, lang = 'fr') {
   return titre.length + MARQUE_TITRE.length <= TITRE_MAX ? `${titre}${MARQUE_TITRE}` : titre
 }
 
-// Phrase de répartition, générée depuis zones[]. Accord au singulier et au
-// pluriel, zones absentes omises.
-function phraseRepartition(ed, lang = 'fr') {
-  const jourMois = ed.dateAffichee.replace(/\s\d{4}$/, '')
-  const seg = z => {
-    const n = z.nb
-    switch (z.cle) {
-      case 'europe': return `${n} pour l'Europe et la France`
-      case 'international': return `${n} pour l'international`
-      case 'chine': return `${n} pour la Chine et l'Asie`
-      case 'recherche': return `${n} publication${n > 1 ? 's' : ''} de recherche`
-      case 'bref': return `${n} brève${n > 1 ? 's' : ''}`
-      default: return `${n} autre${n > 1 ? 's' : ''}`
-    }
-  }
-  const parts = (ed.zones || []).map(seg)
-  const liste = parts.length > 1
-    ? `${parts.slice(0, -1).join(', ')} et ${parts[parts.length - 1]}`
-    : (parts[0] || '')
-  const s1 = ed.nbItems > 1 ? 's' : ''
-  const s2 = ed.nbSources > 1 ? 's' : ''
-  if (lang === 'en') {
-    return `The ${jourMois} edition covers ${ed.nbItems} stor${ed.nbItems > 1 ? 'ies' : 'y'} from ${ed.nbSources} source${ed.nbSources > 1 ? 's' : ''}${liste ? `: ${liste}` : ''}.`
-  }
-  return `L'édition du ${jourMois} retient ${ed.nbItems} actualité${s1} issue${s1} de ${ed.nbSources} source${s2}${liste ? ` : ${liste}` : ''}.`
-}
-
-// Prochain jour ouvré, calculé côté client. La phrase n'est rendue que sur
-// l'édition la plus récente : sur une archive elle serait fausse.
-function prochainJourOuvre(iso) {
-  const d = new Date(iso + 'T12:00:00')
-  do { d.setDate(d.getDate() + 1) } while (d.getDay() === 0 || d.getDay() === 6)
-  const jours = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
-  return `${jours[d.getDay()]} ${d.getDate()} ${MOIS[d.getMonth()]}`
-}
-
 export default function VeilleEditionPage({ lang = 'fr' }) {
   const { date } = useParams()
   const L = strings(lang)
@@ -197,6 +162,17 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
   const isDesktop = useIsDesktop()
   const [edition, setEdition] = useState(null)
   const [etat, setEtat] = useState('chargement')
+  // L'édition existe-t-elle dans l'autre langue ? Plusieurs éditions françaises n'ont pas de
+  // version anglaise : la bascule de langue renvoie alors à l'accueil de l'autre veille (07/10/2026).
+  const [traduite, setTraduite] = useState(true)
+  useEffect(() => {
+    let actif = true
+    fetch(`${baseData(L.autre)}/index.json`)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
+      .then(d => { if (actif && Array.isArray(d?.editions)) setTraduite(d.editions.some(e => e.date === date)) })
+      .catch(() => {})
+    return () => { actif = false }
+  }, [date, L.autre])
 
   useEffect(() => {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '')) { setEtat('introuvable'); return }
@@ -231,8 +207,9 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
     if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' })
   }, [etat])
 
-  const lisible = dateLisible(date)
+  const lisible = dateVeille(date, lang)
   const ok = etat === 'ok' && edition
+  const jourMois = ok ? edition.dateAffichee.replace(/\s\d{4}$/, '') : ''
   const sections = ok ? ordonner(edition.sections || []) : []
   const detaillees = sections.filter(s => s.format === 'detaille')
   const recherche = sections.filter(s => s.format === 'recherche')
@@ -266,7 +243,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
     description: edition.chapeau,
     datePublished: edition.publieLe || `${date}T08:30:00+02:00`,
     dateModified: edition.publieLe || `${date}T08:30:00+02:00`,
-    inLanguage: 'fr-FR',
+    inLanguage: inLanguageVeille(lang),
     isAccessibleForFree: true,
     wordCount: edition.nbSignes ? Math.round(edition.nbSignes / 6) : undefined,
     timeRequired: `PT${edition.tempsLecture}M`,
@@ -290,9 +267,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
   } : undefined
 
   const ancreCTA = analyse ? '#analyse' : '#dossier'
-  const libelleCTA = analyse
-    ? (lang === 'en' ? 'Read the Masteria take' : "Lire l'analyse Masteria")
-    : (lang === 'en' ? "Read today's stories" : 'Lire les actualités du jour')
+  const libelleCTA = analyse ? L.lireAnalyse : L.lireActus
 
   return (
     <div data-veille-pret={etat === 'chargement' ? '0' : '1'} data-veille-etat={etat}>
@@ -338,7 +313,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
               <span style={{ color: '#3A4658' }}>/</span>
               <span aria-current="page" style={{ color: '#93C5FD', fontWeight: 600 }}>{lisible}</span>
             </nav>
-            <VeilleLangSwitch lang={lang} suite={date} compact />
+            <VeilleLangSwitch lang={lang} suite={traduite ? date : ''} compact />
           </div>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
@@ -346,38 +321,26 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
               <Calendar size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              {ok ? `Édition du ${edition.dateLongue}` : `Édition du ${lisible}`}
+              {L.editionDu(ok ? edition.dateLongue : lisible)}
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 900 }}>
             {ok ? (
               <>
-                {lang === 'en' ? `AI Watch, ${edition.dateLongue}` : `Veille IA du ${edition.dateLongue}`}
+                {L.titreH1(edition.dateLongue)}
                 <span style={{ display: 'block', marginTop: 12, fontSize: 'clamp(17px, 2.1vw, 24px)', fontWeight: 700, lineHeight: 1.35, letterSpacing: '-0.01em', color: '#60A5FA', maxWidth: 820 }}>{edition.titreEditorial}</span>
               </>
-            ) : `Veille IA du ${lisible}`}
+            ) : L.titreH1(lisible)}
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par l'équipe éditoriale Masteria, sous la direction de <Link to="/centre-formation-ia-entreprise" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Publiée le <time dateTime={date}>{lisible}</time>{ok && edition.publieLeAffiche ? ` à ${edition.publieLeAffiche}` : ''}
+            {L.signature} <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · <time dateTime={date}>{lisible}</time>{ok && edition.publieLeAffiche ? L.heure(edition.publieLeAffiche) : ''}
           </p>
 
           {ok && (
-            <p className="veille-chapeau" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p className="veille-chapeau" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 36px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
               {edition.chapeau}
-            </p>
-          )}
-
-          {ok && (
-            <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-              {edition.nbArticlesCollectes
-                ? (lang === 'en'
-                    ? `${edition.nbItems} stories selected from ${edition.nbArticlesCollectes} collected this morning across ${edition.nbFluxConsultes} feeds. ${edition.nbSources} sources cited, about ${edition.tempsLecture} minutes to read.`
-                    : `${edition.nbItems} actualités retenues sur ${edition.nbArticlesCollectes} collectées ce matin, issues de ${edition.nbFluxConsultes} flux. ${edition.nbSources} sources citées, environ ${edition.tempsLecture} minutes de lecture.`)
-                : (lang === 'en'
-                    ? `${edition.nbItems} stories selected this morning. ${edition.nbSources} sources cited, about ${edition.tempsLecture} minutes to read.`
-                    : `${edition.nbItems} actualités retenues ce matin. ${edition.nbSources} sources citées, environ ${edition.tempsLecture} minutes de lecture.`)}
             </p>
           )}
 
@@ -389,11 +352,11 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
               </a>
               {edition.precedente ? (
                 <Link to={`${base}/${edition.precedente.date}`} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-                  Édition du {edition.precedente.dateLongue.replace(/^\w+\s/, '').replace(/\s\d{4}$/, '')}
+                  {L.editionDu(edition.precedente.dateLongue.replace(/^\S+\s/, '').replace(/\s\d{4}$/, ''))}
                 </Link>
               ) : (
-                <Link to={base} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-                  {lang === 'en' ? 'All editions' : 'Toutes les éditions'}
+                <Link to={`${base}/publications`} style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
+                  {L.toutesEditions}
                 </Link>
               )}
             </div>
@@ -416,14 +379,12 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
 
           {/* Sommaire : navigation réelle, dans le DOM au prérendu donc citable */}
           {ok && (
-            <nav aria-label="Sommaire de l'édition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
+            <nav aria-label={L.sommaire} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
               <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>{L.sommaire}</div>
               {[
                 ...(edition.une ? [{ id: 'une', libelle: L.aLaUne, zone: 'une', droite: edition.une.titre.slice(0, 42) + (edition.une.titre.length > 42 ? '…' : '') }] : []),
-                ...sections.map(s => ({ id: s.id, libelle: s.titre, zone: s.zone, droite: lang === 'en'
-                  ? `${s.items.length} stor${s.items.length > 1 ? 'ies' : 'y'}`
-                  : `${s.items.length} actualité${s.items.length > 1 ? 's' : ''}` })),
-                ...(analyse ? [{ id: 'analyse', libelle: L.analyse, zone: 'analyse', droite: lang === 'en' ? 'Signed' : 'Signée' }] : []),
+                ...sections.map(s => ({ id: s.id, libelle: s.titre, zone: s.zone, droite: L.nbActualites(s.items.length) })),
+                ...(analyse ? [{ id: 'analyse', libelle: L.analyse, zone: 'analyse', droite: L.signee }] : []),
               ].map((row, i) => {
                 const Icon = row.zone === 'analyse' ? PenLine : zoneIcon(row.zone)
                 return (
@@ -450,10 +411,10 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <div style={{ ...cardStyle, padding: 32, maxWidth: 720 }}>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)' }}>{L.indisponibleTitre}</h2>
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
-                Elle a peut-être été retirée, ou l'adresse comporte une erreur.
+                {L.indisponibleAide}
               </p>
               <Link to={base} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700 }}>
-                Voir les éditions publiées
+                {L.voirEditions}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -467,11 +428,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
           <div style={wrap}>
             <Kicker>{L.aLaUne}</Kicker>
             <article id="une" className="u-lift" style={{ ...cardStyle, padding: 'clamp(28px, 4vw, 44px)', borderTop: `3px solid ${c}`, scrollMarginTop: 140 }}>
-              {cites.includes(1) && <MarqueurAnalyse />}
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: 7, background: cLight, color: c, padding: '5px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 14 }}>
-                {(() => { const I = zoneIcon(edition.une.zone); return <I size={13} strokeWidth={2.2} aria-hidden="true" /> })()}
-                {edition.une.zoneLibelle}
-              </div>
+              {cites.includes(1) && <MarqueurAnalyse libelle={L.reprisAnalyse} />}
               <h2 id={edition.une.id} style={{ ...h2Style, fontSize: 'clamp(22px, 3vw, 32px)', marginBottom: 14, scrollMarginTop: 140 }}>{edition.une.titre}</h2>
               <div className="veille-texte veille-texte--une" style={{ maxWidth: 780 }} dangerouslySetInnerHTML={{ __html: edition.une.texteHtml }} />
               <BlocSources sources={edition.une.sources} variante="une" />
@@ -487,19 +444,9 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <div style={editorialAside}>
               <Kicker>{L.detailDuJour}</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
-                {lang === 'en'
-                  ? `Stories from ${edition.dateAffichee.replace(/\s\d{4}$/, '')}`
-                  : `Les actualités du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}`}
+                {L.actualitesDu(jourMois)}
               </h2>
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>{phraseRepartition(edition, lang)}</strong>
-              </p>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 18px' }}>
-                {lang === 'en'
-                  ? 'Every story carries its sources. Links open the original publication.'
-                  : "Chaque actualité porte sa ou ses sources. Les liens ouvrent la publication d'origine."}
-              </p>
-              <nav aria-label="Sections de l'édition">
+              <nav aria-label={L.detailDuJour}>
                 {sections.map((s, i) => {
                   const Icon = zoneIcon(s.zone)
                   return (
@@ -518,20 +465,15 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                 const Icon = zoneIcon(s.zone)
                 return (
                   <section key={s.id} id={s.id} style={{ marginBottom: 44, scrollMarginTop: 140 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 11, marginBottom: 4 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 11, marginBottom: 8 }}>
                       <span aria-hidden="true" style={{ width: 30, height: 30, borderRadius: 8, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                         <Icon size={16} strokeWidth={2.2} style={{ color: c }} />
                       </span>
                       <h2 style={{ ...h2Style, fontSize: 'clamp(19px, 2.4vw, 24px)', margin: 0 }}>{s.titre}</h2>
                     </div>
-                    <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 8px 41px' }}>
-                      {lang === 'en'
-                        ? `${s.items.length} stor${s.items.length > 1 ? 'ies' : 'y'}`
-                        : `${s.items.length} actualité${s.items.length > 1 ? 's' : ''}`}
-                    </p>
                     {s.items.map((it, j) => (
                       <article key={it.id} id={it.id} style={{ padding: '26px 0', borderTop: j === 0 ? 'none' : '1px solid #E5E7EB', scrollMarginTop: 140 }}>
-                        {cites.includes(it.rang) && <MarqueurAnalyse />}
+                        {cites.includes(it.rang) && <MarqueurAnalyse libelle={L.reprisAnalyse} />}
                         <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 18, color: '#0A0A0A', letterSpacing: '-0.01em', margin: '0 0 10px', maxWidth: 720 }}>
                           {it.titre || premiersMots(it.texteHtml, 12)}
                         </h3>
@@ -561,7 +503,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                 <Kicker>{L.recherche}</Kicker>
                 <h2 id={s.id} style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)', marginBottom: 12, scrollMarginTop: 140 }}>{s.titre}</h2>
                 <span style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 16 }}>
-                  Pour les équipes techniques
+                  {L.equipesTech}
                 </span>
                 {s.items.map(it => (
                   <div key={it.id} className="u-lift" style={{ ...cardStyle, padding: 24, marginBottom: 16 }}>
@@ -617,27 +559,23 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
 
             <div className="veille-analyse" style={{ maxWidth: 760 }} dangerouslySetInnerHTML={{ __html: analyse.html }} />
 
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760, marginTop: 36, display: 'flex', gap: 18, alignItems: 'flex-start', flexWrap: 'wrap' }}>
+            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760, marginTop: 36, display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
               <img src="/assets/mathias-nizan@240.jpg" width={56} height={56} loading="lazy"
-                alt="Mathias Nizan, fondateur de Masteria"
+                alt={L.photoAlt}
                 style={{ borderRadius: 99, objectFit: 'cover', flexShrink: 0 }} />
               <div style={{ flex: 1, minWidth: 240 }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16, color: '#F8FAFC' }}>{analyse.auteur}</div>
-                <div style={{ fontSize: 13.5, color: '#94A3B8' }}>{analyse.auteurRole}</div>
-                <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: '8px 0 10px' }}>
-                  Il forme les équipes dirigeantes et techniques à l'IA générative depuis 2022.
-                </p>
-                <Link to="/centre-formation-ia-entreprise" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, color: '#93C5FD', textDecoration: 'none' }}>
-                  Son parcours
-                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                <Link to="/mathias-nizan" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16, color: '#F8FAFC', textDecoration: 'none' }}>
+                  Mathias Nizan
+                  <ArrowRight size={14} strokeWidth={2.4} style={{ color: '#93C5FD' }} aria-hidden="true" />
                 </Link>
+                <div style={{ fontSize: 13.5, color: '#94A3B8' }}>{L.roleDirection}</div>
               </div>
             </div>
 
             {cites.length > 0 && (
-              <div style={{ marginTop: 32, maxWidth: 760 }}>
+              <nav aria-label={L.actualitesCitees} style={{ marginTop: 32, maxWidth: 760 }}>
                 <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 6 }}>
-                  {lang === 'en' ? 'Sources cited' : 'Les actualités citées'}
+                  {L.actualitesCitees}
                 </div>
                 {tousItems.filter(it => cites.includes(it.rang)).map((it, i) => (
                   <a key={it.id} href={`#${it.id}`} style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B', textDecoration: 'none', fontSize: 14.5, color: '#E2E8F0' }}>
@@ -645,7 +583,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                     {it.titre || premiersMots(it.texteHtml, 10)}
                   </a>
                 ))}
-              </div>
+              </nav>
             )}
           </div>
         </section>
@@ -656,22 +594,21 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
         <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <Kicker>{L.methode}</Kicker>
-            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)' }}>Comment cette édition a été produite</h2>
+            <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)' }}>
+              {edition.nbArticlesCollectes
+                ? L.methodeTitreChiffres(edition.nbArticlesCollectes, edition.nbItems)
+                : L.nbActualites(edition.nbItems)}
+            </h2>
             <p style={{ ...answerStyle, background: '#fff' }}>
-              <strong>
-                {edition.nbArticlesCollectes
-                  ? (lang === 'en'
-                      ? `${edition.nbFluxConsultes} feeds were reviewed on the morning of ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} stories collected, ${edition.nbItems} selected, each linked to its source. The analysis is written by the editorial team and published with the edition.`
-                      : `${edition.nbFluxConsultes} flux ont été dépouillés le matin du ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, ${edition.nbArticlesCollectes} actualités collectées, ${edition.nbItems} retenues, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`)
-                  : (lang === 'en'
-                      ? `${edition.nbItems} stories were selected on ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, each linked to its source. The analysis is written by the editorial team and published with the edition.`
-                      : `${edition.nbItems} actualités ont été retenues le ${edition.dateAffichee.replace(/\s\d{4}$/, '')}, chacune reliée à sa source. L'analyse est écrite par l'équipe éditoriale et publiée avec l'édition.`)}
-              </strong>
+              {edition.nbFluxConsultes
+                ? L.methodePhrase(jourMois, edition.nbFluxConsultes)
+                : L.methodePhraseCourte(jourMois)}{' '}
+              <Link to="/veille-ia/a-propos" style={{ ...aStyle, whiteSpace: 'nowrap' }}>{L.methodeLien}</Link>
             </p>
             {edition.sourcesDuJour && edition.sourcesDuJour.length > 0 && (
               <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
                 <span style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '.06em', textTransform: 'uppercase', color: '#6B7280' }}>
-                  Sources du jour
+                  {L.sourcesDuJour}
                 </span>
                 {edition.sourcesDuJour.map(nom => (
                   <span key={nom} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 99, padding: '6px 13px', fontSize: 13, fontWeight: 600, color: '#374151' }}>
@@ -684,13 +621,15 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
         </section>
       )}
 
-      {/* ── 7. NAVIGUER ENTRE LES ÉDITIONS (famille F7) ── */}
+      {/* ── 7. NAVIGUER ENTRE LES ÉDITIONS (famille F7) ──
+          Bloc de liens, donc balisé <nav> : les titres des éditions voisines
+          appartiennent à leur propre page. */}
       {ok && (
         <section style={{ padding: sectionPad, background: '#fff' }}>
-          <div style={wrap}>
+          <nav aria-label={L.editionsVoisines} style={wrap}>
             <Kicker>{L.poursuivre}</Kicker>
             <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)' }}>
-              {edition.precedente || edition.suivante ? 'Les éditions voisines' : 'La suite de la rubrique'}
+              {edition.precedente || edition.suivante ? L.editionsVoisines : L.suiteRubrique}
             </h2>
             {/* Grille rendue seulement s'il existe une voisine : une carte
                 unique « Toutes les éditions » étirée sur toute la largeur
@@ -698,8 +637,8 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             {(edition.precedente || edition.suivante) && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
               {[
-                edition.precedente && { v: edition.precedente, tag: 'Édition précédente', Icon: ArrowLeft },
-                edition.suivante && { v: edition.suivante, tag: 'Édition suivante', Icon: ArrowRight },
+                edition.precedente && { v: edition.precedente, tag: L.editionPrecedente, Icon: ArrowLeft },
+                edition.suivante && { v: edition.suivante, tag: L.editionSuivante, Icon: ArrowRight },
               ].filter(Boolean).map(({ v, tag, Icon }) => (
                 <Link key={v.date} to={`${base}/${v.date}`} className="u-lift"
                   style={{ ...cardStyle, padding: 26, textDecoration: 'none', display: 'block', height: '100%', boxSizing: 'border-box', transition: 'border-color 0.2s' }}
@@ -710,27 +649,30 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                     {tag}
                   </span>
                   <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 6 }}>{v.titreEditorial}</h3>
-                  <p style={{ fontSize: 13.5, color: '#6B7280', margin: 0 }}>{v.dateLongue} · {v.nbItems} {L.actualites}</p>
+                  <span style={{ display: 'block', fontSize: 13.5, color: '#6B7280' }}>{v.dateLongue} · {v.nbItems} {L.actualites}</span>
                 </Link>
               ))}
             </div>
             )}
             <div style={{ textAlign: 'center', marginTop: 28 }}>
-              <Link to={base} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
-                {lang === 'en' ? 'All AI Watch editions' : 'Toutes les éditions de la veille'}
+              <Link to={`${base}/publications`} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700, textDecoration: 'none' }}>
+                {L.toutesEditionsVeille}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
-              {!edition.suivante && (
-                <p style={{ fontSize: 13.5, color: '#6B7280', marginTop: 16 }}>
-                  Prochaine édition le {prochainJourOuvre(edition.date)} au matin.
-                </p>
-              )}
             </div>
-          </div>
+          </nav>
+          {!edition.suivante && (
+            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '16px 0 0', textAlign: 'center' }}>
+              {L.prochaineEdition(jourOuvreSuivant(edition.date, lang))}
+            </p>
+          )}
         </section>
       )}
 
-      {/* ── 8. CTA FINALE ── */}
+      {/* ── 8. CTA FINALE ──
+          Titre daté et texte bâti sur le titre de la une : l'encart parle de
+          l'édition qu'on vient de lire, pas d'une offre générique. */}
+      {ok && (
       <section style={{ background: '#F9FAFB', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
         <div style={{ ...wrap, position: 'relative', overflow: 'hidden', background: '#0A0F1E', borderRadius: 16, padding: 'clamp(48px, 7vw, 80px) clamp(24px, 5vw, 64px)', textAlign: 'center' }}>
           <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
@@ -738,23 +680,22 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em', margin: '0 0 16px' }}>
-              {lang === 'en'
-                ? 'What this changes for your teams'
-                : 'Ce que cette actualité change pour vos équipes'}
+              {L.ctaTitre(jourMois)}
             </h2>
-            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Masteria forme dirigeants, chefs de projet, développeurs et juristes sur l'IA générative, et développe les solutions qui vont avec.
+            <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 640 }}>
+              {edition.une && edition.une.titre
+                ? <><strong style={{ color: '#fff', fontWeight: 700 }}>{edition.une.titre.replace(/[.\s]+$/, '')}.</strong>{' '}</>
+                : null}
+              {L.ctaSuite}
             </p>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Parler de votre projet
+            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 9, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
+              {L.ctaBouton}
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Organisme certifié Qualiopi · Lyon, Europe, États-Unis, Inde
-            </p>
           </div>
         </div>
       </section>
+      )}
     </div>
   )
 }

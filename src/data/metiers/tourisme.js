@@ -1,286 +1,282 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-tourisme (template MetierPage).
  * Créé le 2026-08-21 sur le modèle de sante.js (formation 1 jour), brief docs/brief-programme-metier.md.
+ * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx) ;
+ * faits outils relevés le 7 octobre 2026 (fiche FAITS-OUTILS du 07/10, claude-facts.js du 05/10).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
+ "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA tourisme & hôtellerie : avis, fiches | Masteria",
-  "metaDesc": "Formation IA tourisme pour hôtels, campings, restaurants, offices de tourisme et agences : avis clients à votre ton, fiches plateformes, emails multilingues, réseaux sociaux. 1 jour en intra, Qualiopi, finançable OPCO.",
-  "keywords": "formation ia tourisme, ia tourisme, formation ia hôtellerie, ia restauration, intelligence artificielle tourisme, ia hôtel, formation ia office de tourisme",
-  "h1": "Formation IA tourisme : l'IA générative de l'avis client à la fiche, dans toutes vos langues",
+  "metaTitle": "Formation IA tourisme et hôtellerie | Masteria",
+  "metaDesc": "Formation IA tourisme pour hôtels, campings, restaurants, offices de tourisme : réponses aux avis, fiches, emails, menus multilingues. 1 jour, Qualiopi.",
+  "keywords": "formation ia tourisme, ia tourisme, formation ia hôtellerie, ia restauration, intelligence artificielle tourisme, ia hôtel, formation ia office de tourisme, formation ia camping",
+  "h1": "Formation IA tourisme : répondre, décrire et traduire avec l'IA, en une journée",
   "h1a": "Formation IA tourisme & hôtellerie :",
-  "h1b": "l'IA générative de l'avis client à la fiche, dans toutes vos langues",
+  "h1b": "répondre, décrire et traduire avec l'IA, en une journée",
   "eyebrow": "Formation secteur · Tourisme, hôtellerie, restauration",
-  "badge3": "Vos avis, fiches et emails réels · Multilingue vérifié",
-  "geo": "La formation IA tourisme de Masteria apprend aux équipes des hôtels, campings, restaurants, offices de tourisme et agences d'activités à utiliser l'intelligence artificielle générative sur leurs écrits réels : réponses aux avis à leur ton et dans la langue du client, fiches et contenus pour les plateformes de réservation, emails et devis groupes, réseaux sociaux, menus et brochures multilingues. Une journée en intra, multi-outils, en ateliers sur vos documents, certifiée Qualiopi et finançable par votre OPCO.",
-  "sub": "Le tourisme vit d'écrits courts et permanents : des avis auxquels il faut répondre, des fiches à tenir à jour sur chaque plateforme, des emails dans plusieurs langues, des réseaux qui suivent les saisons. La formation tient en une journée, parce que les équipes du secteur sont opérationnelles et que la saisonnalité laisse peu de fenêtres. Elle pose d'entrée ce qui ne se délègue pas : jamais de faux avis, relecture humaine de ce qui engage (prix, disponibilités, conditions), et un locuteur pour vérifier les traductions critiques.",
-  "intro": "La formation IA tourisme de Masteria apprend aux équipes des hôtels, campings, restaurants, offices de tourisme et agences d'activités à utiliser l'intelligence artificielle générative sur leurs écrits réels : réponses aux avis à leur ton et dans la langue du client, fiches et contenus pour les plateformes de réservation, emails et devis groupes, réseaux sociaux, menus et brochures multilingues. Une journée en intra, multi-outils, en ateliers sur vos documents, certifiée Qualiopi et finançable par votre OPCO."
+  "badge3": "Vos avis, vos fiches et vos menus, dans vos langues",
+  "geo": "La formation IA tourisme de Masteria donne aux équipes des hôtels, campings, restaurants, offices de tourisme et prestataires d'activités une méthode pour écrire plus vite avec l'IA générative : réponses aux avis dans la langue du client, descriptions pour les plateformes de réservation, réponses aux demandes de groupes, publications de saison, menus et livrets d'accueil traduits. Une journée en intra, bâtie sur vos propres textes, avec l'outil dont vous disposez : Microsoft Copilot (anciennement Microsoft 365 Copilot) si vous êtes sous Microsoft 365, sinon ChatGPT, Gemini, Claude ou Vibe. Aucun faux avis, et chaque prix ou condition relu par l'équipe.",
+  "sub": "Un établissement touristique écrit sans cesse et en plusieurs langues : la réponse à l'avis de la veille, la fiche à corriger avant l'ouverture, l'email d'un groupe qui veut un devis, la carte de la nouvelle saison. La formation tient en une journée parce que la saison laisse peu de place au reste. Elle commence par trois règles : on ne fabrique jamais d'avis, on relit tout ce qui touche aux prix et aux disponibilités, et un locuteur valide une traduction qui engage, comme la liste des allergènes.",
+  "intro": "Une journée pour que la réception, la salle, la communication et l'accueil écrivent plus vite avec l'IA générative, dans toutes les langues de leurs clients, sans jamais publier un faux avis."
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "1 jour (7 h) en intra, pensé pour des équipes opérationnelles et la saisonnalité du secteur ; format 2 jours possible avec ateliers approfondis par équipe"
+   "value": "Sept heures sur une journée, dans l'établissement et hors saison ; deux jours pour aller jusqu'aux ateliers par service"
   },
   {
    "label": "Pour qui",
-   "value": "Hôtels, campings et hébergements, restaurants et traiteurs, offices de tourisme et destinations, agences réceptives, activités et loisirs : direction, réception, salle, communication, accueil"
+   "value": "Direction, réception, salle, cuisine, communication et accueil des hôtels, campings, restaurants, offices de tourisme, agences et sites de loisirs"
   },
   {
    "label": "Outils",
-   "value": "Multi-outils, indépendants des éditeurs : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral, sur les versions adaptées aux données de vos clients"
+   "value": "L'assistant que l'établissement possède déjà, en version gratuite pour tester puis en offre payante pour les données clients"
   },
   {
    "label": "Méthode",
-   "value": "Ateliers sur vos documents réels : vos avis en ligne, vos fiches sur les plateformes, vos emails de réservation, vos menus et supports, avec des gabarits prêts à l'emploi en sortie"
+   "value": "Avis reçus cette saison, fiches publiées, emails de groupes, carte et livret d'accueil apportés par l'équipe"
   },
   {
    "label": "Cadre",
-   "value": "Jamais d'avis généré ni de faux avis, réponse validée par un humain sur les cas sensibles, données clients protégées (RGPD), traductions relues par un locuteur quand elles engagent"
+   "value": "Pas de faux avis, prix et conditions relus, données clients anonymisées, traductions sensibles validées par un locuteur"
   },
   {
    "label": "Financement",
-   "value": "Certifiée Qualiopi, finançable par votre OPCO selon votre convention collective (il varie entre hôtellerie-restauration et organismes de tourisme), dossier monté avec vous avant le début"
+   "value": "Formation certifiée Qualiopi ; l'opérateur de votre convention collective, souvent AKTO en hôtellerie-restauration, statue sur la prise en charge"
   }
  ],
  "missionsHead": {
-  "kicker": "Activité par activité",
-  "h2": "Que change l'IA dans le quotidien d'un hôtel, d'un restaurant ou d'un office de tourisme ?",
-  "answer": "L'IA générative touche six activités du secteur : les réponses aux avis clients, les contenus et fiches sur les plateformes, les emails et demandes de réservation, les réseaux sociaux et la saisonnalité, les menus, brochures et traductions, l'accueil et les informations pratiques. Dans chacune, elle rédige vite, à votre ton et dans la langue du client ; les prix, les disponibilités et les cas sensibles restent validés par un humain.",
-  "foot": "La formation couvre ces volets avec un poids ajusté à votre établissement au cadrage. Pour des solutions IA sur mesure dans le secteur (conseil, développement, intégrations), voyez notre page {/ia-tourisme-hotellerie|IA pour le tourisme et l'hôtellerie}."
+  "kicker": "Les écrits d'une saison",
+  "h2": "Six familles d'écrits où l'IA aide un hôtel, un restaurant ou un office de tourisme",
+  "answer": "Six familles d'écrits occupent l'équipe toute l'année : les réponses aux avis, les fiches des plateformes et du site, les emails de réservation, les publications de saison, les menus et supports traduits, les informations pratiques de l'accueil. L'outil rédige vite, dans votre style et dans la langue du client ; l'équipe garde les prix, les disponibilités, les cas sensibles et la relation.",
+  "foot": "Le cadrage règle la journée sur votre activité : un hôtel insiste sur les avis et les fiches, un restaurant sur la carte et les réseaux, un office de tourisme sur les contenus de destination. Pour un outil construit sur votre logiciel de réservation, voyez la page {/ia-tourisme-hotellerie|l'IA au service des hôtels et des destinations}."
  },
  "missions": [
   {
    "icon": "MessageSquareHeart",
-   "title": "Réponses aux avis clients",
-   "desc": "Répondre à chaque avis, positif ou négatif, à votre ton et dans la langue du client, sur Google, Tripadvisor ou Booking. L'IA rédige un premier jet personnalisé à partir du contenu de l'avis ; vous validez avant publication. Jamais d'avis généré ni de faux avis : les cas sensibles (litige, hygiène, sécurité) passent par une relecture humaine attentive."
+   "title": "Réponses aux avis",
+   "desc": "Google, Tripadvisor ou Booking : l'IA prépare une réponse qui reprend ce que le client a écrit, dans sa langue et dans votre style. Vous la relisez avant de publier. Une plainte qui touche à l'hygiène, à la sécurité ou à un remboursement passe toujours par la direction."
   },
   {
    "icon": "FileText",
-   "title": "Contenus, site et fiches plateformes",
-   "desc": "Descriptions d'hébergements, de tables et d'activités pour votre site et les plateformes de réservation, déclinées par type de chambre ou d'offre, actualités saisonnières, pages pratiques. L'IA part de vos équipements et de vos points forts réels, respecte les limites de caractères de chaque plateforme et décline le même fond en plusieurs formats."
+   "title": "Fiches plateformes et site",
+   "desc": "Description d'une chambre, d'un emplacement, d'une table ou d'une activité, déclinée par plateforme et dans ses limites de caractères : l'outil part de vos équipements réels et de vos points forts. Il ne doit rien ajouter que vous n'ayez fourni, ni vue sur mer ni piscine chauffée."
   },
   {
    "icon": "Mail",
-   "title": "Emails et demandes de réservation",
-   "desc": "Demandes de disponibilité, devis pour les groupes et les entreprises, confirmations, modifications et annulations, informations pratiques avant séjour : des réponses complètes, en langage clair, dans la langue du client. Vos gabarits et vos conditions servent de base ; tout ce qui engage (prix, disponibilités, conditions d'annulation) est relu avant envoi."
+   "title": "Demandes et réservations",
+   "desc": "Disponibilités, devis pour un groupe ou un événement d'entreprise, confirmation, modification, annulation : la réponse arrive complète, en langage clair et dans la langue du client. Tarifs, dates et conditions d'annulation se vérifient avant l'envoi."
   },
   {
    "icon": "Share2",
-   "title": "Réseaux sociaux et saisonnalité",
-   "desc": "Un calendrier éditorial construit par saison (ouverture, haute saison, ailes de saison, fermeture), des publications déclinées par plateforme depuis un même événement ou une même offre, des légendes à votre ton, des réponses aux commentaires. La présence en ligne tient toute l'année, y compris quand l'équipe est prise par le service."
+   "title": "Réseaux et saisonnalité",
+   "desc": "Calendrier de publications pour l'ouverture, la haute saison et l'arrière-saison, déclinaisons par réseau, légendes, réponses aux commentaires. La présence en ligne tient même quand toute l'équipe est en service."
   },
   {
    "icon": "Globe",
-   "title": "Menus, brochures et traductions",
-   "desc": "Menus traduits et tenus à jour, brochures, panneaux et supports d'accueil déclinés en plusieurs langues, dans un registre adapté à chaque clientèle. L'IA produit des versions multilingues solides et homogènes ; un locuteur relit ce qui engage : allergènes, consignes de sécurité, conditions de vente et d'annulation."
+   "title": "Menus, livrets et traductions",
+   "desc": "Carte traduite et tenue à jour, livret d'accueil, signalétique, consignes d'activité en plusieurs langues : les versions sortent homogènes. Un locuteur relit ce qui engage, en premier lieu les quatorze allergènes à déclarer et les consignes de sécurité."
   },
   {
    "icon": "DoorOpen",
-   "title": "Accueil et FAQ pratique",
-   "desc": "Questions récurrentes des clients (horaires, parking, animaux, accès, équipements), livret d'accueil, affichages et messages d'avant-séjour, en plusieurs langues. À partir de vos informations pratiques rassemblées en fichiers, l'IA répond juste et de la même façon partout ; la réception garde la main sur les cas particuliers."
+   "title": "Accueil et informations pratiques",
+   "desc": "Horaires, parking, animaux, accès, équipements : rassemblées une fois dans un document de référence, vos informations pratiques servent de base à des réponses identiques partout. La réception garde la main sur les demandes particulières."
   }
  ],
  "atoutsHead": {
-  "kicker": "Ce que vous y gagnez",
-  "h2": "Les atouts de l'IA générative pour un établissement touristique",
-  "answer": "Six gains : des avis traités à votre ton dans la langue du client, des fiches et des contenus à jour sur toutes les plateformes, des emails de réservation plus rapides et plus clairs, une présence sociale tenue toute l'année, le multilingue enfin accessible, et un cadre écrit qui protège l'établissement, ses clients et sa réputation.",
-  "foot": "Un mot d'honnêteté qui rend ces gains durables : l'IA peut inventer un détail (un horaire, un équipement, une distance) ou produire une traduction approximative. Donnez-lui vos informations pratiques en source, relisez tout ce qui touche aux prix, aux disponibilités et aux conditions, faites vérifier par un locuteur les traductions qui engagent, et n'écrivez jamais un faux avis : le reste, elle le fait remarquablement bien."
+  "kicker": "Le gain pour l'établissement",
+  "h2": "Plus d'avis traités, des fiches justes, des clients étrangers mieux servis",
+  "answer": "La journée libère des heures prises par les textes courts et répétitifs : chaque avis reçoit sa réponse, même en août ; les fiches restent cohérentes entre les plateformes ; les demandes de groupe partent complètes ; les réseaux vivent toute l'année ; les clients étrangers lisent la carte et le livret dans leur langue. L'équipe garde la main sur tout ce qui engage la maison.",
+  "foot": "Un risque domine dans ce secteur : l'outil peut inventer un détail plausible, une distance à la plage, un horaire d'ouverture, un équipement que vous n'avez pas. Il suffit de lui donner vos informations pratiques comme source unique et de relire avant publication ; une fiche fausse se paie ensuite en avis négatifs."
  },
  "atouts": [
   {
-   "title": "Des avis traités, à votre ton, dans la langue du client",
-   "desc": "Chaque avis reçoit une réponse personnalisée, positive ou négative, y compris en pleine saison. L'e-réputation se travaille en quelques minutes par jour, sur toutes les plateformes où l'on vous note."
+   "title": "Chaque avis obtient une réponse",
+   "desc": "Positif ou négatif, rédigé en néerlandais, en anglais ou en allemand, l'avis reçoit une réponse personnalisée en quelques minutes par jour, au cœur de la saison."
   },
   {
-   "title": "Des fiches et des contenus à jour partout",
-   "desc": "Site, plateformes de réservation, annuaires de destination : les descriptions restent justes, complètes et aux bons formats, ce qui évite les fiches contradictoires et les textes recopiés d'une saison sur l'autre."
+   "title": "Les fiches disent la même chose partout",
+   "desc": "Site, plateformes de réservation, annuaire de la destination : une seule source d'informations, des textes déclinés aux bons formats, plus de descriptions contradictoires."
   },
   {
-   "title": "Des réservations traitées plus vite et plus clairement",
-   "desc": "Demandes, devis groupes, confirmations : des réponses complètes du premier coup, en langage clair et dans la langue du client, avec vos conditions correctement énoncées."
+   "title": "Les groupes reçoivent un devis complet",
+   "desc": "La réponse à une demande de groupe reprend dates, capacités, options et conditions, écrite dans la langue du demandeur puis relue avant l'envoi."
   },
   {
-   "title": "Une présence sociale tenue toute l'année",
-   "desc": "Le calendrier éditorial suit vos saisons et se prépare à l'avance ; les publications se déclinent par plateforme depuis un même fond. L'établissement reste visible même quand tout le monde est en service."
+   "title": "Les réseaux suivent la saison",
+   "desc": "Le calendrier se prépare à l'intersaison, les publications se déclinent par réseau, et l'établissement reste visible pendant les semaines où l'équipe enchaîne les services."
   },
   {
-   "title": "Le multilingue enfin accessible",
-   "desc": "Menus, brochures, livrets, réponses : des versions solides dans les langues de vos clientèles, produites au fil de l'eau, avec la relecture d'un locuteur là où une erreur engage."
+   "title": "Le multilingue devient abordable",
+   "desc": "Carte, livret, consignes et réponses existent dans les langues de vos clientèles, produites au fil de l'eau, avec la relecture d'un locuteur pour ce qui engage."
   },
   {
-   "title": "Un cadre qui protège l'établissement et sa réputation",
-   "desc": "Jamais de faux avis, données clients protégées, relecture de ce qui engage : les usages sont posés par écrit, applicables par une équipe qui change avec les saisons, saisonniers compris."
+   "title": "Les saisonniers démarrent avec des modèles",
+   "desc": "Gabarits de réponse, règles écrites et projet commun accueillent les nouveaux venus : la qualité des écrits ne dépend plus d'une seule personne."
   }
  ],
  "programmeHead": {
-  "h2": "Programme de la formation IA tourisme sur 1 jour",
-  "answer": "Matin : ce que les modèles font et ne font pas sur les écrits du secteur, le panorama des outils et le cadre des données clients, la méthode de la demande efficace appliquée à une vraie réponse d'avis, le ton de l'établissement encodé dans les instructions personnalisées, un premier atelier avis et emails, puis le projet partagé de l'établissement. Après-midi : ateliers contenus et fiches plateformes, réseaux sociaux et saison, analyse d'un export d'avis ou d'occupation, puis les fonctionnalités avancées condensées : compétences (Skills), assistants et agents, tâches planifiées, gouvernance légère et plan d'action avec l'évaluation des acquis.",
-  "foot": "Le programme s'ajuste au cadrage : un hôtel approfondit les avis et les fiches, un restaurant les menus et les réseaux, un office de tourisme les contenus de destination et l'accueil ; en format 2 jours, la seconde journée reprend les fonctionnalités avancées en atelier, équipe par équipe. Fonctionnalités vérifiées en août 2026 : si une fonction n'est pas activée sur vos licences le jour J, elle est montrée en démonstration puis transposée sur les projets partagés et les instructions personnalisées."
+  "h2": "La journée de formation IA tourisme, matin et après-midi",
+  "answer": "Le matin pose la méthode : la manière dont un assistant traite les écrits d'un établissement, les offres et les données clients, la demande construite sur un avis négatif, la voix de l'établissement enregistrée, un atelier avis et réservations, puis le projet commun. L'après-midi passe aux fiches et au site, aux menus et traductions, au calendrier de saison, à la lecture d'un export d'avis, à la compétence et aux tâches programmées, avant les règles communes et les trois usages que chacun choisit.",
+  "foot": "Le cadrage ajuste la journée : un hôtel approfondit avis et fiches, un restaurant la carte et les réseaux, un office de tourisme les contenus de destination et les réponses aux visiteurs. En deux jours, la seconde journée reprend la compétence, l'assistant et les tâches programmées en atelier, service par service. Nous avons vérifié le 7 octobre 2026 les fonctions des outils mentionnées ; ce que vos abonnements n'ouvrent pas est montré, puis refait avec ce que vous possédez."
  },
  "programme": [
   {
-   "jour": "Jour 1",
-   "titre": "Des avis clients aux automatisations, sur vos écrits réels",
+   "jour": "La journée",
+   "titre": "De l'avis client aux tâches programmées, sur vos propres textes",
    "matin": [
     {
-     "t": "Capacités et limites de l'IA dans le tourisme",
-     "d": "Ce que les modèles font bien sur les écrits du secteur : répondre à un avis, décrire une chambre ou une table, traduire un menu, tenir un ton. Leurs limites : la lecture des très gros tableaux et le contrôle de ce qui engage ; prix, disponibilités et conditions restent relus par vous."
+     "t": "Ce qu'un assistant fait des écrits d'un établissement",
+     "d": "Il répond à un avis, décrit une chambre, traduit une carte et tient un ton en quelques secondes. Il peut aussi inventer un équipement ou une distance. Démonstration sur un avis réel de votre établissement, puis la règle du jour : l'outil ne travaille qu'à partir de ce que vous lui donnez."
     },
     {
-     "t": "Panorama des outils et données clients",
-     "d": "ChatGPT Business, Microsoft 365 Copilot, Claude, Gemini, Vibe (anciennement Le Chat) de Mistral, hébergé en Europe : lequel pour quels écrits, où vont les données. Les offres entreprise n'entraînent pas les modèles sur vos données ; coordonnées et historiques de séjour restent hors des versions gratuites."
+     "t": "Quelle offre pour quelles données",
+     "d": "Version gratuite pour s'exercer sur des textes publics ; offre payante professionnelle dès qu'apparaissent le nom d'un client, son adresse ou son historique de séjour. Le formateur explique ce que ChatGPT, Copilot, Claude et Gemini font des échanges, ainsi que Vibe (anciennement Le Chat), que Mistral héberge en Europe par défaut."
     },
     {
-     "t": "La demande efficace, sur une vraie réponse d'avis",
-     "d": "Contexte, ton, langue du client, faits de l'avis repris, format court, itération puis relecture : la méthode appliquée en direct à un avis réel de votre établissement, positif puis négatif. Chacun repart avec une trame de demande qui produit une réponse prête à valider."
+     "t": "La méthode sur un avis négatif",
+     "d": "Contexte de l'établissement, faits rapportés par le client, langue, longueur, ton, une ou deux de vos meilleures réponses pour exemple : chacun bâtit sa demande en direct sur un avis négatif reçu cette saison, puis sur un avis élogieux."
     },
     {
-     "t": "Le ton de l'établissement encodé",
-     "d": "Instructions personnalisées et mémoire : votre positionnement, votre vocabulaire, vos formules d'accueil et vos interdits enregistrés une fois pour toutes, pour que chaque texte sorte dans le ton de la maison. Exercice sur deux réponses d'avis, avant et après réglage, pour constater l'écart."
+     "t": "La voix de l'établissement enregistrée",
+     "d": "Positionnement, vocabulaire, formules d'accueil, mots à éviter : tout s'enregistre une seule fois dans les consignes permanentes. Deux réponses comparées, avant et après réglage, montrent l'écart."
     },
     {
-     "t": "Premier atelier : avis et emails",
-     "d": "Chaque participant traite ses propres cas : une réponse d'avis négatif sensible, une demande de disponibilité, un devis groupe, une confirmation multilingue. Copilot dans Outlook ou Gemini dans Gmail rédigent le premier jet ; la relecture humaine reste la règle sur tout ce qui engage."
+     "t": "Atelier : avis et demandes de réservation",
+     "d": "Chacun traite ses propres cas : un avis sensible, une demande de disponibilités, un devis de groupe, une confirmation en anglais. le brouillon peut naître directement dans la messagerie, avec Gemini sous Gmail ou Copilot sous Outlook ; tarifs et conditions se relisent avant l'envoi."
     },
     {
-     "t": "Le projet partagé de l'établissement",
-     "d": "Monter le projet commun : gabarits de réponse, ton de la maison, informations pratiques et conditions de vente en fichiers de connaissance, droits de partage réglés. Projets partagés de ChatGPT Business, Projets de Claude, Notebooks de Copilot, NotebookLM sur vos documents, Projets et Bibliothèques de Vibe."
+     "t": "Le projet commun de l'établissement",
+     "d": "Gabarits de réponse, informations pratiques, conditions de vente et voix de la maison réunis dans l'espace commun de votre outil : projet partagé chez ChatGPT ou Claude, bloc-notes chez Copilot, Bibliothèque chez Vibe. Gemini Notebook (anciennement NotebookLM) répond sur ces documents en citant le passage utilisé."
     }
    ],
    "apresmidi": [
     {
-     "t": "Atelier contenus et fiches plateformes",
-     "d": "Réécrire une description d'hébergement, de table ou d'activité pour votre site et pour les plateformes de réservation, dans leurs limites de format, puis co-éditer une page saisonnière dans Canvas, Artifacts ou Copilot Pages. La recherche approfondie (Deep Research) prépare un contenu de fond sur votre destination."
+     "t": "Atelier : fiches plateformes et site",
+     "d": "Réécrire la description d'une chambre, d'un emplacement ou d'une table pour le site, puis la décliner pour chaque plateforme dans ses limites de format. Le groupe vérifie que rien n'a été ajouté aux équipements fournis."
     },
     {
-     "t": "Atelier réseaux sociaux et saison",
-     "d": "Construire le calendrier éditorial de la saison à venir à partir de vos temps forts, décliner un même événement en publications par plateforme, préparer les réponses aux commentaires. Les visuels existants sont décrits à l'IA pour obtenir des légendes justes, à votre ton."
+     "t": "Atelier : carte, livret et traductions",
+     "d": "La carte de saison et le livret d'accueil passent en anglais, en allemand ou en espagnol, dans un registre adapté à chaque clientèle. Allergènes, consignes de sécurité et conditions d'annulation sont marqués pour la relecture d'un locuteur."
     },
     {
-     "t": "Analyse d'un export d'avis ou d'occupation",
-     "d": "Faire lire un export agrégé et anonymisé (avis de l'année, occupation par semaine) à Copilot dans Excel ou à l'analyse de données de ChatGPT et Claude : motifs de satisfaction, points noirs récurrents, effets de saison. Les conclusions et les décisions restent les vôtres."
+     "t": "Atelier : calendrier de saison et visuels",
+     "d": "Les temps forts de l'année deviennent un calendrier de publications, décliné par réseau. Pour les visuels, Gemini en Business Standard génère chaque mois 30 images avec Nano Banana Pro (un modèle plus ancien prend ensuite le relais) et 500 secondes de vidéo dans Vids, au 7 octobre 2026 ; une image générée ne remplace jamais la photo d'une vraie chambre."
     },
     {
-     "t": "Compétences, assistants et agents : quoi pour quoi",
-     "d": "Créer une compétence (Skill) qui applique votre grille de réponse aux avis et s'active d'elle-même. Trier les GPTs existants, que l'éditeur fait converger vers les agents d'espace de travail ; un Gem ou un assistant Agent Builder porte la FAQ interne ; écrire dans le PMS ou le channel manager relève de Copilot Studio, un projet d'intégration."
+     "t": "Atelier : lire un export d'avis ou d'occupation",
+     "d": "Un export anonymisé des avis de l'année, ou de l'occupation par semaine, est confié à Copilot dans Excel, ou à ChatGPT et Claude qui en analysent le contenu : motifs de satisfaction, irritants qui reviennent, effets de saison. Les décisions restent celles de la direction."
     },
     {
-     "t": "Tâches planifiées et veille",
-     "d": "Planifier en une phrase un récapitulatif hebdomadaire des avis à traiter, une veille sur les événements de la destination ou les offres des concurrents, un rappel des contenus de saison à préparer. Tâches planifiées de ChatGPT et de Vibe, Workflows, Workspace Studio ; un humain relit avant toute publication."
+     "t": "Compétence, assistant et tâches programmées",
+     "d": "Votre grille de réponse aux avis est enregistrée comme compétence (Skill), chargée par l'outil chaque fois qu'un avis arrive. Les GPTs encore actifs s'arrêtent à la mi-décembre (le 11 décembre 2026) ; on les convertit en plugins. Un récapitulatif des avis à traiter, chaque lundi, se programme dans ChatGPT, Vibe ou Workspace Studio. Un assistant public sur votre site, lui, demande un développement séparé."
     },
     {
-     "t": "Gouvernance légère, plan d'action, évaluation",
-     "d": "Un propriétaire par projet, compétence et assistant, un registre simple, des règles écrites tenables par une équipe qui change avec les saisons, une revue à chaque intersaison. Puis votre plan d'action : trois usages à installer dans le mois, qui les porte, comment on en juge ; évaluation des acquis et remise des livrables."
+     "t": "Règles communes, trois usages, évaluation",
+     "d": "Les règles s'écrivent pour une équipe qui change avec les saisons : qui publie, qui relit, ce qui ne sort jamais sans la direction. Chacun choisit trois usages à installer dès la semaine suivante ; une évaluation des acquis termine la séance, et les gabarits restent à l'équipe."
     }
    ]
   }
  ],
  "profilsHead": {
-  "h2": "À qui s'adresse la formation IA tourisme ?",
-  "answer": "Aux équipes qui écrivent pour les clients dans le tourisme, l'hôtellerie et la restauration : hôtels, campings et hébergements, restaurants et traiteurs, offices de tourisme et destinations, agences réceptives, activités et loisirs. Direction, réception, salle, communication, accueil : sans prérequis technique, sur vos documents réels."
+  "h2": "Quels établissements suivent la formation IA tourisme ?",
+  "answer": "Les hôtels, campings et résidences, les restaurants et traiteurs, les offices de tourisme, les agences réceptives, les sites de visite et les prestataires d'activités. Direction, réception, salle, communication ou accueil : savoir écrire un email suffit pour suivre la journée."
  },
  "profils": [
   {
    "icon": "BedDouble",
-   "title": "Hôtels, campings et hébergements",
-   "desc": "Avis, fiches sur les plateformes de réservation, emails et devis groupes, livret d'accueil multilingue : les écrits qui font la réservation et le séjour, traités par la réception et la direction, avec les données clients protégées."
+   "title": "Hôtels, campings et résidences",
+   "desc": "Avis, fiches des plateformes, demandes de groupes, livret d'accueil multilingue : la réception et la direction repartent avec des gabarits prêts et un projet commun."
   },
   {
    "icon": "UtensilsCrossed",
    "title": "Restaurants et traiteurs",
-   "desc": "Réponses aux avis, menus traduits et tenus à jour, réseaux sociaux au rythme du service, devis d'événements et de prestations traiteur : des textes prêts à valider, même quand la salle et la cuisine passent avant l'écran. Les allergènes sont toujours relus par un humain."
+   "desc": "Réponses aux avis, carte traduite, publications au rythme du service, devis d'événements : des textes prêts à valider entre deux services, allergènes toujours relus par un humain."
   },
   {
    "icon": "MapPin",
    "title": "Offices de tourisme et destinations",
-   "desc": "Contenus de destination, agendas et actualités, réponses aux visiteurs en plusieurs langues, supports pour les socioprofessionnels : la mission d'information tenue avec une petite équipe. Le circuit de financement dépend de votre statut, vérifié au cadrage."
+   "desc": "Contenus de destination, agenda des événements, réponses aux visiteurs étrangers, supports pour les professionnels du territoire : la mission d'information assurée avec une petite équipe."
   },
   {
    "icon": "Luggage",
-   "title": "Agences, activités et loisirs",
-   "desc": "Agences réceptives, loueurs, sites de visite, prestataires d'activités : descriptions d'offres, réponses aux demandes, consignes traduites, contenus qui suivent la saison. Ce qui touche à la sécurité des activités est relu par un locuteur et validé par vous."
+   "title": "Agences, sites et activités",
+   "desc": "Descriptions d'offres, réponses aux demandes, consignes traduites, contenus de saison : ce qui touche à la sécurité d'une activité se valide par vous et se relit par un locuteur."
   }
  ],
  "cadre": {
-  "kicker": "Le cadre, traité de front",
-  "h2": "Avis, données clients, multilingue : ce que la formation pose d'entrée",
-  "p": "Le secteur vit de sa réputation et manipule des données personnelles au quotidien : identités, coordonnées, historiques de séjour, préférences. La formation pose le cadre dès le matin et le formalise avec vous. Jamais d'avis généré ni de faux avis : la réponse est rédigée avec l'IA puis validée par un humain, et les cas sensibles (litige, hygiène, sécurité, remboursement) passent par une relecture attentive. Les données clients restent protégées : anonymisation des exports, offres entreprise validées, aucune coordonnée dans une version gratuite. Le multilingue se vérifie quand il engage : allergènes, consignes de sécurité et conditions d'annulation sont relus par un locuteur. Et tout ce qui engage commercialement (prix, disponibilités, conditions) est relu avant envoi. Ce cadre est un livrable, écrit et applicable par une équipe qui change avec les saisons, à intégrer à votre {/charte-ia-entreprise|charte IA d'entreprise}.",
+  "kicker": "Avis, données, langues",
+  "h2": "Quatre règles écrites dès le matin, pour une équipe qui change avec les saisons",
+  "p": "La première protège la réputation : le droit de la consommation interdit de publier ou de commander de faux avis, et la formation n'en produit jamais. Les réponses se rédigent avec l'IA puis se valident par une personne, et un litige, un problème d'hygiène ou un remboursement remonte à la direction. La deuxième protège les clients : identités, coordonnées et historiques de séjour sont des données personnelles, anonymisées avant toute analyse et réservées aux offres payantes professionnelles. La troisième porte sur les langues : allergènes, consignes de sécurité et conditions d'annulation passent sous les yeux d'un locuteur. La quatrième concerne la transparence : un robot conversationnel mis en ligne pour vos clients doit, depuis le 2 août 2026, annoncer qu'il est une IA. Ces quatre règles entrent ensuite dans votre {/charte-ia-entreprise|charte IA d'établissement}.",
   "points": [
-   "Jamais d'avis généré ni de faux avis : réponse validée par un humain, cas sensibles relus",
-   "Données clients protégées (RGPD) : anonymisation des exports, offres entreprise, rien dans les versions gratuites",
-   "Multilingue vérifié par un locuteur quand il engage : allergènes, sécurité, conditions d'annulation",
-   "Prix, disponibilités et conditions relus avant tout envoi"
+   "Aucun faux avis, réponses validées par une personne",
+   "Données clients anonymisées, offres payantes seulement",
+   "Allergènes, sécurité et annulation relus par un locuteur",
+   "Clients prévenus quand une IA leur répond"
   ]
  },
  "tarif": {
-  "answer": "1 980 € HT la journée de formation en intra, pour le groupe (jusqu'à 10 participants) ; 3 960 € HT le format deux jours avec ateliers approfondis par équipe. Certifiée Qualiopi, la formation est finançable par votre OPCO : il varie selon votre convention collective (hôtellerie-restauration et organismes de tourisme ne relèvent pas du même opérateur), le bon dispositif se vérifie au cadrage, et le devis est établi dans les formes attendues par votre financeur, sous 24 heures.",
-  "inclus": "Le cadrage préalable avec vos éléments (plateformes utilisées, gabarits, exemples d'avis et d'emails, langues de vos clientèles), l'animation de la journée en présentiel ou à distance, les supports, les livrables (bibliothèque de prompts par activité, gabarits de réponse, cadre d'usage), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.",
-  "financement": "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."
+  "titre": "Une journée à 1 980 € HT, financée selon votre convention collective",
+  "answer": "La journée animée dans votre établissement vaut 1 980 € HT pour toute l'équipe présente, dans la limite de douze personnes ; la version en deux jours, 3 960 € HT. Un groupe hôtelier ou un réseau d'offices de tourisme organise plusieurs sessions par vagues, facturées chacune 1 980 € HT.",
+  "inclus": "Le cadrage (plateformes utilisées, langues de vos clientèles, exemples d'avis et d'emails), la journée sur place ou par visioconférence, avec ses supports, des livrables propres à l'établissement (prompts par activité, gabarits de réponse, voix de la maison, règles de l'équipe), une évaluation finale puis un certificat au nom de chacun. Quand la session se tient sur place, loin de Lyon, s'ajoute le voyage du formateur, chiffré dans le devis.",
+  "financement": "Pour les salariés d'un hôtel, d'un restaurant ou d'un camping, le financement relève de l'OPCO désigné par la convention collective, souvent AKTO en hôtellerie-restauration ; l'outil {/quel-opco|Quel OPCO ?} le retrouve. Cet opérateur statue selon ses propres règles et ses moyens de l'exercice. Un office de tourisme suit un circuit propre à son statut (association, EPIC, régie), vérifié au cadrage ; un exploitant non salarié sollicite son FAF. Masteria fournit programme, convention et attestations ; la page {/financement-formation-ia|financer une formation en IA} détaille les dispositifs. Pas de CPF."
  },
  "faq": [
   {
-   "q": "Qu'apprend-on dans une formation IA tourisme ?",
-   "a": "À utiliser l'intelligence artificielle générative sur les écrits réels d'un hôtel, d'un camping, d'un restaurant, d'un office de tourisme ou d'un prestataire d'activités : répondre aux avis clients à votre ton et dans la langue du client, tenir les fiches et contenus des plateformes de réservation, traiter les emails et demandes (devis groupes, confirmations), animer les réseaux sociaux au rythme des saisons, produire menus, brochures et livrets multilingues, et outiller l'accueil avec vos informations pratiques. La journée couvre la méthode, les ateliers sur vos documents et les fonctionnalités avancées (projets partagés, compétences, tâches planifiées), avec un cadre écrit : jamais de faux avis, relecture de ce qui engage."
+   "q": "Comment se déroule la journée de formation IA tourisme ?",
+   "a": "On écrit, sur vos propres textes. Le matin, l'équipe apprend la méthode sur un avis négatif reçu cette saison, règle l'outil sur la voix de la maison, traite ses avis et ses demandes de réservation, puis monte un projet commun avec les informations pratiques. L'après-midi, elle réécrit ses fiches de plateformes, traduit la carte et le livret, prépare le calendrier de la saison, lit un export d'avis et programme ses premières tâches récurrentes. Chacun repart avec des gabarits prêts et des règles écrites."
   },
   {
-   "q": "L'IA peut-elle répondre aux avis dans toutes les langues ?",
-   "a": "Oui pour rédiger : l'IA produit une réponse personnalisée, à votre ton, directement dans la langue de l'avis, en anglais, en allemand, en néerlandais ou en espagnol, et c'est l'un des ateliers du matin. La règle de la formation est claire : la réponse part après validation humaine, les cas sensibles (litige, hygiène, sécurité, remboursement) sont relus avec attention, et quand la réponse engage sur un point critique, un locuteur de la langue vérifie la formulation. Vous répondez à tous vos avis, dans toutes vos langues, en gardant la maîtrise de ce qui est dit."
+   "q": "Répondre aux avis avec l'IA, est-ce honnête envers les clients ?",
+   "a": "Oui, si la réponse reprend ce que le client a écrit et qu'une personne de l'établissement la valide. L'IA aide à répondre à tous les avis, dans la langue de chacun, au lieu de laisser les plus délicats sans réponse. La ligne rouge est ailleurs : publier ou commander de faux avis est interdit par le droit de la consommation, et la formation ne s'en approche jamais. Les plaintes sensibles (hygiène, sécurité, litige, remboursement) passent par la direction."
+  },
+  {
+   "q": "L'IA traduit-elle assez bien une carte ou des consignes de sécurité ?",
+   "a": "Elle produit des versions solides et homogènes dans les langues courantes de vos clientèles, ce qui suffit pour une description ou une publication. Pour ce qui engage, la règle de la formation reste stricte : les quatorze allergènes à déclarer, une consigne de sécurité d'activité, une condition d'annulation passent sous les yeux d'un locuteur avant d'être affichés. L'atelier traductions apprend à marquer ces passages pour qu'ils ne sortent jamais sans relecture."
   },
   {
    "q": "Peut-on utiliser l'IA avec les données de nos clients ?",
-   "a": "Avec des précautions que la formation installe d'entrée. Les coordonnées, les historiques de séjour et les préférences de vos clients sont des données personnelles au sens du RGPD : elles n'entrent jamais dans la version gratuite d'un outil grand public. En pratique : offres entreprise (qui n'entraînent pas les modèles sur vos données), exports anonymisés ou agrégés pour les analyses (avis de l'année, occupation par semaine), et des gabarits qui travaillent sur la situation plutôt que sur l'identité. Le cadre d'usage remis en fin de journée formalise ces règles, applicables par toute l'équipe, saisonniers compris."
+   "a": "Avec les précautions que pose la journée. Les identités, coordonnées et historiques de séjour sont des données personnelles : elles n'entrent jamais dans une version gratuite. Les analyses se font sur des exports anonymisés ou agrégés (avis de l'année, occupation par semaine), les réponses s'écrivent à partir de la situation plutôt que de l'identité, et une donnée client ne va que vers une offre payante professionnelle, dont l'éditeur exclut vos échanges de l'entraînement. La règle écrite vaut pour tous, saisonniers compris."
   },
   {
-   "q": "Sur quels outils la formation porte-t-elle ?",
-   "a": "Sur ceux que vous utilisez ou que vous pouvez déployer. Nous sommes indépendants des éditeurs et multi-outils : ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral. Selon votre équipement, les ateliers passent par Copilot dans Outlook et Excel, Gemini dans Gmail et Docs, ou les applications ChatGPT et Claude, et le cadrage tranche avant la journée. Les fonctions utiles au secteur (projets partagés, compétences, tâches planifiées, analyse d'un export) existent chez plusieurs éditeurs : la formation vous montre celles de vos licences et transpose les autres en démonstration."
+   "q": "Un assistant pour répondre aux clients sur notre site, c'est possible ?",
+   "a": "Oui, mais pas pendant la formation. Un assistant public relié à vos disponibilités et à votre logiciel de réservation demande un développement, que Masteria cadre puis réalise au forfait ; ce développement sort du périmètre de la formation et n'est donc pas finançable par votre OPCO. L'AI Act s'y applique aussi : le visiteur doit savoir, depuis le 2 août 2026, qu'une IA lui répond. La formation, elle, outille l'équipe qui écrit."
   },
   {
-   "q": "Travaille-t-on sur nos vrais documents ?",
-   "a": "Oui, c'est la méthode Masteria. Au cadrage, vous rassemblez des avis récents (dont un négatif sensible), des emails types, vos fiches sur les plateformes, un menu ou une brochure, vos informations pratiques. Les ateliers travaillent sur ces documents : chacun repart avec des réponses prêtes, des gabarits réglés à votre ton et le projet partagé de l'établissement déjà monté. Les données personnelles sont anonymisées avant la journée, et rien de ce qui engage ne part sans validation humaine."
+   "q": "Une journée suffit-elle, et comment former un groupe hôtelier ?",
+   "a": "Une journée bien préparée au cadrage suffit à installer les usages courants, et la saison laisse rarement plus de place. La version en deux jours prévoit en plus des ateliers par service (réception, restauration, communication). Un groupe hôtelier, une chaîne de restaurants ou un réseau d'offices de tourisme se forme par vagues d'établissements, douze personnes au plus par session, sur les mêmes gabarits. L'intersaison reste la meilleure période."
   },
   {
-   "q": "Ça vaut pour un petit hôtel ou un restaurant indépendant ?",
-   "a": "Oui, et c'est même le cas le plus fréquent. La journée se fait sur vos avis, vos fiches et vos emails réels, avec les outils que vous avez déjà, sans prérequis technique : si vous savez écrire un email, vous savez suivre la formation. Un indépendant sans service communication est celui qui y gagne le plus : les réponses aux avis, les réseaux sociaux et le multilingue redeviennent tenables en quelques minutes par jour. Le tarif intra vaut pour le groupe, jusqu'à 10 participants, et votre OPCO peut financer selon votre convention."
+   "q": "Combien paie un hôtel ou un restaurant, et qui finance ?",
+   "a": "Comptez 1 980 € HT pour une journée animée chez vous, de une à douze personnes, ou 3 960 € HT en deux jours. Les salariés d'un hôtel, d'un restaurant ou d'un camping relèvent de l'OPCO de leur convention collective (AKTO dans bien des cas pour l'hôtellerie-restauration), libre de fixer sa prise en charge. Un office de tourisme suit le circuit de son statut, un exploitant non salarié celui de son FAF. Masteria prépare programme, convention et attestations."
   },
   {
-   "q": "Combien de temps dure la formation et en quel format ?",
-   "a": "Le format de référence est d'une journée (7 heures) en intra, dans votre établissement ou à distance, pour un groupe jusqu'à 10 personnes. Ce format court est un choix : les équipes du secteur sont opérationnelles, la saisonnalité laisse peu de fenêtres, et une journée bien préparée au cadrage suffit pour installer les usages du quotidien. Un format de deux jours ajoute des ateliers approfondis par équipe (réception, restauration, communication) ; pour un groupe, une chaîne ou un réseau d'offices de tourisme, la formation se déploie par vagues d'établissements. L'intersaison reste la meilleure fenêtre, et la date se cale au cadrage."
-  },
-  {
-   "q": "Combien coûte la formation IA tourisme ?",
-   "a": "Le tarif intra est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : la journée représente 1 980 € HT, le format deux jours 3 960 € HT. Le cadrage préalable, les supports, les livrables (bibliothèque de prompts, gabarits de réponse, cadre d'usage) et le certificat de réalisation sont inclus ; en présentiel hors Lyon, les frais de déplacement s'ajoutent au réel. Nous établissons le devis sous 24 heures, dans les formes attendues par votre financeur. Pas d'éligibilité CPF."
-  },
-  {
-   "q": "Proposez-vous une formation IA dédiée à l'hôtellerie et à la restauration ?",
-   "a": "Oui, c'est le cœur de cette page : la formation IA hôtellerie et restauration travaille sur les écrits réels d'un hôtel ou d'un restaurant : réponses aux avis dans la langue du client, fiches des plateformes de réservation, emails de groupes, devis et confirmations, menus et supports multilingues, consignes d'accueil. Le format court permet de former une équipe de réception entre deux services, et la bibliothèque de prompts construite en session sert ensuite aux saisonniers qui arrivent. Les offices de tourisme, campings et prestataires d'activités suivent le même programme, ajusté à leurs documents au cadrage."
-  },
-  {
-   "q": "Comment financer la formation pour un hôtel, un restaurant ou un office de tourisme ?",
-   "a": "Masteria est certifiée Qualiopi, condition d'accès aux financements. Pour un hôtel, un restaurant, un camping ou une agence, le financement passe par votre OPCO, qui dépend de votre convention collective (identifiez le vôtre avec notre outil Quel OPCO ?) : nous fournissons programme, convention et pièces, et le dossier se dépose avant le début de la formation. Pour un office de tourisme, le circuit dépend du statut (association, EPIC, régie) et se vérifie au cadrage. Pour un indépendant non salarié, un fonds d'assurance formation peut prendre le relais selon votre statut. Pas d'éligibilité CPF."
+   "q": "Avec quel outil, pour un petit établissement ?",
+   "a": "Avec celui que vous avez déjà. Une version gratuite suffit pour s'exercer sur des textes publics (une fiche, une publication). Dès qu'une donnée client entre en jeu, il faut une offre payante : chez Mistral, Vibe Pro est affiché à 14,99 $ HT par mois ; ChatGPT Business démarre à deux utilisateurs. Un établissement sous Google Workspace ou Microsoft 365 profite de Gemini dans Gmail ou de Copilot dans Outlook. Le cadrage compare ces options avec vous."
   }
  ],
  "course": {
-  "name": "Formation IA tourisme — Masteria",
-  "description": "Formation à l'intelligence artificielle générative appliquée aux métiers du tourisme, de l'hôtellerie et de la restauration : réponses aux avis clients dans la langue du client, contenus et fiches pour les plateformes de réservation, emails et demandes de réservation, réseaux sociaux et saisonnalité, menus, brochures et traductions, accueil et informations pratiques, avec un cadre e-réputation et données clients posé d'entrée. Multi-outils (ChatGPT, Microsoft Copilot, Claude, Gemini, Mistral). 1 jour en intra (2 jours possibles), présentiel ou distanciel. Certifiée Qualiopi.",
+  "name": "Formation IA tourisme et hôtellerie (Masteria)",
+  "description": "Formation d'une journée à l'intelligence artificielle générative pour les hôtels, campings, restaurants, offices de tourisme et prestataires d'activités, sur leurs propres textes : réponses aux avis dans la langue du client, fiches des plateformes de réservation, demandes de groupes, calendrier de saison, menus et livrets traduits, lecture d'un export d'avis, compétence et tâches programmées, règles sur les avis, les données clients et les traductions. Outils : ChatGPT, Microsoft Copilot, Claude, Gemini, Vibe. Certifiée Qualiopi, finançable par l'OPCO d'après ses règles.",
   "level": "Tous niveaux",
   "teaches": [
-   "Répondre aux avis clients à son ton, dans la langue du client, avec validation humaine",
-   "Tenir à jour fiches, descriptions et contenus sur le site et les plateformes de réservation",
-   "Traiter emails, devis groupes et confirmations en langage clair et multilingue",
-   "Construire un calendrier éditorial par saison et décliner les publications par plateforme",
-   "Appliquer le cadre e-réputation et données clients : jamais de faux avis, relecture de ce qui engage"
+   "Répondre aux avis clients avec l'IA, dans la langue du client, réponse validée par une personne",
+   "Rédiger et décliner les fiches d'un établissement pour chaque plateforme",
+   "Traduire une carte ou un livret en signalant les passages à faire relire",
+   "Construire le calendrier de publications d'une saison",
+   "Appliquer les règles sur les faux avis, les données clients et la transparence"
   ],
-  "about": "Intelligence artificielle générative appliquée aux métiers du tourisme, de l'hôtellerie et de la restauration",
+  "about": "Intelligence artificielle générative appliquée au tourisme, à l'hôtellerie et à la restauration",
   "timeRequired": "PT7H",
   "duration": "PT7H",
-  "prerequisites": "Aucun prérequis technique. Exercice dans un hébergement, un restaurant, un office de tourisme, une agence ou une structure d'activités touristiques.",
-  "audience": "Hôtels, campings et hébergements, restaurants et traiteurs, offices de tourisme et destinations, agences et prestataires d'activités : direction, réception, salle, communication, accueil",
-  "locationName": "Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel"
+  "prerequisites": "Aucun prérequis technique. Savoir rédiger un email.",
+  "audience": "Hôtels, campings, restaurants, offices de tourisme, agences réceptives, prestataires d'activités",
+  "locationName": "Masteria : intra-entreprise, sur site (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA tourisme : l'IA générative appliquée aux avis clients, aux fiches et au multilingue de l'hôtellerie-restauration",
-  "datePublished": "2026-08-19",
-  "dateModified": "2026-08-19",
-  "dateLabel": "août 2026",
+  "headline": "Formation IA tourisme : répondre, décrire et traduire avec l'IA, en une journée",
+  "datePublished": "2026-08-21",
+  "dateModified": "2026-10-07",
+  "dateLabel": "octobre 2026",
   "about": [
    {
     "@type": "Thing",
@@ -301,66 +297,123 @@ export default {
  },
  "citations": [
   {
-   "name": "Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr",
+   "name": "Qualiopi, marque de certification qualité des prestataires de formation (travail-emploi.gouv.fr)",
    "url": "https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation"
   },
   {
-   "name": "Obtenir des avis clients et y répondre : le guide France Num (ministère de l'Économie)",
+   "name": "France Num : obtenir des avis clients et y répondre",
    "url": "https://www.francenum.gouv.fr/guides-et-conseils/developpement-commercial/gestion-de-la-relation-client/comment-obtenir-des-avis"
+  },
+  {
+   "name": "Règlement (UE) 1169/2011 sur l'information des consommateurs (allergènes)",
+   "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32011R1169"
   }
  ],
  "maillage": [
   {
-   "label": "IA pour le tourisme et l'hôtellerie",
+   "label": "IA, hôtels et destinations",
    "href": "/ia-tourisme-hotellerie",
    "tag": "Secteur",
-   "desc": "Conseil et développement de solutions IA pour les acteurs du tourisme, de l'hôtellerie et de la restauration."
+   "desc": "Outils construits sur votre logiciel de réservation."
   },
   {
    "label": "Formation IA service client",
    "href": "/formation-ia-service-client",
    "tag": "Métier voisin",
-   "desc": "Réponses aux clients, FAQ, ton de marque : le service client outillé par l'IA, quel que soit le canal."
-  },
-  {
-   "label": "Formation IA commerce",
-   "href": "/formation-ia-commerce",
-   "tag": "Métier voisin",
-   "desc": "Fiches produit, avis, contenus de vente : l'IA pour les équipes commerce et retail."
+   "desc": "Pour la réception et la relation client."
   },
   {
    "label": "Formation IA marketing",
    "href": "/formation-ia-marketing",
    "tag": "Métier voisin",
-   "desc": "Campagnes, contenus, réseaux sociaux, SEO : la formation des équipes marketing à l'IA générative."
+   "desc": "Campagnes et contenus de destination."
   },
   {
-   "label": "Bibliothèque de prompts",
-   "href": "/bibliotheque-de-prompts",
+   "label": "Formation IA commerce",
+   "href": "/formation-ia-commerce",
+   "tag": "Métier voisin",
+   "desc": "Boutiques et vente en ligne."
+  },
+  {
+   "label": "Prompts service client",
+   "href": "/bibliotheque-de-prompts#service-client",
    "tag": "Ressource",
-   "desc": "Des prompts prêts à adapter pour vos avis, vos fiches et vos emails, métier par métier."
+   "desc": "Réponses aux clients mécontents et analyse des irritants."
   },
   {
-   "label": "Formation IA transverse",
-   "href": "/formation-ia-transverse",
-   "tag": "Multi-équipes",
-   "desc": "Quand toutes les fonctions de l'établissement sont concernées : une base commune en une journée."
+   "label": "Sprint IA",
+   "href": "/formation-sprint-ia",
+   "tag": "Format court",
+   "desc": "Trois heures pour une équipe saisonnière."
+  },
+  {
+   "label": "Charte IA d'entreprise",
+   "href": "/charte-ia-entreprise",
+   "tag": "Cadre",
+   "desc": "Les règles de l'équipe, écrites une fois."
   },
   {
    "label": "Formation IA communication",
    "href": "/formation-ia-communication",
    "tag": "Métier voisin",
-   "desc": "Contenus, supports, relations presse : la communication d'une destination ou d'une marque outillée par l'IA."
-  },
-  {
-   "label": "Acculturation IA",
-   "href": "/acculturation-ia",
-   "tag": "Groupe & réseau",
-   "desc": "Pour embarquer une chaîne, un groupe ou un réseau d'offices de tourisme, par vagues d'équipes."
+   "desc": "Réseaux sociaux et relations presse."
   }
  ],
+ "bibliotheque": "Avant la journée, essayez sur vos avis les {/bibliotheque-de-prompts#service-client|demandes prêtes à copier du chapitre service client} de notre bibliothèque : répondre à un client déçu, repérer les irritants qui reviennent, préparer une réponse délicate. Une courte note accompagne chacun et explique pourquoi il fonctionne.",
+ "ctaMilieu": {
+  "titre": "Une journée calée sur votre intersaison",
+  "texte": "Indiquez votre établissement, les langues de vos clients et l'outil que vous utilisez : nous répondons sous 24 heures par un programme, des dates et un devis adaptés à votre saison."
+ },
+ "competences": {
+  "titre": "Six savoir-faire appliqués dès le lendemain",
+  "intro": "Avant de partir, chaque participant est évalué sur ces six savoir-faire, à partir des textes travaillés en atelier.",
+  "items": [
+   "Répondre à un avis négatif dans la langue du client, faits repris et ton juste",
+   "Décliner une fiche d'établissement pour chaque plateforme sans rien inventer",
+   "Préparer la réponse complète à une demande de groupe",
+   "Traduire la carte ou le livret en marquant les passages à faire relire",
+   "Construire le calendrier de publications de la saison",
+   "Appliquer les règles sur les faux avis, les données clients et les traductions"
+  ]
+ },
+ "choisirOutil": {
+  "titre": "ChatGPT, Gemini, Copilot, Claude ou Vibe pour un établissement touristique ?",
+  "intro": "Votre messagerie et votre budget décident souvent. Ce que chaque outil apporte au secteur, d'après nos vérifications du 7 octobre 2026 :",
+  "lignes": [
+   {
+    "outil": "chatgpt",
+    "texte": "ChatGPT rédige et traduit vite ; son générateur d'images, ChatGPT Images 2.5, date du 8 septembre 2026. L'offre Business, ouverte dès deux utilisateurs, s'affiche pour la France à 21 € mensuels par personne en engagement annuel. Un GPT d'établissement passe en plugin avant le 11 décembre 2026, date à laquelle OpenAI retire les GPTs. {/formation-chatgpt|Formation ChatGPT}"
+   },
+   {
+    "outil": "gemini",
+    "texte": "Avec Workspace Business Standard, Gemini écrit dans vos mails et vos documents, crée des images avec Nano Banana Pro et des vidéos dans Vids, dans des plafonds mensuels revus par Google le 7 octobre 2026. Cette édition revient à 13,60 € par mois et par utilisateur. {/formation-gemini-entreprise|Formation Gemini}"
+   },
+   {
+    "outil": "copilot",
+    "texte": "Microsoft Copilot propose dans Outlook des brouillons et des conseils de ton ; dans PowerPoint, il transforme un document existant en diaporama, pratique pour une brochure de groupe. Sans licence, Copilot Chat, fourni avec Microsoft 365, puise ses réponses dans le web et dans les fichiers joints. {/formation-microsoft-copilot|Formation Copilot}"
+   },
+   {
+    "outil": "claude",
+    "texte": "Claude se place dans Word et PowerPoint pour les abonnés payants et lit d'un coup un dossier entier (cahier des charges d'un événement, règlement d'une destination). L'offre Team garde vos échanges hors de tout entraînement. {/formation-claude-ia|Formation Claude}"
+   },
+   {
+    "outil": "mistral",
+    "label": "Vibe (Mistral)",
+    "texte": "Par défaut, les conversations de Vibe restent hébergées en Europe, un bon point pour les données de vos clients. Vibe Pro est affiché à 14,99 $ HT par mois pour un indépendant ; depuis le 22 septembre 2026, son Canvas sait aussi produire de mini-applications interactives. {/formation-mistral-ai|Vibe : la formation Mistral AI}"
+   }
+  ]
+ },
+ "equipe": {
+  "titre": "Un formateur au fait des écrits du tourisme",
+  "texte": "Mathias Nizan pilote chaque journée et choisit dans son réseau de formateurs indépendants celui qui connaît le mieux votre activité ; Masteria est Activateur France Num, le réseau qui accompagne les petites entreprises dans le numérique. Un exemple de septembre 2026 : l'équipe promotion d'une {/etudes-de-cas-ia#mission-interprofession-agricole|filière agricole du sud de la France} a écrit sa voix de marque une fois, l'a installée dans un seul assistant du service, qui a ensuite produit des textes en anglais et un calendrier de publications : la même démarche sert une destination ou un hôtel."
+ },
+ "apres": {
+  "titre": "Quand l'établissement veut un assistant relié à ses réservations",
+  "texte": "Une fois la journée passée, certains établissements veulent aller plus loin : un robot de réponse branché sur les disponibilités, ou un outil qui rassemble les avis de toutes les plateformes et prépare les réponses. Masteria cadre ce projet, le programme et le raccorde à votre logiciel de réservation, au forfait. Ce développement, facturé à l'établissement, n'est pas finançable par votre OPCO : il n'entre dans aucun dispositif de formation."
+ },
+ "faqTitre": "Formation IA tourisme : les questions des hôteliers, restaurateurs et offices",
  "cta": {
-  "h2": "Formons vos équipes, entre deux saisons",
-  "p": "Décrivez-nous votre établissement (hôtel, camping, restaurant, office de tourisme, agence), vos plateformes, les langues de vos clientèles et vos outils. Nous revenons vers vous sous 24 heures avec un programme ajusté, le cadre d'usage adapté et le devis dans les formes attendues par votre financeur."
+  "h2": "Préparons la saison prochaine de votre établissement",
+  "p": "Dites-nous qui vous êtes (hôtel, camping, restaurant, office de tourisme, agence), vos plateformes, les langues de vos clients et l'outil que vous utilisez. Un programme d'une journée, des dates à l'intersaison et le devis vous parviennent dans les 24 heures."
  }
 }

@@ -4,9 +4,7 @@ import {
   Plug, Cpu, KeyRound, Users, Wrench, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import CaseStudyCards from '../components/CaseStudyCards'
 import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
 import { SOLUTIONS } from '../data/solution-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
@@ -21,7 +19,13 @@ import CadrageLink from '../components/CadrageLink'
  * (zéro emoji), cartes radius 16, ancre sombre sur la matrice objectif→solution,
  * CTA final sombre #0A0F1E. Orienté CAPACITÉ, aucun cas client nommé. Code livré
  * au client. Pas d'OPCO sur le sur-mesure.
+ *
+ * Texte propre à la page (réécrit le 07/10/2026) : pas de bloc partagé (FounderNote,
+ * CaseStudyCards, paragraphe commun « Qui intervient »). Les études de cas sont citées
+ * en une ou deux phrases écrites pour ce hub, avec un lien vers leur ancre.
  */
+
+const MODIFIED = '2026-10-07'
 
 const c = '#2563EB'
 const cLight = '#DBEAFE'
@@ -46,44 +50,74 @@ const ICONS = {
 }
 
 const HERO_CHIPS = [
-  { icon: Cpu, label: 'Multi-LLM (Claude, GPT, Mistral)' },
-  { icon: Database, label: 'RAG sur vos données' },
-  { icon: KeyRound, label: 'Code livré au client' },
-  { icon: Users, label: 'Développeurs en régie possibles' },
+  { icon: Cpu, label: 'Claude, GPT ou Mistral selon la tâche' },
+  { icon: Database, label: 'Recherche dans vos documents' },
+  { icon: KeyRound, label: 'Code remis au client' },
+  { icon: Users, label: 'Régie possible' },
+]
+
+/* Trois études de cas, citées en une ou deux phrases propres au hub (faits : src/data/etudes-de-cas.js). */
+const CAS = [
+  {
+    id: 'distribution',
+    secteur: 'Distribution IT B2B',
+    titre: 'Onze compétences commerciales construites par les équipes',
+    texte: "Chez un distributeur informatique B2B de 58 salariés, dix référents formés en deux jours, en juin 2026, ont conçu onze compétences Claude sur leurs propres tâches : cotation, relances, cahiers des charges, stocks. Leur diffusion aux autres collaborateurs est prévue d'octobre à décembre 2026.",
+  },
+  {
+    id: 'photovoltaique',
+    secteur: 'Distribution photovoltaïque',
+    titre: "Trois assistants autour d'Odoo, choisis par un diagnostic de flux",
+    texte: "Pour une équipe de trois personnes qui gère tout dans Odoo, le diagnostic a retenu trois assistants : la consultation des transporteurs, l'import des fichiers d'entrepôt, les lignes de devis tirées des demandes reçues. La formation sur site est prévue en octobre 2026.",
+  },
+  {
+    id: 'conseil-financier',
+    secteur: 'Conseil financier',
+    titre: "Quatre assistants d'appels d'offres, un par famille de marchés",
+    texte: "Un cabinet d'une vingtaine de consultants, à Paris et à Lyon, répond aux marchés publics avec quatre assistants nourris de ses meilleurs mémoires. Les consignes ont été écrites et testées avec les consultants en quatre ateliers de deux heures.",
+  },
 ]
 
 const HUB_FAQ = [
   {
-    q: 'Qu\'est-ce qu\'une solution IA sur mesure ?',
-    a: "Une solution IA sur mesure est une application développée pour un usage précis de votre entreprise, branchée sur vos données et vos outils, par opposition à un logiciel générique acheté sur étagère. Copilote interne, assistant documentaire, agent de support, chatbot, intégration : chaque solution est conçue, développée et intégrée à votre environnement, puis transférée à vos équipes avec son code.",
+    q: "Qu'appelle-t-on une solution IA sur mesure ?",
+    a: "Une application d'IA développée pour un usage précis de votre entreprise, reliée à vos données et à vos logiciels, là où un produit du marché propose le même service à tous ses clients. Copilote interne, assistant documentaire, agent de support ou chatbot : chaque solution est conçue avec vos équipes, installée dans votre environnement, puis remise avec son code.",
   },
   {
-    q: 'Combien coûte une solution IA sur mesure ?',
-    a: "Le développement se chiffre au forfait, sur devis, après un cadrage. Selon le type de livrable et le périmètre, comptez de l'ordre de 8 000 € pour un chatbot ou un prototype ciblé, de 15 000 à 70 000 € pour une solution en production reliée à vos données et à vos outils, et au-delà de 100 000 € pour un déploiement à l'échelle ou en régie, jusqu'à plusieurs centaines de milliers d'euros sur les programmes les plus ambitieux. Chez Masteria, le premier échange de cadrage est gratuit et le devis suit la définition du périmètre.",
+    q: 'Quel budget prévoir pour une solution IA sur mesure ?',
+    a: "Le développement se chiffre au forfait, une fois le cadrage fait. Un prototype ciblé ou un chatbot sur un contenu restreint démarre à quelques milliers d'euros ; une solution en production, reliée à vos données et à vos logiciels, se compte en dizaines de milliers d'euros ; un déploiement à grande échelle ou en régie dépasse 100 000 € et peut aller jusqu'à plusieurs centaines de milliers d'euros. Le devis suit un périmètre écrit, et les 30 premières minutes de cadrage sont offertes.",
   },
   {
-    q: 'À qui appartient le code des solutions développées ?',
-    a: "À vous. Le code développé pour votre projet vous appartient, comme vos données. Nous documentons la solution et transférons la compétence à vos équipes pour qu'elles l'exploitent et la fassent évoluer en autonomie. Vous n'êtes pas enfermé dans un abonnement à une plateforme fermée.",
+    q: 'Qui détient le code des solutions développées ?',
+    a: "Votre entreprise. Le code écrit pour votre projet vous revient, au même titre que vos données, avec sa documentation. Vos équipes peuvent le maintenir, le confier à un autre prestataire ou nous en laisser l'exploitation : aucun abonnement à une plateforme fermée ne vous lie.",
   },
   {
-    q: 'Comment choisir la bonne solution pour mon besoin ?',
-    a: "Partez du résultat attendu : retrouver de l'information mène vers l'assistant documentaire, décharger le support vers l'agent de support, traiter des documents entrants vers l'automatisation. Un même besoin combine souvent plusieurs briques. C'est l'objet du cadrage, gratuit, qui définit le périmètre avant tout chiffrage.",
+    q: 'Comment savoir quelle solution correspond à mon besoin ?',
+    a: "En partant du résultat recherché. Retrouver une information dans des documents oriente vers l'assistant documentaire, alléger le service client vers l'agent de support, supprimer une ressaisie vers l'automatisation documentaire. Beaucoup de projets combinent deux ou trois briques ; le cadrage fixe l'ordre de construction avant tout chiffrage.",
   },
   {
-    q: 'Quelle différence entre une solution sur mesure et un outil IA sur étagère ?',
-    a: "Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est conçue pour votre usage, branchée sur vos données et vos outils, et vous en êtes propriétaire. Pour un outil ou un copilote développé autour d'un métier précis, voyez aussi nos outils IA sur mesure, qui abordent le sujet sous l'angle du poste de travail.",
+    q: 'Solution sur mesure ou outil du marché : comment trancher ?',
+    a: "Un outil du marché bien configuré suffit souvent pour rédiger, résumer ou chercher dans les fichiers bureautiques. Le sur-mesure se justifie quand l'outil doit lire un logiciel métier, appliquer des règles propres à l'entreprise ou tourner dans un environnement que vous choisissez. Nous le disons au cadrage, et Masteria ne revend aucune licence. Pour un outil pensé autour d'un poste de travail, voyez aussi nos outils IA par métier.",
   },
   {
-    q: "Combien de temps faut-il pour un premier POC ?",
-    a: "Quelques semaines dans la plupart des cas : le cadrage prend une à deux semaines, la maquette sur vos données réelles suit. Le délai dépend surtout de l'accès aux données et aux personnes, pas du développement lui-même. Le critère de succès est posé avant de commencer : à la fin du POC, la décision se prend sur une mesure, pas sur une impression.",
+    q: 'Combien de temps faut-il pour obtenir un premier prototype ?',
+    a: "Quelques semaines le plus souvent. Le cadrage tient en une à deux semaines, puis la maquette tourne sur vos données. Le calendrier dépend surtout de l'accès aux données et de la disponibilité d'un référent métier ; le critère qui décidera de la suite est écrit avant de commencer.",
   },
   {
-    q: "Nos données restent-elles chez nous ?",
-    a: "Oui, c'est un principe de conception : les solutions s'appuient sur des offres entreprise qui n'entraînent pas les modèles sur vos données, les accès sont bornés aux documents nécessaires, et l'hébergement suit vos exigences. Le cadre de données est écrit au cadrage, avec votre DSI ou votre DPO quand il y en a un, et il est vérifiable dans la documentation livrée.",
+    q: 'Où vont nos données pendant et après le projet ?',
+    a: "Elles restent sous votre contrôle. Les solutions s'appuient sur des offres professionnelles qui n'entraînent pas les modèles sur vos échanges, les accès se limitent aux documents utiles, et l'hébergement suit vos exigences, dans l'Union européenne si nécessaire. Ce cadre s'écrit au cadrage avec votre DSI ou votre délégué à la protection des données, et figure dans la documentation livrée.",
   },
   {
-    q: "Qui maintient la solution après la mise en production ?",
-    a: "Vous choisissez : vos équipes, avec la documentation et le code livrés, ou nous, dans un contrat de run dimensionné à l'usage réel (surveillance, corrections, évolutions). Dans les deux cas, un propriétaire est nommé côté client dès le cadrage : une solution sans propriétaire meurt en quelques mois, quelle que soit sa qualité technique.",
+    q: 'Faut-il une équipe technique chez nous ?',
+    a: "Non, mais il faut un responsable. Une PME sans informaticien confie souvent l'exploitation à Masteria ou à son prestataire habituel ; une entreprise dotée d'une DSI reprend le code et la documentation. Dans les deux cas, une personne du métier décide des évolutions et relit les réponses que les utilisateurs signalent.",
+  },
+  {
+    q: "Le développement d'une solution peut-il être financé par l'OPCO ?",
+    a: "Non : le conseil et le développement ne sont pas finançables par votre OPCO, qui ne prend en charge que des actions de formation. La formation des futurs utilisateurs peut l'être, puisque Masteria est certifié Qualiopi à ce titre, selon les règles et les fonds de votre branche.",
+  },
+  {
+    q: 'Qui fait fonctionner la solution après sa mise en service ?',
+    a: "Au choix : vos équipes, avec le code et la documentation remis, ou Masteria, dans un contrat d'exploitation dimensionné à l'usage (surveillance, corrections, évolutions). Dans les deux cas, un responsable est nommé chez vous dès le cadrage, car un outil sans propriétaire s'abandonne vite.",
   },
 ]
 
@@ -97,7 +131,7 @@ const itemListJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   '@id': `${SITE}/${SLUG}#itemlist`,
-  name: 'Solutions IA sur mesure — Masteria',
+  name: 'Solutions IA sur mesure · Masteria',
   description: META_DESC,
   numberOfItems: SOLUTIONS.length,
   itemListOrder: 'https://schema.org/ItemListUnordered',
@@ -127,7 +161,7 @@ const articleJsonLd = {
   editor: { '@id': `${SITE}/#mathias-nizan` },
   publisher: { '@id': `${SITE}/#organization` },
   datePublished: '2026-06-13',
-  dateModified: '2026-07-02',
+  dateModified: MODIFIED,
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': `${SITE}/${SLUG}#webpage` },
   about: ['Solutions IA sur mesure', 'Développement IA en entreprise', 'RAG (retrieval-augmented generation)', 'Intégration de LLM'],
@@ -159,7 +193,7 @@ export default function SolutionsHubPage() {
         breadcrumbs={breadcrumbs}
         faqItems={HUB_FAQ}
         datePublished="2026-06-13"
-        dateModified="2026-07-02"
+        dateModified={MODIFIED}
         extraJsonLd={[itemListJsonLd, articleJsonLd]}
       />
 
@@ -199,16 +233,16 @@ export default function SolutionsHubPage() {
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en juillet 2026
+            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · revu le 7 octobre 2026
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria conçoit et développe des solutions IA sur mesure pour les entreprises : copilote interne, assistant documentaire en RAG, agent de support, automatisation documentaire, agent commercial, chatbot et intégration LLM/RAG. Chaque solution est branchée sur vos données, intégrée à vos outils et <strong style={{ color: '#fff', fontWeight: 700 }}>livrée avec son code</strong>.
+            Masteria développe sept familles de solutions IA pour les entreprises : copilote interne, assistant documentaire, agent de support client, automatisation documentaire, agent commercial, chatbot de site et intégration d'un modèle de langage dans vos applications. Chacune est reliée à vos données, installée dans vos outils et <strong style={{ color: '#fff', fontWeight: 700 }}>remise avec son code</strong>.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Choisissez par type de livrable. Chaque page détaille ce que la solution permet, comment nous la construisons en quatre étapes, l'approche technique et des exemples par secteur. Cabinet spécialisé sur l'IA depuis 2022, nous restons indépendants des éditeurs et vous rendons propriétaire et autonome de ce que nous développons.
+            Chaque fiche décrit ce que fait le livrable, la façon dont nous le construisons, son coût et ses pièges. Masteria travaille sur l'IA depuis 2022, sans lien commercial avec les éditeurs, et vous remet tout ce qu'elle développe pour vous.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -217,7 +251,7 @@ export default function SolutionsHubPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </CadrageLink>
             <a href="#solutions" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir les 7 solutions
+              Comparer les sept livrables
             </a>
           </div>
 
@@ -241,15 +275,15 @@ export default function SolutionsHubPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <div style={kickerStyle}>Par type de livrable</div>
+              <div style={kickerStyle}>Sept livrables</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Quelle solution IA correspond à votre besoin ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Sept familles de solutions IA reviennent dans la majorité des projets : copilote interne, assistant documentaire en RAG, agent de support, automatisation documentaire, agent commercial, chatbot et intégration LLM. Un même besoin peut en combiner plusieurs.</strong>
+                <strong>Sept familles couvrent l'essentiel des projets que nous menons : copilote interne, assistant documentaire, agent de support, automatisation documentaire, agent commercial, chatbot et intégration d'un modèle de langage. Un même besoin en associe souvent deux ou trois.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Chaque carte mène à une page dédiée : ce que la solution permet, comment nous la construisons, l'approche technique et des exemples par secteur. Le cadrage, gratuit, définit le périmètre avant tout chiffrage.
+                Chaque carte ouvre une fiche complète : usages, méthode, approche technique, budget, exemples par secteur. Un premier échange de 30 minutes, offert, sert à fixer le périmètre avant tout chiffrage.
               </p>
             </div>
 
@@ -272,7 +306,7 @@ export default function SolutionsHubPage() {
                         </h3>
                         <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 16px' }}>{s.cardSummary}</p>
                         <span style={{ marginTop: 'auto', fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                          Découvrir la solution
+                          Lire la fiche du livrable
                           <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                         </span>
                       </div>
@@ -285,25 +319,25 @@ export default function SolutionsHubPage() {
         </div>
       </section>
 
-      {/* ── MATRICE DE DÉCISION : OBJECTIF → SOLUTION (ancre sombre — pivot) ── */}
+      {/* ── MATRICE DE DÉCISION : OBJECTIF → SOLUTION (ancre sombre, pivot) ── */}
       <section style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Quelle solution pour quel objectif</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Par objectif</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Partez de votre objectif, trouvez la solution
+            Partez du résultat que vous attendez
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le plus simple est de partir du résultat attendu. À chaque objectif courant correspond une famille de solution ; un même besoin en combine souvent plusieurs.</strong>
+            <strong style={{ color: '#fff' }}>À chaque objectif courant correspond une famille de solution. Quand plusieurs objectifs se combinent, le cadrage décide par lequel commencer.</strong>
           </p>
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Matrice objectif métier vers la solution IA adaptée" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 460 }}>
               <caption style={{ position: 'absolute', width: 1, height: 1, padding: 0, margin: -1, overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>
-                Objectif métier et solution IA adaptée, avec lien vers chaque page de solution.
+                Objectif de l'entreprise et livrable correspondant, avec le lien vers sa fiche.
               </caption>
               <thead>
                 <tr>
@@ -342,15 +376,15 @@ export default function SolutionsHubPage() {
               <Users size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <div style={kickerStyle}>Modèle d'engagement</div>
+              <div style={kickerStyle}>Deux façons de travailler</div>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Forfait au projet ou développeurs détachés chez vous
+                Un forfait par projet, ou des développeurs détachés dans vos équipes
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La plupart de ces solutions se livrent au forfait, périmètre et livrables définis. Pour les environnements sensibles ou une montée en charge, nous pouvons aussi détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, en régie ou en équipe dédiée. Le code reste dans votre périmètre et vos équipes montent en compétence au fil de l'eau.
+                La plupart de ces solutions se livrent au forfait, avec un périmètre et des livrables écrits. Quand le code doit rester dans votre périmètre, ou que vous devez accélérer sans recruter, nous détachons aussi un ou plusieurs développeurs IA dans vos équipes, chez vous ou à distance, en régie ou en équipe dédiée. Ils documentent au fil de l'eau, et vos équipes reprennent la main à la fin.
               </p>
               <Link to="/methode-projet-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Voir notre méthode de projet IA
+                Lire la méthode de projet
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -361,21 +395,21 @@ export default function SolutionsHubPage() {
       {/* ── MAILLAGE / RESSOURCES (cartes filet-supérieur) ── */}
       <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
-          <div style={kickerStyle}>Pour aller plus loin</div>
+          <div style={kickerStyle}>Pages liées</div>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Du conseil au développement sur mesure
+            Le développement sur mesure vu sous d'autres angles
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>
-            Les solutions ci-dessus sont des types de livrables. Pour la capacité de build complète et l'approche d'ingénierie, explorez ces pages.
+            Les sept fiches décrivent des livrables. Ces pages présentent notre équipe de développement, nos automatisations et les budgets constatés sur le marché.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Build', desc: "Agents, automatisations, applications et intégrations : de l'idée au déploiement, avec transfert de compétence." },
-              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils et copilotes développés pour un métier précis, connectés à vos données." },
-              { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Cadrage, prototypage et déploiement de vos automatisations IA, avec vos équipes." },
-              { label: "Cas d'usage de l'IA en entreprise", href: '/cas-usage-ia-entreprise', tag: 'Exemples', desc: "Un panorama d'exemples concrets par fonction, pour relier chaque solution à un usage réel." },
-              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'GenAI', desc: "Du cas d'usage au déploiement maîtrisé des modèles de langage, garde-fous compris." },
-              { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Fourchettes de prix par type de solution et modèles de facturation, sans tarif d'appel." },
+              { label: 'Agence de développement IA', href: '/agence-developpement-ia', tag: 'Build', desc: "Notre équipe de développement : agents, automatisations, applications et intégrations, remis avec leur code." },
+              { label: 'Outils IA sur mesure', href: '/outils-ia-sur-mesure', tag: 'Sur mesure', desc: "Des outils construits autour d'un poste de travail, pour un métier et ses données." },
+              { label: 'Agence automatisation IA', href: '/agence-automatisation-ia', tag: 'Automatisation', desc: "Repérer, prototyper puis déployer les automatisations d'un service, avec ceux qui y travaillent." },
+              { label: "Cas d'usage de l'IA en entreprise", href: '/cas-usage-ia-entreprise', tag: 'Exemples', desc: "Des exemples classés par fonction, pour rattacher chaque livrable à une tâche précise." },
+              { label: 'IA générative en entreprise', href: '/ia-generative-entreprise', tag: 'GenAI', desc: "Les modèles de langage en entreprise, du premier usage au déploiement encadré." },
+              { label: "Prix d'un projet IA", href: '/prix-projet-ia', tag: 'Budget', desc: "Les fourchettes par type de projet et les modes de facturation, expliqués." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -391,7 +425,7 @@ export default function SolutionsHubPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Ouvrir la page
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -401,12 +435,31 @@ export default function SolutionsHubPage() {
         </div>
       </section>
 
-      {/* ── ÉTUDES DE CAS (preuve, méthode en six temps, résultats) ── */}
-      <CaseStudyCards
-        ids={['distribution', 'photovoltaique', 'conseil-financier']}
-        title="Trois solutions conçues avec les équipes, méthode et résultats"
-        intro="Assistants commerciaux, assistants de flux logistique et commercial, assistants d'appels d'offres : trois missions documentées, avec ce qu'elles changent pour les équipes et l'organisation."
-      />
+      {/* ── ÉTUDES DE CAS (trois missions citées en quelques phrases, lien vers l'ancre) ── */}
+      <section id="etudes-de-cas" style={{ padding: sectionPad, background: '#fff', borderTop: '1px solid #E5E7EB', borderBottom: '1px solid #E5E7EB' }}>
+        <div style={wrap}>
+          <div style={kickerStyle}>Missions récentes</div>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Trois solutions construites avec les équipes qui s'en servent
+          </h2>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
+            Ces missions sont anonymisées à la demande des clients. Chacune montre un livrable de cette page à l'œuvre : des compétences pour une équipe commerciale, des assistants autour d'un ERP, des assistants d'appels d'offres.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+            {CAS.map(k => (
+              <article key={k.id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{k.secteur}</span>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0, lineHeight: 1.3, letterSpacing: '-0.01em' }}>{k.titre}</h3>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{k.texte}</p>
+                <Link to={`/etudes-de-cas-ia#${k.id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
+                  Le détail de la mission
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── FAQ (éditorial asymétrique) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
@@ -415,13 +468,13 @@ export default function SolutionsHubPage() {
             <div style={editorialAside}>
               <div style={kickerStyle}>FAQ</div>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Solutions IA sur mesure : questions fréquentes
+                Les questions que l'on nous pose avant un projet
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre situation sort de ces cas ?
               </p>
               <Link to="/contact?type=projet" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Décrivez-la-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -444,12 +497,12 @@ export default function SolutionsHubPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div aria-hidden="true" style={{ position: 'absolute', top: -120, right: -80, width: 360, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.18), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
-            <div style={{ ...kickerStyle, color: '#60A5FA' }}>Premier échange gratuit</div>
+            <div style={{ ...kickerStyle, color: '#60A5FA' }}>30 minutes de cadrage offertes</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Quelle solution IA pour votre entreprise ?
+              Vous hésitez entre plusieurs livrables ?
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 600 }}>
-              Pas sûr du type de livrable ? Réservez 30 minutes de cadrage, offertes, ou décrivez-nous votre contexte. Nous revenons vers vous sous 24 heures avec une lecture du périmètre et une proposition de cadrage. Vous restez propriétaire de ce que nous développons.
+              Réservez 30 minutes de cadrage, offertes, ou décrivez votre situation par écrit. Vous recevez sous 24 heures une première lecture du périmètre et la liste des points à vérifier ; le code de ce que nous construirons ensuite vous appartiendra.
             </p>
             <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center', marginBottom: 24 }}>
               <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
@@ -461,7 +514,7 @@ export default function SolutionsHubPage() {
               </Link>
             </div>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Code livré au client · Multi-LLM · Lyon, Europe, États-Unis, Inde
+              Forfait ou régie · Code remis au client · Modèles choisis tâche par tâche
             </p>
           </div>
         </div>
@@ -470,20 +523,20 @@ export default function SolutionsHubPage() {
       {/* ── LE DÉROULÉ (hub, condensé) ── */}
       <section style={{ padding: 'clamp(56px, 8vw, 88px) 24px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 14 }}>La méthode</div>
+          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 14 }}>Notre méthode</div>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: 880 }}>
-            Comment se construit une solution IA, du cadrage au run ?
+            Les cinq étapes d'un projet de solution IA, du cadrage à l'exploitation
           </h2>
           <p style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: '3px solid #2563EB', borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong>Cinq étapes, toujours les mêmes : un cadrage qui priorise le cas d'usage, une maquette ou un POC sur vos données réelles, une décision d'industrialisation prise sur des critères mesurés, la construction et l'intégration, puis le run : qui surveille, qui corrige, qui possède. Un POC qui ne passe pas son critère s'arrête, et cet arrêt est un résultat : il coûte quelques milliers d'euros, pas un déploiement raté.</strong>
+            <strong>Chaque projet passe par cinq étapes : un cadrage qui choisit le cas d'usage, une maquette ou un POC (une preuve de concept) sur vos données, une décision prise sur un critère écrit à l'avance, la construction et l'intégration, puis l'exploitation avec un responsable nommé. Un POC qui manque son critère s'arrête là, et cet arrêt vous coûte quelques milliers d'euros au lieu d'un déploiement manqué.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 210px), 1fr))', gap: 16 }}>
             {[
-              ['01 · Cadrage', "Le cas d'usage priorisé par valeur et par effort, les données et licences recensées, le critère de succès posé par écrit."],
-              ['02 · POC', "Une maquette sur vos données réelles, entre les mains de vos utilisateurs. C'est elle qui dit si on continue."],
-              ['03 · Décision', "Industrialiser, ajuster ou arrêter : l'arbitrage se prend sur le critère mesuré, pas sur l'enthousiasme d'une démonstration."],
-              ['04 · Construction', "Développement, intégration au SI (lecture d'abord, toute écriture cadrée), sécurité et droits, recette avec vos équipes."],
-              ['05 · Run', "Surveillance, corrections, évolutions ; un propriétaire nommé côté client ; le code et la documentation vous appartiennent."],
+              ['01 · Cadrage', "Le cas d'usage retenu pour sa valeur et son effort, les données et les licences disponibles, le critère de réussite écrit."],
+              ['02 · POC', "Une maquette sur vos données, utilisée par de futurs utilisateurs : leurs retours décident de la suite."],
+              ['03 · Décision', "Industrialiser, ajuster ou arrêter, au vu du critère mesuré pendant le POC."],
+              ['04 · Construction', "Développement, raccordement au SI en lecture d'abord, droits d'accès, recette avec vos équipes."],
+              ['05 · Exploitation', "Surveillance, corrections, évolutions, un responsable désigné chez vous ; le code et la documentation vous appartiennent."],
             ].map(([t, d]) => (
               <div key={t} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: 20 }}>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
@@ -492,7 +545,7 @@ export default function SolutionsHubPage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 860 }}>
-            La méthode complète est détaillée sur <Link to="/methode-projet-ia" style={{ color: '#2563EB', fontWeight: 600 }}>notre méthode projet IA</Link>, les ordres de grandeur sur <Link to="/prix-projet-ia" style={{ color: '#2563EB', fontWeight: 600 }}>combien coûte un projet IA</Link> : un POC se chiffre en milliers d'euros, un déploiement en dizaines de milliers, un programme complet peut dépasser 100 000 €. Le devis suit le cadrage.
+            Chaque étape est détaillée sur la page <Link to="/methode-projet-ia" style={{ color: '#2563EB', fontWeight: 600 }}>méthode de projet IA</Link>, et les budgets observés sur la page <Link to="/prix-projet-ia" style={{ color: '#2563EB', fontWeight: 600 }}>combien coûte un projet IA</Link>. Le devis vient après le cadrage.
           </p>
         </div>
       </section>
@@ -500,16 +553,16 @@ export default function SolutionsHubPage() {
       {/* ── LES ERREURS ── */}
       <section style={{ padding: 'clamp(56px, 8vw, 88px) 24px', background: '#fff' }}>
         <div style={{ maxWidth: 1140, margin: '0 auto' }}>
-          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 14 }}>Ce qui fait échouer</div>
+          <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 14 }}>Les pièges</div>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 24px', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: 880 }}>
-            Les quatre erreurs des projets de solutions IA
+            Quatre erreurs qui font échouer un projet de solution IA
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 250px), 1fr))', gap: 18 }}>
             {[
-              ["Partir de l'outil", "Choisir la technologie avant le cas d'usage produit des démonstrateurs sans utilisateurs. Le cadrage part du travail réel d'une équipe, l'outil vient ensuite."],
-              ['Sous-estimer les données', "La plupart des retards viennent des données : dispersées, non nettoyées, aux droits flous. On les regarde en face au cadrage, pas au milieu du développement."],
-              ['Industrialiser sans critère', "Sans critère de succès mesuré au POC, la décision d'industrialiser se prend à l'enthousiasme. C'est la première cause de déploiements abandonnés."],
-              ['Oublier le run', "Une solution sans propriétaire, sans surveillance et sans budget d'évolution meurt en quelques mois. Le run se conçoit dès le cadrage, pas après la mise en production."],
+              ["Choisir l'outil avant l'usage", "Une plateforme achetée avant d'avoir choisi le cas produit une démonstration que personne n'utilise. Nous partons du travail d'une équipe, et l'outil se choisit ensuite."],
+              ['Découvrir les données trop tard', "Documents dispersés, versions contradictoires, droits flous : ces problèmes retardent la plupart des projets. Nous les examinons au cadrage, avant d'écrire du code."],
+              ['Industrialiser sur une impression', "Sans critère mesuré pendant le POC, l'enthousiasme d'une démonstration décide à la place des chiffres, et le déploiement s'arrête quelques mois plus tard."],
+              ["Oublier l'exploitation", "Un outil sans responsable, sans surveillance et sans budget d'évolution se dégrade vite. L'exploitation se prépare dès le cadrage."],
             ].map(([t, d]) => (
               <div key={t} style={{ background: '#fff', border: '1px solid #E5E7EB', borderTop: '3px solid #2563EB', borderRadius: 14, padding: 22 }}>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
@@ -526,18 +579,18 @@ export default function SolutionsHubPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui intervient</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
-              Un cabinet spécialisé IA, indépendant des éditeurs
+              Un fondateur, des développeurs et des consultants indépendants
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, n'a qu'un seul métier : l'IA. Les solutions sont construites par Mathias et par un réseau d'intervenants indépendants et expérimentés. L'indépendance vis-à-vis des éditeurs garantit une recommandation qui suit votre intérêt, pas un catalogue. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Mathias Nizan a fondé Masteria à Lyon en 2022 et suit chaque projet de solution. Il compose l'équipe de chacun parmi un réseau d'indépendants, dont une dizaine de consultants et cinq développeurs IA environ. Aucune licence à revendre : le choix du modèle et de l'hébergement suit vos contraintes. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
             {[
-              ['Depuis 2022', 'spécialisé uniquement IA'],
-              ['+1 500', 'professionnels formés'],
-              ['Indépendant', 'des éditeurs de solutions'],
-              ['Code livré', 'la solution vous appartient'],
+              ['2022', 'création de Masteria à Lyon'],
+              ['≈ 5', 'développeurs IA mobilisables'],
+              ['Aucune', 'licence revendue'],
+              ['Code remis', 'propriété du client'],
             ].map(([k, v]) => (
               <div key={k}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -548,9 +601,7 @@ export default function SolutionsHubPage() {
         </div>
       </section>
 
-      <FounderNote />
-
-      <OfficialSources />
+      <OfficialSources lean />
     </>
   )
 }

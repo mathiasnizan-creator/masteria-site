@@ -139,10 +139,13 @@ export default function SEOHead({
   // Le title porte déjà « | Masteria » : y ajouter « , Masteria » donnait un alt
   // qui répétait la marque deux fois.
   const titreNu = String(title || '').replace(/\s*[|·—–]\s*[^|·—–]*Masteria\s*$/i, '').trim()
-  const imageAlt = titreNu ? `${titreNu} — Masteria` : 'Masteria, cabinet IA : audit, conseil, développement et formation'
+  const imageAlt = titreNu ? `${titreNu} · Masteria` : 'Masteria, cabinet IA : audit, conseil, développement et formation'
   // Validité du tarif pour le schema Offer (recalculée à chaque build prerender) —
   // évite que Google considère le prix comme expiré. Fin de l'année suivante.
   const priceValidUntil = `${new Date().getFullYear() + 1}-12-31`
+  // Langue de la page courante : seules les pages anglaises de la Veille IA
+  // passent htmlLang='en'. Le WebSite et l'Organization restent en français.
+  const pageEnAnglais = String(htmlLang).toLowerCase().startsWith('en')
 
   /* ───── JSON-LD Person (Mathias Nizan — E-E-A-T réutilisable) ───── */
   const jsonLdPerson = {
@@ -288,7 +291,7 @@ export default function SEOHead({
     url: fullUrl,
     name: title,
     description,
-    inLanguage: 'fr-FR',
+    inLanguage: pageEnAnglais ? 'en' : 'fr-FR',
     isPartOf: { '@id': `${SITE_URL}/#website` },
     publisher: { '@id': `${SITE_URL}/#organization` },
     primaryImageOfPage: { '@type': 'ImageObject', url: imageUrl, width: 1200, height: 630 },
@@ -356,7 +359,7 @@ export default function SEOHead({
           inLanguage: 'fr-FR',
           location: {
             '@type': 'Place',
-            name: courseData.locationName || 'Masteria — présentiel France/Suisse/Belgique ou distanciel',
+            name: courseData.locationName || 'Masteria · présentiel ou distanciel, en France et à l’international',
             address: {
               '@type': 'PostalAddress',
               streetAddress: "17 rue d'Algérie",
@@ -516,7 +519,7 @@ export default function SEOHead({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={fullUrl} />
       <meta property="og:site_name" content="Masteria" />
-      <meta property="og:locale" content="fr_FR" />
+      <meta property="og:locale" content={pageEnAnglais ? 'en_GB' : 'fr_FR'} />
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image:type" content={imageType} />
       <meta property="og:image:width" content="1200" />

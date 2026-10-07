@@ -1,12 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Bot, Briefcase, Building2, Check, Globe, GraduationCap, Landmark,
-  Layers, ListChecks, Scale, ShieldCheck, Target, Users, Workflow, Zap,
+  ArrowRight, Bot, Briefcase, Building2, Check, Factory, Globe, GraduationCap, Landmark,
+  Layers, ListChecks, Network, Scale, ShieldCheck, Target, Users, Workflow, Zap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -25,14 +24,14 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  *  - /acculturation-ia = la démarche d'ensemble qui suit la session COMEX.
  * Le tableau « quel programme pour qui » de cette page verrouille la partition.
  *
- * INTÉGRITÉ : preuve = uniquement les faits publiés sur /etudes-de-cas-ia
- * (groupe industriel international du packaging : déploiement commencé par le
- * COMEX et les pilotes, ~30 personnes au premier palier). Tarif exécutif
- * (tranché le 2026-09-01) : 1 980 € HT la session de 3 h ou la demi-journée,
- * 3 960 € HT la journée complète, pour l'ensemble du comité ; grille
- * distincte de l'intra équipes (1 980 €/jour sur /formation-ia-entreprise et
- * /formation-ia-dirigeants). Animation : Mathias Nizan OU un formateur senior
- * du réseau (ne jamais promettre le fondateur systématiquement).
+ * Réécrite le 07/10/2026 (texte propre à la page, faits à jour) : plus de
+ * FounderNote ni d'OfficialSources générique ; deux cas cités avec lien vers
+ * leur ancre (industrie, mission franchise-gemini) ; AI Act daté après
+ * l'Omnibus (règlement (UE) 2026/1744).
+ * Tarif exécutif (tranché le 2026-09-01) : 1 980 € HT la session de 3 h ou la
+ * demi-journée, 3 960 € HT la journée complète, pour l'ensemble du comité.
+ * Animation : Mathias Nizan OU un formateur senior du réseau (ne jamais
+ * promettre le fondateur systématiquement).
  * Nuance financement honnête : action de formation = finançable, conférence
  * seule = budget de fonctionnement. Entités Wikipédia vérifiées (curl 200)
  * le 2026-08-28.
@@ -42,8 +41,8 @@ const SLUG = 'formation-ia-comex'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = 'Formation IA COMEX : embarquer votre comité exécutif | Masteria'
-const META_DESC = "Formation IA COMEX : la session exécutive qui aligne votre comité sur l'IA (état de l'art, cas concrets, arbitrages, feuille de route). En français ou en anglais."
+const META_TITLE = 'Formation IA COMEX : aligner le comité exécutif | Masteria'
+const META_DESC = "Formation IA COMEX : de 3 h à une journée pour aligner votre comité exécutif sur l'IA et arbitrer sa feuille de route. En français ou en anglais."
 const KEYWORDS = "formation ia comex, ia comex, training ia comex, formation ia comité exécutif, formation ia codir, conférence ia comex, acculturation ia comex"
 
 /* ───────── Styles partagés ───────── */
@@ -58,6 +57,7 @@ const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
+const srcLinkStyle = { color: '#1A62FF', textDecoration: 'underline', textUnderlineOffset: '2px', fontWeight: 600 }
 
 const thStyle = { textAlign: 'left', padding: '12px 16px', fontSize: 12.5, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#6B7280', borderBottom: '2px solid #E5E7EB', fontFamily: 'Nunito, sans-serif' }
 const tdStyle = { padding: '14px 16px', fontSize: 14.5, color: '#374151', lineHeight: 1.6, borderBottom: '1px solid #F3F4F6', verticalAlign: 'top' }
@@ -75,33 +75,33 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: Briefcase, label: 'Conçue pour COMEX, CODIR et direction générale' },
-  { icon: Globe, label: 'En français ou en anglais' },
-  { icon: Building2, label: 'Dans vos locaux ou hors site' },
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
+  { icon: Briefcase, label: 'Pour COMEX, CODIR et directions générales' },
+  { icon: Globe, label: 'Session en français ou en anglais' },
+  { icon: Building2, label: 'Chez vous ou hors site' },
+  { icon: GraduationCap, label: 'Qualiopi · formats de formation' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Format', value: "Session de 3 h, demi-journée ou journée complète ; 2 jours possibles avec ateliers d'approfondissement" },
-  { label: 'Pour qui', value: "Comités exécutifs, comités de direction et directions générales de PME, d'ETI et de groupes" },
-  { label: 'Langue', value: "En français ou en anglais, pour les comités internationaux" },
-  { label: 'Contenu', value: "État de l'art sans jargon (du modèle à l'agent), cas concrets de votre secteur, arbitrages et feuille de route" },
-  { label: 'Animation', value: "Mathias Nizan, fondateur de Masteria, ou un formateur senior du réseau, choisi selon votre secteur et votre calendrier" },
-  { label: 'Tarif', value: "1 980 € HT la session de 3 h ou la demi-journée, 3 960 € HT la journée complète, pour l'ensemble du comité ; formats action de formation certifiés Qualiopi et finançables OPCO ; devis sous 24 h" },
+  { label: 'Format', value: "Session de 3 heures, demi-journée avec manipulation ou journée complète ; un second jour d'ateliers reste possible" },
+  { label: 'Pour qui', value: "Comités exécutifs, CODIR et directions générales, de la PME au groupe présent sur plusieurs continents" },
+  { label: 'Langue', value: "Français ou anglais, voire les deux quand le comité réunit plusieurs nationalités" },
+  { label: 'Contenu', value: "Ce que l'IA sait faire en octobre 2026, cas comparables de votre secteur, arbitrages, feuille de route" },
+  { label: 'Animation', value: "Mathias Nizan ou un formateur senior du réseau Masteria, retenu selon votre secteur, la langue et la date" },
+  { label: 'Tarif', value: "1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète, comité entier ; devis le lendemain du cadrage" },
 ]
 
 /* ───────── Sommaire ───────── */
 
 const SOMMAIRE = [
-  ['#pourquoi', 'Pourquoi le COMEX d\'abord'],
-  ['#deroule', 'Le déroulé'],
-  ['#formats', 'Les formats'],
-  ['#themes', 'Les thèmes'],
-  ['#quel-programme', 'COMEX, dirigeants ou managers ?'],
-  ['#tarif', 'Tarif'],
-  ['#faq', 'FAQ'],
+  ['#pourquoi', 'Le comité en premier'],
+  ['#deroule', 'Déroulé'],
+  ['#formats', 'Durées'],
+  ['#themes', 'Sujets'],
+  ['#quel-programme', 'Quel programme ?'],
+  ['#tarif', 'Prix'],
+  ['#faq', 'Questions'],
 ]
 
 /* ───────── Pourquoi commencer par le COMEX (4 cartes) ───────── */
@@ -109,23 +109,23 @@ const SOMMAIRE = [
 const POURQUOI = [
   {
     icon: Target,
-    title: 'Les arbitrages sont à ce niveau',
-    desc: "Outils retenus, périmètre de données, budget formation, gouvernance : autant de décisions transverses qu'aucune direction ne peut trancher seule. La session les met sur la table, avec de quoi décider.",
+    title: 'Les arbitrages se prennent à ce niveau',
+    desc: "Choix des outils, périmètre des données, budget de formation, gouvernance : aucune direction ne peut trancher seule ces sujets transverses. La session les pose sur la table, avec les éléments pour décider.",
   },
   {
     icon: Users,
-    title: "L'exemple vient d'en haut",
-    desc: "Les équipes adoptent l'IA quand leur direction la pratique et en parle précisément. Un comité qui a manipulé, vu les limites et posé le cadre donne le ton de tout le déploiement.",
+    title: "L'exemple part du comité",
+    desc: "Les équipes s'approprient l'IA quand leurs dirigeants s'en servent et en parlent avec précision. Un comité qui a manipulé les outils, constaté leurs limites et posé des règles donne le ton du déploiement.",
   },
   {
     icon: Scale,
-    title: 'La littératie IA concerne aussi les dirigeants',
-    desc: "L'article 4 du règlement européen demande de soutenir la montée en compétence de toute personne qui utilise l'IA, comité exécutif compris. Une session documentée y contribue, sans dramatisation.",
+    title: "Les dirigeants entrent dans le champ de l'article 4",
+    desc: "L'AI Act attend depuis février 2025 que l'entreprise aide chaque utilisateur d'IA à comprendre ses outils, membres du comité inclus. Une session documentée compte parmi ces mesures.",
   },
   {
     icon: Layers,
-    title: "Éviter l'ordre dispersé",
-    desc: "Sans position commune, chaque direction expérimente dans son coin : outils redondants, données exposées, énergie perdue. Une position de comité, même prudente, vaut mieux que six positions implicites.",
+    title: 'Un cap commun pour toutes les directions',
+    desc: "Sans position commune, chaque direction essaie un outil dans son coin : abonnements en double, données exposées, efforts dispersés. Une ligne de comité, même prudente, vaut mieux que six lignes implicites.",
   },
 ]
 
@@ -135,27 +135,27 @@ const DEROULE = [
   {
     num: '01',
     title: 'Cadrage avec la direction générale',
-    desc: "Un échange préalable : votre secteur, vos enjeux, ce que le comité sait déjà, les décisions à instruire. La session se prépare sur vos cas, jamais sur un support générique. Ce cadrage est gratuit.",
+    desc: "Avant la session, un échange avec le directeur général ou son bras droit : secteur, priorités, ce que le comité connaît déjà, décisions en attente. Le contenu se prépare sur vos sujets. La première demi-heure de cet entretien n'est pas facturée.",
   },
   {
     num: '02',
-    title: "L'état de l'art, sans jargon",
-    desc: "Ce que les modèles font réellement en 2026, du modèle à l'agent : capacités, limites, ce qui relève du réel et ce qui relève du récit. Démonstrations en direct plutôt que slides.",
+    title: "L'état des lieux, sans jargon",
+    desc: "Ce que les modèles savent faire en octobre 2026, de l'assistant conversationnel à l'agent qui agit dans vos logiciels : capacités, limites, part de promesse. Des démonstrations en direct, peu de diapositives.",
   },
   {
     num: '03',
-    title: 'Les cas de votre secteur',
-    desc: "Ce que des organisations comparables ont déployé, ce que ça a demandé, ce que ça a produit. Selon le format, le comité manipule lui-même sur des cas proches des siens.",
+    title: 'Des cas proches du vôtre',
+    desc: "Ce que des organisations comparables ont mis en place, ce que cela leur a demandé et ce qu'elles en retirent. Selon le format, les membres essaient eux-mêmes les outils sur des dossiers voisins des leurs.",
   },
   {
     num: '04',
     title: 'Les arbitrages',
-    desc: "Données, outils, faire ou faire faire, organisation, budget, risques : chaque sujet est instruit avec une grille de décision. Le comité tranche en séance ce qui peut l'être.",
+    desc: "Données, outils, achat ou développement sur mesure, organisation, budget, risques : chaque question passe par une grille de décision. Le comité tranche en séance ce qui peut l'être et note le reste.",
   },
   {
     num: '05',
-    title: 'La feuille de route et la suite',
-    desc: "Un relevé de décisions et une feuille de route : premiers chantiers, équipes pilotes, cadre d'usage, calendrier. La suite (acculturation des équipes, formations métier) s'enclenche derrière.",
+    title: 'La feuille de route',
+    desc: "Un relevé de décisions et un plan : premiers chantiers, équipes pilotes, cadre d'usage, dates. La suite (acculturation des équipes, formations métier) se branche directement dessus.",
   },
 ]
 
@@ -164,52 +164,71 @@ const DEROULE = [
 const FORMATS = [
   {
     icon: Zap,
-    title: 'La session exécutive de 3 h',
-    desc: "Le format le plus demandé : état de l'art, démonstrations en direct, discussion d'arbitrages. Assez court pour tenir dans un ordre du jour de comité, assez dense pour changer le niveau de la conversation.",
+    title: 'La session exécutive de 3 heures',
+    desc: "Le format le plus demandé : état des lieux, démonstrations en direct, premiers arbitrages. Il tient dans l'ordre du jour d'un comité et suffit à élever le niveau de la discussion.",
   },
   {
     icon: Layers,
-    title: 'La demi-journée avec ateliers',
-    desc: "L'état de l'art, puis un passage en manipulation : le comité teste les outils sur des cas réels de l'entreprise. Le niveau de conviction change quand chacun a produit quelque chose lui-même.",
+    title: 'La demi-journée avec manipulation',
+    desc: "Après l'état des lieux, chaque membre teste les outils sur des dossiers de l'entreprise. Un dirigeant convaincu par ce qu'il a produit lui-même défend mieux le projet devant ses équipes.",
   },
   {
     icon: ListChecks,
     title: 'La journée feuille de route',
-    desc: "Le format complet : état de l'art, manipulation, puis travail d'arbitrage structuré jusqu'à la feuille de route et au relevé de décisions. Extensible à 2 jours avec des ateliers d'approfondissement.",
+    desc: "Le format complet : état des lieux, manipulation, puis travail d'arbitrage jusqu'au relevé de décisions et à la feuille de route écrite. Un second jour d'ateliers peut s'y ajouter.",
   },
 ]
 
 /* ───────── Les thèmes traités (6 cartes) ───────── */
 
 const THEMES = [
-  { icon: Bot, title: "Du modèle à l'agent", desc: "Assistants, agents, automatisation : ce que chaque niveau permet, démontré en direct, et ce que ça change pour vos processus." },
-  { icon: ShieldCheck, title: 'Données, RGPD, sécurité', desc: "Ce qui peut être confié aux outils et sous quelles conditions : offres entreprise, périmètres de données, points de vigilance réels." },
-  { icon: Scale, title: 'AI Act et gouvernance', desc: "Le calendrier réel du règlement européen, l'obligation de littératie, la charte d'usage : de quoi cadrer sans sur-réagir." },
-  { icon: Workflow, title: 'Impact sur les métiers', desc: "Fonction par fonction, ce que l'IA change dans les 18 prochains mois : où sont les gains rapides, où sont les illusions." },
-  { icon: Target, title: 'Faire ou faire faire', desc: "Outils du marché, développements sur mesure, ou les deux : une grille pour décider quoi acheter, quoi construire, quoi attendre." },
-  { icon: ListChecks, title: 'La feuille de route', desc: "Prioriser les chantiers, choisir les équipes pilotes, séquencer formation et déploiement : la sortie concrète de la session." },
+  { icon: Bot, title: "De l'assistant à l'agent", desc: "Assistants, agents, automatisations : ce que chaque niveau permet, montré en direct, et ce que cela change dans vos processus." },
+  { icon: ShieldCheck, title: 'Données, RGPD, sécurité', desc: "Quelles données peuvent entrer dans un assistant, et sous quelles conditions : comptes professionnels, périmètres de données, réglages d'entraînement vérifiés." },
+  { icon: Scale, title: 'AI Act et gouvernance', desc: "Le calendrier du règlement après l'Omnibus de juillet 2026 : article 4 en vigueur dès 2025, obligations de transparence (article 50) applicables au 2 août 2026, haut risque de l'annexe III reporté à décembre 2027." },
+  { icon: Workflow, title: 'Effets sur les métiers', desc: "Service par service, les tâches que l'IA transforme à court terme : où les gains sont à portée de main, où les attentes dépassent ce que les outils tiennent." },
+  { icon: Target, title: 'Acheter ou construire', desc: "Outils du marché, développement sur mesure ou un mélange des deux : une grille pour décider quoi acheter, quoi faire construire, quoi laisser mûrir." },
+  { icon: ListChecks, title: 'La feuille de route', desc: "Prioriser les chantiers, désigner les équipes pilotes, ordonner formation et déploiement : ce que le comité emporte en sortant." },
 ]
 
 /* ───────── Quel programme pour qui (tableau de partition) ───────── */
 
 const QUEL_PROGRAMME = [
   {
-    vous: 'Un comité exécutif ou un CODIR à aligner collectivement',
+    vous: 'Un comité exécutif ou un CODIR à aligner ensemble',
     programme: 'Formation IA COMEX (cette page)',
     href: null,
-    couvre: "Session exécutive collective : état de l'art, arbitrages, feuille de route ; en français ou en anglais",
+    couvre: "Session collective : état des lieux, arbitrages, feuille de route, en français ou en anglais",
   },
   {
-    vous: 'Un dirigeant qui veut décider et piloter pour son entreprise',
+    vous: 'Un dirigeant qui veut décider avec quelques directeurs',
     programme: 'Formation IA dirigeants',
     href: '/formation-ia-dirigeants',
-    couvre: "Une journée stratégique : grille de lecture, ROI, gouvernance, feuille de route à 90 jours",
+    couvre: "Une journée de décision : grille de lecture, retour sur investissement, gouvernance, plan à 90 jours",
   },
   {
-    vous: "Des managers qui pilotent des équipes utilisatrices de l'IA",
+    vous: "Des managers dont les équipes utilisent l'IA",
     programme: 'Formation IA management',
     href: '/formation-ia-management',
-    couvre: "Le programme management : cadrer les usages de l'équipe, faire adopter, suivre les résultats",
+    couvre: "Encadrer les usages de l'équipe, les faire adopter, suivre ce qu'ils produisent",
+  },
+]
+
+/* ───────── Cas publiés (faits de src/data/etudes-de-cas.js et missions-formation.js) ───────── */
+
+const CAS = [
+  {
+    icon: Factory,
+    secteur: 'Groupe international du packaging',
+    texte: "Après la formation de 24 managers pilotes à Microsoft Copilot (anciennement Microsoft 365 Copilot), le comité de direction, accompagné du Data manager du groupe, a suivi une matinée stratégique en anglais : vocabulaire du modèle à l'agent, cadre AI Act et RGPD, coût des agents. Il en est ressorti avec la liste des questions à trancher pour sa feuille de route, avant la phase internationale lancée en octobre 2026.",
+    href: '/etudes-de-cas-ia#industrie',
+    lien: 'Lire le cas industriel',
+  },
+  {
+    icon: Network,
+    secteur: 'Franchiseur B2B · équipe du siège',
+    texte: "En septembre 2026, huit dirigeants du siège ont passé deux jours sur Gemini dans Google Workspace, chacun avec un projet tiré de son poste ; leurs deux administrateurs ont ensuite consacré une journée en classe virtuelle à la console, à la charte et à un plan échelonné sur trois mois.",
+    href: '/etudes-de-cas-ia#mission-franchise-gemini',
+    lien: 'Lire le récit complet',
   },
 ]
 
@@ -217,77 +236,77 @@ const QUEL_PROGRAMME = [
 
 const FAQ = [
   {
-    q: "Qu'est-ce qu'une formation IA COMEX ?",
-    a: "C'est une session exécutive conçue pour un comité de direction : en 3 heures à une journée, elle met tout le comité au même niveau sur ce que l'IA fait réellement (du modèle à l'agent), le confronte à des cas concrets de son secteur et débouche sur des arbitrages : données, outils, organisation, budget, feuille de route. Chez Masteria, elle est animée par un formateur senior, en français ou en anglais, dans vos locaux ou hors site. Les formats structurés en action de formation sont certifiés Qualiopi.",
+    q: 'Formation IA COMEX : en quoi consiste-t-elle ?',
+    a: "En une session exécutive réservée à un comité de direction. Sur une durée de 3 heures à une journée, elle met tous les membres au même niveau sur ce que l'IA sait faire, de l'assistant à l'agent, les confronte à des cas de leur secteur et les conduit à des arbitrages : données, outils, organisation, budget, feuille de route. Masteria l'anime en français ou en anglais, chez vous ou hors site, par la voix de Mathias Nizan ou d'un formateur senior du réseau ; les formats construits en action de formation relèvent de la certification Qualiopi.",
   },
   {
-    q: 'Quelle différence avec la formation IA pour dirigeants ?',
-    a: "La formation IA COMEX est une session collective d'alignement et d'arbitrage : le comité entier partage le même état de l'art puis tranche ensemble. La formation IA pour dirigeants est une journée stratégique orientée décision, pensée pour le dirigeant et son CODIR, notamment en PME et ETI. Les deux se recouvrent en partie ; le cadrage, gratuit, oriente vers le bon format selon la taille de l'organisation et ce que vous voulez en sortir.",
+    q: 'En quoi diffère-t-elle de la formation IA pour dirigeants ?',
+    a: "La formation COMEX est collective : le comité entier partage le même état des lieux, puis tranche ensemble. La formation IA pour dirigeants est une journée de décision pensée pour un dirigeant et son CODIR, surtout en PME et en ETI. Les deux se recoupent en partie ; le cadrage vous oriente en fonction de votre effectif et du résultat que vous attendez.",
   },
   {
-    q: 'Combien de temps faut-il mobiliser le comité ?',
-    a: "De 3 heures à une journée. La session de 3 h tient dans un ordre du jour de comité et suffit pour l'état de l'art et les premiers arbitrages. La demi-journée ajoute la manipulation des outils ; la journée complète va jusqu'à la feuille de route écrite. Les ateliers d'approfondissement, quand ils sont demandés, se programment sur un second jour, souvent quelques semaines plus tard.",
+    q: 'Combien de temps le comité doit-il bloquer ?',
+    a: "Entre 3 heures et une journée. La version de 3 heures se glisse dans une réunion de comité ordinaire et couvre l'état des lieux et les premiers arbitrages. La demi-journée ajoute la manipulation des outils ; la journée complète produit la feuille de route écrite. Des ateliers d'approfondissement peuvent occuper un second jour, souvent quelques semaines plus tard.",
   },
   {
-    q: 'Faut-il un bagage technique pour suivre ?',
-    a: "Aucun. La session est conçue pour des décideurs : zéro jargon inutile, des démonstrations en direct plutôt que des slides, et des grilles de décision plutôt que des concepts. Les questions techniques qui émergent (architecture, données, intégrations) sont traitées au niveau où un comité en a besoin : ce que ça permet, ce que ça coûte, ce que ça engage.",
+    q: 'Les membres du comité doivent-ils avoir des notions techniques ?',
+    a: "Non. La session s'adresse à des décideurs : peu de jargon, des démonstrations en direct, des grilles de décision. Les questions techniques qui surgissent (architecture, données, intégrations) sont traitées au niveau utile à un comité : ce que cela permet, ce que cela coûte, ce que cela engage.",
   },
   {
-    q: "La session peut-elle se tenir en anglais ?",
-    a: "Oui. Les comités exécutifs internationaux sont fréquents chez nos clients : la même session se tient intégralement en anglais (executive AI training), supports et démonstrations compris. Le cadrage se fait dans la langue de votre choix, et un format bilingue est possible quand le comité mélange les deux.",
+    q: 'La session peut-elle se tenir en anglais ?',
+    a: "Oui. Beaucoup de nos clients ont des comités internationaux : la session se déroule alors entièrement en anglais (executive AI training), supports et démonstrations compris. Le cadrage se fait dans la langue de votre choix, et une version bilingue convient aux comités qui mêlent les deux. En 2026, Masteria a déjà conduit en anglais une matinée stratégique de comité de direction et deux sessions de managers.",
   },
   {
-    q: 'Que produit concrètement la session ?',
-    a: "Un relevé de décisions, la grille d'arbitrage remplie sur vos sujets (données, outils, organisation, budget), une première version du cadre d'usage et une feuille de route : chantiers prioritaires, équipes pilotes, calendrier. Sur les formats courts, la feuille de route reste à l'état d'orientations ; sur la journée complète, elle repart écrite.",
+    q: 'Avec quoi le comité repart-il ?',
+    a: "Avec un relevé de décisions, une grille d'arbitrage remplie sur ses propres sujets (données, outils, organisation, budget), un premier jet du cadre d'usage, puis un plan : chantiers prioritaires, équipes pilotes, calendrier. Sur les formats courts, la feuille de route reste au stade des orientations ; après une journée complète, elle est écrite.",
   },
   {
-    q: 'Combien coûte une formation IA COMEX ?',
-    a: "1 980 € HT pour la session de 3 h ou la demi-journée, 3 960 € HT pour la journée complète, dans les deux cas pour l'ensemble du comité (jusqu'à 12 participants), cadrage et préparation sur vos cas compris. Un programme étendu à 2 jours représente deux journées facturées. Le positionnement est exécutif : un intervenant senior, un contenu préparé sur votre secteur et une session qui débouche sur des décisions et une feuille de route.",
+    q: "Quel est le prix d'une session COMEX ?",
+    a: "Comptez 1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète, dans les deux cas pour l'ensemble du comité (douze membres au plus), cadrage et préparation sur vos dossiers compris. Un programme étalé sur deux jours compte deux journées. Ce prix couvre un intervenant senior et un contenu préparé pour votre secteur.",
   },
   {
-    q: 'Est-ce finançable par notre OPCO ?',
-    a: "Les formats structurés en action de formation (objectifs pédagogiques, émargement, évaluation), typiquement la demi-journée et la journée, sont certifiés Qualiopi et finançables par votre OPCO dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous, la décision restant à votre opérateur. Une conférence courte sans dispositif d'évaluation relève en général du budget de fonctionnement, et nous vous le disons clairement au cadrage plutôt que de maquiller le format.",
+    q: 'Notre OPCO peut-il financer la session ?',
+    a: "Les formats montés en action de formation, avec objectifs, émargement et évaluation (en pratique la demi-journée et la journée), entrent dans le périmètre Qualiopi du cabinet. Votre OPCO peut alors les financer en appliquant ses propres critères, dans la mesure de ses fonds ; le dossier se monte avec notre équipe. Une conférence courte sans évaluation se règle plutôt sur le budget de fonctionnement ; nous vous le disons au cadrage plutôt que d'habiller le format.",
   },
   {
     q: "Le comité exécutif est-il concerné par l'obligation de littératie IA ?",
-    a: "Oui. L'article 4 du règlement européen sur l'IA demande aux organisations de soutenir la montée en compétence de toute personne qui utilise des systèmes d'IA dans un cadre professionnel, dirigeants compris. C'est une obligation de moyens : des actions documentées de sensibilisation et de formation suffisent à y répondre, et une session COMEX en fait partie. Aucune raison d'en faire un argument de peur ; c'est simplement une case de plus que la session coche.",
+    a: "Oui. Son article 4, applicable dès février 2025, demande aux entreprises d'accompagner toute personne qui se sert d'un outil d'IA pour elles, membres du comité inclus. Le règlement Omnibus 2026/1744, applicable au 27 juillet 2026, parle désormais de mesures pour soutenir cette maîtrise : on juge les moyens mis en place, sans certificat. Une session COMEX documentée en fait partie, sans qu'il soit utile d'en faire un argument de peur.",
   },
   {
     q: 'Qui anime la session ?',
-    a: "Un formateur senior, choisi au cadrage selon votre secteur, la langue et le calendrier : Mathias Nizan, fondateur de Masteria, ou un formateur expérimenté de son réseau, des indépendants sélectionnés pour leur pratique réelle de l'IA en entreprise et leur aisance face à un comité de direction. À ce niveau, la valeur tient autant à la qualité du dialogue et des arbitrages qu'au contenu ; le profil de l'intervenant vous est présenté avant la session. Pour la suite du déploiement (acculturation des équipes, formations métier), le même réseau intervient.",
+    a: "Un intervenant senior, retenu au cadrage selon votre secteur, la langue et la date : soit Mathias Nizan, qui dirige Masteria, soit l'un des formateurs seniors de son réseau d'indépendants, choisi pour sa pratique de l'IA en entreprise et son aisance devant un comité. Vous recevez son profil avant la session. Le même réseau intervient ensuite pour la suite du déploiement, de l'acculturation aux formations par métier.",
   },
   {
-    q: 'Et après la session du comité, quelle suite ?',
-    a: "La session débouche sur une feuille de route, et la suite la déroule : une démarche d'acculturation par vagues pour embarquer les équipes, des formations par métier sur les cas réels de chacune, un cadre d'usage qui se formalise en charte, et selon les arbitrages, des chantiers de construction (agents, automatisations, outils sur mesure). Chaque brique existe en page dédiée sur ce site ; le comité décide du rythme.",
+    q: 'Et une fois la session terminée ?',
+    a: "La feuille de route se déroule : acculturation par vagues pour les équipes, formations par métier sur leurs dossiers, cadre d'usage transformé en charte et, selon les arbitrages, chantiers de construction (agents, automatisations, outils sur mesure). Chaque étape a sa page sur ce site, et le comité fixe le rythme.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation IA COMEX — Masteria',
-  description: "Formation IA pour comités exécutifs et comités de direction : état de l'art sans jargon (du modèle à l'agent), démonstrations en direct, cas concrets du secteur, arbitrages (données, outils, organisation, budget) et feuille de route. Session de 3 h, demi-journée ou journée complète, en français ou en anglais, animée par un formateur senior. 1 980 € HT la demi-journée, 3 960 € HT la journée complète, pour l'ensemble du comité. Formats action de formation certifiés Qualiopi, finançables OPCO.",
+  name: 'Formation IA COMEX (Masteria)',
+  description: "Session exécutive pour comités de direction : état des lieux de l'IA sans jargon, de l'assistant à l'agent, démonstrations en direct, cas du secteur, arbitrages (données, outils, organisation, budget) et feuille de route. Durée de 3 heures à une journée ; langue française ou anglaise ; conduite soit par Mathias Nizan, soit par un formateur senior du réseau Masteria. 1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète, comité entier. Formats montés en action de formation relevant de la certification Qualiopi.",
   level: 'Direction générale, comités exécutifs et comités de direction',
   teaches: [
-    "Lire l'état de l'art réel de l'IA en entreprise, du modèle à l'agent, sans jargon",
-    "Évaluer ce que l'IA change pour son secteur et ses fonctions dans les 18 mois",
-    "Arbitrer données, outils, faire ou faire faire, organisation et budget avec une grille de décision",
-    "Poser le cadre : gouvernance, charte d'usage, obligation de littératie de l'article 4",
-    "Construire la feuille de route IA de l'organisation : chantiers, pilotes, calendrier",
+    "Comprendre sans jargon ce que l'IA sait faire en entreprise, des assistants jusqu'aux agents",
+    "Mesurer ce que l'IA modifie dans les fonctions de son secteur à court terme",
+    "Trancher données, outils, achat ou construction, organisation et budget avec une grille de décision",
+    "Poser le cadre : gouvernance, charte d'usage, article 4 de l'AI Act",
+    "Écrire la feuille de route IA de l'organisation : chantiers, pilotes, calendrier",
   ],
   about: "Stratégie et gouvernance de l'intelligence artificielle en entreprise",
   timeRequired: 'PT7H',
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis technique.',
   audience: 'Comités exécutifs, comités de direction, directions générales (PME, ETI, groupes)',
-  locationName: 'Masteria — dans vos locaux ou hors site (Europe, États-Unis, Inde) ou distanciel',
+  locationName: 'Masteria : vos locaux, un lieu hors site ou la visio ; comités en France, en Europe, aux États-Unis, en Inde',
   /* Grille exécutive propre à cette page (≠ intra équipes) : prix d'entrée
      porté par l'Offer, détail des deux formats dans la priceSpecification. */
   price: '1980',
-  priceDescription: "Session exécutive pour l'ensemble du comité (jusqu'à 12 participants) : 1 980 € HT la session de 3 h ou la demi-journée, 3 960 € HT la journée complète.",
+  priceDescription: "Pour le comité entier (douze membres au plus) : 1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète.",
 }
 
-/* Le déroulé en ItemList (séquence citable — GEO). */
+/* Le déroulé en ItemList (séquence citable, GEO). */
 const derouleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -306,13 +325,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/formation-ia-comex#article',
-  headline: 'Formation IA COMEX : aligner le comité exécutif, décider la feuille de route',
+  headline: 'Formation IA COMEX : aligner le comité, décider la feuille de route',
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-28',
-  dateModified: '2026-09-01',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ia-comex#webpage' },
   /* Entités liées à Wikipédia (sameAs) : désambiguïsation pour les moteurs
@@ -333,12 +352,12 @@ const termsJsonLd = {
   '@id': `${SITE}/${SLUG}#lexique`,
   name: 'Lexique de la formation IA COMEX',
   hasDefinedTerm: [
-    { '@type': 'DefinedTerm', name: 'COMEX', description: "Comité exécutif : l'instance qui réunit les dirigeants exécutifs d'une entreprise ou d'un groupe (direction générale et directions de fonctions) pour piloter la stratégie et son exécution." },
-    { '@type': 'DefinedTerm', name: 'CODIR', description: "Comité de direction : l'équivalent du comité exécutif dans les PME et ETI, réunissant le dirigeant et ses directeurs. La session IA s'adresse aux deux formats d'instance." },
-    { '@type': 'DefinedTerm', name: 'Littératie IA', description: "Niveau de compréhension et de maîtrise de l'IA que l'article 4 du règlement européen demande aux organisations d'assurer pour toute personne qui utilise un système d'IA, dirigeants compris. Obligation de moyens." },
-    { '@type': 'DefinedTerm', name: 'Feuille de route IA', description: "Le livrable de sortie de la session : chantiers prioritaires, équipes pilotes, cadre d'usage, budget et calendrier, arbitrés par le comité plutôt que subis par les équipes." },
-    { '@type': 'DefinedTerm', name: 'Faire ou faire faire', description: "L'arbitrage entre s'équiper d'outils du marché, faire construire des solutions sur mesure, ou combiner les deux ; instruit en session avec une grille de décision par cas d'usage." },
-    { '@type': 'DefinedTerm', name: "Gouvernance de l'IA", description: "Les règles qui encadrent l'usage de l'IA dans l'organisation : données autorisées, validation humaine de ce qui engage, propriété des assistants et agents créés, charte d'usage." },
+    { '@type': 'DefinedTerm', name: 'COMEX', description: "Le comité exécutif : il réunit la direction générale et les directeurs de fonction d'une entreprise ou d'un groupe pour piloter la stratégie et sa mise en œuvre." },
+    { '@type': 'DefinedTerm', name: 'CODIR', description: "Le comité de direction, son équivalent fréquent en PME et en ETI : le dirigeant et ses directeurs. La session COMEX convient aux deux instances." },
+    { '@type': 'DefinedTerm', name: 'Littératie IA', description: "La maîtrise de l'IA visée par l'article 4 de l'AI Act, à encourager chez quiconque se sert d'un outil d'IA pour l'entreprise, comité compris ; une obligation de moyens." },
+    { '@type': 'DefinedTerm', name: 'Feuille de route IA', description: "Ce que le comité emporte en sortant : chantiers prioritaires, équipes pilotes, cadre d'usage, budget et calendrier, décidés par le comité lui-même et transmis aux équipes." },
+    { '@type': 'DefinedTerm', name: 'Acheter ou construire', description: "Le choix entre des outils du marché, une solution développée sur mesure ou une combinaison des deux, instruit en séance pour chaque usage envisagé." },
+    { '@type': 'DefinedTerm', name: "Gouvernance de l'IA", description: "Les règles qui encadrent l'IA dans l'organisation : données autorisées, relecture humaine de tout ce qui engage l'entreprise, propriétaire des assistants et des agents, charte d'usage." },
   ],
 }
 
@@ -365,11 +384,13 @@ function FAQItem({ q, a, color }) {
   )
 }
 
-/* Sources d'autorité de la page : émises en WebPage.citation (JSON-LD) et
-   affichées dans le bloc « Sources et références officielles ». */
+/* Sources de la page : émises en WebPage.citation (JSON-LD) et listées dans
+   la section de sources propre à la page. */
 const PAGE_CITATIONS = [
-  { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle (article 4, littératie)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-  { name: "Le plan de développement des compétences, ministère du Travail et de l'Emploi", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+  { name: "Texte officiel de l'AI Act, règlement 2024/1689, article 4 compris", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Le règlement Omnibus 2026/1744 sur EUR-Lex, qui a reporté les obligations « haut risque »", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "Plan de développement des compétences : ce qu'en dit le ministère du Travail", url: 'https://travail-emploi.gouv.fr/le-plan-de-developpement-des-competences' },
+  { name: "Qualiopi, la certification des prestataires de formation (ministère du Travail)", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
 ]
 
 export default function FormationIAComexPage() {
@@ -398,7 +419,7 @@ export default function FormationIAComexPage() {
         courseData={COURSE_DATA}
         faqItems={FAQ}
         datePublished="2026-08-28"
-        dateModified="2026-09-01"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
         extraJsonLd={[derouleJsonLd, articleJsonLd, termsJsonLd]}
@@ -431,29 +452,29 @@ export default function FormationIAComexPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Formation IA COMEX :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>aligner le comité exécutif, décider la feuille de route</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>aligner le comité, décider la feuille de route</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Publié en août 2026
+            Signé <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur du cabinet · version revue en octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
+          {/* GEO : réponse directe citable, accroche */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA COMEX est une session exécutive conçue pour un comité de direction : en 3 heures à une journée, elle met tout le comité au même niveau sur ce que l'IA fait réellement, du modèle à l'agent, puis débouche sur des arbitrages concrets : données, outils, organisation, feuille de route. <strong style={{ color: '#fff', fontWeight: 700 }}>Animée par un formateur senior, en français ou en anglais</strong>, dans vos locaux ou hors site.
+            La formation IA COMEX est une session exécutive pour un comité de direction entier : de 3 heures à une journée, elle donne à chaque membre la même lecture de ce que l'IA sait faire aujourd'hui, de l'assistant à l'agent, puis conduit le comité à trancher sur les données, les outils, l'organisation et le budget. <strong style={{ color: '#fff', fontWeight: 700 }}>En français ou en anglais, Mathias Nizan l'anime lui-même ou la confie à un formateur senior du réseau Masteria</strong>, dans vos locaux ou hors site.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Le comité exécutif est le premier étage d'un déploiement IA qui tient : c'est là que se décident le cadre, le budget et l'exemple donné au reste de l'entreprise. Une session dédiée évite les deux écueils classiques, la démonstration spectaculaire sans suite et la prudence qui laisse chaque direction avancer en ordre dispersé.
+            Un déploiement de l'IA tient quand le comité exécutif a fixé le cadre, voté le budget et montré l'exemple. Une session dédiée évite deux pièges fréquents : la démonstration brillante qui ne débouche sur rien, et la prudence qui laisse chaque direction tester de son côté.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Demander un devis sous 24 h
+              Préparer la session de votre comité
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#deroule" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le déroulé
+              Parcourir le déroulé
             </a>
           </div>
 
@@ -469,9 +490,9 @@ export default function FormationIAComexPage() {
             ))}
           </div>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
+          {/* En bref : synthèse citable (GEO), carte sombre */}
           <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
+            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La session en six lignes</div>
             <dl style={{ margin: 0 }}>
               {EN_BREF.map((row, i) => (
                 <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -499,15 +520,15 @@ export default function FormationIAComexPage() {
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
-              <Kicker>Le point de départ</Kicker>
+              <Kicker>Par où commencer</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi commencer le déploiement IA par le comité exécutif ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Parce que les décisions qui conditionnent tout le reste se prennent à ce niveau : quelles données peuvent aller dans quels outils, quel budget, quelle organisation, quel exemple donné aux équipes. Un comité aligné en une session évite des mois d'initiatives dispersées.</strong>
+                <strong>Les décisions qui conditionnent tout le reste se prennent au comité : quelles données peuvent aller dans quels outils, quel budget, quelle organisation, quel exemple montrer aux équipes. Une session suffit pour aligner ses membres, et elle épargne des mois d'initiatives éparpillées.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                C'est aussi l'ordre que nous pratiquons en mission : la session du comité d'abord, puis la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> qui embarque les équipes par vagues, et les formations par métier qui installent les usages.
+                Nous suivons cet ordre en mission : la session du comité, puis la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> qui forme les équipes par vagues, et enfin les formations par métier qui installent les usages au poste.
               </p>
             </div>
 
@@ -528,20 +549,20 @@ export default function FormationIAComexPage() {
         </div>
       </section>
 
-      {/* ── LE DÉROULÉ (ancre sombre — pivot) ── */}
+      {/* ── LE DÉROULÉ (ancre sombre, pivot) ── */}
       <section id="deroule" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden', scrollMarginTop: 96 }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div aria-hidden="true" style={{ position: 'absolute', top: -130, right: -90, width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(37,99,235,0.16), rgba(37,99,235,0) 68%)', pointerEvents: 'none' }} />
 
         <div style={{ ...wrap, position: 'relative' }}>
-          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le déroulé</div>
+          <div style={{ ...kickerStyle, color: '#60A5FA' }}>Cinq temps</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
-            Comment se passe une formation IA pour comité exécutif ?
+            Comment se déroule une formation IA pour comité exécutif ?
           </h2>
 
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Cinq temps : un cadrage avec la direction générale, un état de l'art sans jargon appuyé sur des démonstrations en direct, les cas de votre secteur, les arbitrages instruits un par un, et la feuille de route qui engage la suite. Le cadrage est gratuit et le devis arrive sous 24 heures.</strong>
+            <strong style={{ color: '#fff' }}>La session suit cinq temps : un cadrage avec la direction générale, un état des lieux sans jargon illustré par des démonstrations, des cas tirés de votre secteur, des arbitrages pris un à un, puis la feuille de route qui engage la suite. Le devis arrive le lendemain du cadrage.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20 }}>
@@ -561,13 +582,13 @@ export default function FormationIAComexPage() {
       {/* ── LES FORMATS ── */}
       <section id="formats" style={{ padding: sectionPad, background: '#F9FAFB', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Les formats</Kicker>
+          <Kicker>Trois durées</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            De la session de 3 h à la journée feuille de route
+            De la session de 3 heures à la journée feuille de route
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Trois formats selon le temps que le comité peut mobiliser : la session exécutive de 3 h pour l'état de l'art et les premiers arbitrages, la demi-journée qui ajoute la manipulation des outils, et la journée complète qui va jusqu'à la feuille de route écrite. Le cadrage oriente vers le bon format.</strong>
+            <strong>Le format dépend du temps que le comité peut libérer. La session de 3 heures couvre l'état des lieux et les premiers arbitrages ; la demi-journée ajoute la manipulation des outils ; la journée complète va jusqu'à la feuille de route écrite. Le cadrage aide à choisir.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
@@ -587,13 +608,13 @@ export default function FormationIAComexPage() {
       {/* ── LES THÈMES ── */}
       <section id="themes" style={{ padding: sectionPad, background: '#fff', scrollMarginTop: 96 }}>
         <div style={wrap}>
-          <Kicker>Les thèmes</Kicker>
+          <Kicker>Les sujets</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Ce que la session met sur la table du comité
+            Six sujets que la session met sur la table du comité
           </h2>
 
           <p style={answerStyle}>
-            <strong>Six sujets structurent la session, dosés au cadrage selon vos priorités : l'état de l'art du modèle à l'agent, les données et le RGPD, l'AI Act et la gouvernance, l'impact sur les métiers, l'arbitrage faire ou faire faire, et la feuille de route qui transforme le tout en décisions.</strong>
+            <strong>Le cadrage dose six sujets selon vos priorités : l'état des lieux de l'assistant à l'agent, les données et le RGPD, l'AI Act et la gouvernance, l'effet sur les métiers, le choix entre acheter et construire, puis la feuille de route qui transforme le tout en décisions.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
@@ -615,20 +636,20 @@ export default function FormationIAComexPage() {
         <div style={wrap}>
           <Kicker>Bien choisir</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            COMEX, dirigeants ou managers : quel programme pour qui ?
+            COMEX, dirigeants ou managers : quel programme choisir ?
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Trois programmes se répondent au niveau direction : la formation IA COMEX aligne un comité entier en session collective ; la formation IA dirigeants outille le dirigeant et son CODIR pour décider ; la formation IA management donne aux managers les réflexes pour piloter des équipes utilisatrices. Le cadrage, gratuit, oriente vers le bon point d'entrée.</strong>
+            <strong>Trois programmes se partagent le niveau direction. La formation IA COMEX aligne un comité entier en session collective ; la formation IA dirigeants outille un dirigeant et ses proches collaborateurs pour décider ; la formation IA management prépare les managers à encadrer des équipes qui utilisent l'IA. Le cadrage oriente vers la bonne porte.</strong>
           </p>
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
               <thead>
                 <tr>
-                  <th style={thStyle} scope="col">Vous êtes</th>
-                  <th style={thStyle} scope="col">Le bon programme</th>
-                  <th style={thStyle} scope="col">Ce qu'il couvre</th>
+                  <th style={thStyle} scope="col">Votre situation</th>
+                  <th style={thStyle} scope="col">Programme conseillé</th>
+                  <th style={thStyle} scope="col">Contenu</th>
                 </tr>
               </thead>
               <tbody>
@@ -655,19 +676,19 @@ export default function FormationIAComexPage() {
               <Landmark size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Tarif et financement</Kicker>
+              <Kicker>Prix de la session</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT la demi-journée, 3 960 € HT la journée complète
+                1 980 € HT pour 3 heures, 3 960 € HT pour la journée
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le tarif couvre l'ensemble du comité (jusqu'à 12 participants), le cadrage préalable et la préparation sur vos cas : 1 980 € HT pour la session de 3 h ou la demi-journée, 3 960 € HT pour la journée complète, qui va jusqu'à la feuille de route écrite ; un programme étendu à 2 jours représente deux journées facturées. Les formats structurés en action de formation (objectifs, émargement, évaluation) sont certifiés Qualiopi et finançables par votre OPCO dans le cadre du plan de développement des compétences ; une conférence seule relève en général du budget de fonctionnement, et nous vous le disons au cadrage. Pour identifier votre opérateur, notre outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes, et les dispositifs sont détaillés sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Le prix couvre le comité entier, jusqu'à douze membres, ainsi que le cadrage et la préparation sur vos dossiers. Trois heures ou une demi-journée reviennent à 1 980 € HT ; la journée complète, qui va jusqu'à la feuille de route écrite, à 3 960 € HT. Un programme étalé sur deux jours compte deux journées. Les formats montés en action de formation (objectifs, feuille d'émargement, évaluation) sont couverts par notre certification Qualiopi, et l'opérateur de compétences de votre branche décide de leur financement selon ses propres règles. Une conférence sans évaluation se paie en général sur le budget de fonctionnement de l'entreprise, et nous le précisons dès le cadrage. Un comité installé à Genève ou à Bruxelles ne dépend d'aucun OPCO ; son devis est libellé en euros, HT. Pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> suffit, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> recense chaque dispositif.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  "1 980 € HT la session de 3 h ou la demi-journée, pour le comité entier",
-                  '3 960 € HT la journée complète, jusqu\'à la feuille de route écrite',
-                  'Qualiopi : formats formation finançables OPCO, dossier préparé ensemble',
-                  'Devis sous 24 h après un cadrage gratuit avec la direction générale',
+                  '1 980 € HT : trois heures ou une demi-journée, comité entier',
+                  '3 960 € HT : journée complète et feuille de route écrite',
+                  'Formats de formation présentables à votre OPCO',
+                  'Devis le lendemain du cadrage avec la direction générale',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
@@ -680,25 +701,53 @@ export default function FormationIAComexPage() {
         </div>
       </section>
 
-      {/* ── E-E-A-T : l'expérience derrière la page ── */}
+      {/* ── CAS PUBLIÉS (directions déjà formées) ── */}
+      <section id="cas" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={wrap}>
+          <Kicker>Ils sont passés par là</Kicker>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>
+            Deux équipes de direction formées en 2026
+          </h2>
+          <p style={{ ...answerStyle, background: '#fff' }}>
+            <strong>Une session de comité prend tout son sens quand elle ouvre un déploiement. Les deux exemples ci-dessous, anonymisés, sont racontés en entier dans nos études de cas.</strong>
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: 20 }}>
+            {CAS.map(cas => (
+              <div key={cas.href} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+                  <IconTile icon={cas.icon} />
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.35 }}>{cas.secteur}</div>
+                </div>
+                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{cas.texte}</p>
+                <Link to={cas.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                  {cas.lien}
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── E-E-A-T : qui anime ── */}
       <section style={{ padding: 'clamp(44px, 6vw, 64px) 24px', background: '#0A0F1E' }}>
         <div style={wrap}>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(20px, 4vw, 48px)', alignItems: 'center', justifyContent: 'space-between' }}>
             <div style={{ flex: '1 1 380px', minWidth: 300 }}>
               <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui anime</div>
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
-                Un formateur senior en salle, et des déploiements de groupe derrière
+                Un intervenant senior en salle, choisi pour votre comité
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Les sessions COMEX sont animées en français ou en anglais par Mathias Nizan, fondateur de Masteria, ou par un formateur senior de son réseau, choisi pour votre secteur. C'est le format que nous pratiquons en mission : chez un groupe industriel international du packaging, le déploiement de Copilot a commencé par deux sessions pilotes pour 24 managers et une matinée stratégique du comité de direction, avant trois autres sessions en septembre 2026 et les sites internationaux. La démarche est détaillée dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> complète le tableau.
+                Qui sera devant votre comité ? Mathias Nizan, à l'origine du cabinet lyonnais en 2022, ou l'un des formateurs seniors du réseau, des indépendants habitués aux comités de direction. Le choix dépend de votre secteur, de la langue et de la date, et vous connaissez le profil retenu avant de signer. Le cabinet ne revend ni licence ni abonnement, ce qui laisse le comité libre de ses choix d'outils. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> complètent le portrait.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
               {[
-                ['Depuis 2022', 'spécialisé uniquement IA'],
-                ['+1 500', 'professionnels formés'],
                 ['FR · EN', 'sessions dans les deux langues'],
-                ['International', 'Europe, États-Unis, Inde'],
+                ['3 h', 'pour le format le plus demandé'],
+                ['≤ 12', 'membres du comité par session'],
+                ['Hors site', 'ou dans vos locaux, au choix'],
               ].map(([k, v]) => (
                 <div key={k}>
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.6vw, 30px)', fontWeight: 900, color: '#fff', letterSpacing: '-0.02em' }}>{k}</div>
@@ -717,13 +766,13 @@ export default function FormationIAComexPage() {
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 16 }}>
-                Formation IA COMEX : les questions fréquentes
+                Les questions des directions générales sur la session COMEX
               </h2>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>
-                Vous ne trouvez pas votre réponse ici ?
+                Votre comité se pose une autre question ?
               </p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Transmettez-la nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -739,22 +788,22 @@ export default function FormationIAComexPage() {
       {/* ── MAILLAGE INTERNE ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
-          <Kicker>Ressources</Kicker>
+          <Kicker>La suite</Kicker>
           <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>
-            Pour aller plus loin
+            Après la session, les pages qui prolongent le travail du comité
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            La session du comité ouvre une démarche : acculturation des équipes, formations par métier, cadre d'usage et, selon les arbitrages, chantiers de construction.
+            La session du comité ouvre plusieurs chantiers : faire progresser les équipes, poser un cadre d'usage, construire des outils quand les arbitrages le demandent.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation IA dirigeants', href: '/formation-ia-dirigeants', tag: 'Dirigeants', desc: "La journée stratégique du dirigeant et de son CODIR : grille de lecture, ROI, feuille de route 90 jours." },
-              { label: 'Formation IA management', href: '/formation-ia-management', tag: 'Managers', desc: "Les réflexes pour piloter des équipes utilisatrices de l'IA : cadrer, faire adopter, suivre." },
-              { label: 'Conférence IA', href: '/conference-ia', tag: 'Format court', desc: "Quand le comité veut une session d'une heure plutôt qu'une matinée : état de l'art, démonstrations sur vos cas, questions." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Démarche', desc: "La montée en compétence collective qui suit la session COMEX : vagues, référents, charte, mesure." },
-              { label: 'Formation IA en entreprise', href: '/formation-ia-entreprise', tag: 'Équipes', desc: "Former les équipes en intra, du sprint de 3 h au parcours par métier, sur leurs cas réels." },
-              { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Quand la feuille de route demande un travail de fond : cadrage stratégique, priorisation, gouvernance." },
-              { label: 'Études de cas IA', href: '/etudes-de-cas-ia', tag: 'Preuves', desc: "Des déploiements réels, du COMEX aux équipes : ce qui a été fait, comment, avec quels résultats." },
+              { label: 'Formation IA dirigeants', href: '/formation-ia-dirigeants', tag: 'Dirigeants', desc: "Une journée pour un dirigeant et son CODIR : grille de lecture, retour sur investissement, plan à 90 jours." },
+              { label: 'Formation IA management', href: '/formation-ia-management', tag: 'Managers', desc: "Préparer les managers à encadrer des équipes qui utilisent l'IA au quotidien." },
+              { label: 'Conférence IA', href: '/conference-ia', tag: 'Format court', desc: "Une heure devant le comité ou devant toute l'entreprise, quand une matinée entière n'est pas possible." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Démarche', desc: "Faire progresser les équipes après la décision du comité : vagues, référents, charte, mesure." },
+              { label: 'Formation IA en entreprise', href: '/formation-ia-entreprise', tag: 'Équipes', desc: "Organiser la formation des services en intra, de la demi-journée de sprint aux programmes métier de deux jours." },
+              { label: 'Conseil en stratégie IA', href: '/conseil-strategie-ia', tag: 'Conseil', desc: "Quand la feuille de route demande un travail de fond : priorisation, gouvernance, cadrage des projets." },
+              { label: 'Études de cas IA', href: '/etudes-de-cas-ia', tag: 'Exemples', desc: "Des déploiements anonymisés, du comité de direction jusqu'aux équipes, avec leurs dates et leurs méthodes." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div
@@ -770,7 +819,7 @@ export default function FormationIAComexPage() {
                   </h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
                   <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                    En savoir plus
+                    Consulter
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                   </span>
                 </div>
@@ -780,8 +829,15 @@ export default function FormationIAComexPage() {
         </div>
       </section>
 
-      {/* ── LE FONDATEUR (E-E-A-T) ── */}
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan anime une partie des sessions COMEX et relit chaque préparation confiée à un formateur du réseau. Ce texte reflète l'état des outils et des règles au 7 octobre 2026 ; pour connaître l'homme derrière le cabinet, voyez <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>son portrait</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -792,23 +848,40 @@ export default function FormationIAComexPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation IA COMEX</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Une session, un comité aligné, une feuille de route
+              Donnez à votre comité une lecture commune de l'IA
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous votre comité, votre secteur et les décisions à instruire. Nous revenons sous 24 heures avec un format, un déroulé préparé sur vos cas et le devis. La session se cale sur un ordre du jour de comité, en français ou en anglais.
+              Présentez-nous votre comité, votre secteur et les décisions en attente. Le lendemain, vous recevez un format, un déroulé préparé sur vos dossiers et le devis. La session s'insère dans un ordre du jour de comité, en français ou en anglais.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
-              Demander un devis sous 24 h
+              Préparer la session du comité
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Réponse sous 24 h · Certifié Qualiopi · Français ou anglais · Lyon, Europe, États-Unis, Inde
+              De 3 heures à une journée · français ou anglais · certifié Qualiopi · comités basés en France ou à l'étranger
             </p>
           </div>
         </div>
       </section>
 
-      <OfficialSources extra={PAGE_CITATIONS} />
+      {/* ── SOURCES (section propre à la page, remplace OfficialSources) ── */}
+      <section aria-labelledby="sources-comex" style={{ padding: '56px 40px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="sources-comex" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>
+            Pour vérifier ce que dit cette page
+          </h2>
+          <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+            Les textes européens et les règles de financement auxquels renvoie la session du comité :
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12, fontSize: 15, lineHeight: 1.6 }}>
+            {PAGE_CITATIONS.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={srcLinkStyle}>{s.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

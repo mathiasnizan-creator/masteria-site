@@ -1,47 +1,54 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Scale, ListChecks, Gauge, GraduationCap as Grad, FileText, ShieldCheck, CalendarDays,
-  GraduationCap, MapPin, Check, Sparkles, Landmark, Users, Target,
+  ArrowRight, Scale, Gauge, GraduationCap as Grad, FileText, ShieldCheck, CalendarDays,
+  GraduationCap, MapPin, Check, Sparkles, Landmark, Users, Target, ExternalLink,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import OfficialSources from '../components/OfficialSources'
-import FounderNote from '../components/FounderNote'
+import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
- * Money page dédiée « formation AI Act » (slug /formation-ai-act).
- * REFONTE 2026-08-10 : sort du template SpokePage (générique, emojis, sans blocs
- * citables) pour le patron des money pages formation. Cible « formation ia act »
- * (140/mois, KD 15, CPC 3,97 $ — Semrush 2026-08-10) et sa variante « formation
- * ai act » ; les deux graphies sont tissées.
+ * Money page dédiée « formation AI Act » (slug /formation-ai-act). Cible « formation ia
+ * act » et sa variante « formation ai act » ; les deux graphies sont tissées.
  *
- * FAITS VÉRIFIÉS (mémoire AI Act post-Omnibus, article audit IA du 3 août 2026) :
- * règlement (UE) 2024/1689 modifié par le règlement (UE) 2026/1744 du 8 juillet
- * 2026 (JOUE 24 juillet 2026). Applicable : interdictions art. 5 (2 févr. 2025),
- * littératie art. 4 (2 févr. 2025, assouplie en obligation de MOYENS), modèles à
- * usage général (2 août 2025), transparence art. 50 (2 août 2026). REPORTÉ : haut
- * risque annexe III → 2 déc. 2027, annexe I → 2 août 2028. Aucune norme
- * harmonisée citée au JOUE à l'été 2026 → rien n'est « certifiable AI Act ».
- * Sanctions max : 35 M€/7 % (interdictions), 15 M€/3 % (art. 50 et autres).
- * NE PAS survendre l'obligation art. 4 (moyens, pas résultat), NE PAS agiter
- * d'amendes imminentes sur la formation. Bureautique = risque minimal.
+ * ANGLE PROPRE (07/10/2026) : la formation au règlement lui-même. Les rôles et le
+ * dispositif sont sur /gouvernance-ia (conseil), le document sur /charte-ia-entreprise,
+ * les données sur /ia-et-rgpd, l'éthique sur /ia-responsable ; /formation-gouvernance-ia
+ * forme au dispositif (registre, charte, comité).
  *
- * ANTI-CANNIBALISATION : /gouvernance-ia = CONSEIL (mise en conformité,
- * registre, comité) ; /formation-gouvernance-ia = formation gouvernance (1 j,
- * DPO/DSI : dispositif) ; /charte-ia-entreprise = guide charte ; /ia-et-rgpd
- * = guide RGPD. CETTE page = la formation au règlement lui-même : obligations,
- * calendrier, classification, plan de conformité, article 4. Renvoie aux
- * autres pour approfondir.
+ * Réécrite le 07/10/2026 (texte propre à la page) : plus de FounderNote ni
+ * d'OfficialSources ; intra « jusqu'à 12 participants » (et non 10) ; plus d'affirmation
+ * sur l'autorité française de surveillance (non vérifiée) ; norme harmonisée datée « au
+ * dernier relevé d'août 2026 » (à revérifier).
+ *
+ * FAITS VÉRIFIÉS : règlement (UE) 2024/1689 modifié par le règlement (UE) 2026/1744 du
+ * 8 juillet 2026, en vigueur le 27 juillet 2026. Article 4 applicable depuis le
+ * 02/02/2025, réécrit en obligation de moyens ; Q&R Commission du 27/07/2026 : aucun
+ * certificat, registre interne. Article 50 depuis le 02/08/2026 ; lignes directrices
+ * définitives de la Commission publiées le 20/07/2026 [V-tiers]. 02/12/2026 : marquage des
+ * générateurs déjà commercialisés et nouvelle interdiction (images intimes non
+ * consenties). Haut risque : annexe III au 02/12/2027, annexe I au 02/08/2028. Sanctions
+ * (article 99) : 35 M€ ou 7 %, 15 M€ ou 3 %, 7,5 M€ ou 1 % ; pour les PME, le plus faible
+ * des deux montants. CNIL : contrôles 2026 annoncés le 03/04/2026 (recrutement).
  */
 
 const SLUG = 'formation-ai-act'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Formation AI Act (IA Act) : obligations, calendrier, conformité | Masteria"
-const META_DESC = "Formation AI Act (IA Act) en 1 jour : ce que le règlement européen impose vraiment et quand, classification par risque, article 4 littératie, plan de conformité. Qualiopi, finançable OPCO."
-const KEYWORDS = "formation ia act, formation ai act, formation règlement européen ia, formation conformité ia, littératie ia article 4, formation ia act entreprise, formation ai act dpo"
+const META_TITLE = "Formation AI Act (IA Act) : obligations et dates | Masteria"
+const META_DESC = "Formation AI Act (IA Act) en 1 jour : calendrier post-Omnibus vérifié au 7 octobre 2026, article 4, classement des usages, plan de conformité. Qualiopi."
+const KEYWORDS = "formation ia act, formation ai act, formation règlement européen ia, formation conformité ia, littératie ia, article 4 ai act, formation ia act entreprise, formation ai act dpo, omnibus ai act"
+
+const SOURCES = [
+  { name: "Règlement (UE) 2024/1689 : la version officielle de l'AI Act (EUR-Lex)", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
+  { name: "Omnibus de juillet 2026 : le texte du règlement (UE) 2026/1744 qui décale le calendrier", url: 'https://eur-lex.europa.eu/eli/reg/2026/1744/oj' },
+  { name: "Commission européenne : l'article 4 expliqué, sans certificat exigé (27 juillet 2026)", url: 'https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers' },
+  { name: "CNIL : comment le règlement IA s'articule avec le RGPD, page revue par la CNIL le 17 août 2026", url: 'https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil' },
+  { name: "Ministère du Travail : la certification Qualiopi des organismes de formation", url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
+  { name: "Ministère du Travail : le rôle des opérateurs de compétences (OPCO)", url: 'https://travail-emploi.gouv.fr/les-operateurs-de-competences-opco' },
+]
 
 /* ───────── Styles partagés ───────── */
 
@@ -69,104 +76,104 @@ function IconTile({ icon: Icon }) {
 }
 
 const HERO_BADGES = [
-  { icon: GraduationCap, label: 'Certifié Qualiopi · Finançable OPCO' },
+  { icon: GraduationCap, label: 'Qualiopi · actions de formation' },
   { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
-  { icon: Target, label: "Calendrier post-Omnibus à jour (juillet 2026)" },
-  { icon: MapPin, label: 'Présentiel & distanciel · Europe · États-Unis · Inde' },
+  { icon: Target, label: 'Calendrier vérifié au 7 octobre 2026' },
+  { icon: MapPin, label: 'Chez vous ou en classe virtuelle · France, Europe, États-Unis, Inde' },
 ]
 
-/* ───────── En bref (synthèse citable — GEO) ───────── */
+/* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Durée', value: "1 jour (7 h) en intra ; format 2 jours possible avec ateliers de mise en conformité sur vos systèmes" },
-  { label: 'Pour qui', value: "DPO, juristes et conformité, DSI et responsables IA, DRH, directions générales, chefs de projet IA" },
-  { label: 'Contenu', value: "Ce que le règlement impose vraiment et à quelle date, classification par risque, article 4 (littératie), transparence, plan de conformité, articulation RGPD" },
-  { label: 'À jour', value: "Calendrier post-Omnibus (règlement 2026/1744 du 8 juillet 2026) : haut risque reporté à décembre 2027 et août 2028" },
-  { label: 'Livrables', value: "Grille de classification de vos usages, trame de plan de conformité, modèle de dispositif article 4, kit de veille" },
-  { label: 'Financement', value: "Action de formation certifiée Qualiopi, finançable par votre OPCO ; devis sous 24 h" },
+  { label: 'Durée', value: "Sept heures en intra sur une journée ; deux jours si vous voulez traiter vos propres systèmes en ateliers" },
+  { label: 'Pour qui', value: "DPO, juristes, conformité, DSI, responsables IA, DRH, direction générale, chefs de projet" },
+  { label: 'Programme', value: "Calendrier article par article, classement des usages par risque, article 4, transparence, lien avec le RGPD, plan de conformité" },
+  { label: 'À jour', value: "Texte de 2024 tel que l'Omnibus l'a modifié en juillet 2026 : haut risque au 2 décembre 2027 (annexe III) et au 2 août 2028 (annexe I)" },
+  { label: 'Livrables', value: "Grille de classement de vos usages, trame de plan de conformité, modèle de registre des actions de formation, liste de veille" },
+  { label: 'Tarif', value: "1 980 € HT pour sept heures, groupe intra jusqu'à douze ou formule individuelle ; 3 960 € HT les deux jours ; financement à demander à votre OPCO" },
 ]
 
-/* ───────── Ce que couvre la page (6 cartes) ───────── */
+/* ───────── Ce que couvre la formation (6 cartes) ───────── */
 
 const MISSIONS = [
   {
     icon: CalendarDays,
-    title: 'Ce qui s\'applique aujourd\'hui, ce qui est reporté',
-    desc: "Le règlement s'applique par paliers, et le paquet du 8 juillet 2026 en a déplacé plusieurs. Applicables : les pratiques interdites (février 2025), l'obligation de littératie de l'article 4 (février 2025), les règles sur les modèles à usage général (août 2025), la transparence de l'article 50 (août 2026). Reportées : les obligations sur les systèmes à haut risque, à décembre 2027 et août 2028 selon l'annexe. La formation vous donne le calendrier exact, texte en main.",
+    title: 'Ce qui s\'applique déjà, ce qui attend',
+    desc: "Le texte s'applique par paliers, et l'Omnibus en a déplacé plusieurs. Déjà en vigueur : interdictions et article 4 depuis février 2025, encadrement des modèles à usage général à partir de l'été 2025, article 50 sur la transparence depuis août 2026. Encore à venir : le marquage des contenus des générateurs déjà commercialisés et une interdiction nouvelle au 2 décembre 2026, puis les usages à haut risque, en décembre 2027 (annexe III) et en août 2028 (annexe I). Vous repartez avec ce calendrier, références d'articles à l'appui.",
   },
   {
     icon: Gauge,
     title: 'Classer vos usages par niveau de risque',
-    desc: "Interdit, haut risque, risque limité (transparence), risque minimal : la pyramide du règlement appliquée à vos systèmes réels, y compris l'IA embarquée dans vos logiciels métier et les outils adoptés sans validation. Bonne nouvelle pour la plupart des organisations : la bureautique augmentée relève du risque minimal. La grille de classification est un livrable.",
+    desc: "Usages proscrits, à haut risque, soumis à transparence ou à risque minimal : la pyramide du règlement appliquée à vos usages, y compris l'IA logée dans vos logiciels métier et les comptes ouverts sans validation. Rédiger un mail ou résumer un rapport avec un assistant relève du risque minimal ; trier des CV relève du haut risque. La grille de classement fait partie des livrables.",
   },
   {
     icon: Grad,
-    title: "L'article 4 : l'obligation de littératie IA",
-    desc: "Depuis février 2025, toute organisation qui utilise des systèmes d'IA doit soutenir la montée en compétence des personnes qui les manipulent. Le paquet de juillet 2026 l'a précisée en obligation de moyens : démontrer des actions de sensibilisation et de formation, sans garantir un niveau individuel. La formation vous aide à construire ce dispositif, proportionné et documenté, sans sur-jouer la menace.",
+    title: "L'article 4, lu dans sa nouvelle rédaction",
+    desc: "En vigueur dès le 2 février 2025, puis réécrit à l'été 2026 par l'Omnibus, l'article 4 dit désormais que fournisseurs et déployeurs prennent des mesures qui aident leurs équipes à maîtriser l'IA, sans niveau individuel à garantir. Pour le certificat, la Commission répond, dans ses questions-réponses du 27 juillet 2026, qu'il n'en faut aucun : une trace interne des formations suffit. Vous construisez ce registre pendant la journée.",
   },
   {
     icon: FileText,
-    title: 'Transparence, registre, documentation',
-    desc: "L'article 50 impose depuis août 2026 d'informer une personne qu'elle interagit avec une IA (agents conversationnels, contenus générés). Ce que le registre des systèmes exige réellement, et de qui ; ce qui relève de la bonne pratique. Vous repartez avec les modèles de documentation attendus en cas de contrôle, dimensionnés à votre exposition.",
+    title: 'Transparence et documentation',
+    desc: "Un agent conversationnel doit, depuis août 2026, prévenir qu'on parle à une machine, et un hypertrucage diffusé doit porter une mention. La journée sépare ce que l'article 50 exige, et de qui, de ce qui reste une simple recommandation ; elle s'appuie sur les lignes directrices définitives que la Commission a publiées le 20 juillet 2026.",
   },
   {
     icon: Scale,
-    title: 'Articuler AI Act et RGPD',
-    desc: "Le contrôle qui peut tomber en 2026 vient d'abord de la CNIL, sur les traitements en service (recrutement en tête). La formation montre comment tenir un dossier de conformité unifié plutôt que deux silos : analyse d'impact, base légale, information des personnes, puis les exigences propres au règlement IA. Un seul dispositif, deux textes couverts.",
+    title: 'AI Act et RGPD dans un même dossier',
+    desc: "Le contrôle le plus probable en 2026 reste celui de la CNIL, qui a placé le recrutement en tête de son programme de l'année. La formation montre comment tenir un dossier unique : analyse d'impact, base légale, information des personnes, puis les exigences propres au règlement IA.",
   },
   {
     icon: ShieldCheck,
-    title: 'Le plan de conformité et la gouvernance',
-    desc: "Inventaire, classification, écarts, actions avec responsables et échéances, puis la gouvernance qui fait vivre le dispositif : charte d'usage, processus d'homologation des nouveaux usages, comité. La formation vous fait produire la trame de votre plan, à finaliser ensuite avec vos experts internes ou en accompagnement.",
+    title: 'Votre plan de conformité',
+    desc: "Inventaire, classement, écarts, actions confiées à un porteur avec une échéance, puis la gouvernance qui fait vivre le tout : charte d'usage, validation des nouveaux usages, comité. Vous repartez avec la trame de votre plan, à finaliser avec vos équipes ou en mission de conseil.",
   },
 ]
 
-/* ───────── Les atouts (6 gains, citables) ───────── */
+/* ───────── Ce que vous y gagnez (6 points, citables) ───────── */
 
 const ATOUTS = [
   {
-    title: 'Un calendrier lu dans le texte, pas dans les plaquettes',
-    desc: "Beaucoup de formations et de prestataires racontent encore le calendrier d'avant le paquet de juillet 2026. Vous repartez avec les dates réelles, article par article, et la capacité de vérifier vous-même dans le règlement.",
+    title: 'Des dates lues dans le texte',
+    desc: "Beaucoup de supports circulent encore avec le calendrier d'avant juillet 2026. Vous repartez avec les échéances en vigueur, article par article, et la méthode pour les vérifier vous-même sur EUR-Lex.",
   },
   {
-    title: "Une conformité proportionnée à votre exposition",
-    desc: "Une PME qui utilise ChatGPT et Copilot pour la bureautique n'a pas les obligations d'un éditeur de logiciel de recrutement. La formation vous situe honnêtement : ce que vous devez faire, ce que vous pouvez différer, ce qui ne vous concerne pas.",
+    title: 'Une conformité à la mesure de votre exposition',
+    desc: "Une PME qui rédige avec ChatGPT et Copilot n'a pas les obligations d'un éditeur de logiciel de recrutement. La journée dit ce que vous devez faire, ce qui peut attendre et ce qui ne vous concerne pas.",
   },
   {
-    title: "L'article 4 traité comme une opportunité",
-    desc: "L'obligation de littératie est aussi le meilleur levier pour structurer la montée en compétence de vos équipes, finançable OPCO. La formation vous montre comment en faire un programme utile plutôt qu'une case à cocher.",
+    title: "L'article 4 comme plan de montée en compétences",
+    desc: "L'obligation de moyens se remplit avec des actions concrètes et tracées. Bien construite, elle devient le programme de formation de vos équipes, que votre OPCO peut financer en partie.",
   },
   {
-    title: 'Un dossier qui tient face au RGPD et au règlement IA',
-    desc: "Un seul dispositif de conformité, deux textes couverts : vous évitez le doublon coûteux entre le DPO et le responsable IA, et vous êtes prêt pour le contrôle le plus probable, celui de la CNIL.",
+    title: 'Un seul dossier pour deux règlements',
+    desc: "Analyse d'impact, registre, information des personnes : le DPO et le responsable IA cessent de tenir deux dossiers parallèles, et vous êtes prêt pour le contrôle le plus probable.",
   },
   {
-    title: 'Des livrables qui servent le lendemain',
-    desc: "Grille de classification, trame de plan de conformité, modèle de dispositif article 4, kit de veille : vous repartez avec de quoi commencer, pas avec un diaporama.",
+    title: 'Des livrables utiles dès le lendemain',
+    desc: "Grille de classement, trame de plan, modèle de registre des formations, liste de veille : de quoi lancer la mise en conformité dès la semaine suivante.",
   },
   {
-    title: 'La lucidité sur ce qui est certifiable',
-    desc: "À l'été 2026, aucune norme harmonisée n'a été citée au JOUE : rien n'est « certifié AI Act ». Vous saurez répondre à un prestataire qui vous en promet une, et ce que vaut réellement une certification ISO/IEC 42001.",
+    title: 'Savoir ce qui se certifie',
+    desc: "Aucune certification « AI Act » n'existe. Vous saurez quoi répondre au prestataire qui en vend une, et ce que vaut une certification ISO/IEC 42001.",
   },
 ]
 
-/* ───────── Programme 2 jours (Matin / Après-midi) ───────── */
+/* ───────── Programme (Matin / Après-midi) ───────── */
 
 const PROGRAMME = [
   {
     jour: 'Jour 1',
     titre: "Le règlement, votre exposition, votre plan",
     matin: [
-      "Le règlement européen sur l'IA en clair : logique par risque, rôles (fournisseur, déployeur), ce qui a changé avec le paquet du 8 juillet 2026",
-      "Le calendrier réel, article par article : ce qui s'applique (art. 5, art. 4, modèles à usage général, art. 50), ce qui est reporté (haut risque, décembre 2027 et août 2028)",
-      "Atelier inventaire : recenser vos systèmes d'IA réels, y compris l'IA embarquée dans vos logiciels et les usages adoptés sans validation",
-      "Atelier classification : appliquer la pyramide des risques à vos usages, identifier ce qui relève du risque minimal et ce qui mérite attention",
+      "Le règlement en clair : approche par les risques, rôles de fournisseur et de déployeur, ce que l'Omnibus du 8 juillet 2026 a déplacé",
+      "Le calendrier article par article : article 5, article 4, modèles à usage général, article 50, échéance du 2 décembre 2026, puis échéances du haut risque fixées à décembre 2027 et à août 2028",
+      "Atelier inventaire : recenser vos systèmes, IA intégrée aux logiciels métier et comptes ouverts sans validation compris",
+      "Atelier classement : placer chaque usage dans la pyramide et repérer ceux qui demandent une attention particulière",
     ],
     apresmidi: [
-      "L'article 4 : construire votre dispositif de littératie IA, proportionné et documenté (obligation de moyens), et le financer",
-      "Transparence (art. 50), registre, documentation : ce qui est exigé, de qui, et les modèles à tenir prêts",
-      "Articulation avec le RGPD : le dossier unifié, l'analyse d'impact, les contrôles CNIL 2026 (recrutement en tête)",
-      "Atelier plan de conformité : écarts, actions, responsables, échéances ; gouvernance (charte, homologation, comité) ; évaluation des acquis",
+      "Article 4 : bâtir un dispositif de maîtrise de l'IA proportionné, le tracer dans un registre interne et le financer",
+      "Article 50 et documentation : ce qui est exigé, de qui, et les modèles à tenir prêts",
+      "Lien avec le RGPD : dossier commun, analyse d'impact, contrôles de la CNIL en 2026",
+      "Atelier plan de conformité : écarts, actions, porteurs, échéances ; charte, validation des usages, comité ; évaluation des acquis",
     ],
   },
 ]
@@ -174,82 +181,99 @@ const PROGRAMME = [
 /* ───────── Pour qui (4 profils) ───────── */
 
 const PROFILS = [
-  { icon: Scale, title: 'DPO, juristes et responsables conformité', desc: "Articuler le règlement IA et le RGPD sans doubler les dispositifs, tenir un dossier qui résiste au contrôle, savoir ce qui est réellement exigé et à quelle date. La formation vous donne le texte, le calendrier et les modèles." },
-  { icon: Gauge, title: 'DSI et responsables IA', desc: "Tenir l'inventaire des systèmes, classifier par niveau de risque, homologuer les nouveaux usages sans paralyser les équipes. Vous repartez avec la grille et le processus." },
-  { icon: Users, title: 'DRH et directions générales', desc: "L'article 4 vous concerne directement : l'obligation de littératie est en vigueur, en obligation de moyens. Vous repartez avec un dispositif de formation proportionné, finançable OPCO, et la lecture stratégique du règlement pour arbitrer." },
-  { icon: Target, title: 'Chefs de projet IA et responsables métier', desc: "Intégrer les exigences dès la conception d'un usage : transparence, documentation, données. La conformité coûte moins cher en amont qu'après une mise en demeure." },
+  { icon: Scale, title: 'DPO, juristes et responsables conformité', desc: "Vous connaissez le RGPD ; la journée y raccroche le règlement IA sans doubler les dossiers, avec les dates exactes et les modèles de documentation à tenir prêts." },
+  { icon: Gauge, title: 'DSI et responsables IA', desc: "Vous tenez l'inventaire des systèmes et validez les nouveaux usages. Vous repartez avec la grille de classement et un circuit de validation qui ne bloque pas les équipes." },
+  { icon: Users, title: 'DRH et directions générales', desc: "L'article 4 vous vise en premier : former vos équipes à l'IA relève d'une obligation de moyens déjà en vigueur. Vous repartez avec un plan de formation proportionné et une lecture stratégique du texte pour arbitrer." },
+  { icon: Target, title: 'Chefs de projet IA et responsables métier', desc: "Vous concevez les usages de demain. Penser transparence, documentation et données dès la conception coûte moins cher qu'une reprise après coup." },
+]
+
+/* ───────── Missions de formation citées (faits de src/data/missions-formation.js et etudes-de-cas.js) ───────── */
+
+const TERRAIN = [
+  {
+    href: '/etudes-de-cas-ia#mission-interprofession-agricole',
+    texte: "Seize salariés d'une interprofession agricole ont terminé leurs trois jours de formation, en septembre 2026, par un module d'usage responsable : choisir le bon compte, respecter le RGPD et l'AI Act, distinguer ce qui est permis, ce qui se vérifie et ce qui est proscrit.",
+  },
+  {
+    href: '/etudes-de-cas-ia#mission-franchise-gemini',
+    texte: "Les deux administrateurs Google Workspace d'un réseau de franchise B2B ont consacré une journée en classe virtuelle à la console, à l'AI Act, au RGPD et à leur charte d'usage, en septembre 2026.",
+  },
+  {
+    href: '/etudes-de-cas-ia#industrie',
+    texte: "Dans un groupe international de l'emballage, le comité de direction a travaillé en anglais le cadre AI Act et RGPD pendant une matinée stratégique, avant l'extension de Copilot à ses sites étrangers.",
+  },
 ]
 
 /* ───────── FAQ ───────── */
 
 const FAQ = [
   {
-    q: "Qu'est-ce que l'AI Act (ou IA Act) et qui est concerné ?",
-    a: "L'AI Act, écrit aussi IA Act, est le règlement (UE) 2024/1689 établissant des règles harmonisées sur l'intelligence artificielle. Il s'applique à toute organisation qui fournit ou utilise des systèmes d'IA dans l'Union, avec des obligations graduées selon le niveau de risque de l'usage : pratiques interdites, haut risque (emploi, éducation, crédit, justice, infrastructures critiques notamment), risque limité soumis à transparence, et risque minimal, dont relève l'essentiel de la bureautique augmentée. Une PME qui utilise ChatGPT ou Copilot pour rédiger et analyser est concernée surtout par l'article 4 (littératie) et par la transparence quand elle déploie un agent face à des personnes.",
+    q: "Qu'est-ce que l'AI Act (ou IA Act), et qui est concerné ?",
+    a: "L'AI Act, écrit aussi IA Act, désigne le règlement (UE) 2024/1689, qui harmonise les règles applicables à l'intelligence artificielle dans l'Union. Il vise toute organisation qui fournit ou utilise des systèmes d'IA, avec des obligations qui croissent avec le risque de l'usage : pratiques interdites, haut risque (emploi, éducation, crédit, justice, infrastructures critiques notamment), transparence pour certains systèmes, risque minimal pour l'essentiel de la bureautique assistée. Une PME qui rédige et analyse avec ChatGPT ou Copilot est surtout concernée par l'article 4 et, si elle met un agent face au public, par l'article 50.",
   },
   {
-    q: "Quelles obligations s'appliquent aujourd'hui, et lesquelles sont reportées ?",
-    a: "Applicables aujourd'hui : les pratiques interdites de l'article 5 (depuis le 2 février 2025), l'obligation de littératie IA de l'article 4 (depuis le 2 février 2025, précisée en obligation de moyens par le paquet du 8 juillet 2026), les obligations sur les modèles à usage général (depuis le 2 août 2025) et la transparence de l'article 50 (depuis le 2 août 2026). Reportées par le règlement (UE) 2026/1744 : les obligations sur les systèmes à haut risque, au 2 décembre 2027 pour l'annexe III et au 2 août 2028 pour l'annexe I. La formation détaille chaque palier, texte en main.",
+    q: "Quelles obligations s'appliquent au 7 octobre 2026, et lesquelles attendent ?",
+    a: "Trois blocs jouent déjà. Premier bloc, en février 2025 : l'article 5, qui proscrit certaines pratiques, et l'article 4 avec son exigence de compétence en IA. Deuxième bloc, en août 2025 : les règles visant ceux qui mettent sur le marché des modèles à usage général. Troisième bloc, en août 2026 : la transparence de l'article 50. L'Omnibus, en application depuis le 27 juillet 2026, a converti l'article 4 en obligation de moyens et repoussé le haut risque : le 2 décembre 2027 pour les usages listés en annexe III, le 2 août 2028 pour l'IA intégrée aux produits réglementés de l'annexe I. Une date intermédiaire compte aussi : au 2 décembre 2026, les générateurs déjà vendus doivent marquer leurs contenus, et une pratique de plus devient interdite, la fabrication d'images intimes sans consentement. La formation reprend chaque palier, texte en main.",
   },
   {
-    q: "L'article 4 rend-il la formation IA obligatoire pour nos salariés ?",
-    a: "Il impose aux organisations qui utilisent des systèmes d'IA de soutenir la montée en compétence des personnes qui les manipulent, depuis le 2 février 2025. Le paquet du 8 juillet 2026 a précisé qu'il s'agit d'une obligation de moyens : démontrer des actions de sensibilisation et de formation proportionnées, sans garantir un niveau individuel. Ce n'est donc ni une formation certifiante imposée ni une menace d'amende immédiate, mais une obligation réelle et documentable. Notre formation vous aide à construire ce dispositif ; nos formations métier et notre programme d'acculturation en sont les briques, finançables OPCO.",
+    q: "L'article 4 rend-il la formation obligatoire pour nos salariés ?",
+    a: "L'article 4 oblige à agir et n'exige aucun certificat. Depuis le 2 février 2025, il demande aux organisations qui fournissent ou utilisent des systèmes d'IA de veiller à ce que leur personnel maîtrise suffisamment ces outils ; depuis l'Omnibus de l'été 2026, sa rédaction parle de mesures pour soutenir cette maîtrise, sans niveau individuel à atteindre. La Commission a confirmé le 27 juillet 2026 qu'une trace interne de ce qui a été fait suffit. Former vos équipes est donc la manière la plus directe de remplir l'obligation ; notre programme d'acculturation et nos formations métier en sont les briques, et une partie du coût peut être confiée à l'OPCO de votre branche.",
   },
   {
     q: "Peut-on être « certifié AI Act » ?",
-    a: "Non, pas à ce jour, et méfiez-vous de qui le promet. À l'été 2026, aucune norme harmonisée n'a été citée au Journal officiel de l'Union européenne au titre du règlement IA : la présomption de conformité de l'article 40 n'est pas disponible. La seule certification existante dans le domaine est ISO/IEC 42001, sur le système de management de l'IA, délivrée par un organisme accrédité sur un périmètre déclaré ; elle ne vaut pas conformité au règlement. La formation vous apprend à faire la différence et à répondre aux prestataires.",
+    a: "Non. Méfiez-vous de toute offre qui le promet. Au dernier relevé de Masteria, en août 2026, aucune norme harmonisée n'avait encore été référencée au Journal officiel de l'UE pour ce règlement : la présomption de conformité de l'article 40 restait indisponible. La certification qui existe dans le domaine, ISO/IEC 42001, porte sur l'organisation qu'une entreprise se donne pour piloter l'IA, sur un périmètre qu'elle déclare ; elle ne prouve pas, à elle seule, le respect du règlement. La formation vous apprend à faire la différence et à interroger un prestataire.",
   },
   {
-    q: "Quelle est la différence entre cette formation et la formation gouvernance IA ?",
-    a: "La formation AI Act traite le règlement lui-même : ce qu'il impose, à qui, quand, comment classifier vos usages et bâtir votre plan de conformité. La formation gouvernance IA traite le dispositif d'entreprise qui fait vivre la conformité et l'usage responsable dans la durée : registre, charte, comité de gouvernance, gouvernance des données. La première vous met en règle avec le texte, la seconde organise le pilotage. Elles se suivent bien ; certains les combinent en deux jours.",
+    q: "Quelle différence avec la formation gouvernance IA ?",
+    a: "La formation AI Act porte sur le règlement : ce qu'il impose, à qui, à quelle date, comment classer vos usages et bâtir votre plan de conformité. La formation gouvernance IA porte sur le dispositif d'entreprise qui fait vivre la conformité au quotidien : registre des usages, charte, comité, réglages des consoles. La première vous met en règle avec le texte, la seconde organise le pilotage. Elles s'enchaînent bien, et certaines organisations les suivent sur deux jours consécutifs.",
   },
   {
-    q: "Combien de temps dure la formation et en quel format ?",
-    a: "Le format de référence est d'une journée (7 heures) en intra-entreprise, en présentiel ou à distance, pour un groupe de 4 à 10 personnes des fonctions concernées (conformité, DSI, RH, direction, chefs de projet). Un format de deux jours ajoute des ateliers de mise en conformité approfondis sur vos systèmes réels (inventaire complet, classification détaillée, plan finalisé). Un accompagnement individuel est possible pour un DPO ou un responsable IA.",
+    q: "Quelle durée, et quel format choisir ?",
+    a: "La formule standard : sept heures en intra, chez vous ou en visioconférence, avec jusqu'à douze participants issus des fonctions concernées : conformité, DSI, RH, direction, chefs de projet. La version en deux jours prévoit des ateliers sur vos propres systèmes : inventaire complet, classement détaillé, plan finalisé. Un DPO ou un responsable IA peut aussi suivre la formation en individuel.",
   },
   {
     q: "Combien coûte la formation AI Act ?",
-    a: "Le tarif intra-entreprise est de 1 980 € HT par jour de formation pour le groupe, quel que soit le nombre de participants dans la limite de 10 : la journée AI Act représente donc 1 980 € HT pour l'équipe, le format deux jours 3 960 € HT. La formation étant certifiée Qualiopi, votre OPCO peut la prendre en charge dans le cadre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis détaillé sous 24 heures.",
+    a: "Pour 1 980 € HT, la journée accueille en intra jusqu'à douze stagiaires, ou un seul en individuel ; deux jours reviennent à 3 960 € HT. Côté financement, la certification Qualiopi permet de présenter cette action de votre plan de formation à votre OPCO de branche, et nous préparons les pièces avec vous. Hors Lyon, les frais de déplacement du formateur figurent dans le devis, envoyé sous 24 heures.",
   },
   {
-    q: "La formation est-elle finançable par notre OPCO ?",
-    a: "Oui. Masteria est certifiée Qualiopi, ce qui rend la formation éligible au financement par votre OPCO au titre du plan de développement des compétences. La prise en charge dépend de votre branche et de la taille de l'entreprise. Nous fournissons le programme, la convention et les pièces du dossier ; le dépôt se fait avant le début de la formation. Notre outil Quel OPCO ? identifie votre opérateur en deux minutes. La formation n'est pas éligible au CPF.",
+    q: "Notre OPCO peut-il prendre la journée en charge ?",
+    a: "La journée y est éligible, Masteria ayant été certifiée Qualiopi au titre de ses actions de formation. Le montant accordé dépend des critères de votre OPCO, de votre effectif et de son budget annuel. Les documents nécessaires (programme, convention, attestations) sont préparés par nos soins, et le dossier doit être déposé chez l'OPCO avant que la formation commence. Pour savoir de quel OPCO vous dépendez, notre outil Quel OPCO ? vous le dit après quelques questions. Pour une entreprise basée à Genève ou à Bruxelles, le financement OPCO n'existe pas : nous établissons le devis en euros, hors taxes. La formation n'est pas proposée au CPF.",
   },
   {
-    q: "Quelles sanctions prévoit le règlement, et sont-elles déjà applicables ?",
-    a: "Les plafonds sont élevés : jusqu'à 35 millions d'euros ou 7 % du chiffre d'affaires mondial pour les pratiques interdites, jusqu'à 15 millions ou 3 % pour la plupart des autres manquements, dont la transparence de l'article 50. Deux nuances honnêtes : les obligations les plus lourdes (haut risque) sont reportées à 2027-2028, et au 3 août 2026 la France n'avait pas encore formellement désigné ses autorités de surveillance, ce qui retarde le contrôle sans suspendre les obligations. Le risque le plus concret en 2026 reste le RGPD et la CNIL, sur les traitements déjà en service.",
+    q: "Quelles sanctions prévoit le règlement, et s'appliquent-elles déjà ?",
+    a: "L'article 99 prévoit trois plafonds. Pratiques interdites : 7 % du chiffre d'affaires annuel mondial ou 35 millions d'euros, le plus haut des deux ; pour la plupart des autres manquements, transparence de l'article 50 comprise, 15 millions ou 3 % ; pour des renseignements inexacts donnés aux autorités, 7,5 millions ou 1 %. Une PME ou une jeune pousse se voit appliquer le plus bas des deux montants. Les obligations les plus lourdes, celles du haut risque, n'arrivent qu'en 2027 et 2028 ; le risque le plus concret en 2026 reste le RGPD, que la CNIL contrôle déjà.",
   },
 ]
 
 /* ───────── JSON-LD ───────── */
 
 const COURSE_DATA = {
-  name: 'Formation AI Act (IA Act) — Masteria',
-  description: "Formation au règlement européen sur l'intelligence artificielle (AI Act / IA Act) : logique par risque, calendrier réel post-Omnibus (règlement 2026/1744), inventaire et classification des systèmes, obligation de littératie de l'article 4, transparence de l'article 50, articulation RGPD, plan de conformité et gouvernance. 1 jour en intra (2 jours avec ateliers approfondis), présentiel ou distanciel. Certifiée Qualiopi, finançable OPCO.",
+  name: 'Formation AI Act (IA Act) · Masteria',
+  description: "Formation au règlement (UE) 2024/1689, que l'on appelle AI Act ou IA Act : approche par les risques, calendrier issu du règlement (UE) 2026/1744, inventaire et classement des systèmes, article 4 et registre des formations, transparence de l'article 50, lien avec le RGPD, plan de conformité. Une journée en intra (deux avec ateliers), en salle ou à distance. Organisme certifié Qualiopi, catégorie actions de formation.",
   level: 'Tous niveaux',
   teaches: [
-    "Lire le calendrier réel du règlement européen sur l'IA, article par article",
-    "Inventorier et classifier ses systèmes d'IA par niveau de risque",
-    "Construire un dispositif de littératie IA conforme à l'article 4",
-    "Articuler règlement IA et RGPD dans un dossier de conformité unifié",
-    "Bâtir un plan de conformité et une gouvernance proportionnés",
+    "Dater chaque obligation de l'AI Act, article par article",
+    "Inventorier ses systèmes d'IA et les classer par niveau de risque",
+    "Documenter les mesures de maîtrise de l'IA attendues par l'article 4",
+    "Tenir un dossier commun au règlement IA et au RGPD",
+    "Rédiger un plan de conformité et une gouvernance à la mesure de son exposition",
   ],
-  about: "Règlement européen sur l'intelligence artificielle (AI Act)",
+  about: "AI Act, règlement (UE) 2024/1689",
   timeRequired: 'PT7H',
   duration: 'PT7H',
   prerequisites: 'Aucun prérequis juridique ou technique.',
   audience: 'DPO, conformité, DSI, RH, directions, chefs de projet IA',
-  locationName: 'Masteria — intra-entreprise, présentiel (Europe, États-Unis, Inde) ou distanciel',
+  locationName: 'Masteria · en intra dans vos locaux (France, Europe, États-Unis, Inde) ou en classe virtuelle',
 }
-/* Programme en ItemList (séquence citable — GEO). */
+/* Programme en ItemList (séquence citable, GEO). */
 const programmeJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: "Programme de la formation AI Act Masteria (1 jour)",
   itemListOrder: 'https://schema.org/ItemListOrderAscending',
   itemListElement: PROGRAMME.flatMap((j, ji) => [
-    { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour} · Matin — ${j.titre}`, description: j.matin.join(' ; ') },
-    { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour} · Après-midi — ${j.titre}`, description: j.apresmidi.join(' ; ') },
+    { '@type': 'ListItem', position: ji * 2 + 1, name: `${j.jour}, matin : ${j.titre}`, description: j.matin.join(' ; ') },
+    { '@type': 'ListItem', position: ji * 2 + 2, name: `${j.jour}, après-midi : ${j.titre}`, description: j.apresmidi.join(' ; ') },
   ]),
 }
 
@@ -258,13 +282,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/formation-ai-act#article',
-  headline: "Formation AI Act (IA Act) : ce que le règlement impose vraiment, et quand",
+  headline: "Formation AI Act (IA Act) : lire le règlement, classer vos usages, dater vos obligations",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2025-11-20',
-  dateModified: '2026-08-10',
+  dateModified: '2026-10-07',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/formation-ai-act#webpage' },
   about: [
@@ -345,12 +369,9 @@ export default function FormationAIActPage() {
         faqItems={FAQ}
         courseData={COURSE_DATA}
         datePublished="2025-11-20"
-        dateModified="2026-08-10"
+        dateModified="2026-10-07"
         speakable={['#geo-summary', '#en-bref']}
-        citations={[
-          { name: "Règlement (UE) 2024/1689 établissant des règles harmonisées concernant l'intelligence artificielle", url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj' },
-          { name: 'Qualiopi, marque de certification qualité des prestataires de formation — travail-emploi.gouv.fr', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
-        ]}
+        citations={SOURCES}
         extraJsonLd={[programmeJsonLd, articleJsonLd]}
       />
 
@@ -374,26 +395,26 @@ export default function FormationAIActPage() {
               <Scale size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
-              Formation conformité · AI Act
+              Formation · règlement européen sur l'IA
             </span>
           </div>
 
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Formation AI Act (IA Act) :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce que le règlement impose vraiment, et quand</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>lire le règlement, classer vos usages, dater vos obligations</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mise à jour août 2026
+            Programme conçu et supervisé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · aligné sur le texte en vigueur au 7 octobre 2026
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation AI Act de Masteria vous apprend, en une journée, ce que le règlement européen sur l'IA impose réellement à votre organisation et à quelle date, avec le <strong style={{ color: '#fff', fontWeight: 700 }}>calendrier post-Omnibus de juillet 2026</strong> : classer vos usages par risque, construire votre dispositif de littératie (article 4), tenir la transparence, articuler avec le RGPD et bâtir votre plan de conformité. Certifiée Qualiopi, finançable par votre OPCO.
+            En une journée, la formation AI Act de Masteria vous apprend ce que le règlement de 2024 attend de votre organisation et à quelle date, d'après le <strong style={{ color: '#fff', fontWeight: 700 }}>calendrier modifié en juillet 2026 par l'Omnibus</strong> : classer vos usages par niveau de risque, documenter ce que vous faites pour former vos équipes (article 4), respecter la transparence de l'article 50, relier le tout au RGPD et repartir avec la trame de votre plan de conformité. Masteria, organisme de formation, a obtenu la certification Qualiopi pour ses « actions de formation ».
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Le règlement s'écrit AI Act ou IA Act, et il est mal raconté un peu partout : calendrier périmé, obligations gonflées, certifications qui n'existent pas. Cette formation part du texte, article par article, pour vous situer honnêtement : ce que vous devez faire, ce que vous pouvez différer, ce qui ne vous concerne pas. Vous repartez avec vos livrables, pas avec une peur.
+            On écrit AI Act ou IA Act, et on lit à son sujet beaucoup d'erreurs : un calendrier antérieur à l'Omnibus, des obligations gonflées, des certificats qui n'existent pas. La journée part du texte, article par article, et vous situe : ce qu'il faut faire maintenant, ce qui attend 2027 ou 2028, ce qui ne vous concerne pas. Vous repartez avec vos livrables et sans inquiétude inutile.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -402,7 +423,7 @@ export default function FormationAIActPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#programme" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
-              Voir le programme
+              Le programme de la journée
             </a>
           </div>
 
@@ -429,7 +450,7 @@ export default function FormationAIActPage() {
         </div>
       </section>
 
-      {/* ── CE QUE L'IA CHANGE PAR MISSION (éditorial asymétrique) ── */}
+      {/* ── CE QUE COUVRE LA FORMATION (éditorial asymétrique) ── */}
       <section id="missions" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
@@ -439,10 +460,10 @@ export default function FormationAIActPage() {
                 Que faut-il savoir du règlement européen sur l'IA ?
               </h2>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six choses : le calendrier réel (ce qui s'applique, ce qui est reporté à 2027-2028), la classification de vos usages par risque, l'article 4 sur la littératie IA, la transparence et la documentation, l'articulation avec le RGPD, et le plan de conformité avec sa gouvernance. La formation les traite dans cet ordre, sur vos systèmes réels.</strong>
+                <strong>Six sujets, traités dans cet ordre sur vos propres usages : le calendrier tel qu'il s'applique après l'Omnibus, le classement par niveau de risque, l'article 4 dans sa nouvelle rédaction, la transparence de l'article 50, le lien avec le RGPD, et le plan de conformité avec sa gouvernance.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Pour le dispositif d'entreprise qui fait vivre la conformité dans la durée, voyez la <Link to="/formation-gouvernance-ia" style={aStyle}>formation gouvernance IA</Link> ; pour vous faire accompagner sur la mise en conformité elle-même, notre <Link to="/gouvernance-ia" style={aStyle}>conseil en gouvernance IA</Link>.
+                Pour apprendre à faire vivre le dispositif au quotidien (registre, charte, comité), voyez la <Link to="/formation-gouvernance-ia" style={aStyle}>formation gouvernance IA</Link> ; pour confier la mise en conformité elle-même à un consultant, la <Link to="/gouvernance-ia" style={aStyle}>mission de gouvernance de l'IA</Link>.
               </p>
             </div>
             <div>
@@ -460,7 +481,7 @@ export default function FormationAIActPage() {
         </div>
       </section>
 
-      {/* ── LES ATOUTS DE L'IA POUR LA FINANCE ── */}
+      {/* ── CE QUE VOUS Y GAGNEZ ── */}
       <section id="atouts" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Ce que vous y gagnez</Kicker>
@@ -468,7 +489,7 @@ export default function FormationAIActPage() {
             Pourquoi se former au règlement européen sur l'IA maintenant ?
           </h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six raisons : un calendrier lu dans le texte plutôt que dans les plaquettes, une conformité proportionnée à votre exposition réelle, l'article 4 traité comme un levier de montée en compétence finançable, un dossier unique qui tient face au RGPD et au règlement IA, des livrables utilisables le lendemain, et la lucidité sur ce qui est certifiable ou non.</strong>
+            <strong>Six raisons de le faire dès maintenant : des dates lues dans le texte, une conformité proportionnée, l'article 4 transformé en plan de montée en compétences, un dossier commun avec le RGPD, des livrables utilisables tout de suite, et la lucidité sur ce qui se certifie.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
             {ATOUTS.map((item, i) => (
@@ -479,12 +500,12 @@ export default function FormationAIActPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Un mot d'honnêteté : le report des obligations sur le haut risque à 2027-2028 laisse le temps de faire les choses dans l'ordre. Il ne suspend ni les obligations déjà applicables, ni les contrôles de la CNIL sur les traitements en service. La conformité s'organise mieux en amont d'un déploiement qu'après une mise en demeure.
+            Le report du haut risque à 2027 et 2028 laisse le temps de bien faire. Il laisse aussi en place les obligations déjà applicables et les contrôles de la CNIL sur les traitements en service. Une mise en conformité préparée avant un déploiement coûte moins cher qu'une mise en demeure.
           </p>
         </div>
       </section>
 
-      {/* ── PROGRAMME 2 JOURS (ancre sombre — pivot) ── */}
+      {/* ── PROGRAMME (ancre sombre, pivot) ── */}
       <section id="programme" style={{ position: 'relative', padding: sectionPad, background: '#0A0F1E', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: c }} />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
@@ -494,13 +515,13 @@ export default function FormationAIActPage() {
             Programme de la formation AI Act sur 1 jour
           </h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Matin : le règlement en clair, le calendrier réel article par article, l'inventaire et la classification de vos systèmes en atelier. Après-midi : l'article 4 et votre dispositif de littératie, la transparence et la documentation, l'articulation RGPD, puis votre plan de conformité et la gouvernance en atelier. Une journée dense, texte en main, sur vos usages réels.</strong>
+            <strong style={{ color: '#fff' }}>Le matin, le règlement en clair, le calendrier article par article, puis l'inventaire et le classement de vos systèmes en atelier. L'après-midi, l'article 4 et votre registre, la transparence et la documentation, le lien avec le RGPD, enfin votre plan de conformité en atelier. Une journée dense, texte en main, sur vos propres usages.</strong>
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {PROGRAMME.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
           </div>
-          <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
-            En format 2 jours, la seconde journée est faite d'ateliers de mise en conformité approfondis : inventaire complet, classification détaillée de chaque système, plan finalisé avec responsables et échéances, modèles de documentation remplis.
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
+            En deux jours, la seconde journée se passe en ateliers sur vos systèmes : inventaire complet, classement détaillé de chaque usage, plan finalisé avec porteurs et échéances, modèles de documentation remplis.
           </p>
         </div>
       </section>
@@ -511,7 +532,7 @@ export default function FormationAIActPage() {
           <Kicker>Pour qui</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse la formation AI Act ?</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Aux fonctions qui portent la conformité et les usages de l'IA : DPO, juristes et responsables conformité, DSI et responsables IA, DRH et directions générales (l'article 4 les concerne directement), chefs de projet IA et responsables métier. Sans prérequis juridique ni technique : le texte est expliqué en clair.</strong>
+            <strong>Aux fonctions qui portent la conformité et les usages : DPO, juristes et conformité, DSI et responsables IA, DRH et direction générale, chefs de projet et responsables métier. Aucun prérequis juridique ou technique n'est demandé : le texte est expliqué en clair.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
             {PROFILS.map(card => {
@@ -530,7 +551,7 @@ export default function FormationAIActPage() {
         </div>
       </section>
 
-      {/* ── CADRE : RGPD, DROITS, MARQUE (E-E-A-T + réassurance) ── */}
+      {/* ── CADRE : trois idées reçues (E-E-A-T + réassurance) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: 'clamp(28px, 4vw, 44px)', display: 'flex', gap: 'clamp(20px, 4vw, 40px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -538,15 +559,15 @@ export default function FormationAIActPage() {
               <ShieldCheck size={28} strokeWidth={2} style={{ color: c }} />
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <Kicker>Le cadre, traité de front</Kicker>
+              <Kicker>Le texte, sans exagération</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Ce que la formation ne fait pas dire au règlement
+                Trois idées reçues que la journée corrige
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le marché de la conformité IA entretient trois confusions que la formation démonte : la première, que la formation des salariés serait obligatoire sous peine d'amende immédiate (l'article 4 est une obligation de moyens, réelle et documentable, pas une menace) ; la deuxième, que la plupart des systèmes à haut risque exigeraient un audit externe (le règlement prévoit pour l'essentiel une auto-évaluation documentée, et ces obligations sont reportées) ; la troisième, qu'une conformité « certifiée AI Act » existerait (aucune norme harmonisée n'a été citée au JOUE à l'été 2026). Nous formons sur ces sujets depuis 2022 et suivons chaque évolution du texte : la formation est mise à jour à chaque palier, et vous repartez avec de quoi vérifier par vous-même. Pour un guide écrit sur les usages, voyez notre <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
+                La première veut que l'article 4 impose une formation certifiée, sous peine d'amende immédiate. Il demande des mesures proportionnées et documentées, et la Commission a confirmé le 27 juillet 2026 qu'aucun certificat n'est exigé. La deuxième veut que tout système à haut risque passe par un audit externe. Pour la plupart des usages de l'annexe III, le fournisseur évalue lui-même la conformité, selon la procédure dite de contrôle interne, et ces obligations n'arrivent qu'en décembre 2027. La troisième veut qu'une conformité « certifiée AI Act » s'achète. Au dernier relevé de Masteria, en août 2026, aucune norme harmonisée n'était référencée au JO de l'UE pour le règlement. Le support est révisé à chaque évolution du texte, et vous repartez avec de quoi vérifier par vous-même. Pour un guide écrit sur les règles d'usage, voyez notre page <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['Calendrier post-Omnibus, article par article', 'Article 4 : obligation de moyens, pas de menace', 'Rien n\'est « certifié AI Act » à ce jour', 'Le contrôle le plus probable en 2026 : la CNIL, sur le RGPD'].map(pt => (
+                {['Calendrier post-Omnibus, article par article', 'Article 4 : des moyens, aucun certificat', 'Aucune conformité « certifiée AI Act » à vendre', 'Contrôle le plus probable en 2026 : la CNIL'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />{pt}
                   </li>
@@ -561,9 +582,9 @@ export default function FormationAIActPage() {
       <section id="tarif" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Tarif et financement</Kicker>
-          <h2 style={{ ...h2Style, maxWidth: 880 }}>Combien coûte la formation, et comment la financer ?</h2>
+          <h2 style={{ ...h2Style, maxWidth: 880 }}>Prix de la journée et financement possible</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>1 980 € HT la journée de formation en intra-entreprise, pour le groupe (jusqu'à 10 participants) ; 3 960 € HT le format deux jours avec ateliers approfondis. Certifiée Qualiopi, la formation est finançable par votre OPCO au titre du plan de développement des compétences ; nous préparons le dossier avec vous. Devis sous 24 heures.</strong>
+            <strong>Le tarif tient en deux chiffres : 1 980 € HT pour une journée, que le groupe intra compte deux ou douze personnes ou que vous veniez seul, et 3 960 € HT pour deux jours. La certification Qualiopi vous permet de déposer une demande auprès de votre OPCO de branche ; il accorde sa prise en charge selon ses critères et son enveloppe. Le devis part sous 24 heures.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
@@ -572,32 +593,53 @@ export default function FormationAIActPage() {
                 <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le cadrage préalable (vos usages, vos outils, votre exposition), l'animation de la journée en présentiel ou à distance, les supports à jour du dernier texte, les livrables (grille de classification, trame de plan de conformité, modèle de dispositif article 4, kit de veille), l'évaluation des acquis et le certificat de réalisation. En présentiel hors Lyon, les frais de déplacement s'ajoutent au réel.
+                Le cadrage préalable sur vos usages et vos outils, l'animation en salle ou à distance, un support aligné sur le texte en vigueur, les livrables (grille de classement, trame de plan, modèle de registre, liste de veille), un test de fin de journée pour mesurer les acquis, puis le certificat de réalisation remis à chacun. Hors Lyon, les frais de déplacement du formateur sont chiffrés dans le devis.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                 <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>La prise en charge OPCO</h3>
+                <h3 style={{ ...h3Style, fontSize: 16 }}>La demande auprès de l'OPCO</h3>
               </div>
               <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et le détail des dispositifs sur <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. Pas d'éligibilité CPF.
+                Le dossier part avant le premier jour, et Masteria vous remet le programme, la convention et les justificatifs à y joindre. Ce que l'OPCO accorde varie selon ses règles, votre effectif et son budget. Hors de France, à Genève comme à Bruxelles, le devis se fait en euros hors taxes, sans OPCO. Trouvez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et les dispositifs sur <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. La formation n'est pas proposée au CPF.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── SUR LE TERRAIN (missions anonymisées) ── */}
       <section style={{ padding: sectionPad, background: '#fff' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <Kicker>Sur le terrain</Kicker>
+          <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)' }}>
+            Le règlement au programme de nos missions récentes
+          </h2>
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 22px' }}>
+            Le cadre réglementaire entre aussi dans nos formations aux outils, à la dose qui convient au public. Trois exemples, anonymisés comme tous nos cas publiés :
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 14 }}>
+            {TERRAIN.map(t => (
+              <li key={t.href} style={{ ...cardStyle, padding: '18px 22px', fontSize: 14.5, color: '#374151', lineHeight: 1.7 }}>
+                {t.texte}{' '}
+                <Link to={t.href} style={{ ...aStyle, whiteSpace: 'nowrap' }}>Lire la mission</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <div style={editorialGrid}>
             <div style={editorialAside}>
               <Kicker>FAQ</Kicker>
-              <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation AI Act : les questions fréquentes</h2>
-              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>Vous ne trouvez pas votre réponse ici ?</p>
+              <h2 style={{ ...h2Style, marginBottom: 16 }}>Formation AI Act : ce que les stagiaires demandent avant de s'inscrire</h2>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 16px' }}>Une question sur votre secteur, vos outils ou le financement ?</p>
               <Link to="/contact" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
-                Posez-nous votre question
+                Écrivez-nous
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
             </div>
@@ -607,23 +649,23 @@ export default function FormationAIActPage() {
       </section>
 
       {/* ── MAILLAGE INTERNE ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Pour aller plus loin</Kicker>
-          <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Approfondir par outil, ou élargir</h2>
+          <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.5vw, 28px)' }}>Approfondir après la journée</h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            La formation métier compare les outils ; les formations par outil approfondissent celui que votre équipe a retenu.
+            Le dispositif à installer, les documents à écrire, les publics à former : la suite dépend de ce que la journée aura révélé.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
-              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Suite logique', desc: "Le dispositif qui fait vivre la conformité : registre, charte, comité, gouvernance des données (1 jour)." },
-              { label: 'Conseil gouvernance & AI Act', href: '/gouvernance-ia', tag: 'Accompagnement', desc: "Se faire accompagner sur la mise en conformité : classification, registre, politique et comité IA." },
-              { label: 'Charte IA d\'entreprise', href: '/charte-ia-entreprise', tag: 'Guide', desc: "Le contenu type d'une charte d'usage de l'IA, avec exemples de formulation." },
-              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Les principes RGPD appliqués à l'IA, l'analyse d'impact et les garanties à vérifier outil par outil." },
-              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Article 4', desc: "La démarche de montée en compétence collective qui répond à l'obligation de littératie." },
-              { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'Direction', desc: "La lecture stratégique du règlement pour un COMEX : enjeux, risques, arbitrages." },
-              { label: 'Sprint IA AI Act (3 h)', href: '/formation-sprint-ia-ai-act', tag: 'Format court', desc: "L'atelier de trois heures pour sensibiliser rapidement une équipe au règlement." },
-              { label: 'Guide de l\'audit IA', href: '/blog/audit-ia-entreprise-methode-prix', tag: 'Article', desc: "Ce que la loi impose vraiment, les normes publiées et les cas où l'audit ne sert à rien." },
+              { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Suite logique', desc: "La suite naturelle : construire en une journée le dispositif qui fait vivre la conformité." },
+              { label: "Gouvernance de l'IA", href: '/gouvernance-ia', tag: 'Conseil', desc: "Confier l'inventaire, le classement, le registre et l'installation du comité à une mission au forfait." },
+              { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Guide', desc: "Les huit rubriques d'une charte, chacune avec un exemple de rédaction, transparence de l'article 50 comprise." },
+              { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Guide', desc: "Ce que le RGPD exige d'un assistant, article par article, avec l'analyse d'impact et les garanties des éditeurs." },
+              { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Article 4', desc: "Former largement les équipes, pour que la maîtrise de l'IA se constate partout dans l'organisation." },
+              { label: 'Formation IA pour dirigeants', href: '/formation-ia-dirigeants', tag: 'Direction', desc: "Le règlement vu du comité de direction : risques, arbitrages, budget." },
+              { label: 'Sprint IA AI Act (3 h)', href: '/formation-sprint-ia-ai-act', tag: 'Format court', desc: "Trois heures pour sensibiliser une équipe au règlement avant d'aller plus loin." },
+              { label: 'AI Act et RH : recrutement et évaluation', href: '/blog/ai-act-rh-conformite-recrutement-evaluation', tag: 'Article', desc: "Pourquoi le tri de candidatures et l'évaluation des salariés relèvent du haut risque, et quoi préparer." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>
                 <div style={{ ...cardStyle, padding: 26, transition: 'border-color 0.2s', height: '100%', boxSizing: 'border-box' }}
@@ -632,7 +674,7 @@ export default function FormationAIActPage() {
                   <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>{rel.tag}</div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>{rel.label}</h3>
                   <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>
-                  <span style={{ fontSize: 13, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>En savoir plus<ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" /></span>
+                  <ArrowRight size={15} strokeWidth={2.4} style={{ color: c }} aria-hidden="true" />
                 </div>
               </Link>
             ))}
@@ -640,7 +682,15 @@ export default function FormationAIActPage() {
         </div>
       </section>
 
-      <FounderNote />
+      {/* ── SIGNATURE (E-E-A-T, remplace FounderNote) ── */}
+      <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Mathias Nizan supervise le contenu de cette journée et le révise à chaque palier du texte. La version actuelle intègre l'Omnibus, la foire aux questions publiée par la Commission le 27 juillet 2026 et le calendrier vérifié le 7 octobre 2026. Pour découvrir son parcours : <Link to="/mathias-nizan" style={aStyle}>sa page de fondateur</Link>.
+          </p>
+          <PressMention />
+        </div>
+      </section>
 
       {/* ── CTA FINALE SOMBRE ── */}
       <section style={{ background: '#fff', padding: 'clamp(64px, 9vw, 110px) 24px' }}>
@@ -649,20 +699,36 @@ export default function FormationAIActPage() {
           <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Formation AI Act</div>
-            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Mettons votre organisation en règle, sans en rajouter</h2>
+            <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>Mettez votre organisation en règle, à la mesure de votre exposition</h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
-              Décrivez-nous vos usages de l'IA, vos outils et vos fonctions concernées. Nous revenons vers vous sous 24 heures avec un programme ajusté à votre exposition réelle, les dates possibles et le devis, dossier OPCO compris.
+              Dites-nous quels outils d'IA vous utilisez et quelles fonctions sont concernées. Vous recevez sous 24 heures un programme ajusté à votre exposition, des dates possibles et le devis, avec les pièces du dossier pour l'OPCO.
             </p>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '16px 34px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800, marginBottom: 24 }}>
               Demander un devis
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
-            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Réponse sous 24 h · Certifié Qualiopi · Finançable OPCO · Présentiel & distanciel</p>
+            <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>Qualiopi, catégorie actions de formation · intra jusqu'à 12 personnes ou individuel · en salle ou à distance</p>
           </div>
         </div>
       </section>
 
-      <OfficialSources />
+      {/* ── TEXTES ET REPÈRES OFFICIELS (remplace OfficialSources) ── */}
+      <section aria-labelledby="textes-officiels" style={{ padding: '56px 24px', background: '#FAFAF7', borderTop: '1px solid #E5E7EB' }}>
+        <div style={{ maxWidth: 880, margin: '0 auto' }}>
+          <h2 id="textes-officiels" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', margin: '0 0 16px' }}>
+            Les textes sur lesquels s'appuie la journée
+          </h2>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
+            {SOURCES.map(s => (
+              <li key={s.url}>
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'flex-start', gap: 7, fontSize: 14.5 }}>
+                  <ExternalLink size={15} strokeWidth={2.2} style={{ flexShrink: 0, marginTop: 4 }} aria-hidden="true" /> {s.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
     </>
   )
 }

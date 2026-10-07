@@ -58,10 +58,10 @@ const Linkedin = ({ size = 24, color = 'currentColor', ...props }) => (
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
   </svg>
 );
-import { MasteriaHeader, MasteriaFooter, FadeIn, PrimaryBtn, SecBtn, TrainingCard, StatsBar } from './components/components';
+import { MasteriaHeader, MasteriaFooter, FadeIn, PrimaryBtn, SecBtn, TrainingCard } from './components/components';
 import { ToolLogo } from './components/ToolLogo';
 import { useIsMobile } from './hooks/useMediaQuery';
-import { FAQSection, FormatTabs, SidebarFormatPicker, FAQ_GENERAL, FAQ_FORMATIONS, FAQ_CONTACT } from './components/screens2';
+import { FAQSection, FormatTabs, SidebarFormatPicker, FAQ_GENERAL, FAQ_FORMATIONS } from './components/screens2';
 import SEOHead from './components/SEOHead';
 import { HUBS, METIERS } from './data/catalog-meta';
 import HomePage from './pages/HomePage';
@@ -363,22 +363,64 @@ function FormationDetailScreen() {
   );
 }
 
+/* FAQ propre à la page À propos (/centre-formation-ia-entreprise), réécrite le 07/10/2026 :
+   remplace FAQ_GENERAL, partagée par d'autres pages. Le JSON-LD de SEOHead reprend ce tableau. */
+const FAQ_A_PROPOS = [
+  {
+    q: 'Qui dirige Masteria ?',
+    a: "Mathias Nizan, son fondateur (Lyon, 2022). Il pilote chaque mission, conduit les audits et dessine l'architecture des outils que Masteria construit. Son parcours et sa vision sont présentés sur sa page de fondateur.",
+  },
+  {
+    q: 'Masteria fait-il du conseil ou de la formation ?',
+    a: "Les deux, avec une activité de développement entre les deux. Le conseil (audit, stratégie, gouvernance) et les outils sur mesure se facturent au forfait, sur devis après cadrage ; ils ne sont donc pas finançables par votre OPCO. Côté formation, l'organisme est certifié Qualiopi ; une journée coûte 1 980 € HT, en intra (douze personnes au plus) comme en individuel.",
+  },
+  {
+    q: 'Comment vérifier que Masteria est certifié Qualiopi ?',
+    a: "Le certificat Qualiopi (n° 725311-1, émis par Certifopac) se télécharge sur cette page. La déclaration d'activité se retrouve dans le registre national des organismes de formation, sur data.gouv.fr, et l'entreprise sur l'Annuaire des entreprises de l'État.",
+  },
+  {
+    q: 'Qui intervient sur les missions ?',
+    a: "Mathias Nizan pilote. Selon le projet, il réunit une partie d'un réseau d'indépendants : environ dix consultants IA, cinq développeurs et vingt formateurs. Vous signez avec Masteria, qui choisit les intervenants et répond de leur travail.",
+  },
+  {
+    q: 'Où intervenez-vous ?',
+    a: "Depuis nos bureaux lyonnais, dans toute la France, et hors de France, en Europe comme en Inde ou aux États-Unis, sur place ou par visioconférence. Pour Genève et Bruxelles, où l'OPCO n'existe pas, les devis sont rédigés en euros HT, sans montage de financement.",
+  },
+  {
+    q: "Masteria est-il lié à un éditeur d'IA ?",
+    a: "Non. Masteria n'a d'attache avec aucun éditeur et forme aussi bien sur Gemini que sur Claude, Mistral, ChatGPT ou Microsoft Copilot. La recommandation suit votre cas : l'outil que vos équipes ont déjà quand il suffit, ou un comparatif mené sur vos propres fichiers.",
+  },
+  {
+    q: 'Quel délai prévoir avant une première session ?',
+    a: "Pour un accompagnement individuel, prévoyez une ou deux semaines ; pour une formation intra, comptez de deux à quatre semaines : il faut cadrer le besoin, puis préparer les supports sur vos dossiers. Si vous passez par votre OPCO, ajoutez son délai d'instruction.",
+  },
+];
+
+/* Repères de la page À propos (remplace StatsBar, partagé et périmé) : ordres de grandeur
+   donnés par Mathias (réseau d'indépendants, 02/10/2026). */
+const REPERES_A_PROPOS = [
+  { num: '2022', label: 'Fondation à Lyon' },
+  { num: '≈ 10', label: 'Consultants IA' },
+  { num: '≈ 5', label: 'Développeurs IA' },
+  { num: '≈ 20', label: 'Formateurs indépendants' },
+];
+
 function AboutScreen() {
   return (
     <div>
       <SEOHead
-        title="À propos de Masteria : cabinet IA et centre de formation à Lyon"
-        description="Masteria, cabinet spécialisé en IA fondé à Lyon en 2022 par Mathias Nizan : audit, conseil, outils sur mesure et centre de formation certifié Qualiopi."
+        title="À propos de Masteria, cabinet IA et centre de formation"
+        description="Masteria, cabinet lyonnais fondé par Mathias Nizan : audit, conseil, outils IA sur mesure, formation Qualiopi. Identité légale et certificat vérifiables."
         slug="centre-formation-ia-entreprise"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
           { name: 'À propos', slug: 'centre-formation-ia-entreprise' },
         ]}
-        faqItems={FAQ_GENERAL}
-        dateModified="2026-10-03"
+        faqItems={FAQ_A_PROPOS}
+        dateModified="2026-10-07"
         citations={[
           { name: 'Annuaire des entreprises : MASTERIA (SIREN 919 252 403)', url: 'https://annuaire-entreprises.data.gouv.fr/entreprise/919252403' },
-          { name: 'Liste publique des organismes de formation (data.gouv.fr)', url: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail' },
+          { name: 'Organismes de formation déclarés : liste publique ouverte (data.gouv.fr)', url: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail' },
         ]}
       />
 
@@ -417,25 +459,25 @@ function AboutScreen() {
             }}>et centre de formation</span><br />dédié à l'IA en entreprise
           </h1>
           <p style={{ fontSize: 'clamp(15px, 1.7vw, 18px)', color: '#4B5563', lineHeight: 1.7, maxWidth: 640, margin: '0 auto' }}>
-            Fondé en 2022 par Mathias Nizan, Masteria accompagne les entreprises dans la transformation de leurs métiers par l'intelligence artificielle, avec une conviction : l'IA doit rester au service des humains.
+            Fondé en 2022 à Lyon, Masteria part d'une conviction de son créateur, Mathias Nizan : l'IA rend du temps aux équipes, et ce temps doit revenir à ce qui reste humain. Le cabinet audite, conseille, construit des outils sur mesure, puis forme ceux qui les utilisent au quotidien.
           </p>
         </div>
       </section>
 
-      {/* DOUBLE IDENTITÉ */}
+      {/* TROIS MÉTIERS */}
       <section style={{ padding: '80px 32px', background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Notre positionnement</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', marginBottom: 16 }}>
-              Deux expertises complémentaires,<br />une même mission
+              Trois métiers,<br />une seule équipe qui en répond
             </h2>
             <p style={{ fontSize: 16, color: '#6B7280', maxWidth: 660, margin: '0 auto', lineHeight: 1.7 }}>
-              Nous sommes l'un des rares acteurs à combiner conseil stratégique et formation certifiée Qualiopi. Cette double casquette nous permet de vous accompagner de la vision à l'exécution, puis de rendre vos équipes totalement autonomes.
+              Le même cabinet cadre un projet d'IA, construit l'outil quand il en faut un, puis forme les personnes qui vont s'en servir. Vous gardez un seul interlocuteur, du diagnostic jusqu'à l'autonomie de vos équipes.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             <FadeIn>
               <div style={{
                 background: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
@@ -450,7 +492,7 @@ function AboutScreen() {
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Cabinet de conseil IA</h3>
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link>, gouvernance, accompagnement opérationnel : nous aidons PME, ETI et grands groupes à cadrer leur démarche IA, à prototyper rapidement et à déployer avec méthode.
+                  <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link>, gouvernance, cadre d'usage : nous aidons PME, ETI et grands groupes à choisir leurs chantiers, à les classer et à décider sur des faits. Les missions de conseil sont chiffrées au forfait après le cadrage du périmètre.
                 </p>
                 <Link to="/conseil-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -461,7 +503,32 @@ function AboutScreen() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={100}>
+            <FadeIn delay={60}>
+              <div style={{
+                background: 'linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%)',
+                border: '1px solid #DDD6FE', borderRadius: 18, padding: 32, height: '100%',
+              }}>
+                <div style={{
+                  width: 52, height: 52, borderRadius: 12,
+                  background: '#7C3AED', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  marginBottom: 18,
+                }}>
+                  <Rocket size={24} color="#fff" strokeWidth={2} />
+                </div>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Outils et agents sur mesure</h3>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
+                  Assistants qui puisent dans vos documents, agents branchés sur votre CRM ou votre ERP, liaisons automatiques entre logiciels : une petite équipe de développeurs les construit à partir de ce qui tourne déjà chez vous, et le code vous revient.
+                </p>
+                <Link to="/agence-developpement-ia" style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 6,
+                  color: '#7C3AED', textDecoration: 'none', fontSize: 14, fontWeight: 700,
+                }}>
+                  Voir le développement sur mesure <ArrowRight size={14} />
+                </Link>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={120}>
               <div style={{
                 background: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
                 border: '1px solid #A7F3D0', borderRadius: 18, padding: 32, height: '100%',
@@ -475,7 +542,7 @@ function AboutScreen() {
                 </div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Centre de formation Qualiopi</h3>
                 <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  Formations ChatGPT, Copilot, Gemini, Claude et programmes par métier. Certifié Qualiopi, finançable via votre OPCO. +1 500 professionnels formés avec 98 % de satisfaction.
+                  Un catalogue de plus de cent programmes, par métier et par outil (Claude, ChatGPT, Copilot, Gemini, Mistral), chaque journée de session revenant à 1 980 € HT, que vous formiez une équipe en intra ou une seule personne. La formation peut être financée par votre OPCO, dans la limite de ses fonds et selon ses critères.
                 </p>
                 <Link to="/formation-intelligence-artificielle" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 6,
@@ -506,21 +573,36 @@ function AboutScreen() {
           <FadeIn>
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Le mot du fondateur</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.4vw, 30px)', fontWeight: 800, color: '#111', letterSpacing: '-0.02em', marginBottom: 20, lineHeight: 1.3 }}>
-              « L'intelligence artificielle ne remplace pas les humains.<br />Elle <span style={{ color: '#2563EB' }}>décuple leur potentiel</span>. »
+              « Le temps que l'IA vous rend doit servir<br />à <span style={{ color: '#2563EB' }}>ce qu'elle ne sait pas faire</span>. »
             </h2>
-            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>Je suis convaincu que l'IA ne doit pas être réservée à une élite technologique. Elle peut, et doit, devenir un levier de transformation pour tous les professionnels, quels que soient leur métier ou leur niveau de départ.</p>
-            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>C'est pour cela que j'ai fondé <strong>Masteria</strong>, un cabinet de conseil et centre de formation IA dédié à l'accompagnement des entreprises. Notre mission est claire : rendre l'intelligence artificielle accessible, concrète et directement utile sur le terrain.</p>
-            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>Chaque accompagnement et chaque programme que nous concevons vise à donner du pouvoir d'agir aux équipes, à simplifier le quotidien, à accélérer la prise de décision, à créer de la valeur.</p>
-            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 20 }}>Chez Masteria, nous croyons en une intelligence artificielle <strong>éthique, utile et profondément humaine</strong>. Nous mettons toute notre énergie à concevoir des formations qui vous donnent les clés pour intégrer l'IA dans votre métier de façon concrète, durable et réellement impactante.</p>
+            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>Pendant une dizaine d'années, j'ai travaillé dans le digital : des projets menés pour de grandes entreprises, des équipes à manager. En 2020, je me suis consacré à l'IA générative. Deux ans plus tard, j'ai créé Masteria pour aider les entreprises à s'en servir pour de bon, au-delà de la démonstration.</p>
+            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>Ce que j'observe en mission se répète de client en client. Un assistant bien réglé allège tout ce qui est répétitif : chercher, résumer, mettre en forme. La question utile vient après : que fait-on du temps gagné ?</p>
+            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 14 }}>Ma réponse ne varie pas. Ce temps doit aller aux compétences que la machine n'a pas : comprendre ce qu'un client ne dit pas, trancher entre deux urgences, rester calme sous pression, faire travailler ensemble des services qui s'ignorent.</p>
+            <p style={{ fontSize: 15, color: '#4A4A4A', lineHeight: 1.8, marginBottom: 20 }}>Pour cette raison, chaque mission de <strong>Masteria</strong> comporte un volet humain : un cadre d'usage écrit avec l'équipe, des référents internes, une formation sur ses propres dossiers. L'outil compte, la façon de travailler ensemble décide du reste.</p>
             <div style={{ paddingTop: 16, borderTop: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 15, fontWeight: 800, color: '#111' }}><Link to="/mathias-nizan" style={{ color: '#111', textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link></div>
-              <div style={{ fontSize: 13, color: '#6B7280', marginTop: 2 }}>Fondateur de Masteria · Conseil et architecture de solutions IA</div>
+              <div style={{ fontSize: 13, color: '#6B7280', marginTop: 2 }}>Fondateur, il pilote chaque mission de Masteria</div>
             </div>
           </FadeIn>
         </div>
       </section>
-      {/* CHIFFRES CLÉS */}
-      <StatsBar />
+
+      {/* REPÈRES (propres à la page, remplacent StatsBar) */}
+      <section style={{ background: '#1C1C1C', padding: 'clamp(28px, 5vw, 40px) clamp(16px, 4vw, 32px)' }}>
+        <div style={{
+          maxWidth: 1080, margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))',
+          gap: 'clamp(16px, 3vw, 24px)',
+        }}>
+          {REPERES_A_PROPOS.map(s => (
+            <div key={s.label} style={{ textAlign: 'center' }}>
+              <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 4vw, 36px)', fontWeight: 900, color: '#fff', lineHeight: 1 }}>{s.num}</div>
+              <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 6 }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* BANDEAU QUALIOPI */}
       <section style={{ padding: '80px 32px', background: '#fff' }}>
@@ -534,7 +616,7 @@ function AboutScreen() {
         }}>
           <img
             src="/assets/qualiopi-logo.png"
-            alt="Certification Qualiopi, Masteria centre de formation certifié"
+            alt="Logo Qualiopi de Masteria, catégorie actions de formation"
             width="120" height="90"
             loading="lazy" decoding="async"
             style={{ height: 90, width: 'auto', flexShrink: 0 }}
@@ -544,10 +626,10 @@ function AboutScreen() {
               Organisme certifié
             </div>
             <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2vw, 22px)', fontWeight: 800, color: '#0A0A0A', margin: 0, marginBottom: 8, letterSpacing: '-0.01em' }}>
-              Toutes nos formations sont certifiées Qualiopi
+              Une certification Qualiopi pour nos actions de formation
             </h3>
             <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
-              Gage de qualité reconnu par l'État, condition indispensable au financement de vos formations via votre OPCO.
+              La certification porte sur l'organisme et sur ses formations. Grâce à elle, votre OPCO peut instruire une demande de prise en charge, puis l'accepter ou non selon ses propres règles. Les missions de conseil et de développement n'en font pas partie, et ne sont donc pas finançables par votre OPCO. Tout le détail se lit sur la page <Link to="/formation-ia-qualiopi" style={{ color: '#059669', fontWeight: 700 }}>formation IA Qualiopi</Link>.
             </p>
           </div>
         </div>
@@ -562,25 +644,25 @@ function AboutScreen() {
               Du diagnostic à l'autonomie de vos équipes
             </h2>
             <p style={{ fontSize: 16, color: '#6B7280', maxWidth: 640, margin: '0 auto', lineHeight: 1.7 }}>
-              Nous travaillons avec vous en 3 temps, pensés pour créer de la valeur rapidement et durablement.
+              Trois temps, toujours dans cet ordre, pour une PME comme pour un grand groupe.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
             {[
               {
                 n: '01', Icon: Compass,
-                title: 'Nous comprenons',
-                desc: "Audit de vos processus, entretiens avec vos équipes, cartographie des cas d'usage à plus fort ROI. Tout part d'une compréhension profonde de votre contexte.",
+                title: 'Comprendre',
+                desc: "Nous interrogeons ceux qui exécutent les tâches, lisons vos processus et repérons les outils adoptés sans cadre. Les cas d'usage se classent ensuite selon le gain attendu et la faisabilité.",
               },
               {
                 n: '02', Icon: Target,
-                title: 'Nous co-construisons',
-                desc: "Stratégie, gouvernance, prototypes opérationnels : nous produisons avec vous, jamais pour vous. Vos équipes sont parties prenantes à chaque étape.",
+                title: 'Construire avec vous',
+                desc: "Feuille de route, gouvernance, premiers outils : le travail se fait avec vos équipes, qui valident chaque étape et gardent la main sur ce qui les engage.",
               },
               {
                 n: '03', Icon: Rocket,
-                title: 'Nous transférons',
-                desc: "Formations certifiées Qualiopi, bibliothèque de prompts, coaching post-mission : nous faisons en sorte que vous n'ayez plus besoin de nous.",
+                title: 'Transmettre',
+                desc: "Formation sur vos dossiers, bibliothèque de prompts, référents internes : la compétence reste chez vous, et le dispositif continue de vivre une fois la mission terminée.",
               },
             ].map((s, i) => (
               <FadeIn key={i} delay={i * 80}>
@@ -611,15 +693,15 @@ function AboutScreen() {
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F59E0B', marginBottom: 10 }}>Nos valeurs</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
-              Ce qui nous guide au quotidien
+              Quatre principes tenus sur chaque mission
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 20 }}>
             {[
-              { Icon: Heart,       title: 'Humain d\'abord',     desc: "L'IA est un outil au service des personnes. Nous plaçons systématiquement l'humain au centre de nos interventions." },
-              { Icon: Lightbulb,   title: 'Accessibilité',       desc: "L'IA doit être comprise par tous, pas seulement par une élite. Nous expliquons, nous démystifions, nous rendons simple." },
-              { Icon: Handshake,   title: 'Concrétude',          desc: "Pas de théorie hors-sol : chaque mission et chaque formation débouche sur des applications immédiatement utiles." },
-              { Icon: ShieldCheck, title: 'Éthique & sécurité',  desc: "RGPD, confidentialité, prévention des dérives : nous cadrons chaque usage pour une IA maîtrisée et responsable." },
+              { Icon: Heart,       title: "L'humain d'abord",    desc: "L'IA prend en charge le répétitif ; les décisions, la relation avec le client et le jugement restent aux personnes. Chaque intervention part de ce principe." },
+              { Icon: Lightbulb,   title: 'Accessibilité',       desc: "Chaque terme technique est expliqué la première fois qu'il apparaît, et aucune formation ne demande de prérequis technique." },
+              { Icon: Handshake,   title: 'Du concret',          desc: "Un atelier part d'un fichier du client. Une mission se juge à ce que l'équipe sait faire le lundi qui suit, sur son propre travail." },
+              { Icon: ShieldCheck, title: 'Éthique et sécurité', desc: "RGPD, confidentialité, AI Act : chaque usage reçoit un cadre écrit avant d'être déployé, avec les données autorisées, les comptes professionnels et un responsable humain pour chaque décision qui engage l'entreprise." },
             ].map((v, i) => (
               <FadeIn key={i} delay={i * 80}>
                 <div style={{ background: '#F9FAFB', borderRadius: 14, padding: 26, border: '1px solid #E5E7EB', height: '100%' }}>
@@ -641,22 +723,23 @@ function AboutScreen() {
         </div>
       </section>
 
-      {/* TIMELINE / HISTOIRE */}
+      {/* TIMELINE / HISTOIRE (aucun chiffre interdit : faits datés publiés sur le site) */}
       <section style={{ padding: '96px 32px', background: '#F5F3EE', color: '#0A0A0A' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#1D4ED8', marginBottom: 10 }}>Notre histoire</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
-              De l'intuition à une référence de la formation IA
+              Six dates qui racontent Masteria
             </h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {[
-              { year: '2020', title: 'Le déclic', desc: "Consultant en transformation digitale depuis 10 ans, Mathias Nizan se spécialise sur l'IA générative. Les premiers modèles GPT laissent entrevoir un basculement majeur." },
-              { year: '2022', title: 'Naissance de Masteria', desc: "Masteria est fondé sur une conviction : l'IA doit être accessible à tous les professionnels. Les premiers clients grands comptes font confiance au cabinet." },
-              { year: '2024', title: '+1 500 professionnels formés', desc: "Masteria accompagne des PME, ETI et grands groupes en France, Suisse et Belgique. 98 % de taux de satisfaction, +6h gagnées par semaine par collaborateur formé." },
-              { year: '2025', title: 'Cabinet conseil + formation', desc: "Le positionnement hybride se consolide : audit stratégique, accompagnement opérationnel et transfert de compétences par la formation." },
-              { year: '2026', title: 'Certification Qualiopi', desc: "Masteria devient organisme de formation certifié Qualiopi. Les formations sont désormais finançables via OPCO." },
+              { year: '2020', title: 'Le déclic', desc: "Après une dizaine d'années dans le digital, Mathias Nizan se consacre à l'IA générative, dont les premiers grands modèles de langage laissent entrevoir l'ampleur du changement pour le travail de bureau." },
+              { year: '2022', title: 'Naissance de Masteria', desc: "Mathias Nizan crée Masteria à Lyon, une entreprise individuelle consacrée à l'intelligence artificielle en entreprise." },
+              { year: '2025', title: "Le règlement européen sur l'IA s'applique", desc: "Le 2 février 2025, l'AI Act commence à s'appliquer : son article 4 demande aux employeurs de s'assurer que leurs salariés comprennent l'IA dont ils se servent. Les programmes Masteria intègrent l'usage responsable, RGPD et AI Act compris." },
+              { year: '2026', title: 'Janvier : la certification Qualiopi', desc: "Le 29 janvier, Certifopac certifie Masteria pour les actions de formation. Les entreprises clientes peuvent désormais présenter leurs formations à leur OPCO." },
+              { year: '2026', title: 'Juillet : des bureaux et une veille', desc: "Le cabinet s'installe rue d'Algérie, dans la presqu'île de Lyon, et publie sa première veille IA, une édition par jour ouvré." },
+              { year: '2026', title: "Septembre : l'international", desc: "Un groupe industriel suit deux sessions en anglais, prélude à ses sites étrangers : les sites mexicains et américains sont attendus en octobre, les sites indiens en décembre." },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div style={{
@@ -686,14 +769,14 @@ function AboutScreen() {
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12, textAlign: 'center' }}>Organisme vérifiable</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 800, color: '#111', marginBottom: 12, textAlign: 'center' }}>Qui sommes-nous, au registre et chez le certificateur</h2>
             <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, maxWidth: 720, margin: '0 auto 32px', textAlign: 'center' }}>
-              Avant de confier un projet ou une formation, vérifiez à qui vous parlez. Chaque information ci-dessous renvoie à une source publique, extérieure à ce site. Mis à jour en octobre 2026.
+              Avant de confier un projet ou une formation, vérifiez à qui vous parlez. Chaque information ci-dessous renvoie à une source publique, extérieure à ce site ; elles ont été vérifiées le 7 octobre 2026.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
               {[
                 { Icon: Building2, label: 'Entreprise', value: 'MASTERIA, entreprise individuelle de Mathias Nizan. SIRET 919 252 403 00028, TVA FR79 919 252 403.', href: 'https://annuaire-entreprises.data.gouv.fr/entreprise/919252403', link: "Fiche à l'Annuaire des entreprises" },
-                { Icon: CheckCircle2, label: "Déclaration d'activité", value: "Organisme de formation enregistré sous le n° 84 69 23218 69 auprès du préfet de la région Auvergne-Rhône-Alpes. Cet enregistrement ne vaut pas agrément de l'État.", href: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail', link: 'Liste publique des organismes de formation' },
-                { Icon: BadgeCheck, label: 'Certification Qualiopi', value: 'Certificat n° 725311-1 délivré par Certifopac au titre des actions de formation, valable du 29 janvier 2026 au 28 janvier 2029.', href: '/assets/qualiopi-certificat-masteria.pdf', link: 'Télécharger le certificat (PDF)' },
-                { Icon: MapPin, label: 'Bureaux', value: "17 rue d'Algérie, 69001 Lyon (presqu'île). Les ateliers de cadrage s'y tiennent ; les formations de groupe ont lieu dans vos locaux ou à distance.", href: 'https://www.google.com/maps/search/?api=1&query=Masteria&query_place_id=ChIJQy4tZWu-LkMR2Z9YXKI7SZE', link: 'Voir la fiche Google Maps' },
+                { Icon: CheckCircle2, label: "Déclaration d'activité", value: "Organisme de formation enregistré sous le n° 84 69 23218 69 auprès du préfet de la région Auvergne-Rhône-Alpes. Cet enregistrement ne vaut pas agrément de l'État.", href: 'https://www.data.gouv.fr/datasets/liste-publique-des-organismes-de-formation-l-6351-7-1-du-code-du-travail', link: 'Consulter le registre public' },
+                { Icon: BadgeCheck, label: 'Certification Qualiopi', value: "Certifopac a délivré le certificat n° 725311-1 le 29 janvier 2026, pour les actions de formation ; il expire le 28 janvier 2029.", href: '/assets/qualiopi-certificat-masteria.pdf', link: 'Télécharger le certificat (PDF)' },
+                { Icon: MapPin, label: 'Bureaux', value: "Au 17 rue d'Algérie, dans la presqu'île (69001 Lyon). Les ateliers de cadrage s'y tiennent ; les formations de groupe se font dans vos murs ou à distance.", href: 'https://www.google.com/maps/search/?api=1&query=Masteria&query_place_id=ChIJQy4tZWu-LkMR2Z9YXKI7SZE', link: 'Voir la fiche Google Maps' },
               ].map(({ Icon, label, value, href, link }) => (
                 <div key={label} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 14, padding: 22, display: 'flex', flexDirection: 'column', gap: 10 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, fontFamily: 'Nunito, sans-serif', fontSize: 15, color: '#0A0A0A' }}>
@@ -708,8 +791,8 @@ function AboutScreen() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <FAQSection items={FAQ_GENERAL} title="Questions fréquentes sur Masteria" bg="#F9FAFB" />
+      {/* FAQ (propre à la page) */}
+      <FAQSection items={FAQ_A_PROPOS} title="Questions fréquentes sur Masteria" bg="#F9FAFB" />
 
       {/* CTA FINAL */}
       <section style={{
@@ -725,10 +808,10 @@ function AboutScreen() {
         }} />
         <div style={{ maxWidth: 620, margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.4vw, 40px)', fontWeight: 900, lineHeight: 1.15, marginBottom: 16, color: '#fff' }}>
-            Travaillons ensemble
+            Dites-nous ce que l'IA devrait changer chez vous
           </h2>
           <p style={{ fontSize: 16, color: '#D1D5DB', marginBottom: 32, lineHeight: 1.7 }}>
-            Que vous cherchiez un audit stratégique, un accompagnement opérationnel ou un programme de formation pour vos équipes, nous construisons la mission adaptée à vos enjeux.
+            Un audit, un outil à construire ou une équipe à former : décrivez votre point de départ. Vous recevez sous 24 heures ouvrées une première réponse, puis une proposition adaptée.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, justifyContent: 'center' }}>
             <Link to="/contact" style={{
@@ -738,16 +821,16 @@ function AboutScreen() {
               textDecoration: 'none', fontSize: 15, fontWeight: 800,
               boxShadow: '0 12px 40px rgba(0,0,0,0.3)',
             }}>
-              Contacter notre équipe <ArrowRight size={16} />
+              Écrire à l'équipe <ArrowRight size={16} />
             </Link>
-            <Link to="/conseil-intelligence-artificielle" style={{
+            <Link to="/contact?type=projet&rdv=30" style={{
               display: 'inline-flex', alignItems: 'center', gap: 8,
               background: 'rgba(255,255,255,0.08)', color: '#fff',
               padding: '15px 28px', borderRadius: 10,
               textDecoration: 'none', fontSize: 15, fontWeight: 600,
               border: '1px solid rgba(255,255,255,0.14)',
             }}>
-              Découvrir le conseil IA
+              Réserver 30 minutes de cadrage
             </Link>
           </div>
         </div>
@@ -755,6 +838,39 @@ function AboutScreen() {
     </div>
   );
 }
+
+/* FAQ propre à la page Contact, réécrite le 07/10/2026 (remplace FAQ_CONTACT de screens2).
+   Le JSON-LD de SEOHead reprend ce tableau. Réponses courtes : FAQSection plafonne la hauteur. */
+const FAQ_CONTACT_PAGE = [
+  {
+    q: 'Sous quel délai recevrai-je une réponse ?',
+    a: "Sous 24 heures ouvrées, quel que soit le sujet de votre demande. Si le projet presse, signalez-le dans le message : nous faisons notre possible pour revenir vers vous plus tôt.",
+  },
+  {
+    q: 'Le devis vous engage-t-il ?',
+    a: "Non. Il est écrit pour votre situation et ne vous engage à rien avant votre signature. Pour une formation, il détaille le programme, les modalités, le prix et les pistes de financement ; pour un projet, il fixe le périmètre et le forfait.",
+  },
+  {
+    q: 'Peut-on échanger avant de remplir le formulaire ?',
+    a: "Oui. Écrivez directement à Mathias Nizan (mathias.nizan@master-ia.fr), ou appelez-le au 06 67 75 41 28, pour un premier échange sans demande de devis formelle.",
+  },
+  {
+    q: "Et après l'envoi du formulaire ?",
+    a: "Pour une formation, vous recevez une proposition de programme, le devis et, si besoin, les pièces pour votre OPCO. Pour un conseil ou un développement, nous convenons d'abord d'un créneau, puis viennent les 30 minutes de cadrage offertes et enfin le devis au forfait.",
+  },
+  {
+    q: 'Combien coûte une formation ou un projet ?',
+    a: "Une journée de formation est facturée 1 980 € HT, qu'elle réunisse jusqu'à douze personnes en intra ou une seule. Côté conseil et développement, le prix est arrêté au forfait une fois le cadrage fait : dès quelques milliers d'euros si le périmètre est petit, en dizaines de milliers quand l'outil part en production, plus de 100 000 € quand il s'agit d'un grand déploiement.",
+  },
+  {
+    q: 'Mes informations restent-elles confidentielles ?',
+    a: "Les informations du formulaire servent à vous recontacter et à préparer la réponse ; la politique de confidentialité du site décrit leur traitement. Avant de nous transmettre des documents internes, vous pouvez demander la signature d'un accord de confidentialité.",
+  },
+  {
+    q: 'Travaillez-vous hors de France ?',
+    a: "Oui. Nous intervenons dans toute l'Europe, mais aussi en Inde et outre-Atlantique, aux États-Unis, sur site ou par visioconférence. À Genève et à Bruxelles, sans OPCO local, le devis est rédigé en euros HT.",
+  },
+];
 
 function ContactScreen() {
   const isMobile = useIsMobile();
@@ -772,7 +888,7 @@ function ContactScreen() {
     setLastUrlType(typeFromUrl);
     setDemandeType(typeFromUrl);
   }
-  const [format, setFormat] = useState('inter');
+  const [format, setFormat] = useState('intra');
   const [selectedTools, setSelectedTools] = useState([]);
   const [selectedMetiers, setSelectedMetiers] = useState([]);
   const [selectedBesoins, setSelectedBesoins] = useState([]);
@@ -862,8 +978,10 @@ function ContactScreen() {
     <>
       <SEOHead
         title="Contact & devis : formation ou projet IA | Masteria"
-        description="Contactez Masteria pour un devis : formation IA, conseil et audit, ou développement sur mesure. Réponse sous 24 h. Europe, États-Unis, Inde."
+        description="Formation IA, audit, conseil ou outil sur mesure : écrivez à Masteria, réponse sous 24 h ouvrées. Bureaux à Lyon, missions en France comme à l'étranger."
         slug="contact"
+        faqItems={FAQ_CONTACT_PAGE}
+        dateModified="2026-10-07"
         breadcrumbs={[
           { name: 'Accueil', slug: '' },
           { name: 'Contact', slug: 'contact' },
@@ -890,7 +1008,7 @@ function ContactScreen() {
           }}>
             <Sparkles size={14} color="#D97706" />
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: '#374151' }}>
-              Devis gratuit · Réponse sous 24 h ouvrées
+              Réponse sous 24 h ouvrées · devis sans engagement
             </span>
           </div>
           <h1 style={{
@@ -909,7 +1027,7 @@ function ContactScreen() {
             fontSize: 17, color: '#4B5563', lineHeight: 1.65,
             maxWidth: 640, margin: '0 auto',
           }}>
-            Formation de vos équipes, conseil et audit, ou développement sur mesure (automatisations, outils, agents IA). Décrivez votre besoin : nous revenons vers vous sous 24 h avec une proposition et un devis adaptés.
+            Une équipe à former, un audit ou un conseil à engager, un outil ou un agent IA à construire : décrivez la situation en quelques lignes. Une première réponse arrive en moins de 24 heures ouvrées, puis une proposition et un devis.
           </p>
           <div style={{
             display: 'flex', gap: 20, justifyContent: 'center', flexWrap: 'wrap',
@@ -918,10 +1036,10 @@ function ContactScreen() {
             {demandeType === 'formation' ? (
               <>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  <BadgeCheck size={15} color="#059669" /> Certifié Qualiopi
+                  <BadgeCheck size={15} color="#059669" /> Organisme certifié Qualiopi
                 </span>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  <Wallet size={15} color="#2563EB" /> Finançable OPCO
+                  <Wallet size={15} color="#2563EB" /> Dossier OPCO préparé avec vous
                 </span>
               </>
             ) : (
@@ -934,7 +1052,7 @@ function ContactScreen() {
             </span>
             {demandeType === 'formation' ? (
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                <UsersIcon size={15} color="#7C3AED" /> +1 500 professionnels formés
+                <UsersIcon size={15} color="#7C3AED" /> Plus de cent programmes de formation
               </span>
             ) : (
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
@@ -967,9 +1085,10 @@ function ContactScreen() {
               </h2>
               {[
                 { Icon: Phone,    label: 'Téléphone', value: '06 67 75 41 28', href: 'tel:+33667754128' },
-                { Icon: MapPin,   label: 'Adresse',   value: "17 rue d'Algérie, 69001 Lyon · formation IA à Lyon", href: '/formation-ia-lyon' },
+                { Icon: Mail,     label: 'E-mail',    value: 'mathias.nizan@master-ia.fr', href: 'mailto:mathias.nizan@master-ia.fr' },
+                { Icon: MapPin,   label: 'Adresse',   value: "17 rue d'Algérie, 69001 Lyon · nos formations à Lyon", href: '/formation-ia-lyon' },
                 { Icon: Clock,    label: 'Délai de réponse', value: 'Sous 24 h ouvrées' },
-                { Icon: Calendar, label: 'Modalités', value: 'Présentiel ou distanciel · Europe, États-Unis, Inde' },
+                { Icon: Calendar, label: 'Modalités', value: "Sur site ou en visio, en France comme à l'étranger" },
               ].map((c, i, arr) => {
                 const content = (
                   <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
@@ -1019,16 +1138,16 @@ function ContactScreen() {
                 borderRadius: 8, padding: '6px 10px', marginBottom: 14,
                 fontSize: 12, fontWeight: 700, color: '#059669',
               }}>
-                <BadgeCheck size={13} /> finançable OPCO
+                <BadgeCheck size={13} /> Dossier OPCO
               </div>
               <h3 style={{
                 fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800,
                 color: '#0A0A0A', marginBottom: 8, letterSpacing: '-0.01em',
               }}>
-                Formation certifiée Qualiopi
+                Un organisme certifié Qualiopi
               </h3>
               <p style={{ fontSize: 13, color: '#4B5563', lineHeight: 1.6, margin: 0 }}>
-                Nos formations sont éligibles à une prise en charge par votre OPCO. Nous vous accompagnons dans les démarches administratives pour simplifier votre dossier.
+                Masteria est un organisme certifié Qualiopi, catégorie « actions de formation ». Votre OPCO décide de la prise en charge, d'après ses critères et dans la limite de ses fonds ; programme, convention et pièces du dossier se préparent avec nous.
               </p>
             </div>
             ) : (
@@ -1044,9 +1163,9 @@ function ContactScreen() {
                 Comment démarre un projet
               </h3>
               {[
-                { n: '1', title: '30 minutes de cadrage, offertes', desc: "En visio ou par téléphone : votre contexte, vos processus, ce que vous attendez de l'IA." },
-                { n: '2', title: "Le Diagnostic IA", desc: "Ateliers avec vos équipes et feuille de route priorisée. Durée et forfait fixés lors du cadrage." },
-                { n: '3', title: 'Le projet', desc: "Audit, construction de l'outil ou accompagnement, au forfait ou en régie. Le code et les livrables vous appartiennent." },
+                { n: '1', title: '30 minutes de cadrage offertes', desc: "En visio ou au téléphone : votre contexte, vos processus, ce que vous attendez de l'IA." },
+                { n: '2', title: "Le Diagnostic IA", desc: "Entretiens avec vos équipes et feuille de route priorisée ; durée et forfait sont arrêtés pendant le cadrage." },
+                { n: '3', title: 'Le projet', desc: "Audit, construction de l'outil ou accompagnement, au forfait, sur devis. Le code et les livrables vous appartiennent ; ces prestations ne sont pas finançables par votre OPCO." },
               ].map(s => (
                 <div key={s.n} style={{ display: 'flex', gap: 12, marginBottom: 12 }}>
                   <span style={{
@@ -1500,7 +1619,7 @@ function ContactScreen() {
                 <div style={grp}>
                   <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 13, color: '#4B5563', lineHeight: 1.55, cursor: 'pointer' }}>
                     <input type="checkbox" required style={{ marginTop: 3, accentColor: '#2563EB' }} />
-                    <span>J'accepte que Masteria traite mes données pour me recontacter. <Link to="/" style={{ color: '#2563EB', textDecoration: 'underline' }}>Politique de confidentialité</Link></span>
+                    <span>J'accepte que Masteria traite mes données pour me recontacter. <Link to="/politique-de-confidentialite" style={{ color: '#2563EB', textDecoration: 'underline' }}>Politique de confidentialité</Link></span>
                   </label>
                 </div>
 
@@ -1529,7 +1648,7 @@ function ContactScreen() {
                     <Clock size={12} /> Réponse sous 24 h
                   </span>
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-                    <CheckCircle2 size={12} /> Gratuit et sans engagement
+                    <CheckCircle2 size={12} /> Sans engagement
                   </span>
                 </div>
               </form>
@@ -1539,7 +1658,7 @@ function ContactScreen() {
       </div>
 
       {/* ════════════════════════ FAQ (en bas seulement) ════════════════════════ */}
-      <FAQSection items={FAQ_CONTACT} title="Questions fréquentes avant de nous contacter" bg="#fff" />
+      <FAQSection items={FAQ_CONTACT_PAGE} title="Questions fréquentes avant de nous contacter" bg="#fff" />
     </>
   );
 }
