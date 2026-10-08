@@ -3,12 +3,120 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-07",
-    "totalEditions": 51,
-    "totalItems": 689,
-    "totalSources": 1010
+    "derniereDate": "2026-10-08",
+    "totalEditions": 52,
+    "totalItems": 701,
+    "totalSources": 1029
   },
   "editions": [
+    {
+      "date": "2026-10-08",
+      "dateCourte": "jeu. 8 oct.",
+      "dateAffichee": "8 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act",
+      "chapeau": "Google ouvre au public SynthID Detector et le pousse comme standard pour reconnaître les contenus fabriqués par IA, le jour où GPT-6 arrive avec une interface qui répond en graphiques et en boutons. La question de l'origine des contenus traverse la journée, d'un label de « littérature humaine » à une condamnation pour fraude musicale, pendant que le matériel d'IA accélère, de la Surface à puce Nvidia aux 50 milliards de dollars que Broadcom prépare pour OpenAI.",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "TechCrunch",
+        "Le Monde",
+        "Next.ink",
+        "The Verge",
+        "Wired",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "Hugging Face"
+      ],
+      "items": [
+        {
+          "t": "Google ouvre SynthID Detector au grand public et vise le standard de l'industrie",
+          "z": "une",
+          "id": "google-ouvre-synthid-detector-au-grand-public-et-vise-le"
+        },
+        {
+          "t": "Le français reste ultraminoritaire dans les données d'entraînement des grands modèles",
+          "z": "europe",
+          "id": "le-francais-reste-ultraminoritaire-dans-les-donnees-d"
+        },
+        {
+          "t": "Les assureurs pourraient se retourner contre les patrons de l'IA en cas de dérapage des agents",
+          "z": "europe",
+          "id": "les-assureurs-pourraient-se-retourner-contre-les-patrons-de"
+        },
+        {
+          "t": "LibreOffice refuse d'intégrer l'IA tant qu'elle ne respecte pas ses critères",
+          "z": "europe",
+          "id": "libreoffice-refuse-d-integrer-l-ia-tant-qu-elle-ne-respecte"
+        },
+        {
+          "t": "OpenAI déploie GPT-6 et une interface « intelligente » qui répond en visuels",
+          "z": "international",
+          "id": "openai-deploie-gpt-6-et-une-interface-intelligente-qui"
+        },
+        {
+          "t": "Microsoft lance la Surface Laptop Ultra, premier portable Surface à puce Nvidia",
+          "z": "international",
+          "id": "microsoft-lance-la-surface-laptop-ultra-premier-portable"
+        },
+        {
+          "t": "Broadcom discute d'un financement de 50 milliards de dollars pour les puces d'OpenAI",
+          "z": "international",
+          "id": "broadcom-discute-d-un-financement-de-50-milliards-de"
+        },
+        {
+          "t": "ChatGPT for Teens jugé « risque inacceptable » par Common Sense Media",
+          "z": "international",
+          "id": "chatgpt-for-teens-juge-risque-inacceptable-par-common-sense"
+        },
+        {
+          "t": "Les modèles ouverts chinois conquièrent le monde, mais la valeur échappe à leurs créateurs",
+          "z": "chine",
+          "id": "les-modeles-ouverts-chinois-conquierent-le-monde-mais-la"
+        },
+        {
+          "t": "Samsung voit son bénéfice trimestriel presque multiplié par neuf grâce aux mémoires pour l'IA",
+          "z": "chine",
+          "id": "samsung-voit-son-benefice-trimestriel-presque-multiplie-par"
+        },
+        {
+          "t": "Nvidia tire deux médailles d'or d'un même modèle Nemotron, aux olympiades d'informatique et de mathématiques",
+          "z": "recherche",
+          "id": "nvidia-tire-deux-medailles-d-or-d-un-meme-modele-nemotron"
+        },
+        {
+          "t": "Deux membres du collectif « Balance ton Claude », Pierre-Thomas Eckert et…",
+          "z": "bref",
+          "id": "deux-membres-du-collectif-balance-ton-claude"
+        }
+      ]
+    },
     {
       "date": "2026-10-07",
       "dateCourte": "mer. 7 oct.",

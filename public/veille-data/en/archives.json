@@ -3,12 +3,120 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-07",
-    "totalEditions": 36,
-    "totalItems": 486,
-    "totalSources": 698
+    "derniereDate": "2026-10-08",
+    "totalEditions": 37,
+    "totalItems": 498,
+    "totalSources": 717
   },
   "editions": [
+    {
+      "date": "2026-10-08",
+      "dateCourte": "Thu 8 Oct",
+      "dateAffichee": "8 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Proving a content's origin becomes an economic function",
+      "chapeau": "Google opens SynthID Detector to the public and pushes it as a standard for recognising AI-fabricated content, on the day GPT-6 arrives with an interface that answers in charts and buttons. The question of where content comes from runs through the day, from a 'human literature' label to a conviction for music fraud, while AI hardware accelerates, from the Nvidia-chip Surface to the $50 billion Broadcom is preparing for OpenAI.",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "TechCrunch",
+        "Le Monde",
+        "Next.ink",
+        "The Verge",
+        "Wired",
+        "Bloomberg",
+        "South China Morning Post",
+        "Nikkei Asia",
+        "Hugging Face"
+      ],
+      "items": [
+        {
+          "t": "Google opens SynthID Detector to the general public and aims for the industry standard",
+          "z": "une",
+          "id": "google-opens-synthid-detector-to-the-general-public-and"
+        },
+        {
+          "t": "French remains a tiny minority in the training data of the large models",
+          "z": "europe",
+          "id": "french-remains-a-tiny-minority-in-the-training-data-of-the"
+        },
+        {
+          "t": "Insurers could turn against AI bosses if agents go off the rails",
+          "z": "europe",
+          "id": "insurers-could-turn-against-ai-bosses-if-agents-go-off-the"
+        },
+        {
+          "t": "LibreOffice refuses to add AI until it meets its criteria",
+          "z": "europe",
+          "id": "libreoffice-refuses-to-add-ai-until-it-meets-its-criteria"
+        },
+        {
+          "t": "OpenAI rolls out GPT-6 and an \"intelligent\" interface that answers in visuals",
+          "z": "international",
+          "id": "openai-rolls-out-gpt-6-and-an-intelligent-interface-that"
+        },
+        {
+          "t": "Microsoft launches the Surface Laptop Ultra, the first Surface laptop with an Nvidia chip",
+          "z": "international",
+          "id": "microsoft-launches-the-surface-laptop-ultra-the-first"
+        },
+        {
+          "t": "Broadcom discusses a $50 billion financing for OpenAI's chips",
+          "z": "international",
+          "id": "broadcom-discusses-a-50-billion-financing-for-openai-s-chips"
+        },
+        {
+          "t": "ChatGPT for Teens judged an \"unacceptable risk\" by Common Sense Media",
+          "z": "international",
+          "id": "chatgpt-for-teens-judged-an-unacceptable-risk-by-common"
+        },
+        {
+          "t": "Chinese open models conquer the world, but the value escapes their creators",
+          "z": "chine",
+          "id": "chinese-open-models-conquer-the-world-but-the-value-escapes"
+        },
+        {
+          "t": "Samsung sees its quarterly profit nearly multiplied by nine thanks to AI memory",
+          "z": "chine",
+          "id": "samsung-sees-its-quarterly-profit-nearly-multiplied-by-nine"
+        },
+        {
+          "t": "Nvidia draws two gold medals from a single Nemotron model, at the computing and mathematics olympiads",
+          "z": "recherche",
+          "id": "nvidia-draws-two-gold-medals-from-a-single-nemotron-model"
+        },
+        {
+          "t": "Two members of the \"Balance ton Claude\" collective, Pierre-Thomas Eckert and Samuel…",
+          "z": "bref",
+          "id": "two-members-of-the-balance-ton-claude-collective"
+        }
+      ]
+    },
     {
       "date": "2026-10-07",
       "dateCourte": "Wed 7 Oct",

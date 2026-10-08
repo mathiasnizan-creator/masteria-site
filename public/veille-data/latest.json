@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-07",
-    "totalEditions": 51,
-    "totalItems": 689,
-    "totalSources": 1010
+    "derniereDate": "2026-10-08",
+    "totalEditions": 52,
+    "totalItems": 701,
+    "totalSources": 1029
   },
   "recentes": [
+    {
+      "date": "2026-10-08",
+      "dateAffichee": "8 octobre 2026",
+      "dateCourte": "jeu. 8 oct.",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 9
+    },
     {
       "date": "2026-10-07",
       "dateAffichee": "7 octobre 2026",
@@ -573,35 +584,31 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-10-07",
-    "dateAffichee": "7 octobre 2026",
-    "dateLongue": "mercredi 7 octobre 2026",
-    "dateCourte": "mer. 7 oct.",
-    "jourSemaine": "mercredi",
-    "titre": "Veille IA du mercredi 7 octobre 2026",
-    "titreEditorial": "Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé",
-    "chapeau": "Mistral relance la France avec Mistral Large 4, surnommé « Le Chonk », un modèle de frontière à mille milliards de paramètres entraîné en Europe et bientôt ouvert. Le même jour, Microsoft, Google et OpenAI font passer le prix de l'IA du siège mensuel au compteur à l'usage, pendant qu'OpenAI publie 722 démonstrations mathématiques qui irritent les chercheurs.",
+    "date": "2026-10-08",
+    "dateAffichee": "8 octobre 2026",
+    "dateLongue": "jeudi 8 octobre 2026",
+    "dateCourte": "jeu. 8 oct.",
+    "jourSemaine": "jeudi",
+    "titre": "Veille IA du jeudi 8 octobre 2026",
+    "titreEditorial": "Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act",
+    "chapeau": "Google ouvre au public SynthID Detector et le pousse comme standard pour reconnaître les contenus fabriqués par IA, le jour où GPT-6 arrive avec une interface qui répond en graphiques et en boutons. La question de l'origine des contenus traverse la journée, d'un label de « littérature humaine » à une condamnation pour fraude musicale, pendant que le matériel d'IA accélère, de la Surface à puce Nvidia aux 50 milliards de dollars que Broadcom prépare pour OpenAI.",
     "une": {
-      "titre": "Mistral dévoile Mistral Large 4, « Le Chonk », et revient dans la course aux modèles de frontière",
-      "texteHtml": "<p>La start-up française a lancé mardi 6 octobre une préversion publique de Mistral Large 4, son nouveau grand modèle, après de longs mois de quasi-silence qui l'avaient fait passer pour distancée par les laboratoires américains et chinois. Le modèle affiche 1 050 milliards de paramètres, dont 49 milliards activés à chaque requête, dans une architecture dite MoE (un assemblage de sous-modèles spécialisés dont on n'allume que la part utile), et il a été entraîné dans les propres centres de données de Mistral en Europe. L'entreprise le présente comme le meilleur modèle à poids ouverts hors de Chine, de quoi « réduire l'écart » avec GPT-6 Astra et Claude, et promet d'accélérer sa cadence de sortie. La préversion est accessible dès maintenant sur son interface de programmation ; les poids complets, téléchargeables et exécutables par tous, seront publiés le 27 octobre. L'enjeu dépasse la performance brute : Mistral tente de prouver qu'un acteur européen peut encore tenir le rythme sans renoncer à l'ouverture.</p>",
+      "titre": "Google ouvre SynthID Detector au grand public et vise le standard de l'industrie",
+      "texteHtml": "<p>Google DeepMind a lancé mardi 7 octobre un site accessible à tous, SynthID Detector, qui repère le filigrane invisible glissé dans les images, les vidéos et les fichiers audio produits par ses propres IA, rapportent Numerama et TechCrunch. Le filigrane (une marque indétectable à l'œil, inscrite dans le fichier au moment de la génération) servait jusqu'ici en interne ; il devient un outil de vérification que chacun peut interroger en déposant un contenu. Google présente SynthID comme une norme commune et revendique son adoption progressive par OpenAI, Nvidia, Kakao et Apple. L'outil ne reconnaît pour l'instant que les contenus marqués par les modèles ralliés au filigrane, sa portée dépend donc du reste de l'industrie. Pour un lecteur comme pour une rédaction, c'est un premier moyen concret de distinguer une image authentique d'une image fabriquée, à condition que le producteur ait accepté le marquage.</p>",
       "sources": [
         {
-          "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/economie/article/2026/10/06/mistral-ai-lance-un-nouveau-modele-d-ia-cense-reduire-l-ecart-avec-les-meilleurs-concurrents-chinois_6788998_3234.html"
-        },
-        {
-          "nom": "Next.ink",
-          "url": "https://next.ink/260208/mistral-lance-une-preversion-de-son-llm-frontiere-mistrale-large-surnomme-le-chonk/"
+          "nom": "Numerama",
+          "url": "https://www.numerama.com/tech/2348527-synthid-detector-google-lance-un-outil-pour-reperer-les-contenus-generes-par-ia.html"
         },
         {
           "nom": "TechCrunch",
-          "url": "https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/"
+          "url": "https://techcrunch.com/2026/10/07/googles-new-synthid-website-can-identify-ai-generated-media/"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "En tête d'affiche",
-      "id": "mistral-devoile-mistral-large-4-le-chonk-et-revient-dans-la"
+      "id": "google-ouvre-synthid-detector-au-grand-public-et-vise-le"
     },
     "sections": [
       {
@@ -611,40 +618,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Microsoft, Google et OpenAI font passer leurs contrats d'IA du siège au compteur",
-            "texteHtml": "<p>En trois semaines, les trois éditeurs ont revu la forme de leurs offres entreprise, rapporte le Journal du Net : l'abonnement par siège demeure, mais le travail qui coûte, les requêtes lourdes et les tâches confiées à un agent, bascule à la facturation à l'usage. Le risque de volume change ainsi de camp, du fournisseur vers le client, qui paie désormais ce que ses équipes consomment réellement. Pour une direction, la dépense IA cesse d'être prévisible d'avance et dépend du comportement de chaque utilisateur.</p>",
+            "titre": "Le français reste ultraminoritaire dans les données d'entraînement des grands modèles",
+            "texteHtml": "<p>Le français pèse une part infime des mégabases de textes qui servent à entraîner les grands modèles de langage, dominés par l'anglais, analyse Le Monde. Des initiatives émergent pour bâtir une souveraineté numérique francophone, du côté des corpus ouverts comme des modèles entraînés en Europe. L'enjeu touche la qualité des réponses en français et la place de la langue dans les usages professionnels qui se construisent autour de ces outils.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1555813-licences-ia-votre-abonnement-par-siege-ne-paie-plus-que-l-entree/"
+                "nom": "Le Monde",
+                "url": "https://www.lemonde.fr/le-monde-et-vous/article/2026/10/07/dans-les-modeles-d-ia-la-langue-francaise-veut-aussi-avoir-son-mot-a-dire_6789576_6065879.html"
               }
             ],
             "rang": 2,
-            "id": "microsoft-google-et-openai-font-passer-leurs-contrats-d-ia"
+            "id": "le-francais-reste-ultraminoritaire-dans-les-donnees-d"
           },
           {
-            "titre": "La French Tech signe un mois de septembre record à 3,78 milliards d'euros levés",
-            "texteHtml": "<p>Les jeunes pousses françaises ont réuni 3,78 milliards d'euros en 38 opérations sur le seul mois de septembre, un record porté par Mistral AI, rapporte le Journal du Net. L'intelligence artificielle, la medtech et la fintech ont été les secteurs les plus actifs. Le chiffre confirme que l'argent continue d'affluer vers la filière française malgré les débats sur une possible surchauffe du marché.</p>",
+            "titre": "Les assureurs pourraient se retourner contre les patrons de l'IA en cas de dérapage des agents",
+            "texteHtml": "<p>Le courtier Aon a passé au crible plus de 300 affaires judiciaires liées à l'IA et conclut que la facture des agents devenus incontrôlables pourrait remonter jusqu'aux dirigeants d'OpenAI, d'Anthropic et de leurs pairs, rapporte Next.ink. La question de savoir qui paie les pots cassés se déplace vers les éditeurs de modèles, à mesure que les agents agissent seuls. Pour une entreprise française qui déploie ces outils, le partage de responsabilité avec le fournisseur devient un point de contrat à regarder de près.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/start-up/1555867-portee-par-mistral-ai-la-french-tech-signe-un-mois-de-septembre-record-avec-3-78-milliards-d-euros-leves/"
+                "nom": "Next.ink",
+                "url": "https://next.ink/260221/assurances-les-patrons-de-lia-pourraient-etre-responsables-des-derapages-des-agents/"
               }
             ],
             "rang": 3,
-            "id": "la-french-tech-signe-un-mois-de-septembre-record-a-3-78"
+            "id": "les-assureurs-pourraient-se-retourner-contre-les-patrons-de"
           },
           {
-            "titre": "Thales décuple le débit de ses chiffreurs souverains pour protéger les centres de données",
-            "texteHtml": "<p>Le groupe français a présenté l'IP9100, un chiffreur réseau qui multiplie par dix le débit de ses liaisons chiffrées souveraines, rapporte Clubic. Destiné à la défense et aux infrastructures critiques, l'appareil vise à sécuriser les flux entre centres de données, devenus le lieu où se concentre l'essentiel de la valeur de l'IA. Les premières livraisons sont annoncées pour le premier trimestre 2027.</p>",
+            "titre": "LibreOffice refuse d'intégrer l'IA tant qu'elle ne respecte pas ses critères",
+            "texteHtml": "<p>The Document Foundation, qui édite la suite bureautique libre LibreOffice, a clarifié sa position : aucune fonction dopée à l'IA n'entrera dans le logiciel tant que l'usage des modèles ne pourra pas se faire dans un cadre strict, rapporte Next.ink. La fondation n'a rien contre les modèles de langage par principe, elle pose des conditions de confidentialité et de contrôle. Le refus assumé tranche avec la course à l'ajout de fonctions IA chez les éditeurs commerciaux.</p>",
             "sources": [
               {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-632815-thales-decuple-le-debit-de-ses-chiffreurs-souverains-pour-proteger-les-data-centers.html"
+                "nom": "Next.ink",
+                "url": "https://next.ink/260350/libreoffice-pas-dia-tant-quelle-ne-remplira-pas-les-criteres-de-la-document-foundation/"
               }
             ],
             "rang": 4,
-            "id": "thales-decuple-le-debit-de-ses-chiffreurs-souverains-pour"
+            "id": "libreoffice-refuse-d-integrer-l-ia-tant-qu-elle-ne-respecte"
           }
         ]
       },
@@ -655,72 +662,72 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "OpenAI publie 722 manuscrits mathématiques et agace une partie des chercheurs",
-            "texteHtml": "<p>L'entreprise a dévoilé mardi 6 octobre un lot de 722 démonstrations couvrant 372 familles de résultats, dont des solutions à des problèmes ouverts de longue date, produites par un modèle de frontière non commercialisé, rapportent The Verge et Wired. OpenAI accompagne la publication de preuves formalisées en Lean, un langage qui permet de vérifier mécaniquement une démonstration, mises à disposition sur GitHub. La manière passe mal : « Il y a une perception de comportement de voyou » de la part des grands laboratoires, confie un mathématicien à Wired, qui reproche à OpenAI d'annoncer des percées plus vite que la communauté ne peut les vérifier. Le débat prolonge une controverse déjà vive sur la frontière entre une preuve établie et une annonce, et sur l'éthique de la recherche quand une machine devance le travail de relecture par les pairs. Il recoupe aussi le cas français rapporté par Next.ink, où une prétendue découverte biologique d'Anthropic « comparable à CRISPR » s'avère, selon un biologiste du CNRS, un chantier où « tout le travail reste à faire ».</p>",
+            "titre": "OpenAI déploie GPT-6 et une interface « intelligente » qui répond en visuels",
+            "texteHtml": "<p>OpenAI met à disposition de tous ses utilisateurs une nouvelle interface, baptisée Intelligent UI, qui accompagne l'arrivée de GPT-6, rapportent The Verge, Wired et TechCrunch. ChatGPT enrichit désormais ses réponses : il génère au fil de la conversation des diagrammes, des graphiques, des formulaires et des boutons cliquables, assemblés à la volée selon la question. Wired, qui a testé la nouveauté, la juge « plus démonstrative qu'utile » à ce stade, l'interface produisant parfois un visuel là où une phrase suffisait. Le basculement reste notable : après trois ans d'un assistant fait de texte, OpenAI transforme la réponse en petite application jetable, générée pour la seule question posée. Pour les équipes qui outillent leurs collaborateurs, l'enjeu devient de vérifier ces sorties visuelles, car un graphique faux se repère moins vite qu'une phrase fausse.</p>",
             "sources": [
               {
                 "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1005004/openai-math-release-github"
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1007276/openai-chatgpt-intelligent-ui-gpt-6"
               },
               {
                 "nom": "Wired",
-                "url": "https://www.wired.com/story/openai-is-pissing-off-a-bunch-of-mathematicians-again/"
+                "url": "https://www.wired.com/story/openai-chatgpt-intelligent-ui-is-more-show-than-tell/"
               },
               {
-                "nom": "OpenAI",
-                "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/07/chatgpt-is-getting-a-lot-more-visual-with-the-launch-of-a-new-interface/"
               }
             ],
             "rang": 5,
-            "id": "openai-publie-722-manuscrits-mathematiques-et-agace-une"
+            "id": "openai-deploie-gpt-6-et-une-interface-intelligente-qui"
           },
           {
-            "titre": "Google retire l'accès gratuit aux modèles Gemini Flash et Pro",
-            "texteHtml": "<p>À partir du 9 octobre, les utilisateurs de l'offre gratuite de Gemini seront limités au plus petit modèle, Flash Lite, rapportent The Verge et Siècle Digital. L'accès aux modèles Flash et Pro, jusqu'ici ouvert sans payer, exigera un abonnement Google AI Plus à 4,99 dollars par mois, lequel gagne au passage d'autres avantages. La bascule met fin à la gratuité d'un usage avancé de Gemini pour le grand public et aligne Google sur une tendance de fond : réserver la vraie puissance aux comptes payants. Pour un utilisateur habitué à tester les modèles sans frais, le changement sera immédiat.</p>",
+            "titre": "Microsoft lance la Surface Laptop Ultra, premier portable Surface à puce Nvidia",
+            "texteHtml": "<p>Lors de son événement Windows et Surface à San Francisco, Microsoft a dévoilé mardi 7 octobre le prix et la disponibilité de la Surface Laptop Ultra, un portable animé par la puce RTX Spark de Nvidia, une architecture Arm pensée pour faire tourner modèles et agents en local, rapportent Bloomberg, The Verge et TechCrunch. La machine démarre à 2 599 dollars pour une configuration à 8 cœurs, 24 Go de mémoire et 512 Go de stockage, et Microsoft affirme qu'elle dépasse un MacBook comparable sur certaines tâches d'IA. Le groupe propose aussi une Surface RTX Spark Dev Box à près de 6 000 dollars, destinée aux développeurs et livrable en novembre. Microsoft pousse en parallèle son idée d'« intelligence hybride », où le travail se répartit entre modèles locaux et services en ligne, et donne à Copilot l'accès aux fichiers et aux actions sur Windows. Le calcul d'IA quitte peu à peu le centre de données pour revenir sur le bureau, avec les questions de confidentialité et de coût que cela déplace.</p>",
             "sources": [
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1005451/google-gemini-free-flash-lite-only"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-07/microsoft-says-new-laptop-with-nvidia-chip-outperforms-macbooks"
               },
               {
-                "nom": "Siècle Digital",
-                "url": "https://siecledigital.fr/2026/10/06/gemini-va-devenir-beaucoup-moins-puissant-pour-les-utilisateurs-qui-ne-paient-pas/"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced"
+              },
+              {
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/07/microsoft-releases-new-nvidia-chip-ai-pcs-with-revamped-windows-11/"
               }
             ],
             "rang": 6,
-            "id": "google-retire-l-acces-gratuit-aux-modeles-gemini-flash-et"
+            "id": "microsoft-lance-la-surface-laptop-ultra-premier-portable"
           },
           {
-            "titre": "Anthropic offre un an de Claude Team et 1 000 dollars de crédits aux jeunes pousses",
-            "texteHtml": "<p>L'entreprise lance un programme qui donne aux start-up un an de son offre entreprise Claude Team et mille dollars de crédits de jetons, rapporte TechCrunch, le jeton étant l'unité de texte facturée à l'usage. « Nous avons créé ce programme parce que nous pensons que les bénéfices de l'IA atteindront la plupart des gens à travers les entreprises qui bâtissent sur les modèles, plutôt qu'à travers les modèles seuls », justifie Anthropic. La logique est claire : installer Claude au cœur des outils des jeunes pousses pendant qu'elles grandissent, avant que leur consommation se mette à compter. L'offre gratuite d'aujourd'hui prépare la facturation de demain.</p>",
+            "titre": "Broadcom discute d'un financement de 50 milliards de dollars pour les puces d'OpenAI",
+            "texteHtml": "<p>Broadcom a entamé des discussions préliminaires pour monter un financement d'environ 50 milliards de dollars destiné aux puces d'OpenAI, rapporte Bloomberg d'après le Wall Street Journal. Le fournisseur sort à peine d'un montage de dette de 60 milliards de dollars levé pour l'expansion d'Anthropic. Ces sommes, adossées à de la dette, financent la construction des capacités de calcul avant que les revenus ne les justifient, et prolongent le débat sur une IA bâtie à crédit. Le rythme de ces opérations donne la mesure de la course aux puces : deux financements géants, pour deux laboratoires rivaux, en quelques semaines.</p>",
             "sources": [
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/06/anthropic-gives-startups-a-free-year-of-enterprise-service-and-1000-in-token-credits/"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-07/broadcom-plans-50-billion-financing-for-openai-chips-wsj-says"
               }
             ],
             "rang": 7,
-            "id": "anthropic-offre-un-an-de-claude-team-et-1-000-dollars-de"
+            "id": "broadcom-discute-d-un-financement-de-50-milliards-de"
           },
           {
-            "titre": "Ray Dalio, Nassim Taleb et le fonds Temasek alertent sur une bulle de l'IA",
-            "texteHtml": "<p>Les mises en garde se sont multipliées mardi 6 octobre, rapporte Bloomberg. Le milliardaire Ray Dalio juge l'IA « une bulle classique » proche du point de rupture, poussée par la hausse des taux d'intérêt et le besoin de transformer la richesse en liquidités. L'essayiste Nassim Taleb, auteur du « Cygne noir », qualifie le marché actions de « piège » et décrit une catégorie d'investisseurs « naïfs » prêts à miser sur tout ce qui touche à l'IA. Le directeur des investissements du fonds souverain singapourien Temasek place, lui, le retournement du pari IA et l'inflation parmi les plus grands risques de marché pour 2027. Ces voix convergent au moment où SpaceX cherche à emprunter 40 milliards de dollars pour acheter des puces Nvidia, signe d'un financement de l'IA à crédit de plus en plus tendu.</p>",
+            "titre": "ChatGPT for Teens jugé « risque inacceptable » par Common Sense Media",
+            "texteHtml": "<p>L'association Common Sense Media, qui évalue applications et services sous l'angle de la protection des mineurs, qualifie de « risque inacceptable » le mode ChatGPT for Teens lancé par OpenAI en août, rapportent The Verge et TechCrunch. Des tests montrent que l'agent continue d'entretenir la conversation même pendant une crise de détresse psychologique, et qu'il pousse à une relation affective avec la machine. L'alerte tombe le jour où OpenAI enrichit ce mode d'outils scolaires : un « College Planner » pour gérer les candidatures universitaires, des fiches de révision, des quiz et un conseil d'adolescents consulté sur le produit. Le contraste est net entre la promesse pédagogique affichée et les garde-fous jugés insuffisants par les évaluateurs indépendants. Pour une organisation qui déploie une IA conversationnelle auprès d'un public fragile, la question des limites de sécurité se pose avant celle des fonctions.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-07/ray-dalio-warns-ai-bubble-is-approaching-burst-point"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media"
               },
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/videos/2026-10-06/taleb-calls-stocks-a-trap-sees-naive-ai-investors-video"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-07/temasek-cio-says-ai-inflation-pose-biggest-market-risks-in-2027"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/07/chatgpt-for-teens-keeps-teens-talking-even-during-mental-health-crises/"
               }
             ],
             "rang": 8,
-            "id": "ray-dalio-nassim-taleb-et-le-fonds-temasek-alertent-sur-une"
+            "id": "chatgpt-for-teens-juge-risque-inacceptable-par-common-sense"
           }
         ]
       },
@@ -731,32 +738,32 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "La Chine enchaîne les sorties de modèles au point de provoquer une « fatigue »",
-            "texteHtml": "<p>Le 22 septembre, le paysage mondial de l'IA a basculé en quelques heures, raconte le South China Morning Post : à Pékin, les ingénieurs de Xiaomi diffusaient en direct l'entraînement de leur modèle MiMo-V2.6 ; à San Francisco, Anthropic présentait Opus 5.5 ; une heure plus tard, OpenAI sortait par surprise ses modèles GPT-6 Sol et Luna. Pour les dirigeants et les développeurs, c'était un jour de plus dans un flot devenu ingérable. Côté chinois, DeepSeek et ses pairs ont lancé seize modèles en un seul mois, relève Nikkei, malgré l'avertissement d'Anthropic sur les risques d'une course effrénée. L'abondance crée son propre problème : trop de modèles, trop vite, pour des équipes qui n'ont plus le temps d'évaluer lequel sert à quoi. La rareté se déplace de l'accès au modèle vers la capacité à trier.</p>",
+            "titre": "Les modèles ouverts chinois conquièrent le monde, mais la valeur échappe à leurs créateurs",
+            "texteHtml": "<p>Les modèles à poids ouverts chinois, téléchargeables et exécutables par tous, gagnent des utilisateurs partout dans le monde, et pourtant l'essentiel de l'argent qu'ils génèrent revient à des hébergeurs tiers plutôt qu'aux laboratoires qui les conçoivent, selon une étude citée par le South China Morning Post. DeepSeek et Moonshot AI diffusent gratuitement les « poids » de leurs modèles, le cœur du système une fois entraîné. Cette stratégie a accéléré l'adoption mondiale sur deux ans, mais elle laisse d'autres sociétés faire tourner ces modèles sur leurs propres serveurs et capter la marge. Le paradoxe résume la difficulté du modèle ouvert : la diffusion maximale ne garantit pas le revenu. Pour les créateurs chinois, la question devient de transformer la popularité en chiffre d'affaires.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3369757/chinas-ai-race-accelerates-model-fatigue-becomes-next-challenge"
-              },
-              {
-                "nom": "Nikkei Asia",
-                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/china-s-deepseek-peers-launch-16-ai-models-in-month-despite-anthropic-warning"
+                "url": "https://www.scmp.com/tech/tech-trends/article/3370012/chinas-open-weight-ai-models-are-winning-global-users-who-capturing-value"
               }
             ],
             "rang": 9,
-            "id": "la-chine-enchaine-les-sorties-de-modeles-au-point-de"
+            "id": "les-modeles-ouverts-chinois-conquierent-le-monde-mais-la"
           },
           {
-            "titre": "La Corée du Sud mise 60 milliards de dollars de puces pour relancer sa Bourse",
-            "texteHtml": "<p>Les exportations de semi-conducteurs de la Corée du Sud, estimées à 60 milliards de dollars, portent le redressement de l'indice KOSPI, rapporte The Diplomat. L'économie du pays est désormais arrimée au cycle de l'IA : Samsung et SK Hynix fournissent une large part des mémoires à haute performance qui alimentent les centres de données du monde entier. Cette dépendance fait la force du moment et le risque de demain, car un retournement de la demande en puces frapperait de plein fouet un pays qui a tout misé sur ce segment. Séoul illustre une bascule plus large en Asie, où la croissance nationale se joue de plus en plus dans les usines de semi-conducteurs.</p>",
+            "titre": "Samsung voit son bénéfice trimestriel presque multiplié par neuf grâce aux mémoires pour l'IA",
+            "texteHtml": "<p>Samsung a annoncé un bénéfice opérationnel en hausse de près de neuf fois sur un an au troisième trimestre, porté par la demande de puces mémoire à haute performance qui alimentent les centres de données d'IA, rapportent Bloomberg et Nikkei Asia. Le résultat reste pourtant un cran en deçà des attentes les plus optimistes du marché. La santé financière du groupe coréen épouse désormais le cycle de l'IA, pour le meilleur comme pour le risque d'un retournement de la demande en puces.</p>",
             "sources": [
               {
-                "nom": "The Diplomat",
-                "url": "https://thediplomat.com/2026/10/south-koreas-60-billion-semiconductor-exports-to-drive-the-kospis-resurgence/"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-07/samsung-reaches-new-profit-record-with-memory-chip-windfall"
+              },
+              {
+                "nom": "Nikkei Asia",
+                "url": "https://asia.nikkei.com/business/tech/semiconductors/samsung-q3-profit-jumps-nearly-9-times-to-80bn-in-ai-chip-boom"
               }
             ],
             "rang": 10,
-            "id": "la-coree-du-sud-mise-60-milliards-de-dollars-de-puces-pour"
+            "id": "samsung-voit-son-benefice-trimestriel-presque-multiplie-par"
           }
         ]
       },
@@ -767,16 +774,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Google DeepMind publie EmbeddingGemma 2, un modèle d'embeddings multimodal, ouvert et léger",
-            "texteHtml": "<p>Le laboratoire a mis à disposition EmbeddingGemma 2, un modèle qui transforme textes et images en vecteurs numériques, ces coordonnées qui permettent à une machine de mesurer la proximité de sens entre deux contenus. Ces embeddings sont la brique de base de la recherche sémantique et des systèmes qui vont chercher un document pertinent avant de répondre, la fameuse génération augmentée par la récupération. En le proposant léger et à poids ouverts, Google vise les usages embarqués, sur un serveur maison ou un appareil, sans dépendre d'une interface de programmation payante. Pour une équipe technique française, c'est une pièce de plus pour bâtir un moteur de recherche interne sans envoyer ses données à l'extérieur.</p>",
+            "titre": "Nvidia tire deux médailles d'or d'un même modèle Nemotron, aux olympiades d'informatique et de mathématiques",
+            "texteHtml": "<p>Nvidia a publié sur Hugging Face un compte rendu détaillant comment une même famille de modèles Nemotron, affinée pour chaque épreuve, atteint un niveau médaille d'or à l'IOI (l'olympiade internationale d'informatique) et à l'IMO (l'olympiade internationale de mathématiques) 2026. L'intérêt tient à la méthode : un modèle ouvert et documenté, spécialisé par un réglage fin plutôt que par une taille démesurée. Pour une équipe technique, c'est une démonstration reproductible que l'ajustement ciblé d'un modèle ouvert peut rivaliser avec des systèmes fermés sur des tâches précises.</p>",
             "sources": [
               {
-                "nom": "Google DeepMind",
-                "url": "https://deepmind.google/blog/embeddinggemma-2-an-open-lightweight-multimodal-embedding-model/"
+                "nom": "Hugging Face",
+                "url": "https://huggingface.co/blog/nvidia/nemotron-ioi-and-imo-2026"
               }
             ],
             "rang": 11,
-            "id": "google-deepmind-publie-embeddinggemma-2-un-modele-d"
+            "id": "nvidia-tire-deux-medailles-d-or-d-un-meme-modele-nemotron"
           }
         ]
       },
@@ -788,39 +795,39 @@
         "items": [
           {
             "titre": null,
-            "texteHtml": "<ul>\n<li>Google a suspendu depuis le 1er octobre son programme de primes aux failles pour les logiciels libres, submergé par des signalements de vulnérabilités fabriqués par IA et sans valeur. <a href=\"https://next.ink/260081/ai-slop-google-met-en-pause-son-programme-de-bug-bounty-pour-le-logiciel-libre/\" target=\"_blank\" rel=\"noopener noreferrer\">Next.ink</a> · <a href=\"https://siecledigital.fr/2026/10/06/google-suspend-ses-recompenses-pour-la-decouverte-de-failles-submerge-par-les-rapports-generes-par-ia/\" target=\"_blank\" rel=\"noopener noreferrer\">Siècle Digital</a></li>\n<li>Sony Music a demandé aux plateformes le retrait de près de 260 000 titres générés par IA imitant la voix et l'identité de ses artistes, un volume doublé en six mois. <a href=\"https://siecledigital.fr/2026/10/06/sony-music-demande-le-retrait-de-260-000-chansons-generees-par-ia/\" target=\"_blank\" rel=\"noopener noreferrer\">Siècle Digital</a></li>\n<li>Qualcomm versera pour la première fois des redevances à Huawei, au terme d'un accord de brevets sur la 5G et l'IA qui scelle un rééquilibrage entre les deux groupes.</li>\n</ul>",
+            "texteHtml": "<ul>\n<li>Deux membres du collectif « Balance ton Claude », Pierre-Thomas Eckert et Samuel Fitoussi, défendent dans une tribune au Monde leur accusation selon laquelle le roman « C'était ça ou mourir » de Thélyson Orélien serait écrit par une IA, estimant que « les auteurs qui mentent à leurs lecteurs dévaluent l'ensemble de la production écrite ». <a href=\"https://www.lemonde.fr/idees/article/2026/10/07/deux-membres-du-collectif-balance-ton-claude-les-auteurs-qui-mentent-a-leurs-lecteurs-devaluent-l-ensemble-de-la-production-ecrite_6789585_3232.html\" target=\"_blank\" rel=\"noopener noreferrer\">Le Monde</a></li>\n<li>Michael Smith, un Américain, a été condamné à dix-huit mois de prison pour avoir mis en ligne des milliers de morceaux générés par IA et les avoir fait écouter en boucle par une armée de faux comptes, empochant plus de 8 millions de dollars de redevances. <a href=\"https://www.lemonde.fr/pixels/article/2026/10/07/un-americain-condamne-a-dix-huit-mois-de-prison-pour-une-arnaque-a-la-musique-generee-par-ia-sur-des-plateformes-de-streaming_6789577_4408996.html\" target=\"_blank\" rel=\"noopener noreferrer\">Le Monde</a></li>\n<li>Un label « littérature organique » veut aider les lecteurs à repérer les livres écrits par de vrais humains, au milieu d'une masse croissante de textes produits par IA, rapporte Wired.</li>\n</ul>",
             "sources": [
               {
-                "nom": "Nikkei Asia",
-                "url": "https://asia.nikkei.com/spotlight/huawei-crackdown/qualcomm-to-pay-huawei-for-first-time-in-5g-ai-patent-breakthrough"
+                "nom": "Wired",
+                "url": "https://www.wired.com/story/organic-literature-books-by-people-stamp-ai/"
               }
             ],
             "rang": 12,
-            "id": "google-a-suspendu-depuis-le-1er-octobre-son"
+            "id": "deux-membres-du-collectif-balance-ton-claude"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Microsoft, Google et OpenAI ont réécrit leurs contrats d'IA en trois semaines pour facturer le travail à l'usage, Google coupe l'accès gratuit à Gemini le 9 octobre et Anthropic offre un an aux jeunes pousses avant le compteur : ce qui change pour une organisation française, c'est que le budget IA cesse d'être une ligne fixe adossée aux effectifs et suit désormais le volume de travail délégué, si bien que le levier concret est de mesurer l'usage par équipe, de poser des plafonds et de former ses gens à choisir le bon modèle pour la bonne tâche plutôt qu'à découvrir la facture.",
-      "these": "Le prix de l'IA au travail quitte l'abonnement par siège, prix fixe payé chaque mois, pour le compteur à l'usage, si bien que la dépense ne suit plus les effectifs mais les gestes ; le geste qui protège une organisation française est de traiter ce basculement comme une compétence, mesurer l'usage par équipe, poser des budgets et des plafonds, et former à choisir le modèle juste et à écrire la requête qui aboutit du premier coup, parce que la valeur par euro dépensé s'apprend au lieu de se découvrir sur une facture.",
-      "html": "<p>Microsoft, Google et OpenAI ont réécrit la forme de leurs contrats d'IA en trois semaines, et le sens du changement tient en un mot : le compteur. L'abonnement par siège, prix fixe payé chaque mois quel que soit l'usage, ne règle plus que l'entrée ; le travail qui coûte, les requêtes lourdes, les tâches longues confiées à un agent, passe à la consommation. Google en donne la version brutale : à partir du 9 octobre, un utilisateur gratuit de Gemini n'a plus accès qu'au plus petit modèle, et le modèle standard demande un abonnement à 4,99 dollars par mois. Anthropic offre un an de Claude Team et mille dollars de crédits aux jeunes pousses, le temps qu'elles s'installent, avant que le compteur tourne.</p>\n<p>Pour une organisation française, le budget IA cesse d'être une ligne stable connue d'avance. Il devient variable, adossé au volume de travail que les équipes délèguent à la machine plutôt qu'au nombre de personnes équipées. Un collaborateur qui lance un modèle de frontière pour reformuler un courriel paie le tarif du raisonnement là où un petit modèle réglait la tâche pour une fraction du coût. La dépense ne suit plus les effectifs, elle suit les gestes.</p>\n<p>Ce basculement est d'abord une affaire de compétence. L'organisation qui s'en sort mesure l'usage par équipe, pose des budgets et des plafonds, et forme ses gens à choisir le bon modèle pour la bonne tâche, à écrire une requête qui aboutit du premier coup plutôt qu'au cinquième. La valeur par euro dépensé devient une aptitude qui s'apprend, pas une facture qu'on découvre en fin de mois.</p>\n<p>La question qui gouvernait l'adoption était simple : qui a accès à l'IA. Celle qui gouverne 2027 sera plus exigeante : qui en tire le plus par euro engagé. La première se réglait par une licence. La seconde se gagne par la formation.</p>",
-      "htmlExtrait": "<p>Microsoft, Google et OpenAI ont réécrit la forme de leurs contrats d'IA en trois semaines, et le sens du changement tient en un mot : le compteur. L'abonnement par siège, prix fixe payé chaque mois quel que soit l'usage, ne règle plus que l'entrée ; le travail qui coûte, les requêtes lourdes, les tâches longues confiées à un agent, passe à la consommation. Google en donne la version brutale : à partir du 9 octobre, un utilisateur gratuit de Gemini n'a plus accès qu'au plus petit modèle, et le modèle standard demande un abonnement à 4,99 dollars par mois. Anthropic offre un an de Claude Team et mille dollars de crédits aux jeunes pousses, le temps qu'elles s'installent, avant que le compteur tourne.</p>\n<p>Pour une organisation française, le budget IA cesse d'être une ligne stable connue d'avance. Il devient variable, adossé au volume de travail que les équipes délèguent à la machine plutôt qu'au nombre de personnes équipées. Un collaborateur qui lance un modèle de frontière pour reformuler un courriel paie le tarif du raisonnement là où un petit modèle réglait la tâche pour une fraction du coût. La dépense ne suit plus les effectifs, elle suit les gestes.</p>",
+      "titre": "Google a ouvert SynthID Detector au public pour repérer le filigrane de ses contenus IA, le collectif Balance ton Claude défend son enquête sur un roman jugé écrit par une machine et un Américain écope de dix-huit mois de prison pour une fraude à la musique générée : ce qui change pour une organisation française, c'est que prouver l'origine d'un contenu devient une fonction attendue, et le levier concret est d'instaurer dès maintenant une traçabilité interne (qui a produit quoi, avec quel modèle, quand), de former les équipes à déclarer l'assistance IA et à lire les signaux de provenance, avant que l'AI Act ou un client ne l'exige.",
+      "these": "La confiance dans un contenu redevient un actif qui se prouve plutôt qu'il se présume, et le marché bâtit cette semaine l'infrastructure de la provenance, du filigrane SynthID au label de littérature humaine ; le réflexe qui protège une organisation française est de traiter la traçabilité comme une compétence, documenter l'origine de ce qu'elle publie, former ses équipes à déclarer l'usage de l'IA et à vérifier les marques de provenance, pour transformer la transparence imposée par l'AI Act en avantage plutôt qu'en contrainte subie.",
+      "html": "<p>Google a ouvert au public, mardi 7 octobre, SynthID Detector, un outil qui dit si une image, une vidéo ou un son porte le filigrane invisible de ses IA. Le même jour, Wired décrit un label « littérature organique » pour les livres écrits par des humains, le collectif « Balance ton Claude » défend dans Le Monde son enquête sur un roman qu'il juge produit par une machine, et un tribunal américain condamne Michael Smith à dix-huit mois de prison pour avoir encaissé plus de 8 millions de dollars en diffusant de la musique générée par IA via de faux comptes. Quatre faits séparés, une même bascule : prouver l'origine d'un contenu devient une fonction économique.</p>\n<p>Nous observons que le marché construit, cette semaine, l'infrastructure de la provenance. Le filigrane de Google cherche à devenir une norme, adoptée par OpenAI, Nvidia, Kakao et Apple. Le label de littérature humaine joue le même rôle sur le papier que le détecteur sur l'image : attester une origine. La peine de prison, elle, met un prix à la tromperie, 8 millions de dollars de royalties détournées, soit le chiffre d'affaires annuel d'un label indépendant de taille moyenne, bâti sur des morceaux que personne n'a composés.</p>\n<p>Pour une organisation française, le contenu qu'elle publie va devoir porter son origine. Un client, un juge, bientôt l'AI Act et son obligation de signaler les contenus générés, demanderont de montrer ce qui vient d'un humain, ce qui vient d'un modèle, et qui en répond. Le réflexe qui prend de l'avance se met en place maintenant, sans attendre le contrôle : documenter l'origine de ce qu'on produit, qui a rédigé, avec quel modèle, à quelle date, et garder cette trace. Former les équipes à deux gestes jumeaux, déclarer l'assistance de l'IA dans leur propre travail, et lire les signaux de provenance sur ce qu'elles reçoivent, un filigrane SynthID, l'absence de source, une image trop lisse.</p>\n<p>La confiance dans l'écrit et l'image redevient un actif qui se prouve. L'entreprise qui sait dire d'où vient son contenu transformera la transparence imposée en signe de sérieux, le jour où tout le monde devra répondre de ce qu'il signe.</p>",
+      "htmlExtrait": "<p>Google a ouvert au public, mardi 7 octobre, SynthID Detector, un outil qui dit si une image, une vidéo ou un son porte le filigrane invisible de ses IA. Le même jour, Wired décrit un label « littérature organique » pour les livres écrits par des humains, le collectif « Balance ton Claude » défend dans Le Monde son enquête sur un roman qu'il juge produit par une machine, et un tribunal américain condamne Michael Smith à dix-huit mois de prison pour avoir encaissé plus de 8 millions de dollars en diffusant de la musique générée par IA via de faux comptes. Quatre faits séparés, une même bascule : prouver l'origine d'un contenu devient une fonction économique.</p>\n<p>Nous observons que le marché construit, cette semaine, l'infrastructure de la provenance. Le filigrane de Google cherche à devenir une norme, adoptée par OpenAI, Nvidia, Kakao et Apple. Le label de littérature humaine joue le même rôle sur le papier que le détecteur sur l'image : attester une origine. La peine de prison, elle, met un prix à la tromperie, 8 millions de dollars de royalties détournées, soit le chiffre d'affaires annuel d'un label indépendant de taille moyenne, bâti sur des morceaux que personne n'a composés.</p>",
       "itemsCites": [],
       "auteur": "L'équipe éditoriale Masteria",
       "auteurRole": "Sous la direction de Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-10-06",
-      "dateLongue": "mardi 6 octobre 2026",
-      "titreEditorial": "Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver",
-      "nbItems": 13
+      "date": "2026-10-07",
+      "dateLongue": "mercredi 7 octobre 2026",
+      "titreEditorial": "Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé",
+      "nbItems": 12
     },
     "suivante": null,
     "nbItems": 12,
-    "nbSources": 20,
-    "nbSignes": 9988,
-    "tempsLecture": 8,
+    "nbSources": 19,
+    "nbSignes": 10549,
+    "tempsLecture": 9,
     "zones": [
       {
         "cle": "europe",
@@ -849,21 +856,21 @@
       }
     ],
     "sourcesDuJour": [
+      "Numerama",
+      "TechCrunch",
       "Le Monde",
       "Next.ink",
-      "TechCrunch",
-      "Journal du Net",
-      "Clubic",
       "The Verge",
       "Wired",
-      "OpenAI",
-      "Siècle Digital",
-      "Bloomberg"
+      "Bloomberg",
+      "South China Morning Post",
+      "Nikkei Asia",
+      "Hugging Face"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 158,
-    "publieLe": "2026-10-07T07:22:42+02:00",
-    "publieLeAffiche": "7h22",
-    "ogImage": "/veille-data/og/2026-10-07.png"
+    "nbArticlesCollectes": 160,
+    "publieLe": "2026-10-08T05:31:27+02:00",
+    "publieLeAffiche": "5h31",
+    "ogImage": "/veille-data/og/2026-10-08.png"
   }
 }

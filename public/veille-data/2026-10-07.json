@@ -243,7 +243,12 @@
     "titreEditorial": "Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-08",
+    "dateLongue": "jeudi 8 octobre 2026",
+    "titreEditorial": "Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act",
+    "nbItems": 12
+  },
   "nbItems": 12,
   "nbSources": 20,
   "nbSignes": 9988,

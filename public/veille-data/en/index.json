@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-07",
-    "totalEditions": 36,
-    "totalItems": 486,
-    "totalSources": 698
+    "derniereDate": "2026-10-08",
+    "totalEditions": 37,
+    "totalItems": 498,
+    "totalSources": 717
   },
   "editions": [
+    {
+      "date": "2026-10-08",
+      "dateAffichee": "8 October 2026",
+      "dateCourte": "Thu 8 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Proving a content's origin becomes an economic function",
+      "nbItems": 12,
+      "nbSources": 19,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-07",
       "dateAffichee": "7 October 2026",

@@ -378,6 +378,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [8 octobre 2026 : Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act](https://www.master-ia.fr/veille-ia/2026-10-08)
 - [7 octobre 2026 : Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé](https://www.master-ia.fr/veille-ia/2026-10-07)
 - [6 octobre 2026 : Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver](https://www.master-ia.fr/veille-ia/2026-10-06)
 - [5 octobre 2026 : L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil](https://www.master-ia.fr/veille-ia/2026-10-05)
@@ -387,5 +388,4 @@ https://www.master-ia.fr/sitemap.xml
 - [29 septembre 2026 : Vos agents servent aussi ceux qui vous attaquent](https://www.master-ia.fr/veille-ia/2026-09-29)
 - [28 septembre 2026 : L'assistant qui écrivait passe à l'acte](https://www.master-ia.fr/veille-ia/2026-09-28)
 - [25 septembre 2026 : L'IA au téléphone, la dette au bilan](https://www.master-ia.fr/veille-ia/2026-09-25)
-- [24 septembre 2026 : L'IA entre au Conseil de sécurité de l'ONU](https://www.master-ia.fr/veille-ia/2026-09-24)
 <!-- veille:editions:fin -->

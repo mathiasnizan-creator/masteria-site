@@ -243,7 +243,12 @@
     "titreEditorial": "An AI agent does exactly what its permissions allow",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-08",
+    "dateLongue": "Thursday 8 October 2026",
+    "titreEditorial": "Proving a content's origin becomes an economic function",
+    "nbItems": 12
+  },
   "nbItems": 12,
   "nbSources": 20,
   "nbSignes": 9096,
