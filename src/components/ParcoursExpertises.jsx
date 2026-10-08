@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useIsDesktop, useMediaQuery } from '../hooks/useMediaQuery'
 
 /*
@@ -13,8 +13,13 @@ import { useIsDesktop, useMediaQuery } from '../hooks/useMediaQuery'
  * étapes (« trop chargé »), ni de ligne « équipe », plus de bandeau « Point d'entrée
  * offert », et l'étape 04
  * ne cite plus « Claude · Copilot » (Masteria forme sur tous les outils).
- * Vignettes décoratives (aria-hidden), boucle de 7 s synchronisée, lancée quand la
- * section devient visible ; état final affiché si le visiteur réduit les animations.
+ * Vignettes décoratives (aria-hidden). Depuis le 08/10/2026 (demande de Mathias : montrer
+ * les étapes une par une), les cinq scènes jouent à tour de rôle : l'étape active anime sa
+ * scène pendant DUREE_ETAPE, puis se fige dans son état final (styles de base, comme en
+ * mouvement réduit) et s'atténue pendant que la suivante démarre ; une ligne de progression
+ * segmentée relie 01 à 05. Pause au survol, clic ou bouton numéroté pour choisir une étape.
+ * Sur mobile (une colonne), chaque carte s'allume en arrivant à l'écran. Mouvement réduit :
+ * tout est fixe et rien n'est atténué. Le cycle ne démarre que quand la section est visible.
  * Intégrité : aucun gain présenté comme un résultat (le « +6 h/sem » de la maquette est
  * retiré, les heures de la cartographie sont un exemple) ; le diagnostic n'a pas de durée ;
  * la réponse d'IA illustrée cite « votre cabinet », pas Masteria.
@@ -43,6 +48,10 @@ const CSS = `
 @keyframes pxDraw{0%{stroke-dashoffset:260;opacity:1}45%,86%{stroke-dashoffset:0;opacity:1}94%,100%{stroke-dashoffset:0;opacity:0}}
 @keyframes pxSettle{0%{opacity:0;transform:translate(-16px,16px)}12%,86%{opacity:1;transform:none}94%,100%{opacity:0}}
 @keyframes pxSpin{to{transform:rotate(360deg)}}
+@keyframes pxProgress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.px-fige *{animation:none!important}
+.px-pause *{animation-play-state:paused!important}
+.px-num:focus-visible{outline:2px solid #60A5FA;outline-offset:3px}
 .parcours:not(.parcours-actif) *{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){.parcours *{animation:none!important}}
 `
@@ -179,7 +188,7 @@ function SceneAdopter() {
         <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', border: `1px solid ${LINE_D2}`, borderRadius: 999, padding: '3px 8px' }}>Qualiopi</span>
       </div>
       <div style={{ height: 6, flex: 'none', borderRadius: 999, background: LINE_D, overflow: 'hidden' }}>
-        <span style={{ display: 'block', height: '100%', width: '100%', background: BLUE, transformOrigin: 'left', ...anim('pxGrow', '7s', '4.6s') }} />
+        <span style={{ display: 'block', height: '100%', width: '100%', background: BLUE, transformOrigin: 'left', ...anim('pxGrow', '7s', '3.9s') }} />
       </div>
     </div>
   )
@@ -236,13 +245,26 @@ const ETAPES = [
   },
 ]
 
+// Durée d'une étape (5 s, demande de Mathias du 08/10) : toutes les scènes ont fini
+// d'apparaître vers 4,9 s et rien ne s'efface avant 6,02 s (86 % de leur boucle de 7 s).
+const DUREE_ETAPE = 5000
+
 export default function ParcoursExpertises() {
   const section = useRef(null)
+  const cartes = useRef([])
   const isDesktop = useIsDesktop()
   const isWide = useMediaQuery('(min-width: 1200px)')
   const isTablet = useMediaQuery('(min-width: 640px)')
+  const reduit = useMediaQuery('(prefers-reduced-motion: reduce)')
   // Cinq colonnes à partir de 1200 px, puis 3 + 2, 2 colonnes, une seule sur mobile.
   const colonnes = isWide ? 5 : isDesktop ? 3 : isTablet ? 2 : 1
+  const mobile = colonnes === 1
+
+  const [actif, setActif] = useState(0)
+  const [tour, setTour] = useState(0) // change à chaque départ d'étape : relance la scène et la progression
+  const [visible, setVisible] = useState(false)
+  const [pause, setPause] = useState(false)
+  const choisir = i => { setActif(i); setTour(n => n + 1) }
 
   // Les animations ne démarrent qu'une fois la section visible (classe parcours-actif).
   useEffect(() => {
@@ -255,12 +277,30 @@ export default function ParcoursExpertises() {
     const io = new IntersectionObserver(([entree]) => {
       if (entree.isIntersecting) {
         el.classList.add('parcours-actif')
+        setVisible(true)
         io.disconnect()
       }
     }, { threshold: 0.15 })
     io.observe(el)
     return () => io.disconnect()
   }, [])
+
+  // Cycle automatique (deux colonnes et plus) : une étape après l'autre, puis on reprend.
+  useEffect(() => {
+    if (!visible || pause || reduit || mobile) return undefined
+    const t = setTimeout(() => { setActif(a => (a + 1) % ETAPES.length); setTour(n => n + 1) }, DUREE_ETAPE)
+    return () => clearTimeout(t)
+  }, [actif, tour, visible, pause, reduit, mobile])
+
+  // Mobile : la carte qui arrive à l'écran devient l'étape active.
+  useEffect(() => {
+    if (!mobile || reduit || typeof IntersectionObserver === 'undefined') return undefined
+    const io = new IntersectionObserver(entrees => {
+      entrees.forEach(e => { if (e.isIntersecting) { setActif(Number(e.target.dataset.etape)); setTour(n => n + 1) } })
+    }, { threshold: 0.6 })
+    cartes.current.forEach(el => el && io.observe(el))
+    return () => io.disconnect()
+  }, [mobile, reduit])
 
   return (
     <section ref={section} id="expertises" className="parcours" aria-labelledby="parcours-titre" style={{ background: BG, color: '#fff', padding: 'clamp(64px, 9vw, 112px) clamp(18px, 4vw, 32px)', scrollMarginTop: 96 }}>
@@ -279,18 +319,54 @@ export default function ParcoursExpertises() {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${colonnes}, minmax(0, 1fr))`, gap: '36px 16px' }}>
-          {ETAPES.map(({ num, titre, desc, Scene }) => (
-            <div key={num} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-              <div aria-hidden="true"><Scene /></div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                <span style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, color: BLUE_L }}>{num}</span>
-                <h3 style={{ margin: 0, fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 22, color: '#fff' }}>{titre}</h3>
-                <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5, color: T2, minHeight: colonnes > 1 ? 42 : undefined }}>{desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ol
+          className={pause ? 'px-pause' : undefined}
+          onMouseEnter={() => { if (!mobile) setPause(true) }}
+          onMouseLeave={() => { if (!mobile && pause) { setPause(false); setTour(n => n + 1) } }}
+          style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: `repeat(${colonnes}, minmax(0, 1fr))`, gap: '36px 16px' }}
+        >
+          {ETAPES.map(({ num, titre, desc, Scene }, i) => {
+            const enCours = i === actif
+            const remplie = reduit || i < actif || (mobile && enCours)
+            return (
+              <li
+                key={num}
+                ref={el => { cartes.current[i] = el }}
+                data-etape={i}
+                aria-current={!reduit && enCours ? 'step' : undefined}
+                onClick={() => choisir(i)}
+                style={{ display: 'flex', flexDirection: 'column', gap: 20, cursor: 'pointer', opacity: reduit || enCours ? 1 : 0.4, transition: 'opacity .45s ease' }}
+              >
+                <div aria-hidden="true" className={enCours && !reduit ? undefined : 'px-fige'}>
+                  <Scene key={enCours ? `a${tour}` : 'fige'} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                  <span aria-hidden="true" style={{ display: 'block', height: 2, borderRadius: 2, background: LINE_D2, overflow: 'hidden', marginBottom: 8 }}>
+                    <span
+                      key={enCours ? `p${tour}` : 'p'}
+                      style={{
+                        display: 'block', height: '100%', background: BLUE_L, transformOrigin: 'left',
+                        transform: remplie ? 'scaleX(1)' : 'scaleX(0)',
+                        ...(enCours && !remplie && visible ? { animation: `pxProgress ${DUREE_ETAPE}ms linear forwards` } : {}),
+                      }}
+                    />
+                  </span>
+                  <button
+                    type="button"
+                    className="px-num"
+                    onClick={e => { e.stopPropagation(); choisir(i) }}
+                    aria-label={`Étape ${num} : ${titre}`}
+                    style={{ alignSelf: 'flex-start', background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, color: BLUE_L }}
+                  >
+                    {num}
+                  </button>
+                  <h3 style={{ margin: 0, fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 22, color: '#fff' }}>{titre}</h3>
+                  <p style={{ margin: 0, fontSize: 14, lineHeight: 1.5, color: T2, minHeight: colonnes > 1 ? 42 : undefined }}>{desc}</p>
+                </div>
+              </li>
+            )
+          })}
+        </ol>
 
       </div>
     </section>
