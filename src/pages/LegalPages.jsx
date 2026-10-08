@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { openCookiePreferences } from '../consent/consentStore'
+import { GA_MEASUREMENT_ID } from '../consent/ga4'
 import SEOHead from '../components/SEOHead'
 import { useIsMobile } from '../hooks/useMediaQuery'
 
@@ -163,7 +164,7 @@ export function MentionsLegalesPage() {
 
           <h2 style={s.h2}>7. Cookies et traceurs</h2>
           <p style={s.p}>
-            Ce site ne dépose qu'un seul cookie de son propre fait : celui qui mémorise votre choix sur le bandeau de consentement. La mesure d'audience et la mesure de performance (Vercel) ne sont activées qu'avec votre accord explicite, recueilli à votre première visite et modifiable à tout moment via le lien « Gérer les cookies » en pied de page. Aucun traceur publicitaire n'est utilisé. Le détail figure dans notre <Link to="/politique-de-confidentialite#cookies" style={s.a}>politique de confidentialité</Link>.
+            Sans votre accord, ce site ne dépose qu'un seul cookie : celui qui mémorise votre choix sur le bandeau de consentement. La mesure d'audience et la mesure de performance ({GA_MEASUREMENT_ID ? 'Vercel, Google Analytics' : 'Vercel'}) ne sont activées qu'avec votre accord explicite, recueilli à votre première visite et modifiable à tout moment via le lien « Gérer les cookies » en pied de page. Aucun traceur publicitaire n'est utilisé. Le détail figure dans notre <Link to="/politique-de-confidentialite#cookies" style={s.a}>politique de confidentialité</Link>.
           </p>
 
           <h2 style={s.h2}>8. Droit applicable et juridiction compétente</h2>
@@ -247,7 +248,7 @@ export function PolitiqueConfidentialitePage() {
               <li><strong>Gérer la relation client et le suivi commercial</strong> — base légale : exécution du contrat.</li>
               <li><strong>Organiser et dispenser les formations</strong> (inscription, convention, émargement, attestation) — base légale : exécution du contrat et obligation légale (Qualiopi).</li>
               <li><strong>Envoyer des informations sur nos formations</strong> — base légale : consentement (pour les prospects) ou intérêt légitime (pour les clients existants).</li>
-              <li><strong>Améliorer notre site et nos services</strong> par la mesure d'audience anonymisée — base légale : intérêt légitime.</li>
+              <li><strong>Améliorer notre site et nos services</strong> par la mesure d'audience — base légale : consentement, recueilli par le bandeau cookies.</li>
               <li><strong>Respecter nos obligations comptables et fiscales</strong> — base légale : obligation légale.</li>
             </ul>
           </div>
@@ -259,13 +260,14 @@ export function PolitiqueConfidentialitePage() {
             <li><strong>Documents de formation</strong> (convention, émargement, attestation) : 10 ans, conformément aux obligations Qualiopi et comptables.</li>
             <li><strong>Documents comptables et factures</strong> : 10 ans, conformément à l'article L.123-22 du Code de commerce.</li>
             <li><strong>Choix exprimé sur le bandeau cookies</strong> : 6 mois, puis la question vous est reposée.</li>
+            {GA_MEASUREMENT_ID && <li><strong>Statistiques de visite Google Analytics</strong> : 14 mois au plus ; cookies _ga : 13 mois au plus.</li>}
           </ul>
 
           <h2 style={s.h2}>5. Destinataires des données</h2>
           <p style={s.p}>Vos données sont exclusivement destinées à :</p>
           <ul style={s.ul}>
             <li>Les équipes internes de Masteria, dûment habilitées.</li>
-            <li>Nos sous-traitants techniques (hébergement du site, outil d'envoi d'emails, outil de facturation), liés par une convention conforme à l'article 28 du RGPD.</li>
+            <li>Nos sous-traitants techniques (hébergement du site, mesure d'audience, outil d'envoi d'emails, outil de facturation), liés par une convention conforme à l'article 28 du RGPD.</li>
             <li>Les OPCO, dans le cadre d'une demande de prise en charge financière à votre demande expresse.</li>
             <li>Les autorités administratives ou judiciaires lorsque la loi l'exige.</li>
           </ul>
@@ -319,6 +321,7 @@ export function PolitiqueConfidentialitePage() {
           <h3 style={s.h3}>Mesure d'audience (avec votre consentement)</h3>
           <ul style={s.ul}>
             <li><strong>Vercel Web Analytics</strong> (Vercel Inc., États-Unis) : pages vues, provenance des visites, type d'appareil, en statistiques agrégées. Aucun cookie n'est déposé. Un identifiant est calculé par hachage de l'adresse IP et du navigateur, renouvelé chaque jour et jamais conservé en clair. Pas de suivi d'un site à l'autre, pas de profil individuel. Transfert encadré par les clauses contractuelles types de la Commission européenne.</li>
+            {GA_MEASUREMENT_ID && <li><strong>Google Analytics 4</strong> (Google LLC, États-Unis) : pages vues, provenance des visites (dont la recherche Google), type d'appareil et demandes de contact envoyées depuis le site, en statistiques agrégées. Cookies _ga et _ga_* déposés pour 13 mois au plus, données conservées 14 mois au plus. Google Signals et personnalisation publicitaire désactivés : pas de suivi d'un site à l'autre, aucun usage publicitaire. Retirer votre consentement supprime ces cookies. Transfert encadré par le Data Privacy Framework UE–États-Unis, auquel Google LLC est certifiée.</li>}
           </ul>
 
           <h3 style={s.h3}>Performance du site (avec votre consentement)</h3>

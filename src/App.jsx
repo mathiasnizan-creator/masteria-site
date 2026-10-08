@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate, useParams, Link, useLocation, useSearchPara
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { useConsent, readConsent, PREFERENCES_EVENT } from './consent/consentStore';
+import { enableGA4, disableGA4, trackEvent } from './consent/ga4';
 
 /* Bandeau cookies : chunk séparé (JS + CSS), chargé quand le navigateur est
    inactif, uniquement s'il n'y a pas encore de choix valide ou si le visiteur
@@ -32,12 +33,18 @@ function ConsentMount() {
   );
 }
 
-/* Vercel Analytics et Speed Insights ne se chargent qu'après consentement explicite
-   (finalités « audience » et « performance »). beforeSend coupe l'envoi si le
-   visiteur retire son consentement alors que le script est déjà chargé. */
+/* Vercel Analytics, Speed Insights et Google Analytics ne se chargent qu'après
+   consentement explicite (finalités « audience » et « performance »). beforeSend
+   coupe l'envoi si le visiteur retire son consentement alors que le script est
+   déjà chargé ; pour GA, disableGA4 coupe l'envoi et efface les cookies _ga. */
 function ConsentGatedAnalytics() {
   const consent = useConsent();
   const allowed = (id) => !!readConsent()?.choices?.[id];
+  const audience = !!consent?.choices.audience;
+  useEffect(() => {
+    if (audience) enableGA4();
+    else disableGA4();
+  }, [audience]);
   return (
     <>
       {consent?.choices.audience && <Analytics beforeSend={(e) => (allowed('audience') ? e : null)} />}
@@ -949,6 +956,7 @@ function ContactScreen() {
       });
       if (res.ok) {
         setSent(true);
+        trackEvent('generate_lead', { form: 'contact' });
       } else {
         const body = await res.json().catch(() => ({}));
         console.error('Formspree error:', res.status, body);

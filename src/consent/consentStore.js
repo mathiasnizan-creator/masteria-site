@@ -12,14 +12,18 @@
  *  - la preuve du consentement est conservée côté navigateur (horodatage,
  *    version de la liste des traceurs, choix par finalité).
  *
- * Le seul cookie déposé par Masteria est ce cookie de préférences, exempté de
- * consentement (il sert précisément à mémoriser le refus ou l'acceptation).
+ * Le seul cookie déposé sans consentement est ce cookie de préférences, exempté
+ * (il sert précisément à mémoriser le refus ou l'acceptation). Les cookies _ga
+ * de Google Analytics, quand l'identifiant est renseigné (ga4.js), ne sont
+ * déposés qu'après acceptation de la mesure d'audience.
  */
 import { useSyncExternalStore } from 'react';
+import { GA_MEASUREMENT_ID } from './ga4';
 
 export const CONSENT_COOKIE = 'masteria_consent';
-/** À incrémenter si la liste des traceurs change : les visiteurs seront re-sollicités. */
-export const CONSENT_VERSION = 1;
+/** À incrémenter si la liste des traceurs change : les visiteurs seront re-sollicités.
+ *  L'activation de Google Analytics ajoute un traceur, d'où la version 2. */
+export const CONSENT_VERSION = GA_MEASUREMENT_ID ? 2 : 1;
 /** 6 mois, durée de validité recommandée par la CNIL. */
 export const CONSENT_MAX_AGE_DAYS = 182;
 
@@ -29,7 +33,9 @@ export const CATEGORIES = [
     id: 'audience',
     label: "Mesure d'audience",
     description:
-      "Compter les visites et savoir quelles pages sont lues, pour améliorer le site. Statistiques agrégées, sans profil individuel et sans suivi d'un site à l'autre.",
+      GA_MEASUREMENT_ID
+        ? "Compter les visites, savoir quelles pages sont lues et d'où viennent les visiteurs, pour améliorer le site. Statistiques agrégées, sans usage publicitaire et sans suivi d'un site à l'autre."
+        : "Compter les visites et savoir quelles pages sont lues, pour améliorer le site. Statistiques agrégées, sans profil individuel et sans suivi d'un site à l'autre.",
     tracers: [
       {
         name: 'Vercel Web Analytics',
@@ -37,6 +43,14 @@ export const CATEGORIES = [
         purpose: 'Pages vues, provenance des visites, type d’appareil.',
         storage: "Aucun cookie. Identifiant haché à partir de l'adresse IP et du navigateur, renouvelé chaque jour, jamais conservé en clair.",
       },
+      ...(GA_MEASUREMENT_ID
+        ? [{
+            name: 'Google Analytics 4',
+            vendor: 'Google LLC (États-Unis, Data Privacy Framework UE–États-Unis)',
+            purpose: "Pages vues, provenance des visites (dont la recherche Google), type d'appareil, demandes de contact envoyées.",
+            storage: 'Cookies _ga et _ga_*, 13 mois au plus. Sans Google Signals ni usage publicitaire.',
+          }]
+        : []),
     ],
   },
   {
