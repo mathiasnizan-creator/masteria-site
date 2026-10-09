@@ -15,8 +15,8 @@
       "dateAffichee": "9 October 2026",
       "mois": "2026-10",
       "moisAffiche": "Octobre 2026",
-      "titreEditorial": "Hiring of young workers falls where generative AI takes hold: the organisation that rebuilds its early career years around learning to verify, instead of cutting its junior roles, keeps the ability to judge AI ten years from now",
-      "chapeau": "OpenAI's revenue, revised down to $50 billion instead of the expected $70 billion, drags on the Nasdaq and reopens the case against an AI built on credit, while an Nvidia-backed stock listing collapses in Australia. Beneath the noise of valuations, the labour market is already shifting: hiring of young workers falls in exposed occupations, journalists at the EBRA group walk out against AI, and Anthropic and Google both rewrite the rules for their agents.",
+      "titreEditorial": "AI chips away at young people's first jobs",
+      "chapeau": "OpenAI's revenue, revised down to $50 billion instead of the $70 billion expected, pushes the Nasdaq lower and reopens the case of an AI built on credit, while an IPO backed by Nvidia collapses in Australia. Beneath the noise of valuations, the labour market is already shifting: hiring of young people is falling in exposed occupations, journalists at the EBRA group are walking out over AI, and both Anthropic and Google are rewriting the rules for their agents.",
       "nbItems": 13,
       "nbSources": 21,
       "tempsLecture": 8,
@@ -59,24 +59,24 @@
       ],
       "items": [
         {
-          "t": "OpenAI's actual revenue worries Wall Street",
+          "t": "OpenAI's real revenue worries Wall Street",
           "z": "une",
-          "id": "openai-s-actual-revenue-worries-wall-street"
+          "id": "openai-s-real-revenue-worries-wall-street"
         },
         {
-          "t": "The CNIL lifts the order against France Travail",
+          "t": "The CNIL lifts the order it had issued against France Travail",
           "z": "europe",
-          "id": "the-cnil-lifts-the-order-against-france-travail"
+          "id": "the-cnil-lifts-the-order-it-had-issued-against-france"
         },
         {
-          "t": "Ecosia leaves Mistral for open models, some of them Chinese, and Arthur Mensch replies",
+          "t": "Ecosia drops Mistral for open models, including Chinese ones, and Arthur Mensch responds",
           "z": "europe",
-          "id": "ecosia-leaves-mistral-for-open-models-some-of-them-chinese"
+          "id": "ecosia-drops-mistral-for-open-models-including-chinese-ones"
         },
         {
-          "t": "Permanent hiring of young workers is falling in occupations exposed to generative AI",
+          "t": "Permanent hiring of young people is falling in jobs exposed to generative AI",
           "z": "europe",
-          "id": "permanent-hiring-of-young-workers-is-falling-in-occupations"
+          "id": "permanent-hiring-of-young-people-is-falling-in-jobs-exposed"
         },
         {
           "t": "Anthropic tightens its usage policy and bans \"abusive\" behaviour towards Claude",
@@ -84,19 +84,19 @@
           "id": "anthropic-tightens-its-usage-policy-and-bans-abusive"
         },
         {
-          "t": "Google turns Gemini into an agent for businesses, with its own identity at work",
+          "t": "Google turns Gemini into an agent for businesses, with its own workplace identity",
           "z": "international",
           "id": "google-turns-gemini-into-an-agent-for-businesses-with-its"
         },
         {
-          "t": "OpenAI publishes 722 mathematical proofs, and researchers call for a boycott",
+          "t": "OpenAI publishes 722 mathematical proofs, researchers call for a boycott",
           "z": "international",
-          "id": "openai-publishes-722-mathematical-proofs-and-researchers"
+          "id": "openai-publishes-722-mathematical-proofs-researchers-call"
         },
         {
-          "t": "An Nvidia-backed stock listing collapses and raises the alarm on valuation fever",
+          "t": "An IPO backed by Nvidia collapses and sounds the alarm on valuation fever",
           "z": "international",
-          "id": "an-nvidia-backed-stock-listing-collapses-and-raises-the"
+          "id": "an-ipo-backed-by-nvidia-collapses-and-sounds-the-alarm-on"
         },
         {
           "t": "China's Manus raises more than $500 million, its first round since splitting from Meta",
@@ -114,14 +114,14 @@
           "id": "a-test-measures-whether-a-legal-ai-invents-its-citations"
         },
         {
-          "t": "A small fine-tuned model beats the large ones on a teaching task",
+          "t": "A small fine-tuned model beats large ones on a teaching task",
           "z": "recherche",
-          "id": "a-small-fine-tuned-model-beats-the-large-ones-on-a-teaching"
+          "id": "a-small-fine-tuned-model-beats-large-ones-on-a-teaching-task"
         },
         {
-          "t": "Journalists at the nine daily papers of the EBRA group are called…",
+          "t": "Journalists at the nine dailies of the EBRA group are called out…",
           "z": "bref",
-          "id": "journalists-at-the-nine-daily-papers-of-the"
+          "id": "journalists-at-the-nine-dailies-of-the-ebra"
         }
       ]
     },

@@ -378,7 +378,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
-- [9 octobre 2026 : Les embauches de jeunes reculent là où l'IA générative s'installe : l'organisation qui refait ses premières années de carrière en apprentissage de la vérification, au lieu de supprimer ses postes juniors, garde la capacité de juger l'IA dans dix ans](https://www.master-ia.fr/veille-ia/2026-10-09)
+- [9 octobre 2026 : L'IA grignote les premiers emplois des jeunes](https://www.master-ia.fr/veille-ia/2026-10-09)
 - [8 octobre 2026 : Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act](https://www.master-ia.fr/veille-ia/2026-10-08)
 - [7 octobre 2026 : Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé](https://www.master-ia.fr/veille-ia/2026-10-07)
 - [6 octobre 2026 : Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver](https://www.master-ia.fr/veille-ia/2026-10-06)

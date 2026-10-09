@@ -15,7 +15,7 @@
       "dateCourte": "ven. 9 oct.",
       "mois": "2026-10",
       "moisAffiche": "Octobre 2026",
-      "titreEditorial": "Les embauches de jeunes reculent là où l'IA générative s'installe : l'organisation qui refait ses premières années de carrière en apprentissage de la vérification, au lieu de supprimer ses postes juniors, garde la capacité de juger l'IA dans dix ans",
+      "titreEditorial": "L'IA grignote les premiers emplois des jeunes",
       "nbItems": 13,
       "nbSources": 21,
       "tempsLecture": 9
@@ -601,7 +601,7 @@
     "dateCourte": "ven. 9 oct.",
     "jourSemaine": "vendredi",
     "titre": "Veille IA du vendredi 9 octobre 2026",
-    "titreEditorial": "Les embauches de jeunes reculent là où l'IA générative s'installe : l'organisation qui refait ses premières années de carrière en apprentissage de la vérification, au lieu de supprimer ses postes juniors, garde la capacité de juger l'IA dans dix ans",
+    "titreEditorial": "L'IA grignote les premiers emplois des jeunes",
     "chapeau": "Le chiffre d'affaires d'OpenAI, ramené à 50 milliards de dollars au lieu des 70 attendus, fait reculer le Nasdaq et rouvre le procès d'une IA bâtie à crédit, pendant qu'une introduction en Bourse soutenue par Nvidia s'effondre en Australie. Sous le vacarme des valorisations, le marché du travail bouge déjà : les embauches de jeunes reculent dans les métiers exposés, les journalistes du groupe EBRA débrayent contre l'IA, et Anthropic comme Google réécrivent les règles de leurs agents.",
     "une": {
       "titre": "Le chiffre d'affaires réel d'OpenAI inquiète Wall Street",
@@ -836,11 +836,14 @@
       }
     ],
     "analyse": {
-      "titre": "Une étude sur plus de 1 500 métiers montre que les embauches en CDI des jeunes reculent dans les professions exposées à l'IA générative, le jour où les journalistes du groupe EBRA débrayent contre un plan mêlant coupes d'effectifs et recours accru à l'IA : ce qui change pour une organisation française, c'est que les tâches confiées aux débutants sont précisément celles que le modèle absorbe, et le levier concret est de conserver les postes juniors en refaisant leur contenu autour de la vérification et du pilotage des sorties de modèle, et d'inscrire l'apprentissage comme une ligne du plan plutôt que comme une victime du gain de productivité.",
-      "these": "Les organisations fabriquaient leur jugement expert en faisant produire aux juniors les premiers jets et les analyses répétitives, exactement ce que l'IA générative exécute aujourd'hui ; couper le bas de l'échelle économise des salaires cette année et assèche l'expertise dans cinq ans, si bien que le geste qui protège une entreprise française est de garder ses recrutements de débutants et d'en déplacer le cœur vers la correction, la vérification et le pilotage des modèles sous supervision, pour continuer de former ceux qui sauront, demain, distinguer une réponse plausible d'une réponse juste.",
+      "titre": "Pourquoi supprimer les postes juniors revient à scier le bas de l'échelle",
+      "these": "Les juniors produisaient les premiers jets qui forgeaient le jugement expert, ce que l'IA exécute désormais ; couper ces postes économise des salaires et assèche l'expertise à cinq ans.",
       "html": "<p>Une étude sur plus de 1 500 métiers montre que les embauches en CDI des jeunes reculent là où l'IA générative est la plus présente. Le signal est discret parce qu'il ne fait pas de bruit : personne n'est licencié, on cesse simplement d'ouvrir des portes d'entrée. Le même jour, les journalistes du groupe EBRA débrayent contre un plan qui mêle 10 % de coupes d'effectifs et davantage d'IA, et Nikkei décrit la machine à emplois des sociétés de services indiennes rattrapée par la même ombre.</p>\n<p>Le mécanisme est simple et c'est ce qui le rend sérieux. Les tâches que l'on confiait aux débutants, le premier jet, la synthèse, l'analyse répétitive, la mise en forme d'un dossier, sont exactement celles que le modèle exécute maintenant. L'arbitrage de court terme est tentant : on économise un salaire aujourd'hui. Il revient à scier le bas d'une échelle sur laquelle on monte encore.</p>\n<p>Car ces années de production ingrate n'étaient pas qu'un coût. Elles étaient la fabrique du jugement. Le senior qui repère en trois secondes qu'une réponse d'IA est fausse a gagné ce réflexe en produisant, jeune, des centaines de premiers jets qu'on lui corrigeait. Supprimez l'apprentissage, et dans cinq ans il ne reste personne, dans la pièce, pour distinguer une réponse plausible d'une réponse juste, au moment précis où cette distinction devient la compétence la plus chère.</p>\n<p>Le geste qui protège une organisation française tient en une bascule : garder ses recrutements de débutants et en refaire le contenu. La première année devient un apprentissage de la vérification : corriger et piloter les sorties du modèle sous le regard d'un senior, plutôt que produire seul le premier jet. On inscrit cet apprentissage comme une ligne du plan, pas comme une variable d'ajustement du gain de productivité, et on le mesure comme tel. Ce qu'une entreprise décide cette année de ses juniors dessine qui, dans dix ans, saura encore juger ce que sa machine lui répond.</p>",
       "htmlExtrait": "<p>Une étude sur plus de 1 500 métiers montre que les embauches en CDI des jeunes reculent là où l'IA générative est la plus présente. Le signal est discret parce qu'il ne fait pas de bruit : personne n'est licencié, on cesse simplement d'ouvrir des portes d'entrée. Le même jour, les journalistes du groupe EBRA débrayent contre un plan qui mêle 10 % de coupes d'effectifs et davantage d'IA, et Nikkei décrit la machine à emplois des sociétés de services indiennes rattrapée par la même ombre.</p>\n<p>Le mécanisme est simple et c'est ce qui le rend sérieux. Les tâches que l'on confiait aux débutants, le premier jet, la synthèse, l'analyse répétitive, la mise en forme d'un dossier, sont exactement celles que le modèle exécute maintenant. L'arbitrage de court terme est tentant : on économise un salaire aujourd'hui. Il revient à scier le bas d'une échelle sur laquelle on monte encore.</p>",
-      "itemsCites": [],
+      "itemsCites": [
+        4,
+        13
+      ],
       "auteur": "L'équipe éditoriale Masteria",
       "auteurRole": "Sous la direction de Mathias Nizan"
     },
