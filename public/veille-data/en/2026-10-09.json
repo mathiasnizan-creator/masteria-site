@@ -1,0 +1,306 @@
+{
+  "schema": 2,
+  "date": "2026-10-09",
+  "dateAffichee": "9 October 2026",
+  "dateLongue": "Friday 9 October 2026",
+  "dateCourte": "Fri 9 Oct",
+  "jourSemaine": "Friday",
+  "titre": "AI Watch - Friday 9 October 2026",
+  "titreEditorial": "Hiring of young workers falls where generative AI takes hold: the organisation that rebuilds its early career years around learning to verify, instead of cutting its junior roles, keeps the ability to judge AI ten years from now",
+  "chapeau": "OpenAI's revenue, revised down to $50 billion instead of the expected $70 billion, drags on the Nasdaq and reopens the case against an AI built on credit, while an Nvidia-backed stock listing collapses in Australia. Beneath the noise of valuations, the labour market is already shifting: hiring of young workers falls in exposed occupations, journalists at the EBRA group walk out against AI, and Anthropic and Google both rewrite the rules for their agents.",
+  "une": {
+    "titre": "OpenAI's actual revenue worries Wall Street",
+    "texteHtml": "<p>OpenAI reportedly told its investors in late September of annualised revenue close to $50 billion, far from the $68 to $70 billion that projections had attributed to the company, Le Monde, ZDNet and TechCrunch report. The gap is said to come down to calculation methods, but it was enough to push the Nasdaq down and to weigh on Nvidia, Oracle and Intel, whose valuations rest in part on the promise of orders from OpenAI. The company has also pushed its stock listing back to early 2027, citing debate over the risks that AI poses. OpenAI for its part maintains that it will reach or exceed $70 billion in annualised revenue by the end of 2026, driven by its enterprise customers, according to sources cited by Bloomberg. The point both camps agree on is telling: the volume of tokens processed, meaning actual usage, keeps climbing, even when the accounting revenue is up for debate. The fact remains that the financial edifice of AI proves sensitive to the slightest doubt about the revenue that must, one day, repay the data centres.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/10/09/les-ambiguites-sur-le-chiffre-d-affaires-d-openai-effraient-wall-street_6790497_3234.html"
+      },
+      {
+        "nom": "ZDNet",
+        "url": "https://www.zdnet.fr/actualites/50-ou-70-milliards-les-chiffres-dopenai-font-vaciller-les-valeurs-de-lia-a-wall-street-505439.htm"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "openai-s-actual-revenue-worries-wall-street"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The CNIL lifts the order against France Travail",
+          "texteHtml": "<p>By a decision of 23 September 2026, the CNIL (France's data protection authority) closed the order issued on 22 January against France Travail, without applying the penalty payment it had provided for, the body having brought its processing into compliance. The decision closes a case opened over the handling of jobseekers' data. For public bodies equipping their services with AI and automated processing, it is a reminder that documented compliance suspends the financial penalty.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/cloture-injonction-france-travail"
+            }
+          ],
+          "rang": 2,
+          "id": "the-cnil-lifts-the-order-against-france-travail"
+        },
+        {
+          "titre": "Ecosia leaves Mistral for open models, some of them Chinese, and Arthur Mensch replies",
+          "texteHtml": "<p>The German search engine Ecosia, which funds reforestation, is dropping Mistral five months after choosing it and switching to open-weight models (which you can download and run yourself), several of Chinese origin, citing quality, sovereignty and French nuclear power. Arthur Mensch, head of Mistral, replied publicly: \"Sorry if nuclear power is a real sticking point.\" The episode is awkward for a \"European green tech\" that prefers Chinese models to a French champion, and it shows how fast a sovereignty argument turns around when the product disappoints.</p>",
+          "sources": [
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/3278721_ecosia-quitte-mistral-pour-des-ia-chinoises-arthur-mensch-repond-desole-si-le-nucleaire-est-un-vrai-point-de-blocage"
+            },
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2349811-lallemand-ecosia-lache-mistral-et-ose-evoquer-lenergie-nucleaire-francaise-dans-ses-raisons.html"
+            }
+          ],
+          "rang": 3,
+          "id": "ecosia-leaves-mistral-for-open-models-some-of-them-chinese"
+        },
+        {
+          "titre": "Permanent hiring of young workers is falling in occupations exposed to generative AI",
+          "texteHtml": "<p>A study covering more than 1,500 occupations concludes that young workers are already feeling the effect of generative AI on employment, with a drop in permanent hiring in the most exposed professions, the Journal du Net reports. The signal is quiet but clear: the adjustment does not come first through layoffs, it comes through the entry doors that stop being opened. This is the ground on which a training and apprenticeship policy is decided.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/business/action-publique/1556107-les-embauches-en-cdi-des-jeunes-actifs-reculent-dans-les-metiers-exposes-a-l-ia-generative/"
+            }
+          ],
+          "rang": 4,
+          "id": "permanent-hiring-of-young-workers-is-falling-in-occupations"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic tightens its usage policy and bans \"abusive\" behaviour towards Claude",
+          "texteHtml": "<p>Anthropic is revising, for the first time in over a year, the usage policy of its Claude assistant, TechCrunch and The Verge report. The new rules, in force on 12 November, explicitly prohibit election interference, disinformation campaigns, weapons development and certain surveillance uses. The most discussed change is on different ground: the company bans repeated, purposeless \"abusive or cruel\" behaviour towards Claude, while noting that ordinary frustration and criticism remain allowed. Anthropic relies on an existing feature that lets the model end a conversation on its own. Behind the anecdote of a machine's \"well-being\", the company is mainly adjusting a usage contract that its professional customers will have to reread.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-tightens-its-usage-policy-and-bans-abusive"
+        },
+        {
+          "titre": "Google turns Gemini into an agent for businesses, with its own identity at work",
+          "texteHtml": "<p>At its Gemini at Work event, Google presented an agent able to plan, carry out tasks and move between business applications, TechCrunch and The Verge report. The agent can delegate part of the work to sub-agents, call on several models, and above all receive its own identity within the company, with its own email address. Available in the Gemini Enterprise app, it is steered from a single interface where you talk to it and assign it missions. Giving an agent an email address and a place in the directory means treating it as a digital colleague, with the questions of access, accountability and logging that this raises. For IT departments, the task becomes framing what that identity is allowed to do before handing it out.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
+            }
+          ],
+          "rang": 6,
+          "id": "google-turns-gemini-into-an-agent-for-businesses-with-its"
+        },
+        {
+          "titre": "OpenAI publishes 722 mathematical proofs, and researchers call for a boycott",
+          "texteHtml": "<p>After OpenAI published 722 mathematics manuscripts produced by its AI, the Association for Human Mathematics, a collective founded in September 2026, is calling on its peers to stop all collaboration with the company, Numerama and TechCrunch report. Terence Tao, a Fields medallist, reposted the text on his blog, and one of the signatories sums up the move in a sentence: \"This is not a display of scholarship, but of force.\" TechCrunch notes for its part that the proofs released depart from the rules set by the mathematicians OpenAI had nonetheless consulted, and do not yet meet the discipline's standards. The episode raises a question that goes beyond mathematics: when a machine produces results faster than experts can verify them, value shifts from production to the capacity to check.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2349233-ce-nest-pas-une-demonstration-derudition-mais-de-force-des-mathematiciens-appellent-au-boycott-dopenai-apres-son-nouveau-coup.html"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-publishes-722-mathematical-proofs-and-researchers"
+        },
+        {
+          "titre": "An Nvidia-backed stock listing collapses and raises the alarm on valuation fever",
+          "texteHtml": "<p>Firmus Grid, a data-centre host backed by Nvidia, has given up what would have been one of the largest stock listings in Australian history, worth around $5 billion, for want of international investors, Bloomberg reports. The withdrawal comes as markets worry about valuations seen as excessive across the whole AI chain. The same day, shares in Chinese optical-chip makers extended their fall, and the CSI 300 index dropped to its lowest level in over a year. These signals do not say that demand for AI is weakening, they say that investors are no longer funding any promise at any price. For an organisation that relies on an AI supplier, that supplier's financial strength becomes a selection criterion again.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-08/nvidia-backed-firmus-is-set-to-postpone-ipo-weigh-private-round"
+            }
+          ],
+          "rang": 8,
+          "id": "an-nvidia-backed-stock-listing-collapses-and-raises-the"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "China's Manus raises more than $500 million, its first round since splitting from Meta",
+          "texteHtml": "<p>The Chinese start-up Manus, which specialises in AI agents, has closed a funding round of more than $500 million led by Boyu Capital and IDG Capital, TechCrunch and Nikkei Asia report. Existing shareholders, including Tencent, HSG (formerly Sequoia China) and ZhenFund, put in more. It is Manus's first raise since splitting from Meta, and it places the company among the Chinese players chasing the market for agent \"harnesses\", the systems that have a model carry out complete tasks rather than simple answers. The deal confirms that money keeps flowing towards Chinese agents, just as American valuations tighten.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/chinese-ai-startup-manus-drums-up-over-500m-in-fresh-funding"
+            }
+          ],
+          "rang": 9,
+          "id": "china-s-manus-raises-more-than-500-million-its-first-round"
+        },
+        {
+          "titre": "Samsung sees its operating profit jump 782% thanks to memory chips for AI",
+          "texteHtml": "<p>Samsung expects a record operating profit of around $80 billion (107.4 trillion won) in the third quarter, up 782.5% year on year, Siècle Digital and ZDNet report. Demand for memory chips bound for AI servers drives these results, with final figures expected on 29 October. This jump, which also benefits SK Hynix and feeds South Korean public spending, measures the scale of the hardware boom: the maker selling the shovels in the rush is banking profits that few AI labs can show yet.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/10/08/samsung-affole-les-compteurs-avec-80-milliards-de-dollars-de-benefice-grace-a-lia/"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/samsung-voit-son-benefice-exploser-de-800-voici-ce-que-cela-cache-505437.htm"
+            }
+          ],
+          "rang": 10,
+          "id": "samsung-sees-its-operating-profit-jump-782-thanks-to-memory"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "A test measures whether a legal AI invents its citations",
+          "texteHtml": "<p>Researchers present PARCEL, an evaluation set built on recent decisions of the New York State Court of Appeals, which checks whether a legal claim is actually supported by the source cited. The set brings together 3,396 claims labelled \"supported\", \"refuted\" or \"not found\", and frames the problem as a three-way inference task on which several leading models still stumble. The value for a lawyer is direct: a citation that \"sounds right\" is not an accurate citation, and this kind of test finally gives a numerical way to measure the hallucination risk before fitting a tool to a practice.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.10971"
+            }
+          ],
+          "rang": 11,
+          "id": "a-test-measures-whether-a-legal-ai-invents-its-citations"
+        },
+        {
+          "titre": "A small fine-tuned model beats the large ones on a teaching task",
+          "texteHtml": "<p>A team shows that a small language model fine-tuned on teachers' data, a Qwen3.5 of 0.8 billion parameters, outperforms leading models prompted by simple query at annotating grammatical mastery from transcripts of language lessons. The gain is twofold: better performance and a far lower cost at scale, where the large models become too expensive to run on every transcript. The result illustrates a trade-off that many organisations will meet: on a precise, repeated task, a small specialised model often does more for you than a costly general-purpose one.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.10827"
+            }
+          ],
+          "rang": 12,
+          "id": "a-small-fine-tuned-model-beats-the-large-ones-on-a-teaching"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li>Journalists at the nine daily papers of the EBRA group are called out on strike on Friday 9 October by the Syndicat national des journalistes (France's national journalists' union), against a plan providing for nearly 10% headcount cuts and greater use of AI. <a href=\"https://www.lemonde.fr/economie/article/2026/10/08/dans-les-journaux-du-groupe-ebra-l-ia-au-c-ur-d-un-appel-a-la-greve_6790262_3234.html\" target=\"_blank\" rel=\"noopener noreferrer\">Le Monde</a></li>\n<li>Shares in Chinese optical-chip makers extend their fall, with investors fearing fresh American export restrictions, dragging the Hong Kong market and the CSI 300 index to their lowest in over a year.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-war/article/3370305/chinese-optical-chip-stocks-extend-rout-amid-fears-potential-us-curbs"
+            }
+          ],
+          "rang": 13,
+          "id": "journalists-at-the-nine-daily-papers-of-the"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "A study of more than 1,500 occupations shows that permanent hiring of young workers is falling in professions exposed to generative AI, on the day journalists at the EBRA group walk out against a plan that combines headcount cuts with greater use of AI: what changes for a French organisation is that the tasks handed to beginners are precisely the ones the model absorbs, and the concrete lever is to keep junior roles while rebuilding their content around verification and the steering of model outputs, and to write training in as a line of the plan rather than a casualty of the productivity gain.",
+    "these": "Organisations built their expert judgement by having juniors produce the first drafts and the repetitive analysis, exactly what generative AI now carries out; cutting the bottom of the ladder saves salaries this year and drains expertise within five, so the move that protects a French company is to keep its beginner hires and shift the heart of their work towards correction, verification and the steering of models under supervision, to keep training those who will know, tomorrow, how to tell a plausible answer from a correct one.",
+    "html": "<p>A study of more than 1,500 occupations shows that permanent hiring of young workers is falling where generative AI is most present. The signal is quiet because it makes no noise: no one is laid off, the entry doors simply stop being opened. The same day, journalists at the EBRA group walk out against a plan that combines 10% headcount cuts with more AI, and Nikkei describes the jobs machine of India's services firms caught up by the same shadow.</p>\n<p>The mechanism is simple, and that is what makes it serious. The tasks once handed to beginners, the first draft, the summary, the repetitive analysis, the formatting of a file, are exactly the ones the model now carries out. The short-term trade-off is tempting: you save a salary today. It amounts to sawing off the bottom of a ladder you are still climbing.</p>\n<p>Because those years of thankless production were not only a cost. They were the workshop of judgement. The senior who spots in three seconds that an AI answer is wrong earned that reflex by producing, as a junior, hundreds of first drafts that were corrected for them. Remove the apprenticeship, and in five years no one is left in the room to tell a plausible answer from a correct one, at the precise moment when that distinction becomes the most expensive skill of all.</p>\n<p>The move that protects a French organisation comes down to one shift: keep its beginner hires and rebuild what they do. The first year becomes a training in verification: correcting and steering the model's outputs under a senior's watch, rather than producing the first draft alone. You write that apprenticeship in as a line of the plan, not as an adjustment variable of the productivity gain, and you measure it as such. What a company decides this year about its juniors draws who, ten years from now, will still know how to judge what its machine answers.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>A study of more than 1,500 occupations shows that permanent hiring of young workers is falling where generative AI is most present. The signal is quiet because it makes no noise: no one is laid off, the entry doors simply stop being opened. The same day, journalists at the EBRA group walk out against a plan that combines 10% headcount cuts with more AI, and Nikkei describes the jobs machine of India's services firms caught up by the same shadow.</p>\n<p>The mechanism is simple, and that is what makes it serious. The tasks once handed to beginners, the first draft, the summary, the repetitive analysis, the formatting of a file, are exactly the ones the model now carries out. The short-term trade-off is tempting: you save a salary today. It amounts to sawing off the bottom of a ladder you are still climbing.</p>",
+    "itemsCites": [],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-08",
+    "dateLongue": "Thursday 8 October 2026",
+    "titreEditorial": "Proving a content's origin becomes an economic function",
+    "nbItems": 12
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 21,
+  "nbSignes": 10089,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "ZDNet",
+    "TechCrunch",
+    "CNIL",
+    "Frandroid",
+    "Numerama",
+    "Journal du Net",
+    "The Verge",
+    "Bloomberg",
+    "Nikkei Asia"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 154,
+  "publieLe": "2026-10-09T09:37:55+02:00",
+  "publieLeAffiche": "9h37"
+}

@@ -3,12 +3,128 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-08",
-    "totalEditions": 37,
-    "totalItems": 498,
-    "totalSources": 717
+    "derniereDate": "2026-10-09",
+    "totalEditions": 38,
+    "totalItems": 511,
+    "totalSources": 738
   },
   "editions": [
+    {
+      "date": "2026-10-09",
+      "dateCourte": "Fri 9 Oct",
+      "dateAffichee": "9 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Hiring of young workers falls where generative AI takes hold: the organisation that rebuilds its early career years around learning to verify, instead of cutting its junior roles, keeps the ability to judge AI ten years from now",
+      "chapeau": "OpenAI's revenue, revised down to $50 billion instead of the expected $70 billion, drags on the Nasdaq and reopens the case against an AI built on credit, while an Nvidia-backed stock listing collapses in Australia. Beneath the noise of valuations, the labour market is already shifting: hiring of young workers falls in exposed occupations, journalists at the EBRA group walk out against AI, and Anthropic and Google both rewrite the rules for their agents.",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "ZDNet",
+        "TechCrunch",
+        "CNIL",
+        "Frandroid",
+        "Numerama",
+        "Journal du Net",
+        "The Verge",
+        "Bloomberg",
+        "Nikkei Asia",
+        "Siècle Digital",
+        "arXiv",
+        "South China Morning Post"
+      ],
+      "items": [
+        {
+          "t": "OpenAI's actual revenue worries Wall Street",
+          "z": "une",
+          "id": "openai-s-actual-revenue-worries-wall-street"
+        },
+        {
+          "t": "The CNIL lifts the order against France Travail",
+          "z": "europe",
+          "id": "the-cnil-lifts-the-order-against-france-travail"
+        },
+        {
+          "t": "Ecosia leaves Mistral for open models, some of them Chinese, and Arthur Mensch replies",
+          "z": "europe",
+          "id": "ecosia-leaves-mistral-for-open-models-some-of-them-chinese"
+        },
+        {
+          "t": "Permanent hiring of young workers is falling in occupations exposed to generative AI",
+          "z": "europe",
+          "id": "permanent-hiring-of-young-workers-is-falling-in-occupations"
+        },
+        {
+          "t": "Anthropic tightens its usage policy and bans \"abusive\" behaviour towards Claude",
+          "z": "international",
+          "id": "anthropic-tightens-its-usage-policy-and-bans-abusive"
+        },
+        {
+          "t": "Google turns Gemini into an agent for businesses, with its own identity at work",
+          "z": "international",
+          "id": "google-turns-gemini-into-an-agent-for-businesses-with-its"
+        },
+        {
+          "t": "OpenAI publishes 722 mathematical proofs, and researchers call for a boycott",
+          "z": "international",
+          "id": "openai-publishes-722-mathematical-proofs-and-researchers"
+        },
+        {
+          "t": "An Nvidia-backed stock listing collapses and raises the alarm on valuation fever",
+          "z": "international",
+          "id": "an-nvidia-backed-stock-listing-collapses-and-raises-the"
+        },
+        {
+          "t": "China's Manus raises more than $500 million, its first round since splitting from Meta",
+          "z": "chine",
+          "id": "china-s-manus-raises-more-than-500-million-its-first-round"
+        },
+        {
+          "t": "Samsung sees its operating profit jump 782% thanks to memory chips for AI",
+          "z": "chine",
+          "id": "samsung-sees-its-operating-profit-jump-782-thanks-to-memory"
+        },
+        {
+          "t": "A test measures whether a legal AI invents its citations",
+          "z": "recherche",
+          "id": "a-test-measures-whether-a-legal-ai-invents-its-citations"
+        },
+        {
+          "t": "A small fine-tuned model beats the large ones on a teaching task",
+          "z": "recherche",
+          "id": "a-small-fine-tuned-model-beats-the-large-ones-on-a-teaching"
+        },
+        {
+          "t": "Journalists at the nine daily papers of the EBRA group are called…",
+          "z": "bref",
+          "id": "journalists-at-the-nine-daily-papers-of-the"
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "dateCourte": "Thu 8 Oct",

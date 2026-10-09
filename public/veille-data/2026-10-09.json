@@ -1,0 +1,307 @@
+{
+  "schema": 2,
+  "date": "2026-10-09",
+  "dateAffichee": "9 octobre 2026",
+  "dateLongue": "vendredi 9 octobre 2026",
+  "dateCourte": "ven. 9 oct.",
+  "jourSemaine": "vendredi",
+  "titre": "Veille IA du vendredi 9 octobre 2026",
+  "titreEditorial": "Les embauches de jeunes reculent là où l'IA générative s'installe : l'organisation qui refait ses premières années de carrière en apprentissage de la vérification, au lieu de supprimer ses postes juniors, garde la capacité de juger l'IA dans dix ans",
+  "chapeau": "Le chiffre d'affaires d'OpenAI, ramené à 50 milliards de dollars au lieu des 70 attendus, fait reculer le Nasdaq et rouvre le procès d'une IA bâtie à crédit, pendant qu'une introduction en Bourse soutenue par Nvidia s'effondre en Australie. Sous le vacarme des valorisations, le marché du travail bouge déjà : les embauches de jeunes reculent dans les métiers exposés, les journalistes du groupe EBRA débrayent contre l'IA, et Anthropic comme Google réécrivent les règles de leurs agents.",
+  "une": {
+    "titre": "Le chiffre d'affaires réel d'OpenAI inquiète Wall Street",
+    "texteHtml": "<p>OpenAI aurait indiqué à ses investisseurs fin septembre un revenu annualisé proche de 50 milliards de dollars, loin des 68 à 70 milliards que les projections prêtaient à l'entreprise, rapportent Le Monde, ZDNet et TechCrunch. L'écart tiendrait aux méthodes de calcul, mais il a suffi à faire reculer le Nasdaq et à peser sur Nvidia, Oracle et Intel, dont les valorisations reposent en partie sur la promesse de commandes d'OpenAI. La société a par ailleurs repoussé son entrée en Bourse au début de 2027, en raison des débats sur les risques que fait courir l'IA. OpenAI soutient de son côté qu'elle atteindra ou dépassera 70 milliards de dollars de revenu annualisé d'ici fin 2026, tiré par sa clientèle d'entreprise, d'après des sources citées par Bloomberg. Le point d'accord des deux camps est révélateur : le volume de jetons traités, c'est-à-dire l'usage réel, continue de grimper, même quand le chiffre d'affaires comptable se discute. Reste que l'édifice financier de l'IA se montre sensible au moindre doute sur les revenus qui doivent, un jour, rembourser les centres de données.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/10/09/les-ambiguites-sur-le-chiffre-d-affaires-d-openai-effraient-wall-street_6790497_3234.html"
+      },
+      {
+        "nom": "ZDNet",
+        "url": "https://www.zdnet.fr/actualites/50-ou-70-milliards-les-chiffres-dopenai-font-vaciller-les-valeurs-de-lia-a-wall-street-505439.htm"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "le-chiffre-d-affaires-reel-d-openai-inquiete-wall-street"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La CNIL lève l'injonction qui visait France Travail",
+          "texteHtml": "<p>Par délibération du 23 septembre 2026, la CNIL a clos l'injonction prononcée le 22 janvier contre France Travail, sans appliquer l'astreinte prévue, l'organisme ayant mis ses traitements en conformité. La décision referme un dossier ouvert sur la gestion des données des demandeurs d'emploi. Pour les organismes publics qui outillent leurs services avec de l'IA et des traitements automatisés, elle rappelle qu'une mise en conformité documentée suspend la sanction financière.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/cloture-injonction-france-travail"
+            }
+          ],
+          "rang": 2,
+          "id": "la-cnil-leve-l-injonction-qui-visait-france-travail"
+        },
+        {
+          "titre": "Ecosia quitte Mistral pour des modèles ouverts, dont des modèles chinois, et Arthur Mensch répond",
+          "texteHtml": "<p>Le moteur de recherche allemand Ecosia, qui finance la reforestation, abandonne Mistral cinq mois après l'avoir choisi et bascule vers des modèles à poids ouverts (téléchargeables et exécutables soi-même), plusieurs d'origine chinoise, invoquant la qualité, la souveraineté et l'énergie nucléaire française. Arthur Mensch, patron de Mistral, a répondu publiquement : « Désolé si le nucléaire est un vrai point de blocage. » L'épisode est piquant pour une « tech verte européenne » qui préfère des modèles chinois à un champion français, et il montre qu'un argument de souveraineté se retourne vite quand le produit déçoit.</p>",
+          "sources": [
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/3278721_ecosia-quitte-mistral-pour-des-ia-chinoises-arthur-mensch-repond-desole-si-le-nucleaire-est-un-vrai-point-de-blocage"
+            },
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2349811-lallemand-ecosia-lache-mistral-et-ose-evoquer-lenergie-nucleaire-francaise-dans-ses-raisons.html"
+            }
+          ],
+          "rang": 3,
+          "id": "ecosia-quitte-mistral-pour-des-modeles-ouverts-dont-des"
+        },
+        {
+          "titre": "Les embauches en CDI des jeunes reculent dans les métiers exposés à l'IA générative",
+          "texteHtml": "<p>Une étude portant sur plus de 1 500 métiers conclut que les jeunes actifs subissent déjà l'effet de l'IA générative sur l'emploi, avec un repli des recrutements en CDI dans les professions les plus exposées, rapporte le Journal du Net. Le signal est discret mais net : l'ajustement ne passe pas d'abord par des licenciements, il passe par les portes d'entrée qu'on cesse d'ouvrir. C'est le terrain où se joue une politique de formation et d'apprentissage.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/business/action-publique/1556107-les-embauches-en-cdi-des-jeunes-actifs-reculent-dans-les-metiers-exposes-a-l-ia-generative/"
+            }
+          ],
+          "rang": 4,
+          "id": "les-embauches-en-cdi-des-jeunes-reculent-dans-les-metiers"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Anthropic durcit sa politique d'usage et interdit les comportements « abusifs » envers Claude",
+          "texteHtml": "<p>Anthropic révise pour la première fois en plus d'un an la politique d'utilisation de son assistant Claude, rapportent TechCrunch et The Verge. Les nouvelles règles, en vigueur le 12 novembre, interdisent explicitement l'ingérence électorale, les campagnes de désinformation, le développement d'armes et certains usages de surveillance. Le changement le plus commenté porte sur un autre terrain : l'entreprise bannit les comportements « abusifs ou cruels » répétés et sans but envers Claude, tout en précisant que la frustration et la critique ordinaires restent permises. Anthropic s'appuie sur une fonction déjà existante qui autorise le modèle à mettre fin de lui-même à un échange. Derrière l'anecdote du « bien-être » d'une machine, l'entreprise ajuste surtout un contrat d'usage que ses clients professionnels devront relire.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude"
+            }
+          ],
+          "rang": 5,
+          "id": "anthropic-durcit-sa-politique-d-usage-et-interdit-les"
+        },
+        {
+          "titre": "Google transforme Gemini en agent pour les entreprises, avec sa propre identité au travail",
+          "texteHtml": "<p>Lors de son événement Gemini at Work, Google a présenté un agent capable de planifier, d'exécuter des tâches et de circuler entre les applications professionnelles, rapportent TechCrunch et The Verge. L'agent peut déléguer une partie du travail à des sous-agents, mobiliser plusieurs modèles, et surtout recevoir une identité propre dans l'entreprise, avec sa propre adresse de messagerie. Disponible dans l'application Gemini Enterprise, il se pilote depuis une interface unique où l'on converse avec lui et où on lui assigne des missions. Donner à un agent une adresse mail et une place dans l'annuaire, c'est le traiter comme un collaborateur numérique, avec les questions d'accès, de responsabilité et de journalisation que cela soulève. Pour les directions informatiques, l'enjeu devient de cadrer ce que cette identité a le droit de faire avant de la distribuer.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
+            }
+          ],
+          "rang": 6,
+          "id": "google-transforme-gemini-en-agent-pour-les-entreprises-avec"
+        },
+        {
+          "titre": "OpenAI publie 722 démonstrations mathématiques, des chercheurs appellent au boycott",
+          "texteHtml": "<p>Après la publication par OpenAI de 722 manuscrits de mathématiques produits par son IA, l'Association for Human Mathematics, collectif fondé en septembre 2026, appelle ses pairs à cesser toute collaboration avec l'entreprise, rapportent Numerama et TechCrunch. Terence Tao, médaillé Fields, a republié le texte sur son blog, et l'un des signataires résume la démarche en une phrase : « Ce n'est pas une démonstration d'érudition, mais de force. » TechCrunch relève de son côté que les preuves diffusées s'écartent des règles fixées par les mathématiciens qu'OpenAI avait pourtant consultés, et ne satisfont pas encore aux exigences de la discipline. L'épisode pose une question qui dépasse les mathématiques : quand une machine produit des résultats plus vite que les experts ne peuvent les vérifier, la valeur se déplace de la production vers la capacité de contrôle.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2349233-ce-nest-pas-une-demonstration-derudition-mais-de-force-des-mathematiciens-appellent-au-boycott-dopenai-apres-son-nouveau-coup.html"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-publie-722-demonstrations-mathematiques-des"
+        },
+        {
+          "titre": "Une introduction en Bourse soutenue par Nvidia s'effondre et alerte sur la fièvre des valorisations",
+          "texteHtml": "<p>Firmus Grid, hébergeur de centres de données adossé à Nvidia, a renoncé à ce qui aurait été l'une des plus grosses introductions en Bourse de l'histoire australienne, autour de 5 milliards de dollars, faute d'investisseurs internationaux, rapporte Bloomberg. Le retrait survient alors que les marchés s'inquiètent de valorisations jugées excessives dans toute la chaîne de l'IA. Le même jour, les actions des fabricants chinois de puces optiques prolongeaient leur chute, et l'indice CSI 300 tombait à son plus bas niveau depuis plus d'un an. Ces signaux ne disent pas que la demande d'IA faiblit, ils disent que les investisseurs cessent de financer n'importe quelle promesse à n'importe quel prix. Pour une organisation qui s'appuie sur un fournisseur d'IA, la solidité financière de ce dernier redevient un critère de choix.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-08/nvidia-backed-firmus-is-set-to-postpone-ipo-weigh-private-round"
+            }
+          ],
+          "rang": 8,
+          "id": "une-introduction-en-bourse-soutenue-par-nvidia-s-effondre"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La chinoise Manus lève plus de 500 millions de dollars, sa première levée depuis sa séparation d'avec Meta",
+          "texteHtml": "<p>La jeune pousse chinoise Manus, spécialisée dans les agents IA, a bouclé un tour de table de plus de 500 millions de dollars mené par Boyu Capital et IDG Capital, rapportent TechCrunch et Nikkei Asia. Des actionnaires déjà présents, dont Tencent, HSG (ex-Sequoia China) et ZhenFund, ont remis au pot. C'est la première levée de Manus depuis sa séparation d'avec Meta, et elle place la société parmi les acteurs chinois qui courent après le marché des « harnais » d'agents, ces systèmes qui font exécuter des tâches complètes à un modèle plutôt que de simples réponses. L'opération confirme que l'argent continue d'affluer vers les agents chinois, au moment où les valorisations américaines se crispent.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+            },
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/chinese-ai-startup-manus-drums-up-over-500m-in-fresh-funding"
+            }
+          ],
+          "rang": 9,
+          "id": "la-chinoise-manus-leve-plus-de-500-millions-de-dollars-sa"
+        },
+        {
+          "titre": "Samsung voit son bénéfice d'exploitation bondir de 782 % grâce aux puces mémoire pour l'IA",
+          "texteHtml": "<p>Samsung anticipe un bénéfice d'exploitation record d'environ 80 milliards de dollars (107 400 milliards de wons) au troisième trimestre, soit une hausse de 782,5 % sur un an, rapportent Siècle Digital et ZDNet. La demande de puces mémoire destinées aux serveurs d'IA porte ces résultats, les chiffres définitifs étant attendus le 29 octobre. Ce bond, qui profite aussi à SK Hynix et nourrit les dépenses publiques sud-coréennes, mesure l'ampleur du boum matériel : le fabricant qui vend les pelles de la ruée engrange des profits que peu de laboratoires d'IA affichent encore.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/10/08/samsung-affole-les-compteurs-avec-80-milliards-de-dollars-de-benefice-grace-a-lia/"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/samsung-voit-son-benefice-exploser-de-800-voici-ce-que-cela-cache-505437.htm"
+            }
+          ],
+          "rang": 10,
+          "id": "samsung-voit-son-benefice-d-exploitation-bondir-de-782"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Un test mesure si une IA juridique invente ses citations",
+          "texteHtml": "<p>Des chercheurs présentent PARCEL, un jeu d'évaluation bâti sur des décisions récentes de la Cour d'appel de l'État de New York, qui vérifie si une affirmation juridique est réellement soutenue par la source citée. Le jeu réunit 3 396 affirmations étiquetées « soutenue », « réfutée » ou « introuvable », et pose le problème comme une tâche d'inférence à trois issues sur laquelle plusieurs modèles de pointe trébuchent encore. L'intérêt pour un juriste est direct : une citation qui « sonne juste » n'est pas une citation exacte, et ce genre de test donne enfin un moyen chiffré de mesurer le risque d'hallucination avant d'intégrer un outil à un cabinet.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.10971"
+            }
+          ],
+          "rang": 11,
+          "id": "un-test-mesure-si-une-ia-juridique-invente-ses-citations"
+        },
+        {
+          "titre": "Un petit modèle affiné bat les grands modèles sur une tâche pédagogique",
+          "texteHtml": "<p>Une équipe montre qu'un petit modèle de langage affiné sur des données d'enseignants, un Qwen3.5 de 0,8 milliard de paramètres, dépasse des modèles de pointe sollicités par simple requête pour annoter la maîtrise grammaticale à partir de transcriptions de cours de langue. Le gain est double : de meilleures performances et un coût bien moindre à grande échelle, là où les grands modèles deviennent trop chers pour être lancés sur chaque transcription. Le résultat illustre un arbitrage que beaucoup d'organisations retrouveront : sur une tâche précise et répétée, un petit modèle spécialisé rend souvent plus de service qu'un modèle généraliste coûteux.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.10827"
+            }
+          ],
+          "rang": 12,
+          "id": "un-petit-modele-affine-bat-les-grands-modeles-sur-une-tache"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li>Les journalistes des neuf quotidiens du groupe EBRA sont appelés à la grève le vendredi 9 octobre par le Syndicat national des journalistes, contre un plan prévoyant près de 10 % de réduction d'effectifs et un recours accru à l'IA. <a href=\"https://www.lemonde.fr/economie/article/2026/10/08/dans-les-journaux-du-groupe-ebra-l-ia-au-c-ur-d-un-appel-a-la-greve_6790262_3234.html\" target=\"_blank\" rel=\"noopener noreferrer\">Le Monde</a></li>\n<li>Les actions des fabricants chinois de puces optiques prolongent leur chute, les investisseurs redoutant de nouvelles restrictions américaines à l'export, et entraînent la place de Hong Kong et l'indice CSI 300 à leur plus bas depuis plus d'un an.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-war/article/3370305/chinese-optical-chip-stocks-extend-rout-amid-fears-potential-us-curbs"
+            }
+          ],
+          "rang": 13,
+          "id": "les-journalistes-des-neuf-quotidiens-du-groupe-ebra"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Une étude sur plus de 1 500 métiers montre que les embauches en CDI des jeunes reculent dans les professions exposées à l'IA générative, le jour où les journalistes du groupe EBRA débrayent contre un plan mêlant coupes d'effectifs et recours accru à l'IA : ce qui change pour une organisation française, c'est que les tâches confiées aux débutants sont précisément celles que le modèle absorbe, et le levier concret est de conserver les postes juniors en refaisant leur contenu autour de la vérification et du pilotage des sorties de modèle, et d'inscrire l'apprentissage comme une ligne du plan plutôt que comme une victime du gain de productivité.",
+    "these": "Les organisations fabriquaient leur jugement expert en faisant produire aux juniors les premiers jets et les analyses répétitives, exactement ce que l'IA générative exécute aujourd'hui ; couper le bas de l'échelle économise des salaires cette année et assèche l'expertise dans cinq ans, si bien que le geste qui protège une entreprise française est de garder ses recrutements de débutants et d'en déplacer le cœur vers la correction, la vérification et le pilotage des modèles sous supervision, pour continuer de former ceux qui sauront, demain, distinguer une réponse plausible d'une réponse juste.",
+    "html": "<p>Une étude sur plus de 1 500 métiers montre que les embauches en CDI des jeunes reculent là où l'IA générative est la plus présente. Le signal est discret parce qu'il ne fait pas de bruit : personne n'est licencié, on cesse simplement d'ouvrir des portes d'entrée. Le même jour, les journalistes du groupe EBRA débrayent contre un plan qui mêle 10 % de coupes d'effectifs et davantage d'IA, et Nikkei décrit la machine à emplois des sociétés de services indiennes rattrapée par la même ombre.</p>\n<p>Le mécanisme est simple et c'est ce qui le rend sérieux. Les tâches que l'on confiait aux débutants, le premier jet, la synthèse, l'analyse répétitive, la mise en forme d'un dossier, sont exactement celles que le modèle exécute maintenant. L'arbitrage de court terme est tentant : on économise un salaire aujourd'hui. Il revient à scier le bas d'une échelle sur laquelle on monte encore.</p>\n<p>Car ces années de production ingrate n'étaient pas qu'un coût. Elles étaient la fabrique du jugement. Le senior qui repère en trois secondes qu'une réponse d'IA est fausse a gagné ce réflexe en produisant, jeune, des centaines de premiers jets qu'on lui corrigeait. Supprimez l'apprentissage, et dans cinq ans il ne reste personne, dans la pièce, pour distinguer une réponse plausible d'une réponse juste, au moment précis où cette distinction devient la compétence la plus chère.</p>\n<p>Le geste qui protège une organisation française tient en une bascule : garder ses recrutements de débutants et en refaire le contenu. La première année devient un apprentissage de la vérification : corriger et piloter les sorties du modèle sous le regard d'un senior, plutôt que produire seul le premier jet. On inscrit cet apprentissage comme une ligne du plan, pas comme une variable d'ajustement du gain de productivité, et on le mesure comme tel. Ce qu'une entreprise décide cette année de ses juniors dessine qui, dans dix ans, saura encore juger ce que sa machine lui répond.</p>",
+    "htmlExtrait": "<p>Une étude sur plus de 1 500 métiers montre que les embauches en CDI des jeunes reculent là où l'IA générative est la plus présente. Le signal est discret parce qu'il ne fait pas de bruit : personne n'est licencié, on cesse simplement d'ouvrir des portes d'entrée. Le même jour, les journalistes du groupe EBRA débrayent contre un plan qui mêle 10 % de coupes d'effectifs et davantage d'IA, et Nikkei décrit la machine à emplois des sociétés de services indiennes rattrapée par la même ombre.</p>\n<p>Le mécanisme est simple et c'est ce qui le rend sérieux. Les tâches que l'on confiait aux débutants, le premier jet, la synthèse, l'analyse répétitive, la mise en forme d'un dossier, sont exactement celles que le modèle exécute maintenant. L'arbitrage de court terme est tentant : on économise un salaire aujourd'hui. Il revient à scier le bas d'une échelle sur laquelle on monte encore.</p>",
+    "itemsCites": [],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-08",
+    "dateLongue": "jeudi 8 octobre 2026",
+    "titreEditorial": "Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act",
+    "nbItems": 12
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 21,
+  "nbSignes": 11051,
+  "tempsLecture": 9,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 2
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "ZDNet",
+    "TechCrunch",
+    "CNIL",
+    "Frandroid",
+    "Numerama",
+    "Journal du Net",
+    "The Verge",
+    "Bloomberg",
+    "Nikkei Asia"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 154,
+  "publieLe": "2026-10-09T09:36:25+02:00",
+  "publieLeAffiche": "9h36",
+  "ogImage": "/veille-data/og/2026-10-09.png"
+}

@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-08",
-    "totalEditions": 37,
-    "totalItems": 498,
-    "totalSources": 717
+    "derniereDate": "2026-10-09",
+    "totalEditions": 38,
+    "totalItems": 511,
+    "totalSources": 738
   },
   "editions": [
+    {
+      "date": "2026-10-09",
+      "dateAffichee": "9 October 2026",
+      "dateCourte": "Fri 9 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Hiring of young workers falls where generative AI takes hold: the organisation that rebuilds its early career years around learning to verify, instead of cutting its junior roles, keeps the ability to judge AI ten years from now",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-08",
       "dateAffichee": "8 October 2026",

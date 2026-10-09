@@ -239,7 +239,12 @@
     "titreEditorial": "AI pricing at work shifts from seat to meter",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-09",
+    "dateLongue": "Friday 9 October 2026",
+    "titreEditorial": "Hiring of young workers falls where generative AI takes hold: the organisation that rebuilds its early career years around learning to verify, instead of cutting its junior roles, keeps the ability to judge AI ten years from now",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 19,
   "nbSignes": 9716,

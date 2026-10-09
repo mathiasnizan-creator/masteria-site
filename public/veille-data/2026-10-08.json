@@ -239,7 +239,12 @@
     "titreEditorial": "Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-09",
+    "dateLongue": "vendredi 9 octobre 2026",
+    "titreEditorial": "Les embauches de jeunes reculent là où l'IA générative s'installe : l'organisation qui refait ses premières années de carrière en apprentissage de la vérification, au lieu de supprimer ses postes juniors, garde la capacité de juger l'IA dans dix ans",
+    "nbItems": 13
+  },
   "nbItems": 12,
   "nbSources": 19,
   "nbSignes": 10549,

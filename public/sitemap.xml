@@ -297,7 +297,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/contact</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/contact.jpg</image:loc></image:image>
@@ -479,7 +479,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -618,7 +618,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/centre-formation-ia-entreprise</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/centre-formation-ia-entreprise.jpg</image:loc></image:image>
@@ -982,7 +982,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch.jpg</image:loc></image:image>
@@ -1297,7 +1297,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/publications</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--publications.jpg</image:loc></image:image>
@@ -2010,6 +2010,12 @@
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--a-propos.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-10-09</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-10-08</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
@@ -2323,16 +2329,23 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/publications</loc>
-    <lastmod>2026-10-08</lastmod>
+    <lastmod>2026-10-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--publications.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-10-09</loc>
+    <lastmod>2026-10-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-10-08</loc>
     <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--2026-10-08.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-10-07</loc>
@@ -2588,14 +2601,14 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/mentions-legales</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.20</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/mentions-legales.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/politique-de-confidentialite</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.20</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/politique-de-confidentialite.jpg</image:loc></image:image>

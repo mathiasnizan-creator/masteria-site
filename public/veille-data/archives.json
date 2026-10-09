@@ -3,12 +3,128 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-08",
-    "totalEditions": 52,
-    "totalItems": 701,
-    "totalSources": 1029
+    "derniereDate": "2026-10-09",
+    "totalEditions": 53,
+    "totalItems": 714,
+    "totalSources": 1050
   },
   "editions": [
+    {
+      "date": "2026-10-09",
+      "dateCourte": "ven. 9 oct.",
+      "dateAffichee": "9 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Les embauches de jeunes reculent là où l'IA générative s'installe : l'organisation qui refait ses premières années de carrière en apprentissage de la vérification, au lieu de supprimer ses postes juniors, garde la capacité de juger l'IA dans dix ans",
+      "chapeau": "Le chiffre d'affaires d'OpenAI, ramené à 50 milliards de dollars au lieu des 70 attendus, fait reculer le Nasdaq et rouvre le procès d'une IA bâtie à crédit, pendant qu'une introduction en Bourse soutenue par Nvidia s'effondre en Australie. Sous le vacarme des valorisations, le marché du travail bouge déjà : les embauches de jeunes reculent dans les métiers exposés, les journalistes du groupe EBRA débrayent contre l'IA, et Anthropic comme Google réécrivent les règles de leurs agents.",
+      "nbItems": 13,
+      "nbSources": 21,
+      "tempsLecture": 9,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 2
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "ZDNet",
+        "TechCrunch",
+        "CNIL",
+        "Frandroid",
+        "Numerama",
+        "Journal du Net",
+        "The Verge",
+        "Bloomberg",
+        "Nikkei Asia",
+        "Siècle Digital",
+        "arXiv",
+        "South China Morning Post"
+      ],
+      "items": [
+        {
+          "t": "Le chiffre d'affaires réel d'OpenAI inquiète Wall Street",
+          "z": "une",
+          "id": "le-chiffre-d-affaires-reel-d-openai-inquiete-wall-street"
+        },
+        {
+          "t": "La CNIL lève l'injonction qui visait France Travail",
+          "z": "europe",
+          "id": "la-cnil-leve-l-injonction-qui-visait-france-travail"
+        },
+        {
+          "t": "Ecosia quitte Mistral pour des modèles ouverts, dont des modèles chinois, et Arthur Mensch répond",
+          "z": "europe",
+          "id": "ecosia-quitte-mistral-pour-des-modeles-ouverts-dont-des"
+        },
+        {
+          "t": "Les embauches en CDI des jeunes reculent dans les métiers exposés à l'IA générative",
+          "z": "europe",
+          "id": "les-embauches-en-cdi-des-jeunes-reculent-dans-les-metiers"
+        },
+        {
+          "t": "Anthropic durcit sa politique d'usage et interdit les comportements « abusifs » envers Claude",
+          "z": "international",
+          "id": "anthropic-durcit-sa-politique-d-usage-et-interdit-les"
+        },
+        {
+          "t": "Google transforme Gemini en agent pour les entreprises, avec sa propre identité au travail",
+          "z": "international",
+          "id": "google-transforme-gemini-en-agent-pour-les-entreprises-avec"
+        },
+        {
+          "t": "OpenAI publie 722 démonstrations mathématiques, des chercheurs appellent au boycott",
+          "z": "international",
+          "id": "openai-publie-722-demonstrations-mathematiques-des"
+        },
+        {
+          "t": "Une introduction en Bourse soutenue par Nvidia s'effondre et alerte sur la fièvre des valorisations",
+          "z": "international",
+          "id": "une-introduction-en-bourse-soutenue-par-nvidia-s-effondre"
+        },
+        {
+          "t": "La chinoise Manus lève plus de 500 millions de dollars, sa première levée depuis sa séparation d'avec Meta",
+          "z": "chine",
+          "id": "la-chinoise-manus-leve-plus-de-500-millions-de-dollars-sa"
+        },
+        {
+          "t": "Samsung voit son bénéfice d'exploitation bondir de 782 % grâce aux puces mémoire pour l'IA",
+          "z": "chine",
+          "id": "samsung-voit-son-benefice-d-exploitation-bondir-de-782"
+        },
+        {
+          "t": "Un test mesure si une IA juridique invente ses citations",
+          "z": "recherche",
+          "id": "un-test-mesure-si-une-ia-juridique-invente-ses-citations"
+        },
+        {
+          "t": "Un petit modèle affiné bat les grands modèles sur une tâche pédagogique",
+          "z": "recherche",
+          "id": "un-petit-modele-affine-bat-les-grands-modeles-sur-une-tache"
+        },
+        {
+          "t": "Les journalistes des neuf quotidiens du groupe EBRA sont appelés à la…",
+          "z": "bref",
+          "id": "les-journalistes-des-neuf-quotidiens-du-groupe-ebra"
+        }
+      ]
+    },
     {
       "date": "2026-10-08",
       "dateCourte": "jeu. 8 oct.",
