@@ -1,0 +1,283 @@
+{
+  "schema": 2,
+  "date": "2026-10-12",
+  "dateAffichee": "12 octobre 2026",
+  "dateLongue": "lundi 12 octobre 2026",
+  "dateCourte": "lun. 12 oct.",
+  "jourSemaine": "lundi",
+  "titre": "Veille IA - lundi 12 octobre 2026",
+  "titreEditorial": "Les marchés doutent du financement de l'IA",
+  "chapeau": "Les marchés et les patrons de la tech refroidissent ensemble l'enthousiasme sur l'IA, du marché obligataire que la dette des centres de données sature aux mises en garde de TikTok et Microsoft sur son immaturité. En Chine, les usines sautent l'étape de la numérisation pour passer directement aux agents, pendant qu'une étude écorne la recette à bas coût de DeepSeek.",
+  "une": {
+    "titre": "Le financement de l'IA change d'humeur",
+    "texteHtml": "<p>Tan Su Shan, directrice générale de la banque singapourienne DBS, affirme ce lundi que le marché réévalue les risques liés à la construction de l'IA, ce qui devrait ramener de la discipline dans les financements. Les chiffres expliquent la nervosité : les géants du cloud, les centres de données et les fabricants de puces empruntent des centaines de milliards de dollars pour bâtir leurs capacités, au point de devenir l'une des plus grosses forces nouvelles du crédit aux entreprises, et la question qui monte est de savoir combien de dette IA le marché peut absorber. Tim Adams, patron de l'Institute of International Finance, prévient que l'endettement des économies avancées continuera de grimper, porté par les États et par cet investissement privé dans les infrastructures d'IA. Le même lundi, Shou Zi Chew, patron de TikTok, et Judson Althoff, numéro deux de Microsoft, jugent le monde surexcité par l'IA et aveugle à son immaturité, la cybersécurité leur paraissant un danger plus immédiat qu'une IA qui progresserait trop vite.</p>",
+    "sources": [
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-12/dbs-ceo-tan-says-market-is-repricing-risks-on-ai-financing"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-11/is-ai-crowding-everyone-else-out-of-the-bond-market-video"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-12/iif-ceo-on-rising-global-debt-video"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-12/tiktok-s-chew-and-microsoft-s-althoff-warn-about-runaway-ai-hype"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "le-financement-de-l-ia-change-d-humeur"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Un site complotiste français écrit à distance, par IA interposée",
+          "texteHtml": "<p>Le Monde documente les coulisses de « Géopolitique profonde », l'un des sites majeurs de la complosphère française : des rédacteurs basés à Madagascar copient des articles trouvés en ligne, puis les confient à une intelligence artificielle chargée de leur donner une tonalité « plutôt pro-droite, pro-Trump, pro-Poutine, anti-UE ». La chaîne associe plagiat, sous-traitance à bas coût et réécriture automatisée, un assemblage qui industrialise la propagande pour quelques euros.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/afrique/article/2026/10/11/derriere-le-site-complotiste-geopolitique-profonde-plagiat-ia-et-sous-traitance-a-madagascar_6791783_3212.html"
+            }
+          ],
+          "rang": 2,
+          "id": "un-site-complotiste-francais-ecrit-a-distance-par-ia"
+        },
+        {
+          "titre": "Les responsables sécurité craignent que l'IA industrialise les fuites de données",
+          "texteHtml": "<p>Aux Assises de la cybersécurité, tenues du 7 au 9 octobre à Monaco, les RSSI invités disent avoir enfin libéré la parole sur les fuites. Leur inquiétude du moment : l'IA accélère et outille les attaques comme l'exfiltration de données, et déplace le curseur du risque bien avant les scénarios lointains.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/cybersecurite/1556411-assises-de-la-cybersecurite-2026-cette-annee-la-parole-s-est-enfin-liberee-sur-les-fuites-de-donnees/"
+            }
+          ],
+          "rang": 3,
+          "id": "les-responsables-securite-craignent-que-l-ia-industrialise"
+        },
+        {
+          "titre": "Microsoft fait entrer Office dans Copilot",
+          "texteHtml": "<p>La nouvelle application Copilot embarquera l'ensemble des fonctions de Word, Excel et PowerPoint. Les utilisateurs pourront créer et retoucher leurs documents directement depuis l'assistant, sans ouvrir les logiciels classiques. Un pas de plus vers une bureautique où le texte, le tableur et la présentation passent par le modèle.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/microsoft-integre-les-applis-office-directement-dans-copilot.html"
+            }
+          ],
+          "rang": 4,
+          "id": "microsoft-fait-entrer-office-dans-copilot"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Le FMI parle d'un « tsunami au ralenti » pour l'emploi et l'impôt",
+          "texteHtml": "<p>Kristalina Georgieva, directrice générale du Fonds monétaire international, se dit alarmée par l'effet de l'IA sur le marché du travail et sur les recettes fiscales, et presse les responsables publics de repenser l'éducation et d'agir maintenant pour aider la société à s'adapter. L'avertissement tombe pendant l'assemblée du FMI à Bangkok, où l'inflation, l'IA et le climat ouvrent les discussions. La formule « tsunami au ralenti » dit l'essentiel : la vague est lente, donc sous-estimée, mais elle arrive.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-12/imf-chief-alarmed-at-slow-moving-tsunami-of-ai-for-jobs-taxes"
+            }
+          ],
+          "rang": 5,
+          "id": "le-fmi-parle-d-un-tsunami-au-ralenti-pour-l-emploi-et-l"
+        },
+        {
+          "titre": "Amazon négocierait le rachat de Decart pour environ 7 milliards de dollars",
+          "texteHtml": "<p>Selon le Wall Street Journal, cité par Bloomberg, Amazon discute l'acquisition de la jeune pousse d'IA Decart, dans une opération qui pourrait atteindre 7 milliards de dollars. L'information reste au stade des négociations, sans confirmation des parties, mais le montant situe Decart parmi les cibles les plus chères de l'année pour un géant du cloud.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-11/amazon-is-in-talks-to-buy-ai-startup-decart-wsj-reports"
+            }
+          ],
+          "rang": 6,
+          "id": "amazon-negocierait-le-rachat-de-decart-pour-environ-7"
+        },
+        {
+          "titre": "La Silicon Valley adopte le « super intelligence » de Donald Trump",
+          "texteHtml": "<p>Après l'annonce présidentielle de rebaptiser l'intelligence artificielle en « super intelligence », plusieurs figures influentes de la tech reprennent le terme, quand le grand public, lui, continue de dire « IA ». L'épisode a même déclenché une ruée sur les noms de domaine en .si. Un glissement de vocabulaire qui en dit long sur l'alignement d'une partie du secteur avec Washington.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1009406/silicon-valley-is-falling-in-line-with-trumps-attempt-to-rename-ai"
+            }
+          ],
+          "rang": 7,
+          "id": "la-silicon-valley-adopte-le-super-intelligence-de-donald"
+        },
+        {
+          "titre": "TSMC vers un bénéfice trimestriel record",
+          "texteHtml": "<p>Le fondeur taïwanais, qui fabrique les puces de NVIDIA et d'Apple, devrait annoncer jeudi un bénéfice record au troisième trimestre, porté par la demande de puces pour l'IA. Les investisseurs attendent aussi des précisions sur une possible extension de ses capacités au Texas.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-633688-porte-par-le-vent-de-l-ia-le-fabricant-des-puces-de-nvidia-et-d-apple-file-vers-un-nouveau-record.html"
+            }
+          ],
+          "rang": 8,
+          "id": "tsmc-vers-un-benefice-trimestriel-record"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les usines chinoises passent directement aux agents IA",
+          "texteHtml": "<p>Zhou Yuxiang, patron de Black Lake, fournisseur chinois d'outils d'IA en nuage pour l'industrie, décrit un bond par-dessus les étapes : « Comme la Chine a sauté la carte bancaire pour aller droit au paiement mobile, beaucoup d'usines sautent la numérisation classique pour passer directement aux agents IA. » Ces agents, des programmes qui exécutent des tâches de bout en bout sans intervention à chaque étape, s'installent dans la production, puis s'exportent vers les chaînes d'approvisionnement mondiales. Le récit mérite prudence, puisqu'il émane d'un vendeur de la technologie, mais il désigne une trajectoire réelle : la Chine industrialise l'agent plutôt que de le tester.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3370490/chinas-factories-leaping-straight-agentic-ai-and-taking-it-global-black-lake-ceo?utm_source=rss_feed"
+            }
+          ],
+          "rang": 9,
+          "id": "les-usines-chinoises-passent-directement-aux-agents-ia"
+        },
+        {
+          "titre": "Une étude écorne la recette à bas coût de DeepSeek",
+          "texteHtml": "<p>Des chercheurs de ByteDance, avec des co-auteurs de Princeton, Stanford et Berkeley, ont publié fin septembre un travail qui pointe une faille possible dans la technique d'économie de mémoire au cœur des modèles de DeepSeek. Cette compression, qui réduit la mémoire mobilisée pendant l'inférence (le coût de faire tourner le modèle une fois entraîné), pourrait dégrader la justesse des réponses. L'enjeu dépasse un laboratoire : c'est justement cette approche frugale qui a permis au chinois DeepSeek de se rapprocher d'OpenAI et d'Anthropic à moindre coût. La critique reste rare pour une méthode devenue une référence.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3370550/deepseeks-cost-saving-ai-may-lead-inaccuracy-model-performance-research?utm_source=rss_feed"
+            }
+          ],
+          "rang": 10,
+          "id": "une-etude-ecorne-la-recette-a-bas-cout-de-deepseek"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Des modèles mis à l'épreuve sur un jeu de stratégie au long cours",
+          "texteHtml": "<p>Le banc d'essai SpireBench fait jouer des modèles d'IA au jeu de cartes commercial Slay the Spire, où une décision précoce pèse sur l'issue d'une partie entière. Sur vingt modèles testés au plus haut niveau de difficulté, les meilleurs battent des règles heuristiques simples et égalent le joueur humain moyen, sans le dépasser. L'intérêt : la plupart des tests d'agents restent courts et épisodiques, et cette mesure du raisonnement stratégique sur une longue durée rappelle que « surhumain » n'est pas encore le mot juste.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.12596"
+            }
+          ],
+          "rang": 11,
+          "id": "des-modeles-mis-a-l-epreuve-sur-un-jeu-de-strategie-au-long"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li>Aux États-Unis, des agents IA personnels épluchent les relevés bancaires pour repérer les abonnements oubliés ou en double, puis négocient directement avec les services clients, une pratique qui pourrait coûter des milliards aux assureurs et aux opérateurs, et qui en France pourrait opposer l'agent du client à l'IA du service client. <a href=\"https://www.clubic.com/actualite-633643-les-agents-ia-qui-negocient-vos-factures-pourraient-couter-des-milliards-aux-entreprises.html\" target=\"_blank\" rel=\"noopener noreferrer\">Clubic</a></li>\n<li>OpenAI réduira de moitié les limites de ChatGPT Pro à la fin du mois et ouvre un palier à 500 dollars, pendant qu'une analyse indépendante chiffre la générosité comparée des abonnements de son rival Claude. <a href=\"https://www.01net.com/actualites/chatgpt-vs-claude-quel-abonnement-ia-est-le-plus-genereux-une-etude-a-tranche.html\" target=\"_blank\" rel=\"noopener noreferrer\">01net</a></li>\n<li>À Hong Kong, un sondage de T. Rowe Price auprès de 1 004 actifs de 30 ans et plus montre que 55 % redoutent que l'IA déstabilise leur carrière et leurs revenus, mais qu'un sur cinq seulement se sent financièrement prêt.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/business/banking-finance/article/3370504/hong-kong-workers-fear-ai-driven-disruption-retirement-only-20-feel-prepared-survey?utm_source=rss_feed"
+            }
+          ],
+          "rang": 12,
+          "id": "aux-etats-unis-des-agents-ia-personnels-epluchent-les"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Le vrai risque proche de l'IA tient à la sécurité des données, quand l'adoption va plus vite que la gouvernance",
+    "these": "Ceux qui construisent et financent l'IA alertent sur sa sécurité ; dans les organisations, l'adoption dépasse la gouvernance des données, et le geste utile est un contrôle d'exposition avant chaque déploiement.",
+    "html": "<p>Shou Zi Chew, patron de TikTok, et Judson Althoff, numéro deux de Microsoft, ont tenu le même propos ce lundi : le risque proche de l'IA tient à sa sécurité, quand la course à la « super intelligence » occupe les discours. Au même moment, les financiers réunis au forum asiatique de DBS et à l'assemblée du FMI à Bangkok s'inquiètent de la dette levée pour bâtir l'IA et en réévaluent le risque. Le marché doute, les bâtisseurs avertissent, et pourtant rien ne ralentit sur le terrain.</p>\n<p>Microsoft fait entrer Word, Excel et PowerPoint dans Copilot. Des agents personnels lisent déjà les relevés bancaires pour négocier les factures. Chaque semaine, davantage de données d'entreprise passent dans des modèles. Les responsables sécurité réunis aux Assises de Monaco le disent sans détour : l'IA outille et accélère les fuites de données.</p>\n<p>Nous observons un écart qui se creuse. La capacité à déployer l'IA va plus vite que la capacité à la gouverner, et c'est dans cet écart que se logent les pertes des prochains mois, pas dans un scénario de machine devenue trop intelligente. Une fuite de données personnelles se paie en clients perdus, en confiance entamée et en sanction de la CNIL, là où un contrôle avant déploiement coûte quelques jours de travail.</p>\n<p>Le geste utile n'a rien de spectaculaire. Avant chaque nouveau déploiement d'IA, un contrôle d'exposition : quelles données l'outil voit-il, où partent-elles, qui a validé l'usage ? Et une règle apprise par chaque équipe sur ce qu'on ne colle jamais dans un assistant, contrat client, données de santé, code propriétaire, dossier RH. La gouvernance des données devient une compétence, au même rang que savoir rédiger une bonne requête.</p>\n<p>La « super intelligence » fait les gros titres ; la sécurité des données fait les dégâts. Les organisations qui règlent la seconde d'abord adopteront l'IA plus vite que celles qui attendront l'incident pour s'y mettre.</p>",
+    "htmlExtrait": "<p>Shou Zi Chew, patron de TikTok, et Judson Althoff, numéro deux de Microsoft, ont tenu le même propos ce lundi : le risque proche de l'IA tient à sa sécurité, quand la course à la « super intelligence » occupe les discours. Au même moment, les financiers réunis au forum asiatique de DBS et à l'assemblée du FMI à Bangkok s'inquiètent de la dette levée pour bâtir l'IA et en réévaluent le risque. Le marché doute, les bâtisseurs avertissent, et pourtant rien ne ralentit sur le terrain.</p>\n<p>Microsoft fait entrer Word, Excel et PowerPoint dans Copilot. Des agents personnels lisent déjà les relevés bancaires pour négocier les factures. Chaque semaine, davantage de données d'entreprise passent dans des modèles. Les responsables sécurité réunis aux Assises de Monaco le disent sans détour : l'IA outille et accélère les fuites de données.</p>",
+    "itemsCites": [
+      1,
+      3,
+      4,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-09",
+    "dateLongue": "vendredi 9 octobre 2026",
+    "titreEditorial": "L'IA grignote les premiers emplois des jeunes",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-10-13",
+    "dateLongue": "mardi 13 octobre 2026",
+    "titreEditorial": "Meta place Muse Wonder juste derrière Claude",
+    "nbItems": 14
+  },
+  "nbItems": 12,
+  "nbSources": 15,
+  "nbSignes": 8172,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Bloomberg",
+    "Le Monde",
+    "Journal du Net",
+    "01net",
+    "The Verge",
+    "Clubic",
+    "South China Morning Post",
+    "arXiv"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 71,
+  "publieLe": "2026-10-12T09:45:47+02:00",
+  "publieLeAffiche": "9h45",
+  "ogImage": "/veille-data/og/2026-10-12.png"
+}

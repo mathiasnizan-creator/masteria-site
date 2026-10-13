@@ -3,12 +3,240 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-09",
-    "totalEditions": 38,
-    "totalItems": 511,
-    "totalSources": 738
+    "derniereDate": "2026-10-13",
+    "totalEditions": 40,
+    "totalItems": 537,
+    "totalSources": 773
   },
   "editions": [
+    {
+      "date": "2026-10-13",
+      "dateCourte": "Tue 13 Oct",
+      "dateAffichee": "13 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Meta places Muse Wonder just behind Claude",
+      "chapeau": "Meta lifts Muse Wonder to the level of the best models, just behind Claude, while Microsoft unveils its Maia 300 chip to loosen Nvidia's grip. On the same day, Satya Nadella calls for a human stop button on models, Anthropic cuts internet access for its evaluation AIs, and three safety researchers laid off by OpenAI speak out.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 6,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Frandroid",
+        "TechCrunch",
+        "La Tribune",
+        "Clubic",
+        "The Verge",
+        "Siècle Digital",
+        "Bloomberg",
+        "404 Media",
+        "South China Morning Post",
+        "arXiv",
+        "Journal du Net",
+        "01net",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Meta returns to the AI frontier with Muse Wonder",
+          "z": "une",
+          "id": "meta-returns-to-the-ai-frontier-with-muse-wonder"
+        },
+        {
+          "t": "Safety researchers publicly leave OpenAI and Anthropic",
+          "z": "europe",
+          "id": "safety-researchers-publicly-leave-openai-and-anthropic"
+        },
+        {
+          "t": "Linus Torvalds publishes Linux patches written with Claude Code",
+          "z": "europe",
+          "id": "linus-torvalds-publishes-linux-patches-written-with-claude"
+        },
+        {
+          "t": "Airbus's Valkyrie combat drone makes its first flight in Europe",
+          "z": "europe",
+          "id": "airbus-s-valkyrie-combat-drone-makes-its-first-flight-in"
+        },
+        {
+          "t": "Microsoft launches Maia 300 to reduce its dependence on Nvidia",
+          "z": "international",
+          "id": "microsoft-launches-maia-300-to-reduce-its-dependence-on"
+        },
+        {
+          "t": "Satya Nadella wants a human stop button on models",
+          "z": "international",
+          "id": "satya-nadella-wants-a-human-stop-button-on-models"
+        },
+        {
+          "t": "A web of cross-investments stirs echoes of 2008",
+          "z": "international",
+          "id": "a-web-of-cross-investments-stirs-echoes-of-2008"
+        },
+        {
+          "t": "An AI tool finds a home from a single interior photo",
+          "z": "international",
+          "id": "an-ai-tool-finds-a-home-from-a-single-interior-photo"
+        },
+        {
+          "t": "China weighs more than it appears in the American chip supply chain",
+          "z": "chine",
+          "id": "china-weighs-more-than-it-appears-in-the-american-chip"
+        },
+        {
+          "t": "China Mobile triples its largest computing hub in Inner Mongolia",
+          "z": "chine",
+          "id": "china-mobile-triples-its-largest-computing-hub-in-inner"
+        },
+        {
+          "t": "A model can help choose what it should not forget",
+          "z": "recherche",
+          "id": "a-model-can-help-choose-what-it-should-not-forget"
+        },
+        {
+          "t": "A health AI must also know how to refuse an instruction",
+          "z": "bref",
+          "id": "a-health-ai-must-also-know-how-to-refuse-an-instruction"
+        },
+        {
+          "t": "Anthropic cuts internet access for its evaluation AIs",
+          "z": "bref",
+          "id": "anthropic-cuts-internet-access-for-its-evaluation-ais"
+        },
+        {
+          "t": "NTT will build Anthropic's first data centre in Japan",
+          "z": "bref",
+          "id": "ntt-will-build-anthropic-s-first-data-centre-in-japan"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "dateCourte": "Mon 12 Oct",
+      "dateAffichee": "12 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Markets start doubting how AI is funded",
+      "chapeau": "Markets and tech bosses are cooling the enthusiasm around AI together, from a bond market being saturated by data-centre debt to warnings from TikTok and Microsoft about how immature it still is. In China, factories are skipping the digitisation step and moving straight to agents, while a study chips away at DeepSeek's low-cost recipe.",
+      "nbItems": 12,
+      "nbSources": 15,
+      "tempsLecture": 6,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "Le Monde",
+        "Journal du Net",
+        "01net",
+        "The Verge",
+        "Clubic",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "The mood around AI funding is shifting",
+          "z": "une",
+          "id": "the-mood-around-ai-funding-is-shifting"
+        },
+        {
+          "t": "A French conspiracy site written remotely, through AI",
+          "z": "europe",
+          "id": "a-french-conspiracy-site-written-remotely-through-ai"
+        },
+        {
+          "t": "Security chiefs fear AI will industrialise data leaks",
+          "z": "europe",
+          "id": "security-chiefs-fear-ai-will-industrialise-data-leaks"
+        },
+        {
+          "t": "Microsoft brings Office into Copilot",
+          "z": "europe",
+          "id": "microsoft-brings-office-into-copilot"
+        },
+        {
+          "t": "The IMF calls it a \"slow-moving tsunami\" for jobs and taxes",
+          "z": "international",
+          "id": "the-imf-calls-it-a-slow-moving-tsunami-for-jobs-and-taxes"
+        },
+        {
+          "t": "Amazon reportedly in talks to buy Decart for around $7 billion",
+          "z": "international",
+          "id": "amazon-reportedly-in-talks-to-buy-decart-for-around-7"
+        },
+        {
+          "t": "Silicon Valley adopts Donald Trump's \"super intelligence\"",
+          "z": "international",
+          "id": "silicon-valley-adopts-donald-trump-s-super-intelligence"
+        },
+        {
+          "t": "TSMC heading for a record quarterly profit",
+          "z": "international",
+          "id": "tsmc-heading-for-a-record-quarterly-profit"
+        },
+        {
+          "t": "Chinese factories are moving straight to AI agents",
+          "z": "chine",
+          "id": "chinese-factories-are-moving-straight-to-ai-agents"
+        },
+        {
+          "t": "A study chips away at DeepSeek's low-cost recipe",
+          "z": "chine",
+          "id": "a-study-chips-away-at-deepseek-s-low-cost-recipe"
+        },
+        {
+          "t": "Models put to the test on a long-haul strategy game",
+          "z": "recherche",
+          "id": "models-put-to-the-test-on-a-long-haul-strategy-game"
+        },
+        {
+          "t": "In the United States, personal AI agents comb through bank statements to…",
+          "z": "bref",
+          "id": "in-the-united-states-personal-ai-agents-comb"
+        }
+      ]
+    },
     {
       "date": "2026-10-09",
       "dateCourte": "Fri 9 Oct",

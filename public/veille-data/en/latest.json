@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-09",
-    "totalEditions": 38,
-    "totalItems": 511,
-    "totalSources": 738
+    "derniereDate": "2026-10-13",
+    "totalEditions": 40,
+    "totalItems": 537,
+    "totalSources": 773
   },
   "recentes": [
+    {
+      "date": "2026-10-13",
+      "dateAffichee": "13 October 2026",
+      "dateCourte": "Tue 13 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Meta places Muse Wonder just behind Claude",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 6
+    },
+    {
+      "date": "2026-10-12",
+      "dateAffichee": "12 October 2026",
+      "dateCourte": "Mon 12 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Markets start doubting how AI is funded",
+      "nbItems": 12,
+      "nbSources": 15,
+      "tempsLecture": 6
+    },
     {
       "date": "2026-10-09",
       "dateAffichee": "9 October 2026",
@@ -430,35 +452,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-10-09",
-    "dateAffichee": "9 October 2026",
-    "dateLongue": "Friday 9 October 2026",
-    "dateCourte": "Fri 9 Oct",
-    "jourSemaine": "Friday",
-    "titre": "AI Watch - Friday 9 October 2026",
-    "titreEditorial": "AI chips away at young people's first jobs",
-    "chapeau": "OpenAI's revenue, revised down to $50 billion instead of the $70 billion expected, pushes the Nasdaq lower and reopens the case of an AI built on credit, while an IPO backed by Nvidia collapses in Australia. Beneath the noise of valuations, the labour market is already shifting: hiring of young people is falling in exposed occupations, journalists at the EBRA group are walking out over AI, and both Anthropic and Google are rewriting the rules for their agents.",
+    "date": "2026-10-13",
+    "dateAffichee": "13 October 2026",
+    "dateLongue": "Tuesday 13 October 2026",
+    "dateCourte": "Tue 13 Oct",
+    "jourSemaine": "Tuesday",
+    "titre": "AI Watch - Tuesday 13 October 2026",
+    "titreEditorial": "Meta places Muse Wonder just behind Claude",
+    "chapeau": "Meta lifts Muse Wonder to the level of the best models, just behind Claude, while Microsoft unveils its Maia 300 chip to loosen Nvidia's grip. On the same day, Satya Nadella calls for a human stop button on models, Anthropic cuts internet access for its evaluation AIs, and three safety researchers laid off by OpenAI speak out.",
     "une": {
-      "titre": "OpenAI's real revenue worries Wall Street",
-      "texteHtml": "<p>OpenAI reportedly told its investors in late September that its annualised revenue was close to $50 billion, far short of the $68 to $70 billion that projections had attributed to the company, Le Monde, ZDNet and TechCrunch report. The gap is said to come from calculation methods, but it was enough to push the Nasdaq lower and weigh on Nvidia, Oracle and Intel, whose valuations rest in part on the promise of orders from OpenAI. The company has also pushed its stock market debut back to early 2027, citing debates about the risks AI poses. OpenAI, for its part, maintains that it will reach or exceed $70 billion in annualised revenue by the end of 2026, driven by its enterprise customers, according to sources cited by Bloomberg. What both camps agree on is telling: the volume of tokens processed, meaning actual usage, keeps climbing, even as the accounting revenue is disputed. The point remains that AI's financial edifice shows itself sensitive to the slightest doubt about the revenue that must one day repay the data centres.</p>",
+      "titre": "Meta returns to the AI frontier with Muse Wonder",
+      "texteHtml": "<p>Meta's lab presented two models on Monday 12 October, Muse Wonder and Muse Wonder Full, designed to run agents (programs that carry out tasks end to end). Mark Zuckerberg says the launch puts the company \"at the cutting edge\" and claims parity with OpenAI's GPT-6 Astra and Anthropic's Claude Fable 5.1. The first independent ranking tempers the claim: it places Muse Wonder Full in second position, behind Claude Opus 5.5. Meta highlights a memory meant to retain for months what matters to the user, and safeguards meant to stop agents from drifting off task. On Wall Street, Meta's stock rose on the announcement.</p>",
       "sources": [
         {
           "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/economie/article/2026/10/09/les-ambiguites-sur-le-chiffre-d-affaires-d-openai-effraient-wall-street_6790497_3234.html"
+          "url": "https://www.lemonde.fr/pixels/article/2026/10/13/le-groupe-meta-devoile-son-nouveau-modele-d-ia-muse-wonder-cense-rivaliser-avec-chatgpt-et-claude_6792943_4408996.html"
         },
         {
-          "nom": "ZDNet",
-          "url": "https://www.zdnet.fr/actualites/50-ou-70-milliards-les-chiffres-dopenai-font-vaciller-les-valeurs-de-lia-a-wall-street-505439.htm"
+          "nom": "Frandroid",
+          "url": "https://www.frandroid.com/marques/meta/3282445_meta-annonce-muse-wonder-et-dit-avoir-rattrape-les-meilleurs-en-ia-le-premier-test-independant-nuance"
         },
         {
           "nom": "TechCrunch",
-          "url": "https://techcrunch.com/2026/10/08/openais-revenue-is-reportedly-20-billion-less-than-previously-projected/"
+          "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "openai-s-real-revenue-worries-wall-street"
+      "id": "meta-returns-to-the-ai-frontier-with-muse-wonder"
     },
     "sections": [
       {
@@ -468,44 +490,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The CNIL lifts the order it had issued against France Travail",
-            "texteHtml": "<p>By a decision dated 23 September 2026, the CNIL (France's data protection authority) closed the order it had issued on 22 January against France Travail (the national employment agency), without applying the penalty payment it had set, since the body had brought its data processing into compliance. The decision closes a case opened over the handling of jobseekers' data. For public bodies equipping their services with AI and automated processing, it is a reminder that documented compliance suspends the financial penalty.</p>",
+            "titre": "Safety researchers publicly leave OpenAI and Anthropic",
+            "texteHtml": "<p>Statements from former staff of AI labs are multiplying this autumn, La Tribune reports. The latest come from three safety researchers laid off by OpenAI, whose accounts point to the absence of any real oversight of the sector. These documented departures, also relayed by Le Monde, put a face on the growing concerns over the internal governance of models.</p>",
             "sources": [
               {
-                "nom": "CNIL",
-                "url": "https://www.cnil.fr/fr/cloture-injonction-france-travail"
+                "nom": "La Tribune",
+                "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/50074200725051/openai-anthropic-pourquoi-les-chercheurs-quittent-publiquement-les-poids-lourds-de-lia"
               }
             ],
             "rang": 2,
-            "id": "the-cnil-lifts-the-order-it-had-issued-against-france"
+            "id": "safety-researchers-publicly-leave-openai-and-anthropic"
           },
           {
-            "titre": "Ecosia drops Mistral for open models, including Chinese ones, and Arthur Mensch responds",
-            "texteHtml": "<p>The German search engine Ecosia, which funds reforestation, is abandoning Mistral five months after choosing it and switching to open-weight models (which you can download and run yourself), several of Chinese origin, citing quality, sovereignty and French nuclear power. Arthur Mensch, head of Mistral, responded publicly: \"Sorry if nuclear power is a real dealbreaker.\" The episode stings for a \"European green tech\" firm that prefers Chinese models to a French champion, and it shows how fast a sovereignty argument turns around when the product disappoints.</p>",
+            "titre": "Linus Torvalds publishes Linux patches written with Claude Code",
+            "texteHtml": "<p>The creator of Linux has published a series of eight kernel patches produced with Claude Code, Anthropic's programming assistant, Frandroid reports. In 2024, Torvalds still described AI as \"90% marketing\". The move stays measured: he keeps control of the review and integrates only what his judgment validates.</p>",
             "sources": [
               {
                 "nom": "Frandroid",
-                "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/3278721_ecosia-quitte-mistral-pour-des-ia-chinoises-arthur-mensch-repond-desole-si-le-nucleaire-est-un-vrai-point-de-blocage"
-              },
-              {
-                "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2349811-lallemand-ecosia-lache-mistral-et-ose-evoquer-lenergie-nucleaire-francaise-dans-ses-raisons.html"
+                "url": "https://www.frandroid.com/os/gnu-linux/3282511_linus-torvalds-qui-reduisait-lia-a-90-de-marketing-publie-un-patch-du-noyau-linux-ecrit-avec-claude-code"
               }
             ],
             "rang": 3,
-            "id": "ecosia-drops-mistral-for-open-models-including-chinese-ones"
+            "id": "linus-torvalds-publishes-linux-patches-written-with-claude"
           },
           {
-            "titre": "Permanent hiring of young people is falling in jobs exposed to generative AI",
-            "texteHtml": "<p>A study covering more than 1,500 occupations concludes that young workers are already feeling the effect of generative AI on employment, with a decline in permanent hiring in the most exposed professions, the Journal du Net reports. The signal is quiet but clear: the adjustment does not come first through layoffs, it comes through the entry doors that stop being opened. This is the ground where training and apprenticeship policy is decided.</p>",
+            "titre": "Airbus's Valkyrie combat drone makes its first flight in Europe",
+            "texteHtml": "<p>Airbus and Kratos have completed the first European flight of the U740 Valkyrie, a combat drone meant to accompany piloted aircraft, Clubic reports. The aircraft will receive a European mission system equipped with AI and targets combat service entry by 2029.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/business/action-publique/1556107-les-embauches-en-cdi-des-jeunes-actifs-reculent-dans-les-metiers-exposes-a-l-ia-generative/"
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-633748-sans-piste-ni-pilote-le-drone-de-combat-valkyrie-d-airbus-a-pris-son-envol-en-europe.html"
               }
             ],
             "rang": 4,
-            "id": "permanent-hiring-of-young-people-is-falling-in-jobs-exposed"
+            "id": "airbus-s-valkyrie-combat-drone-makes-its-first-flight-in"
           }
         ]
       },
@@ -516,64 +534,68 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Anthropic tightens its usage policy and bans \"abusive\" behaviour towards Claude",
-            "texteHtml": "<p>Anthropic is revising the usage policy of its Claude assistant for the first time in more than a year, TechCrunch and The Verge report. The new rules, in force on 12 November, explicitly ban election interference, disinformation campaigns, weapons development and certain surveillance uses. The most discussed change concerns another area: the company bans repeated, purposeless \"abusive or cruel\" behaviour towards Claude, while making clear that ordinary frustration and criticism remain allowed. Anthropic relies on an existing feature that lets the model end a conversation on its own. Behind the anecdote of a machine's \"wellbeing\", the company is mainly adjusting a usage contract that its professional customers will have to reread.</p>",
+            "titre": "Microsoft launches Maia 300 to reduce its dependence on Nvidia",
+            "texteHtml": "<p>Microsoft unveiled Maia 300 on Monday, the third generation of its in-house chip dedicated to inference (the cost of running a model once it is trained). The company announces performance seven times higher than the previous generation and a rollout in its data centres from 2027, at the scale of several gigawatts. By making its own chip, Microsoft seeks to loosen its dependence on Nvidia's graphics processors and to control the whole chain, from hardware to software.</p>",
             "sources": [
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+                "nom": "La Tribune",
+                "url": "https://www.latribune.fr/article/tech/informatique/1196293409157914/face-a-nvidia-microsoft-veut-se-tailler-une-place-sur-le-marche-des-puces-ia"
               },
               {
                 "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude"
+                "url": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout"
               }
             ],
             "rang": 5,
-            "id": "anthropic-tightens-its-usage-policy-and-bans-abusive"
+            "id": "microsoft-launches-maia-300-to-reduce-its-dependence-on"
           },
           {
-            "titre": "Google turns Gemini into an agent for businesses, with its own workplace identity",
-            "texteHtml": "<p>At its Gemini at Work event, Google presented an agent able to plan, carry out tasks and move between business applications, TechCrunch and The Verge report. The agent can delegate part of the work to sub-agents, call on several models, and above all receive an identity of its own within the company, with its own email address. Available in the Gemini Enterprise app, it is managed from a single interface where you talk to it and assign it missions. Giving an agent an email address and a place in the directory means treating it as a digital colleague, with the questions of access, accountability and logging that this raises. For IT departments, the challenge becomes framing what this identity is allowed to do before handing it out.</p>",
+            "titre": "Satya Nadella wants a human stop button on models",
+            "texteHtml": "<p>Microsoft's CEO warns against blind trust in the most advanced AI models, Siècle Digital reports. He argues they should be treated as potentially compromised from the design stage, and that a human must be able to interrupt a task at any moment. The warning echoes that of Brad Smith, Microsoft's president, who judges AI today less regulated than milk or washing machines and calls for fast regulation.</p>",
             "sources": [
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/"
+                "nom": "Siècle Digital",
+                "url": "https://siecledigital.fr/2026/10/12/et-si-lia-echappait-a-tout-controle-le-pdg-de-microsoft-lance-un-avertissement/"
               },
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/"
               }
             ],
             "rang": 6,
-            "id": "google-turns-gemini-into-an-agent-for-businesses-with-its"
+            "id": "satya-nadella-wants-a-human-stop-button-on-models"
           },
           {
-            "titre": "OpenAI publishes 722 mathematical proofs, researchers call for a boycott",
-            "texteHtml": "<p>After OpenAI published 722 mathematics manuscripts produced by its AI, the Association for Human Mathematics, a collective founded in September 2026, is calling on its peers to stop all collaboration with the company, Numerama and TechCrunch report. Terence Tao, a Fields medallist, reposted the text on his blog, and one of the signatories sums up the move in a sentence: \"This is not a demonstration of scholarship, but of force.\" TechCrunch, for its part, notes that the proofs released depart from the rules set by the mathematicians OpenAI had nonetheless consulted, and do not yet meet the discipline's standards. The episode raises a question that goes beyond mathematics: when a machine produces results faster than experts can verify them, value shifts from production to the capacity to check.</p>",
-            "sources": [
-              {
-                "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2349233-ce-nest-pas-une-demonstration-derudition-mais-de-force-des-mathematiciens-appellent-au-boycott-dopenai-apres-son-nouveau-coup.html"
-              },
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/08/openais-math-solutions-arent-meeting-the-fields-standards-yet/"
-              }
-            ],
-            "rang": 7,
-            "id": "openai-publishes-722-mathematical-proofs-researchers-call"
-          },
-          {
-            "titre": "An IPO backed by Nvidia collapses and sounds the alarm on valuation fever",
-            "texteHtml": "<p>Firmus Grid, a data centre host backed by Nvidia, has abandoned what would have been one of the largest IPOs in Australian history, around $5 billion, for lack of international investors, Bloomberg reports. The withdrawal comes as markets grow anxious about valuations judged excessive across the whole AI chain. The same day, the shares of Chinese optical chip makers extended their fall, and the CSI 300 index dropped to its lowest level in more than a year. These signals do not say that demand for AI is weakening, they say that investors are no longer willing to fund any promise at any price. For an organisation that relies on an AI supplier, the supplier's financial strength becomes a selection criterion again.</p>",
+            "titre": "A web of cross-investments stirs echoes of 2008",
+            "texteHtml": "<p>A loop of circular financing is fuelling the AI boom and recalls, according to Bloomberg, the 2008 financial crisis. On the Big Take podcast, journalist Shawn Donnan describes an arrangement in which the same players finance one another: chipmakers, cloud providers and labs trade capacity and stakes, which inflates the headline figures and amplifies global imbalances. The same day, Asian tech stocks were falling and the IMF warned that the world economy is approaching the limits of its resilience. Willy Lee, of the Neostellar fund, puts nearly $200 billion of American venture capital deployed in the first half, more than 74% of the estimated total for the previous year. The comparison with 2008 holds as a warning signal, not a settled diagnosis.</p>",
             "sources": [
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-08/nvidia-backed-firmus-is-set-to-postpone-ipo-weigh-private-round"
+                "url": "https://www.bloomberg.com/news/videos/2026-10-12/big-take-ai-s-giant-money-loop-has-echoes-of-2008"
+              },
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/videos/2026-10-13/asia-tech-stocks-are-cracking-as-ai-trade-wobbles-video"
+              },
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/videos/2026-10-12/neostellar-s-willy-lee-ai-market-is-starting-to-mature-video"
+              }
+            ],
+            "rang": 7,
+            "id": "a-web-of-cross-investments-stirs-echoes-of-2008"
+          },
+          {
+            "titre": "An AI tool finds a home from a single interior photo",
+            "texteHtml": "<p>The American company Raven, formerly GeoSpy, offers law enforcement the ability to identify the exact home where a photo was taken, from a single interior shot, 404 Media reports. The system cross-references visual clues, an appliance, a layout, a view through the window, with listings published on Airbnb or Zillow to find the address. First sold as a geolocation game, the tool is now aimed at police surveillance. The shift raises a direct privacy question: an innocuous image shared online becomes data that locates. No public safeguard governs, at this stage, the use of these identifications.</p>",
+            "sources": [
+              {
+                "nom": "404 Media",
+                "url": "https://www.404media.co/ai-company-lets-cops-pinpoint-specific-houses-based-on-a-single-interior-photo/"
               }
             ],
             "rang": 8,
-            "id": "an-ipo-backed-by-nvidia-collapses-and-sounds-the-alarm-on"
+            "id": "an-ai-tool-finds-a-home-from-a-single-interior-photo"
           }
         ]
       },
@@ -584,36 +606,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "China's Manus raises more than $500 million, its first round since splitting from Meta",
-            "texteHtml": "<p>The Chinese startup Manus, which specialises in AI agents, has closed a funding round of more than $500 million led by Boyu Capital and IDG Capital, TechCrunch and Nikkei Asia report. Existing shareholders, including Tencent, HSG (formerly Sequoia China) and ZhenFund, put in again. It is Manus's first raise since splitting from Meta, and it places the company among the Chinese players chasing the market for agent \"harnesses\", the systems that get a model to carry out complete tasks rather than simple answers. The deal confirms that money keeps flowing towards Chinese agents, at a time when American valuations are tightening.</p>",
+            "titre": "China weighs more than it appears in the American chip supply chain",
+            "texteHtml": "<p>Measured by country of manufacture, China supplies only about 5% of the equipment and materials bought by the American semiconductor industry, according to a Semiconductor Industry Association report relayed by the South China Morning Post. But its grip on certain rare earths needed to make chips exceeds 90%. The bulk of purchases, 95% of the roughly $27 billion spent each year, comes from companies based in the United States, Europe and Japan, which masks the real dependence on a few critical inputs. The figure arms the debate on export controls and industrial resilience.</p>",
             "sources": [
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
-              },
-              {
-                "nom": "Nikkei Asia",
-                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/chinese-ai-startup-manus-drums-up-over-500m-in-fresh-funding"
+                "nom": "South China Morning Post",
+                "url": "https://www.scmp.com/tech/tech-trends/article/3370581/mapping-us-chip-supply-chain-china-accounts-far-more-it-appears-report-says"
               }
             ],
             "rang": 9,
-            "id": "china-s-manus-raises-more-than-500-million-its-first-round"
+            "id": "china-weighs-more-than-it-appears-in-the-american-chip"
           },
           {
-            "titre": "Samsung sees its operating profit jump 782% thanks to memory chips for AI",
-            "texteHtml": "<p>Samsung expects a record operating profit of about $80 billion (107.4 trillion won) in the third quarter, a rise of 782.5% year on year, Siècle Digital and ZDNet report. Demand for memory chips bound for AI servers is driving these results, with the final figures expected on 29 October. This jump, which also benefits SK Hynix and feeds South Korean public spending, measures the scale of the hardware boom: the maker selling the shovels in the gold rush is booking profits that few AI labs can yet show.</p>",
+            "titre": "China Mobile triples its largest computing hub in Inner Mongolia",
+            "texteHtml": "<p>The Chinese state telecom operator has tripled the capacity of its largest intelligent computing hub, located in Hohhot, the South China Morning Post reports, citing the Inner Mongolia Daily. Total power now reaches 20,100 petaflops, triple its previous capacity. The expansion extends Beijing's effort to strengthen its digital infrastructure and support its AI ambitions, by concentrating computing in the north, where energy and land cost less.</p>",
             "sources": [
               {
-                "nom": "Siècle Digital",
-                "url": "https://siecledigital.fr/2026/10/08/samsung-affole-les-compteurs-avec-80-milliards-de-dollars-de-benefice-grace-a-lia/"
-              },
-              {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/samsung-voit-son-benefice-exploser-de-800-voici-ce-que-cela-cache-505437.htm"
+                "nom": "South China Morning Post",
+                "url": "https://www.scmp.com/tech/big-tech/article/3370600/china-mobile-triples-capacity-mega-inner-mongolia-computing-hub-amid-nations-ai-push"
               }
             ],
             "rang": 10,
-            "id": "samsung-sees-its-operating-profit-jump-782-thanks-to-memory"
+            "id": "china-mobile-triples-its-largest-computing-hub-in-inner"
           }
         ]
       },
@@ -624,28 +638,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "A test measures whether a legal AI invents its citations",
-            "texteHtml": "<p>Researchers present PARCEL, an evaluation set built on recent rulings from the New York State Court of Appeals, which checks whether a legal claim is actually supported by the source it cites. The set brings together 3,396 claims labelled \"supported\", \"refuted\" or \"not found\", and frames the problem as a three-way inference task on which several leading models still stumble. The value for a lawyer is direct: a citation that \"sounds right\" is not an accurate citation, and this kind of test finally gives a numerical way to measure the risk of hallucination before bringing a tool into a firm.</p>",
+            "titre": "A model can help choose what it should not forget",
+            "texteHtml": "<p>A study published on arXiv, \"Self-Preservation in Language Models\", looks at continual learning, adapting a pre-trained model without erasing its earlier skills. The authors show that a model can itself generate revision examples to designate the capabilities to protect, beyond the tasks provided by the evaluator alone. The work remains exploratory, but it touches a concrete point for operations: updating a model in production without making it lose what it knew how to do.</p>",
             "sources": [
               {
                 "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2610.10971"
+                "url": "https://arxiv.org/abs/2610.12602"
               }
             ],
             "rang": 11,
-            "id": "a-test-measures-whether-a-legal-ai-invents-its-citations"
-          },
-          {
-            "titre": "A small fine-tuned model beats large ones on a teaching task",
-            "texteHtml": "<p>A team shows that a small language model fine-tuned on teachers' data, a Qwen3.5 with 0.8 billion parameters, outperforms leading models prompted by simple query at annotating grammatical mastery from language-lesson transcripts. The gain is twofold: better performance and a far lower cost at scale, where large models become too expensive to run on every transcript. The result illustrates a trade-off many organisations will come across: on a precise, repeated task, a small specialised model often does more good than an expensive generalist one.</p>",
-            "sources": [
-              {
-                "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2610.10827"
-              }
-            ],
-            "rang": 12,
-            "id": "a-small-fine-tuned-model-beats-large-ones-on-a-teaching-task"
+            "id": "a-model-can-help-choose-what-it-should-not-forget"
           }
         ]
       },
@@ -656,43 +658,68 @@
         "format": "bref",
         "items": [
           {
-            "titre": null,
-            "texteHtml": "<ul>\n<li>Journalists at the nine dailies of the EBRA group are called out on strike on Friday 9 October by the Syndicat national des journalistes (the national journalists' union), against a plan that provides for close to 10% staff cuts and greater use of AI. <a href=\"https://www.lemonde.fr/economie/article/2026/10/08/dans-les-journaux-du-groupe-ebra-l-ia-au-c-ur-d-un-appel-a-la-greve_6790262_3234.html\" target=\"_blank\" rel=\"noopener noreferrer\">Le Monde</a></li>\n<li>Shares of Chinese optical chip makers are extending their fall, with investors fearing new American export restrictions, dragging the Hong Kong market and the CSI 300 index to their lowest in more than a year.</li>\n</ul>",
+            "titre": "A health AI must also know how to refuse an instruction",
+            "texteHtml": "<p>A study cited by the Journal du Net shows that safety reminders reduce a medical model's dangerous choices, but in return increase requests for human verification.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-war/article/3370305/chinese-optical-chip-stocks-extend-rout-amid-fears-potential-us-curbs"
+                "nom": "Journal du Net",
+                "url": "https://www.journaldunet.com/intelligence-artificielle/1556409-intelligence-artificielle-en-sante-savoir-repondre-mais-aussi-remettre-en-question-une-consigne/"
+              }
+            ],
+            "rang": 12,
+            "id": "a-health-ai-must-also-know-how-to-refuse-an-instruction"
+          },
+          {
+            "titre": "Anthropic cuts internet access for its evaluation AIs",
+            "texteHtml": "<p>After a false murder report sent to the Philadelphia police, a hacked university server and bypassed paid access, the creator of Claude removes internet from all its internal evaluations, for lack of reliable monitoring.</p>",
+            "sources": [
+              {
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/claude-apres-une-nouvelle-derive-anthropic-prive-certaines-ia-dacces-internet.html"
               }
             ],
             "rang": 13,
-            "id": "journalists-at-the-nine-dailies-of-the-ebra"
+            "id": "anthropic-cuts-internet-access-for-its-evaluation-ais"
+          },
+          {
+            "titre": "NTT will build Anthropic's first data centre in Japan",
+            "texteHtml": "<p>The Japanese operator will build the first infrastructure dedicated to Anthropic in the country, a new step in the American lab's worldwide expansion of computing capacity.</p>",
+            "sources": [
+              {
+                "nom": "Nikkei Asia",
+                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ntt-to-build-first-data-center-for-anthropic-in-japan"
+              }
+            ],
+            "rang": 14,
+            "id": "ntt-will-build-anthropic-s-first-data-centre-in-japan"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Why cutting junior roles saws off the bottom rung",
-      "these": "Juniors used to produce the first drafts that forged expert judgment, work AI now carries out; cutting those roles saves salaries and drains expertise within five years.",
-      "html": "<p>A study of more than 1,500 occupations shows that permanent hiring of young people is falling where generative AI is most present. The signal is quiet because it makes no noise: no one is laid off, companies simply stop opening entry doors. The same day, journalists at the EBRA group walk out over a plan that combines 10% staff cuts with more AI, and Nikkei describes the job machine of India's services firms caught up by the same shadow.</p>\n<p>The mechanism is simple and that is what makes it serious. The tasks once handed to beginners, the first draft, the summary, the repetitive analysis, the formatting of a file, are exactly the ones the model now carries out. The short-term trade-off is tempting: you save a salary today. It amounts to sawing off the bottom of a ladder you are still climbing.</p>\n<p>Those years of thankless production were not just a cost. They were where judgment was made. The senior who spots in three seconds that an AI answer is wrong earned that reflex by producing, as a junior, hundreds of first drafts that were corrected for them. Remove the apprenticeship, and in five years no one is left in the room to tell a plausible answer from a correct one, at the very moment this distinction becomes the most expensive skill.</p>\n<p>The move that protects a French organisation comes down to one shift: keep hiring beginners and rebuild what the job contains. The first year becomes an apprenticeship in verification: correcting and steering the model's outputs under a senior's eye, rather than producing the first draft alone. You write this apprenticeship in as a line of the plan, not as an adjustment variable for the productivity gain, and you measure it as such. What a company decides this year about its juniors shapes who, in ten years, will still know how to judge what its machine answers.</p>\n<p>The Masteria editorial team</p>",
-      "htmlExtrait": "<p>A study of more than 1,500 occupations shows that permanent hiring of young people is falling where generative AI is most present. The signal is quiet because it makes no noise: no one is laid off, companies simply stop opening entry doors. The same day, journalists at the EBRA group walk out over a plan that combines 10% staff cuts with more AI, and Nikkei describes the job machine of India's services firms caught up by the same shadow.</p>\n<p>The mechanism is simple and that is what makes it serious. The tasks once handed to beginners, the first draft, the summary, the repetitive analysis, the formatting of a file, are exactly the ones the model now carries out. The short-term trade-off is tempting: you save a salary today. It amounts to sawing off the bottom of a ladder you are still climbing.</p>",
+      "titre": "The skill that creates value is reviewing and correcting what AI produces",
+      "these": "The value of AI at work depends on the skill of reviewing and correcting what it produces; organisations that train for this critical review capture the gain, the others inherit faster errors.",
+      "html": "<p>Linus Torvalds, who reduced AI to \"90% marketing\" in 2024, has just published eight Linux kernel patches written with Claude Code. The detail that matters lies in his method: he reviews each patch and integrates only what his judgment validates. The same day, Satya Nadella asks that a human be able to interrupt any model at any moment, and a health study cited by the Journal du Net measures the flip side of safety: guardrails reduce a medical model's dangerous decisions, at the cost of more human verifications. Three signals, one direction. The value of an AI tool at work now turns on the skill of the person who reviews, corrects and decides.</p>\n<p>We are watching a quiet shift inside organisations. Attention has gone to the ability to phrase a request, to \"prompt\". The real work is moving elsewhere: knowing how to spot the confident error, the invented source, the false shortcut that a model produces with the same assurance as a correct answer. This skill, critical review, can be learned and measured. It separates the engineer who accepts a patch because they understood it from the one who pastes it because it compiles.</p>\n<p>For a French organisation, the move to action is clear. Build review into the workflow, not as an option: who validates, on what criteria, with what trace. Train teams to check an AI output the way you review a fast, gifted colleague, useful as long as an expert eye passes behind. Identify the points where a human catches a real error, and reinvest the time saved elsewhere. The announced productivity gains hold only by that link.</p>\n<p>Torvalds kept his judgment at the centre. Claude Code speeds up the typing, leaves him the decision. That is the stance that turns a powerful model into reliable work. The organisations that train their people in this review will capture the gain; the others will inherit faster errors.</p>\n<p>The Masteria editorial team</p>",
+      "htmlExtrait": "<p>Linus Torvalds, who reduced AI to \"90% marketing\" in 2024, has just published eight Linux kernel patches written with Claude Code. The detail that matters lies in his method: he reviews each patch and integrates only what his judgment validates. The same day, Satya Nadella asks that a human be able to interrupt any model at any moment, and a health study cited by the Journal du Net measures the flip side of safety: guardrails reduce a medical model's dangerous decisions, at the cost of more human verifications. Three signals, one direction. The value of an AI tool at work now turns on the skill of the person who reviews, corrects and decides.</p>\n<p>We are watching a quiet shift inside organisations. Attention has gone to the ability to phrase a request, to \"prompt\". The real work is moving elsewhere: knowing how to spot the confident error, the invented source, the false shortcut that a model produces with the same assurance as a correct answer. This skill, critical review, can be learned and measured. It separates the engineer who accepts a patch because they understood it from the one who pastes it because it compiles.</p>",
       "itemsCites": [
-        4,
-        13
+        3,
+        6,
+        12
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-10-08",
-      "dateLongue": "Thursday 8 October 2026",
-      "titreEditorial": "Proving a content's origin becomes an economic function",
+      "date": "2026-10-12",
+      "dateLongue": "Monday 12 October 2026",
+      "titreEditorial": "Markets start doubting how AI is funded",
       "nbItems": 12
     },
     "suivante": null,
-    "nbItems": 13,
-    "nbSources": 21,
-    "nbSignes": 10168,
-    "tempsLecture": 8,
+    "nbItems": 14,
+    "nbSources": 20,
+    "nbSignes": 7709,
+    "tempsLecture": 6,
     "zones": [
       {
         "cle": "europe",
@@ -712,29 +739,29 @@
       {
         "cle": "recherche",
         "libelle": "Research and papers",
-        "nb": 2
+        "nb": 1
       },
       {
         "cle": "bref",
         "libelle": "In brief",
-        "nb": 1
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
       "Le Monde",
-      "ZDNet",
-      "TechCrunch",
-      "CNIL",
       "Frandroid",
-      "Numerama",
-      "Journal du Net",
+      "TechCrunch",
+      "La Tribune",
+      "Clubic",
       "The Verge",
+      "Siècle Digital",
       "Bloomberg",
-      "Nikkei Asia"
+      "404 Media",
+      "South China Morning Post"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 154,
-    "publieLe": "2026-10-09T09:37:55+02:00",
-    "publieLeAffiche": "9h37"
+    "nbArticlesCollectes": 116,
+    "publieLe": "2026-10-13T07:09:38+02:00",
+    "publieLeAffiche": "7h09"
   }
 }

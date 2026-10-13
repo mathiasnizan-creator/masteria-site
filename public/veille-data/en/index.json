@@ -3,12 +3,34 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-09",
-    "totalEditions": 38,
-    "totalItems": 511,
-    "totalSources": 738
+    "derniereDate": "2026-10-13",
+    "totalEditions": 40,
+    "totalItems": 537,
+    "totalSources": 773
   },
   "editions": [
+    {
+      "date": "2026-10-13",
+      "dateAffichee": "13 October 2026",
+      "dateCourte": "Tue 13 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Meta places Muse Wonder just behind Claude",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 6
+    },
+    {
+      "date": "2026-10-12",
+      "dateAffichee": "12 October 2026",
+      "dateCourte": "Mon 12 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Markets start doubting how AI is funded",
+      "nbItems": 12,
+      "nbSources": 15,
+      "tempsLecture": 6
+    },
     {
       "date": "2026-10-09",
       "dateAffichee": "9 October 2026",

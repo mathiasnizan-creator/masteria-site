@@ -258,7 +258,12 @@
     "titreEditorial": "Proving a content's origin becomes an economic function",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-12",
+    "dateLongue": "Monday 12 October 2026",
+    "titreEditorial": "Markets start doubting how AI is funded",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 21,
   "nbSignes": 10168,

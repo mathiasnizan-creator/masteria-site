@@ -1,0 +1,282 @@
+{
+  "schema": 2,
+  "date": "2026-10-12",
+  "dateAffichee": "12 October 2026",
+  "dateLongue": "Monday 12 October 2026",
+  "dateCourte": "Mon 12 Oct",
+  "jourSemaine": "Monday",
+  "titre": "AI Watch - Monday 12 October 2026",
+  "titreEditorial": "Markets start doubting how AI is funded",
+  "chapeau": "Markets and tech bosses are cooling the enthusiasm around AI together, from a bond market being saturated by data-centre debt to warnings from TikTok and Microsoft about how immature it still is. In China, factories are skipping the digitisation step and moving straight to agents, while a study chips away at DeepSeek's low-cost recipe.",
+  "une": {
+    "titre": "The mood around AI funding is shifting",
+    "texteHtml": "<p>Tan Su Shan, chief executive of Singaporean bank DBS, said on Monday that the market is repricing the risks tied to building AI, which should bring some discipline back into financing. The numbers explain the nervousness: cloud giants, data centres and chipmakers are borrowing hundreds of billions of dollars to build capacity, to the point of becoming one of the biggest new forces in corporate credit, and the question gaining ground is how much AI debt the market can absorb. Tim Adams, head of the Institute of International Finance, warns that debt in advanced economies will keep climbing, driven by governments and by this private investment in AI infrastructure. On the same Monday, Shou Zi Chew, head of TikTok, and Judson Althoff, Microsoft's second-in-command, judged the world to be over-excited about AI and blind to its immaturity, with cybersecurity striking them as a more immediate danger than an AI advancing too fast.</p>",
+    "sources": [
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-12/dbs-ceo-tan-says-market-is-repricing-risks-on-ai-financing"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-11/is-ai-crowding-everyone-else-out-of-the-bond-market-video"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-12/iif-ceo-on-rising-global-debt-video"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-12/tiktok-s-chew-and-microsoft-s-althoff-warn-about-runaway-ai-hype"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "the-mood-around-ai-funding-is-shifting"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "A French conspiracy site written remotely, through AI",
+          "texteHtml": "<p>Le Monde documents the inner workings of \"Géopolitique profonde\", one of the major sites of the French conspiracy sphere: writers based in Madagascar copy articles found online, then hand them to an artificial intelligence tasked with giving them a tone that is \"rather pro-right, pro-Trump, pro-Putin, anti-EU\". The chain combines plagiarism, low-cost outsourcing and automated rewriting, an assembly that industrialises propaganda for a few euros.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/afrique/article/2026/10/11/derriere-le-site-complotiste-geopolitique-profonde-plagiat-ia-et-sous-traitance-a-madagascar_6791783_3212.html"
+            }
+          ],
+          "rang": 2,
+          "id": "a-french-conspiracy-site-written-remotely-through-ai"
+        },
+        {
+          "titre": "Security chiefs fear AI will industrialise data leaks",
+          "texteHtml": "<p>At the Assises de la cybersécurité, held from 7 to 9 October in Monaco, the chief information security officers in attendance say they have finally opened up about leaks. Their current worry: AI speeds up and equips attacks such as data exfiltration, and moves the risk dial well ahead of the distant scenarios.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/cybersecurite/1556411-assises-de-la-cybersecurite-2026-cette-annee-la-parole-s-est-enfin-liberee-sur-les-fuites-de-donnees/"
+            }
+          ],
+          "rang": 3,
+          "id": "security-chiefs-fear-ai-will-industrialise-data-leaks"
+        },
+        {
+          "titre": "Microsoft brings Office into Copilot",
+          "texteHtml": "<p>The new Copilot app will carry all the functions of Word, Excel and PowerPoint. Users will be able to create and edit their documents directly from the assistant, without opening the classic software. One more step towards an office suite where text, spreadsheet and presentation all run through the model.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/microsoft-integre-les-applis-office-directement-dans-copilot.html"
+            }
+          ],
+          "rang": 4,
+          "id": "microsoft-brings-office-into-copilot"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The IMF calls it a \"slow-moving tsunami\" for jobs and taxes",
+          "texteHtml": "<p>Kristalina Georgieva, managing director of the International Monetary Fund, says she is alarmed by AI's effect on the labour market and on tax revenue, and is pressing public officials to rethink education and act now to help society adapt. The warning lands during the IMF meeting in Bangkok, where inflation, AI and climate open the discussions. The phrase \"slow-moving tsunami\" says the essential: the wave is slow, so it is underestimated, but it is coming.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-12/imf-chief-alarmed-at-slow-moving-tsunami-of-ai-for-jobs-taxes"
+            }
+          ],
+          "rang": 5,
+          "id": "the-imf-calls-it-a-slow-moving-tsunami-for-jobs-and-taxes"
+        },
+        {
+          "titre": "Amazon reportedly in talks to buy Decart for around $7 billion",
+          "texteHtml": "<p>According to the Wall Street Journal, cited by Bloomberg, Amazon is discussing the acquisition of AI startup Decart, in a deal that could reach $7 billion. The information remains at the negotiation stage, with no confirmation from the parties, but the sum places Decart among the most expensive targets of the year for a cloud giant.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-11/amazon-is-in-talks-to-buy-ai-startup-decart-wsj-reports"
+            }
+          ],
+          "rang": 6,
+          "id": "amazon-reportedly-in-talks-to-buy-decart-for-around-7"
+        },
+        {
+          "titre": "Silicon Valley adopts Donald Trump's \"super intelligence\"",
+          "texteHtml": "<p>After the presidential announcement of renaming artificial intelligence as \"super intelligence\", several influential tech figures are picking up the term, while the general public keeps saying \"AI\". The episode even triggered a rush on .si domain names. A shift in vocabulary that says a lot about part of the sector falling into line with Washington.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1009406/silicon-valley-is-falling-in-line-with-trumps-attempt-to-rename-ai"
+            }
+          ],
+          "rang": 7,
+          "id": "silicon-valley-adopts-donald-trump-s-super-intelligence"
+        },
+        {
+          "titre": "TSMC heading for a record quarterly profit",
+          "texteHtml": "<p>The Taiwanese foundry, which makes the chips for NVIDIA and Apple, is expected to announce a record third-quarter profit on Thursday, driven by demand for AI chips. Investors are also waiting for details on a possible expansion of its capacity in Texas.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-633688-porte-par-le-vent-de-l-ia-le-fabricant-des-puces-de-nvidia-et-d-apple-file-vers-un-nouveau-record.html"
+            }
+          ],
+          "rang": 8,
+          "id": "tsmc-heading-for-a-record-quarterly-profit"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Chinese factories are moving straight to AI agents",
+          "texteHtml": "<p>Zhou Yuxiang, head of Black Lake, a Chinese supplier of cloud AI tools for industry, describes a leap over the usual steps: \"Just as China skipped the bank card to go straight to mobile payment, many factories are skipping classic digitisation to go straight to AI agents.\" These agents, programs that carry out tasks end to end without intervention at each step, are settling into production, then exporting to global supply chains. The account warrants caution, since it comes from a seller of the technology, but it points to a real trajectory: China is industrialising the agent rather than testing it.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3370490/chinas-factories-leaping-straight-agentic-ai-and-taking-it-global-black-lake-ceo?utm_source=rss_feed"
+            }
+          ],
+          "rang": 9,
+          "id": "chinese-factories-are-moving-straight-to-ai-agents"
+        },
+        {
+          "titre": "A study chips away at DeepSeek's low-cost recipe",
+          "texteHtml": "<p>Researchers at ByteDance, with co-authors from Princeton, Stanford and Berkeley, published work in late September that points to a possible flaw in the memory-saving technique at the heart of DeepSeek's models. This compression, which cuts the memory used during inference (the cost of running a model once it is trained), could degrade the accuracy of answers. The stakes go beyond one lab: it is precisely this frugal approach that let China's DeepSeek close the gap with OpenAI and Anthropic at lower cost. Criticism remains rare for a method that has become a reference.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3370550/deepseeks-cost-saving-ai-may-lead-inaccuracy-model-performance-research?utm_source=rss_feed"
+            }
+          ],
+          "rang": 10,
+          "id": "a-study-chips-away-at-deepseek-s-low-cost-recipe"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Models put to the test on a long-haul strategy game",
+          "texteHtml": "<p>The SpireBench benchmark has AI models play the commercial card game Slay the Spire, where an early decision bears on the outcome of an entire run. Across twenty models tested at the highest difficulty level, the best beat simple heuristic rules and match the average human player, without surpassing them. The point: most agent tests stay short and episodic, and this measure of strategic reasoning over a long span is a reminder that \"superhuman\" is not yet the right word.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.12596"
+            }
+          ],
+          "rang": 11,
+          "id": "models-put-to-the-test-on-a-long-haul-strategy-game"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": null,
+          "texteHtml": "<ul>\n<li>In the United States, personal AI agents comb through bank statements to spot forgotten or duplicate subscriptions, then negotiate directly with customer services, a practice that could cost insurers and operators billions, and that in France could pit the customer's agent against the customer service's AI. <a href=\"https://www.clubic.com/actualite-633643-les-agents-ia-qui-negocient-vos-factures-pourraient-couter-des-milliards-aux-entreprises.html\" target=\"_blank\" rel=\"noopener noreferrer\">Clubic</a></li>\n<li>OpenAI will halve ChatGPT Pro's limits at the end of the month and open a $500 tier, while an independent analysis puts numbers on how generous the subscriptions of its rival Claude are by comparison. <a href=\"https://www.01net.com/actualites/chatgpt-vs-claude-quel-abonnement-ia-est-le-plus-genereux-une-etude-a-tranche.html\" target=\"_blank\" rel=\"noopener noreferrer\">01net</a></li>\n<li>In Hong Kong, a T. Rowe Price survey of 1,004 working people aged 30 and over shows that 55% fear AI will destabilise their career and income, but that only one in five feels financially prepared.</li>\n</ul>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/business/banking-finance/article/3370504/hong-kong-workers-fear-ai-driven-disruption-retirement-only-20-feel-prepared-survey?utm_source=rss_feed"
+            }
+          ],
+          "rang": 12,
+          "id": "in-the-united-states-personal-ai-agents-comb"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "The real near-term AI risk is data security, when adoption outpaces governance",
+    "these": "Those who build and fund AI are warning about its security; inside organisations, adoption is outrunning data governance, and the useful move is an exposure check before every deployment.",
+    "html": "<p>Shou Zi Chew, head of TikTok, and Judson Althoff, Microsoft's second-in-command, made the same point on Monday: the near-term AI risk is its security, while the race to \"super intelligence\" fills the speeches. At the same moment, the financiers gathered at the DBS Asian forum and at the IMF meeting in Bangkok are worried about the debt raised to build AI and are repricing its risk. The market has doubts, the builders are warning, and yet nothing is slowing down on the ground.</p>\n<p>Microsoft is bringing Word, Excel and PowerPoint into Copilot. Personal agents are already reading bank statements to negotiate bills. Every week, more corporate data flows through models. The security chiefs gathered at the Monaco Assises put it plainly: AI equips and accelerates data leaks.</p>\n<p>We are watching a widening gap. The ability to deploy AI runs faster than the ability to govern it, and it is in that gap that the losses of the coming months sit, not in a scenario of a machine grown too intelligent. A leak of personal data is paid for in lost customers, in eroded trust and in a penalty from the CNIL (France's data protection authority), where a check before deployment costs a few days of work.</p>\n<p>The useful move is nothing spectacular. Before every new AI deployment, an exposure check: what data does the tool see, where does it go, who approved the use? And a rule learned by every team about what you never paste into an assistant: a customer contract, health data, proprietary code, an HR file. Data governance becomes a skill, on the same footing as knowing how to write a good prompt.</p>\n<p>\"Super intelligence\" makes the headlines; data security does the damage. The organisations that settle the second first will adopt AI faster than those that wait for the incident to get started.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>Shou Zi Chew, head of TikTok, and Judson Althoff, Microsoft's second-in-command, made the same point on Monday: the near-term AI risk is its security, while the race to \"super intelligence\" fills the speeches. At the same moment, the financiers gathered at the DBS Asian forum and at the IMF meeting in Bangkok are worried about the debt raised to build AI and are repricing its risk. The market has doubts, the builders are warning, and yet nothing is slowing down on the ground.</p>\n<p>Microsoft is bringing Word, Excel and PowerPoint into Copilot. Personal agents are already reading bank statements to negotiate bills. Every week, more corporate data flows through models. The security chiefs gathered at the Monaco Assises put it plainly: AI equips and accelerates data leaks.</p>",
+    "itemsCites": [
+      1,
+      3,
+      4,
+      12
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-09",
+    "dateLongue": "Friday 9 October 2026",
+    "titreEditorial": "AI chips away at young people's first jobs",
+    "nbItems": 13
+  },
+  "suivante": {
+    "date": "2026-10-13",
+    "dateLongue": "Tuesday 13 October 2026",
+    "titreEditorial": "Meta places Muse Wonder just behind Claude",
+    "nbItems": 14
+  },
+  "nbItems": 12,
+  "nbSources": 15,
+  "nbSignes": 7584,
+  "tempsLecture": 6,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 1
+    }
+  ],
+  "sourcesDuJour": [
+    "Bloomberg",
+    "Le Monde",
+    "Journal du Net",
+    "01net",
+    "The Verge",
+    "Clubic",
+    "South China Morning Post",
+    "arXiv"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 71,
+  "publieLe": "2026-10-12T09:46:53+02:00",
+  "publieLeAffiche": "9h46"
+}

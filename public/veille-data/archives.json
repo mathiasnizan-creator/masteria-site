@@ -3,12 +3,240 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-09",
-    "totalEditions": 53,
-    "totalItems": 714,
-    "totalSources": 1050
+    "derniereDate": "2026-10-13",
+    "totalEditions": 55,
+    "totalItems": 740,
+    "totalSources": 1085
   },
   "editions": [
+    {
+      "date": "2026-10-13",
+      "dateCourte": "mar. 13 oct.",
+      "dateAffichee": "13 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Meta place Muse Wonder juste derrière Claude",
+      "chapeau": "Meta hisse Muse Wonder au niveau des meilleurs modèles, juste derrière Claude, pendant que Microsoft dévoile sa puce Maia 300 pour desserrer l'étreinte de Nvidia. Le même jour, Satya Nadella réclame un bouton d'arrêt humain sur les modèles, Anthropic coupe l'accès Internet de ses IA d'évaluation et trois chercheurs en sûreté licenciés par OpenAI prennent la parole.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Frandroid",
+        "TechCrunch",
+        "La Tribune",
+        "Clubic",
+        "The Verge",
+        "Siècle Digital",
+        "Bloomberg",
+        "404 Media",
+        "South China Morning Post",
+        "arXiv",
+        "Journal du Net",
+        "01net",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Meta revient à la frontière de l'IA avec Muse Wonder",
+          "z": "une",
+          "id": "meta-revient-a-la-frontiere-de-l-ia-avec-muse-wonder"
+        },
+        {
+          "t": "Des chercheurs en sûreté quittent publiquement OpenAI et Anthropic",
+          "z": "europe",
+          "id": "des-chercheurs-en-surete-quittent-publiquement-openai-et"
+        },
+        {
+          "t": "Linus Torvalds publie des correctifs Linux écrits avec Claude Code",
+          "z": "europe",
+          "id": "linus-torvalds-publie-des-correctifs-linux-ecrits-avec"
+        },
+        {
+          "t": "Le drone de combat Valkyrie d'Airbus vole pour la première fois en Europe",
+          "z": "europe",
+          "id": "le-drone-de-combat-valkyrie-d-airbus-vole-pour-la-premiere"
+        },
+        {
+          "t": "Microsoft lance Maia 300 pour réduire sa dépendance à Nvidia",
+          "z": "international",
+          "id": "microsoft-lance-maia-300-pour-reduire-sa-dependance-a-nvidia"
+        },
+        {
+          "t": "Satya Nadella veut un bouton d'arrêt humain sur les modèles",
+          "z": "international",
+          "id": "satya-nadella-veut-un-bouton-d-arret-humain-sur-les-modeles"
+        },
+        {
+          "t": "Un réseau d'investissements croisés réveille des échos de 2008",
+          "z": "international",
+          "id": "un-reseau-d-investissements-croises-reveille-des-echos-de"
+        },
+        {
+          "t": "Un outil d'IA retrouve un logement à partir d'une seule photo d'intérieur",
+          "z": "international",
+          "id": "un-outil-d-ia-retrouve-un-logement-a-partir-d-une-seule"
+        },
+        {
+          "t": "La Chine pèse plus qu'il n'y paraît dans la chaîne des puces américaines",
+          "z": "chine",
+          "id": "la-chine-pese-plus-qu-il-n-y-parait-dans-la-chaine-des"
+        },
+        {
+          "t": "China Mobile triple son plus grand centre de calcul en Mongolie-Intérieure",
+          "z": "chine",
+          "id": "china-mobile-triple-son-plus-grand-centre-de-calcul-en"
+        },
+        {
+          "t": "Un modèle peut aider à choisir ce qu'il ne doit pas oublier",
+          "z": "recherche",
+          "id": "un-modele-peut-aider-a-choisir-ce-qu-il-ne-doit-pas-oublier"
+        },
+        {
+          "t": "Une IA de santé doit aussi savoir refuser une consigne",
+          "z": "bref",
+          "id": "une-ia-de-sante-doit-aussi-savoir-refuser-une-consigne"
+        },
+        {
+          "t": "Anthropic coupe l'accès Internet de ses IA d'évaluation",
+          "z": "bref",
+          "id": "anthropic-coupe-l-acces-internet-de-ses-ia-d-evaluation"
+        },
+        {
+          "t": "NTT bâtira le premier centre de données d'Anthropic au Japon",
+          "z": "bref",
+          "id": "ntt-batira-le-premier-centre-de-donnees-d-anthropic-au-japon"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-12",
+      "dateCourte": "lun. 12 oct.",
+      "dateAffichee": "12 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Les marchés doutent du financement de l'IA",
+      "chapeau": "Les marchés et les patrons de la tech refroidissent ensemble l'enthousiasme sur l'IA, du marché obligataire que la dette des centres de données sature aux mises en garde de TikTok et Microsoft sur son immaturité. En Chine, les usines sautent l'étape de la numérisation pour passer directement aux agents, pendant qu'une étude écorne la recette à bas coût de DeepSeek.",
+      "nbItems": 12,
+      "nbSources": 15,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 1
+        }
+      ],
+      "sources": [
+        "Bloomberg",
+        "Le Monde",
+        "Journal du Net",
+        "01net",
+        "The Verge",
+        "Clubic",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Le financement de l'IA change d'humeur",
+          "z": "une",
+          "id": "le-financement-de-l-ia-change-d-humeur"
+        },
+        {
+          "t": "Un site complotiste français écrit à distance, par IA interposée",
+          "z": "europe",
+          "id": "un-site-complotiste-francais-ecrit-a-distance-par-ia"
+        },
+        {
+          "t": "Les responsables sécurité craignent que l'IA industrialise les fuites de données",
+          "z": "europe",
+          "id": "les-responsables-securite-craignent-que-l-ia-industrialise"
+        },
+        {
+          "t": "Microsoft fait entrer Office dans Copilot",
+          "z": "europe",
+          "id": "microsoft-fait-entrer-office-dans-copilot"
+        },
+        {
+          "t": "Le FMI parle d'un « tsunami au ralenti » pour l'emploi et l'impôt",
+          "z": "international",
+          "id": "le-fmi-parle-d-un-tsunami-au-ralenti-pour-l-emploi-et-l"
+        },
+        {
+          "t": "Amazon négocierait le rachat de Decart pour environ 7 milliards de dollars",
+          "z": "international",
+          "id": "amazon-negocierait-le-rachat-de-decart-pour-environ-7"
+        },
+        {
+          "t": "La Silicon Valley adopte le « super intelligence » de Donald Trump",
+          "z": "international",
+          "id": "la-silicon-valley-adopte-le-super-intelligence-de-donald"
+        },
+        {
+          "t": "TSMC vers un bénéfice trimestriel record",
+          "z": "international",
+          "id": "tsmc-vers-un-benefice-trimestriel-record"
+        },
+        {
+          "t": "Les usines chinoises passent directement aux agents IA",
+          "z": "chine",
+          "id": "les-usines-chinoises-passent-directement-aux-agents-ia"
+        },
+        {
+          "t": "Une étude écorne la recette à bas coût de DeepSeek",
+          "z": "chine",
+          "id": "une-etude-ecorne-la-recette-a-bas-cout-de-deepseek"
+        },
+        {
+          "t": "Des modèles mis à l'épreuve sur un jeu de stratégie au long cours",
+          "z": "recherche",
+          "id": "des-modeles-mis-a-l-epreuve-sur-un-jeu-de-strategie-au-long"
+        },
+        {
+          "t": "Aux États-Unis, des agents IA personnels épluchent les relevés bancaires pour repérer…",
+          "z": "bref",
+          "id": "aux-etats-unis-des-agents-ia-personnels-epluchent-les"
+        }
+      ]
+    },
     {
       "date": "2026-10-09",
       "dateCourte": "ven. 9 oct.",

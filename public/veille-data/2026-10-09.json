@@ -258,7 +258,12 @@
     "titreEditorial": "Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-12",
+    "dateLongue": "lundi 12 octobre 2026",
+    "titreEditorial": "Les marchés doutent du financement de l'IA",
+    "nbItems": 12
+  },
   "nbItems": 13,
   "nbSources": 21,
   "nbSignes": 11051,

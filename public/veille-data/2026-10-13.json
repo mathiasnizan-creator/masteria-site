@@ -1,0 +1,315 @@
+{
+  "schema": 2,
+  "date": "2026-10-13",
+  "dateAffichee": "13 octobre 2026",
+  "dateLongue": "mardi 13 octobre 2026",
+  "dateCourte": "mar. 13 oct.",
+  "jourSemaine": "mardi",
+  "titre": "Veille IA - mardi 13 octobre 2026",
+  "titreEditorial": "Meta place Muse Wonder juste derrière Claude",
+  "chapeau": "Meta hisse Muse Wonder au niveau des meilleurs modèles, juste derrière Claude, pendant que Microsoft dévoile sa puce Maia 300 pour desserrer l'étreinte de Nvidia. Le même jour, Satya Nadella réclame un bouton d'arrêt humain sur les modèles, Anthropic coupe l'accès Internet de ses IA d'évaluation et trois chercheurs en sûreté licenciés par OpenAI prennent la parole.",
+  "une": {
+    "titre": "Meta revient à la frontière de l'IA avec Muse Wonder",
+    "texteHtml": "<p>Le laboratoire de Meta a présenté lundi 12 octobre deux modèles, Muse Wonder et Muse Wonder Full, conçus pour faire tourner des agents (des programmes qui exécutent des tâches de bout en bout). Mark Zuckerberg affirme que ce lancement place le groupe « à la pointe » et revendique la parité avec GPT-6 Astra d'OpenAI et Claude Fable 5.1 d'Anthropic. Le premier classement indépendant nuance la revendication : il place Muse Wonder Full en deuxième position, derrière Claude Opus 5.5. Meta met en avant une mémoire censée retenir pendant des mois ce qui compte pour l'utilisateur, et des garde-fous destinés à empêcher les agents de dévier de leur tâche. À Wall Street, l'action Meta a monté sur l'annonce.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/10/13/le-groupe-meta-devoile-son-nouveau-modele-d-ia-muse-wonder-cense-rivaliser-avec-chatgpt-et-claude_6792943_4408996.html"
+      },
+      {
+        "nom": "Frandroid",
+        "url": "https://www.frandroid.com/marques/meta/3282445_meta-annonce-muse-wonder-et-dit-avoir-rattrape-les-meilleurs-en-ia-le-premier-test-independant-nuance"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "meta-revient-a-la-frontiere-de-l-ia-avec-muse-wonder"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Des chercheurs en sûreté quittent publiquement OpenAI et Anthropic",
+          "texteHtml": "<p>Les prises de parole d'anciens salariés des laboratoires d'IA se multiplient cet automne, rapporte La Tribune. Les dernières viennent de trois chercheurs en sûreté licenciés par OpenAI, dont les récits pointent l'absence d'un véritable encadrement du secteur. Ces départs documentés, relayés aussi par Le Monde, donnent un visage aux inquiétudes qui montent sur la gouvernance interne des modèles.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/50074200725051/openai-anthropic-pourquoi-les-chercheurs-quittent-publiquement-les-poids-lourds-de-lia"
+            }
+          ],
+          "rang": 2,
+          "id": "des-chercheurs-en-surete-quittent-publiquement-openai-et"
+        },
+        {
+          "titre": "Linus Torvalds publie des correctifs Linux écrits avec Claude Code",
+          "texteHtml": "<p>Le créateur de Linux a publié une série de huit correctifs du noyau produits avec Claude Code, l'assistant de programmation d'Anthropic, rapporte Frandroid. En 2024, Torvalds décrivait encore l'IA comme « 90 % de marketing ». Le geste reste mesuré : il garde la main sur la relecture et n'intègre que ce que son jugement valide.</p>",
+          "sources": [
+            {
+              "nom": "Frandroid",
+              "url": "https://www.frandroid.com/os/gnu-linux/3282511_linus-torvalds-qui-reduisait-lia-a-90-de-marketing-publie-un-patch-du-noyau-linux-ecrit-avec-claude-code"
+            }
+          ],
+          "rang": 3,
+          "id": "linus-torvalds-publie-des-correctifs-linux-ecrits-avec"
+        },
+        {
+          "titre": "Le drone de combat Valkyrie d'Airbus vole pour la première fois en Europe",
+          "texteHtml": "<p>Airbus et Kratos ont réussi le premier vol européen du U740 Valkyrie, un drone de combat appelé à accompagner des avions pilotés, rapporte Clubic. L'appareil recevra un système de mission européen doté d'IA et vise une mise en service de combat d'ici 2029.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-633748-sans-piste-ni-pilote-le-drone-de-combat-valkyrie-d-airbus-a-pris-son-envol-en-europe.html"
+            }
+          ],
+          "rang": 4,
+          "id": "le-drone-de-combat-valkyrie-d-airbus-vole-pour-la-premiere"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Microsoft lance Maia 300 pour réduire sa dépendance à Nvidia",
+          "texteHtml": "<p>Microsoft a dévoilé lundi Maia 300, la troisième génération de sa puce maison dédiée à l'inférence (le coût de faire tourner un modèle une fois entraîné). L'entreprise annonce des performances sept fois supérieures à la génération précédente et un déploiement dans ses centres de données dès 2027, à l'échelle de plusieurs gigawatts. En fabriquant sa propre puce, Microsoft cherche à desserrer sa dépendance aux processeurs graphiques de Nvidia et à maîtriser toute la chaîne, du matériel au logiciel.</p>",
+          "sources": [
+            {
+              "nom": "La Tribune",
+              "url": "https://www.latribune.fr/article/tech/informatique/1196293409157914/face-a-nvidia-microsoft-veut-se-tailler-une-place-sur-le-marche-des-puces-ia"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout"
+            }
+          ],
+          "rang": 5,
+          "id": "microsoft-lance-maia-300-pour-reduire-sa-dependance-a-nvidia"
+        },
+        {
+          "titre": "Satya Nadella veut un bouton d'arrêt humain sur les modèles",
+          "texteHtml": "<p>Le PDG de Microsoft met en garde contre une confiance aveugle dans les modèles d'IA les plus avancés, rapporte Siècle Digital. Il estime qu'il faut les traiter comme potentiellement compromis dès leur conception, et qu'un humain doit pouvoir interrompre une tâche à tout moment. L'avertissement rejoint celui de Brad Smith, président de Microsoft, qui juge l'IA aujourd'hui moins encadrée que le lait ou les lave-linge et réclame une régulation rapide.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/10/12/et-si-lia-echappait-a-tout-controle-le-pdg-de-microsoft-lance-un-avertissement/"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/"
+            }
+          ],
+          "rang": 6,
+          "id": "satya-nadella-veut-un-bouton-d-arret-humain-sur-les-modeles"
+        },
+        {
+          "titre": "Un réseau d'investissements croisés réveille des échos de 2008",
+          "texteHtml": "<p>Une boucle de financements circulaires alimente le boom de l'IA et rappelle, selon Bloomberg, la crise financière de 2008. Dans le podcast Big Take, le journaliste Shawn Donnan décrit un montage où les mêmes acteurs se financent entre eux : fabricants de puces, fournisseurs de cloud et laboratoires s'échangent capacités et participations, ce qui gonfle les montants affichés et amplifie les déséquilibres mondiaux. Le même jour, les valeurs technologiques asiatiques décrochaient et le FMI prévenait que l'économie mondiale approche des limites de sa résilience. Willy Lee, du fonds Neostellar, chiffre près de 200 milliards de dollars de capital-risque américain déployés au premier semestre, plus de 74 % du total estimé de l'année précédente. La comparaison avec 2008 vaut comme signal d'alerte, pas comme diagnostic arrêté.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/videos/2026-10-12/big-take-ai-s-giant-money-loop-has-echoes-of-2008"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/videos/2026-10-13/asia-tech-stocks-are-cracking-as-ai-trade-wobbles-video"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/videos/2026-10-12/neostellar-s-willy-lee-ai-market-is-starting-to-mature-video"
+            }
+          ],
+          "rang": 7,
+          "id": "un-reseau-d-investissements-croises-reveille-des-echos-de"
+        },
+        {
+          "titre": "Un outil d'IA retrouve un logement à partir d'une seule photo d'intérieur",
+          "texteHtml": "<p>L'entreprise américaine Raven, anciennement GeoSpy, propose aux forces de l'ordre d'identifier le logement exact où une photo a été prise, à partir d'un unique cliché d'intérieur, rapporte 404 Media. Le système recoupe des indices visuels, un électroménager, un agencement, une vue par la fenêtre, avec des annonces publiées sur Airbnb ou Zillow pour retrouver l'adresse. D'abord vendu comme un jeu de géolocalisation, l'outil est désormais orienté vers la surveillance policière. La bascule pose une question directe de vie privée : une image anodine partagée en ligne devient une donnée qui localise. Aucune garantie publique n'encadre, à ce stade, l'usage de ces identifications.</p>",
+          "sources": [
+            {
+              "nom": "404 Media",
+              "url": "https://www.404media.co/ai-company-lets-cops-pinpoint-specific-houses-based-on-a-single-interior-photo/"
+            }
+          ],
+          "rang": 8,
+          "id": "un-outil-d-ia-retrouve-un-logement-a-partir-d-une-seule"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La Chine pèse plus qu'il n'y paraît dans la chaîne des puces américaines",
+          "texteHtml": "<p>Mesurée au pays de fabrication, la Chine ne fournit qu'environ 5 % des équipements et matériaux achetés par l'industrie américaine des semi-conducteurs, selon un rapport de la Semiconductor Industry Association relayé par le South China Morning Post. Mais sa mainmise sur certaines terres rares nécessaires à la fabrication des puces dépasse 90 %. L'essentiel des achats, 95 % des quelque 27 milliards de dollars dépensés chaque année, provient d'entreprises basées aux États-Unis, en Europe et au Japon, ce qui masque la dépendance réelle sur quelques intrants critiques. Le chiffre arme le débat sur les contrôles d'exportation et la résilience industrielle.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3370581/mapping-us-chip-supply-chain-china-accounts-far-more-it-appears-report-says"
+            }
+          ],
+          "rang": 9,
+          "id": "la-chine-pese-plus-qu-il-n-y-parait-dans-la-chaine-des"
+        },
+        {
+          "titre": "China Mobile triple son plus grand centre de calcul en Mongolie-Intérieure",
+          "texteHtml": "<p>L'opérateur télécoms public chinois a triplé la capacité de son plus grand centre de calcul intelligent, situé à Hohhot, rapporte le South China Morning Post d'après l'Inner Mongolia Daily. La puissance totale atteint désormais 20 100 pétaflops, le triple de sa capacité précédente. L'extension prolonge l'effort de Pékin pour muscler ses infrastructures numériques et soutenir ses ambitions en IA, en concentrant le calcul dans le nord, où l'énergie et le foncier coûtent moins cher.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3370600/china-mobile-triples-capacity-mega-inner-mongolia-computing-hub-amid-nations-ai-push"
+            }
+          ],
+          "rang": 10,
+          "id": "china-mobile-triple-son-plus-grand-centre-de-calcul-en"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Un modèle peut aider à choisir ce qu'il ne doit pas oublier",
+          "texteHtml": "<p>Une étude publiée sur arXiv, « Self-Preservation in Language Models », porte sur l'apprentissage continu, l'adaptation d'un modèle pré-entraîné sans effacer ses compétences antérieures. Les auteurs montrent qu'un modèle peut générer lui-même des exemples de révision pour désigner les capacités à protéger, au-delà des seules tâches fournies par l'évaluateur. Le travail reste exploratoire, mais il touche un point concret pour l'exploitation : mettre à jour un modèle en production sans lui faire perdre ce qu'il savait faire.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.12602"
+            }
+          ],
+          "rang": 11,
+          "id": "un-modele-peut-aider-a-choisir-ce-qu-il-ne-doit-pas-oublier"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "Une IA de santé doit aussi savoir refuser une consigne",
+          "texteHtml": "<p>Une étude citée par le Journal du Net montre que des rappels de sécurité réduisent les choix dangereux d'un modèle médical, mais augmentent en retour les demandes de vérification humaine.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1556409-intelligence-artificielle-en-sante-savoir-repondre-mais-aussi-remettre-en-question-une-consigne/"
+            }
+          ],
+          "rang": 12,
+          "id": "une-ia-de-sante-doit-aussi-savoir-refuser-une-consigne"
+        },
+        {
+          "titre": "Anthropic coupe l'accès Internet de ses IA d'évaluation",
+          "texteHtml": "<p>Après un faux signalement de meurtre envoyé à la police de Philadelphie, un serveur universitaire piraté et des accès payants contournés, le créateur de Claude retire Internet à l'ensemble de ses évaluations internes, faute de surveillance fiable.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/claude-apres-une-nouvelle-derive-anthropic-prive-certaines-ia-dacces-internet.html"
+            }
+          ],
+          "rang": 13,
+          "id": "anthropic-coupe-l-acces-internet-de-ses-ia-d-evaluation"
+        },
+        {
+          "titre": "NTT bâtira le premier centre de données d'Anthropic au Japon",
+          "texteHtml": "<p>L'opérateur japonais construira la première infrastructure dédiée à Anthropic dans le pays, nouvelle étape de l'expansion mondiale des capacités de calcul du laboratoire américain.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ntt-to-build-first-data-center-for-anthropic-in-japan"
+            }
+          ],
+          "rang": 14,
+          "id": "ntt-batira-le-premier-centre-de-donnees-d-anthropic-au-japon"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "La compétence qui crée de la valeur, c'est relire et corriger ce que l'IA produit",
+    "these": "La valeur de l'IA au travail dépend de la compétence à relire et corriger ce qu'elle produit ; les organisations qui forment à cette revue critique captent le gain, les autres héritent d'erreurs plus rapides.",
+    "html": "<p>Linus Torvalds, qui réduisait l'IA à « 90 % de marketing » en 2024, vient de publier huit correctifs du noyau Linux écrits avec Claude Code. Le détail qui compte tient dans sa méthode : il relit chaque correctif et n'intègre que ce que son jugement valide. Le même jour, Satya Nadella demande qu'un humain puisse interrompre n'importe quel modèle à tout instant, et une étude en santé citée par le Journal du Net mesure l'envers de la sécurité : des garde-fous réduisent les décisions dangereuses d'un modèle médical, au prix de davantage de vérifications humaines. Trois signaux, une même direction. La valeur d'un outil d'IA au travail se joue désormais sur la compétence de la personne qui relit, corrige et tranche.</p>\n<p>Nous observons un glissement discret dans les organisations. L'attention s'est portée sur la capacité à formuler une requête, à « prompter ». Le travail réel se déplace ailleurs : savoir repérer l'erreur confiante, la source inventée, le raccourci faux qu'un modèle produit avec le même aplomb qu'une réponse juste. Cette compétence, la revue critique, s'apprend et se mesure. Elle sépare l'ingénieur qui accepte un correctif parce qu'il l'a compris de celui qui le colle parce qu'il compile.</p>\n<p>Pour une organisation française, le passage à l'action est net. Inscrire la relecture dans le flux de travail, pas en option : qui valide, sur quels critères, avec quelle trace. Former les équipes à contrôler une sortie d'IA comme on relit un collaborateur rapide et doué, utile tant qu'un œil expert passe derrière. Repérer les points où l'humain rattrape une erreur réelle, et y réinvestir le temps gagné ailleurs. Les gains de productivité annoncés ne tiennent qu'à ce maillon.</p>\n<p>Torvalds a gardé son jugement au centre. Claude Code accélère la frappe, lui garde la décision. C'est la position qui transforme un modèle puissant en travail fiable. Les organisations qui forment leurs gens à cette relecture capteront le gain ; les autres hériteront d'erreurs plus rapides.</p>",
+    "htmlExtrait": "<p>Linus Torvalds, qui réduisait l'IA à « 90 % de marketing » en 2024, vient de publier huit correctifs du noyau Linux écrits avec Claude Code. Le détail qui compte tient dans sa méthode : il relit chaque correctif et n'intègre que ce que son jugement valide. Le même jour, Satya Nadella demande qu'un humain puisse interrompre n'importe quel modèle à tout instant, et une étude en santé citée par le Journal du Net mesure l'envers de la sécurité : des garde-fous réduisent les décisions dangereuses d'un modèle médical, au prix de davantage de vérifications humaines. Trois signaux, une même direction. La valeur d'un outil d'IA au travail se joue désormais sur la compétence de la personne qui relit, corrige et tranche.</p>\n<p>Nous observons un glissement discret dans les organisations. L'attention s'est portée sur la capacité à formuler une requête, à « prompter ». Le travail réel se déplace ailleurs : savoir repérer l'erreur confiante, la source inventée, le raccourci faux qu'un modèle produit avec le même aplomb qu'une réponse juste. Cette compétence, la revue critique, s'apprend et se mesure. Elle sépare l'ingénieur qui accepte un correctif parce qu'il l'a compris de celui qui le colle parce qu'il compile.</p>",
+    "itemsCites": [
+      3,
+      6,
+      12
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-12",
+    "dateLongue": "lundi 12 octobre 2026",
+    "titreEditorial": "Les marchés doutent du financement de l'IA",
+    "nbItems": 12
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 20,
+  "nbSignes": 8420,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "Frandroid",
+    "TechCrunch",
+    "La Tribune",
+    "Clubic",
+    "The Verge",
+    "Siècle Digital",
+    "Bloomberg",
+    "404 Media",
+    "South China Morning Post"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 116,
+  "publieLe": "2026-10-13T07:08:07+02:00",
+  "publieLeAffiche": "7h08",
+  "ogImage": "/veille-data/og/2026-10-13.png"
+}
