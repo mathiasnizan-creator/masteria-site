@@ -5,7 +5,7 @@ import {
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   BadgeCheck, Wallet, MonitorSmartphone, Building2, Sparkles, BookOpen,
   Filter, RotateCcw, ArrowRight, Check, ChevronRight,
-  Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart,
+  Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart, Layers,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
@@ -19,6 +19,7 @@ const metiersHub = HUBS.find(h => h.id === 'metiers')
 const TOOL_HUBS = [
   ...HUBS.filter(h => h.id !== 'metiers' && h.id !== 'sprint-ia'),
   ...HUBS.filter(h => h.id === 'sprint-ia').map(h => ({ ...h, tool: 'Ateliers' })),
+  { id: 'thematiques', tool: 'Thématiques', color: '#0F766E', colorLight: '#CCFBF1' },
 ]
 
 /* ─────────────────────────────────────────────
@@ -55,7 +56,63 @@ const PAGES_FUSIONNEES = new Set([
   'formation-multi-outils-communication', 'formation-multi-outils-finance', 'formation-multi-outils-informatique',
   'formation-multi-outils-pedagogique',
 ])
-const CATALOGUE = SPOKES.filter(s => !PAGES_FUSIONNEES.has(s.slug))
+const CROISEMENTS = SPOKES.filter(s => !PAGES_FUSIONNEES.has(s.slug))
+
+/* Les autres programmes du catalogue (ajoutés le 14/10/2026 : la liste n'en
+ * montrait que 67 sur 108, et 13 métiers tombaient à zéro résultat).
+ *  - les programmes de base par outil (les hubs), métier « Tous publics » ;
+ *  - les 24 programmes par métier, sans outil imposé (allTools : ils restent
+ *    visibles quand un outil est coché AVEC un métier) ;
+ *  - les formations thématiques, sous une entrée d'outil « Thématiques ». */
+/* Pictos des entrées sans logo d'éditeur */
+const LOGOS_EDITEURS = new Set(['chatgpt', 'copilot', 'gemini', 'claude', 'multi-outils', 'sprint-ia', 'mistral'])
+const PICTO_SANS_LOGO = { metiers: Briefcase, thematiques: Layers }
+function LogoOuPicto({ tool, size, color }) {
+  if (LOGOS_EDITEURS.has(tool)) return <ToolLogo tool={tool} size={size} color={color} />
+  const Picto = PICTO_SANS_LOGO[tool] || BookOpen
+  return <Picto size={size - 2} strokeWidth={2.2} color={color} aria-hidden="true" />
+}
+
+const THEMATIQUES = { id: 'thematiques', tool: 'Thématiques', color: '#0F766E', colorLight: '#CCFBF1' }
+const METIERS_HUB = HUBS.find(h => h.id === 'metiers')
+const TRANSVERSE = METIERS.find(m => m.slug === 'transverse')
+
+const PROGRAMMES_OUTIL = HUBS
+  .filter(h => h.id !== 'metiers')
+  .map(h => ({
+    slug: h.slug, toolSlug: h.id, tool: h.id === 'sprint-ia' ? 'Ateliers' : h.tool,
+    toolColor: h.color, toolColorLight: h.colorLight,
+    metierSlug: 'transverse', metier: TRANSVERSE?.label || 'Tous publics',
+    h1: h.h1, metaDesc: h.metaDesc,
+  }))
+
+const PROGRAMMES_METIER = METIERS.map(m => ({
+  slug: `formation-ia-${m.slug}`, toolSlug: 'metiers', tool: 'Tous outils', allTools: true,
+  toolColor: METIERS_HUB.color, toolColorLight: METIERS_HUB.colorLight,
+  metierSlug: m.slug, metier: m.label,
+  h1: `Formation IA · ${m.label}`,
+  metaDesc: `${m.desc}. Deux jours sur l'assistant de votre structure, quel qu'il soit.`,
+}))
+
+const THEMES = [
+  ['formation-agents-ia', 'Formation agents IA', "Construire, éprouver et surveiller des agents sans code dans Claude, ChatGPT, Copilot, Gemini ou n8n. 2 jours."],
+  ['formation-automatisation-ia', 'Formation automatisation IA', "Choisir les tâches à automatiser, bâtir workflows et agents supervisés, sans code. 2 jours."],
+  ['formation-n8n', 'Formation n8n', "Workflows fiables, nœuds IA et agents, cloud à Francfort ou auto-hébergement. 1 ou 2 jours."],
+  ['formation-make', 'Formation Make', "Scénarios fiables, crédits maîtrisés, étapes IA et agents sous contrôle. 1 ou 2 jours."],
+  ['formation-zapier', 'Formation Zapier', "Zaps utiles et fiables, une étape IA cadrée, les limites et le cadre RGPD. 1 jour."],
+  ['formation-data-ia', 'Formation data IA', "Analyser vos exports avec l'IA, vérifier chaque chiffre, reconstruire votre reporting. 1 ou 2 jours."],
+  ['formation-gouvernance-donnees', 'Formation gouvernance des données', "Cartographier le patrimoine informationnel, nommer les rôles, fiabiliser la qualité. 1 ou 2 jours."],
+  ['formation-cse-ia', 'Formation CSE et IA', "Comprendre l'IA sans jargon, instruire la consultation du comité, rédiger un avis motivé. 1 jour."],
+  ['formation-ia-comex', 'Formation IA COMEX', "Aligner le comité exécutif sur l'IA et arbitrer sa feuille de route, en français ou en anglais. 3 h à 1 jour."],
+  ['formation-ia-debutant', 'Formation IA débutant', "ChatGPT, Copilot ou Gemini en une journée, sans aucun prérequis."],
+]
+const PROGRAMMES_THEMATIQUES = THEMES.map(([slug, h1, metaDesc]) => ({
+  slug, h1, metaDesc, toolSlug: THEMATIQUES.id, tool: THEMATIQUES.tool,
+  toolColor: THEMATIQUES.color, toolColorLight: THEMATIQUES.colorLight,
+  metierSlug: 'transverse', metier: TRANSVERSE?.label || 'Tous publics',
+}))
+
+const CATALOGUE = [...CROISEMENTS, ...PROGRAMMES_OUTIL, ...PROGRAMMES_METIER, ...PROGRAMMES_THEMATIQUES]
 
 /* Balises propres à la page (le titre et la description du hub partagé
  * dépassaient 60 et 155 caractères). */
@@ -185,7 +242,10 @@ export default function MetiersHubPage({ variant } = {}) {
   /* Application des filtres */
   const filteredSpokes = useMemo(() => {
     return CATALOGUE.filter(s => {
-      if (selectedTools.length && !selectedTools.includes(s.toolSlug)) return false
+      if (selectedTools.length && !selectedTools.includes(s.toolSlug)) {
+        // Un programme métier vaut pour tout outil, mais seulement quand un métier est coché
+        if (!(s.allTools && selectedMetiers.length)) return false
+      }
 
       if (selectedMetiers.length) {
         const norm = slug => (slug === 'rh' ? 'ressources-humaines' : slug)
@@ -389,7 +449,7 @@ export default function MetiersHubPage({ variant } = {}) {
                   onClick={() => toggle(selectedTools, setSelectedTools)(hub.id)}
                   color={hub.color}
                 >
-                  <ToolLogo tool={hub.id} size={16} color={selectedTools.includes(hub.id) ? '#fff' : hub.color} />
+                  <LogoOuPicto tool={hub.id} size={16} color={selectedTools.includes(hub.id) ? '#fff' : hub.color} />
                   {hub.tool}
                 </FilterChip>
               ))}
@@ -504,7 +564,7 @@ export default function MetiersHubPage({ variant } = {}) {
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         flexShrink: 0,
                       }}>
-                        <ToolLogo tool={s.toolSlug} size={22} color={s.toolColor} />
+                        <LogoOuPicto tool={s.toolSlug} size={22} color={s.toolColor} />
                       </div>
                       <div style={{
                         fontSize: 12, fontWeight: 700, color: s.toolColor,
