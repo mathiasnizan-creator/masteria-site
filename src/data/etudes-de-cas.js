@@ -69,7 +69,7 @@ export const CASES = [
     title: "Du comité de direction aux managers pilotes, puis à l'international\u00a0: un déploiement Copilot par paliers",
     teaser: "Cinq sessions de deux jours pour les managers entre juillet et septembre 2026, dont deux en anglais, sur 13 ateliers construits avec les fichiers du groupe ; une matinée stratégique pour le comité de direction ; puis les sites des États-Unis et du Mexique en octobre 2026 et de l'Inde en décembre.",
     stats: [
-      ['24', 'managers pilotes formés en deux sessions de deux jours'],
+      ['59', 'managers formés en cinq sessions de deux jours'],
       ['13', 'ateliers construits sur les fichiers du groupe'],
       ['5', 'sessions de deux jours de juillet à septembre 2026, dont deux en anglais'],
       ['3', 'pays pour la phase internationale\u00a0: États-Unis, Inde, Mexique'],
@@ -102,7 +102,7 @@ export const CASES = [
     pillars: [
       { t: 'Conseil', d: "Une matinée stratégique avec le comité de direction\u00a0: vision, cadre d'usage, coût des agents, feuille de route à construire avant la généralisation à l'international." },
       { t: 'Construction', d: "Treize ateliers et des assistants personnalisés construits à partir des fichiers des managers, dans l'environnement Microsoft 365 du groupe." },
-      { t: 'Formation', d: "Deux sessions pilotes de deux jours pour 24 managers, mesurées à chaud et corrigées de l'une à l'autre, puis trois sessions en septembre 2026, dont deux en anglais, avant les sites internationaux." },
+      { t: 'Formation', d: "Deux sessions pilotes de deux jours, mesurées à chaud et corrigées de l'une à l'autre, puis trois sessions en septembre 2026, dont deux en anglais : 59 managers formés avant les sites internationaux." },
     ],
   },
   {

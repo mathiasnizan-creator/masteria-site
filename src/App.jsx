@@ -1884,6 +1884,7 @@ export default function App() {
         <Route path="/ia-generative-entreprise" element={<IAGenerativeEntreprisePage />} />
         <Route path="/outils-ia-sur-mesure" element={<OutilsIASurMesurePage />} />
         <Route path="/formation-intelligence-artificielle" element={<MetiersHubPage />} />
+        <Route path="/catalogue" element={<MetiersHubPage variant="catalogue" />} />
         <Route path="/formation-ia-debutant" element={<DebutantPage />} />
         <Route path="/glossaire-ia" element={<GlossaryPage />} />
         <Route path="/quelle-est-la-meilleure-ia" element={<ComparisonsHubPage />} />

@@ -93,6 +93,9 @@ routes.push({ handle: 'filesystem' });
 // noindex, non prérendues) servent le shell SPA propre (/spa, écrit par le
 // prerender) et React Router rend le détail côté client.
 routes.push({ src: '^/formations/.+$', dest: '/spa' });
+// /catalogue : version du catalogue partagée par mail (noindex, hors sitemap,
+// donc non prérendue). Les filtres ?outil= et ?metier= passent avec la requête.
+routes.push({ src: '^/catalogue$', dest: '/spa' });
 
 // Filet de sécurité prerender : si une page légitime des namespaces connus
 // (formation-*, blog/*) manque du filesystem (échec ponctuel de prerender),

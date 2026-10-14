@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, Wallet, MonitorSmartphone, Building2, Sparkles,
+  BadgeCheck, Wallet, MonitorSmartphone, Building2, Sparkles, BookOpen,
   Filter, RotateCcw, ArrowRight, Check, ChevronRight,
   Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart,
 } from 'lucide-react'
@@ -12,6 +12,7 @@ import ToolLogo from '../components/ToolLogo'
 import { METIERS, SPOKES, HUBS } from '../data/seo-pages'
 import { GEO_CITIES, geoIaSlug } from '../data/geo-data'
 import { useIsMobile } from '../hooks/useMediaQuery'
+import { CatalogueHero, CatalogueSuite } from '../components/CatalogueMail'
 
 const SITE_URL = 'https://www.master-ia.fr'
 const metiersHub = HUBS.find(h => h.id === 'metiers')
@@ -150,7 +151,10 @@ function FilterChip({ active, onClick, children, color }) {
  * PAGE
  * ───────────────────────────────────────────── */
 
-export default function MetiersHubPage() {
+/* variant="catalogue" : /catalogue, la version partagée par mail (noindex),
+   même module de filtres avec un en-tête et une fin propres (CatalogueMail.jsx). */
+export default function MetiersHubPage({ variant } = {}) {
+  const isCatalogue = variant === 'catalogue'
   const isMobile = useIsMobile()
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -217,16 +221,26 @@ export default function MetiersHubPage() {
 
   return (
     <>
-      <SEOHead
-        title={META_TITLE}
-        description={META_DESC}
-        slug={metiersHub.slug}
-        faqItems={FAQ_IA.map(f => ({ q: f.q, a: f.a }))}
-        breadcrumbs={breadcrumbs}
-        extraJsonLd={itemListJsonLd}
-        dateModified="2026-10-07"
-      />
+      {isCatalogue ? (
+        <SEOHead
+          title="Catalogue 2027 des formations IA | Masteria"
+          description="Catalogue 2027 des formations IA de Masteria : filtrez par outil et par métier pour trouver la formation adaptée à vos équipes. Qualiopi, OPCO."
+          slug="catalogue"
+          noindex
+        />
+      ) : (
+        <SEOHead
+          title={META_TITLE}
+          description={META_DESC}
+          slug={metiersHub.slug}
+          faqItems={FAQ_IA.map(f => ({ q: f.q, a: f.a }))}
+          breadcrumbs={breadcrumbs}
+          extraJsonLd={itemListJsonLd}
+          dateModified="2026-10-07"
+        />
+      )}
 
+      {isCatalogue ? <CatalogueHero isMobile={isMobile} /> : (<>
       {/* ═══════════════════════════════════════════════════════════
        * HERO : H1 ciblé "formation intelligence artificielle"
        * ═══════════════════════════════════════════════════════════ */}
@@ -246,7 +260,7 @@ export default function MetiersHubPage() {
             padding: '6px 16px', borderRadius: 99,
             fontSize: 13, fontWeight: 700, marginBottom: 24,
           }}>
-            <Sparkles size={15} strokeWidth={2.2} />
+            <BookOpen size={15} strokeWidth={2.2} aria-hidden="true" />
             <span>Catalogue au 7 octobre 2026 · plus de 100 programmes</span>
           </div>
 
@@ -329,6 +343,8 @@ export default function MetiersHubPage() {
         </div>
       </section>
 
+
+      </>)}
 
       {/* ═══════════════════════════════════════════════════════════
        * FILTRES DYNAMIQUES
@@ -540,6 +556,7 @@ export default function MetiersHubPage() {
         </nav>
       </section>
 
+      {isCatalogue ? <CatalogueSuite isMobile={isMobile} /> : (<>
       {/* ═══════════════════════════════════════════════════════════
        * RACCOURCIS : HUBS PAR OUTIL & PAR MÉTIER
        * ═══════════════════════════════════════════════════════════ */}
@@ -931,6 +948,7 @@ export default function MetiersHubPage() {
           </p>
         </div>
       </section>
+      </>)}
     </>
   )
 }

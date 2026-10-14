@@ -168,8 +168,8 @@ const AGENCY_CASES = [
     id: 'industrie',
     icon: Factory,
     sector: 'Packaging · groupe industriel international',
-    figure: '24',
-    figureLabel: 'managers pilotes, sur treize ateliers bâtis avec les fichiers du groupe',
+    figure: '59',
+    figureLabel: 'managers formés, sur treize ateliers bâtis avec les fichiers du groupe',
     text: "Cinq sessions de deux jours se sont tenues de juillet à septembre 2026, deux d'entre elles en anglais, avec des assistants personnalisés dans Copilot. Octobre 2026 emmène le dispositif aux États-Unis et au Mexique ; l'Inde suivra en décembre.",
   },
 ]
