@@ -618,7 +618,7 @@ export default function MetiersHubPage({ variant } = {}) {
         </nav>
       </section>
 
-      {isCatalogue ? <CatalogueSuite isMobile={isMobile} /> : (<>
+      {isCatalogue ? <CatalogueSuite isMobile={isMobile} selectedTools={selectedTools} selectedMetiers={selectedMetiers} /> : (<>
       {/* ═══════════════════════════════════════════════════════════
        * RACCOURCIS : HUBS PAR OUTIL & PAR MÉTIER
        * ═══════════════════════════════════════════════════════════ */}

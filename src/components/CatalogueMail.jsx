@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
-import { ArrowRight, Check, Filter, PenTool, Send, CheckCircle2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, Check, Filter, PenTool } from 'lucide-react'
 import AvisGoogle from './AvisGoogle'
-import { trackEvent } from '../consent/ga4'
-import { HUBS, METIERS } from '../data/catalog-meta'
+import ContactForm from './ContactForm'
+import { HUBS } from '../data/catalog-meta'
 
 /*
  * Habillage de /catalogue : la page partagée par mail aux décideurs
@@ -75,7 +74,7 @@ const PLUS_LOIN = [
 const card = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 22, textDecoration: 'none', display: 'block' }
 const gridOf = (min) => ({ display: 'grid', gridTemplateColumns: `repeat(auto-fill, minmax(min(100%, ${min}px), 1fr))`, gap: 18 })
 
-export function CatalogueSuite({ isMobile }) {
+export function CatalogueSuite({ isMobile, selectedTools = [], selectedMetiers = [] }) {
   const pad = isMobile ? '52px 20px' : '80px 40px'
   return (
     <>
@@ -201,7 +200,13 @@ export function CatalogueSuite({ isMobile }) {
           <p style={{ fontSize: 16, color: '#94A3B8', lineHeight: 1.7, margin: '0 0 28px' }}>
             Dites-nous quel outil vous utilisez et quelle équipe vous voulez former : vous recevez un programme calé sur vos dossiers et un devis sous vingt-quatre heures ouvrées.
           </p>
-          <FormulaireCatalogue isMobile={isMobile} />
+          <div style={{ background: '#fff', borderRadius: 16, padding: 'clamp(24px, 4vw, 40px)', boxShadow: '0 8px 40px rgba(0,0,0,0.25)' }}>
+            <ContactForm
+              outils={selectedTools.map(id => HUBS.find(h => h.id === id)?.slug).filter(Boolean)}
+              metiers={selectedMetiers}
+              source="Page /catalogue (mail aux décideurs)"
+            />
+          </div>
         </div>
       </section>
     </>
@@ -231,75 +236,3 @@ const FAQ = [
   { q: 'Faut-il des licences payantes avant de commencer ?', a: "Non. Copilot Chat ou la version gratuite de ChatGPT ou de Gemini suffisent pour une bonne partie des exercices. La formation aide aussi à décider quelles licences valent leur prix, et pour quels postes." },
   { q: 'La formation peut-elle se faire à distance ou en anglais ?', a: "Oui. Les sessions se tiennent dans vos locaux ou en visioconférence, en France, ailleurs en Europe, aux États-Unis et en Inde, en français ou en anglais." },
 ]
-
-const champ = { width: '100%', boxSizing: 'border-box', fontFamily: 'DM Sans, sans-serif', fontSize: 14.5, padding: '12px 14px', borderRadius: 10, border: '1px solid #2A3650', background: 'rgba(255,255,255,0.04)', color: '#F8FAFC', outline: 'none' }
-const etiquette = { display: 'block', fontSize: 13, fontWeight: 700, color: '#CBD5E1', marginBottom: 6 }
-
-function FormulaireCatalogue({ isMobile }) {
-  const [searchParams] = useSearchParams()
-  const [envoi, setEnvoi] = useState('idle') // idle | loading | ok | erreur
-  const libelle = (liste, cle, champ) => (searchParams.get(cle) || '').split(',').filter(Boolean)
-    .map(v => liste.find(x => (x.id || x.slug) === v)?.[champ] || (v === 'thematiques' ? 'Thématiques' : v))
-  const filtres = [...libelle(HUBS, 'outil', 'tool'), ...libelle(METIERS, 'metier', 'label')].join(' · ')
-
-  const onSubmit = async (e) => {
-    e.preventDefault()
-    setEnvoi('loading')
-    try {
-      const data = new FormData(e.target)
-      data.set('type_demande', 'Formation (catalogue)')
-      data.set('source', 'Page /catalogue' + (filtres ? ` (filtres : ${filtres})` : ''))
-      const res = await fetch('https://formspree.io/f/xzdyjbyn', { method: 'POST', body: data, headers: { Accept: 'application/json' } })
-      if (res.ok) { setEnvoi('ok'); trackEvent('generate_lead', { form: 'catalogue' }) }
-      else setEnvoi('erreur')
-    } catch { setEnvoi('erreur') }
-  }
-
-  if (envoi === 'ok') {
-    return (
-      <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start', background: 'rgba(37,99,235,0.12)', border: '1px solid #2A3650', borderRadius: 14, padding: 24, color: '#E2E8F0' }}>
-        <CheckCircle2 size={24} color="#60A5FA" aria-hidden="true" style={{ flexShrink: 0 }} />
-        <p style={{ margin: 0, fontSize: 15.5, lineHeight: 1.7 }}>Merci, votre demande est bien partie. Nous revenons vers vous sous vingt-quatre heures ouvrées avec une première proposition de programme.</p>
-      </div>
-    )
-  }
-
-  const deux = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 16, marginBottom: 16 }
-  return (
-    <form onSubmit={onSubmit}>
-      <div style={deux}>
-        <label><span style={etiquette}>Prénom *</span><input name="prenom" required style={champ} autoComplete="given-name" /></label>
-        <label><span style={etiquette}>Nom *</span><input name="nom" required style={champ} autoComplete="family-name" /></label>
-      </div>
-      <div style={deux}>
-        <label><span style={etiquette}>E-mail professionnel *</span><input name="email" type="email" required style={champ} autoComplete="email" /></label>
-        <label><span style={etiquette}>Téléphone</span><input name="telephone" type="tel" style={champ} autoComplete="tel" /></label>
-      </div>
-      <div style={deux}>
-        <label><span style={etiquette}>Entreprise *</span><input name="entreprise" required style={champ} autoComplete="organization" /></label>
-        <label><span style={etiquette}>Fonction</span><input name="fonction" style={champ} autoComplete="organization-title" /></label>
-      </div>
-      <label style={{ display: 'block', marginBottom: 16 }}>
-        <span style={etiquette}>Nombre de personnes à former</span>
-        <select name="nb_participants" defaultValue="À préciser" style={champ}>
-          {['À préciser', '1 (individuel)', '2 à 5', '6 à 12', '13 à 50', 'Plus de 50'].map((o) => <option key={o} style={{ color: '#0A0A0A' }}>{o}</option>)}
-        </select>
-      </label>
-      <label style={{ display: 'block', marginBottom: 16 }}>
-        <span style={etiquette}>Votre besoin</span>
-        <textarea name="message" rows={4} style={{ ...champ, resize: 'vertical' }} placeholder="Outil utilisé, équipe à former, dossiers types, dates envisagées…" defaultValue={filtres ? `Programme qui m'intéresse : ${filtres}\n` : ''} />
-      </label>
-      <label style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 13, color: '#94A3B8', lineHeight: 1.55, marginBottom: 20 }}>
-        <input type="checkbox" name="consentement" value="oui" required style={{ marginTop: 3 }} />
-        <span>J'accepte que Masteria traite mes données pour me recontacter. <Link to="/politique-de-confidentialite" style={{ color: '#93C5FD', textDecoration: 'underline' }}>Politique de confidentialité</Link></span>
-      </label>
-      <button type="submit" disabled={envoi === 'loading'} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', border: 'none', padding: '14px 28px', borderRadius: 11, fontSize: 15, fontWeight: 700, cursor: 'pointer', opacity: envoi === 'loading' ? 0.7 : 1 }}>
-        <Send size={16} aria-hidden="true" /> {envoi === 'loading' ? 'Envoi…' : 'Envoyer ma demande'}
-      </button>
-      {envoi === 'erreur' && (
-        <p role="alert" style={{ color: '#FCA5A5', fontSize: 14, margin: '14px 0 0' }}>L'envoi n'a pas abouti. Réessayez dans un instant, ou écrivez à mathias.nizan@master-ia.fr.</p>
-      )}
-      <p style={{ fontSize: 12.5, color: '#64748B', margin: '16px 0 0' }}>Vous pouvez aussi répondre directement au mail qui vous a mené ici.</p>
-    </form>
-  )
-}
