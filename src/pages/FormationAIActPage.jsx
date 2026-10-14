@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Scale, Gauge, GraduationCap as Grad, FileText, ShieldCheck, CalendarDays,
-  GraduationCap, MapPin, Check, Sparkles, Landmark, Users, Target, ExternalLink,
+  GraduationCap, MapPin, Check, Landmark, Users, Target, ExternalLink, Bot,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
@@ -77,7 +77,7 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Qualiopi · actions de formation' },
-  { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
+  { icon: Bot, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
   { icon: Target, label: 'Calendrier vérifié au 7 octobre 2026' },
   { icon: MapPin, label: 'Chez vous ou en classe virtuelle · France, Europe, États-Unis, Inde' },
 ]

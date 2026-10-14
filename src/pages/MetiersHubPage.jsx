@@ -3,9 +3,9 @@ import { Link, useSearchParams } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, Wallet, MonitorSmartphone, Building2, Sparkles, BookOpen,
+  BadgeCheck, Wallet, MonitorSmartphone, Building2, BookOpen,
   Filter, RotateCcw, ArrowRight, Check, ChevronRight,
-  Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart, Layers,
+  Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart, Layers, UsersRound, Wrench,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
@@ -39,7 +39,7 @@ const METIER_ICONS = {
   informatique:          Server,
   pedagogique:           GraduationCap,
   achats:                ShoppingCart,
-  transverse:            Sparkles,
+  transverse:            UsersRound,
 }
 
 
@@ -86,7 +86,9 @@ const PROGRAMMES_OUTIL = HUBS
     h1: h.h1, metaDesc: h.metaDesc,
   }))
 
-const PROGRAMMES_METIER = METIERS.map(m => ({
+// achats et qse existent déjà comme croisements multi-outils : pas de doublon
+const SLUGS_CROISEMENTS = new Set(CROISEMENTS.map(s => s.slug))
+const PROGRAMMES_METIER = METIERS.filter(m => !SLUGS_CROISEMENTS.has(`formation-ia-${m.slug}`)).map(m => ({
   slug: `formation-ia-${m.slug}`, toolSlug: 'metiers', tool: 'Tous outils', allTools: true,
   toolColor: METIERS_HUB.color, toolColorLight: METIERS_HUB.colorLight,
   metierSlug: m.slug, metier: m.label,
@@ -438,7 +440,7 @@ export default function MetiersHubPage({ variant } = {}) {
           {/* ── Filtre OUTIL ── */}
           <div style={{ marginBottom: 24 }}>
             <div style={labelStyle()}>
-              <Sparkles size={14} strokeWidth={2.4} />
+              <Wrench size={14} strokeWidth={2.4} />
               Outil IA <span style={hintStyle()}>(multi-sélection)</span>
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>

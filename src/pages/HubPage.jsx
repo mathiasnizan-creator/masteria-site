@@ -4,7 +4,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2, MapPin,
-  ShoppingCart, Sparkles,
+  ShoppingCart, UsersRound,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -35,7 +35,7 @@ const METIER_ICONS = {
   informatique:          Server,
   pedagogique:           GraduationCap,
   achats:                ShoppingCart,
-  transverse:            Sparkles,
+  transverse:            UsersRound,
 }
 
 // '2026-10-05' → '5 octobre 2026' (sans Date : même rendu au prérendu et chez le visiteur, quel que soit le fuseau)

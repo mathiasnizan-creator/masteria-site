@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Swords, Check, Tag, Package, Search, Users, Mic, Star, TrendingUp,
-  Crosshair, Filter, PenLine, Send, Scale, AlertTriangle, Compass, Newspaper,
+  ArrowRight, Swords, Check, Tag, Package, Search, Users, Mic, TrendingUp,
+  Crosshair, Filter, PenLine, Send, Scale, AlertTriangle, Compass, Newspaper, MessageSquareQuote,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -39,7 +39,7 @@ const SURVEILLER = [
   { Icon: Search, t: 'Contenus et SEO', d: "Sujets publiés, mots-clés visés, nouvelles pages : une lecture précise de la façon dont il cherche ses clients." },
   { Icon: Users, t: 'Recrutements', d: "Les offres d'emploi annoncent la direction prise : un concurrent qui recrute des ingénieurs de données prépare autre chose qu'un concurrent qui recrute des commerciaux." },
   { Icon: Mic, t: 'Prises de parole', d: "Entretiens de dirigeants, publications LinkedIn, articles de presse. Le discours annonce souvent la décision de quelques mois." },
-  { Icon: Star, t: 'Avis clients', d: "Ce que ses clients saluent et ce qu'ils lui reprochent dessine une carte de ses forces, et des places à prendre pour vous." },
+  { Icon: MessageSquareQuote, t: 'Avis clients', d: "Ce que ses clients saluent et ce qu'ils lui reprochent dessine une carte de ses forces, et des places à prendre pour vous." },
 ]
 
 const ETAPES = [

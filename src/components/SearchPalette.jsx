@@ -12,7 +12,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Search, X, ArrowRight, CornerDownLeft, Sparkles } from 'lucide-react';
+import { Search, X, ArrowRight, CornerDownLeft, Lock } from 'lucide-react';
 import { SEARCH_OPEN_EVENT, openSearch } from './searchBus';
 
 const RESULTS_MAX = 14;
@@ -386,7 +386,7 @@ export default function SearchPalette() {
             <span><kbd style={kbdStyle}>esc</kbd> fermer</span>
           </span>
           <span style={{ display: 'flex', alignItems: 'center', gap: 5, whiteSpace: 'nowrap' }}>
-            <Sparkles size={12} color="#2563EB" aria-hidden="true" /> Recherche locale, rien ne quitte votre navigateur
+            <Lock size={12} color="#2563EB" aria-hidden="true" /> Recherche locale, rien ne quitte votre navigateur
           </span>
         </div>
       </div>

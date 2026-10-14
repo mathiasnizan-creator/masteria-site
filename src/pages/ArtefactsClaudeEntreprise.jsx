@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import {
-  Brain, Wrench, Settings, Sparkles, Database, Puzzle, Share2,
+  Brain, Wrench, Settings, Database, Puzzle, Share2,
   Lightbulb, FileText, Code as CodeIcon, Image as ImageIcon, Layers,
   Globe, Eye, Download, RefreshCw, ExternalLink, Plug, Compass,
   Edit3, ArrowRight, ArrowDown, ChevronRight,
   Lock, Users as UsersIcon, Building2, Crown, ShieldCheck, Clock,
   AlertTriangle, CheckCircle2, XCircle, Info, Zap, Tag,
   PenLine, FlaskConical, Trash2, Search, Briefcase, Monitor,
-  GitBranch, Wand2, Calendar, MessageSquare, Server, Hash, Star,
+  GitBranch, Wand2, Calendar, MessageSquare, Server, Hash, Cpu, ClipboardPaste, Gift,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -47,7 +47,7 @@ const SECTIONS = [
   { id: 'p1', num: '1', label: 'Comprendre',     labelLong: 'Comprendre les artefacts',         Icon: Brain,     accent: '#EFF4FF', tint: C.blue },
   { id: 'p2', num: '2', label: 'Activer',        labelLong: 'Activer & paramétrer',             Icon: Settings,  accent: '#FEF3C7', tint: '#92400E' },
   { id: 'p3', num: '3', label: 'Travailler',     labelLong: 'Travailler avec un artefact',      Icon: Wrench,    accent: '#D1FAE5', tint: C.success },
-  { id: 'p4', num: '4', label: 'Artefacts IA',   labelLong: 'Artefacts alimentés par l’IA',     Icon: Sparkles,  accent: '#EDE9FE', tint: '#6D28D9' },
+  { id: 'p4', num: '4', label: 'Artefacts IA',   labelLong: 'Artefacts alimentés par l’IA',     Icon: Cpu,  accent: '#EDE9FE', tint: '#6D28D9' },
   { id: 'p5', num: '5', label: 'Stockage',       labelLong: 'Stockage persistant',              Icon: Database,  accent: '#E0F7FA', tint: '#0EA5B8' },
   { id: 'p6', num: '6', label: 'MCP',            labelLong: 'Intégration MCP',                  Icon: Plug,      accent: '#FFE4E6', tint: '#BE123C' },
   { id: 'p7', num: '7', label: 'Partage',        labelLong: 'Partage & publication',            Icon: Share2,    accent: '#F1F5F9', tint: '#475569' },
@@ -133,7 +133,7 @@ function SectionShell({ section, children }) {
           <div style={{
             fontSize: 11, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase',
             color: tint, marginBottom: 2, display: 'inline-flex', alignItems: 'center', gap: 5,
-          }}>{num === '★' ? <><Star size={12} color={tint} fill={tint} style={{ flexShrink: 0 }} />Bonus</> : `Partie ${num}`}</div>
+          }}>{num === '★' ? <><Gift size={12} color={tint} style={{ flexShrink: 0 }} />Bonus</> : `Partie ${num}`}</div>
           <h2 style={{
             fontFamily: F.head, fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 800,
             color: C.ink, letterSpacing: '-0.02em', margin: 0, lineHeight: 1.2,
@@ -362,7 +362,7 @@ export default function ArtefactsClaudeEntreprise() {
                   color: isActive ? C.blue : C.textMuted,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 11, fontWeight: 800, flexShrink: 0,
-                }}>{s.num === '★' ? <Star size={12} color={isActive ? C.blue : C.textMuted} fill={isActive ? C.blue : C.textMuted} /> : s.num}</span>
+                }}>{s.num === '★' ? <Gift size={12} color={isActive ? C.blue : C.textMuted} /> : s.num}</span>
                 {s.label}
               </a>
             )
@@ -403,7 +403,7 @@ export default function ArtefactsClaudeEntreprise() {
                     color: isActive ? '#fff' : C.textMuted,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 10.5, fontWeight: 800, flexShrink: 0,
-                  }}>{s.num === '★' ? <Star size={11} color={isActive ? '#fff' : C.textMuted} fill={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
+                  }}>{s.num === '★' ? <Gift size={11} color={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
                   {s.labelLong}
                 </a>
               )
@@ -838,7 +838,7 @@ export default function ArtefactsClaudeEntreprise() {
                 </Step>
               </StepList>
 
-              <MethodBox tone="blue" badge="Brief à coller dans Claude" badgeIcon={Sparkles} title="Artefact recherche catalogue avec stockage persistant">
+              <MethodBox tone="blue" badge="Brief à coller dans Claude" badgeIcon={ClipboardPaste} title="Artefact recherche catalogue avec stockage persistant">
                 <div style={{
                   background: '#fff', borderRadius: 8, padding: 16, border: `1px solid ${C.blueBorder}`,
                 }}>

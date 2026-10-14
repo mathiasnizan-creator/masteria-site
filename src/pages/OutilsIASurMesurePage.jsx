@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Bot, FileSearch, BarChart3, Workflow, Globe, Sparkles,
+  ArrowRight, Bot, FileSearch, BarChart3, Workflow, Globe,
   Compass, FlaskConical, Code2, Rocket, RefreshCw, ShieldCheck, KeyRound,
-  Server, GraduationCap, MapPin, Building2, Check, Minus, Sun, Landmark,
+  Server, GraduationCap, MapPin, Building2, Check, Minus, Sun, Landmark, Route,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -123,7 +123,7 @@ const OUTILS = [
     desc: "Des écrans conçus pour un service, des comptes par utilisateur, des droits par rôle. Vos équipes travaillent dans un logiciel stable, loin des scripts bricolés qui cassent au premier changement de version.",
   },
   {
-    icon: Sparkles,
+    icon: Route,
     title: 'Agent spécialisé',
     desc: "Un agent reçoit un objectif précis et enchaîne plusieurs étapes pour l'atteindre, dans les limites que vous lui fixez. Plus il agit seul, plus ses garde-fous comptent.",
     href: '/agents-ia-entreprise',

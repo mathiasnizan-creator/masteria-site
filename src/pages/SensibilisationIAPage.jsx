@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Sparkles, Users, GraduationCap, MapPin, Check, Presentation, Lightbulb,
-  ShieldCheck, Landmark, MessagesSquare, BarChart3, Layers, Eye, Scale,
+  ArrowRight, Users, GraduationCap, MapPin, Check, Presentation, Lightbulb,
+  ShieldCheck, Landmark, MessagesSquare, BarChart3, Layers, Eye, Scale, Wrench,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
@@ -64,7 +64,7 @@ function IconTile({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Action de formation certifiée Qualiopi' },
   { icon: Users, label: "D'une équipe de vingt à un groupe entier" },
-  { icon: Sparkles, label: "Avec l'outil déjà fourni à vos équipes" },
+  { icon: Wrench, label: "Avec l'outil déjà fourni à vos équipes" },
   { icon: MapPin, label: 'Sur site (France, Europe, États-Unis, Inde) ou en visio' },
 ]
 
@@ -249,7 +249,7 @@ export default function SensibilisationIAPage() {
           </nav>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
             <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Sparkles size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              <Lightbulb size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>Formation · Sensibilisation IA</span>
           </div>

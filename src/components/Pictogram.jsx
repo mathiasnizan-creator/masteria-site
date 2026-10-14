@@ -17,12 +17,12 @@ import {
   BarChart3, TrendingUp, ClipboardList, Files, FileText, PenLine, PenTool,
   Target, Search, CheckCircle2, Check, XCircle, BookOpen, Mail, AlertTriangle,
   Siren, Palette, Mic, RefreshCw, Repeat, Bot, Users, User, MessageCircle,
-  MessagesSquare, Shield, Lock, Star, Handshake, Scale, Smartphone, Newspaper,
+  MessagesSquare, Shield, Lock, Handshake, Scale, Smartphone, Newspaper,
   Calendar, Laptop, Tag, Building2, Landmark, Settings, Wrench, Hammer, Award,
   Trophy, Megaphone, Briefcase, GraduationCap, Rocket, Microscope, Folder,
   CreditCard, Globe, Puzzle, Link as LinkIcon, Film, Zap, Eraser, Brain,
   Map as MapIcon, Image as ImageIcon, Upload, Radio, Lightbulb, Gem, Bug,
-  Cloud, Sparkles,
+  Cloud, CircleDot,
 } from 'lucide-react'
 
 /* Correspondance emoji -> icône lucide. Les variantes avec sélecteur de
@@ -41,7 +41,7 @@ const MAP = {
   '🤖': Bot, '👥': Users, '👤': User, '🧑': User, '🙋': User,
   '💬': MessageCircle, '🗣': MessagesSquare,
   '🛡': Shield, '🔒': Lock, '🔐': Lock, '🔓': Lock,
-  '★': Star, '⭐': Star, '🌟': Star,
+  '★': Award, '⭐': Award, '🌟': Award,
   '🤝': Handshake, '⚖': Scale,
   '📱': Smartphone, '📰': Newspaper, '📅': Calendar, '🗓': Calendar,
   '💻': Laptop, '🖥': Laptop, '🏷': Tag,
@@ -89,7 +89,7 @@ export default function Pictogram({
   style,
   ...rest
 }) {
-  const Icon = emojiToIcon(emoji) || Sparkles
+  const Icon = emojiToIcon(emoji) || CircleDot
   // eslint-disable-next-line react-hooks/static-components -- sélection dynamique d'un composant lucide existant selon la prop emoji, pas une définition de composant au render
   const glyph = <Icon size={size} color={color} strokeWidth={strokeWidth} aria-hidden="true" {...rest} />
   if (!tile) return glyph

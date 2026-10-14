@@ -5,11 +5,11 @@ import { openCookiePreferences } from '../consent/consentStore';
 import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, Wallet, Globe, Menu, X, ChevronDown, ShoppingCart, Zap, Sparkles,
+  BadgeCheck, Wallet, Globe, Menu, X, ChevronDown, ShoppingCart, Zap,
   Lightbulb, Compass, Code2, Wrench, Workflow, Bot, Building2, Award, Database, Cpu, Boxes,
   MessageSquare, Share2, Terminal, UserRound,
   Newspaper, Library, Info,
-  HardHat, ClipboardList, Landmark, Home, Store, HeartPulse, Scale, Calculator, Umbrella, Hammer, Plane,
+  HardHat, ClipboardList, Landmark, Home, Store, HeartPulse, Scale, Calculator, Umbrella, Hammer, Plane, UsersRound,
 } from 'lucide-react';
 import ToolLogo from './ToolLogo';
 import SearchPalette, { SearchButton } from './SearchPalette';
@@ -40,7 +40,7 @@ const METIER_ICONS_NAV = {
   'formation-ia-assurance':           Umbrella,
   'formation-ia-btp':                 Hammer,
   'formation-ia-tourisme':            Plane,
-  'formation-ia-transverse':          Sparkles,
+  'formation-ia-transverse':          UsersRound,
 };
 
 function useFade() {
@@ -172,7 +172,7 @@ const CONSEIL_COLS = [
     head: 'Secteurs & guides',
     items: [
       { label: 'IA par secteur',          desc: 'Banque, industrie, santé, juridique…', slug: 'ia-secteurs',          Icon: Briefcase },
-      { label: 'IA générative en entreprise', desc: 'Du cas d\'usage au déploiement',    slug: 'ia-generative-entreprise', Icon: Sparkles },
+      { label: 'IA générative en entreprise', desc: 'Du cas d\'usage au déploiement',    slug: 'ia-generative-entreprise', Icon: Bot },
       { label: 'Cas d\'usage de l\'IA',    desc: '20 exemples concrets par fonction',    slug: 'cas-usage-ia-entreprise', Icon: Target },
       { label: 'Agence IA',               desc: 'Équipe basée à Lyon, France entière', slug: 'agence-ia',           Icon: Building2 },
       { label: 'Agence IA marketing',     desc: 'IA appliquée au marketing et au growth', slug: 'agence-ia-marketing', Icon: Megaphone },

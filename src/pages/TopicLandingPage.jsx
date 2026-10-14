@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowRight, ShieldCheck, Clock, Users, Sparkles, Wallet } from 'lucide-react'
+import { ArrowRight, ShieldCheck, Clock, Users, Wallet, BookOpen } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
 // Pages éditoriales transversales pour positionnement SEO sur des requêtes informationnelles
@@ -179,7 +179,7 @@ export default function TopicLandingPage() {
             fontSize: 13, fontWeight: 700, color: '#1d4ed8', marginBottom: 24,
             border: '1px solid #BFDBFE',
           }}>
-            <Sparkles size={16} /> {topic.badge}
+            <BookOpen size={16} /> {topic.badge}
           </div>
           <h1 style={{
             fontFamily: 'Nunito, sans-serif', fontWeight: 900,

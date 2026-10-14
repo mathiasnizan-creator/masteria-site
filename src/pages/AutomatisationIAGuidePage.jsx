@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BookOpen, Check, ClipboardList,
   Compass, Cog, FileSpreadsheet, GitBranch, Handshake, Headphones, Megaphone,
-  Plug, Scale, Sparkles, Users, Workflow,
+  Plug, Scale, Users, Workflow, MessageSquare,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -616,7 +616,7 @@ export default function AutomatisationIAGuidePage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: 24, marginBottom: 44 }}>
             <div style={{ ...cardStyle, padding: '28px 30px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
-                <IconBox icon={Sparkles} />
+                <IconBox icon={MessageSquare} />
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 2 }}>Famille 1</div>
                   <h3 style={{ ...h3Style, margin: 0 }}>Les assistants IA et leurs automatisations natives</h3>

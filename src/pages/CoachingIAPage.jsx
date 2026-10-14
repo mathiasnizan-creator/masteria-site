@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, UserRound, GraduationCap, MapPin, Sparkles,
+  ArrowRight, UserRound, GraduationCap, MapPin,
   MessagesSquare, Target, Laptop, Landmark, CalendarCheck,
   BarChart3, Compass, Briefcase,
 } from 'lucide-react'
@@ -100,7 +100,7 @@ const PROFILS = [
     desc: "Aller plus loin sur les outils de votre fonction, ou préparer un rebond professionnel avec l'IA parmi vos compétences. Pour une reconversion ou une mobilité, le financement suit le dispositif qui vous accompagne, et nous préparons les pièces qu'il demande.",
   },
   {
-    icon: Sparkles,
+    icon: Briefcase,
     title: 'Indépendants et professions réglementées',
     desc: "Consultants, avocats, experts-comptables, architectes : faire entrer l'IA dans une pratique exigeante, en respectant le secret professionnel et les règles de confidentialité propres à votre ordre ou à vos clients.",
   },

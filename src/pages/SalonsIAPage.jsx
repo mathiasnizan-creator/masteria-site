@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, CalendarDays, MapPin, Users, Check, Compass, ClipboardCheck,
-  Mic, Search, ExternalLink, Sparkles, Target,
+  Mic, Search, ExternalLink, Target,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'

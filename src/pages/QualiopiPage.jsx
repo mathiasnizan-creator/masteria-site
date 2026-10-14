@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, GraduationCap as Grad, ShieldCheck, Layers, ExternalLink,
-  GraduationCap, MapPin, Check, Sparkles, Landmark, Users, Target,
+  GraduationCap, MapPin, Check, Landmark, Users, Target, Bot, BookOpen,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
@@ -77,7 +77,7 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Qualiopi · catégorie actions de formation' },
-  { icon: Sparkles, label: 'Claude · ChatGPT · Copilot · Gemini · Mistral' },
+  { icon: Bot, label: 'Claude · ChatGPT · Copilot · Gemini · Mistral' },
   { icon: Target, label: 'Un catalogue de plus de 100 programmes' },
   { icon: MapPin, label: 'Intra ou individuel · sur site ou à distance' },
 ]
@@ -117,7 +117,7 @@ const MISSIONS = [
     desc: "Marketing, commercial, finance, ressources humaines, achats, QSE, gestion de projet, juridique, assistanat : chaque programme métier part des documents et des situations de l'équipe, avec des objectifs écrits et, pour chacun, une question qui en vérifie l'acquisition.",
   },
   {
-    icon: Sparkles,
+    icon: BookOpen,
     title: 'Le catalogue par outil',
     desc: "Claude, Microsoft Copilot (anciennement Microsoft 365 Copilot), ChatGPT, Gemini, l'assistant Vibe de Mistral, ou un panorama multi-outils pour une organisation encore indécise. Masteria ne dépend d'aucun éditeur : nous formons sur l'outil déjà déployé, ou comparons plusieurs outils sur vos cas avant de recommander.",
   },

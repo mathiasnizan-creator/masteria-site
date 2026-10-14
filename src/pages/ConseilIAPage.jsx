@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BarChart3, BookOpen, Bot, Boxes, Building2, Check, CheckCircle2, Compass,
   Cpu, ExternalLink, Factory, GraduationCap, Landmark, LineChart, Scale, Search,
-  ShieldCheck, Sparkles, Sun, Target, Users, Workflow,
+  ShieldCheck, Sun, Target, Users, Workflow, Link2,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { FAQSection } from '../components/screens2'
@@ -199,7 +199,7 @@ const POUR_QUI = [
 
 const DIFFERENCIATEURS = [
   {
-    Icon: Sparkles,
+    Icon: Link2,
     title: 'Conseil et développement liés',
     desc: "L'équipe qui recommande un outil est celle qui le construit, puis qui forme ses utilisateurs. Aucun cahier des charges ne part chez un intégrateur qui n'a jamais rencontré vos équipes.",
   },

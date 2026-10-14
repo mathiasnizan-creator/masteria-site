@@ -4,7 +4,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   ChevronDown, BadgeCheck, Wallet, MonitorSmartphone, Building2,
-  ShoppingCart, Sparkles, Check, ArrowRight, MapPin, ShieldCheck, Landmark,
+  ShoppingCart, Check, ArrowRight, MapPin, ShieldCheck, Landmark,
   HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
   // Icônes des missions/profils par métier (nommées dans src/data/metiers/<slug>.js)
   BarChart3, BookOpenCheck, LineChart, ScrollText, FileWarning, SearchCheck, PenLine, Bot, Gauge, Network,
@@ -15,7 +15,7 @@ import {
   Wrench, Smile, Newspaper, FileCode, Terminal, Radar, Code2, Route, Puzzle, Copyright, School, Globe, Truck,
   Zap, Layers, Award, Waves, NotebookPen, Eye,
   Gavel, Hammer, Plane, Umbrella, Receipt, FileSpreadsheet, BedDouble, UtensilsCrossed, Luggage, Map, Banknote,
-  PiggyBank, LifeBuoy, FileCheck, Ruler, Blocks, BrickWall, Warehouse, Sun,
+  PiggyBank, LifeBuoy, FileCheck, Ruler, Blocks, BrickWall, Warehouse, Sun, Lightbulb,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -87,7 +87,7 @@ const METIER_ICONS = {
   informatique:        Server,
   pedagogique:         GraduationCap,
   achats:              ShoppingCart,
-  transverse:          Sparkles,
+  transverse:          UsersRound,
   qse:                 HardHat,
   'gestion-de-projet': ClipboardList,
   'marche-public':     Landmark,
@@ -103,7 +103,7 @@ const METIER_ICONS = {
 // Icônes nommables depuis la data enrichie (src/data/metiers/<slug>.js)
 const ICON_BY_NAME = {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio, Target, CalendarCheck, Search, Headphones,
-  Server, GraduationCap, BadgeCheck, Wallet, MonitorSmartphone, Building2, ShoppingCart, Sparkles,
+  Server, GraduationCap, BadgeCheck, Wallet, MonitorSmartphone, Building2, ShoppingCart,
   Check, ArrowRight, MapPin, ShieldCheck, Landmark, HardHat, Home, Store, HeartPulse, ClipboardList, Calculator,
   BarChart3, BookOpenCheck, LineChart, ScrollText, FileWarning, SearchCheck, PenLine, Bot, Gauge, Network,
   FileSearch, FileText, ListChecks, ClipboardCheck, KeyRound, UsersRound, Users2: UsersRound, Building, FileSignature, Tags,
@@ -752,7 +752,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           </nav>
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
-            {(() => { const Icon = METIER_ICONS[metier] || Sparkles; return (
+            {(() => { const Icon = METIER_ICONS[metier] || Briefcase; return (
               <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Icon size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
               </span>
@@ -804,7 +804,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: enrichi?.enBref ? 40 : 0 }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi · Finançable OPCO' },
-              { icon: Sparkles, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
+              { icon: Bot, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
               { icon: Target, label: enrichi?.base?.badge3 || 'Sur vos cas réels' },
               { icon: MapPin, label: 'Présentiel & distanciel · Europe · États-Unis · Inde' },
             ].map(({ icon: Icon, label }) => (
@@ -868,7 +868,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
                   {enrichi.missions.map((item, i) => (
                     <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                      <div style={{ marginBottom: 14 }}><IconTile icon={METIER_ICONS[item.icon] || ICON_BY_NAME[item.icon] || Sparkles} /></div>
+                      <div style={{ marginBottom: 14 }}><IconTile icon={METIER_ICONS[item.icon] || ICON_BY_NAME[item.icon] || Lightbulb} /></div>
                       <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
                       <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
                     </div>

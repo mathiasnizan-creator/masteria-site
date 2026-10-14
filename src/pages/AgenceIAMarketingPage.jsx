@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, PenLine, Search, Megaphone, Share2,
   Mail, BarChart3, Cog, Workflow, Target,
-  MapPin, Layers, GraduationCap, Sparkles, AlertTriangle,
+  MapPin, Layers, GraduationCap, AlertTriangle, Bot, SlidersHorizontal,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
@@ -74,7 +74,7 @@ function IconBox({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: Layers, label: 'Production déléguée, validation chez vous' },
-  { icon: Sparkles, label: 'Claude, ChatGPT, Gemini, Copilot, Vibe' },
+  { icon: Bot, label: 'Claude, ChatGPT, Gemini, Copilot, Vibe' },
   { icon: MapPin, label: 'Europe · États-Unis · Inde' },
   { icon: Target, label: 'Indicateurs fixés dès le cadrage' },
 ]
@@ -161,7 +161,7 @@ const TABLE_DELEGUER = [
 /* ───────── Outils & approche ───────── */
 
 const OUTILS = [
-  { icon: Sparkles, title: 'Un modèle choisi pour chaque tâche', desc: "Un texte de fond, cent variantes d'annonces et l'analyse d'un export de campagne ne se confient pas au même outil. Nous comparons les assistants sur vos propres sujets avant de retenir celui qui servira chaque usage." },
+  { icon: SlidersHorizontal, title: 'Un modèle choisi pour chaque tâche', desc: "Un texte de fond, cent variantes d'annonces et l'analyse d'un export de campagne ne se confient pas au même outil. Nous comparons les assistants sur vos propres sujets avant de retenir celui qui servira chaque usage." },
   { icon: Cog, title: 'Automatisations sur mesure', desc: "Les flux que nous montons font passer un contenu du brouillon à la publication et gardent vos outils marketing synchronisés : un contact créé dans le CRM reçoit la bonne séquence, sans ressaisie." },
   { icon: PenLine, title: 'Cohérence de marque', desc: "Vos règles éditoriales vivent dans des instructions réutilisables, et chaque pièce produite passe par une relecture humaine. L'outil accélère l'écriture ; le consultant valide ce qui vous est envoyé." },
   { icon: Target, title: 'Pilotage par les résultats', desc: "Formats, angles et canaux gagnent ou perdent leur place selon les chiffres relevés chaque mois. Une hypothèse que les données contredisent sort du plan au cycle suivant." },
@@ -773,7 +773,7 @@ export default function AgenceIAMarketingPage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '32px 0' }}>
             {[
-              { icon: Sparkles, title: "L'IA comme seul sujet depuis 2022", desc: "Les modèles, leurs points forts, leurs pièges et leurs réglages font notre quotidien. Votre marketing profite de cette expérience dès le démarrage de la mission." },
+              { icon: Target, title: "L'IA comme seul sujet depuis 2022", desc: "Les modèles, leurs points forts, leurs pièges et leurs réglages font notre quotidien. Votre marketing profite de cette expérience dès le démarrage de la mission." },
               { icon: PenLine, title: 'Exigence éditoriale', desc: "Votre marque est écrite dans nos instructions et chaque texte passe sous les yeux d'un consultant. Rien ne paraît sous votre nom sans votre feu vert." },
               { icon: Workflow, title: 'Du contenu aux automatisations', desc: "Nous livrons des textes, et aussi les flux et les connexions qui font tourner le dispositif, du brief jusqu'au reporting." },
               { icon: MapPin, title: 'Europe, États-Unis et Inde', desc: "Depuis Lyon, la production et le pilotage se font à distance ; nous nous déplaçons pour les ateliers de cadrage qui gagnent à se tenir dans vos locaux." },

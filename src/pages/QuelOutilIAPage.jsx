@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, BarChart3, Check, ChevronDown, Code2, Compass, FileSearch,
   FileSpreadsheet, Headphones, Mail, Presentation, RefreshCw, Scale,
-  Search, ShieldCheck, Sparkles, Workflow,
+  Search, ShieldCheck, Workflow, PenLine, GraduationCap,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
@@ -83,7 +83,7 @@ const TOOL_KEYS = ['chatgpt', 'claude', 'copilot', 'gemini', 'mistral']
 const USAGES = [
   { id: 'docs', icon: FileSearch, label: 'Analyser des documents longs', ex: 'contrats, rapports, appels d’offres', short: 'documents longs',
     w: { claude: 3, chatgpt: 2, gemini: 2, mistral: 1, copilot: 1 } },
-  { id: 'redaction', icon: Sparkles, label: 'Rédiger et produire du contenu', ex: 'articles, posts, argumentaires', short: 'rédaction',
+  { id: 'redaction', icon: PenLine, label: 'Rédiger et produire du contenu', ex: 'articles, posts, argumentaires', short: 'rédaction',
     w: { chatgpt: 3, claude: 3, gemini: 2, mistral: 2, copilot: 2 } },
   { id: 'tableaux', icon: FileSpreadsheet, label: 'Travailler des tableaux et des données', ex: 'Excel, budgets, reportings', short: 'tableaux et données',
     w: { copilot: 3, chatgpt: 2, gemini: 2, claude: 2, mistral: 1 } },
@@ -1095,7 +1095,7 @@ export default function QuelOutilIAPage() {
           <h2 style={h2Style}>L'outil ne fait pas l'adoption</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 18 }}>
             {[
-              { icon: Sparkles, title: 'Former sur vos cas réels', desc: "L'article des Échos qui cite notre fondateur le résume : un modèle mal adapté, et les gens vont chercher ailleurs. La formation sur vos propres documents ancre l'outil choisi dans le quotidien." },
+              { icon: GraduationCap, title: 'Former sur vos cas réels', desc: "L'article des Échos qui cite notre fondateur le résume : un modèle mal adapté, et les gens vont chercher ailleurs. La formation sur vos propres documents ancre l'outil choisi dans le quotidien." },
               { icon: ShieldCheck, title: "Cadrer l'usage", desc: 'Comptes professionnels, charte, liste des données interdites : le cadre se pose au moment du déploiement, pas après le premier incident.' },
               { icon: Scale, title: 'Réévaluer chaque année', desc: "Les modèles et les tarifs bougent vite. Un point annuel suffit pour vérifier que l'outil choisi reste le bon, sans zapping permanent." },
             ].map(({ icon: Icon, title, desc }) => (

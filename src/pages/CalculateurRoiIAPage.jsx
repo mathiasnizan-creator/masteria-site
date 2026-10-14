@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Calculator, Users, Repeat, Timer, Sparkles, ShieldCheck,
-  Layers, GitBranch, Receipt, AlertTriangle, RotateCcw,
+  ArrowRight, Calculator, Users, Repeat, Timer, ShieldCheck,
+  Layers, GitBranch, Receipt, AlertTriangle, RotateCcw, UserCheck, TrendingUp,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -64,10 +64,10 @@ const DEFAULTS = {
 
 const CHAMPS = [
   { k: 'personnes', icon: Users, label: 'Personnes concernées par la tâche', unit: '', min: 1, max: 2000, step: 1, help: "Le nombre de personnes qui effectuent cette tâche dans leur semaine de travail, quel que soit l'effectif total." },
-  { k: 'adoption', icon: Sparkles, label: 'Adoption réelle', unit: '%', min: 0, max: 100, step: 1, help: "Part de ces personnes qui ouvrent l'outil pour cette tâche au moins une fois par semaine. Compter les licences distribuées surestime presque toujours ce chiffre." },
+  { k: 'adoption', icon: UserCheck, label: 'Adoption réelle', unit: '%', min: 0, max: 100, step: 1, help: "Part de ces personnes qui ouvrent l'outil pour cette tâche au moins une fois par semaine. Compter les licences distribuées surestime presque toujours ce chiffre." },
   { k: 'frequence', icon: Repeat, label: 'Occurrences par personne et par semaine', unit: '', min: 1, max: 200, step: 1, help: 'Nombre de fois où une personne accomplit la tâche pendant une semaine sans événement particulier.' },
   { k: 'duree', icon: Timer, label: 'Durée de la tâche avant IA', unit: 'min', min: 1, max: 480, step: 1, help: 'Temps moyen relevé pour une occurrence, mesuré avant que l\'équipe ne se serve de l\'IA.' },
-  { k: 'gain', icon: Sparkles, label: 'Gain de temps brut constaté', unit: '%', min: 0, max: 95, step: 1, help: "Baisse du temps passé sur la tâche avec l'outil. Mesurez-la sur un petit groupe si vous le pouvez ; à défaut, notez ce que les utilisateurs déclarent." },
+  { k: 'gain', icon: TrendingUp, label: 'Gain de temps brut constaté', unit: '%', min: 0, max: 95, step: 1, help: "Baisse du temps passé sur la tâche avec l'outil. Mesurez-la sur un petit groupe si vous le pouvez ; à défaut, notez ce que les utilisateurs déclarent." },
   { k: 'reprise', icon: ShieldCheck, label: 'Part du gain reperdue en vérification et reprise', unit: '%', min: 0, max: 100, step: 1, help: "Temps de relecture, de correction et d'allers-retours. Valeur de départ à remplacer par la vôtre : ce poste disparaît de la plupart des calculs." },
   { k: 'conversion', icon: GitBranch, label: 'Part de la capacité libérée réellement convertie', unit: '%', min: 0, max: 100, step: 1, help: "Part des heures libérées dont la direction a décidé l'emploi : traiter plus de dossiers, éviter un recrutement, internaliser un prestataire, relever la qualité." },
   { k: 'cout', icon: Receipt, label: 'Coût horaire chargé', unit: '€', min: 10, max: 300, step: 1, help: 'Salaire chargé divisé par les heures travaillées dans l\'année, pour ce profil.' },

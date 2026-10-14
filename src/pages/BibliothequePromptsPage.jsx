@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BookOpen, Check, ChevronDown, Copy, Lightbulb, ShieldAlert, Sparkles,
+  ArrowRight, BookOpen, Check, ChevronDown, Copy, Lightbulb, ShieldAlert,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PROMPT_METIERS, REGLES_PROMPT, ERREURS } from '../data/prompts-library'

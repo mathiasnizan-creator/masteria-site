@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Mic, Presentation, Users, GraduationCap, MapPin, Check, Video,
-  Sparkles, MessagesSquare, ShieldCheck, Landmark, BarChart3, FileText,
+  MessagesSquare, ShieldCheck, Landmark, BarChart3, FileText,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
@@ -61,7 +61,7 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: Presentation, label: '60 à 120 minutes, salle de toute taille' },
-  { icon: Sparkles, label: 'Démonstrations en direct sur vos pièces' },
+  { icon: Presentation, label: 'Démonstrations en direct sur vos pièces' },
   { icon: Users, label: 'Plénière, convention, comité de direction' },
   { icon: MapPin, label: 'Europe · États-Unis · Inde, sur scène ou à l\'écran' },
 ]

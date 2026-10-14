@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, LayoutGrid, Megaphone, Briefcase, Headphones, Users, Calculator,
   Scale, Truck, Building2, Workflow, Bot, Database, FileSearch, PenLine, Network,
-  Compass, ListChecks, Sparkles, Target, ShieldCheck, RefreshCw, TrendingUp,
+  Compass, ListChecks, Target, ShieldCheck, RefreshCw, TrendingUp, MessageSquare, CalendarCheck,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -257,7 +257,7 @@ const FUNCTION_GROUPS = [
 
 const TYPE_CASES = [
   {
-    icon: Sparkles,
+    icon: MessageSquare,
     title: 'Assistants configurés et compétences',
     desc: "Un assistant reçoit des consignes, des fichiers de référence et parfois une compétence, c'est-à-dire une procédure écrite au format SKILL.md que l'outil ouvre au moment utile. C'est le premier niveau d'outillage, en place en quelques jours dans l'abonnement que vous avez déjà.",
     gain: "Chacun réutilise le même savoir-faire au lieu de réinventer ses consignes.",
@@ -308,7 +308,7 @@ TYPE_CASES.forEach(uc => { uc.num = ++_caseNum })
 /* ───────── Familles de solution (pictos de tête de section TYPE) ───────── */
 
 const SOLUTION_FAMILIES = [
-  { icon: Sparkles, label: 'Assistants et compétences' },
+  { icon: MessageSquare, label: 'Assistants et compétences' },
   { icon: Workflow, label: 'Automatisations' },
   { icon: Bot, label: 'Agents' },
   { icon: FileSearch, label: 'Recherche documentaire' },
@@ -572,7 +572,7 @@ export default function CasUsageIAEntreprisePage() {
               </span>
             </div>
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 7, fontSize: 12, fontWeight: 600, color: '#CBD5E1', border: '1px solid #2A3650', borderRadius: 99, padding: '6px 13px' }}>
-              <Sparkles size={13} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
+              <CalendarCheck size={13} strokeWidth={2.2} style={{ color: '#60A5FA' }} aria-hidden="true" />
               Revu le 7 octobre 2026
             </span>
           </div>

@@ -1,8 +1,8 @@
 import { useLocation, Link } from 'react-router-dom'
 import {
   BadgeCheck, Wallet, MapPin, Clock, ArrowRight, CheckCircle2,
-  ChevronDown, Building2, Users, Phone, Briefcase, Sparkles,
-  Train, GraduationCap, Globe, FileCheck, Newspaper, Star,
+  ChevronDown, Building2, Users, Phone, Briefcase,
+  Train, GraduationCap, Globe, FileCheck, Newspaper, Star, BarChart3,
 } from 'lucide-react'
 import { useState, use } from 'react'
 import SEOHead from '../components/SEOHead'
@@ -577,7 +577,7 @@ export default function GeoIAGenericPage() {
               <FadeIn delay={120}>
                 <div style={{ background: '#F0F9FF', borderRadius: 14, padding: isMobile ? '20px 22px' : '28px 32px', border: '1px solid #BAE6FD', marginTop: 24 }}>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0C4A6E', margin: '0 0 14px', display: 'flex', alignItems: 'center', gap: 8 }}>
-                    <Sparkles size={16} color="#0284C7" /> {city.name} en chiffres
+                    <BarChart3 size={16} color="#0284C7" /> {city.name} en chiffres
                   </h3>
                   <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                     {city.localFacts.map((fact, i) => (

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Lightbulb, Presentation, Users, GraduationCap, MapPin, Check,
-  Sparkles, MessagesSquare, Database, ShieldCheck, Landmark, BarChart3,
+  MessagesSquare, Database, ShieldCheck, Landmark, BarChart3,
   FileSpreadsheet, Layers, Compass, Factory, Bot,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
@@ -66,7 +66,7 @@ function IconTile({ icon: Icon }) {
 
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Qualiopi, catégorie actions de formation' },
-  { icon: Sparkles, label: 'ChatGPT, Gemini, Copilot, Claude ou Vibe' },
+  { icon: Bot, label: 'ChatGPT, Gemini, Copilot, Claude ou Vibe' },
   { icon: Users, label: "De la direction jusqu'aux ateliers" },
   { icon: MapPin, label: 'Depuis Lyon · Europe · États-Unis · Inde' },
 ]

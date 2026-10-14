@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Lightbulb, Users, GraduationCap, MapPin, Check, Sparkles, Scale,
-  Landmark, Compass, FileSpreadsheet, Wrench, Radar, Factory, Briefcase,
+  ArrowRight, Lightbulb, Users, GraduationCap, MapPin, Check, Scale,
+  Landmark, Compass, FileSpreadsheet, Wrench, Radar, Factory, Briefcase, MessageSquare,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
@@ -64,7 +64,7 @@ function IconTile({ icon: Icon }) {
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Organisme Qualiopi · demande OPCO possible' },
   { icon: Users, label: 'Groupes de douze, un écran par personne' },
-  { icon: Sparkles, label: "L'assistant déjà installé chez vous" },
+  { icon: MessageSquare, label: "L'assistant déjà installé chez vous" },
   { icon: MapPin, label: 'Sur place (Europe · États-Unis · Inde) ou à distance' },
 ]
 

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Wrench, Check, Rss, Sparkles, Workflow, Building2, Boxes,
-  Newspaper, AlertTriangle, Coins, ShieldAlert, Lock, Clock, CalendarCheck,
+  ArrowRight, Wrench, Check, Rss, Workflow, Building2, Boxes,
+  Newspaper, AlertTriangle, Coins, ShieldAlert, Lock, Clock, CalendarCheck, Bot,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -46,7 +46,7 @@ const FAMILLES = [
     limite: "Ils remontent tout ce qui paraît : trier, dédoublonner et résumer reste votre travail.",
   },
   {
-    Icon: Sparkles, nom: 'Assistants IA',
+    Icon: Bot, nom: 'Assistants IA',
     exemples: 'Perplexity, ChatGPT, Claude, Vibe, Gemini Notebook (anciennement NotebookLM)',
     role: "Interroger le web ou un corpus de documents en français courant, puis résumer et comparer.",
     pour: 'Synthétiser vite, creuser une question, préparer une note de veille.',

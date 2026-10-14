@@ -6,8 +6,8 @@ import {
   Target, Search, FlaskConical, Scissors, Trash2, Lock,
   PenLine, ClipboardList, BarChart3, Palette, FileCheck, Handshake,
   Tag, RefreshCw,
-  Lightbulb, AlertTriangle, CheckCircle2, XCircle, Zap, Info, Sparkles,
-  Clock, Users as UsersIcon, ShieldCheck, Monitor, Star,
+  Lightbulb, AlertTriangle, CheckCircle2, XCircle, Zap, Info,
+  Clock, Users as UsersIcon, ShieldCheck, Monitor, ListChecks, ClipboardPaste, Gift,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -388,7 +388,7 @@ export default function CompetencesClaudeEET() {
                   color: isActive ? C.blue : C.textMuted,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   fontSize: 11, fontWeight: 800, flexShrink: 0,
-                }}>{s.num === '★' ? <Star size={12} color={isActive ? C.blue : C.textMuted} fill={isActive ? C.blue : C.textMuted} /> : s.num}</span>
+                }}>{s.num === '★' ? <Gift size={12} color={isActive ? C.blue : C.textMuted} /> : s.num}</span>
                 {s.label}
               </a>
             )
@@ -429,7 +429,7 @@ export default function CompetencesClaudeEET() {
                     color: isActive ? '#fff' : C.textMuted,
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 10.5, fontWeight: 800, flexShrink: 0,
-                  }}>{s.num === '★' ? <Star size={11} color={isActive ? '#fff' : C.textMuted} fill={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
+                  }}>{s.num === '★' ? <Gift size={11} color={isActive ? '#fff' : C.textMuted} /> : s.num}</span>
                   {s.labelLong}
                 </a>
               )
@@ -501,7 +501,7 @@ export default function CompetencesClaudeEET() {
                 Une compétence est un dossier qui contient au minimum un fichier texte appelé <Code>SKILL.md</Code>. Ce fichier dit à Claude quoi faire et quand le faire. Vous avez deux façons de le créer.
               </P>
 
-              <MethodBox tone="blue" badge="Méthode recommandée" badgeIcon={Sparkles} title="Demander à Claude de créer la compétence pour vous">
+              <MethodBox tone="blue" badge="Méthode recommandée" badgeIcon={ListChecks} title="Demander à Claude de créer la compétence pour vous">
                 <P style={{ color: C.textSoft, marginBottom: 16 }}>
                   C'est la façon la plus rapide. Vous décrivez ce que vous voulez, Claude rédige le <Code>SKILL.md</Code>, crée le ZIP et vous le livre prêt à uploader, le tout en une seule conversation.
                 </P>
@@ -1358,7 +1358,7 @@ function SkillSetup({ n, name, role, project, briefName, brief, files, prereqs }
       </div>
 
       {/* Brief box */}
-      <MethodBox tone="blue" badge="Brief à coller dans Claude" badgeIcon={Sparkles} title={briefName}>
+      <MethodBox tone="blue" badge="Brief à coller dans Claude" badgeIcon={ClipboardPaste} title={briefName}>
         <PromptBox label="Template à coller en formation">
           {brief}
         </PromptBox>

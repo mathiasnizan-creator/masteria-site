@@ -54,9 +54,9 @@ function ConsentGatedAnalytics() {
 }
 import {
   Mail, MapPin, Clock, BadgeCheck, Wallet, Users as UsersIcon,
-  ArrowRight, Sparkles, Send, CheckCircle2, Calendar, Building2,
+  ArrowRight, Send, CheckCircle2, Calendar, Building2,
   Compass, GraduationCap, Handshake, Target, ShieldCheck, Heart,
-  Lightbulb, Rocket, Phone, Zap, Check,
+  Lightbulb, Rocket, Phone, Zap, Check, SlidersHorizontal,
 } from 'lucide-react';
 
 // LinkedIn SVG (pas d'icône officielle dans lucide-react)
@@ -451,7 +451,7 @@ function AboutScreen() {
             padding: '6px 16px', borderRadius: 99, fontSize: 13, fontWeight: 700,
             marginBottom: 24,
           }}>
-            <Sparkles size={14} /> À propos de Masteria
+            <Building2 size={14} /> À propos de Masteria
           </div>
           <h1 style={{
             fontFamily: 'Nunito, sans-serif',
@@ -1014,7 +1014,7 @@ function ContactScreen() {
             background: '#fff', border: '1px solid #E5E7EB',
             borderRadius: 99, padding: '7px 16px', marginBottom: 20,
           }}>
-            <Sparkles size={14} color="#D97706" />
+            <Clock size={14} color="#D97706" />
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', color: '#374151' }}>
               Réponse sous 24 h ouvrées · devis sans engagement
             </span>
@@ -1345,7 +1345,7 @@ function ContactScreen() {
                         color: h.color,
                         logo: h.id,
                       })),
-                      { value: 'sur-mesure', label: 'Sur mesure', color: '#F97316', icon: Sparkles },
+                      { value: 'sur-mesure', label: 'Sur mesure', color: '#F97316', icon: SlidersHorizontal },
                       { value: 'ne-sais-pas', label: 'À conseiller', color: '#6B7280', icon: Lightbulb },
                     ].map(t => {
                       const active = selectedTools.includes(t.value);

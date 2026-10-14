@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, BadgeCheck, Users, Building2, CheckCircle, XCircle,
-  AlertCircle, FileText, Calculator, Shield, Sparkles, FileCheck,
+  AlertCircle, FileText, Calculator, Shield, FileCheck,
   MailCheck, Zap, Lightbulb, Landmark, Percent, Compass, Info,
-  Receipt, Scale, CalendarClock, UserRound, MapPin,
+  Receipt, Scale, CalendarClock, UserRound, MapPin, FileSignature,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
@@ -308,7 +308,7 @@ const ETAPES = [
     d: "L'entreprise dépose sa demande sur l'espace en ligne de son OPCO. Le courrier d'accord fixe le montant pris en charge et dit si la subrogation s'applique ; les accords sont donnés dans la limite des fonds disponibles.",
   },
   {
-    n: '4', t: 'Session et émargement', icon: Sparkles,
+    n: '4', t: 'Session et émargement', icon: FileSignature,
     d: "La formation a lieu dans vos locaux ou à distance, et chaque participant émarge. Les heures d'absence ne sont pas financées : Atlas rembourse au prorata des heures suivies.",
   },
   {

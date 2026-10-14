@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Sparkles, FileText, MessagesSquare, Database, Search,
+  ArrowRight, FileText, MessagesSquare, Database, Search,
   Rocket, ShieldCheck, Scale, Cpu, Boxes, Check, Lock, AlertTriangle,
   GraduationCap, Compass, Layers, BookOpen, ExternalLink, Landmark, Factory,
   Sprout, Presentation,
@@ -415,7 +415,7 @@ export default function IAGenerativeEntreprisePage() {
           {/* eyebrow : picto en tuile + label */}
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 11, marginBottom: 26 }}>
             <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Sparkles size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
+              <BookOpen size={18} strokeWidth={2.2} style={{ color: '#60A5FA' }} />
             </span>
             <span style={{ fontSize: 12.5, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#7DA9F0' }}>
               Le guide du dirigeant

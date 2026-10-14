@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle,
   Plug, Check, Cpu, Server, ShieldCheck, Workflow,
-  MapPin, Users, Wrench, Clock, Coins, X, FileCode2, Sparkles, Tag, KeyRound,
+  MapPin, Users, Wrench, Clock, Coins, X, FileCode2, Tag, KeyRound, Bookmark,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import CadrageLink from '../components/CadrageLink'
@@ -537,7 +537,7 @@ export default function SolutionIAPage() {
               {solution.keyTakeaways && solution.keyTakeaways.length > 0 && (
                 <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '24px 28px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-                    <Sparkles size={18} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
+                    <Bookmark size={18} strokeWidth={2.2} style={{ color: c }} aria-hidden="true" />
                     <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A' }}>À retenir</span>
                   </div>
                   <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 10 }}>

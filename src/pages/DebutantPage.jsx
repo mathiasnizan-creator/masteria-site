@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, Check, GraduationCap, Clock, ShieldCheck, Users, Sparkles, Target } from 'lucide-react'
+import { ArrowRight, Check, GraduationCap, Clock, ShieldCheck, Users, Target } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 
 const FAQ_DEBUTANT = [
@@ -193,7 +193,7 @@ export default function DebutantPage() {
       {/* CTA */}
       <section style={{ padding: '80px 24px', background: '#F5F3EE', textAlign: 'center' }}>
         <div style={{ maxWidth: 700, margin: '0 auto' }}>
-          <Sparkles size={40} color="#F97316" style={{ marginBottom: 20 }} />
+          <GraduationCap size={40} color="#F97316" style={{ marginBottom: 20 }} />
           <h2 style={{
             fontFamily: 'Nunito, sans-serif', fontWeight: 900,
             fontSize: 'clamp(28px, 4vw, 40px)', color: '#0A0A0A', marginBottom: 16,

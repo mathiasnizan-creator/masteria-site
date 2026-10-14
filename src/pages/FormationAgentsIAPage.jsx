@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Building2, Check, Eye, GraduationCap, Landmark, Layers,
-  ListChecks, MapPin, MessagesSquare, Network, Scale, ShieldCheck, Sparkles,
-  Target, Users, Workflow,
+  ListChecks, MapPin, MessagesSquare, Network, Scale, ShieldCheck,
+  Target, Users, Workflow, UserCheck,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -267,7 +267,7 @@ const ECHECS = [
 
 const PROFILS = [
   { icon: Users, title: 'Équipes métier', desc: "Commerce, RH, finance, marketing, support : leurs processus à plusieurs étapes donnent les meilleurs premiers agents." },
-  { icon: Sparkles, title: 'Référents IA', desc: "Ceux qui outillent leur service repartent avec la grille de cadrage, le modèle d'instructions et la méthode de recette." },
+  { icon: UserCheck, title: 'Référents IA', desc: "Ceux qui outillent leur service repartent avec la grille de cadrage, le modèle d'instructions et la méthode de recette." },
   { icon: Target, title: 'Managers et chefs de projet', desc: "Pour décider ce que l'on confie à un agent, régler son autonomie et porter le plan de déploiement de l'équipe." },
   { icon: Workflow, title: 'Responsables de processus', desc: "Qualité, opérations, ADV : ceux qui connaissent les flux que les agents traverseront, et les contrôles qui vont avec." },
   { icon: Layers, title: 'PMO et transformation', desc: "Pour tenir un portefeuille d'agents cohérent, avec des règles communes à toutes les équipes." },
@@ -607,7 +607,7 @@ export default function FormationAgentsIAPage() {
                 <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
                   <div style={{ marginBottom: 14 }}>
                     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Sparkles size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
+                      <Network size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
                     </div>
                   </div>
                   <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Plusieurs agents en relais ?</h3>

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Brain, Briefcase, Cloud, Cog, Compass, Eye, Headphones,
   LayoutGrid, Lock, Megaphone, MessageSquare, Plug, RefreshCw, Rocket, Scale,
-  ScrollText, Server, ShieldCheck, Sparkles, Target, TrendingUp, UserCheck,
-  Users, Workflow, Zap, Wind, Sun, GraduationCap, Mail, Store,
+  ScrollText, Server, ShieldCheck, Target, TrendingUp, UserCheck,
+  Users, Workflow, Zap, Wind, Sun, GraduationCap, Mail, Store, Cpu,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -318,7 +318,7 @@ const articleJsonLd = {
 /* Outils au 7 octobre 2026 (sources : fiche FAITS-OUTILS du 07/10, claude-facts.js vérifié le 05/10, comparisons.js) */
 const TOOLS = [
   {
-    icon: Sparkles,
+    icon: Cpu,
     name: 'Claude : Cowork, Claude Code et les compétences (Anthropic)',
     desc: "Cowork vit dans l'application Claude depuis le 16 septembre 2026, ouvert en premier aux offres Pro et Max : il mène une tâche à partir d'un dossier et de vos applications connectées, et peut la refaire à date fixe. Claude Code, compris dès l'offre Pro, travaille dans le dépôt des développeurs. Les compétences (fichiers SKILL.md) et les connecteurs MCP complètent la panoplie.",
   },
