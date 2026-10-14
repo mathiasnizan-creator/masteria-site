@@ -378,6 +378,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [14 octobre 2026 : Les agents IA reçoivent un portefeuille et un badge](https://www.master-ia.fr/veille-ia/2026-10-14)
 - [13 octobre 2026 : Meta place Muse Wonder juste derrière Claude](https://www.master-ia.fr/veille-ia/2026-10-13)
 - [12 octobre 2026 : Les marchés doutent du financement de l'IA](https://www.master-ia.fr/veille-ia/2026-10-12)
 - [9 octobre 2026 : L'IA grignote les premiers emplois des jeunes](https://www.master-ia.fr/veille-ia/2026-10-09)
@@ -387,5 +388,4 @@ https://www.master-ia.fr/sitemap.xml
 - [5 octobre 2026 : L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil](https://www.master-ia.fr/veille-ia/2026-10-05)
 - [2 octobre 2026 : Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme](https://www.master-ia.fr/veille-ia/2026-10-02)
 - [1 octobre 2026 : Le classement des modèles est un argument de vente, votre test maison est la seule base de décision](https://www.master-ia.fr/veille-ia/2026-10-01)
-- [30 septembre 2026 : Le modèle change chaque semaine, votre organisation doit apprendre au même rythme](https://www.master-ia.fr/veille-ia/2026-09-30)
 <!-- veille:editions:fin -->

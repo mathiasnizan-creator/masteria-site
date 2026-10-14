@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-13",
-    "totalEditions": 40,
-    "totalItems": 537,
-    "totalSources": 773
+    "derniereDate": "2026-10-14",
+    "totalEditions": 41,
+    "totalItems": 550,
+    "totalSources": 796
   },
   "recentes": [
+    {
+      "date": "2026-10-14",
+      "dateAffichee": "14 October 2026",
+      "dateCourte": "Wed 14 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "AI agents get a wallet and a badge",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-10-13",
       "dateAffichee": "13 October 2026",
@@ -452,35 +463,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-10-13",
-    "dateAffichee": "13 October 2026",
-    "dateLongue": "Tuesday 13 October 2026",
-    "dateCourte": "Tue 13 Oct",
-    "jourSemaine": "Tuesday",
-    "titre": "AI Watch - Tuesday 13 October 2026",
-    "titreEditorial": "Meta places Muse Wonder just behind Claude",
-    "chapeau": "Meta lifts Muse Wonder to the level of the best models, just behind Claude, while Microsoft unveils its Maia 300 chip to loosen Nvidia's grip. On the same day, Satya Nadella calls for a human stop button on models, Anthropic cuts internet access for its evaluation AIs, and three safety researchers laid off by OpenAI speak out.",
+    "date": "2026-10-14",
+    "dateAffichee": "14 October 2026",
+    "dateLongue": "Wednesday 14 October 2026",
+    "dateCourte": "Wed 14 Oct",
+    "jourSemaine": "Wednesday",
+    "titre": "AI Watch - Wednesday 14 October 2026",
+    "titreEditorial": "AI agents get a wallet and a badge",
+    "chapeau": "Jensen Huang brings Nvidia into the capital of Doctolib and three French startups, Google rolls out Gemini 4 Argon worldwide, and an OpenAI engineer is arrested for hiding a microphone at headquarters. The same day, American Express and Shopify equip AI agents to buy on our behalf, while the shares of Asian memory-chip makers fall.",
     "une": {
-      "titre": "Meta returns to the AI frontier with Muse Wonder",
-      "texteHtml": "<p>Meta's lab presented two models on Monday 12 October, Muse Wonder and Muse Wonder Full, designed to run agents (programs that carry out tasks end to end). Mark Zuckerberg says the launch puts the company \"at the cutting edge\" and claims parity with OpenAI's GPT-6 Astra and Anthropic's Claude Fable 5.1. The first independent ranking tempers the claim: it places Muse Wonder Full in second position, behind Claude Opus 5.5. Meta highlights a memory meant to retain for months what matters to the user, and safeguards meant to stop agents from drifting off task. On Wall Street, Meta's stock rose on the announcement.</p>",
+      "titre": "Nvidia takes a stake in Doctolib and sells its definition of sovereignty",
+      "texteHtml": "<p>Jensen Huang, head of Nvidia, was in Paris on Tuesday 13 October to bring his group into the capital of Doctolib, the French medical-appointment booking platform, along with the startups Pigment, Genesis AI and Entalpic. The amount invested in Doctolib was not disclosed; the stake remains a minority one. Doctolib plans to use it to recruit and train its models in Europe, at a time when millions of patients entrust it with their health data. Huang, who says he invested at least $8 billion in Europe last year, is pressing the continent to \"join the race\" and adopt a sovereign stance, without giving up his chips. La Tribune sums up the move: the leading backer of European AI is also selling its own definition of sovereignty. For a sector as sensitive as healthcare, the argument deserves scrutiny: a so-called sovereign infrastructure that stays tied to the hardware of a single American supplier.</p>",
       "sources": [
         {
           "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/pixels/article/2026/10/13/le-groupe-meta-devoile-son-nouveau-modele-d-ia-muse-wonder-cense-rivaliser-avec-chatgpt-et-claude_6792943_4408996.html"
+          "url": "https://www.lemonde.fr/pixels/article/2026/10/13/ia-l-entreprise-americaine-nvidia-entre-au-capital-du-francais-doctolib-en-tant-qu-actionnaire-minoritaire_6793162_4408996.html"
         },
         {
-          "nom": "Frandroid",
-          "url": "https://www.frandroid.com/marques/meta/3282445_meta-annonce-muse-wonder-et-dit-avoir-rattrape-les-meilleurs-en-ia-le-premier-test-independant-nuance"
+          "nom": "La Tribune",
+          "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/37886335151214/nvidia-se-presente-comme-le-premier-financeur-de-l-ia-europeenne-et-vend-sa-definition-de-la-souverainete"
         },
         {
-          "nom": "TechCrunch",
-          "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/"
+          "nom": "Next.ink",
+          "url": "https://next.ink/261549/nvidia-entre-au-capital-de-doctolib-pour-accelerer-dans-lia-en-sante/"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "meta-returns-to-the-ai-frontier-with-muse-wonder"
+      "id": "nvidia-takes-a-stake-in-doctolib-and-sells-its-definition"
     },
     "sections": [
       {
@@ -490,40 +501,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Safety researchers publicly leave OpenAI and Anthropic",
-            "texteHtml": "<p>Statements from former staff of AI labs are multiplying this autumn, La Tribune reports. The latest come from three safety researchers laid off by OpenAI, whose accounts point to the absence of any real oversight of the sector. These documented departures, also relayed by Le Monde, put a face on the growing concerns over the internal governance of models.</p>",
+            "titre": "Macron convenes a defence council devoted entirely to AI",
+            "texteHtml": "<p>Emmanuel Macron has called a defence and national security council dedicated to artificial intelligence, 01net reports. The Élysée now ranks AI among France's \"strategic domains\", on a par with space and nuclear power. The subject thus leaves the economic field for that of sovereignty and defence.</p>",
             "sources": [
               {
-                "nom": "La Tribune",
-                "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/50074200725051/openai-anthropic-pourquoi-les-chercheurs-quittent-publiquement-les-poids-lourds-de-lia"
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/domaine-strategique-emmanuel-macron-convoque-conseil-defense-securite-ia.html"
               }
             ],
             "rang": 2,
-            "id": "safety-researchers-publicly-leave-openai-and-anthropic"
+            "id": "macron-convenes-a-defence-council-devoted-entirely-to-ai"
           },
           {
-            "titre": "Linus Torvalds publishes Linux patches written with Claude Code",
-            "texteHtml": "<p>The creator of Linux has published a series of eight kernel patches produced with Claude Code, Anthropic's programming assistant, Frandroid reports. In 2024, Torvalds still described AI as \"90% marketing\". The move stays measured: he keeps control of the review and integrates only what his judgment validates.</p>",
+            "titre": "The EDPB sets a framework for smart glasses before they go mainstream",
+            "texteHtml": "<p>The European Data Protection Board, which brings together the continent's data protection authorities, has adopted a statement on smart glasses and published a report, \"The connected gaze\", on the uses and risks of these devices. The body warns about the capture of images and sound in public spaces by camera-equipped frames, as Meta and others push their consumer models. The text lays the groundwork for a common doctrine before the practice spreads.</p>",
             "sources": [
               {
-                "nom": "Frandroid",
-                "url": "https://www.frandroid.com/os/gnu-linux/3282511_linus-torvalds-qui-reduisait-lia-a-90-de-marketing-publie-un-patch-du-noyau-linux-ecrit-avec-claude-code"
+                "nom": "CNIL",
+                "url": "https://www.cnil.fr/fr/cepd-declaration-lunettes-connectees"
               }
             ],
             "rang": 3,
-            "id": "linus-torvalds-publishes-linux-patches-written-with-claude"
-          },
-          {
-            "titre": "Airbus's Valkyrie combat drone makes its first flight in Europe",
-            "texteHtml": "<p>Airbus and Kratos have completed the first European flight of the U740 Valkyrie, a combat drone meant to accompany piloted aircraft, Clubic reports. The aircraft will receive a European mission system equipped with AI and targets combat service entry by 2029.</p>",
-            "sources": [
-              {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-633748-sans-piste-ni-pilote-le-drone-de-combat-valkyrie-d-airbus-a-pris-son-envol-en-europe.html"
-              }
-            ],
-            "rang": 4,
-            "id": "airbus-s-valkyrie-combat-drone-makes-its-first-flight-in"
+            "id": "the-edpb-sets-a-framework-for-smart-glasses-before-they-go"
           }
         ]
       },
@@ -534,68 +533,76 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Microsoft launches Maia 300 to reduce its dependence on Nvidia",
-            "texteHtml": "<p>Microsoft unveiled Maia 300 on Monday, the third generation of its in-house chip dedicated to inference (the cost of running a model once it is trained). The company announces performance seven times higher than the previous generation and a rollout in its data centres from 2027, at the scale of several gigawatts. By making its own chip, Microsoft seeks to loosen its dependence on Nvidia's graphics processors and to control the whole chain, from hardware to software.</p>",
+            "titre": "Google rolls out Gemini 4 Argon worldwide and returns to the race",
+            "texteHtml": "<p>Google opened Gemini 4 Argon, its flagship model presented on 30 September, to the entire world on Tuesday 13 October. After months on the sidelines of the frontier-model race, the company claims a level comparable to the best, with advanced reasoning and better performance on complex tasks, according to The Verge. Google highlights fewer evasions, repetitions and stock phrases, as well as a one-million-token output (the units of text a model produces), according to Next.ink. AI Pro subscribers now have access, whereas the offer was first reserved for the Ultra plan, the most expensive. The lab also released a version for robotics and a document on the model's safety.</p>",
             "sources": [
               {
-                "nom": "La Tribune",
-                "url": "https://www.latribune.fr/article/tech/informatique/1196293409157914/face-a-nvidia-microsoft-veut-se-tailler-une-place-sur-le-marche-des-puces-ia"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon"
               },
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/news/1009465/microsoft-maia-300-chip-improvements-rollout"
+                "nom": "Numerama",
+                "url": "https://www.numerama.com/tech/2352573-face-a-openai-et-anthropic-google-degaine-gemini-4-argon-pour-revenir-dans-la-course.html"
+              },
+              {
+                "nom": "Google DeepMind",
+                "url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
+              }
+            ],
+            "rang": 4,
+            "id": "google-rolls-out-gemini-4-argon-worldwide-and-returns-to"
+          },
+          {
+            "titre": "Character.AI files for bankruptcy five years after its founding",
+            "texteHtml": "<p>The conversational chatbot platform Character.AI has filed for bankruptcy protection, five years after its launch, TechCrunch reports. Part of its assets will be sold to Disney for $20 million. According to bankruptcy filings analysed by 404 Media, the company kept burning cash despite a sizeable user base, a sign that the economics of the service did not hold. Founded by former Google researchers, Character.AI once embodied the promise of consumer AI companions. Its fall is a reminder that a large audience is not enough to cover the cost of inference (the cost of running the model on each request).</p>",
+            "sources": [
+              {
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/"
+              },
+              {
+                "nom": "404 Media",
+                "url": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/"
               }
             ],
             "rang": 5,
-            "id": "microsoft-launches-maia-300-to-reduce-its-dependence-on"
+            "id": "character-ai-files-for-bankruptcy-five-years-after-its"
           },
           {
-            "titre": "Satya Nadella wants a human stop button on models",
-            "texteHtml": "<p>Microsoft's CEO warns against blind trust in the most advanced AI models, Siècle Digital reports. He argues they should be treated as potentially compromised from the design stage, and that a human must be able to interrupt a task at any moment. The warning echoes that of Brad Smith, Microsoft's president, who judges AI today less regulated than milk or washing machines and calls for fast regulation.</p>",
+            "titre": "An OpenAI engineer arrested over a microphone hidden in a meeting room",
+            "texteHtml": "<p>OpenAI announced the arrest of Abdulrahman Alfozan, a 35-year-old engineer accused of hiding a sophisticated recording device in an executive meeting room in San Francisco. According to the US Department of Justice, he is charged with attempting to intercept oral communications; he was fired on 9 October, the day of his arrest. According to Wired, the queries he reportedly sent to a chatbot reveal his preparations in the days before the microphone was found. OpenAI, which had reported the matter to the FBI, says it detected no access to its models, its code or its customers' data. The company adds that its own models helped identify the suspect.</p>",
             "sources": [
               {
-                "nom": "Siècle Digital",
-                "url": "https://siecledigital.fr/2026/10/12/et-si-lia-echappait-a-tout-controle-le-pdg-de-microsoft-lance-un-avertissement/"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-13/openai-says-staffer-arrested-for-hidden-recording-device-in-office"
               },
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/12/microsoft-president-says-uk-is-best-placed-to-drive-ai-regulation/"
+                "nom": "Wired",
+                "url": "https://www.wired.com/story/an-openai-employee-allegedly-used-a-chatbot-to-help-plant-a-recording-device-at-the-office/"
+              },
+              {
+                "nom": "Le Monde",
+                "url": "https://www.lemonde.fr/international/article/2026/10/13/openai-annonce-l-arrestation-d-un-employe-soupconne-d-avoir-pose-un-micro-dans-l-entreprise_6793179_3210.html"
               }
             ],
             "rang": 6,
-            "id": "satya-nadella-wants-a-human-stop-button-on-models"
+            "id": "an-openai-engineer-arrested-over-a-microphone-hidden-in-a"
           },
           {
-            "titre": "A web of cross-investments stirs echoes of 2008",
-            "texteHtml": "<p>A loop of circular financing is fuelling the AI boom and recalls, according to Bloomberg, the 2008 financial crisis. On the Big Take podcast, journalist Shawn Donnan describes an arrangement in which the same players finance one another: chipmakers, cloud providers and labs trade capacity and stakes, which inflates the headline figures and amplifies global imbalances. The same day, Asian tech stocks were falling and the IMF warned that the world economy is approaching the limits of its resilience. Willy Lee, of the Neostellar fund, puts nearly $200 billion of American venture capital deployed in the first half, more than 74% of the estimated total for the previous year. The comparison with 2008 holds as a warning signal, not a settled diagnosis.</p>",
+            "titre": "American Express and Shopify equip AI agents to buy",
+            "texteHtml": "<p>American Express presented a framework on Tuesday 13 October meant to stop an AI agent (a program that carries out tasks end to end) from buying anything other than what its holder authorised. The point, according to TechCrunch, is to avoid mistaken purchases and disputes as AI-driven buying spreads. The same day, Shopify opened its catalogue, more than a billion listings, to more agents: a customer will be able to set up their assistant to order on their behalf. The two announcements sketch the same economy, called agentic, where the software places the order itself. For a procurement department or an IT department, the question becomes one of mandate, what an agent can commit to on its own and up to what amount.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/videos/2026-10-12/big-take-ai-s-giant-money-loop-has-echoes-of-2008"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/"
               },
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/videos/2026-10-13/asia-tech-stocks-are-cracking-as-ai-trade-wobbles-video"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/videos/2026-10-12/neostellar-s-willy-lee-ai-market-is-starting-to-mature-video"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents"
               }
             ],
             "rang": 7,
-            "id": "a-web-of-cross-investments-stirs-echoes-of-2008"
-          },
-          {
-            "titre": "An AI tool finds a home from a single interior photo",
-            "texteHtml": "<p>The American company Raven, formerly GeoSpy, offers law enforcement the ability to identify the exact home where a photo was taken, from a single interior shot, 404 Media reports. The system cross-references visual clues, an appliance, a layout, a view through the window, with listings published on Airbnb or Zillow to find the address. First sold as a geolocation game, the tool is now aimed at police surveillance. The shift raises a direct privacy question: an innocuous image shared online becomes data that locates. No public safeguard governs, at this stage, the use of these identifications.</p>",
-            "sources": [
-              {
-                "nom": "404 Media",
-                "url": "https://www.404media.co/ai-company-lets-cops-pinpoint-specific-houses-based-on-a-single-interior-photo/"
-              }
-            ],
-            "rang": 8,
-            "id": "an-ai-tool-finds-a-home-from-a-single-interior-photo"
+            "id": "american-express-and-shopify-equip-ai-agents-to-buy"
           }
         ]
       },
@@ -606,28 +613,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "China weighs more than it appears in the American chip supply chain",
-            "texteHtml": "<p>Measured by country of manufacture, China supplies only about 5% of the equipment and materials bought by the American semiconductor industry, according to a Semiconductor Industry Association report relayed by the South China Morning Post. But its grip on certain rare earths needed to make chips exceeds 90%. The bulk of purchases, 95% of the roughly $27 billion spent each year, comes from companies based in the United States, Europe and Japan, which masks the real dependence on a few critical inputs. The figure arms the debate on export controls and industrial resilience.</p>",
+            "titre": "Chinese chip exports jump 136% to $45 billion",
+            "texteHtml": "<p>Chinese exports of integrated circuits rose 136% year on year in September, to $45 billion, according to customs data cited by the South China Morning Post. The increase outpaces the 108% rate recorded over the first nine months of the year. By volume, China exported only 1% more chips (32.7 billion units): it is the price surge, driven by the memory shortage, that explains the leap in value. The country confirms its growing weight in the global semiconductor chain, despite American export controls.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3370581/mapping-us-chip-supply-chain-china-accounts-far-more-it-appears-report-says"
+                "url": "https://www.scmp.com/tech/tech-trends/article/3370858/china-chip-exports-jump-136-us45b-ai-frenzy-jacks-prices"
+              }
+            ],
+            "rang": 8,
+            "id": "chinese-chip-exports-jump-136-to-45-billion"
+          },
+          {
+            "titre": "Memory-chip makers' shares fall in Asia",
+            "texteHtml": "<p>The shares of Asian memory-chip makers dropped sharply this week, a sign of growing doubts about how long the AI-driven profit cycle will last, the South China Morning Post reports. In Seoul, Samsung Electronics and SK Hynix fell 7.4% and 10.1% on Tuesday, dragging down China's CXMT (ChangXin Memory Technologies) as well. The paradox is stark: memory prices are rising and quarterly results stay solid, but investors are questioning a possible turn. The two movements, sharply rising exports and falling shares, tell the same tension around a memory market boosted by AI demand.</p>",
+            "sources": [
+              {
+                "nom": "South China Morning Post",
+                "url": "https://www.scmp.com/tech/tech-trends/article/3370739/why-samsung-sk-hynix-and-cxmt-shares-are-under-pressure-despite-strong-ai-demand"
               }
             ],
             "rang": 9,
-            "id": "china-weighs-more-than-it-appears-in-the-american-chip"
-          },
-          {
-            "titre": "China Mobile triples its largest computing hub in Inner Mongolia",
-            "texteHtml": "<p>The Chinese state telecom operator has tripled the capacity of its largest intelligent computing hub, located in Hohhot, the South China Morning Post reports, citing the Inner Mongolia Daily. Total power now reaches 20,100 petaflops, triple its previous capacity. The expansion extends Beijing's effort to strengthen its digital infrastructure and support its AI ambitions, by concentrating computing in the north, where energy and land cost less.</p>",
-            "sources": [
-              {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3370600/china-mobile-triples-capacity-mega-inner-mongolia-computing-hub-amid-nations-ai-push"
-              }
-            ],
-            "rang": 10,
-            "id": "china-mobile-triples-its-largest-computing-hub-in-inner"
+            "id": "memory-chip-makers-shares-fall-in-asia"
           }
         ]
       },
@@ -638,16 +645,24 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "A model can help choose what it should not forget",
-            "texteHtml": "<p>A study published on arXiv, \"Self-Preservation in Language Models\", looks at continual learning, adapting a pre-trained model without erasing its earlier skills. The authors show that a model can itself generate revision examples to designate the capabilities to protect, beyond the tasks provided by the evaluator alone. The work remains exploratory, but it touches a concrete point for operations: updating a model in production without making it lose what it knew how to do.</p>",
+            "titre": "The debate over the risks of open models hardens",
+            "texteHtml": "<p>Should the most powerful models be opened up? MIT Technology Review devotes a feature to the benefits and risks of open-weight models (which you can download and run yourself). The debate flared up after a report from Anthropic claiming that a model from China's Z.ai, GLM, poses a serious cyberattack risk. On Tuesday, an Anthropic commercial executive repeated to Bloomberg that open models carry \"more risk\" of security incidents. Wired, for its part, reports that a model with its safeguards removed readily provides detailed instructions for making an explosive device. The feature comes as the European AI Act seeks to distinguish what counts as open source from what requires heightened oversight.</p>",
             "sources": [
               {
-                "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2610.12602"
+                "nom": "MIT Technology Review",
+                "url": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/"
+              },
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-14/anthropic-executive-says-open-source-ai-models-are-higher-risk"
+              },
+              {
+                "nom": "Wired",
+                "url": "https://www.wired.com/story/ai-models-can-be-easily-modified-to-assist-terrorist-and-extremist-activity/"
               }
             ],
-            "rang": 11,
-            "id": "a-model-can-help-choose-what-it-should-not-forget"
+            "rang": 10,
+            "id": "the-debate-over-the-risks-of-open-models-hardens"
           }
         ]
       },
@@ -658,73 +673,72 @@
         "format": "bref",
         "items": [
           {
-            "titre": "A health AI must also know how to refuse an instruction",
-            "texteHtml": "<p>A study cited by the Journal du Net shows that safety reminders reduce a medical model's dangerous choices, but in return increase requests for human verification.</p>",
+            "titre": "ASML raises its forecasts, unable to keep up with demand",
+            "texteHtml": "<p>The Dutch firm ASML, a critical link in chip manufacturing, raised its annual sales forecast to €44-45 billion and is seeking to produce more lithography machines, lifted by AI spending.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1556409-intelligence-artificielle-en-sante-savoir-repondre-mais-aussi-remettre-en-question-une-consigne/"
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-10-14/asml-raises-full-year-sales-outlook-as-ai-boom-drives-demand"
+              }
+            ],
+            "rang": 11,
+            "id": "asml-raises-its-forecasts-unable-to-keep-up-with-demand"
+          },
+          {
+            "titre": "The New York Times, AFP and 80 media outlets unite against AI",
+            "texteHtml": "<p>The New York Times, The Economist and AFP are joining SPUR, a coalition of nearly 80 news organisations across more than 20 countries, to govern AI access to their content and negotiate licences.</p>",
+            "sources": [
+              {
+                "nom": "Siècle Digital",
+                "url": "https://siecledigital.fr/2026/10/13/le-new-york-times-lafp-et-80-medias-veulent-faire-payer-leurs-contenus-aux-geants-de-lia/"
               }
             ],
             "rang": 12,
-            "id": "a-health-ai-must-also-know-how-to-refuse-an-instruction"
+            "id": "the-new-york-times-afp-and-80-media-outlets-unite-against-ai"
           },
           {
-            "titre": "Anthropic cuts internet access for its evaluation AIs",
-            "texteHtml": "<p>After a false murder report sent to the Philadelphia police, a hacked university server and bypassed paid access, the creator of Claude removes internet from all its internal evaluations, for lack of reliable monitoring.</p>",
+            "titre": "Google gives AI agents an ID card in Workspace",
+            "texteHtml": "<p>Google now requires AI agents that access its office suite to be declared and assigns them their own identity; in many companies, the agent still works under an employee's account.</p>",
             "sources": [
               {
-                "nom": "01net",
-                "url": "https://www.01net.com/actualites/claude-apres-une-nouvelle-derive-anthropic-prive-certaines-ia-dacces-internet.html"
+                "nom": "Journal du Net",
+                "url": "https://www.journaldunet.com/intelligence-artificielle/1556531-google-donne-une-carte-d-identite-aux-agents-ia-chez-vous-ils-travaillent-encore-avec-le-badge-de-qui/"
               }
             ],
             "rang": 13,
-            "id": "anthropic-cuts-internet-access-for-its-evaluation-ais"
-          },
-          {
-            "titre": "NTT will build Anthropic's first data centre in Japan",
-            "texteHtml": "<p>The Japanese operator will build the first infrastructure dedicated to Anthropic in the country, a new step in the American lab's worldwide expansion of computing capacity.</p>",
-            "sources": [
-              {
-                "nom": "Nikkei Asia",
-                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/ntt-to-build-first-data-center-for-anthropic-in-japan"
-              }
-            ],
-            "rang": 14,
-            "id": "ntt-will-build-anthropic-s-first-data-centre-in-japan"
+            "id": "google-gives-ai-agents-an-id-card-in-workspace"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "The skill that creates value is reviewing and correcting what AI produces",
-      "these": "The value of AI at work depends on the skill of reviewing and correcting what it produces; organisations that train for this critical review capture the gain, the others inherit faster errors.",
-      "html": "<p>Linus Torvalds, who reduced AI to \"90% marketing\" in 2024, has just published eight Linux kernel patches written with Claude Code. The detail that matters lies in his method: he reviews each patch and integrates only what his judgment validates. The same day, Satya Nadella asks that a human be able to interrupt any model at any moment, and a health study cited by the Journal du Net measures the flip side of safety: guardrails reduce a medical model's dangerous decisions, at the cost of more human verifications. Three signals, one direction. The value of an AI tool at work now turns on the skill of the person who reviews, corrects and decides.</p>\n<p>We are watching a quiet shift inside organisations. Attention has gone to the ability to phrase a request, to \"prompt\". The real work is moving elsewhere: knowing how to spot the confident error, the invented source, the false shortcut that a model produces with the same assurance as a correct answer. This skill, critical review, can be learned and measured. It separates the engineer who accepts a patch because they understood it from the one who pastes it because it compiles.</p>\n<p>For a French organisation, the move to action is clear. Build review into the workflow, not as an option: who validates, on what criteria, with what trace. Train teams to check an AI output the way you review a fast, gifted colleague, useful as long as an expert eye passes behind. Identify the points where a human catches a real error, and reinvest the time saved elsewhere. The announced productivity gains hold only by that link.</p>\n<p>Torvalds kept his judgment at the centre. Claude Code speeds up the typing, leaves him the decision. That is the stance that turns a powerful model into reliable work. The organisations that train their people in this review will capture the gain; the others will inherit faster errors.</p>\n<p>The Masteria editorial team</p>",
-      "htmlExtrait": "<p>Linus Torvalds, who reduced AI to \"90% marketing\" in 2024, has just published eight Linux kernel patches written with Claude Code. The detail that matters lies in his method: he reviews each patch and integrates only what his judgment validates. The same day, Satya Nadella asks that a human be able to interrupt any model at any moment, and a health study cited by the Journal du Net measures the flip side of safety: guardrails reduce a medical model's dangerous decisions, at the cost of more human verifications. Three signals, one direction. The value of an AI tool at work now turns on the skill of the person who reviews, corrects and decides.</p>\n<p>We are watching a quiet shift inside organisations. Attention has gone to the ability to phrase a request, to \"prompt\". The real work is moving elsewhere: knowing how to spot the confident error, the invented source, the false shortcut that a model produces with the same assurance as a correct answer. This skill, critical review, can be learned and measured. It separates the engineer who accepts a patch because they understood it from the one who pastes it because it compiles.</p>",
+      "titre": "AI agents start to pay and to access: the question becomes under which identity",
+      "these": "AI agents are starting to pay and to access systems, often under an employee's account; before you let them act, give them their own identity, bounded rights and a record of what they do.",
+      "html": "<p>American Express published a framework on Tuesday that stops an AI agent from buying anything other than what its user authorised. The same day, Shopify opened its catalogue, more than a billion listings, to those same agents so they can place orders on our behalf, and Google began requiring every organisation to declare the agents that access Workspace, its office suite. Three moves, one shift: the AI agent is starting to act. It pays, it accesses, it commits.</p>\n<p>We note that this movement shifts the question of AI at work. For two years, it held in one sentence: what can the model produce. It now holds in another: under which identity did the agent act. In most French organisations, an agent plugged into the ERP or the email system borrows an employee's account. When it sends a purchase order, edits a customer record or reads an inbox, the record bears the name of a person who did nothing. On the day of a dispute, a CNIL inspection or an incident, no one can say who, the human or the machine, performed the act.</p>\n<p>The move that protects fits in one line: before letting an agent act, give it its own identity, not a colleague's badge. The Journal du Net puts it well: an AI agent is not a service account inherited from the 1990s. Each agent deserves a named identity, permissions bounded to its task, a log of its actions. This can be learned and organised: map the agents already in service, decide who has the right to create them, set what they can commit to on their own and what requires human approval.</p>\n<p>GDPR officers know the principle: it is controller accountability. It changes scale when the actor becomes a program that decides on its own, thousands of times a day. Amex and Shopify have just equipped agents to spend. Your teams will use them. What remains is to decide under whose name they will sign.</p>\n<p>The Masteria editorial team.</p>",
+      "htmlExtrait": "<p>American Express published a framework on Tuesday that stops an AI agent from buying anything other than what its user authorised. The same day, Shopify opened its catalogue, more than a billion listings, to those same agents so they can place orders on our behalf, and Google began requiring every organisation to declare the agents that access Workspace, its office suite. Three moves, one shift: the AI agent is starting to act. It pays, it accesses, it commits.</p>\n<p>We note that this movement shifts the question of AI at work. For two years, it held in one sentence: what can the model produce. It now holds in another: under which identity did the agent act. In most French organisations, an agent plugged into the ERP or the email system borrows an employee's account. When it sends a purchase order, edits a customer record or reads an inbox, the record bears the name of a person who did nothing. On the day of a dispute, a CNIL inspection or an incident, no one can say who, the human or the machine, performed the act.</p>",
       "itemsCites": [
-        3,
-        6,
-        12
+        7,
+        13
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-10-12",
-      "dateLongue": "Monday 12 October 2026",
-      "titreEditorial": "Markets start doubting how AI is funded",
-      "nbItems": 12
+      "date": "2026-10-13",
+      "dateLongue": "Tuesday 13 October 2026",
+      "titreEditorial": "Meta places Muse Wonder just behind Claude",
+      "nbItems": 14
     },
     "suivante": null,
-    "nbItems": 14,
-    "nbSources": 20,
-    "nbSignes": 7709,
-    "tempsLecture": 6,
+    "nbItems": 13,
+    "nbSources": 23,
+    "nbSignes": 8518,
+    "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe and France",
-        "nb": 3
+        "nb": 2
       },
       {
         "cle": "international",
@@ -749,19 +763,19 @@
     ],
     "sourcesDuJour": [
       "Le Monde",
-      "Frandroid",
-      "TechCrunch",
       "La Tribune",
-      "Clubic",
+      "Next.ink",
+      "01net",
+      "CNIL",
       "The Verge",
-      "Siècle Digital",
-      "Bloomberg",
-      "404 Media",
-      "South China Morning Post"
+      "Numerama",
+      "Google DeepMind",
+      "TechCrunch",
+      "404 Media"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 116,
-    "publieLe": "2026-10-13T07:09:38+02:00",
-    "publieLeAffiche": "7h09"
+    "nbArticlesCollectes": 141,
+    "publieLe": "2026-10-14T11:25:39+02:00",
+    "publieLeAffiche": "11h25"
   }
 }

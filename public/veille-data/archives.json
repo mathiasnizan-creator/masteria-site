@@ -3,12 +3,131 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-13",
-    "totalEditions": 55,
-    "totalItems": 740,
-    "totalSources": 1085
+    "derniereDate": "2026-10-14",
+    "totalEditions": 56,
+    "totalItems": 753,
+    "totalSources": 1108
   },
   "editions": [
+    {
+      "date": "2026-10-14",
+      "dateCourte": "mer. 14 oct.",
+      "dateAffichee": "14 octobre 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
+      "chapeau": "Jensen Huang fait entrer Nvidia au capital de Doctolib et de trois pépites françaises, Google déploie mondialement Gemini 4 Argon et un ingénieur d'OpenAI est arrêté pour avoir caché un micro au siège. Le même jour, American Express et Shopify arment les agents IA pour acheter à notre place, pendant que les actions des fabricants asiatiques de puces mémoire décrochent.",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 2
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "Next.ink",
+        "01net",
+        "CNIL",
+        "The Verge",
+        "Numerama",
+        "Google DeepMind",
+        "TechCrunch",
+        "404 Media",
+        "Bloomberg",
+        "Wired",
+        "South China Morning Post",
+        "MIT Technology Review",
+        "Siècle Digital",
+        "Journal du Net"
+      ],
+      "items": [
+        {
+          "t": "Nvidia entre au capital de Doctolib et vend sa définition de la souveraineté",
+          "z": "une",
+          "id": "nvidia-entre-au-capital-de-doctolib-et-vend-sa-definition"
+        },
+        {
+          "t": "Macron réunit un conseil de défense entièrement consacré à l'IA",
+          "z": "europe",
+          "id": "macron-reunit-un-conseil-de-defense-entierement-consacre-a"
+        },
+        {
+          "t": "Le CEPD cadre les lunettes connectées avant leur généralisation",
+          "z": "europe",
+          "id": "le-cepd-cadre-les-lunettes-connectees-avant-leur"
+        },
+        {
+          "t": "Google déploie mondialement Gemini 4 Argon et revient dans la course",
+          "z": "international",
+          "id": "google-deploie-mondialement-gemini-4-argon-et-revient-dans"
+        },
+        {
+          "t": "Character.AI dépose le bilan cinq ans après sa création",
+          "z": "international",
+          "id": "character-ai-depose-le-bilan-cinq-ans-apres-sa-creation"
+        },
+        {
+          "t": "Un ingénieur d'OpenAI arrêté pour un micro caché dans une salle de réunion",
+          "z": "international",
+          "id": "un-ingenieur-d-openai-arrete-pour-un-micro-cache-dans-une"
+        },
+        {
+          "t": "American Express et Shopify arment les agents IA pour acheter",
+          "z": "international",
+          "id": "american-express-et-shopify-arment-les-agents-ia-pour"
+        },
+        {
+          "t": "Les exportations chinoises de puces bondissent de 136 % à 45 milliards de dollars",
+          "z": "chine",
+          "id": "les-exportations-chinoises-de-puces-bondissent-de-136-a-45"
+        },
+        {
+          "t": "Les actions des fabricants de puces mémoire décrochent en Asie",
+          "z": "chine",
+          "id": "les-actions-des-fabricants-de-puces-memoire-decrochent-en"
+        },
+        {
+          "t": "Le débat sur les risques des modèles ouverts se durcit",
+          "z": "recherche",
+          "id": "le-debat-sur-les-risques-des-modeles-ouverts-se-durcit"
+        },
+        {
+          "t": "ASML relève ses prévisions, faute de suivre la demande",
+          "z": "bref",
+          "id": "asml-releve-ses-previsions-faute-de-suivre-la-demande"
+        },
+        {
+          "t": "Le New York Times, l'AFP et 80 médias s'unissent face aux IA",
+          "z": "bref",
+          "id": "le-new-york-times-l-afp-et-80-medias-s-unissent-face-aux-ia"
+        },
+        {
+          "t": "Google donne une carte d'identité aux agents IA dans Workspace",
+          "z": "bref",
+          "id": "google-donne-une-carte-d-identite-aux-agents-ia-dans"
+        }
+      ]
+    },
     {
       "date": "2026-10-13",
       "dateCourte": "mar. 13 oct.",

@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-13",
-    "totalEditions": 55,
-    "totalItems": 740,
-    "totalSources": 1085
+    "derniereDate": "2026-10-14",
+    "totalEditions": 56,
+    "totalItems": 753,
+    "totalSources": 1108
   },
   "editions": [
+    {
+      "date": "2026-10-14",
+      "dateAffichee": "14 octobre 2026",
+      "dateCourte": "mer. 14 oct.",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-10-13",
       "dateAffichee": "13 octobre 2026",

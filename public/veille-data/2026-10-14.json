@@ -1,0 +1,318 @@
+{
+  "schema": 2,
+  "date": "2026-10-14",
+  "dateAffichee": "14 octobre 2026",
+  "dateLongue": "mercredi 14 octobre 2026",
+  "dateCourte": "mer. 14 oct.",
+  "jourSemaine": "mercredi",
+  "titre": "Veille IA - mercredi 14 octobre 2026",
+  "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
+  "chapeau": "Jensen Huang fait entrer Nvidia au capital de Doctolib et de trois pépites françaises, Google déploie mondialement Gemini 4 Argon et un ingénieur d'OpenAI est arrêté pour avoir caché un micro au siège. Le même jour, American Express et Shopify arment les agents IA pour acheter à notre place, pendant que les actions des fabricants asiatiques de puces mémoire décrochent.",
+  "une": {
+    "titre": "Nvidia entre au capital de Doctolib et vend sa définition de la souveraineté",
+    "texteHtml": "<p>Jensen Huang, patron de Nvidia, était à Paris mardi 13 octobre pour faire entrer son groupe au capital de Doctolib, la plateforme française de prise de rendez-vous médicaux, ainsi que des jeunes pousses Pigment, Genesis AI et Entalpic. Le montant investi dans Doctolib n'a pas été communiqué ; la participation reste minoritaire. Doctolib compte s'en servir pour recruter et entraîner ses modèles en Europe, alors que des millions de patients lui confient leurs données de santé. Huang, qui dit avoir investi au moins 8 milliards de dollars en Europe l'an dernier, presse le continent d'« entrer dans la course » et d'adopter une position souveraine, sans renoncer à ses puces. La Tribune résume la manœuvre : le premier financeur de l'IA européenne vend aussi sa propre définition de la souveraineté. Pour un secteur aussi sensible que la santé, l'argument mérite examen, celui d'une infrastructure dite souveraine qui demeure adossée au matériel d'un seul fournisseur américain.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/pixels/article/2026/10/13/ia-l-entreprise-americaine-nvidia-entre-au-capital-du-francais-doctolib-en-tant-qu-actionnaire-minoritaire_6793162_4408996.html"
+      },
+      {
+        "nom": "La Tribune",
+        "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/37886335151214/nvidia-se-presente-comme-le-premier-financeur-de-l-ia-europeenne-et-vend-sa-definition-de-la-souverainete"
+      },
+      {
+        "nom": "Next.ink",
+        "url": "https://next.ink/261549/nvidia-entre-au-capital-de-doctolib-pour-accelerer-dans-lia-en-sante/"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "nvidia-entre-au-capital-de-doctolib-et-vend-sa-definition"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Macron réunit un conseil de défense entièrement consacré à l'IA",
+          "texteHtml": "<p>Emmanuel Macron a convoqué un conseil de défense et de sécurité nationale dédié à l'intelligence artificielle, rapporte 01net. L'Élysée range désormais l'IA parmi les « domaines stratégiques » de la France, au même rang que le spatial et le nucléaire. Le sujet quitte ainsi le champ économique pour rejoindre celui de la souveraineté et de la défense.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/domaine-strategique-emmanuel-macron-convoque-conseil-defense-securite-ia.html"
+            }
+          ],
+          "rang": 2,
+          "id": "macron-reunit-un-conseil-de-defense-entierement-consacre-a"
+        },
+        {
+          "titre": "Le CEPD cadre les lunettes connectées avant leur généralisation",
+          "texteHtml": "<p>Le Comité européen de la protection des données, qui réunit les CNIL du continent, a adopté une déclaration sur les lunettes connectées et publié un rapport, « Le regard connecté », consacré aux usages et aux risques de ces appareils. L'instance alerte sur la captation d'images et de sons dans l'espace public par des montures équipées de caméras, alors que Meta et d'autres poussent leurs modèles grand public. Le texte pose les bases d'une doctrine commune avant que l'usage ne se répande.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/cepd-declaration-lunettes-connectees"
+            }
+          ],
+          "rang": 3,
+          "id": "le-cepd-cadre-les-lunettes-connectees-avant-leur"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Google déploie mondialement Gemini 4 Argon et revient dans la course",
+          "texteHtml": "<p>Google a ouvert au monde entier, mardi 13 octobre, Gemini 4 Argon, son modèle haut de gamme présenté le 30 septembre. Après des mois en retrait de la course aux modèles de pointe, l'entreprise revendique un niveau comparable aux meilleurs, avec un raisonnement avancé et de meilleures performances sur les tâches complexes, selon The Verge. Google met en avant une réduction des faux-fuyants, des répétitions et des formules convenues, ainsi qu'un million de tokens en sortie (les unités de texte qu'un modèle produit), d'après Next.ink. Les abonnés AI Pro y ont désormais accès, alors que l'offre était d'abord réservée au forfait Ultra, le plus cher. Le laboratoire a publié en parallèle une version pour la robotique et un document sur la sûreté du modèle.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon"
+            },
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2352573-face-a-openai-et-anthropic-google-degaine-gemini-4-argon-pour-revenir-dans-la-course.html"
+            },
+            {
+              "nom": "Google DeepMind",
+              "url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
+            }
+          ],
+          "rang": 4,
+          "id": "google-deploie-mondialement-gemini-4-argon-et-revient-dans"
+        },
+        {
+          "titre": "Character.AI dépose le bilan cinq ans après sa création",
+          "texteHtml": "<p>La plateforme de chatbots conversationnels Character.AI s'est placée sous la protection de la loi sur les faillites, cinq ans après son lancement, rapporte TechCrunch. Une partie de ses actifs sera vendue à Disney pour 20 millions de dollars. D'après les documents de faillite analysés par 404 Media, l'entreprise continuait de brûler des liquidités malgré une base d'utilisateurs considérable, signe que l'économie du service ne tenait pas. Fondée par d'anciens chercheurs de Google, Character.AI avait un temps incarné la promesse des compagnons IA grand public. Sa chute rappelle qu'une large audience ne suffit pas à couvrir le coût de l'inférence (le coût de faire tourner le modèle à chaque requête).</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/"
+            },
+            {
+              "nom": "404 Media",
+              "url": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/"
+            }
+          ],
+          "rang": 5,
+          "id": "character-ai-depose-le-bilan-cinq-ans-apres-sa-creation"
+        },
+        {
+          "titre": "Un ingénieur d'OpenAI arrêté pour un micro caché dans une salle de réunion",
+          "texteHtml": "<p>OpenAI a annoncé l'arrestation d'Abdulrahman Alfozan, ingénieur de 35 ans, accusé d'avoir dissimulé un dispositif d'enregistrement sophistiqué dans une salle de réunion de la direction, à San Francisco. Selon le ministère américain de la Justice, il est poursuivi pour avoir cherché à intercepter des communications orales ; il a été licencié le 9 octobre, le jour de son arrestation. D'après Wired, les requêtes qu'il aurait adressées à un chatbot révèlent ses préparatifs dans les jours précédant la découverte du micro. OpenAI, qui avait signalé l'affaire au FBI, affirme n'avoir détecté aucun accès à ses modèles, à son code ou aux données de ses clients. L'entreprise ajoute que ses propres modèles ont aidé à identifier le suspect.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-13/openai-says-staffer-arrested-for-hidden-recording-device-in-office"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/an-openai-employee-allegedly-used-a-chatbot-to-help-plant-a-recording-device-at-the-office/"
+            },
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/international/article/2026/10/13/openai-annonce-l-arrestation-d-un-employe-soupconne-d-avoir-pose-un-micro-dans-l-entreprise_6793179_3210.html"
+            }
+          ],
+          "rang": 6,
+          "id": "un-ingenieur-d-openai-arrete-pour-un-micro-cache-dans-une"
+        },
+        {
+          "titre": "American Express et Shopify arment les agents IA pour acheter",
+          "texteHtml": "<p>American Express a présenté mardi 13 octobre un cadre destiné à empêcher un agent IA (un programme qui exécute des tâches de bout en bout) d'acheter autre chose que ce que son détenteur a autorisé. L'enjeu, selon TechCrunch, est d'éviter les achats erronés et les litiges à mesure que les achats pilotés par IA se répandent. Le même jour, Shopify a ouvert son catalogue, plus d'un milliard de références, à davantage d'agents : un client pourra configurer son assistant pour qu'il commande à sa place. Les deux annonces dessinent la même économie, dite agentique, où le logiciel passe l'ordre lui-même. Pour une direction achats ou une DSI, la question devient celle du mandat, ce qu'un agent peut engager seul et jusqu'à quel montant.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents"
+            }
+          ],
+          "rang": 7,
+          "id": "american-express-et-shopify-arment-les-agents-ia-pour"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Les exportations chinoises de puces bondissent de 136 % à 45 milliards de dollars",
+          "texteHtml": "<p>Les exportations chinoises de circuits intégrés ont augmenté de 136 % sur un an en septembre, à 45 milliards de dollars, selon les douanes citées par le South China Morning Post. La hausse dépasse le rythme de 108 % enregistré sur les neuf premiers mois de l'année. En volume, la Chine n'a exporté que 1 % de puces de plus (32,7 milliards d'unités) : c'est la flambée des prix, portée par la pénurie de mémoire, qui explique le saut en valeur. Le pays confirme son poids croissant dans la chaîne mondiale des semi-conducteurs, malgré les contrôles d'exportation américains.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3370858/china-chip-exports-jump-136-us45b-ai-frenzy-jacks-prices"
+            }
+          ],
+          "rang": 8,
+          "id": "les-exportations-chinoises-de-puces-bondissent-de-136-a-45"
+        },
+        {
+          "titre": "Les actions des fabricants de puces mémoire décrochent en Asie",
+          "texteHtml": "<p>Les titres des fabricants asiatiques de puces mémoire ont fortement reculé cette semaine, signe de doutes grandissants sur la durée du cycle de profits tiré par l'IA, rapporte le South China Morning Post. À Séoul, Samsung Electronics et SK Hynix ont chuté de 7,4 % et 10,1 % mardi, entraînant aussi le chinois CXMT (ChangXin Memory Technologies). Le paradoxe est net : les prix de la mémoire montent et les résultats trimestriels restent solides, mais les investisseurs s'interrogent sur un possible retournement. Les deux mouvements, exportations en forte hausse et actions en baisse, racontent la même tension autour d'un marché de la mémoire dopé par la demande d'IA.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3370739/why-samsung-sk-hynix-and-cxmt-shares-are-under-pressure-despite-strong-ai-demand"
+            }
+          ],
+          "rang": 9,
+          "id": "les-actions-des-fabricants-de-puces-memoire-decrochent-en"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Le débat sur les risques des modèles ouverts se durcit",
+          "texteHtml": "<p>Faut-il ouvrir les modèles les plus puissants ? MIT Technology Review consacre un dossier aux bénéfices et aux risques des modèles à poids ouverts (qu'on peut télécharger et faire tourner soi-même). Le débat s'est ravivé après un rapport d'Anthropic affirmant qu'un modèle du chinois Z.ai, GLM, présente un risque sérieux de cyberattaque. Mardi, un dirigeant commercial d'Anthropic a redit à Bloomberg que les modèles ouverts portent « plus de risque » d'incidents de sécurité. Wired rapporte de son côté qu'un modèle dont on retire les garde-fous fournit sans difficulté des instructions détaillées pour fabriquer un engin explosif. Le dossier arrive au moment où l'AI Act européen cherche à distinguer ce qui relève de l'open source et ce qui exige une surveillance renforcée.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-14/anthropic-executive-says-open-source-ai-models-are-higher-risk"
+            },
+            {
+              "nom": "Wired",
+              "url": "https://www.wired.com/story/ai-models-can-be-easily-modified-to-assist-terrorist-and-extremist-activity/"
+            }
+          ],
+          "rang": 10,
+          "id": "le-debat-sur-les-risques-des-modeles-ouverts-se-durcit"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "ASML relève ses prévisions, faute de suivre la demande",
+          "texteHtml": "<p>Le néerlandais ASML, maillon critique de la fabrication de puces, a relevé ses prévisions de ventes annuelles à 44-45 milliards d'euros et cherche à produire davantage de machines de gravure, portées par les dépenses d'IA.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-14/asml-raises-full-year-sales-outlook-as-ai-boom-drives-demand"
+            }
+          ],
+          "rang": 11,
+          "id": "asml-releve-ses-previsions-faute-de-suivre-la-demande"
+        },
+        {
+          "titre": "Le New York Times, l'AFP et 80 médias s'unissent face aux IA",
+          "texteHtml": "<p>Le New York Times, The Economist et l'AFP rejoignent SPUR, une coalition de près de 80 organisations de presse réparties dans plus de 20 pays, pour encadrer l'accès des IA à leurs contenus et négocier des licences.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/10/13/le-new-york-times-lafp-et-80-medias-veulent-faire-payer-leurs-contenus-aux-geants-de-lia/"
+            }
+          ],
+          "rang": 12,
+          "id": "le-new-york-times-l-afp-et-80-medias-s-unissent-face-aux-ia"
+        },
+        {
+          "titre": "Google donne une carte d'identité aux agents IA dans Workspace",
+          "texteHtml": "<p>Google oblige désormais à déclarer les agents IA qui accèdent à sa suite bureautique et leur attribue une identité propre ; dans beaucoup d'entreprises, l'agent travaille encore sous le compte d'un salarié.</p>",
+          "sources": [
+            {
+              "nom": "Journal du Net",
+              "url": "https://www.journaldunet.com/intelligence-artificielle/1556531-google-donne-une-carte-d-identite-aux-agents-ia-chez-vous-ils-travaillent-encore-avec-le-badge-de-qui/"
+            }
+          ],
+          "rang": 13,
+          "id": "google-donne-une-carte-d-identite-aux-agents-ia-dans"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Les agents IA se mettent à payer et à accéder : la question devient sous quelle identité",
+    "these": "Les agents IA se mettent à payer et à accéder aux systèmes, souvent sous le compte d'un salarié ; avant de les laisser agir, donnez-leur une identité propre, des droits bornés et une trace de leurs actes.",
+    "html": "<p>American Express a publié mardi un cadre qui empêche un agent IA d'acheter autre chose que ce que son utilisateur a autorisé. Le même jour, Shopify a ouvert son catalogue, plus d'un milliard de références, à ces mêmes agents pour qu'ils passent commande à notre place, et Google a commencé à exiger que chaque organisation déclare les agents qui accèdent à Workspace, sa suite bureautique. Trois gestes, une bascule : l'agent IA se met à agir. Il paie, il accède, il engage.</p>\n<p>Nous observons que ce mouvement déplace la question de l'IA au travail. Pendant deux ans, elle tenait en une phrase, que sait produire le modèle. Elle tient maintenant en une autre, sous quelle identité l'agent a-t-il agi. Dans la plupart des organisations françaises, un agent branché à l'ERP ou à la messagerie emprunte le compte d'un salarié. Quand il envoie un bon de commande, modifie une fiche client ou lit une boîte mail, la trace porte le nom d'une personne qui n'a rien fait. Le jour d'un litige, d'un contrôle CNIL ou d'un incident, personne ne peut dire qui, de l'humain ou de la machine, a posé l'acte.</p>\n<p>Le geste qui protège tient en une ligne : avant de laisser un agent agir, lui donner sa propre identité, pas le badge d'un collègue. Le Journal du Net le formule d'une phrase juste, un agent IA n'est pas un compte de service hérité des années 1990. Chaque agent mérite une identité nommée, des autorisations bornées à sa tâche, un journal de ses actions. Cela s'apprend et s'organise : cartographier les agents déjà en service, décider qui a le droit d'en créer, fixer ce qu'ils peuvent engager seuls et ce qui exige une validation humaine.</p>\n<p>Les responsables RGPD connaissent le principe, c'est la responsabilité du traitement. Il change d'échelle quand l'acteur devient un programme qui décide seul, des milliers de fois par jour. Amex et Shopify viennent d'armer les agents pour dépenser. Vos équipes s'en serviront. Reste à décider sous quel nom ils signeront.</p>",
+    "htmlExtrait": "<p>American Express a publié mardi un cadre qui empêche un agent IA d'acheter autre chose que ce que son utilisateur a autorisé. Le même jour, Shopify a ouvert son catalogue, plus d'un milliard de références, à ces mêmes agents pour qu'ils passent commande à notre place, et Google a commencé à exiger que chaque organisation déclare les agents qui accèdent à Workspace, sa suite bureautique. Trois gestes, une bascule : l'agent IA se met à agir. Il paie, il accède, il engage.</p>\n<p>Nous observons que ce mouvement déplace la question de l'IA au travail. Pendant deux ans, elle tenait en une phrase, que sait produire le modèle. Elle tient maintenant en une autre, sous quelle identité l'agent a-t-il agi. Dans la plupart des organisations françaises, un agent branché à l'ERP ou à la messagerie emprunte le compte d'un salarié. Quand il envoie un bon de commande, modifie une fiche client ou lit une boîte mail, la trace porte le nom d'une personne qui n'a rien fait. Le jour d'un litige, d'un contrôle CNIL ou d'un incident, personne ne peut dire qui, de l'humain ou de la machine, a posé l'acte.</p>",
+    "itemsCites": [
+      7,
+      13
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-10-13",
+    "dateLongue": "mardi 13 octobre 2026",
+    "titreEditorial": "Meta place Muse Wonder juste derrière Claude",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 13,
+  "nbSources": 23,
+  "nbSignes": 9376,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 2
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "La Tribune",
+    "Next.ink",
+    "01net",
+    "CNIL",
+    "The Verge",
+    "Numerama",
+    "Google DeepMind",
+    "TechCrunch",
+    "404 Media"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 141,
+  "publieLe": "2026-10-14T11:24:11+02:00",
+  "publieLeAffiche": "11h24",
+  "ogImage": "/veille-data/og/2026-10-14.png"
+}

@@ -263,7 +263,12 @@
     "titreEditorial": "Markets start doubting how AI is funded",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-14",
+    "dateLongue": "Wednesday 14 October 2026",
+    "titreEditorial": "AI agents get a wallet and a badge",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 20,
   "nbSignes": 7709,

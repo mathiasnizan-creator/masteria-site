@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-13",
-    "totalEditions": 40,
-    "totalItems": 537,
-    "totalSources": 773
+    "derniereDate": "2026-10-14",
+    "totalEditions": 41,
+    "totalItems": 550,
+    "totalSources": 796
   },
   "editions": [
+    {
+      "date": "2026-10-14",
+      "dateAffichee": "14 October 2026",
+      "dateCourte": "Wed 14 Oct",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "AI agents get a wallet and a badge",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-10-13",
       "dateAffichee": "13 October 2026",

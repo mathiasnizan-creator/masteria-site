@@ -3,12 +3,131 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-13",
-    "totalEditions": 40,
-    "totalItems": 537,
-    "totalSources": 773
+    "derniereDate": "2026-10-14",
+    "totalEditions": 41,
+    "totalItems": 550,
+    "totalSources": 796
   },
   "editions": [
+    {
+      "date": "2026-10-14",
+      "dateCourte": "Wed 14 Oct",
+      "dateAffichee": "14 October 2026",
+      "mois": "2026-10",
+      "moisAffiche": "Octobre 2026",
+      "titreEditorial": "AI agents get a wallet and a badge",
+      "chapeau": "Jensen Huang brings Nvidia into the capital of Doctolib and three French startups, Google rolls out Gemini 4 Argon worldwide, and an OpenAI engineer is arrested for hiding a microphone at headquarters. The same day, American Express and Shopify equip AI agents to buy on our behalf, while the shares of Asian memory-chip makers fall.",
+      "nbItems": 13,
+      "nbSources": 23,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 2
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "La Tribune",
+        "Next.ink",
+        "01net",
+        "CNIL",
+        "The Verge",
+        "Numerama",
+        "Google DeepMind",
+        "TechCrunch",
+        "404 Media",
+        "Bloomberg",
+        "Wired",
+        "South China Morning Post",
+        "MIT Technology Review",
+        "Siècle Digital",
+        "Journal du Net"
+      ],
+      "items": [
+        {
+          "t": "Nvidia takes a stake in Doctolib and sells its definition of sovereignty",
+          "z": "une",
+          "id": "nvidia-takes-a-stake-in-doctolib-and-sells-its-definition"
+        },
+        {
+          "t": "Macron convenes a defence council devoted entirely to AI",
+          "z": "europe",
+          "id": "macron-convenes-a-defence-council-devoted-entirely-to-ai"
+        },
+        {
+          "t": "The EDPB sets a framework for smart glasses before they go mainstream",
+          "z": "europe",
+          "id": "the-edpb-sets-a-framework-for-smart-glasses-before-they-go"
+        },
+        {
+          "t": "Google rolls out Gemini 4 Argon worldwide and returns to the race",
+          "z": "international",
+          "id": "google-rolls-out-gemini-4-argon-worldwide-and-returns-to"
+        },
+        {
+          "t": "Character.AI files for bankruptcy five years after its founding",
+          "z": "international",
+          "id": "character-ai-files-for-bankruptcy-five-years-after-its"
+        },
+        {
+          "t": "An OpenAI engineer arrested over a microphone hidden in a meeting room",
+          "z": "international",
+          "id": "an-openai-engineer-arrested-over-a-microphone-hidden-in-a"
+        },
+        {
+          "t": "American Express and Shopify equip AI agents to buy",
+          "z": "international",
+          "id": "american-express-and-shopify-equip-ai-agents-to-buy"
+        },
+        {
+          "t": "Chinese chip exports jump 136% to $45 billion",
+          "z": "chine",
+          "id": "chinese-chip-exports-jump-136-to-45-billion"
+        },
+        {
+          "t": "Memory-chip makers' shares fall in Asia",
+          "z": "chine",
+          "id": "memory-chip-makers-shares-fall-in-asia"
+        },
+        {
+          "t": "The debate over the risks of open models hardens",
+          "z": "recherche",
+          "id": "the-debate-over-the-risks-of-open-models-hardens"
+        },
+        {
+          "t": "ASML raises its forecasts, unable to keep up with demand",
+          "z": "bref",
+          "id": "asml-raises-its-forecasts-unable-to-keep-up-with-demand"
+        },
+        {
+          "t": "The New York Times, AFP and 80 media outlets unite against AI",
+          "z": "bref",
+          "id": "the-new-york-times-afp-and-80-media-outlets-unite-against-ai"
+        },
+        {
+          "t": "Google gives AI agents an ID card in Workspace",
+          "z": "bref",
+          "id": "google-gives-ai-agents-an-id-card-in-workspace"
+        }
+      ]
+    },
     {
       "date": "2026-10-13",
       "dateCourte": "Tue 13 Oct",

@@ -263,7 +263,12 @@
     "titreEditorial": "Les marchés doutent du financement de l'IA",
     "nbItems": 12
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-10-14",
+    "dateLongue": "mercredi 14 octobre 2026",
+    "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
+    "nbItems": 13
+  },
   "nbItems": 14,
   "nbSources": 20,
   "nbSignes": 8420,

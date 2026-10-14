@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-10-14</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-14T11:24:11+02:00</news:publication_date>
+      <news:title>Veille IA du 14 octobre 2026 : Les agents IA reçoivent un portefeuille et un badge</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-10-13</loc>
     <news:news>
       <news:publication>
@@ -10,17 +21,6 @@
       </news:publication>
       <news:publication_date>2026-10-13T07:08:07+02:00</news:publication_date>
       <news:title>Veille IA du 13 octobre 2026 : Meta place Muse Wonder juste derrière Claude</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-10-12</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-10-12T09:45:47+02:00</news:publication_date>
-      <news:title>Veille IA du 12 octobre 2026 : Les marchés doutent du financement de l&#x27;IA</news:title>
     </news:news>
   </url>
 </urlset>
