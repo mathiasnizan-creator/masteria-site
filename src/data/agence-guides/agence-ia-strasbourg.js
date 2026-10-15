@@ -130,7 +130,7 @@ export default {
   ],
   formation: [
     "Les gestionnaires de paie, les juristes et les acheteurs qui hériteront de l'outil se forment sur lui, avec leurs propres dossiers : vérifier la source et la date de chaque réponse, reconnaître une question qui relève du droit local, signaler une erreur au référent. Ces séances ont lieu en français, dans vos locaux strasbourgeois ou à distance.",
-    "Ces sessions entrent dans le champ de notre certification Qualiopi. Leur prix, 1 980 € HT par session d'une journée pour votre groupe, peut être financé par l'OPCO dont relève votre entreprise ; le conseil et le développement n'ouvrent pas droit à ce financement. La passation comprend en plus une séance pour le référent qui tiendra la base documentaire à jour.",
+    "Ces sessions entrent dans le champ de notre certification Qualiopi. Leur prix, à partir de 1 980 € HT par session d'une journée pour votre groupe, peut être financé par l'OPCO dont relève votre entreprise ; le conseil et le développement n'ouvrent pas droit à ce financement. Le temps de préparation sur mesure s'ajoute au devis. La passation comprend en plus une séance pour le référent qui tiendra la base documentaire à jour.",
   ],
   guide: {
     kicker: "Projets IA en Alsace",

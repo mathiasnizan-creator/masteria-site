@@ -12,12 +12,12 @@ export default {
   h1: "Formation ChatGPT finance : clôture, budget et reporting sous contrôle",
   metaTitle: "Formation ChatGPT finance · contrôle de gestion | Masteria",
   metaDesc: "Formation ChatGPT finance : calculs exécutés sur vos exports, ChatGPT dans Excel, commentaires d'écarts, note au comité, règles de données. 2 jours.",
-  resume: "La formation ChatGPT finance apprend aux équipes d'une direction financière à faire calculer ChatGPT sur leurs exports, à commenter un budget et à rédiger la note du comité sans qu'un seul montant échappe au pointage. Elle compte quatorze heures sur deux jours, au siège ou en visioconférence, pour un effectif plafonné à douze, voire un seul participant ; le tarif journalier s'établit à 1 980 € HT. Votre OPCO peut instruire une demande de financement, Masteria étant certifié Qualiopi au titre de ses actions de formation.",
+  resume: "La formation ChatGPT finance apprend aux équipes d'une direction financière à faire calculer ChatGPT sur leurs exports, à commenter un budget et à rédiger la note du comité sans qu'un seul montant échappe au pointage. Elle compte quatorze heures sur deux jours, au siège ou en visioconférence, pour un effectif plafonné à douze, voire un seul participant ; le tarif journalier démarre à 1 980 € HT, la préparation sur vos pièces s'ajoutant au devis. Votre OPCO peut instruire une demande de financement, Masteria étant certifié Qualiopi au titre de ses actions de formation.",
   enBref: [
     { label: 'Formation', value: "ChatGPT pour la direction financière : exports comptables, écarts budgétaires, prévisions, note au comité et présentation" },
     { label: 'Durée', value: "Deux journées de sept heures, à placer hors des semaines de clôture" },
     { label: 'Formats', value: "Au siège ou en classe virtuelle ; douze personnes par groupe au maximum, ou un DAF formé seul" },
-    { label: 'Tarif', value: "Journée facturée 1 980 € HT, du binôme au groupe complet" },
+    { label: 'Tarif', value: "Journée facturée à partir de 1 980 € HT, du binôme au groupe complet ; sur mesure, la préparation s'ajoute au devis" },
     { label: 'Financement', value: "Qualiopi, catégorie « actions de formation » ; demande déposée auprès de votre OPCO, qui décide d'après les règles de la branche" },
     { label: 'Prérequis', value: "Pratique quotidienne d'Excel ; pour toute pièce interne, un espace ChatGPT Business ou Enterprise" },
   ],
@@ -186,8 +186,8 @@ export default {
   tarifs: {
     titre: "Le budget d'une direction financière pour cette formation",
     paras: [
-      "Le groupe, de deux à douze participants, coûte 1 980 € HT par journée de session. Une direction financière qui inscrit neuf personnes (son DAF, quatre contrôleurs, trois comptables, la trésorière) débourse 3 960 € HT en tout, 440 € HT par tête. Le DAF qui préfère un face-à-face sur ses dossiers opte pour la formule individuelle, au même prix journalier.",
-      "Le prix couvre la préparation : une balance anonymisée, un classeur de reporting et le calendrier de clôture sont étudiés avec le formateur, qui y puise la matière des ateliers. Côté financement, votre OPCO examine la demande selon ses conditions et ses disponibilités ; Masteria remplit son exigence de certification Qualiopi, obtenue pour les actions de formation, et les pièces du dossier se rédigent avec vous.",
+      "Le groupe, de deux à douze participants, coûte à partir de 1 980 € HT par journée de session. Une direction financière qui inscrit neuf personnes (son DAF, quatre contrôleurs, trois comptables, la trésorière) débourse à partir de 3 960 € HT en tout, soit dès 440 € HT par tête. Le DAF qui préfère un face-à-face sur ses dossiers opte pour la formule individuelle, au même prix journalier.",
+      "Le prix de base ne couvre pas la préparation sur mesure : si les ateliers partent d'une balance anonymisée, d'un classeur de reporting et du calendrier de clôture, le temps d'étude avec le formateur s'ajoute au devis. Côté financement, votre OPCO examine la demande selon ses conditions et ses disponibilités ; Masteria remplit son exigence de certification Qualiopi, obtenue pour les actions de formation, et les pièces du dossier se rédigent avec vous.",
     ],
   },
   cta: {
@@ -240,7 +240,7 @@ export default {
     },
     {
       q: "Comment la direction financière finance-t-elle la formation ?",
-      a: "Votre OPCO de branche la finance selon ses conditions et ses fonds disponibles ; il demande un organisme titulaire de Qualiopi, ce qu'est Masteria pour ses actions de formation. Le prix ne varie pas, 1 980 € HT par jour, que la session réunisse deux contrôleurs ou douze personnes. Programme et convention, pièces à joindre, sont rédigés par nos soins. Une filiale de Genève ou de Bruxelles, sans OPCO, reçoit un devis en euros HT.",
+      a: "Votre OPCO de branche la finance selon ses conditions et ses fonds disponibles ; il demande un organisme titulaire de Qualiopi, ce qu'est Masteria pour ses actions de formation. Le prix ne varie pas, à partir de 1 980 € HT par jour, que la session réunisse deux contrôleurs ou douze personnes. Programme et convention, pièces à joindre, sont rédigés par nos soins. Une filiale de Genève ou de Bruxelles, sans OPCO, reçoit un devis en euros HT.",
     },
   ],
 }

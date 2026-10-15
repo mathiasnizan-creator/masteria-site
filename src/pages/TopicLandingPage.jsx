@@ -36,7 +36,7 @@ const TOPICS = {
     reassurance: [
       { t: 'Qualiopi', s: 'Au titre des actions de formation' },
       { t: 'OPCO de branche', s: 'Selon ses règles et ses fonds' },
-      { t: 'Une ou deux journées', s: '1 980 € HT la journée' },
+      { t: 'Une ou deux journées', s: 'Dès 1 980 € HT la journée' },
       { t: 'Douze personnes au plus', s: 'En intra, ou en individuel' },
     ],
     faqTitre: "Vos questions sur le CPF et la formation IA",
@@ -44,7 +44,7 @@ const TOPICS = {
       { q: "Mon CPF peut-il payer une formation Masteria ?", a: "Non. Nos formations d'une ou deux journées ne mènent pas à une certification enregistrée au RNCP ou au Répertoire spécifique, condition pour mobiliser le CPF. Elles se financent par l'OPCO de votre branche, par le plan de développement des compétences ou par le budget de l'entreprise." },
       { q: "Quelles formations en IA le CPF finance-t-il ?", a: "Surtout des parcours longs, de plusieurs mois, en data science, en apprentissage automatique ou en développement, qui préparent un titre enregistré. Ils s'adressent plutôt aux personnes en reconversion qu'aux salariés qui veulent se servir d'un assistant d'IA dans leur poste. Avant de vous inscrire, consultez la fiche de la certification sur le site de France Compétences." },
       { q: "Mon employeur doit-il payer ma formation en IA ?", a: "Quand la formation est demandée par l'employeur, elle entre dans le plan de développement des compétences et l'entreprise la finance, avec l'aide éventuelle de son OPCO. Quand l'idée vient de vous, présentez-la à votre responsable ou au service RH en précisant les tâches qu'elle doit faciliter : une demande reliée à votre poste a plus de chances d'aboutir." },
-      { q: "Combien coûte une formation IA chez Masteria ?", a: "1 980 € HT la journée, en intra pour une équipe de douze participants au plus comme en accompagnement individuel, et 3 960 € HT pour deux jours. Une journée suffit pour prendre en main un outil ; deux jours permettent d'aller plus loin ou de comparer plusieurs outils." },
+      { q: "Combien coûte une formation IA chez Masteria ?", a: "À partir de 1 980 € HT la journée, en intra pour une équipe de douze participants au plus comme en accompagnement individuel, et de 3 960 € HT pour deux jours. Pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis. Une journée suffit pour prendre en main un outil ; deux jours permettent d'aller plus loin ou de comparer plusieurs outils." },
       { q: "L'OPCO prend-il en charge toute la formation ?", a: "Cela dépend de votre OPCO : chaque branche fixe ses règles, ses plafonds et ses fonds disponibles, en fonction de la convention collective et de la taille de l'entreprise. Nous regardons avec vous les conditions de votre branche avant de déposer la demande." },
       { q: "À quel moment solliciter l'OPCO ?", a: "Avant le premier jour de formation : l'OPCO examine le dossier en amont. Le délai de réponse varie d'un OPCO à l'autre ; nous vous transmettons le devis, le programme détaillé et la convention dès que le projet est validé, pour que la demande parte au plus tôt." },
     ],
@@ -85,7 +85,7 @@ const TOPICS = {
     faq: [
       { q: "Une formation IA à distance vaut-elle une formation en salle ?", a: "Oui, si le formateur est présent en direct et si chacun travaille sur ses propres cas. En classe virtuelle, les questions se posent au moment où elles viennent, les écrans se partagent et le formateur commente les prompts de chaque participant." },
       { q: "Combien de participants accepte une classe virtuelle ?", a: "Douze au plus, pour que le formateur puisse suivre ce que chacun produit. Au-delà, nous organisons plusieurs sessions à la suite." },
-      { q: "Le distanciel coûte-t-il moins cher ?", a: "La journée coûte le même prix, 1 980 € HT en intra jusqu'à douze participants comme en accompagnement individuel. La différence tient aux frais de déplacement du formateur, qui disparaissent de la proposition." },
+      { q: "Le distanciel coûte-t-il moins cher ?", a: "La journée garde le même prix de départ, 1 980 € HT en intra jusqu'à douze participants comme en accompagnement individuel. La différence tient aux frais de déplacement du formateur, qui disparaissent de la proposition." },
       { q: "Une formation à distance est-elle finançable par l'OPCO ?", a: "Oui, comme en salle. Masteria est certifié Qualiopi au titre des actions de formation, qu'elles se déroulent sur place ou à distance, et l'OPCO de votre branche peut financer la session selon ses règles et ses fonds." },
       { q: "Peut-on suivre la formation à son rythme, en vidéo ?", a: "Nous ne proposons que des sessions en direct. Les exercices sur vos dossiers et les corrections du formateur demandent un échange en temps réel, qu'une vidéo enregistrée ne remplace pas." },
       { q: "Quel outil de visioconférence utilisez-vous ?", a: "Celui de votre entreprise : Microsoft Teams, Zoom, Google Meet ou Webex. Le formateur s'y adapte, et le lien vous parvient deux jours avant la session." },
@@ -129,7 +129,7 @@ const TOPICS = {
       { q: "Faut-il des connaissances techniques pour suivre la formation ?", a: "Non. Les outils d'IA générative se pilotent en langage courant. La formation s'adresse à tous les profils, du marketing aux RH, de la finance au juridique et à la direction, sans prérequis technique." },
       { q: "Peut-on se fier à l'IA générative dans son travail ?", a: "Oui, à condition d'en connaître les limites : une réponse inventée qui a l'air juste, des biais, des connaissances arrêtées à une date. Une partie de la formation apprend à vérifier une production avant de la diffuser, en exigeant des sources et en relisant les chiffres." },
       { q: "Comment protéger les données de l'entreprise ?", a: "Par trois mesures. Utilisez une offre professionnelle, qui n'entraîne pas les modèles sur vos échanges par défaut. Choisissez l'hébergement en fonction de vos données, dans l'Union européenne quand c'est nécessaire. Formez les équipes à ne jamais coller les données personnelles d'un client dans un outil grand public." },
-      { q: "Combien de temps faut-il pour former une équipe ?", a: "Une journée suffit pour une prise en main solide d'un outil, sur cinq cas de travail environ. Deux jours permettent de comparer plusieurs outils et d'approfondir l'écriture des consignes. La journée coûte 1 980 € HT, les deux jours 3 960 € HT." },
+      { q: "Combien de temps faut-il pour former une équipe ?", a: "Une journée suffit pour une prise en main solide d'un outil, sur cinq cas de travail environ. Deux jours permettent de comparer plusieurs outils et d'approfondir l'écriture des consignes. La journée démarre à 1 980 € HT, les deux jours à 3 960 € HT." },
       { q: "Quels métiers profitent le plus de l'IA générative ?", a: "Tous les métiers de bureau en profitent, et les effets se voient vite en marketing, en communication, en RH, au juridique, dans la vente et en finance. Le temps gagné dépend des tâches choisies ; nous le relevons avec vous avant et après la formation." },
     ],
     cta: {

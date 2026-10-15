@@ -11,12 +11,12 @@ export default {
   h1: "Formation Copilot Word et Excel : rédiger, transformer un classeur et garder la main",
   metaTitle: "Formation Copilot Word et Excel | Masteria, Qualiopi",
   metaDesc: "Formation Copilot Word et Excel : Modifier avec Copilot, modes Édition, Plan et Conversation, règles de classeur, relecture des changements. Qualiopi.",
-  resume: "La formation Copilot Word et Excel apprend à faire écrire et calculer Copilot directement dans vos documents et vos classeurs, puis à vérifier chaque changement avant de le garder. Elle concerne chaque métier dont les journées se passent dans la bureautique, et dure quatorze heures sur deux jours, pour un groupe (jusqu'à douze) ou une personne seule. Comptez 1 980 € HT par jour. Masteria possède la certification Qualiopi, condition pour que l'OPCO de votre branche examine un financement, à ses propres conditions.",
+  resume: "La formation Copilot Word et Excel apprend à faire écrire et calculer Copilot directement dans vos documents et vos classeurs, puis à vérifier chaque changement avant de le garder. Elle concerne chaque métier dont les journées se passent dans la bureautique, et dure quatorze heures sur deux jours, pour un groupe (jusqu'à douze) ou une personne seule. Comptez au moins 1 980 € HT par jour, plus la préparation si les ateliers partent de vos fichiers. Masteria possède la certification Qualiopi, condition pour que l'OPCO de votre branche examine un financement, à ses propres conditions.",
   enBref: [
     { label: 'Formation', value: "Copilot au travail dans Word et Excel, quel que soit le métier : premier jet, réécriture d'un document, transformation et lecture d'un classeur" },
     { label: 'Durée', value: "Deux jours de sept heures : Word le premier jour, Excel le second, puis le passage de l'un à l'autre" },
     { label: 'Formats', value: "Groupe en intra jusqu'à douze personnes, ou parcours individuel ; dans vos locaux ou en visioconférence" },
-    { label: 'Tarif', value: "1 980 € HT la journée, du premier au douzième participant" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée, du premier au douzième participant ; préparation sur vos fichiers en plus, au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi : votre OPCO peut participer, d'après les règles de la branche et les fonds disponibles" },
     { label: 'Prérequis', value: "Savoir ce que sont un tableau, un filtre et un tableau croisé dynamique ; un compte Microsoft 365 professionnel" },
   ],
@@ -254,14 +254,14 @@ export default {
     },
     {
       q: "Comment financer une formation Copilot Word et Excel ?",
-      a: "Masteria est certifié Qualiopi pour ses actions de formation : votre OPCO peut donc étudier le dossier, puis décider d'après son barème et ses fonds. Le jour de formation est facturé 1 980 € HT, pour un participant comme pour une douzaine, et le parcours entier 3 960 € HT. Nous rédigeons le programme et la convention que réclame l'OPCO ; pendant les ateliers, chacun manipule ses propres documents.",
+      a: "Masteria est certifié Qualiopi pour ses actions de formation : votre OPCO peut donc étudier le dossier, puis décider d'après son barème et ses fonds. Le jour de formation est facturé à partir de 1 980 € HT, pour un participant comme pour une douzaine, et le parcours entier à partir de 3 960 € HT. Nous rédigeons le programme et la convention que réclame l'OPCO ; pendant les ateliers, chacun manipule ses propres documents.",
     },
   ],
   tarifs: {
     titre: "Ce que comprend le prix d'une formation bureautique",
     paras: [
-      "Avant la session, le formateur demande deux ou trois fichiers types à l'équipe : un compte rendu à transformer en note, un document en cours de relecture, un export ou un classeur hérité. Il vérifie avec votre informatique la mention affichée dans Word et Excel pour chaque participant, afin que personne ne cherche un bouton absent. Les supports, les demandes du guide et la feuille de règles rédigée au module 8 restent à l'équipe.",
-      "Exemple : un service administratif inscrit dix personnes de métiers différents. Les deux jours en intra font 3 960 € HT pour le groupe, soit 396 € HT par participant. Pour un manager qui préfère un accompagnement individuel, le prix par jour ne change pas. Le dossier de financement part ensuite à votre OPCO, qui applique le barème de votre branche.",
+      "Pour une formation sur mesure, le formateur demande avant la session deux ou trois fichiers types à l'équipe : un compte rendu à transformer en note, un document en cours de relecture, un export ou un classeur hérité. Il vérifie avec votre informatique la mention affichée dans Word et Excel pour chaque participant, afin que personne ne cherche un bouton absent. Les supports, les demandes du guide et la feuille de règles rédigée au module 8 restent à l'équipe. Cette demande de fichiers types et la vérification côté informatique forment un temps de préparation chiffré au devis, en plus du prix de la journée.",
+      "Exemple : un service administratif inscrit dix personnes de métiers différents. Les deux jours en intra font à partir de 3 960 € HT pour le groupe, soit dès 396 € HT par participant. Pour un manager qui préfère un accompagnement individuel, le prix par jour ne change pas. Le dossier de financement part ensuite à votre OPCO, qui applique le barème de votre branche.",
     ],
   },
   apres: {

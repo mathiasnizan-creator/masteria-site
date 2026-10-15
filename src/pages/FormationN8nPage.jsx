@@ -767,14 +767,14 @@ export default function FormationN8nPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Chaque journée de formation n8n est facturée 1 980 € HT
+                Chaque journée de formation n8n démarre à 1 980 € HT
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Les deux jours en intra (douze participants au plus) ou en individuel reviennent à 3 960 € HT ; une journée seule, à 1 980 € HT. Ce prix ne comprend ni abonnement ni hébergement n8n : la Community Edition ne coûte rien en licence pour un usage interne, le cloud se règle directement à l'éditeur. Certifiée Qualiopi, Masteria établit le programme et la convention que vous déposerez auprès de votre OPCO ; celui-ci arrête le montant financé d'après ses règles et ses fonds. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur à partir de votre activité, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> décrit les dispositifs.
+                Les deux jours en intra (douze participants au plus) ou en individuel démarrent à 3 960 € HT ; une journée seule, à 1 980 € HT. Si les workflows se construisent sur vos propres outils, la préparation s'ajoute et figure au devis. Ce prix ne comprend ni abonnement ni hébergement n8n : la Community Edition ne coûte rien en licence pour un usage interne, le cloud se règle directement à l'éditeur. Certifiée Qualiopi, Masteria établit le programme et la convention que vous déposerez auprès de votre OPCO ; celui-ci arrête le montant financé d'après ses règles et ses fonds. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur à partir de votre activité, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> décrit les dispositifs.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Deux jours : 3 960 € HT ; une journée : 1 980 € HT',
+                  'Deux jours : dès 3 960 € HT ; une journée : dès 1 980 € HT',
                   'Douze participants au plus en intra',
                   'Licence et hébergement n8n en sus',
                   'Dossier de prise en charge prêt à déposer',

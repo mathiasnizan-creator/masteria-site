@@ -217,8 +217,8 @@ export default {
  },
  "tarif": {
   "titre": "Une séance, un prix, un financement possible pour chaque vague",
-  "answer": "Sprint de trois heures ou journée socle : chaque séance est facturée 1 980 € HT, avec au plus douze participants ; les deux jours du parcours multi-outils font 3 960 € HT. Pour 150 salariés passés en Sprint, comptez treize séances, soit 25 740 € HT avant prise en charge. Chaque format se suit aussi en individuel, au tarif de la séance.",
-  "inclus": "Le cadrage du déploiement (publics, outil fourni, sites, calendrier des vagues), les séances, animées dans vos locaux ou en classe virtuelle, les supports, la règle d'usage commune, la bibliothèque de demandes transversales, le kit des référents quand ce format est retenu, l'évaluation de chaque participant et son certificat de réalisation. Les sessions sur place loin de Lyon ajoutent au devis les déplacements du formateur.",
+  "answer": "Sprint de trois heures ou journée socle : chaque séance est facturée à partir de 1 980 € HT, avec au plus douze participants ; les deux jours du parcours multi-outils démarrent à 3 960 € HT. Pour 150 salariés passés en Sprint, comptez treize séances, soit au moins 25 740 € HT avant prise en charge. Chaque format se suit aussi en individuel, au tarif de la séance.",
+  "inclus": "Les séances, animées dans vos locaux ou en classe virtuelle, les supports, la règle d'usage commune, la bibliothèque de demandes transversales, le kit des référents quand ce format est retenu, l'évaluation de chaque participant et son certificat de réalisation. Les sessions sur place loin de Lyon ajoutent au devis les déplacements du formateur. Le cadrage du déploiement (publics, outil fourni, sites, calendrier des vagues) et l'adaptation du programme à vos documents représentent un temps de préparation qui s'ajoute au devis.",
   "financement": "Chaque séance relève des actions de formation pour lesquelles Masteria est certifiée Qualiopi : vous pouvez donc la soumettre à l'OPCO de votre branche, qui fixe seul le montant accordé selon ses règles et l'enveloppe de votre entreprise. L'outil {/quel-opco|Quel OPCO ?} identifie le vôtre, et notre {/financement-formation-ia|guide du financement} présente les circuits. Programmes, conventions et attestations sont fournis pour chaque vague. Pour un client suisse ou belge, sans OPCO, le devis s'exprime en euros HT. Le CPF n'intervient pas."
  },
  "faq": [
@@ -252,7 +252,7 @@ export default {
   },
   {
    "q": "Combien coûte un déploiement, et qui le finance ?",
-   "a": "Une séance revient à 1 980 € HT, Sprint ou journée, avec douze participants au maximum ; le parcours multi-outils à 3 960 € HT. Pour 150 salariés formés en Sprint, il faut treize séances, soit 25 740 € HT. Chaque action peut faire l'objet d'une demande auprès de l'OPCO compétent, libre de fixer sa participation ; Masteria prépare les pièces de chaque vague. Pas de CPF pour ces formats."
+   "a": "Une séance démarre à 1 980 € HT, Sprint ou journée, avec douze participants au maximum ; le parcours multi-outils à partir de 3 960 € HT. Pour 150 salariés formés en Sprint, il faut treize séances, soit au moins 25 740 € HT. Chaque action peut faire l'objet d'une demande auprès de l'OPCO compétent, libre de fixer sa participation ; Masteria prépare les pièces de chaque vague. Pas de CPF pour ces formats."
   },
   {
    "q": "Comment savoir si la formation a fonctionné à cette échelle ?",

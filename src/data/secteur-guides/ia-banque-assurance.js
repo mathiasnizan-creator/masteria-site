@@ -84,7 +84,7 @@ export default {
 
   formation: [
     "Nous formons les gestionnaires de réclamations à relire un projet de réponse contre le contrat, les conseillers à préparer un entretien avec un assistant autorisé, les équipes de conformité à contrôler la traçabilité d'un outil. Depuis l'omnibus numérique, l'article 4 du règlement européen sur l'IA demande à chaque déployeur de prendre des mesures pour la maîtrise de l'IA de son personnel : une session documentée, avec son programme et sa liste de présence, fait partie des preuves que votre conformité peut produire.",
-    "Chaque session réunit un service autour de ses propres pièces : courriers types, conditions générales, procédures, avec des exemples dépouillés de toute donnée client. La journée intra coûte 1 980 € HT par groupe, et l'OPCO de la banque ou de l'assurance peut la financer, la certification Qualiopi de Masteria couvrant ses actions de formation.",
+    "Chaque session réunit un service autour de ses propres pièces : courriers types, conditions générales, procédures, avec des exemples dépouillés de toute donnée client. La journée intra coûte à partir de 1 980 € HT par groupe, la préparation sur vos pièces s'ajoutant au devis, et l'OPCO de la banque ou de l'assurance peut la financer, la certification Qualiopi de Masteria couvrant ses actions de formation.",
   ],
 
   guide: {

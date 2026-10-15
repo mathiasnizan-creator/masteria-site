@@ -109,7 +109,7 @@ export default {
   ],
   formation: [
     "Un agent livré dans un siège ne sert que si les équipes savent quand lui faire confiance et quand le reprendre. Les sessions ont lieu dans vos bureaux parisiens, ou en classe virtuelle pour les filiales en région, et les exercices portent sur l'agent lui-même et sur les dossiers de chaque métier.",
-    "Côté financement, l'OPCO ne prend en charge que la formation, rendue éligible par la certification Qualiopi de Masteria ; la journée en intra revient à 1 980 € HT. Le conseil et le développement se règlent sur le budget de la direction qui les commande.",
+    "Côté financement, l'OPCO ne prend en charge que la formation, rendue éligible par la certification Qualiopi de Masteria ; la journée en intra se facture à partir de 1 980 € HT, avec en sus la préparation des exercices sur vos dossiers, indiquée au devis. Le conseil et le développement se règlent sur le budget de la direction qui les commande.",
   ],
   guide: {
     kicker: "Sièges, filiales et fonctions de contrôle",

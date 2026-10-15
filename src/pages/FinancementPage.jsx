@@ -156,7 +156,7 @@ const SOMMAIRE = [
 const FAQ = [
   {
     q: "Combien coûte une formation IA chez Masteria, et quelle part l'OPCO peut-il financer ?",
-    a: "Masteria facture 1 980 € HT la journée, en intra pour un groupe de 12 participants au plus comme en accompagnement individuel, plus une TVA de 20 %. La part financée dépend des critères de votre branche et du budget de votre OPCO : elle peut aller jusqu'à 100 % du coût hors taxes, et seul l'accord écrit de l'OPCO l'engage. Pour situer, France compétences mesure en 2024 un reste à charge moyen de 38 % sur les formations de salariés appuyées par des fonds publics ou mutualisés, et de 67 % au-delà de 50 salariés.",
+    a: "Masteria facture à partir de 1 980 € HT la journée, en intra pour un groupe de 12 participants au plus comme en accompagnement individuel, plus une TVA de 20 %. Pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis. La part financée dépend des critères de votre branche et du budget de votre OPCO : elle peut aller jusqu'à 100 % du coût hors taxes, et seul l'accord écrit de l'OPCO l'engage. Pour situer, France compétences mesure en 2024 un reste à charge moyen de 38 % sur les formations de salariés appuyées par des fonds publics ou mutualisés, et de 67 % au-delà de 50 salariés.",
   },
   {
     q: "Qu'est-ce qui a changé au 1er octobre 2026 pour le financement des formations par les OPCO ?",
@@ -639,10 +639,11 @@ export default function FinancementPage() {
        * ═══════════════════════════════════════════════════════════ */}
       <section id="tarifs" style={{ padding: '80px 24px', background: '#fff', borderTop: '1px solid #E5E7EB', scrollMarginTop: 80 }}>
         <div style={{ maxWidth: 980, margin: '0 auto' }}>
-          <h2 style={H2_CENTRE}>Une journée de formation coûte 1&nbsp;980&nbsp;€&nbsp;HT, en groupe comme en individuel</h2>
+          <h2 style={H2_CENTRE}>Une journée de formation démarre à 1&nbsp;980&nbsp;€&nbsp;HT, en groupe comme en individuel</h2>
           <p style={SOUS_TITRE}>
             Prix hors taxes, avant toute prise en charge. Masteria n'est pas exonéré de TVA : ses factures
-            de formation portent une TVA de 20&nbsp;%.
+            de formation portent une TVA de 20&nbsp;%. Pour une formation sur mesure, le temps de préparation
+            s'ajoute et figure au devis.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: 20 }}>
@@ -656,6 +657,7 @@ export default function FinancementPage() {
                   Accompagnement individuel
                 </h3>
               </div>
+              <div style={{ fontSize: 12, color: NEUTRAL, marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6, flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A' }}>1&nbsp;980&nbsp;€</span>
                 <span style={{ color: NEUTRAL, fontSize: 14, fontWeight: 600 }}>HT / jour</span>
@@ -686,13 +688,14 @@ export default function FinancementPage() {
                   Intra entreprise
                 </h3>
               </div>
+              <div style={{ fontSize: 12, color: NEUTRAL, marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 6, flexWrap: 'wrap' }}>
                 <span style={{ ...TITLE_GRADIENT, fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900 }}>1&nbsp;980&nbsp;€</span>
                 <span style={{ color: BLUE_DARK, fontSize: 14, fontWeight: 600 }}>HT / jour / groupe</span>
               </div>
               <p style={{ color: '#3F3F46', lineHeight: 1.6, fontSize: 14.5, marginBottom: 16 }}>
                 Une session réservée à votre équipe, dans vos locaux ou à distance, sur les cas d'usage de
-                vos métiers. Pour un groupe de 12, la journée revient à 165&nbsp;€&nbsp;HT par participant.
+                vos métiers. Pour un groupe de 12, la journée démarre à 165&nbsp;€&nbsp;HT par participant.
               </p>
               <ul style={{ padding: 0, margin: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {["Jusqu'à 12 participants", "Programme construit sur vos cas d'usage", 'Présentiel ou distanciel'].map(t => (
@@ -744,7 +747,7 @@ export default function FinancementPage() {
                 Le conseil d'administration de chaque OPCO définit ce qu'il prend en charge (article L6332-17
                 du Code du travail). Chez Atlas, il fixe des forfaits ou des plafonds par dispositif et les révise
                 tout au long de l'année ; la règle applicable est celle en vigueur le jour où la demande arrive,
-                et les accords sont donnés dans la limite des fonds disponibles. Une journée à 1&nbsp;980&nbsp;€&nbsp;HT peut
+                et les accords sont donnés dans la limite des fonds disponibles. Une journée à partir de 1&nbsp;980&nbsp;€&nbsp;HT peut
                 donc être couverte en tout ou en partie : seul l'accord écrit de l'OPCO le dit.
               </div>
             </div>

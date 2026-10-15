@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Prix de la formation IA marketing et prise en charge",
-  "answer": "Former l'équipe en intra coûte 1 980 € HT par jour, quel que soit l'effectif jusqu'à 12 personnes ; le parcours complet de deux jours s'élève à 3 960 € HT. Un directeur marketing peut aussi se former seul, au même tarif journalier. La certification Qualiopi de Masteria ouvre la porte à une participation de votre opérateur de compétences, qu'il fixe selon ses règles et les fonds qui lui restent. Comptez 24 heures pour recevoir le devis.",
-  "inclus": "Le cadrage sur votre plateforme de marque, vos personas, une campagne en préparation et un export de résultats ; l'animation sur deux jours, chez vous ou à distance ; les supports et les livrables (plateforme encodée, prompts par canal, gabarits, règles d'usage) ; un test des acquis en fin de parcours, puis un certificat de réalisation par participant. Quand la session se tient loin de Lyon, le voyage du formateur s'ajoute.",
+  "answer": "Former l'équipe en intra coûte à partir de 1 980 € HT par jour, quel que soit l'effectif jusqu'à 12 personnes ; le parcours complet de deux jours démarre à 3 960 € HT. Un directeur marketing peut aussi se former seul, au même tarif journalier. La certification Qualiopi de Masteria ouvre la porte à une participation de votre opérateur de compétences, qu'il fixe selon ses règles et les fonds qui lui restent. Comptez 24 heures pour recevoir le devis.",
+  "inclus": "L'animation sur deux jours, chez vous ou à distance ; les supports et les livrables (plateforme encodée, prompts par canal, gabarits, règles d'usage) ; un test des acquis en fin de parcours, puis un certificat de réalisation par participant. Quand la session se tient loin de Lyon, le voyage du formateur s'ajoute. Si la formation se construit sur votre plateforme de marque, vos personas et une campagne en préparation, le temps de préparation s'ajoute et figure au devis.",
   "financement": "Notre outil {/quel-opco|Quel OPCO ?} identifie l'opérateur de votre branche, et la page {/financement-formation-ia|financement de la formation IA} décrit les dispositifs. Masteria prépare le programme, la convention et les justificatifs pour un dépôt avant le début de la session. Le compte personnel de formation ne finance pas ce parcours."
  },
  "faq": [
@@ -279,7 +279,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir pour une équipe marketing ?",
-   "a": "Le prix est fixé par journée et par groupe : 1 980 € HT, que l'équipe compte trois ou douze personnes, donc 3 960 € HT pour le parcours entier. Les frais de voyage du formateur viennent en plus si la session a lieu sur site, loin de Lyon. Vous avez le devis en main le lendemain de votre demande, accompagné des pièces que réclame l'OPCO."
+   "a": "Le prix se fixe par journée et par groupe, à partir de 1 980 € HT, que l'équipe compte trois ou douze personnes, donc à partir de 3 960 € HT pour le parcours entier. Les frais de voyage du formateur viennent en plus si la session a lieu sur site, loin de Lyon. Vous avez le devis en main le lendemain de votre demande, accompagné des pièces que réclame l'OPCO."
   },
   {
    "q": "L'OPCO prend-il en charge une formation IA marketing ?",

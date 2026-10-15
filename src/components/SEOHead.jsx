@@ -382,7 +382,7 @@ export default function SEOHead({
             price: courseData.price || '1980',
             priceCurrency: 'EUR',
             valueAddedTaxIncluded: false,
-            description: courseData.priceDescription || 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel sur mesure : 1 980 €/jour.',
+            description: courseData.priceDescription || 'Tarif intra-entreprise par jour pour un groupe jusqu\'à 12 participants. Accompagnement individuel : à partir de 1 980 €/jour ; pour une formation sur mesure, la préparation s’ajoute au devis.',
           },
           category: 'Formation professionnelle',
           availability: 'https://schema.org/InStock',

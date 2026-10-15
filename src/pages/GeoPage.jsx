@@ -549,14 +549,14 @@ export default function GeoPage() {
             <FadeIn delay={80}>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 20 }}>
                 <div style={{ background: '#fff', borderRadius: 14, padding: 28, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Groupe sur mesure · 1 980 €/jour</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Groupe sur mesure · dès 1 980 € HT/jour</div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Intra-entreprise</h3>
                   <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
-                    Nous venons former votre équipe dans vos locaux lyonnais (ou Grenoble, Saint-Étienne, Annecy). Programme 100 % sur mesure, jusqu'à 12 participants, date selon votre planning. Finançable OPCO.
+                    Nous venons former votre équipe dans vos locaux lyonnais (ou Grenoble, Saint-Étienne, Annecy). Programme 100 % sur mesure, jusqu'à 12 participants, date selon votre planning ; le temps de préparation s'ajoute au devis. Finançable OPCO.
                   </p>
                 </div>
                 <div style={{ background: '#fff', borderRadius: 14, padding: 28, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Coaching 1-to-1 · 1 980 €/jour</div>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Coaching 1-to-1 · dès 1 980 € HT/jour</div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginTop: 0, marginBottom: 10 }}>Accompagnement individuel</h3>
                   <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
                     Coaching personnalisé pour dirigeants, experts métier ou profils stratégiques. Programme co-construit autour de vos enjeux, rythme adapté, suivi entre les sessions. Présentiel à Lyon ou en distanciel.

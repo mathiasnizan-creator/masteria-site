@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Tarif et financement de la formation IA service client",
-  "answer": "Chaque journée revient à 1 980 € HT pour un groupe d'au plus douze conseillers, et le parcours de deux jours à 3 960 € HT. Un centre de contact forme ses équipes par vagues, superviseurs en premier, chaque groupe au même tarif. L'OPCO peut participer au financement de chaque session, puisque Masteria est certifiée Qualiopi, selon son barème et l'enveloppe de l'année. Devis transmis sous 24 heures.",
-  "inclus": "Un cadrage sur un lot de tickets anonymisés, vos procédures, vos réponses types et quelques articles de la base ; les deux journées en présentiel ou en visioconférence ; les supports et livrables (gabarits par situation, trame d'article, règles RGPD) ; un questionnaire d'acquis et une attestation de réalisation remise à chacun. Les frais de déplacement du formateur sont ajoutés quand la session se tient hors de la région lyonnaise.",
+  "answer": "Chaque journée démarre à 1 980 € HT pour un groupe d'au plus douze conseillers, et le parcours de deux jours à partir de 3 960 € HT. Un centre de contact forme ses équipes par vagues, superviseurs en premier, chaque groupe au même tarif. L'OPCO peut participer au financement de chaque session, puisque Masteria est certifiée Qualiopi, selon son barème et l'enveloppe de l'année. Devis transmis sous 24 heures.",
+  "inclus": "Les deux journées en présentiel ou en visioconférence ; les supports et livrables (gabarits par situation, trame d'article, règles RGPD) ; un questionnaire d'acquis et une attestation de réalisation remise à chacun. Les frais de déplacement du formateur sont ajoutés quand la session se tient hors de la région lyonnaise. Travailler sur un lot de vos tickets, vos procédures et vos réponses types ajoute un temps de préparation, chiffré au devis.",
   "financement": "Pour identifier l'opérateur de votre branche, utilisez {/quel-opco|Quel OPCO ?} ; les dispositifs sont détaillés sur {/financement-formation-ia|notre page financement}. Le dossier (programme, convention, justificatifs) vous est remis pour que vous le transmettiez avant la première session. Le CPF ne finance pas ce parcours."
  },
  "faq": [
@@ -295,7 +295,7 @@ export default {
   },
   {
    "q": "Quelle durée, quel format et quel prix ?",
-   "a": "Deux journées pleines, chez vous ou en visioconférence, avec douze personnes au plus ; une journée suffit pour se concentrer sur les réponses écrites. Un centre de contact forme ses équipes par vagues, superviseurs d'abord. La journée est facturée 1 980 € HT à chaque groupe, et l'ensemble du parcours 3 960 € HT, plus le voyage du formateur loin de Lyon. La certification Qualiopi rend l'OPCO compétent pour financer, selon ses règles ; le CPF ne l'est pas. Devis sous 24 heures."
+   "a": "Deux journées pleines, chez vous ou en visioconférence, avec douze personnes au plus ; une journée suffit pour se concentrer sur les réponses écrites. Un centre de contact forme ses équipes par vagues, superviseurs d'abord. La journée est facturée à partir de 1 980 € HT à chaque groupe, et l'ensemble du parcours à partir de 3 960 € HT, plus le voyage du formateur loin de Lyon. La certification Qualiopi rend l'OPCO compétent pour financer, selon ses règles ; le CPF ne l'est pas. Devis sous 24 heures."
   }
  ],
  "course": {

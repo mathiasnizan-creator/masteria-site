@@ -110,7 +110,7 @@ export default {
   ],
   formation: [
     "Les collaborateurs qui utilisent l'outil doivent savoir repérer une réponse douteuse et la corriger, car ces corrections alimentent la surveillance de l'outil. Nous les formons en français, sur place à Genève ou en visio, sur l'outil livré et sur des documents validés par la conformité.",
-    "Aucun OPCO ne prend en charge la formation d'une entreprise suisse : la journée intra, à 1 980 € HT, se règle sur votre budget de formation, et le devis indique comment la TVA est traitée.",
+    "Aucun OPCO ne prend en charge la formation d'une entreprise suisse : la journée intra, à partir de 1 980 € HT, se règle sur votre budget de formation. Le devis ajoute la préparation de la formation sur mesure et indique comment la TVA est traitée.",
   ],
   guide: {
     kicker: "Secret, externalisation et lieu de traitement",

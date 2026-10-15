@@ -11,12 +11,12 @@ export default {
   h1: "Formation Copilot RH : recruter, informer les salariés et protéger les dossiers du personnel",
   metaTitle: "Formation Copilot RH | Masteria, certifié Qualiopi",
   metaDesc: "Formation Copilot RH : offres et notes dans Word, entretiens Teams bien réglés, agent pour les salariés, droit du travail et AI Act. Deux jours, Qualiopi.",
-  resume: "La formation Copilot RH apprend à une équipe ressources humaines à confier à Microsoft Copilot les tâches sans enjeu juridique (offres d'emploi, notes, supports, réponses aux salariés) et à reconnaître les usages que le Code du travail et l'AI Act encadrent déjà. Le parcours tient en deux jours de sept heures, pour un service RH (douze places) ou pour une DRH en tête-à-tête, au tarif de 1 980 € HT par jour. Avec un organisme certifié Qualiopi comme Masteria, l'entreprise peut demander à son OPCO de financer la session ; celui-ci tranche selon les critères de la branche.",
+  resume: "La formation Copilot RH apprend à une équipe ressources humaines à confier à Microsoft Copilot les tâches sans enjeu juridique (offres d'emploi, notes, supports, réponses aux salariés) et à reconnaître les usages que le Code du travail et l'AI Act encadrent déjà. Le parcours tient en deux jours de sept heures, pour un service RH (douze places) ou pour une DRH en tête-à-tête, à partir de 1 980 € HT par jour. Avec un organisme certifié Qualiopi comme Masteria, l'entreprise peut demander à son OPCO de financer la session ; celui-ci tranche selon les critères de la branche.",
   enBref: [
     { label: 'Formation', value: "Copilot appliqué aux ressources humaines : recrutement, questions des salariés, enquêtes internes, consultation du CSE et protection des dossiers" },
     { label: 'Durée', value: "Deux journées de sept heures ; la première pose le cadre juridique avant tout atelier sur des données du personnel" },
     { label: 'Formats', value: "Intra pour le service RH, jusqu'à douze participants, ou parcours individuel pour une DRH ; dans vos locaux ou en visioconférence" },
-    { label: 'Tarif', value: "Tarif journalier de 1 980 € HT, identique de une à douze personnes" },
+    { label: 'Tarif', value: "Tarif journalier à partir de 1 980 € HT, identique de une à douze personnes" },
     { label: 'Financement', value: "Masteria est certifié Qualiopi ; votre OPCO décide de sa participation d'après les règles et le budget de la branche" },
     { label: 'Prérequis', value: "Un compte Microsoft 365 professionnel ; des documents RH anonymisés (fiche de poste, accord d'entreprise, résultats d'enquête) pour les ateliers" },
   ],
@@ -251,14 +251,14 @@ export default {
     },
     {
       q: "Comment faire financer la formation Copilot RH ?",
-      a: "Votre OPCO peut participer, car Masteria est certifié Qualiopi, dans la catégorie « actions de formation » ; il décide selon son barème et l'argent encore disponible. Le tarif journalier, 1 980 € HT, s'applique aussi bien à une DRH seule qu'à un service de douze. Chaque participant reçoit une attestation, qui alimente la liste interne des sessions d'IA que l'obligation de maîtrise de l'IA invite à tenir.",
+      a: "Votre OPCO peut participer, car Masteria est certifié Qualiopi, dans la catégorie « actions de formation » ; il décide selon son barème et l'argent encore disponible. Le tarif journalier part de 1 980 € HT, que vous soyez une DRH seule ou un service de douze. Chaque participant reçoit une attestation, qui alimente la liste interne des sessions d'IA que l'obligation de maîtrise de l'IA invite à tenir.",
     },
   ],
   tarifs: {
     titre: "Ce que recouvre le prix pour un service RH",
     paras: [
-      "La préparation se fait sur vos propres documents, anonymisés quand il le faut : une fiche de poste ouverte, un accord d'entreprise, les résultats d'une enquête interne et votre charte informatique. Le formateur les relit avant la session et adapte les exercices à votre convention collective et à votre organisation.",
-      "Exemple : un service RH de cinq personnes (la DRH, deux chargés de recrutement, une gestionnaire paie et un responsable formation). Le parcours complet, pour tout le service, coûte 3 960 € HT, soit 792 € HT par personne. Une DRH seule suit le parcours en individuel au même prix journalier. L'OPCO de l'entreprise examine ensuite le dossier selon les règles de sa branche.",
+      "Le prix de base couvre l'animation, les supports et le programme. Si les exercices portent sur vos propres documents, anonymisés quand il le faut : une fiche de poste ouverte, un accord d'entreprise, les résultats d'une enquête interne et votre charte informatique. Le formateur les relit avant la session et adapte les exercices à votre convention collective et à votre organisation ; ce temps de préparation s'ajoute et figure au devis.",
+      "Exemple : un service RH de cinq personnes (la DRH, deux chargés de recrutement, une gestionnaire paie et un responsable formation). Le parcours complet, pour tout le service, coûte à partir de 3 960 € HT, soit dès 792 € HT par personne. Une DRH seule suit le parcours en individuel au même prix journalier de base. L'OPCO de l'entreprise examine ensuite le dossier selon les règles de sa branche.",
     ],
   },
   apres: {

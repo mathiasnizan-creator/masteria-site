@@ -146,6 +146,7 @@ export function CatalogueSuite({ isMobile, selectedTools = [], selectedMetiers =
             {TARIFS.map((t) => (
               <div key={t.nom} style={{ ...card, display: 'flex', flexDirection: 'column', gap: 6, borderTop: t.fort ? `3px solid ${c}` : '1px solid #E5E7EB' }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: '#6B7280', fontFamily: nunito }}>{t.nom}</div>
+                {t.prix !== 'Forfait' && <div style={{ fontSize: 12, color: '#6B7280' }}>À partir de</div>}
                 <div style={{ fontFamily: nunito, fontSize: 30, fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em' }}>{t.prix}</div>
                 <div style={{ fontSize: 13.5, color: c, fontWeight: 700 }}>{t.unite}</div>
                 <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.6, margin: '6px 0 0' }}>{t.desc}</p>
@@ -153,7 +154,7 @@ export function CatalogueSuite({ isMobile, selectedTools = [], selectedMetiers =
             ))}
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '22px 0 0', maxWidth: 860 }}>
-            Prix hors taxes. Masteria est certifié Qualiopi pour les actions de formation : votre OPCO peut prendre la session en charge, selon ses critères et ses fonds, et nous fournissons programme, convention et attestations. Pas de CPF. Pour une session dans vos locaux, le devis indique les éventuels frais de déplacement.
+            Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis. Prix hors taxes. Masteria est certifié Qualiopi pour les actions de formation : votre OPCO peut prendre la session en charge, selon ses critères et ses fonds, et nous fournissons programme, convention et attestations. Pas de CPF. Pour une session dans vos locaux, le devis indique les éventuels frais de déplacement.
           </p>
         </div>
       </section>
@@ -222,15 +223,15 @@ const SUR_MESURE = [
 
 const TARIFS = [
   { nom: 'Formation, 1 jour', prix: '1 980 €', unite: 'HT la journée', desc: "Pour un groupe de douze personnes au plus, ou une seule en individuel.", fort: true },
-  { nom: 'Formation, 2 jours', prix: '3 960 €', unite: 'HT le parcours', desc: "Le format des programmes par outil et par métier, soit 330 € HT par participant dans un groupe complet.", fort: true },
+  { nom: 'Formation, 2 jours', prix: '3 960 €', unite: 'HT le parcours', desc: "Le format des programmes par outil et par métier, soit dès 330 € HT par participant dans un groupe complet.", fort: true },
   { nom: 'Sprint IA, 3 heures', prix: '1 980 €', unite: 'HT la séance', desc: "Une séance sur vos propres tâches, jusqu'à douze personnes, sur site ou à distance." },
-  { nom: 'COMEX', prix: '1 980 €', unite: 'HT les 3 heures ou la demi-journée', desc: "3 960 € HT pour une journée complète, pour le comité entier." },
+  { nom: 'COMEX', prix: '1 980 €', unite: 'HT les 3 heures ou la demi-journée', desc: "À partir de 3 960 € HT pour une journée complète, pour le comité entier." },
   { nom: 'Conseil et développement', prix: 'Forfait', unite: 'fixé après le cadrage', desc: "Diagnostic, accompagnement, agents et outils sur mesure. Trente minutes de cadrage offertes." },
 ]
 
 const FAQ = [
   { q: 'Les formations du catalogue sont-elles adaptées à notre entreprise ?', a: "Oui, toutes. Le catalogue donne la trame ; le cadrage fixe l'outil, le niveau du groupe et les dossiers sur lesquels il travaillera. Les exercices portent sur vos documents, pas sur des exemples génériques." },
-  { q: 'Combien coûte une formation pour une équipe ?', a: "1 980 € HT la journée et 3 960 € HT les deux jours, pour un groupe de douze personnes au plus ou pour une personne seule. Dans un groupe complet de deux jours, cela fait 330 € HT par participant." },
+  { q: 'Combien coûte une formation pour une équipe ?', a: "Comptez à partir de 1 980 € HT la journée et de 3 960 € HT les deux jours, pour un groupe de douze personnes au plus ou pour une personne seule. Dans un groupe complet de deux jours, cela fait au moins 330 € HT par participant. Si la formation est construite sur vos dossiers, la préparation s'ajoute et figure au devis." },
   { q: 'Notre OPCO peut-il financer la formation ?', a: "Souvent, selon ses critères et les fonds disponibles dans votre branche. Masteria est certifié Qualiopi pour les actions de formation et fournit le programme, la convention, les émargements et le certificat de réalisation. Le conseil et le développement ne relèvent pas de l'OPCO." },
   { q: 'Quel délai entre notre accord et la formation ?', a: "Une à deux semaines en individuel, deux à quatre semaines pour un groupe, le temps de préparer les ateliers sur vos dossiers." },
   { q: 'Faut-il des licences payantes avant de commencer ?', a: "Non. Copilot Chat ou la version gratuite de ChatGPT ou de Gemini suffisent pour une bonne partie des exercices. La formation aide aussi à décider quelles licences valent leur prix, et pour quels postes." },

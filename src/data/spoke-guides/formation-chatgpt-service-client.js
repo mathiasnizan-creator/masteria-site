@@ -14,12 +14,12 @@ export default {
   metaTitle: 'Formation ChatGPT service client | Masteria',
   metaDesc: "Formation ChatGPT service client : réclamations traitées selon vos règles, procédures communes au plateau, tickets comptés, données clients protégées.",
   keywords: "formation ChatGPT service client, ChatGPT relation client, ChatGPT réclamations, formation IA conseillers clientèle",
-  resume: "La formation ChatGPT pour le service client occupe deux journées de sept heures, consacrées aux réclamations, aux procédures et aux exports de tickets de votre plateau. En intra, elle accueille douze conseillers, superviseurs ou responsables au plus ; un responsable de la relation client peut aussi la suivre seul. Elle se tient sur votre site ou à distance, et le plateau paie 1 980 € HT par journée. Le dossier de financement part ensuite vers l'OPCO de votre branche, seul juge de la prise en charge, puisque Masteria détient la certification Qualiopi.",
+  resume: "La formation ChatGPT pour le service client occupe deux journées de sept heures, consacrées aux réclamations, aux procédures et aux exports de tickets de votre plateau. En intra, elle accueille douze conseillers, superviseurs ou responsables au plus ; un responsable de la relation client peut aussi la suivre seul. Elle se tient sur votre site ou à distance, et le plateau paie à partir de 1 980 € HT par journée, la préparation sur vos tickets s'ajoutant au devis. Le dossier de financement part ensuite vers l'OPCO de votre branche, seul juge de la prise en charge, puisque Masteria détient la certification Qualiopi.",
   enBref: [
     { label: 'Formation', value: "ChatGPT sur un plateau de relation client : réclamations, procédures partagées, motifs de contact comptés dans un export, cas difficiles et escalade" },
     { label: 'Durée', value: "Deux jours (14 heures), séparables pour laisser le plateau tester la base de réponses entre les deux" },
     { label: 'Formats', value: "Groupe intra de douze personnes au maximum, ou parcours individuel pour un responsable ; sur votre plateau ou en classe virtuelle" },
-    { label: 'Tarif', value: "1 980 € HT la journée, préparation des ateliers sur vos tickets anonymisés comprise" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée ; préparation des ateliers sur vos tickets anonymisés en plus, au devis" },
     { label: 'Financement', value: "Certification Qualiopi de Masteria ; l'OPCO de l'entreprise tranche d'après les règles et les fonds de sa branche" },
     { label: 'Prérequis', value: "Un espace d'équipe Business ou Enterprise, ou à défaut des comptes Plus, et un export de tickets préparé avec nous" },
   ],
@@ -284,8 +284,8 @@ export default {
   tarifs: {
     titre: "Ce que coûte la formation d'un plateau de service client",
     paras: [
-      "Avant la session, le formateur travaille sur votre matière : l'export anonymisé, les conditions générales, la grille des gestes et une sélection de réponses validées, d'où il tire les ateliers. Le prix inclut ce travail, ainsi que les supports, les prompts adaptés à vos motifs de contact et l'accompagnement pendant la construction de la base de réponses.",
-      "Prenons un plateau qui inscrit huit conseillers et leur superviseure. En intra, les deux jours reviennent à 3 960 € HT pour ces neuf personnes, soit 440 € HT chacune. Le responsable de la relation client qui préfère un parcours individuel paie la même journée, 1 980 € HT, construite sur ses propres arbitrages. L'OPCO de votre branche étudie ensuite la demande, à laquelle se joignent le programme et la convention que Masteria rédige.",
+      "Avant la session, le formateur travaille sur votre matière : l'export anonymisé, les conditions générales, la grille des gestes et une sélection de réponses validées, d'où il tire les ateliers. Ce travail s'ajoute au devis ; le prix de base comprend les supports, les prompts adaptés à vos motifs de contact et l'accompagnement pendant la construction de la base de réponses.",
+      "Prenons un plateau qui inscrit huit conseillers et leur superviseure. En intra, les deux jours coûtent à partir de 3 960 € HT pour ces neuf personnes, soit dès 440 € HT chacune. Le responsable de la relation client qui préfère un parcours individuel paie la même journée, à partir de 1 980 € HT, construite sur ses propres arbitrages. L'OPCO de votre branche étudie ensuite la demande, à laquelle se joignent le programme et la convention que Masteria rédige.",
     ],
   },
   apres: {

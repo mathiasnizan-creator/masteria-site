@@ -12,12 +12,12 @@ export default {
   metaTitle: 'Formation Mistral AI commerciale : Vibe en B2B | Masteria',
   metaDesc: "Vibe pour commerciaux B2B : rendez-vous préparé sur sources datées, proposition co-rédigée, fiche CRM extraite, prospection selon la CNIL. Qualiopi.",
   keywords: "formation Mistral commercial, formation Vibe commerciaux, Mistral AI vente B2B, préparation rendez-vous IA, proposition commerciale Vibe",
-  resume: "La formation Mistral AI commerciale apprend à une équipe de vente B2B à préparer chaque rendez-vous avec Vibe sur des faits datés et sourcés, à co-rédiger la proposition à partir des mots du client, puis à transformer le compte rendu en fiche d'opportunité pour le CRM. Deux journées de sept heures, en présentiel ou en visioconférence, au prix de 1 980 € HT par jour de session, de deux à douze vendeurs, ou pour un seul. Qualiopi certifie les actions de formation de Masteria, et votre OPCO finance la session suivant les règles fixées pour sa branche et les fonds qui lui restent.",
+  resume: "La formation Mistral AI commerciale apprend à une équipe de vente B2B à préparer chaque rendez-vous avec Vibe sur des faits datés et sourcés, à co-rédiger la proposition à partir des mots du client, puis à transformer le compte rendu en fiche d'opportunité pour le CRM. Deux journées de sept heures, en présentiel ou en visioconférence, à partir de 1 980 € HT par jour de session (préparation sur vos pièces en plus, au devis), de deux à douze vendeurs, ou pour un seul. Qualiopi certifie les actions de formation de Masteria, et votre OPCO finance la session suivant les règles fixées pour sa branche et les fonds qui lui restent.",
   enBref: [
     { label: 'Formation', value: "Vibe, l'assistant de travail de Mistral AI, au service du cycle de vente B2B" },
     { label: 'Durée', value: "Deux jours, soit quatorze heures, idéalement avant une campagne ou un salon" },
     { label: 'Formats', value: "Chez vous ou en visioconférence ; jusqu'à douze vendeurs par session, ou un commercial accompagné seul" },
-    { label: 'Tarif', value: "Forfait de 1 980 € HT par jour, quel que soit l'effectif jusqu'à douze ; licences Vibe facturées par Mistral" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par jour, quel que soit l'effectif jusqu'à douze ; préparation sur mesure en plus, au devis ; licences Vibe facturées par Mistral" },
     { label: 'Financement', value: "Qualiopi obtenu pour les actions de formation ; décision de financement prise par votre OPCO au vu de ses critères et de l'enveloppe disponible" },
     { label: 'Prérequis', value: "Vendre en B2B et tenir un CRM ; idéalement un abonnement Vibe Pro, Team ou Enterprise, pour garder des réglages de confidentialité maîtrisés" },
   ],
@@ -293,14 +293,14 @@ export default {
     },
     {
       q: "Quel budget prévoir pour former dix commerciaux ?",
-      a: "Le prix se calcule par jour de formation, jamais par tête : 1 980 € HT, que la salle compte deux vendeurs ou douze. Pour dix commerciaux sur deux jours, la facture totale atteint 3 960 € HT ; ramenée à chacun, elle fait 396 € HT. Le financement se demande à l'OPCO dont relève votre entreprise, qui l'accorde suivant ses propres règles et dans la limite de ses fonds ; Masteria détient Qualiopi pour la catégorie des actions de formation et rassemble le dossier avec vous. Les licences Vibe, elles, se règlent auprès de Mistral.",
+      a: "Le prix se calcule par jour de formation, jamais par tête : à partir de 1 980 € HT, que la salle compte deux vendeurs ou douze. Pour dix commerciaux sur deux jours, la facture totale atteint au moins 3 960 € HT ; ramenée à chacun, elle fait au moins 396 € HT. Le financement se demande à l'OPCO dont relève votre entreprise, qui l'accorde suivant ses propres règles et dans la limite de ses fonds ; Masteria détient Qualiopi pour la catégorie des actions de formation et rassemble le dossier avec vous. Les licences Vibe, elles, se règlent auprès de Mistral.",
     },
   ],
   tarifs: {
     titre: "Ce que paie une direction commerciale, et ce qu'elle obtient",
     paras: [
-      "Le prix comprend un échange préparatoire sur votre matière : la plaquette d'offre, deux propositions récentes, la liste des champs de votre fiche d'opportunité et un exemple anonymisé de compte rendu. Le formateur s'en sert pour écrire des exercices sur vos affaires, et l'équipe repart avec sa bibliothèque commerciale montée, sa compétence de proposition et ses prompts de préparation.",
-      "Prenons dix commerciaux formés ensemble pendant deux jours : le total de 3 960 € HT, divisé entre eux, donne 396 € HT par vendeur. Un responsable grands comptes accompagné seul paie le même forfait de 1 980 € HT par jour. La demande de financement part vers votre opérateur de compétences (OPCO), qui tranche d'après ses règles et ses fonds ; Masteria vous en fournit les pièces. Les abonnements Vibe restent à souscrire auprès de Mistral.",
+      "Le prix de base couvre l'animation et les supports. Pour des exercices écrits sur vos affaires, un échange préparatoire s'y ajoute au devis, à partir de la plaquette d'offre, de deux propositions récentes, de la liste des champs de votre fiche d'opportunité et d'un exemple anonymisé de compte rendu. L'équipe repart avec sa bibliothèque commerciale montée, sa compétence de proposition et ses prompts de préparation.",
+      "Prenons dix commerciaux formés ensemble pendant deux jours : le total à partir de 3 960 € HT, divisé entre eux, donne dès 396 € HT par vendeur. Un responsable grands comptes accompagné seul paie le même tarif, à partir de 1 980 € HT par jour. La demande de financement part vers votre opérateur de compétences (OPCO), qui tranche d'après ses règles et ses fonds ; Masteria vous en fournit les pièces. Les abonnements Vibe restent à souscrire auprès de Mistral.",
     ],
   },
   apres: {

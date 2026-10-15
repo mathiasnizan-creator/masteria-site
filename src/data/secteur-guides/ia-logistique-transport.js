@@ -83,7 +83,7 @@ export default {
 
   formation: [
     "Nous formons les métiers qui vivent dans les flux : exploitants et affréteurs, assistants d'administration des ventes, chargés de litiges, comptables fournisseurs, chefs de quai. Les ateliers partent de leurs propres pièces : une lettre de voiture annotée, une facture avec surcharge énergie, un mail de transporteur, un export du WMS. Chaque participant repart avec un assistant sur sa tâche et une règle de contrôle écrite.",
-    "Les sessions en intra se tiennent sur vos sites, aux horaires de l'exploitation. Une journée pour vos exploitants ou vos équipes d'administration des ventes est facturée 1 980 € HT, finançable par votre OPCO grâce à la certification Qualiopi de Masteria. Ce financement s'arrête à la formation : le diagnostic des flux et les assistants se facturent à part.",
+    "Les sessions en intra se tiennent sur vos sites, aux horaires de l'exploitation. Une journée pour vos exploitants ou vos équipes d'administration des ventes est facturée à partir de 1 980 € HT, finançable par votre OPCO grâce à la certification Qualiopi de Masteria. Si la session est bâtie sur vos exports et vos documents, la préparation est chiffrée en plus au devis. Ce financement s'arrête à la formation : le diagnostic des flux et les assistants se facturent à part.",
   ],
 
   guide: {

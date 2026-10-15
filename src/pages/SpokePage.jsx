@@ -261,10 +261,10 @@ export default function SpokePage() {
       ? `Cas d'usage ${lowerMetier(spoke.metier)} concrets, travaillés sur vos propres fichiers pendant la journée.`
       : `6 cas d'usage ${lowerMetier(spoke.metier)} concrets, travaillés sur vos propres fichiers pendant les 2 jours.`
   const heroSentence = is3h
-    ? <>Le <strong>{spoke.label || `Sprint IA ${spoke.metier}`}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/session</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Finançable par votre OPCO selon votre branche. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
+    ? <>Le <strong>{spoke.label || `Sprint IA ${spoke.metier}`}</strong> proposé par Masteria est un format court de <strong>3 heures</strong> certifié Qualiopi, en présentiel ou distanciel. Le tarif part de <strong>1 980 € HT par session</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure ; si les exercices sont construits sur vos documents, le temps de préparation s'ajoute et figure au devis. Finançable par votre OPCO selon votre branche. Idéal pour acculturer en cascade plusieurs centaines de collaborateurs.</>
     : isOneDay
-      ? <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
-      : <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Tarif&nbsp;: <strong>1 980 €/jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
+      ? <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Le tarif part de <strong>1 980 € HT par jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel ; si les exercices sont construits sur vos documents, le temps de préparation s'ajoute et figure au devis. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
+      : <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Le tarif part de <strong>1 980 € HT par jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure ; si les exercices sont construits sur vos documents, le temps de préparation s'ajoute et figure au devis. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
 
   // Modules grouped by day
   const modulesJ1 = spoke.modules?.filter(m => m.day === 1) || []
@@ -359,18 +359,23 @@ export default function SpokePage() {
           </h1>
 
           {/* GEO-optimized first paragraph : réponse directe à la query pour citation LLM */}
-          <p id="geo-summary" style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
+          <p id="geo-summary" style={propre
+            ? { fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', lineHeight: 1.6, marginBottom: 16, maxWidth: 640, fontWeight: 500 }
+            : { fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
             {propre && spoke.resume ? spoke.resume : heroSentence}
           </p>
           {propre && (
-            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '-6px 0 20px', maxWidth: 680 }}>
+            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 32px', maxWidth: 680 }}>
               Par <Link to="/mathias-nizan" style={{ color: '#374151', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria · {spoke.updatedLabel || ''}
             </p>
           )}
 
-          <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
-            {spoke.intro}
-          </p>
+          {/* Page propre avec guide : l'intro passe en chapeau du guide terrain, le hero reste court */}
+          {!(propre && guide?.guide) && spoke.intro && (
+            <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
+              {spoke.intro}
+            </p>
+          )}
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
             <Link to="/contact" style={{ background: c, color: '#fff', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: `0 4px 12px ${c}30` }}>
@@ -401,7 +406,7 @@ export default function SpokePage() {
                 { label: 'Formation', value: spoke.label ? `Formation ${spoke.label}` : `${spoke.tool} pour ${spoke.metier}` },
                 { label: 'Durée', value: is3h ? '3 heures (Sprint IA)' : isOneDay ? '1 jour (7 h de formation effective)' : '2 jours (14 h de formation effective)' },
                 { label: 'Formats', value: "Intra-entreprise dans vos locaux (jusqu'à 12 participants), accompagnement individuel sur mesure, présentiel ou distanciel" },
-                { label: 'Tarif', value: is3h ? '1 980 € HT par session, intra comme individuel · devis sous 24 h' : '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
+                { label: 'Tarif', value: is3h ? 'À partir de 1 980 € HT par session, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' : 'À partir de 1 980 € HT par jour, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' },
                 { label: 'Financement', value: "Organisme certifié Qualiopi, finançable par votre OPCO selon votre branche ; programme et convention préparés avec vous" },
                 { label: 'Prérequis', value: prerequis },
               ]).map((row, i) => (
@@ -416,9 +421,9 @@ export default function SpokePage() {
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
             {[
+              (modulesJ1.length > 0 || modulesJ2.length > 0 || spoke.program?.length > 0) ? ['Programme', '#programme'] : null,
               guide?.guide ? ['Guide terrain', '#guide'] : null,
               spoke.useCases?.length ? ["Cas d'usage", '#cas-usage'] : null,
-              (modulesJ1.length > 0 || modulesJ2.length > 0 || spoke.program?.length > 0) ? ['Programme', '#programme'] : null,
               ['Objectifs', '#objectifs'],
               ['Tarifs', '#tarifs'],
               ['Formateur', '#formateur'],
@@ -499,9 +504,6 @@ export default function SpokePage() {
           </div>
         </section>
       )}
-
-      {/* ── GUIDE TERRAIN (contenu propre à la page) ── */}
-      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color={c} background="#fff" />
 
       {/* ── PROGRAMME (modules enrichis) ── */}
       {(modulesJ1.length > 0 || modulesJ2.length > 0) ? (
@@ -586,6 +588,9 @@ export default function SpokePage() {
         </section>
       )}
 
+      {/* ── GUIDE TERRAIN (contenu propre à la page), après le programme ── */}
+      <TerrainGuide guide={guide?.guide} intro={propre && guide?.guide ? spoke.intro : undefined} sources={guide?.sources} color={c} background="#fff" />
+
       {/* ── CTA MILIEU DE PAGE ── */}
       <section style={{ padding: '48px 40px', background: `linear-gradient(135deg, ${c} 0%, ${c}dd 100%)`, color: '#fff' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
@@ -654,11 +659,12 @@ export default function SpokePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 24 }}>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>{is3h ? '/ session' : '/ jour'}</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Sprint de 3 heures · 1-to-1 sur mesure' : isOneDay ? '1 journée de 7 h · coaching 1-to-1' : 'Soit 3 960 € pour 2 jours · 1-to-1'}</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Sprint de 3 heures · 1-to-1 sur mesure' : isOneDay ? '1 journée de 7 h · coaching 1-to-1' : 'Soit dès 3 960 € pour 2 jours · 1-to-1'}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {(is3h
                   ? ['Session de 3 heures · 1-to-1', 'Programme co-construit sur vos enjeux', 'Présentiel ou distanciel', 'Finançable OPCO']
@@ -674,11 +680,12 @@ export default function SpokePage() {
             </div>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${c}` }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>{is3h ? '/ session de 3 h' : '/ jour'}</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Jusqu\'à 12 participants · Packages dégressifs dès 5 sessions' : isOneDay ? 'Jusqu\'à 12 participants · 1 journée intensive' : 'Soit 3 960 € pour 2 jours (jusqu\'à 12 participants)'}</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>{is3h ? 'Jusqu\'à 12 participants · Packages dégressifs dès 5 sessions' : isOneDay ? 'Jusqu\'à 12 participants · 1 journée intensive' : 'Soit dès 3 960 € pour 2 jours (jusqu\'à 12 participants)'}</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {(is3h
                   ? ['Réservé à votre équipe', 'Session de 3 h sur mesure (intra)', 'Contenu adapté à votre secteur', 'OPCO, plan de développement des compétences']
@@ -693,6 +700,9 @@ export default function SpokePage() {
               </ul>
             </div>
           </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 8 }}>
+            Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis.
+          </p>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>
             Masteria est certifié Qualiopi : vos formations peuvent être prises en charge par votre OPCO (Atlas, Afdas, Akto, Constructys, Opco 2i…), selon votre branche et vos fonds. Nous préparons avec vous le programme et la convention ; depuis le 1er octobre 2026, la plupart des OPCO remboursent l'entreprise après paiement au lieu de régler l'organisme directement. Chaque participant repart avec un support de formation complet et une bibliothèque de prompts prête à l'emploi.
           </p>

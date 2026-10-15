@@ -707,7 +707,7 @@ export default function AgenceDeveloppementIAPage() {
                 Vos équipes apprennent à faire vivre l'outil
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Masteria forme aussi, sous certification Qualiopi (catégorie « actions de formation »), et la passation en profite. Le référent qui gardera l'outil apprend à lire le journal des actions, à corriger une consigne et à ajouter une source ; les utilisateurs s'exercent sur leurs propres dossiers. Pour former plus largement vos équipes à l'IA, chaque journée de formation vaut 1 980 € HT ; l'opérateur de compétences de votre branche (OPCO) peut la financer, selon ses règles et ses fonds. Côté code, aucun financement de ce genre : un projet de développement n'est pas finançable par votre OPCO.
+                Masteria forme aussi, sous certification Qualiopi (catégorie « actions de formation »), et la passation en profite. Le référent qui gardera l'outil apprend à lire le journal des actions, à corriger une consigne et à ajouter une source ; les utilisateurs s'exercent sur leurs propres dossiers. Pour former plus largement vos équipes à l'IA, chaque journée de formation démarre à 1 980 € HT ; l'opérateur de compétences de votre branche (OPCO) peut la financer, selon ses règles et ses fonds. Côté code, aucun financement de ce genre : un projet de développement n'est pas finançable par votre OPCO.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Voir les formations à l'IA pour vos équipes

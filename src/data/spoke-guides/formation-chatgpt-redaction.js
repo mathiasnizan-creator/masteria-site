@@ -14,12 +14,12 @@ export default {
   metaTitle: 'Formation ChatGPT rédaction web et pro | Masteria',
   metaDesc: "Formation ChatGPT rédaction (1 jour) : voix de la maison dans un projet, plan avant le texte, déclinaisons fidèles, faits vérifiés avant publication.",
   keywords: "formation ChatGPT rédaction, rédiger avec ChatGPT, formation rédaction web IA, ChatGPT newsletter, écrire avec l'IA",
-  resume: "La formation ChatGPT rédaction tient en une journée de sept heures, consacrée aux textes que vos équipes publient ou diffusent : articles, pages de site, lettres aux clients, réponses écrites. Un groupe intra réunit jusqu'à douze rédacteurs, et un parcours individuel reste possible, sur place ou à distance. Son prix, 1 980 € HT, vaut pour le groupe comme pour une personne seule. Parce que Masteria détient la certification Qualiopi, votre OPCO peut être sollicité ; il statue selon les règles de sa branche.",
+  resume: "La formation ChatGPT rédaction tient en une journée de sept heures, consacrée aux textes que vos équipes publient ou diffusent : articles, pages de site, lettres aux clients, réponses écrites. Un groupe intra réunit jusqu'à douze rédacteurs, et un parcours individuel reste possible, sur place ou à distance. Son prix part de 1 980 € HT, pour le groupe comme pour une personne seule, la préparation sur vos textes s'ajoutant au devis. Parce que Masteria détient la certification Qualiopi, votre OPCO peut être sollicité ; il statue selon les règles de sa branche.",
   enBref: [
     { label: 'Formation', value: "Écrire avec ChatGPT des textes destinés à être lus hors de l'entreprise : ton maison, plan, premier jet, réécriture, déclinaisons, relecture des faits" },
     { label: 'Durée', value: "Une journée (sept heures), en quatre ateliers d'une heure trois quarts" },
     { label: 'Formats', value: "Équipe contenu en intra, jusqu'à douze rédacteurs, ou rédacteur seul ; sur site ou par écran partagé" },
-    { label: 'Tarif', value: "1 980 € HT la journée, exercices bâtis sur vos textes publiés et vos sujets du moment" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée ; pour des exercices bâtis sur vos textes publiés et vos sujets du moment, la préparation s'ajoute au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; décision de l'OPCO d'après les critères de votre branche" },
     { label: 'Prérequis', value: "Écrire chaque mois pour un public ; un compte ChatGPT, de préférence dans un espace Business, vérifié avant la journée" },
   ],
@@ -232,14 +232,14 @@ export default {
     },
     {
       q: "Combien coûte la journée, et peut-elle être financée ?",
-      a: "Que vous soyez douze en intra ou seul avec le formateur, la journée coûte 1 980 € HT. La certification Qualiopi, que Masteria détient pour la catégorie actions de formation, autorise une demande auprès de l'OPCO de votre entreprise, examinée selon les règles de sa branche et les fonds qui lui restent. Le programme, objectifs et évaluation de chacun compris, et la convention vous sont remis pour le dossier.",
+      a: "Que vous soyez douze en intra ou seul avec le formateur, la journée coûte à partir de 1 980 € HT. La certification Qualiopi, que Masteria détient pour la catégorie actions de formation, autorise une demande auprès de l'OPCO de votre entreprise, examinée selon les règles de sa branche et les fonds qui lui restent. Le programme, objectifs et évaluation de chacun compris, et la convention vous sont remis pour le dossier.",
     },
   ],
   tarifs: {
     titre: "Le prix d'une journée de rédaction avec ChatGPT",
     paras: [
-      "Pour 1 980 € HT, la journée inclut sa préparation. Quelques jours avant, vous nous transmettez trois ou quatre textes publiés que l'équipe juge réussis, votre charte éditoriale si elle existe et la liste des sujets à traiter dans le mois. Le formateur construit les ateliers sur ce matériau, et chacun quitte la salle avec le projet de la voix maison réglé et un texte prêt à publier.",
-      "Prenons une équipe contenu de neuf personnes : rédacteurs web, chargée de la lettre d'information et responsable éditorial. La journée en intra leur revient à 220 € HT par personne. Un expert qui écrit sous son nom peut suivre la journée seul, au même prix, sur ses propres textes. Votre OPCO statue ensuite sur sa participation, à partir d'une demande envoyée avant la date de la journée.",
+      "À partir de 1 980 € HT, la journée couvre l'animation et les supports. Pour des ateliers sur mesure, vous nous transmettez quelques jours avant trois ou quatre textes publiés que l'équipe juge réussis, votre charte éditoriale si elle existe et la liste des sujets à traiter dans le mois ; le formateur construit les ateliers sur ce matériau et ce temps de préparation s'ajoute au devis. Chacun quitte la salle avec le projet de la voix maison réglé et un texte prêt à publier.",
+      "Prenons une équipe contenu de neuf personnes : rédacteurs web, chargée de la lettre d'information et responsable éditorial. La journée en intra leur coûte à partir de 220 € HT par personne. Un expert qui écrit sous son nom peut suivre la journée seul, au même prix, sur ses propres textes. Votre OPCO statue ensuite sur sa participation, à partir d'une demande envoyée avant la date de la journée.",
     ],
   },
   apres: {

@@ -11,12 +11,12 @@ export default {
   metaTitle: 'Formation Mistral AI finance : Vibe et la clôture | Masteria',
   metaDesc: "Deux jours sur Vibe pour une direction financière : exports contrôlés, écarts calculés par code, classeurs .xlsx, note au comité. Qualiopi, OPCO.",
   keywords: "formation Mistral finance, formation Vibe contrôle de gestion, Mistral AI clôture mensuelle, interpréteur de code Vibe, IA européenne direction financière",
-  resume: "La formation Mistral AI pour la finance apprend à un contrôleur de gestion, à un comptable ou à un DAF à faire calculer Vibe par son interpréteur de code, à relire le programme qui a produit chaque montant et à rédiger la note d'écarts sans qu'un chiffre perde son origine. Elle tient en deux journées de sept heures, sur votre site ou en classe virtuelle, à 1 980 € HT la journée, que le groupe compte douze contrôleurs ou un seul. Masteria est certifié Qualiopi, catégorie actions de formation, et l'OPCO de votre branche statue sur le financement en fonction de ses règles et de ses fonds.",
+  resume: "La formation Mistral AI pour la finance apprend à un contrôleur de gestion, à un comptable ou à un DAF à faire calculer Vibe par son interpréteur de code, à relire le programme qui a produit chaque montant et à rédiger la note d'écarts sans qu'un chiffre perde son origine. Elle tient en deux journées de sept heures, sur votre site ou en classe virtuelle, à partir de 1 980 € HT la journée, que le groupe compte douze contrôleurs ou un seul. Masteria est certifié Qualiopi, catégorie actions de formation, et l'OPCO de votre branche statue sur le financement en fonction de ses règles et de ses fonds.",
   enBref: [
     { label: 'Formation', value: "L'assistant Vibe de Mistral AI appliqué à la clôture, au contrôle de gestion et à la trésorerie" },
     { label: 'Durée', value: "Quatorze heures sur deux jours, que l'on peut placer de part et d'autre d'une clôture mensuelle" },
     { label: 'Formats', value: "Sur site ou en visioconférence ; jusqu'à douze participants par groupe, ou un contrôleur seul face au formateur" },
-    { label: 'Tarif', value: "1 980 € HT par journée, quel que soit l'effectif ; les abonnements Vibe se règlent à part, auprès de Mistral" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée, quel que soit l'effectif ; les abonnements Vibe se règlent à part, auprès de Mistral" },
     { label: 'Financement', value: "Certification Qualiopi (actions de formation) ; financement instruit par votre OPCO, d'après ses règles et ses fonds" },
     { label: 'Prérequis', value: "Savoir lire une balance et manier Excel ; disposer d'un compte Vibe Pro, Team ou Enterprise, car l'interpréteur de code et les tableurs sont réservés aux offres payantes" },
   ],
@@ -293,14 +293,14 @@ export default {
     },
     {
       q: "Qui peut financer les deux journées d'une direction financière ?",
-      a: "L'OPCO de votre branche, qui examine chaque demande à l'aune de ses critères et de son budget ; Masteria remplit la condition préalable avec sa certification Qualiopi au titre des actions de formation. Le prix ne bouge pas avec l'effectif : 1 980 € HT la journée, 3 960 € HT pour l'ensemble des deux journées, de deux à douze participants, et le même forfait journalier pour un contrôleur suivi seul. Le programme détaillé et la convention destinés à l'OPCO vous sont transmis par Masteria. Une filiale à Genève ou à Bruxelles reçoit un devis en euros HT, sans OPCO.",
+      a: "L'OPCO de votre branche, qui examine chaque demande à l'aune de ses critères et de son budget ; Masteria remplit la condition préalable avec sa certification Qualiopi au titre des actions de formation. Le prix de base ne bouge pas avec l'effectif : à partir de 1 980 € HT la journée, à partir de 3 960 € HT pour l'ensemble des deux journées, de deux à douze participants, et le même forfait journalier pour un contrôleur suivi seul. Le programme détaillé et la convention destinés à l'OPCO vous sont transmis par Masteria. Une filiale à Genève ou à Bruxelles reçoit un devis en euros HT, sans OPCO.",
     },
   ],
   tarifs: {
     titre: "Le prix d'une session pour une direction financière",
     paras: [
-      "Le forfait inclut un temps de préparation : avant la première journée, le formateur parcourt avec vous un export anonymisé, le classeur de suivi des écarts et la procédure de clôture, afin que les ateliers portent sur vos fichiers. Les supports, les consignes du guide adaptées à votre plan analytique et la Skill de contrôle rédigée au module 7 sont compris dans le prix.",
-      "Un exemple : une direction financière inscrit son DAF, sa responsable comptable, deux contrôleurs de gestion, un trésorier et une assistante comptable, soit six personnes. L'intra de deux jours revient à 3 960 € HT, partagés en six, soit 660 € HT par tête. Un contrôleur suivi seul règle le même forfait journalier, 1 980 € HT. Votre OPCO étudie ensuite le dossier, monté avec Masteria, à la lumière de ses propres règles et de ses fonds. Les licences Vibe restent à régler à Mistral.",
+      "Le forfait de base couvre l'animation et le programme. Un temps de préparation s'y ajoute au devis : avant la première journée, le formateur parcourt avec vous un export anonymisé, le classeur de suivi des écarts et la procédure de clôture, afin que les ateliers portent sur vos fichiers. Les supports, les consignes du guide adaptées à votre plan analytique et la Skill de contrôle rédigée au module 7 sont compris dans le forfait de base.",
+      "Un exemple : une direction financière inscrit son DAF, sa responsable comptable, deux contrôleurs de gestion, un trésorier et une assistante comptable, soit six personnes. L'intra de deux jours démarre à 3 960 € HT, partagés en six, soit dès 660 € HT par tête. Un contrôleur suivi seul règle le même forfait journalier de base, à partir de 1 980 € HT. Votre OPCO étudie ensuite le dossier, monté avec Masteria, à la lumière de ses propres règles et de ses fonds. Les licences Vibe restent à régler à Mistral.",
     ],
   },
   apres: {

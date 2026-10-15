@@ -783,7 +783,7 @@ export default function IAEtRGPDPage() {
                 Mettre les flux en règle, puis apprendre aux équipes à les y garder
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La mise en conformité décrite sur cette page relève de notre conseil data & IA : cartographie des flux, qualification des traitements, AIPD, choix des offres et réglages. Elle se règle au forfait après le cadrage et reste hors du financement de l'OPCO. Les équipes, elles, apprennent les bons réflexes en formation : la formation AI Act pour le cadre réglementaire, les formations aux outils pour des usages quotidiens respectueux des données. Facturées 1 980 € HT la journée, ces formations sont proposées par un organisme certifié Qualiopi.
+                La mise en conformité décrite sur cette page relève de notre conseil data & IA : cartographie des flux, qualification des traitements, AIPD, choix des offres et réglages. Elle se règle au forfait après le cadrage et reste hors du financement de l'OPCO. Les équipes, elles, apprennent les bons réflexes en formation : la formation AI Act pour le cadre réglementaire, les formations aux outils pour des usages quotidiens respectueux des données. Facturées à partir de 1 980 € HT la journée, ces formations sont proposées par un organisme certifié Qualiopi.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/conseil-data-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

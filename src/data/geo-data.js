@@ -80,7 +80,7 @@ export const GEO_CITIES = [
     dateModified: '2026-09-08',
     // Réponse directe citable par les moteurs génératifs : l'entité, le lieu, l'offre et
     // le prix en un paragraphe (id geo-summary, déclaré speakable sur l'Article).
-    geoSummary: "Masteria est un cabinet spécialisé en intelligence artificielle basé à Lyon, en presqu'île (17 rue d'Algérie, Lyon 1ᵉʳ), certifié Qualiopi. Il forme les équipes des entreprises de la métropole à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, dans leurs locaux ou à distance, sur leurs propres dossiers : 1 980 € HT la journée, finançable par votre OPCO, devis sous 24 h.",
+    geoSummary: "Masteria est un cabinet spécialisé en intelligence artificielle basé à Lyon, en presqu'île (17 rue d'Algérie, Lyon 1ᵉʳ), certifié Qualiopi. Il forme les équipes des entreprises de la métropole à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, dans leurs locaux ou à distance, sur leurs propres dossiers : à partir de 1 980 € HT la journée, finançable par votre OPCO, devis sous 24 h.",
     // Bureaux réels (NAP aligné sur le schéma Organization de SEOHead) : alimente
     // l'adresse du ProfessionalService, la ligne « Organisme » de l'encart En bref,
     // la carte Google (hasMap) et l'entité Knowledge Graph (sameAs).
@@ -146,13 +146,13 @@ export const GEO_CITIES = [
         {
           who: 'Une équipe ou un service en entreprise (PME, ETI, grand groupe)',
           need: 'Gagner du temps sur les tâches du poste avec les outils déjà déployés',
-          answer: "Journée intra Masteria dans vos locaux, jusqu'à 12 participants, programme monté par métier. 1 980 € HT, finançable par votre OPCO.",
+          answer: "Journée intra Masteria dans vos locaux, jusqu'à 12 participants, programme monté par métier. à partir de 1 980 € HT, finançable par votre OPCO.",
           masteria: true,
         },
         {
           who: 'Un dirigeant, un expert métier, un profil stratégique',
           need: 'Un programme personnel, à son rythme, sur ses propres dossiers',
-          answer: 'Accompagnement individuel Masteria, en présentiel dans nos bureaux des Terreaux ou à distance, 1 980 € HT la journée, séquençable en demi-journées.',
+          answer: 'Accompagnement individuel Masteria, en présentiel dans nos bureaux des Terreaux ou à distance, à partir de 1 980 € HT la journée, séquençable en demi-journées.',
           masteria: true,
         },
         {
@@ -1040,7 +1040,7 @@ export const GEO_TOOLS = [
           ? `Pourquoi une formation intra plutôt qu'un accompagnement individuel pour mes équipes ${city.nameLoc} ?`
           : `Quels formats sont disponibles ${city.nameLoc} ?`,
         a: city.intraOnly
-          ? `La formation intra est plus efficace quand vos équipes partagent les mêmes outils et les mêmes défis. Le formateur construit le programme à partir de vos vrais cas d'usage, utilise vos documents réels (anonymisés si nécessaire) et adapte le rythme à votre niveau. À partir de 3 participants, le format intra est très avantageux (1 980 €/jour pour le groupe). Pour 1 personne ou 2 personnes en profil dirigeant/expert, nous proposons l'accompagnement individuel sur mesure (1 980 €/jour) en présentiel ou en distanciel.`
+          ? `La formation intra est plus efficace quand vos équipes partagent les mêmes outils et les mêmes défis. Le formateur construit le programme à partir de vos vrais cas d'usage, utilise vos documents réels (anonymisés si nécessaire) et adapte le rythme à votre niveau. À partir de 3 participants, le format intra est très avantageux (à partir de 1 980 €/jour pour le groupe). Pour 1 personne ou 2 personnes en profil dirigeant/expert, nous proposons l'accompagnement individuel sur mesure (à partir de 1 980 €/jour) en présentiel ou en distanciel. Quand les exercices sont bâtis sur vos documents, la préparation s'ajoute au devis.`
           : `À Lyon : formation intra-entreprise dans vos locaux (jusqu'à 12 participants) ou accompagnement individuel sur mesure (1-to-1) en présentiel ou en distanciel. Les deux formats incluent les supports, la bibliothèque de prompts et le suivi post-formation pendant 1 mois.`,
       },
       {

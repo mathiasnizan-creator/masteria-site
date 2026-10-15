@@ -7,12 +7,12 @@ export default {
   updatedLabel: 'Programme à jour · octobre 2026',
   pagePropre: true,
   metaDesc: "Formation Claude pour les équipes pédagogiques : objectifs, supports et quiz tirés de votre documentation produit, exercices interactifs en artefact.",
-  resume: "Cette formation Claude pour les équipes pédagogiques s'étend sur deux journées (14 heures) et vise concepteurs, responsables de contenus et équipes d'académie client. Elle se suit dans vos locaux comme en classe virtuelle, en groupe intra de 12 personnes au maximum ou seul avec le formateur. Chaque journée coûte 1 980 € HT ; Masteria étant certifié Qualiopi, l'OPCO dont dépend votre structure décide de la prise en charge selon sa branche.",
+  resume: "Cette formation Claude pour les équipes pédagogiques s'étend sur deux journées (14 heures) et vise concepteurs, responsables de contenus et équipes d'académie client. Elle se suit dans vos locaux comme en classe virtuelle, en groupe intra de 12 personnes au maximum ou seul avec le formateur. Chaque journée coûte à partir de 1 980 € HT, la préparation sur vos modules s'ajoutant au devis ; Masteria étant certifié Qualiopi, l'OPCO dont dépend votre structure décide de la prise en charge selon sa branche.",
   enBref: [
     { label: 'Formation', value: "Claude appliqué à la conception : objectifs, supports, quiz et exercices bâtis sur votre documentation produit" },
     { label: 'Durée', value: "Deux jours, 14 heures au total, chaque module se concluant sur la révision d'un de vos contenus" },
     { label: 'Formats', value: "Jusqu'à 12 concepteurs et formateurs en intra, ou un parcours individuel ; dans vos murs ou en classe virtuelle" },
-    { label: 'Tarif', value: "1 980 € HT pour chaque journée, quel que soit l'effectif du groupe" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT pour chaque journée, quel que soit l'effectif du groupe ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Certification Qualiopi de Masteria ; demande à adresser à l'OPCO de votre branche, montée ensemble" },
     { label: 'Prérequis', value: "Pratique de la conception de formations ; un compte Claude payant, Team de préférence pour partager compétences et projets" },
   ],
@@ -244,8 +244,8 @@ export default {
   tarifs: {
     titre: "Deux journées bâties sur vos modules et votre documentation",
     paras: [
-      "Avant la session, nous recevons un module à réviser, la documentation produit qui l'accompagne, votre charte pédagogique et vos gabarits : chaque exercice porte ainsi sur vos propres contenus. Un groupe type compte la responsable de l'académie, trois concepteurs et deux formateurs.",
-      "Le groupe paie 1 980 € HT par journée. En intra, l'addition des deux journées atteint ainsi 3 960 € HT, pour un groupe qui peut compter jusqu'à 12 personnes ; avec les six personnes de l'exemple, la dépense s'établit à 660 € HT par participant. En individuel, une conceptrice suit le même programme au même prix de journée. Grâce à la certification Qualiopi de Masteria, vous pouvez solliciter l'OPCO de votre branche, qui fixe le montant pris en charge ; la demande se prépare avec nous.",
+      "Avant la session, nous recevons un module à réviser, la documentation produit qui l'accompagne, votre charte pédagogique et vos gabarits : chaque exercice porte ainsi sur vos propres contenus. Cette préparation sur vos contenus est chiffrée au devis, en plus du prix de la journée. Un groupe type compte la responsable de l'académie, trois concepteurs et deux formateurs.",
+      "Le groupe paie à partir de 1 980 € HT par journée. En intra, l'addition des deux journées atteint ainsi à partir de 3 960 € HT, pour un groupe qui peut compter jusqu'à 12 personnes ; avec les six personnes de l'exemple, la dépense s'établit dès 660 € HT par participant. En individuel, une conceptrice suit le même programme au même prix de journée. Grâce à la certification Qualiopi de Masteria, vous pouvez solliciter l'OPCO de votre branche, qui fixe le montant pris en charge ; la demande se prépare avec nous.",
     ],
   },
   apres: {
@@ -303,7 +303,7 @@ export default {
     },
     {
       q: "Notre OPCO peut-il financer la formation de l'équipe pédagogique ?",
-      a: "Masteria étant certifié Qualiopi, votre dossier part vers l'opérateur de compétences dont relève votre structure, qui statue selon les règles de sa branche. Un groupe intra réunit au plus 12 personnes pour les deux journées, sur place ou en ligne, chaque journée étant facturée 1 980 € HT à l'ensemble du groupe. Le programme, ses objectifs évaluables et la convention sont joints au dossier de prise en charge.",
+      a: "Masteria étant certifié Qualiopi, votre dossier part vers l'opérateur de compétences dont relève votre structure, qui statue selon les règles de sa branche. Un groupe intra réunit au plus 12 personnes pour les deux journées, sur place ou en ligne, chaque journée étant facturée à partir de 1 980 € HT à l'ensemble du groupe. Le programme, ses objectifs évaluables et la convention sont joints au dossier de prise en charge.",
     },
   ],
   sources: [

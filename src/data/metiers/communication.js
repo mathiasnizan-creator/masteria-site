@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Tarif de la formation IA communication et financement",
-  "answer": "Chaque journée animée pour votre équipe (douze participants maximum) est facturée 1 980 € HT ; le parcours de deux jours représente 3 960 € HT. Un directeur de la communication seul sur sa fonction peut suivre la formation en individuel, au même prix par jour. L'OPCO d'une entreprise ou d'une association peut intervenir grâce à la certification Qualiopi, dans les limites de ses règles ; une collectivité finance la session sur son plan de formation. Le devis est envoyé sous 24 heures.",
-  "inclus": "En amont, le formateur étudie votre charte, quelques communiqués récents, une note interne et un cas sensible anonymisé. Viennent ensuite les deux journées, sur place ou en visioconférence, puis supports et livrables (voix encodée, gabarits, éléments de langage, circuit de validation), un contrôle des acquis et une attestation de fin de formation. Pour une session organisée loin de Lyon, son trajet est facturé à part.",
+  "answer": "Chaque journée animée pour votre équipe (douze participants maximum) est facturée à partir de 1 980 € HT ; le parcours de deux jours représente au moins 3 960 € HT. Un directeur de la communication seul sur sa fonction peut suivre la formation en individuel, au même prix par jour. L'OPCO d'une entreprise ou d'une association peut intervenir grâce à la certification Qualiopi, dans les limites de ses règles ; une collectivité finance la session sur son plan de formation. Le devis est envoyé sous 24 heures.",
+  "inclus": "Les deux journées, sur place ou en visioconférence, puis supports et livrables (voix encodée, gabarits, éléments de langage, circuit de validation), un contrôle des acquis et une attestation de fin de formation. Pour une session organisée loin de Lyon, son trajet est facturé à part. Le temps que le formateur consacre à votre charte, à vos communiqués et à un cas sensible anonymisé s'ajoute au prix de base, détaillé sur le devis.",
   "financement": "L'OPCO compétent dépend de votre convention collective : {/quel-opco|Quel OPCO ?} fait le rapprochement, et notre page {/financement-formation-ia|financer une formation IA} passe en revue les dispositifs. Nous transmettons le programme, la convention et les justificatifs, pour une demande déposée avant la session. Le CPF n'est pas mobilisable."
  },
  "faq": [
@@ -295,7 +295,7 @@ export default {
   },
   {
    "q": "Combien coûte la formation, et qui peut la financer ?",
-   "a": "Le groupe paie 1 980 € HT par journée, de un à douze participants, et 3 960 € HT pour les deux jours ; le trajet du formateur s'y ajoute quand la session a lieu dans vos locaux, loin de Lyon. Une entreprise ou une association peut solliciter son OPCO, qui décide de sa part d'après ses critères et son budget, puisque Masteria est certifiée Qualiopi ; une collectivité passe par son plan de formation. Le CPF n'intervient pas, et le devis vous arrive sous 24 heures."
+   "a": "Le groupe paie à partir de 1 980 € HT par journée, de un à douze participants, et à partir de 3 960 € HT pour les deux jours ; le trajet du formateur s'y ajoute quand la session a lieu dans vos locaux, loin de Lyon. Une entreprise ou une association peut solliciter son OPCO, qui décide de sa part d'après ses critères et son budget, puisque Masteria est certifiée Qualiopi ; une collectivité passe par son plan de formation. Le CPF n'intervient pas, et le devis vous arrive sous 24 heures."
   }
  ],
  "course": {

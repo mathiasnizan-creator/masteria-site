@@ -143,7 +143,7 @@ const FAQ_IA = [
   },
   {
     q: 'Combien Masteria facture-t-il une journée de formation ?',
-    a: "Une journée est facturée 1 980 € HT, pour un groupe intra (douze stagiaires maximum, réunis chez vous ou derrière leurs écrans), comme pour une personne seule avec un programme écrit pour son poste. Pour deux journées, comptez 3 960 € HT. Masteria n'organise plus de sessions inter-entreprises : chaque devis porte sur votre équipe ou sur une personne.",
+    a: "Une journée est facturée à partir de 1 980 € HT, pour un groupe intra (douze stagiaires maximum, réunis chez vous ou derrière leurs écrans), comme pour une personne seule avec un programme écrit pour son poste. Pour deux journées, comptez au moins 3 960 € HT. Quand le programme est écrit pour votre poste ou vos fichiers, le temps de préparation s'ajoute et figure au devis. Masteria n'organise plus de sessions inter-entreprises : chaque devis porte sur votre équipe ou sur une personne.",
   },
   {
     q: "Sur quels outils d'IA portent les formations ?",

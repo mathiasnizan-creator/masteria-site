@@ -670,14 +670,14 @@ export default function FormationZapierPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                La journée Zapier est facturée 1 980 € HT
+                La journée Zapier démarre à 1 980 € HT
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le montant est identique pour un groupe de douze personnes maximum réuni en intra et pour un participant seul. Les abonnements Zapier se règlent à part, auprès de l'éditeur. La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre la voie à un financement : votre OPCO fixe sa part en fonction de ses règles et de son enveloppe, sur pièces (programme et convention fournis par nos soins). Pour retrouver votre opérateur, utilisez <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> ; pour comprendre comment l'OPCO instruit la demande, lisez la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Le montant de départ est identique pour un groupe de douze personnes maximum réuni en intra et pour un participant seul. Des Zaps montés sur vos propres applications demandent une préparation, chiffrée en plus au devis. Les abonnements Zapier se règlent à part, auprès de l'éditeur. La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre la voie à un financement : votre OPCO fixe sa part en fonction de ses règles et de son enveloppe, sur pièces (programme et convention fournis par nos soins). Pour retrouver votre opérateur, utilisez <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> ; pour comprendre comment l'OPCO instruit la demande, lisez la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  '1 980 € HT, groupe ou personne seule',
+                  'Dès 1 980 € HT, groupe ou personne seule',
                   'Des Zaps en service le soir même',
                   "Abonnement Zapier réglé à l'éditeur",
                   "Convention et programme pour l'OPCO",

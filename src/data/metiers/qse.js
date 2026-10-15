@@ -217,8 +217,8 @@ export default {
  },
  "tarif": {
   "titre": "Prix de la journée de formation IA QSE et prise en charge",
-  "answer": "Une équipe QSE de douze personnes au plus règle 1 980 € HT pour la journée en intra, que la salle soit pleine ou non ; la formule sur deux jours monte à 3 960 € HT. Un responsable QSE seul sur son site peut la suivre en individuel au même prix. Masteria étant certifiée Qualiopi, vous pouvez solliciter l'OPCO, qui tranche selon ses barèmes et son budget restant.",
-  "inclus": "Avant la journée, un cadrage sur vos pièces (extrait de DUERP, procédures, analyse anonymisée, grille d'audit, texte de veille récent), une animation dans l'usine, au bureau ou en ligne, puis les supports, les prompts QSE, les gabarits et les règles pour les données de santé. Une évaluation écrite et le certificat de réalisation terminent la journée ; pour un site éloigné de Lyon, le devis comprend le voyage du formateur.",
+  "answer": "Une équipe QSE de douze personnes au plus règle à partir de 1 980 € HT pour la journée en intra, que la salle soit pleine ou non ; la formule sur deux jours démarre à 3 960 € HT. Un responsable QSE seul sur son site peut la suivre en individuel au même prix. Masteria étant certifiée Qualiopi, vous pouvez solliciter l'OPCO, qui tranche selon ses barèmes et son budget restant.",
+  "inclus": "Une animation dans l'usine, au bureau ou en ligne, puis les supports, les prompts QSE, les gabarits et les règles pour les données de santé. Une évaluation écrite et le certificat de réalisation terminent la journée ; pour un site éloigné de Lyon, le devis comprend le voyage du formateur. La préparation sur vos pièces (extrait de DUERP, procédures, grille d'audit, texte de veille) s'ajoute à ce prix et se chiffre au devis.",
   "financement": "Dans l'industrie, l'opérateur est souvent OPCO 2i ; dans le BTP, Constructys ; ailleurs, la convention collective tranche, et {/quel-opco|Quel OPCO ?} donne la réponse. Les étapes sont détaillées sur notre {/financement-formation-ia|page consacrée au financement d'une formation}. Programme, convention, justificatifs : Masteria vous les remet bien avant la date retenue ; aucun droit CPF n'est mobilisable."
  },
  "faq": [
@@ -252,7 +252,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir, et quel financement espérer ?",
-   "a": "Jusqu'à douze participants, le groupe règle 1 980 € HT pour une journée, 3 960 € HT pour deux, plus le trajet du formateur si le site est éloigné de Lyon. Votre opérateur de compétences (OPCO 2i dans l'industrie, Constructys dans le BTP, selon la branche) peut intervenir selon ses règles, la certification Qualiopi de Masteria le permettant. Les pièces du dossier sont remises avant la journée ; aucun financement CPF ne s'applique."
+   "a": "Jusqu'à douze participants, le groupe règle à partir de 1 980 € HT pour une journée, de 3 960 € HT pour deux, plus le trajet du formateur si le site est éloigné de Lyon. Votre opérateur de compétences (OPCO 2i dans l'industrie, Constructys dans le BTP, selon la branche) peut intervenir selon ses règles, la certification Qualiopi de Masteria le permettant. Les pièces du dossier sont remises avant la journée ; aucun financement CPF ne s'applique."
   }
  ],
  "course": {

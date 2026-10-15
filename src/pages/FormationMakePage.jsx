@@ -734,15 +734,15 @@ export default function FormationMakePage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT la journée de session Make, en groupe comme en individuel
+                Dès 1 980 € HT la journée de session Make, en groupe comme en individuel
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le prix est le même pour un groupe en intra (12 participants au plus) ou pour une personne seule en individuel : 1 980 € HT la journée, 3 960 € HT pour les deux jours recommandés. Les abonnements Make restent à votre charge. Qualiopi certifie Masteria au titre des actions de formation : votre OPCO décide de prendre en charge tout ou partie de la session, selon ses critères et l'état de ses fonds, et nous préparons programme et convention pour votre demande. Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous oriente ; les règles de prise en charge sont détaillées sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Le prix est le même pour un groupe en intra (12 participants au plus) ou pour une personne seule en individuel : dès 1 980 € HT la journée, dès 3 960 € HT pour les deux jours recommandés. Des scénarios construits sur vos outils demandent une préparation, chiffrée en plus au devis. Les abonnements Make restent à votre charge. Qualiopi certifie Masteria au titre des actions de formation : votre OPCO décide de prendre en charge tout ou partie de la session, selon ses critères et l'état de ses fonds, et nous préparons programme et convention pour votre demande. Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous oriente ; les règles de prise en charge sont détaillées sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  '1 980 € HT la journée, en groupe ou en individuel',
-                  'Deux jours recommandés : 3 960 € HT',
+                  'Dès 1 980 € HT la journée, en groupe ou en individuel',
+                  'Deux jours recommandés : dès 3 960 € HT',
                   'Abonnements Make en dehors du prix',
                   'Programme et convention prêts pour votre OPCO',
                 ].map(pt => (

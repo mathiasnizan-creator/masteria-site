@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Ce que coûte la formation IA management",
-  "answer": "Un collectif de douze managers au plus est formé pour 1 980 € HT la journée ; les deux journées font donc 3 960 € HT. Un directeur ou un manager en prise de poste peut être formé seul, sur la même base journalière. Masteria étant certifiée Qualiopi, votre OPCO peut financer la session dans la mesure où ses règles et son budget le permettent. Vous recevez le devis dans les 24 heures.",
-  "inclus": "Un cadrage sur vos gabarits, des comptes rendus récents, un tableau de suivi et quelques situations types anonymisées ; deux journées d'ateliers, en salle ou en ligne ; les supports et livrables (prompts, gabarits, règles d'usage) ; l'évaluation en fin de parcours et le certificat de réalisation. Hors agglomération lyonnaise, le devis comprend aussi les frais de route du formateur.",
+  "answer": "Un collectif de douze managers au plus est formé à partir de 1 980 € HT la journée ; les deux journées démarrent donc à 3 960 € HT. Un directeur ou un manager en prise de poste peut être formé seul, sur la même base journalière. Masteria étant certifiée Qualiopi, votre OPCO peut financer la session dans la mesure où ses règles et son budget le permettent. Vous recevez le devis dans les 24 heures.",
+  "inclus": "Deux journées d'ateliers, en salle ou en ligne ; les supports et livrables (prompts, gabarits, règles d'usage) ; l'évaluation en fin de parcours et le certificat de réalisation. Hors agglomération lyonnaise, le devis comprend aussi les frais de route du formateur. Construire les exercices sur vos gabarits et vos situations de management allonge la préparation, qui s'ajoute et est détaillée au devis.",
   "financement": "Chaque branche professionnelle a son OPCO : {/quel-opco|Quel OPCO ?} vous désigne le vôtre, et {/financement-formation-ia|la page sur le financement} récapitule les dispositifs. Masteria vous adresse programme, convention et pièces justificatives, à transmettre à l'opérateur avant le premier jour. Le CPF reste hors jeu."
  },
  "faq": [
@@ -291,7 +291,7 @@ export default {
   },
   {
    "q": "Quel est le prix, et l'OPCO peut-il le prendre en charge ?",
-   "a": "Le collectif, jusqu'à douze managers, est formé pour 1 980 € HT la journée, 3 960 € HT les deux ; une session sur site loin de Lyon ajoute le trajet du formateur. Grâce à la certification Qualiopi, l'OPCO de l'entreprise peut prendre la formation en charge, à hauteur de ce que permettent ses règles et ses fonds ; nous fournissons le dossier complet. Le CPF ne la finance pas. Devis sous 24 heures."
+   "a": "Le collectif, jusqu'à douze managers, est formé à partir de 1 980 € HT la journée, de 3 960 € HT les deux ; une session sur site loin de Lyon ajoute le trajet du formateur. Grâce à la certification Qualiopi, l'OPCO de l'entreprise peut prendre la formation en charge, à hauteur de ce que permettent ses règles et ses fonds ; nous fournissons le dossier complet. Le CPF ne la finance pas. Devis sous 24 heures."
   },
   {
    "q": "Quelle différence avec la formation IA pour dirigeants ?",

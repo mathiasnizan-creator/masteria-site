@@ -257,8 +257,8 @@ export default {
  },
  "tarif": {
   "titre": "Budget de la formation et financement par l'OPCO",
-  "answer": "En intra, une DSI règle 1 980 € HT chaque jour, pour trois comme pour douze participants ; les deux jours coûtent donc 3 960 € HT. Un DSI ou un RSSI formé seul règle ce même montant par journée. Parce que Masteria est certifiée Qualiopi, votre OPCO peut couvrir une partie de la dépense, selon son barème et ce qui reste de son enveloppe.",
-  "inclus": "En amont, un cadrage sur pièces : tickets et scripts anonymisés, procédures à reprendre, liste des licences et des usages connus. Puis deux jours d'animation, en salle chez vous ou en visioconférence, avec supports, prompts IT, gabarits, matrice données × outils et trame d'homologation. Chaque participant passe une évaluation et reçoit son certificat de réalisation ; quand la session a lieu loin de Lyon, le devis comprend aussi les frais de route du formateur.",
+  "answer": "En intra, une DSI règle à partir de 1 980 € HT chaque jour, pour trois comme pour douze participants ; les deux jours démarrent donc à 3 960 € HT. Un DSI ou un RSSI formé seul règle ce même montant par journée. Parce que Masteria est certifiée Qualiopi, votre OPCO peut couvrir une partie de la dépense, selon son barème et ce qui reste de son enveloppe.",
+  "inclus": "Deux jours d'animation, en salle chez vous ou en visioconférence, avec supports, prompts IT, gabarits, matrice données × outils et trame d'homologation. Chaque participant passe une évaluation et reçoit son certificat de réalisation ; quand la session a lieu loin de Lyon, le devis comprend aussi les frais de route du formateur. La préparation sur vos tickets, vos procédures et votre parc de licences s'ajoute à ce prix de base et se chiffre au devis.",
   "financement": "Pour savoir quel opérateur finance votre branche, l'outil {/quel-opco|Quel OPCO ?} remonte de la convention collective à l'OPCO ; notre page sur le {/financement-formation-ia|financement des formations} détaille les règles. Masteria prépare programme, convention et justificatifs, que vous envoyez à l'OPCO avant le démarrage. Aucun droit CPF ne joue ici."
  },
  "faq": [
@@ -296,7 +296,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir, et quel rôle pour l'OPCO ?",
-   "a": "Le tarif ne bouge pas avec le nombre d'inscrits, dans la limite de douze : une journée vaut 1 980 € HT, le parcours entier 3 960 € HT, et le trajet du formateur s'y ajoute si vos bureaux sont loin de Lyon. L'organisme étant certifié Qualiopi, l'OPCO peut inscrire la session dans votre plan de formation et la financer selon ses critères. Programme, convention et justificatifs sont fournis ; le CPF n'intervient pas."
+   "a": "Le tarif ne bouge pas avec le nombre d'inscrits, dans la limite de douze : une journée démarre à 1 980 € HT, le parcours entier à 3 960 € HT, et le trajet du formateur s'y ajoute si vos bureaux sont loin de Lyon. L'organisme étant certifié Qualiopi, l'OPCO peut inscrire la session dans votre plan de formation et la financer selon ses critères. Programme, convention et justificatifs sont fournis ; le CPF n'intervient pas."
   }
  ],
  "course": {

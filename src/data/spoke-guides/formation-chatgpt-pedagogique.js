@@ -14,12 +14,12 @@ export default {
   metaTitle: 'Formation ChatGPT pédagogique · Qualiopi | Masteria',
   metaDesc: "Formation ChatGPT pour formateurs et responsables pédagogiques : objectifs mesurables, QCM reliés aux objectifs, mode étude, indicateurs Qualiopi, AI Act.",
   keywords: "formation ChatGPT formateurs, ChatGPT ingénierie pédagogique, ChatGPT Qualiopi, ChatGPT QCM, formation IA équipe pédagogique",
-  resume: "Pensée pour les concepteurs de formations, cette formation ChatGPT se déroule sur deux journées, quatorze heures consacrées à vos programmes, vos évaluations et vos supports. Elle réunit formateurs, ingénieurs pédagogiques et responsables d'organisme, douze au plus en intra, ou une personne seule avec le formateur, en salle ou en classe virtuelle. Comptez 1 980 € HT pour chaque journée. Comme les organismes qu'il forme, Masteria détient la certification Qualiopi, et il prépare avec vous la demande que votre OPCO instruit selon sa branche.",
+  resume: "Pensée pour les concepteurs de formations, cette formation ChatGPT se déroule sur deux journées, quatorze heures consacrées à vos programmes, vos évaluations et vos supports. Elle réunit formateurs, ingénieurs pédagogiques et responsables d'organisme, douze au plus en intra, ou une personne seule avec le formateur, en salle ou en classe virtuelle. Comptez au moins 1 980 € HT pour chaque journée, la préparation sur votre catalogue s'ajoutant au devis. Comme les organismes qu'il forme, Masteria détient la certification Qualiopi, et il prépare avec vous la demande que votre OPCO instruit selon sa branche.",
   enBref: [
     { label: 'Formation', value: "ChatGPT dans la conception pédagogique : objectifs mesurables, positionnement et QCM reliés aux objectifs, déroulés et supports, mode étude, appréciations des stagiaires" },
     { label: 'Durée', value: "Deux jours (14 heures), placés de préférence quelques semaines avant un audit Qualiopi ou la refonte d'un catalogue" },
     { label: 'Formats', value: "Équipe pédagogique en intra, douze au maximum, ou formateur indépendant seul ; dans vos salles ou en classe virtuelle" },
-    { label: 'Tarif', value: "1 980 € HT la journée, ateliers construits sur un programme publié de votre catalogue" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée ; ateliers construits sur un programme publié de votre catalogue : préparation en plus, au devis" },
     { label: 'Financement', value: "Masteria est certifié Qualiopi ; l'OPCO de votre structure tranche selon les règles de sa branche" },
     { label: 'Prérequis', value: "Concevoir ou animer des formations ; un compte ChatGPT, Business ou Edu de préférence, vérifié avant la session" },
   ],
@@ -281,14 +281,14 @@ export default {
     },
     {
       q: "Cette formation est-elle finançable pour une équipe pédagogique ?",
-      a: "La certification Qualiopi de Masteria ouvre l'accès à l'OPCO de votre structure, qui décide d'une prise en charge d'après sa convention collective et les fonds disponibles. Une journée intra revient à 1 980 € HT, avec au maximum douze inscrits, dans vos salles ou à distance. Nous remettons un programme dont chaque objectif est relié à sa question d'évaluation, ce que votre équipe saura reconnaître, ainsi que la convention qui accompagne le dossier.",
+      a: "La certification Qualiopi de Masteria ouvre l'accès à l'OPCO de votre structure, qui décide d'une prise en charge d'après sa convention collective et les fonds disponibles. Une journée intra coûte à partir de 1 980 € HT, avec au maximum douze inscrits, dans vos salles ou à distance. Nous remettons un programme dont chaque objectif est relié à sa question d'évaluation, ce que votre équipe saura reconnaître, ainsi que la convention qui accompagne le dossier.",
     },
   ],
   tarifs: {
     titre: "Combien coûte la formation d'une équipe pédagogique",
     paras: [
-      "Ce tarif couvre un travail préalable sur votre catalogue : en amont, le formateur étudie un programme publié, son QCM et son déroulé, ainsi que l'export anonymisé d'une session récente. Les ateliers des deux jours portent sur ces documents, et l'équipe repart avec une matrice d'évaluation complète, une compétence de relecture et une règle d'usage de ChatGPT prête à adopter.",
-      "Prenons un organisme qui inscrit sa responsable pédagogique, deux ingénieures pédagogiques et cinq formateurs, soit huit personnes. Les deux jours en intra lui coûtent 3 960 € HT, ou 495 € HT par participant. Un formateur indépendant qui veut préparer seul son prochain audit verse 1 980 € HT par journée, sur ses propres programmes. Reste à votre OPCO de fixer sa participation, selon ses propres règles.",
+      "Le tarif de base couvre l'animation et les supports. Le travail préalable sur votre catalogue s'y ajoute au devis : en amont, le formateur étudie un programme publié, son QCM et son déroulé, ainsi que l'export anonymisé d'une session récente. Les ateliers des deux jours portent sur ces documents, et l'équipe repart avec une matrice d'évaluation complète, une compétence de relecture et une règle d'usage de ChatGPT prête à adopter.",
+      "Prenons un organisme qui inscrit sa responsable pédagogique, deux ingénieures pédagogiques et cinq formateurs, soit huit personnes. Les deux jours en intra lui coûtent à partir de 3 960 € HT, ou dès 495 € HT par participant. Un formateur indépendant qui veut préparer seul son prochain audit verse à partir de 1 980 € HT par journée, sur ses propres programmes. Reste à votre OPCO de fixer sa participation, selon ses propres règles.",
     ],
   },
   apres: {

@@ -11,12 +11,12 @@ export default {
   h1: "Formation Copilot SEO : analyser vos exports, écrire vos briefs et suivre vos citations",
   metaTitle: "Formation Copilot SEO | Masteria, Qualiopi",
   metaDesc: "Formation Copilot SEO : exports Search Console analysés dans Excel, citations suivies dans Bing Webmaster Tools, briefs et réécritures dans Word. Qualiopi.",
-  resume: "La formation Copilot SEO apprend à une équipe de référencement à se servir de Copilot là où il est solide, sur les exports en tableur et les documents de brief, et à mesurer la présence de son site dans les réponses de Copilot. Le parcours s'étale sur deux jours de sept heures, en équipe (jusqu'à douze) ou pour un consultant seul, au prix journalier de 1 980 € HT. Comme Masteria est certifié Qualiopi, votre OPCO peut prendre en charge tout ou partie de la session, à ses conditions.",
+  resume: "La formation Copilot SEO apprend à une équipe de référencement à se servir de Copilot là où il est solide, sur les exports en tableur et les documents de brief, et à mesurer la présence de son site dans les réponses de Copilot. Le parcours s'étale sur deux jours de sept heures, en équipe (jusqu'à douze) ou pour un consultant seul, à partir de 1 980 € HT par jour. Comme Masteria est certifié Qualiopi, votre OPCO peut prendre en charge tout ou partie de la session, à ses conditions.",
   enBref: [
     { label: 'Formation', value: "Copilot pour le référencement naturel : analyse d'exports Search Console, briefs, réécritures, visibilité dans les réponses générées" },
     { label: 'Durée', value: "Deux jours de sept heures : les données le premier, la rédaction et la visibilité le second" },
     { label: 'Formats', value: "Une équipe SEO ou contenus réunie en intra (douze places), ou un consultant accompagné seul ; dans vos locaux ou à distance" },
-    { label: 'Tarif', value: "Une journée coûte 1 980 € HT, pour un participant comme pour douze" },
+    { label: 'Tarif', value: "Une journée coûte à partir de 1 980 € HT, pour un participant comme pour douze" },
     { label: 'Financement', value: "Masteria est certifié Qualiopi ; l'OPCO de l'entreprise décide de sa participation selon son barème" },
     { label: 'Prérequis', value: "Un accès à Search Console et à Bing Webmaster Tools pour le site travaillé ; un compte Microsoft 365 professionnel" },
   ],
@@ -255,14 +255,14 @@ export default {
     },
     {
       q: "Comment financer une formation Copilot pour une équipe SEO ?",
-      a: "Votre OPCO peut financer la session, car Masteria est certifié Qualiopi pour la catégorie des actions de formation ; il tranche selon les règles de votre branche et l'argent qu'il lui reste. Chaque journée vaut 1 980 € HT, pour un consultant isolé comme pour une équipe de douze, et 3 960 € HT les deux. Les exercices portent sur vos exports et vos pages, et Masteria rédige le programme et la convention à joindre.",
+      a: "Votre OPCO peut financer la session, car Masteria est certifié Qualiopi pour la catégorie des actions de formation ; il tranche selon les règles de votre branche et l'argent qu'il lui reste. Chaque journée vaut au moins 1 980 € HT, pour un consultant isolé comme pour une équipe de douze, et au moins 3 960 € HT les deux. Les exercices portent sur vos exports et vos pages, et Masteria rédige le programme et la convention à joindre.",
     },
   ],
   tarifs: {
-    titre: "Le prix de la session, préparation sur votre site comprise",
+    titre: "Le prix de la session et la préparation sur votre site",
     paras: [
-      "Avant la session, le formateur reçoit deux exports Search Console récents, une capture du rapport AI Performance de Bing Webmaster Tools et trois pages que l'équipe veut rafraîchir. Il adapte les demandes de ce guide à votre site et à votre secteur. L'équipe garde les supports, le classeur d'analyse construit pendant les ateliers et la charte éditoriale rédigée au dernier module.",
-      "Exemple : une équipe contenus de quatre personnes (un responsable SEO, deux rédacteurs, une chargée de contenus). Pour ce groupe, les deux journées en intra reviennent à 3 960 € HT, 990 € HT par tête. Un consultant indépendant ou un responsable seul suit le programme en individuel au même tarif journalier. Le dossier de prise en charge part ensuite à l'OPCO, qui applique le barème de sa branche.",
+      "Le prix de base couvre l'animation, les supports et le programme. Le travail préalable sur votre site s'y ajoute et figure au devis : avant la session, le formateur reçoit deux exports Search Console récents, une capture du rapport AI Performance de Bing Webmaster Tools et trois pages que l'équipe veut rafraîchir. Il adapte les demandes de ce guide à votre site et à votre secteur. L'équipe garde les supports, le classeur d'analyse construit pendant les ateliers et la charte éditoriale rédigée au dernier module.",
+      "Exemple : une équipe contenus de quatre personnes (un responsable SEO, deux rédacteurs, une chargée de contenus). Pour ce groupe, les deux journées en intra démarrent à 3 960 € HT, soit dès 990 € HT par tête. Un consultant indépendant ou un responsable seul suit le programme en individuel au même tarif journalier de base. Le dossier de prise en charge part ensuite à l'OPCO, qui applique le barème de sa branche.",
     ],
   },
   apres: {

@@ -45,7 +45,7 @@ const ESSENTIEL = [
   "On automatise en priorité le tri d'emails, le traitement des factures, les comptes rendus, les relances, la qualification des demandes entrantes et le reporting.",
   "Trois familles d'outils suffisent : les assistants IA (projets et compétences de ChatGPT, Claude ou Gemini), les plateformes no-code (Make, Zapier, n8n, Power Automate) et les agents IA autonomes.",
   "La méthode tient en cinq étapes : cartographier, scorer impact et faisabilité, prototyper sur un seul processus, sécuriser données et validation humaine, déployer et former.",
-  "Côté budget : 0 à 50 € par mois et par personne pour les outils, un développement sur devis, et 1 980 € HT par jour pour former les équipes, seul poste finançable par l'OPCO.",
+  "Côté budget : 0 à 50 € par mois et par personne pour les outils, un développement sur devis, et à partir de 1 980 € HT par jour pour former les équipes, seul poste finançable par l'OPCO.",
 ]
 
 /* ───────── Styles partagés ───────── */
@@ -302,7 +302,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte une automatisation IA pour une PME ?",
-    strong: "Comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis si vous vous faites aider, et 1 980 € par jour pour former une équipe.",
+    strong: "Comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis si vous vous faites aider, et à partir de 1 980 € par jour pour former une équipe.",
     rest: "Beaucoup de premières automatisations se construisent avec les abonnements que l'entreprise paie déjà. Le véritable investissement porte sur le temps de cadrage et sur la montée en compétence des équipes.",
   },
   {
@@ -857,7 +857,7 @@ export default function AutomatisationIAGuidePage() {
           <h2 style={{ ...h2Style, ...prose }}>Combien coûte l'automatisation IA ?</h2>
 
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Pour une PME, comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis établi après cadrage, et 1 980 € HT par jour pour former les équipes, seul poste finançable par votre OPCO.</strong>
+            <strong>Pour une PME, comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis établi après cadrage, et à partir de 1 980 € HT par jour pour former les équipes, seul poste finançable par votre OPCO.</strong>
           </p>
 
           <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
@@ -886,12 +886,13 @@ export default function AutomatisationIAGuidePage() {
             </div>
             <div style={{ ...cardStyle, padding: 30, border: `2px solid ${c}` }}>
               <span style={{ display: 'inline-block', background: c, color: '#fff', padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 14 }}>La formation</span>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 16 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 4 }}>/ jour HT</div>
               </div>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Former une équipe à construire et superviser ses automatisations coûte 1 980 € HT par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel. Masteria est certifié Qualiopi : ce volet est finançable par votre OPCO, et nous montons le dossier avec vous.
+                Former une équipe à construire et superviser ses automatisations démarre à 1 980 € HT par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel ; pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis. Masteria est certifié Qualiopi : ce volet est finançable par votre OPCO, et nous montons le dossier avec vous.
               </p>
             </div>
           </div>

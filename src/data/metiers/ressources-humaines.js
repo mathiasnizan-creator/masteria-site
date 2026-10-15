@@ -255,8 +255,8 @@ export default {
  },
  "tarif": {
   "titre": "Combien coûte la formation IA RH, et qui la finance ?",
-  "answer": "L'équipe RH, de un à 12 participants, est formée pour 1 980 € HT la journée : les deux jours reviennent à 3 960 € HT. Comme Masteria est certifiée Qualiopi, l'opérateur de compétences de votre branche peut intervenir, à hauteur de ce que prévoient ses règles et ses fonds. Votre devis part sous 24 heures, programme ajusté compris.",
-  "inclus": "Avant la session, un cadrage sur vos offres, trames d'entretien, parcours d'intégration et documents anonymisés ; ensuite les deux jours d'animation, sur place ou à distance, les supports et les livrables (bibliothèque de prompts RH, gabarits prêts à l'emploi, cadre d'usage RGPD). Chaque participant passe une évaluation des acquis et reçoit un certificat de réalisation. Hors région lyonnaise, le trajet du formateur est ajouté au devis.",
+  "answer": "L'équipe RH, de un à 12 participants, est formée à partir de 1 980 € HT la journée : les deux jours démarrent à 3 960 € HT. Comme Masteria est certifiée Qualiopi, l'opérateur de compétences de votre branche peut intervenir, à hauteur de ce que prévoient ses règles et ses fonds. Votre devis part sous 24 heures, programme ajusté compris.",
+  "inclus": "Les deux jours d'animation, sur place ou à distance, les supports et les livrables (bibliothèque de prompts RH, gabarits prêts à l'emploi, cadre d'usage RGPD). Chaque participant passe une évaluation des acquis et reçoit un certificat de réalisation. Hors région lyonnaise, le trajet du formateur est ajouté au devis. La préparation sur vos offres, vos trames d'entretien et vos parcours d'intégration vient en supplément, indiquée au devis.",
   "financement": "En RH, le circuit vous est familier : la convention collective désigne l'OPCO, l'outil {/quel-opco|Quel OPCO ?} vous le donne, et {/financement-formation-ia|notre guide du financement} récapitule les dispositifs. Nous fournissons programme, convention et justificatifs, à joindre à la demande avant la session. Pas de prise en charge par le CPF."
  },
  "faq": [
@@ -298,7 +298,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir pour former une équipe RH à l'IA ?",
-   "a": "Chaque jour de formation coûte 1 980 € HT au groupe RH (12 personnes au plus), soit 3 960 € HT pour deux jours. Le circuit OPCO vous est familier : nous transmettons programme, convention et pièces, à joindre à une demande faite avant la session. Le CPF ne couvre pas cette formation. Comptez 24 heures pour recevoir le devis."
+   "a": "Chaque jour de formation coûte à partir de 1 980 € HT au groupe RH (12 personnes au plus), soit à partir de 3 960 € HT pour deux jours. Le circuit OPCO vous est familier : nous transmettons programme, convention et pièces, à joindre à une demande faite avant la session. Le CPF ne couvre pas cette formation. Comptez 24 heures pour recevoir le devis."
   }
  ],
  "course": {

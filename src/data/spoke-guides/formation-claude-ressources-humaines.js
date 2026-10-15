@@ -8,12 +8,12 @@ export default {
   pagePropre: true,
   auteur: true,
   metaDesc: "Formation Claude pour les RH : relire un accord et ses avenants en entier, synthétiser des entretiens sans nom, cadrer RGPD et AI Act avant tout tri de CV.",
-  resume: "Notre formation Claude destinée aux ressources humaines tient en deux jours, soit 14 heures d'ateliers, en présentiel ou en ligne, pour un groupe qui ne dépasse pas douze personnes ou pour une seule personne accompagnée. On y travaille vos accords collectifs, vos trames d'entretien et vos procédures. Chaque journée coûte 1 980 € HT. L'organisme détient la certification Qualiopi, ce qui ouvre un financement par votre OPCO selon les critères de votre branche professionnelle.",
+  resume: "Notre formation Claude destinée aux ressources humaines tient en deux jours, soit 14 heures d'ateliers, en présentiel ou en ligne, pour un groupe qui ne dépasse pas douze personnes ou pour une seule personne accompagnée. On y travaille vos accords collectifs, vos trames d'entretien et vos procédures. Chaque journée coûte à partir de 1 980 € HT, hors préparation des ateliers sur vos pièces, chiffrée au devis. L'organisme détient la certification Qualiopi, ce qui ouvre un financement par votre OPCO selon les critères de votre branche professionnelle.",
   enBref: [
     { label: 'Formation', value: "Une fonction RH outillée par Claude : accords collectifs relus en entier, campagnes d'entretiens synthétisées sans nom, communications sensibles, recrutement encadré par le RGPD et l'AI Act" },
     { label: 'Durée', value: "Deux fois sept heures, en journées consécutives ou séparées selon votre calendrier social" },
     { label: 'Formats', value: "Service RH réuni en intra jusqu'à douze participants, ou parcours individuel ; dans vos locaux en France ou sur vos sites européens, américains et indiens, ou par visioconférence sur Teams ou Google Meet" },
-    { label: 'Tarif', value: "1 980 € HT par journée, ateliers bâtis sur vos accords, vos trames et vos modèles de courrier" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée ; pour des ateliers bâtis sur vos accords, vos trames et vos modèles de courrier, la préparation s'ajoute au devis" },
     { label: 'Financement', value: "Masteria est certifié Qualiopi ; votre OPCO peut couvrir l'action si la demande lui parvient avant le premier jour" },
     { label: 'Prérequis', value: "Un compte Claude sur une offre payante, Team de préférence, et des textes RH débarrassés de toute donnée nominative pour les exercices" },
   ],
@@ -273,14 +273,14 @@ export default {
     },
     {
       q: "Comment présenter la formation Claude du service RH à notre OPCO ?",
-      a: "Comme une action du plan de développement des compétences, dispensée par un organisme certifié Qualiopi, ce qui la rend éligible à une prise en charge. Votre entreprise dépose le dossier avant la première journée, accompagné du programme et de la convention que nous rédigeons. L'OPCO applique ensuite les plafonds de votre branche, le tarif journalier de 1 980 € HT servant de base, que le groupe compte trois ou douze personnes.",
+      a: "Comme une action du plan de développement des compétences, dispensée par un organisme certifié Qualiopi, ce qui la rend éligible à une prise en charge. Votre entreprise dépose le dossier avant la première journée, accompagné du programme et de la convention que nous rédigeons. L'OPCO applique ensuite les plafonds de votre branche, le tarif journalier à partir de 1 980 € HT servant de base, que le groupe compte trois ou douze personnes.",
     },
   ],
   tarifs: {
-    titre: "Le prix couvre la préparation des ateliers sur vos accords et vos trames",
+    titre: "Le prix de base, et la préparation des ateliers sur vos accords et vos trames en plus",
     paras: [
-      "Avant la session, le formateur prépare les ateliers à partir de vos propres pièces : un accord d'entreprise et ses avenants, votre trame d'entretien, une note de réorganisation passée, vos modèles de courrier. Les documents nominatifs restent chez vous ; nous travaillons sur des versions pseudonymisées ou sur des dossiers fictifs construits à l'image des vôtres. Un groupe type réunit une responsable RH, un juriste social, deux chargés de recrutement et des gestionnaires du personnel.",
-      "Pour une équipe de huit personnes en intra, les deux journées reviennent à 3 960 € HT, soit 495 € HT par participant, auxquels s'ajoute la TVA de 20 %. Une personne formée seule paie 1 980 € HT par journée. L'entreprise sollicite son OPCO, qui finance selon les règles propres à la branche, et nous joignons au dossier le programme détaillé et la convention signée.",
+      "Avant la session, pour une formation sur mesure, le formateur prépare les ateliers à partir de vos propres pièces : un accord d'entreprise et ses avenants, votre trame d'entretien, une note de réorganisation passée, vos modèles de courrier. Les documents nominatifs restent chez vous ; nous travaillons sur des versions pseudonymisées ou sur des dossiers fictifs construits à l'image des vôtres. Un groupe type réunit une responsable RH, un juriste social, deux chargés de recrutement et des gestionnaires du personnel. Ce travail de préparation est chiffré au devis, en plus du prix de la journée.",
+      "Pour une équipe de huit personnes en intra, les deux journées coûtent à partir de 3 960 € HT, soit dès 495 € HT par participant, auxquels s'ajoute la TVA de 20 %. Une personne formée seule paie à partir de 1 980 € HT par journée. L'entreprise sollicite son OPCO, qui finance selon les règles propres à la branche, et nous joignons au dossier le programme détaillé et la convention signée.",
     ],
   },
   apres: {

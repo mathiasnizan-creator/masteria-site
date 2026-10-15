@@ -16,7 +16,7 @@ const BLOG_FAQ = [
   { q: "Les articles sont-ils tenus à jour ?", a: "Oui, quand un fait change : le prix d'une licence, le nom d'un outil, une échéance du règlement européen sur l'IA. La date de la dernière mise à jour figure en tête de l'article, à côté de sa date de publication." },
   { q: "L'OPCO peut-il financer une formation Masteria ?", a: "La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre l'accès à l'OPCO de votre branche, qui décide selon ses règles et dans la limite de ses fonds. L'article sur le financement par l'OPCO explique comment trouver le vôtre et monter le dossier." },
   { q: "Faut-il un bagage technique pour suivre une formation ?", a: "Aucun. Les formations partent du métier des participants et de leurs propres fichiers. Savoir se servir d'un ordinateur et d'une messagerie suffit pour commencer." },
-  { q: "Une formation peut-elle être construite pour notre secteur ?", a: "Oui. En intra, jusqu'à 12 participants, le programme reprend vos outils, vos documents et les tâches de vos équipes. La journée coûte 1 980 € HT, et un accompagnement individuel est possible au même tarif." },
+  { q: "Une formation peut-elle être construite pour notre secteur ?", a: "Oui. En intra, jusqu'à 12 participants, le programme reprend vos outils, vos documents et les tâches de vos équipes. La journée démarre à 1 980 € HT, préparation sur mesure en plus, et un accompagnement individuel est possible au même tarif." },
 ]
 
 const SORT_OPTIONS = [

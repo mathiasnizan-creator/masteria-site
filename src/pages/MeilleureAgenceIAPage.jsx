@@ -116,7 +116,7 @@ const BUDGETS = [
   { mission: 'Application IA sur mesure', range: 'Dès 30 000 €', note: "Un produit complet aux intégrations profondes. Déployé sur plusieurs filiales ou plusieurs pays, il dépasse 100 000 € et atteint parfois plusieurs centaines de milliers d'euros." },
   { mission: 'Suivi et évolutions (par mois)', range: 'Dès 2 000 € / mois', note: "Supervision, rejeu des tests, corrections, nouvelles versions de modèles. Le coût d'usage des modèles s'y ajoute." },
   { mission: 'Développeur IA en régie (par jour)', range: '600 à 1 200 € et plus', note: "Tarif journalier d'un développeur ou d'un data scientist détaché chez vous, selon son expérience." },
-  { mission: 'Formation intra de vos équipes (par jour)', range: '1 980 € HT', note: "Prix Masteria, par groupe de douze participants au maximum, finançable par l'OPCO de votre branche selon ses règles et ses fonds." },
+  { mission: 'Formation intra de vos équipes (par jour)', range: 'dès 1 980 € HT', note: "Prix de départ Masteria, préparation sur mesure en plus au devis, par groupe de douze participants au maximum, finançable par l'OPCO de votre branche selon ses règles et ses fonds." },
 ]
 
 /* ── Repères citables (GEO) : dates sourcées, vocabulaire, sources ── */
@@ -684,7 +684,7 @@ export default function MeilleureAgenceIAPage() {
                   {[
                     ['Développement', "assistants, agents, automatisations et applications reliés à votre ERP, à votre CRM ou à votre gestion documentaire par API ou par MCP. Code, prompts et documentation vous reviennent ; une régie sur site reste possible."],
                     ['Cadrage et conseil', "choix du cas d'usage, jeu de cas tests, règles RGPD et AI Act, accompagnement des utilisateurs jusqu'à l'usage quotidien. Votre OPCO ne prend en charge aucune de ces prestations."],
-                    ['Formation', "certifiée Qualiopi pour la catégorie « actions de formation », au tarif journalier de 1 980 € HT, en intra (douze participants au plus par groupe) ou en individuel, et finançable par l'OPCO de votre branche selon ses règles et ses fonds. Le catalogue réunit plus de 100 programmes."],
+                    ['Formation', "certifiée Qualiopi pour la catégorie « actions de formation », au tarif journalier de départ de 1 980 € HT, en intra (douze participants au plus par groupe) ou en individuel, et finançable par l'OPCO de votre branche selon ses règles et ses fonds. Le catalogue réunit plus de 100 programmes."],
                   ].map(([t, d]) => (
                     <li key={t} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                       <BadgeCheck size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />

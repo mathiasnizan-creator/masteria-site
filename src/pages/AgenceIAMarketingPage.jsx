@@ -149,7 +149,7 @@ const TABLE_DELEGUER = [
   {
     critere: 'Prix',
     deleguer: "Forfait sur devis, rédigé après le cadrage",
-    former: "1 980 € HT la journée de formation, que le groupe compte une personne ou douze",
+    former: "À partir de 1 980 € HT la journée de formation, que le groupe compte une personne ou douze",
   },
   {
     critere: 'Financement OPCO',
@@ -255,7 +255,7 @@ const FAQ = [
   },
   {
     q: "Quelle différence avec une formation IA marketing ?",
-    a: "Avec la formation, vos équipes apprennent à produire seules. Elle entre dans notre certification Qualiopi, elle se facture 1 980 € HT la journée, et votre OPCO peut en couvrir le coût ; il applique ses propres règles et dépend des fonds qui lui restent. L'agence prend le chemin inverse : nous produisons et pilotons à votre place, sans prendre de temps à vos équipes au quotidien. Les deux s'enchaînent bien, l'agence lançant le dispositif avant de transmettre la méthode à vos collaborateurs.",
+    a: "Avec la formation, vos équipes apprennent à produire seules. Elle entre dans notre certification Qualiopi, elle se facture à partir de 1 980 € HT la journée (préparation sur mesure en plus, au devis), et votre OPCO peut en couvrir le coût ; il applique ses propres règles et dépend des fonds qui lui restent. L'agence prend le chemin inverse : nous produisons et pilotons à votre place, sans prendre de temps à vos équipes au quotidien. Les deux s'enchaînent bien, l'agence lançant le dispositif avant de transmettre la méthode à vos collaborateurs.",
   },
   {
     q: "Intervenez-vous en Suisse romande ?",
@@ -271,7 +271,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte une agence IA marketing ?",
-    a: "Le prix dépend des canaux confiés, du volume à produire, du niveau de pilotage et des automatisations à construire. Nous rédigeons un forfait après le cadrage : quelques milliers d'euros suffisent à un premier périmètre (un canal, ou le socle de marque), un dispositif complet relié à vos outils se compte en dizaines de milliers, et l'on dépasse 100 000 € quand le dispositif couvre plusieurs pays ou plusieurs marques. Production et pilotage, pas finançables par votre OPCO, se règlent sur le budget marketing. Si vous préférez former vos équipes, la formation IA marketing (1 980 € HT la journée) ouvre droit à une demande auprès de votre OPCO, qui tranche d'après ses règles et ses fonds.",
+    a: "Le prix dépend des canaux confiés, du volume à produire, du niveau de pilotage et des automatisations à construire. Nous rédigeons un forfait après le cadrage : quelques milliers d'euros suffisent à un premier périmètre (un canal, ou le socle de marque), un dispositif complet relié à vos outils se compte en dizaines de milliers, et l'on dépasse 100 000 € quand le dispositif couvre plusieurs pays ou plusieurs marques. Production et pilotage, pas finançables par votre OPCO, se règlent sur le budget marketing. Si vous préférez former vos équipes, la formation IA marketing (à partir de 1 980 € HT la journée) ouvre droit à une demande auprès de votre OPCO, qui tranche d'après ses règles et ses fonds.",
   },
   {
     q: "Masteria peut-elle jouer le rôle d'un cabinet de conseil marketing digital ?",

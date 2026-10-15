@@ -11,12 +11,12 @@ export default {
   h1: "Formation ChatGPT marketing : une campagne, du brief au bilan",
   metaTitle: "Formation ChatGPT marketing · campagnes, visuels | Masteria",
   metaDesc: "Formation ChatGPT marketing en 2 jours : voix de la marque rangée dans un projet, visuels Images 2.5, contenus par canal, bilan de campagne. Qualiopi.",
-  resume: "La formation ChatGPT marketing apprend à une équipe marketing à mener une campagne entière avec ChatGPT, du brief aux visuels puis au bilan chiffré, sans que la marque perde sa voix en chemin. Le parcours dure deux jours de sept heures, chez vous ou en visioconférence ; il réunit jusqu'à douze participants, ou une personne seule, et chaque jour se facture 1 980 € HT. Masteria possède la certification Qualiopi, délivrée pour ses actions de formation, condition pour solliciter un financement de votre OPCO.",
+  resume: "La formation ChatGPT marketing apprend à une équipe marketing à mener une campagne entière avec ChatGPT, du brief aux visuels puis au bilan chiffré, sans que la marque perde sa voix en chemin. Le parcours dure deux jours de sept heures, chez vous ou en visioconférence ; il réunit jusqu'à douze participants, ou une personne seule, et chaque jour se facture à partir de 1 980 € HT. Masteria possède la certification Qualiopi, délivrée pour ses actions de formation, condition pour solliciter un financement de votre OPCO.",
   enBref: [
     { label: 'Formation', value: "ChatGPT appliqué au marketing : plateforme de marque, contenus par canal, visuels, veille des concurrents et bilan de campagne" },
     { label: 'Durée', value: "Quatorze heures en deux journées, que beaucoup d'équipes placent de part et d'autre d'un lancement" },
     { label: 'Formats', value: "Sur votre site ou en visioconférence, douze participants au maximum ; formule individuelle pour une responsable marketing seule" },
-    { label: 'Tarif', value: "Un forfait journalier de 1 980 € HT, sans supplément selon l'effectif, soit 3 960 € HT au total" },
+    { label: 'Tarif', value: "Un forfait journalier à partir de 1 980 € HT, sans supplément selon l'effectif, soit à partir de 3 960 € HT au total" },
     { label: 'Financement', value: "Masteria est certifié Qualiopi (actions de formation) ; votre OPCO statue sur le financement avec ses propres critères" },
     { label: 'Prérequis', value: "Un compte ChatGPT par participant et une campagne récente ou en préparation, apportée comme matière d'atelier" },
   ],
@@ -185,8 +185,8 @@ export default {
   tarifs: {
     titre: "Ce que coûte la formation pour un service marketing",
     paras: [
-      "Deux personnes ou douze, le tarif reste fixé à 1 980 € HT la journée. Une équipe de six (la directrice marketing, deux chefs de produit, deux chargés de contenu et un graphiste) règle 3 960 € HT les deux jours, ce qui représente 660 € HT par participant. La formule individuelle, pour une responsable marketing qui veut avancer seule sur ses campagnes, suit le même prix journalier.",
-      "Le prix comprend la préparation : en amont, le formateur parcourt avec vous la plateforme de marque, un brief récent et l'export d'une campagne terminée, pour que chaque atelier porte sur votre matière. Votre OPCO peut alors intervenir, grâce à la certification Qualiopi de Masteria, et décide d'après ses règles et l'enveloppe qui lui reste ; programme et convention se préparent avec vous.",
+      "Deux personnes ou douze, le tarif de base part de 1 980 € HT la journée. Une équipe de six (la directrice marketing, deux chefs de produit, deux chargés de contenu et un graphiste) règle à partir de 3 960 € HT les deux jours, soit dès 660 € HT par participant. La formule individuelle, pour une responsable marketing qui veut avancer seule sur ses campagnes, suit le même prix journalier de base.",
+      "Le prix de base couvre l'animation, les supports et le programme. Adapter les ateliers à votre marque demande une préparation, chiffrée en plus au devis : en amont, le formateur parcourt avec vous la plateforme de marque, un brief récent et l'export d'une campagne terminée, pour que chaque atelier porte sur votre matière. Votre OPCO peut alors intervenir, grâce à la certification Qualiopi de Masteria, et décide d'après ses règles et l'enveloppe qui lui reste ; programme et convention se préparent avec vous.",
     ],
   },
   cta: {
@@ -239,7 +239,7 @@ export default {
     },
     {
       q: "Comment se finance une formation ChatGPT marketing ?",
-      a: "Pour une entreprise française, l'OPCO de la branche peut prendre les deux journées à sa charge, d'après ses propres critères et ses fonds disponibles. La demande est recevable, l'organisme (Masteria) ayant obtenu la certification Qualiopi ; programme détaillé et convention vous sont fournis avant la session. Une équipe installée à Genève ou à Bruxelles ne relève d'aucun OPCO : la session y est chiffrée sur devis en euros HT. Sans prise en charge, vous réglez 1 980 € HT la journée, groupe entier compris.",
+      a: "Pour une entreprise française, l'OPCO de la branche peut prendre les deux journées à sa charge, d'après ses propres critères et ses fonds disponibles. La demande est recevable, l'organisme (Masteria) ayant obtenu la certification Qualiopi ; programme détaillé et convention vous sont fournis avant la session. Une équipe installée à Genève ou à Bruxelles ne relève d'aucun OPCO : la session y est chiffrée sur devis en euros HT. Sans prise en charge, vous réglez à partir de 1 980 € HT la journée, groupe entier compris.",
     },
   ],
 }

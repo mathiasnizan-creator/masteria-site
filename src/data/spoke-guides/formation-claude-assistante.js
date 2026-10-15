@@ -8,12 +8,12 @@ export default {
   pagePropre: true,
   auteur: true,
   metaDesc: "Formation Claude pour assistantes de direction : Outlook, agenda, comptes rendus, dossier de comité, courriers du dirigeant, Excel et PowerPoint.",
-  resume: "Pensée pour les assistantes et assistants de direction, cette formation Claude dure deux jours (14 heures) et se suit en présentiel dans l'entreprise ou à distance. Elle réunit jusqu'à douze personnes d'un même siège, ou une seule en parcours individuel. Le prix d'une journée est de 1 980 € HT. Organisme certifié Qualiopi, Masteria monte avec vous la demande à l'OPCO, dont l'aide varie selon la branche et suppose un dépôt avant la session.",
+  resume: "Pensée pour les assistantes et assistants de direction, cette formation Claude dure deux jours (14 heures) et se suit en présentiel dans l'entreprise ou à distance. Elle réunit jusqu'à douze personnes d'un même siège, ou une seule en parcours individuel. Le prix d'une journée part de 1 980 € HT, les exercices sur vos propres documents étant préparés en plus, au devis. Organisme certifié Qualiopi, Masteria monte avec vous la demande à l'OPCO, dont l'aide varie selon la branche et suppose un dépôt avant la session.",
   enBref: [
     { label: 'Formation', value: "Claude dans le quotidien d'une assistante de direction : boîte Outlook, agenda, dossiers de comité, courriers, tableaux Excel et supports PowerPoint" },
     { label: 'Durée', value: "Quatorze heures réparties sur deux jours, calées de préférence avant un comité réel à préparer" },
     { label: 'Formats', value: "Assistantes d'un même siège en intra, douze au plus, ou parcours individuel ; en présentiel dans vos bureaux d'Europe, des États-Unis ou d'Inde, ou en visioconférence" },
-    { label: 'Tarif', value: "Exercices préparés sur vos modèles de courrier, vos comptes rendus et vos ordres du jour, pour 1 980 € HT la journée" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée ; exercices sur vos modèles de courrier, vos comptes rendus et vos ordres du jour : préparation en plus, au devis" },
     { label: 'Financement', value: "Masteria, organisme certifié Qualiopi, ouvre l'accès au financement de votre OPCO, selon votre branche ; dossier à déposer avant la session" },
     { label: 'Prérequis', value: "Une offre Claude payante ; Microsoft 365 avec Exchange Online pour l'extension Outlook, ou Google Workspace pour les connecteurs Gmail et Agenda" },
   ],
@@ -267,7 +267,7 @@ export default {
     },
     {
       q: "Qui monte le dossier de financement de la formation des assistantes ?",
-      a: "La demande part de votre employeur vers son OPCO, avant la première journée. Masteria, certifié Qualiopi, vous remet de quoi constituer le dossier : le programme de la formation et la convention. L'OPCO fixe ensuite le montant pris en charge d'après les critères de votre branche, sur une base de 1 980 € HT pour chaque journée.",
+      a: "La demande part de votre employeur vers son OPCO, avant la première journée. Masteria, certifié Qualiopi, vous remet de quoi constituer le dossier : le programme de la formation et la convention. L'OPCO fixe ensuite le montant pris en charge d'après les critères de votre branche, sur une base à partir de 1 980 € HT pour chaque journée.",
     },
   ],
   terrain: {
@@ -278,8 +278,8 @@ export default {
   tarifs: {
     titre: "Les ateliers se préparent sur vos ordres du jour, vos comptes rendus et vos courriers types",
     paras: [
-      "En amont, nous recueillons quelques documents de votre poste : l'ordre du jour d'un comité récent, deux comptes rendus, trois courriers signés par la direction, le tableau de suivi des actions. Le formateur en tire les exercices, ou fabrique des dossiers d'exercice de même forme quand les originaux sont trop confidentiels pour être projetés. Une session type réunit les assistantes de direction d'un siège, parfois rejointes par l'office manager ou l'assistante du conseil d'administration.",
-      "Former quatre assistantes ensemble pendant deux jours coûte 3 960 € HT, soit 990 € HT par personne, la TVA de 20 % venant en plus. Seule, une assistante paie la journée 1 980 € HT. Votre OPCO peut financer une partie ou la totalité de cette dépense, d'après les critères que fixe votre branche, pourvu que la demande lui arrive avant la formation.",
+      "En amont, nous recueillons quelques documents de votre poste : l'ordre du jour d'un comité récent, deux comptes rendus, trois courriers signés par la direction, le tableau de suivi des actions. Le formateur en tire les exercices, ou fabrique des dossiers d'exercice de même forme quand les originaux sont trop confidentiels pour être projetés. Ce travail d'amont est chiffré au devis, en plus du prix de la journée. Une session type réunit les assistantes de direction d'un siège, parfois rejointes par l'office manager ou l'assistante du conseil d'administration.",
+      "Former quatre assistantes ensemble pendant deux jours coûte à partir de 3 960 € HT, soit dès 990 € HT par personne, la TVA de 20 % venant en plus. Seule, une assistante paie la journée à partir de 1 980 € HT. Votre OPCO peut financer une partie ou la totalité de cette dépense, d'après les critères que fixe votre branche, pourvu que la demande lui arrive avant la formation.",
     ],
   },
   apres: {

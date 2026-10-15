@@ -77,7 +77,7 @@ export default {
   ],
   formation: [
     "Quatre métiers héritent des outils : les chargés de pharmacovigilance, les équipes d'affaires réglementaires, l'assurance qualité et l'information médicale. Nous les formons à relire une sortie de modèle comme un document entrant : vérifier la source citée, repérer l'omission, tracer la correction dans le système qualité.",
-    "Une journée intra sur vos propres documents se facture 1 980 € HT. En France, un laboratoire ou un établissement privé peut la faire financer par son OPCO, puisque nos actions de formation sont certifiées Qualiopi. La qualification HDS d'un projet ou la validation d'un outil relèvent du conseil, que ce financement ne couvre pas.",
+    "Une journée intra sur vos propres documents se facture à partir de 1 980 € HT, le travail de préparation sur ces documents étant ajouté au devis. En France, un laboratoire ou un établissement privé peut la faire financer par son OPCO, puisque nos actions de formation sont certifiées Qualiopi. La qualification HDS d'un projet ou la validation d'un outil relèvent du conseil, que ce financement ne couvre pas.",
   ],
 
   guide: {

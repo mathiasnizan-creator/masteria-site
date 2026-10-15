@@ -259,8 +259,8 @@ export default {
  },
  "tarif": {
   "titre": "Tarif et financement selon que vous répondez ou que vous achetez",
-  "answer": "Une journée d'intra est facturée 1 980 € HT, 12 participants au plus, et la formation complète 3 960 € HT ; un parcours individuel se règle lui aussi à la journée. Une entreprise qui répond aux marchés peut solliciter son OPCO : Masteria est certifiée Qualiopi, et l'opérateur tranche selon son barème et ses disponibilités. Côté acheteur public, le budget de formation de l'organisme paie la session ; à ce montant, et sauf besoin global plus large, l'achat reste sous les 60 000 € HT en deçà desquels un marché de services se passe sans publicité ni mise en concurrence préalables.",
-  "inclus": "Le prix comprend le cadrage sur vos pièces (un DCE récent, un mémoire remis, une consultation en préparation, vos outils), les deux journées en présentiel comme à distance, supports compris, puis les livrables : prompts, gabarits de lecture de DCE, de mémoire, de contrôle des pièces et de grille d'analyse, règles d'usage. Une évaluation des acquis clôt la formation, et chacun reçoit son certificat de réalisation. Pour une session sur place, le trajet du formateur figure en plus sur le devis.",
+  "answer": "Une journée d'intra est facturée à partir de 1 980 € HT, 12 participants au plus, et la formation complète à partir de 3 960 € HT ; un parcours individuel se règle lui aussi à la journée. Une entreprise qui répond aux marchés peut solliciter son OPCO : Masteria est certifiée Qualiopi, et l'opérateur tranche selon son barème et ses disponibilités. Côté acheteur public, le budget de formation de l'organisme paie la session ; à ce montant, et sauf besoin global plus large, l'achat reste sous les 60 000 € HT en deçà desquels un marché de services se passe sans publicité ni mise en concurrence préalables.",
+  "inclus": "Le prix de base comprend les deux journées en présentiel comme à distance, supports compris, puis les livrables : prompts, gabarits de lecture de DCE, de mémoire, de contrôle des pièces et de grille d'analyse, règles d'usage. Une évaluation des acquis clôt la formation, et chacun reçoit son certificat de réalisation. Pour une session sur place, le trajet du formateur figure en plus sur le devis. Les exercices construits sur vos pièces (un DCE récent, un mémoire remis, une consultation en cours) demandent un temps de préparation en plus, chiffré au devis.",
   "financement": "Entreprise privée : votre convention collective désigne l'OPCO, que l'outil {/quel-opco|Quel OPCO ?} retrouve ; {/financement-formation-ia|notre page financement} présente les autres dispositifs. Collectivité ou service de l'État : budget de formation de l'organisme, sur bon de commande. Hôpital public : budget formation de l'hôpital, avec l'ANFH selon ses axes. Programme, convention et justificatifs vous parviennent dans la forme que votre financeur demande ; le CPF reste hors jeu."
  },
  "faq": [
@@ -294,7 +294,7 @@ export default {
   },
   {
    "q": "Comment une collectivité ou un hôpital finance-t-il la session ?",
-   "a": "Selon son statut, vérifié au cadrage. Une collectivité territoriale ou un service de l'État règle la session sur ses crédits de formation, par bon de commande ; à 3 960 € HT pour deux jours, l'achat se situe sous le seuil de dispense de procédure, apprécié sur l'ensemble de son besoin de même nature. Un hôpital public mobilise son plan de formation, avec l'appui éventuel de l'ANFH. Une entreprise privée passe par son OPCO. Dans tous les cas, nous fournissons convention, programme et justificatifs dans la forme attendue."
+   "a": "Selon son statut, vérifié au cadrage. Une collectivité territoriale ou un service de l'État règle la session sur ses crédits de formation, par bon de commande ; à partir de 3 960 € HT pour deux jours, l'achat se situe sous le seuil de dispense de procédure, apprécié sur l'ensemble de son besoin de même nature. Un hôpital public mobilise son plan de formation, avec l'appui éventuel de l'ANFH. Une entreprise privée passe par son OPCO. Dans tous les cas, nous fournissons convention, programme et justificatifs dans la forme attendue."
   },
   {
    "q": "Avec quels outils travaillez-vous sur les marchés publics ?",
@@ -306,7 +306,7 @@ export default {
   },
   {
    "q": "Quelle durée et quel prix pour cette formation ?",
-   "a": "La version complète dure deux jours (14 heures), réservés à 12 personnes au plus, sur site ou en visioconférence ; elle est facturée 1 980 € HT par jour, donc 3 960 € HT pour la session complète. Un seul versant, répondre ou acheter, tient en une journée. Une personne qui porte seule la fonction marchés peut suivre un parcours individuel, facturé lui aussi à la journée. Comptez 24 heures pour recevoir le devis, présenté comme l'exige votre financeur."
+   "a": "La version complète dure deux jours (14 heures), réservés à 12 personnes au plus, sur site ou en visioconférence ; elle est facturée à partir de 1 980 € HT par jour, donc à partir de 3 960 € HT pour la session complète. Un seul versant, répondre ou acheter, tient en une journée. Une personne qui porte seule la fonction marchés peut suivre un parcours individuel, facturé lui aussi à la journée. Comptez 24 heures pour recevoir le devis, présenté comme l'exige votre financeur."
   }
  ],
  "course": {

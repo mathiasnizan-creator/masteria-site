@@ -167,7 +167,7 @@ const COMPARATIF = [
   },
   {
     critere: 'Budget type',
-    cabinet: "Forfait fixé après le cadrage, en fourchettes larges selon le périmètre ; la formation, facturée 1 980 € HT par jour, reste éligible au financement de votre OPCO.",
+    cabinet: "Forfait fixé après le cadrage, en fourchettes larges selon le périmètre ; la formation, facturée à partir de 1 980 € HT par jour, reste éligible au financement de votre OPCO.",
     esn: "Contrats longs, équipes nombreuses, coût de coordination élevé.",
     freelance: "Tarif journalier souvent bas ; cadrage, règles d'usage et continuité restent à votre charge.",
   },
@@ -271,7 +271,7 @@ const FAQ_CONSEIL = [
   },
   {
     q: "Combien coûte un cabinet de conseil en IA ?",
-    a: "Le conseil se facture au forfait. Le devis arrive après le cadrage, quand le périmètre est connu, et les ordres de grandeur restent larges : un petit périmètre ou un prototype démarre à quelques milliers d'euros, un projet mis en production se chiffre en dizaines de milliers, et un déploiement de groupe sur plusieurs pays va au-delà de 100 000 €, et certains se comptent en centaines de milliers. Le conseil comme le développement ne sont pas finançables par votre OPCO ; il peut en revanche financer la formation, facturée 1 980 € HT chaque jour de session, dans la limite des règles et des fonds de votre branche. Les 30 minutes de cadrage sont offertes.",
+    a: "Le conseil se facture au forfait. Le devis arrive après le cadrage, quand le périmètre est connu, et les ordres de grandeur restent larges : un petit périmètre ou un prototype démarre à quelques milliers d'euros, un projet mis en production se chiffre en dizaines de milliers, et un déploiement de groupe sur plusieurs pays va au-delà de 100 000 €, et certains se comptent en centaines de milliers. Le conseil comme le développement ne sont pas finançables par votre OPCO ; il peut en revanche financer la formation, facturée à partir de 1 980 € HT chaque jour de session (préparation sur mesure en plus, au devis), dans la limite des règles et des fonds de votre branche. Les 30 minutes de cadrage sont offertes.",
   },
   {
     q: "Faut-il un expert en conseil IA externe ou recruter en interne ?",
@@ -1071,7 +1071,7 @@ export default function ConseilIAPage() {
               Et la formation des équipes&nbsp;?
             </h2>
             <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: 0, maxWidth: 680 }}>
-              Un outil ne sert que si chacun sait quand s'y fier et quand le contredire. Nous formons soit un groupe de votre entreprise, jusqu'à 12 participants, soit une personne seule&nbsp;; chaque journée est à 1 980 € HT, et un financement par l'OPCO dont vous dépendez reste possible, selon ses règles et ses fonds. Plus de 100 programmes figurent au catalogue, et nous les adaptons aux outils déployés pendant la mission.
+              Un outil ne sert que si chacun sait quand s'y fier et quand le contredire. Nous formons soit un groupe de votre entreprise, jusqu'à 12 participants, soit une personne seule&nbsp;; chaque journée démarre à 1 980 € HT, et un financement par l'OPCO dont vous dépendez reste possible, selon ses règles et ses fonds. Plus de 100 programmes figurent au catalogue, et nous les adaptons aux outils déployés pendant la mission.
             </p>
           </div>
           <Link to="/formation-intelligence-artificielle" style={{

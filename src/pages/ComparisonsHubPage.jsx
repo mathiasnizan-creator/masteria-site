@@ -857,8 +857,8 @@ const FAQ_ITEMS = [
   },
   {
     q: "Comment aider mes équipes à choisir entre les outils d'IA ?",
-    text: "Sur deux jours de formation multi-outils, vos collaborateurs essaient les cinq assistants sur leurs propres tâches, avant toute décision. Une journée vous revient à 1 980 € HT (TVA de 20 % à ajouter), qu'il s'agisse d'un groupe intra jusqu'à douze personnes ou d'une personne seule. Votre OPCO de branche peut prendre la session en charge, d'après ses règles, Masteria étant certifié Qualiopi.",
-    a: "Sur deux jours de formation multi-outils, vos collaborateurs essaient les cinq assistants sur leurs propres tâches, avant toute décision. Une journée vous revient à 1 980 € HT (TVA de 20 % à ajouter), qu'il s'agisse d'un groupe intra jusqu'à douze personnes ou d'une personne seule. Votre OPCO de branche peut prendre la session en charge, d'après ses règles, Masteria étant certifié Qualiopi.",
+    text: "Sur deux jours de formation multi-outils, vos collaborateurs essaient les cinq assistants sur leurs propres tâches, avant toute décision. Une journée démarre à 1 980 € HT (TVA de 20 % à ajouter), la préparation sur vos dossiers s'ajoutant au devis, qu'il s'agisse d'un groupe intra jusqu'à douze personnes ou d'une personne seule. Votre OPCO de branche peut prendre la session en charge, d'après ses règles, Masteria étant certifié Qualiopi.",
+    a: "Sur deux jours de formation multi-outils, vos collaborateurs essaient les cinq assistants sur leurs propres tâches, avant toute décision. Une journée démarre à 1 980 € HT (TVA de 20 % à ajouter), la préparation sur vos dossiers s'ajoutant au devis, qu'il s'agisse d'un groupe intra jusqu'à douze personnes ou d'une personne seule. Votre OPCO de branche peut prendre la session en charge, d'après ses règles, Masteria étant certifié Qualiopi.",
   },
   {
     q: "Peut-on utiliser une IA chinoise comme DeepSeek ou Qwen dans une entreprise française ?",

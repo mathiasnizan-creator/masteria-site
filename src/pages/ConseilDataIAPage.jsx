@@ -715,7 +715,7 @@ export default function ConseilDataIAPage() {
                 Vos équipes peuvent apprendre à interroger leurs données avec l'IA
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                En complément de la mission, nous formons vos équipes, techniques comme métier, à questionner leurs données avec l'IA, à vérifier un chiffre produit par un assistant et à faire vivre les règles de gouvernance. Comptez 1 980 € HT par journée, en groupe interne ou pour une personne seule. Qualiopi atteste la qualité des actions de formation de Masteria : en France, votre OPCO peut donc financer ce volet selon ses règles et ses fonds. L'inventaire, la gouvernance et la préparation des données relèvent de la prestation de service et restent à votre charge.
+                En complément de la mission, nous formons vos équipes, techniques comme métier, à questionner leurs données avec l'IA, à vérifier un chiffre produit par un assistant et à faire vivre les règles de gouvernance. Comptez au moins 1 980 € HT par journée, en groupe interne ou pour une personne seule. Qualiopi atteste la qualité des actions de formation de Masteria : en France, votre OPCO peut donc financer ce volet selon ses règles et ses fonds. L'inventaire, la gouvernance et la préparation des données relèvent de la prestation de service et restent à votre charge.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Voir le catalogue des formations IA

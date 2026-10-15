@@ -9,13 +9,13 @@ export default {
   pagePropre: true,
   auteur: true,
   metaDesc: "La formation Claude pour le SEO : audit éditorial d'un site exporté en entier, briefs sourcés, règles de Google et robots d'Anthropic. Qualiopi.",
-  resume: "La formation Claude pour le SEO de Masteria dure deux jours (14 heures) et réunit responsables SEO, rédacteurs web et agences autour de l'export de leur site. En intra, le groupe compte douze personnes au plus ; un consultant peut la suivre seul. Elle se tient dans vos bureaux ou à distance ; chaque jour est facturé 1 980 € HT. Organisme certifié Qualiopi, Masteria vous aide à solliciter l'OPCO de votre branche.",
+  resume: "La formation Claude pour le SEO de Masteria dure deux jours (14 heures) et réunit responsables SEO, rédacteurs web et agences autour de l'export de leur site. En intra, le groupe compte douze personnes au plus ; un consultant peut la suivre seul. Elle se tient dans vos bureaux ou à distance ; chaque jour est facturé à partir de 1 980 € HT. Organisme certifié Qualiopi, Masteria vous aide à solliciter l'OPCO de votre branche.",
   intro: "Une équipe SEO se demande ce qu'un assistant apporte à côté de son crawler et de son outil de mots-clés. Claude lit le texte de tout un site dans une seule conversation, repère les pages qui répondent à la même question et prépare des briefs à partir de sources citées. Ce guide détaille un audit éditorial complet avant une refonte, l'usage des règles publiées par Google comme grille de lecture et le réglage des robots d'Anthropic, sans promettre aucun classement.",
   enBref: [
     { label: 'Formation', value: "Claude au service du référencement : audit éditorial, briefs, contenus longs, robots d'Anthropic" },
     { label: 'Durée', value: "14 heures sur deux jours, avec l'export texte de votre site pour fil rouge" },
     { label: 'Formats', value: "Session intra pour six à douze personnes, ou parcours d'un consultant seul ; sur place ou en ligne" },
-    { label: 'Tarif', value: "1 980 € HT par journée de session, pour six comme pour douze participants" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée de session, pour six comme pour douze participants" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; le financement se demande à l'OPCO dont dépend votre entreprise" },
     { label: 'Prérequis', value: "Un accès à la Search Console du site, un export de votre crawler et un compte Claude payant" },
   ],
@@ -225,13 +225,13 @@ export default {
     { q: "Quelle offre de Claude choisir pour une équipe SEO ou une agence ?", a: "L'offre Team suffit en général : projets partagés, compétences diffusées dans l'organisation, et vos contenus restent hors de l'entraînement par défaut. La recherche approfondie et Cowork demandent de toute façon une offre payante. Une agence vérifie aussi ce que son contrat avec chaque client l'autorise à faire de ses exports." },
     { q: "Doit-on dire à nos lecteurs qu'un article est passé par Claude ?", a: "Google recommande de dire comment le contenu a été fabriqué quand un lecteur peut raisonnablement se poser la question, en particulier si l'automatisation a fourni l'essentiel du texte. La forme reste libre, pourvu qu'elle ait du sens pour votre public : une note sur la méthode de rédaction et de vérification, par exemple. La formation vous aide à l'écrire pour vos propres formats." },
     { q: "Les exercices partent-ils de notre site ?", a: "Oui. Ils s'appuient sur l'export de votre site, vos fichiers de la Search Console et votre calendrier éditorial. Une agence travaille sur un site dont son contrat lui permet de confier les données. Prévoyez un compte Claude payant par personne ; les deux journées se déroulent en présentiel ou en ligne." },
-    { q: "Quel budget prévoir, et quelle aide de l'OPCO attendre ?", a: "Le prix se calcule à la journée : 1 980 € HT, pour une équipe intra de douze au maximum comme pour un consultant seul. Masteria détenant la certification Qualiopi, votre OPCO peut prendre la session en charge, dans les limites que fixe votre branche. Nous vous remettons le programme et la convention avant le dépôt de la demande." },
+    { q: "Quel budget prévoir, et quelle aide de l'OPCO attendre ?", a: "Le prix se calcule à la journée, à partir de 1 980 € HT, pour une équipe intra de douze au maximum comme pour un consultant seul. Masteria détenant la certification Qualiopi, votre OPCO peut prendre la session en charge, dans les limites que fixe votre branche. Nous vous remettons le programme et la convention avant le dépôt de la demande." },
   ],
   tarifs: {
     titre: "Le prix d'une session SEO de deux jours, et ce qu'il comprend",
     paras: [
-      "Avant la session, nous récupérons l'export texte de votre site et un extrait de la Search Console, nous les lisons et nous préparons la grille d'audit ainsi que deux briefs d'exemple sur vos sujets. La session elle-même, les supports, la compétence de réécriture que vous emportez et l'évaluation finale entrent dans le même prix.",
-      "Pour six personnes (une responsable SEO, trois rédactrices et deux consultants), la session intra de deux jours revient à 3 960 € HT, ce qui fait 660 € HT par participant. Un consultant seul suit le même programme à titre individuel, pour 1 980 € HT par jour. L'OPCO de votre entreprise examine la demande selon les critères de sa branche ; elle se dépose avant le premier jour, et nous fournissons les pièces nécessaires.",
+      "Avant la session, nous récupérons l'export texte de votre site et un extrait de la Search Console, nous les lisons et nous préparons la grille d'audit ainsi que deux briefs d'exemple sur vos sujets. Ce travail sur vos données s'ajoute au prix de base et figure au devis. Celui-ci couvre la session elle-même, les supports, la compétence de réécriture que vous emportez et l'évaluation finale.",
+      "Pour six personnes (une responsable SEO, trois rédactrices et deux consultants), la session intra de deux jours démarre à 3 960 € HT, ce qui fait dès 660 € HT par participant. Un consultant seul suit le même programme à titre individuel, à partir de 1 980 € HT par jour. L'OPCO de votre entreprise examine la demande selon les critères de sa branche ; elle se dépose avant le premier jour, et nous fournissons les pièces nécessaires.",
     ],
   },
   apres: {

@@ -89,7 +89,7 @@ const EN_BREF = [
   { label: 'Obligatoire ?', value: "Aucun texte ne l'exige sous ce nom. Elle sert de pièce au dossier de maîtrise de l'IA que demande le règlement européen (article 4) et traduit le RGPD en consignes" },
   { label: 'Contenu', value: "Huit rubriques, du périmètre des outils à la révision du document, chacune assortie dans le tableau d'une formulation à discuter" },
   { label: 'Méthode', value: "Cinq étapes, de l'écoute des usages existants à la relecture semestrielle" },
-  { label: 'Avec Masteria', value: "Rédaction avec vous en mission de conseil, ou trame construite par vos équipes pendant la formation gouvernance IA (1 980 € HT la journée, certifiée Qualiopi)" },
+  { label: 'Avec Masteria', value: "Rédaction avec vous en mission de conseil, ou trame construite par vos équipes pendant la formation gouvernance IA (à partir de 1 980 € HT la journée, certifiée Qualiopi)" },
 ]
 
 /* ───────── Charte / politique / dispositif (3 cartes de comparaison) ───────── */
@@ -786,7 +786,7 @@ export default function CharteIAEntreprisePage() {
                 Écrire votre charte IA avec Masteria, ou la construire en formation
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                En mission de conseil, nous écrivons la charte avec vous : écoute des usages, ateliers avec les métiers, rédaction, présentation aux équipes. Le forfait est fixé après le cadrage, et ce conseil reste à votre charge, hors du champ de l'OPCO. En formation, la journée gouvernance IA fait construire à vos équipes la trame de leur propre charte, avec registre des usages et comité en appui ; elle coûte 1 980 € HT, est couverte par la certification Qualiopi que détient Masteria, et son financement peut être demandé à l'OPCO dont dépend votre branche.
+                En mission de conseil, nous écrivons la charte avec vous : écoute des usages, ateliers avec les métiers, rédaction, présentation aux équipes. Le forfait est fixé après le cadrage, et ce conseil reste à votre charge, hors du champ de l'OPCO. En formation, la journée gouvernance IA fait construire à vos équipes la trame de leur propre charte, avec registre des usages et comité en appui ; elle démarre à 1 980 € HT, la préparation sur votre charte s'ajoutant au devis, est couverte par la certification Qualiopi que détient Masteria, et son financement peut être demandé à l'OPCO dont dépend votre branche.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to={RDV} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

@@ -130,7 +130,7 @@ export default {
   ],
   formation: [
     "Les commerciaux, les assistantes commerciales et les gestionnaires qui utiliseront les assistants se forment dessus, avec leurs propres dossiers. Le premier groupe réunit les référents : ils font évoluer les outils après la mission et accueillent les nouveaux arrivants dans l'équipe nantaise.",
-    "La formation est la seule partie de la mission qu'un OPCO peut prendre en charge, puisque la certification Qualiopi de Masteria porte sur ses actions de formation ; nous la facturons 1 980 € HT pour chaque journée d'intra-entreprise. Elle répond aussi à l'article 4 de l'AI Act, qui demande aux entreprises d'aider leur personnel à acquérir la maîtrise de l'IA.",
+    "La formation est la seule partie de la mission qu'un OPCO peut prendre en charge, puisque la certification Qualiopi de Masteria porte sur ses actions de formation ; nous facturons chaque journée d'intra-entreprise à partir de 1 980 € HT, la préparation sur mesure venant en supplément dans le devis. Elle répond aussi à l'article 4 de l'AI Act, qui demande aux entreprises d'aider leur personnel à acquérir la maîtrise de l'IA.",
   ],
   guide: {
     kicker: "Conseil et projets IA à Nantes",

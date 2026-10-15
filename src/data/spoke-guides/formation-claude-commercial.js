@@ -9,12 +9,12 @@ export default {
   updatedAt: '2026-10-05',
   updatedLabel: 'Programme à jour · octobre 2026',
   metaDesc: "Formation Claude pour les commerciaux : appels d'offres lus en entier, propositions, comptes rendus et relances, compétences partagées par vos référents.",
-  resume: "La formation Claude pour les équipes commerciales apprend à faire lire un dossier d'appel d'offres en entier, à bâtir réponse et proposition, puis à préparer comptes rendus et relances avec des compétences écrites par vos référents. Comptez deux jours (14 heures), sur place ou en visioconférence, pour douze vendeurs au plus ou un seul, chaque journée valant 1 980 € HT. L'organisme, certifié Qualiopi, vous aide à solliciter votre OPCO selon sa branche.",
+  resume: "La formation Claude pour les équipes commerciales apprend à faire lire un dossier d'appel d'offres en entier, à bâtir réponse et proposition, puis à préparer comptes rendus et relances avec des compétences écrites par vos référents. Comptez deux jours (14 heures), sur place ou en visioconférence, pour douze vendeurs au plus ou un seul, chaque journée valant au moins 1 980 € HT. L'organisme, certifié Qualiopi, vous aide à solliciter votre OPCO selon sa branche.",
   enBref: [
     { label: 'Formation', value: "Claude pour la vente B2B, l'avant-vente et l'administration des ventes" },
     { label: 'Durée', value: "14 heures sur deux jours, à placer de préférence avant une date de remise d'offre" },
     { label: 'Formats', value: "Session intra pour une équipe de douze commerciaux au plus, ou coaching individuel, sur place ou en visioconférence" },
-    { label: 'Tarif', value: "1 980 € HT facturés par journée de session, de deux à douze vendeurs" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée de session, de deux à douze vendeurs" },
     { label: 'Financement', value: "Prise en charge possible par votre OPCO, l'organisme étant certifié Qualiopi ; nous montons la demande avec vous" },
     { label: 'Prérequis', value: "Une première expérience de réponse à consultation ou de proposition écrite ; un abonnement Claude payant, et Team ou Enterprise pour mettre les compétences en commun" },
   ],
@@ -299,14 +299,14 @@ export default {
     },
     {
       q: "Une force de vente peut-elle faire financer ces deux jours par son OPCO ?",
-      a: "Les OPCO financent ce type de session suivant les règles propres à chaque branche, et Masteria possède la certification Qualiopi qui rend votre dossier recevable. Une équipe de deux à douze vendeurs et un commercial seul paient le même prix journalier, 1 980 € HT. Nous vous remettons le programme détaillé ainsi que la convention, pièces que l'OPCO réclame.",
+      a: "Les OPCO financent ce type de session suivant les règles propres à chaque branche, et Masteria possède la certification Qualiopi qui rend votre dossier recevable. Une équipe de deux à douze vendeurs et un commercial seul paient le même prix journalier de base, à partir de 1 980 € HT. Nous vous remettons le programme détaillé ainsi que la convention, pièces que l'OPCO réclame.",
     },
   ],
   tarifs: {
     titre: "Ce que comprend le prix pour une équipe commerciale",
     paras: [
-      "Le prix couvre la préparation sur vos pièces : en amont, le formateur étudie un dossier de consultation récent, votre modèle de proposition et quelques comptes rendus anonymisés, puis construit les ateliers à partir de cette matière. Les supports, les prompts adaptés à vos offres et les trois compétences écrites pendant le module 7 restent acquis à l'équipe.",
-      "Exemple : une direction commerciale réunit quatre commerciaux, trois personnes de l'avant-vente, deux de l'administration des ventes et son directeur, soit dix participants. Pour ces dix personnes, la facture des deux journées en intra s'établit à 3 960 € HT, soit 396 € HT par tête. Formé seul, un vendeur règle 1 980 € HT la journée. La certification Qualiopi obtenue par Masteria permet de saisir votre OPCO d'une demande de financement, qu'il tranche d'après les règles de votre branche.",
+      "Le prix de base couvre l'animation, les supports et le programme. Bâtir les ateliers sur vos pièces demande un travail en amont, chiffré en plus au devis : le formateur étudie un dossier de consultation récent, votre modèle de proposition et quelques comptes rendus anonymisés, puis construit les ateliers à partir de cette matière. Les supports, les prompts adaptés à vos offres et les trois compétences écrites pendant le module 7 restent acquis à l'équipe.",
+      "Exemple : une direction commerciale réunit quatre commerciaux, trois personnes de l'avant-vente, deux de l'administration des ventes et son directeur, soit dix participants. Pour ces dix personnes, la facture des deux journées en intra part de 3 960 € HT, soit au moins 396 € HT par tête. Formé seul, un vendeur règle au moins 1 980 € HT la journée. La certification Qualiopi obtenue par Masteria permet de saisir votre OPCO d'une demande de financement, qu'il tranche d'après les règles de votre branche.",
     ],
   },
   apres: {

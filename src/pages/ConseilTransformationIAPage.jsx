@@ -673,7 +673,7 @@ export default function ConseilTransformationIAPage() {
                 Chaque vague prévoit la formation des managers, puis des équipes touchées, sur les processus reconçus et leurs documents habituels. Ce volet constitue une action de formation au sens de Qualiopi, certification que détient Masteria : votre OPCO peut donc le prendre en charge, à hauteur de ce que permettent ses critères et son budget annuel. Les journées de conseil et le développement des outils se paient hors de ce circuit. Pour ouvrir le programme devant toute l'entreprise, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> sert souvent de point de départ.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['Les managers passent avant leurs équipes', 'Des ateliers sur les processus redessinés', 'Un référent interne dans chaque direction', 'Journée intra facturée 1 980 € HT'].map(pt => (
+                {['Les managers passent avant leurs équipes', 'Des ateliers sur les processus redessinés', 'Un référent interne dans chaque direction', 'Journée intra facturée dès 1 980 € HT'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
                     {pt}

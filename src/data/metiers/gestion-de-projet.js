@@ -255,8 +255,8 @@ export default {
  },
  "tarif": {
   "titre": "Ce que coûte la session, et qui peut la financer",
-  "answer": "Pour l'équipe projet, chaque jour d'intra coûte 1 980 € HT, à 12 participants au plus ; le parcours entier en coûte donc 3 960 € HT. Un PMO formé seul paie le même prix journalier. La session peut être financée en tout ou partie par votre opérateur de compétences, puisque nos actions de formation sont certifiées Qualiopi ; il tranche selon son barème et ses crédits disponibles. Le devis vous est adressé dans les 24 heures.",
-  "inclus": "Le prix couvre le cadrage préalable sur vos gabarits, un projet en cours et vos outils de suivi ; l'animation sur site ou par visioconférence, supports fournis ; les livrables remis à l'équipe (prompts rangés par étape, gabarits outillés, règles de confidentialité) ; un quiz d'évaluation des acquis et, pour chacun, le certificat de réalisation. Si la session a lieu chez vous, le déplacement du formateur, depuis sa ville, est chiffré à part.",
+  "answer": "Pour l'équipe projet, chaque jour d'intra coûte à partir de 1 980 € HT, à 12 participants au plus ; le parcours entier en coûte donc au moins 3 960 € HT. Un PMO formé seul paie le même prix journalier. La session peut être financée en tout ou partie par votre opérateur de compétences, puisque nos actions de formation sont certifiées Qualiopi ; il tranche selon son barème et ses crédits disponibles. Le devis vous est adressé dans les 24 heures.",
+  "inclus": "Le prix de base couvre l'animation sur site ou par visioconférence, supports fournis ; les livrables remis à l'équipe (prompts rangés par étape, gabarits outillés, règles de confidentialité) ; un quiz d'évaluation des acquis et, pour chacun, le certificat de réalisation. Si la session a lieu chez vous, le déplacement du formateur, depuis sa ville, est chiffré à part. La préparation sur vos gabarits, un projet en cours et vos outils de suivi s'ajoute, chiffrée sur le devis.",
   "financement": "Pour connaître votre opérateur, partez de votre convention collective avec l'outil {/quel-opco|Quel OPCO ?} ; les dispositifs sont expliqués sur {/financement-formation-ia|notre page financement}. Vous recevez de notre part programme détaillé, convention et justificatifs à joindre au dossier, qui part avant le premier jour. Ce parcours reste en dehors du champ du CPF."
  },
  "faq": [
@@ -278,7 +278,7 @@ export default {
   },
   {
    "q": "Quel prix pour former une équipe projet à l'IA ?",
-   "a": "Le tarif est forfaitaire pour le groupe : 1 980 € HT par journée, donc 3 960 € HT pour deux, que vous soyez 4 ou 12 autour de la table. Un PMO formé seul est facturé pareil, à la journée. Les frais de trajet du formateur n'apparaissent que pour une session sur site."
+   "a": "Le tarif vaut pour tout le groupe : à partir de 1 980 € HT par journée, donc à partir de 3 960 € HT pour deux, que vous soyez 4 ou 12 autour de la table. Un PMO formé seul est facturé pareil, à la journée. Les frais de trajet du formateur n'apparaissent que pour une session sur site."
   },
   {
    "q": "Notre OPCO prendra-t-il la session en charge ?",

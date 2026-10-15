@@ -88,7 +88,7 @@ const EN_BREF = [
   { label: 'Outils', value: "Ceux de vos licences : Copilot dans Excel, ChatGPT et son analyse de fichiers, Claude, Gemini dans Sheets, les tableurs de Vibe" },
   { label: 'Méthode', value: "Chacun analyse ses propres fichiers, apprend à contrôler un chiffre, puis reconstruit son reporting récurrent" },
   { label: 'Livrables', value: "Analyses reproductibles, gabarits de reporting, check-list de vérification, page de règles de l'équipe" },
-  { label: 'Tarif', value: "1 980 € HT la journée, facturée au groupe ; 3 960 € HT le programme complet ; devis le lendemain du cadrage" },
+  { label: 'Tarif', value: "À partir de 1 980 € HT la journée, facturée au groupe ; à partir de 3 960 € HT le programme complet ; préparation sur mesure en plus ; devis le lendemain du cadrage" },
 ]
 
 /* ───────── Sommaire ───────── */
@@ -685,14 +685,14 @@ export default function FormationDataIaPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix et prise en charge</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT par journée, soit 3 960 € HT le parcours
+                Dès 1 980 € HT par journée, soit dès 3 960 € HT le parcours
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le tarif est celui de toutes nos formations : chaque journée est facturée 1 980 € HT au groupe, douze personnes au maximum, et le programme complet revient donc à 3 960 € HT ; la version d'une journée centrée sur l'analyse se décide au cadrage. Notre certification Qualiopi, obtenue pour les actions de formation, permet de soumettre la session à votre opérateur de compétences, qui décide du financement selon ses propres critères ; nous constituons le dossier ensemble. Pas de CPF pour ces formations d'équipe. Pour une entreprise suisse ou belge, à Genève ou à Bruxelles, aucun OPCO n'intervient et le devis est établi en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> passe les dispositifs en revue.
+                Le tarif est celui de toutes nos formations : chaque journée est facturée à partir de 1 980 € HT au groupe, douze personnes au maximum, et le programme complet démarre donc à 3 960 € HT. Si les exercices reprennent vos propres jeux de données, la préparation s'ajoute et figure au devis ; la version d'une journée centrée sur l'analyse se décide au cadrage. Notre certification Qualiopi, obtenue pour les actions de formation, permet de soumettre la session à votre opérateur de compétences, qui décide du financement selon ses propres critères ; nous constituons le dossier ensemble. Pas de CPF pour ces formations d'équipe. Pour une entreprise suisse ou belge, à Genève ou à Bruxelles, aucun OPCO n'intervient et le devis est établi en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> passe les dispositifs en revue.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Une journée : 1 980 € HT pour tout le groupe',
+                  'Une journée : dès 1 980 € HT pour tout le groupe',
                   "Deux jours conseillés : jusqu'au reporting outillé",
                   'Session présentable à votre OPCO',
                   'Devis le lendemain du cadrage',
@@ -858,7 +858,7 @@ export default function FormationDataIaPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Deux jours · 3 960 € HT pour le groupe · sur site ou en visio · Qualiopi
+              Deux jours · dès 3 960 € HT pour le groupe · sur site ou en visio · Qualiopi
             </p>
           </div>
         </div>

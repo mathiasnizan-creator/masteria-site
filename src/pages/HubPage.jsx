@@ -523,11 +523,12 @@ export default function HubPage() {
                 <div style={{ fontSize: 12, fontWeight: 800, color: hub.color, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 8 }}>
                   Tarif intra-entreprises
                 </div>
+                <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 4 }}>À partir de</div>
                 <div style={{ fontSize: 36, fontWeight: 900, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', lineHeight: 1 }}>
                   1 980 €<span style={{ fontSize: 16, color: '#6B7280', fontWeight: 600 }}> / jour</span>
                 </div>
                 <div style={{ fontSize: 13, color: '#6B7280', marginTop: 6 }}>
-                  Pour un groupe jusqu'à 12 personnes · Finançable OPCO
+                  Pour un groupe jusqu'à 12 personnes · Finançable OPCO · Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis.
                 </div>
               </div>
               <Link to="/contact" style={{

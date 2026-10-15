@@ -255,8 +255,8 @@ export default {
  },
  "tarif": {
   "titre": "Tarif de la formation IA finance et financement",
-  "answer": "Une direction financière de 12 personnes au plus est formée en intra pour 1 980 € HT par journée, et le parcours de deux jours coûte 3 960 € HT. Masteria détient la certification Qualiopi (catégorie : actions de formation), qui permet à l'opérateur de compétences de l'entreprise de prendre en charge la session, d'après son barème et les fonds disponibles. Sous 24 heures, un devis détaillé répond à votre demande.",
-  "inclus": "En amont, le cadrage sur vos gabarits, des reportings récents et un export d'écarts anonymisé ; puis l'animation des deux journées, sur site ou à distance, avec supports et livrables (prompts finance, gabarits de commentaire et de note, règles de confidentialité). Une évaluation des acquis et un certificat de réalisation clôturent le parcours. Pour une session sur site éloignée de Lyon, les frais de trajet du formateur figurent à part sur le devis.",
+  "answer": "Une direction financière de 12 personnes au plus est formée en intra à partir de 1 980 € HT par journée, et le parcours de deux jours coûte à partir de 3 960 € HT. Masteria détient la certification Qualiopi (catégorie : actions de formation), qui permet à l'opérateur de compétences de l'entreprise de prendre en charge la session, d'après son barème et les fonds disponibles. Sous 24 heures, un devis détaillé répond à votre demande.",
+  "inclus": "L'animation des deux journées, sur site ou à distance, avec supports et livrables (prompts finance, gabarits de commentaire et de note, règles de confidentialité). Une évaluation des acquis et un certificat de réalisation clôturent le parcours. Pour une session sur site éloignée de Lyon, les frais de trajet du formateur figurent à part sur le devis. Un programme bâti sur vos gabarits, vos reportings et un export d'écarts suppose une préparation distincte, ajoutée au devis.",
   "financement": "Pour connaître votre OPCO, l'outil {/quel-opco|Quel OPCO ?} part de votre convention collective ; notre page sur le {/financement-formation-ia|financement de la formation} présente les dispositifs. Programme, convention et justificatifs vous sont remis pour une demande à déposer avant le démarrage. Le CPF n'intervient pas sur cette formation."
  },
  "faq": [
@@ -290,7 +290,7 @@ export default {
   },
   {
    "q": "Quel est le coût d'une formation IA finance ?",
-   "a": "Le prix est forfaitaire : chaque journée revient à 1 980 € HT pour le groupe, jusqu'à 12 personnes, et les deux journées à 3 960 € HT. Formé seul, un DAF paie le même montant par jour. Le devis détaillé arrive sous 24 heures."
+   "a": "Le prix ne dépend pas de l'effectif : chaque journée démarre à 1 980 € HT pour le groupe, jusqu'à 12 personnes, et les deux journées à 3 960 € HT. Formé seul, un DAF paie le même montant de départ par jour. Le devis détaillé arrive sous 24 heures."
   },
   {
    "q": "Notre opérateur de compétences financera-t-il la session ?",

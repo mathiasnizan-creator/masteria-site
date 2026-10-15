@@ -236,7 +236,7 @@ export default function AutomatisationIAPage() {
 
           {/* GEO : réponse directe pour citation LLM */}
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
-            La formation <strong>automatisation IA</strong> de Masteria se déroule sur <strong>deux jours (14 heures)</strong>, dans vos locaux comme à distance. Elle coûte <strong>1 980 € HT la journée</strong>, pour un groupe intra (douze participants maximum) comme pour un parcours individuel. Comme Masteria est certifiée Qualiopi, votre OPCO de branche peut y contribuer, selon ses règles et ses fonds. Chaque participant repart avec un workflow et un agent construits sur ses propres tâches.
+            La formation <strong>automatisation IA</strong> de Masteria se déroule sur <strong>deux jours (14 heures)</strong>, dans vos locaux comme à distance. Elle démarre à <strong>1 980 € HT la journée</strong>, pour un groupe intra (douze participants maximum) comme pour un parcours individuel ; les workflows construits sur vos propres outils demandent une préparation qui s'ajoute au devis. Comme Masteria est certifiée Qualiopi, votre OPCO de branche peut y contribuer, selon ses règles et ses fonds. Chaque participant repart avec un workflow et un agent construits sur ses propres tâches.
           </p>
 
           <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
@@ -505,11 +505,12 @@ export default function AutomatisationIAPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 24 }}>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>PARCOURS INDIVIDUEL</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>HT / jour</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>3 960 € HT les deux jours, en tête-à-tête</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit dès 3 960 € HT les deux jours, en tête-à-tête</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Deux jours d\'affilée ou séparés', 'Programme construit sur vos propres automatisations', 'Sur site ou en visioconférence', 'Questions possibles entre les deux journées'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
@@ -520,11 +521,12 @@ export default function AutomatisationIAPage() {
             </div>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${c}` }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: c, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>GROUPE INTRA</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 4 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1 }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>HT / jour</div>
               </div>
-              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>3 960 € HT les deux jours, jusqu'à 12 personnes</div>
+              <div style={{ fontSize: 13, color: c, fontWeight: 600, marginBottom: 20 }}>Soit dès 3 960 € HT les deux jours, jusqu'à 12 personnes</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {['Session réservée à votre équipe', 'Ateliers sur vos outils et vos tâches', 'Chez vous ou en visioconférence', 'Finançable par votre OPCO'].map(item => (
                   <li key={item} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
@@ -534,6 +536,9 @@ export default function AutomatisationIAPage() {
               </ul>
             </div>
           </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 8 }}>
+            Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis.
+          </p>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>
             Masteria est certifiée Qualiopi : l'OPCO de votre branche (Atlas, Akto, Afdas, Constructys, Opco 2i ou un autre) peut financer la session, dans la mesure où ses règles et son budget le permettent. Selon l'opérateur et la taille de l'entreprise, il règle directement l'organisme ou vous rembourse après paiement ; nous vérifions ce point avec vous avant de rédiger la convention. Pour Genève ou Bruxelles, où les OPCO n'interviennent pas, le devis est établi en euros HT. Les abonnements aux outils (Make, Zapier, n8n, Copilot Studio) restent hors du prix.
           </p>
@@ -680,7 +685,7 @@ export default function AutomatisationIAPage() {
             Envoyer vos tâches →
           </Link>
           <p style={{ fontSize: 13, color: '#6B7280' }}>
-            Organisme certifié Qualiopi · 1 980 € HT la journée · intra ou individuel
+            Organisme certifié Qualiopi · dès 1 980 € HT la journée · intra ou individuel
           </p>
         </div>
       </section>

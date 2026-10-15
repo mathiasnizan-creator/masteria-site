@@ -80,7 +80,7 @@ export default {
 
   formation: [
     "Le guide d'usage de l'État fait de la formation son cinquième principe et oriente les agents vers le Campus du numérique public et la plateforme Mentor. Nos ateliers prolongent ces ressources sur vos propres documents : les acheteurs apprennent à relire un dossier de consultation avec un assistant, les instructeurs à vérifier une réponse sourcée, les agents d'accueil à préparer un courrier clair.",
-    "Masteria est certifié Qualiopi au titre des actions de formation ; la journée intra est facturée 1 980 € HT pour le groupe. L'OPCO finance la formation des salariés de droit privé : une administration règle la session sur son propre budget de formation, et un établissement public qui emploie des salariés de droit privé vérifie son cas avec nous au cadrage.",
+    "Masteria est certifié Qualiopi au titre des actions de formation ; la journée intra est facturée à partir de 1 980 € HT pour le groupe, auxquels s'ajoute au devis la préparation d'une session sur mesure. L'OPCO finance la formation des salariés de droit privé : une administration règle la session sur son propre budget de formation, et un établissement public qui emploie des salariés de droit privé vérifie son cas avec nous au cadrage.",
   ],
 
   guide: {

@@ -11,12 +11,12 @@ export default {
   metaDesc: "Formation Copilot pour la communication : communiqués dans Word, voix de marque, PowerPoint à la charte, messages internes, veille et article 50. 2 jours.",
   keywords: "formation copilot communication, microsoft copilot communication interne, copilot communiqué de presse, copilot powerpoint charte graphique, copilot voix de marque, ai act article 50 communication, formation copilot qualiopi opco",
   prerequis: "Écrire au quotidien dans Word et PowerPoint ; la charte éditoriale et graphique de la marque est à fournir au cadrage si elle existe",
-  resume: "Destinée aux directions de la communication et à leurs chargés de communication interne, externe et éditoriale, cette formation apprend à produire avec Microsoft Copilot (anciennement Microsoft 365 Copilot) les écrits qui engagent l'image de l'entreprise : communiqués, éléments de langage, messages aux salariés, présentations. La voix de la marque et la maîtrise de ce qui est publié restent à l'équipe. Le parcours dure 14 heures pour une équipe de douze au maximum ou une seule personne ; chaque journée coûte 1 980 € HT, et l'OPCO peut la financer si ses règles et ses fonds le permettent.",
+  resume: "Destinée aux directions de la communication et à leurs chargés de communication interne, externe et éditoriale, cette formation apprend à produire avec Microsoft Copilot (anciennement Microsoft 365 Copilot) les écrits qui engagent l'image de l'entreprise : communiqués, éléments de langage, messages aux salariés, présentations. La voix de la marque et la maîtrise de ce qui est publié restent à l'équipe. Le parcours dure 14 heures pour une équipe de douze au maximum ou une seule personne ; chaque journée coûte à partir de 1 980 € HT, et l'OPCO peut la financer si ses règles et ses fonds le permettent.",
   enBref: [
     { label: 'Formation', value: "Copilot pour les écrits de la communication : communiqués, éléments de langage, messages internes, présentations, veille" },
     { label: 'Durée', value: "Deux jours de 7 heures ; le second peut s'appuyer sur un dossier en cours dans votre service" },
     { label: 'Formats', value: "Équipe communication en intra, douze personnes au plus, ou accompagnement individuel d'une direction de la communication ; sur site ou à distance" },
-    { label: 'Tarif', value: "Journée à 1 980 € HT, parcours de deux journées à 3 960 € HT" },
+    { label: 'Tarif', value: "Journée à partir de 1 980 € HT, parcours de deux journées à partir de 3 960 € HT" },
     { label: 'Financement', value: "Prise en charge par l'OPCO envisageable, Masteria étant certifié Qualiopi ; décision selon les critères de l'opérateur" },
     { label: 'Prérequis', value: "Rédiger régulièrement pour l'entreprise ; licences Copilot de l'équipe relevées avant la session" },
   ],
@@ -293,14 +293,14 @@ export default {
     },
     {
       q: "Comment financer la formation d'une équipe de communication ?",
-      a: "La session entre dans le périmètre de la certification Qualiopi de Masteria, celui des actions de formation ; votre OPCO a donc la faculté de la financer, d'après ses règles et dans la limite de ses fonds. Le parcours de deux jours coûte 3 960 € HT à une équipe de douze au maximum, et une directrice de la communication accompagnée seule règle 1 980 € HT chaque journée. Le programme et la convention se préparent avec nous. Une équipe installée en Suisse ou en Belgique, où ce financement n'existe pas, est facturée sur devis, en euros et hors taxes.",
+      a: "La session entre dans le périmètre de la certification Qualiopi de Masteria, celui des actions de formation ; votre OPCO a donc la faculté de la financer, d'après ses règles et dans la limite de ses fonds. Le parcours de deux jours coûte à partir de 3 960 € HT à une équipe de douze au maximum, et une directrice de la communication accompagnée seule règle à partir de 1 980 € HT chaque journée. Le programme et la convention se préparent avec nous. Une équipe installée en Suisse ou en Belgique, où ce financement n'existe pas, est facturée sur devis, en euros et hors taxes.",
     },
   ],
   tarifs: {
     titre: 'Le prix d’une session Copilot pour la communication',
     paras: [
-      "Chaque journée, facturée 1 980 € HT, comprend une préparation sur vos documents : votre charte éditoriale, deux ou trois communiqués récents, un modèle de présentation et, si vous le souhaitez, un dossier en cours. Les ateliers se construisent sur cette matière, et l'équipe repart avec ses instructions de voix de marque, ses demandes types et la charte de publication écrite au module 8.",
-      "Six chargés de communication formés ensemble représentent une facture de 3 960 € HT, 660 € HT chacun, montant qui ne bouge pas jusqu'à douze inscrits. Les licences Copilot s'achètent à part. L'OPCO décide ensuite de son financement d'après ses propres règles, sur le dossier préparé avec vous.",
+      "Chaque journée est facturée à partir de 1 980 € HT, pour l'animation, les supports et le programme. La préparation sur vos documents s'y ajoute au devis : votre charte éditoriale, deux ou trois communiqués récents, un modèle de présentation et, si vous le souhaitez, un dossier en cours. Les ateliers se construisent sur cette matière, et l'équipe repart avec ses instructions de voix de marque, ses demandes types et la charte de publication écrite au module 8.",
+      "Six chargés de communication formés ensemble représentent une facture à partir de 3 960 € HT, soit dès 660 € HT chacun, montant de base qui ne bouge pas jusqu'à douze inscrits. Les licences Copilot s'achètent à part. L'OPCO décide ensuite de son financement d'après ses propres règles, sur le dossier préparé avec vous.",
     ],
   },
   apres: {

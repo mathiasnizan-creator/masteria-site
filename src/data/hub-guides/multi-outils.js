@@ -11,11 +11,11 @@ export default {
   author: true,
 
   metaTitle: "Formation multi-outils IA : choisir son assistant | Masteria",
-  metaDesc: "Deux jours pour comparer Copilot, ChatGPT, Gemini, Claude et Vibe sur vos documents, puis trancher avec une grille argumentée. Qualiopi, 1 980 € HT/jour.",
+  metaDesc: "Deux jours pour comparer Copilot, ChatGPT, Gemini, Claude et Vibe sur vos documents, puis trancher avec une grille argumentée. Qualiopi, dès 1 980 € HT/jour.",
   h1: "Formation multi-outils IA : tester cinq assistants sur vos dossiers avant de choisir",
   outilCourt: 'multi-outils IA',
 
-  definition: "Une formation multi-outils IA fait travailler ChatGPT, Microsoft Copilot (anciennement Microsoft 365 Copilot), Google Gemini, Claude et Vibe (Mistral AI) sur les mêmes documents d'une équipe, pour relever leurs écarts et décider lequel retenir ou comment les combiner. Masteria la donne en deux journées de 7 heures, au prix unitaire de 1 980 € HT, à douze stagiaires au plus en intra ou à une seule personne ; la session relève de la certification Qualiopi que Masteria détient au titre des actions de formation.",
+  definition: "Une formation multi-outils IA fait travailler ChatGPT, Microsoft Copilot (anciennement Microsoft 365 Copilot), Google Gemini, Claude et Vibe (Mistral AI) sur les mêmes documents d'une équipe, pour relever leurs écarts et décider lequel retenir ou comment les combiner. Masteria la donne en deux journées de 7 heures, à partir de 1 980 € HT chacune, à douze stagiaires au plus en intra ou à une seule personne ; la session relève de la certification Qualiopi que Masteria détient au titre des actions de formation.",
 
   intro: "Dans bien des équipes, l'assistant IA s'est choisi poste par poste, au gré des habitudes de chacun. La formation multi-outils remet ce choix à plat. Pendant deux jours, le groupe soumet les mêmes pièces de son activité aux cinq assistants, note ce que chacun en tire, puis confronte ces notes aux critères de l'entreprise : la suite bureautique déjà payée, la longueur des dossiers, l'endroit où partent les données, le prix par siège. Elle s'adresse aux équipes qui n'ont encore rien arbitré et à celles qui jonglent déjà avec plusieurs outils sans règle commune. À la sortie, le groupe tient une grille de choix argumentée, que la direction peut reprendre pour décider.",
 
@@ -168,7 +168,7 @@ export default {
     },
     {
       q: "La formation multi-outils ouvre-t-elle droit au financement de l'OPCO ?",
-      a: "Oui, pour les entreprises établies en France. Masteria étant titulaire de la certification Qualiopi, votre OPCO de branche a la possibilité de régler la session, selon ses règles et à hauteur de ses fonds. La journée vaut 1 980 € HT, et ce prix reste identique avec douze participants en intra, le plafond du groupe, ou avec une seule personne ; le programme général de deux jours revient donc à 3 960 € HT, groupe complet ou non. Genève et Bruxelles n'ont pas d'OPCO : le devis y est libellé en euros HT. Les documents que réclame l'opérateur, du programme à la convention, sont joints à l'inscription.",
+      a: "Oui, pour les entreprises établies en France. Masteria étant titulaire de la certification Qualiopi, votre OPCO de branche a la possibilité de régler la session, selon ses règles et à hauteur de ses fonds. La journée est facturée à partir de 1 980 € HT, et ce prix de départ reste identique avec douze participants en intra, le plafond du groupe, ou avec une seule personne ; le programme général de deux jours démarre donc à 3 960 € HT, groupe complet ou non. Quand la session est construite sur vos documents, le temps de préparation s'ajoute, chiffré au devis. Genève et Bruxelles n'ont pas d'OPCO : le devis y est libellé en euros HT. Les documents que réclame l'opérateur, du programme à la convention, sont joints à l'inscription.",
     },
   ],
 }

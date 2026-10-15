@@ -279,7 +279,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte un accompagnement IA ?",
-    a: "Chaque étape reçoit un forfait écrit, que nous chiffrons une fois le cadrage fait. Le montant dépend du nombre d'équipes, de sites et d'usages : un budget de quelques milliers d'euros suffit à un périmètre resserré, des dizaines de milliers pour un déploiement sur plusieurs services, plus de 100 000 € quand un groupe couvre plusieurs pays. Les journées de formation, elles, ont un tarif fixe : 1 980 € HT l'une, 3 960 € HT pour deux.",
+    a: "Chaque étape reçoit un forfait écrit, que nous chiffrons une fois le cadrage fait. Le montant dépend du nombre d'équipes, de sites et d'usages : un budget de quelques milliers d'euros suffit à un périmètre resserré, des dizaines de milliers pour un déploiement sur plusieurs services, plus de 100 000 € quand un groupe couvre plusieurs pays. Les journées de formation, elles, ont un tarif de départ affiché : 1 980 € HT l'une, 3 960 € HT pour deux, la préparation d'une formation sur mesure s'ajoutant au devis.",
   },
   {
     q: "Peut-on faire financer un accompagnement IA ?",
@@ -743,8 +743,8 @@ export default function AccompagnementIAPage() {
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  '1 980 € HT par journée de formation',
-                  '3 960 € HT pour un parcours de deux jours',
+                  'Dès 1 980 € HT par journée de formation',
+                  'Dès 3 960 € HT pour un parcours de deux jours',
                   "Jusqu'à 12 participants par groupe intra",
                   "Dossier OPCO préparé avec vous",
                 ].map(pt => (

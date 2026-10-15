@@ -8,12 +8,12 @@ export default {
   updatedAt: '2026-10-05',
   updatedLabel: 'Programme à jour · octobre 2026',
   metaDesc: "Formation Claude pour la finance : rapports annuels lus en entier, calculs par le code ou dans Excel, projets de clôture, règles des sociétés cotées.",
-  resume: "La formation Claude pour la finance apprend à une direction financière à confier à Claude ses dossiers et ses calculs sans perdre la trace d'un montant. Elle dure deux journées (14 heures), sur votre site comme en visioconférence, à douze stagiaires au maximum ou en tête-à-tête, moyennant 1 980 € HT chaque jour. Masteria, certifié Qualiopi, accompagne la demande de financement auprès de votre OPCO, qui l'instruit selon les conditions propres à sa branche.",
+  resume: "La formation Claude pour la finance apprend à une direction financière à confier à Claude ses dossiers et ses calculs sans perdre la trace d'un montant. Elle dure deux journées (14 heures), sur votre site comme en visioconférence, à douze stagiaires au maximum ou en tête-à-tête, moyennant au moins 1 980 € HT chaque jour, la préparation sur vos documents étant chiffrée en plus au devis. Masteria, certifié Qualiopi, accompagne la demande de financement auprès de votre OPCO, qui l'instruit selon les conditions propres à sa branche.",
   enBref: [
     { label: 'Formation', value: "Claude au service de la direction financière : clôture, contrôle de gestion, comptabilité et trésorerie" },
     { label: 'Durée', value: "Deux journées de sept heures, enchaînées ou séparées par une clôture mensuelle" },
     { label: 'Formats', value: "Dans vos bureaux ou en visioconférence ; jusqu'à douze stagiaires par groupe, ou un seul en accompagnement individuel" },
-    { label: 'Tarif', value: "Forfait journalier de 1 980 € HT, inchangé de deux à douze stagiaires" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée, inchangé de deux à douze stagiaires ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Masteria détient la certification Qualiopi ; l'OPCO de l'entreprise examine la prise en charge d'après les conditions de sa branche" },
     { label: 'Prérequis', value: "Manier Excel au quotidien et disposer d'un abonnement Claude Pro, Team ou Enterprise, vérifié avec vous avant la session" },
   ],
@@ -298,14 +298,14 @@ export default {
     },
     {
       q: "Comment une direction financière fait-elle financer ces deux jours ?",
-      a: "C'est l'OPCO de votre société qui finance, en appliquant les conditions de sa branche ; la certification Qualiopi détenue par Masteria est le préalable à sa participation. Pour un groupe de deux à douze collaborateurs, le prix de la journée demeure 1 980 € HT, comme pour une personne suivie seule. Masteria fournit le programme détaillé et rédige la convention qui accompagne la demande.",
+      a: "C'est l'OPCO de votre société qui finance, en appliquant les conditions de sa branche ; la certification Qualiopi détenue par Masteria est le préalable à sa participation. Pour un groupe de deux à douze collaborateurs, le prix de la journée demeure à partir de 1 980 € HT, comme pour une personne suivie seule. Masteria fournit le programme détaillé et rédige la convention qui accompagne la demande.",
     },
   ],
   tarifs: {
     titre: "Ce que recouvre le prix pour une direction financière",
     paras: [
-      "Le prix inclut la préparation sur vos documents : avant la session, le formateur passe en revue avec vous une balance anonymisée, un modèle Excel dont votre équipe a hérité et votre procédure de clôture, afin que chaque atelier travaille votre propre matière. Il couvre aussi les supports, les prompts du guide ajustés à votre plan de comptes et la compétence de contrôle que l'équipe écrit pendant le module 7.",
-      "Prenons une direction financière qui inscrit son DAF, trois contrôleurs de gestion, trois comptables et sa trésorière, soit huit participants. Les deux jours en intra se chiffrent à 3 960 € HT pour tout le groupe, ce qui fait 495 € HT par participant. En formule individuelle, le participant seul règle 1 980 € HT par jour. Votre OPCO, saisi sur la foi de la certification Qualiopi, étudie ensuite une prise en charge d'après les conditions de votre branche ; le dossier se monte avec vous.",
+      "Le prix de base couvre l'animation, les supports, les prompts du guide ajustés à votre plan de comptes et la compétence de contrôle que l'équipe écrit pendant le module 7. Si chaque atelier doit travailler votre propre matière (une balance anonymisée, un modèle Excel dont votre équipe a hérité, votre procédure de clôture), le formateur la passe en revue avec vous avant la session, et cette préparation s'ajoute au devis.",
+      "Prenons une direction financière qui inscrit son DAF, trois contrôleurs de gestion, trois comptables et sa trésorière, soit huit participants. Les deux jours en intra se chiffrent à partir de 3 960 € HT pour tout le groupe, ce qui fait dès 495 € HT par participant. En formule individuelle, le participant seul règle à partir de 1 980 € HT par jour. Votre OPCO, saisi sur la foi de la certification Qualiopi, étudie ensuite une prise en charge d'après les conditions de votre branche ; le dossier se monte avec vous.",
     ],
   },
   apres: {

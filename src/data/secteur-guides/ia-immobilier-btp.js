@@ -80,7 +80,7 @@ export default {
 
   formation: [
     "Nous formons les métiers qui produisent ces pièces : négociateurs et assistants de transaction, gestionnaires locatifs, chargés d'études de prix, conducteurs de travaux, responsables des marchés. Les exercices utilisent vos propres pièces : une annonce publiée, un dossier de candidature anonymisé, un DCE récent, un compte rendu de chantier. Les participants y construisent leurs propres contrôles, avec la règle qui les fonde.",
-    "Dans une entreprise de travaux, nous plaçons les sessions hors des périodes de remise d'offres. Une journée pour vos négociateurs, vos gestionnaires ou vos conducteurs de travaux coûte 1 980 € HT en intra ; votre OPCO peut la financer selon vos fonds, au titre de la certification Qualiopi de Masteria. La mission de conseil et le développement se facturent hors de ce dispositif.",
+    "Dans une entreprise de travaux, nous plaçons les sessions hors des périodes de remise d'offres. Une journée pour vos négociateurs, vos gestionnaires ou vos conducteurs de travaux coûte à partir de 1 980 € HT en intra, la préparation sur vos dossiers s'ajoutant au devis ; votre OPCO peut la financer selon vos fonds, au titre de la certification Qualiopi de Masteria. La mission de conseil et le développement se facturent hors de ce dispositif.",
   ],
 
   guide: {

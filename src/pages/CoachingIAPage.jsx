@@ -35,7 +35,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Coaching IA : un formateur pour vous seul | Masteria"
-const META_DESC = "Coaching IA individuel : un formateur humain, vos dossiers, vos outils, votre agenda. Dirigeants, managers, experts. 1 980 € HT/jour, Qualiopi."
+const META_DESC = "Coaching IA individuel : un formateur humain, vos dossiers, vos outils, votre agenda. Dirigeants, managers, experts. Dès 1 980 € HT/jour, Qualiopi."
 const KEYWORDS = "coaching ia, coach ia, ia et coaching, coaching individuel ia, coaching intelligence artificielle, coaching ia dirigeant, formation ia individuelle"
 
 /* ───────── Styles partagés ───────── */
@@ -77,7 +77,7 @@ const EN_BREF = [
   { label: 'Pour qui', value: "Dirigeants, managers, experts métier, indépendants, personnes en reconversion" },
   { label: 'Outils', value: "Celui que vous utilisez ou que votre entreprise a choisi, parmi les cinq grands : Copilot, ChatGPT, Gemini, Claude, Vibe" },
   { label: 'Lieu', value: "À distance depuis n'importe quel pays ; sur place à Paris, Lyon, Marseille, Toulouse, Annecy et dans d'autres métropoles selon les agendas" },
-  { label: 'Prix', value: "Une journée de coaching coûte 1 980 € HT, comme une journée de groupe ; le nombre de séances se fixe au cadrage" },
+  { label: 'Prix', value: "Une journée de coaching démarre à 1 980 € HT, comme une journée de groupe ; le nombre de séances se fixe au cadrage, la préparation sur mesure s'ajoute au devis" },
   { label: 'But', value: "Que vous continuiez seul : des usages en place, une boîte à outils écrite, des réflexes de vérification" },
 ]
 
@@ -255,7 +255,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte un coaching IA individuel ?",
-    a: "Une journée de coaching revient à 1 980 € HT, au même prix qu'une journée de formation en groupe, sans supplément pour le format individuel. Le nombre de séances, donc le volume total, se fixe au cadrage d'après votre point de départ et votre objectif. Les trente minutes de cadrage sont offertes ; vous recevez ensuite sous 24 heures le programme personnalisé, le devis et, si vous êtes salarié ou dirigeant d'une entreprise, les éléments pour la demande à l'OPCO.",
+    a: "Une journée de coaching démarre à 1 980 € HT, comme une journée de formation en groupe, sans supplément pour le format individuel. Quand les séances s'appuient sur vos dossiers, le temps de préparation s'ajoute et figure au devis. Le nombre de séances, donc le volume total, se fixe au cadrage d'après votre point de départ et votre objectif. Les trente minutes de cadrage sont offertes ; vous recevez ensuite sous 24 heures le programme personnalisé, le devis et, si vous êtes salarié ou dirigeant d'une entreprise, les éléments pour la demande à l'OPCO.",
   },
   {
     q: "Combien de séances faut-il pour progresser ?",
@@ -276,7 +276,7 @@ const FAQ = [
 /* Le schema Course (avec Offer 1 980 €/jour) est généré par SEOHead via courseData. */
 const COURSE_DATA = {
   name: 'Coaching IA individuel (Masteria)',
-  description: "Coaching individuel à l'intelligence artificielle avec un formateur humain : séances construites sur les dossiers du participant, avec l'outil de son environnement (Copilot, Gemini, ChatGPT, Claude ou Vibe), programme et objectifs fixés au cadrage, évaluation des acquis. À distance partout, sur place selon les villes. 1 980 € HT la journée.",
+  description: "Coaching individuel à l'intelligence artificielle avec un formateur humain : séances construites sur les dossiers du participant, avec l'outil de son environnement (Copilot, Gemini, ChatGPT, Claude ou Vibe), programme et objectifs fixés au cadrage, évaluation des acquis. À distance partout, sur place selon les villes. À partir de 1 980 € HT la journée.",
   level: 'Tous niveaux',
   teaches: [
     "Écrire des demandes précises et faire raisonner l'outil par étapes",
@@ -290,7 +290,7 @@ const COURSE_DATA = {
   prerequisites: 'Aucun prérequis technique. Usage courant de la bureautique.',
   audience: 'Dirigeants, managers, experts métier, indépendants',
   locationName: 'Masteria : à distance (Europe, États-Unis, Inde) ou sur place selon les villes',
-  priceDescription: "Coaching individuel : 1 980 € HT la journée, volume fixé au cadrage selon l'objectif.",
+  priceDescription: "Coaching individuel : à partir de 1 980 € HT la journée, volume fixé au cadrage selon l'objectif.",
 }
 
 /* Déroulé en ItemList (séquence citable, GEO). */
@@ -447,7 +447,7 @@ export default function CoachingIAPage() {
 
           {/* GEO : réponse directe citable */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le coaching IA de Masteria met un formateur humain face à une seule personne : <strong style={{ color: '#fff', fontWeight: 700 }}>des séances construites sur les dossiers que vous avez à traiter, avec votre outil et à votre rythme, jusqu'à ce que vous avanciez seul</strong>. Facturé 1 980 € HT par journée, il peut, structuré comme une formation, faire l'objet d'une demande à l'OPCO. À distance partout, sur place selon les villes.
+            Le coaching IA de Masteria met un formateur humain face à une seule personne : <strong style={{ color: '#fff', fontWeight: 700 }}>des séances construites sur les dossiers que vous avez à traiter, avec votre outil et à votre rythme, jusqu'à ce que vous avanciez seul</strong>. Facturé à partir de 1 980 € HT par journée, il peut, structuré comme une formation, faire l'objet d'une demande à l'OPCO. À distance partout, sur place selon les villes.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -622,7 +622,7 @@ export default function CoachingIAPage() {
             ))}
           </div>
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 820 }}>
-            Le nombre de séances suit votre point de départ et vos objectifs ; aucun forfait n'est imposé. Le tarif journalier, 1 980 € HT, ne varie pas avec le profil.
+            Le nombre de séances suit votre point de départ et vos objectifs ; aucun forfait n'est imposé. Le tarif journalier, à partir de 1 980 € HT, ne varie pas avec le profil.
           </p>
         </div>
       </section>
@@ -832,7 +832,7 @@ export default function CoachingIAPage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Tarif journalier de 1 980 € HT · à distance ou sur place · Activateur France Num
+              Tarif journalier dès 1 980 € HT · à distance ou sur place · Activateur France Num
             </p>
           </div>
         </div>

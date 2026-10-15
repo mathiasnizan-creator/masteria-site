@@ -77,7 +77,7 @@ export default {
   ],
   formation: [
     "Les outils changent le travail de la réception, de la réservation, du service commercial qui traite les groupes et les événements d'entreprise, et de la direction qui suit la réputation. Nous les formons à corriger une réponse de l'assistant, à tenir sa base d'informations à jour (horaires, travaux, offres de saison) et à répondre aux avis délicats.",
-    "Les sessions se placent entre deux saisons, dans l'établissement ou à distance, et une journée intra coûte 1 980 € HT. La certification Qualiopi de Masteria permet d'en demander la prise en charge à votre OPCO en France ; la conception et le développement de l'assistant restent des prestations de service, hors de ce financement.",
+    "Les sessions se placent entre deux saisons, dans l'établissement ou à distance, et une journée intra coûte à partir de 1 980 € HT, la préparation propre à votre établissement s'ajoutant au devis. La certification Qualiopi de Masteria permet d'en demander la prise en charge à votre OPCO en France ; la conception et le développement de l'assistant restent des prestations de service, hors de ce financement.",
   ],
 
   guide: {

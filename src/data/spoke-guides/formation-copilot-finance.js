@@ -11,12 +11,12 @@ export default {
   metaDesc: "Formation Copilot finance : exports traités en mode Plan dans Excel, notes d'écarts dans Word, slides du comité, licences, données. 2 jours, Qualiopi.",
   keywords: "formation copilot finance, copilot excel finance, copilot contrôle de gestion, microsoft copilot direction financière, formation copilot daf, copilot clôture mensuelle, formation copilot qualiopi opco",
   prerequis: "Pratique courante d'Excel ; Copilot Chat suffit pour une partie des ateliers, la licence Microsoft Copilot ouvre les autres",
-  resume: "Ce programme Copilot de deux jours montre à une direction financière comment confier à Microsoft Copilot (anciennement Microsoft 365 Copilot) ses exports, ses classeurs et ses notes de gestion, en gardant l'origine de chaque montant. Les 14 heures se suivent dans vos bureaux ou en classe virtuelle, jusqu'à douze stagiaires d'une même direction, ou un seul. Facturée 1 980 € HT par journée, la session ouvre droit à une demande auprès de votre OPCO, qui tranche d'après ses règles et ses fonds disponibles.",
+  resume: "Ce programme Copilot de deux jours montre à une direction financière comment confier à Microsoft Copilot (anciennement Microsoft 365 Copilot) ses exports, ses classeurs et ses notes de gestion, en gardant l'origine de chaque montant. Les 14 heures se suivent dans vos bureaux ou en classe virtuelle, jusqu'à douze stagiaires d'une même direction, ou un seul. Facturée à partir de 1 980 € HT par journée (préparation sur vos exports en plus, au devis), la session ouvre droit à une demande auprès de votre OPCO, qui tranche d'après ses règles et ses fonds disponibles.",
   enBref: [
     { label: 'Formation', value: "Copilot dans Excel, Word, PowerPoint et Teams, appliqué à la clôture, au budget et au reporting" },
     { label: 'Durée', value: "14 heures sur deux journées, à placer hors des semaines de clôture" },
     { label: 'Formats', value: "Une équipe de votre entreprise jusqu'à douze stagiaires, ou un participant en parcours individuel ; chez vous ou en classe virtuelle" },
-    { label: 'Tarif', value: "1 980 € HT la journée ; deux jours : 3 960 € HT, prix inchangé de deux à douze inscrits" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée ; deux jours : à partir de 3 960 € HT, prix inchangé de deux à douze inscrits ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi : l'OPCO de votre branche examine la prise en charge d'après ses critères" },
     { label: 'Prérequis', value: "Manier Excel chaque semaine ; les licences de chacun sont relevées avec vous avant la session" },
   ],
@@ -294,7 +294,7 @@ export default {
     },
     {
       q: 'Quels financements pour former une direction financière à Copilot ?',
-      a: "Votre OPCO peut instruire une demande de prise en charge, Masteria étant certifié Qualiopi pour la formation ; il l'accepte ou non selon ses règles et les fonds qui lui restent. Pour le groupe entier, la facture des deux jours s'élève à 3 960 € HT, quel que soit le nombre d'inscrits jusqu'à douze, et les 1 980 € HT de la journée s'appliquent aussi en individuel. Nous vous remettons le déroulé complet et le projet de convention que l'opérateur réclame. À Genève et à Bruxelles, sans OPCO, le devis s'établit en euros hors taxes.",
+      a: "Votre OPCO peut instruire une demande de prise en charge, Masteria étant certifié Qualiopi pour la formation ; il l'accepte ou non selon ses règles et les fonds qui lui restent. Pour le groupe entier, la facture des deux jours part de 3 960 € HT, quel que soit le nombre d'inscrits jusqu'à douze, et le tarif de la journée, à partir de 1 980 € HT, s'applique aussi en individuel. Nous vous remettons le déroulé complet et le projet de convention que l'opérateur réclame. À Genève et à Bruxelles, sans OPCO, le devis s'établit en euros hors taxes.",
     },
     {
       q: 'Faut-il préférer Claude à Copilot pour les travaux financiers ?',
@@ -304,8 +304,8 @@ export default {
   tarifs: {
     titre: 'Combien coûtent deux jours de Copilot pour une direction financière',
     paras: [
-      "Les 1 980 € HT de chaque journée paient aussi le travail fait en amont : le formateur étudie un export anonymisé de votre ERP, un classeur budgétaire et le calendrier de vos clôtures, puis construit les exercices dessus. Vos stagiaires repartent avec les supports, les demandes types adaptées à votre plan analytique et la charte écrite au module 8.",
-      "Imaginons dix inscrits, le DAF, cinq contrôleurs de gestion et quatre comptables : ils suivent la session de deux jours, facturée 3 960 € HT, ce qui revient à 396 € HT par tête. Les licences Copilot ne sont pas comprises ; elles s'achètent auprès de Microsoft ou de votre revendeur. Votre OPCO étudie ensuite la prise en charge selon ses critères, sur la base du dossier que nous montons avec vous.",
+      "Les 1 980 € HT de départ de chaque journée ne paient pas le travail fait en amont : si le formateur étudie un export anonymisé de votre ERP, un classeur budgétaire et le calendrier de vos clôtures pour construire les exercices dessus, ce temps s'ajoute au devis. Vos stagiaires repartent avec les supports, les demandes types adaptées à votre plan analytique et la charte écrite au module 8.",
+      "Imaginons dix inscrits, le DAF, cinq contrôleurs de gestion et quatre comptables : ils suivent la session de deux jours, facturée à partir de 3 960 € HT, ce qui revient dès 396 € HT par tête. Les licences Copilot ne sont pas comprises ; elles s'achètent auprès de Microsoft ou de votre revendeur. Votre OPCO étudie ensuite la prise en charge selon ses critères, sur la base du dossier que nous montons avec vous.",
     ],
   },
   apres: {

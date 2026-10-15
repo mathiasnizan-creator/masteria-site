@@ -400,6 +400,7 @@ export default function GeminiPage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 32 }}>
             <div style={{ background: '#fff', borderRadius: 12, padding: 32, border: `2px solid ${COLOR}` }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: COLOR, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>INTRA-ENTREPRISE</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 980 €</div>
               <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (jusqu'à 12 participants)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -412,6 +413,7 @@ export default function GeminiPage() {
             </div>
             <div style={{ background: '#F9FAFB', borderRadius: 12, padding: 32, border: '1px solid #E5E7EB' }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: 8 }}>ACCOMPAGNEMENT INDIVIDUEL</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, marginBottom: 4 }}>1 980 €</div>
               <div style={{ fontSize: 14, color: '#6B7280', marginBottom: 16 }}>/ jour (coaching 1-to-1)</div>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -423,6 +425,9 @@ export default function GeminiPage() {
               </ul>
             </div>
           </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, maxWidth: 700, marginBottom: 8 }}>
+            Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis.
+          </p>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, maxWidth: 700 }}>
             Masteria est certifié Qualiopi pour les actions de formation. Toutes nos formations sont finançables via votre OPCO. Notre équipe vous accompagne dans la constitution du dossier. Chaque participant repart avec un support de formation complet et les 40 prompts professionnels prêts à l'emploi.
           </p>

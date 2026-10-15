@@ -79,7 +79,7 @@ const EN_BREF = [
   { label: 'Outils', value: "Celui que l'entreprise a choisi, ou plusieurs assistants comparés quand rien n'est encore décidé ; Masteria ne dépend d'aucun éditeur" },
   { label: 'Data', value: "Un volet sur les données : quoi confier à quel outil, comment contrôler un chiffre produit par l'IA, où s'arrête ce que permet le RGPD" },
   { label: 'Cadre', value: "Depuis sa réécriture de l'été 2026, l'article 4 exige de l'employeur des actions concrètes pour que ses équipes sachent utiliser l'IA ; chaque vague en documente une" },
-  { label: 'Prix', value: "Chaque journée de formation intra est facturée 1 980 € HT, chaque Sprint de trois heures aussi ; le devis additionne les briques que vous retenez" },
+  { label: 'Prix', value: "Chaque journée de formation intra démarre à 1 980 € HT, chaque Sprint de trois heures aussi ; la préparation sur mesure s'ajoute ; le devis additionne les briques que vous retenez" },
   { label: 'À la fin', value: "Des référents qui répondent aux questions sans nous, un relevé des usages par service et une recommandation pour la suite" },
 ]
 
@@ -269,7 +269,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte une démarche d'acculturation IA ?",
-    a: "Le budget dépend des briques retenues. Prévoyez 1 980 € HT pour chaque journée, avec une salle de douze stagiaires maximum, et 3 960 € HT pour deux jours ; un Sprint, soit trois heures, revient à 1 980 € HT ; l'intervention d'ouverture fait l'objet d'un forfait. Une PME de quarante salariés et un groupe de deux mille ne mobilisent pas le même nombre de séances. Ces briques étant des actions de formation, votre OPCO de branche peut en assumer une part, selon ses règles et ses fonds ; nous rédigeons la demande avec vous.",
+    a: "Le budget dépend des briques retenues. Prévoyez au moins 1 980 € HT pour chaque journée, avec une salle de douze stagiaires maximum, et 3 960 € HT pour deux jours ; un Sprint, soit trois heures, part lui aussi de 1 980 € HT ; la préparation sur vos dossiers s'ajoute au devis ; l'intervention d'ouverture fait l'objet d'un forfait. Une PME de quarante salariés et un groupe de deux mille ne mobilisent pas le même nombre de séances. Ces briques étant des actions de formation, votre OPCO de branche peut en assumer une part, selon ses règles et ses fonds ; nous rédigeons la demande avec vous.",
   },
   {
     q: "Combien de temps dure une acculturation ?",
@@ -809,12 +809,12 @@ export default function AcculturationIAPage() {
                 Des briques au prix connu, présentables à votre OPCO
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le tarif est public : une journée dans vos murs ou à distance vaut 1 980 € HT pour un groupe plafonné à douze, deux journées 3 960 € HT, une séance de Sprint 1 980 € HT ; seule l'intervention d'ouverture se chiffre au forfait. Inscrites parmi les formations de l'année, ces briques peuvent être financées par l'OPCO de votre branche, à hauteur de ce que ses règles et son budget autorisent. Programme, objectifs, modalités d'évaluation : nous rassemblons avec vous tout ce que l'opérateur demande. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur d'après votre secteur.
+                Le tarif de base est public : une journée dans vos murs ou à distance démarre à 1 980 € HT pour un groupe plafonné à douze, deux journées à 3 960 € HT, une séance de Sprint à 1 980 € HT. Les ateliers bâtis sur vos documents ajoutent leur préparation, chiffrée au devis ; seule l'intervention d'ouverture se chiffre au forfait. Inscrites parmi les formations de l'année, ces briques peuvent être financées par l'OPCO de votre branche, à hauteur de ce que ses règles et son budget autorisent. Programme, objectifs, modalités d'évaluation : nous rassemblons avec vous tout ce que l'opérateur demande. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur d'après votre secteur.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Journée intra : 1 980 € HT, douze stagiaires maximum',
-                  'Sprint de trois heures : 1 980 € HT',
+                  'Journée intra : dès 1 980 € HT, douze stagiaires maximum',
+                  'Sprint de trois heures : dès 1 980 € HT',
                   'Demande OPCO préparée avec vous',
                   'Aucune prise en charge par le CPF',
                 ].map(pt => (

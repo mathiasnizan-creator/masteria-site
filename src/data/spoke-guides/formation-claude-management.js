@@ -9,12 +9,12 @@ export default {
   pagePropre: true,
   auteur: true,
   metaDesc: "Formation Claude pour managers et dirigeants : instruire une décision sur dossier complet, régler l'effort, préparer comités et plans, garder le jugement.",
-  resume: "Managers et dirigeants suivent ici une formation Claude de deux jours, 14 heures en tout, consacrée à la préparation des décisions, des comités et des plans de transformation. Elle se tient en intra, pour une équipe de direction de douze membres au plus, ou en individuel, dans vos murs comme en visioconférence. Comptez 1 980 € HT par jour. La certification Qualiopi de Masteria permet à l'OPCO de votre branche de financer ces deux journées.",
+  resume: "Managers et dirigeants suivent ici une formation Claude de deux jours, 14 heures en tout, consacrée à la préparation des décisions, des comités et des plans de transformation. Elle se tient en intra, pour une équipe de direction de douze membres au plus, ou en individuel, dans vos murs comme en visioconférence. Comptez au moins 1 980 € HT par jour, plus la préparation sur votre dossier de décision, chiffrée au devis. La certification Qualiopi de Masteria permet à l'OPCO de votre branche de financer ces deux journées.",
   enBref: [
     { label: 'Formation', value: "Préparer et éprouver avec Claude les décisions de direction : dossiers complets, notes de décision, comités, plans de transformation, lecture de son propre 360" },
     { label: 'Durée', value: "Deux jours de sept heures, accolés ou espacés pour traiter entre les deux un dossier réel de la direction" },
     { label: 'Formats', value: "Comité ou équipe de direction en intra, jusqu'à douze personnes, ou accompagnement d'un dirigeant seul ; présentiel chez vous ou classe virtuelle" },
-    { label: 'Tarif', value: "Préparation sur un dossier de décision choisi par vous, comprise dans les 1 980 € HT de chaque journée" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée ; la préparation sur un dossier de décision choisi par vous s'ajoute au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; OPCO de la branche pour les salariés et les mandataires assimilés salariés qui se rémunèrent, fonds d'assurance formation pour un dirigeant non salarié" },
     { label: 'Prérequis', value: "Disposer d'un abonnement Claude payant et apporter un dossier de décision, ouvert ou déjà tranché, à instruire pendant les ateliers" },
   ],
@@ -279,8 +279,8 @@ export default {
   tarifs: {
     titre: "Les deux journées se préparent sur un dossier que votre direction a tranché ou doit trancher",
     paras: [
-      "Avant les deux jours, le formateur échange avec vous sur un ou deux dossiers que la direction a tranchés récemment ou doit trancher bientôt : un contrat à renouveler, un investissement, une réorganisation de service. Les ateliers sont construits sur ces pièces, anonymisées si besoin, ou sur un dossier fictif de même structure. Le groupe type rassemble le dirigeant, quatre ou cinq membres du comité de direction et parfois l'assistante de direction, qui prépare les comités.",
-      "Pour un comité de six personnes, les deux journées en intra coûtent 3 960 € HT, soit 660 € HT par membre, hors TVA de 20 %. Un parcours individuel se facture 1 980 € HT par journée. Selon le statut de chacun, l'OPCO de la branche ou le fonds d'assurance formation du dirigeant non salarié peut financer l'action, à condition de recevoir la demande avant la session.",
+      "Pour une formation sur mesure, le formateur échange avant les deux jours avec vous sur un ou deux dossiers que la direction a tranchés récemment ou doit trancher bientôt : un contrat à renouveler, un investissement, une réorganisation de service. Les ateliers sont construits sur ces pièces, anonymisées si besoin, ou sur un dossier fictif de même structure. Le groupe type rassemble le dirigeant, quatre ou cinq membres du comité de direction et parfois l'assistante de direction, qui prépare les comités. Cet échange et la construction des ateliers forment un temps de préparation chiffré au devis, en plus du prix de la journée.",
+      "Pour un comité de six personnes, les deux journées en intra coûtent à partir de 3 960 € HT, soit dès 660 € HT par membre, hors TVA de 20 %. Un parcours individuel se facture à partir de 1 980 € HT par journée. Selon le statut de chacun, l'OPCO de la branche ou le fonds d'assurance formation du dirigeant non salarié peut financer l'action, à condition de recevoir la demande avant la session.",
     ],
   },
   apres: {

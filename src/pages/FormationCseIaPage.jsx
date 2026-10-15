@@ -583,14 +583,14 @@ export default function FormationCseIaPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT la journée, et deux façons de la financer
+                Dès 1 980 € HT la journée, et deux façons de la financer
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La formation CSE et IA suit le tarif journalier de Masteria : 1 980 € HT pour le groupe, douze participants au plus. Deux sources de financement existent, et le devis présente les deux. <strong>L'employeur</strong> peut prendre la journée à sa charge, notamment quand elle réunit élus et direction ; la certification Qualiopi du cabinet permet alors de la présenter à l'OPCO de la branche, qui décide selon ses propres règles. <strong>Le comité</strong> peut aussi décider de la régler sur ses propres fonds : c'est un choix des élus, à valider avec le trésorier du CSE au regard des règles qui encadrent son budget. Le stage de formation économique de cinq jours prévu pour les élus titulaires d'un premier mandat (article L2315-63 du Code du travail) suit son propre cadre et reste distinct de cette journée. Le compte personnel de formation des salariés n'est pas mobilisé. La page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs côté employeur.
+                La formation CSE et IA suit le tarif journalier de Masteria, à partir de 1 980 € HT pour le groupe, douze participants au plus ; l'adaptation au fonctionnement de votre comité s'ajoute au devis comme temps de préparation. Deux sources de financement existent, et le devis présente les deux. <strong>L'employeur</strong> peut prendre la journée à sa charge, notamment quand elle réunit élus et direction ; la certification Qualiopi du cabinet permet alors de la présenter à l'OPCO de la branche, qui décide selon ses propres règles. <strong>Le comité</strong> peut aussi décider de la régler sur ses propres fonds : c'est un choix des élus, à valider avec le trésorier du CSE au regard des règles qui encadrent son budget. Le stage de formation économique de cinq jours prévu pour les élus titulaires d'un premier mandat (article L2315-63 du Code du travail) suit son propre cadre et reste distinct de cette journée. Le compte personnel de formation des salariés n'est pas mobilisé. La page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs côté employeur.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  '1 980 € HT la journée, douze participants au plus',
+                  'Dès 1 980 € HT la journée, douze participants au plus',
                   "Prise en charge par l'employeur, dossier OPCO possible",
                   'Ou règlement par le comité, sur décision des élus',
                   'Devis confidentiel en 24 heures après le cadrage',

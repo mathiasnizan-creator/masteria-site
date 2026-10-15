@@ -711,7 +711,7 @@ export default function OutilsIASurMesurePage() {
             <div style={{ flex: 1, minWidth: 240 }}>
               <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>Former vos équipes à l'IA, au-delà de l'outil</h3>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>
-                Nous formons aussi vos collaborateurs aux assistants du quotidien et à l'écriture de consignes. La formation est facturée à la journée (1 980 € HT), en groupe interne jusqu'à douze personnes ou en séance individuelle ; l'OPCO de votre secteur peut la financer, si ses règles et ses fonds le permettent. Le développement de l'outil reste hors de ce cadre : il n'est pas finançable par votre OPCO.
+                Nous formons aussi vos collaborateurs aux assistants du quotidien et à l'écriture de consignes. La formation est facturée à la journée, à partir de 1 980 € HT (la préparation sur vos outils s'ajoute au devis), en groupe interne jusqu'à douze personnes ou en séance individuelle ; l'OPCO de votre secteur peut la financer, si ses règles et ses fonds le permettent. Le développement de l'outil reste hors de ce cadre : il n'est pas finançable par votre OPCO.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                 Parcourir les formations IA

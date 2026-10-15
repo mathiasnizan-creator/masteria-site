@@ -11,12 +11,12 @@ export default {
   metaDesc: "Formation Copilot pour commerciaux : brief de rendez-vous avec Researcher, propositions dans Word, relances Outlook, pipeline Excel, Cowork. 2 jours.",
   keywords: "formation copilot commercial, copilot pour les commerciaux, microsoft copilot vente, copilot outlook relance client, copilot proposition commerciale word, copilot cowork commercial, formation copilot qualiopi opco",
   prerequis: "Une boîte Outlook où vivent vos échanges clients ; la licence Microsoft Copilot sert surtout au deuxième jour",
-  resume: "Pensé pour les vendeurs, les responsables de comptes et leurs managers, ce programme apprend à préparer un rendez-vous, rédiger une proposition et suivre une affaire avec Microsoft Copilot (anciennement Microsoft 365 Copilot), en partant de l'historique que l'équipe a déjà dans Outlook, Teams et SharePoint. Deux journées de 7 heures, en présentiel ou en visioconférence, pour une équipe de douze vendeurs au maximum ou un seul. Comptez 1 980 € HT par journée ; votre OPCO peut participer au financement selon ses critères.",
+  resume: "Pensé pour les vendeurs, les responsables de comptes et leurs managers, ce programme apprend à préparer un rendez-vous, rédiger une proposition et suivre une affaire avec Microsoft Copilot (anciennement Microsoft 365 Copilot), en partant de l'historique que l'équipe a déjà dans Outlook, Teams et SharePoint. Deux journées de 7 heures, en présentiel ou en visioconférence, pour une équipe de douze vendeurs au maximum ou un seul. Comptez au moins 1 980 € HT par journée, plus la préparation si le programme est bâti sur vos pièces ; votre OPCO peut participer au financement selon ses critères.",
   enBref: [
     { label: 'Formation', value: "Copilot appliqué au cycle de vente : préparation des rendez-vous, propositions, relances, suivi des affaires" },
     { label: 'Durée', value: "Deux journées de 7 heures, séparables d'une semaine pour tester les relances entre les deux" },
     { label: 'Formats', value: "Force de vente en intra, douze vendeurs au plus, ou coaching individuel ; sur votre site ou à distance" },
-    { label: 'Tarif', value: "Parcours complet à 3 960 € HT, soit deux journées à 1 980 € HT" },
+    { label: 'Tarif', value: "Parcours complet à partir de 3 960 € HT, soit deux journées à partir de 1 980 € HT ; la préparation sur mesure s'ajoute au devis" },
     { label: 'Financement', value: "Demande à votre OPCO rendue possible par la certification Qualiopi ; accord suivant les critères propres à votre branche" },
     { label: 'Prérequis', value: "Travailler dans Outlook et Teams avec vos clients ; les accès Copilot de chaque vendeur sont vérifiés au cadrage" },
   ],
@@ -294,7 +294,7 @@ export default {
     },
     {
       q: 'Quel financement pour former des commerciaux à Copilot ?',
-      a: "Organisme certifié Qualiopi, Masteria vous permet de solliciter l'OPCO de votre entreprise, qui accepte ou non de financer ces deux jours d'après ses critères et l'état de son budget. Pour une équipe de douze vendeurs au plus, les deux jours coûtent 3 960 € HT ; en individuel, la journée reste à 1 980 € HT. Le dossier, programme et convention compris, se prépare avec vous avant la session. Hors de France, à Genève ou à Bruxelles par exemple, nous établissons un devis en euros hors taxes.",
+      a: "Organisme certifié Qualiopi, Masteria vous permet de solliciter l'OPCO de votre entreprise, qui accepte ou non de financer ces deux jours d'après ses critères et l'état de son budget. Pour une équipe de douze vendeurs au plus, les deux jours coûtent à partir de 3 960 € HT ; en individuel, la journée reste à partir de 1 980 € HT. Le dossier, programme et convention compris, se prépare avec vous avant la session. Hors de France, à Genève ou à Bruxelles par exemple, nous établissons un devis en euros hors taxes.",
     },
     {
       q: 'Copilot peut-il écrire à nos clients étrangers dans leur langue ?',
@@ -304,8 +304,8 @@ export default {
   tarifs: {
     titre: "Le budget d'une formation Copilot pour une force de vente",
     paras: [
-      "Le prix journalier, 1 980 € HT, couvre la préparation : votre modèle de proposition, une grille tarifaire anonymisée et un export du pipeline sont transmis avant la session au formateur, qui bâtit les exercices dessus. Les vendeurs repartent avec leurs demandes types, la trame de brief de compte et les règles de relecture écrites ensemble.",
-      "Neuf vendeurs formés ensemble règlent 3 960 € HT le parcours, soit 440 € HT chacun. Les licences Copilot s'achètent séparément, chez Microsoft ou chez un partenaire. Reste la décision de votre OPCO, prise selon les critères fixés pour votre branche.",
+      "Le prix journalier part de 1 980 € HT et ne comprend pas la préparation sur mesure : si vous voulez des exercices bâtis sur votre modèle de proposition, une grille tarifaire anonymisée et un export du pipeline, le formateur les étudie avant la session et ce temps est chiffré au devis. Les vendeurs repartent avec leurs demandes types, la trame de brief de compte et les règles de relecture écrites ensemble.",
+      "Neuf vendeurs formés ensemble règlent à partir de 3 960 € HT le parcours, soit dès 440 € HT chacun. Les licences Copilot s'achètent séparément, chez Microsoft ou chez un partenaire. Reste la décision de votre OPCO, prise selon les critères fixés pour votre branche.",
     ],
   },
   apres: {

@@ -13,12 +13,12 @@ export default {
   h1: "Formation DRH : le plan de compétences IA, de l'entretien de parcours au CSE",
   metaTitle: "Formation DRH plan de compétences IA (2 jours) | Masteria",
   metaDesc: "Formation DRH, 2 jours : le volet IA du plan de compétences, de l'entretien de parcours au CSE, avec l'article 4 de l'AI Act et le financement par l'OPCO.",
-  resume: "Cette formation apprend aux DRH, en deux jours, à écrire le volet intelligence artificielle du plan de compétences de l'entreprise : recueil des besoins dans l'entretien de parcours professionnel, paliers par métier, budget selon l'effectif, présentation au CSE et registre des sessions. Les deux jours se tiennent sur votre site ou en visioconférence, avec jusqu'à douze membres de la fonction RH ou un DRH en tête-à-tête, pour 1 980 € HT par jour. Qualiopi couvre l'activité de formation de Masteria, ce qui ouvre à votre OPCO la possibilité de financer les deux jours, en appliquant ses propres règles dans la limite de ses moyens.",
+  resume: "Cette formation apprend aux DRH, en deux jours, à écrire le volet intelligence artificielle du plan de compétences de l'entreprise : recueil des besoins dans l'entretien de parcours professionnel, paliers par métier, budget selon l'effectif, présentation au CSE et registre des sessions. Les deux jours se tiennent sur votre site ou en visioconférence, avec jusqu'à douze membres de la fonction RH ou un DRH en tête-à-tête, à partir de 1 980 € HT par jour. Qualiopi couvre l'activité de formation de Masteria, ce qui ouvre à votre OPCO la possibilité de financer les deux jours, en appliquant ses propres règles dans la limite de ses moyens.",
   enBref: [
     { label: 'Formation', value: "Le volet IA du plan de compétences, bâti sur les obligations que posent déjà le Code du travail et l'AI Act européen" },
     { label: 'Durée', value: "Deux jours de sept heures : les obligations et les besoins le premier, la matrice, le budget, le CSE et le registre le second" },
     { label: 'Formats', value: "En présentiel dans l'entreprise ou en classe virtuelle ; un groupe RH de douze personnes maximum, ou un participant seul" },
-    { label: 'Tarif', value: "Une journée : 1 980 € HT ; les deux jours : 3 960 € HT pour tout le groupe ; TVA de 20 % non incluse" },
+    { label: 'Tarif', value: "Une journée : à partir de 1 980 € HT ; les deux jours : à partir de 3 960 € HT pour tout le groupe ; TVA de 20 % non incluse" },
     { label: 'Financement', value: "Masteria certifié Qualiopi pour la formation ; votre OPCO tranche d'après ses règles et ses moyens, le CPF reste hors jeu" },
     { label: 'Prérequis', value: "Votre plan de compétences en cours, votre trame d'entretien et les effectifs par famille de métiers" },
   ],
@@ -259,7 +259,7 @@ export default {
     },
     {
       q: "Combien coûte la formation des DRH au plan de compétences IA ?",
-      a: "Quand plusieurs membres de la fonction RH d'une même entreprise (DRH, RRH, responsables formation) suivent la session, jusqu'à douze, la facture des deux jours s'élève à 3 960 € HT, deux journées à 1 980 € HT. Un DRH formé seul paie 1 980 € HT par jour. TVA de 20 % en sus. Votre OPCO peut financer une part de la dépense, voire davantage, selon les priorités de sa branche et ce qu'il lui reste à engager.",
+      a: "Quand plusieurs membres de la fonction RH d'une même entreprise (DRH, RRH, responsables formation) suivent la session, jusqu'à douze, la facture des deux jours démarre à 3 960 € HT, soit deux journées à partir de 1 980 € HT. Un DRH formé seul paie à partir de 1 980 € HT par jour. TVA de 20 % en sus. Votre OPCO peut financer une part de la dépense, voire davantage, selon les priorités de sa branche et ce qu'il lui reste à engager.",
     },
     {
       q: "Un DRH novice en IA peut-il suivre ces deux jours ?",
@@ -269,8 +269,8 @@ export default {
   tarifs: {
     titre: "Ce que couvre le prix pour une équipe RH",
     paras: [
-      "Le formateur reçoit, avant la session, votre dernier PDC, votre trame d'entretien et les effectifs par famille de métiers, sans aucun nom. Les deux jours travaillent ces documents : chacun repart avec les questions IA de la trame, la matrice du volet IA, le projet de note au CSE et le modèle de registre. Cette préparation, les supports et les modèles sont compris dans le prix.",
-      "Prenons une ETI qui inscrit sa DRH, deux RRH de site, la responsable formation et le juriste social, soit cinq personnes. Le groupe règle 3 960 € HT l'ensemble, 792 € HT par participant ; un DRH inscrit seul règle 1 980 € HT pour chacune des deux journées. TVA en sus, au taux de 20 %. Au-delà de 50 salariés, le financement repose surtout sur les ressources propres de l'entreprise ; en dessous, l'OPCO peut prendre l'action à sa charge s'il l'estime prioritaire et si ses fonds le permettent, au vu des pièces que Masteria vous transmet.",
+      "Le formateur reçoit, avant la session, votre dernier PDC, votre trame d'entretien et les effectifs par famille de métiers, sans aucun nom. Les deux jours travaillent ces documents : chacun repart avec les questions IA de la trame, la matrice du volet IA, le projet de note au CSE et le modèle de registre. Cette préparation sur vos documents s'ajoute au prix de base et figure au devis ; ce prix couvre l'animation, les supports et les modèles.",
+      "Prenons une ETI qui inscrit sa DRH, deux RRH de site, la responsable formation et le juriste social, soit cinq personnes. Le groupe règle à partir de 3 960 € HT l'ensemble, soit dès 792 € HT par participant ; un DRH inscrit seul règle à partir de 1 980 € HT pour chacune des deux journées. TVA en sus, au taux de 20 %. Au-delà de 50 salariés, le financement repose surtout sur les ressources propres de l'entreprise ; en dessous, l'OPCO peut prendre l'action à sa charge s'il l'estime prioritaire et si ses fonds le permettent, au vu des pièces que Masteria vous transmet.",
     ],
   },
   apres: {

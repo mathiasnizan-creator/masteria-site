@@ -11,12 +11,12 @@ export default {
   h1: "Formation Copilot informatique : déployer, sécuriser et outiller la DSI",
   metaTitle: "Formation Copilot informatique et DSI | Masteria",
   metaDesc: "Formation Copilot pour la DSI : surpartage SharePoint, Purview, modèles d'Anthropic, agents, Cowork, GitHub Copilot et support. Deux jours, Qualiopi.",
-  resume: "La formation Copilot informatique prépare une DSI à ouvrir Copilot sans exposer ses données, puis à s'en servir pour le support, l'administration et le développement. Elle couvre le surpartage SharePoint, les stratégies Purview, l'activation des modèles d'Anthropic, la gouvernance des agents et GitHub Copilot. Le parcours compte quatorze heures sur deux jours, pour une DSI (jusqu'à douze places) ou pour un responsable seul, au tarif journalier de 1 980 € HT. Parce que Masteria est certifié Qualiopi, la demande de financement peut partir vers l'OPCO, qui l'étudie avec le barème de la branche.",
+  resume: "La formation Copilot informatique prépare une DSI à ouvrir Copilot sans exposer ses données, puis à s'en servir pour le support, l'administration et le développement. Elle couvre le surpartage SharePoint, les stratégies Purview, l'activation des modèles d'Anthropic, la gouvernance des agents et GitHub Copilot. Le parcours compte quatorze heures sur deux jours, pour une DSI (jusqu'à douze places) ou pour un responsable seul, à partir de 1 980 € HT par jour. Parce que Masteria est certifié Qualiopi, la demande de financement peut partir vers l'OPCO, qui l'étudie avec le barème de la branche.",
   enBref: [
     { label: 'Formation', value: "Copilot côté DSI : préparation du tenant, garde-fous Purview, modèles, agents, support et développement" },
     { label: 'Durée', value: "Quatorze heures en deux journées : le déploiement sûr d'abord, les usages de l'équipe informatique ensuite" },
     { label: 'Formats', value: "Intra pour la DSI, douze personnes au plus, souvent en deux groupes (administrateurs, développeurs), ou individuel ; sur site ou à distance" },
-    { label: 'Tarif', value: "1 980 € HT par jour, montant inchangé de un à douze participants" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par jour, montant inchangé de un à douze participants" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; la participation de l'OPCO dépend des règles de votre branche et de son budget" },
     { label: 'Prérequis', value: "Pratique de l'administration Microsoft 365 ou du développement ; un tenant de test ou un pilote Copilot est un plus" },
   ],
@@ -257,14 +257,14 @@ export default {
     },
     {
       q: "Qui peut payer la formation Copilot de la DSI ?",
-      a: "Votre OPCO peut étudier le dossier : la certification Qualiopi de Masteria couvre la catégorie des actions de formation ; il décide d'après son barème et l'argent dont il dispose. Le tarif reste de 1 980 € HT par jour, pour une équipe de douze comme pour un responsable seul. Un parcours DSI se scinde souvent en deux groupes, administrateurs d'un côté et développeurs de l'autre, avec un tronc commun d'une demi-journée sur les données et la gouvernance.",
+      a: "Votre OPCO peut étudier le dossier : la certification Qualiopi de Masteria couvre la catégorie des actions de formation ; il décide d'après son barème et l'argent dont il dispose. Le tarif part de 1 980 € HT par jour, pour une équipe de douze comme pour un responsable seul. Un parcours DSI se scinde souvent en deux groupes, administrateurs d'un côté et développeurs de l'autre, avec un tronc commun d'une demi-journée sur les données et la gouvernance.",
     },
   ],
   tarifs: {
     titre: "Ce que la DSI obtient pour ce prix",
     paras: [
-      "Le formateur prépare la session avec un administrateur de votre tenant : licences en place, état des rapports SAM, plan d'étiquetage Purview, décision ou non sur les modèles d'Anthropic, et, côté développement, l'organisation GitHub concernée. Les ateliers se déroulent sur un tenant de test, sur votre pilote ou sur des scénarios fournis, selon ce que votre politique de sécurité autorise.",
-      "Exemple : une DSI forme six administrateurs et techniciens support le premier jour, puis six développeurs le second, avec un tronc commun le matin. Le parcours de deux jours se facture 3 960 € HT au total, soit 330 € HT par participant. Un responsable sécurité seul peut suivre le parcours en tête-à-tête, au même prix journalier. Le dossier part ensuite à l'OPCO, qui l'examine avec le barème de la branche.",
+      "Le prix de base couvre l'animation, les supports et le programme ; la préparation propre à votre environnement s'ajoute et figure au devis. Le formateur la mène avec un administrateur de votre tenant : licences en place, état des rapports SAM, plan d'étiquetage Purview, décision ou non sur les modèles d'Anthropic, et, côté développement, l'organisation GitHub concernée. Les ateliers se déroulent sur un tenant de test, sur votre pilote ou sur des scénarios fournis, selon ce que votre politique de sécurité autorise.",
+      "Exemple : une DSI forme six administrateurs et techniciens support le premier jour, puis six développeurs le second, avec un tronc commun le matin. Le parcours de deux jours se facture à partir de 3 960 € HT au total, soit dès 330 € HT par participant. Un responsable sécurité seul peut suivre le parcours en tête-à-tête, au même prix journalier de base. Le dossier part ensuite à l'OPCO, qui l'examine avec le barème de la branche.",
     ],
   },
   apres: {

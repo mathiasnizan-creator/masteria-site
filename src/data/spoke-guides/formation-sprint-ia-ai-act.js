@@ -10,14 +10,14 @@ export default {
   updatedLabel: 'Revu le 7 octobre 2026',
   h1: "Sprint IA AI Act : trois heures pour savoir ce que le règlement européen exige de vous",
   metaTitle: 'Sprint IA AI Act : le règlement IA en 3 heures | Masteria',
-  metaDesc: "Sprint IA AI Act (3 h) : rôle de l'entreprise, article 4, transparence depuis août 2026, haut risque en décembre 2027, registre des usages. 1 980 € HT.",
+  metaDesc: "Sprint IA AI Act (3 h) : rôle de l'entreprise, article 4, transparence depuis août 2026, haut risque en décembre 2027, registre des usages. Dès 1 980 € HT.",
   keywords: "sprint ia ai act, formation ai act 3 heures, ai act omnibus 2026, article 4 ai act, maîtrise de l'ia en entreprise, registre des usages ia, formation conformité ia courte",
-  resume: "Le Sprint IA AI Act explique en trois heures ce que le règlement européen sur l'intelligence artificielle demande à votre entreprise au 7 octobre 2026, après l'Omnibus entré en vigueur le 27 juillet, puis ouvre pendant la séance le registre de vos propres usages. Masteria l'anime sur place ou à distance pour 1 980 € HT la séance, devant douze stagiaires au maximum, ou en tête-à-tête ; sa certification Qualiopi autorise votre OPCO à étudier un financement, qu'il accorde suivant ses règles et ses fonds.",
+  resume: "Le Sprint IA AI Act explique en trois heures ce que le règlement européen sur l'intelligence artificielle demande à votre entreprise au 7 octobre 2026, après l'Omnibus entré en vigueur le 27 juillet, puis ouvre pendant la séance le registre de vos propres usages. Masteria l'anime sur place ou à distance à partir de 1 980 € HT la séance, devant douze stagiaires au maximum, ou en tête-à-tête ; sa certification Qualiopi autorise votre OPCO à étudier un financement, qu'il accorde suivant ses règles et ses fonds.",
   enBref: [
     { label: 'Formation', value: "Le règlement européen sur l'IA dans sa version de juillet 2026, appliqué aux usages de votre entreprise" },
     { label: 'Durée', value: "Une séance de trois heures, en cinq séquences, dont près d'une heure d'atelier sur vos usages" },
     { label: 'Public', value: "DPO, juristes, responsables conformité, DRH, DSI, dirigeants et managers qui valident des outils" },
-    { label: 'Tarif', value: "1 980 € HT la séance, prix identique pour un participant seul et pour un groupe complet de douze" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la séance, prix identique pour un participant seul et pour un groupe complet de douze" },
     { label: 'Financement', value: "Séance éligible à une demande auprès de votre OPCO, Masteria étant certifié Qualiopi ; la réponse dépend des critères de la branche" },
     { label: 'Prérequis', value: "Aucune formation juridique ; envoyer avant la séance la liste des outils d'IA utilisés dans l'entreprise, même incomplète" },
   ],
@@ -212,7 +212,7 @@ export default {
     },
     {
       q: "Combien coûte le Sprint IA AI Act, et l'OPCO peut-il le financer ?",
-      a: "Les trois heures sont facturées 1 980 € HT, plus 20 % de TVA, pour un groupe limité à douze ou pour un seul participant. À six, chacun revient à 330 € HT. Parce que Masteria est certifié Qualiopi, votre OPCO peut étudier le dossier ; il l'accepte ou le refuse au regard de ses critères et de ce qui reste dans ses caisses. Programme et convention viennent de nous. Une entreprise genevoise ou bruxelloise reçoit un devis en euros HT.",
+      a: "Les trois heures sont facturées à partir de 1 980 € HT, plus 20 % de TVA, pour un groupe limité à douze ou pour un seul participant. À six, chacun paie dès 330 € HT. Parce que Masteria est certifié Qualiopi, votre OPCO peut étudier le dossier ; il l'accepte ou le refuse au regard de ses critères et de ce qui reste dans ses caisses. Programme et convention viennent de nous. Une entreprise genevoise ou bruxelloise reçoit un devis en euros HT.",
     },
     {
       q: 'Le Sprint remplace-t-il un avis juridique sur nos systèmes ?',
@@ -222,7 +222,7 @@ export default {
   tarifs: {
     titre: "Une séance AI Act au prix d'un Sprint, cadrage compris",
     paras: [
-      "Le montant, 1 980 € HT, reste le même pour deux inscrits ou pour douze. Il comprend l'échange de cadrage, au cours duquel nous recueillons la liste de vos outils et de vos usages, la préparation des exemples sur votre secteur, les supports remis à chaque participant, la trame de registre et l'attestation de fin de formation. Le calendrier présenté est celui en vigueur à la date de la séance : si une nouvelle échéance ou une nouvelle ligne directrice paraît entre-temps, elle est intégrée.",
+      "Le montant de base, à partir de 1 980 € HT, reste le même pour deux inscrits ou pour douze. Il comprend l'échange de cadrage, au cours duquel nous recueillons la liste de vos outils et de vos usages, les supports remis à chaque participant, la trame de registre et l'attestation de fin de formation. Adapter les exemples à votre secteur demande une préparation, qui s'ajoute au prix et figure au devis. Le calendrier présenté est celui en vigueur à la date de la séance : si une nouvelle échéance ou une nouvelle ligne directrice paraît entre-temps, elle est intégrée.",
       "Prenons un groupe de six personnes : la DRH, le DPO, le DSI, la juriste et deux managers. Chacun revient à 330 € HT. Masteria détenant la certification Qualiopi, votre OPCO a la faculté d'instruire le financement, puis trancher d'après les usages de sa branche et l'état de son budget ; le dossier part avant la séance, accompagné du programme et de la convention transmis par nos soins.",
     ],
   },

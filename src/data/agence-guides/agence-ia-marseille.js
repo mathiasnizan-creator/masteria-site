@@ -129,7 +129,7 @@ export default {
   ],
   formation: [
     "Les agents d'exploitation, les chargés de clientèle et le déclarant en douane apprennent à travailler avec l'outil livré : relire une saisie préparée, traiter un écart signalé, reprendre la conversation quand l'assistant passagers la transmet à un humain. Nous plaçons ces sessions hors des semaines de pointe, dans vos locaux marseillais ou à distance.",
-    "Seule cette partie ouvre droit à un financement par un OPCO, puisque notre certificat Qualiopi porte sur la formation ; une journée d'intra-entreprise représente 1 980 € HT. Conseil et développement font l'objet d'un forfait distinct.",
+    "Seule cette partie ouvre droit à un financement par un OPCO, puisque notre certificat Qualiopi porte sur la formation ; une journée d'intra-entreprise démarre à 1 980 € HT, et le temps passé à bâtir les exercices sur vos propres pièces est chiffré en plus au devis. Conseil et développement font l'objet d'un forfait distinct.",
   ],
   guide: {
     kicker: "Projets IA à Marseille",

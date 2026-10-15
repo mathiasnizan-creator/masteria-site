@@ -1393,6 +1393,7 @@ function SpokeCard({ spoke, tc, lean = false }) {
       {/* Footer carte */}
       <div style={{ padding: '12px 20px 16px', borderTop: '1px solid #F3F4F6', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
         <div>
+          <div style={{ fontSize: 11, color: '#6B7280' }}>À partir de</div>
           <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 900, color: '#0A0A0A' }}>1 980 €</span>
           <span style={{ fontSize: 12, color: '#6B7280' }}> /jour (groupe)</span>
         </div>

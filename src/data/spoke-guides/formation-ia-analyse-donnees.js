@@ -12,12 +12,12 @@ export default {
   h1: "Formation analyse de données avec l'IA : Excel, Copilot, ChatGPT et Claude",
   metaTitle: "Formation analyse de données avec l'IA (2 jours) | Masteria",
   metaDesc: "Formation analyse de données avec l'IA, 2 jours : Copilot et Claude dans Excel, ChatGPT en Python, Gemini dans Sheets, chiffres vérifiés avant diffusion.",
-  resume: "Cette formation à l'analyse de données avec l'IA apprend en deux jours à tirer d'un export de ventes, de stocks ou de paie des tableaux et une note que l'on peut signer, en faisant travailler Copilot ou Claude dans Excel et ChatGPT sur une copie du fichier. Une journée revient à 1 980 € HT, qu'elle réunisse douze collègues ou un analyste seul, en présentiel comme à distance. Le dossier de financement se prépare avec Masteria, dont la certification Qualiopi porte sur ses actions de formation, puis votre OPCO l'examine en fonction de ses règles et de son budget.",
+  resume: "Cette formation à l'analyse de données avec l'IA apprend en deux jours à tirer d'un export de ventes, de stocks ou de paie des tableaux et une note que l'on peut signer, en faisant travailler Copilot ou Claude dans Excel et ChatGPT sur une copie du fichier. Une journée se facture à partir de 1 980 € HT, qu'elle réunisse douze collègues ou un analyste seul, en présentiel comme à distance. Le dossier de financement se prépare avec Masteria, dont la certification Qualiopi porte sur ses actions de formation, puis votre OPCO l'examine en fonction de ses règles et de son budget.",
   enBref: [
     { label: 'Formation', value: "Analyser ses fichiers avec l'IA dans Excel ou Google Sheets, et vérifier chaque chiffre avant qu'il quitte le service" },
     { label: 'Durée', value: "Deux jours de sept heures : le classeur et ses contrôles le premier jour, l'analyse statistique et la note de direction le second" },
     { label: 'Formats', value: "Dans vos bureaux comme en classe virtuelle ; un groupe interne de douze personnes maximum, ou un participant en individuel" },
-    { label: 'Tarif', value: "1 980 € HT la journée ; 3 960 € HT les deux, quelle que soit la taille du groupe jusqu'à douze ; TVA de 20 % en sus" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée ; à partir de 3 960 € HT les deux, quelle que soit la taille du groupe jusqu'à douze ; TVA de 20 % en sus" },
     { label: 'Financement', value: "Dossier OPCO préparé avec Masteria, organisme certifié Qualiopi ; l'opérateur décide selon ses règles et ses fonds" },
     { label: 'Prérequis', value: "Filtrer, trier et écrire une formule simple dans Excel ; apporter un export que vous traitez chaque mois" },
   ],
@@ -250,7 +250,7 @@ export default {
     },
     {
       q: "Combien coûtent ces deux jours d'analyse de données, et qui peut les financer ?",
-      a: "Chaque jour de formation est facturé 1 980 € HT, soit 3 960 € HT pour les deux jours lorsqu'une équipe interne de douze personnes au plus les suit ensemble. Un analyste inscrit seul paie le même prix journalier. S'ajoutent les 20 % de TVA. Votre OPCO, l'organisme qui gère les fonds de formation de votre branche, peut instruire une prise en charge parce que Masteria est certifié Qualiopi ; il décide d'après ses propres règles. Vous joignez à la demande les deux pièces établies par Masteria, programme détaillé et convention.",
+      a: "Chaque jour de formation est facturé à partir de 1 980 € HT, soit à partir de 3 960 € HT pour les deux jours lorsqu'une équipe interne de douze personnes au plus les suit ensemble. Un analyste inscrit seul paie le même prix journalier de base. S'ajoutent les 20 % de TVA. Votre OPCO, l'organisme qui gère les fonds de formation de votre branche, peut instruire une prise en charge parce que Masteria est certifié Qualiopi ; il décide d'après ses propres règles. Vous joignez à la demande les deux pièces établies par Masteria, programme détaillé et convention.",
     },
     {
       q: "Peut-on suivre ces deux jours en classe virtuelle ?",
@@ -258,10 +258,10 @@ export default {
     },
   ],
   tarifs: {
-    titre: "Le prix des deux jours, préparation sur vos fichiers comprise",
+    titre: "Le prix des deux jours et la préparation sur vos fichiers",
     paras: [
-      "Le formateur se fait remettre, avant les deux jours, un export anonymisé, le classeur le plus redouté du service et la liste des reportings à produire chaque mois ; les ateliers des deux jours s'appuient sur ces pièces. Le prix inclut cette préparation, les supports, les consignes d'analyse adaptées à vos colonnes et la grille de contrôle que chaque participant emporte.",
-      "Prenons un service qui inscrit son responsable du contrôle de gestion, trois contrôleurs, deux chargées d'études marketing et un responsable d'agence, soit sept personnes. Les deux jours en intra coûtent 3 960 € HT au total, environ 566 € HT par participant ; suivis en individuel, ils coûtent 1 980 € HT par jour pour la personne formée. Il faut y ajouter la TVA, au taux de 20 %. L'OPCO de votre branche tranche sur le financement d'après ses critères et le budget qui lui reste, au vu des documents que Masteria vous fournit.",
+      "Le formateur se fait remettre, avant les deux jours, un export anonymisé, le classeur le plus redouté du service et la liste des reportings à produire chaque mois ; les ateliers des deux jours s'appuient sur ces pièces. Le prix de base couvre l'animation, les supports et la grille de contrôle que chaque participant emporte ; cette préparation et l'adaptation des consignes d'analyse à vos colonnes s'y ajoutent et figurent au devis.",
+      "Prenons un service qui inscrit son responsable du contrôle de gestion, trois contrôleurs, deux chargées d'études marketing et un responsable d'agence, soit sept personnes. Les deux jours en intra coûtent à partir de 3 960 € HT au total, soit dès environ 566 € HT par participant ; suivis en individuel, ils coûtent à partir de 1 980 € HT par jour pour la personne formée. Il faut y ajouter la TVA, au taux de 20 %. L'OPCO de votre branche tranche sur le financement d'après ses critères et le budget qui lui reste, au vu des documents que Masteria vous fournit.",
     ],
   },
   apres: {

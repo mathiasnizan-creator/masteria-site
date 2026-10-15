@@ -10,14 +10,14 @@ export default {
   updatedLabel: 'Revu le 7 octobre 2026',
   h1: "Sprint IA Excel : trois heures pour confier vos formules et vos tableaux croisés à l'IA",
   metaTitle: "Sprint IA Excel : l'IA dans vos classeurs en 3 h | Masteria",
-  metaDesc: "Sprint IA Excel (3 h) : formules, tableaux croisés, mises en évidence et graphiques avec Copilot dans Excel ou ChatGPT, sur vos fichiers. 1 980 € HT.",
+  metaDesc: "Sprint IA Excel (3 h) : formules, tableaux croisés, mises en évidence et graphiques avec Copilot dans Excel ou ChatGPT, sur vos fichiers. Dès 1 980 € HT.",
   keywords: "sprint ia excel, formation ia excel 3 heures, copilot excel formation, chatgpt excel, tableau croisé dynamique ia, formules excel ia, formation excel intelligence artificielle",
-  resume: "Le Sprint IA Excel apprend en trois heures à obtenir de l'IA des formules, des tableaux croisés, des lignes mises en évidence et des graphiques sur votre propre classeur, puis à contrôler chaque chiffre avant de l'envoyer. Il se déroule avec Copilot dans Excel, ou avec ChatGPT ouvert à côté du fichier si l'entreprise n'utilise pas Microsoft 365. Une séance coûte 1 980 € HT pour un groupe de douze au maximum ou pour un seul stagiaire, en salle chez vous comme en visioconférence, et votre OPCO peut la financer d'après les règles de sa branche.",
+  resume: "Le Sprint IA Excel apprend en trois heures à obtenir de l'IA des formules, des tableaux croisés, des lignes mises en évidence et des graphiques sur votre propre classeur, puis à contrôler chaque chiffre avant de l'envoyer. Il se déroule avec Copilot dans Excel, ou avec ChatGPT ouvert à côté du fichier si l'entreprise n'utilise pas Microsoft 365. Une séance coûte à partir de 1 980 € HT pour un groupe de douze au maximum ou pour un seul stagiaire, en salle chez vous comme en visioconférence, et votre OPCO peut la financer d'après les règles de sa branche.",
   enBref: [
     { label: 'Formation', value: "L'IA au service du tableur : formules, synthèses par catégorie, mises en forme conditionnelles et graphiques" },
     { label: 'Durée', value: "Trois heures en cinq séquences, chaque participant travaillant sur l'un de ses classeurs" },
     { label: 'Outils', value: "Copilot dans Excel, avec ou sans licence Microsoft Copilot, ou ChatGPT à côté du fichier" },
-    { label: 'Tarif', value: "1 980 € HT la séance, qu'elle réunisse douze personnes ou une seule" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la séance, qu'elle réunisse douze personnes ou une seule" },
     { label: 'Financement', value: "Dossier OPCO monté avec les pièces que remet Masteria, organisme certifié Qualiopi ; décision selon la branche" },
     { label: 'Prérequis', value: "Savoir saisir, trier et filtrer dans Excel ; apporter un classeur utilisé chaque semaine, sur une copie" },
   ],
@@ -199,7 +199,7 @@ export default {
   faq: [
     {
       q: "Combien coûte le Sprint IA Excel ?",
-      a: "Le Sprint IA Excel est facturé 1 980 € HT la séance de trois heures, en intra-entreprise jusqu'à douze stagiaires ou en individuel ; la TVA, au taux de 20 %, s'y ajoute. Un groupe complet ramène la dépense à 165 € HT par stagiaire. Indiquez-nous le nombre de participants, l'outil dont ils disposent et le format souhaité, en présentiel ou à distance : le devis précise le nombre de séances quand un service entier doit y passer. Le financement par l'OPCO est détaillé dans la dernière question.",
+      a: "Le Sprint IA Excel est facturé à partir de 1 980 € HT la séance de trois heures, en intra-entreprise jusqu'à douze stagiaires ou en individuel ; la TVA, au taux de 20 %, s'y ajoute. Avec un groupe complet, la dépense démarre à 165 € HT par stagiaire. Indiquez-nous le nombre de participants, l'outil dont ils disposent et le format souhaité, en présentiel ou à distance : le devis précise le nombre de séances quand un service entier doit y passer. Le financement par l'OPCO est détaillé dans la dernière question.",
     },
     {
       q: "Sprint IA Excel ou formation de deux jours sur l'analyse de données : lequel choisir ?",
@@ -229,7 +229,7 @@ export default {
   tarifs: {
     titre: "Le prix d'un Sprint IA Excel, et ce qu'il comprend",
     paras: [
-      "Pour 1 980 € HT, le prix ne bouge pas entre un et douze stagiaires. Il couvre l'échange de cadrage, pendant lequel nous vérifions avec votre service informatique l'accès à Copilot ou à ChatGPT, la préparation des exercices sur l'outil dont vos équipes disposent, la fiche de demandes remise à chacun et l'attestation remise en fin de séance.",
+      "À partir de 1 980 € HT, le prix ne bouge pas entre un et douze stagiaires. Il couvre l'échange de cadrage, pendant lequel nous vérifions avec votre service informatique l'accès à Copilot ou à ChatGPT, la fiche de demandes remise à chacun et l'attestation remise en fin de séance. La préparation des exercices sur vos propres classeurs s'ajoute et figure au devis.",
       "Prenons un service comptable et achats de dix personnes : la séance revient à 198 € HT par participant. Pour un site entier, les séances s'enchaînent par équipe, avec le même déroulé et des exemples tirés des classeurs de chaque service. Votre OPCO peut prendre la séance en charge quand ses critères l'y autorisent ; la demande part avant la date, avec les pièces que nous fournissons.",
     ],
   },

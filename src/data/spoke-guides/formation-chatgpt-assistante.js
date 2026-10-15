@@ -13,21 +13,21 @@ export default {
   metaTitle: 'Formation ChatGPT assistante de direction | Masteria',
   metaDesc: "Formation ChatGPT pour assistantes de direction : courriers au ton du dirigeant, comptes rendus, déplacements, Word et Excel, dossiers confidentiels.",
   keywords: "formation ChatGPT assistante de direction, ChatGPT assistanat, ChatGPT secrétariat de direction, formation IA assistante",
-  resume: "Cette formation ChatGPT s'adresse aux assistantes et assistants de direction ; elle dure deux jours, quatorze heures passées sur les courriers, les comptes rendus et les déplacements que votre direction vous confie. Un siège peut y inscrire une douzaine de personnes au plus, ou confier une assistante seule au formateur, dans vos bureaux ou en visioconférence. Le jour de formation vaut 1 980 € HT, et l'OPCO de votre branche, que la certification Qualiopi de Masteria permet de solliciter, statue sur sa prise en charge.",
+  resume: "Deux jours pour préparer avec ChatGPT les courriers, les comptes rendus et les déplacements de votre direction. Les exercices partent de vos propres modèles de lettres et d'ordres du jour, en groupe ou en individuel.",
   enBref: [
     { label: 'Formation', value: "ChatGPT au poste d'assistanat : correspondance du dirigeant, notes de réunion mises au propre, voyages d'affaires, tableaux de suivi et supports de comité" },
     { label: 'Durée', value: "Deux journées de sept heures, placées de préférence avant un comité ou un déplacement inscrit à votre agenda" },
     { label: 'Formats', value: "Les assistantes d'une même direction en groupe intra (douze au maximum), ou une assistante seule ; sur place, en France comme en Europe, aux États-Unis ou en Inde, ou à distance" },
-    { label: 'Tarif', value: "1 980 € HT par journée, y compris la préparation des exercices sur vos modèles de lettres et vos ordres du jour" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée ; pour des exercices sur vos modèles de lettres et vos ordres du jour, la préparation s'ajoute au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi : votre OPCO examine la demande d'après les critères et le budget de votre branche" },
     { label: 'Prérequis', value: "Un compte ChatGPT d'entreprise (Business ou Enterprise) de préférence ; un compte Plus convient pour la méthode, sans les fonctions d'équipe" },
   ],
-  intro: "Une assistante de direction écrit au nom d'une autre personne. Chaque lettre, chaque relance et chaque relevé de décisions doit sonner comme le dirigeant, partir à la bonne date et ne rien révéler de ce qui doit rester au bureau. ChatGPT sait produire la première version de ces écrits, lire les notes griffonnées d'une réunion et préparer un programme de voyage, à condition de connaître le dirigeant et de travailler sur un compte qui protège ses dossiers. Ce guide montre comment lui donner ce contexte une fois pour toutes, comment l'utiliser depuis Word, Excel et PowerPoint, et quelles pièces ne doivent jamais lui être confiées.",
+  intro: "Une assistante de direction écrit au nom de quelqu'un d'autre. Un courrier doit avoir le ton du dirigeant, partir à la bonne date et ne rien dire de ce qui reste au bureau. ChatGPT peut en écrire la première version, mettre au propre des notes de réunion ou bâtir un programme de voyage.",
   prerequis: "Rédiger chaque semaine des courriers et des comptes rendus ; disposer d'un accès ChatGPT, de préférence sur une offre Business ou Enterprise, contrôlé avec vous avant la session",
   guide: {
     kicker: 'Guide terrain',
     h2: "ChatGPT écrit le premier jet, l'assistante garde la signature du dirigeant",
-    lead: "Le poste d'assistanat repose sur une confiance : le dirigeant signe ce que vous préparez sans tout relire. ChatGPT peut alléger ce travail sans entamer cette confiance si trois conditions sont réunies. Il doit connaître les habitudes de chaque dirigeant, qu'un projet ChatGPT conserve d'une conversation à l'autre. Il doit travailler sur un compte d'entreprise, où OpenAI s'interdit par défaut d'apprendre de vos échanges. Et rien de ce qu'il produit ne part sans votre relecture : une date, un nom ou un montant faux dans un courrier engage la direction, quelle que soit la machine qui l'a écrit.",
+    lead: "Le dirigeant signe ce que vous préparez, souvent sans tout relire. Pour que ChatGPT allège ce travail, il lui faut connaître les habitudes de chaque dirigeant, ce que permet un projet ChatGPT, et tourner sur un compte d'entreprise, où OpenAI n'apprend pas de vos échanges par défaut. Une règle s'y ajoute : rien ne part sans votre relecture, car une date ou un montant faux dans un courrier engage la direction.",
     sections: [
       {
         h3: "Un projet par dirigeant retient ses formules, ses interlocuteurs et ses préférences",
@@ -274,7 +274,7 @@ export default {
     },
     {
       q: "Peut-on suivre cette formation seule, à distance ?",
-      a: "Oui. Le format individuel convient bien à une assistante de direction, qui avance alors sur ses propres dossiers au rythme de son agenda. Les deux journées peuvent être séparées d'une ou deux semaines, ce qui laisse le temps d'essayer le projet du dirigeant entre les deux. À distance, le formateur voit votre écran partagé et corrige avec vous, en direct, toute demande qui tourne mal. Le prix d'une journée reste 1 980 € HT, seule ou en groupe.",
+      a: "Oui. Le format individuel convient bien à une assistante de direction, qui avance alors sur ses propres dossiers au rythme de son agenda. Les deux journées peuvent être séparées d'une ou deux semaines, ce qui laisse le temps d'essayer le projet du dirigeant entre les deux. À distance, le formateur voit votre écran partagé et corrige avec vous, en direct, toute demande qui tourne mal. Le prix d'une journée reste à partir de 1 980 € HT, seule ou en groupe.",
     },
     {
       q: "Comment faire financer la formation d'une assistante de direction ?",
@@ -284,8 +284,8 @@ export default {
   tarifs: {
     titre: "Le prix d'une formation ChatGPT pour les assistantes d'un siège",
     paras: [
-      "Ce tarif inclut une préparation : vos modèles de lettres, un ordre du jour type et un compte rendu récent parviennent au formateur, qui bâtit les ateliers sur cette matière. Il comprend aussi les supports, les prompts du guide adaptés à votre direction et l'aide au réglage des projets de chaque dirigeant pendant le module 3.",
-      "Prenons un siège qui inscrit ses quatre assistantes de direction et son office manager. En intra, ce groupe de cinq règle 3 960 € HT au total, soit 792 € HT par personne. Une assistante seule paie le même tarif journalier, 1 980 € HT, et repart avec un programme construit sur son seul poste. Votre OPCO étudie ensuite la prise en charge selon les règles de sa branche ; nous préparons avec vous les pièces du dossier.",
+      "Le tarif de base comprend l'animation, les supports, les prompts du guide adaptés à votre direction et l'aide au réglage des projets de chaque dirigeant pendant le module 3. Si vous voulez des ateliers bâtis sur vos modèles de lettres, un ordre du jour type et un compte rendu récent, le formateur les étudie avant la session et ce temps de préparation figure en plus au devis.",
+      "Prenons un siège qui inscrit ses quatre assistantes de direction et son office manager. En intra, ce groupe de cinq règle à partir de 3 960 € HT au total, soit dès 792 € HT par personne. Une assistante seule paie le même tarif journalier, à partir de 1 980 € HT, et repart avec un programme construit sur son seul poste. Votre OPCO étudie ensuite la prise en charge selon les règles de sa branche ; nous préparons avec vous les pièces du dossier.",
     ],
   },
   apres: {

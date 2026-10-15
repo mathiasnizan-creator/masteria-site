@@ -35,7 +35,7 @@ function PromptBlock({ prompt, color }) {
   )
 }
 
-export default function TerrainGuide({ guide, sources: sourcesProp, color = '#2563EB', background = '#fff', padding = '80px 40px' }) {
+export default function TerrainGuide({ guide, intro, sources: sourcesProp, color = '#2563EB', background = '#fff', padding = '80px 40px' }) {
   if (!guide) return null
   // Les fichiers de guide portent leurs sources au premier niveau (à côté de `guide`) :
   // la page les transmet par la prop `sources`.
@@ -53,6 +53,9 @@ export default function TerrainGuide({ guide, sources: sourcesProp, color = '#25
         <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 16px', lineHeight: 1.2 }}>
           {guide.h2}
         </h2>
+        {intro && (
+          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, margin: '0 0 18px' }}>{intro}</p>
+        )}
         {guide.lead && (
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.75, margin: '0 0 40px', fontWeight: 500 }}>{guide.lead}</p>
         )}

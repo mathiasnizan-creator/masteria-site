@@ -11,12 +11,12 @@ export default {
   h1: "Formation Copilot marketing : campagnes, présentations et bilans dans Microsoft 365",
   metaTitle: "Formation Copilot marketing | Masteria, Qualiopi",
   metaDesc: "Formation Copilot marketing : brief, deck au gabarit de la marque, bilan de campagne dans Excel, visuels et agent de relecture. Deux jours, Qualiopi.",
-  resume: "La formation Copilot marketing apprend à une équipe marketing à conduire une campagne entière dans Microsoft 365 avec Copilot : le brief, le plan de lancement, le deck au gabarit de la marque, les visuels, puis le bilan chiffré dans Excel. Elle dure deux journées de sept heures, suivies en équipe (douze places) ou en tête-à-tête, et la journée est facturée 1 980 € HT. Masteria détient la certification Qualiopi : la demande de prise en charge part à votre OPCO, qui applique les règles de votre branche.",
+  resume: "La formation Copilot marketing apprend à une équipe marketing à conduire une campagne entière dans Microsoft 365 avec Copilot : le brief, le plan de lancement, le deck au gabarit de la marque, les visuels, puis le bilan chiffré dans Excel. Elle dure deux journées de sept heures, suivies en équipe (douze places) ou en tête-à-tête, et la journée est facturée à partir de 1 980 € HT. Masteria détient la certification Qualiopi : la demande de prise en charge part à votre OPCO, qui applique les règles de votre branche.",
   enBref: [
     { label: 'Formation', value: "Copilot au service d'une équipe marketing : brief, plan, présentation, visuels, veille et lecture des résultats" },
     { label: 'Durée', value: "Deux jours de sept heures, le premier centré sur la production, le second sur les chiffres et la marque" },
     { label: 'Formats', value: "Une équipe marketing réunie en intra (jusqu'à douze), ou un responsable seul en parcours individuel ; sur site ou à distance" },
-    { label: 'Tarif', value: "1 980 € HT la journée, montant identique pour un participant et pour un groupe de douze" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée, montant identique pour un participant et pour un groupe de douze" },
     { label: 'Financement', value: "Certification Qualiopi de Masteria ; l'OPCO de votre branche peut financer la session, selon les règles qu'il applique et l'argent qu'il lui reste" },
     { label: 'Prérequis', value: "Un compte Microsoft 365 professionnel ; un brief et un export de campagne récents à apporter pour les ateliers" },
   ],
@@ -256,14 +256,14 @@ export default {
     },
     {
       q: "Qui peut prendre en charge la formation Copilot marketing ?",
-      a: "L'opérateur de compétences dont dépend l'entreprise finance les organismes certifiés Qualiopi, ce qui est le cas de Masteria pour ses actions de formation, puis il tranche selon son propre barème et l'enveloppe qui lui reste. Une journée vaut 1 980 € HT, que l'on forme une personne ou douze, et 3 960 € HT les deux journées. Nous fournissons le programme détaillé, la convention et chaque pièce demandée par l'OPCO avant la session.",
+      a: "L'opérateur de compétences dont dépend l'entreprise finance les organismes certifiés Qualiopi, ce qui est le cas de Masteria pour ses actions de formation, puis il tranche selon son propre barème et l'enveloppe qui lui reste. Une journée vaut au moins 1 980 € HT, que l'on forme une personne ou douze, et au moins 3 960 € HT les deux journées. Nous fournissons le programme détaillé, la convention et chaque pièce demandée par l'OPCO avant la session.",
     },
   ],
   tarifs: {
     titre: "Ce que couvre le prix pour une équipe marketing",
     paras: [
-      "Une partie du travail se fait avant la première journée, sans supplément. Le formateur reçoit un brief récent, un export de campagne anonymisé si besoin et votre modèle PowerPoint, puis ajuste les demandes du guide à votre marque. L'équipe garde les supports, la bibliothèque de demandes et l'agent de relecture construit au dernier module.",
-      "Prenons une direction marketing qui inscrit sa responsable, deux chefs de produit, deux chargés d'acquisition et une responsable de contenus, six inscrits au total. Ce groupe paie 3 960 € HT pour les deux journées, 660 € HT par participant. Un responsable marketing seul suit le même programme en tête-à-tête, au même tarif de 1 980 € HT par jour. Votre OPCO reçoit ensuite le dossier et l'étudie avec le barème de votre branche.",
+      "Le prix de base couvre l'animation, les supports et le programme. Le travail fait avant la première journée, pour ajuster le guide à votre marque, s'ajoute et figure au devis. Le formateur reçoit un brief récent, un export de campagne anonymisé si besoin et votre modèle PowerPoint, puis ajuste les demandes du guide à votre marque. L'équipe garde les supports, la bibliothèque de demandes et l'agent de relecture construit au dernier module.",
+      "Prenons une direction marketing qui inscrit sa responsable, deux chefs de produit, deux chargés d'acquisition et une responsable de contenus, six inscrits au total. Ce groupe paie à partir de 3 960 € HT pour les deux journées, soit dès 660 € HT par participant. Un responsable marketing seul suit le même programme en tête-à-tête, au même tarif de base, à partir de 1 980 € HT par jour. Votre OPCO reçoit ensuite le dossier et l'étudie avec le barème de votre branche.",
     ],
   },
   apres: {

@@ -8,13 +8,13 @@ export default {
   pagePropre: true,
   auteur: true,
   metaDesc: "La formation Claude pour le service client : export de tickets lu en entier, réponses aux réclamations, base de réponses partagée, données clients.",
-  resume: "Cette formation Claude pour le service client s'étale sur deux jours, soit 14 heures de travail sur vos cas, pour douze conseillers et superviseurs au maximum en intra, ou pour un responsable en accompagnement individuel. Elle se déroule dans votre entreprise ou en ligne, et chaque jour de session coûte 1 980 € HT. Masteria, certifié Qualiopi, constitue avec vous le dossier que l'OPCO de votre branche examine avant de décider du financement.",
+  resume: "Cette formation Claude pour le service client s'étale sur deux jours, soit 14 heures de travail sur vos cas, pour douze conseillers et superviseurs au maximum en intra, ou pour un responsable en accompagnement individuel. Elle se déroule dans votre entreprise ou en ligne, et chaque jour de session coûte à partir de 1 980 € HT, la préparation sur vos tickets s'ajoutant au devis. Masteria, certifié Qualiopi, constitue avec vous le dossier que l'OPCO de votre branche examine avant de décider du financement.",
   intro: "Un responsable de service client veut savoir si l'IA peut aider ses conseillers sans répondre à leur place ni exposer les données de ses clients. Claude lit un export complet de tickets ou de verbatims, retrouve la procédure dans une base partagée et prépare des réponses que le conseiller relit puis envoie. Ce guide montre comment monter cette base, écrire les compétences de réponse de l'équipe et régler les options qui protègent les données personnelles.",
   enBref: [
     { label: 'Formation', value: "Claude pour les conseillers, les superviseurs et les responsables de la relation client" },
     { label: 'Durée', value: "Deux jours de formation, soit 14 heures, avec vos propres tickets comme matière" },
     { label: 'Formats', value: "Intra pour douze conseillers et superviseurs au maximum, ou suivi individuel ; en entreprise ou à distance" },
-    { label: 'Tarif', value: "Chaque jour de formation : 1 980 € HT, pour un groupe ou pour une personne seule" },
+    { label: 'Tarif', value: "Chaque jour de formation à partir de 1 980 € HT, pour un groupe ou pour une personne seule ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Certification Qualiopi : prise en charge possible par l'OPCO de votre branche, selon ses propres règles" },
     { label: 'Prérequis', value: "Un export de tickets anonymisé et un compte Claude de l'organisation, de préférence sur l'offre Team" },
   ],
@@ -229,13 +229,13 @@ export default {
     { q: "Quelle offre Claude retenir pour un service client ?", a: "L'offre Team couvre les besoins d'une équipe de conseillers : projets partagés avec deux niveaux d'accès, compétences diffusées, mémoire coupée par défaut, connecteurs choisis par l'administrateur. Enterprise ajoute notamment la rétention personnalisée des données, les journaux d'audit et les droits par rôle." },
     { q: "Claude remplace-t-il notre outil de tickets ou de mesure de la satisfaction ?", a: "Ces outils gardent le flux, l'historique et les indicateurs. Claude travaille à côté : il lit leurs exports, retrouve la procédure, prépare les réponses et rédige la note qualité. La formation montre où passe la frontière entre les deux." },
     { q: "La formation part-elle de nos propres tickets ?", a: "Oui, d'exports anonymisés que nous préparons avec vous avant la session, sans colonnes de nom, d'adresse ni de téléphone. Chaque participant dispose d'un compte Claude de l'organisation, de préférence sur l'offre Team. La session, deux fois 7 heures, se déroule dans votre entreprise ou à distance." },
-    { q: "Qui paie la formation d'une équipe de conseillers, et combien ?", a: "Chaque journée coûte 1 980 € HT, pour douze conseillers comme pour un responsable seul. Puisque Masteria est certifié Qualiopi, la session est finançable par votre OPCO, qui tranche selon les règles de votre branche. Le dossier et ses pièces se préparent avec nous." },
+    { q: "Qui paie la formation d'une équipe de conseillers, et combien ?", a: "Chaque journée coûte à partir de 1 980 € HT, pour douze conseillers comme pour un responsable seul. Puisque Masteria est certifié Qualiopi, la session est finançable par votre OPCO, qui tranche selon les règles de votre branche. Le dossier et ses pièces se préparent avec nous." },
   ],
   tarifs: {
     titre: "Le coût de la formation pour une équipe de service client",
     paras: [
-      "Le tarif inclut la préparation : nous définissons avec vous l'export de tickets à extraire, sans colonnes nominatives, nous l'analysons avant la session et nous écrivons les cas d'atelier à partir de vos motifs de contact les plus délicats. Les deux journées, les supports, ainsi que la base et les compétences bâties en séance, qui restent dans votre organisation Claude, entrent dans ce prix.",
-      "Une équipe de dix conseillers et de deux superviseurs suit la formation en intra pour 3 960 € HT au total, soit 330 € HT par personne. Pour un responsable de service seul, l'accompagnement individuel coûte 1 980 € HT chaque jour. Selon les critères de votre branche, votre OPCO peut prendre ces frais en charge ; le dossier se monte avec notre aide.",
+      "Le tarif de base ne comprend pas la préparation sur mesure : nous définissons avec vous l'export de tickets à extraire, sans colonnes nominatives, nous l'analysons avant la session et nous écrivons les cas d'atelier à partir de vos motifs de contact les plus délicats ; ce temps est chiffré au devis. Le prix de base couvre les deux journées, les supports, ainsi que la base et les compétences bâties en séance, qui restent dans votre organisation Claude, dans le prix.",
+      "Une équipe de dix conseillers et de deux superviseurs suit la formation en intra à partir de 3 960 € HT au total, soit dès 330 € HT par personne. Pour un responsable de service seul, l'accompagnement individuel coûte à partir de 1 980 € HT chaque jour. Selon les critères de votre branche, votre OPCO peut prendre ces frais en charge ; le dossier se monte avec notre aide.",
     ],
   },
   apres: {

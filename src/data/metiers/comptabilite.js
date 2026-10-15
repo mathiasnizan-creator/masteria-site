@@ -257,8 +257,8 @@ export default {
  },
  "tarif": {
   "titre": "Une journée facturée au cabinet, un dossier pour l'OPCO",
-  "answer": "Une journée de formation animée pour le cabinet est facturée 1 980 € HT, avec trois collaborateurs comme avec douze, et le parcours entier de deux jours 3 960 € HT. Un expert-comptable ou un responsable comptable peut suivre le même contenu seul, sur ses dossiers, pour le même prix par jour de formation.",
-  "inclus": "Sont compris : le cadrage du programme sur vos trames, une balance et un dossier de révision anonymisés préparés avec vous, les deux journées au cabinet ou en ligne avec leurs supports, les livrables (prompts comptables, trames outillées, compétence de synthèse, règle sur les données), l'évaluation finale de chacun, suivie de son certificat. Une session éloignée de Lyon entraîne en plus des frais de déplacement, facturés à part.",
+  "answer": "Une journée de formation animée pour le cabinet est facturée à partir de 1 980 € HT, avec trois collaborateurs comme avec douze, et le parcours entier de deux jours à partir de 3 960 € HT. Un expert-comptable ou un responsable comptable peut suivre le même contenu seul, sur ses dossiers, pour le même prix par jour de formation.",
+  "inclus": "Sont compris : les deux journées au cabinet ou en ligne avec leurs supports, les livrables (prompts comptables, trames outillées, compétence de synthèse, règle sur les données), l'évaluation finale de chacun, suivie de son certificat. Une session éloignée de Lyon entraîne en plus des frais de déplacement, facturés à part. La préparation de vos trames, d'une balance et d'un dossier de révision anonymisés s'ajoute au prix de base, chiffrée au devis.",
   "financement": "Pour un cabinet d'expertise comptable, l'opérateur de compétences est en général l'OPCO Atlas ; une entreprise passe par celui de sa propre convention collective, que retrouve l'outil {/quel-opco|Quel OPCO ?}. Chaque opérateur arrête sa participation selon ses barèmes et le budget disponible. Masteria vous transmet convention, programme et pièces justificatives pour la demande, qui part avant la session ; les {/financement-formation-ia|circuits de financement d'une formation IA} sont décrits sur une page dédiée. Pas de CPF pour cette formation."
  },
  "faq": [
@@ -288,7 +288,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir, et qui finance ?",
-   "a": "Le cabinet paie 1 980 € HT chaque journée animée, pour un à douze participants ; le programme de deux jours, 3 960 € HT. Pour les salariés d'un cabinet d'expertise comptable, l'interlocuteur habituel est l'OPCO Atlas ; une entreprise s'adresse à l'opérateur désigné par sa convention collective. Chaque opérateur décide du montant pris en charge au vu de ses barèmes. Un expert-comptable libéral sollicite le FAF de sa profession. Masteria établit programme, convention et attestations."
+   "a": "Le cabinet paie à partir de 1 980 € HT chaque journée animée, pour un à douze participants ; le programme de deux jours, à partir de 3 960 € HT. Pour les salariés d'un cabinet d'expertise comptable, l'interlocuteur habituel est l'OPCO Atlas ; une entreprise s'adresse à l'opérateur désigné par sa convention collective. Chaque opérateur décide du montant pris en charge au vu de ses barèmes. Un expert-comptable libéral sollicite le FAF de sa profession. Masteria établit programme, convention et attestations."
   },
   {
    "q": "Quand placer la formation dans l'année du cabinet ?",

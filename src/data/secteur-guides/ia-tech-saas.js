@@ -77,7 +77,7 @@ export default {
   ],
   formation: [
     "Les développeurs, les chefs de produit et les équipes de support n'apprennent pas la même chose. Les développeurs travaillent l'évaluation, la gestion du contexte et la sécurité des agents ; les chefs de produit, la spécification d'une fonctionnalité au résultat variable et ses indicateurs ; le support, la lecture des journaux et l'escalade.",
-    "Nous formons en intra, sur votre produit et votre base de code, à 1 980 € HT par journée de groupe, et votre OPCO peut financer ces journées en France grâce à notre certification Qualiopi. Depuis l'Omnibus de juillet 2026, l'article 4 du règlement européen attend des fournisseurs qu'ils agissent pour développer la maîtrise de l'IA chez leurs équipes, et le texte ne fixe aucun niveau à atteindre : une formation documentée en apporte la preuve.",
+    "Nous formons en intra, sur votre produit et votre base de code, à partir de 1 980 € HT par journée de groupe (la préparation sur votre produit et votre code s'ajoute au devis), et votre OPCO peut financer ces journées en France grâce à notre certification Qualiopi. Depuis l'Omnibus de juillet 2026, l'article 4 du règlement européen attend des fournisseurs qu'ils agissent pour développer la maîtrise de l'IA chez leurs équipes, et le texte ne fixe aucun niveau à atteindre : une formation documentée en apporte la preuve.",
   ],
 
   guide: {

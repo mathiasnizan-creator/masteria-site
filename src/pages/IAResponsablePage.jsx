@@ -699,7 +699,7 @@ export default function IAResponsablePage() {
                 Masteria installe le dispositif, puis forme ceux qui le tiendront
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Deux voies, qui se complètent. En conseil, nous posons le dispositif : carte des usages, analyse d'impact des usages sensibles, charte et politique, comité, plan de conformité ; la mission se règle au forfait et ne relève pas du financement de l'OPCO. En formation, vos équipes prennent en main l'IA et ses cadres ; ces journées à 1 980 € HT, en intra ou en individuel, entrent dans le périmètre Qualiopi de Masteria.
+                Deux voies, qui se complètent. En conseil, nous posons le dispositif : carte des usages, analyse d'impact des usages sensibles, charte et politique, comité, plan de conformité ; la mission se règle au forfait et ne relève pas du financement de l'OPCO. En formation, vos équipes prennent en main l'IA et ses cadres ; ces journées à partir de 1 980 € HT, en intra ou en individuel, entrent dans le périmètre Qualiopi de Masteria.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/gouvernance-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

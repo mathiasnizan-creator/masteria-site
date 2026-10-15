@@ -255,8 +255,8 @@ export default {
  },
  "tarif": {
   "titre": "Groupe ou formule individuelle : le budget à prévoir",
-  "answer": "Pour un groupe de douze personnes au plus, la journée d'intra coûte 1 980 € HT et le parcours complet 3 960 € HT. Beaucoup d'assistantes de direction générale, seules sur leur poste, choisissent la formule individuelle, facturée le même montant par journée. L'opérateur de compétences peut prendre une part de la dépense, selon ses règles et son budget, puisque l'organisme est certifié Qualiopi.",
-  "inclus": "Le prix couvre le cadrage sur vos mails types, vos gabarits et un dossier de comité, anonymisés si besoin ; l'animation dans vos bureaux ou en visioconférence ; les supports, vos prompts classés par tâche, les gabarits et le tableau de confidentialité. Une évaluation clôt la formation, suivie du certificat de réalisation ; quand on se déplace hors de la région lyonnaise, le devis ajoute les frais de trajet.",
+  "answer": "Pour un groupe de douze personnes au plus, la journée d'intra coûte à partir de 1 980 € HT et le parcours complet à partir de 3 960 € HT. Beaucoup d'assistantes de direction générale, seules sur leur poste, choisissent la formule individuelle, facturée le même montant par journée. L'opérateur de compétences peut prendre une part de la dépense, selon ses règles et son budget, puisque l'organisme est certifié Qualiopi.",
+  "inclus": "Le prix de base couvre l'animation dans vos bureaux ou en visioconférence ; les supports, vos prompts classés par tâche, les gabarits et le tableau de confidentialité. Une évaluation clôt la formation, suivie du certificat de réalisation ; quand on se déplace hors de la région lyonnaise, le devis ajoute les frais de trajet. Pour bâtir les exercices sur vos mails types, vos gabarits et un dossier de comité, le temps de préparation vient en plus, au devis.",
   "financement": "Le circuit de financement part de la convention collective : {/quel-opco|Quel OPCO ?} indique l'opérateur dont vous dépendez, et notre {/financement-formation-ia|guide des financements} détaille les démarches. Masteria transmet programme, convention et justificatifs, que vous joignez à votre demande avant la première journée. Le CPF ne peut pas servir pour ce parcours."
  },
  "faq": [
@@ -294,7 +294,7 @@ export default {
   },
   {
    "q": "Quel prix, et quelle prise en charge ?",
-   "a": "Le même prix s'applique à un groupe de douze et à une personne seule : 1 980 € HT la journée et 3 960 € HT les deux jours, plus le trajet du formateur hors de la région lyonnaise. L'OPCO intervient dans la mesure prévue par son barème, puisque Masteria détient la certification Qualiopi. Programme, convention et justificatifs sont prêts avant la session ; le CPF reste hors jeu."
+   "a": "Le même prix s'applique à un groupe de douze et à une personne seule : à partir de 1 980 € HT la journée et de 3 960 € HT les deux jours, plus le trajet du formateur hors de la région lyonnaise. L'OPCO intervient dans la mesure prévue par son barème, puisque Masteria détient la certification Qualiopi. Programme, convention et justificatifs sont prêts avant la session ; le CPF reste hors jeu."
   },
   {
    "q": "Une assistante peu technique peut-elle suivre la formation ?",

@@ -266,7 +266,7 @@ export default function GeoIAGenericPage() {
         : `Quels formats de formation sont disponibles ${city.nameLoc} ?`,
       a: isCountry || city.intraOnly
         ? `Nous privilégions l'intra-entreprise à ${city.name} : programme construit sur vos cas réels, exemples tirés de vos vrais documents (anonymisés), équipe formée ensemble pour aligner les pratiques. Pour les profils dirigeants ou experts qui souhaitent un format 1-to-1, l'accompagnement individuel sur mesure est disponible en présentiel ou en distanciel.`
-        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants, et accompagnement individuel sur mesure 1-to-1 en présentiel ou en distanciel, au même tarif de 1 980 €/jour. Les deux formats sont finançables par votre OPCO selon votre branche.`,
+        : `${city.nameLoc}, nous proposons deux formats : intra-entreprise dans vos locaux jusqu'à 12 participants, et accompagnement individuel sur mesure 1-to-1 en présentiel ou en distanciel, au même tarif de base, à partir de 1 980 € HT par jour. Les deux formats sont finançables par votre OPCO selon votre branche.`,
     },
     {
       q: `Combien de temps dure une formation IA ?`,
@@ -278,7 +278,7 @@ export default function GeoIAGenericPage() {
     },
     {
       q: `Combien coûte une formation IA ${city.nameLoc} ?`,
-      a: `Le tarif intra-entreprise est de 1 980 € par jour pour un groupe (jusqu'à 12 participants), soit 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) est à 1 980 € par jour. ${isFrance ? "Ces montants sont finançables par votre OPCO selon votre branche : le reste à charge dépend de ses règles et de ses fonds." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
+      a: `Le tarif intra-entreprise part de 1 980 € HT par jour pour un groupe (jusqu'à 12 participants), soit au moins 165 € par personne pour un groupe complet. L'accompagnement individuel sur mesure (1-to-1) part lui aussi de 1 980 € HT par jour. Quand la formation est construite sur vos documents, le temps de préparation s'ajoute et figure au devis. ${isFrance ? "Ces montants sont finançables par votre OPCO selon votre branche : le reste à charge dépend de ses règles et de ses fonds." : 'Plusieurs dispositifs de financement existent selon votre pays ; nous vous orientons lors du cadrage.'} Chaque devis est personnalisé selon le nombre de participants, la durée et le format.`,
     },
     {
       q: `Peut-on suivre la formation IA à distance depuis ${city.name} ?`,
@@ -468,7 +468,7 @@ export default function GeoIAGenericPage() {
             <dl style={{ margin: 0 }}>
               {[
                 { label: 'Formats', value: `Intra-entreprise dans vos locaux ${city.nameLoc} (jusqu'à 12 participants), accompagnement individuel sur mesure, distanciel` },
-                { label: 'Tarif', value: '1 980 € HT par jour, intra comme individuel · devis sous 24 h' },
+                { label: 'Tarif', value: 'À partir de 1 980 € HT par jour, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' },
                 { label: 'Financement', value: isFrance ? `Certifié Qualiopi, finançable par votre OPCO selon votre branche (${city.region})` : 'Certifié Qualiopi · dispositifs de financement selon votre pays, orientation lors du cadrage' },
                 { label: 'Outils', value: 'ChatGPT, Claude, Microsoft Copilot, Google Gemini, Mistral AI' },
                 { label: 'Métiers', value: '24 métiers couverts, plus de 100 programmes au catalogue' },
@@ -768,8 +768,8 @@ export default function GeoIAGenericPage() {
                     ['Durée', '1 jour (7 h) en standard. Formats 2 à 3 jours ou Sprint IA de 3 h pour la sensibilisation.'],
                     ['Formats', `Intra-entreprise jusqu'à 12 participants, ou accompagnement individuel sur mesure (1-to-1). Présentiel ${city.nameLoc} ou distanciel.`],
                     ['Tarif', isFrance
-                      ? 'Intra 1 980 €/jour pour le groupe (≈ 165 €/personne). Accompagnement individuel sur mesure 1 980 €/jour.'
-                      : 'Intra 1 980 €/jour pour le groupe. Accompagnement individuel sur mesure 1 980 €/jour. Facturation adaptée à votre pays.'],
+                      ? 'Intra dès 1 980 € HT/jour pour le groupe (au moins 165 €/personne). Accompagnement individuel sur mesure dès 1 980 € HT/jour. La préparation sur mesure s\'ajoute au devis.'
+                      : 'Intra dès 1 980 € HT/jour pour le groupe. Accompagnement individuel sur mesure dès 1 980 € HT/jour. La préparation sur mesure s\'ajoute au devis. Facturation adaptée à votre pays.'],
                     ['Financement', isFrance
                       ? "Par votre OPCO, selon les règles et les fonds de votre branche. Nous préparons le dossier avec vous."
                       : 'Dispositifs de financement locaux selon votre pays ; nous vous orientons lors du cadrage.'],
@@ -809,10 +809,10 @@ export default function GeoIAGenericPage() {
                 </thead>
                 <tbody>
                   {[
-                    ['Intra-entreprise', `Une équipe, dans vos locaux ${city.nameLoc} (jusqu'à 12 participants)`, '1 jour (7 h), extensible à 2-3 jours', '1 980 €/jour pour le groupe', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
-                    ['Individuel sur mesure', 'Dirigeants, experts métier, profils stratégiques (1-to-1)', '1 jour, séquençable en demi-journées', '1 980 €/jour', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
+                    ['Intra-entreprise', `Une équipe, dans vos locaux ${city.nameLoc} (jusqu'à 12 participants)`, '1 jour (7 h), extensible à 2-3 jours', 'Dès 1 980 € HT/jour pour le groupe', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
+                    ['Individuel sur mesure', 'Dirigeants, experts métier, profils stratégiques (1-to-1)', '1 jour, séquençable en demi-journées', 'Dès 1 980 € HT/jour', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
                     ['Sprint IA', "Sensibilisation à grande échelle (jusqu'à 100 participants)", '3 h', 'Sur devis', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
-                    ['Distanciel', 'Équipes réparties sur plusieurs sites, suivis individuels', 'Identique au présentiel', '1 980 €/jour', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
+                    ['Distanciel', 'Équipes réparties sur plusieurs sites, suivis individuels', 'Identique au présentiel', 'Dès 1 980 € HT/jour', isFrance ? 'OPCO selon votre branche' : 'Adaptée à votre pays'],
                   ].map(row => (
                     <tr key={row[0]}>
                       {row.map((cell, i) => (

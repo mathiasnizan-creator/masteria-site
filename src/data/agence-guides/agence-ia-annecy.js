@@ -115,7 +115,7 @@ export default {
   ],
   formation: [
     "Le référent ne suffit pas : chaque utilisateur doit savoir quand l'outil se trompe et comment le signaler. Les journées de formation ont lieu dans vos locaux, à Annecy, à Rumilly ou dans la vallée de l'Arve, ou à distance pour une équipe répartie sur plusieurs sites.",
-    "La certification Qualiopi de Masteria, qui porte sur les actions de formation, permet à votre OPCO de financer ces journées, à 1 980 € HT chacune en intra, dans la limite des fonds de votre branche. Le conseil et le développement, eux, se paient sur le budget de l'entreprise.",
+    "La certification Qualiopi de Masteria, qui porte sur les actions de formation, permet à votre OPCO de financer ces journées, facturées à partir de 1 980 € HT chacune en intra, dans la limite des fonds de votre branche. Si nous construisons la formation sur vos documents, la préparation s'ajoute au devis. Le conseil et le développement, eux, se paient sur le budget de l'entreprise.",
   ],
   guide: {
     kicker: "Sous-traitance, logiciel de gestion et frontière",

@@ -12,12 +12,12 @@ export default {
   h1: "Formation veille avec l'IA : organiser la veille de votre équipe",
   metaTitle: "Formation veille avec l'IA : 1 journée | Masteria",
   metaDesc: "Formation veille avec l'IA en un jour : questions liées aux décisions, collecte programmée, recherche approfondie, notes vérifiées, diffusion légale.",
-  resume: "La formation veille avec l'IA apprend à une équipe, en une journée, à faire tourner sa veille dans l'assistant que l'entreprise lui fournit, depuis la question que pose la direction jusqu'à la note vérifiée qui lui revient. Elle réunit jusqu'à douze collègues sur place ou en visioconférence, ou bien un seul veilleur en individuel ; la journée est facturée 1 980 € HT. La certification Qualiopi que détient Masteria couvre ses actions de formation, si bien que l'OPCO de votre secteur peut instruire une demande, puis trancher d'après ses règles et les fonds qui lui restent.",
+  resume: "La formation veille avec l'IA apprend à une équipe, en une journée, à faire tourner sa veille dans l'assistant que l'entreprise lui fournit, depuis la question que pose la direction jusqu'à la note vérifiée qui lui revient. Elle réunit jusqu'à douze collègues sur place ou en visioconférence, ou bien un seul veilleur en individuel ; la journée est facturée à partir de 1 980 € HT. La certification Qualiopi que détient Masteria couvre ses actions de formation, si bien que l'OPCO de votre secteur peut instruire une demande, puis trancher d'après ses règles et les fonds qui lui restent.",
   enBref: [
     { label: 'Formation', value: "La veille d'une équipe montée dans Claude, Gemini, ChatGPT, Vibe ou Copilot, sur l'outil que vos salariés ouvrent déjà" },
     { label: 'Durée', value: "Sept heures sur une journée, en six modules qui suivent le trajet d'une information, de la question à la diffusion" },
     { label: 'Formats', value: "Dans vos murs ou en visioconférence ; jusqu'à douze collègues réunis, ou une personne seule" },
-    { label: 'Tarif', value: "1 980 € HT la journée, montant identique de un à douze participants, TVA de 20 % en plus" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée, montant identique de un à douze participants, TVA de 20 % en plus" },
     { label: 'Financement', value: "L'OPCO de votre branche étudie le dossier d'après ses règles et ses fonds disponibles ; programme et convention fournis par Masteria" },
     { label: 'Prérequis', value: "Un compte professionnel sur l'assistant d'IA déployé chez vous, et trois sujets que l'équipe surveille déjà" },
   ],
@@ -229,7 +229,7 @@ export default {
     },
     {
       q: "Combien coûte la formation veille avec l'IA, et l'OPCO peut-il la financer ?",
-      a: "Le prix de la journée s'établit à 1 980 € HT, TVA de 20 % non comprise, que vos veilleurs soient douze dans la salle ou qu'un seul suive la session, sur place comme en visioconférence. La certification Qualiopi obtenue par Masteria pour ses actions de formation autorise l'OPCO de votre branche à étudier le dossier, puis à décider d'après ses règles et ses fonds. Le programme détaillé et la convention viennent de Masteria ; la demande part de chez vous, avant le jour de la formation.",
+      a: "Le prix de la journée part de 1 980 € HT, TVA de 20 % non comprise, que vos veilleurs soient douze dans la salle ou qu'un seul suive la session, sur place comme en visioconférence. La certification Qualiopi obtenue par Masteria pour ses actions de formation autorise l'OPCO de votre branche à étudier le dossier, puis à décider d'après ses règles et ses fonds. Le programme détaillé et la convention viennent de Masteria ; la demande part de chez vous, avant le jour de la formation.",
     },
     {
       q: "Comment protéger la confidentialité des sujets surveillés ?",
@@ -239,8 +239,8 @@ export default {
   tarifs: {
     titre: "Ce qu'inclut le tarif de la journée de veille",
     paras: [
-      "Le prix comprend la préparation : avant la session, le formateur reçoit trois sujets que votre équipe suit déjà, l'outil d'IA dont elle dispose et un exemple de note actuelle, si elle existe. Les exercices partent de ces sujets, et chacun repart avec ses tâches programmées, sa grille de sources et la consigne de synthèse de son équipe.",
-      "Prenons un service marketing qui inscrit sa directrice, deux chargés de communication, une documentaliste et deux assistantes de direction, soit six personnes. Les six inscrits partagent une facture de 1 980 € HT, soit 330 € HT par personne ; un veilleur seul suivi en individuel paie lui aussi 1 980 € HT pour sa journée. La TVA de 20 % vient en sus. L'OPCO de votre branche peut prendre à sa charge une part de cette dépense, si ses règles le permettent et que ses fonds suffisent, et Masteria vous transmet de quoi constituer le dossier.",
+      "Le prix de base couvre l'animation, les supports et le programme. La préparation sur vos propres sujets s'ajoute et figure au devis : avant la session, le formateur reçoit trois sujets que votre équipe suit déjà, l'outil d'IA dont elle dispose et un exemple de note actuelle, si elle existe. Les exercices partent de ces sujets, et chacun repart avec ses tâches programmées, sa grille de sources et la consigne de synthèse de son équipe.",
+      "Prenons un service marketing qui inscrit sa directrice, deux chargés de communication, une documentaliste et deux assistantes de direction, soit six personnes. Les six inscrits partagent une facture à partir de 1 980 € HT, soit dès 330 € HT par personne ; un veilleur seul suivi en individuel paie lui aussi à partir de 1 980 € HT pour sa journée. La TVA de 20 % vient en sus. L'OPCO de votre branche peut prendre à sa charge une part de cette dépense, si ses règles le permettent et que ses fonds suffisent, et Masteria vous transmet de quoi constituer le dossier.",
     ],
   },
   apres: {

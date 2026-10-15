@@ -7,12 +7,12 @@ export default {
   updatedLabel: 'Programme à jour · octobre 2026',
   pagePropre: true,
   metaDesc: "Formation Claude pour l'informatique et la DSI : journaux et documentations lus en entier, dossiers d'architecture, connecteurs MCP, administration Team.",
-  resume: "La formation Claude pour l'informatique et la DSI dure deux jours, soit 14 heures, et réunit architectes, équipes d'exploitation, support et administrateurs de l'outil. Elle a lieu sur votre site ou par visioconférence, en intra jusqu'à douze personnes de la même DSI, ou en accompagnement individuel. Chaque journée est facturée 1 980 € HT ; comme Masteria est certifié Qualiopi, l'opérateur de compétences de votre branche peut en financer tout ou partie selon ses critères.",
+  resume: "La formation Claude pour l'informatique et la DSI dure deux jours, soit 14 heures, et réunit architectes, équipes d'exploitation, support et administrateurs de l'outil. Elle a lieu sur votre site ou par visioconférence, en intra jusqu'à douze personnes de la même DSI, ou en accompagnement individuel. Chaque journée est facturée à partir de 1 980 € HT, la préparation sur votre parc s'ajoutant au devis ; comme Masteria est certifié Qualiopi, l'opérateur de compétences de votre branche peut en financer tout ou partie selon ses critères.",
   enBref: [
     { label: 'Formation', value: "Claude au service des équipes informatiques : journaux et documentations lus en entier, architecture, administration de Team ou d'Enterprise" },
     { label: 'Durée', value: "14 heures en deux journées ; chaque module s'achève sur un exercice tiré d'un fichier de votre parc" },
     { label: 'Formats', value: "Intra jusqu'à 12 personnes de la DSI, ou parcours individuel pour un administrateur ; sur site ou en visioconférence" },
-    { label: 'Tarif', value: "Un prix par journée, 1 980 € HT, qui couvre tout le groupe jusqu'à douze personnes" },
+    { label: 'Tarif', value: "Un prix par journée, à partir de 1 980 € HT, qui couvre tout le groupe jusqu'à douze personnes ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; dossier à déposer auprès de l'OPCO de votre branche, que nous aidons à monter" },
     { label: 'Prérequis', value: "Pratique d'un système d'information en production ; un compte Claude payant, Team ou Enterprise pour les modules d'administration" },
   ],
@@ -243,8 +243,8 @@ export default {
   tarifs: {
     titre: "Le tarif comprend un travail préparatoire sur vos journaux et vos procédures",
     paras: [
-      "Avant la session, le formateur reçoit des exports de journaux expurgés, une procédure d'exploitation, une fiche d'architecture et l'état de vos réglages Claude, pour construire chaque exercice sur votre parc. Un groupe type réunit un architecte, quatre personnes de l'exploitation et du support, deux administrateurs de l'outil et le RSSI.",
-      "Le tarif d'une journée, 1 980 € HT, couvre tout le groupe. En intra, les deux journées totalisent 3 960 € HT pour douze personnes au plus ; réparties sur les huit personnes de l'exemple, elles reviennent à 495 € HT chacune. Un administrateur peut aussi suivre le parcours seul, au même prix par journée. Masteria détient la certification Qualiopi, et l'OPCO de votre branche arrête la prise en charge selon ses propres règles ; le dossier se monte avec notre aide.",
+      "Avant la session, le formateur reçoit des exports de journaux expurgés, une procédure d'exploitation, une fiche d'architecture et l'état de vos réglages Claude, pour construire chaque exercice sur votre parc ; ce travail d'amont est chiffré au devis, en plus du prix de la journée. Un groupe type réunit un architecte, quatre personnes de l'exploitation et du support, deux administrateurs de l'outil et le RSSI.",
+      "Le tarif d'une journée, à partir de 1 980 € HT, couvre tout le groupe. En intra, les deux journées totalisent à partir de 3 960 € HT pour douze personnes au plus ; réparties sur les huit personnes de l'exemple, elles reviennent dès 495 € HT chacune. Un administrateur peut aussi suivre le parcours seul, au même prix par journée. Masteria détient la certification Qualiopi, et l'OPCO de votre branche arrête la prise en charge selon ses propres règles ; le dossier se monte avec notre aide.",
     ],
   },
   apres: {
@@ -297,7 +297,7 @@ export default {
     },
     {
       q: "Quel financement pour former l'équipe informatique ?",
-      a: "La certification Qualiopi de Masteria ouvre la voie à une demande auprès de l'OPCO de votre entreprise, qui en fixe l'accord et le montant selon les règles de la branche. En intra, douze personnes au plus suivent les deux journées dans vos locaux ou en ligne ; le groupe entier paie 1 980 € HT pour chacune d'elles. Programme, objectifs et convention vous sont remis pour compléter le dossier.",
+      a: "La certification Qualiopi de Masteria ouvre la voie à une demande auprès de l'OPCO de votre entreprise, qui en fixe l'accord et le montant selon les règles de la branche. En intra, douze personnes au plus suivent les deux journées dans vos locaux ou en ligne ; le groupe entier paie à partir de 1 980 € HT pour chacune d'elles. Programme, objectifs et convention vous sont remis pour compléter le dossier.",
     },
   ],
   sources: [

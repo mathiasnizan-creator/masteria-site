@@ -90,7 +90,7 @@ const EN_BREF = [
   { label: 'Programme', value: "Calendrier article par article, classement des usages par risque, article 4, transparence, lien avec le RGPD, plan de conformité" },
   { label: 'À jour', value: "Texte de 2024 tel que l'Omnibus l'a modifié en juillet 2026 : haut risque au 2 décembre 2027 (annexe III) et au 2 août 2028 (annexe I)" },
   { label: 'Livrables', value: "Grille de classement de vos usages, trame de plan de conformité, modèle de registre des actions de formation, liste de veille" },
-  { label: 'Tarif', value: "1 980 € HT pour sept heures, groupe intra jusqu'à douze ou formule individuelle ; 3 960 € HT les deux jours ; financement à demander à votre OPCO" },
+  { label: 'Tarif', value: "À partir de 1 980 € HT pour sept heures, groupe intra jusqu'à douze ou formule individuelle ; à partir de 3 960 € HT les deux jours ; préparation sur mesure en plus ; financement à demander à votre OPCO" },
 ]
 
 /* ───────── Ce que couvre la formation (6 cartes) ───────── */
@@ -233,7 +233,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte la formation AI Act ?",
-    a: "Pour 1 980 € HT, la journée accueille en intra jusqu'à douze stagiaires, ou un seul en individuel ; deux jours reviennent à 3 960 € HT. Côté financement, la certification Qualiopi permet de présenter cette action de votre plan de formation à votre OPCO de branche, et nous préparons les pièces avec vous. Hors Lyon, les frais de déplacement du formateur figurent dans le devis, envoyé sous 24 heures.",
+    a: "À partir de 1 980 € HT, la journée accueille en intra jusqu'à douze stagiaires, ou un seul en individuel ; deux jours démarrent à 3 960 € HT. Si les cas pratiques reprennent vos propres usages, le temps de préparation s'ajoute et figure au devis. Côté financement, la certification Qualiopi permet de présenter cette action de votre plan de formation à votre OPCO de branche, et nous préparons les pièces avec vous. Hors Lyon, les frais de déplacement du formateur figurent dans le devis, envoyé sous 24 heures.",
   },
   {
     q: "Notre OPCO peut-il prendre la journée en charge ?",
@@ -584,7 +584,7 @@ export default function FormationAIActPage() {
           <Kicker>Tarif et financement</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Prix de la journée et financement possible</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le tarif tient en deux chiffres : 1 980 € HT pour une journée, que le groupe intra compte deux ou douze personnes ou que vous veniez seul, et 3 960 € HT pour deux jours. La certification Qualiopi vous permet de déposer une demande auprès de votre OPCO de branche ; il accorde sa prise en charge selon ses critères et son enveloppe. Le devis part sous 24 heures.</strong>
+            <strong>Le tarif de départ tient en deux chiffres : 1 980 € HT pour une journée, que le groupe intra compte deux ou douze personnes ou que vous veniez seul, et 3 960 € HT pour deux jours, la préparation sur mesure s'ajoutant au devis. La certification Qualiopi vous permet de déposer une demande auprès de votre OPCO de branche ; il accorde sa prise en charge selon ses critères et son enveloppe. Le devis part sous 24 heures.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>

@@ -77,7 +77,7 @@ const EN_BREF = [
   { label: 'Objectif', value: "Sortir avec une carte du patrimoine informationnel, des responsables nommés, des règles écrites et un plan à trois mois" },
   { label: 'Outils', value: "Vos logiciels actuels (ERP, CRM, dossiers partagés, tableur) et les assistants IA du marché pour accélérer l'inventaire et les contrôles" },
   { label: 'Prérequis', value: "Aucun : la formation s'adresse à des non-spécialistes qui portent la responsabilité des données" },
-  { label: 'Tarif', value: "1 980 € HT par jour, groupe de douze au plus ; devis le lendemain du cadrage" },
+  { label: 'Tarif', value: "À partir de 1 980 € HT par jour, groupe de douze au plus ; préparation sur mesure en plus ; devis le lendemain du cadrage" },
 ]
 
 /* ───────── Pourquoi ───────── */
@@ -167,7 +167,7 @@ const FAQ = [
   { q: "Quelle différence avec la formation data IA et la formation gouvernance IA ?", a: "Trois sujets voisins. La formation data IA entraîne les équipes métier à analyser leurs fichiers avec l'IA : exports, tableaux, reporting. La formation gouvernance IA encadre les systèmes d'IA eux-mêmes : registre des usages, charte, AI Act. Celle-ci porte sur les données : patrimoine, rôles, qualité, référentiels, RGPD, préparation pour l'IA. Elle vient souvent en premier, parce que ni l'analyse ni l'IA ne sont fiables sur des données mal tenues." },
   { q: "Travaille-t-on sur nos propres données ?", a: "Oui, c'est la règle. Chaque participant apporte ses sources : un export du CRM, un référentiel produits, un dossier partagé, une liste de fournisseurs. La cartographie, le diagnostic qualité, le catalogue et les règles se construisent dessus. Toute donnée personnelle est rendue anonyme en amont si besoin, et le travail se fait dans vos outils, sans que les données quittent l'entreprise." },
   { q: 'Sur combien de jours, et sous quelle forme ?', a: "Deux jours, quatorze heures, en intra, dans vos locaux ou en visio, jusqu'à douze participants par groupe. Une version d'un jour couvre un périmètre resserré, la carte du patrimoine et les règles d'équipe, sans le catalogue ni la préparation pour l'IA. Le format se décide au cadrage, dont les trente premières minutes vous sont offertes, selon vos logiciels et le niveau des participants." },
-  { q: "Combien coûte la formation gouvernance des données ?", a: "Le prix est de 1 980 € HT la journée, payé une fois pour tout le groupe (douze participants au plus), donc 3 960 € HT pour le parcours de deux jours. Pour une session dans vos locaux hors de la région lyonnaise, les frais de voyage sont refacturés à leur coût, sans marge ; la visio n'en entraîne aucun. Le devis vous parvient le lendemain du cadrage." },
+  { q: "Combien coûte la formation gouvernance des données ?", a: "Le prix part de 1 980 € HT la journée, payé une fois pour tout le groupe (douze participants au plus), donc de 3 960 € HT pour le parcours de deux jours. La préparation sur vos registres et vos procédures s'ajoute et figure au devis. Pour une session dans vos locaux hors de la région lyonnaise, les frais de voyage sont refacturés à leur coût, sans marge ; la visio n'en entraîne aucun. Le devis vous parvient le lendemain du cadrage." },
   { q: "Notre OPCO peut-il prendre la formation en charge ?", a: "Il le peut, suivant ses critères et l'enveloppe dont il dispose. La certification Qualiopi de Masteria couvre ses actions de formation : la session s'inscrit donc dans votre plan de formation, le dossier (programme, objectifs, modalités d'évaluation) se monte avec nous, et la décision revient à l'opérateur. Pas de CPF ici. Pour savoir de quel opérateur vous dépendez, essayez notre outil Quel OPCO ?" },
   { q: "Et si nos données demandent un vrai chantier avant la formation ?", a: "La formation le fera apparaître, et c'est utile. Quand la carte montre des données éparpillées, des référentiels contradictoires ou des accès à revoir, elle s'arrête sur un plan réaliste, et notre conseil data et IA peut faire le travail avec vous : audit, gouvernance, préparation des données pour l'IA. Cette mission de conseil, chiffrée au forfait, n'est pas finançable par votre OPCO ; c'est la formation qui donne ensuite à vos équipes les moyens de tenir ce que la mission met en place." },
 ]
@@ -193,7 +193,7 @@ const courseJsonLd = {
     '@type': 'Offer',
     price: '1980',
     priceCurrency: 'EUR',
-    description: "Journée de formation en intra, 1 980 € HT, groupe limité à douze",
+    description: "Journée de formation en intra, à partir de 1 980 € HT, groupe limité à douze",
     availability: 'https://schema.org/InStock',
   },
 }
@@ -480,12 +480,12 @@ export default function FormationGouvernanceDonneesPage() {
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix et financement</Kicker>
-              <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Deux jours à 1 980 € HT chacun, pour tout le groupe</h2>
+              <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Deux jours dès 1 980 € HT chacun, pour tout le groupe</h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Une journée de cette formation coûte 1 980 € HT, facturés une fois pour un groupe qui peut compter jusqu'à douze personnes, soit 3 960 € HT pour le parcours complet ; la version d'un jour « carte et règles » se décide au cadrage. Une session sur site hors de la région lyonnaise ajoute les frais de trajet et d'hébergement, refacturés sans marge ; à distance, rien ne s'ajoute. Comme Masteria est certifiée Qualiopi, la formation peut être soumise à l'OPCO dont vous relevez, qui tranche selon ses propres règles et son budget ; le dossier se prépare avec nous. Le CPF n'intervient pas, et une société implantée à Genève ou à Bruxelles, faute d'OPCO, reçoit son devis en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous dit de quel opérateur vous dépendez ; la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille chaque dispositif.
+                Une journée de cette formation démarre à 1 980 € HT, facturés une fois pour un groupe qui peut compter jusqu'à douze personnes, soit dès 3 960 € HT pour le parcours complet ; si les exercices portent sur vos propres registres, la préparation s'ajoute et se chiffre au devis ; la version d'un jour « carte et règles » se décide au cadrage. Une session sur site hors de la région lyonnaise ajoute les frais de trajet et d'hébergement, refacturés sans marge ; à distance, rien ne s'ajoute. Comme Masteria est certifiée Qualiopi, la formation peut être soumise à l'OPCO dont vous relevez, qui tranche selon ses propres règles et son budget ; le dossier se prépare avec nous. Le CPF n'intervient pas, et une société implantée à Genève ou à Bruxelles, faute d'OPCO, reçoit son devis en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous dit de quel opérateur vous dépendez ; la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille chaque dispositif.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
-                {['1 980 € HT par jour, douze personnes au plus', 'Deux jours conseillés : catalogue, référentiels et plan compris', 'Dossier OPCO préparé avec vous', 'Devis le lendemain du cadrage'].map(pt => (
+                {['Dès 1 980 € HT par jour, douze personnes au plus', 'Deux jours conseillés : catalogue, référentiels et plan compris', 'Dossier OPCO préparé avec vous', 'Devis le lendemain du cadrage'].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                     <Check size={17} strokeWidth={2.5} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
                     {pt}

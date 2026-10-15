@@ -516,7 +516,7 @@ export default function ConsultantIAPage() {
                     <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, verticalAlign: '-2px', marginRight: 6 }} aria-hidden="true" />
                     <strong>Se former avec Masteria :</strong> nos formations certifiées Qualiopi couvrent ce socle. Partez du{' '}
                     <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue des formations en intelligence artificielle</Link>, approfondissez l'<Link to="/formation-prompt-engineering" style={{ color: c, fontWeight: 600 }}>écriture de prompts</Link>{' '}
-                    et, pour les profils techniques, <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link>. La journée est facturée 1 980 € HT, pour un groupe interne ou une personne seule ; pour un salarié, l'OPCO de la branche examine le dossier en appliquant ses propres règles, dans la limite de ses fonds.
+                    et, pour les profils techniques, <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link>. La journée démarre à 1 980 € HT, pour un groupe interne ou une personne seule, et la préparation d'une formation sur mesure s'y ajoute au devis ; pour un salarié, l'OPCO de la branche examine le dossier en appliquant ses propres règles, dans la limite de ses fonds.
                   </p>
                 </div>
               </div>

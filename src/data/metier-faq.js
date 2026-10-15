@@ -10,7 +10,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA marketing est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA marketing de Masteria est finançable par les OPCO grâce à notre certification Qualiopi, référence nationale pour la qualité des actions de formation professionnelle. Que vous soyez dans le commerce, les services ou l'industrie, votre OPCO de branche (AFDAS, AKTO, OPCO EP, etc.) peut prendre en charge tout ou partie du coût : 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Nos équipes vous accompagnent dans la constitution du dossier de financement avant le démarrage de la formation.",
+      a: "Oui, la formation IA marketing de Masteria est finançable par les OPCO grâce à notre certification Qualiopi, référence nationale pour la qualité des actions de formation professionnelle. Que vous soyez dans le commerce, les services ou l'industrie, votre OPCO de branche (AFDAS, AKTO, OPCO EP, etc.) peut prendre en charge tout ou partie du coût : à partir de 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Si le programme est construit sur vos propres fichiers, la préparation s'ajoute au devis. Nos équipes vous accompagnent dans la constitution du dossier de financement avant le démarrage de la formation.",
     },
     {
       q: "En combien de temps une équipe marketing voit-elle des résultats après la formation ?",
@@ -37,7 +37,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA RH est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes RH proposée par Masteria est éligible au financement OPCO grâce à notre certification Qualiopi. Les directions des ressources humaines peuvent mobiliser leur OPCO de branche (OPCO 2i, AKTO, Uniformation, etc.) pour couvrir les frais pédagogiques : 1 980 € par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Nous préconisons le format intra pour les services RH afin de travailler directement sur vos processus et vos documents internes.",
+      a: "Oui, la formation IA pour les équipes RH proposée par Masteria est éligible au financement OPCO grâce à notre certification Qualiopi. Les directions des ressources humaines peuvent mobiliser leur OPCO de branche (OPCO 2i, AKTO, Uniformation, etc.) pour couvrir les frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Le temps passé à adapter les exercices à vos processus est chiffré en plus, au devis. Nous préconisons le format intra pour les services RH afin de travailler directement sur vos processus et vos documents internes.",
     },
     {
       q: "L'IA peut-elle rédiger des offres d'emploi conformes au droit du travail ?",
@@ -64,7 +64,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA commerciale est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes commerciales de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les forces de vente relevant d'OPCO comme AKTO (commerce, services), AFDAS (médias, culture) ou OPCO EP (petites entreprises) peuvent mobiliser leurs droits formation pour couvrir les frais. Le tarif est de 1 980 € par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Nos équipes prennent en charge le montage administratif du dossier de financement.",
+      a: "Oui, la formation IA pour les équipes commerciales de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les forces de vente relevant d'OPCO comme AKTO (commerce, services), AFDAS (médias, culture) ou OPCO EP (petites entreprises) peuvent mobiliser leurs droits formation pour couvrir les frais. Le tarif part de 1 980 € par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Quand les cas pratiques viennent de vos dossiers clients, la préparation est facturée en supplément. Nos équipes prennent en charge le montage administratif du dossier de financement.",
     },
     {
       q: "Comment l'IA aide-t-elle à préparer un rendez-vous client ?",
@@ -91,7 +91,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA finance est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes finance et contrôle de gestion de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche (OPCO 2i pour l'industrie, AGIRC-ARRCO via certains dispositifs, etc.) pour prendre en charge les frais pédagogiques. Le tarif en intra-entreprise est de 1 980 € par jour pour un groupe jusqu'à 12 participants ; l'accompagnement individuel sur mesure est facturé au même tarif. Nos équipes vous accompagnent dans le montage du dossier de financement.",
+      a: "Oui, la formation IA pour les équipes finance et contrôle de gestion de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche (OPCO 2i pour l'industrie, AGIRC-ARRCO via certains dispositifs, etc.) pour prendre en charge les frais pédagogiques. Le tarif en intra-entreprise part de 1 980 € par jour pour un groupe jusqu'à 12 participants ; l'accompagnement individuel sur mesure est facturé au même tarif plancher. Pour un contenu monté sur vos documents, la préparation est ajoutée au devis. Nos équipes vous accompagnent dans le montage du dossier de financement.",
     },
     {
       q: "Comment l'IA aide-t-elle à rédiger des commentaires de résultats financiers ?",
@@ -118,7 +118,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA juridique est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes juridiques de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les départements juridiques d'entreprises peuvent solliciter leur OPCO de branche pour la prise en charge des frais pédagogiques : 1 980 € par jour, en intra-entreprise pour un groupe dédié jusqu'à 12 juristes comme en accompagnement individuel sur mesure. Le format intra est particulièrement adapté aux services juridiques car il permet de travailler directement sur des typologies de contrats et des processus propres à l'entreprise, dans le respect de la confidentialité.",
+      a: "Oui, la formation IA pour les équipes juridiques de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les départements juridiques d'entreprises peuvent solliciter leur OPCO de branche pour la prise en charge des frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise pour un groupe dédié jusqu'à 12 juristes comme en accompagnement individuel sur mesure. L'adaptation du programme à vos cas réels fait l'objet d'une ligne de préparation dans le devis. Le format intra est particulièrement adapté aux services juridiques car il permet de travailler directement sur des typologies de contrats et des processus propres à l'entreprise, dans le respect de la confidentialité.",
     },
     {
       q: "Quels sont les risques d'utiliser l'IA en contexte juridique ?",
@@ -145,7 +145,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA communication est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes communication de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les directions communication et les agences peuvent mobiliser leur OPCO de branche (AFDAS pour les médias et la communication, AKTO pour les services) pour prendre en charge les frais pédagogiques : 1 980 € par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. Nos équipes vous accompagnent dans le montage du dossier de financement et dans le choix du format le plus adapté à votre organisation.",
+      a: "Oui, la formation IA pour les équipes communication de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les directions communication et les agences peuvent mobiliser leur OPCO de branche (AFDAS pour les médias et la communication, AKTO pour les services) pour prendre en charge les frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure. La construction d'exercices sur vos dossiers s'ajoute à ce tarif, le devis la détaille. Nos équipes vous accompagnent dans le montage du dossier de financement et dans le choix du format le plus adapté à votre organisation.",
     },
     {
       q: "Comment préserver la ligne éditoriale d'une marque en utilisant l'IA ?",
@@ -172,7 +172,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA pour managers est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA management de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche pour couvrir les frais pédagogiques : 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Le format intra est particulièrement recommandé pour les équipes de management car il favorise une culture commune de l'IA dans l'organisation et permet de travailler sur des situations managériales propres à l'entreprise. Avec plus de 1 500 professionnels formés, c'est l'une de nos formations les plus demandées.",
+      a: "Oui, la formation IA management de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche pour couvrir les frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Une formation taillée sur vos textes et vos modèles demande une préparation, chiffrée en plus au devis. Le format intra est particulièrement recommandé pour les équipes de management car il favorise une culture commune de l'IA dans l'organisation et permet de travailler sur des situations managériales propres à l'entreprise. Avec plus de 1 500 professionnels formés, c'est l'une de nos formations les plus demandées.",
     },
     {
       q: "Comment utiliser l'IA pour préparer un entretien d'évaluation ?",
@@ -207,7 +207,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA pour assistants et assistantes est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour assistants et assistantes de direction de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Selon le secteur d'activité de l'entreprise, l'OPCO concerné (AKTO, AFDAS, OPCO EP, etc.) peut prendre en charge tout ou partie des frais pédagogiques : 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Nos équipes assurent le suivi administratif du dossier de financement. Le format intra-entreprise est particulièrement apprécié des équipes d'assistantes car il permet de travailler directement sur leurs outils internes et leurs processus, dans un cadre confidentiel.",
+      a: "Oui, la formation IA pour assistants et assistantes de direction de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Selon le secteur d'activité de l'entreprise, l'OPCO concerné (AKTO, AFDAS, OPCO EP, etc.) peut prendre en charge tout ou partie des frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Si nous préparons des ateliers sur vos contenus, ce temps de préparation figure à part dans le devis. Nos équipes assurent le suivi administratif du dossier de financement. Le format intra-entreprise est particulièrement apprécié des équipes d'assistantes car il permet de travailler directement sur leurs outils internes et leurs processus, dans un cadre confidentiel.",
     },
     {
       q: "Comment utiliser l'IA pour organiser un agenda complexe ?",
@@ -242,7 +242,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA SEO est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA SEO de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les équipes SEO et content en entreprise ou en agence peuvent mobiliser leur OPCO de branche (AFDAS pour les agences de communication et médias, AKTO pour les services) pour la prise en charge des frais pédagogiques : 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Notre format 2 jours intensifs est particulièrement adapté aux équipes SEO qui souhaitent intégrer l'IA dans leur workflow de production de contenu rapidement.",
+      a: "Oui, la formation IA SEO de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les équipes SEO et content en entreprise ou en agence peuvent mobiliser leur OPCO de branche (AFDAS pour les agences de communication et médias, AKTO pour les services) pour la prise en charge des frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Le devis ajoute la préparation lorsque la session s'appuie sur vos propres documents. Notre format 2 jours intensifs est particulièrement adapté aux équipes SEO qui souhaitent intégrer l'IA dans leur workflow de production de contenu rapidement.",
     },
     {
       q: "L'IA remplace-t-elle un rédacteur SEO ?",
@@ -269,7 +269,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA service client est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA service client de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche (AKTO pour le commerce et les services, OPCO EP pour les petites entreprises) pour la prise en charge des frais pédagogiques : 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Le format intra est recommandé pour les équipes service client car il permet de travailler directement sur les typologies de demandes réelles et la base de connaissances de l'entreprise.",
+      a: "Oui, la formation IA service client de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche (AKTO pour le commerce et les services, OPCO EP pour les petites entreprises) pour la prise en charge des frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Les cas pratiques bâtis sur vos tickets et vos échanges clients donnent lieu à une préparation chiffrée en plus. Le format intra est recommandé pour les équipes service client car il permet de travailler directement sur les typologies de demandes réelles et la base de connaissances de l'entreprise.",
     },
     {
       q: "L'IA peut-elle gérer les escalades et situations de crise client ?",
@@ -304,7 +304,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA pour les équipes IT est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes IT et les DSI de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche (OPCO 2i pour l'industrie et le numérique, Atlas pour les services financiers et le conseil) pour la prise en charge des frais pédagogiques : 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Le format intra est particulièrement adapté aux équipes IT car il permet d'adapter les cas pratiques à l'environnement technologique spécifique de l'entreprise.",
+      a: "Oui, la formation IA pour les équipes IT et les DSI de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les entreprises peuvent mobiliser leur OPCO de branche (OPCO 2i pour l'industrie et le numérique, Atlas pour les services financiers et le conseil) pour la prise en charge des frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise pour un groupe jusqu'à 12 personnes comme en accompagnement individuel sur mesure. Adapter les cas pratiques à votre environnement technique demande une préparation, qui s'ajoute au devis. Le format intra est particulièrement adapté aux équipes IT car il permet d'adapter les cas pratiques à l'environnement technologique spécifique de l'entreprise.",
     },
     {
       q: "Comment utiliser l'IA pour la documentation technique ?",
@@ -331,7 +331,7 @@ export const METIER_FAQ = {
     },
     {
       q: "La formation IA pour équipes pédagogiques est-elle finançable par l'OPCO ?",
-      a: "Oui, la formation IA pour les équipes pédagogiques et les ingénieurs de formation de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les organismes de formation, les services formation en entreprise et les directions des ressources humaines peuvent mobiliser leur OPCO de branche (AFDAS pour le secteur culturel et éducatif, Uniformation pour l'économie sociale) pour couvrir les frais pédagogiques : 1 980 € par jour, en intra-entreprise jusqu'à 12 participants comme en accompagnement individuel sur mesure. Nous proposons également des formats adaptés aux équipes pédagogiques souhaitant intégrer l'IA dans leur propre offre de formation.",
+      a: "Oui, la formation IA pour les équipes pédagogiques et les ingénieurs de formation de Masteria est finançable via les OPCO grâce à notre certification Qualiopi. Les organismes de formation, les services formation en entreprise et les directions des ressources humaines peuvent mobiliser leur OPCO de branche (AFDAS pour le secteur culturel et éducatif, Uniformation pour l'économie sociale) pour couvrir les frais pédagogiques : à partir de 1 980 € par jour, en intra-entreprise jusqu'à 12 participants comme en accompagnement individuel sur mesure. La préparation de séquences sur vos propres supports pédagogiques est chiffrée en plus, au devis. Nous proposons également des formats adaptés aux équipes pédagogiques souhaitant intégrer l'IA dans leur propre offre de formation.",
     },
     {
       q: "L'IA peut-elle générer des évaluations et des quiz de formation ?",

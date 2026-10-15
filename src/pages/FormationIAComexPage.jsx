@@ -89,7 +89,7 @@ const EN_BREF = [
   { label: 'Langue', value: "Français ou anglais, voire les deux quand le comité réunit plusieurs nationalités" },
   { label: 'Contenu', value: "Ce que l'IA sait faire en octobre 2026, cas comparables de votre secteur, arbitrages, feuille de route" },
   { label: 'Animation', value: "Mathias Nizan ou un formateur senior du réseau Masteria, retenu selon votre secteur, la langue et la date" },
-  { label: 'Tarif', value: "1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète, comité entier ; devis le lendemain du cadrage" },
+  { label: 'Tarif', value: "À partir de 1 980 € HT pour 3 heures ou une demi-journée, de 3 960 € HT pour une journée complète, comité entier ; préparation sur mesure en plus, au devis le lendemain du cadrage" },
 ]
 
 /* ───────── Sommaire ───────── */
@@ -261,7 +261,7 @@ const FAQ = [
   },
   {
     q: "Quel est le prix d'une session COMEX ?",
-    a: "Comptez 1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète, dans les deux cas pour l'ensemble du comité (douze membres au plus), cadrage et préparation sur vos dossiers compris. Un programme étalé sur deux jours compte deux journées. Ce prix couvre un intervenant senior et un contenu préparé pour votre secteur.",
+    a: "Comptez à partir de 1 980 € HT pour 3 heures ou une demi-journée et de 3 960 € HT pour une journée complète, dans les deux cas pour l'ensemble du comité (douze membres au plus). Ce tarif de base couvre un intervenant senior, l'animation et les supports. Quand le contenu est bâti sur les dossiers et le secteur de votre comité, le temps de préparation s'ajoute et figure au devis. Un programme étalé sur deux jours compte deux journées.",
   },
   {
     q: 'Notre OPCO peut-il financer la session ?',
@@ -285,7 +285,7 @@ const FAQ = [
 
 const COURSE_DATA = {
   name: 'Formation IA COMEX (Masteria)',
-  description: "Session exécutive pour comités de direction : état des lieux de l'IA sans jargon, de l'assistant à l'agent, démonstrations en direct, cas du secteur, arbitrages (données, outils, organisation, budget) et feuille de route. Durée de 3 heures à une journée ; langue française ou anglaise ; conduite soit par Mathias Nizan, soit par un formateur senior du réseau Masteria. 1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète, comité entier. Formats montés en action de formation relevant de la certification Qualiopi.",
+  description: "Session exécutive pour comités de direction : état des lieux de l'IA sans jargon, de l'assistant à l'agent, démonstrations en direct, cas du secteur, arbitrages (données, outils, organisation, budget) et feuille de route. Durée de 3 heures à une journée ; langue française ou anglaise ; conduite soit par Mathias Nizan, soit par un formateur senior du réseau Masteria. À partir de 1 980 € HT pour 3 heures ou une demi-journée et de 3 960 € HT pour une journée complète, comité entier. Formats montés en action de formation relevant de la certification Qualiopi.",
   level: 'Direction générale, comités exécutifs et comités de direction',
   teaches: [
     "Comprendre sans jargon ce que l'IA sait faire en entreprise, des assistants jusqu'aux agents",
@@ -303,7 +303,7 @@ const COURSE_DATA = {
   /* Grille exécutive propre à cette page (≠ intra équipes) : prix d'entrée
      porté par l'Offer, détail des deux formats dans la priceSpecification. */
   price: '1980',
-  priceDescription: "Pour le comité entier (douze membres au plus) : 1 980 € HT pour 3 heures ou une demi-journée, 3 960 € HT pour une journée complète.",
+  priceDescription: "Pour le comité entier (douze membres au plus) : à partir de 1 980 € HT pour 3 heures ou une demi-journée, à partir de 3 960 € HT pour une journée complète.",
 }
 
 /* Le déroulé en ItemList (séquence citable, GEO). */
@@ -678,15 +678,15 @@ export default function FormationIAComexPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix de la session</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT pour 3 heures, 3 960 € HT pour la journée
+                Dès 1 980 € HT pour 3 heures, dès 3 960 € HT pour la journée
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le prix couvre le comité entier, jusqu'à douze membres, ainsi que le cadrage et la préparation sur vos dossiers. Trois heures ou une demi-journée reviennent à 1 980 € HT ; la journée complète, qui va jusqu'à la feuille de route écrite, à 3 960 € HT. Un programme étalé sur deux jours compte deux journées. Les formats montés en action de formation (objectifs, feuille d'émargement, évaluation) sont couverts par notre certification Qualiopi, et l'opérateur de compétences de votre branche décide de leur financement selon ses propres règles. Une conférence sans évaluation se paie en général sur le budget de fonctionnement de l'entreprise, et nous le précisons dès le cadrage. Un comité installé à Genève ou à Bruxelles ne dépend d'aucun OPCO ; son devis est libellé en euros, HT. Pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> suffit, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> recense chaque dispositif.
+                Le prix couvre le comité entier, jusqu'à douze membres, avec l'animation et les supports. Trois heures ou une demi-journée démarrent à 1 980 € HT ; la journée complète, qui va jusqu'à la feuille de route écrite, à 3 960 € HT. Si le contenu se construit sur les dossiers du comité, la préparation s'ajoute et figure au devis. Un programme étalé sur deux jours compte deux journées. Les formats montés en action de formation (objectifs, feuille d'émargement, évaluation) sont couverts par notre certification Qualiopi, et l'opérateur de compétences de votre branche décide de leur financement selon ses propres règles. Une conférence sans évaluation se paie en général sur le budget de fonctionnement de l'entreprise, et nous le précisons dès le cadrage. Un comité installé à Genève ou à Bruxelles ne dépend d'aucun OPCO ; son devis est libellé en euros, HT. Pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> suffit, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> recense chaque dispositif.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  '1 980 € HT : trois heures ou une demi-journée, comité entier',
-                  '3 960 € HT : journée complète et feuille de route écrite',
+                  'Dès 1 980 € HT : trois heures ou une demi-journée, comité entier',
+                  'Dès 3 960 € HT : journée complète et feuille de route écrite',
                   'Formats de formation présentables à votre OPCO',
                   'Devis le lendemain du cadrage avec la direction générale',
                 ].map(pt => (

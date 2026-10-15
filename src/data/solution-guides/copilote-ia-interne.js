@@ -156,7 +156,7 @@ export default {
     },
     lead: "Deux budgets coexistent. Quand un produit du marché suffit, la dépense porte sur la configuration, la gouvernance des droits et la formation. Un copilote sur mesure démarre autour de 15 000 € pour une équipe et un premier logiciel branché ; un déploiement sur plusieurs métiers, avec des intégrations multiples, passe au-delà de 100 000 € et se compte parfois en centaines de milliers d'euros.",
     paras: [
-      "Le devis suit le cadrage et décrit un périmètre écrit : équipes, logiciels branchés, actions autorisées, livrables de gouvernance. S'il faut des licences, vous les achetez auprès de l'éditeur ou de votre revendeur habituel : Masteria n'en revend aucune. La formation se chiffre à part, au tarif intra de 1 980 € HT par journée, et votre OPCO peut la financer, ce qui n'est pas le cas du conseil ni du développement.",
+      "Le devis suit le cadrage et décrit un périmètre écrit : équipes, logiciels branchés, actions autorisées, livrables de gouvernance. S'il faut des licences, vous les achetez auprès de l'éditeur ou de votre revendeur habituel : Masteria n'en revend aucune. La formation se chiffre à part, dès 1 980 € HT par journée en intra, et votre OPCO peut la financer, ce qui n'est pas le cas du conseil ni du développement. Si elle s'appuie sur vos propres documents, le temps de préparation s'ajoute au devis.",
     ],
     facteurs: [
       {
@@ -318,7 +318,7 @@ export default {
     },
     {
       q: "La formation des équipes au copilote est-elle finançable ?",
-      a: "Oui : la formation relève de l'OPCO de votre branche, parce que Masteria détient la certification Qualiopi pour ce type d'action, et le financement dépend de vos fonds disponibles. Le prix d'une journée en intra est fixé à 1 980 € HT. Pour le copilote lui-même, conseil et développement relèvent d'un autre budget : ils se chiffrent au forfait, sur devis, et l'OPCO ne les finance pas.",
+      a: "Oui : la formation relève de l'OPCO de votre branche, parce que Masteria détient la certification Qualiopi pour ce type d'action, et le financement dépend de vos fonds disponibles. Une journée en intra démarre à 1 980 € HT. Pour le copilote lui-même, conseil et développement relèvent d'un autre budget : ils se chiffrent au forfait, sur devis, et l'OPCO ne les finance pas.",
     },
   ],
 

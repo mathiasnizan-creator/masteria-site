@@ -861,14 +861,14 @@ export default function FormationAgentsIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                Une journée de formation agents IA coûte 1 980 € HT
+                Une journée de formation agents IA démarre à 1 980 € HT
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Pour une équipe de douze au plus, réunie en intra, les deux jours reviennent à 3 960 € HT ; le même tarif journalier vaut pour un parcours individuel, destiné à un référent ou à un dirigeant. Les licences des outils restent à votre charge. Masteria détenant la certification Qualiopi, ces journées peuvent être financées par votre OPCO, au regard de ses règles et du budget dont il dispose ; nous lui fournissons programme, objectifs, modalités d'évaluation et convention. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les règles.
+                Pour une équipe de douze au plus, réunie en intra, les deux jours démarrent à 3 960 € HT ; le même tarif journalier vaut pour un parcours individuel, destiné à un référent ou à un dirigeant. Les agents construits sur vos données et vos outils demandent une préparation, qui s'ajoute au devis. Les licences des outils restent à votre charge. Masteria détenant la certification Qualiopi, ces journées peuvent être financées par votre OPCO, au regard de ses règles et du budget dont il dispose ; nous lui fournissons programme, objectifs, modalités d'évaluation et convention. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les règles.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  'Deux jours en intra : 3 960 € HT',
+                  'Deux jours en intra : dès 3 960 € HT',
                   'Parcours individuel au même tarif journalier',
                   'Licences des outils non comprises',
                   "Objectifs et évaluation prêts pour l'OPCO",

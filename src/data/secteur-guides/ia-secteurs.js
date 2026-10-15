@@ -151,7 +151,7 @@ export default {
     },
     {
       q: "Peut-on financer le conseil et le développement ?",
-      a: "Pas par votre OPCO, qui ne prend en charge que la formation : Masteria est certifié Qualiopi au titre des actions de formation, et une journée intra coûte 1 980 € HT. Pour le conseil, certaines aides publiques existent selon la taille de l'entreprise et sa région ; le cadrage sert à vérifier celles qui vous concernent.",
+      a: "Pas par votre OPCO, qui ne prend en charge que la formation : Masteria est certifié Qualiopi au titre des actions de formation, et une journée intra coûte à partir de 1 980 € HT, préparation sur mesure en sus. Pour le conseil, certaines aides publiques existent selon la taille de l'entreprise et sa région ; le cadrage sert à vérifier celles qui vous concernent.",
     },
   ],
 

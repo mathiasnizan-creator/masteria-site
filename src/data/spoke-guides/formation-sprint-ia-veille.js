@@ -12,12 +12,12 @@ export default {
   metaTitle: 'Sprint IA Veille : une veille programmée en 3 h | Masteria',
   metaDesc: "Sprint IA Veille : en 3 heures, une veille sur votre sujet, une recherche programmée chaque semaine dans votre assistant d'IA et une note vérifiée.",
   keywords: "sprint ia veille, formation veille ia 3 heures, automatiser sa veille avec l'ia, tâche planifiée chatgpt veille, veille concurrentielle ia, note de veille, formation veille courte",
-  resume: "Le Sprint IA Veille met en marche, en trois heures, la veille personnelle de chaque participant : un sujet écrit en une phrase, une dizaine de sources retenues, une recherche que l'assistant de l'entreprise relance de lui-même chaque semaine, et une première note d'une page dont chaque lien a été ouvert. Masteria anime la séance chez vous ou à distance ; elle coûte 1 980 € HT, pour douze stagiaires comme pour un seul ; l'OPCO de votre branche peut la financer s'il juge la demande conforme à ses critères.",
+  resume: "Le Sprint IA Veille met en marche, en trois heures, la veille personnelle de chaque participant : un sujet écrit en une phrase, une dizaine de sources retenues, une recherche que l'assistant de l'entreprise relance de lui-même chaque semaine, et une première note d'une page dont chaque lien a été ouvert. Masteria anime la séance chez vous ou à distance ; elle coûte à partir de 1 980 € HT, pour douze stagiaires comme pour un seul ; l'OPCO de votre branche peut la financer s'il juge la demande conforme à ses critères.",
   enBref: [
     { label: 'Formation', value: "Une veille personnelle automatisée : un sujet, des sources, une tâche planifiée, une note vérifiée" },
     { label: 'Durée', value: "Cinq séquences sur trois heures, dont plus d'une heure et demie consacrée à votre propre veille" },
     { label: 'Outils', value: "L'assistant fourni par l'entreprise (ChatGPT, Claude, Gemini, Microsoft Copilot ou Vibe) et une alerte Google" },
-    { label: 'Tarif', value: "1 980 € HT la séance, montant identique de un à douze stagiaires" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la séance, montant identique de un à douze stagiaires" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; l'OPCO examine la demande d'après les règles de la branche, avant la séance" },
     { label: 'Prérequis', value: "Venir avec le sujet à suivre, la liste des sources déjà lues et un accès à l'assistant de l'entreprise" },
   ],
@@ -212,7 +212,7 @@ export default {
     },
     {
       q: "Combien coûte le Sprint IA Veille et peut-il être pris en charge par un OPCO ?",
-      a: "La séance de trois heures revient à 1 980 € HT hors TVA, sur place ou en visioconférence, et ce montant ne change pas entre un inscrit et douze. Comme toutes les formations de Masteria, organisme certifié Qualiopi, elle peut être financée par votre OPCO lorsque les critères de votre branche le permettent, ce qu'il faut vérifier avant toute demande. Masteria vous remet programme et convention ; l'entreprise envoie ensuite son dossier à l'OPCO, avant la date du Sprint.",
+      a: "La séance de trois heures se facture à partir de 1 980 € HT hors TVA, sur place ou en visioconférence, et ce montant ne change pas entre un inscrit et douze. Comme toutes les formations de Masteria, organisme certifié Qualiopi, elle peut être financée par votre OPCO lorsque les critères de votre branche le permettent, ce qu'il faut vérifier avant toute demande. Masteria vous remet programme et convention ; l'entreprise envoie ensuite son dossier à l'OPCO, avant la date du Sprint.",
     },
     {
       q: "Le Sprint IA Veille convient-il à une veille réglementaire ?",
@@ -226,7 +226,7 @@ export default {
   tarifs: {
     titre: "Le prix d'un Sprint IA Veille, pour un participant ou pour douze",
     paras: [
-      "Le tarif de 1 980 € HT vaut pour toute la séance, de un à douze stagiaires. Il inclut l'échange préalable, pendant lequel nous relevons l'assistant et l'offre de chaque participant, puisque les possibilités de planification en dépendent, des exemples de sources choisis dans votre marché, la trame de consigne remise à chacun et l'attestation de fin de séance.",
+      "Le tarif à partir de 1 980 € HT vaut pour toute la séance, de un à douze stagiaires. Il couvre l'animation, la trame de consigne remise à chacun et l'attestation de fin de séance. L'échange préalable, où nous relevons l'assistant et l'offre de chaque participant (les possibilités de planification en dépendent), et le choix d'exemples de sources dans votre marché représentent un temps de préparation qui s'ajoute et figure au devis.",
       "Prenons une équipe commerciale de huit chargés d'affaires, chacun avec ses propres clients à suivre : la séance revient à 247,50 € HT par personne, et chacun repart avec une tâche déjà programmée. Votre OPCO peut financer la séance si ses critères le permettent ; Masteria, certifié Qualiopi, vous envoie programme et convention, que l'entreprise adresse à l'OPCO avant la date retenue.",
     ],
   },

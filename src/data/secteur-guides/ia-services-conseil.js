@@ -83,7 +83,7 @@ export default {
 
   formation: [
     "L'omnibus numérique de juillet 2026 a modifié l'article 4 du règlement européen sur l'IA : toute organisation qui déploie l'IA prend des mesures pour que ses équipes la maîtrisent. Pour un cabinet, la forme la plus utile consiste à former les consultants sur leurs livrables : rédiger une consigne précise, vérifier une source, reconnaître une information qui ne doit pas entrer dans l'outil, faire évoluer l'assistant de leur pôle.",
-    "Les associés suivent une séquence à part sur la charte, la relation client et la mesure de la qualité des réponses. Pour les équipes, une journée en intra revient à 1 980 € HT par groupe de consultants ; comme Masteria détient la certification Qualiopi pour la formation, le dossier peut partir vers l'OPCO du cabinet.",
+    "Les associés suivent une séquence à part sur la charte, la relation client et la mesure de la qualité des réponses. Pour les équipes, une journée en intra démarre à 1 980 € HT par groupe de consultants, plus la préparation sur mesure au devis ; comme Masteria détient la certification Qualiopi pour la formation, le dossier peut partir vers l'OPCO du cabinet.",
   ],
 
   guide: {
@@ -188,7 +188,7 @@ export default {
     },
     {
       q: "Combien coûte un projet pour un cabinet de conseil ?",
-      a: "Le budget dépend du nombre de familles de besoin, du volume de documents à trier et de l'intégration à vos outils (stockage documentaire, CRM, suite bureautique). Nous travaillons au forfait, avec périmètre, livrables, calendrier et prix écrits avant signature. La formation des consultants se chiffre à part, à 1 980 € HT la journée intra, et peut être financée par votre OPCO.",
+      a: "Le budget dépend du nombre de familles de besoin, du volume de documents à trier et de l'intégration à vos outils (stockage documentaire, CRM, suite bureautique). Nous travaillons au forfait, avec périmètre, livrables, calendrier et prix écrits avant signature. La formation des consultants se chiffre à part, à partir de 1 980 € HT la journée intra, et peut être financée par votre OPCO.",
     },
     {
       q: "Quelle est la première étape avec Masteria ?",

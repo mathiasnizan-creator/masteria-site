@@ -114,7 +114,7 @@ export default {
   ],
   formation: [
     "Un outil livré à une équipe lyonnaise dure si ses utilisateurs savent le corriger et lui confier de nouveaux cas. Les sessions se tiennent dans vos locaux, n'importe où dans la métropole, ou en visio, et leurs exercices partent de l'outil livré et des dossiers de chaque métier.",
-    "Comme Masteria est certifié Qualiopi au titre de la formation, votre OPCO peut financer ces sessions, à raison de 1 980 € HT la journée en intra. Les missions de conseil et de développement relèvent d'un autre budget, car aucun OPCO ne les prend en charge.",
+    "Comme Masteria est certifié Qualiopi au titre de la formation, votre OPCO peut financer ces sessions, à partir de 1 980 € HT la journée en intra, la préparation d'une formation sur mesure étant chiffrée en plus au devis. Les missions de conseil et de développement relèvent d'un autre budget, car aucun OPCO ne les prend en charge.",
   ],
   guide: {
     kicker: "Depuis nos bureaux de la presqu'île",

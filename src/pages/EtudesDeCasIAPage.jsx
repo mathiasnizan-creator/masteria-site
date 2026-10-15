@@ -133,7 +133,7 @@ const FAQ = [
   },
   {
     q: 'Un OPCO peut-il financer ces missions ?',
-    a: "Le volet formation peut l'être. Côté formation, l'organisme Masteria est certifié Qualiopi au titre de ses formations ; la prise en charge revient à votre OPCO, qui l'accorde selon ses propres règles et dans la limite de ses fonds. Côté prix, une journée se facture 1 980 € HT, pour un groupe intra comme pour une personne seule. Le diagnostic, puis concevoir et déployer les assistants, sont du conseil ou du développement : ils ne sont donc pas finançables par votre OPCO.",
+    a: "Le volet formation peut l'être. Côté formation, l'organisme Masteria est certifié Qualiopi au titre de ses formations ; la prise en charge revient à votre OPCO, qui l'accorde selon ses propres règles et dans la limite de ses fonds. Côté prix, une journée se facture à partir de 1 980 € HT, pour un groupe intra comme pour une personne seule, la préparation d'une formation sur mesure s'ajoutant au devis. Le diagnostic, puis concevoir et déployer les assistants, sont du conseil ou du développement : ils ne sont donc pas finançables par votre OPCO.",
   },
   {
     q: 'Comment les données restent-elles protégées pendant une mission ?',

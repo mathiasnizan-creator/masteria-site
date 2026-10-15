@@ -12,12 +12,12 @@ export default {
   h1: "Formation ChatGPT communication : veille, presse, crise et réseaux sociaux",
   metaTitle: "Formation ChatGPT communication · presse et crise | Masteria",
   metaDesc: "Formation ChatGPT communication : revue de presse sourcée, veille planifiée, kit de crise, interview répétée à l'oral, charte éditoriale. 2 jours.",
-  resume: "La formation ChatGPT communication apprend à une équipe de communication à préparer avec ChatGPT ses revues de presse, ses communiqués, ses argumentaires de crise et ses publications, sans jamais céder la signature éditoriale de l'organisation. Sur place ou en visioconférence, les deux journées de sept heures accueillent jusqu'à douze communicants, ou un directeur de la communication en individuel, pour un prix de 1 980 € HT par journée. Certifié Qualiopi, Masteria permet à l'OPCO compétent de financer la session.",
+  resume: "La formation ChatGPT communication apprend à une équipe de communication à préparer avec ChatGPT ses revues de presse, ses communiqués, ses argumentaires de crise et ses publications, sans jamais céder la signature éditoriale de l'organisation. Sur place ou en visioconférence, les deux journées de sept heures accueillent jusqu'à douze communicants, ou un directeur de la communication en individuel, pour un prix à partir de 1 980 € HT par journée. Certifié Qualiopi, Masteria permet à l'OPCO compétent de financer la session.",
   enBref: [
     { label: 'Formation', value: "ChatGPT pour la communication : veille et revue de presse, communiqués, crise, prises de parole, réseaux sociaux" },
     { label: 'Durée', value: "Quatorze heures réparties sur deux jours, à programmer hors d'une crise en cours" },
     { label: 'Formats', value: "Dans vos murs ou en ligne ; jusqu'à douze participants, ou une directrice de la communication seule" },
-    { label: 'Tarif', value: "Deux journées à 1 980 € HT chacune, 3 960 € HT au total" },
+    { label: 'Tarif', value: "Deux journées à partir de 1 980 € HT chacune, à partir de 3 960 € HT au total" },
     { label: 'Financement', value: "Masteria détient Qualiopi, catégorie « actions de formation » ; l'OPCO statue d'après les règles de votre branche" },
     { label: 'Prérequis', value: "Aucune compétence technique ; chacun vient avec son compte ChatGPT et deux ou trois communiqués récents" },
   ],
@@ -186,8 +186,8 @@ export default {
   tarifs: {
     titre: "Ce que paie une direction de la communication",
     paras: [
-      "Que la session réunisse deux communicants ou douze, la journée se paie 1 980 € HT. Une petite direction de la communication de quatre personnes (sa directrice, une attachée de presse, un community manager, une chargée de communication interne) règle 3 960 € HT pour ses deux journées, soit 990 € HT par personne. Le format individuel, que choisissent souvent les directeurs de la communication, suit le même barème.",
-      "Le formateur prépare la session avec vos pièces : deux communiqués récents, votre charte éditoriale et, si vous le souhaitez, un dossier de crise refermé, anonymisé au besoin. En France, le financement peut venir de l'OPCO auquel cotise votre entreprise, Masteria étant certifié Qualiopi ; l'OPCO applique ses critères et puise dans ses fonds disponibles. Un établissement public ou une collectivité territoriale passe par d'autres circuits : les pièces s'adaptent à sa procédure.",
+      "Que la session réunisse deux communicants ou douze, la journée se paie à partir de 1 980 € HT. Une petite direction de la communication de quatre personnes (sa directrice, une attachée de presse, un community manager, une chargée de communication interne) règle à partir de 3 960 € HT pour ses deux journées, soit dès 990 € HT par personne. Le format individuel, que choisissent souvent les directeurs de la communication, suit le même barème.",
+      "Le prix de base couvre l'animation, les supports et le programme ; la préparation sur vos pièces s'y ajoute au devis. Le formateur prépare la session avec vos pièces : deux communiqués récents, votre charte éditoriale et, si vous le souhaitez, un dossier de crise refermé, anonymisé au besoin. En France, le financement peut venir de l'OPCO auquel cotise votre entreprise, Masteria étant certifié Qualiopi ; l'OPCO applique ses critères et puise dans ses fonds disponibles. Un établissement public ou une collectivité territoriale passe par d'autres circuits : les pièces s'adaptent à sa procédure.",
     ],
   },
   cta: {
@@ -240,7 +240,7 @@ export default {
     },
     {
       q: "Comment financer la formation ChatGPT de l'équipe de communication ?",
-      a: "Une entreprise française s'adresse à l'OPCO de sa branche, qui finance ou non les deux journées au vu de ses règles et de son budget ; Masteria, certifié Qualiopi, remplit la condition de recevabilité. La journée est à 1 980 € HT, groupe de douze ou personne seule. Programme et convention vous sont fournis. Pour le secteur public, d'autres financements existent, et nous ajustons les pièces à chacun.",
+      a: "Une entreprise française s'adresse à l'OPCO de sa branche, qui finance ou non les deux journées au vu de ses règles et de son budget ; Masteria, certifié Qualiopi, remplit la condition de recevabilité. La journée est facturée à partir de 1 980 € HT, groupe de douze ou personne seule. Programme et convention vous sont fournis. Pour le secteur public, d'autres financements existent, et nous ajustons les pièces à chacun.",
     },
   ],
 }

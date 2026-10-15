@@ -219,7 +219,7 @@ const ECONOMIES = [
   { icon: Database, title: 'Préparer les données chez vous', desc: "Trier les documents, supprimer les doublons, désigner la version qui fait foi : vos équipes peuvent s'en charger en suivant nos consignes, ce qui retire autant de jours au devis." },
   { icon: Cpu, title: 'Adapter le modèle à la tâche', desc: "Un modèle léger suffit souvent pour classer ou extraire ; le plus puissant reste réservé à la rédaction ou au raisonnement. La facture mensuelle de consommation s'en ressent." },
   { icon: Gauge, title: "Limiter l'autonomie au départ", desc: "Un assistant qui prépare et laisse valider coûte moins qu'un agent qui agit seul. Sa marge d'action pourra s'élargir plus tard, une fois l'outil éprouvé." },
-  { icon: GraduationCap, title: 'Former au lieu de construire', desc: "Certaines tâches se règlent avec un assistant du marché bien employé. Une journée de formation à 1 980 € HT, que l'OPCO peut financer selon ses règles et ses fonds, coûte parfois moins qu'un développement." },
+  { icon: GraduationCap, title: 'Former au lieu de construire', desc: "Certaines tâches se règlent avec un assistant du marché bien employé. Une journée de formation à partir de 1 980 € HT, que l'OPCO peut financer selon ses règles et ses fonds, coûte parfois moins qu'un développement." },
 ]
 
 /* ───────── Trois missions découpées en paliers (faits : src/data/etudes-de-cas.js) ───────── */
@@ -296,7 +296,7 @@ const FAQ = [
   },
   {
     q: "L'OPCO peut-il financer un projet IA ?",
-    a: "Conseil comme développement sortent du champ des actions de formation : cette partie du projet n'est pas finançable par votre OPCO. Pour former les utilisateurs, c'est différent, car Masteria détient la certification Qualiopi pour ses actions de formation. Pour un groupe interne de 12 personnes au plus, ou pour une seule personne, la journée vaut 1 980 € HT et les deux jours 3 960 € HT ; l'OPCO de votre branche la finance dans la limite de ce que permettent ses règles et ses fonds.",
+    a: "Conseil comme développement sortent du champ des actions de formation : cette partie du projet n'est pas finançable par votre OPCO. Pour former les utilisateurs, c'est différent, car Masteria détient la certification Qualiopi pour ses actions de formation. Pour un groupe interne de 12 personnes au plus, ou pour une seule personne, la journée démarre à 1 980 € HT et les deux jours à 3 960 € HT, le temps de préparation d'une formation sur mesure s'ajoutant au devis ; l'OPCO de votre branche la finance dans la limite de ce que permettent ses règles et ses fonds.",
   },
   {
     q: "Ces prix valent-ils hors de France ?",
@@ -938,7 +938,7 @@ export default function PrixProjetIAPage() {
             {[
               ['Forfait', 'écrit une fois le cadrage fini'],
               ['HT', 'pour tous les montants cités'],
-              ['1 980 €', 'HT la journée de formation, seul prix fixe'],
+              ['Dès 1 980 €', 'HT la journée de formation, seul tarif affiché ; préparation sur mesure en plus'],
               ['2022', 'création du cabinet, à Lyon'],
             ].map(([k, v]) => (
               <div key={k}>

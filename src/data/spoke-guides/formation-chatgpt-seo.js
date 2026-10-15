@@ -13,12 +13,12 @@ export default {
   metaTitle: 'Formation ChatGPT SEO : données, briefs, GEO | Masteria',
   metaDesc: "Formation ChatGPT SEO : exports Search Console analysés, pages non indexées diagnostiquées, briefs sur sources choisies, visibilité dans ChatGPT Search.",
   keywords: "formation ChatGPT SEO, ChatGPT référencement naturel, formation SEO IA, ChatGPT Search Console, GEO ChatGPT",
-  resume: "La formation ChatGPT SEO s'étend sur deux jours, quatorze heures en tout, passées sur les exports, les pages et les concurrents de votre propre site. Responsables SEO, rédacteurs web et consultants d'agence la suivent en intra, à douze au plus, ou en tête-à-tête avec le formateur, chez vous ou en visioconférence. La journée vaut 1 980 € HT, et la certification Qualiopi de l'organisme permet d'adresser une demande à votre OPCO, qui tranche avec les critères de sa branche.",
+  resume: "La formation ChatGPT SEO s'étend sur deux jours, quatorze heures en tout, passées sur les exports, les pages et les concurrents de votre propre site. Responsables SEO, rédacteurs web et consultants d'agence la suivent en intra, à douze au plus, ou en tête-à-tête avec le formateur, chez vous ou en visioconférence. La journée vaut au moins 1 980 € HT, et la certification Qualiopi de l'organisme permet d'adresser une demande à votre OPCO, qui tranche avec les critères de sa branche.",
   enBref: [
     { label: 'Formation', value: "ChatGPT au service du référencement : exports Search Console, pages explorées mais non indexées, briefs construits sur des concurrents choisis, robots d'OpenAI et trafic venu de ChatGPT" },
     { label: 'Durée', value: "Deux journées de sept heures, avec un intervalle possible pour lancer le premier audit sur votre site" },
     { label: 'Formats', value: "Équipe SEO ou agence en intra (douze participants au maximum), ou consultant seul ; dans vos bureaux ou par visioconférence" },
-    { label: 'Tarif', value: "1 980 € HT par journée, ateliers préparés sur vos exports et vos pages" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée, plus la préparation sur vos exports et vos pages, chiffrée au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; l'OPCO de votre entreprise se prononce selon les règles de sa branche" },
     { label: 'Prérequis', value: "Pratiquer la Search Console et un crawler ; un compte ChatGPT payant, Business de préférence pour partager projets et compétences" },
   ],
@@ -281,14 +281,14 @@ export default {
     },
     {
       q: "Qui peut financer ces deux jours pour une équipe SEO ?",
-      a: "La certification Qualiopi de Masteria couvre ses actions de formation : l'OPCO de votre entreprise peut donc examiner une prise en charge, selon sa convention collective et ses fonds disponibles. Une journée intra se facture 1 980 € HT, pour trois personnes comme pour douze. Nous fournissons le programme détaillé, dont les objectifs sont reliés à leur évaluation, et la convention à joindre au dossier, déposé avant le premier jour.",
+      a: "La certification Qualiopi de Masteria couvre ses actions de formation : l'OPCO de votre entreprise peut donc examiner une prise en charge, selon sa convention collective et ses fonds disponibles. Une journée intra se facture à partir de 1 980 € HT, pour trois personnes comme pour douze. Nous fournissons le programme détaillé, dont les objectifs sont reliés à leur évaluation, et la convention à joindre au dossier, déposé avant le premier jour.",
     },
   ],
   tarifs: {
     titre: "Ce que coûtent deux jours de formation ChatGPT pour une équipe SEO",
     paras: [
-      "Ce tarif inclut un travail préalable sur votre site. Votre équipe transmet en amont ses exports Search Console récents, un crawl de la rubrique à diagnostiquer et la liste de trois concurrents ; les ateliers s'appuient ensuite sur ces fichiers. Chacun repart avec le projet de son site, une compétence testée et le segment de trafic ChatGPT en place.",
-      "Prenons une agence qui inscrit son responsable SEO, trois consultants et deux rédacteurs, soit six personnes. L'intra de deux jours lui coûte 3 960 € HT, soit 660 € HT par tête. Un consultant indépendant formé seul règle lui aussi 1 980 € HT par jour, en travaillant sur ses propres clients. L'OPCO de votre branche se prononce ensuite sur sa participation.",
+      "Le tarif de base couvre l'animation, les supports et le programme ; le travail préalable sur votre site s'y ajoute et figure au devis. Votre équipe transmet en amont ses exports Search Console récents, un crawl de la rubrique à diagnostiquer et la liste de trois concurrents ; les ateliers s'appuient ensuite sur ces fichiers. Chacun repart avec le projet de son site, une compétence testée et le segment de trafic ChatGPT en place.",
+      "Prenons une agence qui inscrit son responsable SEO, trois consultants et deux rédacteurs, soit six personnes. L'intra de deux jours lui coûte à partir de 3 960 € HT, soit dès 660 € HT par tête. Un consultant indépendant formé seul règle lui aussi à partir de 1 980 € HT par jour, en travaillant sur ses propres clients. L'OPCO de votre branche se prononce ensuite sur sa participation.",
     ],
   },
   apres: {

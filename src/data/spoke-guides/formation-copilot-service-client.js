@@ -11,12 +11,12 @@ export default {
   metaDesc: "Formation Copilot pour le service client : réclamations dans Outlook, base de réponses, assistant des conseillers, motifs analysés dans Excel. 2 jours.",
   keywords: "formation copilot service client, microsoft copilot relation client, copilot outlook réclamation, copilot sharepoint base de connaissances, copilot studio agent service client, formation copilot qualiopi opco",
   prerequis: "Traiter des demandes clients par écrit ; un export anonymisé de tickets et quelques réclamations anonymisées sont demandés avant la session",
-  resume: "Ce programme s'adresse aux conseillers, superviseurs et responsables de la relation client qui travaillent dans Outlook, Teams et SharePoint. Vous y verrez Microsoft Copilot (anciennement Microsoft 365 Copilot) vous aider à répondre à une réclamation délicate, à tenir une base de réponses à jour, à lire un export de tickets et à préparer un assistant pour les questions qui reviennent, sans exposer les données des clients. Comptez 14 heures sur deux jours, 1 980 € HT chacun, pour un groupe de douze conseillers au maximum, voire un seul ; votre OPCO examine sa prise en charge avec les règles qui sont les siennes.",
+  resume: "Ce programme s'adresse aux conseillers, superviseurs et responsables de la relation client qui travaillent dans Outlook, Teams et SharePoint. Vous y verrez Microsoft Copilot (anciennement Microsoft 365 Copilot) vous aider à répondre à une réclamation délicate, à tenir une base de réponses à jour, à lire un export de tickets et à préparer un assistant pour les questions qui reviennent, sans exposer les données des clients. Comptez 14 heures sur deux jours, au moins 1 980 € HT chacun, plus la préparation sur vos tickets au devis, pour un groupe de douze conseillers au maximum, voire un seul ; votre OPCO examine sa prise en charge avec les règles qui sont les siennes.",
   enBref: [
     { label: 'Formation', value: "Copilot appliqué à la relation client : réponses écrites, base de connaissances, analyse des motifs de contact, agents" },
     { label: 'Durée', value: "Deux fois 7 heures, enchaînées ou séparées pour tenir compte des pics d'activité" },
     { label: 'Formats', value: "Plateau de conseillers formé en interne jusqu'à douze personnes, ou parcours individuel pour un responsable ; présentiel ou classe virtuelle" },
-    { label: 'Tarif', value: "Deux jours pour 3 960 € HT, soit 1 980 € HT chacun" },
+    { label: 'Tarif', value: "Deux jours à partir de 3 960 € HT, soit à partir de 1 980 € HT chacun ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Certification Qualiopi de l'organisme : l'OPCO peut couvrir la session d'après ses propres conditions" },
     { label: 'Prérequis', value: "Répondre chaque jour à des clients par écrit ; les accès Copilot des conseillers sont vérifiés au cadrage" },
   ],
@@ -304,14 +304,14 @@ export default {
     },
     {
       q: 'Quel financement pour former un service client à Copilot ?',
-      a: "La session peut être financée par votre OPCO, la certification Qualiopi de Masteria portant sur ses actions de formation ; la décision lui appartient, selon ses règles et ses fonds. Deux journées pour une équipe de douze conseillers au plus coûtent 3 960 € HT, et un responsable seul paie 1 980 € HT la journée. Un centre de relation client organisé en équipes successives peut prévoir deux groupes, chacun au même tarif. Un service client basé à Genève ou à Bruxelles, où l'OPCO n'a pas d'équivalent, reçoit un devis hors taxes, en euros.",
+      a: "La session peut être financée par votre OPCO, la certification Qualiopi de Masteria portant sur ses actions de formation ; la décision lui appartient, selon ses règles et ses fonds. Deux journées pour une équipe de douze conseillers au plus coûtent à partir de 3 960 € HT, et un responsable seul paie à partir de 1 980 € HT la journée. Un centre de relation client organisé en équipes successives peut prévoir deux groupes, chacun au même tarif. Un service client basé à Genève ou à Bruxelles, où l'OPCO n'a pas d'équivalent, reçoit un devis hors taxes, en euros.",
     },
   ],
   tarifs: {
     titre: "Le coût d'une formation Copilot pour un service client",
     paras: [
-      "Chaque journée, au prix de 1 980 € HT, inclut la préparation : le formateur étudie vos réclamations anonymisées, votre export de tickets et vos procédures, puis construit les ateliers sur ces pièces. Les conseillers repartent avec leurs demandes types, cinq fiches de réponse validées et le premier assistant de l'équipe.",
-      "Pour onze conseillers formés dans le même groupe, les deux jours reviennent à 3 960 € HT, 360 € HT chacun. Pour un centre organisé en équipes de jour et de soir, deux groupes se forment, chacun au même tarif. Les licences Copilot et un éventuel agent Copilot Studio se paient à part. L'OPCO de votre branche rend ensuite sa décision de financement.",
+      "Chaque journée, à partir de 1 980 € HT, couvre l'animation et les supports. Quand le formateur étudie vos réclamations anonymisées, votre export de tickets et vos procédures pour construire les ateliers sur ces pièces, ce temps de préparation s'ajoute au devis. Les conseillers repartent avec leurs demandes types, cinq fiches de réponse validées et le premier assistant de l'équipe.",
+      "Pour onze conseillers formés dans le même groupe, les deux jours coûtent à partir de 3 960 € HT, soit dès 360 € HT chacun. Pour un centre organisé en équipes de jour et de soir, deux groupes se forment, chacun au même tarif. Les licences Copilot et un éventuel agent Copilot Studio se paient à part. L'OPCO de votre branche rend ensuite sa décision de financement.",
     ],
   },
   apres: {

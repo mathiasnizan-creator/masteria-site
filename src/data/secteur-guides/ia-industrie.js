@@ -83,7 +83,7 @@ export default {
 
   formation: [
     "Les usages tiennent quand chaque service a travaillé sur ses propres pièces : l'acheteur sur un vrai mail fournisseur, le qualiticien sur une fiche de non-conformité, le technicien sur un rapport d'intervention, le contrôleur de gestion sur un export de l'ERP. Nous construisons les ateliers sur ces documents, dans l'outil que l'entreprise a retenu, avec un temps réservé à la construction d'un premier assistant par participant.",
-    "L'article 4 du règlement sur l'IA, dans sa rédaction issue de l'omnibus de l'été 2026, demande aux entreprises qui déploient ces outils de prendre des mesures pour que leur personnel maîtrise l'IA. Une formation construite sur vos usages, avec une trace écrite, est l'une de ces mesures. Pour vos acheteurs, qualiticiens et techniciens, une journée en intra coûte 1 980 € HT. Comme Masteria est certifié Qualiopi au titre des actions de formation, l'OPCO de votre branche peut la financer selon ses règles et ses fonds ; le conseil et le développement restent hors de ce financement.",
+    "L'article 4 du règlement sur l'IA, dans sa rédaction issue de l'omnibus de l'été 2026, demande aux entreprises qui déploient ces outils de prendre des mesures pour que leur personnel maîtrise l'IA. Une formation construite sur vos usages, avec une trace écrite, est l'une de ces mesures. Pour vos acheteurs, qualiticiens et techniciens, une journée en intra coûte à partir de 1 980 € HT, plus la préparation sur mesure indiquée au devis. Comme Masteria est certifié Qualiopi au titre des actions de formation, l'OPCO de votre branche peut la financer selon ses règles et ses fonds ; le conseil et le développement restent hors de ce financement.",
   ],
 
   guide: {

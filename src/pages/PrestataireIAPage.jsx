@@ -190,7 +190,7 @@ const FAQ = [
   },
   {
     q: 'Combien coûte un prestataire IA ?',
-    a: "Le prix dépend de la famille et du périmètre. Conseil et développement se chiffrent en général au forfait, sur devis après cadrage. Une maquette ou un périmètre réduit reste dans les milliers d'euros ; un outil utilisé en production, en dizaines de milliers ; un déploiement dans tout un groupe dépasse 100 000 € et atteint parfois plusieurs centaines de milliers. Chez Masteria, former une équipe revient à 1 980 € HT par jour. Les postes de coût sont décomposés sur notre page consacrée au prix d'un projet IA ; un devis sérieux découle toujours d'un périmètre écrit.",
+    a: "Le prix dépend de la famille et du périmètre. Conseil et développement se chiffrent en général au forfait, sur devis après cadrage. Une maquette ou un périmètre réduit reste dans les milliers d'euros ; un outil utilisé en production, en dizaines de milliers ; un déploiement dans tout un groupe dépasse 100 000 € et atteint parfois plusieurs centaines de milliers. Chez Masteria, former une équipe démarre à 1 980 € HT par jour, la préparation d'une formation sur mesure s'ajoutant au devis. Les postes de coût sont décomposés sur notre page consacrée au prix d'un projet IA ; un devis sérieux découle toujours d'un périmètre écrit.",
   },
   {
     q: 'Quelles questions poser avant de signer avec un prestataire IA ?',

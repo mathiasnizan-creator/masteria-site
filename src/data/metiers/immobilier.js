@@ -257,8 +257,8 @@ export default {
  },
  "tarif": {
   "titre": "Tarif de la formation, et rôle de l'OPCO EP",
-  "answer": "Une journée en intra coûte à l'agence 1 980 € HT, pour 12 personnes au maximum ; les deux journées, 3 960 € HT. Un dirigeant d'agence peut suivre le même parcours en individuel, au même tarif par jour. Masteria détient Qualiopi pour les actions de formation, condition d'une prise en charge : l'OPCO EP, dont relève l'accord de branche de l'immobilier, ou l'opérateur de votre secteur décide selon son barème et ses fonds.",
-  "inclus": "Le cadrage sur vos mandats, vos gabarits et des dossiers de gestion masqués, les deux journées à l'agence ou à distance avec leurs supports, les livrables (prompts par activité, gabarits outillés, règles d'usage), puis un questionnaire d'évaluation et un certificat de réalisation remis à chaque collaborateur. Si le formateur vient dans vos murs, son déplacement figure sur le devis.",
+  "answer": "Une journée en intra coûte à l'agence à partir de 1 980 € HT, pour 12 personnes au maximum ; les deux journées, à partir de 3 960 € HT. Un dirigeant d'agence peut suivre le même parcours en individuel, au même tarif par jour. Masteria détient Qualiopi pour les actions de formation, condition d'une prise en charge : l'OPCO EP, dont relève l'accord de branche de l'immobilier, ou l'opérateur de votre secteur décide selon son barème et ses fonds.",
+  "inclus": "Les deux journées à l'agence ou à distance avec leurs supports, les livrables (prompts par activité, gabarits outillés, règles d'usage), puis un questionnaire d'évaluation et un certificat de réalisation remis à chaque collaborateur. Si le formateur vient dans vos murs, son déplacement figure sur le devis. Les exercices sur vos mandats, vos gabarits et des dossiers de gestion masqués exigent une préparation qui s'ajoute au devis.",
   "financement": "Votre opérateur se déduit de la convention collective, ce que fait {/quel-opco|Quel OPCO ?} en quelques questions ; les dispositifs sont détaillés sur {/financement-formation-ia|cette page}. Masteria prépare le dossier pour vous (programme détaillé, convention, justificatifs), à transmettre avant la première journée. Aucun financement CPF n'est possible ici."
  },
  "faq": [
@@ -300,7 +300,7 @@ export default {
   },
   {
    "q": "Combien coûte la formation, et l'OPCO EP la finance-t-il ?",
-   "a": "Le prix ne varie pas avec l'effectif, de 3 à 12 personnes : chaque journée coûte 1 980 € HT et les deux réunies 3 960 € HT. Les entreprises couvertes par l'accord de branche de l'immobilier (IDCC 1527) dépendent de l'OPCO EP ; la session est éligible (Masteria est certifiée Qualiopi), et l'OPCO décide de sa part selon ses règles. Le CPF n'intervient pas. L'outil Quel OPCO ? confirme votre opérateur."
+   "a": "Le prix ne varie pas avec l'effectif, de 3 à 12 personnes : chaque journée coûte à partir de 1 980 € HT et les deux réunies à partir de 3 960 € HT. Les entreprises couvertes par l'accord de branche de l'immobilier (IDCC 1527) dépendent de l'OPCO EP ; la session est éligible (Masteria est certifiée Qualiopi), et l'OPCO décide de sa part selon ses règles. Le CPF n'intervient pas. L'outil Quel OPCO ? confirme votre opérateur."
   }
  ],
  "course": {

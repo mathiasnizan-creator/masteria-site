@@ -12,12 +12,12 @@ export default {
   h1: "Formation ChatGPT management : réunions, entretiens et messages qui comptent",
   metaTitle: "Formation ChatGPT management · managers d'équipe | Masteria",
   metaDesc: "Formation ChatGPT pour managers : réunions et entretiens préparés, comité résumé, message délicat, appréciation des personnes laissée au manager. 2 jours.",
-  resume: "La formation ChatGPT management apprend aux managers à préparer avec ChatGPT leurs réunions, leurs entretiens et leurs messages les plus délicats, puis à fixer pour leur équipe les règles d'usage de l'outil. Elle s'étend sur deux journées pleines, chez vous ou en ligne, avec douze managers au plus ou un seul, et chaque journée se règle 1 980 € HT. Masteria, dont la certification Qualiopi couvre les actions de formation, prépare avec vous la demande de financement adressée à votre OPCO.",
+  resume: "La formation ChatGPT management apprend aux managers à préparer avec ChatGPT leurs réunions, leurs entretiens et leurs messages les plus délicats, puis à fixer pour leur équipe les règles d'usage de l'outil. Elle s'étend sur deux journées pleines, chez vous ou en ligne, avec douze managers au plus ou un seul, et chaque journée se règle à partir de 1 980 € HT. Masteria, dont la certification Qualiopi couvre les actions de formation, prépare avec vous la demande de financement adressée à votre OPCO.",
   enBref: [
     { label: 'Formation', value: "ChatGPT au quotidien du manager : réunions, comptes rendus, entretiens, messages délicats, règles d'usage pour l'équipe" },
     { label: 'Durée', value: "Deux journées pleines, que beaucoup de managers espacent de deux semaines pour essayer entre-temps" },
     { label: 'Formats', value: "Jusqu'à douze managers en intra, sur site ou en visioconférence ; formule individuelle pour un directeur ou un manager de managers" },
-    { label: 'Tarif', value: "La journée s'élève à 1 980 € HT pour tout le groupe ; 3 960 € HT les deux réunies" },
+    { label: 'Tarif', value: "La journée démarre à 1 980 € HT pour tout le groupe ; à partir de 3 960 € HT les deux réunies" },
     { label: 'Financement', value: "Prise en charge possible par votre OPCO, l'organisme étant certifié Qualiopi ; la branche fixe les règles" },
     { label: 'Prérequis', value: "Encadrer une équipe ; un compte ChatGPT d'entreprise, ou un compte individuel réglé avec nous avant la session" },
   ],
@@ -186,8 +186,8 @@ export default {
   tarifs: {
     titre: "Le budget pour former des managers",
     paras: [
-      "Pour deux managers comme pour douze, chaque journée revient au même prix : 1 980 € HT. Onze managers formés deux jours en intra représentent 3 960 € HT, ramenés à 360 € HT par manager. La formule individuelle, retenue par un directeur ou un manager de managers qui préfère avancer sur ses dossiers en tête-à-tête, est facturée au même tarif journalier.",
-      "Le formateur prépare la session à partir de vos rituels : un ordre du jour type, un compte rendu de comité et la trame de vos entretiens annuels, sans données personnelles. Masteria étant titulaire de Qualiopi, votre OPCO a la possibilité de financer ces deux journées, en appliquant les règles propres à la branche et selon ses moyens. Le formateur vient sur votre site, en France, ailleurs en Europe, aux États-Unis comme en Inde, à moins que vous ne préfériez la classe virtuelle.",
+      "Pour deux managers comme pour douze, chaque journée est facturée au même prix de base, à partir de 1 980 € HT. Onze managers formés deux jours en intra représentent à partir de 3 960 € HT, soit dès 360 € HT par manager. La formule individuelle, retenue par un directeur ou un manager de managers qui préfère avancer sur ses dossiers en tête-à-tête, est facturée au même tarif journalier de base.",
+      "Le prix de base couvre l'animation, les supports et le programme ; le travail du formateur sur vos rituels s'y ajoute et figure au devis. Il prépare la session à partir de vos rituels : un ordre du jour type, un compte rendu de comité et la trame de vos entretiens annuels, sans données personnelles. Masteria étant titulaire de Qualiopi, votre OPCO a la possibilité de financer ces deux journées, en appliquant les règles propres à la branche et selon ses moyens. Le formateur vient sur votre site, en France, ailleurs en Europe, aux États-Unis comme en Inde, à moins que vous ne préfériez la classe virtuelle.",
     ],
   },
   cta: {
@@ -235,7 +235,7 @@ export default {
     },
     {
       q: "Qui finance la formation ChatGPT des managers ?",
-      a: "En France, l'OPCO rattaché à votre secteur décide au vu de ses critères et de ses ressources ; il ne finance qu'un organisme certifié Qualiopi, et Masteria l'est. Une journée vaut 1 980 € HT, que l'on forme douze managers ou un seul. Le dossier est déposé avant la session, avec les pièces que rédige Masteria : programme détaillé, convention. Un groupe qui forme ses managers dans plusieurs pays reçoit un devis par session, en euros HT.",
+      a: "En France, l'OPCO rattaché à votre secteur décide au vu de ses critères et de ses ressources ; il ne finance qu'un organisme certifié Qualiopi, et Masteria l'est. Une journée vaut au moins 1 980 € HT, que l'on forme douze managers ou un seul. Le dossier est déposé avant la session, avec les pièces que rédige Masteria : programme détaillé, convention. Un groupe qui forme ses managers dans plusieurs pays reçoit un devis par session, en euros HT.",
     },
   ],
 }

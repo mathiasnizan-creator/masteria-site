@@ -220,8 +220,8 @@ export default {
  },
  "tarif": {
   "titre": "Coût de la formation et financement selon votre statut",
-  "answer": "Pour 12 participants au maximum, la journée en intra est proposée à 1 980 € HT ; avec la seconde journée, le parcours atteint 3 960 € HT. Les financeurs exigent la certification Qualiopi, que Masteria a obtenue pour ses actions de formation. À l'hôpital public, le plan de formation de l'établissement porte la session, avec l'appui possible de l'ANFH ; une clinique ou un établissement médico-social privé se tourne vers l'OPCO Santé ; un professionnel libéral, vers son fonds d'assurance formation. Quand l'établissement ne récupère pas la TVA, le devis mentionne aussi le TTC.",
-  "inclus": "Le cadrage sur vos gabarits, vos procédures, des cas anonymisés et les outils validés par votre DSI ; la journée sur site ou à distance, supports fournis ; les livrables (prompts par service, gabarits, règles d'usage des données de santé) ; enfin un quiz final et le certificat de réalisation propre à chaque participant. Si le formateur se déplace, son trajet figure sur le devis.",
+  "answer": "Pour 12 participants au maximum, la journée en intra est proposée à partir de 1 980 € HT ; avec la seconde journée, le parcours démarre à 3 960 € HT. Les financeurs exigent la certification Qualiopi, que Masteria a obtenue pour ses actions de formation. À l'hôpital public, le plan de formation de l'établissement porte la session, avec l'appui possible de l'ANFH ; une clinique ou un établissement médico-social privé se tourne vers l'OPCO Santé ; un professionnel libéral, vers son fonds d'assurance formation. Quand l'établissement ne récupère pas la TVA, le devis mentionne aussi le TTC.",
+  "inclus": "La journée sur site ou à distance, supports fournis ; les livrables (prompts par service, gabarits, règles d'usage des données de santé) ; enfin un quiz final et le certificat de réalisation propre à chaque participant. Si le formateur se déplace, son trajet figure sur le devis. La préparation sur vos gabarits, vos procédures et les outils validés par votre DSI s'ajoute au prix et figure au devis.",
   "financement": "Pour un établissement privé ou associatif, {/quel-opco|Quel OPCO ?} confirme l'opérateur d'après la convention collective, et notre page {/financement-formation-ia|sur le financement} décrit les dispositifs. Pour un hôpital public, la demande suit le circuit du plan de formation et de l'ANFH. Nous préparons programme, convention et justificatifs dans la forme demandée par votre financeur ; aucun recours au CPF n'est possible."
  },
  "faq": [
@@ -263,7 +263,7 @@ export default {
   },
   {
    "q": "Quelle durée et quel budget pour une formation IA santé ?",
-   "a": "Une journée de sept heures en intra, dans l'établissement ou par visioconférence, pour 4 à 12 personnes des fonctions concernées : 1 980 € HT, et 3 960 € HT avec la seconde journée d'ateliers par service. Un groupe hospitalier ou une fédération peut déployer la formation par vagues d'établissements, avec des livrables communs. Votre devis suit sous 24 heures, conforme à ce qu'attend votre financeur."
+   "a": "Une journée de sept heures en intra, dans l'établissement ou par visioconférence, pour 4 à 12 personnes des fonctions concernées : à partir de 1 980 € HT, et à partir de 3 960 € HT avec la seconde journée d'ateliers par service. Un groupe hospitalier ou une fédération peut déployer la formation par vagues d'établissements, avec des livrables communs. Votre devis suit sous 24 heures, conforme à ce qu'attend votre financeur."
   },
   {
    "q": "Que change l'AI Act pour un établissement qui utilise l'IA générative ?",

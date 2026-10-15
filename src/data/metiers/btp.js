@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Constructys peut financer la formation IA BTP",
-  "answer": "Chaque jour de formation est facturé 1 980 € HT à l'entreprise, que le groupe réunisse quatre personnes ou douze ; pour deux jours, la facture atteint 3 960 € HT. Un artisan ou un dirigeant de PME peut également suivre le parcours en tête-à-tête, sur ses affaires, pour un prix identique.",
-  "inclus": "L'entretien de cadrage pour réunir un DCE, un mémoire remis, des comptes rendus et vos trames de PPSPS, deux journées dans vos locaux, sur une base vie proche d'un chantier ou par visioconférence, avec les supports, les livrables (prompts BTP, trame de mémoire en compétence, modèles de comptes rendus et de courriers, règle de confidentialité), une évaluation des compétences acquises et le certificat de chaque stagiaire. Le trajet du formateur, pour une session éloignée de Lyon, figure en supplément sur le devis.",
+  "answer": "Chaque jour de formation est facturé à partir de 1 980 € HT à l'entreprise, que le groupe réunisse quatre personnes ou douze ; pour deux jours, la facture démarre à 3 960 € HT. Un artisan ou un dirigeant de PME peut également suivre le parcours en tête-à-tête, sur ses affaires, pour un prix de départ identique.",
+  "inclus": "Deux journées dans vos locaux, sur une base vie proche d'un chantier ou par visioconférence, avec les supports, les livrables (prompts BTP, trame de mémoire en compétence, modèles de comptes rendus et de courriers, règle de confidentialité), une évaluation des compétences acquises et le certificat de chaque stagiaire. Le trajet du formateur, pour une session éloignée de Lyon, figure en supplément sur le devis. Quand le programme s'appuie sur vos DCE, vos mémoires et vos trames de PPSPS, la préparation de ces exercices vient en supplément, chiffrée sur le devis.",
   "financement": "La plupart des entreprises du bâtiment et des travaux publics cotisent à Constructys, l'OPCO du secteur ; l'outil {/quel-opco|Quel OPCO ?} le confirme d'après votre convention collective. Constructys arrête lui-même son financement, selon ses barèmes et ses crédits de l'année ; prévoyez son délai d'instruction. Masteria vous remet les pièces du dossier ; les autres circuits figurent dans notre {/financement-formation-ia|dossier sur le financement}. Le CPF est exclu."
  },
  "faq": [
@@ -287,7 +287,7 @@ export default {
   },
   {
    "q": "Combien coûte la formation, et Constructys la finance-t-il ?",
-   "a": "Pour un groupe de un à douze stagiaires, l'entreprise paie 1 980 € HT par journée et 3 960 € HT pour les deux. Constructys, l'OPCO de la construction, couvre la plupart des entreprises du bâtiment et des travaux publics ; il arrête son financement au vu de ses barèmes, une fois instruite la demande, à déposer avant le premier jour. Masteria joint au dossier programme, convention et attestations. Le CPF n'intervient pas."
+   "a": "Pour un groupe de un à douze stagiaires, l'entreprise paie à partir de 1 980 € HT par journée et de 3 960 € HT pour les deux. Constructys, l'OPCO de la construction, couvre la plupart des entreprises du bâtiment et des travaux publics ; il arrête son financement au vu de ses barèmes, une fois instruite la demande, à déposer avant le premier jour. Masteria joint au dossier programme, convention et attestations. Le CPF n'intervient pas."
   },
   {
    "q": "Comment organiser la formation autour des chantiers ?",

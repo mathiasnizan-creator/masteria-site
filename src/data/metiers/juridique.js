@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Tarif journalier et financement d'une formation IA juridique",
-  "answer": "Chaque journée animée dans votre structure coûte au groupe 1 980 € HT, de une à douze personnes ; le programme complet de deux jours se chiffre à 3 960 € HT. Un associé ou un directeur juridique peut suivre le même programme seul, au même prix journalier. Le devis d'un cabinet genevois ou bruxellois, sans OPCO, se rédige en euros hors taxes.",
-  "inclus": "Le prix couvre l'entretien de cadrage (pratique, trames, pièces à anonymiser), deux journées d'animation, au cabinet ou par visioconférence, avec les supports remis aux participants, les livrables construits par l'équipe (prompts juridiques, grille de relecture convertie en compétence, règle écrite sur le secret), puis une évaluation finale et le certificat individuel de réalisation. Pour une session sur place hors de la région lyonnaise, le voyage du formateur est facturé en sus.",
+  "answer": "Chaque journée animée dans votre structure coûte au groupe à partir de 1 980 € HT, de une à douze personnes ; le programme complet de deux jours se chiffre à partir de 3 960 € HT. Un associé ou un directeur juridique peut suivre le même programme seul, au même prix journalier. Le devis d'un cabinet genevois ou bruxellois, sans OPCO, se rédige en euros hors taxes.",
+  "inclus": "Le prix de base couvre deux journées d'animation, au cabinet ou par visioconférence, avec les supports remis aux participants, les livrables construits par l'équipe (prompts juridiques, grille de relecture convertie en compétence, règle écrite sur le secret), puis une évaluation finale et le certificat individuel de réalisation. Pour une session sur place hors de la région lyonnaise, le voyage du formateur est facturé en sus. L'entretien de cadrage et la préparation sur vos trames et vos pièces anonymisées s'ajoutent, chiffrés au devis.",
   "financement": "Les salariés d'un cabinet, d'un office ou d'une entreprise dépendent de l'opérateur de compétences désigné par leur convention collective, lequel fixe le montant de son aide selon ses barèmes et sa trésorerie de l'année. Le simulateur {/quel-opco|Quel OPCO ?} retrouve le vôtre, et les circuits possibles sont présentés sur la page {/financement-formation-ia|financement des formations à l'IA} ; un professionnel libéral qui se forme lui-même passe par un fonds d'assurance formation. Vous recevez de Masteria programme, convention et justificatifs avant le premier jour. Aucun recours au CPF."
  },
  "faq": [
@@ -287,7 +287,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir pour un cabinet, et quel financement ?",
-   "a": "Chaque journée animée revient à 1 980 € HT, que le groupe réunisse une ou douze personnes, et 3 960 € HT pour le programme de deux jours. Une personne formée seule paie le même prix journalier. Pour des salariés, c'est l'opérateur de compétences rattaché à la convention collective qui reçoit le dossier ; il arrête sa participation suivant ses propres règles. Un avocat ou un notaire libéral sollicite plutôt le FAF dont il dépend. Masteria remet à chacun programme, convention et attestations."
+   "a": "Chaque journée animée démarre à 1 980 € HT, que le groupe réunisse une ou douze personnes, et à 3 960 € HT pour le programme de deux jours. Une personne formée seule paie le même prix journalier. Pour des salariés, c'est l'opérateur de compétences rattaché à la convention collective qui reçoit le dossier ; il arrête sa participation suivant ses propres règles. Un avocat ou un notaire libéral sollicite plutôt le FAF dont il dépend. Masteria remet à chacun programme, convention et attestations."
   },
   {
    "q": "Quelle durée et quel effectif prévoir pour la formation ?",

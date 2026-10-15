@@ -11,12 +11,12 @@ export default {
   metaDesc: "Formation Copilot pour managers : relevés de réunions Teams, comités préparés avec Researcher, suivi de projets, routines Cowork, règles RH. 2 jours.",
   keywords: "formation copilot management, formation copilot managers, microsoft copilot manager, copilot teams compte rendu réunion, copilot researcher comité de direction, copilot cowork routine équipe, formation copilot qualiopi opco",
   prerequis: "Animer une équipe et travailler dans Teams et Outlook ; sans licence, Copilot Chat suffit pour une bonne part des ateliers",
-  resume: "Cette formation Copilot s'adresse aux managers de proximité, aux chefs de service et aux membres de comités de direction qui veulent passer moins de temps sur les comptes rendus et les préparations, et davantage avec leur équipe. Elle montre comment Microsoft Copilot (anciennement Microsoft 365 Copilot) exploite les réunions Teams, les fils Outlook et les fichiers du service, et jusqu'où on peut lui confier le travail. Deux journées de sept heures, pour une promotion de douze managers au maximum ou un seul, chacune facturée 1 980 € HT ; votre OPCO peut les prendre en charge, d'après ses règles et les fonds qu'il lui reste.",
+  resume: "Cette formation Copilot s'adresse aux managers de proximité, aux chefs de service et aux membres de comités de direction qui veulent passer moins de temps sur les comptes rendus et les préparations, et davantage avec leur équipe. Elle montre comment Microsoft Copilot (anciennement Microsoft 365 Copilot) exploite les réunions Teams, les fils Outlook et les fichiers du service, et jusqu'où on peut lui confier le travail. Deux journées de sept heures, pour une promotion de douze managers au maximum ou un seul, chacune facturée à partir de 1 980 € HT, la préparation sur mesure s'ajoutant au devis ; votre OPCO peut les prendre en charge, d'après ses règles et les fonds qu'il lui reste.",
   enBref: [
     { label: 'Formation', value: "Copilot au service du manager : réunions, comités, suivi des actions, messages d'équipe, règles autour des personnes" },
     { label: 'Durée', value: "14 heures en deux journées, consécutives ou espacées de deux semaines" },
     { label: 'Formats', value: "Promotion interne jusqu'à douze managers, ou accompagnement d'un dirigeant seul ; présentiel ou distanciel" },
-    { label: 'Tarif', value: "1 980 € HT par journée animée, donc 3 960 € HT le parcours" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée animée, donc à partir de 3 960 € HT le parcours ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Organisme certifié Qualiopi ; l'OPCO statue d'après ses propres critères de prise en charge" },
     { label: 'Prérequis', value: "Encadrer au moins une personne et utiliser Teams au quotidien ; licences relevées avec vous au cadrage" },
   ],
@@ -288,14 +288,14 @@ export default {
     },
     {
       q: 'Comment financer la formation de nos managers ?',
-      a: "Organisme certifié Qualiopi, Masteria ouvre à votre entreprise la possibilité d'un financement par son OPCO, qui applique ses propres règles et dépend des fonds disponibles. Une promotion de douze managers au plus suit le parcours complet pour 3 960 € HT, et un dirigeant seul paie la journée au même prix, 1 980 € HT. Programme et convention se rédigent avec vous avant la demande. Une filiale genevoise ou bruxelloise, faute d'OPCO, reçoit un devis libellé en euros hors taxes.",
+      a: "Organisme certifié Qualiopi, Masteria ouvre à votre entreprise la possibilité d'un financement par son OPCO, qui applique ses propres règles et dépend des fonds disponibles. Une promotion de douze managers au plus suit le parcours complet à partir de 3 960 € HT, et un dirigeant seul paie la journée au même prix, à partir de 1 980 € HT. Programme et convention se rédigent avec vous avant la demande. Une filiale genevoise ou bruxelloise, faute d'OPCO, reçoit un devis libellé en euros hors taxes.",
     },
   ],
   tarifs: {
     titre: 'Le prix de deux jours Copilot pour vos managers',
     paras: [
-      "Le prix d'une journée, 1 980 € HT, comprend la préparation. Avant la session, le formateur échange avec vous sur les réunions récurrentes du service, les projets en cours et les règles déjà en vigueur, et construit les ateliers sur ces situations. Chaque manager repart avec ses demandes types, un modèle de relevé de décisions et le plan d'adoption de son équipe.",
-      "Douze managers inscrits ensemble s'acquittent de 3 960 € HT pour le parcours, 330 € HT chacun. Le parcours individuel d'un directeur général suit le même prix à la journée. L'achat des licences Copilot reste à votre charge, hors de ce prix. L'OPCO tranche ensuite la question du financement, à partir du dossier monté avec nous.",
+      "Le prix d'une journée part de 1 980 € HT et couvre l'animation et les supports. Chaque manager repart avec ses demandes types, un modèle de relevé de décisions et le plan d'adoption de son équipe. Quand les ateliers sont construits sur vos situations, le formateur échange d'abord avec vous sur les réunions récurrentes du service, les projets en cours et les règles en vigueur ; ce temps de préparation s'ajoute au devis.",
+      "Douze managers inscrits ensemble s'acquittent d'au moins 3 960 € HT pour le parcours, soit dès 330 € HT chacun. Le parcours individuel d'un directeur général suit le même prix à la journée. L'achat des licences Copilot reste à votre charge, hors de ce prix. L'OPCO tranche ensuite la question du financement, à partir du dossier monté avec nous.",
     ],
   },
   apres: {

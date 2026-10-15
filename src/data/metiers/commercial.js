@@ -255,8 +255,8 @@ export default {
  },
  "tarif": {
   "titre": "Prix et prise en charge de la formation IA commercial",
-  "answer": "Une journée animée en intra coûte au total 1 980 € HT, pour un groupe de 12 vendeurs au maximum ; le parcours de deux jours, 3 960 € HT. Avec la certification Qualiopi, votre opérateur de compétences peut financer la formation, d'après ses critères et le budget dont il dispose. Le devis suit sous 24 heures, et nous préparons avec vous les pièces du dossier.",
-  "inclus": "Un cadrage en amont sur votre offre, vos trames, vos personas et quelques comptes, puis les deux journées, sur site ou en visioconférence. S'y ajoutent les supports, les livrables de l'équipe (prompts de vente, gabarits de proposition et de relance, règles d'usage des données clients), une évaluation des acquis puis le certificat de réalisation. Le déplacement du formateur s'ajoute quand la session a lieu sur site, loin de Lyon.",
+  "answer": "Une journée animée en intra coûte au total à partir de 1 980 € HT, pour un groupe de 12 vendeurs au maximum ; le parcours de deux jours, à partir de 3 960 € HT. Avec la certification Qualiopi, votre opérateur de compétences peut financer la formation, d'après ses critères et le budget dont il dispose. Le devis suit sous 24 heures, et nous préparons avec vous les pièces du dossier.",
+  "inclus": "Les deux journées, sur site ou en visioconférence. S'y ajoutent les supports, les livrables de l'équipe (prompts de vente, gabarits de proposition et de relance, règles d'usage des données clients), une évaluation des acquis puis le certificat de réalisation. Le déplacement du formateur s'ajoute quand la session a lieu sur site, loin de Lyon. Préparer les exercices sur votre offre, vos trames et vos comptes demande un temps supplémentaire, chiffré au devis.",
   "financement": "L'opérateur compétent se déduit de votre convention collective : l'outil {/quel-opco|Quel OPCO ?} le retrouve, et la page {/financement-formation-ia|financer sa formation IA} détaille les dispositifs. Masteria fournit programme détaillé, convention de formation et justificatifs, à déposer avant la première journée. Cette formation n'ouvre pas de droits CPF."
  },
  "faq": [
@@ -278,7 +278,7 @@ export default {
   },
   {
    "q": "Combien coûte la formation IA commercial ?",
-   "a": "Le groupe règle 1 980 € HT par journée, de un à 12 participants, et les deux jours font 3 960 € HT. Une session sur site hors de Lyon ajoute le déplacement du formateur. Vous recevez sous 24 heures un devis détaillé et les documents utiles pour solliciter votre OPCO."
+   "a": "Le groupe règle à partir de 1 980 € HT par journée, de un à 12 participants, et les deux jours démarrent à 3 960 € HT. Une session sur site hors de Lyon ajoute le déplacement du formateur. Vous recevez sous 24 heures un devis détaillé et les documents utiles pour solliciter votre OPCO."
   },
   {
    "q": "L'OPCO de notre branche prend-il en charge cette formation ?",

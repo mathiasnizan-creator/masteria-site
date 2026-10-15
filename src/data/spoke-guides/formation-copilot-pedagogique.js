@@ -12,12 +12,12 @@ export default {
   metaDesc: "Formation Copilot pour concepteurs et formateurs : modules tirés d'un document source, quiz dans Forms, supports PowerPoint, suivi Excel, tuteur. 2 jours.",
   keywords: "formation copilot pédagogique, copilot ingénierie pédagogique, microsoft copilot formateur, copilot forms quiz, copilot powerpoint support de formation, tuteur ia apprenants, formation copilot qualiopi opco",
   prerequis: "Concevoir ou animer des formations ; un module existant et son document source sont à apporter",
-  resume: "Ce programme s'adresse aux responsables formation, ingénieurs pédagogiques, formateurs internes et équipes d'organismes de formation qui conçoivent dans Word, PowerPoint et Forms. On y apprend à se servir de Microsoft Copilot (anciennement Microsoft 365 Copilot) pour bâtir un module sur la base d'un texte de référence, à rédiger des questions d'évaluation alignées sur les objectifs, à produire des supports au modèle de l'organisme et à suivre les apprenants, l'équipe gardant la maîtrise du contenu enseigné. Le parcours compte 14 heures, pour un groupe de concepteurs limité à douze ou un formateur seul, chaque jour revenant à 1 980 € HT ; la participation de l'OPCO reste à sa décision.",
+  resume: "Ce programme s'adresse aux responsables formation, ingénieurs pédagogiques, formateurs internes et équipes d'organismes de formation qui conçoivent dans Word, PowerPoint et Forms. On y apprend à se servir de Microsoft Copilot (anciennement Microsoft 365 Copilot) pour bâtir un module sur la base d'un texte de référence, à rédiger des questions d'évaluation alignées sur les objectifs, à produire des supports au modèle de l'organisme et à suivre les apprenants, l'équipe gardant la maîtrise du contenu enseigné. Le parcours compte 14 heures, pour un groupe de concepteurs limité à douze ou un formateur seul, chaque jour revenant à partir de 1 980 € HT, préparation sur mesure en plus ; la participation de l'OPCO reste à sa décision.",
   enBref: [
     { label: 'Formation', value: "Copilot dans la chaîne de conception : du document source au module, aux questions d'évaluation et aux supports" },
     { label: 'Durée', value: "Deux journées de sept heures, avec un module de votre catalogue retravaillé de bout en bout" },
     { label: 'Formats', value: "Équipe pédagogique en intra jusqu'à douze personnes, ou parcours individuel pour un formateur ; dans vos locaux ou en visioconférence" },
-    { label: 'Tarif', value: "1 980 € HT par jour de session ; les deux jours réunis à 3 960 € HT" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par jour de session ; les deux jours réunis à partir de 3 960 € HT ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Masteria détient Qualiopi pour la formation : votre OPCO peut donc examiner un dossier, selon ses propres critères" },
     { label: 'Prérequis', value: "Concevoir ou animer des sessions ; licences Copilot de l'équipe relevées avec vous au cadrage" },
   ],
@@ -301,14 +301,14 @@ export default {
     },
     {
       q: 'Qui finance la formation Copilot des concepteurs et des formateurs ?',
-      a: "L'opérateur de compétences dont vous relevez peut financer la session, puisque Masteria est certifiée Qualiopi et que ce programme en relève ; il le fait d'après ses critères et dans la limite de son enveloppe. Un groupe de concepteurs, jusqu'à douze, règle 3 960 € HT pour tout le parcours ; un formateur seul, 1 980 € HT par journée. Nous rédigeons avec vous programme et convention. Un organisme de formation peut aussi inscrire ses formateurs permanents, aux mêmes conditions. Pour Genève ou Bruxelles, le devis s'exprime en euros hors taxes.",
+      a: "L'opérateur de compétences dont vous relevez peut financer la session, puisque Masteria est certifiée Qualiopi et que ce programme en relève ; il le fait d'après ses critères et dans la limite de son enveloppe. Un groupe de concepteurs, jusqu'à douze, règle à partir de 3 960 € HT pour tout le parcours ; un formateur seul, à partir de 1 980 € HT par journée. Nous rédigeons avec vous programme et convention. Un organisme de formation peut aussi inscrire ses formateurs permanents, aux mêmes conditions. Pour Genève ou Bruxelles, le devis s'exprime en euros hors taxes.",
     },
   ],
   tarifs: {
     titre: 'Combien coûte la formation Copilot des concepteurs et formateurs',
     paras: [
-      "Les 1 980 € HT facturés par jour couvrent aussi la préparation : le formateur reçoit en amont un module de votre catalogue, son document source et votre modèle de support, et bâtit les ateliers sur ces pièces. L'équipe repart avec un module révisé, son évaluation reliée aux objectifs, un support au modèle de l'organisme et un premier tuteur éprouvé.",
-      "Pour une petite équipe de quatre concepteurs, les deux jours en intra coûtent 3 960 € HT, soit pour chacun 990 € HT ; à douze, la part de chacun tombe à 330 € HT. Licences Copilot et projet Copilot Studio éventuel restent hors de ce montant. La décision de financement revient ensuite à votre OPCO, sur le dossier préparé avec nous.",
+      "Le tarif de départ de 1 980 € HT par jour couvre l'animation et les supports. Si le formateur bâtit les ateliers sur un module de votre catalogue, son document source et votre modèle de support, reçus en amont, cette préparation s'ajoute au devis. L'équipe repart avec un module révisé, son évaluation reliée aux objectifs, un support au modèle de l'organisme et un premier tuteur éprouvé.",
+      "Pour une petite équipe de quatre concepteurs, les deux jours en intra coûtent à partir de 3 960 € HT, soit pour chacun dès 990 € HT ; à douze, la part de chacun tombe à partir de 330 € HT. Licences Copilot et projet Copilot Studio éventuel restent hors de ce montant. La décision de financement revient ensuite à votre OPCO, sur le dossier préparé avec nous.",
     ],
   },
   apres: {

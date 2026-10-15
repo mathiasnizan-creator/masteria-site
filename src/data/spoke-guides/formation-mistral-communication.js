@@ -12,12 +12,12 @@ export default {
   metaTitle: 'Formation Mistral AI communication avec Vibe | Masteria',
   metaDesc: "Vibe pour la communication : veille programmée avec les dépêches AFP, communiqués dans votre ton, messages par public, kit de crise, AI Act article 50.",
   keywords: "formation Mistral communication, formation Vibe communication, Mistral AI relations presse, veille AFP Vibe, communication de crise IA",
-  resume: "La formation Mistral AI communication apprend à une direction de la communication à programmer dans Vibe une revue de presse quotidienne nourrie par les dépêches de l'Agence France-Presse et d'AP, à écrire des communiqués dans la voix de votre maison et à préparer un kit de crise à partir des seuls faits confirmés. Le programme se déroule sur deux jours de sept heures chacun, sur place ou à distance, à 1 980 € HT par jour de formation, de deux à douze participants, ou en individuel pour un attaché de presse. Les actions de formation de Masteria sont certifiées Qualiopi, et l'OPCO de votre secteur arbitre le financement selon son règlement et ses disponibilités.",
+  resume: "La formation Mistral AI communication apprend à une direction de la communication à programmer dans Vibe une revue de presse quotidienne nourrie par les dépêches de l'Agence France-Presse et d'AP, à écrire des communiqués dans la voix de votre maison et à préparer un kit de crise à partir des seuls faits confirmés. Le programme se déroule sur deux jours de sept heures chacun, sur place ou à distance, à partir de 1 980 € HT par jour de formation (préparation sur vos textes en plus, au devis), de deux à douze participants, ou en individuel pour un attaché de presse. Les actions de formation de Masteria sont certifiées Qualiopi, et l'OPCO de votre secteur arbitre le financement selon son règlement et ses disponibilités.",
   enBref: [
     { label: 'Formation', value: "Vibe au service des relations presse, de la communication externe et interne, et de la gestion de crise" },
     { label: 'Durée', value: "Deux journées de sept heures, avec un exercice de crise joué en temps limité le second jour" },
     { label: 'Formats', value: "Sur place ou en visioconférence ; l'équipe entière jusqu'à douze personnes, ou un attaché de presse seul" },
-    { label: 'Tarif', value: "1 980 € HT la journée, que l'on forme une personne ou douze ; abonnements Vibe en sus, chez Mistral" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée, que l'on forme une personne ou douze ; préparation sur mesure en plus, au devis ; abonnements Vibe en sus, chez Mistral" },
     { label: 'Financement', value: "Qualiopi (actions de formation) ; votre OPCO statue sur la demande, règles et fonds à l'appui" },
     { label: 'Prérequis', value: "Rédiger des contenus pour l'entreprise ; un compte Vibe Pro ou Team pour programmer plus de cinq tâches et régler la confidentialité" },
   ],
@@ -288,14 +288,14 @@ export default {
     },
     {
       q: "Quel budget pour cinq communicants, et quel financement ?",
-      a: "Le prix ne dépend pas du nombre de stagiaires : 1 980 € HT par jour, d'un participant à douze. Pour cinq personnes et deux jours, comptez 3 960 € HT, ou 792 € HT par tête. Grâce à Qualiopi, que Masteria détient pour ses actions de formation, l'OPCO de votre secteur peut participer d'après ses propres critères et ses moyens ; le dossier se monte avec nous. Les abonnements Vibe se souscrivent à part, auprès de Mistral.",
+      a: "Le prix ne dépend pas du nombre de stagiaires : à partir de 1 980 € HT par jour, d'un participant à douze. Pour cinq personnes et deux jours, comptez au moins 3 960 € HT, ou 792 € HT par tête. Grâce à Qualiopi, que Masteria détient pour ses actions de formation, l'OPCO de votre secteur peut participer d'après ses propres critères et ses moyens ; le dossier se monte avec nous. Les abonnements Vibe se souscrivent à part, auprès de Mistral.",
     },
   ],
   tarifs: {
     titre: "Le prix pour une direction de la communication",
     paras: [
-      "Le forfait comprend une préparation sur vos textes : avant la session, le formateur reprend avec vous la charte éditoriale, trois communiqués récents, votre procédure de crise et la liste de vos sujets de veille. Les exercices partent de cette matière, et le service repart avec sa revue du matin programmée, sa compétence de communiqué et un projet « Crise » déjà rempli.",
-      "Cinq communicants formés deux jours en intra : la facture atteint 3 960 € HT, 792 € HT pour chacun d'eux. Un attaché de presse suivi en individuel paie 1 980 € HT par jour. Côté financement, l'OPCO de votre secteur examine la demande à la lumière de ses règles et de son budget, sur la base du programme et du projet de convention fournis par Masteria. Les abonnements Vibe ne sont pas compris.",
+      "Le prix de base couvre l'animation et les supports. Pour des exercices sur vos textes, le formateur reprend avant la session la charte éditoriale, trois communiqués récents, votre procédure de crise et la liste de vos sujets de veille, et cette préparation s'ajoute au devis. Le service repart avec sa revue du matin programmée, sa compétence de communiqué et un projet « Crise » déjà rempli.",
+      "Cinq communicants formés deux jours en intra : la facture part de 3 960 € HT, soit dès 792 € HT pour chacun d'eux. Un attaché de presse suivi en individuel paie à partir de 1 980 € HT par jour. Côté financement, l'OPCO de votre secteur examine la demande à la lumière de ses règles et de son budget, sur la base du programme et du projet de convention fournis par Masteria. Les abonnements Vibe ne sont pas compris.",
     ],
   },
   apres: {

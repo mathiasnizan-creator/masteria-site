@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Le coût d'un groupe et le rôle de l'OPCO Atlas",
-  "answer": "La journée animée pour votre équipe coûte 1 980 € HT, de un à douze participants ; pour le parcours complet, comptez 3 960 € HT. Un plateau de gestion plus large se forme en plusieurs groupes, chacun facturé au même tarif journalier, et un dirigeant de cabinet peut suivre le parcours seul.",
-  "inclus": "Le tarif comprend l'entretien de cadrage (produits, trames, dossiers à anonymiser), deux journées animées dans vos murs ou en ligne, les supports de cours, des livrables (prompts d'assurance, grille de synthèse en compétence, trames de courriers, règle sur les données), une évaluation des compétences et un certificat par participant. Une session dans vos locaux, hors de Lyon, inclut en sus les frais de route du formateur, ajoutés au devis.",
+  "answer": "La journée animée pour votre équipe coûte à partir de 1 980 € HT, de un à douze participants ; pour le parcours complet, comptez au moins 3 960 € HT. Un plateau de gestion plus large se forme en plusieurs groupes, chacun facturé au même tarif journalier, et un dirigeant de cabinet peut suivre le parcours seul.",
+  "inclus": "Le tarif de base comprend deux journées animées dans vos murs ou en ligne, les supports de cours, des livrables (prompts d'assurance, grille de synthèse en compétence, trames de courriers, règle sur les données), une évaluation des compétences et un certificat par participant. Une session dans vos locaux, hors de Lyon, inclut en sus les frais de route du formateur, ajoutés au devis. La préparation sur vos produits, vos trames et vos dossiers anonymisés s'ajoute et figure au devis.",
   "financement": "Les compagnies, les cabinets de courtage et les agences générales relèvent pour la plupart de l'OPCO Atlas ; une mutuelle vérifie son opérateur avec l'outil {/quel-opco|Quel OPCO ?}. Cet opérateur décide seul du montant accordé, d'après ses barèmes annuels. Masteria vous adresse convention, programme et pièces justificatives, à envoyer avant la session ; les autres circuits sont décrits sur {/financement-formation-ia|cette page consacrée au financement}. Le CPF reste hors jeu."
  },
  "faq": [
@@ -287,7 +287,7 @@ export default {
   },
   {
    "q": "Quel prix, quelle durée, quel financement ?",
-   "a": "Deux journées de sept heures, dans vos locaux ou en visio. Le groupe, douze personnes au maximum, paie 1 980 € HT par jour, soit 3 960 € HT pour le programme. Une journée isolée suffit à une équipe centrée sur les sinistres ou sur le courtage. Pour les sociétés d'assurance, les courtiers et les agences générales, l'OPCO Atlas est en général compétent et fixe seul sa participation ; les pièces du dossier sont fournies par Masteria."
+   "a": "Deux journées de sept heures, dans vos locaux ou en visio. Le groupe, douze personnes au maximum, paie à partir de 1 980 € HT par jour, soit à partir de 3 960 € HT pour le programme. Une journée isolée suffit à une équipe centrée sur les sinistres ou sur le courtage. Pour les sociétés d'assurance, les courtiers et les agences générales, l'OPCO Atlas est en général compétent et fixe seul sa participation ; les pièces du dossier sont fournies par Masteria."
   },
   {
    "q": "Peut-on former un plateau de gestion entier ?",

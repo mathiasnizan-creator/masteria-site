@@ -13,12 +13,12 @@ export default {
   metaTitle: 'Formation ChatGPT informatique et DSI | Masteria',
   metaDesc: "Formation ChatGPT pour la DSI : Business ou Enterprise, console, plugins et connecteurs, Codex, migration des GPTs avant le 11 décembre 2026. Qualiopi.",
   keywords: "formation ChatGPT DSI, formation ChatGPT informatique, administration ChatGPT Business, ChatGPT Enterprise sécurité, Codex formation",
-  resume: "Cette formation ChatGPT pour l'informatique dure deux jours (14 heures) et s'adresse à la DSI qui administre l'outil comme aux équipes techniques qui s'en servent : sécurité, support, exploitation, développement. Une même direction informatique peut y inscrire douze personnes au plus, ou un responsable seul, sur site ou par visioconférence. Chacune des deux journées est facturée 1 980 € HT, et Masteria, titulaire de la certification Qualiopi, constitue avec vous la demande que l'OPCO de votre branche instruit selon ses règles.",
+  resume: "Cette formation ChatGPT pour l'informatique dure deux jours (14 heures) et s'adresse à la DSI qui administre l'outil comme aux équipes techniques qui s'en servent : sécurité, support, exploitation, développement. Une même direction informatique peut y inscrire douze personnes au plus, ou un responsable seul, sur site ou par visioconférence. Chacune des deux journées est facturée à partir de 1 980 € HT, et Masteria, titulaire de la certification Qualiopi, constitue avec vous la demande que l'OPCO de votre branche instruit selon ses règles.",
   enBref: [
     { label: 'Formation', value: "ChatGPT côté DSI : choix entre Business et Enterprise, console d'administration, plugins et connecteurs, Codex, migration des GPTs, budget de crédits" },
     { label: 'Durée', value: "Quatorze heures sur deux jours, le second pouvant suivre l'ouverture de votre espace d'entreprise" },
     { label: 'Formats', value: "Direction informatique en intra (douze participants au plus) ou parcours individuel pour un DSI, un RSSI ou un administrateur ; dans vos locaux ou à distance" },
-    { label: 'Tarif', value: "1 980 € HT chaque jour, ateliers préparés sur votre parc, vos procédures et vos dépôts de code" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT chaque jour, plus la préparation sur votre parc, vos procédures et vos dépôts de code, chiffrée au devis" },
     { label: 'Financement', value: "Masteria est certifié Qualiopi ; la décision de prise en charge revient à l'OPCO, selon les conditions de sa branche" },
     { label: 'Prérequis', value: "Connaître l'administration d'un service en ligne d'entreprise ; un espace Business ou Enterprise déjà ouvert, ou un projet d'ouverture à cadrer" },
   ],
@@ -281,8 +281,8 @@ export default {
   tarifs: {
     titre: "Ce que coûte la formation ChatGPT d'une direction informatique",
     paras: [
-      "Le tarif inclut un temps de préparation avec la DSI : avant la session, le formateur prend connaissance de votre offre ChatGPT, des réglages actuels de la console, de l'inventaire des GPTs s'il existe et de deux ou trois procédures d'exploitation. Les ateliers travaillent ensuite sur ces éléments, et la grille de choix de l'offre, la liste des plugins autorisés et le plan de migration restent à l'équipe.",
-      "Prenons une direction informatique qui inscrit son RSSI, deux administrateurs, quatre développeurs et trois techniciens du support, soit dix personnes. Ce groupe de dix paie 3 960 € HT pour l'intra de deux jours, soit 396 € HT chacun. Un DSI formé seul paie 1 980 € HT la journée, avec un programme centré sur ses propres arbitrages. Votre OPCO étudie ensuite le dossier en appliquant les règles de sa branche.",
+      "Le prix de base couvre l'animation, les supports et le programme. Un temps de préparation avec la DSI s'ajoute et figure au devis : avant la session, le formateur prend connaissance de votre offre ChatGPT, des réglages actuels de la console, de l'inventaire des GPTs s'il existe et de deux ou trois procédures d'exploitation. Les ateliers travaillent ensuite sur ces éléments, et la grille de choix de l'offre, la liste des plugins autorisés et le plan de migration restent à l'équipe.",
+      "Prenons une direction informatique qui inscrit son RSSI, deux administrateurs, quatre développeurs et trois techniciens du support, soit dix personnes. Ce groupe de dix paie à partir de 3 960 € HT pour l'intra de deux jours, soit dès 396 € HT chacun. Un DSI formé seul paie à partir de 1 980 € HT la journée, avec un programme centré sur ses propres arbitrages. Votre OPCO étudie ensuite le dossier en appliquant les règles de sa branche.",
     ],
   },
   apres: {

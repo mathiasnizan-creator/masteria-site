@@ -80,7 +80,7 @@ export default {
 
   formation: [
     "Nous formons les métiers qui signent les documents sensibles : responsables qualité et techniciens, chefs de projet R&D, chargés des affaires réglementaires, acheteurs de matières premières, assistants commerciaux qui répondent aux cahiers des charges des distributeurs. Chaque atelier part d'un dossier de l'entreprise : une spécification fournisseur, une fiche technique, une épreuve d'étiquette, un questionnaire d'audit.",
-    "Depuis le règlement (UE) 2021/382, l'engagement de la direction en matière de culture de la sécurité alimentaire comprend de veiller à ce que le personnel reçoive une formation adéquate. Une formation à l'IA bâtie sur vos procédures qualité peut entrer dans ce plan. Une journée pour vos équipes qualité et R&D est facturée 1 980 € HT en intra. Comme toute action de formation d'un organisme certifié Qualiopi, elle peut être prise en charge par votre OPCO ; la mission de conseil et le développement des contrôles sont facturés séparément, au forfait.",
+    "Depuis le règlement (UE) 2021/382, l'engagement de la direction en matière de culture de la sécurité alimentaire comprend de veiller à ce que le personnel reçoive une formation adéquate. Une formation à l'IA bâtie sur vos procédures qualité peut entrer dans ce plan. Une journée pour vos équipes qualité et R&D est facturée à partir de 1 980 € HT en intra, et la préparation sur vos procédures s'ajoute au devis. Comme toute action de formation d'un organisme certifié Qualiopi, elle peut être prise en charge par votre OPCO ; la mission de conseil et le développement des contrôles sont facturés séparément, au forfait.",
   ],
 
   guide: {

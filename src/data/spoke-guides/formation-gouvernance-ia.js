@@ -10,14 +10,14 @@ export default {
   updatedLabel: 'Revu le 7 octobre 2026',
   h1: "Formation gouvernance IA : registre, charte et comité pour encadrer vos usages dans la durée",
   metaTitle: 'Formation gouvernance IA : registre et charte | Masteria',
-  metaDesc: "Formation gouvernance IA en 1 jour : registre des usages, charte, comité, réglages des consoles, fin des GPTs et des Gems. 1 980 € HT, Qualiopi, OPCO.",
+  metaDesc: "Formation gouvernance IA en 1 jour : registre des usages, charte, comité, réglages des consoles, fin des GPTs et des Gems. Dès 1 980 € HT, Qualiopi, OPCO.",
   keywords: "formation gouvernance ia, gouvernance de l'ia, registre ia, charte ia, comité ia, politique d'usage de l'ia, formation conformité ia, gouvernance des données ia",
-  resume: "La formation gouvernance IA apprend en une journée à l'équipe qui pilote l'intelligence artificielle dans l'entreprise à bâtir son dispositif : un registre des usages vivant, une charte que les salariés lisent, un comité qui instruit les demandes, et des consoles d'administration réglées pour que la charte soit respectée. Masteria l'anime chez vous ou en visioconférence ; la journée coûte 1 980 € HT, que vous veniez seul ou à douze ; les pièces nécessaires à une demande auprès de l'OPCO vous sont remises, l'organisme étant certifié Qualiopi.",
+  resume: "La formation gouvernance IA apprend en une journée à l'équipe qui pilote l'intelligence artificielle dans l'entreprise à bâtir son dispositif : un registre des usages vivant, une charte que les salariés lisent, un comité qui instruit les demandes, et des consoles d'administration réglées pour que la charte soit respectée. Masteria l'anime chez vous ou en visioconférence ; la journée coûte à partir de 1 980 € HT, que vous veniez seul ou à douze ; les pièces nécessaires à une demande auprès de l'OPCO vous sont remises, l'organisme étant certifié Qualiopi.",
   enBref: [
     { label: 'Formation', value: "Le dispositif qui encadre l'IA au quotidien : registre, charte, comité, réglages des outils, indicateurs" },
     { label: 'Durée', value: "Sept heures en quatre modules, avec des gabarits remplis sur les usages de votre organisation" },
     { label: 'Public', value: "DPO, juristes, DSI, RSSI, responsables data, référents IA et membres de la direction" },
-    { label: 'Tarif', value: "1 980 € HT pour la journée, prix fixe jusqu'à douze personnes" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT pour la journée, prix de base identique jusqu'à douze personnes" },
     { label: 'Financement', value: "Prise en charge possible par l'OPCO, sur dossier, Masteria étant certifié Qualiopi" },
     { label: 'Prérequis', value: "Venir à deux ou trois de la même organisation si possible, avec la liste des outils d'IA connus à ce jour" },
   ],
@@ -202,7 +202,7 @@ export default {
     },
     {
       q: "Quel budget prévoir pour la journée gouvernance, et qui peut la financer ?",
-      a: "Un prix unique de 1 980 € HT, auquel s'ajoute la TVA à 20 %, couvre la journée pour tout le groupe, d'une personne à douze ; à quatre, chacun revient à 495 € HT. Les OPCO financent les organismes certifiés Qualiopi, ce qui est le cas de Masteria : le vôtre étudie le dossier et tranche selon ses barèmes et l'enveloppe de l'année. Le dossier part avec le programme et la convention que nous rédigeons. Pour une organisation genevoise ou bruxelloise, faute d'OPCO, un devis en euros HT remplace cette démarche.",
+      a: "Un prix unique à partir de 1 980 € HT, auquel s'ajoute la TVA à 20 %, couvre la journée pour tout le groupe, d'une personne à douze ; à quatre, chacun paie dès 495 € HT. Les OPCO financent les organismes certifiés Qualiopi, ce qui est le cas de Masteria : le vôtre étudie le dossier et tranche selon ses barèmes et l'enveloppe de l'année. Le dossier part avec le programme et la convention que nous rédigeons. Pour une organisation genevoise ou bruxelloise, faute d'OPCO, un devis en euros HT remplace cette démarche.",
     },
     {
       q: 'Registre des usages IA et registre RGPD : faut-il deux documents ?',
@@ -224,7 +224,7 @@ export default {
   tarifs: {
     titre: "Le prix de la journée gouvernance, et ce qu'il inclut",
     paras: [
-      "Pour le groupe entier, de un à douze inscrits, le prix est de 1 980 € HT. Il comprend un échange préalable sur vos outils, vos instances et vos documents existants (charte, politique de sécurité, registre RGPD), l'adaptation des cas pratiques à votre secteur, les gabarits de registre, de charte et de formulaire de demande, et l'attestation remise à chaque participant.",
+      "Pour le groupe entier, de un à douze inscrits, le prix de base part de 1 980 € HT. Il comprend les gabarits de registre, de charte et de formulaire de demande, et l'attestation remise à chaque participant. L'échange préalable sur vos outils, vos instances et vos documents existants (charte, politique de sécurité, registre RGPD) et l'adaptation des cas pratiques à votre secteur forment un temps de préparation, qui s'ajoute et figure au devis.",
       "Prenons une ETI qui inscrit son DPO, son DSI, son RSSI et sa directrice juridique : la journée revient à 495 € HT par personne, et les quatre repartent avec les mêmes documents de travail. Côté financement, votre OPCO peut couvrir tout ou partie de la journée, Masteria étant certifié Qualiopi, et il décide d'après ses propres barèmes ; le dossier se dépose avant la session, convention et programme joints.",
     ],
   },

@@ -11,14 +11,14 @@ export default {
   updatedLabel: 'Revu le 7 octobre 2026',
   h1: "Formation IA pour dirigeants : une journée pour décider où l'IA sert votre entreprise",
   metaTitle: 'Formation IA dirigeants : décider et piloter | Masteria',
-  metaDesc: "Formation IA pour dirigeants en 1 jour : votre propre usage, prix des licences et des agents, données, AI Act, plan à 90 jours. 1 980 € HT, Qualiopi.",
+  metaDesc: "Formation IA pour dirigeants en 1 jour : votre propre usage, prix des licences et des agents, données, AI Act, plan à 90 jours. Dès 1 980 € HT, Qualiopi.",
   keywords: "formation ia dirigeants, formation intelligence artificielle dirigeant, formation ia codir, formation ia chef d'entreprise, ia pour dirigeants pme, stratégie ia dirigeant, formation ia direction générale",
-  resume: "La formation IA pour dirigeants donne en une journée à un chef d'entreprise, ou à son comité de direction, ce qu'il lui faut pour décider : la pratique de l'IA sur ses propres dossiers, le coût réel des licences et des agents, les règles sur les données et l'AI Act, puis trois chantiers inscrits dans un plan à 90 jours. Le tarif, 1 980 € HT, s'applique en tête-à-tête comme pour un cercle de douze dirigeants au plus, dans vos bureaux ou en visioconférence ; un financement par l'OPCO reste possible, à l'appréciation de ses instances.",
+  resume: "La formation IA pour dirigeants donne en une journée à un chef d'entreprise, ou à son comité de direction, ce qu'il lui faut pour décider : la pratique de l'IA sur ses propres dossiers, le coût réel des licences et des agents, les règles sur les données et l'AI Act, puis trois chantiers inscrits dans un plan à 90 jours. Le tarif, à partir de 1 980 € HT, s'applique en tête-à-tête comme pour un cercle de douze dirigeants au plus, dans vos bureaux ou en visioconférence ; un financement par l'OPCO reste possible, à l'appréciation de ses instances.",
   enBref: [
     { label: 'Formation', value: "L'intelligence artificielle vue depuis la direction : usage personnel, arbitrages, budget, cadre et plan d'action" },
     { label: 'Durée', value: "Sept heures réparties en quatre modules, chez vous, dans une salle louée ou par visioconférence" },
     { label: 'Public', value: "Dirigeants de PME et d'ETI, membres de comité de direction, gérants qui décident seuls" },
-    { label: 'Tarif', value: "1 980 € HT la journée, en tête-à-tête ou pour un groupe de douze dirigeants au maximum" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée, en tête-à-tête ou pour un groupe de douze dirigeants au maximum ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "OPCO pour un dirigeant salarié, fonds d'assurance formation pour un non-salarié, selon les règles de chacun ; Masteria est certifié Qualiopi" },
     { label: 'Prérequis', value: "Aucun ; apporter deux ou trois documents de direction récents, anonymisés si besoin" },
   ],
@@ -193,7 +193,7 @@ export default {
     },
     {
       q: 'Journée dirigeants ou formation IA pour le COMEX : comment choisir ?',
-      a: "La formation COMEX s'adresse au comité exécutif comme instance : elle a son propre format, plus court, et sa propre page. Cette journée s'adresse à un dirigeant seul ou à un petit groupe de dirigeants qui veulent pratiquer eux-mêmes et repartir avec un plan écrit. Elle dure sept heures, facturées au tarif journalier habituel de Masteria, 1 980 € HT, et laisse une large place aux exercices sur vos documents. Le cadrage permet de choisir entre les deux selon ce que vous attendez : un alignement du comité, ou une prise en main par chacun.",
+      a: "La formation COMEX s'adresse au comité exécutif comme instance : elle a son propre format, plus court, et sa propre page. Cette journée s'adresse à un dirigeant seul ou à un petit groupe de dirigeants qui veulent pratiquer eux-mêmes et repartir avec un plan écrit. Elle dure sept heures, facturées au tarif journalier habituel de Masteria, à partir de 1 980 € HT, et laisse une large place aux exercices sur vos documents. Le cadrage permet de choisir entre les deux selon ce que vous attendez : un alignement du comité, ou une prise en main par chacun.",
     },
     {
       q: 'Qui anime la formation IA pour dirigeants ?',
@@ -201,7 +201,7 @@ export default {
     },
     {
       q: 'Combien coûte la journée, et comment la financer ?',
-      a: "Comptez 1 980 € HT pour la journée, TVA à ajouter, seul ou à douze dirigeants ; avec une seconde journée, la facture atteint 3 960 € HT. Les formations de Masteria sont couvertes par sa certification Qualiopi. Un dirigeant salarié, par exemple président rémunéré d'une SAS, relève de l'OPCO de son entreprise, qui décide selon ses règles et ses fonds. Un dirigeant non salarié, comme un gérant majoritaire de SARL, cotise en général à un fonds d'assurance formation des indépendants ; nous vérifions avec vous l'organisme compétent avant la demande.",
+      a: "Comptez au moins 1 980 € HT pour la journée, TVA à ajouter, seul ou à douze dirigeants ; avec une seconde journée, la facture atteint au moins 3 960 € HT. Les formations de Masteria sont couvertes par sa certification Qualiopi. Un dirigeant salarié, par exemple président rémunéré d'une SAS, relève de l'OPCO de son entreprise, qui décide selon ses règles et ses fonds. Un dirigeant non salarié, comme un gérant majoritaire de SARL, cotise en général à un fonds d'assurance formation des indépendants ; nous vérifions avec vous l'organisme compétent avant la demande.",
     },
     {
       q: "Un dirigeant qui n'a jamais utilisé l'IA peut-il suivre la journée ?",
@@ -223,8 +223,8 @@ export default {
   tarifs: {
     titre: 'Le prix de la journée, pour un dirigeant seul ou pour un comité',
     paras: [
-      "Le montant de 1 980 € HT vaut pour un dirigeant seul comme pour douze. Il couvre la conversation préalable, où nous recueillons vos enjeux et deux ou trois documents de direction à travailler, l'adaptation des exercices à votre secteur, les supports, le tableau des prix de licences mis à jour à la date de la session et l'attestation individuelle remise le soir.",
-      "Prenons un comité de direction de six personnes : la journée revient à 330 € HT par participant. Un dirigeant qui veut prolonger le travail sur ses propres dossiers peut réserver une seconde journée ; l'ensemble revient alors à 3 960 € HT. Les membres salariés du comité relèvent de l'OPCO de l'entreprise, qui examine la demande selon ses règles ; les dirigeants non salariés, d'un fonds d'assurance formation. Masteria fournit dans les deux cas le programme et la convention.",
+      "Le montant de départ, 1 980 € HT, vaut pour un dirigeant seul comme pour douze. Il couvre l'animation, les supports, le tableau des prix de licences mis à jour à la date de la session et l'attestation individuelle remise le soir. Pour une journée sur mesure, la conversation préalable, où nous recueillons vos enjeux et deux ou trois documents de direction à travailler, puis l'adaptation des exercices à votre secteur, forment un temps de préparation qui s'ajoute au devis.",
+      "Prenons un comité de direction de six personnes : la journée coûte à partir de 330 € HT par participant. Un dirigeant qui veut prolonger le travail sur ses propres dossiers peut réserver une seconde journée ; l'ensemble revient alors à partir de 3 960 € HT. Les membres salariés du comité relèvent de l'OPCO de l'entreprise, qui examine la demande selon ses règles ; les dirigeants non salariés, d'un fonds d'assurance formation. Masteria fournit dans les deux cas le programme et la convention.",
     ],
   },
   cta: {

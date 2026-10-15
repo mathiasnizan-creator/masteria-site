@@ -82,7 +82,7 @@ const EN_BREF = [
   { label: 'Outils', value: "Les licences déjà ouvertes chez vous, en version professionnelle : Claude Team, Gemini côté Google, ChatGPT Business, Copilot côté Microsoft ou Vibe" },
   { label: 'Méthode', value: "Chaque exercice part d'un dossier que l'équipe traite dans la semaine : offre, contrat, tableau de suivi, compte rendu, procédure" },
   { label: 'Déploiement', value: "Équipe après équipe, sur site ou à distance, en France et dans nos autres zones d'intervention : Europe, États-Unis, Inde" },
-  { label: 'Tarif', value: "1 980 € HT par jour, facturé au groupe (douze personnes au plus) ; même grille pour une personne seule ; devis en 24 heures" },
+  { label: 'Tarif', value: "À partir de 1 980 € HT par jour, facturé au groupe (douze personnes au plus) ; même grille pour une personne seule ; préparation sur mesure en plus ; devis en 24 heures" },
 ]
 
 /* ───────── Pourquoi l'intra (4 cartes + 1 carte sombre) ───────── */
@@ -310,7 +310,7 @@ const FAQ = [
   },
   {
     q: 'Quel budget prévoir pour former nos équipes en intra ?',
-    a: "Comptez 1 980 € HT par journée, facturés pour le groupe entier (douze personnes au maximum dans un atelier), et 3 960 € HT pour deux journées. Le sprint de 3 heures est facturé lui aussi 1 980 € HT. Le premier rendez-vous, d'une demi-heure, n'est pas facturé ; le lendemain, le programme détaillé, le devis et les pièces du dossier de financement vous attendent.",
+    a: "Comptez à partir de 1 980 € HT par journée, facturés pour le groupe entier (douze personnes au maximum dans un atelier), et à partir de 3 960 € HT pour deux journées. Le sprint de 3 heures démarre lui aussi à 1 980 € HT. Quand la formation est construite sur vos documents, le temps de préparation s'ajoute et figure au devis. Le premier rendez-vous, d'une demi-heure, n'est pas facturé ; le lendemain, le programme détaillé, le devis et les pièces du dossier de financement vous attendent.",
   },
   {
     q: "L'OPCO de notre branche peut-il prendre la session en charge ?",
@@ -416,7 +416,7 @@ const termsJsonLd = {
     { '@type': 'DefinedTerm', name: 'Formation intra-entreprise', description: "Session réservée aux salariés d'une même société, tenue dans ses locaux ou en visio, dont le programme part des dossiers de ses équipes." },
     { '@type': 'DefinedTerm', name: "Maîtrise de l'IA (article 4)", description: "Ce que l'AI Act, en son article 4, demande aux entreprises de soutenir chez les personnes qui utilisent un système d'IA pour leur compte ; une obligation de moyens depuis le règlement (UE) 2026/1744." },
     { '@type': 'DefinedTerm', name: 'Référent IA', description: "Volontaire formé pour entretenir la pratique entre deux sessions : il tient la bibliothèque de demandes types, répond aux questions de ses collègues et fait remonter les nouveaux besoins." },
-    { '@type': 'DefinedTerm', name: 'Sprint IA', description: "Le format de 3 heures de Masteria : un atelier resserré qui lance une équipe sur ses premiers usages, vendu 1 980 € HT la session." },
+    { '@type': 'DefinedTerm', name: 'Sprint IA', description: "Le format de 3 heures de Masteria : un atelier resserré qui lance une équipe sur ses premiers usages, vendu à partir de 1 980 € HT la session." },
     { '@type': 'DefinedTerm', name: 'Plan de développement des compétences', description: "Le cadre dans lequel l'employeur organise la formation de ses salariés, et par lequel une session certifiée Qualiopi peut être présentée à l'OPCO de la branche." },
     { '@type': 'DefinedTerm', name: "Charte IA d'entreprise", description: "Le texte qui écrit les règles d'usage : données autorisées pour chaque outil, documents à relire avant envoi, propriétaire des assistants et des compétences créés." },
   ],
@@ -906,16 +906,16 @@ export default function FormationIAEntreprisePage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix et prise en charge</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
-                1 980 € HT la journée, pour tout le groupe
+                Dès 1 980 € HT la journée, pour tout le groupe
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Chez Masteria, le prix se compte à la journée et au groupe : 1 980 € HT pour une salle de quatre collègues comme pour une salle de douze, quel que soit le métier. Deux jours font 3 960 € HT, le sprint de 3 heures 1 980 € HT la session, et la même grille vaut pour une personne seule. Grâce à la certification Qualiopi du cabinet, l'OPCO de votre branche peut financer la session, suivant ses critères et l'état de ses fonds ; la décision lui revient, et le dossier se prépare à quatre mains. Le CPF ne s'applique pas à ces sessions d'équipe. Les sociétés de Genève ou de Bruxelles ne relèvent d'aucun OPCO : elles reçoivent un devis en euros hors taxes. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> identifie votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs.
+                Chez Masteria, le prix se compte à la journée et au groupe : dès 1 980 € HT pour une salle de quatre collègues comme pour une salle de douze, quel que soit le métier. Deux jours démarrent à 3 960 € HT, le sprint de 3 heures à 1 980 € HT la session, et la même grille vaut pour une personne seule. Si les exercices reprennent vos modèles et vos fichiers, la préparation se chiffre en plus au devis. Grâce à la certification Qualiopi du cabinet, l'OPCO de votre branche peut financer la session, suivant ses critères et l'état de ses fonds ; la décision lui revient, et le dossier se prépare à quatre mains. Le CPF ne s'applique pas à ces sessions d'équipe. Les sociétés de Genève ou de Bruxelles ne relèvent d'aucun OPCO : elles reçoivent un devis en euros hors taxes. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> identifie votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
-                  '1 980 € HT la journée, groupe de 12 au plus',
-                  '3 960 € HT les deux jours',
-                  'Sprint de 3 heures : 1 980 € HT',
+                  'Dès 1 980 € HT la journée, groupe de 12 au plus',
+                  'Dès 3 960 € HT les deux jours',
+                  'Sprint de 3 heures : dès 1 980 € HT',
                   'Dossier OPCO monté avec vous, devis en 24 heures',
                 ].map(pt => (
                   <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
@@ -1059,7 +1059,7 @@ export default function FormationIAEntreprisePage() {
               <ArrowRight size={18} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Qualiopi · 1 980 € HT la journée · sur site ou en visio · France, Europe, États-Unis, Inde
+              Qualiopi · dès 1 980 € HT la journée · sur site ou en visio · France, Europe, États-Unis, Inde
             </p>
           </div>
         </div>

@@ -77,7 +77,7 @@ export default {
   ],
   formation: [
     "Les outils changent le travail des chefs de produit web, des équipes catalogue, des conseillers du service client et des acheteurs qui échangent avec les fournisseurs. Nous les formons à maintenir les règles du générateur, à repérer un attribut ou une allégation inventés, et à reprendre la main sur une réponse sensible.",
-    "La journée intra coûte 1 980 € HT pour le groupe et se déroule sur vos fiches et vos demandes clients réelles. En France, la certification Qualiopi de Masteria ouvre le financement de cette journée par votre OPCO. L'audit du catalogue et le développement du générateur relèvent du conseil et du développement, que l'OPCO ne finance pas.",
+    "La journée intra coûte à partir de 1 980 € HT pour le groupe, préparation sur mesure en sus, et se déroule sur vos fiches et vos demandes clients réelles. En France, la certification Qualiopi de Masteria ouvre le financement de cette journée par votre OPCO. L'audit du catalogue et le développement du générateur relèvent du conseil et du développement, que l'OPCO ne finance pas.",
   ],
 
   guide: {

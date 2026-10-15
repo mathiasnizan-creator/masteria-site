@@ -435,7 +435,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte une formation Masteria à ChatGPT ou à Claude ?",
-        a: "Chez Masteria, la journée sur ChatGPT ou sur Claude coûte **1 980 € HT**, TVA de 20 % en sus, pour un groupe intra (12 participants au plus) aussi bien que pour une personne seule. La certification Qualiopi rend la session finançable par l'OPCO, en fonction de votre branche. Masteria prépare programme et convention, et l'entreprise adresse sa demande de financement avant la date de formation.",
+        a: "Chez Masteria, la journée sur ChatGPT ou sur Claude coûte à partir de **1 980 € HT**, TVA de 20 % en sus, pour un groupe intra (12 participants au plus) aussi bien que pour une personne seule. La certification Qualiopi rend la session finançable par l'OPCO, en fonction de votre branche. Masteria prépare programme et convention, et l'entreprise adresse sa demande de financement avant la date de formation. Pour une session construite sur vos documents, la préparation s'ajoute au devis.",
       },
       {
         q: "Quelles obligations l'AI Act fixe-t-il aux entreprises qui utilisent ChatGPT ou Claude ?",
@@ -886,7 +886,7 @@ export const COMPARISONS = {
       cas: "Huit demandes qui reviennent dans nos formations multi-outils, de la présentation client au refactoring de code, tranchées entre les cinq assistants dans leurs offres professionnelles.",
       coutTitre: "Ce que coûte l'équipement d'une entreprise, selon sa taille",
       cout: "Budget annuel des seuls abonnements, calculé sur les prix publics en paiement annuel ; formation et accompagnement viennent en plus.",
-      aRetenir: "un abonnement ne produit rien tant que l'équipe ne sait pas s'en servir. Inscrivez la formation dans le budget dès le départ : chez Masteria, la journée intra (douze participants au plus) est facturée 1 980 € HT, somme que l'OPCO de votre branche peut prendre en charge selon ses propres règles. Le retour sur investissement se mesure ensuite sur vos propres tâches.",
+      aRetenir: "un abonnement ne produit rien tant que l'équipe ne sait pas s'en servir. Inscrivez la formation dans le budget dès le départ : chez Masteria, la journée intra (douze participants au plus) est facturée à partir de 1 980 € HT, somme que l'OPCO de votre branche peut prendre en charge selon ses propres règles. Le retour sur investissement se mesure ensuite sur vos propres tâches.",
       erreursTitre: "Cinq erreurs qui faussent le choix d'une IA d'entreprise",
       erreurs: "Les pièges que nous voyons le plus souvent quand une entreprise choisit son outil sans l'avoir mis à l'épreuve.",
       ctaTitre: "Comparez les cinq outils sur les dossiers de vos équipes",
@@ -1073,7 +1073,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte une formation pour comparer les cinq outils ?",
-        a: "Notre formation multi-outils dure deux jours : vos équipes essaient les cinq assistants sur leurs propres tâches. La facture s'élève à **1 980 € HT** par journée, à majorer de 20 % de TVA, que vous inscriviez un groupe intra (douze personnes au maximum) ou une seule personne. L'OPCO de votre branche peut la financer selon ses règles : Le programme et la convention sont préparés par nos soins ; à vous d'envoyer la demande à l'OPCO avant la première journée.",
+        a: "Notre formation multi-outils dure deux jours : vos équipes essaient les cinq assistants sur leurs propres tâches. La facture démarre à **1 980 € HT** par journée, à majorer de 20 % de TVA, que vous inscriviez un groupe intra (douze personnes au maximum) ou une seule personne. L'OPCO de votre branche peut la financer selon ses règles : Le programme et la convention sont préparés par nos soins ; à vous d'envoyer la demande à l'OPCO avant la première journée. Le temps de préparation des comparatifs sur vos dossiers est chiffré en plus, au devis.",
       },
       {
         q: "Et les IA chinoises, comme DeepSeek ou Qwen ?",
@@ -1577,7 +1577,7 @@ export const COMPARISONS = {
       },
       {
         q: "Comment former une équipe de développeurs aux IA de codage ?",
-        a: "Notre formation IA informatique couvre le cadrage des tâches confiées à un agent, l'intégration aux éditeurs, la revue des modifications et la sécurité ; la formation Claude Code travaille directement sur votre dépôt. La journée est à **1 980 € HT** (TVA de 20 % en plus) pour un groupe intra de douze développeurs au maximum ; votre OPCO de branche examine la prise en charge d'après ses critères.",
+        a: "Notre formation IA informatique couvre le cadrage des tâches confiées à un agent, l'intégration aux éditeurs, la revue des modifications et la sécurité ; la formation Claude Code travaille directement sur votre dépôt. La journée part de **1 980 € HT** (TVA de 20 % en plus) pour un groupe intra de douze développeurs au maximum ; votre OPCO de branche examine la prise en charge d'après ses critères. Le travail préalable sur votre dépôt est ajouté au devis.",
       },
     ],
 
@@ -1927,7 +1927,7 @@ export const COMPARISONS = {
       },
       {
         q: "Comment former une équipe à utiliser des agents IA ?",
-        a: "On commence par les bases (formuler une demande, écrire une procédure réutilisable) avant de passer aux agents autonomes, puis on traite la gouvernance : périmètre d'action, validation humaine, journaux. Chez Masteria, la journée intra se facture **1 980 € HT**, TVA de 20 % à ajouter, pour douze personnes au maximum ; l'OPCO de votre branche décidera de la financer ou non selon ses critères.",
+        a: "On commence par les bases (formuler une demande, écrire une procédure réutilisable) avant de passer aux agents autonomes, puis on traite la gouvernance : périmètre d'action, validation humaine, journaux. Chez Masteria, la journée intra se facture à partir de **1 980 € HT**, TVA de 20 % à ajouter, pour douze personnes au maximum ; l'OPCO de votre branche décidera de la financer ou non selon ses critères.",
       },
       {
         q: "Manus est-il une alternative sérieuse aux agents ChatGPT ?",
@@ -2247,7 +2247,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte une formation Mistral ou ChatGPT pour mes équipes ?",
-        a: "Une journée de formation à Mistral AI ou à ChatGPT coûte **1 980 € HT** chez Masteria, TVA en sus au taux de 20 %, que ce soit pour un groupe intra de douze participants au plus ou pour un stagiaire seul. Notre certification Qualiopi permet à votre OPCO de branche d'accepter de la financer, selon ses règles. Le format multi-outils compare les deux sur vos dossiers avant que vous choisissiez.",
+        a: "Une journée de formation à Mistral AI ou à ChatGPT coûte à partir de **1 980 € HT** chez Masteria, TVA en sus au taux de 20 %, que ce soit pour un groupe intra de douze participants au plus ou pour un stagiaire seul. Notre certification Qualiopi permet à votre OPCO de branche d'accepter de la financer, selon ses règles. Le format multi-outils compare les deux sur vos dossiers avant que vous choisissiez ; cette préparation sur mesure se chiffre en plus au devis.",
       },
     ],
 
@@ -2564,7 +2564,7 @@ export const COMPARISONS = {
       },
       {
         q: "Combien coûte une formation Gemini ou Copilot ?",
-        a: "Comptez **1 980 € HT** par journée sur Gemini ou sur Copilot, TVA à 20 % en plus, que le groupe intra compte douze personnes au plus ou que la session soit individuelle. Notre certification Qualiopi permet de solliciter l'OPCO de votre branche, seul juge du financement. La formation se construit sur vos données et vos processus : c'est elle qui décide de l'adoption.",
+        a: "Comptez au moins **1 980 € HT** par journée sur Gemini ou sur Copilot, TVA à 20 % en plus, que le groupe intra compte douze personnes au plus ou que la session soit individuelle. Notre certification Qualiopi permet de solliciter l'OPCO de votre branche, seul juge du financement. La formation se construit sur vos données et vos processus : c'est elle qui décide de l'adoption, et sa préparation sur mesure s'ajoute au devis.",
       },
     ],
 

@@ -9,12 +9,12 @@ export default {
   updatedAt: '2026-10-05',
   updatedLabel: 'Programme à jour · octobre 2026',
   metaDesc: "Formation Claude pour le marketing : corpus d'entretiens analysés en entier, ton de marque dans un projet, recherche sourcée, slides PowerPoint.",
-  resume: "La formation Claude pour le marketing apprend à confier à Claude l'analyse d'un corpus d'entretiens entier, à fixer le ton de la marque, à mener une recherche documentée et à livrer la présentation en PowerPoint. Deux jours (14 heures), sur site ou en ligne, réunissent jusqu'à douze personnes, ou une seule, au prix journalier de 1 980 € HT, et Masteria, certifié Qualiopi, prépare la demande que votre OPCO examinera selon sa branche.",
+  resume: "La formation Claude pour le marketing apprend à confier à Claude l'analyse d'un corpus d'entretiens entier, à fixer le ton de la marque, à mener une recherche documentée et à livrer la présentation en PowerPoint. Deux jours (14 heures), sur site ou en ligne, réunissent jusqu'à douze personnes, ou une seule, à partir de 1 980 € HT par jour, et Masteria, certifié Qualiopi, prépare la demande que votre OPCO examinera selon sa branche.",
   enBref: [
     { label: 'Formation', value: "Claude pour le marketing, les études et la production de contenus" },
     { label: 'Durée', value: "Deux jours de sept heures, à caler de préférence avant une restitution d'étude ou un lancement" },
     { label: 'Formats', value: "Jusqu'à douze collègues réunis en intra, ou une séance individuelle ; dans vos bureaux comme en ligne" },
-    { label: 'Tarif', value: "1 980 € HT pour chaque jour de formation, à partager entre douze participants au maximum" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT pour chaque jour de formation, à partager entre douze participants au maximum" },
     { label: 'Financement', value: "Dossier de prise en charge préparé avec vous pour votre OPCO ; Masteria est certifié Qualiopi" },
     { label: 'Prérequis', value: "Un abonnement payant à Claude, de préférence Team ou Enterprise afin de partager le projet de marque et les compétences" },
   ],
@@ -298,14 +298,14 @@ export default {
     },
     {
       q: "Comment une équipe marketing finance-t-elle ces deux jours ?",
-      a: "L'OPCO dont dépend l'entreprise peut prendre ces deux jours en charge : il instruit la demande d'après les règles de la branche, et Masteria remplit la condition de certification Qualiopi. Le prix ne dépend pas de l'effectif : le même forfait de 1 980 € HT s'applique chaque jour à six, dix ou douze collègues, comme à une personne seule. Masteria rédige avec vous la convention et le programme détaillé.",
+      a: "L'OPCO dont dépend l'entreprise peut prendre ces deux jours en charge : il instruit la demande d'après les règles de la branche, et Masteria remplit la condition de certification Qualiopi. Le prix ne dépend pas de l'effectif : le même forfait de base, à partir de 1 980 € HT, s'applique chaque jour à six, dix ou douze collègues, comme à une personne seule. Masteria rédige avec vous la convention et le programme détaillé.",
     },
   ],
   tarifs: {
     titre: "Ce que couvre le tarif pour une équipe marketing",
     paras: [
-      "Le tarif comprend la préparation sur vos supports : le formateur reçoit à l'avance votre guide éditorial, votre modèle PowerPoint et un lot d'entretiens ou de réponses ouvertes anonymisés, et il bâtit les exercices sur cette matière. Le projet de marque et la compétence de ton construits en séance demeurent dans votre espace Claude.",
-      "Exemple chiffré : un service marketing inscrit sa directrice, deux chefs de produit, une chargée d'études, une responsable de contenu et un graphiste. Pour ces six personnes, deux journées en intra coûtent au total 3 960 € HT, ce qui ramène la dépense à 660 € HT par personne. Une personne accompagnée seule règle chaque journée 1 980 € HT. Puisque Masteria détient la certification Qualiopi, un financement de votre OPCO reste possible, accordé selon les barèmes et les critères propres à sa branche, sur un dossier que nous constituons avec vous.",
+      "Le tarif de base couvre l'animation, les supports et le programme. La préparation sur vos propres supports s'y ajoute et figure au devis : le formateur reçoit à l'avance votre guide éditorial, votre modèle PowerPoint et un lot d'entretiens ou de réponses ouvertes anonymisés, et il bâtit les exercices sur cette matière. Le projet de marque et la compétence de ton construits en séance demeurent dans votre espace Claude.",
+      "Exemple chiffré : un service marketing inscrit sa directrice, deux chefs de produit, une chargée d'études, une responsable de contenu et un graphiste. Pour ces six personnes, deux journées en intra coûtent au total à partir de 3 960 € HT, soit dès 660 € HT par personne. Une personne accompagnée seule règle chaque journée à partir de 1 980 € HT. Puisque Masteria détient la certification Qualiopi, un financement de votre OPCO reste possible, accordé selon les barèmes et les critères propres à sa branche, sur un dossier que nous constituons avec vous.",
     ],
   },
   apres: {

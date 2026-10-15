@@ -256,8 +256,8 @@ export default {
  },
  "tarif": {
   "titre": "Prix de la formation SEO IA et prise en charge",
-  "answer": "Masteria facture chaque jour de formation 1 980 € HT pour votre équipe, douze personnes au plus, et le parcours complet 3 960 € HT. Un responsable SEO ou un consultant peut aussi suivre la formation seul, aux mêmes conditions tarifaires. Votre OPCO peut intervenir puisque Masteria est certifiée Qualiopi ; il fixe sa participation selon ses règles. Réponse et devis sous 24 heures.",
-  "inclus": "Le cadrage sur vos exports SEO, quelques pages représentatives, votre charte éditoriale et vos concurrents ; deux jours d'ateliers, sur place ou en classe virtuelle ; supports et livrables (prompts SEO, gabarits de brief et de page citable, check-list technique, corpus de suivi) ; l'évaluation finale et le certificat de réalisation. Loin de la région lyonnaise, le déplacement du formateur figure au devis.",
+  "answer": "Masteria facture chaque jour de formation à partir de 1 980 € HT pour votre équipe, douze personnes au plus, et le parcours complet à partir de 3 960 € HT. Un responsable SEO ou un consultant peut aussi suivre la formation seul, aux mêmes conditions tarifaires. Votre OPCO peut intervenir puisque Masteria est certifiée Qualiopi ; il fixe sa participation selon ses règles. Réponse et devis sous 24 heures.",
+  "inclus": "Deux jours d'ateliers, sur place ou en classe virtuelle ; supports et livrables (prompts SEO, gabarits de brief et de page citable, check-list technique, corpus de suivi) ; l'évaluation finale et le certificat de réalisation. Loin de la région lyonnaise, le déplacement du formateur figure au devis. Les ateliers menés sur vos exports, vos pages et votre charte éditoriale demandent une préparation que le devis ajoute au prix de base.",
   "financement": "{/quel-opco|Quel OPCO ?} retrouve l'opérateur dont dépend votre entreprise, et notre guide {/financement-formation-ia|pour financer une formation IA} présente les dispositifs. Programme, convention et pièces justificatives accompagnent le devis ; la demande part chez l'OPCO avant la formation. Le CPF ne couvre pas ce parcours."
  },
  "faq": [
@@ -291,7 +291,7 @@ export default {
   },
   {
    "q": "Quels formats et quel prix ?",
-   "a": "Deux journées en intra, sur site ou en ligne, avec douze personnes au maximum ; chaque journée coûte 1 980 € HT au groupe, soit 3 960 € HT au total. Une journée seule convient pour un terrain unique, la production ou le GEO, et un responsable SEO peut être formé individuellement. Le devis part sous 24 heures. Masteria étant certifiée Qualiopi, l'OPCO de votre branche peut financer la formation selon ses règles ; le CPF, en revanche, ne s'applique pas."
+   "a": "Deux journées en intra, sur site ou en ligne, avec douze personnes au maximum ; chaque journée coûte à partir de 1 980 € HT au groupe, soit à partir de 3 960 € HT au total. Une journée seule convient pour un terrain unique, la production ou le GEO, et un responsable SEO peut être formé individuellement. Le devis part sous 24 heures. Masteria étant certifiée Qualiopi, l'OPCO de votre branche peut financer la formation selon ses règles ; le CPF, en revanche, ne s'applique pas."
   },
   {
    "q": "Quelle différence avec votre agence SEO IA ?",

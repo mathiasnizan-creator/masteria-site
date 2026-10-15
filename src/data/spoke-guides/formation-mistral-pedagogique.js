@@ -12,12 +12,12 @@ export default {
   metaTitle: 'Formation Mistral AI pédagogique avec Vibe | Masteria',
   metaDesc: "Vibe pour concepteurs et formateurs : objectifs évaluables, QCM rattachés, positionnement, supports PowerPoint, référentiel Qualiopi du 1er novembre 2026.",
   keywords: "formation Mistral pédagogique, formation Vibe ingénierie pédagogique, Mistral AI concepteur pédagogique, QCM IA Moodle GIFT, Qualiopi indicateur 5 IA",
-  resume: "La formation Mistral AI pédagogique apprend à une équipe de conception et à des formateurs à tenir avec Vibe le fil qui relie un objectif évaluable, la question qui le prouve et le support qui le prépare : bibliothèque du référentiel, compétence qui porte la méthode de l'équipe, QCM exportable vers Moodle. La session dure deux jours de sept heures, sur site ou en ligne, pour 1 980 € HT par jour, qu'elle réunisse neuf concepteurs ou un formateur seul. L'OPCO dont dépend votre organisme peut la financer, à ses conditions et selon l'état de ses fonds, puisque la certification Qualiopi de Masteria porte sur ses actions de formation.",
+  resume: "La formation Mistral AI pédagogique apprend à une équipe de conception et à des formateurs à tenir avec Vibe le fil qui relie un objectif évaluable, la question qui le prouve et le support qui le prépare : bibliothèque du référentiel, compétence qui porte la méthode de l'équipe, QCM exportable vers Moodle. La session dure deux jours de sept heures, sur site ou en ligne, à partir de 1 980 € HT par jour, qu'elle réunisse neuf concepteurs ou un formateur seul. L'OPCO dont dépend votre organisme peut la financer, à ses conditions et selon l'état de ses fonds, puisque la certification Qualiopi de Masteria porte sur ses actions de formation.",
   enBref: [
     { label: 'Formation', value: "Vibe appliqué à l'ingénierie pédagogique : objectifs, évaluations, positionnement, supports" },
     { label: 'Durée', value: "Deux jours de sept heures, idéalement avant un audit de surveillance ou la refonte d'un catalogue" },
     { label: 'Formats', value: "En présentiel ou à distance ; une équipe de conception jusqu'à douze personnes, ou un formateur indépendant seul" },
-    { label: 'Tarif', value: "Montant fixe de 1 980 € HT la journée jusqu'à douze stagiaires ; abonnement Vibe non compris" },
+    { label: 'Tarif', value: "Montant de base à partir de 1 980 € HT la journée jusqu'à douze stagiaires ; abonnement Vibe non compris" },
     { label: 'Financement', value: "Masteria certifié Qualiopi (actions de formation) ; l'OPCO de votre branche se prononce d'après ses règles et ses fonds" },
     { label: 'Prérequis', value: "Concevoir ou animer des formations ; apporter un programme, un support et une évaluation existants, anonymisés si besoin" },
   ],
@@ -297,14 +297,14 @@ export default {
     },
     {
       q: "Quel budget pour neuf concepteurs, et quel financement ?",
-      a: "Le prix se fixe par journée et pour le groupe entier : 1 980 € HT, de deux à douze personnes. Neuf concepteurs pendant deux jours, c'est 3 960 € HT au total, 440 € HT par tête ; un formateur venu seul paie le même forfait. Comme Masteria détient la certification Qualiopi, catégorie des actions de formation, l'OPCO compétent pour votre branche peut instruire une demande, qu'il tranche avec ses propres règles et selon ses fonds. Les abonnements Vibe se règlent à part, auprès de Mistral.",
+      a: "Le prix se fixe par journée et pour le groupe entier : à partir de 1 980 € HT, de deux à douze personnes. Neuf concepteurs pendant deux jours, c'est à partir de 3 960 € HT au total, soit dès 440 € HT par tête ; un formateur venu seul paie le même forfait de base. Comme Masteria détient la certification Qualiopi, catégorie des actions de formation, l'OPCO compétent pour votre branche peut instruire une demande, qu'il tranche avec ses propres règles et selon ses fonds. Les abonnements Vibe se règlent à part, auprès de Mistral.",
     },
   ],
   tarifs: {
     titre: "Le prix pour une équipe pédagogique",
     paras: [
-      "Le prix comprend une séance préparatoire : avant la session, le formateur relit avec vous un programme, son support, son QCM et la fiche RNCP ou RS visée. Les ateliers portent sur ces documents, et l'équipe repart avec des objectifs réécrits, un QCM rattaché, une bibliothèque du référentiel et sa compétence de conception.",
-      "Exemple : un organisme inscrit neuf concepteurs et formateurs pour deux jours en intra ; il paie 3 960 € HT, 440 € HT pour chacun. Un formateur indépendant accompagné seul règle le forfait de la journée, 1 980 € HT. Le dossier de financement, que Masteria complète avec vous, part vers l'OPCO de votre branche, seul juge de ses critères comme de ses moyens. Comptez à part les licences Vibe.",
+      "Le prix de base couvre l'animation, les supports et le programme. Travailler sur vos propres documents suppose une séance préparatoire, chiffrée en plus au devis : avant la session, le formateur relit avec vous un programme, son support, son QCM et la fiche RNCP ou RS visée. Les ateliers portent sur ces documents, et l'équipe repart avec des objectifs réécrits, un QCM rattaché, une bibliothèque du référentiel et sa compétence de conception.",
+      "Exemple : un organisme inscrit neuf concepteurs et formateurs pour deux jours en intra ; il paie à partir de 3 960 € HT, soit dès 440 € HT pour chacun. Un formateur indépendant accompagné seul règle le forfait de la journée, à partir de 1 980 € HT. Le dossier de financement, que Masteria complète avec vous, part vers l'OPCO de votre branche, seul juge de ses critères comme de ses moyens. Comptez à part les licences Vibe.",
     ],
   },
   apres: {

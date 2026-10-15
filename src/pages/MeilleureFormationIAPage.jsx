@@ -101,8 +101,8 @@ const BUDGETS = [
   { mission: 'Bootcamp reconversion data / IA (parcours complet)', range: '3 000 à 8 000 €', note: 'Par personne, sur plusieurs semaines ; le CPF peut entrer en jeu quand le parcours débouche sur un titre enregistré au RNCP.' },
   { mission: 'Executive education dirigeants (programme court)', range: '3 000 à 12 000 €', note: 'Par personne, sur 2 à 5 jours, selon la grande école.' },
   { mission: 'Organisme généraliste, module IA (par jour, inter-entreprise)', range: '400 à 1 200 €', note: 'Par personne, catalogue multi-thématique.' },
-  { mission: "Formation intra Masteria (une journée, jusqu'à 12 participants)", range: '1 980 € HT', note: "Prix de la journée pour tout le groupe, et deux journées pour 3 960 € HT. Votre OPCO de branche peut contribuer, à hauteur de ce que prévoient ses règles et ses fonds." },
-  { mission: 'Formation individuelle Masteria (une journée)', range: '1 980 € HT', note: "Même prix qu'une journée en intra, avec un programme réglé sur le poste de la personne formée." },
+  { mission: "Formation intra Masteria (une journée, jusqu'à 12 participants)", range: 'dès 1 980 € HT', note: "Prix de départ de la journée pour tout le groupe, et deux journées dès 3 960 € HT. Pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis. Votre OPCO de branche peut contribuer, à hauteur de ce que prévoient ses règles et ses fonds." },
+  { mission: 'Formation individuelle Masteria (une journée)', range: 'dès 1 980 € HT', note: "Même prix de départ qu'une journée en intra, avec un programme réglé sur le poste de la personne formée." },
 ]
 
 /* ── Repères citables (GEO) : stats sourcées, glossaire d'entités, références ── */
@@ -148,7 +148,7 @@ const FAQ = [
   },
   {
     q: 'Quel budget prévoir pour une formation IA ?',
-    a: "Les fourchettes indicatives du marché français vont de la gratuité d'un MOOC à 3 000 à 12 000 € par personne pour un bootcamp de reconversion ou un programme dirigeants de grande école. Un module IA dans le catalogue d'un organisme généraliste se paie souvent quelques centaines d'euros par jour et par personne. Chez Masteria, la journée revient à 1 980 € HT, que la salle compte douze stagiaires ou un seul, et votre OPCO de branche décide de sa participation d'après ses règles et l'état de ses fonds.",
+    a: "Les fourchettes indicatives du marché français vont de la gratuité d'un MOOC à 3 000 à 12 000 € par personne pour un bootcamp de reconversion ou un programme dirigeants de grande école. Un module IA dans le catalogue d'un organisme généraliste se paie souvent quelques centaines d'euros par jour et par personne. Chez Masteria, la journée démarre à 1 980 € HT, que la salle compte douze stagiaires ou un seul, et votre OPCO de branche décide de sa participation d'après ses règles et l'état de ses fonds.",
   },
   {
     q: 'Un MOOC gratuit suffit-il pour former une équipe ?',
@@ -160,7 +160,7 @@ const FAQ = [
   },
   {
     q: 'Intra ou individuel : quel format choisir ?',
-    a: "Une session intra rassemble au plus douze collègues autour des dossiers de leur service et leur donne une méthode commune. Le format individuel sert le dirigeant, la personne seule sur sa fonction, ou le salarié pressé de travailler sur ses propres fichiers. Chez Masteria, le prix de la journée ne change pas d'un format à l'autre : 1 980 € HT.",
+    a: "Une session intra rassemble au plus douze collègues autour des dossiers de leur service et leur donne une méthode commune. Le format individuel sert le dirigeant, la personne seule sur sa fonction, ou le salarié pressé de travailler sur ses propres fichiers. Chez Masteria, le prix de départ de la journée ne change pas d'un format à l'autre : 1 980 € HT.",
   },
   {
     q: "Combien de jours faut-il à une équipe pour prendre l'IA en main ?",
@@ -372,7 +372,7 @@ export default function MeilleureFormationIAPage() {
                 ['Le critère qui compte', "Ce que les participants font autrement un mois après la session. La longueur du programme n'en dit rien."],
                 ['Existe-t-il un classement ?', "Aucun classement officiel n'existe en France. Les palmarès du web sont rédigés par les organismes ou payés comme de la publicité."],
                 ["Ce que dit l'AI Act", "L'article 4 vise toute entreprise utilisatrice depuis février 2025. Récrit par l'Omnibus avec effet au 27 juillet 2026, il lui demande d'agir pour que ses salariés comprennent les outils d'IA qu'ils emploient."],
-                ['Tarifs au 7 octobre 2026', "Chez Masteria, une journée se facture 1 980 € HT, pour une équipe de douze au plus comme pour une personne seule. Ailleurs, de la gratuité d'un MOOC jusqu'à 12 000 € par personne pour un programme dirigeants."],
+                ['Tarifs au 7 octobre 2026', "Chez Masteria, une journée se facture à partir de 1 980 € HT, pour une équipe de douze au plus comme pour une personne seule. Ailleurs, de la gratuité d'un MOOC jusqu'à 12 000 € par personne pour un programme dirigeants."],
                 ['Et Masteria ?', "Un organisme certifié Qualiopi, centré sur l'IA, qui bâtit chaque journée à partir des dossiers de vos équipes."],
               ].map(([k, v], i) => (
                 <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
@@ -611,7 +611,7 @@ export default function MeilleureFormationIAPage() {
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Tarifs 2026</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Combien coûte une formation IA en 2026 (par format) ?</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Un MOOC coûte entre zéro et cinquante euros par mois, un bootcamp certifiant de 3 000 à 8 000 € par personne, et une journée chez Masteria 1 980 € HT, quel que soit le format.</strong>{' '}
+            <strong style={{ color: '#fff' }}>Un MOOC coûte entre zéro et cinquante euros par mois, un bootcamp certifiant de 3 000 à 8 000 € par personne, et une journée chez Masteria à partir de 1 980 € HT, quel que soit le format.</strong>{' '}
             Votre OPCO ne règle que des organismes certifiés Qualiopi, et seulement dans la limite de ce que prévoient ses règles et ses fonds.
           </p>
           <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
@@ -806,7 +806,7 @@ export default function MeilleureFormationIAPage() {
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <p style={{ fontSize: 13, color: '#94A3B8', margin: 0 }}>
-              Journée à 1 980 € HT · douze participants au plus, ou une personne seule · organisme certifié Qualiopi
+              Journée dès 1 980 € HT · douze participants au plus, ou une personne seule · organisme certifié Qualiopi
             </p>
           </div>
         </div>

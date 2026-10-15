@@ -80,7 +80,7 @@ export default {
 
   formation: [
     "Le guide du Conseil national des barreaux demande que tous les membres d'un cabinet soient formés à l'IA générative, collaborateurs et assistants compris. Nous formons les avocats à pseudonymiser une pièce et à vérifier une jurisprudence citée, les juristes d'entreprise à revoir un contrat contre leur grille, les collaborateurs d'une étude à contrôler un projet d'acte préparé par l'outil.",
-    "Une journée au cabinet ou à la direction juridique est facturée 1 980 € HT pour l'ensemble des participants, et la certification Qualiopi de Masteria permet de la présenter à l'OPCO de votre branche. Les exercices portent sur vos modèles et sur des dossiers pseudonymisés : aucune pièce couverte par le secret n'entre dans un outil pendant la formation.",
+    "Une journée au cabinet ou à la direction juridique est facturée à partir de 1 980 € HT pour l'ensemble des participants (la préparation sur vos modèles est chiffrée en plus), et la certification Qualiopi de Masteria permet de la présenter à l'OPCO de votre branche. Les exercices portent sur vos modèles et sur des dossiers pseudonymisés : aucune pièce couverte par le secret n'entre dans un outil pendant la formation.",
   ],
 
   guide: {

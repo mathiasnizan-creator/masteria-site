@@ -1066,7 +1066,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               <span style={{ display: 'inline-flex', verticalAlign: 'text-bottom', marginRight: 6 }}>
                 <Pictogram emoji="\u{1F4A1}" size={15} color="#1E3A8A" />
               </span>
-              <strong>À retenir :</strong> {T.aRetenir || "le coût d'un outil ne se limite pas à l'abonnement. La formation d'une équipe (1 980 € HT la journée pour un groupe de 12 au plus en intra) et l'adoption au quotidien décident du retour sur investissement, qui se mesure sur vos propres tâches."}
+              <strong>À retenir :</strong> {T.aRetenir || "le coût d'un outil ne se limite pas à l'abonnement. La formation d'une équipe (à partir de 1 980 € HT la journée pour un groupe de 12 au plus en intra) et l'adoption au quotidien décident du retour sur investissement, qui se mesure sur vos propres tâches."}
             </div>
           </div>
         </section>

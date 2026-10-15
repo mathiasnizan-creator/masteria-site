@@ -11,12 +11,12 @@ export default {
   h1: "Formation Copilot assistante de direction : boîte déléguée, agenda et comités",
   metaTitle: "Formation Copilot assistante de direction | Masteria",
   metaDesc: "Formation Copilot pour assistante de direction : boîte déléguée du dirigeant, brief planifié, ordres du jour Outlook, relevés Teams. Deux jours, Qualiopi.",
-  resume: "La formation Copilot pour assistante de direction apprend, en quatorze heures réparties sur deux jours, à faire travailler Copilot dans la boîte mail, l'agenda et les réunions d'un dirigeant, en respectant les limites que Microsoft fixe à l'accès délégué. Elle se suit sur votre site comme en visioconférence, seule ou avec les assistantes d'un même siège, douze au plus, et se facture 1 980 € HT par jour. Organisme certifié Qualiopi, Masteria vous aide à présenter le dossier à votre OPCO, qui statue selon le barème de la branche.",
+  resume: "La formation Copilot pour assistante de direction apprend, en quatorze heures réparties sur deux jours, à faire travailler Copilot dans la boîte mail, l'agenda et les réunions d'un dirigeant, en respectant les limites que Microsoft fixe à l'accès délégué. Elle se suit sur votre site comme en visioconférence, seule ou avec les assistantes d'un même siège, douze au plus, et se facture à partir de 1 980 € HT par jour. Organisme certifié Qualiopi, Masteria vous aide à présenter le dossier à votre OPCO, qui statue selon le barème de la branche.",
   enBref: [
     { label: 'Formation', value: "Microsoft Copilot au poste d'assistante de direction : boîte déléguée, agenda, comités, courriers et relevés de décisions" },
     { label: 'Durée', value: "Deux jours de sept heures, idéalement placés la semaine d'un comité que vous préparez" },
     { label: 'Formats', value: "Intra pour les assistantes d'un siège, douze au plus, ou parcours individuel calé sur l'agenda du dirigeant ; sur site ou en visioconférence" },
-    { label: 'Tarif', value: "1 980 € HT par journée, que le groupe compte deux assistantes ou douze" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par journée, que le groupe compte deux assistantes ou douze" },
     { label: 'Financement', value: "Organisme certifié Qualiopi : l'OPCO de l'entreprise instruit la prise en charge selon ses critères et son budget" },
     { label: 'Prérequis', value: "Un compte Microsoft 365 professionnel ; pour les modules sur la boîte du dirigeant, la licence Microsoft Copilot et un accès délégué complet" },
   ],
@@ -254,14 +254,14 @@ export default {
     },
     {
       q: "Comment financer la formation Copilot d'une équipe d'assistantes ?",
-      a: "La certification Qualiopi de Masteria, délivrée pour la catégorie des actions de formation, ouvre la porte à une prise en charge par l'opérateur de compétences dont relève votre entreprise. Sa décision suit le barème de la branche et les crédits encore ouverts. Une journée est facturée 1 980 € HT pour tout le groupe, de deux à douze assistantes, et le parcours complet 3 960 € HT. Une assistante seule paie le même prix journalier. Nous préparons le programme détaillé et la convention à joindre à la demande, avant la session.",
+      a: "La certification Qualiopi de Masteria, délivrée pour la catégorie des actions de formation, ouvre la porte à une prise en charge par l'opérateur de compétences dont relève votre entreprise. Sa décision suit le barème de la branche et les crédits encore ouverts. Une journée est facturée à partir de 1 980 € HT pour tout le groupe, de deux à douze assistantes, et le parcours complet à partir de 3 960 € HT. Une assistante seule paie le même prix journalier de base. Nous préparons le programme détaillé et la convention à joindre à la demande, avant la session.",
     },
   ],
   tarifs: {
     titre: "Le prix des deux journées pour un pôle d'assistantes",
     paras: [
-      "La préparation fait partie du prix. Avant la session, le formateur relève avec vous les accès de chaque participante (licence, délégations, version d'Outlook), récupère quelques modèles de courriers et d'ordres du jour, et ajuste les demandes du guide à vos propres instances. Les supports et la charte d'usage rédigée pendant le module 8 restent à l'équipe.",
-      "Prenons un siège qui inscrit ses six assistantes de direction. Le parcours de deux jours en intra revient à 3 960 € HT pour l'ensemble, soit 660 € HT par assistante. En individuel, calé sur l'agenda d'un seul dirigeant, chaque jour est facturé 1 980 € HT. L'OPCO dont relève l'entreprise étudie ensuite le dossier d'après ses critères. À Genève et à Bruxelles, faute d'OPCO, nous chiffrons la session en euros, hors taxes.",
+      "Le prix de base couvre l'animation, les supports et le programme. Pour partir de vos propres éléments, le formateur relève avant la session avec vous les accès de chaque participante (licence, délégations, version d'Outlook), récupère quelques modèles de courriers et d'ordres du jour, et ajuste les demandes du guide à vos propres instances. Ce temps de préparation s'ajoute et figure au devis. Les supports et la charte d'usage rédigée pendant le module 8 restent à l'équipe.",
+      "Prenons un siège qui inscrit ses six assistantes de direction. Le parcours de deux jours en intra démarre à 3 960 € HT pour l'ensemble, soit dès 660 € HT par assistante. En individuel, calé sur l'agenda d'un seul dirigeant, chaque jour est facturé à partir de 1 980 € HT. L'OPCO dont relève l'entreprise étudie ensuite le dossier d'après ses critères. À Genève et à Bruxelles, faute d'OPCO, nous chiffrons la session en euros, hors taxes.",
     ],
   },
   apres: {

@@ -259,8 +259,8 @@ export default {
  },
  "tarif": {
   "titre": "Prix de la formation et financement par l'OPCO",
-  "answer": "La formation intra se facture à la journée, 1 980 € HT, pour des groupes de 12 participants au plus ; le parcours de deux jours monte donc à 3 960 € HT. Un dirigeant d'enseigne ou un e-commerçant formé seul paie lui aussi à la journée. Masteria étant certifiée Qualiopi, l'OPCOMMERCE, opérateur d'une grande partie du commerce, ou celui de votre branche peut prendre une part de la dépense selon son barème ; pour un réseau, les vagues successives étalent l'effort.",
-  "inclus": "Le cadrage sur un extrait de catalogue, une opération à venir, des avis récents et un export de ventes agrégé ; les journées au siège, en magasin ou à distance, supports compris ; les livrables (prompts du commerce, gabarits, règles d'usage) ; enfin un test de fin de formation et le certificat de réalisation de chaque stagiaire. Pour une session sur site, le trajet du formateur apparaît sur le devis.",
+  "answer": "La formation intra se facture à la journée, à partir de 1 980 € HT, pour des groupes de 12 participants au plus ; le parcours de deux jours démarre donc à 3 960 € HT. Un dirigeant d'enseigne ou un e-commerçant formé seul paie lui aussi à la journée. Masteria étant certifiée Qualiopi, l'OPCOMMERCE, opérateur d'une grande partie du commerce, ou celui de votre branche peut prendre une part de la dépense selon son barème ; pour un réseau, les vagues successives étalent l'effort.",
+  "inclus": "Les journées au siège, en magasin ou à distance, supports compris ; les livrables (prompts du commerce, gabarits, règles d'usage) ; enfin un test de fin de formation et le certificat de réalisation de chaque stagiaire. Pour une session sur site, le trajet du formateur apparaît sur le devis. Quand les exercices portent sur votre catalogue, une opération à venir et vos avis clients, la préparation s'ajoute et figure au devis.",
   "financement": "L'opérateur dépend de votre convention collective ; {/quel-opco|Quel OPCO ?} l'identifie en quelques questions, et les aides possibles figurent sur {/financement-formation-ia|la page financement}. Masteria vous remet programme, convention et justificatifs pour une demande envoyée avant la première session. Pas de financement par le CPF pour ce parcours."
  },
  "faq": [
@@ -302,7 +302,7 @@ export default {
   },
   {
    "q": "Combien coûte une formation IA commerce, et combien de temps dure-t-elle ?",
-   "a": "Le parcours complet occupe deux journées (14 heures), au siège, en magasin ou en visioconférence, pour 12 personnes au maximum ; il revient à 1 980 € HT par jour, soit 3 960 € HT, effectif compris jusqu'à 12. Une journée suffit pour la boutique en ligne seule ou le point de vente seul. Un dirigeant d'enseigne peut être formé individuellement au même tarif journalier. La plupart des enseignes relèvent de l'OPCOMMERCE, qui fixe sa participation ; pas de mobilisation possible du CPF."
+   "a": "Le parcours complet occupe deux journées (14 heures), au siège, en magasin ou en visioconférence, pour 12 personnes au maximum ; il démarre à 1 980 € HT par jour, soit à partir de 3 960 € HT, effectif compris jusqu'à 12. Une journée suffit pour la boutique en ligne seule ou le point de vente seul. Un dirigeant d'enseigne peut être formé individuellement au même tarif journalier. La plupart des enseignes relèvent de l'OPCOMMERCE, qui fixe sa participation ; pas de mobilisation possible du CPF."
   }
  ],
  "course": {

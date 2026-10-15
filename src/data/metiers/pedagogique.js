@@ -257,8 +257,8 @@ export default {
  },
  "tarif": {
   "titre": "Le prix d'une formation IA pour formateurs et concepteurs",
-  "answer": "En intra, toute l'équipe pédagogique, jusqu'à douze personnes, se forme pour 1 980 € HT par jour, et l'ensemble des deux jours totalise 3 960 € HT. Une responsable pédagogique ou un formateur indépendant peut suivre une version individuelle, facturée sur la même base journalière. L'OPCO de l'organisme peut financer la session à hauteur de son barème et de ses fonds, Masteria détenant la certification Qualiopi.",
-  "inclus": "Avant la session, nous cadrons un ou deux modules à créer ou à refondre, vos supports, vos grilles et vos outils (outil auteur, LMS) ; deux journées d'animation, en présentiel ou en ligne ; les supports de la formation et ce que l'équipe produit : prompts pédagogiques, gabarits, règles d'usage. Le questionnaire final et le certificat de réalisation font partie du prix ; le voyage du formateur s'ajoute pour une session dans vos murs, loin de Lyon, et figure sur le devis.",
+  "answer": "En intra, toute l'équipe pédagogique, jusqu'à douze personnes, se forme à partir de 1 980 € HT par jour, et l'ensemble des deux jours démarre à 3 960 € HT. Une responsable pédagogique ou un formateur indépendant peut suivre une version individuelle, facturée sur la même base journalière. L'OPCO de l'organisme peut financer la session à hauteur de son barème et de ses fonds, Masteria détenant la certification Qualiopi.",
+  "inclus": "Deux journées d'animation, en présentiel ou en ligne ; les supports de la formation et ce que l'équipe produit : prompts pédagogiques, gabarits, règles d'usage. Le questionnaire final et le certificat de réalisation font partie du prix ; le voyage du formateur s'ajoute pour une session dans vos murs, loin de Lyon, et figure sur le devis. Si nous travaillons sur vos modules, vos grilles et vos outils auteur, le temps de préparation s'ajoute au prix de base, détaillé sur le devis.",
   "financement": "Organismes et services formation connaissent le circuit : la convention collective rattache l'entreprise à un OPCO, identifiable avec {/quel-opco|Quel OPCO ?}, et notre {/financement-formation-ia|dossier sur le financement} recense les dispositifs. Un formateur indépendant s'adresse à son fonds d'assurance formation. Programme, convention et pièces justificatives sont prêts avant l'entrée en formation ; le CPF ne peut pas être mobilisé."
  },
  "faq": [
@@ -296,7 +296,7 @@ export default {
   },
   {
    "q": "Un organisme de formation peut-il faire financer ce parcours ?",
-   "a": "Oui. Pour un groupe de douze inscrits au plus, comptez 1 980 € HT par jour, soit 3 960 € HT les deux jours ; une personne formée seule règle le même montant journalier. Masteria est certifiée Qualiopi au titre des actions de formation, ce qui ouvre à l'organisme une prise en charge par son OPCO, accordée d'après les critères de celui-ci et les crédits encore disponibles cette année. Les formateurs indépendants passent par leur fonds d'assurance formation ; le compte personnel de formation n'est pas mobilisable."
+   "a": "Oui. Pour un groupe de douze inscrits au plus, comptez au moins 1 980 € HT par jour, soit au moins 3 960 € HT les deux jours ; une personne formée seule règle le même montant journalier. Masteria est certifiée Qualiopi au titre des actions de formation, ce qui ouvre à l'organisme une prise en charge par son OPCO, accordée d'après les critères de celui-ci et les crédits encore disponibles cette année. Les formateurs indépendants passent par leur fonds d'assurance formation ; le compte personnel de formation n'est pas mobilisable."
   }
  ],
  "course": {

@@ -116,7 +116,7 @@ const BUDGETS = [
   { mission: 'Gouvernance, AI Act et RGPD', range: 'Dès 8 000 €', note: "Charte, registre des usages, classement des cas selon l'AI Act, clauses avec les fournisseurs de modèles." },
   { mission: 'Outil IA construit après la mission', range: 'Quelques milliers à plus de 100 000 €', note: "Comptez quelques milliers d'euros pour une maquette ; la brancher sur vos logiciels porte la facture à plusieurs dizaines de milliers ; un déploiement de groupe va au-delà." },
   { mission: 'Consultant senior au temps passé', range: '800 à 1 500 € / jour et plus', note: "Ordre de grandeur pour un profil expérimenté facturé à la journée, hors frais de déplacement." },
-  { mission: 'Formation des équipes (par jour)', range: '1 980 € HT', note: "Tarif Masteria par journée, qu'il s'agisse d'un groupe interne (douze stagiaires au plus) ou d'une seule personne. L'OPCO de votre branche décide de la prise en charge selon ses règles et ses fonds." },
+  { mission: 'Formation des équipes (par jour)', range: 'dès 1 980 € HT', note: "Tarif de départ Masteria par journée, la préparation d'une formation sur mesure s'ajoutant au devis, qu'il s'agisse d'un groupe interne (douze stagiaires au plus) ou d'une seule personne. L'OPCO de votre branche décide de la prise en charge selon ses règles et ses fonds." },
 ]
 
 const ENGAGEMENT = [
@@ -186,7 +186,7 @@ const FAQ = [
   },
   {
     q: 'Quel budget prévoir pour une mission de conseil en IA ?',
-    a: "En France, en 2026, un diagnostic court se chiffre en milliers d'euros ; pour une stratégie avec feuille de route, comptez à partir de 15 000 € ; un programme de groupe dépasse 100 000 €. Un consultant senior facturé à la journée coûte le plus souvent plus de 800 €. Masteria chiffre le conseil au forfait, après le cadrage ; former vos équipes revient à 1 980 € HT la journée.",
+    a: "En France, en 2026, un diagnostic court se chiffre en milliers d'euros ; pour une stratégie avec feuille de route, comptez à partir de 15 000 € ; un programme de groupe dépasse 100 000 €. Un consultant senior facturé à la journée coûte le plus souvent plus de 800 €. Masteria chiffre le conseil au forfait, après le cadrage ; former vos équipes démarre à 1 980 € HT la journée, préparation sur mesure en plus.",
   },
   {
     q: 'Par quelles étapes passe une mission de conseil en IA ?',
@@ -713,7 +713,7 @@ export default function MeilleurCabinetConseilIAPage() {
                   {[
                     ['Conseil', "diagnostic par flux de travail, classement des cas d'usage, charte et registre conformes au RGPD et à l'AI Act, feuille de route avec un porteur par chantier. Une prestation au forfait, que votre OPCO ne finance pas."],
                     ['Construction', "assistants, agents et automatisations développés sur vos fichiers et reliés à vos logiciels ; le code, les prompts et la documentation vous appartiennent."],
-                    ['Formation', "certifiée Qualiopi au titre des actions de formation : plus de 100 programmes, facturés 1 980 € HT la journée, en groupe interne ou pour une personne seule. Votre OPCO de branche examine la prise en charge à l'aune de ses propres règles et des fonds disponibles."],
+                    ['Formation', "certifiée Qualiopi au titre des actions de formation : plus de 100 programmes, facturés à partir de 1 980 € HT la journée, en groupe interne ou pour une personne seule. Votre OPCO de branche examine la prise en charge à l'aune de ses propres règles et des fonds disponibles."],
                   ].map(([t, d]) => (
                     <li key={t} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                       <BadgeCheck size={18} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />

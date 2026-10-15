@@ -12,12 +12,12 @@ export default {
   h1: "Formation créativité avec l'IA : des idées plus variées, vérifiées avant d'être adoptées",
   metaTitle: "Formation créativité avec l'IA (1 jour) | Masteria",
   metaDesc: "Formation créativité avec l'IA en 1 jour : brainstorming en étapes, naming vérifié à l'INPI, concepts de campagne, images et article 50. Qualiopi, OPCO.",
-  resume: "La formation créativité avec l'IA donne en une journée à une équipe marketing, produit ou direction des méthodes pour tirer d'un assistant d'IA des pistes moins convenues, puis pour trier, vérifier et décider entre personnes. Elle se déroule chez vous ou en visioconférence, avec douze participants au plus ou en tête-à-tête, et se facture 1 980 € HT. Titulaire de Qualiopi dans la catégorie « actions de formation », Masteria vous ouvre l'accès à l'OPCO de votre branche, qui peut participer à la dépense suivant ses critères et l'enveloppe qui lui reste.",
+  resume: "La formation créativité avec l'IA donne en une journée à une équipe marketing, produit ou direction des méthodes pour tirer d'un assistant d'IA des pistes moins convenues, puis pour trier, vérifier et décider entre personnes. Elle se déroule chez vous ou en visioconférence, avec douze participants au plus ou en tête-à-tête, et se facture à partir de 1 980 € HT, le travail préalable sur votre sujet créatif s'ajoutant au devis. Titulaire de Qualiopi dans la catégorie « actions de formation », Masteria vous ouvre l'accès à l'OPCO de votre branche, qui peut participer à la dépense suivant ses critères et l'enveloppe qui lui reste.",
   enBref: [
     { label: 'Formation', value: "Idéation, noms de marque, concepts de campagne et critique de projet avec Gemini, Claude, Copilot, ChatGPT ou Vibe" },
     { label: 'Durée', value: "Une journée de sept heures, découpée en six modules qui alternent méthode et production sur vos sujets" },
     { label: 'Formats', value: "Sur place, dans une de vos salles, ou en visioconférence ; douze participants de l'entreprise au maximum, ou une seule personne" },
-    { label: 'Tarif', value: "1 980 € HT pour la journée, groupe entier ou personne seule, TVA de 20 % non comprise" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT pour la journée, groupe entier ou personne seule, TVA de 20 % non comprise ; préparation sur mesure en plus, au devis" },
     { label: 'Financement', value: "Certification Qualiopi de Masteria, catégorie « actions de formation » ; l'OPCO de votre branche statue d'après ses critères et ses fonds" },
     { label: 'Prérequis', value: "Un compte professionnel sur un assistant d'IA et un sujet créatif en cours dans l'équipe : un nom, une campagne, une offre" },
   ],
@@ -241,7 +241,7 @@ export default {
     },
     {
       q: "Quel budget prévoir pour cette journée, et qui peut la financer ?",
-      a: "La session est facturée 1 980 € HT, sur site ou en visioconférence, que le groupe compte douze personnes ou que vous la suiviez seul ; la TVA de 20 % s'ajoute à ce montant. Parce que Masteria a obtenu Qualiopi pour son activité de formation, votre OPCO a la faculté de payer tout ou partie de la journée ; il en décide au vu de ses règles et de ses réserves. Les documents à joindre, programme détaillé et convention, vous sont envoyés par Masteria ; c'est à votre entreprise de saisir l'OPCO avant l'atelier.",
+      a: "La session est facturée à partir de 1 980 € HT, sur site ou en visioconférence, que le groupe compte douze personnes ou que vous la suiviez seul ; la TVA de 20 % s'ajoute à ce montant. Parce que Masteria a obtenu Qualiopi pour son activité de formation, votre OPCO a la faculté de payer tout ou partie de la journée ; il en décide au vu de ses règles et de ses réserves. Les documents à joindre, programme détaillé et convention, vous sont envoyés par Masteria ; c'est à votre entreprise de saisir l'OPCO avant l'atelier.",
     },
     {
       q: "Faut-il un profil créatif pour suivre cette journée ?",
@@ -251,8 +251,8 @@ export default {
   tarifs: {
     titre: "Ce que comprend le prix de la journée de créativité",
     paras: [
-      "Avant la session, le formateur recueille le sujet créatif que l'équipe veut faire avancer (un nom de gamme, une campagne, une offre), la plateforme de marque si elle existe et l'outil d'IA dont disposent les participants. La journée travaille ce sujet du premier au dernier module. Le prix englobe ce travail préalable, les supports de la journée, des consignes d'idéation adaptées à votre marque et la grille de choix que l'équipe emporte.",
-      "Prenons une équipe de huit personnes : la directrice marketing, deux chefs de produit, un designer, deux chargées de communication, un commercial export et le dirigeant. Le groupe règle 1 980 € HT pour la journée, ce qui ramène la place à 247,50 € HT. En individuel, une personne seule paie la même somme. S'y ajoutent 20 % de TVA. Votre OPCO examine ensuite le dossier monté avec Masteria et fixe sa participation selon ses propres règles et ce que permettent ses fonds.",
+      "Avant la session, le formateur recueille le sujet créatif que l'équipe veut faire avancer (un nom de gamme, une campagne, une offre), la plateforme de marque si elle existe et l'outil d'IA dont disposent les participants. La journée travaille ce sujet du premier au dernier module. Le prix de base couvre l'animation, les supports de la journée, des consignes d'idéation adaptées à votre marque et la grille de choix que l'équipe emporte. Ce travail préalable sur votre sujet est chiffré en plus au devis.",
+      "Prenons une équipe de huit personnes : la directrice marketing, deux chefs de produit, un designer, deux chargées de communication, un commercial export et le dirigeant. Le groupe règle à partir de 1 980 € HT pour la journée, ce qui ramène la place à partir de 247,50 € HT. En individuel, une personne seule paie la même somme. S'y ajoutent 20 % de TVA. Votre OPCO examine ensuite le dossier monté avec Masteria et fixe sa participation selon ses propres règles et ce que permettent ses fonds.",
     ],
   },
   apres: {

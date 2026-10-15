@@ -13,12 +13,12 @@ export default {
   h1: "Formation écrits professionnels avec l'IA : mails, comptes rendus et propositions à votre ton",
   metaTitle: "Formation écrits professionnels avec l'IA | Masteria",
   metaDesc: "Formation écrits professionnels avec l'IA, 1 jour : mails délicats, comptes rendus, notes, propositions à votre style, relus avant envoi. Qualiopi.",
-  resume: "La formation écrits professionnels avec l'IA apprend en une journée à faire rédiger par un assistant les mails, comptes rendus, notes et propositions qui partent sous votre nom, avec votre ton, puis à les relire avant l'envoi. Elle se tient chez vous ou en classe virtuelle, avec un groupe de douze collaborateurs au plus ou un participant seul, pour un tarif de 1 980 € HT. Masteria tient sa certification Qualiopi au titre de ses actions de formation ; l'OPCO de votre branche peut dès lors financer la session, s'il l'accepte une fois ses critères et son budget passés en revue.",
+  resume: "La formation écrits professionnels avec l'IA apprend en une journée à faire rédiger par un assistant les mails, comptes rendus, notes et propositions qui partent sous votre nom, avec votre ton, puis à les relire avant l'envoi. Elle se tient chez vous ou en classe virtuelle, avec un groupe de douze collaborateurs au plus ou un participant seul, pour un tarif à partir de 1 980 € HT. Masteria tient sa certification Qualiopi au titre de ses actions de formation ; l'OPCO de votre branche peut dès lors financer la session, s'il l'accepte une fois ses critères et son budget passés en revue.",
   enBref: [
     { label: 'Formation', value: "Écrire avec Copilot, ChatGPT, Claude, Gemini ou Vibe des textes qui engagent la personne qui les signe" },
     { label: 'Durée', value: "Une journée de sept heures : la demande et le style le matin, les écrits du quotidien et leur relecture l'après-midi" },
     { label: 'Formats', value: "Sur place, en salle, ou à distance ; jusqu'à douze collaborateurs réunis, ou une personne en individuel" },
-    { label: 'Tarif', value: "1 980 € HT la journée entière, montant inchangé de un à douze inscrits, hors TVA de 20 %" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT la journée entière, montant inchangé de un à douze inscrits, hors TVA de 20 %" },
     { label: 'Financement', value: "Qualiopi obtenu par Masteria pour la formation ; l'OPCO de votre branche statue sur la demande selon ses règles et ses fonds" },
     { label: 'Prérequis', value: "Un accès professionnel à l'assistant d'IA de l'entreprise et trois textes récents que vous avez signés et dont vous êtes satisfait" },
   ],
@@ -226,7 +226,7 @@ export default {
     },
     {
       q: "Que coûte la journée d'écriture, et qui peut la prendre en charge ?",
-      a: "Comptez 1 980 € HT, hors TVA, pour la session, que la session réunisse jusqu'à douze collaborateurs de l'entreprise ou une seule personne, sur site comme en distanciel, plus 20 % de TVA. La certification Qualiopi de Masteria autorise votre OPCO à prendre en charge la journée, s'il la juge conforme à ses règles et que ses fonds le permettent. Vous recevez de Masteria les pièces à joindre, puis votre entreprise sollicite son OPCO avant la session.",
+      a: "Comptez au moins 1 980 € HT, hors TVA, pour la session, que la session réunisse jusqu'à douze collaborateurs de l'entreprise ou une seule personne, sur site comme en distanciel, plus 20 % de TVA. La certification Qualiopi de Masteria autorise votre OPCO à prendre en charge la journée, s'il la juge conforme à ses règles et que ses fonds le permettent. Vous recevez de Masteria les pièces à joindre, puis votre entreprise sollicite son OPCO avant la session.",
     },
     {
       q: "En quoi cette journée diffère-t-elle d'une formation classique à l'écrit ?",
@@ -236,8 +236,8 @@ export default {
   tarifs: {
     titre: "Ce que paie l'entreprise pour la journée d'écriture",
     paras: [
-      "Avant la session, chaque participant envoie au formateur trois textes qu'il a signés (un mail, un compte rendu, une note ou une proposition) et précise l'outil d'IA dont il dispose. Les ateliers partent de ces textes, et chacun repart avec son guide de style, ses consignes de rédaction et la grille de relecture de la journée. Cette préparation, les supports et le suivi des exercices sont compris dans le prix.",
-      "Prenons un service commercial qui inscrit son directeur, six chargés d'affaires, un technico-commercial, une assistante commerciale et le responsable de l'administration des ventes, soit dix personnes. Le groupe paie 1 980 € HT pour la journée, 198 € HT par tête ; le même tarif de 1 980 € HT s'applique à une personne formée seule. Les 20 % de TVA viennent en plus. Votre OPCO statue ensuite sur le dossier, monté avec Masteria, selon ses propres règles et l'argent dont il dispose.",
+      "Avant la session, chaque participant envoie au formateur trois textes qu'il a signés (un mail, un compte rendu, une note ou une proposition) et précise l'outil d'IA dont il dispose. Les ateliers partent de ces textes, et chacun repart avec son guide de style, ses consignes de rédaction et la grille de relecture de la journée. Le prix de base couvre l'animation, les supports et le suivi des exercices ; la préparation sur vos textes s'y ajoute et figure au devis.",
+      "Prenons un service commercial qui inscrit son directeur, six chargés d'affaires, un technico-commercial, une assistante commerciale et le responsable de l'administration des ventes, soit dix personnes. Le groupe paie à partir de 1 980 € HT pour la journée, soit dès 198 € HT par tête ; le même tarif de base s'applique à une personne formée seule. Les 20 % de TVA viennent en plus. Votre OPCO statue ensuite sur le dossier, monté avec Masteria, selon ses propres règles et l'argent dont il dispose.",
     ],
   },
   apres: {

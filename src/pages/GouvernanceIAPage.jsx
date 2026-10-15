@@ -998,7 +998,7 @@ export default function GouvernanceIAPage() {
                 Deux formations transmettent le dispositif à ceux qui le tiendront
               </h2>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Cette page décrit une mission de conseil. Quand vos équipes doivent faire vivre seules le registre et le comité, deux formations couvertes par la certification Qualiopi de Masteria (catégorie « actions de formation ») prennent le relais, facturées 1 980 € HT par journée, en intra ou en individuel : la formation AI Act, qui apprend à lire le règlement et à classer un usage, et la formation gouvernance IA, qui construit en une journée le registre, la trame de charte et le fonctionnement du comité. Leur prise en charge relève de l'OPCO de votre branche, qui l'accorde d'après ses critères et son budget.
+                Cette page décrit une mission de conseil. Quand vos équipes doivent faire vivre seules le registre et le comité, deux formations couvertes par la certification Qualiopi de Masteria (catégorie « actions de formation ») prennent le relais, facturées à partir de 1 980 € HT par journée, en intra ou en individuel : la formation AI Act, qui apprend à lire le règlement et à classer un usage, et la formation gouvernance IA, qui construit en une journée le registre, la trame de charte et le fonctionnement du comité. Leur prise en charge relève de l'OPCO de votre branche, qui l'accorde d'après ses critères et son budget.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/formation-ai-act" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

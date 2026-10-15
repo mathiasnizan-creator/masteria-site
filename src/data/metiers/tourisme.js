@@ -215,9 +215,9 @@ export default {
   ]
  },
  "tarif": {
-  "titre": "Une journée à 1 980 € HT, financée selon votre convention collective",
-  "answer": "La journée animée dans votre établissement vaut 1 980 € HT pour toute l'équipe présente, dans la limite de douze personnes ; la version en deux jours, 3 960 € HT. Un groupe hôtelier ou un réseau d'offices de tourisme organise plusieurs sessions par vagues, facturées chacune 1 980 € HT.",
-  "inclus": "Le cadrage (plateformes utilisées, langues de vos clientèles, exemples d'avis et d'emails), la journée sur place ou par visioconférence, avec ses supports, des livrables propres à l'établissement (prompts par activité, gabarits de réponse, voix de la maison, règles de l'équipe), une évaluation finale puis un certificat au nom de chacun. Quand la session se tient sur place, loin de Lyon, s'ajoute le voyage du formateur, chiffré dans le devis.",
+  "titre": "Une journée dès 1 980 € HT, financée selon votre convention collective",
+  "answer": "La journée animée dans votre établissement démarre à 1 980 € HT pour toute l'équipe présente, dans la limite de douze personnes ; la version en deux jours, à partir de 3 960 € HT. Un groupe hôtelier ou un réseau d'offices de tourisme organise plusieurs sessions par vagues, facturées chacune à partir de 1 980 € HT.",
+  "inclus": "La journée sur place ou par visioconférence, avec ses supports, des livrables propres à l'établissement (prompts par activité, gabarits de réponse, voix de la maison, règles de l'équipe), une évaluation finale puis un certificat au nom de chacun. Quand la session se tient sur place, loin de Lyon, s'ajoute le voyage du formateur, chiffré dans le devis. Adapter les exercices à vos plateformes, aux langues de vos clientèles et à vos avis demande une préparation qui s'ajoute au prix, chiffrée au devis.",
   "financement": "Pour les salariés d'un hôtel, d'un restaurant ou d'un camping, le financement relève de l'OPCO désigné par la convention collective, souvent AKTO en hôtellerie-restauration ; l'outil {/quel-opco|Quel OPCO ?} le retrouve. Cet opérateur statue selon ses propres règles et ses moyens de l'exercice. Un office de tourisme suit un circuit propre à son statut (association, EPIC, régie), vérifié au cadrage ; un exploitant non salarié sollicite son FAF. Masteria fournit programme, convention et attestations ; la page {/financement-formation-ia|financer une formation en IA} détaille les dispositifs. Pas de CPF."
  },
  "faq": [
@@ -247,7 +247,7 @@ export default {
   },
   {
    "q": "Combien paie un hôtel ou un restaurant, et qui finance ?",
-   "a": "Comptez 1 980 € HT pour une journée animée chez vous, de une à douze personnes, ou 3 960 € HT en deux jours. Les salariés d'un hôtel, d'un restaurant ou d'un camping relèvent de l'OPCO de leur convention collective (AKTO dans bien des cas pour l'hôtellerie-restauration), libre de fixer sa prise en charge. Un office de tourisme suit le circuit de son statut, un exploitant non salarié celui de son FAF. Masteria prépare programme, convention et attestations."
+   "a": "Comptez au moins 1 980 € HT pour une journée animée chez vous, de une à douze personnes, ou au moins 3 960 € HT en deux jours. Les salariés d'un hôtel, d'un restaurant ou d'un camping relèvent de l'OPCO de leur convention collective (AKTO dans bien des cas pour l'hôtellerie-restauration), libre de fixer sa prise en charge. Un office de tourisme suit le circuit de son statut, un exploitant non salarié celui de son FAF. Masteria prépare programme, convention et attestations."
   },
   {
    "q": "Avec quel outil, pour un petit établissement ?",

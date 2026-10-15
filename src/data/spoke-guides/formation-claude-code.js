@@ -8,12 +8,12 @@ export default {
   pagePropre: true,
   metaDesc: "Formation Claude Code pour développeurs et tech leads : CLAUDE.md, modes de permission, plan, tests d'abord, hooks, MCP, GitHub Actions et coûts.",
   prerequis: "Pratique quotidienne du développement, du terminal et de Git ; un dépôt de travail, le vôtre ou un dépôt d'entraînement fourni ; un compte Claude Pro, Max, Team ou Enterprise, ou une clé d'API de la console Claude",
-  resume: "La formation Claude Code de Masteria prépare en deux jours, soit 14 heures, développeurs, tech leads et CTO à déléguer des tâches à l'agent de code d'Anthropic sur leur propre dépôt. Elle accueille en intra une équipe de 12 développeurs au plus, ou une seule personne en individuel, sur site comme à distance. Comptez 1 980 € HT par journée ; la certification Qualiopi ouvre une demande de financement auprès de l'OPCO compétent pour votre secteur.",
+  resume: "La formation Claude Code de Masteria prépare en deux jours, soit 14 heures, développeurs, tech leads et CTO à déléguer des tâches à l'agent de code d'Anthropic sur leur propre dépôt. Elle accueille en intra une équipe de 12 développeurs au plus, ou une seule personne en individuel, sur site comme à distance. Comptez au moins 1 980 € HT par journée, la préparation sur votre dépôt s'ajoutant au devis ; la certification Qualiopi ouvre une demande de financement auprès de l'OPCO compétent pour votre secteur.",
   enBref: [
     { label: 'Formation', value: "Claude Code sur votre dépôt : conventions, permissions, plan, tests, automatisation et maîtrise des coûts" },
     { label: 'Durée', value: "Deux jours de sept heures qui alternent démonstration sur un dépôt et tâche réelle livrée par chaque participant" },
     { label: 'Formats', value: "Intra pour une équipe de 12 développeurs au plus, ou individuel ; en présentiel ou à distance, terminal et éditeur ouverts" },
-    { label: 'Tarif', value: "Une journée : 1 980 € HT pour toute l'équipe, quel que soit l'effectif" },
+    { label: 'Tarif', value: "Une journée à partir de 1 980 € HT pour toute l'équipe, quel que soit l'effectif ; préparation sur votre dépôt en plus, au devis" },
     { label: 'Financement', value: "Masteria certifié Qualiopi ; prise en charge à solliciter auprès de l'OPCO dont dépend votre entreprise" },
     { label: 'Prérequis', value: "Terminal, Git et au moins un langage maîtrisés ; compte Claude Pro, Max, Team ou Enterprise, ou clé d'API" },
   ],
@@ -239,10 +239,10 @@ export default {
     "Le participant sait lire sa consommation avec /usage et expliquer les limites d'usage de son offre.",
   ],
   tarifs: {
-    titre: "Le prix comprend la préparation sur votre dépôt et votre chaîne d'intégration",
+    titre: "La préparation sur votre dépôt et votre chaîne d'intégration, en plus du prix de base",
     paras: [
-      "Le formateur construit les exercices à partir d'un dépôt que vous choisissez, ou d'un dépôt d'entraînement si votre politique l'exige, de tickets tirés de votre backlog et de votre configuration d'intégration continue. Un groupe type réunit huit développeurs, deux tech leads et le CTO, soit onze personnes.",
-      "Le tarif journalier, 1 980 € HT, vaut pour l'équipe entière, quelle que soit sa taille. Les deux jours en intra coûtent ainsi 3 960 € HT, avec 12 participants au plus ; pour les onze personnes de l'exemple, la part de chacun ressort à 360 € HT. Un développeur seul peut suivre le parcours en individuel, au même prix de journée. L'organisme est certifié Qualiopi : votre demande part donc vers l'OPCO de la branche, qui arrête seul le montant couvert, et nous constituons le dossier à vos côtés.",
+      "Pour une formation sur mesure, le formateur construit les exercices à partir d'un dépôt que vous choisissez, ou d'un dépôt d'entraînement si votre politique l'exige, de tickets tirés de votre backlog et de votre configuration d'intégration continue. Un groupe type réunit huit développeurs, deux tech leads et le CTO, soit onze personnes. Ce travail de préparation est chiffré au devis.",
+      "Le tarif journalier, à partir de 1 980 € HT, vaut pour l'équipe entière, quelle que soit sa taille. Les deux jours en intra coûtent ainsi à partir de 3 960 € HT, avec 12 participants au plus ; pour les onze personnes de l'exemple, la part de chacun ressort dès 360 € HT. Un développeur seul peut suivre le parcours en individuel, au même prix de journée. L'organisme est certifié Qualiopi : votre demande part donc vers l'OPCO de la branche, qui arrête seul le montant couvert, et nous constituons le dossier à vos côtés.",
     ],
   },
   apres: {
@@ -295,7 +295,7 @@ export default {
     },
     {
       q: "Notre OPCO prend-il en charge une formation aussi technique ?",
-      a: "La certification Qualiopi de la formation est la condition pour solliciter l'OPCO dont relève votre entreprise ; la décision et le montant suivent les règles de votre branche, sans lien avec la technicité du sujet. En intra, jusqu'à 12 développeurs participent, réunis chez vous ou connectés à distance, et le prix de la journée, 1 980 € HT, ne dépend pas de leur nombre. Nous transmettons le programme, les objectifs et la convention nécessaires au dossier.",
+      a: "La certification Qualiopi de la formation est la condition pour solliciter l'OPCO dont relève votre entreprise ; la décision et le montant suivent les règles de votre branche, sans lien avec la technicité du sujet. En intra, jusqu'à 12 développeurs participent, réunis chez vous ou connectés à distance, et le prix de la journée, à partir de 1 980 € HT, ne dépend pas de leur nombre. Nous transmettons le programme, les objectifs et la convention nécessaires au dossier.",
     },
   ],
   sources: [

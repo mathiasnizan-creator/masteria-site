@@ -255,8 +255,8 @@ export default {
  },
  "tarif": {
   "titre": "Forfait journalier, financement par l'OPCO",
-  "answer": "Une équipe achats de douze personnes au plus paie 1 980 € HT forfaitaires pour chaque journée d'intra, donc 3 960 € HT pour les deux. Un directeur achats isolé, ou un acheteur seul dans son entreprise, peut se former en individuel sur la même base. L'organisme étant certifié Qualiopi, l'OPCO peut financer la session à l'intérieur de ses propres plafonds.",
-  "inclus": "Un cadrage préalable sur une consultation et ses offres, un cahier des charges, un contrat-cadre et un export de dépenses, anonymisés ; deux journées d'animation, en salle ou en ligne ; les supports, puis ce que l'équipe a produit (prompts achats, gabarits, règles de confidentialité et d'équité). Une évaluation des acquis puis un certificat de réalisation concluent le parcours ; un site éloigné de Lyon ajoute au devis le déplacement du formateur.",
+  "answer": "Une équipe achats de douze personnes au plus paie à partir de 1 980 € HT pour chaque journée d'intra, donc à partir de 3 960 € HT pour les deux. Un directeur achats isolé, ou un acheteur seul dans son entreprise, peut se former en individuel sur la même base. L'organisme étant certifié Qualiopi, l'OPCO peut financer la session à l'intérieur de ses propres plafonds.",
+  "inclus": "Deux journées d'animation, en salle ou en ligne ; les supports, puis ce que l'équipe a produit (prompts achats, gabarits, règles de confidentialité et d'équité). Une évaluation des acquis puis un certificat de réalisation concluent le parcours ; un site éloigné de Lyon ajoute au devis le déplacement du formateur. Le travail de préparation sur vos pièces (consultation et offres, cahier des charges, contrat-cadre, export de dépenses anonymisés) se chiffre en plus au devis.",
   "financement": "L'OPCO compétent se déduit de la convention collective, et {/quel-opco|Quel OPCO ?} vous le donne en quelques clics ; notre page {/financement-formation-ia|financer une formation à l'IA} expose les règles. Tous les justificatifs, programme et convention compris, vous parviennent avant le premier jour. La formation n'ouvre aucun droit au CPF."
  },
  "faq": [
@@ -294,7 +294,7 @@ export default {
   },
   {
    "q": "Quel budget, et quel financement pour une formation IA achats ?",
-   "a": "Que vous formiez quatre acheteurs ou douze, le prix reste de 1 980 € HT par jour et de 3 960 € HT pour l'ensemble, déplacement du formateur en plus hors de la région lyonnaise. Parce que Masteria est certifiée Qualiopi, l'OPCO peut assumer tout ou partie de la dépense, à la mesure de ses fonds. Programme, convention et justificatifs vous sont remis ; ce parcours n'ouvre aucun droit CPF."
+   "a": "Que vous formiez quatre acheteurs ou douze, le prix part de 1 980 € HT par jour et de 3 960 € HT pour l'ensemble, déplacement du formateur en plus hors de la région lyonnaise. Parce que Masteria est certifiée Qualiopi, l'OPCO peut assumer tout ou partie de la dépense, à la mesure de ses fonds. Programme, convention et justificatifs vous sont remis ; ce parcours n'ouvre aucun droit CPF."
   }
  ],
  "course": {

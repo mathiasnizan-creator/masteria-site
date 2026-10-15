@@ -11,12 +11,12 @@ export default {
   h1: "Formation ChatGPT RH : recrutement, intégration et écrits du service",
   metaTitle: "Formation ChatGPT RH · ressources humaines | Masteria",
   metaDesc: "Formation ChatGPT RH : annonces, livret d'accueil, réponses aux managers sur vos accords, tri de candidatures tenu hors de l'outil. 2 jours, Qualiopi.",
-  resume: "La formation ChatGPT RH apprend à une équipe ressources humaines à confier à ChatGPT les écrits du service (annonces de recrutement, livret d'accueil, notes, réponses aux managers) tout en gardant hors de l'outil les données sensibles et les décisions qui touchent une personne. Deux journées de sept heures, sur site ou en visioconférence, réunissent jusqu'à douze membres du service, ou une personne en individuel, moyennant 1 980 € HT chaque jour. Masteria, dont la certification Qualiopi vise ses actions de formation, monte avec vous le dossier destiné à votre OPCO.",
+  resume: "La formation ChatGPT RH apprend à une équipe ressources humaines à confier à ChatGPT les écrits du service (annonces de recrutement, livret d'accueil, notes, réponses aux managers) tout en gardant hors de l'outil les données sensibles et les décisions qui touchent une personne. Deux journées de sept heures, sur site ou en visioconférence, réunissent jusqu'à douze membres du service, ou une personne en individuel, moyennant au moins 1 980 € HT chaque jour. Masteria, dont la certification Qualiopi vise ses actions de formation, monte avec vous le dossier destiné à votre OPCO.",
   enBref: [
     { label: 'Formation', value: "ChatGPT pour les ressources humaines : recrutement, intégration, politiques internes, campagne d'entretiens et communication RH" },
     { label: 'Durée', value: "Deux journées de sept heures, faciles à caler avant une vague de recrutements ou la campagne d'entretiens annuels" },
     { label: 'Formats', value: "Chez vous ou en classe à distance, de deux à douze participants ; un responsable RH peut aussi la suivre seul" },
-    { label: 'Tarif', value: "Chaque journée : 1 980 € HT, avec un groupe interne ou avec une seule personne" },
+    { label: 'Tarif', value: "Chaque journée : à partir de 1 980 € HT, avec un groupe interne ou avec une seule personne" },
     { label: 'Financement', value: "Qualiopi obtenu pour les actions de formation ; l'OPCO de l'entreprise étudie la demande avec les règles de sa branche" },
     { label: 'Prérequis', value: "Aucune compétence technique ; un compte ChatGPT d'entreprise de préférence, vérifié avec vous avant la session" },
   ],
@@ -185,8 +185,8 @@ export default {
   tarifs: {
     titre: "Le budget d'un service RH pour ces deux jours",
     paras: [
-      "Le service paie chaque journée 1 980 € HT, que deux, cinq ou douze collègues y assistent, et le même montant pour un participant formé seul. Un service RH de cinq personnes (la DRH, deux chargées de recrutement, une gestionnaire paie et un responsable formation) règle 3 960 € HT pour l'ensemble du parcours, soit 792 € HT par tête.",
-      "En amont, le formateur étudie avec vous une annonce récente, votre livret d'accueil et la liste des accords en vigueur : les ateliers se construisent sur ces pièces. Votre responsable formation connaît la suite : Masteria fournit programme, convention puis attestations, pièces que demande l'OPCO, lequel tranche selon les critères de la branche et les fonds disponibles.",
+      "Le service paie chaque journée à partir de 1 980 € HT, que deux, cinq ou douze collègues y assistent, et le même montant pour un participant formé seul. Un service RH de cinq personnes (la DRH, deux chargées de recrutement, une gestionnaire paie et un responsable formation) règle à partir de 3 960 € HT pour l'ensemble du parcours, soit dès 792 € HT par tête.",
+      "En amont, le formateur étudie avec vous une annonce récente, votre livret d'accueil et la liste des accords en vigueur : les ateliers se construisent sur ces pièces, et ce temps d'adaptation figure en plus dans le devis. Votre responsable formation connaît la suite : Masteria fournit programme, convention puis attestations, pièces que demande l'OPCO, lequel tranche selon les critères de la branche et les fonds disponibles.",
     ],
   },
   cta: {
@@ -234,7 +234,7 @@ export default {
     },
     {
       q: "Comment financer une formation ChatGPT RH ?",
-      a: "Le service RH connaît la démarche : l'OPCO de la branche examine la demande d'après ses critères et les fonds encore disponibles, à condition que l'organisme soit certifié Qualiopi, catégorie actions de formation, comme Masteria l'est. Le tarif ne varie pas : chaque journée vaut 1 980 € HT, qu'elle réunisse un groupe interne de douze au plus ou un participant seul. Nous vous remettons programme, convention puis attestations. Pour une filiale genevoise ou bruxelloise, faute d'OPCO, le devis s'établit en euros HT.",
+      a: "Le service RH connaît la démarche : l'OPCO de la branche examine la demande d'après ses critères et les fonds encore disponibles, à condition que l'organisme soit certifié Qualiopi, catégorie actions de formation, comme Masteria l'est. Le tarif de base ne varie pas : chaque journée vaut au moins 1 980 € HT, qu'elle réunisse un groupe interne de douze au plus ou un participant seul. Nous vous remettons programme, convention puis attestations. Pour une filiale genevoise ou bruxelloise, faute d'OPCO, le devis s'établit en euros HT.",
     },
   ],
 }

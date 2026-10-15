@@ -91,10 +91,12 @@ export function FormatTabs({ onContact }) {
           </div>
           <div style={{ background: '#F8F8F8', borderRadius: 14, padding: '28px' }}>
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>Tarif indicatif</div>
+            <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginBottom: 4 }}>
               <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#111' }}>{cur.price}</span>
               {cur.unit && <span style={{ fontSize: 13, color: '#4B5563' }}>{cur.unit}</span>}
             </div>
+            <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 8 }}>Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis.</div>
             <div style={{ fontSize: 12, color: '#16A34A', fontWeight: 600, marginBottom: 24, display: 'flex', alignItems: 'center' }}><Check size={14} color="#16A34A" strokeWidth={3} style={{ marginRight: 4, flexShrink: 0 }} />Finançable OPCO</div>
             <PrimaryBtn onClick={onContact} style={{ width: '100%', display: 'block', textAlign: 'center' }}>
               Contacter notre équipe
@@ -126,6 +128,7 @@ export function SidebarFormatPicker({ onContact }) {
         ))}
       </div>
       <div style={{ marginBottom: 10 }}>
+        <div style={{ fontSize: 10, color: '#6B7280' }}>À partir de</div>
         <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 900, color: '#111', whiteSpace: 'nowrap' }}>{cur.price}</span>
         {cur.unit && <span style={{ fontSize: 11, color: '#6B7280', marginLeft: 4 }}>{cur.unit}</span>}
       </div>

@@ -39,7 +39,7 @@ const c = '#2563EB'
 const cLight = '#DBEAFE'
 
 const META_TITLE = "Formation IA Qualiopi : garanties et financement | Masteria"
-const META_DESC = "Formation IA Qualiopi : les garanties de la certification, le rôle de votre OPCO, plus de 100 programmes par métier et par outil, à 1 980 € HT/jour."
+const META_DESC = "Formation IA Qualiopi : les garanties de la certification, le rôle de votre OPCO, plus de 100 programmes par métier et par outil, dès 1 980 € HT/jour."
 const KEYWORDS = "formation ia qualiopi, formation intelligence artificielle qualiopi, formation ia certifiée qualiopi, formation ia finançable opco, organisme formation ia qualiopi, formation ia opco"
 
 /* Sources officielles citées par la page (JSON-LD WebPage.citation + section visible). */
@@ -90,7 +90,7 @@ const EN_BREF = [
   { label: 'Ce que ça permet', value: "Présenter la formation à votre OPCO pour une prise en charge, qu'il accorde selon ses règles et ses fonds" },
   { label: 'Ce que ça ne permet pas', value: "Le CPF : il ne finance que des titres inscrits au RNCP ou au Répertoire spécifique, catégorie dont nos sessions courtes ne relèvent pas" },
   { label: 'Catalogue', value: "Plus de 100 programmes : par métier (marketing, finance, RH, achats…), par outil (Mistral, Claude, Gemini, ChatGPT, Copilot) et par thème (AI Act, dirigeants)" },
-  { label: 'Tarif', value: "Un jour de session : 1 980 € HT, en intra (jusqu'à douze stagiaires) ou en individuel. Deux jours : 3 960 € HT" },
+  { label: 'Tarif', value: "Un jour de session : à partir de 1 980 € HT, en intra (jusqu'à douze stagiaires) ou en individuel. Deux jours : à partir de 3 960 € HT. Une formation sur mesure ajoute sa préparation au devis" },
 ]
 
 /* ───────── Ce qu'il faut savoir (6 cartes) ───────── */
@@ -137,7 +137,7 @@ const ATOUTS = [
   },
   {
     title: 'Un prix lisible',
-    desc: "Le prix ne change ni avec le métier ni avec l'outil : un jour de session vaut 1 980 € HT, pour une équipe de douze au plus réunie en intra comme pour une seule personne. Deux jours reviennent à 3 960 € HT.",
+    desc: "Le prix ne change ni avec le métier ni avec l'outil : un jour de session démarre à 1 980 € HT, pour une équipe de douze au plus réunie en intra comme pour une seule personne. Deux jours démarrent à 3 960 € HT, hors temps de préparation d'une formation bâtie sur vos dossiers.",
   },
   {
     title: "Le métier d'abord, l'outil ensuite",
@@ -232,7 +232,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte une formation IA Qualiopi chez Masteria ?",
-    a: "La journée de session est à 1 980 € HT, sur n'importe quel sujet, pour un groupe intra de douze participants au maximum ou pour une seule personne. Deux journées pour toute l'équipe font 3 960 € HT, avant une éventuelle prise en charge par votre OPCO. Pour une session loin de Lyon, le déplacement du formateur est refacturé au réel. Le devis et le programme vous parviennent en moins de 24 heures.",
+    a: "La journée de session démarre à 1 980 € HT, sur n'importe quel sujet, pour un groupe intra de douze participants au maximum ou pour une seule personne. Deux journées pour toute l'équipe démarrent à 3 960 € HT, avant une éventuelle prise en charge par votre OPCO. Pour une session loin de Lyon, le déplacement du formateur est refacturé au réel. Le devis et le programme vous parviennent en moins de 24 heures.",
   },
   {
     q: "Comment se passe la prise en charge OPCO, concrètement ?",
@@ -413,7 +413,7 @@ export default function QualiopiPage() {
           </p>
 
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA Qualiopi est dispensée par un organisme dont un auditeur a validé les méthodes au regard du référentiel national qualité, ce qui permet de <strong style={{ color: '#fff', fontWeight: 700 }}>la présenter à votre OPCO pour une prise en charge</strong>. Masteria est certifié sur la catégorie « actions de formation » : ses programmes IA, par métier, par outil ou par thème, entrent tous dans ce cadre et sont facturés 1 980 € HT le jour de session.
+            Une formation IA Qualiopi est dispensée par un organisme dont un auditeur a validé les méthodes au regard du référentiel national qualité, ce qui permet de <strong style={{ color: '#fff', fontWeight: 700 }}>la présenter à votre OPCO pour une prise en charge</strong>. Masteria est certifié sur la catégorie « actions de formation » : ses programmes IA, par métier, par outil ou par thème, entrent tous dans ce cadre et sont facturés à partir de 1 980 € HT le jour de session.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -587,7 +587,7 @@ export default function QualiopiPage() {
           <Kicker>Prix et prise en charge</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Ce que coûte une formation IA Qualiopi chez Masteria, et qui peut la payer</h2>
           <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une journée de session coûte 1 980 € HT, pour un groupe intra de douze stagiaires tout au plus ou en individuel ; deux journées, 3 960 € HT. Votre OPCO peut la financer selon ses règles et dans la limite de ses fonds ; le dossier se prépare avec nous, et vous avez le devis dans les 24 heures.</strong>
+            <strong>Une journée de session démarre à 1 980 € HT, pour un groupe intra de douze stagiaires tout au plus ou en individuel ; deux journées, à 3 960 € HT. Votre OPCO peut la financer selon ses règles et dans la limite de ses fonds ; le dossier se prépare avec nous, et vous avez le devis dans les 24 heures.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
             <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>

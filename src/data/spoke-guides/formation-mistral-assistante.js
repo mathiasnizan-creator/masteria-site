@@ -12,12 +12,12 @@ export default {
   metaTitle: 'Formation Mistral AI assistante de direction | Masteria',
   metaDesc: "Vibe pour assistantes de direction : tri du courrier programmé, semaine du dirigeant préparée, comptes rendus, connecteurs Outlook et Gmail sous contrôle.",
   keywords: "formation Mistral assistante de direction, formation Vibe assistanat, Mistral AI secrétariat de direction, tâches planifiées Vibe, connecteur Outlook Vibe",
-  resume: "La formation Mistral AI pour assistantes et assistants de direction apprend à relier Vibe à la messagerie et à l'agenda du dirigeant sans perdre le contrôle d'un seul envoi, à programmer le tri du courrier et la préparation de la semaine, puis à produire des comptes rendus qui font agir. Deux jours de sept heures, au bureau ou à distance, pour un pool d'assistantes ou une seule personne ; chaque journée revient à 1 980 € HT, avec une participante comme avec douze. La certification Qualiopi de Masteria couvre ses actions de formation, et votre OPCO décide de financer ou non la session, à l'aune des règles de branche et de ses réserves.",
+  resume: "La formation Mistral AI pour assistantes et assistants de direction apprend à relier Vibe à la messagerie et à l'agenda du dirigeant sans perdre le contrôle d'un seul envoi, à programmer le tri du courrier et la préparation de la semaine, puis à produire des comptes rendus qui font agir. Deux jours de sept heures, au bureau ou à distance, pour un pool d'assistantes ou une seule personne ; chaque journée se facture à partir de 1 980 € HT, avec une participante comme avec douze. La certification Qualiopi de Masteria couvre ses actions de formation, et votre OPCO décide de financer ou non la session, à l'aune des règles de branche et de ses réserves.",
   enBref: [
     { label: 'Formation', value: "Vibe au secrétariat de direction : courrier, agenda, rendez-vous, comptes rendus et instances" },
     { label: 'Durée', value: "Quatorze heures en deux journées, espacées d'une semaine si vous voulez éprouver les tâches programmées" },
     { label: 'Formats', value: "Au bureau ou en visioconférence ; le pool d'assistantes jusqu'à douze personnes, ou une assistante de dirigeant seule" },
-    { label: 'Tarif', value: "1 980 € HT par jour, tarif unique jusqu'à douze personnes ; abonnement Vibe souscrit séparément" },
+    { label: 'Tarif', value: "À partir de 1 980 € HT par jour, tarif de base unique jusqu'à douze personnes ; abonnement Vibe souscrit séparément" },
     { label: 'Financement', value: "Organisme Qualiopi (catégorie : actions de formation) ; l'OPCO de la branche juge du financement à ses conditions" },
     { label: 'Prérequis', value: "Gérer un agenda et une messagerie pour un dirigeant ; l'accord du service informatique pour brancher Outlook ou Gmail sur Vibe" },
   ],
@@ -292,14 +292,14 @@ export default {
     },
     {
       q: "Quel budget prévoir pour former quatre assistantes, et qui finance ?",
-      a: "Le tarif se fixe à la journée : 1 980 € HT, pour une assistante comme pour douze. Former quatre assistantes pendant deux jours coûte 3 960 € HT, 990 € HT par participante. Le financement relève de votre OPCO, qui l'examine à l'aune de ses propres critères ; Masteria y est éligible grâce à sa certification Qualiopi, obtenue pour les actions de formation, et vous fournit les pièces que la demande exige. L'abonnement Vibe se règle à part, auprès de Mistral.",
+      a: "Le tarif se fixe à la journée, à partir de 1 980 € HT, pour une assistante comme pour douze. Former quatre assistantes pendant deux jours coûte à partir de 3 960 € HT, soit dès 990 € HT par participante. Le financement relève de votre OPCO, qui l'examine à l'aune de ses propres critères ; Masteria y est éligible grâce à sa certification Qualiopi, obtenue pour les actions de formation, et vous fournit les pièces que la demande exige. L'abonnement Vibe se règle à part, auprès de Mistral.",
     },
   ],
   tarifs: {
     titre: "Le prix pour un secrétariat de direction",
     paras: [
-      "Le forfait inclut un entretien préparatoire avec le formateur : il passe en revue avec vous l'organisation des boîtes, les agendas à gérer, deux comptes rendus récents anonymisés et vos procédures internes. Les ateliers portent ensuite sur votre quotidien, et chaque participante repart avec ses tâches planifiées écrites, ses instructions de poste et sa bibliothèque de procédures.",
-      "Exemple : les quatre assistantes d'un comité de direction suivent ensemble les deux jours en intra : sur 3 960 € HT facturés, la part de chacune s'élève à 990 € HT. Une assistante de dirigeant accompagnée seule règle 1 980 € HT pour chaque journée. Votre OPCO tranche sur le financement à partir de ses propres critères, avec le dossier que Masteria prépare pour vous. L'abonnement Vibe reste en dehors du prix.",
+      "Le forfait de base couvre l'animation, les supports et le programme. Un entretien préparatoire avec le formateur s'y ajoute au devis : il passe en revue avec vous l'organisation des boîtes, les agendas à gérer, deux comptes rendus récents anonymisés et vos procédures internes. Les ateliers portent ensuite sur votre quotidien, et chaque participante repart avec ses tâches planifiées écrites, ses instructions de poste et sa bibliothèque de procédures.",
+      "Exemple : les quatre assistantes d'un comité de direction suivent ensemble les deux jours en intra : sur au moins 3 960 € HT facturés, la part de chacune démarre à 990 € HT. Une assistante de dirigeant accompagnée seule règle au moins 1 980 € HT pour chaque journée. Votre OPCO tranche sur le financement à partir de ses propres critères, avec le dossier que Masteria prépare pour vous. L'abonnement Vibe reste en dehors du prix.",
     ],
   },
   apres: {

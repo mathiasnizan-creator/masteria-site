@@ -204,7 +204,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte un conseil en stratégie IA ?",
-    a: "Nous la vendons au forfait. Le devis suit les 30 minutes de cadrage offertes, quand nous connaissons la taille de l'organisation, le nombre d'entretiens et la profondeur de l'état des lieux. Pour donner un ordre d'idée, une mission courte pour une seule direction représente quelques milliers d'euros ; un programme qui couvre plusieurs pays atteint plusieurs dizaines de milliers d'euros, parfois davantage. Côté financement, le conseil n'est pas finançable par votre OPCO. La formation des dirigeants qui l'accompagne souvent, dont la journée coûte 1 980 € HT, entre en revanche dans le champ de votre opérateur de compétences, qui l'examine au regard de ses critères et de son budget.",
+    a: "Nous la vendons au forfait. Le devis suit les 30 minutes de cadrage offertes, quand nous connaissons la taille de l'organisation, le nombre d'entretiens et la profondeur de l'état des lieux. Pour donner un ordre d'idée, une mission courte pour une seule direction représente quelques milliers d'euros ; un programme qui couvre plusieurs pays atteint plusieurs dizaines de milliers d'euros, parfois davantage. Côté financement, le conseil n'est pas finançable par votre OPCO. La formation des dirigeants qui l'accompagne souvent, dont la journée démarre à 1 980 € HT, entre en revanche dans le champ de votre opérateur de compétences, qui l'examine au regard de ses critères et de son budget.",
   },
   {
     q: "Quelle différence entre stratégie IA et conseil en transformation numérique ?",

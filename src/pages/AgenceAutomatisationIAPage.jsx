@@ -224,7 +224,7 @@ const FAQ = [
   },
   {
     q: "Combien coûte une mission d'automatisation IA ?",
-    a: "La première demi-heure de cadrage est offerte. Le forfait de la mission dépend ensuite du nombre de processus, des logiciels à relier et de l'autonomie laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble en production, et un programme couvrant plusieurs sites dépasse 100 000 €. La formation des équipes, facturée 1 980 € HT la journée, relève du budget formation, que l'OPCO de votre branche couvre à hauteur de ce qu'autorisent ses règles et ses fonds ; quant à l'automatisation, elle n'est pas finançable par votre OPCO.",
+    a: "La première demi-heure de cadrage est offerte. Le forfait de la mission dépend ensuite du nombre de processus, des logiciels à relier et de l'autonomie laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble en production, et un programme couvrant plusieurs sites dépasse 100 000 €. La formation des équipes, facturée à partir de 1 980 € HT la journée (préparation sur mesure en plus, au devis), relève du budget formation, que l'OPCO de votre branche couvre à hauteur de ce qu'autorisent ses règles et ses fonds ; quant à l'automatisation, elle n'est pas finançable par votre OPCO.",
   },
   {
     q: "Intervenez-vous à distance ou sur site ?",
@@ -293,7 +293,7 @@ const serviceJsonLd = {
       {
         '@type': 'Offer',
         name: 'Formation des équipes (Qualiopi, actions de formation)',
-        description: "Journée à 1 980 € HT ; groupe interne de douze personnes au plus, ou séance individuelle ; financement selon les règles et les fonds disponibles chez l'OPCO.",
+        description: "Journée à partir de 1 980 € HT ; groupe interne de douze personnes au plus, ou séance individuelle ; financement selon les règles et les fonds disponibles chez l'OPCO.",
         price: '1980',
         priceCurrency: 'EUR',
       },
@@ -710,7 +710,7 @@ export default function AgenceAutomatisationIAPage() {
           </h2>
 
           <p style={{ ...answerStyle, background: '#fff', marginBottom: 36 }}>
-            <strong>Chez Masteria, la première demi-heure de cadrage est offerte. La mission se chiffre ensuite au forfait, selon le nombre de processus, le nombre de logiciels concernés et la marge d'action laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble de processus en production, et un programme multi-sites passe au-delà de 100 000 €. La formation des équipes peut s'y ajouter, à 1 980 € HT la journée.</strong>
+            <strong>Chez Masteria, la première demi-heure de cadrage est offerte. La mission se chiffre ensuite au forfait, selon le nombre de processus, le nombre de logiciels concernés et la marge d'action laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble de processus en production, et un programme multi-sites passe au-delà de 100 000 €. La formation des équipes peut s'y ajouter, à partir de 1 980 € HT la journée.</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
@@ -740,6 +740,7 @@ export default function AgenceAutomatisationIAPage() {
             </div>
             <div style={{ ...cardStyle, padding: 32 }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: '#6B7280', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>Formation (en complément)</div>
+              <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 2 }}>À partir de</div>
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 20 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 38, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 6 }}>/ jour HT</div>
@@ -754,6 +755,9 @@ export default function AgenceAutomatisationIAPage() {
               </ul>
             </div>
           </div>
+          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 8 }}>
+            Pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis.
+          </p>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
             Pour situer le budget avant le cadrage, notre page sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link> détaille les ordres de grandeur. Côté financement, la règle est simple : une mission d'automatisation n'est pas finançable par votre OPCO ; seuls les jours de formation peuvent l'être, et un prestataire qui promet le contraire vous expose à un refus de prise en charge. Pour former vos équipes en parallèle du déploiement, la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> présente le programme de deux jours.
           </p>
