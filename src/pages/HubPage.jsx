@@ -237,13 +237,18 @@ export default function HubPage() {
           {hub.h1}
         </h1>
         {hub.definition && (
-          <p id="definition" style={{ fontSize: 17, color: '#0A0A0A', fontWeight: 500, maxWidth: 720, margin: '0 auto 20px', lineHeight: 1.7, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '18px 22px', textAlign: 'left' }}>
+          <p id="definition" style={propre
+            ? { fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', fontWeight: 500, maxWidth: 640, margin: '0 auto 16px', lineHeight: 1.6 }
+            : { fontSize: 17, color: '#0A0A0A', fontWeight: 500, maxWidth: 720, margin: '0 auto 20px', lineHeight: 1.7, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '18px 22px', textAlign: 'left' }}>
             {hub.definition}
           </p>
         )}
-        <p style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }}>
-          {hub.intro}
-        </p>
+        {/* Page propre : l'intro passe en chapeau de la section « Pourquoi », le hero reste court */}
+        {!(propre && why.length > 0) && (
+          <p style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }}>
+            {hub.intro}
+          </p>
+        )}
         {hub.dateModified && (
           <p style={{ fontSize: 13, color: '#6B7280', margin: '0 auto 24px' }}>
             Page revue le {dateFr(hub.dateModified)} par{' '}
@@ -251,9 +256,12 @@ export default function HubPage() {
           </p>
         )}
         {propre && <div style={{ display: 'flex', justifyContent: 'center', margin: '0 auto 28px' }}><PressMention /></div>}
-        <p style={{ fontSize: 16, color: hub.color, maxWidth: 580, margin: '0 auto 40px', fontStyle: 'italic', fontWeight: 600 }}>
-          {hub.pitch}
-        </p>
+        {!propre && (
+          <p style={{ fontSize: 16, color: hub.color, maxWidth: 580, margin: '0 auto 40px', fontStyle: 'italic', fontWeight: 600 }}>
+            {hub.pitch}
+          </p>
+        )}
+        {propre && <div style={{ height: 8 }} />}
         <Link to="/contact" style={{
           display: 'inline-block', background: hub.color, color: '#fff',
           padding: '14px 32px', borderRadius: 8, textDecoration: 'none',
@@ -312,7 +320,11 @@ export default function HubPage() {
             }}>
               {titres.why || `Pourquoi former vos équipes à ${toolShort} ?`}
             </h2>
-            {!propre && (
+            {propre ? (
+              <p style={{ color: '#374151', fontSize: 16.5, lineHeight: 1.8, marginBottom: 44, maxWidth: 760 }}>
+                {hub.intro}
+              </p>
+            ) : (
               <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
                 Des bénéfices concrets, mesurables dès le retour en poste.
               </p>

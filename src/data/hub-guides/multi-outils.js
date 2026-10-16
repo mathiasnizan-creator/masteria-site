@@ -15,9 +15,9 @@ export default {
   h1: "Formation multi-outils IA : tester cinq assistants sur vos dossiers avant de choisir",
   outilCourt: 'multi-outils IA',
 
-  definition: "Une formation multi-outils IA fait travailler ChatGPT, Microsoft Copilot (anciennement Microsoft 365 Copilot), Google Gemini, Claude et Vibe (Mistral AI) sur les mêmes documents d'une équipe, pour relever leurs écarts et décider lequel retenir ou comment les combiner. Masteria la donne en deux journées de 7 heures, à partir de 1 980 € HT chacune, à douze stagiaires au plus en intra ou à une seule personne ; la session relève de la certification Qualiopi que Masteria détient au titre des actions de formation.",
+  definition: "Deux jours pour tester ChatGPT, Copilot, Gemini, Claude et Vibe sur les mêmes documents de votre équipe, puis choisir lequel garder ou comment les combiner. En groupe jusqu'à douze personnes ou en individuel.",
 
-  intro: "Dans bien des équipes, l'assistant IA s'est choisi poste par poste, au gré des habitudes de chacun. La formation multi-outils remet ce choix à plat. Pendant deux jours, le groupe soumet les mêmes pièces de son activité aux cinq assistants, note ce que chacun en tire, puis confronte ces notes aux critères de l'entreprise : la suite bureautique déjà payée, la longueur des dossiers, l'endroit où partent les données, le prix par siège. Elle s'adresse aux équipes qui n'ont encore rien arbitré et à celles qui jonglent déjà avec plusieurs outils sans règle commune. À la sortie, le groupe tient une grille de choix argumentée, que la direction peut reprendre pour décider.",
+  intro: "Dans beaucoup d'équipes, chacun a choisi son assistant de son côté. Pendant ces deux jours, le groupe soumet les mêmes pièces aux cinq outils et note ce que chacun en tire. Ces notes sont ensuite comparées aux critères de l'entreprise : suite bureautique déjà payée, longueur des dossiers, lieu de stockage des données, prix par siège. Le groupe repart avec une grille de choix que la direction peut reprendre pour décider.",
 
   pitch: "Mettre les assistants à l'épreuve de vos dossiers avant d'engager le budget des licences.",
 
