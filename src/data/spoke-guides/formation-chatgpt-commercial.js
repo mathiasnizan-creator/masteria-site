@@ -12,7 +12,7 @@ export default {
   h1: "Formation ChatGPT commercial : préparer, proposer, relancer",
   metaTitle: "Formation ChatGPT commercial · vente, prospection | Masteria",
   metaDesc: "Formation ChatGPT pour commerciaux : rendez-vous préparés sources à l'appui, propositions, relances, pipeline sur export, objections à l'oral. 2 jours.",
-  resume: "La formation ChatGPT commercial apprend à une équipe de vente à préparer ses rendez-vous, rédiger ses propositions et tenir ses relances avec ChatGPT, en gardant la main sur les prix et sur chaque engagement pris auprès d'un client. Elle se déroule en deux journées de sept heures, dans vos locaux commerciaux ou à distance, avec une équipe de douze vendeurs au maximum ou un commercial seul, pour un prix journalier à partir de 1 980 € HT. Titulaire de la certification Qualiopi (catégorie actions de formation), Masteria vous ouvre la voie d'un financement par votre OPCO.",
+  resume: "La formation ChatGPT commercial apprend à une équipe de vente à préparer ses rendez-vous, rédiger ses propositions et tenir ses relances avec ChatGPT, en gardant la main sur les prix et sur chaque engagement pris auprès d'un client. Elle tient en deux fois sept heures, sur votre plateau commercial ou en visioconférence, pour une force de vente limitée à douze personnes ou pour un vendeur accompagné seul, pour un prix journalier à partir de 1 980 € HT. Titulaire de la certification Qualiopi (catégorie actions de formation), Masteria vous ouvre la voie d'un financement par votre OPCO.",
   enBref: [
     { label: 'Formation', value: "ChatGPT pour la vente : préparation des rendez-vous, propositions, relances, lecture du pipeline et entraînement à la négociation" },
     { label: 'Durée', value: "Deux journées, souvent séparées d'une semaine de terrain pour essayer les relances entre les deux" },
@@ -22,7 +22,7 @@ export default {
     { label: 'Prérequis', value: "Un compte ChatGPT par vendeur, un export récent du CRM et deux ou trois propositions déjà envoyées" },
   ],
   prerequis: "Un compte ChatGPT par vendeur, un export récent du CRM et deux ou trois propositions déjà envoyées",
-  intro: "Un commercial passe une bonne part de sa semaine loin du client : à chercher qui il va rencontrer, à écrire la proposition, à relancer, à remplir le CRM. ChatGPT reprend une partie de ce travail de coulisse. La recherche approfondie prépare un rendez-vous en citant ses sources, l'extension pour Word met la proposition au format de la maison, l'analyse de données calcule sur l'export du pipeline, et un agent lancé depuis Slack peut préparer les relances de la semaine. Au 7 octobre 2026, ChatGPT tient aussi une conversation orale grâce à GPT-Live-1, de quoi répéter une négociation avant d'entrer dans la salle. Ces deux jours partent de vos comptes, de vos offres et des objections que vous entendez. Ils fixent ce qui ne part jamais sans un humain : un prix, une remise, un délai promis.",
+  intro: "Chaque semaine, un vendeur consacre beaucoup d'heures à des tâches où le client n'est pas en face : à chercher qui il va rencontrer, à écrire la proposition, à relancer, à remplir le CRM. ChatGPT reprend une partie de ce travail de coulisse. La recherche approfondie prépare un rendez-vous en citant ses sources, l'extension pour Word met la proposition au format de la maison, l'analyse de données calcule sur l'export du pipeline, et un agent lancé depuis Slack peut préparer les relances de la semaine. Au 7 octobre 2026, ChatGPT tient aussi une conversation orale grâce à GPT-Live-1, de quoi répéter une négociation avant d'entrer dans la salle. Ces deux jours partent de vos comptes, de vos offres et des objections que vous entendez. Ils fixent ce qui ne part jamais sans un humain : un prix, une remise, un délai promis.",
   audience: [
     {
       title: "Directeurs et managers commerciaux",
@@ -186,15 +186,15 @@ export default {
   tarifs: {
     titre: "Combien coûte la formation pour une équipe commerciale",
     paras: [
-      "Le nombre de vendeurs ne modifie pas le prix : à partir de 1 980 € HT par jour, de deux à douze participants. Pour dix commerciaux formés deux jours en intra, la facture démarre à 3 960 € HT, soit dès 396 € HT par vendeur. Un directeur commercial qui préfère travailler seul ses comptes stratégiques paie le même prix journalier de base en individuel.",
-      "Le prix de base couvre l'animation, les supports et le programme. Avant la session, le formateur étudie avec vous deux propositions envoyées, votre argumentaire et un export anonymisé du CRM ; les ateliers se font sur ces pièces, et ce temps de préparation s'ajoute au devis. En France, votre opérateur de compétences (OPCO) a la faculté de financer la session, car Qualiopi couvre chez Masteria ce type d'action ; il tranche selon ses critères et ses moyens. Une force de vente genevoise ou bruxelloise reçoit un devis libellé en euros HT, aucun OPCO n'y finançant la formation.",
+      "Le nombre de vendeurs ne modifie pas le prix : à partir de 1 980 € HT par jour, de deux à douze participants. Pour dix commerciaux formés deux jours en intra, le montant part de 3 960 € HT, ce qui ramène le coût à partir de 396 € HT par personne formée. Un directeur commercial qui préfère travailler seul ses comptes stratégiques paie le même prix journalier de base en individuel.",
+      "Ce tarif de départ comprend l'animation des deux jours, le programme et les supports remis aux vendeurs. Avant la session, le formateur étudie avec vous deux propositions envoyées, votre argumentaire et un export anonymisé du CRM ; les ateliers portent sur ces documents, et la proposition chiffre à part ce travail préalable. En France, votre opérateur de compétences (OPCO) a la faculté de financer la session, car Qualiopi couvre chez Masteria ce type d'action ; il tranche selon ses critères et ses moyens. Une force de vente genevoise ou bruxelloise reçoit un devis libellé en euros HT, aucun OPCO n'y finançant la formation.",
     ],
   },
   cta: {
     milieu: "Envoyez-nous une proposition récente et votre argumentaire : les ateliers se bâtissent sur vos affaires.",
     fin: {
       titre: "Préparons la session sur vos comptes",
-      texte: "Indiquez la taille de l'équipe, l'offre ChatGPT dont elle dispose et le CRM qu'elle utilise. Vous recevez un programme calé sur votre cycle de vente, avec des dates.",
+      texte: "Indiquez la taille de l'équipe, l'offre ChatGPT dont elle dispose et le CRM qu'elle utilise. En retour, nous vous adressons un programme daté qui suit les étapes de vos ventes.",
     },
   },
   apres: {
@@ -235,7 +235,7 @@ export default {
     },
     {
       q: "Comment financer la formation ChatGPT des commerciaux ?",
-      a: "Dans une entreprise française, l'OPCO dont relève la société peut financer les deux journées, d'après ses critères et dans la limite de ses fonds ; Masteria remplit la condition préalable, puisque sa certification Qualiopi s'étend aux actions de formation. L'effectif n'influe pas sur le prix de base, à partir de 1 980 € HT chaque jour jusqu'à douze vendeurs. La demande part avant la session, accompagnée d'un programme et d'une convention rédigés par Masteria. Hors de France, le devis tient compte du pays.",
+      a: "Dans une entreprise française, l'OPCO dont relève la société peut prendre en charge les deux journées si son budget et ses critères le permettent ; Masteria satisfait à l'exigence de départ, puisque sa certification Qualiopi s'étend aux actions de formation. L'effectif n'influe pas sur le prix de base, à partir de 1 980 € HT chaque jour jusqu'à douze vendeurs. La demande part avant la session, accompagnée d'un programme et d'une convention rédigés par Masteria. Hors de France, le devis tient compte du pays.",
     },
   ],
 }

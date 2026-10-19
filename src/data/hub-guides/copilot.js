@@ -11,7 +11,7 @@ export default {
   outilCourt: 'Microsoft Copilot',
   casIds: ['industrie'],
 
-  definition: "Deux jours pour apprendre à vos équipes à travailler avec Copilot dans Outlook, Teams, Word, Excel et PowerPoint, sur leurs propres fichiers. En groupe jusqu'à douze personnes ou en individuel, dans vos locaux ou à distance.",
+  definition: "Une formation de deux jours où vos équipes se servent de Copilot dans Outlook, Teams, Word, Excel et PowerPoint, avec leurs fichiers de travail. Douze participants au maximum par groupe, ou une personne seule, dans vos locaux ou en visioconférence.",
 
   intro: "Sous Microsoft 365, Copilot existe à deux niveaux. Copilot Chat, compris dans l'abonnement, travaille sur le web et sur les fichiers qu'on lui donne. La licence Microsoft Copilot lit en plus les mails, les réunions, l'agenda et les fichiers de chaque salarié. Copilot réécrit le document Word ouvert, remanie un classeur Excel et, avec Cowork (facturé à la consommation), mène une tâche jusqu'à l'envoi d'un mail après votre accord. La formation apprend à choisir le bon niveau, à formuler une demande précise et à contrôler ce que Copilot a modifié. Douze programmes couvrent les métiers, de la finance à la DSI.",
 
@@ -87,7 +87,7 @@ export default {
     titre: 'Quel programme Copilot pour votre équipe ?',
     paras: [
       "Regardez d'abord les licences. Une équipe qui n'a que Copilot Chat travaille sur des fichiers déposés, sur le web et sur des agents simples : le programme met alors l'accent sur la méthode de demande, la vérification et les règles de données. Une équipe dotée de la licence Microsoft Copilot peut aller jusqu'à Researcher, Analyst et Cowork. Choisissez ensuite le programme du métier le plus représenté ; si le groupe mélange plusieurs fonctions, nous gardons un tronc commun le matin et séparons les ateliers l'après-midi.",
-      "Une assistante de direction ou un dirigeant gagne souvent au format individuel, calé sur son agenda et ses dossiers. En septembre 2026, une assistante de direction d'un éditeur de logiciels a construit en une journée un assistant de mails pour son dirigeant dans Agent Builder, avec une règle simple : ce qui est interne ou nominatif reste dans Copilot, ce qui est public ou anonymisé peut passer par Claude. À l'autre bout, un groupe international du packaging déploie Copilot palier par palier : 24 managers pilotes ont ouvert la marche, cinq sessions se sont tenues de juillet à fin septembre 2026, deux d'entre elles en anglais, et le parcours rejoindra ses sites américains et mexicains en octobre 2026, puis indiens en décembre.",
+      "Une assistante de direction ou un dirigeant gagne souvent au format individuel, calé sur son agenda et ses dossiers. Chez un éditeur de logiciels, en septembre 2026, l'assistante du dirigeant a bâti en une journée un assistant de mails pour son dirigeant dans Agent Builder, avec une règle simple : ce qui est interne ou nominatif reste dans Copilot, ce qui est public ou anonymisé peut passer par Claude. À l'autre bout, un groupe international du packaging déploie Copilot palier par palier : 24 managers pilotes ont ouvert la marche, cinq sessions se sont tenues de juillet à fin septembre 2026, deux d'entre elles en anglais, et le parcours rejoindra ses sites américains et mexicains en octobre 2026, puis indiens en décembre.",
     ],
   },
 
@@ -164,7 +164,7 @@ export default {
     },
     {
       q: 'Un OPCO peut-il financer la formation Microsoft Copilot ?',
-      a: "Oui pour une entreprise française : comme Masteria détient la certification Qualiopi, l'opérateur de compétences dont elle relève peut financer la session, dans le respect de ses propres règles et des fonds qu'il lui reste. La journée est facturée à partir de 1 980 € HT, soit dès 3 960 € HT pour les deux journées et douze participants au plus ; le tarif journalier de départ reste identique pour un participant seul. Pour une session construite sur vos propres fichiers, le temps de préparation s'ajoute et figure au devis. Nous préparons avec vous les pièces que l'opérateur demande avant la session. À Genève et à Bruxelles, où l'OPCO n'existe pas, nous chiffrons en euros hors taxes. Le développement d'un agent par Masteria se chiffre à part, hors financement OPCO.",
+      a: "Oui pour une entreprise française : comme Masteria détient la certification Qualiopi, l'opérateur de compétences dont elle relève peut financer la session, dans le respect de ses propres règles et des fonds qu'il lui reste. Côté prix, comptez à partir de 1 980 € HT la journée, donc dès 3 960 € HT pour le parcours complet d'un groupe de douze au maximum, et le même point de départ quand une seule personne suit la formation. Adapter les exercices à vos fichiers demande une préparation, que la proposition chiffre séparément. Nous préparons avec vous les pièces que l'opérateur demande avant la session. À Genève et à Bruxelles, où l'OPCO n'existe pas, nous chiffrons en euros hors taxes. Le développement d'un agent par Masteria se chiffre à part, hors financement OPCO.",
     },
     {
       q: 'Comment former à Copilot un groupe présent dans plusieurs pays ?',

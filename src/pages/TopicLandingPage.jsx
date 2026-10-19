@@ -22,7 +22,7 @@ const TOPICS = {
     sections: [
       {
         h2: "Ce que le CPF finance en matière d'IA",
-        body: "Le compte personnel de formation ne paie que des formations qui préparent une certification inscrite au RNCP (le Répertoire national des certifications professionnelles) ou au Répertoire spécifique, deux registres tenus par France Compétences. Les formations courtes à l'usage des assistants d'IA mènent rarement à une telle certification. Quand une offre annonce un financement par le CPF pour quelques jours de prise en main, vérifiez l'intitulé de la certification visée et son numéro d'enregistrement sur le site de France Compétences : il s'agit souvent d'un cursus long de data science ou de développement.",
+        body: "Le compte personnel de formation ne paie que des formations qui préparent une certification inscrite au RNCP (le Répertoire national des certifications professionnelles) ou au Répertoire spécifique, deux registres que gère France Compétences. Une prise en main de ChatGPT, de Copilot ou de Claude en quelques jours débouche rarement sur un tel titre. Quand une offre annonce un financement par le CPF pour quelques jours de prise en main, cherchez l'intitulé du titre visé et son numéro d'enregistrement dans l'annuaire officiel des certifications : il s'agit souvent d'un cursus long de data science ou de développement.",
       },
       {
         h2: "Pourquoi nos formations ne passent pas par le CPF",
@@ -30,23 +30,23 @@ const TOPICS = {
       },
       {
         h2: "Les autres voies : OPCO, plan de développement des compétences, budget de l'entreprise",
-        body: "Trois voies financent une formation Masteria sans toucher à votre compte. L'OPCO de votre branche (par exemple Atlas pour le conseil, le numérique et les services financiers, OPCO 2i pour l'industrie, Afdas pour la culture et les médias) peut la prendre en charge selon ses règles et ses fonds, qui varient avec la taille de l'entreprise. Le plan de développement des compétences, tenu par votre service RH, peut l'inscrire au budget de l'année. L'entreprise peut enfin la régler directement. La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre l'accès à ces fonds mutualisés ; nous préparons avec vous le devis, le programme et la convention que réclame l'OPCO.",
+        body: "Trois voies financent une formation Masteria sans toucher à votre compte. L'OPCO de votre branche (par exemple Atlas pour le conseil, le numérique et les services financiers, OPCO 2i pour l'industrie, Afdas pour la culture et les médias) peut en couvrir tout ou partie, d'après des critères propres à chaque branche qui tiennent compte de l'effectif. Le plan de développement des compétences, tenu par votre service RH, peut l'inscrire au budget de l'année. L'entreprise peut enfin la régler directement. Parce que Masteria est certifié Qualiopi pour ses actions de formation, ces fonds mutualisés vous restent accessibles ; nous montons avec vous le dossier à déposer : devis, programme et convention.",
       },
     ],
     reassurance: [
       { t: 'Qualiopi', s: 'Au titre des actions de formation' },
-      { t: 'OPCO de branche', s: 'Selon ses règles et ses fonds' },
+      { t: 'OPCO de branche', s: 'Critères propres à chaque branche' },
       { t: 'Une ou deux journées', s: 'Dès 1 980 € HT la journée' },
       { t: 'Douze personnes au plus', s: 'En intra, ou en individuel' },
     ],
     faqTitre: "Vos questions sur le CPF et la formation IA",
     faq: [
-      { q: "Mon CPF peut-il payer une formation Masteria ?", a: "Non. Nos formations d'une ou deux journées ne mènent pas à une certification enregistrée au RNCP ou au Répertoire spécifique, condition pour mobiliser le CPF. Elles se financent par l'OPCO de votre branche, par le plan de développement des compétences ou par le budget de l'entreprise." },
+      { q: "Mon CPF peut-il payer une formation Masteria ?", a: "Non. Nos formations d'une ou deux journées ne mènent pas à une certification enregistrée au RNCP ou au Répertoire spécifique, condition pour mobiliser le CPF. Leur prise en charge passe par votre OPCO, par le plan de formation que tient votre service RH ou directement par votre employeur." },
       { q: "Quelles formations en IA le CPF finance-t-il ?", a: "Surtout des parcours longs, de plusieurs mois, en data science, en apprentissage automatique ou en développement, qui préparent un titre enregistré. Ils s'adressent plutôt aux personnes en reconversion qu'aux salariés qui veulent se servir d'un assistant d'IA dans leur poste. Avant de vous inscrire, consultez la fiche de la certification sur le site de France Compétences." },
       { q: "Mon employeur doit-il payer ma formation en IA ?", a: "Quand la formation est demandée par l'employeur, elle entre dans le plan de développement des compétences et l'entreprise la finance, avec l'aide éventuelle de son OPCO. Quand l'idée vient de vous, présentez-la à votre responsable ou au service RH en précisant les tâches qu'elle doit faciliter : une demande reliée à votre poste a plus de chances d'aboutir." },
-      { q: "Combien coûte une formation IA chez Masteria ?", a: "À partir de 1 980 € HT la journée, en intra pour une équipe de douze participants au plus comme en accompagnement individuel, et de 3 960 € HT pour deux jours. Pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis. Une journée suffit pour prendre en main un outil ; deux jours permettent d'aller plus loin ou de comparer plusieurs outils." },
+      { q: "Combien coûte une formation IA chez Masteria ?", a: "Comptez à partir de 1 980 € HT la journée, qu'il s'agisse d'un groupe de douze salariés maximum ou d'un accompagnement individuel, soit 3 960 € HT les deux jours. Une session adaptée à vos dossiers demande un temps de préparation, chiffré à part sur la proposition. Une journée suffit pour prendre en main un outil ; deux jours permettent d'aller plus loin ou de comparer plusieurs outils." },
       { q: "L'OPCO prend-il en charge toute la formation ?", a: "Cela dépend de votre OPCO : chaque branche fixe ses règles, ses plafonds et ses fonds disponibles, en fonction de la convention collective et de la taille de l'entreprise. Nous regardons avec vous les conditions de votre branche avant de déposer la demande." },
-      { q: "À quel moment solliciter l'OPCO ?", a: "Avant le premier jour de formation : l'OPCO examine le dossier en amont. Le délai de réponse varie d'un OPCO à l'autre ; nous vous transmettons le devis, le programme détaillé et la convention dès que le projet est validé, pour que la demande parte au plus tôt." },
+      { q: "À quel moment solliciter l'OPCO ?", a: "Bien avant la session : la demande doit être acceptée avant son démarrage. Le délai de réponse varie d'un OPCO à l'autre ; nous vous transmettons le devis, le programme détaillé et la convention dès que le projet est validé, pour que la demande parte au plus tôt." },
     ],
     cta: {
       titre: "Financer votre formation IA sans le CPF",

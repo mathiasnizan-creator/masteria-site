@@ -26,7 +26,7 @@ export default {
   audience: [
     {
       title: "Directeurs et responsables de la communication",
-      desc: "Vous validez ce qui sort au nom de l'organisation et vous pilotez les crises. Vous apprenez à fixer les règles d'emploi de ChatGPT pour l'équipe, à monter un kit de crise et à trancher, pour chaque texte, la question de la mention de l'IA.",
+      desc: "Vous signez les prises de parole de l'organisation et tenez la barre quand une crise éclate. Vous apprenez à fixer les règles d'emploi de ChatGPT pour l'équipe, à monter un kit de crise et à trancher, pour chaque texte, la question de la mention de l'IA.",
     },
     {
       title: "Relations presse et communication institutionnelle",
@@ -107,7 +107,7 @@ export default {
         "ChatGPT pour Word, qui écrit dans votre gabarit de communiqué",
         "Éléments de langage, questions-réponses préparées pour les porte-parole",
       ],
-      exercise: "Vous rédigez le communiqué d'une annonce à venir et ses éléments de langage, puis faites contrôler les chiffres par leur source.",
+      exercise: "Vous préparez avec ChatGPT le texte de presse d'un événement prévu et ses éléments de langage, puis faites contrôler les chiffres par leur source.",
     },
     {
       day: 1,
@@ -187,7 +187,7 @@ export default {
     titre: "Ce que paie une direction de la communication",
     paras: [
       "Que la session réunisse deux communicants ou douze, la journée se paie à partir de 1 980 € HT. Une petite direction de la communication de quatre personnes (sa directrice, une attachée de presse, un community manager, une chargée de communication interne) règle à partir de 3 960 € HT pour ses deux journées, soit dès 990 € HT par personne. Le format individuel, que choisissent souvent les directeurs de la communication, suit le même barème.",
-      "Le prix de base couvre l'animation, les supports et le programme ; la préparation sur vos pièces s'y ajoute au devis. Le formateur prépare la session avec vos pièces : deux communiqués récents, votre charte éditoriale et, si vous le souhaitez, un dossier de crise refermé, anonymisé au besoin. En France, le financement peut venir de l'OPCO auquel cotise votre entreprise, Masteria étant certifié Qualiopi ; l'OPCO applique ses critères et puise dans ses fonds disponibles. Un établissement public ou une collectivité territoriale passe par d'autres circuits : les pièces s'adaptent à sa procédure.",
+      "Ce montant de départ rémunère l'animation, les supports et le programme ; adapter les exercices à vos documents fait l'objet d'une ligne distincte de la proposition. Le formateur prépare la session avec vos pièces : deux communiqués récents, votre charte éditoriale et, si vous le souhaitez, un dossier de crise refermé, anonymisé au besoin. En France, le financement peut venir de l'OPCO auquel cotise votre entreprise, Masteria étant certifié Qualiopi ; l'OPCO applique ses critères et puise dans ses fonds disponibles. Un établissement public ou une collectivité territoriale passe par d'autres circuits : les pièces s'adaptent à sa procédure.",
     ],
   },
   cta: {
@@ -240,7 +240,7 @@ export default {
     },
     {
       q: "Comment financer la formation ChatGPT de l'équipe de communication ?",
-      a: "Une entreprise française s'adresse à l'OPCO de sa branche, qui finance ou non les deux journées au vu de ses règles et de son budget ; Masteria, certifié Qualiopi, remplit la condition de recevabilité. La journée est facturée à partir de 1 980 € HT, groupe de douze ou personne seule. Programme et convention vous sont fournis. Pour le secteur public, d'autres financements existent, et nous ajustons les pièces à chacun.",
+      a: "Une entreprise française s'adresse à l'OPCO de sa branche, libre d'accepter ou de refuser la prise en charge des deux journées selon sa politique et les sommes disponibles ; Masteria, certifié Qualiopi, remplit la condition de recevabilité. Comptez à partir de 1 980 € HT la journée, pour douze communicants comme pour un seul. Programme et convention vous sont fournis. Pour le secteur public, d'autres financements existent, et nous ajustons les pièces à chacun.",
     },
   ],
 }
