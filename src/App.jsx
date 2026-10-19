@@ -1351,6 +1351,7 @@ export default function App() {
         <Route path="/mistral-vs-chatgpt" element={<ComparisonPage slug="mistral-vs-chatgpt" />} />
         <Route path="/gemini-vs-copilot" element={<ComparisonPage slug="gemini-vs-copilot" />} />
         <Route path="/copilot-vs-claude" element={<ComparisonPage slug="copilot-vs-claude" />} />
+        <Route path="/claude-vs-mistral" element={<ComparisonPage slug="claude-vs-mistral" />} />
         <Route path="/claude-prix-abonnement" element={<ComparisonPage slug="claude-prix-abonnement" />} />
         <Route path="/claude-cowork-vs-claude-code" element={<ComparisonPage slug="claude-cowork-vs-claude-code" />} />
         <Route path="/mentions-legales" element={<MentionsLegalesPage />} />

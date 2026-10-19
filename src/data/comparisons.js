@@ -398,7 +398,7 @@ export const COMPARISONS = {
 
     alsoConsidered: [
       { name: "Perplexity", summary: "Moteur de recherche conversationnel qui cite ses sources, utile en complément pour la veille." },
-      { name: "Vibe (Mistral AI)", summary: "Nom porté depuis le 28 mai 2026 par l'ancien Le Chat. Mistral AI, éditeur français, stocke les données de Vibe sur le sol de l'Union européenne, sauf demande contraire. Comparaison détaillée : [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+      { name: "Vibe (Mistral AI)", summary: "Nom porté depuis le 28 mai 2026 par l'ancien Le Chat. Mistral AI, éditeur français, stocke les données de Vibe sur le sol de l'Union européenne, sauf demande contraire. Comparaisons détaillées : [Mistral vs ChatGPT](/mistral-vs-chatgpt) et [Claude vs Mistral](/claude-vs-mistral)." },
       { name: "Google Gemini", summary: "Compris dans les abonnements Google Workspace ; à partir de Business Standard, le contexte de l'application Gemini atteint le million de tokens. Comparaison détaillée : [Gemini vs Copilot](/gemini-vs-copilot)." },
       { name: "Microsoft Copilot (anciennement Microsoft 365 Copilot)", summary: "L'alternative logique quand le travail se fait dans Outlook, Word et Teams : Copilot puise dans Microsoft Graph et donne aussi accès à des modèles d'Anthropic. Comparaison détaillée : [Copilot vs ChatGPT](/copilot-vs-chatgpt)." },
     ],
@@ -2265,7 +2265,7 @@ export const COMPARISONS = {
     ],
 
     alsoConsidered: [
-      { name: "Claude (Anthropic)", summary: "Avale un million de tokens par conversation quand on paie un abonnement, mais n'offre aucune région européenne : à réserver aux données qui peuvent quitter l'Union. Voir [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: "Claude (Anthropic)", summary: "Avale un million de tokens par conversation quand on paie un abonnement, mais n'offre aucune région européenne : à réserver aux données qui peuvent quitter l'Union. Voir [ChatGPT vs Claude](/chatgpt-vs-claude) et [Claude vs Mistral](/claude-vs-mistral)." },
       { name: "Gemini (Google)", summary: "Compris dans les forfaits Google Workspace : le choix logique si votre messagerie est Gmail. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
       { name: "gpt-oss (OpenAI)", summary: "Les modèles à poids ouverts d'OpenAI, publiés en août 2025, pour un usage interne qui ne passe pas par ChatGPT." },
     ],
@@ -2907,7 +2907,7 @@ export const COMPARISONS = {
       { name: "ChatGPT", summary: "Souvent ajouté à la comparaison : application autonome, visuels avec ChatGPT Images 2.5, extensions pour Word, Excel et PowerPoint. Voir [Copilot vs ChatGPT](/copilot-vs-chatgpt) et [ChatGPT vs Claude](/chatgpt-vs-claude)." },
       { name: "Google Gemini", summary: "Pour une entreprise sous Google Workspace, Gemini tient la place de Copilot, compris dans le forfait. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
       { name: "GitHub Copilot", summary: "L'outil de code de Microsoft, à comparer avec Claude Code et Cursor sur notre page [meilleure IA pour coder](/meilleure-ia-pour-coder)." },
-      { name: "Vibe (Mistral AI)", summary: "L'assistant de l'éditeur français garde les données en Europe par défaut. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+      { name: "Vibe (Mistral AI)", summary: "L'assistant de l'éditeur français garde les données en Europe par défaut. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt) et [Claude vs Mistral](/claude-vs-mistral)." },
     ],
 
     faq: [
@@ -2950,6 +2950,329 @@ export const COMPARISONS = {
       { label: "ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
       { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot" },
       { label: "Formation Claude", href: "/formation-claude-ia" },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // toolA = Claude, toolB = Mistral AI (Vibe) (créé le 19/10/2026 : requêtes Search
+  // Console « claude mistral », « chatgpt vs claude vs ia souveraine », « anthropic claude
+  // vs ia d'entreprise française », « gemini ou claude »). Angle : données sensibles et
+  // hébergement face au volume de texte et au code. Sur le site : « Vibe », jamais l'ancien nom.
+  // ═══════════════════════════════════════════════════════════════════
+  "claude-vs-mistral": {
+    slug: "claude-vs-mistral",
+    metaTitle: "Claude vs Mistral 2026 : lequel choisir ? | Masteria",
+    metaDesc:
+      "Claude (Anthropic) ou Mistral AI et son assistant Vibe : données en Europe, poids ouverts, gros dossiers, code et prix. Vérifié le 19 octobre 2026.",
+    h1: "Claude ou Mistral : quelle IA choisir pour votre entreprise en 2026 ?",
+    casIds: ["distribution"],
+    intro:
+      "**Claude**, l'assistant de l'éditeur américain Anthropic, et **Mistral AI**, l'éditeur français dont l'assistant s'appelle **Vibe**, se retrouvent face à face chaque fois qu'une entreprise hésite entre une IA d'entreprise française et un assistant américain choisi pour sa force sur les longs dossiers et le code. Trois questions suffisent à départager les deux : quelle est la sensibilité des documents que vos équipes vont confier à l'outil, quelle est leur longueur, et quelle place tient le développement logiciel dans votre activité. Nous avons relu les pages officielles d'Anthropic et de Mistral AI le 19 octobre 2026, puis rapproché ces faits de ce que nous voyons en formation.",
+    lastUpdate: "Octobre 2026",
+    verifiedOn: "19 octobre 2026",
+    datePublished: "2026-10-19",
+    dateModified: "2026-10-19",
+    readTime: "10 minutes",
+    keywords:
+      "claude vs mistral, claude ou mistral, claude mistral, mistral vs claude, vibe vs claude, anthropic vs mistral ai, claude ia souveraine, chatgpt vs claude vs ia souveraine, ia d'entreprise française, gemini ou claude, mistral medium 3.5, mistral large 4",
+
+    textes: {
+      legende: "Claude (Anthropic) et Mistral AI au 19 octobre 2026 : prix publics d'Anthropic en dollars hors taxes, prix de Vibe affichés par Mistral pour la France, toutes taxes comprises.",
+      criteres: "Neuf critères, du pays où dorment vos données jusqu'au coût d'un abonnement, lus dans la documentation de chaque éditeur puis rapprochés de nos ateliers.",
+      casTitre: "Six dossiers, et l'outil qui convient à chacun",
+      cas: "Des demandes proches de celles que les participants apportent en atelier : des rapports d'audit à résumer, un contrat et ses avenants à reconstituer, une documentation d'usine à interroger hors ligne, un module à refondre, une méthode de réponse à partager, un budget à présenter.",
+      metiersTitre: "Claude ou Mistral selon votre métier",
+      metiers: "Notre recommandation par fonction tient compte de deux choses à la fois : la longueur des documents traités et leur degré de confidentialité.",
+      erreursTitre: "Cinq erreurs fréquentes quand on compare Claude et Mistral",
+      erreurs: "Des raccourcis que nous entendons au moment de choisir, souvent avant tout essai sur les fichiers de l'entreprise.",
+      alternativesTitre: "D'autres assistants à mettre dans la balance",
+      alternatives: "Le duel entre Claude et Mistral s'élargit souvent à un troisième outil, ou à un modèle installé en interne.",
+      ctaTitre: "Confrontez Claude et Vibe à vos propres documents",
+      ctaTexte: "En formation multi-outils, vos équipes passent leurs dossiers dans Claude, Vibe et les autres grands assistants, puis écrivent la règle qui répartit les documents entre eux. Comptez à partir de 1 980 € HT la journée ; notre certification Qualiopi, obtenue pour les actions de formation, permet à l'OPCO de votre branche d'étudier une prise en charge selon ses critères.",
+    },
+
+    // Cas cités : missions-formation.js (interprofession-agricole, gerance-cabinet) et etudes-de-cas.js (photovoltaique)
+    terrain: {
+      titre: "Ce que nos formations montrent sur Claude et Mistral",
+      paras: [
+        "Une [interprofession agricole](/etudes-de-cas-ia#mission-interprofession-agricole) du sud de la France a réuni seize salariés, avec ceux de son syndicat de producteurs, pour une journée de plénière en septembre 2026. Six assistants y ont été mis à l'épreuve, Claude et Vibe compris, sur des textes publics de la filière. Le groupe a construit lui-même sa grille pour choisir entre les outils, et chacun a rangé ses usages en trois niveaux (permis, à vérifier, proscrits) selon le compte ouvert et le type de données en jeu.",
+        "Le gérant d'un [cabinet de géomètres-experts](/etudes-de-cas-ia#mission-gerance-cabinet), formé seul en août 2026, a bâti avec son formateur deux compétences Claude : la première vérifie qu'un procès-verbal de bornage concorde avec le plan et avec l'acte, la seconde rédige les réponses aux demandes de devis sur les modèles du cabinet. Croiser plusieurs pièces techniques et juridiques dans un même échange, voilà l'usage où la taille du contexte de Claude se fait sentir.",
+        "Dans une [PME de distribution photovoltaïque](/etudes-de-cas-ia#photovoltaique), le diagnostic remis à la direction en septembre 2026 recommande de remplacer les comptes personnels par des comptes d'équipe que l'entreprise gère elle-même, sans réutilisation des données pour l'entraînement, avec une inscription au registre RGPD. Cette exigence se traduit différemment d'un éditeur à l'autre : Claude Team l'applique d'office, alors que sur Vibe Team il revient à l'administrateur de couper l'option.",
+      ],
+    },
+
+    answerBox: {
+      question: "Claude ou Mistral : lequel choisir pour vos équipes ?",
+      answer:
+        "Prenez **Mistral AI** quand vos documents ne doivent pas quitter l'Union européenne, ou votre propre réseau : Vibe stocke les données dans l'Union par défaut, des modèles comme **Mistral Medium 3.5** se téléchargent pour tourner sur vos serveurs, et l'offre Enterprise se déploie sur site ou en cloud privé. Hors Enterprise, l'entraînement sur vos échanges reste actif tant que personne ne le coupe ; sur Team, l'administrateur le désactive pour toute l'organisation. Prenez **Claude** pour les dossiers volumineux et le code : ses formules payantes lisent un million de tokens d'un seul tenant, l'équivalent de 2 500 pages selon l'éditeur, et l'abonnement Pro inclut déjà Claude Code. Anthropic ne propose en revanche aucune région européenne dans ses applications. Garder les deux se justifie souvent, avec une règle écrite qui dit quel document va où.",
+      bullets: [
+        "Données qui doivent rester en Europe ou sur vos serveurs : Mistral",
+        "Dossier de plusieurs centaines de pages à lire d'un bloc : Claude",
+        "Équipes de développement : Claude Code, inclus dès Pro ; Medium 3.5 installé chez vous si le code ne doit pas sortir",
+        "Abonnement individuel : 20 $ HT pour Claude Pro, 17,99 € TTC pour Vibe Pro",
+        "Les deux à la fois : une règle de tri des documents écrite avant l'ouverture des comptes",
+      ],
+    },
+
+    toolA: {
+      id: "claude",
+      name: "Claude",
+      editor: "Anthropic",
+      currentModel: "Opus 5.5 conseillé par défaut, Fable 5.1 au sommet, Sonnet 5.5 ou Haiku 5.5 quand la vitesse prime",
+      country: "États-Unis",
+      pricing: "Gratuit, puis Pro à 20 $ HT par mois · Team de 20 à 25 $ HT le siège · Enterprise 20 $ le siège et l'usage en sus",
+      foundedAI: "2023",
+      color: "#D97706",
+    },
+    toolB: {
+      id: "mistral",
+      name: "Mistral AI",
+      editor: "Mistral AI",
+      currentModel: "Assistant Vibe ; Medium 3.5 en tête de gamme, Large 4 en préversion, Large 3 et Small 4",
+      country: "France",
+      pricing: "Gratuit, puis Pro à 17,99 € TTC par mois · Team à 29,99 € TTC par personne · Enterprise sur demande",
+      foundedAI: "2023",
+      color: "#FA500F",
+    },
+
+    keyFacts: {
+      title: "Claude et Mistral, ligne par ligne",
+      note: "Relevé du 19 octobre 2026 sur claude.com et sur mistral.ai (grille France), complété par le centre d'aide et la documentation de chaque éditeur. Les montants d'Anthropic s'entendent en dollars hors taxes ; Mistral affiche les siens en euros toutes taxes comprises pour la France, et en dollars hors taxes dans sa grille internationale.",
+      rows: [
+        { criterion: "Éditeur", a: "Anthropic, société américaine", b: "Mistral AI, société française" },
+        { criterion: "Assistant", a: "Application Claude pour navigateur, ordinateur et téléphone, avec Cowork dans la conversation, des compléments Excel, PowerPoint et Word, et une extension Chrome", b: "Vibe Work sur le web et le mobile, qui réunit depuis le 22 septembre 2026 conversation et tâches en plusieurs étapes ; Vibe Code dans le terminal, VS Code ou en session distante" },
+        { criterion: "Modèles", a: "Quatre au choix : Opus 5.5, Fable 5.1, Sonnet 5.5, Haiku 5.5", b: "Medium 3.5 conseillé pour l'essentiel, Large 3 et Small 4 ; Large 4 ouvert en préversion le 6 octobre 2026" },
+        { criterion: "Texte lu d'un coup", a: "Jusqu'à un million de tokens avec une formule payante, soit près de 2 500 pages d'après l'éditeur", b: "256 000 tokens pour Medium 3.5 et un million pour Large 4 par l'API ; aucune limite publiée dans Vibe" },
+        { criterion: "Poids téléchargeables", a: "Non", b: "Oui : Medium 3.5 (licence MIT modifiée), Large 3 et Small 4 (Apache 2.0), Large 4" },
+        { criterion: "Lieu de stockage", a: "Applications sans région européenne ; des régions européennes existent chez Amazon Bedrock et Vertex AI", b: "Union européenne par défaut ; transferts temporaires hors de l'Union pour certaines fonctions" },
+        { criterion: "Installation dans vos murs", a: "Impossible", b: "Modèles ouverts sur vos serveurs ; Enterprise auto-hébergé, en cloud privé ou sur site" },
+        { criterion: "Entraînement sur vos échanges", a: "Aucun par défaut sur Team et Enterprise ; au choix du titulaire sur Gratuit, Pro et Max", b: "Actif par défaut sur les comptes individuels ; coupé par l'administrateur sur Team ; exclu d'office sur Enterprise" },
+        { criterion: "Code", a: "Claude Code compris dans toutes les formules payantes", b: "Vibe Code limité sur l'offre gratuite, ouvert toute la journée sur Pro" },
+        { criterion: "Prix individuel", a: "Pro : 20 $ HT par mois, 17 $ à l'année", b: "Pro : 17,99 € TTC mensuels, affiché 14,99 $ HT dans la grille en dollars" },
+        { criterion: "Prix pour une équipe", a: "Team : 25 $ HT le siège sans engagement, 20 $ avec engagement annuel, pour 2 à 150 personnes ; Enterprise 20 $ et l'usage, dès 20 sièges", b: "Team : 29,99 € TTC mensuels pour chaque membre, facture plancher de 60 € TTC ; Enterprise sur demande" },
+      ],
+    },
+
+    formations: {
+      titre: "Se former à Claude, à Mistral, ou aux deux",
+      texte:
+        "Nous animons des formations sur chacun des deux outils, et la formation multi-outils les met côte à côte sur vos propres documents. Chaque session pose aussi la règle de tri : ce qui peut partir chez Anthropic, ce qui reste chez Mistral ou dans l'entreprise.",
+      liens: [
+        { href: "/formation-claude-ia", label: "Formation Claude", desc: "Projets, Skills, Cowork et compléments Office" },
+        { href: "/formation-mistral-ai", label: "Formation Mistral AI", desc: "Vibe Work, Vibe Code et réglages de confidentialité" },
+        { href: "/formation-multi-outils", label: "Formation multi-outils", desc: "Claude, Vibe et les autres assistants essayés sur vos dossiers" },
+        { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Pour vos développeurs" },
+      ],
+    },
+    verdict: {
+      title: "Notre verdict",
+      summary:
+        "**Mistral AI** l'emporte dès que la localisation des données pèse dans la décision : société française, stockage dans l'Union par défaut, modèles téléchargeables et offre Enterprise installable chez vous. **Claude** l'emporte sur la quantité de texte traitée d'un coup, sur le code et sur le travail dans Excel, PowerPoint et Word. Les deux proposent des Skills et des tâches en plusieurs étapes, et leurs prix restent comparables. Le bon partage part de vos documents : classez-les par sensibilité, puis attribuez chaque catégorie à un outil.",
+      recommendA: ["Vous analysez des contrats, des appels d'offres ou des rapports de plusieurs centaines de pages", "Vos développeurs veulent un agent de code inclus sans surcoût", "Vos équipes produisent leurs livrables dans Excel, PowerPoint et Word", "Vos documents peuvent être traités hors de l'Union, ou vous passez par Bedrock ou Vertex AI"],
+      recommendB: ["Vos données doivent rester dans l'Union européenne", "Vous voulez faire tourner un modèle sur vos propres serveurs", "Votre secteur impose un hébergement maîtrisé : santé, défense, administrations", "Vous préférez un éditeur européen pour vos dossiers les plus sensibles"],
+    },
+
+    criteria: [
+      {
+        title: "Où vos données sont stockées",
+        descriptionA:
+          "Les applications Claude ne proposent aucune région européenne : conversations et fichiers passent par l'infrastructure d'Anthropic. Une entreprise qui exige un hébergement en Europe doit passer par les régions européennes d'Amazon Bedrock ou de Google Cloud Vertex AI, ce qui suppose de bâtir sa propre interface ou de passer par un intégrateur.",
+        descriptionB:
+          "Selon le centre d'aide de Mistral AI, dans un article daté du 12 août 2026, les données de ses clients restent par défaut sur le sol de l'Union. Deux exceptions : l'adresse américaine de l'API, si vous la choisissez, et certaines fonctions qui transfèrent ponctuellement des données vers des sous-traitants hors de l'Union. Un client Enterprise peut désactiver une partie de ces fonctions pour toute l'organisation.",
+        winner: "b",
+        winnerText: "Avantage Mistral, stockage européen sans démarche particulière",
+      },
+      {
+        title: "Faire tourner le modèle chez vous",
+        descriptionA:
+          "Anthropic ne publie pas les poids de ses modèles. Claude s'utilise par ses applications, par l'API d'Anthropic ou par les grands clouds qui le distribuent, jamais sur un serveur que vous administrez.",
+        descriptionB:
+          "Mistral publie les poids de plusieurs de ses modèles : Medium 3.5 sous une licence MIT modifiée, Large 3 et Small 4 sous Apache 2.0, et Large 4, en préversion depuis le 6 octobre 2026. Une fois téléchargés, ils tournent dans votre centre de données sans rien renvoyer à l'éditeur. L'offre Enterprise va plus loin : déploiement auto-hébergé, en cloud privé ou sur site, interface comprise.",
+        winner: "b",
+        winnerText: "Avantage Mistral, seul des deux à s'installer dans vos murs",
+      },
+      {
+        title: "Usage de vos échanges pour l'entraînement",
+        descriptionA:
+          "Dans un espace Team ou Enterprise, les conversations de l'organisation sont exclues de l'entraînement des modèles d'Anthropic, sans aucun réglage à faire. Sur les comptes Gratuit, Pro et Max, chaque titulaire décide lui-même dans ses paramètres.",
+        descriptionB:
+          "Hors Enterprise, Vibe se sert par défaut des échanges pour entraîner les modèles de Mistral. Sur un compte individuel, l'utilisateur doit refuser dans ses réglages ; sur Team, l'administrateur coupe l'option pour toute l'organisation depuis son panneau ; sur Enterprise, l'exclusion est acquise d'office. Vibe et l'API se règlent chacun de leur côté.",
+        winner: "a",
+        winnerText: "Avantage Claude, exclusion automatique pour les équipes",
+      },
+      {
+        title: "Volume de texte lu d'un coup",
+        descriptionA:
+          "Avec une formule payante, les trois grands modèles d'Anthropic (Opus 5.5, Fable 5.1, Sonnet 5.5) retiennent jusqu'à un million de tokens dans un échange suivi, à peu près 2 500 pages d'après l'éditeur. Un contrat et tous ses avenants, ou un rapport annuel complet, se lisent en une fois, et les questions croisées portent sur l'ensemble.",
+        descriptionB:
+          "Mistral annonce 256 000 tokens pour Medium 3.5 par l'API, et un million pour Large 4, encore en préversion. Vibe ne publie pas de limite par offre ; ses bibliothèques, jusqu'à 15 Go sur Pro et 30 Go par utilisateur sur Team, servent à chercher dans un grand fonds documentaire, extrait par extrait.",
+        winner: "a",
+        winnerText: "Avantage Claude pour un dossier lu en entier",
+      },
+      {
+        title: "Développement logiciel",
+        descriptionA:
+          "Claude Code fait partie de toutes les formules payantes, dès Pro. Il parcourt le dépôt, intervient sur tous les fichiers concernés, lance les tests et rédige les commits, en ligne de commande, dans un éditeur de code ou dans l'application Claude. Le million de tokens l'aide à garder une vue large d'un gros dépôt.",
+        descriptionB:
+          "Vibe Code travaille dans le terminal, dans VS Code ou dans une session distante sur un dépôt GitHub ; l'offre gratuite en donne un aperçu, Pro l'ouvre pour la journée entière. Mistral recommande Medium 3.5 pour le code, et ce modèle peut être servi en interne quand le code source ne doit pas sortir.",
+        winner: "a",
+        winnerText: "Avantage Claude sur les gros chantiers, Mistral pour le code qui reste chez vous",
+      },
+      {
+        title: "Tâches en plusieurs étapes et méthodes partagées",
+        descriptionA:
+          "Depuis le 16 septembre 2026, Cowork se lance depuis la conversation : il planifie la tâche, agit sur un dossier de fichiers et remet un document fini. Une Skill range une méthode (grille, charte, contrôle) dans un dossier que Claude ouvre de lui-même lorsqu'une demande correspond, et les projets partagés donnent à une équipe les mêmes consignes.",
+        descriptionB:
+          "Depuis le 22 septembre 2026, Vibe Work réunit la conversation et les tâches en plusieurs étapes, avec un interrupteur entre réponse rapide et réflexion approfondie, et il demande votre accord avant une action sensible. Les Skills, appelées avec @, y remplacent les anciens agents ; les tâches planifiées tournent seules.",
+        winner: "tie",
+        winnerText: "Match nul : des Skills et des tâches longues des deux côtés",
+      },
+      {
+        title: "Bureautique et connecteurs",
+        descriptionA:
+          "Depuis le 7 mai 2026, chaque abonné payant peut appeler Claude depuis Excel, PowerPoint et Word ; le complément Outlook est toujours en bêta, et une extension Chrome s'y ajoute. Ses connecteurs MCP ouvrent l'accès à Slack, Google Drive, Microsoft 365 et à tout outil doté d'un serveur MCP.",
+        descriptionB:
+          "Vibe produit des classeurs et des présentations dans la conversation, et revendique plus de cent connecteurs dès l'offre gratuite ; l'ajout de serveurs MCP personnalisés est en bêta. La page tarifs de Mistral ne mentionne aucun complément pour Excel, PowerPoint ou Word.",
+        winner: "a",
+        winnerText: "Avantage Claude, présent dans Excel, PowerPoint et Word",
+      },
+      {
+        title: "Gamme de modèles",
+        descriptionA:
+          "Quatre modèles au choix : Fable 5.1, sommet de la gamme pour les missions longues, accessible avec un abonnement payant ; Opus 5.5, qu'Anthropic recommande pour l'essentiel des demandes ; Sonnet 5.5 et Haiku 5.5, plus rapides et moins chers.",
+        descriptionB:
+          "Sorti le 28 avril 2026, Medium 3.5 est présenté par Mistral comme son modèle multimodal de classe frontière, conçu pour les agents et le code. Large 4, en préversion publique depuis le 6 octobre, repose sur un mélange d'experts de 1 050 milliards de paramètres, dont 52 milliards actifs. Small 4 et les Ministral 3 couvrent les besoins plus légers.",
+        winner: "tie",
+        winnerText: "Match nul : à départager sur vos propres dossiers",
+      },
+      {
+        title: "Prix d'un abonnement",
+        descriptionA:
+          "Chez Anthropic, tout se lit en dollars hors taxes : Pro coûte 20 $ mensuels, ou 17 $ en paiement annuel, Team à 25 $ par siège au mois ou 20 $ à l'année pour 2 à 150 personnes, Enterprise 20 $ par siège plus l'usage facturé aux prix de l'API, dès 20 sièges. Toutes les formules sont détaillées dans notre [comparatif des abonnements Claude](/claude-prix-abonnement).",
+        descriptionB:
+          "Pour la France, Mistral affiche Vibe Pro à 17,99 € par mois toutes taxes comprises, soit 14,99 $ hors taxes dans sa grille en dollars, et Team à 29,99 € TTC mensuels pour chaque membre, avec une facture plancher de 60 € TTC. Enterprise se négocie, et un étudiant vérifié paie Pro 5,99 $.",
+        winner: "tie",
+        winnerText: "Vibe Pro moins cher ; en équipe, des montants proches",
+      },
+    ],
+
+    realCases: [
+      {
+        scenario: "Résumer les rapports d'audit interne d'un groupe de cliniques",
+        feature: "Vibe Team, stockage dans l'Union · Claude Team",
+        prompt: "Voici les rapports d'audit interne de l'année pour nos trois établissements. Dresse la liste des écarts qui reviennent, classe-les par gravité et propose un plan d'action sur six mois pour le comité qualité.",
+        verdictText: "**Mistral l'emporte** dès que les rapports citent des patients ou des salariés : Vibe garde les fichiers dans l'Union, et l'administrateur Team aura coupé l'entraînement avant l'ouverture des comptes. Claude produirait la synthèse sans difficulté, mais ses applications n'offrent aucune garantie de traitement en Europe.",
+        winner: "b",
+      },
+      {
+        scenario: "Reconstituer un contrat-cadre, ses avenants et ses annexes",
+        feature: "Un million de tokens chez Claude · 256 000 pour Medium 3.5",
+        prompt: "Voici le contrat-cadre signé en 2021, ses sept avenants et l'ensemble des annexes techniques. Reconstitue la version en vigueur article par article, signale chaque clause modifiée avec la référence de l'avenant et liste les obligations qui arrivent à échéance en 2027.",
+        verdictText: "**Claude l'emporte** : tout le dossier tient dans un seul échange, et chaque modification se rattache à l'avenant qui l'a introduite. Au-delà de ce que Medium 3.5 lit d'un coup, Vibe oblige à découper le dossier ou à passer par une bibliothèque, au risque de perdre des liens entre les pièces.",
+        winner: "a",
+      },
+      {
+        scenario: "Interroger la documentation d'une usine sans connexion extérieure",
+        feature: "Small 4 ou Medium 3.5 installé en interne · Claude par le cloud",
+        prompt: "À partir des procédures de maintenance et des fiches de sécurité de la ligne 3, indique la marche à suivre pour remplacer le joint de la pompe P12, avec les équipements de protection exigés et les contrôles à faire avant le redémarrage.",
+        verdictText: "**Mistral l'emporte**, et lui seul respecte la contrainte : un modèle à poids ouverts tourne sur un serveur du site, sans aucun échange avec l'extérieur. Claude demande une connexion aux serveurs d'Anthropic ou d'un fournisseur de cloud.",
+        winner: "b",
+      },
+      {
+        scenario: "Refondre le module de facturation d'une application interne",
+        feature: "Claude Code · Vibe Code",
+        prompt: "Le module de facturation mélange le calcul des remises et la génération des PDF. Sépare les deux responsabilités sans changer le comportement, écris les tests manquants et prépare une pull request découpée en commits lisibles.",
+        verdictText: "**Claude l'emporte** sur un dépôt volumineux : Claude Code profite du million de tokens pour garder une vue large du code, puis enchaîne lecture, modification et tests. Vibe Code sait mener la même mission dans le terminal ou VS Code. Si le code ne doit pas quitter vos machines, Medium 3.5, publié en poids ouverts, peut être servi en interne.",
+        winner: "a",
+      },
+      {
+        scenario: "Partager une méthode de réponse aux réclamations",
+        feature: "Skills Claude · Skills Vibe",
+        prompt: "Voici notre charte de réponse, nos délais contractuels et dix réponses validées. Construis une Skill que chaque conseiller appellera pour préparer un premier jet de réponse à une réclamation.",
+        verdictText: "**Match nul** : Anthropic comme Mistral proposent des Skills partagées par l'équipe. Le contenu des réclamations fait la différence : coordonnées et historique d'achat de clients nommés plaident pour Vibe et son stockage européen, des demandes anonymisées pour l'outil que l'équipe utilise déjà.",
+        winner: "tie",
+      },
+      {
+        scenario: "Préparer le budget et la présentation du comité de direction",
+        feature: "Claude dans Excel et PowerPoint · classeurs et présentations générés par Vibe",
+        prompt: "À partir du réalisé à fin septembre, construis le budget 2027 en trois scénarios, puis une présentation de huit diapositives pour le comité, dans notre modèle PowerPoint.",
+        verdictText: "**Claude l'emporte** : il travaille dans le classeur et dans la présentation ouverts, en expliquant ses formules. Vibe génère classeurs et présentations depuis la conversation, à reprendre ensuite dans Office. Si le budget contient des chiffres qui ne doivent pas sortir de l'entreprise, la question de l'hébergement repasse devant.",
+        winner: "a",
+      },
+    ],
+
+    useCases: [
+      { metier: "Direction générale", recommendation: "tie", why: "Claude pour les notes stratégiques longues, Mistral pour les sujets confidentiels comme une acquisition ou une réorganisation." },
+      { metier: "Juridique et conformité", recommendation: "tie", why: "Claude pour lire un contrat entier et ses annexes, Mistral pour les dossiers couverts par le secret." },
+      { metier: "Santé et médico-social", recommendation: "b", why: "Données de santé : stockage européen par défaut, et installation sur site possible." },
+      { metier: "Administrations et collectivités", recommendation: "b", why: "Éditeur français, données dans l'Union, modèles qui tournent sur une infrastructure publique." },
+      { metier: "Industrie et R&D", recommendation: "b", why: "Plans et données de procédé traités par un modèle installé sur le réseau interne." },
+      { metier: "Développement et informatique", recommendation: "a", why: "Agent Claude Code inclus dès Pro, et un million de tokens pour parcourir un gros dépôt." },
+      { metier: "Finance et pilotage", recommendation: "tie", why: "Claude dans Excel pour les modèles complexes, Mistral pour les chiffres non publiés." },
+      { metier: "Marketing et communication", recommendation: "a", why: "Textes longs, voix de marque gardée dans un projet, présentations produites dans PowerPoint." },
+    ],
+
+    mistakes: [
+      { title: "Confier tous les documents au même outil", desc: "Une note de service publique et un dossier médical n'appellent pas le même hébergement. Classez d'abord vos documents par sensibilité ; l'outil se déduit ensuite de chaque catégorie, et deux outils peuvent très bien coexister." },
+      { title: "Ouvrir des comptes Vibe sans toucher au réglage d'entraînement", desc: "Sur un compte individuel, Mistral peut entraîner ses modèles sur vos échanges Vibe jusqu'au jour où vous désactivez l'option. Sur Team, un administrateur la désactive pour toute l'organisation en une manipulation ; seul Enterprise l'exclut d'office." },
+      { title: "Penser que Claude ne peut jamais rester en Europe", desc: "Les applications d'Anthropic n'ont pas de région européenne, mais les modèles Claude se louent aussi dans des régions européennes d'Amazon Bedrock et de Google Cloud Vertex AI. Il faut alors un projet technique, puisque l'application Claude, Cowork et les projets partagés ne suivent pas." },
+      { title: "Confondre stockage européen et données gardées chez vous", desc: "Vibe range vos données dans l'Union, sur l'infrastructure de Mistral, et certaines fonctions les font transiter par des sous-traitants hors de l'Union. Pour qu'aucune donnée ne quitte votre réseau, il faut un modèle à poids ouverts installé en interne ou l'offre Enterprise déployée sur site." },
+      { title: "Mettre côte à côte des prix affichés différemment", desc: "Anthropic publie des montants en dollars hors taxes, Mistral des montants en euros toutes taxes comprises pour la France. Vibe Pro à 17,99 € TTC correspond à 14,99 $ hors taxes : ramenez tout au hors taxes avant de comparer." },
+    ],
+
+    alsoConsidered: [
+      { name: "ChatGPT (OpenAI)", summary: "Le troisième nom des comparaisons entre ChatGPT, Claude et une IA souveraine : application polyvalente, ChatGPT Work et Codex, stockage et calcul en Europe possibles avec les offres Enterprise et Edu. Voir [ChatGPT vs Claude](/chatgpt-vs-claude) et [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+      { name: "Google Gemini", summary: "Déjà inclus dans les abonnements Workspace, Gemini rédige et analyse directement dans Gmail, Docs et Sheets. Voir [Gemini vs Copilot](/gemini-vs-copilot) et notre [panorama des assistants](/meilleure-ia-entreprise-2026)." },
+      { name: "Microsoft Copilot", summary: "L'autre rival de Claude dans les entreprises équipées de Microsoft 365. Voir [Copilot vs Claude](/copilot-vs-claude)." },
+      { name: "Modèles ouverts installés en interne", summary: "Small 4 et les Ministral 3 de Mistral, sous licence Apache 2.0, ou gpt-oss d'OpenAI : des modèles à faire tourner sur vos serveurs pour des tâches simples, sans abonnement à un assistant." },
+    ],
+
+    faq: [
+      { q: "Mistral est-il meilleur que Claude ?", a: "Aucun des deux ne gagne partout. Claude prend l'avantage sur les documents très longs, le code et le travail dans Excel, PowerPoint et Word. Mistral le prend dès que les données doivent rester dans l'Union européenne ou sur vos propres serveurs. Pour la rédaction courante, la différence se joue sur vos exemples : essayez les deux sur vos dossiers avant de décider." },
+      { q: "Claude peut-il garder mes données en Europe ?", a: "Pas dans ses applications, où Anthropic ne propose aucune région européenne. Une entreprise peut en revanche louer les modèles Claude dans une région européenne d'Amazon Bedrock ou de Google Cloud Vertex AI, au prix d'un développement, puisqu'elle quitte alors l'application Claude. Côté entraînement, les espaces Team et Enterprise en sont exclus d'office." },
+      { q: "Vibe lit-il des documents aussi longs que Claude ?", a: "Pas dans les mêmes conditions. Avec un abonnement payant, Claude garde jusqu'à un million de tokens en mémoire de conversation. Chez Mistral, Medium 3.5 lit 256 000 tokens par l'API et Large 4 un million, en préversion ; Vibe ne publie pas de limite par offre. Ses bibliothèques, jusqu'à 30 Go par utilisateur sur Team, permettent de chercher dans un grand nombre de documents." },
+      { q: "ChatGPT, Claude ou une IA souveraine : comment trancher ?", a: "Partez de vos documents. Ceux qui ne doivent pas quitter l'Union ou votre réseau vont vers Mistral, en cloud européen ou installé chez vous. Pour le reste, ChatGPT et Claude se départagent sur les usages : ChatGPT pour la polyvalence et les visuels, Claude pour les dossiers longs et le code. Notre comparatif [ChatGPT vs Claude](/chatgpt-vs-claude) détaille ce second choix." },
+      { q: "Gemini ou Claude ?", a: "Si votre entreprise travaille sous Google Workspace, Gemini est déjà compris dans l'abonnement et agit dans Gmail, Docs et Sheets. Claude se choisit plutôt pour les livrables longs, les méthodes d'équipe rangées en Skills et le code avec Claude Code. Notre [panorama des assistants](/meilleure-ia-entreprise-2026) les compare avec Copilot, ChatGPT et Mistral." },
+      { q: "Peut-on utiliser Claude et Mistral dans la même entreprise ?", a: "Oui, et ce partage se justifie dès que vos données n'ont pas toutes la même sensibilité. Écrivez une règle simple : le nominatif, le secret et le stratégique vont dans Vibe ou dans un modèle installé chez vous, le reste peut aller dans Claude. Formez ensuite les équipes aux deux outils avec cette règle sous les yeux." },
+      { q: "Quel budget prévoir pour former une équipe à Claude ou à Mistral ?", a: "Chez Masteria, une journée de formation Claude, Mistral ou multi-outils coûte à partir de **1 980 € HT**, que vous inscriviez une seule personne ou un groupe de douze au plus dans vos locaux. Le temps d'adaptation à vos documents figure en plus sur le devis. Organisme certifié Qualiopi, nous montons le dossier que votre OPCO examine ensuite, selon ses propres règles de prise en charge." },
+    ],
+
+    changelog: {
+      title: "Suivi des mises à jour",
+      items: [
+        { date: "19 octobre 2026", text: "Mise en ligne, avec les prix lus ce jour-là sur claude.com et sur mistral.ai ; stockage, entraînement et modèles de Mistral relus dans son centre d'aide et sa documentation, faits sur Claude alignés sur notre vérification du même jour." },
+      ],
+    },
+
+    methodology:
+      "Masteria, cabinet lyonnais de formation et de conseil en intelligence artificielle créé en 2022, enseigne les deux outils. Les prix de Claude proviennent de claude.com et ceux de Vibe de la version française de mistral.ai, consultés le **19 octobre 2026** ; les règles de stockage et d'entraînement, comme les fiches des modèles, viennent des pages citées ci-dessous. Versions comparées : **Claude Team** et **Vibe Team**, puis l'offre Enterprise de chaque éditeur pour l'hébergement.",
+
+    citations: [
+      { name: "Anthropic, grille des abonnements Claude", url: "https://claude.com/pricing" },
+      { name: "Anthropic, liste des modèles disponibles", url: "https://platform.claude.com/docs/en/about-claude/models/overview" },
+      { name: "Anthropic, taille de la fenêtre de contexte", url: "https://support.claude.com/en/articles/8606394-how-large-is-the-context-window-on-paid-claude-plans" },
+      { name: "Anthropic, conformité régionale et hébergement", url: "https://claude.com/regional-compliance" },
+      { name: "Anthropic, conversations et entraînement des modèles", url: "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" },
+      { name: "Anthropic, documentation de Claude Code", url: "https://code.claude.com/docs/en/overview" },
+      { name: "Anthropic, compléments pour Excel, PowerPoint et Word", url: "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook" },
+      { name: "Offres Vibe et prix de l'API (Mistral AI)", url: "https://mistral.ai/pricing" },
+      { name: "Lieu de stockage des données (centre d'aide Mistral AI)", url: "https://help.mistral.ai/en/articles/347629-where-do-you-store-my-data-or-my-organization-s-data" },
+      { name: "Refus de l'entraînement par offre (centre d'aide Mistral AI)", url: "https://help.mistral.ai/en/articles/455207" },
+      { name: "Certifications SOC 2 et ISO de Mistral AI", url: "https://help.mistral.ai/en/articles/347638-do-you-have-soc-2-or-iso-27001-certification" },
+      { name: "Catalogue des modèles (documentation Mistral AI)", url: "https://docs.mistral.ai/models" },
+      { name: "Fiche de Mistral Medium 3.5", url: "https://docs.mistral.ai/models/model-cards/mistral-medium-3-5-26-04" },
+      { name: "Fiche de Mistral Large 4", url: "https://docs.mistral.ai/models/mistral-large-4-0" },
+      { name: "Vibe Work, Vibe Code et fusion du 22 septembre (documentation Mistral AI)", url: "https://docs.mistral.ai/vibe/overview" },
+      { name: "Vibe Code (documentation Mistral AI)", url: "https://docs.mistral.ai/vibe/code/overview" },
+    ],
+
+    relatedLinks: [
+      { label: "Mistral vs ChatGPT", href: "/mistral-vs-chatgpt" },
+      { label: "ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
+      { label: "Copilot vs Claude", href: "/copilot-vs-claude" },
+      { label: "Prix de Claude : les abonnements", href: "/claude-prix-abonnement" },
+      { label: "Formation Mistral AI", href: "/formation-mistral-ai" },
+      { label: "IA et RGPD", href: "/ia-et-rgpd" },
     ],
   },
 
@@ -3482,6 +3805,13 @@ export const COMPARISONS_INDEX = [
     title: "Microsoft Copilot vs Claude",
     subtitle: "Vos données Microsoft 365 ou vos gros dossiers ?",
     excerpt: "Intégration à Office, documents longs, Skills, Claude Code face à GitHub Copilot, prix par siège : les deux outils qui cohabitent souvent dans la même entreprise.",
+    badge: "Face-à-face",
+  },
+  {
+    slug: "claude-vs-mistral",
+    title: "Claude vs Mistral AI",
+    subtitle: "Gros dossiers ou données gardées en Europe ?",
+    excerpt: "Un million de tokens et Claude Code chez Anthropic, stockage dans l'Union et modèles installables chez Mistral : quand prendre l'un, l'autre ou les deux.",
     badge: "Face-à-face",
   },
   {
