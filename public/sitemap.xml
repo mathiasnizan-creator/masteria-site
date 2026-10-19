@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-intelligence-artificielle</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-intelligence-artificielle.jpg</image:loc></image:image>
@@ -31,49 +31,49 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-mistral-ai</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-mistral-ai.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-microsoft-copilot</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-microsoft-copilot.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-gemini-entreprise</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-gemini-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-sprint-ia</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-sprint-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-multi-outils</loc>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-multi-outils.jpg</image:loc></image:image>
@@ -153,12 +153,14 @@
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/copilot-vs-claude.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/claude-prix-abonnement</loc>
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/claude-prix-abonnement.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-transformation-ia</loc>
@@ -340,6 +342,7 @@
     <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/claude-cowork-vs-claude-code.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-lyon</loc>
@@ -643,7 +646,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/glossaire-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/glossaire-ia.jpg</image:loc></image:image>
@@ -755,42 +758,42 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-intelligence-artificielle-cpf</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-intelligence-artificielle-cpf.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-intelligence-artificielle-distanciel</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-intelligence-artificielle-distanciel.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-intelligence-artificielle-generative</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-intelligence-artificielle-generative.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-automatisation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-automatisation-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-qualiopi</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-qualiopi.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/financement-formation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/financement-formation-ia.jpg</image:loc></image:image>
@@ -1336,14 +1339,14 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-commercial</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-commercial.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-communication</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-communication.jpg</image:loc></image:image>
