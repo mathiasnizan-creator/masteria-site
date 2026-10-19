@@ -86,7 +86,7 @@ export const COMPARISONS = {
       id: "claude",
       name: "Claude",
       editor: "Anthropic",
-      currentModel: "Opus 5.5 par défaut, Fable 5.1 au sommet, Haiku 4.5 et Sonnet 5.5 pour aller vite",
+      currentModel: "Opus 5.5 par défaut, Fable 5.1 au sommet, Haiku 5.5 et Sonnet 5.5 pour aller vite",
       country: "États-Unis",
       pricing: "Pro 20 $ (17 $ en annuel) · Max dès 100 $ · Team 25 $/siège (20 $ en annuel)",
       foundedAI: "2023",
@@ -98,8 +98,8 @@ export const COMPARISONS = {
       title: "ChatGPT et Claude, ligne à ligne",
       note: "Relevé du 3 octobre 2026, fait à partir des pages d'OpenAI et d'Anthropic. OpenAI publie des prix en euros pour la France ; Anthropic donne les siens en dollars, hors taxes.",
       rows: [
-        { criterion: "Modèles en service", a: "Conversation : GPT-5.6 Sol, ou Luna pour Free et Go. GPT-6 Pro s'y ajoute pour Pro, Business et Enterprise. Work et Codex tournent sur GPT-6 Astra, GPT-6 Sol ou GPT-6.1 Sol", b: "Trois sorties en septembre 2026 : le 1er pour Fable 5.1, le 22 pour Opus 5.5, le 28 pour Sonnet 5.5. La gamme compte aussi Haiku 4.5" },
-        { criterion: "Fenêtre dans le chat", a: "Plus et Business : 256 000 tokens en raisonnement, 54 000 en instantané. Pro : 400 000 et 128 000", b: "Offres payantes : 1 000 000 de tokens pour les trois modèles de septembre, 200 000 pour Haiku 4.5" },
+        { criterion: "Modèles en service", a: "Conversation : GPT-5.6 Sol, ou Luna pour Free et Go. GPT-6 Pro s'y ajoute pour Pro, Business et Enterprise. Work et Codex tournent sur GPT-6 Astra, GPT-6 Sol ou GPT-6.1 Sol", b: "Trois sorties en septembre 2026 : le 1er pour Fable 5.1, le 22 pour Opus 5.5, le 28 pour Sonnet 5.5. Haiku 5.5 a suivi le 7 octobre" },
+        { criterion: "Fenêtre dans le chat", a: "Plus et Business : 256 000 tokens en raisonnement, 54 000 en instantané. Pro : 400 000 et 128 000", b: "Offres payantes : 1 000 000 de tokens pour les trois modèles de septembre" },
         { criterion: "Fenêtre côté API", a: "GPT-6 Astra, GPT-6.1 Sol et GPT-6 Luna : 1 050 000 tokens", b: "Les trois mêmes modèles : un million de tokens" },
         { criterion: "Images et vidéo générées", a: "Images : ChatGPT Images 2.5, sorti le 8 septembre 2026. Vidéo : impossible depuis que l'application Sora a fermé, le 26 avril 2026", b: "Ni photos ni illustrations ; Claude dessine schémas, graphiques et maquettes (Claude Design, Slides et Docs, en bêta)" },
         { criterion: "Mode agent", a: "ChatGPT Work, depuis le 9 juillet 2026, pour les tâches longues ; sur Business et Enterprise, l'équipe partage ses agents d'espace de travail, qu'elle programme ou lance depuis Slack ou par API", b: "Cowork, fondu dans le chat le 16 septembre 2026, ouvert d'abord à Pro et Max : il agit sur vos fichiers et vos applications connectées et répète une tâche à date fixe" },
@@ -410,11 +410,11 @@ export const COMPARISONS = {
       },
       {
         q: "Quels sont les modèles actuels de ChatGPT et de Claude en octobre 2026 ?",
-        a: "Chez OpenAI, le chat de ChatGPT fonctionne avec **GPT-5.6**, en version Sol pour les abonnés payants et Luna pour Free et Go. Les abonnés Pro, Business et Enterprise y trouvent aussi **GPT-6 Pro**, construit sur GPT-6 Astra et présenté le 3 septembre 2026, tandis que ChatGPT Work et Codex disposent en exclusivité de GPT-6.1 Sol, de GPT-6 Sol et de GPT-6 Luna. Chez Anthropic, **Claude Fable 5.1**, sorti le 1er septembre 2026, est le modèle le plus capable ; **Opus 5.5**, du 22 septembre, est celui qu'Anthropic recommande d'essayer en premier pour la plupart des travaux ; **Sonnet 5.5**, du 28 septembre, joue la rapidité et l'économie ; **Haiku 4.5** reste le plus véloce.",
+        a: "Chez OpenAI, le chat de ChatGPT fonctionne avec **GPT-5.6**, en version Sol pour les abonnés payants et Luna pour Free et Go. Les abonnés Pro, Business et Enterprise y trouvent aussi **GPT-6 Pro**, construit sur GPT-6 Astra et présenté le 3 septembre 2026, tandis que ChatGPT Work et Codex disposent en exclusivité de GPT-6.1 Sol, de GPT-6 Sol et de GPT-6 Luna. Chez Anthropic, **Claude Fable 5.1**, sorti le 1er septembre 2026, est le modèle le plus capable ; **Opus 5.5**, du 22 septembre, est celui qu'Anthropic recommande d'essayer en premier pour la plupart des travaux ; **Sonnet 5.5**, du 28 septembre, joue la rapidité et l'économie ; **Haiku 5.5**, du 7 octobre, est le plus véloce.",
       },
       {
         q: "Combien de texte ChatGPT et Claude lisent-ils en une fois ?",
-        a: "Cette capacité s'appelle la fenêtre de contexte. **Dans le chat**, avec un abonnement payant, Claude atteint un million de tokens pour ses trois modèles de septembre, contre 200 000 pour Haiku 4.5 ; ChatGPT Plus et Business vont jusqu'à 256 000 tokens en mode raisonnement et 54 000 en mode instantané, l'abonnement Pro jusqu'à 400 000 et 128 000. **Côté API**, Anthropic fournit un million de tokens et OpenAI 1 050 000 pour ses modèles GPT-6. Un développeur dispose donc de la même marge des deux côtés ; une équipe qui travaille dans le chat fait lire à Claude près de quatre fois plus de texte.",
+        a: "Cette capacité s'appelle la fenêtre de contexte. **Dans le chat**, avec un abonnement payant, Claude atteint un million de tokens pour ses trois modèles de septembre ; ChatGPT Plus et Business vont jusqu'à 256 000 tokens en mode raisonnement et 54 000 en mode instantané, l'abonnement Pro jusqu'à 400 000 et 128 000. **Côté API**, Anthropic fournit un million de tokens et OpenAI 1 050 000 pour ses modèles GPT-6. Un développeur dispose donc de la même marge des deux côtés ; une équipe qui travaille dans le chat fait lire à Claude près de quatre fois plus de texte.",
       },
       {
         q: "Combien coûtent ChatGPT et Claude pour une équipe ?",
@@ -1079,7 +1079,7 @@ export const COMPARISONS = {
       note: "Vérifié le 7 octobre 2026 auprès des cinq éditeurs, sur leurs pages officielles. La ligne « contexte dans l'interface » décrit ce dont disposent vos équipes ; la ligne « contexte via API », ce qu'obtient un développeur qui intègre le modèle. Prix publiés pour la France, sauf Claude (dollars hors taxes) ; OpenAI ne précise pas s'il affiche HT ou TTC.",
     },
     comparisonTable: [
-      { criterion: "Modèles disponibles", chatgpt: "GPT-5.6 Sol et GPT-6 Pro pour dialoguer ; famille GPT-6 pour Work et Codex", claude: "Fable 5.1, Opus 5.5 (par défaut), Sonnet 5.5, Haiku 4.5", copilot: "OpenAI et Anthropic, choix automatique en mode Auto", gemini: "Gemini 3.x ; l'application propose les modes Rapide, Raisonnement et Pro", mistral: "Medium 3.5, Small 4 et Large 3 ; Large 4 présenté en préversion par API le 6 octobre 2026" },
+      { criterion: "Modèles disponibles", chatgpt: "GPT-5.6 Sol et GPT-6 Pro pour dialoguer ; famille GPT-6 pour Work et Codex", claude: "Fable 5.1, Opus 5.5 (par défaut), Sonnet 5.5, Haiku 5.5", copilot: "OpenAI et Anthropic, choix automatique en mode Auto", gemini: "Gemini 3.x ; l'application propose les modes Rapide, Raisonnement et Pro", mistral: "Medium 3.5, Small 4 et Large 3 ; Large 4 présenté en préversion par API le 6 octobre 2026" },
       { criterion: "Prix par utilisateur et par mois", chatgpt: "Plus 23 € ; Business 21 € à l'année", claude: "Pro 20 $ ; Team 25 $, 20 $ à l'année", copilot: "26 € HT ; 18,20 € HT pour Copilot Business ; Microsoft 365 en plus", gemini: "Compris : Business Standard à 13,60 € en annuel", mistral: "17,99 € TTC en Pro, 29,99 € TTC en Team" },
       { criterion: "Contexte dans l'interface", chatgpt: "Plus et Business : 54 000 tokens, 256 000 en raisonnement", claude: "Un million de tokens sur les offres payantes", copilot: "Aucun chiffre publié, recherche dans Graph", gemini: "Un million dès Business Standard, 32 000 en Starter", mistral: "Pas de chiffre par offre" },
       { criterion: "Contexte via API", chatgpt: "1 050 000 tokens avec GPT-6", claude: "Un million de tokens", copilot: "Sans objet, Copilot reste un produit fini", gemini: "Variable selon le modèle Gemini choisi", mistral: "256 000 tokens (Medium 3.5 et Large 3)" },

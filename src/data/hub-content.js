@@ -335,7 +335,7 @@ export const HUB_CONTENT = {
       },
       {
         title: 'Choisir le bon modèle pour chaque tâche',
-        body: "Au 5 octobre 2026, la gamme d'Anthropic compte quatre modèles. Le plus capable, Fable 5.1, sert aux travaux de longue haleine ; Opus 5.5 est le choix conseillé au quotidien ; Sonnet 5.5 répond vite et coûte moins ; Haiku 4.5 reste le plus vif. Fable 5.1 est réservé aux offres payantes et consomme plus vite les limites d'usage. Les participants apprennent à passer de l'un à l'autre selon l'enjeu de la tâche, plutôt que de tout confier au modèle le plus puissant.",
+        body: "Au 19 octobre 2026, la gamme d'Anthropic compte quatre modèles. Le plus capable, Fable 5.1, sert aux travaux de longue haleine ; Opus 5.5 est le choix conseillé au quotidien ; Sonnet 5.5 répond vite et coûte moins ; Haiku 5.5, sorti le 7 octobre, est le plus vif. Fable 5.1 est réservé aux offres payantes et consomme plus vite les limites d'usage. Les participants apprennent à passer de l'un à l'autre selon l'enjeu de la tâche, plutôt que de tout confier au modèle le plus puissant.",
       },
       {
         title: 'Installer des réflexes de vérification',
@@ -352,7 +352,7 @@ export const HUB_CONTENT = {
         day: 1,
         title: "Claude sur vos documents : réglages, méthode et projets d'équipe",
         items: [
-          "Panorama au jour de la session : offres Gratuit, Pro, Max, Team et Enterprise, modèles Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 4.5, et ce que chaque offre change pour vos données",
+          "Panorama au jour de la session : offres Gratuit, Pro, Max, Team et Enterprise, modèles Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 5.5, et ce que chaque offre change pour vos données",
           "Régler son compte : instructions personnalisées, mémoire, styles d'écriture, et ce que Claude garde d'une conversation à l'autre",
           "Méthode de demande sur un document long : contexte, consigne, format attendu, citation des pages, puis vérification d'un échantillon",
           "Réflexion étendue : quand l'activer, et ce qu'elle change sur un raisonnement juridique, financier ou stratégique",

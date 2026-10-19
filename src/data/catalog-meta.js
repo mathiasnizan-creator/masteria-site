@@ -6,6 +6,15 @@
  * Aucune dépendance lourde ici.
  */
 
+import { CLAUDE_FAITS } from './claude-facts.js'
+
+const MODELES_CLAUDE = CLAUDE_FAITS.modeles.map(m => m.nom.replace(/^Claude /, ''))
+const DERNIER_CLAUDE = CLAUDE_FAITS.modeles[CLAUDE_FAITS.modeles.length - 1]
+const DEFINITION_CLAUDE =
+  `Claude est l'assistant d'intelligence artificielle conçu par Anthropic, entreprise fondée en 2021 : il rédige, analyse des dossiers volumineux, crée des fichiers bureautiques et écrit du code. ` +
+  `Au ${CLAUDE_FAITS.verifieLeTexte}, sa gamme compte ${MODELES_CLAUDE.slice(0, -1).join(', ')} et ${MODELES_CLAUDE[MODELES_CLAUDE.length - 1]}, arrivé le ${DERNIER_CLAUDE.sortie} ; ` +
+  `avec un abonnement payant, les trois premiers traitent d'un bloc jusqu'à un million de tokens par fil de discussion. L'accès coûte 20 $ par mois en Pro ou 25 $ par siège en Team, ramenés à 20 $ si l'équipe règle l'année.`
+
 export const HUBS = [
   {
     id: 'chatgpt',
@@ -69,9 +78,11 @@ export const HUBS = [
     h1: "Formation Claude IA pour entreprises",
     intro: "Claude, l'assistant IA d'Anthropic, lit jusqu'à un million de tokens par conversation sur les offres payantes : un contrat et ses annexes, un rapport annuel ou un dossier d'appel d'offres tiennent en une fois. Les projets partagés, les compétences (Skills), la recherche approfondie et Cowork en font un outil de travail d'équipe, à condition de savoir le régler et de vérifier ce qu'il produit. Nos formations Claude de 2 jours existent pour 11 métiers (assistanat, commercial, communication, finance, informatique, management, marketing, pédagogie, RH, SEO, service client) et pour les développeurs avec Claude Code. Les sessions se tiennent en intra pour une équipe ou en tête-à-tête pour un dirigeant, dans vos locaux ou en visioconférence, toujours sur vos propres documents et sans prérequis technique. Masteria est certifié Qualiopi : en France, l'OPCO de votre branche peut prendre la formation en charge.",
     pitch: "Former à Claude, c'est apprendre à lui confier un dossier entier et à vérifier ce qu'il en tire.",
-    definition: "Une formation Claude apprend à une équipe à utiliser Claude, l'assistant IA d'Anthropic, sur ses propres documents : projets partagés, compétences (Skills), recherche approfondie, fichiers Word, Excel et PowerPoint, et Claude Code pour les développeurs. Chez Masteria, elle dure 2 jours (14 h), en intra jusqu'à 12 personnes ou en individuel, à partir de 1 980 € HT par jour, certifiée Qualiopi.",
+    // Première phrase : définition de Claude reprise telle quelle par les moteurs génératifs (« qu'est-ce que Claude »).
+    // Modèles et date viennent de claude-facts.js ; prix relevés le 19/10/2026 sur la même source.
+    definition: `${DEFINITION_CLAUDE} Une formation Claude apprend à une équipe à utiliser Claude, l'assistant IA d'Anthropic, sur ses propres documents : projets partagés, compétences (Skills), recherche approfondie, fichiers Word, Excel et PowerPoint, et Claude Code pour les développeurs. Chez Masteria, elle dure 2 jours (14 h), en intra jusqu'à 12 personnes ou en individuel, à partir de 1 980 € HT par jour, certifiée Qualiopi.`,
     datePublished: '2026-04-21',
-    dateModified: '2026-10-05',
+    dateModified: '2026-10-19',
     author: true,
     claudeFaits: true,
     casIds: ['distribution'],
