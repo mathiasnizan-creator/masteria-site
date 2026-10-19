@@ -86,6 +86,7 @@ export const SLUGS_AVEC_CARTE = new Set([
   "chief-ai-officer",
   "claude-cowork-vs-claude-code",
   "claude-prix-abonnement",
+  "claude-vs-mistral",
   "coaching-ia",
   "conference-ia",
   "conseil-data-ia",
