@@ -331,11 +331,11 @@ export const HUB_CONTENT = {
     why: [
       {
         title: 'Lire un dossier entier en une seule conversation',
-        body: "Avec un abonnement payant, Fable 5.1, Opus 5.5 et Sonnet 5.5 gardent jusqu'à un million de tokens sous les yeux dans un même échange. Comptez, selon le repère d'Anthropic, quelque 500 pages pour 200 000 tokens : un contrat et ses annexes, un rapport annuel ou un dossier d'appel d'offres entrent d'un seul bloc. La formation apprend à exploiter cette capacité sans la surestimer : demander les numéros de page, vérifier un échantillon de citations, découper le dossier quand il dépasse la fenêtre.",
+        body: "Avec un abonnement payant, Fable 5.1, Opus 5.5 et Sonnet 5.5 embrassent jusqu'à un million de tokens au cours d'un même fil. Comptez, selon le repère d'Anthropic, quelque 500 pages pour 200 000 tokens : un contrat et ses annexes, un rapport annuel ou un dossier d'appel d'offres entrent d'un seul bloc. La formation apprend à exploiter cette capacité sans la surestimer : demander les numéros de page, vérifier un échantillon de citations, découper le dossier quand il dépasse la fenêtre.",
       },
       {
         title: 'Choisir le bon modèle pour chaque tâche',
-        body: "Au 5 octobre 2026, la gamme d'Anthropic compte quatre modèles. Le plus capable, Fable 5.1, sert aux travaux de longue haleine ; Opus 5.5 est le choix conseillé au quotidien ; Sonnet 5.5 répond vite et coûte moins ; Haiku 4.5 reste le plus vif. Fable 5.1 est réservé aux offres payantes et consomme plus vite les limites d'usage. Les participants apprennent à passer de l'un à l'autre selon l'enjeu de la tâche, plutôt que de tout confier au modèle le plus puissant.",
+        body: "Au 19 octobre 2026, la gamme d'Anthropic compte quatre modèles. Le plus capable, Fable 5.1, sert aux travaux de longue haleine ; Opus 5.5 est le choix conseillé au quotidien ; Sonnet 5.5 répond vite et coûte moins ; Haiku 5.5, sorti le 7 octobre, est le plus vif. Fable 5.1 est réservé aux offres payantes et consomme plus vite les limites d'usage. Les participants apprennent à passer de l'un à l'autre selon l'enjeu de la tâche, plutôt que de tout confier au modèle le plus puissant.",
       },
       {
         title: 'Installer des réflexes de vérification',
@@ -352,7 +352,7 @@ export const HUB_CONTENT = {
         day: 1,
         title: "Claude sur vos documents : réglages, méthode et projets d'équipe",
         items: [
-          "Panorama au jour de la session : offres Gratuit, Pro, Max, Team et Enterprise, modèles Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 4.5, et ce que chaque offre change pour vos données",
+          "Panorama au jour de la session : offres Gratuit, Pro, Max, Team et Enterprise, modèles Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 5.5, et ce que chaque offre change pour vos données",
           "Régler son compte : instructions personnalisées, mémoire, styles d'écriture, et ce que Claude garde d'une conversation à l'autre",
           "Méthode de demande sur un document long : contexte, consigne, format attendu, citation des pages, puis vérification d'un échantillon",
           "Réflexion étendue : quand l'activer, et ce qu'elle change sur un raisonnement juridique, financier ou stratégique",
@@ -379,7 +379,7 @@ export const HUB_CONTENT = {
     faq: [
       {
         q: 'Qu\'est-ce que Claude (Anthropic) et en quoi est-il différent de ChatGPT ?',
-        a: "Claude est l'assistant IA développé par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI (l'éditeur de ChatGPT). Les deux outils couvrent l'essentiel des usages de bureau. Ce qui sépare le plus Claude de son concurrent, c'est la quantité de texte qu'il garde en mémoire de travail : jusqu'à un million de tokens avec un abonnement payant, quand ChatGPT Business plafonne à 256 000 en mode raisonnement, d'après notre comparatif vérifié le 5 octobre 2026. ChatGPT garde l'avantage sur la génération d'images, que Claude ne propose pas. Le comparatif ChatGPT vs Claude reprend les deux outils critère par critère : modèles, contexte, agents, prix par siège et données.",
+        a: "Claude est l'assistant IA développé par Anthropic, une entreprise fondée en 2021 par d'anciens chercheurs d'OpenAI (l'éditeur de ChatGPT). Les deux outils couvrent l'essentiel des usages de bureau. Leur principal écart tient au volume de texte que chacun peut examiner d'un coup : sur une offre payante, Claude monte à un million de tokens, contre 256 000 pour ChatGPT Business en mode raisonnement, d'après notre comparatif vérifié le 5 octobre 2026. ChatGPT garde l'avantage sur la génération d'images, que Claude ne propose pas. Le comparatif ChatGPT vs Claude reprend les deux outils critère par critère : modèles, contexte, agents, prix par siège et données.",
       },
       {
         q: 'Pourquoi se former à Claude plutôt qu\'à ChatGPT ?',
@@ -387,11 +387,11 @@ export const HUB_CONTENT = {
       },
       {
         q: 'Claude est-il sécurisé pour les données confidentielles d\'entreprise ?',
-        a: "Sur les offres Team et Enterprise, les conversations et fichiers de l'organisation ne servent pas à entraîner les modèles, et un accord de traitement des données (DPA) encadre le traitement. Sur les offres individuelles (Gratuit, Pro, Max), chaque utilisateur choisit dans ses réglages si ses conversations peuvent servir à améliorer les modèles : pour des données d'entreprise, ce réglage se vérifie avant la première utilisation. La formation consacre un temps à ces différences et aux règles internes qui en découlent : quelles données passent par Claude, sur quel compte, et ce qui reste hors de l'outil.",
+        a: "Sur les offres Team et Enterprise, Anthropic n'utilise ni les échanges ni les fichiers de l'organisation pour l'apprentissage de ses modèles, et un accord de traitement des données (DPA) encadre le traitement. Sur les offres individuelles (Gratuit, Pro, Max), chaque titulaire du compte décide dans ses paramètres si Anthropic peut se servir de ses échanges : pour des données d'entreprise, ce réglage se vérifie avant la première utilisation. La formation consacre un temps à ces différences et aux règles internes qui en découlent : quelles données passent par Claude, sur quel compte, et lesquelles n'y entrent jamais.",
       },
       {
         q: 'La formation Claude est-elle finançable par l\'OPCO ?',
-        a: "En France, oui. Masteria est certifié Qualiopi : l'opérateur de compétences de votre branche peut financer la formation Claude sur le plan de développement, dans la limite de ses règles et de ses fonds. Côté budget, une équipe de douze personnes au plus suit les deux jours en intra à partir de 3 960 € HT, soit dès 330 € HT par tête quand le groupe est complet ; une journée en individuel coûte à partir de 1 980 € HT. La préparation d'une session sur vos propres documents s'ajoute au devis. À Genève ou à Bruxelles, il n'y a pas d'OPCO : le devis est établi en euros hors taxes. Programme détaillé, convention et attestations : le dossier que réclame l'opérateur vous est remis avant la session.",
+        a: "En France, oui. Masteria détient la certification Qualiopi, si bien que votre dossier Claude peut être déposé auprès de l'OPCO de l'entreprise ; c'est lui qui fixe ensuite le montant remboursé. Deux journées de groupe sur Claude reviennent à 3 960 € HT au moins, pour un maximum de douze stagiaires : à effectif plein, chacun coûte 330 € HT. En tête-à-tête, la journée commence à 1 980 € HT. Adapter les exercices à vos contrats, rapports ou tableurs fait l'objet d'une ligne distincte du devis. À Genève ou à Bruxelles, il n'y a pas d'OPCO : le devis est établi en euros hors taxes. Programme détaillé, convention et attestations : le dossier que réclame l'opérateur vous est remis avant la session.",
       },
       {
         q: 'Quels métiers bénéficient le plus de Claude ?',

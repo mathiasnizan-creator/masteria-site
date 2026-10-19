@@ -110,7 +110,7 @@ export const GLOSSARY_TERMS = [
     term: 'Claude',
     category: 'modeles',
     definition:
-      "Assistant IA et famille de modèles d'Anthropic, entreprise fondée en 2021 par d'anciens d'OpenAI. Claude lit jusqu'à un million de tokens par conversation sur les offres payantes, ce qui le rend adapté aux documents longs et au code. Modèles au 5 octobre 2026 : Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 4.5. Anthropic entraîne ses modèles selon une « constitution », un texte de principes publié.",
+      "Assistant IA et famille de modèles d'Anthropic, entreprise fondée en 2021 par d'anciens d'OpenAI. Claude lit jusqu'à un million de tokens par conversation sur les offres payantes, ce qui le rend adapté aux documents longs et au code. Modèles au 19 octobre 2026 : Fable 5.1, Opus 5.5, Sonnet 5.5 et Haiku 5.5, ce dernier sorti le 7 octobre. Anthropic entraîne ses modèles selon une « constitution », un texte de principes publié.",
   },
   {
     id: 'gemini',
