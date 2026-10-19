@@ -111,6 +111,17 @@ export const COMPARISONS = {
       ],
     },
 
+    formations: {
+      titre: "Se former sur Claude ou sur ChatGPT",
+      texte:
+        "Une fois le choix fait, il reste à le faire entrer dans les habitudes. Nos formations partent de vos documents et de vos tâches : projets partagés, Skills et Cowork côté Claude, agents d'espace de travail et images côté ChatGPT. Si l'équipe hésite encore, la formation multi-outils lui fait tester les deux sur les mêmes exercices avant l'achat des sièges.",
+      liens: [
+        { href: "/formation-claude-ia", label: "Formation Claude", desc: "Projets, Skills, Cowork, Excel et PowerPoint, sur vos dossiers" },
+        { href: "/formation-chatgpt", label: "Formation ChatGPT", desc: "Agents d'équipe, analyse de fichiers et visuels" },
+        { href: "/formation-multi-outils", label: "Formation multi-outils", desc: "Les cinq assistants essayés sur vos propres cas" },
+        { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Pour les équipes techniques qui délèguent du code" },
+      ],
+    },
     verdict: {
       title: "Verdict en 30 secondes",
       summary:
@@ -552,6 +563,17 @@ export const COMPARISONS = {
       ],
     },
 
+    formations: {
+      titre: "Faire adopter Copilot ou ChatGPT",
+      texte:
+        "Une licence achetée ne crée pas l'usage à elle seule. Nos sessions Copilot se déroulent dans Outlook, Teams, Word et Excel, sur les fichiers et les réunions de l'entreprise. Celles sur ChatGPT visent les profils dont le travail sort d'Office : contenus, analyses, prototypes.",
+      liens: [
+        { href: "/formation-microsoft-copilot", label: "Formation Microsoft Copilot", desc: "Outlook, Teams, Word, Excel et PowerPoint avec vos fichiers" },
+        { href: "/formation-copilot-word-excel", label: "Copilot dans Word et Excel", desc: "Rédiger, résumer, construire un tableau guidé pas à pas" },
+        { href: "/formation-chatgpt", label: "Formation ChatGPT", desc: "Pour les profils créatifs, analytiques ou techniques" },
+        { href: "/formation-multi-outils", label: "Formation multi-outils", desc: "Comparer Copilot et ChatGPT sur les mêmes tâches" },
+      ],
+    },
     verdict: {
       title: "Ce qu'il faut retenir avant d'aller plus loin",
       summary:
@@ -924,6 +946,17 @@ export const COMPARISONS = {
       { id: "mistral", name: "Mistral AI (Vibe)", editor: "Mistral AI", country: "France", strengths: "Données en Europe par défaut, poids ouverts, Vibe Work et Code", priceMonthly: "17,99 € TTC Pro", color: "#FA500F" },
     ],
 
+    formations: {
+      titre: "Former vos équipes à l'outil retenu",
+      texte:
+        "Quel que soit votre profil, un assistant ne rapporte que s'il sert chaque semaine. Nous formons sur l'outil que vous avez choisi, ou sur plusieurs quand le choix reste ouvert. La direction peut commencer par une demi-journée pour fixer le cap, le budget et les règles d'usage.",
+      liens: [
+        { href: "/formation-ia-entreprise", label: "Formation IA en entreprise", desc: "Un parcours bâti sur les tâches de vos services" },
+        { href: "/formation-ia-dirigeants", label: "Formation IA pour dirigeants", desc: "Choisir l'outil, le budget et les règles" },
+        { href: "/formation-multi-outils", label: "Formation multi-outils", desc: "Essayer plusieurs assistants avant de trancher" },
+        { href: "/formation-microsoft-copilot", label: "Formation Microsoft Copilot", desc: "Si votre entreprise vit dans Microsoft 365" },
+      ],
+    },
     verdict: {
       title: "Cinq profils d'entreprise, cinq choix",
       summary:
@@ -1313,6 +1346,16 @@ export const COMPARISONS = {
       { id: "chatgpt", name: "ChatGPT", editor: "OpenAI", country: "États-Unis", strengths: "Codex en local et dans le cloud, tâches mixtes", priceMonthly: "23 € Plus · 21 € Business", color: "#10A37F" },
     ],
 
+    formations: {
+      titre: "Apprendre à coder avec un agent",
+      texte:
+        "Un agent de code amplifie ce que sait déjà faire la personne qui le pilote. Nos formations apprennent à lui confier une tâche, à relire ce qu'il produit et à l'encadrer dans un dépôt : Claude Code pour les développeurs, le vibe coding pour les profils non techniques qui veulent bâtir un prototype ou un outil interne.",
+      liens: [
+        { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Confier, relire et sécuriser du code sur vos dépôts" },
+        { href: "/formation-vibe-coding", label: "Formation vibe coding", desc: "Un prototype ou un outil interne sans être développeur" },
+        { href: "/formation-agents-ia", label: "Formation agents IA", desc: "Des agents qui enchaînent plusieurs étapes" },
+      ],
+    },
     verdict: {
       title: "Quatre outils, quatre profils de développeur",
       summary:
@@ -1655,6 +1698,17 @@ export const COMPARISONS = {
       { id: "copilot", name: "Microsoft Copilot Studio", editor: "Microsoft", country: "États-Unis", strengths: "Agents gouvernés dans Microsoft 365, Copilot Cowork", priceMonthly: "26 € HT + crédits Copilot", color: "#0078D4" },
     ],
 
+    formations: {
+      titre: "Construire vos propres agents",
+      texte:
+        "Choisir l'outil n'est que le début. Un agent utile part d'un cas précis, d'accès limités et d'une personne qui vérifie ce qu'il fait. Nos formations font monter un premier agent pendant la session, sur Claude, ChatGPT, Copilot Studio ou n8n selon votre environnement.",
+      liens: [
+        { href: "/formation-agents-ia", label: "Formation agents IA", desc: "Cadrer, construire et superviser un premier agent" },
+        { href: "/formation-automatisation-ia", label: "Formation automatisation IA", desc: "Relier l'IA à vos logiciels sans programmer" },
+        { href: "/formation-n8n", label: "Formation n8n", desc: "Des flux automatisés que vous pouvez héberger" },
+        { href: "/formation-claude-ia", label: "Formation Claude", desc: "Cowork et Skills pour les tâches de bureau en plusieurs étapes" },
+      ],
+    },
     verdict: {
       title: "Quatre agents, quatre usages : notre verdict",
       summary:
@@ -2359,6 +2413,17 @@ export const COMPARISONS = {
       ],
     },
 
+    formations: {
+      titre: "Se former sur Gemini ou sur Copilot",
+      texte:
+        "Puisque votre suite décide, la formation suit la même règle : Gemini dans Gmail, Docs et Sheets pour les entreprises sous Google Workspace, Copilot dans Outlook, Teams et Excel pour celles sous Microsoft 365. Dans les deux cas, les exercices partent de vos fichiers et de vos réunions.",
+      liens: [
+        { href: "/formation-gemini-entreprise", label: "Formation Gemini", desc: "Gmail, Docs, Sheets, Meet et Gemini Notebook" },
+        { href: "/formation-microsoft-copilot", label: "Formation Microsoft Copilot", desc: "Outlook, Teams, Word, Excel et PowerPoint" },
+        { href: "/formation-copilot-word-excel", label: "Copilot dans Word et Excel", desc: "Les deux applications où Copilot sert le plus souvent" },
+        { href: "/formation-multi-outils", label: "Formation multi-outils", desc: "Pour une entreprise qui utilise les deux suites" },
+      ],
+    },
     verdict: {
       title: "Le verdict en une minute",
       summary:
@@ -2576,6 +2641,793 @@ export const COMPARISONS = {
       { label: "Conseil IA pour entreprises", href: "/conseil-intelligence-artificielle" },
     ],
   },
+  // ═══════════════════════════════════════════════════════════════════
+  // toolA = Microsoft Copilot, toolB = Claude (créé le 19/10/2026 : requêtes
+  // « copilot vs claude », « claude ou copilot », « claude code vs copilot » vues dans Bing)
+  // ═══════════════════════════════════════════════════════════════════
+  "copilot-vs-claude": {
+    slug: "copilot-vs-claude",
+    metaTitle: "Copilot vs Claude 2026 : lequel choisir ? | Masteria",
+    metaDesc:
+      "Microsoft Copilot ou Claude : Microsoft 365, longs dossiers, agents, Claude Code face à GitHub Copilot, prix par siège. Vérifié le 19 octobre 2026.",
+    h1: "Microsoft Copilot ou Claude : lequel choisir pour votre entreprise en 2026 ?",
+    casIds: ["industrie"],
+    intro:
+      "Les deux outils se croisent plus qu'on ne le pense. **Microsoft Copilot** (anciennement Microsoft 365 Copilot) vit dans Outlook, Word, Excel et Teams, et peut faire travailler des modèles d'Anthropic quand l'administrateur l'autorise. **Claude**, l'assistant d'Anthropic, s'invite à son tour dans Word, Excel et PowerPoint, et se branche à Outlook et OneDrive. Ce qui les sépare : Copilot part des données que votre entreprise range dans Microsoft 365, Claude part du dossier que vous lui confiez, même long de 2 500 pages. Neuf critères et six situations de travail, relevés le 19 octobre 2026, servent d'arbitre plus bas.",
+    lastUpdate: "Octobre 2026",
+    verifiedOn: "19 octobre 2026",
+    datePublished: "2026-10-19",
+    dateModified: "2026-10-19",
+    readTime: "9 minutes",
+    keywords:
+      "copilot vs claude, claude ou copilot, microsoft copilot vs claude, microsoft copilot vs anthropic claude, claude code vs copilot, claude code vs github copilot, copilot vs claude vs chatgpt, claude dans copilot, prix copilot claude",
+
+    textes: {
+      legende: "Microsoft Copilot (Microsoft) et Claude (Anthropic) au 19 octobre 2026 : prix France hors taxes pour Microsoft, prix publics en dollars hors taxes pour Anthropic.",
+      criteres: "Neuf critères, chacun lu dans la documentation des deux éditeurs puis confronté à ce que nos stagiaires font de Copilot et de Claude en atelier.",
+      casTitre: "Six demandes de bureau, un gagnant pour chacune",
+      cas: "Des situations que les participants apportent en formation : un comité à préparer, un appel d'offres à éplucher, un budget à revoir, une méthode commerciale à transmettre, un bug à corriger, un client à qui répondre.",
+      metiersTitre: "Copilot ou Claude, fonction par fonction",
+      metiers: "Notre recommandation pour chaque service, tirée des sessions Copilot et Claude menées en 2026.",
+      erreursTitre: "Cinq erreurs qui faussent le choix entre Copilot et Claude",
+      erreurs: "Des décisions que nous voyons prises trop vite, souvent avant que les équipes aient essayé les deux outils sur leurs fichiers.",
+      alternativesTitre: "Les autres outils qui entrent dans la comparaison",
+      alternatives: "La question « Copilot ou Claude » en appelle souvent une troisième.",
+      ctaTitre: "Mettez Copilot et Claude à l'épreuve de vos dossiers avant de choisir",
+      ctaTexte: "Pendant la formation multi-outils, chaque participant passe ses propres documents dans Copilot, Claude et trois autres assistants. Vous choisissez ensuite sur des résultats observés, avec une règle de tri des données déjà écrite.",
+    },
+
+    terrain: {
+      titre: "Ce que montrent nos sessions sur les deux outils",
+      paras: [
+        "Une [assistante de direction](/etudes-de-cas-ia#mission-assistanat-direction), salariée d'un éditeur B2B, s'est présentée en formation en septembre 2026 avec Copilot déjà installé sur son poste et aucun compte Claude. Elle en est repartie avec un partage clair : comités, notes de frais et comptes rendus dans Copilot, parce qu'ils citent des personnes et des chiffres internes ; textes publics ou anonymisés dans Claude. Au moindre doute, le document reste côté Microsoft.",
+        "Un mois plus tôt, le gérant d'un [cabinet de géomètres-experts](/etudes-de-cas-ia#mission-gerance-cabinet), entreprise sous Microsoft 365, avait fait le chemin inverse : il a relié Outlook, son agenda et OneDrive à Claude pour contrôler ses procès-verbaux de bornage et préparer ses devis sur la base de ses propres trames. Être équipé de Microsoft ne règle donc pas la question à lui seul ; la longueur des dossiers et le besoin de méthodes réutilisables pèsent autant.",
+        "Côté Copilot, un groupe international du packaging forme ses équipes depuis juillet 2026 sur [ses propres classeurs et supports](/etudes-de-cas-ia#industrie) : grilles tarifaires, calculs de coûts, données RH, présentations aux couleurs du groupe.",
+      ],
+    },
+
+    answerBox: {
+      question: "Faut-il choisir Microsoft Copilot ou Claude ?",
+      answer:
+        "Prenez **Microsoft Copilot** si l'essentiel du travail passe par Outlook, Teams, Word et Excel : sa licence lit vos mails, fichiers et réunions dans Microsoft Graph, avec les droits déjà posés, et les requêtes des utilisateurs européens restent dans l'EU Data Boundary. Elle coûte **26 € HT par siège et par mois** avec engagement annuel, ou **18,20 € HT** en Copilot Business jusqu'à 300 utilisateurs, abonnement Microsoft 365 en plus. Prenez **Claude** pour analyser de gros dossiers, produire des livrables longs, transmettre des méthodes d'équipe ou coder : une formule payante absorbe un million de tokens dans un seul échange, Cowork mène une tâche jusqu'au livrable et Claude Code est compris dès Pro. Le siège Team coûte **20 $ HT par mois** à l'année, 25 $ au mois. Chez nos clients, les deux cohabitent souvent : Copilot pour l'ensemble des salariés, quelques sièges Claude pour l'analyse, la rédaction longue et le développement.",
+      bullets: [
+        "Mails, agenda, réunions Teams, fichiers SharePoint : Copilot",
+        "Contrat, appel d'offres ou rapport de plusieurs centaines de pages : Claude",
+        "Méthode d'équipe appliquée à l'identique par tous (Skills) : Claude",
+        "Développeurs : Claude Code, compris dès Pro, ou GitHub Copilot à partir de 19 $ par siège",
+        "Budget par siège : 18,20 à 26 € HT pour Copilot, Microsoft 365 en sus ; 20 à 25 $ HT pour Claude Team",
+      ],
+    },
+
+    toolA: {
+      id: "copilot",
+      name: "Microsoft Copilot",
+      editor: "Microsoft",
+      currentModel: "Mode Auto qui puise chez OpenAI comme chez Anthropic, adossé à Microsoft 365",
+      country: "États-Unis",
+      pricing: "26 € HT par mois en annuel · Copilot Business 18,20 € HT jusqu'à 300 utilisateurs · Microsoft 365 en plus",
+      foundedAI: "2023",
+      color: "#0078D4",
+    },
+    toolB: {
+      id: "claude",
+      name: "Claude",
+      editor: "Anthropic",
+      currentModel: "Opus 5.5 par défaut, Fable 5.1 pour les travaux longs, Sonnet 5.5 et Haiku 5.5 pour aller vite",
+      country: "États-Unis",
+      pricing: "Pro 20 $ · Team 25 $ par siège (20 $ à l'année) · Enterprise 20 $ par siège plus l'usage",
+      foundedAI: "2023",
+      color: "#D97706",
+    },
+
+    keyFacts: {
+      title: "Copilot et Claude, critère par critère",
+      note: "Relevé du 19 octobre 2026 sur les pages françaises de Microsoft et sur la grille publique d'Anthropic. Microsoft affiche ses prix en euros hors taxes, Anthropic en dollars hors taxes.",
+      rows: [
+        { criterion: "Modèles", a: "Mode Auto qui répartit les demandes entre OpenAI et Anthropic ; dans l'Union, les modèles Anthropic attendent le feu vert de l'administrateur", b: "Quatre modèles au choix de l'utilisateur, de Haiku 5.5, le plus rapide, à Fable 5.1, réservé aux formules payantes" },
+        { criterion: "Où il travaille", a: "Word, Excel, PowerPoint, Outlook, Teams et OneNote, plus l'application Copilot", b: "Application web, ordinateur et mobile ; compléments Excel, PowerPoint et Word sur les offres payantes, Outlook en bêta ; extension Chrome" },
+        { criterion: "Données de l'entreprise", a: "Avec la licence : mails, SharePoint, OneDrive, réunions et agenda lus par Microsoft Graph, dans la limite des droits de chacun", b: "Par connecteurs : Microsoft 365, Google Drive, Slack, ou tout logiciel doté d'un serveur MCP" },
+        { criterion: "Texte lu d'un coup", a: "Aucun chiffre publié : Graph va chercher le passage utile", b: "Un million de tokens par échange sur les trois grands modèles, soit environ 2 500 pages" },
+        { criterion: "Tâches menées seul", a: "Copilot Cowork, ouvert à tous depuis le 29 septembre 2026, agit dans Microsoft 365 avec votre accord sur les actions à risque ; Copilot Studio pour les agents métier", b: "Cowork dans chaque conversation depuis le 16 septembre 2026, exécuté dans le cloud sur Pro et Max depuis le 6 octobre, en bêta sur Team" },
+        { criterion: "Méthodes réutilisables", a: "Agents de Copilot Studio, agents fournis par Microsoft (Researcher, Analyst)", b: "Skills, rangées chacune dans un dossier, que Claude appelle quand la demande s'y prête ; projets partagés" },
+        { criterion: "Programmation", a: "GitHub Copilot, vendu à part : 19 $ par siège en Business, 39 $ en Enterprise", b: "Claude Code compris dès Pro et dans le siège Team : terminal, éditeurs, application de bureau, navigateur" },
+        { criterion: "Sans payer", a: "Copilot Chat, compris dans Microsoft 365", b: "Offre gratuite avec Sonnet et Haiku, sans Claude Code ni Cowork" },
+        { criterion: "Prix pour une équipe", a: "Licence : 26 € HT l'an durant, 27,30 € HT sans engagement ; Business : 18,20 € HT l'an durant, 21,84 € HT sans engagement ; Microsoft 365 à part", b: "Team : 20 $ par siège en annuel, 25 $ au mois, de 2 à 150 sièges ; Premium 100 $ ou 125 $ ; Enterprise 20 $ par siège plus l'usage, 20 sièges au minimum" },
+        { criterion: "Lieu des traitements", a: "Infrastructure Microsoft 365 ; périmètre EU Data Boundary pour l'Europe, hors requêtes confiées à Anthropic", b: "Aucune région européenne dans les applications Claude ; pour héberger en Europe, passer par Bedrock chez AWS ou Vertex AI chez Google Cloud" },
+      ],
+    },
+
+    formations: {
+      titre: "Se former sur Copilot, sur Claude, ou sur les deux",
+      texte:
+        "Nous formons sur les deux outils, souvent dans la même entreprise : Copilot pour la bureautique de tous, Claude pour les personnes qui analysent, rédigent long ou développent. Quand le partage reste à décider, la formation multi-outils le tranche sur vos fichiers, avec une règle de tri des données posée dès le premier jour.",
+      liens: [
+        { href: "/formation-microsoft-copilot", label: "Formation Microsoft Copilot", desc: "Outlook, Teams, Word, Excel et PowerPoint sur vos documents" },
+        { href: "/formation-claude-ia", label: "Formation Claude", desc: "Projets, Skills, Cowork et compléments Office" },
+        { href: "/formation-multi-outils", label: "Formation multi-outils", desc: "Copilot et Claude essayés côte à côte" },
+        { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Pour les équipes qui développent" },
+      ],
+    },
+    verdict: {
+      title: "Le verdict en quelques lignes",
+      summary:
+        "**Copilot** gagne quand la question porte sur la vie de l'entreprise : le fil de mails d'hier, la décision prise en réunion, le fichier rangé dans SharePoint. **Claude** gagne quand la matière est un dossier à lire en entier, une méthode à reproduire ou du code. Les deux se rapprochent, puisque Copilot propose des modèles d'Anthropic et que Claude s'installe dans Excel, PowerPoint et Word. Avant de choisir, regardez où se trouvent vos données et qui doit y accéder.",
+      recommendA: ["Vos équipes passent la journée dans Outlook, Teams, Word et Excel", "Vous voulez interroger mails, réunions et SharePoint sans téléverser de fichier", "Vos traitements doivent rester dans l'EU Data Boundary", "Votre informatique administre déjà Microsoft 365 et Purview"],
+      recommendB: ["Vous traitez des contrats, rapports ou appels d'offres de plusieurs centaines de pages", "Vous voulez des méthodes d'équipe partagées avec les Skills", "Vos développeurs ont besoin d'un agent de code compris dans l'abonnement", "Vous confiez des tâches longues à mener jusqu'au livrable"],
+    },
+
+    criteria: [
+      {
+        title: "Place dans la suite Microsoft",
+        descriptionA:
+          "Copilot se tient dans chaque application Office, à côté du fichier en cours, et tire son contexte de Microsoft Graph. Il résume un fil Teams, prépare une réponse dans Outlook ou monte une présentation depuis une note Word sans changer de fenêtre.",
+        descriptionB:
+          "Claude rejoint Office par des compléments : depuis le 7 mai 2026, tout abonné payant l'ouvre dans Excel, PowerPoint et Word, et la version Outlook reste en test. Le connecteur Microsoft 365 lui ouvre la messagerie, l'agenda et les fichiers, selon ce que l'administrateur autorise.",
+        winner: "a",
+        winnerText: "Avantage Copilot, chez lui dans Microsoft 365",
+      },
+      {
+        title: "Lecture de longs documents",
+        descriptionA:
+          "Microsoft ne publie pas de taille de contexte. Copilot cherche l'extrait pertinent dans vos fichiers plutôt que de lire un dossier entier : très bien pour une question précise, moins pour une analyse croisée de plusieurs centaines de pages.",
+        descriptionB:
+          "Avec une formule payante, Claude retient un million de tokens dans une même conversation, l'équivalent de 2 500 pages d'après Anthropic, sur ses trois grands modèles. Un dossier de consultation complet et ses annexes tiennent dans une seule conversation.",
+        winner: "b",
+        winnerText: "Avantage Claude sur les gros dossiers",
+      },
+      {
+        title: "Accès aux données internes",
+        descriptionA:
+          "Avec la licence, Copilot interroge Graph et Work IQ, qui couvrent la messagerie, les fichiers, les réunions, l'agenda et l'organigramme. L'utilisateur n'a rien à configurer, et chaque réponse respecte les droits d'accès existants.",
+        descriptionB:
+          "Claude passe par des connecteurs : Microsoft 365, Google Drive, Slack, ou tout logiciel qui expose un serveur MCP. L'administrateur choisit ceux qui sont ouverts, l'utilisateur les active, et la qualité des réponses dépend de ce qui est branché.",
+        winner: "a",
+        winnerText: "Avantage Copilot, sans configuration",
+      },
+      {
+        title: "Confidentialité et hébergement",
+        descriptionA:
+          "Microsoft garde demandes et réponses dans son infrastructure 365, applique vos durées de conservation et n'en tire aucun apprentissage. Les salariés basés en Europe restent dans l'EU Data Boundary, sauf pour les requêtes envoyées aux modèles d'Anthropic une fois ceux-ci activés.",
+        descriptionB:
+          "Anthropic n'entraîne pas ses modèles sur ce qu'écrit une organisation abonnée à Team ou Enterprise. Faute de région européenne dans ses applications, une entreprise qui veut héberger en Europe doit appeler Claude par Bedrock (AWS) ou Vertex AI (Google Cloud), au prix d'un développement.",
+        winner: "a",
+        winnerText: "Copilot devant pour un hébergement européen",
+      },
+      {
+        title: "Tâches menées en autonomie",
+        descriptionA:
+          "Copilot Cowork, généralisé le 29 septembre 2026, rédige et expédie des messages, cale des rendez-vous et produit des fichiers dans Microsoft 365 ; il sollicite votre feu vert dès qu'une action comporte un risque, et sa consommation se paie en plus. Copilot Studio sert à monter des agents métier en low-code.",
+        descriptionB:
+          "Accessible depuis le 16 septembre 2026 dans n'importe quelle conversation Claude, Cowork découpe la tâche, travaille sur vos fichiers et rend un livrable. Depuis le 6 octobre, les nouvelles tâches tournent dans le cloud sur Pro et Max et avancent ordinateur fermé ; sur Team, ce mode est en bêta.",
+        winner: "tie",
+        winnerText: "Match nul : agir dans Microsoft 365 ou rendre un livrable complet",
+      },
+      {
+        title: "Transmettre une méthode à l'équipe",
+        descriptionA:
+          "Les agents de Copilot Studio et ceux fournis par Microsoft (Researcher, Analyst) donnent un cadre commun. Leur publication passe en général par l'informatique ou par un référent formé à Studio.",
+        descriptionB:
+          "Une Skill enferme une méthode dans un dossier que Claude sait relire : grille de cotation, charte de rédaction, contrôle d'un document. Claude la charge seul quand la demande correspond, et l'équipe la partage. Un distributeur IT a ainsi outillé dix référents avec [onze compétences](/etudes-de-cas-ia#distribution).",
+        winner: "b",
+        winnerText: "Avantage Claude pour diffuser une méthode",
+      },
+      {
+        title: "Code et développement",
+        descriptionA:
+          "Microsoft Copilot ne s'adresse pas aux développeurs. Microsoft leur vend GitHub Copilot, 19 $ par siège en Business et 39 $ en Enterprise : suggestions dans l'éditeur, conversation, agent qui traite un ticket, avec des modèles d'Anthropic, d'OpenAI et de Google au choix.",
+        descriptionB:
+          "Claude Code est compris dès Pro et dans le siège Team. Il parcourt un dépôt complet, touche autant de fichiers que nécessaire, exécute la suite de tests et rédige les commits, depuis une console, un éditeur de code ou l'application Claude.",
+        winner: "b",
+        winnerText: "Avantage Claude pour les chantiers de code longs",
+      },
+      {
+        title: "Prix d'un siège",
+        descriptionA:
+          "En France, Microsoft affiche la licence à 26 € HT par personne et par mois avec engagement annuel, 27,30 € HT sans engagement. Pour 300 personnes au plus, Copilot Business revient à 18,20 € HT mensuels avec engagement d'un an, 21,84 € HT sans ; un client Microsoft 365 qui souscrit à l'année avant le 31 décembre 2026 paie 15,60 € HT la première année. L'abonnement Microsoft 365 reste dû.",
+        descriptionB:
+          "Anthropic publie ses prix en dollars, hors taxes. Pro coûte 20 $ par mois, 17 $ à l'année. Un siège Team standard se paie 25 $ sans engagement ou 20 $ sur un an, pour une équipe de 2 à 150 personnes ; le Premium, cinq fois plus d'usage, 125 $ ou 100 $. Enterprise facture 20 $ par siège à l'année, 20 sièges au minimum, puis l'usage au tarif de l'API. Le détail figure sur notre page [prix de Claude](/claude-prix-abonnement).",
+        winner: "tie",
+        winnerText: "Match nul : montants proches, périmètres différents",
+      },
+      {
+        title: "Prise en main",
+        descriptionA:
+          "Copilot change de visage d'une application à l'autre : il s'apprend dans Outlook, puis dans Excel, puis dans Teams. Une formation utile avance application par application, sur les fichiers du service.",
+        descriptionB:
+          "Claude s'apprend dans une seule interface, mais il faut préparer ses projets, ses consignes et ses Skills. Cowork et Claude Code demandent ensuite d'apprendre à cadrer une tâche et à relire ce qui revient.",
+        winner: "tie",
+        winnerText: "Match nul : deux apprentissages différents",
+      },
+    ],
+
+    realCases: [
+      {
+        scenario: "Préparer un comité de direction à partir des échanges du mois",
+        feature: "Copilot relié à Graph · Claude avec le connecteur Microsoft 365",
+        prompt: "Rassemble les décisions prises dans les réunions Teams et les fils Outlook de ces quatre dernières semaines sur le projet Atlas. Prépare l'ordre du jour du comité de jeudi, une note de synthèse d'une page et la liste des points sans responsable.",
+        verdictText: "**Copilot l'emporte** : il retrouve réunions et fils de mails dans Graph sans que personne ait rien branché. Claude produit une synthèse comparable sur les mails et les fichiers si le connecteur Microsoft 365 est actif, mais il dépend de ce que ce connecteur lui ouvre.",
+        winner: "a",
+      },
+      {
+        scenario: "Éplucher une consultation publique de 400 pages",
+        feature: "Contexte d'un million de tokens · Copilot dans Word",
+        prompt: "Voici le dossier de consultation complet : règlement, CCTP, CCAP et annexes techniques. Liste les exigences éliminatoires, les pièces à fournir, les pénalités et les points où notre offre type ne répond pas. Indique la page de chaque élément.",
+        verdictText: "**Claude l'emporte** : le dossier entier tient dans un échange et chaque exigence renvoie à sa page. Copilot répond bien à une question ciblée sur un des documents, moins bien à l'analyse croisée de l'ensemble.",
+        winner: "b",
+      },
+      {
+        scenario: "Revoir un budget dans Excel",
+        feature: "Copilot dans Excel · complément Claude pour Excel",
+        prompt: "Dans ce budget 2027, ajoute un scénario à moins 10 % de volume, recalcule la marge par gamme et signale les formules qui cassent.",
+        verdictText: "**Match nul** : les deux travaillent dans le classeur ouvert. Copilot propose un mode plan qui montre les étapes avant de modifier ; Claude explique ses formules et reprend un classeur complexe d'un seul tenant. Le choix suit l'outil déjà déployé.",
+        winner: "tie",
+      },
+      {
+        scenario: "Écrire une méthode de cotation que tous les commerciaux appliquent",
+        feature: "Skills Claude · agent Copilot Studio",
+        prompt: "Voici notre grille de remises, nos marges plancher et trois cotations validées. Construis une méthode que chaque commercial appliquera à une demande client reçue par mail.",
+        verdictText: "**Claude l'emporte** : la méthode devient une Skill que chacun utilise dans sa conversation et qu'on corrige en modifiant un fichier. Copilot Studio y parvient avec un agent, au prix d'une mise en place plus lourde.",
+        winner: "b",
+      },
+      {
+        scenario: "Corriger un bug dans une application interne",
+        feature: "Claude Code · GitHub Copilot",
+        prompt: "Le calcul des congés renvoie un total faux pour les salariés à temps partiel. Trouve la cause dans le dépôt, corrige-la, ajoute un test et prépare la pull request.",
+        verdictText: "**Claude l'emporte** pour cette mission de bout en bout, comprise dans l'abonnement : Claude Code lit le dépôt, exécute les tests et ouvre la pull request. GitHub Copilot, à acheter en plus de Microsoft Copilot, excelle dans les suggestions au fil de la frappe.",
+        winner: "b",
+      },
+      {
+        scenario: "Répondre à un client à partir de l'historique des échanges",
+        feature: "Copilot dans Outlook · Claude avec le connecteur Microsoft 365",
+        prompt: "Prépare une réponse au dernier mail de ce client : reprends ce qui lui a été promis lors de nos deux derniers échanges et la date de livraison confirmée.",
+        verdictText: "**Copilot l'emporte** : il lit le fil et les échanges liés dans Outlook, là où le mail est arrivé. Claude rédige aussi bien la réponse, à condition d'accéder à la boîte par le connecteur ou qu'on lui colle l'historique.",
+        winner: "a",
+      },
+    ],
+
+    useCases: [
+      { metier: "Direction et assistanat", recommendation: "a", why: "Agenda, comités et comptes rendus partent d'Outlook et de Teams." },
+      { metier: "Juridique et achats", recommendation: "b", why: "Contrats et dossiers de consultation lus en entier, clauses comparées d'un document à l'autre." },
+      { metier: "Finance et contrôle de gestion", recommendation: "tie", why: "Les deux travaillent dans Excel ; Claude pour reprendre un modèle complexe, Copilot pour un classeur partagé." },
+      { metier: "Commerce", recommendation: "b", why: "Skills de cotation et de relance partagées par toute l'équipe." },
+      { metier: "Ressources humaines", recommendation: "a", why: "Données nominatives : elles restent dans le service Microsoft 365." },
+      { metier: "Développement et informatique", recommendation: "b", why: "Claude Code, compris dès l'offre Pro." },
+      { metier: "Marketing et communication", recommendation: "tie", why: "Claude pour les textes longs et la voix de marque, Copilot pour décliner dans PowerPoint et Word." },
+    ],
+
+    mistakes: [
+      { title: "Croire que Copilot et Claude font doublon", desc: "L'un lit l'entreprise, l'autre traite le dossier qu'on lui confie. Poser la même question générale aux deux ne dit rien de leur utilité sur vos tâches." },
+      { title: "Activer les modèles d'Anthropic dans Copilot sans prévenir le DPO", desc: "Une fois activés par l'administrateur, ces modèles traitent les requêtes hors de l'EU Data Boundary. Le délégué à la protection des données doit valider ce choix avant l'activation." },
+      { title: "Ouvrir Claude sans règle de tri des données", desc: "Sans règle écrite, chacun décide seul de ce qu'il colle dans l'outil. Fixez avant le premier jour ce qui reste dans Copilot (nominatif, interne) et ce qui peut aller dans Claude." },
+      { title: "Confondre Microsoft Copilot et GitHub Copilot", desc: "Les deux portent le même nom et ne se recouvrent pas : l'un sert la bureautique, l'autre le code. Claude Code, lui, est compris dans l'abonnement Claude." },
+      { title: "Comparer des prix qui ne couvrent pas la même chose", desc: "La licence Copilot s'ajoute à Microsoft 365 ; le siège Claude Team comprend Claude Code et Cowork mais aucune suite bureautique. Chez Anthropic, Enterprise ajoute la consommation au tarif de l'API au prix du siège." },
+    ],
+
+    alsoConsidered: [
+      { name: "ChatGPT", summary: "Souvent ajouté à la comparaison : application autonome, visuels avec ChatGPT Images 2.5, extensions pour Word, Excel et PowerPoint. Voir [Copilot vs ChatGPT](/copilot-vs-chatgpt) et [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: "Google Gemini", summary: "Pour une entreprise sous Google Workspace, Gemini tient la place de Copilot, compris dans le forfait. Voir [Gemini vs Copilot](/gemini-vs-copilot)." },
+      { name: "GitHub Copilot", summary: "L'outil de code de Microsoft, à comparer avec Claude Code et Cursor sur notre page [meilleure IA pour coder](/meilleure-ia-pour-coder)." },
+      { name: "Vibe (Mistral AI)", summary: "L'assistant de l'éditeur français garde les données en Europe par défaut. Voir [Mistral vs ChatGPT](/mistral-vs-chatgpt)." },
+    ],
+
+    faq: [
+      { q: "Peut-on utiliser Claude dans Microsoft Copilot ?", a: "En partie. Une fois Anthropic déclaré sous-traitant par l'administrateur, Claude devient sélectionnable pour retravailler un document Word avec Copilot et dans l'agent de recherche Researcher. Dans l'Union, ce réglage est désactivé au départ, et les requêtes concernées quittent l'EU Data Boundary. Vous n'obtenez pas pour autant l'application Claude, ses Skills, Cowork ou Claude Code." },
+      { q: "Claude Code ou GitHub Copilot : lequel choisir ?", a: "GitHub Copilot suggère du code pendant que vous tapez et coûte 19 $ par siège en Business. Claude Code prend en charge une mission entière (lire le dépôt, modifier plusieurs fichiers, lancer les tests, préparer la pull request) et il est compris dans les abonnements Claude dès Pro. Les deux se combinent : GitHub Copilot dans l'éditeur, Claude Code pour les chantiers longs. Comparatif complet sur notre page [meilleure IA pour coder](/meilleure-ia-pour-coder)." },
+      { q: "Copilot Cowork et Claude Cowork, est-ce la même chose ?", a: "Non : deux produits de deux éditeurs. Copilot Cowork, chez Microsoft, s'occupe de messagerie, de réunions et de documents dans Microsoft 365, en vous consultant avant toute action risquée. Cowork, chez Anthropic, mène une tâche sur vos fichiers depuis n'importe quelle conversation Claude et rend un livrable ; nous le comparons à Claude Code sur une [page dédiée](/claude-cowork-vs-claude-code)." },
+      { q: "Lequel coûte le moins cher pour une PME de 20 personnes ?", a: "Sur un an, Copilot Business revient à 4 368 € HT pour 20 personnes, abonnement Microsoft 365 en plus. Claude Team coûte 4 800 $ HT pour 20 sièges standard réglés à l'année. Les montants se valent : décidez plutôt selon ce que vos équipes font de leur journée." },
+      { q: "Claude fonctionne-t-il avec Outlook et OneDrive ?", a: "Oui. Le connecteur Microsoft 365 donne à Claude l'accès à la messagerie, à l'agenda et aux fichiers, dans les limites fixées par l'administrateur, et un complément Outlook est en bêta. Copilot reste plus profondément intégré à la suite." },
+      { q: "Et ChatGPT, entre les deux ?", a: "ChatGPT est une application autonome comme Claude, plus forte sur les visuels, avec des extensions pour Word, Excel et PowerPoint. Pour un choix à trois, lisez [Copilot vs ChatGPT](/copilot-vs-chatgpt), [ChatGPT vs Claude](/chatgpt-vs-claude) ou notre [panorama des assistants](/meilleure-ia-entreprise-2026)." },
+    ],
+
+    changelog: {
+      title: "Historique de cette page",
+      items: [
+        { date: "19 octobre 2026", text: "Première publication. Prix relevés le jour même chez Microsoft France et Anthropic ; les autres faits sur Copilot reprennent notre vérification du 7 octobre 2026 pour le comparatif Copilot vs ChatGPT." },
+      ],
+    },
+
+    methodology:
+      "Masteria, cabinet lyonnais d'intelligence artificielle fondé en 2022, forme aux deux outils, parfois dans la même entreprise. Le **19 octobre 2026**, nous avons relevé les prix de Microsoft Copilot sur la page française de Microsoft et ceux de Claude sur claude.com ; modèles et fonctions viennent des documentations citées ci-dessous. Versions comparées : **Microsoft Copilot** avec licence et **Claude Team**.",
+
+    citations: [
+      { name: "Copilot Business et offres Microsoft 365 avec Copilot, page France de Microsoft", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
+      { name: "Licence Microsoft Copilot pour les grandes entreprises, page France", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/enterprise" },
+      { name: "Modèles Anthropic dans Copilot : réglage administrateur (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
+      { name: "Copilot Cowork (Microsoft Learn)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+      { name: "Offres GitHub Copilot (documentation GitHub)", url: "https://docs.github.com/en/copilot/get-started/plans" },
+      { name: "Prix des offres Claude (Anthropic)", url: "https://claude.com/pricing" },
+      { name: "Modèles Claude en service (Anthropic)", url: "https://platform.claude.com/docs/en/about-claude/models/overview" },
+      { name: "Cowork sur le web, l'ordinateur et le mobile (Anthropic)", url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile" },
+      { name: "Claude dans Excel, PowerPoint, Word et Outlook (Anthropic)", url: "https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook" },
+      { name: "Présentation de Claude Code (Anthropic)", url: "https://code.claude.com/docs/en/overview" },
+      { name: "Usage des données pour l'entraînement (Anthropic)", url: "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" },
+    ],
+
+    relatedLinks: [
+      { label: "Prix de Claude : les abonnements", href: "/claude-prix-abonnement" },
+      { label: "Claude Cowork vs Claude Code", href: "/claude-cowork-vs-claude-code" },
+      { label: "Copilot vs ChatGPT", href: "/copilot-vs-chatgpt" },
+      { label: "ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
+      { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot" },
+      { label: "Formation Claude", href: "/formation-claude-ia" },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // Panorama des offres Claude (créé le 19/10/2026 : requêtes « claude ia prix
+  // abonnement », « claude team pricing », « claude enterprise pricing », « claude code pricing »)
+  // Les « outils » sont ici les cinq formules d'Anthropic.
+  // ═══════════════════════════════════════════════════════════════════
+  "claude-prix-abonnement": {
+    slug: "claude-prix-abonnement",
+    metaTitle: "Prix de Claude 2026 : Pro, Max, Team, Enterprise | Masteria",
+    metaDesc:
+      "Prix des abonnements Claude : Gratuit, Pro, Max, Team et Enterprise, Claude Code compris, tarifs de l'API. Relevé le 19 octobre 2026 chez Anthropic.",
+    h1: "Prix de Claude : quel abonnement choisir en 2026 ?",
+    isPanorama: true,
+    intro:
+      "Anthropic vend Claude sous cinq formules, de la plus simple à la plus encadrée : **Gratuit**, **Pro** et **Max** pour une personne, **Team** et **Enterprise** pour une organisation. Toutes les formules payantes comprennent **Claude Code**, l'agent de programmation, et donnent accès à **Opus 5.5**, le modèle qu'Anthropic conseille par défaut. Les montants sont publiés en dollars, hors taxes. Voici ce que chaque formule débloque, à qui elle convient et ce que coûte une équipe sur un an, d'après la page tarifs relevée le 19 octobre 2026.",
+    lastUpdate: "Octobre 2026",
+    verifiedOn: "19 octobre 2026",
+    datePublished: "2026-10-19",
+    dateModified: "2026-10-19",
+    readTime: "8 minutes",
+    keywords:
+      "claude prix, claude ia prix abonnement, claude ai prix abonnement, claude ia tarifs abonnement, claude pro prix, claude max prix, claude team pricing, claude enterprise pricing, claude team vs enterprise, claude code pricing, prix api claude",
+
+    textes: {
+      legende: "Les cinq formules de Claude au 19 octobre 2026, selon claude.com/pricing. Montants en dollars, hors taxes.",
+      analyseTitre: "Les cinq formules, une par une",
+      analyse: "Ce que chaque formule apporte, ce qui lui manque, et le profil qui en tire le plus.",
+      coutTitre: "Budget annuel selon la taille de l'équipe",
+      cout: "Quatre configurations calculées sur les prix publics, en paiement annuel, hors formation.",
+      aRetenir: "le prix des sièges ne dit rien de l'usage réel. Un mois après l'achat, regardez qui se sert de Claude et pour quoi faire, puis déplacez les sièges Premium vers ceux qui atteignent leurs limites.",
+      erreursTitre: "Quatre erreurs d'achat que nous voyons souvent",
+      erreurs: "Des choix d'abonnement qui coûtent plus cher que nécessaire ou laissent les données sans administration.",
+      alternativesTitre: "Comparer avec les autres assistants",
+      alternatives: "Le prix de Claude se lit mieux à côté de celui de ses concurrents.",
+      ctaTitre: "Rentabilisez vos sièges Claude dès le premier mois",
+      ctaTexte: "Un abonnement ouvre Projets, Skills, Cowork et Claude Code ; la formation les installe sur les tâches réelles de vos équipes. Masteria est certifié Qualiopi au titre des actions de formation.",
+    },
+
+    terrain: {
+      titre: "Notre conseil d'achat, tiré des formations",
+      paras: [
+        "Pour une équipe, nous conseillons d'équiper d'abord quelques référents, puis d'élargir. C'est la démarche suivie avec un distributeur IT B2B : [dix référents](/etudes-de-cas-ia#distribution) formés en juin 2026 construisent les compétences Claude, et le reste des collaborateurs les reçoit au déploiement prévu d'octobre à décembre 2026.",
+        "Notre règle pratique : un essai sur Pro pour une ou deux personnes, puis Team dès que l'outil sert à plusieurs, et des sièges Premium réservés à ceux qui atteignent leurs limites au bout d'un mois. Une équipe pédagogique que nous avons formée en septembre 2026 travaillait déjà sur [Claude Team](/etudes-de-cas-ia#mission-editeur-pole-formation) : ses deux compétences sont partagées à toute l'organisation.",
+      ],
+    },
+
+    answerBox: {
+      question: "Combien coûte Claude ?",
+      answer:
+        "**Claude** est gratuit pour un usage léger. **Pro** coûte **20 $ par mois**, ou 200 $ réglés pour l'année (environ 17 $ par mois), et ouvre Opus 5.5, Claude Code et Cowork. **Max** démarre à **100 $ par mois** pour cinq fois l'usage de Pro, vingt fois sur la formule supérieure. Pour une entreprise, **Team** facture **25 $ par siège et par mois**, ou 20 $ sur un an, pour 2 à 150 personnes ; un siège Premium, cinq fois plus d'usage, vaut 125 $ ou 100 $. **Enterprise** demande **20 $ mensuels par siège** sur engagement annuel, 20 sièges au minimum, à quoi s'ajoute l'usage compté au prix de l'API. Montants hors taxes, relevés le 19 octobre 2026.",
+      bullets: [
+        "Pour essayer : Gratuit, puis Pro",
+        "Développeur ou utilisateur intensif : Pro, puis Max si les limites gênent",
+        "Équipe de 2 à 150 personnes : Team, sièges standard et Premium mélangés",
+        "Au-delà de 150 personnes, ou besoin d'audit et de SCIM : Enterprise",
+        "Application ou agent maison : l'API, payée au million de tokens",
+      ],
+    },
+
+    tools: [
+      { id: "gratuit", name: "Claude Gratuit", editor: "Anthropic", country: "Pour essayer", strengths: "Sonnet et Haiku, sans Claude Code ni Cowork", priceFull: "0 $", color: "#6B7280" },
+      { id: "pro", name: "Claude Pro", editor: "Anthropic", country: "Une personne", strengths: "Opus 5.5, Claude Code, Cowork, compléments Office", priceFull: "20 $ par mois, 17 $ à l'année", color: "#D97706" },
+      { id: "max", name: "Claude Max", editor: "Anthropic", country: "Usage intensif", strengths: "Usage multiplié par cinq ou vingt, crédits API chaque mois", priceFull: "Dès 100 $ par mois", color: "#B45309" },
+      { id: "team", name: "Claude Team", editor: "Anthropic", country: "De 2 à 150 sièges", strengths: "Administration, Claude Code et Cowork, aucun entraînement sur vos échanges", priceFull: "25 $ par siège et par mois, 20 $ à l'année", color: "#2563EB" },
+      { id: "enterprise", name: "Claude Enterprise", editor: "Anthropic", country: "20 sièges au moins", strengths: "SCIM, journaux d'audit, rétention réglable, plafonds de dépense", priceFull: "20 $ par siège et par mois, plus l'usage", color: "#111827" },
+    ],
+
+    formations: {
+      titre: "Tirer parti de l'abonnement",
+      texte:
+        "Une formule payante ouvre Projets, Skills, Cowork et Claude Code ; encore faut-il que vos équipes sachent s'en servir. Nos formations Claude partent de vos documents et installent ces fonctions sur vos tâches, pour que chaque siège payé serve chaque semaine.",
+      liens: [
+        { href: "/formation-claude-ia", label: "Formation Claude", desc: "Projets, Skills, Cowork, Excel et PowerPoint" },
+        { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Pour les sièges Premium des développeurs" },
+        { href: "/formation-claude-commercial", label: "Claude pour les commerciaux", desc: "Cotations, relances et prospection" },
+      ],
+    },
+    verdict: {
+      title: "Quelle formule pour quel profil",
+      summary:
+        "Deux questions décident : combien de personnes utiliseront Claude, et avec quelle intensité. Voici les profils que nous rencontrons le plus souvent en formation :",
+      profiles: [
+        { profile: "Découvrir l'outil", tool: "Gratuit", why: "Sonnet et Haiku suffisent pour juger Claude sur quelques tâches. Ni Claude Code ni Cowork." },
+        { profile: "Indépendant, cadre, consultant", tool: "Pro", why: "Opus 5.5, un million de tokens de contexte, Claude Code et Cowork pour 20 $ par mois." },
+        { profile: "Développeur à plein temps", tool: "Max", why: "Claude Code consomme vite les limites de Pro. Max multiplie l'usage par cinq ou vingt et ajoute des crédits API chaque mois." },
+        { profile: "PME, service, équipe projet", tool: "Team", why: "Un siège par personne, une administration commune, aucun entraînement sur les échanges de l'organisation. Les sièges Premium vont aux plus gros utilisateurs." },
+        { profile: "ETI, grand groupe, secteur régulé", tool: "Enterprise", why: "SCIM, journaux d'audit, API de conformité, rétention réglable, plafonds de dépense. L'usage se paie en plus du siège." },
+        { profile: "Application ou agent interne", tool: "API", why: "Facturation au million de tokens, de 0,10 $ en entrée avec Haiku 5.5 à 10 $ avec Fable 5.1." },
+      ],
+    },
+
+    deepDive: [
+      {
+        tool: "gratuit",
+        position: "Pour se faire une idée",
+        title: "Claude Gratuit, 0 $",
+        pros: ["Sonnet et Haiku, les modèles rapides de la gamme", "Artefacts, Claude Design, Slides et Docs, ouverts à toutes les offres depuis le 16 septembre 2026", "Aucun moyen de paiement à fournir"],
+        cons: ["Ni Opus 5.5 ni Fable 5.1", "Pas de Claude Code ni de Cowork", "Un quota vite atteint sur un long document"],
+        idealFor: "Tester Claude sur quelques tâches avant d'acheter",
+      },
+      {
+        tool: "pro",
+        position: "L'abonnement d'une personne",
+        title: "Claude Pro, 20 $ par mois",
+        pros: ["Opus 5.5, Sonnet 5.5, et Fable 5.1 sur crédits d'usage", "Claude Code dans le terminal, l'éditeur, l'application et le navigateur", "Cowork depuis chaque conversation, exécuté dans le cloud depuis le 6 octobre 2026", "Claude dans Excel, PowerPoint, Word et Chrome"],
+        cons: ["Limites d'usage par tranche de cinq heures, vite sensibles avec Claude Code", "Aucune administration centrale ni facture par siège", "C'est l'utilisateur qui décide si ses conversations servent à l'entraînement"],
+        idealFor: "Consultant, cadre ou développeur occasionnel qui travaille seul",
+      },
+      {
+        tool: "max",
+        position: "Pour un usage intensif",
+        title: "Claude Max, dès 100 $ par mois",
+        pros: ["Cinq fois l'usage de Pro par tranche de cinq heures, vingt fois sur la formule supérieure", "Fable 5.1 jusqu'à la moitié du quota hebdomadaire", "Crédits API mensuels pour vos propres applications : 100 $ sur Max 5x, 200 $ sur Max 20x"],
+        cons: ["Paiement mensuel uniquement", "Abonnement individuel, sans administration d'équipe", "Surdimensionné pour un usage de bureau courant"],
+        idealFor: "Développeur qui passe ses journées dans Claude Code, analyste qui traite de très gros dossiers",
+      },
+      {
+        tool: "team",
+        position: "Pour une équipe",
+        title: "Claude Team, 20 à 25 $ par siège",
+        pros: ["De 2 à 150 sièges, standard et Premium mélangés", "Claude Code et Cowork compris ; Cowork dans le cloud en bêta", "Aucun entraînement sur les échanges de l'organisation", "Crédits API mutualisés jusqu'à 500 $ par mois depuis le 7 octobre 2026"],
+        cons: ["Le siège Premium coûte cinq fois le standard", "SCIM et journaux d'audit réservés à Enterprise", "Pas de région européenne d'hébergement"],
+        idealFor: "PME, service ou équipe projet, de deux à cent cinquante personnes",
+      },
+      {
+        tool: "enterprise",
+        position: "Pour un déploiement encadré",
+        title: "Claude Enterprise, 20 $ par siège plus l'usage",
+        pros: ["SCIM, rôles, journaux d'audit, API de conformité", "Rétention réglable, filtrage par adresse IP, offre compatible HIPAA", "Plafonds de dépense pour maîtriser la consommation", "Achat en ligne ou auprès de l'équipe commerciale d'Anthropic"],
+        cons: ["20 sièges au minimum, engagement annuel", "L'usage s'ajoute au siège au tarif de l'API : la facture varie d'un mois à l'autre", "Docs, Slides et Design restent coupés tant qu'un propriétaire ne les ouvre pas"],
+        idealFor: "ETI, grands groupes et secteurs régulés",
+      },
+    ],
+
+    comparisonTableMeta: {
+      title: "Les cinq formules côte à côte",
+      note: "Relevé du 19 octobre 2026 sur claude.com/pricing. Montants en dollars, hors taxes.",
+    },
+    comparisonTable: [
+      { criterion: "Prix mensuel", gratuit: "0 $", pro: "20 $, ou 17 $ à l'année", max: "Dès 100 $", team: "25 $ par siège, 20 $ à l'année ; Premium 125 $ ou 100 $", enterprise: "20 $ par siège à l'année, plus l'usage" },
+      { criterion: "Utilisateurs", gratuit: "1", pro: "1", max: "1", team: "2 à 150", enterprise: "20 au minimum" },
+      { criterion: "Modèles", gratuit: "Sonnet, Haiku", pro: "Opus, Sonnet, Haiku ; Fable sur crédits", max: "Opus, Sonnet, Haiku ; Fable jusqu'à 50 % du quota", team: "Opus, Sonnet, Haiku ; Fable sur les sièges Premium", enterprise: "Selon les réglages de l'administrateur" },
+      { criterion: "Claude Code", gratuit: "Non", pro: "Oui", max: "Oui", team: "Oui", enterprise: "Oui" },
+      { criterion: "Cowork", gratuit: "Non", pro: "Oui, dans le cloud", max: "Oui, dans le cloud", team: "Oui, cloud en bêta", enterprise: "Oui, sur activation" },
+      { criterion: "Volume d'usage", gratuit: "Base", pro: "Au moins cinq fois Gratuit", max: "Cinq ou vingt fois Pro", team: "Au-delà de Pro ; Premium cinq fois le standard", enterprise: "Facturé à la consommation" },
+      { criterion: "Crédits API", gratuit: "Non", pro: "Non", max: "100 $ ou 200 $ par mois", team: "Mutualisés, jusqu'à 500 $ par mois", enterprise: "Sans objet" },
+      { criterion: "Administration", gratuit: "Non", pro: "Non", max: "Non", team: "Console d'équipe, facture unique", enterprise: "SCIM, rôles, audit, conformité" },
+      { criterion: "Entraînement sur vos échanges", gratuit: "Réglé par l'utilisateur", pro: "Réglé par l'utilisateur", max: "Réglé par l'utilisateur", team: "Non par défaut", enterprise: "Non par défaut" },
+    ],
+
+    costScenarios: [
+      { size: "Indépendant ou dirigeant seul", annualCost: "200 $/an", recommendation: "Claude Pro réglé à l'année", rationale: "Soit environ 17 $ par mois payés d'avance. Passez à Max seulement si les limites vous arrêtent chaque semaine." },
+      { size: "Équipe de 10 personnes", annualCost: "2 400 $/an", recommendation: "Claude Team, 10 sièges standard à l'année", rationale: "3 000 $ en paiement mensuel. Chaque siège passé en Premium ajoute 960 $ par an." },
+      { size: "PME de 50 personnes dont 5 développeurs", annualCost: "16 800 $/an", recommendation: "Claude Team : 45 sièges standard, 5 Premium", rationale: "Les développeurs prennent un siège Premium pour Claude Code, les autres un siège standard. Sous Microsoft 365, comparez avec Copilot Business avant de signer." },
+      { size: "ETI de 300 personnes", annualCost: "72 000 $/an + usage", recommendation: "Claude Enterprise", rationale: "Au-delà de 150 sièges, Team ne suffit plus. Le siège ne couvre pas la consommation, facturée au tarif de l'API : fixez une enveloppe et des plafonds par équipe." },
+    ],
+
+    mistakes: [
+      { title: "Prendre Max pour une équipe", desc: "Max est un abonnement individuel. Pour plusieurs personnes, Team apporte l'administration, une facture unique et l'absence d'entraînement sur les échanges." },
+      { title: "Donner un siège Premium à tout le monde", desc: "Le Premium coûte cinq fois le standard. Réservez-le aux développeurs et aux plus gros utilisateurs, et vérifiez au bout d'un mois qui atteint vraiment ses limites." },
+      { title: "Oublier la consommation dans le budget Enterprise", desc: "Le siège Enterprise ne couvre pas l'usage, facturé au tarif de l'API. Sans plafonds de dépense, la facture varie d'un mois à l'autre." },
+      { title: "Laisser chacun payer son Pro en note de frais", desc: "Les comptes individuels échappent à l'entreprise : aucun contrôle des données, aucune reprise des projets au départ d'un salarié. Dès deux utilisateurs, Team est la bonne formule." },
+    ],
+
+    alsoConsidered: [
+      { name: "Microsoft Copilot", summary: "26 € HT par siège en annuel, ou 18,20 € HT en Copilot Business, en plus de Microsoft 365. Voir [Copilot vs Claude](/copilot-vs-claude)." },
+      { name: "ChatGPT", summary: "Business affiché 21 € par siège et par mois à l'année pour la France. Voir [ChatGPT vs Claude](/chatgpt-vs-claude)." },
+      { name: "Cowork ou Claude Code", summary: "Les deux sont compris dans l'abonnement : notre page [Cowork vs Claude Code](/claude-cowork-vs-claude-code) dit lequel utiliser." },
+    ],
+
+    faq: [
+      { q: "Claude est-il gratuit ?", a: "Oui, une offre gratuite existe, avec Sonnet et Haiku et un quota limité. Elle ne comprend ni Claude Code, ni Cowork, ni Opus 5.5." },
+      { q: "Combien coûte Claude Pro ?", a: "20 $ par mois hors taxes, ou 200 $ réglés pour l'année, soit environ 17 $ par mois. Pro ouvre Opus 5.5, Claude Code, Cowork et les compléments pour Excel, PowerPoint et Word." },
+      { q: "Claude Code est-il compris dans l'abonnement ?", a: "Oui, dans toutes les formules payantes : Pro, Max, Team et Enterprise. L'offre gratuite ne le comprend pas. Une équipe technique peut aussi utiliser Claude Code avec un compte API, payé au million de tokens, sans abonnement. Les gros utilisateurs passent sur Max ou sur un siège Team Premium pour ne pas buter sur les limites." },
+      { q: "Quelle différence entre Claude Team et Claude Enterprise ?", a: "Team se paie au siège, de 2 à 150 personnes, usage compris dans les limites du siège. Enterprise demande 20 sièges au minimum et facture la consommation en plus du siège, au tarif de l'API ; il ajoute SCIM, rôles, journaux d'audit, API de conformité, rétention réglable et plafonds de dépense." },
+      { q: "Combien coûte Claude via l'API ?", a: "Au million de tokens : Haiku 5.5 dès 0,10 $ en entrée et 0,50 $ en sortie, Sonnet 5.5 à 2 $ et 10 $, Opus 5.5 à 4 $ et 20 $, Fable 5.1 à 10 $ et 50 $. Le traitement par lots divise la facture par deux, et un prompt relu depuis le cache ne coûte qu'une fraction du prix d'entrée." },
+      { q: "Peut-on mélanger sièges standard et Premium ?", a: "Oui, sur Team. Le siège Premium, à 100 $ par mois à l'année ou 125 $ au mois, donne cinq fois l'usage du standard et l'accès à Fable 5.1. Il convient aux développeurs et aux utilisateurs qui traitent de très gros dossiers." },
+      { q: "Faut-il payer Cowork en plus ?", a: "Non. Cowork est compris dans Pro et Max, où ses tâches tournent dans le cloud depuis le 6 octobre 2026, dans Team en bêta, et dans Enterprise quand l'administrateur l'active." },
+      { q: "Claude coûte-t-il plus cher que ChatGPT ?", a: "Les montants sont proches : ChatGPT Business est affiché 21 € par siège et par mois à l'année pour la France, Claude Team 20 $ hors taxes. Comparez plutôt ce que chaque outil fait pour vos équipes sur notre [comparatif ChatGPT vs Claude](/chatgpt-vs-claude)." },
+    ],
+
+    changelog: {
+      title: "Historique de cette page",
+      items: [
+        { date: "19 octobre 2026", text: "Première publication, prix relevés le jour même. Nouveautés intégrées : Claude Haiku 5.5, sorti le 7 octobre 2026, et les crédits API mensuels ajoutés le même jour aux offres Max et Team." },
+      ],
+    },
+
+    methodology:
+      "Masteria, cabinet lyonnais d'intelligence artificielle fondé en 2022, forme des équipes sur toutes les formules de Claude, de Pro à Enterprise. Le **19 octobre 2026**, nous avons relevé chaque montant sur claude.com/pricing et les prix de l'API dans sa documentation ; les dates de sortie viennent des notes de version citées ci-dessous.",
+
+    citations: [
+      { name: "Page tarifs de Claude (Anthropic)", url: "https://claude.com/pricing" },
+      { name: "Prix de l'API Claude (Anthropic)", url: "https://platform.claude.com/docs/en/about-claude/pricing" },
+      { name: "Modèles Claude en service (Anthropic)", url: "https://platform.claude.com/docs/en/about-claude/models/overview" },
+      { name: "Notes de version des applications Claude (Anthropic)", url: "https://support.claude.com/en/articles/12138966-release-notes" },
+      { name: "Cowork sur le web, l'ordinateur et le mobile (Anthropic)", url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile" },
+      { name: "Cowork pour les organisations (Anthropic)", url: "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans" },
+      { name: "Présentation de l'offre Enterprise (Anthropic)", url: "https://support.claude.com/en/articles/9797531-what-is-the-enterprise-plan" },
+      { name: "Usage des données pour l'entraînement (Anthropic)", url: "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" },
+    ],
+
+    relatedLinks: [
+      { label: "Copilot vs Claude", href: "/copilot-vs-claude" },
+      { label: "Claude Cowork vs Claude Code", href: "/claude-cowork-vs-claude-code" },
+      { label: "ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
+      { label: "Formation Claude", href: "/formation-claude-ia" },
+      { label: "Formation Claude Code", href: "/formation-claude-code" },
+    ],
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // toolA = Cowork, toolB = Claude Code (créé le 19/10/2026 : requêtes
+  // « claude cowork vs claude code », « claude code vs cowork » vues dans Bing)
+  // ═══════════════════════════════════════════════════════════════════
+  "claude-cowork-vs-claude-code": {
+    slug: "claude-cowork-vs-claude-code",
+    metaTitle: "Claude Cowork vs Claude Code : lequel utiliser ? | Masteria",
+    metaDesc:
+      "Cowork ou Claude Code : même moteur d'agent, deux usages. Ce que fait chacun, où il s'exécute, sur quelles offres. Vérifié le 19 octobre 2026.",
+    h1: "Claude Cowork ou Claude Code : lequel utiliser ?",
+    intro:
+      "**Cowork** et **Claude Code** reposent sur le même moteur d'agent d'Anthropic : vous décrivez une tâche, Claude la découpe, l'exécute étape par étape et rend un résultat. La différence porte sur la matière travaillée. Cowork traite des documents, des tableaux et des recherches, depuis n'importe quelle conversation Claude. Claude Code traite un dépôt de code, que l'on pilote depuis le terminal, un éditeur, l'application de bureau ou le navigateur. Les deux sont compris dans les abonnements payants, sans supplément. Comparaison établie le 19 octobre 2026.",
+    lastUpdate: "Octobre 2026",
+    verifiedOn: "19 octobre 2026",
+    datePublished: "2026-10-19",
+    dateModified: "2026-10-19",
+    readTime: "7 minutes",
+    keywords:
+      "claude cowork vs claude code, claude code vs cowork, claude cowork, claude code, cowork claude prix, différence cowork claude code, claude cowork vs code",
+
+    textes: {
+      legende: "Cowork et Claude Code, deux outils d'Anthropic, au 19 octobre 2026.",
+      criteres: "Sept critères tirés de la documentation d'Anthropic et de nos ateliers, où les participants essaient les deux outils sur la même journée.",
+      casTitre: "Cinq tâches, et l'outil qui convient",
+      cas: "Des demandes réelles de nos stagiaires, choisies pour montrer où passe la frontière entre document et code.",
+      metiersTitre: "Cowork ou Claude Code selon le métier",
+      metiers: "Ce que nous conseillons à chaque fonction quand elle découvre les deux outils.",
+      erreursTitre: "Quatre confusions fréquentes",
+      erreurs: "Les malentendus qui reviennent quand une équipe découvre les agents de Claude.",
+      ctaTitre: "Apprenez Cowork et Claude Code sur vos propres tâches",
+      ctaTexte: "Nos formations Claude font prendre en main Cowork aux équipes métier et Claude Code aux profils techniques, sur leurs fichiers et leurs dépôts.",
+    },
+
+    terrain: {
+      titre: "Ce que nous observons en formation",
+      paras: [
+        "En septembre 2026, le pôle formation d'un éditeur de logiciels B2B, déjà équipé de [Claude Team](/etudes-de-cas-ia#mission-editeur-pole-formation), a enchaîné les deux outils en deux jours : la préparation d'une session confiée à Cowork, puis une première prise en main de Claude Code. Cet ordre est celui que nous recommandons : d'abord les livrables documentaires, ensuite le code.",
+        "Notre conseil tient en une question : le livrable attendu se lit-il, ou s'exécute-t-il ? Un rapport, un tableau ou une présentation se lit : Cowork. Un script, une application ou un correctif s'exécute : Claude Code.",
+      ],
+    },
+
+    answerBox: {
+      question: "Cowork ou Claude Code : lequel choisir ?",
+      answer:
+        "Si le résultat attendu est un **document** (rapport, tableau, présentation, synthèse de recherche), utilisez **Cowork** : il se lance depuis n'importe quelle conversation Claude, travaille sur vos fichiers et, sur Pro et Max, continue dans le cloud ordinateur fermé depuis le 6 octobre 2026. Si le résultat attendu est du **code** (une fonction, un correctif, une pull request), utilisez **Claude Code** : il explore le dépôt, change les fichiers concernés, fait tourner les tests et propose les commits. Les deux sont compris dès l'abonnement Pro à 20 $ par mois.",
+      bullets: [
+        "Rapport, veille, classeur Excel, présentation : Cowork",
+        "Correctif, nouvelle fonction, tests, revue de code : Claude Code",
+        "Tâche qui revient chaque semaine : tâches planifiées de Cowork, ou routines de Claude Code",
+        "Petit outil interne construit par un non-développeur : Claude Code, avec un accompagnement",
+        "Prix : aucun supplément sur Pro, Max et Team",
+      ],
+    },
+
+    toolA: {
+      id: "cowork",
+      name: "Cowork",
+      editor: "Anthropic",
+      currentModel: "Les modèles de votre abonnement, Opus 5.5 par défaut",
+      country: "États-Unis",
+      pricing: "Compris dans Pro et Max · en bêta dans le cloud sur Team · sur activation en Enterprise",
+      foundedAI: "2026",
+      color: "#D97706",
+    },
+    toolB: {
+      id: "claude-code",
+      name: "Claude Code",
+      editor: "Anthropic",
+      currentModel: "Les modèles de votre abonnement ou de votre compte API",
+      country: "États-Unis",
+      pricing: "Compris dans Pro, Max, Team et Enterprise · aussi au compte API, payé au million de tokens",
+      foundedAI: "2025",
+      color: "#1F2937",
+    },
+
+    keyFacts: {
+      title: "Cowork et Claude Code, ligne par ligne",
+      note: "Faits relevés le 19 octobre 2026 dans le centre d'aide et la documentation d'Anthropic.",
+      rows: [
+        { criterion: "Pour qui", a: "Tous les métiers : direction, finance, juridique, marketing, assistanat", b: "Développeurs, et non-développeurs accompagnés qui construisent un outil" },
+        { criterion: "Ce qu'il produit", a: "Documents, classeurs, présentations, synthèses, fichiers rangés", b: "Code, tests, commits, pull requests" },
+        { criterion: "Où on le lance", a: "Toute conversation Claude, sur le web, l'ordinateur ou le mobile", b: "Terminal, VS Code, JetBrains, onglet Code de l'application de bureau, claude.ai/code" },
+        { criterion: "Où il s'exécute", a: "Dans le cloud d'Anthropic sur Pro et Max depuis le 6 octobre 2026 ; en bêta sur Team et Enterprise", b: "Sur votre machine, avec vos fichiers et vos outils ; dans le cloud pour les sessions web et les routines" },
+        { criterion: "Fichiers locaux", a: "Les dossiers connectés, tant que l'application de bureau est ouverte ; une tâche cloud reçoit une copie du seul fichier utile", b: "Le dossier de projet où on le lance, avec les droits que vous lui accordez" },
+        { criterion: "Contrôle des actions", a: "Demande avant d'agir par défaut ; peut avancer seul et ne revenir qu'en cas de besoin", b: "Demande l'autorisation avant de modifier un fichier ou de lancer une commande, selon le mode choisi ; hooks pour imposer des contrôles" },
+        { criterion: "Tâches récurrentes", a: "Tâches planifiées, exécutées dans le cloud sans appareil allumé, sur toutes les offres payantes", b: "Routines dans le cloud, déclenchées par un horaire, un appel d'API ou un événement GitHub ; tâches planifiées de l'application de bureau" },
+        { criterion: "Personnalisation", a: "Skills, projets, connecteurs, plugins", b: "Fichier CLAUDE.md, Skills, hooks, serveurs MCP, sous-agents" },
+        { criterion: "Offres", a: "Pro et Max ; Team en bêta dans le cloud ; Enterprise sur activation ; absent de l'offre gratuite", b: "Pro, Max, Team et Enterprise ; aussi avec un compte API, sans abonnement" },
+      ],
+    },
+
+    formations: {
+      titre: "Se former à Cowork et à Claude Code",
+      texte:
+        "Nous enseignons les deux, rarement aux mêmes personnes : Cowork aux équipes métier qui veulent déléguer un livrable, Claude Code aux développeurs et aux profils curieux qui veulent construire un outil. Le vibe coding sert de passerelle pour ceux qui n'ont jamais écrit de code.",
+      liens: [
+        { href: "/formation-claude-ia", label: "Formation Claude", desc: "Cowork, Skills et projets sur vos documents" },
+        { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Confier une tâche de code et relire le résultat" },
+        { href: "/formation-vibe-coding", label: "Formation vibe coding", desc: "Construire un outil sans être développeur" },
+      ],
+    },
+    verdict: {
+      title: "La règle en une phrase",
+      summary:
+        "Regardez ce que vous voulez obtenir à la fin. Un **document** : Cowork. Du **code** : Claude Code. Les deux comprennent le même format de Skills, et une tâche commencée dans Cowork peut se poursuivre dans Claude Code quand elle tourne au développement.",
+      recommendA: ["Vous attendez un rapport, une note, un classeur ou une présentation", "Vous n'écrivez pas de code et ne voulez pas de terminal", "La tâche peut avancer pendant que votre ordinateur est fermé", "Vous voulez une tâche qui revient chaque lundi sans intervention"],
+      recommendB: ["Vous travaillez dans un dépôt Git", "Le livrable se teste : une fonction, une API, un script", "Vous voulez valider chaque commande lancée sur votre machine", "Vous automatisez la revue de code ou le tri des tickets dans GitHub ou GitLab"],
+    },
+
+    criteria: [
+      {
+        title: "Le travail visé",
+        descriptionA:
+          "Cowork vise le travail de bureau qui prend du temps : rassembler des sources, analyser des fichiers, produire un livrable. On lui confie une veille concurrentielle, un tableau consolidé à partir de vingt classeurs, une présentation tirée d'une note.",
+        descriptionB:
+          "Claude Code vise le logiciel. Il comprend un dépôt entier, écrit une fonction répartie sur plusieurs fichiers, corrige un bug à partir d'un message d'erreur, rédige les tests et le message de commit.",
+        winner: "tie",
+        winnerText: "Chacun son terrain",
+      },
+      {
+        title: "Interface",
+        descriptionA:
+          "Pas de terminal : Cowork se pilote en langage courant depuis la conversation, sur le web, l'ordinateur ou le mobile, où l'on suit l'avancement. Depuis le 16 septembre 2026, le chat et Cowork se fondent dans une seule zone de saisie, déployée progressivement sur Pro et Max.",
+        descriptionB:
+          "Claude Code vit d'abord dans le terminal, puis dans VS Code, Cursor, JetBrains, l'onglet Code de l'application de bureau et claude.ai/code. L'application de bureau affiche les modifications de façon visuelle, ce qui le rend abordable pour des profils moins techniques.",
+        winner: "a",
+        winnerText: "Avantage Cowork pour les non-développeurs",
+      },
+      {
+        title: "Exécution et fichiers",
+        descriptionA:
+          "Depuis le 6 octobre 2026, les nouvelles tâches Cowork de Pro et Max s'exécutent sur les serveurs d'Anthropic et continuent ordinateur fermé. Les dossiers locaux restent sur votre machine ; une tâche cloud ne reçoit que la copie du fichier dont elle a besoin. Pour une tâche qui doit rester locale, Anthropic renvoie vers Claude Code.",
+        descriptionB:
+          "Claude Code travaille dans le dossier où on le lance, sur votre machine, avec vos outils : Git, gestionnaire de paquets, tests. Les sessions web et les routines tournent dans le cloud, sur un dépôt que vous lui confiez.",
+        winner: "tie",
+        winnerText: "Match nul : le cloud d'un côté, la machine de l'autre",
+      },
+      {
+        title: "Contrôle des actions",
+        descriptionA:
+          "Par défaut, Cowork demande avant d'agir. Vous pouvez le laisser avancer seul et n'être sollicité qu'en cas de besoin, ce qui convient aux tâches longues sans risque.",
+        descriptionB:
+          "Claude Code demande l'autorisation avant de modifier un fichier ou de lancer une commande, selon le mode choisi. Les hooks imposent des contrôles automatiques, comme un formatage ou des tests, à chaque étape.",
+        winner: "b",
+        winnerText: "Avantage Claude Code pour le contrôle fin",
+      },
+      {
+        title: "Tâches récurrentes",
+        descriptionA:
+          "Une tâche Cowork peut revenir à date fixe : revue de presse du lundi, tableau de bord du vendredi. Les tâches planifiées tournent dans le cloud, sans appareil allumé, sur toutes les offres payantes.",
+        descriptionB:
+          "Les routines de Claude Code tournent dans le cloud et se déclenchent sur un horaire, un appel d'API ou un événement GitHub : revue des pull requests du matin, analyse des échecs de la nuit.",
+        winner: "tie",
+        winnerText: "Match nul",
+      },
+      {
+        title: "Disponibilité selon l'offre",
+        descriptionA:
+          "Cowork n'existe pas sur l'offre gratuite. Il est déployé sur Pro et Max, en bêta dans le cloud sur Team, et sur Enterprise quand un administrateur l'active.",
+        descriptionB:
+          "Claude Code est compris dans Pro, Max, Team et Enterprise. Une équipe technique peut aussi l'utiliser avec un compte API et payer au million de tokens, sans abonnement. Le détail des formules est sur notre page [prix de Claude](/claude-prix-abonnement).",
+        winner: "b",
+        winnerText: "Avantage Claude Code, ouvert à plus de formules",
+      },
+      {
+        title: "Apprentissage",
+        descriptionA:
+          "Cowork se prend en main en une séance : décrire la tâche, donner les bonnes sources, relire le livrable. La difficulté tient au cadrage de la demande.",
+        descriptionB:
+          "Claude Code demande de savoir lire ce qu'il propose. Un développeur s'y retrouve vite ; un non-développeur peut construire un petit outil, à condition d'être accompagné sur la relecture et la sécurité.",
+        winner: "a",
+        winnerText: "Avantage Cowork pour démarrer vite",
+      },
+    ],
+
+    realCases: [
+      {
+        scenario: "Consolider vingt classeurs de filiales en un tableau de bord",
+        feature: "Cowork sur un dossier connecté",
+        prompt: "Dans le dossier Reporting T3, consolide les vingt fichiers des filiales dans un seul classeur : chiffre d'affaires, marge et effectifs par pays, un onglet d'écarts au budget et trois graphiques.",
+        verdictText: "**Cowork** : la tâche est longue, le livrable est un classeur, aucune ligne de code n'est demandée.",
+        winner: "a",
+      },
+      {
+        scenario: "Écrire un script qui refait cette consolidation chaque mois",
+        feature: "Claude Code dans le terminal",
+        prompt: "Écris un script Python qui lit les fichiers du dossier Reporting, applique les mêmes règles de consolidation et produit le classeur. Ajoute des tests sur deux fichiers d'exemple.",
+        verdictText: "**Claude Code** : le résultat est un programme qu'on teste et qu'on garde dans un dépôt. Pour un besoin ponctuel, Cowork suffit ; pour un traitement répété à l'identique, un script testé est plus sûr dans la durée.",
+        winner: "b",
+      },
+      {
+        scenario: "Recevoir une veille concurrentielle chaque lundi",
+        feature: "Tâche planifiée Cowork",
+        prompt: "Chaque lundi à 8 h, relève les annonces de nos cinq concurrents sur la semaine écoulée, classe-les par thème et rédige une note d'une page avec les sources.",
+        verdictText: "**Cowork** : la tâche planifiée tourne dans le cloud sans ordinateur allumé et livre une note prête à transmettre.",
+        winner: "a",
+      },
+      {
+        scenario: "Relire chaque pull request avant fusion",
+        feature: "Claude Code dans GitHub Actions",
+        prompt: "À chaque pull request, vérifie les failles de sécurité évidentes, les tests manquants et le respect des conventions décrites dans CLAUDE.md, puis commente.",
+        verdictText: "**Claude Code** : il s'intègre à GitHub Actions ou à GitLab CI et commente directement la pull request.",
+        winner: "b",
+      },
+      {
+        scenario: "Construire un petit outil de suivi des demandes",
+        feature: "Claude Code dans l'application de bureau",
+        prompt: "Crée une petite application web où l'équipe saisit une demande, suit son statut et exporte la liste en CSV.",
+        verdictText: "**Claude Code**, même pour un non-développeur, depuis l'onglet Code de l'application de bureau. Cowork est pensé pour des livrables documentaires. C'est le terrain du [vibe coding](/formation-vibe-coding).",
+        winner: "b",
+      },
+    ],
+
+    useCases: [
+      { metier: "Direction et assistanat", recommendation: "a", why: "Notes, comptes rendus, préparation des comités." },
+      { metier: "Finance et contrôle de gestion", recommendation: "tie", why: "Cowork pour un reporting ponctuel, Claude Code pour automatiser un traitement mensuel." },
+      { metier: "Juridique", recommendation: "a", why: "Revue de contrats, synthèse de jurisprudence, tableaux de clauses." },
+      { metier: "Marketing et communication", recommendation: "a", why: "Veille, plans éditoriaux, déclinaisons de contenus." },
+      { metier: "Développement", recommendation: "b", why: "Fonctions, correctifs, tests, revue de code." },
+      { metier: "Data et informatique", recommendation: "b", why: "Scripts, requêtes, automatisations reliées à vos systèmes." },
+    ],
+
+    mistakes: [
+      { title: "Demander à Cowork un programme à maintenir", desc: "Pour un script ponctuel, Cowork s'en sort. Dès qu'il faut le tester, le versionner et le faire évoluer, passez à Claude Code." },
+      { title: "Valider le travail de Claude Code sans le relire", desc: "Claude Code modifie des fichiers et lance des commandes. Relisez les changements avant de les accepter, et limitez ses autorisations au dossier du projet." },
+      { title: "Croire que Cowork travaille toujours sur votre ordinateur", desc: "Depuis le 6 octobre 2026, les nouvelles tâches de Pro et Max s'exécutent dans le cloud. Une tâche qui doit rester sur la machine passe par Claude Code dans l'application de bureau." },
+      { title: "Confondre Cowork et Copilot Cowork", desc: "Microsoft vend un Copilot Cowork qui agit dans Microsoft 365. C'est un autre produit, d'un autre éditeur : notre comparatif Copilot vs Claude les distingue." },
+    ],
+
+    faq: [
+      { q: "Cowork est-il payant ?", a: "Il n'est pas vendu à part : Cowork est compris dans Pro et Max, en bêta dans le cloud sur Team, et disponible en Enterprise quand l'administrateur l'active. L'offre gratuite ne le comprend pas. Les prix des formules sont sur notre page [prix de Claude](/claude-prix-abonnement)." },
+      { q: "Claude Code est-il réservé aux développeurs ?", a: "Il est conçu pour eux, mais l'onglet Code de l'application de bureau le rend accessible à des profils non techniques qui veulent construire un petit outil. Il faut alors apprendre à relire ce qu'il produit et à limiter ses droits : c'est l'objet de notre [formation vibe coding](/formation-vibe-coding)." },
+      { q: "Quelle différence entre Cowork et le chat de Claude ?", a: "Le chat répond, Cowork mène une tâche jusqu'au livrable en travaillant sur vos fichiers. Depuis le 16 septembre 2026, Anthropic fusionne les deux dans une seule zone de saisie, déployée progressivement sur Pro et Max : Claude décide lui-même quand une demande appelle Cowork." },
+      { q: "Peut-on passer une tâche de Cowork à Claude Code ?", a: "Oui. Anthropic documente l'export d'une tâche Cowork, que l'on reprend dans Claude Code avec la commande /port-task-data. C'est utile quand une analyse dans un document débouche sur un script à écrire." },
+      { q: "Cowork fonctionne-t-il sur Windows ?", a: "Oui : sur le web, sur mobile et dans l'application de bureau pour macOS et Windows. L'application de bureau reste nécessaire pour atteindre vos dossiers locaux." },
+      { q: "Claude Code ou GitHub Copilot ?", a: "GitHub Copilot complète les lignes que vous écrivez ; Claude Code se charge d'une mission complète, du dépôt à la pull request. Nous détaillons ce choix dans [Copilot vs Claude](/copilot-vs-claude) et [la meilleure IA pour coder](/meilleure-ia-pour-coder)." },
+    ],
+
+    changelog: {
+      title: "Historique de cette page",
+      items: [
+        { date: "19 octobre 2026", text: "Première publication. Elle intègre l'exécution des tâches Cowork dans le cloud sur Pro et Max, en vigueur depuis le 6 octobre 2026." },
+      ],
+    },
+
+    methodology:
+      "Masteria, cabinet lyonnais d'intelligence artificielle fondé en 2022, enseigne Cowork aux équipes métier et Claude Code aux équipes techniques. Le **19 octobre 2026**, nous avons vérifié chaque fait dans le centre d'aide d'Anthropic et dans la documentation de Claude Code, cités ci-dessous.",
+
+    citations: [
+      { name: "Cowork sur le web, l'ordinateur et le mobile (Anthropic)", url: "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile" },
+      { name: "Cowork pour les organisations (Anthropic)", url: "https://support.claude.com/en/articles/13455879-use-claude-cowork-on-team-and-enterprise-plans" },
+      { name: "Tâches planifiées dans Cowork (Anthropic)", url: "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" },
+      { name: "Cowork intégré à chaque conversation, annonce du 16 septembre 2026", url: "https://claude.com/blog/cowork-is-now-claude" },
+      { name: "Présentation de Claude Code (Anthropic)", url: "https://code.claude.com/docs/en/overview" },
+      { name: "Page tarifs de Claude (Anthropic)", url: "https://claude.com/pricing" },
+    ],
+
+    relatedLinks: [
+      { label: "Prix de Claude : les abonnements", href: "/claude-prix-abonnement" },
+      { label: "Copilot vs Claude", href: "/copilot-vs-claude" },
+      { label: "Le meilleur agent IA", href: "/meilleur-agent-ia" },
+      { label: "La meilleure IA pour coder", href: "/meilleure-ia-pour-coder" },
+      { label: "Formation Claude Code", href: "/formation-claude-code" },
+    ],
+  },
 }
 
 export const COMPARISON_SLUGS = Object.keys(COMPARISONS)
@@ -2624,6 +3476,27 @@ export const COMPARISONS_INDEX = [
     subtitle: "Données en Europe ou écosystème le plus large ?",
     excerpt: "Hébergement dans l'UE, modèles à poids ouverts, réglage d'entraînement sur vos échanges, fonctions et prix : le duel des entreprises attentives à leurs données.",
     badge: "Face-à-face",
+  },
+  {
+    slug: "copilot-vs-claude",
+    title: "Microsoft Copilot vs Claude",
+    subtitle: "Vos données Microsoft 365 ou vos gros dossiers ?",
+    excerpt: "Intégration à Office, documents longs, Skills, Claude Code face à GitHub Copilot, prix par siège : les deux outils qui cohabitent souvent dans la même entreprise.",
+    badge: "Face-à-face",
+  },
+  {
+    slug: "claude-cowork-vs-claude-code",
+    title: "Claude Cowork vs Claude Code",
+    subtitle: "Un document ou du code ?",
+    excerpt: "Même moteur d'agent, deux usages : ce que fait chacun, où il s'exécute, sur quelles offres, avec cinq tâches tranchées.",
+    badge: "Spécialisé agents",
+  },
+  {
+    slug: "claude-prix-abonnement",
+    title: "Prix de Claude",
+    subtitle: "Gratuit, Pro, Max, Team ou Enterprise ?",
+    excerpt: "Les cinq formules d'Anthropic côte à côte, le budget d'une équipe sur un an et les tarifs de l'API.",
+    badge: "Prix",
   },
   {
     slug: "gemini-vs-copilot",

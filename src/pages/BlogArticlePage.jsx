@@ -624,7 +624,8 @@ export default function BlogArticlePage() {
   }
   const isUpdated = articleData.datePublished && articleData.dateModified
     && articleData.datePublished !== articleData.dateModified
-  const relatedFormations = TAG_TO_FORMATIONS[article.tag] || DEFAULT_FORMATIONS
+  // `formations` dans l'article ([[libellé, chemin], …]) remplace le choix par étiquette.
+  const relatedFormations = article.formations || TAG_TO_FORMATIONS[article.tag] || DEFAULT_FORMATIONS
 
   // Schema HowTo retiré (2026-06-14) : Google a supprimé les rich results HowTo
   // en sept. 2023. Le BlogPosting (via SEOHead) suffit pour les articles.

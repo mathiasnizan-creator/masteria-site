@@ -1350,6 +1350,9 @@ export default function App() {
         <Route path="/meilleur-agent-ia" element={<ComparisonPage slug="meilleur-agent-ia" />} />
         <Route path="/mistral-vs-chatgpt" element={<ComparisonPage slug="mistral-vs-chatgpt" />} />
         <Route path="/gemini-vs-copilot" element={<ComparisonPage slug="gemini-vs-copilot" />} />
+        <Route path="/copilot-vs-claude" element={<ComparisonPage slug="copilot-vs-claude" />} />
+        <Route path="/claude-prix-abonnement" element={<ComparisonPage slug="claude-prix-abonnement" />} />
+        <Route path="/claude-cowork-vs-claude-code" element={<ComparisonPage slug="claude-cowork-vs-claude-code" />} />
         <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
         <Route path="/politique-de-confidentialite" element={<PolitiqueConfidentialitePage />} />
         <Route path="/competences-claude-eet" element={<CompetencesClaudeEET />} />

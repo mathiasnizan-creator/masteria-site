@@ -9,24 +9,24 @@
  */
 
 export const CLAUDE_FAITS = {
-  verifieLe: '2026-10-05',
-  verifieLeTexte: '5 octobre 2026',
+  verifieLe: '2026-10-19',
+  verifieLeTexte: '19 octobre 2026',
 
   modeles: [
     { nom: 'Claude Fable 5.1', sortie: '1er septembre 2026', role: 'le plus puissant de la gamme, pensé pour les travaux au long cours ; il faut un abonnement payant' },
     { nom: 'Claude Opus 5.5', sortie: '22 septembre 2026', role: "le choix par défaut qu'Anthropic conseille pour l'essentiel des tâches" },
     { nom: 'Claude Sonnet 5.5', sortie: '28 septembre 2026', role: 'plus rapide et moins coûteux, pour les demandes courantes' },
-    { nom: 'Claude Haiku 4.5', sortie: null, role: 'le plus vif, dont Anthropic annonce le remplaçant, Haiku 5.5' },
+    { nom: 'Claude Haiku 5.5', sortie: '7 octobre 2026', role: 'le plus vif et le moins coûteux, pour les gros volumes de demandes simples' },
   ],
 
-  contexte: "Avec Fable 5.1, Opus 5.5 ou Sonnet 5.5, un abonnement payant ouvre jusqu'à un million de tokens par échange suivi ; Haiku 4.5 plafonne à 200 000. Repère donné par Anthropic : 200 000 tokens font à peu près 500 pages, soit environ 2 500 pages pour le million.",
+  contexte: "Avec Fable 5.1, Opus 5.5 ou Sonnet 5.5, un abonnement payant ouvre jusqu'à un million de tokens par échange suivi. Repère donné par Anthropic : 200 000 tokens font à peu près 500 pages, soit environ 2 500 pages pour le million.",
 
   offres: [
     { nom: 'Gratuit', prix: 'sans abonnement', note: 'ni Fable 5.1 ni Opus 5.5' },
     { nom: 'Pro', prix: '20 $ chaque mois, ou 17 $ par mois réglés pour l\'année', note: 'Claude Code compris' },
-    { nom: 'Max', prix: 'dès 100 $ par mois, sans formule annuelle', note: "cinq ou vingt fois l'usage de Pro" },
-    { nom: 'Team', prix: '25 $ par siège chaque mois, 20 $ à l\'année, de 2 à 150 sièges', note: 'le siège Premium coûte 125 $ (100 $ à l\'année) pour cinq fois plus d\'usage' },
-    { nom: 'Enterprise', prix: '20 $ par siège et par mois à l\'année, plus la consommation facturée au tarif de l\'API', note: 'administration, audit et sécurité renforcés' },
+    { nom: 'Max', prix: 'dès 100 $ par mois, sans formule annuelle', note: "cinq ou vingt fois l'usage de Pro, avec des crédits API chaque mois" },
+    { nom: 'Team', prix: '25 $ par siège chaque mois, 20 $ à l\'année, de 2 à 150 sièges', note: 'le siège Premium coûte 125 $ (100 $ à l\'année) pour cinq fois plus d\'usage ; crédits API mutualisés jusqu\'à 500 $ par mois' },
+    { nom: 'Enterprise', prix: '20 $ par siège et par mois à l\'année, 20 sièges au minimum, plus la consommation facturée au tarif de l\'API', note: 'administration, audit et sécurité renforcés' },
   ],
   prixNote: 'Montants publics en dollars, hors taxes, relevés sur la page tarifs d\'Anthropic.',
 
@@ -51,6 +51,7 @@ export const CLAUDE_FAITS = {
     { name: 'annonce Sonnet 5.5', url: 'https://www.anthropic.com/claude-sonnet-5-5' },
     { name: 'annonce Fable 5.1', url: 'https://www.anthropic.com/claude-fable-and-mythos-5-1' },
     { name: 'Cowork dans l\'application', url: 'https://claude.com/blog/cowork-is-now-claude' },
+    { name: 'Cowork dans le cloud', url: 'https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile' },
     { name: 'notes de version', url: 'https://support.claude.com/en/articles/12138966-release-notes' },
     { name: 'Excel, PowerPoint, Word', url: 'https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook' },
     { name: 'Claude dans Chrome', url: 'https://claude.com/blog/claude-in-chrome-generally-available' },

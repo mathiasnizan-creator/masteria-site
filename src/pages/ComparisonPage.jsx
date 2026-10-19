@@ -367,7 +367,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                     {t.strengths}
                   </div>
                   <div style={{ fontSize: 13, fontWeight: 700, color: t.color }}>
-                    {t.priceMonthly}/mois
+                    {t.priceFull || `${t.priceMonthly}/mois`}
                   </div>
                 </div>
               ))}
@@ -453,6 +453,51 @@ export default function ComparisonPage({ slug: propSlug }) {
           )}
         </div>
       </section>
+
+      {/* ═════════════ SE FORMER (pont vers les formations) ═════════════
+          Placé sous le verdict : le lecteur qui a sa réponse voit tout de suite
+          la formation qui correspond. `formations` = { titre, texte, liens [{ href, label, desc }] },
+          texte écrit pour la page (pas de formulation commune). */}
+      {data.formations?.liens?.length > 0 && (
+        <section id="se-former" style={{
+          padding: 'clamp(36px, 5vw, 64px) clamp(18px, 4vw, 32px)',
+          background: '#EFF6FF',
+          borderBottom: '1px solid #DBEAFE',
+        }}>
+          <div style={{ maxWidth: 880, margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif',
+              fontSize: 'clamp(21px, 2.8vw, 28px)', fontWeight: 900,
+              color: '#0A0A0A', margin: '0 0 12px', letterSpacing: '-0.01em',
+            }}>
+              {data.formations.titre}
+            </h2>
+            {data.formations.texte && (
+              <p
+                style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 22px' }}
+                dangerouslySetInnerHTML={{ __html: formatBold(data.formations.texte) }}
+              />
+            )}
+            <nav aria-label="Formations liées" style={{
+              display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12,
+            }}>
+              {data.formations.liens.map(l => (
+                <Link key={l.href} to={l.href} style={{
+                  display: 'flex', flexDirection: 'column', gap: 6,
+                  padding: '16px 18px', background: '#fff',
+                  border: '1px solid #BFDBFE', borderRadius: 10,
+                  textDecoration: 'none',
+                }}>
+                  <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, fontSize: 15, fontWeight: 800, color: '#1D4ED8' }}>
+                    {l.label} <ArrowRight size={15} />
+                  </span>
+                  {l.desc && <span style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.5 }}>{l.desc}</span>}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </section>
+      )}
 
       {/* ═════════════ COMPARAISON DÉTAILLÉE (face-à-face) ═════════════ */}
       {!isPanorama && data.criteria && (

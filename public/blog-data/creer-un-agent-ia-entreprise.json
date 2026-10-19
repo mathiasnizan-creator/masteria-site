@@ -8,6 +8,7 @@
   "datePublished": "2026-07-24",
   "dateModified": "2026-07-24",
   "readTime": "13 min",
+  "formations": [["Formation agents IA", "/formation-agents-ia"], ["Formation automatisation IA", "/formation-automatisation-ia"], ["Formation n8n", "/formation-n8n"]],
   "keywords": ["créer un agent IA", "agent IA entreprise", "agent IA PME", "comment créer un agent IA", "agent IA sur mesure", "agent IA vs chatbot", "RAG", "MCP"],
   "excerpt": "Un agent IA poursuit un objectif : il décide, appelle vos outils et agit sous supervision. Le guide complet pour en créer un en entreprise : les 5 étapes, les briques techniques, les exemples par métier, le budget et les garde-fous RGPD.",
   "intro": "Un agent IA poursuit un objectif : il décide des étapes, appelle vos outils, consulte vos données et agit, sous supervision humaine. Le chatbot répond, l'agent agit. Le créer en entreprise est d'abord une affaire de méthode. Ce guide la déroule : définition, cinq étapes de création, briques techniques en clair, exemples par métier, budget réel et garde-fous.",
@@ -243,7 +244,7 @@
     },
     {
       "type": "p",
-      "text": "Choisissez un cas d'usage à valeur claire, prototypez-le, mesurez, puis industrialisez ce qui fonctionne. La compétence clé tient à trois gestes : cadrer, sécuriser, faire adopter. Brancher l'IA est la partie simple. C'est le principe de Masteria : nous formons vos équipes <strong>et</strong> construisons l'agent avec vous, et le code vous appartient. Reste la seule question qui compte : par quel cas d'usage commencer, et qui en gardera la main."
+      "text": "Choisissez un cas d'usage à valeur claire, prototypez-le, mesurez, puis industrialisez ce qui fonctionne. La compétence clé tient à trois gestes : cadrer, sécuriser, faire adopter. Brancher l'IA est la partie simple. C'est le principe de Masteria : nous formons vos équipes <strong>et</strong> construisons l'agent avec vous, et le code vous appartient. Reste la seule question qui compte : par quel cas d'usage commencer, et qui en gardera la main. Pour que vos équipes sachent ensuite construire et superviser leurs propres agents, notre <a href='/formation-agents-ia'>formation agents IA</a> fait monter un premier agent pendant la session, sur un cas tiré de votre activité."
     }
   ],
   "faq": [

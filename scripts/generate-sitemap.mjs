@@ -102,6 +102,9 @@ const staticRoutes = [
   { path: 'meilleur-agent-ia',                   prio: 0.8,  freq: 'monthly', files: COMPARISON_FILES },
   { path: 'mistral-vs-chatgpt',                  prio: 0.85, freq: 'monthly', files: COMPARISON_FILES },
   { path: 'gemini-vs-copilot',                   prio: 0.85, freq: 'monthly', files: COMPARISON_FILES },
+  { path: 'copilot-vs-claude',                   prio: 0.85, freq: 'monthly', files: COMPARISON_FILES },
+  { path: 'claude-prix-abonnement',              prio: 0.85, freq: 'monthly', files: COMPARISON_FILES },
+  { path: 'claude-cowork-vs-claude-code',        prio: 0.8,  freq: 'monthly', files: COMPARISON_FILES },
   { path: 'mentions-legales',                    prio: 0.2, freq: 'yearly',  files: ['src/pages/LegalPages.jsx'] },
   { path: 'politique-de-confidentialite',        prio: 0.2, freq: 'yearly',  files: ['src/pages/LegalPages.jsx'] },
 ];

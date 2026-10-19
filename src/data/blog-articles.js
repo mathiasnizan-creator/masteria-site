@@ -3713,6 +3713,7 @@ const BLOG_ARTICLES_BASE = [
     datePublished: '2026-04-26',
     dateModified: '2026-04-26',
     readTime: '12 min',
+    formations: [['Formation Microsoft Copilot', '/formation-microsoft-copilot'], ['Copilot dans Word et Excel', '/formation-copilot-word-excel'], ['Copilot pour les assistantes', '/formation-copilot-assistante']],
     excerpt: "Microsoft Copilot vit dans Word, Excel, Outlook et Teams. Voici les cas d'usage concrets par application, les prompts qui marchent, les tarifs et comment former vos équipes.",
     intro: "Microsoft Copilot est un assistant IA intégré directement dans Microsoft 365 : il fonctionne dans Word, Excel, PowerPoint, Outlook, Teams et SharePoint sans changer d'interface. Pour les organisations déjà sur Microsoft 365, c'est l'outil avec le taux d'adoption le plus élevé, parce qu'il s'installe dans les habitudes de travail existantes au lieu d'en créer de nouvelles.",
     blocks: [
@@ -3832,6 +3833,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
       { label: "Formation Copilot Word & Excel", href: '/formation-copilot-word-excel' },
       { label: "Copilot vs ChatGPT en entreprise", href: '/copilot-vs-chatgpt' },
+      { label: "Copilot ou Claude : lequel choisir", href: '/copilot-vs-claude' },
       { label: "Formation Copilot Marketing", href: '/formation-copilot-marketing' },
       { label: "Comparer ChatGPT, Copilot, Gemini, Claude, Mistral", href: '/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir' },
     ],
