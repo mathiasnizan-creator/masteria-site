@@ -16,6 +16,10 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * « acculturation informatique » (90), « acculturation data et ia » (50),
  * « acculturation ia générative management » (140).
  * Réécrite le 2026-10-07 en texte propre (exigence ≥ 90 % de 6-grammes uniques).
+ * Renforcée le 2026-10-19 après la Search Console (90 jours au 17/10) : « acculturation ia »
+ * en position 33, « acculturation intelligence artificielle » en 32, « acculturation ia
+ * générative management » en 16. Ajouts : réponse directe sur le plan d'acculturation,
+ * plan sur 90 jours par public, section mesure, section managers, FAQ ciblée.
  *
  * ANGLE PROPRE À CETTE PAGE : l'organisation entière, par vagues, sur un trimestre
  * (sensibiliser, former par métier, expérimenter, ancrer avec des référents, mesurer).
@@ -26,8 +30,9 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  *
  * FAITS : AI Act d'après la fiche de faits du 07/10, section 7 (article 4 réécrit par le
  * règlement (UE) 2026/1744, applicable depuis le 27/07/2026). Entraînement des modèles :
- * fiche du 07/10, section 6 (faits [V] pour Google et Mistral). Cas : « industrie » et
- * « distribution » de src/data/etudes-de-cas.js (faits révisés le 05/10). Tarifs : brief
+ * fiche du 07/10, section 6 (faits [V] pour Google et Mistral). Cas : « industrie »,
+ * « distribution » et « photovoltaique » de src/data/etudes-de-cas.js (faits révisés le
+ * 05/10), mission « franchise-gemini » de src/data/missions-formation.js. Tarifs : brief
  * commun du 07/10. Aucun client nommé, aucun chiffre d'adoption inventé.
  */
 
@@ -35,9 +40,9 @@ const SLUG = 'acculturation-ia'
 const c = '#2563EB'
 const cLight = '#DBEAFE'
 
-const META_TITLE = "Acculturation IA et data, en un trimestre | Masteria"
-const META_DESC = "Acculturation IA et data : un trimestre pour faire passer toute l'organisation de la curiosité à l'usage, par vagues, avec référents et mesure."
-const KEYWORDS = "acculturation ia, acculturation intelligence artificielle, acculturation ia générative, acculturation ia générative management, conférence acculturation ia, acculturation data et ia, acculturation data, acculturation informatique, acculturation numérique, sensibilisation ia"
+const META_TITLE = "Acculturation IA en entreprise : le plan sur 90 jours | Masteria"
+const META_DESC = "Plan d'acculturation à l'intelligence artificielle sur 90 jours : direction, managers, référents puis tous les salariés, avec formats, durées et mesure."
+const KEYWORDS = "acculturation ia, acculturation intelligence artificielle, plan d'acculturation ia, acculturation ia générative, acculturation ia générative management, acculturation ia managers, conférence acculturation ia, acculturation data et ia, acculturation data, acculturation informatique, acculturation numérique, sensibilisation ia"
 
 /* ───────── Styles partagés ───────── */
 
@@ -74,7 +79,8 @@ const HERO_BADGES = [
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
 const EN_BREF = [
-  { label: 'Objectif', value: "Qu'au bout d'un trimestre, chaque service se serve de l'IA sur ses propres tâches, avec des mots communs, des règles connues et un œil critique sur les résultats" },
+  { label: 'Objectif', value: "Qu'au bout de 90 jours, chaque service se serve de l'IA sur ses propres tâches, avec des mots communs, des règles connues et un œil critique sur les résultats" },
+  { label: 'Ordre', value: "La direction d'abord, puis les managers et les référents, enfin tous les salariés en petits groupes, chacun avec un format et une durée à sa mesure" },
   { label: 'Briques', value: "Une intervention d'ouverture, des ateliers courts, des formations métier d'un ou deux jours, un parcours pour l'encadrement et des référents internes" },
   { label: 'Outils', value: "Celui que l'entreprise a choisi, ou plusieurs assistants comparés quand rien n'est encore décidé ; Masteria ne dépend d'aucun éditeur" },
   { label: 'Data', value: "Un volet sur les données : quoi confier à quel outil, comment contrôler un chiffre produit par l'IA, où s'arrête ce que permet le RGPD" },
@@ -140,28 +146,80 @@ const DEMARCHE = [
   },
 ]
 
-/* ───────── Programme type sur un trimestre ───────── */
+/* ───────── Le plan sur 90 jours, public par public ───────── */
 
-const PROGRAMME_TYPE = [
+const PLAN_90 = [
   {
-    periode: 'Semaines 1-2',
-    title: "Cadrage, puis ouverture devant tout l'effectif",
-    desc: "Une réunion avec la direction fixe les métiers prioritaires, l'outil, les indicateurs et le calendrier. L'intervention d'ouverture suit : tout le monde reçoit les mêmes repères, et les questions entendues pendant l'ouverture alimentent la préparation des ateliers.",
+    periode: 'Jours 1 à 15',
+    court: 'J1-15',
+    qui: 'Direction',
+    title: 'La direction tranche avant que les équipes commencent',
+    desc: "Un rendez-vous de cadrage fixe les services prioritaires, l'outil, les données autorisées et les indicateurs. Le comité de direction passe ensuite une demi-journée sur ses propres dossiers, nomme les référents, puis annonce le plan lors d'une intervention d'ouverture d'une ou deux heures devant tout le personnel, ateliers déjà au calendrier.",
   },
   {
-    periode: 'Semaines 3-6',
-    title: 'Ateliers de prise en main, métier après métier',
-    desc: "Des groupes de douze se succèdent par service ou par site et travaillent avec l'outil sur leurs propres tâches. Les réussites d'un service deviennent les exemples montrés au suivant, ce qui accélère chaque nouvelle vague.",
+    periode: 'Jours 16 à 35',
+    court: 'J16-35',
+    qui: 'Managers et référents',
+    title: "Managers et référents prennent un temps d'avance",
+    desc: "Les managers travaillent l'outil sur leurs comptes rendus, leurs points d'équipe et leurs arbitrages, en trois heures ou en une à deux journées selon leur point de départ. Les référents, un par service ou par site, suivent deux journées plus poussées et préparent les premiers usages que leurs collègues retrouveront en atelier.",
   },
   {
-    periode: 'Semaines 7-10',
-    title: 'Formations approfondies et charte',
-    desc: "Les services prioritaires suivent leur formation métier d'une ou deux journées, l'encadrement suit son propre parcours, et la charte d'usage s'écrit avec les équipes : données autorisées, outils retenus, relecture obligatoire des résultats.",
+    periode: 'Jours 36 à 75',
+    court: 'J36-75',
+    qui: 'Tous les salariés',
+    title: 'Chaque salarié passe sur ses propres tâches',
+    desc: "Les ateliers, d'une matinée ou d'une journée par groupe de douze, se succèdent service par service, avec le référent du service dans la salle. Les équipes qui se serviront de l'outil chaque jour enchaînent une formation métier d'un ou deux jours, et la charte d'usage s'écrit pendant ces semaines, nourrie par les essais.",
   },
   {
-    periode: 'Semaines 11-12',
-    title: 'Référents formés et bilan à la direction',
-    desc: "Les référents reçoivent leur formation, les indicateurs posés au cadrage sont relevés, et la direction reçoit un bilan : les usages installés, les services en retrait, la suite que nous recommandons. La démarche appartient alors à l'entreprise.",
+    periode: 'Jours 76 à 90',
+    court: 'J76-90',
+    qui: 'Direction et référents',
+    title: 'Mesurer, puis passer la main',
+    desc: "Les indicateurs posés au cadrage sont relevés sur les mêmes tâches qu'au départ. La direction reçoit un bilan par service (usages installés, équipes en retrait, questions récurrentes) et la suite recommandée pour le trimestre suivant. Les référents prennent alors le relais, avec un point mensuel.",
+  },
+]
+
+const QUI_SUIT_QUOI = [
+  { public: 'Direction', format: 'Cadrage, puis séance de travail sur ses propres dossiers et décisions', duree: 'Un rendez-vous, puis une demi-journée', quand: 'Jours 1 à 15' },
+  { public: 'Tout le personnel', format: "Intervention d'ouverture, en salle ou à distance", duree: 'Une à deux heures', quand: 'Fin de la deuxième semaine' },
+  { public: 'Managers', format: 'Séance managers du Sprint IA, ou formation IA management', duree: 'Trois heures, ou une à deux journées', quand: 'Jours 16 à 35' },
+  { public: 'Référents', format: "Formation approfondie sur les tâches de leur service, puis animation d'un point mensuel", duree: 'Deux journées', quand: 'Jours 16 à 35, puis en continu' },
+  { public: 'Tous les salariés', format: 'Atelier de prise en main sur leurs propres pièces, par groupe de douze', duree: 'Une matinée ou une journée', quand: 'Jours 36 à 75' },
+  { public: 'Services prioritaires', format: 'Formation métier, avec évaluation des acquis', duree: 'Une ou deux journées', quand: 'Jours 46 à 75' },
+]
+
+/* ───────── Ce qu'on mesure ───────── */
+
+const MESURES = [
+  { indicateur: 'Usage hebdomadaire', releve: "Part des salariés qui ouvrent l'outil au moins une fois par semaine, lue dans la console d'administration quand l'abonnement en propose une, sinon par un sondage de trois questions", quand: 'Au cadrage, un mois après chaque vague, à J90' },
+  { indicateur: 'Usages actifs par service', releve: "Liste des tâches que le service traite réellement avec l'outil, tenue par son référent et relue avec le manager", quand: 'Chaque mois' },
+  { indicateur: 'Temps sur les tâches visées', releve: 'Durée déclarée par les personnes sur les deux ou trois tâches choisies avec leur manager, avant le premier atelier puis un mois après', quand: 'Au départ, puis à J+30' },
+  { indicateur: 'Remontées aux référents', releve: 'Questions reçues, résultats faux repérés, demandes de nouveaux usages ou de nouvelles données', quand: 'En continu, synthèse mensuelle' },
+  { indicateur: 'Respect des règles', releve: "Comptes personnels remplacés par le compte d'entreprise, incidents de données signalés, charte connue des équipes", quand: 'À J90' },
+]
+
+/* ───────── Le rôle des managers pendant les 90 jours ───────── */
+
+const MANAGERS = [
+  {
+    icon: GraduationCap,
+    title: 'Pratiquer sur ses propres dossiers',
+    desc: "Compte rendu de réunion, point hebdomadaire pour la direction, préparation d'un entretien sur une situation anonymisée : le manager traite d'abord ses tâches à lui, en trois heures ou en une à deux journées. Il parle ensuite de l'outil à son équipe en connaissance de cause, limites comprises.",
+  },
+  {
+    icon: Compass,
+    title: "Choisir les tâches de l'équipe",
+    desc: "Avant les ateliers, chaque manager retient avec son équipe deux ou trois tâches répétitives à outiller en premier. Elles servent d'exercices pendant les ateliers, puis de base au relevé de temps à la fin des 90 jours.",
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Traduire les règles pour son service',
+    desc: "Quelles données restent hors de l'outil, quel résultat doit être relu, qui valide un document préparé avec l'IA. Le manager décline la charte de l'entreprise pour son service et répond aux questions sur l'emploi et sur l'évaluation du travail, que les équipes posent rarement en plénière.",
+  },
+  {
+    icon: MessagesSquare,
+    title: "Entretenir l'usage dans l'équipe",
+    desc: "Un point mensuel où chacun montre un usage qui fonctionne ou une erreur repérée garde la démarche vivante après les ateliers. Le manager y recueille aussi les demandes qu'il transmet au référent ou à la direction.",
   },
 ]
 
@@ -186,7 +244,7 @@ const ERREURS = [
   },
   {
     title: 'Aucun indicateur posé au départ',
-    desc: "Sans mesure, impossible de distinguer une démarche qui a pris d'une campagne de communication. Trois indicateurs suffisent : la part des salariés qui se servent de l'outil chaque semaine, les usages actifs par service, les questions reçues par les référents.",
+    desc: "Sans mesure, impossible de distinguer une démarche qui a pris d'une campagne de communication. Les relevés se posent au cadrage, sur les tâches que les ateliers vont traiter, pour qu'une comparaison reste possible au bout des 90 jours.",
   },
 ]
 
@@ -240,8 +298,20 @@ const FAQ = [
     a: "C'est le travail par lequel une organisation entière apprend à se servir de l'intelligence artificielle, de la direction aux postes de terrain. Il combine une ouverture devant tous, des ateliers de prise en main, des formations par métier, une période d'essais encadrés et des référents qui prennent le relais. Trois résultats sont visés : un vocabulaire partagé, des usages installés dans chaque service, et un regard critique sur ce que l'outil produit. Sa différence avec une formation isolée tient à l'échelle : elle concerne tous les services, et elle s'étale sur plusieurs semaines.",
   },
   {
+    q: "Que contient un plan d'acculturation IA sur 90 jours ?",
+    a: "Quatre temps, chacun avec son public. Les quinze premiers jours reviennent à la direction : cadrage, demi-journée sur ses propres dossiers, choix des référents, puis ouverture devant tout le personnel. Les managers suivent, en trois heures ou en une à deux journées, en même temps que les référents, formés deux jours. Du trente-sixième au soixante-quinzième jour, tous les salariés passent en ateliers par groupes de douze, et les services prioritaires suivent leur formation métier. Les deux dernières semaines servent à mesurer et à confier la suite aux référents. Un groupe présent dans plusieurs pays déroule ce plan site par site, sur une durée plus longue.",
+  },
+  {
     q: "Acculturation, sensibilisation, formation : où passe la frontière ?",
     a: "La sensibilisation est le premier contact : une ou deux heures pour voir l'outil travailler et connaître les règles. La formation, d'un ou deux jours, développe des savoir-faire évalués à partir des pièces du métier. L'acculturation organise les deux dans le temps pour toute l'entreprise, y ajoute des essais encadrés et des référents, et mesure ce qui a pris. Sensibiliser sans former laisse de la curiosité sans usage ; former un seul service crée un îlot.",
+  },
+  {
+    q: "Comment acculturer les managers à l'IA générative ?",
+    a: "En les faisant pratiquer sur leurs propres tâches avant de leur confier l'élan de leur équipe : un compte rendu, un point pour la direction, la préparation d'un entretien. Trois heures conviennent à des managers qui découvrent l'outil ; une ou deux journées à ceux qui doivent aussi écrire les règles de leur service. Chacun repart avec deux ou trois tâches à outiller pour son équipe, la charte déclinée pour son service et un point mensuel où l'équipe partage ce qui fonctionne. Les managers passent après la direction et avant leurs équipes, pour répondre aux questions dès le premier atelier.",
+  },
+  {
+    q: "Qui pilote l'acculturation IA dans l'entreprise ?",
+    a: "La démarche a besoin d'un parrain à la direction, qui tranche les arbitrages ; dans une PME, ce rôle revient souvent au gérant. Le pilotage au quotidien revient en général aux ressources humaines ou au responsable formation, qui tiennent le calendrier et le registre des sessions. La DSI ouvre les comptes et fixe les réglages, dont l'option d'entraînement des modèles. Les référents, un par service ou par site, font remonter les questions et les usages. Masteria conduit le cadrage, les séances et le bilan, puis laisse le dispositif tourner sans elle.",
   },
   {
     q: "L'acculturation IA est-elle une obligation légale ?",
@@ -249,7 +319,7 @@ const FAQ = [
   },
   {
     q: "Par quel format commencer ?",
-    a: "Le plus souvent, par une intervention d'ouverture devant le plus grand nombre : elle installe le vocabulaire commun et révèle les questions que se posent les équipes. Les ateliers de prise en main suivent, puis les formations par métier pour les services prioritaires. Si la direction n'a pas encore tranché ses propres questions, le parcours de l'encadrement passe avant tout le reste. Le premier échange permet de fixer cet ordre pour votre organisation.",
+    a: "Par la direction, le plus souvent : un cadrage puis une demi-journée sur ses propres dossiers, pour que l'outil, les règles et les référents soient fixés avant les premières questions des équipes. L'intervention d'ouverture suit devant le plus grand nombre et installe le vocabulaire commun ; viennent ensuite les managers et les référents, puis les ateliers. Dans une PME dont le dirigeant a déjà tranché, l'ouverture peut se tenir dès les premiers jours. Le premier échange permet de fixer cet ordre pour votre organisation.",
   },
   {
     q: "Sur quels outils d'IA formez-vous ?",
@@ -272,16 +342,8 @@ const FAQ = [
     a: "Le budget dépend des briques retenues. Prévoyez au moins 1 980 € HT pour chaque journée, avec une salle de douze stagiaires maximum, et 3 960 € HT pour deux jours ; un Sprint, soit trois heures, part lui aussi de 1 980 € HT ; la préparation sur vos dossiers s'ajoute au devis ; l'intervention d'ouverture fait l'objet d'un forfait. Une PME de quarante salariés et un groupe de deux mille ne mobilisent pas le même nombre de séances. Ces briques étant des actions de formation, votre OPCO de branche peut en assumer une part, selon ses règles et ses fonds ; nous rédigeons la demande avec vous.",
   },
   {
-    q: "Combien de temps dure une acculturation ?",
-    a: "Un trimestre dans la plupart des cas, davantage pour un groupe réparti sur plusieurs pays. Cet étalement a une raison : les usages se consolident entre deux séances, et chaque vague profite de ce que la précédente a appris. Une démarche comprimée en une semaine laisse un souvenir agréable ; étalée sur douze semaines et relayée par des référents, elle change les habitudes de travail.",
-  },
-  {
     q: "Comment savoir si l'acculturation a fonctionné ?",
-    a: "En regardant les usages, plus que les questionnaires de fin de séance. Trois mesures comptent : la part des salariés qui ouvrent l'outil chaque semaine, le nombre d'usages actifs par service, les questions qui arrivent chez les référents. S'y ajoutent les temps gagnés que les équipes déclarent sur les tâches visées, relevés à un mois. Les questionnaires de satisfaction restent obligatoires pour un organisme certifié Qualiopi ; ils disent si la séance a plu, sans dire si l'outil sert.",
-  },
-  {
-    q: "Combien de personnes chaque format accueille-t-il ?",
-    a: "L'intervention d'ouverture accepte plusieurs centaines de personnes en salle, et davantage à distance. Les ateliers et les formations par métier s'arrêtent à douze participants, pour que chacun pratique sous le regard du formateur. Le parcours de l'encadrement suit la taille du comité ou du collectif de managers. Une démarche complète alterne donc les grandes jauges, qui créent le vocabulaire commun, et les petits groupes, qui installent les gestes.",
+    a: "En comparant les relevés du cadrage avec ceux de la fin des 90 jours, sur les mêmes tâches : usage hebdomadaire, usages actifs par service, temps déclaré sur les tâches visées, remontées aux référents. Un mois après chaque vague, un questionnaire court indique ce que les participants refont à leur poste. Les questionnaires de satisfaction restent obligatoires pour un organisme certifié Qualiopi ; ils disent si la séance a plu, sans dire si l'outil sert.",
   },
   {
     q: "Faut-il avoir déployé un outil d'IA avant de commencer ?",
@@ -325,6 +387,20 @@ const serviceJsonLd = {
   },
 }
 
+/* Le plan sur 90 jours en ItemList (séquence citable, GEO). */
+const planJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: "Plan d'acculturation IA sur 90 jours (Masteria)",
+  itemListOrder: 'https://schema.org/ItemListOrderAscending',
+  itemListElement: PLAN_90.map((step, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${step.periode} · ${step.qui} : ${step.title}`,
+    description: step.desc,
+  })),
+}
+
 /* La démarche en ItemList (séquence citable, GEO). */
 const processJsonLd = {
   '@context': 'https://schema.org',
@@ -353,6 +429,11 @@ const definitionsJsonLd = {
     },
     {
       '@type': 'DefinedTerm',
+      name: "Plan d'acculturation IA",
+      description: "Calendrier qui organise l'apprentissage de l'IA par toute l'entreprise sur une durée fixée, 90 jours chez Masteria : la direction, puis les managers et les référents, puis tous les salariés, avec une mesure des usages à la fin.",
+    },
+    {
+      '@type': 'DefinedTerm',
       name: 'Maîtrise de l\'IA (littératie IA)',
       description: "Capacité à manier un outil d'IA, à en connaître les limites et à évaluer ce qu'il rend. Le texte européen, en son article 4, oblige l'employeur à agir pour la développer, sans résultat individuel imposé.",
     },
@@ -374,13 +455,13 @@ const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   '@id': 'https://www.master-ia.fr/acculturation-ia#article',
-  headline: "Acculturation IA : un trimestre pour que chaque service s'en serve",
+  headline: "Acculturation IA : un plan sur 90 jours, de la direction à chaque salarié",
   description: META_DESC,
   author: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   editor: { '@id': 'https://www.master-ia.fr/#mathias-nizan' },
   publisher: { '@id': 'https://www.master-ia.fr/#organization' },
   datePublished: '2026-08-10',
-  dateModified: '2026-10-07',
+  dateModified: '2026-10-19',
   inLanguage: 'fr-FR',
   mainEntityOfPage: { '@id': 'https://www.master-ia.fr/acculturation-ia#webpage' },
   about: [
@@ -448,10 +529,10 @@ export default function AcculturationIAPage() {
         breadcrumbs={breadcrumbs}
         faqItems={FAQ}
         datePublished="2026-08-10"
-        dateModified="2026-10-07"
+        dateModified="2026-10-19"
         speakable={['#geo-summary', '#en-bref']}
         citations={PAGE_CITATIONS}
-        extraJsonLd={[serviceJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
+        extraJsonLd={[serviceJsonLd, planJsonLd, processJsonLd, definitionsJsonLd, articleJsonLd]}
       />
 
       {/* ── HERO sombre premium ── */}
@@ -481,16 +562,16 @@ export default function AcculturationIAPage() {
           <h1 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(30px, 5vw, 50px)', fontWeight: 900, lineHeight: 1.05, marginBottom: 18, color: '#F8FAFC', letterSpacing: '-0.032em', maxWidth: 880 }}>
             Acculturation IA :
             <br />
-            <span style={{ color: '#60A5FA', fontWeight: 800 }}>un trimestre pour que chaque service s'en serve</span>
+            <span style={{ color: '#60A5FA', fontWeight: 800 }}>un plan sur 90 jours, de la direction à chaque salarié</span>
           </h1>
 
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
-            Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · première version en août 2026, revue complète le 7 octobre 2026
+            Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · première version en août 2026, mise à jour le 19 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
+          {/* GEO : réponse directe citable (définition du plan d'acculturation) */}
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'acculturation IA fait passer une organisation entière de la curiosité à l'usage, en un trimestre : <strong style={{ color: '#fff', fontWeight: 700 }}>une ouverture devant tous, des ateliers de prise en main, des formations par métier, un parcours pour l'encadrement, puis des référents qui prennent le relais</strong>. Chaque vague est une action de formation que l'OPCO peut examiner, et chacune documente les efforts que l'article 4 de l'AI Act réclame à l'employeur.
+            Un plan d'acculturation à l'IA organise, sur une durée fixée, l'apprentissage de l'intelligence artificielle par toute l'entreprise : <strong style={{ color: '#fff', fontWeight: 700 }}>la direction tranche d'abord l'outil et les règles, les managers pratiquent avant leurs équipes, des référents sont formés plus loin, puis chaque salarié travaille l'outil sur ses propres tâches</strong>. Chez Masteria, il tient en 90 jours et se termine par une mesure des usages installés, service par service. Chaque vague est une action de formation que l'OPCO peut examiner, et chacune documente les efforts que l'article 4 de l'AI Act réclame à l'employeur.
           </p>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
@@ -499,7 +580,7 @@ export default function AcculturationIAPage() {
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
-              Préparer votre trimestre
+              Préparer vos 90 jours
               <ArrowRight size={17} strokeWidth={2.4} aria-hidden="true" />
             </Link>
             <a href="#formats" style={{ display: 'inline-flex', alignItems: 'center', color: '#E2E8F0', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 600, border: '1px solid #2A3650' }}>
@@ -619,51 +700,114 @@ export default function AcculturationIAPage() {
         </div>
       </section>
 
-      {/* ── PROGRAMME TYPE SUR UN TRIMESTRE ── */}
-      <section id="programme-type" style={{ padding: sectionPad, background: '#fff' }}>
+      {/* ── LE PLAN SUR 90 JOURS, PUBLIC PAR PUBLIC ── */}
+      <section id="plan-90-jours" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
-          <Kicker>Le calendrier</Kicker>
+          <Kicker>Le plan sur 90 jours</Kicker>
           <h2 style={h2Style}>
-            Douze semaines d'acculturation, vague par vague
+            Le plan d'acculturation IA sur 90 jours, public par public
           </h2>
 
           <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Un calendrier représentatif tient en douze semaines : cadrage et ouverture au début, ateliers métier après métier, formations approfondies avec la charte, puis référents et bilan. Une PME le resserre, un groupe l'étire site par site ; l'enchaînement des quatre temps reste le même.</strong>
+            <strong>Le plan suit l'ordre de la décision : la direction tranche dans les quinze premiers jours, managers et référents se forment avant leurs équipes, tous les salariés passent ensuite en petits groupes sur leurs propres tâches, et les deux dernières semaines servent à mesurer. Une PME le resserre, un groupe l'étire site par site ; l'ordre reste le même.</strong>
           </p>
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
-            {PROGRAMME_TYPE.map((step, i) => (
+            {PLAN_90.map((step, i) => (
               <div
                 key={step.periode}
                 style={{
                   display: 'flex', gap: 20, alignItems: 'flex-start', position: 'relative',
-                  padding: i === 0 ? '0 0 18px' : (i === PROGRAMME_TYPE.length - 1 ? '18px 0 0' : '18px 0'),
+                  padding: i === 0 ? '0 0 18px' : (i === PLAN_90.length - 1 ? '18px 0 0' : '18px 0'),
                 }}
               >
                 <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, position: 'relative', zIndex: 1 }}>
-                  <span style={{ fontSize: 11.5, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif', textAlign: 'center', lineHeight: 1.1 }}>{step.periode.replace('Semaines ', 'S')}</span>
+                  <span style={{ fontSize: 10.5, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif', textAlign: 'center', lineHeight: 1.1 }}>{step.court}</span>
                 </div>
                 <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
-                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>{step.periode}</div>
+                  <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>{step.periode} · {step.qui}</div>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
                   <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 740 }}>{step.desc}</p>
                 </div>
               </div>
             ))}
           </div>
+
+          <h3 style={{ ...h3Style, margin: '40px 0 14px' }}>Qui suit quoi, et combien de temps</h3>
+          <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto', background: '#fff' }}>
+            <table aria-label="Formats et durées du plan d'acculturation IA sur 90 jours, par public" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+              <thead>
+                <tr>
+                  {['Public', 'Format', 'Durée', 'Moment'].map(h => (
+                    <th key={h} scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '12px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {QUI_SUIT_QUOI.map((row, i) => (
+                  <tr key={row.public} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                    <th scope="row" style={{ padding: '12px 16px', fontSize: 14, color: '#0A0A0A', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5, width: '20%' }}>{row.public}</th>
+                    <td style={{ padding: '12px 16px', fontSize: 14, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }}>{row.format}</td>
+                    <td style={{ padding: '12px 16px', fontSize: 14, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }}>{row.duree}</td>
+                    <td style={{ padding: '12px 16px', fontSize: 14, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }}>{row.quand}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Ce calendrier sert de point de départ et s'adapte à chaque organisation. Le vôtre se fixe lors de l'échange de cadrage, à partir de vos effectifs, de vos sites et de l'outil retenu.
+            Chez un franchiseur B2B formé à Gemini en septembre 2026, les deux administrateurs Workspace sont repartis avec un plan en trois paliers, à J30, J60 et J90 : activer Gemini profil par profil en publiant la charte, outiller ensuite la base documentaire, enfin étendre le cadre aux franchisés. Votre calendrier se fixe lors de l'échange de cadrage, à partir de vos effectifs, de vos sites et de l'outil retenu.
+          </p>
+        </div>
+      </section>
+
+      {/* ── CE QU'ON MESURE ── */}
+      <section id="mesure" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto' }}>
+          <Kicker>La mesure</Kicker>
+          <h2 style={h2Style}>
+            Que mesurer pendant une acculturation IA ?
+          </h2>
+
+          <p style={{ ...answerStyle, maxWidth: 'none', background: '#fff' }}>
+            <strong>Cinq relevés suffisent, faits sur les mêmes tâches au départ puis à la fin des 90 jours : qui se sert de l'outil chaque semaine, quels usages tiennent dans chaque service, le temps que prennent les tâches visées, ce qui remonte aux référents, et le respect des règles sur les données. Ils se posent dès le cadrage, sans quoi rien ne permet de comparer.</strong>
+          </p>
+
+          <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto', background: '#fff' }}>
+            <table aria-label="Indicateurs d'une acculturation IA : ce qu'on relève et quand" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 620 }}>
+              <thead>
+                <tr>
+                  {['Indicateur', 'Comment on le relève', 'Quand'].map(h => (
+                    <th key={h} scope="col" style={{ background: '#F9FAFB', textAlign: 'left', padding: '12px 16px', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', borderBottom: '1px solid #E5E7EB', lineHeight: 1.4 }}>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {MESURES.map((row, i) => (
+                  <tr key={row.indicateur} style={{ borderTop: i === 0 ? 'none' : '1px solid #E5E7EB' }}>
+                    <th scope="row" style={{ padding: '12px 16px', fontSize: 14, color: '#0A0A0A', fontWeight: 700, fontFamily: 'Nunito, sans-serif', textAlign: 'left', verticalAlign: 'top', lineHeight: 1.5, width: '24%' }}>{row.indicateur}</th>
+                    <td style={{ padding: '12px 16px', fontSize: 14, color: '#374151', lineHeight: 1.6, verticalAlign: 'top' }}>{row.releve}</td>
+                    <td style={{ padding: '12px 16px', fontSize: 14, color: '#374151', lineHeight: 1.6, verticalAlign: 'top', width: '24%' }}>{row.quand}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '24px 0 0' }}>
+            Les acquis de chaque session se vérifient aussi, par l'évaluation de fin de formation qu'exige Qualiopi ; elle dit ce que les participants savent faire en sortant de la salle, et l'usage au poste se lit dans les relevés ci-dessus. Lors d'une mission de conseil pour un distributeur de solutions photovoltaïques, le plan établi sur trois mois suit cette logique : il prévoit de relever les points de départ pendant la formation sur site, puis, un mois plus tard, de refaire le point sur les relances, le délai de devis, les ressaisies, l'usage des assistants et le temps consacré aux transporteurs. Le gain se relève en heures et la direction le convertit elle-même en euros ; notre page sur le <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link> rassemble ce que disent les études sur ce calcul.
           </p>
         </div>
       </section>
 
       {/* ── DEUX DÉMARCHES EN COURS (études de cas) ── */}
-      <section id="exemples" style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      <section id="exemples" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Sur le terrain</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Deux organisations qui avancent par vagues</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
+          <p style={answerStyle}>
             <strong>Le premier palier compte plus que l'ampleur du plan. Un groupe industriel a commencé par vingt-quatre managers, un distributeur par dix référents ; les deux prévoient de l'étendre entre octobre et décembre 2026, à partir de ce que ce premier groupe a construit.</strong>
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
@@ -685,14 +829,14 @@ export default function AcculturationIAPage() {
       </section>
 
       {/* ── LES ERREURS CLASSIQUES ── */}
-      <section id="erreurs" style={{ padding: sectionPad, background: '#fff' }}>
+      <section id="erreurs" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Les pièges</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Ce qui fait échouer une acculturation IA
           </h2>
 
-          <p style={answerStyle}>
+          <p style={{ ...answerStyle, background: '#fff' }}>
             <strong>Cinq erreurs reviennent dans les démarches qui s'essoufflent : une ouverture sans suite, des exemples venus d'ailleurs, des licences ouvertes avant les règles, un encadrement tenu à l'écart et aucun indicateur posé au départ. Aucune ne dépend du budget ; toutes dépendent de l'ordre des séances.</strong>
           </p>
 
@@ -711,27 +855,27 @@ export default function AcculturationIAPage() {
         </div>
       </section>
 
-      {/* ── ANGLE MANAGEMENT ── */}
-      <section style={{ padding: sectionPad, background: '#F9FAFB' }}>
+      {/* ── ANGLE MANAGEMENT (requête « acculturation ia générative management ») ── */}
+      <section id="managers" style={{ padding: sectionPad, background: '#fff' }}>
         <div style={wrap}>
           <Kicker>Management et direction</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
-            Pourquoi les managers passent-ils avant leurs équipes ?
+            Acculturer le management à l'IA générative : pourquoi les managers passent avant leurs équipes
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une équipe adopte ce que son responsable pratique. L'acculturation à l'IA générative des managers leur apprend à trancher les demandes d'outils, à poser les règles, à repérer les tâches où l'outil fait gagner du temps et à s'en servir devant leurs équipes. Une direction alignée donne à la démarche son budget et sa légitimité ; c'est pourquoi son parcours ouvre souvent le trimestre.</strong>
+          <p style={answerStyle}>
+            <strong>Une équipe adopte ce que son responsable pratique. L'acculturation du management à l'IA générative apprend aux managers à se servir de l'outil sur leurs propres tâches, à trancher les demandes de leur équipe, à poser les règles du service et à repérer où l'outil fait gagner du temps. Dans le plan sur 90 jours, ils passent entre le seizième et le trente-cinquième jour, après la direction et avant leurs équipes.</strong>
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {[
-              { icon: BarChart3, title: "Le parcours de l'encadrement couvre quatre sujets", desc: "La pratique personnelle sur ses propres dossiers, la lecture des risques (données, conformité, dépendance à un éditeur), les règles à fixer pour l'équipe et l'arbitrage des demandes. Il tient en sessions courtes, compatibles avec un agenda de direction." },
-              { icon: MessagesSquare, title: "L'ouverture donne le même point de départ à tous", desc: "Devant toute l'entreprise, une intervention montre l'outil sur des pièces internes, ses limites et les règles de base. C'est la brique la plus demandée pour lancer une démarche, et celle qui dissipe le plus vite les idées toutes faites." },
-              { icon: GraduationCap, title: 'Les formations métier transforment l\'élan en habitudes', desc: "Après l'ouverture, chaque service travaille ses propres tâches pendant une ou deux journées, avec des règles écrites et un référent désigné. Sans cette étape, l'élan de l'ouverture retombe avant d'avoir produit un seul usage durable." },
-            ].map(card => {
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
+            Une direction alignée donne à la démarche son budget et sa légitimité ; les managers lui donnent son rythme au quotidien. Leur parcours traite aussi la lecture des risques (données, conformité, dépendance à un éditeur) et tient en sessions courtes, compatibles avec un agenda chargé. Pendant les 90 jours, quatre gestes leur reviennent.
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+            {MANAGERS.map(card => {
               const Icon = card.icon
               return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                     <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
                     <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
@@ -741,21 +885,24 @@ export default function AcculturationIAPage() {
               )
             })}
           </div>
-          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Pour un comité exécutif appelé à trancher sa feuille de route, la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link> tient en une matinée ; pour des managers d'équipe, la <Link to="/formation-ia-management" style={aStyle}>formation IA management</Link> va plus loin sur le pilotage au quotidien.
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+            Dans le groupe industriel présenté plus haut, le premier palier a réuni des managers pilotes, en sessions de deux jours sur les fichiers du groupe, avant toute diffusion. Deux mois plus tard, des managers racontent s'en servir pour analyser des fichiers, chiffrer le retour attendu d'un outil RH, bâtir une présentation destinée à un directeur d'usine ou décortiquer un appel d'offres.
+          </p>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '16px 0 0', maxWidth: 880 }}>
+            Pour un comité exécutif appelé à trancher sa feuille de route, la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link> tient en une matinée. Pour des managers qui démarrent, la séance managers du <Link to="/formation-sprint-ia" style={aStyle}>Sprint IA</Link> dure trois heures ; la <Link to="/formation-ia-management" style={aStyle}>formation IA management</Link> va plus loin sur le pilotage d'équipe au quotidien, en une ou deux journées.
           </p>
         </div>
       </section>
 
       {/* ── ACCULTURATION DATA ET IA ── */}
-      <section id="data-ia" style={{ padding: sectionPad, background: '#fff' }}>
+      <section id="data-ia" style={{ padding: sectionPad, background: '#F9FAFB' }}>
         <div style={wrap}>
           <Kicker>Data et IA</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Acculturation data et IA : ce que chaque équipe doit savoir des données
           </h2>
 
-          <p style={answerStyle}>
+          <p style={{ ...answerStyle, background: '#fff' }}>
             <strong>L'acculturation data et IA apprend aux équipes ce que l'intelligence artificielle fait des informations qu'elles lui transmettent : lesquelles lui confier, comment elle les traite, ce que vaut ce qu'elle en tire.</strong> Une démarche qui l'oublie produit des salariés enthousiastes qui collent un fichier clients dans un compte gratuit. Avec ce volet, chacun sait repérer une donnée sensible, choisir l'outil adapté à son niveau de confidentialité et contrôler un chiffre avant de le diffuser.
           </p>
 
@@ -779,7 +926,7 @@ export default function AcculturationIAPage() {
           </p>
 
           {/* Intention « acculturation informatique » : les équipes qui partent de loin */}
-          <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(24px, 3.5vw, 36px)', marginTop: 40, maxWidth: 880 }}>
+          <div style={{ ...cardStyle, padding: 'clamp(24px, 3.5vw, 36px)', marginTop: 40, maxWidth: 880 }}>
             <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
               <IconTile icon={Compass} />
               <div>
@@ -912,7 +1059,7 @@ export default function AcculturationIAPage() {
       <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
         <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-            Mathias Nizan conduit chaque démarche d'acculturation, du cadrage au bilan, avec des formateurs indépendants choisis pour la langue, le secteur ou le site : une vingtaine au total, aux côtés d'une dizaine de consultants. Cette page reprend ce qu'il a observé depuis la création de Masteria en 2022 et a été revue le 7 octobre 2026 ; sa <Link to="/mathias-nizan" style={aStyle}>biographie</Link> détaille son parcours.
+            Mathias Nizan conduit chaque démarche d'acculturation, du cadrage au bilan, avec des formateurs indépendants choisis pour la langue, le secteur ou le site : une vingtaine au total, aux côtés d'une dizaine de consultants. Cette page reprend ce qu'il a observé depuis la création de Masteria en 2022 et a été mise à jour le 19 octobre 2026 ; sa <Link to="/mathias-nizan" style={aStyle}>biographie</Link> détaille son parcours.
           </p>
           <PressMention />
         </div>
@@ -927,7 +1074,7 @@ export default function AcculturationIAPage() {
           <div style={{ position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Acculturation IA</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 40px)', fontWeight: 900, margin: '0 0 16px', lineHeight: 1.2, color: '#fff', letterSpacing: '-0.02em' }}>
-              Dessinons ensemble vos douze semaines
+              Dessinons ensemble vos 90 jours
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.7, margin: '0 auto 32px', maxWidth: 620 }}>
               Parlez-nous de votre organisation : effectif, sites, métiers, outil déjà choisi ou non, et ce que la direction attend à la fin du trimestre. Vous recevez sous 24 heures une proposition de séquence, un calendrier et le devis, qui indique ce que l'OPCO est susceptible de financer.
