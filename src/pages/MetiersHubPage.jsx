@@ -138,6 +138,14 @@ const FAQ_IA = [
     a: "Oui. Certifopac a délivré à Masteria son certificat Qualiopi au titre des actions de formation, pour une période qui se termine le 28 janvier 2029. Il atteste des procédures de l'organisme, du recueil de vos besoins à l'évaluation des acquis ; sans lui, aucun OPCO ne réglerait la session.",
   },
   {
+    q: 'Les formations Masteria sont-elles certifiantes ?',
+    a: "Non. Aucune de nos formations ne prépare un titre inscrit au RNCP ni au Répertoire spécifique, et aucune ne se paie avec le CPF. La certification que détient Masteria, Qualiopi, concerne l'organisme et ses procédures : elle permet à votre OPCO de prendre en charge la session. À la fin, chaque stagiaire reçoit un certificat de réalisation et le bilan de l'évaluation de ses acquis.",
+  },
+  {
+    q: 'Existe-t-il une formation Claude AI en français ?',
+    a: "Oui. Masteria anime ses formations à Claude, l'assistant d'Anthropic, en français, chez vous ou en visioconférence, et l'interface de Claude peut s'afficher en français. Les ateliers portent sur vos propres fichiers : rédaction, analyse de documents longs, projets partagés, artefacts. Le programme détaillé figure sur la page Formation Claude du site.",
+  },
+  {
     q: 'Votre OPCO peut-il financer ces formations ?',
     a: "Oui, dans le cadre de ses règles et de ses fonds, qui varient d'une branche professionnelle à l'autre. Pour le dossier, Masteria fournit le devis, le programme jour par jour et la convention, puis, après la session, l'émargement signé par chaque stagiaire et le certificat de réalisation. Le dossier part à l'OPCO avant la session. Une équipe basée à Genève ou à Bruxelles reçoit un devis en euros HT, hors de tout circuit OPCO.",
   },
@@ -298,7 +306,7 @@ export default function MetiersHubPage({ variant } = {}) {
           faqItems={FAQ_IA.map(f => ({ q: f.q, a: f.a }))}
           breadcrumbs={breadcrumbs}
           extraJsonLd={itemListJsonLd}
-          dateModified="2026-10-07"
+          dateModified="2026-10-19"
         />
       )}
 
@@ -333,6 +341,23 @@ export default function MetiersHubPage({ variant } = {}) {
           }}>
             Formation intelligence artificielle pour les entreprises
           </h1>
+
+          {/* Réponse directe, citable telle quelle par les moteurs et les IA */}
+          <div style={{
+            textAlign: 'left', background: '#fff', border: '1px solid #E5E7EB',
+            borderLeft: '4px solid #1A62FF', borderRadius: 12,
+            padding: isMobile ? '16px 18px' : '20px 26px',
+            maxWidth: 760, margin: '0 auto 24px',
+          }}>
+            <p style={{ fontSize: 16, color: '#1F2937', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#0A0A0A' }}>Une formation à l'intelligence artificielle chez Masteria</strong> dure
+              une ou deux journées. Elle réunit une équipe de douze personnes au maximum, en intra, ou une seule
+              personne avec son formateur, et chaque exercice se fait dans les logiciels que votre entreprise a
+              déjà déployés, à partir de vos propres dossiers. Cinq assistants peuvent être enseignés : ChatGPT,
+              Microsoft Copilot, Gemini, Claude et Vibe de Mistral AI. Le tarif démarre à 1 980 € HT par jour de
+              formation, et la certification Qualiopi de l'organisme rend la session finançable par votre OPCO.
+            </p>
+          </div>
 
           <p style={{
             fontSize: 'clamp(16px, 2vw, 19px)', color: '#4B5563',
@@ -402,6 +427,70 @@ export default function MetiersHubPage({ variant } = {}) {
           <Link to="/formation-ia-entreprise" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#2563EB', color: '#fff', borderRadius: 8, padding: '10px 18px', textDecoration: 'none', fontSize: 14, fontWeight: 700, whiteSpace: 'nowrap' }}>
             Formation IA en entreprise →
           </Link>
+        </div>
+      </section>
+
+      {/* ── Formation certifiante : réponse honnête ── */}
+      <section id="certifiante" style={{
+        padding: isMobile ? '48px 20px' : '72px 40px',
+        background: '#fff', borderBottom: '1px solid #E5E7EB',
+      }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 900,
+            fontFamily: 'Nunito, sans-serif', color: '#0A0A0A',
+            letterSpacing: '-0.01em', margin: '0 0 14px',
+          }}>
+            Formation certifiante en IA : trois mots à distinguer
+          </h2>
+          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 820 }}>
+            Beaucoup d'offres emploient « certifiante » ou « AI certification » sans préciser ce qui est certifié.
+            Trois documents répondent à trois questions différentes : la qualité de l'organisme, la valeur du
+            parcours, la présence du stagiaire. Voici où se situent les formations de Masteria pour chacun.
+          </p>
+          <div style={{
+            display: 'grid', gap: 16,
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+          }}>
+            {[
+              {
+                term: 'Qualiopi',
+                scope: "Porte sur l'organisme",
+                text: "Masteria la détient au titre des actions de formation. Délivrée par Certifopac, elle court jusqu'au 28 janvier 2029 et contrôle les procédures, de l'analyse de vos besoins à l'évaluation finale. C'est elle qui autorise un OPCO à régler la session.",
+                status: 'Détenue par Masteria',
+              },
+              {
+                term: 'RNCP ou Répertoire spécifique',
+                scope: 'Porte sur le parcours',
+                text: "Un parcours certifiant mène à un titre enregistré par France Compétences, avec un référentiel, des épreuves et un jury. Seuls ces parcours ouvrent le CPF. Nos sessions d'une ou deux journées n'aboutissent à aucun titre de ce type.",
+                status: 'Non concerné',
+              },
+              {
+                term: 'Certificat de réalisation',
+                scope: 'Porte sur le stagiaire',
+                text: "Remis à la fin de la session avec le bilan de l'évaluation des acquis, il prouve au financeur que chaque participant a suivi les heures prévues. Il documente une formation suivie et ne vaut pas diplôme.",
+                status: 'Remis à chaque stagiaire',
+              },
+            ].map(({ term, scope, text, status }) => (
+              <div key={term} style={{
+                background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 14,
+                padding: 22, display: 'flex', flexDirection: 'column', gap: 8,
+              }}>
+                <span style={{ fontSize: 12, fontWeight: 700, color: '#1A62FF', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{scope}</span>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{term}</h3>
+                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.65, margin: 0, flex: 1 }}>{text}</p>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{status}</span>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '28px 0 0', maxWidth: 820 }}>
+            Si vous visez un titre reconnu, ou si l'on vous propose une certification d'éditeur, cherchez sa
+            fiche dans les répertoires publics de France Compétences avant de vous engager. Pour former vos
+            équipes à un assistant d'IA sans passer par votre compte personnel, la page{' '}
+            <Link to="/formation-intelligence-artificielle-cpf" style={{ color: '#1A62FF', fontWeight: 600 }}>formation IA et CPF</Link>{' '}
+            compare les financements possibles. Une formation à Claude en français, sur vos documents, est décrite sur la page{' '}
+            <Link to="/formation-claude-ia" style={{ color: '#1A62FF', fontWeight: 600 }}>formation Claude</Link>.
+          </p>
         </div>
       </section>
 
