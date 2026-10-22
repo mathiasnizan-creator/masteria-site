@@ -396,6 +396,12 @@ export default {
    "desc": "Notes, courriers, synthèses."
   },
   {
+   "label": "Formation IA juridique",
+   "href": "/formation-ia-juridique",
+   "tag": "Métier voisin",
+   "desc": "Pour les assistants juridiques et les paralegals."
+  },
+  {
    "label": "Bibliothèque de prompts",
    "href": "/bibliotheque-de-prompts#assistante",
    "tag": "Ressource",

@@ -27,7 +27,8 @@ export default {
   formationBloc: {
     kicker: "Former avocats et juristes",
     h2: "Des cas pratiques sur des pièces pseudonymisées",
-    lien: "Voir nos formations IA",
+    lien: "Formation IA juridique pour avocats et juristes",
+    href: "/formation-ia-juridique",
   },
   faqBloc: {
     h2: "Le droit et l'IA : vos questions",

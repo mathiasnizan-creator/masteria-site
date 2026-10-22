@@ -2,30 +2,62 @@
  * Créé le 2026-08-21 sur le modèle des pages métier existantes (immobilier.js).
  * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx) ;
  * faits outils relevés le 7 octobre 2026 (fiche FAITS-OUTILS du 07/10, claude-facts.js du 05/10).
+ * 2026-10-22 : recentrée sur « formation IA juridique » pour avocats et juristes (Search Console,
+ * positions 42 à 54) ; règles vérifiées ce jour : formation continue des avocats (art. 85 du décret
+ * du 27/11/1991, décision CNB n° 2023-002), AI Act après le règlement (UE) 2026/1744, loi n° 2026-122.
+ * Le bloc « Données et AI Act » passe par base.deepDive (bloc « IA par fonction » du gabarit).
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
  "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA juridique : contrats et sources | Masteria",
-  "metaDesc": "Formation IA juridique pour avocats, notaires et juristes : contrats, recherche aux sources vérifiées, actes, veille, secret professionnel. Qualiopi.",
-  "keywords": "formation ia juridique, formation ia avocat, formation ia juriste, formation ia notaire, ia droit, intelligence artificielle juridique, formation ia cabinet d'avocats",
-  "h1": "Formation IA juridique : préparer, chercher et rédiger avec l'IA, sous votre signature",
-  "h1a": "Formation IA juridique :",
-  "h1b": "préparer, chercher et rédiger avec l'IA, sous votre signature",
+  "metaTitle": "Formation IA juridique pour avocats et juristes | Masteria",
+  "metaDesc": "Formation IA juridique pour avocats et juristes d'entreprise : revue de contrats, recherche sourcée, actes, veille, secret professionnel. Qualiopi.",
+  "keywords": "formation ia juridique, formation juridique ia, formation ia avocat, formation ia pour les avocats, formation ia juriste, formation ia droit, formation continue avocat ia, ia juridique",
+  "h1": "Formation IA juridique pour les avocats et les juristes d'entreprise",
+  "h1a": "Formation IA juridique",
+  "h1b": "pour les avocats et les juristes d'entreprise",
   "eyebrow": "Formation métier · Juridique",
   "badge3": "Sur vos contrats et vos dossiers anonymisés",
-  "geo": "La formation IA juridique de Masteria apprend aux avocats, notaires, juristes d'entreprise et assistants juridiques à employer l'IA générative sur leurs propres pièces : lire un contrat, confronter deux versions, préparer une recherche dont chaque référence est retrouvée sur Légifrance ou Judilibre, rédiger un premier jet de courrier, résumer un dossier épais. Le programme tient en deux journées sur l'outil choisi par votre structure : Claude, Vibe, Gemini, ChatGPT ou, pour les structures sous Microsoft 365, Microsoft Copilot (anciennement Microsoft 365 Copilot). La qualification juridique et la signature restent entre vos mains.",
+  "geo": "Une formation IA juridique apprend aux avocats, aux juristes d'entreprise et à leurs équipes à confier à l'IA générative la revue de contrats, la recherche, le premier jet des actes, la veille et la synthèse des dossiers longs, puis à contrôler chaque résultat avant qu'il engage la structure. Chez Masteria, elle dure un ou deux jours en intra, au cabinet ou à distance, sur vos pièces anonymisées et l'assistant de votre structure : Claude, Microsoft Copilot, ChatGPT, Gemini ou Vibe. Chaque référence citée par l'outil est retrouvée sur Légifrance, Judilibre ou EUR-Lex, et la qualification comme la signature restent les vôtres.",
   "sub": "Un modèle de langage enchaîne les mots les plus vraisemblables à la suite de ceux qu'on lui donne. Il rédige donc vite une clause plausible, et il invente avec le même aplomb un arrêt, un numéro de pourvoi ou un article abrogé. La formation part de ce mécanisme : confier à l'outil la lecture, le tri et le premier jet, retrouver soi-même chaque source avant qu'elle entre dans un écrit, et garder le conseil, que la loi réserve aux professions habilitées.",
-  "intro": "Deux journées pour que les professionnels du droit confient à l'IA générative la lecture, le tri et le premier jet, en gardant la vérification des sources, le conseil et la signature."
+  "intro": "Une formation IA juridique d'un ou deux jours pour avocats et juristes d'entreprise : revue de contrats, recherche sourcée, actes, veille et dossiers longs, avec le contrôle des sources et le secret professionnel.",
+  "deepDiveTitle": "Données des dossiers et AI Act : les règles vérifiées le 22 octobre 2026",
+  "deepDiveIntro": "Avant de confier une pièce à un assistant, une structure juridique répond à trois questions : quel secret couvre la pièce, où l'outil traite et conserve les données, et quelles obligations le texte européen sur l'IA fait peser sur elle. Voici l'état des textes et des offres au 22 octobre 2026.",
+  "deepDive": [
+   {
+    "title": "Le secret de l'avocat, celui du notaire",
+    "text": "Le secret professionnel de l'avocat s'étend à chaque pièce du dossier, et le notaire est tenu à un secret général et absolu. Le Conseil national des barreaux a diffusé en mars 2026 un guide sur la déontologie et l'intelligence artificielle, qui rappelle le secret, le respect du RGPD et l'information du client. En formation, les pièces sont anonymisées avant tout traitement, et la règle écrite de l'équipe désigne les affaires qui restent hors de tout outil."
+   },
+   {
+    "title": "La confidentialité du juriste d'entreprise",
+    "text": "Votée le 23 février 2026, la loi n° 2026-122 protège les consultations des juristes d'entreprise, sous des conditions de diplôme, de destinataire et de mention. Elle prendra effet par décret, le 1er février 2027 au plus tard. Une direction juridique qui veut en bénéficier fixe dès maintenant la place de l'assistant dans la préparation de ces consultations."
+   },
+   {
+    "title": "Des outils dont la zone de données est connue",
+    "text": "Microsoft Copilot garde les requêtes des utilisateurs européens dans le périmètre de données que Microsoft réserve à l'Union, sauf pour les modèles d'Anthropic, coupés par défaut en Europe. ChatGPT Enterprise et Edu stockent au repos le contenu des nouveaux espaces en région Europe sur demande. Vibe conserve les conversations en Europe sauf choix inverse. Les applications de Claude n'offrent pas de région européenne ; il faut passer par AWS Bedrock ou Google Cloud pour en obtenir une. Gemini Notebook ignore les réglages de région de Workspace."
+   },
+   {
+    "title": "Anonymiser une pièce, au sens du RGPD",
+    "text": "Une pièce dont seuls les noms ont été remplacés reste une donnée personnelle au sens du RGPD, puisque la personne se retrouve par recoupement. Seule une anonymisation irréversible fait sortir la pièce du règlement. Les ateliers apprennent à retirer aussi les dates, les montants, les lieux et les détails qui permettent de reconnaître une affaire."
+   },
+   {
+    "title": "AI Act : former les équipes qui s'en servent",
+    "text": "Depuis le règlement Omnibus (UE) 2026/1744, signé le 8 juillet 2026 et paru au Journal officiel de l'Union le 24 juillet, l'article 4 du règlement (UE) 2024/1689 attend de l'employeur des mesures qui aident ses équipes à maîtriser l'IA qu'elles emploient. En vigueur depuis février 2025, cette exigence ne fixe ni niveau ni certificat. L'attestation remise à chaque participant rejoint votre registre interne des formations."
+   },
+   {
+    "title": "AI Act : le haut risque vise la justice",
+    "text": "Le point 8 de l'annexe III range parmi les systèmes à haut risque ceux qui assistent une autorité judiciaire, ou un mode alternatif de règlement des différends, dans la recherche et l'interprétation des faits et du droit. Ces systèmes devront se conformer à partir du 2 décembre 2027. Un cabinet qui prépare ses écrits avec un assistant généraliste reste hors de cette catégorie ; un robot ouvert aux clients doit en revanche se présenter comme une IA, ce que l'article 50 exige depuis août 2026."
+   }
+  ]
  },
  "enBref": [
   {
    "label": "Durée",
-   "value": "Quatorze heures sur deux jours, au cabinet ou en ligne ; un jour suffit à une équipe qui s'en tient aux contrats et à la recherche"
+   "value": "Un jour (7 heures) ou deux jours (14 heures), au cabinet ou à distance ; un jour suffit à une équipe qui s'en tient aux contrats et à la recherche"
   },
   {
    "label": "Pour qui",
-   "value": "Avocats et collaborateurs, notaires et clercs, juristes d'entreprise, responsables conformité, assistants juridiques et paralegals"
+   "value": "Avocats et collaborateurs, juristes d'entreprise et directions juridiques, responsables conformité, notaires et clercs, assistants juridiques et paralegals"
   },
   {
    "label": "Outils",
@@ -37,49 +69,49 @@ export default {
   },
   {
    "label": "Cadre",
-   "value": "Pièces anonymisées, offres professionnelles seulement, références retrouvées à la source, aucun conseil rendu par l'outil"
+   "value": "Pièces anonymisées, outils dont la zone de données est connue, références retrouvées à la source, aucun conseil rendu par l'outil"
   },
   {
    "label": "Financement",
-   "value": "Action certifiée Qualiopi ; c'est l'OPCO de votre branche qui tranche le financement, d'après ses barèmes"
+   "value": "Action certifiée Qualiopi ; l'OPCO de votre branche, ou le FIF-PL pour un avocat libéral, arrête sa prise en charge d'après ses propres règles"
   }
  ],
  "missionsHead": {
-  "kicker": "Six usages du métier",
-  "h2": "Où l'IA générative aide un professionnel du droit",
-  "answer": "Six activités en profitent : la lecture des contrats, la recherche, la rédaction des actes et des courriers, la synthèse des dossiers épais, la veille et les écrits de la conformité. L'outil y trie, compare et rédige des premiers jets ; il ne qualifie pas les faits, ne choisit pas la stratégie et ne signe rien. La formation consacre autant de temps au contrôle de ses réponses qu'à leur production.",
+  "kicker": "Six usages juridiques",
+  "h2": "Ce que l'IA prépare pour un avocat ou un juriste, et ses limites",
+  "answer": "Six usages juridiques en profitent : la revue de contrats, la recherche avec citation des sources, la rédaction d'actes et de courriers, la synthèse de dossiers longs, la veille et les écrits de la conformité. Pour chacun, la formation montre ce que l'outil prépare et la limite à tenir : le secret professionnel, la source à retrouver, la référence inventée. L'outil ne qualifie pas les faits, ne choisit pas la stratégie et ne signe rien.",
   "foot": "Le poids de chaque activité se règle au cadrage selon votre pratique. Vous pensez plutôt à un outil construit pour votre cabinet, relié à vos modèles d'actes ou à votre gestion documentaire ? La page {/ia-juridique|IA pour les professions du droit} décrit ce travail."
  },
  "missions": [
   {
-   "icon": "SearchCheck",
-   "title": "Recherche juridique",
-   "desc": "L'IA aide à poser la question, à lister les fondements possibles et les arguments adverses, à dresser le plan d'une consultation. Elle peut aussi citer un arrêt qui n'existe pas. La consigne apprise se résume ainsi : une décision ou un article n'entre dans un écrit qu'après avoir été retrouvé sur Légifrance, Judilibre ou votre base éditoriale."
+   "icon": "FileSignature",
+   "title": "Revue de contrats",
+   "desc": "Carte d'un contrat reçu, écarts entre deux versions, clauses absentes au regard de votre politique contractuelle, rédaction alternative d'un article : l'outil prépare la lecture que le juriste conduit ensuite. Limite : un contrat client non anonymisé n'entre que dans un outil dont vous connaissez la zone de données, et le risque accepté comme la ligne de négociation restent des décisions humaines."
   },
   {
-   "icon": "FileSignature",
-   "title": "Contrats",
-   "desc": "Carte d'un contrat reçu, écarts entre deux versions, clauses absentes au regard de votre politique contractuelle, rédaction alternative d'un article : l'outil prépare la lecture que le juriste conduit ensuite. Le niveau de risque accepté et la ligne de négociation restent des décisions humaines."
+   "icon": "SearchCheck",
+   "title": "Recherche avec citation des sources",
+   "desc": "L'IA aide à poser la question, à lister les fondements possibles et les arguments adverses, à dresser le plan d'une consultation, en citant pour chaque point l'article ou la décision qui le fonde. Limite : elle peut citer un arrêt qui n'existe pas, avec une juridiction et un numéro plausibles. Une référence n'entre dans un écrit qu'après avoir été retrouvée sur Légifrance, Judilibre, EUR-Lex ou votre base éditoriale."
   },
   {
    "icon": "PenLine",
-   "title": "Actes, conclusions et courriers",
-   "desc": "Avec vos trames et les pièces du dossier, l'IA pose l'exposé des faits, la chronologie, le plan d'un jeu de conclusions ou le premier jet d'une lettre à un confrère. Elle épargne la mise en forme ; l'argumentation, le choix des moyens et la signature appartiennent au professionnel."
+   "title": "Rédaction d'actes et de courriers",
+   "desc": "Avec vos trames et les pièces du dossier, l'IA pose l'exposé des faits, la chronologie, le plan d'un jeu de conclusions, le projet d'un acte courant ou le premier jet d'une lettre à un confrère. Limite : un premier jet bien tourné peut omettre un délai ou une mention obligatoire. L'argumentation, le choix des moyens et la signature appartiennent au professionnel."
   },
   {
    "icon": "FolderSearch",
-   "title": "Dossiers volumineux",
-   "desc": "Un dossier de quatre cents pages se résume, se range en chronologie et se découpe par partie ou par thème. Les assistants actuels absorbent des volumes considérables en un seul échange ; la formation apprend à exiger, pour chaque affirmation, la pièce source et son numéro de page."
+   "title": "Synthèse de dossiers longs",
+   "desc": "Un dossier de quatre cents pages se résume, se range en chronologie et se découpe par partie ou par thème. Limite : une synthèse peut lisser un fait gênant ou en déplacer la date. La formation apprend à exiger, pour chaque affirmation, la pièce source et son numéro de page, puis à relire soi-même les pièces qui décident de l'affaire."
   },
   {
    "icon": "ScrollText",
    "title": "Veille juridique",
-   "desc": "Un texte paru au Journal officiel, une décision commentée, une recommandation d'autorité : l'outil en tire une note dans votre format (ce qui change, pour qui, à partir de quand). La note part vers l'équipe ou les opérationnels après relecture du texte source par un juriste."
+   "desc": "Un texte paru au Journal officiel, une décision commentée, une recommandation d'autorité : l'outil en tire une note dans votre format (ce qui change, pour qui, à partir de quand). Limite : il peut confondre un projet de texte et sa version adoptée, ou citer une rédaction abrogée. La note part vers l'équipe après relecture du texte officiel par un juriste."
   },
   {
    "icon": "ShieldCheck",
    "title": "Conformité et écrits internes",
-   "desc": "Fiches RGPD pour les services, mise à jour d'une procédure, réponses types aux questions récurrentes, support de sensibilisation : l'IA produit les écrits de la conformité à partir de vos référentiels. L'interprétation des textes et l'arbitrage des cas limites restent au juriste."
+   "desc": "Fiches RGPD pour les services, mise à jour d'une procédure, réponses types aux questions récurrentes, support de sensibilisation : l'IA produit les écrits de la conformité à partir de vos référentiels. Limite : elle généralise volontiers un cas particulier. L'interprétation des textes et l'arbitrage des cas limites restent au juriste."
   }
  ],
  "atoutsHead": {
@@ -115,7 +147,7 @@ export default {
   }
  ],
  "programmeHead": {
-  "h2": "Deux jours de formation IA juridique, du contrat à la compétence partagée",
+  "h2": "Programme de la formation IA juridique sur deux jours",
   "answer": "Le premier jour installe la méthode sur la matière la plus courante : ce qu'un modèle fait d'une question de droit, les offres professionnelles et le trajet des données, la demande bien posée, vos trames enregistrées dans l'assistant, puis la carte d'un contrat, la comparaison de deux versions, la recherche contrôlée, le premier jet d'un courrier, un projet commun et la règle sur le secret. Le second jour traite le dossier épais, le carnet de sources, la veille, les fiches de conformité et l'échéancier contractuel, avant de transformer votre grille de relecture en compétence, de tracer la limite de l'assistant interne, de programmer une veille et d'organiser la gouvernance.",
   "foot": "Au cadrage, un cabinet de contentieux renforce la synthèse et la recherche, une direction juridique les contrats et la conformité, un office notarial les actes courants et les courriers aux parties. Ramenée à un jour, la formation conserve la méthode, la recherche contrôlée et deux ateliers choisis. Chaque fonction citée a été revue par nos soins le 7 octobre 2026 ; quand votre abonnement ne la propose pas, elle est montrée en démonstration, puis refaite sur ce que vous possédez."
  },
@@ -218,8 +250,8 @@ export default {
   }
  ],
  "profilsHead": {
-  "h2": "Quels professionnels du droit suivent cette formation ?",
-  "answer": "Les avocats et leurs collaborateurs, les notaires et leurs clercs, les juristes d'entreprise et les responsables conformité, les assistants juridiques et paralegals. Nul besoin de savoir coder ; les ateliers suivent la dominante de chacun, contentieux, conseil, actes ou conformité."
+  "h2": "Avocats, juristes d'entreprise, notaires : qui suit cette formation IA juridique ?",
+  "answer": "Les avocats et leurs collaborateurs, les juristes d'entreprise et les responsables conformité, les notaires et leurs clercs, les assistants juridiques et paralegals. Nul besoin de savoir coder ; les ateliers suivent la dominante de chacun, contentieux, conseil, actes ou conformité."
  },
  "profils": [
   {
@@ -246,7 +278,7 @@ export default {
  "cadre": {
   "kicker": "Secret, sources, conseil",
   "h2": "Trois règles encadrent l'IA dans une pratique juridique",
-  "p": "La première protège le secret : celui de l'avocat et du notaire, et la confidentialité qu'une direction juridique doit à son entreprise. Les pièces s'anonymisent avant tout traitement, et seules les offres professionnelles, dont l'éditeur promet de ne tirer aucun apprentissage de vos dossiers, reçoivent un dossier. La deuxième porte sur les sources : aucune référence n'entre dans un écrit avant d'avoir été retrouvée sur une base officielle ou éditoriale. La troisième laisse le conseil au professionnel : l'outil prépare, il ne qualifie pas, ne recommande aucune stratégie et ne répond jamais seul à un client. Ces règles s'écrivent pendant la formation et rejoignent votre {/charte-ia-entreprise|charte IA de la structure}. L'AI Act y trouve aussi son compte : son article 4 s'impose aux employeurs depuis le 2 février 2025, dans une rédaction remaniée en juillet 2026, et leur demande d'agir pour que chaque équipe sache se servir de ces outils.",
+  "p": "La première protège le secret : celui de l'avocat et du notaire, et la confidentialité qu'une direction juridique doit à son entreprise. Les pièces s'anonymisent avant tout traitement, et seules les offres professionnelles, dont l'éditeur promet de ne tirer aucun apprentissage de vos dossiers, reçoivent un dossier. La deuxième porte sur les sources : aucune référence n'entre dans un écrit avant d'avoir été retrouvée sur une base officielle ou éditoriale. La troisième laisse le conseil au professionnel : l'outil prépare, il ne qualifie pas, ne recommande aucune stratégie et ne répond jamais seul à un client. Ces règles s'écrivent pendant la formation et rejoignent votre {/charte-ia-entreprise|charte IA de la structure}. Les textes qui les fondent (secret, RGPD, zone de données des outils, AI Act) sont détaillés plus bas, et la {/formation-ai-act|formation AI Act} traite le règlement pour lui-même.",
   "points": [
    "Pièces anonymisées, offres professionnelles seulement",
    "Chaque référence retrouvée sur une base officielle",
@@ -255,15 +287,23 @@ export default {
   ]
  },
  "tarif": {
-  "titre": "Tarif journalier et financement d'une formation IA juridique",
-  "answer": "Chaque journée animée dans votre structure coûte au groupe à partir de 1 980 € HT, de une à douze personnes ; le programme complet de deux jours se chiffre à partir de 3 960 € HT. Un associé ou un directeur juridique peut suivre le même programme seul, au même prix journalier. Le devis d'un cabinet genevois ou bruxellois, sans OPCO, se rédige en euros hors taxes.",
+  "titre": "Prix et financement d'une formation IA juridique",
+  "answer": "Chaque journée animée dans votre structure coûte au groupe à partir de 1 980 € HT, de une à douze personnes ; le programme complet de deux jours se chiffre à partir de 3 960 € HT, la préparation sur mesure en plus. Un associé ou un directeur juridique peut suivre le même programme seul, au même prix journalier. Le devis d'un cabinet genevois ou bruxellois, sans OPCO, se rédige en euros hors taxes.",
   "inclus": "Le prix de base couvre deux journées d'animation, au cabinet ou par visioconférence, avec les supports remis aux participants, les livrables construits par l'équipe (prompts juridiques, grille de relecture convertie en compétence, règle écrite sur le secret), puis une évaluation finale et le certificat individuel de réalisation. Pour une session sur place hors de la région lyonnaise, le voyage du formateur est facturé en sus. L'entretien de cadrage et la préparation sur vos trames et vos pièces anonymisées s'ajoutent, chiffrés au devis.",
-  "financement": "Les salariés d'un cabinet, d'un office ou d'une entreprise dépendent de l'opérateur de compétences désigné par leur convention collective, lequel fixe le montant de son aide selon ses barèmes et sa trésorerie de l'année. Le simulateur {/quel-opco|Quel OPCO ?} retrouve le vôtre, et les circuits possibles sont présentés sur la page {/financement-formation-ia|financement des formations à l'IA} ; un professionnel libéral qui se forme lui-même passe par un fonds d'assurance formation. Vous recevez de Masteria programme, convention et justificatifs avant le premier jour. Aucun recours au CPF."
+  "financement": "Les salariés d'un cabinet, d'un office ou d'une entreprise dépendent de l'opérateur de compétences désigné par leur convention collective, lequel fixe le montant de son aide selon ses barèmes et sa trésorerie de l'année. Le simulateur {/quel-opco|Quel OPCO ?} retrouve le vôtre, et les circuits possibles sont présentés sur la page {/financement-formation-ia|financement des formations à l'IA} ; un avocat ou un notaire libéral qui se forme lui-même sollicite le FIF-PL, le fonds d'assurance formation des professions libérales. Vous recevez de Masteria programme, convention et justificatifs avant le premier jour. Aucun recours au CPF. Les heures de formation continue obligatoire des avocats obéissent à une autre règle, expliquée dans la FAQ."
  },
  "faq": [
   {
-   "q": "Sur quoi porte une formation IA juridique ?",
-   "a": "Sur les tâches de préparation du métier confiées à l'IA générative, à partir de vos pièces : cartographier un contrat et comparer deux versions, conduire une recherche dont chaque référence est retrouvée à la source, préparer la trame d'un courrier ou d'un acte courant à partir de vos modèles, résumer un dossier épais, rédiger une note de veille et des fiches de conformité. Le second jour range ces usages dans des outils d'équipe (projet commun, compétence, veille programmée) et pose la gouvernance. La vérification court tout au long des ateliers : un tiers du temps sert à contrôler les productions de l'outil."
+   "q": "Qu'est-ce qu'une formation IA juridique ?",
+   "a": "C'est une formation qui apprend aux professionnels du droit à confier à l'IA générative les tâches de préparation, à partir de leurs pièces : cartographier un contrat et comparer deux versions, conduire une recherche dont chaque référence est retrouvée à la source, préparer la trame d'un courrier ou d'un acte courant à partir de vos modèles, résumer un dossier long, rédiger une note de veille et des fiches de conformité. Le second jour range ces usages dans des outils d'équipe (projet commun, compétence, veille programmée) et pose la gouvernance. La vérification court tout au long des ateliers : un tiers du temps sert à contrôler les productions de l'outil."
+  },
+  {
+   "q": "Une formation IA pour avocats compte-t-elle dans la formation continue obligatoire ?",
+   "a": "L'article 85 du décret du 27 novembre 1991 impose à l'avocat vingt heures de formation continue par année civile, ou quarante heures sur deux années consécutives. La décision du Conseil national des barreaux n° 2023-002 du 17 novembre 2023 en fixe les modalités : le CNB homologue les formations destinées aux avocats, et chaque avocat déclare ses heures à son conseil de l'ordre au plus tard le 31 janvier, attestations jointes. La formation IA juridique de Masteria n'est pas homologuée par le CNB : nous ne promettons aucune heure validée, et c'est votre ordre qui apprécie une formation non homologuée. Le CNB propose par ailleurs avec Lefebvre Dalloz un parcours en ligne gratuit sur l'IA, qui valide jusqu'à quatre heures et reste ouvert jusqu'au 31 décembre 2027. Règles vérifiées le 22 octobre 2026."
+  },
+  {
+   "q": "Formation IA pour avocats ou pour juristes d'entreprise : qu'est-ce qui change ?",
+   "a": "Le socle reste commun : la demande bien posée, le contrôle des sources, la règle écrite sur les données. Les ateliers changent. Un cabinet d'avocats travaille la recherche contrôlée, la synthèse des pièces, le plan de conclusions et les lettres aux confrères, sous le secret professionnel de l'avocat. Une direction juridique travaille le flux de contrats, les questions des opérationnels, les fiches de conformité et l'échéancier contractuel, avec la confidentialité ouverte par la loi du 23 février 2026. Au cadrage, vous fixez le poids de chaque série d'ateliers selon votre structure."
   },
   {
    "q": "Comment éviter les jurisprudences inventées par l'IA ?",
@@ -271,7 +311,11 @@ export default {
   },
   {
    "q": "Peut-on confier un dossier client à un assistant d'IA ?",
-   "a": "Oui, à des conditions écrites pendant la formation. Les pièces sont anonymisées avant traitement (noms, adresses, numéros, éléments identifiants). Seules les offres professionnelles reçoivent un dossier : Claude Team, ChatGPT Business et Microsoft Copilot sur compte professionnel ne réutilisent pas vos échanges pour l'apprentissage de leurs modèles, et Gemini dans Workspace prend le même engagement ; chez Vibe, l'offre Team laisse cet apprentissage ouvert tant que l'administrateur ne le ferme pas. Les comptes gratuits et personnels sont exclus. Certaines affaires sensibles restent hors de tout outil, et la règle dit lesquelles."
+   "a": "Oui, à des conditions écrites pendant la formation. Les pièces sont anonymisées avant traitement (noms, adresses, numéros, éléments identifiants). Seules les offres professionnelles reçoivent un dossier : Claude Team, ChatGPT Business et Microsoft Copilot sur compte professionnel ne réutilisent pas vos échanges pour l'apprentissage de leurs modèles, et Gemini dans Workspace prend le même engagement ; chez Vibe, l'offre Team laisse cet apprentissage ouvert tant que l'administrateur ne le ferme pas. Les comptes gratuits et personnels sont exclus. Reste à connaître la zone de données de l'outil (Union européenne ou non), qui décide de la catégorie de pièces qu'il reçoit. Certaines affaires sensibles restent hors de tout outil, et la règle dit lesquelles."
+  },
+  {
+   "q": "Que demande l'AI Act à un cabinet ou à une direction juridique ?",
+   "a": "Deux articles pèsent déjà sur elle. L'article 4, en vigueur depuis février 2025 dans une rédaction revue par l'Omnibus de juillet 2026, attend de l'employeur qu'il aide ses avocats, juristes et assistants à maîtriser l'IA, sans niveau ni certificat ; une formation attestée en garde la trace. L'article 50, entré en application en août 2026, oblige un robot ouvert aux clients à dire qu'il n'est pas humain. Les obligations du haut risque, qui touchent les systèmes au service de la justice, attendront le 2 décembre 2027. Calendrier vérifié le 22 octobre 2026."
   },
   {
    "q": "L'IA peut-elle conseiller un client à la place de l'avocat ?",
@@ -287,7 +331,7 @@ export default {
   },
   {
    "q": "Quel budget prévoir pour un cabinet, et quel financement ?",
-   "a": "Chaque journée animée démarre à 1 980 € HT, que le groupe réunisse une ou douze personnes, et à 3 960 € HT pour le programme de deux jours. Une personne formée seule paie le même prix journalier. Pour des salariés, c'est l'opérateur de compétences rattaché à la convention collective qui reçoit le dossier ; il arrête sa participation suivant ses propres règles. Un avocat ou un notaire libéral sollicite plutôt le FAF dont il dépend. Masteria remet à chacun programme, convention et attestations."
+   "a": "Chaque journée animée démarre à 1 980 € HT, que le groupe réunisse une ou douze personnes, et à 3 960 € HT pour le programme de deux jours ; la préparation sur vos trames et vos pièces s'ajoute, chiffrée au devis. Une personne formée seule paie le même prix journalier. Pour des salariés, c'est l'opérateur de compétences rattaché à la convention collective qui reçoit le dossier ; il arrête sa participation suivant ses propres règles. Un avocat ou un notaire libéral sollicite plutôt le FIF-PL. Masteria remet à chacun programme, convention et attestations."
   },
   {
    "q": "Quelle durée et quel effectif prévoir pour la formation ?",
@@ -295,8 +339,8 @@ export default {
   }
  ],
  "course": {
-  "name": "Formation IA juridique (Masteria)",
-  "description": "Formation à l'intelligence artificielle générative pour les métiers du droit, sur les pièces des participants : cartographie et comparaison de contrats, recherche avec contrôle des références sur Légifrance, Judilibre et EUR-Lex, premiers jets d'actes et de courriers, synthèse de dossiers volumineux, veille, fiches de conformité, compétences et règle écrite sur le secret professionnel. Outils : Claude, ChatGPT, Microsoft Copilot, Gemini, Vibe. Deux jours en intra, sur site ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses critères.",
+  "name": "Formation IA juridique pour avocats et juristes (Masteria)",
+  "description": "Formation IA juridique pour avocats, juristes d'entreprise et leurs équipes, sur les pièces des participants : revue et comparaison de contrats, recherche avec contrôle des références sur Légifrance, Judilibre et EUR-Lex, premiers jets d'actes et de courriers, synthèse de dossiers longs, veille, fiches de conformité, compétences et règle écrite sur le secret professionnel et la zone de données des outils. Outils : Claude, ChatGPT, Microsoft Copilot, Gemini, Vibe. Un ou deux jours en intra, sur site ou à distance. Certifiée Qualiopi, finançable par l'OPCO selon ses critères.",
   "level": "Tous niveaux",
   "teaches": [
    "Cartographier un contrat et comparer deux versions avec l'IA, articles cités",
@@ -313,9 +357,9 @@ export default {
   "locationName": "Masteria : intra-entreprise, sur site (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA juridique : préparer, chercher et rédiger avec l'IA, sous votre signature",
+  "headline": "Formation IA juridique pour les avocats et les juristes d'entreprise",
   "datePublished": "2026-08-19",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-22",
   "dateLabel": "octobre 2026",
   "about": [
    {
@@ -347,6 +391,18 @@ export default {
   {
    "name": "Judilibre, la jurisprudence ouverte de la Cour de cassation",
    "url": "https://www.courdecassation.fr/recherche-judilibre"
+  },
+  {
+   "name": "Conseil national des barreaux : décision n° 2023-002 sur la formation continue des avocats",
+   "url": "https://cnb.avocat.fr/decision-a-caractere-normatif-determinant-les-modalites-d-application-de-la-formation-continue-des-avocats"
+  },
+  {
+   "name": "Conseil national des barreaux : guide sur la déontologie et l'intelligence artificielle (mars 2026)",
+   "url": "https://cnb.avocat.fr/actualite/le-cnb-adopte-un-guide-sur-la-deontologie-et-l-intelligence-artificielle"
+  },
+  {
+   "name": "EUR-Lex : texte du règlement Omnibus IA, (UE) 2026/1744",
+   "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
   }
  ],
  "maillage": [
@@ -457,7 +513,7 @@ export default {
   "titre": "Quand le cabinet veut un outil relié à ses modèles d'actes",
   "texte": "Une fois l'équipe formée, la demande suivante vise souvent un assistant branché sur la gestion documentaire, la contrathèque ou les modèles d'actes du cabinet. Masteria délimite ce périmètre avec vous, programme l'assistant et le raccorde à vos logiciels. Ce travail de conseil n'entre pas dans les actions de formation : il n'est pas finançable par votre OPCO et se facture au forfait, une fois le cadrage fait."
  },
- "faqTitre": "Formation IA juridique : les questions posées avant de s'inscrire",
+ "faqTitre": "Formation IA juridique : les questions des avocats et des juristes",
  "cta": {
   "h2": "Mettons l'IA au travail sur vos dossiers juridiques",
   "p": "Décrivez votre structure (cabinet, office, direction juridique), vos matières et l'outil dont vous disposez. Dans les 24 heures arrivent un programme calé sur votre pratique, deux ou trois dates et le devis, accompagné des pièces que demande votre OPCO."
