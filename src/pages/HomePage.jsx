@@ -11,6 +11,7 @@ import ToolLogo from '../components/ToolLogo'
 import CadrageLink from '../components/CadrageLink'
 import EquipeMasteria from '../components/EquipeMasteria'
 import ParcoursExpertises from '../components/ParcoursExpertises'
+import PresenceInternationale from '../components/PresenceInternationale'
 import AvisGoogle from '../components/AvisGoogle'
 import { HUBS, METIERS } from '../data/catalog-meta'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -491,6 +492,9 @@ export default function HomePage() {
 
       {/* ════════════════════════ PARCOURS DES EXPERTISES (ancre sombre) ════════════════════════ */}
       <ParcoursExpertises />
+
+      {/* ════════════════════════ OÙ NOUS INTERVENONS (carte) ════════════════════════ */}
+      <PresenceInternationale />
 
       {/* ════════════════════════ MÉTHODE EN SIX TEMPS ════════════════════════ */}
       <section style={{ background: '#EFF6FF', padding: SECTION_PAD, borderTop: '1px solid #DBEAFE', borderBottom: '1px solid #DBEAFE' }}>
