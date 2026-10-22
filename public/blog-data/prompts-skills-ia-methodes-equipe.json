@@ -1,0 +1,703 @@
+{
+  "slug": "prompts-skills-ia-methodes-equipe",
+  "title": "Des prompts aux Skills : capitaliser les méthodes d'une équipe avec l'IA",
+  "metaTitle": "Skills IA : des prompts aux compétences d'équipe | Masteria",
+  "metaDesc": "Skills de Claude, ChatGPT, Copilot et Gemini : quand ranger une méthode d'équipe en compétence, comment l'écrire, qui la valide et la fait vivre.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "24 min",
+  "formations": [
+    [
+      "Formation Claude",
+      "/formation-claude-ia"
+    ],
+    [
+      "Formation agents IA",
+      "/formation-agents-ia"
+    ],
+    [
+      "Formation prompt engineering",
+      "/formation-prompt-engineering"
+    ]
+  ],
+  "keywords": [
+    "skills IA",
+    "compétence agent IA",
+    "compétences Claude",
+    "SKILL.md",
+    "Agent Skills",
+    "skills ChatGPT",
+    "agents déclaratifs Copilot",
+    "Gems Gemini",
+    "bibliothèque de prompts",
+    "banque de prompts",
+    "capitaliser les méthodes d'équipe"
+  ],
+  "excerpt": "Une bibliothèque de prompts copiés-collés s'use vite. Les compétences (Skills) de Claude, ChatGPT, Copilot, Gemini et Mistral rangent une méthode avec ses fichiers et ses contrôles : lesquelles créer d'abord, comment les écrire, qui les fait vivre.",
+  "intro": "Une bibliothèque de prompts aide une équipe à démarrer avec l'IA, puis elle se disperse : chacun garde sa version, les fichiers utiles restent ailleurs et plus personne ne sait quelle consigne fait foi. Les équipes avancées rangent désormais leurs méthodes dans des compétences (Skills dans les interfaces en anglais) : un dossier qui réunit les instructions, les modèles et les contrôles d'une tâche, que l'assistant charge seul quand une demande y correspond. Au 22 octobre 2026, Claude, ChatGPT, Microsoft Copilot Cowork et Mistral Vibe lisent ce format bâti autour d'un fichier SKILL.md, et Google le déploie dans Gemini à la place des Gems. Cet article explique quand passer du prompt à la compétence, comment en écrire une qui tient dans la durée, et qui doit la faire vivre.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Une compétence (Skill) est un dossier bâti autour d'un fichier SKILL.md. Ce fichier porte un nom, une description qui indique quand l'utiliser et la méthode pas à pas ; le dossier peut y joindre des modèles, des références et des scripts. L'assistant lit d'abord le nom et la description de chaque compétence installée, et n'ouvre la méthode complète que lorsqu'une demande la concerne. Anthropic a créé ce format et l'a publié en standard ouvert ; au 22 octobre 2026, Claude, ChatGPT (offres Business, Enterprise, Healthcare et Edu), Copilot Cowork chez Microsoft et Mistral Vibe le lisent, et Google remplace ses Gems par des compétences au même format. Commencez par les méthodes répétées, stables et vérifiables, confiez chacune à un propriétaire nommé et faites relire chaque nouvelle version par une autre personne. Une bibliothèque de prompts reste suffisante pour les demandes ponctuelles et pour apprendre."
+    },
+    {
+      "type": "h2",
+      "text": "Une bibliothèque de prompts s'use dès qu'elle circule"
+    },
+    {
+      "type": "p",
+      "text": "Une bibliothèque de prompts (un recueil de consignes rédigées et testées, prêtes à copier) rend un premier service évident : elle évite la page blanche et diffuse les formulations qui marchent. L'usure commence le jour où elle circule. Un commercial ajuste la consigne de relance pour un client difficile, une collègue la colle dans un mail, une troisième la retouche dans son historique de conversation. Trois mois plus tard, l'équipe tient cinq variantes et aucune ne porte de date ni d'auteur."
+    },
+    {
+      "type": "p",
+      "text": "Le prompt copié-collé a aussi une limite de conception. Il transporte une phrase, sans les pièces qui font la qualité du résultat : la grille tarifaire, le modèle de document, la liste des clauses à vérifier, l'exemple que la direction a validé. La personne doit penser à chercher le bon prompt, joindre les bons fichiers, puis contrôler elle-même ce qui sort. La méthode repose encore sur sa mémoire."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Plusieurs versions d'une même consigne circulent, sans date ni auteur.",
+        "Deux personnes obtiennent des résultats différents sur la même tâche.",
+        "Le prompt renvoie à des fichiers que chacun doit retrouver et joindre à la main.",
+        "Les nouveaux arrivants ignorent l'existence du recueil, ou la version qui fait foi.",
+        "Un changement de modèle dégrade une consigne sans que personne ne le remarque."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces signes ne condamnent pas le recueil. Ils montrent qu'une partie de son contenu a mûri : la consigne est stable, l'équipe la reprend chaque semaine, et elle mérite un rangement qui embarque ses fichiers et ses contrôles. Pour constituer le point de départ, notre <a href='/bibliotheque-de-prompts'>bibliothèque de prompts par métier</a> rassemble des consignes commentées que vous pouvez reprendre telles quelles."
+    },
+    {
+      "type": "h2",
+      "text": "Une compétence range la méthode entière, fichiers compris"
+    },
+    {
+      "type": "p",
+      "text": "Une compétence est un dossier. Il contient au minimum un fichier texte nommé SKILL.md, écrit en Markdown (une syntaxe de mise en forme légère, lisible sans logiciel). Le haut du fichier porte deux champs obligatoires, un nom et une description. La suite décrit la méthode : les étapes, le format attendu, les règles maison, un exemple réussi. Le dossier peut accueillir d'autres pièces, comme un barème, un modèle de document ou un script (un petit programme qui exécute une opération de la même façon à chaque fois)."
+    },
+    {
+      "type": "h3",
+      "text": "L'assistant lit la compétence en trois temps"
+    },
+    {
+      "type": "p",
+      "text": "La <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview' target='_blank' rel='noopener'>documentation d'Anthropic sur les Agent Skills</a> décrit un chargement progressif. Au démarrage, l'assistant ne lit que le nom et la description de chaque compétence installée, soit une centaine de tokens (des fragments de mots de quelques caractères) par compétence. Quand une demande correspond à une description, il ouvre le fichier SKILL.md, dont Anthropic conseille de garder le corps sous 500 lignes. Les fichiers annexes ne sont lus qu'au moment où la méthode les appelle, et un script s'exécute sans que son code encombre la conversation : seul son résultat y entre."
+    },
+    {
+      "type": "p",
+      "text": "Ce mécanisme change l'échelle du rangement. Une équipe peut installer de nombreuses compétences sans alourdir chaque échange, alors qu'une longue consigne permanente placée en tête de conversation occupe la mémoire de travail du modèle à chaque message, qu'elle serve ou non."
+    },
+    {
+      "type": "h3",
+      "text": "Le format SKILL.md passe d'un outil à l'autre"
+    },
+    {
+      "type": "p",
+      "text": "Anthropic a créé ce format et l'a publié comme standard ouvert sous le nom Agent Skills, dont la spécification est tenue sur le site <a href='https://agentskills.io' target='_blank' rel='noopener'>agentskills.io</a>. D'autres éditeurs l'ont repris : OpenAI s'appuie dessus pour ChatGPT et Codex, Microsoft accepte des fichiers SKILL.md dans Copilot Cowork, Google annonce le « format ouvert SKILL.md » pour les compétences de Gemini, et Mistral range ses compétences Vibe dans le même type de dossier. Une méthode écrite avec soin pour un outil se transpose donc vers un autre avec peu de retouches. Il faut toutefois l'installer sur chaque surface : chez Anthropic comme chez Google, une compétence ne se synchronise pas d'elle-même entre deux produits."
+    },
+    {
+      "type": "h2",
+      "text": "Prompt, projet, compétence, agent : quatre rangements pour quatre besoins"
+    },
+    {
+      "type": "p",
+      "text": "Les assistants proposent plusieurs objets pour retenir ce qu'une équipe sait faire. Ils se complètent, et le bon choix dépend de ce que vous voulez conserver : une formulation, un contexte, une procédure ou une action dans vos logiciels."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Objet",
+        "Ce qu'il conserve",
+        "Quand il s'active",
+        "Exemple de tâche"
+      ],
+      "rows": [
+        [
+          "Prompt de bibliothèque",
+          "Une consigne rédigée et testée",
+          "Quand une personne pense à le copier",
+          "Reformuler un mail délicat"
+        ],
+        [
+          "Instructions personnalisées",
+          "Vos préférences générales de ton et de format",
+          "À chaque conversation",
+          "Répondre en français, vouvoyer, citer ses sources"
+        ],
+        [
+          "Projet",
+          "Un contexte durable : documents de référence, consignes, historique",
+          "Dans les conversations ouvertes au sein du projet",
+          "Suivre le dossier d'un grand compte ou d'un appel d'offres"
+        ],
+        [
+          "Compétence (Skill)",
+          "Une procédure complète, avec ses modèles et ses contrôles",
+          "D'elle-même, quand la demande correspond à sa description",
+          "Préparer une cotation à partir d'un mail client"
+        ],
+        [
+          "Agent",
+          "Une mission, des connexions à vos logiciels et des droits d'action",
+          "Sur demande, sur un événement ou à heure fixe",
+          "Trier chaque matin les demandes entrantes et créer les fiches"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Un <a href='https://academy.claude.com/tutorials/teach-claude-your-way-of-working-using-skills' target='_blank' rel='noopener'>tutoriel d'Anthropic</a> trace la frontière entre les deux objets du milieu : les compétences servent aux procédures répétables appliquées d'office, les projets au travail qui a besoin d'un contexte accumulé, et leur association convient au travail qui demande à la fois un contexte durable et une procédure standard. Un projet consacré à un grand compte garde les échanges et les pièces du dossier ; la compétence de relance de devis s'y applique comme partout ailleurs. Pour comparer les agents eux-mêmes, notre comparatif <a href='/meilleur-agent-ia'>du meilleur agent IA pour l'entreprise</a> détaille ce que chaque offre sait faire dans vos logiciels."
+    },
+    {
+      "type": "h3",
+      "text": "Les projets de Claude gardent le contexte d'un dossier"
+    },
+    {
+      "type": "p",
+      "text": "Dans Claude, un projet est un espace de travail qui possède ses propres conversations, une base de connaissances (les documents, textes ou fichiers déposés) et des consignes qui orientent les réponses, comme un ton formel ou le point de vue d'un métier. D'après le <a href='https://support.claude.com/en/articles/9517075-what-are-projects' target='_blank' rel='noopener'>centre d'aide de Claude</a>, les comptes gratuits peuvent en créer cinq. Sur les offres payantes, quand les documents approchent la limite de mémoire du modèle, Claude passe en mode RAG (la récupération des seuls passages utiles), ce qui multiplie la capacité jusqu'à dix fois. Sur Team et Enterprise, un projet se partage avec des collègues en lecture seule ou en modification."
+    },
+    {
+      "type": "p",
+      "text": "Les consignes de projet conviennent à ce qui vaut pour tout un dossier : le contexte du client, son vocabulaire, ses interdits. Elles deviennent fragiles dès qu'elles décrivent une procédure en dix étapes, parce que cette procédure reste enfermée dans le projet. Rangée en compétence, la même procédure sert dans tous les projets et dans les conversations libres."
+    },
+    {
+      "type": "h2",
+      "text": "Chaque éditeur range désormais des compétences, avec ses propres règles de partage"
+    },
+    {
+      "type": "p",
+      "text": "Le relevé qui suit a été fait le 22 octobre 2026 sur les documentations officielles. Ces fonctions évoluent d'un mois sur l'autre : vérifiez-les sur votre propre espace avant de construire, en particulier les droits ouverts par votre administrateur."
+    },
+    {
+      "type": "h3",
+      "text": "Claude : des compétences sur toutes les offres, publiées à l'organisation sur Team et Enterprise"
+    },
+    {
+      "type": "p",
+      "text": "Le <a href='https://support.claude.com/en/articles/12512180-using-skills-in-claude' target='_blank' rel='noopener'>centre d'aide de Claude</a> indique que les compétences sont disponibles sur les offres Free, Pro, Max, Team et Enterprise, à condition d'activer l'exécution de code. Elles se gèrent dans le menu Customize, onglet Skills. Une compétence se crée de trois façons : en décrivant la tâche à Claude, qui produit le fichier au bon format ; en téléversant un dossier compressé ; ou, sur Mac avec Cowork, en enregistrant son écran pendant qu'on réalise la tâche, une option ouverte aux offres Pro, Max et Team."
+    },
+    {
+      "type": "p",
+      "text": "Le partage dépend de l'offre. Sur Team et Enterprise, une compétence se partage avec des personnes précises, ou avec un groupe sur Enterprise ; les destinataires la reçoivent en lecture seule et récupèrent les mises à jour sans rien faire. L'auteur peut aussi la proposer à toute l'organisation avec la fonction Publish to org, soumise si besoin à l'accord d'un propriétaire de l'espace ou d'un relecteur désigné. Les propriétaires peuvent enfin installer une compétence chez tous les utilisateurs, et une organisation Enterprise peut faire analyser chaque compétence téléversée pour y repérer un contenu malveillant."
+    },
+    {
+      "type": "p",
+      "text": "Dans Claude Code, l'outil de développement d'Anthropic, les compétences sont de simples dossiers posés sur l'ordinateur ou dans le dépôt d'un projet ; sur l'API, elles sont partagées à tout l'espace de travail. Anthropic précise qu'une compétence ne passe pas d'une surface à l'autre : il faut l'installer sur chacune."
+    },
+    {
+      "type": "h3",
+      "text": "ChatGPT : des compétences dans le répertoire des plugins"
+    },
+    {
+      "type": "p",
+      "text": "L'<a href='https://help.openai.com/en/articles/20001066-skills-in-chatgpt' target='_blank' rel='noopener'>article d'aide d'OpenAI sur les compétences</a>, mis à jour le 20 octobre 2026, les décrit comme des procédures réutilisables et partageables, faites d'instructions, d'exemples et de code. Elles sont ouvertes aux utilisateurs éligibles de ChatGPT Business, Enterprise, Healthcare et Edu, selon les réglages de l'espace. On les trouve dans la barre latérale, menu Plugins, onglet Skills. Une compétence fournie d'office, skill-creator, aide ChatGPT à en rédiger de nouvelles quand vous le lui demandez en conversation ; un éditeur et un téléversement sont aussi proposés. Le <a href='https://learn.chatgpt.com/docs/build-skills' target='_blank' rel='noopener'>guide d'OpenAI pour construire des compétences</a> confirme le format : un dossier avec un fichier SKILL.md, bâti sur le standard ouvert Agent Skills, qui sert aussi dans Codex, l'agent de programmation d'OpenAI."
+    },
+    {
+      "type": "p",
+      "text": "Une compétence se partage avec des collègues ou des groupes, ou se publie dans la bibliothèque de l'espace de travail. Chaque compétence téléversée passe une analyse avant d'être disponible et peut être marquée à revoir, voire bloquée. Sur Enterprise et Edu, l'administrateur choisit quels rôles peuvent créer, téléverser, partager, publier ou installer des compétences pour les autres. Une page d'administration liste chacune avec son propriétaire, ses accès, ses utilisateurs et son nombre d'appels sur trente jours."
+    },
+    {
+      "type": "h3",
+      "text": "Microsoft : agents déclaratifs, Copilot Studio et compétences de Cowork"
+    },
+    {
+      "type": "p",
+      "text": "Chez Microsoft, la méthode d'équipe a d'abord pris la forme d'un agent déclaratif : une configuration qui fixe le but, les instructions, les sources de connaissance et les capacités d'un assistant spécialisé dans Microsoft 365 Copilot. La <a href='https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent' target='_blank' rel='noopener'>page Microsoft Learn sur les agents déclaratifs</a>, mise à jour le 30 septembre 2026, range les compétences parmi ces capacités, à côté des connecteurs et des outils MCP (un standard qui relie un assistant à un logiciel). Ces agents se construisent dans <a href='https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder' target='_blank' rel='noopener'>Agent Builder</a>, depuis Microsoft 365 Copilot ou Teams ; l'ajout de compétences y est en préversion, réservé aux organisations inscrites au programme Frontier."
+    },
+    {
+      "type": "p",
+      "text": "<a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio' target='_blank' rel='noopener'>Copilot Studio</a>, l'atelier sans code de Microsoft pour les agents et les flux de travail, prend le relais quand l'agent doit agir dans d'autres logiciels : Agent Builder ne gère pas ces actions et renvoie vers une copie de l'agent dans Copilot Studio. <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-customize' target='_blank' rel='noopener'>Copilot Cowork</a> lit quant à lui des fichiers SKILL.md : l'utilisateur crée une compétence par une conversation guidée ou la téléverse, Cowork l'enregistre dans son OneDrive, et il peut la partager avec des personnes précises de l'organisation. Après chaque modification, la commande Re-share envoie la dernière version à tous les destinataires."
+    },
+    {
+      "type": "h3",
+      "text": "Gemini : les Gems migrent vers des compétences"
+    },
+    {
+      "type": "p",
+      "text": "Les <a href='https://support.google.com/gemini/answer/15146780' target='_blank' rel='noopener'>Gems de Gemini</a> réunissent un nom, des instructions et des fichiers de connaissance. Google les remplace par des compétences au format SKILL.md, que l'on appelle en tapant « / » suivi de leur nom et que l'on peut combiner dans une même demande. D'après la <a href='https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/about-the-transition-to-skills?hl=fr' target='_blank' rel='noopener'>page d'administration Workspace consacrée à la transition</a>, mise à jour le 30 septembre 2026, le déploiement a commencé le 5 octobre dans Workspace et le 13 octobre dans l'application Gemini, pour s'achever vers la mi-novembre."
+    },
+    {
+      "type": "p",
+      "text": "Le calendrier compte pour les entreprises. À partir du 17 novembre 2026, les Gems passent dans les paramètres de l'application Gemini, où ils restent utilisables. Pour les éditions Business et Enterprise, ils ne pourront plus être créés, modifiés ni utilisés au plus tôt le 1er mars 2027. Google convertit les Gems restants en compétences inactives qui conservent nom, description, instructions, fichiers et droits de partage Drive : leur créateur doit relire et activer chacune. Les Gems utilisés dans les applications Workspace ne migrent pas et se recréent à la main dans Workspace Studio. Enfin, les compétences ne se synchronisent pas, pour l'instant, entre l'application Gemini et les applications Workspace."
+    },
+    {
+      "type": "h3",
+      "text": "Mistral Vibe : une compétence tirée d'une tâche déjà réalisée"
+    },
+    {
+      "type": "p",
+      "text": "Dans Vibe Work, l'espace de travail de Mistral, une compétence est aussi un dossier qui contient un fichier SKILL.md. La <a href='https://docs.mistral.ai/getting-started/quickstarts/vibe-work/create-first-skill' target='_blank' rel='noopener'>documentation de Mistral</a> recommande de la tirer d'une tâche déjà menée : on demande à Vibe de convertir l'approche affinée en compétence, et il propose un brouillon de SKILL.md à relire. Une compétence reste privée ou se partage à tout l'espace, et les administrateurs peuvent l'activer d'office pour tous les membres."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Outil",
+        "Objet qui range une méthode",
+        "Partage en équipe",
+        "Point à vérifier"
+      ],
+      "rows": [
+        [
+          "Claude",
+          "Compétence (SKILL.md) et projet",
+          "Personnes, groupes sur Enterprise, publication à l'organisation, installation par les propriétaires",
+          "Exécution de code activée ; aucune synchronisation avec Claude Code ni l'API"
+        ],
+        [
+          "ChatGPT",
+          "Compétence (menu Plugins, onglet Skills) et projet partagé",
+          "Personnes, groupes, publication à l'espace de travail",
+          "Offres Business, Enterprise, Healthcare et Edu ; droits fixés par l'administrateur"
+        ],
+        [
+          "Microsoft 365 Copilot",
+          "Agent déclaratif, compétence dans Cowork",
+          "Personnes précises dans Cowork, partage de l'agent depuis Agent Builder",
+          "Compétences d'Agent Builder en préversion, programme Frontier"
+        ],
+        [
+          "Gemini",
+          "Gem, remplacé par la compétence",
+          "Droits de partage Drive repris à la migration",
+          "Fin des Gems au plus tôt le 1er mars 2027 sur Business et Enterprise"
+        ],
+        [
+          "Mistral Vibe",
+          "Compétence (SKILL.md)",
+          "Privée ou tout l'espace, activation d'office par l'administrateur",
+          "Accès à Vibe Work"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Les premières compétences portent sur des méthodes répétées, stables et vérifiables"
+    },
+    {
+      "type": "p",
+      "text": "Toutes les consignes ne méritent pas un dossier. Une compétence rapporte quand la même tâche revient chaque semaine, que l'équipe sait décrire un bon résultat et que des pièces de référence existent déjà. Le tutoriel d'Anthropic cite trois familles de candidates : les tâches que vous avez déjà expliquées plusieurs fois à l'assistant, celles qui demandent des documents précis (modèles, chartes, bibliothèques de clauses) et celles qui obligent à rassembler plusieurs fichiers avant de commencer."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "La tâche revient chaque semaine, chez plusieurs personnes.",
+        "Vous pouvez montrer un résultat que le métier juge réussi.",
+        "Les pièces nécessaires existent : modèle, barème, grille, base articles.",
+        "Une erreur se repère à la relecture, avant d'engager l'entreprise.",
+        "Une personne accepte d'en être propriétaire et de la relire à date fixe."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Une tâche qui remplit ces cinq conditions fait une bonne première compétence. Le tableau suivant donne des pistes par métier, à adapter à vos propres flux."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Métier",
+        "Méthode à ranger en compétence",
+        "Ce que le dossier contient"
+      ],
+      "rows": [
+        [
+          "Commercial",
+          "Relancer un devis resté sans réponse",
+          "Le ton maison, les délais de relance, deux relances qui ont abouti, la règle d'escalade vers le responsable"
+        ],
+        [
+          "Administration des ventes",
+          "Établir une cotation à partir d'un mail client",
+          "La grille tarifaire, les remises autorisées, le modèle de cotation, les informations à demander si le mail est incomplet"
+        ],
+        [
+          "Ressources humaines",
+          "Rédiger une fiche de poste",
+          "La charte d'écriture, les mentions obligatoires, le référentiel des métiers, une fiche validée"
+        ],
+        [
+          "Juridique",
+          "Faire la première lecture d'un contrat fournisseur",
+          "La grille des clauses à vérifier, les positions de repli, la liste des points toujours transmis au juriste"
+        ],
+        [
+          "Formation",
+          "Produire un support dans les gabarits maison",
+          "Le gabarit de présentation, la structure type d'un module, les règles d'accessibilité"
+        ],
+        [
+          "Direction",
+          "Rédiger le compte rendu d'un comité de direction",
+          "Le plan type, la règle d'écriture des décisions, la diffusion selon le niveau de confidentialité"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Gardez hors des compétences, au moins au début, les décisions qui engagent l'entreprise sans relecture possible, les tâches qui changent de forme à chaque fois et les données que l'outil n'a pas le droit de voir. Une compétence travaille avec les accès de l'outil qui l'exécute : relisez ce qu'elle lui demande de lire, d'écrire ou d'envoyer."
+    },
+    {
+      "type": "h2",
+      "text": "Une bonne compétence tient en quatre parties : déclencheur, étapes, sources, contrôles"
+    },
+    {
+      "type": "p",
+      "text": "Le <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices' target='_blank' rel='noopener'>guide de rédaction des compétences d'Anthropic</a> dessine une ossature en quatre parties, et Microsoft donne le même conseil sur la description dans sa page consacrée à Cowork. Le chemin le plus court consiste souvent à réaliser la tâche une fois avec l'assistant, puis à lui demander d'en tirer une compétence : Claude, ChatGPT, Cowork et Vibe savent rédiger le fichier au bon format. La relecture humaine porte ensuite sur quatre parties."
+    },
+    {
+      "type": "h3",
+      "text": "Le déclencheur : une description qui dit quoi faire et quand"
+    },
+    {
+      "type": "p",
+      "text": "La description est la seule partie que l'assistant lit avant de choisir une compétence. Anthropic demande qu'elle dise à la fois ce que fait la compétence et quand s'en servir, à la troisième personne, avec les mots que vos collègues emploient dans leurs demandes. Le <a href='https://support.claude.com/en/articles/12512198-creating-custom-skills' target='_blank' rel='noopener'>centre d'aide de Claude</a> la limite à 200 caractères dans l'interface, ce qui oblige à choisir les termes qui déclenchent."
+    },
+    {
+      "type": "callout",
+      "title": "Exemple de description",
+      "italic": true,
+      "text": "Prépare une cotation à partir d'un mail de demande de prix, selon la grille tarifaire en vigueur. À utiliser pour toute demande de devis, de prix ou de cotation reçue par mail."
+    },
+    {
+      "type": "p",
+      "text": "Une description trop large capte les demandes destinées à d'autres compétences ; une description trop étroite ne se déclenche jamais. Le <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise' target='_blank' rel='noopener'>guide d'Anthropic pour les entreprises</a> range ce risque de cohabitation parmi les points à tester avant toute diffusion."
+    },
+    {
+      "type": "h3",
+      "text": "Les étapes : une liste numérotée, plus stricte là où l'erreur coûte cher"
+    },
+    {
+      "type": "p",
+      "text": "Le corps du fichier décrit la méthode en étapes numérotées. Anthropic conseille d'adapter la précision à la fragilité de la tâche : des consignes ouvertes quand plusieurs approches se valent, une séquence stricte quand une erreur se paie cher. Pour les procédures longues, le guide propose une liste de contrôle que l'assistant recopie et coche au fil du travail. Écrivez ce que l'assistant ignore, comme vos règles internes, vos seuils et vos exceptions ; inutile de lui réexpliquer ce qu'est un devis."
+    },
+    {
+      "type": "h3",
+      "text": "Les sources : des fichiers de référence, nommés et datés"
+    },
+    {
+      "type": "p",
+      "text": "Les pièces de référence vont dans des fichiers séparés, appelés depuis SKILL.md : grille tarifaire, modèle de document, bibliothèque de clauses, exemples réussis. Anthropic recommande de ne pas enchaîner les renvois sur plusieurs niveaux et de nommer chaque fichier d'après son contenu. Indiquez aussi l'origine de chaque source et sa date de mise à jour : une compétence qui s'appuie sur un tarif périmé produit des cotations fausses avec aplomb."
+    },
+    {
+      "type": "h3",
+      "text": "Les contrôles : ce que la compétence vérifie avant de rendre la main"
+    },
+    {
+      "type": "p",
+      "text": "La dernière partie décrit les vérifications. Anthropic recommande une boucle simple : produire, comparer à une liste de critères, corriger, recommencer jusqu'à ce que tout soit conforme. Pour une cotation, la compétence vérifie que chaque article existe dans la base, que la remise reste dans le barème et que la sortie cite ses sources. Elle précise enfin ce qui reste entre les mains de la personne : l'envoi, la remise exceptionnelle, la réponse à une réclamation."
+    },
+    {
+      "type": "h3",
+      "text": "Les tests : trois à cinq demandes avant toute diffusion"
+    },
+    {
+      "type": "p",
+      "text": "Avant de partager une compétence, rejouez-la sur des cas réels. Le guide d'Anthropic pour les entreprises demande trois à cinq requêtes représentatives par compétence : des demandes qui doivent la déclencher, d'autres qui ne doivent pas la déclencher, et des cas limites. Il conseille aussi de la tester sur chacun des modèles que l'organisation utilise, car l'efficacité d'une même compétence varie d'un modèle à l'autre."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Réaliser la tâche une fois avec l'assistant, sur un cas réel.",
+        "Lui demander d'en tirer une compétence au format SKILL.md.",
+        "Réécrire la description : ce que fait la compétence et quand l'utiliser.",
+        "Sortir les pièces de référence dans des fichiers nommés et datés.",
+        "Ajouter les contrôles et la liste de ce qui reste à la main de la personne.",
+        "Tester trois à cinq demandes, dont celles qui ne doivent pas la déclencher."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Chaque compétence a un propriétaire, un relecteur et un numéro de version"
+    },
+    {
+      "type": "p",
+      "text": "Une compétence partagée agit pour toute l'équipe. Chez Claude, les destinataires récupèrent les mises à jour sans intervenir ; dans Cowork, la commande Re-share pousse la nouvelle version à tous. Une modification mal relue se diffuse donc aussi vite qu'une amélioration. La gouvernance tient en quelques rôles et un registre."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Rôle",
+        "Ce qu'il fait",
+        "Rythme"
+      ],
+      "rows": [
+        [
+          "Propriétaire",
+          "Rédige et fait évoluer la compétence, recueille les retours, tient le registre à jour",
+          "Au fil des retours"
+        ],
+        [
+          "Relecteur",
+          "Vérifie sources, données autorisées et contrôles avant chaque publication ; il n'en est jamais l'auteur",
+          "À chaque nouvelle version"
+        ],
+        [
+          "Administrateur de l'outil",
+          "Ouvre les droits de création, de partage et de publication, retire les compétences obsolètes",
+          "Lors des changements de droits"
+        ],
+        [
+          "Utilisateurs",
+          "Signalent les cas où la compétence se trompe ou ne se déclenche pas",
+          "En continu"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La séparation entre auteur et relecteur vient du guide d'Anthropic pour les entreprises, qui propose aussi le contenu du registre : pour chaque compétence, son objet, son propriétaire, sa version, ses dépendances (connecteurs, fichiers, outils) et la date de sa dernière évaluation. Un tableur partagé suffit au départ. Les équipes techniques rangent les dossiers dans un dépôt Git (un outil qui garde l'historique de chaque modification) pour revenir à la version précédente en cas de problème. Côté ChatGPT, la page d'administration affiche déjà le propriétaire, les accès et le nombre d'appels de chaque compétence."
+    },
+    {
+      "type": "p",
+      "text": "Prévoyez une revue à date fixe, chaque trimestre par exemple, et une autre après chaque changement de modèle ou de tarif. La revue rejoue les demandes de test, met à jour les sources et décide du sort de la compétence : la garder, la fusionner avec une voisine ou la retirer. Anthropic conseille de commencer par des compétences étroites, attachées à un flux précis, puis de les regrouper par métier quand les tests montrent que la version fusionnée fait aussi bien."
+    },
+    {
+      "type": "h3",
+      "text": "Un distributeur IT a confié onze compétences à dix référents"
+    },
+    {
+      "type": "p",
+      "text": "Masteria a accompagné sur ce modèle un distributeur IT B2B de 58 salariés, filiale française d'un groupe européen. En juin 2026, dix référents ont été formés pendant deux jours, chacun sur un projet, et ils ont conçu onze compétences Claude : cotation à partir d'un mail client, relances de devis, substitution vers les marques propres, réponses aux cahiers des charges, prospection et pilotage des stocks. La direction relit et valide chaque compétence avant sa diffusion, en contrôlant les données autorisées, les sources citées et la part qui reste au commercial."
+    },
+    {
+      "type": "p",
+      "text": "Chaque référent substitue les données réelles de l'entreprise aux données de démonstration livrées avec les compétences, avant toute mise en production ; la compétence de relance avait été éprouvée sur des devis réels avant même la formation. Pour la suite, l'entreprise s'est donné quatre règles : la direction valide, chaque compétence a son propriétaire, une revue a lieu chaque trimestre et les fichiers vivent dans un dépôt versionné. Les autres collaborateurs doivent y accéder lors d'un déploiement prévu d'octobre à décembre 2026, détaillé dans <a href='/etudes-de-cas-ia#distribution'>l'étude de cas du distributeur IT</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Deux autres parcours combinent projets, prompts et compétences"
+    },
+    {
+      "type": "p",
+      "text": "Le même assemblage revient dans des équipes plus petites. Le pôle formation d'un éditeur de logiciels B2B, qui avait déjà testé les projets de Claude Team, est reparti en septembre 2026 avec deux compétences ouvertes à toute l'organisation : la première produit les supports, la seconde prend en charge l'administratif des sessions. Ses projets partagés gardent le ton de marque dans leurs consignes (<a href='/etudes-de-cas-ia#mission-editeur-pole-formation'>parcours du pôle formation</a>). En août 2026, le gérant d'un cabinet de géomètres-experts a monté des projets par domaine, des prompts de référence et deux compétences. La première contrôle qu'un procès-verbal de bornage concorde avec le plan et l'acte ; la seconde rédige les réponses aux demandes de devis sur la base de ses propres modèles (<a href='/etudes-de-cas-ia#mission-gerance-cabinet'>parcours du gérant</a>)."
+    },
+    {
+      "type": "p",
+      "text": "Dans les trois cas, les prompts gardent leur place pour les demandes ponctuelles, les projets conservent le contexte, et les compétences portent les méthodes qui reviennent."
+    },
+    {
+      "type": "h2",
+      "text": "Une bibliothèque de prompts suffit dans quatre situations"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>La tâche est ponctuelle ou exploratoire.</strong> Une analyse unique, une idée à creuser, un texte à reformuler : écrire un dossier coûterait plus cher que la tâche.",
+        "<strong>L'équipe apprend.</strong> Un prompt commenté montre comment se construit une demande ; il forme le regard avant que la méthode soit assez stable pour être figée.",
+        "<strong>Les outils n'ouvrent pas les compétences.</strong> Sur ChatGPT, elles sont réservées aux offres Business, Enterprise, Healthcare et Edu ; sur Claude, elles exigent l'exécution de code, que l'administrateur a pu couper.",
+        "<strong>La tâche tient en une phrase, sans pièce jointe.</strong> Quand la qualité ne dépend ni d'un modèle de document ni d'un barème, un bon prompt fait le même travail."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le passage se fait au fil de l'eau : un prompt que l'équipe reprend chaque semaine, retouche souvent et accompagne toujours des mêmes fichiers est prêt à devenir une compétence. Savoir écrire une consigne claire reste la base, puisqu'une compétence commence par des instructions bien structurées ; c'est l'objet de notre <a href='/formation-prompt-engineering'>formation au prompt engineering</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire des compétences"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Compétence (Skill)</strong> : un dossier qui range une méthode, avec un fichier SKILL.md et, si besoin, des modèles, des références et des scripts.",
+        "<strong>SKILL.md</strong> : le fichier texte au format Markdown qui porte le nom, la description et les instructions d'une compétence.",
+        "<strong>Agent Skills</strong> : le standard ouvert créé par Anthropic qui décrit le format des compétences, repris par d'autres éditeurs.",
+        "<strong>Chargement progressif</strong> : la lecture en trois temps, la description d'abord, la méthode quand la demande correspond, les fichiers annexes au besoin.",
+        "<strong>Projet</strong> : un espace de travail qui garde documents, consignes et conversations autour d'un même dossier.",
+        "<strong>Agent déclaratif</strong> : un assistant de Microsoft 365 Copilot défini par un but, des instructions, des sources et des capacités.",
+        "<strong>Gem</strong> : l'assistant personnalisé de Gemini, que Google remplace par des compétences à partir de novembre 2026.",
+        "<strong>Propriétaire de compétence</strong> : la personne nommée qui fait évoluer la compétence et tient son registre."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer"
+    },
+    {
+      "type": "p",
+      "text": "Choisissez une tâche que plusieurs personnes font chaque semaine, réalisez-la une fois avec l'assistant sur un cas réel, puis demandez-lui d'en tirer une compétence. Nommez un propriétaire, faites relire par une autre personne, testez cinq demandes, publiez. Notre <a href='/formation-claude-ia'>formation Claude</a> fait construire les premières compétences sur vos propres flux, et la <a href='/formation-agents-ia'>formation aux agents IA</a> va jusqu'aux agents qui agissent dans vos logiciels."
+    },
+    {
+      "type": "p",
+      "text": "Une équipe qui range ses méthodes cesse de dépendre de la mémoire de ses meilleurs éléments. Ce qu'une personne a mis des années à apprendre devient un dossier que chacun ouvre, relit et améliore."
+    },
+    {
+      "type": "p",
+      "text": "<em>Sources consultées le 22 octobre 2026 : <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview' target='_blank' rel='noopener'>Anthropic, Agent Skills</a>, <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices' target='_blank' rel='noopener'>Anthropic, bonnes pratiques de rédaction</a>, <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/enterprise' target='_blank' rel='noopener'>Anthropic, Skills for enterprise</a>, <a href='https://support.claude.com/en/articles/12512180-using-skills-in-claude' target='_blank' rel='noopener'>centre d'aide Claude, utiliser les compétences</a>, <a href='https://support.claude.com/en/articles/12512198-creating-custom-skills' target='_blank' rel='noopener'>centre d'aide Claude, créer une compétence</a>, <a href='https://support.claude.com/en/articles/9517075-what-are-projects' target='_blank' rel='noopener'>centre d'aide Claude, projets</a>, <a href='https://academy.claude.com/tutorials/teach-claude-your-way-of-working-using-skills' target='_blank' rel='noopener'>Anthropic Academy, tutoriel compétences</a>, <a href='https://agentskills.io' target='_blank' rel='noopener'>spécification Agent Skills</a>, <a href='https://help.openai.com/en/articles/20001066-skills-in-chatgpt' target='_blank' rel='noopener'>aide OpenAI, Skills in ChatGPT</a>, <a href='https://learn.chatgpt.com/docs/build-skills' target='_blank' rel='noopener'>OpenAI, construire des compétences</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/overview-declarative-agent' target='_blank' rel='noopener'>Microsoft Learn, agents déclaratifs</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder' target='_blank' rel='noopener'>Microsoft Learn, Agent Builder</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio' target='_blank' rel='noopener'>Microsoft Learn, Copilot Studio</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-customize' target='_blank' rel='noopener'>Microsoft Learn, personnaliser Copilot Cowork</a>, <a href='https://support.google.com/gemini/answer/15146780' target='_blank' rel='noopener'>aide Gemini, Gems</a>, <a href='https://knowledge.workspace.google.com/admin/generative-ai/gemini-app/about-the-transition-to-skills?hl=fr' target='_blank' rel='noopener'>aide Workspace, transition des Gems vers les compétences</a>, <a href='https://docs.mistral.ai/getting-started/quickstarts/vibe-work/create-first-skill' target='_blank' rel='noopener'>documentation Mistral, première compétence Vibe Work</a>. Fonctions et calendriers susceptibles d'évoluer.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce qu'une compétence (Skill) pour un agent IA ?",
+      "a": "Une compétence est un dossier qui apprend une méthode à un assistant IA. Il contient un fichier SKILL.md avec un nom, une description qui indique quand s'en servir et les instructions, plus d'éventuels modèles, documents de référence ou scripts. L'assistant consulte la description de chaque compétence installée et n'ouvre la méthode complète que lorsqu'une demande la concerne."
+    },
+    {
+      "q": "Quelle différence entre une bibliothèque de prompts et des Skills ?",
+      "a": "Une bibliothèque de prompts stocke des consignes que chacun copie et colle quand il y pense. Une Skill est installée dans l'outil : elle se déclenche d'elle-même, embarque ses fichiers de référence et ses contrôles, et sa mise à jour peut parvenir à tous ceux qui l'utilisent. La bibliothèque convient aux demandes ponctuelles, la Skill aux méthodes que l'équipe répète chaque semaine."
+    },
+    {
+      "q": "Quels assistants IA proposent des compétences intégrées en octobre 2026 ?",
+      "a": "Au 22 octobre 2026, Claude propose des compétences sur toutes ses offres, ChatGPT sur Business, Enterprise, Healthcare et Edu, Microsoft dans Copilot Cowork et, en préversion, dans Agent Builder, et Mistral dans Vibe Work. Google déploie depuis octobre des compétences dans Gemini pour remplacer les Gems ; sur les éditions Business et Enterprise, les Gems s'arrêtent au plus tôt le 1er mars 2027."
+    },
+    {
+      "q": "Faut-il savoir coder pour créer une Skill ?",
+      "a": "Non. Une compétence simple est un texte en Markdown. Claude, ChatGPT, Copilot Cowork et Mistral Vibe savent rédiger le fichier quand vous décrivez la tâche ou après l'avoir réalisée avec eux. Le code n'intervient que pour des compétences avancées, qui embarquent un script chargé d'une opération répétitive comme un calcul ou une conversion de fichier."
+    },
+    {
+      "q": "Une Skill créée dans Claude fonctionne-t-elle dans ChatGPT ou Copilot ?",
+      "a": "Le format SKILL.md suit un standard ouvert, Agent Skills, que plusieurs éditeurs ont repris. Copilot Cowork accepte un fichier SKILL.md écrit ailleurs, et ChatGPT comme Claude permettent de téléverser un dossier de compétence. Il faut toutefois l'installer sur chaque outil, vérifier les champs propres à chacun et refaire les tests, car rien ne se synchronise d'un produit à l'autre."
+    },
+    {
+      "q": "Quelle différence entre un projet Claude et une Skill ?",
+      "a": "Un projet garde un contexte : les documents, les consignes et les conversations d'un même dossier, disponibles tant que vous travaillez dans ce projet. Une Skill garde une procédure, disponible dans toutes les conversations dès que la demande correspond. Les deux se combinent : la compétence de relance s'applique dans le projet d'un client, qui fournit l'historique des échanges."
+    },
+    {
+      "q": "Que deviennent les Gems de Gemini ?",
+      "a": "Google remplace les Gems par des compétences au format SKILL.md. À partir du 17 novembre 2026, les Gems passent dans les paramètres de l'application Gemini et restent utilisables ; sur les comptes Business et Enterprise, ils ne pourront plus être créés, modifiés ni utilisés au plus tôt le 1er mars 2027. Les Gems restants deviennent des compétences inactives, que leur créateur doit relire et activer."
+    },
+    {
+      "q": "Combien de Skills une équipe peut-elle gérer ?",
+      "a": "Les limites varient selon l'outil, et chaque description installée entre en concurrence avec les autres au moment du choix. Anthropic recommande de mesurer la précision du déclenchement à chaque ajout et de s'arrêter quand elle baisse ; son API accepte au plus 20 compétences par requête. Commencez par des compétences étroites, regroupez-les par métier, et fusionnez-les quand les tests le permettent."
+    },
+    {
+      "q": "Les Skills présentent-elles un risque de sécurité ?",
+      "a": "Une compétence donne des instructions, et parfois du code, à un assistant qui agit avec ses propres accès. Anthropic, OpenAI et Microsoft recommandent de n'installer que des compétences de sources de confiance et de les relire avant usage. ChatGPT analyse les compétences téléversées et Claude Enterprise peut le faire, sans dispenser d'une relecture par une personne de l'équipe."
+    },
+    {
+      "q": "Combien coûte une formation pour construire les compétences d'une équipe ?",
+      "a": "Les formations intra-entreprise de Masteria sont proposées à partir de 1 980 € HT la journée. Dans le cas du distributeur IT présenté plus haut, deux jours ont permis à dix référents de repartir chacun avec une compétence Claude construite sur son propre projet."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez ranger les méthodes de votre équipe en compétences ?",
+    "desc": "Masteria forme vos référents et construit avec eux les premières compétences sur vos flux réels, avec un circuit de validation et un propriétaire pour chacune.",
+    "buttons": [
+      {
+        "label": "Voir la formation Claude",
+        "href": "/formation-claude-ia",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre équipe",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Bibliothèque de prompts par métier",
+      "href": "/bibliotheque-de-prompts"
+    },
+    {
+      "label": "Formation prompt engineering",
+      "href": "/formation-prompt-engineering"
+    },
+    {
+      "label": "Formation Claude en entreprise",
+      "href": "/formation-claude-ia"
+    },
+    {
+      "label": "Formation aux agents IA",
+      "href": "/formation-agents-ia"
+    },
+    {
+      "label": "Études de cas IA",
+      "href": "/etudes-de-cas-ia"
+    },
+    {
+      "label": "Quel agent IA choisir pour son entreprise",
+      "href": "/meilleur-agent-ia"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : les compétences des assistants IA",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Compétence (Skill)",
+          "description": "Dossier qui range une méthode pour un assistant IA : un fichier SKILL.md et, si besoin, des modèles, des références et des scripts."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "SKILL.md",
+          "description": "Fichier Markdown qui porte le nom, la description et les instructions d'une compétence."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent Skills",
+          "description": "Standard ouvert créé par Anthropic qui décrit le format des compétences, repris par d'autres éditeurs."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Chargement progressif",
+          "description": "Lecture en trois temps : la description, puis la méthode quand la demande correspond, puis les fichiers annexes au besoin."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Projet",
+          "description": "Espace de travail qui garde documents, consignes et conversations autour d'un même dossier."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent déclaratif",
+          "description": "Assistant de Microsoft 365 Copilot défini par un but, des instructions, des sources et des capacités."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Gem",
+          "description": "Assistant personnalisé de Gemini, remplacé par des compétences à partir de novembre 2026."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Propriétaire de compétence",
+          "description": "Personne nommée qui fait évoluer la compétence et tient son registre."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Écrire une compétence pour un assistant IA",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Réaliser la tâche une fois avec l'assistant, sur un cas réel"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lui demander d'en tirer une compétence au format SKILL.md"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Réécrire la description : ce que fait la compétence et quand l'utiliser"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Sortir les pièces de référence dans des fichiers nommés et datés"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Ajouter les contrôles et ce qui reste à la main de la personne"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Tester trois à cinq demandes, dont celles qui ne doivent pas la déclencher"
+        }
+      ]
+    }
+  ]
+}

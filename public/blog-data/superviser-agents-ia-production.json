@@ -1,0 +1,670 @@
+{
+  "slug": "superviser-agents-ia-production",
+  "title": "Superviser des agents IA en production : traçage, identités, droits et contrôle humain",
+  "metaTitle": "Superviser des agents IA en production : la méthode",
+  "metaDesc": "Superviser des agents IA en production : traçage des actions, identité propre, droits minimaux, validation humaine, orchestrateur, indicateurs et AI Act.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "14 min",
+  "author": "Mathias Nizan",
+  "formations": [
+    [
+      "Formation agents IA",
+      "/formation-agents-ia"
+    ],
+    [
+      "Formation gouvernance de l'IA",
+      "/formation-gouvernance-ia"
+    ],
+    [
+      "Formation n8n",
+      "/formation-n8n"
+    ]
+  ],
+  "keywords": [
+    "supervision des agents IA",
+    "traçage des agents IA",
+    "pilotage des agents IA",
+    "identité des agents IA",
+    "gestion des identifiants des agents IA",
+    "agents IA hiérarchiques",
+    "planification des agents IA",
+    "intégration des agents IA",
+    "employé IA",
+    "validation humaine"
+  ],
+  "excerpt": "Un agent IA en production se supervise sur cinq plans : chaque action tracée, une identité propre à chaque agent, des droits réduits au strict nécessaire, une validation humaine sur ce qui engage l'entreprise et des indicateurs suivis chaque semaine. La méthode, les outils des éditeurs et le cadre de l'AI Act.",
+  "intro": "Superviser un agent IA en production revient à pouvoir répondre, à tout moment, à quatre questions : qu'a fait l'agent, sous quelle identité, avec quels droits, et qui a validé ce qui engage l'entreprise. On y parvient avec cinq dispositifs : un traçage de chaque action, une identité propre à chaque agent, des droits minimaux, une validation humaine des actions sensibles et un tableau d'indicateurs relu chaque semaine. Cet article prend la suite de notre guide pour <a href='/blog/creer-un-agent-ia-entreprise'>créer un agent IA en entreprise</a> : l'agent existe, il reste à le faire tourner sans risque.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "<strong>Traçage</strong> : chaque appel au modèle, chaque outil utilisé et chaque décision humaine laissent une trace horodatée, rattachée à l'agent et à sa version. <strong>Identité</strong> : un agent dispose de son propre compte, distinct de celui de son concepteur, avec un responsable humain nommé. <strong>Droits</strong> : lecture par défaut, écriture accordée outil par outil. <strong>Contrôle humain</strong> : l'agent s'arrête et attend une validation avant tout envoi externe, paiement, suppression ou modification de données de référence. <strong>Pilotage</strong> : taux de reprise humaine, erreurs, coût par tâche et incidents, relus chaque semaine par le responsable de l'agent."
+    },
+    {
+      "type": "h2",
+      "text": "Pourquoi un agent en production se supervise autrement qu'un assistant"
+    },
+    {
+      "type": "p",
+      "text": "Un assistant conversationnel produit un texte que quelqu'un relit avant de s'en servir. Un agent agit : il écrit dans le CRM, envoie un courriel, crée un ticket, déclenche une commande. Entre la demande et l'effet, personne ne relit toujours. La supervision consiste à remettre un regard humain là où il compte, et une trace partout ailleurs."
+    },
+    {
+      "type": "p",
+      "text": "Anthropic résume le dilemme dans son guide <a href='https://www.anthropic.com/research/building-effective-agents' target='_blank' rel='noopener'>Building effective agents</a> (19 décembre 2024) : l'autonomie d'un agent augmente son coût et le risque d'erreurs qui s'additionnent d'une étape à l'autre. L'éditeur recommande des tests poussés dans un environnement isolé, des garde-fous adaptés et des conditions d'arrêt explicites, par exemple un nombre maximal d'itérations. Une erreur commise à l'étape deux d'un enchaînement de dix étapes se propage jusqu'au résultat final."
+    },
+    {
+      "type": "p",
+      "text": "Le premier réflexe d'une équipe consiste souvent à faire tourner l'agent avec le compte de la personne qui l'a construit. Le jour où l'agent envoie un courriel erroné à un client, personne ne sait plus distinguer ce qu'a fait l'humain de ce qu'a fait la machine. Les cinq dispositifs qui suivent évitent cette impasse."
+    },
+    {
+      "type": "h2",
+      "text": "Tracer chaque action de l'agent"
+    },
+    {
+      "type": "p",
+      "text": "Le traçage (l'enregistrement horodaté de chaque étape d'une exécution) est la base de tout le reste. Sans lui, impossible d'expliquer une erreur, de mesurer un coût ou de prouver une validation. Une bonne trace répond à une question simple : en partant d'un résultat, peut-on remonter chaque décision qui y a conduit ?"
+    },
+    {
+      "type": "h3",
+      "text": "Ce que la trace doit contenir"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le déclencheur</strong> : la demande, l'événement ou la planification qui a lancé l'exécution, avec son horodatage.",
+        "<strong>L'identité de l'agent et sa version</strong> : le nom de l'agent, la version de ses instructions et le modèle utilisé.",
+        "<strong>Chaque appel au modèle</strong> : l'entrée, la sortie, la durée et le volume de texte traité, qui détermine le coût.",
+        "<strong>Chaque appel d'outil</strong> : l'outil, les paramètres envoyés, la réponse reçue et le statut (réussite ou échec).",
+        "<strong>Les ressources consultées</strong> : les documents, fiches ou enregistrements lus, avec leur niveau de sensibilité.",
+        "<strong>Les décisions humaines</strong> : qui a approuvé ou refusé une action, quand, et sur quelle proposition exacte."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Ce que les éditeurs proposent déjà"
+    },
+    {
+      "type": "p",
+      "text": "Les kits de développement d'agents intègrent désormais le traçage d'origine. La documentation de l'<a href='https://openai.github.io/openai-agents-python/tracing/' target='_blank' rel='noopener'>OpenAI Agents SDK</a> (consultée le 19 octobre 2026) indique que le traçage est actif par défaut : chaque exécution produit une trace découpée en segments pour les appels au modèle, les appels d'outils, les contrôles de garde-fous et les passages de relais entre agents. Il se désactive par une variable d'environnement, ce qui doit rester une décision consciente et documentée."
+    },
+    {
+      "type": "p",
+      "text": "Côté Microsoft, la page <a href='https://learn.microsoft.com/en-us/purview/audit-copilot' target='_blank' rel='noopener'>Audit logs for Copilot and AI applications</a> (mise à jour le 26 août 2026, consultée le 19 octobre 2026) détaille ce que Microsoft Purview enregistre pour les agents construits dans Copilot Studio : l'identifiant, le nom et la version de l'agent, les ressources consultées avec la nature de l'accès (lecture, création, modification), l'étiquette de sensibilité du document et un indicateur de tentative d'injection de consignes détectée dans un contenu lu. Les agents Copilot Studio relèvent de l'offre Audit Standard, sans facturation supplémentaire."
+    },
+    {
+      "type": "h3",
+      "text": "Conserver, protéger, relire"
+    },
+    {
+      "type": "p",
+      "text": "Une trace ne sert que si elle survit à l'incident. Stockez les journaux hors de la portée de l'agent, qui ne doit jamais pouvoir effacer ses propres traces. Fixez une durée de conservation écrite. Les traces contiennent souvent des données personnelles (noms de clients, contenus de courriels) : elles entrent dans votre registre RGPD au même titre que la base qu'elles décrivent, avec des accès réservés. L'ANSSI place la traçabilité des actions parmi les axes de son guide <a href='https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative' target='_blank' rel='noopener'>Recommandations de sécurité pour un système d'IA générative</a> (29 avril 2024, 35 recommandations), aux côtés de la confidentialité, de l'intégrité et de la disponibilité."
+    },
+    {
+      "type": "p",
+      "text": "Notre article sur l'<a href='/blog/auditabilite-systeme-ia'>auditabilité d'un système d'IA</a> détaille ce qu'il faut pouvoir prouver à un auditeur. Ici, l'objectif est opérationnel : retrouver en cinq minutes pourquoi l'agent a fait ce qu'il a fait."
+    },
+    {
+      "type": "h2",
+      "text": "Donner une identité propre à chaque agent"
+    },
+    {
+      "type": "p",
+      "text": "Un agent qui agit sous le compte d'un salarié hérite de tous ses droits, y compris ceux dont il n'a aucun besoin, et brouille toute traçabilité. La bonne pratique consiste à traiter chaque agent comme une identité non humaine : un compte dédié, des secrets qui lui appartiennent, et un humain qui en répond."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft en a fait un produit. Selon la documentation <a href='https://learn.microsoft.com/en-us/entra/agent-id/agent-identities' target='_blank' rel='noopener'>Agent identities in Microsoft Entra Agent ID</a> (mise à jour le 15 juin 2026, consultée le 19 octobre 2026), une identité d'agent est un compte de service particulier qui ne détient aucun mot de passe : ses jetons d'accès sont obtenus par un modèle commun, le « blueprint », qui porte les secrets. Chaque identité peut recevoir un « sponsor », la personne ou le groupe responsable de l'agent, à contacter en cas d'incident de sécurité. Le modèle commun permet à l'administrateur d'appliquer une règle d'accès conditionnel, de retirer une permission ou de désactiver d'un coup tous les agents d'un même type."
+    },
+    {
+      "type": "p",
+      "text": "Le NIST, l'institut américain de normalisation, travaille sur le même sujet. Son centre d'excellence en cybersécurité (NCCoE) a publié en février 2026 un document de travail, <a href='https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization' target='_blank' rel='noopener'>Software and AI Agent Identity and Authorization</a>, consacré à l'identification, l'authentification, l'autorisation, l'audit et la non-répudiation (l'impossibilité de nier une action) des agents IA. La <a href='https://www.nist.gov/news-events/news/2026/09/comments-software-and-agentic-ai-identity-concept-paper' target='_blank' rel='noopener'>synthèse des commentaires</a> publiée en septembre 2026 fait état de plus de 600 contributions, signe que la question occupe autant les éditeurs que les entreprises utilisatrices."
+    },
+    {
+      "type": "h3",
+      "text": "Gérer les identifiants d'un agent : six règles"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Un compte par agent, jamais un compte partagé entre plusieurs agents ni emprunté à un salarié.",
+        "Un responsable humain nommé pour chaque agent, inscrit dans un inventaire tenu à jour.",
+        "Aucun secret dans les instructions de l'agent, dans le code versionné ou dans un fichier partagé : un coffre-fort de secrets, lu au moment de l'exécution.",
+        "Des jetons d'accès à durée courte, renouvelés automatiquement, plutôt que des clés permanentes.",
+        "Un renouvellement planifié des secrets et une révocation immédiate au retrait de l'agent.",
+        "Un environnement de test avec ses propres identifiants, sans accès aux données de production."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Réduire les droits au strict nécessaire"
+    },
+    {
+      "type": "p",
+      "text": "Le principe du moindre privilège (accorder les seuls droits indispensables à la tâche) s'applique aux agents avec une rigueur accrue, car un agent peut être manipulé. Une injection de consignes (un texte piégé, caché dans un document ou une page web, qui détourne l'agent) transforme un droit d'écriture superflu en porte d'entrée. Un agent qui ne peut que lire ne peut rien casser."
+    },
+    {
+      "type": "p",
+      "text": "Anthropic décrit ce réglage dans son <a href='https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents' target='_blank' rel='noopener'>cadre pour des agents sûrs et dignes de confiance</a> (4 août 2025) : Claude Code fonctionne en lecture seule par défaut et demande une approbation humaine avant de modifier du code ou un système ; l'utilisateur peut ensuite accorder des permissions durables pour les tâches routinières qu'il juge sûres. L'éditeur ajoute que l'utilisateur doit garder la main sur les outils et connecteurs auxquels l'agent accède."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Niveau",
+        "Ce que l'agent peut faire",
+        "Exemple",
+        "Contrôle associé"
+      ],
+      "rows": [
+        [
+          "Lecture",
+          "Consulter des données, sans rien modifier",
+          "Lire les tickets ouverts et en faire la synthèse",
+          "Trace des ressources lues"
+        ],
+        [
+          "Brouillon",
+          "Préparer une action qu'un humain déclenche",
+          "Rédiger la réponse au client, laissée en brouillon",
+          "Relecture avant envoi"
+        ],
+        [
+          "Écriture interne",
+          "Modifier des données internes réversibles",
+          "Mettre à jour le statut d'un ticket",
+          "Trace et retour arrière possible"
+        ],
+        [
+          "Action externe",
+          "Agir hors de l'entreprise ou de façon irréversible",
+          "Envoyer un devis, payer, supprimer",
+          "Validation humaine systématique"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "En pratique, un agent démarre au niveau lecture ou brouillon. Il monte d'un cran outil par outil, quand ses traces montrent un usage sans erreur sur plusieurs semaines. Les connecteurs au standard MCP (Model Context Protocol, le protocole qui relie un agent à vos logiciels) facilitent ce découpage, car chaque outil exposé à l'agent se déclare et s'autorise à part ; notre article sur le <a href='/blog/serveur-mcp-entreprise-connecter-ia-si'>serveur MCP en entreprise</a> en détaille le fonctionnement."
+    },
+    {
+      "type": "h2",
+      "text": "Placer la validation humaine aux bons endroits"
+    },
+    {
+      "type": "p",
+      "text": "Valider chaque geste de l'agent annule son intérêt. Ne rien valider expose l'entreprise. La règle tient en une phrase : l'agent s'arrête et attend une décision humaine dès qu'une action est externe, irréversible, financière ou touche des données de référence (clients, tarifs, stocks, paie)."
+    },
+    {
+      "type": "h3",
+      "text": "Les actions qui exigent une validation"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Tout envoi hors de l'entreprise : courriel à un client, réponse publique, dépôt sur un portail.",
+        "Tout engagement financier : commande, paiement, remise, avoir.",
+        "Toute suppression ou écrasement de données.",
+        "Toute modification d'une donnée de référence partagée par plusieurs services.",
+        "Toute décision qui touche une personne : candidature, évaluation, sanction, refus de service."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Comment fonctionne la pause de l'agent"
+    },
+    {
+      "type": "p",
+      "text": "La documentation <a href='https://openai.github.io/openai-agents-python/human_in_the_loop/' target='_blank' rel='noopener'>Human-in-the-loop de l'OpenAI Agents SDK</a> (consultée le 19 octobre 2026) montre le mécanisme : un outil déclaré « à approuver » interrompt l'exécution, la liste des actions en attente remonte avec leurs paramètres, puis un humain approuve ou refuse chacune avant la reprise. L'état de l'exécution peut être stocké en base et repris plus tard. La même documentation précise que le kit n'authentifie pas ces états sauvegardés : c'est au serveur de vérifier l'identité et les droits de la personne qui valide, et d'empêcher qu'une même validation soit rejouée."
+    },
+    {
+      "type": "p",
+      "text": "Ce détail compte. Une validation humaine n'a de valeur que si l'on sait qui a validé, sur quelle proposition exacte, et si cette personne avait l'autorité pour le faire. Le validateur doit voir ce que l'agent s'apprête à faire, avec ses sources, sous le bouton qui valide."
+    },
+    {
+      "type": "callout",
+      "title": "Le piège de la validation machinale",
+      "italic": false,
+      "text": "Quand un agent soumet cinquante validations par jour et qu'elles sont toutes justes, le validateur finit par cliquer sans lire. Surveillez le délai moyen de validation : une approbation en deux secondes sur un devis de trois pages signale un contrôle devenu formel. Réduisez alors le volume à valider en remontant les actions sûres d'un niveau, et gardez la validation pour ce qui la mérite."
+    },
+    {
+      "type": "h2",
+      "text": "Orchestrer des agents hiérarchiques"
+    },
+    {
+      "type": "p",
+      "text": "Les agents hiérarchiques reposent sur un orchestrateur (l'agent qui découpe la tâche et distribue le travail) et des sous-agents spécialisés. Anthropic décrit ce schéma sous le nom « orchestrator-workers » : un modèle central découpe la tâche, délègue les sous-tâches à des modèles exécutants et assemble leurs résultats, sans que le découpage soit fixé à l'avance. Ce schéma convient aux tâches dont on ne connaît pas les étapes avant de commencer, comme une recherche documentaire sur plusieurs sources."
+    },
+    {
+      "type": "p",
+      "text": "Les agents verticaux (spécialisés dans un métier ou une tâche précise, comme la qualification des demandes ou le rapprochement de factures) font de bons sous-agents : leur périmètre étroit rend leurs droits faciles à limiter. Le chef d'orchestre, lui, demande une attention particulière, car il concentre la vision d'ensemble."
+    },
+    {
+      "type": "h3",
+      "text": "Les règles propres aux systèmes à plusieurs agents"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Une identité et des droits par sous-agent</strong> : l'orchestrateur ne prête jamais ses propres accès à un sous-agent.",
+        "<strong>Une trace qui suit le relais</strong> : un identifiant d'exécution commun relie la demande initiale à chaque sous-agent mobilisé.",
+        "<strong>Des sorties vérifiées</strong> : l'orchestrateur contrôle le format et la cohérence de ce que renvoie chaque sous-agent avant de s'en servir.",
+        "<strong>Des limites globales</strong> : un plafond de sous-tâches, de durée et de coût par exécution, pour qu'une boucle ne tourne pas toute la nuit.",
+        "<strong>La validation humaine au bon niveau</strong> : sur l'action finale qui sort de l'entreprise, plutôt que sur chaque étape intermédiaire."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Une architecture à plusieurs agents se justifie quand un agent unique n'y arrive plus. Tant qu'un seul agent bien outillé suffit, il reste plus simple à superviser, à tracer et à corriger."
+    },
+    {
+      "type": "h2",
+      "text": "Planifier les exécutions et fixer des limites"
+    },
+    {
+      "type": "p",
+      "text": "La planification des agents IA couvre deux réalités. La première est la planification interne : l'agent établit un plan d'étapes avant d'agir. Demandez-lui de rendre ce plan visible dans la trace, pour qu'un humain puisse comprendre son raisonnement après coup. La seconde est la planification calendaire : l'agent se déclenche à heure fixe ou sur un événement (un nouveau ticket, un fichier déposé, une fin de mois)."
+    },
+    {
+      "type": "p",
+      "text": "Un agent qui tourne la nuit, sans personne devant l'écran, demande des garde-fous plus serrés qu'un agent lancé à la demande. Fixez pour chaque exécution planifiée un nombre maximal d'étapes, une durée maximale, un budget de consommation du modèle et une alerte en cas d'échec. Réservez les créneaux sans surveillance aux actions de niveau lecture ou brouillon ; les actions externes attendent l'arrivée d'un validateur."
+    },
+    {
+      "type": "h2",
+      "text": "Suivre des indicateurs de supervision"
+    },
+    {
+      "type": "p",
+      "text": "Le pilotage des agents IA repose sur un petit nombre d'indicateurs, relus chaque semaine par le responsable de l'agent. Le tableau suivant propose un socle ; les seuils d'alerte se fixent pendant la phase pilote, à partir des valeurs observées, et non à partir de références génériques."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Indicateur",
+        "Ce qu'il mesure",
+        "Signal d'alerte"
+      ],
+      "rows": [
+        [
+          "Taux d'achèvement",
+          "Part des exécutions menées à terme sans erreur technique",
+          "Baisse après une mise à jour du modèle ou d'un outil"
+        ],
+        [
+          "Taux de reprise humaine",
+          "Part des propositions corrigées ou refusées par le validateur",
+          "Hausse durable, ou chute à zéro qui peut cacher une validation machinale"
+        ],
+        [
+          "Erreurs d'outils",
+          "Appels refusés, expirés ou mal formés",
+          "Concentration sur un même connecteur"
+        ],
+        [
+          "Coût par tâche",
+          "Consommation du modèle rapportée à une tâche terminée",
+          "Dérive sans hausse du volume traité"
+        ],
+        [
+          "Délai de validation",
+          "Temps entre la pause de l'agent et la décision humaine",
+          "Validations trop rapides ou en attente depuis plusieurs jours"
+        ],
+        [
+          "Incidents",
+          "Actions erronées arrivées jusqu'à un client ou une donnée de référence",
+          "Tout incident déclenche une revue"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "À ces indicateurs s'ajoute une relecture qualitative : chaque semaine, le responsable tire au hasard quelques exécutions réussies et les relit en entier. Les erreurs visibles se corrigent d'elles-mêmes ; ce sont les réponses plausibles mais fausses qui échappent aux compteurs."
+    },
+    {
+      "type": "h2",
+      "text": "Réagir quand l'agent se trompe"
+    },
+    {
+      "type": "p",
+      "text": "Un agent en production finira par se tromper. La différence entre un incident mineur et une crise tient à la préparation. Écrivez la procédure avant la mise en service, et testez-la une fois en environnement de test."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Arrêter</strong> : un interrupteur coupe l'agent en un geste, sans passer par l'équipe qui l'a développé. Le responsable de l'agent y a accès.",
+        "<strong>Contenir</strong> : suspendre les droits d'écriture de l'agent et bloquer les actions en attente de validation.",
+        "<strong>Comprendre</strong> : remonter la trace de l'exécution fautive, identifier l'étape en cause (instruction, donnée, outil, modèle).",
+        "<strong>Réparer</strong> : corriger les effets (courriel rectificatif, donnée restaurée), puis la cause.",
+        "<strong>Prévenir</strong> : ajouter le cas aux jeux de test de l'agent, pour que l'erreur ne revienne pas à la prochaine version.",
+        "<strong>Rendre compte</strong> : une note courte au comité qui pilote les usages de l'IA, avec la cause et la correction."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Versionnez les instructions de l'agent comme du code. Revenir à la version de la veille doit prendre une minute. Une mise à jour du modèle par l'éditeur peut changer le comportement d'un agent sans que vous ayez touché à rien : rejouez vos jeux de test à chaque changement de modèle annoncé."
+    },
+    {
+      "type": "h2",
+      "text": "Ce que l'AI Act impose, et à qui"
+    },
+    {
+      "type": "p",
+      "text": "Le règlement européen sur l'IA (règlement (UE) 2024/1689, modifié par le règlement Omnibus (UE) 2026/1744 du 8 juillet 2026) ne vise pas les agents en tant que tels. Il classe les usages par niveau de risque. Un agent qui prépare des relances commerciales relève du risque minimal. Un agent qui trie des candidatures ou évalue des salariés relève du haut risque, dont les obligations s'appliquent au 2 décembre 2027 pour les systèmes de l'annexe III, après le report voté en 2026."
+    },
+    {
+      "type": "p",
+      "text": "Pour ces usages à haut risque, l'<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj' target='_blank' rel='noopener'>article 26</a> demande au déployeur (l'entreprise qui utilise le système) de confier le contrôle humain à des personnes qui disposent de la compétence, de la formation et de l'autorité nécessaires, et de conserver les journaux générés automatiquement pendant au moins six mois, sauf disposition contraire. Les articles 12 et 14 imposent au fournisseur de concevoir le système pour permettre cette journalisation et ce contrôle. Deux obligations s'appliquent déjà à toutes les entreprises : la maîtrise de l'IA par les équipes (article 4, depuis février 2025) et la transparence envers le public (article 50, depuis août 2026), par exemple signaler à un client qu'il échange avec un agent."
+    },
+    {
+      "type": "p",
+      "text": "Les cinq dispositifs de cet article couvrent l'essentiel de ce que l'AI Act exigera des usages à haut risque. Les mettre en place dès le premier agent, même à risque minimal, évite de tout reprendre le jour où un usage sensible arrive. Notre page <a href='/gouvernance-ia'>gouvernance de l'IA</a> détaille le cadre d'ensemble ; un cas RH précis mérite l'avis d'un juriste."
+    },
+    {
+      "type": "h2",
+      "text": "Un employé IA a besoin d'un responsable"
+    },
+    {
+      "type": "p",
+      "text": "L'expression « employé IA » circule pour désigner un agent qui prend en charge un pan de travail de bout en bout. Elle a un mérite : elle rappelle qu'un nouvel arrivant reçoit un compte, des droits limités, une fiche de poste et un responsable. L'intégration des agents IA dans une équipe suit la même logique, sans l'anthropomorphisme : un agent n'est ni salarié ni responsable de ses actes, l'entreprise et la personne nommée le sont."
+    },
+    {
+      "type": "p",
+      "text": "Dans nos missions, ce principe prend une forme simple. Chez un distributeur IT de 58 salariés, chacune des onze compétences Claude construites avec les équipes commerciales est relue et validée par la direction avant diffusion, avec un propriétaire nommé, une revue trimestrielle et un dépôt versionné. Dans un groupe industriel international, la matinée stratégique du comité de direction a abordé le coût des agents et le cadre AI Act et RGPD ; le comité en est reparti avec ses décisions à prendre, dont l'audit des accès et le choix d'un premier cas d'agent. Ces deux cas sont présentés sur notre page <a href='/etudes-de-cas-ia'>études de cas</a>."
+    },
+    {
+      "type": "h3",
+      "text": "La fiche d'identité d'un agent en production"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Rubrique",
+        "Contenu attendu"
+      ],
+      "rows": [
+        [
+          "Mission",
+          "La tâche en une phrase, et ce qui est hors périmètre"
+        ],
+        [
+          "Responsable",
+          "La personne qui répond de l'agent et relit ses indicateurs"
+        ],
+        [
+          "Identité",
+          "Le compte dédié, son mode d'authentification, son coffre de secrets"
+        ],
+        [
+          "Droits",
+          "La liste des outils, avec le niveau accordé à chacun"
+        ],
+        [
+          "Validations",
+          "Les actions soumises à approbation, et qui peut approuver"
+        ],
+        [
+          "Traces",
+          "Où elles sont stockées, combien de temps, qui y accède"
+        ],
+        [
+          "Limites",
+          "Étapes, durée et budget maximaux par exécution"
+        ],
+        [
+          "Arrêt d'urgence",
+          "Le geste qui coupe l'agent, et qui peut le faire"
+        ],
+        [
+          "Version",
+          "La version des instructions et du modèle, avec l'historique des changements"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire de la supervision"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Traçage</strong> : l'enregistrement horodaté de chaque étape d'une exécution d'agent, des appels au modèle aux décisions humaines.",
+        "<strong>Identité d'agent</strong> : un compte dédié à un agent, distinct de tout compte humain, avec un responsable nommé.",
+        "<strong>Moindre privilège</strong> : le principe qui accorde à l'agent les seuls droits indispensables à sa tâche.",
+        "<strong>Validation humaine</strong> : la pause de l'agent avant une action sensible, levée par une personne habilitée.",
+        "<strong>Orchestrateur</strong> : l'agent qui découpe une tâche, la distribue à des sous-agents et assemble leurs résultats.",
+        "<strong>Agent vertical</strong> : un agent spécialisé dans un métier ou une tâche précise.",
+        "<strong>Injection de consignes</strong> : un texte piégé, caché dans un contenu lu par l'agent, qui tente de détourner ses instructions.",
+        "<strong>Déployeur</strong> : au sens de l'AI Act, l'organisation qui utilise un système d'IA sous sa propre autorité."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer"
+    },
+    {
+      "type": "p",
+      "text": "Prenez l'agent déjà en service, ou celui qui le sera le mois prochain, et remplissez sa fiche d'identité. Les cases vides désignent le travail à faire : un responsable à nommer, un compte à créer, un droit à retirer, une validation à ajouter. Les agents suivants reprennent le même cadre, et la fiche se remplit d'autant plus vite."
+    },
+    {
+      "type": "p",
+      "text": "La supervision gagne à être apprise par ceux qui la feront vivre : le responsable métier, l'administrateur, la personne qui valide. Notre <a href='/formation-agents-ia'>formation agents IA</a> consacre une part de son programme à ces réglages, à partir de 1 980 € HT la journée, et nos <a href='/agents-ia-entreprise'>agents IA sur mesure</a> sont livrés avec traces, droits et validations en place. Un agent que l'on sait arrêter, expliquer et corriger peut recevoir davantage de responsabilités. La confiance se construit trace après trace."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce que la supervision des agents IA ?",
+      "a": "La supervision des agents IA regroupe les dispositifs qui permettent de savoir ce qu'un agent a fait, sous quelle identité et avec quels droits, et d'intervenir avant ou après une action sensible. Elle repose sur le traçage des actions, une identité propre à chaque agent, des droits minimaux, une validation humaine et des indicateurs suivis chaque semaine."
+    },
+    {
+      "q": "Comment tracer les actions d'un agent IA ?",
+      "a": "Enregistrez pour chaque exécution le déclencheur, la version de l'agent et du modèle, chaque appel au modèle et à un outil avec ses paramètres et son résultat, les ressources consultées et les décisions humaines. Les kits comme l'OpenAI Agents SDK tracent par défaut, et Microsoft Purview journalise les agents Copilot Studio. Stockez les traces hors de portée de l'agent."
+    },
+    {
+      "q": "Faut-il créer un compte dédié pour chaque agent IA ?",
+      "a": "Oui. Un agent qui utilise le compte d'un salarié hérite de tous ses droits et rend impossible la distinction entre l'action humaine et celle de la machine. Un compte par agent, avec un responsable humain nommé et des secrets stockés dans un coffre-fort, permet de tracer, de limiter et de révoquer l'agent sans toucher aux comptes des équipes."
+    },
+    {
+      "q": "Quelles sont les meilleures pratiques de gestion des identifiants des agents IA ?",
+      "a": "Un compte par agent, jamais partagé. Aucun secret dans les instructions ou le code versionné. Des jetons d'accès à durée courte renouvelés automatiquement. Une rotation planifiée des secrets et une révocation immédiate au retrait de l'agent. Des identifiants distincts pour l'environnement de test. Un inventaire qui relie chaque agent à son responsable."
+    },
+    {
+      "q": "Quelles actions d'un agent IA doivent être validées par un humain ?",
+      "a": "Toute action externe (courriel à un client, publication), financière (commande, paiement, remise), irréversible (suppression) ou qui modifie une donnée de référence, ainsi que toute décision qui touche une personne. Les actions de lecture et les brouillons internes peuvent se passer de validation, à condition d'être tracés."
+    },
+    {
+      "q": "Qu'est-ce qu'un système d'agents IA hiérarchiques ?",
+      "a": "Un système où un agent orchestrateur découpe une tâche, la confie à des sous-agents spécialisés et assemble leurs résultats. Chaque sous-agent doit avoir sa propre identité et ses propres droits, et un identifiant d'exécution commun doit relier toute la chaîne dans les traces. Un agent unique reste préférable tant qu'il suffit."
+    },
+    {
+      "q": "Quels indicateurs suivre pour piloter un agent IA ?",
+      "a": "Le taux d'achèvement des exécutions, le taux de reprise humaine, les erreurs d'outils, le coût par tâche terminée, le délai de validation et le nombre d'incidents. Les seuils se fixent pendant la phase pilote à partir des valeurs observées. Une relecture hebdomadaire de quelques exécutions tirées au hasard complète les compteurs."
+    },
+    {
+      "q": "Que faire quand un agent IA commet une erreur en production ?",
+      "a": "Arrêter l'agent par un interrupteur accessible à son responsable, suspendre ses droits d'écriture, remonter la trace pour trouver l'étape fautive, corriger les effets puis la cause, ajouter le cas aux jeux de test et rendre compte au comité qui pilote l'IA. Des instructions versionnées permettent un retour arrière en une minute."
+    },
+    {
+      "q": "L'AI Act impose-t-il des journaux pour les agents IA ?",
+      "a": "Pour les usages à haut risque, comme le tri de candidatures, l'article 26 impose au déployeur de conserver les journaux au moins six mois et de confier le contrôle humain à des personnes compétentes et habilitées ; ces obligations s'appliquent au 2 décembre 2027 pour l'annexe III. Pour les autres usages, la traçabilité reste une bonne pratique, et la transparence envers le public s'applique depuis août 2026."
+    },
+    {
+      "q": "Un agent IA peut-il être considéré comme un employé IA ?",
+      "a": "L'image aide à organiser l'intégration : un compte, des droits limités, une fiche de mission et un responsable. En droit, un agent n'est ni salarié ni responsable de ses actes. L'entreprise qui le déploie et la personne qui en répond portent la responsabilité de ce qu'il fait."
+    }
+  ],
+  "cta": {
+    "title": "Votre agent tourne-t-il avec des traces, des droits limités et des validations ?",
+    "desc": "Masteria construit des agents IA livrés avec leur cadre de supervision, et forme les équipes qui les pilotent. Le code vous appartient.",
+    "buttons": [
+      {
+        "label": "Découvrir nos agents IA sur mesure",
+        "href": "/agents-ia-entreprise",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre agent",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Comment créer un agent IA en entreprise",
+      "href": "/blog/creer-un-agent-ia-entreprise"
+    },
+    {
+      "label": "Agents IA en entreprise : le guide et 20 cas d'usage",
+      "href": "/agents-ia-entreprise"
+    },
+    {
+      "label": "Auditabilité d'un système d'IA",
+      "href": "/blog/auditabilite-systeme-ia"
+    },
+    {
+      "label": "Gouvernance de l'IA en entreprise",
+      "href": "/gouvernance-ia"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : superviser des agents IA en production",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Traçage",
+          "description": "Enregistrement horodaté de chaque étape d'une exécution d'agent, des appels au modèle aux décisions humaines."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Identité d'agent",
+          "description": "Compte dédié à un agent, distinct de tout compte humain, avec un responsable nommé."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Moindre privilège",
+          "description": "Principe qui accorde à l'agent les seuls droits indispensables à sa tâche."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Validation humaine",
+          "description": "Pause de l'agent avant une action sensible, levée par une personne habilitée."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Orchestrateur",
+          "description": "Agent qui découpe une tâche, la distribue à des sous-agents et assemble leurs résultats."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent vertical",
+          "description": "Agent spécialisé dans un métier ou une tâche précise."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Injection de consignes",
+          "description": "Texte piégé, caché dans un contenu lu par l'agent, qui tente de détourner ses instructions."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Déployeur",
+          "description": "Au sens de l'AI Act, organisation qui utilise un système d'IA sous sa propre autorité."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Réagir quand un agent IA se trompe",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Arrêter l'agent par un interrupteur accessible à son responsable"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contenir : suspendre les droits d'écriture et les actions en attente"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Comprendre : remonter la trace de l'exécution fautive"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Réparer les effets, puis la cause"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Prévenir : ajouter le cas aux jeux de test"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Rendre compte au comité qui pilote l'IA"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "label": "Anthropic, Building effective agents (19/12/2024)",
+      "href": "https://www.anthropic.com/research/building-effective-agents",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "Anthropic, Our framework for developing safe and trustworthy agents (04/08/2025)",
+      "href": "https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "OpenAI Agents SDK, Tracing",
+      "href": "https://openai.github.io/openai-agents-python/tracing/",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "OpenAI Agents SDK, Human-in-the-loop",
+      "href": "https://openai.github.io/openai-agents-python/human_in_the_loop/",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "Microsoft Learn, Agent identities in Microsoft Entra Agent ID (MAJ 15/06/2026)",
+      "href": "https://learn.microsoft.com/en-us/entra/agent-id/agent-identities",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "Microsoft Learn, Audit logs for Copilot and AI applications (MAJ 26/08/2026)",
+      "href": "https://learn.microsoft.com/en-us/purview/audit-copilot",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "NIST NCCoE, Software and AI Agent Identity and Authorization (févr. 2026)",
+      "href": "https://www.nccoe.nist.gov/projects/software-and-ai-agent-identity-and-authorization",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "NIST, Comments on Software and Agentic AI Identity Concept Paper (sept. 2026)",
+      "href": "https://www.nist.gov/news-events/news/2026/09/comments-software-and-agentic-ai-identity-concept-paper",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "ANSSI, Recommandations de sécurité pour un système d'IA générative (29/04/2024)",
+      "href": "https://messervices.cyber.gouv.fr/guides/recommandations-de-securite-pour-un-systeme-dia-generative",
+      "verifie": "2026-10-19"
+    },
+    {
+      "label": "Règlement (UE) 2024/1689 (AI Act), art. 4, 12, 14, 26, 50",
+      "href": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      "verifie": "2026-10-19"
+    }
+  ]
+}

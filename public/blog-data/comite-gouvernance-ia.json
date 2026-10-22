@@ -1,0 +1,792 @@
+{
+  "slug": "comite-gouvernance-ia",
+  "title": "Monter un comité de gouvernance IA : composition, mandat, premières décisions",
+  "metaTitle": "Comité de gouvernance IA : composition et mandat | Masteria",
+  "metaDesc": "Comité de gouvernance IA : qui y siège, son mandat, l'ordre du jour type, la validation d'un outil ou d'un agent et les 90 premiers jours.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "20 min",
+  "formations": [
+    [
+      "Formation gouvernance IA",
+      "/formation-gouvernance-ia"
+    ],
+    [
+      "Formation AI Act",
+      "/formation-ai-act"
+    ]
+  ],
+  "keywords": [
+    "comité de gouvernance ia",
+    "gouvernance ia",
+    "comité ia",
+    "référent ia",
+    "registre des usages ia",
+    "validation outil ia"
+  ],
+  "excerpt": "Qui siège au comité de gouvernance IA, ce qu'il décide, à quel rythme, avec quel ordre du jour, comment il valide un outil ou un agent, et ce qu'il doit avoir tranché au bout de 90 jours.",
+  "intro": "Un comité de gouvernance IA est l'instance qui décide quels usages de l'intelligence artificielle l'entreprise autorise, à quelles conditions, et qui en répond. Il se réunit à date fixe autour d'un membre de la direction qui tranche, d'un référent IA qui prépare les dossiers, des responsables métier, de la DSI et du DPO. Son premier travail tient en trois actes : écrire son mandat, ouvrir le registre des usages, fixer le circuit par lequel passe tout nouvel outil ou tout nouvel agent. Ce guide détaille la composition, le mandat, le rythme, l'ordre du jour type, les indicateurs et le plan des 90 premiers jours.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Un comité de gouvernance IA réunit une poignée de membres permanents (un dirigeant qui préside, le référent IA qui instruit, les métiers, la DSI, le DPO) et des invités selon les dossiers. Il autorise ou refuse les nouveaux usages, tient le registre, adopte la charte et suit les échéances de l'AI Act. Il siège chaque mois au lancement, puis chaque trimestre quand le registre est stable. Aucun texte européen n'oblige à créer ce comité, la Commission le confirme dans ses questions-réponses du 27 juillet 2026. Il reste pourtant la façon la plus directe de prouver que quelqu'un décide, et sur quelles bases."
+    },
+    {
+      "type": "h2",
+      "text": "Le comité de gouvernance IA, en une définition"
+    },
+    {
+      "type": "p",
+      "text": "Le comité est l'organe de décision du dispositif. La gouvernance de l'IA, au sens large, rassemble l'inventaire, les rôles, les règles, la supervision et les preuves ; notre page <a href='/gouvernance-ia'>gouvernance de l'IA</a> décrit cet ensemble et la façon de l'installer. Le comité en est la pièce qui tranche : il reçoit les demandes que le référent a instruites, rend une décision écrite et vérifie, au fil des séances, que ce qui a été autorisé reste conforme à ce qui avait été présenté."
+    },
+    {
+      "type": "p",
+      "text": "Trois verbes résument son rôle. <strong>Autoriser</strong> : un outil, un assistant maison ou un agent n'entre en service qu'après une décision inscrite au registre. <strong>Suivre</strong> : chaque usage a une date de revue, et le comité regarde ce que disent les indicateurs. <strong>Répondre</strong> : face à un client, un auditeur, la CNIL ou les représentants du personnel, le compte rendu des séances montre qui a décidé quoi, et pourquoi."
+    },
+    {
+      "type": "p",
+      "text": "Le règlement européen sur l'IA, dit AI Act, ne réclame pas cette instance. La Commission européenne, dans ses questions-réponses consacrées à l'article 4 et actualisées le 27 juillet 2026, précise qu'aucune structure de gouvernance particulière n'est exigée pour satisfaire l'article 4, ni comité, ni responsable IA désigné (<a href='https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers' target='_blank' rel='noopener'>Commission européenne, AI literacy Q&A</a>). Le comité relève donc d'un choix d'organisation. Il devient utile dès que plusieurs services utilisent l'IA et que les demandes arrivent plus vite qu'une seule personne ne peut les trancher."
+    },
+    {
+      "type": "h2",
+      "text": "Faut-il un comité ? Trois formats selon votre taille"
+    },
+    {
+      "type": "p",
+      "text": "Un comité calqué sur celui d'un grand groupe paralyse une PME. À l'inverse, un référent isolé ne tient pas quand vingt équipes demandent chacune leur outil. Le bon format dépend du nombre d'usages, de leur sensibilité et du nombre d'entités à coordonner."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Situation",
+        "Format conseillé",
+        "Rythme de départ"
+      ],
+      "rows": [
+        [
+          "PME, quelques assistants du marché, une seule entité",
+          "Un dirigeant et un référent IA qui instruit ; DPO ou prestataire informatique consultés au besoin",
+          "Un point mensuel d'une heure"
+        ],
+        [
+          "ETI, plusieurs services équipés, premiers assistants développés en interne",
+          "Comité restreint : direction, référent, deux ou trois responsables métier, DSI, DPO",
+          "Mensuel pendant trois mois, puis trimestriel"
+        ],
+        [
+          "Groupe multi-sites ou multi-pays",
+          "Comité central qui fixe les règles communes, relais par filiale qui tiennent leur registre local",
+          "Comité central trimestriel, relais mensuels"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le format léger fonctionne. Une PME de la distribution photovoltaïque, trois personnes au total, a reçu de Masteria un cadre réduit à l'essentiel : la charte, signée par chacun dès avant la formation ; un référent, chargé des comptes et de la collecte des erreurs ; un rendez-vous chaque mois. Son diagnostic plaçait les règles d'usage au dernier rang de sa maturité ; ce trio a comblé le manque."
+    },
+    {
+      "type": "h2",
+      "text": "Qui siège au comité de gouvernance IA"
+    },
+    {
+      "type": "p",
+      "text": "Chaque siège doit correspondre à une compétence dont les décisions ont besoin. Un membre présent par courtoisie alourdit la séance sans l'éclairer."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Rôle",
+        "Ce qu'il apporte",
+        "Ce qu'il signe ou arbitre"
+      ],
+      "rows": [
+        [
+          "Président, membre de la direction",
+          "La légitimité pour trancher, le lien avec la stratégie et le budget",
+          "Les décisions finales, les refus, les arbitrages entre services"
+        ],
+        [
+          "Référent IA, secrétaire du comité",
+          "Les dossiers instruits, le registre à jour, l'ordre du jour",
+          "Les validations déléguées sur les demandes à faible risque"
+        ],
+        [
+          "Responsables métier",
+          "Le besoin réel, les gains attendus, le nom du futur propriétaire de l'usage",
+          "L'engagement de leur équipe à respecter les conditions posées"
+        ],
+        [
+          "DSI ou responsable de la sécurité",
+          "Les intégrations, les droits d'accès, le paramétrage des outils côté administrateur",
+          "Les conditions techniques d'un déploiement"
+        ],
+        [
+          "DPO",
+          "La lecture RGPD : base légale, données concernées, analyse d'impact si nécessaire",
+          "L'avis sur tout usage qui touche des données personnelles"
+        ],
+        [
+          "Juridique ou achats",
+          "Les contrats des éditeurs, la propriété des contenus, les clauses de réutilisation des données",
+          "La validation contractuelle avant souscription"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Le référent IA, cheville du dispositif"
+    },
+    {
+      "type": "p",
+      "text": "Le référent fait vivre le comité entre deux séances. Il reçoit les demandes, rédige une fiche par dossier, relance les avis de la DSI et du DPO, tient le registre et rédige le compte rendu. Le profil le plus efficace connaît les métiers et parle sans difficulté aux équipes informatiques. Prévoyez-lui du temps inscrit dans sa fiche de poste : une fonction de référent exercée sur le temps libre s'éteint au premier pic d'activité."
+    },
+    {
+      "type": "p",
+      "text": "Dans les organisations où le sujet prend de l'ampleur, le rôle peut monter jusqu'à celui de <a href='/chief-ai-officer'>Chief AI Officer</a>, chargé de la feuille de route IA au niveau de la direction et préside alors souvent le comité."
+    },
+    {
+      "type": "h3",
+      "text": "Les invités selon les dossiers"
+    },
+    {
+      "type": "p",
+      "text": "Certains profils viennent quand l'ordre du jour les concerne. Les ressources humaines sont conviées dès qu'un usage touche le recrutement, l'évaluation ou l'organisation du travail. Les représentants du personnel sont informés quand un outil change les conditions de travail ; pour les systèmes à haut risque utilisés sur le lieu de travail, l'article 26 du règlement en fera une obligation avant toute mise en service (<a href='https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26' target='_blank' rel='noopener'>AI Act Service Desk, article 26</a>). Le propriétaire d'un usage en revue vient présenter ses indicateurs. Un prestataire qui développe un agent peut venir le démontrer."
+    },
+    {
+      "type": "h2",
+      "text": "Le mandat : ce que le comité décide, ce qu'il laisse aux équipes"
+    },
+    {
+      "type": "p",
+      "text": "Le mandat s'écrit sur une page et la direction le signe. Sans ce texte, le comité hérite de toutes les questions qui touchent de près ou de loin à l'IA et s'enlise. Avec lui, chacun sait quand une demande doit monter en séance et quand elle peut se régler au fil de l'eau."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Autoriser, conditionner ou refuser tout nouvel usage d'IA : outil acheté, fonction activée dans un logiciel existant, assistant construit en interne, agent qui agit dans un système.",
+        "Ranger chaque usage dans l'un des quatre niveaux de risque du règlement européen et décider de la voie d'instruction qui en découle.",
+        "Tenir le registre des usages : propriétaire, conditions, date de revue, statut.",
+        "Adopter la charte d'utilisation, puis la réviser à date fixe ou après un incident.",
+        "Suivre les indicateurs, les incidents signalés et les revues en retard.",
+        "Piloter les actions de conformité, chacune confiée à un porteur et datée.",
+        "Rendre compte à la direction générale, chaque année au minimum, de l'état des usages et des risques."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ce qui reste hors mandat compte autant. L'usage quotidien d'un outil déjà autorisé, dans les limites de la charte, ne repasse pas en séance. Le choix d'un prompt ou d'un modèle de document relève des équipes. Les demandes à faible risque portant sur un outil déjà au registre peuvent être validées par le référent seul, qui les présente en séance suivante pour information. Cette délégation évite l'engorgement des premiers mois."
+    },
+    {
+      "type": "callout",
+      "title": "La lettre de mission, en six rubriques",
+      "italic": false,
+      "text": "Objet du comité ; membres permanents et suppléants ; périmètre des décisions et seuil de délégation au référent ; rythme des séances et règle de séance extraordinaire ; délai de réponse promis aux demandeurs ; forme du compte rendu et lieu où il est archivé. Une page suffit, signée par la direction générale."
+    },
+    {
+      "type": "h2",
+      "text": "Fréquence et ordre du jour type"
+    },
+    {
+      "type": "p",
+      "text": "Au lancement, une séance par mois : les demandes en attente sont nombreuses, la charte se discute, le registre se remplit. Quand le flux se calme et que chaque usage a son propriétaire, le rythme trimestriel prend le relais. Une séance extraordinaire se convoque en cas d'incident sérieux : fuite de données, réponse erronée transmise à un client, agent qui a agi hors de son périmètre."
+    },
+    {
+      "type": "p",
+      "text": "Le rythme trimestriel a fait ses preuves sur le terrain. Une filiale française de distribution informatique, 58 personnes, a confié ses onze compétences Claude à dix référents que Masteria a formés en juin 2026. Leur règle écrite tient en quatre gestes : relecture et feu vert de la direction avant toute diffusion, un responsable par compétence, un réexamen tous les trois mois, un dépôt où chaque version reste conservée."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Point de l'ordre du jour",
+        "Présenté par",
+        "Ce qui en sort"
+      ],
+      "rows": [
+        [
+          "Décisions de la séance précédente : où en est chaque action",
+          "Référent IA",
+          "Actions closes ou relancées"
+        ],
+        [
+          "Nouvelles demandes instruites",
+          "Référent, puis le demandeur",
+          "Une décision par dossier, motivée"
+        ],
+        [
+          "Validations déléguées depuis la dernière séance",
+          "Référent IA",
+          "Prise d'acte, ou reprise d'un dossier"
+        ],
+        [
+          "Revues d'usages arrivées à échéance",
+          "Propriétaires des usages",
+          "Maintien, ajustement, suspension ou retrait"
+        ],
+        [
+          "Incidents et signalements",
+          "Référent, DSI, DPO",
+          "Mesures correctives, mise à jour de la charte si besoin"
+        ],
+        [
+          "Indicateurs et plan de conformité",
+          "Référent IA",
+          "Écarts relevés, échéances confirmées"
+        ],
+        [
+          "Veille : nouvelle version d'un modèle, changement de conditions d'un éditeur, texte réglementaire",
+          "Référent ou DSI",
+          "Liste des usages à réexaminer"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Le compte rendu, preuve du dispositif"
+    },
+    {
+      "type": "p",
+      "text": "Chaque décision reçoit un numéro, un porteur et une échéance. Le compte rendu part aux membres sous quelques jours et rejoint un espace partagé où il reste consultable. Le jour où un auditeur ou un client demande comment un outil a été autorisé, ce document répond seul."
+    },
+    {
+      "type": "h2",
+      "text": "Le registre des usages, outil de travail du comité"
+    },
+    {
+      "type": "p",
+      "text": "Le registre est la mémoire du comité. Une ligne par usage, mise à jour à chaque décision, sert à préparer les séances et à répondre aux questions extérieures. Un tableur partagé suffit pour démarrer ; un outil dédié se justifie quand les lignes se comptent par dizaines et que plusieurs entités les alimentent."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Colonne",
+        "Exemple de contenu"
+      ],
+      "rows": [
+        [
+          "Usage et finalité",
+          "Rédiger les premières réponses aux demandes de devis entrantes"
+        ],
+        [
+          "Outil, offre et version",
+          "Assistant du marché, offre entreprise, modèle utilisé à la date de la décision"
+        ],
+        [
+          "Service et propriétaire",
+          "Service commercial, responsable désigné par son nom"
+        ],
+        [
+          "Données traitées",
+          "Demandes clients, catalogue produits ; aucune donnée de santé ni de paie"
+        ],
+        [
+          "Niveau de risque AI Act",
+          "Risque minimal, transparence (article 50), haut risque (annexe III) ou interdit"
+        ],
+        [
+          "Décision et date",
+          "Autorisé sous conditions, séance du comité et numéro de décision"
+        ],
+        [
+          "Conditions posées",
+          "Relecture humaine avant envoi, réglage d'entraînement désactivé"
+        ],
+        [
+          "Statut",
+          "En essai, autorisé, suspendu ou retiré"
+        ],
+        [
+          "Prochaine revue",
+          "Date fixée par le comité"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La colonne des données renvoie au registre des traitements tenu par le DPO, pour que les deux documents se répondent ligne à ligne ; notre page <a href='/ia-et-rgpd'>IA et RGPD</a> décrit ce raccordement."
+    },
+    {
+      "type": "h2",
+      "text": "Le circuit de validation d'un nouvel outil ou d'un agent"
+    },
+    {
+      "type": "p",
+      "text": "Le circuit doit être plus rapide que le contournement. Si obtenir un outil autorisé prend trois mois, les salariés ouvrent un compte personnel dès le lendemain. Le comité fixe donc un délai de réponse, l'annonce aux équipes et s'y tient."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Demande</strong> : un formulaire court indique le besoin, les utilisateurs visés, les données concernées et l'outil envisagé.",
+        "<strong>Instruction</strong> : le référent qualifie le niveau de risque, vérifie si un outil déjà autorisé couvre le besoin, rassemble le contrat de l'éditeur et le coût.",
+        "<strong>Avis techniques</strong> : la DSI examine la sécurité et les intégrations, le DPO examine les données personnelles.",
+        "<strong>Décision</strong> : autorisé, autorisé sous conditions, essai limité dans le temps et le périmètre, ou refusé avec motif écrit.",
+        "<strong>Inscription</strong> : la ligne entre au registre avec son propriétaire, ses conditions et sa date de revue.",
+        "<strong>Retour au demandeur</strong> : la décision et ses conditions lui parviennent dans le délai promis ; un refus s'accompagne, quand c'est possible, d'une solution de remplacement."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Trois voies selon le risque"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Voie",
+        "Pour quels usages",
+        "Qui décide"
+      ],
+      "rows": [
+        [
+          "Rapide",
+          "Outil déjà au registre, nouvel usage à risque minimal, sans donnée sensible",
+          "Le référent seul, avec information du comité"
+        ],
+        [
+          "Standard",
+          "Nouvel outil, ou usage qui touche des données personnelles ou des clients",
+          "Le comité en séance, après avis DSI et DPO"
+        ],
+        [
+          "Renforcée",
+          "Usage relevant de l'annexe III (recrutement, évaluation des salariés, crédit, éducation, accès aux services essentiels), agent qui agit seul dans un système, contenu publié sans relecture",
+          "Le comité, avec analyse d'impact et, si nécessaire, avis juridique externe"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les pratiques interdites par l'article 5 du règlement, notation sociale et détection des émotions des salariés par exemple, ne passent par aucune voie : la demande est refusée et le refus est consigné."
+    },
+    {
+      "type": "h3",
+      "text": "Le cas particulier des agents"
+    },
+    {
+      "type": "p",
+      "text": "Un agent IA (un programme qui agit seul dans vos applications pour mener une tâche à bout) pose des questions qu'un assistant conversationnel ne pose pas. Le comité les traite une par une avant d'autoriser la mise en service. Des exemples d'agents par métier figurent sur notre page <a href='/agents-ia-entreprise'>agents IA en entreprise</a>."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Quelles actions l'agent peut-il exécuter sans validation humaine, et lesquelles exigent un clic d'accord ?",
+        "Avec quels droits d'accès, et sous quel compte technique, l'agent agit-il ?",
+        "Quelles traces garde-t-il de chaque action, et qui les relit ?",
+        "Qui peut l'arrêter, comment, et en combien de temps ?",
+        "Quel plafond de dépense fixe-t-on pour les appels au modèle ?",
+        "Que se passe-t-il quand l'éditeur change la version du modèle sous-jacent ?"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "La charte : le comité l'adopte, les équipes l'appliquent"
+    },
+    {
+      "type": "p",
+      "text": "La charte d'utilisation traduit les décisions du comité en consignes pour chaque salarié : outils autorisés, données interdites, relecture obligatoire, mentions de transparence. Le comité l'adopte en séance, la fait signer et la révise. Sa rédaction, rubrique par rubrique, est détaillée sur notre page <a href='/charte-ia-entreprise'>charte IA d'entreprise</a>."
+    },
+    {
+      "type": "p",
+      "text": "Le comité garde trois responsabilités sur ce document. Il tient l'annexe des outils autorisés à jour après chaque décision. Il recueille les questions que les salariés posent au référent, signe que la charte manque de clarté sur un point. Il fixe une date de révision, et l'avance après tout incident. Un cabinet qui conseille des acheteurs publics, accompagné par Masteria, a appliqué cette logique : avec ses assistants de réponse aux marchés, il a reçu un guide qui attribue chaque mise à jour à une personne nommée et encadre la confidentialité des dossiers."
+    },
+    {
+      "type": "h2",
+      "text": "Les indicateurs que suit le comité"
+    },
+    {
+      "type": "p",
+      "text": "Un comité qui ne mesure rien finit par débattre d'impressions. Une dizaine d'indicateurs, relevés par le référent avant chaque séance, suffisent à orienter les décisions."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Indicateur",
+        "Ce qu'il révèle",
+        "Où le relever"
+      ],
+      "rows": [
+        [
+          "Demandes reçues et délai moyen de réponse",
+          "Si le circuit tient sa promesse ou pousse au contournement",
+          "Formulaire de demande"
+        ],
+        [
+          "Usages au registre, par statut",
+          "La taille du parc et la part encore en essai",
+          "Registre"
+        ],
+        [
+          "Revues en retard",
+          "Les usages dont personne ne vérifie plus le fonctionnement",
+          "Registre"
+        ],
+        [
+          "Incidents signalés et délai de traitement",
+          "La qualité des usages et la confiance des équipes dans le signalement",
+          "Canal de signalement"
+        ],
+        [
+          "Salariés formés ou sensibilisés",
+          "La trace des mesures prises au titre de l'article 4",
+          "Suivi des formations"
+        ],
+        [
+          "Comptes personnels remplacés par des comptes d'entreprise",
+          "Le recul de l'IA utilisée hors cadre",
+          "Console d'administration, questionnaire"
+        ],
+        [
+          "Dépense par usage (licences, appels au modèle)",
+          "Les usages dont le coût dérive",
+          "Factures, console de l'éditeur"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Chaque propriétaire d'usage ajoute ses propres mesures de qualité : part de réponses corrigées pour un assistant documentaire, actions annulées pour un agent. Le comité les lit lors de la revue de l'usage."
+    },
+    {
+      "type": "h2",
+      "text": "Le cadre réglementaire au 19 octobre 2026"
+    },
+    {
+      "type": "p",
+      "text": "Le texte de référence reste le règlement (UE) 2024/1689, que tout le monde appelle AI Act, en vigueur depuis le 1ᵉʳ août 2024 (<a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj' target='_blank' rel='noopener'>texte sur EUR-Lex</a>). Son correctif, le règlement (UE) 2026/1744 dit Omnibus numérique, a été adopté le 24 juillet 2026 et s'applique depuis le 27 juillet 2026 ; la CNIL reprend ces deux dates dans ses questions-réponses revues le 17 août 2026 (<a href='https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil' target='_blank' rel='noopener'>CNIL, questions-réponses sur le règlement IA</a> ; <a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj' target='_blank' rel='noopener'>règlement (UE) 2026/1744 sur EUR-Lex</a>). Le comité traduit chaque échéance en points d'ordre du jour."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Échéance",
+        "Ce que dit le texte",
+        "Ce que le comité en fait"
+      ],
+      "rows": [
+        [
+          "2 février 2025",
+          "Interdictions de l'article 5 ; obligation de compétence du personnel (article 4), ramenée par l'Omnibus à une obligation de moyens, sans certificat à fournir",
+          "Refuser les usages interdits ; garder la trace des formations et sensibilisations"
+        ],
+        [
+          "2 août 2026",
+          "Transparence de l'article 50 : un agent conversationnel s'annonce comme IA, un hypertrucage est signalé, un texte d'intérêt public généré sans relecture éditoriale est signalé",
+          "Vérifier, usage par usage, les mentions de transparence vers l'extérieur"
+        ],
+        [
+          "2 décembre 2026",
+          "Marquage lisible par machine des contenus produits par les générateurs déjà commercialisés au 2 août 2026",
+          "Interroger les éditeurs des générateurs d'images ou de vidéos utilisés"
+        ],
+        [
+          "2 décembre 2027",
+          "Régime du haut risque appliqué aux domaines listés en annexe III, avec les devoirs propres aux déployeurs (article 26)",
+          "Nommer une supervision humaine compétente, garder les journaux d'activité au moins six mois, informer les représentants du personnel"
+        ],
+        [
+          "2 août 2028",
+          "Haut risque étendu aux machines, jouets, dispositifs médicaux et autres produits encadrés par l'annexe I",
+          "Recenser les produits concernés avec les équipes techniques"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La Commission européenne confirme les jalons d'août 2026, de décembre 2027 et d'août 2028 sur sa page dédiée au cadre réglementaire, actualisée le 19 octobre 2026 (<a href='https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai' target='_blank' rel='noopener'>Commission européenne, AI Act</a>). Les obligations de l'article 26 ont été relues sur le service d'assistance AI Act de la Commission (<a href='https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26' target='_blank' rel='noopener'>article 26</a>). Pour former les membres du comité à la lecture du texte, la <a href='/formation-ai-act'>formation AI Act</a> classe vos usages réels selon ces niveaux."
+    },
+    {
+      "type": "h2",
+      "text": "Les 90 premiers jours du comité"
+    },
+    {
+      "type": "p",
+      "text": "Un comité se juge à ses premières décisions. Le plan ci-dessous sert de trame ; chaque organisation l'ajuste à son point de départ."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Période",
+        "Objectif",
+        "Livrables"
+      ],
+      "rows": [
+        [
+          "Jours 1 à 30",
+          "Installer",
+          "Lettre de mission signée, président et référent nommés, premier recensement des usages en cours, comptes personnels compris, première séance sur les demandes déjà en attente"
+        ],
+        [
+          "Jours 31 à 60",
+          "Cadrer",
+          "Registre ouvert avec un propriétaire par usage, liste des outils autorisés, charte adoptée et diffusée, formulaire de demande en service, délai de réponse annoncé"
+        ],
+        [
+          "Jours 61 à 90",
+          "Faire tourner",
+          "Troisième séance, premiers indicateurs relevés, plan de mise en conformité daté, calendrier des revues pour l'année, premier compte rendu à la direction générale"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Les premières décisions à inscrire au compte rendu"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Nommer le président, le référent IA et leurs suppléants.",
+        "Arrêter la liste des outils autorisés et le type de compte fourni pour chacun.",
+        "Fixer la liste des données qui ne doivent entrer dans aucun outil non validé.",
+        "Statuer sur les usages découverts lors du recensement : régulariser, encadrer ou arrêter.",
+        "Fixer le délai de réponse aux demandes et le seuil de délégation au référent.",
+        "Programmer les revues de l'année et la date de révision de la charte."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Un groupe international de l'emballage, que Masteria accompagne sur Copilot, montre la place de la direction au démarrage. Ses dirigeants ont pris une demi-journée pour travailler, en anglais, les notions qui vont du modèle à l'agent, les règles européennes sur l'IA et les données, et ce que coûte un agent ; ils en sont sortis avec leurs propres questions de feuille de route. Côté règles, une personne porte la politique d'usage du groupe : son Data manager. Nos <a href='/etudes-de-cas-ia'>études de cas</a> décrivent ces missions plus en détail."
+    },
+    {
+      "type": "h2",
+      "text": "Cinq erreurs qui enlisent un comité"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Un mandat flou.</strong> Le comité reçoit tout, du choix d'un logiciel de traduction à la stratégie de données, et ne tranche plus rien.",
+        "<strong>Pas de délégation.</strong> Chaque demande attend la séance suivante ; les équipes contournent le circuit.",
+        "<strong>Un registre sans propriétaires.</strong> Les lignes existent, personne ne répond des usages, les revues glissent.",
+        "<strong>Des refus sans solution.</strong> Un refus qui ne propose aucun outil de remplacement pousse vers les comptes personnels.",
+        "<strong>Un comité de juristes seuls.</strong> Sans les métiers, les décisions ignorent le travail réel et ne sont pas appliquées."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Vocabulaire utile"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Terme",
+        "Définition"
+      ],
+      "rows": [
+        [
+          "Comité de gouvernance IA",
+          "Instance qui autorise les usages d'IA, tient le registre, adopte la charte et suit les échéances réglementaires."
+        ],
+        [
+          "Référent IA",
+          "Personne qui instruit les demandes, tient le registre et prépare les séances du comité."
+        ],
+        [
+          "Propriétaire d'usage",
+          "Responsable métier qui répond d'un usage inscrit au registre et présente ses indicateurs lors des revues."
+        ],
+        [
+          "Déployeur",
+          "Terme de l'AI Act : toute organisation qui se sert d'un système d'IA pour son activité professionnelle."
+        ],
+        [
+          "Lettre de mission",
+          "Texte d'une page, signé par la direction, qui fixe le périmètre, les membres et les règles du comité."
+        ],
+        [
+          "Voie d'instruction",
+          "Parcours suivi par une demande selon son niveau de risque : rapide, standard ou renforcée."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Se faire accompagner pour installer le comité"
+    },
+    {
+      "type": "p",
+      "text": "Deux chemins existent, et ils se combinent. En mission de conseil, Masteria installe le dispositif complet, inventaire, registre, charte et premières séances du comité comprises : notre accompagnement en <a href='/gouvernance-ia'>gouvernance de l'IA</a>. En formation, la <a href='/formation-gouvernance-ia'>formation gouvernance IA</a> prépare en une journée les futurs membres du comité et le référent à tenir le registre, rédiger la charte et instruire une demande ; son tarif démarre à 1 980 € HT la journée en intra, dans le cadre de la certification Qualiopi de Masteria pour les actions de formation."
+    },
+    {
+      "type": "p",
+      "text": "Un comité bien monté se fait vite oublier des équipes. Elles savent où déposer une demande, elles reçoivent une réponse dans le délai promis, et l'IA entre dans l'entreprise par la porte. La question à poser en direction dès cette semaine tient en une ligne : qui, chez nous, a le droit de dire oui ?"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce qu'un comité de gouvernance IA ?",
+      "a": "C'est l'instance qui décide quels usages de l'intelligence artificielle l'entreprise autorise, à quelles conditions, et qui en répond. Il réunit un membre de la direction qui préside, un référent IA qui instruit les dossiers, des responsables métier, la DSI et le DPO. Il tient le registre des usages, adopte la charte et suit les échéances de l'AI Act."
+    },
+    {
+      "q": "L'AI Act impose-t-il un comité de gouvernance IA ?",
+      "a": "Non. Les questions-réponses de la Commission européenne sur l'article 4, revues le 27 juillet 2026, indiquent qu'aucune structure de gouvernance particulière n'est exigée pour l'article 4. Le comité reste un choix d'organisation, utile pour prouver qui décide et sur quelles bases, et pour préparer les obligations du haut risque applicables le 2 décembre 2027."
+    },
+    {
+      "q": "Qui doit présider le comité de gouvernance IA ?",
+      "a": "Un membre de la direction, parce que les décisions engagent l'entreprise et arbitrent parfois entre services. En ETI comme en groupe, la présidence revient souvent au directeur général délégué, au directeur des opérations ou au Chief AI Officer quand ce rôle existe. Le référent IA assure le secrétariat."
+    },
+    {
+      "q": "À quelle fréquence le comité doit-il se réunir ?",
+      "a": "Une fois par mois pendant les premiers mois, le temps de traiter les demandes en attente et d'ouvrir le registre. Le rythme trimestriel prend ensuite le relais. Une séance extraordinaire se convoque après un incident sérieux, comme une fuite de données ou un agent qui a agi hors de son périmètre."
+    },
+    {
+      "q": "Quelle différence entre le comité IA et le référent IA ?",
+      "a": "Le référent travaille au quotidien : il reçoit les demandes, les instruit, tient le registre et valide seul les dossiers à faible risque que le mandat lui délègue. Le comité décide en séance sur les dossiers qui engagent davantage : nouvel outil, données personnelles, usage à haut risque, agent qui agit dans un système."
+    },
+    {
+      "q": "Un comité de gouvernance IA est-il utile dans une petite entreprise ?",
+      "a": "Une petite structure équipée de deux ou trois assistants achetés se contente d'un format léger : un dirigeant qui décide, un référent qui instruit, une charte signée et un point mensuel. Le comité restreint devient utile quand plusieurs services demandent des outils différents ou que l'entreprise développe ses propres assistants."
+    },
+    {
+      "q": "Combien de temps doit prendre la validation d'un nouvel outil ?",
+      "a": "Le comité fixe lui-même ce délai dans sa lettre de mission et l'annonce aux équipes. Il doit rester plus court que la tentation de contourner la règle avec un compte personnel. La voie rapide, confiée au référent pour les demandes à faible risque, permet de répondre sans attendre la séance suivante."
+    },
+    {
+      "q": "Comment le comité valide-t-il un agent IA ?",
+      "a": "Par la voie renforcée. Avant la mise en service, il vérifie les actions que l'agent exécute sans validation humaine, ses droits d'accès, les traces conservées, la procédure d'arrêt, le plafond de dépense et la conduite à tenir quand l'éditeur change de version de modèle. L'agent entre ensuite au registre avec son responsable et sa prochaine échéance de réexamen."
+    },
+    {
+      "q": "Faut-il séparer comité de gouvernance IA et comité éthique ?",
+      "a": "Le plus souvent, non : en PME comme en ETI, le même comité traite la conformité, les risques et les questions d'éthique, en invitant les profils utiles. Un groupe qui développe ses propres modèles ou dont les usages touchent des publics vulnérables peut créer une instance éthique distincte, qui rend ses avis au comité de gouvernance."
+    },
+    {
+      "q": "Quel est le rôle du DPO dans le comité ?",
+      "a": "Le DPO donne son avis sur tout usage qui traite des données personnelles : base légale, minimisation, analyse d'impact si nécessaire, contrat avec l'éditeur. Il s'assure que les deux registres, usages IA et traitements RGPD, se correspondent."
+    }
+  ],
+  "cta": {
+    "title": "Installer votre comité de gouvernance IA ?",
+    "desc": "Masteria installe avec vous le registre, la charte et le circuit de validation, puis accompagne les premières séances du comité.",
+    "buttons": [
+      {
+        "label": "Découvrir notre accompagnement en gouvernance IA",
+        "href": "/gouvernance-ia",
+        "primary": true
+      },
+      {
+        "label": "Voir la formation gouvernance IA",
+        "href": "/formation-gouvernance-ia",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Gouvernance de l'IA : rôles, registre, conformité AI Act",
+      "href": "/gouvernance-ia"
+    },
+    {
+      "label": "Charte IA d'entreprise : rubriques et méthode",
+      "href": "/charte-ia-entreprise"
+    },
+    {
+      "label": "IA et RGPD",
+      "href": "/ia-et-rgpd"
+    },
+    {
+      "label": "Chief AI Officer : rôle et missions",
+      "href": "/chief-ai-officer"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Règlement (UE) 2024/1689 (AI Act), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    },
+    {
+      "label": "Règlement (UE) 2026/1744 (Omnibus numérique), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+    },
+    {
+      "label": "CNIL, questions-réponses sur le règlement IA (mise à jour le 17 août 2026)",
+      "url": "https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil"
+    },
+    {
+      "label": "Commission européenne, cadre réglementaire de l'IA (mise à jour le 19 octobre 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "label": "Commission européenne, AI literacy Q&A (mise à jour le 27 juillet 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+    },
+    {
+      "label": "AI Act Service Desk, article 26 (obligations des déployeurs)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Vocabulaire du comité de gouvernance IA",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Comité de gouvernance IA",
+          "description": "Instance qui autorise les usages d'IA, tient le registre, adopte la charte et suit les échéances réglementaires."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Référent IA",
+          "description": "Personne qui instruit les demandes, tient le registre et prépare les séances du comité."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Propriétaire d'usage",
+          "description": "Responsable métier qui répond d'un usage inscrit au registre et présente ses indicateurs lors des revues."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Déployeur",
+          "description": "Terme de l'AI Act : toute organisation qui se sert d'un système d'IA pour son activité professionnelle."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Lettre de mission",
+          "description": "Texte d'une page, signé par la direction, qui fixe le périmètre, les membres et les règles du comité."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Voie d'instruction",
+          "description": "Parcours suivi par une demande selon son niveau de risque : rapide, standard ou renforcée."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Circuit de validation d'un nouvel outil ou d'un agent IA",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Demande : un formulaire court indique le besoin, les utilisateurs visés, les données concernées et l'outil envisagé."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Instruction : le référent qualifie le niveau de risque, vérifie si un outil déjà autorisé couvre le besoin, rassemble le contrat de l'éditeur et le coût."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Avis techniques : la DSI examine la sécurité et les intégrations, le DPO examine les données personnelles."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Décision : autorisé, autorisé sous conditions, essai limité dans le temps et le périmètre, ou refusé avec motif écrit."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Inscription : la ligne entre au registre avec son propriétaire, ses conditions et sa date de revue."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Retour au demandeur : la décision et ses conditions lui parviennent dans le délai promis ; un refus s'accompagne, quand c'est possible, d'une solution de remplacement."
+        }
+      ]
+    }
+  ]
+}

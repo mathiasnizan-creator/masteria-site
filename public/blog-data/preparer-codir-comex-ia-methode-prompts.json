@@ -1,0 +1,605 @@
+{
+  "slug": "preparer-codir-comex-ia-methode-prompts",
+  "title": "Préparer un CODIR ou un COMEX avec l'IA : méthode et prompts",
+  "metaTitle": "Préparer un CODIR ou un COMEX avec l'IA | Masteria",
+  "metaDesc": "Préparer un CODIR ou un COMEX avec l'IA : 6 étapes, Copilot ou Claude, prompts prêts à copier et règle de données, de l'ordre du jour au compte rendu.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "14 min",
+  "formations": [
+    [
+      "Formation IA pour COMEX",
+      "/formation-ia-comex"
+    ],
+    [
+      "Formation IA pour dirigeants",
+      "/formation-ia-dirigeants"
+    ],
+    [
+      "Formation Copilot pour assistantes de direction",
+      "/formation-copilot-assistante"
+    ]
+  ],
+  "keywords": [
+    "préparer un CODIR avec l'IA",
+    "IA pour le COMEX",
+    "préparation d'un CODIR par l'IA",
+    "assistant IA pour dirigeants",
+    "mentorat IA comité exécutif",
+    "Copilot compte rendu réunion",
+    "Copilot PowerPoint comité de direction",
+    "Claude note de synthèse",
+    "prompts comité de direction"
+  ],
+  "excerpt": "Six étapes pour préparer un comité de direction avec l'IA, de la collecte des sujets au suivi des actions : quel outil entre Copilot et Claude, un prompt prêt à copier et la règle de données pour chacune.",
+  "intro": "Préparer un CODIR ou un COMEX avec l'IA consiste à confier à un assistant la collecte, la synthèse et la mise en forme, en six étapes : collecter les sujets et les chiffres, bâtir l'ordre du jour, condenser chaque dossier en une page, produire le support, préparer le mémo du dirigeant, puis tenir le compte rendu décisions-actions et son suivi. Microsoft Copilot couvre les étapes qui vivent dans Outlook, Teams et PowerPoint ; Claude prend en charge les dossiers longs. Une règle traverse tout le parcours : le nominatif et l'interne restent dans l'outil souscrit par l'entreprise.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "<strong>Méthode</strong> : six étapes, de la collecte des sujets au suivi des actions.<br><strong>Outils</strong> : Microsoft Copilot dans Outlook, Teams et PowerPoint pour tout ce qui vit dans la messagerie, les réunions et les supports ; Claude pour lire un dossier long et en tirer une note.<br><strong>Règle de données</strong> : le nominatif et l'interne restent dans l'outil sous contrat avec l'entreprise. En cas de doute, Copilot.<br><strong>Ce qui reste humain</strong> : le choix des sujets, les arbitrages, la validation de chaque chiffre et la signature du compte rendu.<br><strong>Livrables</strong> : un ordre du jour, une note d'une page par sujet, un support, un mémo pour le dirigeant, un compte rendu décisions-actions."
+    },
+    {
+      "type": "h2",
+      "text": "Ce que l'IA fait pour un comité de direction, et ce qu'elle ne décide pas"
+    },
+    {
+      "type": "p",
+      "text": "Un CODIR (comité de direction) ou un COMEX (comité exécutif) consomme surtout du temps de préparation : relancer les directeurs pour leurs sujets, rassembler les tableaux de bord, condenser des dossiers de vingt pages, mettre le tout en forme, puis courir après les actions décidées. L'assistant IA intervient sur ces tâches de lecture, de tri et de rédaction. Il fournit un premier jet que l'assistante de direction ou le secrétaire général corrige, puis que le dirigeant valide."
+    },
+    {
+      "type": "p",
+      "text": "Trois choses restent hors de son périmètre. Le choix des sujets inscrits, parce qu'il traduit une priorité de la direction. Les arbitrages pris en séance. Et la vérification des chiffres : un modèle de langage (le programme qui produit le texte) peut recopier une donnée de travers ou combler un trou avec une valeur plausible. Chaque montant d'une note de comité se contrôle contre sa source avant diffusion."
+    },
+    {
+      "type": "p",
+      "text": "La méthode qui suit s'adresse à la personne qui prépare le comité, souvent l'assistante de direction, et au dirigeant qui veut un assistant IA à son service sans perdre la main sur le fond. Elle se découpe en six étapes, chacune avec un outil, un prompt prêt à copier et une règle de données."
+    },
+    {
+      "type": "h2",
+      "text": "Copilot ou Claude : quel outil à chaque étape"
+    },
+    {
+      "type": "p",
+      "text": "Le choix suit l'endroit où vivent les informations. Microsoft Copilot travaille dans les applications Microsoft 365 et lit ce à quoi l'utilisateur a déjà accès : ses mails, son agenda, ses réunions Teams, ses fichiers. Claude, l'assistant d'Anthropic, tient la distance sur un dossier de plusieurs centaines de pages et sur la rédaction d'une synthèse structurée, à condition que l'entreprise dispose d'un compte professionnel ou que le texte soit public ou anonymisé."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Étape",
+        "Outil conseillé",
+        "Pourquoi",
+        "Données admises"
+      ],
+      "rows": [
+        [
+          "1. Collecter sujets et chiffres",
+          "Copilot dans Outlook",
+          "Les contributions arrivent par mail ; Copilot résume un fil et cite chaque message",
+          "Interne et nominatif"
+        ],
+        [
+          "2. Ordre du jour",
+          "Copilot Chat ou Claude",
+          "Classer, minuter, proposer un ordre logique",
+          "Intitulés de sujets, sans pièce sensible hors Copilot"
+        ],
+        [
+          "3. Note de synthèse d'une page",
+          "Claude pour un dossier long, Copilot pour un dossier interne",
+          "Claude accepte un PDF de mille pages au plus dans une conversation",
+          "Claude : dossier public, anonymisé ou compte sous contrat"
+        ],
+        [
+          "4. Support de séance",
+          "Copilot dans PowerPoint",
+          "Crée une présentation à partir d'un fichier Word ou PDF, sur le modèle de l'entreprise",
+          "Interne"
+        ],
+        [
+          "5. Mémo du dirigeant",
+          "Copilot dans Outlook (Préparer) ou Copilot Chat",
+          "Rassemble mails, échanges et documents liés à la réunion",
+          "Interne et nominatif"
+        ],
+        [
+          "6. Compte rendu et suivi",
+          "Copilot dans Teams, puis Outlook",
+          "Récapitulatif, actions suggérées, questions sur la transcription",
+          "Interne et nominatif"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le tableau ne vaut que si les outils sont activés. Copilot dans Teams exige une licence Microsoft Copilot (ou le module Teams Premium pour le récapitulatif intelligent), et Claude n'est un outil de l'entreprise que s'il est souscrit en offre Team ou Enterprise. Pour comparer les deux assistants au-delà des comités, notre page <a href='/copilot-vs-claude'>Copilot ou Claude</a> détaille leurs forces respectives."
+    },
+    {
+      "type": "h2",
+      "text": "La règle de données, à poser avant le premier prompt"
+    },
+    {
+      "type": "p",
+      "text": "Un comité de direction voit passer ce que la société a de plus confidentiel : résultats avant publication, projets de recrutement ou de départ, litiges, négociations. Une phrase suffit à la dire : <strong>le nominatif et l'interne restent dans l'outil souscrit par l'entreprise</strong>, et le doute se tranche en faveur de cet outil."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Type de contenu",
+        "Exemples en comité",
+        "Où le traiter"
+      ],
+      "rows": [
+        [
+          "Nominatif",
+          "Évaluation d'un manager, départ, rémunération, nom d'un client en litige",
+          "Copilot, dans le compte professionnel"
+        ],
+        [
+          "Interne non nominatif",
+          "Budget, chiffre d'affaires du trimestre, projet d'acquisition",
+          "Copilot ; Claude seulement en offre Team ou Enterprise"
+        ],
+        [
+          "Public ou anonymisé",
+          "Étude sectorielle, texte réglementaire, rapport d'un concurrent coté",
+          "Copilot ou Claude"
+        ],
+        [
+          "Doute",
+          "Note qui mélange plusieurs catégories",
+          "Copilot"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Cette règle s'appuie sur les engagements publiés par les éditeurs (vérifié le 19 octobre 2026). En compte professionnel, Microsoft s'engage à ne pas réutiliser les prompts et les réponses de Copilot, ni les contenus qu'il consulte dans Microsoft 365, pour l'apprentissage de ses grands modèles ; Copilot hérite aussi des permissions et des étiquettes de sensibilité posées par l'entreprise. Microsoft signale sur cette même documentation une exception à connaître : quand Copilot s'appuie sur un modèle d'Anthropic, ce traitement sort de l'EU Data Boundary, le périmètre européen de Microsoft. Côté Claude, Anthropic écarte par défaut de l'apprentissage les échanges de ses offres commerciales, sauf adhésion volontaire ou avis envoyé sur une réponse."
+    },
+    {
+      "type": "p",
+      "text": "Le texte d'un engagement ne remplace pas la charte interne. Si votre entreprise n'en a pas encore, la page consacrée à la <a href='/gouvernance-ia'>gouvernance de l'IA</a> décrit comment poser ces règles une fois pour toutes."
+    },
+    {
+      "type": "h2",
+      "text": "Étape 1 : collecter les sujets et les chiffres"
+    },
+    {
+      "type": "p",
+      "text": "La collecte part d'un mail aux membres du comité, envoyé une dizaine de jours avant la séance, qui demande pour chaque sujet un intitulé, l'enjeu en une ligne, la décision attendue et le temps souhaité. Les réponses arrivent dans un fil, parfois avec des pièces jointes et des relances. Copilot dans Outlook résume un fil de discussion et numérote ses sources : un clic sur le renvoi ouvre le message d'origine, ce qui permet de vérifier qui a demandé quoi."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Copilot dans Outlook, sur le fil des contributions",
+      "italic": false,
+      "text": "Tu prépares le comité de direction du [date].<br>À partir de ce fil, liste chaque sujet proposé dans un tableau : intitulé, porteur, décision attendue (information, avis ou décision), durée demandée, pièces jointes citées.<br>Signale les membres qui n'ont pas répondu et les sujets sans décision attendue.<br>N'invente aucune information absente des messages : écris « non précisé »."
+    },
+    {
+      "type": "p",
+      "text": "Les chiffres suivent le même chemin. Plutôt que de recopier les indicateurs d'un tableau Excel dans un mail, demandez à chaque direction le fichier source et sa date d'extraction. Copilot dans Excel peut ensuite en tirer les variations à commenter, mais le chiffre affiché en comité reste celui du fichier, contrôlé par son propriétaire."
+    },
+    {
+      "type": "p",
+      "text": "<strong>Règle de données</strong> : le fil contient des noms et des éléments internes. Il reste dans Outlook, et le résumé ne sort pas de Copilot."
+    },
+    {
+      "type": "h2",
+      "text": "Étape 2 : bâtir l'ordre du jour"
+    },
+    {
+      "type": "p",
+      "text": "Un bon ordre du jour sépare ce qui se décide de ce qui s'annonce. Il place les décisions lourdes en début de séance, quand l'attention est intacte, regroupe les informations descendantes en fin de réunion et donne à chaque point un porteur et une durée. L'IA propose une version que la personne qui prépare ajuste avec le dirigeant."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Copilot Chat ou Claude",
+      "italic": false,
+      "text": "Les sujets retenus pour un comité de direction de [durée] figurent ci-dessous, avec leur porteur et la décision attendue.<br>Propose un ordre du jour : d'abord les sujets à décision, ensuite les avis, enfin les informations.<br>Pour chaque point, indique le porteur, la durée, la question posée au comité en une phrase et le document préparatoire.<br>Si la somme des durées dépasse le temps disponible, propose les sujets à reporter et dis pourquoi."
+    },
+    {
+      "type": "p",
+      "text": "La « question posée au comité » change la séance. Un intitulé comme « Plan de recrutement 2027 » ouvre un tour de table ; « Validez-vous l'ouverture de trois postes commerciaux au premier semestre ? » appelle une réponse. Demander à l'IA de reformuler chaque point en question fermée est l'un des gains les plus nets de toute la préparation."
+    },
+    {
+      "type": "p",
+      "text": "<strong>Règle de données</strong> : des intitulés neutres peuvent passer dans Claude. Dès qu'un intitulé nomme une personne ou une opération confidentielle, l'ordre du jour se construit dans Copilot."
+    },
+    {
+      "type": "h2",
+      "text": "Étape 3 : condenser chaque dossier en une page"
+    },
+    {
+      "type": "p",
+      "text": "Chaque sujet à trancher mérite sa page, envoyée avec l'ordre du jour : contexte, options, recommandation, risques, décision demandée. L'IA y épargne des heures de lecture, et celle où elle demande le plus de vigilance, parce qu'une synthèse peut lisser un désaccord ou perdre une réserve écrite en bas de page."
+    },
+    {
+      "type": "p",
+      "text": "Pour un dossier long (étude de marché, audit, rapport réglementaire), Claude offre le plus de confort. Une conversation admet vingt fichiers ; un PDF peut compter mille pages, avec lecture des graphiques sur les cent premières et du seul texte ensuite (vérifié le 19 octobre 2026). Un projet Claude (un espace où documents et consignes restent disponibles pour chaque nouvel échange) permet d'y ranger le gabarit de note et les consignes de style du comité, pour ne pas les réécrire à chaque séance. Pour un dossier interne déjà stocké dans SharePoint ou OneDrive, Copilot reste le bon outil."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Claude (dossier long) ou Copilot (dossier interne)",
+      "italic": false,
+      "text": "Tire du document joint une note d'une page destinée à notre comité de direction.<br>Structure imposée : 1. Contexte en trois lignes. 2. Options, avec avantages et limites. 3. Recommandation du porteur. 4. Risques et points de vigilance. 5. Décision demandée au comité, en une question.<br>Cite la page du document pour chaque chiffre repris.<br>Si le document contient une réserve, un désaccord ou une hypothèse fragile, mentionne-la dans les risques.<br>Ne complète aucun chiffre manquant : signale-le."
+    },
+    {
+      "type": "p",
+      "text": "Le renvoi à la page pour chaque chiffre transforme la relecture : on vérifie en deux minutes au lieu de relire le dossier. La note se termine par le nom de son relecteur humain, qui en répond devant le comité."
+    },
+    {
+      "type": "p",
+      "text": "<strong>Règle de données</strong> : un rapport public ou un document anonymisé peut aller dans Claude. Un dossier interne n'y va que si l'entreprise a souscrit Claude en offre Team ou Enterprise ; sinon, Copilot."
+    },
+    {
+      "type": "h2",
+      "text": "Étape 4 : produire le support de séance"
+    },
+    {
+      "type": "p",
+      "text": "Le support projeté reprend les notes, une diapositive par décision. Copilot dans PowerPoint génère des diapositives depuis un document Word ou PDF rangé dans OneDrive ou SharePoint. Microsoft donne trois conseils utiles (vérifié le 19 octobre 2026) : structurer le document Word avec des styles de titres, ouvrir le gabarit PowerPoint maison pour conserver la charte graphique, et savoir qu'un prompt qui pointe vers un fichier n'accepte pas de consigne supplémentaire dans le même message. On génère d'abord, on affine ensuite."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Copilot dans PowerPoint, en deux temps",
+      "italic": false,
+      "text": "Premier message : Crée une présentation à partir de /[nom de la note de synthèse].<br>Second message : Réduis la présentation à une diapositive par sujet. Titre de chaque diapositive : la décision demandée, sous forme de question. Corps : trois options au plus et la recommandation. Ajoute en note du présentateur les risques et le nom du porteur."
+    },
+    {
+      "type": "p",
+      "text": "Un titre de diapositive formulé en question tient le comité sur la décision. Les graphiques se reprennent depuis les fichiers Excel des directions, jamais redessinés par l'IA à partir d'un chiffre recopié."
+    },
+    {
+      "type": "p",
+      "text": "<strong>Règle de données</strong> : le support reste dans PowerPoint et dans l'espace de stockage de l'entreprise."
+    },
+    {
+      "type": "h2",
+      "text": "Étape 5 : préparer le mémo du dirigeant"
+    },
+    {
+      "type": "p",
+      "text": "Le mémo est le document le plus personnel de la série. Lu par le dirigeant le soir qui précède la séance, il lui dit où il va et qui pense quoi : position de chaque membre sur les sujets sensibles, points d'accord acquis, questions à poser, décisions qu'il souhaite obtenir. C'est là qu'un assistant IA pour dirigeants rend le plus de service, parce que l'information est éparpillée dans des mails, des conversations Teams et des comptes rendus antérieurs."
+    },
+    {
+      "type": "p",
+      "text": "Dans le nouvel Outlook, la fonction Préparer, accessible depuis l'invitation de la réunion, rassemble et résume les documents préparatoires, les mails et les conversations liés à la réunion, et en tire des actions (vérifié le 19 octobre 2026). Microsoft précise qu'elle donne un résultat pauvre si la réunion n'a pas de contenu partagé ni d'échanges associés : joindre les notes à l'invitation améliore le mémo."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Copilot Chat (compte professionnel)",
+      "italic": false,
+      "text": "Prépare un mémo d'une page pour [nom du dirigeant] avant le comité de direction du [date].<br>Appuie-toi sur l'invitation, les notes jointes et les échanges des deux dernières semaines sur ces sujets.<br>Pour chaque sujet à décision : ce qui est acquis, les positions exprimées par les membres avec la source, les objections probables, deux questions à poser en séance.<br>Termine par les engagements pris au comité précédent qui ne sont pas encore tenus.<br>Distingue ce qui est écrit dans les sources de ce que tu déduis."
+    },
+    {
+      "type": "p",
+      "text": "La dernière consigne compte : un mémo qui prête à un directeur une position qu'il n'a jamais écrite peut fausser une séance. Relisez le mémo et rectifiez-le avant de le remettre."
+    },
+    {
+      "type": "p",
+      "text": "<strong>Règle de données</strong> : le mémo est nominatif par nature. Il naît et reste dans Copilot."
+    },
+    {
+      "type": "h2",
+      "text": "Étape 6 : tenir le compte rendu décisions-actions et suivre les actions"
+    },
+    {
+      "type": "p",
+      "text": "Un compte rendu de comité utile tient sur une page : pour chaque sujet, la décision prise, l'action qui en découle, son responsable et son échéance. Copilot dans Teams répond aux questions sur la réunion, en récapitule le contenu et suggère des actions, en renvoyant chaque fois au passage concerné de la transcription. Deux conditions pèsent (vérifié le 19 octobre 2026) : la transcription doit être activée pendant la séance pour interroger Copilot après coup, et Copilot ne fonctionne pas dans une réunion organisée hors de l'entreprise."
+    },
+    {
+      "type": "p",
+      "text": "Pour un comité en présentiel, la salle doit donc être équipée et la transcription annoncée en ouverture de séance. Certains comités préfèrent ne rien enregistrer sur les sujets les plus sensibles : la personne qui tient la plume prend alors ses notes à la main, puis les passe à Copilot pour la mise en forme."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Copilot dans Teams, après la séance",
+      "italic": false,
+      "text": "Établis le compte rendu décisions-actions de cette réunion dans un tableau : sujet, décision prise (ou « reporté »), action, responsable, échéance.<br>N'inscris comme décision que ce qui a été validé explicitement en séance. Range le reste dans une rubrique « Points ouverts ».<br>Signale les actions sans responsable ou sans échéance."
+    },
+    {
+      "type": "p",
+      "text": "Le compte rendu part ensuite par Outlook, avec une demande de relecture de quarante-huit heures aux membres. Le suivi des actions se tient dans un fichier unique, liste SharePoint ou tableau Excel, qui alimente l'étape 1 du comité suivant. Les blocs-notes Copilot (Copilot Notebooks, un espace qui rassemble fichiers, mails et réunions sur un même sujet) permettent de regrouper les comptes rendus successifs d'un comité et de l'interroger sur l'historique d'une décision."
+    },
+    {
+      "type": "callout",
+      "title": "Prompt à copier · Copilot Chat, une semaine avant le comité suivant",
+      "italic": false,
+      "text": "À partir du tableau de suivi des actions du comité de direction, liste les actions arrivées à échéance.<br>Pour chacune, rédige une relance courte et courtoise à son responsable, qui demande l'état d'avancement en une ligne."
+    },
+    {
+      "type": "p",
+      "text": "<strong>Règle de données</strong> : transcription, compte rendu et suivi sont internes et nominatifs. Tout reste dans Teams, Outlook et l'espace de stockage de l'entreprise."
+    },
+    {
+      "type": "h2",
+      "text": "Un calendrier de préparation sur dix jours"
+    },
+    {
+      "type": "p",
+      "text": "Ce rétroplanning est celui que nous proposons aux équipes de direction. Il s'ajuste au rythme du comité, mensuel ou hebdomadaire."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Moment",
+        "Qui",
+        "Quoi",
+        "Outil"
+      ],
+      "rows": [
+        [
+          "J-10",
+          "Assistante de direction",
+          "Appel à sujets et relance des actions échues",
+          "Outlook, Copilot Chat"
+        ],
+        [
+          "J-7",
+          "Assistante de direction",
+          "Tableau des sujets reçus, ordre du jour proposé",
+          "Copilot dans Outlook"
+        ],
+        [
+          "J-6",
+          "Dirigeant",
+          "Validation de l'ordre du jour",
+          "Aucun"
+        ],
+        [
+          "J-5 à J-3",
+          "Porteurs et assistante",
+          "Notes de synthèse d'une page, relues par les porteurs",
+          "Claude ou Copilot"
+        ],
+        [
+          "J-3",
+          "Assistante de direction",
+          "Envoi de l'ordre du jour et des notes",
+          "Outlook"
+        ],
+        [
+          "J-2",
+          "Assistante de direction",
+          "Support de séance",
+          "Copilot dans PowerPoint"
+        ],
+        [
+          "J-1",
+          "Dirigeant",
+          "Mémo de préparation",
+          "Copilot dans Outlook (Préparer)"
+        ],
+        [
+          "Jour J",
+          "Secrétaire de séance",
+          "Transcription annoncée et activée",
+          "Teams"
+        ],
+        [
+          "J+1",
+          "Assistante de direction",
+          "Compte rendu décisions-actions envoyé pour relecture",
+          "Copilot dans Teams, Outlook"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Les erreurs à éviter"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Diffuser une synthèse sans relecture humaine.</strong> Une note de comité engage son porteur : il la relit et la signe.",
+        "<strong>Coller un dossier interne dans un compte privé.</strong> Le compte privé d'un collaborateur n'est pas un outil de l'entreprise, quelle que soit sa qualité.",
+        "<strong>Laisser l'IA décider de ce qui a été décidé.</strong> Le prompt du compte rendu exige une validation explicite ; le doute part en « points ouverts ».",
+        "<strong>Transcrire sans prévenir.</strong> Le président de séance annonce la transcription à l'ouverture, et la charte interne liste les sujets qui en sont exclus.",
+        "<strong>Réécrire le prompt à chaque comité.</strong> Les prompts de cet article se rangent une fois dans une bibliothèque partagée, dans un projet Claude ou dans un agent Copilot, puis s'améliorent séance après séance."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Vu en mission : une assistante de direction et son comité"
+    },
+    {
+      "type": "p",
+      "text": "En septembre 2026, nous avons accompagné à distance, pendant une journée en individuel, l'assistante qui épaule la direction générale d'un éditeur de logiciels B2B. Son poste Microsoft 365 disposait déjà de Copilot ; Claude lui était inconnu. Elle voulait d'abord alléger ses routines. Nous avons pris pour fil conducteur un comité de direction suivi du début à la fin : l'ordre du jour, la note d'une page, les diapositives, le mémo destiné au dirigeant, puis le relevé des décisions et des actions produit depuis l'enregistrement d'une réunion Teams."
+    },
+    {
+      "type": "p",
+      "text": "La méthode de cet article reprend deux partis pris de cette journée. D'abord, un tri des données fixé avant tout exercice : ce qui est interne ou nomme quelqu'un passe par Copilot, ce qui est public ou rendu anonyme peut aller dans Claude, et une hésitation renvoie vers Copilot. Ensuite, elle a souhaité travailler sur des pièces fictives, si bien qu'aucun document réel n'est apparu à l'écran. Ses livrables : une trousse de préparation du comité, un modèle de relevé décisions-actions et une feuille de route sur un mois. La fiche complète figure parmi nos <a href='/etudes-de-cas-ia#mission-assistanat-direction'>études de cas</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Vocabulaire"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>CODIR</strong> : comité de direction, qui réunit le dirigeant et les directeurs de fonctions pour piloter l'activité.",
+        "<strong>COMEX</strong> : comité exécutif, instance plus resserrée qui fixe la stratégie, fréquente dans les groupes.",
+        "<strong>Note d'une page</strong> : document qui présente un sujet, ses options et la décision attendue du comité.",
+        "<strong>Compte rendu décisions-actions</strong> : relevé qui ne garde de la séance que les décisions, les actions, leurs responsables et leurs échéances.",
+        "<strong>Transcription</strong> : texte de la réunion produit en direct par Teams, dont Copilot a besoin pour répondre après la séance.",
+        "<strong>Protection des données d'entreprise</strong> : engagements contractuels de Microsoft sur les prompts et réponses de Copilot en compte professionnel.",
+        "<strong>Projet Claude</strong> : espace de travail qui conserve documents de référence et consignes d'une conversation à l'autre."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Sources vérifiées"
+    },
+    {
+      "type": "p",
+      "text": "Pages consultées le 19 octobre 2026 pour chaque fonction citée :"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<a href='https://support.microsoft.com/en-us/outlook/copilot-pages/summarize-an-email-thread-with-copilot-in-outlook' rel='noopener' target='_blank'>Microsoft : résumer un fil de discussion avec Copilot dans Outlook</a>",
+        "<a href='https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook' rel='noopener' target='_blank'>Microsoft : questions fréquentes sur Copilot dans Outlook (fonction Préparer)</a>",
+        "<a href='https://support.microsoft.com/en-us/powerpoint/frequently-asked-questions-about-copilot-in-powerpoint' rel='noopener' target='_blank'>Microsoft : questions fréquentes sur Copilot dans PowerPoint</a>",
+        "<a href='https://support.microsoft.com/en-us/teams/copilot/catch-up-on-meetings-with-microsoft-365-copilot-in-teams' rel='noopener' target='_blank'>Microsoft : rattraper une réunion avec Copilot dans Teams</a>",
+        "<a href='https://support.microsoft.com/en-us/microsoft-365-copilot/how-microsoft-365-copilot-notebooks-works' rel='noopener' target='_blank'>Microsoft : fonctionnement des blocs-notes Copilot</a>",
+        "<a href='https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection' rel='noopener' target='_blank'>Microsoft Learn : protection des données d'entreprise dans Copilot</a>",
+        "<a href='https://support.claude.com/en/articles/8241126-upload-files-to-claude' rel='noopener' target='_blank'>Anthropic : importer des fichiers dans Claude</a>",
+        "<a href='https://support.claude.com/en/articles/9517075-what-are-projects' rel='noopener' target='_blank'>Anthropic : les projets Claude</a>",
+        "<a href='https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training' rel='noopener' target='_blank'>Anthropic : vos données servent-elles à entraîner les modèles ?</a>"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Pour aller plus loin"
+    },
+    {
+      "type": "p",
+      "text": "Les prompts de cet article s'enrichissent de ceux de notre <a href='/bibliotheque-de-prompts'>bibliothèque de prompts</a>. Pour installer la méthode dans une équipe de direction, nous animons une <a href='/formation-ia-comex'>formation IA pour COMEX</a> et une <a href='/formation-copilot-assistante'>formation Copilot pour assistantes de direction</a>, construites sur vos propres comités. Comptez à partir de 1 980 € HT la journée."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Comment préparer un CODIR avec l'IA ?",
+      "a": "En six étapes : collecter les sujets et les chiffres, bâtir l'ordre du jour, rédiger une note d'une page pour chaque sujet à trancher, produire le support, préparer le mémo du dirigeant, puis tenir le compte rendu décisions-actions et son suivi. L'IA rédige les premiers jets, une personne relit chaque document et le dirigeant valide."
+    },
+    {
+      "q": "Quel outil d'IA utiliser pour un COMEX : Copilot ou Claude ?",
+      "a": "Microsoft Copilot pour tout ce qui vit dans Outlook, Teams et PowerPoint, et pour toute information interne ou nominative. Claude pour lire un dossier long et en tirer une note, sur des textes publics ou rendus anonymes, ou sur de l'interne quand la société a souscrit Claude en offre Team ou Enterprise."
+    },
+    {
+      "q": "Peut-on mettre des données confidentielles du comité dans un assistant IA ?",
+      "a": "Seulement dans l'outil souscrit par l'entreprise, avec un compte professionnel. Microsoft indique que les prompts et réponses de Copilot en compte professionnel ne servent pas à entraîner les modèles de fondation, et Anthropic indique la même chose par défaut pour ses offres commerciales (vérifié le 19 octobre 2026). Un compte personnel, gratuit ou payant, n'en fait pas partie."
+    },
+    {
+      "q": "Copilot sait-il produire le relevé de décisions d'un CODIR ?",
+      "a": "Oui, à partir de la transcription de la réunion Teams. Copilot récapitule la séance, suggère des actions et répond aux questions en citant ses sources. Il faut une licence Microsoft Copilot (ou Teams Premium pour le récapitulatif intelligent), une transcription activée pendant la séance et une réunion organisée par l'entreprise. Le compte rendu reste à relire avant envoi."
+    },
+    {
+      "q": "Comment créer un support PowerPoint de comité avec Copilot ?",
+      "a": "Rédigez d'abord la note dans Word avec des styles de titres, puis demandez à Copilot dans PowerPoint de créer une présentation à partir de ce fichier, sur le modèle de l'entreprise. Affinez ensuite dans un second message : une diapositive par décision, titre sous forme de question."
+    },
+    {
+      "q": "À quoi sert un assistant IA pour dirigeants ?",
+      "a": "Un assistant IA réglé pour le travail d'un dirigeant : préparer ses réunions, résumer ses fils de mails, rédiger un mémo avant un comité, suivre les engagements pris. Il prend la forme de Copilot dans Microsoft 365, d'un projet Claude, ou d'un agent nourri des habitudes et des dossiers du dirigeant."
+    },
+    {
+      "q": "L'IA peut-elle remplacer l'assistante de direction dans la préparation du comité ?",
+      "a": "Non. L'IA accélère la lecture, le tri et la rédaction, mais la personne qui prépare le comité choisit les sources, contrôle les chiffres, arbitre avec le dirigeant et répond de chaque document diffusé. La méthode décrite ici lui retire des tâches de mise en forme pour lui laisser le contrôle."
+    },
+    {
+      "q": "Existe-t-il un accompagnement ou un mentorat IA pour un comité exécutif ?",
+      "a": "Oui. Masteria anime des formations et des accompagnements pour les COMEX et les dirigeants, construits sur les comités réels de l'entreprise : règle de données, prompts adaptés, réglage de Copilot et de Claude. Le tarif part de 1 980 € HT la journée de formation."
+    },
+    {
+      "q": "En combien de temps cette méthode se met-elle en place ?",
+      "a": "La méthode s'applique dès le comité suivant si les outils sont déjà activés : il suffit de ranger les prompts dans une bibliothèque partagée et de poser la règle de données. Elle s'affine ensuite au fil des séances, en corrigeant les prompts qui ont produit des premiers jets décevants."
+    }
+  ],
+  "cta": {
+    "title": "Installer la méthode dans votre équipe de direction ?",
+    "desc": "Nous construisons la préparation de vos comités avec vos outils, vos gabarits et votre règle de données, puis nous formons les personnes qui la font vivre.",
+    "buttons": [
+      {
+        "label": "Découvrir la formation IA pour COMEX",
+        "href": "/formation-ia-comex",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre comité",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Formation IA pour COMEX",
+      "href": "/formation-ia-comex"
+    },
+    {
+      "label": "Formation Copilot pour assistantes de direction",
+      "href": "/formation-copilot-assistante"
+    },
+    {
+      "label": "Copilot ou Claude : lequel choisir",
+      "href": "/copilot-vs-claude"
+    },
+    {
+      "label": "Gouvernance de l'IA en entreprise",
+      "href": "/gouvernance-ia"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Préparer un CODIR ou un COMEX avec l'IA : les six étapes",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Collecter les sujets et les chiffres"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Bâtir l'ordre du jour"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Condenser chaque dossier en une page"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Produire le support de séance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Préparer le mémo du dirigeant"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Tenir le compte rendu décisions-actions et suivre les actions"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : préparer un comité de direction avec l'IA",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "CODIR",
+          "description": "Comité de direction qui réunit le dirigeant et les directeurs de fonctions pour piloter l'activité."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "COMEX",
+          "description": "Comité exécutif, instance resserrée qui fixe la stratégie."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Compte rendu décisions-actions",
+          "description": "Relevé des décisions, actions, responsables et échéances d'une séance."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Transcription",
+          "description": "Texte de la réunion produit en direct par Teams, nécessaire à Copilot après la séance."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Projet Claude",
+          "description": "Espace de travail qui conserve documents de référence et consignes d'une conversation à l'autre."
+        }
+      ]
+    }
+  ]
+}

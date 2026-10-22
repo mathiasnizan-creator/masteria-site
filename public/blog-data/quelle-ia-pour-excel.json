@@ -1,0 +1,776 @@
+{
+  "slug": "quelle-ia-pour-excel",
+  "title": "Quelle IA pour Excel en 2026 : Copilot, Claude, ChatGPT ou Gemini ?",
+  "metaTitle": "Quelle IA pour Excel en 2026 : Copilot, Claude ou ChatGPT ?",
+  "metaDesc": "IA pour Excel en 2026 : Copilot, Claude, ChatGPT ou Gemini comparés au 22/10, prix, limites, prompts par tâche et règles de données en finance.",
+  "tag": "Comparatif",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "27 min",
+  "formations": [
+    [
+      "Sprint IA Excel",
+      "/formation-sprint-ia-excel"
+    ],
+    [
+      "Formation Copilot Word et Excel",
+      "/formation-copilot-word-excel"
+    ],
+    [
+      "Formation IA finance",
+      "/formation-ia-finance"
+    ],
+    [
+      "Formation analyse de données avec l'IA",
+      "/formation-ia-analyse-donnees"
+    ]
+  ],
+  "keywords": [
+    "IA pour Excel",
+    "claude ou chatgpt pour excel",
+    "meilleure IA pour Excel finance",
+    "Copilot Excel",
+    "Claude pour Excel",
+    "ChatGPT pour Excel",
+    "Gemini Google Sheets",
+    "fonction COPILOT Excel",
+    "prompts Excel",
+    "formation IA Excel"
+  ],
+  "excerpt": "Copilot, Claude, ChatGPT et Gemini travaillent tous dans le tableur en 2026. Ce comparatif daté du 22 octobre dit ce que chacun fait bien, ce qu'il exige et ce qu'il coûte, avec une grille de prompts par tâche et les règles à poser pour des données financières.",
+  "intro": "Pour travailler dans Excel avec l'IA en 2026, partez de ce que votre entreprise possède déjà. Copilot s'impose si vos équipes vivent dans Microsoft 365, Claude convient aux modèles financiers qu'il faut expliquer et faire évoluer, ChatGPT offre une extension ouverte jusqu'au compte gratuit et présente aussi dans Google Sheets, et Gemini sert les équipes dont les tableurs sont dans Google Workspace. Les quatre agissent depuis un volet ouvert à côté des cellules : ils écrivent des formules, nettoient des données, construisent tableaux croisés et graphiques. Ils se séparent sur trois points, détaillés ici avec des faits relevés le 22 octobre 2026 sur les pages des éditeurs : ce qu'il faut déjà avoir, ce qu'ils font de vos chiffres, et la part de vérification qu'ils vous laissent.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "État au 22 octobre 2026. Copilot travaille dans Excel selon trois modes (modifier, planifier, converser) avec un abonnement Microsoft 365 professionnel, et sa fonction =COPILOT() a été retirée le 14 septembre 2026. Claude s'ajoute à Excel avec n'importe quel abonnement payant depuis le 7 mai 2026 et cite les cellules sur lesquelles il fonde chaque réponse. ChatGPT pour Excel accepte tous les comptes, gratuit compris en usage limité, et existe aussi pour Google Sheets. Gemini travaille dans Google Sheets à partir de Business Standard (13,60 € par utilisateur et par mois à l'année) et demande de convertir un fichier .xlsx au format Sheets. En finance, la règle qui dit quelles données entrent dans quel outil, et qui relit le résultat, pèse autant que le choix de l'outil."
+    },
+    {
+      "type": "h2",
+      "text": "Quatre façons de faire entrer l'IA dans un tableur"
+    },
+    {
+      "type": "p",
+      "text": "Les quatre assistants se présentent de la même manière : un volet latéral, une zone de saisie, un classeur qui se modifie sous vos yeux. La ressemblance s'arrête à l'écran. Copilot et Gemini sont intégrés par l'éditeur du tableur lui-même, Microsoft pour Excel et Google pour Sheets. Claude et ChatGPT arrivent par un complément (un module ajouté à Excel depuis la boutique de Microsoft) relié à votre compte Anthropic ou OpenAI. Cette différence décide de tout le reste : qui lit vos fichiers, sous quelles règles, et sur quelle facture."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Outil",
+        "Où il travaille",
+        "Ce qu'il faut déjà avoir",
+        "Prix d'entrée au 22/10/2026",
+        "Son terrain",
+        "Sa limite principale"
+      ],
+      "rows": [
+        [
+          "Copilot dans Excel",
+          "Excel Windows, Mac et web avec les trois modes ; iPad, iPhone et Android en partie",
+          "Un abonnement Microsoft 365 professionnel éligible à Copilot Chat (accès standard) ou une licence Copilot (accès prioritaire)",
+          "Accès standard sans surcoût ; Copilot Business 18,20 € HT par utilisateur et par mois ; Microsoft 365 Copilot 26 € HT",
+          "Les classeurs rangés dans OneDrive et SharePoint, lus dans les droits déjà posés",
+          "Aucune modification tant que le calcul reste en mode manuel"
+        ],
+        [
+          "Claude pour Excel",
+          "Excel web, Excel Windows avec Microsoft 365, Excel Mac",
+          "Un abonnement Claude payant (Pro, Max, Team, Enterprise) et un Excel Microsoft 365 récent ou Excel pour le web",
+          "Pro à 20 $ par mois (17 $ à l'année) ; Team à 25 $ par siège (20 $ à l'année)",
+          "Comprendre, corriger et faire évoluer un modèle financier en citant les cellules",
+          "Ni tables de données, ni macros, ni VBA"
+        ],
+        [
+          "ChatGPT pour Excel et Sheets",
+          "Excel bureau et web, Google Sheets",
+          "Un compte ChatGPT, gratuit compris",
+          "Free et Go en usage limité ; Plus à 20 $ par mois ; Business à 25 $ par siège (20 $ à l'année)",
+          "Bâtir, remettre en ordre et mettre à jour un classeur, dans l'un ou l'autre tableur",
+          "Ni mémoire ChatGPT ni historique partagé avec vos conversations"
+        ],
+        [
+          "Gemini dans Google Sheets",
+          "Sheets sur le web ; analyse et graphiques sur Android",
+          "Google Workspace Business Standard au minimum",
+          "Business Standard : 13,60 € mensuels par personne, engagement d'un an",
+          "Les données déjà présentes dans Drive, Gmail et Sheets",
+          "Un .xlsx doit d'abord être enregistré au format Sheets"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces prix bougent plusieurs fois par an : la page de l'éditeur fait foi le jour où vous signez."
+    },
+    {
+      "type": "h2",
+      "text": "Copilot dans Excel : l'assistant déjà installé chez les entreprises Microsoft 365"
+    },
+    {
+      "type": "p",
+      "text": "Copilot dans Excel construit et modifie un classeur avec les outils natifs du tableur : tableaux, graphiques, tableaux croisés dynamiques et formules. Le résultat reste un classeur Excel ordinaire, que vous reprenez à la main quand vous le souhaitez. L'aide de Microsoft, lue le 22 octobre 2026, cite la mise à jour d'un budget, la construction d'un modèle financier et l'analyse de données parmi les usages visés."
+    },
+    {
+      "type": "h3",
+      "text": "Trois modes à choisir avant d'écrire la demande"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Modifier</strong>, le mode par défaut : Copilot établit un plan, l'exécute dans le classeur, contrôle le résultat et affiche son raisonnement dans le volet. Le bouton Arrêter interrompt la tâche à tout moment.",
+        "<strong>Planifier</strong> : Copilot propose la marche à suivre et attend votre accord avant de toucher aux cellules. C'est le mode à retenir sur un classeur partagé ou avant une restructuration.",
+        "<strong>Converser</strong> : Copilot analyse les données et répond dans le volet sans rien changer, pour interroger un fichier qu'on ne veut pas risquer d'altérer."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Windows, Mac et Excel pour le web offrent les trois modes. L'iPad se limite au plan et à la conversation, l'iPhone et Android à la conversation, en attendant le mode modification que Microsoft déploie sur iPad et iPhone."
+    },
+    {
+      "type": "h3",
+      "text": "Ce que Copilot fait bien"
+    },
+    {
+      "type": "p",
+      "text": "Copilot ajoute, renomme et supprime des onglets, écrit des formules qui courent sur plusieurs feuilles, applique mises en forme conditionnelles et listes de validation, crée tableaux croisés, graphiques et tableaux de bord reliés à leurs données sources. Il cherche sur le web une information qu'il cite, importe les données d'un autre classeur rangé dans OneDrive, dans SharePoint ou sur votre poste, et suit des compétences personnalisées (des consignes enregistrées pour une procédure qui revient). Son atout tient à l'environnement : il travaille sur les fichiers auxquels vous avez déjà accès, avec les droits que votre service informatique a définis."
+    },
+    {
+      "type": "p",
+      "text": "Le sélecteur de modèle de Copilot dans Excel propose des modèles GPT d'OpenAI et des modèles Claude d'Anthropic, ou un réglage automatique. Il exige une licence Copilot commerciale ou un abonnement Microsoft 365 Premium, et en entreprise l'administrateur doit d'abord autoriser Anthropic comme sous-traitant de Microsoft."
+    },
+    {
+      "type": "h3",
+      "text": "Ses limites"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Copilot refuse de toucher au classeur tant que le calcul n'est pas réglé sur Automatique (onglet Formules, Options de calcul).",
+        "Quand une bibliothèque SharePoint impose l'extraction d'un fichier avant modification, Copilot ne fonctionne plus dans Excel pour Windows ou Mac sur ces fichiers ; Excel pour le web reste utilisable.",
+        "Ce que Copilot enregistre devient visible de toutes les personnes qui ont accès au fichier, co-auteurs compris ; on revient en arrière par l'historique des versions.",
+        "Microsoft conseille de ne lui confier aucune décision sensible, qu'elle soit financière, juridique ou médicale, et de vérifier tout ce qu'il produit."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Le 14 septembre 2026, Excel a perdu la fonction =COPILOT()"
+    },
+    {
+      "type": "p",
+      "text": "La fonction =COPILOT() envoyait une consigne et une plage de cellules à un modèle de langage, puis affichait la réponse dans la cellule. Elle n'a jamais quitté la préversion, réservée aux programmes Frontier et Microsoft 365 Insider, et Microsoft l'a retirée le 14 septembre 2026. Dans un classeur qui l'utilisait, les résultats déjà calculés restent affichés comme valeurs ; au premier recalcul, la cellule renvoie #NOM?. Microsoft renvoie vers le volet Copilot : la demande « résume les avis de A2 à A20 » y remplace l'ancienne formule. Si vos modèles de reporting en contenaient, cherchez « COPILOT( » dans le classeur et collez les résultats en valeurs avant le prochain recalcul."
+    },
+    {
+      "type": "h3",
+      "text": "Licence et prix"
+    },
+    {
+      "type": "p",
+      "text": "La FAQ de Microsoft liste quatre accès : Microsoft 365 Personnel ou Famille avec un plan de crédits IA, Microsoft 365 Premium, une licence Copilot commerciale, ou un abonnement Microsoft 365 ou Office 365 professionnel éligible à Copilot Chat. Dans ce dernier cas l'accès est standard, signalé « Basic » dans Excel ; la licence Copilot ajoute un accès prioritaire, signalé « Premium ». Sur la grille française du 22 octobre 2026, Microsoft 365 Copilot est affiché à 26 € HT mensuels par personne, facturés à l'année. Le complément Microsoft 365 Copilot Business, réservé aux clients Microsoft 365 Business existants, coûte 18,20 € HT, ramené à 15,60 € HT la première année pour une souscription faite entre le 1er juillet et le 31 décembre 2026. Dans sa documentation, Microsoft rebaptise cette licence Microsoft Copilot."
+    },
+    {
+      "type": "h2",
+      "text": "Claude dans Excel : le modèle financier expliqué cellule par cellule"
+    },
+    {
+      "type": "p",
+      "text": "Anthropic a ouvert son complément pour Excel à tous ses abonnements payants le 7 mai 2026, en disponibilité générale : Pro, Max, Team et Enterprise. Le compte gratuit n'y a pas accès. Le complément s'installe depuis la boutique Microsoft sous le nom « Claude for Microsoft 365 » et tourne dans Excel pour le web, sous Windows avec un abonnement Microsoft 365 et sur Mac. Les versions 2016 et 2019 achetées une fois pour toutes ne le reçoivent pas, l'iPad et Android non plus."
+    },
+    {
+      "type": "h3",
+      "text": "Ce que Claude fait bien"
+    },
+    {
+      "type": "p",
+      "text": "Claude répond aux questions sur un classeur en citant les cellules qui fondent sa réponse, et un clic sur la citation vous amène à la cellule. Il change une hypothèse (un taux d'actualisation, un taux de croissance) en conservant les liens entre formules, si bien que les cellules en aval se recalculent. Il remonte une erreur #REF! ou #DIV/0! jusqu'à sa cause, remplit un modèle existant ou en bâtit un à partir d'une description : parmi ses exemples, la documentation d'Anthropic demande un modèle à trois états financiers bâti depuis une balance. Il trie, filtre, modifie les tableaux croisés, pose des mises en forme conditionnelles et des listes déroulantes de validation, et prévient avant d'écraser des données existantes."
+    },
+    {
+      "type": "p",
+      "text": "Trois fonctions parlent aux équipes financières. Les connecteurs importent des données externes de S&P Global, LSEG ou Daloopa. Les compétences (des procédures enregistrées que Claude applique quand la demande y correspond) s'activent pendant le travail. Et le complément partage son contexte avec Claude pour PowerPoint, Word et Outlook : une même conversation passe du classeur à la présentation du comité."
+    },
+    {
+      "type": "h3",
+      "text": "Ses limites"
+    },
+    {
+      "type": "p",
+      "text": "Anthropic écrit lui-même ce que son outil ne doit pas faire sans contrôle : un livrable client final sans relecture humaine, un calcul critique pour un audit sans vérification, un modèle chargé de données sensibles ou réglementées sans protections adaptées. Les tables de données (la grille du menu Analyse de scénarios), les macros et le VBA ne sont pas pris en charge."
+    },
+    {
+      "type": "p",
+      "text": "La documentation consacre un avertissement à l'injection de prompt : un texte piégé, glissé dans un classeur, qui donne des ordres à l'assistant. Un modèle téléchargé, un fichier de fournisseur ou un import peut en contenir ; Anthropic demande de réserver le complément aux classeurs de confiance et de lire chaque demande de confirmation qui précède une opération risquée."
+    },
+    {
+      "type": "p",
+      "text": "Les entrées et sorties sont supprimées des serveurs d'Anthropic sous 30 jours, hors exceptions prévues par sa politique. L'historique des conversations reste dans votre navigateur, sans synchronisation entre appareils. Le complément ignore les durées de conservation fixées par votre organisation, et ses échanges manquent aux journaux d'audit d'Enterprise ; l'API de conformité (Compliance API) les couvre, en bêta publique."
+    },
+    {
+      "type": "h3",
+      "text": "Prix"
+    },
+    {
+      "type": "p",
+      "text": "Le complément ne se paie pas à part : il puise dans le quota de votre abonnement. Au 22 octobre 2026, Claude Pro coûte 20 $ par mois, ou 17 $ par mois réglés à l'année ; le siège Team 25 $ par mois, 20 $ à l'année. Enterprise se facture 20 $ mensuels par siège sur engagement annuel, avec un plancher de vingt sièges, la consommation s'ajoutant au tarif API. Une organisation qui passe déjà par Amazon Bedrock, Google Cloud Vertex AI ou Azure AI Foundry peut déployer le complément sans comptes Claude individuels."
+    },
+    {
+      "type": "p",
+      "text": "Hors d'Excel, l'application Claude analyse un tableur joint en écrivant puis en exécutant du code : le calcul est fait par un programme que vous pouvez relire, et Claude renvoie au besoin un fichier Excel prêt à ouvrir."
+    },
+    {
+      "type": "h2",
+      "text": "ChatGPT pour Excel : une extension, deux tableurs"
+    },
+    {
+      "type": "p",
+      "text": "OpenAI propose ChatGPT pour Excel et ChatGPT pour Google Sheets, deux extensions distinctes qui couvrent les mêmes usages. Sa page d'aide, mise à jour le 22 octobre 2026, les ouvre dans le monde entier à toutes les offres : Free, Go, Plus, Pro, Business, Enterprise et Edu. Dans Excel, sur ordinateur ou sur le web, l'extension s'ajoute depuis le menu Compléments ; dans Sheets, depuis la place de marché Google Workspace."
+    },
+    {
+      "type": "h3",
+      "text": "Ce que ChatGPT fait bien"
+    },
+    {
+      "type": "p",
+      "text": "OpenAI destine l'extension aux classeurs longs et multi-onglets, avec leurs formules, leurs références et leurs hypothèses. Elle bâtit un budget ou un suivi à partir de rien, remet en ordre une feuille désordonnée (formats, libellés incohérents, doublons, formules cassées), explique un classeur inconnu, met à jour un modèle quand les entrées changent puis résume ce qui a bougé, et prépare scénarios et tables de sensibilité. Vous ciblez un onglet en le mentionnant avec @, et l'extension peut chercher sur le web une donnée à intégrer."
+    },
+    {
+      "type": "p",
+      "text": "Des compétences livrées par défaut couvrent la modélisation financière et la mise en forme propre à la finance d'entreprise. Les applications reliées à votre compte ChatGPT (vos sources de données autorisées) peuvent s'y ajouter, selon les réglages de l'administrateur. Depuis l'application de bureau, Codex, l'agent d'OpenAI, sait aussi piloter un classeur Excel ouvert : feuilles, formules, valeurs, mise en forme et graphiques."
+    },
+    {
+      "type": "h3",
+      "text": "Ses limites"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Les conversations de l'extension restent séparées de votre historique ChatGPT et n'accèdent pas à la mémoire.",
+        "VBA et macros peuvent ne pas être pris en charge en totalité.",
+        "OpenAI conseille de dupliquer le fichier avant un travail important, puis de relire formules, calculs et cellules modifiées avant tout partage.",
+        "Selon les conditions de la place de marché de Microsoft, Microsoft peut lire le contenu du classeur, les pièces jointes et les prompts ; OpenAI garde certains journaux 30 jours pour la sécurité.",
+        "OpenAI rappelle que ChatGPT ne tient lieu ni de conseiller financier, ni de juriste, ni de fiscaliste."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Prix et consommation"
+    },
+    {
+      "type": "p",
+      "text": "Free et Go donnent un usage limité. Plus et Pro puisent dans la limite d'usage agentique de l'abonnement ; Plus coûte 20 $ par mois. Pour Business, Enterprise et Edu, la préversion gratuite a pris fin le 2 juin 2026 : l'usage suit depuis les crédits de chaque offre, et un gros classeur ou une modification en plusieurs étapes en consomme davantage. Le siège Business Standard coûte 25 $ par mois ou 20 $ à l'année (tarif en dollars de la plupart des pays), deux sièges au minimum, et OpenAI n'entraîne pas ses modèles sur les données d'un espace Business."
+    },
+    {
+      "type": "h2",
+      "text": "Gemini dans Google Sheets : l'IA des équipes sous Workspace"
+    },
+    {
+      "type": "p",
+      "text": "Pour une entreprise sous Google Workspace, l'équivalent de Copilot s'appelle Gemini dans Sheets. Il crée des tableaux et des formules, analyse des données et dégage des tendances, trace des graphiques et résume des fichiers Drive ou des e-mails Gmail. Il exécute aussi des actions dans la feuille : mise en forme conditionnelle, tableau croisé dynamique, menu déroulant, tri et filtre, format numérique, remplissage d'une plage, résolution de problèmes d'optimisation."
+    },
+    {
+      "type": "h3",
+      "text": "Une feuille construite d'une seule demande, et la fonction =IA()"
+    },
+    {
+      "type": "p",
+      "text": "Depuis le 22 avril 2026, date du début de son déploiement, Gemini construit un classeur complet à partir d'une demande : il pose ses questions de clarification, soumet un plan à votre accord, puis bâtit la feuille mise en forme. Quand l'administrateur a activé Workspace Intelligence, il puise aussi dans vos fichiers, vos e-mails, vos conversations Chat et le web. À son annonce, cette fonction était réservée aux États-Unis et à l'anglais : vérifiez qu'elle apparaît en français sur votre compte avant d'organiser un atelier autour."
+    },
+    {
+      "type": "p",
+      "text": "La fonction =IA(), qui s'écrit aussi =AI() ou =Gemini(), travaille cellule par cellule : elle rédige, résume, classe, analyse un sentiment ou cherche une information récente sur Google. Ses réponses sortent en texte brut, elle ne voit que la plage que vous lui passez, et elle ne s'imbrique pas dans une autre fonction comme SI."
+    },
+    {
+      "type": "h3",
+      "text": "Ses limites"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Gemini donne le meilleur de lui-même sur un fichier Google Sheets natif : un .xlsx doit d'abord passer par Fichier, puis Enregistrer au format Google Sheets.",
+        "Business Starter n'y donne pas accès. Les formules Standard et Plus ouvrent 5 000 appels de la fonction =IA() par utilisateur et par mois, soit environ 250 par jour ouvré, et 100 créations ou modifications de feuilles entières, cinq par jour ouvré. Le module AI Expanded Access porte ces plafonds à 25 000 et 500 (page Google mise à jour le 19 octobre 2026).",
+        "L'historique de la conversation se perd si vous actualisez la page, fermez le fichier ou perdez la connexion : insérez dans la feuille ce qui vous sert.",
+        "Sur Android, depuis septembre 2026, Gemini analyse et trace des graphiques ; modifications complexes, mise en forme et formules restent réservées au web.",
+        "Ce qui porte la mention Workspace Experiments relève d'un programme de test dont les données peuvent être lues par des évaluateurs humains : pas de chiffres internes dedans."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Prix et données"
+    },
+    {
+      "type": "p",
+      "text": "Gemini dans Sheets entre dans l'abonnement dès Business Standard (13,60 € par mois et par personne sur un an) et dans Business Plus (21,10 €), selon la grille française du 22 octobre 2026, hors remise de lancement. Google s'engage à ne pas entraîner ses modèles sur les données Workspace sans votre autorisation, et vos contenus ne passent pas sous les yeux d'évaluateurs humains. Gemini suit aussi les droits existants : un fichier que vous ne pouvez pas ouvrir lui reste fermé."
+    },
+    {
+      "type": "h2",
+      "text": "Claude ou ChatGPT pour Excel : ce qui les sépare"
+    },
+    {
+      "type": "p",
+      "text": "Vus de loin, les deux compléments se confondent : un volet, une demande en français, un classeur modifié. Les écarts portent sur l'accès, sur le tableur couvert et sur la manière de justifier un résultat."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Critère",
+        "Claude pour Excel",
+        "ChatGPT pour Excel"
+      ],
+      "rows": [
+        [
+          "Offres qui y donnent accès",
+          "Pro, Max, Team, Enterprise ; pas le compte gratuit",
+          "Toutes, Free et Go compris en usage limité"
+        ],
+        [
+          "Tableurs couverts",
+          "Excel web, Windows (Microsoft 365) et Mac",
+          "Excel bureau et web, plus une extension Google Sheets"
+        ],
+        [
+          "Justification d'une réponse",
+          "Citations de cellules cliquables",
+          "Résumé des changements ; mention d'onglets avec @ pour cadrer la demande"
+        ],
+        [
+          "Outils finance livrés",
+          "Connecteurs S&P Global, LSEG et Daloopa",
+          "Compétences de modélisation financière et de mise en forme finance"
+        ],
+        [
+          "Lien avec les autres outils",
+          "Contexte partagé avec PowerPoint, Word et Outlook",
+          "Codex pilote le classeur ouvert depuis l'application de bureau"
+        ],
+        [
+          "Non pris en charge",
+          "Tables de données, macros, VBA",
+          "VBA et macros pas toujours pris en charge"
+        ],
+        [
+          "Historique",
+          "Stocké dans le navigateur, hors journaux d'audit Enterprise",
+          "Séparé de l'historique ChatGPT, sans mémoire"
+        ],
+        [
+          "Entraînement des modèles",
+          "Exclu par défaut en Team et Enterprise",
+          "Exclu sur un espace Business"
+        ],
+        [
+          "Prix d'entrée payant",
+          "20 $ par mois (Pro), 17 $ à l'année",
+          "20 $ par mois (Plus) ; 20 à 25 $ par siège en Business"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Prenez Claude si votre travail consiste à reprendre, contrôler et faire évoluer des modèles existants : la citation de cellule et la conservation des liens de formules répondent à ce besoin, et un abonnement Claude payant suffit, sans licence supplémentaire. Prenez ChatGPT si une partie de l'équipe travaille dans Google Sheets, si vous voulez essayer sans abonnement, ou si les compétences de modélisation livrées par OpenAI correspondent à vos formats. Une entreprise équipée de Copilot dispose d'une troisième voie : choisir un modèle Claude ou GPT dans le volet Copilot, sans complément à installer. Le comparatif <a href='/copilot-vs-claude'>Copilot ou Claude</a> traite cet arbitrage au-delà du tableur."
+    },
+    {
+      "type": "h2",
+      "text": "Quelle IA pour Excel dans la finance ?"
+    },
+    {
+      "type": "p",
+      "text": "Une direction financière part du système en place : l'endroit où vivent les classeurs, la façon dont les droits sont posés, l'outil déjà payé. Le tableau croise ces situations avec l'outil qui s'y loge le mieux."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Votre situation",
+        "Outil à privilégier",
+        "Pourquoi",
+        "Précaution"
+      ],
+      "rows": [
+        [
+          "Classeurs dans SharePoint et OneDrive, Microsoft 365 dans toute l'entreprise",
+          "Copilot dans Excel",
+          "Il lit les fichiers dans les droits existants, sous la protection des données d'entreprise de Microsoft",
+          "Avec un modèle Claude choisi dans Copilot, le traitement sort de la frontière de données de l'UE"
+        ],
+        [
+          "Modèles financiers lourds à auditer, à reprendre ou à transmettre",
+          "Claude pour Excel, en Team ou Enterprise",
+          "Citations de cellules, hypothèses modifiées sans casser les formules, connecteurs de données de marché",
+          "Activité absente des journaux d'audit : tenez un onglet de suivi des changements"
+        ],
+        [
+          "Équipe partagée entre Excel et Google Sheets",
+          "ChatGPT pour Excel et Sheets, en Business",
+          "Une même extension dans les deux tableurs, compétences de modélisation incluses",
+          "Fichier dupliqué avant chaque travail important"
+        ],
+        [
+          "Toute la société sous Google Workspace",
+          "Gemini dans Sheets",
+          "Données Drive et Gmail à portée, droits Workspace respectés",
+          "Conversion des .xlsx et suivi des plafonds mensuels"
+        ],
+        [
+          "Analyse ponctuelle d'un long export (grand livre, factures sur plusieurs années)",
+          "L'application Claude, sur un export épuré",
+          "Le calcul passe par un programme que vous pouvez relire",
+          "Colonnes nominatives retirées avant l'import"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les quatre éditeurs écrivent la même mise en garde. Microsoft déconseille Copilot pour des décisions sensibles en finance, Google et OpenAI précisent que leurs réponses ne valent pas conseil financier, Anthropic exclut les calculs critiques pour un audit sans vérification. Le contrôle reste donc inscrit dans le processus de clôture, au même titre que la revue d'un collaborateur. Notre <a href='/formation-ia-finance'>formation IA pour la finance</a> travaille sur ce point avec vos propres dossiers."
+    },
+    {
+      "type": "h2",
+      "text": "La grille par tâche, avec des prompts prêts à copier"
+    },
+    {
+      "type": "p",
+      "text": "Chaque prompt fixe trois choses : ce qui doit rester intact, où écrire le résultat, ce que l'outil doit signaler. Adaptez les noms d'onglets et de colonnes, et gardez la dernière phrase, celle qui vous rend le contrôle."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tâche",
+        "Où la faire",
+        "Prompt à copier",
+        "Votre contrôle"
+      ],
+      "rows": [
+        [
+          "Écrire une formule de recherche",
+          "Copilot, Claude, ChatGPT, Gemini",
+          "« Dans l'onglet Ventes, ajoute en colonne H le chiffre d'affaires du même mois de l'an dernier, pris dans l'onglet Historique. Utilise une formule de recherche, explique-la en deux phrases et signale les lignes sans correspondance. »",
+          "Recalculer trois lignes à la main, dont une sans correspondance"
+        ],
+        [
+          "Trouver la cause d'une erreur",
+          "Claude, ChatGPT, Copilot",
+          "« La cellule F42 de l'onglet Synthèse renvoie #REF!. Remonte la chaîne de formules jusqu'à la cause, propose une correction et attends mon accord avant de modifier. »",
+          "Vérifier qu'aucune autre cellule de la synthèse ne change"
+        ],
+        [
+          "Nettoyer un export",
+          "ChatGPT, Copilot, Claude, Gemini",
+          "« Cet export mélange des dates en texte, des montants avec espaces et des fournisseurs écrits de plusieurs façons. Crée un onglet Propre : dates au format JJ/MM/AAAA, montants en nombres, un nom unique par fournisseur. Ne touche pas à l'onglet d'origine et liste les lignes que tu n'as pas su traiter. »",
+          "Même nombre de lignes et même total des montants dans les deux onglets"
+        ],
+        [
+          "Construire un tableau croisé",
+          "Copilot, Gemini, Claude",
+          "« Construis dans un nouvel onglet un tableau croisé des charges par centre de coût et par mois à partir de l'onglet Grand livre, avec un sous-total par trimestre, et donne-moi le total général. »",
+          "Le total général égale celui du grand livre"
+        ],
+        [
+          "Tracer budget et réel",
+          "Copilot, Gemini, ChatGPT",
+          "« Trace l'évolution mensuelle du budget et du réel en courbes, et l'écart en barres sur un second axe. Titre explicite, montants en milliers d'euros, source indiquée sous le graphique. »",
+          "Les montants de deux mois tirés au hasard correspondent au tableau"
+        ],
+        [
+          "Bâtir des scénarios",
+          "Claude, ChatGPT",
+          "« À partir de l'onglet Hypothèses, crée trois scénarios (prudent, central, haut) sur la croissance du chiffre d'affaires et le taux de marge. Garde les liens de formules vers le compte de résultat et résume l'effet de chaque scénario sur le résultat net dans un tableau. »",
+          "Le scénario central redonne le résultat du modèle d'origine"
+        ],
+        [
+          "Commenter les écarts",
+          "Copilot, Claude, ChatGPT",
+          "« Compare réel et budget ligne par ligne. Pour chaque écart supérieur au seuil inscrit en B1, rédige une phrase d'explication tirée de la colonne Commentaires, et écris « à documenter » quand l'information manque. »",
+          "Chaque phrase renvoie à une information présente dans le classeur"
+        ],
+        [
+          "Comprendre un classeur hérité",
+          "Claude, ChatGPT, Copilot en conversation",
+          "« Explique ce classeur comme à un nouvel arrivant : rôle de chaque onglet, hypothèses saisies à la main, cellules qui alimentent la synthèse. Cite les cellules et ne modifie rien. »",
+          "Ouvrir deux cellules citées pour confirmer"
+        ],
+        [
+          "Rapprocher deux listes",
+          "Claude, ChatGPT, Copilot",
+          "« Rapproche l'onglet Banque et l'onglet Comptabilité sur le montant et la date, avec trois jours de tolérance. Sors trois listes dans un nouvel onglet : rapprochées, banque seule, comptabilité seule. »",
+          "Les trois listes totalisent bien les deux onglets de départ"
+        ],
+        [
+          "Classer des libellés en masse",
+          "Gemini avec =IA(), Copilot dans le volet",
+          "Dans Sheets : =IA(\"Classe cette dépense dans une seule catégorie : déplacement, logiciel, sous-traitance, fournitures ou autre\"; B2). Dans Copilot : « Classe chaque libellé de B2 à B500 dans une seule catégorie parmi déplacement, logiciel, sous-traitance, fournitures ou autre, et écris-la en colonne C. »",
+          "Relire un échantillon de vingt lignes"
+        ],
+        [
+          "Analyser un long export",
+          "Application Claude, fichier joint",
+          "« Ce fichier contient une ligne par facture sur trois ans. Calcule le délai moyen de paiement par client et par année, montre-moi le code utilisé et liste les dix clients dont le délai s'allonge le plus. »",
+          "Recalculer le délai d'un client à la main"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Les gros fichiers demandent une étape de plus"
+    },
+    {
+      "type": "p",
+      "text": "Les pages consultées le 22 octobre 2026 ne donnent aucun nombre de lignes maximal pour ces assistants. OpenAI présente son extension comme faite pour les classeurs volumineux et multi-onglets. Claude pour Excel compacte de lui-même les longues conversations pour ne pas saturer le contexte (la quantité de texte que le modèle garde en tête pendant l'échange). Gemini plafonne les appels mensuels, et sa fonction =IA() ne lit que la plage qu'on lui passe. Pour un export de plusieurs années, nous conseillons deux voies : agréger d'abord les lignes par mois et par compte dans Excel, ou joindre le fichier à l'application Claude, qui calcule par du code et vous montre ce code."
+    },
+    {
+      "type": "h3",
+      "text": "Trois réflexes qui fiabilisent un prompt dans Excel"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Demander le plan avant l'action sur un classeur partagé : le mode Planifier de Copilot, ou la phrase « avant de modifier, liste les onglets et les plages que tu vas toucher ».",
+        "Écrire le résultat dans un onglet neuf, en laissant l'original intact.",
+        "Exiger la liste de ce qui n'a pas été traité. Une ligne ignorée sans bruit coûte plus cher, à la clôture, qu'une ligne signalée."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Données financières : sept règles avant d'ouvrir le volet IA"
+    },
+    {
+      "type": "p",
+      "text": "Un classeur de finance concentre des chiffres non publiés, des salaires, des coordonnées bancaires. Ces sept règles se posent avant la première demande, par écrit, et valent pour les quatre outils."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Un compte professionnel, jamais personnel.</strong> Les engagements de non-entraînement valent pour Microsoft 365 en entreprise, Claude Team et Enterprise, ChatGPT Business et Google Workspace. Sur un abonnement individuel, c'est son titulaire qui règle l'usage de ses conversations.",
+        "<strong>Des droits revus avant l'activation.</strong> Copilot et Gemini voient chaque fichier que la personne a le droit d'ouvrir. Un dossier de paie partagé trop largement dans SharePoint ou Drive devient lisible par l'assistant de chacun : revoyez les partages avant d'ouvrir l'IA aux équipes.",
+        "<strong>Un tri des chiffres par sensibilité.</strong> Écrivez quelles données entrent dans quel outil : chiffres publiés, budget interne, résultats avant publication, paie. Une société cotée ajoute à la liste l'information privilégiée, dont la circulation est encadrée par le règlement européen sur les abus de marché.",
+        "<strong>Des données personnelles réduites au nécessaire.</strong> Le principe de minimisation du RGPD n'admet que les données utiles au but poursuivi : retirez noms, matricules et IBAN d'un export avant de l'analyser, ou remplacez-les par un identifiant.",
+        "<strong>Les fichiers externes traités comme suspects.</strong> Un modèle téléchargé ou un fichier de fournisseur peut cacher des instructions destinées à l'assistant. Ouvrez-le d'abord sans IA, travaillez sur une copie et lisez chaque confirmation demandée.",
+        "<strong>Le lieu de traitement vérifié.</strong> Dans Copilot, les modèles d'Anthropic sortent de la frontière de données de l'UE de Microsoft. Anthropic n'héberge pas ses propres applications en Europe : pour un traitement européen, il faut passer par AWS Bedrock ou par Vertex AI chez Google Cloud. ChatGPT propose la résidence des données selon l'offre et la région.",
+        "<strong>Une trace de chaque modification.</strong> Dupliquez le classeur, nommez la version, notez dans un onglet Journal ce que l'IA a changé et qui l'a validé. L'historique de Claude pour Excel reste dans le navigateur ; les échanges Copilot entrent dans les outils d'audit de Microsoft 365."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Ce que montrent nos formations sur Excel"
+    },
+    {
+      "type": "p",
+      "text": "Dans un groupe industriel international du packaging, formé à Copilot entre juillet et septembre 2026, plusieurs des treize ateliers se tenaient dans Excel, sur les propres données du groupe : prix, activité, coûts, base RH. Le cadrage avait d'abord borné ce que Copilot pouvait lire, OneDrive et SharePoint, en laissant de côté les serveurs de fichiers partagés. Deux mois après, un manager raconte dans son évaluation à froid ce qu'il en a gardé : il analyse ses fichiers et prépare le calcul de retour sur investissement d'un déploiement d'outils RH."
+    },
+    {
+      "type": "p",
+      "text": "En septembre 2026, la responsable études et données d'un groupe immobilier a suivi une journée individuelle sur Claude, avec ses fichiers de ventes et de parts de marché. Avant le moindre envoi à Claude, le fichier clients a été rendu anonyme ; chaque formule et chaque nettoyage ont ensuite été contrôlés, et alors seulement étendus au reste du classeur. À la question sur ce qui lui a le plus servi, elle a répondu en cinq mots : « Exercices avec mes propres fichiers »."
+    },
+    {
+      "type": "p",
+      "text": "Chez un éditeur de logiciels, une assistante de direction est repartie avec une règle d'une ligne : les données internes ou nominatives passent par Copilot, les textes publics ou rendus anonymes vont à Claude, et le doute tranche pour Copilot. Le même Copilot l'aide à contrôler ses notes de frais dans Excel. Une règle aussi courte se retient sans relire de charte."
+    },
+    {
+      "type": "h2",
+      "text": "Se former à l'IA dans Excel"
+    },
+    {
+      "type": "p",
+      "text": "Une formation IA Excel utile se construit sur vos classeurs, avec l'outil que votre entreprise paie déjà. Le <a href='/formation-sprint-ia-excel'>Sprint IA Excel</a> dure trois heures et apprend à demander une formule, un nettoyage ou un tableau croisé que l'on sait vérifier. La <a href='/formation-copilot-word-excel'>formation Copilot Word et Excel</a> consacre deux jours aux équipes Microsoft 365. La <a href='/formation-ia-analyse-donnees'>formation analyse de données avec l'IA</a> part de vos exports et va jusqu'au commentaire destiné à la direction. Les directions financières disposent d'un parcours sur l'outil de leur choix, dont une version <a href='/formation-claude-finance'>Claude pour la finance</a>."
+    },
+    {
+      "type": "p",
+      "text": "Les formations de Masteria démarrent à partir de 1 980 € HT la journée ; la préparation des exercices sur vos fichiers s'ajoute au devis. Masteria est certifié Qualiopi, ce qui ouvre la demande de prise en charge à votre OPCO, selon ses critères."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire de l'IA dans un tableur"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Complément</strong> : module ajouté à Excel depuis la boutique de Microsoft, qui y installe un assistant tiers comme Claude ou ChatGPT.",
+        "<strong>Volet latéral</strong> : zone ouverte à droite du tableur, où l'on écrit la demande et où l'assistant répond.",
+        "<strong>Tableau croisé dynamique</strong> : tableau de synthèse qui regroupe et totalise des lignes selon les critères choisis.",
+        "<strong>Citation de cellule</strong> : renvoi cliquable vers la cellule sur laquelle l'assistant fonde sa réponse.",
+        "<strong>Injection de prompt</strong> : texte piégé glissé dans un fichier pour donner des ordres à l'assistant à l'insu de l'utilisateur.",
+        "<strong>Compétence</strong> : procédure enregistrée que l'assistant applique dès qu'une demande y correspond.",
+        "<strong>Frontière de données de l'UE</strong> : engagement de Microsoft de garder dans l'Union européenne le stockage et le traitement des données de ses clients de l'UE.",
+        "<strong>Modèle à trois états</strong> : modèle financier qui relie compte de résultat, bilan et tableau des flux de trésorerie."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Choisir l'assistant prend une réunion. Décider quels chiffres il peut lire, et qui signe ce qu'il produit, en demande davantage. C'est cette seconde décision qui transforme un volet IA en outil de clôture."
+    },
+    {
+      "type": "p",
+      "text": "<em>Sources consultées le 22 octobre 2026 : <a href='https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel' target='_blank' rel='noopener'>aide Microsoft, Copilot dans Excel</a>, <a href='https://support.microsoft.com/en-us/excel/copilot/frequently-asked-questions-about-copilot-in-excel' target='_blank' rel='noopener'>FAQ Copilot dans Excel</a>, <a href='https://support.microsoft.com/en-us/excel/functions/copilot-function' target='_blank' rel='noopener'>fonction COPILOT</a>, <a href='https://www.microsoft.com/fr-fr/copilot/solutions/business' target='_blank' rel='noopener'>prix Copilot pour les PME</a>, <a href='https://www.microsoft.com/fr-fr/copilot/solutions/enterprise' target='_blank' rel='noopener'>prix Microsoft 365 Copilot</a>, <a href='https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection' target='_blank' rel='noopener'>protection des données d'entreprise</a>, <a href='https://claude.com/docs/office-agents/excel' target='_blank' rel='noopener'>documentation Claude pour Excel</a>, <a href='https://claude.com/blog/collaborate-with-claude-across-excel-powerpoint-word-and-outlook' target='_blank' rel='noopener'>annonce Anthropic du 7 mai 2026</a>, <a href='https://claude.com/pricing' target='_blank' rel='noopener'>tarifs Claude</a>, <a href='https://help.openai.com/en/articles/20001063-chatgpt-for-excel-and-google-sheets' target='_blank' rel='noopener'>aide OpenAI, ChatGPT pour Excel et Google Sheets</a>, <a href='https://help.openai.com/en/articles/8792828-chatgpt-business-overview' target='_blank' rel='noopener'>aide OpenAI, ChatGPT Business</a>, <a href='https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus' target='_blank' rel='noopener'>aide OpenAI, ChatGPT Plus</a>, <a href='https://support.google.com/docs/answer/14356410?hl=fr' target='_blank' rel='noopener'>aide Google, Gemini dans Sheets</a>, <a href='https://support.google.com/docs/answer/15877199?hl=fr' target='_blank' rel='noopener'>aide Google, fonction IA</a>, <a href='https://workspaceupdates.googleblog.com/2026/04/build-and-edit-complex-spreadsheets-with-Gemini-in-Google-Sheets.html' target='_blank' rel='noopener'>annonce Google du 22 avril 2026</a>, <a href='https://knowledge.workspace.google.com/admin/generative-ai/workspace-with-gemini/about-ai-usage-limits?hl=fr' target='_blank' rel='noopener'>limites d'usage de l'IA Workspace</a>, <a href='https://workspace.google.com/intl/fr/pricing' target='_blank' rel='noopener'>tarifs Google Workspace</a>, <a href='https://knowledge.workspace.google.com/admin/gemini/generative-ai-in-google-workspace-privacy-hub?hl=en' target='_blank' rel='noopener'>confidentialité de l'IA dans Workspace</a>. Prix hors taxes, en euros chez Microsoft, en dollars chez Anthropic et OpenAI, en euros sur la grille française de Google, susceptibles d'évoluer.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quelle est la meilleure IA pour Excel en 2026 ?",
+      "a": "Celle qui correspond à votre environnement. Sous Microsoft 365, Copilot dans Excel est déjà installé et lit vos fichiers dans vos droits. Pour reprendre un modèle financier, Claude pour Excel cite les cellules et garde les formules. ChatGPT pour Excel accepte même un compte gratuit et existe pour Google Sheets. Sous Google Workspace, Gemini dans Sheets est compris dès Business Standard. État au 22 octobre 2026."
+    },
+    {
+      "q": "Claude ou ChatGPT pour Excel : lequel choisir ?",
+      "a": "Claude pour Excel sert le travail sur des modèles existants : citations de cellules, hypothèses modifiées sans casser les formules, connecteurs S&P Global, LSEG et Daloopa. Il faut un abonnement payant, dès 20 $ par mois. ChatGPT pour Excel s'ouvre à tous les comptes, fonctionne aussi dans Google Sheets et livre des compétences de modélisation financière. Ni l'un ni l'autre ne prend en charge l'ensemble des macros VBA."
+    },
+    {
+      "q": "Quelle IA recommander pour Excel dans la finance ?",
+      "a": "Sous Microsoft 365, commencez par Copilot, qui respecte les droits posés et la protection des données d'entreprise de Microsoft. Ajoutez Claude pour Excel en Team ou Enterprise pour les modèles lourds à auditer ou à transmettre. Sous Google Workspace, partez de Gemini dans Sheets. Les quatre éditeurs demandent une vérification humaine avant toute décision financière."
+    },
+    {
+      "q": "Copilot dans Excel est-il inclus dans Microsoft 365 ?",
+      "a": "En accès standard, oui, avec un abonnement Microsoft 365 ou Office 365 professionnel éligible à Copilot Chat. La licence Copilot apporte l'accès prioritaire et le choix du modèle. Le 22 octobre 2026, Microsoft affichait 26 € HT mensuels par personne sur un an pour Microsoft 365 Copilot, et 18,20 € HT pour le complément Copilot Business destiné aux PME."
+    },
+    {
+      "q": "La fonction =COPILOT() existe-t-elle encore dans Excel ?",
+      "a": "Non. Elle a quitté Excel le 14 septembre 2026 sans jamais sortir de préversion. Une cellule qui la contient garde sa dernière valeur jusqu'au recalcul, puis affiche #NOM?. Résumer, classer, générer du texte ou chercher sur le web se fait depuis le volet Copilot."
+    },
+    {
+      "q": "Peut-on utiliser une IA gratuite dans Excel ?",
+      "a": "ChatGPT pour Excel accepte les comptes Free et Go, avec un usage limité. Claude pour Excel demande un abonnement payant. Copilot dans Excel ne coûte rien de plus en accès standard si votre abonnement Microsoft 365 professionnel y est éligible. Pour des données d'entreprise, évitez le compte personnel gratuit : c'est son titulaire qui décide de l'usage de ses conversations pour l'entraînement."
+    },
+    {
+      "q": "Gemini fonctionne-t-il avec un fichier Excel ?",
+      "a": "Gemini travaille dans Google Sheets. Un fichier .xlsx doit d'abord être enregistré au format Google Sheets (Fichier, puis Enregistrer au format Google Sheets). Il faut aussi un forfait éligible : Business Starter n'y a pas droit, Business Standard et Business Plus l'incluent."
+    },
+    {
+      "q": "L'IA peut-elle analyser un gros fichier Excel ?",
+      "a": "Oui, avec méthode. ChatGPT pour Excel vise les classeurs longs et multi-onglets, Claude pour Excel compacte les sessions qui s'allongent, et l'application Claude calcule par du code sur un fichier joint. Agrégez d'abord ce qui peut l'être (par mois, par compte), puis demandez un total de contrôle à comparer avec la source."
+    },
+    {
+      "q": "Mes données financières servent-elles à entraîner les modèles ?",
+      "a": "Pas sur les offres professionnelles, d'après les engagements publiés : Copilot en entreprise, ChatGPT Business, Claude Team et Enterprise, Google Workspace. Sur un abonnement individuel, le réglage appartient à son titulaire. Vérifiez aussi où les données sont traitées, surtout si vous choisissez un modèle Claude dans Copilot."
+    },
+    {
+      "q": "Existe-t-il une formation IA Excel ?",
+      "a": "Masteria propose un Sprint IA Excel de trois heures, une formation Copilot Word et Excel de deux jours, une formation analyse de données avec l'IA et des parcours finance par outil, tous préparés sur vos classeurs. Les formations démarrent à partir de 1 980 € HT la journée, préparation en sus, et Masteria est certifié Qualiopi."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez mettre l'IA au travail dans vos classeurs ?",
+    "desc": "Masteria prépare la session sur vos fichiers, avec l'outil que votre entreprise possède déjà, et pose les règles de données avant le premier prompt.",
+    "buttons": [
+      {
+        "label": "Voir le Sprint IA Excel",
+        "href": "/formation-sprint-ia-excel",
+        "primary": true
+      },
+      {
+        "label": "Parler de vos classeurs",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Sprint IA Excel : trois heures sur vos classeurs",
+      "href": "/formation-sprint-ia-excel"
+    },
+    {
+      "label": "Formation IA finance",
+      "href": "/formation-ia-finance"
+    },
+    {
+      "label": "Copilot ou Claude : le comparatif complet",
+      "href": "/copilot-vs-claude"
+    },
+    {
+      "label": "Formation analyse de données avec l'IA",
+      "href": "/formation-ia-analyse-donnees"
+    },
+    {
+      "label": "Études de cas de nos missions",
+      "href": "/etudes-de-cas-ia"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : l'IA dans un tableur",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Complément",
+          "description": "Module ajouté à Excel depuis la boutique de Microsoft, qui y installe un assistant tiers comme Claude ou ChatGPT."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Volet latéral",
+          "description": "Zone ouverte à droite du tableur, où l'on écrit la demande et où l'assistant répond."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Tableau croisé dynamique",
+          "description": "Tableau de synthèse qui regroupe et totalise des lignes selon les critères choisis."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Citation de cellule",
+          "description": "Renvoi cliquable vers la cellule sur laquelle l'assistant fonde sa réponse."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Injection de prompt",
+          "description": "Texte piégé glissé dans un fichier pour donner des ordres à l'assistant à l'insu de l'utilisateur."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Compétence",
+          "description": "Procédure enregistrée que l'assistant applique dès qu'une demande y correspond."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Frontière de données de l'UE",
+          "description": "Engagement de Microsoft de garder dans l'Union européenne le stockage et le traitement des données de ses clients de l'UE."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Modèle à trois états",
+          "description": "Modèle financier qui relie compte de résultat, bilan et tableau des flux de trésorerie."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Sept règles de données avant d'utiliser l'IA dans Excel en finance",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Un compte professionnel, jamais personnel"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Des droits revus avant l'activation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Un tri des chiffres par sensibilité"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Des données personnelles réduites au nécessaire"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Les fichiers externes traités comme suspects"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Le lieu de traitement vérifié"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Une trace de chaque modification"
+        }
+      ]
+    }
+  ]
+}
