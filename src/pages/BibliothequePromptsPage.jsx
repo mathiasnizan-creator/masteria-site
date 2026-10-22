@@ -349,7 +349,7 @@ export default function BibliothequePromptsPage() {
                 </p>
                 {m.hub && (
                   <Link to={m.hub} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, color: c, textDecoration: 'none' }}>
-                    Formations IA pour {m.label.toLowerCase()} <ArrowRight size={13} aria-hidden="true" />
+                    {m.hubLabel || `Formations IA pour ${m.label.toLowerCase()}`} <ArrowRight size={13} aria-hidden="true" />
                   </Link>
                 )}
               </div>

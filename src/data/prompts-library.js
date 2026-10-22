@@ -332,7 +332,8 @@ Pour chacune, indique la pièce justificative à préparer. Signale celles pour 
   {
     slug: 'juridique',
     label: 'Juridique',
-    hub: null,
+    hub: '/formation-ia-juridique',
+    hubLabel: 'Formation IA juridique pour avocats et juristes',
     intro: "Analyse contractuelle, veille, rédaction : l'IA ne remplace jamais l'avis juridique, mais elle absorbe le travail de repérage qui consomme les heures facturables.",
     prompts: [
       {

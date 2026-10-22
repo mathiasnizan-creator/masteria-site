@@ -53,7 +53,7 @@ function SectorGlyph({ name, size, color = '#2563EB' }) {
  *   secteur { …champs de secteur-ia-data.js }  remplace les champs de données
  *     (context, painPoints, useCases, constraints, onsiteDev, deepDive…)
  *   regieBloc { kicker, h2, accroche, lien }   bandeau régie (accroche = onsiteDev)
- *   formationBloc { kicker, h2, lien }         bloc formation
+ *   formationBloc { kicker, h2, lien, href? }  bloc formation (href : page formation du métier, sinon le catalogue)
  *   faqBloc { h2, texte, lien }                aside de la FAQ
  *   maillage { h2, texte }                     les liens passent dans un <nav>, sans accroche de carte
  *   cta { titre, texte, ligne }                CTA final (bouton inchangé, ligne masquée si absente)
@@ -530,7 +530,7 @@ export default function SecteurIAPage() {
                   </p>
                 </>
               )}
-              <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
+              <Link to={(propre && guide.formationBloc?.href) || '/formation-intelligence-artificielle'} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                 {propre && guide.formationBloc?.lien ? guide.formationBloc.lien : 'Découvrir les formations IA'}
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
               </Link>
