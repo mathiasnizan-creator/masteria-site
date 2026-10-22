@@ -631,7 +631,7 @@ export const COMPARISONS = {
       {
         title: "Agents et automatisations",
         descriptionA:
-          "Avec Copilot Studio, on monte des agents métier en low-code, en programmant peu ou pas, reliés à SharePoint et à vos sources. Un agent publié dans Microsoft Copilot est compris pour les titulaires de la licence ; les agents autonomes ou ouverts à l'extérieur consomment des crédits, vendus par packs de 25 000 à 173,30 € HT par mois ou à l'usage. Copilot Cowork, ouvert à tous les comptes professionnels, envoie des mails, planifie des réunions et crée des documents, en demandant votre accord avant chaque action sensible.",
+          "Avec Copilot Studio, on monte des agents métier en low-code, en programmant peu ou pas, reliés à SharePoint et à vos sources. Un agent publié dans Microsoft Copilot est compris pour les titulaires de la licence ; les agents autonomes ou ouverts à l'extérieur consomment des crédits, vendus par packs de 25 000 à 173,30 € HT par mois ou à l'usage. Copilot Cowork, réservé aux titulaires de la licence et activé par l'administrateur, envoie des mails, planifie des réunions et crée des documents, en demandant votre accord avant chaque action sensible.",
         descriptionB:
           "Sur Business et Enterprise, un agent d'espace de travail se décrit avec des phrases ordinaires, puis se partage, se planifie, répond dans Slack ou démarre par API ; tous les clients de ces offres y ont accès depuis le 21 mai 2026. Depuis le 6 juillet 2026, chaque exécution est décomptée en crédits, pris d'abord sur l'enveloppe du siège.",
         winner: "tie",
@@ -689,7 +689,7 @@ export const COMPARISONS = {
     changelog: {
       title: "Les changements intégrés depuis la version d'août 2026",
       items: [
-        { date: "7 octobre 2026", text: "Nouvelle vérification des prix et des fonctions. Pour Copilot Business, la page française indique désormais 21,84 € HT en paiement mensuel, à côté des 18,20 € HT en annuel. Microsoft documente depuis le 29 septembre la disponibilité générale de Copilot Cowork, qui demande votre accord avant chaque action sensible. Le 6 octobre, Microsoft a ajouté sur le web de quoi relancer une réponse en changeant de modèle." },
+        { date: "7 octobre 2026", text: "Nouvelle vérification des prix et des fonctions. Pour Copilot Business, la page française indique désormais 21,84 € HT en paiement mensuel, à côté des 18,20 € HT en annuel. Microsoft documente la disponibilité générale de Copilot Cowork, effective depuis le 16 juin,, qui demande votre accord avant chaque action sensible. Le 6 octobre, Microsoft a ajouté sur le web de quoi relancer une réponse en changeant de modèle." },
         { date: "Septembre 2026", text: "La documentation de Microsoft appelle désormais la licence Microsoft Copilot et la version incluse Copilot Chat. La fonction =COPILOT() d'Excel a été retirée le 14 septembre. Côté OpenAI, GPT-6 Astra (3 septembre) puis GPT-6.1 Sol (29 septembre) sont arrivés, et ChatGPT s'installe dans Word depuis le 17 septembre." },
         { date: "Juillet 2026", text: "Depuis le 6 juillet, faire tourner un agent ChatGPT coûte des crédits, prélevés d'abord sur l'enveloppe du siège Business. Microsoft accorde aux clients existants Copilot Business à 15,60 € HT la première année, pour un abonnement annuel souscrit d'ici le 31 décembre 2026." },
         { date: "Correction", text: "Une version antérieure citait Sora 2 pour produire des vidéos dans ChatGPT, alors que l'application n'existe plus depuis le 26 avril 2026. Elle affirmait aussi que ChatGPT ne s'intégrait ni à Word ni à Excel : OpenAI publie des extensions officielles pour Word, Excel et PowerPoint." },
@@ -1785,7 +1785,7 @@ export const COMPARISONS = {
         pros: [
           "Atelier low-code : un profil fonctionnel formé monte un agent avec peu ou pas de code",
           "Agents publiés dans Microsoft Copilot (anciennement Microsoft 365 Copilot) compris pour les titulaires de la licence",
-          "Copilot Cowork, ouvert aux comptes professionnels depuis le 29 septembre 2026, envoie des courriels, planifie des réunions, crée des documents et publie dans Teams, en demandant l'accord avant chaque action sensible ; il accepte jusqu'à 50 compétences personnalisées",
+          "Copilot Cowork, disponible depuis le 16 juin 2026 pour les comptes professionnels sous licence, envoie des courriels, planifie des réunions, crée des documents et publie dans Teams, en demandant l'accord avant chaque action sensible ; il accepte jusqu'à 50 compétences personnalisées",
           "Données traitées dans Microsoft 365, sous la gouvernance de l'administrateur",
           "Choix du modèle à la création de l'agent, dont des modèles d'Anthropic",
         ],
@@ -1813,7 +1813,7 @@ export const COMPARISONS = {
     },
     comparisonTable: [
       { criterion: "Nom exact du produit", chatgpt: "Agents d'espace de travail et ChatGPT Work", claude: "Claude, qui intègre Cowork", manus: "Manus 2.0", copilot: "Copilot Studio et Copilot Cowork" },
-      { criterion: "Jalons", chatgpt: "Agents en disponibilité générale le 21 mai 2026, ChatGPT Work le 9 juillet 2026", claude: "Cowork en disponibilité générale le 9 avril 2026, intégré à la conversation le 16 septembre 2026", manus: "Version 2.0 le 28 septembre 2026", copilot: "Copilot Cowork en disponibilité générale le 29 septembre 2026" },
+      { criterion: "Jalons", chatgpt: "Agents en disponibilité générale le 21 mai 2026, ChatGPT Work le 9 juillet 2026", claude: "Cowork en disponibilité générale le 9 avril 2026, intégré à la conversation le 16 septembre 2026", manus: "Version 2.0 le 28 septembre 2026", copilot: "Copilot Cowork en disponibilité générale le 16 juin 2026" },
       { criterion: "Offre minimum", chatgpt: "Business, 21 € le siège en formule annuelle", claude: "Pro à 20 $", manus: "Forfait mensuel en crédits", copilot: "Licence Microsoft Copilot (26 € HT) ou Copilot Studio à l'usage" },
       { criterion: "Coût des exécutions", chatgpt: "Crédits depuis le 6 juillet 2026, au-delà de l'enveloppe incluse", claude: "Compris dans les limites de l'offre, usage supplémentaire possible", manus: "Crédits du forfait", copilot: "Crédits Copilot pour les agents autonomes, Cowork à l'usage" },
       { criterion: "Agit sur des fichiers locaux", chatgpt: "Oui avec Work dans l'application de bureau, avec votre accord", claude: "Oui, cœur de Cowork", manus: "Oui, avec l'accès à votre ordinateur", copilot: "Fichiers OneDrive et SharePoint" },
@@ -1828,7 +1828,7 @@ export const COMPARISONS = {
     changelog: {
       title: "Les nouveautés intégrées depuis août 2026",
       items: [
-        { date: "7 octobre 2026", text: "Microsoft documente Copilot Cowork en disponibilité générale depuis le 29 septembre : l'agent sollicite votre feu vert pour toute action sensible, niveau de risque à l'appui, se déclenche sur réception d'un courriel ou d'un message Teams et accepte jusqu'à 50 compétences personnalisées. Chez OpenAI, la fin des GPTs personnalisés est fixée au 11 décembre 2026 : chaque GPT migre vers un plugin, ses instructions devenant une compétence." },
+        { date: "7 octobre 2026", text: "Microsoft documente Copilot Cowork, en disponibilité générale depuis le 16 juin : l'agent sollicite votre feu vert pour toute action sensible, niveau de risque à l'appui, se déclenche sur réception d'un courriel ou d'un message Teams et accepte jusqu'à 50 compétences personnalisées. Chez OpenAI, la fin des GPTs personnalisés est fixée au 11 décembre 2026 : chaque GPT migre vers un plugin, ses instructions devenant une compétence." },
         { date: "Septembre 2026", text: "Anthropic a intégré Cowork à la conversation de Claude le 16 septembre. Manus a repris ses activités indépendantes le 1er septembre, puis lancé Manus 2.0 le 28 septembre avec des automatisations déclenchées par événement." },
         { date: "Juillet 2026", text: "OpenAI a lancé ChatGPT Work le 9 juillet. Depuis le 6 juillet, les exécutions des agents d'espace de travail consomment des crédits, d'abord sur l'enveloppe incluse dans le siège Business." },
         { date: "Mai 2026", text: "Disponibilité générale des agents ChatGPT sur Business, Enterprise et Edu le 21 mai." },
@@ -2522,7 +2522,7 @@ export const COMPARISONS = {
       items: [
         { date: "7 octobre 2026", text: "Google a révisé ses plafonds : en Business Standard et Plus, 200 requêtes Pro, 600 en Thinking et 20 Deep Research par jour ; un carnet Gemini Notebook accepte 100 sources en Business Starter, et Workspace Studio appliquera ses limites à partir du 1er novembre. Chez Microsoft, PowerPoint accepte des compétences personnalisées depuis le 6 octobre." },
         { date: "Octobre 2026", text: "Les compétences remplacent les Gems : déploiement dans Workspace depuis le 5 octobre, dans l'application Gemini à partir du 13. Pour les comptes professionnels, les Gems resteront utilisables au moins jusqu'au 1er mars 2027, puis se transformeront en brouillons de compétences désactivés, réactivables par la personne qui les a créés." },
-        { date: "Septembre 2026", text: "Copilot Cowork, l'agent qui agit dans Microsoft 365, est sorti de préversion le 29 septembre pour tous les comptes professionnels, et les pages de Microsoft appellent désormais la licence Microsoft Copilot. Le 15 septembre, Google a ouvert dans Gemini des connecteurs MCP vers Asana, Atlassian Rovo, HubSpot, Intuit, Monday et Salesforce." },
+        { date: "Septembre 2026", text: "Copilot Cowork, l'agent qui agit dans Microsoft 365, est en disponibilité générale depuis le 16 juin pour les comptes professionnels sous licence, et les pages de Microsoft appellent désormais la licence Microsoft Copilot. Le 15 septembre, Google a ouvert dans Gemini des connecteurs MCP vers Asana, Atlassian Rovo, HubSpot, Intuit, Monday et Salesforce." },
         { date: "Juillet 2026", text: "Remise de lancement chez Microsoft : un abonné Microsoft 365 qui ajoute Copilot Business à l'année avant la fin de 2026 le paie 15,60 € HT au lieu de 18,20 € pendant douze mois." },
         { date: "Correction", text: "Une version antérieure limitait le carnet de Google à 100 sources en Business Standard ; la documentation en donne 300 en Business Standard, Business Plus et Enterprise. Nous écrivions aussi 50 sources en Business Starter, quand Google en annonce 100 depuis le 7 octobre 2026." },
         { date: "Correction", text: "Nous donnions pour Business Standard des plafonds de 25 requêtes Pro par tranche de 4 heures et de 300 requêtes Thinking par jour : ce sont ceux de Business Starter. Nous chiffrions aussi Copilot à environ 30 $ par utilisateur, alors que la page France affiche 26 € HT en annuel, et nous pensions que Google ne publiait pas la fenêtre de contexte de Gemini par édition : elle atteint un million de tokens dès Business Standard." },
@@ -2657,7 +2657,7 @@ export const COMPARISONS = {
     lastUpdate: "Octobre 2026",
     verifiedOn: "19 octobre 2026",
     datePublished: "2026-10-19",
-    dateModified: "2026-10-19",
+    dateModified: "2026-10-22",
     readTime: "9 minutes",
     keywords:
       "copilot vs claude, claude ou copilot, microsoft copilot vs claude, microsoft copilot vs anthropic claude, claude code vs copilot, claude code vs github copilot, copilot vs claude vs chatgpt, claude dans copilot, prix copilot claude",
@@ -2728,7 +2728,7 @@ export const COMPARISONS = {
         { criterion: "Où il travaille", a: "Word, Excel, PowerPoint, Outlook, Teams et OneNote, plus l'application Copilot", b: "Application web, ordinateur et mobile ; compléments Excel, PowerPoint et Word sur les offres payantes, Outlook en bêta ; extension Chrome" },
         { criterion: "Données de l'entreprise", a: "Avec la licence : mails, SharePoint, OneDrive, réunions et agenda lus par Microsoft Graph, dans la limite des droits de chacun", b: "Par connecteurs : Microsoft 365, Google Drive, Slack, ou tout logiciel doté d'un serveur MCP" },
         { criterion: "Texte lu d'un coup", a: "Aucun chiffre publié : Graph va chercher le passage utile", b: "Un million de tokens par échange sur les trois grands modèles, soit environ 2 500 pages" },
-        { criterion: "Tâches menées seul", a: "Copilot Cowork, ouvert à tous depuis le 29 septembre 2026, agit dans Microsoft 365 avec votre accord sur les actions à risque ; Copilot Studio pour les agents métier", b: "Cowork dans chaque conversation depuis le 16 septembre 2026, exécuté dans le cloud sur Pro et Max depuis le 6 octobre, en bêta sur Team" },
+        { criterion: "Tâches menées seul", a: "Copilot Cowork, disponible depuis le 16 juin 2026 sous licence et après activation par l'administrateur, agit dans Microsoft 365 avec votre accord sur les actions à risque ; Copilot Studio pour les agents métier", b: "Cowork dans chaque conversation depuis le 16 septembre 2026, exécuté dans le cloud sur Pro et Max depuis le 6 octobre, en bêta sur Team" },
         { criterion: "Méthodes réutilisables", a: "Agents de Copilot Studio, agents fournis par Microsoft (Researcher, Analyst)", b: "Skills, rangées chacune dans un dossier, que Claude appelle quand la demande s'y prête ; projets partagés" },
         { criterion: "Programmation", a: "GitHub Copilot, vendu à part : 19 $ par siège en Business, 39 $ en Enterprise", b: "Claude Code compris dès Pro et dans le siège Team : terminal, éditeurs, application de bureau, navigateur" },
         { criterion: "Sans payer", a: "Copilot Chat, compris dans Microsoft 365", b: "Offre gratuite avec Sonnet et Haiku, sans Claude Code ni Cowork" },
@@ -2796,7 +2796,7 @@ export const COMPARISONS = {
       {
         title: "Tâches menées en autonomie",
         descriptionA:
-          "Copilot Cowork, généralisé le 29 septembre 2026, rédige et expédie des messages, cale des rendez-vous et produit des fichiers dans Microsoft 365 ; il sollicite votre feu vert dès qu'une action comporte un risque, et sa consommation se paie en plus. Copilot Studio sert à monter des agents métier en low-code.",
+          "Copilot Cowork, généralisé le 16 juin 2026 et activé par l'administrateur, rédige et expédie des messages, cale des rendez-vous et produit des fichiers dans Microsoft 365 ; il sollicite votre feu vert dès qu'une action comporte un risque, et sa consommation se paie en plus. Copilot Studio sert à monter des agents métier en low-code.",
         descriptionB:
           "Accessible depuis le 16 septembre 2026 dans n'importe quelle conversation Claude, Cowork découpe la tâche, travaille sur vos fichiers et rend un livrable. Depuis le 6 octobre, les nouvelles tâches tournent dans le cloud sur Pro et Max et avancent ordinateur fermé ; sur Team, ce mode est en bêta.",
         winner: "tie",
@@ -2922,6 +2922,7 @@ export const COMPARISONS = {
     changelog: {
       title: "Historique de cette page",
       items: [
+        { date: "22 octobre 2026", text: "Correction : nous dations Copilot Cowork du 29 septembre 2026, simple date de mise à jour de sa page d'aide. Microsoft l'a ouvert le 16 juin 2026 aux comptes professionnels titulaires de la licence Microsoft 365 Copilot ; l'administrateur doit l'activer et sa consommation se paie à l'usage." },
         { date: "19 octobre 2026", text: "Première publication. Prix relevés le jour même chez Microsoft France et Anthropic ; les autres faits sur Copilot reprennent notre vérification du 7 octobre 2026 pour le comparatif Copilot vs ChatGPT." },
       ],
     },

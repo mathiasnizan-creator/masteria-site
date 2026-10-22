@@ -59,7 +59,7 @@ export default {
         h3: "Agents et Cowork demandent une règle de publication avant l'ouverture",
         paras: [
           "Agent Builder permet à chaque utilisateur sous licence de créer un agent ancré dans ses documents. Copilot Studio construit des agents métier reliés à vos logiciels. Au 7 octobre 2026, Microsoft le facture par pack mensuel de 25 000 crédits à 173,30 € HT, ou en paiement à la consommation ; un agent publié depuis Studio dans Copilot ne coûte rien de plus aux salariés qui ont déjà la licence. Agent 365, disponible depuis le 1er mai 2026, tient le registre des agents dans la console d'administration de Microsoft 365.",
-          "Copilot Cowork, que Microsoft documente comme généralement disponible pour les comptes d'entreprise depuis fin septembre 2026, expédie des messages, cale des rendez-vous, produit des documents et poste dans Teams ; l'utilisateur valide chaque action sensible. On peut lui ajouter jusqu'à 50 compétences maison et des plugins de l'App Store Microsoft 365, et chaque usage se paie au-delà de l'abonnement. Depuis le 6 octobre 2026, ses statistiques remontent dans Copilot Analytics, de quoi mesurer la dépense pendant le pilote.",
+          "Copilot Cowork, généralement disponible depuis le 16 juin 2026 pour les comptes d'entreprise sous licence Microsoft 365 Copilot, une fois l'option et la facturation à l'usage activées par l'administrateur, expédie des messages, cale des rendez-vous, produit des documents et poste dans Teams ; l'utilisateur valide chaque action sensible. On peut lui ajouter jusqu'à 50 compétences maison et des plugins de l'App Store Microsoft 365, et chaque usage se paie au-delà de l'abonnement. Depuis le 6 octobre 2026, ses statistiques remontent dans Copilot Analytics, de quoi mesurer la dépense pendant le pilote.",
         ],
       },
       {
@@ -297,7 +297,7 @@ export default {
     { name: "Microsoft Learn, en anglais : activer Anthropic comme sous-traitant (18 septembre 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor" },
     { name: "Microsoft Learn, en anglais : réglages de la recherche web pour les administrateurs", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access" },
     { name: "Microsoft Learn, en anglais : Purview face à Copilot (étiquettes, EXTRACT, héritage)", url: "https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations" },
-    { name: "Microsoft Learn, en anglais : Copilot Cowork (29 septembre 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+    { name: "Microsoft Learn, en anglais : Copilot Cowork (page mise à jour le 29 septembre 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
     { name: "Microsoft : Copilot Studio, prix en France (relevé du 7 octobre 2026)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/microsoft-copilot-studio" },
     { name: "Microsoft Learn, en anglais : présentation d'Agent 365", url: "https://learn.microsoft.com/en-us/microsoft-agent-365/overview" },
     { name: "Microsoft Learn : Employee Self-Service pour le support informatique", url: "https://learn.microsoft.com/fr-fr/microsoft-365/copilot/employee-self-service/overview" },

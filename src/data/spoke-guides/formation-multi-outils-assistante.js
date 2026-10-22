@@ -46,7 +46,7 @@ export default {
       {
         h3: "Trouver un créneau reste une fonction jeune",
         paras: [
-          "Gmail offre « Aide-moi à planifier » : Gemini lit votre agenda et glisse des créneaux dans le message, quatre par défaut, pour vingt invités au plus, sur ordinateur seulement. Depuis septembre 2026, le panneau latéral de Gemini crée aussi un événement sans quitter l'application ouverte. Outlook planifie une réunion avec Copilot et, depuis un mail, remplit d'avance l'objet et l'ordre du jour de l'invitation. Copilot Cowork, que la documentation de Microsoft donne en disponibilité générale pour les comptes pro depuis fin septembre, enchaîne recherche de créneau, invitation et ordre du jour, et s'arrête pour obtenir votre feu vert à chaque action sensible ; il est facturé selon l'usage, au-dessus du prix de la licence.",
+          "Gmail offre « Aide-moi à planifier » : Gemini lit votre agenda et glisse des créneaux dans le message, quatre par défaut, pour vingt invités au plus, sur ordinateur seulement. Depuis septembre 2026, le panneau latéral de Gemini crée aussi un événement sans quitter l'application ouverte. Outlook planifie une réunion avec Copilot et, depuis un mail, remplit d'avance l'objet et l'ordre du jour de l'invitation. Copilot Cowork, disponible depuis le 16 juin 2026 pour les comptes pro munis de la licence, enchaîne recherche de créneau, invitation et ordre du jour, et s'arrête pour obtenir votre feu vert à chaque action sensible ; il est facturé selon l'usage, au-dessus du prix de la licence.",
           "Aucun de ces outils ne connaît les priorités entre deux dirigeants, ni le rendez-vous qu'on ne déplace jamais. L'arbitrage d'un agenda chargé reste le cœur du métier. L'IA prépare les options et le mail, l'assistante tranche.",
         ],
       },
@@ -248,7 +248,7 @@ export default {
     { name: "Microsoft Support : Copilot dans la boîte d'un autre utilisateur, conditions de licence", url: "https://support.microsoft.com/en-us/microsoft-365-copilot/use-copilot-in-shared-mailboxes-and-delegate-mailboxes" },
     { name: "Microsoft Learn : options de Copilot en réunion Teams et transcription", url: "https://learn.microsoft.com/en-us/microsoftteams/copilot-teams-transcription" },
     { name: "Microsoft Support : planifier une réunion avec Copilot dans Outlook", url: "https://support.microsoft.com/fr-fr/office/schedule-a-meeting-using-copilot-72712d86-ae55-4f2a-95de-19bce2e1ec5b" },
-    { name: "Microsoft Learn : Copilot Cowork, actions soumises à accord (29 septembre 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+    { name: "Microsoft Learn : Copilot Cowork, actions soumises à accord (page mise à jour le 29 septembre 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
     { name: "Microsoft Learn : ce que couvre Copilot Chat sans licence, page du 1er octobre 2026", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview" },
     { name: "Aide Gmail : fonctions fermées aux délégués, dont Gemini", url: "https://support.google.com/mail/answer/138350?hl=fr" },
     { name: "Aide Gmail : « Aide-moi à planifier », créneaux et nombre d'invités", url: "https://support.google.com/mail/answer/16865189?hl=fr" },

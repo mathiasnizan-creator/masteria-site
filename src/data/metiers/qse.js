@@ -384,7 +384,7 @@ export default {
   "lignes": [
    {
     "outil": "copilot",
-    "texte": "Dans Word, Copilot rédige une procédure ; il contrôle un export du DUERP dans Excel et récapitule une réunion de CSSCT dans Teams ; ses lectures se limitent à OneDrive et à SharePoint, sans les lecteurs réseau. Copilot Cowork, généralisé fin septembre 2026, rédige un message et attend votre autorisation, risque estimé à l'appui. {/formation-microsoft-copilot|Formation Microsoft Copilot}"
+    "texte": "Dans Word, Copilot rédige une procédure ; il contrôle un export du DUERP dans Excel et récapitule une réunion de CSSCT dans Teams ; ses lectures se limitent à OneDrive et à SharePoint, sans les lecteurs réseau. Copilot Cowork, généralisé le 16 juin 2026, rédige un message et attend votre autorisation, risque estimé à l'appui. {/formation-microsoft-copilot|Formation Microsoft Copilot}"
    },
    {
     "outil": "claude",

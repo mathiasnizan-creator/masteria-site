@@ -66,7 +66,7 @@ export default {
       {
         h3: "Cowork enchaîne les étapes et attend votre accord avant d'agir",
         paras: [
-          "Copilot Cowork, que Microsoft déclare ouvert à tous les comptes professionnels depuis le 29 septembre 2026, va au-delà du brouillon. Il rédige et expédie des mails, cale des réunions, produit des documents et poste des messages dans Teams. Chaque action sensible passe par votre validation, avec un niveau de risque affiché. Une tâche peut démarrer seule, chaque vendredi par exemple, ou dès qu'un message précis arrive. Chaque tâche consomme des crédits payés en sus de l'abonnement.",
+          "Copilot Cowork, que Microsoft déclare disponible depuis le 16 juin 2026 pour les comptes professionnels titulaires de la licence, va au-delà du brouillon. Il rédige et expédie des mails, cale des réunions, produit des documents et poste des messages dans Teams. Chaque action sensible passe par votre validation, avec un niveau de risque affiché. Une tâche peut démarrer seule, chaque vendredi par exemple, ou dès qu'un message précis arrive. Chaque tâche consomme des crédits payés en sus de l'abonnement.",
           "Pour une assistante, Cowork permet de chaîner la préparation d'un comité : relevé des points, invitation, envoi des pièces aux membres. Essayez-le d'abord sur vos propres réunions et votre propre boîte. Les limites de la boîte déléguée décrites plus haut restent la référence, et aucun message ne part au nom du dirigeant sans votre relecture.",
         ],
       },
@@ -298,7 +298,7 @@ export default {
     { name: "Aide Microsoft : Copilot en séance, sans transcription ni enregistrement", url: "https://support.microsoft.com/fr-fr/office/utiliser-copilot-sans-enregistrer-de-r%C3%A9union-teams-a59cb88c-0f6b-4a20-a47a-3a1c9a818bd9" },
     { name: "Aide Microsoft : brouillons Word appuyés sur des références", url: "https://support.microsoft.com/fr-fr/office/r%C3%A9digez-et-ajoutez-du-contenu-avec-copilot-dans-word-069c91f0-9e42-4c9a-bbce-fddf5d581541" },
     { name: "Aide Microsoft : les pages Copilot et leur partage", url: "https://support.microsoft.com/fr-fr/microsoft-365-copilot/get-started-with-microsoft-365-copilot-pages" },
-    { name: "Microsoft Learn, en anglais : Copilot Cowork (disponibilité générale, 29 septembre 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
+    { name: "Microsoft Learn, en anglais : Copilot Cowork (disponibilité générale le 16 juin 2026)", url: "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/" },
     { name: "Microsoft : prix de Copilot Business sur la page française (relevé du 7 octobre 2026)", url: "https://www.microsoft.com/fr-fr/microsoft-365-copilot/business" },
   ],
 }

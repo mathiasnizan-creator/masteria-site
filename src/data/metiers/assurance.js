@@ -204,7 +204,7 @@ export default {
     },
     {
      "t": "Tâches programmées du plateau",
-     "d": "Point du lundi sur les réclamations en attente, liste des renouvellements du mois, veille sur les textes du secteur : une phrase crée la tâche dans ChatGPT ou dans Vibe, et Workspace Studio enchaîne les étapes chez Google, avec des plafonds d'usage appliqués au 1er novembre 2026. Chez Microsoft, Cowork, que la documentation dit ouvert aux comptes pros depuis fin septembre 2026, demande une validation avant toute action jugée sensible."
+     "d": "Point du lundi sur les réclamations en attente, liste des renouvellements du mois, veille sur les textes du secteur : une phrase crée la tâche dans ChatGPT ou dans Vibe, et Workspace Studio enchaîne les étapes chez Google, avec des plafonds d'usage appliqués au 1er novembre 2026. Chez Microsoft, Cowork, disponible depuis le 16 juin 2026 pour les comptes pros sous licence, demande une validation avant toute action jugée sensible."
     },
     {
      "t": "Gouvernance et indicateurs",

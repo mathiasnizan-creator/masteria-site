@@ -64,7 +64,7 @@ export default {
         h3: "Le choix du modèle et Cowork élargissent le terrain de jeu",
         paras: [
           "Depuis le 6 octobre 2026, Copilot sur le web propose de relancer une réponse en changeant de modèle. Microsoft annonce aussi l'arrivée, dans la semaine qui a suivi le 30 septembre, de nouveaux modèles d'OpenAI et d'Anthropic dans Word, Excel et PowerPoint. En atelier, soumettre la même réécriture à deux modèles aide chacun à choisir le sien.",
-          "Copilot Cowork, généralisé aux comptes d'entreprise fin septembre 2026, produit lui-même des documents Word, des classeurs, des présentations ou des PDF au fil d'une tâche en plusieurs étapes, et s'arrête pour obtenir votre feu vert dès qu'une action est sensible. Son usage est facturé en plus de la licence. Les réflexes appris sur un document ouvert valent pour lui : relire ce qui a été produit avant de le diffuser.",
+          "Copilot Cowork, ouvert aux comptes d'entreprise le 16 juin 2026, sous licence et après activation par l'administrateur, produit lui-même des documents Word, des classeurs, des présentations ou des PDF au fil d'une tâche en plusieurs étapes, et s'arrête pour obtenir votre feu vert dès qu'une action est sensible. Son usage est facturé en plus de la licence. Les réflexes appris sur un document ouvert valent pour lui : relire ce qui a été produit avant de le diffuser.",
         ],
       },
     ],

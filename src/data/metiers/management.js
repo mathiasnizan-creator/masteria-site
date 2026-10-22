@@ -200,7 +200,7 @@ export default {
     },
     {
      "t": "Assistant ou agent : ce qui suffit à un manager",
-     "d": "Un assistant de préparation de réunion construit sur vos gabarits couvre la plupart des besoins : projet partagé, compétence, Agent Builder sur SharePoint. Copilot Cowork, que Microsoft décrit comme disponible pour tous les comptes professionnels depuis le 29 septembre 2026, enchaîne des tâches et sollicite votre feu vert pour toute action sensible ; brancher un agent sur un logiciel métier reste un projet d'intégration. Les GPTs existants migrent en plugins avant le 11 décembre 2026."
+     "d": "Un assistant de préparation de réunion construit sur vos gabarits couvre la plupart des besoins : projet partagé, compétence, Agent Builder sur SharePoint. Copilot Cowork, disponible depuis le 16 juin 2026 pour les comptes professionnels sous licence, enchaîne des tâches et sollicite votre feu vert pour toute action sensible ; brancher un agent sur un logiciel métier reste un projet d'intégration. Les GPTs existants migrent en plugins avant le 11 décembre 2026."
     },
     {
      "t": "Le flash qui se prépare seul",
@@ -434,7 +434,7 @@ export default {
   "lignes": [
    {
     "outil": "copilot",
-    "texte": "Avec la licence Microsoft Copilot, Teams transcrit les réunions, en tire un résumé (jusqu'à 30 jours en arrière) et dresse la liste des actions, tandis qu'Outlook résume les fils et propose des brouillons. Cowork, l'agent de Microsoft disponible pour les comptes professionnels depuis le 29 septembre 2026, planifie des tâches et attend votre accord avant toute action sensible. {/formation-copilot-management|Copilot pour les managers}"
+    "texte": "Avec la licence Microsoft Copilot, Teams transcrit les réunions, en tire un résumé (jusqu'à 30 jours en arrière) et dresse la liste des actions, tandis qu'Outlook résume les fils et propose des brouillons. Cowork, l'agent de Microsoft ouvert le 16 juin 2026 aux comptes professionnels dotés de la licence, planifie des tâches et attend votre accord avant toute action sensible. {/formation-copilot-management|Copilot pour les managers}"
    },
    {
     "outil": "gemini",

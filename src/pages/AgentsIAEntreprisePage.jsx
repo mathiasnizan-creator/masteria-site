@@ -330,7 +330,7 @@ const TOOLS = [
   {
     icon: LayoutGrid,
     name: 'Microsoft Copilot : Agent Builder, Copilot Studio et Cowork',
-    desc: "Dans Microsoft Copilot, Agent Builder monte un agent simple à partir de consignes et de sources. Copilot Studio construit des agents métier en programmant peu ou pas : publiés dans Microsoft Copilot, ils sont compris dans la licence ; autonomes ou ouverts à l'extérieur, ils consomment des crédits, vendus 173,30 € HT par mois le pack de 25 000 ou à l'usage. Copilot Cowork, ouvert à tous les comptes professionnels et facturé à l'usage, rédige et envoie des mails, cale des réunions, produit des documents, accepte jusqu'à 50 compétences personnalisées et demande votre accord avant chaque action sensible.",
+    desc: "Dans Microsoft Copilot, Agent Builder monte un agent simple à partir de consignes et de sources. Copilot Studio construit des agents métier en programmant peu ou pas : publiés dans Microsoft Copilot, ils sont compris dans la licence ; autonomes ou ouverts à l'extérieur, ils consomment des crédits, vendus 173,30 € HT par mois le pack de 25 000 ou à l'usage. Copilot Cowork, réservé aux titulaires de la licence Microsoft 365 Copilot et facturé à l'usage, rédige et envoie des mails, cale des réunions, produit des documents, accepte jusqu'à 50 compétences personnalisées et demande votre accord avant chaque action sensible.",
   },
   {
     icon: Cloud,

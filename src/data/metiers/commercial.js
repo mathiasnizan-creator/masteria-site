@@ -179,7 +179,7 @@ export default {
     },
     {
      "t": "Atelier relances",
-     "d": "Séquences par persona et par étape, variantes de ton, rythme, réécriture d'une relance restée sans réponse. Gemini dans Gmail comme Copilot dans Outlook résument le fil et proposent un brouillon depuis la boîte mail ; Copilot Cowork, ouvert aux comptes professionnels fin septembre 2026, prépare une relance planifiée et demande votre accord avant chaque envoi."
+     "d": "Séquences par persona et par étape, variantes de ton, rythme, réécriture d'une relance restée sans réponse. Gemini dans Gmail comme Copilot dans Outlook résument le fil et proposent un brouillon depuis la boîte mail ; Copilot Cowork, ouvert le 16 juin 2026 aux comptes professionnels sous licence, prépare une relance planifiée et demande votre accord avant chaque envoi."
     },
     {
      "t": "Atelier compte rendu et CRM",

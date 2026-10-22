@@ -39,7 +39,7 @@ export default {
     },
     {
       title: "Cowork et les agents passent de la réponse à l'action",
-      body: "Documenté en disponibilité générale le 29 septembre 2026 pour les comptes professionnels, Copilot Cowork mène une tâche en plusieurs étapes : il envoie des mails, planifie des réunions, crée des fichiers Word, Excel, PowerPoint ou PDF et publie dans Teams. Avant chaque action sensible, il demande votre accord et en affiche le niveau de risque. Sa consommation se paie au-delà du prix de la licence. Pour un besoin plus simple, Agent Builder construit sans code un assistant ancré dans vos documents ; Copilot Studio prend la suite quand l'agent doit intervenir dans vos logiciels. La formation vous aide à placer chaque besoin au bon étage, avant d'engager un budget.",
+      body: "En disponibilité générale depuis le 16 juin 2026 pour les comptes professionnels qui ont la licence, une fois activé par l'administrateur, Copilot Cowork mène une tâche en plusieurs étapes : il envoie des mails, planifie des réunions, crée des fichiers Word, Excel, PowerPoint ou PDF et publie dans Teams. Avant chaque action sensible, il demande votre accord et en affiche le niveau de risque. Sa consommation se paie au-delà du prix de la licence. Pour un besoin plus simple, Agent Builder construit sans code un assistant ancré dans vos documents ; Copilot Studio prend la suite quand l'agent doit intervenir dans vos logiciels. La formation vous aide à placer chaque besoin au bon étage, avant d'engager un budget.",
     },
   ],
 
@@ -156,7 +156,7 @@ export default {
     },
     {
       q: 'Que change Copilot Cowork pour une équipe ?',
-      a: "Cowork mène une tâche jusqu'au bout : il envoie des mails, planifie des réunions, crée des fichiers Word, Excel, PowerPoint ou PDF, publie dans Teams et cherche dans l'organisation. Il demande l'accord de l'utilisateur avant toute action sensible, avec un niveau de risque affiché, et peut lancer une tâche à heure fixe ou à la réception d'un mail ou d'un message Teams. Il accepte jusqu'à 50 compétences personnalisées, en plus des siennes. Microsoft le documente en disponibilité générale depuis le 29 septembre 2026 ; sa consommation est facturée au-delà de la licence. La formation le met à l'essai sur une tâche de votre semaine, validations comprises.",
+      a: "Cowork mène une tâche jusqu'au bout : il envoie des mails, planifie des réunions, crée des fichiers Word, Excel, PowerPoint ou PDF, publie dans Teams et cherche dans l'organisation. Il demande l'accord de l'utilisateur avant toute action sensible, avec un niveau de risque affiché, et peut lancer une tâche à heure fixe ou à la réception d'un mail ou d'un message Teams. Il accepte jusqu'à 50 compétences personnalisées, en plus des siennes. Il est en disponibilité générale depuis le 16 juin 2026 pour les titulaires de la licence, après activation par l'administrateur ; sa consommation est facturée au-delà de la licence. La formation le met à l'essai sur une tâche de votre semaine, validations comprises.",
     },
     {
       q: 'Agent Builder ou Copilot Studio : où construire nos agents ?',

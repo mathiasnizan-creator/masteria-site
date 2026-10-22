@@ -199,7 +199,7 @@ export default {
     },
     {
      "t": "Jusqu'où automatiser le poste",
-     "d": "Le plus souvent, une compétence ou un projet commun suffit ; l'Agent Builder de Copilot construit un assistant « mail dirigeant » sur vos modèles SharePoint ; Copilot Cowork, disponible pour l'ensemble des comptes d'entreprise depuis fin septembre 2026, prépare un mail ou planifie une réunion et attend votre feu vert avant tout geste sensible. Quant aux GPTs, OpenAI y met fin le 11 décembre 2026 ; ceux qui servent encore se convertissent en plugins."
+     "d": "Le plus souvent, une compétence ou un projet commun suffit ; l'Agent Builder de Copilot construit un assistant « mail dirigeant » sur vos modèles SharePoint ; Copilot Cowork, disponible depuis le 16 juin 2026 pour les comptes d'entreprise équipés de la licence, prépare un mail ou planifie une réunion et attend votre feu vert avant tout geste sensible. Quant aux GPTs, OpenAI y met fin le 11 décembre 2026 ; ceux qui servent encore se convertissent en plugins."
     },
     {
      "t": "Tâches récurrentes",
@@ -437,7 +437,7 @@ export default {
   "lignes": [
    {
     "outil": "copilot",
-    "texte": "Dans Outlook, Copilot résume un fil et propose un brouillon ; il récapitule aussi une réunion Teams et rédige dans Word ; sans licence, Copilot Chat ne lit que le fichier déposé ou le mail ouvert. Copilot Cowork, en service depuis la fin septembre 2026, prépare un envoi ou une réunion et attend votre accord. {/formation-copilot-assistante|Copilot pour l'assistanat}"
+    "texte": "Dans Outlook, Copilot résume un fil et propose un brouillon ; il récapitule aussi une réunion Teams et rédige dans Word ; sans licence, Copilot Chat ne lit que le fichier déposé ou le mail ouvert. Copilot Cowork, en service depuis le 16 juin 2026, prépare un envoi ou une réunion et attend votre accord. {/formation-copilot-assistante|Copilot pour l'assistanat}"
    },
    {
     "outil": "gemini",

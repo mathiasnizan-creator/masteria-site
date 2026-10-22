@@ -50,7 +50,7 @@ export default {
       {
         h3: "Cowork et les invites planifiées installent des routines d'équipe",
         paras: [
-          "Disponible pour les comptes de travail depuis la fin septembre 2026, Copilot Cowork déroule une tâche de bout en bout : rassembler les points d'avancement, rédiger le message de la semaine, planifier la réunion suivante, publier dans le canal Teams de l'équipe. Il demande l'accord du manager avant chaque action sensible et indique le niveau de risque de chacune. Une tâche peut revenir chaque vendredi, ou partir quand un message arrive dans un canal. Microsoft facture sa consommation en sus de l'abonnement.",
+          "Disponible depuis le 16 juin 2026 pour les comptes de travail sous licence, Copilot Cowork déroule une tâche de bout en bout : rassembler les points d'avancement, rédiger le message de la semaine, planifier la réunion suivante, publier dans le canal Teams de l'équipe. Il demande l'accord du manager avant chaque action sensible et indique le niveau de risque de chacune. Une tâche peut revenir chaque vendredi, ou partir quand un message arrive dans un canal. Microsoft facture sa consommation en sus de l'abonnement.",
           "Pour une routine plus légère, une invite planifiée suffit : chaque lundi à 8 heures, la liste des actions en retard relevées dans les réunions de la semaine précédente. La documentation consultée fin septembre en accorde dix par personne, licence requise. Avant de programmer quoi que ce soit, une question tranche : qui lira le résultat, et qu'en fera-t-il ?",
         ],
       },

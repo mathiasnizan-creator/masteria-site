@@ -44,7 +44,7 @@ export default {
         h3: "Une fois le client parti : compte rendu, relance et suivi",
         paras: [
           "Dans Teams, Copilot tire d'une réunion enregistrée et transcrite un résumé et les actions décidées. Prévenez le client avant d'enregistrer, car sa voix et ses propos sont des données personnelles. Dans Outlook, Copilot rédige la relance à partir du fil, propose un ton plus direct ou plus cordial, et signale une formulation floue avant l'envoi.",
-          "Depuis que Microsoft l'a déclaré prêt pour les comptes professionnels, le 29 septembre 2026, Copilot Cowork va jusqu'à l'action. Il prépare le mail de relance, planifie la réunion suivante, crée le fichier Excel de suivi, et attend votre accord avant chaque action sensible en affichant son niveau de risque. Une tâche peut aussi se lancer dès qu'un mail arrive, une demande de devis par exemple. Sa consommation se paie en plus de la licence : l'atelier aide à estimer ce que coûte une tâche avant de la généraliser.",
+          "Depuis que Microsoft l'a déclaré prêt pour les comptes professionnels, le 16 juin 2026, Copilot Cowork va jusqu'à l'action, une fois activé par l'administrateur. Il prépare le mail de relance, planifie la réunion suivante, crée le fichier Excel de suivi, et attend votre accord avant chaque action sensible en affichant son niveau de risque. Une tâche peut aussi se lancer dès qu'un mail arrive, une demande de devis par exemple. Sa consommation se paie en plus de la licence : l'atelier aide à estimer ce que coûte une tâche avant de la généraliser.",
         ],
       },
       {
@@ -278,7 +278,7 @@ export default {
     },
     {
       q: 'Copilot peut-il envoyer des relances à notre place ?',
-      a: "Oui, avec Copilot Cowork, ouvert aux comptes professionnels à la fin du mois de septembre 2026 : il sait envoyer des mails et planifier des réunions. Il demande votre accord avant chaque action sensible et affiche son niveau de risque. Une tâche peut aussi partir à heure fixe ou à réception d'un message. Nous conseillons de garder la validation humaine sur tout message adressé à un client, et de suivre la consommation de Cowork, qui s'ajoute à l'abonnement.",
+      a: "Oui, avec Copilot Cowork, disponible depuis le 16 juin 2026 pour les comptes professionnels qui ont la licence : il sait envoyer des mails et planifier des réunions. Il demande votre accord avant chaque action sensible et affiche son niveau de risque. Une tâche peut aussi partir à heure fixe ou à réception d'un message. Nous conseillons de garder la validation humaine sur tout message adressé à un client, et de suivre la consommation de Cowork, qui s'ajoute à l'abonnement.",
     },
     {
       q: 'Peut-on enregistrer nos rendez-vous clients dans Teams ?',
@@ -327,7 +327,7 @@ export default {
     { label: 'Deux jours pour construire ses agents IA', href: '/formation-agents-ia' },
   ],
   sources: [
-    { name: "Microsoft Learn : Copilot Cowork et la validation des actions (29 septembre 2026)", url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/' },
+    { name: "Microsoft Learn : Copilot Cowork et la validation des actions (page mise à jour le 29 septembre 2026)", url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/' },
     { name: "Microsoft Learn : ce que Copilot lit avec ou sans licence", url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview' },
     { name: "Microsoft France : la grille de Copilot Business relevée début octobre 2026", url: 'https://www.microsoft.com/fr-fr/microsoft-365-copilot/business' },
     { name: "Microsoft Learn : modèles d'Anthropic et réglage pour l'Europe", url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor' },

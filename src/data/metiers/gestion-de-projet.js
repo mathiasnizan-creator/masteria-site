@@ -435,7 +435,7 @@ export default {
   "lignes": [
    {
     "outil": "copilot",
-    "texte": "Copilot résume et transcrit les réunions Teams avec les actions à suivre, consulte SharePoint dans la limite de vos droits et, avec la licence, met à disposition l'agent Researcher. D'après la documentation Microsoft du 29 septembre 2026, Copilot Cowork, désormais ouvert aux comptes professionnels, peut fixer une réunion ou publier dans Teams une fois votre accord donné. {/formation-microsoft-copilot|Former l'équipe à Copilot}"
+    "texte": "Copilot résume et transcrit les réunions Teams avec les actions à suivre, consulte SharePoint dans la limite de vos droits et, avec la licence, met à disposition l'agent Researcher. D'après la documentation de Microsoft, Copilot Cowork, ouvert depuis le 16 juin 2026 aux comptes professionnels sous licence, peut fixer une réunion ou publier dans Teams une fois votre accord donné. {/formation-microsoft-copilot|Former l'équipe à Copilot}"
    },
    {
     "outil": "chatgpt",
