@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import {
   Megaphone, Users, TrendingUp, Briefcase, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
-  BadgeCheck, Wallet, MonitorSmartphone, Building2, BookOpen,
+  Wallet, BookOpen,
   Filter, RotateCcw, ArrowRight, Check, ChevronRight,
   Clock, MapPin, ShieldCheck, Zap, Award, UserCheck, ShoppingCart, Layers, UsersRound, Wrench,
 } from 'lucide-react'
@@ -343,36 +343,45 @@ export default function MetiersHubPage({ variant } = {}) {
           </h1>
 
           {/* Réponse directe, citable telle quelle par les moteurs et les IA */}
-          <div style={{
-            textAlign: 'left', background: '#fff', border: '1px solid #E5E7EB',
-            borderLeft: '4px solid #1A62FF', borderRadius: 12,
-            padding: isMobile ? '16px 18px' : '20px 26px',
-            maxWidth: 760, margin: '0 auto 24px',
-          }}>
-            <p style={{ fontSize: 16, color: '#1F2937', lineHeight: 1.65, margin: 0 }}>
-              <strong style={{ color: '#0A0A0A' }}>Une formation à l'intelligence artificielle chez Masteria</strong> dure
-              une ou deux journées. Elle réunit une équipe de douze personnes au maximum, en intra, ou une seule
-              personne avec son formateur, et chaque exercice se fait dans les logiciels que votre entreprise a
-              déjà déployés, à partir de vos propres dossiers. Cinq assistants peuvent être enseignés : ChatGPT,
-              Microsoft Copilot, Gemini, Claude et Vibe de Mistral AI. Le tarif démarre à 1 980 € HT par jour de
-              formation, et la certification Qualiopi de l'organisme rend la session finançable par votre OPCO.
-            </p>
-          </div>
-
           <p style={{
             fontSize: 'clamp(16px, 2vw, 19px)', color: '#4B5563',
-            maxWidth: 720, margin: '0 auto 18px', lineHeight: 1.65,
+            maxWidth: 700, margin: '0 auto 32px', lineHeight: 1.6,
           }}>
-            Choisissez une formation IA pour votre entreprise en croisant
-            l'<strong style={{ color: '#0A0A0A' }}>outil</strong> et le
-            <strong style={{ color: '#0A0A0A' }}> métier</strong>.
-            Depuis 2022, Masteria écrit des programmes sur ChatGPT, Copilot de Microsoft, Gemini de Google, Claude d'Anthropic et Vibe de Mistral AI, pour des équipes qui veulent s'en servir dès le lendemain.
-            Pas encore d'outil en tête ? Notre <Link to="/quel-outil-ia" style={{ color: '#2563EB', fontWeight: 600 }}>simulateur de choix d'outil</Link> vous oriente en trois questions.
+            Depuis 2022, Masteria forme les équipes aux assistants d'IA dans les logiciels déjà déployés
+            chez elles, à partir de leurs propres dossiers. Choisissez votre programme en croisant
+            l'<strong style={{ color: '#0A0A0A' }}>outil</strong> et le <strong style={{ color: '#0A0A0A' }}>métier</strong>.
           </p>
 
-          <p style={{ fontSize: 15, color: '#92400E', fontWeight: 600, margin: '0 auto 36px', maxWidth: 560 }}>
-            Chaque fiche détaille la durée, les objectifs, les ateliers et le prix d'un programme.
-          </p>
+          {/* L'essentiel en quatre repères */}
+          <dl style={{
+            display: 'grid', gap: 12, margin: '0 auto 36px', maxWidth: 900, textAlign: 'left',
+            gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4, 1fr)',
+          }}>
+            {[
+              { icon: Clock,     label: 'Durée',  value: '1 ou 2 jours',         detail: 'Sur site ou en visioconférence' },
+              { icon: UsersRound, label: 'Format', value: 'Intra, 12 au plus',   detail: 'Ou en individuel avec le formateur' },
+              { icon: Layers,    label: 'Outils', value: '5 assistants',          detail: 'ChatGPT, Copilot, Gemini, Claude, Vibe' },
+              { icon: Wallet,    label: 'Tarif',  value: 'Dès 1 980 € HT',        detail: 'Par jour, finançable par votre OPCO' },
+            ].map(({ icon: Icon, label, value, detail }) => (
+              <div key={label} style={{
+                background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12,
+                padding: isMobile ? '14px 14px' : '16px 18px',
+              }}>
+                <dt style={{
+                  display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6,
+                  fontSize: 12, fontWeight: 700, color: '#1A62FF',
+                  textTransform: 'uppercase', letterSpacing: '0.06em',
+                }}>
+                  <Icon size={14} strokeWidth={2.4} aria-hidden="true" />
+                  {label}
+                </dt>
+                <dd style={{ margin: 0 }}>
+                  <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 16 : 18, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.25 }}>{value}</span>
+                  <span style={{ display: 'block', fontSize: 13, color: '#6B7280', lineHeight: 1.45, marginTop: 4 }}>{detail}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
             <a href="#filtres" style={{
@@ -393,28 +402,31 @@ export default function MetiersHubPage({ variant } = {}) {
             </Link>
           </div>
 
-          {/* Badges réassurance */}
-          <div style={{
+          {/* Accès directs aux trois façons de parcourir le catalogue */}
+          <nav aria-label="Parcourir le catalogue" style={{
             display: 'flex', gap: 10, flexWrap: 'wrap',
-            justifyContent: 'center', marginTop: 36,
+            justifyContent: 'center', alignItems: 'center', marginTop: 32,
           }}>
+            <span style={{ fontSize: 13, fontWeight: 600, color: '#6B7280' }}>Parcourir :</span>
             {[
-              { icon: BadgeCheck,        label: 'Qualiopi : actions de formation' },
-              { icon: Wallet,            label: 'OPCO de branche mobilisable' },
-              { icon: MonitorSmartphone, label: 'Sur site ou en visioconférence' },
-              { icon: Building2,         label: 'Intra (12 au plus) ou individuel' },
-            ].map(({ icon: Icon, label }) => (
-              <span key={label} style={{
-                background: '#fff', color: '#374151',
-                padding: '7px 14px', borderRadius: 6, fontSize: 13, fontWeight: 600,
+              { icon: Layers,     label: 'Par outil',    href: '#par-outil' },
+              { icon: Briefcase,  label: 'Par métier',   href: '#filtres' },
+              { icon: BookOpen,   label: 'Thématiques',  href: '#thematiques' },
+            ].map(({ icon: Icon, label, href }) => (
+              <a key={label} href={href} style={{
+                background: '#fff', color: '#374151', textDecoration: 'none',
+                padding: '7px 14px', borderRadius: 99, fontSize: 13, fontWeight: 600,
                 border: '1px solid #E5E7EB',
-                display: 'inline-flex', alignItems: 'center', gap: 8,
+                display: 'inline-flex', alignItems: 'center', gap: 7,
               }}>
-                <Icon size={15} strokeWidth={2.2} style={{ color: '#d97706' }} />
+                <Icon size={14} strokeWidth={2.2} style={{ color: '#1A62FF' }} aria-hidden="true" />
                 {label}
-              </span>
+              </a>
             ))}
-          </div>
+          </nav>
+          <p style={{ fontSize: 14, color: '#6B7280', margin: '16px 0 0' }}>
+            Pas encore d'outil en tête ? Le <Link to="/quel-outil-ia" style={{ color: '#1A62FF', fontWeight: 600 }}>simulateur de choix d'outil</Link> vous oriente en trois questions.
+          </p>
         </div>
       </section>
 
@@ -430,69 +442,6 @@ export default function MetiersHubPage({ variant } = {}) {
         </div>
       </section>
 
-      {/* ── Formation certifiante : réponse honnête ── */}
-      <section id="certifiante" style={{
-        padding: isMobile ? '48px 20px' : '72px 40px',
-        background: '#fff', borderBottom: '1px solid #E5E7EB',
-      }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-          <h2 style={{
-            fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 900,
-            fontFamily: 'Nunito, sans-serif', color: '#0A0A0A',
-            letterSpacing: '-0.01em', margin: '0 0 14px',
-          }}>
-            Formation certifiante en IA : trois mots à distinguer
-          </h2>
-          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 820 }}>
-            Beaucoup d'offres emploient « certifiante » ou « AI certification » sans préciser ce qui est certifié.
-            Trois documents répondent à trois questions différentes : la qualité de l'organisme, la valeur du
-            parcours, la présence du stagiaire. Voici où se situent les formations de Masteria pour chacun.
-          </p>
-          <div style={{
-            display: 'grid', gap: 16,
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-          }}>
-            {[
-              {
-                term: 'Qualiopi',
-                scope: "Porte sur l'organisme",
-                text: "Masteria la détient au titre des actions de formation. Délivrée par Certifopac, elle court jusqu'au 28 janvier 2029 et contrôle les procédures, de l'analyse de vos besoins à l'évaluation finale. C'est elle qui autorise un OPCO à régler la session.",
-                status: 'Détenue par Masteria',
-              },
-              {
-                term: 'RNCP ou Répertoire spécifique',
-                scope: 'Porte sur le parcours',
-                text: "Un parcours certifiant mène à un titre enregistré par France Compétences, avec un référentiel, des épreuves et un jury. Seuls ces parcours ouvrent le CPF. Nos sessions d'une ou deux journées n'aboutissent à aucun titre de ce type.",
-                status: 'Non concerné',
-              },
-              {
-                term: 'Certificat de réalisation',
-                scope: 'Porte sur le stagiaire',
-                text: "Remis à la fin de la session avec le bilan de l'évaluation des acquis, il prouve au financeur que chaque participant a suivi les heures prévues. Il documente une formation suivie et ne vaut pas diplôme.",
-                status: 'Remis à chaque stagiaire',
-              },
-            ].map(({ term, scope, text, status }) => (
-              <div key={term} style={{
-                background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 14,
-                padding: 22, display: 'flex', flexDirection: 'column', gap: 8,
-              }}>
-                <span style={{ fontSize: 12, fontWeight: 700, color: '#1A62FF', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{scope}</span>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{term}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.65, margin: 0, flex: 1 }}>{text}</p>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{status}</span>
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '28px 0 0', maxWidth: 820 }}>
-            Si vous visez un titre reconnu, ou si l'on vous propose une certification d'éditeur, cherchez sa
-            fiche dans les répertoires publics de France Compétences avant de vous engager. Pour former vos
-            équipes à un assistant d'IA sans passer par votre compte personnel, la page{' '}
-            <Link to="/formation-intelligence-artificielle-cpf" style={{ color: '#1A62FF', fontWeight: 600 }}>formation IA et CPF</Link>{' '}
-            compare les financements possibles. Une formation à Claude en français, sur vos documents, est décrite sur la page{' '}
-            <Link to="/formation-claude-ia" style={{ color: '#1A62FF', fontWeight: 600 }}>formation Claude</Link>.
-          </p>
-        </div>
-      </section>
 
 
       </>)}
@@ -711,7 +660,8 @@ export default function MetiersHubPage({ variant } = {}) {
       {/* ═══════════════════════════════════════════════════════════
        * RACCOURCIS : HUBS PAR OUTIL & PAR MÉTIER
        * ═══════════════════════════════════════════════════════════ */}
-      <section style={{
+      <section id="par-outil" style={{
+        scrollMarginTop: 80,
         padding: isMobile ? '48px 20px' : '72px 40px',
         background: '#F9FAFB',
         borderTop: '1px solid #E5E7EB',
@@ -760,7 +710,8 @@ export default function MetiersHubPage({ variant } = {}) {
        * FORMATIONS THÉMATIQUES & FORMATS (pages dédiées hors spokes,
        * absentes du filtre temps réel qui ne connaît que SPOKES)
        * ═══════════════════════════════════════════════════════════ */}
-      <section style={{
+      <section id="thematiques" style={{
+        scrollMarginTop: 80,
         padding: isMobile ? '48px 20px' : '72px 40px',
         background: '#fff',
         borderTop: '1px solid #E5E7EB',
@@ -1060,6 +1011,70 @@ export default function MetiersHubPage({ variant } = {}) {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Formation certifiante : réponse honnête ── */}
+      <section id="certifiante" style={{
+        padding: isMobile ? '48px 20px' : '72px 40px',
+        background: '#fff', borderBottom: '1px solid #E5E7EB',
+      }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto' }}>
+          <h2 style={{
+            fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 900,
+            fontFamily: 'Nunito, sans-serif', color: '#0A0A0A',
+            letterSpacing: '-0.01em', margin: '0 0 14px',
+          }}>
+            Formation certifiante en IA : trois mots à distinguer
+          </h2>
+          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, margin: '0 0 28px', maxWidth: 820 }}>
+            Beaucoup d'offres emploient « certifiante » ou « AI certification » sans préciser ce qui est certifié.
+            Trois documents répondent à trois questions différentes : la qualité de l'organisme, la valeur du
+            parcours, la présence du stagiaire. Voici où se situent les formations de Masteria pour chacun.
+          </p>
+          <div style={{
+            display: 'grid', gap: 16,
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
+          }}>
+            {[
+              {
+                term: 'Qualiopi',
+                scope: "Porte sur l'organisme",
+                text: "Masteria la détient au titre des actions de formation. Délivrée par Certifopac, elle court jusqu'au 28 janvier 2029 et contrôle les procédures, de l'analyse de vos besoins à l'évaluation finale. C'est elle qui autorise un OPCO à régler la session.",
+                status: 'Détenue par Masteria',
+              },
+              {
+                term: 'RNCP ou Répertoire spécifique',
+                scope: 'Porte sur le parcours',
+                text: "Un parcours certifiant mène à un titre enregistré par France Compétences, avec un référentiel, des épreuves et un jury. Seuls ces parcours ouvrent le CPF. Nos sessions d'une ou deux journées n'aboutissent à aucun titre de ce type.",
+                status: 'Non concerné',
+              },
+              {
+                term: 'Certificat de réalisation',
+                scope: 'Porte sur le stagiaire',
+                text: "Remis à la fin de la session avec le bilan de l'évaluation des acquis, il prouve au financeur que chaque participant a suivi les heures prévues. Il documente une formation suivie et ne vaut pas diplôme.",
+                status: 'Remis à chaque stagiaire',
+              },
+            ].map(({ term, scope, text, status }) => (
+              <div key={term} style={{
+                background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 14,
+                padding: 22, display: 'flex', flexDirection: 'column', gap: 8,
+              }}>
+                <span style={{ fontSize: 12, fontWeight: 700, color: '#1A62FF', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{scope}</span>
+                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{term}</h3>
+                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.65, margin: 0, flex: 1 }}>{text}</p>
+                <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{status}</span>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '28px 0 0', maxWidth: 820 }}>
+            Si vous visez un titre reconnu, ou si l'on vous propose une certification d'éditeur, cherchez sa
+            fiche dans les répertoires publics de France Compétences avant de vous engager. Pour former vos
+            équipes à un assistant d'IA sans passer par votre compte personnel, la page{' '}
+            <Link to="/formation-intelligence-artificielle-cpf" style={{ color: '#1A62FF', fontWeight: 600 }}>formation IA et CPF</Link>{' '}
+            compare les financements possibles. Une formation à Claude en français, sur vos documents, est décrite sur la page{' '}
+            <Link to="/formation-claude-ia" style={{ color: '#1A62FF', fontWeight: 600 }}>formation Claude</Link>.
+          </p>
         </div>
       </section>
 
