@@ -92,7 +92,8 @@ const PROGRAMMES_METIER = METIERS.filter(m => !SLUGS_CROISEMENTS.has(`formation-
   slug: `formation-ia-${m.slug}`, toolSlug: 'metiers', tool: 'Tous outils', allTools: true,
   toolColor: METIERS_HUB.color, toolColorLight: METIERS_HUB.colorLight,
   metierSlug: m.slug, metier: m.label,
-  h1: `Formation IA · ${m.label}`,
+  // `carte` : intitulé de lien propre au métier quand la requête visée l'exige (ex. « Formation IA RH »)
+  h1: m.carte || `Formation IA · ${m.label}`,
   metaDesc: `${m.desc}. Deux jours sur l'assistant de votre structure, quel qu'il soit.`,
 }))
 

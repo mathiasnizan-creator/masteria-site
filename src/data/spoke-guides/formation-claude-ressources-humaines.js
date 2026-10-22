@@ -3,7 +3,7 @@
 // Fait métier : AI Act, annexe III point 4, obligations reportées au 2 décembre 2027 (sources-metiers.json).
 export default {
   slug: 'formation-claude-ressources-humaines',
-  updatedAt: '2026-10-05',
+  updatedAt: '2026-10-22',
   updatedLabel: 'Programme à jour · octobre 2026',
   pagePropre: true,
   auteur: true,
@@ -298,7 +298,7 @@ export default {
     { label: "Plan de compétences IA : la méthode du DRH, de l'entretien de parcours au CSE", href: '/formation-ia-drh-plan-competences' },
     { label: "AI Act et RH : les règles du recrutement et de l'évaluation", href: '/blog/ai-act-rh-conformite-recrutement-evaluation' },
     { label: "IA et RGPD : contrôler un usage avant de le déployer", href: '/ia-et-rgpd' },
-    { label: "Formation IA des ressources humaines, tous outils confondus", href: '/formation-ia-ressources-humaines' },
+    { label: "Formation IA RH, tous outils confondus", href: '/formation-ia-ressources-humaines' },
   ],
   avisPriorite: ['Claude', 'RH|ressources humaines', 'recrut', 'données'],
   sources: [

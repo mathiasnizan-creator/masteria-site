@@ -160,7 +160,7 @@ Masteria exerce trois métiers, menés par la même équipe :
 ## Formations par métier
 
 - [Formation IA Marketing](https://www.master-ia.fr/formation-ia-marketing)
-- [Formation IA Ressources Humaines](https://www.master-ia.fr/formation-ia-ressources-humaines)
+- [Formation IA RH pour les DRH et leurs équipes](https://www.master-ia.fr/formation-ia-ressources-humaines)
 - [Formation IA Commercial](https://www.master-ia.fr/formation-ia-commercial)
 - [Formation IA Finance](https://www.master-ia.fr/formation-ia-finance)
 - [Formation IA Communication](https://www.master-ia.fr/formation-ia-communication)
@@ -291,7 +291,7 @@ Chaque page décrit un programme dédié à un outil pour un métier précis, av
 - [Formation Claude IA pour les Managers et Dirigeants](https://www.master-ia.fr/formation-claude-management)
 - [Formation Claude IA pour les équipes Marketing](https://www.master-ia.fr/formation-claude-marketing)
 - [Formation Claude IA pour les équipes Pédagogiques](https://www.master-ia.fr/formation-claude-pedagogique)
-- [Formation Claude IA pour les équipes RH](https://www.master-ia.fr/formation-claude-ressources-humaines)
+- [Formation Claude pour les RH : accords, entretiens et recrutement encadré](https://www.master-ia.fr/formation-claude-ressources-humaines)
 - [Formation Claude IA pour les équipes SEO et Acquisition](https://www.master-ia.fr/formation-claude-seo)
 - [Formation Claude IA pour les équipes Service Client](https://www.master-ia.fr/formation-claude-service-client)
 
