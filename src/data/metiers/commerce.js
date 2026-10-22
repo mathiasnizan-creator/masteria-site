@@ -5,21 +5,23 @@
  * de la consommation, ordonnance n° 2021-1734, en vigueur le 28/05/2022) ; prix de référence d'une réduction
  * = prix le plus bas des 30 jours précédents (art. L112-1-1) ; AI Act art. 50 depuis le 02/08/2026 ;
  * Adobe Digital Insights, rapport d'avril 2026 (mémo chiffres GEO vérifiés le 30/09/2026).
+ * Intention (2026-10-22) : commerce de détail, retail, e-commerce (« formation ia commerce », « … retail »).
+ * Les équipes de vente B2B vont à /formation-ia-commercial : ne pas reprendre ce libellé dans le hero ni les titres.
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
  "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA commerce, e-commerce : fiches, avis | Masteria",
-  "metaDesc": "Formation IA commerce et e-commerce : fiches produits, opérations en magasin, avis clients, ventes, marketplaces. Sur vos produits, règles 2026. Qualiopi.",
-  "keywords": "formation ia commerce, formation ia e-commerce, formation intelligence artificielle commerce, ia retail, ia fiches produits, ia avis clients, formation ia distribution, ia magasin, formation chatgpt e-commerce",
-  "h1": "Formation IA commerce et e-commerce : l'IA générative de la fiche produit au client en magasin",
-  "h1a": "Formation IA commerce et e-commerce :",
+  "metaTitle": "Formation IA commerce, retail et e-commerce | Masteria",
+  "metaDesc": "Formation IA commerce et retail pour enseignes, magasins et e-commerçants : fiches produits, opérations, avis clients, marketplaces, règles 2026. Qualiopi.",
+  "keywords": "formation ia commerce, formation ia retail, formation ia e-commerce, formation intelligence artificielle commerce, ia retail, ia fiches produits, ia avis clients, formation ia distribution, ia magasin, formation chatgpt e-commerce",
+  "h1": "Formation IA commerce, retail et e-commerce : l'IA générative de la fiche produit au client en magasin",
+  "h1a": "Formation IA commerce, retail et e-commerce :",
   "h1b": "l'IA générative de la fiche produit au client en magasin",
-  "eyebrow": "Formation métier · Commerce et e-commerce",
+  "eyebrow": "Formation métier · Commerce, retail et e-commerce",
   "badge3": "Sur votre catalogue, vos magasins et vos avis",
-  "geo": "La formation IA commerce de Masteria s'adresse aux enseignes, aux réseaux de magasins et aux e-commerçants qui vendent aux particuliers. Sur leur propre catalogue, les équipes apprennent à faire produire par l'IA générative des fiches produits complètes, les supports d'une opération en magasin, les réponses aux avis et aux questions des clients, le commentaire des ventes et les contenus des marketplaces. Les règles du commerce de détail encadrent chaque atelier : interdiction des faux avis, prix de référence d'une promotion, données de fidélité protégées. Deux jours en intra ; l'OPCOMMERCE, opérateur d'une grande partie des enseignes, peut participer au financement.",
-  "sub": "Commerce et non vente aux entreprises : pour une équipe commerciale B2B, la page {/formation-ia-commercial|formation IA commercial} est la bonne. Le commerce de détail vit de volumes, des milliers de références, des dizaines d'opérations, des centaines d'avis, et l'IA générative y rend beaucoup de temps. Reste à garder la main sur l'exactitude des caractéristiques, la loyauté des promotions et la relation avec le client.",
-  "intro": "La formation IA commerce de Masteria apprend aux enseignes, aux magasins et aux e-commerçants à confier une part de leurs écrits à l'IA générative (catalogue, opérations, avis clients), dans le respect du droit de la consommation."
+  "geo": "Une formation IA commerce apprend aux enseignes, aux réseaux de magasins et aux e-commerçants qui vendent aux particuliers à confier à l'IA générative une part de leurs écrits : fiches produits complètes, supports d'une opération en magasin, réponses aux avis et aux questions des clients, commentaire des ventes par famille ou par magasin, contenus des marketplaces. Chez Masteria, les équipes y travaillent deux jours en intra sur leur propre catalogue, dans les règles du commerce de détail : interdiction des faux avis, prix de référence d'une promotion, données de fidélité protégées. L'OPCOMMERCE, opérateur d'une grande partie des enseignes, peut participer au financement.",
+  "sub": "Le commerce de détail vit de volumes : des milliers de références, des dizaines d'opérations, des centaines d'avis. L'IA générative y rend beaucoup de temps, à condition de garder la main sur l'exactitude des caractéristiques, la loyauté des promotions et la relation avec le client.",
+  "intro": "Une formation IA commerce apprend aux enseignes, aux magasins et aux e-commerçants à confier une part de leurs écrits à l'IA générative (catalogue, opérations, avis clients), dans le respect du droit de la consommation."
  },
  "enBref": [
   {
@@ -221,8 +223,8 @@ export default {
   }
  ],
  "profilsHead": {
-  "h2": "Pour qui, dans le commerce de détail et la vente en ligne ?",
-  "answer": "Pour les sièges d'enseigne et leurs réseaux de magasins, les e-commerçants et pure players, les chefs de produit, category managers et équipes de marketing retail, les responsables de magasin et les vendeurs, le service client. Aucun prérequis technique. Pour la vente aux entreprises, la formation IA commercial est plus adaptée."
+  "h2": "Pour qui, dans le commerce de détail et l'e-commerce ?",
+  "answer": "Pour les sièges d'enseigne et leurs réseaux de magasins, les e-commerçants et pure players, les chefs de produit, category managers et équipes de marketing retail, les responsables de magasin et les vendeurs, le service client. Aucun prérequis technique."
  },
  "profils": [
   {
@@ -269,8 +271,8 @@ export default {
    "a": "Le travail quotidien du commerce de détail, accompli avec l'IA générative sur vos produits et dans vos magasins : fiches produits rédigées et harmonisées en série, supports des opérations commerciales et publications des magasins, réponses aux avis et au service client, outillage du réseau, commentaire des ventes et revue de gamme, boutique en ligne et marketplaces. Le cadre du secteur traverse les deux jours : faux avis interdits, prix de référence des promotions, données de fidélité protégées, visuels fidèles."
   },
   {
-   "q": "Formation IA commerce ou formation IA commercial : laquelle choisir ?",
-   "a": "Les deux mots se ressemblent, les métiers diffèrent. La formation commerce vise les enseignes, les magasins et les e-commerçants qui vendent à des particuliers : catalogue, point de vente, avis, boutique en ligne. La {/formation-ia-commercial|formation IA commercial} vise les équipes qui vendent à d'autres entreprises : prospection, rendez-vous, propositions, CRM. Vous vendez en magasin ou en ligne à des consommateurs : vous êtes au bon endroit."
+   "q": "Vous vendez à des entreprises plutôt qu'à des particuliers ?",
+   "a": "Ce programme part du catalogue, du magasin et de la boutique en ligne : il vise les enseignes et les e-commerçants qui vendent à des consommateurs. Une équipe qui prospecte des entreprises, prépare des rendez-vous, rédige des propositions et suit ses affaires dans un CRM trouvera le sien sur la page {/formation-ia-commercial|formation IA commercial}."
   },
   {
    "q": "Peut-on produire des milliers de fiches produits avec l'IA sans erreur ?",
@@ -306,7 +308,7 @@ export default {
   }
  ],
  "course": {
-  "name": "Formation IA commerce et e-commerce (Masteria)",
+  "name": "Formation IA commerce, retail et e-commerce (Masteria)",
   "description": "Formation à l'IA générative pour le commerce de détail et la vente en ligne, sur le catalogue et les magasins des participants : fiches produits, opérations commerciales et marketing des magasins, avis et service client, outillage du réseau, analyse des ventes et revue de gamme, boutique en ligne et marketplaces, règles sur les avis, les prix et les données clients. Outils : Gemini, ChatGPT, Microsoft Copilot, Claude, Vibe. Deux jours en intra, déploiement par vagues pour les réseaux. Organisme certifié Qualiopi.",
   "level": "Tous niveaux",
   "teaches": [
@@ -324,9 +326,9 @@ export default {
   "locationName": "Masteria, en intra : au siège ou en magasin (France, Europe, États-Unis, Inde), ou en classe virtuelle"
  },
  "article": {
-  "headline": "Formation IA commerce et e-commerce : l'IA générative de la fiche produit au client en magasin",
+  "headline": "Formation IA commerce, retail et e-commerce : l'IA générative de la fiche produit au client en magasin",
   "datePublished": "2026-06-20",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-22",
   "dateLabel": "octobre 2026",
   "about": [
    {

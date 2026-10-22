@@ -82,12 +82,12 @@ const TOOL_LIGNES = {
 /* Métiers, regroupés par famille et nommés pour la home : la liste brute de
    catalog-meta.js est reprise telle quelle sur une quarantaine de pages. */
 const METIERS_HOME = [
-  ['commercial', 'Vente et prospection'],
+  ['commercial', 'Commerciaux et vente'],
   ['marketing', 'Marketing'],
   ['communication', 'Communication et relations presse'],
   ['seo', 'Référencement et contenus web'],
   ['service-client', 'Relation client'],
-  ['commerce', 'Magasins et e-commerce'],
+  ['commerce', 'Commerce de détail et e-commerce'],
   ['ressources-humaines', 'RH et recrutement'],
   ['finance', 'Finance et contrôle de gestion'],
   ['comptabilite', 'Services comptables'],

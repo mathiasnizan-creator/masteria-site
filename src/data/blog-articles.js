@@ -2948,7 +2948,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Financer une formation IA via son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Custom GPTs en entreprise : retrait et migration", href: '/blog/custom-gpt-entreprise-creer-assistants-chatgpt' },
-      { label: "Formation IA commerciaux : prospection, relance, closing", href: '/formation-ia-commercial' },
+      { label: "Formation IA commercial : prospection, relance, closing", href: '/formation-ia-commercial' },
     ],
   },
 

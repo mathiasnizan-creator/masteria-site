@@ -327,7 +327,7 @@ export default {
   },
   liensAssocies: [
     { label: "Répondre aux appels d'offres avec l'IA : méthode et limites", href: '/blog/ia-pour-repondre-appels-doffres' },
-    { label: "Formation IA des équipes commerciales, tous assistants", href: '/formation-ia-commercial' },
+    { label: "Formation IA commercial pour toute l'équipe de vente", href: '/formation-ia-commercial' },
     { label: "Un agent commercial IA construit sur vos outils", href: '/agent-commercial-ia' },
     { label: "Missions documentées : formations, conseil et outils construits", href: '/etudes-de-cas-ia' },
   ],

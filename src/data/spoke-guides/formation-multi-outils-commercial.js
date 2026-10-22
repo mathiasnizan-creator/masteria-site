@@ -242,7 +242,7 @@ export default {
     lien: '/etudes-de-cas-ia#photovoltaique',
   },
   liensAssocies: [
-    { label: "Formation IA pour les équipes commerciales, sans comparatif d'outils", href: '/formation-ia-commercial' },
+    { label: "Formation IA commercial, sans comparatif d'outils", href: '/formation-ia-commercial' },
     { label: "Claude pour la vente : propositions, compétences et appels d'offres", href: '/formation-claude-commercial' },
     { label: "Copilot pour les commerciaux : Outlook, Teams et propositions dans Word", href: '/formation-copilot-commercial' },
     { label: "Agent commercial IA construit sur mesure", href: '/agent-commercial-ia' },

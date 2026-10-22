@@ -1,21 +1,23 @@
 /* Contenu enrichi SEO+GEO de /formation-ia-commercial (template MetierPage).
  * Généré depuis metier-content-enrichi.js le 2026-08-19, puis édité ici directement.
  * Page propre depuis le 2026-10-07 (pagePropre : voir l'en-tête de src/pages/MetierPage.jsx).
+ * Intention (2026-10-22) : les commerciaux et les équipes de vente (« formation ia commercial »,
+ * « … pour commerciaux », « … vente ») ; le commerce de détail et l'e-commerce vont à /formation-ia-commerce.
  * Liens inline : {/slug|libellé}. Icônes : noms lucide résolus par MetierPage (ICON_BY_NAME). */
 export default {
  "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA commercial : prospecter et vendre | Masteria",
-  "metaDesc": "Formation IA commercial sur vos comptes : prospection, rendez-vous, propositions, relances, CRM. ChatGPT, Copilot, Claude, Gemini, Vibe. Qualiopi, OPCO.",
-  "keywords": "formation ia commercial, formation ia commerciaux, formation intelligence artificielle vente, formation ia pour équipe commerciale, formation ia prospection",
-  "h1": "Formation IA commercial : l'IA générative sur tout votre cycle de vente",
+  "metaTitle": "Formation IA commercial : vente, prospection, CRM | Masteria",
+  "metaDesc": "Formation IA commercial pour les commerciaux et les équipes de vente : prospection, rendez-vous, propositions, relances, CRM, sur vos comptes. Qualiopi.",
+  "keywords": "formation ia commercial, formation ia pour commerciaux, formation ia commerciaux, formation ia vente, formation commerciale ia, formation intelligence artificielle vente, formation ia pour équipe commerciale, formation ia prospection",
+  "h1": "Formation IA commercial : l'IA générative pour les commerciaux et les équipes de vente",
   "h1a": "Formation IA commercial :",
-  "h1b": "l'IA générative sur tout votre cycle de vente",
-  "eyebrow": "Formation métier · Commercial",
+  "h1b": "l'IA générative pour les commerciaux et les équipes de vente",
+  "eyebrow": "Formation métier · Commerciaux et vente",
   "badge3": "Sur vos comptes, vos offres et votre CRM",
-  "geo": "La formation IA commercial de Masteria donne à vos vendeurs une méthode pour se servir de l'IA générative du premier contact jusqu'à la signature : ciblage d'un compte, brief de rendez-vous, proposition, relance, compte rendu dans le CRM, répétition d'une négociation. Deux journées en intra, bâties sur vos comptes et vos offres, avec l'outil de votre équipe : Claude, Gemini, ChatGPT, Vibe ou Microsoft Copilot (anciennement Microsoft 365 Copilot). L'action est certifiée Qualiopi ; son financement relève de votre OPCO, d'après ses propres critères.",
+  "geo": "Une formation IA commercial apprend aux commerciaux à se servir de l'IA générative à chaque étape de la vente, du premier contact à la signature : cibler un compte, préparer un rendez-vous, rédiger une proposition, relancer, tenir le CRM, répéter une négociation. Celle de Masteria dure deux journées en intra, bâties sur vos comptes et vos offres, avec l'outil de votre équipe : Claude, Gemini, ChatGPT, Vibe ou Microsoft Copilot (anciennement Microsoft 365 Copilot). Elle coûte à partir de 1 980 € HT la journée, préparation sur mesure en plus ; l'action est certifiée Qualiopi, et votre OPCO décide de son financement d'après ses propres critères.",
   "sub": "Un vendeur récupère surtout du temps sur la préparation : la recherche sur un compte, le brief avant le rendez-vous, la première version d'une proposition. La vente punit pourtant le message passe-partout plus durement que tout autre métier, car il finit à la corbeille et grille le contact. Les deux journées apprennent à chercher, personnaliser, vérifier et suivre, pour que la vitesse profite à la relation avec l'acheteur.",
-  "intro": "La formation IA commercial de Masteria donne à vos vendeurs une méthode pour se servir de l'IA générative du premier contact jusqu'à la signature, sur vos comptes et vos offres, en deux journées certifiées Qualiopi."
+  "intro": "Une formation IA commercial apprend aux commerciaux et aux équipes de vente à se servir de l'IA générative du premier contact jusqu'à la signature ; chez Masteria, en deux journées certifiées Qualiopi, sur vos comptes et vos offres."
  },
  "enBref": [
   {
@@ -218,7 +220,7 @@ export default {
  ],
  "profilsHead": {
   "h2": "Pour quelles équipes de vente ?",
-  "answer": "Pour toute la chaîne commerciale : vendeurs terrain et sédentaires, business developers et SDR, key account managers, directeurs et managers qui fixent les règles et suivent les résultats. Nul besoin de compétences techniques : l'expérience de la vente suffit, en B2B comme en B2C."
+  "answer": "Pour toute la chaîne commerciale : vendeurs terrain et sédentaires, business developers et SDR, key account managers, directeurs et managers qui fixent les règles et suivent les résultats. Nul besoin de compétences techniques : l'expérience de la vente suffit, en B2B comme en B2C. Une enseigne ou une boutique en ligne qui vend à des particuliers trouvera son programme sur la page {/formation-ia-commerce|formation IA commerce et e-commerce}."
  },
  "profils": [
   {
@@ -316,9 +318,9 @@ export default {
   "locationName": "Masteria : intra-entreprise, en présentiel (Europe, États-Unis, Inde) ou à distance"
  },
  "article": {
-  "headline": "Formation IA commercial : l'IA générative sur tout votre cycle de vente",
+  "headline": "Formation IA commercial : l'IA générative pour les commerciaux et les équipes de vente",
   "datePublished": "2025-09-15",
-  "dateModified": "2026-10-07",
+  "dateModified": "2026-10-22",
   "dateLabel": "octobre 2026",
   "about": [
    {
@@ -404,6 +406,7 @@ export default {
    "desc": "Un directeur commercial ou un key account manager, seul avec un formateur."
   }
  ],
+ "formationsTitre": "Formations IA pour commerciaux, outil par outil",
  "bibliotheque": "Pour juger sur pièces avant la session, la {/bibliotheque-de-prompts#commercial|bibliothèque de prompts commerciaux} propose des demandes prêtes à copier : qualifier un prospect, préparer les objections, relancer après un rendez-vous, débriefer une affaire perdue. Chacune vient avec la logique qui la fait fonctionner.",
  "ctaMilieu": {
   "titre": "Un programme calé sur votre cycle de vente",

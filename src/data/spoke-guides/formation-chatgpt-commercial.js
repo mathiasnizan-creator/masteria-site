@@ -202,7 +202,7 @@ export default {
     texte: "Une fois la méthode acquise par les vendeurs, Masteria peut développer un outil plus ambitieux : un agent qui lit les demandes de devis entrantes et prépare une première réponse, ou un plugin qui réunit vos offres, vos références et votre trame de proposition. Droits d'accès, budget de crédits et circuit de validation se fixent au cadrage, et l'agent passe une batterie de tests avant d'écrire à un client. Sorti du champ de la formation, et donc pas finançable par votre OPCO, ce développement se paie au forfait, fixé après le cadrage.",
   },
   liensAssocies: [
-    { label: "Formation IA commerciale, quel que soit l'assistant", href: '/formation-ia-commercial' },
+    { label: "Formation IA commercial, quel que soit l'assistant", href: '/formation-ia-commercial' },
     { label: "Formation Claude pour les commerciaux", href: '/formation-claude-commercial' },
     { label: "Formation Copilot pour la vente", href: '/formation-copilot-commercial' },
     { label: "Un agent commercial IA conçu sur mesure", href: '/agent-commercial-ia' },

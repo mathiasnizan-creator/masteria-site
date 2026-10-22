@@ -315,7 +315,7 @@ export default {
     },
   },
   liensAssocies: [
-    { label: "Formation IA commerciale avec ChatGPT, Copilot, Claude ou Vibe", href: '/formation-ia-commercial' },
+    { label: "Formation IA commercial avec ChatGPT, Copilot, Claude ou Vibe", href: '/formation-ia-commercial' },
     { label: "Un agent commercial IA construit sur votre CRM et votre offre", href: '/agent-commercial-ia' },
     { label: "La même fonction commerciale outillée avec Claude", href: '/formation-claude-commercial' },
     { label: "Mistral AI face à ChatGPT : le comparatif vérifié en octobre 2026", href: '/mistral-vs-chatgpt' },

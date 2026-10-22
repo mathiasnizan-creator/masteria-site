@@ -58,6 +58,10 @@ import CadrageLink from '../components/CadrageLink'
    - base.deepDive, deepDiveTitle, deepDiveIntro       → bloc « IA par fonction » (le contenu
                     historique METIER_CONTENT n'est plus lu en mode propre)
    - cta : { h2, p } (champ existant)                   → CTA final
+   - formationsTitre : string (facultatif)              → titre du bloc des formations par outil
+                    (sinon « N formations <Métier> disponibles »)
+   Les réponses de FAQ et profilsHead.answer acceptent aussi les liens {/slug|libellé} ;
+   le JSON-LD de la FAQ reçoit le texte sans balisage.
    Masqués d'office : chiffres « +1 500 / OPCO / 2 jours », FounderNote, sous-titre de la FAQ,
    ligne de réassurance du CTA final, cas d'usage des cartes outil, descriptions du maillage.
    Balisés en <nav aria-label> (listes de liens, sans paragraphe) : formations par outil,
@@ -533,7 +537,7 @@ function FaqItem({ q, a }) {
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
         <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', marginTop: -4 }}>
-          {a}
+          <RichText text={a} />
         </p>
       </div>
     </div>
@@ -727,7 +731,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
         slug={slug}
         keywords={enrichi?.base?.keywords}
         breadcrumbs={breadcrumbs}
-        faqItems={faqItems}
+        faqItems={faqItems.map(f => ({ ...f, a: String(f.a).replace(/\{\/[^|}]+\|([^}]+)\}/g, '$1') }))}
         courseData={enrichi?.course ? { ...enrichi.course, syllabusSections } : undefined}
         datePublished={enrichi?.article?.datePublished}
         dateModified={enrichi?.article?.dateModified}
@@ -929,7 +933,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={wrap}>
             <div style={kickerStyle}>Pour qui</div>
             <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.profilsHead?.h2}</h2>
-            <p style={answerStyle}><strong>{enrichi.profilsHead?.answer}</strong></p>
+            <p style={answerStyle}><strong>{enrichi.profilsHead?.answer && <RichText text={enrichi.profilsHead.answer} />}</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
               {enrichi.profils.map(card => {
                 const Icon = ICON_BY_NAME[card.icon] || METIER_ICONS[card.icon] || Users
@@ -1053,7 +1057,9 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
       <section id="formations"style={{ padding: '80px 40px', background: '#fff' }}>
         <FormationsWrap {...(propre ? { 'aria-label': `Formations ${metierData.label} par outil` } : {})} style={{ maxWidth: 960, margin: '0 auto' }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 36px)', fontWeight: 800, color: '#0A0A0A', marginBottom: propre ? 40 : 12 }}>
-            {nbFormations} formation{nbFormations > 1 ? 's' : ''} {metierData.label} disponible{nbFormations > 1 ? 's' : ''}
+            {propre && enrichi.formationsTitre
+              ? enrichi.formationsTitre
+              : <>{nbFormations} formation{nbFormations > 1 ? 's' : ''} {metierData.label} disponible{nbFormations > 1 ? 's' : ''}</>}
           </h2>
           {!propre && (
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 56, maxWidth: 640 }}>

@@ -88,11 +88,16 @@ const PROGRAMMES_OUTIL = HUBS
 
 // achats et qse existent déjà comme croisements multi-outils : pas de doublon
 const SLUGS_CROISEMENTS = new Set(CROISEMENTS.map(s => s.slug))
+// Titres de carte calés sur la requête de la page, quand « Formation IA · <Métier> » s'en écarte
+const TITRES_PROGRAMME_METIER = {
+  commercial: 'Formation IA commercial',
+  commerce: 'Formation IA commerce et e-commerce',
+}
 const PROGRAMMES_METIER = METIERS.filter(m => !SLUGS_CROISEMENTS.has(`formation-ia-${m.slug}`)).map(m => ({
   slug: `formation-ia-${m.slug}`, toolSlug: 'metiers', tool: 'Tous outils', allTools: true,
   toolColor: METIERS_HUB.color, toolColorLight: METIERS_HUB.colorLight,
   metierSlug: m.slug, metier: m.label,
-  h1: `Formation IA · ${m.label}`,
+  h1: TITRES_PROGRAMME_METIER[m.slug] || `Formation IA · ${m.label}`,
   metaDesc: `${m.desc}. Deux jours sur l'assistant de votre structure, quel qu'il soit.`,
 }))
 

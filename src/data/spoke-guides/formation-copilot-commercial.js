@@ -321,7 +321,7 @@ export default {
   },
   liensAssocies: [
     { label: 'Tous les programmes Copilot, de la finance au service client', href: '/formation-microsoft-copilot' },
-    { label: 'Formation IA pour les commerciaux, tous assistants', href: '/formation-ia-commercial' },
+    { label: 'Formation IA commercial, tous assistants confondus', href: '/formation-ia-commercial' },
     { label: 'Un agent commercial IA construit sur vos données', href: '/agent-commercial-ia' },
     { label: 'ChatGPT face à Copilot, le comparatif utile aux vendeurs', href: '/copilot-vs-chatgpt' },
     { label: 'Deux jours pour construire ses agents IA', href: '/formation-agents-ia' },
