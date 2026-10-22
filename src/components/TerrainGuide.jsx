@@ -5,7 +5,17 @@ import { Copy, Check, AlertTriangle } from 'lucide-react'
 /* Guide terrain : contenu propre à une page (src/data/spoke-guides/<slug>.js ou
    geo-guides/<slug>.js). Thèse, sections, tableau, cas pratique avec prompt prêt à
    copier, pièges et sources. Rendu identique sur SpokePage et GeoPage.
-   Chargement des données : src/data/terrain-guides.js. */
+   Chargement des données : src/data/terrain-guides.js.
+   Liens internes inline dans l'intro, les paragraphes et les listes : "…{/slug|libellé}…"
+   (même syntaxe que les pages métier). */
+
+function RichText({ text, color }) {
+  const parts = String(text).split(/(\{\/[^|}]+\|[^}]+\})/g)
+  return parts.map((part, i) => {
+    const m = part.match(/^\{(\/[^|}]+)\|([^}]+)\}$/)
+    return m ? <Link key={i} to={m[1]} style={{ color, fontWeight: 600 }}>{m[2]}</Link> : part
+  })
+}
 
 function PromptBlock({ prompt, color }) {
   const [copied, setCopied] = useState(false)
@@ -54,7 +64,7 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
           {guide.h2}
         </h2>
         {intro && (
-          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, margin: '0 0 18px' }}>{intro}</p>
+          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, margin: '0 0 18px' }}><RichText text={intro} color={c} /></p>
         )}
         {guide.lead && (
           <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.75, margin: '0 0 40px', fontWeight: 500 }}>{guide.lead}</p>
@@ -63,13 +73,13 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
         {guide.sections?.map((s, i) => (
           <div key={i} style={{ marginBottom: 36 }}>
             <h3 style={h3Style}>{s.h3}</h3>
-            {s.paras?.map((p, j) => <p key={j} style={pStyle}>{p}</p>)}
+            {s.paras?.map((p, j) => <p key={j} style={pStyle}><RichText text={p} color={c} /></p>)}
             {s.list?.length > 0 && (
               <ul style={{ margin: '4px 0 0', paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {s.list.map((item, j) => (
                   <li key={j} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.7 }}>
                     <span style={{ color: c, fontWeight: 700, flexShrink: 0 }}>→</span>
-                    <span>{item}</span>
+                    <span><RichText text={item} color={c} /></span>
                   </li>
                 ))}
               </ul>

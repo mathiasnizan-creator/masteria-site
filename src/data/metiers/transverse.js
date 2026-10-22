@@ -342,6 +342,12 @@ export default {
    "desc": "Cinq assistants comparés en deux jours."
   },
   {
+   "label": "Formation prompt engineering",
+   "href": "/formation-prompt-engineering",
+   "tag": "Méthode",
+   "desc": "Prompts, consignes de projet et Skills, en une journée."
+  },
+  {
    "label": "Acculturation IA",
    "href": "/acculturation-ia",
    "tag": "La démarche",

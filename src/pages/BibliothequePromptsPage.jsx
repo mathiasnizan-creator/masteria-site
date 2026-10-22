@@ -218,7 +218,7 @@ export default function BibliothequePromptsPage() {
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: '#5B6679', display: 'flex', gap: 8, marginBottom: 28, flexWrap: 'wrap' }}>
             <Link to="/" style={{ color: '#5B6679' }}>Accueil</Link>
             <span style={{ color: '#3A4658' }}>/</span>
-            <Link to="/formation-prompt-engineering" style={{ color: '#5B6679' }}>Prompt engineering</Link>
+            <Link to="/formation-prompt-engineering" style={{ color: '#5B6679' }}>Formation prompt engineering</Link>
             <span style={{ color: '#3A4658' }}>/</span>
             <span style={{ color: '#93C5FD', fontWeight: 600 }}>Bibliothèque de prompts</span>
           </nav>

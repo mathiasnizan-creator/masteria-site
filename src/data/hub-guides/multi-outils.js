@@ -38,7 +38,7 @@ export default {
   carteOutil: 'Panorama IA',
   carteTitres: {
     'formation-vibe-coding': "Vibe coding : une application décrite en langage courant, codée par l'IA",
-    'formation-prompt-engineering': "Prompt engineering : une méthode valable dans chaque assistant",
+    'formation-prompt-engineering': "Formation prompt engineering : une méthode valable dans chaque assistant",
     'formation-multi-outils-marketing': "Marketing : quel assistant pour quelle étape de campagne",
     'formation-multi-outils-ressources-humaines': "Ressources humaines : comparer sans exposer les dossiers",
     'formation-multi-outils-commercial': "Commercial : un assistant par étape de la vente, sur vos dossiers",
@@ -52,7 +52,7 @@ export default {
 
   spokeDescs: {
     'formation-vibe-coding': "Décrire à Cursor, Replit, v0, Bolt.new ou Lovable l'outil interne ou le prototype dont l'équipe a besoin, puis relire ce qui sort, le tester, et repérer le moment où l'informatique doit reprendre le projet.",
-    'formation-prompt-engineering': "Une journée sur une méthode de demande qui tient dans ChatGPT comme dans Copilot, Gemini, Claude ou Vibe : consigne structurée, sources exigées, réponses vérifiées, puis une bibliothèque que toute l'équipe réutilise.",
+    'formation-prompt-engineering': "Une journée sur une méthode d'écriture qui tient dans ChatGPT comme dans Copilot, Gemini, Claude ou Vibe : prompts structurés, consignes de projet, réponses vérifiées, puis des compétences SKILL.md que toute l'équipe réutilise.",
     'formation-multi-outils-marketing': "Répartir brief, plan de campagne, déclinaisons et bilan mensuel entre les assistants, avec la voix de la marque consignée dans une compétence et les visuels confiés à l'outil qui sait les produire.",
     'formation-multi-outils-ressources-humaines': "Tester les outils sur des dossiers chargés de données personnelles, décider lesquels peuvent recevoir un compte rendu d'entretien, et garder le tri des candidatures hors de portée de l'IA.",
     'formation-multi-outils-commercial': "Préparer un rendez-vous, bâtir la réponse à une consultation, relancer : chaque étape confiée à l'assistant qui accède à la bonne source (messagerie, CRM, traitement de texte) sans exposer vos conditions tarifaires.",

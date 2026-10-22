@@ -3685,13 +3685,15 @@ const BLOG_ARTICLES_BASE = [
     ],
     cta: {
       title: "Former vos équipes au prompt engineering",
-      desc: "Notre formation inclut systématiquement une session de prompt engineering adaptée à votre métier, avec une bibliothèque de prompts personnalisée remise en fin de journée.",
+      desc: "Notre formation prompt engineering tient en une journée, sur l'outil déjà déployé chez vous : prompts structurés, consignes de projet, compétences au format SKILL.md et instructions d'agents, travaillés à partir de ce que vos équipes font chaque semaine.",
       buttons: [
-        { label: "Demander un devis", href: '/contact', primary: true },
-        { label: "Voir le catalogue formations", href: '/formation-intelligence-artificielle' },
+        { label: "Voir la formation prompt engineering", href: '/formation-prompt-engineering', primary: true },
+        { label: "Demander un devis", href: '/contact' },
       ],
     },
     internalLinks: [
+      { label: "Formation prompt engineering", href: '/formation-prompt-engineering' },
+      { label: "Bibliothèque de prompts IA par métier", href: '/bibliotheque-de-prompts' },
       { label: "Formation ChatGPT en entreprise", href: '/formation-chatgpt' },
       { label: "Formation Claude IA", href: '/formation-claude-ia' },
       { label: "Former ses équipes à l'IA : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
