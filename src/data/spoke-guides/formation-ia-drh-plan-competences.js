@@ -290,7 +290,7 @@ export default {
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [
-    { label: "Formation IA pour les équipes RH, tous outils confondus", href: '/formation-ia-ressources-humaines' },
+    { label: "Formation IA pour les DRH et les équipes RH, tous outils confondus", href: '/formation-ia-ressources-humaines' },
     { label: "Formation AI Act : obligations, calendrier, conformité", href: '/formation-ai-act' },
     { label: "Financer une formation IA : OPCO, Qualiopi, effectif", href: '/financement-formation-ia' },
     { label: "Plan annuel de formation à l'IA : le modèle à remplir", href: '/blog/plan-formation-ia-annuel-template' },

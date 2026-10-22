@@ -2380,7 +2380,7 @@ const BLOG_ARTICLES_BASE = [
         type: 'ul',
         items: [
           "<a href=\"/formation-ia-marketing\">Formation IA pour les équipes marketing</a>",
-          "<a href=\"/formation-ia-ressources-humaines\">Formation IA pour les RH</a>",
+          "<a href=\"/formation-ia-ressources-humaines\">Formation IA RH</a>",
           "<a href=\"/formation-ia-finance\">Formation IA pour la finance</a>",
           "<a href=\"/formation-ia-commercial\">Formation IA pour les commerciaux</a>",
           "<a href=\"/formation-ia-assistante\">Formation IA pour les assistantes de direction</a>",
@@ -3366,14 +3366,14 @@ const BLOG_ARTICLES_BASE = [
     slug: 'formation-ia-ressources-humaines',
     externalPath: '/formation-ia-ressources-humaines',
     tag: 'Métier',
-    title: "Formation IA pour les RH : 8 cas d'usage concrets à maîtriser",
+    title: "Formation IA RH : les usages concrets, pour les DRH et leurs équipes",
     metaTitle: "Formation IA pour les RH : 8 cas d'usage concrets | Masteria",
     metaDesc: "Formation IA pour les RH : recrutement, GPEC, onboarding, paie, formation. Les 8 cas d’usage ChatGPT et Copilot les plus rentables pour les équipes RH.",
     date: '26 avril 2026',
     datePublished: '2026-04-26',
     dateModified: '2026-04-26',
     readTime: '10 min',
-    excerpt: "Rédaction de fiches de poste, tri de candidatures, onboarding, GPEC : les 8 cas d'usage IA les plus rentables pour les équipes RH.",
+    excerpt: "Recrutement, entretiens, plan de compétences, données du SIRH : ce que la formation IA RH apprend aux DRH et à leurs équipes, sous le RGPD et l'AI Act.",
     intro: "Les équipes RH sont parmi les plus exposées à la transformation par l'IA générative. Leurs missions — rédaction, tri, communication, suivi administratif — correspondent exactement aux points forts des outils comme ChatGPT, Copilot ou Claude. Pourtant, les formations IA conçues pour les RH restent rares : la plupart des programmes sont soit trop génériques, soit pensés pour des data scientists. Ce guide présente 8 cas d'usage concrets, applicables dès le lendemain de la formation.",
     blocks: [
       { type: 'h2', text: "Cas d'usage 1 : rédiger des offres d'emploi percutantes" },
@@ -4624,6 +4624,7 @@ const BLOG_ARTICLES_BASE = [
       { label: "Financer sa formation IA via son OPCO", href: '/blog/financer-formation-ia-opco-qualiopi' },
       { label: "ROI d'une formation IA", href: '/blog/roi-formation-ia-entreprise-mesurer' },
       { label: "Former ses équipes : par où commencer", href: '/blog/former-ses-equipes-ia-par-ou-commencer' },
+      { label: "Formation IA RH", href: '/formation-ia-ressources-humaines' },
     ],
   },
 
@@ -5606,7 +5607,7 @@ const BLOG_ARTICLES_BASE = [
           "Mois 6 — Formation des équipes RH (DRH, recruteurs, gestionnaires de carrière) sur les nouveaux process.",
         ],
       },
-      { type: 'p', text: "C'est exactement le programme que Masteria déploie chez ses clients via une formation dédiée AI Act + RH, financée par l'OPCO de la branche." },
+      { type: 'p', text: "La <a href=\"/formation-ia-ressources-humaines\">formation IA pour les DRH</a> de Masteria, ouverte à toute l'équipe RH, applique ce cadre à vos dossiers : liste des usages autorisés, examen des modules d'IA intégrés à vos logiciels de recrutement, note destinée au comité social et économique. La certification Qualiopi de Masteria permet une prise en charge par l'OPCO de la branche, selon ses critères." },
     ],
     faq: [
       { q: "Qui est responsable de la conformité AI Act en entreprise ?", a: "Selon la taille de l'entreprise, c'est le DRH (en lien avec le DPO et le juridique), un référent IA dédié, ou un comité IA pluridisciplinaire. La responsabilité ultime reste celle de la direction générale, qui peut être mise en cause personnellement en cas de manquement grave." },
@@ -5627,7 +5628,7 @@ const BLOG_ARTICLES_BASE = [
     internalLinks: [
       { label: "Former les élus du CSE et la direction à l'IA", href: '/formation-cse-ia' },
       { label: "AI Act et formation obligatoire", href: '/blog/ai-act-formation-ia-obligatoire-entreprise' },
-      { label: "Formation IA pour les RH", href: '/formation-ia-ressources-humaines' },
+      { label: "Formation IA RH pour les DRH et leurs équipes", href: '/formation-ia-ressources-humaines' },
       { label: "Sécurité IA et RGPD en entreprise", href: '/blog/securite-ia-entreprise-rgpd' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },
       { label: "Formation IA dirigeants", href: '/formation-ia-dirigeants' },

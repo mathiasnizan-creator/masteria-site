@@ -884,6 +884,28 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
         </section>
       )}
 
+      {/* ── FOCUS (optionnel : un public traité à part, ex. les DRH sur la page RH) ── */}
+      {enrichi?.focus?.items?.length > 0 && (
+        <section id={enrichi.focus.id || 'focus'} style={{ padding: sectionPad, background: '#fff', borderTop: '1px solid #F3F4F6' }}>
+          <div style={wrap}>
+            <div style={kickerStyle}>{enrichi.focus.kicker}</div>
+            <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.focus.h2}</h2>
+            <p style={answerStyle}><strong>{enrichi.focus.answer}</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
+              {enrichi.focus.items.map((item, i) => (
+                <div key={i} style={{ ...cardStyle, padding: 24 }}>
+                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}><RichText text={item.desc} /></p>
+                </div>
+              ))}
+            </div>
+            {enrichi.focus.foot && (
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}><RichText text={enrichi.focus.foot} /></p>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* ── ATOUTS (enrichi : 6 gains citables) ── */}
       {enrichi?.atouts?.length > 0 && (
         <section id="atouts" style={{ padding: sectionPad, background: '#F9FAFB' }}>

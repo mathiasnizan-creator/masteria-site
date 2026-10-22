@@ -279,7 +279,7 @@ export default {
   },
   liensAssocies: [
     { label: "Toutes les formations Microsoft Copilot", href: '/formation-microsoft-copilot' },
-    { label: "Formation IA pour les ressources humaines, tous outils", href: '/formation-ia-ressources-humaines' },
+    { label: "Formation IA RH pour les DRH et leurs équipes, tous outils", href: '/formation-ia-ressources-humaines' },
     { label: "L'AI Act appliqué au recrutement et à l'évaluation", href: '/blog/ai-act-rh-conformite-recrutement-evaluation' },
     { label: "Former la DRH à piloter les compétences à l'ère de l'IA", href: '/formation-ia-drh-plan-competences' },
     { label: "Claude pour les équipes RH", href: '/formation-claude-ressources-humaines' },

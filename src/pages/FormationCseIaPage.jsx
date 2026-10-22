@@ -698,7 +698,7 @@ export default function FormationCseIaPage() {
               { label: 'Formation AI Act', href: '/formation-ai-act', tag: 'Conformité', desc: "Le règlement européen dans le détail : obligations, calendrier après l'Omnibus, plan de mise en conformité." },
               { label: 'Formation gouvernance IA', href: '/formation-gouvernance-ia', tag: 'Gouvernance', desc: "Les règles, les rôles et le pilotage des usages : le versant direction de cette journée." },
               { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Cadre', desc: "Le texte que le comité examinera : données autorisées, relectures, propriétaires des assistants." },
-              { label: 'Formation IA ressources humaines', href: '/formation-ia-ressources-humaines', tag: 'RH', desc: "Les usages RH de l'IA, recrutement compris, avec les garde-fous contre la discrimination." },
+              { label: 'Formation IA RH', href: '/formation-ia-ressources-humaines', tag: 'RH', desc: "Les usages RH de l'IA pour les DRH et leurs équipes, recrutement compris, avec les garde-fous contre la discrimination." },
               { label: 'Formation IA COMEX', href: '/formation-ia-comex', tag: 'Direction', desc: "La session qui aligne le comité exécutif, de l'autre côté du dialogue social." },
               { label: 'Acculturation IA', href: '/acculturation-ia', tag: 'Démarche', desc: "Faire progresser toute l'organisation, dialogue social compris : vagues, référents, mesure." },
             ].map(rel => (

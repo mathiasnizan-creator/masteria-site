@@ -87,9 +87,9 @@ export const CLAUDE_SPOKES = [
     metierSlug: 'ressources-humaines',
     hubSlug: 'formation-claude-ia',
     priority: true,
-    metaTitle: 'Formation Claude IA RH | 2 jours | Qualiopi | Masteria',
-    metaDesc: "Formez vos équipes RH à Claude IA en 2 jours : analyse d'entretiens, communications sensibles, plans de transformation, synthèse 360. Qualiopi, OPCO.",
-    h1: 'Formation Claude IA pour les équipes RH',
+    metaTitle: 'Formation Claude RH : recrutement, accords, entretiens | Masteria',
+    metaDesc: "Formez vos équipes RH à Claude en 2 jours : accords relus en entier, entretiens synthétisés, communications sensibles, recrutement encadré. Qualiopi, OPCO.",
+    h1: 'Formation Claude pour les RH : accords, entretiens et recrutement encadré',
     intro: "Les équipes RH manipulent au quotidien des contenus où la nuance et la rigueur priment sur la créativité brute : entretiens, feedback 360, communications sensibles, plans de transformation. C'est exactement le terrain où Claude excelle. Cette formation de 2 jours montre comment exploiter la rédaction structurée, la rigueur d'analyse qualitative et la prudence de Claude (Constitutional AI) sur vos vrais cas RH.",
     audience: [
       { title: 'DRH et responsables RH', desc: "Vous produisez des analyses qualitatives complexes (climat social, baromètre interne, feedback 360). Claude est l'outil de référence pour ces synthèses où la fidélité aux verbatims compte." },

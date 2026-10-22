@@ -398,7 +398,7 @@ export default {
    "desc": "Faire découvrir l'IA à vos publics."
   },
   {
-   "label": "Formation IA ressources humaines",
+   "label": "Formation IA RH",
    "href": "/formation-ia-ressources-humaines",
    "tag": "Métier voisin",
    "desc": "Pour les RH qui pilotent le plan de formation."

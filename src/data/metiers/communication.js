@@ -387,7 +387,7 @@ export default {
    "desc": "Campagnes, emailing, visuels et bilans."
   },
   {
-   "label": "Formation IA ressources humaines",
+   "label": "Formation IA RH",
    "href": "/formation-ia-ressources-humaines",
    "tag": "Métier voisin",
    "desc": "La communication interne vue des RH."

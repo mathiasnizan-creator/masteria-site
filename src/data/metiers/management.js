@@ -393,7 +393,7 @@ export default {
    "desc": "Plusieurs assistants comparés sur des cas de managers."
   },
   {
-   "label": "Formation IA ressources humaines",
+   "label": "Formation IA RH",
    "href": "/formation-ia-ressources-humaines",
    "tag": "Métier voisin",
    "desc": "Les RH qui accompagnent les managers."

@@ -235,7 +235,7 @@ export default {
     },
   },
   liensAssocies: [
-    { label: "L'IA au service des RH, programme sans comparaison d'outils", href: '/formation-ia-ressources-humaines' },
+    { label: "Formation IA RH, programme sans comparaison d'outils", href: '/formation-ia-ressources-humaines' },
     { label: "Copilot pour les RH : Word, Excel, Teams et entretiens", href: '/formation-copilot-rh' },
     { label: "Claude pour les RH : projets, compétences et dossiers longs", href: '/formation-claude-ressources-humaines' },
     { label: "Plan de développement des compétences à l'heure de l'IA", href: '/formation-ia-drh-plan-competences' },

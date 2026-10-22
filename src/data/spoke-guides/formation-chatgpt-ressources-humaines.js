@@ -201,7 +201,7 @@ export default {
     texte: "Masteria peut ensuite construire pour le service un outil durable : un plugin ChatGPT nourri des accords et du règlement intérieur, qui renseigne les managers en citant l'article et transmet tout cas individuel à un gestionnaire ; ou une compétence partagée qui met annonces et convocations au format maison. Sources, droits et questions interdites se décident au cadrage, puis l'outil affronte une série de questions pièges avant son ouverture. Ce chantier de conseil et de développement donne lieu à un devis distinct, pas finançable par votre OPCO, établi au forfait une fois le besoin cadré avec vous.",
   },
   liensAssocies: [
-    { label: "Formation IA pour les ressources humaines, tous outils", href: '/formation-ia-ressources-humaines' },
+    { label: "Formation IA RH, sur l'assistant de votre choix", href: '/formation-ia-ressources-humaines' },
     { label: "Formation Claude pour les équipes RH", href: '/formation-claude-ressources-humaines' },
     { label: "Formation Copilot pour les RH", href: '/formation-copilot-rh' },
     { label: "La DRH face à l'IA : bâtir le plan de compétences", href: '/formation-ia-drh-plan-competences' },

@@ -193,7 +193,7 @@ export const HUBS = [
 
 export const METIERS = [
   { slug: 'marketing',           label: 'Marketing',                desc: 'Contenus, campagnes, analyse de performance' },
-  { slug: 'ressources-humaines', label: 'Ressources Humaines',      desc: 'Recrutement, onboarding, communication interne' },
+  { slug: 'ressources-humaines', label: 'Ressources Humaines',      desc: 'Recrutement, onboarding, communication interne', carte: 'Formation IA RH' },
   { slug: 'finance',             label: 'Finance',                  desc: 'Analyse de données, reporting, synthèse' },
   { slug: 'commercial',          label: 'Commercial',               desc: 'Prospection, propositions, suivi client' },
   { slug: 'communication',       label: 'Communication',            desc: 'RP, contenus, communication de crise' },
