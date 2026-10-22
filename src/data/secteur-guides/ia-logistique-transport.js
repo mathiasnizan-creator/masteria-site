@@ -30,7 +30,8 @@ export default {
   formationBloc: {
     kicker: "Former l'exploitation",
     h2: "Des ateliers sur vos lettres de voiture et vos factures de transporteurs",
-    lien: "Parcourir les formations IA",
+    lien: "Voir la formation IA logistique",
+    href: "/formation-ia-logistique",
   },
   faqBloc: {
     h2: "Transport et logistique : questions fréquentes",

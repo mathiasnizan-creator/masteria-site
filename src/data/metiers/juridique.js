@@ -407,6 +407,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA pour avocats",
+   "href": "/formation-ia-avocats",
+   "tag": "Profession voisine",
+   "desc": "Cabinets d'avocats : secret professionnel et recherche sourcée."
+  },
+  {
    "label": "IA pour les professions du droit",
    "href": "/ia-juridique",
    "tag": "Secteur",

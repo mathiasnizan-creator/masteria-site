@@ -359,6 +359,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA création de contenu",
+   "href": "/formation-ia-creation-contenu",
+   "tag": "Contenus",
+   "desc": "Textes, images, vidéo et podcast, avec les droits."
+  },
+  {
    "label": "Formation ChatGPT marketing",
    "href": "/formation-chatgpt-marketing",
    "tag": "Par outil",

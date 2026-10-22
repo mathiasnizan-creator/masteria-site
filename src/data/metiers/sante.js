@@ -12,7 +12,7 @@ export default {
  "base": {
   "metaTitle": "Formation IA santé : usages non cliniques | Masteria",
   "metaDesc": "Formation IA santé hors soin : courriers, qualité et certification, coordination, information des usagers. Cadre RGPD et HDS, financement ANFH ou OPCO.",
-  "keywords": "formation ia santé, formation intelligence artificielle santé, ia établissement de santé, formation ia hôpital, formation ia médico-social, ia secrétariat médical, ia qualité certification hôpital, ia données de santé hds, formation ia ehpad",
+  "keywords": "formation ia santé, formation intelligence artificielle santé, ia établissement de santé, formation ia hôpital, ia secrétariat médical, ia qualité certification hôpital, ia données de santé hds",
   "h1": "Formation IA santé : l'IA générative pour les écrits, la qualité et la coordination, hors soin",
   "h1a": "Formation IA santé :",
   "h1b": "l'IA générative pour les écrits, la qualité et la coordination, hors soin",
@@ -330,6 +330,11 @@ export default {
    "label": "IA pour la santé et la pharma",
    "href": "/ia-sante-pharma",
    "tag": "Secteur"
+  },
+  {
+   "label": "Formation IA médico-social",
+   "href": "/formation-ia-medico-social",
+   "tag": "Secteur voisin"
   },
   {
    "label": "Audit IA médico-social",

@@ -27,7 +27,8 @@ export default {
   formationBloc: {
     kicker: "Former les agents",
     h2: "Des ateliers sur vos courriers et vos pièces de marché",
-    lien: "Voir nos formations IA",
+    lien: "Voir la formation IA des collectivités",
+    href: "/formation-ia-collectivites",
   },
   faqBloc: {
     h2: "Secteur public : les questions des acheteurs et des agents",

@@ -351,6 +351,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA pour architectes",
+   "href": "/formation-ia-architectes",
+   "tag": "Profession voisine",
+   "desc": "Agences d'architecture : notices, concours, images d'ambiance."
+  },
+  {
    "label": "IA, immobilier et construction",
    "href": "/ia-immobilier-btp",
    "tag": "Secteur",

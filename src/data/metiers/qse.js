@@ -308,6 +308,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA industrie",
+   "href": "/formation-ia-industrie",
+   "tag": "Site industriel",
+   "desc": "Modes opératoires, 8D, maintenance, qualité atelier."
+  },
+  {
    "label": "Formation AI Act",
    "href": "/formation-ai-act",
    "tag": "Conformité",

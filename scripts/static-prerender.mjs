@@ -265,7 +265,7 @@ for (const dest of GEO_DESTINATIONS) {
   const locPrep = dest.nameLoc; // "à Paris", "en Suisse"
   set(slug,
     `Formation IA ${locPrep} | ChatGPT, Copilot, Gemini | Certifié Qualiopi | Masteria`,
-    `Formation intelligence artificielle ${locPrep} : ChatGPT, Copilot, Gemini, Claude, Mistral. Intra-entreprise sur mesure, certifié Qualiopi, finançable OPCO${dest.isCountry ? '' : ' en ' + dest.region}. Devis sous 24h.`
+    `Formation intelligence artificielle ${locPrep} : ChatGPT, Copilot, Gemini, Claude, Mistral. Intra-entreprise sur mesure, certifié Qualiopi, finançable OPCO${dest.isCountry ? '' : ' ' + (dest.region === dest.name ? dest.nameLoc : 'en ' + dest.region)}. Devis sous 24h.`
   );
 }
 

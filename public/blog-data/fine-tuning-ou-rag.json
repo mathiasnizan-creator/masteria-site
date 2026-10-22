@@ -1,0 +1,290 @@
+{
+  "slug": "fine-tuning-ou-rag",
+  "title": "Fine-tuning ou RAG : définitions, comparatif et lequel choisir en entreprise",
+  "metaTitle": "Fine-tuning ou RAG : c'est quoi, lequel choisir | Masteria",
+  "metaDesc": "Fine-tuning d'un modèle d'IA, c'est quoi ? Définitions, comparatif avec le RAG (coût, fraîcheur, traçabilité, effort), alternatives et cas utiles en 2026.",
+  "tag": "Guide",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "13 min",
+  "formations": [["Formation data et IA", "/formation-data-ia"], ["Formation prompt engineering", "/formation-prompt-engineering"], ["Formation IA pour l'informatique", "/formation-ia-informatique"]],
+  "keywords": ["fine-tuning modèle ia c'est quoi", "fine-tuning ou rag", "différence fine-tuning rag", "fine-tuning llm entreprise", "rag entreprise", "lora", "affinage modèle de langage", "mcp ou rag"],
+  "excerpt": "Le fine-tuning modifie le comportement d'un modèle ; le RAG lui fait lire vos documents au moment de répondre. Pour une entreprise, le second suffit presque toujours, et le premier recule chez les éditeurs en 2026.",
+  "intro": "Le fine-tuning d'un modèle d'IA consiste à le ré-entraîner sur vos propres exemples pour changer sa manière de répondre : un format, un ton, une tâche étroite répétée des milliers de fois. Le RAG, ou génération augmentée par récupération, laisse le modèle intact et lui fait lire, au moment de chaque question, les passages de vos documents qui y répondent. Pour donner à une IA la connaissance de l'entreprise, le RAG est la bonne réponse, et souvent de simples consignes avec un projet de fichiers suffisent. Le fine-tuning garde quelques usages précis, alors même qu'OpenAI, Mistral et Anthropic ont réduit ou fermé leur offre en 2026.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Fine-tuning : on modifie les poids du modèle (ses paramètres internes) avec des exemples de questions et de réponses attendues. Il apprend un comportement, mal des faits, et il se refait à chaque retrait du modèle de base. RAG : un moteur de recherche retrouve dans vos documents les passages utiles et les donne au modèle, qui répond en les citant. Il suit vos mises à jour et vos droits d'accès. Ordre conseillé en 2026 : consignes et exemples, puis projet avec fichiers, puis RAG ou connecteurs MCP, et le fine-tuning en dernier recours, pour un format strict à gros volume ou un modèle hébergé chez vous."
+    },
+    {
+      "type": "h2",
+      "text": "Fine-tuning d'un modèle d'IA : c'est quoi ?"
+    },
+    {
+      "type": "p",
+      "text": "Un grand modèle de langage (LLM) sort de son entraînement avec des milliards de paramètres, des nombres qui encodent ce qu'il a appris. Le fine-tuning, qu'on traduit par « affinage », reprend ce modèle et poursuit son entraînement sur un jeu d'exemples choisi par l'entreprise : une demande, la réponse attendue, des centaines ou des milliers de fois. Les paramètres bougent, et le modèle reproduit ensuite le comportement montré dans les exemples sans qu'on ait besoin de le lui redemander."
+    },
+    {
+      "type": "p",
+      "text": "Ré-entraîner tous les paramètres coûte cher. La méthode LoRA, publiée en juin 2021 par Edward Hu et ses coauteurs, n'entraîne que de petites matrices ajoutées au modèle, appelées adaptateurs. Comparée à l'affinage complet de GPT-3 et de ses 175 milliards de paramètres, elle divise par 10 000 le nombre de paramètres à entraîner et par trois la mémoire de calcul nécessaire. Vertex AI, chez Google, règle ses modèles Gemini selon ce principe, avec des adaptateurs dont on choisit la taille."
+    },
+    {
+      "type": "p",
+      "text": "Il existe plusieurs familles d'affinage. L'affinage supervisé apprend à partir de paires question et réponse. L'affinage par préférences montre au modèle deux réponses, la bonne et la moins bonne. L'affinage par renforcement note les réponses du modèle avec une grille de correction et le récompense quand il s'en approche. Toutes trois modifient la manière de répondre. Aucune ne garantit que le modèle retiendra fidèlement un fait isolé, comme le prix d'un produit ou l'article d'un contrat."
+    },
+    {
+      "type": "h2",
+      "text": "Le RAG, ou comment faire lire vos documents au modèle"
+    },
+    {
+      "type": "p",
+      "text": "Le RAG (Retrieval-Augmented Generation, génération augmentée par récupération) a été décrit en mai 2020 par Patrick Lewis et des chercheurs de Facebook AI, aujourd'hui Meta, dans un article présenté à la conférence NeurIPS. Le principe tient en trois temps. Vos documents sont découpés en passages et indexés, le plus souvent sous forme de vecteurs (des suites de nombres qui représentent le sens d'un texte). À chaque question, un moteur de recherche retrouve les passages les plus proches. Ces passages sont ajoutés à la demande envoyée au modèle, qui répond à partir d'eux et peut indiquer d'où vient chaque information."
+    },
+    {
+      "type": "p",
+      "text": "La qualité d'un RAG se joue surtout dans la recherche. En septembre 2024, Anthropic a publié une méthode appelée Contextual Retrieval : chaque passage reçoit une courte phrase de contexte avant d'être indexé. Sur ses tests, le taux d'échec de la recherche (le passage utile absent des vingt premiers résultats) baisse de 49 % quand on combine cette méthode à une recherche par mots-clés, et de 67 % avec un tri final des résultats, passant de 5,7 % à 1,9 %. Un RAG mal découpé donne des réponses fausses avec assurance ; un RAG soigné répond juste et montre sa source."
+    },
+    {
+      "type": "h2",
+      "text": "Fine-tuning ou RAG : le tableau comparatif"
+    },
+    {
+      "type": "table",
+      "headers": ["Critère", "Fine-tuning", "RAG", "Consignes et projet avec fichiers"],
+      "rows": [
+        ["Ce qui change", "Les paramètres du modèle", "Ce que le modèle lit avant de répondre", "Les instructions et les fichiers joints à chaque échange"],
+        ["Ce qu'il apprend bien", "Un format, un ton, une tâche étroite", "Des faits, des procédures, des textes de référence", "Le contexte d'une équipe et ses documents courants"],
+        ["Coût de départ", "Jeu d'exemples à constituer, entraînement payant, évaluation", "Découpage, indexation, moteur de recherche, droits d'accès", "Quelques heures de rédaction"],
+        ["Coût à l'usage", "Appels au modèle affiné, facturés à leur propre tarif", "Recherche puis appel au modèle, avec des demandes plus longues", "Compris dans l'abonnement de l'outil"],
+        ["Fraîcheur des données", "Figée au jour de l'entraînement", "Celle de l'index, mis à jour à chaque modification", "Celle des fichiers déposés"],
+        ["Traçabilité", "Faible : impossible de dire d'où vient une réponse", "Forte : chaque réponse peut citer son passage", "Bonne si l'outil cite ses sources"],
+        ["Droits d'accès", "Tout ce que le modèle a appris est accessible à tous ses utilisateurs", "Filtrables document par document selon l'utilisateur", "Ceux du projet ou de l'espace partagé"],
+        ["Effort et compétences", "Équipe technique, données propres, jeux de test", "Équipe technique pour un RAG sur mesure", "Un utilisateur formé"],
+        ["Quand le modèle de base est retiré", "Tout est à refaire sur le nouveau modèle", "On change de modèle et on rejoue les tests", "Rien à refaire"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Deux lignes pèsent plus que les autres en entreprise. La traçabilité d'abord : un juriste, un acheteur ou un auditeur veut savoir d'où vient une réponse, et seul le RAG la donne de façon fiable. Les droits d'accès ensuite : un modèle affiné sur des documents RH ou financiers les restitue à n'importe quel utilisateur qui pose la bonne question, alors qu'un RAG bien construit ne cherche que dans les documents que l'utilisateur a le droit d'ouvrir. Une étude de chercheurs de Microsoft (Ovadia et ses coauteurs, décembre 2023) a comparé les deux approches pour faire acquérir des connaissances à un modèle : le RAG a surpassé l'affinage de façon constante, sur des connaissances déjà vues comme sur des connaissances nouvelles."
+    },
+    {
+      "type": "h2",
+      "text": "En 2026, le fine-tuning recule chez les éditeurs"
+    },
+    {
+      "type": "p",
+      "text": "Le paysage a changé cette année, et il pèse sur toute décision."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>OpenAI</strong> ferme sa plateforme d'affinage en libre-service. Annoncée le 7 mai 2026, la fermeture s'est faite par étapes : d'abord pour les organisations qui ne l'avaient jamais utilisée, puis le 2 juillet 2026 pour celles qui n'avaient servi aucun modèle affiné depuis soixante jours. À partir du 6 janvier 2027, plus aucun nouvel entraînement ne sera possible. Les modèles déjà affinés restent utilisables jusqu'au retrait de leur modèle de base. La grille encore publiée affiche 25 $ par million de tokens d'entraînement pour gpt-4.1 et 5 $ pour gpt-4.1-mini.",
+        "<strong>Mistral</strong> présente son affinage comme une fonction dépréciée, qui n'est plus activement maintenue. Les frais publiés restaient modestes : 4 $ au minimum par entraînement et 2 $ par mois pour stocker un modèle.",
+        "<strong>Anthropic</strong> ne propose pas d'affinage de ses modèles actuels. Sa seule offre, l'affinage de Claude 3 Haiku dans Amazon Bedrock, ouverte en 2024, a pris fin avec le retrait de ce modèle en septembre 2026.",
+        "<strong>Google</strong> maintient le réglage supervisé de Gemini dans Vertex AI : sa documentation, mise à jour le 21 octobre 2026, liste Gemini 3.5 Flash, 3.5 Flash-Lite, 3.1 Flash-Lite et la famille 2.5, avec aussi le réglage par préférences et par renforcement. Aucun modèle Pro de troisième génération n'y figure.",
+        "<strong>Les modèles ouverts</strong> (à poids publiés, qu'on peut télécharger) restent affinables sur votre propre infrastructure, avec LoRA, à condition d'avoir l'équipe pour le faire."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le guide d'OpenAI consacré à la précision des modèles résume le raisonnement qui reste valable : on commence par les consignes, on diagnostique ensuite chaque échec. Un manque de connaissance appelle le RAG. Un problème de format ou de comportement peut justifier l'affinage. Les deux se combinent."
+    },
+    {
+      "type": "h2",
+      "text": "Les alternatives à essayer avant tout projet technique"
+    },
+    {
+      "type": "h3",
+      "text": "De bonnes consignes, avec des exemples"
+    },
+    {
+      "type": "p",
+      "text": "Beaucoup de demandes d'affinage naissent d'un modèle qui « ne répond pas comme on veut ». Une consigne écrite avec soin règle la plupart de ces cas : le rôle, le public, le format exact attendu, deux ou trois exemples de bonnes réponses, la liste de ce qu'il ne faut pas faire. Placée dans les instructions d'un projet ou d'une compétence, elle s'applique à chaque échange. Notre <a href='/formation-prompt-engineering'>formation au prompt engineering</a> s'attache à cette écriture."
+    },
+    {
+      "type": "h3",
+      "text": "Un projet avec fichiers"
+    },
+    {
+      "type": "p",
+      "text": "Les assistants grand public intègrent aujourd'hui une forme simple de RAG. Un projet Claude accepte des fichiers jusqu'à 30 Mo chacun, et, sur les offres payantes, un mode de recherche dans le projet multiplie jusqu'à dix fois la quantité de documents utilisable. Gemini Notebook (anciennement NotebookLM) s'appuie sur les sources qu'on lui confie et les cite, avec 50 sources par carnet dans l'offre gratuite et 300 avec Google AI Pro. ChatGPT propose ses projets, Microsoft Copilot ses blocs-notes. Pour une équipe qui travaille sur quelques dizaines de documents stables, c'est le bon point de départ."
+    },
+    {
+      "type": "h3",
+      "text": "Un contexte long, mis en cache"
+    },
+    {
+      "type": "p",
+      "text": "Les modèles récents lisent des demandes immenses. Les modèles Claude actuels acceptent un million de tokens par échange sur l'API, soit environ 2 500 pages selon le repère d'Anthropic (200 000 tokens pour 500 pages). Les dernières versions de Gemini et de GPT annoncent des fenêtres du même ordre. Pour un corpus qui tient dans ces limites, on peut tout donner au modèle à chaque question, et la mise en cache réduit la facture : chez Anthropic, relire un passage déjà en cache coûte au plus un dixième du prix normal d'un token d'entrée. Au-delà, ou quand chaque utilisateur doit voir des documents différents, le RAG reprend l'avantage."
+    },
+    {
+      "type": "h3",
+      "text": "Des connecteurs MCP pour les données vivantes"
+    },
+    {
+      "type": "p",
+      "text": "Un stock, une commande, le solde d'un client changent à chaque minute. Ni l'affinage ni un index documentaire ne suivent ce rythme. Le protocole MCP (Model Context Protocol), publié par Anthropic le 25 novembre 2024 et confié le 9 décembre 2025 à l'Agentic AI Foundation, un fonds de la Linux Foundation, permet à l'assistant d'interroger le logiciel au moment de la question, avec les droits de l'utilisateur. La règle pratique : le RAG pour les documents, MCP pour les données de gestion. Notre article sur le <a href='/blog/serveur-mcp-entreprise-connecter-ia-si'>serveur MCP en entreprise</a> détaille la mise en place."
+    },
+    {
+      "type": "h2",
+      "text": "Les cas où le fine-tuning se justifie"
+    },
+    {
+      "type": "p",
+      "text": "L'affinage garde sa place quand le problème porte sur le comportement du modèle et que les consignes ont échoué, preuves à l'appui. Quatre situations reviennent."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Un format strict à gros volume</strong> : classer des centaines de milliers de messages dans une liste fixe de catégories, extraire les mêmes champs de documents tous bâtis sur le même modèle. Un petit modèle affiné peut remplacer un grand modèle plus coûteux et plus lent.",
+        "<strong>Un style ou un vocabulaire que les exemples en consigne ne suffisent pas à faire tenir</strong>, mesuré sur un jeu de test et pas sur une impression.",
+        "<strong>Un modèle hébergé chez vous</strong> pour des raisons de souveraineté, de coût ou de fonctionnement sans connexion : un modèle ouvert affiné par LoRA sur votre infrastructure.",
+        "<strong>Un RAG qui se laisse distraire</strong> par des passages hors sujet. La méthode RAFT, publiée par des chercheurs de Berkeley en mars 2024, affine le modèle pour qu'il ignore les documents non pertinents et cite le bon passage : affinage et RAG travaillent alors ensemble."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Dans ces quatre cas, trois conditions décident du succès : un jeu d'exemples propres et représentatifs, un jeu de test séparé qui mesure le progrès, et un budget pour refaire l'entraînement le jour où le modèle de base sera retiré."
+    },
+    {
+      "type": "h2",
+      "text": "Choisir en cinq questions"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Avez-vous un jeu de test ?</strong> Écrivez une trentaine de questions réelles avec la réponse attendue. Sans lui, aucune des options ne se compare.",
+        "<strong>Le modèle manque-t-il d'informations ou de méthode ?</strong> S'il ignore vos faits, il lui faut des documents ; s'il connaît les faits mais répond mal, il lui faut de meilleures consignes.",
+        "<strong>Vos documents tiennent-ils dans un projet ?</strong> Si oui, commencez par un projet avec fichiers. Si non, ou si les droits diffèrent selon les utilisateurs, passez au RAG.",
+        "<strong>Les données changent-elles chaque jour ?</strong> Si oui, branchez le logiciel par MCP ou par son API.",
+        "<strong>Après tout cela, le format ou le coût à grand volume restent-ils hors d'atteinte ?</strong> Alors l'affinage mérite une étude, sur Vertex AI ou sur un modèle ouvert."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Quand un assistant documentaire doit vivre dans vos applications métier, avec les droits de chaque utilisateur et un journal des appels, le projet change de taille. Masteria décrit cette construction sur sa page consacrée à l'<a href='/integration-llm-rag'>intégration d'un LLM et du RAG</a>, et à l'<a href='/assistant-documentaire-ia'>assistant documentaire</a>. Les définitions des termes voisins (embedding, base vectorielle, hallucination) figurent dans notre <a href='/glossaire-ia'>glossaire de l'IA</a>. Le modèle le plus utile pour une entreprise reste celui qui sait où chercher et qui montre ce qu'il a lu."
+    },
+    {
+      "type": "h2",
+      "text": "Vocabulaire"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Fine-tuning (affinage)</strong> : poursuite de l'entraînement d'un modèle existant sur des exemples choisis, pour modifier sa manière de répondre.",
+        "<strong>LoRA</strong> : méthode d'affinage qui n'entraîne que de petites matrices ajoutées au modèle, les adaptateurs.",
+        "<strong>RAG</strong> : génération augmentée par récupération ; le modèle répond à partir de passages retrouvés dans vos documents au moment de la question.",
+        "<strong>Vecteur (embedding)</strong> : suite de nombres qui représente le sens d'un texte et permet de retrouver les passages proches d'une question.",
+        "<strong>Fenêtre de contexte</strong> : quantité de texte, comptée en tokens, que le modèle lit en une seule demande.",
+        "<strong>MCP</strong> : protocole ouvert qui relie un assistant d'IA à un logiciel pour lire ou modifier ses données au moment de la question."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Références relues le 22 octobre 2026"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<a href='https://arxiv.org/abs/2005.11401' rel='noopener'>Lewis et al., Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks</a> (arXiv, mai 2020, NeurIPS 2020)",
+        "<a href='https://arxiv.org/abs/2106.09685' rel='noopener'>Hu et al., LoRA: Low-Rank Adaptation of Large Language Models</a> (arXiv, juin 2021)",
+        "<a href='https://arxiv.org/abs/2312.05934' rel='noopener'>Ovadia et al., Fine-Tuning or Retrieval? Comparing Knowledge Injection in LLMs</a> (arXiv, décembre 2023)",
+        "<a href='https://arxiv.org/abs/2403.10131' rel='noopener'>Zhang et al., RAFT: Adapting Language Model to Domain Specific RAG</a> (arXiv, mars 2024)",
+        "<a href='https://www.anthropic.com/news/contextual-retrieval' rel='noopener'>Anthropic : Contextual Retrieval</a> (19 septembre 2024)",
+        "<a href='https://developers.openai.com/api/docs/deprecations' rel='noopener'>OpenAI : calendrier de fermeture de l'affinage en libre-service</a> et <a href='https://developers.openai.com/api/docs/pricing' rel='noopener'>grille de prix</a>",
+        "<a href='https://developers.openai.com/api/docs/guides/optimizing-llm-accuracy' rel='noopener'>OpenAI : guide sur la précision des modèles</a>",
+        "<a href='https://docs.mistral.ai/resources/deprecated/finetuning/text_vision_finetuning' rel='noopener'>Mistral : documentation de l'affinage, dépréciée</a>",
+        "<a href='https://claude.com/blog/fine-tune-claude-3-haiku' rel='noopener'>Anthropic : affinage de Claude 3 Haiku dans Amazon Bedrock</a> (2024) et <a href='https://docs.aws.amazon.com/bedrock/latest/userguide/model-lifecycle-legacy.html' rel='noopener'>AWS : cycle de vie des modèles</a>",
+        "<a href='https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/gemini-supervised-tuning' rel='noopener'>Google Cloud : réglage supervisé de Gemini dans Vertex AI</a> (21 octobre 2026)",
+        "<a href='https://platform.claude.com/docs/en/about-claude/models/overview' rel='noopener'>Anthropic : modèles et fenêtres de contexte</a> et <a href='https://platform.claude.com/docs/en/build-with-claude/prompt-caching' rel='noopener'>mise en cache</a>",
+        "<a href='https://support.claude.com/en/articles/8241126-what-kinds-of-documents-can-i-upload-to-claude-ai' rel='noopener'>Anthropic : fichiers acceptés dans Claude et ses projets</a>",
+        "<a href='https://support.google.com/notebooklm/answer/16213268' rel='noopener'>Google : limites de Gemini Notebook</a>",
+        "<a href='https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation' rel='noopener'>Anthropic : MCP confié à l'Agentic AI Foundation</a> (9 décembre 2025)"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Fine-tuning d'un modèle d'IA : c'est quoi, en une phrase ?",
+      "a": "C'est la poursuite de l'entraînement d'un modèle existant sur vos propres exemples (une demande, la réponse attendue), pour qu'il adopte durablement un format, un ton ou une manière de traiter une tâche précise. Ses paramètres internes changent, contrairement au RAG qui laisse le modèle intact."
+    },
+    {
+      "q": "Quelle différence entre fine-tuning et RAG ?",
+      "a": "Le fine-tuning modifie le modèle pour changer sa façon de répondre. Le RAG laisse le modèle tel quel et lui fournit, à chaque question, les passages de vos documents qui y répondent. Le premier apprend un comportement, le second apporte des faits à jour, traçables et filtrés selon les droits de chaque utilisateur."
+    },
+    {
+      "q": "Le fine-tuning permet-il à une IA d'apprendre les documents de l'entreprise ?",
+      "a": "Mal. Un modèle affiné retient une manière de répondre plus sûrement que des faits isolés, ne dit pas d'où vient une information et rend accessible à tous ce qu'il a appris. L'étude d'Ovadia et de ses coauteurs (Microsoft, 2023) montre que le RAG surpasse l'affinage pour faire acquérir des connaissances à un modèle. Pour vos documents, choisissez un projet avec fichiers ou un RAG."
+    },
+    {
+      "q": "Peut-on encore faire du fine-tuning avec ChatGPT, Claude ou Mistral en 2026 ?",
+      "a": "De moins en moins. OpenAI ferme sa plateforme d'affinage en libre-service : aucun nouvel entraînement ne sera possible après le 6 janvier 2027, et l'accès était déjà fermé depuis mai 2026 aux organisations qui ne l'avaient jamais utilisée. Mistral a déprécié sa fonction d'affinage. Anthropic n'en propose plus depuis le retrait de Claude 3 Haiku dans Amazon Bedrock en septembre 2026. Google maintient le réglage de plusieurs modèles Gemini dans Vertex AI, et les modèles ouverts restent affinables chez vous."
+    },
+    {
+      "q": "Combien coûte un fine-tuning ?",
+      "a": "L'entraînement lui-même coûte peu chez les éditeurs qui le facturent encore : OpenAI affiche 25 $ par million de tokens d'entraînement pour gpt-4.1 et 5 $ pour gpt-4.1-mini, Mistral demandait 4 $ au minimum par entraînement. Le vrai coût est ailleurs : constituer un jeu d'exemples propres, bâtir les tests, et tout refaire quand le modèle de base est retiré."
+    },
+    {
+      "q": "Le RAG supprime-t-il les hallucinations ?",
+      "a": "Il en réduit le nombre. Le modèle peut encore mal lire un passage ou combler un vide. Deux parades : une recherche soignée (Anthropic a réduit de 67 % les échecs de recherche sur ses tests avec Contextual Retrieval et un tri final des résultats) et des réponses qui citent leur source, pour qu'un lecteur vérifie en un clic."
+    },
+    {
+      "q": "Faut-il encore un RAG quand un modèle lit un million de tokens ?",
+      "a": "Pas toujours. Un million de tokens représente environ 2 500 pages selon le repère d'Anthropic : un petit corpus stable peut être donné en entier au modèle, avec mise en cache pour limiter le coût. Le RAG redevient nécessaire quand le corpus dépasse cette taille, change souvent, ou quand chaque utilisateur ne doit voir que ses documents."
+    },
+    {
+      "q": "RAG ou MCP : lequel choisir ?",
+      "a": "Les deux répondent à des besoins différents et se combinent. Le RAG cherche dans des documents (contrats, procédures, fiches techniques). MCP relie l'assistant à un logiciel pour lire une donnée qui change à chaque instant (stock, commande, solde client), avec les droits de l'utilisateur. Une base documentaire passe par le RAG, une donnée de gestion par MCP."
+    },
+    {
+      "q": "Une PME a-t-elle besoin de fine-tuning ou de RAG ?",
+      "a": "Dans la plupart des cas, d'aucun des deux au départ. Des consignes bien écrites et un projet avec fichiers dans Claude, ChatGPT, Gemini Notebook ou les blocs-notes de Copilot couvrent les besoins documentaires d'une équipe. Le RAG sur mesure arrive quand les documents se comptent par milliers ou que les droits d'accès diffèrent d'un salarié à l'autre ; le fine-tuning reste rare."
+    }
+  ],
+  "cta": {
+    "title": "Brancher l'IA sur vos documents et vos logiciels ?",
+    "desc": "Masteria cadre le bon niveau (projet, RAG, MCP), construit l'intégration avec votre équipe technique et forme les utilisateurs.",
+    "buttons": [
+      { "label": "Voir l'intégration LLM et RAG", "href": "/integration-llm-rag", "primary": true },
+      { "label": "Décrire votre besoin", "href": "/contact", "primary": false }
+    ]
+  },
+  "internalLinks": [
+    { "label": "Intégrer un LLM et du RAG dans votre SI", "href": "/integration-llm-rag" },
+    { "label": "Glossaire de l'IA", "href": "/glossaire-ia" },
+    { "label": "Serveur MCP : connecter l'IA au système d'information", "href": "/blog/serveur-mcp-entreprise-connecter-ia-si" },
+    { "label": "Assistant documentaire IA", "href": "/assistant-documentaire-ia" }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Fine-tuning et RAG : les termes",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "Fine-tuning", "description": "Poursuite de l'entraînement d'un modèle existant sur des exemples choisis, pour modifier sa manière de répondre." },
+        { "@type": "DefinedTerm", "name": "LoRA", "description": "Méthode d'affinage qui n'entraîne que de petites matrices ajoutées au modèle, appelées adaptateurs." },
+        { "@type": "DefinedTerm", "name": "RAG", "description": "Génération augmentée par récupération : le modèle répond à partir de passages retrouvés dans des documents au moment de la question." },
+        { "@type": "DefinedTerm", "name": "Embedding", "description": "Suite de nombres qui représente le sens d'un texte et sert à retrouver les passages proches d'une question." },
+        { "@type": "DefinedTerm", "name": "Fenêtre de contexte", "description": "Quantité de texte, comptée en tokens, qu'un modèle lit en une seule demande." },
+        { "@type": "DefinedTerm", "name": "MCP", "description": "Model Context Protocol : protocole ouvert qui relie un assistant d'IA à un logiciel pour lire ou modifier ses données." }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Choisir entre consignes, projet, RAG, MCP et fine-tuning : cinq questions",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 5,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Constituer un jeu de test" },
+        { "@type": "ListItem", "position": 2, "name": "Distinguer manque d'information et manque de méthode" },
+        { "@type": "ListItem", "position": 3, "name": "Vérifier si les documents tiennent dans un projet" },
+        { "@type": "ListItem", "position": 4, "name": "Repérer les données qui changent chaque jour" },
+        { "@type": "ListItem", "position": 5, "name": "Réserver l'affinage au format ou au coût à grand volume" }
+      ]
+    }
+  ]
+}

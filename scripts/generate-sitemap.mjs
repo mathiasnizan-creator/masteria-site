@@ -117,6 +117,7 @@ const metierSlugs = [
   'seo','service-client','informatique','pedagogique',
   'achats','qse','gestion-de-projet','marche-public','immobilier','commerce','sante',
   'juridique','comptabilite','assurance','btp','tourisme','transverse',
+  'medico-social','creation-contenu','tpe','avocats','architectes','collectivites','organismes-formation','enseignants','industrie','logistique','securite',
 ].map(m => `formation-ia-${m}`);
 
 // Spokes (ChatGPT, Copilot, Gemini, Claude, Mistral, Sprint IA, Multi-outils Métier)
@@ -133,7 +134,7 @@ while ((m = spokeRe.exec(src)) !== null) {
 
 // Pages formation transversales stratégiques : retirées du lot spokes (0.5)
 // et poussées à 0.7 (requêtes commerciales à fort volume).
-const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia', 'formation-chatgpt-redaction'];
+const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia', 'formation-chatgpt-redaction', 'formation-copilot-studio', 'formation-notebooklm', 'formation-claude-cowork'];
 for (const s of boostedSlugs) spokeSet.delete(s);
 
 // Pages géo : 2 outils × 5 villes = 10 pages outil×ville (stratégie ciblée)
@@ -147,7 +148,7 @@ geoSlugs.push('formation-chatgpt-rennes', 'formation-chatgpt-nantes', 'formation
 
 // Pages géo génériques : /formation-ia-{ville} — les 5 villes historiques
 // + l'extension du 2026-08-28 (iaOnly : pas de pages outil×ville pour celles-ci)
-const geoIaCities = [...geoCities, 'nantes', 'nice', 'lille', 'bordeaux', 'toulouse', 'strasbourg', 'rennes', 'grenoble', 'annecy', 'aix-en-provence', 'nimes']
+const geoIaCities = [...geoCities, 'nantes', 'nice', 'lille', 'bordeaux', 'toulouse', 'strasbourg', 'rennes', 'grenoble', 'annecy', 'aix-en-provence', 'nimes', 'la-reunion']
 const geoIaSlugs = geoIaCities.map(c => `formation-ia-${c}`)
 
 // Spokes multi-outils (générés dynamiquement depuis METIERS_SPEC)

@@ -1,0 +1,282 @@
+{
+  "slug": "preparer-codir-avec-ia",
+  "title": "Préparer un CODIR avec l'IA : de l'ordre du jour au suivi des décisions",
+  "metaTitle": "Préparer un CODIR ou un COMEX avec l'IA | Masteria",
+  "metaDesc": "Préparer un CODIR ou un COMEX avec l'IA : ordre du jour, notes, tableaux de bord commentés, relevé de décisions, suivi des actions et confidentialité.",
+  "tag": "Management",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "13 min",
+  "formations": [["Formation IA COMEX", "/formation-ia-comex"], ["Formation IA dirigeants", "/formation-ia-dirigeants"], ["Formation IA assistante de direction", "/formation-ia-assistante"]],
+  "keywords": ["préparation d'un codir par l'ia", "ia pour le comité de direction", "ia pour le comité exécutif", "préparer un comex avec l'ia", "relevé de décisions ia", "compte rendu codir ia", "copilot réunion confidentialité"],
+  "excerpt": "L'IA assemble l'ordre du jour, résume les notes des directions, commente le tableau de bord, rédige le relevé de décisions et tient la liste des actions. La décision et les sujets couverts par un secret restent à la direction.",
+  "intro": "Préparer un CODIR avec l'IA revient à lui confier la matière et à garder le jugement. L'outil assemble l'ordre du jour à partir des demandes reçues, résume les notes des directions, commente les écarts du tableau de bord, rédige le relevé de décisions et tient la liste des actions jusqu'à la séance suivante. Les décisions, les arbitrages entre personnes et les sujets protégés par un secret restent hors de sa portée. Ce guide suit le cycle d'un comité de direction ou d'un comité exécutif, de dix jours avant la séance à la séance d'après, avec les outils disponibles en octobre 2026 et les règles de confidentialité propres aux sujets de direction.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Avant la séance, l'IA regroupe les sujets proposés, prépare un ordre du jour minuté et rédige une note d'une page par point, chaque chiffre renvoyant à sa source. Pendant la séance, Microsoft Copilot dans Teams, l'agent Facilitator ou Gemini dans Google Meet prennent des notes et repèrent les actions. Après, l'IA rédige le relevé de décisions (décision, responsable, échéance) et relance les porteurs d'action. Trois règles protègent les sujets de direction : classer chaque point selon sa sensibilité, couper la transcription sur les points restreints, n'utiliser que des comptes professionnels dont les étiquettes de confidentialité sont respectées par l'outil."
+    },
+    {
+      "type": "h2",
+      "text": "Le cycle d'un comité de direction, étape par étape"
+    },
+    {
+      "type": "p",
+      "text": "Une séance de comité se prépare sur une dizaine de jours et se prolonge par un mois de suivi. Les dirigeants passent près de 23 heures par semaine en réunion, contre moins de 10 dans les années 1960, selon l'article « Stop the Meeting Madness » de la Harvard Business Review (juillet 2017) : près de trois journées de travail sur cinq. Le temps de préparation et de suivi s'ajoute à ce total, et c'est là que l'IA reprend des heures."
+    },
+    {
+      "type": "table",
+      "headers": ["Étape", "Quand", "Ce que prépare l'IA", "Ce que garde la direction"],
+      "rows": [
+        ["Collecte des sujets", "J-10", "Regroupe les demandes, repère les doublons et les sujets sans document", "Le choix des sujets retenus"],
+        ["Ordre du jour", "J-7", "Classe information, discussion, décision ; propose un minutage", "L'ordre et le temps accordé"],
+        ["Notes de synthèse", "J-5 à J-3", "Une page par point, avec options et chiffres sourcés", "La recommandation, signée par le directeur concerné"],
+        ["Tableau de bord", "J-3", "Commentaire des écarts, faits et hypothèses séparés", "La validation des chiffres par la finance"],
+        ["Séance", "J", "Notes, minutage, repérage des actions", "Le débat, la décision, ce qui reste hors compte rendu"],
+        ["Relevé de décisions", "J+1", "Premier jet : décision, responsable, échéance", "La relecture par le président de séance"],
+        ["Suivi des actions", "J+1 à la séance suivante", "Relances, état des actions en tête du prochain ordre du jour", "Les arbitrages sur les actions bloquées"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "L'ordre du jour se construit à partir des demandes reçues"
+    },
+    {
+      "type": "p",
+      "text": "Les directions envoient leurs sujets par mail, par message, parfois à la dernière minute dans le couloir. L'assistante de direction ou le secrétaire général colle ces demandes dans un projet IA qui contient le modèle d'ordre du jour de la maison. L'outil regroupe les sujets voisins, signale ceux qui arrivent sans document préparatoire, et range chaque point dans l'une de trois catégories : information, discussion, décision. Pour un point de décision, il formule la question posée au comité en une phrase, ce qui oblige le porteur du sujet à la clarifier avant la séance."
+    },
+    {
+      "type": "p",
+      "text": "Il propose ensuite un minutage. Un comité de deux heures qui empile quatorze points finit toujours par sacrifier les derniers ; voir le total s'afficher à côté de la liste suffit souvent à couper. Dans Microsoft Teams, l'agent Facilitator reprend l'ordre du jour depuis l'invitation ou les notes Loop, affiche un minuteur par point et un compte à rebours pendant la séance."
+    },
+    {
+      "type": "h2",
+      "text": "Les notes de synthèse tiennent sur une page et posent la décision attendue"
+    },
+    {
+      "type": "p",
+      "text": "Chaque direction arrive avec sa matière : une étude de marché, trois devis, un rapport d'audit, un tableau de recrutements. L'IA en tire une note d'une page selon une trame fixe : la question posée au comité, les options, leurs effets chiffrés, la recommandation de la direction, les risques. Elle relève aussi les contradictions entre notes, quand deux directions citent deux effectifs différents pour la même usine ou deux dates pour le même lancement."
+    },
+    {
+      "type": "p",
+      "text": "Deux outils se prêtent bien à cet exercice parce qu'ils répondent à partir des documents fournis. Gemini Notebook (anciennement NotebookLM) cite dans le texte le passage source de chaque affirmation et produit des rapports de type document. Dans Microsoft Copilot (anciennement Microsoft 365 Copilot), les blocs-notes rassemblent les fichiers d'un dossier, qui restent stockés dans OneDrive ou SharePoint. Une règle s'applique quel que soit l'outil : chaque chiffre de la note renvoie à son document d'origine, et le directeur qui porte le sujet relit et signe sa note. Le comité lit une page dont quelqu'un répond."
+    },
+    {
+      "type": "h2",
+      "text": "Les tableaux de bord commentés séparent les faits des hypothèses"
+    },
+    {
+      "type": "p",
+      "text": "Un tableau de bord de direction aligne chiffre d'affaires, marge, carnet de commandes, effectifs, trésorerie. L'IA rédige le commentaire des écarts les plus nets : ce que le chiffre montre, depuis quand, sur quel périmètre. Elle distingue ensuite ce qu'elle constate de ce qu'elle suppose, et marque chaque hypothèse comme telle. Un commentaire du type « baisse de la marge liée au prix de l'acier » doit citer la ligne d'achats qui le prouve, sinon il devient une hypothèse à vérifier par la direction financière."
+    },
+    {
+      "type": "p",
+      "text": "Power BI propose un visuel Narration rédigé par Copilot, qui synthétise le rapport ou la sélection de visuels qu'on lui désigne et place des notes de renvoi vers chaque graphique. Il tourne sur une capacité Premium P1 ou Fabric payante à partir de F2, et jamais sur une capacité d'essai. Sur un classeur Excel, Copilot ou Claude produisent le même commentaire. Dans tous les cas, la finance recalcule les chiffres clés avant diffusion."
+    },
+    {
+      "type": "h2",
+      "text": "Pendant la séance : transcription, notes et minutage"
+    },
+    {
+      "type": "p",
+      "text": "La question qui se pose en premier est celle de la trace. Dans Teams, Copilot fonctionne selon deux réglages. « Pendant et après la réunion » exige la transcription, qui reste disponible ensuite. « Uniquement pendant la réunion » laisse Copilot répondre en séance à partir de données vocales qui ne sont pas conservées après la réunion. Attention au paramètre par défaut : la stratégie d'administration impose la transcription, et l'organisateur ne peut choisir le second réglage que si l'administrateur l'a ouvert. Les questions posées à Copilot et ses réponses peuvent rester conservées selon les règles de rétention de Microsoft Purview, même sans enregistrement. Copilot n'est pas disponible dans les réunions chiffrées de bout en bout."
+    },
+    {
+      "type": "p",
+      "text": "L'agent Facilitator ajoute des notes collaboratives en temps réel, modifiables par tous les participants, des repères par sujet avec des rappels à mi-parcours, un document Word produit pendant ou après la réunion, et la capture des actions ; le suivi des tâches dans Planner reste en préversion. Il demande une licence Microsoft Copilot pour être lancé, ne gère qu'une langue parlée par réunion, et ses notes n'héritent pas de l'étiquette de confidentialité de la réunion. Dans Google Meet, « Prendre des notes pour moi » crée un document Google Docs dans le Drive de l'organisateur, avec résumé, décisions, actions et détails ; le français fait partie des langues prises en charge, une seule par réunion, et le suivi des décisions n'est ouvert à toutes les langues qu'en version bêta. Chez Zoom, l'assistant s'appelle désormais ZoomMate, et l'offre Pro affiche des résumés de réunion illimités."
+    },
+    {
+      "type": "p",
+      "text": "Un compromis convient bien à un comité de direction : transcription coupée pendant les points sensibles, notes prises par l'assistante de direction ou le secrétaire du comité, puis mises en forme par l'IA après la séance."
+    },
+    {
+      "type": "h2",
+      "text": "Compte rendu ou relevé de décisions : choisir le bon document"
+    },
+    {
+      "type": "p",
+      "text": "Le compte rendu raconte la séance : qui a présenté quoi, quels arguments ont été échangés. Le relevé de décisions ne garde que ce qui engage : la décision, son responsable, son échéance, ses conditions. Pour un CODIR, le relevé suffit le plus souvent, se diffuse plus vite et expose moins les personnes. L'IA y excelle quand on lui impose une forme : un verbe d'action, un nom, une date. « Lancer la consultation des transporteurs : Sophie Martin, 15 novembre » se suit ; « réflexion à mener sur la logistique » ne se suit pas."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le premier jet</strong> part des notes de séance ou de la transcription, le lendemain matin au plus tard.",
+        "<strong>Les points non tranchés</strong> sont listés à part, avec la date à laquelle ils reviendront.",
+        "<strong>La relecture</strong> revient au président de séance, qui retire ce qui ne doit pas circuler.",
+        "<strong>La diffusion</strong> suit une liste par niveau de sensibilité : le comité, les directions concernées, l'entreprise."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Le suivi des actions tient d'une séance à l'autre"
+    },
+    {
+      "type": "p",
+      "text": "Une action décidée en comité vit dans un registre unique, tableur partagé ou liste Planner, alimenté par le relevé. L'IA relance chaque porteur une semaine avant l'échéance, collecte les réponses et prépare, en tête du prochain ordre du jour, l'état des actions en trois colonnes : terminées, en retard avec leur raison, bloquées avec l'arbitrage attendu. Le comité consacre ses premières minutes aux blocages et passe le reste sans y revenir."
+    },
+    {
+      "type": "p",
+      "text": "Les grands éditeurs savent automatiser ces relances. Un agent Copilot Studio peut partir chaque vendredi à heure fixe, ou dès qu'une action change de statut dans la liste du comité. Une tâche Cowork programmée le lundi dans Claude prépare l'état des actions. Côté Google, un flux Workspace Studio relance les porteurs à partir du tableur partagé. La relance part au nom de l'assistante de direction ou du secrétaire général, qui la valide."
+    },
+    {
+      "type": "h2",
+      "text": "Confidentialité des sujets de direction : trois niveaux et des règles écrites"
+    },
+    {
+      "type": "p",
+      "text": "Un ordre du jour de comité mélange des sujets ordinaires et des sujets qui ne doivent pas circuler : une acquisition en cours, des résultats non publiés, un plan de réorganisation, la situation d'un dirigeant. Le droit encadre plusieurs d'entre eux. Pour une société cotée, le règlement européen sur les abus de marché (n° 596/2014) définit l'information privilégiée à son article 7 et impose à son article 18 de tenir la liste des personnes qui y ont accès ; l'AMF détaille ces règles dans son guide de l'information permanente et de la gestion de l'information privilégiée (DOC-2016-08). Le code de commerce (article L151-1) protège comme secret des affaires une information qui n'est ni généralement connue ni aisément accessible, qui tire sa valeur commerciale de ce caractère secret et que son détenteur protège par des mesures raisonnables. Verser un dossier stratégique dans un compte personnel d'IA affaiblit cette dernière condition."
+    },
+    {
+      "type": "table",
+      "headers": ["Niveau", "Exemples de sujets", "Usage de l'IA"],
+      "rows": [
+        ["Ordinaire", "Avancement des projets, indicateurs publiés, organisation d'un événement", "Outils professionnels de l'entreprise, transcription possible"],
+        ["Sensible", "Budget, recrutements de cadres, litiges, résultats internes", "Comptes professionnels, documents étiquetés, diffusion restreinte"],
+        ["Restreint", "Acquisition, information privilégiée, cas individuels, réorganisation", "Pas de transcription, pas d'assistant sur ces documents, ou un environnement dédié validé par la sécurité"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Dans l'environnement Microsoft, les étiquettes de confidentialité de Purview font une partie du travail. Quand une étiquette chiffre un document et donne à l'utilisateur le droit de le voir sans celui d'en extraire le contenu, Copilot ne le résume pas et se contente d'un lien. Les contenus protégés par chiffrement à double clé ne sont jamais accessibles à Copilot. Deux limites sont documentées en octobre 2026 : Copilot ne reconnaît pas encore les étiquettes qui protègent les réunions et les conversations Teams, et les blocs-notes de Copilot n'ont pas d'étiquette propre. Pour les points restreints, la règle la plus sûre reste un document séparé, hors des outils d'IA."
+    },
+    {
+      "type": "p",
+      "text": "Un dernier point relève du droit du travail. Dans une entreprise d'au moins cinquante salariés, l'introduction de nouvelles technologies fait partie des sujets sur lesquels le comité social et économique est informé et consulté (article L2312-8 du code du travail). Déployer la transcription automatique des réunions dans toute l'entreprise entre dans ce champ ; la <a href='/charte-ia-entreprise'>charte IA de l'entreprise</a> fixe ensuite les règles d'usage."
+    },
+    {
+      "type": "h2",
+      "text": "Ce qu'on ne délègue pas à l'IA"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>La décision</strong>. L'outil peut présenter des options et leurs effets ; le comité tranche et en répond.",
+        "<strong>Les arbitrages entre personnes</strong>, et tout ce qui touche à la situation d'un membre du comité ou d'un salarié nommé.",
+        "<strong>L'évaluation des participants</strong>. Le suivi et la notation du comportement des salariés figurent dans l'annexe III de l'AI Act (point 4 b), celle des usages à haut risque. Détecter les émotions d'une personne au travail est même interdit depuis le 2 février 2025 par l'article 5, sauf motif médical ou de sécurité. Une analyse de « l'ambiance » ou du ton des participants à partir de la transcription n'a pas sa place dans un comité.",
+        "<strong>Le jugement sur un chiffre</strong>. L'IA signale un écart ; la direction financière dit s'il est crédible.",
+        "<strong>Le message difficile</strong> : l'annonce d'une réorganisation ou d'un arrêt de projet s'écrit par la personne qui l'assume, quitte à faire relire la forme.",
+        "<strong>Le mot de la fin du relevé</strong>, qui revient au président de séance."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Un premier mois pour installer la méthode"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Semaine 1</strong> : écrire le modèle d'ordre du jour et la trame de note d'une page, puis classer les sujets récurrents selon les trois niveaux de sensibilité.",
+        "<strong>Semaine 2</strong> : préparer un comité réel avec l'IA, sur les points ordinaires et sensibles seulement.",
+        "<strong>Semaine 3</strong> : rédiger le relevé de décisions avec l'outil et ouvrir le registre des actions.",
+        "<strong>Semaine 4</strong> : faire le point sur trois relevés simples : heures de préparation de l'assistante de direction, délai de diffusion du relevé, part des actions tenues à l'échéance."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Des dirigeants qui ont essayé les outils sur leurs propres dossiers écrivent des règles plus justes pour le reste de l'entreprise. La <a href='/formation-ia-comex'>formation IA COMEX</a> réunit le comité exécutif pour une session collective d'état des lieux et d'arbitrages, la <a href='/formation-ia-dirigeants'>formation IA pour les dirigeants</a> consacre une journée aux décisions et au pilotage, et le <a href='/formation-ia-assistante'>parcours IA des assistantes et assistants de direction</a> outille la personne qui tient le cycle au quotidien. Le comité qui gagne une heure de préparation par séance la passe à décider, et c'est sa vraie fonction."
+    },
+    {
+      "type": "h2",
+      "text": "Textes et documentations cités, relus le 22 octobre 2026"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<a href='https://learn.microsoft.com/en-us/microsoft-teams/copilot-teams-transcription' rel='noopener'>Microsoft Learn : Copilot dans les réunions Teams, avec ou sans transcription</a> (mise à jour du 28 août 2026)",
+        "<a href='https://learn.microsoft.com/en-us/microsoftteams/facilitator-teams' rel='noopener'>Microsoft Learn : l'agent Facilitator dans Teams</a> (13 août 2026)",
+        "<a href='https://learn.microsoft.com/en-us/purview/ai-m365-copilot-considerations' rel='noopener'>Microsoft Learn : Copilot et les étiquettes de confidentialité Purview</a> (30 juin 2026)",
+        "<a href='https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-create-narrative' rel='noopener'>Microsoft Learn : créer une narration avec Copilot dans Power BI</a>, page datée du 11 mai 2026",
+        "<a href='https://learn.microsoft.com/en-us/microsoft-365/loop/cpcn-compliance-summary' rel='noopener'>Microsoft Learn : conformité des blocs-notes Copilot</a> (6 juillet 2026)",
+        "<a href='https://support.google.com/meet/answer/14754931' rel='noopener'>Google : prendre des notes avec Gemini dans Google Meet</a>",
+        "<a href='https://support.google.com/gemininotebook/answer/16164461' rel='noopener'>Google : aide de Gemini Notebook</a>",
+        "<a href='https://zoom.us/pricing' rel='noopener'>Zoom : offres et ZoomMate</a>",
+        "<a href='https://hbr.org/2017/07/stop-the-meeting-madness' rel='noopener'>Harvard Business Review : Stop the Meeting Madness</a> (juillet 2017)",
+        "<a href='https://www.amf-france.org/fr/reglementation/doctrine/doc-2016-08' rel='noopener'>AMF : guide de l'information permanente et de la gestion de l'information privilégiée (DOC-2016-08)</a>",
+        "<a href='https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000037262111' rel='noopener'>Légifrance : loi du 30 juillet 2018 relative à la protection du secret des affaires</a>",
+        "<a href='https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000043975196' rel='noopener'>Légifrance : article L2312-8 du code du travail</a>",
+        "<a href='https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' rel='noopener'>EUR-Lex : règlement (UE) 2024/1689 sur l'intelligence artificielle</a>"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Comment préparer un CODIR avec l'IA ?",
+      "a": "En lui confiant les étapes de préparation et de suivi : regrouper les sujets proposés, construire un ordre du jour minuté, rédiger une note d'une page par point avec des chiffres sourcés, commenter les écarts du tableau de bord, puis rédiger le relevé de décisions et relancer les porteurs d'action. Les directions relisent leurs notes, la finance recalcule les chiffres, et le comité garde la décision."
+    },
+    {
+      "q": "Quelle IA utiliser pour le comité de direction ?",
+      "a": "Celle que l'entreprise a déjà déployée avec des comptes professionnels. Sous Microsoft, Copilot dans Teams, l'agent Facilitator, les blocs-notes et la Narration de Power BI couvrent tout le cycle. Sous Google Workspace, Gemini dans Meet et Gemini Notebook jouent le même rôle. Claude, avec ses projets et ses tâches Cowork, convient à la rédaction des notes et au suivi des actions. Un compte personnel n'a pas sa place dans un comité."
+    },
+    {
+      "q": "Peut-on enregistrer un CODIR pour que l'IA fasse le compte rendu ?",
+      "a": "Oui, après avoir informé les participants et réglé la conservation. Dans Teams, le mode « Uniquement pendant la réunion » permet d'utiliser Copilot sans garder de transcription, à condition que l'administrateur ait ouvert ce réglage. Une pratique prudente consiste à couper l'enregistrement sur les points sensibles et à faire rédiger le relevé à partir des notes de l'assistante de direction."
+    },
+    {
+      "q": "Quelle différence entre un compte rendu et un relevé de décisions ?",
+      "a": "Le compte rendu raconte la séance, avec les interventions et les arguments. Le relevé de décisions ne garde que ce qui engage : la décision, son responsable, son échéance et ses conditions. Pour un comité de direction, le relevé suffit en général : il se diffuse plus vite et expose moins les personnes."
+    },
+    {
+      "q": "Comment protéger les sujets confidentiels d'un COMEX quand on utilise Copilot ?",
+      "a": "Classez chaque point en ordinaire, sensible ou restreint. Étiquetez les documents sensibles avec Purview : sans droit d'extraction, Copilot ne résume pas le contenu, et le chiffrement à double clé le lui ferme entièrement. Pour les points restreints (acquisition, information privilégiée, cas individuels), coupez la transcription et gardez un document séparé, car Copilot ne reconnaît pas encore les étiquettes qui protègent les réunions Teams."
+    },
+    {
+      "q": "L'IA peut-elle analyser l'ambiance ou les émotions des participants ?",
+      "a": "Non, pas dans un cadre de travail situé dans l'Union européenne. Depuis le 2 février 2025, l'article 5 de l'AI Act proscrit les systèmes qui déduisent les émotions d'une personne au travail, sauf motif médical ou de sécurité. Noter le comportement des salariés relève, de son côté, de la liste des usages à haut risque (annexe III)."
+    },
+    {
+      "q": "Une société cotée peut-elle utiliser l'IA pour préparer son comité exécutif ?",
+      "a": "Oui pour les sujets ordinaires, avec prudence pour le reste. Une information privilégiée au sens du règlement européen sur les abus de marché suppose une liste des personnes qui y ont accès ; la verser dans un outil d'IA élargit ce cercle d'une manière difficile à tracer. Ces points se traitent hors des assistants, ou dans un environnement validé par la conformité."
+    },
+    {
+      "q": "Faut-il former le comité de direction avant de lui confier ces outils ?",
+      "a": "C'est le moyen le plus rapide d'obtenir des règles tenables. Des membres qui ont essayé les outils sur leurs propres dossiers savent ce qu'ils acceptent de voir transcrit, ce qu'ils gardent hors des assistants et ce qu'ils attendent de la personne qui prépare les séances. Masteria propose une session collective pour le comité exécutif et une journée consacrée aux décisions pour les dirigeants."
+    }
+  ],
+  "cta": {
+    "title": "Mettre votre comité de direction aux commandes de l'IA ?",
+    "desc": "Une session sur vos propres dossiers, en français ou en anglais, pour poser les règles et préparer la prochaine séance avec les outils de l'entreprise.",
+    "buttons": [
+      { "label": "Découvrir la formation IA COMEX", "href": "/formation-ia-comex", "primary": true },
+      { "label": "Voir la formation IA dirigeants", "href": "/formation-ia-dirigeants", "primary": false }
+    ]
+  },
+  "internalLinks": [
+    { "label": "Formation IA COMEX : la session du comité exécutif", "href": "/formation-ia-comex" },
+    { "label": "Formation IA pour les dirigeants", "href": "/formation-ia-dirigeants" },
+    { "label": "Rédiger la charte IA de l'entreprise", "href": "/charte-ia-entreprise" },
+    { "label": "Gouvernance de l'IA en entreprise", "href": "/gouvernance-ia" }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Préparer un comité de direction avec l'IA : les sept étapes du cycle",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 7,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Collecter et regrouper les sujets (J-10)" },
+        { "@type": "ListItem", "position": 2, "name": "Construire l'ordre du jour minuté (J-7)" },
+        { "@type": "ListItem", "position": 3, "name": "Rédiger une note d'une page par point (J-5 à J-3)" },
+        { "@type": "ListItem", "position": 4, "name": "Commenter le tableau de bord (J-3)" },
+        { "@type": "ListItem", "position": 5, "name": "Prendre les notes et minuter la séance (J)" },
+        { "@type": "ListItem", "position": 6, "name": "Rédiger le relevé de décisions (J+1)" },
+        { "@type": "ListItem", "position": 7, "name": "Suivre les actions jusqu'à la séance suivante" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Vocabulaire du comité de direction assisté par l'IA",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "CODIR", "description": "Comité de direction : instance qui réunit le dirigeant et ses directeurs pour piloter l'activité et décider." },
+        { "@type": "DefinedTerm", "name": "COMEX", "description": "Comité exécutif : instance de direction générale d'un groupe ou d'une grande entreprise." },
+        { "@type": "DefinedTerm", "name": "Relevé de décisions", "description": "Document qui consigne chaque décision avec son responsable, son échéance et ses conditions." },
+        { "@type": "DefinedTerm", "name": "Étiquette de confidentialité", "description": "Marque appliquée à un document ou un mail dans Microsoft Purview, qui peut chiffrer le contenu et limiter ce que Copilot en extrait." },
+        { "@type": "DefinedTerm", "name": "Information privilégiée", "description": "Information précise, non publique, susceptible d'influencer le cours d'un titre coté, au sens du règlement (UE) n° 596/2014." }
+      ]
+    }
+  ]
+}

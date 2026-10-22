@@ -498,7 +498,7 @@ export default function AuditIAMedicoSocialPage() {
                 <strong>Trois écarts avec un audit IA d'entreprise. La donnée d'abord : informations de santé, de mineurs ou de personnes vulnérables, couvertes par le secret professionnel, qui doivent rester dans le logiciel métier. La limite ensuite : l'IA n'évalue pas un usager et ne décide de rien, et le texte européen sur l'IA range parmi le haut risque l'évaluation de l'accès à des prestations essentielles. Le financement enfin : le conseil se finance auprès de l'ARS, sur crédits non reconductibles, et la formation par l'OPCO Santé.</strong>
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                La méthode et le livrable reprennent ceux de notre <Link to="/audit-ia" style={aStyle}>audit IA d'entreprise</Link>. Le périmètre, le vocabulaire et les garde-fous viennent de vos établissements. Pour les équipes, notre <Link to="/formation-ia-sante" style={aStyle}>formation IA santé et médico-social</Link> applique le même cadre.
+                La méthode et le livrable reprennent ceux de notre <Link to="/audit-ia" style={aStyle}>audit IA d'entreprise</Link>. Le périmètre, le vocabulaire et les garde-fous viennent de vos établissements. Pour les équipes, notre <Link to="/formation-ia-medico-social" style={aStyle}>formation IA médico-social</Link> applique le même cadre.
               </p>
             </div>
 
@@ -750,12 +750,13 @@ export default function AuditIAMedicoSocialPage() {
             Pages utiles aux établissements
           </h2>
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 32, lineHeight: 1.7 }}>
-            Cette mission relève de notre activité de <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et la <Link to="/formation-ia-sante" style={aStyle}>formation IA santé et médico-social</Link> en prend souvent le relais auprès des équipes.
+            Cette mission relève de notre activité de <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et la <Link to="/formation-ia-medico-social" style={aStyle}>formation IA médico-social</Link> en prend souvent le relais auprès des équipes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
             {[
               { label: "Audit IA d'entreprise", href: '/audit-ia', tag: 'Audit', desc: "La mission de référence, dont cette page adapte la méthode et le livrable au secteur." },
-              { label: 'Formation IA santé et médico-social', href: '/formation-ia-sante', tag: 'Formation', desc: "Une journée sur les usages non cliniques, dans le cadre du secret professionnel, avec un financement possible par votre OPCO." },
+              { label: 'Formation IA médico-social', href: '/formation-ia-medico-social', tag: 'Formation', desc: "Une journée pour les ESMS sur les écrits, le FALC et l'évaluation HAS, cadre des données posé en premier." },
+              { label: 'Formation IA santé', href: '/formation-ia-sante', tag: 'Formation', desc: "Les usages non cliniques dans les hôpitaux et cliniques, dans le cadre du secret professionnel." },
               { label: 'Audit de conformité IA', href: '/audit-conformite-ai-act', tag: 'Conformité', desc: "Quand la seule question est d'être en règle : RGPD, AI Act, écarts et plan daté." },
               { label: 'IA et RGPD', href: '/ia-et-rgpd', tag: 'Données', desc: "Ce que l'IA générative change pour les données personnelles, cas par cas." },
               { label: "Charte IA d'entreprise", href: '/charte-ia-entreprise', tag: 'Gouvernance', desc: "Le texte d'usage qui découle souvent de l'audit : outils permis, données exclues." },

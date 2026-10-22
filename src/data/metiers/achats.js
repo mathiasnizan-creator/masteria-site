@@ -350,6 +350,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA logistique",
+   "href": "/formation-ia-logistique",
+   "tag": "Supply chain",
+   "desc": "Litiges transport, procédures d'entrepôt, exports WMS."
+  },
+  {
    "label": "Formation IA marché public",
    "href": "/formation-ia-marche-public",
    "tag": "Commande publique",

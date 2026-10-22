@@ -6,14 +6,14 @@ export default {
   dateModified: '2026-10-07',
   author: true,
   metaTitle: 'Formation Copilot Microsoft 365 · Qualiopi · OPCO | Masteria',
-  metaDesc: "Formation Microsoft Copilot en 2 jours : Outlook, Teams, Word, Excel, Cowork, agents, licences et données. 12 programmes métier, Qualiopi, finançable OPCO.",
+  metaDesc: "Formation Microsoft Copilot en 2 jours : Outlook, Teams, Word, Excel, Cowork, agents, licences et données. 13 programmes, Qualiopi, finançable OPCO.",
   h1: 'Formation Microsoft Copilot en entreprise',
   outilCourt: 'Microsoft Copilot',
   casIds: ['industrie'],
 
   definition: "Une formation de deux jours où vos équipes se servent de Copilot dans Outlook, Teams, Word, Excel et PowerPoint, avec leurs fichiers de travail. Douze participants au maximum par groupe, ou une personne seule, dans vos locaux ou en visioconférence.",
 
-  intro: "Sous Microsoft 365, Copilot existe à deux niveaux. Copilot Chat, compris dans l'abonnement, travaille sur le web et sur les fichiers qu'on lui donne. La licence Microsoft Copilot lit en plus les mails, les réunions, l'agenda et les fichiers de chaque salarié. Copilot réécrit le document Word ouvert, remanie un classeur Excel et, avec Cowork (facturé à la consommation), mène une tâche jusqu'à l'envoi d'un mail après votre accord. La formation apprend à choisir le bon niveau, à formuler une demande précise et à contrôler ce que Copilot a modifié. Douze programmes couvrent les métiers, de la finance à la DSI.",
+  intro: "Sous Microsoft 365, Copilot existe à deux niveaux. Copilot Chat, compris dans l'abonnement, travaille sur le web et sur les fichiers qu'on lui donne. La licence Microsoft Copilot lit en plus les mails, les réunions, l'agenda et les fichiers de chaque salarié. Copilot réécrit le document Word ouvert, remanie un classeur Excel et, avec Cowork (facturé à la consommation), mène une tâche jusqu'à l'envoi d'un mail après votre accord. La formation apprend à choisir le bon niveau, à formuler une demande précise et à contrôler ce que Copilot a modifié. Treize programmes couvrent les métiers, de la finance à la DSI, et la conception d'agents dans Copilot Studio.",
 
   pitch: "Copilot voit tout ce qu'un salarié a le droit d'ouvrir dans Microsoft 365, et il agit désormais dans ses fichiers : autant apprendre à le diriger.",
 
@@ -43,9 +43,10 @@ export default {
     },
   ],
 
-  spokesIntro: "Douze programmes de deux jours, chacun construit autour des applications qu'un métier ouvre le plus : Excel pour la finance, Outlook et Teams pour l'assistanat, PowerPoint pour le marketing. Pour une équipe qui réunit plusieurs fonctions, nous assemblons les modules utiles à chacune autour d'un tronc commun sur la méthode de demande et les règles de données.",
+  spokesIntro: "Treize programmes de deux jours, chacun construit autour des applications qu'un métier ouvre le plus : Excel pour la finance, Outlook et Teams pour l'assistanat, PowerPoint pour le marketing. Pour une équipe qui réunit plusieurs fonctions, nous assemblons les modules utiles à chacune autour d'un tronc commun sur la méthode de demande et les règles de données.",
 
   carteTitres: {
+    'formation-copilot-studio': 'Copilot Studio : concevoir et gouverner des agents',
     'formation-copilot-finance': 'Copilot chez les financiers et les contrôleurs de gestion',
     'formation-copilot-assistante': "Copilot au service de l'assistanat de direction",
     'formation-copilot-marketing': 'Copilot pour le marketing et la marque',
@@ -61,6 +62,7 @@ export default {
   },
 
   spokeDescs: {
+    'formation-copilot-studio': "Agent Builder ou Copilot Studio, moteurs d'exécution, connecteurs et déclencheurs, publication dans Teams, stratégies de données et crédits Copilot.",
     'formation-copilot-finance': "Transformer un export comptable en mode Plan dans Excel, faire expliquer un classeur hérité, puis rédiger la note de clôture et le support du comité.",
     'formation-copilot-assistante': "Travailler dans la boîte mail déléguée du dirigeant, préparer ordres du jour et brief du matin, tirer le relevé de décisions du récapitulatif Teams.",
     'formation-copilot-marketing': "Monter le deck de lancement sur le gabarit PowerPoint de la marque, lire un bilan de campagne dans Excel, produire ses visuels dans l'espace Créer.",

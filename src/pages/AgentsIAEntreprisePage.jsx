@@ -988,7 +988,7 @@ export default function AgentsIAEntreprisePage() {
                 <strong style={{ color: '#0A0A0A' }}>Des droits minimaux, un feu vert humain avant toute action qui engage, des données traitées comme chez un sous-traitant, un journal de chaque action et un recensement des agents au regard de l'AI Act.</strong> Posés dès le pilote, ils transforment un risque opérationnel en outil qu'on peut auditer.
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Donner des mains à une IA change la nature du risque : une erreur ne reste plus dans une fenêtre de discussion, elle part dans vos systèmes. Le cadre d'ensemble relève de la <Link to="/gouvernance-ia" style={linkStyle}>gouvernance de l'IA</Link>.
+                Donner des mains à une IA change la nature du risque : une erreur ne reste plus dans une fenêtre de discussion, elle part dans vos systèmes. Le cadre d'ensemble relève de la <Link to="/gouvernance-ia" style={linkStyle}>gouvernance de l'IA</Link> ; l'inventaire, les identités, les propriétaires et la supervision de chaque agent sont détaillés dans notre guide pour <Link to="/blog/gouvernance-agents-ia" style={linkStyle}>gouverner ses agents IA</Link>.
               </p>
             </div>
 

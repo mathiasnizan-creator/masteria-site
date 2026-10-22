@@ -1,0 +1,329 @@
+{
+  "slug": "creer-une-formation-avec-gemini",
+  "title": "Comment créer une formation avec Gemini : de l'objectif pédagogique au quiz",
+  "metaTitle": "Créer une formation avec Gemini, étape par étape | Masteria",
+  "metaDesc": "Générer une formation avec Gemini et Gemini Notebook : objectif pédagogique, sources, déroulé, supports, quiz, relecture experte et droits sur les documents.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "13 min",
+  "formations": [["Formation Gemini Notebook (NotebookLM)", "/formation-notebooklm"], ["Formation Gemini en entreprise", "/formation-gemini-entreprise"], ["Formation IA pour les équipes pédagogiques", "/formation-ia-pedagogique"]],
+  "keywords": ["comment générer une formation avec gemini", "créer une formation avec gemini", "gemini notebook formation", "notebooklm créer un cours", "concevoir un module de formation avec l'IA", "quiz google forms gemini", "ingénierie pédagogique IA", "objectif pédagogique"],
+  "excerpt": "Pour concevoir un module de formation avec Gemini, on écrit d'abord l'objectif, on réunit les sources dans Gemini Notebook, puis on fait produire déroulé, supports et quiz, que relit un expert du métier. La méthode en sept étapes, des demandes à reprendre et les limites à connaître.",
+  "intro": "Une formation conçue avec Gemini part d'un objectif écrit par vous, s'appuie sur des sources que vous avez choisies et se termine par une relecture experte. Entre ces deux bornes, les outils de Google prennent une large part du travail de mise en forme : l'application Gemini structure et reformule, Gemini Notebook (anciennement NotebookLM) répond depuis vos documents et fabrique guides, cartes mentales et quiz, et Google Forms peut tirer d'un document un quiz noté avec son corrigé. La méthode tient en sept étapes, avec des demandes prêtes à adapter et les limites à connaître avant de diffuser un module. Fonctions et plafonds ont été vérifiés sur l'aide de Google le 22 octobre 2026.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Pour créer une formation avec Gemini : écrivez l'objectif pédagogique (ce que l'apprenant saura faire, de façon mesurable), versez vos sources dans un carnet Gemini Notebook, faites cartographier le contenu, construisez le déroulé séquence par séquence, produisez les supports depuis le panneau Studio, créez le quiz dans Gemini Notebook ou dans Google Forms, puis faites relire le tout par un expert du métier avant un test sur deux apprenants. Gemini accélère la mise en forme ; la justesse du contenu et les droits sur les sources restent sous votre responsabilité."
+    },
+    {
+      "type": "h2",
+      "text": "Quel outil Google fait quoi dans la conception d'un module"
+    },
+    {
+      "type": "p",
+      "text": "Google range sous le nom Gemini plusieurs outils qui n'entretiennent pas le même rapport aux sources, et la conception d'une formation les fait travailler à tour de rôle. L'<strong>application Gemini</strong> converse, rédige et peut chercher sur le web : elle sert à formuler un objectif, à imaginer une mise en situation, à adapter un passage à un public débutant. <strong>Gemini Notebook</strong>, l'ancien NotebookLM rebaptisé le 16 juillet 2026, ne répond dans son chat qu'à partir des documents versés dans un carnet et renvoie chaque affirmation au passage cité : il porte le fond du module. Google Forms et Google Slides savent enfin générer un quiz ou une présentation à partir d'une consigne."
+    },
+    {
+      "type": "table",
+      "headers": ["Outil", "Son rôle dans la conception", "Limite à connaître (22 octobre 2026)"],
+      "rows": [
+        ["Application Gemini", "Formuler l'objectif, proposer des activités, adapter un texte à son public", "Peut puiser sur le web : chaque fait se contrôle avant d'entrer dans un support"],
+        ["Gemini Notebook", "Répondre depuis vos seules sources, citations à l'appui ; guide d'étude, carte mentale, flashcards, quiz, résumés audio et vidéo", "50 sources par carnet sur un compte gratuit, 300 en Business Standard"],
+        ["Google Forms avec Gemini", "Générer un quiz noté avec ses réponses correctes, à partir d'un Doc, de Slides ou d'un PDF de Drive", "Business Standard et Plus, Enterprise Standard et Plus, offres personnelles Google AI Pro et Ultra"],
+        ["Google Slides avec Gemini", "Générer une présentation à partir d'une consigne", "100 diapositives générées par mois en Business Standard, aucune en Business Starter"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Pour éviter de réécrire à chaque module vos consignes de concepteur (gabarit de déroulé, règles de rédaction, niveau de langue), l'application Gemini déploie depuis le 13 octobre 2026 les <strong>compétences</strong>, des instructions réutilisables au format ouvert SKILL.md, qui prennent la suite des Gems. Sur un compte professionnel, Google annonce que les Gems cesseront de fonctionner au plus tôt le 1er mars 2027 ; l'arrivée des compétences dans les applications Workspace a pris du retard, selon la note publiée par Google le même 13 octobre."
+    },
+    {
+      "type": "h2",
+      "text": "Les 7 étapes pour générer une formation avec Gemini"
+    },
+    {
+      "type": "h3",
+      "text": "1. Écrire l'objectif pédagogique avant d'ouvrir l'outil"
+    },
+    {
+      "type": "p",
+      "text": "Un <strong>objectif pédagogique</strong> décrit ce que l'apprenant saura faire à la fin du module, avec un verbe observable, une condition et un critère. « Comprendre la procédure de réception » ne se vérifie pas ; « enregistrer dans l'ERP une réception de marchandises conforme, sans erreur de quantité, à partir d'un bon de livraison réel » se vérifie en cinq minutes. Gemini aide à resserrer une formulation floue, à condition de lui donner le public, la durée et la situation de travail. Tenez-vous à trois objectifs au plus pour un module d'une heure : au-delà, exercices et quiz se dispersent."
+    },
+    {
+      "type": "h3",
+      "text": "2. Réunir les sources dans un carnet Gemini Notebook"
+    },
+    {
+      "type": "p",
+      "text": "Créez un carnet par module et versez-y les pièces qui font autorité : la procédure en vigueur, la fiche technique, le support d'une session précédente, le texte de référence. Gemini Notebook accepte les PDF, les fichiers Word et PowerPoint, les documents Google, les pages web, les vidéos YouTube publiques sous-titrées et les fichiers audio, jusqu'à 500 000 mots par source. Un document importé depuis Drive se resynchronise quand l'original change, ce qui garde le module aligné sur la dernière version. Retirez brouillons et versions périmées : le carnet citera une règle abrogée avec la même assurance qu'une règle valide."
+    },
+    {
+      "type": "h3",
+      "text": "3. Cartographier le contenu et repérer les manques"
+    },
+    {
+      "type": "p",
+      "text": "Avant de rédiger, demandez une <strong>carte mentale</strong> depuis le chat du carnet : elle montre les thèmes que vos sources couvrent et ceux qu'elles effleurent, et chaque nœud cliqué devient une question posée au carnet. Réglez ensuite le chat sur le style Guide d'apprentissage, prévu par Google pour les contenus éducatifs, puis demandez quelles questions d'un débutant ces documents ne permettent pas de trancher. La réponse donne la liste des pièces à ajouter ou des points à faire préciser par l'expert avant d'écrire la moindre séquence."
+    },
+    {
+      "type": "h3",
+      "text": "4. Construire le déroulé séquence par séquence"
+    },
+    {
+      "type": "p",
+      "text": "Le déroulé découpe le module en séquences : une durée, un objectif, une activité, une trace de ce que l'apprenant a produit. Demandez-le au carnet pour que chaque contenu renvoie à sa source, puis ouvrez trois citations prises au hasard. Pour les mises en situation, les jeux de rôle ou les cas inventés, passez par l'application Gemini : le chat de Gemini Notebook s'en tient aux documents et peut décliner une demande trop créative. Alternez apport et pratique, et gardez pour chaque séquence une question de vérification que vous reprendrez dans le quiz."
+    },
+    {
+      "type": "h3",
+      "text": "5. Produire les supports depuis le panneau Studio"
+    },
+    {
+      "type": "p",
+      "text": "Le panneau Studio de Gemini Notebook génère des rapports : un <strong>guide d'étude</strong> pour l'apprenant, un document de synthèse pour le formateur, une page de questions fréquentes pour l'après-session. Chaque rapport s'exporte vers Google Docs, où vous le passez à votre charte. Le résumé audio au format Briefing, une seule voix et moins de deux minutes, se prête à une écoute avant la session ; le résumé vidéo Explicatif existe en français, et sa génération dépasse parfois trente minutes. Le carnet sait aussi produire une présentation, téléchargeable en PDF ; pour des diapositives modifiables, générez-les dans Google Slides avec une consigne qui reprend votre déroulé."
+    },
+    {
+      "type": "h3",
+      "text": "6. Créer le quiz et le relier aux objectifs"
+    },
+    {
+      "type": "p",
+      "text": "Le quiz sert deux usages, et chacun a son outil. Pour l'entraînement, les <strong>quiz et flashcards</strong> de Gemini Notebook se règlent en difficulté (facile, moyen, difficile) et en nombre, proposent un indice et une explication, et laissent l'apprenant reprendre les seules cartes manquées. Pour une évaluation notée, Gemini dans Google Forms génère depuis l'été 2026 un quiz complet avec ses réponses correctes, à partir d'un Doc, de Slides ou d'un PDF de Drive, en questions à choix multiples, cases à cocher ou grilles. Rattachez chaque question à un objectif de l'étape 1, et demandez des mauvaises réponses inspirées des erreurs que vous observez sur le terrain."
+    },
+    {
+      "type": "h3",
+      "text": "7. Faire relire par un expert, puis tester sur deux apprenants"
+    },
+    {
+      "type": "p",
+      "text": "Un expert du métier relit tout ce qui sort des outils : exactitude, actualité des règles, et ce que les sources passent sous silence. Google le rappelle sur chaque fonction de Gemini Notebook, rapports, voix et vidéos générés peuvent contenir des inexactitudes. Testez ensuite le module sur deux personnes du public visé, chronométrez, notez où elles butent, puis corrigez déroulé et quiz. Ce test fait apparaître les consignes ambiguës que le concepteur, à force de relire, ne voit plus."
+    },
+    {
+      "type": "h2",
+      "text": "Exemples de demandes à adapter"
+    },
+    {
+      "type": "p",
+      "text": "Les demandes ci-dessous suivent un même module, la réception des marchandises pour des magasiniers débutants. Remplacez le sujet, le public et les erreurs de terrain par les vôtres ; gardez la structure, qui fixe à chaque fois le public, la contrainte et la forme attendue."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Objectif (application Gemini)</strong> : « Je conçois un module d'une heure pour des magasiniers débutants sur la réception des marchandises. Propose trois objectifs pédagogiques formulés avec un verbe observable, une condition et un critère de réussite, puis signale ceux qui seraient difficiles à évaluer en fin de module. »",
+        "<strong>Manques (chat du carnet, style Guide d'apprentissage)</strong> : « À partir des seules sources de ce carnet, liste les questions qu'un magasinier débutant poserait sur la réception et que ces documents ne permettent pas de trancher. Pour chacune, indique le type de document qui manque. »",
+        "<strong>Déroulé (chat du carnet)</strong> : « Propose le déroulé d'un module de 60 minutes découpé en séquences de 10 à 15 minutes. Pour chaque séquence, donne la durée, l'objectif visé, l'activité, le support et une question de vérification. Cite la source de chaque contenu et signale toute séquence qu'aucune source ne couvre. »",
+        "<strong>Mise en situation (application Gemini)</strong> : « Rédige un cas pratique de 200 mots : un livreur arrive avec une palette dont le bon de livraison ne correspond pas à la commande, et le magasinier doit décider quoi faire. Ajoute trois questions pour guider la discussion du groupe, sans donner la solution. »",
+        "<strong>Quiz d'entraînement (Studio, consigne de personnalisation)</strong> : « Dix questions de difficulté moyenne pour des magasiniers en fin de module. Chaque question vérifie l'un des trois objectifs du module. Les mauvaises réponses reprennent des erreurs fréquentes en réception : quantité non recomptée, réserve oubliée sur le bon, colis abîmé accepté. »",
+        "<strong>Quiz noté (Google Forms)</strong> : « Crée un quiz de dix questions à choix multiples à partir du document Procédure de réception de mon Drive, avec la bonne réponse et un point par question. »",
+        "<strong>Résumé audio (Studio)</strong> : « Format Briefing, en français, pour des magasiniers qui l'écouteront avant la session : insiste sur les contrôles à faire avant de signer le bon de livraison. »"
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Les limites à connaître avant de diffuser un module"
+    },
+    {
+      "type": "h3",
+      "text": "Un expert du métier valide chaque support"
+    },
+    {
+      "type": "p",
+      "text": "Une citation prouve que la phrase figure dans la source. Elle ne dit rien de la mise à jour de cette source, ni de la façon dont l'outil l'a résumée ailleurs dans le support. Google écrit lui-même qu'il ne faut pas compter sur Gemini Notebook pour un conseil juridique, médical ou financier. Pour un module réglementaire, sécurité au poste ou droit social par exemple, la validation signée d'un expert sur le contenu final protège l'apprenant comme l'entreprise."
+    },
+    {
+      "type": "h3",
+      "text": "Les droits sur les sources"
+    },
+    {
+      "type": "p",
+      "text": "Verser un document dans un carnet en crée une copie, et diffuser un support qui en reprend des passages en crée une autre. L'article L122-4 du Code de la propriété intellectuelle rend illicite toute reproduction, même partielle, faite sans le consentement de l'auteur ou de ses ayants droit. Un manuel acheté, un article de presse ou la vidéo d'un tiers demandent donc l'accord du titulaire des droits avant de nourrir un support diffusé ; les documents produits par l'entreprise se réutilisent en interne, tant qu'ils ne reprennent pas eux-mêmes des contenus de tiers. Google donne la même consigne dans son aide : n'importez pas de documents sur lesquels vous n'avez pas de droits. Sur les contenus générés, Google indique ne revendiquer aucune propriété."
+    },
+    {
+      "type": "h3",
+      "text": "Les données des apprenants et des clients"
+    },
+    {
+      "type": "p",
+      "text": "Un carnet de conception n'a pas besoin de noms. Retirez des sources les dossiers individuels, les évaluations nominatives et les coordonnées avant de les verser. Le type de compte pèse aussi : sur un compte Google personnel, un avis donné par le pouce levé ou baissé transmet la discussion et ses sources à des équipes de relecture qui la conservent jusqu'à trois ans ; sur un compte Workspace, Google n'opère ni relecture humaine ni entraînement de ses modèles, même après un avis. Les règles générales sont détaillées sur notre page consacrée à <a href='/ia-et-rgpd'>l'IA et au RGPD</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Ce que permet chaque compte Google"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Compte personnel gratuit</strong> : Gemini Notebook avec 50 sources par carnet et 100 carnets ; la génération de quiz dans Forms suppose une offre Google AI Pro ou Ultra.",
+        "<strong>Workspace Business Starter</strong> : Gemini Notebook au palier d'entrée de Workspace ; ni présentation générée dans Slides, ni quiz généré dans Forms.",
+        "<strong>Business Standard et Business Plus</strong> : 300 sources par carnet et 500 carnets, 100 diapositives générées par mois dans Slides, quiz Forms généré par Gemini.",
+        "<strong>Module AI Expanded Access</strong> : 400 sources par carnet et des quotas relevés sur les résumés audio et vidéo."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces plafonds proviennent des pages d'aide de Google relevées le 22 octobre 2026, dont la page destinée aux administrateurs, mise à jour le 20 octobre. Google les présente comme révisables : relisez-les sur votre compte avant de bâtir un parcours qui en dépend. À titre de repère, Google comptait plus de 30 millions de personnes et plus de 600 000 organisations utilisatrices de l'outil au moment de son changement de nom, en juillet 2026."
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer"
+    },
+    {
+      "type": "p",
+      "text": "Choisissez un module court que vous animez déjà et dont les sources existent, une procédure ou la prise en main d'un logiciel. Refaites-le avec la méthode, objectif d'abord, carnet ensuite, relecture pour finir, puis comparez-le à la version d'origine : vous saurez ce que Gemini change sur votre propre matière, mesure en main. Pour former vos concepteurs ou vos référents, la <a href='/formation-notebooklm'>formation Gemini Notebook</a> y consacre une journée sur vos documents, et la <a href='/formation-ia-pedagogique'>formation IA pour les équipes pédagogiques</a> l'étend aux autres assistants. L'outil met en forme ; l'objectif et la vérification restent le métier du formateur."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Peut-on générer une formation complète avec Gemini ?",
+      "a": "Gemini produit des brouillons de chaque pièce : objectifs, déroulé, guide d'étude, quiz, résumé audio ou vidéo. Une formation prête à diffuser demande en plus un objectif écrit par le concepteur, des sources choisies avec soin et une relecture par un expert du métier. Gemini tient le rôle d'assistant de conception ; la décision pédagogique reste au formateur."
+    },
+    {
+      "q": "Faut-il utiliser l'application Gemini ou Gemini Notebook ?",
+      "a": "Les deux, à des moments différents. Gemini Notebook porte le fond : il répond depuis les documents du carnet et cite ses passages. L'application Gemini sert à formuler les objectifs, imaginer des mises en situation et adapter un texte à un public ; elle peut chercher sur le web, ce qui impose de vérifier chaque fait qu'elle apporte."
+    },
+    {
+      "q": "Gemini peut-il créer un quiz avec les bonnes réponses ?",
+      "a": "Oui, de deux façons. Gemini Notebook génère des quiz d'entraînement réglés en difficulté, avec indice et explication. Gemini dans Google Forms crée un quiz noté avec ses réponses correctes à partir d'un Doc, de Slides ou d'un PDF de Drive, sur les éditions Business Standard et Plus, Enterprise Standard et Plus, ou avec une offre personnelle Google AI Pro ou Ultra."
+    },
+    {
+      "q": "NotebookLM existe-t-il encore ?",
+      "a": "Oui, sous un autre nom : Google l'a renommé Gemini Notebook le 16 juillet 2026. L'outil reste une application autonome, les carnets existants et leurs liens de partage fonctionnent toujours grâce à des redirections, et les mêmes carnets s'ouvrent depuis l'application Gemini."
+    },
+    {
+      "q": "Peut-on utiliser un livre ou un article de presse comme source ?",
+      "a": "Pour un support diffusé, seulement avec l'accord du titulaire des droits. L'article L122-4 du Code de la propriété intellectuelle interdit la reproduction, même partielle, d'une œuvre sans le consentement de son auteur. Google demande de son côté de ne pas importer de documents sur lesquels on n'a pas de droits. Les documents produits par l'entreprise sont la matière première la plus simple à exploiter."
+    },
+    {
+      "q": "Faut-il un compte Google payant pour concevoir une formation avec Gemini ?",
+      "a": "Un compte personnel gratuit suffit pour Gemini Notebook, à raison de 50 sources par carnet. La génération de quiz dans Forms demande au minimum Business Standard côté Workspace, ou une offre Google AI Pro ou Ultra pour un compte personnel ; la génération de présentations dans Slides reste fermée en Business Starter. Pour des documents d'entreprise, le compte Workspace a l'avantage de n'exposer aucun contenu à une relecture humaine chez Google."
+    },
+    {
+      "q": "Comment vérifier qu'un support généré ne contient pas d'erreur ?",
+      "a": "Ouvrez les citations du carnet et comparez chaque passage avec sa source, contrôlez à part les chiffres, les dates et les références de textes, puis faites relire l'ensemble par un expert du métier. Un test sur deux apprenants du public visé révèle ensuite ce que la relecture n'a pas vu : consignes ambiguës, questions de quiz à double lecture, durées mal calibrées."
+    },
+    {
+      "q": "Les résumés audio de Gemini Notebook sont-ils disponibles en français ?",
+      "a": "Oui. Le résumé audio se génère dans plus de 80 langues, dont le français, au choix en Analyse approfondie, Briefing, Critique ou Débat. Le mode interactif, qui permet d'interrompre les voix pour poser une question, reste réservé à l'anglais. Côté vidéo, le format Explicatif existe en français, et le format Cinématique en anglais seulement."
+    }
+  ],
+  "cta": {
+    "title": "Former vos concepteurs à Gemini Notebook",
+    "desc": "Une journée pour monter des carnets sur vos propres documents et en tirer guides, quiz et résumés, relus avant diffusion.",
+    "buttons": [
+      {
+        "label": "Voir la formation Gemini Notebook",
+        "href": "/formation-notebooklm",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre projet",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Formation Gemini Notebook (anciennement NotebookLM)",
+      "href": "/formation-notebooklm"
+    },
+    {
+      "label": "Formation Gemini dans Google Workspace",
+      "href": "/formation-gemini-entreprise"
+    },
+    {
+      "label": "L'IA pour les équipes pédagogiques",
+      "href": "/formation-ia-pedagogique"
+    },
+    {
+      "label": "Organismes de formation : l'IA dans la conception des parcours",
+      "href": "/formation-ia-organismes-formation"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : créer une formation avec Gemini",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Objectif pédagogique",
+          "description": "Ce que l'apprenant saura faire à la fin du module, formulé avec un verbe observable, une condition et un critère."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Gemini Notebook",
+          "description": "Outil de Google, anciennement NotebookLM, qui répond à partir des documents versés dans un carnet en citant ses passages."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Carnet",
+          "description": "Ensemble de sources réunies dans Gemini Notebook pour un même sujet ; chaque carnet est interrogé séparément."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Guide d'étude",
+          "description": "Rapport généré par Gemini Notebook pour réviser le contenu d'un carnet, exportable vers Google Docs."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Résumé audio",
+          "description": "Version parlée d'un carnet, en quatre formats : Analyse approfondie, Briefing, Critique et Débat."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Compétence (Gemini)",
+          "description": "Instruction réutilisable au format SKILL.md qui prend la suite des Gems dans l'application Gemini."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Les 7 étapes pour créer une formation avec Gemini",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 7,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Écrire l'objectif pédagogique avant d'ouvrir l'outil"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Réunir les sources dans un carnet Gemini Notebook"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cartographier le contenu et repérer les manques"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Construire le déroulé séquence par séquence"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Produire les supports depuis le panneau Studio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Créer le quiz et le relier aux objectifs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Faire relire par un expert, puis tester sur deux apprenants"
+        }
+      ]
+    }
+  ]
+}

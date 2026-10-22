@@ -689,7 +689,7 @@ export const COMPARISONS = {
     changelog: {
       title: "Les changements intégrés depuis la version d'août 2026",
       items: [
-        { date: "7 octobre 2026", text: "Nouvelle vérification des prix et des fonctions. Pour Copilot Business, la page française indique désormais 21,84 € HT en paiement mensuel, à côté des 18,20 € HT en annuel. Microsoft documente la disponibilité générale de Copilot Cowork, effective depuis le 16 juin,, qui demande votre accord avant chaque action sensible. Le 6 octobre, Microsoft a ajouté sur le web de quoi relancer une réponse en changeant de modèle." },
+        { date: "7 octobre 2026", text: "Nouvelle vérification des prix et des fonctions. Pour Copilot Business, la page française indique désormais 21,84 € HT en paiement mensuel, à côté des 18,20 € HT en annuel. Microsoft documente la disponibilité générale de Copilot Cowork, effective depuis le 16 juin, qui demande votre accord avant chaque action sensible. Le 6 octobre, Microsoft a ajouté sur le web de quoi relancer une réponse en changeant de modèle." },
         { date: "Septembre 2026", text: "La documentation de Microsoft appelle désormais la licence Microsoft Copilot et la version incluse Copilot Chat. La fonction =COPILOT() d'Excel a été retirée le 14 septembre. Côté OpenAI, GPT-6 Astra (3 septembre) puis GPT-6.1 Sol (29 septembre) sont arrivés, et ChatGPT s'installe dans Word depuis le 17 septembre." },
         { date: "Juillet 2026", text: "Depuis le 6 juillet, faire tourner un agent ChatGPT coûte des crédits, prélevés d'abord sur l'enveloppe du siège Business. Microsoft accorde aux clients existants Copilot Business à 15,60 € HT la première année, pour un abonnement annuel souscrit d'ici le 31 décembre 2026." },
         { date: "Correction", text: "Une version antérieure citait Sora 2 pour produire des vidéos dans ChatGPT, alors que l'application n'existe plus depuis le 26 avril 2026. Elle affirmait aussi que ChatGPT ne s'intégrait ni à Word ni à Excel : OpenAI publie des extensions officielles pour Word, Excel et PowerPoint." },
@@ -1288,24 +1288,27 @@ export const COMPARISONS = {
   // ═══════════════════════════════════════════════════════════════════
   "meilleure-ia-pour-coder": {
     slug: "meilleure-ia-pour-coder",
-    metaTitle: "Meilleure IA pour coder en 2026 : comparatif | Masteria",
+    metaTitle: "Meilleure IA pour coder en 2026 : Claude, ChatGPT, Copilot | Masteria",
     metaDesc:
-      "Claude Code (Opus 5.5), GitHub Copilot, Cursor ou Codex : contexte, agents, éditeurs, prix par développeur. Comparatif mis à jour le 7 octobre 2026.",
+      "Claude ou ChatGPT pour coder ? Claude Code, Codex, GitHub Copilot et Cursor comparés : modèles, terminal, IDE, cloud, prix. Vérifié le 22 octobre 2026.",
     h1: "Quelle est la meilleure IA pour coder en 2026 ?",
     intro:
-      "Si vous équipez une équipe technique en 2026, le choix de l'IA de codage engage votre budget et votre vitesse de livraison. **Claude Code** s'appuie sur Opus 5.5 et Fable 5.1, lit des dépôts d'un million de tokens et figure dans les abonnements Claude Pro, Max, Team et Enterprise. **GitHub Copilot** s'installe dans les éditeurs existants, avec le choix du modèle et le ticket d'entrée le plus bas. **Cursor** propose un éditeur bâti autour de l'agent. **ChatGPT** délègue des tâches de développement à **Codex**, inclus dans ses offres. Ce guide compare ces quatre outils ; les données d'Anthropic et d'OpenAI ont été relues le 7 octobre 2026, celles de GitHub et de Cursor le 3.",
+      "Si vous équipez une équipe technique en 2026, le choix de l'IA de codage engage votre budget et votre vitesse de livraison. **Claude Code** s'appuie sur Opus 5.5 et Fable 5.1, lit des dépôts d'un million de tokens et figure dans les abonnements Claude Pro, Max, Team et Enterprise. **GitHub Copilot** s'installe dans les éditeurs existants, avec le choix du modèle et le ticket d'entrée le plus bas. **Cursor** propose un éditeur bâti autour de l'agent. **ChatGPT** délègue des tâches de développement à **Codex**, inclus dans ses offres. Pour qui hésite entre Claude et ChatGPT, le choix se resserre donc sur Claude Code et Codex, leurs deux agents de programmation. Les pages d'Anthropic et d'OpenAI ont été relues le 22 octobre 2026, celles de GitHub et de Cursor le 3.",
     lastUpdate: "Octobre 2026",
-    verifiedOn: "7 octobre 2026 (GitHub et Cursor : 3 octobre)",
+    verifiedOn: "22 octobre 2026 (GitHub et Cursor : 3 octobre)",
     datePublished: "2026-05-04",
-    dateModified: "2026-10-07",
-    readTime: "11 minutes",
+    dateModified: "2026-10-22",
+    readTime: "13 minutes",
     keywords:
-      "meilleure ia pour coder 2026, claude code prix, github copilot vs claude, cursor prix, codex openai, ia refactoring code, comparatif ia développement, opus 5.5, gpt-6.1 sol",
+      "meilleure ia pour coder 2026, claude vs chatgpt pour coder, claude ou chatgpt pour coder, chatgpt vs claude code, claude code vs codex, expert claude code, claude code prix, github copilot vs claude, cursor prix, codex openai, ia refactoring code, comparatif ia développement, opus 5.5, gpt-6.1 sol",
     isPanorama: true,
 
     // ─── Textes de section propres à ce panorama (lus par ComparisonPage via `textes`)
     textes: {
-      legende: "Quatre outils de code comparés : Anthropic et OpenAI relus le 7 octobre 2026, GitHub et Cursor le 3 octobre.",
+      // Légende commune au tableau Claude Code / Codex (keyFacts) et au tableau des quatre outils.
+      legende: "Relevé sur les pages officielles des éditeurs : Anthropic et OpenAI le 22 octobre 2026, GitHub et Cursor le 3 octobre.",
+      metiersTitre: "Claude ou ChatGPT pour coder : notre conseil selon votre profil",
+      metiers: "Claude Pro et ChatGPT Plus ouvrent chacun leur agent de code pour 20 $ par mois. Ce qui tranche ensuite, c'est l'abonnement que vous payez déjà et le genre de code que vous confiez à l'agent.",
       analyseTitre: "Chaque outil de code en détail",
       analyse: "Points forts, limites et développeur type, outil par outil.",
       casTitre: "Huit tâches de développement, un vainqueur pour chacune",
@@ -1335,7 +1338,33 @@ export const COMPARISONS = {
         "Complétion pendant la frappe dans VS Code ou JetBrains : GitHub Copilot",
         "Éditeur agentique multi-fichiers : Cursor",
         "Profils mixtes (code, documentation, analyse) : ChatGPT avec Codex",
+        "Claude ou ChatGPT pour coder : Claude Code pour reprendre un gros dépôt, Codex si l'équipe travaille déjà dans ChatGPT",
         "Équipe de 10 développeurs et plus : Copilot pour tous, Claude Code pour les missions de fond",
+      ],
+    },
+
+    // ─── Section « Claude ou ChatGPT pour coder » (requêtes Search Console du 22/10/2026 :
+    // « claude vs chatgpt pour code », « chatgpt vs claude code », « claude ou chatgpt pour coder »).
+    // toolA / toolB ne servent ici qu'au tableau keyFacts (affiché sous la réponse directe) et aux
+    // useCases (conseil par profil, titre dans textes.metiersTitre). Le rendu panorama reste piloté par `tools`.
+    // Faits vérifiés le 22/10/2026 : code.claude.com/docs (overview, model-config, code-review),
+    // claude.com/pricing, learn.chatgpt.com/codex (pricing, models, ide, cloud, agents-md), page Opus 5.5.
+    toolA: { id: "claude", name: "Claude Code", editor: "Anthropic", color: "#D97706" },
+    toolB: { id: "chatgpt", name: "Codex (ChatGPT)", editor: "OpenAI", color: "#10A37F" },
+    keyFacts: {
+      title: "Claude ou ChatGPT pour coder : Claude Code face à Codex",
+      note: "Coder avec Claude ou avec ChatGPT revient à choisir entre leurs agents de programmation : Claude Code chez Anthropic, Codex chez OpenAI. Tous deux lisent un dépôt (le dossier qui contient le code d'un projet), modifient plusieurs fichiers, lancent les tests et préparent une pull request, la demande de fusion que l'équipe relit avant d'intégrer le code. Les prix sont ceux des grilles publiques en dollars, hors taxes.",
+      rows: [
+        { criterion: "Modèles de code", a: "Opus 5.5 par défaut sur Pro, Max, Team, Enterprise et l'API ; Sonnet 5.5 et Haiku 5.5 au choix ; Fable 5.1 à sélectionner soi-même, parfois sur crédits d'usage", b: "GPT-6.1 Sol conseillé par OpenAI pour le code complexe, GPT-6 Astra pour les tâches les plus longues et difficiles, GPT-6 Luna pour les tâches répétitives" },
+        { criterion: "Dans le terminal", a: "Oui : la ligne de commande est la version la plus complète de Claude Code (macOS, Linux, Windows)", b: "Oui : Codex CLI" },
+        { criterion: "Dans l'éditeur de code", a: "Extension VS Code, installable aussi dans Cursor ; extension JetBrains, qui s'appuie sur la ligne de commande", b: "Extension pour VS Code, Cursor et Windsurf ; intégrations dans JetBrains et Xcode" },
+        { criterion: "Application de bureau", a: "Onglet Code de l'application Claude, sur macOS et Windows (Linux en bêta) ; abonnement payant requis", b: "Application Codex ; les formules Free et Go y accèdent avec GPT-6 Luna, selon le calendrier de déploiement" },
+        { criterion: "Tâches confiées au cloud", a: "Claude Code sur le web (claude.ai/code) et dans l'app mobile : tâches longues en parallèle, sur des dépôts absents de votre machine", b: "Codex Cloud : chaque tâche dispose de son espace de travail et avance même ordinateur en veille, jusqu'à la pull request" },
+        { criterion: "Relecture des pull requests", a: "Code Review commente les pull requests GitHub (Team et Enterprise) ; commande /code-review sur toutes les offres", b: "Revue de code intégrée ; connexions à GitHub, GitLab (bêta), Slack et Linear" },
+        { criterion: "Consignes du projet", a: "Fichier CLAUDE.md, ou un AGENTS.md déjà présent dans le dépôt", b: "Fichier AGENTS.md, lu de la racine du dépôt jusqu'au dossier de travail" },
+        { criterion: "Offres qui donnent accès", a: "Toutes les offres payantes : Pro (20 $ par mois, 17 $ en annuel), Max (dès 100 $), Team (25 $ par siège, 20 $ en annuel), Enterprise ; ou une clé API", b: "Free et Go (8 $) en accès réduit, Plus (20 $), Pro (100, 200 ou 500 $), Business (25 $ par siège, 20 $ en annuel), Enterprise et Edu ; ou une clé API" },
+        { criterion: "Limites d'usage", a: "Plafonds sur cinq heures et à la semaine, propres à chaque offre ; Max les relève", b: "Fourchettes indicatives sur cinq heures pour Plus et Business ; pas de plafond sur cinq heures en Pro ; crédits au-delà" },
+        { criterion: "Scores publiés", a: "Terminal-Bench 4.0 : 66,4 % pour Opus 5.5 contre 57,9 % pour GPT-6 Astra, mesures publiées par Anthropic le 22 septembre 2026", b: "OpenAI n'évalue plus ses modèles sur SWE-bench Verified depuis le 23 février 2026, test qu'il juge contaminé, et recommande SWE-bench Pro" },
       ],
     },
 
@@ -1377,6 +1406,7 @@ export const COMPARISONS = {
         pros: [
           "Opus 5.5, présenté par Anthropic comme son meilleur modèle Opus en programmation agentique, et Fable 5.1 pour les sessions de plusieurs jours",
           "Claude Code lit jusqu'à un million de tokens, que vous travailliez avec Sonnet 5.5, Opus 5.5 ou Fable 5.1",
+          "Le même agent s'ouvre dans le terminal, VS Code, JetBrains, l'application de bureau Claude et le navigateur",
           "Inclus dans Pro, Max, Team (sièges standard compris depuis le 16 janvier 2026) et Enterprise",
           "Mode rapide d'Opus 5.5, jusqu'à 2,5 fois plus rapide, facturé le double du tarif standard",
           "Skills et serveurs MCP pour brancher l'outil sur vos systèmes et vos procédures",
@@ -1429,14 +1459,15 @@ export const COMPARISONS = {
         position: "Le polyvalent code et hors code",
         pros: [
           "Codex délègue des tâches de développement, en local ou dans le cloud (Codex Cloud, 29 septembre 2026)",
-          "GPT-6.1 Sol en cours de déploiement dans Codex, GPT-6 Astra accessible dès l'offre Plus dans Work et Codex",
+          "GPT-6.1 Sol, qu'OpenAI conseille pour le code complexe dans Codex, et GPT-6 Astra pour les tâches les plus difficiles, accessible dès l'offre Plus",
           "Revue de pull requests dans Codex et analyse de sécurité des dépôts avec Codex Security Cloud",
           "Utile sur les tâches mixtes : code, documentation, présentation du projet",
-          "Accès limité à Codex dès l'offre gratuite",
+          "Codex ouvert dès l'offre gratuite, avec GPT-6 Luna dans l'application de bureau, selon le calendrier de déploiement",
         ],
         cons: [
           "Conversation plafonnée à 256 000 tokens de raisonnement sur les offres Plus et Business",
           "Usage de Codex partagé avec ChatGPT Work dans la même enveloppe, puis en crédits",
+          "GPT-6.1 Sol désactivé par défaut en Enterprise et Edu tant qu'un administrateur ne l'a pas activé",
         ],
         idealFor: "Profils mixtes (chefs de produit technique, fondateurs, indépendants généralistes), prototypage rapide",
       },
@@ -1453,18 +1484,18 @@ export const COMPARISONS = {
     // ─── GEO : titre et note du tableau N colonnes (équivalent panorama de keyFacts)
     comparisonTableMeta: {
       title: "Claude Code, GitHub Copilot, Cursor et Codex en un coup d'œil",
-      note: "Anthropic et OpenAI relus le 7 octobre 2026, GitHub et Cursor le 3 octobre. Prix en dollars hors taxes, sauf ChatGPT (grille française). Nous distinguons le contexte disponible dans l'outil, celui du développeur au quotidien, du contexte offert par l'API à une application qui intègre le modèle.",
+      note: "Anthropic et OpenAI relus le 22 octobre 2026, GitHub et Cursor le 3 octobre. Prix en dollars hors taxes, sauf ChatGPT (grille française). Nous distinguons le contexte disponible dans l'outil, celui du développeur au quotidien, du contexte offert par l'API à une application qui intègre le modèle.",
     },
     comparisonTable: [
       { criterion: "Prix par développeur et par mois", chatgpt: "23 € Plus · 21 € Business en annuel", claude: "20 $ Pro · 25 $ Team (20 $ en annuel)", "github-copilot": "10 $ Pro · 19 $ Business · 39 $ Enterprise", cursor: "20 $ Pro · 40 $ Teams" },
-      { criterion: "Modèles", chatgpt: "GPT-6.1 Sol, GPT-6 Astra et GPT-5.6 dans Codex", claude: "Sonnet 5.5 ; Opus 5.5 ; Fable 5.1", "github-copilot": "Claude, GPT, Gemini, Grok au choix", cursor: "Claude, GPT-5.6, Gemini, Grok, Composer 2.5" },
-      { criterion: "Intégration à l'éditeur", chatgpt: "Application Codex, ligne de commande, extension d'éditeur", claude: "Ligne de commande (Claude Code)", "github-copilot": "Extensions VS Code, Visual Studio, JetBrains, Neovim", cursor: "Éditeur dédié" },
+      { criterion: "Modèles", chatgpt: "GPT-6.1 Sol, GPT-6 Astra, GPT-6 Sol et GPT-6 Luna dans Codex", claude: "Opus 5.5 par défaut ; Sonnet 5.5, Haiku 5.5, Fable 5.1", "github-copilot": "Claude, GPT, Gemini, Grok au choix", cursor: "Claude, GPT-5.6, Gemini, Grok, Composer 2.5" },
+      { criterion: "Intégration à l'éditeur", chatgpt: "Application Codex, ligne de commande, extension VS Code, Cursor et Windsurf, JetBrains, Xcode", claude: "Ligne de commande, extensions VS Code et JetBrains, application de bureau, web", "github-copilot": "Extensions VS Code, Visual Studio, JetBrains, Neovim", cursor: "Éditeur dédié" },
       { criterion: "Contexte dans l'outil", chatgpt: "256 000 tokens en raisonnement (Plus, Business)", claude: "1 000 000 de tokens dans Claude Code", "github-copilot": "Selon le modèle choisi", cursor: "Selon le modèle choisi" },
       { criterion: "Contexte via API", chatgpt: "1 050 000 tokens (GPT-6)", claude: "1 000 000 de tokens", "github-copilot": "Sans objet", cursor: "Sans objet" },
       { criterion: "Complétion pendant la frappe", chatgpt: "Non documentée sur les pages consultées", claude: "Non documentée sur les pages consultées", "github-copilot": "Oui, dans toutes les offres", cursor: "Oui, complétion contextuelle" },
       { criterion: "Mode agentique multi-fichiers", chatgpt: "Oui, Codex en local et dans le cloud", claude: "Oui, Claude Code", "github-copilot": "Oui, mode agent et agent cloud", cursor: "Oui, agent et agents cloud" },
       { criterion: "Inclus sans licence développeur", chatgpt: "Codex dans toutes les offres, limité en Free", claude: "Claude Code dans Pro, Max, Team, Enterprise", "github-copilot": "Non : licence ou crédits par développeur", cursor: "Non : licence par développeur" },
-      { criterion: "Revue de code", chatgpt: "Oui, Code Review dans Codex", claude: "Oui, sur demande dans Claude Code", "github-copilot": "Oui, intégrée à GitHub", cursor: "Oui, Bugbot" },
+      { criterion: "Revue de code", chatgpt: "Oui, Code Review dans Codex", claude: "Oui : Code Review sur GitHub (Team, Enterprise), /code-review sur toutes les offres", "github-copilot": "Oui, intégrée à GitHub", cursor: "Oui, Bugbot" },
       { criterion: "Code et entraînement (offre entreprise)", chatgpt: "Non par défaut (Business, Enterprise)", claude: "Non par défaut (Team, Enterprise)", "github-copilot": "Non (Business, Enterprise)", cursor: "Mode confidentialité pour toute l'équipe (Teams)" },
     ],
 
@@ -1472,6 +1503,7 @@ export const COMPARISONS = {
     changelog: {
       title: "Les changements notés depuis août 2026",
       items: [
+        { date: "22 octobre 2026", text: "Ajout d'un face-à-face entre Claude Code et Codex pour qui hésite entre Claude et ChatGPT. Chez Anthropic, Haiku 5.5 est sorti le 7 octobre et Claude Code travaille par défaut avec Opus 5.5 sur toutes les offres payantes. Chez OpenAI, GPT-5.5 a quitté Codex le 14 octobre pour les comptes connectés à ChatGPT, et le mode Ultrafast accélère GPT-6.1 Sol depuis le 8 octobre sur l'offre Pro à 500 $ et certaines offres Enterprise et Edu." },
         { date: "7 octobre 2026", text: "Relecture des pages d'Anthropic et d'OpenAI : aucune nouvelle version de Claude depuis Sonnet 5.5, et GPT-6.1 Sol poursuit son arrivée dans Codex. Mistral Large 4 apparaît depuis le 6 octobre dans la liste des modèles de Mistral, en préversion par l'API." },
         { date: "Septembre 2026", text: "Anthropic a lancé Opus 5.5 le 22 septembre, avec un mode rapide jusqu'à 2,5 fois plus rapide dans Claude Code, puis Sonnet 5.5 le 28 septembre ; Fable 5.1 était sorti le 1er septembre." },
         { date: "Septembre 2026", text: "OpenAI a ouvert GPT-6 Sol et GPT-6 Luna dans Codex le 22 septembre, puis GPT-6.1 Sol et Codex Cloud le 29 septembre." },
@@ -1483,7 +1515,7 @@ export const COMPARISONS = {
     },
 
     methodology:
-      "Créé à Lyon en 2022, Masteria développe des outils sur mesure et forme des équipes techniques. Nos verdicts viennent de mises en situation : refactoring TypeScript, débogage Python, écriture de tests, conception d'une API REST, revue de code, migrations SQL. Les pages d'Anthropic et d'OpenAI ont été relues le **7 octobre 2026**, celles de GitHub et de Cursor le **3 octobre**. Versions de référence : **Claude Code avec Opus 5.5**, **GitHub Copilot** et son sélecteur de modèles, **Cursor**, **ChatGPT avec Codex**.",
+      "Créé à Lyon en 2022, Masteria développe des outils sur mesure et forme des équipes techniques. Nos verdicts viennent de mises en situation : refactoring TypeScript, débogage Python, écriture de tests, conception d'une API REST, revue de code, migrations SQL. Les pages d'Anthropic et d'OpenAI ont été relues le **22 octobre 2026**, celles de GitHub et de Cursor le **3 octobre**. Versions de référence : **Claude Code avec Opus 5.5**, **GitHub Copilot** et son sélecteur de modèles, **Cursor**, **ChatGPT avec Codex**.",
 
     citations: [
       { name: "Abonnements Claude qui incluent Claude Code", url: "https://claude.com/pricing" },
@@ -1501,6 +1533,15 @@ export const COMPARISONS = {
       { name: "Grille ChatGPT pour la France, Codex compris", url: "https://chatgpt.com/fr-FR/pricing/" },
       { name: "Fenêtre de contexte des modèles GPT-6 par API", url: "https://developers.openai.com/api/docs/models" },
       { name: "Modèles à poids ouverts de Mistral AI pour le code", url: "https://mistral.ai/models" },
+      { name: "Claude Code : terminal, IDE, application de bureau et web", url: "https://code.claude.com/docs/en/overview" },
+      { name: "Modèle par défaut et alias de modèles dans Claude Code", url: "https://code.claude.com/docs/en/model-config" },
+      { name: "Code Review de Claude Code sur GitHub (Team et Enterprise)", url: "https://code.claude.com/docs/en/code-review" },
+      { name: "Offres, limites et crédits de Codex", url: "https://learn.chatgpt.com/codex/pricing" },
+      { name: "Modèles disponibles dans Codex", url: "https://learn.chatgpt.com/codex/models" },
+      { name: "Extension Codex pour VS Code, Cursor, Windsurf et JetBrains", url: "https://learn.chatgpt.com/codex/ide" },
+      { name: "Codex Cloud et ses espaces de travail par tâche", url: "https://learn.chatgpt.com/codex/cloud" },
+      { name: "Consignes de projet AGENTS.md dans Codex", url: "https://learn.chatgpt.com/codex/agent-configuration/agents-md" },
+      { name: "OpenAI cesse d'évaluer SWE-bench Verified (23 février 2026)", url: "https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/" },
     ],
 
     realCases: [
@@ -1554,6 +1595,15 @@ export const COMPARISONS = {
       },
     ],
 
+    // ─── Conseil par profil entre Claude Code (a = toolA) et Codex (b = toolB), section « Claude ou ChatGPT pour coder »
+    useCases: [
+      { metier: "Développeur solo déjà abonné à ChatGPT", recommendation: "b", why: "Codex figure dans Plus à 20 $ par mois et propose GPT-6.1 Sol : essayez-le sur vos propres tickets avant de payer un second abonnement. Si vous codez avec lui toute la journée, les offres Pro d'OpenAI, dès 100 $, n'ont pas de plafond sur cinq heures." },
+      { metier: "Développeur solo qui reprend un gros code existant", recommendation: "a", why: "Claude Code charge jusqu'à un million de tokens, environ 2,5 millions de caractères de code et de documentation, et raisonne par défaut avec Opus 5.5. Pro coûte 20 $ par mois ; Max, dès 100 $, relève les limites d'usage de Pro." },
+      { metier: "Équipe de développeurs sur GitHub", recommendation: "a", why: "Avec Claude Team (25 $ par siège, 20 $ en annuel), le fichier CLAUDE.md, les skills (procédures réutilisables) et les hooks (commandes lancées avant ou après chaque action de l'agent) se versionnent dans le dépôt et s'appliquent à tous. Code Review commente les pull requests sur GitHub, et l'équipe garde la main sur la fusion." },
+      { metier: "Équipe déjà équipée de ChatGPT Business", recommendation: "b", why: "Chaque siège Business comprend Codex, relié à GitHub, Slack et Linear. Faites-lui traiter de vrais tickets pendant un sprint avant d'ajouter des sièges Claude. En Enterprise, un administrateur doit d'abord activer GPT-6.1 Sol." },
+      { metier: "Non-développeur qui veut bâtir un outil interne", recommendation: "Selon l'abonnement", why: "Les deux agents se pilotent depuis une application de bureau, et le terminal devient facultatif. Partez de celui que l'entreprise paie déjà, travaillez sur des données d'exemple et faites relire le code par un développeur avant toute mise en service ; notre formation vibe coding enseigne cette méthode." },
+    ],
+
     mistakes: [
       {
         title: "Choisir un seul outil pour toute l'équipe sans tenir compte des profils",
@@ -1585,6 +1635,22 @@ export const COMPARISONS = {
       {
         q: "Quel outil d'IA retenir pour programmer en 2026 ?",
         a: "**Claude Code** est le choix des missions lourdes : refactoring, architecture, débogage profond. Il tourne sur **Opus 5.5** et **Fable 5.1**, lit un million de tokens et il est inclus dans les offres Pro, Max, Team et Enterprise d'Anthropic. **GitHub Copilot** reste le standard de la productivité quotidienne dans l'éditeur, à 10 $ par mois en individuel et 19 $ par siège en Business. **Cursor** est l'éditeur conçu pour l'agent. **ChatGPT** couvre les profils mixtes, avec **Codex** pour l'exécution autonome. Le bon choix suit le profil : missions de fond vers Claude Code, développement quotidien vers Copilot, autonomie complète vers Cursor.",
+      },
+      {
+        q: "Claude ou ChatGPT : lequel choisir pour coder ?",
+        a: "Pour programmer, la comparaison se joue entre leurs agents : **Claude Code** chez Anthropic et **Codex** chez OpenAI. Tous deux s'utilisent dans le terminal, dans VS Code ou JetBrains, depuis une application de bureau et dans le cloud ; avec Claude Pro comme avec ChatGPT Plus, l'accès coûte **20 $ par mois**. Dans nos mises en situation, Claude Code tient mieux les refontes de gros dépôts, avec Opus 5.5 par défaut et un million de tokens de contexte. Codex a pour lui d'être compris dans tous les abonnements ChatGPT, de la formule gratuite à Enterprise, et il propose GPT-6.1 Sol à partir de Plus. Si vous payez l'un des deux, faites travailler son agent sur un vrai ticket avant d'acheter l'autre. Pour la rédaction, l'analyse et le reste du travail de bureau, voyez notre [comparatif ChatGPT vs Claude](/chatgpt-vs-claude).",
+      },
+      {
+        q: "Quelle différence entre Claude Code et Codex ?",
+        a: "Les deux agents lisent le dépôt, modifient plusieurs fichiers, lancent les tests et ouvrent une pull request. Ils diffèrent sur quatre points vérifiés le 22 octobre 2026. **L'accès** : Claude Code exige une offre payante, alors que Codex s'ouvre dès la formule gratuite de ChatGPT avec GPT-6 Luna, selon le calendrier de déploiement. **Les modèles** : Opus 5.5 par défaut chez Anthropic, GPT-6.1 Sol conseillé pour le code complexe chez OpenAI. **Les consignes** : un fichier CLAUDE.md d'un côté, AGENTS.md de l'autre. **La revue automatique** : Code Review de Claude Code annote les pull requests GitHub sur les offres Team et Enterprise, Codex propose sa revue de code et se branche aussi sur GitLab, Slack et Linear.",
+      },
+      {
+        q: "Peut-on utiliser Claude Code et Codex sur le même projet ?",
+        a: "Oui. Codex lit ses consignes dans un fichier **AGENTS.md** placé dans le dépôt, et Claude Code sait lire ce même fichier à la place de son CLAUDE.md : une seule liste de règles (conventions de nommage, commandes de test, dossiers interdits) sert alors aux deux agents. Confiez chaque tâche à un agent unique, sur sa propre branche, et gardez une relecture humaine avant chaque fusion.",
+      },
+      {
+        q: "Comment trouver un expert Claude Code pour former son équipe ?",
+        a: "Le test le plus parlant consiste à voir l'expert faire travailler l'outil sur votre propre dépôt, avec vos tests et vos règles de sécurité. Chez Masteria, Mathias Nizan développe les outils internes de l'entreprise avec Claude Code et anime la [formation Claude Code](/formation-claude-code) avec un réseau de formateurs indépendants expérimentés, sur votre base de code, sur site ou à distance, pour un groupe intra de douze développeurs au plus ou en individuel. Pour des collègues qui ne programment pas, la [formation vibe coding](/formation-vibe-coding) apprend à construire un prototype en le décrivant.",
       },
       {
         q: "Claude Code est-il inclus dans l'offre gratuite de Claude ?",
@@ -3583,6 +3649,7 @@ export const COMPARISONS = {
       texte:
         "Nous enseignons les deux, rarement aux mêmes personnes : Cowork aux équipes métier qui veulent déléguer un livrable, Claude Code aux développeurs et aux profils curieux qui veulent construire un outil. Le vibe coding sert de passerelle pour ceux qui n'ont jamais écrit de code.",
       liens: [
+        { href: "/formation-claude-cowork", label: "Formation Claude Cowork", desc: "Une journée pour déléguer une tâche entière sur vos fichiers" },
         { href: "/formation-claude-ia", label: "Formation Claude", desc: "Cowork, Skills et projets sur vos documents" },
         { href: "/formation-claude-code", label: "Formation Claude Code", desc: "Confier une tâche de code et relire le résultat" },
         { href: "/formation-vibe-coding", label: "Formation vibe coding", desc: "Construire un outil sans être développeur" },

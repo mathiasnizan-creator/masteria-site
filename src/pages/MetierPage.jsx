@@ -16,6 +16,7 @@ import {
   Zap, Layers, Award, Waves, NotebookPen, Eye,
   Gavel, Hammer, Plane, Umbrella, Receipt, FileSpreadsheet, BedDouble, UtensilsCrossed, Luggage, Map, Banknote,
   PiggyBank, LifeBuoy, FileCheck, Ruler, Blocks, BrickWall, Warehouse, Sun, Lightbulb,
+  HandHeart, PenTool, Factory,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -102,6 +103,17 @@ const METIER_ICONS = {
   assurance:           Umbrella,
   btp:                 Hammer,
   tourisme:            Plane,
+  'medico-social':     HandHeart,
+  'creation-contenu':  PenTool,
+  tpe:                 Store,
+  avocats:             Gavel,
+  architectes:         Ruler,
+  collectivites:       Landmark,
+  'organismes-formation': School,
+  enseignants:         BookOpen,
+  industrie:           Factory,
+  logistique:          Truck,
+  securite:            ShieldAlert,
 }
 
 // Icônes nommables depuis la data enrichie (src/data/metiers/<slug>.js)

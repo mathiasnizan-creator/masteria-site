@@ -284,7 +284,7 @@ export default {
   },
   {
    "q": "Peut-on suivre la formation uniquement sur Gemini ?",
-   "a": "Oui, pour un organisme équipé de Google Workspace. Gemini travaille alors dans Docs, Slides, Gmail et Vids ; Gemini Notebook réunit les sources d'un parcours (300 au maximum par carnet avec Business Standard, chiffre vérifié le 7 octobre 2026) et en tire des aperçus audio ; les compétences, déployées depuis le 5 octobre 2026, prennent le relais des Gems pour vos gabarits. Une précision utile : Google a présenté le 17 septembre des carnets logés dans l'application Gemini, mais ils restent fermés aux organisations clientes situées dans l'EEE, France comprise."
+   "a": "Oui, pour un organisme équipé de Google Workspace. Gemini travaille alors dans Docs, Slides, Gmail et Vids ; Gemini Notebook réunit les sources d'un parcours (300 au maximum par carnet avec Business Standard, chiffre vérifié le 7 octobre 2026) et en tire des aperçus audio ; les compétences de l'application Gemini, en cours de déploiement depuis le 13 octobre 2026, accueilleront vos gabarits, Google ayant reporté sans date leur arrivée dans Docs et Gmail. Une précision utile : Google a présenté le 17 septembre des carnets logés dans l'application Gemini, mais ils restent fermés aux organisations clientes situées dans l'EEE, France comprise."
   },
   {
    "q": "Et si notre organisme n'a pas encore choisi d'outil ?",
@@ -355,6 +355,18 @@ export default {
   }
  ],
  "maillage": [
+  {
+   "label": "Formation IA enseignants",
+   "href": "/formation-ia-enseignants",
+   "tag": "École et université",
+   "desc": "Séquences, évaluation, usage honnête de l'IA par les élèves."
+  },
+  {
+   "label": "Formation IA organismes de formation",
+   "href": "/formation-ia-organismes-formation",
+   "tag": "Direction d'OF",
+   "desc": "Qualiopi, conventions, suivi des stagiaires, AI Act."
+  },
   {
    "label": "Formation Copilot pédagogique",
    "href": "/formation-copilot-pedagogique",

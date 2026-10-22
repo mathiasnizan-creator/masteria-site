@@ -351,6 +351,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA création de contenu",
+   "href": "/formation-ia-creation-contenu",
+   "tag": "Contenus",
+   "desc": "Images, vidéo, podcast et déclinaisons multicanal."
+  },
+  {
    "label": "Formation Copilot communication",
    "href": "/formation-copilot-communication",
    "tag": "Par outil",

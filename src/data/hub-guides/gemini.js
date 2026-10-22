@@ -25,7 +25,11 @@ export default {
     faq: "Questions posées avant une formation Google Gemini",
   },
   spokesIntro: "Quatre programmes de deux jours, pour l'assistanat, la communication, la DSI et le marketing, tous menés dans Google Workspace : les ateliers ouvrent les fichiers Drive, les boîtes Gmail et les tableaux Sheets de l'équipe concernée. Pour la finance, les RH, la vente, le management ou le service client, nos pages métier décrivent un programme multi-outils où Gemini tient sa place. Quand un groupe mêle plusieurs fonctions, il partage un tronc commun le matin et se répartit l'après-midi entre les ateliers de chaque métier.",
+  carteTitres: {
+    'formation-notebooklm': "Gemini Notebook, l'ancien NotebookLM, pour tous les métiers",
+  },
   spokeDescs: {
+    'formation-notebooklm': "Monter un carnet sur vos propres documents, vérifier chaque réponse par sa citation, en tirer guide d'étude, quiz et résumé audio, puis le partager avec les bons droits.",
     'formation-gemini-marketing': "Classer des avis clients avec =IA() dans Sheets, tirer le brief d'agence de vos exports de campagne, illustrer la présentation dans Slides et monter un clip court dans Vids.",
     'formation-gemini-communication': "Écrire depuis la charte et les faits validés dans Docs, rassembler la revue de presse dans un carnet Gemini Notebook, changer une annonce interne en vidéo avec Vids.",
     'formation-gemini-assistante': "Réponses préparées dans Gmail, notes de comité prises par Meet, briefings tirés de Drive, en sachant que Gemini n'agit pas dans la boîte déléguée du dirigeant.",

@@ -370,6 +370,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation IA collectivités",
+   "href": "/formation-ia-collectivites",
+   "tag": "Secteur public",
+   "desc": "Délibérations, réponses aux habitants, FALC, procès-verbaux."
+  },
+  {
    "label": "IA pour le secteur public",
    "href": "/ia-secteur-public",
    "tag": "Secteur"

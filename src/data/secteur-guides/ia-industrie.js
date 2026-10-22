@@ -30,7 +30,8 @@ export default {
   formationBloc: {
     kicker: "Former les services",
     h2: "Chaque service s'exerce sur ses propres documents",
-    lien: "Parcourir le catalogue des formations",
+    lien: "Voir la formation IA industrie",
+    href: "/formation-ia-industrie",
   },
   faqBloc: {
     h2: "Les questions que posent les industriels",

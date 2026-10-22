@@ -1,0 +1,282 @@
+{
+  "slug": "ia-esn",
+  "title": "IA générative en ESN : avant-vente, staffing, gestion et code",
+  "metaTitle": "IA en ESN : avant-vente, staffing, gestion, code | Masteria",
+  "metaDesc": "IA en ESN : appels d'offres, dossiers de compétences, CRA et facturation, agents de code, confidentialité des clients et gains mesurés, chiffres sourcés.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "15 min",
+  "formations": [["Formation IA pour l'informatique", "/formation-ia-informatique"], ["Formation Claude Code", "/formation-claude-code"], ["Formation IA marchés publics", "/formation-ia-marche-public"]],
+  "keywords": ["ia esn", "ia générative esn", "agents ia gestion administrative esn", "gain de temps ia esn", "ia dossier de compétences", "ia compte rendu d'activité", "agent de code esn", "ia sous-traitance rgpd"],
+  "excerpt": "Une ESN vend du temps d'expert et produit beaucoup d'écrit. L'IA générative agit sur ses six chantiers : avant-vente, staffing, CRA et facturation, code, confidentialité des clients et mesure du gain.",
+  "intro": "Dans une ESN, l'IA générative rapporte d'abord là où le métier fabrique du texte à partir d'autres textes : une réponse à un appel d'offres à partir d'un cahier des charges, un dossier de compétences à partir d'un CV, une facture à partir d'un compte rendu d'activité, du code à partir d'un ticket. Elle bute sur deux contraintes propres au modèle de l'ESN : les données appartiennent aux clients, dont l'ESN est souvent la sous-traitante au sens du RGPD, et le gain se mesure mission par mission. Ce guide de l'IA en ESN passe en revue six chantiers et les chiffres publiés qui permettent d'en juger.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Selon l'étude Grand Angle ESN et ICT 2026 de KPMG et Numeum, publiée le 6 octobre 2026, 86 % des entreprises du secteur utilisent déjà l'IA comme assistance à la production. Les usages qui paient vite : analyser un dossier de consultation et préparer la matrice de conformité, mettre un CV au format d'un dossier de compétences, relancer les comptes rendus d'activité et préparer la facturation, confier des tickets à un agent de code. Les limites tiennent au contrat : un consultant ne verse pas les données d'un client dans un outil d'IA sans l'accord écrit de ce client (article 28 du RGPD). Aucune étude publique ne chiffre le temps gagné sur la gestion administrative d'une ESN ; il se mesure sur vos propres cycles."
+    },
+    {
+      "type": "h2",
+      "text": "Ce que l'IA change dans le modèle économique d'une ESN"
+    },
+    {
+      "type": "p",
+      "text": "Une ESN facture surtout du temps, au jour (la régie, au taux journalier moyen) ou au forfait. L'IA générative touche ce modèle par le milieu. Si un développeur termine un ticket plus vite, le client paie moins de jours en régie, alors qu'au forfait l'ESN garde la différence. Le débat se joue donc sur la manière de vendre autant que sur les outils."
+    },
+    {
+      "type": "p",
+      "text": "Les dirigeants du secteur le voient venir. Dans l'étude Grand Angle ESN et ICT 2026, menée par KPMG France et Numeum auprès de près de 200 entreprises, les offres liées à l'IA pèsent 7 % du chiffre d'affaires, avec un objectif de 18 % dans trois ans. 37 % des répondants constatent des gains de productivité supérieurs à 20 % sur la production, 67 % ont formalisé une politique d'usage de l'IA, et 80 % citent comme premier défi l'arrivée d'acteurs « nés avec l'IA » à bas coûts. L'étude de marché de Numeum du 8 juillet 2026 prévoit, pour les ESN, une croissance de 1 % en 2026 sur un marché de 34,6 milliards d'euros. Dans un marché presque plat, le temps rendu par l'IA décide de la marge."
+    },
+    {
+      "type": "h2",
+      "text": "Avant-vente : l'IA décortique le dossier, l'équipe choisit la stratégie de réponse"
+    },
+    {
+      "type": "p",
+      "text": "Un dossier de consultation réunit le règlement de la consultation, le cahier des clauses techniques, parfois des annexes de plusieurs centaines de pages. L'IA y rend trois services. Elle dresse la matrice de conformité, c'est-à-dire la liste de chaque exigence avec l'endroit du mémoire qui y répond et la preuve à joindre. Elle rédige un premier jet des parties qui reviennent d'une réponse à l'autre (méthodologie, gouvernance de projet, plan d'assurance qualité) à partir de votre bibliothèque de réponses gagnantes. Elle relit enfin la cohérence : un profil exigé par le client qui manque dans l'équipe proposée, une date de jalon qui contredit le planning."
+    },
+    {
+      "type": "p",
+      "text": "Le chiffrage, le choix des profils et l'angle de la réponse restent l'affaire de l'ingénieur d'affaires et du directeur de projet. Un outil qui répond à partir de sources citées aide à vérifier chaque affirmation : Gemini Notebook (anciennement NotebookLM) cite le passage du dossier dont il tire sa réponse, et un projet Claude garde les consignes et les documents de référence d'une famille de marchés. Notre article sur l'<a href='/blog/ia-pour-repondre-appels-doffres'>IA pour répondre aux appels d'offres</a> détaille la méthode, et la <a href='/formation-ia-marche-public'>formation IA aux marchés publics</a> la travaille sur vos propres dossiers."
+    },
+    {
+      "type": "h2",
+      "text": "Staffing et dossiers de compétences : l'IA met en forme, le manager décide"
+    },
+    {
+      "type": "p",
+      "text": "Le dossier de compétences est la pièce que le client achète en premier : le parcours d'un consultant, mis au format du client, souvent anonymisé par des initiales. L'IA transforme un CV en dossier en quelques minutes, réordonne les missions selon les attentes du besoin et repère les compétences demandées qui n'apparaissent nulle part. La règle d'or tient en une phrase : l'outil reformule ce qui existe et n'ajoute jamais une compétence, une certification ou une durée de mission. Le dossier engage l'ESN, et une invention découverte en entretien coûte la mission."
+    },
+    {
+      "type": "p",
+      "text": "Le rapprochement entre un besoin client et les consultants disponibles appelle plus de prudence. Les éditeurs s'y mettent : le site de BoondManager, un ERP conçu pour les ESN, annonce un matching par IA pour identifier les meilleurs candidats. L'annexe III de l'AI Act, qui dresse la liste des usages à haut risque, vise les outils servant à recruter ou à sélectionner des candidats (point 4 a) et ceux qui servent à « attribuer des tâches sur la base du comportement individuel, de traits de personnalité ou de caractéristiques personnelles » ou à évaluer les performances de salariés (point 4 b). Les obligations correspondantes s'appliqueront le 2 décembre 2027, date fixée par le règlement Omnibus. Un outil qui propose une liste de profils triée sur des critères écrits et vérifiables, et laisse le manager décider, reste du bon côté. Un score opaque qui décide seul du staffing ne l'est pas."
+    },
+    {
+      "type": "h2",
+      "text": "Quels agents IA pour la gestion administrative d'une ESN ?"
+    },
+    {
+      "type": "p",
+      "text": "La gestion d'une ESN suit un cycle mensuel immuable : chaque consultant remplit son compte rendu d'activité (CRA), le manager le valide, l'administration des ventes facture le client, les frais remontent. Ce cycle tient sur des règles écrites, des volumes réguliers et des relances. C'est le terrain des agents. Quatre d'entre eux se montent dès aujourd'hui avec des produits du marché."
+    },
+    {
+      "type": "h3",
+      "text": "L'agent des comptes rendus d'activité"
+    },
+    {
+      "type": "p",
+      "text": "Le dernier jour ouvré du mois, l'agent liste les CRA manquants, compare les jours déclarés au planning (congés posés, intercontrat, jours fériés), relance chaque retardataire et signale les incohérences : plus de jours que de jours ouvrés, mission sans bon de commande, dépassement du nombre de jours commandés. Dans l'écosystème Microsoft, Copilot Studio déclenche un agent sur une récurrence ou sur une ligne ajoutée à une liste SharePoint, chaque déclenchement consommant des crédits Copilot. Sous Google Workspace, Gemini anime des flux Workspace Studio sur le tableur des CRA. Avec un ERP d'ESN doté d'une API, n8n relie l'ensemble."
+    },
+    {
+      "type": "h3",
+      "text": "L'agent de préparation de la facturation"
+    },
+    {
+      "type": "p",
+      "text": "À partir des CRA validés, l'agent prépare pour chaque client un brouillon de facture avec la référence du bon de commande, vérifie le reste à consommer sur ce bon, applique les règles du client (portail fournisseur, pièces à joindre, mention obligatoire) et signale les cas bloquants avant l'émission. L'émission elle-même reste dans le logiciel de facturation. La facture électronique se met en place à partir du 1er septembre 2026 pour les grandes entreprises et les ETI, puis le 1er septembre 2027 pour les PME et les microentreprises : l'agent prépare des données propres, la plateforme de facturation les transmet."
+    },
+    {
+      "type": "h3",
+      "text": "L'agent des frais refacturables"
+    },
+    {
+      "type": "p",
+      "text": "Les déplacements chez le client posent une question propre aux ESN : quels frais repartent sur la facture du client, et sous quelle forme ? L'agent lit les justificatifs, les affecte à la mission, sépare ce que le contrat permet de refacturer de ce qui reste à la charge de l'ESN, et joint les pièces au brouillon de facture. Le contrôle de la politique de frais vient en second, sur les seules anomalies."
+    },
+    {
+      "type": "h3",
+      "text": "L'agent de vigilance sur les sous-traitants"
+    },
+    {
+      "type": "p",
+      "text": "Une ESN qui fait appel à des indépendants ou à d'autres sociétés doit vérifier, pour tout contrat d'au moins 5 000 euros hors taxes, que son cocontractant est en règle : à la signature puis tous les six mois jusqu'à la fin du contrat, elle se fait remettre une attestation de l'URSSAF datant de moins de six mois (articles L8222-1, R8222-1 et D8222-5 du code du travail). L'agent tient l'échéancier de chaque sous-traitant, réclame l'attestation à temps et alerte si elle manque. La vérification d'authenticité auprès de l'URSSAF reste un geste humain."
+    },
+    {
+      "type": "p",
+      "text": "Ces quatre agents préparent et signalent. Aucun ne valide un CRA, n'émet une facture ou ne signe un contrat. Pour d'autres modèles d'agents, rangés par fonction, voir nos <a href='/blog/exemples-agents-ia-entreprise'>15 exemples d'agents IA en entreprise</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Combien de temps l'IA fait-elle gagner dans la gestion d'une ESN ?"
+    },
+    {
+      "type": "p",
+      "text": "Aucune étude publique ne mesure, à ce jour, le temps gagné sur la gestion administrative d'une ESN. Les chiffres disponibles portent sur des tâches voisines, et ils divergent selon le contexte. Le tableau ci-dessous les rassemble, avec leur source et leur date."
+    },
+    {
+      "type": "table",
+      "headers": ["Étude", "Date", "Population", "Résultat"],
+      "rows": [
+        ["Noy et Zhang, revue Science", "Juillet 2023", "453 professionnels diplômés, tâches de rédaction", "Temps de rédaction réduit de 40 %, qualité en hausse de 18 % avec ChatGPT"],
+        ["Brynjolfsson, Li et Raymond, Quarterly Journal of Economics", "2025 (version NBER d'avril 2023)", "5 179 agents de support client", "14 % de demandes résolues en plus par heure, 34 % pour les débutants"],
+        ["GitHub, expérience contrôlée", "Septembre 2022", "95 développeurs professionnels", "Tâche terminée 55 % plus vite avec Copilot"],
+        ["METR, essai randomisé", "Juillet 2025", "16 développeurs open source expérimentés, 246 tâches", "19 % de temps en plus avec l'IA, alors qu'ils pensaient avoir gagné 20 %"],
+        ["METR, suite de l'étude", "Février 2026", "57 développeurs, plus de 800 tâches", "Gain estimé de 18 % pour les anciens participants, de 4 % pour les nouveaux, résultats jugés fragiles"],
+        ["Numeum, étude de marché", "Juillet 2026", "ESN françaises", "Gains de productivité attendus de l'IA : de 15,0 % en 2025 à 22,3 % en 2027"],
+        ["KPMG et Numeum, Grand Angle 2026", "Octobre 2026", "Près de 200 ESN et entreprises du numérique", "37 % constatent plus de 20 % de gain sur la production"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Deux leçons en sortent. Les gains sont les plus nets sur l'écriture de premiers jets et chez les personnes les moins expérimentées. Ils fondent, voire s'inversent, quand des experts travaillent sur un code qu'ils connaissent par cœur et passent du temps à relire l'outil. Pour la gestion d'une ESN, la mesure utile se fait chez vous, sur quatre relevés pris avant puis après trois mois d'usage."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le délai de clôture</strong> : nombre de jours entre la fin du mois et l'envoi de la dernière facture. Chaque jour gagné avance l'encaissement.",
+        "<strong>Le temps par dossier de compétences</strong> : de la demande du commercial à l'envoi au client.",
+        "<strong>Le taux de reprise</strong> : part des brouillons de l'agent (factures, relances, dossiers) corrigés avant envoi.",
+        "<strong>Les relances manuelles</strong> : nombre de CRA ou d'attestations réclamés à la main par l'équipe administrative."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Un ordre de grandeur aide à décider : une ESN de 150 consultants traite 150 CRA, des dizaines de factures et autant de contrôles chaque mois. Quelques minutes gagnées sur chaque pièce finissent par faire des journées."
+    },
+    {
+      "type": "h2",
+      "text": "Delivery : les agents de code chez le client"
+    },
+    {
+      "type": "p",
+      "text": "Les agents de code lisent un dépôt, proposent une modification, écrivent les tests et ouvrent une demande de fusion qu'un développeur relit. En octobre 2026, Claude Code d'Anthropic est compris dans les offres Pro, Team et Enterprise ; Codex d'OpenAI figure dans les offres ChatGPT, de la version gratuite à Business et Enterprise ; GitHub appelle désormais son agent autonome « Copilot cloud agent » ; Mistral publie en code ouvert Mistral Vibe, un agent en ligne de commande qui fonctionne avec une clé d'API Mistral. Notre comparatif de la <a href='/meilleure-ia-pour-coder'>meilleure IA pour coder</a> les met côte à côte."
+    },
+    {
+      "type": "p",
+      "text": "Le rapport DORA 2025 de Google, fondé sur près de 5 000 professionnels, décrit bien la situation : 90 % utilisent l'IA au travail et plus de 80 % estiment qu'elle les rend plus productifs, mais 30 % font peu ou pas confiance au code qu'elle génère. Le rapport présente l'IA comme un amplificateur : elle grossit les forces et les faiblesses d'une équipe. L'enquête Stack Overflow 2026, publiée le 6 octobre 2026 sur 30 903 réponses, va dans le même sens : 48 % des développeurs ne font confiance à l'IA que si sa réponse se vérifie facilement. Pour une ESN, cela veut dire des revues de code tenues, des tests écrits avant d'accepter le travail de l'agent, et des consultants formés à piloter l'outil. La <a href='/formation-claude-code'>formation Claude Code</a> et la <a href='/formation-ia-informatique'>formation IA pour les équipes informatiques</a> partent de là."
+    },
+    {
+      "type": "h2",
+      "text": "Sous-traitance et confidentialité : les données appartiennent au client"
+    },
+    {
+      "type": "p",
+      "text": "Une ESN qui traite des données personnelles pour son client est, le plus souvent, sous-traitante au sens du RGPD. L'article 28, paragraphe 2, est net : le sous-traitant ne recrute pas un autre sous-traitant sans l'autorisation écrite préalable, spécifique ou générale, du responsable du traitement. Un consultant qui colle un extrait de base clients dans un assistant d'IA fait de l'éditeur de cet assistant un sous-traitant ultérieur, sans l'accord du client. Le contrat de mission, le plan d'assurance sécurité et la politique de sécurité du client ajoutent souvent leurs propres interdits, et le code source d'un client relève du secret des affaires."
+    },
+    {
+      "type": "p",
+      "text": "Une règle simple évite la plupart des incidents : une grille à double entrée, croisant le type de donnée et l'outil autorisé, validée avec chaque client important."
+    },
+    {
+      "type": "table",
+      "headers": ["Type de donnée", "Exemple", "Outil possible", "Condition"],
+      "rows": [
+        ["Publique", "Dossier de consultation d'un marché public", "Tout outil sous compte professionnel", "Aucune donnée interne ajoutée"],
+        ["Interne à l'ESN", "CV des consultants, bibliothèque de réponses", "Offre entreprise sans entraînement sur vos données", "Consultants informés, accès limités"],
+        ["Client non personnelle", "Code source, spécifications", "Outil accepté par écrit par le client, ou outil du client", "Clause au contrat ou au plan d'assurance sécurité"],
+        ["Client personnelle", "Extrait d'une base clients ou RH", "Uniquement l'outil prévu par le client", "Autorisation écrite au titre de l'article 28"]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Côté outils, les offres entreprise posent les bases. GitHub indique n'utiliser les données de Copilot Business ou Enterprise pour entraîner aucun modèle, alors que les offres individuelles Free, Pro et Pro+ peuvent servir à l'entraînement sauf refus de l'utilisateur. Anthropic n'entraîne pas ses modèles par défaut sur les échanges d'une organisation abonnée à Team ou Enterprise. Ces garanties couvrent l'entraînement ; elles ne remplacent pas l'accord du client sur le traitement lui-même. Quand le consultant travaille dans les locaux et sur les outils du client, ce sont les règles et les licences du client qui s'appliquent."
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer dans une ESN"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Écrire la grille des données</strong> et la faire valider par la direction, le juriste et les deux ou trois clients les plus sensibles.",
+        "<strong>Équiper l'avant-vente</strong> : bibliothèque de réponses, matrice de conformité, mise au format des dossiers de compétences. Les gains se voient dès le premier appel d'offres.",
+        "<strong>Brancher un agent sur le cycle CRA et facturation</strong>, en commençant par les relances et les contrôles, jamais par l'émission.",
+        "<strong>Ouvrir les agents de code mission par mission</strong>, avec l'accord écrit du client et des revues de code tenues.",
+        "<strong>Relever les quatre indicateurs</strong> avant de commencer, puis après trois mois."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La formation des équipes suit les mêmes métiers : ingénieurs d'affaires, chargés de recrutement, administration des ventes, consultants et chefs de projet. Les ESN relèvent le plus souvent de la branche des bureaux d'études techniques, des cabinets d'ingénieurs-conseils et des sociétés de conseils, rattachée à l'OPCO Atlas ; c'est l'OPCO qui décide d'une prise en charge, sur un dossier déposé avant la formation, et Masteria est certifié Qualiopi. Une ESN qui vend du conseil en IA à ses clients a tout intérêt à en faire d'abord la preuve sur sa propre maison."
+    },
+    {
+      "type": "h2",
+      "text": "Sources consultées le 22 octobre 2026"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<a href='https://numeum.fr/economie-marche/etude-grand-angle-esn-ict-2026-et-classement-esn-ict-2026-lia-bouleverse-les-modeles-economiques/' rel='noopener'>Numeum et KPMG : étude Grand Angle ESN et ICT 2026</a> (6 octobre 2026)",
+        "<a href='https://numeum.fr/etude-le-marche-du-numerique-francais-sort-de-la-zone-de-turbulences-mais-lattentisme-freine-encore-la-reprise/' rel='noopener'>Numeum : étude de marché du numérique français</a> (8 juillet 2026)",
+        "<a href='https://news.mit.edu/2023/study-finds-chatgpt-boosts-worker-productivity-writing-0714' rel='noopener'>MIT : Noy et Zhang, ChatGPT et les tâches de rédaction</a> (14 juillet 2023, étude publiée dans Science)",
+        "<a href='https://www.nber.org/papers/w31161' rel='noopener'>NBER : Brynjolfsson, Li et Raymond, Generative AI at Work</a> (avril 2023, révisé en novembre 2023)",
+        "<a href='https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/' rel='noopener'>GitHub : mesure de l'effet de Copilot sur la productivité</a> (7 septembre 2022)",
+        "<a href='https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/' rel='noopener'>METR : étude sur les développeurs open source expérimentés</a> (10 juillet 2025) et <a href='https://metr.org/blog/2026-02-24-uplift-update/' rel='noopener'>mise à jour</a> (24 février 2026)",
+        "<a href='https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report' rel='noopener'>Google Cloud : rapport DORA 2025</a> (23 septembre 2025)",
+        "<a href='https://stackoverflow.blog/2026/10/06/the-results-of-the-2026-developer-survey-are-here/' rel='noopener'>Stack Overflow : enquête développeurs 2026</a> (6 octobre 2026)",
+        "<a href='https://entreprendre.service-public.gouv.fr/vosdroits/F31808' rel='noopener'>Service-public.gouv.fr : mentions des factures et calendrier de la facture électronique</a>",
+        "<a href='https://code.travail.gouv.fr/code-du-travail/d8222-5' rel='noopener'>Code du travail, article D8222-5 : attestations à obtenir tous les six mois</a>",
+        "<a href='https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679' rel='noopener'>RGPD, article 28</a> et <a href='https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' rel='noopener'>AI Act, annexe III</a> sur EUR-Lex",
+        "<a href='https://www.opco-atlas.fr/atlas/quelle-branche.html' rel='noopener'>OPCO Atlas : branches couvertes</a>",
+        "<a href='https://github.com/features/copilot' rel='noopener'>GitHub Copilot : questions fréquentes sur l'usage des données</a> et <a href='https://www.boondmanager.com/' rel='noopener'>BoondManager : présentation</a>"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quels agents IA existent pour la gestion administrative en ESN ?",
+      "a": "Quatre agents se montent avec les outils d'octobre 2026 : un agent qui relance et contrôle les comptes rendus d'activité, un agent qui prépare les brouillons de facture à partir des CRA validés et des bons de commande, un agent qui sépare les frais refacturables au client, et un agent qui tient l'échéancier des attestations URSSAF des sous-traitants. Ils tournent sur Copilot Studio, Workspace Studio ou n8n, reliés à l'ERP de l'ESN. Aucun n'émet de facture ni ne valide un CRA à la place d'une personne."
+    },
+    {
+      "q": "Combien de temps l'IA fait-elle gagner dans la gestion d'une ESN ?",
+      "a": "Aucune étude publique ne le mesure à ce jour pour la gestion d'une ESN. Sur des tâches de rédaction, l'étude de Noy et Zhang (Science, 2023) a mesuré 40 % de temps en moins ; Numeum prévoit des gains de productivité de 15,0 % en 2025 et de 22,3 % en 2027 pour les ESN. Chez vous, mesurez le délai de clôture mensuelle, le temps par dossier de compétences, la part de brouillons corrigés et le nombre de relances manuelles, avant puis après trois mois."
+    },
+    {
+      "q": "Un consultant peut-il utiliser ChatGPT ou Claude sur le code d'un client ?",
+      "a": "Seulement avec l'accord écrit du client, sur une offre entreprise qui n'entraîne pas les modèles sur vos données, ou directement avec l'outil fourni par le client. Le code relève du secret des affaires et le contrat de mission l'encadre souvent. Si le code contient des données personnelles, l'article 28 du RGPD exige l'autorisation écrite du responsable du traitement pour tout sous-traitant ultérieur."
+    },
+    {
+      "q": "L'IA va-t-elle faire baisser le chiffre d'affaires des ESN en régie ?",
+      "a": "Le mécanisme existe : en régie, un consultant plus rapide facture moins de jours pour le même résultat. Au forfait, le gain reste à l'ESN. L'étude Grand Angle 2026 de KPMG et Numeum montre que 80 % des entreprises du secteur voient dans les acteurs nés avec l'IA, à bas coûts, leur premier défi. La réponse passe par l'offre : forfaits, engagements de résultat, nouvelles offres liées à l'IA, qui pèsent 7 % du chiffre d'affaires selon la même étude."
+    },
+    {
+      "q": "Peut-on confier le staffing des consultants à une IA ?",
+      "a": "L'IA peut proposer une liste de profils disponibles, triée sur des critères écrits, et préparer les dossiers de compétences. La décision d'affecter une personne reste au manager. Selon l'AI Act, un système qui attribue des tâches d'après le comportement individuel ou des traits personnels, ou qui évalue les performances de salariés, relève du haut risque, avec des obligations qui s'imposeront à partir du 2 décembre 2027."
+    },
+    {
+      "q": "Quel outil d'IA pour répondre aux appels d'offres dans une ESN ?",
+      "a": "Un outil qui répond en citant ses sources et qui garde une bibliothèque de réponses : un projet Claude par famille de marchés, ou Gemini Notebook (anciennement NotebookLM) pour interroger un dossier de consultation volumineux. L'outil prépare la matrice de conformité et les premiers jets ; le chiffrage et la stratégie de réponse restent à l'ingénieur d'affaires."
+    },
+    {
+      "q": "L'IA peut-elle émettre les factures d'une ESN ?",
+      "a": "Elle prépare les données : CRA validés, référence et solde du bon de commande, frais refacturables, pièces à joindre. L'émission reste dans le logiciel de facturation, d'autant que la facture électronique se généralise à partir du 1er septembre 2026 pour les grandes entreprises et les ETI, et le 1er septembre 2027 pour les PME et les microentreprises."
+    },
+    {
+      "q": "Qui finance la formation à l'IA des salariés d'une ESN ?",
+      "a": "Les ESN relèvent le plus souvent de la branche des bureaux d'études techniques, des cabinets d'ingénieurs-conseils et des sociétés de conseils, rattachée à l'OPCO Atlas. L'OPCO examine la demande et décide de la prise en charge, sur un dossier déposé avant le premier jour. Masteria est certifié Qualiopi, condition pour qu'un OPCO puisse financer l'action."
+    }
+  ],
+  "cta": {
+    "title": "Outiller votre avant-vente, votre administration ou vos équipes de delivery ?",
+    "desc": "Masteria forme les équipes d'ESN sur leurs propres dossiers et construit avec elles les agents qui demandent un développement.",
+    "buttons": [
+      { "label": "Voir la formation IA pour l'informatique", "href": "/formation-ia-informatique", "primary": true },
+      { "label": "Parler de votre ESN", "href": "/contact", "primary": false }
+    ]
+  },
+  "internalLinks": [
+    { "label": "IA pour répondre aux appels d'offres", "href": "/blog/ia-pour-repondre-appels-doffres" },
+    { "label": "15 exemples d'agents IA en entreprise", "href": "/blog/exemples-agents-ia-entreprise" },
+    { "label": "La meilleure IA pour coder en 2026", "href": "/meilleure-ia-pour-coder" },
+    { "label": "IA et RGPD en entreprise", "href": "/ia-et-rgpd" }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Vocabulaire de l'IA en ESN",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "ESN", "description": "Entreprise de services numériques : elle vend du temps d'expert en régie ou au forfait, et conduit des projets informatiques pour ses clients." },
+        { "@type": "DefinedTerm", "name": "CRA", "description": "Compte rendu d'activité : relevé mensuel des jours travaillés par un consultant, base de la facturation en régie." },
+        { "@type": "DefinedTerm", "name": "Dossier de compétences", "description": "Présentation du parcours d'un consultant au format attendu par le client, souvent anonymisée." },
+        { "@type": "DefinedTerm", "name": "Matrice de conformité", "description": "Liste des exigences d'un dossier de consultation, avec pour chacune la partie de la réponse qui la traite et la preuve jointe." },
+        { "@type": "DefinedTerm", "name": "Agent de code", "description": "Outil d'IA qui lit un dépôt, propose une modification, écrit les tests et ouvre une demande de fusion relue par un développeur." },
+        { "@type": "DefinedTerm", "name": "Sous-traitant ultérieur", "description": "Au sens de l'article 28 du RGPD, prestataire auquel un sous-traitant confie une partie du traitement, avec l'autorisation écrite du responsable du traitement." }
+      ]
+    }
+  ]
+}

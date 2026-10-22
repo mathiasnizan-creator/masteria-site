@@ -1,0 +1,484 @@
+{
+  "slug": "exemples-agents-ia-entreprise",
+  "title": "15 exemples d'agents IA en entreprise, classés par fonction",
+  "metaTitle": "15 exemples d'agents IA en entreprise | Masteria",
+  "metaDesc": "15 exemples d'agents IA en entreprise, des achats à la maintenance : la tâche, l'outil qui la permet en octobre 2026, le risque et la part humaine.",
+  "tag": "Cas d'usage",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "18 min",
+  "formations": [["Formation agents IA", "/formation-agents-ia"], ["Formation Copilot Studio", "/formation-copilot-studio"], ["Formation automatisation IA", "/formation-automatisation-ia"]],
+  "keywords": ["exemple agents ia", "agent ia exemple", "exemples d'agents IA en entreprise", "15 exemples agents IA", "agent IA par fonction", "agent IA achats", "agent IA contrôle de gestion", "agent IA maintenance"],
+  "excerpt": "Quinze agents IA qui existent en octobre 2026, rangés par fonction : la tâche que chacun mène, l'outil qui la rend possible, son niveau de risque et la part qui reste entre des mains humaines.",
+  "intro": "Un agent IA se juge sur un exemple précis : une tâche qui revient, un outil capable de la mener aujourd'hui, et une limite écrite entre ce que la machine prépare et ce qu'une personne signe. Les quinze exemples d'agents IA en entreprise qui suivent couvrent la vente, les achats, la finance, les RH, le juridique, la maintenance et les données. Chacun est décrit sous quatre angles : la tâche, les outils vérifiés au 22 octobre 2026, le niveau de risque, la part humaine.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Les agents IA qui s'installent le plus facilement en 2026 font un travail de préparation : remettre un CRM en ordre, suivre les réponses des fournisseurs, commenter un écart budgétaire, rassembler les pièces d'un audit, préparer la visite d'un technicien. Les outils existent chez Microsoft (Copilot Studio, Copilot Cowork, Dynamics 365), Google (Gemini, BigQuery), Anthropic (Claude et Cowork), HubSpot, Salesforce, Shopify ou Docusign, et dans les plateformes d'automatisation comme n8n. Le risque monte quand l'agent écrit à un tiers, touche à une donnée de gestion ou approche une décision sur une personne. À ce stade, une validation humaine reste la règle."
+    },
+    {
+      "type": "h2",
+      "text": "Comment lire ces quinze exemples"
+    },
+    {
+      "type": "p",
+      "text": "Chaque exemple répond à quatre questions. Que fait l'agent, étape par étape ? Quel outil le permet à la date du 22 octobre 2026, avec son nom actuel ? Quel niveau de risque prend-on en le laissant tourner ? Que garde une personne ? Le niveau de risque suit une échelle simple, pensée pour une PME comme pour un grand groupe."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Risque faible</strong> : l'agent travaille en interne, et une erreur se rattrape en quelques minutes avant d'atteindre un client, un salarié ou un fournisseur.",
+        "<strong>Risque modéré</strong> : l'agent écrit à l'extérieur, modifie une donnée de gestion ou prépare un chiffre qui servira une décision. Une personne valide avant que l'effet se produise.",
+        "<strong>Risque élevé</strong> : l'agent participerait à une décision sur une personne (recruter, évaluer, attribuer des tâches) ou à un engagement juridique. L'AI Act range plusieurs de ces usages parmi les systèmes « à haut risque » de son annexe III, avec des obligations applicables le 2 décembre 2027. Aucun des quinze exemples ne confie une telle décision à la machine."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces fiches décrivent des possibilités d'outils, relevées sur les pages officielles des éditeurs. Les missions conduites par Masteria sont racontées à part, sur la page des <a href='/etudes-de-cas-ia'>études de cas</a>, et la mécanique générale d'un agent est expliquée sur notre page consacrée aux <a href='/agents-ia-entreprise'>agents IA en entreprise</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Vente et relation client : deux agents au service des commerciaux"
+    },
+    {
+      "type": "h3",
+      "text": "1. Remettre le CRM en ordre chaque semaine"
+    },
+    {
+      "type": "p",
+      "text": "Chaque lundi, l'agent passe sur les fiches entreprises créées ou modifiées dans la semaine. Il repère les doublons probables, les champs vides qui bloquent une relance (secteur, effectif, interlocuteur) et les sociétés qui ont cessé leur activité. Pour ce dernier contrôle, il interroge l'API publique Recherche d'entreprises, produite par la DINUM : son champ « état administratif » vaut A pour une unité légale active et C pour une unité cessée. L'agent rend une liste de corrections, à accepter fiche par fiche."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : le Data Agent de HubSpot répond aux questions sur les contacts et les entreprises, et ses propriétés « intelligentes » complètent les fiches à partir des appels, des mails et du web. Il est inclus dès l'offre Starter et consomme des crédits HubSpot, 0,10 $ par réponse. La détection des doublons reste, chez HubSpot, un outil à règles. Pour un autre CRM, un scénario n8n ou Make appelle l'API de l'État, ouverte sans clé et limitée à 7 requêtes par seconde par adresse IP.",
+        "<strong>Risque</strong> : faible tant que l'agent se contente de proposer. Une fusion de fiches mal choisie efface pourtant l'historique d'un compte, ce qui justifie le contrôle.",
+        "<strong>Reste humain</strong> : accepter chaque fusion ou suppression, et décider qu'une société cessée sort des campagnes de relance."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "2. Répondre au questionnaire de sécurité d'un grand compte"
+    },
+    {
+      "type": "p",
+      "text": "Avant de référencer un fournisseur, un grand groupe envoie souvent une longue grille : hébergement des données, sauvegardes, gestion des accès, certifications, assurance. L'agent puise dans une base de réponses déjà validées et dans les documents de référence de l'entreprise (politique de sécurité, attestations, contrats types). Il propose une réponse par ligne, accompagnée du document qui la justifie, et isole les questions qui n'ont encore jamais reçu de réponse officielle."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : un projet Claude accueille ces documents de référence, jusqu'à 30 Mo par fichier, avec un mode de recherche qui multiplie la capacité jusqu'à dix fois sur les offres payantes. Quand la grille arrive en tableur, Claude la remplit dans Excel, une intégration disponible sur toutes les offres payantes. Côté Microsoft, un agent Copilot Studio branché sur la bibliothèque SharePoint des réponses validées tient le même rôle.",
+        "<strong>Risque</strong> : modéré. Chaque réponse engage l'entreprise devant le client et peut se retrouver en annexe du contrat.",
+        "<strong>Reste humain</strong> : le responsable de la sécurité ou le juriste valide toute réponse nouvelle, qui rejoint ensuite la base. La signature du questionnaire lui revient."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Catalogue et service client : un agent qui écrit, un agent qui décroche"
+    },
+    {
+      "type": "h3",
+      "text": "3. Tenir à jour les fiches du catalogue"
+    },
+    {
+      "type": "p",
+      "text": "Un fournisseur change une référence, une dimension, une composition. L'agent lit la fiche technique reçue en PDF ou en tableur, met à jour la description du produit, remplit les attributs du catalogue, signale les mentions obligatoires absentes et prépare les traductions. Il travaille par lots et rend un fichier des modifications, relu avant l'import."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : dans Shopify, l'assistant Sidekick rédige des descriptions et sait créer ou modifier des produits, des remises et des collections. L'aide officielle ne documente pas encore la modification de nombreux produits d'un coup. Pour un catalogue étendu, Claude dans Excel travaille sur l'export du catalogue, que l'équipe réimporte après relecture.",
+        "<strong>Risque</strong> : faible à modéré. Une caractéristique fausse devient une allégation trompeuse aux yeux du client.",
+        "<strong>Reste humain</strong> : vérifier les caractéristiques techniques et les prix, puis décider de la mise en ligne."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "4. Prendre les rendez-vous au téléphone"
+    },
+    {
+      "type": "p",
+      "text": "L'agent vocal décroche, comprend le motif de l'appel, propose des créneaux libres, inscrit le rendez-vous dans l'agenda et envoie une confirmation. Il transfère l'appel à une personne dès que la conversation sort de son cadre : réclamation, urgence, appelant qui demande à parler à quelqu'un. Notre article sur l'<a href='/blog/agent-vocal-ia-entreprise'>agent vocal IA en entreprise</a> détaille ce type de projet."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : ElevenAgents, la plateforme d'agents d'ElevenLabs, se branche sur la téléphonie (intégration Twilio, raccordement SIP) et appelle vos outils par API. La Realtime API d'OpenAI, en disponibilité générale, reçoit les appels entrants par SIP avec ses modèles gpt-realtime-2.1. Dans les deux cas, relier l'agenda demande un développement.",
+        "<strong>Risque</strong> : modéré, car l'agent parle à vos clients et traite leurs données. Depuis le 2 août 2026, l'article 50 de l'AI Act impose d'informer l'appelant qu'il échange avec un système d'IA, sauf si cela va de soi.",
+        "<strong>Reste humain</strong> : les appels délicats, l'écoute régulière d'un échantillon de conversations, le choix des créneaux ouverts à la réservation."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Achats et approvisionnement : la relance et la comparaison"
+    },
+    {
+      "type": "h3",
+      "text": "5. Suivre les confirmations et les retards des fournisseurs"
+    },
+    {
+      "type": "p",
+      "text": "Les fournisseurs répondent par mail, souvent avec un accusé de commande en pièce jointe. L'agent lit chaque message, le range dans l'une de quatre catégories (confirmation, demande de modification, refus, autre), retrouve la commande d'achat concernée et affiche l'ancienne et la nouvelle valeur : date, quantité, prix. Pour les commandes restées sans confirmation ou en retard, il rédige la relance."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : dans Microsoft Dynamics 365 Supply Chain Management, l'agent achats (Procurement Agent, volet communication fournisseurs) fait ce travail. Microsoft le présente en préversion utilisable en production, facturée en crédits Copilot Studio, et l'envoi automatique des relances y est désactivé par défaut. Hors Dynamics, un flux n8n relie la boîte mail des achats, un modèle de langage et l'API de l'ERP.",
+        "<strong>Risque</strong> : modéré. Une date de livraison fausse dans l'ERP décale la planification de l'atelier.",
+        "<strong>Reste humain</strong> : l'acheteur applique chaque modification depuis l'écran de revue, négocie les retards et entretient la relation avec le fournisseur."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "6. Comparer les devis reçus pour un achat"
+    },
+    {
+      "type": "p",
+      "text": "Pour une machine, une prestation de nettoyage ou un logiciel, trois à cinq devis arrivent dans des formats qui ne se ressemblent pas. L'agent les ramène à une grille commune : prix, options, délais, garanties, conditions de paiement, exclusions. Il signale ce qui ne se compare pas (une option comprise chez l'un, facturée chez l'autre) et rédige les questions à poser à chaque fournisseur."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Claude dans Excel et Copilot dans Excel construisent et modifient le classeur de comparaison. Le mode d'édition de Copilot, appelé « Edit with Copilot » dans les notes de version de Microsoft du 25 août 2026, modifie directement le classeur et enchaîne des tâches en plusieurs étapes. Pour des devis de plusieurs dizaines de pages, Gemini Notebook (anciennement NotebookLM) répond en citant le passage d'origine.",
+        "<strong>Risque</strong> : modéré. Une ligne mal lue fausse toute la comparaison.",
+        "<strong>Reste humain</strong> : le choix du fournisseur, la négociation et la lecture des clauses qui engagent."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Finance et contrôle de gestion : préparer la clôture et l'audit"
+    },
+    {
+      "type": "h3",
+      "text": "7. Commenter les écarts entre budget et réalisé"
+    },
+    {
+      "type": "p",
+      "text": "À la clôture du mois, l'agent calcule les écarts ligne par ligne, retient ceux qui dépassent le seuil fixé par le contrôleur de gestion, les rapproche des explications envoyées par les responsables budgétaires et rédige un commentaire de deux ou trois lignes pour chacun. Les écarts restés sans explication sortent dans une liste, avec le nom de la personne à relancer."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Copilot dans Excel en mode édition, ou Claude dans Excel. Pour la restitution, le visuel Narration de Copilot dans Power BI résume un rapport, une page ou des visuels choisis, avec des renvois vers les graphiques ; il demande une capacité Power BI Premium ou une capacité Fabric payante, F2 au minimum.",
+        "<strong>Risque</strong> : modéré. Le commentaire part en comité et oriente des arbitrages.",
+        "<strong>Reste humain</strong> : le contrôleur valide chaque chiffre et chaque explication, puis décide d'une éventuelle révision des prévisions."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "8. Rassembler les pièces demandées par les auditeurs"
+    },
+    {
+      "type": "p",
+      "text": "Le commissaire aux comptes, l'expert-comptable ou un acquéreur transmet la liste des documents attendus. L'agent cherche chaque pièce dans les dossiers partagés, la renomme selon la nomenclature demandée, la classe dans l'arborescence prévue, coche la liste et indique ce qui manque, avec la personne qui détient le document."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Cowork a fusionné avec la conversation de Claude le 16 septembre 2026, d'abord sur les offres Pro et Max ; il s'appuie sur vos connecteurs et vos compétences, et une tâche peut revenir à date fixe. Microsoft Copilot Cowork, en disponibilité générale pour les comptes professionnels, produit des documents et demande une validation avant chaque action. Dans Google Workspace, Workspace Studio automatise des tâches routinières entre les services de Google avec Gemini, sans programmation.",
+        "<strong>Risque</strong> : faible pour la collecte. L'enjeu tient aux droits d'accès de l'agent, qui ouvre des documents confidentiels.",
+        "<strong>Reste humain</strong> : décider de ce qui sort de l'entreprise, puis l'envoi lui-même."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Ressources humaines : la logistique et les échéances"
+    },
+    {
+      "type": "h3",
+      "text": "9. Organiser les entretiens de recrutement"
+    },
+    {
+      "type": "p",
+      "text": "Une fois la liste des candidats arrêtée par le recruteur, l'agent trouve les créneaux communs aux membres du jury, envoie les invitations, gère les refus et les conflits d'agenda, puis prépare pour chaque entretien un dossier qui réunit la fiche de poste, le CV et la grille d'entretien."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Microsoft Copilot Cowork planifie des réunions à partir d'une demande en langage courant, ajoute les participants, règle les conflits d'agenda et répond à un refus avec un message ; chaque action attend une validation. Dans Gmail, Gemini propose des créneaux communs pendant la rédaction d'un mail, sur les éditions Business Standard et Plus, Enterprise Starter, Standard et Plus, et Frontline Plus.",
+        "<strong>Risque</strong> : faible pour la logistique. Le tri des candidatures appartient à une autre catégorie : l'AI Act classe « à haut risque » les systèmes utilisés pour recruter ou sélectionner (annexe III, point 4 a). L'agent décrit ici n'y touche pas.",
+        "<strong>Reste humain</strong> : le choix des candidats reçus, l'entretien, la décision d'embauche."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "10. Suivre les habilitations et les formations obligatoires"
+    },
+    {
+      "type": "p",
+      "text": "Habilitation électrique, CACES, sauveteur secouriste du travail : chaque titre porte une date de fin. L'agent lit le tableau de suivi, repère ce qui expire dans les mois à venir, prévient le manager, propose une session et prépare l'inscription. Il relance tant qu'aucune date n'est fixée."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Copilot Studio laisse un agent agir seul quand un événement survient (élément SharePoint créé, fichier OneDrive, ligne Dataverse, récurrence). Chaque déclenchement consomme des crédits Copilot, et l'agent agit avec les identifiants de la personne qui l'a construit. Un flux Workspace Studio ou n8n rend le même service sur un tableau Google Sheets.",
+        "<strong>Risque</strong> : modéré. Un titre expiré expose le salarié et engage la responsabilité de l'employeur.",
+        "<strong>Reste humain</strong> : le manager organise l'absence, les RH valident l'inscription et son financement."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Juridique et conformité : les dates et les registres"
+    },
+    {
+      "type": "h3",
+      "text": "11. Surveiller les échéances des contrats"
+    },
+    {
+      "type": "p",
+      "text": "Tacite reconduction, préavis de trois mois, date anniversaire : ces informations dorment dans des PDF signés. L'agent lit le stock de contrats, relève pour chacun la durée, le mode de renouvellement et le délai de préavis, calcule la dernière date utile pour résilier et prévient le responsable plusieurs semaines avant cette date."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Agreement Manager, chez Docusign, suit les termes clés, les engagements et les échéances des accords, avec des rappels de renouvellement pilotés par son IA ; il fait partie de certaines offres de sa plateforme de gestion des accords. Sans ce logiciel, une tâche Cowork programmée chaque semaine sur le dossier des contrats tient le même tableau.",
+        "<strong>Risque</strong> : modéré. Un préavis manqué reconduit un contrat pour une année entière. L'extraction se contrôle sur un échantillon avant qu'on s'y fie.",
+        "<strong>Reste humain</strong> : décider de renouveler, de renégocier ou de résilier, et signer le courrier."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "12. Tenir à jour le registre des traitements RGPD"
+    },
+    {
+      "type": "p",
+      "text": "Chaque nouvel outil, chaque nouveau fichier de données personnelles doit entrer au registre. L'agent interroge le responsable du processus à l'aide d'un questionnaire court, puis rédige la fiche avec les rubriques de l'article 30 du RGPD : finalités, catégories de personnes et de données, destinataires, transferts hors de l'Union européenne, durées de conservation, mesures de sécurité. Il signale les traitements qui appellent une analyse d'impact."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : un projet Claude nourri du registre existant et de la politique de protection des données, ou un agent Copilot Studio relié à la liste SharePoint qui sert de registre et déclenché à chaque nouvelle ligne.",
+        "<strong>Risque</strong> : modéré. Une fiche inexacte fragilise l'entreprise lors d'un contrôle.",
+        "<strong>Reste humain</strong> : le délégué à la protection des données qualifie la base légale et décide de l'analyse d'impact ; le responsable du traitement répond du registre."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Maintenance, qualité et données : le terrain et les chiffres"
+    },
+    {
+      "type": "h3",
+      "text": "13. Préparer l'intervention d'un technicien"
+    },
+    {
+      "type": "p",
+      "text": "La veille d'une visite, l'agent rassemble l'historique de l'équipement, les interventions passées, les tickets encore ouverts et les pages utiles de la notice. Le technicien part avec une fiche d'une page au lieu de fouiller trois logiciels sur le parking du client."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : dans Dynamics 365 Field Service, le résumé d'intervention de Copilot présente, pour une intervention planifiée, les informations de l'équipement et l'historique de ses réparations. Chez Salesforce, les briefs préparatoires d'Agentforce for Mobile Workers donnent l'historique du client et de l'équipement avant le déplacement. La liste des pièces à emporter demande un agent relié au stock, que ces deux produits ne décrivent pas.",
+        "<strong>Risque</strong> : faible. La fiche éclaire le technicien, qui conserve le diagnostic.",
+        "<strong>Reste humain</strong> : le diagnostic sur place, les gestes de sécurité, l'échange avec le client."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "14. Instruire une non-conformité"
+    },
+    {
+      "type": "p",
+      "text": "Un client signale un défaut. L'agent part du rapport d'incident, des photos, des relevés de production et des cas semblables déjà traités. Il remplit les premières étapes d'une démarche de résolution structurée comme le 8D (équipe, description du problème, actions de confinement), propose des hypothèses de cause appuyées chacune sur ses indices, puis suit les actions correctives jusqu'à leur clôture."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : Gemini Notebook répond à partir des sources déposées (rapports 8D passés, procédures, fiches de contrôle) avec des citations dans le texte ; un projet Claude joue le même rôle. Le suivi des actions passe par un flux d'automatisation relié à l'outil qualité.",
+        "<strong>Risque</strong> : modéré. Une cause mal identifiée laisse revenir le défaut, et le rapport part chez le client.",
+        "<strong>Reste humain</strong> : l'équipe qualité confirme la cause sur le terrain et signe le rapport transmis au client."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "15. Répondre aux questions chiffrées à partir de l'entrepôt de données"
+    },
+    {
+      "type": "p",
+      "text": "Un directeur commercial demande quels clients ont réduit leurs commandes ce trimestre. L'agent traduit la question en requête sur l'entrepôt de données, à travers une couche sémantique (la définition partagée de chaque indicateur), rend le tableau et montre la requête qu'il a écrite."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Outils au 22 octobre 2026</strong> : le Fabric data agent de Microsoft, en disponibilité générale, interroge jusqu'à cinq sources en lecture seule et limite ses réponses à 25 lignes et 25 colonnes ; sa documentation précise qu'il ne prend pas encore en charge les langues autres que l'anglais, ce qui compte pour une équipe française. Chez Databricks, le mode Agent des Genie Agents est disponible depuis le 2 juillet 2026. Dans BigQuery, l'analyse conversationnelle et ses data agents le sont depuis le 23 juin 2026. Snowflake invite les utilisateurs de Cortex Analyst à passer à Cortex Agents.",
+        "<strong>Risque</strong> : modéré. Un chiffre faux nourrit une décision.",
+        "<strong>Reste humain</strong> : l'équipe données définit les indicateurs et entretient la couche sémantique ; le lecteur relit la requête quand le résultat le surprend."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Les quinze exemples d'agents IA en un tableau"
+    },
+    {
+      "type": "table",
+      "headers": ["Exemple", "Fonction", "Outil cité", "Risque", "Ce qui reste humain"],
+      "rows": [
+        ["1. CRM remis en ordre", "Vente", "HubSpot Data Agent, n8n et API Recherche d'entreprises", "Faible", "Accepter fusions et suppressions"],
+        ["2. Questionnaire de sécurité", "Vente", "Projet Claude, Copilot Studio", "Modéré", "Valider toute réponse nouvelle"],
+        ["3. Fiches du catalogue", "E-commerce", "Shopify Sidekick, Claude dans Excel", "Faible à modéré", "Vérifier caractéristiques et prix"],
+        ["4. Rendez-vous au téléphone", "Service client", "ElevenAgents, Realtime API d'OpenAI", "Modéré", "Appels délicats, écoute d'échantillons"],
+        ["5. Confirmations fournisseurs", "Achats", "Procurement Agent de Dynamics 365", "Modéré", "Appliquer les changements, négocier"],
+        ["6. Comparaison de devis", "Achats", "Claude ou Copilot dans Excel, Gemini Notebook", "Modéré", "Choisir le fournisseur"],
+        ["7. Écarts budget et réalisé", "Contrôle de gestion", "Copilot dans Excel, Narration Power BI", "Modéré", "Valider chiffres et explications"],
+        ["8. Pièces d'audit", "Finance", "Cowork, Copilot Cowork, Workspace Studio", "Faible", "Décider de ce qui sort"],
+        ["9. Entretiens de recrutement", "RH", "Copilot Cowork, Gemini dans Gmail", "Faible", "Choisir les candidats, décider"],
+        ["10. Habilitations à renouveler", "RH", "Copilot Studio, Workspace Studio, n8n", "Modéré", "Organiser l'absence, valider"],
+        ["11. Échéances des contrats", "Juridique", "Docusign Agreement Manager, Cowork", "Modéré", "Renouveler ou résilier"],
+        ["12. Registre RGPD", "Conformité", "Projet Claude, Copilot Studio", "Modéré", "Base légale, analyse d'impact"],
+        ["13. Visite du technicien", "Maintenance", "Dynamics 365 Field Service, Agentforce", "Faible", "Diagnostic et sécurité"],
+        ["14. Non-conformité", "Qualité", "Gemini Notebook, projet Claude", "Modéré", "Confirmer la cause, signer"],
+        ["15. Questions chiffrées", "Données", "Fabric data agent, Genie, BigQuery", "Modéré", "Définir les indicateurs"]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Ce que ces quinze agents ont en commun"
+    },
+    {
+      "type": "p",
+      "text": "Tous lisent, rapprochent et préparent. Aucun ne signe. La valeur se loge dans la préparation : retrouver un document, mettre deux versions côte à côte, rédiger la relance que personne n'avait le temps d'écrire. Les éditeurs ont construit leurs produits autour de ce partage des rôles. L'agent achats de Dynamics 365 garde l'envoi automatique éteint tant qu'on ne l'allume pas. Copilot Cowork attend un feu vert avant d'agir. Un agent Copilot Studio déclenché par un événement agit avec les droits de son auteur, d'où l'intérêt de le construire sous un compte aux droits limités."
+    },
+    {
+      "type": "p",
+      "text": "Le deuxième point commun tient au coût. Un agent qui tourne chaque heure se paie à chaque passage : crédits Copilot pour chaque déclenchement dans Copilot Studio et pour l'agent achats de Dynamics, crédits HubSpot pour chaque réponse du Data Agent. Le prix de la licence ne suffit donc pas à chiffrer un projet. Estimez le nombre d'exécutions par mois avant le pilote, puis relevez-le pendant."
+    },
+    {
+      "type": "p",
+      "text": "Le troisième tient aux données. Chaque agent de cette liste lit des informations que l'entreprise protège ailleurs avec soin : contrats, devis, dossiers de candidats, chiffres de clôture. Avant de le brancher, écrivez ce qu'il a le droit d'ouvrir, et en lecture seule chaque fois que l'écriture ne sert à rien. Notre article sur la <a href='/blog/gouvernance-agents-ia'>gouvernance des agents IA</a> détaille ces règles."
+    },
+    {
+      "type": "h2",
+      "text": "Choisir son premier agent parmi ces exemples"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Partir d'un volume</strong> : une tâche qui revient chaque semaine, chez plusieurs personnes, et dont chacun connaît le déroulé.",
+        "<strong>Commencer par un risque faible ou modéré</strong>, là où une relecture existe déjà dans le processus : l'acheteur qui contrôle, le contrôleur qui signe, le recruteur qui décide.",
+        "<strong>Regarder les outils déjà payés</strong> : une entreprise équipée de Dynamics 365 commencera par l'agent achats, une équipe sous Google Workspace par un flux Workspace Studio, une équipe qui travaille dans Claude par une tâche Cowork.",
+        "<strong>Mesurer avant et après</strong> : le temps passé par dossier, la part des propositions acceptées sans retouche, la part renvoyée à un humain. Ces trois relevés décident de la suite."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La méthode de construction, du cadrage aux tests, fait l'objet de notre guide pour <a href='/blog/creer-un-agent-ia-entreprise'>créer un agent IA en entreprise</a>. Pour qu'une équipe sache monter et surveiller ses propres agents, la <a href='/formation-agents-ia'>formation agents IA</a> de Masteria fait construire un premier agent pendant la session, sur une tâche tirée de son activité. Le bon premier agent ressemble rarement à une démonstration de salon : il ressemble à la corvée du lundi matin."
+    },
+    {
+      "type": "h2",
+      "text": "Sources vérifiées le 22 octobre 2026"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<a href='https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-agent-supplier-com-overview' rel='noopener'>Microsoft Learn : Procurement Agent, communication fournisseurs dans Dynamics 365 Supply Chain Management</a> (mise à jour du 1er septembre 2026)",
+        "<a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about' rel='noopener'>Microsoft Learn : déclencheurs d'événements dans Copilot Studio</a> (9 septembre 2026)",
+        "<a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/' rel='noopener'>Microsoft Learn : Copilot Cowork</a> (mise à jour du 21 octobre 2026)",
+        "<a href='https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent' rel='noopener'>Microsoft Learn : Fabric data agent</a> (mise à jour du 21 octobre 2026)",
+        "<a href='https://learn.microsoft.com/en-us/power-bi/create-reports/copilot-create-narrative' rel='noopener'>Microsoft Learn : visuel Narration avec Copilot dans Power BI</a> (11 mai 2026)",
+        "<a href='https://learn.microsoft.com/en-us/dynamics365/field-service/use-work-order-recap' rel='noopener'>Microsoft Learn : résumé d'intervention dans Dynamics 365 Field Service</a> (12 juin 2026)",
+        "<a href='https://www.hubspot.com/products/artificial-intelligence/ai-data-agent' rel='noopener'>HubSpot : Data Agent</a>",
+        "<a href='https://recherche-entreprises.api.gouv.fr/openapi.json' rel='noopener'>DINUM : API Recherche d'entreprises, description technique</a>",
+        "<a href='https://support.claude.com/en/articles/9517075-what-are-projects' rel='noopener'>Anthropic : les projets Claude</a> et <a href='https://claude.com/blog/cowork-is-now-claude' rel='noopener'>Cowork rejoint Claude</a> (16 septembre 2026)",
+        "<a href='https://claude.com/claude-in-excel' rel='noopener'>Anthropic : Claude dans Excel</a>",
+        "<a href='https://help.shopify.com/en/manual/shopify-admin/productivity-tools/sidekick' rel='noopener'>Shopify : Sidekick</a>",
+        "<a href='https://elevenlabs.io/docs/agents-platform/overview' rel='noopener'>ElevenLabs : ElevenAgents</a> et <a href='https://developers.openai.com/api/docs/guides/realtime-sip' rel='noopener'>OpenAI : Realtime API et appels SIP</a>",
+        "<a href='https://support.google.com/mail/answer/16865189' rel='noopener'>Google : proposer des créneaux avec Gemini dans Gmail</a>",
+        "<a href='https://docs.databricks.com/aws/en/ai-bi/release-notes/2026' rel='noopener'>Databricks : notes de version 2026 de Genie</a> et <a href='https://docs.cloud.google.com/bigquery/docs/conversational-analytics' rel='noopener'>Google Cloud : analyse conversationnelle dans BigQuery</a>",
+        "<a href='https://www.docusign.com/products/platform/agreement-manager' rel='noopener'>Docusign : Agreement Manager</a>",
+        "<a href='https://www.salesforce.com/service/field-service-management/' rel='noopener'>Salesforce : Agentforce for Mobile Workers</a>",
+        "<a href='https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50' rel='noopener'>Commission européenne : article 50 de l'AI Act</a> et <a href='https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689' rel='noopener'>règlement (UE) 2024/1689 sur EUR-Lex</a>"
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce qu'un agent IA, avec un exemple simple ?",
+      "a": "Un agent IA reçoit un but et enchaîne plusieurs étapes avec des outils pour l'atteindre. Exemple : l'agent achats de Dynamics 365 lit le mail d'un fournisseur, retrouve la commande d'achat, affiche la nouvelle date de livraison à côté de l'ancienne et attend que l'acheteur applique la modification."
+    },
+    {
+      "q": "Quel exemple d'agent IA mettre en place en premier ?",
+      "a": "Un agent qui travaille en interne et dont l'erreur se rattrape vite : rassembler les pièces d'un audit, préparer l'intervention d'un technicien, remettre le CRM en ordre. Ces trois exemples demandent peu de droits, ne parlent à personne hors de l'entreprise et montrent en quelques semaines le temps qu'ils rendent."
+    },
+    {
+      "q": "Quels exemples d'agents IA conviennent à une PME ?",
+      "a": "Ceux qui s'appuient sur des outils déjà payés. Une PME sous Google Workspace peut confier le suivi des habilitations ou des échéances à un flux Workspace Studio ; une PME qui utilise Claude peut programmer une tâche Cowork sur le dossier des contrats. Les agents qui exigent un développement, comme l'agent vocal ou l'agent relié à l'ERP, viennent après un premier essai réussi."
+    },
+    {
+      "q": "Un agent IA peut-il écrire seul à un client ou à un fournisseur ?",
+      "a": "Techniquement oui, et mieux vaut ne pas commencer par là. L'agent achats de Dynamics 365 garde l'envoi automatique des relances désactivé par défaut, et Copilot Cowork demande une validation avant chaque action. Laissez l'agent rédiger et une personne envoyer, puis élargissez son autonomie quand les relevés montrent qu'il se trompe rarement."
+    },
+    {
+      "q": "Quels usages des agents IA l'AI Act encadre-t-il ?",
+      "a": "Trois points comptent pour ces exemples. L'article 50, applicable depuis le 2 août 2026, impose d'informer une personne qu'elle échange avec un système d'IA, ce qui vise l'agent vocal. L'annexe III classe à haut risque les systèmes qui recrutent, sélectionnent, attribuent des tâches ou évaluent des salariés, avec des obligations au 2 décembre 2027. L'article 5 interdit déjà la reconnaissance des émotions sur le lieu de travail, hors raisons médicales ou de sécurité."
+    },
+    {
+      "q": "Combien coûte un agent IA comme ceux de cette liste ?",
+      "a": "Deux postes s'additionnent : l'usage de la plateforme et le temps de mise en place. Plusieurs éditeurs facturent désormais chaque exécution, en crédits Copilot chez Microsoft ou en crédits HubSpot (0,10 $ par réponse du Data Agent). La mise en place va de quelques heures de réglage pour une tâche Cowork à un vrai développement pour un agent vocal relié à un agenda."
+    },
+    {
+      "q": "Faut-il savoir programmer pour créer ces agents ?",
+      "a": "Pas pour la moitié d'entre eux. Copilot Studio, Workspace Studio, Cowork et les projets Claude se règlent avec des consignes écrites et des sources. L'agent vocal, l'agent branché sur l'ERP ou sur l'entrepôt de données demandent en revanche des compétences techniques : téléphonie, API, couche sémantique."
+    },
+    {
+      "q": "Un agent IA peut-il se tromper, et comment le voir ?",
+      "a": "Oui. Il lit mal une date, confond deux fiches, invente une explication à un écart. Trois réflexes limitent les dégâts : lui demander de citer sa source (le passage du contrat, la ligne du devis, la requête SQL), contrôler un échantillon de ses résultats chaque semaine au début, et compter la part de propositions corrigées. Quand cette part baisse, on peut lui confier davantage."
+    },
+    {
+      "q": "Où trouver d'autres exemples d'usage de l'IA en entreprise ?",
+      "a": "Notre page sur les cas d'usage de l'IA en entreprise décrit des usages par service, du marketing à la direction, et la page consacrée aux agents IA en entreprise en présente vingt autres, avec la mécanique qui les fait tourner. Le comparatif du meilleur agent IA met les grandes plateformes à l'épreuve sur huit tâches."
+    }
+  ],
+  "cta": {
+    "title": "Construire votre premier agent sur une tâche de votre équipe ?",
+    "desc": "Masteria forme les équipes à monter, régler et surveiller leurs agents, et construit avec elles ceux qui demandent un développement.",
+    "buttons": [
+      { "label": "Voir la formation agents IA", "href": "/formation-agents-ia", "primary": true },
+      { "label": "Décrire votre projet", "href": "/contact", "primary": false }
+    ]
+  },
+  "internalLinks": [
+    { "label": "Agents IA en entreprise : définition, mécanique, garde-fous", "href": "/agents-ia-entreprise" },
+    { "label": "Cas d'usage de l'IA en entreprise, service par service", "href": "/cas-usage-ia-entreprise" },
+    { "label": "Meilleur agent IA : le comparatif des plateformes", "href": "/meilleur-agent-ia" },
+    { "label": "Gouverner les agents IA de l'entreprise", "href": "/blog/gouvernance-agents-ia" }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "15 exemples d'agents IA en entreprise, classés par fonction",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 15,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Remettre le CRM en ordre chaque semaine" },
+        { "@type": "ListItem", "position": 2, "name": "Répondre au questionnaire de sécurité d'un grand compte" },
+        { "@type": "ListItem", "position": 3, "name": "Tenir à jour les fiches du catalogue" },
+        { "@type": "ListItem", "position": 4, "name": "Prendre les rendez-vous au téléphone" },
+        { "@type": "ListItem", "position": 5, "name": "Suivre les confirmations et les retards des fournisseurs" },
+        { "@type": "ListItem", "position": 6, "name": "Comparer les devis reçus pour un achat" },
+        { "@type": "ListItem", "position": 7, "name": "Commenter les écarts entre budget et réalisé" },
+        { "@type": "ListItem", "position": 8, "name": "Rassembler les pièces demandées par les auditeurs" },
+        { "@type": "ListItem", "position": 9, "name": "Organiser les entretiens de recrutement" },
+        { "@type": "ListItem", "position": 10, "name": "Suivre les habilitations et les formations obligatoires" },
+        { "@type": "ListItem", "position": 11, "name": "Surveiller les échéances des contrats" },
+        { "@type": "ListItem", "position": 12, "name": "Tenir à jour le registre des traitements RGPD" },
+        { "@type": "ListItem", "position": 13, "name": "Préparer l'intervention d'un technicien" },
+        { "@type": "ListItem", "position": 14, "name": "Instruire une non-conformité" },
+        { "@type": "ListItem", "position": 15, "name": "Répondre aux questions chiffrées à partir de l'entrepôt de données" }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Niveaux de risque d'un agent IA en entreprise",
+      "hasDefinedTerm": [
+        { "@type": "DefinedTerm", "name": "Risque faible", "description": "L'agent travaille en interne et une erreur se rattrape avant d'atteindre un client, un salarié ou un fournisseur." },
+        { "@type": "DefinedTerm", "name": "Risque modéré", "description": "L'agent écrit à l'extérieur, modifie une donnée de gestion ou prépare un chiffre de décision ; une personne valide avant l'effet." },
+        { "@type": "DefinedTerm", "name": "Risque élevé", "description": "L'agent participerait à une décision sur une personne ou à un engagement juridique ; plusieurs de ces usages relèvent de l'annexe III de l'AI Act." },
+        { "@type": "DefinedTerm", "name": "Couche sémantique", "description": "Définition partagée de chaque indicateur, sur laquelle un agent de données s'appuie pour écrire ses requêtes." }
+      ]
+    }
+  ]
+}

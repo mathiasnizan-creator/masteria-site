@@ -360,6 +360,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation sécurité des usages IA",
+   "href": "/formation-ia-securite",
+   "tag": "Sécurité",
+   "desc": "Shadow IA, injection de prompt, fraude, permissions des agents."
+  },
+  {
    "label": "Formation Claude Code",
    "href": "/formation-claude-code",
    "tag": "Développeurs",
