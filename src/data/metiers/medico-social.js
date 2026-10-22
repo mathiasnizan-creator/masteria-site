@@ -265,7 +265,7 @@ export default {
   },
   {
    "q": "Comment mesurer la maturité IA d'un établissement médico-social ?",
-   "a": "Trois questions suffisent pour commencer : qui utilise déjà l'IA et sur quel compte, quelles données y entrent, quelles règles existent par écrit. Notre {/test-maturite-ia|test de maturité IA} situe la structure en quelques minutes. Pour une association de plusieurs établissements, l'{/audit-ia-medico-social|audit IA médico-social} va plus loin, service par service, et le {/blog/ia-medico-social-guide|guide de l'IA générative en ESMS} détaille la démarche."
+   "a": "Trois questions suffisent pour commencer : qui utilise déjà l'IA et sur quel compte, quelles données y entrent, quelles règles existent par écrit. Notre {/test-maturite-ia|test de maturité IA} situe la structure en quelques minutes. Pour une association de plusieurs établissements, l'{/audit-ia-medico-social|audit IA médico-social} va plus loin, service par service, et le {/blog/ia-medico-social-par-ou-commencer|guide pour commencer avec l'IA dans le médico-social} détaille la démarche."
   },
   {
    "q": "Les crédits non reconductibles de l'ARS peuvent-ils financer la formation ?",
@@ -348,7 +348,7 @@ export default {
   },
   {
    "label": "Guide de l'IA générative en ESMS",
-   "href": "/blog/ia-medico-social-guide",
+   "href": "/blog/ia-medico-social-par-ou-commencer",
    "tag": "Guide"
   },
   {

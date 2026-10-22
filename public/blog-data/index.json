@@ -1,5 +1,55 @@
 [
   {
+    "slug": "agents-ia-industrie-achats-cas-concrets",
+    "title": "Agents IA dans l'industrie et les achats : cas concrets",
+    "tag": "Cas d'usage",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "29 min",
+    "excerpt": "Saisie des commandes, comparaison d'offres fournisseurs, rapports 8D, relances de retards, diagnostic de pannes : quatorze cas d'agents IA dans l'industrie et les achats, avec leurs données, la validation humaine et les éditeurs qui en livrent en 2026."
+  },
+  {
+    "slug": "comite-gouvernance-ia",
+    "title": "Monter un comité de gouvernance IA : composition, mandat, premières décisions",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "20 min",
+    "excerpt": "Qui siège au comité de gouvernance IA, ce qu'il décide, à quel rythme, avec quel ordre du jour, comment il valide un outil ou un agent, et ce qu'il doit avoir tranché au bout de 90 jours."
+  },
+  {
+    "slug": "copilot-cowork-claude-cowork-chatgpt-work",
+    "title": "Copilot Cowork, Claude Cowork, ChatGPT Work : confier une tâche longue à l'IA",
+    "tag": "Comparatif",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "26 min",
+    "excerpt": "Copilot Cowork, Cowork de Claude, ChatGPT Work et Vibe Work promettent de mener une tâche longue jusqu'au livrable. Offres, lieu d'exécution, accès aux fichiers, validations, tâches planifiées et données, vérifiés le 22 octobre 2026, puis une grille tâche par tâche et une méthode pour cadrer et relire."
+  },
+  {
+    "slug": "cout-agent-ia-entreprise",
+    "title": "Combien coûte un agent IA en entreprise en 2026 ?",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "18 min",
+    "excerpt": "Licences de plateforme, construction sur mesure, consommation au million de tokens, supervision : le coût réel d'un agent IA en entreprise en 2026, avec les prix des modèles relevés le 19 octobre et un calcul que vous pouvez refaire."
+  },
+  {
+    "slug": "creer-application-ia-sans-coder",
+    "title": "Créer une application avec l'IA sans coder en 2026 : quel outil choisir ?",
+    "tag": "Comparatif",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "23 min",
+    "excerpt": "Lovable, Bolt, Replit, v0, Claude ou ChatGPT : quel outil choisir pour créer une application sans coder en 2026, avec les prix relevés le 19 octobre, les limites de sécurité, de données et de propriété du code, et le moment où le sur-mesure s'impose."
+  },
+  {
     "slug": "creer-une-formation-avec-gemini",
     "title": "Comment créer une formation avec Gemini : de l'objectif pédagogique au quiz",
     "tag": "Guide pratique",
@@ -30,16 +80,6 @@
     "excerpt": "Le fine-tuning modifie le comportement d'un modèle ; le RAG lui fait lire vos documents au moment de répondre. Pour une entreprise, le second suffit presque toujours, et le premier recule chez les éditeurs en 2026."
   },
   {
-    "slug": "gouvernance-agents-ia",
-    "title": "Gouverner ses agents IA : inventaire, identités, propriétaires et supervision",
-    "tag": "Guide pratique",
-    "date": "22 octobre 2026",
-    "datePublished": "2026-10-22",
-    "dateModified": "2026-10-22",
-    "readTime": "14 min",
-    "excerpt": "Un agent IA agit avec des droits réels sur vos outils. Le gouverner demande sept gestes : le repérer, l'inscrire au registre, lui donner sa propre identité et le minimum d'accès, nommer son propriétaire, placer des validations, journaliser ses actions et savoir l'arrêter."
-  },
-  {
     "slug": "ia-esn",
     "title": "IA générative en ESN : avant-vente, staffing, gestion et code",
     "tag": "Guide pratique",
@@ -50,24 +90,54 @@
     "excerpt": "Une ESN vend du temps d'expert et produit beaucoup d'écrit. L'IA générative agit sur ses six chantiers : avant-vente, staffing, CRA et facturation, code, confidentialité des clients et mesure du gain."
   },
   {
-    "slug": "ia-medico-social-guide",
-    "title": "IA générative en ESMS : le guide pour le secteur médico-social",
+    "slug": "ia-medico-social-par-ou-commencer",
+    "title": "L'IA dans le médico-social : par où commencer ?",
     "tag": "Guide pratique",
     "date": "22 octobre 2026",
     "datePublished": "2026-10-22",
     "dateModified": "2026-10-22",
-    "readTime": "12 min",
-    "excerpt": "Dans un ESMS, l'IA générative sert d'abord l'écrit : transmissions, documents FALC, évaluation HAS, dossiers de financement. Les usages utiles, les règles à poser avant de commencer, cinq premiers pas et une grille pour situer la maturité de votre établissement."
+    "readTime": "27 min",
+    "excerpt": "Les usages de l'IA qui ont du sens dans un ESMS ou un EHPAD, ceux qu'il faut proscrire, le cadre RGPD, HDS et AI Act au 22 octobre 2026, une démarche en cinq étapes et les financements à solliciter."
   },
   {
-    "slug": "preparer-codir-avec-ia",
-    "title": "Préparer un CODIR avec l'IA : de l'ordre du jour au suivi des décisions",
-    "tag": "Management",
+    "slug": "preparer-codir-comex-ia-methode-prompts",
+    "title": "Préparer un CODIR ou un COMEX avec l'IA : méthode et prompts",
+    "tag": "Guide pratique",
     "date": "22 octobre 2026",
     "datePublished": "2026-10-22",
     "dateModified": "2026-10-22",
-    "readTime": "13 min",
-    "excerpt": "L'IA assemble l'ordre du jour, résume les notes des directions, commente le tableau de bord, rédige le relevé de décisions et tient la liste des actions. La décision et les sujets couverts par un secret restent à la direction."
+    "readTime": "14 min",
+    "excerpt": "Six étapes pour préparer un comité de direction avec l'IA, de la collecte des sujets au suivi des actions : quel outil entre Copilot et Claude, un prompt prêt à copier et la règle de données pour chacune."
+  },
+  {
+    "slug": "prompts-skills-ia-methodes-equipe",
+    "title": "Des prompts aux Skills : capitaliser les méthodes d'une équipe avec l'IA",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "24 min",
+    "excerpt": "Une bibliothèque de prompts copiés-collés s'use vite. Les compétences (Skills) de Claude, ChatGPT, Copilot, Gemini et Mistral rangent une méthode avec ses fichiers et ses contrôles : lesquelles créer d'abord, comment les écrire, qui les fait vivre."
+  },
+  {
+    "slug": "quelle-ia-pour-excel",
+    "title": "Quelle IA pour Excel en 2026 : Copilot, Claude, ChatGPT ou Gemini ?",
+    "tag": "Comparatif",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "27 min",
+    "excerpt": "Copilot, Claude, ChatGPT et Gemini travaillent tous dans le tableur en 2026. Ce comparatif daté du 22 octobre dit ce que chacun fait bien, ce qu'il exige et ce qu'il coûte, avec une grille de prompts par tâche et les règles à poser pour des données financières."
+  },
+  {
+    "slug": "superviser-agents-ia-production",
+    "title": "Superviser des agents IA en production : traçage, identités, droits et contrôle humain",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "14 min",
+    "excerpt": "Un agent IA en production se supervise sur cinq plans : chaque action tracée, une identité propre à chaque agent, des droits réduits au strict nécessaire, une validation humaine sur ce qui engage l'entreprise et des indicateurs suivis chaque semaine. La méthode, les outils des éditeurs et le cadre de l'AI Act."
   },
   {
     "slug": "creer-un-agent-ia-entreprise",

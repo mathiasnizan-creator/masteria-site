@@ -373,6 +373,10 @@ Chaque page décrit un programme dédié à un outil pour un métier précis, av
 - [Formation intelligence artificielle et CPF](https://www.master-ia.fr/formation-intelligence-artificielle-cpf) — Ce que le CPF finance ou non pour l'IA, et les dispositifs alternatifs
 - [Certification Qualiopi de Masteria](https://www.master-ia.fr/formation-ia-qualiopi) — Portée de la certification et conséquences sur le financement
 - [Créer un agent IA en entreprise](https://www.master-ia.fr/blog/creer-un-agent-ia-entreprise)
+- [15 exemples d'agents IA en entreprise](https://www.master-ia.fr/blog/exemples-agents-ia-entreprise) : quinze agents classés par fonction, avec l'outil qui les permet en octobre 2026, le niveau de risque et la part humaine
+- [IA générative en ESN](https://www.master-ia.fr/blog/ia-esn) : avant-vente, dossiers de compétences, CRA et facturation, agents de code, confidentialité des clients, gains mesurés
+- [Fine-tuning ou RAG](https://www.master-ia.fr/blog/fine-tuning-ou-rag) : définitions, tableau comparatif, alternatives (consignes, projets, MCP) et cas où l'affinage se justifie en 2026
+- [Créer une formation avec Gemini](https://www.master-ia.fr/blog/creer-une-formation-avec-gemini) : méthode en sept étapes, de l'objectif pédagogique au quiz, avec Gemini, Gemini Notebook et Google Forms
 - [À propos de la Veille IA](https://www.master-ia.fr/veille-ia/a-propos) — Méthode de collecte, sources et critères de sélection
 
 ## Preuves & chiffres clés

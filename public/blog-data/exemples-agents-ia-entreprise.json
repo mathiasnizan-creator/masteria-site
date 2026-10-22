@@ -346,7 +346,7 @@
     },
     {
       "type": "p",
-      "text": "Le troisième tient aux données. Chaque agent de cette liste lit des informations que l'entreprise protège ailleurs avec soin : contrats, devis, dossiers de candidats, chiffres de clôture. Avant de le brancher, écrivez ce qu'il a le droit d'ouvrir, et en lecture seule chaque fois que l'écriture ne sert à rien. Notre article sur la <a href='/blog/gouvernance-agents-ia'>gouvernance des agents IA</a> détaille ces règles."
+      "text": "Le troisième tient aux données. Chaque agent de cette liste lit des informations que l'entreprise protège ailleurs avec soin : contrats, devis, dossiers de candidats, chiffres de clôture. Avant de le brancher, écrivez ce qu'il a le droit d'ouvrir, et en lecture seule chaque fois que l'écriture ne sert à rien. Notre article sur la <a href='/blog/superviser-agents-ia-production'>supervision des agents IA en production</a> détaille ces règles."
     },
     {
       "type": "h2",
@@ -442,7 +442,7 @@
     { "label": "Agents IA en entreprise : définition, mécanique, garde-fous", "href": "/agents-ia-entreprise" },
     { "label": "Cas d'usage de l'IA en entreprise, service par service", "href": "/cas-usage-ia-entreprise" },
     { "label": "Meilleur agent IA : le comparatif des plateformes", "href": "/meilleur-agent-ia" },
-    { "label": "Gouverner les agents IA de l'entreprise", "href": "/blog/gouvernance-agents-ia" }
+    { "label": "Superviser les agents IA en production", "href": "/blog/superviser-agents-ia-production" }
   ],
   "extraJsonLd": [
     {

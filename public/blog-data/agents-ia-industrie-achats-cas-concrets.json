@@ -1,0 +1,920 @@
+{
+  "slug": "agents-ia-industrie-achats-cas-concrets",
+  "title": "Agents IA dans l'industrie et les achats : cas concrets",
+  "metaTitle": "Agents IA industrie et achats : cas concrets | Masteria",
+  "metaDesc": "Agents IA pour l'industrie et les achats : ADV, offres fournisseurs, 8D, supply chain, maintenance, éditeurs qui en livrent en 2026 et validation humaine.",
+  "tag": "Cas d'usage",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "29 min",
+  "keywords": [
+    "agent IA industrie",
+    "agent IA pour les achats",
+    "éditeurs logiciels achats agents IA",
+    "agent IA ADV",
+    "agent IA qualité 8D",
+    "agent IA supply chain",
+    "agent IA maintenance GMAO",
+    "SAP Joule agents",
+    "Coupa agents IA",
+    "Copilot Studio industrie",
+    "formation IA achats"
+  ],
+  "excerpt": "Saisie des commandes, comparaison d'offres fournisseurs, rapports 8D, relances de retards, diagnostic de pannes : quatorze cas d'agents IA dans l'industrie et les achats, avec leurs données, la validation humaine et les éditeurs qui en livrent en 2026.",
+  "intro": "Un agent IA pour l'industrie lit un document entrant, va chercher les données utiles dans l'ERP, le PLM ou la GMAO, puis prépare une action qu'une personne valide : une commande à saisir, un comparatif d'offres fournisseurs, un rapport 8D, un ordre de travail. En 2026, les cas qui tiennent se concentrent sur cinq services : l'administration des ventes, les achats, la qualité, la supply chain et la maintenance. Pour chacun, cet article décrit ce que fait l'agent, les données et les logiciels qu'il lui faut, l'étape qu'un humain garde et la plateforme qui peut le porter. Il recense aussi, sources datées à l'appui, les éditeurs de logiciels achats et ERP qui livrent leurs propres agents.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Un agent IA (un programme qui enchaîne lui-même les étapes d'une tâche dans vos logiciels) rend service dans l'industrie partout où un document entrant déclenche une saisie, une recherche ou une comparaison : une commande client reçue par mail, des offres fournisseurs à comparer, une non-conformité à documenter, un fournisseur en retard à relancer, une panne à diagnostiquer. Ces projets tiennent quand une règle est posée dès le départ : l'agent prépare, et une personne engage l'entreprise dès qu'il s'agit d'argent, de la parole donnée au client, du produit ou de la sécurité. En 2026, les suites achats et les ERP livrent leurs propres agents (SAP, Coupa, Oracle et Microsoft Dynamics 365 en tête, d'après leurs pages officielles relevées le 22 octobre) ; Copilot Studio, ChatGPT, Claude et n8n servent à construire ceux que votre éditeur ne couvre pas."
+    },
+    {
+      "type": "h2",
+      "text": "Un agent industriel prépare le travail, une personne engage l'entreprise"
+    },
+    {
+      "type": "p",
+      "text": "Trois outils se ressemblent au point d'être confondus. Un assistant conversationnel répond à la personne qui l'interroge, puis s'arrête. Une automatisation suit un circuit fixé d'avance : tel mail arrive, tel fichier part. Un agent reçoit un objectif, choisit ses étapes, consulte plusieurs sources et rend un résultat, jusqu'à agir dans un logiciel quand on l'y autorise. Il raisonne avec un grand modèle de langage (le moteur de ChatGPT, de Claude ou de Copilot) et se sert d'outils : lire la messagerie, interroger l'ERP, chercher dans une base documentaire."
+    },
+    {
+      "type": "p",
+      "text": "L'usine offre à ces agents un terrain favorable, car ses flux sont écrits : bons de commande, accusés de réception, fiches de non-conformité, gammes, ordres de travail, contrats. Elle leur impose aussi une exigence forte. Une erreur de prix part chez un client, une mauvaise référence arrête une ligne, une consigne de sécurité mal recopiée blesse quelqu'un. Les agents qui tiennent en production respectent donc une frontière nette entre ce qu'ils préparent et ce qu'une personne signe."
+    },
+    {
+      "type": "p",
+      "text": "Dans tous les cas décrits plus bas, quatre familles d'actions restent soumises à une validation humaine :"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>L'argent</strong> : un prix hors tarif, un avoir, un paiement, un changement de coordonnées bancaires.",
+        "<strong>La parole donnée au client</strong> : une date de livraison, une réponse à une réclamation, un engagement de qualité.",
+        "<strong>Le produit</strong> : une dérogation, la libération ou le rebut d'un lot, la diffusion d'un document qualité.",
+        "<strong>La sécurité</strong> : toute intervention sur une machine, toute consigne qui protège une personne."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Cette frontière fixe aussi le rythme du projet. Un agent commence en mode suggestion, où il propose et où la personne exécute ; il gagne le droit d'écrire dans l'ERP action par action, quand son taux d'erreur est connu."
+    },
+    {
+      "type": "h2",
+      "text": "Quatorze cas d'usage d'agents IA, de l'ADV à la maintenance"
+    },
+    {
+      "type": "p",
+      "text": "Le tableau rassemble les cas détaillés dans la suite de l'article. La dernière colonne indique les voies possibles quand votre éditeur ne livre pas déjà l'agent dans sa suite ; le choix se tranche au cadrage, selon l'endroit où vivent vos données."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Service",
+        "Cas d'usage",
+        "Ce que fait l'agent",
+        "Données et logiciels",
+        "Ce qu'une personne valide",
+        "Plateformes possibles"
+      ],
+      "rows": [
+        [
+          "ADV",
+          "Commandes reçues par mail ou en PDF",
+          "Lit la commande, retrouve articles et tarifs, prépare la commande dans l'ERP",
+          "Messagerie, ERP (articles, clients, conditions)",
+          "La commande dès qu'un prix, une quantité ou un article sort des règles",
+          "Agent de l'ERP, Copilot Studio, n8n"
+        ],
+        [
+          "ADV",
+          "Confirmations et questions de délai",
+          "Lit le statut dans l'ERP, rédige la réponse au client",
+          "ERP (carnet de commandes, stocks, planning), suivi transporteur",
+          "Toute date promise au-delà du planning",
+          "Copilot Studio, ChatGPT, Claude"
+        ],
+        [
+          "ADV",
+          "Réclamations clients",
+          "Classe la demande, rassemble commande, lot et livraison, accuse réception",
+          "Messagerie, ERP, traçabilité des lots",
+          "L'avoir, le geste commercial, la reconnaissance d'une responsabilité",
+          "Copilot Studio, n8n"
+        ],
+        [
+          "Achats",
+          "Comparaison d'offres fournisseurs",
+          "Ramène les offres à une base commune, calcule les écarts, liste les questions à poser",
+          "Offres en PDF ou tableur, cahier des charges, historique de prix",
+          "Le choix du fournisseur et la négociation",
+          "Suite achats, Claude, ChatGPT, Copilot"
+        ],
+        [
+          "Achats",
+          "Suivi des contrats",
+          "Extrait échéances, préavis et clauses de révision, alerte avant la date",
+          "Contrats rangés en GED ou dans SharePoint",
+          "Le renouvellement, la renégociation ou la dénonciation",
+          "Suite achats, Copilot Studio, n8n"
+        ],
+        [
+          "Achats",
+          "Veille des prix et des fournisseurs",
+          "Suit les indices et l'actualité des fournisseurs, résume ce qui change",
+          "Indices publiés, presse, mails de hausse",
+          "Acheter en avance, couvrir un risque, ouvrir une seconde source",
+          "ChatGPT, Claude, n8n"
+        ],
+        [
+          "Achats",
+          "Création d'un fournisseur",
+          "Lit le mail et les pièces jointes, prépare la fiche dans l'ERP",
+          "Messagerie, ERP",
+          "Les coordonnées bancaires, contrôlées par une seconde personne",
+          "Copilot, agent de l'ERP"
+        ],
+        [
+          "Qualité",
+          "Non-conformités",
+          "Pré-remplit la fiche, retrouve les cas semblables",
+          "Fiches passées, traçabilité, photos",
+          "Le sort du lot : tri, retouche, dérogation, rebut",
+          "Copilot Studio, Claude"
+        ],
+        [
+          "Qualité",
+          "Rapports 8D",
+          "Structure le rapport, propose des pistes de causes tirées de l'historique",
+          "8D passés, AMDEC, données de production",
+          "La cause racine et les actions correctives",
+          "Claude, ChatGPT, Copilot"
+        ],
+        [
+          "Qualité",
+          "Documentation",
+          "Repère les documents touchés par une modification, propose les passages à réécrire",
+          "PLM, système documentaire qualité",
+          "L'approbation avant diffusion",
+          "Claude, Copilot, agent du PLM"
+        ],
+        [
+          "Supply chain",
+          "Relance des fournisseurs en retard",
+          "Repère les commandes sans confirmation, relance, propose la nouvelle date",
+          "ERP, messagerie",
+          "Le glissement qui touche une commande client",
+          "Agent de l'ERP, n8n"
+        ],
+        [
+          "Supply chain",
+          "Transport et réceptions",
+          "Consulte les transporteurs, prépare l'import des réceptions",
+          "Fichiers d'entrepôt, ERP, mails des transporteurs",
+          "Le choix du transporteur, l'écart de quantité",
+          "n8n, Claude, ChatGPT"
+        ],
+        [
+          "Maintenance",
+          "Aide au diagnostic",
+          "Cherche les pannes semblables et la documentation du constructeur",
+          "GMAO, manuels, historique d'interventions",
+          "Le diagnostic et toute intervention",
+          "Agent de la GMAO, Copilot Studio, Claude"
+        ],
+        [
+          "Maintenance",
+          "Comptes rendus et préparation des arrêts",
+          "Codifie la note du technicien, vérifie les pièces prévues",
+          "GMAO, stock du magasin",
+          "La clôture de l'ordre de travail, les demandes d'achat",
+          "Agent de la GMAO, Copilot Studio"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "En administration des ventes, l'agent transforme les mails en commandes prêtes à valider"
+    },
+    {
+      "type": "p",
+      "text": "L'administration des ventes (ADV, le service qui saisit les commandes et suit leur exécution jusqu'à la facture) reçoit une bonne part de ses commandes par mail, en PDF ou en tableur, chacune au format du client. La ressaisie dans l'ERP occupe des heures qui ne servent pas le client, et chaque saisie manuelle ouvre une occasion d'erreur sur une référence ou un prix."
+    },
+    {
+      "type": "h3",
+      "text": "Saisir les commandes entrantes"
+    },
+    {
+      "type": "p",
+      "text": "L'agent lit la commande et identifie le client. Il retrouve chaque article dans la base de l'ERP, y compris quand le client emploie sa propre référence, applique le tarif et les conditions du compte, puis prépare la commande en brouillon. Il signale tout ce qui sort des règles : un prix différent du tarif en vigueur, une quantité inhabituelle pour ce client, un article inconnu, une date demandée que le stock ne permet pas. La personne de l'ADV confirme d'un clic les commandes conformes et traite elle-même les exceptions."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft livre ce cas dans Dynamics 365 Business Central, son ERP pour les PME. Son agent de commandes clients (Sales Order Agent) surveille une boîte mail, lit les demandes et leurs pièces jointes en PDF ou en image, reconnaît le client à son adresse, vérifie la disponibilité des articles et prépare toujours un devis avant la commande. Chaque mail qu'il s'apprête à envoyer passe devant une personne désignée. L'agent consomme des crédits Copilot, d'après la <a href='https://learn.microsoft.com/en-us/dynamics365/business-central/sales-order-agent' target='_blank' rel='noopener'>documentation Microsoft Learn de l'agent</a> datée du 2 octobre 2026."
+    },
+    {
+      "type": "p",
+      "text": "Tout dépend de l'accès à l'ERP. Un ERP récent expose une API (la porte d'entrée prévue pour les autres programmes) ou un connecteur MCP (un standard ouvert qui présente un logiciel aux agents). Un ERP ancien, installé sur un serveur interne, demande un connecteur à construire ; une première étape raisonnable consiste alors à faire produire par l'agent un fichier d'import, que l'ERP avale comme il le fait déjà. L'article sur <a href='/blog/serveur-mcp-entreprise-connecter-ia-si'>le branchement d'un serveur MCP sur votre système d'information</a> détaille ces options."
+    },
+    {
+      "type": "h3",
+      "text": "Confirmer et répondre aux questions de délai"
+    },
+    {
+      "type": "p",
+      "text": "Une grande partie des mails reçus par l'ADV posent la même question sous des formes variées : où en est ma commande ? L'agent lit le statut dans l'ERP (en préparation, expédiée, en attente de matière), retrouve le numéro de suivi du transporteur et rédige la réponse. Tant que cette réponse reprend une donnée de l'ERP, elle peut partir après une relecture rapide. Dès qu'il faudrait promettre une date que le planning ne garantit pas, l'agent transmet le dossier à la personne qui arbitre avec la production."
+    },
+    {
+      "type": "h3",
+      "text": "Traiter les réclamations"
+    },
+    {
+      "type": "p",
+      "text": "Face à une réclamation, l'agent classe la demande (retard, erreur de livraison, défaut du produit), rassemble la commande, le bon de livraison et le numéro de lot, accuse réception auprès du client et ouvre la fiche dans l'outil qualité quand le produit est en cause. L'avoir, le geste commercial et la reconnaissance d'une responsabilité restent des décisions humaines : ils engagent l'entreprise, et parfois son assureur."
+    },
+    {
+      "type": "callout",
+      "title": "Ce que des référents ont construit en distribution B2B",
+      "italic": false,
+      "text": "Chez un distributeur informatique B2B de 58 salariés, filiale d'un groupe européen, Masteria a formé dix référents en deux jours, chacun sur un projet de son poste. Deux des onze compétences Claude conçues avec eux relèvent du travail d'ADV : la première prépare une cotation dès qu'un client écrit, la seconde rédige les réponses aux cahiers des charges en puisant dans l'ERP et la base articles. La compétence de relance des devis avait fait ses preuves sur des devis en cours avant même la session, et chaque compétence passe devant la direction avant d'être diffusée aux autres équipes. Le détail figure dans nos <a href='/etudes-de-cas-ia'>études de cas</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Aux achats, l'agent compare les offres, surveille les contrats et suit les prix"
+    },
+    {
+      "type": "p",
+      "text": "Un acheteur industriel passe une part de sa semaine à remettre en forme ce que les fournisseurs envoient : des offres dans des formats tous différents, des contrats dont les échéances dorment dans un dossier partagé, des hausses de prix annoncées par simple mail. Un agent IA pour les achats prend en charge cette mise en forme et laisse à l'acheteur l'analyse et la négociation, où se joue la valeur de la fonction."
+    },
+    {
+      "type": "h3",
+      "text": "Comparer des offres fournisseurs"
+    },
+    {
+      "type": "p",
+      "text": "À partir d'une consultation, l'agent lit les offres reçues et les ramène à une base commune : prix unitaire dans la même unité, frais de port et incoterm (la règle internationale qui fixe qui paie le transport et qui porte le risque), délai, conditions de paiement, durée de validité. Il confronte chaque offre au cahier des charges, repère les lignes oubliées et les réserves glissées en dernière page, puis rédige pour chaque fournisseur la liste des questions de clarification."
+    },
+    {
+      "type": "p",
+      "text": "L'acheteur reçoit un tableau prêt à discuter, où chaque chiffre renvoie à la page de l'offre d'où il vient. Il garde le choix du fournisseur, la stratégie de négociation et la relation, qui reposent sur ce que l'agent ignore : la qualité de service des deux dernières années, la dépendance à une source unique, la politique du groupe."
+    },
+    {
+      "type": "h3",
+      "text": "Suivre les contrats et leurs échéances"
+    },
+    {
+      "type": "p",
+      "text": "Un contrat fournisseur contient des dates qui coûtent cher quand on les oublie : la fin de la période initiale, le préavis à respecter avant une reconduction tacite, la clause de révision indexée sur un indice, les pénalités de retard. L'agent extrait ces éléments de chaque contrat, les inscrit dans un registre et prévient l'acheteur avant l'échéance, en citant le passage qui fonde l'alerte. Renouveler, renégocier ou dénoncer reste la décision de l'acheteur, et celle de sa direction au-delà d'un certain montant."
+    },
+    {
+      "type": "h3",
+      "text": "Surveiller les prix et les fournisseurs"
+    },
+    {
+      "type": "p",
+      "text": "Pour la veille, l'agent relève chaque semaine les indices publiés qui servent de base à vos clauses de révision (l'Insee publie par exemple les indices de prix de production de l'industrie), l'actualité de vos fournisseurs principaux et les annonces de hausse arrivées par mail. Il en tire une note courte : ce qui a bougé, les contrats touchés, les commandes en cours concernées. Acheter en avance, couvrir un risque ou qualifier une seconde source restent des choix d'acheteur."
+    },
+    {
+      "type": "h3",
+      "text": "Préparer la création d'un fournisseur"
+    },
+    {
+      "type": "p",
+      "text": "Le référencement d'un nouveau fournisseur commence souvent par un mail et quelques pièces jointes : extrait d'immatriculation, attestations, contacts, relevé d'identité bancaire. L'agent lit le tout et prépare la fiche de création dans l'ERP. Les coordonnées bancaires font exception. La fraude au faux changement de RIB vise ce moment précis, et leur saisie passe par un contrôle humain indépendant, le plus sûr restant de rappeler le fournisseur sur un numéro déjà connu."
+    },
+    {
+      "type": "callout",
+      "title": "Dans un groupe industriel international du packaging",
+      "italic": false,
+      "text": "Lors des ateliers Microsoft 365 Copilot que Masteria a conduits pour les managers d'un groupe international du packaging, sur des fichiers du groupe, l'un des assistants construits partait du mail d'un fournisseur pour en préparer la fiche. Le contexte pesait : le groupe migrait alors vers S/4HANA, la dernière génération de l'ERP de SAP. Après la formation, une partie des managers a réclamé l'étape suivante, avec les données SAP et la Power Platform de Microsoft. De son côté, le comité de direction a placé un premier cas d'agent parmi les décisions à prendre avant d'étendre le déploiement aux sites internationaux."
+    },
+    {
+      "type": "p",
+      "text": "Les acheteurs qui veulent construire ces usages sur leurs propres consultations trouveront le programme de la <a href='/formation-ia-achats'>formation IA pour les achats</a> de Masteria."
+    },
+    {
+      "type": "h2",
+      "text": "En qualité, l'agent rassemble les preuves et rédige, l'équipe qualité tranche"
+    },
+    {
+      "type": "p",
+      "text": "Le service qualité écrit beaucoup, et souvent dans l'urgence : la fiche de non-conformité se remplit pendant que le lot attend, le rapport 8D part chez un client qui attend des preuves, les instructions de travail doivent suivre chaque modification du produit. Ce sont trois terrains où l'agent fait gagner du temps sans toucher à la décision."
+    },
+    {
+      "type": "h3",
+      "text": "Documenter une non-conformité"
+    },
+    {
+      "type": "p",
+      "text": "À partir de la description de l'opérateur, d'une photo et du numéro de lot, l'agent pré-remplit la fiche de non-conformité : produit, défaut constaté, quantité, poste, fournisseur le cas échéant. Il cherche dans l'historique les fiches semblables et rappelle comment elles ont été traitées. Le sort du lot (tri, retouche, dérogation accordée par le client, rebut) reste la décision du responsable qualité, consignée sous son nom."
+    },
+    {
+      "type": "h3",
+      "text": "Rédiger un rapport 8D"
+    },
+    {
+      "type": "p",
+      "text": "La méthode 8D (huit disciplines de résolution de problème, que réclament de nombreux donneurs d'ordres industriels) structure la réponse à un défaut : constituer l'équipe, décrire le problème, contenir, trouver la cause racine, choisir les actions correctives, les vérifier, prévenir la récidive, clore. L'agent aide partout où l'écrit domine. Il reformule le problème selon la grille QQOQCP (qui, quoi, où, quand, comment, combien), propose des causes possibles en s'appuyant sur les 8D passés et sur l'AMDEC (l'analyse des modes de défaillance du produit ou du procédé), puis met le rapport au format demandé par le client."
+    },
+    {
+      "type": "p",
+      "text": "La cause racine, elle, se démontre sur le terrain, par des essais et des mesures. L'agent avance des hypothèses à vérifier ; l'équipe 8D les confirme ou les écarte, et signe le rapport. Un client exigeant repère vite un 8D écrit sans travail d'équipe derrière, et la confiance que le rapport devait rétablir s'en trouve entamée."
+    },
+    {
+      "type": "h3",
+      "text": "Tenir la documentation à jour"
+    },
+    {
+      "type": "p",
+      "text": "Chaque modification de produit ou de procédé déclenche une série de mises à jour : modes opératoires, instructions de poste, plans de surveillance. L'agent compare la nouvelle version d'un plan ou d'une nomenclature issue du PLM (le logiciel qui gère la vie du produit, de la conception à l'arrêt de série) avec les documents en vigueur, liste ceux qui sont touchés et propose les passages à réécrire. La norme ISO 9001 impose de maîtriser les informations documentées : l'approbation avant diffusion reste à la personne que votre système qualité désigne. La <a href='/formation-ia-qse'>formation IA pour les fonctions QSE</a> travaille ces usages sur vos propres documents."
+    },
+    {
+      "type": "h2",
+      "text": "En supply chain, l'agent chasse les écarts avant qu'ils ne deviennent des ruptures"
+    },
+    {
+      "type": "p",
+      "text": "La supply chain (la chaîne qui va de la commande au fournisseur jusqu'à la livraison du client) vit d'exceptions : une confirmation qui n'arrive pas, un camion en retard, une réception qui ne correspond pas à la commande. Les planificateurs passent une large part de leur journée à les débusquer dans l'ERP et dans les mails."
+    },
+    {
+      "type": "h3",
+      "text": "Relancer les fournisseurs et tenir les dates à jour"
+    },
+    {
+      "type": "p",
+      "text": "L'agent repère les commandes d'achat restées sans accusé de réception ou dont la date confirmée glisse. Il relance le fournisseur par mail, dans sa langue, lit la réponse et propose la mise à jour de la date dans l'ERP. Il calcule ensuite les commandes clients touchées par ce glissement. Le planificateur valide la nouvelle date dès qu'elle entame une promesse faite à un client."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft propose ce cas dans Dynamics 365 Supply Chain Management. L'agent achats (Procurement Agent, ancien Supplier Communications Agent) rédige les relances des commandes non confirmées ou en retard, les envoie directement ou les laisse en brouillon pour relecture, puis lit les mails des fournisseurs : confirmation, changement de quantité, de prix ou de date, annulation. Il rattache chaque changement à la bonne ligne de commande et le soumet à l'acheteur. Microsoft le classe en préversion prête pour la production, facturée en crédits Copilot Studio, selon sa <a href='https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-agent-supplier-com-overview' target='_blank' rel='noopener'>page Microsoft Learn</a> mise à jour le 1er septembre 2026."
+    },
+    {
+      "type": "h3",
+      "text": "Consulter les transporteurs et préparer les réceptions"
+    },
+    {
+      "type": "p",
+      "text": "Chez un distributeur de solutions photovoltaïques géré sous Odoo, accompagné par Masteria en conseil, le diagnostic par flux a fait ressortir deux tâches de ce type. La première consistait à demander les prix aux transporteurs, à la main, avant chaque livraison. La seconde touchait les réceptions d'entrepôt : les numéros de série étaient recopiés depuis des fichiers que la scannette ne savait pas lire. Ces deux chantiers figurent parmi les trois assistants retenus, à brancher sur Odoo par paliers, avec la règle demandée par la direction : l'assistant prépare, une personne contrôle. La page <a href='/ia-logistique-transport'>IA pour la logistique et le transport</a> décrit les autres circuits de ce métier."
+    },
+    {
+      "type": "h3",
+      "text": "Arbitrer les manquants"
+    },
+    {
+      "type": "p",
+      "text": "Le calcul des besoins de l'ERP (le MRP, qui déduit les achats et la production à lancer à partir des commandes et des stocks) produit chaque matin une liste de messages d'exception : avancer, reculer, annuler, commander. L'agent les trie selon leur effet sur les livraisons clients, regroupe ceux qui concernent un même fournisseur et propose une action pour chacun. Le planificateur décide ; l'agent lui épargne le tri."
+    },
+    {
+      "type": "h2",
+      "text": "En maintenance, l'agent aide le technicien à diagnostiquer et rédige l'ordre de travail"
+    },
+    {
+      "type": "p",
+      "text": "La GMAO (gestion de maintenance assistée par ordinateur, le logiciel qui planifie et trace les interventions) accumule des années d'historique que personne ne relit, et les manuels des constructeurs dorment en PDF. Un agent de maintenance rend ce savoir disponible au pied de la machine."
+    },
+    {
+      "type": "h3",
+      "text": "Aider au diagnostic"
+    },
+    {
+      "type": "p",
+      "text": "Le technicien décrit le symptôme, par écrit ou à la voix. L'agent cherche les pannes semblables sur la même machine ou sur un modèle voisin, les pièces changées à l'époque, les pages utiles du manuel, puis propose des pistes classées. Cette recherche dans vos propres documents porte un nom, le RAG (génération augmentée par récupération : le modèle répond en citant vos sources). Le technicien garde le diagnostic, et toute intervention suit vos procédures de consignation."
+    },
+    {
+      "type": "h3",
+      "text": "Rédiger les comptes rendus et préparer les arrêts"
+    },
+    {
+      "type": "p",
+      "text": "Après l'intervention, l'agent transforme quelques notes en compte rendu codifié dans la GMAO : cause, organe, pièces, temps passé. L'historique gagne en qualité, et le diagnostic suivant devient plus fiable. Avant un arrêt programmé, l'agent vérifie le stock des pièces prévues dans les gammes et prépare les demandes d'achat manquantes, que le magasin et les achats valident."
+    },
+    {
+      "type": "p",
+      "text": "Les éditeurs de GMAO avancent sur ce terrain. IBM a annoncé le 25 juin 2026 la version 9.2 de Maximo Application Suite, avec un assistant sur mobile, une analyse des ordres de travail et des inspections, et un serveur MCP qui permet de brancher vos propres agents sur Maximo Manage ; la <a href='https://www.ibm.com/new/announcements/introducing-maximo-application-suite-9-2' target='_blank' rel='noopener'>page d'annonce d'IBM</a> ne donne pas de date de disponibilité générale. Oracle a annoncé le 10 février 2026, dans Fusion Cloud Supply Chain & Manufacturing, un agent qui estime le coût d'un ordre de travail de maintenance à partir des pièces, de la main-d'œuvre et des ressources prévues (<a href='https://www.oracle.com/news/announcement/oracle-ai-agents-help-boost-supply-chain-efficiency-and-strengthen-resiliency-2026-02-10/' target='_blank' rel='noopener'>annonce Oracle</a>). Avant de construire un agent de maintenance, regardez donc ce que votre GMAO expose déjà."
+    },
+    {
+      "type": "callout",
+      "title": "La limite à ne pas franchir",
+      "italic": false,
+      "text": "Un agent de maintenance conseille ; il ne commande ni une machine ni une fonction de sécurité. Une IA qui sert de composant de sécurité à un produit encadré par la législation européenne, machines comprises, relève des systèmes à haut risque de l'AI Act. Ces obligations s'appliquent au 2 août 2028, d'après la <a href='https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai' target='_blank' rel='noopener'>page de la Commission européenne sur le cadre réglementaire de l'IA</a> (mise à jour le 19 octobre 2026)."
+    },
+    {
+      "type": "h2",
+      "text": "Quels éditeurs de logiciels achats et ERP proposent des agents IA en 2026 ?"
+    },
+    {
+      "type": "p",
+      "text": "Au 22 octobre 2026, neuf éditeurs de logiciels achats présentent des agents IA sur leur propre site : SAP, Coupa, Oracle, Ivalua, JAGGAER, GEP, Zip, Workday et Esker. Du côté des ERP et des logiciels industriels, Microsoft (Dynamics 365), Odoo, Infor, Siemens, Dassault Systèmes et IBM livrent ou annoncent des agents pour la commande client, l'achat, la qualité, l'ingénierie et la maintenance."
+    },
+    {
+      "type": "p",
+      "text": "Les statuts varient d'un éditeur à l'autre : disponibilité générale, préversion, ou simple annonce. Les deux tableaux ne retiennent que ce que chaque éditeur affiche sur son propre site, avec la date de la page consultée le 22 octobre 2026. Un nom d'agent sur une page produit ne dit rien de sa disponibilité dans votre pays, votre version ou votre licence : la question se pose à l'éditeur ou à l'intégrateur avant tout projet."
+    },
+    {
+      "type": "h3",
+      "text": "Les suites achats"
+    },
+    {
+      "type": "p",
+      "text": "Les suites achats (source-to-pay : du besoin exprimé jusqu'au paiement du fournisseur) ont livré des agents parmi les premières, car leurs flux sont déjà structurés en étapes : demande, consultation, contrat, commande, facture. Les agents les plus avancés portent sur la consultation et la comparaison des offres, le référencement des fournisseurs et le suivi des contrats, soit les cas décrits plus haut."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Éditeur",
+        "Agents et ce qu'ils font",
+        "Statut affiché",
+        "Source et date"
+      ],
+      "rows": [
+        [
+          "SAP (SAP Ariba, Joule)",
+          "Assistants Joule pour les achats : rédiger un appel d'offres, analyser les réponses et proposer une stratégie de négociation (Sourcing), surveiller les risques du panel (Supplier Management), rédiger les contrats (Contract), traiter demandes, réceptions et factures. Agents Joule dans SAP Ariba pour capter et orienter les demandes d'achat (Intake) et guider vers les options conformes (Buying)",
+          "Ouverture générale par étapes à partir d'octobre 2026 ; Sourcing et Supplier Management encore réservés aux premiers clients (Early Adopter Care) au 22 octobre",
+          "<a href='https://news.sap.com/2026/05/enabling-autonomous-spend-management-ai-connected-processes/' target='_blank' rel='noopener'>SAP News</a>, 14 mai 2026 ; <a href='https://www.sap.com/products/spend-management/innovations.html' target='_blank' rel='noopener'>page innovations SAP Spend Management</a>"
+        ],
+        [
+          "Coupa (agents Navi)",
+          "Plus de 50 agents : création d'un événement de sourcing à partir d'une demande, référencement fournisseur avec contrôle des doublons et des sanctions, suivi des obligations contractuelles et des écarts au référentiel de négociation ; Navi Agent Studio pour créer ses propres agents sans code",
+          "Accès anticipé, disponibilité limitée ou générale selon l'agent ; Agent Studio disponible depuis mai 2026",
+          "<a href='https://www.coupa.com/newsroom/coupas-september-release-accelerates-agentic-spend-capabilities/' target='_blank' rel='noopener'>Communiqué Coupa</a>, 20 août 2026"
+        ],
+        [
+          "Oracle (Fusion Cloud Procurement)",
+          "Autonomous Sourcing Agent : repère les demandes d'achat de faible montant éligibles, prépare l'événement de sourcing et invite les fournisseurs ; Sourcing Command Center pour suivre les négociations ; agents sur mesure dans AI Agent Studio",
+          "Annoncé le 10 février 2026, intégré à Oracle Fusion « sans coût supplémentaire » ; Sourcing Command Center disponible depuis le 9 avril 2026",
+          "<a href='https://www.oracle.com/news/announcement/oracle-ai-agents-help-boost-supply-chain-efficiency-and-strengthen-resiliency-2026-02-10/' target='_blank' rel='noopener'>Annonce Oracle</a>, 10 février 2026 ; <a href='https://www.oracle.com/news/announcement/oracle-introduces-fusion-agentic-applications-for-finance-and-supply-chain-2026-04-09/' target='_blank' rel='noopener'>annonce du 9 avril 2026</a>"
+        ],
+        [
+          "Ivalua (éditeur français)",
+          "IVA, un agent sur tout le processus achats : relancer la consultation d'un contrat qui arrive à échéance, contrôler une facture au regard du contrat, réagir à un risque fournisseur ; IVA Studio règle les compétences, les droits, MCP et le choix du modèle",
+          "Bêta depuis le 11 juin 2026 ; disponibilité générale annoncée pour l'été, sans confirmation sur le site au 22 octobre",
+          "<a href='https://www.ivalua.com/press-releases/ivalua-launches-iva-studio-redefining-how-procurement-works-with-ai/' target='_blank' rel='noopener'>Communiqué Ivalua</a>, 11 juin 2026"
+        ],
+        [
+          "JAGGAER (JAI)",
+          "Assistant achats qui répond en 28 langues et analyse les dépenses",
+          "Annoncé disponible le 5 mai 2026",
+          "<a href='https://www.jaggaer.com/press-release/jaggaer-launches-jai-ai-assistant' target='_blank' rel='noopener'>Communiqué JAGGAER</a>, 5 mai 2026"
+        ],
+        [
+          "GEP (GEP Quantum Intelligence)",
+          "Réseau d'agents : demande d'achat, création d'appel d'offres, négociation, extraction des contrats, rapprochement commande-facture, veille de marché",
+          "Aucun statut ni date sur la page produit",
+          "<a href='https://www.gep.com/software/gep-quantum-intelligence/procurement' target='_blank' rel='noopener'>Page produit GEP</a>, consultée le 22 octobre 2026"
+        ],
+        [
+          "Zip",
+          "Superagents pour les achats, les contrats et la comptabilité fournisseurs, puis pour le sourcing et les commandes (ajoutés le 16 septembre 2026) ; serveur MCP qui relie Zip à Claude et à ChatGPT",
+          "Annoncés « disponibles cet été » le 2 juin 2026, disponibilité générale non confirmée",
+          "<a href='https://zip.com/blog/introducing-zip-ai-superagents-mcp-ai-spend-automation' target='_blank' rel='noopener'>Blog Zip</a>, 2 juin 2026 ; <a href='https://zip.com/blog/zip-forward-2026-announcements' target='_blank' rel='noopener'>annonces du 16 septembre 2026</a>"
+        ],
+        [
+          "Workday",
+          "Procurement Agent : contrats fournisseurs, comptabilité fournisseurs, négociation ; compétence Strategic Sourcing pour créer et évaluer les appels d'offres",
+          "Strategic Sourcing marqué « à venir » ; page non datée",
+          "<a href='https://www.workday.com/en-us/ai-agents/finance/procurement.html' target='_blank' rel='noopener'>Page Workday</a>, consultée le 22 octobre 2026"
+        ],
+        [
+          "Esker (éditeur lyonnais)",
+          "Synergy Agentic Framework : agents qui repèrent les anomalies de factures et orientent les validations",
+          "Annoncé le 9 septembre 2026, disponibilité non précisée",
+          "<a href='https://www.esker.com/company/press-releases/esker-introduces-synergy-agentic-framework-office-cfo/' target='_blank' rel='noopener'>Communiqué Esker</a>, 9 septembre 2026"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Les ERP et les logiciels industriels"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Éditeur",
+        "Agent et ce qu'il fait",
+        "Statut affiché",
+        "Source et date"
+      ],
+      "rows": [
+        [
+          "Microsoft (Dynamics 365 Business Central)",
+          "Sales Order Agent : transforme les mails clients en devis puis en commandes, chaque mail sortant approuvé par une personne",
+          "Disponible dans le produit, facturé en crédits Copilot",
+          "<a href='https://learn.microsoft.com/en-us/dynamics365/business-central/sales-order-agent' target='_blank' rel='noopener'>Microsoft Learn</a>, 2 octobre 2026"
+        ],
+        [
+          "Microsoft (Dynamics 365 Business Central)",
+          "Payables Agent : lit les factures fournisseurs en PDF, prépare la facture d'achat et propose le rapprochement avec la commande, sans jamais la comptabiliser",
+          "Disponibilité générale depuis le 7 novembre 2025",
+          "<a href='https://learn.microsoft.com/en-us/dynamics365/business-central/payables-agent' target='_blank' rel='noopener'>Microsoft Learn</a>, 2 octobre 2026"
+        ],
+        [
+          "Microsoft (Dynamics 365 Supply Chain Management)",
+          "Procurement Agent : relance les commandes d'achat non confirmées ou en retard, reporte les réponses des fournisseurs dans les commandes",
+          "Préversion prête pour la production",
+          "<a href='https://learn.microsoft.com/en-us/dynamics365/supply-chain/procurement/procurement-agent-supplier-com-overview' target='_blank' rel='noopener'>Microsoft Learn</a>, 1er septembre 2026"
+        ],
+        [
+          "Odoo (version 20)",
+          "Agents qui créent et modifient des enregistrements, déclenchés par des actions automatisées ou planifiées ; connexion à la base par MCP",
+          "Publié en septembre 2026 ; toutes les fonctions d'IA consomment des crédits",
+          "<a href='https://www.odoo.com/odoo-20-release-notes' target='_blank' rel='noopener'>Notes de version Odoo 20</a>"
+        ],
+        [
+          "Infor (Infor Industry AI)",
+          "40 agents nommés dans la version d'octobre 2026, dont le risque fournisseur, le contrôle qualité et la relance des achats en retard",
+          "Aucun statut indiqué agent par agent",
+          "<a href='https://www.infor.com/blog/infor-industry-ai-2026-10-release' target='_blank' rel='noopener'>Blog Infor</a>, 6 octobre 2026"
+        ],
+        [
+          "Siemens (Eigen Engineering Agent)",
+          "Écrit le code des automates et configure les équipements dans TIA Portal, l'environnement d'automatisme de Siemens",
+          "Lancé le 20 avril 2026",
+          "<a href='https://press.siemens.com/global/en/pressrelease/siemens-launches-eigen-engineering-agent-bringing-purpose-built-ai-industrial' target='_blank' rel='noopener'>Communiqué Siemens</a>, 20 avril 2026"
+        ],
+        [
+          "Siemens (Teamcenter 2606)",
+          "Agent de modification des nomenclatures dans le PLM, copilote de planification de la fabrication",
+          "Statut non précisé",
+          "<a href='https://blogs.sw.siemens.com/teamcenter/new-in-teamcenter/' target='_blank' rel='noopener'>Blog Teamcenter</a>, 12 juin 2026"
+        ],
+        [
+          "Dassault Systèmes (3DEXPERIENCE)",
+          "Compagnons virtuels AURA (pilotage de programme), LEO (ingénierie, de la conception à la production) et MARIE (sciences)",
+          "Annoncés disponibles le 23 juillet 2026",
+          "<a href='https://www.3ds.com/newsroom/press-releases/dassault-systemes-expands-3dexperience-ai-native-agentic-platform-new-virtual-companion-skills-co-engineer-humans' target='_blank' rel='noopener'>Communiqué Dassault Systèmes</a>, 23 juillet 2026"
+        ],
+        [
+          "IBM (Maximo Application Suite 9.2)",
+          "Assistant mobile pour les techniciens, analyse des ordres de travail, serveur MCP pour brancher vos agents",
+          "Annoncé le 25 juin 2026, sans date de disponibilité",
+          "<a href='https://www.ibm.com/new/announcements/introducing-maximo-application-suite-9-2' target='_blank' rel='noopener'>Annonce IBM</a>, 25 juin 2026"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Deux précautions avant de compter sur un agent d'éditeur. La première tient à la version : l'agent vit dans la génération la plus récente de la suite, souvent en cloud, et une entreprise encore sur une ancienne version de son ERP doit le rapprocher du calendrier de sa migration. La seconde tient à la facturation : crédits Copilot chez Microsoft, crédits pour toutes les fonctions d'IA chez Odoo depuis la version 20. Demandez le coût d'usage par action avant la démonstration, puis rapportez-le à vos volumes mensuels."
+    },
+    {
+      "type": "h2",
+      "text": "Construire ses propres agents : Copilot Studio, ChatGPT, Claude ou n8n"
+    },
+    {
+      "type": "p",
+      "text": "Quand l'éditeur ne livre pas l'agent, ou quand la tâche traverse plusieurs logiciels, quatre plateformes reviennent dans les projets industriels. Elles se distinguent surtout par l'endroit où elles se branchent et par le profil de la personne qui les construit. Le tableau reprend les fonctions documentées par chaque éditeur au 22 octobre 2026."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Plateforme",
+        "Ce qu'elle apporte à l'industrie",
+        "Branchements",
+        "Validation humaine",
+        "Point à vérifier"
+      ],
+      "rows": [
+        [
+          "Microsoft Copilot Studio",
+          "Des agents dans l'environnement Microsoft 365, lancés par un événement : une ligne modifiée dans Dataverse, un fichier déposé dans SharePoint, une récurrence",
+          "Connecteurs Power Platform, dont un connecteur SAP ERP premium qui passe par une passerelle de données locale ; MCP en disponibilité générale depuis le 29 mai 2025",
+          "Étapes d'approbation dans les flux, revue avant envoi",
+          "Facturation en crédits : 200 dollars par mois pour 25 000 crédits, 5 crédits par action d'agent"
+        ],
+        [
+          "ChatGPT (OpenAI)",
+          "Des agents d'espace de travail, décrits en langage courant par des profils non techniques",
+          "Applications et connecteurs MCP, avec actions d'écriture encore en bêta et réservées aux administrateurs sur l'offre Business",
+          "Droits ouverts par l'administrateur, agents désactivés par défaut sur Enterprise",
+          "Exécutions décomptées à la consommation depuis juillet 2026 ; Agent Builder, côté API, fermé le 30 novembre 2026"
+        ],
+        [
+          "Claude (Anthropic)",
+          "Des compétences (Skills : un dossier d'instructions, de modèles et de scripts que Claude charge quand la tâche s'y prête), Claude dans Excel, Cowork pour traiter un dossier de fichiers",
+          "Connecteurs MCP personnalisés sur toutes les offres, ajoutés par les propriétaires du compte sur Team et Enterprise",
+          "Dans Cowork, chaque action d'écriture par connecteur demande une approbation, sauf réglage contraire de l'administrateur",
+          "Cowork sur le web, le mobile et le cloud reste en bêta"
+        ],
+        [
+          "n8n",
+          "Des flux qui tournent seuls entre plusieurs logiciels, avec un nœud agent, installables sur vos serveurs",
+          "Client et serveur MCP, connecteurs vers les logiciels courants",
+          "Revue humaine des appels d'outils depuis la version 2.6.0 du 26 janvier 2026 : l'agent s'arrête, une personne approuve depuis Teams, Slack, Outlook ou Gmail",
+          "Édition Community gratuite en auto-hébergement, licences pour les éditions Business et Enterprise"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Sources : pour Copilot Studio, l'<a href='https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/model-context-protocol-mcp-is-now-generally-available-in-microsoft-copilot-studio/' target='_blank' rel='noopener'>annonce Microsoft sur MCP</a>, la <a href='https://learn.microsoft.com/en-us/connectors/saperp/' target='_blank' rel='noopener'>fiche du connecteur SAP ERP</a> (26 mars 2026), la <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-triggers-about' target='_blank' rel='noopener'>documentation des déclencheurs</a> (9 septembre 2026) et la <a href='https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio' target='_blank' rel='noopener'>page tarifs</a> ; pour ChatGPT, l'<a href='https://help.openai.com/en/articles/20001143-chatgpt-workspace-agents-for-enterprise-and-business' target='_blank' rel='noopener'>aide d'OpenAI sur les agents d'espace de travail</a> et le <a href='https://developers.openai.com/api/docs/guides/agent-builder' target='_blank' rel='noopener'>guide Agent Builder</a> ; pour Claude, les articles d'aide sur les <a href='https://support.claude.com/en/articles/12512180-use-skills-in-claude' target='_blank' rel='noopener'>compétences</a> et les <a href='https://support.claude.com/en/articles/11175166' target='_blank' rel='noopener'>connecteurs personnalisés</a> ; pour n8n, la <a href='https://docs.n8n.io/advanced-ai/human-in-the-loop-tools/' target='_blank' rel='noopener'>documentation de la revue humaine</a> et celle de l'<a href='https://docs.n8n.io/hosting/' target='_blank' rel='noopener'>auto-hébergement</a>."
+    },
+    {
+      "type": "p",
+      "text": "Le choix suit votre environnement. Une entreprise sous Microsoft 365 et SAP démarre le plus souvent sur Copilot Studio, dont les agents internes sont compris dans la licence Microsoft 365 Copilot. Une équipe achats ou qualité qui travaille sur des offres, des contrats et des tableurs tire parti des compétences de Claude ou des agents d'espace de travail de ChatGPT. Un flux qui doit tourner chaque nuit entre l'ERP, la messagerie et un portail fournisseur trouve dans n8n un orchestrateur que votre informatique peut héberger. Masteria forme les équipes sur chacune de ces voies, avec des formations dédiées à <a href='/formation-microsoft-copilot'>Microsoft Copilot</a>, à <a href='/formation-n8n'>n8n</a> et à la <a href='/formation-agents-ia'>construction d'agents IA</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Agent d'éditeur ou agent construit : l'endroit où vivent vos données tranche"
+    },
+    {
+      "type": "p",
+      "text": "Les deux voies se complètent. L'agent livré par l'éditeur travaille au cœur de sa suite, avec ses données et ses droits ; l'agent construit va chercher l'information là où elle se trouve, jusque dans plusieurs logiciels à la fois. Le tableau résume ce qui les distingue."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Critère",
+        "Agent livré par l'éditeur",
+        "Agent construit sur une plateforme"
+      ],
+      "rows": [
+        [
+          "Terrain",
+          "La suite de l'éditeur et ses données",
+          "Plusieurs logiciels : messagerie, ERP, GED, tableurs"
+        ],
+        [
+          "Prérequis",
+          "Une version récente, souvent en cloud, et la licence ou l'option qui l'ouvre",
+          "Un accès aux données par API ou connecteur, et des droits à créer"
+        ],
+        [
+          "Mise en route",
+          "Activation et paramétrage, sans développement",
+          "Cadrage, construction, tests sur des dossiers réels"
+        ],
+        [
+          "Point fort",
+          "Intégration native, évolutions suivies par l'éditeur",
+          "Comble les trous entre logiciels, applique vos règles propres"
+        ],
+        [
+          "Limite",
+          "S'arrête aux frontières de la suite",
+          "Entretien à votre charge ou à celle de votre prestataire"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Dans une entreprise équipée d'une suite récente, la première question consiste à vérifier ce que votre version livre déjà. Dans une PME dont l'ERP date de quinze ans, ou dans un groupe où la commande passe par trois logiciels, l'agent construit est en général la seule voie à court terme. Le guide <a href='/ia-industrie'>IA dans l'industrie</a> décrit la façon dont Masteria lit ces flux avant de choisir."
+    },
+    {
+      "type": "h2",
+      "text": "Six règles font tenir un agent industriel au-delà du pilote"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Un objectif écrit en une phrase</strong>, avec un critère de réussite qu'un chef de service peut vérifier seul.",
+        "<strong>Des droits au plus juste</strong> : l'agent lit ce dont il a besoin et n'écrit que là où son rôle l'exige.",
+        "<strong>Un journal de chaque action</strong>, que le responsable du service consulte sans passer par l'informatique.",
+        "<strong>Le mode suggestion d'abord</strong>, jusqu'à ce que la part des propositions corrigées soit mesurée sur plusieurs semaines.",
+        "<strong>Un propriétaire nommé</strong> dans le métier, qui répond de l'agent et décide de ses évolutions.",
+        "<strong>Une batterie de dossiers réels</strong> rejouée après chaque changement de modèle, de logiciel ou de règle métier."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer dans une usine ou une direction achats"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Choisir un flux qui revient chaque jour et dont l'entrée est écrite : un mail, un PDF, un fichier.",
+        "Mesurer le point de départ : temps passé, volume mensuel, erreurs reprises après coup.",
+        "Vérifier ce que votre ERP, votre suite achats ou votre GMAO livrent déjà comme agents dans votre version et votre licence.",
+        "Construire l'agent en mode suggestion, sur des dossiers réels, avec les personnes du service.",
+        "Ouvrir l'écriture dans l'ERP action par action, une fois le taux d'erreur connu.",
+        "Former les utilisateurs à confier une tâche et à relire, puis mesurer de nouveau un mois plus tard."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Côté budget, un prototype qui vérifie qu'un cas tient sur un extrait de vos données se compte en milliers d'euros. Un agent en production relié à l'ERP se chiffre en dizaines de milliers, et un programme déployé sur plusieurs sites ou plusieurs logiciels dépasse 100 000 €, sans plafond fixé d'avance. Masteria arrête un forfait après le cadrage ; la page <a href='/prix-projet-ia'>prix d'un projet IA</a> donne ces ordres de grandeur par livrable. La formation des personnes qui utilisent ou construisent les agents démarre à partir de 1 980 € HT la journée, finançable par l'OPCO de votre branche selon ses règles."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire des agents industriels en dix termes"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Agent IA</strong> : Programme qui reçoit un objectif, choisit ses étapes et agit dans des logiciels à l'aide d'un modèle de langage.",
+        "<strong>ADV</strong> : Administration des ventes : le service qui saisit les commandes clients et suit leur exécution jusqu'à la facture.",
+        "<strong>ERP</strong> : Progiciel de gestion intégré qui réunit achats, ventes, stocks, production et comptabilité dans une même base.",
+        "<strong>PLM</strong> : Logiciel de gestion du cycle de vie du produit : plans, nomenclatures, versions et modifications.",
+        "<strong>GMAO</strong> : Gestion de maintenance assistée par ordinateur : planification, ordres de travail et historique des interventions.",
+        "<strong>MRP</strong> : Calcul des besoins qui déduit des commandes et des stocks les achats et la production à lancer.",
+        "<strong>8D</strong> : Méthode de résolution de problème en huit étapes, de la constitution de l'équipe à la clôture.",
+        "<strong>AMDEC</strong> : Analyse des modes de défaillance, de leurs effets et de leur criticité, sur un produit ou un procédé.",
+        "<strong>MCP</strong> : Model Context Protocol : standard ouvert qui permet à un agent d'utiliser un logiciel par un connecteur.",
+        "<strong>RAG</strong> : Génération augmentée par récupération : le modèle répond en s'appuyant sur des documents qu'il cite."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les agents qui rendent service dans une usine font peu de bruit. Ils lisent un mail, ouvrent l'ERP, préparent une ligne, et attendent qu'une personne la signe. Leur valeur tient au temps rendu à ceux qui savent négocier, diagnostiquer ou arbitrer avec la production. Le bon premier agent est celui dont le chef de service peut dire, un mois plus tard, combien d'heures il a rendues."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce qu'un agent IA pour l'industrie ?",
+      "a": "Un agent IA pour l'industrie est un programme qui lit un document entrant (mail, commande, offre, fiche de non-conformité), va chercher les données utiles dans l'ERP, le PLM ou la GMAO, puis prépare une action : une commande à saisir, un comparatif d'offres, un rapport 8D, un ordre de travail. Une personne valide tout ce qui engage l'entreprise sur l'argent, le client, le produit ou la sécurité."
+    },
+    {
+      "q": "Quels éditeurs de logiciels achats proposent des agents IA ?",
+      "a": "Au 22 octobre 2026, SAP (assistants et agents Joule dans SAP Ariba), Coupa (agents Navi), Oracle (Fusion Cloud Procurement), Ivalua (IVA), JAGGAER (JAI), GEP, Zip, Workday et Esker présentent des agents IA sur leur propre site. Leurs statuts diffèrent : Oracle intègre les siens à Fusion sans coût supplémentaire depuis février 2026, SAP les ouvre par étapes depuis octobre, Ivalua annonçait une bêta en juin. Vérifiez la disponibilité dans votre version et votre licence avant de bâtir un projet dessus."
+    },
+    {
+      "q": "Un agent IA peut-il passer seul une commande fournisseur ?",
+      "a": "Oui, dès qu'il dispose des droits d'écriture dans l'ERP ou la suite achats. En pratique, les entreprises le cantonnent à préparer la commande et la soumettre au circuit d'approbation existant, surtout au-delà d'un montant ou pour un fournisseur nouveau. L'écriture directe s'ouvre action par action, quand le taux d'erreur de l'agent est mesuré."
+    },
+    {
+      "q": "Faut-il changer d'ERP pour utiliser des agents IA ?",
+      "a": "Non. Les agents livrés par les éditeurs demandent souvent une version récente, parfois en cloud, mais un agent construit sur Copilot Studio, n8n ou Claude se branche sur l'ERP existant par son API ou par un connecteur. Avec un ERP ancien sans API, l'agent peut commencer par préparer un fichier d'import que l'ERP sait déjà lire."
+    },
+    {
+      "q": "Copilot Studio, ChatGPT, Claude ou n8n : quelle plateforme pour un agent industriel ?",
+      "a": "Le choix suit votre environnement. Copilot Studio convient aux entreprises sous Microsoft 365, avec un connecteur SAP ERP et des déclencheurs sur événement. Les agents d'espace de travail de ChatGPT et les compétences de Claude servent les équipes qui travaillent sur des offres, des contrats et des tableurs. n8n orchestre des flux qui tournent seuls entre plusieurs logiciels, s'installe sur vos serveurs et sait suspendre une action sensible jusqu'à l'accord d'une personne."
+    },
+    {
+      "q": "Combien coûte un agent IA dans l'industrie ?",
+      "a": "Un agent activé dans une suite que vous payez déjà coûte surtout du paramétrage et, selon l'éditeur, une option ou des crédits. Un agent sur mesure se compte en milliers d'euros au stade du prototype, en dizaines de milliers en production, et dépasse 100 000 € sur plusieurs sites ou plusieurs logiciels, sans plafond fixé d'avance. Masteria établit un forfait après cadrage."
+    },
+    {
+      "q": "Nos données de production et nos plans peuvent-ils rester chez nous ?",
+      "a": "Oui, selon la voie choisie. n8n peut s'installer sur vos propres serveurs, les offres entreprise de Microsoft, OpenAI et Anthropic n'entraînent pas leurs modèles sur vos échanges par défaut, et un agent peut ne recevoir que les extraits nécessaires à sa tâche. Les plans et formules sensibles se traitent au cadrage, avec une liste écrite des données exclues."
+    },
+    {
+      "q": "L'AI Act s'applique-t-il à un agent achats ou qualité ?",
+      "a": "Un agent qui compare des offres, suit des contrats ou rédige un 8D ne figure pas parmi les usages à haut risque de l'AI Act. Le règlement demande en revanche à toute entreprise de prendre des mesures pour que ses équipes maîtrisent les outils d'IA qu'elles utilisent. Une IA qui assure une fonction de sécurité sur une machine relève du haut risque, avec des obligations au 2 août 2028 selon la Commission européenne."
+    },
+    {
+      "q": "Par quel agent commencer dans une direction achats ?",
+      "a": "La comparaison d'offres fournisseurs et le suivi des échéances de contrats donnent les premiers résultats le plus vite : l'entrée est écrite, le volume régulier, et l'acheteur garde la décision. Mesurez d'abord le temps passé par consultation ou par contrat, pour comparer avant et après sur des dossiers réels."
+    },
+    {
+      "q": "Faut-il former les acheteurs avant de déployer des agents ?",
+      "a": "Oui, car un agent ne rend du temps qu'à une personne qui sait lui confier une tâche et relire ce qu'il produit. Masteria, certifié Qualiopi, propose une formation IA pour les achats à partir de 1 980 € HT la journée, construite sur vos consultations et vos contrats, et finançable par l'OPCO de votre branche selon ses règles."
+    }
+  ],
+  "cta": {
+    "title": "Vous avez repéré le flux à confier à un agent ?",
+    "desc": "Masteria cadre le cas avec vos équipes, vérifie ce que votre ERP ou votre suite achats livre déjà, puis construit l'agent et forme celles et ceux qui le feront vivre.",
+    "buttons": [
+      {
+        "label": "Voir l'IA dans l'industrie",
+        "href": "/ia-industrie",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre projet",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "IA dans l'industrie : diagnostic des flux et assistants",
+      "href": "/ia-industrie"
+    },
+    {
+      "label": "Formation IA pour les achats",
+      "href": "/formation-ia-achats"
+    },
+    {
+      "label": "Agents IA en entreprise : les usages par service",
+      "href": "/agents-ia-entreprise"
+    },
+    {
+      "label": "Études de cas IA de Masteria",
+      "href": "/etudes-de-cas-ia"
+    },
+    {
+      "label": "Prix d'un projet IA : ordres de grandeur",
+      "href": "/prix-projet-ia"
+    },
+    {
+      "label": "Brancher un serveur MCP sur votre système d'information",
+      "href": "/blog/serveur-mcp-entreprise-connecter-ia-si"
+    }
+  ],
+  "formations": [
+    [
+      "Formation IA pour les achats",
+      "/formation-ia-achats"
+    ],
+    [
+      "Formation agents IA",
+      "/formation-agents-ia"
+    ],
+    [
+      "Formation Microsoft Copilot",
+      "/formation-microsoft-copilot"
+    ],
+    [
+      "Formation n8n",
+      "/formation-n8n"
+    ]
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : les agents IA dans l'industrie",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent IA",
+          "description": "Programme qui reçoit un objectif, choisit ses étapes et agit dans des logiciels à l'aide d'un modèle de langage."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "ADV",
+          "description": "Administration des ventes : le service qui saisit les commandes clients et suit leur exécution jusqu'à la facture."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "ERP",
+          "description": "Progiciel de gestion intégré qui réunit achats, ventes, stocks, production et comptabilité dans une même base."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "PLM",
+          "description": "Logiciel de gestion du cycle de vie du produit : plans, nomenclatures, versions et modifications."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "GMAO",
+          "description": "Gestion de maintenance assistée par ordinateur : planification, ordres de travail et historique des interventions."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "MRP",
+          "description": "Calcul des besoins qui déduit des commandes et des stocks les achats et la production à lancer."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "8D",
+          "description": "Méthode de résolution de problème en huit étapes, de la constitution de l'équipe à la clôture."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "AMDEC",
+          "description": "Analyse des modes de défaillance, de leurs effets et de leur criticité, sur un produit ou un procédé."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "MCP",
+          "description": "Model Context Protocol : standard ouvert qui permet à un agent d'utiliser un logiciel par un connecteur."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "RAG",
+          "description": "Génération augmentée par récupération : le modèle répond en s'appuyant sur des documents qu'il cite."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Lancer un premier agent IA dans une usine ou une direction achats",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Choisir un flux quotidien à l'entrée écrite"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mesurer le point de départ"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vérifier les agents déjà livrés par vos éditeurs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Construire en mode suggestion sur des dossiers réels"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Ouvrir l'écriture dans l'ERP action par action"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Former les utilisateurs et mesurer à un mois"
+        }
+      ]
+    }
+  ]
+}

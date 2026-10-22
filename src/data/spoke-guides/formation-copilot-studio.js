@@ -305,7 +305,7 @@ export default {
     { label: "Microsoft Copilot pour toutes les équipes, Agent Builder compris", href: '/formation-microsoft-copilot' },
     { label: "Copilot côté DSI : préparer le locataire et poser les garde-fous", href: '/formation-copilot-informatique' },
     { label: "Construire des agents sans code sur plusieurs outils d'IA", href: '/formation-agents-ia' },
-    { label: "Gouverner les agents IA : registre, droits et revues", href: '/blog/gouvernance-agents-ia' },
+    { label: "Superviser les agents IA : traçage, identités, droits", href: '/blog/superviser-agents-ia-production' },
     { label: "Agents IA en entreprise : usages par service et garde-fous", href: '/agents-ia-entreprise' },
     { label: "Gouvernance de l'IA : charte, registre des usages et comité", href: '/formation-gouvernance-ia' },
   ],

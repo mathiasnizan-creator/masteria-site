@@ -1,0 +1,744 @@
+{
+  "slug": "ia-medico-social-par-ou-commencer",
+  "title": "L'IA dans le médico-social : par où commencer ?",
+  "metaTitle": "IA dans le médico-social : par où commencer ? | Masteria",
+  "metaDesc": "IA dans le médico-social : usages réalistes en ESMS et EHPAD, données de santé, RGPD, HDS, AI Act, démarche en cinq étapes, financement ARS et OPCO Santé.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "27 min",
+  "formations": [
+    [
+      "Formation IA santé et médico-social",
+      "/formation-ia-sante"
+    ],
+    [
+      "Formation AI Act",
+      "/formation-ai-act"
+    ]
+  ],
+  "keywords": [
+    "ia médico-social",
+    "intelligence artificielle médico-social",
+    "maturité ia médico-social",
+    "ia ehpad",
+    "ia esms",
+    "ia données de santé hds",
+    "financement formation ia médico-social"
+  ],
+  "excerpt": "Les usages de l'IA qui ont du sens dans un ESMS ou un EHPAD, ceux qu'il faut proscrire, le cadre RGPD, HDS et AI Act au 22 octobre 2026, une démarche en cinq étapes et les financements à solliciter.",
+  "intro": "Pour commencer avec l'IA dans le médico-social, partez des écrits qui ne contiennent aucune donnée identifiante sur une personne accompagnée : comptes rendus de réunion d'organisation, courriers aux partenaires, réponses aux appels à projets, veille réglementaire, documents en FALC. Les transmissions, le projet personnalisé et toute note sur un usager demandent une anonymisation rigoureuse ou un outil dont l'hébergeur est certifié HDS, jamais un compte gratuit. La démarche suit ensuite cinq étapes : diagnostic des usages déjà présents, règles écrites, référents, formation par métier, mesure. Ce guide, destiné aux directions d'ESMS, d'EHPAD et d'associations gestionnaires, détaille chacune d'elles, le cadre juridique en vigueur au 22 octobre 2026 et les financements à solliciter, l'ARS d'abord, l'OPCO Santé ensuite.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Les premiers usages utiles se passent de toute donnée d'usager : écrits institutionnels, comptes rendus d'équipe, appels à projets, recrutement, veille. Une donnée de santé n'entre jamais dans un outil grand public ; elle reste dans le dossier de l'usager informatisé ou dans un environnement certifié HDS. Côté AI Act, la formation des équipes est attendue depuis le 2 février 2025 et les règles de transparence valent depuis le 2 août 2026 ; celles du haut risque, qui visent par exemple le tri de candidatures, sont reportées au 2 décembre 2027. Le financement se cherche d'abord auprès de l'ARS, en crédits non reconductibles si son rapport d'orientation budgétaire le permet, puis auprès de l'OPCO Santé pour la formation."
+    },
+    {
+      "type": "h2",
+      "text": "L'IA est déjà entrée dans vos services"
+    },
+    {
+      "type": "p",
+      "text": "Les assistants conversationnels gratuits tiennent dans un téléphone et répondent en français en quelques secondes. Dans un établissement où chaque professionnel écrit chaque jour (transmissions, comptes rendus, courriers, rapports de situation), cette facilité installe des usages que la direction n'a ni choisis ni vus. Il suffit alors d'un rapport de situation reformulé sur un compte personnel pour qu'une donnée de santé sorte de l'établissement, sans trace et sans contrat."
+    },
+    {
+      "type": "p",
+      "text": "Commencer revient donc à reprendre la main sur ce qui existe : savoir qui se sert de quoi, proposer un outil encadré à la place des comptes personnels, écrire quelques règles que chacun retient. L'objectif reste celui du secteur : libérer du temps d'écriture pour le rendre aux personnes accompagnées, sans jamais les exposer."
+    },
+    {
+      "type": "p",
+      "text": "La Haute Autorité de santé s'est saisie du sujet. Le guide qu'elle a intitulé « Premières clefs d'usage de l'IA générative en santé » date du 30 octobre 2025 ; actualisé le 15 avril 2026, il s'adresse expressément aux équipes des secteurs sanitaire, social et médico-social. Il demande un usage « conscient, supervisé et raisonné » et le décline en quatre lignes directrices réunies sous le sigle A.V.E.C. : Apprendre comment l'outil fonctionne, Vérifier la pertinence de sa demande et le contenu obtenu, Estimer au fil du temps la qualité du service rendu, Communiquer avec son environnement professionnel pour progresser ensemble (<a href='https://has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante'>HAS, guide mis à jour le 15 avril 2026</a>). La démarche décrite plus bas transpose ces repères à l'échelle d'une direction d'établissement."
+    },
+    {
+      "type": "h2",
+      "text": "Six usages réalistes, classés par la donnée qu'ils touchent"
+    },
+    {
+      "type": "p",
+      "text": "Le niveau de risque d'un usage dépend d'abord de ce qu'on confie à l'outil. Le même assistant peut rédiger sans danger la convocation du conseil de la vie sociale et exposer un jeune accueilli si l'on y colle ses notes d'observation. Le tableau range six familles d'usages selon ce critère."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Usage",
+        "Ce que l'IA fait bien",
+        "Données en jeu",
+        "Condition de départ"
+      ],
+      "rows": [
+        [
+          "Écrits professionnels et transmissions",
+          "Trames, reformulation, mise au propre d'un écrit institutionnel, glossaire des transmissions",
+          "Aucune pour les écrits institutionnels ; données de santé dès qu'une transmission concerne un usager",
+          "Écrits sans usager : outil encadré. Transmissions : dans le DUI ou un environnement certifié HDS"
+        ],
+        [
+          "Projet personnalisé",
+          "Structure du document, synthèse de notes d'équipe, version FALC pour la personne",
+          "Données de santé et de vie privée, souvent de personnes vulnérables",
+          "Anonymisation rigoureuse ou outil certifié HDS ; relecture par le professionnel qui coordonne le projet"
+        ],
+        [
+          "Comptes rendus",
+          "Relevé de décisions d'une réunion d'équipe, d'un CVS ou d'une instance",
+          "Nulles pour une réunion d'organisation, sensibles pour une synthèse sur une situation individuelle",
+          "Retirer noms et détails identifiants ; prévenir les participants avant tout enregistrement"
+        ],
+        [
+          "Réponses aux appels à projets",
+          "Lecture du cahier des charges, grille des critères, plan, reformulation",
+          "Données de l'établissement, rarement des données d'usagers",
+          "Outil encadré ; chiffres vérifiés à la source ; relecture par la direction"
+        ],
+        [
+          "RH et plannings",
+          "Fiches de poste, annonces, livret d'accueil, scénarios de planning à partir de contraintes",
+          "Données personnelles des salariés",
+          "Aucune évaluation ni aucun tri de personnes par l'outil ; le responsable décide"
+        ],
+        [
+          "Veille réglementaire",
+          "Résumé d'une instruction, d'un ROB, d'une recommandation de la HAS ; note d'impact",
+          "Aucune",
+          "Contrôler chaque point sur le texte officiel avant diffusion"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Écrits professionnels et transmissions : séparer l'institutionnel du nominatif"
+    },
+    {
+      "type": "p",
+      "text": "Une grande part de l'écrit d'un établissement ne nomme aucun usager : projet d'établissement, rapport d'activité, notes de service, courriers aux partenaires, réponse à une autorité de contrôle, livret d'accueil. Ces documents forment le terrain de départ idéal. L'outil produit un premier jet dans la trame de la maison ; l'auteur corrige le fond et signe."
+    },
+    {
+      "type": "p",
+      "text": "Les transmissions décrivent une personne : son état, ses soins, son humeur, ses visites. Ce sont des données de santé, et leur place est dans le dossier de l'usager informatisé (DUI, le logiciel métier où l'équipe consigne le suivi). Deux usages restent possibles sans les en faire sortir. Le premier porte sur la forme : bâtir avec l'IA un glossaire commun, une trame de transmission ciblée (données, actions, résultats) et des exemples rédigés sur des situations fictives, qui serviront à former les nouveaux arrivants. Le second passe par l'éditeur du logiciel : si votre DUI propose une fonction d'IA, demandez-lui par écrit où tourne le modèle, si l'hébergement est certifié HDS et si vos données servent à entraîner quoi que ce soit. Tant que ces trois réponses manquent, la fonction reste désactivée."
+    },
+    {
+      "type": "h3",
+      "text": "Projet personnalisé : l'IA met en forme, l'équipe et la personne décident"
+    },
+    {
+      "type": "p",
+      "text": "Le projet personnalisé se construit avec la personne accompagnée, son représentant légal le cas échéant, et l'équipe pluridisciplinaire. L'IA y tient un rôle d'appoint sur trois gestes : proposer une structure fidèle au modèle de l'établissement, condenser des observations déjà anonymisées en une synthèse lisible, traduire les objectifs retenus en version facile à lire et à comprendre (FALC, une méthode d'écriture accessible aux personnes avec une déficience intellectuelle). Ce troisième geste sert directement l'usager, qui accède à son propre projet dans une langue qu'il comprend."
+    },
+    {
+      "type": "p",
+      "text": "La limite se formule sans détour : l'outil ne fixe aucun objectif au vu d'un profil, ne classe pas les personnes et n'oriente personne. Ces gestes engagent une décision sur une personne vulnérable. L'équipe les garde, et le professionnel qui signe relit chaque ligne produite avec l'aide de l'IA."
+    },
+    {
+      "type": "h3",
+      "text": "Comptes rendus : retirer les noms avant de résumer"
+    },
+    {
+      "type": "p",
+      "text": "Réunion d'équipe, comité de direction, réunion institutionnelle, conseil de la vie sociale (CVS, l'instance où usagers et familles donnent leur avis sur la vie de l'établissement) : chaque séance laisse un compte rendu, et l'IA aide à transformer des notes éparses en relevé de décisions. Les réunions d'organisation se prêtent à l'exercice dans un outil encadré, une fois retirés les noms des usagers cités. Les réunions de synthèse consacrées à une situation individuelle suivent la règle des transmissions."
+    },
+    {
+      "type": "p",
+      "text": "Les outils de transcription automatique ajoutent une question : ils enregistrent des voix. Informez les participants avant la séance, supprimez l'enregistrement dès que le compte rendu est validé, et n'enregistrez aucune réunion de synthèse dans un outil dont l'hébergement n'a pas été vérifié."
+    },
+    {
+      "type": "h3",
+      "text": "Appels à projets : gagner du temps sur la forme pour soigner le fond"
+    },
+    {
+      "type": "p",
+      "text": "Les agences régionales de santé et les conseils départementaux lancent des appels à projets et des appels à manifestation d'intérêt. Ces procédures pèsent aussi sur le financement ponctuel : dans ses rapports d'orientation budgétaire 2026, l'ARS Nouvelle-Aquitaine indique que ses crédits non reconductibles ont vocation à être délégués essentiellement par appels à candidatures et appels à manifestation d'intérêt (<a href='https://www.nouvelle-aquitaine.ars.sante.fr/allocation-de-ressources-des-etablissements-medico-sociaux-en-2026'>ARS Nouvelle-Aquitaine, campagne 2026</a>). Savoir répondre devient une compétence de direction."
+    },
+    {
+      "type": "p",
+      "text": "L'IA allège la partie la plus mécanique : extraire du cahier des charges les critères et les pièces attendues, construire une grille de conformité, proposer un plan, resserrer une section trop longue. Le projet, les chiffres, les partenariats et l'engagement de l'association restent l'apport de la direction. Dans un autre secteur, un cabinet de conseil financier qui répond à des marchés publics a fait inscrire une règle dans chacun de ses assistants : aucun ne rédige avant d'avoir demandé au consultant qui est le client, ce qu'il attend, quelles références mettre en avant et quelle équipe proposer. Transposée à un appel à projets, la règle fait poser d'abord les questions du public visé, des partenaires, du calendrier et du budget ; le plan vient ensuite. Notre article sur <a href='/blog/ia-pour-repondre-appels-doffres'>l'IA pour répondre aux appels d'offres</a> détaille la méthode."
+    },
+    {
+      "type": "h3",
+      "text": "RH et plannings : l'IA prépare, le responsable décide"
+    },
+    {
+      "type": "p",
+      "text": "Recrutements, remplacements et accueil des nouveaux arrivants occupent une part du temps des directions et des cadres. L'IA y aide sans toucher à une donnée sensible : fiche de poste, annonce rédigée pour un métier précis, trame d'entretien, livret d'accueil, foire aux questions du premier jour. Pour les plannings, elle peut proposer plusieurs scénarios à partir des contraintes que vous lui donnez (effectifs requis par unité, repos, temps partiels, absences connues), à condition qu'un chef de service vérifie le respect de la convention collective et tranche."
+    },
+    {
+      "type": "p",
+      "text": "La frontière se trouve dans l'annexe III de l'AI Act. Elle classe à haut risque les systèmes destinés à recruter ou sélectionner des personnes, à filtrer des candidatures, à évaluer la performance des salariés ou à leur attribuer des tâches selon leur comportement ou leurs caractéristiques personnelles (<a href='https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3'>AI Act, annexe III, point 4</a>). Ces règles s'appliqueront le 2 décembre 2027. Un premier projet d'IA n'a aucune raison de commencer par là."
+    },
+    {
+      "type": "h3",
+      "text": "Veille réglementaire : lire davantage, vérifier toujours"
+    },
+    {
+      "type": "p",
+      "text": "Instructions ministérielles, rapports d'orientation budgétaire, décrets, recommandations de la HAS : une direction doit suivre tout cela. Les deux rapports d'orientation budgétaire 2026 de l'ARS Nouvelle-Aquitaine pour le grand âge et pour le handicap comptent à eux seuls 29 et 28 pages. L'IA aide à les lire : résumé, liste des changements qui concernent votre établissement, projet de note pour le comité de direction."
+    },
+    {
+      "type": "p",
+      "text": "Elle peut aussi inventer une disposition ou s'appuyer sur une version dépassée. Trois habitudes limitent ce risque : donner à l'outil le texte officiel lui-même, lui demander de citer le passage qui fonde chaque point, puis relire la note contre Légifrance ou le site de l'ARS avant de la diffuser."
+    },
+    {
+      "type": "h2",
+      "text": "Ce qu'il ne faut pas faire"
+    },
+    {
+      "type": "p",
+      "text": "Sept erreurs exposent un établissement qui démarre sans cadre. Chacune a sa parade."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Saisir une donnée de santé dans un outil grand public.</strong> Un compte gratuit ou personnel n'offre aucun contrat sur l'hébergement ni sur la réutilisation des données, alors que la loi exige une certification HDS de quiconque héberge, pour le compte d'un établissement, des données recueillies lors d'un suivi médico-social.",
+        "<strong>Croire qu'effacer le nom suffit.</strong> Retirer un nom produit au mieux une pseudonymisation. L'âge, l'unité, la date d'admission et un trait de l'histoire permettent souvent de reconnaître quelqu'un dans un petit établissement. Seules les données anonymes, qu'aucun moyen raisonnable ne permet de relier à une personne, sortent du champ du RGPD.",
+        "<strong>Confier à l'outil une évaluation, une orientation ou une note sur une personne.</strong> Ces décisions pèsent sur la vie d'une personne vulnérable ; elles restent humaines, motivées et tracées.",
+        "<strong>Diffuser un texte généré sans relecture.</strong> Un modèle de langage peut affirmer avec aplomb une chose fausse. Celui qui signe le document en répond, quelle que soit la part écrite par la machine.",
+        "<strong>Enregistrer une réunion sans prévenir.</strong> Une voix est une donnée personnelle. Informez les participants avant la séance et donnez à l'enregistrement une durée de vie courte.",
+        "<strong>Laisser s'activer une fonction d'IA livrée par une mise à jour.</strong> Suite bureautique, messagerie, logiciel métier : les éditeurs ajoutent des assistants au fil des versions. Chaque nouvelle fonction passe par la même vérification qu'un nouvel outil.",
+        "<strong>Interdire sans rien proposer.</strong> Une interdiction sans solution de remplacement pousse les usages vers les téléphones personnels, où plus personne ne les voit. Un outil encadré, assorti de trois règles, protège mieux qu'un refus."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Le cadre juridique au 22 octobre 2026 : RGPD, HDS et AI Act"
+    },
+    {
+      "type": "p",
+      "text": "Trois textes encadrent l'IA dans un établissement médico-social : le RGPD pour les données personnelles, le code de la santé publique pour l'hébergement des données de santé, le règlement européen sur l'IA pour les systèmes eux-mêmes. Ils se cumulent, et aucun ne dispense des deux autres."
+    },
+    {
+      "type": "h3",
+      "text": "RGPD : des données de santé sur des personnes vulnérables"
+    },
+    {
+      "type": "p",
+      "text": "Les informations sur la santé d'une personne appartiennent aux catégories particulières de données de l'article 9 du RGPD. Leur traitement est interdit sauf exception, et la gestion des services de santé ou de protection sociale figure parmi ces exceptions, sous réserve de garanties (<a href='https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679'>RGPD, article 9</a>). La CNIL a précisé ces garanties pour le secteur dans un référentiel adopté le 11 mars 2021 (délibération n° 2021-028), consacré à l'accueil, à l'hébergement et à l'accompagnement social et médico-social des personnes âgées, des personnes en situation de handicap et des personnes en difficulté. Il traite des bases légales, des données collectées, des durées de conservation, des destinataires et de l'information des personnes (<a href='https://www.cnil.fr/fr/publication-du-referentiel-pour-la-prise-en-charge-medico-sociale-personnes-agees-handicap-difficulte'>CNIL, référentiel du secteur social et médico-social</a>)."
+    },
+    {
+      "type": "p",
+      "text": "Deux conséquences en découlent pour un projet d'IA. La liste de la CNIL des traitements soumis à une analyse d'impact relative à la protection des données (AIPD, l'étude préalable des risques pour les personnes) place en tête les traitements de données de santé mis en œuvre par les établissements de santé ou médico-sociaux pour la prise en charge des personnes (<a href='https://www.cnil.fr/sites/default/files/atoms/files/liste-traitements-avec-aipd-requise-v2.pdf'>CNIL, liste des AIPD requises</a>) ; un usage d'IA qui touche ces données passe donc par cette étude, ou par la mise à jour de celle qui existe. Par ailleurs, l'éditeur de l'outil agit comme sous-traitant, et le contrat prévu à l'article 28 du RGPD fixe ce qu'il a le droit de faire de vos données. Notre page <a href='/ia-et-rgpd'>IA et RGPD</a> détaille ces obligations usage par usage."
+    },
+    {
+      "type": "h3",
+      "text": "Hébergement HDS : la règle qui ferme la porte aux comptes gratuits"
+    },
+    {
+      "type": "p",
+      "text": "Le code de la santé publique, à son article L1111-8, soumet à certification quiconque héberge pour un tiers des données de santé collectées à l'occasion de la prévention, du diagnostic, des soins ou du suivi médico-social. L'Agence du numérique en santé (ANS) pilote cette certification HDS et publie la liste des hébergeurs certifiés (<a href='https://esante.gouv.fr/produits-services/hds'>ANS, certification HDS</a>). Le référentiel révisé, approuvé par l'arrêté du 26 avril 2024 et paru au Journal officiel le 16 mai 2024, réserve l'hébergement physique des données de santé au territoire de l'Espace économique européen. Un délai de deux ans, échu le 16 mai 2026, a laissé aux hébergeurs déjà certifiés le temps de basculer sur cette version (<a href='https://esante.gouv.fr/espace-presse/publication-au-journal-officiel-du-referentiel-de-certification-hds-souverainete-des-donnees-et-ameliorations-du-referentiel'>ANS, communiqué du 16 mai 2024</a>)."
+    },
+    {
+      "type": "p",
+      "text": "Pour un outil d'IA, la question se pose dès qu'un professionnel y dépose une information sur un usager. Demandez le certificat, vérifiez les activités qu'il couvre et le pays d'hébergement, lisez la clause sur la réutilisation des données. Un compte gratuit ou personnel ne fournit ni certificat ni contrat : il ne passe pas ce filtre."
+    },
+    {
+      "type": "h3",
+      "text": "AI Act après l'Omnibus : les obligations en cours et celles à venir"
+    },
+    {
+      "type": "p",
+      "text": "Le règlement européen sur l'IA (AI Act, règlement (UE) 2024/1689) entre en application par paliers. L'Omnibus numérique, le règlement (UE) 2026/1744 paru au Journal officiel de l'Union en juillet 2026, est entré en vigueur le 27 juillet 2026 : il a modifié l'article 4 et décalé les obligations du haut risque. La Commission européenne a mis à jour son calendrier le 19 octobre 2026 (<a href='https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'>Commission européenne, cadre réglementaire de l'IA</a>), et la CNIL tient le sien dans ses <a href='https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil'>questions-réponses actualisées le 17 août 2026</a>."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Obligation",
+        "Date d'application",
+        "Ce qu'elle change pour un établissement"
+      ],
+      "rows": [
+        [
+          "Pratiques interdites (article 5)",
+          "2 février 2025",
+          "Interdit notamment de déduire les émotions des salariés sur le lieu de travail, sauf raison médicale ou de sécurité"
+        ],
+        [
+          "Maîtrise de l'IA (article 4, réécrit par l'Omnibus)",
+          "2 février 2025",
+          "Agir pour former les équipes qui utilisent l'IA ; aucun certificat n'est exigé"
+        ],
+        [
+          "Transparence (article 50)",
+          "2 août 2026",
+          "Signaler qu'un assistant ouvert aux familles est une IA ; signaler une image ou une vidéo réaliste générée puis diffusée"
+        ],
+        [
+          "Haut risque, annexe III",
+          "2 décembre 2027",
+          "Recrutement, évaluation des salariés, éligibilité à des prestations d'aide sociale évaluée pour le compte d'une autorité publique"
+        ],
+        [
+          "Haut risque, annexe I",
+          "2 août 2028",
+          "Produits réglementés intégrant de l'IA, dont les dispositifs médicaux"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Pour un établissement qui se sert d'un assistant du marché pour écrire, l'AI Act ajoute surtout l'obligation de former et, en cas de diffusion au public, celle de transparence. La Commission précise, dans sa foire aux questions consacrée à l'article 4 et actualisée le 27 juillet 2026, que ce texte n'exige ni certificat ni structure de gouvernance particulière (<a href='https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers'>Commission européenne, AI literacy Q&amp;A</a>) ; tenir la liste des formations suivies aide à en témoigner. Au quotidien, le RGPD reste le texte qui encadre le plus vos usages."
+    },
+    {
+      "type": "h2",
+      "text": "La démarche en cinq étapes"
+    },
+    {
+      "type": "p",
+      "text": "Les cinq étapes s'enchaînent dans cet ordre parce que chacune s'appuie sur la précédente : on forme aux règles qu'on a écrites, et on ne mesure un progrès qu'à partir d'un point de départ relevé."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Diagnostic</strong> : relever les usages déjà présents, les données en jeu, les outils et les compétences.",
+        "<strong>Règles</strong> : écrire une charte courte, validée par le DPO et présentée aux représentants du personnel.",
+        "<strong>Référents</strong> : nommer dans chaque établissement une personne qui aide ses collègues, recueille les erreurs et alerte.",
+        "<strong>Formation</strong> : un socle commun sur le cadre, puis des ateliers par métier sur les écrits de chacun.",
+        "<strong>Mesure</strong> : relever un point de départ avant la formation, faire le bilan à un mois, puis chaque trimestre."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "1. Le diagnostic : partir de ce qui existe"
+    },
+    {
+      "type": "p",
+      "text": "Le diagnostic répond à quatre questions : qui utilise déjà l'IA et pour quoi faire, quelles données passent par ces outils, quels logiciels de l'établissement embarquent déjà des fonctions d'IA, quelles compétences sont disponibles. Un questionnaire anonyme, présenté sans esprit de sanction, aide à faire remonter les usages cachés ; quelques entretiens avec les métiers qui écrivent le plus (éducateurs, secrétariats, cadres, qualité) donnent la profondeur. Notre <a href='/test-maturite-ia'>test de maturité IA</a> fournit une première photographie à l'échelle de la direction."
+    },
+    {
+      "type": "p",
+      "text": "Pour une association de plusieurs établissements, ou quand un financeur attend un état des lieux argumenté, l'<a href='/audit-ia-medico-social'>audit IA médico-social</a> de Masteria passe en revue les usages, les données d'usagers, l'hébergement, l'organisation et la conformité ; sa durée et son forfait dépendent du périmètre arrêté au cadrage. Dans une PME de la distribution photovoltaïque, notre diagnostic a examiné six axes : sécurité, culture, gouvernance, données, compétences et usages. Les règles d'usage y apparaissaient comme le point le plus faible, alors que l'IA circulait déjà sur des comptes personnels. Dans un établissement médico-social, on ajoute un septième axe, propre au secteur : la donnée d'usager et son hébergement."
+    },
+    {
+      "type": "h3",
+      "text": "2. Les règles : une charte que chacun retient"
+    },
+    {
+      "type": "p",
+      "text": "Une charte efficace tient en peu de pages et se lit en fin de journée. Elle nomme les outils autorisés, administrés par l'établissement à la place des comptes personnels. Elle dresse la liste des informations qui n'entrent dans aucun outil d'IA hors environnement certifié : nom, date de naissance, numéro de chambre, diagnostic, situation familiale, tout détail qui permet de reconnaître une personne. Elle impose la relecture de tout texte avant diffusion et dit à qui signaler une erreur ou un doute. Notre guide de la <a href='/charte-ia-entreprise'>charte IA d'entreprise</a> en donne les rubriques."
+    },
+    {
+      "type": "p",
+      "text": "Le délégué à la protection des données (DPO) valide la charte, et le registre des traitements accueille les usages retenus. Dans une association d'au moins cinquante salariés, l'introduction d'une nouvelle technologie relève de l'information et de la consultation du comité social et économique (CSE), prévues par l'article L2312-8 du code du travail : présentez la charte et les outils avant leur déploiement."
+    },
+    {
+      "type": "h3",
+      "text": "3. Les référents : un relais dans chaque établissement"
+    },
+    {
+      "type": "p",
+      "text": "Un référent IA par établissement, ou par pôle dans une grande association, porte la démarche au quotidien. Il aide ses collègues, entretient la bibliothèque de trames et de demandes types, recueille les erreurs et les besoins, alerte le DPO quand un usage touche une donnée sensible. Des profils variés (un professionnel éducatif, un membre du secrétariat, un cadre de santé) évitent que l'IA reste l'affaire d'un seul métier, et un temps dédié, inscrit dans la fiche de poste, évite que la mission s'efface au premier pic d'activité."
+    },
+    {
+      "type": "p",
+      "text": "Chez un distributeur informatique B2B de 58 salariés, Masteria a procédé ainsi : dix référents formés en deux jours, chacun sur un projet, chaque outil construit validé par la direction puis confié à un propriétaire nommé, avec une revue trimestrielle. Le secteur diffère et la mécanique se transpose. Le référent garde l'outil vivant quand l'intervenant extérieur est parti."
+    },
+    {
+      "type": "h3",
+      "text": "4. La formation : un socle commun, puis le métier"
+    },
+    {
+      "type": "p",
+      "text": "L'article 4 de l'AI Act attend de l'employeur qu'il agisse pour former à l'IA les personnes qui s'en servent. Dans le médico-social, la formation la plus utile ouvre sur le cadre (données de santé, secret professionnel, anonymisation, outils autorisés), puis passe en atelier sur les écrits de chaque métier."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Direction et cadres</strong> : notes au conseil d'administration, réponses aux appels à projets, veille, comptes rendus d'instances.",
+        "<strong>Équipes éducatives et soignantes</strong> : écrits sans donnée identifiante, trames, versions FALC, préparation des réunions de projet.",
+        "<strong>Secrétariats et accueil</strong> : courriers, convocations, réponses aux familles sans contenu médical.",
+        "<strong>Qualité</strong> : procédures, préparation de l'évaluation, analyse d'événements indésirables décrits sans élément identifiant.",
+        "<strong>Ressources humaines</strong> : fiches de poste, annonces, parcours d'accueil des nouveaux professionnels."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Un module court réservé aux nouveaux arrivants entretient le niveau malgré le renouvellement des équipes. Notre <a href='/formation-ia-sante'>formation IA santé et médico-social</a> suit ce découpage. Comptez, en intra, à partir de 1 980 € HT la journée ; une association reçoit un devis qui mentionne aussi le TTC, puisqu'elle ne récupère en général pas la TVA."
+    },
+    {
+      "type": "h3",
+      "text": "5. La mesure : un point de départ, puis des bilans"
+    },
+    {
+      "type": "p",
+      "text": "Un gain qu'on n'a pas mesuré au départ ne se démontre jamais ensuite. Avant la formation, chaque équipe choisit deux ou trois écrits ciblés et note le temps qu'elle y consacre ; un mois après, puis chaque trimestre, le référent relève les mêmes indicateurs. Dans la PME photovoltaïque citée plus haut, la feuille de route place ce relevé pendant la formation et un premier bilan un mois plus tard, sur une poignée d'indicateurs."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Indicateur",
+        "Comment le relever",
+        "Ce qu'il montre"
+      ],
+      "rows": [
+        [
+          "Temps passé sur les écrits ciblés",
+          "Estimation par l'équipe avant la formation, puis à un mois",
+          "Le temps rendu à l'accompagnement"
+        ],
+        [
+          "Usages inscrits au registre",
+          "Registre tenu par le référent",
+          "L'adoption, service par service"
+        ],
+        [
+          "Comptes personnels remplacés",
+          "Inventaire des comptes encadrés ouverts",
+          "Le recul de l'usage hors cadre"
+        ],
+        [
+          "Erreurs repérées à la relecture",
+          "Signalements recueillis par le référent",
+          "La vigilance des équipes face aux inventions de l'outil"
+        ],
+        [
+          "Incidents de données",
+          "Signalements au DPO",
+          "Le respect de la règle sur les données d'usagers"
+        ],
+        [
+          "Documents FALC produits",
+          "Décompte par établissement",
+          "Le bénéfice direct pour les personnes accompagnées"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le bilan remonte au comité de direction, puis au conseil d'administration. Il fournit aussi la matière d'une prochaine demande de financement."
+    },
+    {
+      "type": "h2",
+      "text": "Financer la démarche : l'ARS d'abord, l'OPCO Santé ensuite"
+    },
+    {
+      "type": "p",
+      "text": "Pour une association ou une fondation gestionnaire, la première porte à frapper est celle de l'agence régionale de santé. Les crédits non reconductibles (CNR) sont des crédits ponctuels, accordés en cours d'année sur la marge régionale de l'ARS, pour des dépenses qui ne se répètent pas. Leur périmètre varie d'une agence à l'autre et d'une année à l'autre : chaque ARS le fixe dans son rapport d'orientation budgétaire (ROB), publié avec la campagne budgétaire des établissements et services."
+    },
+    {
+      "type": "p",
+      "text": "L'exemple de la Nouvelle-Aquitaine en 2026 montre à quoi s'attendre. L'agence y recense les demandes par une enquête sur la plateforme « Démarches numériques », à raison d'un formulaire par établissement ou service, ouverte du 10 juillet au 11 septembre 2026 pour le grand âge et le handicap. Les CNR y financent des mesures ponctuelles, chiffrées, portées par un seul établissement et reliées aux priorités de l'ARS. La formation y figure pour ses seuls frais pédagogiques, sur des thèmes précis : qualité de l'accompagnement, suivi des recommandations de la HAS, transformation de l'offre pour le handicap. Pour les EHPAD, seules les dépenses du périmètre de la section soins sont retenues par principe. Les demandes acceptées figurent dans la notification de la seconde partie de campagne, fin novembre ou début décembre (<a href='https://www.nouvelle-aquitaine.ars.sante.fr/allocation-de-ressources-des-etablissements-medico-sociaux-en-2026'>ARS Nouvelle-Aquitaine, allocation de ressources 2026</a>)."
+    },
+    {
+      "type": "p",
+      "text": "Deux conseils en découlent. Une demande qui présente l'IA comme un sujet en soi colle mal à ces critères ; une demande qui rattache la formation à la qualité de l'accompagnement (écrits mieux tenus, documents FALC pour les personnes, préparation de l'évaluation) y répond davantage. Le calendrier, lui, se prépare tôt : en Nouvelle-Aquitaine, la fenêtre 2026 est close, et c'est la campagne 2027 qui s'annonce avec le prochain ROB. Votre délégation départementale reste le bon interlocuteur pour vérifier l'éligibilité avant de déposer."
+    },
+    {
+      "type": "p",
+      "text": "Pour la formation, l'opérateur de compétences du secteur privé de la santé est l'OPCO Santé. Il regroupe trois branches : le sanitaire, social et médico-social privé à but non lucratif, les services de prévention et de santé au travail interentreprises, l'hospitalisation privée et le thermalisme (<a href='https://www.opco-sante.fr'>OPCO Santé</a>). Une association relevant de la CCN 51 ou de la CCN 66 s'adresse donc à lui, tout comme, en général, un EHPAD privé commercial. Il finance selon ses conditions générales de gestion et le budget de l'année, et uniquement des actions conduites par un organisme certifié Qualiopi, condition que remplit Masteria, certifié au titre des actions de formation. Les établissements publics financent la formation sur leur propre plan, avec l'appui de l'ANFH, l'association qui gère les fonds de formation des agents de la fonction publique hospitalière. La page <a href='/quel-opco'>Quel OPCO ?</a> aide à confirmer l'opérateur d'après la convention collective."
+    },
+    {
+      "type": "p",
+      "text": "Le diagnostic et l'audit relèvent du conseil et sortent du champ de l'OPCO. Ils se financent sur le budget de la structure ou, si le ROB de votre ARS l'autorise, dans une demande de crédits, le rapport d'audit servant alors de pièce justificative."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Structure",
+        "Formation à l'IA",
+        "Diagnostic ou audit"
+      ],
+      "rows": [
+        [
+          "Association ou fondation (CCN 51, CCN 66)",
+          "CNR de l'ARS si son ROB retient la formation sur ce thème ; OPCO Santé",
+          "Budget propre ; CNR seulement si le ROB le prévoit"
+        ],
+        [
+          "EHPAD privé commercial",
+          "OPCO Santé (branche de l'hospitalisation privée) ; CNR possibles sur le seul périmètre soins, selon l'ARS",
+          "Budget propre"
+        ],
+        [
+          "Établissement public (fonction publique hospitalière)",
+          "Plan de formation et ANFH",
+          "Budget propre"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Vocabulaire utile"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Terme",
+        "Définition"
+      ],
+      "rows": [
+        [
+          "ESMS",
+          "Établissements et services médico-sociaux, comme les EHPAD, IME, ESAT, foyers ou services à domicile, autorisés et financés en tout ou partie par l'ARS ou le département."
+        ],
+        [
+          "Dossier de l'usager informatisé (DUI)",
+          "Logiciel métier où l'équipe consigne le suivi de chaque personne accompagnée ; les transmissions y restent."
+        ],
+        [
+          "Certification HDS",
+          "Certification exigée par l'article L1111-8 du code de la santé publique de tout hébergeur de données de santé agissant pour le compte d'autrui ; hébergement physique dans l'Espace économique européen depuis le référentiel de 2024."
+        ],
+        [
+          "Crédits non reconductibles (CNR)",
+          "Crédits ponctuels accordés par l'ARS sur sa marge régionale pour des dépenses non pérennes, dans le périmètre fixé par son rapport d'orientation budgétaire."
+        ],
+        [
+          "Rapport d'orientation budgétaire (ROB)",
+          "Document régional publié par chaque ARS avec la campagne budgétaire ; il fixe notamment les dépenses éligibles aux CNR."
+        ],
+        [
+          "FALC",
+          "Facile à lire et à comprendre : méthode d'écriture accessible aux personnes avec une déficience intellectuelle."
+        ],
+        [
+          "AIPD",
+          "Analyse d'impact relative à la protection des données : étude préalable des risques d'un traitement pour les personnes, requise par la CNIL pour les traitements de données de santé des établissements médico-sociaux."
+        ],
+        [
+          "Maîtrise de l'IA",
+          "Obligation de l'article 4 de l'AI Act, réécrit par le règlement (UE) 2026/1744 : agir pour former les personnes qui utilisent l'IA, sans certificat exigé."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Une première décision suffit pour démarrer"
+    },
+    {
+      "type": "p",
+      "text": "Par où commencer ? Par ce que vos équipes font déjà, et par la donnée qu'elles y mettent. Une direction qui dresse l'état des lieux, écrit trois règles et nomme ses référents a déjà fermé la porte la plus exposée, celle des informations d'usagers saisies n'importe où. La formation et les outils viennent ensuite, sur un terrain préparé."
+    },
+    {
+      "type": "p",
+      "text": "Le reste se joue dans la durée. Chaque heure d'écriture rendue aux professionnels peut retourner à la relation avec les personnes accompagnées, qui demeure le cœur du métier."
+    }
+  ],
+  "faq": [
+    {
+      "q": "Par où commencer avec l'IA dans un établissement médico-social ?",
+      "a": "Commencez par un état des lieux des usages déjà présents, souvent sur des comptes personnels, puis par des écrits sans donnée d'usager : comptes rendus d'organisation, courriers, appels à projets, veille réglementaire, documents FALC. Écrivez ensuite une charte courte, nommez un référent par établissement, formez les équipes par métier et mesurez le temps rendu un mois plus tard. Les usages qui touchent aux données d'usagers viennent en dernier, dans un environnement certifié HDS ou sur des données anonymisées."
+    },
+    {
+      "q": "Peut-on utiliser ChatGPT dans un EHPAD ou un ESMS ?",
+      "a": "Oui, pour des écrits qui ne contiennent aucune information permettant d'identifier un résident ou un usager, et de préférence avec une offre professionnelle administrée par l'établissement, dont le contrat interdit de réutiliser vos contenus pour entraîner les modèles. Un compte gratuit ou personnel reste exclu pour toute donnée de santé : il ne fournit ni certificat HDS ni contrat de sous-traitance. La même règle vaut pour Copilot, Gemini, Claude ou Vibe. La donnée décide, l'outil suit."
+    },
+    {
+      "q": "L'IA peut-elle rédiger les transmissions ?",
+      "a": "Pas dans un outil grand public. Une transmission décrit l'état et les soins d'une personne : ce sont des données de santé, qui restent dans le dossier de l'usager informatisé. Si l'éditeur de ce logiciel propose une fonction d'IA, exigez par écrit l'hébergement certifié HDS, le lieu de traitement et l'absence de réutilisation des données. En attendant, l'IA aide sur la forme : glossaire commun, trame de transmission ciblée, exemples fictifs pour former les nouveaux arrivants."
+    },
+    {
+      "q": "Faut-il un hébergeur certifié HDS pour utiliser l'IA dans le médico-social ?",
+      "a": "Oui, dès qu'un outil reçoit des données de santé recueillies lors d'un suivi médico-social pour le compte de l'établissement : le code de la santé publique (article L1111-8) exige alors un hébergeur certifié. Depuis le référentiel de 2024, cet hébergement physique doit se situer dans l'Espace économique européen. Pour des écrits sans aucune donnée d'usager, la certification HDS ne s'impose pas ; un outil professionnel encadré par un contrat convient."
+    },
+    {
+      "q": "Que change l'AI Act pour un ESMS en 2026 ?",
+      "a": "Pour un établissement qui utilise un assistant du marché, deux obligations comptent aujourd'hui. L'article 4, en application depuis le 2 février 2025 et réécrit par l'Omnibus numérique (règlement (UE) 2026/1744), demande d'agir pour former les équipes, sans certificat exigé. L'article 50 vaut depuis le 2 août 2026 : il oblige à signaler un assistant ouvert au public comme une IA, ainsi qu'un contenu réaliste généré puis diffusé. Les règles du haut risque, qui visent le recrutement ou l'évaluation des salariés, s'appliqueront le 2 décembre 2027."
+    },
+    {
+      "q": "Comment évaluer la maturité IA d'un établissement médico-social ?",
+      "a": "En examinant six axes communs à toute organisation (les usages, les compétences, les données, la gouvernance, la culture, la sécurité) et un septième propre au secteur : la donnée d'usager et son hébergement. Le test de maturité IA en ligne donne une première photographie à l'échelle de la direction. Pour plusieurs établissements, ou pour bâtir un dossier destiné à un financeur, l'audit IA médico-social approfondit chaque dimension, service par service, et aboutit à un plan d'action."
+    },
+    {
+      "q": "Quelle différence entre un diagnostic IA, un audit IA et une formation ?",
+      "a": "Le diagnostic est une intervention courte qui situe l'établissement et désigne ses priorités. L'audit va plus loin : usages par service, données d'usagers, hébergement, organisation, conformité RGPD et AI Act, avec un plan pour les outils et un autre pour les compétences. Pour l'un comme pour l'autre, durée et forfait se fixent au cadrage. La formation apprend aux équipes à travailler avec l'outil dans le cadre retenu. Les deux premiers relèvent du conseil ; la troisième peut être financée par l'OPCO Santé."
+    },
+    {
+      "q": "Comment financer une formation à l'IA dans le médico-social ?",
+      "a": "Pour une structure privée, interrogez d'abord votre ARS : selon son rapport d'orientation budgétaire et l'enveloppe de l'année, des crédits non reconductibles peuvent couvrir les frais pédagogiques d'une formation rattachée à la qualité de l'accompagnement. Sollicitez ensuite l'OPCO Santé, selon ses conditions générales de gestion. Un établissement public mobilise son propre plan, avec l'ANFH. Dans tous les cas, l'organisme de formation doit être certifié Qualiopi."
+    },
+    {
+      "q": "Les crédits non reconductibles de l'ARS peuvent-ils financer un projet d'IA ?",
+      "a": "Parfois, et jamais automatiquement. Chaque ARS fixe dans son rapport d'orientation budgétaire les dépenses éligibles et le calendrier de son enquête. En Nouvelle-Aquitaine pour 2026, la formation y figure pour ses frais pédagogiques et sur des thèmes de qualité de l'accompagnement ; pour les EHPAD, seules les dépenses relevant de la section soins sont retenues par principe. Une demande gagne à relier l'IA à ces priorités, et la délégation départementale confirme l'éligibilité avant le dépôt."
+    },
+    {
+      "q": "Faut-il informer les salariés, le CSE et les familles ?",
+      "a": "Les salariés reçoivent la charte, qui leur dit ce qui est permis et pourquoi. Dans une association d'au moins cinquante salariés, l'introduction d'une nouvelle technologie relève de l'information et de la consultation du CSE. Les personnes accompagnées et leurs familles doivent être informées, au titre du RGPD, lorsque leurs données passent par un outil d'IA ; l'article 50 de l'AI Act impose en outre de signaler qu'un assistant conversationnel mis à leur disposition est une IA."
+    }
+  ],
+  "cta": {
+    "title": "Faire le point sur l'IA dans vos établissements ?",
+    "desc": "Masteria réalise l'audit IA médico-social, dont la durée et le forfait se fixent au cadrage, et forme vos équipes métier par métier dans le cadre propre aux données de santé.",
+    "buttons": [
+      {
+        "label": "Découvrir l'audit IA médico-social",
+        "href": "/audit-ia-medico-social",
+        "primary": true
+      },
+      {
+        "label": "Voir la formation IA santé et médico-social",
+        "href": "/formation-ia-sante",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Audit IA médico-social : usages, données, cadre",
+      "href": "/audit-ia-medico-social"
+    },
+    {
+      "label": "Formation IA santé et médico-social",
+      "href": "/formation-ia-sante"
+    },
+    {
+      "label": "IA et RGPD : conformité des usages",
+      "href": "/ia-et-rgpd"
+    },
+    {
+      "label": "Test de maturité IA",
+      "href": "/test-maturite-ia"
+    },
+    {
+      "label": "Charte IA d'entreprise",
+      "href": "/charte-ia-entreprise"
+    },
+    {
+      "label": "Quel OPCO pour financer une formation ?",
+      "href": "/quel-opco"
+    }
+  ],
+  "sources": [
+    {
+      "label": "HAS, Premières clefs d'usage de l'IA générative en santé (mis en ligne le 30 octobre 2025, mis à jour le 15 avril 2026)",
+      "url": "https://has-sante.fr/jcms/p_3703115/fr/premieres-clefs-d-usage-de-l-ia-generative-en-sante"
+    },
+    {
+      "label": "Agence du numérique en santé, certification HDS",
+      "url": "https://esante.gouv.fr/produits-services/hds"
+    },
+    {
+      "label": "Agence du numérique en santé, publication au Journal officiel du référentiel HDS (16 mai 2024)",
+      "url": "https://esante.gouv.fr/espace-presse/publication-au-journal-officiel-du-referentiel-de-certification-hds-souverainete-des-donnees-et-ameliorations-du-referentiel"
+    },
+    {
+      "label": "Règlement (UE) 2016/679 (RGPD), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679"
+    },
+    {
+      "label": "CNIL, référentiel pour la prise en charge médico-sociale des personnes âgées, en situation de handicap ou en difficulté (délibération n° 2021-028)",
+      "url": "https://www.cnil.fr/fr/publication-du-referentiel-pour-la-prise-en-charge-medico-sociale-personnes-agees-handicap-difficulte"
+    },
+    {
+      "label": "CNIL, liste des traitements pour lesquels une analyse d'impact est requise",
+      "url": "https://www.cnil.fr/sites/default/files/atoms/files/liste-traitements-avec-aipd-requise-v2.pdf"
+    },
+    {
+      "label": "Règlement (UE) 2024/1689 (AI Act), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    },
+    {
+      "label": "Règlement (UE) 2026/1744 (Omnibus numérique), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+    },
+    {
+      "label": "Commission européenne, cadre réglementaire de l'IA (mise à jour le 19 octobre 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    },
+    {
+      "label": "Commission européenne, AI literacy Q&A (mise à jour le 27 juillet 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+    },
+    {
+      "label": "CNIL, questions-réponses sur le règlement IA (mise à jour le 17 août 2026)",
+      "url": "https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil"
+    },
+    {
+      "label": "AI Act Service Desk, annexe III",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3"
+    },
+    {
+      "label": "ARS Nouvelle-Aquitaine, allocation de ressources des établissements médico-sociaux en 2026 (15 juillet 2026) et rapports d'orientation budgétaire grand âge et handicap",
+      "url": "https://www.nouvelle-aquitaine.ars.sante.fr/allocation-de-ressources-des-etablissements-medico-sociaux-en-2026"
+    },
+    {
+      "label": "OPCO Santé, présentation des trois branches",
+      "url": "https://www.opco-sante.fr"
+    },
+    {
+      "label": "ANFH, organisme paritaire de la fonction publique hospitalière",
+      "url": "https://www.anfh.fr"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Vocabulaire de l'IA dans le médico-social",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "ESMS",
+          "description": "Établissements et services médico-sociaux, comme les EHPAD, IME, ESAT, foyers ou services à domicile, autorisés et financés en tout ou partie par l'ARS ou le département."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Dossier de l'usager informatisé (DUI)",
+          "description": "Logiciel métier où l'équipe consigne le suivi de chaque personne accompagnée ; les transmissions y restent."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Certification HDS",
+          "description": "Certification exigée par l'article L1111-8 du code de la santé publique de tout hébergeur de données de santé agissant pour le compte d'autrui ; hébergement physique dans l'Espace économique européen depuis le référentiel de 2024."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Crédits non reconductibles (CNR)",
+          "description": "Crédits ponctuels accordés par l'ARS sur sa marge régionale pour des dépenses non pérennes, dans le périmètre fixé par son rapport d'orientation budgétaire."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Rapport d'orientation budgétaire (ROB)",
+          "description": "Document régional publié par chaque ARS avec la campagne budgétaire ; il fixe notamment les dépenses éligibles aux CNR."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "FALC",
+          "description": "Facile à lire et à comprendre : méthode d'écriture accessible aux personnes avec une déficience intellectuelle."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "AIPD",
+          "description": "Analyse d'impact relative à la protection des données : étude préalable des risques d'un traitement pour les personnes, requise par la CNIL pour les traitements de données de santé des établissements médico-sociaux."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Maîtrise de l'IA",
+          "description": "Obligation de l'article 4 de l'AI Act, réécrit par le règlement (UE) 2026/1744 : agir pour former les personnes qui utilisent l'IA, sans certificat exigé."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Démarche en cinq étapes pour l'IA dans un établissement médico-social",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Diagnostic : relever les usages déjà présents, les données en jeu, les outils et les compétences."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Règles : écrire une charte courte, validée par le DPO et présentée aux représentants du personnel."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Référents : nommer dans chaque établissement une personne qui aide ses collègues, recueille les erreurs et alerte."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Formation : un socle commun sur le cadre, puis des ateliers par métier sur les écrits de chacun."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Mesure : relever un point de départ avant la formation, faire le bilan à un mois, puis chaque trimestre."
+        }
+      ]
+    }
+  ]
+}

@@ -55,7 +55,7 @@ export default {
   "kicker": "Six fronts à tenir",
   "h2": "Six situations où l'IA générative expose l'entreprise, et le réflexe qui la protège",
   "answer": "Les mêmes situations reviennent d'une organisation à l'autre : des outils adoptés hors de tout cadre, des données versées dans une offre qui ne les protège pas, des fichiers qui donnent des ordres à l'assistant, des agents dotés de trop de droits, des fraudes qui empruntent la voix d'un dirigeant, des extensions qui recopient les conversations. Pour chacune, la journée installe un geste que le participant refait seul, à son poste, dès le lendemain.",
-  "foot": "Le cadrage pondère ces six fronts selon votre exposition : un cabinet qui manie des dossiers clients insiste sur les offres et les partages, une entreprise qui déploie des agents sur les connecteurs et la validation humaine, une direction financière sur les faux ordres de virement. Les règles adoptées s'inscrivent ensuite dans votre {/charte-ia-entreprise|charte IA} et dans le volet données de votre {/ia-et-rgpd|conformité RGPD}. Pour un parc d'agents à tenir dans la durée, notre guide {/blog/gouvernance-agents-ia|gouverner ses agents IA} détaille registre, identités et journaux."
+  "foot": "Le cadrage pondère ces six fronts selon votre exposition : un cabinet qui manie des dossiers clients insiste sur les offres et les partages, une entreprise qui déploie des agents sur les connecteurs et la validation humaine, une direction financière sur les faux ordres de virement. Les règles adoptées s'inscrivent ensuite dans votre {/charte-ia-entreprise|charte IA} et dans le volet données de votre {/ia-et-rgpd|conformité RGPD}. Pour un parc d'agents à tenir dans la durée, notre guide {/blog/superviser-agents-ia-production|superviser des agents IA en production} détaille traçage, identités et droits."
  },
  "missions": [
   {
@@ -350,10 +350,10 @@ export default {
    "desc": "Obligations du règlement européen pour les utilisateurs."
   },
   {
-   "label": "Gouverner ses agents IA",
-   "href": "/blog/gouvernance-agents-ia",
+   "label": "Superviser ses agents IA",
+   "href": "/blog/superviser-agents-ia-production",
    "tag": "Guide",
-   "desc": "Registre, identités, propriétaires et journaux."
+   "desc": "Traçage, identités, droits et contrôle humain."
   },
   {
    "label": "Formation IA informatique",

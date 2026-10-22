@@ -1,0 +1,641 @@
+{
+  "slug": "cout-agent-ia-entreprise",
+  "title": "Combien coûte un agent IA en entreprise en 2026 ?",
+  "metaTitle": "Coût d'un agent IA en entreprise en 2026 | Masteria",
+  "metaDesc": "Coût d'un agent IA en 2026 : postes de dépense, no-code ou sur mesure, prix des modèles au million de tokens au 19/10, calcul type et ROI en heures.",
+  "tag": "Guide pratique",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "18 min",
+  "formations": [
+    [
+      "Formation agents IA",
+      "/formation-agents-ia"
+    ],
+    [
+      "Formation Claude",
+      "/formation-claude-ia"
+    ],
+    [
+      "Formation ChatGPT",
+      "/formation-chatgpt"
+    ]
+  ],
+  "keywords": [
+    "coût agent IA",
+    "prix agent IA",
+    "agent IA sur mesure",
+    "déploiement agent IA entreprise",
+    "création agent IA",
+    "coût API Claude",
+    "prix au million de tokens",
+    "Copilot Studio prix",
+    "ROI agent IA"
+  ],
+  "excerpt": "Licences de plateforme, construction sur mesure, consommation au million de tokens, supervision : le coût réel d'un agent IA en entreprise en 2026, avec les prix des modèles relevés le 19 octobre et un calcul que vous pouvez refaire.",
+  "intro": "Un agent IA en entreprise coûte en 2026 entre le prix d'une licence de plateforme par utilisateur et plusieurs dizaines de milliers d'euros pour un agent sur mesure relié à vos logiciels. Le modèle lui-même pèse peu : au 19 octobre 2026, un million de tokens en entrée coûte de 0,10 à 10 dollars chez Anthropic. Le budget se joue ailleurs, dans le cadrage, la connexion au système d'information, les tests et le temps de supervision. Cet article chiffre chaque poste, compare trois voies de construction et pose un calcul que vous pouvez refaire avec vos propres volumes.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Un agent IA en entreprise coûte au minimum le prix des licences d'une plateforme que vous payez peut-être déjà (de 20 à 30 dollars par utilisateur et par mois chez Anthropic, OpenAI ou Microsoft au 19 octobre 2026), et monte à plusieurs dizaines de milliers d'euros quand il est construit sur mesure et relié à vos logiciels. La consommation du modèle pèse peu : un agent qui traite mille demandes par mois revient à quelques dollars avec Haiku 5.5 et à une soixantaine avec Sonnet 5.5. Le budget se joue sur le cadrage, la connexion au système d'information, les tests et le temps humain de supervision. Le retour sur investissement se calcule en heures rendues aux équipes, mesurées avant et après."
+    },
+    {
+      "type": "h2",
+      "text": "Un agent IA se paie deux fois : pour naître, puis pour tourner"
+    },
+    {
+      "type": "p",
+      "text": "Le budget d'un agent IA (un programme qui enchaîne des actions dans vos outils pour atteindre un objectif) se divise en deux familles. Les coûts ponctuels servent à le concevoir et à le mettre en service. Les coûts récurrents reviennent chaque mois tant que l'agent travaille : abonnements, consommation du modèle, hébergement, supervision et entretien."
+    },
+    {
+      "type": "p",
+      "text": "Beaucoup de budgets détaillent la première famille et résument la seconde en une ligne. C'est pourtant elle qui décide si l'agent reste rentable au bout de deux ans. Le tableau ci-dessous liste les neuf postes à chiffrer, avec ce qui fait grossir chacun."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Poste",
+        "Ce qu'il couvre",
+        "Fréquence",
+        "Ce qui le fait grossir"
+      ],
+      "rows": [
+        [
+          "Cadrage",
+          "La tâche visée, les données autorisées, le critère de réussite, les actions soumises à validation",
+          "Ponctuel",
+          "Plusieurs services concernés, une tâche mal définie au départ"
+        ],
+        [
+          "Construction",
+          "Les instructions, la logique d'enchaînement, les écrans éventuels",
+          "Ponctuel",
+          "Le nombre de cas particuliers à traiter"
+        ],
+        [
+          "Connexion au système d'information",
+          "Les branchements sur le CRM, l'ERP, la messagerie, les bases documentaires",
+          "Ponctuel, puis entretien",
+          "Des logiciels anciens sans API, des droits d'accès à créer"
+        ],
+        [
+          "Tests et évaluation",
+          "Un jeu de cas réels rejoué à chaque modification",
+          "Ponctuel, puis à chaque évolution",
+          "Des erreurs coûteuses, des actions irréversibles"
+        ],
+        [
+          "Modèles",
+          "L'abonnement à la plateforme ou la consommation facturée au token",
+          "Mensuel",
+          "Le volume, la longueur des documents, le choix d'un grand modèle"
+        ],
+        [
+          "Hébergement et outillage",
+          "Le serveur, la base de données, le journal des actions",
+          "Mensuel",
+          "Des exigences de disponibilité ou d'hébergement européen"
+        ],
+        [
+          "Supervision",
+          "Le temps des personnes qui valident, relisent et corrigent",
+          "Continu",
+          "Une part élevée d'actions soumises à validation"
+        ],
+        [
+          "Maintenance",
+          "Les changements de modèle, de logiciel ou de règle métier",
+          "Au fil de l'eau",
+          "Le nombre de connexions et de modèles utilisés"
+        ],
+        [
+          "Formation des utilisateurs",
+          "Savoir confier une tâche à l'agent et relire ce qu'il produit",
+          "Ponctuel",
+          "Le nombre d'équipes et de métiers"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Le cadrage fixe le prix de tout le reste"
+    },
+    {
+      "type": "p",
+      "text": "Un cadrage tient en quelques pages : la tâche, l'entrée (un mail, un bon de commande, un dossier), la sortie attendue, les logiciels à lire et à modifier, et la frontière entre ce que l'agent fait seul et ce qu'une personne valide. Chaque ligne laissée floue se paie plus tard en reprises de développement. Un agent dont la tâche s'écrit en une phrase coûte moins cher qu'un agent qui doit « aider le service commercial »."
+    },
+    {
+      "type": "h3",
+      "text": "La connexion au système d'information concentre la dépense"
+    },
+    {
+      "type": "p",
+      "text": "Le système d'information (l'ensemble de vos logiciels et de vos données) est l'endroit où l'agent gagne sa valeur, et celui où le budget dérape. Brancher un agent sur un logiciel moderne passe par son API (la porte d'entrée prévue pour les autres programmes) ou par un connecteur MCP (un standard ouvert qui expose un logiciel aux agents). Un ERP installé sur un serveur interne, sans API documentée, demande davantage de travail, de sécurité et de tests."
+    },
+    {
+      "type": "p",
+      "text": "Une règle simple aide à estimer : comptez les logiciels que l'agent doit lire, puis ceux où il doit écrire. L'écriture coûte plus que la lecture, parce qu'elle exige des droits restreints, un journal et une validation humaine sur les actions qui engagent l'entreprise."
+    },
+    {
+      "type": "h3",
+      "text": "Les tests se budgètent avant la première ligne de code"
+    },
+    {
+      "type": "p",
+      "text": "Un agent se teste sur un jeu d'évaluation (une série de cas réels dont on connaît la bonne réponse). Quelques dizaines de dossiers représentatifs, choisis avec le métier, forment un premier jeu. Ce jeu se rejoue à chaque changement d'instruction ou de modèle : il devient un actif de l'entreprise, au même titre que le code."
+    },
+    {
+      "type": "h3",
+      "text": "La supervision se compte en heures humaines"
+    },
+    {
+      "type": "p",
+      "text": "Un agent en production produit des propositions que quelqu'un relit, valide ou corrige. Ce temps figure rarement dans les budgets, alors qu'il conditionne le retour sur investissement. Un agent qui prépare une relance en dix secondes et la fait relire en trois minutes rend moins de temps qu'il n'y paraît. Prévoyez aussi une revue régulière du journal des actions par la personne qui porte l'agent."
+    },
+    {
+      "type": "h3",
+      "text": "La maintenance suit le rythme des éditeurs"
+    },
+    {
+      "type": "p",
+      "text": "Les éditeurs de modèles publient de nouvelles versions plusieurs fois par an et retirent les anciennes selon leur calendrier. Vos logiciels changent eux aussi d'API. Chaque changement se traduit par une vérification sur le jeu d'évaluation et, parfois, par une retouche des instructions ou d'un connecteur. Plus l'agent touche de logiciels, plus cet entretien mérite une ligne annuelle à part entière dans le budget."
+    },
+    {
+      "type": "h2",
+      "text": "Trois voies pour construire un agent, trois profils de coût"
+    },
+    {
+      "type": "p",
+      "text": "Le choix de la voie détermine la répartition entre coûts ponctuels et récurrents. Le tableau compare les trois options que nous rencontrons chez nos clients en 2026."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Voie",
+        "Exemples",
+        "Au départ",
+        "Chaque mois",
+        "Limite principale"
+      ],
+      "rows": [
+        [
+          "Agent sans code sur une plateforme",
+          "Agents d'espace de travail de ChatGPT Business, Copilot Studio, Claude avec Cowork et les Skills",
+          "Le temps de configuration et la formation des personnes qui construisent",
+          "Les licences par utilisateur, plus les crédits de consommation selon la plateforme",
+          "Des connexions limitées à ce que la plateforme propose"
+        ],
+        [
+          "Agent sur mesure",
+          "Un programme construit sur l'API d'un modèle, hébergé chez vous ou chez un prestataire",
+          "À partir de quelques milliers d'euros pour un prototype, plusieurs dizaines de milliers pour la production",
+          "La consommation au token, l'hébergement, la maintenance",
+          "Un investissement de départ plus lourd"
+        ],
+        [
+          "Hybride",
+          "Une plateforme pour l'interface, un connecteur sur mesure vers vos logiciels",
+          "Le développement du connecteur, à partir de quelques milliers d'euros",
+          "Les licences, plus l'entretien du connecteur",
+          "Deux fournisseurs à suivre"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Voie 1 : l'agent sans code, sur une plateforme déjà payée"
+    },
+    {
+      "type": "p",
+      "text": "Les trois grandes suites de 2026 permettent de construire un agent sans écrire de code. Leur coût se lit d'abord dans la licence, relevée sur les pages officielles le 19 octobre 2026."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>ChatGPT Business</strong> : 25 dollars par utilisateur et par mois en facturation mensuelle, 20 dollars en annuel, selon l'<a href='https://openai.com/index/premium-seats-chatgpt-business' target='_blank' rel='noopener'>annonce d'OpenAI sur les sièges ChatGPT Business</a>. Les agents d'espace de travail consomment des crédits dont le tarif se vérifie dans la console d'administration ; un siège Premium à 100 dollars par mois en annuel élargit les volumes d'usage.",
+        "<strong>Claude Team</strong> : 25 dollars par siège standard et par mois en mensuel, 20 dollars en annuel, et 125 ou 100 dollars pour un siège Premium, d'après la <a href='https://claude.com/pricing' target='_blank' rel='noopener'>page tarifs de Claude</a>. Cowork et les Skills (des dossiers d'instructions et de fichiers que Claude charge quand la tâche s'y prête) sont inclus, avec un déploiement des Skills à toute l'organisation. L'offre Enterprise affiche 20 dollars par siège avec un minimum de 20 sièges, plus la consommation facturée au tarif de l'API.",
+        "<strong>Microsoft Copilot Studio</strong> : 200 dollars par mois pour un pack de 25 000 crédits Copilot, ou un paiement à la consommation, selon la <a href='https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio' target='_blank' rel='noopener'>page tarifs de Copilot Studio</a>. La licence Microsoft 365 Copilot (30 dollars par utilisateur et par mois en annuel) inclut Copilot Studio pour des agents internes à Microsoft 365 ; publier un agent sur un canal externe ou l'ouvrir à des utilisateurs sans licence exige un plan Copilot Studio à part."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le vrai coût de cette voie est le temps de vos équipes. Chez un distributeur informatique de 58 salariés accompagné par Masteria, dix référents ont construit onze compétences Claude en deux jours de formation, chacune sur son propre flux de travail : cotation à partir d'un mail client, relance des devis, réponse aux cahiers des charges. Dans un cabinet de conseil financier au secteur public, quatre ateliers de deux heures avec les consultants ont produit quatre assistants, un par famille d'appels d'offres. Dans les deux cas, la dépense principale tenait à la formation et au temps des équipes. Une formation Masteria démarre à 1 980 € HT la journée."
+    },
+    {
+      "type": "h3",
+      "text": "Voie 2 : l'agent sur mesure, construit sur l'API"
+    },
+    {
+      "type": "p",
+      "text": "Un agent sur mesure s'impose quand il doit écrire dans vos logiciels, traiter un volume important, respecter des règles de sécurité propres à votre secteur ou servir des personnes qui n'ont pas de licence. Chez Masteria, un prototype démarre à quelques milliers d'euros, un agent en production relié à vos systèmes se compte en dizaines de milliers d'euros, et un déploiement sur plusieurs logiciels ou plusieurs sites dépasse 100 000 € sans plafond fixé d'avance. Le forfait s'écrit après le cadrage. Les ordres de grandeur par type de livrable figurent sur notre page <a href='/prix-projet-ia'>prix d'un projet IA</a>."
+    },
+    {
+      "type": "p",
+      "text": "En contrepartie, la facture mensuelle reste modeste et prévisible : vous payez la consommation du modèle au token, un hébergement et la maintenance. Le code vous appartient, ce qui laisse le choix de l'équipe qui l'entretiendra. Notre <a href='/agence-developpement-ia'>agence de développement IA</a> détaille la façon dont ces projets sont livrés, par paliers utilisables."
+    },
+    {
+      "type": "h3",
+      "text": "Voie 3 : l'hybride, une plateforme et un connecteur maison"
+    },
+    {
+      "type": "p",
+      "text": "La voie hybride garde l'interface que vos équipes connaissent déjà (Claude, Copilot ou ChatGPT) et ajoute un connecteur construit pour votre logiciel métier. Un serveur MCP sur mesure peut par exemple donner à Claude un accès en lecture à votre ERP, avec des droits définis par profil. Vous payez les licences, le développement du connecteur et son entretien. Cette voie convient aux entreprises qui veulent agir dans un logiciel absent du catalogue des plateformes, sans financer une application complète."
+    },
+    {
+      "type": "h3",
+      "text": "Choisir la voie en quatre questions"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "L'agent doit-il écrire dans un logiciel, ou seulement lire et rédiger ? L'écriture pousse vers le sur-mesure ou l'hybride.",
+        "Combien de personnes vont s'en servir ? Au-delà de quelques dizaines d'utilisateurs, les licences pèsent plus que la consommation à l'API.",
+        "Les données sont-elles sensibles au sens du RGPD ou du secret des affaires ? La réponse oriente l'hébergement et le contrat avec l'éditeur.",
+        "Le volume est-il prévisible ? Une plateforme absorbe un usage diffus, l'API facture chaque appel au plus juste."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Ce que coûte le modèle, au million de tokens"
+    },
+    {
+      "type": "p",
+      "text": "Les éditeurs facturent leurs modèles au token (un fragment de mot de quelques caractères), par paquets d'un million. Le texte envoyé au modèle, appelé entrée, coûte moins cher que le texte qu'il rédige, appelé sortie : le rapport atteint cinq fois chez Anthropic. Les prix suivants ont été relevés le 19 octobre 2026 sur la <a href='https://claude.com/pricing' target='_blank' rel='noopener'>page tarifs de Claude</a>, en dollars hors taxes."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Modèle Anthropic",
+        "Entrée",
+        "Sortie",
+        "Lecture en cache"
+      ],
+      "rows": [
+        [
+          "Haiku 5.5 (requêtes jusqu'à 100 000 tokens)",
+          "0,10 $",
+          "0,50 $",
+          "0,01 $"
+        ],
+        [
+          "Haiku 5.5 (au-delà de 100 000 tokens)",
+          "0,50 $",
+          "2,50 $",
+          "0,05 $"
+        ],
+        [
+          "Sonnet 5.5",
+          "2 $",
+          "10 $",
+          "0,10 $"
+        ],
+        [
+          "Opus 5.5",
+          "4 $",
+          "20 $",
+          "0,20 $"
+        ],
+        [
+          "Fable 5.1",
+          "10 $",
+          "50 $",
+          "0,25 $"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Chez OpenAI, la <a href='https://developers.openai.com/api/docs/pricing' target='_blank' rel='noopener'>page tarifs de l'API OpenAI</a> affiche le même jour des niveaux voisins, pour des requêtes jusqu'à 272 000 tokens : gpt-6-luna à 0,10 $ en entrée et 0,50 $ en sortie, gpt-6.1-sol à 2 $ et 10 $, gpt-5.6-sol à 4 $ et 20 $, gpt-6-astra à 10 $ et 50 $. Les grilles des deux éditeurs se répondent gamme par gamme, et le choix entre eux se fait sur la qualité obtenue pour votre tâche."
+    },
+    {
+      "type": "p",
+      "text": "Trois mécanismes réduisent la facture sans toucher à la qualité."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le cache de prompt</strong> (la mise en mémoire des instructions qui ne changent pas) : chez Anthropic, relire du texte en cache coûte de dix à quarante fois moins cher que l'envoyer à nouveau, selon le modèle. Un agent dont les instructions et les règles maison pèsent lourd en profite le plus.",
+        "<strong>Le traitement par lots</strong> : les tâches qui peuvent attendre quelques heures, comme un tri de documents la nuit, coûtent moitié moins cher chez Anthropic.",
+        "<strong>Le bon modèle pour chaque étape</strong> : un petit modèle classe, extrait et trie ; le grand modèle reste réservé à la rédaction ou au raisonnement difficile. Un agent peut appeler les deux dans le même traitement."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Un agent consomme davantage qu'une conversation. À chaque étape, il renvoie au modèle ses instructions, le dossier en cours et le résultat de ses outils. Un traitement en six étapes peut multiplier la consommation par six. D'où l'intérêt de mesurer sur un pilote avant de généraliser une estimation."
+    },
+    {
+      "type": "h2",
+      "text": "Un calcul de coût de fonctionnement, hypothèse par hypothèse"
+    },
+    {
+      "type": "p",
+      "text": "L'exemple suivant sert de gabarit. Les hypothèses sont posées pour l'illustration ; remplacez-les par celles de votre pilote."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "L'agent traite 1 000 demandes par mois, par exemple des mails de clients à qualifier et à préparer.",
+        "Chaque demande consomme 20 000 tokens en entrée sur l'ensemble de ses étapes : 15 000 pour les instructions et les règles maison, identiques d'une demande à l'autre, et 5 000 pour le mail, le dossier client et les résultats des outils.",
+        "Chaque demande produit 2 000 tokens en sortie : la qualification, la réponse proposée et la note pour la personne qui valide.",
+        "Le mois totalise donc 20 millions de tokens en entrée et 2 millions en sortie."
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Modèle",
+        "Entrée (20 M)",
+        "Sortie (2 M)",
+        "Total par mois",
+        "Avec cache sur les 15 000 tokens fixes"
+      ],
+      "rows": [
+        [
+          "Haiku 5.5",
+          "2 $",
+          "1 $",
+          "3 $",
+          "environ 1,65 $"
+        ],
+        [
+          "Sonnet 5.5",
+          "40 $",
+          "20 $",
+          "60 $",
+          "environ 31,50 $"
+        ],
+        [
+          "Opus 5.5",
+          "80 $",
+          "40 $",
+          "120 $",
+          "environ 63 $"
+        ],
+        [
+          "Fable 5.1",
+          "200 $",
+          "100 $",
+          "300 $",
+          "environ 154 $"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La colonne de droite applique le prix de lecture en cache aux 15 millions de tokens fixes. Elle néglige les écritures en cache, facturées 1,25 fois le prix d'entrée chaque fois que le cache se reconstitue après cinq minutes sans requête : sur un flux continu, leur poids reste faible, sur un flux espacé il remonte."
+    },
+    {
+      "type": "p",
+      "text": "Le résultat se lit en ordres de grandeur. Avec Sonnet 5.5, mille demandes coûtent chaque mois à peu près le prix de deux à trois licences ChatGPT Business. Même avec Fable 5.1, le plus cher de la gamme, la facture reste de l'ordre de quelques centaines de dollars par mois. Sur un agent sur mesure, la consommation du modèle devient la plus petite ligne du budget ; l'hébergement, la supervision et la maintenance pèsent davantage."
+    },
+    {
+      "type": "h2",
+      "text": "Le retour sur investissement se mesure en heures rendues"
+    },
+    {
+      "type": "p",
+      "text": "Un agent se rembourse par le temps qu'il rend aux équipes, et ce temps se mesure. Les pourcentages de gain annoncés sans mesure ne disent rien de votre cas : seule la comparaison avant et après, sur vos propres dossiers, permet de décider. La méthode tient en six étapes."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Chronométrez la tâche avant l'agent, sur une vingtaine d'occurrences réelles, en notant le temps total par dossier.",
+        "Chronométrez-la après, en comptant le temps de relecture, de correction et de validation.",
+        "Comptez les dossiers que l'agent rate ou renvoie à une personne, et le temps qu'ils coûtent.",
+        "Multipliez le temps gagné par dossier par le volume mensuel réel.",
+        "Valorisez ces heures à votre coût horaire chargé, puis retranchez les coûts récurrents de l'agent.",
+        "Divisez le coût de construction par ce gain mensuel net pour obtenir le délai de retour."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Reprenons l'exemple des mille demandes avec une hypothèse d'illustration : six minutes de traitement à la main, deux minutes de relecture une fois l'agent en place. Le gain atteint quatre minutes par demande, soit environ 67 heures par mois, près de deux semaines de travail à temps plein. Ce chiffre ne vaut que mesuré chez vous, et c'est lui qui justifie, ou non, le budget de construction."
+    },
+    {
+      "type": "callout",
+      "title": "Le temps gagné doit trouver un emploi",
+      "italic": false,
+      "text": "Une heure rendue produit de la valeur quand elle est réaffectée : davantage de devis envoyés, des relances faites à temps, un délai de réponse raccourci. Écrivez dès le cadrage à quoi servira le temps libéré, et mesurez cet indicateur en même temps que les minutes gagnées."
+    },
+    {
+      "type": "p",
+      "text": "Notre page <a href='/roi-ia-entreprise'>retour sur investissement de l'IA en entreprise</a> détaille la façon de construire ces mesures avec vos équipes."
+    },
+    {
+      "type": "h2",
+      "text": "Les dépenses que les budgets oublient"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Le temps des experts métier pendant le cadrage et les tests, souvent les personnes les plus sollicitées de l'entreprise.",
+        "Le tri des données : documents en double, versions contradictoires, scans illisibles à remplacer avant de brancher l'agent.",
+        "Les licences des personnes qui valident les actions, quand elles n'en avaient pas.",
+        "La conservation du journal des actions, avec une durée et des accès conformes au RGPD.",
+        "Le passage à un nouveau modèle quand l'éditeur retire l'ancien, avec un nouveau passage sur le jeu d'évaluation.",
+        "La formation des utilisateurs, sans laquelle l'agent reste installé et peu employé."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Ce qui se finance, et ce qui reste à votre charge"
+    },
+    {
+      "type": "p",
+      "text": "Le développement et le conseil sortent du champ de la formation professionnelle : l'OPCO ne les finance pas. La formation des utilisateurs, elle, peut l'être. Masteria est certifié Qualiopi pour ses actions de formation, qui démarrent à 1 980 € HT la journée ; l'OPCO de votre branche prend en charge tout ou partie du coût selon ses règles et ses fonds. Les modules sur les agents sont décrits sur notre page <a href='/formation-agents-ia'>formation agents IA</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire du budget d'un agent"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Token</strong> : l'unité de facturation des modèles, un fragment de mot de quelques caractères.",
+        "<strong>Entrée et sortie</strong> : le texte envoyé au modèle et le texte qu'il rédige, facturés à des prix différents.",
+        "<strong>Cache de prompt</strong> : la mise en mémoire des instructions fixes, relues à prix réduit.",
+        "<strong>Traitement par lots</strong> : l'envoi groupé de tâches non urgentes, facturé moitié prix chez Anthropic.",
+        "<strong>Connecteur MCP</strong> : un branchement standard qui donne à un agent l'accès à un logiciel.",
+        "<strong>Jeu d'évaluation</strong> : une série de cas réels dont on connaît la bonne réponse, rejouée à chaque modification.",
+        "<strong>Crédit Copilot</strong> : l'unité de consommation des agents Copilot Studio, vendue en packs ou à l'usage."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer"
+    },
+    {
+      "type": "p",
+      "text": "Choisissez une tâche qui revient souvent, chronométrez-la, puis testez-la sur la plateforme que vos équipes utilisent déjà. Si l'essai montre des heures rendues et bute sur une connexion, le sur-mesure se chiffre alors sur un périmètre éprouvé. Le guide <a href='/blog/creer-un-agent-ia-entreprise'>créer un agent IA en entreprise</a> déroule les étapes de construction, et notre page <a href='/agents-ia-entreprise'>agents IA en entreprise</a> rassemble les usages par service."
+    },
+    {
+      "type": "p",
+      "text": "Le prix des modèles baisse à chaque génération. Le coût d'un agent se déplace donc vers ce qui ne baisse pas : la connaissance de vos processus, la qualité de vos données et le temps de ceux qui valident. C'est là que se décide sa rentabilité."
+    },
+    {
+      "type": "p",
+      "text": "<em>Sources des tarifs, consultées le 19 octobre 2026 : <a href='https://claude.com/pricing' target='_blank' rel='noopener'>page tarifs de Claude</a>, <a href='https://developers.openai.com/api/docs/pricing' target='_blank' rel='noopener'>page tarifs de l'API OpenAI</a>, <a href='https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio' target='_blank' rel='noopener'>page tarifs de Copilot Studio</a>, <a href='https://openai.com/index/premium-seats-chatgpt-business' target='_blank' rel='noopener'>annonce d'OpenAI sur les sièges ChatGPT Business</a>. Prix en dollars hors taxes, susceptibles d'évoluer.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Combien coûte un agent IA en entreprise en 2026 ?",
+      "a": "Un agent construit sur une plateforme coûte le prix des licences, de 20 à 30 dollars par utilisateur et par mois chez Anthropic, OpenAI ou Microsoft au 19 octobre 2026, plus le temps de configuration. Un agent sur mesure relié à vos logiciels se compte en dizaines de milliers d'euros chez Masteria, à partir de quelques milliers pour un prototype, et dépasse 100 000 € sur plusieurs logiciels ou plusieurs sites. La consommation mensuelle du modèle reste souvent la plus petite ligne du budget."
+    },
+    {
+      "q": "Quel est le coût mensuel d'un agent IA ?",
+      "a": "Il additionne les licences ou la consommation du modèle, l'hébergement, la supervision et la maintenance. Dans un exemple de mille demandes par mois à 20 000 tokens en entrée et 2 000 en sortie, la consommation revient à 3 dollars avec Haiku 5.5, 60 avec Sonnet 5.5 et 300 avec Fable 5.1, avant cache, aux tarifs relevés le 19 octobre 2026. Le temps humain de relecture pèse en général davantage que ces montants."
+    },
+    {
+      "q": "Combien coûte un agent IA sur mesure ?",
+      "a": "Chez Masteria, un prototype démarre à quelques milliers d'euros, un agent en production relié à vos systèmes se compte en dizaines de milliers d'euros, et un déploiement multi-logiciels ou multi-sites dépasse 100 000 € sans plafond fixé d'avance. Le forfait s'établit après un cadrage qui précise la tâche, les données et les actions soumises à validation."
+    },
+    {
+      "q": "Copilot Studio est-il inclus dans la licence Microsoft 365 Copilot ?",
+      "a": "En partie. Selon Microsoft, la licence Microsoft 365 Copilot inclut Copilot Studio pour créer et utiliser des agents internes à Microsoft 365. Publier un agent sur un canal externe ou le rendre accessible à des utilisateurs sans licence exige un plan Copilot Studio, à 200 dollars par mois pour 25 000 crédits ou en paiement à l'usage, au 19 octobre 2026."
+    },
+    {
+      "q": "Faut-il payer l'API en plus de l'abonnement Claude ou ChatGPT ?",
+      "a": "Non pour un agent construit dans l'interface : Claude Team et ChatGPT Business couvrent l'usage selon les limites de chaque siège, avec des crédits supplémentaires possibles côté OpenAI pour les agents d'espace de travail. Oui pour un agent sur mesure, qui appelle le modèle par l'API et paie chaque token. L'offre Claude Enterprise combine les deux : un prix par siège et une consommation facturée au tarif de l'API."
+    },
+    {
+      "q": "Quel modèle choisir pour réduire la facture ?",
+      "a": "Le plus petit modèle qui réussit votre jeu d'évaluation. Un petit modèle comme Haiku 5.5 ou gpt-6-luna suffit souvent pour classer, extraire ou trier ; Sonnet 5.5 ou gpt-6.1-sol couvrent la plupart des rédactions ; les grands modèles se réservent au raisonnement difficile. Le cache de prompt et le traitement par lots réduisent encore la facture."
+    },
+    {
+      "q": "Combien de temps faut-il pour déployer un agent IA en entreprise ?",
+      "a": "Un agent sans code sur une plateforme se construit en quelques jours, souvent pendant une formation. Un agent sur mesure en production demande quelques semaines à quelques mois, selon le nombre de logiciels à relier et le niveau de contrôle humain. Le déploiement par paliers, d'un petit groupe vers toute l'entreprise, ajoute un délai que le cadrage doit prévoir."
+    },
+    {
+      "q": "Comment calculer le retour sur investissement d'un agent IA ?",
+      "a": "Mesurez le temps de la tâche avant et après l'agent, sur des dossiers réels, en comptant la relecture et les erreurs à reprendre. Multipliez le gain par le volume mensuel, valorisez-le à votre coût horaire chargé, retranchez les coûts récurrents, puis divisez le coût de construction par ce gain net : vous obtenez le délai de retour."
+    },
+    {
+      "q": "Peut-on faire financer la création d'un agent IA ?",
+      "a": "Le développement et le conseil ne sont pas finançables par l'OPCO, car ils sortent du champ de la formation. La formation des personnes qui construisent ou utilisent l'agent peut l'être : Masteria, certifié Qualiopi, propose des formations à partir de 1 980 € HT la journée, prises en charge par l'OPCO de votre branche selon ses règles et ses fonds."
+    },
+    {
+      "q": "Un agent IA est-il rentable pour une PME ?",
+      "a": "Il l'est quand la tâche visée revient assez souvent pour que les minutes gagnées s'additionnent. Une PME démarre avec profit sur la plateforme qu'elle paie déjà, sur une seule tâche mesurée, avant d'investir dans un connecteur ou un agent sur mesure."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez chiffrer votre agent sur vos propres volumes ?",
+    "desc": "Masteria cadre la tâche, mesure le temps gagné sur un pilote et construit l'agent sur la voie la plus économe pour vous. Le code vous appartient.",
+    "buttons": [
+      {
+        "label": "Voir les prix d'un projet IA",
+        "href": "/prix-projet-ia",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre agent",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Prix d'un projet IA : ordres de grandeur par livrable",
+      "href": "/prix-projet-ia"
+    },
+    {
+      "label": "Agents IA en entreprise : les usages par service",
+      "href": "/agents-ia-entreprise"
+    },
+    {
+      "label": "Agence de développement IA",
+      "href": "/agence-developpement-ia"
+    },
+    {
+      "label": "Prix des abonnements Claude",
+      "href": "/claude-prix-abonnement"
+    },
+    {
+      "label": "Créer un agent IA en entreprise, étape par étape",
+      "href": "/blog/creer-un-agent-ia-entreprise"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : le budget d'un agent IA",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Token",
+          "description": "Unité de facturation des modèles de langage, un fragment de mot de quelques caractères."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Cache de prompt",
+          "description": "Mise en mémoire des instructions fixes d'un agent, relues à prix réduit."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Traitement par lots",
+          "description": "Envoi groupé de tâches non urgentes, facturé moitié prix chez Anthropic."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Connecteur MCP",
+          "description": "Branchement standard qui donne à un agent l'accès à un logiciel."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Jeu d'évaluation",
+          "description": "Série de cas réels dont on connaît la bonne réponse, rejouée à chaque modification de l'agent."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Crédit Copilot",
+          "description": "Unité de consommation des agents Copilot Studio, vendue en packs ou à l'usage."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Mesurer le retour sur investissement d'un agent IA",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Chronométrer la tâche avant l'agent"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Chronométrer la tâche après, relecture comprise"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Compter les dossiers ratés et leur coût"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Multiplier le gain par le volume mensuel"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Valoriser les heures et retrancher les coûts récurrents"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Calculer le délai de retour"
+        }
+      ]
+    }
+  ]
+}

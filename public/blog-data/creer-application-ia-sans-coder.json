@@ -1,0 +1,652 @@
+{
+  "slug": "creer-application-ia-sans-coder",
+  "title": "Créer une application avec l'IA sans coder en 2026 : quel outil choisir ?",
+  "metaTitle": "Créer une app avec l'IA sans coder en 2026 : quel outil ?",
+  "metaDesc": "Lovable, Bolt, Replit, v0, Claude ou ChatGPT : prix relevés le 19/10/2026, limites (sécurité, données, code) et moment de passer au sur-mesure.",
+  "tag": "Comparatif",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "23 min",
+  "formations": [
+    [
+      "Formation vibe coding",
+      "/formation-vibe-coding"
+    ],
+    [
+      "Formation Claude Code",
+      "/formation-claude-code"
+    ],
+    [
+      "Formation n8n",
+      "/formation-n8n"
+    ]
+  ],
+  "keywords": [
+    "créer une application avec l'IA sans coder",
+    "meilleur créateur d'applications IA 2026",
+    "Lovable",
+    "Lovable AI prix",
+    "Bolt",
+    "Replit",
+    "v0",
+    "Claude vibe coding",
+    "Claude Code vibe coding",
+    "Claude Design",
+    "ChatGPT Sites",
+    "vibe coding entreprise",
+    "définition automatisation sans code",
+    "no code IA"
+  ],
+  "excerpt": "Lovable, Bolt, Replit, v0, Claude ou ChatGPT : quel outil choisir pour créer une application sans coder en 2026, avec les prix relevés le 19 octobre, les limites de sécurité, de données et de propriété du code, et le moment où le sur-mesure s'impose.",
+  "intro": "Pour créer une application avec l'IA sans coder en 2026, choisissez l'outil d'après ce que vous construisez et d'après l'abonnement que votre entreprise paie déjà. Lovable et Bolt livrent un prototype ou un MVP (la première version d'un produit, réduite à l'essentiel) avec ses écrans, sa base de données et son hébergement ; Replit accompagne une application qui doit tourner et évoluer ; v0 soigne l'interface ; Claude et ChatGPT suffisent souvent pour un outil interne léger. Aucun ne dispense de vérifier la sécurité avant d'y verser des données réelles. Ce guide compare ces outils avec les prix relevés sur leurs pages officielles le 19 octobre 2026, détaille leurs limites et indique le moment où un développement sur mesure devient le choix raisonnable.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Lovable est le point d'entrée le plus direct pour un non-développeur : 25 € par mois en formule Pro au 19 octobre 2026, une application web complète et un code synchronisé avec GitHub. Bolt (25 dollars par mois) et Replit (20 dollars) jouent sur le même terrain, v0 (30 dollars par utilisateur) vise l'interface. Si votre entreprise paie déjà Claude, les artefacts, Claude Design et Claude Code dans l'onglet Code de l'application de bureau couvrent l'outil interne et le prototype sans abonnement supplémentaire ; ChatGPT fait de même avec Sites, ouvert aux formules Plus, Pro, Business et Enterprise. Le prix d'entrée pèse peu : la facture suit ensuite les corrections, le trafic et le stockage. Une application qui touche des données personnelles, l'ERP ou des clients externes appelle la relecture d'un développeur, puis souvent un développement sur mesure."
+    },
+    {
+      "type": "h2",
+      "text": "Le vibe coding consiste à décrire une application au lieu de l'écrire"
+    },
+    {
+      "type": "p",
+      "text": "Le vibe coding (construire un logiciel en le décrivant à une IA en langage courant) tient son nom d'Andrej Karpathy, membre fondateur d'OpenAI, qui a lancé l'expression en février 2025. La personne décrit les écrans, les données et les règles ; l'outil écrit le code, l'exécute et affiche le résultat ; la personne juge ce qu'elle voit et réclame des retouches. Le code existe bel et bien, en React, en Python ou en Kotlin selon les outils, mais celui qui le commande n'a pas à le lire pour avancer."
+    },
+    {
+      "type": "p",
+      "text": "Les créateurs d'applications IA se distinguent des outils sans code des années 2010, où l'on assemblait des blocs visuels dans l'éditeur d'un seul fournisseur. L'IA produit ici du code standard, que la plupart des plateformes laissent exporter vers GitHub (le service où les développeurs rangent et versionnent leur code). Cette différence décide de la suite du projet : un code exportable peut être repris par un développeur, un assemblage propriétaire se reconstruit le plus souvent de zéro."
+    },
+    {
+      "type": "h3",
+      "text": "Trois usages se prêtent à ces outils"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le prototype</strong> : une maquette cliquable qui montre une idée à un client, à une direction ou à un développeur, et recueille des réactions avant tout investissement.",
+        "<strong>L'outil interne</strong> : un calculateur, un formulaire de demande, un suivi de dossiers ou un tableau de bord utilisé par quelques collègues, sur des données que l'entreprise maîtrise.",
+        "<strong>Le MVP</strong> : la première version d'un produit, confiée à de vrais utilisateurs pour vérifier qu'elle répond à un besoin avant de financer une version robuste."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces trois usages ont un point commun : on accepte qu'une partie de l'application soit refaite plus tard. Une application de production, ouverte au public, reliée à la paie ou à un paiement, relève d'une autre discipline, que la suite de ce guide aborde."
+    },
+    {
+      "type": "h2",
+      "text": "Chaque outil vise un profil et un usage différents"
+    },
+    {
+      "type": "p",
+      "text": "Le tableau rassemble les outils que les entreprises comparent en 2026, avec leur formule payante d'entrée relevée sur les pages tarifaires officielles le 19 octobre 2026. Les montants sont ceux qu'affiche chaque éditeur, en dollars ou en euros."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Outil",
+        "Ce qu'il construit",
+        "Profil visé",
+        "Formule payante d'entrée",
+        "Récupérer le code"
+      ],
+      "rows": [
+        [
+          "Lovable",
+          "Application web complète : écrans, base de données, hébergement",
+          "Non-développeur, fondateur, équipe produit",
+          "Pro : 25 € par mois pour 100 crédits",
+          "Synchronisation GitHub dans les deux sens, sur toutes les formules"
+        ],
+        [
+          "Bolt",
+          "Application ou site web construit dans le navigateur, bases de données et hébergement compris",
+          "Non-développeur, agence, équipe produit",
+          "Pro : 25 dollars par mois, à partir de 10 millions de tokens",
+          "Archive ZIP ou dépôt GitHub"
+        ],
+        [
+          "Replit",
+          "Application construite par un agent qui code, teste et publie",
+          "Créateur qui veut faire évoluer son application",
+          "Core : 20 dollars par mois (18 en annuel)",
+          "Code visible et modifiable dans l'éditeur Replit"
+        ],
+        [
+          "v0 (Vercel)",
+          "Interfaces web en React et Next.js, déployées sur Vercel",
+          "Équipe produit ou design qui travaille avec des développeurs",
+          "Plus : 30 dollars par utilisateur et par mois",
+          "Synchronisation GitHub dès la formule gratuite"
+        ],
+        [
+          "Claude (Anthropic)",
+          "Artefacts interactifs, maquettes et prototypes avec Claude Design, application complète avec Claude Code",
+          "Entreprise déjà abonnée à Claude",
+          "Pro : 20 dollars par mois ; Team : 25 dollars par poste (20 en annuel)",
+          "Claude Code écrit dans un dossier de votre poste ou dans un dépôt"
+        ],
+        [
+          "ChatGPT (OpenAI)",
+          "Sites web et applications légères hébergés par OpenAI, avec Sites",
+          "Entreprise déjà abonnée à ChatGPT",
+          "Plus : 23 € par mois ; Business : 26 € par poste (21 en annuel)",
+          "Site hébergé chez OpenAI, modifié depuis ChatGPT"
+        ],
+        [
+          "Google AI Studio",
+          "Application web (React et Node.js) ou Android, publiée sur Cloud Run",
+          "Profil curieux prêt à ouvrir un compte Google Cloud",
+          "Deux applications publiées sans compte de facturation (offre Starter de Google Cloud)",
+          "Synchronisation GitHub dans les deux sens, export ZIP"
+        ],
+        [
+          "Base44 (groupe Wix)",
+          "Application avec base de données et services intégrés",
+          "Débutant, petite structure",
+          "Starter : 16 dollars par mois en facturation annuelle",
+          "Synchronisation GitHub à partir de la formule Builder (40 dollars par mois en annuel)"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Microsoft et Mistral AI ajoutent la construction d'applications à leurs assistants, avec un périmètre encore étroit, décrit plus bas. Cursor, l'éditeur de code piloté par l'IA, s'adresse à ceux qui acceptent d'ouvrir les fichiers : il relève de notre comparatif <a href='/meilleure-ia-pour-coder'>de la meilleure IA pour coder</a>, écrit pour les développeurs."
+    },
+    {
+      "type": "h2",
+      "text": "Lovable, Bolt, Replit et v0 livrent une application de bout en bout"
+    },
+    {
+      "type": "p",
+      "text": "Ces quatre plateformes partagent un même principe : une conversation d'un côté de l'écran, l'application qui prend forme de l'autre, et un bouton pour la publier sur une adresse web. Elles diffèrent par leur manière de facturer et par ce qu'elles vous laissent emporter."
+    },
+    {
+      "type": "h3",
+      "text": "Lovable reste l'entrée la plus directe pour un non-développeur"
+    },
+    {
+      "type": "p",
+      "text": "Lovable, éditeur suédois, construit à partir d'une description une application web avec ses écrans, sa base de données et son hébergement (Lovable Cloud). La formule gratuite accorde 5 crédits par jour, dans la limite de 30 par mois. La formule Pro coûte 25 € par mois pour 100 crédits mensuels, avec domaines personnalisés et rôles par utilisateur ; la formule Business, à 50 € par mois, ajoute l'authentification unique (SSO, la connexion avec le compte de l'entreprise), la publication interne et un centre de sécurité. L'offre Enterprise propose l'inférence dans l'Union européenne (le calcul du modèle sur des serveurs européens) et des analyses de sécurité planifiées."
+    },
+    {
+      "type": "p",
+      "text": "Deux réponses de la foire aux questions de Lovable méritent l'attention d'un dirigeant. Le code vous appartient, sous réserve des droits des tiers sur les modèles d'IA sous-jacents. L'hébergement reste gratuit pour la plupart des petites applications, puis se paie en crédits quand le trafic ou la taille augmente. Les crédits achetés en supplément coûtent 15 dollars les 50 en formule Pro, soit 0,30 dollar l'unité, et le double en Business. La documentation précise enfin que le mode de facturation actuel de la conversation s'applique jusqu'au 31 octobre 2026 : la grille bouge, votre budget avec elle."
+    },
+    {
+      "type": "h3",
+      "text": "Bolt et Replit facturent le travail de l'agent"
+    },
+    {
+      "type": "p",
+      "text": "Bolt fonctionne dans le navigateur. Sa formule gratuite plafonne à 300 000 tokens par jour et un million par mois (le token, fragment de mot, sert d'unité de consommation aux modèles). La formule Pro, à 25 dollars par mois, démarre à 10 millions de tokens, reporte ceux qui restent et ajoute domaines personnalisés et partage privé ; la formule Teams coûte 30 dollars par membre. Le code se télécharge en archive ZIP ou se synchronise avec GitHub."
+    },
+    {
+      "type": "p",
+      "text": "Replit confie davantage à l'agent, qui écrit le code, gère la base de données et publie l'application. La formule Core coûte 20 dollars par mois (18 en annuel), consommation de 20 dollars comprise ; la formule Pro démarre à 100 dollars et monte par paliers jusqu'à 2 000 dollars. Au-delà de l'enveloppe, Replit facture à l'effort : plus l'agent travaille longtemps sur une demande, plus elle coûte. Fixez dès le premier jour le budget mensuel plafond que propose l'outil, qui suspend les services payants à l'usage une fois atteint."
+    },
+    {
+      "type": "h3",
+      "text": "v0 soigne l'interface et facture au token"
+    },
+    {
+      "type": "p",
+      "text": "v0, l'outil de Vercel, produit des interfaces en React et Next.js (deux technologies web courantes chez les développeurs) et les déploie sur l'hébergement de Vercel. La formule gratuite se limite à 7 messages par jour ; la formule Plus coûte 30 dollars par utilisateur et par mois, crédits de 30 dollars inclus ; la formule Business, à 100 dollars, exclut par défaut vos échanges de l'entraînement des modèles. Au-delà, la consommation se paie au million de tokens, de 0,20 dollar en entrée avec v0 Mini à 5 dollars avec v0 Max. v0 donne sa pleine mesure quand un développeur reprend ensuite le code, synchronisé avec GitHub dès la formule gratuite."
+    },
+    {
+      "type": "h2",
+      "text": "Claude couvre le vibe coding à trois niveaux : artefacts, Claude Design et Claude Code"
+    },
+    {
+      "type": "p",
+      "text": "Une entreprise abonnée à Claude dispose de trois outils pour construire sans coder, du petit outil jetable à l'application versionnée. Les artefacts et Claude Design figurent jusque dans la formule gratuite ; Claude Code est inclus dans toutes les formules payantes, de Pro (20 dollars par mois, 17 en annuel) à Team (25 dollars par poste, 20 en annuel) et Enterprise, selon la page tarifs d'Anthropic consultée le 19 octobre 2026."
+    },
+    {
+      "type": "h3",
+      "text": "Les artefacts transforment une conversation en petit outil partagé"
+    },
+    {
+      "type": "p",
+      "text": "Un artefact est une réalisation que Claude affiche à côté de la conversation : un document, un tableau de bord, une présentation ou un petit outil interactif. Un artefact peut interroger Claude et, en formule Pro, Max, Team ou Enterprise, se brancher sur les applications de chaque utilisateur et garder jusqu'à 20 Mo de texte d'une session à l'autre. Il reste privé tant que vous ne le partagez pas, et ce qu'il consomme s'impute à l'abonnement de la personne qui s'en sert. Notre <a href='/artefacts-claude-entreprise'>guide des artefacts Claude</a> en détaille le paramétrage."
+    },
+    {
+      "type": "p",
+      "text": "Les artefacts suffisent pour un calculateur de devis, un simulateur de planning ou un tableau de bord tiré d'un export. Ils montrent leurs limites quand l'outil doit gérer des droits différents selon les utilisateurs, stocker autre chose que du texte ou dialoguer avec le système d'information. Une ingénieure pédagogique formée à Claude avec Masteria en septembre 2026 a cité parmi les apports les plus utiles « la création d'artefacts par la formatrice adaptée à nos besoins »."
+    },
+    {
+      "type": "h3",
+      "text": "Claude Design passe de la maquette au prototype"
+    },
+    {
+      "type": "p",
+      "text": "Claude Design, lancé le 17 avril 2026 par Anthropic Labs en version de recherche, produit des maquettes, des prototypes cliquables, des présentations et des fiches d'une page à partir d'une description. On l'affine par la conversation, par des commentaires posés sur l'écran ou par des curseurs que Claude génère. Le résultat s'exporte en PDF, en PowerPoint, vers Canva ou en fichiers HTML autonomes. Quand la maquette convient, Claude Design prépare un dossier de passage que Claude Code reprend sur une seule instruction : l'écran validé devient le point de départ de l'application."
+    },
+    {
+      "type": "h3",
+      "text": "Claude Code construit l'application dans l'onglet Code de l'application de bureau"
+    },
+    {
+      "type": "p",
+      "text": "Claude Code est l'agent de code d'Anthropic (un programme qui lit, écrit et exécute du code jusqu'à atteindre l'objectif fixé). Né dans le terminal, il s'utilise aussi dans l'onglet Code de l'application de bureau Claude. Chaque session y travaille dans un dossier de projet, sur votre ordinateur ou dans le cloud d'Anthropic ; Claude peut lancer l'application, l'ouvrir dans un navigateur intégré, contrôler chaque modification par une capture d'écran et corriger ce qu'il repère. Le mode Plan lui fait proposer une démarche avant de toucher au moindre fichier, et d'autres modes règlent ce qu'il peut faire sans demander."
+    },
+    {
+      "type": "p",
+      "text": "Pour un non-développeur, Claude Code est l'outil le plus complet de cette liste, et le plus exigeant. Le code reste sur votre poste ou dans votre dépôt : vous gagnez la propriété et la réversibilité, vous perdez le bouton « publier » des ateliers en ligne, et la mise en ligne passe par un hébergeur que quelqu'un choisit et configure. Le pôle formation d'un éditeur de logiciels, abonné à Claude Team, a pris Claude Code en main pendant ses deux jours de formation avec Masteria, en septembre 2026. Pour départager les deux outils d'Anthropic, lisez notre <a href='/claude-cowork-vs-claude-code'>comparatif Claude Cowork ou Claude Code</a> ; un développeur qui veut déléguer des tâches sur sa propre base de code trouvera la méthode dans la <a href='/formation-claude-code'>formation Claude Code</a>."
+    },
+    {
+      "type": "h2",
+      "text": "ChatGPT construit des sites et des applications légères avec Sites"
+    },
+    {
+      "type": "p",
+      "text": "OpenAI a ajouté à ChatGPT la fonction Sites, qui crée, prévisualise, publie et partage des sites interactifs et des applications légères. On la lance depuis le mode Work de ChatGPT sur le web, ou depuis Work et Codex dans l'application de bureau, en demandant un site ou en écrivant @Sites. Selon le centre d'aide d'OpenAI mis à jour le 18 octobre 2026, Sites est ouvert aux comptes Plus et Pro et aux espaces Business et Enterprise compatibles ; il est activé par défaut dans les espaces Business, sous le contrôle des administrateurs."
+    },
+    {
+      "type": "p",
+      "text": "La construction et chaque modification consomment l'enveloppe Codex de l'abonnement ; l'hébergement, le trafic et le stockage se décomptent à part, avec jusqu'à 10 Go de base de données par site. Chaque déploiement produit une adresse de production : enregistrez une version et relisez-la avant de publier, comme le recommande OpenAI. Un nouveau site reste réservé à son propriétaire et aux administrateurs jusqu'à ce que l'on élargisse l'accès, et dans les espaces Business ou Enterprise, chaque visiteur passe par ses propres comptes connectés et ses propres droits."
+    },
+    {
+      "type": "p",
+      "text": "ChatGPT Plus coûte 23 € par mois en France. Le poste Business standard coûte 26 € par mois, ou 21 € en facturation annuelle, et ses données professionnelles ne servent pas à l'entraînement par défaut. Les formules Free et Go (8 € par mois) n'ont pas accès à Sites."
+    },
+    {
+      "type": "h2",
+      "text": "Microsoft, Google et Mistral AI font entrer la construction d'applications dans leurs suites"
+    },
+    {
+      "type": "p",
+      "text": "Microsoft a d'abord proposé App Builder, un agent de Copilot qui génère des applications à partir d'une description. Sa documentation en liste les limites : données lues et modifiées seulement dans Microsoft Lists, code impossible à retoucher à la main, interface en anglais uniquement. La page, mise à jour le 16 octobre 2026, oriente désormais vers la compétence /app de Copilot Cowork, réservée au programme Frontier (l'accès anticipé de Microsoft aux fonctions en test), et annonce la construction d'applications dans Copilot Studio. Microsoft facture la construction et l'exécution de ces applications à l'usage."
+    },
+    {
+      "type": "p",
+      "text": "Google AI Studio propose un mode Build qui produit une application web en React et Node.js, ou une application Android, puis la publie sur Cloud Run, le service d'hébergement de Google Cloud. L'offre Starter de Google Cloud permet de publier jusqu'à deux applications sans compte de facturation ; au-delà, il faut un projet Google Cloud avec facturation active. Le code se synchronise dans les deux sens avec GitHub, selon la documentation de Google mise à jour en août et en septembre 2026."
+    },
+    {
+      "type": "p",
+      "text": "Mistral AI a ajouté le 22 septembre 2026 Mini App Canvas à Vibe, son assistant : une application ou un tableau de bord interactif se construit à partir d'une seule demande, se modifie dans la conversation et se partage. Ces outils intégrés aux suites bureautiques visent l'outil personnel ou d'équipe, rarement le produit que l'on vend."
+    },
+    {
+      "type": "h2",
+      "text": "Cinq limites décident si l'application peut recevoir de vraies données"
+    },
+    {
+      "type": "p",
+      "text": "Ces plateformes livrent souvent une première version qui fonctionne dès la première séance de travail. Elles laissent à l'entreprise les décisions qui l'engagent : qui accède à quoi, où partent les données, qui répare, à qui appartient le code et combien coûtera la croissance."
+    },
+    {
+      "type": "h3",
+      "text": "Une application qui fonctionne peut laisser ses données ouvertes"
+    },
+    {
+      "type": "p",
+      "text": "En juillet 2025, l'éditeur de sécurité Veracode a confié 80 tâches de programmation à plus de 100 modèles de langage : le code produit comportait une faille de sécurité dans 45 % des cas, soit près d'un cas sur deux (<a href='https://www.veracode.com/press-release/ai-generated-code-poses-major-security-risks-in-nearly-half-of-all-development-tasks-veracode-research-reveals/' target='_blank' rel='noopener'>communiqué de Veracode</a>). La même année, la vulnérabilité <a href='https://nvd.nist.gov/vuln/detail/CVE-2025-48757' target='_blank' rel='noopener'>CVE-2025-48757</a> a visé des applications construites avec Lovable dont les tables pouvaient être lues, voire modifiées, sans authentification, faute d'une sécurité au niveau des lignes suffisante (le réglage qui limite chaque utilisateur à ses propres données). Lovable conteste cette qualification, au motif que chaque client répond de la protection des données de son application."
+    },
+    {
+      "type": "p",
+      "text": "Avant d'ouvrir une application à des collègues, faites contrôler quatre points : la liste des personnes autorisées à se connecter, le cloisonnement des données entre utilisateurs, l'emplacement des clés d'accès aux services (les mots de passe techniques de l'application) et la réaction de l'outil face à une saisie incohérente. Le centre de sécurité de Lovable Business et les analyses planifiées de son offre Enterprise complètent cette relecture humaine sans la remplacer."
+    },
+    {
+      "type": "h3",
+      "text": "Les données suivent le contrat de l'outil"
+    },
+    {
+      "type": "p",
+      "text": "Une application construite sur une plateforme envoie vos descriptions, vos fichiers d'exemple et parfois vos données réelles aux serveurs de l'éditeur et de ses fournisseurs de modèles. Les formules individuelles offrent moins de garanties que les formules d'entreprise : en Free, Go, Plus ou Pro, OpenAI utilise les contenus de ChatGPT pour l'entraînement sauf refus de votre part, v0 n'exclut vos échanges par défaut qu'à partir de Business, et Anthropic n'utilise pas par défaut les données de ses offres commerciales (Team, Enterprise, API) pour entraîner ses modèles. Dès que des données personnelles entrent dans l'application, le RGPD s'applique : base légale, registre des traitements, contrat de sous-traitance avec l'éditeur, durée de conservation."
+    },
+    {
+      "type": "h3",
+      "text": "La maintenance revient à quelqu'un, que vous l'ayez prévu ou non"
+    },
+    {
+      "type": "p",
+      "text": "Une application vit dans un environnement qui bouge : bibliothèques de code mises à jour, failles découvertes après coup, conditions de l'éditeur revues, modèles d'IA remplacés. La personne qui l'a décrite part en congé ou change de poste. Avant la mise en service, nommez qui surveille l'outil, qui le corrige et où le code est sauvegardé. Une application sans propriétaire nommé reste en panne le jour où elle casse."
+    },
+    {
+      "type": "h3",
+      "text": "La propriété du code se vérifie avant le premier écran"
+    },
+    {
+      "type": "p",
+      "text": "Lovable déclare que le code vous appartient et le synchronise avec GitHub sur toutes ses formules ; le téléchargement direct de l'archive demande une formule payante. Bolt permet l'export en archive et la synchronisation GitHub, v0 la synchronisation dès sa formule gratuite, Base44 la synchronisation dans les deux sens à partir de sa formule Builder, Google AI Studio la synchronisation et le téléchargement. App Builder de Microsoft interdit au contraire toute retouche manuelle du code, et un site ChatGPT vit sur l'hébergement d'OpenAI. Un code déposé dans un dépôt de l'entreprise reste le meilleur gage de réversibilité : il permet de changer d'outil, de confier la suite à un développeur ou d'héberger ailleurs."
+    },
+    {
+      "type": "h3",
+      "text": "Le coût suit les corrections, le trafic et le stockage"
+    },
+    {
+      "type": "p",
+      "text": "Le prix d'entrée, de 20 à 30 dollars ou euros par mois, couvre l'exploration. La facture suit ensuite trois variables : les demandes de correction, qui consomment crédits ou tokens, le trafic de l'application publiée et le volume de données stockées. Une boucle de corrections qui tourne en rond sur un bogue coûte autant qu'une fonction nouvelle. Les postes d'équipe s'ajoutent quand le groupe s'agrandit : 30 dollars par membre chez Bolt, 100 dollars par utilisateur en Business chez v0. Posez un plafond de dépense quand l'outil le propose, et relisez la consommation à la fin du premier mois, avant d'étendre l'outil à toute une équipe."
+    },
+    {
+      "type": "h2",
+      "text": "Une application et une automatisation sans code répondent à deux besoins"
+    },
+    {
+      "type": "p",
+      "text": "L'automatisation sans code consiste à relier des logiciels existants par un scénario construit à la souris : un déclencheur (un mail reçu, une ligne ajoutée dans un tableur, un formulaire envoyé) lance une suite d'actions dans d'autres outils, sans écran nouveau ni ligne de code. n8n, Make, Zapier et Power Automate en sont les représentants les plus connus. Une application crée de son côté un outil que des personnes ouvrent : des écrans, des utilisateurs, des données propres."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Votre besoin",
+        "Ce qu'il faut",
+        "Outils typiques"
+      ],
+      "rows": [
+        [
+          "Verser chaque demande du formulaire du site dans le CRM et prévenir le commercial",
+          "Une automatisation",
+          "n8n, Make, Zapier"
+        ],
+        [
+          "Un écran où l'équipe saisit ses demandes et suit leur statut",
+          "Une application",
+          "Lovable, Claude Code, Sites de ChatGPT"
+        ],
+        [
+          "Résumer chaque mail entrant et le classer dans un tableur",
+          "Une automatisation qui appelle un modèle d'IA",
+          "n8n, Make"
+        ],
+        [
+          "Un simulateur de prix montré à un client en rendez-vous",
+          "Une application, ou un artefact pour une version légère",
+          "Claude, Lovable, v0"
+        ],
+        [
+          "Un portail où les clients déposent leurs documents et suivent leur dossier",
+          "Une application de production, avec comptes et sécurité",
+          "Développement sur mesure, à partir d'un prototype le cas échéant"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les deux se combinent souvent : l'application recueille la donnée, l'automatisation la fait circuler entre les logiciels. À l'entrée, les prix relevés le 19 octobre 2026 restent modestes. n8n Cloud coûte 20 € par mois en facturation annuelle pour 2 500 exécutions de scénario (formule Starter) et 50 € pour 10 000 (Pro), et son édition communautaire s'installe sur vos propres serveurs. Make offre 1 000 crédits par mois en formule gratuite, puis 9 dollars par mois pour 10 000 crédits en formule Core, facturation annuelle ; son assistant Maia construit les scénarios à partir d'une conversation. Notre <a href='/formation-n8n'>formation n8n</a> traite ce versant."
+    },
+    {
+      "type": "h2",
+      "text": "Le développement sur mesure s'impose au premier signal de production"
+    },
+    {
+      "type": "p",
+      "text": "Le prototype construit sans coder garde sa valeur quand le projet change d'échelle : il sert de cahier des charges vivant, que les utilisateurs ont déjà manipulé, et son code déposé dans GitHub donne un point de départ aux développeurs. Six signaux indiquent qu'il est temps de confier la suite à une équipe de développement."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "L'application traite des données personnelles de clients, de salariés ou de patients, ou des données que l'entreprise ne peut pas se permettre de perdre.",
+        "Elle doit écrire dans l'ERP (le logiciel de gestion de l'entreprise), le CRM, la paie ou la comptabilité, au-delà d'une simple lecture.",
+        "Des utilisateurs extérieurs s'y connectent : clients, fournisseurs, partenaires.",
+        "Elle encaisse un paiement ou déclenche une action qui engage l'entreprise.",
+        "Une panne d'une journée gênerait l'activité, ce qui suppose surveillance, sauvegardes et astreinte.",
+        "La facture de crédits ou de tokens dépasse ce que coûterait l'entretien d'un code hébergé chez vous."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Chez un distributeur de solutions photovoltaïques accompagné par Masteria, où tout passe par Odoo, la feuille de route prévoit trois assistants construits sur les fichiers de l'entreprise et branchés sur l'ERP par paliers, plus un tableau de bord pour la direction. Un outil qui lit et écrit dans le logiciel de gestion relève du développement, avec des droits limités, un journal des actions et des tests sur des cas réels. Notre <a href='/agence-developpement-ia'>agence de développement IA</a> part de votre prototype quand il existe, et la page <a href='/outils-ia-sur-mesure'>outils IA sur mesure</a> détaille qui possède l'outil, où vivent les données et qui le maintient."
+    },
+    {
+      "type": "h2",
+      "text": "Cinq questions désignent l'outil de départ"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Qui utilisera l'application ?</strong> Pour vous seul ou quelques collègues, un artefact Claude, un site ChatGPT ou un atelier en ligne suffisent. Pour des clients ou le public, prévoyez une relecture de sécurité dès le départ.",
+        "<strong>Quelles données y entreront ?</strong> Des données d'exemple ou publiques laissent le choix libre. Des données personnelles imposent une formule d'entreprise, un contrat de sous-traitance et une vérification des droits d'accès.",
+        "<strong>Quel abonnement l'entreprise paie-t-elle déjà ?</strong> Claude Team, ChatGPT Business ou Microsoft 365 Copilot couvrent souvent le premier outil interne, sans compte supplémentaire à administrer.",
+        "<strong>Qui maintiendra l'outil ?</strong> Sans personne capable de lire le code, préférez une plateforme qui héberge et sauvegarde. Avec un développeur en interne, Claude Code ou un export GitHub lui laissent la main.",
+        "<strong>Comment récupérerez-vous le code ?</strong> Vérifiez l'export avant de construire : synchronisation GitHub, archive téléchargeable ou dépendance totale à la plateforme."
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Votre situation",
+        "Point de départ conseillé",
+        "Pourquoi"
+      ],
+      "rows": [
+        [
+          "Vous voulez montrer une idée de produit à des clients la semaine prochaine",
+          "Lovable ou Bolt",
+          "Application complète et publiée en ligne, sans installation"
+        ],
+        [
+          "L'entreprise paie Claude Team et votre service a besoin d'un outil de suivi",
+          "Un artefact, puis Claude Code si l'outil grandit",
+          "Aucun abonnement de plus, données couvertes par les conditions commerciales"
+        ],
+        [
+          "L'entreprise paie ChatGPT Business et l'outil doit lire les applications connectées de chacun",
+          "Sites",
+          "Chaque visiteur passe par ses propres comptes et droits"
+        ],
+        [
+          "Un développeur reprendra l'interface",
+          "v0 ou Claude Design",
+          "Interface en React synchronisée avec GitHub, ou dossier de passage vers Claude Code"
+        ],
+        [
+          "Vous voulez publier une première application sans payer",
+          "Google AI Studio ou formule gratuite de Lovable",
+          "Publication possible sans abonnement"
+        ],
+        [
+          "Vous enchaînez des tâches entre logiciels existants",
+          "n8n ou Make",
+          "Le besoin relève de l'automatisation"
+        ],
+        [
+          "L'outil touchera l'ERP, des données sensibles ou des clients",
+          "Un prototype, puis un développement sur mesure",
+          "Sécurité, maintenance et responsabilité à organiser"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire pour comparer les outils"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Vibe coding</strong> : construire un logiciel en le décrivant en langage courant à une IA qui écrit le code.",
+        "<strong>Créateur d'applications IA</strong> : plateforme en ligne qui génère, héberge et publie une application à partir d'une conversation, comme Lovable, Bolt, Replit, v0 ou Base44.",
+        "<strong>Agent de code</strong> : programme d'IA qui lit, écrit et exécute du code dans un projet jusqu'à atteindre un objectif, comme Claude Code ou Codex.",
+        "<strong>Artefact</strong> : réalisation interactive que Claude affiche à côté de la conversation et que l'on peut partager.",
+        "<strong>MVP</strong> : première version d'un produit, réduite à l'essentiel, confiée à de vrais utilisateurs.",
+        "<strong>Crédit</strong> : unité de consommation que la plateforme décompte à chaque demande ou action de l'agent.",
+        "<strong>Sécurité au niveau des lignes</strong> : réglage de la base de données qui limite chaque utilisateur à ses propres enregistrements.",
+        "<strong>Automatisation sans code</strong> : scénario visuel qui relie des logiciels existants, d'un déclencheur à une suite d'actions, sans interface nouvelle."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "La méthode de travail compte autant que l'outil"
+    },
+    {
+      "type": "p",
+      "text": "Un premier écran s'obtient vite. Tenir une application dans la durée demande quatre gestes : décrire le besoin sans ambiguïté, tester sur des cas dont on connaît la réponse, sauvegarder des versions et repérer ce qui exige un développeur. La <a href='/formation-vibe-coding'>formation vibe coding</a> de Masteria les fait pratiquer en deux jours à des personnes qui n'ont jamais programmé, sur l'outil retenu avec l'entreprise ; la journée de session est facturée à partir de 1 980 € HT, la préparation propre à votre projet s'ajoutant au devis."
+    },
+    {
+      "type": "p",
+      "text": "Le vibe coding a ouvert la construction de logiciels à des personnes qui n'en écrivaient pas. La responsabilité de ce qui est publié reste entière : la personne qui met une application en ligne répond de ses données, quel que soit l'outil qui a écrit le code. Choisir un outil revient d'abord à décider qui, dans l'entreprise, tiendra ce rôle."
+    },
+    {
+      "type": "p",
+      "text": "<em>Sources des prix et des fonctions, consultées le 19 octobre 2026 : <a href='https://lovable.dev/pricing' target='_blank' rel='noopener'>tarifs de Lovable</a> et <a href='https://docs.lovable.dev/introduction/plans-and-credits' target='_blank' rel='noopener'>documentation des crédits</a>, <a href='https://bolt.new/pricing' target='_blank' rel='noopener'>tarifs de Bolt</a>, <a href='https://replit.com/pricing' target='_blank' rel='noopener'>tarifs de Replit</a>, <a href='https://v0.app/pricing' target='_blank' rel='noopener'>tarifs de v0</a>, <a href='https://claude.com/pricing' target='_blank' rel='noopener'>tarifs de Claude</a>, <a href='https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them' target='_blank' rel='noopener'>aide d'Anthropic sur les artefacts</a>, <a href='https://www.anthropic.com/news/claude-design-anthropic-labs' target='_blank' rel='noopener'>annonce de Claude Design</a>, <a href='https://code.claude.com/docs/en/desktop' target='_blank' rel='noopener'>documentation de Claude Code pour l'application de bureau</a>, <a href='https://chatgpt.com/fr-FR/pricing/' target='_blank' rel='noopener'>tarifs de ChatGPT</a>, <a href='https://help.openai.com/en/articles/20001339-creating-and-using-chatgpt-sites' target='_blank' rel='noopener'>aide d'OpenAI sur Sites</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/responsible-ai/faq-app-builder' target='_blank' rel='noopener'>FAQ d'App Builder</a>, <a href='https://ai.google.dev/gemini-api/docs/aistudio-build-mode' target='_blank' rel='noopener'>mode Build de Google AI Studio</a>, <a href='https://base44.com/pricing' target='_blank' rel='noopener'>tarifs de Base44</a>, <a href='https://docs.mistral.ai/resources/release-notes' target='_blank' rel='noopener'>notes de version de Mistral AI</a>, <a href='https://n8n.io/pricing/' target='_blank' rel='noopener'>tarifs de n8n</a>, <a href='https://www.make.com/en/pricing' target='_blank' rel='noopener'>tarifs de Make</a>. Prix susceptibles d'évoluer.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quel est le meilleur créateur d'applications IA en 2026 ?",
+      "a": "Le meilleur outil dépend de ce que vous construisez. Pour une application web complète sans coder, Lovable reste le point d'entrée le plus direct, à 25 € par mois en formule Pro au 19 octobre 2026 ; Bolt et Replit jouent sur le même terrain, v0 soigne l'interface. Si votre entreprise paie déjà Claude ou ChatGPT, essayez d'abord leurs outils intégrés (artefacts, Claude Code, Sites)."
+    },
+    {
+      "q": "Qu'est-ce que Lovable et combien coûte-t-il ?",
+      "a": "Lovable est une plateforme suédoise qui construit une application web, base de données et hébergement compris, à partir d'une description. Au 19 octobre 2026, la formule gratuite accorde 5 crédits par jour, la formule Pro coûte 25 € par mois pour 100 crédits et la formule Business 50 €, avec SSO. Le code vous appartient et se synchronise avec GitHub."
+    },
+    {
+      "q": "Peut-on faire du vibe coding avec Claude ?",
+      "a": "Oui, à trois niveaux : les artefacts pour un petit outil interactif dans la conversation, Claude Design pour les maquettes et prototypes, Claude Code pour une application complète, construite dans un dossier de projet depuis l'onglet Code de l'application de bureau. Claude Code est inclus dans toutes les formules payantes, dès Pro à 20 dollars par mois."
+    },
+    {
+      "q": "Claude Code convient-il à une personne qui ne sait pas coder ?",
+      "a": "Conçu pour les développeurs, il devient accessible à un profil curieux dans l'onglet Code de l'application de bureau : Claude lance l'application, la contrôle dans un navigateur intégré et corrige ce qu'il repère. Il faut en revanche choisir un hébergement et relire les autorisations qu'il demande. Pour un premier prototype sans installation, Lovable reste plus simple."
+    },
+    {
+      "q": "Quelle est la définition de l'automatisation sans code ?",
+      "a": "L'automatisation sans code relie des logiciels existants par un scénario construit visuellement : un déclencheur, comme un formulaire reçu, lance une suite d'actions dans d'autres outils, sans écrire de code ni créer d'écran. n8n, Make, Zapier et Power Automate en sont les outils les plus connus. Une application crée de son côté un outil que des personnes ouvrent."
+    },
+    {
+      "q": "Une application créée avec Lovable ou Bolt est-elle sûre ?",
+      "a": "Elle l'est autant que les réglages vérifiés par la personne qui la publie. En juillet 2025, Veracode a relevé une faille de sécurité dans 45 % des cas, sur des tâches confiées à plus de 100 modèles. Avant d'y verser des données réelles, contrôlez connexions, cloisonnement des données et clés d'accès, puis faites relire l'application par un développeur."
+    },
+    {
+      "q": "À qui appartient le code d'une application générée par l'IA ?",
+      "a": "Tout dépend des conditions de chaque plateforme. Lovable indique que le code vous appartient, sous réserve des droits des tiers sur les modèles, et le synchronise avec GitHub ; Bolt, v0, Base44 et Google AI Studio permettent aussi l'export. App Builder de Microsoft interdit toute retouche manuelle du code. Exigez un export vers un dépôt de l'entreprise avant de construire."
+    },
+    {
+      "q": "Peut-on créer une application avec l'IA gratuitement ?",
+      "a": "Oui, pour essayer. Au 19 octobre 2026, Lovable accorde 5 crédits par jour, Bolt un million de tokens par mois, v0 sept messages par jour et Google AI Studio deux applications publiées sans compte de facturation ; la formule gratuite de Claude inclut les artefacts et Claude Design. Ces offres suffisent pour un prototype, rarement pour un outil quotidien d'équipe."
+    },
+    {
+      "q": "Quand faut-il passer à un développement sur mesure ?",
+      "a": "Dès que l'application traite des données personnelles ou sensibles, écrit dans l'ERP, le CRM ou la paie, accueille des utilisateurs extérieurs, encaisse un paiement ou ne peut pas tomber en panne. Le prototype sert alors de cahier des charges, et son code exporté de point de départ. Masteria reprend ce type de projet, le plus souvent au forfait."
+    },
+    {
+      "q": "Faut-il se former pour créer une application sans coder ?",
+      "a": "Un premier écran s'obtient vite ; tenir une application dans la durée demande une méthode : demande précise, tests sur des cas connus, versions sauvegardées, vérification de la sécurité. La formation vibe coding de Masteria couvre ces gestes en deux jours, à partir de 1 980 € HT la journée de session, préparation en sus."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez construire votre premier outil sans coder ?",
+    "desc": "Masteria forme vos équipes au vibe coding sur l'outil compatible avec vos règles de données, puis reprend le prototype en développement quand il doit passer en production.",
+    "buttons": [
+      {
+        "label": "Voir la formation vibe coding",
+        "href": "/formation-vibe-coding",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre application",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Formation vibe coding : construire un outil sans être développeur",
+      "href": "/formation-vibe-coding"
+    },
+    {
+      "label": "Formation Claude Code",
+      "href": "/formation-claude-code"
+    },
+    {
+      "label": "Meilleure IA pour coder en 2026",
+      "href": "/meilleure-ia-pour-coder"
+    },
+    {
+      "label": "Claude Cowork ou Claude Code : lequel utiliser ?",
+      "href": "/claude-cowork-vs-claude-code"
+    },
+    {
+      "label": "Agence de développement IA",
+      "href": "/agence-developpement-ia"
+    },
+    {
+      "label": "Outils IA sur mesure",
+      "href": "/outils-ia-sur-mesure"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : créer une application avec l'IA sans coder",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Vibe coding",
+          "description": "Construire un logiciel en le décrivant en langage courant à une IA qui écrit le code."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Créateur d'applications IA",
+          "description": "Plateforme en ligne qui génère, héberge et publie une application à partir d'une conversation."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent de code",
+          "description": "Programme d'IA qui lit, écrit et exécute du code dans un projet jusqu'à atteindre un objectif."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Artefact",
+          "description": "Réalisation interactive que Claude affiche à côté de la conversation et que l'on peut partager."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "MVP",
+          "description": "Première version d'un produit, réduite à l'essentiel, confiée à de vrais utilisateurs."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Crédit",
+          "description": "Unité de consommation que la plateforme décompte à chaque demande ou action de l'agent."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Sécurité au niveau des lignes",
+          "description": "Réglage de la base de données qui limite chaque utilisateur à ses propres enregistrements."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Automatisation sans code",
+          "description": "Scénario visuel qui relie des logiciels existants, d'un déclencheur à une suite d'actions."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Choisir un outil pour créer une application sans coder",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Identifier qui utilisera l'application"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Qualifier les données qui y entreront"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Partir de l'abonnement déjà payé"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Nommer qui maintiendra l'outil"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Vérifier l'export du code"
+        }
+      ]
+    }
+  ]
+}

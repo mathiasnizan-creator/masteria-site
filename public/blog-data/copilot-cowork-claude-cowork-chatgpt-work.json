@@ -1,0 +1,652 @@
+{
+  "slug": "copilot-cowork-claude-cowork-chatgpt-work",
+  "title": "Copilot Cowork, Claude Cowork, ChatGPT Work : confier une tâche longue à l'IA",
+  "metaTitle": "Copilot Cowork, Claude Cowork, ChatGPT Work : que choisir ?",
+  "metaDesc": "Copilot Cowork, Cowork de Claude, ChatGPT Work et Vibe Work comparés : offres, exécution, fichiers, validations, données. Faits du 22/10/2026.",
+  "tag": "Comparatif",
+  "date": "22 octobre 2026",
+  "datePublished": "2026-10-22",
+  "dateModified": "2026-10-22",
+  "readTime": "26 min",
+  "formations": [
+    [
+      "Formation Claude",
+      "/formation-claude-ia"
+    ],
+    [
+      "Formation Microsoft Copilot",
+      "/formation-microsoft-copilot"
+    ],
+    [
+      "Formation ChatGPT",
+      "/formation-chatgpt"
+    ],
+    [
+      "Formation multi-outils",
+      "/formation-multi-outils"
+    ]
+  ],
+  "keywords": [
+    "Copilot Cowork",
+    "Claude Cowork",
+    "ChatGPT Work",
+    "claude cowork équivalent chatgpt",
+    "chatgpt cowork vs claude",
+    "formation claude cowork",
+    "mistral cowork",
+    "Vibe Work",
+    "déléguer une tâche à l'IA",
+    "agent IA tâche longue",
+    "tâches planifiées IA",
+    "Copilot Cowork prix"
+  ],
+  "excerpt": "Copilot Cowork, Cowork de Claude, ChatGPT Work et Vibe Work promettent de mener une tâche longue jusqu'au livrable. Offres, lieu d'exécution, accès aux fichiers, validations, tâches planifiées et données, vérifiés le 22 octobre 2026, puis une grille tâche par tâche et une méthode pour cadrer et relire.",
+  "intro": "Copilot Cowork, Claude Cowork et ChatGPT Work font la même promesse : vous décrivez un résultat, un agent (un programme d'IA qui décide seul de l'ordre des étapes et les exécute) découpe le travail, s'y tient pendant des minutes ou des heures et vous rend un livrable. Leur différence tient au terrain sur lequel ils opèrent. Copilot Cowork agit dans Microsoft 365, et sa consommation s'ajoute à la licence Copilot. Cowork de Claude démarre dans n'importe quel échange avec Claude et, depuis le 6 octobre 2026, travaille sur les serveurs d'Anthropic pour les abonnés Pro et Max. ChatGPT Work, lancé le 9 juillet 2026, relie ChatGPT à vos applications par des plugins et, sur ordinateur, à vos fichiers locaux. Chez Mistral, l'équivalent s'appelle Vibe Work. Ce guide compare les quatre outils à partir des pages officielles consultées le 22 octobre 2026, propose une grille tâche par tâche et une méthode pour cadrer puis relire un travail délégué.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "Confiez la tâche à l'agent qui travaille déjà là où se trouvent vos fichiers et vos messages. Si tout passe par Outlook, Teams et SharePoint, Copilot Cowork agit sur place, demande votre accord avant d'envoyer, de publier ou de planifier, et facture chaque tâche en crédits Copilot (0,01 dollar le crédit en paiement à l'usage), en plus d'une licence Microsoft 365 Copilot facturée 26 € HT par mois et par utilisateur avec paiement annuel. Pour un livrable fouillé tiré d'un dossier de documents, Cowork de Claude fait partie des formules payantes et tourne à distance pour les abonnés Pro et Max (en bêta pour Team). Si vos outils s'appellent Slack, Google Drive ou Gmail, ChatGPT Work s'y branche par plugins et lance une tâche à l'arrivée d'un message. Vibe Work, chez Mistral, garde les données dans l'Union européenne sauf choix contraire. Les quatre planifient une tâche récurrente ; aucun ne dispense de relire."
+    },
+    {
+      "type": "h2",
+      "text": "Trois noms voisins désignent les produits de trois éditeurs"
+    },
+    {
+      "type": "p",
+      "text": "Le mot Cowork sème la confusion. Anthropic l'a choisi pour l'agent de Claude ; Microsoft a baptisé Copilot Cowork son propre agent, qui peut s'appuyer sur des modèles d'Anthropic ; OpenAI a retenu le mot Work pour ChatGPT. Les trois produits appartiennent à la même famille, celle des agents de travail : un assistant qui reçoit un objectif au lieu d'une question, planifie les étapes, appelle des outils (un tableur, une messagerie, un navigateur) et revient avec un fichier terminé. Une conversation classique répond en quelques secondes. Un agent peut passer une heure sur un dossier pendant que vous faites autre chose."
+    },
+    {
+      "type": "p",
+      "text": "Pour un responsable métier qui veut déléguer un rapport, la préparation d'une réunion ou le traitement d'une pile de fichiers, trois questions décident du choix : où l'agent va chercher l'information, ce qu'il peut décider sans vous consulter, et où partent vos données. Le tableau répond pour chaque outil, d'après les pages officielles consultées le 22 octobre 2026."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Critère",
+        "Copilot Cowork (Microsoft)",
+        "Cowork de Claude (Anthropic)",
+        "ChatGPT Work (OpenAI)",
+        "Vibe Work (Mistral)"
+      ],
+      "rows": [
+        [
+          "Où on le lance",
+          "Microsoft Copilot dans le navigateur, Outlook, Teams, application de bureau et mobile",
+          "Depuis n'importe quel échange dans l'application Claude (navigateur, ordinateur, téléphone)",
+          "ChatGPT sur le web et le mobile, et l'application de bureau pour Mac et Windows",
+          "Vibe sur le web et le mobile, dans la même interface que la conversation depuis le 22 septembre"
+        ],
+        [
+          "Offres concernées",
+          "Licence Microsoft 365 Copilot, plus la facturation à l'usage activée par l'administrateur",
+          "Abonnements Pro et Max ; bêta pour Team (web et mobile) ; Enterprise si l'administrateur l'active ; absent de la grille de l'offre gratuite",
+          "Offres payantes éligibles sur le web et le mobile ; application de bureau ouverte à toutes les offres au lancement",
+          "Comptes Free, Pro et Team migrés en premier ; Enterprise sur six mois"
+        ],
+        [
+          "Où s'exécute la tâche",
+          "Dans le cloud, dans un environnement temporaire isolé à l'intérieur du périmètre Microsoft 365",
+          "Sur les serveurs d'Anthropic pour les tâches Pro et Max lancées depuis le 6 octobre 2026",
+          "Dans le cloud sur le web et le mobile ; sur votre ordinateur pour une tâche locale lancée depuis l'application de bureau",
+          "La documentation ne le précise pas au 22 octobre 2026"
+        ],
+        [
+          "Accès aux fichiers",
+          "OneDrive, SharePoint, Teams et fichiers téléversés ; modifie un fichier Office existant après accord",
+          "Dossiers connectés dans l'application de bureau ouverte ; une tâche à distance reçoit la copie du seul fichier utile",
+          "Plugins (Drive, SharePoint, Slack, Teams, CRM) ; fichiers locaux dans l'application de bureau, avec votre autorisation",
+          "Fichiers téléversés, bibliothèques et connecteurs (Drive, SharePoint, Notion, Slack, GitHub)"
+        ],
+        [
+          "Validation des actions",
+          "Accord demandé avant d'envoyer un mail, de publier dans Teams ou de planifier une réunion",
+          "Vous consulte avant chaque action, sauf si vous choisissez de le laisser travailler et de n'intervenir qu'à sa demande",
+          "Vous fixez ce qui exige votre approbation ; revue automatique des actions importantes avant exécution",
+          "Approbation avant un envoi de mail, une publication, un événement d'agenda ou une modification de données"
+        ],
+        [
+          "Tâches planifiées",
+          "Jusqu'à 25 invites planifiées, plus des tâches lancées à l'arrivée d'un mail ou d'un message Teams",
+          "Toutes les offres payantes : chaque heure, jour, semaine, jours ouvrés ou à la demande",
+          "Une fois, à intervalle régulier, sur déclencheur (Gmail, Slack, GitHub) ou en surveillance de changements",
+          "Ponctuelle, quotidienne, hebdomadaire, mensuelle ou annuelle"
+        ],
+        [
+          "Facturation",
+          "Crédits Copilot à l'usage, 0,01 dollar le crédit, en plus de la licence",
+          "Compris dans l'abonnement, dans ses limites d'usage",
+          "Quota compris dans l'offre, partagé avec Codex, puis crédits",
+          "Inclus dans Vibe ; exécution de code pour les seules offres payantes"
+        ],
+        [
+          "Données",
+          "Règles de Microsoft 365 ; modèles d'Anthropic hors EU Data Boundary et coupés d'office en Europe",
+          "Team et Enterprise exclus de l'entraînement par défaut ; aucun hébergement européen dans les applications Claude",
+          "Pas d'entraînement par défaut sur Business, Enterprise et Edu ; stockage en Europe pour Enterprise et Edu éligibles",
+          "Données gardées dans l'Union européenne, sauf choix contraire ; les comptes individuels désactivent eux-mêmes l'entraînement"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Copilot Cowork agit dans Microsoft 365 et attend votre feu vert pour ce qui engage"
+    },
+    {
+      "type": "p",
+      "text": "Microsoft a rendu Copilot Cowork disponible dans le monde entier le 16 juin 2026. L'agent prend en charge ce qui remplit une journée dans Microsoft 365 : rédiger et envoyer un mail, préparer une réunion, tenir un agenda, produire un document Word, un classeur Excel ou une présentation PowerPoint, chercher une information dans toute l'organisation. Les invites proposées sur sa page d'accueil donnent le ton : rattraper ce qu'on a manqué, trier sa boîte de réception, préparer un entretien individuel, se renseigner sur une entreprise."
+    },
+    {
+      "type": "p",
+      "text": "Il se lance depuis Microsoft Copilot dans le navigateur, depuis Outlook et Teams, ou depuis l'application Copilot sur ordinateur et sur mobile. Sa force tient au contexte : il consulte les mails, les fichiers, les réunions et les conversations Teams avec les droits que vous avez déjà, et chaque tâche ne voit que ce que vous voyez. Une demande peut atteindre 250 000 caractères, de quoi coller un cahier des charges entier."
+    },
+    {
+      "type": "h3",
+      "text": "La facture suit l'usage, en plus de la licence"
+    },
+    {
+      "type": "p",
+      "text": "Copilot Cowork exige une licence Microsoft 365 Copilot, que le site français de Microsoft affichait le 22 octobre 2026 à 26 € HT mensuels par utilisateur, réglés à l'année. Cowork s'ajoute à cette licence : chaque tâche consomme des crédits Copilot, dont le nombre dépend du modèle utilisé, des informations récupérées, des appels d'outils et de la durée d'exécution. En paiement à l'usage, le crédit coûte 0,01 dollar ; un engagement prépayé sur un volume donne droit à une remise."
+    },
+    {
+      "type": "p",
+      "text": "Cowork est coupé par défaut. L'administrateur l'ouvre par une politique de dépenses, qui sert aussi de contrôle d'accès : toute personne incluse dans une politique qui sélectionne Cowork peut s'en servir, même avec un plafond d'un seul crédit. Les limites se posent par organisation, par groupe et par utilisateur, avec des alertes de seuil. Avant de déléguer des tâches longues, demandez donc à votre service informatique quel budget est attribué à votre équipe."
+    },
+    {
+      "type": "h3",
+      "text": "Chaque envoi passe par une validation"
+    },
+    {
+      "type": "p",
+      "text": "Avant d'envoyer un mail, de publier un message dans Teams ou de planifier une réunion, Cowork affiche un aperçu de l'action et un bouton qui la nomme : Envoyer, Publier, Créer. Vous approuvez une fois, vous approuvez en levant la question pour des actions semblables pendant la session (pour un seul destinataire, un seul domaine ou sans restriction), ou vous annulez. Ces dispenses s'éteignent avec la conversation et se relisent dans le panneau latéral. Deux pauses existent : l'une laisse finir l'étape en cours, l'autre arrête tout sur-le-champ."
+    },
+    {
+      "type": "h3",
+      "text": "Il travaille dans le cloud, sur les fichiers de Microsoft 365"
+    },
+    {
+      "type": "p",
+      "text": "Copilot Cowork tourne dans le cloud et continue ordinateur éteint. Pendant une tâche, il traite vos fichiers dans un environnement temporaire et isolé, à l'intérieur du périmètre de service de votre locataire Microsoft 365 (l'espace de votre entreprise chez Microsoft), puis supprime cet environnement à la fin. Il lit les pièces jointes de votre poste et les fichiers de OneDrive, SharePoint et Teams, modifie un document Word, Excel ou PowerPoint existant après votre accord, et range ce qu'il produit dans un dossier Cowork de votre OneDrive. Les versions antérieures restent consultables dans OneDrive ou SharePoint. Il sait aussi piloter Microsoft Edge sur votre ordinateur, si l'administrateur active cette option."
+    },
+    {
+      "type": "h3",
+      "text": "Il planifie et réagit aux événements"
+    },
+    {
+      "type": "p",
+      "text": "Une demande comme « prépare-moi chaque vendredi le point d'activité de la semaine » devient une invite planifiée, dans la limite de 25 par utilisateur. Cowork réagit aussi à un événement : l'arrivée d'un mail qui répond à un critère, un message dans un canal ou une conversation Teams, une mention de votre nom. Ces tâches tournent avec vos droits, leur fréquence est bridée pour éviter les boucles, et par défaut elles préparent l'action puis attendent votre validation avant tout envoi."
+    },
+    {
+      "type": "h3",
+      "text": "Les modèles d'Anthropic restent à trancher en Europe"
+    },
+    {
+      "type": "p",
+      "text": "Cowork fonctionne avec des modèles d'Anthropic et d'OpenAI. Microsoft précise que les modèles d'Anthropic échappent à l'EU Data Boundary (la promesse de Microsoft que les données de ses clients européens restent stockées et traitées dans l'Union) et qu'ils sont éteints au départ dans l'Union européenne, l'AELE et au Royaume-Uni. Si l'administrateur les laisse coupés, Cowork continue avec les modèles GPT autorisés par l'organisation. Ce réglage relève de la DSI et de votre DPO ; tranchez-le avant le premier usage sur des données clients. Pour une vue d'ensemble des deux écosystèmes, voyez notre <a href='/copilot-vs-claude'>comparatif Copilot et Claude</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Cowork de Claude prend le relais au fil de la conversation"
+    },
+    {
+      "type": "p",
+      "text": "Le 16 septembre 2026, Anthropic a réuni Cowork et la conversation : une seule fenêtre reçoit toutes les demandes, et Claude juge lui-même si elles appellent une réponse rapide ou un travail en plusieurs étapes. Le déploiement a commencé par Pro et Max, les autres offres devant suivre. La page tarifs d'Anthropic, relevée le 22 octobre 2026, inscrit « Claude Code and Claude Cowork » dans l'offre Team, à 25 dollars par siège et par mois (20 dollars à l'année) ; Pro coûte 20 dollars par mois. L'offre gratuite ne mentionne pas Cowork."
+    },
+    {
+      "type": "p",
+      "text": "L'agent s'attaque au travail de fond sur des documents : une revue de marché qui croise sources internes et web, la fusion de plusieurs tableurs en un seul, un dossier de fichiers trié et renommé, un support monté à partir d'un compte rendu. Il produit des fichiers Word, Excel et PowerPoint, et depuis le 16 septembre des documents et des diaporamas Claude (Docs et Slides, en bêta) que l'on retouche dans l'échange avant de les exporter en PowerPoint ou en PDF. Pour le distinguer de l'agent des développeurs, lisez notre <a href='/claude-cowork-vs-claude-code'>comparatif Cowork et Claude Code</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Pro et Max travaillent désormais à distance"
+    },
+    {
+      "type": "p",
+      "text": "À compter du 6 octobre 2026, toute nouvelle tâche Cowork lancée sur un abonnement Pro ou Max tourne chez Anthropic : vous rabattez l'écran, Claude poursuit, et le téléphone affiche où il en est. Le réglage qui gardait une tâche sur la machine a disparu ; les tâches lancées avant cette date restent où elles étaient. Sur Team, ce fonctionnement à distance est en bêta sur le web et le mobile ; sur Enterprise, il dépend d'une activation par un administrateur. L'application de bureau donne accès à Cowork sur toutes les offres payantes."
+    },
+    {
+      "type": "h3",
+      "text": "Vos dossiers restent sur votre machine"
+    },
+    {
+      "type": "p",
+      "text": "Claude n'atteint que les dossiers connectés dans l'application de bureau, et seulement tant qu'elle reste ouverte. Quand une tâche à distance a besoin d'un fichier local, elle en récupère une copie, et cette copie seule ; vos dossiers ne quittent pas l'ordinateur. Les copies disparaissent quand vous supprimez la session. Cowork ne modifie pas le contenu d'un projet : un fichier à conserver dans un projet s'y ajoute à la main."
+    },
+    {
+      "type": "h3",
+      "text": "Vous réglez son degré d'autonomie"
+    },
+    {
+      "type": "p",
+      "text": "Le réglage d'origine fait valider chaque action. Vous pouvez aussi lui laisser la main : il ne revient alors vers vous que lorsqu'un point exige votre regard, et la décision finale vous appartient. Anthropic indique que Cowork réclame une autorisation explicite avant de supprimer définitivement un fichier, et conseille de limiter son accès aux dossiers sensibles : finances, identifiants, dossiers du personnel."
+    },
+    {
+      "type": "h3",
+      "text": "Les tâches planifiées tournent sans appareil allumé"
+    },
+    {
+      "type": "p",
+      "text": "Toutes les offres payantes (Pro, Max, Team, Enterprise) planifient une tâche chaque heure, chaque jour, chaque semaine, les jours ouvrés ou à la demande. Chaque exécution ouvre sa propre session, avec les connecteurs, les Skills (des procédures écrites que Claude ouvre lorsqu'une demande les concerne) et les plugins installés. Ces tâches s'exécutent à distance, même ordinateur en veille ; celles qui ont besoin de fichiers ou d'applications locales ne tournent que sur la machine."
+    },
+    {
+      "type": "h3",
+      "text": "Données : ce que l'administrateur doit savoir"
+    },
+    {
+      "type": "p",
+      "text": "Les échanges des offres professionnelles d'Anthropic (Team, Enterprise, API) restent hors de l'entraînement des modèles par défaut ; sur un compte individuel, chacun décide dans ses paramètres de confidentialité. Anthropic ne propose pas d'hébergement européen dans ses propres applications : une entreprise qui exige un traitement en Europe consomme Claude au travers d'AWS Bedrock ou de la plateforme Vertex AI de Google. Côté traçabilité, l'API de conformité (l'export réservé aux administrateurs) capte les sessions Cowork du web, du bureau et du mobile et restitue les 30 derniers jours. Anthropic précise que le flux OpenTelemetry (un standard de collecte d'événements techniques) proposé aux propriétaires Team et Enterprise ne remplace pas un journal d'audit."
+    },
+    {
+      "type": "h2",
+      "text": "ChatGPT Work branche ChatGPT sur vos applications et vos fichiers"
+    },
+    {
+      "type": "p",
+      "text": "ChatGPT Work est arrivé le 9 juillet 2026 : un agent intégré à ChatGPT, construit avec la technologie de Codex (l'outil d'OpenAI qui écrit du code) et animé au lancement par GPT-5.6. Work se choisit dans un sélecteur, à côté de Chat. Il recherche, analyse et produit des documents, des feuilles de calcul, des présentations, des rapports ou des sites, et peut suivre un projet plusieurs heures en le découpant en étapes."
+    },
+    {
+      "type": "p",
+      "text": "Le déploiement a commencé sur le web et le mobile par les offres Pro, Enterprise et Edu, Plus et Business devant suivre dans les jours suivants. L'application de bureau pour Mac et Windows, qui réunit Chat, Work et Codex, a été ouverte à toutes les offres au lancement, gratuite comprise. Dans les espaces Enterprise et Edu, Work exige que l'entreprise gère ses propres clés de chiffrement (EKM) ; il s'y active par défaut pour les membres, sauf si un administrateur le coupe. L'usage de Work suit les règles de Codex : un quota compris dans l'abonnement, puis des crédits."
+    },
+    {
+      "type": "h3",
+      "text": "Le cloud par défaut, l'ordinateur sur autorisation"
+    },
+    {
+      "type": "p",
+      "text": "Sur le web et le mobile, une tâche Work s'exécute dans le cloud et se retrouve sur tous vos appareils. Dans l'application de bureau, Work peut aussi travailler en local : ouvrir un dossier, utiliser les fichiers et les applications de l'ordinateur avec votre autorisation, et même piloter l'ordinateur à votre place (cliquer, saisir, déplacer des fichiers). OpenAI précise que les messages et le contexte d'une tâche locale peuvent être stockés dans le cloud. Depuis le web ou le mobile, Work n'accède pas aux fichiers de votre ordinateur."
+    },
+    {
+      "type": "h3",
+      "text": "Les plugins apportent le contexte"
+    },
+    {
+      "type": "p",
+      "text": "Les plugins (des connecteurs vers vos logiciels) relient Work à Slack, Microsoft Teams, Google Drive, SharePoint, aux messageries, aux agendas, aux CRM et aux outils de suivi de projet. ChatGPT choisit seul le plugin utile, ou vous le désignez en tapant « @ » suivi du nom de l'application. Un projet ChatGPT existant peut servir de point de départ : une conversation Work lancée depuis le projet en reprend les fichiers et les consignes."
+    },
+    {
+      "type": "h3",
+      "text": "Vous fixez les limites, une revue automatique s'ajoute"
+    },
+    {
+      "type": "p",
+      "text": "Vous décidez de ce à quoi Work accède, du moment où il doit vous solliciter et des actions qui exigent votre approbation. OpenAI ajoute une revue automatique : ses modèles examinent les actions importantes passées par des outils et des API connectés avant leur exécution, pour éviter qu'une information sensible soit partagée sans autorisation. Les administrateurs Enterprise et Edu peuvent restreindre les actions sensibles dans les systèmes connectés, et l'API de conformité d'OpenAI donne une vue sur les conversations et les actions de Work."
+    },
+    {
+      "type": "h3",
+      "text": "Les tâches planifiées vont jusqu'au déclencheur"
+    },
+    {
+      "type": "p",
+      "text": "Work exécute une tâche une fois, la répète selon un calendrier, la lance quand un événement survient ou surveille un changement. Les tâches déclenchées par un événement couvrent les nouveaux messages Gmail, les messages d'un canal Slack et l'activité des pull requests GitHub. Elles sont ouvertes aux offres Plus, Pro et Business ainsi qu'à Enterprise et Edu, absentes des offres Free et Go, et les administrateurs Enterprise et Edu doivent les autoriser. Quand le partage est ouvert sur votre compte, une tâche planifiée se transmet : la personne qui la reçoit en programme sa propre copie, avec ses propres accès."
+    },
+    {
+      "type": "h3",
+      "text": "Données : le cadre des offres entreprise"
+    },
+    {
+      "type": "p",
+      "text": "Par défaut, les échanges des offres ChatGPT Business, Enterprise et Edu ne servent pas à entraîner les modèles d'OpenAI. Les clients Enterprise et Edu éligibles peuvent stocker leurs données au repos en Europe et demander que l'inférence (le calcul de la réponse par le modèle) se fasse en Europe ; l'offre Business ne figure pas dans cette liste. Une PME sur ChatGPT Business qui exige un traitement européen doit donc regarder l'offre Enterprise. Notre <a href='/chatgpt-vs-claude'>comparatif ChatGPT et Claude</a> détaille les autres différences entre les deux abonnements."
+    },
+    {
+      "type": "h2",
+      "text": "Chez Mistral, l'équivalent s'appelle Vibe Work"
+    },
+    {
+      "type": "p",
+      "text": "Mistral AI ne vend aucun produit nommé Cowork. Son assistant s'appelle désormais Vibe (article d'aide du 12 août 2026), présenté comme l'agent unifié de Mistral pour la productivité et le code, et son mode de productivité a pris le nom de Vibe Work : il sert à déléguer des tâches en plusieurs étapes à travers vos applications et vos outils. Depuis le 22 septembre, la conversation rapide et Work partagent une seule interface, et un bouton règle la profondeur du traitement (réponse rapide ou travail réfléchi). Les comptes Free, Pro et Team ont migré en premier ; les organisations Enterprise disposent de six mois pour basculer."
+    },
+    {
+      "type": "p",
+      "text": "Vibe Work rassemble le contexte (fichiers joints, outils connectés, web), découpe la tâche, appelle les outils et demande votre approbation avant les actions sensibles : envoyer un mail, publier un message, créer un événement d'agenda, modifier des données dans un outil externe. Chaque appel d'outil s'affiche, et vous arrêtez ou réorientez la tâche à tout moment. Les connecteurs couvrent la messagerie, l'agenda, Slack, Notion, GitHub, Google Drive et SharePoint ; une invite se programme de façon ponctuelle, quotidienne, hebdomadaire, mensuelle ou annuelle. Les Skills remplacent les anciens agents et s'appellent avec « @ »."
+    },
+    {
+      "type": "p",
+      "text": "Son argument tient aux données. Mistral garde les données dans l'Union européenne sauf choix contraire, avec des transferts temporaires possibles hors de l'Union selon la fonction utilisée (aide de Mistral, 12 août 2026). L'usage des échanges pour l'entraînement reste ouvert tant qu'un utilisateur individuel ne le ferme pas ; sur une offre Team, l'administrateur le ferme pour tous, et Enterprise l'exclut d'office (aide de Mistral, 3 septembre 2026). Au 22 octobre 2026, la documentation ne dit ni où s'exécute une tâche Work ni quelles fonctions dépendent de l'offre, hormis l'interpréteur de code, que seules les offres payantes ouvrent. Notre <a href='/formation-mistral-ai'>formation Mistral AI</a> couvre Vibe pour les équipes qui le retiennent."
+    },
+    {
+      "type": "h2",
+      "text": "Chaque tâche trouve son outil d'après l'endroit où vivent ses données"
+    },
+    {
+      "type": "p",
+      "text": "La règle la plus sûre : confiez la tâche à l'agent installé là où se trouvent déjà les fichiers et les messages qu'elle mobilise. Un agent qu'il faut d'abord nourrir de téléversements perd une partie de son intérêt, et chaque copie supplémentaire ouvre une question de données. La grille traduit cette règle en tâches courantes d'un responsable métier."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tâche à déléguer",
+        "Outil conseillé",
+        "Pourquoi",
+        "Point de vigilance"
+      ],
+      "rows": [
+        [
+          "Préparer une réunion : ordre du jour, historique des échanges, note par participant",
+          "Copilot Cowork",
+          "Il lit l'agenda, les mails et les conversations Teams avec vos droits",
+          "Relire la liste des destinataires avant d'approuver l'envoi"
+        ],
+        [
+          "Rédiger le rapport mensuel à partir de classeurs rangés dans SharePoint",
+          "Copilot Cowork",
+          "Les fichiers sont déjà dans Microsoft 365, et le rapport revient dans OneDrive",
+          "Pointer les totaux sur les classeurs d'origine"
+        ],
+        [
+          "Tirer une note de synthèse d'un dossier de contrats, d'études et de comptes rendus",
+          "Cowork de Claude",
+          "Il travaille sur le dossier connecté entier et produit un livrable long",
+          "Contrôler que chaque affirmation cite sa pièce"
+        ],
+        [
+          "Trier, renommer et classer un dossier de fichiers sur l'ordinateur",
+          "Cowork de Claude ou ChatGPT Work, dans l'application de bureau",
+          "Les deux accèdent au dossier local que vous ouvrez",
+          "Travailler sur une copie du dossier la première fois"
+        ],
+        [
+          "Décliner une campagne pour plusieurs marchés à partir de Google Drive et de Slack",
+          "ChatGPT Work",
+          "Ses plugins couvrent Drive et Slack, et il garde le contexte d'une étape à l'autre",
+          "Faire valider chaque déclinaison par une personne du marché"
+        ],
+        [
+          "Préparer une réponse à chaque demande entrante d'une boîte partagée",
+          "Copilot Cowork (Outlook) ou ChatGPT Work (Gmail)",
+          "Les deux lancent une tâche à l'arrivée d'un mail",
+          "Garder la validation avant envoi"
+        ],
+        [
+          "Recevoir une veille hebdomadaire sur vos concurrents",
+          "Les quatre outils",
+          "Tous programment une tâche récurrente",
+          "Lire la première exécution en entier avant de laisser tourner"
+        ],
+        [
+          "Traiter des données clients qui doivent rester dans l'Union européenne",
+          "Vibe Work, ou Copilot Cowork sans les modèles d'Anthropic",
+          "Hébergement européen par défaut chez Mistral ; EU Data Boundary chez Microsoft, hors modèles d'Anthropic",
+          "Faire valider le choix par votre DPO"
+        ],
+        [
+          "Préparer chaque session de formation à partir des modèles du service",
+          "Cowork de Claude, avec une Skill",
+          "La procédure, écrite une fois, s'applique à chaque nouvelle session",
+          "Faire relire le premier dossier produit par la personne qui préparait les sessions"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Une entreprise peut garder deux outils, chacun sur son périmètre de données ; la dernière partie de ce guide donne un exemple de règle de partage tiré d'une formation. Écrivez ce partage dans votre <a href='/charte-ia-entreprise'>charte IA</a>, et vérifiez la base légale des traitements avec notre guide <a href='/ia-et-rgpd'>IA et RGPD</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Six réglages cadrent une tâche déléguée"
+    },
+    {
+      "type": "p",
+      "text": "Un agent exécute ce que vous écrivez, avec une autonomie que la conversation classique n'avait pas : une consigne floue donne un livrable faux, plus long à corriger qu'à écrire. Le cadrage tient en six points, à écrire dans la demande elle-même, ou dans une Skill quand la tâche revient."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Le résultat et son lecteur</strong> : « une note de deux pages pour le CODIR de jeudi » donne une cible ; « fais le point sur les ventes » n'en donne aucune.",
+        "<strong>Les sources autorisées</strong> : un dossier, un canal Teams, un classeur précis. Fermez la porte au reste, web compris si la tâche n'en a pas besoin.",
+        "<strong>Le format attendu</strong> : le gabarit Word ou PowerPoint de l'équipe, la structure des parties, la longueur, la langue.",
+        "<strong>Les critères de réussite</strong> : ce qu'un bon livrable contient (chaque chiffre avec sa source, les écarts au budget commentés) et ce qui n'y a pas sa place (données nominatives, hypothèses présentées comme des faits).",
+        "<strong>Les points d'arrêt</strong> : les étapes où l'agent s'arrête pour vous montrer son travail, et les actions qu'il n'exécute jamais seul (envoi à l'extérieur, suppression, modification d'un fichier partagé).",
+        "<strong>Le rythme</strong> : une fois, ou chaque lundi à 8 h. Dans le second cas, demandez une première exécution immédiate et relisez-la avant de laisser la planification tourner."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Une demande cadrée, prête à adapter",
+      "italic": false,
+      "text": "« À partir des cinq classeurs du dossier Ventes septembre, rédige une note de deux pages destinée au CODIR du 6 novembre, dans le gabarit Note CODIR. Donne le chiffre d'affaires et la marge par région, commente chaque écart de plus de 5 % au budget, et cite le fichier et l'onglet d'où vient chaque chiffre. N'utilise aucune source extérieure au dossier. Arrête-toi après le plan pour que je le valide. N'envoie rien : dépose la note dans le dossier Brouillons. »"
+    },
+    {
+      "type": "h2",
+      "text": "La relecture décide de la valeur du travail délégué"
+    },
+    {
+      "type": "p",
+      "text": "Un livrable rendu par un agent a l'apparence du travail fini : mise en page soignée, ton assuré, chiffres précis. Le risque se loge dans cette apparence. Relisez dans cet ordre."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le journal des étapes</strong> : le panneau de progression de Copilot Cowork, les appels d'outils affichés par Vibe, le fil de la tâche dans Claude ou ChatGPT montrent les sources ouvertes. Une source attendue qui manque signale un trou.",
+        "<strong>Les chiffres</strong> : vérifiez d'abord que l'agent a lu la bonne ligne, la bonne colonne et la bonne période, puis pointez les totaux sur les fichiers d'origine.",
+        "<strong>Les références</strong> : ouvrez deux ou trois des documents cités et assurez-vous qu'ils disent ce que le livrable leur prête.",
+        "<strong>Les actions préparées</strong> : avant d'approuver un envoi, relisez destinataires, objet et pièces jointes. Une dispense de validation vaut pour toute la session ; réservez-la aux actions sans conséquence à l'extérieur.",
+        "<strong>Les tâches planifiées</strong> : lisez la sortie des premières exécutions, puis un échantillon chaque mois. Une source qui change de format suffit à fausser un rapport sans que la tâche signale d'erreur."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Confiez cette relecture à quelqu'un qui connaît le sujet. L'agent ignore qu'un chiffre est aberrant pour votre activité tant que personne ne le lui a écrit : ce jugement reste le vôtre."
+    },
+    {
+      "type": "h2",
+      "text": "Trois équipes ont appris à déléguer en formation"
+    },
+    {
+      "type": "p",
+      "text": "En septembre 2026, une formatrice du réseau Masteria a accompagné pendant deux jours, à distance, l'équipe chargée de la formation chez un éditeur de logiciels B2B : sa responsable et deux ingénieures pédagogiques, qui conçoivent les parcours des partenaires et des clients et travaillaient sur Claude Team depuis quelques semaines. L'équipe a d'abord écrit deux compétences ouvertes à tous les comptes de l'entreprise : une pour concevoir ses supports, une pour gérer la logistique administrative de ses sessions. Elle a ensuite confié à Cowork la préparation d'une session. Cet ordre a du sens : une compétence écrite fixe la méthode, et Cowork peut ensuite l'appliquer à chaque nouveau dossier. Le cas détaillé se lit dans nos <a href='/etudes-de-cas-ia'>études de cas</a>."
+    },
+    {
+      "type": "p",
+      "text": "Le même mois, chez un éditeur de logiciels pour entreprises, une assistante de direction équipée de Copilot a suivi une formation individuelle d'une journée. Sur des documents d'exercice, à sa demande, elle a préparé un comité de direction complet avec Copilot et Claude, de l'ordre du jour jusqu'au mémo remis au dirigeant, en passant par la note et les diapositives. La règle posée ce jour-là vaut pour toute délégation : les informations internes et les noms de personnes restent dans Copilot, l'outil de l'entreprise ; Claude ne reçoit que du texte public ou anonymisé ; le doute tranche pour Copilot."
+    },
+    {
+      "type": "p",
+      "text": "Toujours en septembre, une interprofession agricole a suivi trois jours de formation, ouverts par un banc d'essai de six assistants : Claude, ChatGPT, Copilot, Gemini, Perplexity et Vibe. Dans la fiche de satisfaction, la personne chargée du digital a cité la planification de ChatGPT comme l'apport le plus utile, pour sa veille quotidienne. Une tâche planifiée simple et bien cadrée reste le meilleur premier pas vers la délégation."
+    },
+    {
+      "type": "h2",
+      "text": "Huit termes pour suivre une tâche déléguée"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Agent de travail</strong> : Assistant d'IA qui reçoit un objectif, planifie les étapes, utilise des outils et rend un livrable terminé.",
+        "<strong>Tâche planifiée</strong> : Demande enregistrée que l'agent exécute seul à une date ou à un rythme fixés.",
+        "<strong>Tâche déclenchée par un événement</strong> : Tâche lancée par un fait précis : un mail reçu, un message Slack ou Teams, une activité GitHub.",
+        "<strong>Approbation</strong> : Accord demandé par l'agent avant une action qui engage : envoyer, publier, planifier, supprimer.",
+        "<strong>Plugin ou connecteur</strong> : Lien entre l'agent et un logiciel de l'entreprise, comme une messagerie, un CRM ou un espace de fichiers.",
+        "<strong>Skill</strong> : Procédure écrite dans un fichier, que l'agent charge quand une demande s'y rapporte ; Claude, Copilot Cowork et Vibe en utilisent.",
+        "<strong>Crédit Copilot</strong> : Unité de consommation facturée par Microsoft pour Cowork, à 0,01 dollar en paiement à l'usage.",
+        "<strong>EU Data Boundary</strong> : Périmètre dans lequel Microsoft s'engage à garder les données de ses clients européens, stockage et traitement compris."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Déléguer s'apprend avant de s'automatiser"
+    },
+    {
+      "type": "p",
+      "text": "Écrire une demande cadrée, régler les validations, relire un livrable : ces trois gestes décident du résultat, quel que soit l'éditeur. Masteria forme les équipes sur l'abonnement déjà en place, à partir de leurs propres dossiers : la <a href='/formation-claude-ia'>formation Claude</a> pour Cowork, les Skills et les projets, la <a href='/formation-microsoft-copilot'>formation Microsoft Copilot</a> pour Cowork dans Microsoft 365, la <a href='/formation-chatgpt'>formation ChatGPT</a> pour Work et ses tâches planifiées, et la <a href='/formation-multi-outils'>formation multi-outils</a> quand plusieurs assistants cohabitent. Comptez à partir de 1 980 € HT la journée."
+    },
+    {
+      "type": "p",
+      "text": "Ces agents déplacent le travail du responsable : moins de temps passé à produire, davantage à décider de ce qui doit être produit et à juger ce qui revient. L'équipe qui sait écrire une bonne demande garde la main sur le résultat."
+    },
+    {
+      "type": "p",
+      "text": "<em>Pages officielles relevées le 22 octobre 2026 : <a href='https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/' target='_blank' rel='noopener'>annonce de la disponibilité de Copilot Cowork (Microsoft, 16 juin 2026)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/get-started' target='_blank' rel='noopener'>prise en main de Copilot Cowork</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/use-cowork' target='_blank' rel='noopener'>utiliser Copilot Cowork (mis à jour le 21 octobre 2026)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-admin-governance' target='_blank' rel='noopener'>administrer Copilot Cowork</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/connect-to-ai-subprocessor' target='_blank' rel='noopener'>modèles d'Anthropic dans les services Microsoft</a>, <a href='https://www.microsoft.com/fr-fr/microsoft-365/copilot/enterprise' target='_blank' rel='noopener'>prix de Microsoft 365 Copilot</a>, <a href='https://claude.com/blog/cowork-is-now-claude' target='_blank' rel='noopener'>Cowork réuni à la conversation (Anthropic, 16 septembre 2026)</a>, <a href='https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile' target='_blank' rel='noopener'>utiliser Cowork sur tous les appareils</a>, <a href='https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-cowork' target='_blank' rel='noopener'>tâches planifiées de Cowork</a>, <a href='https://support.claude.com/en/articles/13364135-use-claude-cowork-safely' target='_blank' rel='noopener'>utiliser Cowork en sécurité</a>, <a href='https://support.claude.com/en/articles/13455879-claude-for-work-audit-logs-and-compliance-api' target='_blank' rel='noopener'>audit et API de conformité de Claude</a>, <a href='https://claude.com/pricing' target='_blank' rel='noopener'>tarifs de Claude</a>, <a href='https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-training' target='_blank' rel='noopener'>données et entraînement, offres professionnelles</a>, <a href='https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training' target='_blank' rel='noopener'>données et entraînement, offres individuelles</a>, <a href='https://claude.com/regional-compliance' target='_blank' rel='noopener'>hébergement régional de Claude</a>, <a href='https://openai.com/fr-FR/index/chatgpt-for-your-most-ambitious-work/' target='_blank' rel='noopener'>annonce de ChatGPT Work (OpenAI, 9 juillet 2026)</a>, <a href='https://help.openai.com/fr-fr/articles/20001275-chatgpt-work-and-codex' target='_blank' rel='noopener'>aide d'OpenAI sur ChatGPT Work et Codex (révisée le 22 octobre 2026)</a>, <a href='https://openai.com/fr-FR/business-data/' target='_blank' rel='noopener'>données des offres entreprise d'OpenAI</a>, <a href='https://help.mistral.ai/en/articles/682992-le-chat-is-now-vibe' target='_blank' rel='noopener'>passage à Vibe (Mistral, 12 août 2026)</a>, <a href='https://docs.mistral.ai/vibe/overview' target='_blank' rel='noopener'>présentation de Vibe</a>, <a href='https://docs.mistral.ai/vibe/work/get-started' target='_blank' rel='noopener'>prise en main de Vibe Work</a>, <a href='https://help.mistral.ai/en/articles/347629' target='_blank' rel='noopener'>lieu d'hébergement des données chez Mistral</a>, <a href='https://help.mistral.ai/en/articles/455207' target='_blank' rel='noopener'>entraînement et désactivation chez Mistral</a>.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Quel est l'équivalent de Claude Cowork chez ChatGPT ?",
+      "a": "L'équivalent s'appelle ChatGPT Work, lancé par OpenAI le 9 juillet 2026. Comme Cowork, il reçoit un objectif, le découpe en étapes et rend un livrable : document, tableur, présentation ou site. Il travaille à distance depuis le web et le mobile, sur vos fichiers locaux dans l'application de bureau, et ses tâches planifiées savent se déclencher sur Gmail, Slack ou GitHub."
+    },
+    {
+      "q": "ChatGPT Work ou Claude Cowork : lequel choisir ?",
+      "a": "Partez de vos outils. Si votre équipe vit dans Slack, Google Drive et Gmail, ChatGPT Work s'y branche par plugins et réagit aux messages entrants. Si le travail consiste à produire un livrable long à partir d'un dossier de documents, avec une méthode écrite une fois dans une Skill, Cowork de Claude s'y prête. Les deux font partie des formules payantes : essayez-les sur la même tâche réelle avant de trancher."
+    },
+    {
+      "q": "Faut-il payer Copilot Cowork en plus de la licence Copilot ?",
+      "a": "Oui. La licence Microsoft 365 Copilot est nécessaire, et Cowork se facture à côté. Au 22 octobre 2026, Microsoft indique 26 € HT par mois et par utilisateur, payés à l'année, pour la licence ; chaque tâche Cowork consomme des crédits Copilot, à 0,01 dollar le crédit en paiement à l'usage. Cowork est coupé par défaut, et l'administrateur l'ouvre par une politique de dépenses qui fixe aussi les plafonds."
+    },
+    {
+      "q": "Copilot Cowork et Claude Cowork désignent-ils le même produit ?",
+      "a": "Microsoft et Anthropic vendent chacun le leur. Microsoft a construit Copilot Cowork pour agir dans Microsoft 365 (mails, agenda, Teams, OneDrive) avec plusieurs familles de modèles, dont ceux d'Anthropic, coupés d'office en Europe. Anthropic intègre Cowork à l'application Claude, où il traite vos dossiers à partir d'un simple échange."
+    },
+    {
+      "q": "Mistral propose-t-il un équivalent de Cowork ?",
+      "a": "Oui, sous le nom de Vibe Work. Mistral a rebaptisé son assistant Vibe à l'été 2026, et son mode Work délègue des tâches en plusieurs étapes, demande votre approbation avant les actions sensibles et programme des invites. Mistral garde les données dans l'Union européenne sauf choix contraire, ce qui en fait l'option à examiner quand cette exigence prime."
+    },
+    {
+      "q": "Peut-on utiliser Cowork gratuitement ?",
+      "a": "Cela dépend de l'éditeur. La page tarifs d'Anthropic ne mentionne pas Cowork dans l'offre gratuite de Claude ; Pro coûte 20 dollars par mois. Copilot Cowork se paie toujours en crédits. ChatGPT Work a été ouvert à toutes les offres, gratuite comprise, dans l'application de bureau au lancement, et aux offres payantes sur le web et le mobile. Vibe Work fait partie de Vibe, l'exécution de code demandant une offre payante."
+    },
+    {
+      "q": "La tâche continue-t-elle si j'éteins mon ordinateur ?",
+      "a": "Oui pour Copilot Cowork, qui tourne dans le cloud. Oui pour Cowork de Claude chez les abonnés Pro et Max (bêta pour Team), à condition que la tâche n'exige aucun fichier local. Oui pour ChatGPT Work lancé depuis le web ou le mobile ; une tâche locale de l'application de bureau dépend de l'ordinateur. La documentation de Vibe Work ne précise pas où s'exécutent ses tâches."
+    },
+    {
+      "q": "Peut-on laisser l'agent envoyer des mails sans validation ?",
+      "a": "Les quatre outils demandent votre accord par défaut avant un envoi. Copilot Cowork permet de lever la question pour un destinataire, un domaine ou une action, le temps de la session ; Claude peut travailler sans vous consulter à chaque étape si vous l'y autorisez. Gardez la validation pour tout ce qui part à l'extérieur, et relisez destinataires et pièces jointes avant d'approuver."
+    },
+    {
+      "q": "Où partent mes données quand je délègue une tâche ?",
+      "a": "Copilot Cowork traite vos fichiers dans le périmètre de votre locataire Microsoft 365, mais les modèles d'Anthropic échappent à l'EU Data Boundary. Anthropic ne propose pas d'hébergement européen dans ses propres applications. OpenAI propose un stockage en Europe aux clients Enterprise et Edu éligibles. Mistral garde les données dans l'Union européenne sauf choix contraire. Anthropic et OpenAI excluent l'entraînement par défaut sur leurs offres professionnelles ; chez Mistral, Enterprise l'exclut d'office et l'administrateur d'une offre Team doit le couper."
+    },
+    {
+      "q": "Existe-t-il une formation Claude Cowork ?",
+      "a": "Masteria, organisme certifié Qualiopi, enseigne Cowork dans sa formation Claude, avec les Skills, les projets et la relecture des livrables, sur les dossiers de votre équipe. La même méthode existe pour Copilot Cowork et pour ChatGPT Work. La formation se déroule en intra, à distance ou dans vos locaux, à partir de 1 980 € HT la journée."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez confier vos premières tâches longues à l'IA ?",
+    "desc": "Masteria forme vos équipes sur l'outil que votre entreprise paie déjà : cadrer une demande, régler les validations, relire le livrable, à partir de vos propres dossiers.",
+    "buttons": [
+      {
+        "label": "Voir la formation Claude",
+        "href": "/formation-claude-ia",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre projet",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Claude Cowork ou Claude Code : lequel utiliser ?",
+      "href": "/claude-cowork-vs-claude-code"
+    },
+    {
+      "label": "Copilot ou Claude : le comparatif",
+      "href": "/copilot-vs-claude"
+    },
+    {
+      "label": "ChatGPT ou Claude : le comparatif",
+      "href": "/chatgpt-vs-claude"
+    },
+    {
+      "label": "Formation Claude",
+      "href": "/formation-claude-ia"
+    },
+    {
+      "label": "Formation Microsoft Copilot",
+      "href": "/formation-microsoft-copilot"
+    },
+    {
+      "label": "Formation multi-outils",
+      "href": "/formation-multi-outils"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : confier une tâche longue à l'IA",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent de travail",
+          "description": "Assistant d'IA qui reçoit un objectif, planifie les étapes, utilise des outils et rend un livrable terminé."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Tâche planifiée",
+          "description": "Demande enregistrée que l'agent exécute seul à une date ou à un rythme fixés."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Tâche déclenchée par un événement",
+          "description": "Tâche lancée par un fait précis : un mail reçu, un message Slack ou Teams, une activité GitHub."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Approbation",
+          "description": "Accord demandé par l'agent avant une action qui engage : envoyer, publier, planifier, supprimer."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Plugin ou connecteur",
+          "description": "Lien entre l'agent et un logiciel de l'entreprise, comme une messagerie, un CRM ou un espace de fichiers."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Skill",
+          "description": "Procédure écrite dans un fichier, que l'agent charge quand une demande s'y rapporte ; Claude, Copilot Cowork et Vibe en utilisent."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Crédit Copilot",
+          "description": "Unité de consommation facturée par Microsoft pour Cowork, à 0,01 dollar en paiement à l'usage."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "EU Data Boundary",
+          "description": "Périmètre dans lequel Microsoft s'engage à garder les données de ses clients européens, stockage et traitement compris."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Six réglages pour cadrer une tâche déléguée à un agent IA",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Le résultat et son lecteur"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Les sources autorisées"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Le format attendu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Les critères de réussite"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Les points d'arrêt"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Le rythme"
+        }
+      ]
+    }
+  ]
+}
