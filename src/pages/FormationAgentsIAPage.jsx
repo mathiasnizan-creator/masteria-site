@@ -956,7 +956,7 @@ export default function FormationAgentsIAPage() {
               { label: 'Formation automatisation IA', href: '/formation-automatisation-ia', tag: 'Workflows', desc: "Les tâches répétitives confiées à Make, Zapier ou n8n, en complément des agents." },
               { label: 'Formation vibe coding', href: '/formation-vibe-coding', tag: 'Créer un outil', desc: "Piloter l'IA pour produire un prototype ou un petit outil, sans être développeur." },
               { label: 'Formation Claude Code', href: '/formation-claude-code', tag: 'Développeurs', desc: "Des agents programmés et relus par vos développeurs." },
-              { label: 'Formation prompt engineering', href: '/formation-prompt-engineering', tag: 'Fondamentaux', desc: "Écrire des demandes précises, base d'instructions d'agent qui se testent." },
+              { label: 'Formation prompt engineering', href: '/formation-prompt-engineering', tag: 'Fondamentaux', desc: "Écrire prompts, consignes de projet et Skills : la base d'instructions d'agent qui se testent." },
               { label: 'Meilleur agent IA : le comparatif', href: '/meilleur-agent-ia', tag: 'Comparatif', desc: "Les agents du marché passés en revue, pour situer ce que vous construirez." },
               { label: 'Formation IA en entreprise', href: '/formation-ia-entreprise', tag: 'Déploiement', desc: "Le cadre général de nos sessions en entreprise, par métier et par outil." },
               { label: 'Financement formation IA', href: '/financement-formation-ia', tag: 'Financement', desc: "Comment un OPCO prend en charge une formation d'équipe, pièces à l'appui." },
