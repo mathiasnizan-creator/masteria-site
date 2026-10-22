@@ -2129,6 +2129,48 @@
     <image:image><image:loc>https://www.master-ia.fr/og/blog--automatisation-ia-pme-processus-prioritaires.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/blog/creer-une-formation-avec-gemini</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/exemples-agents-ia-entreprise</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/fine-tuning-ou-rag</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/gouvernance-agents-ia</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/ia-esn</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/ia-medico-social-guide</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/preparer-codir-avec-ia</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/blog/creer-un-agent-ia-entreprise</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>

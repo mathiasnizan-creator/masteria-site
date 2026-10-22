@@ -1,5 +1,75 @@
 [
   {
+    "slug": "creer-une-formation-avec-gemini",
+    "title": "Comment créer une formation avec Gemini : de l'objectif pédagogique au quiz",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "13 min",
+    "excerpt": "Pour concevoir un module de formation avec Gemini, on écrit d'abord l'objectif, on réunit les sources dans Gemini Notebook, puis on fait produire déroulé, supports et quiz, que relit un expert du métier. La méthode en sept étapes, des demandes à reprendre et les limites à connaître."
+  },
+  {
+    "slug": "exemples-agents-ia-entreprise",
+    "title": "15 exemples d'agents IA en entreprise, classés par fonction",
+    "tag": "Cas d'usage",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "18 min",
+    "excerpt": "Quinze agents IA qui existent en octobre 2026, rangés par fonction : la tâche que chacun mène, l'outil qui la rend possible, son niveau de risque et la part qui reste entre des mains humaines."
+  },
+  {
+    "slug": "fine-tuning-ou-rag",
+    "title": "Fine-tuning ou RAG : définitions, comparatif et lequel choisir en entreprise",
+    "tag": "Guide",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "13 min",
+    "excerpt": "Le fine-tuning modifie le comportement d'un modèle ; le RAG lui fait lire vos documents au moment de répondre. Pour une entreprise, le second suffit presque toujours, et le premier recule chez les éditeurs en 2026."
+  },
+  {
+    "slug": "gouvernance-agents-ia",
+    "title": "Gouverner ses agents IA : inventaire, identités, propriétaires et supervision",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "14 min",
+    "excerpt": "Un agent IA agit avec des droits réels sur vos outils. Le gouverner demande sept gestes : le repérer, l'inscrire au registre, lui donner sa propre identité et le minimum d'accès, nommer son propriétaire, placer des validations, journaliser ses actions et savoir l'arrêter."
+  },
+  {
+    "slug": "ia-esn",
+    "title": "IA générative en ESN : avant-vente, staffing, gestion et code",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "15 min",
+    "excerpt": "Une ESN vend du temps d'expert et produit beaucoup d'écrit. L'IA générative agit sur ses six chantiers : avant-vente, staffing, CRA et facturation, code, confidentialité des clients et mesure du gain."
+  },
+  {
+    "slug": "ia-medico-social-guide",
+    "title": "IA générative en ESMS : le guide pour le secteur médico-social",
+    "tag": "Guide pratique",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "12 min",
+    "excerpt": "Dans un ESMS, l'IA générative sert d'abord l'écrit : transmissions, documents FALC, évaluation HAS, dossiers de financement. Les usages utiles, les règles à poser avant de commencer, cinq premiers pas et une grille pour situer la maturité de votre établissement."
+  },
+  {
+    "slug": "preparer-codir-avec-ia",
+    "title": "Préparer un CODIR avec l'IA : de l'ordre du jour au suivi des décisions",
+    "tag": "Management",
+    "date": "22 octobre 2026",
+    "datePublished": "2026-10-22",
+    "dateModified": "2026-10-22",
+    "readTime": "13 min",
+    "excerpt": "L'IA assemble l'ordre du jour, résume les notes des directions, commente le tableau de bord, rédige le relevé de décisions et tient la liste des actions. La décision et les sujets couverts par un secret restent à la direction."
+  },
+  {
     "slug": "creer-un-agent-ia-entreprise",
     "title": "Comment créer un agent IA en entreprise : le guide étape par étape",
     "tag": "Guide pratique",
