@@ -8,6 +8,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import ToolLogo from '../components/ToolLogo'
 import { SPOKE_SLUGS } from '../data/spoke-slugs'
+import { Accroche, Paras, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * « Quel outil IA pour votre métier ? » — moteur d'arbitrage multi-critères.
@@ -366,7 +367,9 @@ function FaqItem({ q, a }) {
         <ChevronDown size={18} strokeWidth={2} style={{ flexShrink: 0, color: '#6B7280', marginTop: 2, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, margin: 0 }}>{a}</p>
+        <div style={{ paddingBottom: 18 }}>
+          <Paras texte={a} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -550,9 +553,10 @@ export default function QuelOutilIAPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en août 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            ChatGPT, Claude, Copilot, Gemini ou Mistral : aucun ne domine tous les usages, et un outil mal choisi finit contourné par les équipes. Ce comparateur pondère vos usages réels, votre environnement, vos contraintes et votre métier, puis classe les cinq outils en expliquant ce qui a pesé.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, la suivante en puce */}
+          <div id="geo-summary" style={{ maxWidth: 720 }}>
+            <Accroche sombre texte="ChatGPT, Claude, Copilot, Gemini ou Mistral : aucun ne domine tous les usages, et un outil mal choisi finit contourné par les équipes. Ce comparateur pondère vos usages réels, votre environnement, vos contraintes et votre métier, puis classe les cinq outils en expliquant ce qui a pesé." style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 20px', paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
 
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
             {[['Le comparateur', '#comparateur'], ['Grille d’arbitrage', '#grille'], ['Les 5 outils', '#profils-outils'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
@@ -562,22 +566,15 @@ export default function QuelOutilIAPage() {
             ))}
           </nav>
 
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(18px, 3vw, 24px)', maxWidth: 720 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 12 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {[
-                ['Ce qui entre', '9 usages métier, votre suite bureautique, 3 contraintes, 14 métiers'],
-                ['Ce qui sort', 'Les 5 outils classés avec un score, le raisonnement critère par critère, et ce qui aurait fait gagner les autres'],
-                ['En plus', "La combinaison à deux outils quand elle s'impose, et 3 prompts d'essai propres à votre métier"],
-                ['Méthode', 'Grille de pondération éditoriale, publiée en bas de page'],
-              ].map(([label, value], i) => (
-                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#94A3B8', lineHeight: 1.55 }}>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref en repères ; ce qui entre en liste */}
+          <Reperes sombre titre="En bref" colonnes={2} style={{ margin: 0, maxWidth: 900 }} items={lignesEnReperes([
+            { label: 'Ce qui entre', value: '9 usages métier, votre suite bureautique, 3 contraintes, 14 métiers' },
+            { label: 'Ce qui sort', value: 'Les 5 outils classés avec un score, le raisonnement critère par critère, et ce qui aurait fait gagner les autres' },
+            { label: 'En plus', value: "La combinaison à deux outils quand elle s'impose, et 3 prompts d'essai propres à votre métier" },
+            { label: 'Méthode', value: 'Grille de pondération éditoriale, publiée en bas de page' },
+          ]).map((r, k) => k === 0
+            ? { label: r.label, icon: PenLine, liste: ['9 usages métier', 'Votre suite bureautique', '3 contraintes', '14 métiers'] }
+            : { ...r, icon: [PenLine, BarChart3, Workflow, Scale][k] })} />
         </div>
       </section>
 
@@ -1060,24 +1057,25 @@ export default function QuelOutilIAPage() {
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 30px', maxWidth: 760 }}>
             Le résumé de ce que nous observons en formation et en mission, outil par outil. Les modèles évoluent vite ; ces profils d'usage, eux, restent stables.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18 }}>
+          {/* Une rangée par outil, pleine largeur (plus de cartes côte à côte) */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {TOOL_KEYS.map(k => {
               const t = TOOLS[k]
               return (
-                <div key={k} style={{ ...cardStyle, borderTop: `3px solid ${t.color}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                    <span style={{ width: 36, height: 36, borderRadius: 9, background: `${t.color}14`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <ToolLogo tool={t.logo} size={20} color={t.color} />
-                    </span>
-                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{t.name}</h3>
+                <div key={k} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+                  <span style={{ flexShrink: 0, width: 40, height: 40, borderRadius: 10, background: `${t.color}14`, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -4 }}>
+                    <ToolLogo tool={t.logo} size={20} color={t.color} />
+                  </span>
+                  <div style={{ minWidth: 0, maxWidth: 720 }}>
+                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', lineHeight: 1.35 }}>{t.name}</h3>
+                    <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 8px' }}>{t.pitch}</p>
+                    <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.6, margin: '0 0 10px' }}>
+                      <strong style={{ color: '#374151' }}>Il gagne quand il y a</strong> {t.edge}.
+                    </p>
+                    <Link to={`/${t.hub}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: c, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}>
+                      Formations {t.short} <ArrowRight size={13} aria-hidden="true" />
+                    </Link>
                   </div>
-                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>{t.pitch}</p>
-                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.6, margin: '0 0 14px' }}>
-                    <strong style={{ color: '#374151' }}>Il gagne quand il y a</strong> {t.edge}.
-                  </p>
-                  <Link to={`/${t.hub}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, color: c, fontWeight: 700, fontSize: 13.5, textDecoration: 'none' }}>
-                    Formations {t.short} <ArrowRight size={13} aria-hidden="true" />
-                  </Link>
                 </div>
               )
             })}
@@ -1093,21 +1091,11 @@ export default function QuelOutilIAPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>Après le choix</div>
           <h2 style={h2Style}>L'outil ne fait pas l'adoption</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 18 }}>
-            {[
-              { icon: GraduationCap, title: 'Former sur vos cas réels', desc: "L'article des Échos qui cite notre fondateur le résume : un modèle mal adapté, et les gens vont chercher ailleurs. La formation sur vos propres documents ancre l'outil choisi dans le quotidien." },
-              { icon: ShieldCheck, title: "Cadrer l'usage", desc: 'Comptes professionnels, charte, liste des données interdites : le cadre se pose au moment du déploiement, pas après le premier incident.' },
-              { icon: Scale, title: 'Réévaluer chaque année', desc: "Les modèles et les tarifs bougent vite. Un point annuel suffit pour vérifier que l'outil choisi reste le bon, sans zapping permanent." },
-            ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={cardStyle}>
-                <div style={{ width: 44, height: 44, background: '#DBEAFE', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={[
+            { icon: GraduationCap, titre: 'Former sur vos cas réels', texte: "L'article des Échos qui cite notre fondateur le résume : un modèle mal adapté, et les gens vont chercher ailleurs. La formation sur vos propres documents ancre l'outil choisi dans le quotidien." },
+            { icon: ShieldCheck, titre: "Cadrer l'usage", texte: 'Comptes professionnels, charte, liste des données interdites : le cadre se pose au moment du déploiement, pas après le premier incident.' },
+            { icon: Scale, titre: 'Réévaluer chaque année', texte: "Les modèles et les tarifs bougent vite. Un point annuel suffit pour vérifier que l'outil choisi reste le bon, sans zapping permanent." },
+          ]} />
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 26 }}>
             <Link to="/formation-multi-outils" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '13px 26px', borderRadius: 10, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Comparer les 5 outils en formation <ArrowRight size={15} aria-hidden="true" />

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, Compass, Code2, GraduationCap, ShieldCheck, BookOpen, Users, Target, FolderSearch } from 'lucide-react'
+import { ArrowRight, BadgeCheck, Compass, Code2, GraduationCap, ShieldCheck, BookOpen, Users, Target, FolderSearch, Check, Wallet, Euro } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « Consultant IA » : GUIDE MÉTIER à double tunnel.
@@ -230,7 +231,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -314,12 +317,28 @@ export default function ConsultantIAPage() {
           </p>
 
           {/* GEO : réponse directe citable, définition */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Un consultant IA aide une organisation à tirer parti de l'intelligence artificielle</strong> : il observe le travail des équipes, retient les usages qui valent l'effort, choisit les outils sans dépendre d'un éditeur, écrit les règles d'usage et forme les personnes concernées. Le code n'occupe qu'une petite part de son temps ; l'essentiel consiste à faire adopter l'IA par des équipes.
-          </p>
+          <div style={{ margin: '0 0 26px', maxWidth: 760 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Un consultant IA aide une organisation à tirer parti de l'intelligence artificielle</strong> :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '8px 20px' }}>
+              {['Il observe le travail des équipes', "Retient les usages qui valent l'effort", "Choisit les outils sans dépendre d'un éditeur", "Écrit les règles d'usage", 'Et forme les personnes concernées.'].map(t => (
+                <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+              Le code n'occupe qu'une petite part de son temps ; l'essentiel consiste à faire adopter l'IA par des équipes.
+            </p>
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Cette fiche s'adresse à deux lecteurs : la personne qui envisage d'exercer ce métier, et la direction qui veut en faire intervenir un.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Cette fiche s'adresse à deux lecteurs : la personne qui envisage d'exercer ce métier, et la direction qui veut en faire intervenir un. Vous y trouverez ses missions, les compétences attendues, les salaires et taux journaliers observés en 2026, le chemin pour y arriver et la manière de bien recruter.
+            Vous y trouverez ses missions, les compétences attendues, les salaires et taux journaliers observés en 2026, le chemin pour y arriver et la manière de bien recruter.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -332,24 +351,14 @@ export default function ConsultantIAPage() {
             </a>
           </div>
 
-          {/* En bref (GEO) : dl citable */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {[
-                ['Le métier', "Observer le travail, retenir les usages utiles, choisir les outils, écrire les règles d'usage, former les équipes."],
-                ['Compétences', "Une base technique (modèles de langage, RAG, prompts), le sens du métier client, la connaissance du RGPD et de l'AI Act, de la pédagogie."],
-                ['Salaire', "De 38 000 € brut par an au début jusqu'à 100 000 € et davantage pour les seniors les plus rares, selon les repères observés en France."],
-                ['Taux journalier', "À partir d'environ 500 € la journée pour un indépendant ; davantage quand la mission passe par un cabinet."],
-                ['Devenir ou recruter ?', "Pour le devenir : une formation, puis des missions sur des dossiers concrets. Pour en faire intervenir un : un indépendant, un cabinet ou un poste interne, selon la durée du besoin."],
-              ].map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref (GEO) en repères ; le métier en liste */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={[
+            { label: 'Le métier', icon: Compass, liste: ['Observer le travail', 'Retenir les usages utiles', 'Choisir les outils', "Écrire les règles d'usage", 'Former les équipes.'] },
+            { label: 'Compétences', icon: GraduationCap, detail: "Une base technique (modèles de langage, RAG, prompts), le sens du métier client, la connaissance du RGPD et de l'AI Act, de la pédagogie." },
+            { label: 'Salaire', icon: Wallet, detail: "De 38 000 € brut par an au début jusqu'à 100 000 € et davantage pour les seniors les plus rares, selon les repères observés en France." },
+            { ...lignesEnReperes([{ label: 'Taux journalier', value: "À partir d'environ 500 € la journée pour un indépendant ; davantage quand la mission passe par un cabinet." }])[0], icon: Euro },
+            { label: 'Devenir ou recruter ?', icon: Users, value: 'Pour le devenir : une formation, puis des missions sur des dossiers concrets.', detail: 'Pour en faire intervenir un : un indépendant, un cabinet ou un poste interne, selon la durée du besoin.' },
+          ]} />
         </div>
       </section>
 
@@ -382,23 +391,8 @@ export default function ConsultantIAPage() {
             La technique occupe une part de son temps. Le reste se passe en entretiens, en arbitrages et aux côtés des équipes pendant leurs premières semaines d'usage.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
-            {MISSIONS.map((m, i) => {
-              const Icon = m.icon
-              return (
-                <div key={m.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={21} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c }}>{`0${i + 1}`}</span>
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 19px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{m.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{m.body}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Une rangée par mission (plus de cartes côte à côte) */}
+          <Rangees items={MISSIONS.map(m => ({ titre: m.title, texte: m.body, icon: m.icon }))} />
         </div>
       </section>
 
@@ -512,11 +506,14 @@ export default function ConsultantIAPage() {
                   ))}
                 </ol>
                 <div style={{ background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '16px 20px' }}>
-                  <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: '0 0 10px' }}>
                     <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, verticalAlign: '-2px', marginRight: 6 }} aria-hidden="true" />
                     <strong>Se former avec Masteria :</strong> nos formations certifiées Qualiopi couvrent ce socle. Partez du{' '}
                     <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue des formations en intelligence artificielle</Link>, approfondissez l'<Link to="/formation-prompt-engineering" style={{ color: c, fontWeight: 600 }}>écriture de prompts</Link>{' '}
-                    et, pour les profils techniques, <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link>. La journée démarre à 1 980 € HT, pour un groupe interne ou une personne seule, et la préparation d'une formation sur mesure s'y ajoute au devis ; pour un salarié, l'OPCO de la branche examine le dossier en appliquant ses propres règles, dans la limite de ses fonds.
+                    et, pour les profils techniques, <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link>.
+                  </p>
+                  <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0 }}>
+                    La journée démarre à 1 980 € HT, pour un groupe interne ou une personne seule, et la préparation d'une formation sur mesure s'y ajoute au devis ; pour un salarié, l'OPCO de la branche examine le dossier en appliquant ses propres règles, dans la limite de ses fonds.
                   </p>
                 </div>
               </div>
@@ -575,13 +572,16 @@ export default function ConsultantIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 12px', maxWidth: 820 }}>
             <strong>Masteria</strong> vous apporte une équipe : un consultant pilote la mission, épaulé selon les besoins par des développeurs et des formateurs du cabinet. Si votre besoin reste flou, le{' '}
             <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> le précise en peu de temps ; le détail de nos{' '}
             <Link to="/conseil-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>missions de conseil en IA</Link>{' '}
             et le guide pour{' '}
             <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>choisir le meilleur cabinet IA</Link>{' '}
-            complètent la lecture. Si le sujet est de confier la direction de l'IA à quelqu'un, voyez le rôle de{' '}
+            complètent la lecture.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
+            Si le sujet est de confier la direction de l'IA à quelqu'un, voyez le rôle de{' '}
             <Link to="/chief-ai-officer" style={{ color: c, fontWeight: 600 }}>Chief AI Officer</Link>. S'il s'agit d'écrire le code d'un outil, la fiche{' '}
             <Link to="/developpeur-ia" style={{ color: c, fontWeight: 600 }}>développeur IA</Link> décrit ce profil.
           </p>
@@ -639,15 +639,18 @@ export default function ConsultantIAPage() {
           <p style={{ ...mutedStyle, margin: '0 0 32px' }}>
             Atelier, entretien, formation de référents : trois gestes du métier, observés chez des clients anonymisés à leur demande.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+          {/* Une rangée par mission : le geste à gauche, le récit à droite */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {CASES.map(k => (
-              <div key={k.anchor} style={{ ...cardStyle, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ ...kickerStyle, fontSize: 12, marginBottom: 12 }}>{k.tag}</div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{k.text}</p>
-                <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  {k.link}
-                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
+              <div key={k.anchor} style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 40px', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <div style={{ ...kickerStyle, fontSize: 12, margin: 0, flex: '0 1 160px', paddingTop: 4 }}>{k.tag}</div>
+                <div style={{ flex: '1 1 420px', minWidth: 0, maxWidth: 720 }}>
+                  <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>{k.text}</p>
+                  <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    {k.link}
+                    <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -718,8 +721,11 @@ export default function ConsultantIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des consultants indépendants, choisis pour chaque mission et pilotés par le fondateur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Les consultants IA qui interviennent pour Masteria exercent en indépendants ; Mathias Nizan les choisit selon le secteur et le sujet de chaque mission, et en garde la responsabilité.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Les consultants IA qui interviennent pour Masteria exercent en indépendants ; Mathias Nizan les choisit selon le secteur et le sujet de chaque mission, et en garde la responsabilité. Aucun d'eux n'est payé par un éditeur pour recommander un outil. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link> et les <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>articles qui citent le cabinet</Link> en donnent un aperçu.
+              Aucun d'eux n'est payé par un éditeur pour recommander un outil. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link> et les <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>articles qui citent le cabinet</Link> en donnent un aperçu.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

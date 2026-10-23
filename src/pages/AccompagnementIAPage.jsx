@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « accompagnement IA » (slug /accompagnement-ia), cluster conseil.
@@ -423,7 +424,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -501,13 +504,30 @@ export default function AccompagnementIAPage() {
             Signé <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote les accompagnements de Masteria · texte revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un accompagnement IA, chez Masteria, suit votre entreprise pendant plusieurs mois, de la première décision jusqu'au jour où vos équipes se servent de l'IA sans nous. Il enchaîne quatre temps : <strong style={{ color: '#fff', fontWeight: 700 }}>choisir les usages, installer les outils, faire adopter, mesurer</strong>. Votre OPCO peut financer les journées de formation ; le conseil reste à votre charge.
-          </p>
+          {/* GEO : réponse directe citable ; accroche, puis les quatre temps en liste */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 760 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 18px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Un accompagnement IA, chez Masteria, suit votre entreprise pendant plusieurs mois, de la première décision jusqu'au jour où vos équipes se servent de l'IA sans nous.
+            </p>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 12px' }}>Il enchaîne quatre temps :</p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px' }}>
+              {['Choisir les usages', 'Installer les outils', 'Faire adopter', 'Mesurer.'].map(t => (
+                <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5 }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <strong style={{ color: '#fff', fontWeight: 700 }}>{t}</strong>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+              Votre OPCO peut financer les journées de formation ; le conseil reste à votre charge.
+            </p>
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Un projet d'IA s'enlise rarement sur la technique. Il s'arrête plutôt le jour où l'outil est installé et où chacun retourne à ses habitudes.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Un projet d'IA s'enlise rarement sur la technique. Il s'arrête plutôt le jour où l'outil est installé et où chacun retourne à ses habitudes. Notre accompagnement prend en charge ce moment-là, avec le conseil, la construction d'outils et la formation réunis dans un cabinet qui ne dépend d'aucun éditeur.
+            Notre accompagnement prend en charge ce moment-là, avec le conseil, la construction d'outils et la formation réunis dans un cabinet qui ne dépend d'aucun éditeur.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -532,18 +552,13 @@ export default function AccompagnementIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'essentiel</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères ; l'adoption en liste */}
+          <Reperes sombre id="en-bref" titre="L'essentiel" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={lignesEnReperes(EN_BREF).map((r, k) => {
+            const icon = [Compass, undefined, Users, undefined, undefined, RouteIcon][k]
+            return r.label === 'Adoption'
+              ? { label: r.label, icon, liste: EN_BREF[k].value.split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) }
+              : { ...r, icon }
+          })} />
         </div>
       </section>
 
@@ -555,9 +570,7 @@ export default function AccompagnementIAPage() {
             Un accompagnement IA complet tient en quatre temps
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Cadrer les usages, équiper les équipes, faire adopter, mesurer : chaque temps se termine par un résultat que vous pouvez constater avant d'engager le suivant. Vous gardez la main sur chaque passage d'un temps à l'autre.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Cadrer les usages, équiper les équipes, faire adopter, mesurer : chaque temps se termine par un résultat que vous pouvez constater avant d'engager le suivant. Vous gardez la main sur chaque passage d'un temps à l'autre." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -574,7 +587,7 @@ export default function AccompagnementIAPage() {
                 </div>
                 <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 10px', maxWidth: 740 }}>{step.desc}</p>
+                  <Paras texte={step.desc} max={2} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 10px', maxWidth: 740 }} />
                   <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
                     {step.links.map(l => (
                       <Link key={l.href} to={l.href} style={{ ...aStyle, fontSize: 13.5, display: 'inline-flex', alignItems: 'center', gap: 5 }}>
@@ -602,26 +615,15 @@ export default function AccompagnementIAPage() {
             L'accompagnement au changement se joue après l'installation de l'outil
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Quatre leviers font passer un outil d'IA de l'installation à l'usage : des référents dans chaque équipe, une parole franche de la direction, des formations construites avec les fichiers de chaque service et un suivi de l'usage à date fixe. Les réticences des salariés ont des raisons ; on y répond par des faits.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }}
+            texte="Quatre leviers font passer un outil d'IA de l'installation à l'usage : des référents dans chaque équipe, une parole franche de la direction, des formations construites avec les fichiers de chaque service et un suivi de l'usage à date fixe. Les réticences des salariés ont des raisons ; on y répond par des faits." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {CHANGEMENT.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{card.title}</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 24, maxWidth: 820 }}>
-            Le règlement européen pousse dans le même sens : son article 4, en vigueur depuis le 2 février 2025, attend des entreprises qui utilisent l'IA qu'elles aident leurs salariés à maîtriser ces outils, et l'Omnibus de juillet 2026 a précisé qu'on y attend des efforts plutôt qu'un résultat. Former chaque métier sur ses propres dossiers y répond. Quand l'objectif est d'abord de faire monter toutes les équipes en compétence, voyez notre démarche d'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation à l'IA</Link>.
+          <Rangees sombre items={CHANGEMENT.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} />
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, margin: '28px 0 12px', maxWidth: 760 }}>
+            Le règlement européen pousse dans le même sens : son article 4, en vigueur depuis le 2 février 2025, attend des entreprises qui utilisent l'IA qu'elles aident leurs salariés à maîtriser ces outils, et l'Omnibus de juillet 2026 a précisé qu'on y attend des efforts plutôt qu'un résultat.
+          </p>
+          <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, margin: 0, maxWidth: 760 }}>
+            Former chaque métier sur ses propres dossiers y répond. Quand l'objectif est d'abord de faire monter toutes les équipes en compétence, voyez notre démarche d'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation à l'IA</Link>.
           </p>
         </div>
       </section>
@@ -634,9 +636,7 @@ export default function AccompagnementIAPage() {
             Cinq raisons font échouer un projet d'IA, et aucune n'est technique
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Des licences achetées avant les usages, un prototype jamais mis en service, un sujet sans porteur, une formation qui ignore le métier, un usage que personne ne relève : ces cinq causes reviennent d'un projet à l'autre. L'accompagnement existe pour les traiter une par une.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Des licences achetées avant les usages, un prototype jamais mis en service, un sujet sans porteur, une formation qui ignore le métier, un usage que personne ne relève : ces cinq causes reviennent d'un projet à l'autre. L'accompagnement existe pour les traiter une par une." />
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px' }}>
             Nous retrouvons ces schémas depuis 2022, chez une équipe de trois comme chez un industriel implanté sur trois continents. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> racontent ce qui se passe quand on les traite dès le départ.
@@ -667,19 +667,13 @@ export default function AccompagnementIAPage() {
             Trois trimestres suffisent le plus souvent
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Le premier trimestre choisit et prouve sur une équipe pilote, le deuxième étend et forme par vagues, le troisième transmet aux référents. Chaque trimestre livre un résultat que la direction peut constater.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Le premier trimestre choisit et prouve sur une équipe pilote, le deuxième étend et forme par vagues, le troisième transmet aux référents. Chaque trimestre livre un résultat que la direction peut constater." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginTop: 12 }}>
-            {TRIMESTRES.map(t => (
-              <div key={t.periode} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}` }}>
-                <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 8 }}>{t.periode}</div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{t.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{t.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Un trimestre par rangée (plus de cartes côte à côte) */}
+          <Rangees numeros={false} style={{ marginTop: 12 }} items={TRIMESTRES.map(t => ({
+            titre: <><span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>{t.periode}</span>{t.title}</>,
+            texte: t.desc,
+          }))} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
             Ce calendrier donne un ordre de grandeur. Une PME au périmètre net le parcourt plus vite ; un groupe à plusieurs sites l'étire. Le vôtre se fixe au cadrage, avec ses dates de décision.
           </p>
@@ -694,9 +688,7 @@ export default function AccompagnementIAPage() {
             Conseil, accompagnement ou acculturation : trois besoins distincts
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le conseil aide la direction à décider. L'accompagnement fait aboutir cette décision dans les équipes, sur plusieurs mois. L'acculturation donne à tous un socle commun. Les trois se combinent ; seules les journées de formation peuvent être financées par l'OPCO.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le conseil aide la direction à décider. L'accompagnement fait aboutir cette décision dans les équipes, sur plusieurs mois. L'acculturation donne à tous un socle commun. Les trois se combinent ; seules les journées de formation peuvent être financées par l'OPCO." />
 
           <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto', background: '#fff' }}>
             <table aria-label="Comparatif entre conseil IA, accompagnement IA et acculturation IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -738,8 +730,11 @@ export default function AccompagnementIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Les journées de formation peuvent être financées, le conseil non
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La certification Qualiopi de Masteria porte sur ses actions de formation. Chaque journée d'atelier peut donc être financée par l'OPCO de votre secteur, aux conditions qu'il fixe et tant que son enveloppe le permet.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La certification Qualiopi de Masteria porte sur ses actions de formation. Chaque journée d'atelier peut donc être financée par l'OPCO de votre secteur, aux conditions qu'il fixe et tant que son enveloppe le permet. Le cadrage, le conseil et la construction d'outils ne sont pas finançables par votre OPCO. Selon la région et la taille de l'entreprise, une aide publique au conseil existe parfois ; nous regardons ce point avec vous au cadrage.
+                Le cadrage, le conseil et la construction d'outils ne sont pas finançables par votre OPCO. Selon la région et la taille de l'entreprise, une aide publique au conseil existe parfois ; nous regardons ce point avec vous au cadrage.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -767,24 +762,27 @@ export default function AccompagnementIAPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Leurs noms restent confidentiels, à leur demande. Chaque fiche sépare ce qui est fait de ce qui reste à venir, dates à l'appui.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+          {/* Une rangée par cas : secteur et chiffre à gauche, récit à droite */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {CAS.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
-              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+              <article key={id} style={{ display: 'flex', flexWrap: 'wrap', gap: '14px 40px', padding: '28px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <div style={{ flex: '0 1 240px', minWidth: 200 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                    <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={17} strokeWidth={1.75} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                  </div>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 28, fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                  <div style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                <div style={{ flex: '1 1 380px', minWidth: 0, maxWidth: 720 }}>
+                  <Paras texte={text} max={2} budget={300} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 12 }}>
+                    Voir la fiche complète
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Voir la fiche complète
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -905,8 +903,11 @@ export default function AccompagnementIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Une équipe composée pour votre projet, un pilote constant
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Mathias Nizan reste votre interlocuteur du début à la fin. Autour de lui, Masteria mobilise selon les besoins de la mission des consultants IA (une dizaine dans son réseau), des développeurs (environ cinq) et des formateurs (une vingtaine), qui exercent tous en indépendants.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Mathias Nizan reste votre interlocuteur du début à la fin. Autour de lui, Masteria mobilise selon les besoins de la mission des consultants IA (une dizaine dans son réseau), des développeurs (environ cinq) et des formateurs (une vingtaine), qui exercent tous en indépendants. Les missions ont lieu en France et ailleurs en Europe, aux États-Unis comme en Inde ; nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+              Les missions ont lieu en France et ailleurs en Europe, aux États-Unis comme en Inde ; nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

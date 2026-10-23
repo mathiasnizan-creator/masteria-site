@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation cse ia » (slug /formation-cse-ia), côté FORMATION.
@@ -68,14 +69,6 @@ const tdStyle = { padding: '14px 16px', fontSize: 14.5, color: '#374151', lineHe
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -312,7 +305,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -395,13 +390,23 @@ export default function FormationCseIaPage() {
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · relecture juridique d'octobre 2026, à l'usage des élus comme des directions
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation CSE et IA met élus et direction au même niveau sur l'intelligence artificielle. Le matin, les participants voient ce que font les outils et comment se déroule la consultation (article L2312-8, ordonnance de Nanterre de février 2025, AI Act) ; l'après-midi, <strong style={{ color: '#fff', fontWeight: 700 }}>ils apprennent à instruire un projet : pièces à réclamer, questions à poser, avis motivé, suivi</strong>. Une journée, une posture neutre, une action de formation couverte par notre certification Qualiopi.
-          </p>
+          {/* GEO : réponse directe citable ; 1re phrase en accroche, la suite en puces */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 760 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              La formation CSE et IA met élus et direction au même niveau sur l'intelligence artificielle.
+            </p>
+            <PointsCles sombre style={{ margin: 0 }} phrases={[
+              <>Le matin, les participants voient ce que font les outils et comment se déroule la consultation (article L2312-8, ordonnance de Nanterre de février 2025, AI Act) ;</>,
+              <>l'après-midi, <strong style={{ color: '#fff', fontWeight: 700 }}>ils apprennent à instruire un projet : pièces à réclamer, questions à poser, avis motivé, suivi</strong>.</>,
+              <>Une journée, une posture neutre, une action de formation couverte par notre certification Qualiopi.</>,
+            ]} />
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Un projet d'IA qui touche l'organisation du travail passe par le CSE, et la décision de Nanterre rappelle que la consultation vient avant le déploiement, phase pilote comprise lorsque le projet est déjà engagé.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Un projet d'IA qui touche l'organisation du travail passe par le CSE, et la décision de Nanterre rappelle que la consultation vient avant le déploiement, phase pilote comprise lorsque le projet est déjà engagé. Tout le monde y gagne quand le comité comprend le sujet : l'examen devient sérieux et le bras de fer s'évite.
+            Tout le monde y gagne quand le comité comprend le sujet : l'examen devient sérieux et le bras de fer s'évite.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -423,18 +428,12 @@ export default function FormationCseIaPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La journée en résumé</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères ; contenu et livrables en liste */}
+          <Reperes sombre id="en-bref" titre="La journée en résumé" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={lignesEnReperes(EN_BREF).map((r, k) => (
+            ['Contenu', 'Livrables'].includes(r.label)
+              ? { label: r.label, liste: EN_BREF[k].value.split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) }
+              : { ...r, icon: r.label === 'Posture' ? Scale : undefined }
+          ))} />
         </div>
       </section>
 
@@ -457,26 +456,14 @@ export default function FormationCseIaPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi former le CSE à l'intelligence artificielle ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>La consultation du CSE sur un projet d'IA est obligatoire et préalable, et elle ne sert que si les élus comprennent le sujet. Formés, ils posent de meilleures questions, obtiennent de meilleures garanties et rendent des avis qui comptent : les salariés comme le projet en profitent.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="La consultation du CSE sur un projet d'IA est obligatoire et préalable, et elle ne sert que si les élus comprennent le sujet. Formés, ils posent de meilleures questions, obtiennent de meilleures garanties et rendent des avis qui comptent : les salariés comme le projet en profitent." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Côté direction, la journée se combine avec la <Link to="/formation-ia-comex" style={aStyle}>session COMEX</Link> et la <Link to="/formation-gouvernance-ia" style={aStyle}>formation gouvernance IA</Link> : le cadre se construit des deux côtés de la table.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              <Rangees items={POURQUOI.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} />
             </div>
           </div>
         </div>
@@ -494,9 +481,8 @@ export default function FormationCseIaPage() {
             Une journée en deux temps : comprendre le matin, instruire l'après-midi
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le matin installe la compréhension : l'IA montrée sans jargon, ses effets sur les postes, le droit de la consultation et les données des salariés. L'après-midi donne les outils : la grille d'instruction, les vigilances par famille de projet, un atelier sur un cas de l'entreprise, l'avis motivé et le suivi.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }}
+            texte="Le matin installe la compréhension : l'IA montrée sans jargon, ses effets sur les postes, le droit de la consultation et les données des salariés. L'après-midi donne les outils : la grille d'instruction, les vigilances par famille de projet, un atelier sur un cas de l'entreprise, l'avis motivé et le suivi." />
 
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
@@ -542,9 +528,7 @@ export default function FormationCseIaPage() {
             Quatre familles de projets, quatre jeux de questions pour le CSE
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un assistant bureautique ne soulève pas les mêmes questions qu'un logiciel qui trie des candidatures. Le tableau résume les quatre familles que les comités rencontrent le plus souvent, avec leurs questions clés et leurs points de vigilance : c'est la version courte de la grille remise en formation.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Un assistant bureautique ne soulève pas les mêmes questions qu'un logiciel qui trie des candidatures. Le tableau résume les quatre familles que les comités rencontrent le plus souvent, avec leurs questions clés et leurs points de vigilance : c'est la version courte de la grille remise en formation." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -585,8 +569,18 @@ export default function FormationCseIaPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Dès 1 980 € HT la journée, et deux façons de la financer
               </h2>
+              {/* Un paragraphe par idée : tarif, employeur, comité, cas à part */}
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La formation CSE et IA suit le tarif journalier de Masteria, à partir de 1 980 € HT pour le groupe, douze participants au plus ; l'adaptation au fonctionnement de votre comité s'ajoute au devis comme temps de préparation. Deux sources de financement existent, et le devis présente les deux.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                <strong>L'employeur</strong> peut prendre la journée à sa charge, notamment quand elle réunit élus et direction ; la certification Qualiopi du cabinet permet alors de la présenter à l'OPCO de la branche, qui décide selon ses propres règles.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                <strong>Le comité</strong> peut aussi décider de la régler sur ses propres fonds : c'est un choix des élus, à valider avec le trésorier du CSE au regard des règles qui encadrent son budget.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La formation CSE et IA suit le tarif journalier de Masteria, à partir de 1 980 € HT pour le groupe, douze participants au plus ; l'adaptation au fonctionnement de votre comité s'ajoute au devis comme temps de préparation. Deux sources de financement existent, et le devis présente les deux. <strong>L'employeur</strong> peut prendre la journée à sa charge, notamment quand elle réunit élus et direction ; la certification Qualiopi du cabinet permet alors de la présenter à l'OPCO de la branche, qui décide selon ses propres règles. <strong>Le comité</strong> peut aussi décider de la régler sur ses propres fonds : c'est un choix des élus, à valider avec le trésorier du CSE au regard des règles qui encadrent son budget. Le stage de formation économique de cinq jours prévu pour les élus titulaires d'un premier mandat (article L2315-63 du Code du travail) suit son propre cadre et reste distinct de cette journée. Le compte personnel de formation des salariés n'est pas mobilisé. La page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs côté employeur.
+                Le stage de formation économique de cinq jours prévu pour les élus titulaires d'un premier mandat (article L2315-63 du Code du travail) suit son propre cadre et reste distinct de cette journée. Le compte personnel de formation des salariés n'est pas mobilisé. La page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs côté employeur.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -615,8 +609,11 @@ export default function FormationCseIaPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Un cabinet qui connaît les deux côtés de la table
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Masteria déploie l'IA dans des PME comme dans des groupes depuis 2022, du comité de direction aux équipes : nous voyons ce que les outils font au quotidien, ce que les directions en attendent et ce que les salariés en vivent.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria déploie l'IA dans des PME comme dans des groupes depuis 2022, du comité de direction aux équipes : nous voyons ce que les outils font au quotidien, ce que les directions en attendent et ce que les salariés en vivent. Mathias Nizan, qui a fondé le cabinet à Lyon, pilote chaque session et s'appuie sur un réseau d'une vingtaine de formateurs indépendants. Pendant cette journée, le cabinet ne vend ni licence ni déploiement, et chacun reçoit la même information. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> racontent ces déploiements.
+                Mathias Nizan, qui a fondé le cabinet à Lyon, pilote chaque session et s'appuie sur un réseau d'une vingtaine de formateurs indépendants. Pendant cette journée, le cabinet ne vend ni licence ni déploiement, et chacun reçoit la même information. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> racontent ces déploiements.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -643,14 +640,13 @@ export default function FormationCseIaPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Sept mots pour suivre une consultation IA
           </h2>
-          <p style={answerStyle}>
-            <strong>Une consultation IA se suit avec sept notions : CSE, information-consultation, introduction de nouvelles technologies, avis motivé, budget de fonctionnement, BDESE, littératie IA. Les définitions ci-dessous sont celles que nous donnons en formation.</strong>
-          </p>
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
+          <Reponse style={answerStyle} texte="Une consultation IA se suit avec sept notions : CSE, information-consultation, introduction de nouvelles technologies, avis motivé, budget de fonctionnement, BDESE, littératie IA. Les définitions ci-dessous sont celles que nous donnons en formation." />
+          {/* Une ligne par terme, pleine largeur (plus de cartes côte à côte) */}
+          <dl style={{ margin: 0, borderTop: '1px solid #E5E7EB', maxWidth: 980 }}>
             {termsJsonLd.hasDefinedTerm.map(t => (
-              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
-                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
-                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
+              <div key={t.name} style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 32px', padding: '20px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <dt style={{ ...h3Style, fontSize: 16.5, flex: '0 1 260px', lineHeight: 1.4 }}>{t.name}</dt>
+                <dd style={{ margin: 0, flex: '1 1 380px', minWidth: 0, maxWidth: 680, fontSize: 15.5, color: '#4B5563', lineHeight: 1.7 }}>{t.description}</dd>
               </div>
             ))}
           </dl>

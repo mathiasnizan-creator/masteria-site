@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, ShieldCheck, ListChecks, Users, Eye,
   Scale, Target, Lock, BookOpen,
-  ExternalLink, GraduationCap, ClipboardCheck, Building2,
+  ExternalLink, GraduationCap, ClipboardCheck, Building2, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page pilier « IA responsable » (slug /ia-responsable). Cible : « ia responsable »,
@@ -62,16 +63,22 @@ const aStyle = { color: c, fontWeight: 600 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
 
-function Kicker({ children }) {
-  return <div style={kickerStyle}>{children}</div>
+/* Énumération en liste à coches : mêmes mots, un élément par ligne */
+function ListeCoches({ items, sombre = false, style }) {
+  return (
+    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 8, ...style }}>
+      {items.map(t => (
+        <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.55, color: sombre ? '#E2E8F0' : '#374151' }}>
+          <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: sombre ? '#60A5FA' : c, flexShrink: 0, marginTop: 4 }} />
+          <span>{t}</span>
+        </li>
+      ))}
+    </ul>
+  )
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
+function Kicker({ children }) {
+  return <div style={kickerStyle}>{children}</div>
 }
 
 const HERO_BADGES = [
@@ -341,7 +348,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -418,12 +427,21 @@ export default function IAResponsablePage() {
           </p>
 
           {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'IA responsable rassemble les principes et les pratiques qui rendent un système d'IA transparent, supervisé, équitable, robuste et respectueux des données. <strong style={{ color: '#fff', fontWeight: 700 }}>Elle se prouve : par des contrôles posés dans les processus, des mesures relevées et un référentiel qu'un tiers peut auditer.</strong>
-          </p>
+          <div style={{ margin: '0 0 28px', maxWidth: 740 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 18px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              L'IA responsable rassemble les principes et les pratiques qui rendent un système d'IA transparent, supervisé, équitable, robuste et respectueux des données.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.6, margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Elle se prouve :</strong>
+            </p>
+            <ListeCoches sombre style={{ margin: 0 }} items={['Par des contrôles posés dans les processus', 'Des mesures relevées', "Et un référentiel qu'un tiers peut auditer."]} />
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 660 }}>
+            Le mot circule dans les rapports annuels et les appels d'offres. Derrière lui se trouvent des exigences précises : l'AI Act, le RGPD, les normes ISO/IEC 42001 (système de management) et 42005 (analyse d'impact).
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Le mot circule dans les rapports annuels et les appels d'offres. Derrière lui se trouvent des exigences précises : l'AI Act, le RGPD, les normes ISO/IEC 42001 (système de management) et 42005 (analyse d'impact). Cabinet lyonnais consacré à l'IA depuis 2022, Masteria aide les organisations à passer de la déclaration au dispositif. Cette page définit l'IA responsable, la distingue de l'IA éthique, montre comment mesurer ses impacts et décrit la méthode.
+            Cabinet lyonnais consacré à l'IA depuis 2022, Masteria aide les organisations à passer de la déclaration au dispositif. Cette page définit l'IA responsable, la distingue de l'IA éthique, montre comment mesurer ses impacts et décrit la méthode.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -449,18 +467,15 @@ export default function IAResponsablePage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 132px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères ; référentiels et méthode en liste */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={[
+            { label: 'Définition', icon: BookOpen, detail: EN_BREF[0].value },
+            { ...lignesEnReperes([EN_BREF[1]])[0], icon: Scale },
+            { label: 'Référentiels', icon: ListChecks, liste: EN_BREF[2].value.split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) },
+            { label: 'Impacts', icon: Users, detail: EN_BREF[3].value },
+            { label: 'Méthode', icon: Target, value: 'Cinq étapes', liste: EN_BREF[4].value.replace(/^Cinq étapes : /, '').split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) },
+            { label: 'Notre rôle', icon: GraduationCap, detail: EN_BREF[5].value },
+          ]} />
         </div>
       </section>
 
@@ -473,26 +488,15 @@ export default function IAResponsablePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Qu'est-ce que l'IA responsable ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>L'IA responsable désigne les principes et les pratiques qui gardent un système d'intelligence artificielle transparent, supervisé par des personnes, équitable, robuste et respectueux des données. Six principes la structurent, et chacun appelle des contrôles précis : transparence et explicabilité, supervision humaine, équité, vie privée, robustesse et sécurité, responsabilité et traçabilité.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="L'IA responsable désigne les principes et les pratiques qui gardent un système d'intelligence artificielle transparent, supervisé par des personnes, équitable, robuste et respectueux des données. Six principes la structurent, et chacun appelle des contrôles précis : transparence et explicabilité, supervision humaine, équité, vie privée, robustesse et sécurité, responsabilité et traçabilité." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Un principe que rien n'applique reste une intention. La suite de la page décline les six en gestes concrets, puis les rattache aux textes et aux normes qui permettent de vérifier qu'on s'y tient.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {PRINCIPES.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par principe (plus de cartes côte à côte) */}
+              <Rangees items={PRINCIPES.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 L'intensité de chaque principe se règle sur l'impact de l'usage. Le volet données est traité sur la page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link> ; les règles que vos salariés appliqueront prennent la forme d'une <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
               </p>
@@ -509,16 +513,33 @@ export default function IAResponsablePage() {
             IA éthique et responsable : quelle différence ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>L'IA éthique pose des valeurs : équité, respect des personnes, bien commun. L'IA responsable les convertit en pratiques que l'on peut contrôler : processus, indicateurs, référentiels. Dire « IA éthique et responsable », c'est promettre les deux, des valeurs et la preuve qu'on les tient.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="L'IA éthique pose des valeurs : équité, respect des personnes, bien commun. L'IA responsable les convertit en pratiques que l'on peut contrôler : processus, indicateurs, référentiels. Dire « IA éthique et responsable », c'est promettre les deux, des valeurs et la preuve qu'on les tient." />
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 18px' }}>
-            Les <a href="https://digital-strategy.ec.europa.eu/fr/library/ethics-guidelines-trustworthy-ai" target="_blank" rel="noopener noreferrer" style={aStyle}>lignes directrices pour une IA digne de confiance</a>, publiées le 8 avril 2019 par le groupe d'experts de haut niveau réuni par la Commission européenne, montrent ce passage. Elles partent de quatre principes éthiques (respect de l'autonomie humaine, prévention des préjudices, équité, explicabilité) et les déclinent en sept exigences : action et contrôle humains, robustesse technique et sécurité, respect de la vie privée et gouvernance des données, transparence, diversité, non-discrimination et équité, bien-être sociétal et environnemental, responsabilité. L'AI Act a donné force de loi à plusieurs d'entre elles en 2024.
+            Les <a href="https://digital-strategy.ec.europa.eu/fr/library/ethics-guidelines-trustworthy-ai" target="_blank" rel="noopener noreferrer" style={aStyle}>lignes directrices pour une IA digne de confiance</a>, publiées le 8 avril 2019 par le groupe d'experts de haut niveau réuni par la Commission européenne, montrent ce passage.
+          </p>
+          {/* Les sept exigences en liste (mêmes mots) */}
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px' }}>
+            Elles partent de quatre principes éthiques (respect de l'autonomie humaine, prévention des préjudices, équité, explicabilité) et les déclinent en sept exigences :
+          </p>
+          <ListeCoches style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '8px 24px' }} items={[
+            'Action et contrôle humains',
+            'Robustesse technique et sécurité',
+            'Respect de la vie privée et gouvernance des données',
+            'Transparence',
+            'Diversité, non-discrimination et équité',
+            'Bien-être sociétal et environnemental',
+            'Responsabilité.',
+          ]} />
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 18px' }}>
+            L'AI Act a donné force de loi à plusieurs d'entre elles en 2024.
           </p>
 
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px' }}>
+            Pour une entreprise, la conséquence est pratique. Quand un client, un candidat ou un auditeur vous interroge sur votre démarche, il attend une description : les contrôles en place, les mesures relevées, le référentiel retenu.
+          </p>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-            Pour une entreprise, la conséquence est pratique. Quand un client, un candidat ou un auditeur vous interroge sur votre démarche, il attend une description : les contrôles en place, les mesures relevées, le référentiel retenu. Le tableau suivant fait ce lien, principe par principe, avec une septième ligne consacrée à l'impact sur les personnes.
+            Le tableau suivant fait ce lien, principe par principe, avec une septième ligne consacrée à l'impact sur les personnes.
           </p>
         </div>
       </section>
@@ -535,9 +556,18 @@ export default function IAResponsablePage() {
             Comment passer des principes à la pratique ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Chaque principe se traduit en pratiques rattachées à un texte ou à une norme qu'un tiers peut vérifier : l'AI Act pour la transparence, la supervision et la robustesse, le RGPD et la CNIL pour les données, ISO/IEC 42001 pour la responsabilité, ISO/IEC 42005 et l'article 27 de l'AI Act pour l'impact, les lignes directrices de 2019 pour l'équité.</strong>
-          </p>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+            <p style={{ margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff' }}>Chaque principe se traduit en pratiques rattachées à un texte ou à une norme qu'un tiers peut vérifier :</strong>
+            </p>
+            <ListeCoches sombre style={{ margin: 0 }} items={[
+              "L'AI Act pour la transparence, la supervision et la robustesse",
+              'Le RGPD et la CNIL pour les données',
+              'ISO/IEC 42001 pour la responsabilité',
+              "ISO/IEC 42005 et l'article 27 de l'AI Act pour l'impact",
+              "Les lignes directrices de 2019 pour l'équité.",
+            ]} />
+          </div>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Un principe pèse quand son application se contrôle, se mesure et s'audite. Le tableau donne, pour chacun, le geste attendu et le texte qui permet de le vérifier ; les dates suivent le calendrier applicable à la date du 7 octobre 2026.
@@ -578,9 +608,7 @@ export default function IAResponsablePage() {
             Comment mettre en place une démarche d'IA responsable ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Une démarche d'IA responsable s'installe en cinq étapes : cartographier les usages et leurs effets sur les personnes, choisir les principes applicables, poser les contrôles humains, mesurer, puis réviser. Elle prend corps dans le dispositif de gouvernance, avec un registre, une charte et un comité.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Une démarche d'IA responsable s'installe en cinq étapes : cartographier les usages et leurs effets sur les personnes, choisir les principes applicables, poser les contrôles humains, mesurer, puis réviser. Elle prend corps dans le dispositif de gouvernance, avec un registre, une charte et un comité." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Les étapes s'emboîtent : un contrôle suppose la carte des usages, une mesure suppose un contrôle déjà en place.
@@ -635,23 +663,11 @@ export default function IAResponsablePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi l'IA responsable est-elle un avantage business ?
               </h2>
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Une démarche d'IA responsable produit des effets visibles sur l'activité : des réponses étayées dans les appels d'offres, des obligations de l'AI Act préparées, des décisions assistées mieux contrôlées, des équipes qui adoptent les outils en confiance.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }} texte="Une démarche d'IA responsable produit des effets visibles sur l'activité : des réponses étayées dans les appels d'offres, des obligations de l'AI Act préparées, des décisions assistées mieux contrôlées, des équipes qui adoptent les outils en confiance." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {BUSINESS.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={card.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
+              <Rangees items={BUSINESS.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Pour inscrire ces effets dans vos choix de direction, voyez notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> ; pour mesurer d'abord votre point de départ, le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> couvre aussi la dimension réglementaire.
               </p>
@@ -698,8 +714,11 @@ export default function IAResponsablePage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Masteria installe le dispositif, puis forme ceux qui le tiendront
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Deux voies, qui se complètent. En conseil, nous posons le dispositif : carte des usages, analyse d'impact des usages sensibles, charte et politique, comité, plan de conformité ; la mission se règle au forfait et ne relève pas du financement de l'OPCO.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Deux voies, qui se complètent. En conseil, nous posons le dispositif : carte des usages, analyse d'impact des usages sensibles, charte et politique, comité, plan de conformité ; la mission se règle au forfait et ne relève pas du financement de l'OPCO. En formation, vos équipes prennent en main l'IA et ses cadres ; ces journées à partir de 1 980 € HT, en intra ou en individuel, entrent dans le périmètre Qualiopi de Masteria.
+                En formation, vos équipes prennent en main l'IA et ses cadres ; ces journées à partir de 1 980 € HT, en intra ou en individuel, entrent dans le périmètre Qualiopi de Masteria.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/gouvernance-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Compass, Workflow, Users, MapPin, Target, Briefcase,
-  ClipboardCheck, Gauge, GraduationCap, ShieldCheck, Database, Cpu, Eye, Scale,
+  ClipboardCheck, Gauge, GraduationCap, ShieldCheck, Database, Cpu, Eye, Scale, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « Chief AI Officer » (slug /chief-ai-officer), cluster CONSEIL.
@@ -49,16 +50,18 @@ const aStyle = { color: c, fontWeight: 600 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
 
-function Kicker({ children }) {
-  return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
+/* Encadré réponse qui contient des liens : 1re phrase appuyée, la suite en texte courant */
+function Encadre({ style, fort, suite }) {
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
+    <div style={style}>
+      <p style={{ margin: suite ? '0 0 12px' : 0, fontWeight: 700 }}>{fort}</p>
+      {suite && <p style={{ margin: 0, color: '#374151' }}>{suite}</p>}
     </div>
   )
+}
+
+function Kicker({ children }) {
+  return <div style={kickerStyle}>{children}</div>
 }
 
 const HERO_BADGES = [
@@ -253,27 +256,10 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
-    </div>
-  )
-}
-
-function CardGrid({ items, min = 260 }) {
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}px), 1fr))`, gap: 24, marginTop: 12 }}>
-      {items.map(card => {
-        const Icon = card.icon
-        return (
-          <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-              <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-              <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-            </div>
-            <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-          </div>
-        )
-      })}
     </div>
   )
 }
@@ -344,9 +330,23 @@ export default function ChiefAIOfficerPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · mis à jour le 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le Chief AI Officer est le dirigeant qui décide où l'intelligence artificielle sert l'entreprise, fixe les règles de son usage et en rend compte à la direction générale. <strong style={{ color: '#fff', fontWeight: 700 }}>Quand un plein temps ne se justifie pas encore, {ENTITY.split(',')[0]} tient ce rôle à temps partagé</strong> : une lettre de mission, un comité IA, une présence de quelques jours chaque mois, et une sortie prévue dès la signature.
-          </p>
+          {/* Réponse directe : accroche, puis l'offre et son énumération en liste */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 760 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 18px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Le Chief AI Officer est le dirigeant qui décide où l'intelligence artificielle sert l'entreprise, fixe les règles de son usage et en rend compte à la direction générale.
+            </p>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Quand un plein temps ne se justifie pas encore, {ENTITY.split(',')[0]} tient ce rôle à temps partagé</strong> :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px' }}>
+              {['Une lettre de mission', 'Un comité IA', 'Une présence de quelques jours chaque mois', 'Et une sortie prévue dès la signature.'].map(t => (
+                <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Le poste est né dans les grands groupes et gagne les ETI. Dans la plupart des entreprises, l'IA est déjà là, sans responsable : la vraie question porte sur qui tiendra le sujet, avec quel mandat et à quel coût. Cette page y répond de deux façons, en décrivant le rôle, puis la manière de l'exercer sans recruter tout de suite.
@@ -371,17 +371,10 @@ export default function ChiefAIOfficerPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* Faits clés en repères ; les six missions en liste */}
+          <Reperes sombre id="en-bref" titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={lignesEnReperes(EN_BREF).map((r, k) => r.label === 'Missions'
+            ? { label: r.label, icon: Target, liste: EN_BREF.find(l => l.label === 'Missions').value.split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) }
+            : { ...r, icon: [Briefcase, Target, Compass, Gauge, Users, MapPin][k] })} />
         </div>
       </section>
 
@@ -394,36 +387,17 @@ export default function ChiefAIOfficerPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que fait un Chief AI Officer ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six missions, tenues ensemble : arbitrer la liste des usages, faire respecter les règles, choisir les outils avec la DSI, organiser les compétences avec les RH, mesurer et tenir le budget, surveiller le marché. C'est chez lui que les demandes des directions reçoivent une priorité et un budget.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Six missions, tenues ensemble : arbitrer la liste des usages, faire respecter les règles, choisir les outils avec la DSI, organiser les compétences avec les RH, mesurer et tenir le budget, surveiller le marché. C'est chez lui que les demandes des directions reçoivent une priorité et un budget." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Le dispositif qu'il fait vivre est détaillé sur notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> ; la feuille de route qu'il porte, sur celle du <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link>.
               </p>
             </div>
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {MISSIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-                <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
-                  <div style={{ marginBottom: 14 }}>
-                    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <ShieldCheck size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                    </div>
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Ce qui reste hors de son périmètre</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                    Le développement, l'administration des serveurs et l'animation de conférences reviennent à d'autres. Lui arbitre, fixe les règles, mesure et rend compte à la direction.
-                  </p>
-                </div>
-              </div>
+              {/* Une rangée par mission, puis ce qui reste hors périmètre */}
+              <Rangees items={[
+                ...MISSIONS.map(m => ({ titre: m.title, texte: m.desc, icon: m.icon })),
+                { titre: 'Ce qui reste hors de son périmètre', icon: ShieldCheck, texte: "Le développement, l'administration des serveurs et l'animation de conférences reviennent à d'autres. Lui arbitre, fixe les règles, mesure et rend compte à la direction." },
+              ]} />
             </div>
           </div>
         </div>
@@ -436,10 +410,10 @@ export default function ChiefAIOfficerPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Quand une entreprise a-t-elle besoin d'un Chief AI Officer ?
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le jour où le sujet n'a plus de responsable : les directions avancent chacune de leur côté, les dépenses s'additionnent, la conformité devient une question et les demandes remontent de partout. Avant ces signaux, un dirigeant sponsor et un référent suffisent ; c'est le format de notre <Link to="/conseil-ia-pme" style={aStyle}>conseil IA pour PME</Link>.</strong>
-          </p>
-          <CardGrid items={SIGNAUX} min={260} />
+          <Encadre style={{ ...answerStyle, background: '#fff' }}
+            fort="Le jour où le sujet n'a plus de responsable : les directions avancent chacune de leur côté, les dépenses s'additionnent, la conformité devient une question et les demandes remontent de partout."
+            suite={<>Avant ces signaux, un dirigeant sponsor et un référent suffisent ; c'est le format de notre <Link to="/conseil-ia-pme" style={aStyle}>conseil IA pour PME</Link>.</>} />
+          <Rangees items={SIGNAUX.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} style={{ marginTop: 12 }} />
         </div>
       </section>
 
@@ -453,9 +427,8 @@ export default function ChiefAIOfficerPage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Recruter un Chief AI Officer ou le prendre à temps partagé ?
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Recrutez quand le rôle occupe déjà un plein temps et que vos attentes sont claires. Passez par le temps partagé quand il faut d'abord installer le dispositif, puis décider sur pièces. Les deux s'enchaînent souvent : le temps partagé précise le poste, puis aide à le pourvoir.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }}
+            texte="Recrutez quand le rôle occupe déjà un plein temps et que vos attentes sont claires. Passez par le temps partagé quand il faut d'abord installer le dispositif, puis décider sur pièces. Les deux s'enchaînent souvent : le temps partagé précise le poste, puis aide à le pourvoir." />
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Chief AI Officer recruté en interne ou exercé à temps partagé : délai, engagement, indépendance, exécution, transmission" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
               <thead>
@@ -489,9 +462,7 @@ export default function ChiefAIOfficerPage() {
           <h2 style={h2Style}>
             Comment fonctionne un Chief AI Officer à temps partagé ?
           </h2>
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Comme un titulaire : une lettre de mission de la direction générale, un comité, un budget, une présence régulière. Un premier trimestre dense pour installer le dispositif et lancer les premières vagues, puis quelques jours par mois de pilotage, avec une sortie prévue dès la signature.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Comme un titulaire : une lettre de mission de la direction générale, un comité, un budget, une présence régulière. Un premier trimestre dense pour installer le dispositif et lancer les premières vagues, puis quelques jours par mois de pilotage, avec une sortie prévue dès la signature." />
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {METHODE.map((step, i) => (
@@ -520,17 +491,8 @@ export default function ChiefAIOfficerPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cinq erreurs autour du poste de Chief AI Officer
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Confier le rôle au DSI par défaut, recruter un profil technique pour un poste de direction, donner un titre sans mandat, remplacer la mesure par l'enthousiasme, créer un poste sans sortie : cinq erreurs qui font conclure, à tort, que le rôle ne sert à rien.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Confier le rôle au DSI par défaut, recruter un profil technique pour un poste de direction, donner un titre sans mandat, remplacer la mesure par l'enthousiasme, créer un poste sans sortie : cinq erreurs qui font conclure, à tort, que le rôle ne sert à rien." />
+          <Rangees items={ERREURS.map(x => ({ titre: x.title, texte: x.desc }))} />
         </div>
       </section>
 
@@ -541,29 +503,17 @@ export default function ChiefAIOfficerPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Quel profil pour un Chief AI Officer interne ?
           </h2>
-          <p style={answerStyle}>
-            <strong>Un profil de direction avant un profil technique : quelqu'un qui a déjà conduit une transformation dans une organisation comparable, qui connaît les forces et les ratés des outils, qui arbitre entre des directions et rend compte à un comité. La technique se délègue ; la capacité à changer le travail des équipes, beaucoup moins.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {[
+          <Reponse style={answerStyle} texte="Un profil de direction avant un profil technique : quelqu'un qui a déjà conduit une transformation dans une organisation comparable, qui connaît les forces et les ratés des outils, qui arbitre entre des directions et rend compte à un comité. La technique se délègue ; la capacité à changer le travail des équipes, beaucoup moins." />
+          <Rangees style={{ marginTop: 12 }} items={[
               { icon: ClipboardCheck, title: 'La fiche de poste en cinq lignes', desc: "Rattachement à la direction générale ; mandat sur la liste des usages, les règles, les compétences et la mesure ; budget unique ; présidence du comité IA ; compte rendu trimestriel sur le temps rendu et la qualité. Le premier trimestre précise le reste." },
               { icon: Cpu, title: 'Les compétences qui comptent', desc: "Conduite du changement, lecture des processus métier, pratique des outils d'IA générative et de leurs limites, gouvernance et conformité, arbitrage budgétaire, aisance devant un comité. Le développement et la science des données relèvent de son équipe ou de ses prestataires." },
               { icon: Users, title: 'Ce que nous apportons au recrutement', desc: "Après une mission à temps partagé, l'entreprise sait ce que le rôle exige chez elle. Nous aidons à rédiger la fiche de poste, à évaluer les candidats sur des situations tirées de votre entreprise et à organiser la passation. Nous connaissons le poste de l'intérieur ; la recherche de candidats reste l'affaire de votre DRH ou d'un cabinet spécialisé." },
-            ].map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Sur la rémunération, nous ne publions pas de chiffre : les grilles qui circulent varient du simple au triple et indiquent rarement leur période de relevé ou leur échantillon. Il s'agit d'une rémunération de direction, du niveau d'un DSI ou d'un directeur de la transformation au périmètre comparable. Le métier voisin de <Link to="/consultant-ia" style={aStyle}>consultant IA</Link> a sa propre page, salaires compris.
+          ].map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px', maxWidth: 760 }}>
+            Sur la rémunération, nous ne publions pas de chiffre : les grilles qui circulent varient du simple au triple et indiquent rarement leur période de relevé ou leur échantillon.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 760 }}>
+            Il s'agit d'une rémunération de direction, du niveau d'un DSI ou d'un directeur de la transformation au périmètre comparable. Le métier voisin de <Link to="/consultant-ia" style={aStyle}>consultant IA</Link> a sa propre page, salaires compris.
           </p>
         </div>
       </section>
@@ -668,8 +618,11 @@ export default function ChiefAIOfficerPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Le fondateur ou un consultant senior, avec le cabinet en appui
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Le rôle à temps partagé est tenu par <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, qui dirige le cabinet, ou par un consultant senior qu'il choisit et supervise. Derrière eux, le cabinet mobilise ses développeurs pour construire les outils retenus et ses formateurs pour les équipes. Aucun éditeur ne rémunère Masteria.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Le rôle à temps partagé est tenu par <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, qui dirige le cabinet, ou par un consultant senior qu'il choisit et supervise. Derrière eux, le cabinet mobilise ses développeurs pour construire les outils retenus et ses formateurs pour les équipes. Aucun éditeur ne rémunère Masteria. Nos <Link to="/etudes-de-cas-ia#industrie" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link>, dont une matinée de décision avec la direction d'un groupe industriel présent sur trois continents, et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail.
+              Nos <Link to="/etudes-de-cas-ia#industrie" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link>, dont une matinée de décision avec la direction d'un groupe industriel présent sur trois continents, et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

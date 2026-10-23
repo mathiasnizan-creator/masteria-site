@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, GraduationCap, ShieldCheck, Target, AlertTriangle, BookOpen } from 'lucide-react'
+import { ArrowRight, BadgeCheck, GraduationCap, ShieldCheck, Target, AlertTriangle, BookOpen, Check, Scale, Wallet } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, decouperPhrases } from '../components/Aere'
 
 /*
  * Page « Meilleure formation IA » : guide de choix 2026, angle TRANSMETTRE.
@@ -264,9 +265,25 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
+  )
+}
+
+/* Énumération en liste numérotée (mise en page aérée) : mêmes phrases, une par ligne */
+function ListeNumerotee({ items }) {
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'grid', gap: 12, maxWidth: 760 }}>
+      {items.map((t, i) => (
+        <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 16, color: '#374151', lineHeight: 1.7 }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 28, height: 28, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, marginTop: 1 }}>{i + 1}</span>
+          <span>{t}</span>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -346,12 +363,28 @@ export default function MeilleureFormationIAPage() {
           </p>
 
           {/* GEO : réponse directe citable, la thèse de la page */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Il existe des centaines de formations IA en France, et la plupart partagent le même angle mort : la session se termine, l'enthousiasme retombe, et le lundi suivant personne n'a changé sa façon de travailler. <strong style={{ color: '#fff', fontWeight: 700 }}>La meilleure formation IA se reconnaît à son effet sur le terrain, un changement de pratique mesurable</strong> sur le poste réel de chacun. Le nombre de modules et le prix n'en disent rien.
-          </p>
+          <div style={{ margin: '0 0 26px', maxWidth: 760 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Il existe des centaines de formations IA en France, et la plupart partagent le même angle mort :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 8 }}>
+              {['La session se termine', "L'enthousiasme retombe", "Et le lundi suivant personne n'a changé sa façon de travailler."].map(t => (
+                <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>La meilleure formation IA se reconnaît à son effet sur le terrain, un changement de pratique mesurable</strong> sur le poste réel de chacun. Le nombre de modules et le prix n'en disent rien.
+            </p>
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Ce guide pose les trois exigences à tenir, dresse un panorama des organismes du marché, donne les tarifs 2026 et propose une méthode pour trancher en une semaine.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Ce guide pose les trois exigences à tenir, dresse un panorama des organismes du marché, donne les tarifs 2026 et propose une méthode pour trancher en une semaine. Les listes de « la meilleure formation intelligence artificielle » ou des « meilleures formations IA » qui circulent en ligne sont écrites par les organismes ou achetées comme de la publicité ; le panorama ci-dessous range les organismes par famille et n'en note aucun.
+            Les listes de « la meilleure formation intelligence artificielle » ou des « meilleures formations IA » qui circulent en ligne sont écrites par les organismes ou achetées comme de la publicité ; le panorama ci-dessous range les organismes par famille et n'en note aucun.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -364,24 +397,20 @@ export default function MeilleureFormationIAPage() {
             </Link>
           </div>
 
-          {/* En bref (GEO) : dl citable */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {[
-                ['Le critère qui compte', "Ce que les participants font autrement un mois après la session. La longueur du programme n'en dit rien."],
-                ['Existe-t-il un classement ?', "Aucun classement officiel n'existe en France. Les palmarès du web sont rédigés par les organismes ou payés comme de la publicité."],
-                ["Ce que dit l'AI Act", "L'article 4 vise toute entreprise utilisatrice depuis février 2025. Récrit par l'Omnibus avec effet au 27 juillet 2026, il lui demande d'agir pour que ses salariés comprennent les outils d'IA qu'ils emploient."],
-                ['Tarifs au 7 octobre 2026', "Chez Masteria, une journée se facture à partir de 1 980 € HT, pour une équipe de douze au plus comme pour une personne seule. Ailleurs, de la gratuité d'un MOOC jusqu'à 12 000 € par personne pour un programme dirigeants."],
-                ['Et Masteria ?', "Un organisme certifié Qualiopi, centré sur l'IA, qui bâtit chaque journée à partir des dossiers de vos équipes."],
-              ].map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref (GEO) en repères : 1re phrase en valeur quand elle est courte, la suite en détail */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={[
+            ['Le critère qui compte', "Ce que les participants font autrement un mois après la session. La longueur du programme n'en dit rien."],
+            ['Existe-t-il un classement ?', "Aucun classement officiel n'existe en France. Les palmarès du web sont rédigés par les organismes ou payés comme de la publicité."],
+            ["Ce que dit l'AI Act", "L'article 4 vise toute entreprise utilisatrice depuis février 2025. Récrit par l'Omnibus avec effet au 27 juillet 2026, il lui demande d'agir pour que ses salariés comprennent les outils d'IA qu'ils emploient."],
+            ['Tarifs au 7 octobre 2026', "Chez Masteria, une journée se facture à partir de 1 980 € HT, pour une équipe de douze au plus comme pour une personne seule. Ailleurs, de la gratuité d'un MOOC jusqu'à 12 000 € par personne pour un programme dirigeants."],
+            ['Et Masteria ?', "Un organisme certifié Qualiopi, centré sur l'IA, qui bâtit chaque journée à partir des dossiers de vos équipes."],
+          ].map(([label, v], k) => {
+            const [premiere, ...suite] = decouperPhrases(v)
+            const icon = [Target, Scale, ShieldCheck, Wallet, BadgeCheck][k]
+            return suite.length && premiere.length <= 110
+              ? { label, icon, value: premiere, detail: suite.join(' ') }
+              : { label, icon, detail: v }
+          })} />
         </div>
       </section>
 
@@ -409,8 +438,13 @@ export default function MeilleureFormationIAPage() {
             Préparer et animer une session prend quelques jours. La difficulté commence ensuite : chacun retourne à son poste, l'élan retombe, et aucune contrainte n'oblige à quitter une habitude vieille de plusieurs années.
           </p>
           <p style={answerStyle}>
-            Trois pièges expliquent l'essentiel des sessions sans effet. Le programme reste générique et parle d'un cas d'usage abstrait plutôt que du travail réel de l'équipe formée. Le format choisi favorise le confort du calendrier plutôt que la pratique : une vidéo asynchrone regardée seul laisse peu de place à l'entraînement. Et rien n'est prévu après la session pour vérifier que les nouveaux réflexes tiennent au-delà de la première semaine.
+            Trois pièges expliquent l'essentiel des sessions sans effet.
           </p>
+          <ListeNumerotee items={[
+            "Le programme reste générique et parle d'un cas d'usage abstrait plutôt que du travail réel de l'équipe formée.",
+            "Le format choisi favorise le confort du calendrier plutôt que la pratique : une vidéo asynchrone regardée seul laisse peu de place à l'entraînement.",
+            "Et rien n'est prévu après la session pour vérifier que les nouveaux réflexes tiennent au-delà de la première semaine.",
+          ]} />
           <p style={mutedStyle}>
             Jugez donc un organisme sur sa façon d'éviter ces trois pièges, avant d'ouvrir son catalogue ou de comparer les prix. Les trois exigences qui suivent y répondent une par une.
           </p>
@@ -442,7 +476,7 @@ export default function MeilleureFormationIAPage() {
                       <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: c }}>{`0${i + 1} · ${p.tag}`}</span>
                       <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2.2vw, 22px)', fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }}>{p.title}</h3>
                     </div>
-                    <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px' }}>{p.body}</p>
+                    <Paras texte={p.body} max={2} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 760 }} />
                     <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '12px 16px' }}>
                       <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, verticalAlign: '-2px', marginRight: 6 }} aria-hidden="true" />
                       {p.masteria}
@@ -643,8 +677,11 @@ export default function MeilleureFormationIAPage() {
           </div>
 
           <div style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid #1E293B', borderRadius: 12, padding: '18px 22px' }}>
+            <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 10px' }}>
+              <strong style={{ color: '#fff' }}>Côté financement :</strong> l'OPCO, comme le budget formation passé par le plan de compétences, exige un organisme titulaire de Qualiopi.
+            </p>
             <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#fff' }}>Côté financement :</strong> l'OPCO, comme le budget formation passé par le plan de compétences, exige un organisme titulaire de Qualiopi. Le CPF réclame en plus un titre RNCP ou une certification du Répertoire spécifique, rares pour les journées d'initiation aux outils. Une promesse de CPF sur une journée de prise en main de ChatGPT se vérifie donc sur le site de France Compétences avant toute inscription.
+              Le CPF réclame en plus un titre RNCP ou une certification du Répertoire spécifique, rares pour les journées d'initiation aux outils. Une promesse de CPF sur une journée de prise en main de ChatGPT se vérifie donc sur le site de France Compétences avant toute inscription.
             </p>
           </div>
         </div>
@@ -737,13 +774,30 @@ export default function MeilleureFormationIAPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
-                  Masteria ne perçoit aucune commission d'un éditeur : quand nous conseillons Copilot plutôt que Gemini, c'est que l'entreprise travaille déjà dans Microsoft 365. Nos formateurs interviennent sur place ou en visioconférence, en France, chez nos voisins européens, aux États-Unis et en Inde. Les Échos ont interrogé Mathias Nizan sur la façon de choisir{' '}
+                  Masteria ne perçoit aucune commission d'un éditeur : quand nous conseillons Copilot plutôt que Gemini, c'est que l'entreprise travaille déjà dans Microsoft 365. Nos formateurs interviennent sur place ou en visioconférence, en France, chez nos voisins européens, aux États-Unis et en Inde.
+                </p>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }}>
+                  Les Échos ont interrogé Mathias Nizan sur la façon de choisir{' '}
                   <a href="https://www.lesechos.fr/travailler-mieux/travailler-avec-lia/si-vous-choisissez-un-modele-pas-adapte-les-gens-vont-chercher-de-leur-cote-chatgpt-claude-copilot-gemini-mistral-comment-choisir-lia-la-plus-adaptee-a-son-metier-2236741" target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600 }}>un modèle d'IA adapté à son métier</a>.
                 </p>
+                {/* Les deux missions en liste, puis les renvois */}
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 10px' }}>
+                  Deux missions publiées montrent le suivi à l'œuvre.
+                </p>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 10 }}>
+                  <li style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.75 }}>
+                    <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: c, flexShrink: 0, marginTop: 5 }} />
+                    <span>Chez un industriel international de l'emballage, la session pilote a donné lieu à un bilan à chaud et à trois ajustements avant le groupe de managers suivant ({' '}
+                      <Link to="/etudes-de-cas-ia#industrie" style={{ color: c, fontWeight: 600 }}>lire le cas</Link>).</span>
+                  </li>
+                  <li style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.75 }}>
+                    <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: c, flexShrink: 0, marginTop: 5 }} />
+                    <span>Chez un éditeur de logiciels B2B, une assistante de direction est repartie de sa journée individuelle avec un plan d'action à 30 jours et une mesure du gain prévue à un mois ({' '}
+                      <Link to="/etudes-de-cas-ia#mission-assistanat-direction" style={{ color: c, fontWeight: 600 }}>voir la mission</Link>).</span>
+                  </li>
+                </ul>
                 <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.8, margin: 0 }}>
-                  Deux missions publiées montrent le suivi à l'œuvre. Chez un industriel international de l'emballage, la session pilote a donné lieu à un bilan à chaud et à trois ajustements avant le groupe de managers suivant ({' '}
-                  <Link to="/etudes-de-cas-ia#industrie" style={{ color: c, fontWeight: 600 }}>lire le cas</Link>). Chez un éditeur de logiciels B2B, une assistante de direction est repartie de sa journée individuelle avec un plan d'action à 30 jours et une mesure du gain prévue à un mois ({' '}
-                  <Link to="/etudes-de-cas-ia#mission-assistanat-direction" style={{ color: c, fontWeight: 600 }}>voir la mission</Link>). Le{' '}
+                  Le{' '}
                   <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link>{' '}
                   détaille les programmes, et la page{' '}
                   <Link to="/financement-formation-ia" style={{ color: c, fontWeight: 600 }}>financement</Link>{' '}

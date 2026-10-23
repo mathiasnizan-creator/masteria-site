@@ -4,6 +4,7 @@ import {
   Crosshair, Filter, PenLine, Send, Scale, AlertTriangle, Compass, Newspaper, MessageSquareQuote,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Accroche, Paras, Reperes, Rangees } from '../components/Aere'
 
 /**
  * VeilleConcurrentielleIAPage : page sœur du cluster veille. Cible « veille
@@ -143,11 +144,10 @@ export default function VeilleConcurrentielleIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>ce que l&apos;IA y change</span>
           </h1>
 
-          <p className="veille-lede" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '26px 0 30px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Suivre ses concurrents a toujours dévoré des heures. L&apos;IA prend désormais en charge la collecte
-            et le premier résumé, et laisse l&apos;interprétation à vos équipes. Vous trouverez ici les six signaux
-            à suivre, une méthode en cinq étapes et la limite légale à ne pas franchir.
-          </p>
+          {/* Accroche (1re phrase), puis les phrases suivantes en puces */}
+          <div className="veille-lede" style={{ margin: '26px 0 6px', maxWidth: 760 }}>
+            <Accroche sombre texte="Suivre ses concurrents a toujours dévoré des heures. L'IA prend désormais en charge la collecte et le premier résumé, et laisse l'interprétation à vos équipes. Vous trouverez ici les six signaux à suivre, une méthode en cinq étapes et la limite légale à ne pas franchir." style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 20px', paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <a href="#surveiller" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -158,14 +158,8 @@ export default function VeilleConcurrentielleIAPage() {
             </Link>
           </div>
 
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 1, margin: '40px 0 0', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 14, overflow: 'hidden' }}>
-            {EN_BREF.map(([t, d], i) => (
-              <div key={i} style={{ background: '#0A0F1E', padding: '18px 20px' }}>
-                <dt style={{ fontSize: 12.5, fontWeight: 700, color: '#7DA9F0', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 7 }}>{t}</dt>
-                <dd style={{ margin: 0, fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.55 }}>{d}</dd>
-              </div>
-            ))}
-          </dl>
+          {/* Faits clés en repères (phrases courtes : gardées entières) */}
+          <Reperes sombre colonnes={4} style={{ margin: '40px 0 0' }} items={EN_BREF.map(([label, detail], k) => ({ label, detail, icon: [Crosshair, TrendingUp, Search, Scale][k] }))} />
         </div>
       </section>
 
@@ -218,20 +212,12 @@ export default function VeilleConcurrentielleIAPage() {
         <div style={wrap}>
           <div style={kicker}>La méthode</div>
           <h2 style={h2Style}>Une veille concurrentielle avec l&apos;IA, en cinq temps</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, marginTop: 8 }}>
-            {ETAPES.map(({ Icon, t, d }, i) => (
-              <div key={i} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 24, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                  <span style={{ flexShrink: 0, width: 42, height: 42, borderRadius: 11, background: '#DBEAFE', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: c }}>
-                    <Icon size={21} strokeWidth={2.1} aria-hidden="true" />
-                  </span>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: '#94A3B8' }}>Étape {i + 1}</div>
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }}>{t}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par étape (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 8 }} items={ETAPES.map(({ Icon, t, d }, i) => ({
+            icon: Icon,
+            titre: <><span style={{ display: 'block', fontSize: 12, fontWeight: 700, color: '#94A3B8', marginBottom: 2 }}>Étape {i + 1}</span>{t}</>,
+            texte: d,
+          }))} />
         </div>
       </section>
 
@@ -244,15 +230,7 @@ export default function VeilleConcurrentielleIAPage() {
             Une veille concurrentielle efficace reste dans un cadre. Trois limites méritent d&apos;être posées
             avant d&apos;automatiser quoi que ce soit.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18 }}>
-            {LIMITES.map(({ Icon, t, d }, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 16, padding: 24 }}>
-                <Icon size={22} style={{ color: '#60A5FA', marginBottom: 14 }} aria-hidden="true" />
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17.5, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px' }}>{t}</h3>
-                <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees sombre items={LIMITES.map(({ Icon, t, d }) => ({ titre: t, texte: d, icon: Icon }))} />
         </div>
       </section>
 
@@ -280,7 +258,7 @@ export default function VeilleConcurrentielleIAPage() {
                 <span>{item.q}</span>
                 <span style={{ flexShrink: 0, color: c }} aria-hidden="true">+</span>
               </summary>
-              <p style={{ marginTop: 12, color: '#374151', lineHeight: 1.7, fontSize: 16 }}>{item.a}</p>
+              <Paras texte={item.a} wrapStyle={{ marginTop: 12 }} style={{ margin: '12px 0 0', color: '#374151', lineHeight: 1.7, fontSize: 16, maxWidth: 760 }} />
             </details>
           ))}
         </div>

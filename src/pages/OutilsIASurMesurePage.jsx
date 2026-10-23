@@ -10,6 +10,7 @@ import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
+import { Paras, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page offre « développement IA sur mesure » (slug /outils-ia-sur-mesure).
@@ -367,7 +368,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -471,13 +474,29 @@ export default function OutilsIASurMesurePage() {
             Page tenue par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> (Masteria) · dernière révision le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Chez Masteria, le développement IA sur mesure aboutit à un outil que vos équipes ouvrent chaque jour : un copilote nourri de vos règles, un assistant qui cherche dans vos documents, une application conçue pour un seul service. <strong style={{ color: '#fff', fontWeight: 700 }}>Le code, les données et la documentation vous appartiennent</strong>, et vous pouvez faire évoluer l'outil sans nous.
-          </p>
+          {/* GEO : réponse directe citable, accroche ; l'énumération passe en liste */}
+          <div style={{ margin: '0 0 28px', maxWidth: 720 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Chez Masteria, le développement IA sur mesure aboutit à un outil que vos équipes ouvrent chaque jour :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 8 }}>
+              {['Un copilote nourri de vos règles', 'Un assistant qui cherche dans vos documents', 'Une application conçue pour un seul service.'].map(t => (
+                <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Le code, les données et la documentation vous appartiennent</strong>, et vous pouvez faire évoluer l'outil sans nous.
+            </p>
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 660 }}>
+            Les logiciels du marché couvrent les besoins courants. Quand votre façon de travailler, vos données ou vos exigences de confidentialité sortent de leur cadre, un outil construit pour vous devient la voie raisonnable.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Les logiciels du marché couvrent les besoins courants. Quand votre façon de travailler, vos données ou vos exigences de confidentialité sortent de leur cadre, un outil construit pour vous devient la voie raisonnable. Vous verrez ici les formes qu'il peut prendre, comment trancher entre logiciel du marché et sur-mesure, et ce que vous recevez à la livraison.
+            Vous verrez ici les formes qu'il peut prendre, comment trancher entre logiciel du marché et sur-mesure, et ce que vous recevez à la livraison.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -503,18 +522,14 @@ export default function OutilsIASurMesurePage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'outil en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères ; les énumérations en liste */}
+          <Reperes sombre titre="L'outil en six lignes" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={lignesEnReperes(EN_BREF).map((r, k) => {
+            const icon = [Bot, Route, KeyRound, ShieldCheck, RefreshCw, Rocket][k]
+            const enListe = ['Formes', 'Démarche'].includes(r.label)
+            return enListe
+              ? { label: r.label, icon, liste: EN_BREF[k].value.split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) }
+              : { ...r, icon }
+          })} />
         </div>
       </section>
 
@@ -527,35 +542,36 @@ export default function OutilsIASurMesurePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Quelles formes prend un outil IA sur mesure ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six formes reviennent le plus souvent : le copilote d'équipe, l'assistant qui cherche dans vos documents, l'outil d'analyse qui commente vos chiffres, l'automatisation d'un processus, l'application web dédiée et l'agent spécialisé. Le choix dépend de la tâche, de qui s'en sert et de la marge d'action que vous laissez à l'IA.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Six formes reviennent le plus souvent : le copilote d'équipe, l'assistant qui cherche dans vos documents, l'outil d'analyse qui commente vos chiffres, l'automatisation d'un processus, l'application web dédiée et l'agent spécialisé. Le choix dépend de la tâche, de qui s'en sert et de la marge d'action que vous laissez à l'IA." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Toutes partent d'une tâche déjà faite à la main dans votre entreprise, et toutes se branchent sur les logiciels en place.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {OUTILS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconBox icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                    {item.href && (
-                      <Link to={item.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, marginTop: 16 }}>
-                        {item.linkLabel}
-                        <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par forme, le lien éventuel sous le texte */}
+              <Rangees items={OUTILS.map(item => ({
+                titre: item.title,
+                icon: item.icon,
+                texte: item.href ? (
+                  <>
+                    {item.desc}
+                    <Link to={item.href} style={{ ...aStyle, display: 'flex', width: 'fit-content', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, marginTop: 10 }}>
+                      {item.linkLabel}
+                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                    </Link>
+                  </>
+                ) : item.desc,
+              }))} />
 
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Deux de ces outils ont une page à part : le <Link to="/chatbot-ia-sur-mesure" style={aStyle}>chatbot IA sur mesure</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration LLM et RAG</Link>. Nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages classés par métier</Link> aident à vous projeter. Pour connaître l'équipe qui construit et le contrat proposé, lisez la page <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> ; pour relier des logiciels existants sans créer d'outil nouveau, celle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Si le périmètre reste à préciser, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent souvent à choisir la bonne forme ; un <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> peut ensuite l'affiner.
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px' }}>
+                Deux de ces outils ont une page à part : le <Link to="/chatbot-ia-sur-mesure" style={aStyle}>chatbot IA sur mesure</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration LLM et RAG</Link>. Nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages classés par métier</Link> aident à vous projeter.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '0 0 12px' }}>
+                Pour connaître l'équipe qui construit et le contrat proposé, lisez la page <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> ; pour relier des logiciels existants sans créer d'outil nouveau, celle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+                Si le périmètre reste à préciser, <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent souvent à choisir la bonne forme ; un <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> peut ensuite l'affiner.
               </p>
             </div>
           </div>
@@ -574,9 +590,8 @@ export default function OutilsIASurMesurePage() {
             Logiciel du marché, assemblage sans code ou outil sur mesure ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Trois situations appellent un outil construit pour vous : une façon de travailler qui n'appartient qu'à votre entreprise, des données qui ne peuvent pas transiter par un tiers, un outil appelé à grandir pendant des années. Pour un besoin courant, un logiciel du marché fait l'affaire ; pour un enchaînement simple, un assemblage sans code suffit.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 860 }}
+            texte="Trois situations appellent un outil construit pour vous : une façon de travailler qui n'appartient qu'à votre entreprise, des données qui ne peuvent pas transiter par un tiers, un outil appelé à grandir pendant des années. Pour un besoin courant, un logiciel du marché fait l'affaire ; pour un enchaînement simple, un assemblage sans code suffit." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
             Nous vivons de la construction d'outils, et nous vous dirons pourtant quand un abonnement suffit. Le tableau situe votre besoin, critère par critère, avant toute dépense.
@@ -605,8 +620,11 @@ export default function OutilsIASurMesurePage() {
             </table>
           </div>
 
+          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px', maxWidth: 860 }}>
+            Un repère daté montre ce que coûte la dépendance à une plateforme. Chez OpenAI, les GPTs personnalisés disparaissent le 11 décembre 2026 pour toutes les offres ; chez Google, les Gems cèdent la place aux compétences, et les comptes professionnels les garderont au moins jusqu'au 1er mars 2027.
+          </p>
           <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '0 0 20px', maxWidth: 860 }}>
-            Un repère daté montre ce que coûte la dépendance à une plateforme. Chez OpenAI, les GPTs personnalisés disparaissent le 11 décembre 2026 pour toutes les offres ; chez Google, les Gems cèdent la place aux compétences, et les comptes professionnels les garderont au moins jusqu'au 1er mars 2027. Un outil dont vous détenez le code repose lui aussi sur un modèle, mais vous choisissez quand et comment en changer.
+            Un outil dont vous détenez le code repose lui aussi sur un modèle, mais vous choisissez quand et comment en changer.
           </p>
 
           <p style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: 0, maxWidth: 860 }}>
@@ -624,9 +642,7 @@ export default function OutilsIASurMesurePage() {
             Comment passe-t-on d'une idée à un outil en service ?
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>En cinq temps : préciser le besoin, montrer une maquette puis un prototype, construire par livraisons, mettre en service dans votre environnement, puis faire évoluer. Vous jugez la valeur sur le prototype avant de financer la version complète.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="En cinq temps : préciser le besoin, montrer une maquette puis un prototype, construire par livraisons, mettre en service dans votre environnement, puis faire évoluer. Vous jugez la valeur sur le prototype avant de financer la version complète." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Chaque temps livre quelque chose que vous pouvez voir ou tester. La méthode complète, avec le rythme des démonstrations et les modèles d'engagement, figure sur la page <Link to="/methode-projet-ia" style={aStyle}>méthode d'un projet IA</Link>.
@@ -667,22 +683,13 @@ export default function OutilsIASurMesurePage() {
             À qui appartient l'outil, où vivent les données, qui le maintient ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>L'outil vous appartient : code source, documentation et données vous reviennent. Nous retenons des offres où vos données n'entraînent pas les modèles, l'hébergement peut rester en Europe, et la maintenance se poursuit avec nous ou passe à votre équipe.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="L'outil vous appartient : code source, documentation et données vous reviennent. Nous retenons des offres où vos données n'entraînent pas les modèles, l'hébergement peut rester en Europe, et la maintenance se poursuit avec nous ou passe à votre équipe." />
 
-          <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 860 }}>
+          <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 860 }}>
             Pour un outil qui touche à vos clients ou à vos chiffres, ces trois questions pèsent autant que les fonctions. Nos réponses tiennent en quatre engagements.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-            {PROPRIETE.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={PROPRIETE.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
             Si votre question reste stratégique (usages à prioriser, règles, conformité, choix entre faire et faire faire), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> intervient avant le choix d'un outil.
@@ -698,9 +705,7 @@ export default function OutilsIASurMesurePage() {
             Vos équipes prennent l'outil en main
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Un outil sert à condition d'être adopté. À la mise en service, les futurs utilisateurs apprennent à s'en servir sur leurs propres dossiers, et un référent apprend à le corriger. Masteria est aussi un organisme de formation, si bien que cette passation fait partie du métier.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Un outil sert à condition d'être adopté. À la mise en service, les futurs utilisateurs apprennent à s'en servir sur leurs propres dossiers, et un référent apprend à le corriger. Masteria est aussi un organisme de formation, si bien que cette passation fait partie du métier." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 860 }}>
             Les formateurs qui interviennent connaissent l'outil, puisqu'ils l'ont vu se construire avec vous. La prise en main va plus vite, et les questions trouvent leur réponse sur place.
@@ -710,8 +715,11 @@ export default function OutilsIASurMesurePage() {
             <IconBox icon={GraduationCap} />
             <div style={{ flex: 1, minWidth: 240 }}>
               <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>Former vos équipes à l'IA, au-delà de l'outil</h3>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.7, margin: '0 0 12px' }}>
+                Nous formons aussi vos collaborateurs aux assistants du quotidien et à l'écriture de consignes. La formation est facturée à la journée, à partir de 1 980 € HT (la préparation sur vos outils s'ajoute au devis), en groupe interne jusqu'à douze personnes ou en séance individuelle ; l'OPCO de votre secteur peut la financer, si ses règles et ses fonds le permettent.
+              </p>
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>
-                Nous formons aussi vos collaborateurs aux assistants du quotidien et à l'écriture de consignes. La formation est facturée à la journée, à partir de 1 980 € HT (la préparation sur vos outils s'ajoute au devis), en groupe interne jusqu'à douze personnes ou en séance individuelle ; l'OPCO de votre secteur peut la financer, si ses règles et ses fonds le permettent. Le développement de l'outil reste hors de ce cadre : il n'est pas finançable par votre OPCO.
+                Le développement de l'outil reste hors de ce cadre : il n'est pas finançable par votre OPCO.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: c, fontWeight: 700, fontSize: 14.5, textDecoration: 'none' }}>
                 Parcourir les formations IA
@@ -732,24 +740,27 @@ export default function OutilsIASurMesurePage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Clients anonymes, faits tirés de nos dossiers de mission. Ce qui reste à faire est écrit au futur.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+          {/* Une rangée par cas : secteur et chiffre à gauche, récit à droite */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {OUTIL_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
-              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+              <article key={id} style={{ display: 'flex', flexWrap: 'wrap', gap: '14px 40px', padding: '28px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <div style={{ flex: '0 1 240px', minWidth: 200 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+                    <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={17} strokeWidth={1.75} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                  </div>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 28, fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                  <div style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                <div style={{ flex: '1 1 380px', minWidth: 0, maxWidth: 720 }}>
+                  <Paras texte={text} max={2} budget={300} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 12 }}>
+                    Ouvrir le cas
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Ouvrir le cas
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -872,8 +883,11 @@ export default function OutilsIASurMesurePage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Développeurs, consultant et formateur réunis autour de votre outil
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Chaque outil sur mesure mobilise un petit groupe tiré du réseau d'indépendants de Masteria, qui réunit, en chiffres arrondis, cinq développeurs IA, dix consultants et vingt formateurs. Mathias Nizan en choisit les membres et répond de la livraison.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Chaque outil sur mesure mobilise un petit groupe tiré du réseau d'indépendants de Masteria, qui réunit, en chiffres arrondis, cinq développeurs IA, dix consultants et vingt formateurs. Mathias Nizan en choisit les membres et répond de la livraison. Le cabinet reste indépendant des éditeurs de modèles. Ses <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et sa <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en témoignent.
+              Le cabinet reste indépendant des éditeurs de modèles. Ses <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et sa <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en témoignent.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

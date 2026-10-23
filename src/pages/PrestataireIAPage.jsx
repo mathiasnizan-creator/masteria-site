@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page hybride guide de choix + positionnement : « prestataire IA »
@@ -44,11 +45,24 @@ const wrap = { maxWidth: 1140, margin: '0 auto' }
 
 const kickerStyle = { fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 14 }
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 18px', lineHeight: 1.25, letterSpacing: '-0.01em' }
-const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }
 const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
+
+/* Énumération en liste à coches : mêmes mots, un élément par ligne */
+function ListeCoches({ items, sombre = false, style }) {
+  return (
+    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 8, ...style }}>
+      {items.map((t, i) => (
+        <li key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.55, color: sombre ? '#E2E8F0' : '#374151' }}>
+          <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: sombre ? '#60A5FA' : c, flexShrink: 0, marginTop: 4 }} />
+          <span>{t}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
@@ -322,7 +336,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -406,12 +422,25 @@ export default function PrestataireIAPage() {
           </p>
 
           {/* GEO : réponse directe citable, accroche */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un prestataire IA est une entreprise ou un expert extérieur à qui vous confiez une partie de votre projet d'intelligence artificielle : le décider, le construire, le brancher sur vos logiciels ou former les équipes. Le mot recouvre <strong style={{ color: '#fff', fontWeight: 700 }}>cinq familles aux métiers distincts</strong> : l'agence de développement, le cabinet de conseil, l'ESN ou intégrateur, l'organisme de formation et l'indépendant. Ce guide aide à choisir la bonne famille, puis à juger un prestataire précis.
-          </p>
+          {/* Réponse directe : accroche, puis les cinq familles en liste */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 760 }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 18px', paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Un prestataire IA est une entreprise ou un expert extérieur à qui vous confiez une partie de votre projet d'intelligence artificielle : le décider, le construire, le brancher sur vos logiciels ou former les équipes.
+            </p>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.6, margin: '0 0 12px' }}>
+              Le mot recouvre <strong style={{ color: '#fff', fontWeight: 700 }}>cinq familles aux métiers distincts</strong> :
+            </p>
+            <ListeCoches sombre style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px' }} items={["L'agence de développement", 'Le cabinet de conseil', "L'ESN ou intégrateur", "L'organisme de formation", "Et l'indépendant."]} />
+            <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.6, margin: 0 }}>
+              Ce guide aide à choisir la bonne famille, puis à juger un prestataire précis.
+            </p>
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Masteria est lui-même prestataire IA : ce guide est écrit par une partie intéressée, et nous préférons le dire d'entrée.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Masteria est lui-même prestataire IA : ce guide est écrit par une partie intéressée, et nous préférons le dire d'entrée. Les critères et les questions qui suivent s'appliquent à tous, nous compris, et la cartographie publique de France Num vous permet d'élargir la comparaison bien au-delà de ce que nous écrivons.
+            Les critères et les questions qui suivent s'appliquent à tous, nous compris, et la cartographie publique de France Num vous permet d'élargir la comparaison bien au-delà de ce que nous écrivons.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -436,18 +465,18 @@ export default function PrestataireIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 100px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères ; les énumérations en liste */}
+          <Reperes sombre id="en-bref" titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={(() => {
+            const liste = k => EN_BREF[k].value.split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1))
+            return [
+              { label: 'Définition', icon: Handshake, detail: EN_BREF[0].value },
+              { label: 'Les 5 familles', icon: Building2, liste: liste(1) },
+              { label: 'Critères communs', icon: ListChecks, liste: liste(2) },
+              { ...lignesEnReperes([EN_BREF[3]])[0], icon: MapPin },
+              { label: 'Les pièges', icon: Scale, liste: liste(4) },
+              { label: 'Masteria', icon: GraduationCap, value: 'Un prestataire qui réunit trois familles', liste: EN_BREF[5].value.replace(/^Un prestataire qui réunit trois familles : /, '').split(', ').map(x => x.charAt(0).toUpperCase() + x.slice(1)) },
+            ]
+          })()} />
         </div>
       </section>
 
@@ -459,9 +488,7 @@ export default function PrestataireIAPage() {
             Quels sont les types de prestataires IA ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Cinq familles de prestataires IA se partagent le marché : l'agence construit, le cabinet aide à décider, l'ESN intègre à grande échelle, l'organisme de formation fait progresser les équipes et l'indépendant apporte une expertise ciblée. Partez de ce qui bloque chez vous, plutôt que du nom le plus visible.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Cinq familles de prestataires IA se partagent le marché : l'agence construit, le cabinet aide à décider, l'ESN intègre à grande échelle, l'organisme de formation fait progresser les équipes et l'indépendant apporte une expertise ciblée. Partez de ce qui bloque chez vous, plutôt que du nom le plus visible." />
 
           <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Les cinq familles de prestataires IA : ce que chacune livre et dans quelle situation la choisir" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -483,8 +510,11 @@ export default function PrestataireIAPage() {
               </tbody>
             </table>
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, marginTop: 20, maxWidth: 880 }}>
-            Trois familles ont leur guide détaillé : celui de la <Link to="/meilleure-agence-ia" style={aStyle}>meilleure agence IA</Link>, celui du <Link to="/meilleur-cabinet-conseil-ia" style={aStyle}>meilleur cabinet IA</Link> et celui de la <Link to="/meilleure-formation-ia" style={aStyle}>meilleure formation IA</Link>. Pour un premier tour d'horizon des acteurs français, la <a href="https://www.francenum.gouv.fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={aStyle}>cartographie de France Num</a> recense les entreprises référencées ; Masteria fait partie des Activateurs France Num.
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '20px 0 12px', maxWidth: 820 }}>
+            Trois familles ont leur guide détaillé : celui de la <Link to="/meilleure-agence-ia" style={aStyle}>meilleure agence IA</Link>, celui du <Link to="/meilleur-cabinet-conseil-ia" style={aStyle}>meilleur cabinet IA</Link> et celui de la <Link to="/meilleure-formation-ia" style={aStyle}>meilleure formation IA</Link>.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
+            Pour un premier tour d'horizon des acteurs français, la <a href="https://www.francenum.gouv.fr/intelligence-artificielle" target="_blank" rel="noopener noreferrer" style={aStyle}>cartographie de France Num</a> recense les entreprises référencées ; Masteria fait partie des Activateurs France Num.
           </p>
         </div>
       </section>
@@ -501,24 +531,11 @@ export default function PrestataireIAPage() {
             Comment choisir un prestataire IA ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Quelle que soit la famille, six critères font le tri : des missions comparables racontées en détail, des liens avec les éditeurs déclarés, des livrables qui vous appartiennent, des données traitées avec soin, des équipes formées et un suivi prévu après la mise en service. Un prestataire sérieux accepte d'être jugé sur les six.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }}
+            texte="Quelle que soit la famille, six critères font le tri : des missions comparables racontées en détail, des liens avec les éditeurs déclarés, des livrables qui vous appartiennent, des données traitées avec soin, des équipes formées et un suivi prévu après la mise en service. Un prestataire sérieux accepte d'être jugé sur les six." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
-            {CRITERES.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{card.title}</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Une rangée par critère (plus de cartes côte à côte) */}
+          <Rangees sombre items={CRITERES.map(x => ({ titre: x.title, texte: x.desc, icon: x.icon }))} />
         </div>
       </section>
 
@@ -530,9 +547,7 @@ export default function PrestataireIAPage() {
             Les 7 questions à poser à tout prestataire IA
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Posez ces sept questions à chaque prestataire rencontré, Masteria compris, et demandez les réponses par écrit. La septième est la plus parlante : un prestataire qui ne déconseille jamais rien cherche surtout à remplir son carnet de commandes.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Posez ces sept questions à chaque prestataire rencontré, Masteria compris, et demandez les réponses par écrit. La septième est la plus parlante : un prestataire qui ne déconseille jamais rien cherche surtout à remplir son carnet de commandes." />
 
           <ol style={{ margin: 0, padding: 0, listStyle: 'none', counterReset: 'q' }}>
             {QUESTIONS.map((q, i) => (
@@ -557,8 +572,17 @@ export default function PrestataireIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Masteria réunit trois familles sous un même toit
               </h2>
+              {/* Les trois familles en liste, mêmes phrases */}
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Dans cette typologie, Masteria appartient à trois familles.
+              </p>
+              <ListeCoches style={{ maxWidth: 760 }} items={[
+                <>Comme cabinet de conseil, nous menons des <Link to="/diagnostic-ia" style={aStyle}>diagnostics</Link>, des <Link to="/audit-ia" style={aStyle}>audits</Link> et des missions de <Link to="/conseil-strategie-ia" style={aStyle}>stratégie</Link>.</>,
+                <>Comme agence, nous développons des <Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link> dont le code et les prompts vous reviennent par contrat.</>,
+                <>Comme organisme certifié Qualiopi au titre des actions de formation, nous formons les équipes, de l'<Link to="/acculturation-ia" style={aStyle}>acculturation</Link> aux parcours par métier.</>,
+              ]} />
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Dans cette typologie, Masteria appartient à trois familles. Comme cabinet de conseil, nous menons des <Link to="/diagnostic-ia" style={aStyle}>diagnostics</Link>, des <Link to="/audit-ia" style={aStyle}>audits</Link> et des missions de <Link to="/conseil-strategie-ia" style={aStyle}>stratégie</Link>. Comme agence, nous développons des <Link to="/outils-ia-sur-mesure" style={aStyle}>outils IA sur mesure</Link> dont le code et les prompts vous reviennent par contrat. Comme organisme certifié Qualiopi au titre des actions de formation, nous formons les équipes, de l'<Link to="/acculturation-ia" style={aStyle}>acculturation</Link> aux parcours par métier. L'<Link to="/accompagnement-ia" style={aStyle}>accompagnement dans la durée</Link> relie les trois. Nous répondons aux sept questions de ce guide dès le premier rendez-vous.
+                L'<Link to="/accompagnement-ia" style={aStyle}>accompagnement dans la durée</Link> relie les trois. Nous répondons aux sept questions de ce guide dès le premier rendez-vous.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -589,15 +613,18 @@ export default function PrestataireIAPage() {
           <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.7, margin: '0 0 32px', maxWidth: 760 }}>
             Les clients ont demandé l'anonymat. Vous trouverez chaque mission en entier, avec ses chiffres, dans nos études de cas.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+          {/* Une rangée par mission : les rôles à gauche, le récit à droite */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {CASES.map(k => (
-              <div key={k.anchor} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ ...kickerStyle, fontSize: 12, marginBottom: 12 }}>{k.tag}</div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{k.text}</p>
-                <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  {k.link}
-                  <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
+              <div key={k.anchor} style={{ display: 'flex', flexWrap: 'wrap', gap: '8px 40px', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <div style={{ ...kickerStyle, fontSize: 12, margin: 0, flex: '0 1 220px', paddingTop: 4, lineHeight: 1.5 }}>{k.tag}</div>
+                <div style={{ flex: '1 1 420px', minWidth: 0, maxWidth: 720 }}>
+                  <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>{k.text}</p>
+                  <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    {k.link}
+                    <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
@@ -682,8 +709,11 @@ export default function PrestataireIAPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Un prestataire qui se soumet à sa propre grille
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Ce guide est signé par <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria (Lyon, 2022), qui suit lui-même chaque dossier. Il en compose l'équipe avec des consultants, des développeurs et des formateurs indépendants.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Ce guide est signé par <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria (Lyon, 2022), qui suit lui-même chaque dossier. Il en compose l'équipe avec des consultants, des développeurs et des formateurs indépendants. Masteria compte parmi les Activateurs France Num, et le cabinet a été cité par Les Échos, comme le montre notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> décrivent les missions dans le détail.
+                Masteria compte parmi les Activateurs France Num, et le cabinet a été cité par Les Échos, comme le montre notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> décrivent les missions dans le détail.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
