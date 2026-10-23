@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Lightbulb, Users, GraduationCap, MapPin, Check, Scale,
-  Landmark, Compass, FileSpreadsheet, Wrench, Radar, Factory, Briefcase, MessageSquare,
+  Landmark, Compass, FileSpreadsheet, Wrench, Radar, Factory, Briefcase, MessageSquare, AlertTriangle,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page « atelier intelligence artificielle » (slug /atelier-intelligence-artificielle),
@@ -44,21 +45,12 @@ const sectionPad = 'clamp(64px, 9vw, 110px) 24px'
 const wrap = { maxWidth: 1140, margin: '0 auto' }
 const kickerStyle = { fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 14 }
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 18px', lineHeight: 1.25, letterSpacing: '-0.01em' }
-const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }
 const aStyle = { color: c, fontWeight: 600 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -68,13 +60,15 @@ const HERO_BADGES = [
   { icon: MapPin, label: 'Sur place (Europe · États-Unis · Inde) ou à distance' },
 ]
 
+/* Repères du héros (23/10/2026) : chaque ligne d'origine coupée en tête, détail et puces,
+   mots inchangés. */
 const EN_BREF = [
-  { label: 'Durée', value: "Trois heures pour un Sprint, une demi-journée ou une journée pour un atelier construit sur mesure" },
-  { label: 'Groupe', value: "Douze personnes au maximum, chacune avec un ordinateur et un accès à l'assistant de l'entreprise" },
-  { label: 'Principe', value: "Les participants manipulent pendant au moins les deux tiers du temps, sur des documents qu'ils ont apportés" },
-  { label: 'Ateliers', value: "Trois Sprints de fond (découverte, méthode de demande, managers), trois Sprints thématiques (AI Act, Excel, veille), l'atelier métier et l'atelier cas d'usage" },
-  { label: 'Prix', value: "À partir de 1 980 € HT la séance pour le groupe, qu'elle dure trois heures ou une journée ; la préparation sur vos documents s'ajoute au devis" },
-  { label: 'Financement', value: "Organisme certifié Qualiopi (catégorie actions de formation) : votre OPCO peut être sollicité" },
+  { label: 'Durée', value: 'Trois heures pour un Sprint', detail: 'Une demi-journée ou une journée pour un atelier construit sur mesure' },
+  { label: 'Groupe', value: 'Douze personnes au maximum', detail: "Chacune avec un ordinateur et un accès à l'assistant de l'entreprise" },
+  { label: 'Principe', icon: Lightbulb, value: 'Les participants manipulent pendant au moins les deux tiers du temps', detail: "Sur des documents qu'ils ont apportés" },
+  { label: 'Ateliers', icon: Wrench, liste: ['Trois Sprints de fond (découverte, méthode de demande, managers)', 'Trois Sprints thématiques (AI Act, Excel, veille)', "L'atelier métier et l'atelier cas d'usage"] },
+  { label: 'Prix', value: 'À partir de 1 980 € HT la séance pour le groupe', detail: "Qu'elle dure trois heures ou une journée ; la préparation sur vos documents s'ajoute au devis" },
+  { label: 'Financement', value: 'Organisme certifié Qualiopi (catégorie actions de formation)', detail: 'Votre OPCO peut être sollicité' },
 ]
 
 /* ───────── Les ateliers : un hub Sprint, trois Sprints avec leur page, deux ateliers sur mesure ───────── */
@@ -205,7 +199,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -269,9 +263,15 @@ export default function AtelierIAPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · en ligne depuis septembre 2026, ateliers réorganisés le 7 octobre 2026
           </p>
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un atelier intelligence artificielle Masteria réunit au plus douze personnes pendant trois heures à une journée, et <strong style={{ color: '#fff', fontWeight: 700 }}>chacune passe l'essentiel du temps à traiter ses propres documents avec l'assistant de l'entreprise, sous l'œil d'un formateur qui corrige</strong>. Six familles d'ateliers : trois Sprints de fond, les Sprints AI Act, Excel et Veille, l'atelier métier et l'atelier cas d'usage. L'OPCO de votre branche peut en financer une partie.
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Un atelier intelligence artificielle Masteria réunit au plus douze personnes pendant trois heures à une journée, et <strong style={{ color: '#fff', fontWeight: 700 }}>chacune passe l'essentiel du temps à traiter ses propres documents avec l'assistant de l'entreprise, sous l'œil d'un formateur qui corrige</strong>.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              Six familles d'ateliers : trois Sprints de fond, les Sprints AI Act, Excel et Veille, l'atelier métier et l'atelier cas d'usage. L'OPCO de votre branche peut en financer une partie.
+            </p>
+          </div>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Une conférence fait comprendre et une formation fait acquérir des compétences ; l'atelier fait faire, et vite. Il tient sa promesse à deux conditions : les participants gardent la main sur le clavier au moins deux heures sur trois, et chacun travaille sur une tâche qui l'attend au bureau.
           </p>
@@ -290,17 +290,8 @@ export default function AtelierIAPage() {
               </span>
             ))}
           </div>
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères sur fond sombre */}
+          <Reperes sombre id="en-bref" titre="En bref" colonnes={3} style={{ margin: 0 }} items={EN_BREF} />
         </div>
       </section>
 
@@ -311,26 +302,13 @@ export default function AtelierIAPage() {
             <div style={editorialAside}>
               <Kicker>Les ateliers</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Quel atelier IA pour quel besoin ?</h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Tous suivent la même règle : douze personnes au plus, un poste par personne, des documents apportés par les participants. Les trois Sprints de fond ouvrent le sujet, les Sprints AI Act, Excel et Veille traitent un thème précis, l'atelier métier part des livrables d'une équipe, et l'atelier cas d'usage aide la direction à choisir ses priorités.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Tous suivent la même règle : douze personnes au plus, un poste par personne, des documents apportés par les participants. Les trois Sprints de fond ouvrent le sujet, les Sprints AI Act, Excel et Veille traitent un thème précis, l'atelier métier part des livrables d'une équipe, et l'atelier cas d'usage aide la direction à choisir ses priorités." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Les six formats de trois heures sont réunis sous le nom de <Link to="/formation-sprint-ia" style={aStyle}>Sprint IA</Link>. Quand un public nombreux doit d'abord comprendre avant de pratiquer, une <Link to="/conference-ia" style={aStyle}>conférence IA en entreprise</Link> ouvre la série.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {ATELIERS.map((item, i) => (
-                <div key={i} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{item.desc}</p>
-                  <Link to={item.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700 }}>
-                    {item.cta}
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </Link>
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par atelier (texte long), lien vers sa page en pied */}
+            <Rangees items={ATELIERS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon, lien: { to: item.href, label: item.cta } }))} />
           </div>
         </div>
       </section>
@@ -343,9 +321,7 @@ export default function AtelierIAPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le bon format</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>Conférence, atelier ou formation : lequel choisir ?</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Tout dépend de ce que les participants doivent savoir faire en sortant. Regarder et comprendre : la conférence. Refaire seul deux ou trois tâches dès le lendemain : l'atelier. Maîtriser l'outil dans tout son métier, évaluation à l'appui : la formation. Une démarche d'acculturation enchaîne souvent les trois.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Tout dépend de ce que les participants doivent savoir faire en sortant. Regarder et comprendre : la conférence. Refaire seul deux ou trois tâches dès le lendemain : l'atelier. Maîtriser l'outil dans tout son métier, évaluation à l'appui : la formation. Une démarche d'acculturation enchaîne souvent les trois." />
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif conférence, atelier et formation IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
               <thead>
@@ -375,20 +351,9 @@ export default function AtelierIAPage() {
         <div style={wrap}>
           <Kicker>Le déroulé</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Comment se déroule un atelier IA de trois heures ?</h2>
-          <p style={answerStyle}>
-            <strong>Un quart d'heure de repères, un premier document traité ensemble, puis deux tâches personnelles menées en autonomie, qui occupent la plus grande part de la séance, et une mise en commun pour finir. Une journée complète suit le même plan, avec davantage de dossiers et une mise en commun plus longue.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginTop: 12 }}>
-            {DEROULE.map(step => (
-              <div key={step.num} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <span style={{ fontSize: 15, color: c, fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={answerStyle} texte="Un quart d'heure de repères, un premier document traité ensemble, puis deux tâches personnelles menées en autonomie, qui occupent la plus grande part de la séance, et une mise en commun pour finir. Une journée complète suit le même plan, avec davantage de dossiers et une mise en commun plus longue." />
+          {/* Une rangée numérotée par temps de la séance (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={DEROULE.map(step => ({ titre: step.title, texte: step.desc }))} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Trois choses nous sont nécessaires avant la séance : un échange de cadrage avec la personne qui organise, deux documents par participant, et un essai des accès avec votre service informatique une semaine plus tôt.
           </p>
@@ -400,24 +365,9 @@ export default function AtelierIAPage() {
         <div style={wrap}>
           <Kicker>Sur le terrain</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Deux missions où l'atelier a servi à construire</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un atelier bien préparé sert aussi à fabriquer : des consignes d'assistant, des modèles de demande, un premier outil. Dans les deux cas ci-dessous, ce que les participants ont produit en séance est resté en service après le départ du formateur.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
-            {CAS.map(({ id, icon: Icon, titre, texte }) => (
-              <div key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                  <h3 style={{ ...h3Style, fontSize: 16 }}>{titre}</h3>
-                </div>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{texte}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                  Ouvrir le cas complet
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Un atelier bien préparé sert aussi à fabriquer : des consignes d'assistant, des modèles de demande, un premier outil. Dans les deux cas ci-dessous, ce que les participants ont produit en séance est resté en service après le départ du formateur." />
+          {/* Une rangée par mission (récit long), lien vers le cas en pied */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS.map(({ id, icon, titre, texte }) => ({ titre, texte, icon, lien: { to: `/etudes-de-cas-ia#${id}`, label: 'Ouvrir le cas complet' } }))} />
         </div>
       </section>
 
@@ -426,17 +376,9 @@ export default function AtelierIAPage() {
         <div style={wrap}>
           <Kicker>À éviter</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Ce qui fait échouer un atelier IA</h2>
-          <p style={answerStyle}>
-            <strong>Des exemples fournis à la place des dossiers des participants, une salle trop pleine, des accès qui ne marchent pas le jour venu, trop de démonstration, et rien de prévu après. Nous croisons ces cinq écueils depuis 2022 ; tous se corrigent pendant la préparation.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={answerStyle} texte="Des exemples fournis à la place des dossiers des participants, une salle trop pleine, des accès qui ne marchent pas le jour venu, trop de démonstration, et rien de prévu après. Nous croisons ces cinq écueils depuis 2022 ; tous se corrigent pendant la préparation." />
+          {/* Une rangée par écueil, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={ERREURS.map(item => ({ titre: item.title, texte: item.desc, icon: AlertTriangle }))} />
         </div>
       </section>
 
@@ -450,8 +392,14 @@ export default function AtelierIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Un prix par séance, le même pour trois heures ou une journée</h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Chaque atelier est facturé à partir de 1 980 € HT la séance, que la salle compte douze participants ou un seul. Que la séance dure trois heures ou une journée, le prix de base reste identique : la version longue apporte davantage de cas traités.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Monté comme une action de formation brève, l'atelier ouvre droit à une demande de financement : l'OPCO dont dépend votre entreprise l'accepte en tout ou partie, d'après ses barèmes et ses réserves, et nous vous aidons à la constituer.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Chaque atelier est facturé à partir de 1 980 € HT la séance, que la salle compte douze participants ou un seul. Que la séance dure trois heures ou une journée, le prix de base reste identique : la version longue apporte davantage de cas traités. Monté comme une action de formation brève, l'atelier ouvre droit à une demande de financement : l'OPCO dont dépend votre entreprise l'accepte en tout ou partie, d'après ses barèmes et ses réserves, et nous vous aidons à la constituer. Le compte personnel de formation (CPF) n'intervient pas. Pour connaître votre opérateur, essayez le simulateur <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link>.
+                Le compte personnel de formation (CPF) n'intervient pas. Pour connaître votre opérateur, essayez le simulateur <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Dès 1 980 € HT par séance de groupe', 'Trois heures ou une journée, même prix de base', 'Préparation sur mesure en plus, au devis', 'Demande OPCO montée ensemble', 'Devis envoyé sous 24 heures'].map(pt => (

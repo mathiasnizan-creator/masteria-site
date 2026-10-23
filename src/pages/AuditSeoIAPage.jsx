@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Offre d'entrée du cluster SEO/GEO : « Audit SEO IA » (slug /audit-seo-ia).
@@ -54,14 +55,6 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
-}
-
 const HERO_BADGES = [
   { icon: Search, label: 'Google et moteurs génératifs dans un même rapport' },
   { icon: Bot, label: 'Citations relevées plusieurs fois, sur une liste fixe' },
@@ -71,13 +64,15 @@ const HERO_BADGES = [
 
 /* ───────── En bref ───────── */
 
+/* Repères du héros (23/10/2026) : chaque ligne d'origine coupée en tête, détail et puces,
+   mots inchangés. */
 const EN_BREF = [
-  { label: 'Objet', value: "Votre référencement Google et votre présence dans les réponses des IA, examinés dans un seul audit" },
-  { label: 'Mesures', value: "Positions, clics et pages indexées d'après la Search Console ; mentions dans Gemini, ChatGPT, Perplexity et les résumés IA de Google ; écart avec les concurrents que vous nommez" },
-  { label: 'Livrable', value: "Correctifs techniques classés, plan éditorial et entités, grille de relevé des citations que vous gardez" },
-  { label: 'Durée', value: "Quelques jours d'analyse, répartis sur plusieurs semaines pour répéter les relevés dans les IA" },
-  { label: 'Prix', value: "Forfait après cadrage : dès quelques milliers d'euros pour un site et une langue, davantage avec plusieurs marchés ; aucune position garantie" },
-  { label: 'Ensuite', value: "Votre équipe, votre agence ou la nôtre applique le plan ; un accompagnement se chiffre après la restitution" },
+  { label: 'Objet', icon: Search, value: 'Votre référencement Google et votre présence dans les réponses des IA', detail: 'Examinés dans un seul audit' },
+  { label: 'Mesures', icon: BarChart3, liste: ["Positions, clics et pages indexées d'après la Search Console", 'Mentions dans Gemini, ChatGPT, Perplexity et les résumés IA de Google', 'Écart avec les concurrents que vous nommez'] },
+  { label: 'Livrable', liste: ['Correctifs techniques classés', 'Plan éditorial et entités', 'Grille de relevé des citations que vous gardez'] },
+  { label: 'Durée', value: "Quelques jours d'analyse", detail: 'Répartis sur plusieurs semaines pour répéter les relevés dans les IA' },
+  { label: 'Prix', value: 'Forfait après cadrage', detail: "Dès quelques milliers d'euros pour un site et une langue, davantage avec plusieurs marchés ; aucune position garantie" },
+  { label: 'Ensuite', icon: ListChecks, value: 'Votre équipe, votre agence ou la nôtre applique le plan', detail: 'Un accompagnement se chiffre après la restitution' },
 ]
 
 /* ───────── Quatre volets ───────── */
@@ -326,7 +321,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -404,12 +399,21 @@ export default function AuditSeoIAPage() {
             Signé <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Publié en août 2026, actualisé le 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit SEO IA de Masteria examine votre site sur deux terrains : le référencement Google (indexation, technique, contenu, positions) et la place de votre marque dans les réponses que rédigent ChatGPT, Gemini, Perplexity ou les AI Overviews. Vous recevez <strong style={{ color: '#fff', fontWeight: 700 }}>un état chiffré et une liste de correctifs classés par impact</strong>, que votre équipe ou votre agence peut appliquer. Seul l'audit est facturé ; la suite se chiffre après la restitution.
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              L'audit SEO IA de Masteria examine votre site sur deux terrains : le référencement Google (indexation, technique, contenu, positions) et la place de votre marque dans les réponses que rédigent ChatGPT, Gemini, Perplexity ou les AI Overviews.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              Vous recevez <strong style={{ color: '#fff', fontWeight: 700 }}>un état chiffré et une liste de correctifs classés par impact</strong>, que votre équipe ou votre agence peut appliquer. Seul l'audit est facturé ; la suite se chiffre après la restitution.
+            </p>
+          </div>
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Google ne cite dans ses AI Overviews que des pages indexées et éligibles à un extrait : un défaut technique qui vous coûte des positions vous coûte aussi des citations. L'audit regarde les deux terrains, avec l'outillage IA qui permet d'examiner un site entier en quelques jours.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Google ne cite dans ses AI Overviews que des pages indexées et éligibles à un extrait : un défaut technique qui vous coûte des positions vous coûte aussi des citations. L'audit regarde les deux terrains, avec l'outillage IA qui permet d'examiner un site entier en quelques jours. Il sert de porte d'entrée à notre <Link to="/agence-seo-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>agence SEO IA</Link>, sans obligation de poursuivre avec elle.
+            Il sert de porte d'entrée à notre <Link to="/agence-seo-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>agence SEO IA</Link>, sans obligation de poursuivre avec elle.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -434,17 +438,8 @@ export default function AuditSeoIAPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'audit en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 100px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* L'audit en six lignes : synthèse citable (GEO), en repères sur fond sombre */}
+          <Reperes sombre id="en-bref" titre="L'audit en six lignes" colonnes={3} style={{ margin: 0 }} items={EN_BREF} />
         </div>
       </section>
 
@@ -457,26 +452,15 @@ export default function AuditSeoIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que contient un audit SEO IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>« Audit SEO IA » désigne deux besoins : examiner votre référencement en vous servant de l'IA, et mesurer votre place dans les réponses des IA. Notre audit traite les deux en quatre volets : technique et robots, contenu et entités, citations dans les IA, écarts avec vos concurrents.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="« Audit SEO IA » désigne deux besoins : examiner votre référencement en vous servant de l'IA, et mesurer votre place dans les réponses des IA. Notre audit traite les deux en quatre volets : technique et robots, contenu et entités, citations dans les IA, écarts avec vos concurrents." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Les quatre volets nourrissent un rapport unique : ce qui freine votre visibilité, ce qui la débloquerait, dans quel ordre agir. Vous cherchiez un bilan de l'IA dans votre entreprise (maturité, processus, conformité) ? C'est notre <Link to="/audit-ia" style={aStyle}>audit IA</Link>, une mission distincte.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {VOLETS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par volet, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={VOLETS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Le volet IA peut aussi se commander seul : l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> va plus loin sur la mesure des citations, la part de voix et le réglage des robots.
               </p>
@@ -497,9 +481,7 @@ export default function AuditSeoIAPage() {
             Audit SEO et audit GEO : quelle différence ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>L'audit SEO mesure votre rang sur Google ; l'audit GEO compte vos mentions dans les textes rédigés par les IA. Les fondations sont communes (un site techniquement propre, des textes nets, un balisage structuré), mais on ne mesure pas la même chose, et certains leviers changent. Nous menons les deux ensemble parce que vos clients passent par les deux portes.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="L'audit SEO mesure votre rang sur Google ; l'audit GEO compte vos mentions dans les textes rédigés par les IA. Les fondations sont communes (un site techniquement propre, des textes nets, un balisage structuré), mais on ne mesure pas la même chose, et certains leviers changent. Nous menons les deux ensemble parce que vos clients passent par les deux portes." />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Audit SEO et audit GEO comparés critère par critère" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
@@ -551,9 +533,7 @@ export default function AuditSeoIAPage() {
             Cinq temps entre le premier appel et le rapport
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Cadrage du marché et de la liste de mesure, relevé du point de départ, examen technique, examen du contenu et des entités, rapport et restitution. Les relevés dans les IA se répètent sur une liste de questions fixe, seule façon d'obtenir une mesure stable.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Cadrage du marché et de la liste de mesure, relevé du point de départ, examen technique, examen du contenu et des entités, rapport et restitution. Les relevés dans les IA se répètent sur une liste de questions fixe, seule façon d'obtenir une mesure stable." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -586,20 +566,11 @@ export default function AuditSeoIAPage() {
             Les cinq pièces du rapport d'audit SEO IA
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Un état chiffré Google et IA, des correctifs techniques classés, un plan éditorial et entités, une grille de relevé des citations que vous gardez, une restitution qui aide à arbitrer. Le rapport se transmet tel quel à votre équipe ou à une autre agence.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Un état chiffré Google et IA, des correctifs techniques classés, un plan éditorial et entités, une grille de relevé des citations que vous gardez, une restitution qui aide à arbitrer. Le rapport se transmet tel quel à votre équipe ou à une autre agence." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {LIVRABLE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
+          {/* Une rangée par pièce du rapport, puis l'encadré sombre en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={LIVRABLE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+          <div style={{ marginTop: 28, maxWidth: 880 }}>
             <div style={{ ...cardStyle, padding: 28, background: '#0A0F1E', border: '1px solid #1E293B' }}>
               <div style={{ marginBottom: 16 }}>
                 <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -641,26 +612,11 @@ export default function AuditSeoIAPage() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 24 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <FileText size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Le prix, cadré avant d'être chiffré</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Forfait fixé à l'issue du cadrage, dont la première demi-heure vous est offerte, selon la taille du site, les marchés et les langues, la longueur de la liste de questions, le nombre de concurrents suivis. Un site dans une seule langue démarre à quelques milliers d'euros ; plusieurs marchés ou langues font monter le forfait, sans plafond fixé d'avance. Le SEO et le GEO ne sont pas finançables par votre OPCO, dont les fonds vont à la formation. Seul l'audit figure au devis.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <GraduationCap size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Si votre équipe applique le plan</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Notre <Link to="/formation-ia-seo" style={aStyle}>formation SEO IA</Link> prépare vos équipes à reprendre le plan : deux jours, plusieurs outils d'IA comparés, sur vos mots-clés et vos pages. Qualiopi, obtenu par Masteria au titre des actions de formation, permet un financement par l'OPCO dont dépend votre entreprise, sous réserve de ses critères et de son budget.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 32, maxWidth: 880 }} items={[
+            { titre: "Le prix, cadré avant d'être chiffré", icon: FileText, texte: "Forfait fixé à l'issue du cadrage, dont la première demi-heure vous est offerte, selon la taille du site, les marchés et les langues, la longueur de la liste de questions, le nombre de concurrents suivis. Un site dans une seule langue démarre à quelques milliers d'euros ; plusieurs marchés ou langues font monter le forfait, sans plafond fixé d'avance. Le SEO et le GEO ne sont pas finançables par votre OPCO, dont les fonds vont à la formation. Seul l'audit figure au devis." },
+            { titre: 'Si votre équipe applique le plan', icon: GraduationCap, texte: <>Notre <Link to="/formation-ia-seo" style={aStyle}>formation SEO IA</Link> prépare vos équipes à reprendre le plan : deux jours, plusieurs outils d'IA comparés, sur vos mots-clés et vos pages. Qualiopi, obtenu par Masteria au titre des actions de formation, permet un financement par l'OPCO dont dépend votre entreprise, sous réserve de ses critères et de son budget.</> },
+          ]} />
         </div>
       </section>
 
@@ -745,7 +701,10 @@ export default function AuditSeoIAPage() {
                 Un fondateur qui applique la grille à son propre site
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Mathias Nizan conduit chaque audit SEO et GEO. Selon le site, il s'entoure de consultants SEO et IA (le réseau en compte une dizaine), de développeurs pour la technique et l'automatisation des relevés (cinq environ) et de formateurs (une vingtaine) quand l'équipe doit reprendre la main ; tous sont indépendants. Nous l'appliquons à notre propre site, master-ia.fr : une requête visée, une page dédiée, la réponse dans les premières lignes. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent des missions datées.
+                Mathias Nizan conduit chaque audit SEO et GEO. Selon le site, il s'entoure de consultants SEO et IA (le réseau en compte une dizaine), de développeurs pour la technique et l'automatisation des relevés (cinq environ) et de formateurs (une vingtaine) quand l'équipe doit reprendre la main ; tous sont indépendants.
+              </p>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+                Nous l'appliquons à notre propre site, master-ia.fr : une requête visée, une page dédiée, la réponse dans les premières lignes. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent des missions datées.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

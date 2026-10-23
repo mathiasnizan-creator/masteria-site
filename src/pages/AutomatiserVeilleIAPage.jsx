@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import FounderNote from '../components/FounderNote'
+import { Accroche, Paras, Reperes, Rangees, decouperPhrases } from '../components/Aere'
 
 /**
  * AutomatiserVeilleIAPage — page pilier evergreen qui cible l'intention réelle
@@ -246,11 +247,10 @@ export default function AutomatiserVeilleIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>comment l&apos;automatiser vraiment</span>
           </h1>
 
-          <p className="veille-lede" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '26px 0 30px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La quantité d&apos;actualités IA publiées chaque jour dépasse ce qu&apos;une équipe peut lire.
-            Automatiser sa veille devient nécessaire, à condition de ne pas remplacer le tri par du volume brut.
-            Voici les approches, la méthode, et le système que nous faisons tourner tous les matins.
-          </p>
+          {/* Accroche (1re phrase) puis puces ; l'enveloppe garde la classe lue par le speakable */}
+          <div className="veille-lede" style={{ marginTop: 26 }}>
+            <Accroche sombre texte={"La quantité d'actualités IA publiées chaque jour dépasse ce qu'une équipe peut lire. Automatiser sa veille devient nécessaire, à condition de ne pas remplacer le tri par du volume brut. Voici les approches, la méthode, et le système que nous faisons tourner tous les matins."} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.6, margin: '0 0 20px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <Link to="/veille-ia" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -261,15 +261,11 @@ export default function AutomatiserVeilleIAPage() {
             </Link>
           </div>
 
-          {/* En bref — dl citable */}
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 1, margin: '40px 0 0', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 14, overflow: 'hidden' }}>
-            {EN_BREF.map(([t, d], i) => (
-              <div key={i} style={{ background: '#0A0F1E', padding: '18px 20px' }}>
-                <dt style={{ fontSize: 12.5, fontWeight: 700, color: '#7DA9F0', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 7 }}>{t}</dt>
-                <dd style={{ margin: 0, fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.55 }}>{d}</dd>
-              </div>
-            ))}
-          </dl>
+          {/* En bref, en repères : 1re phrase en valeur, la suite en détail */}
+          <Reperes sombre colonnes={4} style={{ margin: '40px 0 0' }} items={EN_BREF.map(([t, d]) => {
+            const ph = decouperPhrases(d)
+            return ph.length > 1 ? { label: t, value: ph[0], detail: ph.slice(1).join(' ') } : { label: t, detail: d }
+          })} />
         </div>
       </section>
 
@@ -300,7 +296,10 @@ export default function AutomatiserVeilleIAPage() {
           </p>
           <p style={pStyle}>
             La raison est simple. Depuis 2023, la cadence des annonces a dépassé ce qu&apos;une lecture manuelle
-            peut absorber. Suivre à la main revient à choisir entre y passer une heure par jour ou accepter de
+            peut absorber.
+          </p>
+          <p style={pStyle}>
+            Suivre à la main revient à choisir entre y passer une heure par jour ou accepter de
             manquer l&apos;essentiel. C&apos;est précisément le problème que l&apos;automatisation résout, à condition
             de garder en tête que collecter plus ne sert à rien si l&apos;on ne trie pas mieux.
           </p>
@@ -342,17 +341,8 @@ export default function AutomatiserVeilleIAPage() {
             « Se tenir au courant » est un objectif trop vague pour tenir. Une veille utile sert une décision.
             Dans la pratique, elle prend trois formes, souvent combinées.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
-            {USAGES.map(({ Icon, t, d }, i) => (
-              <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 16, padding: 26 }}>
-                <span style={{ display: 'inline-flex', width: 44, height: 44, borderRadius: 12, background: '#DBEAFE', alignItems: 'center', justifyContent: 'center', color: c, marginBottom: 16 }}>
-                  <Icon size={22} strokeWidth={2.1} aria-hidden="true" />
-                </span>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }}>{t}</h3>
-                <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par usage, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees items={USAGES.map(({ Icon, t, d }) => ({ titre: t, texte: d, icon: Icon }))} />
         </div>
       </section>
 
@@ -405,20 +395,11 @@ export default function AutomatiserVeilleIAPage() {
             construite et affinée au fil des ratés. Voici les cinq étapes, sans le code, avec ce qui compte
             vraiment à chacune.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-            {METHODE.map(({ Icon, t, d }, i) => (
-              <div key={i} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 24, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                  <span style={{ flexShrink: 0, width: 42, height: 42, borderRadius: 11, background: '#DBEAFE', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', color: c }}>
-                    <Icon size={21} strokeWidth={2.1} aria-hidden="true" />
-                  </span>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: '#94A3B8' }}>Étape {i + 1}</div>
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }}>{t}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par étape (picto, « Étape n », titre, texte), en pleine largeur */}
+          <Rangees items={METHODE.map(({ Icon, t, d }, i) => ({
+            icon: Icon, texte: d,
+            titre: <><span style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#94A3B8', marginBottom: 2 }}>Étape {i + 1}</span> {t}</>,
+          }))} />
         </div>
       </section>
 
@@ -485,11 +466,12 @@ export default function AutomatiserVeilleIAPage() {
         <div style={wrap}>
           <div style={{ ...kicker, display: 'inline-flex', alignItems: 'center', gap: 8 }}><BookOpen size={15} aria-hidden="true" /> Glossaire</div>
           <h2 style={h2Style}>Les mots de la veille IA, définis</h2>
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20, margin: 0 }}>
+          {/* Glossaire en liste verticale : le terme à gauche, sa définition à droite */}
+          <dl style={{ margin: 0, borderTop: '1px solid #E5E7EB' }}>
             {GLOSSAIRE.map((g, i) => (
-              <div key={i} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '20px 22px' }}>
-                <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{g.terme}</dt>
-                <dd style={{ margin: 0, fontSize: 14.5, color: '#4B5563', lineHeight: 1.6 }}>{g.def}</dd>
+              <div key={i} style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 32px', padding: '20px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <dt style={{ flex: '0 0 240px', fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A' }}>{g.terme}</dt>
+                <dd style={{ flex: '1 1 320px', margin: 0, fontSize: 15.5, color: '#4B5563', lineHeight: 1.65, maxWidth: 720 }}>{g.def}</dd>
               </div>
             ))}
           </dl>
@@ -510,7 +492,7 @@ export default function AutomatiserVeilleIAPage() {
                 <span>{item.q}</span>
                 <span style={{ flexShrink: 0, color: c }} aria-hidden="true">+</span>
               </summary>
-              <p style={{ marginTop: 12, color: '#374151', lineHeight: 1.7, fontSize: 16 }}>{item.a}</p>
+              <Paras texte={item.a} max={2} style={{ margin: '12px 0 16px', color: '#374151', lineHeight: 1.7, fontSize: 16 }} />
             </details>
           ))}
         </div>

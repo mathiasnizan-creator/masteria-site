@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, ScrollText, ListChecks, Workflow, GraduationCap, Scale,
   ShieldCheck, AlertTriangle, Target, FileText, Layers, Ban, Copy,
-  RefreshCw, ExternalLink, BookOpen,
+  RefreshCw, ExternalLink, BookOpen, Briefcase,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page money « charte IA d'entreprise » (slug /charte-ia-entreprise). Cible :
@@ -66,11 +67,24 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
+/* Rangées pleine largeur (même dessin que <Rangees>) avec un pied facultatif : la source
+   externe, ouverte dans un nouvel onglet. */
+function RangeesSourcees({ items }) {
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB' }}>
+      {items.map(({ titre, texte, icon: Icon, pied }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 720 }}>
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', lineHeight: 1.35 }}>{titre}</h3>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {pied && <div style={{ marginTop: 10 }}>{pied}</div>}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -83,13 +97,15 @@ const HERO_BADGES = [
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
+/* Repères du héros (23/10/2026) : chaque ligne d'origine coupée en tête et détail,
+   mots inchangés. */
 const EN_BREF = [
-  { label: 'Définition', value: "Texte interne de deux à six pages, annexes à part, qui dit aux salariés quels outils d'IA utiliser, avec quelles données, sous quelle relecture, et à qui s'adresser pour le reste" },
-  { label: 'À quoi elle sert', value: "Donner un permis écrit : quand l'autorisé est clair, les équipes utilisent les comptes fournis et délaissent leurs comptes personnels" },
-  { label: 'Obligatoire ?', value: "Aucun texte ne l'exige sous ce nom. Elle sert de pièce au dossier de maîtrise de l'IA que demande le règlement européen (article 4) et traduit le RGPD en consignes" },
-  { label: 'Contenu', value: "Huit rubriques, du périmètre des outils à la révision du document, chacune assortie dans le tableau d'une formulation à discuter" },
-  { label: 'Méthode', value: "Cinq étapes, de l'écoute des usages existants à la relecture semestrielle" },
-  { label: 'Avec Masteria', value: "Rédaction avec vous en mission de conseil, ou trame construite par vos équipes pendant la formation gouvernance IA (à partir de 1 980 € HT la journée, certifiée Qualiopi)" },
+  { label: 'Définition', icon: BookOpen, value: 'Texte interne de deux à six pages, annexes à part', detail: "Qui dit aux salariés quels outils d'IA utiliser, avec quelles données, sous quelle relecture, et à qui s'adresser pour le reste" },
+  { label: 'À quoi elle sert', icon: Target, value: 'Donner un permis écrit', detail: "Quand l'autorisé est clair, les équipes utilisent les comptes fournis et délaissent leurs comptes personnels" },
+  { label: 'Obligatoire ?', icon: Scale, value: "Aucun texte ne l'exige sous ce nom.", detail: "Elle sert de pièce au dossier de maîtrise de l'IA que demande le règlement européen (article 4) et traduit le RGPD en consignes" },
+  { label: 'Contenu', icon: ListChecks, value: 'Huit rubriques, du périmètre des outils à la révision du document', detail: "Chacune assortie dans le tableau d'une formulation à discuter" },
+  { label: 'Méthode', icon: Workflow, value: 'Cinq étapes', detail: "De l'écoute des usages existants à la relecture semestrielle" },
+  { label: 'Avec Masteria', icon: GraduationCap, value: 'Rédaction avec vous en mission de conseil', detail: 'Ou trame construite par vos équipes pendant la formation gouvernance IA (à partir de 1 980 € HT la journée, certifiée Qualiopi)' },
 ]
 
 /* ───────── Charte / politique / dispositif (3 cartes de comparaison) ───────── */
@@ -375,7 +391,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -451,14 +467,17 @@ export default function CharteIAEntreprisePage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui rédige ces chartes avec les clients de Masteria · texte revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une charte IA d'entreprise dit à chaque salarié quels outils d'intelligence artificielle utiliser, avec quelles données, sous quelle relecture, et à qui demander le reste. <strong style={{ color: '#fff', fontWeight: 700 }}>Bien écrite, elle ramène les usages dans les comptes de l'entreprise : c'est le premier levier d'adoption.</strong>
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite */}
+          <div style={{ margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Une charte IA d'entreprise dit à chaque salarié quels outils d'intelligence artificielle utiliser, avec quelles données, sous quelle relecture, et à qui demander le reste.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Bien écrite, elle ramène les usages dans les comptes de l'entreprise : c'est le premier levier d'adoption.</strong>
+            </p>
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Vous trouverez ici ce que contient d'ordinaire une charte d'usage de l'IA, une formulation proposée pour chacune des huit rubriques, la méthode de rédaction en cinq étapes et les quatre erreurs qui condamnent le texte. Masteria, cabinet d'IA né à Lyon en 2022, écrit ces chartes aux côtés de ses clients puis forme ceux qui devront les appliquer.
-          </p>
+          <Paras texte="Vous trouverez ici ce que contient d'ordinaire une charte d'usage de l'IA, une formulation proposée pour chacune des huit rubriques, la méthode de rédaction en cinq étapes et les quatre erreurs qui condamnent le texte. Masteria, cabinet d'IA né à Lyon en 2022, écrit ces chartes aux côtés de ses clients puis forme ceux qui devront les appliquer." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -483,18 +502,8 @@ export default function CharteIAEntreprisePage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 132px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères sur fond sombre */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0 }} items={EN_BREF} />
         </div>
       </section>
 
@@ -507,26 +516,15 @@ export default function CharteIAEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Qu'est-ce qu'une charte IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une charte IA est le texte interne, de deux à six pages, qui dit aux salariés comment se servir de l'intelligence artificielle au travail : outils fournis, données permises et interdites, relecture humaine, transparence, propriété des contenus et marche à suivre pour un usage nouveau. Chacun sait ce qu'il peut faire seul et à qui demander pour le reste.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Une charte IA est le texte interne, de deux à six pages, qui dit aux salariés comment se servir de l'intelligence artificielle au travail : outils fournis, données permises et interdites, relecture humaine, transparence, propriété des contenus et marche à suivre pour un usage nouveau. Chacun sait ce qu'il peut faire seul et à qui demander pour le reste." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Le mot recouvre des documents de nature différente. Les trois cartes situent la charte entre la déclaration de la direction et la mécanique qui la fait appliquer.
+                Le mot recouvre des documents de nature différente. Les trois points situent la charte entre la déclaration de la direction et la mécanique qui la fait appliquer.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {COMPARAISON.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24, ...(i === 0 ? { borderTop: `3px solid ${c}` } : {}) }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par document, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={COMPARAISON.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
 
               {/* Notions voisines : ancrage d'entités (charte éthique IA, maîtrise de l'IA) */}
               <h3 style={{ ...h3Style, fontSize: 18, margin: '32px 0 16px', display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -558,28 +556,19 @@ export default function CharteIAEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi une charte IA maintenant ?
               </h2>
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que trois textes convergent : le règlement IA attend des actions de formation et d'accompagnement (article 4), le RGPD couvre chaque donnée personnelle saisie dans un assistant, et la CNIL recommande depuis juillet 2024 des règles internes écrites. Pendant ce temps, les comptes personnels se multiplient. La charte range ces exigences dans un texte que chacun comprend.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }} texte="Parce que trois textes convergent : le règlement IA attend des actions de formation et d'accompagnement (article 4), le RGPD couvre chaque donnée personnelle saisie dans un assistant, et la CNIL recommande depuis juillet 2024 des règles internes écrites. Pendant ce temps, les comptes personnels se multiplient. La charte range ces exigences dans un texte que chacun comprend." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {WHY.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={card.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: card.source ? '0 0 10px' : 0 }}>{card.desc}</p>
-                    {card.source && (
-                      <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>
-                        Source : <a href={card.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{card.source}</a>
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par raison, en pleine largeur ; la source éventuelle en pied */}
+              <RangeesSourcees items={WHY.map(card => ({
+                titre: card.title, texte: card.desc, icon: card.icon,
+                pied: card.source && (
+                  <p style={{ fontSize: 12.5, color: '#6B7280', margin: 0, fontWeight: 600 }}>
+                    Source : <a href={card.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{card.source}</a>
+                  </p>
+                ),
+              }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Pour comprendre le règlement lui-même et classer vos usages, voyez notre <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link>. Pour la rubrique données, la page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link> reprend les articles en jeu et la lecture de la CNIL.
               </p>
@@ -600,9 +589,7 @@ export default function CharteIAEntreprisePage() {
             Que doit contenir une charte IA d'entreprise ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Une charte IA d'entreprise tient en huit rubriques : périmètre et outils fournis, données, relecture humaine, transparence, propriété intellectuelle et secret, incidents, formation, gouvernance et révision. La plus utile est la dernière : le circuit qui fait entrer un outil nouveau évite que la charte soit contournée au premier besoin imprévu.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Une charte IA d'entreprise tient en huit rubriques : périmètre et outils fournis, données, relecture humaine, transparence, propriété intellectuelle et secret, incidents, formation, gouvernance et révision. La plus utile est la dernière : le circuit qui fait entrer un outil nouveau évite que la charte soit contournée au premier besoin imprévu." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Chaque formulation est une base de discussion, à reprendre en atelier avec vos métiers. Recopiez-les librement : leur valeur tient à l'adaptation à vos outils, à vos données et à votre droit du travail.
@@ -643,9 +630,7 @@ export default function CharteIAEntreprisePage() {
             Comment rédiger une charte IA ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>La rédaction d'une charte IA suit cinq étapes : écouter les usages existants, écrire d'abord ce qui est permis, décrire le circuit des demandes, présenter et faire signer le texte, puis le relire tous les six mois. Comptez quelques semaines entre l'écoute et la diffusion, ateliers avec les métiers compris.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="La rédaction d'une charte IA suit cinq étapes : écouter les usages existants, écrire d'abord ce qui est permis, décrire le circuit des demandes, présenter et faire signer le texte, puis le relire tous les six mois. Comptez quelques semaines entre l'écoute et la diffusion, ateliers avec les métiers compris." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             La première étape décide de la qualité de toutes les autres. Une charte rédigée loin des équipes décrit un travail qui n'existe pas.
@@ -682,25 +667,14 @@ export default function CharteIAEntreprisePage() {
             Quatre erreurs qui font d'une charte un texte mort
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Quatre erreurs condamnent une charte IA : tout interdire, copier un modèle générique, oublier le circuit des demandes et laisser le texte vieillir. Dans les quatre cas, le document cesse de décrire le travail et les équipes cessent de le lire.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Quatre erreurs condamnent une charte IA : tout interdire, copier un modèle générique, oublier le circuit des demandes et laisser le texte vieillir. Dans les quatre cas, le document cesse de décrire le travail et les équipes cessent de le lire." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 880 }}>
             Elles ont une racine commune : un texte écrit d'abord pour couvrir l'entreprise, que les salariés reçoivent comme un signe de défiance. Les quatre correctifs tiennent en une page.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
-            {ERREURS.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par erreur, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={ERREURS.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Une charte qui échappe à ces pièges devient la porte d'entrée de tout le reste : registre des usages, comité, supervision humaine. Notre page <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link> montre comment ces pièces s'y raccordent.
@@ -732,18 +706,8 @@ export default function CharteIAEntreprisePage() {
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>
             Une PME, le siège d'un réseau, un dirigeant seul : la charte change d'échelle, la logique reste la même. Les trois récits ci-dessous sont tirés des cas que nous publions, anonymisés.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS.map(cas => (
-              <div key={cas.href} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <h3 style={{ ...h3Style, fontSize: 16 }}>{cas.titre}</h3>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{cas.texte}</p>
-                <Link to={cas.href} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                  Le cas en détail
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par récit (texte long), lien vers le cas en pied */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS.map(cas => ({ titre: cas.titre, texte: cas.texte, icon: Briefcase, lien: { to: cas.href, label: 'Le cas en détail' } }))} />
         </div>
       </section>
 
@@ -785,8 +749,11 @@ export default function CharteIAEntreprisePage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Écrire votre charte IA avec Masteria, ou la construire en formation
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                En mission de conseil, nous écrivons la charte avec vous : écoute des usages, ateliers avec les métiers, rédaction, présentation aux équipes. Le forfait est fixé après le cadrage, et ce conseil reste à votre charge, hors du champ de l'OPCO.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                En mission de conseil, nous écrivons la charte avec vous : écoute des usages, ateliers avec les métiers, rédaction, présentation aux équipes. Le forfait est fixé après le cadrage, et ce conseil reste à votre charge, hors du champ de l'OPCO. En formation, la journée gouvernance IA fait construire à vos équipes la trame de leur propre charte, avec registre des usages et comité en appui ; elle démarre à 1 980 € HT, la préparation sur votre charte s'ajoutant au devis, est couverte par la certification Qualiopi que détient Masteria, et son financement peut être demandé à l'OPCO dont dépend votre branche.
+                En formation, la journée gouvernance IA fait construire à vos équipes la trame de leur propre charte, avec registre des usages et comité en appui ; elle démarre à 1 980 € HT, la préparation sur votre charte s'ajoutant au devis, est couverte par la certification Qualiopi que détient Masteria, et son financement peut être demandé à l'OPCO dont dépend votre branche.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to={RDV} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

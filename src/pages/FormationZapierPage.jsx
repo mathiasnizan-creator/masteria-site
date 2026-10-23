@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Money page « formation zapier » (slug /formation-zapier), côté FORMATION.
@@ -58,14 +59,6 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
-}
-
 const HERO_BADGES = [
   { icon: Zap, label: 'Un premier Zap en service avant midi' },
   { icon: Network, label: 'Plus de 9 000 applications connectables' },
@@ -75,13 +68,15 @@ const HERO_BADGES = [
 
 /* ───────── Ce qu'il faut savoir (synthèse citable, GEO) ───────── */
 
+/* Repères du héros (23/10/2026) : chaque ligne d'origine coupée en tête, détail et puces,
+   mots inchangés. */
 const EN_BREF = [
-  { label: 'Durée', value: "Une journée (7 h). Si vos besoins dépassent Zapier, nous vous orientons vers Make ou n8n avant la session." },
-  { label: 'Public', value: "Assistants, petites équipes marketing ou RH, ADV, dirigeants de TPE ; aucune compétence technique attendue." },
-  { label: 'Outil', value: "Zapier, son éditeur de Zaps, Tables, Forms et l'assistant Copilot, branchés sur les applications de vos équipes." },
-  { label: 'Méthode', value: "Chacun monte plusieurs Zaps sur ses propres tâches, dont un avec une étape IA, et les teste avant de partir." },
-  { label: 'À la sortie', value: "Des Zaps actifs, une check-list de fiabilité, des règles d'usage écrites, la liste des automatisations suivantes." },
-  { label: 'Financement', value: "Certification Qualiopi : votre OPCO décide de sa participation d'après ses règles et son budget." },
+  { label: 'Durée', value: 'Une journée (7 h).', detail: 'Si vos besoins dépassent Zapier, nous vous orientons vers Make ou n8n avant la session.' },
+  { label: 'Public', value: 'Assistants, petites équipes marketing ou RH, ADV, dirigeants de TPE', detail: 'Aucune compétence technique attendue.' },
+  { label: 'Outil', value: "Zapier, son éditeur de Zaps, Tables, Forms et l'assistant Copilot", detail: 'Branchés sur les applications de vos équipes.' },
+  { label: 'Méthode', icon: ListChecks, detail: 'Chacun monte plusieurs Zaps sur ses propres tâches, dont un avec une étape IA, et les teste avant de partir.' },
+  { label: 'À la sortie', liste: ['Des Zaps actifs', 'Une check-list de fiabilité', "Des règles d'usage écrites", 'La liste des automatisations suivantes'] },
+  { label: 'Financement', value: 'Certification Qualiopi', detail: "Votre OPCO décide de sa participation d'après ses règles et son budget." },
 ]
 
 /* ───────── Sommaire ───────── */
@@ -340,7 +335,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -422,10 +417,15 @@ export default function FormationZapierPage() {
             Écrite par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · offres et quotas de Zapier vérifiés le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation Zapier donne à une équipe sans profil technique les moyens de supprimer ses tâches répétitives en reliant ses applications. <strong style={{ color: '#fff', fontWeight: 700 }}>En une journée, chaque participant construit plusieurs Zaps sur ses propres tâches, dont un avec une étape IA</strong>, apprend à les surveiller et repère le moment où Make ou n8n prendrait le relais. Votre OPCO peut la financer, puisque Masteria est certifiée Qualiopi.
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              La formation Zapier donne à une équipe sans profil technique les moyens de supprimer ses tâches répétitives en reliant ses applications.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>En une journée, chaque participant construit plusieurs Zaps sur ses propres tâches, dont un avec une étape IA</strong>, apprend à les surveiller et repère le moment où Make ou n8n prendrait le relais. Votre OPCO peut la financer, puisque Masteria est certifiée Qualiopi.
+            </p>
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Avec Zapier, une tâche pénible disparaît souvent le jour même : le catalogue compte plus de 9 000 applications, et le premier résultat arrive avant le déjeuner, sans une ligne de code. Une journée bien menée installe les bons réflexes et montre jusqu'où l'outil vous portera.
@@ -450,18 +450,8 @@ export default function FormationZapierPage() {
             ))}
           </div>
 
-          {/* Ce qu'il faut savoir : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Ce qu'il faut savoir</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* Ce qu'il faut savoir : synthèse citable (GEO), en repères sur fond sombre */}
+          <Reperes sombre id="en-bref" titre="Ce qu'il faut savoir" colonnes={3} style={{ margin: 0 }} items={EN_BREF} />
         </div>
       </section>
 
@@ -484,26 +474,15 @@ export default function FormationZapierPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Zapier met l'automatisation à portée d'une équipe sans profil technique
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Il suffit de quelques minutes pour monter un Zap : un déclencheur, une ou plusieurs actions, un essai. Le catalogue couvre plus de 9 000 applications, outils de niche compris, et l'assistant Copilot propose un premier Zap à partir d'une phrase. Pour une petite équipe, aucun outil ne fait disparaître une ressaisie plus vite.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Il suffit de quelques minutes pour monter un Zap : un déclencheur, une ou plusieurs actions, un essai. Le catalogue couvre plus de 9 000 applications, outils de niche compris, et l'assistant Copilot propose un premier Zap à partir d'une phrase. Pour une petite équipe, aucun outil ne fait disparaître une ressaisie plus vite." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Pour situer Zapier face à des outils plus puissants, le tableau de la <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> met les trois côte à côte ; la <Link to="/formation-make" style={aStyle}>formation Make</Link> couvre l'étape intermédiaire.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par atout, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -516,9 +495,7 @@ export default function FormationZapierPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Zapier au 7 octobre 2026 : offres, tâches, hébergement
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Zapier facture à la tâche, étapes IA comprises ; son offre gratuite donne 100 tâches par mois, l'offre Professional démarre à 19,99 dollars par mois, et les données sont hébergées aux États-Unis. Le tableau reprend, rubrique par rubrique, nos relevés sur les pages de l'éditeur.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Zapier facture à la tâche, étapes IA comprises ; son offre gratuite donne 100 tâches par mois, l'offre Professional démarre à 19,99 dollars par mois, et les données sont hébergées aux États-Unis. Le tableau reprend, rubrique par rubrique, nos relevés sur les pages de l'éditeur." />
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
               <thead>
@@ -555,9 +532,7 @@ export default function FormationZapierPage() {
             Une journée, du premier Zap aux règles d'usage de l'équipe
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le matin, chacun branche ses applications et met en service un premier Zap avant la pause, puis apprend filtres, chemins et nettoyage des données. L'après-midi ajoute une étape IA, Copilot, la fiabilité, le cadre RGPD et le moment où Zapier ne suffit plus.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Le matin, chacun branche ses applications et met en service un premier Zap avant la pause, puis apprend filtres, chemins et nettoyage des données. L'après-midi ajoute une étape IA, Copilot, la fiabilité, le cadre RGPD et le moment où Zapier ne suffit plus." />
 
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
@@ -603,9 +578,7 @@ export default function FormationZapierPage() {
             Zapier suffit-il, ou faut-il regarder Make ou n8n ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Zapier suffit pour des tâches simples à faible volume, ce qui couvre déjà beaucoup de besoins. Quatre signaux annoncent l'étape suivante : des branches multiples, des milliers d'exécutions, des données à garder en Europe, des agents à superviser de près. Le tableau les traduit en situations.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Zapier suffit pour des tâches simples à faible volume, ce qui couvre déjà beaucoup de besoins. Quatre signaux annoncent l'étape suivante : des branches multiples, des milliers d'exécutions, des données à garder en Europe, des agents à superviser de près. Le tableau les traduit en situations." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -642,21 +615,10 @@ export default function FormationZapierPage() {
             Six Zaps que les participants mettent en service dans la journée
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Chaque participant part de ses propres tâches. Six Zaps reviennent souvent : la demande de devis enregistrée, l'avis client signalé, les pièces jointes classées, le rendez-vous confirmé et rappelé, l'accusé de réception préparé par l'IA et le point du lundi.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Chaque participant part de ses propres tâches. Six Zaps reviennent souvent : la demande de devis enregistrée, l'avis client signalé, les pièces jointes classées, le rendez-vous confirmé et rappelé, l'accusé de réception préparé par l'IA et le point du lundi." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS_USAGE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par Zap, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS_USAGE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
         </div>
       </section>
 
@@ -672,8 +634,14 @@ export default function FormationZapierPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 La journée Zapier démarre à 1 980 € HT
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le montant de départ est identique pour un groupe de douze personnes maximum réuni en intra et pour un participant seul. Des Zaps montés sur vos propres applications demandent une préparation, chiffrée en plus au devis. Les abonnements Zapier se règlent à part, auprès de l'éditeur.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre la voie à un financement : votre OPCO fixe sa part en fonction de ses règles et de son enveloppe, sur pièces (programme et convention fournis par nos soins).
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le montant de départ est identique pour un groupe de douze personnes maximum réuni en intra et pour un participant seul. Des Zaps montés sur vos propres applications demandent une préparation, chiffrée en plus au devis. Les abonnements Zapier se règlent à part, auprès de l'éditeur. La certification Qualiopi de Masteria, obtenue au titre des actions de formation, ouvre la voie à un financement : votre OPCO fixe sa part en fonction de ses règles et de son enveloppe, sur pièces (programme et convention fournis par nos soins). Pour retrouver votre opérateur, utilisez <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> ; pour comprendre comment l'OPCO instruit la demande, lisez la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Pour retrouver votre opérateur, utilisez <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> ; pour comprendre comment l'OPCO instruit la demande, lisez la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -703,7 +671,10 @@ export default function FormationZapierPage() {
                 Des formateurs qui pratiquent Zapier, Make et n8n
               </h2>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria, que Mathias Nizan a lancée à Lyon en 2022, travaille sur l'intelligence artificielle et ne revend aucun logiciel : c'est ce qui nous permet de vous dire où Zapier s'arrête. Mathias pilote chaque journée ; il l'anime ou la confie à un membre du réseau, qui compte une vingtaine de formateurs indépendants. La règle appliquée dans nos missions vaut ici aussi : l'automatisation prépare, une personne valide ce qui engage, comme le montrent nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>.
+                Masteria, que Mathias Nizan a lancée à Lyon en 2022, travaille sur l'intelligence artificielle et ne revend aucun logiciel : c'est ce qui nous permet de vous dire où Zapier s'arrête. Mathias pilote chaque journée ; il l'anime ou la confie à un membre du réseau, qui compte une vingtaine de formateurs indépendants.
+              </p>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+                La règle appliquée dans nos missions vaut ici aussi : l'automatisation prépare, une personne valide ce qui engage, comme le montrent nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -730,14 +701,13 @@ export default function FormationZapierPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Huit mots pour lire Zapier et sa facture
           </h2>
-          <p style={answerStyle}>
-            <strong>Zap, déclencheur, action, tâche, filtre et chemin, Formatter, étape IA, activité : ces huit mots suffisent pour comprendre l'interface de Zapier et ce qu'elle vous facture. Nous les posons au début de la journée.</strong>
-          </p>
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
+          <Reponse style={answerStyle} texte="Zap, déclencheur, action, tâche, filtre et chemin, Formatter, étape IA, activité : ces huit mots suffisent pour comprendre l'interface de Zapier et ce qu'elle vous facture. Nous les posons au début de la journée." />
+          {/* Vocabulaire en liste verticale : le terme à gauche, sa définition à droite */}
+          <dl style={{ margin: 0, borderTop: '1px solid #E5E7EB', maxWidth: 980 }}>
             {termsJsonLd.hasDefinedTerm.map(t => (
-              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
-                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
-                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
+              <div key={t.name} style={{ display: 'flex', flexWrap: 'wrap', gap: '6px 32px', padding: '18px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <dt style={{ ...h3Style, flex: '0 0 200px', fontSize: 16 }}>{t.name}</dt>
+                <dd style={{ flex: '1 1 320px', margin: 0, fontSize: 15, color: '#4B5563', lineHeight: 1.65, maxWidth: 720 }}>{t.description}</dd>
               </div>
             ))}
           </dl>

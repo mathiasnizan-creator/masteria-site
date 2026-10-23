@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, ShieldCheck, Scale, Filter, Info, UserCheck, Clock, Lock,
   ScrollText, FileSearch, Landmark, ExternalLink, GraduationCap,
-  BookOpen,
+  BookOpen, Briefcase,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page money « IA et RGPD » (slug /ia-et-rgpd). Cible : « ia et rgpd », « ia rgpd »,
@@ -69,11 +70,24 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
+/* Rangées pleine largeur (même dessin que <Rangees>) avec un pied : lien externe vers
+   l'article du RGPD ou la source CNIL, ouvert dans un nouvel onglet. */
+function RangeesSourcees({ items }) {
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB' }}>
+      {items.map(({ titre, texte, icon: Icon, pied }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 720 }}>
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', lineHeight: 1.35 }}>{titre}</h3>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {pied && <div style={{ marginTop: 10 }}>{pied}</div>}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -86,13 +100,15 @@ const HERO_BADGES = [
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
+/* Repères du héros (23/10/2026) : chaque ligne d'origine coupée en tête, détail et puces,
+   mots inchangés. */
 const EN_BREF = [
-  { label: 'Le principe', value: "Dès qu'une IA reçoit une donnée personnelle, le RGPD (règlement (UE) 2016/679) s'applique : base légale, finalité, minimisation, information des personnes, sécurité" },
-  { label: 'Le levier', value: "L'offre choisie (grand public ou professionnelle), le contrat de traitement signé avec l'éditeur (article 28) et les réglages de l'espace font la conformité" },
-  { label: 'AIPD', value: "Exigée quand l'usage fait peser un risque élevé sur les personnes (article 35) ; tri de candidatures et évaluation de salariés en tête de liste" },
-  { label: 'Notre rôle', value: "Conseil data & IA : cartographie des flux, qualification, AIPD, choix des offres. Prestation de conseil, pas finançable par votre OPCO. Côté formation, nos journées certifiées Qualiopi ouvrent droit à un financement de l'OPCO, sur demande" },
-  { label: 'Repères', value: "CNIL : questions-réponses sur l'IA générative (juillet 2024), recommandations finalisées (juillet 2025), contrôles 2026 sur le recrutement" },
-  { label: 'Zones', value: "France, Europe · États-Unis · Inde ; transferts hors Union examinés outil par outil" },
+  { label: 'Le principe', icon: Scale, value: "Dès qu'une IA reçoit une donnée personnelle", detail: "Le RGPD (règlement (UE) 2016/679) s'applique :", liste: ['Base légale', 'Finalité', 'Minimisation', 'Information des personnes', 'Sécurité'] },
+  { label: 'Le levier', icon: ScrollText, detail: "L'offre choisie (grand public ou professionnelle), le contrat de traitement signé avec l'éditeur (article 28) et les réglages de l'espace font la conformité" },
+  { label: 'AIPD', icon: FileSearch, value: "Exigée quand l'usage fait peser un risque élevé sur les personnes (article 35)", detail: "Tri de candidatures et évaluation de salariés en tête de liste" },
+  { label: 'Notre rôle', icon: ShieldCheck, value: 'Conseil data & IA', detail: "Cartographie des flux, qualification, AIPD, choix des offres. Prestation de conseil, pas finançable par votre OPCO. Côté formation, nos journées certifiées Qualiopi ouvrent droit à un financement de l'OPCO, sur demande" },
+  { label: 'Repères', icon: Landmark, value: 'CNIL', liste: ["Questions-réponses sur l'IA générative (juillet 2024)", 'Recommandations finalisées (juillet 2025)', 'Contrôles 2026 sur le recrutement'] },
+  { label: 'Zones', value: 'France, Europe · États-Unis · Inde', detail: 'Transferts hors Union examinés outil par outil' },
 ]
 
 /* ───────── Principes RGPD appliqués à l'IA (6 cartes, article cité) ───────── */
@@ -376,7 +392,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -452,14 +468,17 @@ export default function IAEtRGPDPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui cartographie les flux de données des clients de Masteria · garanties des éditeurs relevées le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable (accroche) */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le RGPD entre en jeu au moment où une donnée personnelle arrive dans un outil d'IA : il demande une base légale, une finalité, le minimum de données et des garanties écrites avec l'éditeur. La conformité se joue dans l'offre souscrite, le contrat de traitement et les réglages. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria cartographie vos flux et met chaque usage en règle.</strong>
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div style={{ margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Le RGPD entre en jeu au moment où une donnée personnelle arrive dans un outil d'IA : il demande une base légale, une finalité, le minimum de données et des garanties écrites avec l'éditeur.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              La conformité se joue dans l'offre souscrite, le contrat de traitement et les réglages. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria cartographie vos flux et met chaque usage en règle.</strong>
+            </p>
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Copilote bureautique, assistant conversationnel, agent branché sur le CRM : chacun envoie des données vers un fournisseur, parfois hors de l'Union. Cette page prend le sujet par les données personnelles : les articles du RGPD qui s'appliquent à vos usages, l'analyse d'impact, les garanties de cinq éditeurs relevées au 7 octobre 2026 et la méthode de mise en conformité, avec les publications de la CNIL qui les éclairent.
-          </p>
+          <Paras texte="Copilote bureautique, assistant conversationnel, agent branché sur le CRM : chacun envoie des données vers un fournisseur, parfois hors de l'Union. Cette page prend le sujet par les données personnelles : les articles du RGPD qui s'appliquent à vos usages, l'analyse d'impact, les garanties de cinq éditeurs relevées au 7 octobre 2026 et la méthode de mise en conformité, avec les publications de la CNIL qui les éclairent." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -484,18 +503,8 @@ export default function IAEtRGPDPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 132px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères sur fond sombre */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0 }} items={EN_BREF} />
         </div>
       </section>
 
@@ -508,30 +517,23 @@ export default function IAEtRGPDPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Utiliser l'IA est-il compatible avec le RGPD ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Oui, si chaque usage d'IA est traité comme ce qu'il est : un traitement de données. Dès qu'un assistant reçoit des informations sur des clients, des salariés ou des candidats, le RGPD demande une base légale, une finalité déterminée et des garanties de sécurité à la mesure du risque.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Oui, si chaque usage d'IA est traité comme ce qu'il est : un traitement de données. Dès qu'un assistant reçoit des informations sur des clients, des salariés ou des candidats, le RGPD demande une base légale, une finalité déterminée et des garanties de sécurité à la mesure du risque." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Six principes du règlement suffisent à juger un usage d'IA. Chaque carte renvoie à l'article concerné, dans le texte publié par la CNIL ; ils valent pour le copilote bureautique comme pour l'agent relié à vos systèmes, chez vous comme chez vos sous-traitants.
+                Six principes du règlement suffisent à juger un usage d'IA. Chaque principe renvoie à l'article concerné, dans le texte publié par la CNIL ; ils valent pour le copilote bureautique comme pour l'agent relié à vos systèmes, chez vous comme chez vos sous-traitants.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {PRINCIPES.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px', flex: 1 }}>{item.desc}</p>
-                    <a href={item.refUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, color: c, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
-                      RGPD, {item.ref}
-                      <ExternalLink size={12} strokeWidth={2.2} aria-hidden="true" />
-                    </a>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par principe, en pleine largeur (plus de cartes côte à côte) */}
+              <RangeesSourcees items={PRINCIPES.map(item => ({
+                titre: item.title, texte: item.desc, icon: item.icon,
+                pied: (
+                  <a href={item.refUrl} target="_blank" rel="noopener noreferrer" style={{ fontSize: 13, color: c, fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 5 }}>
+                    RGPD, {item.ref}
+                    <ExternalLink size={12} strokeWidth={2.2} aria-hidden="true" />
+                  </a>
+                ),
+              }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link> applique ces six principes à vos flux, usage par usage ; la <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link> les traduit ensuite en consignes que les salariés retiennent.
               </p>
@@ -548,16 +550,26 @@ export default function IAEtRGPDPage() {
             Quand faut-il une AIPD pour un projet d'IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>L'article 35 du RGPD impose une analyse d'impact (AIPD) avant tout traitement qui menace fortement les droits et libertés des personnes. Un projet d'IA franchit vite ce seuil : données sensibles ou massives, évaluation ou notation de personnes, décision automatisée, croisement de fichiers.</strong>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="L'article 35 du RGPD impose une analyse d'impact (AIPD) avant tout traitement qui menace fortement les droits et libertés des personnes. Un projet d'IA franchit vite ce seuil : données sensibles ou massives, évaluation ou notation de personnes, décision automatisée, croisement de fichiers." />
+
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 18px' }}>
+            Les lignes directrices européennes retiennent neuf critères ; deux réunis rendent en général l'analyse obligatoire, et la CNIL publie la liste des traitements pour lesquels elle est toujours exigée, sur sa <a href="https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-aipd" target="_blank" rel="noopener noreferrer" style={aStyle}>page consacrée à l'AIPD</a>.
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 18px' }}>
-            Les lignes directrices européennes retiennent neuf critères ; deux réunis rendent en général l'analyse obligatoire, et la CNIL publie la liste des traitements pour lesquels elle est toujours exigée, sur sa <a href="https://www.cnil.fr/fr/RGPD-analyse-impact-protection-des-donnees-aipd" target="_blank" rel="noopener noreferrer" style={aStyle}>page consacrée à l'AIPD</a>. Un assistant qui reformule des notes internes sans données personnelles reste sous le seuil ; un outil qui trie des candidatures ou note des clients le dépasse presque toujours. L'AIPD décrit le traitement, en pèse la nécessité, recense les risques pour les personnes et fixe les mesures qui les réduisent. Conduite tôt avec le DPO, elle évite de découvrir un blocage après le lancement.
+            Un assistant qui reformule des notes internes sans données personnelles reste sous le seuil ; un outil qui trie des candidatures ou note des clients le dépasse presque toujours.
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 18px' }}>
+            L'AIPD décrit le traitement, en pèse la nécessité, recense les risques pour les personnes et fixe les mesures qui les réduisent. Conduite tôt avec le DPO, elle évite de découvrir un blocage après le lancement.
           </p>
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-            Le recrutement mérite une vigilance particulière. La CNIL a placé ce domaine en tête de ses <a href="https://www.cnil.fr/fr/controles-prioritaires-2026" target="_blank" rel="noopener noreferrer" style={aStyle}>contrôles annoncés le 3 avril 2026</a>, et les outils qui trient ou évaluent des candidats entreront le 2 décembre 2027 dans le régime le plus exigeant de l'AI Act, celui du haut risque. Une AIPD menée maintenant sert les deux textes ; nos audits de flux la préparent, traitement par traitement.
+            Le recrutement mérite une vigilance particulière. La CNIL a placé ce domaine en tête de ses <a href="https://www.cnil.fr/fr/controles-prioritaires-2026" target="_blank" rel="noopener noreferrer" style={aStyle}>contrôles annoncés le 3 avril 2026</a>, et les outils qui trient ou évaluent des candidats entreront le 2 décembre 2027 dans le régime le plus exigeant de l'AI Act, celui du haut risque.
+          </p>
+
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '18px 0 0' }}>
+            Une AIPD menée maintenant sert les deux textes ; nos audits de flux la préparent, traitement par traitement.
           </p>
         </div>
       </section>
@@ -574,9 +586,7 @@ export default function IAEtRGPDPage() {
             Quel outil d'IA est conforme au RGPD ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>La conformité d'un outil d'IA au RGPD se décide dans trois choix qui vous reviennent : l'offre souscrite, le contrat de traitement signé avec l'éditeur et les réglages de l'espace. Les cinq grands éditeurs proposent une offre professionnelle sous contrat ; leurs réglages par défaut diffèrent, et les écarts naissent de ces réglages.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="La conformité d'un outil d'IA au RGPD se décide dans trois choix qui vous reviennent : l'offre souscrite, le contrat de traitement signé avec l'éditeur et les réglages de l'espace. Les cinq grands éditeurs proposent une offre professionnelle sous contrat ; leurs réglages par défaut diffèrent, et les écarts naissent de ces réglages." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Pour chaque outil, le tableau donne ce que l'offre professionnelle garantit, les points à contrôler avant de déployer et la page de l'éditeur où le faire. Il ne classe personne : à ce niveau, les cinq répondent au RGPD dès que l'offre, le contrat et les réglages suivent.
@@ -615,7 +625,10 @@ export default function IAEtRGPDPage() {
           </p>
 
           <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '22px 0 0', maxWidth: 880 }}>
-            Trois des cinq éditeurs sont américains. Les transferts hors Union relèvent du chapitre V du RGPD (<a href={`${RGPD}/chapitre5`} target="_blank" rel="noopener noreferrer" style={{ color: '#93C5FD', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>articles 44 à 49</a>) ; vers les États-Unis, ils reposent aujourd'hui sur le Data Privacy Framework, dont la décision d'adéquation du 10 juillet 2023 a été validée par le Tribunal de l'Union le 3 septembre 2025, un pourvoi restant à juger. Le contrat de traitement doit dire où partent vos données.
+            Trois des cinq éditeurs sont américains. Les transferts hors Union relèvent du chapitre V du RGPD (<a href={`${RGPD}/chapitre5`} target="_blank" rel="noopener noreferrer" style={{ color: '#93C5FD', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>articles 44 à 49</a>) ; vers les États-Unis, ils reposent aujourd'hui sur le Data Privacy Framework, dont la décision d'adéquation du 10 juillet 2023 a été validée par le Tribunal de l'Union le 3 septembre 2025, un pourvoi restant à juger.
+          </p>
+          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '12px 0 0', maxWidth: 880 }}>
+            Le contrat de traitement doit dire où partent vos données.
           </p>
         </div>
       </section>
@@ -628,9 +641,7 @@ export default function IAEtRGPDPage() {
             Comment mettre vos usages d'IA en conformité RGPD ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>La mise en conformité RGPD des usages d'IA suit cinq étapes : cartographier les flux, qualifier chaque traitement (avec une AIPD si le risque est élevé), choisir l'offre et régler l'espace, écrire les consignes pour les équipes, puis tenir le dossier à jour.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="La mise en conformité RGPD des usages d'IA suit cinq étapes : cartographier les flux, qualifier chaque traitement (avec une AIPD si le risque est élevé), choisir l'offre et régler l'espace, écrire les consignes pour les équipes, puis tenir le dossier à jour." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             L'offre se choisit après la qualification, jamais avant : on ne sait pas quel contrat signer tant qu'on ignore quelles données vont circuler.
@@ -658,7 +669,10 @@ export default function IAEtRGPDPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '36px 0 0' }}>
-            Masteria conduit ces étapes dans son <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link>. Le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> situe d'abord votre maturité, données comprises ; les rôles et le comité qui tiennent le tout dans la durée relèvent de la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link>. Pour tenir le registre, la CNIL détaille les attentes sur sa page <a href="https://www.cnil.fr/fr/RGDP-le-registre-des-activites-de-traitement" target="_blank" rel="noopener noreferrer" style={aStyle}>registre des activités de traitement</a>.
+            Masteria conduit ces étapes dans son <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link>. Le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> situe d'abord votre maturité, données comprises ; les rôles et le comité qui tiennent le tout dans la durée relèvent de la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA</Link>.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '12px 0 0' }}>
+            Pour tenir le registre, la CNIL détaille les attentes sur sa page <a href="https://www.cnil.fr/fr/RGDP-le-registre-des-activites-de-traitement" target="_blank" rel="noopener noreferrer" style={aStyle}>registre des activités de traitement</a>.
           </p>
         </div>
       </section>
@@ -671,23 +685,18 @@ export default function IAEtRGPDPage() {
             Ce que la CNIL a publié sur l'IA, de 2024 à 2026
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La CNIL éclaire l'application du RGPD à l'IA par des questions-réponses, des recommandations et ses priorités de contrôle. Quatre publications comptent pour une organisation qui utilise des assistants : juillet 2024, juillet 2025, avril 2026 et août 2026.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="La CNIL éclaire l'application du RGPD à l'IA par des questions-réponses, des recommandations et ses priorités de contrôle. Quatre publications comptent pour une organisation qui utilise des assistants : juillet 2024, juillet 2025, avril 2026 et août 2026." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: 18, margin: '0 0 40px' }}>
-            {CNIL_CARDS.map((card, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.65, margin: '0 0 10px' }}>{card.desc}</p>
-                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>
+          {/* Une rangée par publication, en pleine largeur (plus de cartes côte à côte) */}
+          <div style={{ margin: '0 0 40px' }}>
+            <RangeesSourcees items={CNIL_CARDS.map(card => ({
+              titre: card.title, texte: card.desc, icon: card.icon,
+              pied: (
+                <p style={{ fontSize: 12.5, color: '#6B7280', margin: 0, fontWeight: 600 }}>
                   Source : <a href={card.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{card.source}</a>
                 </p>
-              </div>
-            ))}
+              ),
+            }))} />
           </div>
 
           {/* Définitions clés : ancrage d'entités (aligné sur le DefinedTermSet JSON-LD) */}
@@ -729,18 +738,8 @@ export default function IAEtRGPDPage() {
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 880 }}>
             Dans chacune, la question des données a été posée avant le premier prompt. Les récits complets figurent dans nos études de cas anonymisées.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS.map(cas => (
-              <div key={cas.id} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                <h3 style={{ ...h3Style, fontSize: 16 }}>{cas.titre}</h3>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{cas.texte}</p>
-                <Link to={`/etudes-de-cas-ia#${cas.id}`} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                  Voir la mission
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par mission (récit long), lien vers l'étude de cas en pied */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS.map(cas => ({ titre: cas.titre, texte: cas.texte, icon: Briefcase, lien: { to: `/etudes-de-cas-ia#${cas.id}`, label: 'Voir la mission' } }))} />
         </div>
       </section>
 
@@ -782,8 +781,11 @@ export default function IAEtRGPDPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Mettre les flux en règle, puis apprendre aux équipes à les y garder
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La mise en conformité décrite sur cette page relève de notre conseil data & IA : cartographie des flux, qualification des traitements, AIPD, choix des offres et réglages. Elle se règle au forfait après le cadrage et reste hors du financement de l'OPCO.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La mise en conformité décrite sur cette page relève de notre conseil data & IA : cartographie des flux, qualification des traitements, AIPD, choix des offres et réglages. Elle se règle au forfait après le cadrage et reste hors du financement de l'OPCO. Les équipes, elles, apprennent les bons réflexes en formation : la formation AI Act pour le cadre réglementaire, les formations aux outils pour des usages quotidiens respectueux des données. Facturées à partir de 1 980 € HT la journée, ces formations sont proposées par un organisme certifié Qualiopi.
+                Les équipes, elles, apprennent les bons réflexes en formation : la formation AI Act pour le cadre réglementaire, les formations aux outils pour des usages quotidiens respectueux des données. Facturées à partir de 1 980 € HT la journée, ces formations sont proposées par un organisme certifié Qualiopi.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/conseil-data-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>

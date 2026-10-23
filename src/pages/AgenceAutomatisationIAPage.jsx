@@ -10,6 +10,7 @@ import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
+import { Paras, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page offre « agence d'automatisation IA » (slug /agence-automatisation-ia).
@@ -56,14 +57,6 @@ const tdStyle = { padding: '14px 18px', fontSize: 14.5, color: '#374151', lineHe
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconBox({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -341,7 +334,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -421,14 +414,17 @@ export default function AgenceAutomatisationIAPage() {
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · mis à jour le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria repère les tâches répétitives de vos équipes, conçoit et construit les automatisations qui les prennent en charge, les relie à vos logiciels (Make, n8n, Power Automate, Zapier, API, MCP) et les met en service. <strong style={{ color: '#fff', fontWeight: 700 }}>Vous gardez la propriété d'un système documenté, que vos référents savent faire évoluer.</strong> Le premier échange, une demi-heure de cadrage, vous est offert.
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div style={{ margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Masteria repère les tâches répétitives de vos équipes, conçoit et construit les automatisations qui les prennent en charge, les relie à vos logiciels (Make, n8n, Power Automate, Zapier, API, MCP) et les met en service.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Vous gardez la propriété d'un système documenté, que vos référents savent faire évoluer.</strong> Le premier échange, une demi-heure de cadrage, vous est offert.
+            </p>
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Un outil sans code suffit pour copier une ligne d'un tableur à un autre. Dès qu'un processus touche à vos clients, à vos factures ou à vos stocks, il faut penser les cas particuliers, les contrôles et la reprise après erreur. Nous prenons en charge ce travail d'ingénierie, puis nous formons vos référents pour que l'automatisation ne dépende pas de nous.
-          </p>
+          <Paras max={2} texte="Un outil sans code suffit pour copier une ligne d'un tableur à un autre. Dès qu'un processus touche à vos clients, à vos factures ou à vos stocks, il faut penser les cas particuliers, les contrôles et la reprise après erreur. Nous prenons en charge ce travail d'ingénierie, puis nous formons vos référents pour que l'automatisation ne dépende pas de nous." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -475,9 +471,7 @@ export default function AgenceAutomatisationIAPage() {
             Comment se déroule une mission d'automatisation IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Quatre temps : un repérage des processus et une architecture, un prototype de deux à quatre semaines sur un ou deux flux, la construction et le raccordement à vos logiciels, puis la mise en production et la passation à vos référents. Avant le premier temps, une demi-heure de cadrage offerte permet de vérifier que l'automatisation est la bonne réponse.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Quatre temps : un repérage des processus et une architecture, un prototype de deux à quatre semaines sur un ou deux flux, la construction et le raccordement à vos logiciels, puis la mise en production et la passation à vos référents. Avant le premier temps, une demi-heure de cadrage offerte permet de vérifier que l'automatisation est la bonne réponse." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 12, lineHeight: 1.7 }}>
             Chaque temps se termine par un résultat visible, et vous décidez à chaque fois de la suite.
@@ -524,9 +518,7 @@ export default function AgenceAutomatisationIAPage() {
             Monter vos automatisations vous-même ou les faire construire ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Un outil sans code dépanne sur des flux simples. Pour un processus qui engage l'entreprise, les cas particuliers, les branchements et la fiabilité demandent un travail d'ingénierie : le confier à une équipe qui le pratique chaque semaine mobilise moins vos salariés et vous laisse un système documenté.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Un outil sans code dépanne sur des flux simples. Pour un processus qui engage l'entreprise, les cas particuliers, les branchements et la fiabilité demandent un travail d'ingénierie : le confier à une équipe qui le pratique chaque semaine mobilise moins vos salariés et vous laisse un système documenté." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
             Les deux approches cohabitent souvent dans une même entreprise. Le tableau les compare sur cinq critères.
@@ -575,40 +567,19 @@ export default function AgenceAutomatisationIAPage() {
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {AUTOMATISATIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconBox icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par famille de processus, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={AUTOMATISATIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
 
               {/* Deux exemples tirés de nos missions */}
               <h3 style={{ ...h3Style, fontSize: 17, margin: '36px 0 16px' }}>Deux exemples tirés de nos missions de 2026</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
-                {EXEMPLES.map(({ id, icon: Icon, sector, text }) => (
-                  <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                        <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                      </span>
-                      <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
-                    </div>
-                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                    <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                      Lire l'étude de cas
-                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                    </Link>
-                  </article>
-                ))}
-              </div>
+              {/* Un exemple par rangée (récit long), lien vers l'étude de cas en pied */}
+              <Rangees niveau="h4" items={EXEMPLES.map(({ id, icon, sector, text }) => ({ titre: sector, texte: text, icon, lien: { to: `/etudes-de-cas-ia#${id}`, label: "Lire l'étude de cas" } }))} />
 
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Pour choisir par où commencer dans une PME, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité</Link> donne des repères. Vous trouverez d'autres idées dans nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages par fonction</Link> et sur nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link>. Quand un enchaînement figé ne suffit plus, nous examinons avec vous l'intérêt d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, encadrés par des garde-fous adaptés.
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px' }}>
+                Pour choisir par où commencer dans une PME, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus à automatiser en priorité</Link> donne des repères.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+                Vous trouverez d'autres idées dans nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>exemples d'usages par fonction</Link> et sur nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link>. Quand un enchaînement figé ne suffit plus, nous examinons avec vous l'intérêt d'<Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>, encadrés par des garde-fous adaptés.
               </p>
             </div>
           </div>
@@ -629,9 +600,7 @@ export default function AgenceAutomatisationIAPage() {
             Confiez-nous la construction de vos automatisations
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Vous décrivez le résultat attendu. Nous concevons l'architecture, construisons les enchaînements, les assistants et les agents, les relions à vos logiciels par API ou MCP, puis les mettons en production. Vous recevez un système en service, documenté et surveillé, dont vous êtes propriétaire.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 860 }} texte="Vous décrivez le résultat attendu. Nous concevons l'architecture, construisons les enchaînements, les assistants et les agents, les relions à vos logiciels par API ou MCP, puis les mettons en production. Vous recevez un système en service, documenté et surveillé, dont vous êtes propriétaire." />
 
           <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
             C'est le cœur de cette offre : un travail de construction confié à une équipe spécialisée en IA depuis la création du cabinet, en 2022. Vos équipes valident les étapes et gardent la main sur les décisions.
@@ -679,20 +648,12 @@ export default function AgenceAutomatisationIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi choisir Masteria comme agence d'automatisation IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que nous allons jusqu'à la mise en production : Masteria conçoit, construit et raccorde vos automatisations, là où beaucoup de prestataires s'arrêtent au schéma ou au prototype. Le cabinet travaille sur l'IA depuis 2022, intervient chez des clients de France, d'Europe, des États-Unis et d'Inde, et vous laisse propriétaire de ce qu'il livre.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Parce que nous allons jusqu'à la mise en production : Masteria conçoit, construit et raccorde vos automatisations, là où beaucoup de prestataires s'arrêtent au schéma ou au prototype. Le cabinet travaille sur l'IA depuis 2022, intervient chez des clients de France, d'Europe, des États-Unis et d'Inde, et vous laisse propriétaire de ce qu'il livre." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {WHY_MASTERIA.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par raison, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={WHY_MASTERIA.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Si votre besoin dépasse l'automatisation (stratégie d'ensemble, gouvernance, conformité), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> prend le relais. Nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link> donnent la vue d'ensemble, et <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink> suffisent pour situer vos priorités.
               </p>
@@ -709,9 +670,7 @@ export default function AgenceAutomatisationIAPage() {
             Combien coûte une agence d'automatisation IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', marginBottom: 36 }}>
-            <strong>Chez Masteria, la première demi-heure de cadrage est offerte. La mission se chiffre ensuite au forfait, selon le nombre de processus, le nombre de logiciels concernés et la marge d'action laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble de processus en production, et un programme multi-sites passe au-delà de 100 000 €. La formation des équipes peut s'y ajouter, à partir de 1 980 € HT la journée.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', marginBottom: 36 }} texte="Chez Masteria, la première demi-heure de cadrage est offerte. La mission se chiffre ensuite au forfait, selon le nombre de processus, le nombre de logiciels concernés et la marge d'action laissée à l'IA : quelques milliers d'euros pour un premier flux, des dizaines de milliers pour un ensemble de processus en production, et un programme multi-sites passe au-delà de 100 000 €. La formation des équipes peut s'y ajouter, à partir de 1 980 € HT la journée." />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
             <div style={{ ...cardStyle, padding: 32 }}>
@@ -759,7 +718,10 @@ export default function AgenceAutomatisationIAPage() {
             Pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis.
           </p>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Pour situer le budget avant le cadrage, notre page sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link> détaille les ordres de grandeur. Côté financement, la règle est simple : une mission d'automatisation n'est pas finançable par votre OPCO ; seuls les jours de formation peuvent l'être, et un prestataire qui promet le contraire vous expose à un refus de prise en charge. Pour former vos équipes en parallèle du déploiement, la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> présente le programme de deux jours.
+            Pour situer le budget avant le cadrage, notre page sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link> détaille les ordres de grandeur. Côté financement, la règle est simple : une mission d'automatisation n'est pas finançable par votre OPCO ; seuls les jours de formation peuvent l'être, et un prestataire qui promet le contraire vous expose à un refus de prise en charge.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '12px 0 0', maxWidth: 860 }}>
+            Pour former vos équipes en parallèle du déploiement, la page <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> présente le programme de deux jours.
           </p>
         </div>
       </section>
@@ -875,7 +837,10 @@ export default function AgenceAutomatisationIAPage() {
               Des spécialistes de l'automatisation, réunis par le fondateur
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Pour chaque mission, Mathias Nizan puise dans le réseau d'indépendants de Masteria : cinq développeurs IA environ construisent et raccordent, une dizaine de consultants repèrent les processus, une vingtaine de formateurs assurent la passation. Il suit lui-même la mission jusqu'au bout. Masteria est Activateur France Num, sans attache avec un éditeur. Consultez nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
+              Pour chaque mission, Mathias Nizan puise dans le réseau d'indépendants de Masteria : cinq développeurs IA environ construisent et raccordent, une dizaine de consultants repèrent les processus, une vingtaine de formateurs assurent la passation. Il suit lui-même la mission jusqu'au bout.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+              Masteria est Activateur France Num, sans attache avec un éditeur. Consultez nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

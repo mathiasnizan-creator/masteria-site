@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Users, GraduationCap, MapPin, Check, Presentation, Lightbulb,
-  ShieldCheck, Landmark, MessagesSquare, BarChart3, Layers, Eye, Scale, Wrench,
+  ShieldCheck, Landmark, MessagesSquare, BarChart3, Layers, Eye, Scale, Wrench, AlertTriangle,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page hub « sensibilisation IA » (slug /sensibilisation-ia), côté FORMATION.
@@ -53,14 +54,6 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
-}
-
 const HERO_BADGES = [
   { icon: GraduationCap, label: 'Action de formation certifiée Qualiopi' },
   { icon: Users, label: "D'une équipe de vingt à un groupe entier" },
@@ -68,13 +61,15 @@ const HERO_BADGES = [
   { icon: MapPin, label: 'Sur site (France, Europe, États-Unis, Inde) ou en visio' },
 ]
 
+/* Repères du héros (23/10/2026) : chaque ligne d'origine coupée en tête, détail et puces,
+   mots inchangés. */
 const EN_BREF = [
-  { label: 'Objectif', value: "Que chaque salarié sache, au sortir de la séance, à quoi sert l'assistant mis à sa disposition, où il se trompe et quelles informations ne doivent jamais y entrer" },
-  { label: 'Formats', value: "Une conférence d'une ou deux heures pour un public nombreux, un Sprint de trois heures où douze personnes pratiquent, ou un programme par vagues pour tout l'effectif" },
-  { label: 'Contenu', value: "Démonstrations sur vos propres pièces, erreurs typiques de l'outil, tri des données, réponses aux inquiétudes, trois usages à refaire dans la semaine" },
-  { label: 'Cadre', value: "Le texte européen sur l'IA, modifié à l'été 2026, veut que l'employeur agisse pour la maîtrise de l'IA de ses équipes ; une séance datée compte parmi ces actions" },
-  { label: 'Prix', value: "À partir de 1 980 € HT la séance de Sprint (trois heures), préparation sur mesure en plus ; forfait sur devis pour la conférence ; le programme additionne les deux" },
-  { label: 'Ensuite', value: "Une charte d'une page, puis, pour les services qui s'en serviront tous les jours, une formation d'une ou deux journées par métier" },
+  { label: 'Objectif', icon: Lightbulb, value: 'Que chaque salarié sache, au sortir de la séance', detail: "À quoi sert l'assistant mis à sa disposition, où il se trompe et quelles informations ne doivent jamais y entrer" },
+  { label: 'Formats', liste: ["Une conférence d'une ou deux heures pour un public nombreux", 'Un Sprint de trois heures où douze personnes pratiquent', "Ou un programme par vagues pour tout l'effectif"] },
+  { label: 'Contenu', liste: ['Démonstrations sur vos propres pièces', "Erreurs typiques de l'outil", 'Tri des données', 'Réponses aux inquiétudes', 'Trois usages à refaire dans la semaine'] },
+  { label: 'Cadre', detail: "Le texte européen sur l'IA, modifié à l'été 2026, veut que l'employeur agisse pour la maîtrise de l'IA de ses équipes ; une séance datée compte parmi ces actions" },
+  { label: 'Prix', value: 'À partir de 1 980 € HT la séance de Sprint (trois heures)', detail: 'Préparation sur mesure en plus ; forfait sur devis pour la conférence ; le programme additionne les deux' },
+  { label: 'Ensuite', icon: Layers, value: "Une charte d'une page", detail: "Puis, pour les services qui s'en serviront tous les jours, une formation d'une ou deux journées par métier" },
 ]
 
 /* ───────── Les trois formats ───────── */
@@ -197,7 +192,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -261,12 +256,16 @@ export default function SensibilisationIAPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur du cabinet · mis en ligne en septembre 2026, revu le 7 octobre 2026
           </p>
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une sensibilisation IA est la première fois que vos salariés voient, ensemble, <strong style={{ color: '#fff', fontWeight: 700 }}>l'assistant de l'entreprise traiter un de leurs documents, se tromper sur un autre, et la frontière tracée entre ce qu'on peut lui confier et ce qui reste dehors</strong>. Elle prend la forme d'une conférence, d'un Sprint de trois heures ou d'un programme par vagues. Masteria est certifiée Qualiopi pour ses actions de formation.
-          </p>
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Dans la plupart des entreprises, l'IA est déjà là : quelques curieux s'en servent sur des comptes personnels, beaucoup n'osent pas, et chacun s'en fait une idée différente. La sensibilisation remet chacun sur la même ligne de départ, avec les mêmes mots et les mêmes règles. Elle figure aussi parmi les actions qu'attend d'une entreprise utilisatrice le règlement européen sur l'IA, en son article 4.
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div id="geo-summary" style={{ margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Une sensibilisation IA est la première fois que vos salariés voient, ensemble, <strong style={{ color: '#fff', fontWeight: 700 }}>l'assistant de l'entreprise traiter un de leurs documents, se tromper sur un autre, et la frontière tracée entre ce qu'on peut lui confier et ce qui reste dehors</strong>.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              Elle prend la forme d'une conférence, d'un Sprint de trois heures ou d'un programme par vagues. Masteria est certifiée Qualiopi pour ses actions de formation.
+            </p>
+          </div>
+          <Paras max={2} texte="Dans la plupart des entreprises, l'IA est déjà là : quelques curieux s'en servent sur des comptes personnels, beaucoup n'osent pas, et chacun s'en fait une idée différente. La sensibilisation remet chacun sur la même ligne de départ, avec les mêmes mots et les mêmes règles. Elle figure aussi parmi les actions qu'attend d'une entreprise utilisatrice le règlement européen sur l'IA, en son article 4." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }} />
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
               Organiser une sensibilisation
@@ -282,17 +281,8 @@ export default function SensibilisationIAPage() {
               </span>
             ))}
           </div>
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères sur fond sombre */}
+          <Reperes sombre id="en-bref" titre="En bref" colonnes={3} style={{ margin: 0 }} items={EN_BREF} />
         </div>
       </section>
 
@@ -303,26 +293,15 @@ export default function SensibilisationIAPage() {
             <div style={editorialAside}>
               <Kicker>Les formats</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Quel format de sensibilisation IA pour quel public ?</h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Le nombre de personnes décide. Une conférence fait passer un message à une salle entière, un Sprint de trois heures fait pratiquer douze personnes, un programme par vagues touche un effectif complet en quelques semaines. L'échange de cadrage sert à choisir, et souvent à combiner.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Le nombre de personnes décide. Une conférence fait passer un message à une salle entière, un Sprint de trois heures fait pratiquer douze personnes, un programme par vagues touche un effectif complet en quelques semaines. L'échange de cadrage sert à choisir, et souvent à combiner." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Les salariés appelés à utiliser l'IA au quotidien poursuivent ensuite avec les <Link to="/formation-intelligence-artificielle" style={aStyle}>formations IA par métier</Link>, d'une ou deux journées.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {FORMATS.map((item, i) => (
-                <div key={i} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{item.desc}</p>
-                  <Link to={item.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700 }}>
-                    {item.cta}
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </Link>
-                </div>
-              ))}
-              <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
+            {/* Une rangée par format (texte long), lien vers sa page en pied ; l'encadré sombre ensuite */}
+            <div>
+              <Rangees items={FORMATS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon, lien: { to: item.href, label: item.cta } }))} />
+              <div style={{ ...cardStyle, padding: 24, marginTop: 28, background: '#0A0F1E', border: '1px solid #1E293B' }}>
                 <div style={{ marginBottom: 14 }}>
                   <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <ShieldCheck size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
@@ -346,23 +325,9 @@ export default function SensibilisationIAPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le contenu</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>Que contient une sensibilisation à l'IA qui laisse une trace ?</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Cinq moments reviennent dans chaque format : l'outil à l'œuvre sur vos documents, ses erreurs montrées en direct, les informations qu'on ne lui confie pas, les inquiétudes traitées à voix haute et trois gestes à refaire dans la semaine. Une séance qui en saute un se remarque le lundi suivant.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-            {CONTENU.map(item => {
-              const Icon = item.icon
-              return (
-                <div key={item.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: '#60A5FA' }} />
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Cinq moments reviennent dans chaque format : l'outil à l'œuvre sur vos documents, ses erreurs montrées en direct, les informations qu'on ne lui confie pas, les inquiétudes traitées à voix haute et trois gestes à refaire dans la semaine. Une séance qui en saute un se remarque le lundi suivant." />
+          {/* Une rangée par moment de la séance, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees sombre style={{ maxWidth: 880 }} items={CONTENU.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
         </div>
       </section>
 
@@ -371,9 +336,7 @@ export default function SensibilisationIAPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <Kicker>Toute l'organisation</Kicker>
           <h2 style={h2Style}>Comment sensibiliser toute une entreprise à l'IA ?</h2>
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>En dix semaines pour une entreprise de quelques centaines de salariés, et dans cet ordre : l'encadrement d'abord, une conférence d'ouverture ensuite, des Sprints service par service, puis une charte, des référents et un premier relevé. Une PME de trente personnes peut resserrer ce parcours sur deux ou trois semaines.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="En dix semaines pour une entreprise de quelques centaines de salariés, et dans cet ordre : l'encadrement d'abord, une conférence d'ouverture ensuite, des Sprints service par service, puis une charte, des référents et un premier relevé. Une PME de trente personnes peut resserrer ce parcours sur deux ou trois semaines." />
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {PROGRAMME.map((step, i) => (
@@ -390,7 +353,10 @@ export default function SensibilisationIAPage() {
             ))}
           </div>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Une interprofession agricole a suivi ce chemin en septembre 2026 pour seize salariés de niveau débutant : une première journée en plénière, consacrée à une méthode de demande et à la comparaison de six assistants sur des textes que la filière publie, puis deux journées d'atelier par métier. Le déroulé figure dans nos <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>missions de formation récentes</Link>. Quand l'organisation veut aller au-delà, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> organise la suite sur un trimestre.
+            Une interprofession agricole a suivi ce chemin en septembre 2026 pour seize salariés de niveau débutant : une première journée en plénière, consacrée à une méthode de demande et à la comparaison de six assistants sur des textes que la filière publie, puis deux journées d'atelier par métier.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '12px 0 0' }}>
+            Le déroulé figure dans nos <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>missions de formation récentes</Link>. Quand l'organisation veut aller au-delà, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> organise la suite sur un trimestre.
           </p>
         </div>
       </section>
@@ -400,17 +366,9 @@ export default function SensibilisationIAPage() {
         <div style={wrap}>
           <Kicker>Ce que nous évitons</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Cinq façons de gâcher une sensibilisation IA</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une invitation qui parle d'obligation, une vidéo à la place d'une démonstration, une séance sans limites tracées, le même exposé pour tous et rien de prévu ensuite. Nous les voyons revenir depuis 2022 ; chacune se règle pendant la préparation, avant que le premier participant entre dans la salle.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Une invitation qui parle d'obligation, une vidéo à la place d'une démonstration, une séance sans limites tracées, le même exposé pour tous et rien de prévu ensuite. Nous les voyons revenir depuis 2022 ; chacune se règle pendant la préparation, avant que le premier participant entre dans la salle." />
+          {/* Une rangée par écueil, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={ERREURS.map(item => ({ titre: item.title, texte: item.desc, icon: AlertTriangle }))} />
         </div>
       </section>
 
@@ -424,8 +382,14 @@ export default function SensibilisationIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Tarif et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Deux briques chiffrées, que l'OPCO peut prendre en charge</h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le Sprint de trois heures démarre à 1 980 € HT, pour un groupe complet comme pour une personne seule, soit au moins 165 € HT par participant quand les douze places sont prises. Si la séance se construit sur les documents de votre équipe, la préparation s'ajoute et figure au devis.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La conférence se règle au forfait, établi sur une demi-journée de l'intervenant, construction des démonstrations comprise. Un programme par vagues additionne ces deux briques.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le Sprint de trois heures démarre à 1 980 € HT, pour un groupe complet comme pour une personne seule, soit au moins 165 € HT par participant quand les douze places sont prises. Si la séance se construit sur les documents de votre équipe, la préparation s'ajoute et figure au devis. La conférence se règle au forfait, établi sur une demi-journée de l'intervenant, construction des démonstrations comprise. Un programme par vagues additionne ces deux briques. Montée comme une action de formation, chaque séance peut être soumise à votre opérateur de compétences, seul juge de la prise en charge ; Masteria s'occupe du dossier à vos côtés. Aucune prise en charge n'est possible par le CPF. Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> l'indique à partir de votre secteur d'activité.
+                Montée comme une action de formation, chaque séance peut être soumise à votre opérateur de compétences, seul juge de la prise en charge ; Masteria s'occupe du dossier à vos côtés. Aucune prise en charge n'est possible par le CPF. Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> l'indique à partir de votre secteur d'activité.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Trois heures de Sprint : dès 1 980 € HT', 'Conférence : forfait indiqué au devis', 'Déplacement du formateur au coût réel', 'Dossier OPCO monté avec vous'].map(pt => (

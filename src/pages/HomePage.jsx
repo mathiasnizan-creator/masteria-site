@@ -13,6 +13,7 @@ import EquipeMasteria from '../components/EquipeMasteria'
 import ParcoursExpertises from '../components/ParcoursExpertises'
 import PresenceInternationale from '../components/PresenceInternationale'
 import AvisGoogle from '../components/AvisGoogle'
+import { Paras } from '../components/Aere'
 import { HUBS, METIERS } from '../data/catalog-meta'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
@@ -331,7 +332,7 @@ function FaqAccordion({ items }) {
             </button>
             {/* Réponse toujours présente dans le DOM (lisible par les moteurs), repliée en CSS. */}
             <div aria-hidden={!isOpen} style={{ maxHeight: isOpen ? 600 : 0, overflow: 'hidden', transition: 'max-height 320ms ease' }}>
-              <p style={{ fontSize: 15.5, color: TEXT, lineHeight: 1.75, margin: '0 0 24px', maxWidth: 720 }}>{item.a}</p>
+              <Paras texte={item.a} style={{ fontSize: 15.5, color: TEXT, lineHeight: 1.75, margin: '0 0 24px', maxWidth: 720 }} />
             </div>
           </div>
         )
@@ -508,12 +509,15 @@ export default function HomePage() {
               Du diagnostic court au déploiement sur plusieurs continents, chaque mission suit cet ordre. Les résultats se comparent d'une mission à l'autre, et la suite se décide sur des faits mesurés.
             </p>
           </div>
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'repeat(3, 1fr)' : 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', borderTop: `1px solid ${BLEU_FILET}`, borderLeft: isDesktop ? `1px solid ${BLEU_FILET}` : 'none' }}>
+          {/* Une rangée par temps, en pleine largeur (plus de cartes côte à côte) : numéro, titre, texte */}
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${BLEU_FILET}` }}>
             {METHODE_HOME.map(m => (
-              <li key={m.num} style={{ padding: 'clamp(22px, 3vw, 32px)', borderRight: isDesktop ? `1px solid ${BLEU_FILET}` : 'none', borderBottom: `1px solid ${BLEU_FILET}` }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: '50%', border: `1.5px solid ${c}`, color: c, fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 900, marginBottom: 16, fontVariantNumeric: 'tabular-nums' }}>{m.num}</div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: '0 0 8px' }}>{m.title}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
+              <li key={m.num} style={{ display: 'flex', gap: isDesktop ? 28 : 16, alignItems: 'flex-start', padding: isDesktop ? '28px 0' : '22px 0', borderBottom: `1px solid ${BLEU_FILET}` }}>
+                <div style={{ flexShrink: 0, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 38, height: 38, borderRadius: '50%', border: `1.5px solid ${c}`, color: c, fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 900, fontVariantNumeric: 'tabular-nums', marginTop: -6 }}>{m.num}</div>
+                <div style={{ flex: 1, minWidth: 0, display: 'grid', gridTemplateColumns: isDesktop ? 'minmax(0, 360px) minmax(0, 1fr)' : '1fr', gap: isDesktop ? 'clamp(24px, 4vw, 56px)' : 6, alignItems: 'baseline' }}>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: 0, lineHeight: 1.35 }}>{m.title}</h3>
+                  <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0, maxWidth: 640 }}>{m.desc}</p>
+                </div>
               </li>
             ))}
           </ol>
@@ -579,8 +583,11 @@ export default function HomePage() {
             <div style={isDesktop ? { position: 'sticky', top: 130 } : undefined}>
               <Kicker>Former vos équipes</Kicker>
               <h2 style={h2Style}>Tous les LLM du marché, plus de 100 programmes</h2>
+              <p style={{ ...leadStyle, marginBottom: 14 }}>
+                Nous formons vos équipes aux grands modèles de langage (les LLM, ces moteurs qui font tourner les assistants d'IA)&nbsp;: Microsoft Copilot, ChatGPT, Claude, Gemini chez Google et Vibe chez Mistral AI.
+              </p>
               <p style={{ ...leadStyle, marginBottom: 24 }}>
-                Nous formons vos équipes aux grands modèles de langage (les LLM, ces moteurs qui font tourner les assistants d'IA)&nbsp;: Microsoft Copilot, ChatGPT, Claude, Gemini chez Google et Vibe chez Mistral AI. Chaque programme se décline par outil ou par métier et part des dossiers de vos collaborateurs. Vous choisissez le lieu, vos locaux ou la visio, et le format&nbsp;: douze participants au plus en intra, ou un seul participant en individuel.
+                Chaque programme se décline par outil ou par métier et part des dossiers de vos collaborateurs. Vous choisissez le lieu, vos locaux ou la visio, et le format&nbsp;: douze participants au plus en intra, ou un seul participant en individuel.
               </p>
               <div style={{ padding: '22px 24px', border: `1px solid ${LINE}`, borderRadius: 14, background: '#fff', marginBottom: 26 }}>
                 {/* Logo à la même taille que dans le hero (168 px) : à 120 px, Mathias le jugeait illisible (05/10/2026). */}

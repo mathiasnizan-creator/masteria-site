@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page pilier « agence SEO IA » (slug /agence-seo-ia). Requêtes visées : « seo ia »,
@@ -59,14 +60,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -351,7 +344,7 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
       </div>
     </div>
   )
@@ -427,14 +420,17 @@ export default function AgenceSeoIAPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote les missions SEO et GEO du cabinet · Texte revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une agence SEO IA travaille votre visibilité sur deux surfaces : la liste de résultats de Google, et les réponses que rédigent ChatGPT, Gemini, Perplexity ou Google dans ses AI Overviews. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria produit vos pages, règle la technique et relève dans le temps les questions qui font apparaître votre marque</strong>, avec des outils d'IA qui accélèrent le travail et une relecture humaine avant chaque mise en ligne.
-          </p>
+          {/* GEO : réponse directe citable, accroche (1re phrase) puis la suite en texte courant */}
+          <div style={{ margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Une agence SEO IA travaille votre visibilité sur deux surfaces : la liste de résultats de Google, et les réponses que rédigent ChatGPT, Gemini, Perplexity ou Google dans ses AI Overviews.
+            </p>
+            <p style={{ fontSize: 16.5, fontWeight: 500, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria produit vos pages, règle la technique et relève dans le temps les questions qui font apparaître votre marque</strong>, avec des outils d'IA qui accélèrent le travail et une relecture humaine avant chaque mise en ligne.
+            </p>
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Masteria est un cabinet consacré à l'intelligence artificielle, que Mathias Nizan a créé à Lyon en 2022. Le référencement en découle : savoir comment un modèle de langage (le moteur qui rédige la réponse de ChatGPT ou de Gemini) choisit ses sources aide à écrire des pages qu'il retient. La méthode s'applique d'abord à master-ia.fr, où chaque intention de recherche a sa page et sa réponse dès la première phrase.
-          </p>
+          <Paras max={2} texte="Masteria est un cabinet consacré à l'intelligence artificielle, que Mathias Nizan a créé à Lyon en 2022. Le référencement en découle : savoir comment un modèle de langage (le moteur qui rédige la réponse de ChatGPT ou de Gemini) choisit ses sources aide à écrire des pages qu'il retient. La méthode s'applique d'abord à master-ia.fr, où chaque intention de recherche a sa page et sa réponse dès la première phrase." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact?type=projet&rdv=30" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -470,28 +466,20 @@ export default function AgenceSeoIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que fait une agence SEO IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une agence SEO IA écrit et met à jour vos pages, les relie entre elles, balise vos informations clés pour les machines et vérifie à intervalle régulier si Gemini, ChatGPT, Perplexity et les AI Overviews vous citent. Chez Masteria, l'IA prépare les briefs et les premiers jets, un rédacteur relit et vérifie les faits, et un tableau de suivi montre ce qui progresse.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Une agence SEO IA écrit et met à jour vos pages, les relie entre elles, balise vos informations clés pour les machines et vérifie à intervalle régulier si Gemini, ChatGPT, Perplexity et les AI Overviews vous citent. Chez Masteria, l'IA prépare les briefs et les premiers jets, un rédacteur relit et vérifie les faits, et un tableau de suivi montre ce qui progresse." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Six chantiers composent l'essentiel d'une mission suivie. Leur dosage dépend de votre site : quarante pages bien écrites ont surtout besoin de maillage et de mesure, un catalogue de deux mille fiches produits commence souvent par la technique.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {LIVRABLES.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Pour un état des lieux sans mission de suivi, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> dresse le bilan Google et IA de votre site, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link> se concentre sur vos citations dans les moteurs génératifs. Le rôle du <Link to="/consultant-visibilite-ia" style={aStyle}>consultant en visibilité IA</Link> est détaillé sur sa propre page, utile avant de choisir un prestataire. Les tableaux de suivi s'appuient sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et, pour les outils plus lourds, sur notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Quand le besoin dépasse le référencement (campagnes, réseaux sociaux, acquisition payante), notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> prend le relais.
+              {/* Une rangée par chantier, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={LIVRABLES.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px' }}>
+                Pour un état des lieux sans mission de suivi, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> dresse le bilan Google et IA de votre site, et l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link> se concentre sur vos citations dans les moteurs génératifs. Le rôle du <Link to="/consultant-visibilite-ia" style={aStyle}>consultant en visibilité IA</Link> est détaillé sur sa propre page, utile avant de choisir un prestataire.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+                Les tableaux de suivi s'appuient sur notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> et, pour les outils plus lourds, sur notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>. Quand le besoin dépasse le référencement (campagnes, réseaux sociaux, acquisition payante), notre <Link to="/agence-ia-marketing" style={aStyle}>agence IA marketing</Link> prend le relais.
               </p>
             </div>
           </div>
@@ -506,9 +494,7 @@ export default function AgenceSeoIAPage() {
             Comment se déroule une mission de SEO IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Une mission commence par une mesure de départ, puis enchaîne la carte des sujets, la production, la technique et un relevé à date fixe des positions et des citations. Chaque étape se termine par un livrable que vous validez avant la suivante.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Une mission commence par une mesure de départ, puis enchaîne la carte des sujets, la production, la technique et un relevé à date fixe des positions et des citations. Chaque étape se termine par un livrable que vous validez avant la suivante." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Le rythme des points se fixe au cadrage, selon le volume de pages à produire. Aucun classement n'est promis : Masteria s'engage sur le travail livré et sur une mesure honnête de ses effets.
@@ -549,9 +535,7 @@ export default function AgenceSeoIAPage() {
             Référencement classique, SEO augmenté par l'IA et GEO : que choisir ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le référencement classique cherche une place dans la liste de liens de Google. Le SEO augmenté par l'IA poursuit ce but avec des outils qui accélèrent la recherche, la rédaction et les audits. Le GEO (generative engine optimization, l'optimisation pour les moteurs génératifs) vise la réponse rédigée par une IA, où votre marque doit apparaître comme source. Une page bien construite sert les trois.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Le référencement classique cherche une place dans la liste de liens de Google. Le SEO augmenté par l'IA poursuit ce but avec des outils qui accélèrent la recherche, la rédaction et les audits. Le GEO (generative engine optimization, l'optimisation pour les moteurs génératifs) vise la réponse rédigée par une IA, où votre marque doit apparaître comme source. Une page bien construite sert les trois." />
 
           <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 17, margin: '0 0 16px' }}>
             Quatre chiffres datés expliquent pourquoi on travaille Google et les IA ensemble
@@ -565,9 +549,7 @@ export default function AgenceSeoIAPage() {
               </div>
             ))}
           </div>
-          <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
-            Pour une entreprise française, la lecture tient en deux phrases. Le moteur de recherche garde la première place, et une part grandissante des réponses se lit désormais sans clic. Il faut donc des pages qui se classent et des pages qu'une IA peut citer : ce sont le plus souvent les mêmes, mieux construites. Le tableau ci-dessous situe les trois approches critère par critère.
-          </p>
+          <Paras max={2} texte="Pour une entreprise française, la lecture tient en deux phrases. Le moteur de recherche garde la première place, et une part grandissante des réponses se lit désormais sans clic. Il faut donc des pages qui se classent et des pages qu'une IA peut citer : ce sont le plus souvent les mêmes, mieux construites. Le tableau ci-dessous situe les trois approches critère par critère." style={{ color: '#B4C0D3', fontSize: 15, margin: '0 0 28px', lineHeight: 1.7, maxWidth: 880 }} />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Tableau comparant le SEO classique, le SEO outillé par l'IA et le GEO" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -602,20 +584,15 @@ export default function AgenceSeoIAPage() {
             Pourquoi confier votre SEO à une agence IA plutôt qu'à une agence SEO classique ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Parce qu'une partie de vos clients lit la réponse d'une IA avant de voir le moindre lien, et que pour y figurer il faut comprendre comment un modèle choisit ses sources. Masteria se consacre à l'IA depuis sa création en 2022 : modèles, recherche augmentée (un modèle qui lit des documents avant de répondre), agents. Le référencement profite de cette connaissance, et nos développeurs IA construisent les automatisations de suivi propres à votre site.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Parce qu'une partie de vos clients lit la réponse d'une IA avant de voir le moindre lien, et que pour y figurer il faut comprendre comment un modèle choisit ses sources. Masteria se consacre à l'IA depuis sa création en 2022 : modèles, recherche augmentée (un modèle qui lit des documents avant de répondre), agents. Le référencement profite de cette connaissance, et nos développeurs IA construisent les automatisations de suivi propres à votre site." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, margin: '32px 0' }}>
-            {WHY.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par raison, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees items={WHY.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ margin: '32px 0', maxWidth: 880 }} />
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 880 }}>
+            Si la question porte d'abord sur la stratégie (quelle place donner à l'IA dans votre marketing, quelles règles de rédaction fixer), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> la traite en amont.
+          </p>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            Si la question porte d'abord sur la stratégie (quelle place donner à l'IA dans votre marketing, quelles règles de rédaction fixer), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> la traite en amont. Les entreprises de la région peuvent passer par notre <Link to="/agence-ia-lyon" style={aStyle}>agence IA à Lyon</Link> pour des ateliers de cadrage en présentiel, et l'ensemble des métiers du cabinet figure sur la page <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
+            Les entreprises de la région peuvent passer par notre <Link to="/agence-ia-lyon" style={aStyle}>agence IA à Lyon</Link> pour des ateliers de cadrage en présentiel, et l'ensemble des métiers du cabinet figure sur la page <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
           </p>
         </div>
       </section>
@@ -632,9 +609,7 @@ export default function AgenceSeoIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Votre équipe peut aussi apprendre à écrire pour Google et pour les IA
               </h2>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 760 }}>
-                Certaines entreprises préfèrent garder la rédaction en interne. Nous formons alors les responsables marketing et les rédacteurs à préparer un brief, à faire produire un premier jet par un assistant IA, à le vérifier, puis à relever eux-mêmes leurs citations dans les moteurs génératifs. Comptez au moins 1 980 € HT par journée (préparation sur mesure en plus, au devis), que la formation réunisse en interne 12 personnes au plus ou une seule. Masteria détient la certification Qualiopi au titre des actions de formation : votre OPCO de branche peut prendre en charge ce module, selon ses règles et ses fonds. La prestation de référencement relève du conseil et de la production : elle n'est donc pas finançable par votre OPCO.
-              </p>
+              <Paras max={2} texte="Certaines entreprises préfèrent garder la rédaction en interne. Nous formons alors les responsables marketing et les rédacteurs à préparer un brief, à faire produire un premier jet par un assistant IA, à le vérifier, puis à relever eux-mêmes leurs citations dans les moteurs génératifs. Comptez au moins 1 980 € HT par journée (préparation sur mesure en plus, au devis), que la formation réunisse en interne 12 personnes au plus ou une seule. Masteria détient la certification Qualiopi au titre des actions de formation : votre OPCO de branche peut prendre en charge ce module, selon ses règles et ses fonds. La prestation de référencement relève du conseil et de la production : elle n'est donc pas finançable par votre OPCO." style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 760 }} />
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
                 En septembre 2026, l'atelier marketing et communication d'une interprofession agricole a produit une page destinée au référencement, avec le calendrier éditorial qui l'accompagne : <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>le récit de cette mission</Link>. Le <Link to="/formation-intelligence-artificielle" style={aStyle}>catalogue de formations</Link> compte plus de 100 programmes.
               </p>
@@ -765,8 +740,11 @@ export default function AgenceSeoIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Qui travaille sur votre référencement
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Mathias Nizan cadre la mission et en reste responsable jusqu'au bilan. Selon le volume, il mobilise des consultants IA pour la stratégie et la rédaction, des développeurs IA pour les automatisations de suivi et des formateurs quand votre équipe reprend la main. Ces intervenants sont des indépendants expérimentés.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Mathias Nizan cadre la mission et en reste responsable jusqu'au bilan. Selon le volume, il mobilise des consultants IA pour la stratégie et la rédaction, des développeurs IA pour les automatisations de suivi et des formateurs quand votre équipe reprend la main. Ces intervenants sont des indépendants expérimentés. Le cabinet ne dépend d'aucun éditeur de logiciels : l'outil de suivi se choisit avec vous, selon votre budget. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>, dont une citation dans Les Échos, montrent le cabinet au travail.
+              Le cabinet ne dépend d'aucun éditeur de logiciels : l'outil de suivi se choisit avec vous, selon votre budget. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>, dont une citation dans Les Échos, montrent le cabinet au travail.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
