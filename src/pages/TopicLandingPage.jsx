@@ -12,6 +12,107 @@ import SEOHead from '../components/SEOHead'
 const MODIFIED = '2026-10-07'
 
 const TOPICS = {
+  // Catalogue des formats courts (créé le 23/10/2026) : sept intitulés du catalogue de Mathias,
+  // chacun relié à sa page détaillée. Mots clés : « formation ia courte », « formation utilisation ia ».
+  'formation-ia-courte': {
+    badge: 'Trois heures, une journée ou deux',
+    h1: "Formation IA courte : sept formats pour utiliser l'IA au travail",
+    metaTitle: "Formation IA courte : 3 h, 1 ou 2 jours | Masteria",
+    metaDescription: "Formations IA courtes pour salariés : Copilot dans Excel, PowerPoint et Microsoft 365, écrits, données, productivité, pédagogie. Dès 1 980 € HT.",
+    dateModified: '2026-10-23',
+    intro: "Une séance de trois heures pour un geste précis dans PowerPoint ou Excel, une journée pour changer sa façon de travailler, deux jours pour analyser des données ou refaire un module de formation. Ces sept programmes partent des outils que votre entreprise possède déjà et des fichiers que vos équipes ouvrent chaque semaine.",
+    catalogueLabel: "Voir toutes nos formations",
+    formationsTitre: "Les sept formations, de la plus courte à la plus longue",
+    formations: [
+      {
+        titre: "3 h chrono pour apprendre à utiliser Copilot dans Excel",
+        duree: '3 heures',
+        pour: "Gestionnaires, acheteurs, assistants, contrôleurs",
+        desc: "Formules proposées dès le signe égal, tableaux croisés décrits en une phrase, lignes mises en évidence, graphique propre, puis trois contrôles avant d'envoyer un chiffre.",
+        href: '/formation-sprint-ia-excel',
+      },
+      {
+        titre: "3 h chrono pour apprendre à utiliser Copilot dans PowerPoint",
+        duree: '3 heures',
+        pour: "Toute personne qui présente en réunion ou devant un client",
+        desc: "Une présentation tirée d'un document Word, reprise dans le modèle de l'entreprise, résumée, traduite et dotée de notes pour l'orateur, chaque diapositive relue avant la réunion.",
+        href: '/formation-copilot-powerpoint',
+      },
+      {
+        titre: "Utiliser l'IA pour développer son efficacité et sa productivité au travail",
+        duree: '1 jour',
+        pour: "Tous métiers, quel que soit l'assistant fourni",
+        desc: "La messagerie, les réunions, les documents longs et la semaine à organiser : chacun repart avec ses consignes réutilisables et ses règles sur les données.",
+        href: '/formation-ia-productivite',
+      },
+      {
+        titre: "Optimiser ses écrits professionnels grâce à l'IA",
+        duree: '1 jour',
+        pour: "Cadres, assistants, commerciaux, RH",
+        desc: "Mails délicats, comptes rendus, notes et propositions rédigés avec l'IA dans votre ton, avec une méthode de relecture qui repère les tournures toutes faites.",
+        href: '/formation-ia-ecrits-pro',
+      },
+      {
+        titre: "Utiliser Copilot dans Microsoft 365",
+        duree: '1 jour',
+        pour: "Équipes équipées de Copilot Chat ou de la licence Microsoft Copilot",
+        desc: "Outlook, Teams, Word, Excel et PowerPoint en une journée, avec ce que change la licence. La page détaillée présente aussi le programme complet sur deux jours.",
+        href: '/formation-microsoft-copilot',
+      },
+      {
+        titre: "Utiliser l'IA pour concevoir, animer et évaluer une formation",
+        duree: '1 ou 2 jours',
+        pour: "Formateurs, ingénieurs pédagogiques, responsables formation",
+        desc: "Scénario pédagogique, supports, exercices et quiz construits avec l'IA, puis l'évaluation des acquis et le respect des droits sur les contenus réutilisés.",
+        href: '/formation-ia-pedagogique',
+      },
+      {
+        titre: "Analyser vos données grâce à l'intelligence artificielle",
+        duree: '2 jours',
+        pour: "Profils métier qui vivent dans des tableaux, sans être analystes",
+        desc: "Nettoyer un export, croiser des fichiers, faire calculer l'IA par du code qu'elle exécute, vérifier chaque résultat et rédiger la note qui l'explique.",
+        href: '/formation-ia-analyse-donnees',
+      },
+    ],
+    sections: [
+      {
+        h2: "Choisir la durée d'après le geste à installer",
+        body: "Trois heures suffisent quand l'équipe utilise déjà le logiciel et veut y ajouter l'IA : le tableur pour l'un, l'outil de présentation pour l'autre. Une journée convient à une compétence qui touche toute la semaine, comme écrire, organiser ses réunions ou tirer parti de Copilot dans chaque application. Deux jours deviennent utiles quand le travail demande une méthode complète et des vérifications, ce qui est le cas de l'analyse de données et, souvent, de la refonte d'un module de formation. En cas d'hésitation, décrivez-nous la tâche la plus longue de la semaine de l'équipe : nous vous dirons le format qui lui correspond.",
+      },
+      {
+        h2: "Un format court fonctionne quand chacun travaille sur ses propres fichiers",
+        body: "Dans une séance courte, le temps manque pour des exemples génériques. Avant la date, le formateur demande à chaque participant un fichier type et la tâche qu'il voudrait accélérer, puis vérifie avec votre service informatique que l'outil prévu est bien ouvert sur les comptes. Le jour venu, on travaille sur une copie de ces fichiers, et chacun repart avec un résultat qu'il réutilisera le lendemain. Ce travail en amont est chiffré à part sur le devis, en plus du prix de la séance ou de la journée.",
+      },
+      {
+        h2: "Enchaîner plusieurs formats pour une même équipe",
+        body: "Les sept programmes se combinent. Un service commercial peut suivre la journée sur les écrits professionnels, puis la séance de trois heures sur PowerPoint quelques semaines plus tard, une fois les premiers réflexes en place. Une direction financière commence souvent par la séance Excel et poursuit avec les deux jours d'analyse de données. Espacer les sessions laisse le temps d'essayer au poste de travail et de revenir avec des questions précises, que le formateur reprend en ouverture de la séance suivante.",
+      },
+      {
+        h2: "Prix et financement d'une formation courte",
+        body: "Chaque format part de 1 980 € HT : la séance de trois heures, la journée, ou chacun des deux jours. Le prix vaut pour un groupe de votre entreprise, douze personnes au plus, comme pour une personne seule, dans vos locaux ou en visioconférence. Masteria a obtenu la certification Qualiopi pour ses actions de formation : votre entreprise peut donc adresser la demande à son OPCO, qui fixe la part prise en charge d'après les règles de sa branche. Aucun de ces programmes ne prépare une certification enregistrée : le compte personnel de formation ne peut donc pas les payer.",
+      },
+    ],
+    reassurance: [
+      { t: 'Qualiopi', s: 'Demande à votre OPCO possible' },
+      { t: 'Dès 1 980 € HT', s: 'La séance de 3 h ou la journée' },
+      { t: '3 h, 1 jour ou 2 jours', s: 'Selon la tâche visée' },
+      { t: 'Douze au plus', s: 'Ou une personne seule' },
+    ],
+    faqTitre: "Questions fréquentes sur nos formations IA courtes",
+    faq: [
+      { q: "Peut-on apprendre à utiliser l'IA en trois heures ?", a: "On peut apprendre à s'en servir dans un logiciel précis, à condition de savoir déjà l'utiliser. La séance sur Excel suppose de savoir trier et filtrer ; celle sur PowerPoint, de savoir monter une présentation simple. Pour découvrir l'IA générative à partir de zéro, une journée laisse le temps de poser la méthode et les règles sur les données." },
+      { q: "Faut-il la licence Microsoft Copilot pour les formats sur Excel, PowerPoint et Microsoft 365 ?", a: "Pas toujours. Copilot Chat est compris dans les abonnements professionnels de Microsoft 365 et donne déjà accès à une partie des fonctions dans les applications. La licence payante Microsoft Copilot ajoute la lecture des mails, des réunions et des fichiers de chaque salarié. Le formateur adapte les exercices à ce que vos comptes ouvrent réellement, après vérification avec votre service informatique." },
+      { q: "Les formations se font-elles à distance ?", a: "Oui, chaque format existe en classe virtuelle comme en salle chez vous. À distance, nous conseillons deux écrans par participant, ou un grand écran, pour suivre le formateur et travailler sur son fichier en même temps." },
+      { q: "Combien de personnes par session ?", a: "Douze au plus pour un groupe intra. En dessous de six, le formateur peut regarder le travail de chacun à plusieurs reprises. En individuel, le programme se construit autour des dossiers d'une seule personne, souvent un dirigeant ou une assistante de direction." },
+      { q: "Avec quel assistant d'IA les participants travaillent-ils ?", a: "Avec celui que l'entreprise leur fournit. Les séances sur Excel, PowerPoint et Microsoft 365 se déroulent dans Copilot. La journée sur la productivité, celle sur les écrits et les deux jours d'analyse fonctionnent aussi avec ChatGPT, Claude, Gemini ou Vibe de Mistral ; si plusieurs outils cohabitent chez vous, le formateur montre les mêmes gestes dans chacun." },
+      { q: "Ces formations sont-elles éligibles au CPF ?", a: "Non. Elles ne mènent à aucune certification inscrite au Répertoire national ou au Répertoire spécifique. Leur financement passe par votre OPCO, par le plan de développement des compétences ou par l'entreprise directement. Un dirigeant non salarié se tourne vers son fonds de formation, AGEFICE ou FIF-PL selon son activité." },
+    ],
+    cta: {
+      titre: "Dites-nous quelle tâche vous voulez accélérer",
+      texte: "Indiquez le nombre de participants, leurs fonctions et les logiciels de l'entreprise. Vous recevez le format conseillé, le programme et un devis à joindre à votre demande de financement.",
+    },
+  },
+
   'formation-intelligence-artificielle-cpf': {
     badge: "CPF et financement d'une formation IA",
     h1: "Formation intelligence artificielle CPF : nos réponses",
@@ -163,7 +264,7 @@ export default function TopicLandingPage() {
           { name: topic.h1, slug },
         ]}
         faqItems={topic.faq}
-        dateModified={MODIFIED}
+        dateModified={topic.dateModified || MODIFIED}
       />
 
       {/* HERO */}
@@ -213,6 +314,46 @@ export default function TopicLandingPage() {
           </div>
         </div>
       </section>
+
+      {/* FORMATIONS DU SUJET (optionnel) : une carte par programme, reliée à sa page */}
+      {topic.formations && (
+        <section style={{ padding: '80px 24px 0', background: '#fff' }}>
+          <div style={{ maxWidth: 1080, margin: '0 auto' }}>
+            <h2 style={{
+              fontFamily: 'Nunito, sans-serif', fontWeight: 800,
+              fontSize: 'clamp(24px, 3.4vw, 32px)', color: '#0A0A0A',
+              marginBottom: 32, lineHeight: 1.25, textAlign: 'center',
+            }}>
+              {topic.formationsTitre}
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+              {topic.formations.map(f => (
+                <Link key={f.href} to={f.href} style={{
+                  display: 'flex', flexDirection: 'column', gap: 10,
+                  padding: 24, borderRadius: 16, border: '1px solid #E5E7EB',
+                  background: '#fff', textDecoration: 'none', color: 'inherit',
+                }}>
+                  <span style={{
+                    alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: 6,
+                    background: '#EFF6FF', color: '#1d4ed8', borderRadius: 999,
+                    padding: '4px 12px', fontSize: 13, fontWeight: 700,
+                  }}>
+                    <Clock size={14} /> {f.duree}
+                  </span>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 19, color: '#0A0A0A', lineHeight: 1.3, margin: 0 }}>
+                    {f.titre}
+                  </h3>
+                  <p style={{ fontSize: 14, color: '#1d4ed8', fontWeight: 600, margin: 0 }}>{f.pour}</p>
+                  <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.6, margin: 0, flexGrow: 1 }}>{f.desc}</p>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontWeight: 700, color: '#0A0A0A', fontSize: 15 }}>
+                    Voir le programme <ArrowRight size={16} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SECTIONS ÉDITORIALES */}
       <section style={{ padding: '80px 24px', background: '#fff' }}>

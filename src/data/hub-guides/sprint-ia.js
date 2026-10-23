@@ -8,12 +8,12 @@ export default {
   pagePropre: true,
   dateModified: '2026-10-07',
   author: true,
-  metaTitle: 'Sprint IA : formation IA courte de 3 heures | Masteria',
+  metaTitle: 'Sprint IA : la formation IA de 3 heures | Masteria',
   metaDesc: "Sprint IA, la formation IA de 3 heures : découverte, méthode de demande, managers, AI Act, Excel, veille. Dès 1 980 € HT, Qualiopi.",
   h1: "Sprint IA : trois heures de formation sur vos propres tâches",
   outilCourt: 'Sprint IA',
   definition: "Trois heures pour que chaque participant mène une tâche de son poste avec l'assistant fourni par son entreprise, corrigé en direct par le formateur. En groupe jusqu'à douze personnes ou en individuel, sur place ou à distance.",
-  intro: "Une séance de trois heures tient dans une matinée et ne bloque aucun agenda. Le Sprint IA existe en six formats : découverte de l'IA générative, méthode pour écrire une demande, séance pour managers, et trois Sprints thématiques sur l'AI Act, Excel et la veille. Chaque séance part de l'abonnement que l'entreprise a déjà : Copilot, ChatGPT, Gemini, Claude ou Vibe. Pour former toute une population, les séances s'enchaînent par service ou par site.",
+  intro: "Une séance de trois heures tient dans une matinée et ne bloque aucun agenda. Le Sprint IA existe en sept formats : découverte de l'IA générative, méthode pour écrire une demande, séance pour managers, et quatre Sprints thématiques sur l'AI Act, Excel, PowerPoint et la veille. Chaque séance part de l'abonnement que l'entreprise a déjà : Copilot, ChatGPT, Gemini, Claude ou Vibe. Pour former toute une population, les séances s'enchaînent par service ou par site.",
   pitch: "Une matinée, une tâche de votre poste menée jusqu'au bout, et la liste écrite de ce qui n'entre jamais dans l'outil.",
   casIds: [],
   // Avis Google : extraits par défaut. Tous les avis figurent en entier sur la home ;
@@ -22,19 +22,21 @@ export default {
   avisTitre: 'Les sessions Masteria notées par leurs participants sur Google',
   titres: {
     why: 'Quatre raisons de commencer par une séance de trois heures',
-    spokes: 'Trois Sprints thématiques gardent leur programme détaillé',
+    spokes: 'Quatre Sprints thématiques gardent leur programme détaillé',
     programme: "Le déroulé d'une séance Sprint IA, revu le 7 octobre 2026",
     faq: 'Avant de réserver un Sprint IA, les questions qui reviennent',
   },
   carteTitres: {
     'formation-sprint-ia-ai-act': 'Sprint IA AI Act : le règlement européen en une matinée',
     'formation-sprint-ia-excel': 'Sprint IA Excel : formules et tableaux croisés contrôlés',
+    'formation-copilot-powerpoint': 'Copilot dans PowerPoint : une présentation tirée de vos documents',
     'formation-sprint-ia-veille': 'Sprint IA Veille : une recherche programmée chaque semaine',
   },
-  spokesIntro: "Ces trois Sprints traitent un sujet précis devant un public qui le partage : la conformité au règlement européen, le tableur du quotidien, la surveillance d'un marché. Leur page détaille les séquences minute par minute, les prérequis, la mise en situation qui sert de fil rouge et les pièges que la séance apprend à éviter.",
+  spokesIntro: "Ces quatre Sprints traitent un sujet précis devant un public qui le partage : la conformité au règlement européen, le tableur du quotidien, les présentations faites avec Copilot, la surveillance d'un marché. Leur page détaille les séquences minute par minute, les prérequis, la mise en situation qui sert de fil rouge et les pièges que la séance apprend à éviter.",
   spokeDescs: {
     'formation-sprint-ia-ai-act': "Rôle de fournisseur ou de déployeur, article 4 réécrit en juillet 2026, transparence exigée depuis le 2 août, haut risque repoussé à décembre 2027, et un registre des usages ouvert pendant la séance.",
     'formation-sprint-ia-excel': "Formules suggérées dès le signe égal, synthèse par catégorie demandée en français, graphique du point mensuel, puis trois contrôles avant d'envoyer le moindre chiffre.",
+    'formation-copilot-powerpoint': "Un document Word changé en diapositives au modèle de l'entreprise, une présentation reçue résumée, des notes pour l'orateur, puis chaque chiffre et chaque visuel relus avant la réunion.",
     'formation-sprint-ia-veille': "Votre marché résumé en une phrase, dix sources choisies, une recherche que l'assistant relance seul chaque lundi, puis un premier compte rendu dont on ouvre chaque lien.",
   },
   encart: {
@@ -53,7 +55,7 @@ export default {
       "Pour une population qui découvre, commencez par la Sensibilisation. Pour des équipes déjà équipées d'une licence, le Sprint Prompts rend l'investissement utile plus vite. Quand l'entreprise déploie un outil à grande échelle, faites passer les managers en premier : ils porteront la démarche auprès de leurs équipes et sauront répondre aux questions de la semaine suivante. Les trois Sprints thématiques s'ajoutent ensuite selon les besoins, l'AI Act pour les fonctions qui portent la conformité, Excel pour celles qui vivent dans un tableur, la veille pour celles qui suivent un marché.",
       "Chaque séance accueille douze personnes au plus, pour que le formateur ait le temps de reprendre la demande de chacun. Une population de 150 salariés représente ainsi treize séances, que nous répartissons par service, par site ou par niveau d'usage, en présentiel ou à distance. Le tronc commun ne bouge pas ; les exemples changent selon le public, car un atelier de production ne manipule pas les mêmes pièces qu'un service juridique.",
       "Un Sprint se suit aussi seul, face au formateur. Ce format individuel convient au dirigeant d'une petite entreprise, à une assistante de direction ou à un expert qui préfère avancer sur ses propres dossiers sans attendre qu'un groupe se constitue. Le prix reste celui d'une séance, à partir de 1 980 € HT, et le contenu suit le format choisi en s'appuyant sur l'agenda réel de la personne : la note qu'elle doit rendre jeudi, le courrier qu'elle reporte depuis une semaine, le tableau qu'elle présente au prochain comité.",
-      "Les trois Sprints thématiques se combinent avec les formats de fond. Une direction des ressources humaines peut ainsi organiser une Sensibilisation pour l'ensemble des salariés, un Sprint Managers pour l'encadrement, puis un Sprint IA AI Act pour les quatre ou cinq personnes qui tiendront le registre des usages. Une direction financière enchaîne plutôt un Sprint Prompts et un Sprint IA Excel. Le cadrage fixe cet ordre avec vous, en partant de la question que l'entreprise se pose aujourd'hui.",
+      "Les quatre Sprints thématiques se combinent avec les formats de fond. Une direction des ressources humaines peut ainsi organiser une Sensibilisation pour l'ensemble des salariés, un Sprint Managers pour l'encadrement, puis un Sprint IA AI Act pour les quatre ou cinq personnes qui tiendront le registre des usages. Une direction financière enchaîne plutôt un Sprint Prompts et un Sprint IA Excel. Le cadrage fixe cet ordre avec vous, en partant de la question que l'entreprise se pose aujourd'hui.",
     ],
   },
   apres: {

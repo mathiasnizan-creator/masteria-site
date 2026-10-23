@@ -2600,6 +2600,43 @@ const BASE_SPOKES = [
     relatedSpokes: ["formation-copilot-informatique", "formation-copilot-service-client", "formation-copilot-rh"],
   },
 
+  // ── Sprint IA × Copilot dans PowerPoint (3 h) ────────────────────────────
+  // Page propre : texte affiché dans src/data/spoke-guides/formation-copilot-powerpoint.js.
+  // Créée le 23/10/2026 pour la requête « formation copilot powerpoint » (catalogue : « 3 h chrono »).
+  {
+    slug: 'formation-copilot-powerpoint',
+    label: 'Copilot PowerPoint',
+    audienceCta: 'vos équipes',
+    tool: 'Sprint IA', toolSlug: 'sprint-ia', toolColor: '#F97316', toolColorLight: '#FED7AA',
+    metier: 'Tous publics', metierSlug: 'transverse', hubSlug: 'formation-sprint-ia', priority: true,
+    datePublished: '2026-10-23',
+    updatedAt: '2026-10-23',
+    metaTitle: 'Formation Copilot PowerPoint en 3 heures | Masteria',
+    metaDesc: "Formation Copilot PowerPoint en 3 heures : créer une présentation depuis un document, modèle de l'entreprise, notes, traduction. Dès 1 980 € HT.",
+    h1: 'Formation Copilot PowerPoint : 3 heures pour construire vos présentations avec l\'IA',
+    intro: "Trois heures pour construire, reprendre et relire vos présentations avec Copilot dans PowerPoint, sur vos propres documents.",
+    relatedSpokes: ['formation-sprint-ia-excel', 'formation-copilot-word-excel', 'formation-copilot-marketing'],
+  },
+
+  // ── Multi-outils × Productivité au travail (1 jour) ──────────────────────
+  // Page propre : texte affiché dans src/data/spoke-guides/formation-ia-productivite.js.
+  // Créée le 23/10/2026 pour la requête « formation ia productivité ».
+  {
+    slug: 'formation-ia-productivite',
+    label: "productivité au travail avec l'IA",
+    audienceCta: 'vos équipes',
+    duration: '1j',
+    tool: 'Multi-outils IA', toolSlug: 'multi-outils', toolColor: '#6366f1', toolColorLight: '#e0e7ff',
+    metier: 'Tous métiers', metierSlug: 'transverse', hubSlug: 'formation-intelligence-artificielle', priority: true,
+    datePublished: '2026-10-23',
+    updatedAt: '2026-10-23',
+    metaTitle: 'Formation IA productivité au travail (1 jour) | Masteria',
+    metaDesc: "Formation IA productivité en une journée : messagerie, réunions, documents longs et semaine organisés avec l'IA de votre entreprise. Dès 1 980 € HT.",
+    h1: "Formation IA productivité : utiliser l'IA pour gagner en efficacité au travail",
+    intro: "Une journée pour organiser messagerie, réunions, lectures et semaine de travail avec l'assistant d'IA de votre entreprise.",
+    relatedSpokes: ['formation-ia-ecrits-pro', 'formation-prompt-engineering', 'formation-ia-analyse-donnees'],
+  },
+
   // ── Claude Cowork × Tous métiers (non-développeurs) ──────────────────────
   // Page propre : tout le texte affiché (résumé, en bref, audience, cas d'usage, programme,
   // objectifs, guide terrain, tarifs, FAQ, sources) vient de src/data/spoke-guides/formation-claude-cowork.js,

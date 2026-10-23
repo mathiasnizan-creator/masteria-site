@@ -346,6 +346,7 @@ Chaque page décrit un programme dédié à un outil pour un métier précis, av
 - [Booster sa créativité avec l'IA](https://www.master-ia.fr/formation-ia-creativite)
 - [Plan de développement des compétences IA pour DRH](https://www.master-ia.fr/formation-ia-drh-plan-competences)
 - [Optimiser ses écrits professionnels avec l'IA](https://www.master-ia.fr/formation-ia-ecrits-pro)
+- [Formation IA productivité au travail](https://www.master-ia.fr/formation-ia-productivite) : une journée pour organiser messagerie, réunions, lectures et semaine avec l'assistant d'IA de l'entreprise
 - [Organiser sa veille avec l'IA](https://www.master-ia.fr/formation-ia-veille)
 - [Panorama IA Assistanat de direction 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-assistante)
 - [Panorama IA Commercial et Vente 2 jours : 5 outils comparés](https://www.master-ia.fr/formation-multi-outils-commercial)
@@ -359,6 +360,7 @@ Chaque page décrit un programme dédié à un outil pour un métier précis, av
 
 - [Sprint IA AI Act, 3 heures pour la conformité IA Act](https://www.master-ia.fr/formation-sprint-ia-ai-act)
 - [Sprint IA Excel, 3 heures pour booster Excel avec l'IA](https://www.master-ia.fr/formation-sprint-ia-excel)
+- [Formation Copilot PowerPoint en 3 heures](https://www.master-ia.fr/formation-copilot-powerpoint) : présentation tirée d'un document, modèle de l'entreprise, notes de l'orateur, traduction et relecture
 - [Sprint IA Veille, 3 heures pour automatiser sa veille](https://www.master-ia.fr/formation-sprint-ia-veille)
 
 - [Agence SEO & IA](https://www.master-ia.fr/agence-seo-ia) — Référencement à l'ère des moteurs de réponse : SEO technique et visibilité dans les IA génératives (GEO)
@@ -368,6 +370,7 @@ Chaque page décrit un programme dédié à un outil pour un métier précis, av
 
 - [Formation Multi-outils IA](https://www.master-ia.fr/formation-multi-outils) — Comparer ChatGPT, Copilot, Gemini, Claude et Mistral sur vos cas réels avant d'arbitrer
 - [Sprint IA (format court 3 h)](https://www.master-ia.fr/formation-sprint-ia) — Sessions de 3 h pour acculturer largement : sensibilisation, prompts, Excel, managers, veille, AI Act
+- [Formation IA courte](https://www.master-ia.fr/formation-ia-courte) : sept formats de 3 heures à 2 jours (Copilot dans Excel, PowerPoint et Microsoft 365, productivité, écrits, pédagogie, analyse de données)
 - [Formation intelligence artificielle générative](https://www.master-ia.fr/formation-intelligence-artificielle-generative)
 - [Formation intelligence artificielle en distanciel](https://www.master-ia.fr/formation-intelligence-artificielle-distanciel)
 - [Formation intelligence artificielle et CPF](https://www.master-ia.fr/formation-intelligence-artificielle-cpf) — Ce que le CPF finance ou non pour l'IA, et les dispositifs alternatifs

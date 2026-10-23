@@ -1259,8 +1259,8 @@ export default function App() {
         {GEO_DESTINATIONS.map(dest => (
           <Route key={geoIaSlug(dest.slug)} path={`/${geoIaSlug(dest.slug)}`} element={<GeoIAGenericPage />} />
         ))}
-        {/* Pages éditoriales transversales (CPF, distanciel, IA générative) */}
-        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative'].map(s => (
+        {/* Pages éditoriales transversales (CPF, distanciel, IA générative, formats courts) */}
+        {['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-ia-courte'].map(s => (
           <Route key={s} path={`/${s}`} element={<TopicLandingPage />} />
         ))}
         <Route path="/formation-automatisation-ia" element={<AutomatisationIAPage />} />

@@ -1117,6 +1117,7 @@ export function MasteriaFooter() {
               ['Logistique & supply chain', '/formation-ia-logistique'],
               ['Sécurité des usages IA', '/formation-ia-securite'],
               ['Formation IA en entreprise', '/formation-ia-entreprise'],
+              ['Formations IA courtes', '/formation-ia-courte'],
               ['Formation agents IA', '/formation-agents-ia'],
               ['Acculturation IA', '/acculturation-ia'],
               ['Coaching IA individuel', '/coaching-ia'],

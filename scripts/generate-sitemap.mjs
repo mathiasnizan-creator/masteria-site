@@ -134,7 +134,7 @@ while ((m = spokeRe.exec(src)) !== null) {
 
 // Pages formation transversales stratégiques : retirées du lot spokes (0.5)
 // et poussées à 0.7 (requêtes commerciales à fort volume).
-const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia', 'formation-chatgpt-redaction', 'formation-copilot-studio', 'formation-notebooklm', 'formation-claude-cowork'];
+const boostedSlugs = ['formation-claude-code', 'formation-vibe-coding', 'formation-prompt-engineering', 'formation-ia-dirigeants', 'formation-ai-act', 'formation-gouvernance-ia', 'formation-chatgpt-redaction', 'formation-copilot-studio', 'formation-notebooklm', 'formation-claude-cowork', 'formation-ia-productivite', 'formation-copilot-powerpoint'];
 for (const s of boostedSlugs) spokeSet.delete(s);
 
 // Pages géo : 2 outils × 5 villes = 10 pages outil×ville (stratégie ciblée)
@@ -221,7 +221,7 @@ const geoLastMod = s => fs.existsSync(path.join(root, `src/data/geo-guides/${s}.
   : GEO_LASTMOD;
 for (const s of geoSlugs)     urls.push({ loc: `${SITE}/${s}`,          lastmod: geoLastMod(s),  changefreq: 'monthly', priority: 0.6 });
 for (const s of geoIaSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: geoLastMod(s),    changefreq: 'monthly', priority: s === 'formation-ia-lyon' ? 0.8 : 0.7 });
-const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia'];
+const topicSlugs = ['formation-intelligence-artificielle-cpf','formation-intelligence-artificielle-distanciel','formation-intelligence-artificielle-generative','formation-automatisation-ia','formation-ia-qualiopi','financement-formation-ia','formation-ia-courte'];
 for (const s of topicSlugs)   urls.push({ loc: `${SITE}/${s}`,          lastmod: TOPIC_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 for (const s of boostedSlugs) urls.push({ loc: `${SITE}/${s}`,          lastmod: SPOKE_LASTMOD,  changefreq: 'monthly', priority: 0.7 });
 // Cluster « IA par secteur » : hub + 12 secteurs (conseil/dev high-ticket).
