@@ -34,7 +34,7 @@ const cLight = '#DBEAFE'
 
 const META_TITLE = "Agence de développement IA sur mesure | Masteria"
 const META_DESC = "Agence de développement IA à Lyon : agents, applications métier et connecteurs, livrés avec leur code et leur documentation. 30 min de cadrage offertes."
-const KEYWORDS = "agence développement ia, agence de développement ia, développement intelligence artificielle, développeur ia, dev ia, web dev ia, société développement ia"
+const KEYWORDS = "agence développement ia, agence de développement ia, développement intelligence artificielle, dev ia, web dev ia, société développement ia"
 
 /* Sources citées par la page (WebPage.citation + liens visibles). */
 const PAGE_CITATIONS = [
@@ -591,7 +591,7 @@ export default function AgenceDeveloppementIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            La page <Link to="/methode-projet-ia" style={aStyle}>méthode et modèles d'engagement</Link> compare ces deux formules avec une troisième, le conseil seul. Si le besoin reste flou, le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> le précise avant tout développement ; on en arrête la durée et le forfait pendant le cadrage.
+            La page <Link to="/methode-projet-ia" style={aStyle}>méthode et modèles d'engagement</Link> compare ces deux formules avec une troisième, le conseil seul. Si le besoin reste flou, le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> le précise avant tout développement ; on en arrête la durée et le forfait pendant le cadrage. Pour comparer les profils, les salaires et les taux journaliers du marché, lisez la fiche <Link to="/developpeur-ia" style={aStyle}>développeur IA</Link> ; pour un site ou une application sans IA au départ, notre <Link to="/agence-developpement-web" style={aStyle}>agence de développement web</Link>.
           </p>
         </div>
       </section>

@@ -582,7 +582,8 @@ export default function ConsultantIAPage() {
             et le guide pour{' '}
             <Link to="/meilleur-cabinet-conseil-ia" style={{ color: c, fontWeight: 600 }}>choisir le meilleur cabinet IA</Link>{' '}
             complètent la lecture. Si le sujet est de confier la direction de l'IA à quelqu'un, voyez le rôle de{' '}
-            <Link to="/chief-ai-officer" style={{ color: c, fontWeight: 600 }}>Chief AI Officer</Link>.
+            <Link to="/chief-ai-officer" style={{ color: c, fontWeight: 600 }}>Chief AI Officer</Link>. S'il s'agit d'écrire le code d'un outil, la fiche{' '}
+            <Link to="/developpeur-ia" style={{ color: c, fontWeight: 600 }}>développeur IA</Link> décrit ce profil.
           </p>
         </div>
       </section>

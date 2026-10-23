@@ -93,6 +93,12 @@
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/agence-developpement-web</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/etudes-de-cas-ia</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>
@@ -101,7 +107,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-developpement-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-developpement-ia.jpg</image:loc></image:image>
@@ -248,10 +254,34 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/consultant-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/consultant-ia.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/developpeur-ia</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/agence-developpement-sur-mesure</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/agence-developpement-application-web</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/sous-traitance-developpement-web</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/bibliotheque-de-prompts</loc>
@@ -548,7 +578,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/prix-projet-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/prix-projet-ia.jpg</image:loc></image:image>
@@ -817,6 +847,7 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-courte.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-code</loc>
@@ -893,12 +924,14 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-productivite.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-copilot-powerpoint</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/formation-copilot-powerpoint.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-banque-assurance</loc>

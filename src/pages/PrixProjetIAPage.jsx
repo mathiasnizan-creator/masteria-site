@@ -651,7 +651,7 @@ export default function PrixProjetIAPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            La page <Link to="/methode-projet-ia" style={aStyle}>méthode et modèles d'engagement IA</Link> compare les trois formules critère par critère, régie comprise.
+            La page <Link to="/methode-projet-ia" style={aStyle}>méthode et modèles d'engagement IA</Link> compare les trois formules critère par critère, régie comprise. Les taux journaliers publiés pour les freelances, par niveau d'expérience, figurent sur la fiche <Link to="/developpeur-ia" style={aStyle}>développeur IA</Link>.
           </p>
         </div>
       </section>

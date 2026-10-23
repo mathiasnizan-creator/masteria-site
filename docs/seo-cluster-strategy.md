@@ -16,6 +16,7 @@
 |---|---|---|
 | Conseil | `/conseil-intelligence-artificielle` (cabinet) | + `/conseil-strategie-ia` |
 | Développement | `/agence-developpement-ia` | `/outils-ia-sur-mesure`, `/solutions-ia` (hub) + 7 solutions |
+| Développement web (23/10/2026) | `/agence-developpement-web` (pilier + hub) | `/agence-developpement-sur-mesure`, `/agence-developpement-application-web`, `/sous-traitance-developpement-web`, `/developpeur-ia` ; détail dans `docs/strategie-cluster-developpement-web.md` |
 | Automatisation | `/automatisation-ia` (guide) | `/agence-automatisation-ia`, `/agents-ia-entreprise` |
 | Agence | `/agence-ia` (Lyon) | `/meilleure-agence-ia`, `/agence-ia-marketing`, géo : `/agence-ia-{paris,annecy,geneve,marseille}` |
 | Secteurs | `/ia-secteurs` (hub) | 12 pages `/ia-{banque-assurance,industrie,sante-pharma,juridique,retail-ecommerce,logistique-transport,immobilier-btp,secteur-public,services-conseil,tourisme-hotellerie,agroalimentaire,tech-saas}` |

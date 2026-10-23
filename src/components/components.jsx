@@ -183,6 +183,7 @@ const CONSEIL_COLS = [
   {
     head: 'Développement sur mesure',
     items: [
+      { label: 'Agence de développement web', desc: 'Sites et applications reliés à vos outils', slug: 'agence-developpement-web', Icon: Globe },
       { label: 'Agence de développement IA', desc: 'Conception et intégration sur mesure', slug: 'agence-developpement-ia', Icon: Code2 },
       { label: 'Solutions IA sur mesure', desc: 'Copilotes, agents, RAG, automatisations', slug: 'solutions-ia',         Icon: Boxes },
       { label: 'Outils IA sur mesure',    desc: 'Applications et copilotes métier',     slug: 'outils-ia-sur-mesure',  Icon: Wrench },
@@ -227,7 +228,7 @@ const APROPOS_LINKS = [
 
 /* Pages conseil, audit, accompagnement et développement : le formulaire s'y ouvre
  * sur l'onglet « Conseil & projet sur mesure ». */
-const PROJET_PATH_RE = /^\/(agence|conseil|consultant-|meilleur-cabinet|meilleure-agence|outils-ia|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia|audit-|accompagnement-ia|prestataire-ia|chief-ai-officer|etudes-de-cas-ia|roi-ia|calculateur-roi-ia|charte-ia|mathias-nizan)/;
+const PROJET_PATH_RE = /^\/(agence|conseil|consultant-|developpeur-ia|sous-traitance-developpement|meilleur-cabinet|meilleure-agence|outils-ia|automatisation-ia|agents-ia|ia-|solutions-ia|diagnostic-ia|methode-projet-ia|prix-projet-ia|gouvernance-ia|cas-usage-ia|audit-|accompagnement-ia|prestataire-ia|chief-ai-officer|etudes-de-cas-ia|roi-ia|calculateur-roi-ia|charte-ia|mathias-nizan)/;
 
 export function MasteriaHeader() {
   const location = useLocation();
@@ -324,6 +325,7 @@ export function MasteriaHeader() {
   const formationsActive = location.pathname.startsWith('/formation') || location.pathname === '/acculturation-ia' || location.pathname === '/coaching-ia';
   const CONSEIL_PATHS = [
     '/conseil-intelligence-artificielle', '/conseil-strategie-ia', '/conseil-transformation-ia', '/conseil-ia-pme', '/chief-ai-officer', '/ia-gestion-de-projet',
+    '/agence-developpement-web', '/agence-developpement-sur-mesure', '/agence-developpement-application-web', '/sous-traitance-developpement-web', '/developpeur-ia',
     '/agence-developpement-ia', '/outils-ia-sur-mesure', '/agence-automatisation-ia',
     '/agents-ia-entreprise', '/agence-ia', '/agence-ia-marketing', '/agence-seo-ia',
     '/automatisation-ia', '/meilleure-agence-ia', '/meilleur-cabinet-conseil-ia',
@@ -1170,6 +1172,10 @@ export function MasteriaFooter() {
               ['IA générative en entreprise', '/ia-generative-entreprise'],
               ['Cas d\'usage de l\'IA', '/cas-usage-ia-entreprise'],
               ['Prix d\'un projet IA', '/prix-projet-ia'],
+              ['Agence de développement web', '/agence-developpement-web'],
+              ['Développement sur mesure', '/agence-developpement-sur-mesure'],
+              ['Applications web et mobiles', '/agence-developpement-application-web'],
+              ['Sous-traitance développement web', '/sous-traitance-developpement-web'],
               ['Agence de développement IA', '/agence-developpement-ia'],
               ['Solutions IA sur mesure', '/solutions-ia'],
               ['Agents IA en entreprise', '/agents-ia-entreprise'],
@@ -1211,6 +1217,7 @@ export function MasteriaFooter() {
               ['Meilleur cabinet de conseil IA', '/meilleur-cabinet-conseil-ia'],
               ['Meilleure formation IA', '/meilleure-formation-ia'],
               ['Consultant IA (métier & TJM)', '/consultant-ia'],
+              ['Développeur IA (métier & TJM)', '/developpeur-ia'],
               ['Contact', '/contact'],
             ].map(([l, path]) => (
               <Link key={path} to={path} style={lStyle}>{l}</Link>

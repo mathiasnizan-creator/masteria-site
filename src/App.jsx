@@ -93,6 +93,11 @@ const MeilleureAgenceIAPage = lazy(() => import('./pages/MeilleureAgenceIAPage')
 const MeilleurCabinetConseilIAPage = lazy(() => import('./pages/MeilleurCabinetConseilIAPage'));
 const MeilleureFormationIAPage = lazy(() => import('./pages/MeilleureFormationIAPage'));
 const ConsultantIAPage = lazy(() => import('./pages/ConsultantIAPage'));
+const DeveloppeurIAPage = lazy(() => import('./pages/DeveloppeurIAPage'));
+const AgenceDeveloppementWebPage = lazy(() => import('./pages/AgenceDeveloppementWebPage'));
+const AgenceDeveloppementSurMesurePage = lazy(() => import('./pages/AgenceDeveloppementSurMesurePage'));
+const AgenceDeveloppementApplicationWebPage = lazy(() => import('./pages/AgenceDeveloppementApplicationWebPage'));
+const SousTraitanceDeveloppementWebPage = lazy(() => import('./pages/SousTraitanceDeveloppementWebPage'));
 const EtudesDeCasIAPage = lazy(() => import('./pages/EtudesDeCasIAPage'));
 const PressePage = lazy(() => import('./pages/PressePage'));
 const MathiasNizanPage = lazy(() => import('./pages/MathiasNizanPage'));
@@ -1277,6 +1282,11 @@ export default function App() {
         <Route path="/meilleur-cabinet-conseil-ia" element={<MeilleurCabinetConseilIAPage />} />
         <Route path="/meilleure-formation-ia" element={<MeilleureFormationIAPage />} />
         <Route path="/consultant-ia" element={<ConsultantIAPage />} />
+        <Route path="/developpeur-ia" element={<DeveloppeurIAPage />} />
+        <Route path="/agence-developpement-web" element={<AgenceDeveloppementWebPage />} />
+        <Route path="/agence-developpement-sur-mesure" element={<AgenceDeveloppementSurMesurePage />} />
+        <Route path="/agence-developpement-application-web" element={<AgenceDeveloppementApplicationWebPage />} />
+        <Route path="/sous-traitance-developpement-web" element={<SousTraitanceDeveloppementWebPage />} />
         <Route path="/etudes-de-cas-ia" element={<EtudesDeCasIAPage />} />
         <Route path="/presse" element={<PressePage />} />
         <Route path="/mathias-nizan" element={<MathiasNizanPage />} />
