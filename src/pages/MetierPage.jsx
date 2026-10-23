@@ -36,6 +36,7 @@ const PROMPT_LIB_SLUGS = [
 import { METIER_FAQ } from '../data/metier-faq'
 import ApresLaFormation from '../components/ApresLaFormation'
 import CadrageLink from '../components/CadrageLink'
+import { Paras, PointsCles, Reperes, Reponse, lignesEnReperes, decouperPhrases } from '../components/Aere'
 
 /* ── MODE « PAGE PROPRE » ─────────────────────────────────────────────────────
    Drapeau : `pagePropre: true` à la racine de src/data/metiers/<slug>.js.
@@ -485,6 +486,8 @@ function RichText({ text, linkStyle = aStyle }) {
   })
 }
 
+const rt = t => <RichText text={t} />
+
 /* Un item de programme est soit une phrase (ancien format), soit { t, d } :
    titre court en gras + détail (format approfondi, fonctionnalités avancées des outils). */
 function ProgItem({ item, li }) {
@@ -548,9 +551,9 @@ function FaqItem({ q, a }) {
         />
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', marginTop: -4 }}>
-          <RichText text={a} />
-        </p>
+        <div style={{ padding: '0 0 20px', marginTop: -4 }}>
+          <Paras texte={a} rich={rt} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -584,7 +587,7 @@ function ApresPropre({ apres }) {
           <h2 id="apres-la-formation" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 30px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 14px' }}>
             {apres.titre}
           </h2>
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 22px' }}><RichText text={apres.texte} /></p>
+          <Paras texte={apres.texte} rich={rt} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 22px' }} />
           <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: C, color: '#fff', padding: '12px 20px', borderRadius: 10, textDecoration: 'none', fontSize: 14.5, fontWeight: 700 }}>
             Réserver 30 minutes de cadrage <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
           </CadrageLink>
@@ -792,19 +795,23 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria{enrichi?.article?.dateModified ? ` · Mise à jour ${enrichi.article.dateLabel || ''}` : ''}
           </p>
 
-          {enrichi?.base?.geo ? (
-            <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${C}` }}>
-              <RichText text={enrichi.base.geo} />
-            </p>
-          ) : (
-            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${C}` }}>
-              {content.intro}
-            </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces à pictos */}
+          {(() => {
+            const phrases = decouperPhrases(enrichi?.base?.geo || content.intro || '')
+            return (
+              <>
+                <p id={enrichi?.base?.geo ? 'geo-summary' : undefined} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${C}` }}>
+                  <RichText text={phrases[0] || ''} />
+                </p>
+                <PointsCles sombre phrases={phrases.slice(1)} rich={t => <RichText text={t} linkStyle={{ color: '#93C5FD', fontWeight: 600 }} />} style={{ margin: '0 0 24px', maxWidth: 760 }} />
+              </>
+            )
+          })()}
+          {enrichi?.enBref && (
+            <Reperes sombre id="en-bref" titre="En bref" items={lignesEnReperes(enrichi.enBref)} colonnes={enrichi.enBref.length === 4 ? 2 : 3} style={{ margin: '0 0 32px', maxWidth: 1000 }} />
           )}
           {enrichi?.base?.sub && (
-            <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-              <RichText text={enrichi.base.sub} />
-            </p>
+            <Paras texte={enrichi.base.sub} max={2} rich={t => <RichText text={t} linkStyle={{ color: '#93C5FD', fontWeight: 600 }} />} style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 32px', maxWidth: 680 }} />
           )}
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -817,7 +824,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap', marginBottom: enrichi?.enBref ? 40 : 0 }}>
+          <div style={{ display: 'flex', gap: 9, flexWrap: 'wrap' }}>
             {[
               { icon: BadgeCheck, label: 'Certifié Qualiopi · Finançable OPCO' },
               { icon: Bot, label: 'ChatGPT · Copilot · Claude · Gemini · Mistral' },
@@ -831,19 +838,6 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
             ))}
           </div>
 
-          {enrichi?.enBref && (
-            <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-              <dl style={{ margin: 0 }}>
-                {enrichi.enBref.map((row, i) => (
-                  <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                    <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                    <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          )}
         </div>
       </section>
 
@@ -875,9 +869,9 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
               <div style={isDesktop ? { position: 'sticky', top: 130, alignSelf: 'start' } : { marginBottom: 32 }}>
                 <div style={kickerStyle}>{enrichi.missionsHead?.kicker || 'Activité par activité'}</div>
                 <h2 style={{ ...h2Style, marginBottom: 18 }}>{enrichi.missionsHead?.h2}</h2>
-                <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}><strong>{enrichi.missionsHead?.answer}</strong></p>
+                <Reponse texte={enrichi.missionsHead?.answer} style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
                 {enrichi.missionsHead?.foot && (
-                  <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}><RichText text={enrichi.missionsHead.foot} /></p>
+                  <Paras texte={enrichi.missionsHead.foot} rich={rt} style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }} />
                 )}
               </div>
               <div>
@@ -886,7 +880,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                     <div key={i} style={{ ...cardStyle, padding: 24 }}>
                       <div style={{ marginBottom: 14 }}><IconTile icon={METIER_ICONS[item.icon] || ICON_BY_NAME[item.icon] || Lightbulb} /></div>
                       <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                      <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
+                      <Paras texte={item.desc} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }} />
                     </div>
                   ))}
                 </div>
@@ -902,17 +896,17 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={wrap}>
             <div style={kickerStyle}>{enrichi.focus.kicker}</div>
             <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.focus.h2}</h2>
-            <p style={answerStyle}><strong>{enrichi.focus.answer}</strong></p>
+            <Reponse texte={enrichi.focus.answer} style={answerStyle} />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
               {enrichi.focus.items.map((item, i) => (
                 <div key={i} style={{ ...cardStyle, padding: 24 }}>
                   <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}><RichText text={item.desc} /></p>
+                  <Paras texte={item.desc} rich={rt} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} />
                 </div>
               ))}
             </div>
             {enrichi.focus.foot && (
-              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}><RichText text={enrichi.focus.foot} /></p>
+              <Paras texte={enrichi.focus.foot} rich={rt} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }} />
             )}
           </div>
         </section>
@@ -924,17 +918,17 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={wrap}>
             <div style={kickerStyle}>{enrichi.atoutsHead?.kicker || 'Ce que vous y gagnez'}</div>
             <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.atoutsHead?.h2}</h2>
-            <p style={{ ...answerStyle, background: '#fff' }}><strong>{enrichi.atoutsHead?.answer}</strong></p>
+            <Reponse texte={enrichi.atoutsHead?.answer} style={{ ...answerStyle, background: '#fff' }} />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
               {enrichi.atouts.map((item, i) => (
                 <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${C}` }}>
                   <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
+                  <Paras texte={item.desc} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} />
                 </div>
               ))}
             </div>
             {enrichi.atoutsHead?.foot && (
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>{enrichi.atoutsHead.foot}</p>
+              <Paras texte={enrichi.atoutsHead.foot} style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }} />
             )}
           </div>
         </section>
@@ -948,14 +942,12 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={{ ...wrap, position: 'relative' }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
             <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>{enrichi.programmeHead?.h2}</h2>
-            <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${C}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-              <strong style={{ color: '#fff' }}>{enrichi.programmeHead?.answer}</strong>
-            </p>
+            <Reponse texte={enrichi.programmeHead?.answer} fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${C}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {enrichi.programme.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
             </div>
             {enrichi.programmeHead?.foot && (
-              <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>{enrichi.programmeHead.foot}</p>
+              <Paras texte={enrichi.programmeHead.foot} style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }} />
             )}
           </div>
         </section>
@@ -967,7 +959,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={wrap}>
             <div style={kickerStyle}>Pour qui</div>
             <h2 style={{ ...h2Style, maxWidth: 880 }}>{enrichi.profilsHead?.h2}</h2>
-            <p style={answerStyle}><strong>{enrichi.profilsHead?.answer && <RichText text={enrichi.profilsHead.answer} />}</strong></p>
+            <Reponse texte={enrichi.profilsHead?.answer} rich={rt} style={answerStyle} />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
               {enrichi.profils.map(card => {
                 const Icon = ICON_BY_NAME[card.icon] || METIER_ICONS[card.icon] || Users
@@ -977,7 +969,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                       <Icon size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
                       <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
                     </div>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
+                    <Paras texte={card.desc} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} />
                   </div>
                 )
               })}
@@ -997,7 +989,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
               <div style={{ flex: 1, minWidth: 280 }}>
                 <div style={kickerStyle}>{enrichi.cadre.kicker || 'Le cadre, traité de front'}</div>
                 <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>{enrichi.cadre.h2}</h2>
-                <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}><RichText text={enrichi.cadre.p} /></p>
+                <Paras texte={enrichi.cadre.p} rich={rt} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }} />
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                   {enrichi.cadre.points.map(pt => (
                     <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
@@ -1017,14 +1009,14 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
           <div style={wrap}>
             <div style={kickerStyle}>Tarif et financement</div>
             <h2 style={{ ...h2Style, maxWidth: 880 }}>{propre && enrichi.tarif.titre ? enrichi.tarif.titre : 'Combien coûte la formation, et comment la financer ?'}</h2>
-            <p style={{ ...answerStyle }}><strong>{enrichi.tarif.answer}</strong></p>
+            <Reponse texte={enrichi.tarif.answer} style={answerStyle} />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
               <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${C}` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                   <GraduationCap size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
                   <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
                 </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{enrichi.tarif.inclus}</p>
+                <Paras texte={enrichi.tarif.inclus} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} />
               </div>
               {(!propre || enrichi.tarif.financement) && (
               <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${C}` }}>
@@ -1032,9 +1024,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                   <Landmark size={20} strokeWidth={2.1} style={{ color: C, flexShrink: 0 }} aria-hidden="true" />
                   <h3 style={{ ...h3Style, fontSize: 16 }}>La prise en charge</h3>
                 </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                  <RichText text={enrichi.tarif.financement || "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."} />
-                </p>
+                <Paras rich={rt} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} texte={enrichi.tarif.financement || "Masteria est certifiée Qualiopi : la formation est éligible au financement OPCO, selon votre branche et votre effectif. Nous fournissons programme, convention et pièces du dossier ; le dépôt se fait avant le début de la formation. Identifiez votre opérateur avec {/quel-opco|Quel OPCO ?} et le détail des dispositifs sur {/financement-formation-ia|financer sa formation IA}. Pas d'éligibilité CPF."} />
               </div>
               )}
             </div>
@@ -1078,7 +1068,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
               {content.deepDive.map((d, i) => (
                 <div key={i} style={{ background: '#FAFAF7', border: '1px solid #E5E7EB', borderRadius: 12, padding: '24px 24px 26px' }}>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{d.title}</h3>
-                  <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{d.text}</p>
+                  <Paras texte={d.text} style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
                 </div>
               ))}
             </div>
@@ -1182,7 +1172,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
               {enrichi.choisirOutil.titre}
             </h2>
             {enrichi.choisirOutil.intro && (
-              <p style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.75, marginBottom: 32 }}><RichText text={enrichi.choisirOutil.intro} /></p>
+              <Paras texte={enrichi.choisirOutil.intro} rich={rt} style={{ color: '#6B7280', fontSize: 15, lineHeight: 1.75, marginBottom: 32 }} />
             )}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
               {enrichi.choisirOutil.lignes.map(l => (
@@ -1242,11 +1232,10 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                 <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                   {propre ? enrichi.equipe.titre : 'Un cabinet spécialisé IA, et des formateurs qui connaissent votre métier'}
                 </h2>
-                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                  {propre ? <RichText text={enrichi.equipe.texte} linkStyle={{ color: '#93C5FD', fontWeight: 600 }} /> : (
-                    <>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues, choisis pour leur connaissance du métier formé. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.</>
-                  )}
-                </p>
+                {propre ? <Paras texte={enrichi.equipe.texte} max={2} rich={t => <RichText text={t} linkStyle={{ color: '#93C5FD', fontWeight: 600 }} />} style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }} /> : (
+                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>{(
+                    <>Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs et n'a qu'un seul métier : l'IA. Les sessions sont animées par Mathias et par un réseau de formateurs indépendants, expérimentés et pédagogues, choisis pour leur connaissance du métier formé. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.</>)}</p>
+                )}
               </div>
               {equipeReperes.length > 0 && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -1305,7 +1294,7 @@ export default function MetierPage({ enrichi: enrichiProp = null }) {
                     onMouseLeave={e => e.currentTarget.style.borderColor = '#E5E7EB'}>
                     <div style={{ display: 'inline-block', background: C_LIGHT, color: C, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>{rel.tag}</div>
                     <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>{rel.label}</h3>
-                    {!propre && <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }}>{rel.desc}</p>}
+                    {!propre && <Paras texte={rel.desc} style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 12px' }} />}
                     <span style={{ fontSize: 13, color: C, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>En savoir plus<ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" /></span>
                   </div>
                 </Link>

@@ -19,6 +19,7 @@ import { PressMention } from '../components/FounderNote'
 import AvisGoogle from '../components/AvisGoogle'
 import ClaudeFactsBox from '../components/ClaudeFactsBox'
 import MissionsRecentes from '../components/MissionsRecentes'
+import { Paras, Reperes } from '../components/Aere'
 
 const METIER_ICONS = {
   marketing:             Megaphone,
@@ -70,12 +71,9 @@ function FaqItem({ q, a }) {
         />
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{
-          fontSize: 15, color: '#374151', lineHeight: 1.75,
-          padding: '0 0 20px', marginTop: -4,
-        }}>
-          {a}
-        </p>
+        <div style={{ padding: '0 0 20px', marginTop: -4 }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -236,7 +234,14 @@ export default function HubPage() {
         }}>
           {hub.h1}
         </h1>
-        {hub.definition && (
+        {/* Haut de page aéré : accroche (définition citable) puis faits clés en repères */}
+        {hub.accroche && (
+          <p id="definition" style={{ fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', fontWeight: 500, maxWidth: 720, margin: '0 auto 28px', lineHeight: 1.6 }}>
+            {hub.accroche}
+          </p>
+        )}
+        {hub.reperes && <Reperes items={hub.reperes} colonnes={3} style={{ maxWidth: 1000, margin: '0 auto 28px' }} />}
+        {hub.definition && !hub.accroche && (
           <p id="definition" style={propre
             ? { fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', fontWeight: 500, maxWidth: 640, margin: '0 auto 16px', lineHeight: 1.6 }
             : { fontSize: 17, color: '#0A0A0A', fontWeight: 500, maxWidth: 720, margin: '0 auto 20px', lineHeight: 1.7, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '18px 22px', textAlign: 'left' }}>
@@ -245,9 +250,7 @@ export default function HubPage() {
         )}
         {/* Page propre : l'intro passe en chapeau de la section « Pourquoi », le hero reste court */}
         {!(propre && why.length > 0) && (
-          <p style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }}>
-            {hub.intro}
-          </p>
+          <Paras texte={hub.intro} max={2} style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }} />
         )}
         {hub.dateModified && (
           <p style={{ fontSize: 13, color: '#6B7280', margin: '0 auto 24px' }}>
@@ -321,9 +324,7 @@ export default function HubPage() {
               {titres.why || `Pourquoi former vos équipes à ${toolShort} ?`}
             </h2>
             {propre ? (
-              <p style={{ color: '#374151', fontSize: 16.5, lineHeight: 1.8, marginBottom: 44, maxWidth: 760 }}>
-                {hub.intro}
-              </p>
+              <Paras texte={hub.intro} max={2} style={{ color: '#374151', fontSize: 16.5, lineHeight: 1.75, margin: '0 0 44px', maxWidth: 760 }} />
             ) : (
               <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
                 Des bénéfices concrets, mesurables dès le retour en poste.
@@ -352,9 +353,7 @@ export default function HubPage() {
                   }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>
-                    {item.body}
-                  </p>
+                  <Paras texte={item.body} max={2} budget={300} style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
                 </div>
               ))}
             </div>
@@ -454,7 +453,7 @@ export default function HubPage() {
         <section style={{ padding: '0 40px 64px', background: why.length ? '#F9FAFB' : '#fff' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{hub.choisir.titre}</h2>
-            {hub.choisir.paras.map((t, i) => <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{t}</p>)}
+            {hub.choisir.paras.map((t, i) => <Paras key={i} texte={t} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }} />)}
           </div>
         </section>
       )}
@@ -674,7 +673,7 @@ export default function HubPage() {
         <section style={{ padding: '64px 40px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{hub.apres.titre}</h2>
-            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>{hub.apres.texte}</p>
+            <Paras texte={hub.apres.texte} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }} />
             <p style={{ margin: 0, fontSize: 14.5 }}>
               <Link to="/outils-ia-sur-mesure" style={{ color: hub.color, fontWeight: 700 }}>Outils IA sur mesure</Link>
               {' · '}

@@ -81,6 +81,16 @@ export const HUBS = [
     // Première phrase : définition de Claude reprise telle quelle par les moteurs génératifs (« qu'est-ce que Claude »).
     // Modèles et date viennent de claude-facts.js ; prix relevés le 19/10/2026 sur la même source.
     definition: `${DEFINITION_CLAUDE} Une formation Claude apprend à une équipe à utiliser Claude, l'assistant IA d'Anthropic, sur ses propres documents : projets partagés, compétences (Skills), recherche approfondie, fichiers Word, Excel et PowerPoint, et Claude Code pour les développeurs. Chez Masteria, elle dure 2 jours (14 h), en intra jusqu'à 12 personnes ou en individuel, à partir de 1 980 € HT par jour, certifiée Qualiopi.`,
+    // Haut de page aéré (23/10/2026) : les faits de `definition` réorganisés en accroche + repères.
+    // L'accroche garde les deux phrases de définition, autonomes et citables.
+    accroche: `${DEFINITION_CLAUDE.split(' Au ')[0]} Cette formation apprend à vos équipes à s'en servir sur leurs propres documents.`,
+    reperes: [
+      { icone: 'Layers', label: `Modèles au ${CLAUDE_FAITS.verifieLeTexte}`, value: `${MODELES_CLAUDE.slice(0, -1).join(', ')} et ${MODELES_CLAUDE[MODELES_CLAUDE.length - 1]}`, detail: `${MODELES_CLAUDE[MODELES_CLAUDE.length - 1]} est arrivé le ${DERNIER_CLAUDE.sortie}. Avec un abonnement payant, les trois premiers traitent d'un bloc jusqu'à un million de tokens par fil de discussion.` },
+      { icone: 'CreditCard', label: 'Prix des abonnements', value: '20 $ par mois en Pro', detail: "25 $ par siège en Team, ramenés à 20 $ si l'équipe règle l'année." },
+      { icone: 'GraduationCap', label: 'Ce que vous apprenez', haut: true, liste: ['Projets partagés', 'Compétences (Skills)', 'Recherche approfondie', 'Fichiers Word, Excel et PowerPoint', 'Claude Code pour les développeurs'] },
+      { icone: 'Clock', label: 'Durée et format', value: '2 jours (14 h)', detail: "En intra jusqu'à 12 personnes ou en individuel, sur site ou à distance." },
+      { icone: 'Wallet', label: 'Tarif', value: 'À partir de 1 980 € HT la journée', detail: 'Préparation sur mesure en plus. Formation certifiée Qualiopi.' },
+    ],
     datePublished: '2026-04-21',
     dateModified: '2026-10-19',
     author: true,

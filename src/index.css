@@ -117,3 +117,17 @@ a:focus-visible > .veille-ligne-archive { background: #F9FAFB; }
 .sp-excerpt mark { background: #DBEAFE; color: #1D4ED8; font-weight: 600; border-radius: 3px; padding: 0 2px; }
 @media (max-width: 640px) { .sp-hints { display: none !important; } }
 @media (prefers-reduced-motion: reduce) { .sp-overlay, .sp-panel { animation: none; } }
+
+/* ───── Mise en page aérée : repères (components/Aere.jsx) ───── */
+.rp-grille { display: grid; gap: 12px; grid-template-columns: repeat(var(--rp-col, 3), minmax(0, 1fr)); }
+.rp-carte { padding: 16px 18px; }
+.rp-large { grid-column: span 2; }
+.rp-haut { grid-row: span 2; }
+@media (max-width: 900px) { .rp-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } .rp-haut { grid-row: auto; } }
+@media (max-width: 560px) {
+  .rp-grille { grid-template-columns: 1fr; gap: 8px; }
+  .rp-carte { padding: 12px 14px; }
+  .rp-carte dt { margin-bottom: 5px !important; }
+  .rp-grille.rp-m2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .rp-grille:not(.rp-m2) .rp-large { grid-column: auto; }
+}

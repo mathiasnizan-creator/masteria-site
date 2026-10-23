@@ -17,6 +17,7 @@ import AvisGoogle from '../components/AvisGoogle'
 import ClaudeFactsBox from '../components/ClaudeFactsBox'
 import MissionsRecentes from '../components/MissionsRecentes'
 import { PressMention } from '../components/FounderNote'
+import { Paras, PointsCles, Reperes, lignesEnReperes, decouperPhrases } from '../components/Aere'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
 const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
@@ -76,7 +77,9 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
@@ -266,6 +269,20 @@ export default function SpokePage() {
       ? <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>1 jour (7 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Le tarif part de <strong>1 980 € HT par jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel ; si les exercices sont construits sur vos documents, le temps de préparation s'ajoute et figure au devis. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
       : <>La formation <strong>{spoke.label || `${spoke.tool} pour ${spoke.metier}`}</strong> proposée par Masteria est un programme de <strong>2 jours (14 h)</strong> certifié Qualiopi, dispensé en présentiel ou distanciel. Le tarif part de <strong>1 980 € HT par jour</strong>, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel sur mesure ; si les exercices sont construits sur vos documents, le temps de préparation s'ajoute et figure au devis. Finançable par votre OPCO selon votre branche. Programme opérationnel dès le lundi matin.</>
 
+  // En bref : lignes du guide (page propre) ou lignes communes du catalogue
+  const enBref = propre && spoke.enBref?.length ? spoke.enBref : [
+    { label: 'Formation', value: spoke.label ? `Formation ${spoke.label}` : `${spoke.tool} pour ${spoke.metier}` },
+    { label: 'Durée', value: is3h ? '3 heures (Sprint IA)' : isOneDay ? '1 jour (7 h de formation effective)' : '2 jours (14 h de formation effective)' },
+    { label: 'Formats', value: "Intra-entreprise dans vos locaux (jusqu'à 12 participants), accompagnement individuel sur mesure, présentiel ou distanciel" },
+    { label: 'Tarif', value: is3h ? 'À partir de 1 980 € HT par session, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' : 'À partir de 1 980 € HT par jour, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' },
+    { label: 'Financement', value: "Organisme certifié Qualiopi, finançable par votre OPCO selon votre branche ; programme et convention préparés avec vous" },
+    { label: 'Prérequis', value: prerequis },
+  ]
+  // Réponse directe découpée : accroche (1re phrase) + puces
+  const resumePhrases = propre && typeof spoke.resume === 'string' ? decouperPhrases(spoke.resume) : null
+  // Intro restée hors du guide terrain : chapeau sous le héros, en paragraphes courts
+  const introChapeau = !(propre && guide?.guide) && spoke.intro
+
   // Modules grouped by day
   const modulesJ1 = spoke.modules?.filter(m => m.day === 1) || []
   const modulesJ2 = spoke.modules?.filter(m => m.day === 2) || []
@@ -358,26 +375,24 @@ export default function SpokePage() {
             {spoke.h1}
           </h1>
 
-          {/* GEO-optimized first paragraph : réponse directe à la query pour citation LLM */}
+          {/* Réponse directe (citation LLM) : la première phrase sert d'accroche, les suivantes
+              passent en puces à pictos ; les faits clés sont en repères sous l'accroche. */}
           <p id="geo-summary" style={propre
-            ? { fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', lineHeight: 1.6, marginBottom: 16, maxWidth: 640, fontWeight: 500 }
+            ? { fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', lineHeight: 1.6, marginBottom: 16, maxWidth: 680, fontWeight: 500 }
             : { fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
-            {propre && spoke.resume ? spoke.resume : heroSentence}
+            {resumePhrases ? resumePhrases[0] : heroSentence}
           </p>
           {propre && (
-            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 32px', maxWidth: 680 }}>
+            <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 28px', maxWidth: 680 }}>
               Par <Link to="/mathias-nizan" style={{ color: '#374151', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur de Masteria · {spoke.updatedLabel || ''}
             </p>
           )}
+          {resumePhrases && <PointsCles phrases={resumePhrases.slice(1)} />}
 
-          {/* Page propre avec guide : l'intro passe en chapeau du guide terrain, le hero reste court */}
-          {!(propre && guide?.guide) && spoke.intro && (
-            <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
-              {spoke.intro}
-            </p>
-          )}
+          {/* En bref : faits clés en repères (<dl> sémantique, valeurs propres à la page) */}
+          <Reperes id="en-bref" titre="En bref" items={lignesEnReperes(enBref)} colonnes={enBref.length % 3 === 0 ? 3 : enBref.length === 4 ? 2 : 3} style={{ margin: '0 0 32px', maxWidth: 900 }} />
 
-          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
+          <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24 }}>
             <Link to="/contact" style={{ background: c, color: '#fff', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: `0 4px 12px ${c}30` }}>
               Contacter notre équipe →
             </Link>
@@ -386,37 +401,19 @@ export default function SpokePage() {
             </a>
           </div>
 
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            {HERO_BADGES.map(({ icon: Icon, label }) => (
-              <span
-                key={label}
-                style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 6, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
-              >
-                <Icon size={15} strokeWidth={2.2} style={{ color: c }} />
-                {label}
-              </span>
-            ))}
-          </div>
-
-          {/* En bref — synthèse citable (GEO), <dl> sémantique, 100 % data-driven */}
-          <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 14, padding: '20px 26px', marginTop: 28, maxWidth: 760 }}>
-            <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 12 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {(propre && spoke.enBref?.length ? spoke.enBref : [
-                { label: 'Formation', value: spoke.label ? `Formation ${spoke.label}` : `${spoke.tool} pour ${spoke.metier}` },
-                { label: 'Durée', value: is3h ? '3 heures (Sprint IA)' : isOneDay ? '1 jour (7 h de formation effective)' : '2 jours (14 h de formation effective)' },
-                { label: 'Formats', value: "Intra-entreprise dans vos locaux (jusqu'à 12 participants), accompagnement individuel sur mesure, présentiel ou distanciel" },
-                { label: 'Tarif', value: is3h ? 'À partir de 1 980 € HT par session, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' : 'À partir de 1 980 € HT par jour, intra comme individuel ; préparation sur mesure en plus · devis sous 24 h' },
-                { label: 'Financement', value: "Organisme certifié Qualiopi, finançable par votre OPCO selon votre branche ; programme et convention préparés avec vous" },
-                { label: 'Prérequis', value: prerequis },
-              ]).map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #F3F4F6' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{row.value}</dd>
-                </div>
+          {!propre && (
+            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 8 }}>
+              {HERO_BADGES.map(({ icon: Icon, label }) => (
+                <span
+                  key={label}
+                  style={{ background: '#fff', color: '#374151', padding: '7px 14px', borderRadius: 6, fontSize: 13, fontWeight: 600, border: '1px solid #E5E7EB', display: 'inline-flex', alignItems: 'center', gap: 8 }}
+                >
+                  <Icon size={15} strokeWidth={1.75} style={{ color: c }} />
+                  {label}
+                </span>
               ))}
-            </dl>
-          </div>
+            </div>
+          )}
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 20 }}>
@@ -439,6 +436,15 @@ export default function SpokePage() {
           </nav>
         </div>
       </section>
+
+      {/* ── CHAPEAU : intro de la page hors du héros, en paragraphes de 2 ou 3 phrases ── */}
+      {introChapeau && (
+        <section style={{ padding: '64px 40px 8px', background: '#fff' }}>
+          <div style={{ maxWidth: 900, margin: '0 auto' }}>
+            <Paras texte={introChapeau} max={2} style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 720 }} premier={{ fontSize: 18.5, color: '#0A0A0A', fontWeight: 500, lineHeight: 1.6 }} />
+          </div>
+        </section>
+      )}
 
       {/* ── CHIFFRES CLÉS ── */}
       {!propre && <section style={{ background: useLightHero ? '#fff' : '#1C1C1C', padding: '40px', display: 'flex', justifyContent: 'center', gap: 64, flexWrap: 'wrap', borderBottom: useLightHero ? '1px solid #E5E7EB' : 'none' }}>
@@ -641,7 +647,7 @@ export default function SpokePage() {
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 32px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 20 }}>{spoke.tarifs.titre}</h2>
             {(spoke.tarifs.paras || []).map((t, i) => (
-              <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px' }}>{t}</p>
+              <Paras key={i} texte={t} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 720 }} />
             ))}
             {isClaude && (
               <p style={{ fontSize: 13.5, color: '#6B7280', margin: '18px 0 0' }}>
@@ -730,7 +736,7 @@ export default function SpokePage() {
             <div style={{ flex: 1, minWidth: 260 }}>
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 4px' }}><Link to="/mathias-nizan" style={{ color: 'inherit', textDecoration: 'none', borderBottom: '1px solid #D1D5DB' }}>{TRAINER.name}</Link></h3>
               <p style={{ fontSize: 14, color: c, fontWeight: 600, margin: '0 0 16px' }}>{TRAINER.role}</p>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 20 }}>{buildTrainerBio(spoke)}</p>
+              <Paras texte={buildTrainerBio(spoke)} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }} />
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {TRAINER.credentials.map(cred => (
                   <span key={cred} style={{ background: cLight, color: c, padding: '4px 12px', borderRadius: 99, fontSize: 13, fontWeight: 600 }}>{cred}</span>
@@ -774,7 +780,7 @@ export default function SpokePage() {
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: c, marginBottom: 10 }}>Sur le terrain</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{spoke.terrain.titre}</h2>
-            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{spoke.terrain.texte}</p>
+            <Paras texte={spoke.terrain.texte} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 720 }} />
             {spoke.terrain.lien && (
               <Link to={spoke.terrain.lien} style={{ fontSize: 14, color: c, fontWeight: 700, textDecoration: 'none' }}>Lire l'étude de cas →</Link>
             )}
@@ -793,7 +799,7 @@ export default function SpokePage() {
         <section style={{ padding: '64px 40px', background: '#fff', borderTop: '1px solid #E5E7EB' }}>
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{spoke.apres.titre}</h2>
-            <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>{spoke.apres.texte}</p>
+            <Paras texte={spoke.apres.texte} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 720 }} />
             <p style={{ margin: 0, fontSize: 14.5 }}>
               <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 700 }}>Outils IA sur mesure</Link>
               {' · '}

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Copy, Check, AlertTriangle } from 'lucide-react'
+import { Paras } from './Aere'
 
 /* Guide terrain : contenu propre à une page (src/data/spoke-guides/<slug>.js ou
    geo-guides/<slug>.js). Thèse, sections, tableau, cas pratique avec prompt prêt à
@@ -52,7 +53,9 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
   const sources = guide.sources?.length ? guide.sources : (sourcesProp || [])
   const c = color
   const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }
-  const pStyle = { fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 14px' }
+  // Paragraphes de 2 ou 3 phrases au plus, ligne de lecture limitée (mise en page aérée, 23/10/2026)
+  const pStyle = { fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 720 }
+  const rich = t => <RichText text={t} color={c} />
 
   return (
     <section id="guide" style={{ padding, background, scrollMarginTop: 96 }}>
@@ -64,16 +67,16 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
           {guide.h2}
         </h2>
         {intro && (
-          <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.8, margin: '0 0 18px' }}><RichText text={intro} color={c} /></p>
+          <Paras texte={intro} rich={rich} style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 720 }} />
         )}
         {guide.lead && (
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.75, margin: '0 0 40px', fontWeight: 500 }}>{guide.lead}</p>
+          <Paras texte={guide.lead} style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, margin: '0 0 40px', fontWeight: 500, maxWidth: 720 }} />
         )}
 
         {guide.sections?.map((s, i) => (
           <div key={i} style={{ marginBottom: 36 }}>
             <h3 style={h3Style}>{s.h3}</h3>
-            {s.paras?.map((p, j) => <p key={j} style={pStyle}><RichText text={p} color={c} /></p>)}
+            {s.paras?.map((p, j) => <Paras key={j} texte={p} rich={rich} style={pStyle} />)}
             {s.list?.length > 0 && (
               <ul style={{ margin: '4px 0 0', paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {s.list.map((item, j) => (
@@ -118,7 +121,7 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
         {guide.cas && (
           <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '28px 28px 24px', marginBottom: 44 }}>
             <h3 style={h3Style}>{guide.cas.h3}</h3>
-            {guide.cas.contexte && <p style={pStyle}>{guide.cas.contexte}</p>}
+            {guide.cas.contexte && <Paras texte={guide.cas.contexte} style={pStyle} />}
             {guide.cas.etapes?.length > 0 && (
               <ol style={{ margin: '0 0 18px', paddingLeft: 22, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 {guide.cas.etapes.map((e, i) => (
@@ -128,9 +131,12 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
             )}
             {guide.cas.prompt && <PromptBlock prompt={guide.cas.prompt} color={c} />}
             {guide.cas.resultat && (
-              <p style={{ ...pStyle, margin: '18px 0 0' }}>
-                <strong style={{ color: '#0A0A0A' }}>{guide.cas.resultatLabel || (/^Retour de mission/.test(guide.cas.h3 || '') ? 'Ce qui en ressort.' : 'Ce que vous obtenez.')} </strong>{guide.cas.resultat}
-              </p>
+              <>
+                <p style={{ ...pStyle, margin: '18px 0 6px', fontWeight: 700, color: '#0A0A0A' }}>
+                  {guide.cas.resultatLabel || (/^Retour de mission/.test(guide.cas.h3 || '') ? 'Ce qui en ressort.' : 'Ce que vous obtenez.')}
+                </p>
+                <Paras texte={guide.cas.resultat} style={{ ...pStyle, margin: 0 }} />
+              </>
             )}
             {guide.cas.lien?.href && (
               <p style={{ margin: '14px 0 0' }}>
@@ -147,12 +153,12 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
             <h3 style={h3Style}>Les pièges à connaître</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 16, marginTop: 8 }}>
               {guide.pieges.map((p, i) => (
-                <div key={i} style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 10, padding: '18px 20px' }}>
-                  <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 8 }}>
-                    <AlertTriangle size={16} color="#B45309" aria-hidden="true" style={{ flexShrink: 0, marginTop: 3 }} />
+                <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '18px 20px' }}>
+                  <div style={{ display: 'flex', gap: 9, alignItems: 'flex-start', marginBottom: 8 }}>
+                    <AlertTriangle size={16} strokeWidth={1.75} color={c} aria-hidden="true" style={{ flexShrink: 0, marginTop: 3 }} />
                     <strong style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, color: '#0A0A0A', lineHeight: 1.4 }}>{p.titre}</strong>
                   </div>
-                  <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{p.texte}</p>
+                  <Paras texte={p.texte} max={2} budget={300} style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.65, margin: 0 }} />
                 </div>
               ))}
             </div>
