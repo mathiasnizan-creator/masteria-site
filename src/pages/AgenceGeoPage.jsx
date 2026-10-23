@@ -11,6 +11,7 @@ import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import TerrainGuide from '../components/TerrainGuide'
+import { Accroche, Paras, Reperes, lignesEnReperes } from '../components/Aere'
 import { agenceGuidePromise } from '../data/terrain-guides'
 import { AGENCE_GEO_CITIES, getAgenceGeoCity } from '../data/agence-geo-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -417,18 +418,20 @@ export default function AgenceGeoPage() {
           </p>
 
           {/* GEO : réponse directe en gras (citable LLM) — accroche */}
+          {guide?.intro ? (
+            <Accroche sombre id="geo-summary" texte={guide.intro} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          ) : (
           <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {guide?.intro ? guide.intro : (
+            {(
               <>
                 {`Masteria est une agence IA qui intervient ${city.nameLoc} : conseil en stratégie IA et développement d'agents, d'outils et d'automatisations sur mesure, prolongés par la formation des équipes. L'équipe est basée à Lyon et se déplace ${city.nameLoc} en présentiel pour le cadrage et les passations, le reste de la mission se conduisant en distanciel. `}
                 <strong style={{ color: '#fff', fontWeight: 700 }}>Plus de 1 500 professionnels formés.</strong>
               </>
             )}
           </p>
+          )}
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            {city.heroSubtitle}
-          </p>
+          <Paras texte={city.heroSubtitle} max={2} style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 32px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -455,19 +458,9 @@ export default function AgenceGeoPage() {
             ))}
           </div>
 
-          {/* En bref — faits citables (GEO), carte sombre, <dl> sémantique */}
+          {/* En bref — faits citables (GEO), en repères */}
           {city.keyFacts && city.keyFacts.length > 0 && (
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-              <dl style={{ margin: 0 }}>
-                {city.keyFacts.map((fact, i) => (
-                  <div key={fact.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                    <dt style={{ flex: '0 0 150px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{fact.label}</dt>
-                    <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{fact.value}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
+            <Reperes sombre titre="En bref" items={lignesEnReperes(city.keyFacts)} colonnes={city.keyFacts.length === 4 ? 2 : 3} style={{ margin: 0, maxWidth: 1000 }} />
           )}
         </div>
       </section>

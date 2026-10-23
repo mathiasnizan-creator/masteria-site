@@ -4,7 +4,7 @@ import {
   Megaphone, Users, TrendingUp, Briefcase, Scale, Radio,
   Target, CalendarCheck, Search, Headphones, Server, GraduationCap,
   FileSpreadsheet, BadgeCheck, Wallet, MonitorSmartphone, Building2,
-  Check,
+  Check, UserCheck,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
@@ -17,7 +17,7 @@ import AvisGoogle from '../components/AvisGoogle'
 import ClaudeFactsBox from '../components/ClaudeFactsBox'
 import MissionsRecentes from '../components/MissionsRecentes'
 import { PressMention } from '../components/FounderNote'
-import { Paras, PointsCles, Reperes, lignesEnReperes, decouperPhrases } from '../components/Aere'
+import { Paras, PointsCles, Reperes, Rangees, lignesEnReperes, decouperPhrases, texteLong } from '../components/Aere'
 
 /* Métiers disposant d'une page hub /formation-ia-{slug} (source : App.jsx) — sert au maillage interne depuis les spokes */
 const METIER_HUB_SLUGS = ['marketing', 'ressources-humaines', 'commercial', 'finance', 'communication', 'management', 'assistante', 'seo', 'service-client', 'informatique', 'pedagogique', 'achats', 'transverse']
@@ -474,14 +474,18 @@ export default function SpokePage() {
                 {propre ? spoke.audienceIntro : <>Cette formation s'adresse à {equipeCible(spoke)}, avec un objectif : repartir avec des résultats concrets sur vos propres dossiers.</>}
               </p>
             ) : <div style={{ height: 28 }} />}
+            {texteLong(spoke.audience.map(x => x.desc)) ? (
+              <Rangees items={spoke.audience.map(x => ({ titre: x.title, texte: x.desc, icon: UserCheck }))} />
+            ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
               {spoke.audience.map((profile, i) => (
-                <div key={i} style={{ background: '#F9FAFB', borderRadius: 12, padding: 28, border: `2px solid ${cLight}`, borderLeftColor: c, borderLeftWidth: 4 }}>
+                <div key={i} style={{ background: '#F9FAFB', borderRadius: 12, padding: 28, border: '1px solid #E5E7EB' }}>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>{profile.title}</h3>
                   <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{profile.desc}</p>
                 </div>
               ))}
             </div>
+            )}
           </div>
         </section>
       )}
@@ -498,6 +502,9 @@ export default function SpokePage() {
                 {propre ? spoke.casUsageIntro : useCasesIntro}
               </p>
             ) : <div style={{ height: 28 }} />}
+            {texteLong(spoke.useCases.map(x => x.desc)) ? (
+              <Rangees items={spoke.useCases.map(x => ({ titre: x.title, texte: x.desc }))} numeros={false} />
+            ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20 }}>
               {spoke.useCases.map((uc, i) => (
                 <div key={i} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
@@ -507,6 +514,7 @@ export default function SpokePage() {
                 </div>
               ))}
             </div>
+            )}
           </div>
         </section>
       )}

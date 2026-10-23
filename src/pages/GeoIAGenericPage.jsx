@@ -10,6 +10,7 @@ import OfficialSources from '../components/OfficialSources'
 import CaseStudyCards from '../components/CaseStudyCards'
 import FounderNote from '../components/FounderNote'
 import TerrainGuide from '../components/TerrainGuide'
+import { Paras, PointsCles, decouperPhrases } from '../components/Aere'
 import { geoGuidePromise } from '../data/terrain-guides'
 import ToolLogo from '../components/ToolLogo'
 import { FadeIn } from '../components/components'
@@ -57,7 +58,7 @@ function FaqItem({ q, a }) {
       </button>
       {/* Réponse toujours dans le DOM (repli CSS) : citable par les moteurs génératifs (GEO) */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, marginTop: -4 }}>{a}</p>
+        <div style={{ paddingBottom: 18, marginTop: -4 }}><Paras texte={a} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} /></div>
       </div>
     </div>
   )
@@ -87,6 +88,8 @@ export default function GeoIAGenericPage() {
 
   const isCountry = !!city.isCountry
   const isFrance = city.countryCode === 'FR'
+  // Réponse directe découpée en phrases (accroche + puces)
+  const resumePhrases = propre && typeof guide?.resume === 'string' ? decouperPhrases(guide.resume) : null
   // Surcharges par ville (geo-data.js) : permet de viser la requête longue
   // « formation intelligence artificielle {ville} » sur les villes stratégiques.
   const h1 = city.h1Override || `Formation IA ${city.nameLoc} — ChatGPT, Claude et plus de 100 programmes par métier`
@@ -305,7 +308,7 @@ export default function GeoIAGenericPage() {
     <section key={b.id} id={b.id} style={{ padding: isMobile ? '48px 20px' : '64px 32px', background: k % 2 ? '#fff' : '#F9FAFB', borderTop: '1px solid #E5E7EB', scrollMarginTop: 96 }}>
       <div style={{ maxWidth: 860, margin: '0 auto' }}>
         <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 21 : 27, fontWeight: 900, color: '#0A0A0A', marginBottom: 14 }}>{b.titre}</h2>
-        {(b.paras || []).map((t, i) => <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>{t}</p>)}
+        {(b.paras || []).map((t, i) => <Paras key={i} texte={t} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 720 }} />)}
         {b.liens?.length > 0 && (
           <div style={{ display: 'flex', gap: 18, flexWrap: 'wrap', marginTop: 8 }}>
             {b.liens.map(l => (
@@ -358,26 +361,29 @@ export default function GeoIAGenericPage() {
             Formation IA {city.nameLoc}{propre ? ' · ' : ' — '}Certifié Qualiopi
           </div>
 
-          <p id="geo-summary" style={{ fontSize: 16, color: '#374151', lineHeight: 1.7, marginBottom: 20, maxWidth: 720, fontWeight: 500 }}>
-            {propre && guide.resume ? guide.resume : (city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. ${isFrance ? "Certifié Qualiopi, finançable par votre OPCO selon votre branche." : 'Certifié Qualiopi en France ; hors de France, la formation relève du budget formation de votre entreprise.'} Devis personnalisé sous 24 h.`)}
-          </p>
-
           <h1 style={{
             fontFamily: 'Nunito, sans-serif',
             fontSize: isMobile ? 26 : 'clamp(28px, 3.5vw, 44px)',
             fontWeight: 900, letterSpacing: '-0.02em',
-            color: '#0A0A0A', lineHeight: 1.15, marginBottom: 12,
+            color: '#0A0A0A', lineHeight: 1.15, marginBottom: 20,
           }}>
             {h1}
           </h1>
+
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces à pictos */}
+          <p id="geo-summary" style={{ fontSize: isMobile ? 17 : 19, color: '#1F2937', lineHeight: 1.6, marginBottom: 16, maxWidth: 720, fontWeight: 500 }}>
+            {resumePhrases ? resumePhrases[0] : (city.geoSummary || `Formation intelligence artificielle ${city.nameLoc} pour les entreprises. Masteria forme vos équipes à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI, sur 24 métiers. ${isFrance ? "Certifié Qualiopi, finançable par votre OPCO selon votre branche." : 'Certifié Qualiopi en France ; hors de France, la formation relève du budget formation de votre entreprise.'} Devis personnalisé sous 24 h.`)}
+          </p>
 
           {/* Byline E-E-A-T : auteur identifié + fraîcheur visible */}
           <p style={{ fontSize: 13.5, color: '#6B7280', margin: '0 0 20px' }}>
             Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {modifiedLabel}
           </p>
 
-          {guide?.intro && (
-            <p style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 720 }}>{guide.intro}</p>
+          {resumePhrases && <PointsCles phrases={resumePhrases.slice(1)} style={{ margin: '0 0 28px' }} />}
+          {/* Sans guide terrain, l'intro reste ici, en paragraphes courts */}
+          {guide?.intro && !guide?.guide && (
+            <Paras texte={guide.intro} max={2} style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 720 }} />
           )}
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
@@ -534,7 +540,7 @@ export default function GeoIAGenericPage() {
       )}
 
       {/* ── GUIDE TERRAIN : contenu propre à la ville ── */}
-      <TerrainGuide guide={guide?.guide} sources={guide?.sources} color="#2563EB" background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
+      <TerrainGuide guide={guide?.guide} intro={guide?.guide ? guide.intro : undefined} sources={guide?.sources} color="#2563EB" background="#FAFAF7" padding={isMobile ? '48px 20px' : '72px 32px'} />
 
       {/* ── INDUSTRIES & TISSU LOCAL ── (masqué en mode propre : le guide terrain traite le tissu local) */}
       {!propre && city.industriesDeep && city.industriesDeep.length > 0 && (
@@ -707,7 +713,7 @@ export default function GeoIAGenericPage() {
         <section id="programme" style={{ padding: isMobile ? '48px 20px' : '72px 32px', background: '#F5F3EE', scrollMarginTop: 96 }}>
           <div style={{ maxWidth: 900, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: isMobile ? 22 : 30, fontWeight: 900, color: '#0A0A0A', marginBottom: 12 }}>{guide.programme.titre}</h2>
-            {guide.programme.intro && <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 20px' }}>{guide.programme.intro}</p>}
+            {guide.programme.intro && <Paras texte={guide.programme.intro} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 20px', maxWidth: 720 }} />}
             <ul style={{ margin: 0, paddingLeft: 20, display: 'grid', gap: 10, fontSize: 15, color: '#374151', lineHeight: 1.65 }}>
               {(guide.programme.items || []).map(it => <li key={it}>{it}</li>)}
             </ul>

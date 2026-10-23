@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Copy, Check, AlertTriangle } from 'lucide-react'
-import { Paras } from './Aere'
+import { Paras, Rangees } from './Aere'
 
 /* Guide terrain : contenu propre à une page (src/data/spoke-guides/<slug>.js ou
    geo-guides/<slug>.js). Thèse, sections, tableau, cas pratique avec prompt prêt à
@@ -151,17 +151,8 @@ export default function TerrainGuide({ guide, intro, sources: sourcesProp, color
         {guide.pieges?.length > 0 && (
           <div>
             <h3 style={h3Style}>Les pièges à connaître</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 16, marginTop: 8 }}>
-              {guide.pieges.map((p, i) => (
-                <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '18px 20px' }}>
-                  <div style={{ display: 'flex', gap: 9, alignItems: 'flex-start', marginBottom: 8 }}>
-                    <AlertTriangle size={16} strokeWidth={1.75} color={c} aria-hidden="true" style={{ flexShrink: 0, marginTop: 3 }} />
-                    <strong style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, color: '#0A0A0A', lineHeight: 1.4 }}>{p.titre}</strong>
-                  </div>
-                  <Paras texte={p.texte} max={2} budget={300} style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.65, margin: 0 }} />
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par piège, en pleine largeur (plus de cartes côte à côte) */}
+            <Rangees items={guide.pieges.map(p => ({ titre: p.titre, texte: p.texte, icon: AlertTriangle }))} niveau="h4" style={{ marginTop: 8 }} />
           </div>
         )}
 

@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import CadrageLink from '../components/CadrageLink'
 import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import TerrainGuide from '../components/TerrainGuide'
+import { Accroche, Paras, Reperes, lignesEnReperes } from '../components/Aere'
 import { solutionGuidePromise } from '../data/terrain-guides'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
@@ -448,9 +449,7 @@ export default function SolutionIAPage() {
           </h1>
 
           {/* GEO : réponse directe citable — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>{solution.directAnswer}</strong>
-          </p>
+          <Accroche sombre texte={solution.directAnswer} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
 
           {guide && (
             <>
@@ -458,7 +457,7 @@ export default function SolutionIAPage() {
               <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 18px' }}>
                 Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>{propre ? <> · revu le {dateFr(MODIFIED)}</> : <>, fondateur de Masteria · Mis à jour en {modifiedLabel}</>}
               </p>
-              {guide.intro && <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 30px', maxWidth: 700 }}>{guide.intro}</p>}
+              {guide.intro && <Paras texte={guide.intro} max={2} style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 30px', maxWidth: 700 }} />}
             </>
           )}
 
@@ -487,26 +486,13 @@ export default function SolutionIAPage() {
             ))}
           </div>
 
-          {/* Faits-clés citables (GEO) : budget, délai, livrable, propriété — carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {(propre && guide.hero?.enBref ? guide.hero.enBref.map((f, k) => ({ icon: [Coins, Clock, FileCode2, KeyRound][k % 4], ...f })) : [
-                { icon: Coins, label: 'Budget indicatif', value: solution.budgetRange },
-                { icon: Clock, label: 'Mise en route', value: solution.timeline },
-                { icon: FileCode2, label: 'Livrable', value: 'Code source livré et documenté' },
-                { icon: KeyRound, label: 'Propriété', value: 'Vous, le client' },
-              ]).map(({ icon: Icon, label, value }, i) => (
-                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'baseline', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 150px', display: 'flex', alignItems: 'center', gap: 8, fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>
-                    <Icon size={15} strokeWidth={2.2} style={{ color: '#60A5FA', flexShrink: 0 }} aria-hidden="true" />
-                    {label}
-                  </dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* Faits-clés citables (GEO) : budget, délai, livrable, propriété, en repères */}
+          <Reperes sombre titre="En bref" colonnes={2} style={{ margin: 0, maxWidth: 900 }} items={(propre && guide.hero?.enBref ? guide.hero.enBref.map((f, k) => ({ icon: [Coins, Clock, FileCode2, KeyRound][k % 4], ...f })) : [
+            { icon: Coins, label: 'Budget indicatif', value: solution.budgetRange },
+            { icon: Clock, label: 'Mise en route', value: solution.timeline },
+            { icon: FileCode2, label: 'Livrable', value: 'Code source livré et documenté' },
+            { icon: KeyRound, label: 'Propriété', value: 'Vous, le client' },
+          ]).map(({ icon, label, value }) => ({ icon, ...lignesEnReperes([{ label, value }])[0] }))} />
         </div>
       </section>
 

@@ -75,3 +75,32 @@ export function scinderValeur(valeur) {
   return { tete: m[1], detail }
 }
 
+
+/* « Tête : élément, élément, élément. » → { tete: 'Tête :', items: [...] } quand la phrase
+   énumère au moins trois éléments courts après un deux-points ; sinon null. Mots inchangés. */
+export function scinderEnumeration(phrase) {
+  if (typeof phrase !== 'string') return null
+  const i = phrase.indexOf(' : ')
+  if (i < 25) return null
+  const queue = phrase.slice(i + 3).replace(/[.!]\s*$/, '')
+  const items = []
+  let prof = 0, debut = 0
+  for (let k = 0; k < queue.length; k++) {
+    const ch = queue[k]
+    if (ch === '(' || ch === '{') prof++
+    else if (ch === ')' || ch === '}') prof--
+    else if (ch === ',' && !prof && queue[k + 1] === ' ') { items.push(queue.slice(debut, k).trim()); debut = k + 2 }
+    else if (ch === ';' && !prof) return null
+  }
+  items.push(queue.slice(debut).trim())
+  if (items.length < 3 || items.some(x => !x || x.length > 110)) return null
+  return { tete: phrase.slice(0, i) + ' :', items: items.map(x => x.charAt(0).toUpperCase() + x.slice(1)) }
+}
+
+/* Vrai quand des cartes portent de vrais paragraphes (moyenne au-delà de `seuil` caractères) :
+   on les rend alors en rangées verticales plutôt qu'en cartes côte à côte. */
+export function texteLong(textes, seuil = 120) {
+  const l = (textes || []).filter(t => typeof t === 'string')
+  if (!l.length) return false
+  return l.reduce((n, t) => n + t.length, 0) / l.length > seuil
+}

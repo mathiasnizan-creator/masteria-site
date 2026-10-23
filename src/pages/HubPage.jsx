@@ -19,7 +19,7 @@ import { PressMention } from '../components/FounderNote'
 import AvisGoogle from '../components/AvisGoogle'
 import ClaudeFactsBox from '../components/ClaudeFactsBox'
 import MissionsRecentes from '../components/MissionsRecentes'
-import { Paras, Reperes } from '../components/Aere'
+import { Paras, Reperes, Rangees } from '../components/Aere'
 
 const METIER_ICONS = {
   marketing:             Megaphone,
@@ -316,7 +316,7 @@ export default function HubPage() {
       {/* POURQUOI SE FORMER */}
       {why.length > 0 && (
         <section style={{ padding: '80px 40px', background: '#fff' }}>
-          <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
             <h2 style={{
               fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
               fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
@@ -330,33 +330,8 @@ export default function HubPage() {
                 Des bénéfices concrets, mesurables dès le retour en poste.
               </p>
             )}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-              gap: 28,
-            }}>
-              {why.map((item, i) => (
-                <div key={i} style={{
-                  background: '#F9FAFB', borderRadius: 12, padding: '28px 28px 32px',
-                  borderLeft: `4px solid ${hub.color}`,
-                }}>
-                  <div style={{
-                    width: 36, height: 36, borderRadius: 8, background: hub.colorLight,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: 16,
-                  }}>
-                    <span style={{ fontSize: 16, fontWeight: 900, color: hub.color }}>{i + 1}</span>
-                  </div>
-                  <h3 style={{
-                    fontSize: 15, fontWeight: 800, color: '#0A0A0A',
-                    fontFamily: 'Nunito, sans-serif', marginBottom: 10, lineHeight: 1.35,
-                  }}>
-                    {item.title}
-                  </h3>
-                  <Paras texte={item.body} max={2} budget={300} style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+            <Rangees items={why.map(item => ({ titre: item.title, texte: item.body }))} />
           </div>
         </section>
       )}

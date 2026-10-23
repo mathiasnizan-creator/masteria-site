@@ -11,6 +11,7 @@ import CadrageLink from '../components/CadrageLink'
 import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import OfficialSources from '../components/OfficialSources'
 import TerrainGuide from '../components/TerrainGuide'
+import { Accroche, Paras } from '../components/Aere'
 import { secteurGuidePromise } from '../data/terrain-guides'
 import { getSecteur, SECTEUR_DATE_PUBLISHED, SECTEUR_DATE_MODIFIED } from '../data/secteur-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -272,9 +273,7 @@ export default function SecteurIAPage() {
           })()}
 
           {/* GEO : réponse directe citable — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>{secteur.directAnswer}</strong>
-          </p>
+          <Accroche sombre texte={secteur.directAnswer} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
 
           {guide ? (
             <>
@@ -282,7 +281,7 @@ export default function SecteurIAPage() {
               <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '-8px 0 18px' }}>
                 Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>{propre ? <> · revu le {dateFr(guide.dateModified)}</> : <>, fondateur de Masteria · Mis à jour en {MOIS[Number(guide.dateModified.slice(5, 7)) - 1]} {guide.dateModified.slice(0, 4)}</>}
               </p>
-              <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>{guide.intro}</p>
+              <Paras texte={guide.intro} max={2} style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 32px', maxWidth: 680 }} />
             </>
           ) : (
             <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>

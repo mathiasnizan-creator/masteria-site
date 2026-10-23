@@ -18,9 +18,9 @@ import {
 // Pictos nommés dans les données (les fichiers de data n'importent pas lucide)
 const ICONES = { Clock, UsersRound, Wallet, BadgeCheck, UserCheck, Layers, ClipboardList, MapPin, GraduationCap, FileCheck2, CalendarDays, ShieldCheck, Languages, Target, Check, Building2, Bot, Scale, Euro, CreditCard }
 
-import { decouperPhrases, paragraphes, scinderValeur } from './aere-texte.js'
+import { decouperPhrases, paragraphes, scinderValeur, scinderEnumeration, texteLong } from './aere-texte.js'
 
-export { decouperPhrases, paragraphes, scinderValeur }
+export { decouperPhrases, paragraphes, scinderValeur, scinderEnumeration, texteLong }
 export const ACCENT = '#2563EB'
 
 /* Texte long → plusieurs <p> courts. `rich` rend un morceau (liens maison), sinon texte brut.
@@ -128,6 +128,68 @@ export function PointsCles({ phrases, sombre = false, rich, style, taille = 15.5
         )
       })}
     </ul>
+  )
+}
+
+/* ── Accroche de haut de page ─────────────────────────────────────
+   Réponse directe d'un héros : 1re phrase en accroche (l'énumération qui la termine passe
+   en liste), phrases suivantes en puces à pictos. `style` : style du paragraphe d'accroche. */
+export function Accroche({ texte, sombre = false, rich, id, style, styleListe, maxPuces = 6 }) {
+  if (!texte) return null
+  if (typeof texte !== 'string') return <p id={id} style={style}>{texte}</p>
+  const phrases = decouperPhrases(texte)
+  const enumeration = scinderEnumeration(phrases[0])
+  const r = t => (rich ? rich(t) : t)
+  const cIcone = sombre ? '#60A5FA' : ACCENT
+  const { marginBottom, margin, ...styleP } = style || {}
+  const bas = margin ?? `0 0 ${marginBottom ?? 24}px`
+  return (
+    <>
+      <p id={id} style={{ ...styleP, margin: enumeration ? '0 0 14px' : bas }}>{r(enumeration ? enumeration.tete : phrases[0])}</p>
+      {enumeration && (
+        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px', maxWidth: 760, ...styleListe }}>
+          {enumeration.items.map((it, i) => (
+            <li key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: sombre ? '#E2E8F0' : '#1F2937' }}>
+              <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: cIcone, flexShrink: 0, marginTop: 3 }} />
+              <span>{r(it)}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      <PointsCles phrases={phrases.slice(1, 1 + maxPuces)} sombre={sombre} rich={rich} style={{ margin: '0 0 24px' }} />
+      {phrases.length > 1 + maxPuces && <Paras texte={phrases.slice(1 + maxPuces).join(' ')} rich={rich} style={{ fontSize: 15.5, lineHeight: 1.7, color: sombre ? '#CBD5E1' : '#374151', margin: '0 0 24px', maxWidth: 720 }} />}
+    </>
+  )
+}
+
+/* ── Rangées : liste verticale pleine largeur ─────────────────────
+   Remplace les cartes de texte posées côte à côte (retour de Mathias, 23/10/2026) :
+   numéro (ou picto), titre, puis paragraphes courts, une rangée par point. */
+export function Rangees({ items, sombre = false, rich, numeros = true, style, maxTexte = 720, niveau = 'h3' }) {
+  const Titre = niveau
+  const liste = (items || []).filter(Boolean)
+  if (!liste.length) return null
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', chiffre: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', chiffre: ACCENT }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
+      {liste.map(({ titre, texte, icon: Icon }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{
+            flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.chiffre,
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, marginTop: -2,
+          }}>
+            {Icon ? <Icon size={17} strokeWidth={1.75} /> : numeros ? i + 1 : <Check size={17} strokeWidth={2} />}
+          </span>
+          <div style={{ minWidth: 0, maxWidth: maxTexte }}>
+            {titre && <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35 }}>{typeof titre === 'string' ? titre.replace(/\s*\n\s*/g, ' ') : titre}</Titre>}
+            <Paras texte={texte} rich={rich} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
