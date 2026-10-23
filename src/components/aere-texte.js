@@ -69,10 +69,24 @@ export function scinderValeur(valeur) {
   if (typeof valeur !== 'string') return { tete: null, detail: valeur }
   const v = valeur.trim()
   if (v.length <= 48) return { tete: v, detail: null }
-  const m = v.match(/^(.{6,60}?)(?:\s*[,;:]\s+|\s+·\s+|\s+:\s+)(.{18,})$/s)
-  if (!m || /\d$/.test(m[1]) && /^\d/.test(m[2])) return { tete: null, detail: v }
-  const detail = m[2].charAt(0).toUpperCase() + m[2].slice(1)
-  return { tete: m[1], detail }
+  // Premier séparateur (virgule, point-virgule, deux-points, point médian) hors parenthèses, entre 6 et 60 caractères
+  let prof = 0
+  for (let i = 0; i < Math.min(v.length, 61); i++) {
+    const ch = v[i]
+    if (ch === '(' || ch === '[' || ch === '{') prof++
+    else if (ch === ')' || ch === ']' || ch === '}') prof = Math.max(0, prof - 1)
+    if (prof || i < 6) continue
+    let fin = -1
+    if ((ch === ',' || ch === ';') && v[i + 1] === ' ') fin = i + 2
+    else if ((ch === ':' || ch === '·') && v[i - 1] === ' ' && v[i + 1] === ' ') fin = i + 2
+    if (fin < 0) continue
+    const tete = v.slice(0, ch === ':' || ch === '·' ? i - 1 : i).trim()
+    const reste = v.slice(fin).trim()
+    if (reste.length < 18) return { tete: null, detail: v }
+    if (/\d$/.test(tete) && /^\d/.test(reste)) continue
+    return { tete, detail: reste.charAt(0).toUpperCase() + reste.slice(1) }
+  }
+  return { tete: null, detail: v }
 }
 
 

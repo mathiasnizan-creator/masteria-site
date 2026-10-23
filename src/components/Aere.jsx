@@ -100,7 +100,9 @@ export function iconePourPhrase(phrase = '') {
   let meilleur = null, pos = Infinity
   for (const [re, Icon] of REGLES_PHRASE) {
     const m = t.match(re)
-    if (m && m.index < pos) { pos = m.index; meilleur = Icon }
+    // Un prix l'emporte sur un indice placé jusqu'à 60 caractères plus tôt
+    const p = m ? m.index - (Icon === Euro ? 60 : 0) : Infinity
+    if (p < pos) { pos = p; meilleur = Icon }
   }
   return meilleur || Check
 }
