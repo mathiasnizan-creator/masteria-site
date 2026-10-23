@@ -497,7 +497,7 @@ function ProgItem({ item, li }) {
         <Check size={16} strokeWidth={2.5} style={{ color: C, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
         <span>
           <strong style={{ color: '#111827', fontWeight: 700 }}>{item.t}</strong>
-          {item.d && <span style={{ display: 'block', color: '#4B5563', fontSize: 14, lineHeight: 1.65, marginTop: 2 }}>{item.d}</span>}
+          {item.d && <Paras as="span" texte={item.d} max={2} budget={300} style={{ display: 'block', color: '#4B5563', fontSize: 14, lineHeight: 1.65, marginTop: 2 }} />}
         </span>
       </li>
     )

@@ -728,9 +728,7 @@ export default function HubPage() {
                 <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 32px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.01em', marginBottom: 10 }}>
                   Formation {geoTool.shortName} dans votre ville
                 </h2>
-                <p style={{ fontSize: 15, color: '#6B7280', maxWidth: 560 }}>
-                  {propre && hub.villesIntro ? hub.villesIntro : "Une page par ville où nous intervenons le plus souvent ; ailleurs, en présentiel chez vous ou à distance. En France, finançable par votre OPCO selon votre branche ; à Genève et Bruxelles, sur devis en euros HT."}
-                </p>
+                <Paras texte={propre && hub.villesIntro ? hub.villesIntro : "Une page par ville où nous intervenons le plus souvent ; ailleurs, en présentiel chez vous ou à distance. En France, finançable par votre OPCO selon votre branche ; à Genève et Bruxelles, sur devis en euros HT."} max={2} style={{ fontSize: 15, color: '#6B7280', maxWidth: 560, margin: '0 0 14px' }} />
               </div>
               <nav aria-label="Formation par ville" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(190px, 1fr))', gap: 12 }}>
                 {GEO_CITIES.filter(city => geoPageExists(geoTool.slug, city.slug)).map(city => (
@@ -781,9 +779,7 @@ export default function HubPage() {
           <h2 style={{ fontSize: 'clamp(20px, 2.6vw, 30px)', fontWeight: 800, fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A' }}>
             Formations sur les autres outils IA
           </h2>
-          <p style={{ color: '#6B7280', fontSize: 15.5, marginBottom: 28, maxWidth: 640 }}>
-            {propre && hub.autresOutilsIntro ? hub.autresOutilsIntro : 'Vos équipes utilisent plusieurs assistants ? Découvrez nos autres parcours, ou comparez les outils avant de choisir.'}
-          </p>
+          <Paras texte={propre && hub.autresOutilsIntro ? hub.autresOutilsIntro : 'Vos équipes utilisent plusieurs assistants ? Découvrez nos autres parcours, ou comparez les outils avant de choisir.'} max={2} style={{ color: '#6B7280', fontSize: 15.5, margin: '0 0 28px', maxWidth: 640 }} />
           <nav aria-label="Formations sur les autres outils" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14 }}>
             {HUBS.filter(h => ['chatgpt', 'copilot', 'gemini', 'claude', 'mistral'].includes(h.id) && h.slug !== hub.slug).map(h => {
               const short = (h.tool || '').replace(/\s*\(.*?\)\s*/g, '').trim()

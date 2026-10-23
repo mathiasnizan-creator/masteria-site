@@ -1,4 +1,5 @@
 import { CLAUDE_FAITS } from '../data/claude-facts'
+import { Paras } from './Aere'
 
 /*
  * Encadré « Claude au <date> » : modèles, contexte, offres et données, avec les sources
@@ -37,7 +38,7 @@ export default function ClaudeFactsBox({ color = '#d97706', bg = '#fff', compact
               <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: INK, fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
               <dd style={{ margin: 0, flex: 1, minWidth: 220 }}>
                 {valeurs.length === 1
-                  ? <p style={{ margin: 0, fontSize: 14.5, color: TEXT, lineHeight: 1.65 }}>{valeurs[0]}</p>
+                  ? <Paras texte={valeurs[0]} max={2} style={{ margin: 0, fontSize: 14.5, color: TEXT, lineHeight: 1.65 }} />
                   : (
                     <ul style={{ margin: 0, paddingLeft: 18, fontSize: 14.5, color: TEXT, lineHeight: 1.65 }}>
                       {valeurs.map(v => <li key={v}>{v}</li>)}

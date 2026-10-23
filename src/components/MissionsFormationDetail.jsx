@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Paras } from './Aere'
 import { Quote } from 'lucide-react'
 import { MISSIONS, RETOURS } from '../data/missions-formation'
 
@@ -33,8 +34,11 @@ export default function MissionsFormationDetail({ pad = 'clamp(56px, 8vw, 96px) 
         <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3.2vw, 36px)', fontWeight: 800, color: INK, margin: '0 0 14px', lineHeight: 1.2 }}>
           {MISSIONS.length} formations menées ces derniers mois, de la demande au livrable
         </h2>
+        <p style={{ fontSize: 16, color: TEXT, lineHeight: 1.75, margin: '0 0 14px', maxWidth: 820 }}>
+          Plus courtes que les accompagnements ci-dessus, ces missions montrent comment une formation se construit sur les documents du client. Chaque fiche vient du dossier de mission : la demande, le programme suivi, les livrables travaillés en séance.
+        </p>
         <p style={{ fontSize: 16, color: TEXT, lineHeight: 1.75, margin: '0 0 36px', maxWidth: 820 }}>
-          Plus courtes que les accompagnements ci-dessus, ces missions montrent comment une formation se construit sur les documents du client. Chaque fiche vient du dossier de mission : la demande, le programme suivi, les livrables travaillés en séance. Les retours cités sont copiés des questionnaires de fin de formation ou des messages reçus, sans note.
+          Les retours cités sont copiés des questionnaires de fin de formation ou des messages reçus, sans note.
         </p>
         <div style={{ display: 'grid', gap: 22 }}>
           {MISSIONS.map(m => {
@@ -44,7 +48,7 @@ export default function MissionsFormationDetail({ pad = 'clamp(56px, 8vw, 96px) 
                 <div style={{ fontSize: 12.5, fontWeight: 800, color: BLUE, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{m.secteur} · {m.outils.join(', ')}</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2.2vw, 22px)', fontWeight: 800, color: INK, margin: '0 0 6px', lineHeight: 1.3 }}>{m.titre}</h3>
                 <p style={{ fontSize: 14, color: MUTED, margin: '0 0 16px', lineHeight: 1.6 }}>{m.qui} · {m.format} · {m.date}</p>
-                <p style={{ fontSize: 15.5, color: TEXT, lineHeight: 1.75, margin: '0 0 14px' }}>{m.contexte}</p>
+                <Paras texte={m.contexte} max={2} style={{ fontSize: 15.5, color: TEXT, lineHeight: 1.75, margin: '0 0 14px', maxWidth: 760 }} />
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18 }}>
                   {m.programme?.length > 0 && (
                     <div>

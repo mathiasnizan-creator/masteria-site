@@ -66,6 +66,7 @@ const Linkedin = ({ size = 24, color = 'currentColor', ...props }) => (
   </svg>
 );
 import { MasteriaHeader, MasteriaFooter, FadeIn, PrimaryBtn, SecBtn, TrainingCard } from './components/components';
+import { Rangees } from './components/Aere';
 import { ToolLogo } from './components/ToolLogo';
 import { useIsMobile } from './hooks/useMediaQuery';
 import { FAQSection, FormatTabs, SidebarFormatPicker, FAQ_GENERAL, FAQ_FORMATIONS } from './components/screens2';
@@ -465,11 +466,7 @@ function AboutScreen() {
             lineHeight: 1.1, letterSpacing: '-0.03em',
             marginBottom: 22, color: '#0A0A0A',
           }}>
-            Cabinet de conseil <span style={{
-              background: 'linear-gradient(135deg, #2563EB 0%, #7C3AED 100%)',
-              WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}>et centre de formation</span><br />dédié à l'IA en entreprise
+            Cabinet de conseil <span style={{ color: '#2563EB' }}>et centre de formation</span><br />dédié à l'IA en entreprise
           </h1>
           <p style={{ fontSize: 'clamp(15px, 1.7vw, 18px)', color: '#4B5563', lineHeight: 1.7, maxWidth: 640, margin: '0 auto' }}>
             Fondé en 2022 à Lyon, Masteria part d'une conviction de son créateur, Mathias Nizan : l'IA rend du temps aux équipes, et ce temps doit revenir à ce qui reste humain. Le cabinet audite, conseille, construit des outils sur mesure, puis forme ceux qui les utilisent au quotidien.
@@ -490,81 +487,13 @@ function AboutScreen() {
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
-            <FadeIn>
-              <div style={{
-                background: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
-                border: '1px solid #BFDBFE', borderRadius: 18, padding: 32, height: '100%',
-              }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: 12,
-                  background: '#2563EB', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 18,
-                }}>
-                  <Compass size={24} color="#fff" strokeWidth={2} />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Cabinet de conseil IA</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  <Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link>, gouvernance, cadre d'usage : nous aidons PME, ETI et grands groupes à choisir leurs chantiers, à les classer et à décider sur des faits. Les missions de conseil sont chiffrées au forfait après le cadrage du périmètre.
-                </p>
-                <Link to="/conseil-intelligence-artificielle" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 6,
-                  color: '#2563EB', textDecoration: 'none', fontSize: 14, fontWeight: 700,
-                }}>
-                  Découvrir nos missions de conseil <ArrowRight size={14} />
-                </Link>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={60}>
-              <div style={{
-                background: 'linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%)',
-                border: '1px solid #DDD6FE', borderRadius: 18, padding: 32, height: '100%',
-              }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: 12,
-                  background: '#7C3AED', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 18,
-                }}>
-                  <Rocket size={24} color="#fff" strokeWidth={2} />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Outils et agents sur mesure</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  Assistants qui puisent dans vos documents, agents branchés sur votre CRM ou votre ERP, liaisons automatiques entre logiciels : une petite équipe de développeurs les construit à partir de ce qui tourne déjà chez vous, et le code vous revient.
-                </p>
-                <Link to="/agence-developpement-ia" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 6,
-                  color: '#7C3AED', textDecoration: 'none', fontSize: 14, fontWeight: 700,
-                }}>
-                  Voir le développement sur mesure <ArrowRight size={14} />
-                </Link>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={120}>
-              <div style={{
-                background: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
-                border: '1px solid #A7F3D0', borderRadius: 18, padding: 32, height: '100%',
-              }}>
-                <div style={{
-                  width: 52, height: 52, borderRadius: 12,
-                  background: '#059669', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 18,
-                }}>
-                  <GraduationCap size={24} color="#fff" strokeWidth={2} />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>Centre de formation Qualiopi</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, marginBottom: 18 }}>
-                  Un catalogue de plus de cent programmes, par métier et par outil (Claude, ChatGPT, Copilot, Gemini, Mistral), chaque journée de session démarrant à 1 980 € HT, que vous formiez une équipe en intra ou une seule personne. La formation peut être financée par votre OPCO, dans la limite de ses fonds et selon ses critères.
-                </p>
-                <Link to="/formation-intelligence-artificielle" style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 6,
-                  color: '#059669', textDecoration: 'none', fontSize: 14, fontWeight: 700,
-                }}>
-                  Voir les formations <ArrowRight size={14} />
-                </Link>
-              </div>
-            </FadeIn>
+          {/* Une rangée par métier, en pleine largeur (plus de cartes côte à côte) */}
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <Rangees items={[
+              { icon: Compass, titre: 'Cabinet de conseil IA', lien: { to: '/conseil-intelligence-artificielle', label: 'Découvrir nos missions de conseil' }, texte: <><Link to="/audit-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>Audit IA</Link>, <Link to="/conseil-strategie-ia" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none' }}>conseil stratégie IA</Link>, gouvernance, cadre d'usage : nous aidons PME, ETI et grands groupes à choisir leurs chantiers, à les classer et à décider sur des faits. Les missions de conseil sont chiffrées au forfait après le cadrage du périmètre.</> },
+              { icon: Rocket, titre: 'Outils et agents sur mesure', lien: { to: '/agence-developpement-ia', label: 'Voir le développement sur mesure' }, texte: "Assistants qui puisent dans vos documents, agents branchés sur votre CRM ou votre ERP, liaisons automatiques entre logiciels : une petite équipe de développeurs les construit à partir de ce qui tourne déjà chez vous, et le code vous revient." },
+              { icon: GraduationCap, titre: 'Centre de formation Qualiopi', lien: { to: '/formation-intelligence-artificielle', label: 'Voir les formations' }, texte: "Un catalogue de plus de cent programmes, par métier et par outil (Claude, ChatGPT, Copilot, Gemini, Mistral), chaque journée de session démarrant à 1 980 € HT, que vous formiez une équipe en intra ou une seule personne. La formation peut être financée par votre OPCO, dans la limite de ses fonds et selon ses critères." },
+            ]} />
           </div>
         </div>
       </section>
@@ -621,8 +550,8 @@ function AboutScreen() {
       <section style={{ padding: '80px 32px', background: '#fff' }}>
         <div style={{
           maxWidth: 1000, margin: '0 auto',
-          background: 'linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%)',
-          borderRadius: 20, border: '1px solid #A7F3D0',
+          background: '#F9FAFB',
+          borderRadius: 20, border: '1px solid #E5E7EB',
           padding: 'clamp(24px, 4vw, 40px)',
           display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center',
           gap: 'clamp(20px, 4vw, 40px)',
@@ -635,14 +564,17 @@ function AboutScreen() {
             style={{ height: 90, width: 'auto', flexShrink: 0 }}
           />
           <div style={{ maxWidth: 520 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#059669', marginBottom: 8 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 8 }}>
               Organisme certifié
             </div>
             <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2vw, 22px)', fontWeight: 800, color: '#0A0A0A', margin: 0, marginBottom: 8, letterSpacing: '-0.01em' }}>
               Une certification Qualiopi pour nos actions de formation
             </h3>
+            <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.65, margin: '0 0 10px' }}>
+              La certification porte sur l'organisme et sur ses formations. Grâce à elle, votre OPCO peut instruire une demande de prise en charge, puis l'accepter ou non selon ses propres règles.
+            </p>
             <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>
-              La certification porte sur l'organisme et sur ses formations. Grâce à elle, votre OPCO peut instruire une demande de prise en charge, puis l'accepter ou non selon ses propres règles. Les missions de conseil et de développement n'en font pas partie, et ne sont donc pas finançables par votre OPCO. Tout le détail se lit sur la page <Link to="/formation-ia-qualiopi" style={{ color: '#059669', fontWeight: 700 }}>formation IA Qualiopi</Link>.
+              Les missions de conseil et de développement n'en font pas partie, et ne sont donc pas finançables par votre OPCO. Tout le détail se lit sur la page <Link to="/formation-ia-qualiopi" style={{ color: '#2563EB', fontWeight: 700 }}>formation IA Qualiopi</Link>.
             </p>
           </div>
         </div>
@@ -652,7 +584,7 @@ function AboutScreen() {
       <section style={{ padding: '96px 32px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#8B5CF6', marginBottom: 10 }}>Notre approche</div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Notre approche</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', marginBottom: 14 }}>
               Du diagnostic à l'autonomie de vos équipes
             </h2>
@@ -660,8 +592,8 @@ function AboutScreen() {
               Trois temps, toujours dans cet ordre, pour une PME comme pour un grand groupe.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
-            {[
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <Rangees items={[
               {
                 n: '01', Icon: Compass,
                 title: 'Comprendre',
@@ -677,25 +609,7 @@ function AboutScreen() {
                 title: 'Transmettre',
                 desc: "Formation sur vos dossiers, bibliothèque de prompts, référents internes : la compétence reste chez vous, et le dispositif continue de vivre une fois la mission terminée.",
               },
-            ].map((s, i) => (
-              <FadeIn key={i} delay={i * 80}>
-                <div style={{ background: '#fff', borderRadius: 16, padding: 30, border: '1px solid #E5E7EB', height: '100%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                    <div style={{
-                      width: 52, height: 52, borderRadius: 14,
-                      background: '#2563EB',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      boxShadow: '0 4px 14px -4px rgba(37,99,235,0.45)',
-                    }}>
-                      <s.Icon size={24} color="#fff" strokeWidth={2} />
-                    </div>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: '#E5E7EB' }}>{s.n}</div>
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>{s.title}</h3>
-                  <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{s.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            ].map(x => ({ titre: x.title, texte: x.desc }))} />
           </div>
         </div>
       </section>
@@ -704,34 +618,18 @@ function AboutScreen() {
       <section style={{ padding: '96px 32px', background: '#fff' }}>
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#F59E0B', marginBottom: 10 }}>Nos valeurs</div>
+            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#2563EB', marginBottom: 10 }}>Nos valeurs</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(26px, 3.2vw, 38px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em' }}>
               Quatre principes tenus sur chaque mission
             </h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(230px, 1fr))', gap: 20 }}>
-            {[
+          <div style={{ maxWidth: 860, margin: '0 auto' }}>
+            <Rangees items={[
               { Icon: Heart,       title: "L'humain d'abord",    desc: "L'IA prend en charge le répétitif ; les décisions, la relation avec le client et le jugement restent aux personnes. Chaque intervention part de ce principe." },
               { Icon: Lightbulb,   title: 'Accessibilité',       desc: "Chaque terme technique est expliqué la première fois qu'il apparaît, et aucune formation ne demande de prérequis technique." },
               { Icon: Handshake,   title: 'Du concret',          desc: "Un atelier part d'un fichier du client. Une mission se juge à ce que l'équipe sait faire le lundi qui suit, sur son propre travail." },
               { Icon: ShieldCheck, title: 'Éthique et sécurité', desc: "RGPD, confidentialité, AI Act : chaque usage reçoit un cadre écrit avant d'être déployé, avec les données autorisées, les comptes professionnels et un responsable humain pour chaque décision qui engage l'entreprise." },
-            ].map((v, i) => (
-              <FadeIn key={i} delay={i * 80}>
-                <div style={{ background: '#F9FAFB', borderRadius: 14, padding: 26, border: '1px solid #E5E7EB', height: '100%' }}>
-                  <div style={{
-                    width: 48, height: 48, borderRadius: 12,
-                    background: '#2563EB',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: 16,
-                    boxShadow: '0 4px 14px -4px rgba(37,99,235,0.45)',
-                  }}>
-                    <v.Icon size={22} color="#fff" strokeWidth={2} />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{v.title}</h3>
-                  <p style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{v.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
+            ].map(x => ({ titre: x.title, texte: x.desc, icon: x.Icon }))} />
           </div>
         </div>
       </section>

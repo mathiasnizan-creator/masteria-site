@@ -9,8 +9,9 @@
    - <Reperes>                : faits clés en cartes (libellé + valeur + détail), clair ou sombre
    - lignesEnReperes(lignes)  : lignes « En bref » { label, value } → repères
 */
+import { Link } from 'react-router-dom'
 import {
-  Clock, UsersRound, Wallet, BadgeCheck, UserCheck, Layers, ClipboardList, MapPin,
+  ArrowRight, Clock, UsersRound, Wallet, BadgeCheck, UserCheck, Layers, ClipboardList, MapPin,
   GraduationCap, FileCheck2, CalendarDays, ShieldCheck, Languages, Target, Check,
   Building2, Bot, Scale, Euro, CreditCard,
 } from 'lucide-react'
@@ -39,7 +40,8 @@ export function Paras({ texte, style, premier, rich, max = 3, budget = 380, as: 
     </Tag>
   ))
   // Plusieurs paragraphes : une enveloppe, pour rester un seul élément dans une rangée flex ou une grille
-  return dernier === 0 ? rendus[0] : <div id={id} style={wrapStyle}>{rendus}</div>
+  const Enveloppe = Tag === 'span' ? 'span' : 'div'
+  return dernier === 0 ? rendus[0] : <Enveloppe id={id} style={{ ...(Tag === 'span' ? { display: 'block' } : null), ...wrapStyle }}>{rendus}</Enveloppe>
 }
 
 /* Encadré « réponse directe » : premier paragraphe appuyé, la suite en texte courant
@@ -164,7 +166,8 @@ export function Accroche({ texte, sombre = false, rich, id, style, styleListe, m
 
 /* ── Rangées : liste verticale pleine largeur ─────────────────────
    Remplace les cartes de texte posées côte à côte (retour de Mathias, 23/10/2026) :
-   numéro (ou picto), titre, puis paragraphes courts, une rangée par point. */
+   numéro (ou picto), titre, puis paragraphes courts, une rangée par point.
+   Item : { titre, texte, icon?, lien?: { to, label } }. */
 export function Rangees({ items, sombre = false, rich, numeros = true, style, maxTexte = 720, niveau = 'h3' }) {
   const Titre = niveau
   const liste = (items || []).filter(Boolean)
@@ -174,7 +177,7 @@ export function Rangees({ items, sombre = false, rich, numeros = true, style, ma
     : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', chiffre: ACCENT }
   return (
     <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
-      {liste.map(({ titre, texte, icon: Icon }, i) => (
+      {liste.map(({ titre, texte, icon: Icon, lien }, i) => (
         <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
           <span aria-hidden="true" style={{
             flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.chiffre,
@@ -186,6 +189,11 @@ export function Rangees({ items, sombre = false, rich, numeros = true, style, ma
           <div style={{ minWidth: 0, maxWidth: maxTexte }}>
             {titre && <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35 }}>{typeof titre === 'string' ? titre.replace(/\s*\n\s*/g, ' ') : titre}</Titre>}
             <Paras texte={texte} rich={rich} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+            {lien?.to && (
+              <Link to={lien.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 10, fontSize: 14, fontWeight: 700, color: t.chiffre, textDecoration: 'none' }}>
+                {lien.label} <ArrowRight size={14} strokeWidth={2} aria-hidden="true" />
+              </Link>
+            )}
           </div>
         </li>
       ))}
