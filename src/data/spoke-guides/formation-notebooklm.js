@@ -229,6 +229,10 @@ export default {
   avisPriorite: ['Gemini', 'NotebookLM', 'Google', 'source'],
   faq: [
     {
+      q: "NotebookLM, c'est quoi ?",
+      a: "NotebookLM, renommé Gemini Notebook le 16 juillet 2026, est l'outil de Google qui répond à partir des seuls documents déposés dans un carnet et cite le passage d'où vient chaque réponse. Il en tire aussi des guides d'étude, des quiz, des cartes mentales et des résumés audio ou vidéo. Il fonctionne avec un compte Google personnel ou un compte Workspace, dont les règles de confidentialité diffèrent.",
+    },
+    {
       q: "NotebookLM et Gemini Notebook, est-ce le même outil ?",
       a: "Oui. Google a renommé NotebookLM en Gemini Notebook le 16 juillet 2026 et l'outil reste une application autonome, à l'adresse notebook.google.com. Les carnets existants et leurs liens de partage continuent de fonctionner grâce à des redirections automatiques, sans action de l'administrateur. Les mêmes carnets s'ouvrent désormais aussi depuis l'application Gemini.",
     },

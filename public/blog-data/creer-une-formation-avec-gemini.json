@@ -8,10 +8,32 @@
   "datePublished": "2026-10-22",
   "dateModified": "2026-10-22",
   "readTime": "13 min",
-  "formations": [["Formation Gemini Notebook (NotebookLM)", "/formation-notebooklm"], ["Formation Gemini en entreprise", "/formation-gemini-entreprise"], ["Formation IA pour les équipes pédagogiques", "/formation-ia-pedagogique"]],
-  "keywords": ["comment générer une formation avec gemini", "créer une formation avec gemini", "gemini notebook formation", "notebooklm créer un cours", "concevoir un module de formation avec l'IA", "quiz google forms gemini", "ingénierie pédagogique IA", "objectif pédagogique"],
+  "formations": [
+    [
+      "Formation Gemini Notebook (NotebookLM)",
+      "/formation-notebooklm"
+    ],
+    [
+      "Formation Gemini en entreprise",
+      "/formation-gemini-entreprise"
+    ],
+    [
+      "Formation IA pour les équipes pédagogiques",
+      "/formation-ia-pedagogique"
+    ]
+  ],
+  "keywords": [
+    "comment générer une formation avec gemini",
+    "créer une formation avec gemini",
+    "gemini notebook formation",
+    "notebooklm créer un cours",
+    "concevoir un module de formation avec l'IA",
+    "quiz google forms gemini",
+    "ingénierie pédagogique IA",
+    "objectif pédagogique"
+  ],
   "excerpt": "Pour concevoir un module de formation avec Gemini, on écrit d'abord l'objectif, on réunit les sources dans Gemini Notebook, puis on fait produire déroulé, supports et quiz, que relit un expert du métier. La méthode en sept étapes, des demandes à reprendre et les limites à connaître.",
-  "intro": "Une formation conçue avec Gemini part d'un objectif écrit par vous, s'appuie sur des sources que vous avez choisies et se termine par une relecture experte. Entre ces deux bornes, les outils de Google prennent une large part du travail de mise en forme : l'application Gemini structure et reformule, Gemini Notebook (anciennement NotebookLM) répond depuis vos documents et fabrique guides, cartes mentales et quiz, et Google Forms peut tirer d'un document un quiz noté avec son corrigé. La méthode tient en sept étapes, avec des demandes prêtes à adapter et les limites à connaître avant de diffuser un module. Fonctions et plafonds ont été vérifiés sur l'aide de Google le 22 octobre 2026.",
+  "intro": "Pour générer une formation avec Gemini, partez d'un objectif écrit par vous, appuyez-vous sur des sources que vous avez choisies et terminez par une relecture experte. Entre ces deux bornes, les outils de Google prennent une large part du travail de mise en forme : l'application Gemini structure et reformule, Gemini Notebook (anciennement NotebookLM) répond depuis vos documents et fabrique guides, cartes mentales et quiz, et Google Forms peut tirer d'un document un quiz noté avec son corrigé. La méthode tient en sept étapes, avec des demandes prêtes à adapter et les limites à connaître avant de diffuser un module. Fonctions et plafonds ont été vérifiés sur l'aide de Google le 22 octobre 2026.",
   "blocks": [
     {
       "type": "callout",
@@ -29,12 +51,32 @@
     },
     {
       "type": "table",
-      "headers": ["Outil", "Son rôle dans la conception", "Limite à connaître (22 octobre 2026)"],
+      "headers": [
+        "Outil",
+        "Son rôle dans la conception",
+        "Limite à connaître (22 octobre 2026)"
+      ],
       "rows": [
-        ["Application Gemini", "Formuler l'objectif, proposer des activités, adapter un texte à son public", "Peut puiser sur le web : chaque fait se contrôle avant d'entrer dans un support"],
-        ["Gemini Notebook", "Répondre depuis vos seules sources, citations à l'appui ; guide d'étude, carte mentale, flashcards, quiz, résumés audio et vidéo", "50 sources par carnet sur un compte gratuit, 300 en Business Standard"],
-        ["Google Forms avec Gemini", "Générer un quiz noté avec ses réponses correctes, à partir d'un Doc, de Slides ou d'un PDF de Drive", "Business Standard et Plus, Enterprise Standard et Plus, offres personnelles Google AI Pro et Ultra"],
-        ["Google Slides avec Gemini", "Générer une présentation à partir d'une consigne", "100 diapositives générées par mois en Business Standard, aucune en Business Starter"]
+        [
+          "Application Gemini",
+          "Formuler l'objectif, proposer des activités, adapter un texte à son public",
+          "Peut puiser sur le web : chaque fait se contrôle avant d'entrer dans un support"
+        ],
+        [
+          "Gemini Notebook",
+          "Répondre depuis vos seules sources, citations à l'appui ; guide d'étude, carte mentale, flashcards, quiz, résumés audio et vidéo",
+          "50 sources par carnet sur un compte gratuit, 300 en Business Standard"
+        ],
+        [
+          "Google Forms avec Gemini",
+          "Générer un quiz noté avec ses réponses correctes, à partir d'un Doc, de Slides ou d'un PDF de Drive",
+          "Business Standard et Plus, Enterprise Standard et Plus, offres personnelles Google AI Pro et Ultra"
+        ],
+        [
+          "Google Slides avec Gemini",
+          "Générer une présentation à partir d'une consigne",
+          "100 diapositives générées par mois en Business Standard, aucune en Business Starter"
+        ]
       ]
     },
     {

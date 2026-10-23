@@ -10,7 +10,7 @@ export default {
  "pagePropre": true,
  "base": {
   "metaTitle": "Formation IA logistique et supply chain | Masteria",
-  "metaDesc": "Formation IA logistique d'une journée pour entrepôts, transporteurs, ADV et supply chain : litiges, procédures multilingues, exports WMS et TMS, appels d'offres.",
+  "metaDesc": "Formation IA logistique d'une journée pour entrepôts, transporteurs, ADV et supply chain : litiges, procédures multilingues, exports WMS et TMS.",
   "keywords": "formation ia logistique, ia et logistique, expert ia supply chain, formation ia supply chain, ia entrepôt, formation ia transport, ia logistique, formation intelligence artificielle logistique, ia service client transport, ia appel d'offres transport",
   "h1": "Formation IA logistique et supply chain : litiges, procédures et exports d'entrepôt, en une journée",
   "h1a": "Formation IA logistique et supply chain :",
@@ -224,6 +224,10 @@ export default {
   "financement": "Un transporteur, un prestataire logistique ou un commissionnaire de transport relève en général de la convention des transports routiers et activités auxiliaires du transport, rattachée à OPCO Mobilités. Un distributeur suit sa branche : l'Opcommerce pour le commerce à prédominance alimentaire, AKTO pour les commerces de gros, branche où l'opérateur ne finance plus en 2026 le plan de développement des compétences (les formations décidées par l'employeur) des entreprises de moins de 50 salariés, constat du 22 octobre 2026. Une supply chain d'industriel dépend d'OPCO 2i ou d'OCAPIAT. {/quel-opco|Quel OPCO ?} vous oriente ; la décision appartient ensuite à l'opérateur. Masteria, titulaire de la certification Qualiopi, remet programme et convention avant la date retenue ; les dispositifs sont décrits sur {/financement-formation-ia|financer une formation IA}. Le CPF ne joue pas ici."
  },
  "faq": [
+  {
+   "q": "Que change l'intelligence artificielle pour la logistique au quotidien ?",
+   "a": "Sur le terrain, l'intelligence artificielle générative fait gagner du temps sur l'écrit et la lecture : réponses aux litiges, procédures traduites pour les intérimaires, synthèse d'un export d'entrepôt, réponse à un appel d'offres transport. L'optimisation des tournées et la prévision fine des volumes relèvent d'outils dédiés ou d'un projet de données ; la journée apprend à les reconnaître."
+  },
   {
    "q": "Que fait-on pendant une journée de formation IA logistique ?",
    "a": "Tout part des pièces de votre exploitation. En matinée : les règles sur les tarifs et les données clients, une demande construite sur une vraie réclamation, un dossier de litige monté de bout en bout, un compte rendu de point transporteur, l'espace commun. Après le déjeuner : une procédure traduite pour les intérimaires, un export du WMS ou du TMS commenté, une prévision simple, un appel d'offres transport, une facture commerciale relue pour la douane, avant de conclure sur la première compétence et les règles d'usage de l'équipe."

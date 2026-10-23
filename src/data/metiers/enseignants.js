@@ -233,6 +233,10 @@ export default {
  },
  "faq": [
   {
+   "q": "Les professeurs peuvent-ils suivre la formation IA à distance ?",
+   "a": "Oui. La journée se tient en classe virtuelle comme dans l'établissement. Les exercices partent de séquences, de consignes et de copies anonymisées apportées par les professeurs, et chacun repart avec ses propres gabarits."
+  },
+  {
    "q": "Un élève peut-il se servir de l'IA en classe ou pour ses devoirs ?",
    "a": "Le cadre d'usage publié par le ministère le 14 juin 2025 répond par paliers. À l'école primaire, les élèves apprennent ce qu'est l'IA sans manipuler d'assistant. À partir de la quatrième, l'usage pédagogique se fait sous la conduite du professeur. Un devoir réalisé en tout ou partie avec l'IA sans autorisation relève de la fraude. S'y ajoute l'âge minimal de chaque outil, qui exclut par exemple Claude avant 18 ans."
   },

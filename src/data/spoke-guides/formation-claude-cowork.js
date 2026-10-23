@@ -253,6 +253,10 @@ export default {
   avisPriorite: ['Claude', 'Cowork', 'fichiers', 'dossiers'],
   faq: [
     {
+      q: "Comment fonctionne Claude Cowork au quotidien ?",
+      a: "Depuis l'application de bureau Claude (Claude Desktop), sur macOS ou Windows, vous donnez accès à un dossier et décrivez la tâche. Claude propose un plan, l'exécute étape par étape en demandant votre accord selon le mode d'approbation choisi, puis dépose les fichiers produits dans le dossier. Une tâche qui revient chaque semaine se confie aux tâches planifiées.",
+    },
+    {
       q: "Qu'est-ce que Claude Cowork ?",
       a: "Cowork est le mode de travail par tâches de Claude, l'assistant d'Anthropic. Vous fixez l'objectif ; Claude bâtit un plan, exécute les étapes dans un environnement isolé et rend des fichiers : classeur, présentation, document, dossier rangé. Il repose sur l'architecture d'agent de Claude Code, rendue accessible hors du terminal. Anthropic l'intègre peu à peu, depuis le 16 septembre 2026, à la conversation des offres Pro et Max.",
     },

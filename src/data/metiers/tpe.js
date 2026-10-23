@@ -230,6 +230,10 @@ export default {
  },
  "faq": [
   {
+   "q": "Un auto-entrepreneur peut-il suivre cette formation IA ?",
+   "a": "Oui, seul et à distance si besoin. Un micro-entrepreneur relève du fonds d'assurance formation de son activité : AGEFICE pour le commerce et les services, FIF-PL pour les professions libérales, FAFCEA pour l'artisanat. Le montant pris en charge dépend de la contribution versée, et le dossier se dépose avant le premier jour."
+  },
+  {
    "q": "À quoi ressemble la journée de formation IA pour une TPE ?",
    "a": "Sur vos documents, du début à la fin. Le matin, vous apprenez à poser une demande sur un email client réel, vous choisissez la bonne version de l'outil selon les données en jeu, vous enregistrez vos consignes, puis vous retravaillez vos devis, vos factures et vos relances. L'après-midi, vous répondez à vos avis, réécrivez votre fiche Google, préparez le calendrier de publications, lisez un export de ventes, montez un projet avec vos documents et programmez un premier rappel. Vous repartez avec vos modèles et des règles écrites."
   },

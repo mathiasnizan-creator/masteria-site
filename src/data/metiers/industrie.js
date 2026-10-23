@@ -10,7 +10,7 @@
 export default {
  "pagePropre": true,
  "base": {
-  "metaTitle": "Formation IA industrie : atelier, maintenance, pharma | Masteria",
+  "metaTitle": "Formation IA industrie : atelier, maintenance | Masteria",
   "metaDesc": "Formation IA industrielle d'une journée : instructions de travail, 5 pourquoi et 8D, maintenance, exports TRS, traduction technique. Pharma compris. Qualiopi.",
   "keywords": "formation ia industrie, formation ia industrielle, formation ia industrie pharmaceutique, ia industrie, intelligence artificielle industrie, formation ia usine, ia maintenance industrielle, ia méthodes industrialisation, ia 8d amdec, formation copilot industrie",
   "h1": "Formation IA industrie : instructions de travail, analyses et données d'atelier, en une journée",
@@ -225,6 +225,10 @@ export default {
   "financement": "Votre convention collective désigne l'opérateur : l'OPCO 2i pour de nombreuses industries (métallurgie, chimie, plasturgie, papier-carton, pharmacie, entre autres), OCAPIAT pour l'agroalimentaire ; l'outil {/quel-opco|Quel OPCO ?} le retrouve. Chaque opérateur applique ses propres plafonds, dans la limite de ses fonds annuels. Certifié Qualiopi, Masteria prépare programme, convention et attestations pour le dossier, à déposer avant la session ; {/financement-formation-ia|notre guide du financement} en décrit les étapes. Le CPF reste hors jeu."
  },
  "faq": [
+  {
+   "q": "Faut-il un expert IA pour l'industrie ou une formation des équipes ?",
+   "a": "Ce sont deux réponses à deux besoins. La formation outille les services sur les écrits et les analyses de tous les jours : instructions de travail, 8D, synthèses de maintenance, exports d'atelier. Un projet qui touche aux machines, à la maintenance prévisionnelle ou aux données de production demande un cadrage et des développements, que Masteria mène aussi en conseil."
+  },
   {
    "q": "Que travaille-t-on pendant la journée de formation IA en usine ?",
    "a": "Tout se fait sur les pièces de votre site. Le matin, le groupe fixe ce qui entre dans quel outil, apprend à construire une demande sur une instruction de travail, règle l'outil sur le vocabulaire du site, refait une gamme réelle et ouvre un espace commun. L'après-midi, il traite un défaut en 5 pourquoi et en 8D, résume des bons de maintenance, commente un export de TRS, traduit une notice, puis enregistre sa première compétence. Chacun repart avec trois usages choisis et des gabarits."

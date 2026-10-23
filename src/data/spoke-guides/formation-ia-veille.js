@@ -260,6 +260,7 @@ export default {
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [
+    { label: "Gemini Notebook (NotebookLM) : répondre à partir de vos sources", href: '/formation-notebooklm' },
     { label: "Sprint IA Veille : une veille personnelle installée en trois heures", href: '/formation-sprint-ia-veille' },
     { label: "Veille concurrentielle par l'IA : méthode et cadre", href: '/veille-concurrentielle-ia' },
     { label: "Outils de veille IA : le comparatif pour choisir", href: '/outils-veille-ia' },

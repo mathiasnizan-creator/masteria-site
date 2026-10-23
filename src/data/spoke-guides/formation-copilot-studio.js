@@ -312,6 +312,10 @@ export default {
   avisPriorite: ['Copilot', 'assistant', 'agent'],
   faq: [
     {
+      q: "Copilot Studio, c'est quoi ?",
+      a: "Copilot Studio est l'outil de Microsoft pour concevoir des agents : on y écrit leurs instructions, on branche des sources de connaissances (SharePoint, sites, fichiers), on ajoute des actions par les connecteurs Power Platform et des déclencheurs, puis on publie l'agent dans Teams, dans Microsoft Copilot ou sur un site. Il s'adresse aux makers et à la DSI ; pour un agent de questions-réponses sur quelques documents, Agent Builder suffit.",
+    },
+    {
       q: "Quelle différence entre Copilot Studio et Agent Builder ?",
       a: "Agent Builder, intégré à Microsoft Copilot et à Teams, construit en langage courant un agent de questions-réponses sur des documents, pour soi ou une petite équipe ; il ne crée aucune action vers un logiciel extérieur. Copilot Studio est un portail séparé, destiné aux makers et aux développeurs, qui ajoute connecteurs, flux, déclencheurs autonomes, publication externe et environnements de test. Un agent d'Agent Builder se copie dans Copilot Studio quand il doit aller plus loin. L'interface française appelle « assistant » ce que la documentation nomme agent.",
     },

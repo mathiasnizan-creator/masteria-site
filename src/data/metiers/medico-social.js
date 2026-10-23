@@ -25,7 +25,7 @@ export default {
  "pagePropre": true,
  "base": {
   "metaTitle": "Formation IA médico-social pour les ESMS | Masteria",
-  "metaDesc": "Formation IA pour EHPAD, IME, ESAT, foyers et services à domicile : écrits professionnels, FALC, évaluation HAS, CPOM. Financement CNR ARS ou OPCO Santé.",
+  "metaDesc": "Formation IA médico-social pour EHPAD, IME, ESAT, foyers et domicile : écrits professionnels, FALC, évaluation HAS, CPOM. CNR ARS ou OPCO Santé.",
   "keywords": "formation ia médico-social, formation ia esms, formation ia essms, formation ia ehpad, maturité ia médico-social, intelligence artificielle médico-social, ia écrits professionnels travail social, ia falc, ia évaluation has essms, formation ia ime esat, formation ia association médico-sociale",
   "h1": "Formation IA médico-social : l'IA générative pour les écrits et la qualité des ESMS",
   "h1a": "Formation IA médico-social :",
@@ -239,6 +239,14 @@ export default {
   "financement": "Pour une structure tarifée par l'ARS, les crédits non reconductibles, souvent attribués en fin d'exercice, peuvent couvrir une action ponctuelle : votre délégation départementale dit si la formation entre dans son cahier des charges, et le devis en TTC rejoint le dossier. Côté OPCO, la convention collective désigne l'opérateur : l'OPCO Santé pour la plupart des associations du secteur, Uniformation pour l'aide à domicile associative ; {/quel-opco|Quel OPCO ?} le confirme, puis l'opérateur décide selon ses règles et son budget, Masteria étant certifié Qualiopi. Un établissement public hospitalier passe par son plan de formation et l'ANFH, un CCAS par le plan de la collectivité, le CNFPT restant l'offre de base des agents territoriaux. Le CPF ne s'applique pas à cette formation sur mesure ; le reste des dispositifs est détaillé sur {/financement-formation-ia|notre page financement}."
  },
  "faq": [
+  {
+   "q": "Comment évaluer la maturité IA d'un établissement médico-social ?",
+   "a": "Une évaluation de maturité regarde quatre choses : les usages déjà présents dans les équipes, déclarés ou non ; l'état des données, du dossier de l'usager informatisé aux fichiers partagés ; le cadre fixé par la direction ; les compétences disponibles. Notre audit IA médico-social la conduit service par service. La formation prend le relais pour les équipes qui passent à la pratique."
+  },
+  {
+   "q": "Cette formation à l'intelligence artificielle se suit-elle à distance ?",
+   "a": "Oui. La journée se tient aussi en classe virtuelle, en direct, ce qui arrange les associations dont les établissements sont éloignés les uns des autres. Les ateliers gardent la règle de la salle : des cas fictifs ou anonymisés, jamais le dossier d'un usager ouvert dans un outil grand public."
+  },
   {
    "q": "Que contient une formation IA pour le médico-social ?",
    "a": "Une journée sur les usages de l'IA générative qui comptent dans un ESMS : écrits professionnels (transmissions, comptes rendus de synthèse, projets personnalisés), documents en FALC, préparation de l'évaluation HAS, réponses aux appels à projets, rapport d'activité et CPOM. Elle commence par le secret partagé, les données de santé et l'hébergement HDS, et chaque atelier se fait sur des cas fictifs ou anonymisés. Rien n'y porte sur le soin, l'évaluation d'une personne ou une décision d'orientation."

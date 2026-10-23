@@ -294,6 +294,7 @@ export default {
     },
   },
   liensAssocies: [
+    { label: "Claude Cowork : confier une tâche complète sur vos fichiers", href: '/formation-claude-cowork' },
     { label: "Formation IA des assistantes de direction : mails, agenda et comptes rendus, tous outils", href: '/formation-ia-assistante' },
     { label: "Écrits professionnels avec l'IA : courriers, notes et synthèses", href: '/formation-ia-ecrits-pro' },
     { label: "Sprint IA Excel : trois heures pour reprendre la main sur vos tableaux de suivi", href: '/formation-sprint-ia-excel' },

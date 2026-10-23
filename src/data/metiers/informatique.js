@@ -360,6 +360,18 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Formation Copilot Studio",
+   "href": "/formation-copilot-studio",
+   "tag": "Agents",
+   "desc": "Concevoir, publier et gouverner des agents Microsoft."
+  },
+  {
+   "label": "L'IA générative dans une ESN",
+   "href": "/blog/ia-esn",
+   "tag": "Guide",
+   "desc": "Avant-vente, staffing, gestion et agents de code."
+  },
+  {
    "label": "Formation sécurité des usages IA",
    "href": "/formation-ia-securite",
    "tag": "Sécurité",

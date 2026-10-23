@@ -284,6 +284,7 @@ export default {
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [
+    { label: "Copilot Studio : concevoir et gouverner des agents", href: '/formation-copilot-studio' },
     { label: "Toutes les formations Microsoft Copilot", href: '/formation-microsoft-copilot' },
     { label: "Formation IA pour les équipes informatiques, tous outils", href: '/formation-ia-informatique' },
     { label: "Construire des agents IA en deux jours", href: '/formation-agents-ia' },

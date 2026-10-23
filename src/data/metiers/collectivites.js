@@ -15,7 +15,7 @@ export default {
  "pagePropre": true,
  "base": {
   "metaTitle": "Formation IA collectivités territoriales | Masteria",
-  "metaDesc": "Formation IA pour communes, intercommunalités, départements, régions : délibérations, courriers en langage clair, FALC, procès-verbaux. Agents et élus.",
+  "metaDesc": "Formation IA collectivités : communes, intercommunalités, départements, régions. Délibérations, courriers en langage clair, FALC, procès-verbaux, élus.",
   "keywords": "formation ia collectivités, formation ia collectivité territoriale, formation ia élus, ia mairie, formation intelligence artificielle collectivités, formation ia agents territoriaux, ia secrétaire de mairie, ia intercommunalité, ia délibération",
   "h1": "Formation IA collectivités : préparer le conseil et répondre aux habitants avec l'IA, en une journée",
   "h1a": "Formation IA collectivités territoriales :",

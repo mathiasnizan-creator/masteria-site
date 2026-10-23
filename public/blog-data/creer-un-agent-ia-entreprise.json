@@ -8,8 +8,30 @@
   "datePublished": "2026-07-24",
   "dateModified": "2026-07-24",
   "readTime": "13 min",
-  "formations": [["Formation agents IA", "/formation-agents-ia"], ["Formation automatisation IA", "/formation-automatisation-ia"], ["Formation n8n", "/formation-n8n"]],
-  "keywords": ["créer un agent IA", "agent IA entreprise", "agent IA PME", "comment créer un agent IA", "agent IA sur mesure", "agent IA vs chatbot", "RAG", "MCP"],
+  "formations": [
+    [
+      "Formation agents IA",
+      "/formation-agents-ia"
+    ],
+    [
+      "Formation automatisation IA",
+      "/formation-automatisation-ia"
+    ],
+    [
+      "Formation n8n",
+      "/formation-n8n"
+    ]
+  ],
+  "keywords": [
+    "créer un agent IA",
+    "agent IA entreprise",
+    "agent IA PME",
+    "comment créer un agent IA",
+    "agent IA sur mesure",
+    "agent IA vs chatbot",
+    "RAG",
+    "MCP"
+  ],
   "excerpt": "Un agent IA poursuit un objectif : il décide, appelle vos outils et agit sous supervision. Le guide complet pour en créer un en entreprise : les 5 étapes, les briques techniques, les exemples par métier, le budget et les garde-fous RGPD.",
   "intro": "Un agent IA poursuit un objectif : il décide des étapes, appelle vos outils, consulte vos données et agit, sous supervision humaine. Le chatbot répond, l'agent agit. Le créer en entreprise est d'abord une affaire de méthode. Ce guide la déroule : définition, cinq étapes de création, briques techniques en clair, exemples par métier, budget réel et garde-fous.",
   "blocks": [
@@ -45,12 +67,37 @@
     },
     {
       "type": "table",
-      "headers": ["", "Chatbot", "Automatisation classique", "Agent IA"],
+      "headers": [
+        "",
+        "Chatbot",
+        "Automatisation classique",
+        "Agent IA"
+      ],
       "rows": [
-        ["Ce qu'il fait", "Répond à des questions", "Exécute un script figé", "Poursuit un objectif et agit"],
-        ["Prise de décision", "Aucune", "Règles prédéfinies", "Choisit lui-même les étapes"],
-        ["Exemple", "FAQ interactive", "Envoi programmé d'e-mails", "Traiter une demande de bout en bout"],
-        ["Limite", "N'agit pas", "Rigide, casse hors du script", "À encadrer et superviser"]
+        [
+          "Ce qu'il fait",
+          "Répond à des questions",
+          "Exécute un script figé",
+          "Poursuit un objectif et agit"
+        ],
+        [
+          "Prise de décision",
+          "Aucune",
+          "Règles prédéfinies",
+          "Choisit lui-même les étapes"
+        ],
+        [
+          "Exemple",
+          "FAQ interactive",
+          "Envoi programmé d'e-mails",
+          "Traiter une demande de bout en bout"
+        ],
+        [
+          "Limite",
+          "N'agit pas",
+          "Rigide, casse hors du script",
+          "À encadrer et superviser"
+        ]
       ]
     },
     {
@@ -151,13 +198,37 @@
     },
     {
       "type": "table",
-      "headers": ["Service", "Ce que fait l'agent", "Bénéfice"],
+      "headers": [
+        "Service",
+        "Ce que fait l'agent",
+        "Bénéfice"
+      ],
       "rows": [
-        ["Support client", "Qualifie la demande, répond aux cas courants, escalade le reste", "Temps de réponse réduit"],
-        ["Commercial", "Prépare comptes-rendus, relances et premières propositions", "Plus de temps consacré à la vente"],
-        ["Finance", "Rapproche factures et commandes, signale les écarts", "Moins de saisie, moins d'erreurs"],
-        ["Ressources humaines", "Répond aux questions RH internes, pré-trie les candidatures", "Process RH fluidifié"],
-        ["Juridique", "Analyse des contrats, repère les clauses à risque", "Revue accélérée, sous contrôle humain"]
+        [
+          "Support client",
+          "Qualifie la demande, répond aux cas courants, escalade le reste",
+          "Temps de réponse réduit"
+        ],
+        [
+          "Commercial",
+          "Prépare comptes-rendus, relances et premières propositions",
+          "Plus de temps consacré à la vente"
+        ],
+        [
+          "Finance",
+          "Rapproche factures et commandes, signale les écarts",
+          "Moins de saisie, moins d'erreurs"
+        ],
+        [
+          "Ressources humaines",
+          "Répond aux questions RH internes, pré-trie les candidatures",
+          "Process RH fluidifié"
+        ],
+        [
+          "Juridique",
+          "Analyse des contrats, repère les clauses à risque",
+          "Revue accélérée, sous contrôle humain"
+        ]
       ]
     },
     {
@@ -170,10 +241,25 @@
     },
     {
       "type": "table",
-      "headers": ["Approche", "Pour qui", "Délai", "Limites"],
+      "headers": [
+        "Approche",
+        "Pour qui",
+        "Délai",
+        "Limites"
+      ],
       "rows": [
-        ["Plateforme no-code", "Prototype, cas d'usage simple, preuve de valeur", "Quelques jours", "Personnalisation et intégrations limitées"],
-        ["Sur mesure (code, API, MCP)", "Production, cas métier, données sensibles", "Quelques semaines", "Nécessite des compétences de développement"]
+        [
+          "Plateforme no-code",
+          "Prototype, cas d'usage simple, preuve de valeur",
+          "Quelques jours",
+          "Personnalisation et intégrations limitées"
+        ],
+        [
+          "Sur mesure (code, API, MCP)",
+          "Production, cas métier, données sensibles",
+          "Quelques semaines",
+          "Nécessite des compétences de développement"
+        ]
       ]
     },
     {
@@ -289,15 +375,43 @@
     "title": "Envie de passer d'un prototype à un agent en production ?",
     "desc": "Masteria conçoit des agents IA sur mesure et forme vos équipes à les piloter. Le code vous appartient.",
     "buttons": [
-      { "label": "Découvrir nos agents IA sur mesure", "href": "/agents-ia-entreprise", "primary": true },
-      { "label": "Parler de votre projet", "href": "/contact", "primary": false }
+      {
+        "label": "Découvrir nos agents IA sur mesure",
+        "href": "/agents-ia-entreprise",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre projet",
+        "href": "/contact",
+        "primary": false
+      }
     ]
   },
   "internalLinks": [
-    { "label": "Agents IA en entreprise : 20 cas d'usage concrets", "href": "/agents-ia-entreprise" },
-    { "label": "Automatiser vos processus avec l'IA", "href": "/automatisation-ia" },
-    { "label": "Notre méthode de projet IA, du cadrage au run", "href": "/methode-projet-ia" },
-    { "label": "Solutions IA sur mesure", "href": "/solutions-ia" }
+    {
+      "label": "Fine-tuning ou RAG : lequel choisir",
+      "href": "/blog/fine-tuning-ou-rag"
+    },
+    {
+      "label": "15 exemples d'agents IA, classés par fonction",
+      "href": "/blog/exemples-agents-ia-entreprise"
+    },
+    {
+      "label": "Agents IA en entreprise : 20 cas d'usage concrets",
+      "href": "/agents-ia-entreprise"
+    },
+    {
+      "label": "Automatiser vos processus avec l'IA",
+      "href": "/automatisation-ia"
+    },
+    {
+      "label": "Notre méthode de projet IA, du cadrage au run",
+      "href": "/methode-projet-ia"
+    },
+    {
+      "label": "Solutions IA sur mesure",
+      "href": "/solutions-ia"
+    }
   ],
   "extraJsonLd": [
     {
@@ -305,12 +419,36 @@
       "@type": "DefinedTermSet",
       "name": "Glossaire : créer un agent IA en entreprise",
       "hasDefinedTerm": [
-        { "@type": "DefinedTerm", "name": "Agent IA", "description": "Système qui poursuit un objectif en enchaînant des décisions et des actions à l'aide d'outils." },
-        { "@type": "DefinedTerm", "name": "LLM", "description": "Modèle de langage qui sert de moteur de raisonnement à l'agent (Claude, GPT, Gemini, Mistral)." },
-        { "@type": "DefinedTerm", "name": "RAG", "description": "Génération augmentée par récupération : technique permettant à l'agent de répondre à partir de vos documents." },
-        { "@type": "DefinedTerm", "name": "MCP", "description": "Model Context Protocol : standard ouvert qui connecte un agent à des outils et sources de données." },
-        { "@type": "DefinedTerm", "name": "Human-in-the-loop", "description": "Principe consistant à garder un humain qui valide les actions sensibles de l'agent." },
-        { "@type": "DefinedTerm", "name": "Orchestration", "description": "Logique qui enchaîne les étapes et coordonne les outils et agents." }
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent IA",
+          "description": "Système qui poursuit un objectif en enchaînant des décisions et des actions à l'aide d'outils."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "LLM",
+          "description": "Modèle de langage qui sert de moteur de raisonnement à l'agent (Claude, GPT, Gemini, Mistral)."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "RAG",
+          "description": "Génération augmentée par récupération : technique permettant à l'agent de répondre à partir de vos documents."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "MCP",
+          "description": "Model Context Protocol : standard ouvert qui connecte un agent à des outils et sources de données."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Human-in-the-loop",
+          "description": "Principe consistant à garder un humain qui valide les actions sensibles de l'agent."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Orchestration",
+          "description": "Logique qui enchaîne les étapes et coordonne les outils et agents."
+        }
       ]
     },
     {
@@ -320,11 +458,31 @@
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "numberOfItems": 5,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Cadrer un cas d'usage précis" },
-        { "@type": "ListItem", "position": 2, "name": "Choisir le modèle et la plateforme" },
-        { "@type": "ListItem", "position": 3, "name": "Connecter l'agent à vos données et à vos outils" },
-        { "@type": "ListItem", "position": 4, "name": "Poser les garde-fous : sécurité, RGPD, supervision" },
-        { "@type": "ListItem", "position": 5, "name": "Tester, déployer, superviser" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Cadrer un cas d'usage précis"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Choisir le modèle et la plateforme"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Connecter l'agent à vos données et à vos outils"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Poser les garde-fous : sécurité, RGPD, supervision"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Tester, déployer, superviser"
+        }
       ]
     }
   ]

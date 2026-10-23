@@ -830,7 +830,7 @@ export default function AgentsIAEntreprisePage() {
             <strong style={{ color: '#0A0A0A' }}>Les agents les plus répandus traitent les demandes entrantes, saisissent les factures, règlent les demandes simples des clients, écrivent du code et tiennent une veille.</strong> Tous travaillent sur des tâches fréquentes et documentées, préparent le travail, et laissent à une personne la validation de ce qui engage.
           </p>
           <p style={pStyle}>
-            Chaque usage suppose un agent relié aux logiciels concernés et suivi par l'équipe métier. Aucun gain n'est chiffré : tout tient au nombre de dossiers, à la propreté des données et à la part de validation conservée. Pour les usages qui se passent d'agent (rédaction, synthèse, analyse de fichiers), voyez notre <Link to="/cas-usage-ia-entreprise" style={linkStyle}>panorama des cas d'usage, service après service</Link>.
+            Chaque usage suppose un agent relié aux logiciels concernés et suivi par l'équipe métier. Aucun gain n'est chiffré : tout tient au nombre de dossiers, à la propreté des données et à la part de validation conservée. Pour les usages qui se passent d'agent (rédaction, synthèse, analyse de fichiers), voyez notre <Link to="/cas-usage-ia-entreprise" style={linkStyle}>panorama des cas d'usage, service après service</Link> ; pour d'autres agents décrits avec leur outil et leur niveau de risque, lisez nos <Link to="/blog/exemples-agents-ia-entreprise" style={linkStyle}>15 exemples d'agents IA en entreprise</Link>.
           </p>
 
           {/* Aperçu scannable des 20 usages */}

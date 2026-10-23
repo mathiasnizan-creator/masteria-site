@@ -356,6 +356,18 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Créer une formation avec Gemini",
+   "href": "/blog/creer-une-formation-avec-gemini",
+   "tag": "Méthode",
+   "desc": "De l'objectif pédagogique au quiz, en sept étapes."
+  },
+  {
+   "label": "Formation Gemini Notebook (NotebookLM)",
+   "href": "/formation-notebooklm",
+   "tag": "Outil",
+   "desc": "Carnets de sources, réponses citées, quiz et résumés audio."
+  },
+  {
    "label": "Formation IA enseignants",
    "href": "/formation-ia-enseignants",
    "tag": "École et université",

@@ -229,6 +229,10 @@ export default {
  },
  "faq": [
   {
+   "q": "La formation à la sécurité de l'intelligence artificielle peut-elle se suivre à distance ?",
+   "a": "Oui. La journée comme les séances courtes se tiennent en classe virtuelle ou en salle. À distance, les démonstrations d'injection de prompt et de fraude par voix imitée se font sur des comptes et des documents de test, jamais sur vos systèmes de production."
+  },
+  {
    "q": "Que fait-on pendant la journée de formation sécurité IA ?",
    "a": "Elle alterne démonstrations et ateliers sur les postes des participants. Le matin, le groupe dresse l'inventaire anonyme de ses usages, classe ses documents selon l'offre qui peut les recevoir, passe en revue extensions et partages, puis voit un fichier piégé détourner un assistant. L'après-midi, il trie des mails d'hameçonnage écrits par une IA, rejoue une fraude au président par visioconférence, contrôle les droits de ses connecteurs et rédige ses règles d'équipe avec le circuit d'alerte. Un contrôle des acquis ferme la journée."
   },

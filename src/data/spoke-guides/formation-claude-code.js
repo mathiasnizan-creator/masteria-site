@@ -257,6 +257,7 @@ export default {
     },
   },
   liensAssocies: [
+    { label: "Claude Cowork, la même délégation pour les non-développeurs", href: '/formation-claude-cowork' },
     { label: "Claude pour l'exploitation, l'architecture et l'administration de la DSI", href: '/formation-claude-informatique' },
     { label: "Vibe coding : construire une application sans être développeur", href: '/formation-vibe-coding' },
     { label: "Agents IA en entreprise : du sans-code aux agents dans le code", href: '/formation-agents-ia' },

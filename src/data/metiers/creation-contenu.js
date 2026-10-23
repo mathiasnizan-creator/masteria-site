@@ -268,6 +268,10 @@ export default {
  },
  "faq": [
   {
+   "q": "Faut-il être graphiste pour se former à l'intelligence artificielle pour l'image et la vidéo ?",
+   "a": "Non. La formation vise celles et ceux qui produisent des contenus sans être graphistes ni monteurs : chargés de communication, community managers, équipes marketing, indépendants. Chacun apprend à décrire une image ou une séquence, à tenir une charte, à vérifier les droits d'usage de chaque générateur et à signaler un contenu généré. Un graphiste y gagne surtout des variantes et des déclinaisons plus rapides."
+  },
+  {
    "q": "Que contient la formation IA création de contenu ?",
    "a": "La fabrication de chaque format avec l'IA générative, sur vos propres sujets : article et newsletter, publications et carrousels, séries de visuels, vidéo courte montée et sous-titrée, contenu audio, puis la déclinaison d'un même sujet sur vos canaux. Une bonne partie des heures sert à ce que le générateur ne tranche pas pour vous : la licence de chaque outil, les droits des personnes et des œuvres, la mention des contenus générés et la relecture avant publication."
   },
