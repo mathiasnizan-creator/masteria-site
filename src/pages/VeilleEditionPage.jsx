@@ -11,6 +11,74 @@ import {
   strings, baseVeille, baseData, alternatesVeille, dateVeille, jourOuvreSuivant, inLanguageVeille,
 } from '../data/veille-i18n'
 import VeilleLangSwitch from '../components/VeilleLangSwitch'
+import { Accroche, Reponse, decouperPhrases } from '../components/Aere'
+
+/* Mise en page aérée (23/10/2026) : chaque actualité fait 4 à 6 phrases dans un seul <p>.
+   On le découpe en paragraphes de 2 ou 3 phrases, aux fins de phrase du texte visible,
+   jamais dans une balise (<a>, <strong>), des guillemets ou des parenthèses ouverts.
+   Les listes <ul> et l'ordre du texte restent tels quels ; aucun mot ne change. */
+const BALISE = /<\/?([a-z0-9]+)[^>]*>/gi
+const BALISES_VIDES = /^(br|img|hr|wbr)$/i
+
+function phrasesHtml(html) {
+  const vis = [], pos = [], prof = []
+  let p = 0, i = 0
+  for (const m of html.matchAll(BALISE)) {
+    for (; i < m.index; i++) { vis.push(html[i]); pos.push(i); prof.push(p) }
+    if (!BALISES_VIDES.test(m[1]) && !m[0].endsWith('/>')) p += m[0][1] === '/' ? -1 : 1
+    i = m.index + m[0].length
+  }
+  for (; i < html.length; i++) { vis.push(html[i]); pos.push(i); prof.push(p) }
+  const texte = vis.join('')
+  const unites = []
+  let debutHtml = 0, cur = 0, n = 0, len = 0
+  for (const ph of decouperPhrases(texte)) {
+    const idx = texte.indexOf(ph, cur)
+    if (idx < 0) break
+    cur = idx + ph.length
+    n++; len += ph.length + 1
+    if (cur >= texte.length) break
+    const avant = texte.slice(0, cur)
+    const ouverts = prof[cur] > 0
+      || (avant.match(/«/g) || []).length > (avant.match(/»/g) || []).length
+      || (avant.match(/“/g) || []).length > (avant.match(/”/g) || []).length
+      || (avant.match(/\(/g) || []).length > (avant.match(/\)/g) || []).length
+      || (avant.match(/"/g) || []).length % 2 === 1
+    if (ouverts) continue
+    unites.push({ html: html.slice(debutHtml, pos[cur]).trim(), n, len })
+    debutHtml = pos[cur]; n = 0; len = 0
+  }
+  const reste = html.slice(debutHtml).trim()
+  if (reste) unites.push({ html: reste, n: Math.max(1, n), len: len || reste.replace(BALISE, '').length })
+  return unites
+}
+
+function grouperHtml(unites, max = 3, budget = 380) {
+  const total = unites.reduce((s, u) => s + u.len, 0)
+  if (unites.length < 2 || total <= budget) return [unites.map(u => u.html).join(' ')]
+  const groupes = []
+  let cour = [], n = 0, len = 0
+  for (const u of unites) {
+    if (cour.length && (n + u.n > max || len + u.len > budget)) { groupes.push(cour); cour = []; n = 0; len = 0 }
+    cour.push(u); n += u.n; len += u.len
+  }
+  if (cour.length) {
+    const prec = groupes[groupes.length - 1]
+    const precN = prec ? prec.reduce((s, u) => s + u.n, 0) : 0
+    if (prec && cour.length === 1 && cour[0].n === 1 && cour[0].len < 90 && precN < max) prec.push(cour[0])
+    else groupes.push(cour)
+  }
+  return groupes.map(g => g.map(u => u.html).join(' '))
+}
+
+// Chaque <p> du HTML de l'édition → plusieurs <p> courts
+function aererHtml(html) {
+  if (typeof html !== 'string') return html
+  return html.replace(/<p>([\s\S]*?)<\/p>/g, (tout, inner) => {
+    const morceaux = grouperHtml(phrasesHtml(inner))
+    return morceaux.length < 2 ? tout : morceaux.map(m => `<p>${m}</p>`).join('\n')
+  })
+}
 
 /**
  * VeilleEditionPage — une édition quotidienne de la Veille IA.
@@ -338,10 +406,11 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             {L.signature} <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · <time dateTime={date}>{lisible}</time>{ok && edition.publieLeAffiche ? L.heure(edition.publieLeAffiche) : ''}
           </p>
 
+          {/* Chapeau : 1re phrase en accroche, la suite en puces à pictos */}
           {ok && (
-            <p className="veille-chapeau" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 36px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-              {edition.chapeau}
-            </p>
+            <div className="veille-chapeau" style={{ marginBottom: 12 }}>
+              <Accroche sombre texte={edition.chapeau} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+            </div>
           )}
 
           {ok && (
@@ -430,7 +499,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <article id="une" className="u-lift" style={{ ...cardStyle, padding: 'clamp(28px, 4vw, 44px)', borderTop: `3px solid ${c}`, scrollMarginTop: 140 }}>
               {cites.includes(1) && <MarqueurAnalyse libelle={L.reprisAnalyse} />}
               <h2 id={edition.une.id} style={{ ...h2Style, fontSize: 'clamp(22px, 3vw, 32px)', marginBottom: 14, scrollMarginTop: 140 }}>{edition.une.titre}</h2>
-              <div className="veille-texte veille-texte--une" style={{ maxWidth: 780 }} dangerouslySetInnerHTML={{ __html: edition.une.texteHtml }} />
+              <div className="veille-texte veille-texte--une" style={{ maxWidth: 780 }} dangerouslySetInnerHTML={{ __html: aererHtml(edition.une.texteHtml) }} />
               <BlocSources sources={edition.une.sources} variante="une" />
             </article>
           </div>
@@ -477,7 +546,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                         <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 18, color: '#0A0A0A', letterSpacing: '-0.01em', margin: '0 0 10px', maxWidth: 720 }}>
                           {it.titre || premiersMots(it.texteHtml, 12)}
                         </h3>
-                        <div className="veille-texte" style={{ maxWidth: 720 }} dangerouslySetInnerHTML={{ __html: it.texteHtml }} />
+                        <div className="veille-texte" style={{ maxWidth: 720 }} dangerouslySetInnerHTML={{ __html: aererHtml(it.texteHtml) }} />
                         <BlocSources sources={it.sources} />
                       </article>
                     ))}
@@ -492,14 +561,10 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
       {/* ── 4. AUSSI DANS L'ÉDITION (familles F-RECHERCHE et F-BREF) ── */}
       {ok && (recherche.length > 0 || breves.length > 0) && (
         <section style={{ padding: sectionPad, background: '#fff' }}>
-          <div style={{
-            ...wrap,
-            ...(isDesktop && recherche.length > 0 && breves.length > 0
-              ? { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(32px, 5vw, 56px)', alignItems: 'start' }
-              : {}),
-          }}>
+          {/* Recherche puis brèves l'une sous l'autre, pleine largeur (avant : deux colonnes de texte côte à côte) */}
+          <div style={{ ...wrap, display: 'flex', flexDirection: 'column', gap: 'clamp(48px, 6vw, 64px)' }}>
             {recherche.map(s => (
-              <div key={s.id}>
+              <div key={s.id} style={{ maxWidth: 780 }}>
                 <Kicker>{L.recherche}</Kicker>
                 <h2 id={s.id} style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)', marginBottom: 12, scrollMarginTop: 140 }}>{s.titre}</h2>
                 <span style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 16 }}>
@@ -511,7 +576,7 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
                     <h3 id={it.id} style={{ ...h3Style, fontSize: 16, marginBottom: 8, scrollMarginTop: 140 }}>
                       {it.titre || premiersMots(it.texteHtml, 12)}
                     </h3>
-                    <div className="veille-texte" dangerouslySetInnerHTML={{ __html: it.texteHtml }} />
+                    <div className="veille-texte" dangerouslySetInnerHTML={{ __html: aererHtml(it.texteHtml) }} />
                     <BlocSources sources={it.sources} />
                   </div>
                 ))}
@@ -519,16 +584,16 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             ))}
 
             {breves.map(s => (
-              <div key={s.id}>
+              <div key={s.id} style={{ maxWidth: 780 }}>
                 <Kicker>{L.resteActu}</Kicker>
                 <h2 id={s.id} style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 26px)', scrollMarginTop: 140 }}>{s.titre}</h2>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, maxWidth: 640 }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, maxWidth: 720 }}>
                   {s.items.map((it, j) => (
                     <li key={it.id} id={it.id} style={{ display: 'flex', gap: 16, padding: '16px 0', borderTop: j === 0 ? 'none' : '1px solid #E5E7EB', scrollMarginTop: 140 }}>
                       <div aria-hidden="true" style={{ width: 3, borderRadius: 99, background: c, flexShrink: 0, alignSelf: 'stretch' }} />
                       <div style={{ minWidth: 0 }}>
                         {it.titre && <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 6 }}>{it.titre}</h3>}
-                        <div className="veille-texte" dangerouslySetInnerHTML={{ __html: it.texteHtml }} />
+                        <div className="veille-texte" dangerouslySetInnerHTML={{ __html: aererHtml(it.texteHtml) }} />
                         <BlocSources sources={it.sources} />
                       </div>
                     </li>
@@ -551,13 +616,14 @@ export default function VeilleEditionPage({ lang = 'fr' }) {
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>{L.analyse}</div>
             <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>{analyse.titre}</h2>
 
+            {/* Thèse : premier paragraphe appuyé, la suite en texte courant (avant : tout en gras) */}
             {analyse.these && (
-              <p className="veille-these" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-                <strong style={{ color: '#fff' }}>{analyse.these}</strong>
-              </p>
+              <div className="veille-these">
+                <Reponse texte={analyse.these} fort="#fff" courant="#E2E8F0" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
+              </div>
             )}
 
-            <div className="veille-analyse" style={{ maxWidth: 760 }} dangerouslySetInnerHTML={{ __html: analyse.html }} />
+            <div className="veille-analyse" style={{ maxWidth: 760 }} dangerouslySetInnerHTML={{ __html: aererHtml(analyse.html) }} />
 
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760, marginTop: 36, display: 'flex', gap: 18, alignItems: 'center', flexWrap: 'wrap' }}>
               <img src="/assets/mathias-nizan@240.jpg" width={56} height={56} loading="lazy"

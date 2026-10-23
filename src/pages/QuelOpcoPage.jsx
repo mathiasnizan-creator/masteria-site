@@ -5,6 +5,7 @@ import {
   ExternalLink, Search, Wallet,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Accroche, Paras, Rangees } from '../components/Aere'
 
 /*
  * « Quel est mon OPCO ? » — outil gratuit liable (autorité + leads).
@@ -117,7 +118,9 @@ function FaqItem({ q, a }) {
         <ChevronDown size={18} strokeWidth={2} style={{ flexShrink: 0, color: '#6B7280', marginTop: 2, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, margin: 0 }}>{a}</p>
+        <div style={{ paddingBottom: 18 }}>
+          <Paras texte={a} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -216,9 +219,10 @@ export default function QuelOpcoPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Onze opérateurs de compétences (OPCO) financent la formation des salariés en France, chacun sur ses branches. Sélectionnez votre secteur : vous obtenez votre opérateur, le lien officiel pour vérifier, et les étapes pour faire financer une formation, jusqu'à 100 % du coût pédagogique selon votre branche.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, la suivante en puce à picto */}
+          <div id="geo-summary">
+            <Accroche sombre texte="Onze opérateurs de compétences (OPCO) financent la formation des salariés en France, chacun sur ses branches. Sélectionnez votre secteur : vous obtenez votre opérateur, le lien officiel pour vérifier, et les étapes pour faire financer une formation, jusqu'à 100 % du coût pédagogique selon votre branche." style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 18px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
@@ -285,15 +289,8 @@ export default function QuelOpcoPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>La marche à suivre</div>
           <h2 style={h2Style}>Faire financer une formation par votre OPCO, en 4 étapes</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 18, marginTop: 28 }}>
-            {ETAPES.map(([t, d], i) => (
-              <div key={t} style={cardStyle}>
-                <div style={{ width: 34, height: 34, borderRadius: '50%', background: c, color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 15, marginBottom: 14 }}>{i + 1}</div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
-                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.65, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Étapes en rangées numérotées pleine largeur (avant : quatre cartes côte à côte) */}
+          <Rangees style={{ marginTop: 28 }} items={ETAPES.map(([t, d]) => ({ titre: t, texte: d }))} />
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '20px 0 0' }}>
             Pour le détail des dispositifs (plan de développement des compétences, cas particuliers), voir la page <Link to="/financement-formation-ia" style={{ color: c, fontWeight: 600 }}>financement des formations IA</Link>.
           </p>

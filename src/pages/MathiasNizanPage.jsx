@@ -7,6 +7,7 @@ import SEOHead from '../components/SEOHead'
 import CadrageLink from '../components/CadrageLink'
 import EquipeMasteria from '../components/EquipeMasteria'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page auteur « Mathias Nizan » (/mathias-nizan) : E-E-A-T du conseil et du
@@ -45,6 +46,12 @@ const EN_BREF = [
   { icon: Languages, label: 'Interventions', value: "France, Europe, États-Unis et Inde ; missions menées en français ou en anglais" },
   { icon: Newspaper, label: 'Presse', value: "Interrogé par Les Échos sur la manière de choisir un assistant d'IA selon le métier" },
 ]
+
+/* En bref en repères : tête en gras + détail, mots inchangés. « Interventions » est coupé à la main
+   (le découpage automatique couperait après « France »). */
+const EN_BREF_REPERES = lignesEnReperes(EN_BREF).map(r => (r.label === 'Interventions'
+  ? { ...r, value: 'France, Europe, États-Unis et Inde', detail: 'Missions menées en français ou en anglais' }
+  : r))
 
 /* Les trois métiers qu'il exerce chez Masteria : penser, construire, transmettre. */
 const METIERS = [
@@ -182,10 +189,15 @@ export default function MathiasNizanPage() {
                 <span style={{ color: '#60A5FA', fontWeight: 800 }}>il conseille les directions et conçoit les solutions IA du cabinet</span>
               </h1>
 
-              {/* GEO : définition citable */}
-              <p id="definition" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 20px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-                Mathias Nizan a lancé Masteria en 2022, à Lyon, avec une spécialité unique, l'IA en entreprise. Il mène lui-même les <strong style={{ color: '#fff', fontWeight: 700 }}>audits et les missions de conseil</strong>, dessine l'architecture des outils et des agents IA que le cabinet construit, et conçoit les formations qui permettent aux équipes de s'en servir.
-              </p>
+              {/* GEO : définition citable. 1re phrase en accroche, la suivante en puce à picto */}
+              <div id="definition">
+                <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 18px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+                  Mathias Nizan a lancé Masteria en 2022, à Lyon, avec une spécialité unique, l'IA en entreprise.
+                </p>
+                <PointsCles sombre style={{ margin: '0 0 20px' }} phrases={[
+                  <>Il mène lui-même les <strong style={{ color: '#fff', fontWeight: 700 }}>audits et les missions de conseil</strong>, dessine l'architecture des outils et des agents IA que le cabinet construit, et conçoit les formations qui permettent aux équipes de s'en servir.</>,
+                ]} />
+              </div>
               <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.7, margin: '0 0 30px', maxWidth: 680 }}>
                 Avant Masteria, il a passé une dizaine d'années dans le digital, à diriger des projets pour de grands comptes, à négocier et à manager des équipes. Il travaille sur l'IA générative depuis 2020.
               </p>
@@ -215,21 +227,8 @@ export default function MathiasNizanPage() {
             </div>
           </div>
 
-          {/* En bref (GEO) */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', marginTop: 44 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '14px 32px' }}>
-              {EN_BREF.map(({ icon: Icon, label, value }) => (
-                <div key={label} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <Icon size={16} strokeWidth={2.2} style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-                  <div>
-                    <dt style={{ fontSize: 13, fontWeight: 700, color: '#E2E8F0' }}>{label}</dt>
-                    <dd style={{ margin: '2px 0 0', fontSize: 14, color: '#94A3B8', lineHeight: 1.55 }}>{value}</dd>
-                  </div>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref (GEO) : faits clés en repères */}
+          <Reperes sombre id="en-bref" titre="En bref" items={EN_BREF_REPERES} colonnes={3} style={{ margin: '44px 0 0' }} />
         </div>
       </section>
 
@@ -263,26 +262,27 @@ export default function MathiasNizanPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 36px', maxWidth: 780 }}>
             Un projet d'IA se joue sur la marche entre la décision et l'usage. Chez Masteria, la même équipe cadre, construit et forme, sous sa direction, pour que cette marche soit franchie d'un seul tenant.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
+          {/* Trois métiers en rangées pleine largeur (avant : trois cartes de texte côte à côte) */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {METIERS.map(({ icon: Icon, kicker, title, desc, links }) => (
-              <article key={title} style={{ ...cardStyle, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-                  <span aria-hidden="true" style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Icon size={20} strokeWidth={2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.08em' }}>{kicker}</span>
+              <article key={title} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '26px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <span aria-hidden="true" style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <Icon size={20} strokeWidth={1.75} style={{ color: c }} />
+                </span>
+                <div style={{ minWidth: 0, maxWidth: 760 }}>
+                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>{kicker}</div>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }}>{title}</h3>
+                  <Paras texte={desc} max={2} budget={320} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }} />
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexWrap: 'wrap', gap: '6px 20px' }}>
+                    {links.map(([label, href]) => (
+                      <li key={href}>
+                        <Link to={href} style={{ ...linkStyle, fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                          {label} <ArrowRight size={13} strokeWidth={2.4} aria-hidden="true" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }}>{title}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{desc}</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 6 }}>
-                  {links.map(([label, href]) => (
-                    <li key={href}>
-                      <Link to={href} style={{ ...linkStyle, fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
-                        {label} <ArrowRight size={13} strokeWidth={2.4} aria-hidden="true" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
               </article>
             ))}
           </div>
@@ -300,24 +300,30 @@ export default function MathiasNizanPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 800 }}>
             Trois salariés dans une PME, une vingtaine de consultants dans un cabinet, 58 personnes chez un distributeur, plusieurs milliers dans un groupe dont les sites vont de l'Europe à l'Inde : la taille change, sa façon de conduire la mission reste la même. Chaque client a demandé l'anonymat, et les étapes à venir sont écrites au futur.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+          {/* Missions en rangées pleine largeur : secteur et chiffre à gauche, récit à droite
+              (avant : quatre cartes de texte côte à côte) */}
+          <div style={{ borderTop: '1px solid #E5E7EB' }}>
             {MISSIONS.map(({ id, icon: Icon, secteur, chiffre, chiffreLabel, texte }) => (
-              <article key={id} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{secteur}</span>
+              <article key={id} style={{ display: 'grid', gridTemplateColumns: isDesktop ? '260px minmax(0, 1fr)' : '1fr', gap: isDesktop ? 40 : 14, padding: '28px 0', borderBottom: '1px solid #E5E7EB', alignItems: 'start' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={18} strokeWidth={1.75} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{secteur}</span>
+                  </div>
+                  <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{chiffre}</div>
+                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{chiffreLabel}</div>
+                  </div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{chiffre}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{chiffreLabel}</div>
+                <div style={{ maxWidth: 720 }}>
+                  <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 14px' }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ ...linkStyle, fontSize: 13.5, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                    Le cas complet
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{texte}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ ...linkStyle, fontSize: 13.5, display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 4 }}>
-                  Le cas complet
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -329,15 +335,8 @@ export default function MathiasNizanPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>Sa façon de travailler</div>
           <h2 style={h2Style}>Quatre règles tenues sur chaque mission</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginTop: 28 }}>
-            {PRINCIPES.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ borderLeft: `4px solid ${c}`, padding: '4px 0 4px 18px' }}>
-                <Icon size={20} strokeWidth={2} style={{ color: c, marginBottom: 10 }} aria-hidden="true" />
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Règles en rangées pleine largeur (avant : quatre colonnes de texte) */}
+          <Rangees style={{ marginTop: 28 }} items={PRINCIPES.map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
         </div>
       </section>
 

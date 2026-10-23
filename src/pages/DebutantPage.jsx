@@ -68,11 +68,18 @@ export default function DebutantPage() {
           }}>
             Formation intelligence artificielle débutant
           </h1>
+          {/* Accroche : la question, puis la réponse en paragraphe court */}
           <p style={{
-            fontSize: 'clamp(17px, 2.2vw, 20px)', color: '#4B5563',
-            lineHeight: 1.6, maxWidth: 720, margin: '0 auto 36px',
+            fontSize: 'clamp(18px, 2.4vw, 22px)', color: '#0A0A0A', fontWeight: 600,
+            lineHeight: 1.5, maxWidth: 720, margin: '0 auto 12px',
           }}>
-            Vous n'avez jamais utilisé ChatGPT, Copilot ou Gemini ? En une journée, nos formateurs vous transmettent les bases solides pour utiliser l'IA au quotidien, sans jargon technique et avec des cas concrets adaptés à votre métier.
+            Vous n'avez jamais utilisé ChatGPT, Copilot ou Gemini ?
+          </p>
+          <p style={{
+            fontSize: 'clamp(16px, 2vw, 18px)', color: '#4B5563',
+            lineHeight: 1.6, maxWidth: 680, margin: '0 auto 36px',
+          }}>
+            En une journée, nos formateurs vous transmettent les bases solides pour utiliser l'IA au quotidien, sans jargon technique et avec des cas concrets adaptés à votre métier.
           </p>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{

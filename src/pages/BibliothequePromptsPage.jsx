@@ -4,6 +4,7 @@ import {
   ArrowRight, BookOpen, Check, ChevronDown, Copy, Lightbulb, ShieldAlert,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Accroche, Paras, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 import { PROMPT_METIERS, REGLES_PROMPT, ERREURS } from '../data/prompts-library'
 
 /*
@@ -124,7 +125,9 @@ function FaqItem({ q, a }) {
         <ChevronDown size={18} strokeWidth={2} style={{ flexShrink: 0, color: '#6B7280', marginTop: 2, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, margin: 0 }}>{a}</p>
+        <div style={{ paddingBottom: 18 }}>
+          <Paras texte={a} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -240,9 +243,10 @@ export default function BibliothequePromptsPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 730, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {TOTAL} prompts professionnels tirés de nos formations, classés par métier et prêts à copier. Chacun est accompagné de la raison de sa construction : c'est cette explication qui vous permet d'écrire les vôtres, plutôt que de dépendre d'une liste. Ils fonctionnent sur ChatGPT, Claude, Copilot, Gemini et Mistral.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces à pictos */}
+          <div id="geo-summary">
+            <Accroche sombre texte={`${TOTAL} prompts professionnels tirés de nos formations, classés par métier et prêts à copier. Chacun est accompagné de la raison de sa construction : c'est cette explication qui vous permet d'écrire les vôtres, plutôt que de dépendre d'une liste. Ils fonctionnent sur ChatGPT, Claude, Copilot, Gemini et Mistral.`} style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 18px', maxWidth: 730, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
 
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
             {[['Définition', '#definition'], ['Les prompts', '#prompts'], ['La méthode', '#methode'], ['Erreurs à éviter', '#erreurs'], ['Lexique', '#lexique'], ['FAQ', '#faq']].map(([label, href]) => (
@@ -252,23 +256,15 @@ export default function BibliothequePromptsPage() {
             ))}
           </nav>
 
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(18px, 3vw, 24px)', maxWidth: 730 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 12 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {[
-                ['Contenu', `${TOTAL} prompts sur ${PROMPT_METIERS.length} métiers, du juridique au service client`],
-                ['Format', "Chaque prompt est structuré (rôle, contexte, tâche, format, garde-fou) et copiable en un clic"],
-                ['En plus', "La raison de chaque construction, la méthode en 6 règles et les 4 erreurs qui ruinent un prompt"],
-                ['Outils', 'Compatibles ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI'],
-                ['Accès', 'Libre et réutilisable, y compris dans vos supports internes. Sans compte ni email'],
-              ].map(([label, value], i) => (
-                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 105px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#94A3B8', lineHeight: 1.55 }}>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref en repères. « Format » et « Outils » sont coupés à la main, mots inchangés
+              (le découpage automatique couperait dans la parenthèse ou dans la liste d'outils). */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={[
+            ...lignesEnReperes([{ label: 'Contenu', value: `${TOTAL} prompts sur ${PROMPT_METIERS.length} métiers, du juridique au service client` }]),
+            { label: 'Format', value: 'Chaque prompt est structuré', detail: '(rôle, contexte, tâche, format, garde-fou) et copiable en un clic' },
+            ...lignesEnReperes([{ label: 'En plus', value: 'La raison de chaque construction, la méthode en 6 règles et les 4 erreurs qui ruinent un prompt' }]),
+            { label: 'Outils', value: 'Compatibles ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI' },
+            ...lignesEnReperes([{ label: 'Accès', value: 'Libre et réutilisable, y compris dans vos supports internes. Sans compte ni email' }]),
+          ]} />
         </div>
       </section>
 
@@ -277,10 +273,15 @@ export default function BibliothequePromptsPage() {
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={kickerStyle}>La réponse en deux lignes</div>
           <h2 style={h2Style}>Qu'est-ce qu'une bibliothèque de prompts ?</h2>
-          <p style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 18px', padding: '20px 24px' }}>
-            <strong>Une bibliothèque de prompts est un recueil d'instructions rédigées et testées, classées par métier ou par usage, qu'une équipe réutilise au lieu de réécrire sa demande à chaque fois.</strong>{' '}
-            Son intérêt n'est pas le gain de frappe : c'est la standardisation. Quand tout le monde part des mêmes prompts, les résultats deviennent comparables d'une personne à l'autre, et la qualité cesse de dépendre de l'aisance de chacun avec l'IA.
-          </p>
+          {/* Réponse : la définition en gras, puis son intérêt dans un second paragraphe */}
+          <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 18px', padding: '20px 24px' }}>
+            <p style={{ margin: '0 0 12px' }}>
+              <strong>Une bibliothèque de prompts est un recueil d'instructions rédigées et testées, classées par métier ou par usage, qu'une équipe réutilise au lieu de réécrire sa demande à chaque fois.</strong>
+            </p>
+            <p style={{ margin: 0, color: '#374151' }}>
+              Son intérêt n'est pas le gain de frappe : c'est la standardisation. Quand tout le monde part des mêmes prompts, les résultats deviennent comparables d'une personne à l'autre, et la qualité cesse de dépendre de l'aisance de chacun avec l'IA.
+            </p>
+          </div>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 30px', maxWidth: 780 }}>
             On parle aussi de banque de prompts ou de recueil d'exemples de prompts. Celle-ci en rassemble {TOTAL}, prêts à copier, utilisables avec ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI. Choisissez votre métier ci-dessous.
           </p>
@@ -387,17 +388,8 @@ export default function BibliothequePromptsPage() {
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 30px', maxWidth: 780 }}>
             Tous les prompts de cette bibliothèque appliquent ces six règles. Les connaître vaut mieux que la liste elle-même : elles vous permettent d'écrire vos propres prompts, y compris sur des situations que nous n'avons pas couvertes.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18 }}>
-            {REGLES_PROMPT.map((r, i) => (
-              <div key={r.t} style={cardStyle}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                  <span style={{ width: 30, height: 30, borderRadius: '50%', background: c, color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 14, flexShrink: 0 }}>{i + 1}</span>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{r.t}</h3>
-                </div>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{r.d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Six règles en rangées numérotées pleine largeur (avant : cartes de texte côte à côte) */}
+          <Rangees items={REGLES_PROMPT.map(r => ({ titre: r.t, texte: r.d }))} />
         </div>
       </section>
 

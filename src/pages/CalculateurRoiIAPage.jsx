@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles } from '../components/Aere'
 
 /*
  * Outil : « Calculateur de ROI IA » (slug /calculateur-roi-ia).
@@ -253,9 +254,11 @@ export default function CalculateurRoiIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>Voir où votre gain se perd</span>
           </h1>
 
-          <p style={{ fontSize: 'clamp(16px, 2.2vw, 19px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La plupart des calculs de retour multiplient un gain de temps par un effectif et s&apos;arrêtent là. Celui-ci suit les cinq étapes que franchit une minute gagnée, du bureau de l&apos;utilisateur jusqu&apos;au résultat de l&apos;entreprise, et affiche ce qui reste après chacune.
+          {/* Accroche : 1re phrase appuyée, la suivante en puce à picto */}
+          <p style={{ fontSize: 'clamp(16px, 2.2vw, 19px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 18px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            La plupart des calculs de retour multiplient un gain de temps par un effectif et s&apos;arrêtent là.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={["Celui-ci suit les cinq étapes que franchit une minute gagnée, du bureau de l'utilisateur jusqu'au résultat de l'entreprise, et affiche ce qui reste après chacune."]} />
           <p style={{ fontSize: 14.5, color: '#94A3B8', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>
             Vos chiffres restent sur votre écran : le calcul tourne dans le navigateur et aucune donnée ne part vers nos serveurs. La méthode complète figure sur la page <Link to="/roi-ia-entreprise" style={{ color: '#93C5FD', fontWeight: 600 }}>ROI de l&apos;IA en entreprise</Link>.
           </p>
@@ -357,21 +360,29 @@ export default function CalculateurRoiIAPage() {
           <p style={{ ...pStyle, maxWidth: 880 }}>
             Un retour net positif ne prouve rien à lui seul : il découle des valeurs que vous avez saisies. L&apos;information utile tient dans la répartition des pertes entre les étapes. Déplacez les curseurs un par un et notez celui qui fait le plus bouger le résultat.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18, marginTop: 26 }}>
+          {/* Trois cas en rangées pleine largeur (avant : trois cartes de texte côte à côte) */}
+          <div style={{ borderTop: '1px solid #E5E7EB', marginTop: 26 }}>
             {[
               ['Si l\'adoption pèse le plus', "Le chantier porte sur le déploiement : former les équipes sur leurs tâches, nommer des référents, installer l'habitude. Une licence payée et jamais ouverte ne rapporte rien.", '/formation-ia-entreprise', 'Former toute une entreprise'],
               ['Si la reprise pèse le plus', "Le chantier porte sur la qualité : règles de relecture, sources à citer, ce qui reste à la main d'un humain. Le gain existe, mais le contrôle le reprend, souvent dans un autre service.", '/gouvernance-ia', 'Gouvernance et validation'],
               ['Si la conversion pèse le plus', "Le chantier porte sur l'organisation du travail. Les heures libérées existent, mais personne n'a décidé de leur emploi, et elles se dispersent dans les journées.", '/conseil-strategie-ia', 'Conseil en stratégie IA'],
-            ].map(([t, d, to, label]) => (
-              <div key={t} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column' }}>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 10 }}>{t}</h3>
-                <p style={{ fontSize: 14.5, lineHeight: 1.7, color: '#374151', margin: '0 0 16px' }}>{d}</p>
-                <Link to={to} style={{ marginTop: 'auto', fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                  {label}
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
+            ].map(([t, d, to, label], i) => {
+              // Même picto que l'étape correspondante du calculateur
+              const Icon = [UserCheck, ShieldCheck, GitBranch][i]
+              return (
+              <div key={t} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+                <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}><Icon size={17} strokeWidth={1.75} /></span>
+                <div style={{ minWidth: 0, maxWidth: 760 }}>
+                  <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{t}</h3>
+                  <Paras texte={d} max={2} budget={320} style={{ fontSize: 15, lineHeight: 1.7, color: '#374151', margin: '0 0 12px' }} />
+                  <Link to={to} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                    {label}
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
+                </div>
               </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -385,7 +396,7 @@ export default function CalculateurRoiIAPage() {
             {FAQ.map(f => (
               <div key={f.q} style={{ padding: '20px 0', borderTop: '1px solid #E5E7EB' }}>
                 <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{f.q}</h3>
-                <p style={{ fontSize: 15, lineHeight: 1.75, color: '#374151', margin: 0 }}>{f.a}</p>
+                <Paras texte={f.a} style={{ fontSize: 15, lineHeight: 1.75, color: '#374151', margin: 0, maxWidth: 780 }} />
               </div>
             ))}
           </div>

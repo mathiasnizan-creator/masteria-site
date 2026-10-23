@@ -18,12 +18,73 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { ArrowRight, Clock, Calendar, BookOpen, ChevronDown, ChevronUp, Share2, Check, RefreshCw } from 'lucide-react'
 import { FadeIn, PrimaryBtn, SecBtn } from '../components/components'
-import { FAQSection } from '../components/screens2'
 import SEOHead from '../components/SEOHead'
 import CadrageLink from '../components/CadrageLink'
 import { getArticleBySlug, getRelatedArticles, BLOG_ARTICLES } from '../data/blog-articles'
 import { getTagColor } from '../data/tag-colors'
 import { useIsMobile } from '../hooks/useMediaQuery'
+import { Paras, Reponse, decouperPhrases } from '../components/Aere'
+
+/* Mise en page aérée (23/10/2026) : les blocs de l'article contiennent du HTML (strong, em, a).
+   On coupe aux fins de phrase du texte visible, jamais dans une balise, des guillemets ou
+   des parenthèses ouverts, puis on regroupe en paragraphes de 2 ou 3 phrases. Mots inchangés. */
+const BALISE = /<\/?([a-z0-9]+)[^>]*>/gi
+const BALISES_VIDES = /^(br|img|hr|wbr)$/i
+
+function phrasesHtml(html) {
+  if (typeof html !== 'string') return [{ html, n: 1, len: 0 }]
+  // texte visible + position de chaque caractère dans le HTML + balises ouvertes à cet endroit
+  const vis = [], pos = [], prof = []
+  let p = 0, i = 0
+  for (const m of html.matchAll(BALISE)) {
+    for (; i < m.index; i++) { vis.push(html[i]); pos.push(i); prof.push(p) }
+    if (!BALISES_VIDES.test(m[1]) && !m[0].endsWith('/>')) p += m[0][1] === '/' ? -1 : 1
+    i = m.index + m[0].length
+  }
+  for (; i < html.length; i++) { vis.push(html[i]); pos.push(i); prof.push(p) }
+  const texte = vis.join('')
+  const unites = []
+  let debutHtml = 0, cur = 0, n = 0, len = 0
+  for (const ph of decouperPhrases(texte)) {
+    const idx = texte.indexOf(ph, cur)
+    if (idx < 0) break
+    cur = idx + ph.length
+    n++; len += ph.length + 1
+    if (cur >= texte.length) break
+    const avant = texte.slice(0, cur)
+    const ouverts = prof[cur] > 0
+      || (avant.match(/«/g) || []).length > (avant.match(/»/g) || []).length
+      || (avant.match(/\(/g) || []).length > (avant.match(/\)/g) || []).length
+      || (avant.match(/"/g) || []).length % 2 === 1
+    if (ouverts) continue
+    unites.push({ html: html.slice(debutHtml, pos[cur]).trim(), n, len })
+    debutHtml = pos[cur]; n = 0; len = 0
+  }
+  const reste = html.slice(debutHtml).trim()
+  if (reste) unites.push({ html: reste, n: Math.max(1, n), len: len || reste.replace(BALISE, '').length })
+  return unites
+}
+
+// Regroupe les phrases en paragraphes de 1 à `max` phrases (et `budget` caractères visibles)
+function grouperHtml(unites, max = 3, budget = 380) {
+  const total = unites.reduce((s, u) => s + u.len, 0)
+  if (unites.length < 2 || total <= budget) return [unites.map(u => u.html).join(' ')]
+  const groupes = []
+  let cour = [], n = 0, len = 0
+  for (const u of unites) {
+    if (cour.length && (n + u.n > max || len + u.len > budget)) { groupes.push(cour); cour = []; n = 0; len = 0 }
+    cour.push(u); n += u.n; len += u.len
+  }
+  if (cour.length) {
+    const prec = groupes[groupes.length - 1]
+    const precN = prec ? prec.reduce((s, u) => s + u.n, 0) : 0
+    if (prec && cour.length === 1 && cour[0].n === 1 && cour[0].len < 90 && precN < max) prec.push(cour[0])
+    else groupes.push(cour)
+  }
+  return groupes.map(g => g.map(u => u.html).join(' '))
+}
+
+const parasHtml = (html, max, budget) => grouperHtml(phrasesHtml(html), max, budget)
 
 // Offres proposées par défaut sous le texte de `apres` (mêmes ancres que l'ancien encart).
 const APRES_LIENS = [
@@ -168,19 +229,29 @@ function Block({ b }) {
         </h3>
       )
 
-    case 'p':
+    case 'p': {
+      const pStyle = {
+        fontFamily: 'DM Sans, sans-serif',
+        fontSize: 'clamp(15px, 1.7vw, 16.5px)',
+        color: '#2A2A2A',
+        lineHeight: 1.8,
+        marginBottom: 18,
+      }
+      // Paragraphe tout en gras : 1re partie appuyée, la suite en texte courant
+      const gras = typeof b.text === 'string' && b.text.match(/^\s*<strong>([^<]*)<\/strong>\s*$/)
+      if (gras && gras[1].length > 200) {
+        const { marginBottom, ...txt } = pStyle
+        return <Reponse texte={gras[1]} style={{ ...txt, margin: `0 0 ${marginBottom}px` }} fort="#0A0A0A" courant="#2A2A2A" />
+      }
+      // Paragraphes de 2 ou 3 phrases au plus
       return (
-        <p
-          style={{
-            fontFamily: 'DM Sans, sans-serif',
-            fontSize: 'clamp(15px, 1.7vw, 16.5px)',
-            color: '#2A2A2A',
-            lineHeight: 1.8,
-            marginBottom: 18,
-          }}
-          dangerouslySetInnerHTML={{ __html: b.text }}
-        />
+        <>
+          {parasHtml(b.text).map((h, i) => (
+            <p key={i} style={pStyle} dangerouslySetInnerHTML={{ __html: h }} />
+          ))}
+        </>
       )
+    }
 
     case 'ul':
       return (
@@ -303,6 +374,12 @@ function Block({ b }) {
     case 'callout': {
       // Si pas de title ET italique → pull-quote stylé en grand (citation visuelle).
       const isPullQuote = !b.title && b.italic !== false
+      // Texte long en paragraphes de 2 phrases ; les prompts déjà découpés par <br> restent tels quels.
+      // Encadré « libellé : texte » (chaque phrase ouvre sur un <strong>) : une ligne par libellé.
+      const unites = /<br/i.test(b.text) ? null : phrasesHtml(b.text)
+      const morceaux = !unites ? [b.text]
+        : unites.length > 2 && unites.every(u => u.html.startsWith('<strong>')) ? unites.map(u => u.html)
+        : grouperHtml(unites, 2, 320)
       if (isPullQuote) {
         return (
           <figure style={{
@@ -331,8 +408,11 @@ function Block({ b }) {
                 margin: 0,
                 fontStyle: 'italic',
               }}
-              dangerouslySetInnerHTML={{ __html: b.text }}
-            />
+            >
+              {morceaux.map((h, i) => (
+                <p key={i} style={{ margin: i < morceaux.length - 1 ? '0 0 14px' : 0 }} dangerouslySetInnerHTML={{ __html: h }} />
+              ))}
+            </blockquote>
           </figure>
         )
       }
@@ -365,8 +445,11 @@ function Block({ b }) {
               lineHeight: 1.72,
               fontStyle: b.italic === false ? 'normal' : 'italic',
             }}
-            dangerouslySetInnerHTML={{ __html: b.text }}
-          />
+          >
+            {morceaux.map((h, i) => (
+              <p key={i} style={{ margin: i < morceaux.length - 1 ? '0 0 10px' : 0 }} dangerouslySetInnerHTML={{ __html: h }} />
+            ))}
+          </div>
         </div>
       )
     }
@@ -528,6 +611,38 @@ function ShareButton({ url, title }) {
       {copied ? <Check size={13} /> : <Share2 size={13} />}
       {copied ? 'Lien copié !' : 'Partager'}
     </button>
+  )
+}
+
+/* ── FAQ ── même présentation que FAQSection, réponses en paragraphes courts
+   (FAQSection rend chaque réponse en un seul <p>, coupé au-delà de 300 px). */
+function FaqArticle({ items, title, bg }) {
+  const [open, setOpen] = useState(null)
+  return (
+    <section style={{ padding: 'clamp(48px, 8vw, 72px) clamp(18px, 4vw, 32px)', background: bg }}>
+      <div style={{ maxWidth: 720, margin: '0 auto' }}>
+        <FadeIn>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 10 }}>FAQ</div>
+          <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 800, color: '#111', letterSpacing: '-0.02em', marginBottom: 36 }}>{title}</h2>
+        </FadeIn>
+        <div>
+          {items.map((item, i) => (
+            <div key={i} style={{ borderBottom: '1px solid #E2E2E2' }}>
+              <button onClick={() => setOpen(open === i ? null : i)} aria-expanded={open === i}
+                style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '18px 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left', gap: 16 }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, fontWeight: 600, color: '#111', lineHeight: 1.4 }}>{item.q}</span>
+                <span style={{ fontSize: 20, color: open === i ? '#1C1C1C' : '#6B7280', flexShrink: 0, transform: open === i ? 'rotate(45deg)' : 'none', transition: 'transform 220ms ease', lineHeight: 1, fontWeight: 300 }}>+</span>
+              </button>
+              <div style={{ maxHeight: open === i ? 1400 : 0, overflow: 'hidden', transition: 'max-height 320ms ease' }}>
+                <div style={{ paddingBottom: 20 }}>
+                  <Paras texte={item.a} style={{ fontSize: 14, color: '#4A4A4A', lineHeight: 1.8, margin: 0 }} />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
@@ -791,7 +906,8 @@ export default function BlogArticlePage() {
             lineHeight: 1.72,
             boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
           }}>
-            {article.intro}
+            {/* Chapeau en paragraphes courts */}
+            <Paras texte={article.intro} max={2} style={{ margin: 0 }} />
           </div>
         </div>
       </header>
@@ -830,7 +946,7 @@ export default function BlogArticlePage() {
 
       {/* ── FAQ ── */}
       {article.faq && article.faq.length > 0 && (
-        <FAQSection items={article.faq} title="Questions fréquentes" bg="#F8FAFC" />
+        <FaqArticle items={article.faq} title="Questions fréquentes" bg="#F8FAFC" />
       )}
 
       {/* ── CTA ──
@@ -916,9 +1032,7 @@ export default function BlogArticlePage() {
                   <h2 id="apres-article" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 2.8vw, 30px)', fontWeight: 900, color: '#0A0A0A', letterSpacing: '-0.02em', lineHeight: 1.2, margin: '0 0 14px' }}>
                     {apres.titre}
                   </h2>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 22px' }}>
-                    {apres.texte}
-                  </p>
+                  <Paras texte={apres.texte} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 22px' }} />
                 </>
               )}
               <nav aria-label="Passer à la pratique" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '12px 18px' }}>

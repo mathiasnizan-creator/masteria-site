@@ -5,6 +5,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import VeilleNav from '../components/VeilleNav'
+import { Reponse, Rangees } from '../components/Aere'
 
 /**
  * VeilleAProposPage — politique éditoriale de la Veille IA.
@@ -140,13 +141,7 @@ export default function VeilleAProposPage() {
         <div style={{ maxWidth: 820, margin: '0 auto' }}>
           <Kicker>La rédaction</Kicker>
           <h2 style={h2Style}>Qui écrit la Veille IA</h2>
-          <p style={{ ...answerStyle }}>
-            <strong>
-              La Veille IA est écrite par l'équipe éditoriale de Masteria, que dirige Mathias Nizan, fondateur
-              du cabinet. Elle paraît chaque jour ouvré et n'engage que sa rédaction : aucun annonceur n'y
-              intervient.
-            </strong>
-          </p>
+          <Reponse style={answerStyle} texte="La Veille IA est écrite par l'équipe éditoriale de Masteria, que dirige Mathias Nizan, fondateur du cabinet. Elle paraît chaque jour ouvré et n'engage que sa rédaction : aucun annonceur n'y intervient." />
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 16px' }}>
             Depuis 2022, Masteria audite, conseille, construit des outils d'IA sur mesure et forme les équipes
             qui s'en servent. La veille prolonge ce travail : elle sert à comprendre l'actualité que nos
@@ -169,15 +164,8 @@ export default function VeilleAProposPage() {
             Chaque édition suit le même chemin, du dépouillement des sources à la publication. Rien n'est
             généré à la volée : la sélection et l'analyse sont deux étapes distinctes, dans cet ordre.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
-            {ETAPES.map(e => (
-              <div key={e.titre} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}><IconTile icon={e.icon} /></div>
-                <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 10 }}>{e.titre}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{e.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Étapes en rangées numérotées pleine largeur (avant : trois cartes de texte côte à côte) */}
+          <Rangees items={ETAPES.map(e => ({ titre: e.titre, texte: e.desc }))} />
         </div>
       </section>
 
@@ -186,12 +174,7 @@ export default function VeilleAProposPage() {
         <div style={wrap}>
           <Kicker>Ce que nous suivons</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 820 }}>Trois zones, suivies avec le même soin</h2>
-          <p style={{ ...answerStyle }}>
-            <strong>
-              La Veille IA couvre l'Europe et la France, l'international et la Chine et l'Asie, sans hiérarchie
-              entre ces zones. Chaque actualité cite sa source par un lien direct vers la publication d'origine.
-            </strong>
-          </p>
+          <Reponse style={answerStyle} texte="La Veille IA couvre l'Europe et la France, l'international et la Chine et l'Asie, sans hiérarchie entre ces zones. Chaque actualité cite sa source par un lien direct vers la publication d'origine." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 8 }}>
             {ZONES.map(z => (
               <div key={z.titre} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>

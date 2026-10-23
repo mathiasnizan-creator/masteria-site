@@ -3,13 +3,17 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Newspaper, Rss, Library, Languages,
   Flame, Landmark, Globe, Compass, FlaskConical, Zap,
-  Briefcase, Code2, Scale, Users,
+  Briefcase, Code2, Scale, Users, Clock,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import VeilleNav from '../components/VeilleNav'
 import VeilleLangSwitch from '../components/VeilleLangSwitch'
 import { strings, baseVeille, baseData, alternatesVeille, inLanguageVeille } from '../data/veille-i18n'
+import { Accroche, Reperes, Reponse, Paras, Rangees, lignesEnReperes } from '../components/Aere'
+
+// Pictos des repères « En bref » (rythme, contenu, langues, archives), dans les deux langues
+const ICONES_EN_BREF = [Clock, Newspaper, Languages, Library]
 
 /**
  * VeillePage — la porte d'entrée de la Veille IA (/veille-ia, /en/ai-watch).
@@ -396,9 +400,8 @@ export default function VeillePage({ lang = 'fr' }) {
             {T.signature} <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>
           </p>
 
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {T.chapeau}
-          </p>
+          {/* Chapeau : 1re phrase en accroche, la suite en puce à picto */}
+          <Accroche sombre texte={T.chapeau} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             {T.intro}
@@ -416,17 +419,9 @@ export default function VeillePage({ lang = 'fr' }) {
             </Link>
           </div>
 
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>{T.enBrefTitre}</div>
-            <dl style={{ margin: 0 }}>
-              {T.enBref(meta, retard, ok ? ed.dateAffichee : '').map(([label, valeur], i) => (
-                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{valeur}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : faits clés en repères */}
+          <Reperes sombre titre={T.enBrefTitre} colonnes={2} style={{ margin: 0, maxWidth: 1000 }}
+            items={lignesEnReperes(T.enBref(meta, retard, ok ? ed.dateAffichee : '').map(([label, value], i) => ({ label, value, icon: ICONES_EN_BREF[i] })))} />
         </div>
       </section>
 
@@ -510,15 +505,8 @@ export default function VeillePage({ lang = 'fr' }) {
           <Kicker>{T.pourQuiKicker}</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 820 }}>{T.pourQuiTitre}</h2>
           <p style={{ ...pStyle, margin: '0 0 32px' }}>{T.pourQuiIntro}</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
-            {T.publics.map(p => (
-              <div key={p.titre} style={{ ...cardStyle, padding: 26 }}>
-                <div style={{ marginBottom: 14 }}><IconTile icon={p.icon} /></div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{p.titre}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Publics en rangées pleine largeur (avant : cartes de texte côte à côte) */}
+          <Rangees items={T.publics.map(p => ({ titre: p.titre, texte: p.desc, icon: p.icon }))} />
         </div>
       </section>
 
@@ -529,11 +517,9 @@ export default function VeillePage({ lang = 'fr' }) {
         <div style={{ maxWidth: 820, margin: '0 auto', position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>{T.ligneKicker}</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>{T.ligneTitre}</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px' }}>
-            <strong style={{ color: '#fff' }}>{T.ligneReponse}</strong>
-          </p>
-          <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 16px' }}>{T.ligneZones}</p>
-          <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 22px' }}>{T.ligneAnalyse}</p>
+          <Reponse texte={T.ligneReponse} fort="#fff" courant="#E2E8F0" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px' }} />
+          <Paras texte={T.ligneZones} style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 16px' }} />
+          <Paras texte={T.ligneAnalyse} style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 22px' }} />
           <Link to="/veille-ia/a-propos" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 15, fontWeight: 700, color: '#93C5FD', textDecoration: 'none' }}>
             {T.ligneLien}
             <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />

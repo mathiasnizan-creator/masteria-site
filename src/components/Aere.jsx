@@ -49,8 +49,22 @@ export function Paras({ texte, style, premier, rich, max = 3, budget = 380, as: 
 export function Reponse({ texte, style, rich, fort = '#0A0A0A', courant = '#374151' }) {
   if (!texte) return null
   const { padding, background, border, borderLeft, borderRadius, maxWidth, margin, ...txt } = style || {}
+  const r = t => (rich ? rich(t) : t)
+  const boite = { padding, background, border, borderLeft, borderRadius, maxWidth, margin }
+  // Encadré court en un seul paragraphe : seule la 1re phrase est appuyée
+  if (typeof texte === 'string' && paragraphes(texte, 2, 320).length === 1) {
+    const ph = decouperPhrases(texte)
+    return (
+      <div style={boite}>
+        <p style={{ ...txt, margin: 0, color: courant }}>
+          <strong style={{ fontWeight: 700, color: fort }}>{r(ph[0])}</strong>
+          {ph.length > 1 && <> {r(ph.slice(1).join(' '))}</>}
+        </p>
+      </div>
+    )
+  }
   return (
-    <div style={{ padding, background, border, borderLeft, borderRadius, maxWidth, margin }}>
+    <div style={boite}>
       <Paras texte={texte} rich={rich} max={2} budget={320} style={{ ...txt, margin: 0, color: courant }} premier={{ fontWeight: 700, color: fort }} />
     </div>
   )

@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, ChevronDown, Compass, Gauge, RefreshCw, Rocket, Sprout,
+  ArrowRight, ChevronDown, Compass, Gauge, RefreshCw, Rocket, Sprout, ClipboardList, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Accroche, Paras, Reperes, lignesEnReperes } from '../components/Aere'
 
 /*
  * « Test de maturité IA » — outil gratuit liable (autorité + leads diagnostic).
@@ -143,7 +144,9 @@ function FaqItem({ q, a }) {
         <ChevronDown size={18} strokeWidth={2} style={{ flexShrink: 0, color: '#6B7280', marginTop: 2, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, paddingBottom: 18, margin: 0 }}>{a}</p>
+        <div style={{ paddingBottom: 18 }}>
+          <Paras texte={a} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -259,14 +262,27 @@ export default function TestMaturiteIAPage() {
           {/* Définition citable (GEO, speakable) : répond à « maturité IA » */}
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 740 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            {/* Les huit dimensions en liste à coches (mêmes mots) */}
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: '0 0 10px' }}>
+              La maturité IA d'une entreprise désigne la place que l'intelligence artificielle a prise dans son fonctionnement ordinaire. Elle se lit sur huit dimensions :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 12px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '6px 18px' }}>
+              {["usages des équipes", 'comptes et outils', 'formation', "cas d'usage repérés", "règles d'usage", 'protection des données', 'mesure des gains', 'engagement de la direction'].map(d => (
+                <li key={d} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 14.5, color: '#E2E8F0', lineHeight: 1.5 }}>
+                  <Check size={15} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
             <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              La maturité IA d'une entreprise désigne la place que l'intelligence artificielle a prise dans son fonctionnement ordinaire. Elle se lit sur huit dimensions : usages des équipes, comptes et outils, formation, cas d'usage repérés, règles d'usage, protection des données, mesure des gains, engagement de la direction. Quatre niveaux la résument, de la découverte au déploiement.
+              Quatre niveaux la résument, de la découverte au déploiement.
             </p>
           </div>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Huit questions sur vos usages, votre outillage, votre cadre et votre pilotage. À la clé : un score sur 24, votre profil parmi quatre niveaux de maturité, et les trois priorités qui font passer au niveau suivant. Aucune réponse ne quitte votre navigateur.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces à pictos */}
+          <div id="geo-summary">
+            <Accroche sombre texte="Huit questions sur vos usages, votre outillage, votre cadre et votre pilotage. À la clé : un score sur 24, votre profil parmi quatre niveaux de maturité, et les trois priorités qui font passer au niveau suivant. Aucune réponse ne quitte votre navigateur." style={{ fontSize: 'clamp(16px, 2.2vw, 18.5px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 18px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
 
           {/* Sommaire ancré « Sur cette page » (sitelinks + navigation) */}
           <nav aria-label="Sur cette page" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 26 }}>
@@ -277,23 +293,13 @@ export default function TestMaturiteIAPage() {
             ))}
           </nav>
 
-          {/* En bref — synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(18px, 3vw, 24px)', maxWidth: 720 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 12 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {[
-                ['Format', '8 questions fermées, 3 minutes, sans compte ni email'],
-                ['Résultat', 'Score sur 24, profil parmi 4 niveaux, 3 priorités concrètes'],
-                ['Confidentialité', 'Aucune réponse ne quitte votre navigateur'],
-                ['Et après', 'Un diagnostic IA transforme le score en feuille de route'],
-              ].map(([label, value], i) => (
-                <div key={label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '8px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 13.5, color: '#94A3B8', lineHeight: 1.55 }}>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref — synthèse citable (GEO), en repères */}
+          <Reperes sombre titre="En bref" colonnes={2} style={{ margin: 0, maxWidth: 900 }} items={lignesEnReperes([
+            { label: 'Format', value: '8 questions fermées, 3 minutes, sans compte ni email', icon: ClipboardList },
+            { label: 'Résultat', value: 'Score sur 24, profil parmi 4 niveaux, 3 priorités concrètes' },
+            { label: 'Confidentialité', value: 'Aucune réponse ne quitte votre navigateur' },
+            { label: 'Et après', value: 'Un diagnostic IA transforme le score en feuille de route', icon: ArrowRight },
+          ])} />
         </div>
       </section>
 
@@ -367,7 +373,9 @@ export default function TestMaturiteIAPage() {
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 30px', maxWidth: 760 }}>
             Chaque niveau correspond à une plage du score du test. Les signes listés sous chacun permettent aussi de vous situer sans passer le test : retenez le niveau dont vous reconnaissez le plus de signes, puis regardez ce que l'on y fait pour monter d'un cran.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))', gap: 18 }}>
+          {/* Un niveau par carte pleine largeur (avant : deux colonnes de cartes très chargées) ;
+              les deux listes courtes restent côte à côte à l'intérieur */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
             {PROFILS.map(({ icon: Icon, name, range, desc, signes, recos, cta }) => (
               <div key={name} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 12 }}>
@@ -379,15 +387,21 @@ export default function TestMaturiteIAPage() {
                     <p style={{ fontSize: 12.5, color: c, fontWeight: 700, margin: 0 }}>{range}</p>
                   </div>
                 </div>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>{desc}</p>
-                <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px' }}>Signes observables</p>
-                <ul style={{ margin: '0 0 16px', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 5 }}>
-                  {signes.map(s => <li key={s} style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{s}</li>)}
-                </ul>
-                <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px' }}>Ce que l'on fait à ce niveau</p>
-                <ul style={{ margin: '0 0 18px', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 5 }}>
-                  {recos.map(r => <li key={r} style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6 }}>{r}</li>)}
-                </ul>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 18px', maxWidth: 820 }}>{desc}</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))', gap: '0 36px' }}>
+                  <div>
+                    <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px' }}>Signes observables</p>
+                    <ul style={{ margin: '0 0 16px', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 5 }}>
+                      {signes.map(s => <li key={s} style={{ fontSize: 14, color: '#374151', lineHeight: 1.6 }}>{s}</li>)}
+                    </ul>
+                  </div>
+                  <div>
+                    <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px' }}>Ce que l'on fait à ce niveau</p>
+                    <ul style={{ margin: '0 0 18px', paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 5 }}>
+                      {recos.map(r => <li key={r} style={{ fontSize: 14, color: '#374151', lineHeight: 1.6 }}>{r}</li>)}
+                    </ul>
+                  </div>
+                </div>
                 <Link to={cta.href} style={{ marginTop: 'auto', display: 'inline-flex', alignItems: 'center', gap: 7, color: c, fontSize: 14, fontWeight: 700, textDecoration: 'none' }}>
                   {cta.label} <ArrowRight size={14} aria-hidden="true" />
                 </Link>
@@ -414,7 +428,7 @@ export default function TestMaturiteIAPage() {
                 <span aria-hidden="true" style={{ flexShrink: 0, width: 30, height: 30, borderRadius: 99, background: '#DBEAFE', color: c, fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 14, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: 1 }}>{i + 1}</span>
                 <div>
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 4px' }}>{t}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{d}</p>
+                  <Paras texte={d} max={2} budget={320} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
                 </div>
               </li>
             ))}

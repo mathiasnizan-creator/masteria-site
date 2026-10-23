@@ -4,6 +4,7 @@ import {
   GraduationCap, Mail, Newspaper, Phone, Scale, TrendingUp, Wallet,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Paras, PointsCles, Rangees } from '../components/Aere'
 
 /*
  * Page « Espace presse » : actif d'autorité (E-E-A-T et relations presse).
@@ -115,10 +116,15 @@ export default function PressePage() {
           </h1>
 
           {/* GEO : réponse directe (citable LLM) */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {"Mathias Nizan dirige Masteria, le cabinet lyonnais d'intelligence artificielle qu'il a fondé en 2022 ; Les Échos l'ont cité sur la sélection des assistants d'IA par métier. "}
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Pour une interview, une citation ou des données de terrain, vous avez une réponse dans les 24 heures ouvrées.</strong>
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, l'engagement de réponse en puce à picto */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 18px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Mathias Nizan dirige Masteria, le cabinet lyonnais d'intelligence artificielle qu'il a fondé en 2022 ; Les Échos l'ont cité sur la sélection des assistants d'IA par métier.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 28px' }} phrases={[
+              <strong key="reponse" style={{ color: '#fff', fontWeight: 700 }}>Pour une interview, une citation ou des données de terrain, vous avez une réponse dans les 24 heures ouvrées.</strong>,
+            ]} />
+          </div>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <a href={MAILTO} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -188,9 +194,7 @@ export default function PressePage() {
               style={{ width: 140, height: 140, borderRadius: 16, objectFit: 'cover', display: 'block', flexShrink: 0 }}
             />
             <div style={{ flex: 1, minWidth: 280 }}>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 18px', maxWidth: 680 }}>
-                {BIO}
-              </p>
+              <Paras texte={BIO} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.8, margin: '0 0 18px', maxWidth: 680 }} />
               <p style={{ fontSize: 13, color: '#6B7280', margin: '0 0 18px' }}>
                 Vous pouvez reprendre cette bio telle quelle ; une version plus courte ou plus longue est disponible sur demande.
               </p>
@@ -218,17 +222,8 @@ export default function PressePage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 36px', maxWidth: 760 }}>
             Il les traite à partir de ce qu'il voit en mission et en formation, et de la veille qu'il publie chaque jour ouvré. Les dates et les noms d'outils sont à jour au 7 octobre 2026.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {EXPERTISE.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={cardStyle}>
-                <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Sujets en rangées pleine largeur (avant : six cartes de texte côte à côte) */}
+          <Rangees items={EXPERTISE.map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
         </div>
       </section>
 

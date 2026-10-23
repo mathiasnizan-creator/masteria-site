@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import FounderNote from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Accroche, Paras, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page ressource « salons IA » (slug /salons-ia), agenda des salons et conférences
@@ -210,7 +211,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -282,9 +285,10 @@ export default function SalonsIAPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Dates vérifiées le {VERIFIED_ON}
           </p>
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Huit rendez-vous pour la saison 2026-2027, vérifiés sur les sites officiels : <strong style={{ color: '#fff', fontWeight: 700 }}>Big Data & AI Paris, SIDO Lyon, le Salon de la Data et de l'IA de Nantes, le World AI Cannes Festival, Global Industrie, All4Customer, Documation et VivaTech</strong>. Avec, pour chacun, à qui il s'adresse, et une méthode pour en tirer une décision plutôt qu'une journée.
-          </p>
+          {/* Réponse directe : l'énumération des huit salons passe en liste, la phrase suivante en puce */}
+          <div id="geo-summary">
+            <Accroche sombre texte="Huit rendez-vous pour la saison 2026-2027, vérifiés sur les sites officiels : Big Data & AI Paris, SIDO Lyon, le Salon de la Data et de l'IA de Nantes, le World AI Cannes Festival, Global Industrie, All4Customer, Documation et VivaTech. Avec, pour chacun, à qui il s'adresse, et une méthode pour en tirer une décision plutôt qu'une journée." style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          </div>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Nous n'y tenons pas de stand : nous ne vendons ni licence ni plateforme. Nous les visitons, parfois avec des clients, et nous aidons les entreprises à transformer ce qu'elles y ont vu en cadrage. Les dates changent ; vérifiez sur le site officiel avant de réserver.
           </p>
@@ -303,9 +307,7 @@ export default function SalonsIAPage() {
         <div style={wrap}>
           <Kicker>L'agenda</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Les salons IA, data et industrie de la saison 2026-2027</h2>
-          <p style={answerStyle}>
-            <strong>Par ordre de date. Chaque fiche renvoie au site officiel de l'événement, où la date a été vérifiée le {VERIFIED_ON}. Les affluences et les contenus sont ceux annoncés par les organisateurs.</strong>
-          </p>
+          <Reponse style={answerStyle} texte={`Par ordre de date. Chaque fiche renvoie au site officiel de l'événement, où la date a été vérifiée le ${VERIFIED_ON}. Les affluences et les contenus sont ceux annoncés par les organisateurs.`} />
           <div style={{ display: 'grid', gap: 18, marginTop: 12 }}>
             {SALONS.map(s => (
               <article key={s.name} style={{ ...cardStyle, padding: 'clamp(20px, 3vw, 28px)', display: 'flex', gap: 'clamp(16px, 3vw, 28px)', alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -343,27 +345,13 @@ export default function SalonsIAPage() {
             <div style={editorialAside}>
               <Kicker>Choisir</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Quel salon IA choisir, et pour quoi faire ?</h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px', background: '#fff' }}>
-                <strong>Le bon salon est celui où sont vos pairs et où le programme répond à une question que vous avez écrite avant de réserver. Le plus grand salon n'est pas le plus utile ; le plus proche non plus.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px', background: '#fff' }} texte="Le bon salon est celui où sont vos pairs et où le programme répond à une question que vous avez écrite avant de réserver. Le plus grand salon n'est pas le plus utile ; le plus proche non plus." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Pour une vue continue de ce qui change entre deux salons, notre <Link to="/veille-ia" style={aStyle}>veille IA quotidienne</Link> fait le tri.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {CHOISIR.map(card => {
-                const Icon = card.icon
-                return (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                      <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                      <h3 style={{ ...h3Style, fontSize: 15.5 }}>{card.title}</h3>
-                    </div>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                )
-              })}
-            </div>
+            {/* Critères en rangées pleine largeur (avant : cartes de texte côte à côte) */}
+            <Rangees items={CHOISIR.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
           </div>
         </div>
       </section>
@@ -373,9 +361,7 @@ export default function SalonsIAPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <Kicker>Préparer sa visite</Kicker>
           <h2 style={h2Style}>Comment tirer une décision d'un salon plutôt qu'une journée ?</h2>
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Une liste avant, des tests sur vos documents pendant, une page de restitution après. Trois gestes qui prennent deux heures au total et qui font la différence entre une visite et une dépense.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Une liste avant, des tests sur vos documents pendant, une page de restitution après. Trois gestes qui prennent deux heures au total et qui font la différence entre une visite et une dépense." />
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {PREPARER.map((step, i) => (
@@ -399,9 +385,7 @@ export default function SalonsIAPage() {
         <div style={wrap}>
           <Kicker>Après le salon</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Ce que Masteria fait autour des salons</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Nous ne tenons pas de stand. Nous aidons les entreprises avant et après : préparer une visite avec un objectif, puis transformer ce qui a été vu en cadrage, en conférence de retour de salon ou en atelier cas d'usage.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Nous ne tenons pas de stand. Nous aidons les entreprises avant et après : préparer une visite avec un objectif, puis transformer ce qui a été vu en cadrage, en conférence de retour de salon ou en atelier cas d'usage." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
             {[
               { icon: Mic, title: 'La conférence de retour de salon', desc: "Une heure devant l'équipe ou le comité : ce que le salon a montré, ce qui est crédible pour vous, ce qui relève du bruit, et les trois usages à tester. Sur vos cas, pas sur le catalogue des exposants.", href: '/conference-ia', cta: 'Voir la conférence IA' },
