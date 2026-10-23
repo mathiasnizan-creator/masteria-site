@@ -153,6 +153,7 @@ export default {
     },
   },
   liensAssocies: [
+    { label: "Créer une application avec l'IA sans coder : quel outil choisir", href: '/blog/creer-application-ia-sans-coder' },
     { label: "Comparer les assistants IA avant de choisir : la formation multi-outils", href: '/formation-multi-outils' },
     { label: "Développeurs : déléguer des tâches d'ingénierie à Claude Code", href: '/formation-claude-code' },
     { label: "Formation prompt engineering : la méthode de demande", href: '/formation-prompt-engineering' },

@@ -315,6 +315,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Agents IA dans l'industrie et les achats",
+   "href": "/blog/agents-ia-industrie-achats-cas-concrets",
+   "tag": "Guide",
+   "desc": "ADV, qualité, supply chain : où un agent rend service."
+  },
+  {
    "label": "IA pour l'industrie",
    "href": "/ia-industrie",
    "tag": "Secteur",

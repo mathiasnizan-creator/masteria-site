@@ -350,6 +350,12 @@ export default {
  ],
  "maillage": [
   {
+   "label": "Agents IA pour les achats : cas concrets",
+   "href": "/blog/agents-ia-industrie-achats-cas-concrets",
+   "tag": "Guide",
+   "desc": "Comparer des offres et suivre des contrats avec un agent."
+  },
+  {
    "label": "Formation IA logistique",
    "href": "/formation-ia-logistique",
    "tag": "Supply chain",

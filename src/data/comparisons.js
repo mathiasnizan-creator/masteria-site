@@ -455,6 +455,7 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Claude ou ChatGPT pour Excel", href: "/blog/quelle-ia-pour-excel" },
       { label: "Formation ChatGPT pour entreprises", href: "/formation-chatgpt" },
       { label: "Formation Claude IA", href: "/formation-claude-ia" },
       { label: "Formation multi-outils (ChatGPT, Claude, Copilot, Gemini, Mistral)", href: "/formation-multi-outils" },
@@ -868,6 +869,8 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Quelle IA pour Excel en 2026", href: "/blog/quelle-ia-pour-excel" },
+      { label: "Copilot Cowork face à ChatGPT Work", href: "/blog/copilot-cowork-claude-cowork-chatgpt-work" },
       { label: "Formation Microsoft Copilot", href: "/formation-microsoft-copilot" },
       { label: "Formation ChatGPT pour entreprises", href: "/formation-chatgpt" },
       { label: "Formation IA gestion de projet", href: "/formation-ia-gestion-de-projet" },
@@ -1270,6 +1273,7 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Des prompts aux Skills : capitaliser les méthodes", href: "/blog/prompts-skills-ia-methodes-equipe" },
       { label: "Quelle est la meilleure IA en 2026 ?", href: "/quelle-est-la-meilleure-ia" },
       { label: "Comparatif ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
       { label: "Comparatif Copilot vs ChatGPT", href: "/copilot-vs-chatgpt" },
@@ -1691,6 +1695,7 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Créer une application avec l'IA sans coder", href: "/blog/creer-application-ia-sans-coder" },
       { label: "Quelle est la meilleure IA en 2026 ?", href: "/quelle-est-la-meilleure-ia" },
       { label: "Comparatif ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
       { label: "Formation IA informatique", href: "/formation-ia-informatique" },
@@ -2056,6 +2061,8 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Superviser des agents IA en production", href: "/blog/superviser-agents-ia-production" },
+      { label: "Combien coûte un agent IA", href: "/blog/cout-agent-ia-entreprise" },
       { label: "Quelle est la meilleure IA en 2026 ?", href: "/quelle-est-la-meilleure-ia" },
       { label: "Formation agents IA", href: "/formation-agents-ia" },
       { label: "Comparatif ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
@@ -3011,6 +3018,8 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Copilot Cowork, Claude Cowork, ChatGPT Work", href: "/blog/copilot-cowork-claude-cowork-chatgpt-work" },
+      { label: "Quelle IA pour Excel en 2026", href: "/blog/quelle-ia-pour-excel" },
       { label: "Prix de Claude : les abonnements", href: "/claude-prix-abonnement" },
       { label: "Claude Cowork vs Claude Code", href: "/claude-cowork-vs-claude-code" },
       { label: "Copilot vs ChatGPT", href: "/copilot-vs-chatgpt" },
@@ -3545,6 +3554,7 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Combien coûte un agent IA", href: "/blog/cout-agent-ia-entreprise" },
       { label: "Copilot vs Claude", href: "/copilot-vs-claude" },
       { label: "Claude Cowork vs Claude Code", href: "/claude-cowork-vs-claude-code" },
       { label: "ChatGPT vs Claude", href: "/chatgpt-vs-claude" },
@@ -3812,6 +3822,8 @@ export const COMPARISONS = {
     ],
 
     relatedLinks: [
+      { label: "Copilot Cowork, Claude Cowork, ChatGPT Work", href: "/blog/copilot-cowork-claude-cowork-chatgpt-work" },
+      { label: "Créer une application avec l'IA sans coder", href: "/blog/creer-application-ia-sans-coder" },
       { label: "Prix de Claude : les abonnements", href: "/claude-prix-abonnement" },
       { label: "Copilot vs Claude", href: "/copilot-vs-claude" },
       { label: "Le meilleur agent IA", href: "/meilleur-agent-ia" },

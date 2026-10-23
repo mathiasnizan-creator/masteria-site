@@ -244,6 +244,7 @@ export default {
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [
+    { label: "Préparer un CODIR ou un COMEX avec l'IA : méthode et prompts", href: '/blog/preparer-codir-comex-ia-methode-prompts' },
     { label: 'Formation IA pour le COMEX : le format du comité exécutif', href: '/formation-ia-comex' },
     { label: 'Formation gouvernance IA : registre, charte et comité', href: '/formation-gouvernance-ia' },
     { label: 'Formation multi-outils : comparer les assistants sur vos dossiers', href: '/formation-multi-outils' },

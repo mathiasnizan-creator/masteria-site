@@ -243,6 +243,7 @@ export default {
     lien: '/etudes-de-cas-ia#mission-editeur-pole-formation',
   },
   liensAssocies: [
+    { label: "Copilot Cowork, Claude Cowork, ChatGPT Work : confier une tâche longue", href: '/blog/copilot-cowork-claude-cowork-chatgpt-work' },
     { label: "Formations Claude par métier, sur deux jours", href: '/formation-claude-ia' },
     { label: "Formation Claude Code, l'agent de code des développeurs", href: '/formation-claude-code' },
     { label: "Cowork ou Claude Code : quel outil pour quelle tâche", href: '/claude-cowork-vs-claude-code' },
