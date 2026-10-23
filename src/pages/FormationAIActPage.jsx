@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page dédiée « formation AI Act » (slug /formation-ai-act). Cible « formation ia
@@ -63,16 +64,18 @@ const aStyle = { color: c, fontWeight: 600 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }
 
+/* Rend un lien interne inline dans un texte enrichi : "…{/slug|libellé}…" */
+function RichText({ text, linkStyle = aStyle }) {
+  const parts = String(text).split(/(\{\/[^|}]+\|[^}]+\})/g)
+  return parts.map((part, i) => {
+    const m = part.match(/^\{(\/[^|}]+)\|([^}]+)\}$/)
+    return m ? <Link key={i} to={m[1]} style={linkStyle}>{m[2]}</Link> : <span key={i}>{part}</span>
+  })
+}
+const rt = t => <RichText text={t} />
+
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -313,7 +316,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -409,12 +414,30 @@ export default function FormationAIActPage() {
             Programme conçu et supervisé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · aligné sur le texte en vigueur au 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            En une journée, la formation AI Act de Masteria vous apprend ce que le règlement de 2024 attend de votre organisation et à quelle date, d'après le <strong style={{ color: '#fff', fontWeight: 700 }}>calendrier modifié en juillet 2026 par l'Omnibus</strong> : classer vos usages par niveau de risque, documenter ce que vous faites pour former vos équipes (article 4), respecter la transparence de l'article 50, relier le tout au RGPD et repartir avec la trame de votre plan de conformité. Masteria, organisme de formation, a obtenu la certification Qualiopi pour ses « actions de formation ».
+          {/* GEO : réponse directe, accroche puis énumération en liste et puce */}
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            En une journée, la formation AI Act de Masteria vous apprend ce que le règlement de 2024 attend de votre organisation et à quelle date, d'après le <strong style={{ color: '#fff', fontWeight: 700 }}>calendrier modifié en juillet 2026 par l'Omnibus</strong> :
           </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+            {[
+              'Classer vos usages par niveau de risque',
+              'Documenter ce que vous faites pour former vos équipes (article 4)',
+              "Respecter la transparence de l'article 50",
+              'Relier le tout au RGPD et repartir avec la trame de votre plan de conformité',
+            ].map(it => (
+              <li key={it} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                <span>{it}</span>
+              </li>
+            ))}
+          </ul>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={['Masteria, organisme de formation, a obtenu la certification Qualiopi pour ses «\u00a0actions de formation\u00a0».']} />
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            On écrit AI Act ou IA Act, et on lit à son sujet beaucoup d'erreurs : un calendrier antérieur à l'Omnibus, des obligations gonflées, des certificats qui n'existent pas.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            On écrit AI Act ou IA Act, et on lit à son sujet beaucoup d'erreurs : un calendrier antérieur à l'Omnibus, des obligations gonflées, des certificats qui n'existent pas. La journée part du texte, article par article, et vous situe : ce qu'il faut faire maintenant, ce qui attend 2027 ou 2028, ce qui ne vous concerne pas. Vous repartez avec vos livrables et sans inquiétude inutile.
+            La journée part du texte, article par article, et vous situe : ce qu'il faut faire maintenant, ce qui attend 2027 ou 2028, ce qui ne vous concerne pas. Vous repartez avec vos livrables et sans inquiétude inutile.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -436,17 +459,8 @@ export default function FormationAIActPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères */}
+          <Reperes sombre id="en-bref" titre="En bref" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -459,23 +473,14 @@ export default function FormationAIActPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que faut-il savoir du règlement européen sur l'IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six sujets, traités dans cet ordre sur vos propres usages : le calendrier tel qu'il s'applique après l'Omnibus, le classement par niveau de risque, l'article 4 dans sa nouvelle rédaction, la transparence de l'article 50, le lien avec le RGPD, et le plan de conformité avec sa gouvernance.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Six sujets, traités dans cet ordre sur vos propres usages : le calendrier tel qu'il s'applique après l'Omnibus, le classement par niveau de risque, l'article 4 dans sa nouvelle rédaction, la transparence de l'article 50, le lien avec le RGPD, et le plan de conformité avec sa gouvernance." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Pour apprendre à faire vivre le dispositif au quotidien (registre, charte, comité), voyez la <Link to="/formation-gouvernance-ia" style={aStyle}>formation gouvernance IA</Link> ; pour confier la mise en conformité elle-même à un consultant, la <Link to="/gouvernance-ia" style={aStyle}>mission de gouvernance de l'IA</Link>.
               </p>
             </div>
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {MISSIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Un sujet par rangée, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={MISSIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -488,17 +493,9 @@ export default function FormationAIActPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Pourquoi se former au règlement européen sur l'IA maintenant ?
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six raisons de le faire dès maintenant : des dates lues dans le texte, une conformité proportionnée, l'article 4 transformé en plan de montée en compétences, un dossier commun avec le RGPD, des livrables utilisables tout de suite, et la lucidité sur ce qui se certifie.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {ATOUTS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Six raisons de le faire dès maintenant : des dates lues dans le texte, une conformité proportionnée, l'article 4 transformé en plan de montée en compétences, un dossier commun avec le RGPD, des livrables utilisables tout de suite, et la lucidité sur ce qui se certifie." />
+          {/* Une raison par rangée, en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={ATOUTS.map(item => ({ titre: item.title, texte: item.desc }))} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Le report du haut risque à 2027 et 2028 laisse le temps de bien faire. Il laisse aussi en place les obligations déjà applicables et les contrôles de la CNIL sur les traitements en service. Une mise en conformité préparée avant un déploiement coûte moins cher qu'une mise en demeure.
           </p>
@@ -514,9 +511,7 @@ export default function FormationAIActPage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Programme de la formation AI Act sur 1 jour
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le matin, le règlement en clair, le calendrier article par article, puis l'inventaire et le classement de vos systèmes en atelier. L'après-midi, l'article 4 et votre registre, la transparence et la documentation, le lien avec le RGPD, enfin votre plan de conformité en atelier. Une journée dense, texte en main, sur vos propres usages.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Le matin, le règlement en clair, le calendrier article par article, puis l'inventaire et le classement de vos systèmes en atelier. L'après-midi, l'article 4 et votre registre, la transparence et la documentation, le lien avec le RGPD, enfin votre plan de conformité en atelier. Une journée dense, texte en main, sur vos propres usages." />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {PROGRAMME.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
           </div>
@@ -531,23 +526,9 @@ export default function FormationAIActPage() {
         <div style={wrap}>
           <Kicker>Pour qui</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui s'adresse la formation AI Act ?</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Aux fonctions qui portent la conformité et les usages : DPO, juristes et conformité, DSI et responsables IA, DRH et direction générale, chefs de projet et responsables métier. Aucun prérequis juridique ou technique n'est demandé : le texte est expliqué en clair.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
-            {PROFILS.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Aux fonctions qui portent la conformité et les usages : DPO, juristes et conformité, DSI et responsables IA, DRH et direction générale, chefs de projet et responsables métier. Aucun prérequis juridique ou technique n'est demandé : le texte est expliqué en clair." />
+          {/* Un profil par rangée, en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={PROFILS.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
         </div>
       </section>
 
@@ -563,8 +544,14 @@ export default function FormationAIActPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Trois idées reçues que la journée corrige
               </h2>
+              {/* Une rangée numérotée par idée reçue */}
+              <Rangees style={{ margin: '0 0 20px', maxWidth: 760 }} items={[
+                { texte: "La première veut que l'article 4 impose une formation certifiée, sous peine d'amende immédiate. Il demande des mesures proportionnées et documentées, et la Commission a confirmé le 27 juillet 2026 qu'aucun certificat n'est exigé." },
+                { texte: "La deuxième veut que tout système à haut risque passe par un audit externe. Pour la plupart des usages de l'annexe III, le fournisseur évalue lui-même la conformité, selon la procédure dite de contrôle interne, et ces obligations n'arrivent qu'en décembre 2027." },
+                { texte: "La troisième veut qu'une conformité « certifiée AI Act » s'achète. Au dernier relevé de Masteria, en août 2026, aucune norme harmonisée n'était référencée au JO de l'UE pour le règlement." },
+              ]} />
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La première veut que l'article 4 impose une formation certifiée, sous peine d'amende immédiate. Il demande des mesures proportionnées et documentées, et la Commission a confirmé le 27 juillet 2026 qu'aucun certificat n'est exigé. La deuxième veut que tout système à haut risque passe par un audit externe. Pour la plupart des usages de l'annexe III, le fournisseur évalue lui-même la conformité, selon la procédure dite de contrôle interne, et ces obligations n'arrivent qu'en décembre 2027. La troisième veut qu'une conformité « certifiée AI Act » s'achète. Au dernier relevé de Masteria, en août 2026, aucune norme harmonisée n'était référencée au JO de l'UE pour le règlement. Le support est révisé à chaque évolution du texte, et vous repartez avec de quoi vérifier par vous-même. Pour un guide écrit sur les règles d'usage, voyez notre page <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
+                Le support est révisé à chaque évolution du texte, et vous repartez avec de quoi vérifier par vous-même. Pour un guide écrit sur les règles d'usage, voyez notre page <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Calendrier post-Omnibus, article par article', 'Article 4 : des moyens, aucun certificat', 'Aucune conformité « certifiée AI Act » à vendre', 'Contrôle le plus probable en 2026 : la CNIL'].map(pt => (
@@ -583,29 +570,12 @@ export default function FormationAIActPage() {
         <div style={wrap}>
           <Kicker>Tarif et financement</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Prix de la journée et financement possible</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le tarif de départ tient en deux chiffres : 1 980 € HT pour une journée, que le groupe intra compte deux ou douze personnes ou que vous veniez seul, et 3 960 € HT pour deux jours, la préparation sur mesure s'ajoutant au devis. La certification Qualiopi vous permet de déposer une demande auprès de votre OPCO de branche ; il accorde sa prise en charge selon ses critères et son enveloppe. Le devis part sous 24 heures.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <GraduationCap size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que comprend le tarif</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le cadrage préalable sur vos usages et vos outils, l'animation en salle ou à distance, un support aligné sur le texte en vigueur, les livrables (grille de classement, trame de plan, modèle de registre, liste de veille), un test de fin de journée pour mesurer les acquis, puis le certificat de réalisation remis à chacun. Hors Lyon, les frais de déplacement du formateur sont chiffrés dans le devis.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>La demande auprès de l'OPCO</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le dossier part avant le premier jour, et Masteria vous remet le programme, la convention et les justificatifs à y joindre. Ce que l'OPCO accorde varie selon ses règles, votre effectif et son budget. Hors de France, à Genève comme à Bruxelles, le devis se fait en euros hors taxes, sans OPCO. Trouvez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et les dispositifs sur <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. La formation n'est pas proposée au CPF.
-              </p>
-            </div>
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le tarif de départ tient en deux chiffres : 1 980 € HT pour une journée, que le groupe intra compte deux ou douze personnes ou que vous veniez seul, et 3 960 € HT pour deux jours, la préparation sur mesure s'ajoutant au devis. La certification Qualiopi vous permet de déposer une demande auprès de votre OPCO de branche ; il accorde sa prise en charge selon ses critères et son enveloppe. Le devis part sous 24 heures." />
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees rich={rt} style={{ marginTop: 12, maxWidth: 880 }} items={[
+            { titre: 'Ce que comprend le tarif', icon: GraduationCap, texte: "Le cadrage préalable sur vos usages et vos outils, l'animation en salle ou à distance, un support aligné sur le texte en vigueur, les livrables (grille de classement, trame de plan, modèle de registre, liste de veille), un test de fin de journée pour mesurer les acquis, puis le certificat de réalisation remis à chacun. Hors Lyon, les frais de déplacement du formateur sont chiffrés dans le devis." },
+            { titre: "La demande auprès de l'OPCO", icon: Landmark, texte: "Le dossier part avant le premier jour, et Masteria vous remet le programme, la convention et les justificatifs à y joindre. Ce que l'OPCO accorde varie selon ses règles, votre effectif et son budget. Hors de France, à Genève comme à Bruxelles, le devis se fait en euros hors taxes, sans OPCO. Trouvez votre opérateur avec {/quel-opco|Quel OPCO ?} et les dispositifs sur {/financement-formation-ia|financer sa formation IA}. La formation n'est pas proposée au CPF." },
+          ]} />
         </div>
       </section>
 

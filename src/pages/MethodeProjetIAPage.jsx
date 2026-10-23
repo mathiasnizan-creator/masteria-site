@@ -11,6 +11,7 @@ import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import CadrageLink from '../components/CadrageLink'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees } from '../components/Aere'
 
 /*
  * Page « méthode projet IA et modèles d'engagement » (slug /methode-projet-ia).
@@ -64,14 +65,6 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
-}
-
 const HERO_BADGES = [
   { icon: Package, label: 'Forfait au projet' },
   { icon: ServerCog, label: 'Régie · développeurs chez vous' },
@@ -81,13 +74,14 @@ const HERO_BADGES = [
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
+// En repères : tête en gras, détail dessous (mots inchangés)
 const EN_BREF = [
-  { label: 'Étapes', value: "Cadrage, prototype, construction, mise en service, passation ; un livrable et une décision au bout de chacune" },
-  { label: 'Rythme', value: "Un point de 30 minutes chaque semaine, une démonstration à la fin de chaque livraison" },
-  { label: 'Engagement', value: "Forfait au projet, régie (développeurs IA dans votre équipe) ou conseil seul, combinables entre eux" },
-  { label: 'Propriété', value: "Code, documentation et accès remis au client" },
-  { label: "Modèles d'IA", value: "Claude, ChatGPT, Gemini, Mistral AI ou modèle ouvert hébergé chez vous, retenus au cas par cas" },
-  { label: 'Lieu', value: "Chez vous ou à distance ; depuis Lyon, pour des clients de France et d'ailleurs" },
+  { icon: Check, label: 'Étapes', value: 'Cadrage, prototype, construction, mise en service, passation', detail: 'Un livrable et une décision au bout de chacune' },
+  { icon: Clock, label: 'Rythme', value: 'Un point de 30 minutes chaque semaine', detail: 'Une démonstration à la fin de chaque livraison' },
+  { icon: Package, label: 'Engagement', value: 'Forfait au projet, régie (développeurs IA dans votre équipe) ou conseil seul', detail: 'Combinables entre eux' },
+  { icon: KeyRound, label: 'Propriété', value: 'Code, documentation et accès remis au client' },
+  { icon: Cpu, label: "Modèles d'IA", value: 'Claude, ChatGPT, Gemini, Mistral AI ou modèle ouvert hébergé chez vous', detail: 'Retenus au cas par cas' },
+  { icon: Building2, label: 'Lieu', value: 'Chez vous ou à distance', detail: "Depuis Lyon, pour des clients de France et d'ailleurs" },
 ]
 
 /* ───────── Forfait vs régie vs conseil (tableau de décision citable, GEO) ───────── */
@@ -424,7 +418,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -499,10 +495,14 @@ export default function MethodeProjetIAPage() {
             Méthode rédigée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui l'applique à chaque mission · version du 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un projet IA mené avec Masteria traverse cinq étapes : le cadrage, le prototype, la construction, la mise en service et la passation à vos équipes. Chacune se termine par un livrable et une décision. <strong style={{ color: '#fff', fontWeight: 700 }}>Trois modèles d'engagement sont possibles (forfait, régie ou conseil seul), et le code développé vous revient dans tous les cas.</strong>
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Un projet IA mené avec Masteria traverse cinq étapes : le cadrage, le prototype, la construction, la mise en service et la passation à vos équipes.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            'Chacune se termine par un livrable et une décision.',
+            <strong key="m" style={{ color: '#fff', fontWeight: 700 }}>Trois modèles d'engagement sont possibles (forfait, régie ou conseil seul), et le code développé vous revient dans tous les cas.</strong>,
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Quand un projet engage plusieurs équipes, la façon de travailler d'un prestataire compte autant que son prix. Cette page décrit nos étapes une à une, le rythme des échanges pendant la construction, puis les trois modèles d'engagement et notre manière de traiter la sécurité.
@@ -531,18 +531,8 @@ export default function MethodeProjetIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La méthode en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères */}
+          <Reperes sombre titre="La méthode en six lignes" items={EN_BREF} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -554,9 +544,7 @@ export default function MethodeProjetIAPage() {
             Comment se déroule un projet IA, du cadrage à la passation ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Cinq étapes se succèdent, chacune close par un livrable : la note de cadrage, le prototype, l'outil construit par livraisons, la mise en service dans votre système d'information, puis la passation avec documentation et formation. Au terme de chaque étape, vous décidez de poursuivre, d'ajuster ou d'arrêter.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Cinq étapes se succèdent, chacune close par un livrable : la note de cadrage, le prototype, l'outil construit par livraisons, la mise en service dans votre système d'information, puis la passation avec documentation et formation. Au terme de chaque étape, vous décidez de poursuivre, d'ajuster ou d'arrêter." />
           {/* Renvoi vers l'article qui traite le passage du POC à la production. */}
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 16, maxWidth: 720 }}>
             Entre un prototype qui fonctionne et un outil en service, plusieurs obstacles se dressent ; notre article <Link to="/blog/poc-ia-passer-en-production" style={{ color: '#2563EB', fontWeight: 600 }}>les 5 murs entre le POC et la production</Link> les passe en revue.
@@ -598,17 +586,8 @@ export default function MethodeProjetIAPage() {
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 24, lineHeight: 1.7 }}>
             Pendant l'étape 3, trois rendez-vous vous gardent au plus près de l'outil, sans réunion superflue.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 16 }}>
-            {RYTHME.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ ...cardStyle, padding: 22 }}>
-                <div style={{ marginBottom: 12 }}>
-                  <IconTile icon={Icon} />
-                </div>
-                <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px' }}>{title}</h4>
-                <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Un rendez-vous par rangée, en pleine largeur */}
+          <Rangees niveau="h4" items={RYTHME.map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
         </div>
       </section>
 
@@ -620,21 +599,10 @@ export default function MethodeProjetIAPage() {
             Qu'attendons-nous de votre côté pendant le projet ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Quatre engagements suffisent : un décideur qui tranche, un référent disponible, l'accès aux données et aux logiciels concernés, et quelques utilisateurs prêts à tester. Réunis dès le cadrage, ils permettent de fermer chaque étape à la date prévue.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Quatre engagements suffisent : un décideur qui tranche, un référent disponible, l'accès aux données et aux logiciels concernés, et quelques utilisateurs prêts à tester. Réunis dès le cadrage, ils permettent de fermer chaque étape à la date prévue." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-            {VOTRE_PART.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={Icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Un engagement par rangée, en pleine largeur */}
+          <Rangees style={{ maxWidth: 880 }} items={VOTRE_PART.map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Le temps demandé reste modeste : la demi-heure hebdomadaire, les démonstrations et quelques heures de test par livraison. Nous l'estimons dans la proposition, pour que chacun puisse le prévoir dans son agenda.
@@ -654,15 +622,14 @@ export default function MethodeProjetIAPage() {
             Selon quels modèles pouvons-nous intervenir ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Trois modèles, à choisir selon votre situation. Le forfait fixe le périmètre, le prix et le calendrier avant le démarrage. La régie installe un ou plusieurs de nos développeurs IA au sein de vos équipes, dans vos locaux ou en télétravail. Le conseil seul couvre le cadrage, les règles ou l'architecture, sans construction. Un même projet peut enchaîner les trois.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Trois modèles, à choisir selon votre situation. Le forfait fixe le périmètre, le prix et le calendrier avant le démarrage. La régie installe un ou plusieurs de nos développeurs IA au sein de vos équipes, dans vos locaux ou en télétravail. Le conseil seul couvre le cadrage, les règles ou l'architecture, sans construction. Un même projet peut enchaîner les trois." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Le bon modèle dépend de la clarté du besoin, du degré de confidentialité des données et de la place que vos équipes veulent prendre. Il pèse aussi sur la facture : notre page <Link to="/prix-projet-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>combien coûte un projet IA</Link> donne les ordres de grandeur de chaque formule.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
+          {/* Un modèle par rangée, en pleine largeur : titre et accroche à gauche, description et points à droite */}
+          <div style={{ display: 'grid', gap: 16, maxWidth: 1000 }}>
             {MODELES.map(modele => {
               const Icon = modele.icon
               return (
@@ -671,27 +638,35 @@ export default function MethodeProjetIAPage() {
                   style={{
                     background: 'rgba(255,255,255,0.03)',
                     border: '1px solid #1E293B',
+                    borderLeft: `3px solid ${c}`,
                     borderRadius: 16,
-                    padding: 30,
+                    padding: 'clamp(22px, 3vw, 28px)',
                     display: 'flex',
-                    flexDirection: 'column',
-                    position: 'relative',
+                    flexWrap: 'wrap',
+                    gap: '16px 32px',
+                    alignItems: 'flex-start',
                   }}
                 >
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
+                  <div style={{ flex: '1 1 240px', maxWidth: 300 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
+                      <div aria-hidden="true" style={{ width: 40, height: 40, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                        <Icon size={20} strokeWidth={1.75} style={{ color: '#60A5FA' }} />
+                      </div>
+                      <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 18, color: '#F8FAFC', margin: 0, letterSpacing: '-0.01em' }}>{modele.title}</h3>
+                    </div>
+                    <div style={{ fontSize: 13.5, color: '#60A5FA', fontWeight: 700 }}>{modele.tagline}</div>
                   </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 18, color: '#F8FAFC', margin: '0 0 4px', letterSpacing: '-0.01em' }}>{modele.title}</h3>
-                  <div style={{ fontSize: 13.5, color: '#60A5FA', fontWeight: 700, marginBottom: 14 }}>{modele.tagline}</div>
-                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 18px' }}>{modele.desc}</p>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 'auto 0 0', display: 'flex', flexDirection: 'column', gap: 9 }}>
-                    {modele.points.map(pt => (
-                      <li key={pt} style={{ fontSize: 13.5, color: '#CBD5E1', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-                        <Check size={16} strokeWidth={2.6} style={{ color: '#60A5FA', flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
-                        {pt}
-                      </li>
-                    ))}
-                  </ul>
+                  <div style={{ flex: '1 1 380px', minWidth: 0, maxWidth: 640 }}>
+                    <Paras texte={modele.desc} max={2} budget={320} style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }} />
+                    <ul style={{ listStyle: 'none', padding: 0, margin: '16px 0 0', display: 'flex', flexWrap: 'wrap', gap: '9px 22px' }}>
+                      {modele.points.map(pt => (
+                        <li key={pt} style={{ fontSize: 13.5, color: '#CBD5E1', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
+                          <Check size={16} strokeWidth={2.6} style={{ color: '#60A5FA', flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                          {pt}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               )
             })}
@@ -704,9 +679,7 @@ export default function MethodeProjetIAPage() {
               Forfait, régie ou conseil : lequel choisir ?
             </h2>
 
-            <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-              <strong style={{ color: '#fff' }}>Prenez le forfait si le besoin est net et le budget à figer, la régie quand vous voulez des développeurs IA au sein de votre équipe, le conseil quand la décision à prendre précède la construction. Dans les trois cas, ce qui est produit vous appartient.</strong>
-            </p>
+            <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Prenez le forfait si le besoin est net et le budget à figer, la régie quand vous voulez des développeurs IA au sein de votre équipe, le conseil quand la décision à prendre précède la construction. Dans les trois cas, ce qui est produit vous appartient." />
 
             <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
               <table aria-label="Comparatif entre forfait au projet, régie avec développeurs détachés et conseil seul" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -779,21 +752,10 @@ export default function MethodeProjetIAPage() {
             Comment traitons-nous la sécurité, les données et la conformité ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Dès le cadrage. Le code vous appartient, vos données ne servent qu'au projet, chacun n'accède qu'aux fonctions de son rôle, et l'outil journalise ses actions. Pour les données sensibles, la régie permet de travailler dans votre système d'information, et un hébergement européen reste possible. Protection des données et AI Act : leurs obligations sont examinées pour votre usage précis.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Dès le cadrage. Le code vous appartient, vos données ne servent qu'au projet, chacun n'accède qu'aux fonctions de son rôle, et l'outil journalise ses actions. Pour les données sensibles, la régie permet de travailler dans votre système d'information, et un hébergement européen reste possible. Protection des données et AI Act : leurs obligations sont examinées pour votre usage précis." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {GOUVERNANCE.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Un engagement de sécurité par rangée, en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={GOUVERNANCE.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
         </div>
       </section>
 
@@ -806,22 +768,17 @@ export default function MethodeProjetIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi nous confier votre projet IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Cette méthode vient d'un cabinet consacré à l'IA depuis ses débuts lyonnais, en 2022, et qui forme aussi : chaque projet s'achève sur des équipes capables de faire vivre l'outil. Masteria choisit les modèles sans lien avec un éditeur, et un même responsable suit votre projet du cadrage à la passation.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Cette méthode vient d'un cabinet consacré à l'IA depuis ses débuts lyonnais, en 2022, et qui forme aussi : chaque projet s'achève sur des équipes capables de faire vivre l'outil. Masteria choisit les modèles sans lien avec un éditeur, et un même responsable suit votre projet du cadrage à la passation." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {POURQUOI.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                La page <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> présente l'équipe qui construit, et la page <Link to="/outils-ia-sur-mesure" style={aStyle}>développement IA sur mesure</Link> les outils qu'elle livre. Si tout reste à décider côté stratégie, notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> ouvre la démarche ; pour une première étape courte, le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> pose la feuille de route ; il se dimensionne pendant le cadrage.
+              {/* Une rangée par raison, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={POURQUOI.map(card => ({ titre: card.title, texte: card.desc }))} />
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px' }}>
+                La page <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> présente l'équipe qui construit, et la page <Link to="/outils-ia-sur-mesure" style={aStyle}>développement IA sur mesure</Link> les outils qu'elle livre.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+                Si tout reste à décider côté stratégie, notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> ouvre la démarche ; pour une première étape courte, le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> pose la feuille de route ; il se dimensionne pendant le cadrage.
               </p>
             </div>
           </div>
@@ -838,24 +795,29 @@ export default function MethodeProjetIAPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             On y retrouve les étapes de cette page, telles qu'elles se sont déroulées ou telles qu'elles sont prévues. Les clients restent anonymes ; les faits viennent de nos dossiers.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+          {/* Un cas par rangée, en pleine largeur : étiquette et chiffre à gauche, récit à droite */}
+          <div style={{ display: 'grid', gap: 16, maxWidth: 1000 }}>
             {METHODE_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
-              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+              <article key={id} style={{ ...cardStyle, borderLeft: `3px solid ${c}`, padding: 24, display: 'flex', flexWrap: 'wrap', gap: '16px 32px', alignItems: 'flex-start' }}>
+                <div style={{ flex: '1 1 240px', maxWidth: 300, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                  </div>
+                  <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                  </div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                <div style={{ flex: '1 1 380px', minWidth: 0, maxWidth: 640 }}>
+                  <Paras texte={text} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 12 }}>
+                    Suivre la mission étape par étape
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Suivre la mission étape par étape
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -977,8 +939,11 @@ export default function MethodeProjetIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Une équipe composée pour chaque projet, un responsable unique
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              La méthode est appliquée par des indépendants que Mathias Nizan réunit selon le projet : des consultants IA (une dizaine dans le réseau), des développeurs IA (cinq environ) et des formateurs, une vingtaine. Lui-même suit chaque étape et chaque décision.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              La méthode est appliquée par des indépendants que Mathias Nizan réunit selon le projet : des consultants IA (une dizaine dans le réseau), des développeurs IA (cinq environ) et des formateurs, une vingtaine. Lui-même suit chaque étape et chaque décision. Masteria, fondée à Lyon en 2022, reste indépendante des éditeurs. Voir nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
+              Masteria, fondée à Lyon en 2022, reste indépendante des éditeurs. Voir nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

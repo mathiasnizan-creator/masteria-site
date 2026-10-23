@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation n8n » (slug /formation-n8n), côté FORMATION
@@ -409,7 +410,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -493,10 +496,14 @@ export default function FormationN8nPage() {
             Rédigée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · offres et licence de n8n contrôlées le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation n8n prépare vos équipes à construire et à exploiter des workflows avec n8n, l'outil d'automatisation qu'une entreprise peut héberger elle-même. <strong style={{ color: '#fff', fontWeight: 700 }}>Sur deux jours, chacun bâtit un workflow tiré de son poste, y ajoute une étape IA puis un agent soumis à validation humaine</strong>, et apprend à surveiller les exécutions. Le financement par votre OPCO est possible : Masteria est certifiée Qualiopi.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            La formation n8n prépare vos équipes à construire et à exploiter des workflows avec n8n, l'outil d'automatisation qu'une entreprise peut héberger elle-même.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>Sur deux jours, chacun bâtit un workflow tiré de son poste, y ajoute une étape IA puis un agent soumis à validation humaine</strong>, et apprend à surveiller les exécutions.</>,
+            'Le financement par votre OPCO est possible : Masteria est certifiée Qualiopi.',
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Après les assistants conversationnels, n8n est l'outil d'orchestration que nous déployons le plus souvent, parce qu'il tient des processus longs et garde les données en Europe ou chez vous ; l'IA y travaille à l'intérieur du flux. Notre critère de réussite pour la session tient en une phrase. Les workflows tournent toujours six mois plus tard.
@@ -521,18 +528,8 @@ export default function FormationN8nPage() {
             ))}
           </div>
 
-          {/* L'essentiel : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'essentiel avant de réserver</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* L'essentiel : synthèse citable (GEO), en repères */}
+          <Reperes sombre id="en-bref" titre="L'essentiel avant de réserver" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -555,26 +552,15 @@ export default function FormationN8nPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 n8n garde vos workflows chez vous et facture à l'exécution
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Des trois grands outils d'automatisation, n8n est le seul qu'une entreprise peut faire tourner sur ses propres machines, sans licence à payer pour un usage interne. Il compte des exécutions de workflow quel que soit le nombre d'étapes, et ses agents IA peuvent attendre l'accord d'une personne avant d'agir. En contrepartie, il demande plus d'apprentissage que Make ou Zapier : deux jours encadrés suffisent pour le prendre en main.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Des trois grands outils d'automatisation, n8n est le seul qu'une entreprise peut faire tourner sur ses propres machines, sans licence à payer pour un usage interne. Il compte des exécutions de workflow quel que soit le nombre d'étapes, et ses agents IA peuvent attendre l'accord d'une personne avant d'agir. En contrepartie, il demande plus d'apprentissage que Make ou Zapier : deux jours encadrés suffisent pour le prendre en main." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Vous ne savez pas encore quoi automatiser ? Commencez par la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link>. Si votre équipe vit surtout dans ChatGPT, Claude, Copilot ou Gemini, la <Link to="/formation-agents-ia" style={aStyle}>formation agents IA</Link> construit les agents dans ces assistants.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par atout, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -587,9 +573,7 @@ export default function FormationN8nPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Offres, licence et hébergement de n8n relevés le 7 octobre 2026
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>n8n est gratuit en Community Edition pour un usage interne, coûte à partir de 20 € par mois dans son cloud européen et 667 € par mois pour l'offre Business auto-hébergée. Le tableau rassemble ce que nous avons vérifié sur la page tarifs de l'éditeur et sur sa licence.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="n8n est gratuit en Community Edition pour un usage interne, coûte à partir de 20 € par mois dans son cloud européen et 667 € par mois pour l'offre Business auto-hébergée. Le tableau rassemble ce que nous avons vérifié sur la page tarifs de l'éditeur et sur sa licence." />
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
               <thead>
@@ -626,9 +610,7 @@ export default function FormationN8nPage() {
             Du premier workflow à l'agent supervisé, en deux journées
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : l'hébergement et les accès se décident, les applications se branchent, et chaque participant livre un workflow doté d'une étape IA. Jour 2 : un agent soumis à validation humaine, un workflow d'erreur commun, l'exploitation de l'instance et le registre des workflows de l'équipe.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Jour 1 : l'hébergement et les accès se décident, les applications se branchent, et chaque participant livre un workflow doté d'une étape IA. Jour 2 : un agent soumis à validation humaine, un workflow d'erreur commun, l'exploitation de l'instance et le registre des workflows de l'équipe." />
 
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
@@ -674,9 +656,7 @@ export default function FormationN8nPage() {
             n8n, Make ou Zapier : six critères pour trancher
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les trois outils relient vos applications, mais ils ne facturent pas la même unité et n'hébergent pas les données au même endroit. n8n s'impose quand les données doivent rester chez vous ou que les volumes montent ; Make, quand une équipe métier veut garder la main sur des scénarios à branches ; Zapier, pour des automatisations courtes lancées dans la journée.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Les trois outils relient vos applications, mais ils ne facturent pas la même unité et n'hébergent pas les données au même endroit. n8n s'impose quand les données doivent rester chez vous ou que les volumes montent ; Make, quand une équipe métier veut garder la main sur des scénarios à branches ; Zapier, pour des automatisations courtes lancées dans la journée." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -715,21 +695,10 @@ export default function FormationN8nPage() {
             Six workflows n8n que les équipes construisent en atelier
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Les ateliers partent des processus de l'équipe. Six reviennent souvent : la présélection des appels d'offres, la veille réglementaire, le rapprochement des commandes et des factures, le dossier préparé avant un rendez-vous, le support de premier niveau et la mise à jour du CRM proposée par un agent.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Les ateliers partent des processus de l'équipe. Six reviennent souvent : la présélection des appels d'offres, la veille réglementaire, le rapprochement des commandes et des factures, le dossier préparé avant un rendez-vous, le support de premier niveau et la mise à jour du CRM proposée par un agent." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS_USAGE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par workflow, en pleine largeur */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS_USAGE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
         </div>
       </section>
 
@@ -740,17 +709,9 @@ export default function FormationN8nPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cinq écueils font dérailler un déploiement n8n
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un déploiement n8n qui s'essouffle bute en général sur l'un de ces cinq écueils. Chacun a sa parade, et le programme la met en place pendant l'atelier, sur le workflow du participant.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {PIEGES.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Un déploiement n8n qui s'essouffle bute en général sur l'un de ces cinq écueils. Chacun a sa parade, et le programme la met en place pendant l'atelier, sur le workflow du participant." />
+          {/* Une rangée par écueil, en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={PIEGES.map(item => ({ titre: item.title, texte: item.desc }))} />
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
             Notre <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation</Link> exploite des instances n8n pour ses clients selon ces mêmes règles ; la session les transmet sans les simplifier.
           </p>
@@ -769,8 +730,14 @@ export default function FormationN8nPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Chaque journée de formation n8n démarre à 1 980 € HT
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Les deux jours en intra (douze participants au plus) ou en individuel démarrent à 3 960 € HT ; une journée seule, à 1 980 € HT. Si les workflows se construisent sur vos propres outils, la préparation s'ajoute et figure au devis.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Ce prix ne comprend ni abonnement ni hébergement n8n : la Community Edition ne coûte rien en licence pour un usage interne, le cloud se règle directement à l'éditeur.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Les deux jours en intra (douze participants au plus) ou en individuel démarrent à 3 960 € HT ; une journée seule, à 1 980 € HT. Si les workflows se construisent sur vos propres outils, la préparation s'ajoute et figure au devis. Ce prix ne comprend ni abonnement ni hébergement n8n : la Community Edition ne coûte rien en licence pour un usage interne, le cloud se règle directement à l'éditeur. Certifiée Qualiopi, Masteria établit le programme et la convention que vous déposerez auprès de votre OPCO ; celui-ci arrête le montant financé d'après ses règles et ses fonds. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur à partir de votre activité, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> décrit les dispositifs.
+                Certifiée Qualiopi, Masteria établit le programme et la convention que vous déposerez auprès de votre OPCO ; celui-ci arrête le montant financé d'après ses règles et ses fonds. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur à partir de votre activité, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> décrit les dispositifs.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -799,8 +766,11 @@ export default function FormationN8nPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Des formateurs qui exploitent n8n en mission
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session n8n : il l'anime ou en charge un formateur indépendant du réseau, rompu à l'outil. Quand une question dépasse la formation (installation, sécurité de l'instance), les cinq développeurs IA environ qui travaillent avec le cabinet prennent le relais en mission.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session n8n : il l'anime ou en charge un formateur indépendant du réseau, rompu à l'outil. Quand une question dépasse la formation (installation, sécurité de l'instance), les cinq développeurs IA environ qui travaillent avec le cabinet prennent le relais en mission. Exemple de terrain : chez un distributeur photovoltaïque, notre diagnostic a désigné la consultation des transporteurs et l'import des réceptions d'entrepôt dans l'ERP comme premières tâches à outiller (<Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: '#93C5FD', fontWeight: 600 }}>le cas complet</Link>).
+                Exemple de terrain : chez un distributeur photovoltaïque, notre diagnostic a désigné la consultation des transporteurs et l'import des réceptions d'entrepôt dans l'ERP comme premières tâches à outiller (<Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: '#93C5FD', fontWeight: 600 }}>le cas complet</Link>).
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -827,17 +797,9 @@ export default function FormationN8nPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             L'interface est en anglais : huit termes suffisent pour s'y repérer
           </h2>
-          <p style={answerStyle}>
-            <strong>Workflow, nœud, déclencheur, credential, exécution, sous-workflow, workflow d'erreur, agent : ces huit termes couvrent l'essentiel de l'interface de n8n et de sa documentation. Nous les traduisons et les illustrons dès la première heure.</strong>
-          </p>
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
-            {termsJsonLd.hasDefinedTerm.map(t => (
-              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
-                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
-                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
-              </div>
-            ))}
-          </dl>
+          <Reponse style={answerStyle} texte="Workflow, nœud, déclencheur, credential, exécution, sous-workflow, workflow d'erreur, agent : ces huit termes couvrent l'essentiel de l'interface de n8n et de sa documentation. Nous les traduisons et les illustrons dès la première heure." />
+          {/* Un terme par rangée, en pleine largeur */}
+          <Rangees style={{ maxWidth: 880 }} items={termsJsonLd.hasDefinedTerm.map(t => ({ titre: t.name, texte: t.description }))} />
         </div>
       </section>
 

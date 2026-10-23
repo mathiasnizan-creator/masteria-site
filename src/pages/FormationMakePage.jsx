@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation make » (slug /formation-make), côté FORMATION.
@@ -384,7 +385,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -466,10 +469,14 @@ export default function FormationMakePage() {
             Page signée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · tarifs de Make vérifiés le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation Make met vos équipes en mesure d'automatiser elles-mêmes leur travail répétitif avec Make, l'ancien Integromat, sur un canevas où chaque module se voit. <strong style={{ color: '#fff', fontWeight: 700 }}>En deux jours, chaque participant monte, fiabilise et documente un scénario tiré de son poste, avec une étape IA</strong> et une lecture précise des crédits qu'il consomme. Organisme certifié Qualiopi, Masteria vous aide à faire financer la session par votre OPCO.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            La formation Make met vos équipes en mesure d'automatiser elles-mêmes leur travail répétitif avec Make, l'ancien Integromat, sur un canevas où chaque module se voit.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>En deux jours, chaque participant monte, fiabilise et documente un scénario tiré de son poste, avec une étape IA</strong> et une lecture précise des crédits qu'il consomme.</>,
+            'Organisme certifié Qualiopi, Masteria vous aide à faire financer la session par votre OPCO.',
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Make convient aux équipes métier qui veulent automatiser sans attendre le service informatique : le scénario se lit comme un plan, et il tient des processus à plusieurs branches. Pour ces deux jours, nous visons un résultat précis. Chaque scénario prévient quelqu'un le jour où il échoue.
@@ -494,18 +501,9 @@ export default function FormationMakePage() {
             ))}
           </div>
 
-          {/* La session en résumé : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La session Make en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* La session en résumé : synthèse citable (GEO), en repères */}
+          {/* La ligne Public énumère des métiers : gardée entière, sans tête en gras */}
+          <Reperes sombre id="en-bref" titre="La session Make en six lignes" items={lignesEnReperes(EN_BREF).map((r, i) => (EN_BREF[i].label === 'Public' ? { label: r.label, detail: EN_BREF[i].value } : r))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -528,26 +526,15 @@ export default function FormationMakePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Make donne aux équipes métier un outil qu'elles savent relire
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Le scénario s'affiche comme un schéma, module par module, et l'historique de chaque exécution montre où la donnée a changé. Make va pourtant assez loin pour des processus à branches, avec routeurs, itérateurs, data stores, webhooks et agents IA intégrés. Une équipe marketing ou ADV y gagne son autonomie, sans ticket au service informatique pour chaque changement.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Le scénario s'affiche comme un schéma, module par module, et l'historique de chaque exécution montre où la donnée a changé. Make va pourtant assez loin pour des processus à branches, avec routeurs, itérateurs, data stores, webhooks et agents IA intégrés. Une équipe marketing ou ADV y gagne son autonomie, sans ticket au service informatique pour chaque changement." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Vous hésitez encore entre plusieurs outils ? Le tableau comparatif de la <Link to="/formation-n8n" style={aStyle}>formation n8n</Link> met Make face à n8n et Zapier. Vous ne savez pas encore quelles tâches confier à l'automatisation ? La <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> commence par cette question.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees style={{ maxWidth: 880 }} items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -560,9 +547,7 @@ export default function FormationMakePage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Ce que Make facture, héberge et propose au 7 octobre 2026
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Make facture en crédits depuis août 2025, propose une offre gratuite de 1 000 crédits par mois et des offres payantes à partir de 9 dollars par mois, et héberge vos scénarios sur AWS en Europe ou en Amérique du Nord. Nous avons relevé ces informations sur le site de l'éditeur avant de mettre la page à jour.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Make facture en crédits depuis août 2025, propose une offre gratuite de 1 000 crédits par mois et des offres payantes à partir de 9 dollars par mois, et héberge vos scénarios sur AWS en Europe ou en Amérique du Nord. Nous avons relevé ces informations sur le site de l'éditeur avant de mettre la page à jour." />
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
               <thead>
@@ -599,9 +584,7 @@ export default function FormationMakePage() {
             Deux jours pour passer du premier scénario à sa passation
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le premier jour installe la logique de Make, les connexions et un scénario par participant, enrichi d'une branche l'après-midi. Le second ajoute l'IA, la gestion d'erreurs, la réduction des crédits consommés et la fiche qui permettra à un collègue de reprendre chaque scénario.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Le premier jour installe la logique de Make, les connexions et un scénario par participant, enrichi d'une branche l'après-midi. Le second ajoute l'IA, la gestion d'erreurs, la réduction des crédits consommés et la fiche qui permettra à un collègue de reprendre chaque scénario." />
 
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
@@ -647,9 +630,7 @@ export default function FormationMakePage() {
             Chaque équipe a son premier scénario Make
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Make rend le plus de services aux équipes dont le travail traverse trois ou quatre applications : un formulaire, un CRM, un tableur, une messagerie. Le tableau reprend les scénarios que nous montons le plus souvent en atelier, avec les briques de Make qui les font tourner.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Make rend le plus de services aux équipes dont le travail traverse trois ou quatre applications : un formulaire, un CRM, un tableur, une messagerie. Le tableau reprend les scénarios que nous montons le plus souvent en atelier, avec les briques de Make qui les font tourner." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -682,21 +663,10 @@ export default function FormationMakePage() {
             Six scénarios reviennent d'une session Make à l'autre
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Chaque atelier part d'une tâche que le participant fait toutes les semaines. Six scénarios reviennent souvent : le formulaire qui alimente le CRM, la facture pré-saisie, la synthèse du lundi, le dossier d'arrivée, la base produits tenue à jour et la boîte générique triée.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Chaque atelier part d'une tâche que le participant fait toutes les semaines. Six scénarios reviennent souvent : le formulaire qui alimente le CRM, la facture pré-saisie, la synthèse du lundi, le dossier d'arrivée, la base produits tenue à jour et la boîte générique triée." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS_USAGE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS_USAGE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
         </div>
       </section>
 
@@ -707,17 +677,9 @@ export default function FormationMakePage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cinq erreurs mettent un scénario Make hors service
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Quand un scénario Make finit désactivé, l'arrêt remonte le plus souvent à l'une de ces cinq erreurs. Le programme traite chacune au moment où elle apparaît dans l'atelier, sur le scénario du participant.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {PIEGES.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Quand un scénario Make finit désactivé, l'arrêt remonte le plus souvent à l'une de ces cinq erreurs. Le programme traite chacune au moment où elle apparaît dans l'atelier, sur le scénario du participant." />
+          {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={PIEGES.map(item => ({ titre: item.title, texte: item.desc }))} />
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
             Notre <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation</Link> applique ces règles aux scénarios qu'elle construit et maintient pour ses clients ; la formation les enseigne telles quelles.
           </p>
@@ -736,8 +698,14 @@ export default function FormationMakePage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Dès 1 980 € HT la journée de session Make, en groupe comme en individuel
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le prix est le même pour un groupe en intra (12 participants au plus) ou pour une personne seule en individuel : dès 1 980 € HT la journée, dès 3 960 € HT pour les deux jours recommandés. Des scénarios construits sur vos outils demandent une préparation, chiffrée en plus au devis. Les abonnements Make restent à votre charge.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Qualiopi certifie Masteria au titre des actions de formation : votre OPCO décide de prendre en charge tout ou partie de la session, selon ses critères et l'état de ses fonds, et nous préparons programme et convention pour votre demande.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le prix est le même pour un groupe en intra (12 participants au plus) ou pour une personne seule en individuel : dès 1 980 € HT la journée, dès 3 960 € HT pour les deux jours recommandés. Des scénarios construits sur vos outils demandent une préparation, chiffrée en plus au devis. Les abonnements Make restent à votre charge. Qualiopi certifie Masteria au titre des actions de formation : votre OPCO décide de prendre en charge tout ou partie de la session, selon ses critères et l'état de ses fonds, et nous préparons programme et convention pour votre demande. Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous oriente ; les règles de prise en charge sont détaillées sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
+                Pour savoir de quel opérateur vous dépendez, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous oriente ; les règles de prise en charge sont détaillées sur la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -766,8 +734,11 @@ export default function FormationMakePage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Des formateurs qui entretiennent des scénarios chez des clients
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Masteria est née à Lyon en 2022 : Mathias Nizan l'a créée pour se consacrer à l'intelligence artificielle, sans lien avec un éditeur. Il pilote chaque session Make ; l'animation revient à lui ou à l'un des quelque vingt formateurs indépendants du réseau, retenu selon l'outil et le métier du groupe.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Masteria est née à Lyon en 2022 : Mathias Nizan l'a créée pour se consacrer à l'intelligence artificielle, sans lien avec un éditeur. Il pilote chaque session Make ; l'animation revient à lui ou à l'un des quelque vingt formateurs indépendants du réseau, retenu selon l'outil et le métier du groupe. Les règles transmises (gestion d'erreurs, sobriété, responsable nommé) sont celles de nos missions, racontées dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>.
+                Les règles transmises (gestion d'erreurs, sobriété, responsable nommé) sont celles de nos missions, racontées dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -794,17 +765,9 @@ export default function FormationMakePage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Huit mots de Make à connaître avant la première matinée
           </h2>
-          <p style={answerStyle}>
-            <strong>Scénario, module, crédit, routeur, webhook, data store, gestionnaire d'erreurs, itérateur : avec ces huit mots, la documentation de Make et ses forums deviennent lisibles. Nous les posons dès la première heure, avec les définitions ci-dessous.</strong>
-          </p>
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
-            {termsJsonLd.hasDefinedTerm.map(t => (
-              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
-                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
-                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
-              </div>
-            ))}
-          </dl>
+          <Reponse style={answerStyle} texte="Scénario, module, crédit, routeur, webhook, data store, gestionnaire d'erreurs, itérateur : avec ces huit mots, la documentation de Make et ses forums deviennent lisibles. Nous les posons dès la première heure, avec les définitions ci-dessous." />
+          {/* Un terme par rangée, en pleine largeur */}
+          <Rangees style={{ maxWidth: 880 }} items={termsJsonLd.hasDefinedTerm.map(t => ({ titre: t.name, texte: t.description }))} />
         </div>
       </section>
 

@@ -13,6 +13,7 @@ import { METIERS, SPOKES, HUBS } from '../data/seo-pages'
 import { GEO_CITIES, geoIaSlug } from '../data/geo-data'
 import { useIsMobile } from '../hooks/useMediaQuery'
 import { CatalogueHero, CatalogueSuite } from '../components/CatalogueMail'
+import { Paras, Rangees } from '../components/Aere'
 
 const SITE_URL = 'https://www.master-ia.fr'
 const metiersHub = HUBS.find(h => h.id === 'metiers')
@@ -794,66 +795,40 @@ export default function MetiersHubPage({ variant } = {}) {
             Depuis 2022, Masteria forme des équipes à l'IA générative, à Lyon comme loin de Lyon : partout en France, dans les pays voisins, outre-Atlantique et en Inde. Un objectif guide chaque session : que les participants s'en servent le lundi suivant.
           </p>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: `repeat(auto-fit, minmax(${isMobile ? 260 : 300}px, 1fr))`,
-            gap: 24,
-          }}>
-            {[
+          {/* Une rangée par atout, en pleine largeur (plus de cartes côte à côte) */}
+          <div style={{ maxWidth: 820, margin: '0 auto' }}>
+            <Rangees items={[
               {
-                icon: ShieldCheck, color: '#10a37f',
+                icon: ShieldCheck,
                 title: 'Un organisme certifié Qualiopi',
                 desc: "Le certificat n° 725311-1, émis par Certifopac, porte sur les actions de formation et expire le 28 janvier 2029 ; un audit de surveillance a lieu à mi-parcours. Votre OPCO règle la session selon ses critères de prise en charge et l'argent dont il dispose.",
               },
               {
-                icon: UserCheck, color: '#2563EB',
+                icon: UserCheck,
                 title: "La pratique occupe l'essentiel de la journée",
                 desc: "Les apports théoriques durent quelques minutes ; le reste du temps, chacun travaille sur un dossier de son poste. Les demandes types et les gabarits construits en séance restent à chaque stagiaire.",
               },
               {
-                icon: Award, color: '#d97706',
+                icon: Award,
                 title: 'Des missions publiées, vérifiables',
                 desc: "Quatre études de cas anonymisées et six missions de formation sont décrites sur le site, du distributeur de 58 salariés au groupe industriel implanté sur trois continents.",
               },
               {
-                icon: Zap, color: '#F97316',
+                icon: Zap,
                 title: 'Cinq assistants au catalogue',
                 desc: "ChatGPT, Copilot, Gemini, Claude et Vibe, plus des parcours multi-outils qui les comparent. Le choix suit votre environnement de travail et vos règles de confidentialité.",
               },
               {
-                icon: MapPin, color: '#dc2626',
+                icon: MapPin,
                 title: 'Sur site ou à distance',
                 desc: "Le formateur anime la session sur votre site, en France comme hors de France, ou en visioconférence quand l'équipe travaille sur plusieurs sites.",
               },
               {
-                icon: Clock, color: '#6366F1',
+                icon: Clock,
                 title: 'Des formats courts',
                 desc: "Un sprint de trois heures, une journée ou deux : chaque format vise un résultat utilisable la semaine suivante, et les journées d'un même parcours s'espacent pour laisser le temps de pratiquer.",
               },
-            ].map(({ icon: Icon, color, title, desc }) => (
-              <div key={title} style={{
-                background: '#F9FAFB', borderRadius: 14, padding: 28,
-                border: '1px solid #E5E7EB',
-              }}>
-                <div style={{
-                  width: 48, height: 48, borderRadius: 12,
-                  background: `${color}15`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  marginBottom: 18,
-                }}>
-                  <Icon size={24} strokeWidth={2} color={color} />
-                </div>
-                <h3 style={{
-                  fontSize: 17, fontWeight: 800, color: '#0A0A0A',
-                  fontFamily: 'Nunito, sans-serif', marginBottom: 10, lineHeight: 1.3,
-                }}>
-                  {title}
-                </h3>
-                <p style={{ color: '#6B7280', fontSize: 14, lineHeight: 1.6, margin: 0 }}>
-                  {desc}
-                </p>
-              </div>
-            ))}
+            ].map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
           </div>
         </div>
       </section>
@@ -884,8 +859,11 @@ export default function MetiersHubPage({ variant } = {}) {
           }}>
             1. Le cadrage fixe les cas à traiter
           </h3>
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 12 }}>
+            Avant une session intra, un entretien avec le commanditaire et un questionnaire de positionnement rempli par chaque participant situent le niveau du groupe, les tâches à traiter en priorité et les contraintes du secteur. Le programme du catalogue est ensuite réécrit pour cette équipe.
+          </p>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Avant une session intra, un entretien avec le commanditaire et un questionnaire de positionnement rempli par chaque participant situent le niveau du groupe, les tâches à traiter en priorité et les contraintes du secteur. Le programme du catalogue est ensuite réécrit pour cette équipe. En individuel, le même travail se fait avec la personne formée, à partir de ses dossiers et de son agenda.
+            En individuel, le même travail se fait avec la personne formée, à partir de ses dossiers et de son agenda.
           </p>
 
           <h3 style={{
@@ -894,8 +872,11 @@ export default function MetiersHubPage({ variant } = {}) {
           }}>
             2. Les ateliers portent sur les dossiers des participants
           </h3>
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 12 }}>
+            Selon le programme, une ou plusieurs journées alternent des apports courts (méthode de rédaction des demandes, comparaison des outils, RGPD et AI Act) et des mises en situation.
+          </p>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Selon le programme, une ou plusieurs journées alternent des apports courts (méthode de rédaction des demandes, comparaison des outils, RGPD et AI Act) et des mises en situation. Les stagiaires apportent leurs mails, leurs tableaux Excel, leurs comptes rendus ; le formateur les aide à obtenir un résultat qu'ils sauront reproduire seuls, sur des documents anonymisés quand le sujet est sensible.
+            Les stagiaires apportent leurs mails, leurs tableaux Excel, leurs comptes rendus ; le formateur les aide à obtenir un résultat qu'ils sauront reproduire seuls, sur des documents anonymisés quand le sujet est sensible.
           </p>
 
           <h3 style={{
@@ -904,8 +885,11 @@ export default function MetiersHubPage({ variant } = {}) {
           }}>
             3. Les ressources restent après la session
           </h3>
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 12 }}>
+            Chaque stagiaire garde l'accès aux supports de la session, à ses demandes types et aux gabarits construits en atelier, et, selon le programme, à une grille pour choisir entre les outils ou à une charte d'usage.
+          </p>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, marginBottom: 20 }}>
-            Chaque stagiaire garde l'accès aux supports de la session, à ses demandes types et aux gabarits construits en atelier, et, selon le programme, à une grille pour choisir entre les outils ou à une charte d'usage. Un point à J+30 avec le commanditaire vérifie ce qui est entré dans le travail quotidien et prépare, s'il le faut, une deuxième vague.
+            Un point à J+30 avec le commanditaire vérifie ce qui est entré dans le travail quotidien et prépare, s'il le faut, une deuxième vague.
           </p>
 
           <div style={{
@@ -913,9 +897,12 @@ export default function MetiersHubPage({ variant } = {}) {
             borderRadius: 12, padding: 24,
             boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
           }}>
-            <p style={{ margin: 0, color: '#374151', fontSize: 15, lineHeight: 1.7 }}>
+            <p style={{ margin: '0 0 12px', color: '#374151', fontSize: 15, lineHeight: 1.7 }}>
               Deux missions récentes montrent ce cadrage à l'œuvre. Dans une interprofession agricole, seize salariés ont d'abord mis six assistants côte à côte en plénière, avant de s'en servir dans un atelier marketing et un atelier gestion ({' '}
-              <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={{ color: '#2563EB', fontWeight: 600 }}>voir la mission</Link>). L'équipe qui forme les clients d'un éditeur de logiciels B2B est passée, en deux jours, de ses projets Claude à des compétences partagées et à Cowork ({' '}
+              <Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={{ color: '#2563EB', fontWeight: 600 }}>voir la mission</Link>).
+            </p>
+            <p style={{ margin: 0, color: '#374151', fontSize: 15, lineHeight: 1.7 }}>
+              L'équipe qui forme les clients d'un éditeur de logiciels B2B est passée, en deux jours, de ses projets Claude à des compétences partagées et à Cowork ({' '}
               <Link to="/etudes-de-cas-ia#mission-editeur-pole-formation" style={{ color: '#2563EB', fontWeight: 600 }}>voir la mission</Link>).
             </p>
             <p style={{ marginTop: 12, marginBottom: 0, color: '#6B7280', fontSize: 13.5, lineHeight: 1.6 }}>
@@ -1008,12 +995,9 @@ export default function MetiersHubPage({ variant } = {}) {
                   <span>{item.q}</span>
                   <ChevronRight size={18} strokeWidth={2.2} style={{ flexShrink: 0, marginTop: 2, color: '#9CA3AF' }} />
                 </summary>
-                <p style={{
-                  color: '#4B5563', fontSize: 14, lineHeight: 1.75,
-                  marginTop: 12, marginBottom: 0,
-                }}>
-                  {item.a}
-                </p>
+                <div style={{ marginTop: 12 }}>
+                  <Paras texte={item.a} style={{ color: '#4B5563', fontSize: 14, lineHeight: 1.75, margin: 0 }} />
+                </div>
               </details>
             ))}
           </div>
@@ -1038,10 +1022,8 @@ export default function MetiersHubPage({ variant } = {}) {
             Trois documents répondent à trois questions différentes : la qualité de l'organisme, la valeur du
             parcours, la présence du stagiaire. Voici où se situent les formations de Masteria pour chacun.
           </p>
-          <div style={{
-            display: 'grid', gap: 16,
-            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)',
-          }}>
+          {/* Un terme par rangée, en pleine largeur : portée et terme à gauche, explication et statut à droite */}
+          <div style={{ display: 'grid', gap: 16, maxWidth: 900 }}>
             {[
               {
                 term: 'Qualiopi',
@@ -1064,18 +1046,25 @@ export default function MetiersHubPage({ variant } = {}) {
             ].map(({ term, scope, text, status }) => (
               <div key={term} style={{
                 background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 14,
-                padding: 22, display: 'flex', flexDirection: 'column', gap: 8,
+                padding: 22, display: 'flex', flexWrap: 'wrap', gap: '10px 32px', alignItems: 'flex-start',
               }}>
-                <span style={{ fontSize: 12, fontWeight: 700, color: '#1A62FF', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{scope}</span>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{term}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.65, margin: 0, flex: 1 }}>{text}</p>
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{status}</span>
+                <div style={{ flex: '1 1 200px', maxWidth: 260, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <span style={{ fontSize: 12, fontWeight: 700, color: '#1A62FF', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{scope}</span>
+                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{term}</h3>
+                </div>
+                <div style={{ flex: '1 1 360px', minWidth: 0, maxWidth: 600, display: 'flex', flexDirection: 'column', gap: 8 }}>
+                  <Paras texte={text} max={2} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.65, margin: 0 }} />
+                  <span style={{ fontSize: 13, fontWeight: 700, color: '#374151' }}>{status}</span>
+                </div>
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '28px 0 0', maxWidth: 820 }}>
+          <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '28px 0 12px', maxWidth: 820 }}>
             Si vous visez un titre reconnu, ou si l'on vous propose une certification d'éditeur, cherchez sa
-            fiche dans les répertoires publics de France Compétences avant de vous engager. Pour former vos
+            fiche dans les répertoires publics de France Compétences avant de vous engager.
+          </p>
+          <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0, maxWidth: 820 }}>
+            Pour former vos
             équipes à un assistant d'IA sans passer par votre compte personnel, la page{' '}
             <Link to="/formation-intelligence-artificielle-cpf" style={{ color: '#1A62FF', fontWeight: 600 }}>formation IA et CPF</Link>{' '}
             compare les financements possibles. Une formation à Claude en français, sur vos documents, est décrite sur la page{' '}

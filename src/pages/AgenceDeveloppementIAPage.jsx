@@ -11,6 +11,7 @@ import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import CadrageLink from '../components/CadrageLink'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page pilier « agence de développement IA » (slug /agence-developpement-ia).
@@ -352,7 +353,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -428,10 +431,14 @@ export default function AgenceDeveloppementIAPage() {
             Texte signé <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence de développement IA que Mathias Nizan a lancée à Lyon en 2022. <strong style={{ color: '#fff', fontWeight: 700 }}>Nous construisons des agents, des applications par métier et des connecteurs qui s'appuient sur des modèles de langage</strong>, et nous les installons dans vos logiciels. À la livraison, le code source, sa documentation et le savoir-faire pour le faire évoluer passent chez vous.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Masteria est une agence de développement IA que Mathias Nizan a lancée à Lyon en 2022.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>Nous construisons des agents, des applications par métier et des connecteurs qui s'appuient sur des modèles de langage</strong>, et nous les installons dans vos logiciels.</>,
+            'À la livraison, le code source, sa documentation et le savoir-faire pour le faire évoluer passent chez vous.',
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Un projet d'IA mobilise des profils qu'une PME recrute rarement en même temps : un consultant qui cadre l'usage, des développeurs capables de tenir un modèle de langage en production, un formateur qui prépare la reprise par vos équipes. Chez nous, ces trois métiers travaillent sur votre projet sous la conduite d'une seule personne.
@@ -460,18 +467,8 @@ export default function AgenceDeveloppementIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'agence en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 116px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères */}
+          <Reperes sombre titre="L'agence en six lignes" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -484,28 +481,20 @@ export default function AgenceDeveloppementIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Quels outils une agence de développement IA construit-elle ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six familles de livrables reviennent dans nos projets : des agents qui agissent dans vos logiciels, des applications par métier, des recherches dans vos documents, des connecteurs, des automatisations et des interfaces web. Chacun part d'une tâche que vos équipes accomplissent déjà et finit branché sur leurs outils.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Six familles de livrables reviennent dans nos projets : des agents qui agissent dans vos logiciels, des applications par métier, des recherches dans vos documents, des connecteurs, des automatisations et des interfaces web. Chacun part d'une tâche que vos équipes accomplissent déjà et finit branché sur leurs outils." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Les expressions « dev IA » et « web dev IA » désignent les deux moitiés du travail : la logique qui interroge le modèle, et l'écran que l'utilisateur ouvre le matin. Nous menons les deux de front, car un bon agent caché derrière une interface confuse est abandonné en quelques semaines.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {LIVRABLES.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Un même projet combine souvent plusieurs familles. Pour regarder l'outil remis à vos équipes (ses formes, sa propriété, sa maintenance), lisez la page <Link to="/outils-ia-sur-mesure" style={aStyle}>développement IA sur mesure</Link>. Les tâches qui passent d'un logiciel à l'autre relèvent de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, et les assistants qui prennent des initiatives sont décrits sur la page <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>. D'autres exemples figurent dans nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>usages de l'IA rangés par service</Link>, nos <Link to="/solutions-ia" style={aStyle}>solutions IA rangées par besoin</Link> et la page sur l'<Link to="/ia-generative-entreprise" style={aStyle}>IA générative en entreprise</Link>.
+              {/* Une rangée par famille de livrables, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={LIVRABLES.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px' }}>
+                Un même projet combine souvent plusieurs familles. Pour regarder l'outil remis à vos équipes (ses formes, sa propriété, sa maintenance), lisez la page <Link to="/outils-ia-sur-mesure" style={aStyle}>développement IA sur mesure</Link>.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+                Les tâches qui passent d'un logiciel à l'autre relèvent de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>, et les assistants qui prennent des initiatives sont décrits sur la page <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>. D'autres exemples figurent dans nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>usages de l'IA rangés par service</Link>, nos <Link to="/solutions-ia" style={aStyle}>solutions IA rangées par besoin</Link> et la page sur l'<Link to="/ia-generative-entreprise" style={aStyle}>IA générative en entreprise</Link>.
               </p>
             </div>
           </div>
@@ -520,9 +509,7 @@ export default function AgenceDeveloppementIAPage() {
             Comment se déroule un projet de développement IA avec notre équipe ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Cinq étapes, chacune confiée à la personne la mieux placée : le consultant cadre, le développeur prototype puis construit, l'équipe installe l'outil chez vous, le formateur prépare la reprise. Mathias Nizan suit le projet du premier au dernier jour, et vous retrouvez le même interlocuteur à chaque décision.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Cinq étapes, chacune confiée à la personne la mieux placée : le consultant cadre, le développeur prototype puis construit, l'équipe installe l'outil chez vous, le formateur prépare la reprise. Mathias Nizan suit le projet du premier au dernier jour, et vous retrouvez le même interlocuteur à chaque décision." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Le déroulé complet, avec les livrables de chaque étape et le rythme des démonstrations, figure sur la page <Link to="/methode-projet-ia" style={aStyle}>méthode d'un projet IA</Link>. Ici, l'accent porte sur les personnes qui interviennent.
@@ -559,9 +546,7 @@ export default function AgenceDeveloppementIAPage() {
             Deux façons de faire appel à nos développeurs
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le plus souvent, vous nous confiez un projet au forfait : périmètre, livrables, dates et prix sont écrits avant le démarrage. Quand vos données ne doivent pas quitter vos murs, ou qu'un programme déjà lancé manque de bras, nous pouvons aussi placer un ou plusieurs développeurs dans votre équipe, sur place ou à distance.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Le plus souvent, vous nous confiez un projet au forfait : périmètre, livrables, dates et prix sont écrits avant le démarrage. Quand vos données ne doivent pas quitter vos murs, ou qu'un programme déjà lancé manque de bras, nous pouvons aussi placer un ou plusieurs développeurs dans votre équipe, sur place ou à distance." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Le choix se fait pendant le cadrage. Il dépend de la sensibilité des données, du calendrier et du nombre de personnes prêtes, chez vous, à suivre le projet. Dans les deux formules, le code est écrit pour être relu et repris par quelqu'un d'autre.
@@ -608,28 +593,14 @@ export default function AgenceDeveloppementIAPage() {
             Avec quels modèles et quelles briques techniques travaillons-nous ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le modèle se choisit projet par projet : ChatGPT d'OpenAI, Claude d'Anthropic, Gemini de Google, un modèle de Mistral AI, ou encore un modèle ouvert, téléchargeable, que vous hébergez vous-même. Autour de lui, nous assemblons la recherche dans vos documents, les connecteurs MCP et les API, et du code là où un outil sans code atteint ses limites. Pour des données sensibles, l'hébergement en Europe reste possible.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Le modèle se choisit projet par projet : ChatGPT d'OpenAI, Claude d'Anthropic, Gemini de Google, un modèle de Mistral AI, ou encore un modèle ouvert, téléchargeable, que vous hébergez vous-même. Autour de lui, nous assemblons la recherche dans vos documents, les connecteurs MCP et les API, et du code là où un outil sans code atteint ses limites. Pour des données sensibles, l'hébergement en Europe reste possible." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Les modèles se renouvellent vite : Anthropic a sorti Fable 5.1 le 1er septembre 2026, puis Opus 5.5 trois semaines plus tard et Sonnet 5.5 six jours après. Nous concevons donc chaque outil pour qu'on puisse changer de modèle sans le réécrire.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 56 }}>
-            {STACK.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{card.title}</h3>
-                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Une rangée par choix technique, en pleine largeur */}
+          <Rangees sombre style={{ marginBottom: 56, maxWidth: 880 }} items={STACK.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 19, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>
             Monter l'outil vous-même, nous le confier ou passer par une ESN ?
@@ -672,20 +643,12 @@ export default function AgenceDeveloppementIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi confier le développement à une agence spécialisée en IA plutôt qu'à une agence web ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Une agence web sait livrer un site. Un outil d'IA demande en plus de choisir un modèle, de mesurer la qualité de ses réponses et d'anticiper ses erreurs. Masteria ne travaille que sur l'IA depuis 2022 et construit chaque outil pour qu'il tienne en production, sans contrat avec un éditeur.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Une agence web sait livrer un site. Un outil d'IA demande en plus de choisir un modèle, de mesurer la qualité de ses réponses et d'anticiper ses erreurs. Masteria ne travaille que sur l'IA depuis 2022 et construit chaque outil pour qu'il tienne en production, sans contrat avec un éditeur." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {WHY.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par point, en pleine largeur */}
+              <Rangees items={WHY.map(card => ({ titre: card.title, texte: card.desc }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Si vous en êtes encore au choix des usages, des règles et des priorités, notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> commence par là. Les particularités de votre activité sont décrites sur nos pages consacrées à l'<Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link>, et l'ensemble de nos offres sur la page <Link to="/agence-ia" style={aStyle}>agence IA</Link>.
               </p>
@@ -706,8 +669,11 @@ export default function AgenceDeveloppementIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Vos équipes apprennent à faire vivre l'outil
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Masteria forme aussi, sous certification Qualiopi (catégorie « actions de formation »), et la passation en profite. Le référent qui gardera l'outil apprend à lire le journal des actions, à corriger une consigne et à ajouter une source ; les utilisateurs s'exercent sur leurs propres dossiers.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Masteria forme aussi, sous certification Qualiopi (catégorie « actions de formation »), et la passation en profite. Le référent qui gardera l'outil apprend à lire le journal des actions, à corriger une consigne et à ajouter une source ; les utilisateurs s'exercent sur leurs propres dossiers. Pour former plus largement vos équipes à l'IA, chaque journée de formation démarre à 1 980 € HT ; l'opérateur de compétences de votre branche (OPCO) peut la financer, selon ses règles et ses fonds. Côté code, aucun financement de ce genre : un projet de développement n'est pas finançable par votre OPCO.
+                Pour former plus largement vos équipes à l'IA, chaque journée de formation démarre à 1 980 € HT ; l'opérateur de compétences de votre branche (OPCO) peut la financer, selon ses règles et ses fonds. Côté code, aucun financement de ce genre : un projet de développement n'est pas finançable par votre OPCO.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Voir les formations à l'IA pour vos équipes
@@ -726,25 +692,14 @@ export default function AgenceDeveloppementIAPage() {
             Quel budget prévoir pour un projet de développement IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>Chaque projet reçoit un prix au forfait, écrit après le cadrage. Trois ordres de grandeur pour vous situer : quelques milliers d'euros pour éprouver une idée sur un prototype, plusieurs dizaines de milliers pour un outil que vos équipes utilisent chaque jour, tandis qu'un déploiement sur plusieurs sites ou pays franchit les 100 000 €, sans plafond fixé à l'avance.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#F9FAFB' }} texte="Chaque projet reçoit un prix au forfait, écrit après le cadrage. Trois ordres de grandeur pour vous situer : quelques milliers d'euros pour éprouver une idée sur un prototype, plusieurs dizaines de milliers pour un outil que vos équipes utilisent chaque jour, tandis qu'un déploiement sur plusieurs sites ou pays franchit les 100 000 €, sans plafond fixé à l'avance." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
-            {[
-              { icon: Target, title: 'Les 30 premières minutes offertes', desc: "Nous écoutons votre besoin et posons les questions qui décident de la suite : quelles données, quel délai, combien d'utilisateurs. Vous savez ensuite si le projet tient debout." },
-              { icon: FileText, title: 'Un forfait par étape', desc: "Le prototype a son prix, la version complète a le sien. Vous pouvez vous arrêter après le prototype sans rien devoir pour la suite." },
-              { icon: Check, title: 'Des coûts de fonctionnement annoncés', desc: "Hébergement, consommation des modèles et maintenance sont estimés avant la signature, pour éviter la surprise de la première facture mensuelle." },
-            ].map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par point, en pleine largeur */}
+          <Rangees style={{ marginBottom: 28, maxWidth: 880 }} items={[
+            { icon: Target, titre: 'Les 30 premières minutes offertes', texte: "Nous écoutons votre besoin et posons les questions qui décident de la suite : quelles données, quel délai, combien d'utilisateurs. Vous savez ensuite si le projet tient debout." },
+            { icon: FileText, titre: 'Un forfait par étape', texte: "Le prototype a son prix, la version complète a le sien. Vous pouvez vous arrêter après le prototype sans rien devoir pour la suite." },
+            { icon: Check, titre: 'Des coûts de fonctionnement annoncés', texte: "Hébergement, consommation des modèles et maintenance sont estimés avant la signature, pour éviter la surprise de la première facture mensuelle." },
+          ]} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Notre page <Link to="/prix-projet-ia" style={aStyle}>combien coûte un projet IA</Link> détaille, livrable par livrable, ce qui fait monter ou baisser la note. Pour une estimation sur votre cas, décrivez-nous la tâche à outiller et les logiciels concernés.
@@ -762,24 +717,28 @@ export default function AgenceDeveloppementIAPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Les noms des clients restent confidentiels, à leur demande. Les faits ci-dessous viennent des dossiers de mission ; ce qui n'est pas encore fait est écrit au futur.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gap: 16, maxWidth: 980 }}>
             {DEV_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
-              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+              <article key={id} style={{ ...cardStyle, borderLeft: `3px solid ${c}`, padding: 24, display: 'flex', flexWrap: 'wrap', gap: '16px 32px', alignItems: 'flex-start' }}>
+                <div style={{ flex: '1 1 240px', maxWidth: 320, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={18} strokeWidth={1.75} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                  </div>
+                  <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                  </div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                <div style={{ flex: '1 1 380px', minWidth: 0 }}>
+                  <Paras texte={text} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 12px', maxWidth: 620 }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                    Le cas complet
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Le cas complet
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -904,8 +863,11 @@ export default function AgenceDeveloppementIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Une équipe montée pour votre projet, sous la responsabilité du fondateur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Masteria s'appuie sur un réseau d'indépendants, où l'on compte près de cinq développeurs IA, dix consultants environ et vingt formateurs à peu près. Pour chaque projet, Mathias Nizan choisit ceux qui connaissent vos logiciels ou votre secteur, et reste votre interlocuteur jusqu'à la remise du code.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria s'appuie sur un réseau d'indépendants, où l'on compte près de cinq développeurs IA, dix consultants environ et vingt formateurs à peu près. Pour chaque projet, Mathias Nizan choisit ceux qui connaissent vos logiciels ou votre secteur, et reste votre interlocuteur jusqu'à la remise du code. Aucun éditeur ne nous rémunère, si bien que le choix du modèle suit votre besoin. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+              Aucun éditeur ne nous rémunère, si bien que le choix du modèle suit votre besoin. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

@@ -10,6 +10,7 @@ import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import CadrageLink from '../components/CadrageLink'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page bottom-funnel ACHAT, « Prix d'un projet IA » (slug /prix-projet-ia).
@@ -394,7 +395,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse TOUJOURS dans le DOM (repli CSS maxHeight) pour rester citable par les LLM */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -469,10 +472,13 @@ export default function PrixProjetIAPage() {
             Fourchettes vérifiées le 7 octobre 2026 par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui signe les propositions de Masteria
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le prix d'un projet IA va de <strong style={{ color: '#fff', fontWeight: 700 }}>quelques milliers d'euros</strong> pour un prototype à <strong style={{ color: '#fff', fontWeight: 700 }}>plus de 100 000 €</strong> pour un programme déployé sur plusieurs sites, et les plus vastes se comptent en centaines de milliers d'euros. Chez Masteria, chaque projet de conseil ou de développement est chiffré au forfait, par écrit, une fois le cadrage mené.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puce */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Le prix d'un projet IA va de <strong style={{ color: '#fff', fontWeight: 700 }}>quelques milliers d'euros</strong> pour un prototype à <strong style={{ color: '#fff', fontWeight: 700 }}>plus de 100 000 €</strong> pour un programme déployé sur plusieurs sites, et les plus vastes se comptent en centaines de milliers d'euros.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            'Chez Masteria, chaque projet de conseil ou de développement est chiffré au forfait, par écrit, une fois le cadrage mené.',
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Vous trouverez ici, livrable par livrable, nos ordres de grandeur, puis les cinq facteurs qui font varier la note, nos trois façons de facturer et le contenu d'un devis. Tous les montants s'entendent hors taxes et valent au 7 octobre 2026.
@@ -501,18 +507,14 @@ export default function PrixProjetIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Les prix en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 132px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères. « En production » reste d'un bloc :
+              sa première virgule couperait l'énumération (agent, copilote, application). */}
+          <Reperes sombre titre="Les prix en six lignes" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={EN_BREF.map((row, k) => ({
+            ...(row.label === 'En production' ? { label: row.label, detail: row.value }
+              : row.value.length <= 60 ? { label: row.label, value: row.value }
+                : lignesEnReperes([row])[0]),
+            icon: [Wallet, Wallet, Wallet, Calculator, undefined, Compass][k],
+          }))} />
         </div>
       </section>
 
@@ -528,9 +530,7 @@ export default function PrixProjetIAPage() {
             Quel prix pour chaque type de projet IA ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Un prototype, un chatbot nourri de vos documents ou une automatisation simple coûtent quelques milliers d'euros. Un agent relié à vos logiciels, un copilote d'équipe ou une application métier se chiffrent en dizaines de milliers. Un programme déployé sur plusieurs sites ou pays dépasse 100 000 €. Ces repères à plafond ouvert précèdent toujours un devis au forfait.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Un prototype, un chatbot nourri de vos documents ou une automatisation simple coûtent quelques milliers d'euros. Un agent relié à vos logiciels, un copilote d'équipe ou une application métier se chiffrent en dizaines de milliers. Un programme déployé sur plusieurs sites ou pays dépasse 100 000 €. Ces repères à plafond ouvert précèdent toujours un devis au forfait." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Deux projets qui portent le même nom peuvent demander un travail sans commune mesure : un chatbot qui répond sur dix fiches produits et un autre qui interroge trois logiciels n'ont presque rien en commun. Le tableau donne donc des points de départ, jamais des plafonds.
@@ -583,26 +583,15 @@ export default function PrixProjetIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Qu'est-ce qui fait varier le coût d'un développement IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Cinq facteurs expliquent l'essentiel de l'écart entre deux devis : l'étendue fonctionnelle, le nombre de logiciels à relier, l'état de vos données, la liberté laissée à l'IA et le coût de fonctionnement après la mise en service.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Cinq facteurs expliquent l'essentiel de l'écart entre deux devis : l'étendue fonctionnelle, le nombre de logiciels à relier, l'état de vos données, la liberté laissée à l'IA et le coût de fonctionnement après la mise en service." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Nous les mesurons pendant le cadrage, sur votre situation, avant d'écrire le moindre montant. Un devis honnête montre lequel de ces facteurs pèse le plus chez vous.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {FACTEURS.map(item => (
-                  <div key={item.title} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par facteur, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={FACTEURS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Pour mesurer ces facteurs sur votre cas sans engager de développement, le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> pose le périmètre ; sa durée et son prix se décident avec vous au cadrage. Les étapes d'un projet sont décrites sur la page <Link to="/methode-projet-ia" style={aStyle}>méthode d'un projet IA</Link>.
               </p>
@@ -619,9 +608,7 @@ export default function PrixProjetIAPage() {
             Forfait au projet ou régie au TJM ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le forfait reste notre mode courant : un prix global, écrit après le cadrage, pour un périmètre et des livrables définis. La régie sert quand vous voulez un ou plusieurs développeurs IA dans votre équipe ; elle se paie au taux journalier (TJM), selon le profil et la durée. Le conseil seul se chiffre au forfait. Les trois formules peuvent se succéder dans un même projet.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le forfait reste notre mode courant : un prix global, écrit après le cadrage, pour un périmètre et des livrables définis. La régie sert quand vous voulez un ou plusieurs développeurs IA dans votre équipe ; elle se paie au taux journalier (TJM), selon le profil et la durée. Le conseil seul se chiffre au forfait. Les trois formules peuvent se succéder dans un même projet." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             La formule se choisit pendant le cadrage, selon votre besoin de visibilité budgétaire, la sensibilité de vos données et la disponibilité de vos équipes. Quelle que soit la formule, le code vous revient.
@@ -665,23 +652,12 @@ export default function PrixProjetIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que couvre le prix d'un projet IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Le forfait comprend le cadrage détaillé, la conception, le développement, les tests, la documentation, la formation des personnes qui reprendront l'outil et les garde-fous. Le code vous revient. Le fonctionnement mensuel (hébergement, consommation des modèles, maintenance) occupe une ligne à part, chiffrée avant la signature.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Le forfait comprend le cadrage détaillé, la conception, le développement, les tests, la documentation, la formation des personnes qui reprendront l'outil et les garde-fous. Le code vous revient. Le fonctionnement mensuel (hébergement, consommation des modèles, maintenance) occupe une ligne à part, chiffrée avant la signature." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {INCLUS.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={card.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par poste inclus, en pleine largeur */}
+              <Rangees items={INCLUS.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Comme le code vous appartient, vous payez un outil que vos équipes savent faire vivre, et vous ne dépendez pas de nous pour la suite. Si votre besoin commence par la stratégie, notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link> la cadre avant tout chiffrage de développement.
               </p>
@@ -722,25 +698,14 @@ export default function PrixProjetIAPage() {
             Comment établissons-nous le prix de votre projet ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>En trois temps : 30 minutes de cadrage offertes pour comprendre le besoin, une fourchette annoncée dans la foulée, puis un devis au forfait détaillé par livraison une fois le périmètre validé. Aucun montant ne vous engage avant votre signature.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#F9FAFB' }} texte="En trois temps : 30 minutes de cadrage offertes pour comprendre le besoin, une fourchette annoncée dans la foulée, puis un devis au forfait détaillé par livraison une fois le périmètre validé. Aucun montant ne vous engage avant votre signature." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginBottom: 28 }}>
-            {[
-              { icon: Compass, title: 'Une demi-heure pour comprendre', desc: "Vous décrivez la tâche, les logiciels et les utilisateurs. Nous posons les questions qui pèsent sur le prix : volumes, état des données, contrôles nécessaires." },
-              { icon: Calculator, title: 'Une fourchette, puis un devis', desc: "La fourchette arrive vite. Le devis détaillé suit, avec un prix par livraison et une estimation des coûts de fonctionnement." },
-              { icon: Cpu, title: 'Des montants justifiés', desc: "Chaque ligne renvoie à un livrable et à un nombre de jours. Vous voyez ce que vous payez, et ce que vous pourriez retirer pour alléger la note." },
-            ].map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par temps du chiffrage, en pleine largeur */}
+          <Rangees style={{ marginBottom: 28, maxWidth: 880 }} items={[
+            { icon: Compass, titre: 'Une demi-heure pour comprendre', texte: "Vous décrivez la tâche, les logiciels et les utilisateurs. Nous posons les questions qui pèsent sur le prix : volumes, état des données, contrôles nécessaires." },
+            { icon: Calculator, titre: 'Une fourchette, puis un devis', texte: "La fourchette arrive vite. Le devis détaillé suit, avec un prix par livraison et une estimation des coûts de fonctionnement." },
+            { icon: Cpu, titre: 'Des montants justifiés', texte: "Chaque ligne renvoie à un livrable et à un nombre de jours. Vous voyez ce que vous payez, et ce que vous pourriez retirer pour alléger la note." },
+          ]} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Votre projet porte sur un agent ? La page <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link> décrit ce qu'ils savent faire et les garde-fous qui entrent dans leur prix.
@@ -756,21 +721,10 @@ export default function PrixProjetIAPage() {
             Comment réduire le coût d'un projet IA sans perdre l'essentiel ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six leviers réduisent le budget sans retirer ce qui rend l'outil utile : commencer par une tâche, garder vos logiciels, préparer vos données en interne, adapter le modèle à chaque tâche, limiter l'autonomie au départ et, parfois, former vos équipes au lieu de construire.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Six leviers réduisent le budget sans retirer ce qui rend l'outil utile : commencer par une tâche, garder vos logiciels, préparer vos données en interne, adapter le modèle à chaque tâche, limiter l'autonomie au départ et, parfois, former vos équipes au lieu de construire." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
-            {ECONOMIES.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par levier, en pleine largeur */}
+          <Rangees style={{ maxWidth: 880 }} items={ECONOMIES.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Nous discutons de ces leviers dès le cadrage : un devis bien construit indique ce que chacun retirerait du montant, pour que vous arbitriez en connaissance de cause.
@@ -788,24 +742,28 @@ export default function PrixProjetIAPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Nous ne publions pas les montants payés par nos clients, qui restent anonymes. Ces trois cas montrent comment une mission se découpe en paliers, ce qui pèse directement sur le budget.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
+          <div style={{ display: 'grid', gap: 16, maxWidth: 980 }}>
             {PALIER_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
-              <article key={id} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+              <article key={id} style={{ ...cardStyle, borderLeft: `3px solid ${c}`, padding: 24, display: 'flex', flexWrap: 'wrap', gap: '16px 32px', alignItems: 'flex-start' }}>
+                <div style={{ flex: '1 1 240px', maxWidth: 320, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={18} strokeWidth={1.75} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                  </div>
+                  <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                  </div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                <div style={{ flex: '1 1 380px', minWidth: 0 }}>
+                  <Paras texte={text} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: '0 0 12px', maxWidth: 620 }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                    Voir les étapes de cette mission
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Voir les étapes de cette mission
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -930,8 +888,11 @@ export default function PrixProjetIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Le devis et le projet restent entre les mêmes mains
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Le devis est établi par Mathias Nizan, fondateur du cabinet lyonnais, qui suit ensuite le projet jusqu'à la livraison. Il choisit l'équipe parmi les indépendants du réseau Masteria : environ vingt formateurs, dix consultants et cinq développeurs spécialisés en IA.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Le devis est établi par Mathias Nizan, fondateur du cabinet lyonnais, qui suit ensuite le projet jusqu'à la livraison. Il choisit l'équipe parmi les indépendants du réseau Masteria : environ vingt formateurs, dix consultants et cinq développeurs spécialisés en IA. Le cabinet ne revend aucune licence : le prix payé rémunère le travail fait pour vous. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail.
+              Le cabinet ne revend aucune licence : le prix payé rémunère le travail fait pour vous. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

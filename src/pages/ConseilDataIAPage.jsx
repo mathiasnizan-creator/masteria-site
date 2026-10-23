@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { CADRAGE_HREF, CADRAGE_LABEL } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page pilier « conseil data & IA » (slug /conseil-data-ia). Comble un gap du
@@ -404,7 +405,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -479,10 +482,14 @@ export default function ConseilDataIAPage() {
             Rédaction : <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui cadre nos missions sur les données · dernière révision le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le conseil data & IA, ou conseil en données et IA, aide une entreprise à inventorier, gouverner et préparer ses données pour que ses projets d'intelligence artificielle tiennent dans la durée. Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse ne dépasse pas le stade de la démonstration. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria remet votre socle de données en ordre, puis développe les outils d'IA qui s'en servent.</strong>
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Le conseil data & IA, ou conseil en données et IA, aide une entreprise à inventorier, gouverner et préparer ses données pour que ses projets d'intelligence artificielle tiennent dans la durée.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            "Sans données fiables et accessibles, un agent, un RAG ou un modèle d'analyse ne dépasse pas le stade de la démonstration.",
+            <strong key="socle" style={{ color: '#fff', fontWeight: 700 }}>Masteria remet votre socle de données en ordre, puis développe les outils d'IA qui s'en servent.</strong>,
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Un outil d'IA ne fait jamais mieux que les fichiers qu'on lui confie, et c'est presque toujours là que les projets calent. Depuis 2022, année où Mathias Nizan a ouvert le cabinet à Lyon, nous rattachons chaque chantier de données à un cas d'usage précis : préparer ce qui sert, écrire les règles, puis construire les outils qui exploitent le tout.
@@ -522,26 +529,15 @@ export default function ConseilDataIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Six prestations composent une mission de conseil data & IA
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une mission de conseil data & IA réunit l'inventaire de vos sources, la gouvernance et la qualité, la préparation des fichiers pour les modèles, le RAG, l'analyse assistée et l'architecture des flux. L'objectif ne varie pas : des données fiables, accessibles, et lisibles par vos outils d'intelligence artificielle.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Une mission de conseil data & IA réunit l'inventaire de vos sources, la gouvernance et la qualité, la préparation des fichiers pour les modèles, le RAG, l'analyse assistée et l'architecture des flux. L'objectif ne varie pas : des données fiables, accessibles, et lisibles par vos outils d'intelligence artificielle." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Ces six prestations reviennent dans la plupart de nos missions et se combinent selon votre situation : certains clients partent de l'inventaire, d'autres veulent d'abord des règles, d'autres encore ont choisi un cas d'usage que leurs données empêchent d'avancer.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {LIVRABLES.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par prestation, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={LIVRABLES.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Le socle prêt, trois réalisations prennent le relais : l'<Link to="/assistant-documentaire-ia" style={aStyle}>assistant documentaire IA</Link> et l'<Link to="/integration-llm-rag" style={aStyle}>intégration d'un LLM avec RAG</Link> rendent vos documents interrogeables, et notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> fabrique les outils qui s'appuient dessus.
               </p>
@@ -558,9 +554,7 @@ export default function ConseilDataIAPage() {
             Comment se déroule une mission data & IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Cinq étapes se suivent : cartographier le patrimoine de données, classer les chantiers, poser les règles de gouvernance et de qualité, rendre les données lisibles par l'IA, puis brancher les usages et contrôler leurs réponses. Chaque étape répond à un cas d'usage nommé.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Cinq étapes se suivent : cartographier le patrimoine de données, classer les chantiers, poser les règles de gouvernance et de qualité, rendre les données lisibles par l'IA, puis brancher les usages et contrôler leurs réponses. Chaque étape répond à un cas d'usage nommé." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Le point de départ est toujours un usage de l'IA, jamais la donnée en soi : c'est ce qui écarte les grands chantiers sans lendemain et concentre la dépense là où elle débloque un résultat.
@@ -601,9 +595,7 @@ export default function ConseilDataIAPage() {
             Données laissées en l'état ou cadrées pour l'IA : quelle différence ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>La réussite d'un projet d'IA se joue d'abord sur ses données. Éparpillées, lacunaires ou sans règles, elles donnent des résultats peu fiables, quel que soit le modèle choisi. Nettoyées, raccordées et gouvernées, elles permettent à un RAG, à un agent ou à une analyse de livrer ce qu'on attend d'eux.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="La réussite d'un projet d'IA se joue d'abord sur ses données. Éparpillées, lacunaires ou sans règles, elles donnent des résultats peu fiables, quel que soit le modèle choisi. Nettoyées, raccordées et gouvernées, elles permettent à un RAG, à un agent ou à une analyse de livrer ce qu'on attend d'eux." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Le tableau compare, critère par critère, des données laissées telles quelles et un socle préparé pour l'IA.
@@ -641,22 +633,17 @@ export default function ConseilDataIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi confier vos données à un cabinet IA plutôt qu'à une ESN data ?
               </h2>
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Parce que nous rattachons chaque chantier de données à un usage précis de l'IA, et que nous allons jusqu'à l'outil : nous préparons les données, puis nous développons ce qui les exploite. L'IA est notre unique métier depuis 2022 ; nous savons quelles données préparer, et de quelle manière, pour qu'un modèle les lise correctement.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }} texte="Parce que nous rattachons chaque chantier de données à un usage précis de l'IA, et que nous allons jusqu'à l'outil : nous préparons les données, puis nous développons ce qui les exploite. L'IA est notre unique métier depuis 2022 ; nous savons quelles données préparer, et de quelle manière, pour qu'un modèle les lise correctement." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {WHY.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
-                Les données forment un volet d'une démarche plus large : la vue d'ensemble se trouve sur notre page <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> situe votre point de départ en peu de temps. Les règles qui encadrent vos données rejoignent celles qui encadrent vos systèmes d'IA : nos repères sur la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA et l'AI Act</Link> complètent cette page.
+              {/* Une rangée par raison, en pleine largeur */}
+              <Rangees items={WHY.map(card => ({ titre: card.title, texte: card.desc }))} />
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px' }}>
+                Les données forment un volet d'une démarche plus large : la vue d'ensemble se trouve sur notre page <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>, et le <Link to="/diagnostic-ia" style={aStyle}>Diagnostic IA</Link> situe votre point de départ en peu de temps.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+                Les règles qui encadrent vos données rejoignent celles qui encadrent vos systèmes d'IA : nos repères sur la <Link to="/gouvernance-ia" style={aStyle}>gouvernance de l'IA et l'AI Act</Link> complètent cette page.
               </p>
             </div>
           </div>
@@ -675,20 +662,8 @@ export default function ConseilDataIAPage() {
             <strong>Le data management regroupe les décisions qui rendent vos données fiables, accessibles et gouvernées : données de référence, propriétaires, qualité, durée de conservation.</strong> Tout projet d'IA suppose ce socle en place, et il l'est rarement. Notre conseil en data management le construit à votre taille, toujours rattaché à un cas d'usage IA précis, sans programme de données déconnecté du terrain.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
-            {DATA_MANAGEMENT.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Une rangée par chantier, en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={DATA_MANAGEMENT.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
 
           <div style={{ ...cardStyle, background: '#F9FAFB', padding: 'clamp(24px, 3.5vw, 36px)', marginTop: 40, maxWidth: 880 }}>
             <h3 style={{ ...h3Style, marginBottom: 10 }}>Data consulting, agence conseil data, cabinet de data management : trois noms pour une même question</h3>
@@ -714,8 +689,11 @@ export default function ConseilDataIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Vos équipes peuvent apprendre à interroger leurs données avec l'IA
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                En complément de la mission, nous formons vos équipes, techniques comme métier, à questionner leurs données avec l'IA, à vérifier un chiffre produit par un assistant et à faire vivre les règles de gouvernance. Comptez au moins 1 980 € HT par journée, en groupe interne ou pour une personne seule.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                En complément de la mission, nous formons vos équipes, techniques comme métier, à questionner leurs données avec l'IA, à vérifier un chiffre produit par un assistant et à faire vivre les règles de gouvernance. Comptez au moins 1 980 € HT par journée, en groupe interne ou pour une personne seule. Qualiopi atteste la qualité des actions de formation de Masteria : en France, votre OPCO peut donc financer ce volet selon ses règles et ses fonds. L'inventaire, la gouvernance et la préparation des données relèvent de la prestation de service et restent à votre charge.
+                Qualiopi atteste la qualité des actions de formation de Masteria : en France, votre OPCO peut donc financer ce volet selon ses règles et ses fonds. L'inventaire, la gouvernance et la préparation des données relèvent de la prestation de service et restent à votre charge.
               </p>
               <Link to="/formation-intelligence-artificielle" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Voir le catalogue des formations IA
@@ -734,9 +712,7 @@ export default function ConseilDataIAPage() {
             Pourquoi la donnée décide du sort des projets d'IA
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les projets d'IA qui échouent butent presque toujours sur leurs données avant de buter sur la technique. Un agent qui lit des fiches incomplètes, un RAG nourri de documents en désordre, une analyse fondée sur des chiffres incohérents donnent des résultats douteux, quel que soit le modèle.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Les projets d'IA qui échouent butent presque toujours sur leurs données avant de buter sur la technique. Un agent qui lit des fiches incomplètes, un RAG nourri de documents en désordre, une analyse fondée sur des chiffres incohérents donnent des résultats douteux, quel que soit le modèle." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Nous traitons donc la donnée comme un préalable. Préparer le socle, le gouverner et le mettre en règle avec le RGPD comme avec l'AI Act constitue le chemin le moins risqué pour fiabiliser un projet d'IA, puis l'étendre à toute l'entreprise. Trois dates encadrent ce travail au 7 octobre 2026.
@@ -795,16 +771,16 @@ export default function ConseilDataIAPage() {
           <p style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Un distributeur dont les stocks vivent dans Odoo et dans des fichiers d'entrepôt, un industriel dont les managers travaillent sur des extractions dans Excel, un cabinet qui devait d'abord rassembler ses meilleurs mémoires : à chaque fois, le travail a commencé par les fichiers. Les trois clients restent anonymes.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gap: 16, maxWidth: 880 }}>
             {DATA_CASES.map(({ id, icon: Icon, sector, text }) => (
-              <article key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <article key={id} style={{ ...cardStyle, padding: 26, borderLeft: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 14 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                    <Icon size={18} strokeWidth={1.75} style={{ color: c }} />
                   </span>
                   <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Paras texte={text} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 760 }} />
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   Le récit complet de la mission
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -934,8 +910,11 @@ export default function ConseilDataIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des consultants pour le cadrage, des développeurs pour le socle
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Masteria est née à Lyon en 2022 de la volonté de Mathias Nizan de travailler uniquement sur l'intelligence artificielle. Sur une mission de données, il mène le cadrage et s'appuie, selon l'ampleur du chantier, sur une partie des quelque dix consultants et cinq développeurs indépendants qui composent le réseau ; une vingtaine de formateurs prennent le relais pour les équipes.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est née à Lyon en 2022 de la volonté de Mathias Nizan de travailler uniquement sur l'intelligence artificielle. Sur une mission de données, il mène le cadrage et s'appuie, selon l'ampleur du chantier, sur une partie des quelque dix consultants et cinq développeurs indépendants qui composent le réseau ; une vingtaine de formateurs prennent le relais pour les équipes. Le cabinet ne perçoit rien des éditeurs, et l'outil retenu découle de vos données. Exemples à l'appui dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> ; articles réunis dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>rubrique presse</Link>.
+              Le cabinet ne perçoit rien des éditeurs, et l'outil retenu découle de vos données. Exemples à l'appui dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> ; articles réunis dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>rubrique presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Rangees } from '../components/Aere'
 
 /*
  * Page « Agence IA » NATIONALE : cible « agence ia », « agence ia france »,
@@ -333,7 +334,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -410,13 +413,20 @@ export default function AgenceIAPage() {
             Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur du cabinet · actualisé le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe pour citation LLM, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence IA française que Mathias Nizan a fondée en 2022, à Lyon. <strong style={{ color: '#fff', fontWeight: 700 }}>Nous concevons des agents et des outils d'intelligence artificielle taillés pour le métier de chaque client</strong>, après un cadrage qui fixe la tâche à confier, les données autorisées et la part de contrôle humain. Le conseil en amont, l'automatisation des processus et la formation des utilisateurs complètent ce travail, sur site comme à distance, de la métropole lyonnaise jusqu'aux États-Unis et à l'Inde.
+          {/* GEO : réponse directe pour citation LLM, 1re phrase en accroche, la suite en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Masteria est une agence IA française que Mathias Nizan a fondée en 2022, à Lyon.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>Nous concevons des agents et des outils d'intelligence artificielle taillés pour le métier de chaque client</strong>, après un cadrage qui fixe la tâche à confier, les données autorisées et la part de contrôle humain.</>,
+            "Le conseil en amont, l'automatisation des processus et la formation des utilisateurs complètent ce travail, sur site comme à distance, de la métropole lyonnaise jusqu'aux États-Unis et à l'Inde.",
+          ]} />
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 660 }}>
+            Une mission d'agence part toujours d'une tâche précise : la cotation qui attend dans une boîte mail, le mémoire d'appel d'offres rédigé de zéro, les transporteurs qu'on consulte à la main avant chaque livraison.
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Une mission d'agence part toujours d'une tâche précise : la cotation qui attend dans une boîte mail, le mémoire d'appel d'offres rédigé de zéro, les transporteurs qu'on consulte à la main avant chaque livraison. Nous la décrivons avec ceux qui l'accomplissent chaque jour, nous construisons l'agent qui la prépare, puis nous apprenons à vos équipes à le corriger et à l'étendre. Quand la mission s'achève, l'outil, sa documentation et la compétence restent chez vous.
+            Nous la décrivons avec ceux qui l'accomplissent chaque jour, nous construisons l'agent qui la prépare, puis nous apprenons à vos équipes à le corriger et à l'étendre. Quand la mission s'achève, l'outil, sa documentation et la compétence restent chez vous.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
@@ -478,7 +488,7 @@ export default function AgenceIAPage() {
                       <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
                     </div>
                     <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', marginBottom: 10, letterSpacing: '-0.01em' }}>{title}</h3>
-                    <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 16 }}>{desc}</p>
+                    <Paras texte={desc} max={2} style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginBottom: 16 }} />
                     <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
                       {points.map(pt => (
                         <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
@@ -495,9 +505,12 @@ export default function AgenceIAPage() {
                 ))}
               </div>
               <div style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${c}`, borderRadius: 12, padding: '20px 24px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}>
-                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
                   <strong style={{ color: '#0A0A0A' }}>Une seule équipe, de la première question à l'outil en service.</strong>{' '}
-                  Mathias Nizan pilote chaque mission du cadrage à la passation, si bien que les arbitrages du départ suivent le projet jusqu'à la mise en production. Le détail technique se lit sur nos pages{' '}
+                  Mathias Nizan pilote chaque mission du cadrage à la passation, si bien que les arbitrages du départ suivent le projet jusqu'à la mise en production.
+                </p>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                  Le détail technique se lit sur nos pages{' '}
                   <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link> et{' '}
                   <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link>. Pour faire circuler une tâche d'un logiciel à l'autre, lisez la page{' '}
                   <Link to="/automatisation-ia" style={{ color: c, fontWeight: 600 }}>automatisation IA</Link> ; pour des assistants qui agissent dans votre système d'information, celle consacrée aux{' '}
@@ -517,7 +530,9 @@ export default function AgenceIAPage() {
               <div style={kickerStyle}>Lyon, puis partout</div>
               <h2 style={h2Style}>Une agence IA née à Lyon, au travail là où sont vos équipes</h2>
               <p style={{ ...answerStyle, maxWidth: 'none' }}>
-                <strong style={{ color: '#0A0A0A' }}>Née à Lyon en 2022, Masteria y a gardé son adresse, au 17 rue d'Algérie, sur la presqu'île. Ses consultants se déplacent chez vous partout en France et, quand le projet le demande, au-delà des frontières : Europe, États-Unis, Inde.</strong>{' '}
+                <strong style={{ color: '#0A0A0A' }}>Née à Lyon en 2022, Masteria y a gardé son adresse, au 17 rue d'Algérie, sur la presqu'île. Ses consultants se déplacent chez vous partout en France et, quand le projet le demande, au-delà des frontières : Europe, États-Unis, Inde.</strong>
+              </p>
+              <p style={{ ...answerStyle, maxWidth: 'none' }}>
                 Trois moments gagnent à se vivre dans la même pièce : l'atelier de cadrage, l'observation du travail au poste et la passation. Le développement et les tests avancent à distance.
               </p>
               <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
@@ -526,45 +541,16 @@ export default function AgenceIAPage() {
             </div>
 
             <div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 48 }}>
-            <div style={{ ...cardStyle, display: 'flex', gap: 18, alignItems: 'flex-start' }}>
-              <div style={iconBoxStyle}>
-                <MapPin size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-              </div>
-              <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Le cabinet : 17 rue d'Algérie, 69001 Lyon</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
-                  La préfecture de région Auvergne-Rhône-Alpes a enregistré Masteria comme organisme de formation, avec le numéro de déclaration 84 69 23218 69. Ce numéro figure sur chacune de nos conventions de formation.
-                </p>
-              </div>
-            </div>
-            <div style={{ ...cardStyle, display: 'flex', gap: 18, alignItems: 'flex-start' }}>
-              <div style={iconBoxStyle}>
-                <Building2 size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-              </div>
-              <div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', letterSpacing: '-0.01em' }}>Des missions hors de France, en français ou en anglais</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>
-                  Pour un groupe industriel du packaging, deux des cinq sessions menées de juillet à septembre 2026 se sont déroulées en anglais. Hors de France, aucun OPCO n'intervient : le prix s'entend hors taxes et la facturation suit le pays concerné.
-                </p>
-              </div>
-            </div>
-          </div>
+          {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginBottom: 48 }} items={[
+            { icon: MapPin, titre: "Le cabinet : 17 rue d'Algérie, 69001 Lyon", texte: "La préfecture de région Auvergne-Rhône-Alpes a enregistré Masteria comme organisme de formation, avec le numéro de déclaration 84 69 23218 69. Ce numéro figure sur chacune de nos conventions de formation." },
+            { icon: Building2, titre: 'Des missions hors de France, en français ou en anglais', texte: "Pour un groupe industriel du packaging, deux des cinq sessions menées de juillet à septembre 2026 se sont déroulées en anglais. Hors de France, aucun OPCO n'intervient : le prix s'entend hors taxes et la facturation suit le pays concerné." },
+          ]} />
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', marginBottom: 20, letterSpacing: '-0.01em' }}>
             Ce qui se fait chez vous, ce qui se fait à distance
           </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20, marginBottom: 40 }}>
-            {ON_SITE.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ ...iconBoxStyle, marginBottom: 14 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                </div>
-                <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px' }}>{title}</h4>
-                <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees niveau="h4" style={{ marginBottom: 40 }} items={ON_SITE.map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
 
           <div style={{ ...cardStyle, display: 'flex', gap: 18, alignItems: 'flex-start' }}>
             <div style={iconBoxStyle}>
@@ -632,24 +618,19 @@ export default function AgenceIAPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Agence spécialisée ou ESN</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Pourquoi confier un projet d'IA à une agence spécialisée plutôt qu'à votre ESN ?</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Une agence spécialisée passe ses journées sur les modèles, les agents et leurs usages métier : elle sait ce qui a changé ce mois-ci et ce qui casse une fois en production.</strong>{' '}
-            Votre ESN reste le bon interlocuteur pour un chantier d'infrastructure ou un renfort de développeurs à la journée. Pour choisir les cas d'usage, construire un agent et faire adopter l'outil, la spécialisation raccourcit le chemin.
-          </p>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', margin: '0 0 28px', maxWidth: 880 }}>
+            <p style={{ fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff' }}>Une agence spécialisée passe ses journées sur les modèles, les agents et leurs usages métier : elle sait ce qui a changé ce mois-ci et ce qui casse une fois en production.</strong>
+            </p>
+            <p style={{ fontSize: 16.5, lineHeight: 1.7, color: '#CBD5E1', margin: 0 }}>
+              Votre ESN reste le bon interlocuteur pour un chantier d'infrastructure ou un renfort de développeurs à la journée. Pour choisir les cas d'usage, construire un agent et faire adopter l'outil, la spécialisation raccourcit le chemin.
+            </p>
+          </div>
           <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.7, margin: '0 0 40px', maxWidth: 880 }}>
             Beaucoup d'entreprises confient d'abord l'IA à leur prestataire informatique habituel. L'intégration technique se passe bien ; ce sont les choix d'usage et l'appropriation de l'outil par les équipes qui calent le plus souvent.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 56 }}>
-            {SPECIALIST_POINTS.map(({ icon: Icon, title, desc }) => (
-              <div key={title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
-                <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par argument, en pleine largeur */}
+          <Rangees sombre style={{ marginBottom: 56, maxWidth: 880 }} items={SPECIALIST_POINTS.map(({ icon, title, desc }) => ({ titre: title, texte: desc, icon }))} />
 
           {/* Comparatif 4 voies : citable par les IA (GEO) + featured snippet (SEO) */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>
@@ -684,8 +665,11 @@ export default function AgenceIAPage() {
             </table>
           </div>
 
+          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 880 }}>
+            La gouvernance profite elle aussi de la spécialisation. Le règlement européen sur l'IA en donne la mesure : l'article 4 (maîtrise de l'IA par les équipes) s'applique depuis le 2 février 2025, l'article 50 (transparence envers les utilisateurs) depuis le 2 août 2026, et les usages à haut risque listés à l'annexe III attendront décembre 2027, date fixée par le règlement (UE) 2026/1744.
+          </p>
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
-            La gouvernance profite elle aussi de la spécialisation. Le règlement européen sur l'IA en donne la mesure : l'article 4 (maîtrise de l'IA par les équipes) s'applique depuis le 2 février 2025, l'article 50 (transparence envers les utilisateurs) depuis le 2 août 2026, et les usages à haut risque listés à l'annexe III attendront décembre 2027, date fixée par le règlement (UE) 2026/1744. Suivre ce calendrier pour tous nos clients nous évite de le redécouvrir à chaque projet. Notre page{' '}
+            Suivre ce calendrier pour tous nos clients nous évite de le redécouvrir à chaque projet. Notre page{' '}
             <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 600 }}>conseil en intelligence artificielle</Link>{' '}
             décrit le cadrage, et la page{' '}
             <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>gouvernance de l'IA</Link>{' '}
@@ -702,24 +686,29 @@ export default function AgenceIAPage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Compétences Claude, assistants d'appels d'offres, agents autour d'un ERP, assistants dans Copilot : chaque outil est parti des fichiers du client et des personnes qui allaient s'en servir. Nos clients ont demandé à rester anonymes ; ce qui reste à faire s'écrit au futur.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
+          {/* Un cas par rangée, en pleine largeur : étiquette et chiffre à gauche, récit à droite */}
+          <div style={{ display: 'grid', gap: 16, maxWidth: 1000 }}>
             {AGENCY_CASES.map(({ id, icon: Icon, sector, figure, figureLabel, text }) => (
-              <article key={id} style={{ background: '#fff', border: '1px solid #E5E7EB', borderTop: `3px solid ${c}`, borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+              <article key={id} style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 24, display: 'flex', flexWrap: 'wrap', gap: '16px 32px', alignItems: 'flex-start' }}>
+                <div style={{ flex: '1 1 240px', maxWidth: 300, display: 'flex', flexDirection: 'column', gap: 12 }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                      <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
+                    </span>
+                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
+                  </div>
+                  <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
+                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
+                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                  </div>
                 </div>
-                <div style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 12, padding: '12px 14px' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
+                <div style={{ flex: '1 1 380px', minWidth: 0, maxWidth: 640 }}>
+                  <Paras texte={text} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                  <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 12 }}>
+                    Lire ce cas en détail
+                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                  </Link>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Lire ce cas en détail
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
               </article>
             ))}
           </div>
@@ -750,12 +739,15 @@ export default function AgenceIAPage() {
                   <FAQItem key={i} q={item.q} a={item.a} color={c} />
                 ))}
               </div>
-              <p style={{ fontSize: 14, color: '#6B7280', marginTop: 28, lineHeight: 1.75 }}>
+              <p style={{ fontSize: 14, color: '#6B7280', marginTop: 28, marginBottom: 12, lineHeight: 1.75 }}>
                 Pour départager plusieurs prestataires, notre guide{' '}
                 <Link to="/meilleure-agence-ia" style={{ color: c, fontWeight: 600 }}>choisir la meilleure agence IA</Link> propose une grille de comparaison. Le terrain se lit sur nos pages{' '}
                 <Link to="/ia-secteurs" style={{ color: c, fontWeight: 600 }}>IA par secteur d'activité</Link>,{' '}
                 <Link to="/solutions-ia" style={{ color: c, fontWeight: 600 }}>solutions IA classées par usage</Link> et{' '}
-                <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode d'un projet IA</Link>. Pour situer les usages, voyez{' '}
+                <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode d'un projet IA</Link>.
+              </p>
+              <p style={{ fontSize: 14, color: '#6B7280', margin: 0, lineHeight: 1.75 }}>
+                Pour situer les usages, voyez{' '}
                 <Link to="/ia-generative-entreprise" style={{ color: c, fontWeight: 600 }}>l'IA générative en entreprise</Link> et nos{' '}
                 <Link to="/cas-usage-ia-entreprise" style={{ color: c, fontWeight: 600 }}>exemples d'usages par service</Link> ; pour le budget,{' '}
                 <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>combien coûte un projet IA</Link>. Le{' '}
@@ -810,8 +802,11 @@ export default function AgenceIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Un fondateur aux commandes, une équipe composée pour chaque projet
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Mathias Nizan a créé Masteria pour travailler sur un seul sujet, l'intelligence artificielle, et il garde la main sur chaque mission. Selon le projet, il s'entoure de consultants IA (une dizaine), de développeurs (cinq environ) et de formateurs (une vingtaine), tous indépendants et retenus pour le besoin du client.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Mathias Nizan a créé Masteria pour travailler sur un seul sujet, l'intelligence artificielle, et il garde la main sur chaque mission. Selon le projet, il s'entoure de consultants IA (une dizaine), de développeurs (cinq environ) et de formateurs (une vingtaine), tous indépendants et retenus pour le besoin du client. L'agence ne dépend d'aucun éditeur : le choix d'un outil suit votre contexte. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+              L'agence ne dépend d'aucun éditeur : le choix d'un outil suit votre contexte. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

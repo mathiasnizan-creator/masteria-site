@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation data ia » (slug /formation-data-ia), côté FORMATION.
@@ -367,7 +368,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -447,10 +450,14 @@ export default function FormationDataIaPage() {
             Programme rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · fonctions d'analyse des outils relevées le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation data IA apprend à des équipes métier à exploiter leurs propres fichiers avec l'IA générative : exports de ventes, budgets, verbatims clients, tableaux de suivi. <strong style={{ color: '#fff', fontWeight: 700 }}>En deux jours, chaque participant analyse ses exports, apprend à contrôler un chiffre et reconstruit son reporting récurrent</strong>, dans les outils déjà payés par l'entreprise : Copilot dans Excel, ChatGPT, Claude, Gemini dans Sheets ou Vibe. Masteria est certifiée Qualiopi pour ce type d'action.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            La formation data IA apprend à des équipes métier à exploiter leurs propres fichiers avec l'IA générative : exports de ventes, budgets, verbatims clients, tableaux de suivi.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>En deux jours, chaque participant analyse ses exports, apprend à contrôler un chiffre et reconstruit son reporting récurrent</strong>, dans les outils déjà payés par l'entreprise : Copilot dans Excel, ChatGPT, Claude, Gemini dans Sheets ou Vibe.</>,
+            "Masteria est certifiée Qualiopi pour ce type d'action.",
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Le point que beaucoup ignorent : devant un fichier, l'IA écrit et exécute du code pour calculer, elle ne devine pas. Bien utilisée, elle ouvre l'analyse de données à tout service ; bien encadrée, elle ne laisse passer ni chiffre inventé ni conclusion hâtive. Les deux jours installent l'usage et l'encadrement.
@@ -475,18 +482,8 @@ export default function FormationDataIaPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Fiche rapide</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères */}
+          <Reperes sombre id="en-bref" titre="Fiche rapide" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -509,26 +506,15 @@ export default function FormationDataIaPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi former vos équipes métier à l'analyse de données avec l'IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>La matière première est déjà là : chaque équipe accumule des exports qu'elle n'exploite pas, et les outils en place savent les analyser en exécutant du code. Il manque une méthode et des réflexes de vérification, et deux jours suffisent à les installer.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="La matière première est déjà là : chaque équipe accumule des exports qu'elle n'exploite pas, et les outils en place savent les analyser en exécutant du code. Il manque une méthode et des réflexes de vérification, et deux jours suffisent à les installer." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Si les fichiers se contredisent d'un service à l'autre, commencez par la <Link to="/formation-gouvernance-donnees" style={aStyle}>formation gouvernance des données</Link>. Quand les volumes dépassent les fichiers de travail, notre <Link to="/conseil-data-ia" style={aStyle}>conseil data et IA</Link> prend le relais en mission.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees style={{ maxWidth: 880 }} items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -546,9 +532,7 @@ export default function FormationDataIaPage() {
             Deux jours pour passer de l'export brut au reporting vérifié
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le jour 1 porte sur l'analyse : préparer le fichier, formuler la question, lire le code exécuté, croiser des sources, vérifier les chiffres. Le jour 2 porte sur la durée : reconstruire le reporting récurrent, le présenter, automatiser raisonnablement la collecte, écrire les règles de l'équipe.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Le jour 1 porte sur l'analyse : préparer le fichier, formuler la question, lire le code exécuté, croiser des sources, vérifier les chiffres. Le jour 2 porte sur la durée : reconstruire le reporting récurrent, le présenter, automatiser raisonnablement la collecte, écrire les règles de l'équipe." />
 
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
@@ -594,9 +578,7 @@ export default function FormationDataIaPage() {
             Fiable, à challenger, à proscrire : où placer sa confiance
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Plutôt que de vous demander si l'on peut croire l'IA sur les chiffres, demandez-vous sur quoi et à quelles conditions. Cette grille de cinq lignes structure toute la formation et évite deux erreurs opposées : tout croire ou tout rejeter.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Plutôt que de vous demander si l'on peut croire l'IA sur les chiffres, demandez-vous sur quoi et à quelles conditions. Cette grille de cinq lignes structure toute la formation et évite deux erreurs opposées : tout croire ou tout rejeter." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 760 }}>
@@ -629,21 +611,10 @@ export default function FormationDataIaPage() {
             Six analyses que les équipes construisent en atelier
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Chaque atelier part des fichiers que les participants apportent. Six familles reviennent souvent : l'export de ventes exploité, le reporting mensuel reconstruit, les verbatims comptés, le budget suivi, le fichier remis en état et la vue d'équipe tenue à jour.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Chaque atelier part des fichiers que les participants apportent. Six familles reviennent souvent : l'export de ventes exploité, le reporting mensuel reconstruit, les verbatims comptés, le budget suivi, le fichier remis en état et la vue d'équipe tenue à jour." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS_USAGE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={CAS_USAGE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
         </div>
       </section>
 
@@ -654,9 +625,7 @@ export default function FormationDataIaPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Deux formations récentes, sur les fichiers des participants
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une personne seule ou une équipe de managers : le principe reste de travailler sur ses propres tableaux. Ces deux exemples, anonymisés, sont détaillés dans nos études de cas.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Une personne seule ou une équipe de managers : le principe reste de travailler sur ses propres tableaux. Ces deux exemples, anonymisés, sont détaillés dans nos études de cas." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: 20 }}>
             {CAS.map(cas => (
               <div key={cas.href} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
@@ -664,7 +633,9 @@ export default function FormationDataIaPage() {
                   <IconTile icon={cas.icon} />
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.35 }}>{cas.secteur}</div>
                 </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{cas.texte}</p>
+                <div style={{ flex: 1, marginBottom: 14 }}>
+                  <Paras texte={cas.texte} max={2} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }} />
+                </div>
                 <Link to={cas.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   {cas.lien}
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -687,8 +658,14 @@ export default function FormationDataIaPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Dès 1 980 € HT par journée, soit dès 3 960 € HT le parcours
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le tarif est celui de toutes nos formations : chaque journée est facturée à partir de 1 980 € HT au groupe, douze personnes au maximum, et le programme complet démarre donc à 3 960 € HT. Si les exercices reprennent vos propres jeux de données, la préparation s'ajoute et figure au devis ; la version d'une journée centrée sur l'analyse se décide au cadrage.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Notre certification Qualiopi, obtenue pour les actions de formation, permet de soumettre la session à votre opérateur de compétences, qui décide du financement selon ses propres critères ; nous constituons le dossier ensemble. Pas de CPF pour ces formations d'équipe.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le tarif est celui de toutes nos formations : chaque journée est facturée à partir de 1 980 € HT au groupe, douze personnes au maximum, et le programme complet démarre donc à 3 960 € HT. Si les exercices reprennent vos propres jeux de données, la préparation s'ajoute et figure au devis ; la version d'une journée centrée sur l'analyse se décide au cadrage. Notre certification Qualiopi, obtenue pour les actions de formation, permet de soumettre la session à votre opérateur de compétences, qui décide du financement selon ses propres critères ; nous constituons le dossier ensemble. Pas de CPF pour ces formations d'équipe. Pour une entreprise suisse ou belge, à Genève ou à Bruxelles, aucun OPCO n'intervient et le devis est établi en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> passe les dispositifs en revue.
+                Pour une entreprise suisse ou belge, à Genève ou à Bruxelles, aucun OPCO n'intervient et le devis est établi en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> retrouve votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> passe les dispositifs en revue.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -717,8 +694,11 @@ export default function FormationDataIaPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Des formateurs qui vérifient des chiffres pour leurs clients
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                L'analyse de fichiers revient dans nos parcours métier (finance, commerce, direction) et dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link> : la check-list enseignée ici est celle que nous appliquons à nos propres livrables.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                L'analyse de fichiers revient dans nos parcours métier (finance, commerce, direction) et dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions</Link> : la check-list enseignée ici est celle que nous appliquons à nos propres livrables. Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session ; il l'anime ou en délègue l'animation à un formateur indépendant de son réseau, choisi pour son aisance avec les données. Aucun éditeur de logiciel ne rémunère le cabinet.
+                Fondateur de Masteria (Lyon, 2022), Mathias Nizan pilote chaque session ; il l'anime ou en délègue l'animation à un formateur indépendant de son réseau, choisi pour son aisance avec les données. Aucun éditeur de logiciel ne rémunère le cabinet.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
@@ -745,17 +725,9 @@ export default function FormationDataIaPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Sept notions pour parler data avec l'IA
           </h2>
-          <p style={answerStyle}>
-            <strong>Sept notions suffisent pour analyser sereinement avec un assistant : code exécuté, ancrage sur fichier, question de données, jointure, cohorte, chiffre halluciné, règles d'équipe sur les fichiers. Les définitions qui suivent sont celles de nos ateliers.</strong>
-          </p>
-          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, margin: 0 }}>
-            {termsJsonLd.hasDefinedTerm.map(t => (
-              <div key={t.name} style={{ ...cardStyle, padding: 22 }}>
-                <dt style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{t.name}</dt>
-                <dd style={{ margin: 0, fontSize: 14, color: '#6B7280', lineHeight: 1.65 }}>{t.description}</dd>
-              </div>
-            ))}
-          </dl>
+          <Reponse style={answerStyle} texte="Sept notions suffisent pour analyser sereinement avec un assistant : code exécuté, ancrage sur fichier, question de données, jointure, cohorte, chiffre halluciné, règles d'équipe sur les fichiers. Les définitions qui suivent sont celles de nos ateliers." />
+          {/* Un terme par rangée, en pleine largeur */}
+          <Rangees style={{ maxWidth: 880 }} items={termsJsonLd.hasDefinedTerm.map(t => ({ titre: t.name, texte: t.description }))} />
         </div>
       </section>
 

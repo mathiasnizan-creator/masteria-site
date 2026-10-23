@@ -7,6 +7,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation agents IA » (slug /formation-agents-ia), côté
@@ -435,7 +436,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -520,9 +523,14 @@ export default function FormationAgentsIAPage() {
           </p>
 
           {/* GEO : réponse directe citable */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Avec la formation agents IA de Masteria, vos équipes apprennent à construire des agents : des IA qui enchaînent les étapes d'une tâche, se servent de vos applications et rendent compte à une personne. <strong style={{ color: '#fff', fontWeight: 700 }}>Pendant deux jours, chaque participant conçoit, éprouve et borne un agent pour un processus de son poste, sans écrire de code</strong>, dans l'outil de l'entreprise : Microsoft Copilot (anciennement Microsoft 365 Copilot), Claude, ChatGPT, Gemini ou Vibe, avec n8n ou Make pour relier les applications. Organisme certifié Qualiopi ; financement OPCO possible.
+          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Avec la formation agents IA de Masteria, vos équipes apprennent à construire des agents : des IA qui enchaînent les étapes d'une tâche, se servent de vos applications et rendent compte à une personne.
           </p>
+          {/* La suite de la réponse directe, en puces */}
+          <PointsCles sombre style={{ margin: '0 0 28px', maxWidth: 760 }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>Pendant deux jours, chaque participant conçoit, éprouve et borne un agent pour un processus de son poste, sans écrire de code</strong>, dans l'outil de l'entreprise : Microsoft Copilot (anciennement Microsoft 365 Copilot), Claude, ChatGPT, Gemini ou Vibe, avec n8n ou Make pour relier les applications.</>,
+            'Organisme certifié Qualiopi ; financement OPCO possible.',
+          ]} />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Les agents prolongent le travail des équipes qui utilisent déjà un assistant : ils prennent en charge un enchaînement entier, de la demande au livrable. Cette autonomie rend service à trois conditions, que la formation installe une à une : des instructions précises, une recette sérieuse, une surveillance humaine.
@@ -550,18 +558,9 @@ export default function FormationAgentsIAPage() {
             ))}
           </div>
 
-          {/* Les points clés : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Les points clés</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* Les points clés : synthèse citable (GEO), en repères */}
+          {/* La ligne Public énumère des métiers : gardée entière, sans tête en gras */}
+          <Reperes sombre id="en-bref" titre="Les points clés" items={lignesEnReperes(EN_BREF).map((r, i) => (EN_BREF[i].label === 'Public' ? { label: r.label, detail: EN_BREF[i].value } : r))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -584,38 +583,18 @@ export default function FormationAgentsIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Assistant, workflow, agent : trois degrés d'autonomie à distinguer
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Un assistant répond pendant l'échange, un workflow déroule un scénario fixé d'avance, un agent IA vise un objectif : il choisit ses étapes, utilise vos applications et rend la main quand une décision engage l'entreprise. La formation apprend d'abord à placer chaque tâche au bon degré, puis à construire les agents qui le justifient.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Un assistant répond pendant l'échange, un workflow déroule un scénario fixé d'avance, un agent IA vise un objectif : il choisit ses étapes, utilise vos applications et rend la main quand une décision engage l'entreprise. La formation apprend d'abord à placer chaque tâche au bon degré, puis à construire les agents qui le justifient." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 On parle d'IA agentique pour désigner cette façon de travailler par objectifs. Le principe se comprend en une matinée ; rendre un agent fiable prend plus de temps, et l'essentiel des deux jours y est consacré. Pour confier la construction de vos agents à notre équipe, voyez notre offre <Link to="/agents-ia-entreprise" style={aStyle}>agents IA en entreprise</Link>.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {NIVEAUX.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-                {/* Carte sombre : le multi-agents, abordé au jour 2 */}
-                <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
-                  <div style={{ marginBottom: 14 }}>
-                    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Network size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                    </div>
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Plusieurs agents en relais ?</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                    Un agent trie, un deuxième rédige, un troisième vérifie. Ce découpage sert sur les processus longs ; nous l'abordons le deuxième jour, quand un premier agent a déjà fait ses preuves.
-                  </p>
-                </div>
-              </div>
+              {/* Une rangée par degré d'autonomie, puis le multi-agents abordé au jour 2 (plus de cartes côte à côte) */}
+              <Rangees items={[
+                ...NIVEAUX.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon })),
+                { titre: 'Plusieurs agents en relais ?', icon: Network, texte: "Un agent trie, un deuxième rédige, un troisième vérifie. Ce découpage sert sur les processus longs ; nous l'abordons le deuxième jour, quand un premier agent a déjà fait ses preuves." },
+              ]} />
             </div>
           </div>
         </div>
@@ -633,9 +612,7 @@ export default function FormationAgentsIAPage() {
             Du premier agent au plan de déploiement, en deux journées
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Jour 1 : comprendre ce que fait un agent, cadrer un cas d'usage, puis construire un premier agent sans code dans votre environnement. Jour 2 : l'éprouver (instructions, tests, limites), le relier à vos applications avec n8n ou Make, puis organiser sa surveillance. Les exercices portent sur les processus des participants.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }} texte="Jour 1 : comprendre ce que fait un agent, cadrer un cas d'usage, puis construire un premier agent sans code dans votre environnement. Jour 2 : l'éprouver (instructions, tests, limites), le relier à vos applications avec n8n ou Make, puis organiser sa surveillance. Les exercices portent sur les processus des participants." />
 
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
@@ -681,9 +658,7 @@ export default function FormationAgentsIAPage() {
             Six savoir-faire acquis à la fin de la formation
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Au terme des deux jours, chaque participant sait cadrer un agent, le construire sans code, l'éprouver sur un jeu de cas, lui fixer des limites et organiser sa surveillance. L'équipe repart avec des agents en service et un plan pour les suivants.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Au terme des deux jours, chaque participant sait cadrer un agent, le construire sans code, l'éprouver sur un jeu de cas, lui fixer des limites et organiser sa surveillance. L'équipe repart avec des agents en service et un plan pour les suivants." />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
             {OBJECTIFS.map((item, i) => (
@@ -707,9 +682,7 @@ export default function FormationAgentsIAPage() {
             Chaque assistant construit ses agents à sa manière
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Nous travaillons sur les logiciels dont vos équipes disposent, dans leurs versions professionnelles. Chaque éditeur a sa façon de monter un agent ; le tableau résume ce qu'on y construit en atelier au 7 octobre 2026, et n8n ou Make prennent le relais quand l'agent doit traverser plusieurs applications.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Nous travaillons sur les logiciels dont vos équipes disposent, dans leurs versions professionnelles. Chaque éditeur a sa façon de monter un agent ; le tableau résume ce qu'on y construit en atelier au 7 octobre 2026, et n8n ou Make prennent le relais quand l'agent doit traverser plusieurs applications." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -745,17 +718,9 @@ export default function FormationAgentsIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Trois formats d'assistants s'arrêtent : bâtissez sur les compétences
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les GPTs personnalisés, les Gems et les agents de Vibe ont tous une date de fin. Leur remplaçant se ressemble d'un éditeur à l'autre : la compétence, une procédure écrite une fois, souvent dans un fichier SKILL.md, que l'assistant charge quand la demande s'y prête. Les agents construits pendant la formation partent de ce format.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {FIN_DE_VIE.map(item => (
-              <div key={item.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Les GPTs personnalisés, les Gems et les agents de Vibe ont tous une date de fin. Leur remplaçant se ressemble d'un éditeur à l'autre : la compétence, une procédure écrite une fois, souvent dans un fichier SKILL.md, que l'assistant charge quand la demande s'y prête. Les agents construits pendant la formation partent de ce format." />
+          {/* Une rangée par format, en pleine largeur */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={FIN_DE_VIE.map(item => ({ titre: item.title, texte: item.desc }))} />
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
             Une compétence bien rédigée se recopie d'un outil à l'autre : Claude, ChatGPT, Gemini, Copilot et Vibe lisent désormais ce type de procédure. C'est l'argument le plus solide pour fonder vos agents sur ce socle commun aux éditeurs.
           </p>
@@ -769,17 +734,9 @@ export default function FormationAgentsIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cinq défauts expliquent la plupart des agents qui déçoivent
           </h2>
-          <p style={answerStyle}>
-            <strong>Un agent qui déçoit une fois en service souffre presque toujours de l'un de ces cinq défauts : un périmètre fourre-tout, des instructions vagues, une validation sur simple démonstration, une autonomie sans relecture ou une absence de surveillance. Le deuxième jour de la formation est construit autour de leurs parades.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {ECHECS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={answerStyle} texte="Un agent qui déçoit une fois en service souffre presque toujours de l'un de ces cinq défauts : un périmètre fourre-tout, des instructions vagues, une validation sur simple démonstration, une autonomie sans relecture ou une absence de surveillance. Le deuxième jour de la formation est construit autour de leurs parades." />
+          {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={ECHECS.map(item => ({ titre: item.title, texte: item.desc }))} />
           <p style={{ color: '#6B7280', fontSize: 14.5, lineHeight: 1.75, margin: '26px 0 0', maxWidth: 860 }}>
             Ces règles viennent du terrain. Dans une société de distribution informatique B2B de 58 personnes, dix référents ont été formés en deux jours en juin 2026 ; ensemble, ils ont bâti onze compétences Claude, validées par la direction avant diffusion, et le reste de l'entreprise doit en bénéficier entre octobre et décembre 2026 (<Link to="/etudes-de-cas-ia#distribution" style={{ color: c, fontWeight: 600 }}>le cas détaillé</Link>).
           </p>
@@ -794,9 +751,7 @@ export default function FormationAgentsIAPage() {
             Six profils pour qui la formation agents IA est conçue
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La formation s'adresse aux équipes qui pratiquent déjà un assistant IA et veulent passer aux agents, ainsi qu'aux référents chargés d'outiller leur service. Aucun prérequis technique : tout se construit sans code. Les profils techniques en retirent la méthode et le cadre, avant de passer au code s'ils le souhaitent.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="La formation s'adresse aux équipes qui pratiquent déjà un assistant IA et veulent passer aux agents, ainsi qu'aux référents chargés d'outiller leur service. Aucun prérequis technique : tout se construit sans code. Les profils techniques en retirent la méthode et le cadre, avant de passer au code s'ils le souhaitent." />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
             {PROFILS.map((item, i) => (
@@ -820,34 +775,26 @@ export default function FormationAgentsIAPage() {
             Un agent agit davantage qu'un assistant : son cadre doit être plus net
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Chaque agent reçoit un périmètre de données écrit, travaille sur une offre professionnelle et passe la main à une personne pour tout ce qui engage l'entreprise. Les obligations de l'AI Act arrivent par étapes ; la formation dit ce qui vaut aujourd'hui.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Chaque agent reçoit un périmètre de données écrit, travaille sur une offre professionnelle et passe la main à une personne pour tout ce qui engage l'entreprise. Les obligations de l'AI Act arrivent par étapes ; la formation dit ce qui vaut aujourd'hui." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {[
+          {/* Une rangée par sujet ; le lien de la dernière rangée reste juste sous son texte */}
+          {(() => {
+            const cartes = [
               { icon: ShieldCheck, title: 'Les données', desc: "Pour chaque agent, le cadrage fixe ce qu'il lit et où il écrit. Les ateliers se tiennent sur des offres professionnelles où l'entraînement sur vos échanges est coupé ; il l'est par défaut chez la plupart des éditeurs, et chez Vibe Team, l'administrateur doit le désactiver. Les recommandations de la CNIL servent de repère." },
               { icon: Eye, title: 'La validation humaine', desc: "Envoyer un courrier, répondre à un client, modifier un dossier : l'agent prépare, une personne décide. Le degré d'autonomie se fixe à la conception et se révise à mesure que la confiance s'installe." },
               { icon: Scale, title: "L'AI Act, sans dramatiser", desc: "L'article 4, applicable depuis le 2 février 2025, attend des entreprises qu'elles fassent progresser la maîtrise de l'IA dans leurs équipes ; une formation documentée y contribue. L'article 50, en vigueur depuis le 2 août 2026, exige d'informer les personnes qui dialoguent avec un système d'IA. Les obligations du haut risque (recrutement, évaluation des salariés) sont reportées à décembre 2027.", link: { href: '/formation-ai-act', label: 'La formation AI Act' } },
-            ].map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: card.link ? '0 0 12px' : 0 }}>{card.desc}</p>
-                  {card.link && (
-                    <Link to={card.link.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                      {card.link.label}
-                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                    </Link>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+            ]
+            const lien = cartes[cartes.length - 1].link
+            return (
+              <div style={{ marginTop: 12, maxWidth: 880 }}>
+                <Rangees items={cartes.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
+                <Link to={lien.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', margin: '14px 0 0 52px' }}>
+                  {lien.label}
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              </div>
+            )
+          })()}
         </div>
       </section>
 
@@ -863,8 +810,14 @@ export default function FormationAgentsIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Une journée de formation agents IA démarre à 1 980 € HT
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Pour une équipe de douze au plus, réunie en intra, les deux jours démarrent à 3 960 € HT ; le même tarif journalier vaut pour un parcours individuel, destiné à un référent ou à un dirigeant. Les agents construits sur vos données et vos outils demandent une préparation, qui s'ajoute au devis.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Les licences des outils restent à votre charge. Masteria détenant la certification Qualiopi, ces journées peuvent être financées par votre OPCO, au regard de ses règles et du budget dont il dispose ; nous lui fournissons programme, objectifs, modalités d'évaluation et convention.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Pour une équipe de douze au plus, réunie en intra, les deux jours démarrent à 3 960 € HT ; le même tarif journalier vaut pour un parcours individuel, destiné à un référent ou à un dirigeant. Les agents construits sur vos données et vos outils demandent une préparation, qui s'ajoute au devis. Les licences des outils restent à votre charge. Masteria détenant la certification Qualiopi, ces journées peuvent être financées par votre OPCO, au regard de ses règles et du budget dont il dispose ; nous lui fournissons programme, objectifs, modalités d'évaluation et convention. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les règles.
+                L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les règles.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -893,8 +846,11 @@ export default function FormationAgentsIAPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Des formateurs qui conçoivent des agents pour des clients
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                À la tête de Masteria, cabinet lyonnais créé en 2022 qui ne travaille que sur l'intelligence artificielle, sans attache avec un éditeur, Mathias Nizan pilote chaque session ; les formateurs du réseau, une vingtaine d'indépendants, conçoivent eux aussi des agents en mission.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                À la tête de Masteria, cabinet lyonnais créé en 2022 qui ne travaille que sur l'intelligence artificielle, sans attache avec un éditeur, Mathias Nizan pilote chaque session ; les formateurs du réseau, une vingtaine d'indépendants, conçoivent eux aussi des agents en mission. Dans un groupe industriel international du packaging, par exemple, les sessions des 24 managers pilotes comprenaient la création d'assistants Copilot sur les fichiers du groupe, l'un d'eux préparant la fiche fournisseur dès réception d'un mail (<Link to="/etudes-de-cas-ia#industrie" style={{ color: '#93C5FD', fontWeight: 600 }}>le cas complet</Link>).
+                Dans un groupe industriel international du packaging, par exemple, les sessions des 24 managers pilotes comprenaient la création d'assistants Copilot sur les fichiers du groupe, l'un d'eux préparant la fiche fournisseur dès réception d'un mail (<Link to="/etudes-de-cas-ia#industrie" style={{ color: '#93C5FD', fontWeight: 600 }}>le cas complet</Link>).
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
