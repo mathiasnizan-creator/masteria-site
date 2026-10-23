@@ -180,6 +180,7 @@ export default {
     lien: '/etudes-de-cas-ia#conseil-financier',
   },
   liensAssocies: [
+    { label: "Des prompts aux Skills : capitaliser les méthodes d'une équipe", href: '/blog/prompts-skills-ia-methodes-equipe' },
     { label: "Formation agents IA : concevoir, tester et superviser un agent", href: '/formation-agents-ia' },
     { label: "Bibliothèque de prompts IA : 118 prompts classés par métier", href: '/bibliotheque-de-prompts' },
     { label: "Prompt engineering en entreprise : le guide pratique", href: '/blog/prompt-engineering-guide-entreprise' },
