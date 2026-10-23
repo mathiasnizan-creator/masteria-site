@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { CADRAGE_HREF, CADRAGE_LABEL } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « conseil IA pour PME et TPE » (slug /conseil-ia-pme), cluster CONSEIL.
@@ -54,14 +55,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -303,27 +296,10 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
-    </div>
-  )
-}
-
-function CardGrid({ items, min = 260 }) {
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}px), 1fr))`, gap: 24, marginTop: 12 }}>
-      {items.map(card => {
-        const Icon = card.icon
-        return (
-          <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-              <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-              <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-            </div>
-            <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-          </div>
-        )
-      })}
     </div>
   )
 }
@@ -392,9 +368,21 @@ export default function ConseilIAPMEPage() {
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui reçoit lui-même les dirigeants de PME au cadrage · à jour au 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Pour une PME, le conseil IA de Masteria se déroule en quatre temps : <strong style={{ color: '#fff', fontWeight: 700 }}>un diagnostic court, deux ou trois processus outillés dans vos logiciels actuels, le dirigeant puis les équipes formés, un point léger chaque trimestre</strong>. Le cabinet travaille depuis Lyon, en Auvergne-Rhône-Alpes et partout en France.
-          </p>
+          {/* Réponse directe : l'énumération des quatre temps en liste, la phrase suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Pour une PME, le conseil IA de Masteria se déroule en quatre temps :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+              {['un diagnostic court', 'deux ou trois processus outillés dans vos logiciels actuels', 'le dirigeant puis les équipes formés', 'un point léger chaque trimestre'].map(it => (
+                <li key={it} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <strong style={{ color: '#fff', fontWeight: 600 }}>{it}</strong>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={['Le cabinet travaille depuis Lyon, en Auvergne-Rhône-Alpes et partout en France.']} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Une PME n'a que faire d'un schéma directeur. Elle veut savoir où l'IA lui fait gagner des heures, quel outil choisir, sous quelle règle, et voir un premier résultat en quelques semaines. Nous avons construit ce format pour elle : un forfait à chaque étape, et un dirigeant qui décide de la suivante en regardant ce que la précédente a produit.
@@ -419,17 +407,7 @@ export default function ConseilIAPMEPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Le format PME résumé</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="Le format PME résumé" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -442,25 +420,16 @@ export default function ConseilIAPMEPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Les cinq interventions du cabinet dans une PME
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Cinq interventions, dans cet ordre : un Diagnostic IA court, le réglage de l'IA dans votre informatique, deux ou trois processus outillés, la formation du dirigeant puis de ses équipes, et un rendez-vous par trimestre. Chacune a son forfait ; vous lancez la suivante en connaissant le résultat de la précédente.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Cinq interventions, dans cet ordre : un Diagnostic IA court, le réglage de l'IA dans votre informatique, deux ou trois processus outillés, la formation du dirigeant puis de ses équipes, et un rendez-vous par trimestre. Chacune a son forfait ; vous lancez la suivante en connaissant le résultat de la précédente." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Si votre organisation compte plusieurs directions à mettre d'accord, deux pages vous concernent davantage : l'<Link to="/audit-ia" style={aStyle}>audit IA</Link> et le <Link to="/conseil-transformation-ia" style={aStyle}>conseil en transformation IA</Link>.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {PRESTATIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
+              {/* Une rangée par intervention, en pleine largeur ; la carte « hors métier » ferme la liste */}
+              <Rangees items={PRESTATIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              <div style={{ marginTop: 24 }}>
                 <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
                   <div style={{ marginBottom: 14 }}>
                     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -490,9 +459,7 @@ export default function ConseilIAPMEPage() {
             Conseil aux PME ou conseil aux grands comptes : ce qui change
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Une PME possède un atout qui manque aux grands groupes : la décision se prend dans le bureau d'à côté. Un conseil taillé pour elle exploite cet atout au lieu de l'étouffer sous un programme. Un diagnostic à sa mesure, un processus, un résultat, puis le suivant.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Une PME possède un atout qui manque aux grands groupes : la décision se prend dans le bureau d'à côté. Un conseil taillé pour elle exploite cet atout au lieu de l'étouffer sous un programme. Un diagnostic à sa mesure, un processus, un résultat, puis le suivant." />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif entre conseil aux grands comptes et conseil aux PME" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
@@ -524,9 +491,7 @@ export default function ConseilIAPMEPage() {
           <h2 style={h2Style}>
             Comment se déroule le conseil IA dans une PME ?
           </h2>
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Un diagnostic court, puis le réglage de l'outil et un premier processus le mois suivant, la mise en service et la formation pendant les deuxième et troisième mois, et enfin un rendez-vous par trimestre. Le calendrier suit la disponibilité de vos équipes.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Un diagnostic court, puis le réglage de l'outil et un premier processus le mois suivant, la mise en service et la formation pendant les deuxième et troisième mois, et enfin un rendez-vous par trimestre. Le calendrier suit la disponibilité de vos équipes." />
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {METHODE.map((step, i) => (
@@ -555,17 +520,8 @@ export default function ConseilIAPMEPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Les cinq erreurs des PME qui se lancent dans l'IA
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Imiter le grand groupe, offrir une licence à tout le monde, laisser le sujet au prestataire informatique, ouvrir par un robot sur le site, attendre des données impeccables. Nous les croisons depuis 2022 dans des PME de la région et d'ailleurs, et chacune se corrige simplement.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Imiter le grand groupe, offrir une licence à tout le monde, laisser le sujet au prestataire informatique, ouvrir par un robot sur le site, attendre des données impeccables. Nous les croisons depuis 2022 dans des PME de la région et d'ailleurs, et chacune se corrige simplement." />
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -592,7 +548,9 @@ export default function ConseilIAPMEPage() {
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
                   <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <div style={{ flex: 1 }}>
+                  <Paras texte={text} max={2} budget={300} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                </div>
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   Voir comment la mission s'est déroulée
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -610,10 +568,8 @@ export default function ConseilIAPMEPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Conseil IA pour les PME de Lyon et d'Auvergne-Rhône-Alpes
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le cabinet est né à Lyon et se rend dans les entreprises de toute la région : le diagnostic et les formations ont lieu chez vous, le réglage et la construction des outils surtout à distance. Une PME d'une autre région bénéficie du même format, avec la visio en premier et des déplacements réservés aux étapes clés.</strong>
-          </p>
-          <CardGrid items={REGION} min={280} />
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le cabinet est né à Lyon et se rend dans les entreprises de toute la région : le diagnostic et les formations ont lieu chez vous, le réglage et la construction des outils surtout à distance. Une PME d'une autre région bénéficie du même format, avec la visio en premier et des déplacements réservés aux étapes clés." />
+          <Rangees items={REGION.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Trois pages décrivent notre présence locale : l'<Link to="/agence-ia-lyon" style={aStyle}>agence IA lyonnaise</Link>, l'<Link to="/agence-ia-annecy" style={aStyle}>agence IA d'Annecy</Link> et la <Link to="/formation-ia-grenoble" style={aStyle}>formation IA à Grenoble</Link>.
           </p>
@@ -629,26 +585,13 @@ export default function ConseilIAPMEPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi un spécialiste de l'IA plutôt qu'un conseiller de PME généraliste ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Parce que le résultat dépend de détails précis : ce qu'un assistant rédige correctement, ce qu'on peut lui laisser faire, ce qu'une personne doit relire. Un cabinet qui ne travaille que sur l'IA depuis 2022, fabrique les outils puis forme ceux qui s'en servent, connaît ces détails. Un conseiller généraliste, lui, tient le plan d'ensemble.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Parce que le résultat dépend de détails précis : ce qu'un assistant rédige correctement, ce qu'on peut lui laisser faire, ce qu'une personne doit relire. Un cabinet qui ne travaille que sur l'IA depuis 2022, fabrique les outils puis forme ceux qui s'en servent, connaît ces détails. Un conseiller généraliste, lui, tient le plan d'ensemble." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> montrent ce format appliqué, de la toute petite équipe au groupe international.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {WHY.map(card => {
-                const Icon = card.icon
-                return (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                      <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                      <h3 style={{ ...h3Style, fontSize: 15.5 }}>{card.title}</h3>
-                    </div>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                )
-              })}
+            <div>
+              <Rangees items={WHY.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
             </div>
           </div>
         </div>
@@ -666,8 +609,15 @@ export default function ConseilIAPMEPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Le dirigeant d'abord, ses équipes ensuite, chacun sur ses dossiers
               </h2>
+              {/* Paragraphes courts : qui se forme, prix, financement */}
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le dirigeant d'une PME montre le chemin : notre <Link to="/formation-ia-dirigeants" style={aStyle}>formation IA pour dirigeants</Link> ou un <Link to="/coaching-ia" style={aStyle}>coaching IA individuel</Link> le rendent autonome en quelques séances. Les équipes suivent, métier par métier, sur leurs propres documents.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La journée de formation démarre à 1 980 € HT, la préparation sur vos documents s'ajoutant au devis, pour un groupe de votre entreprise (douze personnes au plus) comme pour une personne seule.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le dirigeant d'une PME montre le chemin : notre <Link to="/formation-ia-dirigeants" style={aStyle}>formation IA pour dirigeants</Link> ou un <Link to="/coaching-ia" style={aStyle}>coaching IA individuel</Link> le rendent autonome en quelques séances. Les équipes suivent, métier par métier, sur leurs propres documents. La journée de formation démarre à 1 980 € HT, la préparation sur vos documents s'ajoutant au devis, pour un groupe de votre entreprise (douze personnes au plus) comme pour une personne seule. La certification Qualiopi du cabinet couvrant ce type d'action, ce volet peut être financé par votre OPCO ou par le fonds du dirigeant, selon le statut de chacun ; le conseil et la construction des outils restent des prestations de service. Pour connaître votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes.
+                La certification Qualiopi du cabinet couvrant ce type d'action, ce volet peut être financé par votre OPCO ou par le fonds du dirigeant, selon le statut de chacun ; le conseil et la construction des outils restent des prestations de service. Pour connaître votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> répond en deux minutes.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Le dirigeant en individuel, sur ses cas', 'Les équipes par métier, chez vous ou en visio', 'Dès 1 980 € HT la journée, douze personnes au plus', 'OPCO ou fonds du dirigeant selon le statut'].map(pt => (
@@ -792,8 +742,14 @@ export default function ConseilIAPMEPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Un interlocuteur stable, des renforts quand votre dossier le demande
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Masteria est l'entreprise de Mathias Nizan, lancée à Lyon en 2022 et entièrement tournée vers l'intelligence artificielle. Dans une PME, vous l'avez en face de vous du cadrage au suivi.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Quand il faut construire un agent ou former plusieurs équipes, il fait appel à l'un des développeurs (cinq environ) ou des formateurs (une vingtaine) indépendants avec qui il travaille, ou à l'un de la dizaine de consultants du réseau. Aucun éditeur ne nous rémunère : nous recommandons ce qui sert votre entreprise.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est l'entreprise de Mathias Nizan, lancée à Lyon en 2022 et entièrement tournée vers l'intelligence artificielle. Dans une PME, vous l'avez en face de vous du cadrage au suivi. Quand il faut construire un agent ou former plusieurs équipes, il fait appel à l'un des développeurs (cinq environ) ou des formateurs (une vingtaine) indépendants avec qui il travaille, ou à l'un de la dizaine de consultants du réseau. Aucun éditeur ne nous rémunère : nous recommandons ce qui sert votre entreprise. Masteria est également Activateur France Num. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>espace presse</Link> en donnent des exemples datés.
+              Masteria est également Activateur France Num. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>espace presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

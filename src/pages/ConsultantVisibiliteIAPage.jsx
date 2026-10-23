@@ -6,6 +6,7 @@ import {
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « consultant visibilité IA » (slug /consultant-visibilite-ia), cluster
@@ -52,14 +53,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -222,27 +215,10 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
-    </div>
-  )
-}
-
-function CardGrid({ items, min = 260 }) {
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}px), 1fr))`, gap: 24, marginTop: 12 }}>
-      {items.map(card => {
-        const Icon = card.icon
-        return (
-          <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-              <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-              <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-            </div>
-            <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-          </div>
-        )
-      })}
     </div>
   )
 }
@@ -306,11 +282,20 @@ export default function ConsultantVisibiliteIAPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · actualisé le 7 octobre 2026
           </p>
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un consultant visibilité IA vérifie si ChatGPT, Perplexity, Gemini et les aperçus IA de Google (AI Overviews) mentionnent votre entreprise quand vos clients leur posent leurs questions, cherche pourquoi, puis agit sur ce qui en décide : <strong style={{ color: '#fff', fontWeight: 700 }}>les pages qui portent vos réponses, ce que les robots des éditeurs lisent de votre site, la cohérence de ce que le web dit de vous</strong>. Chez {ENTITY.split(',')[0]}, ce travail commence par un audit GEO daté, moteur par moteur.
+          {/* Réponse directe : 1re phrase en accroche, la suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Un consultant visibilité IA vérifie si ChatGPT, Perplexity, Gemini et les aperçus IA de Google (AI Overviews) mentionnent votre entreprise quand vos clients leur posent leurs questions, cherche pourquoi, puis agit sur ce qui en décide : <strong style={{ color: '#fff', fontWeight: 700 }}>les pages qui portent vos réponses, ce que les robots des éditeurs lisent de votre site, la cohérence de ce que le web dit de vous</strong>.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              <>Chez {ENTITY.split(',')[0]}, ce travail commence par un audit GEO daté, moteur par moteur.</>,
+            ]} />
+          </div>
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Le métier attire les promesses invérifiables : la première place sur ChatGPT, une citation garantie. Aucune ne tient. Ce qui tient : une mesure honnête, rejouée dans le temps, et un travail patient sur les causes.
           </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Le métier attire les promesses invérifiables : la première place sur ChatGPT, une citation garantie. Aucune ne tient. Ce qui tient : une mesure honnête, rejouée dans le temps, et un travail patient sur les causes. Google l'écrit lui-même, aucune optimisation spéciale n'est exigée pour apparaître dans ses aperçus IA. La suite de cette page décrit la mission telle que nous la menons.
+            Google l'écrit lui-même, aucune optimisation spéciale n'est exigée pour apparaître dans ses aperçus IA. La suite de cette page décrit la mission telle que nous la menons.
           </p>
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV_URL} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -327,17 +312,8 @@ export default function ConsultantVisibiliteIAPage() {
               </span>
             ))}
           </div>
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* « Le rôle » reste d'un seul tenant : la coupure automatique tomberait au milieu de l'énumération des moteurs */}
+          <Reperes sombre id="en-bref" titre="En bref" items={lignesEnReperes(EN_BREF).map((r, i) => (i === 0 ? { label: r.label, detail: EN_BREF[0].value } : r))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -348,22 +324,13 @@ export default function ConsultantVisibiliteIAPage() {
             <div style={editorialAside}>
               <Kicker>Les missions</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Que fait un consultant visibilité IA ?</h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six missions, dans cet ordre : relever les citations moteur par moteur, remonter aux sources de chaque réponse, réécrire les pages qui portent vos réponses, vérifier ce que voient les robots, mettre de l'ordre dans ce que le web dit de vous, puis rejouer le relevé chaque mois.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Six missions, dans cet ordre : relever les citations moteur par moteur, remonter aux sources de chaque réponse, réécrire les pages qui portent vos réponses, vérifier ce que voient les robots, mettre de l'ordre dans ce que le web dit de vous, puis rejouer le relevé chaque mois." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 La première mission a sa page dédiée, l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO</Link>. Pour un service continu qui traite aussi votre référencement sur Google, voyez notre <Link to="/agence-seo-ia" style={aStyle}>agence SEO IA</Link>.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {MISSIONS.map((item, i) => (
-                <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                  <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par mission, en pleine largeur (plus de cartes côte à côte) */}
+            <Rangees items={MISSIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
           </div>
         </div>
       </section>
@@ -373,9 +340,7 @@ export default function ConsultantVisibiliteIAPage() {
         <div style={wrap}>
           <Kicker>Pourquoi maintenant</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Vos clients interrogent déjà les IA : trois mesures datées</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les acheteurs professionnels consultent les assistants avant de contacter un fournisseur, les clics vers les sources citées restent rares, et les visiteurs envoyés par une IA achètent plus souvent. Ces trois mesures expliquent pourquoi la question arrive aujourd'hui en comité de direction.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Les acheteurs professionnels consultent les assistants avant de contacter un fournisseur, les clics vers les sources citées restent rares, et les visiteurs envoyés par une IA achètent plus souvent. Ces trois mesures expliquent pourquoi la question arrive aujourd'hui en comité de direction." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
             {STATS.map(s => (
               <div key={s.value} style={{ ...cardStyle, padding: 26 }}>
@@ -403,9 +368,7 @@ export default function ConsultantVisibiliteIAPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Deux métiers voisins</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>Consultant SEO ou consultant visibilité IA : quelle différence ?</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le consultant SEO cherche une place dans une liste de liens ; le consultant visibilité IA cherche une mention dans une réponse rédigée. Les signaux se recoupent, la mesure change de nature, et les deux métiers s'épaulent : Google écrit que les règles du référencement suffisent pour apparaître dans ses aperçus IA.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Le consultant SEO cherche une place dans une liste de liens ; le consultant visibilité IA cherche une mention dans une réponse rédigée. Les signaux se recoupent, la mesure change de nature, et les deux métiers s'épaulent : Google écrit que les règles du référencement suffisent pour apparaître dans ses aperçus IA." />
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Ce qui sépare le travail d'un consultant SEO de celui d'un consultant visibilité IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
               <thead>
@@ -434,9 +397,7 @@ export default function ConsultantVisibiliteIAPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <Kicker>La méthode</Kicker>
           <h2 style={h2Style}>Comment travaille notre consultant visibilité IA ?</h2>
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Une semaine pour l'audit GEO, trois pour les premières pages et corrections, deux mois pour les mentions, puis un relevé chaque mois. Le consultant est une personne nommée sur le devis, avec le cabinet derrière lui.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Une semaine pour l'audit GEO, trois pour les premières pages et corrections, deux mois pour les mentions, puis un relevé chaque mois. Le consultant est une personne nommée sur le devis, avec le cabinet derrière lui." />
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {METHODE.map((step, i) => (
@@ -463,10 +424,8 @@ export default function ConsultantVisibiliteIAPage() {
         <div style={wrap}>
           <Kicker>Choisir</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Comment choisir un consultant visibilité IA ?</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Cinq critères, qui s'appliquent à nous comme aux autres : une méthode de mesure montrable, aucune promesse de rang, le référencement classique maîtrisé, un travail sur vos pages et une culture des modèles. Qu'un seul manque, et la mission tourne à l'anecdote.</strong>
-          </p>
-          <CardGrid items={CHOISIR} min={260} />
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Cinq critères, qui s'appliquent à nous comme aux autres : une méthode de mesure montrable, aucune promesse de rang, le référencement classique maîtrisé, un travail sur vos pages et une culture des modèles. Qu'un seul manque, et la mission tourne à l'anecdote." />
+          <Rangees items={CHOISIR.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
         </div>
       </section>
 
@@ -475,17 +434,8 @@ export default function ConsultantVisibiliteIAPage() {
         <div style={wrap}>
           <Kicker>Erreurs fréquentes</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Cinq erreurs qui coûtent des citations</h2>
-          <p style={answerStyle}>
-            <strong>Produire des pages en série, se fier à une capture, négliger la technique, viser la première place sur ChatGPT, publier un taux sans date ni modèle : nous retrouvons ces cinq erreurs chez des entreprises qui ont déjà payé un premier prestataire, et elles coûtent plus cher que l'audit qui les aurait évitées.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={answerStyle} texte="Produire des pages en série, se fier à une capture, négliger la technique, viser la première place sur ChatGPT, publier un taux sans date ni modèle : nous retrouvons ces cinq erreurs chez des entreprises qui ont déjà payé un premier prestataire, et elles coûtent plus cher que l'audit qui les aurait évitées." />
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -499,8 +449,11 @@ export default function ConsultantVisibiliteIAPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Pour vos équipes</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Vos équipes peuvent apprendre à écrire pour être citées, et à mesurer seules</h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Après l'audit et les premières corrections, une formation apprend à vos équipes marketing ou communication à rédiger des pages que les moteurs de réponse reprennent, à rejouer le relevé et à reconnaître l'effet d'un changement de modèle.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Après l'audit et les premières corrections, une formation apprend à vos équipes marketing ou communication à rédiger des pages que les moteurs de réponse reprennent, à rejouer le relevé et à reconnaître l'effet d'un changement de modèle. Cette partie est certifiée Qualiopi : votre OPCO de branche peut la financer, selon ses propres règles, alors que le conseil reste hors de son champ. Le programme figure sur la page <Link to="/formation-ia-seo" style={aStyle}>formation IA et SEO</Link>.
+                Cette partie est certifiée Qualiopi : votre OPCO de branche peut la financer, selon ses propres règles, alors que le conseil reste hors de son champ. Le programme figure sur la page <Link to="/formation-ia-seo" style={aStyle}>formation IA et SEO</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Écrire des réponses directes et des définitions autonomes', 'Rejouer le relevé de citations chaque mois', "Repérer l'effet d'une nouvelle version de modèle", 'Formation Qualiopi, dès 1 980 € HT la journée'].map(pt => (
@@ -590,8 +543,11 @@ export default function ConsultantVisibiliteIAPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui mène la mission</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>Un consultant senior nommé, un cabinet IA derrière lui</h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Le consultant visibilité IA de votre mission est nommé sur le devis ; il travaille avec les développeurs du cabinet pour les corrections techniques et avec ses formateurs pour vos équipes. <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur du cabinet, suit chaque dossier.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Le consultant visibilité IA de votre mission est nommé sur le devis ; il travaille avec les développeurs du cabinet pour les corrections techniques et avec ses formateurs pour vos équipes. <Link to="/mathias-nizan" style={{ color: '#93C5FD', fontWeight: 600 }}>Mathias Nizan</Link>, fondateur du cabinet, suit chaque dossier. Nous n'avons d'accord commercial avec aucun éditeur ni aucun outil de mesure. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> permettent de nous juger sur pièces.
+              Nous n'avons d'accord commercial avec aucun éditeur ni aucun outil de mesure. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> permettent de nous juger sur pièces.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

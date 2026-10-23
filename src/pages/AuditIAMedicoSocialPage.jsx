@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page sectorielle « Audit IA médico-social » (slug /audit-ia-medico-social).
@@ -53,14 +54,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -363,7 +356,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -444,9 +439,16 @@ export default function AuditIAMedicoSocialPage() {
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Publié en septembre 2026, revu le 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit IA médico-social de Masteria dresse le bilan de l'intelligence artificielle dans votre association ou votre établissement : ce que les équipes pratiquent déjà, les données d'usagers en jeu, les outils et leur hébergement, l'organisation, la conformité aux textes (RGPD, AI Act). Vous recevez <strong style={{ color: '#fff', fontWeight: 700 }}>un cadre d'usage, un plan d'outillage et un plan de formation par métier</strong>, ainsi qu'un dossier argumenté pour l'ARS ou le département. Le périmètre reste non clinique : l'IA n'évalue pas un usager et ne décide de rien.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              L'audit IA médico-social de Masteria dresse le bilan de l'intelligence artificielle dans votre association ou votre établissement : ce que les équipes pratiquent déjà, les données d'usagers en jeu, les outils et leur hébergement, l'organisation, la conformité aux textes (RGPD, AI Act).
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              <>Vous recevez <strong style={{ color: '#fff', fontWeight: 700 }}>un cadre d'usage, un plan d'outillage et un plan de formation par métier</strong>, ainsi qu'un dossier argumenté pour l'ARS ou le département.</>,
+              <>Le périmètre reste non clinique : l'IA n'évalue pas un usager et ne décide de rien.</>,
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Dans le secteur, l'IA est entrée par les téléphones des éducateurs et des secrétariats, pour alléger les écrits. Le temps gagné compte, et des notes sur un usager tapées dans un compte gratuit constituent le premier risque. L'audit part de ce constat sans chercher de coupable, puis met en place une solution encadrée.
@@ -471,17 +473,7 @@ export default function AuditIAMedicoSocialPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'essentiel</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 100px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="L'essentiel" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -494,31 +486,20 @@ export default function AuditIAMedicoSocialPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Ce qui change quand l'usager est au centre
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Trois écarts avec un audit IA d'entreprise. La donnée d'abord : informations de santé, de mineurs ou de personnes vulnérables, couvertes par le secret professionnel, qui doivent rester dans le logiciel métier. La limite ensuite : l'IA n'évalue pas un usager et ne décide de rien, et le texte européen sur l'IA range parmi le haut risque l'évaluation de l'accès à des prestations essentielles. Le financement enfin : le conseil se finance auprès de l'ARS, sur crédits non reconductibles, et la formation par l'OPCO Santé.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Trois écarts avec un audit IA d'entreprise. La donnée d'abord : informations de santé, de mineurs ou de personnes vulnérables, couvertes par le secret professionnel, qui doivent rester dans le logiciel métier. La limite ensuite : l'IA n'évalue pas un usager et ne décide de rien, et le texte européen sur l'IA range parmi le haut risque l'évaluation de l'accès à des prestations essentielles. Le financement enfin : le conseil se finance auprès de l'ARS, sur crédits non reconductibles, et la formation par l'OPCO Santé." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 La méthode et le livrable reprennent ceux de notre <Link to="/audit-ia" style={aStyle}>audit IA d'entreprise</Link>. Le périmètre, le vocabulaire et les garde-fous viennent de vos établissements. Pour les équipes, notre <Link to="/formation-ia-medico-social" style={aStyle}>formation IA médico-social</Link> applique le même cadre.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {[
+              {/* Une rangée par écart, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={[
                   { icon: Lock, title: "La donnée juge l'usage", desc: "Chaque usage s'apprécie selon ce qu'on y met. Un compte rendu anonyme et des notes sur un jeune accueilli n'ont rien de comparable, même dans le même outil. L'audit trace cette frontière service par service." },
                   { icon: XCircle, title: 'Une limite écrite noir sur blanc', desc: "Noter, orienter ou évaluer une personne accompagnée sort du périmètre, et le rapport l'écrit avec le texte qui le justifie. La question n'a plus à revenir à chaque nouvel outil." },
                   { icon: Users, title: 'Des équipes qui changent', desc: "Remplacements, temps partiels, départs : le cadre d'usage et la formation sont conçus pour se transmettre à chaque arrivée d'un professionnel." },
                   { icon: Landmark, title: 'Un rapport qui sert deux fois', desc: "L'état des lieux suit le format qu'attendent une ARS ou un conseil départemental : constats, objectifs, actions, budget TTC. Il éclaire la direction et nourrit une demande de financement." },
-                ].map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+                ].map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -536,9 +517,7 @@ export default function AuditIAMedicoSocialPage() {
             Quels usages de l'IA sont possibles dans un établissement médico-social ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Les gains les plus nets du secteur se passent de toute donnée identifiante : comptes rendus, trames, courriers, documents FALC, préparation de l'évaluation. Ils relèvent du risque minimal. Les usages qui touchent aux données d'usagers demandent un outil conforme et une procédure. Ceux qui évaluent une personne sortent du périmètre.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Les gains les plus nets du secteur se passent de toute donnée identifiante : comptes rendus, trames, courriers, documents FALC, préparation de l'évaluation. Ils relèvent du risque minimal. Les usages qui touchent aux données d'usagers demandent un outil conforme et une procédure. Ceux qui évaluent une personne sortent du périmètre." />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Usages de l'IA observés dans le médico-social, niveau de risque et conclusion de l'audit" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -574,21 +553,9 @@ export default function AuditIAMedicoSocialPage() {
             Que couvre l'audit IA d'une structure médico-sociale ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six dimensions : les usages des services, les données d'usagers et le dossier informatisé, les outils et l'hébergement, l'organisation et les savoir-faire, la conformité RGPD et AI Act, la qualité et la preuve. Chacune reçoit une note, des arguments et des actions confiées à un porteur.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Six dimensions : les usages des services, les données d'usagers et le dossier informatisé, les outils et l'hébergement, l'organisation et les savoir-faire, la conformité RGPD et AI Act, la qualité et la preuve. Chacune reçoit une note, des arguments et des actions confiées à un porteur." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {DIMENSIONS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={DIMENSIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
         </div>
       </section>
 
@@ -600,9 +567,7 @@ export default function AuditIAMedicoSocialPage() {
             Six temps, des entretiens de terrain à la restitution
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Cadrage avec la direction et le DPO, rencontre des services, inventaire des outils et des comptes, état des données, qualification des usages et des écarts, plan et restitution. Les entretiens se font avec les professionnels qui écrivent au quotidien, en plus de l'encadrement. Pendant toute la mission, aucune donnée identifiante d'usager n'entre dans un outil d'IA.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Cadrage avec la direction et le DPO, rencontre des services, inventaire des outils et des comptes, état des données, qualification des usages et des écarts, plan et restitution. Les entretiens se font avec les professionnels qui écrivent au quotidien, en plus de l'encadrement. Pendant toute la mission, aucune donnée identifiante d'usager n'entre dans un outil d'IA." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -635,21 +600,9 @@ export default function AuditIAMedicoSocialPage() {
             Six documents, chacun pour un lecteur : direction, équipes, financeurs
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La carte des usages, service par service ; un cadre d'usage prêt à diffuser ; un plan d'outillage sans attache avec un éditeur ; un plan de formation par métier ; des écarts de conformité classés ; un dossier au format de vos financeurs. Ils restent utilisables sans nous, par vos équipes comme par un autre intervenant.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="La carte des usages, service par service ; un cadre d'usage prêt à diffuser ; un plan d'outillage sans attache avec un éditeur ; un plan de formation par métier ; des écarts de conformité classés ; un dossier au format de vos financeurs. Ils restent utilisables sans nous, par vos équipes comme par un autre intervenant." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {LIVRABLE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={LIVRABLE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
         </div>
       </section>
 
@@ -689,30 +642,13 @@ export default function AuditIAMedicoSocialPage() {
             Combien coûte l'audit, et comment le financer dans le médico-social ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le montant se décide au cadrage, selon le nombre d'établissements et de services. Un audit centré sur un établissement commence à quelques milliers d'euros TTC ; une association de plusieurs établissements ou un groupe régional se chiffre en dizaines de milliers d'euros TTC, sans plafond fixé d'avance. Le devis affiche le HT et le TTC, puisqu'une association ne récupère pas la TVA, et sa validité couvre le temps d'instruction d'une demande de crédits.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le montant se décide au cadrage, selon le nombre d'établissements et de services. Un audit centré sur un établissement commence à quelques milliers d'euros TTC ; une association de plusieurs établissements ou un groupe régional se chiffre en dizaines de milliers d'euros TTC, sans plafond fixé d'avance. Le devis affiche le HT et le TTC, puisqu'une association ne récupère pas la TVA, et sa validité couvre le temps d'instruction d'une demande de crédits." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Building2 size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce qui fait le prix</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le nombre d'établissements et de services compte davantage que le nombre de salariés. Une association de trois établissements dans un même département se traite en quelques jours d'expertise ; un groupe régional aux activités multiples réclame plus de temps, ce que le devis détaille ligne à ligne. Quand un diagnostic plus court suffit, le cadrage vous le dit. Seul l'audit est chiffré : formation et déploiement viennent après la restitution, si vous les demandez.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Financer l'audit dans le secteur</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Pour une association privée, la première piste est l'ARS : certaines agences financent des dépenses ponctuelles de transformation sur crédits non reconductibles, et le rapport est rédigé pour entrer dans une telle demande ou dans un CPOM ; votre délégation départementale confirme ce qui est possible. Cette prestation de conseil n'est pas finançable par votre OPCO, contrairement à la formation qui suit l'audit : la plupart des associations la financent avec l'OPCO Santé, les établissements publics avec l'ANFH.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880, marginTop: 12 }} items={[
+            { titre: 'Ce qui fait le prix', icon: Building2, texte: "Le nombre d'établissements et de services compte davantage que le nombre de salariés. Une association de trois établissements dans un même département se traite en quelques jours d'expertise ; un groupe régional aux activités multiples réclame plus de temps, ce que le devis détaille ligne à ligne. Quand un diagnostic plus court suffit, le cadrage vous le dit. Seul l'audit est chiffré : formation et déploiement viennent après la restitution, si vous les demandez." },
+            { titre: "Financer l'audit dans le secteur", icon: Landmark, texte: "Pour une association privée, la première piste est l'ARS : certaines agences financent des dépenses ponctuelles de transformation sur crédits non reconductibles, et le rapport est rédigé pour entrer dans une telle demande ou dans un CPOM ; votre délégation départementale confirme ce qui est possible. Cette prestation de conseil n'est pas finançable par votre OPCO, contrairement à la formation qui suit l'audit : la plupart des associations la financent avec l'OPCO Santé, les établissements publics avec l'ANFH." },
+          ]} />
         </div>
       </section>
 
@@ -796,8 +732,14 @@ export default function AuditIAMedicoSocialPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Un cabinet indépendant des éditeurs, avec un cadre écrit pour le secteur
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Mathias Nizan pilote chaque audit médico-social. Selon la taille de l'association, il associe à la mission des consultants IA (le réseau en compte une dizaine) et des formateurs (une vingtaine environ), chargés de mesurer les savoir-faire et de bâtir le plan de formation ; tous sont indépendants.
+              </p>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Le cadre appliqué (usages non cliniques, données de santé, hébergement HDS, secret professionnel) est celui de notre formation IA santé, conçue pour les établissements sanitaires et médico-sociaux. Masteria reste indépendant des éditeurs : le plan d'outillage suit vos contraintes et votre budget.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Mathias Nizan pilote chaque audit médico-social. Selon la taille de l'association, il associe à la mission des consultants IA (le réseau en compte une dizaine) et des formateurs (une vingtaine environ), chargés de mesurer les savoir-faire et de bâtir le plan de formation ; tous sont indépendants. Le cadre appliqué (usages non cliniques, données de santé, hébergement HDS, secret professionnel) est celui de notre formation IA santé, conçue pour les établissements sanitaires et médico-sociaux. Masteria reste indépendant des éditeurs : le plan d'outillage suit vos contraintes et votre budget. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> présentent des missions datées.
+                Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> présentent des missions datées.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

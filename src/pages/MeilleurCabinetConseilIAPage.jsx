@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BadgeCheck, Compass, Users, ListChecks, Scale, ShieldCheck, Flag, Handshake, BookOpen, FolderSearch } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « Meilleur cabinet IA » : guide de choix 2026, angle CABINET (conseil,
@@ -290,7 +291,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -374,12 +377,20 @@ export default function MeilleurCabinetConseilIAPage() {
           </p>
 
           {/* GEO : réponse directe citable, la thèse de la page */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un cabinet IA vous vend une décision : quels usages lancer, dans quel ordre, avec quelles règles et quel budget. La valeur de cette décision se mesure six mois plus tard, quand les équipes s'en servent ou l'ont oubliée. <strong style={{ color: '#fff', fontWeight: 700 }}>Le meilleur cabinet IA part de votre travail quotidien, écrit ce qu'il écarte, cadre le droit applicable et reste présent jusqu'à ce que ses recommandations entrent dans le quotidien des équipes</strong>, en construisant les outils ou en formant vos équipes si la mission l'exige.
+          {/* 1re phrase en accroche, les suivantes en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Un cabinet IA vous vend une décision : quels usages lancer, dans quel ordre, avec quelles règles et quel budget.
           </p>
+          <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+            "La valeur de cette décision se mesure six mois plus tard, quand les équipes s'en servent ou l'ont oubliée.",
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>Le meilleur cabinet IA part de votre travail quotidien, écrit ce qu'il écarte, cadre le droit applicable et reste présent jusqu'à ce que ses recommandations entrent dans le quotidien des équipes</strong>, en construisant les outils ou en formant vos équipes si la mission l'exige.</>,
+          ]} />
 
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 680 }}>
+            Vous cherchez un <Link to="/conseil-intelligence-artificielle" style={{ color: '#93C5FD', fontWeight: 600 }}>cabinet conseil IA</Link> pour cadrer vos usages, ou vous hésitez avec un <Link to="/consultant-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>consultant indépendant</Link> ?
+          </p>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
-            Vous cherchez un <Link to="/conseil-intelligence-artificielle" style={{ color: '#93C5FD', fontWeight: 600 }}>cabinet conseil IA</Link> pour cadrer vos usages, ou vous hésitez avec un <Link to="/consultant-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>consultant indépendant</Link> ? Ce guide propose six critères vérifiables dès le premier rendez-vous, situe les familles d'acteurs et les noms qu'on y croise, donne les honoraires observés en 2026 et répond aux questions des directions avant la signature. Les cabinets nommés servent d'exemples de leur famille et ne reçoivent aucune note.
+            Ce guide propose six critères vérifiables dès le premier rendez-vous, situe les familles d'acteurs et les noms qu'on y croise, donne les honoraires observés en 2026 et répond aux questions des directions avant la signature. Les cabinets nommés servent d'exemples de leur famille et ne reçoivent aucune note.
           </p>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
@@ -393,24 +404,14 @@ export default function MeilleurCabinetConseilIAPage() {
           </div>
 
           {/* En bref (GEO) : dl citable */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {[
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={lignesEnReperes([
                 ['Ce qui se juge', "La qualité des arbitrages : ce que le cabinet recommande, ce qu'il écarte et pourquoi, et ce que deviennent ses recommandations une fois la mission terminée."],
                 ['Cabinet ou consultant seul ?', "Un consultant indépendant suffit pour un avis ou un audit court. Un cabinet devient utile quand plusieurs directions sont concernées, que la mission dure ou que la recommandation doit déboucher sur un outil et une formation."],
                 ['Un palmarès officiel ?', "Personne n'en publie en France. Les classements qui circulent sont payés ou recopient ce que les cabinets disent d'eux-mêmes."],
                 ['Le faux pas le plus cher', "Signer une feuille de route que personne ne porte chez vous : elle dort dans un dossier partagé et le budget est perdu."],
                 ['Honoraires observés', "Quelques milliers d'euros pour un diagnostic court, des dizaines de milliers pour une stratégie d'ETI, plus de 100 000 € pour un programme de groupe."],
                 ['Et Masteria ?', "Un cabinet lyonnais consacré à la seule IA : il conseille, développe les outils retenus et forme les équipes, sans rien devoir aux éditeurs de logiciels."],
-              ].map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          ].map(([label, value]) => ({ label, value })))} />
         </div>
       </section>
 
@@ -455,7 +456,7 @@ export default function MeilleurCabinetConseilIAPage() {
                       <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: c }}>{`0${i + 1} · ${p.tag}`}</span>
                       <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(18px, 2.2vw, 22px)', fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }}>{p.title}</h3>
                     </div>
-                    <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px' }}>{p.body}</p>
+                    <Paras texte={p.body} max={2} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px' }} />
                     <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '12px 16px' }}>
                       <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, verticalAlign: '-2px', marginRight: 6 }} aria-hidden="true" />
                       <strong style={{ color: c }}>Le test : </strong>{p.test}
@@ -628,18 +629,15 @@ export default function MeilleurCabinetConseilIAPage() {
           </div>
 
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(17px, 2vw, 20px)', fontWeight: 800, color: '#F8FAFC', margin: '0 0 18px' }}>Trois façons de contractualiser une mission</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 16, marginBottom: 28 }}>
-            {ENGAGEMENT.map(e => (
-              <div key={e.name} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 12, padding: '20px 22px' }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#fff', marginBottom: 8 }}>{e.name}</div>
-                <p style={{ fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.65, margin: 0 }}>{e.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par formule de contrat (plus de cartes côte à côte) */}
+          <Rangees sombre niveau="h4" items={ENGAGEMENT.map(e => ({ titre: e.name, texte: e.desc }))} style={{ maxWidth: 880, marginBottom: 28 }} />
 
           <div style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid #1E293B', borderRadius: 12, padding: '18px 22px' }}>
+            <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff' }}>Ce que votre OPCO peut financer :</strong> la formation, quand l'organisme qui la délivre détient la certification Qualiopi. Ni le conseil ni la construction d'outils n'entrent dans son champ.
+            </p>
             <p style={{ fontSize: 14, color: '#CBD5E1', lineHeight: 1.7, margin: 0 }}>
-              <strong style={{ color: '#fff' }}>Ce que votre OPCO peut financer :</strong> la formation, quand l'organisme qui la délivre détient la certification Qualiopi. Ni le conseil ni la construction d'outils n'entrent dans son champ. Si une proposition présente un diagnostic ou une feuille de route comme « pris en charge », faites préciser par écrit qui paierait, et sur quelle base. Pour une entreprise de Genève ou de Bruxelles, hors du système des OPCO, nous établissons le devis en euros, hors taxes.
+              Si une proposition présente un diagnostic ou une feuille de route comme « pris en charge », faites préciser par écrit qui paierait, et sur quelle base. Pour une entreprise de Genève ou de Bruxelles, hors du système des OPCO, nous établissons le devis en euros, hors taxes.
             </p>
           </div>
         </div>
@@ -658,7 +656,7 @@ export default function MeilleurCabinetConseilIAPage() {
             {MARKET_STATS.map(s => (
               <div key={s.value} style={cardStyle}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 28, fontWeight: 900, color: c, letterSpacing: '-0.02em', marginBottom: 8 }}>{s.value}</div>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '0 0 10px' }}>{s.label}</p>
+                <Paras texte={s.label} max={2} budget={300} style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '0 0 10px' }} />
                 <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, fontWeight: 700, color: c, textDecoration: 'underline', textUnderlineOffset: 2 }}>Source : {s.source}</a>
               </div>
             ))}
@@ -752,7 +750,9 @@ export default function MeilleurCabinetConseilIAPage() {
             {CASES.map(k => (
               <div key={k.anchor} style={{ ...cardStyle, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
                 <div style={{ ...kickerStyle, fontSize: 12, marginBottom: 12 }}>{k.criterion}</div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{k.text}</p>
+                <div style={{ flex: 1, marginBottom: 16 }}>
+                  <Paras texte={k.text} max={2} budget={300} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                </div>
                 <Link to={`/etudes-de-cas-ia#${k.anchor}`} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                   {k.link}
                   <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />

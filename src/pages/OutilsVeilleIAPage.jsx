@@ -4,6 +4,7 @@ import {
   Newspaper, AlertTriangle, Coins, ShieldAlert, Lock, Clock, CalendarCheck, Bot,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Paras, PointsCles, Rangees } from '../components/Aere'
 
 /**
  * OutilsVeilleIAPage : page sœur de /automatiser-sa-veille-ia (cluster veille).
@@ -184,11 +185,13 @@ export default function OutilsVeilleIAPage() {
             <span style={{ color: '#60A5FA', fontWeight: 800 }}>lequel choisir, pour quel usage</span>
           </h1>
 
-          <p className="veille-lede" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '26px 0 30px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un outil de veille se choisit pour un usage précis. Cette comparaison range le marché en cinq
-            familles, dit ce que chacune fait bien et ce qu&apos;elle laisse de côté, avec des faits relevés le
-            7 octobre 2026, puis aide à choisir sans payer pour des fonctions inutiles.
-          </p>
+          {/* Accroche : 1re phrase, puis la suite en puce */}
+          <div className="veille-lede" style={{ margin: '26px 0 6px' }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.6, margin: '0 0 22px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Un outil de veille se choisit pour un usage précis.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={["Cette comparaison range le marché en cinq familles, dit ce que chacune fait bien et ce qu'elle laisse de côté, avec des faits relevés le 7 octobre 2026, puis aide à choisir sans payer pour des fonctions inutiles."]} />
+          </div>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
             <a href="#familles" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 26px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -215,10 +218,20 @@ export default function OutilsVeilleIAPage() {
         <div style={wrap}>
           <div style={kicker}>Avant de comparer</div>
           <h2 style={h2Style}>À quoi sert un outil de veille IA</h2>
-          <p style={pStyle}>
+          {/* Les quatre maillons en liste, mêmes mots */}
+          <p style={{ ...pStyle, marginBottom: 12 }}>
             Un outil de veille IA prend en charge tout ou partie d&apos;une chaîne en quatre maillons :
-            collecter les publications, écarter les doublons et le bruit, résumer, livrer le résultat à ceux
-            qui en ont besoin. Aucun produit n&apos;excelle sur les quatre maillons réunis, si bien qu&apos;une
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'grid', gap: 8, maxWidth: 780 }}>
+            {['collecter les publications', 'écarter les doublons et le bruit', 'résumer', 'livrer le résultat à ceux qui en ont besoin'].map(t => (
+              <li key={t} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 17, color: '#374151', lineHeight: 1.6 }}>
+                <Check size={17} strokeWidth={1.75} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+          <p style={pStyle}>
+            Aucun produit n&apos;excelle sur les quatre maillons réunis, si bien qu&apos;une
             comparaison ne vaut que rapportée à un usage.
           </p>
           <p style={pStyle}>
@@ -283,15 +296,8 @@ export default function OutilsVeilleIAPage() {
             Quatre critères tranchent la plupart des choix. Passez-les dans l&apos;ordre : l&apos;usage d&apos;abord,
             le prix en dernier.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 18 }}>
-            {CRITERES.map((cr, i) => (
-              <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 14px 14px 0', padding: '20px 22px' }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color: c, marginBottom: 8 }}>{`0${i + 1}`}</div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{cr.t}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.6, margin: 0 }}>{cr.d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Un critère par rangée, numérotée, en pleine largeur */}
+          <Rangees items={CRITERES.map(cr => ({ titre: cr.t, texte: cr.d }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -300,15 +306,7 @@ export default function OutilsVeilleIAPage() {
         <div style={wrap}>
           <div style={kicker}>À éviter</div>
           <h2 style={h2Style}>Quatre pièges au moment de choisir</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18 }}>
-            {PIEGES.map(({ Icon, t, d }, i) => (
-              <div key={i} style={{ background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, padding: 24 }}>
-                <Icon size={22} style={{ color: c, marginBottom: 14 }} aria-hidden="true" />
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.6, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={PIEGES.map(({ Icon, t, d }) => ({ titre: t, texte: d, icon: Icon }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -366,7 +364,9 @@ export default function OutilsVeilleIAPage() {
                 <span>{item.q}</span>
                 <span style={{ flexShrink: 0, color: c }} aria-hidden="true">+</span>
               </summary>
-              <p style={{ marginTop: 12, color: '#374151', lineHeight: 1.7, fontSize: 16 }}>{item.a}</p>
+              <div style={{ margin: '12px 0 16px' }}>
+                <Paras texte={item.a} max={2} style={{ color: '#374151', lineHeight: 1.7, fontSize: 16, margin: 0 }} />
+              </div>
             </details>
           ))}
         </div>

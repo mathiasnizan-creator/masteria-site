@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees } from '../components/Aere'
 
 /*
  * Money page « formation IA COMEX » (slug /formation-ia-comex), côté
@@ -52,7 +53,6 @@ const wrap = { maxWidth: 1140, margin: '0 auto' }
 
 const kickerStyle = { fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 14 }
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 18px', lineHeight: 1.25, letterSpacing: '-0.01em' }
-const h3Style = { fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }
 const aStyle = { color: c, fontWeight: 600 }
 
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
@@ -83,13 +83,14 @@ const HERO_BADGES = [
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
+/* En repères : valeur en gras, détail dessous ; la coupe suit le sens (jamais au milieu d'une énumération) */
 const EN_BREF = [
-  { label: 'Format', value: "Session de 3 heures, demi-journée avec manipulation ou journée complète ; un second jour d'ateliers reste possible" },
-  { label: 'Pour qui', value: "Comités exécutifs, CODIR et directions générales, de la PME au groupe présent sur plusieurs continents" },
-  { label: 'Langue', value: "Français ou anglais, voire les deux quand le comité réunit plusieurs nationalités" },
-  { label: 'Contenu', value: "Ce que l'IA sait faire en octobre 2026, cas comparables de votre secteur, arbitrages, feuille de route" },
-  { label: 'Animation', value: "Mathias Nizan ou un formateur senior du réseau Masteria, retenu selon votre secteur, la langue et la date" },
-  { label: 'Tarif', value: "À partir de 1 980 € HT pour 3 heures ou une demi-journée, de 3 960 € HT pour une journée complète, comité entier ; préparation sur mesure en plus, au devis le lendemain du cadrage" },
+  { label: 'Format', value: "Session de 3 heures, demi-journée avec manipulation ou journée complète", detail: "Un second jour d'ateliers reste possible" },
+  { label: 'Pour qui', value: "Comités exécutifs, CODIR et directions générales", detail: "De la PME au groupe présent sur plusieurs continents" },
+  { label: 'Langue', value: "Français ou anglais", detail: "Voire les deux quand le comité réunit plusieurs nationalités" },
+  { label: 'Contenu', liste: ["Ce que l'IA sait faire en octobre 2026", 'Cas comparables de votre secteur', 'Arbitrages', 'Feuille de route'] },
+  { label: 'Animation', value: "Mathias Nizan ou un formateur senior du réseau Masteria", detail: "Retenu selon votre secteur, la langue et la date" },
+  { label: 'Tarif', value: "À partir de 1 980 € HT pour 3 heures ou une demi-journée", detail: "De 3 960 € HT pour une journée complète, comité entier ; préparation sur mesure en plus, au devis le lendemain du cadrage" },
 ]
 
 /* ───────── Sommaire ───────── */
@@ -378,7 +379,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -459,10 +462,15 @@ export default function FormationIAComexPage() {
             Signé <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur du cabinet · version revue en octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation IA COMEX est une session exécutive pour un comité de direction entier : de 3 heures à une journée, elle donne à chaque membre la même lecture de ce que l'IA sait faire aujourd'hui, de l'assistant à l'agent, puis conduit le comité à trancher sur les données, les outils, l'organisation et le budget. <strong style={{ color: '#fff', fontWeight: 700 }}>En français ou en anglais, Mathias Nizan l'anime lui-même ou la confie à un formateur senior du réseau Masteria</strong>, dans vos locaux ou hors site.
-          </p>
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              La formation IA COMEX est une session exécutive pour un comité de direction entier : de 3 heures à une journée, elle donne à chaque membre la même lecture de ce que l'IA sait faire aujourd'hui, de l'assistant à l'agent, puis conduit le comité à trancher sur les données, les outils, l'organisation et le budget.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              <><strong style={{ color: '#fff', fontWeight: 700 }}>En français ou en anglais, Mathias Nizan l'anime lui-même ou la confie à un formateur senior du réseau Masteria</strong>, dans vos locaux ou hors site.</>,
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Un déploiement de l'IA tient quand le comité exécutif a fixé le cadre, voté le budget et montré l'exemple. Une session dédiée évite deux pièges fréquents : la démonstration brillante qui ne débouche sur rien, et la prudence qui laisse chaque direction tester de son côté.
@@ -491,17 +499,7 @@ export default function FormationIAComexPage() {
           </div>
 
           {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La session en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="La session en six lignes" items={EN_BREF} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -524,26 +522,15 @@ export default function FormationIAComexPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi commencer le déploiement IA par le comité exécutif ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Les décisions qui conditionnent tout le reste se prennent au comité : quelles données peuvent aller dans quels outils, quel budget, quelle organisation, quel exemple montrer aux équipes. Une session suffit pour aligner ses membres, et elle épargne des mois d'initiatives éparpillées.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Les décisions qui conditionnent tout le reste se prennent au comité : quelles données peuvent aller dans quels outils, quel budget, quelle organisation, quel exemple montrer aux équipes. Une session suffit pour aligner ses membres, et elle épargne des mois d'initiatives éparpillées." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Nous suivons cet ordre en mission : la session du comité, puis la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> qui forme les équipes par vagues, et enfin les formations par métier qui installent les usages au poste.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par raison, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -561,21 +548,10 @@ export default function FormationIAComexPage() {
             Comment se déroule une formation IA pour comité exécutif ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>La session suit cinq temps : un cadrage avec la direction générale, un état des lieux sans jargon illustré par des démonstrations, des cas tirés de votre secteur, des arbitrages pris un à un, puis la feuille de route qui engage la suite. Le devis arrive le lendemain du cadrage.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="La session suit cinq temps : un cadrage avec la direction générale, un état des lieux sans jargon illustré par des démonstrations, des cas tirés de votre secteur, des arbitrages pris un à un, puis la feuille de route qui engage la suite. Le devis arrive le lendemain du cadrage." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20 }}>
-            {DEROULE.map(step => (
-              <div key={step.num} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <span style={{ fontSize: 15, color: '#60A5FA', fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Les cinq temps en rangées numérotées */}
+          <Rangees sombre items={DEROULE.map(step => ({ titre: step.title, texte: step.desc }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -587,21 +563,9 @@ export default function FormationIAComexPage() {
             De la session de 3 heures à la journée feuille de route
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le format dépend du temps que le comité peut libérer. La session de 3 heures couvre l'état des lieux et les premiers arbitrages ; la demi-journée ajoute la manipulation des outils ; la journée complète va jusqu'à la feuille de route écrite. Le cadrage aide à choisir.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le format dépend du temps que le comité peut libérer. La session de 3 heures couvre l'état des lieux et les premiers arbitrages ; la demi-journée ajoute la manipulation des outils ; la journée complète va jusqu'à la feuille de route écrite. Le cadrage aide à choisir." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
-            {FORMATS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={FORMATS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -613,21 +577,9 @@ export default function FormationIAComexPage() {
             Six sujets que la session met sur la table du comité
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le cadrage dose six sujets selon vos priorités : l'état des lieux de l'assistant à l'agent, les données et le RGPD, l'AI Act et la gouvernance, l'effet sur les métiers, le choix entre acheter et construire, puis la feuille de route qui transforme le tout en décisions.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Le cadrage dose six sujets selon vos priorités : l'état des lieux de l'assistant à l'agent, les données et le RGPD, l'AI Act et la gouvernance, l'effet sur les métiers, le choix entre acheter et construire, puis la feuille de route qui transforme le tout en décisions." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {THEMES.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={THEMES.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -639,9 +591,7 @@ export default function FormationIAComexPage() {
             COMEX, dirigeants ou managers : quel programme choisir ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Trois programmes se partagent le niveau direction. La formation IA COMEX aligne un comité entier en session collective ; la formation IA dirigeants outille un dirigeant et ses proches collaborateurs pour décider ; la formation IA management prépare les managers à encadrer des équipes qui utilisent l'IA. Le cadrage oriente vers la bonne porte.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Trois programmes se partagent le niveau direction. La formation IA COMEX aligne un comité entier en session collective ; la formation IA dirigeants outille un dirigeant et ses proches collaborateurs pour décider ; la formation IA management prépare les managers à encadrer des équipes qui utilisent l'IA. Le cadrage oriente vers la bonne porte." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #E5E7EB', borderRadius: 16, background: '#fff' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -680,8 +630,18 @@ export default function FormationIAComexPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Dès 1 980 € HT pour 3 heures, dès 3 960 € HT pour la journée
               </h2>
+              {/* Paragraphes courts : prix, puis financement, puis étranger et liens */}
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le prix couvre le comité entier, jusqu'à douze membres, avec l'animation et les supports. Trois heures ou une demi-journée démarrent à 1 980 € HT ; la journée complète, qui va jusqu'à la feuille de route écrite, à 3 960 € HT.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Si le contenu se construit sur les dossiers du comité, la préparation s'ajoute et figure au devis. Un programme étalé sur deux jours compte deux journées.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Les formats montés en action de formation (objectifs, feuille d'émargement, évaluation) sont couverts par notre certification Qualiopi, et l'opérateur de compétences de votre branche décide de leur financement selon ses propres règles. Une conférence sans évaluation se paie en général sur le budget de fonctionnement de l'entreprise, et nous le précisons dès le cadrage.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le prix couvre le comité entier, jusqu'à douze membres, avec l'animation et les supports. Trois heures ou une demi-journée démarrent à 1 980 € HT ; la journée complète, qui va jusqu'à la feuille de route écrite, à 3 960 € HT. Si le contenu se construit sur les dossiers du comité, la préparation s'ajoute et figure au devis. Un programme étalé sur deux jours compte deux journées. Les formats montés en action de formation (objectifs, feuille d'émargement, évaluation) sont couverts par notre certification Qualiopi, et l'opérateur de compétences de votre branche décide de leur financement selon ses propres règles. Une conférence sans évaluation se paie en général sur le budget de fonctionnement de l'entreprise, et nous le précisons dès le cadrage. Un comité installé à Genève ou à Bruxelles ne dépend d'aucun OPCO ; son devis est libellé en euros, HT. Pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> suffit, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> recense chaque dispositif.
+                Un comité installé à Genève ou à Bruxelles ne dépend d'aucun OPCO ; son devis est libellé en euros, HT. Pour trouver votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> suffit, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> recense chaque dispositif.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -708,9 +668,7 @@ export default function FormationIAComexPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Deux équipes de direction formées en 2026
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une session de comité prend tout son sens quand elle ouvre un déploiement. Les deux exemples ci-dessous, anonymisés, sont racontés en entier dans nos études de cas.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Une session de comité prend tout son sens quand elle ouvre un déploiement. Les deux exemples ci-dessous, anonymisés, sont racontés en entier dans nos études de cas." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: 20 }}>
             {CAS.map(cas => (
               <div key={cas.href} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
@@ -718,7 +676,9 @@ export default function FormationIAComexPage() {
                   <IconTile icon={cas.icon} />
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.35 }}>{cas.secteur}</div>
                 </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{cas.texte}</p>
+                <div style={{ flex: 1, marginBottom: 14 }}>
+                  <Paras texte={cas.texte} max={2} budget={300} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }} />
+                </div>
                 <Link to={cas.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   {cas.lien}
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -738,8 +698,11 @@ export default function FormationIAComexPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Un intervenant senior en salle, choisi pour votre comité
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Qui sera devant votre comité ? Mathias Nizan, à l'origine du cabinet lyonnais en 2022, ou l'un des formateurs seniors du réseau, des indépendants habitués aux comités de direction. Le choix dépend de votre secteur, de la langue et de la date, et vous connaissez le profil retenu avant de signer.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Qui sera devant votre comité ? Mathias Nizan, à l'origine du cabinet lyonnais en 2022, ou l'un des formateurs seniors du réseau, des indépendants habitués aux comités de direction. Le choix dépend de votre secteur, de la langue et de la date, et vous connaissez le profil retenu avant de signer. Le cabinet ne revend ni licence ni abonnement, ce qui laisse le comité libre de ses choix d'outils. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> complètent le portrait.
+                Le cabinet ne revend ni licence ni abonnement, ce qui laisse le comité libre de ses choix d'outils. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> complètent le portrait.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation IA Qualiopi » (slug /formation-ia-qualiopi).
@@ -65,14 +66,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -315,7 +308,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -412,9 +407,15 @@ export default function QualiopiPage() {
             Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui conçoit les parcours du catalogue · actualisé le 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA Qualiopi est dispensée par un organisme dont un auditeur a validé les méthodes au regard du référentiel national qualité, ce qui permet de <strong style={{ color: '#fff', fontWeight: 700 }}>la présenter à votre OPCO pour une prise en charge</strong>. Masteria est certifié sur la catégorie « actions de formation » : ses programmes IA, par métier, par outil ou par thème, entrent tous dans ce cadre et sont facturés à partir de 1 980 € HT le jour de session.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, la suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Une formation IA Qualiopi est dispensée par un organisme dont un auditeur a validé les méthodes au regard du référentiel national qualité, ce qui permet de <strong style={{ color: '#fff', fontWeight: 700 }}>la présenter à votre OPCO pour une prise en charge</strong>.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              "Masteria est certifié sur la catégorie « actions de formation » : ses programmes IA, par métier, par outil ou par thème, entrent tous dans ce cadre et sont facturés à partir de 1 980 € HT le jour de session.",
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Vous trouverez plus bas ce que Qualiopi garantit, ce qu'elle laisse de côté (le CPF, un taux de financement), les preuves de notre certification et le chemin vers le programme qui convient à votre équipe. Le dossier OPCO se prépare avec nous, avant le premier jour de formation.
@@ -439,17 +440,7 @@ export default function QualiopiPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="En bref" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -462,23 +453,14 @@ export default function QualiopiPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que garantit une formation IA certifiée Qualiopi ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Qualiopi atteste qu'un organisme respecte le référentiel national qualité, sept critères vérifiés par un certificateur accrédité. C'est la condition pour que votre OPCO examine une demande de prise en charge. La certification n'ouvre pas le CPF et ne fixe aucun taux de financement. Chez Masteria, chaque programme, par métier, par outil ou sur mesure, entre dans ce cadre.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Qualiopi atteste qu'un organisme respecte le référentiel national qualité, sept critères vérifiés par un certificateur accrédité. C'est la condition pour que votre OPCO examine une demande de prise en charge. La certification n'ouvre pas le CPF et ne fixe aucun taux de financement. Chez Masteria, chaque programme, par métier, par outil ou sur mesure, entre dans ce cadre." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Le montage financier est détaillé dans notre guide <Link to="/financement-formation-ia" style={aStyle}>financer une formation IA</Link> ; pour connaître votre opérateur, l'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> le retrouve à partir de votre secteur.
               </p>
             </div>
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {MISSIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
+              <Rangees items={MISSIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -491,17 +473,8 @@ export default function QualiopiPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Ce que vous gagnez à choisir un organisme IA certifié Qualiopi
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un dossier OPCO préparé avec vous jusqu'au dépôt, un prix journalier unique, des programmes construits sur les cas de vos équipes, un organisme dont l'IA est le seul sujet depuis 2022, une certification que vous pouvez contrôler vous-même, et des limites dites avant le devis.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {ATOUTS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Un dossier OPCO préparé avec vous jusqu'au dépôt, un prix journalier unique, des programmes construits sur les cas de vos équipes, un organisme dont l'IA est le seul sujet depuis 2022, une certification que vous pouvez contrôler vous-même, et des limites dites avant le devis." />
+          <Rangees items={ATOUTS.map(item => ({ titre: item.title, texte: item.desc }))} style={{ maxWidth: 880, marginTop: 12 }} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Qualiopi garantit un processus ; l'effet sur les pratiques dépend d'autre chose. Une formation change le travail quand elle s'appuie sur les dossiers des participants et quand l'usage est suivi après la session. C'est pourquoi chaque formation Masteria prévoit une évaluation à froid quelques semaines plus tard.
           </p>
@@ -517,9 +490,7 @@ export default function QualiopiPage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Comment se déroule une formation IA Qualiopi chez Masteria ?
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Avant la formation, votre besoin devient un devis sous 24 heures, puis un dossier déposé auprès de votre OPCO. Pendant et après, la session se déroule sur vos dossiers avec le cadre qualité tenu, les preuves de réalisation déclenchent le règlement, et une évaluation à froid mesure ce qui reste.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Avant la formation, votre besoin devient un devis sous 24 heures, puis un dossier déposé auprès de votre OPCO. Pendant et après, la session se déroule sur vos dossiers avec le cadre qualité tenu, les preuves de réalisation déclenchent le règlement, et une évaluation à froid mesure ce qui reste." />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
             {PROGRAMME.map(j => <DayBlock key={j.jour} {...j} isDesktop={isDesktop} />)}
           </div>
@@ -534,23 +505,8 @@ export default function QualiopiPage() {
         <div style={wrap}>
           <Kicker>Pour qui</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>À qui cette page est-elle utile ?</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>À toute personne qui doit financer et sécuriser une formation IA : responsables formation et RH, dirigeants de PME et de TPE, managers qui portent un projet pour leur équipe, acheteurs de grands comptes qui contrôlent d'abord la certification et l'identité légale. Elle réunit la preuve, le prix, la méthode et le catalogue.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20, marginTop: 12 }}>
-            {PROFILS.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="À toute personne qui doit financer et sécuriser une formation IA : responsables formation et RH, dirigeants de PME et de TPE, managers qui portent un projet pour leur équipe, acheteurs de grands comptes qui contrôlent d'abord la certification et l'identité légale. Elle réunit la preuve, le prix, la méthode et le catalogue." />
+          <Rangees items={PROFILS.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
         </div>
       </section>
 
@@ -566,8 +522,15 @@ export default function QualiopiPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Ce que nous ne vous promettons pas, et pourquoi
               </h2>
+              {/* Paragraphes courts : l'annonce, les trois promesses, ce que nous tenons */}
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Trois promesses circulent chez certains organismes, et vous ne les lirez pas ici.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Une prise en charge totale garantie : seul votre OPCO décide, selon ses règles et ses fonds. Une éligibilité au CPF : aucune de nos sessions n'est inscrite au RNCP, et nous le disons dès le premier échange. Une formation « certifiante » : vous recevez une attestation et un certificat de réalisation, et aucun titre professionnel n'est délivré.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Trois promesses circulent chez certains organismes, et vous ne les lirez pas ici. Une prise en charge totale garantie : seul votre OPCO décide, selon ses règles et ses fonds. Une éligibilité au CPF : aucune de nos sessions n'est inscrite au RNCP, et nous le disons dès le premier échange. Une formation « certifiante » : vous recevez une attestation et un certificat de réalisation, et aucun titre professionnel n'est délivré. Nous tenons en revanche la certification vérifiable, la conformité du dossier, l'identité légale complète sur chaque document et une formation construite sur vos dossiers. Pour encadrer les usages qui suivront, voyez notre modèle de <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
+                Nous tenons en revanche la certification vérifiable, la conformité du dossier, l'identité légale complète sur chaque document et une formation construite sur vos dossiers. Pour encadrer les usages qui suivront, voyez notre modèle de <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Prise en charge : à demander, jamais promise', 'CPF : exclu, et dit avant le devis', 'Attestation et certificat de réalisation, sans titre RNCP', 'Identité légale et certificat sur chaque document'].map(pt => (
@@ -586,29 +549,15 @@ export default function QualiopiPage() {
         <div style={wrap}>
           <Kicker>Prix et prise en charge</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Ce que coûte une formation IA Qualiopi chez Masteria, et qui peut la payer</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Une journée de session démarre à 1 980 € HT, pour un groupe intra de douze stagiaires tout au plus ou en individuel ; deux journées, à 3 960 € HT. Votre OPCO peut la financer selon ses règles et dans la limite de ses fonds ; le dossier se prépare avec nous, et vous avez le devis dans les 24 heures.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <GraduationCap size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce que le prix inclut</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                L'analyse du besoin, l'animation dans vos locaux ou en visioconférence, les supports remis, les livrables (prompts, modèles de documents, cadre d'usage), le questionnaire des acquis, le certificat de réalisation et toutes les pièces du dossier OPCO. Au-delà de Lyon, les frais de déplacement du formateur, depuis sa ville, s'ajoutent au réel.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Le rôle de votre OPCO</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Pour ce plan de formation, les fonds mutualisés des OPCO vont en règle générale aux employeurs de moins de 50 salariés ; pour les effectifs plus importants, tout dépend des accords de votre branche et des versements volontaires. Retrouvez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et le détail des dispositifs dans <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. À Genève et à Bruxelles, où rien n'équivaut à un OPCO, nos devis sont libellés en euros HT. Le CPF reste exclu.
-              </p>
-            </div>
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Une journée de session démarre à 1 980 € HT, pour un groupe intra de douze stagiaires tout au plus ou en individuel ; deux journées, à 3 960 € HT. Votre OPCO peut la financer selon ses règles et dans la limite de ses fonds ; le dossier se prépare avec nous, et vous avez le devis dans les 24 heures." />
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880, marginTop: 12 }} items={[
+            { titre: 'Ce que le prix inclut', icon: GraduationCap, texte: "L'analyse du besoin, l'animation dans vos locaux ou en visioconférence, les supports remis, les livrables (prompts, modèles de documents, cadre d'usage), le questionnaire des acquis, le certificat de réalisation et toutes les pièces du dossier OPCO. Au-delà de Lyon, les frais de déplacement du formateur, depuis sa ville, s'ajoutent au réel." },
+            { titre: 'Le rôle de votre OPCO', icon: Landmark, texte: <>
+              Pour ce plan de formation, les fonds mutualisés des OPCO vont en règle générale aux employeurs de moins de 50 salariés ; pour les effectifs plus importants, tout dépend des accords de votre branche et des versements volontaires.
+              <span style={{ display: 'block', marginTop: 12 }}>Retrouvez votre opérateur avec <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> et le détail des dispositifs dans <Link to="/financement-formation-ia" style={aStyle}>financer sa formation IA</Link>. À Genève et à Bruxelles, où rien n'équivaut à un OPCO, nos devis sont libellés en euros HT. Le CPF reste exclu.</span>
+            </> },
+          ]} />
         </div>
       </section>
 

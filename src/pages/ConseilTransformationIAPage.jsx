@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { CADRAGE_HREF, CADRAGE_LABEL } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees } from '../components/Aere'
 
 /*
  * Page pilier « conseil en transformation IA » (slug /conseil-transformation-ia),
@@ -62,14 +63,6 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
-}
-
 const HERO_BADGES = [
   { icon: Compass, label: "Un seul métier : l'IA, depuis 2022" },
   { icon: Workflow, label: 'Processus, rôles, pilotage' },
@@ -79,13 +72,14 @@ const HERO_BADGES = [
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
+/* En repères : valeur en gras, détail dessous ; la coupe suit le sens (jamais au milieu d'une énumération) */
 const EN_BREF = [
-  { label: 'Mission', value: "Réorganiser le travail autour de ce que l'IA produit : processus reconçus, rôles redéfinis, programme suivi vague après vague" },
-  { label: 'Livrables', value: "Lecture de l'organisation actuelle, modèle opérationnel cible, liste des cas à traiter, plan par vagues, règles de pilotage, tableau de mesure" },
-  { label: 'Rythme', value: "Quelques semaines pour cadrer, puis des cycles trimestriels ; un premier résultat mesuré avant la fin du premier" },
-  { label: 'Périmètre', value: "La stratégie choisit la destination, l'accompagnement assure la présence ; cette mission fait bouger l'organisation elle-même" },
-  { label: 'Prix', value: "Un forfait par phase, établi une fois le cadrage terminé ; seule la formation associée peut être financée par votre OPCO" },
-  { label: 'Qui', value: "Mathias Nizan, qui a créé le cabinet à Lyon en 2022, entouré d'indépendants (conseil, développement, formation) choisis pour votre programme" },
+  { label: 'Mission', value: "Réorganiser le travail autour de ce que l'IA produit", detail: "Processus reconçus, rôles redéfinis, programme suivi vague après vague" },
+  { label: 'Livrables', liste: ["Lecture de l'organisation actuelle", 'Modèle opérationnel cible', 'Liste des cas à traiter', 'Plan par vagues', 'Règles de pilotage', 'Tableau de mesure'] },
+  { label: 'Rythme', value: "Quelques semaines pour cadrer, puis des cycles trimestriels", detail: "Un premier résultat mesuré avant la fin du premier" },
+  { label: 'Périmètre', value: "La stratégie choisit la destination, l'accompagnement assure la présence", detail: "Cette mission fait bouger l'organisation elle-même" },
+  { label: 'Prix', value: "Un forfait par phase", detail: "Établi une fois le cadrage terminé ; seule la formation associée peut être financée par votre OPCO" },
+  { label: 'Qui', value: "Mathias Nizan", detail: "Qui a créé le cabinet à Lyon en 2022, entouré d'indépendants (conseil, développement, formation) choisis pour votre programme" },
 ]
 
 /* ───────── Prestations (5 cartes) ───────── */
@@ -337,7 +331,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -407,9 +403,23 @@ export default function ConseilTransformationIAPage() {
             Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote nos programmes de transformation · revu le 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le conseil en transformation IA aide une entreprise à réorganiser son travail une fois que l'intelligence artificielle en assure une part : <strong style={{ color: '#fff', fontWeight: 700 }}>processus reconçus, rôles redéfinis, programme piloté et mesuré</strong>. Masteria mène ce travail avec les dirigeants et les équipes métier, puis construit les outils que la nouvelle organisation réclame.
-          </p>
+          {/* Réponse directe : accroche, l'énumération en liste, la phrase suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Le conseil en transformation IA aide une entreprise à réorganiser son travail une fois que l'intelligence artificielle en assure une part :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 22px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+              {['Processus reconçus', 'Rôles redéfinis', 'Programme piloté et mesuré'].map(it => (
+                <li key={it} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5 }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <strong style={{ color: '#fff', fontWeight: 700 }}>{it}</strong>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px', maxWidth: 760 }} phrases={[
+              'Masteria mène ce travail avec les dirigeants et les équipes métier, puis construit les outils que la nouvelle organisation réclame.',
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Déployer un assistant ne transforme rien tant que les processus, les rôles et le pilotage restent identiques. Notre travail porte sur ces trois dimensions de l'organisation. Le choix du cap relève de la stratégie, et la présence au fil du déploiement, de l'accompagnement ; ici, les équipes changent leur façon de produire.
@@ -434,17 +444,7 @@ export default function ConseilTransformationIAPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La mission en six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="La mission en six lignes" items={EN_BREF} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -457,25 +457,16 @@ export default function ConseilTransformationIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que couvre une mission de conseil en transformation IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Cinq chantiers, menés dans cet ordre : lire l'organisation actuelle, redessiner les processus avec l'IA, décrire le modèle opérationnel cible, installer le pilotage du programme, conduire le changement et le mesurer. Chacun produit un livrable et désigne un responsable chez vous.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Cinq chantiers, menés dans cet ordre : lire l'organisation actuelle, redessiner les processus avec l'IA, décrire le modèle opérationnel cible, installer le pilotage du programme, conduire le changement et le mesurer. Chacun produit un livrable et désigne un responsable chez vous." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 La destination se choisit en amont avec notre <Link to="/conseil-strategie-ia" style={aStyle}>conseil en stratégie IA</Link> ; la présence au fil du déploiement relève de notre <Link to="/accompagnement-ia" style={aStyle}>accompagnement IA</Link>. Sur cette page, il s'agit de la façon dont vos équipes travaillent.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {PRESTATIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
+              {/* Les cinq chantiers en rangées pleine largeur, la carte « hors champ » dessous */}
+              <Rangees items={PRESTATIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              <div style={{ marginTop: 24 }}>
                 <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
                   <div style={{ marginBottom: 14 }}>
                     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -505,9 +496,7 @@ export default function ConseilTransformationIAPage() {
             Transformation digitale classique ou transformation IA : quelle différence ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>La transformation digitale installait un logiciel puis organisait son adoption. La transformation IA part d'usages déjà présents dans les équipes, souvent hors de tout cadre, et change la nature du travail : les personnes relisent et supervisent ce que l'IA rédige ou calcule. Les méthodes de programme conçues pour déployer des logiciels s'y appliquent mal.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="La transformation digitale installait un logiciel puis organisait son adoption. La transformation IA part d'usages déjà présents dans les équipes, souvent hors de tout cadre, et change la nature du travail : les personnes relisent et supervisent ce que l'IA rédige ou calcule. Les méthodes de programme conçues pour déployer des logiciels s'y appliquent mal." />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif entre transformation digitale classique et transformation IA" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
@@ -543,9 +532,7 @@ export default function ConseilTransformationIAPage() {
             Comment se déroule une transformation IA avec Masteria ?
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Quelques semaines pour lire l'organisation et décrire la cible, puis des vagues trimestrielles. La première reconçoit deux à quatre processus avec des équipes formées et mesure un premier gain avant sa fin ; les suivantes étendent le périmètre, et notre présence se réduit à mesure que votre pilotage tient seul.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Quelques semaines pour lire l'organisation et décrire la cible, puis des vagues trimestrielles. La première reconçoit deux à quatre processus avec des équipes formées et mesure un premier gain avant sa fin ; les suivantes étendent le périmètre, et notre présence se réduit à mesure que votre pilotage tient seul." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -562,8 +549,11 @@ export default function ConseilTransformationIAPage() {
               </div>
             ))}
           </div>
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Ce calendrier donne un ordre d'idée et n'engage pas : une PME tient souvent la lecture et la première vague dans un même trimestre, un groupe échelonne les vagues direction par direction. Le rythme se décide au cadrage. Pour relier le temps gagné à un résultat chiffré, nous suivons la méthode décrite sur notre page <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link>.
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 12px' }}>
+            Ce calendrier donne un ordre d'idée et n'engage pas : une PME tient souvent la lecture et la première vague dans un même trimestre, un groupe échelonne les vagues direction par direction. Le rythme se décide au cadrage.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
+            Pour relier le temps gagné à un résultat chiffré, nous suivons la méthode décrite sur notre page <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link>.
           </p>
         </div>
       </section>
@@ -575,17 +565,8 @@ export default function ConseilTransformationIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cinq erreurs font échouer la plupart des transformations IA
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Commencer par l'outil, confier le programme à la DSI seule, viser trois ans sans résultat la première année, oublier les rôles, compter les connexions au lieu du travail rendu. Aucune ne tient au budget ; toutes tiennent à l'ordre dans lequel on fait les choses.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Commencer par l'outil, confier le programme à la DSI seule, viser trois ans sans résultat la première année, oublier les rôles, compter les connexions au lieu du travail rendu. Aucune ne tient au budget ; toutes tiennent à l'ordre dans lequel on fait les choses." />
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -612,7 +593,9 @@ export default function ConseilTransformationIAPage() {
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
                   <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <div style={{ flex: 1 }}>
+                  <Paras texte={text} max={2} budget={300} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                </div>
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   Suivre ce cas sur la page dédiée
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -632,27 +615,12 @@ export default function ConseilTransformationIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi un cabinet IA plutôt qu'un cabinet de transformation généraliste ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px', background: '#fff' }}>
-                <strong>Parce qu'une transformation IA se décide au niveau du détail : la qualité de ce qu'un modèle rédige, la part d'un processus qu'on peut lui confier, le contrôle humain qui reste nécessaire. Un cabinet consacré à l'IA, qui fabrique aussi les outils et assure la formation, maîtrise ce détail ; un généraliste maîtrise le programme d'ensemble.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px', background: '#fff' }} texte="Parce qu'une transformation IA se décide au niveau du détail : la qualité de ce qu'un modèle rédige, la part d'un processus qu'on peut lui confier, le contrôle humain qui reste nécessaire. Un cabinet consacré à l'IA, qui fabrique aussi les outils et assure la formation, maîtrise ce détail ; un généraliste maîtrise le programme d'ensemble." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Les deux se combinent volontiers : votre cabinet habituel conduit le programme d'entreprise, Masteria prend le chantier IA. Nos <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> décrivent ce partage en situation.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {WHY.map(card => {
-                const Icon = card.icon
-                return (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                      <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                      <h3 style={{ ...h3Style, fontSize: 15.5 }}>{card.title}</h3>
-                    </div>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                )
-              })}
-            </div>
+            <Rangees items={WHY.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
           </div>
         </div>
       </section>
@@ -669,8 +637,11 @@ export default function ConseilTransformationIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 La transformation tient quand chacun est formé sur ses propres dossiers
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Chaque vague prévoit la formation des managers, puis des équipes touchées, sur les processus reconçus et leurs documents habituels. Ce volet constitue une action de formation au sens de Qualiopi, certification que détient Masteria : votre OPCO peut donc le prendre en charge, à hauteur de ce que permettent ses critères et son budget annuel.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Chaque vague prévoit la formation des managers, puis des équipes touchées, sur les processus reconçus et leurs documents habituels. Ce volet constitue une action de formation au sens de Qualiopi, certification que détient Masteria : votre OPCO peut donc le prendre en charge, à hauteur de ce que permettent ses critères et son budget annuel. Les journées de conseil et le développement des outils se paient hors de ce circuit. Pour ouvrir le programme devant toute l'entreprise, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> sert souvent de point de départ.
+                Les journées de conseil et le développement des outils se paient hors de ce circuit. Pour ouvrir le programme devant toute l'entreprise, la démarche d'<Link to="/acculturation-ia" style={aStyle}>acculturation IA</Link> sert souvent de point de départ.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Les managers passent avant leurs équipes', 'Des ateliers sur les processus redessinés', 'Un référent interne dans chaque direction', 'Journée intra facturée dès 1 980 € HT'].map(pt => (
@@ -797,8 +768,11 @@ export default function ConseilTransformationIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Un pilote unique, des spécialistes réunis vague par vague
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              En 2022, à Lyon, Mathias Nizan crée Masteria avec une spécialité unique, l'intelligence artificielle. Il tient le pilotage de chaque transformation du premier comité au dernier. Autour de lui, les consultants (une dizaine), les développeurs (cinq environ) et les formateurs (une vingtaine) sont des indépendants, appelés selon la vague en cours.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              En 2022, à Lyon, Mathias Nizan crée Masteria avec une spécialité unique, l'intelligence artificielle. Il tient le pilotage de chaque transformation du premier comité au dernier. Autour de lui, les consultants (une dizaine), les développeurs (cinq environ) et les formateurs (une vingtaine) sont des indépendants, appelés selon la vague en cours. Masteria ne revend aucune licence : l'outil retenu découle du processus reconçu. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> donnent des exemples datés ; la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link> recense les articles qui parlent du cabinet.
+              Masteria ne revend aucune licence : l'outil retenu découle du processus reconçu. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> donnent des exemples datés ; la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link> recense les articles qui parlent du cabinet.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

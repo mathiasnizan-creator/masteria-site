@@ -10,6 +10,7 @@ import { PressMention } from '../components/FounderNote'
 import { CADRAGE_COURT } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page de l'offre d'entrée « Diagnostic IA » (slug /diagnostic-ia). Objectif :
@@ -59,14 +60,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -388,7 +381,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -467,15 +462,23 @@ export default function DiagnosticIAPage() {
           {/* GEO : définition autonome, citable hors contexte */}
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: '0 0 10px' }}>
+              Un diagnostic IA est une intervention courte et ciblée qui fait le point sur la place que l'IA peut prendre dans votre organisation : travail qu'elle peut reprendre, cas d'usage rangés par intérêt et par difficulté, feuille de route chiffrée.
+            </p>
             <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Un diagnostic IA est une intervention courte et ciblée qui fait le point sur la place que l'IA peut prendre dans votre organisation : travail qu'elle peut reprendre, cas d'usage rangés par intérêt et par difficulté, feuille de route chiffrée. Plus bref que l'audit IA, il repose, à la différence d'un test de maturité en ligne, sur le travail d'un consultant avec vos équipes et sur vos dossiers.
+              Plus bref que l'audit IA, il repose, à la différence d'un test de maturité en ligne, sur le travail d'un consultant avec vos équipes et sur vos dossiers.
             </p>
           </div>
 
-          {/* GEO : réponse directe citable */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Le Diagnostic IA de Masteria réunit vos équipes sur un format court, dimensionné pendant le cadrage, pour repérer le travail que l'IA peut reprendre et ordonner les cas d'usage en pesant valeur et effort. Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>document écrit</strong> : une feuille de route classée, des fourchettes de budget et de délai, des gains rapides à engager, et aucune obligation de suite.
-          </p>
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Le Diagnostic IA de Masteria réunit vos équipes sur un format court, dimensionné pendant le cadrage, pour repérer le travail que l'IA peut reprendre et ordonner les cas d'usage en pesant valeur et effort.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              <>Vous repartez avec un <strong style={{ color: '#fff', fontWeight: 700 }}>document écrit</strong> : une feuille de route classée, des fourchettes de budget et de délai, des gains rapides à engager, et aucune obligation de suite.</>,
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             C'est le premier pas le moins risqué vers l'IA. Au lieu de lancer un projet sur une intuition, vous savez ce qui mérite d'être fait, dans quel ordre et avec quelle enveloppe. La première étape tient en 30 minutes de cadrage, offertes, au terme desquelles la durée et le forfait du diagnostic sont arrêtés d'un commun accord.
@@ -505,17 +508,7 @@ export default function DiagnosticIAPage() {
           </div>
 
           {/* En bref, synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'offre en huit lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre titre="L'offre en huit lignes" items={lignesEnReperes(EN_BREF)} colonnes={4} style={{ margin: 0, maxWidth: 1140 }} />
         </div>
       </section>
 
@@ -528,26 +521,21 @@ export default function DiagnosticIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Qu'est-ce que le Diagnostic IA de Masteria ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Intervention courte dimensionnée selon votre périmètre, le Diagnostic IA pose vos enjeux, passe en revue vos processus et ordonne les cas d'usage en pesant intérêt et difficulté. Un consultant spécialisé la conduit ; une intuition diffuse en ressort sous forme de trajectoire claire, sans engager de projet à ce stade.</strong>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Intervention courte dimensionnée selon votre périmètre, le Diagnostic IA pose vos enjeux, passe en revue vos processus et ordonne les cas d'usage en pesant intérêt et difficulté. Un consultant spécialisé la conduit ; une intuition diffuse en ressort sous forme de trajectoire claire, sans engager de projet à ce stade." />
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px' }}>
+                Beaucoup de dirigeants pressentent que l'IA peut les aider sans savoir par où commencer ni ce que cela coûtera. Le diagnostic tranche cette question avant tout engagement lourd.
+              </p>
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px' }}>
+                Il examine les processus, sans prétendre noter l'organisation entière : ce que vos équipes font chaque semaine, et ce que l'IA pourrait en reprendre. Quatre angles le composent.
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Beaucoup de dirigeants pressentent que l'IA peut les aider sans savoir par où commencer ni ce que cela coûtera. Le diagnostic tranche cette question avant tout engagement lourd. Il examine les processus, sans prétendre noter l'organisation entière : ce que vos équipes font chaque semaine, et ce que l'IA pourrait en reprendre. Quatre angles le composent. Pour une première idée de votre profil avant le cadrage, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> tient en huit questions, sans compte ni adresse mail.
+                Pour une première idée de votre profil avant le cadrage, notre <Link to="/test-maturite-ia" style={{ color: c, fontWeight: 600 }}>test de maturité IA</Link> tient en huit questions, sans compte ni adresse mail.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {COUVERTURE.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Les quatre angles, une rangée chacun (plus de cartes côte à côte) */}
+              <Rangees items={COUVERTURE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Le diagnostic ouvre souvent une démarche plus large de <Link to="/conseil-strategie-ia" style={aStyle}>conseil stratégie IA</Link>. Quand un cas est mûr, il débouche sur le <Link to="/agence-developpement-ia" style={aStyle}>développement d'un outil sur mesure</Link>.
               </p>
@@ -568,9 +556,7 @@ export default function DiagnosticIAPage() {
             Diagnostic, audit ou POC : quelle différence ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Diagnostic IA, audit IA et POC répondent à trois besoins différents. Le diagnostic classe vos usages possibles, sur un format court. L'audit dresse un constat complet sur la maturité et les données de l'entreprise. Le POC éprouve un cas précis sur un flux de travail existant. Pour un premier pas, le diagnostic est l'entrée la plus rapide et la plus légère.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Diagnostic IA, audit IA et POC répondent à trois besoins différents. Le diagnostic classe vos usages possibles, sur un format court. L'audit dresse un constat complet sur la maturité et les données de l'entreprise. Le POC éprouve un cas précis sur un flux de travail existant. Pour un premier pas, le diagnostic est l'entrée la plus rapide et la plus légère." />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif entre diagnostic IA, audit IA complet et POC" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -610,25 +596,13 @@ export default function DiagnosticIAPage() {
             Vous repartez avec un document de décision
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le diagnostic se conclut par un document écrit : la feuille de route de vos cas d'usage IA, des fourchettes de budget et de délai pour les cas prioritaires, une liste de gains rapides et les points de vigilance à traiter. Votre direction peut s'en servir en interne, avec ou sans suite.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Le diagnostic se conclut par un document écrit : la feuille de route de vos cas d'usage IA, des fourchettes de budget et de délai pour les cas prioritaires, une liste de gains rapides et les points de vigilance à traiter. Votre direction peut s'en servir en interne, avec ou sans suite." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Le diagnostic va bien au-delà d'une réunion : il laisse un écrit que vous conservez. Quatre parties le composent.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {LIVRABLE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={LIVRABLE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -640,24 +614,9 @@ export default function DiagnosticIAPage() {
             À qui s'adresse le diagnostic ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le diagnostic sert les décideurs qui doivent arbitrer sur l'IA : direction générale pour la lecture d'ensemble, DSI pour la faisabilité, directions métier pour changer une intuition en plan d'action. Les personnes qui font tourner les processus y participent aux côtés de la direction.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Le diagnostic sert les décideurs qui doivent arbitrer sur l'IA : direction générale pour la lecture d'ensemble, DSI pour la faisabilité, directions métier pour changer une intuition en plan d'action. Les personnes qui font tourner les processus y participent aux côtés de la direction." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {POUR_QUI.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Rangees items={POUR_QUI.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
         </div>
       </section>
 
@@ -669,9 +628,7 @@ export default function DiagnosticIAPage() {
             Comment se déroule le diagnostic ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Trois temps se succèdent. Avant : le cadrage offert, puis la collecte des éléments utiles. Pendant : des séances de travail avec vos équipes, sur la durée arrêtée au cadrage. Après : la rédaction et la restitution du livrable. Aucune séance ne se perd en mise en contexte.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Trois temps se succèdent. Avant : le cadrage offert, puis la collecte des éléments utiles. Pendant : des séances de travail avec vos équipes, sur la durée arrêtée au cadrage. Après : la rédaction et la restitution du livrable. Aucune séance ne se perd en mise en contexte." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -705,21 +662,9 @@ export default function DiagnosticIAPage() {
             Que permet le diagnostic une fois livré ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le diagnostic prépare le passage au projet : le cas prioritaire est déjà cadré, prêt pour un prototype. Il vous donne aussi un dossier pour arbitrer en interne et une vue de la suite au-delà du premier cas. Vous avancez sur des faits établis.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Le diagnostic prépare le passage au projet : le cas prioritaire est déjà cadré, prêt pour un prototype. Il vous donne aussi un dossier pour arbitrer en interne et une vue de la suite au-delà du premier cas. Vous avancez sur des faits établis." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '12px 0 0' }}>
-            {DEBLOQUE.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={DEBLOQUE.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
 
           <div style={{ ...cardStyle, background: '#F9FAFB', borderLeft: `4px solid ${c}`, padding: '20px 24px', marginTop: 32 }}>
             <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
@@ -782,7 +727,9 @@ export default function DiagnosticIAPage() {
                   </span>
                   <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <div style={{ flex: 1 }}>
+                  <Paras texte={text} max={2} budget={300} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                </div>
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   Consulter l'étude de cas
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -908,8 +855,14 @@ export default function DiagnosticIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Un consultant spécialisé en IA, choisi pour votre secteur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Mathias Nizan a fondé Masteria pour ne traiter qu'un sujet, l'intelligence artificielle ; le cabinet est lyonnais et date de 2022. Il cadre chaque diagnostic et confie les séances, selon votre secteur et votre langue de travail, à lui-même ou à un consultant indépendant parmi la dizaine qui l'entourent.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Si la suite demande un outil, environ cinq développeurs prennent le relais ; si elle demande de la formation, une vingtaine de formateurs. Le cabinet ne touche rien d'aucun éditeur : la feuille de route nomme l'outil qui vous convient.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Mathias Nizan a fondé Masteria pour ne traiter qu'un sujet, l'intelligence artificielle ; le cabinet est lyonnais et date de 2022. Il cadre chaque diagnostic et confie les séances, selon votre secteur et votre langue de travail, à lui-même ou à un consultant indépendant parmi la dizaine qui l'entourent. Si la suite demande un outil, environ cinq développeurs prennent le relais ; si elle demande de la formation, une vingtaine de formateurs. Le cabinet ne touche rien d'aucun éditeur : la feuille de route nomme l'outil qui vous convient. Exemples datés dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, articles dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link>.
+              Exemples datés dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, articles dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>page presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

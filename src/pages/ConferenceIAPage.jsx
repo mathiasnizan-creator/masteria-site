@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees } from '../components/Aere'
 
 /*
  * Money page « conférence IA » (slug /conference-ia), côté FORMATION.
@@ -68,13 +69,14 @@ const HERO_BADGES = [
 
 /* ───────── En bref (synthèse citable, GEO) ───────── */
 
+/* En repères : valeur en gras, détail dessous ; la coupe suit le sens (jamais au milieu d'une énumération) */
 const EN_BREF = [
-  { label: 'Format', value: "Une intervention de 60 à 120 minutes lors d'une plénière, d'une convention, d'un comité de direction, ou diffusée en ligne pour plusieurs sites" },
-  { label: 'Public', value: "De vingt à plusieurs centaines de personnes : direction, encadrement, équipes de terrain, membres d'un réseau ou d'une fédération" },
-  { label: 'Contenu', value: "L'état des outils en octobre 2026, des démonstrations sur vos documents, les erreurs à surveiller, les règles d'usage, un temps de questions" },
-  { label: 'Outils', value: "Celui que vos équipes utilisent déjà, ou plusieurs assistants côte à côte si le choix reste ouvert ; aucun éditeur ne finance nos interventions" },
-  { label: 'Préparation', value: "Trente minutes de cadrage deux semaines avant, trois à cinq documents anonymisés une semaine avant" },
-  { label: 'Ensuite', value: "Trois usages à essayer dans la semaine, puis des ateliers ou des formations par métier si vous le décidez" },
+  { label: 'Format', value: "Une intervention de 60 à 120 minutes", detail: "Lors d'une plénière, d'une convention, d'un comité de direction, ou diffusée en ligne pour plusieurs sites" },
+  { label: 'Public', value: "De vingt à plusieurs centaines de personnes", detail: "Direction, encadrement, équipes de terrain, membres d'un réseau ou d'une fédération" },
+  { label: 'Contenu', liste: ["L'état des outils en octobre 2026", 'Des démonstrations sur vos documents', 'Les erreurs à surveiller', "Les règles d'usage", 'Un temps de questions'] },
+  { label: 'Outils', value: "Celui que vos équipes utilisent déjà", detail: "Ou plusieurs assistants côte à côte si le choix reste ouvert ; aucun éditeur ne finance nos interventions" },
+  { label: 'Préparation', value: "Trente minutes de cadrage deux semaines avant", detail: "Trois à cinq documents anonymisés une semaine avant" },
+  { label: 'Ensuite', value: "Trois usages à essayer dans la semaine", detail: "Puis des ateliers ou des formations par métier si vous le décidez" },
 ]
 
 /* ───────── Les formats (4 cartes) ───────── */
@@ -341,7 +343,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -419,9 +423,23 @@ export default function ConferenceIAPage() {
           </p>
 
           {/* GEO : réponse directe citable */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une conférence IA montre en 60 à 120 minutes, devant un public nombreux, ce que l'intelligence artificielle générative change au travail : <strong style={{ color: '#fff', fontWeight: 700 }}>les tâches que l'outil réussit, celles qu'il rate, des démonstrations en direct sur vos documents et les règles pour s'en servir</strong>. Elle se tient en plénière, en convention, devant un comité de direction ou en ligne.
-          </p>
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Une conférence IA montre en 60 à 120 minutes, devant un public nombreux, ce que l'intelligence artificielle générative change au travail :
+            </p>
+            {/* L'énumération de l'accroche en liste à coches */}
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 22px', display: 'grid', gap: 8, maxWidth: 740 }}>
+              {["Les tâches que l'outil réussit", "Celles qu'il rate", "Des démonstrations en direct sur vos documents et les règles pour s'en servir"].map(it => (
+                <li key={it} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5 }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <strong style={{ color: '#fff', fontWeight: 700 }}>{it}</strong>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px', maxWidth: 740 }} phrases={[
+              'Elle se tient en plénière, en convention, devant un comité de direction ou en ligne.',
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             La conférence a un rôle précis : réunir tout le monde au même point de départ, le même jour. Réussie, elle dissipe les idées toutes faites, des plus inquiètes aux plus naïves, donne un vocabulaire commun et rend la décision suivante évidente. Ratée, elle laisse le souvenir d'un spectacle et rien sur les postes de travail.
@@ -450,17 +468,7 @@ export default function ConferenceIAPage() {
           </div>
 
           {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="En bref" items={EN_BREF} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -473,25 +481,16 @@ export default function ConferenceIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Quelle conférence IA pour quel public ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Quatre situations reviennent : la plénière où toute l'entreprise est réunie, la séance réservée aux dirigeants, la convention d'un réseau ou d'une fédération, le webinaire qui relie plusieurs sites. La trame ne change pas ; les exemples, la profondeur et le registre s'ajustent à la salle.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Quatre situations reviennent : la plénière où toute l'entreprise est réunie, la séance réservée aux dirigeants, la convention d'un réseau ou d'une fédération, le webinaire qui relie plusieurs sites. La trame ne change pas ; les exemples, la profondeur et le registre s'ajustent à la salle." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Si la salle doit manipuler, le bon format devient l'<Link to="/atelier-intelligence-artificielle" style={aStyle}>atelier intelligence artificielle</Link> ou un <Link to="/formation-sprint-ia" style={aStyle}>Sprint IA de trois heures</Link> ; si le comité doit trancher, la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link>.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {FORMATS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
+              {/* Les quatre formats en rangées pleine largeur, la carte AI Act dessous */}
+              <Rangees items={FORMATS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              <div style={{ marginTop: 24 }}>
                 {/* Carte sombre : l'angle réglementaire, sans sur-vente */}
                 <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
                   <div style={{ marginBottom: 14 }}>
@@ -505,8 +504,11 @@ export default function ConferenceIAPage() {
                   </p>
                 </div>
               </div>
-              <p style={{ color: '#4B5563', fontSize: 14.5, lineHeight: 1.7, margin: '22px 0 0' }}>
-                Exemple de séance pour décideurs : les dirigeants d'un groupe du packaging présent sur plusieurs continents ont suivi en 2026 une matinée en anglais sur les mots de l'IA, du modèle jusqu'à l'agent, les obligations européennes et le RGPD, puis ce que coûtent les agents, avant que le groupe étende Copilot à ses sites étrangers. Le détail figure dans l'<Link to="/etudes-de-cas-ia#industrie" style={aStyle}>étude de cas industrie</Link>.
+              <p style={{ color: '#4B5563', fontSize: 14.5, lineHeight: 1.7, margin: '22px 0 10px' }}>
+                Exemple de séance pour décideurs : les dirigeants d'un groupe du packaging présent sur plusieurs continents ont suivi en 2026 une matinée en anglais sur les mots de l'IA, du modèle jusqu'à l'agent, les obligations européennes et le RGPD, puis ce que coûtent les agents, avant que le groupe étende Copilot à ses sites étrangers.
+              </p>
+              <p style={{ color: '#4B5563', fontSize: 14.5, lineHeight: 1.7, margin: 0 }}>
+                Le détail figure dans l'<Link to="/etudes-de-cas-ia#industrie" style={aStyle}>étude de cas industrie</Link>.
               </p>
             </div>
           </div>
@@ -525,21 +527,10 @@ export default function ConferenceIAPage() {
             Comment se déroule une conférence IA de 90 minutes ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>En quatre temps : l'état des outils sans jargon, des démonstrations sur vos documents, les limites et les règles, puis trois essais à faire dans la semaine. Les démonstrations prennent un tiers de la durée, et c'est pendant ce tiers que la salle change d'avis.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="En quatre temps : l'état des outils sans jargon, des démonstrations sur vos documents, les limites et les règles, puis trois essais à faire dans la semaine. Les démonstrations prennent un tiers de la durée, et c'est pendant ce tiers que la salle change d'avis." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-            {DEROULE.map(step => (
-              <div key={step.num} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <span style={{ fontSize: 15, color: '#60A5FA', fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Les quatre temps en rangées numérotées */}
+          <Rangees sombre items={DEROULE.map(step => ({ titre: step.title, texte: step.desc }))} style={{ maxWidth: 880 }} />
           <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
             Sur une heure, le plan se resserre autour de deux démonstrations et d'un passage plus bref sur les règles ; sur deux heures, il s'enrichit de démonstrations et d'un temps d'échange plus long. Si vous le décidez, la conférence ouvre ensuite une démarche d'<Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation IA</Link> sur un trimestre.
           </p>
@@ -554,9 +545,7 @@ export default function ConferenceIAPage() {
             Ce que nous vous demandons avant la conférence
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Peu de choses, mais à la bonne date : trente minutes de cadrage deux semaines avant, trois à cinq documents anonymisés une semaine avant, puis une synthèse la semaine suivante pour décider de la suite. Cette préparation sépare une conférence construite pour vous d'une intervention de salon.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none' }} texte="Peu de choses, mais à la bonne date : trente minutes de cadrage deux semaines avant, trois à cinq documents anonymisés une semaine avant, puis une synthèse la semaine suivante pour décider de la suite. Cette préparation sépare une conférence construite pour vous d'une intervention de salon." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -593,22 +582,13 @@ export default function ConferenceIAPage() {
             Pourquoi tant de conférences IA ne changent rien
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Cinq causes reviennent : un spectacle de démonstrations hors sujet, un intervenant lié à un éditeur, une conférence que rien ne suit, un seul discours pour des publics différents, des règles passées sous silence. Aucune ne tient au budget ; toutes tiennent à la préparation.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Cinq causes reviennent : un spectacle de démonstrations hors sujet, un intervenant lié à un éditeur, une conférence que rien ne suit, un seul discours pour des publics différents, des règles passées sous silence. Aucune ne tient au budget ; toutes tiennent à la préparation." />
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
             Nous les observons depuis 2022, devant des directions comme devant des équipes de production, dans des usines, des réseaux de distribution, des cabinets ou des fédérations. Les <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas</Link> montrent ce que devient une intervention lorsqu'une démarche la prolonge.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -620,28 +600,14 @@ export default function ConferenceIAPage() {
             Un conférencier IA qui forme des équipes le reste de l'année
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Une conférence sur l'IA gagne en crédit quand l'intervenant passe le reste de l'année à former des salariés. Mathias Nizan donne la plupart des conférences Masteria ; selon la ville, la langue ou la date, un formateur du réseau prend sa place, avec la même trame et les démonstrations préparées sur vos documents.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Une conférence sur l'IA gagne en crédit quand l'intervenant passe le reste de l'année à former des salariés. Mathias Nizan donne la plupart des conférences Masteria ; selon la ville, la langue ou la date, un formateur du réseau prend sa place, avec la même trame et les démonstrations préparées sur vos documents." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {[
+          {/* Trois rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880, marginTop: 12 }} items={[
               { icon: Mic, title: 'Mathias Nizan, fondateur de Masteria', desc: "Il a fondé le cabinet à Lyon en 2022 et forme depuis des comités de direction, des managers et des équipes de terrain. Sur scène, il travaille en direct sur vos documents et répond aux questions qui dérangent." },
               { icon: Users, title: 'Le réseau de formateurs', desc: "Une vingtaine d'indépendants retenus pour leur pratique en entreprise, qui interviennent près de chez vous ou dans votre langue. Ils suivent la trame Masteria et utilisent les démonstrations préparées à partir de vos pièces. Le devis indique leur nom." },
               { icon: ShieldCheck, title: 'Ce que nous refusons', desc: "Les interventions financées par un éditeur, les promesses chiffrées de productivité, les démonstrations sur des cas que personne ne reconnaît. Nous montrons aussi l'outil quand il se trompe, et nous vous disons quand une conférence n'est pas le format qu'il vous faut." },
-            ].map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+            ].map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
         </div>
       </section>
 
@@ -653,9 +619,7 @@ export default function ConferenceIAPage() {
             Et une fois la conférence passée ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Vous décidez, sur la base de la synthèse remise dans la semaine. Les options vont de ne rien faire pour l'instant à une démarche complète, en passant par une charte d'usage ou des ateliers par service. Nous ne faisons jamais d'une conférence la condition d'une autre commande.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Vous décidez, sur la base de la synthèse remise dans la semaine. Les options vont de ne rien faire pour l'instant à une démarche complète, en passant par une charte d'usage ou des ateliers par service. Nous ne faisons jamais d'une conférence la condition d'une autre commande." />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
             {[
@@ -694,8 +658,14 @@ export default function ConferenceIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Un forfait, et souvent une prise en charge par l'OPCO
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Nous facturons la conférence au forfait, sur une base d'une demi-journée d'intervention, préparation des démonstrations comprise ; le devis vous parvient dans les 24 heures qui suivent le cadrage.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Lorsqu'elle est organisée comme une action de formation courte (objectifs, contenu, émargement, attestation), elle peut s'ajouter aux formations prévues dans l'année et être présentée à l'OPCO, qui fixe sa participation. Masteria, certifiée Qualiopi, monte la demande avec vous.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Nous facturons la conférence au forfait, sur une base d'une demi-journée d'intervention, préparation des démonstrations comprise ; le devis vous parvient dans les 24 heures qui suivent le cadrage. Lorsqu'elle est organisée comme une action de formation courte (objectifs, contenu, émargement, attestation), elle peut s'ajouter aux formations prévues dans l'année et être présentée à l'OPCO, qui fixe sa participation. Masteria, certifiée Qualiopi, monte la demande avec vous. Le simulateur <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> donne le nom de votre opérateur à partir de votre branche.
+                Le simulateur <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> donne le nom de votre opérateur à partir de votre branche.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[

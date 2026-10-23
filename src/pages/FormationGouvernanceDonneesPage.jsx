@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page formation « gouvernance des données » (slug /formation-gouvernance-donnees),
@@ -245,7 +246,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -309,9 +312,13 @@ export default function FormationGouvernanceDonneesPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Conçu par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · contenu revu le 7 octobre 2026
           </p>
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La formation gouvernance des données apprend en deux jours à des responsables non techniciens à <strong style={{ color: '#fff', fontWeight: 700 }}>dresser la carte du patrimoine informationnel, attribuer un responsable à chaque source, mesurer la qualité, tenir les données de référence et préparer les données pour l'IA</strong>, à partir des fichiers et des logiciels de l'entreprise. Elle entre dans le champ de la certification Qualiopi du cabinet.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, la suivante en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              La formation gouvernance des données apprend en deux jours à des responsables non techniciens à <strong style={{ color: '#fff', fontWeight: 700 }}>dresser la carte du patrimoine informationnel, attribuer un responsable à chaque source, mesurer la qualité, tenir les données de référence et préparer les données pour l'IA</strong>, à partir des fichiers et des logiciels de l'entreprise.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={["Elle entre dans le champ de la certification Qualiopi du cabinet."]} />
+          </div>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Elle vise celles et ceux qui répondent des données sans en être les techniciens : responsable SI ou data, DAF, DPO, responsable qualité, managers propriétaires d'un référentiel. Aucun prérequis technique : à la fin du second jour, vous avez votre carte, votre catalogue, un diagnostic qualité chiffré et un plan à trois mois.
           </p>
@@ -330,17 +337,7 @@ export default function FormationGouvernanceDonneesPage() {
               </span>
             ))}
           </div>
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Repères</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="Repères" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -351,21 +348,14 @@ export default function FormationGouvernanceDonneesPage() {
             <div style={editorialAside}>
               <Kicker>Le point de départ</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Pourquoi former vos équipes à la gouvernance des données ?</h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Dans beaucoup d'entreprises, les données n'ont pas de responsable désigné, la même fiche client existe en plusieurs versions et le RGPD reste une affaire de juristes ; les projets d'IA butent ensuite sur ce socle. Deux jours suffisent à poser une carte, des rôles, des règles et un plan que l'équipe tient seule par la suite.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Dans beaucoup d'entreprises, les données n'ont pas de responsable désigné, la même fiche client existe en plusieurs versions et le RGPD reste une affaire de juristes ; les projets d'IA butent ensuite sur ce socle. Deux jours suffisent à poser une carte, des rôles, des règles et un plan que l'équipe tient seule par la suite." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Une fois les données en ordre, la <Link to="/formation-data-ia" style={aStyle}>formation data IA</Link> apprend aux équipes métier à les analyser ; pour encadrer les systèmes d'IA eux-mêmes, voyez la <Link to="/formation-gouvernance-ia" style={aStyle}>formation gouvernance IA</Link>.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {POURQUOI.map((item, i) => (
-                <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                  <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                </div>
-              ))}
+            {/* Une rangée par raison, en pleine largeur (plus de cartes côte à côte) */}
+            <div>
+              <Rangees items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -379,9 +369,7 @@ export default function FormationGouvernanceDonneesPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Le programme</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>Deux jours : cartographier, mesurer la qualité, préparer pour l'IA</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le premier jour sert à comprendre et à cartographier : patrimoine informationnel, rôles, qualité mesurée, données de référence, RGPD en gestes. Le second sert à outiller : catalogue sans plateforme, référentiels au quotidien, assistants IA pour l'inventaire, préparation des données, plan à trois mois.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Le premier jour sert à comprendre et à cartographier : patrimoine informationnel, rôles, qualité mesurée, données de référence, RGPD en gestes. Le second sert à outiller : catalogue sans plateforme, référentiels au quotidien, assistants IA pour l'inventaire, préparation des données, plan à trois mois." />
           <div style={{ display: 'grid', gap: 22 }}>
             {PROGRAMME.map(day => (
               <div key={day.jour} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(22px, 3.5vw, 32px)' }}>
@@ -422,23 +410,8 @@ export default function FormationGouvernanceDonneesPage() {
         <div style={wrap}>
           <Kicker>Ce que vous construisez</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Quatre livrables qui restent à l'entreprise</h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Chaque atelier produit une pièce de votre gouvernance, construite sur vos données. À la fin du second jour, la carte, le catalogue, le diagnostic qualité et le plan existent.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 24, marginTop: 12 }}>
-            {LIVRABLES.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse style={{ ...answerStyle, background: '#fff' }} texte="Chaque atelier produit une pièce de votre gouvernance, construite sur vos données. À la fin du second jour, la carte, le catalogue, le diagnostic qualité et le plan existent." />
+          <Rangees items={LIVRABLES.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Si la carte révèle un chantier trop lourd pour l'équipe seule, notre <Link to="/conseil-data-ia" style={aStyle}>conseil data et IA</Link> prend le relais en mission : audit, gouvernance, préparation des données pour les projets d'IA.
           </p>
@@ -450,9 +423,7 @@ export default function FormationGouvernanceDonneesPage() {
         <div style={wrap}>
           <Kicker>En mission</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Deux entreprises qui ont remis leurs données en ordre avant l'IA</h2>
-          <p style={answerStyle}>
-            <strong>Dans les deux cas, le travail sur les données a précédé les assistants : savoir où se trouve l'information, qui la tient à jour, ce qui peut entrer dans un outil. Les récits complets sont publiés, anonymisés, dans nos études de cas.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Dans les deux cas, le travail sur les données a précédé les assistants : savoir où se trouve l'information, qui la tient à jour, ce qui peut entrer dans un outil. Les récits complets sont publiés, anonymisés, dans nos études de cas." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: 20 }}>
             {CAS.map(cas => (
               <div key={cas.href} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
@@ -460,7 +431,9 @@ export default function FormationGouvernanceDonneesPage() {
                   <IconTile icon={cas.icon} />
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.35 }}>{cas.secteur}</div>
                 </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{cas.texte}</p>
+                <div style={{ flex: 1, marginBottom: 14 }}>
+                  <Paras texte={cas.texte} max={2} budget={300} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }} />
+                </div>
                 <Link to={cas.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   {cas.lien}
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -481,8 +454,15 @@ export default function FormationGouvernanceDonneesPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Prix et financement</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Deux jours dès 1 980 € HT chacun, pour tout le groupe</h2>
+              {/* Paragraphes courts : prix, puis frais et financement, puis étranger et liens */}
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Une journée de cette formation démarre à 1 980 € HT, facturés une fois pour un groupe qui peut compter jusqu'à douze personnes, soit dès 3 960 € HT pour le parcours complet ; si les exercices portent sur vos propres registres, la préparation s'ajoute et se chiffre au devis ; la version d'un jour « carte et règles » se décide au cadrage.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Une session sur site hors de la région lyonnaise ajoute les frais de trajet et d'hébergement, refacturés sans marge ; à distance, rien ne s'ajoute. Comme Masteria est certifiée Qualiopi, la formation peut être soumise à l'OPCO dont vous relevez, qui tranche selon ses propres règles et son budget ; le dossier se prépare avec nous.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Une journée de cette formation démarre à 1 980 € HT, facturés une fois pour un groupe qui peut compter jusqu'à douze personnes, soit dès 3 960 € HT pour le parcours complet ; si les exercices portent sur vos propres registres, la préparation s'ajoute et se chiffre au devis ; la version d'un jour « carte et règles » se décide au cadrage. Une session sur site hors de la région lyonnaise ajoute les frais de trajet et d'hébergement, refacturés sans marge ; à distance, rien ne s'ajoute. Comme Masteria est certifiée Qualiopi, la formation peut être soumise à l'OPCO dont vous relevez, qui tranche selon ses propres règles et son budget ; le dossier se prépare avec nous. Le CPF n'intervient pas, et une société implantée à Genève ou à Bruxelles, faute d'OPCO, reçoit son devis en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous dit de quel opérateur vous dépendez ; la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille chaque dispositif.
+                Le CPF n'intervient pas, et une société implantée à Genève ou à Bruxelles, faute d'OPCO, reçoit son devis en euros HT. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous dit de quel opérateur vous dépendez ; la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille chaque dispositif.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Dès 1 980 € HT par jour, douze personnes au plus', 'Deux jours conseillés : catalogue, référentiels et plan compris', 'Dossier OPCO préparé avec vous', 'Devis le lendemain du cadrage'].map(pt => (
@@ -503,8 +483,11 @@ export default function FormationGouvernanceDonneesPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qui anime</div>
             <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>Des formateurs qui remettent des données en ordre pendant leurs missions</h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Mathias Nizan, fondateur du cabinet lyonnais, anime lui-même la formation ou passe la main à un formateur indépendant du réseau Masteria, qui prépare le reste de l'année le socle de données de projets d'IA.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Mathias Nizan, fondateur du cabinet lyonnais, anime lui-même la formation ou passe la main à un formateur indépendant du réseau Masteria, qui prépare le reste de l'année le socle de données de projets d'IA. Ce qu'ils enseignent, ils le pratiquent en mission, et ils racontent en salle ce qu'ils ont vu échouer. Le cabinet ne vend aucune plateforme de gouvernance : vous repartez sans abonnement à souscrire.
+              Ce qu'ils enseignent, ils le pratiquent en mission, et ils racontent en salle ce qu'ils ont vu échouer. Le cabinet ne vend aucune plateforme de gouvernance : vous repartez sans abonnement à souscrire.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

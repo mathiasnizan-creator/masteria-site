@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page hub « IA en gestion de projet » (slug /ia-gestion-de-projet), cluster
@@ -53,14 +54,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -228,7 +221,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -291,9 +286,16 @@ export default function IAGestionDeProjetPage() {
           <p style={{ fontSize: 13.5, color: '#94A3B8', margin: '0 0 26px' }}>
             Un texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, publié en septembre 2026 et revu le 7 octobre 2026
           </p>
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            En gestion de projet, l'IA prend en charge la part documentaire du métier : <strong style={{ color: '#fff', fontWeight: 700 }}>cadrage écrit, comptes rendus, flash d'avancement, relances, préparation des arbitrages</strong>. Elle le fait par des assistants réglés sur vos gabarits, des automatisations branchées sur vos outils de suivi et, pour le PMO, des agents. Les estimations et les décisions restent aux personnes ; Masteria construit l'outillage et forme vos chefs de projet à s'en servir.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              En gestion de projet, l'IA prend en charge la part documentaire du métier : <strong style={{ color: '#fff', fontWeight: 700 }}>cadrage écrit, comptes rendus, flash d'avancement, relances, préparation des arbitrages</strong>.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              "Elle le fait par des assistants réglés sur vos gabarits, des automatisations branchées sur vos outils de suivi et, pour le PMO, des agents.",
+              "Les estimations et les décisions restent aux personnes ; Masteria construit l'outillage et forme vos chefs de projet à s'en servir.",
+            ]} />
+          </div>
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Masteria n'exerce pas le métier de cabinet de conseil en gestion de projet : nous ne touchons pas à votre méthode et nous ne pilotons pas vos projets. Nous équipons ceux qui les pilotent, en partant de leurs modèles de documents, de leurs logiciels et de leurs réunions, sur un projet pilote d'abord.
           </p>
@@ -312,17 +314,7 @@ export default function IAGestionDeProjetPage() {
               </span>
             ))}
           </div>
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En six lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 150px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="En six lignes" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -333,22 +325,13 @@ export default function IAGestionDeProjetPage() {
             <div style={editorialAside}>
               <Kicker>Six activités</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>L'IA change six activités du chef de projet</h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Le cadrage, le découpage, les comptes rendus, le reporting, la préparation des arbitrages et les relances : six activités où le chef de projet passe une grande partie de sa semaine à produire des documents. L'IA s'occupe de la mise en forme et du premier jet ; il garde l'estimation, la décision et le contrôle.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Le cadrage, le découpage, les comptes rendus, le reporting, la préparation des arbitrages et les relances : six activités où le chef de projet passe une grande partie de sa semaine à produire des documents. L'IA s'occupe de la mise en forme et du premier jet ; il garde l'estimation, la décision et le contrôle." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Notre <Link to="/formation-ia-gestion-de-projet" style={aStyle}>formation IA gestion de projet</Link> suit le même découpage, sur les projets en cours des participants.
               </p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-              {USAGES.map((item, i) => (
-                <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                  <div style={{ marginBottom: 14 }}><IconTile icon={item.icon} /></div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par activité, en pleine largeur (plus de cartes côte à côte) */}
+            <Rangees items={USAGES.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
           </div>
         </div>
       </section>
@@ -361,9 +344,7 @@ export default function IAGestionDeProjetPage() {
         <div style={{ ...wrap, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Deux métiers voisins</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>Un cabinet de conseil en gestion de projet organise, un cabinet IA équipe</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Si votre méthode et votre PMO tiennent, mais que vos chefs de projet passent leurs journées à produire des documents, il vous faut de l'outillage. Si la méthode elle-même vacille, commencez par un cabinet de gestion de projet ; nous viendrons ensuite, ou à ses côtés.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="Si votre méthode et votre PMO tiennent, mais que vos chefs de projet passent leurs journées à produire des documents, il vous faut de l'outillage. Si la méthode elle-même vacille, commencez par un cabinet de gestion de projet ; nous viendrons ensuite, ou à ses côtés." />
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Comparatif entre cabinet de conseil en gestion de projet et outillage IA de la fonction projet" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 680 }}>
               <thead>
@@ -395,9 +376,7 @@ export default function IAGestionDeProjetPage() {
         <div style={wrap}>
           <Kicker>L'outillage</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>L'outillage se construit en trois niveaux, dans cet ordre</h2>
-          <p style={answerStyle}>
-            <strong>D'abord des assistants réglés sur vos gabarits, en place en quelques jours ; puis des automatisations sur vos outils de suivi pour le reporting et les comptes rendus ; enfin des agents, pour un PMO qui pilote un portefeuille. Chaque niveau repose sur le précédent, et aucun n'envoie rien sans validation.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="D'abord des assistants réglés sur vos gabarits, en place en quelques jours ; puis des automatisations sur vos outils de suivi pour le reporting et les comptes rendus ; enfin des agents, pour un PMO qui pilote un portefeuille. Chaque niveau repose sur le précédent, et aucun n'envoie rien sans validation." />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
             {NIVEAUX.map(card => {
               const Icon = card.icon
@@ -407,7 +386,10 @@ export default function IAGestionDeProjetPage() {
                     <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
                     <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
                   </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px', flex: 1 }}>{card.desc}</p>
+                  {/* Carte gardée (elle finit par un lien), texte en paragraphes courts */}
+                  <div style={{ flex: 1, marginBottom: 16 }}>
+                    <Paras texte={card.desc} max={2} budget={300} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} />
+                  </div>
                   <Link to={card.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 700 }}>
                     {card.cta}
                     <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -424,9 +406,7 @@ export default function IAGestionDeProjetPage() {
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <Kicker>La méthode</Kicker>
           <h2 style={h2Style}>Un trimestre suffit pour équiper une fonction projet</h2>
-          <p style={{ ...answerStyle, maxWidth: 'none', background: '#fff' }}>
-            <strong>Un projet pilote et ses outils la première semaine ; des assistants, une bibliothèque et la formation le premier mois ; l'automatisation du reporting et des comptes rendus le deuxième ; l'extension au PMO et la passation le troisième. Les règles de confidentialité s'écrivent le premier jour.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, maxWidth: 'none', background: '#fff' }} texte="Un projet pilote et ses outils la première semaine ; des assistants, une bibliothèque et la formation le premier mois ; l'automatisation du reporting et des comptes rendus le deuxième ; l'extension au PMO et la passation le troisième. Les règles de confidentialité s'écrivent le premier jour." />
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
             {METHODE.map((step, i) => (
@@ -453,17 +433,8 @@ export default function IAGestionDeProjetPage() {
         <div style={wrap}>
           <Kicker>Pièges connus</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Cinq erreurs reviennent quand l'IA arrive dans les projets</h2>
-          <p style={answerStyle}>
-            <strong>Laisser l'IA chiffrer, automatiser un reporting sur des données périmées, ajouter une plateforme au lieu de brancher les vôtres, négliger la confidentialité, former sans les gabarits de l'équipe. Nous les voyons en formation comme en mission depuis 2022, et toutes se corrigent au cadrage.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse style={answerStyle} texte="Laisser l'IA chiffrer, automatiser un reporting sur des données périmées, ajouter une plateforme au lieu de brancher les vôtres, négliger la confidentialité, former sans les gabarits de l'équipe. Nous les voyons en formation comme en mission depuis 2022, et toutes se corrigent au cadrage." />
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -484,7 +455,9 @@ export default function IAGestionDeProjetPage() {
                   </span>
                   <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{who}</span>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <div style={{ flex: 1 }}>
+                  <Paras texte={text} max={2} budget={300} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                </div>
                 <Link to={href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
                   Lire la mission
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -505,8 +478,14 @@ export default function IAGestionDeProjetPage() {
             <div style={{ flex: 1, minWidth: 280 }}>
               <Kicker>Le volet formation</Kicker>
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>Vos chefs de projet apprennent sur leurs propres livrables</h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                La <Link to="/formation-ia-gestion-de-projet" style={aStyle}>formation IA gestion de projet</Link> dure deux jours (14 heures) en intra, à partir de 3 960 € HT le groupe, la préparation sur vos projets s'ajoutant au devis ; elle se resserre sur une seule journée si le périmètre est étroit.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Elle travaille sur les projets en cours des participants, du cadrage au reporting, et laisse une bibliothèque de prompts d'équipe. Elle suffit seule quand vos gabarits existent ; elle prolonge la mission quand les assistants ont été réglés.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La <Link to="/formation-ia-gestion-de-projet" style={aStyle}>formation IA gestion de projet</Link> dure deux jours (14 heures) en intra, à partir de 3 960 € HT le groupe, la préparation sur vos projets s'ajoutant au devis ; elle se resserre sur une seule journée si le périmètre est étroit. Elle travaille sur les projets en cours des participants, du cadrage au reporting, et laisse une bibliothèque de prompts d'équipe. Elle suffit seule quand vos gabarits existent ; elle prolonge la mission quand les assistants ont été réglés. Masteria étant certifiée Qualiopi pour ses actions de formation, l'OPCO de votre branche peut la financer selon ses propres règles ; le conseil et la construction restent des prestations de service.
+                Masteria étant certifiée Qualiopi pour ses actions de formation, l'OPCO de votre branche peut la financer selon ses propres règles ; le conseil et la construction restent des prestations de service.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {['Les projets en cours servent de support', 'Du cadrage au flash, six activités', "Une bibliothèque d'équipe à la sortie", "Prise en charge OPCO possible"].map(pt => (
@@ -573,7 +552,10 @@ export default function IAGestionDeProjetPage() {
       <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#F9FAFB' }}>
         <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-            J'ai écrit cette page à l'intention des chefs de projet qui me disent passer plus de temps sur leurs comptes rendus que sur leurs projets. La règle que j'y défends, ne jamais laisser une machine chiffrer à leur place, vient des ateliers où nous avons vu des estimations sorties d'un modèle passer pour des engagements. Mon parcours est présenté sur <Link to="/mathias-nizan" style={aStyle}>ma page de fondateur</Link>.
+            J'ai écrit cette page à l'intention des chefs de projet qui me disent passer plus de temps sur leurs comptes rendus que sur leurs projets.
+          </p>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            La règle que j'y défends, ne jamais laisser une machine chiffrer à leur place, vient des ateliers où nous avons vu des estimations sorties d'un modèle passer pour des engagements. Mon parcours est présenté sur <Link to="/mathias-nizan" style={aStyle}>ma page de fondateur</Link>.
           </p>
           <p style={{ fontSize: 14, color: '#6B7280', margin: 0, fontWeight: 600 }}>Mathias Nizan, fondateur de Masteria</p>
           <PressMention />
@@ -607,8 +589,11 @@ export default function IAGestionDeProjetPage() {
           <div style={{ flex: '1 1 380px', minWidth: 300 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Qui équipe vos projets</div>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>Des spécialistes de l'IA qui parlent la langue des projets</h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Lyonnais, Mathias Nizan a lancé Masteria en 2022 avec une seule spécialité, l'intelligence artificielle, et il conduit chaque mission. Selon le chantier, il fait appel à des développeurs pour les automatisations et les agents (cinq environ dans le réseau), à des consultants (une dizaine) et à des formateurs (une vingtaine), tous à leur compte.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Lyonnais, Mathias Nizan a lancé Masteria en 2022 avec une seule spécialité, l'intelligence artificielle, et il conduit chaque mission. Selon le chantier, il fait appel à des développeurs pour les automatisations et les agents (cinq environ dans le réseau), à des consultants (une dizaine) et à des formateurs (une vingtaine), tous à leur compte. Aucune licence n'est revendue : l'outil retenu est le vôtre. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples.
+              Aucune licence n'est revendue : l'outil retenu est le vôtre. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

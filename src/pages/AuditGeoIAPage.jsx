@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « audit GEO » (slug /audit-geo-ia) : requêtes « audit geo ia », « audit geo »,
@@ -52,14 +53,6 @@ const answerStyle = { background: '#F9FAFB', border: '1px solid #E5E7EB', border
 
 function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
-}
-
-function IconTile({ icon: Icon }) {
-  return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
-  )
 }
 
 const HERO_BADGES = [
@@ -334,7 +327,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -415,14 +410,24 @@ export default function AuditGeoIAPage() {
 
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
+            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: '0 0 10px' }}>
+              Un audit GEO IA mesure la place d'une marque dans ce que répondent les assistants d'IA : ChatGPT, Gemini, Perplexity, AI Overviews de Google. Le sigle vient de l'anglais generative engine optimization, le travail de visibilité auprès des moteurs qui rédigent une réponse.
+            </p>
             <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Un audit GEO IA mesure la place d'une marque dans ce que répondent les assistants d'IA : ChatGPT, Gemini, Perplexity, AI Overviews de Google. Le sigle vient de l'anglais generative engine optimization, le travail de visibilité auprès des moteurs qui rédigent une réponse. L'audit relève la part des questions où la marque est citée, son poids face aux concurrents et l'accès des robots au site ; l'audit SEO s'intéresse, lui, au classement parmi les liens que Google affiche.
+              L'audit relève la part des questions où la marque est citée, son poids face aux concurrents et l'accès des robots au site ; l'audit SEO s'intéresse, lui, au classement parmi les liens que Google affiche.
             </p>
           </div>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit GEO de Masteria pose à ChatGPT, Gemini, Perplexity et aux AI Overviews une liste de questions taillée pour votre marché, à plusieurs reprises, et relève <strong style={{ color: '#fff', fontWeight: 700 }}>la fréquence à laquelle vous êtes nommé, votre rang parmi vos concurrents et les sites dont chaque moteur s'inspire</strong>. Il se conclut par un plan d'action classé pour devenir une source citée. On parle aussi de référencement AIO (artificial intelligence optimization) : la mesure est la même.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              L'audit GEO de Masteria pose à ChatGPT, Gemini, Perplexity et aux AI Overviews une liste de questions taillée pour votre marché, à plusieurs reprises, et relève <strong style={{ color: '#fff', fontWeight: 700 }}>la fréquence à laquelle vous êtes nommé, votre rang parmi vos concurrents et les sites dont chaque moteur s'inspire</strong>.
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              "Il se conclut par un plan d'action classé pour devenir une source citée.",
+              "On parle aussi de référencement AIO (artificial intelligence optimization) : la mesure est la même.",
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
             Quand un acheteur demande à une IA quel prestataire retenir, la réponse nomme quelqu'un. L'audit établit si c'est vous, pourquoi ce sont souvent d'autres, et ce qui modifierait le résultat. Vous ne payez que l'audit ; décider d'une mise en œuvre, et la chiffrer, vient après la restitution.
@@ -450,17 +455,7 @@ export default function AuditGeoIAPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'audit GEO en résumé</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 100px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre id="en-bref" titre="L'audit GEO en résumé" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -473,25 +468,16 @@ export default function AuditGeoIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que vérifie un audit GEO ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Qui est cité sur chaque question, votre part de voix parmi vos concurrents, les sites que chaque moteur privilégie, vos fondations techniques (robots, données structurées) et la facilité avec laquelle vos pages se laissent citer. Les cinq vérifications aboutissent à un seul plan d'action.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} texte="Qui est cité sur chaque question, votre part de voix parmi vos concurrents, les sites que chaque moteur privilégie, vos fondations techniques (robots, données structurées) et la facilité avec laquelle vos pages se laissent citer. Les cinq vérifications aboutissent à un seul plan d'action." />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Si votre référencement Google doit aussi être examiné, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> réunit Google et les IA dans un rapport unique. L'accompagnement qui peut suivre est décrit sur la page de notre <Link to="/agence-seo-ia" style={aStyle}>agence SEO IA</Link> ; il se chiffre après la restitution.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {VERIFICATIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
+              {/* Les cinq vérifications en rangées, puis l'encadré sombre en pleine largeur */}
+              <Rangees items={VERIFICATIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              <div style={{ marginTop: 24 }}>
                 <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
                   <div style={{ marginBottom: 14 }}>
                     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -521,22 +507,14 @@ export default function AuditGeoIAPage() {
             Vos clients interrogent les IA : qui leur répond ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>94 % des acheteurs professionnels se servent de l'IA dans leur processus d'achat, contre 89 % un an plus tôt (Forrester, Buyers' Journey Survey 2025, publié en janvier 2026). Quand Google affiche un résumé IA, les internautes ne cliquent sur l'une des sources citées que lors d'une visite sur cent, selon le Pew Research Center (juillet 2025, recherches de mars 2025 aux États-Unis). Être nommé dans la réponse devient la vitrine ; le clic, l'exception.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} texte="94 % des acheteurs professionnels se servent de l'IA dans leur processus d'achat, contre 89 % un an plus tôt (Forrester, Buyers' Journey Survey 2025, publié en janvier 2026). Quand Google affiche un résumé IA, les internautes ne cliquent sur l'une des sources citées que lors d'une visite sur cent, selon le Pew Research Center (juillet 2025, recherches de mars 2025 aux États-Unis). Être nommé dans la réponse devient la vitrine ; le clic, l'exception." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {[
-              { title: 'Des places encore libres', desc: "Le GEO est une discipline récente. Sur de nombreux marchés, la place de source citée reste à prendre, pour un effort sans rapport avec la bataille des requêtes Google les plus disputées." },
-              { title: 'Des choix faits sans vous', desc: "Comparatifs de prestataires, présélections d'outils, recommandations : les IA tranchent. Si elles s'appuient sur les pages de vos concurrents, leurs arguments deviennent la référence du marché." },
-              { title: 'Un visiteur qui vaut plus', desc: "Selon une étude Semrush de juin 2025, un visiteur arrivé par une recherche IA vaut 4,4 fois un visiteur venu de la recherche organique classique. Le volume reste plus faible ; la valeur de chaque visite, plus haute." },
-            ].map(card => (
-              <div key={card.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Trois raisons en rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees sombre style={{ maxWidth: 880 }} items={[
+            { title: 'Des places encore libres', desc: "Le GEO est une discipline récente. Sur de nombreux marchés, la place de source citée reste à prendre, pour un effort sans rapport avec la bataille des requêtes Google les plus disputées." },
+            { title: 'Des choix faits sans vous', desc: "Comparatifs de prestataires, présélections d'outils, recommandations : les IA tranchent. Si elles s'appuient sur les pages de vos concurrents, leurs arguments deviennent la référence du marché." },
+            { title: 'Un visiteur qui vaut plus', desc: "Selon une étude Semrush de juin 2025, un visiteur arrivé par une recherche IA vaut 4,4 fois un visiteur venu de la recherche organique classique. Le volume reste plus faible ; la valeur de chaque visite, plus haute." },
+          ].map(card => ({ titre: card.title, texte: card.desc }))} />
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
             Le glossaire SEO, GEO et AEO, et la façon dont les deux disciplines se complètent, sont présentés sur la page de notre <Link to="/agence-seo-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence SEO IA</Link>.
           </p>
@@ -551,9 +529,7 @@ export default function AuditGeoIAPage() {
             Comment se déroule l'audit GEO ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
-            <strong>Construction de la liste de questions, relevés répétés sur plusieurs moteurs, lecture des écarts avec les concurrents, examen des fondations techniques, plan et restitution. Les relevés s'étalent sur plusieurs semaines pour gommer les écarts d'une réponse à l'autre.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} texte="Construction de la liste de questions, relevés répétés sur plusieurs moteurs, lecture des écarts avec les concurrents, examen des fondations techniques, plan et restitution. Les relevés s'étalent sur plusieurs semaines pour gommer les écarts d'une réponse à l'autre." />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -586,20 +562,11 @@ export default function AuditGeoIAPage() {
             Ce que contient le rapport d'audit GEO
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Un relevé daté des citations, la carte de votre part de voix, des corrections techniques rangées par priorité, un plan de pages citables et la grille de mesure, que vous gardez. Le rapport sert à décider ; il peut passer sans retouche à vos salariés ou à un autre prestataire.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Un relevé daté des citations, la carte de votre part de voix, des corrections techniques rangées par priorité, un plan de pages citables et la grille de mesure, que vous gardez. Le rapport sert à décider ; il peut passer sans retouche à vos salariés ou à un autre prestataire." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {LIVRABLE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
+          {/* Les cinq parties du rapport en rangées, puis l'encadré sombre en pleine largeur */}
+          <Rangees items={LIVRABLE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ maxWidth: 880, marginTop: 12 }} />
+          <div style={{ maxWidth: 880, marginTop: 24 }}>
             <div style={{ ...cardStyle, padding: 28, background: '#0A0F1E', border: '1px solid #1E293B' }}>
               <div style={{ marginBottom: 16 }}>
                 <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -641,26 +608,11 @@ export default function AuditGeoIAPage() {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 24 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <FileText size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Le prix, après le cadrage</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le forfait tient compte du nombre de concurrents suivis, du nombre de questions posées, des moteurs couverts, du nombre de relevés, des marchés et des langues. Un marché dans une langue part de quelques milliers d'euros ; au-delà, le montant grimpe sans plafond défini à l'avance. Le GEO relève du conseil marketing et n'est pas finançable par votre OPCO, dont le rôle est de financer la formation. L'audit est facturé seul.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Google aussi ?</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Si votre référencement Google mérite le même examen, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> couvre les deux terrains dans un rapport unique. Le cadrage sert aussi à choisir le bon périmètre, y compris le plus petit.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880, marginTop: 24 }} items={[
+            { titre: 'Le prix, après le cadrage', icon: FileText, texte: "Le forfait tient compte du nombre de concurrents suivis, du nombre de questions posées, des moteurs couverts, du nombre de relevés, des marchés et des langues. Un marché dans une langue part de quelques milliers d'euros ; au-delà, le montant grimpe sans plafond défini à l'avance. Le GEO relève du conseil marketing et n'est pas finançable par votre OPCO, dont le rôle est de financer la formation. L'audit est facturé seul." },
+            { titre: 'Google aussi ?', icon: Landmark, texte: <>Si votre référencement Google mérite le même examen, l'<Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> couvre les deux terrains dans un rapport unique. Le cadrage sert aussi à choisir le bon périmètre, y compris le plus petit.</> },
+          ]} />
         </div>
       </section>
 
@@ -744,8 +696,11 @@ export default function AuditGeoIAPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Un cabinet qui construit lui-même des assistants appuyés sur des sources
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Mathias Nizan dirige chaque audit GEO. Selon le marché, il travaille avec une partie de la dizaine de consultants du réseau et avec les développeurs, cinq environ, qui automatisent les relevés ; tous sont indépendants.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Mathias Nizan dirige chaque audit GEO. Selon le marché, il travaille avec une partie de la dizaine de consultants du réseau et avec les développeurs, cinq environ, qui automatisent les relevés ; tous sont indépendants. Nos équipes conçoivent aussi des assistants documentaires pour des clients, comme les quatre assistants qui aident un cabinet de conseil à rédiger ses réponses aux marchés publics : elles savent ce qu'un modèle garde d'une page et ce qu'il laisse. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+                Nos équipes conçoivent aussi des assistants documentaires pour des clients, comme les quatre assistants qui aident un cabinet de conseil à rédiger ses réponses aux marchés publics : elles savent ce qu'un modèle garde d'une page et ce qu'il laisse. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
