@@ -3832,6 +3832,8 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Copilot Cowork, Claude Cowork, ChatGPT Work", href: '/blog/copilot-cowork-claude-cowork-chatgpt-work' },
+      { label: "Quelle IA pour Excel en 2026", href: '/blog/quelle-ia-pour-excel' },
       { label: "Formation Microsoft Copilot", href: '/formation-microsoft-copilot' },
       { label: "Formation Copilot Word & Excel", href: '/formation-copilot-word-excel' },
       { label: "Copilot vs ChatGPT en entreprise", href: '/copilot-vs-chatgpt' },
@@ -4819,6 +4821,7 @@ const BLOG_ARTICLES_BASE = [
       ],
     },
     internalLinks: [
+      { label: "Préparer un CODIR ou un COMEX avec l'IA", href: '/blog/preparer-codir-comex-ia-methode-prompts' },
       { label: "Conseil en intelligence artificielle", href: '/conseil-intelligence-artificielle' },
       { label: "Formation IA en entreprise (catalogue)", href: '/formation-intelligence-artificielle' },
       { label: "Plan de formation IA annuel", href: '/blog/plan-formation-ia-annuel-template' },

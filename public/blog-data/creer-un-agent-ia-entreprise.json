@@ -388,30 +388,15 @@
     ]
   },
   "internalLinks": [
-    {
-      "label": "Fine-tuning ou RAG : lequel choisir",
-      "href": "/blog/fine-tuning-ou-rag"
-    },
-    {
-      "label": "15 exemples d'agents IA, classés par fonction",
-      "href": "/blog/exemples-agents-ia-entreprise"
-    },
-    {
-      "label": "Agents IA en entreprise : 20 cas d'usage concrets",
-      "href": "/agents-ia-entreprise"
-    },
-    {
-      "label": "Automatiser vos processus avec l'IA",
-      "href": "/automatisation-ia"
-    },
-    {
-      "label": "Notre méthode de projet IA, du cadrage au run",
-      "href": "/methode-projet-ia"
-    },
-    {
-      "label": "Solutions IA sur mesure",
-      "href": "/solutions-ia"
-    }
+    {"label": "Fine-tuning ou RAG : lequel choisir", "href": "/blog/fine-tuning-ou-rag"},
+    {"label": "15 exemples d'agents IA, classés par fonction", "href": "/blog/exemples-agents-ia-entreprise"},
+    {"label": "Superviser des agents IA en production", "href": "/blog/superviser-agents-ia-production"},
+    {"label": "Combien coûte un agent IA en entreprise", "href": "/blog/cout-agent-ia-entreprise"},
+    {"label": "Agents IA dans l'industrie et les achats", "href": "/blog/agents-ia-industrie-achats-cas-concrets"},
+    {"label": "Agents IA en entreprise : 20 cas d'usage concrets", "href": "/agents-ia-entreprise"},
+    {"label": "Automatiser vos processus avec l'IA", "href": "/automatisation-ia"},
+    {"label": "Notre méthode de projet IA, du cadrage au run", "href": "/methode-projet-ia"},
+    {"label": "Solutions IA sur mesure", "href": "/solutions-ia"}
   ],
   "extraJsonLd": [
     {

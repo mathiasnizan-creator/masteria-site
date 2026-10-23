@@ -1066,6 +1066,7 @@ export default function GouvernanceIAPage() {
               { label: 'Conseil stratégie IA', href: '/conseil-strategie-ia', tag: 'Stratégie', desc: "Choisir les cas d'usage qui méritent un dispositif avant de bâtir le dispositif lui-même." },
               { label: 'Agents IA en entreprise', href: '/agents-ia-entreprise', tag: 'Agents', desc: "Ce qu'un agent qui agit dans vos logiciels exige en supervision et en traces." },
               { label: "Rendre un système d'IA auditable : le guide", href: '/blog/auditabilite-systeme-ia', tag: 'Article', desc: "Journaux, versions, preuves : ce qu'il faut conserver pour qu'un contrôle se passe bien." },
+              { label: 'Monter un comité de gouvernance IA', href: '/blog/comite-gouvernance-ia', tag: 'Article', desc: "Qui y siège, ce qu'il tranche et l'ordre du jour de ses quatre-vingt-dix premiers jours." },
               { label: 'Agence développement IA', href: '/agence-developpement-ia', tag: 'Développement', desc: "Des systèmes construits avec leurs garde-fous, leur journalisation et leur propriétaire désigné." },
             ].map(rel => (
               <Link key={rel.href} to={rel.href} style={{ textDecoration: 'none' }}>

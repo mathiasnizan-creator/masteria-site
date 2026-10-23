@@ -250,6 +250,7 @@ export default {
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [
+    { label: "Quelle IA pour Excel : Copilot, Claude, ChatGPT ou Gemini", href: '/blog/quelle-ia-pour-excel' },
     { label: "Analyse de données avec l'IA : la formation de deux jours", href: '/formation-ia-analyse-donnees' },
     { label: 'Copilot dans Word et Excel, en formation complète', href: '/formation-copilot-word-excel' },
     { label: "Formation Microsoft Copilot pour toute l'entreprise", href: '/formation-microsoft-copilot' },
