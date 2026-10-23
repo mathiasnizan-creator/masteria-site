@@ -173,7 +173,7 @@
     },
     {
       "type": "p",
-      "text": "Côté outils, les offres entreprise posent les bases. GitHub indique n'utiliser les données de Copilot Business ou Enterprise pour entraîner aucun modèle, alors que les offres individuelles Free, Pro et Pro+ peuvent servir à l'entraînement sauf refus de l'utilisateur. Anthropic n'entraîne pas ses modèles par défaut sur les échanges d'une organisation abonnée à Team ou Enterprise. Ces garanties couvrent l'entraînement ; elles ne remplacent pas l'accord du client sur le traitement lui-même. Quand le consultant travaille dans les locaux et sur les outils du client, ce sont les règles et les licences du client qui s'appliquent."
+      "text": "Côté outils, les offres entreprise posent les bases. GitHub indique n'utiliser les données de Copilot Business ou Enterprise pour entraîner aucun modèle, alors que les offres individuelles Free, Pro et Pro+ peuvent servir à l'entraînement sauf refus de l'utilisateur. Chez Anthropic, les comptes Team et Enterprise sont exclus par défaut de l'entraînement des modèles. Ces garanties couvrent l'entraînement ; elles ne remplacent pas l'accord du client sur le traitement lui-même. Quand le consultant travaille dans les locaux et sur les outils du client, ce sont les règles et les licences du client qui s'appliquent."
     },
     {
       "type": "h2",
