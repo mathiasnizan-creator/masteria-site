@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { ArrowRight, ShieldCheck, Clock, Users, Wallet, BookOpen } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Paras, PointsCles, decouperPhrases } from '../components/Aere'
 
 // Pages éditoriales transversales pour positionnement SEO sur des requêtes informationnelles
 // à fort volume identifiées via Search Console / nexa.
@@ -289,12 +290,21 @@ export default function TopicLandingPage() {
           }}>
             {topic.h1}
           </h1>
-          <p style={{
-            fontSize: 'clamp(17px, 2.2vw, 20px)', color: '#4B5563',
-            lineHeight: 1.6, maxWidth: 740, margin: '0 auto 36px',
-          }}>
-            {topic.intro}
-          </p>
+          {/* Intro : 1re phrase en accroche, les suivantes en puces à pictos */}
+          {(() => {
+            const phrases = decouperPhrases(topic.intro)
+            return (
+              <>
+                <p style={{
+                  fontSize: 'clamp(17px, 2.2vw, 20px)', color: '#0A0A0A', fontWeight: 600,
+                  lineHeight: 1.55, maxWidth: 740, margin: phrases.length > 1 ? '0 auto 20px' : '0 auto 36px',
+                }}>
+                  {phrases[0]}
+                </p>
+                <PointsCles phrases={phrases.slice(1)} style={{ margin: '0 auto 36px', maxWidth: 680, textAlign: 'left' }} />
+              </>
+            )
+          })()}
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{
               display: 'inline-flex', alignItems: 'center', gap: 10,
@@ -367,9 +377,7 @@ export default function TopicLandingPage() {
               }}>
                 {s.h2}
               </h2>
-              <p style={{ fontSize: 17, color: '#374151', lineHeight: 1.7 }}>
-                {s.body}
-              </p>
+              <Paras texte={s.body} max={2} style={{ fontSize: 17, color: '#374151', lineHeight: 1.7 }} />
             </div>
           ))}
         </div>
@@ -418,9 +426,9 @@ export default function TopicLandingPage() {
                 <span>{item.q}</span>
                 <span style={{ flexShrink: 0, color: '#1d4ed8' }}>+</span>
               </summary>
-              <p style={{ marginTop: 12, color: '#374151', lineHeight: 1.7, fontSize: 16 }}>
-                {item.a}
-              </p>
+              <div style={{ marginTop: 12 }}>
+                <Paras texte={item.a} max={2} style={{ color: '#374151', lineHeight: 1.7, fontSize: 16, margin: 0 }} />
+              </div>
             </details>
           ))}
         </div>

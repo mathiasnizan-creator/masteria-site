@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Check, X, Minus, Trophy, Clock, Calendar, BadgeCheck, Wallet, MapPin } from 'lucide-react'
+import { ArrowRight, Check, X, Minus, Trophy, Clock, Calendar, BadgeCheck, Wallet, MapPin, Layers } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import Pictogram from '../components/Pictogram'
 import { COMPARISONS } from '../data/comparisons'
 import { PressMention } from '../components/FounderNote'
+import { Paras, PointsCles, Rangees, texteLong, decouperPhrases } from '../components/Aere'
 
 const SITE_URL = 'https://www.master-ia.fr'
 
@@ -172,12 +173,24 @@ export default function ComparisonPage({ slug: propSlug }) {
             {data.h1}
           </h1>
 
-          <p style={{
-            fontSize: 'clamp(16px, 2vw, 19px)', color: '#374151',
-            lineHeight: 1.65, marginBottom: 24,
-          }}
-            dangerouslySetInnerHTML={{ __html: formatBold(data.intro) }}
-          />
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces à pictos */}
+          {(() => {
+            const phrases = phrasesMd(data.intro)
+            return (
+              <>
+                <p style={{
+                  fontSize: 'clamp(17px, 2.2vw, 20px)', color: '#0A0A0A', fontWeight: 500,
+                  lineHeight: 1.58, margin: '0 0 22px', paddingLeft: 20, borderLeft: '3px solid #2563EB',
+                }}
+                  dangerouslySetInnerHTML={{ __html: formatBold(phrases[0]) }}
+                />
+                <PointsCles phrases={phrases.slice(1, 7)} rich={md} style={{ margin: '0 0 24px', maxWidth: 'none' }} />
+                {phrases.length > 7 && (
+                  <ParasMd texte={phrases.slice(7).join(' ')} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 24px' }} />
+                )}
+              </>
+            )
+          })()}
 
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', fontSize: 13, color: '#6B7280' }}>
             {/* Byline E-E-A-T : auteur identifié, lien vers sa page */}
@@ -231,10 +244,7 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {data.answerBox.question}
             </h2>
-            <p
-              style={{ fontSize: 16.5, color: '#1F2937', lineHeight: 1.7, margin: 0 }}
-              dangerouslySetInnerHTML={{ __html: formatBold(data.answerBox.answer) }}
-            />
+            <ParasMd texte={data.answerBox.answer} max={2} budget={320} style={{ fontSize: 16.5, color: '#1F2937', lineHeight: 1.7, margin: 0 }} />
             {data.answerBox.bullets?.length > 0 && (
               <ul style={{
                 margin: '20px 0 0', padding: 0, listStyle: 'none',
@@ -275,9 +285,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               {data.keyFacts.title}
             </h2>
             {data.keyFacts.note && (
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720 }}>
-                {data.keyFacts.note}
-              </p>
+              <Paras texte={data.keyFacts.note} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, margin: '0 0 24px', maxWidth: 720 }} />
             )}
             <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12 }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
@@ -391,10 +399,7 @@ export default function ComparisonPage({ slug: propSlug }) {
           }}>
             {data.verdict.title}
           </h2>
-          <p
-            style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, marginBottom: 32 }}
-            dangerouslySetInnerHTML={{ __html: formatBold(data.verdict.summary) }}
-          />
+          <ParasMd texte={data.verdict.summary} style={{ fontSize: 17, color: '#374151', lineHeight: 1.7, marginBottom: 32 }} />
 
           {!isPanorama && (
             <div style={{
@@ -433,20 +438,21 @@ export default function ComparisonPage({ slug: propSlug }) {
 
           {isPanorama && data.verdict.profiles && (
             <div style={{ display: 'grid', gap: 12 }}>
+              {/* Ligne profil · outil · raison : flex qui passe à la ligne sur mobile (la grille débordait) */}
               {data.verdict.profiles.map((p, i) => (
                 <div key={i} style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'minmax(180px, 1fr) minmax(120px, auto) 2fr',
-                  gap: 16, padding: 18, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10,
+                  display: 'flex', flexWrap: 'wrap',
+                  gap: '10px 16px', padding: 18, background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10,
                   alignItems: 'center',
                 }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: '#0A0A0A' }}>{p.profile}</div>
+                  <div style={{ flex: '1 1 160px', fontSize: 14, fontWeight: 700, color: '#0A0A0A' }}>{p.profile}</div>
                   <div style={{
+                    flex: '0 0 auto',
                     fontSize: 13, fontWeight: 700, color: '#2563EB',
                     background: '#EFF6FF', padding: '6px 12px', borderRadius: 99,
                     textAlign: 'center', whiteSpace: 'nowrap',
                   }}>{p.tool}</div>
-                  <div style={{ fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{p.why}</div>
+                  <div style={{ flex: '2 1 300px', fontSize: 13.5, color: '#4B5563', lineHeight: 1.55 }}>{p.why}</div>
                 </div>
               ))}
             </div>
@@ -473,10 +479,7 @@ export default function ComparisonPage({ slug: propSlug }) {
               {data.formations.titre}
             </h2>
             {data.formations.texte && (
-              <p
-                style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 22px' }}
-                dangerouslySetInnerHTML={{ __html: formatBold(data.formations.texte) }}
-              />
+              <ParasMd texte={data.formations.texte} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: '0 0 22px' }} />
             )}
             <nav aria-label="Formations liées" style={{
               display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12,
@@ -514,12 +517,10 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               Comparatif détaillé : {data.toolA.name} vs {data.toolB.name}
             </h2>
-            <p style={{
+            <Paras texte={T.criteres || `${data.criteria.length} critères, vérifiés sur les sources des éditeurs et confrontés à nos formations sur les deux outils.`} style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 56px',
-            }}>
-              {T.criteres || `${data.criteria.length} critères, vérifiés sur les sources des éditeurs et confrontés à nos formations sur les deux outils.`}
-            </p>
+            }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 32 }}>
               {data.criteria.map((c, i) => (
@@ -564,17 +565,13 @@ export default function ComparisonPage({ slug: propSlug }) {
                       <div style={{ fontSize: 13, fontWeight: 800, color: data.toolA.color, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                         {data.toolA.name}
                       </div>
-                      <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}>
-                        {c.descriptionA}
-                      </p>
+                      <Paras texte={c.descriptionA} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }} />
                     </div>
                     <div style={{ paddingLeft: 16, borderLeft: `3px solid ${data.toolB.color}` }}>
                       <div style={{ fontSize: 13, fontWeight: 800, color: data.toolB.color, marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                         {data.toolB.name}
                       </div>
-                      <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}>
-                        {c.descriptionB}
-                      </p>
+                      <Paras texte={c.descriptionB} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }} />
                     </div>
                   </div>
                 </div>
@@ -601,12 +598,10 @@ export default function ComparisonPage({ slug: propSlug }) {
                   n'ont que 4 outils, le libellé « 5 outils » était faux sur ces pages. */}
               {T.analyseTitre || `Analyse approfondie des ${data.deepDive.length} outils`}
             </h2>
-            <p style={{
+            <Paras texte={T.analyse || 'Forces, faiblesses et profil idéal pour chaque outil.'} style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 56px',
-            }}>
-              {T.analyse || 'Forces, faiblesses et profil idéal pour chaque outil.'}
-            </p>
+            }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
               {data.deepDive.map((tool, i) => {
@@ -701,12 +696,10 @@ export default function ComparisonPage({ slug: propSlug }) {
               {data.comparisonTableMeta?.title || 'Tableau de synthèse'}
             </h2>
             {data.comparisonTableMeta?.note && (
-              <p style={{
+              <Paras texte={data.comparisonTableMeta.note} style={{
                 fontSize: 14, color: '#6B7280', lineHeight: 1.6,
                 margin: '0 auto 24px', maxWidth: 760, textAlign: 'center',
-              }}>
-                {data.comparisonTableMeta.note}
-              </p>
+              }} />
             )}
             <div style={{ overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12, marginTop: 24 }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 700 }}>
@@ -769,10 +762,7 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               Notre méthodologie
             </div>
-            <p
-              style={{ fontSize: 14.5, color: '#1E3A8A', lineHeight: 1.65, margin: 0 }}
-              dangerouslySetInnerHTML={{ __html: formatBold(data.methodology) }}
-            />
+            <ParasMd texte={data.methodology} style={{ fontSize: 14.5, color: '#1E3A8A', lineHeight: 1.65, margin: 0 }} />
 
             {data.citations?.length > 0 && (
               <div style={{ marginTop: 16, paddingTop: 14, borderTop: '1px solid #BAE6FD' }}>
@@ -835,7 +825,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                   }}>
                     {item.date}
                   </span>
-                  <span style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.6 }}>{item.text}</span>
+                  <Paras texte={item.text} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.6, margin: 0 }} />
                 </li>
               ))}
             </ul>
@@ -859,12 +849,10 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {T.casTitre || 'Cas pratiques : qui gagne sur vos vrais usages ?'}
             </h2>
-            <p style={{
+            <Paras texte={T.cas || `${data.realCases.length} scénarios professionnels concrets exploitant les fonctionnalités des offres professionnelles (projets, artefacts, analyse de données, connecteurs et MCP, agents de recherche).`} style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 700, margin: '0 auto 56px',
-            }}>
-              {T.cas || `${data.realCases.length} scénarios professionnels concrets exploitant les fonctionnalités des offres professionnelles (projets, artefacts, analyse de données, connecteurs et MCP, agents de recherche).`}
-            </p>
+            }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
               {data.realCases.map((c, i) => {
@@ -954,10 +942,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                         <Pictogram emoji={c.winner === 'tie' ? '\u{1F91D}' : '\u{1F3C6}'} size={16} color={winnerTool.color} />
                         Verdict : {winnerTool.name}
                       </div>
-                      <p
-                        style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}
-                        dangerouslySetInnerHTML={{ __html: formatBold(c.verdictText) }}
-                      />
+                      <ParasMd texte={c.verdictText} max={2} budget={320} style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }} />
                     </div>
                   </article>
                 )
@@ -982,12 +967,10 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {T.metiersTitre || 'Notre recommandation par métier'}
             </h2>
-            <p style={{
+            <Paras texte={T.metiers || "D'après les formations que nous menons par métier depuis 2022."} style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
-            }}>
-              {T.metiers || "D'après les formations que nous menons par métier depuis 2022."}
-            </p>
+            }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {data.useCases.map((u, i) => {
@@ -999,18 +982,19 @@ export default function ComparisonPage({ slug: propSlug }) {
                   ? data.toolB
                   : { name: u.recommendation, color: '#6B7280' }
 
+                // Ligne métier · outil · raison : flex qui passe à la ligne sur mobile (la grille débordait)
                 return (
                   <div key={i} style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'minmax(200px, 1.5fr) minmax(120px, auto) 2.5fr',
-                    gap: 20, padding: 20,
+                    display: 'flex', flexWrap: 'wrap',
+                    gap: '12px 20px', padding: 20,
                     background: '#fff', border: '1px solid #E5E7EB', borderRadius: 10,
                     alignItems: 'center',
                   }}>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: '#0A0A0A' }}>
+                    <div style={{ flex: '1.5 1 160px', fontSize: 15, fontWeight: 700, color: '#0A0A0A' }}>
                       {u.metier}
                     </div>
                     <div style={{
+                      flex: '0 0 auto',
                       fontSize: 13, fontWeight: 700, color: tool.color,
                       background: `${tool.color}15`,
                       padding: '6px 14px', borderRadius: 99,
@@ -1018,7 +1002,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                     }}>
                       {tool.name}
                     </div>
-                    <div style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.55 }}>
+                    <div style={{ flex: '2.5 1 300px', fontSize: 14, color: '#4B5563', lineHeight: 1.55 }}>
                       {u.why}
                     </div>
                   </div>
@@ -1045,26 +1029,24 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {T.coutTitre || 'Combien ça coûte ?'}
             </h2>
-            <p style={{
+            <Paras texte={T.cout || "Estimations annuelles selon la taille de l'entreprise (abonnement uniquement, hors formation et accompagnement)."} style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 700, margin: '0 auto 48px',
-            }}>
-              {T.cout || "Estimations annuelles selon la taille de l'entreprise (abonnement uniquement, hors formation et accompagnement)."}
-            </p>
+            }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {/* Ligne taille · budget · offre : flex qui passe à la ligne sur mobile (la grille débordait) */}
               {data.costScenarios.map((s, i) => (
                 <div key={i} style={{
                   background: '#fff',
                   border: '1px solid #E5E7EB',
                   borderRadius: 12,
                   padding: 24,
-                  display: 'grid',
-                  gridTemplateColumns: 'minmax(220px, 1fr) minmax(140px, auto) 2.5fr',
-                  gap: 24,
+                  display: 'flex', flexWrap: 'wrap',
+                  gap: '16px 24px',
                   alignItems: 'flex-start',
                 }}>
-                  <div>
+                  <div style={{ flex: '1 1 180px' }}>
                     <div style={{ fontSize: 11, fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>
                       Taille d'entreprise
                     </div>
@@ -1073,6 +1055,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                     </div>
                   </div>
                   <div style={{
+                    flex: '0 0 auto',
                     background: '#0A0A0A', color: '#fff',
                     padding: '12px 16px', borderRadius: 8,
                     textAlign: 'center', whiteSpace: 'nowrap',
@@ -1084,7 +1067,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                       {s.annualCost}
                     </div>
                   </div>
-                  <div>
+                  <div style={{ flex: '2.5 1 300px' }}>
                     <div style={{
                       fontSize: 11, fontWeight: 700, color: '#2563EB',
                       textTransform: 'uppercase', letterSpacing: '0.06em',
@@ -1133,12 +1116,10 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {T.erreursTitre || `${data.mistakes.length} erreurs fréquentes à éviter`}
             </h2>
-            <p style={{
+            <Paras texte={T.erreurs || 'Les pièges les plus courants observés sur les déploiements IA en entreprise depuis 2022.'} style={{
               fontSize: 16, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 640, margin: '0 auto 48px',
-            }}>
-              {T.erreurs || 'Les pièges les plus courants observés sur les déploiements IA en entreprise depuis 2022.'}
-            </p>
+            }} />
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               {data.mistakes.map((m, i) => (
@@ -1165,12 +1146,10 @@ export default function ComparisonPage({ slug: propSlug }) {
                       }}>
                         Erreur n°{i + 1} : {m.title}
                       </h3>
-                      <p style={{
+                      <Paras texte={m.desc} max={2} style={{
                         fontSize: 14.5, color: '#374151',
                         lineHeight: 1.65, margin: 0,
-                      }}>
-                        {m.desc}
-                      </p>
+                      }} />
                     </div>
                   </div>
                 </div>
@@ -1195,13 +1174,19 @@ export default function ComparisonPage({ slug: propSlug }) {
             }}>
               {T.alternativesTitre || 'Et les autres outils alors\u00a0?'}
             </h2>
-            <p style={{
+            <Paras texte={T.alternatives || "Quelques alternatives parfois citées dans les réflexions d'achat."} style={{
               fontSize: 15, color: '#6B7280', lineHeight: 1.6,
               textAlign: 'center', maxWidth: 600, margin: '0 auto 36px',
-            }}>
-              {T.alternatives || "Quelques alternatives parfois citées dans les réflexions d'achat."}
-            </p>
+            }} />
 
+            {/* Résumés longs : liste verticale pleine largeur ; courts : cartes côte à côte */}
+            {texteLong(data.alsoConsidered.map(t => t.summary)) ? (
+              <Rangees items={data.alsoConsidered.map(t => ({
+                titre: t.name,
+                texte: <span dangerouslySetInnerHTML={{ __html: linkify(t.summary) }} />,
+                icon: Layers,
+              }))} />
+            ) : (
             <div style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -1226,6 +1211,7 @@ export default function ComparisonPage({ slug: propSlug }) {
                 </div>
               ))}
             </div>
+            )}
           </div>
         </section>
       )}
@@ -1236,7 +1222,7 @@ export default function ComparisonPage({ slug: propSlug }) {
           <div style={{ maxWidth: 820, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 28px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{data.terrain.titre}</h2>
             {(data.terrain.paras || []).map((t, i) => (
-              <p key={i} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }} dangerouslySetInnerHTML={{ __html: formatBold(t) }} />
+              <ParasMd key={i} texte={t} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }} />
             ))}
           </div>
         </section>
@@ -1274,11 +1260,9 @@ export default function ComparisonPage({ slug: propSlug }) {
                     {item.q}
                     <span style={{ fontSize: 22, color: '#9CA3AF', flexShrink: 0 }}>+</span>
                   </summary>
-                  <div style={{
-                    marginTop: 14, fontSize: 15, color: '#374151', lineHeight: 1.65,
-                  }}
-                    dangerouslySetInnerHTML={{ __html: formatBold(item.a) }}
-                  />
+                  <div style={{ marginTop: 14 }}>
+                    <ParasMd texte={item.a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }} />
+                  </div>
                 </details>
               ))}
             </div>
@@ -1337,12 +1321,10 @@ export default function ComparisonPage({ slug: propSlug }) {
           }}>
             {T.ctaTitre || 'Vous hésitez encore ? Testez avant de choisir.'}
           </h2>
-          <p style={{
+          <Paras texte={T.ctaTexte || "Nos formations multi-outils permettent à vos équipes de tester les 5 IA principales sur leurs cas d'usage réels avant de décider. 2 jours, certifié Qualiopi, finançable OPCO."} style={{
             fontSize: 17, color: '#D1D5DB', lineHeight: 1.65,
-            marginBottom: 36, maxWidth: 600, margin: '0 auto 36px',
-          }}>
-            {T.ctaTexte || "Nos formations multi-outils permettent à vos équipes de tester les 5 IA principales sur leurs cas d'usage réels avant de décider. 2 jours, certifié Qualiopi, finançable OPCO."}
-          </p>
+            maxWidth: 600, margin: '0 auto 36px',
+          }} />
 
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 32 }}>
             <Link to="/formation-multi-outils" style={{
@@ -1419,6 +1401,92 @@ function ToolCard({ tool }) {
         <div><span style={{ color: '#6B7280' }}>Lancement :</span> <span style={{ color: '#0A0A0A', fontWeight: 600 }}>{tool.foundedAI}</span></div>
         <div style={{ marginTop: 6 }}><span style={{ color: '#6B7280' }}>Tarifs :</span> <span style={{ color: '#0A0A0A', fontWeight: 600 }}>{tool.pricing}</span></div>
       </div>
+    </div>
+  )
+}
+
+/* Mise en page aérée : un texte Markdown (gras **…**, liens [libellé](/chemin)) se découpe
+   AVANT formatage. Les phrases sont repérées sur le texte sans balises, puis recoupées dans
+   la chaîne d'origine ; un gras ouvert d'un morceau au suivant est refermé puis rouvert.
+   Aucun mot ne change. max = phrases par morceau, budget = caractères par morceau. */
+function morceauxMd(texte, max = 3, budget = 380) {
+  if (typeof texte !== 'string' || !texte.trim()) return []
+  // Texte sans balises (libellé de lien entre accolades : aucune coupe n'y tombe) et position d'origine de chaque caractère
+  let brut = ''
+  const pos = []
+  for (let i = 0; i < texte.length;) {
+    if (texte.startsWith('**', i)) { i += 2; continue }
+    const lien = /^\[([^\]]+)\]\(([^)]+)\)/.exec(texte.slice(i))
+    if (lien) {
+      brut += `{${lien[1]}}`
+      pos.push(i)
+      for (let k = 0; k < lien[1].length; k++) pos.push(i + 1 + k)
+      pos.push(i + lien[0].length - 1)
+      i += lien[0].length
+      continue
+    }
+    brut += texte[i]
+    pos.push(i)
+    i++
+  }
+  if (brut.length <= budget) return [texte.trim()]
+  // Bornes de chaque phrase dans le texte sans balises
+  const bornes = []
+  let cur = 0
+  for (const ph of decouperPhrases(brut)) {
+    const d = brut.indexOf(ph, cur)
+    if (d < 0) return [texte.trim()]
+    bornes.push([d, d + ph.length])
+    cur = d + ph.length
+  }
+  // Regroupement : même règle que paragraphes() de aere-texte.js
+  const groupes = []
+  let g = [], n = 0
+  for (const b of bornes) {
+    const l = b[1] - b[0]
+    if (g.length && (g.length >= max || n + l + 1 > budget)) { groupes.push(g); g = []; n = 0 }
+    g.push(b); n += l + 1
+  }
+  if (g.length) {
+    const prec = groupes[groupes.length - 1]
+    if (prec && g.length === 1 && g[0][1] - g[0][0] < 90 && prec.length < max) prec.push(g[0])
+    else groupes.push(g)
+  }
+  // Coupe dans la chaîne d'origine (le gras refermé juste après la phrase lui reste attaché)
+  const out = []
+  let debut = 0
+  groupes.forEach((grp, k) => {
+    if (k === groupes.length - 1) { out.push(texte.slice(debut).trim()); return }
+    let fin = pos[grp[grp.length - 1][1] - 1] + 1
+    while (texte.startsWith('**', fin)) fin += 2
+    out.push(texte.slice(debut, fin).trim())
+    debut = fin
+  })
+  let ouvert = false
+  return out.filter(Boolean).map(m => {
+    const s = (ouvert ? '**' : '') + m
+    ouvert = (s.match(/\*\*/g) || []).length % 2 === 1
+    return ouvert ? `${s}**` : s
+  })
+}
+
+// Une phrase par morceau (accroche + puces)
+const phrasesMd = texte => morceauxMd(texte, 1, 0)
+
+// Rendu d'un morceau Markdown dans une puce ou une rangée
+const md = t => <span dangerouslySetInnerHTML={{ __html: formatBold(t) }} />
+
+/* Paragraphes courts d'un texte Markdown, chaque morceau formaté après la coupe. */
+function ParasMd({ texte, style, max = 3, budget = 380, format = formatBold }) {
+  const morceaux = morceauxMd(texte, max, budget)
+  if (!morceaux.length) return null
+  if (morceaux.length === 1) return <p style={style} dangerouslySetInnerHTML={{ __html: format(morceaux[0]) }} />
+  const ecart = Math.max(12, parseInt(style?.marginBottom ?? 14, 10) || 14)
+  return (
+    <div>
+      {morceaux.map((m, i) => (
+        <p key={i} style={{ ...style, ...(i < morceaux.length - 1 ? { marginBottom: ecart } : null) }} dangerouslySetInnerHTML={{ __html: format(m) }} />
+      ))}
     </div>
   )
 }

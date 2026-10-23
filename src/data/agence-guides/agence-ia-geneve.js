@@ -78,7 +78,7 @@ export default {
   intro: "À Genève, un outil d'IA sur mesure se dessine à partir des règles de secret et d'externalisation propres à votre activité : loi fédérale sur la protection des données (LPD), circulaire de la FINMA (l'autorité fédérale de surveillance des marchés financiers), secret professionnel des établissements financiers. Masteria, cabinet basé à Lyon, cadre ces règles avec votre conformité, développe l'outil dans leurs limites et vous remet son code et sa documentation. En Suisse, aucun OPCO (l'organisme français qui finance la formation) n'intervient : la mission est facturée hors taxes, avec un devis qui précise le traitement de la TVA.",
   offresIntro: [
     "Pour une banque, une société de négoce, une organisation internationale ou une PME du canton, nos trois métiers partagent une contrainte : chaque traitement de données doit pouvoir être justifié devant votre conformité, votre société d'audit ou votre autorité de surveillance.",
-    "Les cartes ci-dessous traduisent cette contrainte en livrables. Nous intervenons depuis Lyon, sans adresse en Suisse, et nous travaillons en français ; le devis forfaitaire de chaque mission arrête le périmètre, les livrables, le calendrier et le prix avant toute signature.",
+    "Les points ci-dessous traduisent cette contrainte en livrables. Nous intervenons depuis Lyon, sans adresse en Suisse, et nous travaillons en français ; le devis forfaitaire de chaque mission arrête le périmètre, les livrables, le calendrier et le prix avant toute signature.",
   ],
   offres: [
     {

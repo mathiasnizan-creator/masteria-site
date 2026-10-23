@@ -11,7 +11,7 @@ import CadrageLink from '../components/CadrageLink'
 import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import OfficialSources from '../components/OfficialSources'
 import TerrainGuide from '../components/TerrainGuide'
-import { Accroche, Paras } from '../components/Aere'
+import { Accroche, Paras, Reponse, Rangees, texteLong } from '../components/Aere'
 import { secteurGuidePromise } from '../data/terrain-guides'
 import { getSecteur, SECTEUR_DATE_PUBLISHED, SECTEUR_DATE_MODIFIED } from '../data/secteur-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -111,6 +111,46 @@ const OFFERS = [
   },
 ]
 
+/* Offres en liste verticale pleine largeur (avant : trois cartes serrées côte à côte) :
+   picto, titre, paragraphes courts, points clés et liens, mots inchangés. */
+function OffresRangees({ offres }) {
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB' }}>
+      {offres.map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
+        <li key={href} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '28px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ ...iconBoxStyle, width: 40, height: 40, borderRadius: 99, background: '#EFF4FF' }}>
+            <Icon size={19} strokeWidth={1.75} style={{ color: c }} />
+          </span>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '4px 0 10px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{title}</h3>
+            <Paras texte={desc} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '0 0 14px', maxWidth: 720 }} />
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'flex', flexWrap: 'wrap', gap: '8px 22px' }}>
+              {points.map(pt => (
+                <li key={pt} style={{ fontSize: 14, color: '#374151', display: 'flex', gap: 7, alignItems: 'flex-start' }}>
+                  <Check size={16} strokeWidth={2} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                  {pt}
+                </li>
+              ))}
+            </ul>
+            <div style={{ display: 'flex', gap: '8px 22px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <Link to={href} style={{ color: c, fontWeight: 700, fontSize: 14, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                {cta}
+                <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+              {secondaryHref && (
+                <Link to={secondaryHref} style={{ color: '#6B7280', fontWeight: 600, fontSize: 13.5, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                  {secondaryCta}
+                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+                </Link>
+              )}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -128,7 +168,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -321,25 +363,31 @@ export default function SecteurIAPage() {
             <div style={editorialAside}>
               <div style={kickerStyle}>{propre && guide.offresTitre?.kicker ? guide.offresTitre.kicker : 'Nos expertises'}</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>{propre && guide.offresTitre?.h2 ? guide.offresTitre.h2 : <>Ce que nous faisons pour {secteur.nameWithArticle}</>}</h2>
+              {guide?.offresIntro ? (
+                <>
+                  <Reponse texte={guide.offresIntro[0]} style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 14px' }} />
+                  <Paras texte={guide.offresIntro[1]} max={2} style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }} />
+                </>
+              ) : (
+                <>
               <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 14px' }}>
-                {guide?.offresIntro ? <strong style={{ color: '#0A0A0A' }}>{guide.offresIntro[0]}</strong> : (
-                  <>
                   <strong style={{ color: '#0A0A0A' }}>Masteria couvre trois expertises de cœur d'offre : le conseil en stratégie et gouvernance IA, le développement d'agents et d'outils sur mesure, et l'automatisation des processus.</strong>{' '}
                 Elles s'enchaînent dans une même trajectoire : un cadrage stratégique débouche sur la conception et le développement des solutions, prolongés par l'automatisation puis consolidés par la formation des équipes qui en héritent.
-                  </>
-                )}
               </p>
               <p style={{ ...mutedStyle, maxWidth: 'none', margin: 0 }}>
-                {guide?.offresIntro ? guide.offresIntro[1] : (
-                  <>
                   Trois offres, une seule logique : concevoir, développer et vous rendre autonome. Chaque proposition est forfaitaire, avec périmètre, livrables et calendrier écrits avant signature.
-                  </>
-                )}
               </p>
+                </>
+              )}
             </div>
 
+            {(() => {
+              const offres = OFFERS.map((offer, oi) => ({ ...offer, ...(guide?.offres?.[oi] || {}) }))
+              // Descriptions longues : liste verticale pleine largeur ; courtes : cartes côte à côte
+              if (texteLong(offres.map(o => o.desc))) return <div><OffresRangees offres={offres} /></div>
+              return (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
-              {OFFERS.map((offer, oi) => ({ ...offer, ...(guide?.offres?.[oi] || {}) })).map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
+              {offres.map(({ icon: Icon, title, href, cta, desc, points, secondaryHref, secondaryCta }) => (
                 <div key={href} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ ...iconBoxStyle, marginBottom: 18 }}>
                     <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
@@ -369,6 +417,8 @@ export default function SecteurIAPage() {
                 </div>
               ))}
             </div>
+              )
+            })()}
           </div>
         </div>
       </section>
@@ -382,12 +432,18 @@ export default function SecteurIAPage() {
         <div style={{ ...WRAP, position: 'relative' }}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>{propre && guide.enjeux?.kicker ? guide.enjeux.kicker : 'Enjeux du secteur'}</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>{propre && guide.enjeux?.h2 ? guide.enjeux.h2 : <>L'IA dans {secteur.nameWithArticle} : où se crée la valeur ?</>}</h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 'none' }}>{secteur.context}</p>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', margin: '0 0 14px' }}>
+            <Paras texte={secteur.context} style={{ fontSize: 16, lineHeight: 1.75, color: '#E2E8F0', margin: 0, maxWidth: 900 }} />
+          </div>
 
           {/* Douleurs propres au secteur */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', margin: '40px 0 20px', letterSpacing: '-0.01em' }}>
             {propre && guide.enjeux?.difficultes ? guide.enjeux.difficultes : 'Les difficultés que nous adressons'}
           </h3>
+          {/* Textes longs : liste verticale pleine largeur ; courts : cartes côte à côte */}
+          {texteLong(secteur.painPoints) ? (
+            <Rangees sombre items={secteur.painPoints.map(pp => ({ texte: pp, icon: AlertTriangle }))} style={{ marginBottom: 8 }} />
+          ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20, marginBottom: 8 }}>
             {secteur.painPoints.map((pp, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24, display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -398,11 +454,15 @@ export default function SecteurIAPage() {
               </div>
             ))}
           </div>
+          )}
 
           {/* Prestations concrètes propres au secteur */}
           <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#F8FAFC', margin: '48px 0 20px', letterSpacing: '-0.01em' }}>
             {propre && guide.enjeux?.prestations ? guide.enjeux.prestations : <>Des prestations concrètes pour {secteur.nameWithArticle}</>}
           </h3>
+          {texteLong(secteur.useCases.map(uc => uc.desc)) ? (
+            <Rangees sombre niveau="h4" items={secteur.useCases.map(uc => ({ titre: uc.title, texte: uc.desc, icon: Briefcase }))} />
+          ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
             {secteur.useCases.map((uc, i) => (
               <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
@@ -414,6 +474,7 @@ export default function SecteurIAPage() {
               </div>
             ))}
           </div>
+          )}
 
           {/* Contrainte réglementaire / confidentialité propre (bandeau filet latéral) */}
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderLeft: `4px solid ${c}`, borderRadius: 16, padding: '28px 30px', margin: '48px 0 0', display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -424,7 +485,7 @@ export default function SecteurIAPage() {
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#F8FAFC', margin: '0 0 10px', letterSpacing: '-0.01em' }}>
                 {secteur.constraints.title}
               </h3>
-              <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.75, margin: 0 }}>{secteur.constraints.desc}</p>
+              <Paras texte={secteur.constraints.desc} style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 820 }} />
             </div>
           </div>
         </div>
@@ -441,9 +502,10 @@ export default function SecteurIAPage() {
           <div style={WRAP}>
             <div style={kickerStyle}>{secteur.deepDive.kicker}</div>
             <h2 style={{ ...h2Style, maxWidth: 880 }}>{secteur.deepDive.h2}</h2>
-            <p style={{ ...answerStyle, background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', margin: '0 0 28px' }}>
-              <strong style={{ color: '#0A0A0A' }}>{secteur.deepDive.answer}</strong>
-            </p>
+            <Reponse texte={secteur.deepDive.answer} style={{ ...answerStyle, background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', margin: '0 0 28px' }} />
+            {texteLong(secteur.deepDive.cards.map(card => card.desc)) ? (
+              <Rangees items={secteur.deepDive.cards.map(card => ({ titre: card.title, texte: card.desc, icon: ICONS[card.icon] || Briefcase }))} style={{ maxWidth: 880 }} />
+            ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24 }}>
               {secteur.deepDive.cards.map(card => {
                 const I = ICONS[card.icon] || Briefcase
@@ -458,6 +520,7 @@ export default function SecteurIAPage() {
                 )
               })}
             </div>
+            )}
             {secteur.deepDive.closing && (
               <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
                 {secteur.deepDive.closing}
@@ -484,11 +547,9 @@ export default function SecteurIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(22px, 2.8vw, 30px)', marginBottom: 14 }}>
                 {propre && guide.regieBloc?.h2 ? guide.regieBloc.h2 : 'Détacher des développeurs IA dans vos équipes'}
               </h2>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 820 }}>
-                <strong style={{ color: '#0A0A0A' }}>{propre && guide.regieBloc?.accroche ? guide.regieBloc.accroche : secteur.onsiteDev}</strong>
-              </p>
+              <Reponse texte={propre && guide.regieBloc?.accroche ? guide.regieBloc.accroche : secteur.onsiteDev} style={{ fontSize: 15.5, lineHeight: 1.75, margin: '0 0 14px', maxWidth: 820 }} />
               {guide?.regie ? guide.regie.map((para, k) => (
-                <p key={k} style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }}>{para}</p>
+                <Paras key={k} texte={para} max={2} style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }} />
               )) : (
                 <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 820 }}>
                   Au-delà du forfait au projet, nous proposons un modèle d'engagement en régie ou en équipe dédiée : un ou plusieurs développeurs IA intégrés à vos équipes, sur site ou à distance, pour les environnements sensibles ou une montée en charge rapide. Le périmètre, la durée et les modalités sont cadrés et écrits avant de démarrer.
@@ -515,8 +576,8 @@ export default function SecteurIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(22px, 2.8vw, 30px)' }}>{propre && guide.formationBloc?.h2 ? guide.formationBloc.h2 : 'Ancrer les usages après le déploiement'}</h2>
               {guide?.formation ? (
                 <>
-                  <p style={answerStyle}><strong style={{ color: '#0A0A0A' }}>{guide.formation[0]}</strong></p>
-                  {guide.formation[1] && <p style={mutedStyle}>{guide.formation[1]}</p>}
+                  <Reponse texte={guide.formation[0]} style={answerStyle} />
+                  {guide.formation[1] && <Paras texte={guide.formation[1]} max={2} style={mutedStyle} />}
                 </>
               ) : (
                 <>
@@ -669,7 +730,7 @@ export default function SecteurIAPage() {
             </h2>
             {propre && guide.equipe?.texte ? (
               <>
-                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }}>{guide.equipe.texte}</p>
+                <Paras texte={guide.equipe.texte} max={2} style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }} />
                 <nav aria-label="Preuves" style={{ display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 14 }}>
                   <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>Études de cas</Link>
                   <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>Revue de presse</Link>

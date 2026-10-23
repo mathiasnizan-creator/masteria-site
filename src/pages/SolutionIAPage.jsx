@@ -9,7 +9,7 @@ import SEOHead from '../components/SEOHead'
 import CadrageLink from '../components/CadrageLink'
 import { CADRAGE_LABEL, CADRAGE_COURT } from '../data/offre-entree'
 import TerrainGuide from '../components/TerrainGuide'
-import { Accroche, Paras, Reperes, lignesEnReperes } from '../components/Aere'
+import { Accroche, Paras, Reperes, Reponse, Rangees, lignesEnReperes, texteLong } from '../components/Aere'
 import { solutionGuidePromise } from '../data/terrain-guides'
 import FounderNote from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
@@ -266,8 +266,10 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       {/* Réponse TOUJOURS présente dans le DOM (repliée en CSS) : crawlable + citable par les LLM (GEO). */}
-      <div style={{ maxHeight: open ? 800 : 0, overflow: 'hidden', transition: 'max-height 0.3s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, paddingBottom: 20, margin: 0 }}>{a}</p>
+      <div style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.3s ease' }}>
+        <div style={{ paddingBottom: 20 }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -515,9 +517,7 @@ export default function SolutionIAPage() {
             </div>
 
             <div>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 'none' }}>
-                {solution.whatItIs}
-              </p>
+              <Paras texte={solution.whatItIs} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 'none' }} />
 
               {/* À retenir : points citables (GEO / featured snippet) */}
               {solution.keyTakeaways && solution.keyTakeaways.length > 0 && (
@@ -595,6 +595,10 @@ export default function SolutionIAPage() {
           {!guide?.etapes && <p style={answerStyle}>
             <strong>Un projet solution IA avance en cinq étapes : cadrage sur un cas d'usage priorisé, maquette ou POC sur vos données réelles, décision d'industrialisation sur critères, construction et intégration, puis run avec mesure et gouvernance. Chaque étape se conclut par une décision, prise sur des éléments concrets.</strong>
           </p>}
+          {/* Étapes longues : liste verticale numérotée pleine largeur ; courtes : cartes côte à côte */}
+          {texteLong((guide?.etapes || PROJECT_STAGES).map(step => step.desc)) ? (
+            <Rangees items={(guide?.etapes || PROJECT_STAGES).map(step => ({ titre: step.title, texte: step.desc }))} style={{ maxWidth: 880, marginBottom: 28 }} />
+          ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: 16, marginBottom: 28 }}>
             {(guide?.etapes || PROJECT_STAGES).map((step, i) => (
               <div key={step.title} style={{ ...cardStyle, padding: 22 }}>
@@ -606,6 +610,7 @@ export default function SolutionIAPage() {
               </div>
             ))}
           </div>
+          )}
           {!guide?.etapes && (
             <>
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
@@ -636,7 +641,7 @@ export default function SolutionIAPage() {
             {propre && guide.methodeBloc?.h2 ? guide.methodeBloc.h2 : <>Comment nous construisons votre {solution.name.toLowerCase()}</>}
           </h2>
           {propre && guide.methodeBloc?.lead && (
-            <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}><strong>{guide.methodeBloc.lead}</strong></p>
+            <Reponse texte={guide.methodeBloc.lead} style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }} />
           )}
           {!guide && (
             <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none' }}>
@@ -658,7 +663,7 @@ export default function SolutionIAPage() {
                 </div>
                 <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }}>{step.desc}</p>
+                  <Paras texte={step.desc} max={2} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 700 }} />
                 </div>
               </div>
             ))}
@@ -674,13 +679,9 @@ export default function SolutionIAPage() {
             {propre && guide.technique?.h2 ? guide.technique.h2 : 'Sur quelles briques techniques ?'}
           </h2>
           {(!propre || guide.technique?.lead) && (
-          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>{propre ? guide.technique.lead : "Sur quatre briques : une approche multi-LLM (le bon modèle au bon endroit), du RAG pour ancrer les réponses dans vos données avec sources, des connecteurs API et MCP vers vos outils, et des garde-fous avec validation humaine. Hébergement dans l'Union européenne possible selon vos exigences de conformité."}</strong>
-          </p>
+          <Reponse texte={propre ? guide.technique.lead : "Sur quatre briques : une approche multi-LLM (le bon modèle au bon endroit), du RAG pour ancrer les réponses dans vos données avec sources, des connecteurs API et MCP vers vos outils, et des garde-fous avec validation humaine. Hébergement dans l'Union européenne possible selon vos exigences de conformité."} style={{ ...answerStyle, background: '#F9FAFB' }} />
           )}
-          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }}>
-            {propre && guide.technique?.texte ? guide.technique.texte : solution.techApproach}
-          </p>
+          <Paras texte={propre && guide.technique?.texte ? guide.technique.texte : solution.techApproach} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 32px', maxWidth: 880 }} />
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             {(propre && guide.technique?.chips ? guide.technique.chips.map((label, k) => ({ icon: [Cpu, Database, Plug, ShieldCheck, Server][k % 5], label })) : propre ? [] : [
               { icon: Cpu, label: 'Multi-LLM, le bon modèle au bon endroit' },
@@ -719,6 +720,10 @@ export default function SolutionIAPage() {
             Quelques exemples génériques de ce que cette solution permet selon le métier. Ils illustrent des usages possibles, à adapter à votre contexte lors du cadrage. Pour un panorama plus large, parcourez nos <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA en entreprise</Link>.
           </p>
           )}
+          {/* Usages longs : liste verticale pleine largeur ; courts : cartes côte à côte */}
+          {texteLong(solution.useCasesBySector.map(uc => uc.usage)) ? (
+            <Rangees items={solution.useCasesBySector.map(uc => ({ titre: uc.sector, texte: uc.usage, icon: Briefcase }))} style={{ maxWidth: 880 }} />
+          ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
             {solution.useCasesBySector.map(uc => (
               <div key={uc.sector} style={{ ...cardStyle, padding: 28 }}>
@@ -730,6 +735,7 @@ export default function SolutionIAPage() {
               </div>
             ))}
           </div>
+          )}
           {solution.sectorLinks && solution.sectorLinks.length > 0 && propre && (
             <nav aria-label="Pages sectorielles liées" style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
               Par secteur :{' '}
@@ -798,13 +804,11 @@ export default function SolutionIAPage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             {`${solution.offTheShelfLabel} ou ${solution.name.replace(/\s+sur mesure$/i, '')} sur mesure ?`}
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            {guide?.comparatif?.intro ? <strong style={{ color: '#fff' }}>{guide.comparatif.intro}</strong> : (
-              <>
-              <strong style={{ color: '#fff' }}>Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est branchée sur vos données et vos outils, adopte votre métier et vous en êtes propriétaire : le code vous est livré.</strong>
-              </>
-            )}
-          </p>
+          <Reponse
+            texte={guide?.comparatif?.intro || 'Un outil sur étagère est générique et borné aux possibilités de sa plateforme. Une solution sur mesure est branchée sur vos données et vos outils, adopte votre métier et vous en êtes propriétaire : le code vous est livré.'}
+            fort="#fff" courant="#CBD5E1"
+            style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }}
+          />
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label={`Comparatif entre ${solution.offTheShelfLabel} et une solution ${solution.name} sur mesure développée par Masteria`} style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
               <caption style={{ captionSide: 'top', textAlign: 'left', padding: '0 0 16px', fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6 }}>
@@ -850,9 +854,9 @@ export default function SolutionIAPage() {
           </h2>
           {guide?.cout ? (
             <>
-              <p style={{ ...answerStyle, background: '#fff' }}><strong>{guide.cout.lead}</strong></p>
+              <Reponse texte={guide.cout.lead} style={{ ...answerStyle, background: '#fff' }} />
               {(guide.cout.paras || []).map((para, k) => (
-                <p key={k} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }}>{para}</p>
+                <Paras key={k} texte={para} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }} />
               ))}
             </>
           ) : (
@@ -865,8 +869,14 @@ export default function SolutionIAPage() {
               </p>
             </>
           )}
+          {(() => {
+            const facteurs = guide?.cout?.facteurs ? guide.cout.facteurs.map((f, k) => ({ ...f, icon: COST_FACTORS[k % COST_FACTORS.length].icon })) : COST_FACTORS
+            // Facteurs longs : liste verticale pleine largeur ; courts : cartes côte à côte
+            return texteLong(facteurs.map(f => f.desc)) ? (
+              <Rangees items={facteurs.map(f => ({ titre: f.title, texte: f.desc, icon: f.icon }))} style={{ maxWidth: 880, marginBottom: 32 }} />
+            ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginBottom: 32 }}>
-            {(guide?.cout?.facteurs ? guide.cout.facteurs.map((f, k) => ({ ...f, icon: COST_FACTORS[k % COST_FACTORS.length].icon })) : COST_FACTORS).map(f => (
+            {facteurs.map(f => (
               <div key={f.title} style={{ ...cardStyle, padding: 26 }}>
                 <div style={{ marginBottom: 14 }}>
                   <IconTile icon={f.icon} />
@@ -876,6 +886,8 @@ export default function SolutionIAPage() {
               </div>
             ))}
           </div>
+            )
+          })()}
           {!guide?.cout && (
             <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 24px', maxWidth: 880 }}>
               Le devis qui suit le cadrage décrit un périmètre écrit : les livrables de chaque palier, les hypothèses retenues (sources connectées, volumes, environnements) et ce qui reste hors périmètre. Un chiffre annoncé avant d'avoir vu vos données et vos systèmes a peu de valeur ; le devis engage sur un périmètre décrit noir sur blanc. Les montants de cette page sont des repères d'échelle, le devis remis après cadrage fait foi.
@@ -904,7 +916,7 @@ export default function SolutionIAPage() {
                 {propre && guide.regieBloc?.h2 ? guide.regieBloc.h2 : 'Des développeurs IA chez vous, sur site ou à distance'}
               </h2>
               {guide?.regie ? guide.regie.map((para, k) => (
-                <p key={k} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>{para}</p>
+                <Paras key={k} texte={para} max={2} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }} />
               )) : (
                 <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
                   {solution.onsiteDevNote || "Au-delà du forfait au projet, nous pouvons détacher un ou plusieurs développeurs IA dans vos équipes, sur site ou à distance, en régie ou en équipe dédiée. Ce modèle convient aux environnements sensibles, où le code doit rester dans votre périmètre, et aux contextes de montée en charge où vous voulez accélérer sans recruter dans l'urgence. Nos développeurs travaillent avec vos équipes, transfèrent la compétence et documentent au fil de l'eau."}
@@ -1044,7 +1056,7 @@ export default function SolutionIAPage() {
             </h2>
             {propre && guide.equipe?.texte ? (
               <>
-                <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }}>{guide.equipe.texte}</p>
+                <Paras texte={guide.equipe.texte} max={2} style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 860 }} />
                 <nav aria-label="Preuves" style={{ display: 'flex', gap: 18, flexWrap: 'wrap', fontSize: 14 }}>
                   <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>Études de cas</Link>
                   <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>Revue de presse</Link>

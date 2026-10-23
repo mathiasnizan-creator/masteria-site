@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import { CADRAGE_COURT } from '../data/offre-entree'
 import OfficialSources from '../components/OfficialSources'
 import TerrainGuide from '../components/TerrainGuide'
+import { Accroche, Paras, Reponse, Rangees, texteLong } from '../components/Aere'
 import { secteurGuidePromise } from '../data/terrain-guides'
 import { SECTEURS } from '../data/secteur-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
@@ -120,7 +121,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -222,12 +225,16 @@ export default function SecteursHubPage() {
           </p>
 
           {/* GEO : réponse directe citable — accroche */}
+          {propre && guide.resume ? (
+            <Accroche sombre texte={guide.resume} style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }} />
+          ) : (
           <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            {propre && guide.resume ? guide.resume : <>Masteria conçoit et développe des solutions IA sur mesure secteur par secteur : agents, automatisations et outils adaptés aux cas d'usage et aux contraintes réglementaires de chaque industrie. Banque, industrie, santé, juridique, retail, logistique, immobilier, secteur public, conseil, tourisme, agroalimentaire et tech : <strong style={{ color: '#fff', fontWeight: 700 }}>chaque secteur a sa page dédiée</strong>.</>}
+            <>Masteria conçoit et développe des solutions IA sur mesure secteur par secteur : agents, automatisations et outils adaptés aux cas d'usage et aux contraintes réglementaires de chaque industrie. Banque, industrie, santé, juridique, retail, logistique, immobilier, secteur public, conseil, tourisme, agroalimentaire et tech : <strong style={{ color: '#fff', fontWeight: 700 }}>chaque secteur a sa page dédiée</strong>.</>
           </p>
+          )}
 
           {guide?.intro ? (
-            <p style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>{guide.intro}</p>
+            <Paras texte={guide.intro} max={2} style={{ fontSize: 15.5, color: '#CBD5E1', lineHeight: 1.72, margin: '0 0 32px', maxWidth: 680 }} />
           ) : (
             <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
               Les cas d'usage de l'IA ne se ressemblent pas d'un secteur à l'autre : la conformité LCB-FT en banque, l'hébergement HDS en santé, le secret professionnel dans le droit, la souveraineté dans le public, la propriété intellectuelle dans l'industrie. Nous partons de votre secteur, de ses contraintes et de ses cas réels, pour cadrer puis développer ce qui crée vraiment de la valeur. Cabinet spécialisé sur l'intelligence artificielle depuis 2022, fondé à Lyon.
@@ -312,28 +319,36 @@ export default function SecteursHubPage() {
             <div style={editorialAside}>
               <div style={kickerStyle}>{propre ? guide.approche.kicker : 'Notre approche'}</div>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>{propre ? guide.approche.h2 : 'Une même méthode, déclinée par secteur'}</h2>
+              {propre ? (
+                <Reponse texte={guide.approche.lead} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, margin: 0, maxWidth: 'none' }} />
+              ) : (
               <p style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#0A0A0A', margin: 0, maxWidth: 'none' }}>
-                {propre ? <strong style={{ color: '#0A0A0A' }}>{guide.approche.lead}</strong> : (
-                <>
                 <strong style={{ color: '#0A0A0A' }}>Quel que soit le secteur, la logique est la même : cadrer la stratégie, développer les solutions sur mesure, rendre vos équipes autonomes.</strong>{' '}
                 Ce qui change d'un secteur à l'autre, ce sont les cas d'usage et les contraintes, que nous intégrons dès le cadrage.
-                </>
-                )}
               </p>
+              )}
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {(propre ? guide.approche.cartes.map((k, i) => ({ ...k, icon: APPROACH[i % APPROACH.length].icon })) : APPROACH).map(({ icon: Icon, title, desc }) => (
-                  <div key={title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                    <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
-                      <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{desc}</p>
+              {(() => {
+                const cartes = propre ? guide.approche.cartes.map((k, i) => ({ ...k, icon: APPROACH[i % APPROACH.length].icon })) : APPROACH
+                // Textes longs : liste verticale pleine largeur ; courts : cartes côte à côte
+                return texteLong(cartes.map(k => k.desc)) ? (
+                  <Rangees items={cartes.map(k => ({ titre: k.title, texte: k.desc, icon: k.icon }))} />
+                ) : (
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
+                    {cartes.map(({ icon: Icon, title, desc }) => (
+                      <div key={title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
+                        <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
+                          <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
+                        </div>
+                        <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{title}</h3>
+                        <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{desc}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                )
+              })()}
               {propre ? (guide.approche.note && (
                 <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                   {guide.approche.note}{' '}<Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>Agence de développement IA</Link>.
@@ -357,7 +372,7 @@ export default function SecteursHubPage() {
           <div style={kickerStyle}>{propre ? guide.pourquoi.kicker : 'Approche sectorielle'}</div>
           <h2 style={{ ...h2Style, marginBottom: 24 }}>{propre ? guide.pourquoi.h2 : "Pourquoi une approche IA par secteur d'activité ?"}</h2>
           {propre ? (
-            <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 24px' }}>{guide.pourquoi.lead}</p>
+            <Paras texte={guide.pourquoi.lead} max={2} style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 24px' }} />
           ) : (
           <p style={{ fontSize: 16, color: '#374151', lineHeight: 1.75, margin: '0 0 24px' }}>
             <strong style={{ color: '#0A0A0A' }}>Parce que la valeur de l'IA et ses garde-fous dépendent du secteur.</strong>{' '}

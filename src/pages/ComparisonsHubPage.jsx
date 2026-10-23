@@ -3,8 +3,71 @@ import { ArrowRight, Trophy, BadgeCheck, Wallet, MapPin, Check } from 'lucide-re
 import SEOHead from '../components/SEOHead'
 import Pictogram from '../components/Pictogram'
 import { COMPARISONS, COMPARISONS_INDEX } from '../data/comparisons'
+import { Paras, decouperPhrases } from '../components/Aere'
 
 const SITE_URL = 'https://www.master-ia.fr'
+
+/* Mise en page aérée : liste à puces sobres (texte inchangé, ponctuation comprise). */
+function Liste({ items, style }) {
+  return (
+    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 12px', display: 'grid', gap: 8, ...style }}>
+      {items.map((it, i) => (
+        <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 6, height: 6, borderRadius: 99, background: 'currentColor', opacity: 0.45, marginTop: '0.68em' }} />
+          <span>{it}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+/* Phrase qui énumère → { tete, items }, sans changer un mot ni un signe :
+   « a ; b ; c » (trois segments au moins, chacun garde son point-virgule) ou
+   « tête : a, b, c » (trois éléments au moins, chacun garde sa virgule). Sinon null. */
+function enumeration(phrase) {
+  const segments = phrase.split(' ; ')
+  if (segments.length >= 3) return { tete: null, items: segments.map((s, i) => (i < segments.length - 1 ? `${s} ;` : s)) }
+  const i = phrase.indexOf(' : ')
+  if (i < 25) return null
+  const queue = phrase.slice(i + 3)
+  const items = []
+  let prof = 0, debut = 0
+  for (let k = 0; k < queue.length; k++) {
+    const ch = queue[k]
+    if (ch === '(') prof++
+    else if (ch === ')') prof--
+    else if (ch === ',' && !prof && queue[k + 1] === ' ') { items.push(queue.slice(debut, k + 1)); debut = k + 2 }
+  }
+  items.push(queue.slice(debut))
+  if (items.length < 3 || items.some(x => x.length > 140)) return null
+  return { tete: phrase.slice(0, i + 2), items }
+}
+
+/* Explication aérée : les phrases qui énumèrent passent en liste, le reste en paragraphes courts. */
+function TexteAere({ texte, style }) {
+  const blocs = []
+  let courant = []
+  const vider = () => { if (courant.length) { blocs.push({ texte: courant.join(' ') }); courant = [] } }
+  for (const ph of decouperPhrases(texte)) {
+    const e = enumeration(ph)
+    if (e) { vider(); blocs.push(e) } else courant.push(ph)
+  }
+  vider()
+  if (blocs.length === 1 && blocs[0].texte) return <Paras texte={texte} max={2} style={style} />
+  const { margin, marginBottom, ...base } = style || {}
+  return (
+    <div style={{ margin, marginBottom }}>
+      {blocs.map((b, k) => (b.items ? (
+        <div key={k} style={base}>
+          {b.tete && <p style={{ margin: '0 0 8px' }}>{b.tete}</p>}
+          <Liste items={b.items} style={k === blocs.length - 1 ? { marginBottom: 0 } : null} />
+        </div>
+      ) : (
+        <Paras key={k} texte={b.texte} max={2} style={{ ...base, margin: k === blocs.length - 1 ? 0 : '0 0 12px' }} />
+      )))}
+    </div>
+  )
+}
 
 export default function ComparisonsHubPage() {
   // JSON-LD CollectionPage + ItemList
@@ -79,11 +142,17 @@ export default function ComparisonsHubPage() {
             Quelle est la meilleure IA en 2026&nbsp;?
           </h1>
 
+          {/* Réponse directe : accroche, puis la promesse de la page en paragraphe court */}
           <p style={{
-            fontSize: 'clamp(16px, 2vw, 19px)', color: '#374151',
-            lineHeight: 1.65, maxWidth: 720, margin: '0 auto 18px',
+            fontSize: 'clamp(17px, 2.2vw, 20px)', color: '#0A0A0A', fontWeight: 600,
+            lineHeight: 1.55, maxWidth: 720, margin: '0 auto 14px',
           }}>
             Aucun outil ne l'emporte partout : la bonne IA dépend de la suite bureautique de vos équipes, de leur métier et des règles qui encadrent vos données.
+          </p>
+          <p style={{
+            fontSize: 'clamp(15.5px, 1.8vw, 17px)', color: '#4B5563',
+            lineHeight: 1.65, maxWidth: 680, margin: '0 auto 18px',
+          }}>
             Cette page vous donne une méthode de décision en trois minutes pour départager Microsoft Copilot, Google Gemini, ChatGPT, Claude et Mistral AI, puis l'accès à nos sept comparatifs détaillés.
           </p>
 
@@ -136,15 +205,15 @@ export default function ComparisonsHubPage() {
           </p>
 
           <div style={{ display: 'grid', gap: 14 }}>
+            {/* Ligne profil · outil · raison : flex qui passe à la ligne sur mobile (la grille débordait) */}
             {DECISION_PROFILES.map((p, i) => (
               <div key={i} style={{
-                display: 'grid',
-                gridTemplateColumns: 'minmax(220px, 1.3fr) minmax(160px, auto) 2.4fr',
-                gap: 20, padding: 22,
+                display: 'flex', flexWrap: 'wrap',
+                gap: '14px 20px', padding: 22,
                 background: '#fff', border: '1px solid #E5E7EB', borderRadius: 12,
                 alignItems: 'center',
               }}>
-                <div>
+                <div style={{ flex: '1.3 1 200px' }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>
                     Profil
                   </div>
@@ -153,6 +222,7 @@ export default function ComparisonsHubPage() {
                   </div>
                 </div>
                 <div style={{
+                  flex: '0 0 auto',
                   fontSize: 14, fontWeight: 800, color: p.color,
                   background: `${p.color}15`,
                   padding: '10px 18px', borderRadius: 99,
@@ -161,7 +231,7 @@ export default function ComparisonsHubPage() {
                 }}>
                   {p.tool}
                 </div>
-                <div>
+                <div style={{ flex: '2.4 1 300px' }}>
                   <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.55, margin: 0, marginBottom: 8 }}>
                     {p.why}
                   </p>
@@ -419,12 +489,10 @@ export default function ComparisonsHubPage() {
                     }}>
                       {q.question}
                     </h3>
-                    <p style={{
+                    <TexteAere texte={q.explanation} style={{
                       fontSize: 14.5, color: '#374151',
                       lineHeight: 1.6, marginBottom: 0,
-                    }}>
-                      {q.explanation}
-                    </p>
+                    }} />
                   </div>
                 </div>
               </div>
@@ -476,9 +544,7 @@ export default function ComparisonsHubPage() {
                   }}>
                     Erreur n°{i + 1} : {m.title}
                   </h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.65, margin: 0 }}>
-                    {m.desc}
-                  </p>
+                  <TexteAere texte={m.desc} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.65, margin: 0 }} />
                 </div>
               </div>
             ))}
@@ -520,7 +586,7 @@ export default function ComparisonsHubPage() {
                 <div style={{
                   marginTop: 14, fontSize: 15, color: '#374151', lineHeight: 1.65,
                 }}>
-                  {item.a}
+                  {typeof item.a === 'string' ? <Paras texte={item.a} style={{ margin: 0 }} /> : item.a}
                 </div>
               </details>
             ))}
@@ -803,28 +869,34 @@ const FAQ_ITEMS = [
   {
     q: "Quelle IA retenir pour une entreprise en 2026 ?",
     text: "Trois critères la désignent : votre suite (Copilot pour Microsoft 365, Gemini pour Google Workspace), la tâche qui domine (ChatGPT pour la création visuelle, Claude pour le code et les documents longs) et vos contraintes d'hébergement (Mistral quand les données doivent rester dans l'Union européenne). Associer deux outils donne souvent le meilleur résultat. Notre panorama des 5 outils détaille chaque cas.",
+    // Aéré : l'énumération des trois critères passe en liste (mots et signes inchangés)
     a: (
       <>
-        Trois critères la désignent :{' '}
-        <strong>votre suite</strong> (Copilot pour Microsoft 365, Gemini pour Google Workspace),{' '}
-        <strong>la tâche qui domine</strong> (ChatGPT pour la création visuelle, Claude pour le code et les documents longs){' '}
-        et <strong>vos contraintes d'hébergement</strong> (Mistral quand les données doivent rester dans l'Union européenne).
-        Associer deux outils donne souvent le meilleur résultat.
-        Notre <Link to="/meilleure-ia-entreprise-2026" style={{ color: '#2563EB', fontWeight: 700 }}>panorama des 5 outils</Link> détaille chaque cas.
+        <p style={{ margin: '0 0 8px' }}>Trois critères la désignent :</p>
+        <Liste items={[
+          <><strong>votre suite</strong> (Copilot pour Microsoft 365, Gemini pour Google Workspace),</>,
+          <><strong>la tâche qui domine</strong> (ChatGPT pour la création visuelle, Claude pour le code et les documents longs)</>,
+          <>et <strong>vos contraintes d'hébergement</strong> (Mistral quand les données doivent rester dans l'Union européenne).</>,
+        ]} />
+        <p style={{ margin: 0 }}>
+          Associer deux outils donne souvent le meilleur résultat.
+          Notre <Link to="/meilleure-ia-entreprise-2026" style={{ color: '#2563EB', fontWeight: 700 }}>panorama des 5 outils</Link> détaille chaque cas.
+        </p>
       </>
     ),
   },
   {
     q: "En quoi ChatGPT, Claude, Copilot, Gemini et Mistral diffèrent-ils ?",
     text: "ChatGPT (OpenAI) couvre le plus de terrain : images, tâches longues confiées à ChatGPT Work, agents partagés par l'équipe. Claude (Anthropic) accepte des conversations d'un million de tokens avec un abonnement payant et inclut Claude Code. Copilot (Microsoft) vit dans Microsoft 365 et s'appuie, via Microsoft Graph, sur le contenu de vos boîtes, de vos dossiers et de vos réunions. Gemini (Google) fait partie de Workspace ; Business Standard lui donne un million de tokens et Gemini Notebook. Mistral, éditeur français, conserve les données de ses clients en Europe, sauf choix contraire, et diffuse des modèles à poids ouverts.",
+    // Aéré : une phrase par outil, en liste
     a: (
-      <>
-        <strong>ChatGPT</strong> (OpenAI) couvre le plus de terrain : images, tâches longues confiées à ChatGPT Work, agents partagés par l'équipe.{' '}
-        <strong>Claude</strong> (Anthropic) accepte des conversations d'un million de tokens avec un abonnement payant et inclut Claude Code.{' '}
-        <strong>Copilot</strong> (Microsoft) vit dans Microsoft 365 et s'appuie, via Microsoft Graph, sur le contenu de vos boîtes, de vos dossiers et de vos réunions.{' '}
-        <strong>Gemini</strong> (Google) fait partie de Workspace ; Business Standard lui donne un million de tokens et Gemini Notebook.{' '}
-        <strong>Mistral</strong>, éditeur français, conserve les données de ses clients en Europe, sauf choix contraire, et diffuse des modèles à poids ouverts.
-      </>
+      <Liste style={{ margin: 0 }} items={[
+        <><strong>ChatGPT</strong> (OpenAI) couvre le plus de terrain : images, tâches longues confiées à ChatGPT Work, agents partagés par l'équipe.</>,
+        <><strong>Claude</strong> (Anthropic) accepte des conversations d'un million de tokens avec un abonnement payant et inclut Claude Code.</>,
+        <><strong>Copilot</strong> (Microsoft) vit dans Microsoft 365 et s'appuie, via Microsoft Graph, sur le contenu de vos boîtes, de vos dossiers et de vos réunions.</>,
+        <><strong>Gemini</strong> (Google) fait partie de Workspace ; Business Standard lui donne un million de tokens et Gemini Notebook.</>,
+        <><strong>Mistral</strong>, éditeur français, conserve les données de ses clients en Europe, sauf choix contraire, et diffuse des modèles à poids ouverts.</>,
+      ]} />
     ),
   },
   {

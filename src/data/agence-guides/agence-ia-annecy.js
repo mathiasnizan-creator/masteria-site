@@ -83,7 +83,7 @@ export default {
   intro: "Dans le bassin annécien, un outil d'IA doit pouvoir vivre sans son concepteur : les petites entreprises de la sous-traitance n'ont pas toujours d'informaticien, et une partie des ingénieurs du Grand Annecy travaillent en Suisse. Masteria, basé à Lyon à environ 1 h 30, branche des assistants et des automatisations sur votre logiciel de gestion, les éprouve sur vos dossiers et vous laisse le code source avec sa documentation. Le cadrage, l'observation des postes et la passation se font chez vous.",
   offresIntro: [
     "Pour une entreprise du bassin annécien, nous concevons des outils que votre équipe fera vivre seule : peu de briques, des réglages lisibles et une documentation écrite pour la personne qui reprendra l'outil.",
-    "Les trois cartes déclinent cette règle dans nos métiers. Nous chiffrons chaque mission au forfait avant de commencer, et nous la terminons dans vos locaux, code source et documentation compris.",
+    "Les trois points déclinent cette règle dans nos métiers. Nous chiffrons chaque mission au forfait avant de commencer, et nous la terminons dans vos locaux, code source et documentation compris.",
   ],
   offres: [
     {

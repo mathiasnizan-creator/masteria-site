@@ -82,7 +82,7 @@ export default {
   intro: "Masteria a ses bureaux à Lyon, au 17 rue d'Algérie (1er arrondissement), et y mène ses missions de conseil et de développement au contact des équipes : ateliers dans vos locaux ou dans les nôtres, observation du travail au poste, passation sur votre site. Fin 2024, la métropole comptait 9 755 établissements de 10 à 49 salariés, et ceux de 100 salariés ou plus employaient près d'un salarié sur deux. Pour ces deux mondes, nous construisons des assistants et des automatisations reliés à vos logiciels, puis nous vous remettons leur code.",
   offresIntro: [
     "Depuis la presqu'île, nous décidons avec vous de ce qui mérite d'être outillé, puis nous le construisons et le branchons sur les logiciels que vos équipes ouvrent chaque matin, de Vaise à Gerland et de Villeurbanne à Vénissieux.",
-    "Les trois cartes décrivent ce que cela donne pour une entreprise de la métropole. Le prix de chaque mission est fixé d'avance, par écrit, et la mission se termine quand votre équipe a en main le code de l'outil et son mode d'emploi technique.",
+    "Les trois points décrivent ce que cela donne pour une entreprise de la métropole. Le prix de chaque mission est fixé d'avance, par écrit, et la mission se termine quand votre équipe a en main le code de l'outil et son mode d'emploi technique.",
   ],
   offres: [
     {

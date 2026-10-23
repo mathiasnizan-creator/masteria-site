@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle,
-  Plug, Cpu, KeyRound, Users, Wrench, Target,
+  Plug, Cpu, KeyRound, Users, Wrench, Target, AlertTriangle,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
+import { Accroche, Paras, Reponse, Rangees } from '../components/Aere'
 import { SOLUTIONS } from '../data/solution-ia-data'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
@@ -48,6 +49,10 @@ const H1 = 'Solutions IA sur mesure pour entreprises'
 const ICONS = {
   Bot, Database, MessagesSquare, Files, Briefcase, MessageCircle, Plug,
 }
+
+/* Réponse directe du héros (texte inchangé) ; HERO_FORT reste en gras */
+const HERO_FORT = 'remise avec son code'
+const HERO_REPONSE = "Masteria développe sept familles de solutions IA pour les entreprises : copilote interne, assistant documentaire, agent de support client, automatisation documentaire, agent commercial, chatbot de site et intégration d'un modèle de langage dans vos applications. Chacune est reliée à vos données, installée dans vos outils et remise avec son code."
 
 const HERO_CHIPS = [
   { icon: Cpu, label: 'Claude, GPT ou Mistral selon la tâche' },
@@ -236,14 +241,15 @@ export default function SolutionsHubPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · revu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria développe sept familles de solutions IA pour les entreprises : copilote interne, assistant documentaire, agent de support client, automatisation documentaire, agent commercial, chatbot de site et intégration d'un modèle de langage dans vos applications. Chacune est reliée à vos données, installée dans vos outils et <strong style={{ color: '#fff', fontWeight: 700 }}>remise avec son code</strong>.
-          </p>
+          {/* GEO : réponse directe citable — accroche (l'énumération des familles passe en liste) */}
+          <Accroche
+            sombre
+            texte={HERO_REPONSE}
+            rich={t => (t.includes(HERO_FORT) ? <>{t.split(HERO_FORT)[0]}<strong style={{ color: '#fff', fontWeight: 700 }}>{HERO_FORT}</strong>{t.split(HERO_FORT)[1]}</> : t)}
+            style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 600, color: '#fff', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}
+          />
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Chaque fiche décrit ce que fait le livrable, la façon dont nous le construisons, son coût et ses pièges. Masteria travaille sur l'IA depuis 2022, sans lien commercial avec les éditeurs, et vous remet tout ce qu'elle développe pour vous.
-          </p>
+          <Paras texte="Chaque fiche décrit ce que fait le livrable, la façon dont nous le construisons, son coût et ses pièges. Masteria travaille sur l'IA depuis 2022, sans lien commercial avec les éditeurs, et vous remet tout ce qu'elle développe pour vous." max={2} style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 32px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <CadrageLink style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -279,9 +285,7 @@ export default function SolutionsHubPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Quelle solution IA correspond à votre besoin ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Sept familles couvrent l'essentiel des projets que nous menons : copilote interne, assistant documentaire, agent de support, automatisation documentaire, agent commercial, chatbot et intégration d'un modèle de langage. Un même besoin en associe souvent deux ou trois.</strong>
-              </p>
+              <Reponse texte="Sept familles couvrent l'essentiel des projets que nous menons : copilote interne, assistant documentaire, agent de support, automatisation documentaire, agent commercial, chatbot et intégration d'un modèle de langage. Un même besoin en associe souvent deux ou trois." style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Chaque carte ouvre une fiche complète : usages, méthode, approche technique, budget, exemples par secteur. Un premier échange de 30 minutes, offert, sert à fixer le périmètre avant tout chiffrage.
               </p>
@@ -330,9 +334,7 @@ export default function SolutionsHubPage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>
             Partez du résultat que vous attendez
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>À chaque objectif courant correspond une famille de solution. Quand plusieurs objectifs se combinent, le cadrage décide par lequel commencer.</strong>
-          </p>
+          <Reponse texte="À chaque objectif courant correspond une famille de solution. Quand plusieurs objectifs se combinent, le cadrage décide par lequel commencer." fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Matrice objectif métier vers la solution IA adaptée" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 460 }}>
@@ -380,9 +382,7 @@ export default function SolutionsHubPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Un forfait par projet, ou des développeurs détachés dans vos équipes
               </h2>
-              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                La plupart de ces solutions se livrent au forfait, avec un périmètre et des livrables écrits. Quand le code doit rester dans votre périmètre, ou que vous devez accélérer sans recruter, nous détachons aussi un ou plusieurs développeurs IA dans vos équipes, chez vous ou à distance, en régie ou en équipe dédiée. Ils documentent au fil de l'eau, et vos équipes reprennent la main à la fin.
-              </p>
+              <Paras texte="La plupart de ces solutions se livrent au forfait, avec un périmètre et des livrables écrits. Quand le code doit rester dans votre périmètre, ou que vous devez accélérer sans recruter, nous détachons aussi un ou plusieurs développeurs IA dans vos équipes, chez vous ou à distance, en régie ou en équipe dédiée. Ils documentent au fil de l'eau, et vos équipes reprennent la main à la fin." max={2} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }} />
               <Link to="/methode-projet-ia" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
                 Lire la méthode de projet
                 <ArrowRight size={15} strokeWidth={2.4} aria-hidden="true" />
@@ -482,7 +482,7 @@ export default function SolutionsHubPage() {
               {HUB_FAQ.map((item, i) => (
                 <div key={i} style={{ borderTop: i === 0 ? '1px solid #E5E7EB' : 'none', borderBottom: '1px solid #E5E7EB', padding: '20px 0' }}>
                   <h3 style={{ fontWeight: 700, fontSize: 16, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', margin: '0 0 10px' }}>{item.q}</h3>
-                  <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>{item.a}</p>
+                  <Paras texte={item.a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
                 </div>
               ))}
             </div>
@@ -527,9 +527,8 @@ export default function SolutionsHubPage() {
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 16px', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: 880 }}>
             Les cinq étapes d'un projet de solution IA, du cadrage à l'exploitation
           </h2>
-          <p style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: '3px solid #2563EB', borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#0A0A0A', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong>Chaque projet passe par cinq étapes : un cadrage qui choisit le cas d'usage, une maquette ou un POC (une preuve de concept) sur vos données, une décision prise sur un critère écrit à l'avance, la construction et l'intégration, puis l'exploitation avec un responsable nommé. Un POC qui manque son critère s'arrête là, et cet arrêt vous coûte quelques milliers d'euros au lieu d'un déploiement manqué.</strong>
-          </p>
+          <Reponse texte="Chaque projet passe par cinq étapes : un cadrage qui choisit le cas d'usage, une maquette ou un POC (une preuve de concept) sur vos données, une décision prise sur un critère écrit à l'avance, la construction et l'intégration, puis l'exploitation avec un responsable nommé. Un POC qui manque son critère s'arrête là, et cet arrêt vous coûte quelques milliers d'euros au lieu d'un déploiement manqué." style={{ background: '#fff', border: '1px solid #E5E7EB', borderLeft: '3px solid #2563EB', borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
+          {/* Étapes courtes (moins de 120 caractères en moyenne) : la grille reste */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 210px), 1fr))', gap: 16 }}>
             {[
               ['01 · Cadrage', "Le cas d'usage retenu pour sa valeur et son effort, les données et les licences disponibles, le critère de réussite écrit."],
@@ -557,19 +556,13 @@ export default function SolutionsHubPage() {
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 900, color: '#0A0A0A', margin: '0 0 24px', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: 880 }}>
             Quatre erreurs qui font échouer un projet de solution IA
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 250px), 1fr))', gap: 18 }}>
-            {[
-              ["Choisir l'outil avant l'usage", "Une plateforme achetée avant d'avoir choisi le cas produit une démonstration que personne n'utilise. Nous partons du travail d'une équipe, et l'outil se choisit ensuite."],
-              ['Découvrir les données trop tard', "Documents dispersés, versions contradictoires, droits flous : ces problèmes retardent la plupart des projets. Nous les examinons au cadrage, avant d'écrire du code."],
-              ['Industrialiser sur une impression', "Sans critère mesuré pendant le POC, l'enthousiasme d'une démonstration décide à la place des chiffres, et le déploiement s'arrête quelques mois plus tard."],
-              ["Oublier l'exploitation", "Un outil sans responsable, sans surveillance et sans budget d'évolution se dégrade vite. L'exploitation se prépare dès le cadrage."],
-            ].map(([t, d]) => (
-              <div key={t} style={{ background: '#fff', border: '1px solid #E5E7EB', borderTop: '3px solid #2563EB', borderRadius: 14, padding: 22 }}>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Quatre erreurs en liste verticale pleine largeur (avant : cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 880 }} items={[
+            ["Choisir l'outil avant l'usage", "Une plateforme achetée avant d'avoir choisi le cas produit une démonstration que personne n'utilise. Nous partons du travail d'une équipe, et l'outil se choisit ensuite."],
+            ['Découvrir les données trop tard', "Documents dispersés, versions contradictoires, droits flous : ces problèmes retardent la plupart des projets. Nous les examinons au cadrage, avant d'écrire du code."],
+            ['Industrialiser sur une impression', "Sans critère mesuré pendant le POC, l'enthousiasme d'une démonstration décide à la place des chiffres, et le déploiement s'arrête quelques mois plus tard."],
+            ["Oublier l'exploitation", "Un outil sans responsable, sans surveillance et sans budget d'évolution se dégrade vite. L'exploitation se prépare dès le cadrage."],
+          ].map(([t, d]) => ({ titre: t, texte: d, icon: AlertTriangle }))} />
         </div>
       </section>
 
@@ -581,8 +574,11 @@ export default function SolutionsHubPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Un fondateur, des développeurs et des consultants indépendants
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Mathias Nizan a fondé Masteria à Lyon en 2022 et suit chaque projet de solution. Il compose l'équipe de chacun parmi un réseau d'indépendants, dont une dizaine de consultants et cinq développeurs IA environ.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Mathias Nizan a fondé Masteria à Lyon en 2022 et suit chaque projet de solution. Il compose l'équipe de chacun parmi un réseau d'indépendants, dont une dizaine de consultants et cinq développeurs IA environ. Aucune licence à revendre : le choix du modèle et de l'hébergement suit vos contraintes. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples.
+              Aucune licence à revendre : le choix du modèle et de l'hébergement suit vos contraintes. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
