@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { CADRAGE_HREF, CADRAGE_LABEL } from '../data/offre-entree'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page service « Conseil stratégie IA » : constantes en tête, SEOHead (FAQ +
@@ -63,6 +64,29 @@ const answerStyle = {
   background: BG_SOFT, border: `1px solid ${BORDER}`, borderLeft: `3px solid ${BLUE}`,
   borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7,
   color: INK, margin: '0 0 28px', maxWidth: 880,
+}
+
+/* Rangées pleine largeur (même dessin que Rangees d'Aere) pour des repères datés : la date en tête, la source en pied */
+function RangeesReperes({ items, sombre = false, style }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', note: '#8092AB', pastille: 'rgba(37,99,235,0.16)', picto: '#60A5FA' }
+    : { bord: BORDER, titre: INK, texte: '#4B5563', note: GREY_500, pastille: '#EFF4FF', picto: BLUE }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
+      {items.map(({ Icon, stat, label, source }) => (
+        <li key={stat} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '22px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.picto, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: t.titre, lineHeight: 1.2, marginBottom: 6, letterSpacing: '-0.02em' }}>{stat}</div>
+            <p style={{ fontSize: 15, color: t.texte, lineHeight: 1.65, margin: '0 0 8px' }}>{label}</p>
+            <p style={{ fontSize: 12.5, color: t.note, margin: 0, fontWeight: 600 }}>Source : {source}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
 }
 
 const META_TITLE = "Conseil stratégie IA : audit, feuille de route | Masteria"
@@ -366,7 +390,9 @@ function FAQItem({ q, a }) {
         <span aria-hidden="true" style={{ fontSize: 22, color: BLUE, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: GREY_700, lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -446,19 +472,29 @@ export default function ConseilStrategieIAPage() {
           {/* GEO : définition autonome, citable hors contexte */}
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
-            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Le conseil en stratégie IA aide une direction à choisir les tâches que l'intelligence artificielle prendra en charge, à les classer selon leur valeur et leur difficulté, à fixer un calendrier qui court sur trois mois puis sur un an, et à écrire les règles qui encadrent ces usages. L'audit IA décrit la situation présente ; la stratégie engage les décisions qui suivent.
-            </p>
+            <Paras max={2} texte="Le conseil en stratégie IA aide une direction à choisir les tâches que l'intelligence artificielle prendra en charge, à les classer selon leur valeur et leur difficulté, à fixer un calendrier qui court sur trois mois puis sur un an, et à écrire les règles qui encadrent ces usages. L'audit IA décrit la situation présente ; la stratégie engage les décisions qui suivent." style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }} />
           </div>
 
           {/* GEO : réponse directe pour citation LLM et featured snippet */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
-            Une stratégie IA tient en quatre décisions écrites : ce qui existe déjà, les chantiers retenus, leur calendrier, les règles du jeu. Masteria les prépare avec votre comité en <strong style={{ color: '#fff', fontWeight: 700 }}>quatre phases</strong> : un état des lieux, le tri des cas d'usage, un calendrier sur deux horizons (trois mois, un an), puis le pilotage.
-          </p>
+          {/* GEO : réponse directe, accroche (les quatre décisions en liste), puis les quatre phases en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${BLUE}` }}>
+              Une stratégie IA tient en quatre décisions écrites :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+              {['ce qui existe déjà', 'les chantiers retenus', 'leur calendrier', 'les règles du jeu'].map(item => (
+                <li key={item} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              <>Masteria les prépare avec votre comité en <strong style={{ color: '#fff', fontWeight: 700 }}>quatre phases</strong> : un état des lieux, le tri des cas d'usage, un calendrier sur deux horizons (trois mois, un an), puis le pilotage.</>,
+            ]} />
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            {INTRO}
-          </p>
+          <Paras texte={INTRO} style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={CADRAGE_HREF} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: BLUE, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -504,16 +540,20 @@ export default function ConseilStrategieIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que contient une stratégie IA d'entreprise ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong style={{ color: INK }}>Une stratégie IA d'entreprise est un document de décision. Il dit pourquoi la direction investit, sur quels processus, avec quels outils et sous quelles règles, et dans quel ordre les chantiers se suivent. Chaque choix y reçoit un budget, un responsable et un indicateur.</strong>
-              </p>
+              <Reponse texte="Une stratégie IA d'entreprise est un document de décision. Il dit pourquoi la direction investit, sur quels processus, avec quels outils et sous quelles règles, et dans quel ordre les chantiers se suivent. Chaque choix y reçoit un budget, un responsable et un indicateur." style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} />
             </div>
             <div style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
+              <p style={{ margin: '0 0 16px' }}>
+                Choisir un assistant ne fixe aucun cap. La stratégie relie trois registres : la valeur attendue (quels processus gagnent du temps ou de la qualité, et combien), les moyens (budget, compétences, état des données, architecture technique) et le cadre (RGPD, AI Act, sécurité, adhésion des équipes).
+              </p>
               <p style={{ margin: '0 0 20px' }}>
-                Choisir un assistant ne fixe aucun cap. La stratégie relie trois registres : la valeur attendue (quels processus gagnent du temps ou de la qualité, et combien), les moyens (budget, compétences, état des données, architecture technique) et le cadre (RGPD, AI Act, sécurité, adhésion des équipes). Une direction qui écrit ces trois registres avant d'acheter évite les licences en double, les outils concurrents dans deux services voisins et les prototypes que personne ne reprend.
+                Une direction qui écrit ces trois registres avant d'acheter évite les licences en double, les outils concurrents dans deux services voisins et les prototypes que personne ne reprend.
               </p>
               <p style={{ margin: 0 }}>
-                Elle prolonge le conseil en transformation numérique et en devient aujourd'hui le volet le plus structurant, parce qu'elle touche en même temps les processus, les données et les compétences de chaque direction. Une large part des arbitrages porte sur l'<Link to="/ia-generative-entreprise" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>IA générative en entreprise</Link>, dont les usages se trient selon ce qu'ils rapportent. Elle ouvre aussi la plupart des missions de notre <Link to="/conseil-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>, avant la construction des outils et la formation des utilisateurs.
+                Elle prolonge le conseil en transformation numérique et en devient aujourd'hui le volet le plus structurant, parce qu'elle touche en même temps les processus, les données et les compétences de chaque direction. Une large part des arbitrages porte sur l'<Link to="/ia-generative-entreprise" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>IA générative en entreprise</Link>, dont les usages se trient selon ce qu'ils rapportent.
+              </p>
+              <p style={{ margin: 0 }}>
+                Elle ouvre aussi la plupart des missions de notre <Link to="/conseil-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>cabinet de conseil en intelligence artificielle</Link>, avant la construction des outils et la formation des utilisateurs.
               </p>
             </div>
           </div>
@@ -527,8 +567,10 @@ export default function ConseilStrategieIAPage() {
           <h2 style={h2Style}>
             Les quatre phases d'une mission de conseil stratégie IA
           </h2>
+          <p style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75, marginBottom: 12, maxWidth: 800 }}>
+            <strong style={{ color: INK }}>La mission avance en quatre temps : mesurer la maturité, trier les cas d'usage, dater la feuille de route, puis installer le pilotage et ses règles.</strong>
+          </p>
           <p style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75, marginBottom: 44, maxWidth: 800 }}>
-            <strong style={{ color: INK }}>La mission avance en quatre temps : mesurer la maturité, trier les cas d'usage, dater la feuille de route, puis installer le pilotage et ses règles.</strong>{' '}
             Une phase commence quand votre comité de direction a validé la précédente. Les durées affichées sont des repères ; le cadrage les ajuste à la taille de votre organisation.
           </p>
 
@@ -614,11 +656,26 @@ export default function ConseilStrategieIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 20, marginBottom: 14, maxWidth: 800 }}>
-            <strong style={{ color: INK }}>Une feuille de route vaut par ce qu'elle met en service.</strong> Une fois les chantiers arbitrés, l'équipe qui les a choisis passe à la construction : notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> réalise les agents, les assistants et les branchements à vos logiciels. Pour dimensionner chaque chantier dès la priorisation, nos repères pour <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>budgéter un projet IA</Link> donnent des fourchettes larges : comptez quelques milliers d'euros pour éprouver une idée sur un prototype, plusieurs dizaines de milliers pour un outil que les équipes utilisent chaque jour, et plus de 100 000 € quand un groupe équipe plusieurs pays.
+          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 20, marginBottom: 12, maxWidth: 800 }}>
+            <strong style={{ color: INK }}>Une feuille de route vaut par ce qu'elle met en service.</strong> Une fois les chantiers arbitrés, l'équipe qui les a choisis passe à la construction : notre <Link to="/agence-developpement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>agence de développement IA</Link> réalise les agents, les assistants et les branchements à vos logiciels.
+          </p>
+          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 0, marginBottom: 10, maxWidth: 800 }}>
+            Pour dimensionner chaque chantier dès la priorisation, nos repères pour <Link to="/prix-projet-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>budgéter un projet IA</Link> donnent des fourchettes larges :
+          </p>
+          {/* Les trois fourchettes en liste */}
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 800 }}>
+            {["comptez quelques milliers d'euros pour éprouver une idée sur un prototype,", 'plusieurs dizaines de milliers pour un outil que les équipes utilisent chaque jour,', 'et plus de 100 000 € quand un groupe équipe plusieurs pays.'].map(f => (
+              <li key={f} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: GREY_700, lineHeight: 1.6 }}>
+                <Check size={16} color={BLUE} strokeWidth={1.75} aria-hidden="true" style={{ flexShrink: 0, marginTop: 3 }} />
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+          <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 0, marginBottom: 12, maxWidth: 800 }}>
+            Beaucoup de comités suivent notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link> avant la phase de priorisation : savoir ce qu'un modèle sait faire, et où il se trompe, accélère les arbitrages.
           </p>
           <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, marginTop: 0, marginBottom: 0, maxWidth: 800 }}>
-            Beaucoup de comités suivent notre <Link to="/formation-ia-dirigeants" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation IA pour dirigeants</Link> avant la phase de priorisation : savoir ce qu'un modèle sait faire, et où il se trompe, accélère les arbitrages. La certification Qualiopi de Masteria couvre ses « actions de formation » : ce programme peut donc recevoir une prise en charge de votre opérateur de compétences, dans la limite de ses critères. Les parcours destinés aux équipes métier sont regroupés sur la page <Link to="/formation-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation intelligence artificielle</Link>.
+            La certification Qualiopi de Masteria couvre ses « actions de formation » : ce programme peut donc recevoir une prise en charge de votre opérateur de compétences, dans la limite de ses critères. Les parcours destinés aux équipes métier sont regroupés sur la page <Link to="/formation-intelligence-artificielle" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>formation intelligence artificielle</Link>.
           </p>
         </div>
       </section>
@@ -632,22 +689,10 @@ export default function ConseilStrategieIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 À qui s'adresse ce conseil stratégie IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong style={{ color: INK }}>La mission sert ceux qui décident et paient la trajectoire IA : la direction générale et le comité de direction, la direction de la transformation, la DSI.</strong>{' '}
-                Elle leur remet une base d'arbitrage chiffrée, un calendrier et des règles d'usage qui tiennent compte des deux textes européens en jeu.
-              </p>
+              <Reponse texte="La mission sert ceux qui décident et paient la trajectoire IA : la direction générale et le comité de direction, la direction de la transformation, la DSI. Elle leur remet une base d'arbitrage chiffrée, un calendrier et des règles d'usage qui tiennent compte des deux textes européens en jeu." style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} />
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-              {POUR_QUI.map((p, i) => (
-                <div key={i} style={cardStyle}>
-                  <div style={{ ...iconTileStyle, marginBottom: 18 }}>
-                    <p.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 10, letterSpacing: '-0.01em' }}>{p.title}</h3>
-                  <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, margin: 0 }}>{p.desc}</p>
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par commanditaire (plus de cartes côte à côte) */}
+            <Rangees items={POUR_QUI.map(p => ({ titre: p.title, texte: p.desc, icon: p.Icon }))} />
           </div>
         </div>
       </section>
@@ -682,21 +727,14 @@ export default function ConseilStrategieIAPage() {
           <h2 style={h2Style}>
             Six documents restent dans l'entreprise après la mission
           </h2>
-          <p style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75, marginBottom: 40, maxWidth: 800 }}>
-            <strong style={{ color: INK }}>La mission laisse six livrables : une note de maturité, le classement des cas d'usage, un plan daté, le schéma de pilotage, le programme de formation et les indicateurs de suivi.</strong>{' '}
+          <p style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75, marginBottom: 12, maxWidth: 800 }}>
+            <strong style={{ color: INK }}>La mission laisse six livrables : une note de maturité, le classement des cas d'usage, un plan daté, le schéma de pilotage, le programme de formation et les indicateurs de suivi.</strong>
+          </p>
+          <p style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75, marginBottom: 32, maxWidth: 800 }}>
             Vos équipes les reçoivent dans des formats modifiables, après validation en comité de direction à la fin de chaque phase.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
-            {LIVRABLES.map((l, i) => (
-              <div key={i} style={{ ...cardStyle, borderTop: `3px solid ${BLUE}` }}>
-                <div style={{ ...iconTileStyle, marginBottom: 16 }}>
-                  <l.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 8, letterSpacing: '-0.01em' }}>{l.title}</h3>
-                <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, margin: 0 }}>{l.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par livrable (plus de cartes côte à côte) */}
+          <Rangees items={LIVRABLES.map(l => ({ titre: l.title, texte: l.desc, icon: l.Icon }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -707,8 +745,14 @@ export default function ConseilStrategieIAPage() {
           <h2 style={h2Style}>
             La même équipe construit ce que la feuille de route décide
           </h2>
+          <p style={{ color: GREY_700, fontSize: 16, marginBottom: 14, maxWidth: 800, lineHeight: 1.75 }}>
+            Une feuille de route produit ses effets quand quelqu'un l'exécute. Masteria la prolonge par un <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> tenu par les mêmes personnes, et par un <Link to="/conseil-transformation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil en transformation IA</Link> lorsque l'organisation du travail doit changer. Nos développeurs réalisent les outils sur mesure, nos formateurs installent les usages.
+          </p>
+          <p style={{ color: GREY_700, fontSize: 16, marginBottom: 14, maxWidth: 800, lineHeight: 1.75 }}>
+            En amont, le <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>Diagnostic IA</Link> (un format bref, durée et forfait décidés pendant le cadrage) mesure d'où vous partez ; nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>exemples d'usages classés par secteur</Link> alimentent ensuite les ateliers de priorisation.
+          </p>
           <p style={{ color: GREY_700, fontSize: 16, marginBottom: 36, maxWidth: 800, lineHeight: 1.75 }}>
-            Une feuille de route produit ses effets quand quelqu'un l'exécute. Masteria la prolonge par un <Link to="/accompagnement-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>accompagnement IA</Link> tenu par les mêmes personnes, et par un <Link to="/conseil-transformation-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>conseil en transformation IA</Link> lorsque l'organisation du travail doit changer. Nos développeurs réalisent les outils sur mesure, nos formateurs installent les usages. En amont, le <Link to="/diagnostic-ia" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>Diagnostic IA</Link> (un format bref, durée et forfait décidés pendant le cadrage) mesure d'où vous partez ; nos <Link to="/ia-secteurs" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>exemples d'usages classés par secteur</Link> alimentent ensuite les ateliers de priorisation. Le conseil et le développement, vendus au forfait, ne sont pas finançables par votre OPCO, à la différence de la formation. Pour mener la démarche par vous-même, notre <Link to="/blog/strategie-ia-entreprise-guide" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>guide de la stratégie IA d'entreprise</Link> en détaille les étapes.
+            Le conseil et le développement, vendus au forfait, ne sont pas finançables par votre OPCO, à la différence de la formation. Pour mener la démarche par vous-même, notre <Link to="/blog/strategie-ia-entreprise-guide" style={{ color: BLUE, fontWeight: 700, textDecoration: 'none' }}>guide de la stratégie IA d'entreprise</Link> en détaille les étapes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24 }}>
             <Link to="/agence-developpement-ia" style={{ textDecoration: 'none' }}>
@@ -806,29 +850,23 @@ export default function ConseilStrategieIAPage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>
             Pourquoi écrire sa stratégie IA maintenant ?
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 24px' }}>
-            <strong style={{ color: '#fff' }}>Les assistants sont désormais à la portée de n'importe quelle entreprise ; leur place dans les processus reste presque partout à définir. Ce décalage donne son prix à la stratégie : sans priorités écrites, chaque service s'équipe de son côté et la direction paie des abonnements dont personne ne mesure l'effet.</strong>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="Les assistants sont désormais à la portée de n'importe quelle entreprise ; leur place dans les processus reste presque partout à définir. Ce décalage donne son prix à la stratégie : sans priorités écrites, chaque service s'équipe de son côté et la direction paie des abonnements dont personne ne mesure l'effet." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 24px' }} />
+          <p style={{ marginBottom: 14 }}>
+            Le Crédoc l'a mesuré dans son Baromètre du numérique 2026, publié en février : presque un Français sur deux a recours à l'IA générative. Vos salariés en font partie, souvent avec des comptes personnels. La difficulté a donc changé de nature.
           </p>
           <p style={{ marginBottom: 20 }}>
-            Le Crédoc l'a mesuré dans son Baromètre du numérique 2026, publié en février : presque un Français sur deux a recours à l'IA générative. Vos salariés en font partie, souvent avec des comptes personnels. La difficulté a donc changé de nature. Elle tient désormais au choix des cas, à la préparation des données, au respect des deux textes européens qui comptent ici (le RGPD et l'AI Act) et à l'apprentissage de ceux qui ouvrent chaque jour ChatGPT, Claude, Gemini ou Vibe (Mistral AI).
+            Elle tient désormais au choix des cas, à la préparation des données, au respect des deux textes européens qui comptent ici (le RGPD et l'AI Act) et à l'apprentissage de ceux qui ouvrent chaque jour ChatGPT, Claude, Gemini ou Vibe (Mistral AI).
           </p>
 
           {/* Repères chiffrés sourcés, citables par les moteurs de réponse */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '32px 0 28px' }}>
-            {MARKET_STATS.map((s, i) => (
-              <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <s.Icon size={22} color="#60A5FA" strokeWidth={2} aria-hidden="true" />
-                </div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#F8FAFC', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
-                <p style={{ fontSize: 13.5, color: '#B4C0D3', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
-                <p style={{ fontSize: 12, color: '#8092AB', margin: 0, fontWeight: 600 }}>Source : {s.source}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par repère daté (plus de cartes serrées côte à côte) */}
+          <RangeesReperes sombre items={MARKET_STATS} style={{ margin: '32px 0 28px' }} />
 
+          <p style={{ marginBottom: 14 }}>
+            Une stratégie bien menée retourne ces contraintes à votre avantage : les chantiers les plus rentables passent en premier, la conformité entre dans la conception et l'organisation se prépare au passage à l'échelle. Le cadre se prolonge ensuite par la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>gouvernance de l'IA</Link> : comité, charte, liste des systèmes, contrôles réguliers.
+          </p>
           <p style={{ marginBottom: 0 }}>
-            Une stratégie bien menée retourne ces contraintes à votre avantage : les chantiers les plus rentables passent en premier, la conformité entre dans la conception et l'organisation se prépare au passage à l'échelle. Le cadre se prolonge ensuite par la <Link to="/gouvernance-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>gouvernance de l'IA</Link> : comité, charte, liste des systèmes, contrôles réguliers. Pour situer votre départ rapidement, le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>Diagnostic IA</Link> suffit souvent ; pour un état des lieux complet avant d'industrialiser, l'<Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> examine maturité, données et conformité ; le reste de nos missions est décrit sur la page <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>conseil en intelligence artificielle</Link>.
+            Pour situer votre départ rapidement, le <Link to="/diagnostic-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>Diagnostic IA</Link> suffit souvent ; pour un état des lieux complet avant d'industrialiser, l'<Link to="/audit-ia" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>audit IA</Link> examine maturité, données et conformité ; le reste de nos missions est décrit sur la page <Link to="/conseil-intelligence-artificielle" style={{ color: '#60A5FA', fontWeight: 700, textDecoration: 'none' }}>conseil en intelligence artificielle</Link>.
           </p>
 
           {/* Définitions clés, ancrage d'entités */}
@@ -883,7 +921,7 @@ export default function ConseilStrategieIAPage() {
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: BLUE, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
                   <div style={{ fontSize: 13, color: GREY_700, lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Paras texte={text} max={2} budget={260} style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, margin: 0, flex: 1 }} wrapStyle={{ flex: 1 }} />
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: BLUE, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   Le cas détaillé, étape par étape
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -931,8 +969,14 @@ export default function ConseilStrategieIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Le fondateur mène les entretiens de direction, l'équipe se compose pour votre plan
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              En 2022, Mathias Nizan lance à Lyon un cabinet consacré tout entier à l'intelligence artificielle. Il conduit les entretiens avec la direction et présente lui-même la feuille de route au comité.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Selon l'ampleur de la mission, il fait appel à une dizaine de consultants IA, à cinq développeurs environ et à vingt formateurs à peu près ; tous travaillent en indépendants. Aucun éditeur ne rémunère le cabinet : le plan recommande l'outil adapté à vos contraintes.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              En 2022, Mathias Nizan lance à Lyon un cabinet consacré tout entier à l'intelligence artificielle. Il conduit les entretiens avec la direction et présente lui-même la feuille de route au comité. Selon l'ampleur de la mission, il fait appel à une dizaine de consultants IA, à cinq développeurs environ et à vingt formateurs à peu près ; tous travaillent en indépendants. Aucun éditeur ne rémunère le cabinet : le plan recommande l'outil adapté à vos contraintes. Des exemples datés figurent dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, et les articles qui nous citent sont listés dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
+              Des exemples datés figurent dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link>, et les articles qui nous citent sont listés dans la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

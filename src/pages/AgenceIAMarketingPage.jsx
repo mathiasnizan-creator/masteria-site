@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, PenLine, Search, Megaphone, Share2,
   Mail, BarChart3, Cog, Workflow, Target,
-  MapPin, Layers, GraduationCap, AlertTriangle, Bot, SlidersHorizontal,
+  MapPin, Layers, GraduationCap, AlertTriangle, Bot, SlidersHorizontal, Check,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
+import { Paras, PointsCles, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page offre « agence IA marketing » (slug /agence-ia-marketing).
@@ -64,11 +65,28 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconBox({ icon: Icon }) {
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec le lien de chaque carte en pied */
+function RangeesAvecLien({ items, style }) {
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(({ icon: Icon, title, desc, link }) => (
+        <li key={title} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <h3 style={{ ...h3Style, fontSize: 18, margin: '0 0 8px', lineHeight: 1.35 }}>{title}</h3>
+            <Paras texte={desc} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {link && (
+              <Link to={link.href} style={{ ...aStyle, marginTop: 12, fontSize: 14, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
+                {link.label}
+                <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -361,7 +379,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -442,14 +462,25 @@ export default function AgenceIAMarketingPage() {
             Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria depuis 2022 · relu et actualisé le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe pour citation LLM (accroche) */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Masteria est une agence IA marketing qui prend votre production en charge : articles et pages, référencement dans Google comme dans ChatGPT ou Perplexity, annonces, réseaux sociaux, séquences d'emailing et tableaux de bord. Nos consultants s'appuient sur plusieurs modèles d'IA et <strong style={{ color: '#fff', fontWeight: 700 }}>relisent chaque livrable avant de vous le soumettre</strong>. Vous fixez le cap et donnez votre accord ; l'équipe produit, publie si vous le souhaitez et mesure. Depuis Lyon, l'équipe travaille pour des entreprises françaises et pour des clients installés ailleurs en Europe, en Inde ou aux États-Unis.
+          {/* GEO : réponse directe pour citation LLM, 1re phrase en accroche (énumération en liste), la suite en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Masteria est une agence IA marketing qui prend votre production en charge :
           </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+            {['articles et pages', 'référencement dans Google comme dans ChatGPT ou Perplexity', 'annonces', 'réseaux sociaux', "séquences d'emailing et tableaux de bord"].map(item => (
+              <li key={item} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+            <>Nos consultants s'appuient sur plusieurs modèles d'IA et <strong style={{ color: '#fff', fontWeight: 700 }}>relisent chaque livrable avant de vous le soumettre</strong>.</>,
+            "Vous fixez le cap et donnez votre accord ; l'équipe produit, publie si vous le souhaitez et mesure.",
+            "Depuis Lyon, l'équipe travaille pour des entreprises françaises et pour des clients installés ailleurs en Europe, en Inde ou aux États-Unis.",
+          ]} />
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            L'IA générative démultiplie ce qu'une équipe marketing peut sortir en une semaine. Le résultat tient à trois réglages que peu d'équipes ont le temps de poser : le modèle adapté à chaque tâche, une voix de marque écrite noir sur blanc, un contrôle humain placé au bon endroit. Ces réglages occupent Masteria depuis sa fondation lyonnaise en 2022, et vous recevez des contenus et des campagnes prêts à partir.
-          </p>
+          <Paras texte="L'IA générative démultiplie ce qu'une équipe marketing peut sortir en une semaine. Le résultat tient à trois réglages que peu d'équipes ont le temps de poser : le modèle adapté à chaque tâche, une voix de marque écrite noir sur blanc, un contrôle humain placé au bon endroit. Ces réglages occupent Masteria depuis sa fondation lyonnaise en 2022, et vous recevez des contenus et des campagnes prêts à partir." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -502,9 +533,7 @@ export default function AgenceIAMarketingPage() {
                 Que prend en charge une agence IA marketing ?
               </h2>
 
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Six familles de travaux peuvent nous être confiées : les contenus éditoriaux, le référencement SEO et GEO, les campagnes payantes, les réseaux sociaux, l'emailing relié à votre CRM, la mesure et le reporting. Vous retenez celles qui vous manquent ; l'équipe les produit et les pilote, et vos collaborateurs gardent leur temps pour le reste de leur métier.</strong>
-              </p>
+              <Reponse texte="Six familles de travaux peuvent nous être confiées : les contenus éditoriaux, le référencement SEO et GEO, les campagnes payantes, les réseaux sociaux, l'emailing relié à votre CRM, la mesure et le reporting. Vous retenez celles qui vous manquent ; l'équipe les produit et les pilote, et vos collaborateurs gardent leur temps pour le reste de leur métier." style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }} />
 
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Un client peut nous confier tout son marketing digital ou un seul canal, par exemple la newsletter du mois ou les fiches produit d'un catalogue. Un consultant relit chaque pièce à la lumière de votre charte.
@@ -512,17 +541,8 @@ export default function AgenceIAMarketingPage() {
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {PRESTATIONS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconBox icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par famille de travaux (plus de cartes côte à côte) */}
+              <Rangees items={PRESTATIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
             </div>
           </div>
         </div>
@@ -536,9 +556,7 @@ export default function AgenceIAMarketingPage() {
             Comment se passe une mission d'agence IA marketing ?
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Une mission avance en quatre étapes : le cadrage de vos objectifs et de votre voix de marque, l'installation des outils et des automatisations qui serviront à produire, une production à rythme fixe relue par un consultant, puis un pilotage mensuel appuyé sur les chiffres de vos campagnes.</strong>
-          </p>
+          <Reponse texte="Une mission avance en quatre étapes : le cadrage de vos objectifs et de votre voix de marque, l'installation des outils et des automatisations qui serviront à produire, une production à rythme fixe relue par un consultant, puis un pilotage mensuel appuyé sur les chiffres de vos campagnes." style={{ ...answerStyle, maxWidth: 'none' }} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             Cadrer, outiller, produire, piloter : chaque étape se conclut par un document ou une pièce que vous approuvez avant que la suivante commence.
@@ -582,31 +600,14 @@ export default function AgenceIAMarketingPage() {
             Ce que l'agence laisse en place chez vous
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>À la fin d'une mission, cinq éléments restent chez vous : une base de contenu assistée à l'image de votre marque, un dispositif SEO et GEO, des automatisations marketing mesurées, un tableau de bord commenté et, si vous le décidez, une équipe formée pour prendre le relais. Chaque élément est documenté et vous appartient.</strong>
-          </p>
+          <Reponse texte="À la fin d'une mission, cinq éléments restent chez vous : une base de contenu assistée à l'image de votre marque, un dispositif SEO et GEO, des automatisations marketing mesurées, un tableau de bord commenté et, si vous le décidez, une équipe formée pour prendre le relais. Chaque élément est documenté et vous appartient." style={{ ...answerStyle, background: '#fff' }} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 860 }}>
             Nous les construisons dans l'ordre où ils servent, en commençant par la base de contenu, dont dépend tout le reste.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginBottom: 32 }}>
-            {CONSTRUIT.map(item => (
-              <div key={item.title} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconBox icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.68, margin: '0 0 14px' }}>{item.desc}</p>
-                {item.link && (
-                  <Link to={item.link.href} style={{ ...aStyle, marginTop: 'auto', fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                    {item.link.label}
-                    <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par élément livré, son lien en pied (plus de cartes côte à côte) */}
+          <RangeesAvecLien items={CONSTRUIT} style={{ marginBottom: 32, maxWidth: 880 }} />
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
             Avant de lancer le chantier de visibilité, mieux vaut savoir d'où l'on part. Notre <Link to="/audit-seo-ia" style={aStyle}>audit SEO IA</Link> mesure vos positions dans Google ; l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link> relève ce que ChatGPT, Perplexity ou Gemini disent aujourd'hui de votre marque, et à côté de quels concurrents. Menés au démarrage, ces deux audits donnent le point zéro de la mesure.
@@ -626,31 +627,18 @@ export default function AgenceIAMarketingPage() {
             Plusieurs modèles d'IA, des automatisations taillées pour vos outils
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Nous choisissons le modèle selon la tâche entre Microsoft Copilot (anciennement Microsoft 365 Copilot) et ses concurrents Claude, ChatGPT, Gemini ou Vibe, que développe Mistral AI, puis nous relions les automatisations à votre CRM, à votre CMS et à vos outils de planification. L'IA produit vite, le consultant tranche, et les résultats mesurés décident des réglages suivants.</strong>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="Nous choisissons le modèle selon la tâche entre Microsoft Copilot (anciennement Microsoft 365 Copilot) et ses concurrents Claude, ChatGPT, Gemini ou Vibe, que développe Mistral AI, puis nous relions les automatisations à votre CRM, à votre CMS et à vos outils de planification. L'IA produit vite, le consultant tranche, et les résultats mesurés décident des réglages suivants." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 860 }} />
+
+          <Paras max={2} texte="Ces outils changent vite, et une voix de marque rangée au mauvais endroit peut disparaître avec eux. Au 7 octobre 2026, OpenAI prévoit de retirer les GPTs personnalisés de toutes ses offres le 11 décembre 2026 : leurs instructions deviendront une compétence dans un plugin. Depuis le 5 octobre, Google installe dans Workspace des compétences appelées à remplacer les Gems, et l'assistant de Mistral s'appelle Vibe depuis le 28 mai 2026. Vos règles de marque, nous les écrivons donc sous forme de compétences, un format de fichier (SKILL.md) que Google et Microsoft ont repris dans leurs propres assistants, pour qu'elles survivent à un changement d'outil." style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }} />
+
+          {/* Une rangée par principe (plus de cartes côte à côte) */}
+          <Rangees sombre items={OUTILS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ marginBottom: 44, maxWidth: 860 }} />
+
+          <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 820 }}>
+            Les flux qui transportent vos contenus entre vos logiciels sont construits par notre <Link to="/agence-automatisation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence d'automatisation IA</Link>.
           </p>
-
-          <p style={{ color: '#B4C0D3', fontSize: 15, lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
-            Ces outils changent vite, et une voix de marque rangée au mauvais endroit peut disparaître avec eux. Au 7 octobre 2026, OpenAI prévoit de retirer les GPTs personnalisés de toutes ses offres le 11 décembre 2026 : leurs instructions deviendront une compétence dans un plugin. Depuis le 5 octobre, Google installe dans Workspace des compétences appelées à remplacer les Gems, et l'assistant de Mistral s'appelle Vibe depuis le 28 mai 2026. Vos règles de marque, nous les écrivons donc sous forme de compétences, un format de fichier (SKILL.md) que Google et Microsoft ont repris dans leurs propres assistants, pour qu'elles survivent à un changement d'outil.
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20, marginBottom: 44 }}>
-            {OUTILS.map((item, i) => {
-              const Icon = item.icon
-              return (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{item.title}</h3>
-                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-
           <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.75, margin: 0, maxWidth: 820 }}>
-            Les flux qui transportent vos contenus entre vos logiciels sont construits par notre <Link to="/agence-automatisation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>agence d'automatisation IA</Link>. Si le besoin réclame une application à part entière, par exemple un générateur de fiches produit branché sur votre catalogue, nous développons des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link>. Les modèles qui écrivent, illustrent et déclinent vos campagnes relèvent de l'<Link to="/ia-generative-entreprise" style={{ color: '#60A5FA', fontWeight: 600 }}>IA générative en entreprise</Link>, avec les garde-fous qui l'accompagnent.
+            Si le besoin réclame une application à part entière, par exemple un générateur de fiches produit branché sur votre catalogue, nous développons des <Link to="/outils-ia-sur-mesure" style={{ color: '#60A5FA', fontWeight: 600 }}>outils IA sur mesure</Link>. Les modèles qui écrivent, illustrent et déclinent vos campagnes relèvent de l'<Link to="/ia-generative-entreprise" style={{ color: '#60A5FA', fontWeight: 600 }}>IA générative en entreprise</Link>, avec les garde-fous qui l'accompagnent.
           </p>
         </div>
       </section>
@@ -663,25 +651,14 @@ export default function AgenceIAMarketingPage() {
             Quatre erreurs font échouer un dispositif marketing IA
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les dispositifs marketing IA qui déçoivent tombent presque toujours dans l'un de ces quatre pièges : accélérer avant d'avoir écrit la marque, publier sans relire, miser sur le nombre de pages pour le SEO, distribuer des licences sans former. Le cadrage de nos missions les traite un par un.</strong>
-          </p>
+          <Reponse texte="Les dispositifs marketing IA qui déçoivent tombent presque toujours dans l'un de ces quatre pièges : accélérer avant d'avoir écrit la marque, publier sans relire, miser sur le nombre de pages pour le SEO, distribuer des licences sans former. Le cadrage de nos missions les traite un par un." style={{ ...answerStyle, background: '#fff' }} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
             Une partie de nos clients arrive avec un dispositif monté à la hâte ; les symptômes se ressemblent chez presque tous, et leurs causes aussi.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {ERREURS.map(item => (
-              <div key={item.title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconBox icon={AlertTriangle} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.68, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par erreur (plus de cartes côte à côte) */}
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc, icon: AlertTriangle }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -692,23 +669,9 @@ export default function AgenceIAMarketingPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cabinet de conseil marketing digital ou agence : notre périmètre et celui des spécialistes
           </h2>
-          <p style={answerStyle}>
-            <strong>Masteria aborde le marketing digital sous un seul angle, celui de l'IA : stratégie d'outillage, marketing automation, production et pilotage. Nous jouons le rôle de cabinet de conseil quand vos équipes ont le temps d'exécuter, et celui d'agence quand elles ne l'ont pas.</strong> Le reste du marketing revient aux spécialistes.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
-            {CONSEIL_EXEC.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse texte="Masteria aborde le marketing digital sous un seul angle, celui de l'IA : stratégie d'outillage, marketing automation, production et pilotage. Nous jouons le rôle de cabinet de conseil quand vos équipes ont le temps d'exécuter, et celui d'agence quand elles ne l'ont pas. Le reste du marketing revient aux spécialistes." style={answerStyle} />
+          {/* Une rangée par rôle (plus de cartes côte à côte) */}
+          <Rangees items={CONSEIL_EXEC.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Pour automatiser au-delà du marketing (ventes, administration, service client), rendez-vous sur la page de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link> ; pour que vos équipes deviennent autonomes, sur celle de la <Link to="/formation-ia-marketing" style={aStyle}>formation IA marketing</Link>.
           </p>
@@ -723,9 +686,7 @@ export default function AgenceIAMarketingPage() {
             Déléguer votre marketing IA ou former vos équipes ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Déléguer, c'est nous confier la production et le pilotage : peu de temps pour vos équipes, un démarrage court, et une prestation de service pas finançable par votre OPCO. Former, c'est rendre vos équipes capables de produire elles-mêmes, avec une formation certifiée Qualiopi que votre OPCO peut financer si ses règles de prise en charge et ses fonds de l'année le permettent. Rien n'empêche d'enchaîner les deux.</strong>
-          </p>
+          <Reponse texte="Déléguer, c'est nous confier la production et le pilotage : peu de temps pour vos équipes, un démarrage court, et une prestation de service pas finançable par votre OPCO. Former, c'est rendre vos équipes capables de produire elles-mêmes, avec une formation certifiée Qualiopi que votre OPCO peut financer si ses règles de prise en charge et ses fonds de l'année le permettent. Rien n'empêche d'enchaîner les deux." style={answerStyle} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 32, lineHeight: 1.7, maxWidth: 860 }}>
             Le tableau met les deux voies côte à côte sur six critères, pour que vous choisissiez selon le temps et le budget dont vous disposez.
@@ -767,25 +728,20 @@ export default function AgenceIAMarketingPage() {
             Pourquoi choisir Masteria comme agence IA marketing ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Nous réunissons deux exigences que le marketing sépare souvent : une connaissance fine des modèles d'IA et le souci du texte bien écrit. Masteria se consacre à l'intelligence artificielle depuis sa création en 2022, en conseil, en développement et en formation ; l'agence produit et pilote votre marketing avec plusieurs modèles, des automatisations construites pour vos outils et un consultant qui relit tout ce qui sort.</strong>
-          </p>
+          <Reponse texte="Nous réunissons deux exigences que le marketing sépare souvent : une connaissance fine des modèles d'IA et le souci du texte bien écrit. Masteria se consacre à l'intelligence artificielle depuis sa création en 2022, en conseil, en développement et en formation ; l'agence produit et pilote votre marketing avec plusieurs modèles, des automatisations construites pour vos outils et un consultant qui relit tout ce qui sort." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, margin: '32px 0' }}>
-            {[
+          {/* Une rangée par atout (plus de cartes côte à côte) */}
+          <Rangees style={{ margin: '32px 0', maxWidth: 880 }} items={[
               { icon: Target, title: "L'IA comme seul sujet depuis 2022", desc: "Les modèles, leurs points forts, leurs pièges et leurs réglages font notre quotidien. Votre marketing profite de cette expérience dès le démarrage de la mission." },
               { icon: PenLine, title: 'Exigence éditoriale', desc: "Votre marque est écrite dans nos instructions et chaque texte passe sous les yeux d'un consultant. Rien ne paraît sous votre nom sans votre feu vert." },
               { icon: Workflow, title: 'Du contenu aux automatisations', desc: "Nous livrons des textes, et aussi les flux et les connexions qui font tourner le dispositif, du brief jusqu'au reporting." },
               { icon: MapPin, title: 'Europe, États-Unis et Inde', desc: "Depuis Lyon, la production et le pilotage se font à distance ; nous nous déplaçons pour les ateliers de cadrage qui gagnent à se tenir dans vos locaux." },
-            ].map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+            ].map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 860 }}>
+            Deux missions de formation récentes montrent ce travail de marque côté marketing. Chez une interprofession agricole formée en septembre 2026, l'équipe promotion et communication a rédigé sa voix de marque une seule fois, l'a confiée à un assistant commun au service, puis en a tiré des contenus en anglais, un calendrier éditorial et un bilan de campagne (<Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>le récit de la mission</Link>).
+          </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 18px', maxWidth: 860 }}>
-            Deux missions de formation récentes montrent ce travail de marque côté marketing. Chez une interprofession agricole formée en septembre 2026, l'équipe promotion et communication a rédigé sa voix de marque une seule fois, l'a confiée à un assistant commun au service, puis en a tiré des contenus en anglais, un calendrier éditorial et un bilan de campagne (<Link to="/etudes-de-cas-ia#mission-interprofession-agricole" style={aStyle}>le récit de la mission</Link>). Le même mois, la responsable des études d'un groupe immobilier, rattachée au marketing stratégique, a appris à passer de ses fichiers de ventes à un deck de direction avec Claude (<Link to="/etudes-de-cas-ia#mission-immobilier-etudes" style={aStyle}>le détail de sa journée</Link>).
+            Le même mois, la responsable des études d'un groupe immobilier, rattachée au marketing stratégique, a appris à passer de ses fichiers de ventes à un deck de direction avec Claude (<Link to="/etudes-de-cas-ia#mission-immobilier-etudes" style={aStyle}>le détail de sa journée</Link>).
           </p>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
             Si la question dépasse le marketing et concerne l'IA dans tous vos services (règles d'usage, conformité à l'AI Act, ordre des chantiers), notre <Link to="/conseil-intelligence-artificielle" style={aStyle}>cabinet de conseil en intelligence artificielle</Link> s'en charge. Pour une application à développer, notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link> prend le relais.
@@ -897,8 +853,14 @@ export default function AgenceIAMarketingPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Mathias Nizan pilote, des spécialistes indépendants produisent
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              En créant Masteria à Lyon en 2022, Mathias Nizan a choisi un seul sujet, l'intelligence artificielle ; il suit chaque mission de l'agence.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Pour votre marketing, il réunit selon le besoin des consultants IA (une dizaine dans le réseau) pour la stratégie et la relecture, des développeurs (cinq environ) pour les automatisations et les connexions, et des formateurs (une vingtaine) pour la passation à vos équipes ; tous exercent en indépendants.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              En créant Masteria à Lyon en 2022, Mathias Nizan a choisi un seul sujet, l'intelligence artificielle ; il suit chaque mission de l'agence. Pour votre marketing, il réunit selon le besoin des consultants IA (une dizaine dans le réseau) pour la stratégie et la relecture, des développeurs (cinq environ) pour les automatisations et les connexions, et des formateurs (une vingtaine) pour la passation à vos équipes ; tous exercent en indépendants. Libres de tout lien avec les éditeurs de logiciels, nous recommandons l'outil qui convient à votre équipe, quelle qu'en soit la marque. Les missions décrites dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et les articles réunis dans notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> permettent de vérifier ce qui précède.
+              Libres de tout lien avec les éditeurs de logiciels, nous recommandons l'outil qui convient à votre équipe, quelle qu'en soit la marque. Les missions décrites dans nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et les articles réunis dans notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> permettent de vérifier ce qui précède.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

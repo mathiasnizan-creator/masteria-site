@@ -8,6 +8,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 import CadrageLink from '../components/CadrageLink'
+import { Paras, Reponse, Rangees } from '../components/Aere'
 
 /*
  * Page pilier éditoriale « automatisation IA » (slug /automatisation-ia).
@@ -298,7 +299,8 @@ const FAQ = [
   },
   {
     q: "Comment optimiser ses processus avec l'IA sans tout automatiser ?",
-    a: "En distinguant trois niveaux, et en s'arrêtant au bon. Le premier est l'assistance : une personne garde le processus en main et utilise l'IA pour une étape (rédiger, résumer, classer, vérifier) ; c'est le niveau qui optimise le plus vite, sans projet, dès que les équipes sont formées. Le deuxième est l'automatisation partielle : un scénario enchaîne les étapes répétitives et s'arrête sur une validation humaine avant ce qui engage (un envoi, un paiement, une réponse client). Le troisième est l'automatisation complète, réservée aux processus à règles stables et à faible risque. Optimiser ses processus avec l'IA consiste d'abord à cartographier le flux réel, à mesurer où le temps se perd, puis à choisir le niveau pour chaque étape. La plupart des gains d'une PME viennent des deux premiers niveaux ; le troisième se justifie ensuite, sur les volumes.",
+    strong: "En distinguant trois niveaux, et en s'arrêtant au bon.",
+    rest: "Le premier est l'assistance : une personne garde le processus en main et utilise l'IA pour une étape (rédiger, résumer, classer, vérifier) ; c'est le niveau qui optimise le plus vite, sans projet, dès que les équipes sont formées. Le deuxième est l'automatisation partielle : un scénario enchaîne les étapes répétitives et s'arrête sur une validation humaine avant ce qui engage (un envoi, un paiement, une réponse client). Le troisième est l'automatisation complète, réservée aux processus à règles stables et à faible risque. Optimiser ses processus avec l'IA consiste d'abord à cartographier le flux réel, à mesurer où le temps se perd, puis à choisir le niveau pour chaque étape. La plupart des gains d'une PME viennent des deux premiers niveaux ; le troisième se justifie ensuite, sur les volumes.",
   },
   {
     q: "Combien coûte une automatisation IA pour une PME ?",
@@ -449,14 +451,34 @@ export default function AutomatisationIAGuidePage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en septembre 2026
           </p>
 
-          {/* GEO : réponse directe citable — accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Trier les factures, qualifier les demandes entrantes, rédiger les comptes rendus, relancer les impayés : une partie du travail de bureau se répète chaque semaine, presque à l'identique. L'intelligence artificielle sait désormais prendre en charge ces tâches, y compris <strong style={{ color: '#fff', fontWeight: 700 }}>celles qui demandaient de lire, comprendre et décider</strong>.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suivante en paragraphe court */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Trier les factures, qualifier les demandes entrantes, rédiger les comptes rendus, relancer les impayés : une partie du travail de bureau se répète chaque semaine, presque à l'identique.
+          </p>
+          <p style={{ fontSize: 16.5, color: '#CBD5E1', lineHeight: 1.65, margin: '0 0 28px', maxWidth: 720, paddingLeft: 23 }}>
+            L'intelligence artificielle sait désormais prendre en charge ces tâches, y compris <strong style={{ color: '#fff', fontWeight: 700 }}>celles qui demandaient de lire, comprendre et décider</strong>.
           </p>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            Ce guide fait le tour du sujet en sept points : la définition et la différence avec l'automatisation classique, ce que l'on peut automatiser fonction par fonction, les familles d'outils, la méthode pour réussir, les erreurs courantes, les budgets à prévoir et les questions que tout le monde se pose.
+          {/* Les sept points du guide en liste */}
+          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 12px', maxWidth: 660 }}>
+            Ce guide fait le tour du sujet en sept points :
           </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 36px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '8px 24px', maxWidth: 760 }}>
+            {[
+              "la définition et la différence avec l'automatisation classique",
+              "ce que l'on peut automatiser fonction par fonction",
+              "les familles d'outils",
+              'la méthode pour réussir',
+              'les erreurs courantes',
+              'les budgets à prévoir',
+              'et les questions que tout le monde se pose',
+            ].map(point => (
+              <li key={point} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15, lineHeight: 1.5, color: '#E2E8F0' }}>
+                <Check size={16} strokeWidth={1.75} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center' }}>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -509,21 +531,38 @@ export default function AutomatisationIAGuidePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Qu'est-ce que l'automatisation IA ?</h2>
 
               {/* Réponse directe (GEO) */}
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>L'automatisation IA consiste à confier à l'intelligence artificielle des tâches qui exigeaient jusqu'ici un jugement humain : lire un email et décider de la suite, résumer une réunion, qualifier une demande. Là où l'automatisation classique (RPA) exécute des règles fixes, l'IA interprète le contexte et traite les cas imprévus.</strong>
-              </p>
+              <Reponse texte="L'automatisation IA consiste à confier à l'intelligence artificielle des tâches qui exigeaient jusqu'ici un jugement humain : lire un email et décider de la suite, résumer une réunion, qualifier une demande. Là où l'automatisation classique (RPA) exécute des règles fixes, l'IA interprète le contexte et traite les cas imprévus." style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} />
             </div>
 
             <div>
               <p style={pStyle}>
-                La différence avec l'automatisation traditionnelle tient à la nature des tâches prises en charge. La RPA (Robotic Process Automation), les macros et les scripts exécutent des scénarios entièrement prévisibles : copier une cellule, remplir un formulaire, déplacer un fichier. Dès qu'une variation apparaît, par exemple une facture dont la mise en page change ou un email ambigu, le robot s'arrête ou se trompe.
+                La différence avec l'automatisation traditionnelle tient à la nature des tâches prises en charge. La RPA (Robotic Process Automation), les macros et les scripts exécutent des scénarios entièrement prévisibles : copier une cellule, remplir un formulaire, déplacer un fichier.
               </p>
               <p style={pStyle}>
-                L'IA générative ajoute la part de jugement qui manquait. Un modèle de langage peut lire un document qu'il n'a jamais vu, en extraire l'essentiel, reformuler, classer, proposer une décision argumentée. Combinée aux outils d'automatisation, elle permet de traiter des flux entiers de travail intellectuel répétitif : la machine gère les cas standards, l'humain garde les cas sensibles et la validation finale.
+                Dès qu'une variation apparaît, par exemple une facture dont la mise en page change ou un email ambigu, le robot s'arrête ou se trompe.
               </p>
               <p style={pStyle}>
-                Concrètement, une automatisation IA combine trois briques : un déclencheur (un email arrive, un formulaire est soumis, une échéance tombe), un traitement par l'IA (lire, résumer, extraire, rédiger, décider selon des consignes écrites) et une action (mettre à jour le CRM, envoyer une réponse, créer une tâche, alerter un humain).
+                L'IA générative ajoute la part de jugement qui manquait. Un modèle de langage peut lire un document qu'il n'a jamais vu, en extraire l'essentiel, reformuler, classer, proposer une décision argumentée.
               </p>
+              <p style={pStyle}>
+                Combinée aux outils d'automatisation, elle permet de traiter des flux entiers de travail intellectuel répétitif : la machine gère les cas standards, l'humain garde les cas sensibles et la validation finale.
+              </p>
+              {/* Les trois briques en liste */}
+              <p style={{ ...pStyle, marginBottom: 12 }}>
+                Concrètement, une automatisation IA combine trois briques :
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 10 }}>
+                {[
+                  "un déclencheur (un email arrive, un formulaire est soumis, une échéance tombe),",
+                  "un traitement par l'IA (lire, résumer, extraire, rédiger, décider selon des consignes écrites)",
+                  'et une action (mettre à jour le CRM, envoyer une réponse, créer une tâche, alerter un humain).',
+                ].map(brique => (
+                  <li key={brique} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 16, color: '#374151', lineHeight: 1.65 }}>
+                    <Check size={17} strokeWidth={1.75} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                    <span>{brique}</span>
+                  </li>
+                ))}
+              </ul>
 
               {/* Tableau comparatif RPA vs IA */}
               <div style={{ ...cardStyle, overflowX: 'auto', margin: '32px 0' }}>
@@ -547,8 +586,11 @@ export default function AutomatisationIAGuidePage() {
                 </table>
               </div>
 
+              <p style={pStyle}>
+                Les deux approches se complètent, mais pour une PME ou une ETI qui démarre en 2026, l'automatisation IA offre le meilleur rapport effort sur résultat : les outils sont accessibles sans développeur et les cas d'usage couvrent la majorité des tâches de bureau.
+              </p>
               <p style={{ ...pStyle, marginBottom: 0 }}>
-                Les deux approches se complètent, mais pour une PME ou une ETI qui démarre en 2026, l'automatisation IA offre le meilleur rapport effort sur résultat : les outils sont accessibles sans développeur et les cas d'usage couvrent la majorité des tâches de bureau. Pour donner ces réflexes à vos équipes, la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> de Masteria couvre ces fondamentaux en deux jours de pratique.
+                Pour donner ces réflexes à vos équipes, la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> de Masteria couvre ces fondamentaux en deux jours de pratique.
               </p>
             </div>
           </div>
@@ -561,36 +603,46 @@ export default function AutomatisationIAGuidePage() {
           <Kicker>Cas d'usage</Kicker>
           <h2 style={{ ...h2Style, ...prose }}>Que peut-on automatiser avec l'IA en 2026 ?</h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Toute tâche répétitive qui suit une logique explicable et tolère une relecture humaine peut être automatisée : tri des emails, traitement des factures, comptes rendus, relances, qualification des demandes entrantes, reporting. En 2026, cela couvre une large part du travail administratif d'une PME, sans écrire une ligne de code.</strong>
-          </p>
+          <Reponse texte="Toute tâche répétitive qui suit une logique explicable et tolère une relecture humaine peut être automatisée : tri des emails, traitement des factures, comptes rendus, relances, qualification des demandes entrantes, reporting. En 2026, cela couvre une large part du travail administratif d'une PME, sans écrire une ligne de code." style={{ ...answerStyle, background: '#fff' }} />
 
+          <p style={{ ...pStyle, ...prose }}>
+            Voici un panorama par fonction, avec des exemples réalistes tels qu'on les rencontre en PME et en ETI. Dans nos cadrages, chaque équipe identifie en général dix à quinze tâches candidates dès le premier atelier, et les plus simples se prototypent dans la semaine.
+          </p>
           <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
-            Voici un panorama par fonction, avec des exemples réalistes tels qu'on les rencontre en PME et en ETI. Dans nos cadrages, chaque équipe identifie en général dix à quinze tâches candidates dès le premier atelier, et les plus simples se prototypent dans la semaine. Pour savoir lesquelles traiter en premier, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus prioritaires à automatiser en PME</Link> propose une grille de lecture simple.
+            Pour savoir lesquelles traiter en premier, notre article sur <Link to="/blog/automatisation-ia-pme-processus-prioritaires" style={aStyle}>les processus prioritaires à automatiser en PME</Link> propose une grille de lecture simple.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 330px), 1fr))', gap: 24 }}>
-            {FONCTIONS.map(f => (
-              <div key={f.title} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 14 }}>
-                  <IconBox icon={f.icon} />
-                  <h3 style={{ ...h3Style, margin: 0, fontSize: 18 }}>{f.title}</h3>
-                </div>
-                <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.65, margin: '0 0 16px' }}>{f.intro}</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
-                  {f.examples.map((ex, i) => (
-                    <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: '#374151', lineHeight: 1.65 }}>
-                      <ArrowRight size={16} strokeWidth={2.2} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-                      <span>{ex}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par fonction, en pleine largeur (plus de cartes côte à côte) */}
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB' }}>
+            {FONCTIONS.map(f => {
+              const Icon = f.icon
+              return (
+                <li key={f.title} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '26px 0', borderBottom: '1px solid #E5E7EB' }}>
+                  <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+                    <Icon size={17} strokeWidth={1.75} />
+                  </span>
+                  <div style={{ minWidth: 0, maxWidth: 760 }}>
+                    <h3 style={{ ...h3Style, margin: '0 0 8px', fontSize: 18 }}>{f.title}</h3>
+                    <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '0 0 14px' }}>{f.intro}</p>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
+                      {f.examples.map((ex, i) => (
+                        <li key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: '#374151', lineHeight: 1.65 }}>
+                          <ArrowRight size={16} strokeWidth={1.75} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                          <span>{ex}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              )
+            })}
+          </ol>
 
-          <p style={{ ...pStyle, ...prose, marginTop: 32, marginBottom: 0 }}>
-            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour une vue d'ensemble organisée des <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA par fonction</Link>, et pour les usages propres à votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent l'automatisation métier par métier. Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pour situer vos priorités, commencez par <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink>, puis par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> si le périmètre le justifie.
+          <p style={{ ...pStyle, ...prose, marginTop: 32 }}>
+            Chacun de ces exemples se construit en quelques jours à quelques semaines selon la complexité. Pour une vue d'ensemble organisée des <Link to="/cas-usage-ia-entreprise" style={aStyle}>cas d'usage de l'IA par fonction</Link>, et pour les usages propres à votre activité, nos pages <Link to="/ia-secteurs" style={aStyle}>IA par secteur</Link> déclinent l'automatisation métier par métier.
+          </p>
+          <p style={{ ...pStyle, ...prose, marginBottom: 0 }}>
+            Pour identifier ceux qui rapportent le plus dans votre contexte et les déployer sans faux départ, un cadrage structuré fait gagner des mois : c'est précisément le rôle de notre <Link to="/agence-automatisation-ia" style={aStyle}>agence d'automatisation IA</Link>. Pour situer vos priorités, commencez par <CadrageLink style={aStyle}>30 minutes de cadrage offertes</CadrageLink>, puis par un <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> si le périmètre le justifie.
           </p>
         </div>
       </section>
@@ -603,9 +655,7 @@ export default function AutomatisationIAGuidePage() {
               <Kicker>Outils</Kicker>
               <h2 style={{ ...h2Style, marginBottom: 18 }}>Quels outils pour automatiser avec l'IA ? Les 3 familles à connaître</h2>
 
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Trois familles d'outils couvrent la quasi-totalité des besoins : les assistants IA personnalisés (projets et compétences) pour les tâches individuelles récurrentes, les plateformes no-code (Make, Zapier, n8n, Power Automate) pour les flux entre applications, et les agents IA autonomes pour les objectifs en plusieurs étapes.</strong>
-              </p>
+              <Reponse texte="Trois familles d'outils couvrent la quasi-totalité des besoins : les assistants IA personnalisés (projets et compétences) pour les tâches individuelles récurrentes, les plateformes no-code (Make, Zapier, n8n, Power Automate) pour les flux entre applications, et les agents IA autonomes pour les objectifs en plusieurs étapes." style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} />
             </div>
 
             <div>
@@ -623,7 +673,10 @@ export default function AutomatisationIAGuidePage() {
                 </div>
               </div>
               <p style={{ ...pStyle, fontSize: 15 }}>
-                ChatGPT, Claude et Gemini intègrent des fonctions qui automatisent les tâches récurrentes sans aucun outil supplémentaire : les projets et les compétences côté ChatGPT et Claude, les compétences côté Gemini. Elles remplacent les GPTs personnalisés, retirés le 11 décembre 2026, et les Gems. Le principe : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis chaque membre de l'équipe relance la tâche en quelques secondes.
+                ChatGPT, Claude et Gemini intègrent des fonctions qui automatisent les tâches récurrentes sans aucun outil supplémentaire : les projets et les compétences côté ChatGPT et Claude, les compétences côté Gemini. Elles remplacent les GPTs personnalisés, retirés le 11 décembre 2026, et les Gems.
+              </p>
+              <p style={{ ...pStyle, fontSize: 15 }}>
+                Le principe : vous enregistrez une fois vos instructions, votre contexte et vos documents de référence, puis chaque membre de l'équipe relance la tâche en quelques secondes.
               </p>
               <p style={{ ...pStyle, fontSize: 15, marginBottom: 0 }}>
                 C'est la porte d'entrée idéale : coût inclus dans l'abonnement existant, mise en place en une heure, aucun risque technique. La limite est connue : un humain doit déclencher la tâche à chaque fois.
@@ -641,8 +694,11 @@ export default function AutomatisationIAGuidePage() {
               <p style={{ ...pStyle, fontSize: 15 }}>
                 Make, Zapier, n8n et Power Automate connectent vos applications entre elles et exécutent des scénarios sans intervention humaine : un événement déclenche le flux (email reçu, formulaire soumis, ligne ajoutée dans un tableur), l'IA traite, l'action s'exécute. Tout se configure visuellement, par glisser-déposer.
               </p>
+              <p style={{ ...pStyle, fontSize: 15 }}>
+                Make et Zapier sont les plus accessibles pour démarrer. n8n peut s'auto-héberger, un atout quand la confidentialité des données est un sujet. Power Automate s'impose naturellement dans les environnements Microsoft 365.
+              </p>
               <p style={{ ...pStyle, fontSize: 15, marginBottom: 0 }}>
-                Make et Zapier sont les plus accessibles pour démarrer. n8n peut s'auto-héberger, un atout quand la confidentialité des données est un sujet. Power Automate s'impose naturellement dans les environnements Microsoft 365. C'est la famille reine pour les flux entre applications : CRM, boîte mail, tableurs, outils métier.
+                C'est la famille reine pour les flux entre applications : CRM, boîte mail, tableurs, outils métier.
               </p>
             </div>
 
@@ -708,9 +764,7 @@ export default function AutomatisationIAGuidePage() {
           <Kicker>Méthode</Kicker>
           <h2 style={{ ...h2Style, ...prose }}>Comment automatiser un processus avec l'IA ? La méthode en 5 étapes</h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Cartographiez les tâches répétitives, scorez leur impact et leur faisabilité, prototypez sur un seul processus, sécurisez les données et la validation humaine, puis déployez en formant les équipes. Cette séquence en cinq étapes fait réussir la grande majorité des projets, menés en interne comme accompagnés.</strong>
-          </p>
+          <Reponse texte="Cartographiez les tâches répétitives, scorez leur impact et leur faisabilité, prototypez sur un seul processus, sécurisez les données et la validation humaine, puis déployez en formant les équipes. Cette séquence en cinq étapes fait réussir la grande majorité des projets, menés en interne comme accompagnés." style={{ ...answerStyle, background: '#fff' }} />
 
           <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
             Le détail de chaque étape ci-dessous. Sur le terrain, un premier processus passe du cadrage à la mise en production en quatre à six semaines, et fait gagner plusieurs heures par semaine à l'équipe concernée.
@@ -731,7 +785,7 @@ export default function AutomatisationIAGuidePage() {
                 </div>
                 <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{etape.title}</h3>
-                  <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 700 }}>{etape.body}</p>
+                  <Paras texte={etape.body} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 700 }} />
                 </div>
               </div>
             ))}
@@ -757,29 +811,17 @@ export default function AutomatisationIAGuidePage() {
             Faire développer vos automatisations IA sur mesure
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 860 }}>
-            <strong style={{ color: '#fff' }}>Plutôt que de monter vos automatisations en interne, vous nous confiez la construction de bout en bout : nous concevons l'architecture, développons les workflows, assistants et agents adaptés à vos processus, les intégrons à vos outils via API et MCP, puis les déployons en production. Vous récupérez un système qui tourne, documenté et supervisé.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="Plutôt que de monter vos automatisations en interne, vous nous confiez la construction de bout en bout : nous concevons l'architecture, développons les workflows, assistants et agents adaptés à vos processus, les intégrons à vos outils via API et MCP, puis les déployons en production. Vous récupérez un système qui tourne, documenté et supervisé." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '22px 26px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 860 }} />
 
+          <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 760 }}>
+            Le guide ci-dessus décrit ce qu'il est possible de faire et comment. Le passage à l'échelle, lui, repose sur de l'ingénierie : connecter des outils, fiabiliser les traitements, gérer les cas limites, poser les garde-fous.
+          </p>
           <p style={{ fontSize: 16, color: '#B4C0D3', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 760 }}>
-            Le guide ci-dessus décrit ce qu'il est possible de faire et comment. Le passage à l'échelle, lui, repose sur de l'ingénierie : connecter des outils, fiabiliser les traitements, gérer les cas limites, poser les garde-fous. C'est un travail de conception et de développement que nous prenons en charge pour vous, processus par processus.
+            C'est un travail de conception et de développement que nous prenons en charge pour vous, processus par processus.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20, marginBottom: 44 }}>
-            {BUILD_STEPS.map((step, i) => {
-              const Icon = step.icon
-              return (
-                <div key={i} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                  </div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: '#60A5FA', letterSpacing: '0.06em', marginBottom: 6 }}>{String(i + 1).padStart(2, '0')}</div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{step.title}</h3>
-                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Les quatre étapes, une rangée numérotée chacune (plus de cartes côte à côte) */}
+          <Rangees sombre items={BUILD_STEPS.map(step => ({ titre: step.title, texte: step.desc }))} style={{ marginBottom: 44, maxWidth: 860 }} />
 
           <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
             <Link to="/contact?type=projet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '15px 32px', borderRadius: 10, textDecoration: 'none', fontSize: 16, fontWeight: 800 }}>
@@ -828,25 +870,14 @@ export default function AutomatisationIAGuidePage() {
           <Kicker>Pièges à éviter</Kicker>
           <h2 style={{ ...h2Style, ...prose }}>Quelles erreurs font échouer un projet d'automatisation IA ?</h2>
 
-          <p style={answerStyle}>
-            <strong>Six erreurs expliquent la plupart des échecs : automatiser un processus bancal, commencer trop large, choisir l'outil avant le besoin, supprimer toute validation humaine, ignorer les données et la conformité, négliger la formation des équipes. Toutes se repèrent et se préviennent au moment du cadrage.</strong>
-          </p>
+          <Reponse texte="Six erreurs expliquent la plupart des échecs : automatiser un processus bancal, commencer trop large, choisir l'outil avant le besoin, supprimer toute validation humaine, ignorer les données et la conformité, négliger la formation des équipes. Toutes se repèrent et se préviennent au moment du cadrage." style={answerStyle} />
 
           <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
             Les échecs se ressemblent davantage que les réussites. Ces six erreurs reviennent dans la grande majorité des projets abandonnés, et chacune a son antidote.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 24 }}>
-            {ERREURS.map((err, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                <div aria-hidden="true" style={{ fontFamily: 'Nunito, sans-serif', fontSize: 40, fontWeight: 900, color: cLight, lineHeight: 1, marginBottom: 12 }}>
-                  {String(i + 1).padStart(2, '0')}
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5 }}>{err.title}</h3>
-                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>{err.body}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée numérotée par erreur (plus de cartes côte à côte) */}
+          <Rangees items={ERREURS.map(err => ({ titre: err.title, texte: err.body }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -856,9 +887,7 @@ export default function AutomatisationIAGuidePage() {
           <Kicker>Budget</Kicker>
           <h2 style={{ ...h2Style, ...prose }}>Combien coûte l'automatisation IA ?</h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Pour une PME, comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis établi après cadrage, et à partir de 1 980 € HT par jour pour former les équipes, seul poste finançable par votre OPCO.</strong>
-          </p>
+          <Reponse texte="Pour une PME, comptez 0 à 50 € par mois et par personne pour les outils, un accompagnement sur devis établi après cadrage, et à partir de 1 980 € HT par jour pour former les équipes, seul poste finançable par votre OPCO." style={{ ...answerStyle, background: '#fff' }} />
 
           <p style={{ ...pStyle, ...prose, marginBottom: 36 }}>
             Les ordres de grandeur ci-dessous valent pour une PME ou une ETI. Trois postes de coût se combinent, et le premier est souvent plus bas que ce que l'on imagine.
@@ -871,8 +900,11 @@ export default function AutomatisationIAGuidePage() {
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>0 à 50 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 4 }}>/ mois / personne</div>
               </div>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>
+                Les versions gratuites des assistants IA et des plateformes no-code suffisent pour expérimenter.
+              </p>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Les versions gratuites des assistants IA et des plateformes no-code suffisent pour expérimenter. Les abonnements professionnels des assistants tournent autour d'une vingtaine d'euros par mois et par utilisateur, et les plateformes d'automatisation facturent à l'usage : quelques euros à quelques dizaines d'euros par mois aux volumes d'une PME.
+                Les abonnements professionnels des assistants tournent autour d'une vingtaine d'euros par mois et par utilisateur, et les plateformes d'automatisation facturent à l'usage : quelques euros à quelques dizaines d'euros par mois aux volumes d'une PME.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 30 }}>
@@ -880,8 +912,11 @@ export default function AutomatisationIAGuidePage() {
               <div style={{ display: 'flex', alignItems: 'flex-end', gap: 8, marginBottom: 16 }}>
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>Sur devis</div>
               </div>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>
+                Faire concevoir et développer vos automatisations sur mesure se chiffre selon le nombre de processus, les intégrations à votre système d'information et le niveau d'autonomie visé.
+              </p>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Faire concevoir et développer vos automatisations sur mesure se chiffre selon le nombre de processus, les intégrations à votre système d'information et le niveau d'autonomie visé. Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, les 30 minutes de cadrage sont offertes et débouchent sur une <Link to="/agence-developpement-ia" style={aStyle}>feuille de route de développement</Link> chiffrée.
+                Un cadrage sérieux précède tout chiffrage : méfiez-vous des forfaits vendus avant analyse. Chez Masteria, les 30 minutes de cadrage sont offertes et débouchent sur une <Link to="/agence-developpement-ia" style={aStyle}>feuille de route de développement</Link> chiffrée.
               </p>
             </div>
             <div style={{ ...cardStyle, padding: 30, border: `2px solid ${c}` }}>
@@ -891,14 +926,20 @@ export default function AutomatisationIAGuidePage() {
                 <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 30, fontWeight: 900, color: '#0A0A0A', lineHeight: 1, letterSpacing: '-0.01em' }}>1 980 €</div>
                 <div style={{ fontSize: 13, color: '#6B7280', paddingBottom: 4 }}>/ jour HT</div>
               </div>
+              <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 12px' }}>
+                Former une équipe à construire et superviser ses automatisations démarre à 1 980 € HT par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel ; pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis.
+              </p>
               <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Former une équipe à construire et superviser ses automatisations démarre à 1 980 € HT par jour, en intra-entreprise (jusqu'à 12 participants) comme en accompagnement individuel ; pour une formation sur mesure, le temps de préparation s'ajoute et figure au devis. Masteria est certifié Qualiopi : ce volet est finançable par votre OPCO, et nous montons le dossier avec vous.
+                Masteria est certifié Qualiopi : ce volet est finançable par votre OPCO, et nous montons le dossier avec vous.
               </p>
             </div>
           </div>
 
+          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '0 0 14px', maxWidth: 860 }}>
+            Un point d'honnêteté sur le financement : seule la formation est finançable par votre OPCO. Le conseil et le déploiement ne le sont pas, et une offre qui vous promet la prise en charge OPCO d'une prestation de conseil vous expose à un refus de financement.
+          </p>
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 860 }}>
-            Un point d'honnêteté sur le financement : seule la formation est finançable par votre OPCO. Le conseil et le déploiement ne le sont pas, et une offre qui vous promet la prise en charge OPCO d'une prestation de conseil vous expose à un refus de financement. Pour décomposer le <Link to="/prix-projet-ia" style={aStyle}>coût d'un projet d'automatisation IA</Link> poste par poste, consultez notre page dédiée aux prix. Pour le détail des deux approches, voyez la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> et l'<Link to="/agence-automatisation-ia" style={aStyle}>accompagnement par notre agence</Link>, ou l'ensemble de nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>.
+            Pour décomposer le <Link to="/prix-projet-ia" style={aStyle}>coût d'un projet d'automatisation IA</Link> poste par poste, consultez notre page dédiée aux prix. Pour le détail des deux approches, voyez la <Link to="/formation-automatisation-ia" style={aStyle}>formation automatisation IA</Link> et l'<Link to="/agence-automatisation-ia" style={aStyle}>accompagnement par notre agence</Link>, ou l'ensemble de nos <Link to="/solutions-ia" style={aStyle}>solutions IA pour entreprises</Link>.
           </p>
         </div>
       </section>
@@ -918,10 +959,11 @@ export default function AutomatisationIAGuidePage() {
               {FAQ.map((item, i) => (
                 <div key={i} style={{ background: '#F9FAFB', border: '1px solid #E5E7EB', borderRadius: 16, padding: '24px 28px' }}>
                   <h3 style={{ ...h3Style, fontSize: 17 }}>{item.q}</h3>
-                  <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                  {/* Réponse directe en premier paragraphe appuyé, complément en paragraphes courts */}
+                  <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: item.rest ? '0 0 12px' : 0 }}>
                     <strong style={{ color: '#0A0A0A' }}>{item.strong}</strong>
-                    {' '}{item.rest}
                   </p>
+                  <Paras texte={item.rest} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
                 </div>
               ))}
             </div>

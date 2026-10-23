@@ -8,6 +8,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page pilier « gouvernance de l'IA » (slug /gouvernance-ia). Cible : « gouvernance ia »,
@@ -68,11 +69,35 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec étiquette, points, note de source */
+function RangeesDetail({ items, style, niveau = 'h3', titreTaille = 18 }) {
+  const Titre = niveau
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(({ icon: Icon, titre, etiquette, texte, points, note }) => (
+        <li key={titre} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            {etiquette && <span style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 11px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 8 }}>{etiquette}</span>}
+            <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: titreTaille, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', lineHeight: 1.35, letterSpacing: '-0.01em' }}>{titre}</Titre>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {points?.length > 0 && (
+              <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '6px 18px' }}>
+                {points.map(pt => (
+                  <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, color: '#374151', lineHeight: 1.55 }}>
+                    <Check size={16} strokeWidth={2} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+            {note && <p style={{ fontSize: 12.5, color: '#6B7280', margin: '10px 0 0', fontWeight: 600 }}>{note}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -497,7 +522,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -570,14 +597,23 @@ export default function GouvernanceIAPage() {
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui conduit les missions de gouvernance de Masteria · calendrier AI Act relu le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            La gouvernance de l'IA répartit les rôles autour de chaque usage d'intelligence artificielle : une direction qui arbitre, un référent qui instruit les demandes, un propriétaire qui répond de chaque système, un registre qui garde la trace. <strong style={{ color: '#fff', fontWeight: 700 }}>Masteria l'installe avec vous, du premier inventaire au comité qui la fait vivre.</strong>
+          {/* GEO : réponse directe citable, accroche (les quatre rôles en liste), puis la promesse en puce */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 720, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            La gouvernance de l'IA répartit les rôles autour de chaque usage d'intelligence artificielle :
           </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+            {['une direction qui arbitre', 'un référent qui instruit les demandes', 'un propriétaire qui répond de chaque système', 'un registre qui garde la trace'].map(item => (
+              <li key={item} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+            <><strong style={{ color: '#fff', fontWeight: 700 }}>Masteria l'installe avec vous, du premier inventaire au comité qui la fait vivre.</strong></>,
+          ]} />
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
-            L'AI Act a rendu le sujet concret. Les interdictions et l'article 4 sont opposables depuis février 2025, l'obligation de transparence depuis août 2026, et les usages sensibles de l'annexe III entreront dans le régime du haut risque le 2 décembre 2027. Cabinet lyonnais créé en 2022 et indépendant des éditeurs, nous taillons le dispositif à votre organisation : deux pages de règles et un référent pour une PME, un comité et des propriétaires par filiale pour un groupe.
-          </p>
+          <Paras texte="L'AI Act a rendu le sujet concret. Les interdictions et l'article 4 sont opposables depuis février 2025, l'obligation de transparence depuis août 2026, et les usages sensibles de l'annexe III entreront dans le régime du haut risque le 2 décembre 2027. Cabinet lyonnais créé en 2022 et indépendant des éditeurs, nous taillons le dispositif à votre organisation : deux pages de règles et un référent pour une PME, un comité et des propriétaires par filiale pour un groupe." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -602,18 +638,8 @@ export default function GouvernanceIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 132px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), repères en cartes sombres */}
+          <Reperes sombre titre="En bref" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1140 }} />
         </div>
       </section>
 
@@ -626,26 +652,15 @@ export default function GouvernanceIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que met-on derrière la gouvernance de l'IA en entreprise ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>La gouvernance de l'IA en entreprise met un nom en face de chaque décision : autoriser un usage, le surveiller, en répondre. Elle repose sur six pièces, de l'inventaire audité au volet données relié au RGPD, en passant par le registre, la charte, le comité et la supervision humaine.</strong>
-              </p>
+              <Reponse texte="La gouvernance de l'IA en entreprise met un nom en face de chaque décision : autoriser un usage, le surveiller, en répondre. Elle repose sur six pièces, de l'inventaire audité au volet données relié au RGPD, en passant par le registre, la charte, le comité et la supervision humaine." style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 L'ordre d'assemblage dépend de votre point de départ. Une PME de trente personnes commence souvent par la charte et le référent ; un groupe multi-sites commence par l'inventaire, parce que personne ne sait combien d'outils tournent déjà dans ses filiales.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {PILIERS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par pièce du dispositif (plus de cartes côte à côte) */}
+              <Rangees items={PILIERS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Le contenu de la charte est détaillé sur notre page <Link to="/charte-ia-entreprise" style={aStyle}>charte IA d'entreprise</Link>, le volet données personnelles sur <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>. Si vous ignorez encore par où commencer, le <Link to="/diagnostic-ia" style={aStyle}>diagnostic IA</Link> mesure votre maturité, règles d'usage comprises, avant toute mission plus longue.
               </p>
@@ -663,23 +678,12 @@ export default function GouvernanceIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi installer la gouvernance de l'IA dès 2026 ?
               </h2>
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }}>
-                <strong>Trois paliers de l'AI Act sont déjà en application, le haut risque arrive le 2 décembre 2027 et la CNIL contrôle cette année les outils de recrutement. Une gouvernance posée maintenant se construit au calme ; posée à l'automne 2027, elle se bâtira sous la pression de l'échéance.</strong>
-              </p>
+              <Reponse texte="Trois paliers de l'AI Act sont déjà en application, le haut risque arrive le 2 décembre 2027 et la CNIL contrôle cette année les outils de recrutement. Une gouvernance posée maintenant se construit au calme ; posée à l'automne 2027, elle se bâtira sous la pression de l'échéance." style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: 0 }} />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-                {WHY.map(card => (
-                  <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={card.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par raison (plus de cartes côte à côte) */}
+              <Rangees items={WHY.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Les personnes qui tiendront le dispositif apprennent à lire le règlement dans notre <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link>. Pour relier la gouvernance à vos choix de direction et à votre feuille de route, voyez le <Link to="/conseil-intelligence-artificielle" style={aStyle}>conseil en intelligence artificielle</Link>.
               </p>
@@ -696,9 +700,7 @@ export default function GouvernanceIAPage() {
             Comment se déroule la mise en œuvre de la gouvernance de l'IA ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>La mise en œuvre de la gouvernance de l'IA avance en cinq étapes : cadrer le périmètre, inventorier et classer les usages, ouvrir le registre avec un propriétaire par système, écrire les règles et installer le comité, puis planifier la mise en conformité et les revues. Chaque étape s'achève sur une décision prise par votre direction.</strong>
-          </p>
+          <Reponse texte="La mise en œuvre de la gouvernance de l'IA avance en cinq étapes : cadrer le périmètre, inventorier et classer les usages, ouvrir le registre avec un propriétaire par système, écrire les règles et installer le comité, puis planifier la mise en conformité et les revues. Chaque étape s'achève sur une décision prise par votre direction." style={answerStyle} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7 }}>
             L'ordre a une raison. On ne nomme pas de propriétaire pour un outil qu'on n'a pas recensé, et un comité privé de registre débat dans le vide.
@@ -739,9 +741,7 @@ export default function GouvernanceIAPage() {
             Comment l'AI Act classe-t-il les systèmes d'IA par risque ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>L'AI Act range chaque usage d'IA dans l'un de quatre niveaux : interdit, haut risque, transparence, risque minimal. Le niveau dépend de ce qu'on confie au système. Le même assistant reste au risque minimal quand il rédige un compte rendu et entre dans le haut risque s'il sert à trier des candidatures.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="L'AI Act range chaque usage d'IA dans l'un de quatre niveaux : interdit, haut risque, transparence, risque minimal. Le niveau dépend de ce qu'on confie au système. Le même assistant reste au risque minimal quand il rédige un compte rendu et entre dans le haut risque s'il sert à trier des candidatures." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Le tableau reprend le texte de 2024 dans sa rédaction issue de l'Omnibus. Pendant l'audit, chaque ligne de votre inventaire est rapprochée de ces quatre niveaux et de vos traitements de données au sens du RGPD.
@@ -798,25 +798,14 @@ export default function GouvernanceIAPage() {
             Qu'est-ce que la gouvernance des données pour l'IA ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>La gouvernance des données pour l'IA rattache chaque usage du registre aux données qu'il consomme : leur base légale, leur origine, leur sensibilité et le chemin qu'elles prennent jusqu'à l'éditeur. Elle fait la jonction entre le registre des usages IA et le registre des traitements que le RGPD impose.</strong>
-          </p>
+          <Reponse texte="La gouvernance des données pour l'IA rattache chaque usage du registre aux données qu'il consomme : leur base légale, leur origine, leur sensibilité et le chemin qu'elles prennent jusqu'à l'éditeur. Elle fait la jonction entre le registre des usages IA et le registre des traitements que le RGPD impose." style={{ ...answerStyle, background: '#fff' }} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 36, lineHeight: 1.7, maxWidth: 880 }}>
             Un copilote branché sur la messagerie, un agent relié au CRM, un modèle ajusté sur vos procédures : chacun pose les mêmes questions sur des données différentes. Quatre repères suffisent à la gouvernance ; la méthode RGPD complète, articles à l'appui, figure sur notre page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
-            {DATA_GOUV.map(card => (
-              <div key={card.title} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={card.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 15.5, marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par repère (plus de cartes côte à côte) */}
+          <Rangees items={DATA_GOUV.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880 }} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Quand la qualité ou l'architecture des données freinent les projets, notre <Link to="/conseil-data-ia" style={aStyle}>conseil data & IA</Link> reprend le chantier. Pour un exemple détaillé des garanties d'un assistant d'IA générative en entreprise, lisez notre analyse de la <Link to="/securite-claude-entreprise" style={aStyle}>sécurité de Claude en entreprise</Link>.
@@ -832,36 +821,14 @@ export default function GouvernanceIAPage() {
             Comment Masteria vous accompagne sur la gouvernance IA
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Masteria intervient en conseil, au forfait, sur trois temps : auditer votre situation, concevoir le dispositif, puis l'installer jusqu'aux premières séances du comité. La montée en compétences des équipes passe par des formations distinctes, certifiées Qualiopi.</strong>
-          </p>
+          <Reponse texte="Masteria intervient en conseil, au forfait, sur trois temps : auditer votre situation, concevoir le dispositif, puis l'installer jusqu'aux premières séances du comité. La montée en compétences des équipes passe par des formations distinctes, certifiées Qualiopi." style={answerStyle} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Nous choisissons ensemble le point d'entrée pendant une demi-heure d'échange offerte. Le forfait vient ensuite, sur devis : quelques milliers d'euros suffisent quand l'audit porte sur un périmètre restreint ; un dispositif complet couvrant plusieurs entités se chiffre en dizaines de milliers.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginBottom: 32 }}>
-            {ACCOMPAGNE.map((card, i) => (
-              <div key={card.title} style={{ ...cardStyle, padding: 32, ...(i === 0 ? { borderTop: `3px solid ${c}` } : {}) }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                  <span style={{ background: i === 0 ? c : cLight, color: i === 0 ? '#fff' : c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, letterSpacing: '0.02em' }}>
-                    {card.tag}
-                  </span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 10 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>{card.desc}</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  {card.points.map(pt => (
-                    <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13.5, color: '#374151', lineHeight: 1.55 }}>
-                      <Check size={16} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          {/* Les trois temps, une rangée chacun avec son étiquette et ses points (plus de cartes côte à côte) */}
+          <RangeesDetail items={ACCOMPAGNE.map(card => ({ icon: card.icon, etiquette: card.tag, titre: card.title, texte: card.desc, points: card.points }))} style={{ marginBottom: 32, maxWidth: 880 }} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Le conseil sort du champ de l'OPCO ; seule la <Link to="/formation-ai-act" style={aStyle}>formation AI Act</Link> relève de la certification Qualiopi de Masteria (catégorie « actions de formation ») et ouvre une demande de prise en charge, que l'OPCO de votre branche instruit d'après ses critères et son budget. Pour l'audit seul, centré sur le règlement, voyez aussi notre <Link to="/audit-conformite-ai-act" style={aStyle}>audit de conformité AI Act</Link>.
@@ -876,23 +843,9 @@ export default function GouvernanceIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Monitoring IA et outils de gouvernance des modèles : la surveillance après le cadrage
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le monitoring IA suit dans le temps ce que vos systèmes produisent ; un outil de gouvernance des modèles automatise ce suivi quand le volume l'exige.</strong> Nous dimensionnons l'un et l'autre à partir de votre registre, sans plateforme à vous vendre.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
-            {MONITORING.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse texte="Le monitoring IA suit dans le temps ce que vos systèmes produisent ; un outil de gouvernance des modèles automatise ce suivi quand le volume l'exige. Nous dimensionnons l'un et l'autre à partir de votre registre, sans plateforme à vous vendre." style={{ ...answerStyle, background: '#fff' }} />
+          {/* Une rangée par sujet (plus de cartes côte à côte) */}
+          <Rangees items={MONITORING.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Les indicateurs se choisissent au moment de concevoir le dispositif, et le comité les relit à chaque séance. Pour un système développé sur mesure, la journalisation fait partie du projet lui-même : notre <Link to="/methode-projet-ia" style={aStyle}>méthode projet IA</Link> la prévoit dès la conception.
           </p>
@@ -907,29 +860,18 @@ export default function GouvernanceIAPage() {
             Deux règlements encadrent la gouvernance de l'IA
           </h2>
 
-          <p style={answerStyle}>
-            <strong>L'AI Act, retouché par l'Omnibus signé le 8 juillet 2026, classe les usages d'IA selon le risque qu'ils font courir aux personnes. Le RGPD, dont l'application remonte au 25 mai 2018, régit les données personnelles qu'ils traitent. La CNIL contrôle le second et publie déjà sa lecture du premier.</strong>
-          </p>
+          <Reponse texte="L'AI Act, retouché par l'Omnibus signé le 8 juillet 2026, classe les usages d'IA selon le risque qu'ils font courir aux personnes. Le RGPD, dont l'application remonte au 25 mai 2018, régit les données personnelles qu'ils traitent. La CNIL contrôle le second et publie déjà sa lecture du premier." style={answerStyle} />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 28, lineHeight: 1.7, maxWidth: 880 }}>
             Les textes fixent le minimum. Une gouvernance utile répond aussi à une question de gestion : quels usages méritent une revue mensuelle, et lesquels peuvent tourner sous une règle simple relue une fois par an.
           </p>
 
           {/* Repères datés et sourcés, citables par les moteurs de réponse */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, margin: '0 0 32px' }}>
-            {MARKET_STATS.map((s, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={s.icon} />
-                </div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{s.stat}</div>
-                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{s.label}</p>
-                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>
-                  Source : <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.source}</a>
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par date, sa source en pied (plus de cartes serrées côte à côte) */}
+          <RangeesDetail niveau="div" titreTaille={22} style={{ margin: '0 0 32px' }} items={MARKET_STATS.map(s => ({
+            icon: s.icon, titre: s.stat, texte: s.label,
+            note: <>Source : <a href={s.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#6B7280', textDecoration: 'underline', textUnderlineOffset: 2 }}>{s.source}</a></>,
+          }))} />
 
           {/* Définitions clés, ancrage d'entités */}
           <h3 style={{ ...h3Style, fontSize: 20, margin: '8px 0 18px', display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -974,7 +916,7 @@ export default function GouvernanceIAPage() {
             {CAS.map(cas => (
               <div key={cas.id} style={{ ...cardStyle, padding: 26, display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <h3 style={{ ...h3Style, fontSize: 16 }}>{cas.titre}</h3>
-                <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{cas.texte}</p>
+                <Paras texte={cas.texte} max={2} budget={260} style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }} wrapStyle={{ flex: 1 }} />
                 <Link to={`/etudes-de-cas-ia#${cas.id}`} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   Lire l'étude de cas
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -997,8 +939,20 @@ export default function GouvernanceIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Deux formations transmettent le dispositif à ceux qui le tiendront
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Cette page décrit une mission de conseil. Quand vos équipes doivent faire vivre seules le registre et le comité, deux formations couvertes par la certification Qualiopi de Masteria (catégorie « actions de formation ») prennent le relais, facturées à partir de 1 980 € HT par journée, en intra ou en individuel :
+              </p>
+              {/* Les deux formations en liste */}
+              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 14px', display: 'flex', flexDirection: 'column', gap: 8, maxWidth: 760 }}>
+                {["la formation AI Act, qui apprend à lire le règlement et à classer un usage,", 'et la formation gouvernance IA, qui construit en une journée le registre, la trame de charte et le fonctionnement du comité.'].map(f => (
+                  <li key={f} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15.5, color: '#374151', lineHeight: 1.65 }}>
+                    <Check size={17} strokeWidth={1.75} style={{ color: c, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Cette page décrit une mission de conseil. Quand vos équipes doivent faire vivre seules le registre et le comité, deux formations couvertes par la certification Qualiopi de Masteria (catégorie « actions de formation ») prennent le relais, facturées à partir de 1 980 € HT par journée, en intra ou en individuel : la formation AI Act, qui apprend à lire le règlement et à classer un usage, et la formation gouvernance IA, qui construit en une journée le registre, la trame de charte et le fonctionnement du comité. Leur prise en charge relève de l'OPCO de votre branche, qui l'accorde d'après ses critères et son budget.
+                Leur prise en charge relève de l'OPCO de votre branche, qui l'accorde d'après ses critères et son budget.
               </p>
               <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
                 <Link to="/formation-ai-act" style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14.5, fontWeight: 700 }}>
@@ -1133,8 +1087,11 @@ export default function GouvernanceIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des consultants réunis pour votre dispositif, sous la conduite du fondateur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              C'est à Lyon, en 2022, que Mathias Nizan a créé Masteria, une entreprise individuelle tournée vers la seule intelligence artificielle. Pour une mission de gouvernance, il réunit selon le besoin des consultants IA (une dizaine dans son réseau), des développeurs quand il faut instrumenter le suivi (cinq environ) et des formateurs (une vingtaine), tous indépendants.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              C'est à Lyon, en 2022, que Mathias Nizan a créé Masteria, une entreprise individuelle tournée vers la seule intelligence artificielle. Pour une mission de gouvernance, il réunit selon le besoin des consultants IA (une dizaine dans son réseau), des développeurs quand il faut instrumenter le suivi (cinq environ) et des formateurs (une vingtaine), tous indépendants. Masteria ne dépend d'aucun éditeur, si bien que l'outil de suivi se choisit d'après votre registre. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+              Masteria ne dépend d'aucun éditeur, si bien que l'outil de suivi se choisit d'après votre registre. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, BookOpen, Building2, Check, Factory, FileText, GraduationCap, Landmark,
+  AlertTriangle, ArrowRight, BookOpen, Building2, Check, Factory, FileText, GraduationCap, Landmark,
   Layers, MapPin, MessagesSquare, Scale, ShieldCheck, Sprout, Target, Users, Zap, Bot,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « formation IA en entreprise » (slug /formation-ia-entreprise),
@@ -64,6 +65,31 @@ function IconTile({ icon: Icon }) {
     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
       <Icon size={22} strokeWidth={2} style={{ color: c }} />
     </div>
+  )
+}
+
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec le lien éventuel de chaque carte en pied */
+function RangeesAvecLien({ items, style }) {
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(({ icon: Icon, title, desc, link }) => (
+        <li key={title} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <h3 style={{ ...h3Style, fontSize: 18, margin: '0 0 8px', lineHeight: 1.35 }}>{title}</h3>
+            <Paras texte={desc} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {link && (
+              <Link to={link.href} style={{ fontSize: 14, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 12 }}>
+                {link.label}
+                <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -458,7 +484,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -541,14 +569,18 @@ export default function FormationIAEntreprisePage() {
             Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · relu le 7 octobre 2026, outils et règles à jour
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une formation IA en entreprise réunit des collègues d'une même société, dans vos locaux ou en visio, <strong style={{ color: '#fff', fontWeight: 700 }}>autour des documents qu'ils traitent chaque semaine et des outils dont ils disposent</strong> : Claude, Gemini, ChatGPT, Vibe de Mistral ou le Copilot de Microsoft (anciennement Microsoft 365 Copilot). Masteria propose quatre formats, depuis un sprint de 3 heures jusqu'à un parcours encadré par des référents internes. Toutes nos sessions relèvent de la certification Qualiopi du cabinet, ce qui ouvre la porte à un financement par votre opérateur de compétences.
-          </p>
+          {/* GEO : réponse directe citable, 1re phrase en accroche, les suivantes en puces */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 22px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Une formation IA en entreprise réunit des collègues d'une même société, dans vos locaux ou en visio, <strong style={{ color: '#fff', fontWeight: 700 }}>autour des documents qu'ils traitent chaque semaine et des outils dont ils disposent</strong> : Claude, Gemini, ChatGPT, Vibe de Mistral ou le Copilot de Microsoft (anciennement Microsoft 365 Copilot).
+            </p>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              "Masteria propose quatre formats, depuis un sprint de 3 heures jusqu'à un parcours encadré par des référents internes.",
+              "Toutes nos sessions relèvent de la certification Qualiopi du cabinet, ce qui ouvre la porte à un financement par votre opérateur de compétences.",
+            ]} />
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Le groupe apprend ensemble, sur ses propres fichiers, et repart le soir même avec des usages en place et des consignes communes. Le formateur se déplace chez vous ou se connecte à distance ; ce que l'équipe construit pendant l'atelier (demandes types, gabarits, compétences) reste rangé dans vos espaces partagés.
-          </p>
+          <Paras texte="Le groupe apprend ensemble, sur ses propres fichiers, et repart le soir même avec des usages en place et des consignes communes. Le formateur se déplace chez vous ou se connecte à distance ; ce que l'équipe construit pendant l'atelier (demandes types, gabarits, compétences) reste rangé dans vos espaces partagés." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -572,18 +604,8 @@ export default function FormationIAEntreprisePage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'essentiel</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), repères en cartes sombres */}
+          <Reperes sombre id="en-bref" titre="L'essentiel" items={lignesEnReperes(EN_BREF)} colonnes={3} style={{ margin: 0, maxWidth: 1140 }} />
         </div>
       </section>
 
@@ -596,34 +618,23 @@ export default function FormationIAEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Pourquoi organiser la formation IA dans l'entreprise ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Un collaborateur retient ce qu'il a fait lui-même sur son dossier, avec les outils qu'il rouvrira lundi matin. L'intra crée ces conditions : la session part de vos documents, l'équipe entière entend les mêmes consignes, et les questions de confidentialité se règlent entre vous, sans participant extérieur.</strong>
-              </p>
+              <Reponse texte="Un collaborateur retient ce qu'il a fait lui-même sur son dossier, avec les outils qu'il rouvrira lundi matin. L'intra crée ces conditions : la session part de vos documents, l'équipe entière entend les mêmes consignes, et les questions de confidentialité se règlent entre vous, sans participant extérieur." style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 La certification Qualiopi couvre chacune de ces sessions. Les programmes, classés par métier et par outil, se consultent sur la page <Link to="/formation-intelligence-artificielle" style={aStyle}>formation intelligence artificielle</Link>.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {POURQUOI.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-                {/* Carte sombre : le cas d'une personne seule (plus d'inter-entreprises) */}
-                <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
-                  <div style={{ marginBottom: 14 }}>
-                    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <MessagesSquare size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                    </div>
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Et pour une seule personne ?</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
+              {/* Une rangée par raison (plus de cartes côte à côte), puis le cas d'une personne seule en encadré sombre */}
+              <Rangees items={POURQUOI.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
+              {/* Carte sombre : le cas d'une personne seule (plus d'inter-entreprises) */}
+              <div style={{ ...cardStyle, padding: '24px 28px', marginTop: 28, background: '#0A0F1E', border: '1px solid #1E293B', display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: 'rgba(37,99,235,0.16)', color: '#60A5FA', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+                  <MessagesSquare size={17} strokeWidth={1.75} />
+                </span>
+                <div style={{ minWidth: 0 }}>
+                  <h3 style={{ ...h3Style, fontSize: 18, marginBottom: 8, color: '#F8FAFC' }}>Et pour une seule personne ?</h3>
+                  <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>
                     Masteria a arrêté les sessions inter-entreprises. Quand une seule personne doit se former, la journée se tient en individuel, au même tarif journalier, ou prend la forme d'un <Link to="/coaching-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>coaching IA</Link>. Dès que plusieurs collègues partagent les mêmes outils, l'intra reste le format le plus simple à organiser.
                   </p>
                 </div>
@@ -645,21 +656,10 @@ export default function FormationIAEntreprisePage() {
             Comment se déroule une formation IA en entreprise ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le dispositif tient en cinq étapes. Le cadrage recense les cas d'usage et les licences ; les sessions s'enchaînent équipe par équipe ; des référents et des compétences partagées prolongent le travail ; une charte écrit les règles ; un relevé à un mois décide de la suite. Le devis vous parvient sous 24 heures après le cadrage.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="Le dispositif tient en cinq étapes. Le cadrage recense les cas d'usage et les licences ; les sessions s'enchaînent équipe par équipe ; des référents et des compétences partagées prolongent le travail ; une charte écrit les règles ; un relevé à un mois décide de la suite. Le devis vous parvient sous 24 heures après le cadrage." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20 }}>
-            {DEROULE.map(step => (
-              <div key={step.num} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <span style={{ fontSize: 15, color: '#60A5FA', fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Les cinq étapes, une rangée numérotée chacune (plus de cartes côte à côte) */}
+          <Rangees sombre items={DEROULE.map(step => ({ titre: step.title, texte: step.desc }))} style={{ maxWidth: 880 }} />
           <p style={{ fontSize: 15, color: '#475569', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
             Si toute l'organisation doit progresser, avec plusieurs vagues et un réseau de référents, la page <Link to="/acculturation-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>acculturation IA</Link> décrit la démarche complète.
           </p>
@@ -675,9 +675,7 @@ export default function FormationIAEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Former toute l'entreprise : sur combien de semaines ?
               </h2>
-              <p style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Une équipe se forme en une session, de 3 heures à deux jours. Une entreprise se forme par vagues, sur quelques semaines ou quelques mois selon le nombre de services. Le calendrier se cale sur vos pics de charge, et les sessions évitent les périodes où l'activité ne peut pas s'arrêter.</strong>
-              </p>
+              <Reponse texte="Une équipe se forme en une session, de 3 heures à deux jours. Une entreprise se forme par vagues, sur quelques semaines ou quelques mois selon le nombre de services. Le calendrier se cale sur vos pics de charge, et les sessions évitent les périodes où l'activité ne peut pas s'arrêter." style={{ ...answerStyle, background: '#fff', maxWidth: 'none', margin: '0 0 18px' }} />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Par quel service commencer ? Ceux qui rédigent le plus (assistanat, RH, commercial, marketing) trouvent vite leurs premiers usages, et leurs exemples nourrissent les vagues suivantes. Faites passer les managers tôt : leur pratique donne le ton au reste de la maison.
               </p>
@@ -705,9 +703,7 @@ export default function FormationIAEntreprisePage() {
             Sprint, journée socle, deux jours métier ou parcours : quel format retenir ?
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le sprint de 3 heures lance une équipe sur ses premiers usages. La journée socle donne la même base à tous les services. Les deux jours par métier vont jusqu'aux fonctions avancées des outils, et le parcours avec référents organise la progression de toute l'organisation.</strong>
-          </p>
+          <Reponse texte="Le sprint de 3 heures lance une équipe sur ses premiers usages. La journée socle donne la même base à tous les services. Les deux jours par métier vont jusqu'aux fonctions avancées des outils, et le parcours avec référents organise la progression de toute l'organisation." style={answerStyle} />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 250px), 1fr))', gap: 20 }}>
             {FORMATS.map(item => (
@@ -745,9 +741,7 @@ export default function FormationIAEntreprisePage() {
             Un programme par service : 24 formations métier
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le catalogue compte 24 programmes métier, du marketing à la comptabilité en passant par les achats et le juridique. Les ateliers reprennent les dossiers et les processus propres à chaque fonction, puis abordent les fonctions avancées des outils quand le groupe est prêt.</strong>
-          </p>
+          <Reponse texte="Le catalogue compte 24 programmes métier, du marketing à la comptabilité en passant par les achats et le juridique. Les ateliers reprennent les dossiers et les processus propres à chaque fonction, puis abordent les fonctions avancées des outils quand le groupe est prêt." style={{ ...answerStyle, background: '#fff' }} />
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
             {METIERS_LINKS.map(m => (
@@ -778,9 +772,7 @@ export default function FormationIAEntreprisePage() {
             ChatGPT, Copilot, Claude, Gemini ou Vibe : la formation suit vos licences
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Les ateliers se déroulent dans les outils que vos équipes ouvriront le lendemain, en version professionnelle. Si un outil est déjà déployé, la formation s'appuie sur lui ; si le choix reste ouvert, la session compare plusieurs assistants sur vos propres cas. Les noms et fonctions ci-dessous sont à jour au 7 octobre 2026.</strong>
-          </p>
+          <Reponse texte="Les ateliers se déroulent dans les outils que vos équipes ouvriront le lendemain, en version professionnelle. Si un outil est déjà déployé, la formation s'appuie sur lui ; si le choix reste ouvert, la session compare plusieurs assistants sur vos propres cas. Les noms et fonctions ci-dessous sont à jour au 7 octobre 2026." style={answerStyle} />
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
             {OUTILS.map(rel => (
@@ -815,17 +807,9 @@ export default function FormationIAEntreprisePage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Cinq erreurs qui font échouer une formation IA en entreprise
           </h2>
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les déploiements qui n'ont rien laissé se ressemblent : un seul programme servi à tous les services, aucune règle sur les données, un outil que personne n'a sous licence, aucune suite après l'atelier, des démonstrations sans exercice au poste. Notre déroulé prévoit une parade à chacune.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 12 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse texte="Les déploiements qui n'ont rien laissé se ressemblent : un seul programme servi à tous les services, aucune règle sur les données, un outil que personne n'a sous licence, aucune suite après l'atelier, des démonstrations sans exercice au poste. Notre déroulé prévoit une parade à chacune." style={{ ...answerStyle, background: '#fff' }} />
+          {/* Une rangée par erreur (plus de cartes côte à côte) */}
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc, icon: AlertTriangle }))} style={{ marginTop: 12, maxWidth: 880 }} />
         </div>
       </section>
 
@@ -836,9 +820,7 @@ export default function FormationIAEntreprisePage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Trois entreprises qui ont formé leurs équipes par étapes
           </h2>
-          <p style={answerStyle}>
-            <strong>Les clients concernés ont demandé l'anonymat ; leurs récits complets figurent dans nos études de cas. Ils montrent la même logique : un premier groupe formé sur ses propres fichiers, puis l'élargissement aux autres équipes.</strong>
-          </p>
+          <Reponse texte="Les clients concernés ont demandé l'anonymat ; leurs récits complets figurent dans nos études de cas. Ils montrent la même logique : un premier groupe formé sur ses propres fichiers, puis l'élargissement aux autres équipes." style={answerStyle} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
             {CAS.map(cas => (
               <div key={cas.href} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
@@ -846,7 +828,7 @@ export default function FormationIAEntreprisePage() {
                   <IconTile icon={cas.icon} />
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: '#0A0A0A', lineHeight: 1.35 }}>{cas.secteur}</div>
                 </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{cas.texte}</p>
+                <Paras texte={cas.texte} max={2} budget={260} style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }} wrapStyle={{ flex: 1 }} />
                 <Link to={cas.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
                   {cas.lien}
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -865,34 +847,14 @@ export default function FormationIAEntreprisePage() {
             Confidentialité, RGPD et AI Act : les règles avant la première demande
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Les ateliers se font sur des comptes pro que votre service informatique administre. Le cadrage décide, au regard du RGPD, ce qui peut passer dans l'outil ; chaque session se conclut par des consignes écrites ; la trace des formations répond à ce que l'AI Act demande en matière de compétences.</strong>
-          </p>
+          <Reponse texte="Les ateliers se font sur des comptes pro que votre service informatique administre. Le cadrage décide, au regard du RGPD, ce qui peut passer dans l'outil ; chaque session se conclut par des consignes écrites ; la trace des formations répond à ce que l'AI Act demande en matière de compétences." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {[
+          {/* Une rangée par règle, le lien éventuel en pied (plus de cartes côte à côte) */}
+          <RangeesAvecLien style={{ marginTop: 12, maxWidth: 880 }} items={[
               { icon: ShieldCheck, title: 'Confidentialité et RGPD', desc: "Au 7 octobre 2026, Claude Team, ChatGPT Business, Gemini côté Workspace et Copilot ouvert avec un compte professionnel ne se servent pas de vos échanges pour entraîner leurs modèles, sauf réglage contraire ; sur Vibe Team, l'administrateur doit couper ce réglage. Le cadrage liste ce qu'on anonymise et ce qu'on garde à l'écart, et les comptes gratuits sont écartés pour toute donnée sensible." },
               { icon: FileText, title: "Des consignes écrites pour l'équipe", desc: "Chaque session débouche sur des règles communes : quelles données, quel outil, qui relit avant envoi. Elles alimentent une charte que nous aidons à rédiger, présentée sur sa propre page.", link: { href: '/charte-ia-entreprise', label: 'Voir la charte IA' } },
               { icon: Scale, title: "L'AI Act, à sa juste mesure", desc: "Depuis février 2025, l'AI Act demande aux entreprises d'aider leurs salariés à comprendre les outils d'IA qu'elles leur confient. Sa réécriture de juillet 2026 l'a confirmé : on juge les moyens déployés, sans niveau individuel à prouver ni certificat à produire. Une formation tracée y répond." },
-            ].map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: card.link ? '0 0 12px' : 0 }}>{card.desc}</p>
-                  {card.link && (
-                    <Link to={card.link.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none' }}>
-                      {card.link.label}
-                      <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                    </Link>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+          ]} />
         </div>
       </section>
 
@@ -908,8 +870,14 @@ export default function FormationIAEntreprisePage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Dès 1 980 € HT la journée, pour tout le groupe
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Chez Masteria, le prix se compte à la journée et au groupe : dès 1 980 € HT pour une salle de quatre collègues comme pour une salle de douze, quel que soit le métier. Deux jours démarrent à 3 960 € HT, le sprint de 3 heures à 1 980 € HT la session, et la même grille vaut pour une personne seule. Si les exercices reprennent vos modèles et vos fichiers, la préparation se chiffre en plus au devis.
+              </p>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Grâce à la certification Qualiopi du cabinet, l'OPCO de votre branche peut financer la session, suivant ses critères et l'état de ses fonds ; la décision lui revient, et le dossier se prépare à quatre mains. Le CPF ne s'applique pas à ces sessions d'équipe.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Chez Masteria, le prix se compte à la journée et au groupe : dès 1 980 € HT pour une salle de quatre collègues comme pour une salle de douze, quel que soit le métier. Deux jours démarrent à 3 960 € HT, le sprint de 3 heures à 1 980 € HT la session, et la même grille vaut pour une personne seule. Si les exercices reprennent vos modèles et vos fichiers, la préparation se chiffre en plus au devis. Grâce à la certification Qualiopi du cabinet, l'OPCO de votre branche peut financer la session, suivant ses critères et l'état de ses fonds ; la décision lui revient, et le dossier se prépare à quatre mains. Le CPF ne s'applique pas à ces sessions d'équipe. Les sociétés de Genève ou de Bruxelles ne relèvent d'aucun OPCO : elles reçoivent un devis en euros hors taxes. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> identifie votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs.
+                Les sociétés de Genève ou de Bruxelles ne relèvent d'aucun OPCO : elles reçoivent un devis en euros hors taxes. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> identifie votre opérateur, et la page <Link to="/financement-formation-ia" style={aStyle}>financement d'une formation IA</Link> détaille les dispositifs.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -938,8 +906,11 @@ export default function FormationIAEntreprisePage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Des formateurs choisis pour le métier de chaque équipe
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Fondateur du cabinet lyonnais en 2022, Mathias Nizan pilote chaque déploiement. Les sessions sont animées par lui ou par l'un des quelque vingt formateurs indépendants du réseau, retenus pour leur connaissance du métier formé : une équipe de contrôle de gestion ne reçoit pas le même intervenant qu'un service juridique.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Fondateur du cabinet lyonnais en 2022, Mathias Nizan pilote chaque déploiement. Les sessions sont animées par lui ou par l'un des quelque vingt formateurs indépendants du réseau, retenus pour leur connaissance du métier formé : une équipe de contrôle de gestion ne reçoit pas le même intervenant qu'un service juridique. Le cabinet ne revend aucune licence : c'est votre contexte qui décide de l'outil. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ces formations en situation.
+                Le cabinet ne revend aucune licence : c'est votre contexte qui décide de l'outil. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ces formations en situation.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

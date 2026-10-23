@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Search, BookOpen, BadgeCheck, Wallet, MapPin } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import Pictogram from '../components/Pictogram'
+import { Paras } from '../components/Aere'
 import { GLOSSARY_TERMS, GLOSSARY_CATEGORIES, TOTAL_TERMS } from '../data/glossary-terms'
 
 const SITE_URL = 'https://www.master-ia.fr'
+
+// Au-delà de cette longueur, une définition passe en rangée pleine largeur (paragraphes courts)
+const DEFINITION_LONGUE = 300
 
 export default function GlossaryPage() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -93,11 +97,16 @@ export default function GlossaryPage() {
 
           <p style={{
             fontSize: 'clamp(16px, 2vw, 19px)', color: '#4B5563',
-            lineHeight: 1.65, maxWidth: 680, margin: '0 auto 36px',
+            lineHeight: 1.65, maxWidth: 680, margin: '0 auto 14px',
           }}>
             LLM, RAG, prompt, fine-tuning, agent, MCP, AI Act… Toutes les notions essentielles
             de l'IA en entreprise expliquées clairement, par des praticiens. Mis à jour en continu
-            par les formateurs Masteria.{' '}
+            par les formateurs Masteria.
+          </p>
+          <p style={{
+            fontSize: 'clamp(15px, 1.8vw, 17px)', color: '#4B5563',
+            lineHeight: 1.65, maxWidth: 680, margin: '0 auto 36px',
+          }}>
             Pour passer de la définition à la pratique, notre{' '}
             <Link to="/bibliotheque-de-prompts" style={{ color: '#2563EB', fontWeight: 600 }}>bibliothèque de prompts par métier</Link>{' '}
             rassemble des instructions prêtes à copier.
@@ -227,11 +236,14 @@ export default function GlossaryPage() {
                   {terms.length} terme{terms.length > 1 ? 's' : ''}
                 </p>
 
+                {/* Définitions courtes en grille ; une définition longue occupe toute la largeur */}
                 <div style={{
-                  display: 'grid', gap: 16,
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))',
+                  display: 'grid', gap: 16, gridAutoFlow: 'row dense',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 380px), 1fr))',
                 }}>
-                  {terms.map(t => (
+                  {terms.map(t => {
+                    const longue = t.definition.length > DEFINITION_LONGUE
+                    return (
                     <article
                       key={t.id}
                       id={t.id}
@@ -241,6 +253,7 @@ export default function GlossaryPage() {
                         border: '1px solid #E5E7EB',
                         borderRadius: 12,
                         scrollMarginTop: 100,
+                        ...(longue ? { gridColumn: '1 / -1' } : null),
                       }}
                     >
                       <h3 style={{
@@ -257,14 +270,19 @@ export default function GlossaryPage() {
                           {t.term}
                         </a>
                       </h3>
+                      {longue ? (
+                        <Paras texte={t.definition} max={2} budget={320} style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 760 }} />
+                      ) : (
                       <p style={{
                         fontSize: 14.5, color: '#374151',
                         lineHeight: 1.65, margin: 0,
                       }}>
                         {t.definition}
                       </p>
+                      )}
                     </article>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             )

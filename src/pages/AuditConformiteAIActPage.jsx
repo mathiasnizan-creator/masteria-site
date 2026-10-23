@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page de conversion de la mission « Audit de conformité IA » (slug /audit-conformite-ai-act).
@@ -58,11 +59,23 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec ancre et sous-titre daté */
+function RangeesDetail({ items, style }) {
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(({ id, icon: Icon, titre, sousTitre, texte }) => (
+        <li key={titre} id={id} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB', scrollMarginTop: id ? 96 : undefined }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <h3 style={{ ...h3Style, fontSize: 18, margin: '0 0 6px', lineHeight: 1.35 }}>{titre}</h3>
+            {sousTitre && <p style={{ fontSize: 14.5, color: c, fontWeight: 600, lineHeight: 1.5, margin: '0 0 8px' }}>{sousTitre}</p>}
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -433,7 +446,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -507,13 +522,29 @@ export default function AuditConformiteAIActPage() {
             Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · Mis en ligne en septembre 2026, calendrier revérifié le 7 octobre 2026
           </p>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            L'audit de conformité IA recense les systèmes d'intelligence artificielle que votre organisation utilise, attribue à chacun le niveau de risque prévu par l'AI Act, contrôle les obligations déjà en vigueur et vos traitements de données personnelles, puis remet <strong style={{ color: '#fff', fontWeight: 700 }}>la liste des écarts, classés par gravité, et un plan daté pour les corriger</strong>. Aucune certification n'est promise : rien ne permet aujourd'hui de certifier le respect de l'AI Act.
-          </p>
+          {/* GEO : réponse directe, accroche puis les étapes de la mission en liste, la réserve en puce */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              L'audit de conformité IA recense les systèmes d'intelligence artificielle que votre organisation utilise,
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gap: 8, maxWidth: 760 }}>
+              {[
+                "attribue à chacun le niveau de risque prévu par l'AI Act,",
+                'contrôle les obligations déjà en vigueur et vos traitements de données personnelles,',
+                <>puis remet <strong style={{ color: '#fff', fontWeight: 700 }}>la liste des écarts, classés par gravité, et un plan daté pour les corriger</strong>.</>,
+              ].map((item, i) => (
+                <li key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              "Aucune certification n'est promise : rien ne permet aujourd'hui de certifier le respect de l'AI Act.",
+            ]} />
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Au 7 octobre 2026, trois blocs d'obligations sont opposables : depuis le 2 février 2025, certaines pratiques sont interdites et la maîtrise de l'IA est exigée ; depuis le 2 août 2026, la transparence l'est aussi. Le haut risque attend le 2 décembre 2027 (annexe III) et le 2 août 2028 (annexe I). La mission traite d'abord ce qui s'applique, puis prépare le reste, dans cet ordre.
-          </p>
+          <Paras texte="Au 7 octobre 2026, trois blocs d'obligations sont opposables : depuis le 2 février 2025, certaines pratiques sont interdites et la maîtrise de l'IA est exigée ; depuis le 2 août 2026, la transparence l'est aussi. Le haut risque attend le 2 décembre 2027 (annexe III) et le 2 août 2028 (annexe I). La mission traite d'abord ce qui s'applique, puis prépare le reste, dans cet ordre." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -534,17 +565,8 @@ export default function AuditConformiteAIActPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>La mission en résumé</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : sept repères en cartes (« Livrable » sur deux colonnes pour fermer la grille) */}
+          <Reperes sombre id="en-bref" titre="La mission en résumé" colonnes={4} style={{ margin: 0, maxWidth: 1140 }} items={lignesEnReperes(EN_BREF).map(r => (r.label === 'Livrable' ? { ...r, large: true } : r))} />
         </div>
       </section>
 
@@ -557,27 +579,15 @@ export default function AuditConformiteAIActPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que vérifie un audit de conformité IA en 2026 ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Quatre blocs d'obligations, quatre dates. Trois sont déjà opposables : les articles 5 et 4 s'appliquent depuis février 2025, l'article 50 depuis août 2026. Le quatrième, le haut risque, a été reporté par le règlement (UE) 2026/1744 au 2 décembre 2027 (usages de l'annexe III), puis au 2 août 2028 (produits de l'annexe I). L'audit contrôle les trois premiers et prépare le dernier.</strong>
-              </p>
+              <Reponse texte="Quatre blocs d'obligations, quatre dates. Trois sont déjà opposables : les articles 5 et 4 s'appliquent depuis février 2025, l'article 50 depuis août 2026. Le quatrième, le haut risque, a été reporté par le règlement (UE) 2026/1744 au 2 décembre 2027 (usages de l'annexe III), puis au 2 août 2028 (produits de l'annexe I). L'audit contrôle les trois premiers et prépare le dernier." style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
                 Le RGPD vient s'y ajouter, et c'est lui qui déclenche aujourd'hui les contrôles : fichiers clients copiés dans une version gratuite d'assistant, personnes concernées jamais informées, sous-traitant sans contrat. Le cadre complet, normes publiées comprises, est développé dans notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide de l'audit IA</Link>.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {OBLIGATIONS.map((item) => (
-                  <div key={item.id} id={item.id} style={{ ...cardStyle, padding: 24, scrollMarginTop: 96 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 6 }}>{item.title}</h3>
-                    <p style={{ fontSize: 13.5, color: c, fontWeight: 600, lineHeight: 1.5, margin: '0 0 8px' }}>{item.quand}</p>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par bloc d'obligations, ancres conservées (plus de cartes côte à côte) */}
+              <RangeesDetail items={OBLIGATIONS.map(item => ({ id: item.id, icon: item.icon, titre: item.title, sousTitre: item.quand, texte: item.desc }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Vous cherchez plutôt les gains possibles de l'IA dans vos processus ? Il vous faut un audit de maturité : notre <Link to="/audit-ia" style={aStyle}>audit IA d'entreprise</Link> couvre ce terrain et traite la conformité en chemin. La mission décrite ici sert quand la conformité est la question centrale.
               </p>
@@ -598,9 +608,7 @@ export default function AuditConformiteAIActPage() {
             Conformité, maturité, gouvernance : laquelle traiter d'abord ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Choisissez l'audit de conformité quand il s'agit de savoir si vous êtes en règle : avant un contrôle, un appel d'offres qui exige des garanties, une échéance du calendrier européen, ou après un incident interne. Pour savoir ce que l'IA peut faire chez vous, l'audit de maturité convient mieux. Une fois l'audit rendu, la gouvernance vous permet de rester en règle dans la durée.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="Choisissez l'audit de conformité quand il s'agit de savoir si vous êtes en règle : avant un contrôle, un appel d'offres qui exige des garanties, une échéance du calendrier européen, ou après un incident interne. Pour savoir ce que l'IA peut faire chez vous, l'audit de maturité convient mieux. Une fois l'audit rendu, la gouvernance vous permet de rester en règle dans la durée." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Audit de maturité, audit de conformité IA et gouvernance de l'IA comparés" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -638,21 +646,10 @@ export default function AuditConformiteAIActPage() {
             Que contrôle l'audit, point par point ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six contrôles : le recensement des systèmes, le niveau de risque de chacun, les écarts RGPD, la formation et le contrôle humain, la transparence des contenus, la documentation disponible. Chacun ressort avec ses écarts, l'article en cause et un délai de correction.</strong>
-          </p>
+          <Reponse texte="Six contrôles : le recensement des systèmes, le niveau de risque de chacun, les écarts RGPD, la formation et le contrôle humain, la transparence des contenus, la documentation disponible. Chacun ressort avec ses écarts, l'article en cause et un délai de correction." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {CHANTIERS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par contrôle (plus de cartes côte à côte) */}
+          <Rangees items={CHANTIERS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
 
           <div style={{ ...cardStyle, padding: 28, background: '#0A0F1E', border: '1px solid #1E293B', marginTop: 24, display: 'flex', gap: 20, alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -660,9 +657,7 @@ export default function AuditConformiteAIActPage() {
             </div>
             <div style={{ flex: 1, minWidth: 260 }}>
               <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8, color: '#F8FAFC' }}>Trois exigences que la loi ne contient pas</h3>
-              <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                Un système à haut risque n'exige pas, dans la majorité des cas, d'audit externe : l'AI Act se contente d'un contrôle interne documenté par l'entreprise. Aucun registre universel n'est imposé : l'inscription dans la base européenne concerne les fournisseurs de systèmes classés à haut risque et les déployeurs qui sont des autorités publiques. Aucune certification n'est possible à ce jour. Nous auditons pour que vous sachiez où vous en êtes, sans brandir une obligation inexistante.
-              </p>
+              <Paras max={2} texte="Un système à haut risque n'exige pas, dans la majorité des cas, d'audit externe : l'AI Act se contente d'un contrôle interne documenté par l'entreprise. Aucun registre universel n'est imposé : l'inscription dans la base européenne concerne les fournisseurs de systèmes classés à haut risque et les déployeurs qui sont des autorités publiques. Aucune certification n'est possible à ce jour. Nous auditons pour que vous sachiez où vous en êtes, sans brandir une obligation inexistante." style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, margin: 0, maxWidth: 760 }} />
             </div>
           </div>
         </div>
@@ -676,9 +671,7 @@ export default function AuditConformiteAIActPage() {
             Six temps, avec le DPO du début à la fin
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Cadrage, recensement, qualification, contrôle des obligations en vigueur, revue des fournisseurs, plan et restitution. Le DPO et la DSI suivent chaque temps. Les textes de référence sont nommés dans le devis : AI Act et règlement modificatif de 2026, RGPD, publications de la CNIL, ISO/IEC 42001 si une certification est visée.</strong>
-          </p>
+          <Reponse texte="Cadrage, recensement, qualification, contrôle des obligations en vigueur, revue des fournisseurs, plan et restitution. Le DPO et la DSI suivent chaque temps. Les textes de référence sont nommés dans le devis : AI Act et règlement modificatif de 2026, RGPD, publications de la CNIL, ISO/IEC 42001 si une certification est visée." style={answerStyle} />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -711,21 +704,10 @@ export default function AuditConformiteAIActPage() {
             Les pièces que votre DPO pourra produire demain
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Un registre des systèmes, une matrice de risque, des écarts classés avec l'article cité et un délai, un plan daté avec un porteur par action, des trames de documents et une séance d'arbitrage. Votre DPO peut porter ce dossier seul, ou le confier à un autre prestataire.</strong>
-          </p>
+          <Reponse texte="Un registre des systèmes, une matrice de risque, des écarts classés avec l'article cité et un délai, un plan daté avec un porteur par action, des trames de documents et une séance d'arbitrage. Votre DPO peut porter ce dossier seul, ou le confier à un autre prestataire." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {LIVRABLE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par pièce remise (plus de cartes côte à côte) */}
+          <Rangees items={LIVRABLE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
         </div>
       </section>
 
@@ -765,30 +747,13 @@ export default function AuditConformiteAIActPage() {
             Combien coûte un audit de conformité IA, et qui le finance ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Le montant se décide une fois le cadrage terminé, quand on connaît les entités, le nombre de systèmes et l'ampleur du volet RGPD. Une PME qui utilise des outils du marché paie quelques milliers d'euros ; un groupe, ou une entreprise qui a développé son propre système de notation, monte à plusieurs dizaines de milliers, sans plafond défini d'avance.</strong>
-          </p>
+          <Reponse texte="Le montant se décide une fois le cadrage terminé, quand on connaît les entités, le nombre de systèmes et l'ampleur du volet RGPD. Une PME qui utilise des outils du marché paie quelques milliers d'euros ; un groupe, ou une entreprise qui a développé son propre système de notation, monte à plusieurs dizaines de milliers, sans plafond défini d'avance." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Building2 size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce qui fait varier le prix</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Le nombre de systèmes et de traitements pèse plus que l'effectif. Une PME de quatre-vingts personnes équipée d'un assistant bureautique et d'un chatbot public se traite vite ; une ETI qui a construit un outil de scoring interne demande davantage, et le devis le montre. Seul l'audit est chiffré : une mise en conformité accompagnée, si vous la souhaitez, fait l'objet d'un devis séparé après la restitution.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Les financements possibles</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                La mission relève du conseil ; elle n'est donc pas finançable par votre OPCO, lequel couvre la formation. Côté aides, certaines subventions publiques au conseil existent selon l'effectif, le secteur et la région ; le cadrage fait le tri. La formation souvent décidée après l'audit ouvre droit, elle, à un financement de l'OPCO compétent, dans les limites qu'il fixe.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={[
+            { titre: 'Ce qui fait varier le prix', icon: Building2, texte: "Le nombre de systèmes et de traitements pèse plus que l'effectif. Une PME de quatre-vingts personnes équipée d'un assistant bureautique et d'un chatbot public se traite vite ; une ETI qui a construit un outil de scoring interne demande davantage, et le devis le montre. Seul l'audit est chiffré : une mise en conformité accompagnée, si vous la souhaitez, fait l'objet d'un devis séparé après la restitution." },
+            { titre: 'Les financements possibles', icon: Landmark, texte: "La mission relève du conseil ; elle n'est donc pas finançable par votre OPCO, lequel couvre la formation. Côté aides, certaines subventions publiques au conseil existent selon l'effectif, le secteur et la région ; le cadrage fait le tri. La formation souvent décidée après l'audit ouvre droit, elle, à un financement de l'OPCO compétent, dans les limites qu'il fixe." },
+          ]} />
         </div>
       </section>
 
@@ -815,7 +780,7 @@ export default function AuditConformiteAIActPage() {
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
                   <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Paras texte={text} max={2} budget={260} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }} wrapStyle={{ flex: 1 }} />
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
                   Lire cette mission en entier
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -906,8 +871,11 @@ export default function AuditConformiteAIActPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Des auditeurs qui déploient ces outils toute l'année
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Mathias Nizan pilote chaque audit de conformité. Selon les systèmes à examiner, il fait intervenir des consultants IA (une dizaine dans le réseau), des développeurs (cinq environ) pour lire un système construit en interne, et des formateurs (une vingtaine) quand il faut évaluer la formation des équipes ; tous sont indépendants.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Mathias Nizan pilote chaque audit de conformité. Selon les systèmes à examiner, il fait intervenir des consultants IA (une dizaine dans le réseau), des développeurs (cinq environ) pour lire un système construit en interne, et des formateurs (une vingtaine) quand il faut évaluer la formation des équipes ; tous sont indépendants. Ces intervenants installent et enseignent ces outils au quotidien et savent où se logent les écarts. Pour l'interprétation juridique, nous travaillons avec votre avocat ou votre juriste. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> donnent des exemples datés.
+                Ces intervenants installent et enseignent ces outils au quotidien et savent où se logent les écarts. Pour l'interprétation juridique, nous travaillons avec votre avocat ou votre juriste. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> donnent des exemples datés.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

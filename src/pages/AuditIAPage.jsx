@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page de conversion de la mission de conseil « Audit IA » (slug /audit-ia).
@@ -58,11 +59,25 @@ function Kicker({ children }) {
   return <div style={kickerStyle}>{children}</div>
 }
 
-function IconTile({ icon: Icon }) {
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec ancre, sous-titre ou note de source */
+function RangeesDetail({ items, style, niveau = 'h3', titreTaille = 18 }) {
+  const Titre = niveau
   return (
-    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-      <Icon size={22} strokeWidth={2} style={{ color: c }} />
-    </div>
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(({ id, icon: Icon, titre, sousTitre, texte, note }) => (
+        <li key={titre} id={id} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB', scrollMarginTop: id ? 96 : undefined }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: titreTaille, fontWeight: 800, color: '#0A0A0A', margin: '0 0 6px', lineHeight: 1.35, letterSpacing: '-0.01em' }}>{titre}</Titre>
+            {sousTitre && <p style={{ fontSize: 14.5, color: c, fontWeight: 600, lineHeight: 1.5, margin: '0 0 8px' }}>{sousTitre}</p>}
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {note && <p style={{ fontSize: 12.5, color: '#6B7280', margin: '10px 0 0', fontWeight: 600 }}>{note}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -493,7 +508,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -566,18 +583,29 @@ export default function AuditIAPage() {
 
           <div id="definition" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: '18px 22px', margin: '0 0 24px', maxWidth: 760 }}>
             <div style={{ fontSize: 11.5, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 8 }}>Définition</div>
-            <p style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }}>
-              Un audit IA d'entreprise relève ce que l'intelligence artificielle fait déjà, et pourrait faire, dans une organisation : usages des équipes, données disponibles, logiciels, compétences, exposition aux textes européens (RGPD, AI Act). Un regard extérieur évalue ces éléments puis les traduit en feuille de route classée par priorité. Le diagnostic, plus court, s'arrête aux priorités ; le test de maturité se remplit seul, sans auditeur.
-            </p>
+            <Paras max={2} texte="Un audit IA d'entreprise relève ce que l'intelligence artificielle fait déjà, et pourrait faire, dans une organisation : usages des équipes, données disponibles, logiciels, compétences, exposition aux textes européens (RGPD, AI Act). Un regard extérieur évalue ces éléments puis les traduit en feuille de route classée par priorité. Le diagnostic, plus court, s'arrête aux priorités ; le test de maturité se remplit seul, sans auditeur." style={{ fontSize: 15.5, color: '#E2E8F0', lineHeight: 1.65, margin: 0 }} />
           </div>
 
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Chez Masteria, l'audit IA examine votre organisation sous cinq angles : processus et usages, données, outils, organisation et compétences, respect du RGPD et du règlement européen sur l'IA. Il se conclut par <strong style={{ color: '#fff', fontWeight: 700 }}>un rapport de maturité et une feuille de route chiffrée</strong>, où figurent aussi les projets à ne pas lancer. Le devis couvre l'audit et sa restitution ; la suite se chiffre ensuite, si vous la voulez.
-          </p>
+          {/* GEO : réponse directe, 1re phrase en accroche (les cinq angles en liste), la suite en puces */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Chez Masteria, l'audit IA examine votre organisation sous cinq angles :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+              {['processus et usages', 'données', 'outils', 'organisation et compétences', "respect du RGPD et du règlement européen sur l'IA"].map(item => (
+                <li key={item} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              <>Il se conclut par <strong style={{ color: '#fff', fontWeight: 700 }}>un rapport de maturité et une feuille de route chiffrée</strong>, où figurent aussi les projets à ne pas lancer.</>,
+              "Le devis couvre l'audit et sa restitution ; la suite se chiffre ensuite, si vous la voulez.",
+            ]} />
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Une direction le commande en général à un moment précis : plusieurs initiatives IA coexistent, un budget doit être arbitré, un client demande des garanties. L'audit pose alors un constat écrit et daté, que vous pouvez défendre devant un comité de direction ou un conseil d'administration. Si un diagnostic plus court répond à votre question, vous l'entendrez dès le premier échange.
-          </p>
+          <Paras texte="Une direction le commande en général à un moment précis : plusieurs initiatives IA coexistent, un budget doit être arbitré, un client demande des garanties. L'audit pose alors un constat écrit et daté, que vous pouvez défendre devant un comité de direction ou un conseil d'administration. Si un diagnostic plus court répond à votre question, vous l'entendrez dès le premier échange." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -601,17 +629,8 @@ export default function AuditIAPage() {
             ))}
           </div>
 
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>L'audit en sept lignes</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 100px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : sept repères en cartes (« Ensuite » sur deux colonnes pour fermer la grille) */}
+          <Reperes sombre id="en-bref" titre="L'audit en sept lignes" colonnes={4} style={{ margin: 0, maxWidth: 1140 }} items={lignesEnReperes(EN_BREF).map(r => (r.label === 'Ensuite' ? { ...r, large: true } : r))} />
         </div>
       </section>
 
@@ -624,27 +643,18 @@ export default function AuditIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Quel audit IA vous faut-il ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Trois missions portent ce nom : l'audit de maturité et d'opportunité, l'audit de conformité, l'audit algorithmique. Leur objet diffère, leur livrable aussi. Un prestataire sérieux vous demande d'abord laquelle vous attendez ; chez Masteria, cette question ouvre chaque cadrage.</strong>
+              <Reponse texte="Trois missions portent ce nom : l'audit de maturité et d'opportunité, l'audit de conformité, l'audit algorithmique. Leur objet diffère, leur livrable aussi. Un prestataire sérieux vous demande d'abord laquelle vous attendez ; chez Masteria, cette question ouvre chaque cadrage." style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px' }}>
+                La plupart des directions veulent les deux premières ensemble : savoir où elles en sont et quoi automatiser, en traitant le volet réglementaire au fil de l'examen. C'est le périmètre par défaut de notre audit.
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                La plupart des directions veulent les deux premières ensemble : savoir où elles en sont et quoi automatiser, en traitant le volet réglementaire au fil de l'examen. C'est le périmètre par défaut de notre audit. Le cadre légal, les normes et les repères de prix publics sont détaillés dans notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide complet de l'audit IA</Link>. La question réglementaire seule a sa mission, l'<Link to="/audit-conformite-ai-act" style={aStyle}>audit de conformité IA</Link> ; les associations et établissements du secteur trouveront leur version sur la page <Link to="/audit-ia-medico-social" style={aStyle}>audit IA médico-social</Link>.
+                Le cadre légal, les normes et les repères de prix publics sont détaillés dans notre <Link to="/blog/audit-ia-entreprise-methode-prix" style={aStyle}>guide complet de l'audit IA</Link>. La question réglementaire seule a sa mission, l'<Link to="/audit-conformite-ai-act" style={aStyle}>audit de conformité IA</Link> ; les associations et établissements du secteur trouveront leur version sur la page <Link to="/audit-ia-medico-social" style={aStyle}>audit IA médico-social</Link>.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {TYPES_AUDIT.map((item, i) => (
-                  <div key={i} id={item.id} style={{ ...cardStyle, padding: 24, scrollMarginTop: 96 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 6 }}>{item.title}</h3>
-                    <p style={{ fontSize: 13.5, color: c, fontWeight: 600, lineHeight: 1.5, margin: '0 0 8px' }}>{item.question}</p>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par type d'audit, ancres conservées (plus de cartes côte à côte) */}
+              <RangeesDetail items={TYPES_AUDIT.map(item => ({ id: item.id, icon: item.icon, titre: item.title, sousTitre: item.question, texte: item.desc }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Une quatrième acception circule : mesurer si ChatGPT ou Perplexity citent votre marque dans leurs réponses. Elle relève du marketing et dispose de sa propre mission, l'<Link to="/audit-geo-ia" style={aStyle}>audit GEO IA</Link>.
               </p>
@@ -665,9 +675,7 @@ export default function AuditIAPage() {
             Trois formats, du plus léger au plus approfondi : lequel correspond à votre situation ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>En trois minutes et sans frais, le test de maturité IA vous classe parmi quatre profils. Le diagnostic IA, intervention courte, choisit les premiers cas d'usage. L'audit IA passe en revue maturité, données, conformité et trajectoire, sur plusieurs semaines. Pendant le cadrage, dont les 30 minutes sont offertes, nous vous orientons vers le format qui suffit, même s'il coûte moins cher.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="En trois minutes et sans frais, le test de maturité IA vous classe parmi quatre profils. Le diagnostic IA, intervention courte, choisit les premiers cas d'usage. L'audit IA passe en revue maturité, données, conformité et trajectoire, sur plusieurs semaines. Pendant le cadrage, dont les 30 minutes sont offertes, nous vous orientons vers le format qui suffit, même s'il coûte moins cher." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
 
           <div style={{ border: '1px solid #1E293B', borderRadius: 16, overflowX: 'auto' }}>
             <table aria-label="Test de maturité IA, diagnostic IA et audit IA comparés critère par critère" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -705,28 +713,17 @@ export default function AuditIAPage() {
             Que couvre un audit IA d'entreprise ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>L'examen porte sur cinq angles : les processus et les usages (outils adoptés sans l'accord de la DSI compris), les données, les outils et l'architecture, l'organisation et les compétences, le respect des deux textes européens qui comptent ici, RGPD et AI Act. Pour chacun, le rapport donne une note, la justifie et propose des actions.</strong>
-          </p>
+          <Reponse texte="L'examen porte sur cinq angles : les processus et les usages (outils adoptés sans l'accord de la DSI compris), les données, les outils et l'architecture, l'organisation et les compétences, le respect des deux textes européens qui comptent ici, RGPD et AI Act. Pour chacun, le rapport donne une note, la justifie et propose des actions." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {DIMENSIONS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-            <div style={{ ...cardStyle, padding: 28, background: '#0A0F1E', border: '1px solid #1E293B' }}>
-              <div style={{ marginBottom: 16 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <Landmark size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                </div>
-              </div>
-              <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8, color: '#F8FAFC' }}>La loi ne vous oblige pas à cet audit</h3>
-              <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
+          {/* Une rangée par angle (plus de cartes côte à côte), puis la mise au point sur la loi en encadré pleine largeur */}
+          <Rangees items={DIMENSIONS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
+          <div style={{ ...cardStyle, padding: '24px 28px', marginTop: 28, maxWidth: 880, background: '#0A0F1E', border: '1px solid #1E293B', display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+            <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: 'rgba(37,99,235,0.16)', color: '#60A5FA', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+              <Landmark size={17} strokeWidth={1.75} />
+            </span>
+            <div style={{ minWidth: 0 }}>
+              <h3 style={{ ...h3Style, fontSize: 18, marginBottom: 8, color: '#F8FAFC' }}>La loi ne vous oblige pas à cet audit</h3>
+              <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, margin: 0 }}>
                 Dans la majorité des usages classés à haut risque, une évaluation interne documentée suffit, et l'échéance tombe en décembre 2027 pour l'annexe III, en août 2028 pour l'annexe I. Nous auditons pour éclairer une décision ; aucune obligation imaginaire ne sert d'argument de vente.
               </p>
             </div>
@@ -741,23 +738,9 @@ export default function AuditIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Audit IA pour entreprises de toute taille : PME, ETI, groupe
           </h2>
-          <p style={answerStyle}>
-            <strong>La grille reste la même d'une PME de quarante salariés à un groupe de dix filiales ; le nombre de processus examinés et la profondeur changent.</strong> Le périmètre se décide pendant le cadrage, il est écrit dans le devis et c'est lui qui fixe le forfait.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24, marginTop: 12 }}>
-            {TAILLES.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
+          <Reponse texte="La grille reste la même d'une PME de quarante salariés à un groupe de dix filiales ; le nombre de processus examinés et la profondeur changent. Le périmètre se décide pendant le cadrage, il est écrit dans le devis et c'est lui qui fixe le forfait." style={answerStyle} />
+          {/* Une rangée par taille d'organisation (plus de cartes côte à côte) */}
+          <Rangees items={TAILLES.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
         </div>
       </section>
 
@@ -768,21 +751,9 @@ export default function AuditIAPage() {
           <h2 style={{ ...h2Style, maxWidth: 880 }}>
             Quatre dates et un chiffre pour situer votre audit
           </h2>
-          <p style={{ ...answerStyle }}>
-            <strong>Les obligations de l'AI Act arrivent à des dates différentes selon l'usage, et les gains mesurés par les études sérieuses restent modestes à l'échelle d'un salarié. L'audit replace ces deux constats dans votre organisation, service par service.</strong>
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 210px), 1fr))', gap: 20, marginTop: 12 }}>
-            {REPERES.map((r, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={r.icon} />
-                </div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 26, fontWeight: 900, color: '#0A0A0A', lineHeight: 1.1, marginBottom: 8, letterSpacing: '-0.02em' }}>{r.stat}</div>
-                <p style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.6, margin: '0 0 10px' }}>{r.label}</p>
-                <p style={{ fontSize: 12, color: '#6B7280', margin: 0, fontWeight: 600 }}>Source : {r.source}</p>
-              </div>
-            ))}
-          </div>
+          <Reponse texte="Les obligations de l'AI Act arrivent à des dates différentes selon l'usage, et les gains mesurés par les études sérieuses restent modestes à l'échelle d'un salarié. L'audit replace ces deux constats dans votre organisation, service par service." style={answerStyle} />
+          {/* Une rangée par date, la date en tête et sa source en pied (plus de cartes serrées côte à côte) */}
+          <RangeesDetail niveau="div" titreTaille={22} style={{ marginTop: 12, maxWidth: 880 }} items={REPERES.map(r => ({ icon: r.icon, titre: r.stat, texte: r.label, note: `Source : ${r.source}` }))} />
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '20px 0 0', maxWidth: 880 }}>
             Les références complètes sont listées en bas de page. Notre page <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link> réunit une vingtaine de mesures de productivité, chacune présentée avec sa méthode et sa période de collecte.
           </p>
@@ -797,9 +768,7 @@ export default function AuditIAPage() {
             Six étapes, du cadrage à la restitution
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Cadrage, inventaire, entretiens métier, état des données, qualification des risques, feuille de route : chaque étape alimente une partie du rapport. Les référentiels appliqués (ISO/IEC 42001 et 23894, cadre du NIST, RGPD, AI Act) figurent dans le devis, avec leur version.</strong>
-          </p>
+          <Reponse texte="Cadrage, inventaire, entretiens métier, état des données, qualification des risques, feuille de route : chaque étape alimente une partie du rapport. Les référentiels appliqués (ISO/IEC 42001 et 23894, cadre du NIST, RGPD, AI Act) figurent dans le devis, avec leur version." style={answerStyle} />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -832,21 +801,10 @@ export default function AuditIAPage() {
             Ce que contient le dossier remis à la direction
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Six pièces composent le livrable : le rapport de maturité par dimension, les cas d'usage classés, la feuille de route chiffrée (porteur, budget et échéance de chaque action), le plan de mise en conformité, la liste des projets écartés avec leur motif, le support de restitution. L'ensemble se lit et s'exécute sans nous.</strong>
-          </p>
+          <Reponse texte="Six pièces composent le livrable : le rapport de maturité par dimension, les cas d'usage classés, la feuille de route chiffrée (porteur, budget et échéance de chaque action), le plan de mise en conformité, la liste des projets écartés avec leur motif, le support de restitution. L'ensemble se lit et s'exécute sans nous." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            {LIVRABLE.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ marginBottom: 16 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par pièce du dossier (plus de cartes côte à côte) */}
+          <Rangees items={LIVRABLE.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
         </div>
       </section>
 
@@ -886,30 +844,13 @@ export default function AuditIAPage() {
             Combien coûte un audit IA, et qui peut le financer ?
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>L'audit se facture au forfait, dès que le cadrage a délimité ce qu'il faut examiner. Un audit resserré sur une PME commence à quelques milliers d'euros ; une organisation de plusieurs entités ou pays atteint plusieurs dizaines de milliers d'euros, sans plafond fixé d'avance. Chaque ligne du devis se justifie par le périmètre.</strong>
-          </p>
+          <Reponse texte="L'audit se facture au forfait, dès que le cadrage a délimité ce qu'il faut examiner. Un audit resserré sur une PME commence à quelques milliers d'euros ; une organisation de plusieurs entités ou pays atteint plusieurs dizaines de milliers d'euros, sans plafond fixé d'avance. Chaque ligne du devis se justifie par le périmètre." style={{ ...answerStyle, background: '#fff' }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24, marginTop: 12 }}>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Building2 size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Ce qui fait le prix</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Quatre paramètres : le nombre d'entités, de processus et de systèmes, et la profondeur du volet conformité. Aucun pack ne se vend sans cadrage. Seul l'audit figure au devis : former les équipes, construire un outil ou installer une gouvernance se chiffre après la restitution, à partir des priorités du rapport, et seulement si vous le demandez.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                <Landmark size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, fontSize: 16 }}>Financer l'audit</h3>
-              </div>
-              <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
-                Une mission de conseil comme celle-ci se paie sur le budget de l'entreprise : elle n'est pas finançable par votre OPCO, réservé à la formation. Certaines aides publiques au conseil, selon l'effectif, l'activité ou la région, peuvent en revanche s'appliquer : le cadrage le vérifie. Une formation décidée après la restitution peut être prise en charge par l'OPCO de la branche, dans la limite de son règlement et de son budget.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 12, maxWidth: 880 }} items={[
+            { titre: 'Ce qui fait le prix', icon: Building2, texte: "Quatre paramètres : le nombre d'entités, de processus et de systèmes, et la profondeur du volet conformité. Aucun pack ne se vend sans cadrage. Seul l'audit figure au devis : former les équipes, construire un outil ou installer une gouvernance se chiffre après la restitution, à partir des priorités du rapport, et seulement si vous le demandez." },
+            { titre: "Financer l'audit", icon: Landmark, texte: "Une mission de conseil comme celle-ci se paie sur le budget de l'entreprise : elle n'est pas finançable par votre OPCO, réservé à la formation. Certaines aides publiques au conseil, selon l'effectif, l'activité ou la région, peuvent en revanche s'appliquer : le cadrage le vérifie. Une formation décidée après la restitution peut être prise en charge par l'OPCO de la branche, dans la limite de son règlement et de son budget." },
+          ]} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Pour situer l'audit dans le budget d'ensemble d'une démarche IA, développement compris, lisez nos repères sur le <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>.
@@ -940,7 +881,7 @@ export default function AuditIAPage() {
                   <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 24, fontWeight: 900, color: c, letterSpacing: '-0.02em', lineHeight: 1.1 }}>{figure}</div>
                   <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.45, marginTop: 4 }}>{figureLabel}</div>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
+                <Paras texte={text} max={2} budget={260} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }} wrapStyle={{ flex: 1 }} />
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
                   Le récit complet de la mission
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -1034,8 +975,11 @@ export default function AuditIAPage() {
               <h2 style={{ ...h2Style, color: '#F8FAFC', fontSize: 'clamp(20px, 2.4vw, 26px)', marginBottom: 12 }}>
                 Un fondateur qui conduit chaque audit, une équipe composée selon le périmètre
               </h2>
+              <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+                Mathias Nizan dirige chaque audit. Selon ce qu'il faut examiner, il fait appel aux consultants IA du réseau (une dizaine), à des développeurs (cinq environ) quand l'architecture doit être lue de près, et à des formateurs (une vingtaine) pour évaluer les compétences des équipes.
+              </p>
               <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-                Mathias Nizan dirige chaque audit. Selon ce qu'il faut examiner, il fait appel aux consultants IA du réseau (une dizaine), à des développeurs (cinq environ) quand l'architecture doit être lue de près, et à des formateurs (une vingtaine) pour évaluer les compétences des équipes. Tous sont indépendants. Masteria n'est lié à aucun éditeur, si bien que l'outil recommandé dépend de vos contraintes. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent des missions datées.
+                Tous sont indépendants. Masteria n'est lié à aucun éditeur, si bien que l'outil recommandé dépend de vos contraintes. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent des missions datées.
               </p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

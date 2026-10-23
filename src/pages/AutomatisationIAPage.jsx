@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Workflow, BadgeCheck, Wallet, MonitorSmartphone, Building2, Check,
+  Workflow, BadgeCheck, Wallet, MonitorSmartphone, Building2, Check, AlertTriangle, UserCheck,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
-import Pictogram from '../components/Pictogram'
+import Pictogram, { emojiToIcon } from '../components/Pictogram'
+import { Paras, PointsCles, Rangees } from '../components/Aere'
 
 /*
  * Page formation « automatisation IA » : structure des pages formation
@@ -147,6 +148,26 @@ const SOURCES = [
   { name: 'Ministère du Travail, Qualiopi', url: 'https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation' },
 ]
 
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec l'étiquette « Erreur n » au-dessus du titre */
+function RangeesErreurs({ items, style }) {
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(pf => (
+        <li key={pf.num} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <AlertTriangle size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 8 }}>{pf.num}</div>
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', lineHeight: 1.35 }}>{pf.title}</h3>
+            <Paras texte={pf.desc} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -163,7 +184,9 @@ function FAQItem({ q, a, color }) {
         <span style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -234,14 +257,17 @@ export default function AutomatisationIAPage() {
             {H1}
           </h1>
 
-          {/* GEO : réponse directe pour citation LLM */}
-          <p style={{ fontSize: 17, color: '#0A0A0A', lineHeight: 1.7, marginBottom: 20, maxWidth: 680, fontWeight: 500 }}>
-            La formation <strong>automatisation IA</strong> de Masteria se déroule sur <strong>deux jours (14 heures)</strong>, dans vos locaux comme à distance. Elle démarre à <strong>1 980 € HT la journée</strong>, pour un groupe intra (douze participants maximum) comme pour un parcours individuel ; les workflows construits sur vos propres outils demandent une préparation qui s'ajoute au devis. Comme Masteria est certifiée Qualiopi, votre OPCO de branche peut y contribuer, selon ses règles et ses fonds. Chaque participant repart avec un workflow et un agent construits sur ses propres tâches.
+          {/* GEO : réponse directe pour citation LLM, 1re phrase en accroche, les suivantes en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.2vw, 19px)', color: '#0A0A0A', lineHeight: 1.6, marginBottom: 18, maxWidth: 680, fontWeight: 500, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            La formation <strong>automatisation IA</strong> de Masteria se déroule sur <strong>deux jours (14 heures)</strong>, dans vos locaux comme à distance.
           </p>
+          <PointsCles style={{ margin: '0 0 24px', maxWidth: 700 }} phrases={[
+            <>Elle démarre à <strong>1 980 € HT la journée</strong>, pour un groupe intra (douze participants maximum) comme pour un parcours individuel ; les workflows construits sur vos propres outils demandent une préparation qui s'ajoute au devis.</>,
+            "Comme Masteria est certifiée Qualiopi, votre OPCO de branche peut y contribuer, selon ses règles et ses fonds.",
+            "Chaque participant repart avec un workflow et un agent construits sur ses propres tâches.",
+          ]} />
 
-          <p style={{ fontSize: 17, color: '#4B5563', lineHeight: 1.8, marginBottom: 40, maxWidth: 680 }}>
-            {INTRO}
-          </p>
+          <Paras texte={INTRO} style={{ fontSize: 16.5, color: '#4B5563', lineHeight: 1.75, margin: '0 0 40px', maxWidth: 680 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 40 }}>
             <Link to="/contact" style={{ background: c, color: '#fff', padding: '14px 28px', borderRadius: 8, textDecoration: 'none', fontSize: 15, fontWeight: 700, boxShadow: `0 4px 12px ${c}30` }}>
@@ -289,14 +315,8 @@ export default function AutomatisationIAPage() {
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40 }}>
             Le programme s'adresse aux personnes qui ont des tâches précises à automatiser, et qui veulent repartir avec un résultat en service.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20 }}>
-            {AUDIENCE.map((profile, i) => (
-              <div key={i} style={{ background: '#F9FAFB', borderRadius: 12, padding: 28, border: `2px solid ${cLight}`, borderLeftColor: c, borderLeftWidth: 4 }}>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 10 }}>{profile.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{profile.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par profil (plus de cartes côte à côte) */}
+          <Rangees items={AUDIENCE.map(profile => ({ titre: profile.title, texte: profile.desc, icon: UserCheck }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -399,21 +419,12 @@ export default function AutomatisationIAPage() {
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40, maxWidth: 720, lineHeight: 1.7 }}>
             Ces cinq chaînes reviennent dans presque toutes les organisations. Elles partagent trois traits : un déclencheur net, des étapes que l'on sait décrire, et une relecture humaine placée au bon endroit. Pendant la formation, chacun en construit une sur ses propres dossiers.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 20, marginBottom: 32 }}>
-            {AUTOMATION_CASES.map((ac, i) => (
-              <div key={i} style={{ background: '#F9FAFB', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ marginBottom: 12 }}><Pictogram emoji={ac.icon} tile size={26} /></div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{ac.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{ac.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par chaîne (plus de cartes côte à côte) */}
+          <Rangees items={AUTOMATION_CASES.map(ac => ({ titre: ac.title, texte: ac.desc, icon: emojiToIcon(ac.icon) || undefined }))} style={{ marginBottom: 32, maxWidth: 880 }} />
           <div style={{ background: '#0A0F1E', borderRadius: 12, padding: '28px 32px', marginBottom: 28 }}>
             <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 10 }}>La limite</div>
             <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#F8FAFC', margin: '0 0 10px' }}>Une personne garde la main sur ce qui engage</h3>
-            <p style={{ fontSize: 14.5, color: '#94A3B8', lineHeight: 1.75, margin: 0 }}>
-              Envoyer un message à un client, valider un montant, prendre une décision qui touche un salarié : ces gestes sortent du flux automatique, quel que soit l'outil. Écrire dans un logiciel métier (CRM, ERP, comptabilité, paie) demande des accès, des tests et un responsable désigné ; c'est un projet d'intégration, chiffré et cadré comme tel. La règle est posée au module 1 et chaque automatisation des deux jours la respecte.
-            </p>
+            <Paras max={2} texte="Envoyer un message à un client, valider un montant, prendre une décision qui touche un salarié : ces gestes sortent du flux automatique, quel que soit l'outil. Écrire dans un logiciel métier (CRM, ERP, comptabilité, paie) demande des accès, des tests et un responsable désigné ; c'est un projet d'intégration, chiffré et cadré comme tel. La règle est posée au module 1 et chaque automatisation des deux jours la respecte." style={{ fontSize: 14.5, color: '#94A3B8', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
           </div>
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>
             La première chaîne est décrite pas à pas dans notre guide pour{' '}
@@ -439,8 +450,18 @@ export default function AutomatisationIAPage() {
                 <div style={{ width: 30, height: 30, background: c, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>1</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Les fonctions déjà incluses dans vos licences</h3>
               </div>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
+                Avant tout nouvel abonnement, on regarde ce que vous payez déjà.
+              </p>
+              {/* Un éditeur par puce */}
+              <PointsCles taille={14.5} style={{ margin: '0 0 14px', maxWidth: 'none' }} phrases={[
+                "ChatGPT Business propose des tâches planifiées et, depuis le 21 mai 2026, des agents d'espace de travail, dont les exécutions sont payées en crédits depuis le 6 juillet : un poste à budgéter.",
+                "Chez Google, Workspace Studio crée des flux décrits en langage courant sur Gmail, Drive et Chat ; il reste en accès promotionnel, avec des plafonds appliqués à partir du 1er novembre 2026.",
+                "Côté Microsoft, Power Automate relie Outlook, Teams, Excel et SharePoint, et Copilot Cowork, disponible avec la licence Microsoft 365 Copilot, lance des tâches planifiées ou déclenchées par un mail en demandant l'accord avant chaque action sensible.",
+                "Vibe, l'assistant de Mistral, a remplacé ses agents par des compétences le 22 septembre 2026.",
+              ]} />
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Avant tout nouvel abonnement, on regarde ce que vous payez déjà. ChatGPT Business propose des tâches planifiées et, depuis le 21 mai 2026, des agents d'espace de travail, dont les exécutions sont payées en crédits depuis le 6 juillet : un poste à budgéter. Chez Google, Workspace Studio crée des flux décrits en langage courant sur Gmail, Drive et Chat ; il reste en accès promotionnel, avec des plafonds appliqués à partir du 1er novembre 2026. Côté Microsoft, Power Automate relie Outlook, Teams, Excel et SharePoint, et Copilot Cowork, disponible avec la licence Microsoft 365 Copilot, lance des tâches planifiées ou déclenchées par un mail en demandant l'accord avant chaque action sensible. Vibe, l'assistant de Mistral, a remplacé ses agents par des compétences le 22 septembre 2026. Ce palier suffit quand le besoin reste dans un seul environnement ; notre page sur les{' '}
+                Ce palier suffit quand le besoin reste dans un seul environnement ; notre page sur les{' '}
                 <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link>{' '}
                 compare ces briques.
               </p>
@@ -450,8 +471,14 @@ export default function AutomatisationIAPage() {
                 <div style={{ width: 30, height: 30, background: c, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>2</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Les orchestrateurs qui relient vos applications</h3>
               </div>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
+                Quand le flux traverse plusieurs applications (une boîte mail, un tableur, un CRM consulté en lecture, un outil de gestion de projet), un orchestrateur prend le relais. Il attend un événement, enchaîne des étapes dans vos logiciels et appelle un modèle d'IA au milieu pour lire, résumer, classer ou rédiger.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
+                Les trois plus répandus ne facturent pas la même chose : Make compte des crédits, Zapier des tâches, n8n des exécutions de workflow entières.
+              </p>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Quand le flux traverse plusieurs applications (une boîte mail, un tableur, un CRM consulté en lecture, un outil de gestion de projet), un orchestrateur prend le relais. Il attend un événement, enchaîne des étapes dans vos logiciels et appelle un modèle d'IA au milieu pour lire, résumer, classer ou rédiger. Les trois plus répandus ne facturent pas la même chose : Make compte des crédits, Zapier des tâches, n8n des exécutions de workflow entières. Chacun a sa formation dédiée, en{' '}
+                Chacun a sa formation dédiée, en{' '}
                 <Link to="/formation-make" style={{ color: c, fontWeight: 600 }}>Make</Link>,{' '}
                 <Link to="/formation-zapier" style={{ color: c, fontWeight: 600 }}>Zapier</Link> et{' '}
                 <Link to="/formation-n8n" style={{ color: c, fontWeight: 600 }}>n8n</Link>. Ce palier se construit au module 3 et se fiabilise au module 7.
@@ -462,8 +489,14 @@ export default function AutomatisationIAPage() {
                 <div style={{ width: 30, height: 30, background: c, color: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 14, flexShrink: 0 }}>3</div>
                 <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>Le développement sur mesure</h3>
               </div>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
+                Un flux qui touche la facturation, des données clients ou une obligation réglementaire, des volumes qu'un orchestrateur absorbe mal, une écriture dans un logiciel métier : on quitte alors le sans-code.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
+                Copilot Studio, chez Microsoft, entre dans cette catégorie dès que l'agent écrit dans votre système d'information ; il se facture à part : un pack de 25 000 crédits Copilot y coûte 173,30 € HT par mois en France. C'est un projet, avec son cadrage, ses tests et son budget.
+              </p>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-                Un flux qui touche la facturation, des données clients ou une obligation réglementaire, des volumes qu'un orchestrateur absorbe mal, une écriture dans un logiciel métier : on quitte alors le sans-code. Copilot Studio, chez Microsoft, entre dans cette catégorie dès que l'agent écrit dans votre système d'information ; il se facture à part : un pack de 25 000 crédits Copilot y coûte 173,30 € HT par mois en France. C'est un projet, avec son cadrage, ses tests et son budget. Notre{' '}
+                Notre{' '}
                 <Link to="/agence-automatisation-ia" style={{ color: c, fontWeight: 600 }}>agence d'automatisation IA</Link>{' '}
                 conçoit et exploite ces flux ; quand aucune plateforme du marché ne convient, nos{' '}
                 <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link>{' '}
@@ -539,9 +572,7 @@ export default function AutomatisationIAPage() {
           <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, marginBottom: 8 }}>
             Formation sur mesure : le temps de préparation s'ajoute, chiffré au devis.
           </p>
-          <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>
-            Masteria est certifiée Qualiopi : l'OPCO de votre branche (Atlas, Akto, Afdas, Constructys, Opco 2i ou un autre) peut financer la session, dans la mesure où ses règles et son budget le permettent. Selon l'opérateur et la taille de l'entreprise, il règle directement l'organisme ou vous rembourse après paiement ; nous vérifions ce point avec vous avant de rédiger la convention. Pour Genève ou Bruxelles, où les OPCO n'interviennent pas, le devis est établi en euros HT. Les abonnements aux outils (Make, Zapier, n8n, Copilot Studio) restent hors du prix.
-          </p>
+          <Paras max={2} texte="Masteria est certifiée Qualiopi : l'OPCO de votre branche (Atlas, Akto, Afdas, Constructys, Opco 2i ou un autre) peut financer la session, dans la mesure où ses règles et son budget le permettent. Selon l'opérateur et la taille de l'entreprise, il règle directement l'organisme ou vous rembourse après paiement ; nous vérifions ce point avec vous avant de rédiger la convention. Pour Genève ou Bruxelles, où les OPCO n'interviennent pas, le devis est établi en euros HT. Les abonnements aux outils (Make, Zapier, n8n, Copilot Studio) restent hors du prix." style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }} />
         </div>
       </section>
 
@@ -565,8 +596,9 @@ export default function AutomatisationIAPage() {
             <div style={{ flex: 1, minWidth: 260 }}>
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 4px' }}>{TRAINER.name}</h3>
               <p style={{ fontSize: 14, color: c, fontWeight: 600, margin: '0 0 16px' }}>{TRAINER.role}</p>
+              <Paras texte={TRAINER.bio} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }} />
               <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, marginBottom: 20 }}>
-                {TRAINER.bio} Le détail de ce diagnostic figure dans <Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: c, fontWeight: 600 }}>l'étude de cas</Link> ; son parcours, sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page</Link>.
+                Le détail de ce diagnostic figure dans <Link to="/etudes-de-cas-ia#photovoltaique" style={{ color: c, fontWeight: 600 }}>l'étude de cas</Link> ; son parcours, sur <Link to="/mathias-nizan" style={{ color: c, fontWeight: 600 }}>sa page</Link>.
               </p>
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                 {TRAINER.credentials.map(cred => (
@@ -584,15 +616,8 @@ export default function AutomatisationIAPage() {
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800, color: '#0A0A0A', marginBottom: 40 }}>
             Pourquoi confier cette formation à Masteria ?
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 48 }}>
-            {WHY_MASTERIA.map(card => (
-              <div key={card.title} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ marginBottom: 12 }}><Pictogram emoji={card.icon} tile size={26} /></div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7 }}>{card.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par atout (plus de cartes côte à côte) */}
+          <Rangees items={WHY_MASTERIA.map(card => ({ titre: card.title, texte: card.desc, icon: emojiToIcon(card.icon) || undefined }))} style={{ marginBottom: 48 }} />
           <blockquote style={{ borderLeft: `4px solid ${c}`, paddingLeft: 24, margin: 0 }}>
             <p style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 700, color: '#0A0A0A', fontStyle: 'italic', marginBottom: 8 }}>
               Le bon palier est le plus simple qui tient le besoin.
@@ -611,15 +636,8 @@ export default function AutomatisationIAPage() {
           <p style={{ color: '#6B7280', fontSize: 15, marginBottom: 40, maxWidth: 720, lineHeight: 1.7 }}>
             Les automatisations abandonnées en entreprise tombent presque toutes sur l'une de ces quatre erreurs. Le programme les traite une à une, au module où elles se présentent.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-            {PITFALLS.map(pf => (
-              <div key={pf.num} style={{ background: '#fff', borderRadius: 12, padding: 24, border: '1px solid #E5E7EB' }}>
-                <div style={{ display: 'inline-block', background: cLight, color: c, padding: '3px 10px', borderRadius: 99, fontSize: 12, fontWeight: 700, marginBottom: 12 }}>{pf.num}</div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: '#0A0A0A', marginBottom: 8 }}>{pf.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{pf.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par erreur, son étiquette au-dessus du titre (plus de cartes côte à côte) */}
+          <RangeesErreurs items={PITFALLS} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -698,8 +716,11 @@ export default function AutomatisationIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des formateurs, des consultants et des développeurs qui automatisent en mission
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Autour de Mathias Nizan, Masteria réunit selon les projets une vingtaine de formateurs, une dizaine de consultants IA et environ cinq développeurs, tous indépendants.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Autour de Mathias Nizan, Masteria réunit selon les projets une vingtaine de formateurs, une dizaine de consultants IA et environ cinq développeurs, tous indépendants. Ceux qui animent cette formation construisent aussi des automatisations pour des clients, et aucun ne représente un éditeur : l'outil conseillé est celui qui convient à vos tâches. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
+              Ceux qui animent cette formation construisent aussi des automatisations pour des clients, et aucun ne représente un éditeur : l'outil conseillé est celui qui convient à vos tâches. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> en donnent des exemples datés.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

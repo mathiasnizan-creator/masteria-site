@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import {
   ArrowRight, Lightbulb, Presentation, Users, GraduationCap, MapPin, Check,
   MessagesSquare, Database, ShieldCheck, Landmark, BarChart3,
-  FileSpreadsheet, Layers, Compass, Factory, Bot,
+  FileSpreadsheet, Layers, Compass, Factory, Bot, AlertTriangle,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reponse, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Money page « acculturation IA » (slug /acculturation-ia), côté FORMATION.
@@ -66,6 +67,31 @@ function IconTile({ icon: Icon }) {
     <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
       <Icon size={22} strokeWidth={2} style={{ color: c }} />
     </div>
+  )
+}
+
+/* Rangées pleine largeur (même dessin que Rangees d'Aere), avec le lien éventuel de chaque brique en pied */
+function RangeesAvecLien({ items, style }) {
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB', ...style }}>
+      {items.map(({ icon: Icon, title, desc, href }) => (
+        <li key={title} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760 }}>
+            <h3 style={{ ...h3Style, fontSize: 18, margin: '0 0 8px', lineHeight: 1.35 }}>{title}</h3>
+            <Paras texte={desc} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
+            {href && (
+              <Link to={href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 14, fontWeight: 700, marginTop: 12 }}>
+                Lire le détail
+                <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
 
@@ -491,7 +517,9 @@ function FAQItem({ q, a, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -569,14 +597,26 @@ export default function AcculturationIAPage() {
             Texte de <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui dirige Masteria · première version en août 2026, mise à jour le 19 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable (définition du plan d'acculturation) */}
-          <p id="geo-summary" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un plan d'acculturation à l'IA organise, sur une durée fixée, l'apprentissage de l'intelligence artificielle par toute l'entreprise : <strong style={{ color: '#fff', fontWeight: 700 }}>la direction tranche d'abord l'outil et les règles, les managers pratiquent avant leurs équipes, des référents sont formés plus loin, puis chaque salarié travaille l'outil sur ses propres tâches</strong>. Chez Masteria, il tient en 90 jours et se termine par une mesure des usages installés, service par service. Chaque vague est une action de formation que l'OPCO peut examiner, et chacune documente les efforts que l'article 4 de l'AI Act réclame à l'employeur.
-          </p>
+          {/* GEO : réponse directe citable (définition du plan d'acculturation) : accroche, les quatre temps en liste, la suite en puces */}
+          <div id="geo-summary">
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+              Un plan d'acculturation à l'IA organise, sur une durée fixée, l'apprentissage de l'intelligence artificielle par toute l'entreprise :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '8px 20px', maxWidth: 760 }}>
+              {["la direction tranche d'abord l'outil et les règles", 'les managers pratiquent avant leurs équipes', 'des référents sont formés plus loin', "puis chaque salarié travaille l'outil sur ses propres tâches"].map(item => (
+                <li key={item} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <strong style={{ color: '#fff', fontWeight: 700 }}>{item}</strong>
+                </li>
+              ))}
+            </ul>
+            <PointsCles sombre style={{ margin: '0 0 24px' }} phrases={[
+              "Chez Masteria, il tient en 90 jours et se termine par une mesure des usages installés, service par service.",
+              "Chaque vague est une action de formation que l'OPCO peut examiner, et chacune documente les efforts que l'article 4 de l'AI Act réclame à l'employeur.",
+            ]} />
+          </div>
 
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Acheter des licences ne change pas une entreprise. Elle change quand le comptable, la commerciale et le chef d'équipe savent chacun ce que l'outil fait pour eux, ce qu'il ne doit pas recevoir et comment vérifier ce qu'il rend. L'acculturation organise cet apprentissage service après service, à un rythme qui laisse aux habitudes le temps de se former.
-          </p>
+          <Paras texte="Acheter des licences ne change pas une entreprise. Elle change quand le comptable, la commerciale et le chef d'équipe savent chacun ce que l'outil fait pour eux, ce qu'il ne doit pas recevoir et comment vérifier ce qu'il rend. L'acculturation organise cet apprentissage service après service, à un rythme qui laisse aux habitudes le temps de se former." style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 30 }}>
             <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -600,18 +640,8 @@ export default function AcculturationIAPage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div id="en-bref" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 110px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), repères en cartes sombres */}
+          <Reperes sombre id="en-bref" titre="En bref" items={lignesEnReperes(EN_BREF)} colonnes={4} style={{ margin: 0, maxWidth: 1140 }} />
         </div>
       </section>
 
@@ -624,42 +654,26 @@ export default function AcculturationIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Avec quelles briques acculturer une entreprise à l'IA ?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }}>
-                <strong>Cinq briques s'assemblent selon votre organisation. L'ouverture touche tout le monde, les ateliers mettent l'outil entre les mains, les formations par métier installent les usages durables, le parcours de l'encadrement aligne ceux qui décident, et le volet data protège les équipes qui manipulent des informations sensibles.</strong>
+              <Reponse texte="Cinq briques s'assemblent selon votre organisation. L'ouverture touche tout le monde, les ateliers mettent l'outil entre les mains, les formations par métier installent les usages durables, le parcours de l'encadrement aligne ceux qui décident, et le volet data protège les équipes qui manipulent des informations sensibles." style={{ ...answerStyle, maxWidth: 'none', margin: '0 0 18px' }} />
+              <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: '0 0 12px' }}>
+                Masteria détient la certification Qualiopi pour la catégorie d'action « actions de formation », dont relève chaque brique.
               </p>
               <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.7, margin: 0 }}>
-                Masteria détient la certification Qualiopi pour la catégorie d'action « actions de formation », dont relève chaque brique. Les directions qui veulent leur propre programme le trouvent dans la <Link to="/formation-ia-dirigeants" style={aStyle}>formation IA dirigeants</Link> ; les fonctions, dans le <Link to="/formation-intelligence-artificielle" style={aStyle}>catalogue de formation intelligence artificielle</Link>, qui compte plus de 100 programmes.
+                Les directions qui veulent leur propre programme le trouvent dans la <Link to="/formation-ia-dirigeants" style={aStyle}>formation IA dirigeants</Link> ; les fonctions, dans le <Link to="/formation-intelligence-artificielle" style={aStyle}>catalogue de formation intelligence artificielle</Link>, qui compte plus de 100 programmes.
               </p>
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {FORMATS.map((item, i) => (
-                  <div key={i} style={{ ...cardStyle, padding: 24 }}>
-                    <div style={{ marginBottom: 14 }}>
-                      <IconTile icon={item.icon} />
-                    </div>
-                    <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-                    {item.href && (
-                      <Link to={item.href} style={{ ...aStyle, display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13.5, fontWeight: 700, marginTop: 12 }}>
-                        Lire le détail
-                        <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                      </Link>
-                    )}
-                  </div>
-                ))}
-                {/* Carte sombre : l'angle réglementaire, sans sur-vente */}
-                <div style={{ ...cardStyle, padding: 24, background: '#0A0F1E', border: '1px solid #1E293B' }}>
-                  <div style={{ marginBottom: 14 }}>
-                    <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <ShieldCheck size={22} strokeWidth={2} style={{ color: '#60A5FA' }} />
-                    </div>
-                  </div>
-                  <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>Chaque vague nourrit votre registre</h3>
-                  <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>
-                    Le règlement 2026/1744 a reformulé l'article 4 à partir du 27 juillet 2026 : l'employeur agit pour que chacun sache utiliser les outils d'IA qu'on lui confie, sans niveau à garantir. Chaque séance de la démarche, datée et émargée, s'inscrit dans le registre interne qui en apporte la preuve.
-                  </p>
+              {/* Une rangée par brique, son lien en pied (plus de cartes côte à côte), puis l'angle réglementaire en encadré sombre */}
+              <RangeesAvecLien items={FORMATS} />
+              {/* Carte sombre : l'angle réglementaire, sans sur-vente */}
+              <div style={{ ...cardStyle, padding: '24px 28px', marginTop: 28, background: '#0A0F1E', border: '1px solid #1E293B', display: 'flex', gap: 18, alignItems: 'flex-start' }}>
+                <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: 'rgba(37,99,235,0.16)', color: '#60A5FA', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+                  <ShieldCheck size={17} strokeWidth={1.75} />
+                </span>
+                <div style={{ minWidth: 0 }}>
+                  <h3 style={{ ...h3Style, fontSize: 18, marginBottom: 8, color: '#F8FAFC' }}>Chaque vague nourrit votre registre</h3>
+                  <Paras max={2} texte="Le règlement 2026/1744 a reformulé l'article 4 à partir du 27 juillet 2026 : l'employeur agit pour que chacun sache utiliser les outils d'IA qu'on lui confie, sans niveau à garantir. Chaque séance de la démarche, datée et émargée, s'inscrit dans le registre interne qui en apporte la preuve." style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, margin: 0 }} />
                 </div>
               </div>
             </div>
@@ -679,21 +693,10 @@ export default function AcculturationIAPage() {
             Comment se déroule une acculturation IA réussie ?
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>En quatre temps qui se recouvrent : ouvrir le sujet devant tous, former service par service, expérimenter sous des règles écrites, puis confier la suite à des référents. Le trimestre laisse aux habitudes le temps de se former entre deux séances, et chaque vague corrige la précédente.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" texte="En quatre temps qui se recouvrent : ouvrir le sujet devant tous, former service par service, expérimenter sous des règles écrites, puis confier la suite à des référents. Le trimestre laisse aux habitudes le temps de se former entre deux séances, et chaque vague corrige la précédente." style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }} />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-            {DEMARCHE.map(step => (
-              <div key={step.num} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 99, background: 'rgba(37,99,235,0.16)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <span style={{ fontSize: 15, color: '#60A5FA', fontWeight: 800, fontFamily: 'Nunito, sans-serif' }}>{step.num}</span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8, color: '#F8FAFC' }}>{step.title}</h3>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: 0 }}>{step.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Les quatre temps, une rangée numérotée chacun (plus de cartes côte à côte) */}
+          <Rangees sombre items={DEMARCHE.map(step => ({ titre: step.title, texte: step.desc }))} style={{ maxWidth: 880 }} />
           <p style={{ fontSize: 15, color: '#94A3B8', lineHeight: 1.7, marginTop: 20, maxWidth: 760 }}>
             Quand l'acculturation accompagne un projet plus large, comme un outil à construire ou des tâches à automatiser, elle devient le volet formation de notre <Link to="/accompagnement-ia" style={{ color: '#60A5FA', fontWeight: 600 }}>accompagnement IA</Link>, conduit sur plusieurs mois.
           </p>
@@ -708,9 +711,7 @@ export default function AcculturationIAPage() {
             Le plan d'acculturation IA sur 90 jours, public par public
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none' }}>
-            <strong>Le plan suit l'ordre de la décision : la direction tranche dans les quinze premiers jours, managers et référents se forment avant leurs équipes, tous les salariés passent ensuite en petits groupes sur leurs propres tâches, et les deux dernières semaines servent à mesurer. Une PME le resserre, un groupe l'étire site par site ; l'ordre reste le même.</strong>
-          </p>
+          <Reponse texte="Le plan suit l'ordre de la décision : la direction tranche dans les quinze premiers jours, managers et référents se forment avant leurs équipes, tous les salariés passent ensuite en petits groupes sur leurs propres tâches, et les deux dernières semaines servent à mesurer. Une PME le resserre, un groupe l'étire site par site ; l'ordre reste le même." style={{ ...answerStyle, maxWidth: 'none' }} />
 
           <div style={{ position: 'relative', marginTop: 12 }}>
             <div aria-hidden="true" style={{ position: 'absolute', left: 21, top: 22, bottom: 22, width: 2, background: '#E5E7EB' }} />
@@ -728,7 +729,7 @@ export default function AcculturationIAPage() {
                 <div style={{ flex: 1, minWidth: 0, paddingTop: 2 }}>
                   <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>{step.periode} · {step.qui}</div>
                   <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 8 }}>{step.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 740 }}>{step.desc}</p>
+                  <Paras texte={step.desc} max={2} budget={300} style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, maxWidth: 740 }} />
                 </div>
               </div>
             ))}
@@ -757,9 +758,7 @@ export default function AcculturationIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Chez un franchiseur B2B formé à Gemini en septembre 2026, les deux administrateurs Workspace sont repartis avec un plan en trois paliers, à J30, J60 et J90 : activer Gemini profil par profil en publiant la charte, outiller ensuite la base documentaire, enfin étendre le cadre aux franchisés. Votre calendrier se fixe lors de l'échange de cadrage, à partir de vos effectifs, de vos sites et de l'outil retenu.
-          </p>
+          <Paras texte="Chez un franchiseur B2B formé à Gemini en septembre 2026, les deux administrateurs Workspace sont repartis avec un plan en trois paliers, à J30, J60 et J90 : activer Gemini profil par profil en publiant la charte, outiller ensuite la base documentaire, enfin étendre le cadre aux franchisés. Votre calendrier se fixe lors de l'échange de cadrage, à partir de vos effectifs, de vos sites et de l'outil retenu." max={2} style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }} wrapStyle={{ marginTop: 24 }} />
         </div>
       </section>
 
@@ -771,9 +770,7 @@ export default function AcculturationIAPage() {
             Que mesurer pendant une acculturation IA ?
           </h2>
 
-          <p style={{ ...answerStyle, maxWidth: 'none', background: '#fff' }}>
-            <strong>Cinq relevés suffisent, faits sur les mêmes tâches au départ puis à la fin des 90 jours : qui se sert de l'outil chaque semaine, quels usages tiennent dans chaque service, le temps que prennent les tâches visées, ce qui remonte aux référents, et le respect des règles sur les données. Ils se posent dès le cadrage, sans quoi rien ne permet de comparer.</strong>
-          </p>
+          <Reponse texte="Cinq relevés suffisent, faits sur les mêmes tâches au départ puis à la fin des 90 jours : qui se sert de l'outil chaque semaine, quels usages tiennent dans chaque service, le temps que prennent les tâches visées, ce qui remonte aux référents, et le respect des règles sur les données. Ils se posent dès le cadrage, sans quoi rien ne permet de comparer." style={{ ...answerStyle, maxWidth: 'none', background: '#fff' }} />
 
           <div style={{ border: '1px solid #E5E7EB', borderRadius: 16, overflowX: 'auto', background: '#fff' }}>
             <table aria-label="Indicateurs d'une acculturation IA : ce qu'on relève et quand" style={{ width: '100%', borderCollapse: 'collapse', minWidth: 620 }}>
@@ -796,8 +793,14 @@ export default function AcculturationIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '24px 0 0' }}>
-            Les acquis de chaque session se vérifient aussi, par l'évaluation de fin de formation qu'exige Qualiopi ; elle dit ce que les participants savent faire en sortant de la salle, et l'usage au poste se lit dans les relevés ci-dessus. Lors d'une mission de conseil pour un distributeur de solutions photovoltaïques, le plan établi sur trois mois suit cette logique : il prévoit de relever les points de départ pendant la formation sur site, puis, un mois plus tard, de refaire le point sur les relances, le délai de devis, les ressaisies, l'usage des assistants et le temps consacré aux transporteurs. Le gain se relève en heures et la direction le convertit elle-même en euros ; notre page sur le <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link> rassemble ce que disent les études sur ce calcul.
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '24px 0 12px' }}>
+            Les acquis de chaque session se vérifient aussi, par l'évaluation de fin de formation qu'exige Qualiopi ; elle dit ce que les participants savent faire en sortant de la salle, et l'usage au poste se lit dans les relevés ci-dessus.
+          </p>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px' }}>
+            Lors d'une mission de conseil pour un distributeur de solutions photovoltaïques, le plan établi sur trois mois suit cette logique : il prévoit de relever les points de départ pendant la formation sur site, puis, un mois plus tard, de refaire le point sur les relances, le délai de devis, les ressaisies, l'usage des assistants et le temps consacré aux transporteurs.
+          </p>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Le gain se relève en heures et la direction le convertit elle-même en euros ; notre page sur le <Link to="/roi-ia-entreprise" style={aStyle}>ROI de l'IA en entreprise</Link> rassemble ce que disent les études sur ce calcul.
           </p>
         </div>
       </section>
@@ -807,9 +810,7 @@ export default function AcculturationIAPage() {
         <div style={wrap}>
           <Kicker>Sur le terrain</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>Deux organisations qui avancent par vagues</h2>
-          <p style={answerStyle}>
-            <strong>Le premier palier compte plus que l'ampleur du plan. Un groupe industriel a commencé par vingt-quatre managers, un distributeur par dix référents ; les deux prévoient de l'étendre entre octobre et décembre 2026, à partir de ce que ce premier groupe a construit.</strong>
-          </p>
+          <Reponse texte="Le premier palier compte plus que l'ampleur du plan. Un groupe industriel a commencé par vingt-quatre managers, un distributeur par dix référents ; les deux prévoient de l'étendre entre octobre et décembre 2026, à partir de ce que ce premier groupe a construit." style={answerStyle} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
             {CAS.map(({ id, icon: Icon, titre, texte }) => (
               <div key={id} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -817,7 +818,7 @@ export default function AcculturationIAPage() {
                   <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
                   <h3 style={{ ...h3Style, fontSize: 16 }}>{titre}</h3>
                 </div>
-                <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }}>{texte}</p>
+                <Paras texte={texte} max={2} budget={260} style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.7, margin: 0, flex: 1 }} wrapStyle={{ flex: 1 }} />
                 <Link to={`/etudes-de-cas-ia#${id}`} style={{ ...aStyle, fontSize: 13.5, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                   Lire l'étude de cas
                   <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
@@ -836,22 +837,14 @@ export default function AcculturationIAPage() {
             Ce qui fait échouer une acculturation IA
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>Cinq erreurs reviennent dans les démarches qui s'essoufflent : une ouverture sans suite, des exemples venus d'ailleurs, des licences ouvertes avant les règles, un encadrement tenu à l'écart et aucun indicateur posé au départ. Aucune ne dépend du budget ; toutes dépendent de l'ordre des séances.</strong>
-          </p>
+          <Reponse texte="Cinq erreurs reviennent dans les démarches qui s'essoufflent : une ouverture sans suite, des exemples venus d'ailleurs, des licences ouvertes avant les règles, un encadrement tenu à l'écart et aucun indicateur posé au départ. Aucune ne dépend du budget ; toutes dépendent de l'ordre des séances." style={{ ...answerStyle, background: '#fff' }} />
 
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
             Nous les avons rencontrées depuis 2022, chez des industriels, des distributeurs, des cabinets de conseil, des promoteurs immobiliers et des organisations professionnelles. Les <Link to="/etudes-de-cas-ia" style={aStyle}>études de cas de Masteria</Link> décrivent ce que donne l'ordre inverse, mission par mission.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ERREURS.map((item, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 24, borderTop: '3px solid #DC2626' }}>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par erreur (plus de cartes côte à côte) */}
+          <Rangees items={ERREURS.map(item => ({ titre: item.title, texte: item.desc, icon: AlertTriangle }))} style={{ maxWidth: 880 }} />
         </div>
       </section>
 
@@ -863,33 +856,28 @@ export default function AcculturationIAPage() {
             Acculturer le management à l'IA générative : pourquoi les managers passent avant leurs équipes
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Une équipe adopte ce que son responsable pratique. L'acculturation du management à l'IA générative apprend aux managers à se servir de l'outil sur leurs propres tâches, à trancher les demandes de leur équipe, à poser les règles du service et à repérer où l'outil fait gagner du temps. Dans le plan sur 90 jours, ils passent entre le seizième et le trente-cinquième jour, après la direction et avant leurs équipes.</strong>
-          </p>
+          <Reponse texte="Une équipe adopte ce que son responsable pratique. L'acculturation du management à l'IA générative apprend aux managers à se servir de l'outil sur leurs propres tâches, à trancher les demandes de leur équipe, à poser les règles du service et à repérer où l'outil fait gagner du temps. Dans le plan sur 90 jours, ils passent entre le seizième et le trente-cinquième jour, après la direction et avant leurs équipes." style={answerStyle} />
 
+          <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px', maxWidth: 880 }}>
+            Une direction alignée donne à la démarche son budget et sa légitimité ; les managers lui donnent son rythme au quotidien.
+          </p>
           <p style={{ color: '#374151', fontSize: 15, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 880 }}>
-            Une direction alignée donne à la démarche son budget et sa légitimité ; les managers lui donnent son rythme au quotidien. Leur parcours traite aussi la lecture des risques (données, conformité, dépendance à un éditeur) et tient en sessions courtes, compatibles avec un agenda chargé. Pendant les 90 jours, quatre gestes leur reviennent.
+            Leur parcours traite aussi la lecture des risques (données, conformité, dépendance à un éditeur) et tient en sessions courtes, compatibles avec un agenda chargé. Pendant les 90 jours, quatre gestes leur reviennent.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 20 }}>
-            {MANAGERS.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Dans le groupe industriel présenté plus haut, le premier palier a réuni des managers pilotes, en sessions de deux jours sur les fichiers du groupe, avant toute diffusion. Deux mois plus tard, des managers racontent s'en servir pour analyser des fichiers, chiffrer le retour attendu d'un outil RH, bâtir une présentation destinée à un directeur d'usine ou décortiquer un appel d'offres.
+          {/* Une rangée par geste (plus de cartes côte à côte) */}
+          <Rangees items={MANAGERS.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ maxWidth: 880 }} />
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '28px 0 12px', maxWidth: 880 }}>
+            Dans le groupe industriel présenté plus haut, le premier palier a réuni des managers pilotes, en sessions de deux jours sur les fichiers du groupe, avant toute diffusion.
           </p>
-          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '16px 0 0', maxWidth: 880 }}>
-            Pour un comité exécutif appelé à trancher sa feuille de route, la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link> tient en une matinée. Pour des managers qui démarrent, la séance managers du <Link to="/formation-sprint-ia" style={aStyle}>Sprint IA</Link> dure trois heures ; la <Link to="/formation-ia-management" style={aStyle}>formation IA management</Link> va plus loin sur le pilotage d'équipe au quotidien, en une ou deux journées.
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Deux mois plus tard, des managers racontent s'en servir pour analyser des fichiers, chiffrer le retour attendu d'un outil RH, bâtir une présentation destinée à un directeur d'usine ou décortiquer un appel d'offres.
+          </p>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '16px 0 12px', maxWidth: 880 }}>
+            Pour un comité exécutif appelé à trancher sa feuille de route, la <Link to="/formation-ia-comex" style={aStyle}>formation IA COMEX</Link> tient en une matinée.
+          </p>
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Pour des managers qui démarrent, la séance managers du <Link to="/formation-sprint-ia" style={aStyle}>Sprint IA</Link> dure trois heures ; la <Link to="/formation-ia-management" style={aStyle}>formation IA management</Link> va plus loin sur le pilotage d'équipe au quotidien, en une ou deux journées.
           </p>
         </div>
       </section>
@@ -902,27 +890,16 @@ export default function AcculturationIAPage() {
             Acculturation data et IA : ce que chaque équipe doit savoir des données
           </h2>
 
-          <p style={{ ...answerStyle, background: '#fff' }}>
-            <strong>L'acculturation data et IA apprend aux équipes ce que l'intelligence artificielle fait des informations qu'elles lui transmettent : lesquelles lui confier, comment elle les traite, ce que vaut ce qu'elle en tire.</strong> Une démarche qui l'oublie produit des salariés enthousiastes qui collent un fichier clients dans un compte gratuit. Avec ce volet, chacun sait repérer une donnée sensible, choisir l'outil adapté à son niveau de confidentialité et contrôler un chiffre avant de le diffuser.
+          <Reponse texte="L'acculturation data et IA apprend aux équipes ce que l'intelligence artificielle fait des informations qu'elles lui transmettent : lesquelles lui confier, comment elle les traite, ce que vaut ce qu'elle en tire. Une démarche qui l'oublie produit des salariés enthousiastes qui collent un fichier clients dans un compte gratuit. Avec ce volet, chacun sait repérer une donnée sensible, choisir l'outil adapté à son niveau de confidentialité et contrôler un chiffre avant de le diffuser." style={{ ...answerStyle, background: '#fff' }} />
+
+          {/* Une rangée par repère (plus de cartes côte à côte) */}
+          <Rangees items={DATA_IA.map(card => ({ titre: card.title, texte: card.desc, icon: card.icon }))} style={{ marginTop: 12, maxWidth: 880 }} />
+
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 12px', maxWidth: 880 }}>
+            Ce volet est intégré aux ateliers et aux formations par métier. Les équipes qui analysent des fichiers toute la semaine poursuivent avec la <Link to="/formation-data-ia" style={aStyle}>formation data et IA</Link> ; le cadre juridique est développé sur la page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>.
           </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 24, marginTop: 12 }}>
-            {DATA_IA.map(card => {
-              const Icon = card.icon
-              return (
-                <div key={card.title} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <Icon size={20} strokeWidth={2.1} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                    <h3 style={{ ...h3Style, fontSize: 16 }}>{card.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{card.desc}</p>
-                </div>
-              )
-            })}
-          </div>
-
-          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Ce volet est intégré aux ateliers et aux formations par métier. Les équipes qui analysent des fichiers toute la semaine poursuivent avec la <Link to="/formation-data-ia" style={aStyle}>formation data et IA</Link> ; le cadre juridique est développé sur la page <Link to="/ia-et-rgpd" style={aStyle}>IA et RGPD</Link>. Quand les données doivent d'abord être remises en ordre (qualité, droits d'accès, référentiels), le <Link to="/conseil-data-ia" style={aStyle}>conseil data et IA</Link> intervient avant toute formation.
+          <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Quand les données doivent d'abord être remises en ordre (qualité, droits d'accès, référentiels), le <Link to="/conseil-data-ia" style={aStyle}>conseil data et IA</Link> intervient avant toute formation.
           </p>
 
           {/* Intention « acculturation informatique » : les équipes qui partent de loin */}
@@ -932,7 +909,10 @@ export default function AcculturationIAPage() {
               <div>
                 <h3 style={{ ...h3Style, marginBottom: 10 }}>Acculturation informatique : quand l'ordinateur lui-même pose problème</h3>
                 <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: '0 0 12px' }}>
-                  Dans beaucoup d'organisations, une partie des salariés travaille peu sur écran : agents de production, techniciens itinérants, personnel d'accueil. Pour eux, l'acculturation IA commence par une courte remise à niveau informatique, glissée dans les premiers ateliers : ouvrir un dossier partagé, retrouver un fichier, choisir un mot de passe solide. L'assistant arrive ensuite, présenté comme une aide pour rédiger ou dicter un texte.
+                  Dans beaucoup d'organisations, une partie des salariés travaille peu sur écran : agents de production, techniciens itinérants, personnel d'accueil.
+                </p>
+                <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: '0 0 12px' }}>
+                  Pour eux, l'acculturation IA commence par une courte remise à niveau informatique, glissée dans les premiers ateliers : ouvrir un dossier partagé, retrouver un fichier, choisir un mot de passe solide. L'assistant arrive ensuite, présenté comme une aide pour rédiger ou dicter un texte.
                 </p>
                 <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.75, margin: 0 }}>
                   Ces équipes figurent souvent parmi celles qui en tirent le plus, parce que l'outil leur épargne des écrans qu'elles n'aimaient pas : un rapport d'intervention dicté, un courrier mis en forme en quelques secondes. La <Link to="/formation-ia-debutant" style={aStyle}>formation IA débutant</Link> est construite pour ce point de départ.
@@ -955,8 +935,11 @@ export default function AcculturationIAPage() {
               <h2 style={{ ...h2Style, fontSize: 'clamp(20px, 2.6vw, 28px)', marginBottom: 14 }}>
                 Des briques au prix connu, présentables à votre OPCO
               </h2>
+              <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }}>
+                Le tarif de base est public : une journée dans vos murs ou à distance démarre à 1 980 € HT pour un groupe plafonné à douze, deux journées à 3 960 € HT, une séance de Sprint à 1 980 € HT. Les ateliers bâtis sur vos documents ajoutent leur préparation, chiffrée au devis ; seule l'intervention d'ouverture se chiffre au forfait.
+              </p>
               <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }}>
-                Le tarif de base est public : une journée dans vos murs ou à distance démarre à 1 980 € HT pour un groupe plafonné à douze, deux journées à 3 960 € HT, une séance de Sprint à 1 980 € HT. Les ateliers bâtis sur vos documents ajoutent leur préparation, chiffrée au devis ; seule l'intervention d'ouverture se chiffre au forfait. Inscrites parmi les formations de l'année, ces briques peuvent être financées par l'OPCO de votre branche, à hauteur de ce que ses règles et son budget autorisent. Programme, objectifs, modalités d'évaluation : nous rassemblons avec vous tout ce que l'opérateur demande. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur d'après votre secteur.
+                Inscrites parmi les formations de l'année, ces briques peuvent être financées par l'OPCO de votre branche, à hauteur de ce que ses règles et son budget autorisent. Programme, objectifs, modalités d'évaluation : nous rassemblons avec vous tout ce que l'opérateur demande. L'outil <Link to="/quel-opco" style={aStyle}>Quel OPCO ?</Link> vous indique votre opérateur d'après votre secteur.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 10 }}>
                 {[
@@ -1059,7 +1042,10 @@ export default function AcculturationIAPage() {
       <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
         <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-            Mathias Nizan conduit chaque démarche d'acculturation, du cadrage au bilan, avec des formateurs indépendants choisis pour la langue, le secteur ou le site : une vingtaine au total, aux côtés d'une dizaine de consultants. Cette page reprend ce qu'il a observé depuis la création de Masteria en 2022 et a été mise à jour le 19 octobre 2026 ; sa <Link to="/mathias-nizan" style={aStyle}>biographie</Link> détaille son parcours.
+            Mathias Nizan conduit chaque démarche d'acculturation, du cadrage au bilan, avec des formateurs indépendants choisis pour la langue, le secteur ou le site : une vingtaine au total, aux côtés d'une dizaine de consultants.
+          </p>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Cette page reprend ce qu'il a observé depuis la création de Masteria en 2022 et a été mise à jour le 19 octobre 2026 ; sa <Link to="/mathias-nizan" style={aStyle}>biographie</Link> détaille son parcours.
           </p>
           <PressMention />
         </div>
