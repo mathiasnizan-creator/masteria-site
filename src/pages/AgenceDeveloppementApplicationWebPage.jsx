@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BadgeCheck, Bluetooth, BellRing, Briefcase, Compass, Gauge, Handshake, LayoutDashboard, MapPinned, Smartphone, Store, ShieldCheck, Users, WifiOff } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Rangees, Reperes } from '../components/Aere'
 
 /*
  * Page « Agence de développement d'application web » (créée le 23/10/2026).
@@ -28,7 +29,6 @@ const SITE = 'https://www.master-ia.fr'
 const SLUG = 'agence-developpement-application-web'
 const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
-const cLight = '#DBEAFE'
 const DATE_PUBLISHED = '2026-10-23'
 const DATE_MODIFIED = '2026-10-23'
 const RDV_URL = '/contact?type=projet&rdv=30'
@@ -54,7 +54,6 @@ const leadStyle = { fontSize: 'clamp(16.5px, 2vw, 18px)', color: '#374151', line
 const mutedStyle = { fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }
 const calloutStyle = { background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 28 }
-const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }
 const tableWrapStyle = { overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #E5E7EB', whiteSpace: 'nowrap' }
 const srOnlyStyle = { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }
@@ -265,6 +264,30 @@ const articleJsonLd = {
   citation: SOURCES.map(s => s.url),
 }
 
+/* Liste verticale pleine largeur (plus de cartes de texte côte à côte) : picto, sur-titre, titre, texte, pied */
+function Lignes({ items, sombre = false, as: Liste = 'ol' }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', picto: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', picto: c }
+  return (
+    <Liste style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}` }}>
+      {items.map(({ icon: Icon, kicker, titre, texte, pied }) => (
+        <li key={titre} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.picto, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 720 }}>
+            {kicker && <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: t.picto, marginBottom: 4 }}>{kicker}</span>}
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35 }}>{titre}</h3>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+            {pied}
+          </div>
+        </li>
+      ))}
+    </Liste>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -279,7 +302,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse toujours dans le DOM (prérendu citable), repliée en CSS */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -348,10 +373,15 @@ export default function AgenceDeveloppementApplicationWebPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria, qui conçoit et fait tourner les applications web du cabinet · mise à jour le 23 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p id="definition" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Une agence de développement d'application web construit des logiciels qui s'ouvrent dans le navigateur, sur ordinateur comme sur téléphone. <strong style={{ color: '#fff', fontWeight: 700 }}>Pour un outil d'entreprise, une application web responsive, installable en PWA si besoin, couvre le plus souvent l'usage mobile sans passer par les magasins d'applications.</strong> Le natif garde l'avantage pour le Bluetooth, le NFC, le travail prolongé sans réseau et les notifications avancées.
-          </p>
+          {/* GEO : réponse directe citable (accroche, puis la réponse appuyée et sa limite) */}
+          <div id="definition" style={{ margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 12px' }}>
+              Une agence de développement d'application web construit des logiciels qui s'ouvrent dans le navigateur, sur ordinateur comme sur téléphone.
+            </p>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Pour un outil d'entreprise, une application web responsive, installable en PWA si besoin, couvre le plus souvent l'usage mobile sans passer par les magasins d'applications.</strong> Le natif garde l'avantage pour le Bluetooth, le NFC, le travail prolongé sans réseau et les notifications avancées.
+            </p>
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
             Le choix de la forme pèse sur le budget, le délai et la maintenance pendant toute la vie de l'application. Il mérite d'être tranché au cadrage, à partir de vos utilisateurs et de leurs conditions de travail, avant le choix d'une technologie.
@@ -368,17 +398,7 @@ export default function AgenceDeveloppementApplicationWebPage() {
           </div>
 
           {/* En bref (GEO) */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {EN_BREF.map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre titre="En bref" items={EN_BREF.map(([label, detail]) => ({ label, detail }))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -472,7 +492,10 @@ export default function AgenceDeveloppementApplicationWebPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 900 }}>
-            <strong>Une voie intermédiaire existe :</strong> commencer par une PWA, mesurer l'usage pendant quelques mois, puis réserver une application native aux seuls écrans qui en ont besoin, par exemple la lecture d'un badge sur le terrain. Le serveur, les données et les règles métier restent les mêmes ; seule la couche d'affichage change. Pour un logiciel qui doit épouser des processus internes complexes, voyez aussi notre page sur le{' '}
+            <strong>Une voie intermédiaire existe :</strong> commencer par une PWA, mesurer l'usage pendant quelques mois, puis réserver une application native aux seuls écrans qui en ont besoin, par exemple la lecture d'un badge sur le terrain. Le serveur, les données et les règles métier restent les mêmes ; seule la couche d'affichage change.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '12px 0 0', maxWidth: 900 }}>
+            Pour un logiciel qui doit épouser des processus internes complexes, voyez aussi notre page sur le{' '}
             <Link to="/agence-developpement-sur-mesure" style={linkStyle}>développement sur mesure</Link>.
           </p>
         </div>
@@ -490,20 +513,8 @@ export default function AgenceDeveloppementApplicationWebPage() {
             Si votre projet coche au moins une des cases suivantes, la question mérite d'être instruite au cadrage avec les chiffres en main.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {CAS_NATIF.map(x => {
-              const Icon = x.icon
-              return (
-                <div key={x.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                  <div style={{ ...iconBoxStyle, marginBottom: 16 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 19px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{x.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{x.body}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Un usage par rangée, en pleine largeur */}
+          <Rangees items={CAS_NATIF.map(x => ({ titre: x.title, texte: x.body, icon: x.icon }))} />
 
           <div style={{ ...calloutStyle, background: '#F9FAFB', marginTop: 36 }}>
             <strong>Publier dans les magasins a un coût fixe et un coût de rythme.</strong>{' '}
@@ -527,26 +538,16 @@ export default function AgenceDeveloppementApplicationWebPage() {
             Les descriptions sont génériques : elles décrivent des types d'outils, sans référence à un client.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 330px), 1fr))', gap: 20 }}>
-            {EXEMPLES.map(x => {
-              const Icon = x.icon
-              return (
-                <article key={x.title} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                    <div style={iconBoxStyle}>
-                      <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{x.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>{x.body}</p>
-                  <div style={{ marginTop: 'auto', background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '12px 16px' }}>
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>Avec l'IA</div>
-                    <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}>{x.ia}</p>
-                  </div>
-                </article>
-              )
-            })}
-          </div>
+          {/* Une application par rangée, en pleine largeur, avec la place de l'IA en pied */}
+          <Lignes as="ul" items={EXEMPLES.map(x => ({
+            icon: x.icon, titre: x.title, texte: x.body,
+            pied: (
+              <div style={{ marginTop: 12, background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '12px 16px' }}>
+                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 11.5, fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', color: c, marginBottom: 4 }}>Avec l'IA</div>
+                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.65, margin: 0 }}>{x.ia}</p>
+              </div>
+            ),
+          }))} />
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 900 }}>
             L'assistant et l'extraction de documents se branchent côté serveur, par l'API d'un modèle, sans changer la forme de l'application : ils fonctionnent de la même façon dans une PWA et dans une application native. Notre page{' '}
@@ -595,22 +596,16 @@ export default function AgenceDeveloppementApplicationWebPage() {
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Prix</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Le prix d'une application web dépend de ses écrans, de ses connexions et de ses règles métier</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 36px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Un prototype démarre autour de 8 000 € HT. Une application en production se chiffre en dizaines de milliers d'euros, et un déploiement large dépasse 100 000 €, jusqu'à plusieurs centaines de milliers pour les plus étendus.</strong>
+            <strong style={{ color: '#fff' }}>Un prototype démarre autour de 8 000 € HT.</strong>{' '}
+            <span style={{ color: '#CBD5E1' }}>Une application en production se chiffre en dizaines de milliers d'euros, et un déploiement large dépasse 100 000 €, jusqu'à plusieurs centaines de milliers pour les plus étendus.</span>
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {[
+          {/* Un format par rangée, en pleine largeur */}
+          <Rangees sombre items={[
               [Gauge, 'Au forfait', "Le prix global est fixé après le cadrage, sur un périmètre écrit, et Masteria s'engage sur le livrable. C'est le format habituel pour une application neuve."],
               [Users, 'En régie', "Des développeurs du réseau rejoignent votre équipe, sur site ou à distance, au taux journalier communiqué sur devis. Utile quand l'application existe déjà et que la feuille de route bouge."],
               [Compass, 'Ce qui fait varier le budget', "Le nombre d'écrans et de profils d'utilisateurs, les connexions au CRM ou à l'ERP, le hors ligne, la fonction d'IA, et le choix d'une version native en plus de la version web."],
-            ].map(([Icon, t, d]) => (
-              <div key={t} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
-                <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA', marginBottom: 12 }} aria-hidden="true" />
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px' }}>{t}</h3>
-                <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+            ].map(([icon, titre, texte]) => ({ icon, titre, texte }))} />
 
           <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
             Le développement d'une application n'est pas finançable par l'OPCO ; seule la formation de vos équipes à l'outil peut l'être. Les ordres de grandeur par type de projet sont réunis sur notre page{' '}
@@ -679,8 +674,11 @@ export default function AgenceDeveloppementApplicationWebPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des développeurs web et IA indépendants, réunis par projet autour du fondateur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Masteria, fondée à Lyon en 2022 par Mathias Nizan, s'appuie sur un réseau d'environ cinq développeurs, choisis selon la technologie et le métier du projet.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, fondée à Lyon en 2022 par Mathias Nizan, s'appuie sur un réseau d'environ cinq développeurs, choisis selon la technologie et le métier du projet. Masteria construit et fait vivre ses propres applications : le site master-ia.fr, en React avec des pages prérendues pour le référencement, et la plateforme de gestion des formations et des clients, sous Next.js et Supabase. Mathias Nizan répond du résultat devant vous.
+              Masteria construit et fait vivre ses propres applications : le site master-ia.fr, en React avec des pages prérendues pour le référencement, et la plateforme de gestion des formations et des clients, sous Next.js et Supabase. Mathias Nizan répond du résultat devant vous.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

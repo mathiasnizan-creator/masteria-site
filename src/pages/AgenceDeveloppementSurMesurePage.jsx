@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BadgeCheck, Blocks, CheckCircle2, ClipboardList, Code2, FileSignature, GitBranch, Layers, Rocket, Scale, ShieldCheck, Wrench, XCircle } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Rangees, Reperes } from '../components/Aere'
 
 /*
  * Page « Agence de développement sur mesure » (créée le 23/10/2026).
@@ -252,6 +253,30 @@ const articleJsonLd = {
   citation: SOURCES.map(s => s.url),
 }
 
+/* Liste verticale pleine largeur (plus de cartes de texte côte à côte) : picto, sur-titre, titre, texte, pied */
+function Lignes({ items, sombre = false, as: Liste = 'ol' }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', picto: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', picto: c }
+  return (
+    <Liste style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}` }}>
+      {items.map(({ icon: Icon, kicker, titre, texte, pied }) => (
+        <li key={titre} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.picto, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 720 }}>
+            {kicker && <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: t.picto, marginBottom: 4 }}>{kicker}</span>}
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35 }}>{titre}</h3>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+            {pied}
+          </div>
+        </li>
+      ))}
+    </Liste>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -266,7 +291,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse toujours dans le DOM (prérendu citable), repliée en CSS */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -335,10 +362,15 @@ export default function AgenceDeveloppementSurMesurePage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria, qui pilote nos développeurs · mise à jour le 23 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p id="definition" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Une agence de développement sur mesure écrit un logiciel pour un seul client, à partir de la façon dont son équipe travaille</strong>, là où un progiciel impose le processus prévu par son éditeur. Le client en devient propriétaire par contrat et en finance ensuite la maintenance, l'hébergement et les évolutions.
-          </p>
+          {/* GEO : réponse directe citable (accroche, puis la phrase suivante en texte courant) */}
+          <div id="definition" style={{ margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Une agence de développement sur mesure écrit un logiciel pour un seul client, à partir de la façon dont son équipe travaille</strong>, là où un progiciel impose le processus prévu par son éditeur.
+            </p>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              Le client en devient propriétaire par contrat et en finance ensuite la maintenance, l'hébergement et les évolutions.
+            </p>
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
             Faire développer coûte plus cher au départ qu'un abonnement. L'investissement se défend dans deux situations précises, que nous détaillons plus bas ; en dehors d'elles, nous vous orientons vers un logiciel du marché, et ce conseil fait partie du cadrage.
@@ -354,17 +386,7 @@ export default function AgenceDeveloppementSurMesurePage() {
             </a>
           </div>
 
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {EN_BREF.map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre titre="En bref" items={EN_BREF.map(([label, detail]) => ({ label, detail }))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -396,20 +418,11 @@ export default function AgenceDeveloppementSurMesurePage() {
             <strong>Faites développer quand votre processus fait partie de ce que vos clients achètent, ou quand plusieurs logiciels doivent enfin partager les mêmes données.</strong>{' '}
             Pour tout le reste, un SaaS bien paramétré revient moins cher et vous décharge de la maintenance.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20, margin: '36px 0 0' }}>
-            <div style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px' }}>Votre processus vous différencie</h3>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.72, margin: 0 }}>
-                Un bureau d'études qui chiffre un chantier selon sa propre méthode, un distributeur qui calcule ses remises selon l'historique de chaque client, un organisme qui suit un dossier en douze étapes réglementées. Un progiciel les oblige à contourner l'outil par des tableurs annexes. Un logiciel écrit pour eux grave leur savoir-faire dans l'outil, et chaque nouvel arrivant l'applique dès le premier jour.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px' }}>Vos outils ne se parlent pas</h3>
-              <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.72, margin: 0 }}>
-                Le client est saisi dans le CRM, puis dans l'ERP, puis dans un tableur de planification, et chaque copie peut diverger. Une couche sur mesure relie ces logiciels par leurs API (les portes d'entrée qu'ils ouvrent aux autres programmes), garde une seule version de chaque information et laisse chaque outil faire ce qu'il fait bien.
-              </p>
-            </div>
-          </div>
+          {/* Les deux situations en rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 36 }} items={[
+            { titre: 'Votre processus vous différencie', texte: "Un bureau d'études qui chiffre un chantier selon sa propre méthode, un distributeur qui calcule ses remises selon l'historique de chaque client, un organisme qui suit un dossier en douze étapes réglementées. Un progiciel les oblige à contourner l'outil par des tableurs annexes. Un logiciel écrit pour eux grave leur savoir-faire dans l'outil, et chaque nouvel arrivant l'applique dès le premier jour." },
+            { titre: 'Vos outils ne se parlent pas', texte: "Le client est saisi dans le CRM, puis dans l'ERP, puis dans un tableur de planification, et chaque copie peut diverger. Une couche sur mesure relie ces logiciels par leurs API (les portes d'entrée qu'ils ouvrent aux autres programmes), garde une seule version de chaque information et laisse chaque outil faire ce qu'il fait bien." },
+          ]} />
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 860 }}>
             Masteria applique ce raisonnement à ses propres outils. Notre gestion des formations et des clients tourne sur une plateforme développée en interne avec Next.js et Supabase : elle relie dans un même outil les dossiers, les devis et les exigences qualité de la certification Qualiopi. Pour la messagerie, nous utilisons un logiciel du marché.
           </p>
@@ -457,7 +470,10 @@ export default function AgenceDeveloppementSurMesurePage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            <strong>À retenir sur l'IA :</strong> dans un SaaS, vous attendez que l'éditeur ajoute la fonction et vous payez l'option. Dans un logiciel à vous, une fonction qui lit les pièces jointes ou prépare une réponse se branche quand le besoin apparaît. Si l'IA constitue le cœur de votre projet, nos{' '}
+            <strong>À retenir sur l'IA :</strong> dans un SaaS, vous attendez que l'éditeur ajoute la fonction et vous payez l'option. Dans un logiciel à vous, une fonction qui lit les pièces jointes ou prépare une réponse se branche quand le besoin apparaît.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '12px 0 0', maxWidth: 880 }}>
+            Si l'IA constitue le cœur de votre projet, nos{' '}
             <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link> et notre{' '}
             <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link> traitent ce cas en détail.
           </p>
@@ -526,22 +542,25 @@ export default function AgenceDeveloppementSurMesurePage() {
             Un prestataire sérieux chiffre les quatre postes dès sa proposition. S'il n'en chiffre qu'un, demandez les trois autres avant de comparer.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 18 }}>
-            {POSTES_TCO.map(p => {
-              const Icon = p.icon
-              return (
-                <div key={p.titre} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA', marginBottom: 12 }} aria-hidden="true" />
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#F8FAFC', margin: '0 0 8px' }}>{p.titre}</h3>
-                  <p style={{ fontSize: 14, color: '#B4C0D3', lineHeight: 1.68, margin: 0 }}>{p.texte}</p>
-                </div>
-              )
-            })}
-          </div>
+          {/* Un poste par rangée, en pleine largeur */}
+          <Rangees sombre items={POSTES_TCO.map(p => ({ titre: p.titre, texte: p.texte, icon: p.icon }))} />
 
-          <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 880 }}>
-            Trois choix font baisser ce total sans rogner sur le logiciel : une technologie répandue, que beaucoup de développeurs savent reprendre ; des tests automatisés sur les règles de calcul, qui rendent chaque mise à jour moins risquée ; une documentation tenue à jour, qui évite de payer un nouveau prestataire pour comprendre l'existant.
+          {/* L'énumération des trois choix passe en liste */}
+          <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '32px 0 12px', maxWidth: 880 }}>
+            Trois choix font baisser ce total sans rogner sur le logiciel :
           </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10, maxWidth: 880 }}>
+            {[
+              'Une technologie répandue, que beaucoup de développeurs savent reprendre',
+              'Des tests automatisés sur les règles de calcul, qui rendent chaque mise à jour moins risquée',
+              "Une documentation tenue à jour, qui évite de payer un nouveau prestataire pour comprendre l'existant",
+            ].map(t => (
+              <li key={t} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.65 }}>
+                <CheckCircle2 size={16} strokeWidth={1.75} style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -592,7 +611,10 @@ export default function AgenceDeveloppementSurMesurePage() {
                 </ul>
               </div>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '6px 0 0' }}>
-                Chez Masteria, le code développé pour vous et sa documentation vous sont remis ; la cession des droits et le transfert du dépôt de code et des accès d'hébergement s'écrivent dans la proposition. Pour un SaaS, le <a href={URL_DATA_ACT} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600 }}>règlement européen sur les données</a>, applicable depuis le 12 septembre 2025, facilite désormais le changement de fournisseur cloud ; il ne vous rend pas pour autant propriétaire du logiciel loué.
+                Chez Masteria, le code développé pour vous et sa documentation vous sont remis ; la cession des droits et le transfert du dépôt de code et des accès d'hébergement s'écrivent dans la proposition.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+                Pour un SaaS, le <a href={URL_DATA_ACT} target="_blank" rel="noopener noreferrer" style={{ color: c, fontWeight: 600 }}>règlement européen sur les données</a>, applicable depuis le 12 septembre 2025, facilite désormais le changement de fournisseur cloud ; il ne vous rend pas pour autant propriétaire du logiciel loué.
               </p>
             </div>
           </div>
@@ -611,30 +633,18 @@ export default function AgenceDeveloppementSurMesurePage() {
             Le détail des jalons, des validations et des livrables figure sur notre page <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet</Link>.
           </p>
 
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
-            {ETAPES.map((e, i) => {
-              const Icon = e.icon
-              return (
-                <li key={e.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={21} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c }}>{`Temps ${i + 1}`}</span>
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 19px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{e.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{e.body}</p>
-                </li>
-              )
-            })}
-          </ol>
+          {/* Un temps par rangée, en pleine largeur */}
+          <Lignes items={ETAPES.map((e, i) => ({ icon: e.icon, kicker: `Temps ${i + 1}`, titre: e.title, texte: e.body }))} />
 
           <div style={{ ...cardStyle, marginTop: 28, display: 'flex', gap: 18, alignItems: 'flex-start', flexWrap: 'wrap' }}>
             <div style={iconBoxStyle}><Code2 size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" /></div>
             <div style={{ flex: '1 1 400px' }}>
               <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>Des technologies que d'autres sauront reprendre</h3>
+              <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 10px' }}>
+                Nos développeurs écrivent en TypeScript et en Python, avec React et Next.js pour les écrans, Node.js côté serveur, PostgreSQL (souvent via Supabase) pour les données, et un hébergement chez Vercel ou chez l'hébergeur de votre choix. Ils connectent CRM, ERP comme Odoo et messageries par API, et automatisent avec n8n quand un flux simple suffit.
+              </p>
               <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>
-                Nos développeurs écrivent en TypeScript et en Python, avec React et Next.js pour les écrans, Node.js côté serveur, PostgreSQL (souvent via Supabase) pour les données, et un hébergement chez Vercel ou chez l'hébergeur de votre choix. Ils connectent CRM, ERP comme Odoo et messageries par API, et automatisent avec n8n quand un flux simple suffit. Pour une application destinée au navigateur ou au téléphone, notre page <Link to="/agence-developpement-application-web" style={{ color: c, fontWeight: 600 }}>agence de développement d'application web</Link> compare les options techniques.
+                Pour une application destinée au navigateur ou au téléphone, notre page <Link to="/agence-developpement-application-web" style={{ color: c, fontWeight: 600 }}>agence de développement d'application web</Link> compare les options techniques.
               </p>
             </div>
           </div>
@@ -652,18 +662,11 @@ export default function AgenceDeveloppementSurMesurePage() {
           <p style={{ fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
             Ces fourchettes restent larges parce qu'un logiciel de trois écrans et un système de trente écrans connecté à quatre outils portent le même nom. Le prix précis se fixe après le cadrage.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {[
+          <Rangees numeros={false} items={[
               { titre: 'Au forfait', texte: "Un prix global, fixé après le cadrage, pour un périmètre écrit et un livrable défini. Masteria s'engage sur le livrable décrit ; une demande nouvelle en cours de route se chiffre à part." },
               { titre: 'En régie', texte: "Des développeurs détachés dans votre équipe, sur site ou à distance, facturés au taux journalier. Vous pilotez les priorités au quotidien. Notre taux se communique sur devis." },
               { titre: 'Après la livraison', texte: "La maintenance et les évolutions se discutent dès la proposition, pour que vous puissiez estimer le coût total sur plusieurs années." },
-            ].map(b => (
-              <div key={b.titre} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{b.titre}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{b.texte}</p>
-              </div>
-            ))}
-          </div>
+          ]} />
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Le développement d'un logiciel n'est pas finançable par l'OPCO ; la formation de vos équipes à l'outil livré peut l'être. Les ordres de grandeur par type de projet figurent sur notre page <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link>, et la page <Link to="/agence-developpement-web" style={{ color: c, fontWeight: 600 }}>agence de développement web</Link> présente l'ensemble de nos développements.
           </p>
@@ -730,8 +733,11 @@ export default function AgenceDeveloppementSurMesurePage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Une équipe composée pour votre projet, sous la responsabilité de Mathias Nizan
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Masteria, fondée à Lyon en 2022, réunit environ cinq développeurs web et IA indépendants, une dizaine de consultants et une vingtaine de formateurs. Mathias Nizan retient les profils selon la technologie et le métier du client, et répond du résultat.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria, fondée à Lyon en 2022, réunit environ cinq développeurs web et IA indépendants, une dizaine de consultants et une vingtaine de formateurs. Mathias Nizan retient les profils selon la technologie et le métier du client, et répond du résultat. Nous exploitons nous-mêmes ce que nous savons construire : le site master-ia.fr, en React avec des pages prérendues pour le référencement, et notre plateforme de gestion des formations et des clients, en Next.js et Supabase.
+              Nous exploitons nous-mêmes ce que nous savons construire : le site master-ia.fr, en React avec des pages prérendues pour le référencement, et notre plateforme de gestion des formations et des clients, en Next.js et Supabase.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

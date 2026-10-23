@@ -83,6 +83,8 @@ export function scinderValeur(valeur) {
     const tete = v.slice(0, ch === ':' || ch === '·' ? i - 1 : i).trim()
     const reste = v.slice(fin).trim()
     if (reste.length < 18) return { tete: null, detail: v }
+    // « Un freelance, une ESN ou une agence » : énumération de groupes nominaux, pas de tête à isoler
+    if (ch === ',' && /^(?:un|une|des|le|la|les|l['’]|du|de|d['’]|ses|leurs|vos|nos|et|ou)\b/i.test(reste)) return { tete: null, detail: v }
     if (/\d$/.test(tete) && /^\d/.test(reste)) continue
     return { tete, detail: reste.charAt(0).toUpperCase() + reste.slice(1) }
   }

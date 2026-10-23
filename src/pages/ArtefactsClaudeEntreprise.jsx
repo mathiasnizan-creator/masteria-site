@@ -166,6 +166,32 @@ function Card({ Icon, title, children, footer }) {
   )
 }
 
+/* Cartes de texte en liste verticale pleine largeur (plus de cartes côte à côte) :
+   picto, titre, texte, étiquettes, une rangée par point */
+function Lignes({ children }) {
+  return <div style={{ borderTop: `1px solid ${C.border}`, margin: '16px 0' }}>{children}</div>
+}
+
+function Ligne({ Icon, title, children, footer }) {
+  return (
+    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '18px 0', borderBottom: `1px solid ${C.border}` }}>
+      {Icon && (
+        <div style={{
+          width: 36, height: 36, borderRadius: 9, background: C.blueLight, flexShrink: 0,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}><Icon size={18} strokeWidth={1.75} color={C.blue} /></div>
+      )}
+      <div style={{ minWidth: 0, flex: 1, maxWidth: 680 }}>
+        <strong style={{ display: 'block', fontFamily: F.head, fontSize: 15.5, fontWeight: 700, color: C.ink, marginBottom: 4 }}>{title}</strong>
+        <span style={{ display: 'block', fontSize: 14.5, color: C.textSoft, lineHeight: 1.65 }}>{children}</span>
+        {footer && (
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 10 }}>{footer}</div>
+        )}
+      </div>
+    </div>
+  )
+}
+
 function TagPill({ children, kind = 'blue' }) {
   const c = kind === 'blue'
     ? { bg: C.blueLight, fg: C.blue, br: C.blueBorder }
@@ -195,7 +221,7 @@ function Step({ n, title, children }) {
         <strong style={{ display: 'block', fontWeight: 700, color: C.ink, fontSize: 14.5, marginBottom: 3 }}>
           {title}
         </strong>
-        {children && <span style={{ fontSize: 13.5, color: C.textSoft, lineHeight: 1.55 }}>{children}</span>}
+        {children && <div style={{ fontSize: 13.5, color: C.textSoft, lineHeight: 1.55 }}>{children}</div>}
       </div>
     </li>
   )
@@ -506,7 +532,8 @@ export default function ArtefactsClaudeEntreprise() {
 
               <H3>Côté admin organisation (Team / Enterprise)</H3>
               <Callout kind="info">
-                <strong>Pour les admins :</strong> certains paramètres d'artefacts se pilotent au niveau de l'organisation. C'est notamment le cas de l'accès MCP (activer ou désactiver la possibilité pour les artefacts d'appeler des serveurs MCP) et des règles autour des artefacts alimentés par l'IA et du stockage. Ces réglages se trouvent dans la console d'administration Claude, à côté des autres capacités org.
+                <p style={{ margin: '0 0 8px' }}><strong>Pour les admins :</strong> certains paramètres d'artefacts se pilotent au niveau de l'organisation. C'est notamment le cas de l'accès MCP (activer ou désactiver la possibilité pour les artefacts d'appeler des serveurs MCP) et des règles autour des artefacts alimentés par l'IA et du stockage.</p>
+                <p style={{ margin: 0 }}>Ces réglages se trouvent dans la console d'administration Claude, à côté des autres capacités org.</p>
               </Callout>
 
               <Callout kind="warning">
@@ -526,11 +553,11 @@ export default function ArtefactsClaudeEntreprise() {
               </P>
 
               <H3>Modifier &amp; itérer</H3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={Edit3} title="Demander une mise à jour">Vous décrivez le changement à Claude (en chat), la mise à jour s'applique directement dans l'artefact.</Card>
-                <Card Icon={RefreshCw} title="Versions multiples">Chaque mise à jour crée une nouvelle version. Vous pouvez basculer entre les versions via le sélecteur en haut de l'artefact.</Card>
-                <Card Icon={GitBranch} title="Bifurquer la conversation">Modifier un message précédent crée une nouvelle branche de chat avec son propre jeu d'artefacts. Pratique pour explorer une autre direction sans perdre le travail en cours.</Card>
-              </div>
+              <Lignes>
+                <Ligne Icon={Edit3} title="Demander une mise à jour">Vous décrivez le changement à Claude (en chat), la mise à jour s'applique directement dans l'artefact.</Ligne>
+                <Ligne Icon={RefreshCw} title="Versions multiples">Chaque mise à jour crée une nouvelle version. Vous pouvez basculer entre les versions via le sélecteur en haut de l'artefact.</Ligne>
+                <Ligne Icon={GitBranch} title="Bifurquer la conversation">Modifier un message précédent crée une nouvelle branche de chat avec son propre jeu d'artefacts. Pratique pour explorer une autre direction sans perdre le travail en cours.</Ligne>
+              </Lignes>
 
               <Callout>
                 <strong>Bon à savoir :</strong> vos modifications dans la fenêtre artefact ne modifient pas la mémoire de Claude du contenu original. Si vous tapez directement dans l'artefact pour ajuster un détail, Claude continuera à raisonner sur la dernière version qu'il a générée.
@@ -538,7 +565,10 @@ export default function ArtefactsClaudeEntreprise() {
 
               <H3>Plusieurs artefacts dans une même conversation</H3>
               <P>
-                Une conversation peut contenir plusieurs artefacts en parallèle. Pour basculer entre eux, utilisez les contrôles de chat (icône curseur en haut à droite). Vous pouvez aussi sélectionner explicitement l'artefact que vous voulez que Claude modifie au prochain message, ce qui évite les confusions quand plusieurs livrables coexistent.
+                Une conversation peut contenir plusieurs artefacts en parallèle. Pour basculer entre eux, utilisez les contrôles de chat (icône curseur en haut à droite).
+              </P>
+              <P>
+                Vous pouvez aussi sélectionner explicitement l'artefact que vous voulez que Claude modifie au prochain message, ce qui évite les confusions quand plusieurs livrables coexistent.
               </P>
 
               <H3>Afficher, copier, exporter</H3>
@@ -551,7 +581,8 @@ export default function ArtefactsClaudeEntreprise() {
 
               <H3>Corriger une erreur</H3>
               <Callout>
-                Si un artefact (typiquement un composant React ou un code interactif) renvoie une erreur d'exécution, un bouton <strong>« Essayer de corriger avec Claude »</strong> apparaît près du message d'erreur. Cliquer dessus copie automatiquement le détail de l'erreur dans un nouveau message à Claude, qui diagnostique et propose un correctif. Pratique sans être magique : certaines erreurs demandent quand même une intervention humaine.
+                <p style={{ margin: '0 0 8px' }}>Si un artefact (typiquement un composant React ou un code interactif) renvoie une erreur d'exécution, un bouton <strong>« Essayer de corriger avec Claude »</strong> apparaît près du message d'erreur.</p>
+                <p style={{ margin: 0 }}>Cliquer dessus copie automatiquement le détail de l'erreur dans un nouveau message à Claude, qui diagnostique et propose un correctif. Pratique sans être magique : certaines erreurs demandent quand même une intervention humaine.</p>
               </Callout>
             </SectionShell>
 
@@ -563,7 +594,10 @@ export default function ArtefactsClaudeEntreprise() {
 
               <H3 style={{ marginTop: 0 }}>Le concept</H3>
               <P>
-                Un artefact alimenté par l'IA est une application qui appelle Claude en interne. Vous décrivez ce que vous voulez (un quiz adaptatif, un coach de pitch, un générateur de fiches client, un jeu de rôle), Claude écrit le code et déploie l'application sur l'infrastructure d'Anthropic. Vos collègues l'utilisent comme un outil web classique.
+                Un artefact alimenté par l'IA est une application qui appelle Claude en interne.
+              </P>
+              <P>
+                Vous décrivez ce que vous voulez (un quiz adaptatif, un coach de pitch, un générateur de fiches client, un jeu de rôle), Claude écrit le code et déploie l'application sur l'infrastructure d'Anthropic. Vos collègues l'utilisent comme un outil web classique.
               </P>
 
               <H3>Comment ça marche</H3>
@@ -791,20 +825,20 @@ export default function ArtefactsClaudeEntreprise() {
               </p>
 
               <H3 style={{ marginTop: 0 }}>Les 4 approches possibles</H3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={CodeIcon} title="1. BDD embarquée dans le code" footer={<><TagPill kind="gray">Catalogue statique</TagPill><TagPill kind="gray">&lt; 1 000 produits</TagPill></>}>
+              <Lignes>
+                <Ligne Icon={CodeIcon} title="1. BDD embarquée dans le code" footer={<><TagPill kind="gray">Catalogue statique</TagPill><TagPill kind="gray">&lt; 1 000 produits</TagPill></>}>
                   Le catalogue est inséré directement dans le code de l'artefact (JSON littéral). Claude lit, filtre, affiche. Pas de stockage externe. Mise à jour = recréer l'artefact.
-                </Card>
-                <Card Icon={Database} title="2. Stockage persistant artefact" footer={<><TagPill>Recommandé pour démarrer</TagPill><TagPill kind="gray">&lt; 20 Mo</TagPill></>}>
+                </Ligne>
+                <Ligne Icon={Database} title="2. Stockage persistant artefact" footer={<><TagPill>Recommandé pour démarrer</TagPill><TagPill kind="gray">&lt; 20 Mo</TagPill></>}>
                   Le catalogue est importé une fois dans le storage de l'artefact (personnel ou partagé org). L'artefact est publié, l'équipe l'utilise. Mise à jour mensuelle par le propriétaire.
-                </Card>
-                <Card Icon={Plug} title="3. Intégration MCP" footer={<><TagPill kind="gray">BDD live</TagPill><TagPill kind="gray">Pro / Max / Team / Ent.</TagPill></>}>
+                </Ligne>
+                <Ligne Icon={Plug} title="3. Intégration MCP" footer={<><TagPill kind="gray">BDD live</TagPill><TagPill kind="gray">Pro / Max / Team / Ent.</TagPill></>}>
                   L'artefact appelle un serveur MCP qui parle à votre vraie base (Navision, ERP, PIM). Données toujours fraîches, droits gérés côté outil source. Requiert un serveur MCP existant ou à développer.
-                </Card>
-                <Card Icon={Briefcase} title="4. Compétence Claude avec fichier joint" footer={<><TagPill kind="gray">Voie pragmatique</TagPill><TagPill kind="gray">Tous plans</TagPill></>}>
+                </Ligne>
+                <Ligne Icon={Briefcase} title="4. Compétence Claude avec fichier joint" footer={<><TagPill kind="gray">Voie pragmatique</TagPill><TagPill kind="gray">Tous plans</TagPill></>}>
                   Le catalogue est attaché au ZIP d'une compétence. Claude charge le fichier à chaque activation. L'artefact généré dans la conversation s'en sert. Le catalogue suit la compétence.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
 
               <Callout>
                 <strong>Comment choisir ?</strong> Si la base change quotidiennement et que les droits dépendent du client, partez sur la 3 (MCP). Sinon, la 2 est la voie pragmatique pour servir 10 à 100 utilisateurs avec un catalogue stable et une mise à jour mensuelle. La 4 reste utile pour les usages individuels en conversation. La 1 ne sert que pour des très petits catalogues figés.
@@ -819,7 +853,9 @@ export default function ArtefactsClaudeEntreprise() {
 
               <StepList>
                 <Step n={1} title="Préparer les données en JSON ou CSV simple">
-                  Une ligne par produit. Colonnes utiles seulement : référence, désignation, marque, prix, marge, catégorie, stock indicatif. Retirez les colonnes lourdes (descriptions longues, URL d'images). Format JSON tableau d'objets recommandé : plus facile à manipuler dans l'artefact. <strong>Cible :</strong> moins de 18 Mo pour garder une marge sous la limite 20 Mo.
+                  <p style={{ margin: '0 0 8px' }}>Une ligne par produit. Colonnes utiles seulement : référence, désignation, marque, prix, marge, catégorie, stock indicatif.</p>
+                  <p style={{ margin: '0 0 8px' }}>Retirez les colonnes lourdes (descriptions longues, URL d'images). Format JSON tableau d'objets recommandé : plus facile à manipuler dans l'artefact.</p>
+                  <p style={{ margin: 0 }}><strong>Cible :</strong> moins de 18 Mo pour garder une marge sous la limite 20 Mo.</p>
                 </Step>
                 <Step n={2} title="Décrire l'artefact à Claude (brief unifié, voir ci-dessous)">
                   Le brief précise : import du catalogue via bouton, stockage en mode <strong>partagé</strong> pour que l'org voit le même catalogue, recherche multi-critères, filtres, fiche produit, export des résultats. Claude écrit le code React.
@@ -834,7 +870,8 @@ export default function ArtefactsClaudeEntreprise() {
                   Ouvrez l'artefact publié, cliquez sur <Code>Importer le catalogue</Code>, sélectionnez votre fichier JSON. Le parsing se fait dans le navigateur, l'écriture dans le stockage prend quelques secondes. Confirmation visible : nombre de produits chargés. Toute l'org y a maintenant accès.
                 </Step>
                 <Step n={6} title="Maintenir le catalogue dans le temps">
-                  Stratégie simple : un bouton <Code>Remplacer le catalogue</Code> qui efface le storage et réimporte le nouveau fichier. À faire une fois par mois (ou à chaque mise à jour majeure du PIM). Stratégie avancée : delta updates (le bouton accepte un fichier de modifications, ajoute / met à jour / supprime). Demander à Claude la version delta si besoin.
+                  <p style={{ margin: '0 0 8px' }}>Stratégie simple : un bouton <Code>Remplacer le catalogue</Code> qui efface le storage et réimporte le nouveau fichier. À faire une fois par mois (ou à chaque mise à jour majeure du PIM).</p>
+                  <p style={{ margin: 0 }}>Stratégie avancée : delta updates (le bouton accepte un fichier de modifications, ajoute / met à jour / supprime). Demander à Claude la version delta si besoin.</p>
                 </Step>
               </StepList>
 
@@ -867,14 +904,14 @@ export default function ArtefactsClaudeEntreprise() {
               </MethodBox>
 
               <H3>Limites et points de vigilance</H3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 14, margin: '16px 0' }}>
-                <Card Icon={AlertTriangle} title="Plafond 20 Mo">Pour un catalogue avec descriptions longues, stripper les colonnes lourdes. Un produit pèse rarement plus de 200 octets de texte utile, soit environ 100 000 produits maximum dans 20 Mo. Largement assez pour la majorité des cas EET.</Card>
-                <Card Icon={Lock} title="Stockage actif après publication">Pendant les tests, le storage ne fonctionne pas. Toujours prévoir un mode <em>dev</em> sur <Code>localStorage</Code> pour valider la logique avant publication.</Card>
-                <Card Icon={Trash2} title="Dépublication = effacement définitif">Si vous dépubliez l'artefact, tout le stockage est supprimé sans retour. Toujours exporter le catalogue avant de dépublier. Prévoir un bouton <em>Export complet JSON</em> dans l'artefact.</Card>
-                <Card Icon={Search} title="Recherche côté navigateur">La recherche tourne en JavaScript dans le navigateur. Latence sensible au-delà de 50 000 lignes ou avec des recherches très complexes. Indexer les colonnes filtrées si besoin (Claude sait le faire si on le demande).</Card>
-                <Card Icon={UsersIcon} title="Pas de droits fins par utilisateur">Tout le monde dans l'org voit le même catalogue. Pas de filtrage par client, par division, par rôle. Pour ça, il faut l'option 3 (MCP) avec gestion des droits côté serveur.</Card>
-                <Card Icon={RefreshCw} title="Mise à jour manuelle">La mise à jour passe par un humain qui clique sur <em>Remplacer le catalogue</em>. Pas de synchronisation auto avec Navision. À cadencer (hebdo / mensuel) selon la fraîcheur attendue.</Card>
-              </div>
+              <Lignes>
+                <Ligne Icon={AlertTriangle} title="Plafond 20 Mo">Pour un catalogue avec descriptions longues, stripper les colonnes lourdes. Un produit pèse rarement plus de 200 octets de texte utile, soit environ 100 000 produits maximum dans 20 Mo. Largement assez pour la majorité des cas EET.</Ligne>
+                <Ligne Icon={Lock} title="Stockage actif après publication">Pendant les tests, le storage ne fonctionne pas. Toujours prévoir un mode <em>dev</em> sur <Code>localStorage</Code> pour valider la logique avant publication.</Ligne>
+                <Ligne Icon={Trash2} title="Dépublication = effacement définitif">Si vous dépubliez l'artefact, tout le stockage est supprimé sans retour. Toujours exporter le catalogue avant de dépublier. Prévoir un bouton <em>Export complet JSON</em> dans l'artefact.</Ligne>
+                <Ligne Icon={Search} title="Recherche côté navigateur">La recherche tourne en JavaScript dans le navigateur. Latence sensible au-delà de 50 000 lignes ou avec des recherches très complexes. Indexer les colonnes filtrées si besoin (Claude sait le faire si on le demande).</Ligne>
+                <Ligne Icon={UsersIcon} title="Pas de droits fins par utilisateur">Tout le monde dans l'org voit le même catalogue. Pas de filtrage par client, par division, par rôle. Pour ça, il faut l'option 3 (MCP) avec gestion des droits côté serveur.</Ligne>
+                <Ligne Icon={RefreshCw} title="Mise à jour manuelle">La mise à jour passe par un humain qui clique sur <em>Remplacer le catalogue</em>. Pas de synchronisation auto avec Navision. À cadencer (hebdo / mensuel) selon la fraîcheur attendue.</Ligne>
+              </Lignes>
 
               <Callout kind="warning">
                 <strong>Bonnes pratiques de gouvernance :</strong> nommez l'artefact avec un numéro de version visible (ex : <Code>Recherche catalogue v1.2 — mai 2026</Code>). Désignez un propriétaire interne (en clair dans le titre). Sauvegardez le JSON source dans le SharePoint <Code>Compétences EET</Code> à chaque mise à jour : si l'artefact tombe, la donnée reste accessible.

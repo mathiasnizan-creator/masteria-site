@@ -68,7 +68,7 @@ const REGLES_LIBELLE = [
   [/pr[ée]requis|à apporter|mat[ée]riel|pr[ée]parer/i, ClipboardList],
   [/lieu|o[uù] |ville|zone|r[ée]gion|sur site|pr[ée]sentiel/i, MapPin],
   [/livrable|r[ée]sultat|à la sortie|vous repartez|remis/i, FileCheck2],
-  [/d[ée]lai|d[ée]marrage|planning|date|quand/i, CalendarDays],
+  [/d[ée]lai|d[ée]marrage|planning|\bdates?\b/i, CalendarDays],
   [/donn[ée]es|s[ée]curit|rgpd|confidential/i, ShieldCheck],
   [/langue/i, Languages],
   [/objectif|apprenez|comp[ée]tence|vous saurez|programme|formation|contenu|ce que/i, GraduationCap],

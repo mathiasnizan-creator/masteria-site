@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
-  Accessibility, ArrowRight, BadgeCheck, Boxes, BrainCircuit, Calculator, ClipboardCheck, Code2, Cookie,
+  Accessibility, ArrowRight, BadgeCheck, Boxes, BrainCircuit, Calculator, Check, ClipboardCheck, Code2, Cookie,
   Cpu, Database, FileCode2, Gauge, Globe, Handshake, Layers, LifeBuoy, ListChecks, Network, PenTool,
   Plug, Rocket, Scale, Search, ShieldCheck, Smartphone, Workflow, Wrench,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Rangees, Reperes } from '../components/Aere'
 
 /*
  * Page « Agence de développement web » : PILIER ET HUB du cluster développement (23/10/2026).
@@ -271,6 +272,50 @@ const articleJsonLd = {
   citation: SOURCES.map(s => s.url),
 }
 
+/* Définition du héros : tête en gras, énumération en liste à coches, puis la suite (mots inchangés) */
+function DefinitionHero({ tete, items, suite }) {
+  return (
+    <div id="definition" style={{ margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+      <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px' }}>
+        <strong style={{ color: '#fff', fontWeight: 700 }}>{tete}</strong> :
+      </p>
+      <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px' }}>
+        {items.map(t => (
+          <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+            <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+            <span>{t}</span>
+          </li>
+        ))}
+      </ul>
+      <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>{suite}</p>
+    </div>
+  )
+}
+
+/* Liste verticale pleine largeur (plus de cartes de texte côte à côte) : picto, sur-titre, titre, texte, pied */
+function Lignes({ items, sombre = false, as: Liste = 'ol' }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', picto: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', picto: c }
+  return (
+    <Liste style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}` }}>
+      {items.map(({ icon: Icon, kicker, titre, texte, pied }) => (
+        <li key={titre} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.picto, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 720 }}>
+            {kicker && <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: t.picto, marginBottom: 4 }}>{kicker}</span>}
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35 }}>{titre}</h3>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+            {pied}
+          </div>
+        </li>
+      ))}
+    </Liste>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -285,7 +330,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse toujours dans le DOM (prérendu citable), repliée en CSS */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -351,10 +398,12 @@ export default function AgenceDeveloppementWebPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria, qui pilote ses développeurs · mise à jour le 23 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, définition */}
-          <p id="definition" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Une agence de développement web conçoit, programme et maintient les sites et les applications web d'une entreprise</strong> : espace client, devis en ligne, back-office, portail fournisseurs. Les meilleures se reconnaissent à la façon dont elles relient ces écrans au CRM, à l'ERP, aux données et à l'IA, et au code qu'elles vous remettent en fin de projet.
-          </p>
+          {/* GEO : réponse directe citable, définition (accroche, énumération en liste, puis la suite) */}
+          <DefinitionHero
+            tete="Une agence de développement web conçoit, programme et maintient les sites et les applications web d'une entreprise"
+            items={['Espace client', 'Devis en ligne', 'Back-office', 'Portail fournisseurs']}
+            suite="Les meilleures se reconnaissent à la façon dont elles relient ces écrans au CRM, à l'ERP, aux données et à l'IA, et au code qu'elles vous remettent en fin de projet."
+          />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
             Les pages d'un site se dessinent en quelques semaines. Ce qui coûte, ce qui casse et ce qui fait gagner du temps se trouve derrière : la demande qui arrive dans le bon logiciel, le prix qui vient de l'ERP, la relance qui part seule. Choisir son prestataire revient à choisir qui saura concevoir ces liaisons.
@@ -370,18 +419,8 @@ export default function AgenceDeveloppementWebPage() {
             </a>
           </div>
 
-          {/* En bref (GEO) : dl citable */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {EN_BREF.map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref (GEO) : faits clés en cartes, dl citable */}
+          <Reperes sombre titre="En bref" items={EN_BREF.map(([label, detail]) => ({ label, detail }))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -417,20 +456,8 @@ export default function AgenceDeveloppementWebPage() {
             Une agence de développement web utile commence donc par dessiner ces flux : quelle donnée naît où, qui la modifie, quel logiciel la lit ensuite. Cinq branchements reviennent d'un projet à l'autre.
           </p>
 
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {BRANCHEMENTS.map(b => {
-              const Icon = b.icon
-              return (
-                <li key={b.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                  <div style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                    <Icon size={21} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 18.5px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{b.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{b.body}</p>
-                </li>
-              )
-            })}
-          </ul>
+          {/* Une rangée par branchement, en pleine largeur */}
+          <Rangees items={BRANCHEMENTS.map(b => ({ titre: b.title, texte: b.body, icon: b.icon }))} />
 
           <p style={{ fontSize: 14.5, color: '#4B5563', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 840 }}>
             Nous appliquons ce principe à nos propres outils : la plateforme de gestion des formations et des clients de Masteria, écrite en Next.js sur Supabase, vaut surtout par ce qu'elle relie, des dossiers aux devis et aux documents de chaque formation.
@@ -489,7 +516,10 @@ export default function AgenceDeveloppementWebPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 900 }}>
-            <strong>Un repère pour trancher :</strong> si votre projet tient en pages que vous modifierez vous-même, un CMS ou une plateforme suffit. Dès qu'il doit lire ou écrire dans un autre logiciel, comptez sur des développeurs. Pour un logiciel qui épouse vos processus plutôt qu'un site, voyez notre page sur le{' '}
+            <strong>Un repère pour trancher :</strong> si votre projet tient en pages que vous modifierez vous-même, un CMS ou une plateforme suffit. Dès qu'il doit lire ou écrire dans un autre logiciel, comptez sur des développeurs.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '12px 0 0', maxWidth: 900 }}>
+            Pour un logiciel qui épouse vos processus plutôt qu'un site, voyez notre page sur le{' '}
             <Link to="/agence-developpement-sur-mesure" style={{ color: c, fontWeight: 600 }}>développement sur mesure</Link>.
           </p>
         </div>
@@ -507,26 +537,15 @@ export default function AgenceDeveloppementWebPage() {
             Les durées varient de quelques semaines pour un prototype à plusieurs mois pour une application reliée à plusieurs logiciels ; elles se fixent au cadrage.
           </p>
 
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
-            {ETAPES.map((e, i) => {
-              const Icon = e.icon
-              return (
-                <li key={e.title} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={21} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c }}>{`Étape ${i + 1}`}</span>
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 19px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{e.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 14px', flex: 1 }}>{e.body}</p>
-                  <p style={{ fontSize: 13.5, color: '#0A0A0A', lineHeight: 1.6, margin: 0, background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 8px 8px 0', padding: '10px 14px' }}>
-                    <strong>Vous recevez :</strong> {e.recu}
-                  </p>
-                </li>
-              )
-            })}
-          </ol>
+          {/* Une rangée par étape, en pleine largeur */}
+          <Lignes items={ETAPES.map((e, i) => ({
+            icon: e.icon, kicker: `Étape ${i + 1}`, titre: e.title, texte: e.body,
+            pied: (
+              <p style={{ fontSize: 14, color: '#0A0A0A', lineHeight: 1.6, margin: '12px 0 0', background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 8px 8px 0', padding: '10px 14px' }}>
+                <strong>Vous recevez :</strong> {e.recu}
+              </p>
+            ),
+          }))} />
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '32px 0 0', maxWidth: 840 }}>
             Le détail de notre déroulé, avec les points de décision qui vous reviennent, se trouve sur la page{' '}
@@ -585,23 +604,11 @@ export default function AgenceDeveloppementWebPage() {
             Corriger ces points après coup coûte plus cher que de les prévoir : une page lente ou inaccessible se reprend souvent composant par composant.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 440px), 1fr))', gap: 18 }}>
-            {TECHNIQUE.map(t => {
-              const Icon = t.icon
-              return (
-                <div key={t.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 38, height: 38, borderRadius: 10, background: 'rgba(37,99,235,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={19} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
-                    </div>
-                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#F8FAFC', margin: 0, lineHeight: 1.3 }}>{t.title}</h3>
-                  </div>
-                  <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.7, margin: '0 0 12px' }}>{t.body}</p>
-                  <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12.5, fontWeight: 700, color: '#93C5FD', textDecoration: 'underline', textUnderlineOffset: 2 }}>Source : {t.source}</a>
-                </div>
-              )
-            })}
-          </div>
+          {/* Une rangée par exigence, en pleine largeur */}
+          <Lignes sombre as="ul" items={TECHNIQUE.map(t => ({
+            icon: t.icon, titre: t.title, texte: t.body,
+            pied: <a href={t.url} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: 10, fontSize: 12.5, fontWeight: 700, color: '#93C5FD', textDecoration: 'underline', textUnderlineOffset: 2 }}>Source : {t.source}</a>,
+          }))} />
 
           <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Pour les données personnelles traitées par l'application elle-même (comptes, historiques, documents), la CNIL publie un{' '}
@@ -682,7 +689,10 @@ export default function AgenceDeveloppementWebPage() {
           </div>
 
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 880 }}>
-            <strong>Deux formats de contrat.</strong> Au forfait, Masteria s'engage sur un livrable pour un prix global fixé après cadrage. En régie, des développeurs rejoignent vos équipes, sur site ou à distance, au taux journalier, communiqué sur demande. Le développement n'est pas finançable par l'OPCO ; seule la formation de vos équipes peut l'être.
+            <strong>Deux formats de contrat.</strong> Au forfait, Masteria s'engage sur un livrable pour un prix global fixé après cadrage. En régie, des développeurs rejoignent vos équipes, sur site ou à distance, au taux journalier, communiqué sur demande.
+          </p>
+          <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 880 }}>
+            Le développement n'est pas finançable par l'OPCO ; seule la formation de vos équipes peut l'être.
           </p>
           <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Les ordres de grandeur par type d'outil sont détaillés sur la page{' '}
@@ -771,8 +781,11 @@ export default function AgenceDeveloppementWebPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des développeurs web et IA indépendants, réunis pour chaque projet par le fondateur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              L'équipe travaille en React, Next.js, TypeScript, Node.js et Python, sur Supabase et PostgreSQL, avec des déploiements sur Vercel. Elle relie les applications aux CRM, aux ERP comme Odoo et aux messageries, et y branche au besoin les modèles Claude, GPT, Gemini ou Mistral, ou des automatisations n8n.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              L'équipe travaille en React, Next.js, TypeScript, Node.js et Python, sur Supabase et PostgreSQL, avec des déploiements sur Vercel. Elle relie les applications aux CRM, aux ERP comme Odoo et aux messageries, et y branche au besoin les modèles Claude, GPT, Gemini ou Mistral, ou des automatisations n8n. Masteria construit et exploite ainsi son propre site, prérendu pour le référencement, et sa plateforme de gestion des formations et des clients. Mathias Nizan choisit les profils et répond du résultat.
+              Masteria construit et exploite ainsi son propre site, prérendu pour le référencement, et sa plateforme de gestion des formations et des clients. Mathias Nizan choisit les profils et répond du résultat.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

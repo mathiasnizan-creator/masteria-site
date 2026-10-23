@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, BookOpen, Cpu, Database, FlaskConical, Plug, Server, ShieldCheck, Target, MessagesSquare } from 'lucide-react'
+import { ArrowRight, BadgeCheck, BookOpen, Check, Cpu, Database, FlaskConical, Plug, Server, ShieldCheck, Target, MessagesSquare } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Paras, Reperes } from '../components/Aere'
 import { useIsDesktop } from '../hooks/useMediaQuery'
 
 /*
@@ -269,7 +270,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse toujours dans le DOM (prérendu citable), repliée en CSS */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -352,10 +355,23 @@ export default function DeveloppeurIAPage() {
             Fiche rédigée par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui pilote les développeurs IA de Masteria · mise à jour le 23 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable, définition */}
-          <p id="definition" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>Un développeur IA conçoit des logiciels dont un modèle d'intelligence artificielle est un composant</strong> : assistants branchés sur les documents d'une entreprise, agents qui agissent dans ses outils, automatisations, modèles de prévision. En 2026, il entraîne rarement un modèle ; il en choisit un, le relie aux données et aux logiciels, mesure la justesse des réponses et le fait tenir en production.
-          </p>
+          {/* GEO : réponse directe citable, définition (accroche, énumération en liste, puis la phrase suivante) */}
+          <div id="definition" style={{ margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 14px' }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>Un développeur IA conçoit des logiciels dont un modèle d'intelligence artificielle est un composant</strong> :
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px' }}>
+              {["Assistants branchés sur les documents d'une entreprise", 'Agents qui agissent dans ses outils', 'Automatisations', 'Modèles de prévision'].map(t => (
+                <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: '#E2E8F0' }}>
+                  <Check size={16} strokeWidth={2} aria-hidden="true" style={{ color: '#60A5FA', flexShrink: 0, marginTop: 3 }} />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: 16, color: '#CBD5E1', lineHeight: 1.65, margin: 0 }}>
+              En 2026, il entraîne rarement un modèle ; il en choisit un, le relie aux données et aux logiciels, mesure la justesse des réponses et le fait tenir en production.
+            </p>
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
             Cette fiche sert deux lecteurs : l'entreprise qui cherche à recruter un développeur IA ou à en faire intervenir un, et la personne qui veut exercer ce métier. Chaque montant cité vient d'une source publiée, avec sa date.
@@ -371,18 +387,8 @@ export default function DeveloppeurIAPage() {
             </a>
           </div>
 
-          {/* En bref (GEO) : dl citable */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {EN_BREF.map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref (GEO) : faits clés en cartes, dl citable (texte entier en détail : la virgule ne sépare pas ici une tête de sa suite) */}
+          <Reperes sombre titre="En bref" items={EN_BREF.map(([label, detail]) => ({ label, detail }))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -452,8 +458,11 @@ export default function DeveloppeurIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            <strong>Une confusion fréquente :</strong> tout développeur se sert désormais d'assistants de code comme Claude Code, GitHub Copilot ou Cursor. Ces outils accélèrent son travail sans changer son métier ; on parle de développeur IA quand l'IA fait partie du logiciel livré. Pour apprendre à coder avec un agent, voyez notre{' '}
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 12px', maxWidth: 880 }}>
+            <strong>Une confusion fréquente :</strong> tout développeur se sert désormais d'assistants de code comme Claude Code, GitHub Copilot ou Cursor. Ces outils accélèrent son travail sans changer son métier ; on parle de développeur IA quand l'IA fait partie du logiciel livré.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Pour apprendre à coder avec un agent, voyez notre{' '}
             <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>formation Claude Code</Link>, ou la{' '}
             <Link to="/formation-vibe-coding" style={{ color: c, fontWeight: 600 }}>formation au vibe coding</Link> si vous ne codez pas.
           </p>
@@ -472,19 +481,20 @@ export default function DeveloppeurIAPage() {
             Les cinq étapes suivent l'ordre d'un projet, du premier échange avec les utilisateurs à la mise en service.
           </p>
 
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
+          {/* Une rangée par étape, en pleine largeur (plus de cartes côte à côte) */}
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: '1px solid #E5E7EB' }}>
             {ETAPES.map((e, i) => {
               const Icon = e.icon
               return (
-                <li key={e.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={21} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c }}>{`Étape ${i + 1}`}</span>
+                <li key={e.title} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: '1px solid #E5E7EB' }}>
+                  <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: c, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+                    <Icon size={17} strokeWidth={1.75} />
+                  </span>
+                  <div style={{ minWidth: 0, maxWidth: 720 }}>
+                    <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, marginBottom: 4 }}>{`Étape ${i + 1}`}</span>
+                    <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', lineHeight: 1.35 }}>{e.title}</h3>
+                    <Paras texte={e.body} max={2} budget={320} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }} />
                   </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 19px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{e.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{e.body}</p>
                 </li>
               )
             })}
@@ -547,7 +557,8 @@ export default function DeveloppeurIAPage() {
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Rémunération 2026</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC' }}>Salaire et TJM d'un développeur IA en 2026</h2>
           <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 14px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Selon le baromètre Silkhom 2026, un profil expérimenté gagne environ 75 000 € brut par an en MLOps et 85 000 € en LLMOps, contre 45 000 € pour un développeur Java ou Python. En freelance, Free-Work relève un TJM moyen de 440 € HT pour un développeur IA ou machine learning.</strong>
+            <strong style={{ color: '#fff' }}>Selon le baromètre Silkhom 2026, un profil expérimenté gagne environ 75 000 € brut par an en MLOps et 85 000 € en LLMOps, contre 45 000 € pour un développeur Java ou Python.</strong>{' '}
+            <span style={{ color: '#CBD5E1' }}>En freelance, Free-Work relève un TJM moyen de 440 € HT pour un développeur IA ou machine learning.</span>
           </p>
           <p style={{ fontSize: 15, color: '#B4C0D3', lineHeight: 1.7, margin: '0 0 36px', maxWidth: 760 }}>
             Ce sont des moyennes publiées par un cabinet de recrutement et par une plateforme de missions. Les graphiques de Silkhom portent sur des profils de plus de sept ans d'expérience ; les débuts de carrière se situent plus bas, et la région comme le secteur déplacent les montants.
@@ -581,8 +592,11 @@ export default function DeveloppeurIAPage() {
             </table>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            Une agence ou une ESN facture la journée plus cher qu'un freelance : son prix couvre le pilotage, la continuité en cas d'absence, les garanties et le travail de conception autour du code. Pour estimer le budget d'un outil complet plutôt qu'un taux journalier, lisez notre page sur le{' '}
+          <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '28px 0 12px', maxWidth: 880 }}>
+            Une agence ou une ESN facture la journée plus cher qu'un freelance : son prix couvre le pilotage, la continuité en cas d'absence, les garanties et le travail de conception autour du code.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Pour estimer le budget d'un outil complet plutôt qu'un taux journalier, lisez notre page sur le{' '}
             <Link to="/prix-projet-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>prix d'un projet IA</Link>.
           </p>
         </div>
@@ -664,9 +678,12 @@ export default function DeveloppeurIAPage() {
             </ol>
           </div>
 
-          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '40px 0 0', maxWidth: 880 }}>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '40px 0 12px', maxWidth: 880 }}>
             <strong>Masteria</strong> travaille dans les deux formats du milieu : au forfait, comme{' '}
-            <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>, ou en régie, avec des développeurs détachés dans vos équipes. Le code et sa documentation vous sont remis. Les{' '}
+            <Link to="/agence-developpement-ia" style={{ color: c, fontWeight: 600 }}>agence de développement IA</Link>, ou en régie, avec des développeurs détachés dans vos équipes. Le code et sa documentation vous sont remis.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
+            Les{' '}
             <Link to="/outils-ia-sur-mesure" style={{ color: c, fontWeight: 600 }}>outils IA sur mesure</Link> que nous livrons et notre{' '}
             <Link to="/methode-projet-ia" style={{ color: c, fontWeight: 600 }}>méthode de projet IA</Link> détaillent la suite. Si votre besoin relève du choix des usages plus que du code, la fiche{' '}
             <Link to="/consultant-ia" style={{ color: c, fontWeight: 600 }}>consultant IA</Link> vous concerne davantage.
@@ -703,12 +720,15 @@ export default function DeveloppeurIAPage() {
                   ))}
                 </ol>
                 <div style={{ background: '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 10px 10px 0', padding: '16px 20px' }}>
-                  <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: '0 0 10px' }}>
                     <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, verticalAlign: '-2px', marginRight: 6 }} aria-hidden="true" />
                     <strong>Pour les développeurs déjà en poste :</strong> nos formations certifiées Qualiopi ajoutent les briques d'IA à un socle technique existant.{' '}
                     <Link to="/formation-claude-code" style={{ color: c, fontWeight: 600 }}>Claude Code</Link> pour coder avec un agent,{' '}
                     <Link to="/formation-agents-ia" style={{ color: c, fontWeight: 600 }}>agents IA</Link> pour en concevoir,{' '}
-                    <Link to="/formation-n8n" style={{ color: c, fontWeight: 600 }}>n8n</Link> pour les automatisations. Elles complètent un parcours diplômant sans le remplacer. La journée démarre à 1 980 € HT ; pour un salarié, l'OPCO de la branche étudie la prise en charge selon ses propres règles.
+                    <Link to="/formation-n8n" style={{ color: c, fontWeight: 600 }}>n8n</Link> pour les automatisations.
+                  </p>
+                  <p style={{ fontSize: 14.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0 }}>
+                    Elles complètent un parcours diplômant sans le remplacer. La journée démarre à 1 980 € HT ; pour un salarié, l'OPCO de la branche étudie la prise en charge selon ses propres règles.
                   </p>
                 </div>
               </div>
@@ -817,8 +837,11 @@ export default function DeveloppeurIAPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des développeurs indépendants, retenus pour chaque projet, sous la responsabilité du fondateur
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Ils construisent des agents, des assistants branchés sur les documents de l'entreprise, des automatisations et des intégrations au CRM et à l'ERP. Mathias Nizan les choisit selon la technologie et le secteur, et répond du résultat devant vous.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Ils construisent des agents, des assistants branchés sur les documents de l'entreprise, des automatisations et des intégrations au CRM et à l'ERP. Mathias Nizan les choisit selon la technologie et le secteur, et répond du résultat devant vous. Quand le projet le demande, un consultant cadre les usages et un formateur prépare vos équipes à prendre l'outil en main. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link> en donnent un aperçu.
+              Quand le projet le demande, un consultant cadre les usages et un formateur prépare vos équipes à prendre l'outil en main. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions documentées</Link> en donnent un aperçu.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

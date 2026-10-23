@@ -177,6 +177,27 @@ function Card({ Icon, title, children, accentLeft, footer }) {
   )
 }
 
+/* Cartes de texte en liste verticale pleine largeur (plus de cartes côte à côte) */
+function Lignes({ children }) {
+  return <div style={{ borderTop: `1px solid ${C.border}`, margin: '16px 0' }}>{children}</div>
+}
+
+function Ligne({ Icon, title, children, accentLeft }) {
+  return (
+    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '18px 0', borderBottom: `1px solid ${C.border}` }}>
+      {Icon && (
+        <div style={{ width: 36, height: 36, borderRadius: 9, background: C.blueLight, flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Icon size={18} color={accentLeft || C.blue} strokeWidth={1.75} />
+        </div>
+      )}
+      <div style={{ minWidth: 0, flex: 1, maxWidth: 680 }}>
+        <div style={{ fontFamily: F.head, fontSize: 15.5, fontWeight: 800, color: C.ink, marginBottom: 4 }}>{title}</div>
+        <div style={{ fontSize: 14.5, color: C.textSoft, lineHeight: 1.65 }}>{children}</div>
+      </div>
+    </div>
+  )
+}
+
 function TagPill({ children, kind = 'blue' }) {
   const styles = {
     blue:  { bg: C.blueLight, color: C.blue,    border: C.blueBorder },
@@ -464,7 +485,10 @@ export default function CompetencesClaudeEET() {
                 Une compétence Claude est un dossier d'instructions que vous préparez une fois et que Claude charge automatiquement quand le contexte l'exige. Au lieu de recopier les mêmes consignes à chaque conversation, vous les encodez dans un fichier <Code>SKILL.md</Code> et Claude les applique sans que vous ayez à les redemander.
               </P>
               <P>
-                Claude charge les compétences disponibles au début de chaque conversation. Il lit leur nom et leur description (quelques dizaines de tokens par compétence) et décide laquelle activer selon votre demande. Le corps de la compétence ne se charge que si la tâche y correspond : c'est la <strong>divulgation progressive</strong>. Résultat : même avec une dizaine de compétences actives, la consommation de contexte reste raisonnable.
+                Claude charge les compétences disponibles au début de chaque conversation. Il lit leur nom et leur description (quelques dizaines de tokens par compétence) et décide laquelle activer selon votre demande.
+              </P>
+              <P>
+                Le corps de la compétence ne se charge que si la tâche y correspond : c'est la <strong>divulgation progressive</strong>. Résultat : même avec une dizaine de compétences actives, la consommation de contexte reste raisonnable.
               </P>
 
               <Callout>
@@ -659,14 +683,14 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
                 Quand Claude.ai exporte une compétence, il génère un fichier avec l'extension <Code>.skill</Code>. Ce n'est pas un format spécial : <strong>c'est un ZIP renommé</strong>. Les deux sont interchangeables.
               </P>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={CheckCircle2} title="Uploader un .skill directement" accentLeft={C.success}>
+              <Lignes>
+                <Ligne Icon={CheckCircle2} title="Uploader un .skill directement" accentLeft={C.success}>
                   Claude.ai accepte les fichiers <Code>.skill</Code> à l'upload. Si vous réuploadez sur le même compte ou sur un autre compte Claude, pas besoin de renommer.
-                </Card>
-                <Card Icon={RefreshCw} title="Ouvrir ou modifier un .skill" accentLeft={C.blue}>
+                </Ligne>
+                <Ligne Icon={RefreshCw} title="Ouvrir ou modifier un .skill" accentLeft={C.blue}>
                   Renommez le fichier : remplacez <Code>.skill</Code> par <Code>.zip</Code>. Vous pouvez alors l'ouvrir, modifier les fichiers à l'intérieur, rezipper et réuploader.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
 
               <Divider />
 
@@ -886,14 +910,14 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               <H3>« Je ne vois pas de bouton Partager »</H3>
               <P>Le bouton Partager n'apparaît que si un propriétaire de l'organisation l'a activé. Il est désactivé par défaut sur tous les plans.</P>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16, margin: '16px 0' }}>
-                <Card Icon={Crown} title="Vous êtes propriétaire" accentLeft={C.blue}>
+              <Lignes>
+                <Ligne Icon={Crown} title="Vous êtes propriétaire" accentLeft={C.blue}>
                   Allez dans <strong>Paramètres de l'organisation › Compétences</strong> et activez <em>Partage de compétences</em> (pair-à-pair) et/ou <em>Partager avec l'organisation</em> (répertoire). Le bouton apparaît immédiatement pour tous.
-                </Card>
-                <Card Icon={User} title="Vous êtes membre" accentLeft={C.textMuted}>
+                </Ligne>
+                <Ligne Icon={User} title="Vous êtes membre" accentLeft={C.textMuted}>
                   Contactez votre administrateur pour qu'il active le partage. Tant que ce n'est pas fait, le bouton n'existe pas dans l'interface.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
 
               <Callout Icon={Info}>
                 <strong>Plan individuel (Pro, Max) :</strong> le partage entre comptes n'est pas disponible. Envoyez le fichier <Code>.zip</Code> ou <Code>.skill</Code> manuellement. Votre collègue l'uploade dans son propre compte.
@@ -1004,9 +1028,18 @@ Utiliser templates/modele.docx pour les documents clients.`}</Pre>
               </P>
 
               <MethodBox tone="ink" badge="Méthode" badgeIcon={Lightbulb} title="Comment se déroule chaque formation">
-                <P style={{ marginTop: 0, fontSize: 14, color: C.textSoft }}>
-                  Chaque référent arrive avec ses fichiers. Pendant la formation : (1) cartographie du workflow actuel sur 1 page ; (2) brief Claude collé dans une conversation, avec upload des fichiers de référence ; (3) Claude génère le <Code>SKILL.md</Code> et assemble le ZIP ; (4) test sur 3 à 5 cas réels du jour ; (5) itérations sur la <Code>description</Code> et les règles ; (6) récupération du ZIP final et dépôt dans <Code>Compétences EET</Code>.
+                <P style={{ marginTop: 0, fontSize: 14, color: C.textSoft, marginBottom: 10 }}>
+                  Chaque référent arrive avec ses fichiers. Pendant la formation :
                 </P>
+                {/* Les six temps de la formation en liste */}
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 6, fontSize: 14, color: C.textSoft, lineHeight: 1.6 }}>
+                  <li>(1) cartographie du workflow actuel sur 1 page</li>
+                  <li>(2) brief Claude collé dans une conversation, avec upload des fichiers de référence</li>
+                  <li>(3) Claude génère le <Code>SKILL.md</Code> et assemble le ZIP</li>
+                  <li>(4) test sur 3 à 5 cas réels du jour</li>
+                  <li>(5) itérations sur la <Code>description</Code> et les règles</li>
+                  <li>(6) récupération du ZIP final et dépôt dans <Code>Compétences EET</Code></li>
+                </ul>
               </MethodBox>
 
               {/* ─── 1. JÉRÉMY ─── */}
@@ -1364,10 +1397,9 @@ function SkillSetup({ n, name, role, project, briefName, brief, files, prereqs }
         </PromptBox>
       </MethodBox>
 
-      {/* Files + Prereqs grid */}
+      {/* Fichiers puis prérequis, l'un sous l'autre en pleine largeur */}
       <div style={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
         gap: 14,
         marginTop: 16,
       }}>

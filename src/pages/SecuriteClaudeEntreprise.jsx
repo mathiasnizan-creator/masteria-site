@@ -132,24 +132,28 @@ function SectionShell({ section, children }) {
   )
 }
 
-function Card({ Icon, title, children, footer, accent }) {
+/* Cartes de texte en liste verticale pleine largeur (plus de cartes côte à côte) :
+   picto, titre, texte, étiquettes, une rangée par point */
+function Lignes({ children, style }) {
+  return <div style={{ borderTop: `1px solid ${C.border}`, ...style }}>{children}</div>
+}
+
+function Ligne({ Icon, title, children, footer, accent }) {
   return (
-    <div style={{
-      background: '#fff', border: `1px solid ${C.border}`, borderRadius: 12,
-      padding: 18, display: 'flex', flexDirection: 'column', gap: 8,
-      borderLeft: accent ? `4px solid ${accent}` : undefined,
-    }}>
+    <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start', padding: '18px 0', borderBottom: `1px solid ${C.border}` }}>
       {Icon && (
         <div style={{
-          width: 36, height: 36, borderRadius: 9, background: C.blueLight,
+          width: 36, height: 36, borderRadius: 9, background: C.blueLight, flexShrink: 0,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-        }}><Icon size={18} color={accent || C.blue} /></div>
+        }}><Icon size={18} strokeWidth={1.75} color={accent || C.blue} /></div>
       )}
-      <strong style={{ fontFamily: F.head, fontSize: 15, fontWeight: 700, color: C.ink }}>{title}</strong>
-      <span style={{ fontSize: 13.5, color: C.textSoft, lineHeight: 1.55, flex: 1 }}>{children}</span>
-      {footer && (
-        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 4 }}>{footer}</div>
-      )}
+      <div style={{ minWidth: 0, flex: 1, maxWidth: 680 }}>
+        <strong style={{ display: 'block', fontFamily: F.head, fontSize: 15.5, fontWeight: 700, color: C.ink, marginBottom: 4 }}>{title}</strong>
+        <span style={{ display: 'block', fontSize: 14.5, color: C.textSoft, lineHeight: 1.65 }}>{children}</span>
+        {footer && (
+          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginTop: 10 }}>{footer}</div>
+        )}
+      </div>
     </div>
   )
 }
@@ -185,7 +189,7 @@ function Step({ n, title, children }) {
         <strong style={{ display: 'block', fontWeight: 700, color: C.ink, fontSize: 14.5, marginBottom: 3 }}>
           {title}
         </strong>
-        {children && <span style={{ fontSize: 13.5, color: C.textSoft, lineHeight: 1.55 }}>{children}</span>}
+        {children && <div style={{ fontSize: 13.5, color: C.textSoft, lineHeight: 1.55 }}>{children}</div>}
       </div>
     </li>
   )
@@ -277,11 +281,26 @@ export default function SecuriteClaudeEntreprise() {
           }}>
             Claude Enterprise :<br /><em style={{ color: '#5EEAD4', fontStyle: 'normal' }}>vos données restent vos données.</em>
           </h1>
+          {/* Accroche, puis les garanties en liste à coches */}
+          <p style={{
+            fontSize: 'clamp(15px, 1.6vw, 18px)', color: 'rgba(255,255,255,.74)',
+            lineHeight: 1.6, maxWidth: 720, marginBottom: 14,
+          }}>
+            Claude Enterprise est conçu pour un usage professionnel exigeant.
+          </p>
+          <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 16px', display: 'grid', gap: 8, maxWidth: 720 }}>
+            {['Chiffrement bout-en-bout', 'Aucun entraînement sur vos conversations', 'Conformité RGPD et certifications SOC 2, ISO 27001 et ISO 42001'].map(t => (
+              <li key={t} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.5, color: 'rgba(255,255,255,.9)' }}>
+                <Check size={16} strokeWidth={2} color="#5EEAD4" aria-hidden="true" style={{ flexShrink: 0, marginTop: 3 }} />
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
           <p style={{
             fontSize: 'clamp(15px, 1.6vw, 18px)', color: 'rgba(255,255,255,.74)',
             lineHeight: 1.6, maxWidth: 720, marginBottom: 32,
           }}>
-            Claude Enterprise est conçu pour un usage professionnel exigeant. Chiffrement bout-en-bout, aucun entraînement sur vos conversations, conformité RGPD et certifications SOC 2, ISO 27001 et ISO 42001. Voici ce que ça signifie concrètement pour votre organisation.
+            Voici ce que ça signifie concrètement pour votre organisation.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
             {[
@@ -396,7 +415,8 @@ export default function SecuriteClaudeEntreprise() {
               </p>
 
               <Callout>
-                <strong>Team vs Enterprise en un mot :</strong> sur les deux plans, vos conversations sont sous Conditions Commerciales et aucune n'alimente l'entraînement des modèles. Enterprise ajoute les outils de gouvernance avancés (ZDR, SCIM, logs d'audit SIEM, DPA formel). Pour une équipe sans contraintes réglementaires spécifiques, Team est une bonne base. Pour situer Claude parmi les autres outils au regard du règlement, voyez notre guide <a href="/ia-et-rgpd" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: 2 }}>IA et RGPD</a>.
+                <p style={{ margin: '0 0 8px' }}><strong>Team vs Enterprise en un mot :</strong> sur les deux plans, vos conversations sont sous Conditions Commerciales et aucune n'alimente l'entraînement des modèles. Enterprise ajoute les outils de gouvernance avancés (ZDR, SCIM, logs d'audit SIEM, DPA formel).</p>
+                <p style={{ margin: 0 }}>Pour une équipe sans contraintes réglementaires spécifiques, Team est une bonne base. Pour situer Claude parmi les autres outils au regard du règlement, voyez notre guide <a href="/ia-et-rgpd" style={{ color: 'inherit', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: 2 }}>IA et RGPD</a>.</p>
               </Callout>
 
               <div style={{ overflowX: 'auto', margin: '20px 0', borderRadius: 12, border: `1px solid ${C.border}` }}>
@@ -510,17 +530,17 @@ export default function SecuriteClaudeEntreprise() {
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.6, marginBottom: 20, marginTop: -16 }}>
                 Les données Anthropic sont chiffrées à tous les niveaux, en transit et au repos, selon les standards industriels les plus exigeants.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
-                <Card Icon={Lock} accent={C.success} title="Données au repos" footer={<TagPill kind="success">AES-256</TagPill>}>
+              <Lignes>
+                <Ligne Icon={Lock} accent={C.success} title="Données au repos" footer={<TagPill kind="success">AES-256</TagPill>}>
                   Toutes les données stockées sur les serveurs Anthropic sont chiffrées avec l'algorithme AES-256, le standard de référence pour la protection des données sensibles.
-                </Card>
-                <Card Icon={ShieldCheck} accent={C.blue} title="Données en transit" footer={<TagPill>TLS 1.2+</TagPill>}>
+                </Ligne>
+                <Ligne Icon={ShieldCheck} accent={C.blue} title="Données en transit" footer={<TagPill>TLS 1.2+</TagPill>}>
                   Toutes les communications entre votre navigateur ou application et les serveurs Anthropic utilisent TLS 1.2 minimum. La connexion est toujours chiffrée, sans exception.
-                </Card>
-                <Card Icon={KeyRound} accent="#6D28D9" title="BYOK · Bring Your Own Key" footer={<TagPill kind="gray">H1 2026</TagPill>}>
+                </Ligne>
+                <Ligne Icon={KeyRound} accent="#6D28D9" title="BYOK · Bring Your Own Key" footer={<TagPill kind="gray">H1 2026</TagPill>}>
                   En déploiement depuis le premier semestre 2026. Le BYOK permet aux clients Enterprise de gérer eux-mêmes leurs clés de chiffrement, pour une souveraineté totale sur leurs données.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
             </SectionShell>
 
             {/* ════════════ PARTIE 3 — CERTIFICATIONS ════════════ */}
@@ -528,17 +548,17 @@ export default function SecuriteClaudeEntreprise() {
               <p style={{ fontSize: 15.5, color: C.textSoft, lineHeight: 1.6, marginBottom: 20, marginTop: -16 }}>
                 Anthropic a complété les audits de sécurité les plus reconnus du secteur. Ces certifications couvrent l'infrastructure Claude, pas seulement les pratiques internes.
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginBottom: 24 }}>
-                <Card Icon={FileCheck} accent={C.blue} title="SOC 2 Type II" footer={<><TagPill>Sécurité</TagPill><TagPill>Disponibilité</TagPill><TagPill>Confidentialité</TagPill></>}>
+              <Lignes style={{ marginBottom: 24 }}>
+                <Ligne Icon={FileCheck} accent={C.blue} title="SOC 2 Type II" footer={<><TagPill>Sécurité</TagPill><TagPill>Disponibilité</TagPill><TagPill>Confidentialité</TagPill></>}>
                   Audit indépendant validant la sécurité, la disponibilité et la confidentialité de l'infrastructure Claude. Rapport complet disponible sous NDA via le Trust Portal Anthropic pour les clients Enterprise.
-                </Card>
-                <Card Icon={Globe} accent="#0EA5B8" title="ISO 27001:2022" footer={<TagPill kind="success">Sécurité de l'information</TagPill>}>
+                </Ligne>
+                <Ligne Icon={Globe} accent="#0EA5B8" title="ISO 27001:2022" footer={<TagPill kind="success">Sécurité de l'information</TagPill>}>
                   Certification du système de management de la sécurité de l'information (SMSI). Référence internationale pour la gestion des risques liés aux données et la protection des informations sensibles.
-                </Card>
-                <Card Icon={BadgeCheck} accent="#6D28D9" title="ISO 42001:2023" footer={<TagPill kind="gray">Gouvernance IA</TagPill>}>
+                </Ligne>
+                <Ligne Icon={BadgeCheck} accent="#6D28D9" title="ISO 42001:2023" footer={<TagPill kind="gray">Gouvernance IA</TagPill>}>
                   Première norme internationale dédiée aux systèmes de management de l'IA. Atteste que les pratiques de développement et de déploiement de Claude respectent un cadre de gouvernance IA rigoureux.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
 
               <Callout>
                 <strong>Secteur financier &amp; distribution B2B :</strong> la certification SOC 2 Type II est généralement suffisante pour les cas d'usage courants en distribution et en B2B. Pour les échanges de données avec des partenaires grands comptes, le DPA apporte la base contractuelle nécessaire. PCI-DSS : validation cas par cas si paiement impliqué.
@@ -552,7 +572,8 @@ export default function SecuriteClaudeEntreprise() {
               </p>
 
               <Callout kind="success">
-                <strong>Comment signer le DPA :</strong> le DPA d'Anthropic est automatiquement incorporé dans les Conditions Commerciales de Service. En acceptant ces conditions, vous acceptez également le DPA. Le document est consultable à l'adresse <Code>anthropic.com/legal/data-processing-addendum</Code>. Note : si vous accédez à Claude via une plateforme tierce, votre utilisation est régie par les conditions du prestataire, pas directement par le DPA Anthropic.
+                <p style={{ margin: '0 0 8px' }}><strong>Comment signer le DPA :</strong> le DPA d'Anthropic est automatiquement incorporé dans les Conditions Commerciales de Service. En acceptant ces conditions, vous acceptez également le DPA.</p>
+                <p style={{ margin: 0 }}>Le document est consultable à l'adresse <Code>anthropic.com/legal/data-processing-addendum</Code>. Note : si vous accédez à Claude via une plateforme tierce, votre utilisation est régie par les conditions du prestataire, pas directement par le DPA Anthropic.</p>
               </Callout>
 
               <H3>Ce que le DPA garantit</H3>
@@ -578,32 +599,29 @@ export default function SecuriteClaudeEntreprise() {
               </div>
 
               <H3>Mesures de sécurité contractualisées (Annexe 2)</H3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
+              <Lignes>
                 {[
                   ['Contrôle des accès', 'MFA obligatoire pour tous les accès aux systèmes traitant des données clients. Principe du moindre privilège via RBAC. Révocation immédiate à la fin du contrat de travail.'],
                   ['Tests d\'intrusion annuels', 'Évaluations annuelles par des experts externes. Résumé du rapport disponible sur demande client.'],
                   ['Isolation logique des données', 'Les données de chaque client sont logiquement isolées. Aucun client ne peut accéder aux données d\'un autre sans autorisation explicite.'],
                   ['Droit d\'audit', 'Sur demande écrite, le client peut mandater un auditeur externe pour vérifier la conformité. Un audit maximum par période de 12 mois, sauf en cas d\'incident.'],
                 ].map(([title, body]) => (
-                  <div key={title} style={{ background: C.bg, borderRadius: 10, padding: '14px 16px', border: `1px solid ${C.border}` }}>
-                    <strong style={{ display: 'block', fontSize: 13.5, color: C.ink, marginBottom: 4 }}>{title}</strong>
-                    <span style={{ fontSize: 13, color: C.textSoft, lineHeight: 1.55 }}>{body}</span>
-                  </div>
+                  <Ligne key={title} title={title}>{body}</Ligne>
                 ))}
-              </div>
+              </Lignes>
 
               <H3>Transferts internationaux</H3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 14 }}>
-                <Card Icon={Globe} title="Union Européenne">
+              <Lignes>
+                <Ligne Icon={Globe} title="Union Européenne">
                   Clauses Contractuelles Types (CCT) Module 2 et 3 incorporées. Droit applicable : République d'Irlande. Autorité compétente : superviseur du pays d'établissement de l'exportateur.
-                </Card>
-                <Card Icon={Globe} title="Royaume-Uni">
+                </Ligne>
+                <Ligne Icon={Globe} title="Royaume-Uni">
                   UK Addendum aux CCT intégré, conforme au UK GDPR et au Data Protection Act 2018. L'addendum approuvé version B.1.0 de l'ICO est applicable.
-                </Card>
-                <Card Icon={Globe} title="Suisse">
+                </Ligne>
+                <Ligne Icon={Globe} title="Suisse">
                   Swiss Addendum applicable, conforme à la Loi fédérale sur la protection des données (LPD). Autorité compétente : Préposé fédéral à la protection des données (PFPDT).
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
             </SectionShell>
 
             {/* ════════════ PARTIE 5 — RGPD ════════════ */}
@@ -655,17 +673,17 @@ export default function SecuriteClaudeEntreprise() {
                 Claude Enterprise s'intègre à vos outils d'identité existants et permet un contrôle granulaire des accès par rôle.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16 }}>
-                <Card Icon={Key} accent={C.blue} title="SSO — Single Sign-On" footer={<><TagPill>SAML 2.0</TagPill><TagPill>OIDC</TagPill><TagPill>Okta</TagPill><TagPill>Azure AD</TagPill><TagPill>Google Workspace</TagPill><TagPill>Auth0</TagPill></>}>
+              <Lignes>
+                <Ligne Icon={Key} accent={C.blue} title="SSO — Single Sign-On" footer={<><TagPill>SAML 2.0</TagPill><TagPill>OIDC</TagPill><TagPill>Okta</TagPill><TagPill>Azure AD</TagPill><TagPill>Google Workspace</TagPill><TagPill>Auth0</TagPill></>}>
                   Authentification centralisée via vos outils d'identité existants. Enforce vos politiques MFA automatiquement. L'intégration passe par WorkOS, le fournisseur technique d'Anthropic pour la vérification de domaine.
-                </Card>
-                <Card Icon={UsersIcon} accent="#0EA5B8" title="RBAC — Contrôle par rôle" footer={<><TagPill>Propriétaire</TagPill><TagPill>Admin</TagPill><TagPill>Membre</TagPill></>}>
+                </Ligne>
+                <Ligne Icon={UsersIcon} accent="#0EA5B8" title="RBAC — Contrôle par rôle" footer={<><TagPill>Propriétaire</TagPill><TagPill>Admin</TagPill><TagPill>Membre</TagPill></>}>
                   Assignez des permissions précises selon le rôle de chaque collaborateur. Principe du moindre privilège : chaque utilisateur accède uniquement aux fonctionnalités dont il a besoin.
-                </Card>
-                <Card Icon={Building2} accent="#6D28D9" title="Domain Capture" footer={<TagPill>DNS TXT validation</TagPill>}>
+                </Ligne>
+                <Ligne Icon={Building2} accent="#6D28D9" title="Domain Capture" footer={<TagPill>DNS TXT validation</TagPill>}>
                   Les nouveaux comptes créés avec un email de votre domaine sont automatiquement rattachés à votre organisation. Évite les comptes « fantômes » hors périmètre de sécurité.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
 
               <Callout>
                 <strong>Team vs Enterprise :</strong> les deux plans supportent SSO et JIT. Le SCIM (synchronisation automatique des annuaires) est réservé à Enterprise et aux organisations Console éligibles.
@@ -804,13 +822,27 @@ export default function SecuriteClaudeEntreprise() {
 
               <StepList>
                 <Step n={1} title="Activer le SSO et le Domain Capture">
-                  Garantit que tous les accès passent par votre annuaire et empêche les collaborateurs de créer des comptes personnels avec leur email professionnel. Configurer le SSO dans <Code>Paramètres › Organisation et accès › Authentification</Code>, puis importer les métadonnées XML SAML 2.0 ou OIDC depuis votre IdP (Okta, Azure AD, Google Workspace, Auth0). Activer <strong>Require SSO for Claude</strong> après test pilote. Activer le Domain Capture dans WorkOS et valider par enregistrement <Code>DNS TXT</Code> (5 min pour votre IT).
+                  <p style={{ margin: '0 0 8px' }}>Garantit que tous les accès passent par votre annuaire et empêche les collaborateurs de créer des comptes personnels avec leur email professionnel.</p>
+                  <p style={{ margin: '0 0 8px' }}>Configurer le SSO dans <Code>Paramètres › Organisation et accès › Authentification</Code>, puis importer les métadonnées XML SAML 2.0 ou OIDC depuis votre IdP (Okta, Azure AD, Google Workspace, Auth0). Activer <strong>Require SSO for Claude</strong> après test pilote.</p>
+                  <p style={{ margin: 0 }}>Activer le Domain Capture dans WorkOS et valider par enregistrement <Code>DNS TXT</Code> (5 min pour votre IT).</p>
                 </Step>
                 <Step n={2} title="Configurer les rôles (RBAC)">
-                  Trois niveaux d'accès sur Team. Propriétaire (accès complet, facturation, direction / DSI / DPO), Admin (gère les utilisateurs et accès, IT / référents IA), Membre (utilise Claude dans le cadre défini). Assigner les rôles dans <Code>Paramètres › Membres</Code> avant d'inviter vos utilisateurs.
+                  <p style={{ margin: '0 0 8px' }}>Trois niveaux d'accès sur Team.</p>
+                  <ul style={{ listStyle: 'disc', paddingLeft: 18, margin: '0 0 8px', display: 'grid', gap: 4 }}>
+                    <li>Propriétaire (accès complet, facturation, direction / DSI / DPO)</li>
+                    <li>Admin (gère les utilisateurs et accès, IT / référents IA)</li>
+                    <li>Membre (utilise Claude dans le cadre défini)</li>
+                  </ul>
+                  <p style={{ margin: 0 }}>Assigner les rôles dans <Code>Paramètres › Membres</Code> avant d'inviter vos utilisateurs.</p>
                 </Step>
                 <Step n={3} title="Mettre à jour le registre RGPD (ROPA)">
-                  Obligation légale dès que Claude traite des données personnelles. Documenter : sous-traitant Anthropic PBC, durée de conservation 30 jours sur Team sans ZDR, transferts hors UE encadrés par les CCT incluses dans les conditions commerciales. Faire valider la fiche par votre DPO, évaluer si une DPIA est requise, informer les collaborateurs que leurs interactions transitent par Anthropic.
+                  <p style={{ margin: '0 0 8px' }}>Obligation légale dès que Claude traite des données personnelles. Documenter :</p>
+                  <ul style={{ listStyle: 'disc', paddingLeft: 18, margin: '0 0 8px', display: 'grid', gap: 4 }}>
+                    <li>Sous-traitant Anthropic PBC</li>
+                    <li>Durée de conservation 30 jours sur Team sans ZDR</li>
+                    <li>Transferts hors UE encadrés par les CCT incluses dans les conditions commerciales</li>
+                  </ul>
+                  <p style={{ margin: 0 }}>Faire valider la fiche par votre DPO, évaluer si une DPIA est requise, informer les collaborateurs que leurs interactions transitent par Anthropic.</p>
                 </Step>
               </StepList>
 
@@ -827,27 +859,36 @@ export default function SecuriteClaudeEntreprise() {
 
               <StepList>
                 <Step n={4} title="Formaliser le DPA (Enterprise uniquement)">
-                  Sur Enterprise, le DPA est inclus et formalisé dans le contrat. Il s'active à la souscription. Le transmettre à votre DPO, l'archiver dans votre dossier fournisseurs, l'inscrire dans votre ROPA. Le document est sur <Code>anthropic.com/legal/data-processing-addendum</Code> et inclut les CCT pour l'UE, l'UK Addendum et le Swiss Addendum.
+                  <p style={{ margin: '0 0 8px' }}>Sur Enterprise, le DPA est inclus et formalisé dans le contrat. Il s'active à la souscription.</p>
+                  <p style={{ margin: 0 }}>Le transmettre à votre DPO, l'archiver dans votre dossier fournisseurs, l'inscrire dans votre ROPA. Le document est sur <Code>anthropic.com/legal/data-processing-addendum</Code> et inclut les CCT pour l'UE, l'UK Addendum et le Swiss Addendum.</p>
                 </Step>
                 <Step n={5} title="Activer le ZDR si nécessaire (Enterprise uniquement)">
-                  Avenant contractuel, pas un paramètre en self-serve. Contacter Anthropic via votre account manager, demander l'avenant ZDR dans votre contrat Enterprise, une fois signé il s'applique à tous les appels de votre organisation. Pertinent pour les obligations contractuelles de non-conservation client, ou les données commerciales / financières à fort enjeu de confidentialité. Sans ZDR, la rétention de 30 jours reste suffisante pour la majorité des usages.
+                  <p style={{ margin: '0 0 8px' }}>Avenant contractuel, pas un paramètre en self-serve. Contacter Anthropic via votre account manager, demander l'avenant ZDR dans votre contrat Enterprise, une fois signé il s'applique à tous les appels de votre organisation.</p>
+                  <p style={{ margin: 0 }}>Pertinent pour les obligations contractuelles de non-conservation client, ou les données commerciales / financières à fort enjeu de confidentialité. Sans ZDR, la rétention de 30 jours reste suffisante pour la majorité des usages.</p>
                 </Step>
                 <Step n={6} title="Réaliser l'évaluation des risques fournisseur (recommandé Enterprise)">
-                  Souvent requise pour les processus d'achat grands comptes. Trust Portal sur <Code>trust.anthropic.com</Code> avec rapport SOC 3 public, rapport SOC 2 Type II sous NDA, certificats ISO 27001 et ISO 42001, liste des sous-traitants. Réponses types questionnaire : AES-256 au repos, TLS 1.2+ en transit, notification de violation 48 heures, tests d'intrusion annuels.
+                  <p style={{ margin: '0 0 8px' }}>Souvent requise pour les processus d'achat grands comptes. Trust Portal sur <Code>trust.anthropic.com</Code> avec rapport SOC 3 public, rapport SOC 2 Type II sous NDA, certificats ISO 27001 et ISO 42001, liste des sous-traitants.</p>
+                  <p style={{ margin: '0 0 8px' }}>Réponses types questionnaire :</p>
+                  <ul style={{ listStyle: 'disc', paddingLeft: 18, margin: 0, display: 'grid', gap: 4 }}>
+                    <li>AES-256 au repos</li>
+                    <li>TLS 1.2+ en transit</li>
+                    <li>Notification de violation 48 heures</li>
+                    <li>Tests d'intrusion annuels</li>
+                  </ul>
                 </Step>
               </StepList>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16, marginTop: 24 }}>
-                <Card Icon={UsersIcon} title="Former vos équipes">
+              <Lignes style={{ marginTop: 24 }}>
+                <Ligne Icon={UsersIcon} title="Former vos équipes">
                   Politique d'usage documentée. Classification des données. Règles sur les données clients et RH. Référent sécurité IA par équipe.
-                </Card>
-                <Card Icon={Search} title="En continu">
+                </Ligne>
+                <Ligne Icon={Search} title="En continu">
                   Revue des logs d'audit mensuels. Revue des rôles tous les trimestres. Veille sur les mises à jour des CGU. Revue annuelle de la DPIA si applicable.
-                </Card>
-                <Card Icon={ShieldAlert} accent={C.blue} title="Besoin d'aide">
+                </Ligne>
+                <Ligne Icon={ShieldAlert} accent={C.blue} title="Besoin d'aide">
                   Masteria accompagne les équipes DSI et DPO dans la mise en place de ces étapes, de la configuration technique à la rédaction de la fiche ROPA.
-                </Card>
-              </div>
+                </Ligne>
+              </Lignes>
             </SectionShell>
 
             {/* RECAP */}

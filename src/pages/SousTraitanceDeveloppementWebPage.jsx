@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, BadgeCheck, Bot, CalendarCheck, EyeOff, FileSearch, FileText, GitBranch, Handshake, KeyRound, MessageSquare, PackageCheck, Scale, ShieldCheck, Workflow } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reperes } from '../components/Aere'
 
 /*
  * Page « Sous-traitance développement web » (créée le 23/10/2026).
@@ -27,7 +28,6 @@ const SITE = 'https://www.master-ia.fr'
 const SLUG = 'sous-traitance-developpement-web'
 const FULL_URL = `${SITE}/${SLUG}`
 const c = '#2563EB'
-const cLight = '#DBEAFE'
 const DATE_PUBLISHED = '2026-10-23'
 const DATE_MODIFIED = '2026-10-23'
 const RDV_URL = '/contact?type=projet&rdv=30'
@@ -53,7 +53,6 @@ const leadStyle = { fontSize: 'clamp(16.5px, 2vw, 18px)', color: '#374151', line
 const mutedStyle = { fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }
 const calloutStyle = { background: '#fff', border: '1px solid #E5E7EB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16, lineHeight: 1.75, color: '#0A0A0A', margin: '0 0 14px', maxWidth: 880 }
 const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 28 }
-const iconBoxStyle = { width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }
 const tableWrapStyle = { overflowX: 'auto', background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }
 const thStyle = { background: '#F9FAFB', textAlign: 'left', padding: '14px 18px', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: '#374151', textTransform: 'uppercase', letterSpacing: '0.05em', borderBottom: '1px solid #E5E7EB', whiteSpace: 'nowrap' }
 const srOnlyStyle = { position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }
@@ -309,6 +308,30 @@ const articleJsonLd = {
   citation: SOURCES.map(s => s.url),
 }
 
+/* Liste verticale pleine largeur (plus de cartes de texte côte à côte) : picto, sur-titre, titre, texte, pied */
+function Lignes({ items, sombre = false, as: Liste = 'ol' }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', picto: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', picto: c }
+  return (
+    <Liste style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}` }}>
+      {items.map(({ icon: Icon, kicker, titre, texte, pied }) => (
+        <li key={titre} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.picto, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', marginTop: -2 }}>
+            <Icon size={17} strokeWidth={1.75} />
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 720 }}>
+            {kicker && <span style={{ display: 'block', fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: t.picto, marginBottom: 4 }}>{kicker}</span>}
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35 }}>{titre}</h3>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+            {pied}
+          </div>
+        </li>
+      ))}
+    </Liste>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -323,7 +346,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse toujours dans le DOM (prérendu citable), repliée en CSS */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -392,10 +417,16 @@ export default function SousTraitanceDeveloppementWebPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria, qui place des développeurs IA et web chez des agences et des ESN · mise à jour le 23 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p id="definition" style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>La sous-traitance de développement web consiste à confier à une autre entreprise tout ou partie du code d'un site ou d'une application que vous avez vendu à votre client</strong>. Vous restez responsable devant ce client, le sous-traitant répond devant vous. La loi du 31 décembre 1975 en pose le cadre ; trois écrits signés avant de coder en font une réussite.
-          </p>
+          {/* GEO : réponse directe citable (accroche, phrases suivantes en puces à pictos) */}
+          <div id="definition" style={{ margin: '0 0 26px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 16px' }}>
+              <strong style={{ color: '#fff', fontWeight: 700 }}>La sous-traitance de développement web consiste à confier à une autre entreprise tout ou partie du code d'un site ou d'une application que vous avez vendu à votre client</strong>.
+            </p>
+            <PointsCles sombre taille={16} style={{ margin: 0 }} phrases={[
+              'Vous restez responsable devant ce client, le sous-traitant répond devant vous.',
+              'La loi du 31 décembre 1975 en pose le cadre ; trois écrits signés avant de coder en font une réussite.',
+            ]} />
+          </div>
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 680 }}>
             Agences web, ESN et éditeurs y recourent pour absorber un pic de charge, tenir un délai ou livrer une technologie qu'ils ne pratiquent pas encore. Une partie de ces renforts porte désormais sur l'IA : un assistant à intégrer au site d'un client, un agent branché sur son CRM, une automatisation entre ses logiciels.
@@ -412,17 +443,7 @@ export default function SousTraitanceDeveloppementWebPage() {
           </div>
 
           {/* En bref (GEO) */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {EN_BREF.map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre titre="En bref" items={EN_BREF.map(([label, detail]) => ({ label, detail }))} colonnes={3} style={{ margin: 0, maxWidth: 1000 }} />
         </div>
       </section>
 
@@ -457,31 +478,20 @@ export default function SousTraitanceDeveloppementWebPage() {
             Les trois écrits tiennent souvent en quelques pages annexées au contrat-cadre. Les rédiger demande une demi-journée ; les reconstituer au milieu d'un désaccord coûte bien davantage.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 20 }}>
-            {ECRITS.map((e, i) => {
-              const Icon = e.icon
-              return (
-                <article key={e.title} style={{ ...cardStyle, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                    <div style={iconBoxStyle}>
-                      <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c }}>{`Écrit ${i + 1}`}</span>
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(17px, 2vw, 20px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em' }}>{e.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: '0 0 16px' }}>{e.body}</p>
-                  <ul style={{ listStyle: 'none', padding: '14px 0 0', margin: 'auto 0 0', borderTop: '1px solid #E5E7EB', display: 'grid', gap: 8 }}>
-                    {e.items.map(it => (
-                      <li key={it} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 13.5, color: '#374151', lineHeight: 1.5 }}>
-                        <BadgeCheck size={15} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
-                        {it}
-                      </li>
-                    ))}
-                  </ul>
-                </article>
-              )
-            })}
-          </div>
+          {/* Un écrit par rangée, en pleine largeur, avec sa liste de contrôle */}
+          <Lignes items={ECRITS.map((e, i) => ({
+            icon: e.icon, kicker: `Écrit ${i + 1}`, titre: e.title, texte: e.body,
+            pied: (
+              <ul style={{ listStyle: 'none', padding: 0, margin: '14px 0 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '8px 20px' }}>
+                {e.items.map(it => (
+                  <li key={it} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', fontSize: 14, color: '#374151', lineHeight: 1.5 }}>
+                    <BadgeCheck size={15} strokeWidth={1.75} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                    {it}
+                  </li>
+                ))}
+              </ul>
+            ),
+          }))} />
         </div>
       </section>
 
@@ -538,7 +548,10 @@ export default function SousTraitanceDeveloppementWebPage() {
           </div>
 
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
-            <strong>Une voie médiane existe :</strong> la sous-traitance déclarée. Votre client sait qu'un spécialiste intervient et l'accepte, sans contrat direct avec lui. C'est le schéma que décrit la loi de 1975, et celui qui protège le mieux le sous-traitant en cas d'impayé (voir le <a href="#cadre-legal" style={linkStyle}>cadre légal</a>). Pour un renfort d'une seule personne sur une longue durée, la fiche <Link to="/developpeur-ia" style={linkStyle}>développeur IA</Link> compare aussi le freelance et le poste interne.
+            <strong>Une voie médiane existe :</strong> la sous-traitance déclarée. Votre client sait qu'un spécialiste intervient et l'accepte, sans contrat direct avec lui.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '12px 0 0', maxWidth: 880 }}>
+            C'est le schéma que décrit la loi de 1975, et celui qui protège le mieux le sous-traitant en cas d'impayé (voir le <a href="#cadre-legal" style={linkStyle}>cadre légal</a>). Pour un renfort d'une seule personne sur une longue durée, la fiche <Link to="/developpeur-ia" style={linkStyle}>développeur IA</Link> compare aussi le freelance et le poste interne.
           </p>
         </div>
       </section>
@@ -556,22 +569,19 @@ export default function SousTraitanceDeveloppementWebPage() {
             Pour chaque brique, voici ce que livre le sous-traitant et ce que votre agence a intérêt à garder.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: 20, marginBottom: 'clamp(44px, 6vw, 64px)' }}>
-            {BRIQUES.map(b => {
-              const Icon = b.icon
-              return (
-                <article key={b.title} style={cardStyle}>
-                  <div style={{ ...iconBoxStyle, marginBottom: 14 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 12px' }}>{b.title}</h3>
+          {/* Une brique par rangée, en pleine largeur */}
+          <div style={{ marginBottom: 'clamp(44px, 6vw, 64px)' }}>
+            <Lignes as="ul" items={BRIQUES.map(b => ({
+              icon: b.icon, titre: b.title,
+              pied: (
+                <>
                   <p style={{ fontSize: 13, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 4px', fontFamily: 'Nunito, sans-serif' }}>Le sous-traitant livre</p>
-                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '0 0 12px' }}>{b.livre}</p>
+                  <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '0 0 12px' }}>{b.livre}</p>
                   <p style={{ fontSize: 13, fontWeight: 800, color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 4px', fontFamily: 'Nunito, sans-serif' }}>Votre agence garde</p>
-                  <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}>{b.garde}</p>
-                </article>
-              )
-            })}
+                  <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: 0 }}>{b.garde}</p>
+                </>
+              ),
+            }))} />
           </div>
 
           <div style={editorialGrid}>
@@ -609,23 +619,8 @@ export default function SousTraitanceDeveloppementWebPage() {
             Les cinq étapes valent pour le forfait comme pour la régie ; seul le pilotage du quotidien change de mains.
           </p>
 
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20 }}>
-            {ETAPES.map((e, i) => {
-              const Icon = e.icon
-              return (
-                <li key={e.title} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
-                    <div style={{ width: 40, height: 40, borderRadius: 11, background: cLight, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                      <Icon size={21} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                    </div>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c }}>{`Étape ${i + 1}`}</span>
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(16.5px, 2vw, 19px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px', letterSpacing: '-0.01em' }}>{e.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{e.body}</p>
-                </li>
-              )
-            })}
-          </ol>
+          {/* Une étape par rangée, en pleine largeur */}
+          <Lignes items={ETAPES.map((e, i) => ({ icon: e.icon, kicker: `Étape ${i + 1}`, titre: e.title, texte: e.body }))} />
         </div>
       </section>
 
@@ -657,7 +652,7 @@ export default function SousTraitanceDeveloppementWebPage() {
                   <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(17px, 2vw, 20px)', fontWeight: 800, color: '#F8FAFC', margin: 0, letterSpacing: '-0.01em' }}>{b.title}</h3>
                 </div>
                 {b.paras.map(p => (
-                  <p key={p.slice(0, 40)} style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 900 }}>{p}</p>
+                  <Paras key={p.slice(0, 40)} texte={p} max={2} style={{ fontSize: 14.5, color: '#CBD5E1', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 900 }} />
                 ))}
                 <a href={b.url} target="_blank" rel="noopener noreferrer" style={{ ...darkLinkStyle, fontSize: 13 }}>{b.linkLabel}</a>
               </article>
@@ -765,8 +760,11 @@ export default function SousTraitanceDeveloppementWebPage() {
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(20px, 2.4vw, 26px)', fontWeight: 900, color: '#F8FAFC', margin: '0 0 12px', letterSpacing: '-0.01em', lineHeight: 1.25 }}>
               Des développeurs indépendants choisis lot par lot, dont Mathias Nizan répond devant vous
             </h2>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '0 0 12px' }}>
+              Ils pratiquent React, Next.js, TypeScript, Node.js et Python, Supabase et PostgreSQL, Vercel, les API des CRM et des ERP comme Odoo, n8n et les modèles Claude, GPT, Gemini et Mistral.
+            </p>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Ils pratiquent React, Next.js, TypeScript, Node.js et Python, Supabase et PostgreSQL, Vercel, les API des CRM et des ERP comme Odoo, n8n et les modèles Claude, GPT, Gemini et Mistral. Masteria construit et exploite avec eux ses propres outils : ce site, aux pages prérendues pour le référencement, et la plateforme qui gère ses formations et ses clients, sous Next.js et Supabase. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions IA documentées</Link> montrent la façon de travailler.
+              Masteria construit et exploite avec eux ses propres outils : ce site, aux pages prérendues pour le référencement, et la plateforme qui gère ses formations et ses clients, sous Next.js et Supabase. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>missions IA documentées</Link> montrent la façon de travailler.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
