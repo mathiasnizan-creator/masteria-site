@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { ArrowRight, BadgeCheck, ShieldCheck, Lock, Quote, Users, Building2 } from 'lucide-react'
+import { ArrowRight, BadgeCheck, ShieldCheck, Lock, Quote, Users, Building2, Target, Lightbulb } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
-import { useIsDesktop } from '../hooks/useMediaQuery'
 import { CASES, METHODE_COMMUNE } from '../data/etudes-de-cas'
 import MissionsFormationDetail from '../components/MissionsFormationDetail'
 import { MISSIONS } from '../data/missions-formation'
+import { Paras, PointsCles, Reperes, Rangees, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page « Études de cas IA » — la PREUVE (E-E-A-T + conversion).
@@ -41,7 +41,6 @@ const kickerStyle = { fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeig
 const h2Style = { fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800, color: '#0A0A0A', letterSpacing: '-0.01em', lineHeight: 1.2, margin: '0 0 18px' }
 const leadStyle = { fontSize: 'clamp(16.5px, 2vw, 18px)', color: '#374151', lineHeight: 1.75, margin: '0 0 16px', maxWidth: 760 }
 const mutedStyle = { fontSize: 15, color: '#6B7280', lineHeight: 1.7, margin: '0 0 40px', maxWidth: 740 }
-const cardStyle = { background: '#fff', border: '1px solid #E5E7EB', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,0.04)', padding: 28 }
 
 /* Offre mobilisée sur chaque pilier de mission (même ordre que k.pillars : Conseil, Construction, Formation). */
 const PILIER_LIENS = {
@@ -198,13 +197,38 @@ function FAQItem({ q, a }) {
         <span aria-hidden="true" style={{ fontSize: 22, color: c, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1400 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0, maxWidth: 760 }} />
+        </div>
       </div>
     </div>
   )
 }
 
-function CaseSection({ k, index, isDesktop }) {
+/* Rangées verticales au contenu libre (liste à puces, lien) : même dessin que <Rangees>,
+   pour remplacer les cartes posées côte à côte qui ne portent pas qu'un paragraphe. */
+function RangeesLibres({ items, sombre = false, style, Titre = 'h3' }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', pastille: 'rgba(37,99,235,0.16)', chiffre: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', pastille: '#EFF4FF', chiffre: c }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
+      {items.map(({ titre, icon: Icon, contenu }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '22px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.chiffre, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, marginTop: -2 }}>
+            {Icon ? <Icon size={17} strokeWidth={1.75} /> : i + 1}
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 760, flex: 1 }}>
+            <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: t.titre, margin: '0 0 10px', lineHeight: 1.35 }}>{titre}</Titre>
+            {contenu}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+function CaseSection({ k, index }) {
   const Icon = k.icon
   const dark = index % 2 === 1
   const bg = dark ? '#0A0F1E' : (index % 2 === 0 && index > 0 ? '#F9FAFB' : '#fff')
@@ -239,17 +263,11 @@ function CaseSection({ k, index, isDesktop }) {
           ))}
         </div>
 
-        {/* défi / réponse */}
-        <div style={isDesktop ? { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 4vw, 48px)' } : {}}>
-          <div>
-            <h3 style={h3}>Le défi</h3>
-            <p style={{ fontSize: 15, color: body, lineHeight: 1.75, margin: 0 }}>{k.defi}</p>
-          </div>
-          <div style={!isDesktop ? { marginTop: 26 } : {}}>
-            <h3 style={h3}>La réponse Masteria</h3>
-            <p style={{ fontSize: 15, color: body, lineHeight: 1.75, margin: 0 }}>{k.reponse}</p>
-          </div>
-        </div>
+        {/* défi / réponse : deux rangées pleine largeur */}
+        <Rangees sombre={dark} items={[
+          { titre: 'Le défi', texte: k.defi, icon: Target },
+          { titre: 'La réponse Masteria', texte: k.reponse, icon: Lightbulb },
+        ]} />
 
         {/* LA MÉTHODE EN SIX TEMPS (colonne vertébrale) */}
         <div style={{ marginTop: 40 }}>
@@ -270,11 +288,11 @@ function CaseSection({ k, index, isDesktop }) {
           </div>
         </div>
 
-        {/* déployé + résultat */}
-        <div style={{ ...(isDesktop ? { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(24px, 4vw, 48px)' } : {}), marginTop: 40 }}>
+        {/* déployé + résultat, l'un sous l'autre */}
+        <div style={{ marginTop: 40 }}>
           <div>
             <h3 style={{ ...h3, marginBottom: 12 }}>Ce qui a été livré</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 9 }}>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '9px 28px' }}>
               {k.livrables.map(l => (
                 <li key={l} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: body, lineHeight: 1.6 }}>
                   <BadgeCheck size={16} strokeWidth={2.4} style={{ color: accent, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
@@ -283,10 +301,10 @@ function CaseSection({ k, index, isDesktop }) {
               ))}
             </ul>
           </div>
-          <div style={!isDesktop ? { marginTop: 26 } : {}}>
+          <div style={{ marginTop: 28, maxWidth: 820 }}>
             <div style={{ background: dark ? 'rgba(37,99,235,0.12)' : '#F9FAFB', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '16px 20px' }}>
               <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: dark ? '#93C5FD' : c, textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>Où en est la mission</div>
-              <p style={{ fontSize: 14.5, color: dark ? '#E2E8F0' : '#0A0A0A', lineHeight: 1.7, margin: 0 }}>{k.resultat}</p>
+              <Paras texte={k.resultat} max={2} style={{ fontSize: 14.5, color: dark ? '#E2E8F0' : '#0A0A0A', lineHeight: 1.7, margin: 0 }} />
             </div>
             {k.verbatim && (
               <blockquote style={{ margin: '20px 0 0', padding: '16px 20px', background: cardBg, border: cardBorder, borderRadius: 14 }}>
@@ -302,29 +320,22 @@ function CaseSection({ k, index, isDesktop }) {
         {k.resultats && (
           <div style={{ marginTop: 40 }}>
             <div style={label}>Ce que la mission change</div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 16 }}>
-              {[
-                { icon: Users, t: 'Pour les équipes', items: k.resultats.equipes },
-                { icon: Building2, t: "Pour l'organisation", items: k.resultats.organisation },
-              ].map(({ icon: RIcon, t, items }) => (
-                <div key={t} style={{ background: cardBg, border: cardBorder, borderTop: `3px solid ${c}`, borderRadius: 14, padding: '20px 22px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                    <span aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 9, background: dark ? 'rgba(37,99,235,0.18)' : cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <RIcon size={16} strokeWidth={2.2} style={{ color: accent }} />
-                    </span>
-                    <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 15.5, fontWeight: 800, color: ink }}>{t}</span>
-                  </div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
-                    {items.map(it => (
-                      <li key={it} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 14.5, color: body, lineHeight: 1.65 }}>
-                        <ArrowRight size={15} strokeWidth={2.4} style={{ color: accent, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
-                        {it}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+            <RangeesLibres sombre={dark} Titre="div" items={[
+              { icon: Users, titre: 'Pour les équipes', liste: k.resultats.equipes },
+              { icon: Building2, titre: "Pour l'organisation", liste: k.resultats.organisation },
+            ].map(({ icon, titre, liste }) => ({
+              icon, titre,
+              contenu: (
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 10 }}>
+                  {liste.map(it => (
+                    <li key={it} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', fontSize: 15, color: body, lineHeight: 1.65 }}>
+                      <ArrowRight size={15} strokeWidth={1.75} style={{ color: accent, flexShrink: 0, marginTop: 4 }} aria-hidden="true" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              ),
+            }))} />
           </div>
         )}
 
@@ -365,7 +376,6 @@ function CaseSection({ k, index, isDesktop }) {
 }
 
 export default function EtudesDeCasIAPage() {
-  const isDesktop = useIsDesktop()
   const { hash } = useLocation()
   // Les cartes des pages money pointent vers /etudes-de-cas-ia#<cas> : la page
   // est chargée à la volée, le navigateur ne peut pas défiler seul vers l'ancre.
@@ -438,14 +448,15 @@ export default function EtudesDeCasIAPage() {
             Rédigé par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, qui a piloté ces missions · première version en juillet 2026, actualisée le 7 octobre 2026
           </p>
 
-          {/* GEO : réponse directe citable */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 26px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Un groupe industriel international et ses managers, un cabinet de conseil financier du secteur public qui rédige ses réponses aux marchés, une PME photovoltaïque de trois personnes, dix référents chez un distributeur IT B2B : <strong style={{ color: '#fff', fontWeight: 700 }}>quatre organisations accompagnées par Masteria depuis le cadrage</strong>, sur un déroulé commun en six temps. Six missions de formation récentes complètent la page, avec les retours écrits des participants.
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Un groupe industriel international et ses managers, un cabinet de conseil financier du secteur public qui rédige ses réponses aux marchés, une PME photovoltaïque de trois personnes, dix référents chez un distributeur IT B2B : <strong style={{ color: '#fff', fontWeight: 700 }}>quatre organisations accompagnées par Masteria depuis le cadrage</strong>, sur un déroulé commun en six temps.
           </p>
-
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 34px', maxWidth: 700 }}>
-            Aucun nom n'apparaît : ces clients voient leur avance sur l'IA comme un atout et préfèrent la garder pour eux. Chaque cas donne le secteur, la taille, la méthode et les chiffres ; un échange avec le client peut s'organiser en privé, une fois un accord de confidentialité signé.
-          </p>
+          <PointsCles sombre style={{ margin: '0 0 34px', maxWidth: 760 }} phrases={[
+            'Six missions de formation récentes complètent la page, avec les retours écrits des participants.',
+            "Aucun nom n'apparaît : ces clients voient leur avance sur l'IA comme un atout et préfèrent la garder pour eux.",
+            "Chaque cas donne le secteur, la taille, la méthode et les chiffres ; un échange avec le client peut s'organiser en privé, une fois un accord de confidentialité signé.",
+          ]} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
             <a href="#distribution" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -457,25 +468,19 @@ export default function EtudesDeCasIAPage() {
             </Link>
           </div>
 
-          {/* En bref (GEO) : dl citable */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 14, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 760 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 16 }}>En bref</div>
-            <dl style={{ margin: 0, display: 'grid', gap: 14 }}>
-              {[
-                ['Industrie · groupe international', "Copilot déployé par paliers : cadrage avec le Data manager, une matinée pour le comité de direction, 24 managers pilotes, 13 ateliers bâtis sur les tableaux et documents du groupe ; au total, cinq sessions de deux jours, dont deux en anglais, se sont étalées entre juillet et fin septembre 2026 ; le Mexique et les États-Unis sont prévus en octobre 2026, l'Inde en décembre."],
-                ['Conseil financier · secteur public', "Quatre assistants dédiés aux appels d'offres, chacun propre à une famille de marchés, conçus avec les consultants en quatre séances de travail de deux heures, puis une journée de formation sur des dossiers récents."],
-                ['Distribution photovoltaïque · PME', "Un diagnostic lu flux par flux, trois chantiers confiés chacun à un porteur, une charte d'usage, puis un plan sur 90 jours ; la formation sur site est programmée pour octobre 2026."],
-                ['Distribution IT B2B', "Dix référents formés en juin 2026 ont conçu onze compétences Claude ; les autres salariés en profiteront à leur tour, d'octobre à décembre 2026, lors du déploiement prévu."],
-                ['Missions de formation', "Six formations menées en août et septembre 2026, en intra ou en individuel : Claude, Copilot, Gemini et un panorama multi-outils, avec les retours écrits des participants."],
-                ['Pourquoi anonymisées ?', "Les clients l'ont demandé. Une référence se vérifie en privé, sous un accord de confidentialité signé au préalable."],
-              ].map(([k, v], i) => (
-                <div key={k} style={{ paddingTop: i === 0 ? 0 : 14, borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13.5, fontWeight: 800, color: '#E2E8F0', marginBottom: 4 }}>{k}</dt>
-                  <dd style={{ margin: 0, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{v}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref (GEO) : faits clés en repères */}
+          <Reperes sombre titre="En bref" colonnes={2} style={{ margin: 0, maxWidth: 900 }} items={[
+            ...lignesEnReperes([
+              { label: 'Industrie · groupe international', value: "Copilot déployé par paliers : cadrage avec le Data manager, une matinée pour le comité de direction, 24 managers pilotes, 13 ateliers bâtis sur les tableaux et documents du groupe ; au total, cinq sessions de deux jours, dont deux en anglais, se sont étalées entre juillet et fin septembre 2026 ; le Mexique et les États-Unis sont prévus en octobre 2026, l'Inde en décembre." },
+              { label: 'Conseil financier · secteur public', value: "Quatre assistants dédiés aux appels d'offres, chacun propre à une famille de marchés, conçus avec les consultants en quatre séances de travail de deux heures, puis une journée de formation sur des dossiers récents." },
+              { label: 'Distribution photovoltaïque · PME', value: "Un diagnostic lu flux par flux, trois chantiers confiés chacun à un porteur, une charte d'usage, puis un plan sur 90 jours ; la formation sur site est programmée pour octobre 2026." },
+            ]),
+            { label: 'Distribution IT B2B', value: 'Dix référents formés en juin 2026 ont conçu onze compétences Claude', detail: "Les autres salariés en profiteront à leur tour, d'octobre à décembre 2026, lors du déploiement prévu." },
+            ...lignesEnReperes([
+              { label: 'Missions de formation', value: "Six formations menées en août et septembre 2026, en intra ou en individuel : Claude, Copilot, Gemini et un panorama multi-outils, avec les retours écrits des participants." },
+            ]),
+            { label: 'Pourquoi anonymisées ?', value: "Les clients l'ont demandé.", detail: 'Une référence se vérifie en privé, sous un accord de confidentialité signé au préalable.' },
+          ]} />
         </div>
       </section>
 
@@ -504,20 +509,9 @@ export default function EtudesDeCasIAPage() {
         <div style={{ maxWidth: 1080, margin: '0 auto' }}>
           <div style={kickerStyle}>La méthode</div>
           <h2 style={h2Style}>Six temps, quelle que soit la mission</h2>
-          <p style={leadStyle}>
-            Trois personnes ou plusieurs milliers de salariés : le dispositif change d'échelle, le déroulé reste le même. La direction cadre, les personnes qui font tourner l'activité décrivent leurs flux, les priorités se classent à trois mois, les outils se construisent à partir des fichiers du client, la formation se fait par métier avec un cadre d'usage, puis vient la mesure. Les quatre cas suivent ces six temps, faits ou prévus.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 18, marginTop: 28 }}>
-            {METHODE_COMMUNE.map(s => (
-              <div key={s.num} style={{ ...cardStyle, padding: 24, borderTop: `3px solid ${c}` }}>
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 8 }}>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c }}>{s.num}</span>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: 0, letterSpacing: '-0.01em' }}>{s.title}</h3>
-                </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{s.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Paras style={leadStyle} texte="Trois personnes ou plusieurs milliers de salariés : le dispositif change d'échelle, le déroulé reste le même. La direction cadre, les personnes qui font tourner l'activité décrivent leurs flux, les priorités se classent à trois mois, les outils se construisent à partir des fichiers du client, la formation se fait par métier avec un cadre d'usage, puis vient la mesure. Les quatre cas suivent ces six temps, faits ou prévus." />
+          {/* Une rangée par temps, en pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 28 }} items={METHODE_COMMUNE.map(s => ({ titre: s.title, texte: s.desc }))} />
         </div>
       </section>
 
@@ -564,7 +558,7 @@ export default function EtudesDeCasIAPage() {
       </section>
 
       {/* ── LES 4 CAS ── */}
-      {CASES.map((k, i) => <CaseSection key={k.id} k={k} index={i} isDesktop={isDesktop} />)}
+      {CASES.map((k, i) => <CaseSection key={k.id} k={k} index={i} />)}
 
       {/* ── MISSIONS DE FORMATION RÉCENTES ── */}
       <MissionsFormationDetail pad={SECTION_PAD} />
@@ -580,23 +574,17 @@ export default function EtudesDeCasIAPage() {
           <p style={mutedStyle}>
             Une règle complète les autres, la discrétion : nos clients gardent leur avance, nous gardons leurs noms.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {[
-              { icon: BadgeCheck, t: "Les fichiers du client comme matière", d: "Ateliers et assistants partent des documents, des données et des outils du client ; un exemple générique ne sert qu'à expliquer une notion." },
-              { icon: ShieldCheck, t: 'Une confidentialité écrite', d: "Comptes professionnels sans réutilisation pour l'entraînement, règles d'usage, sources citées, une personne qui valide ce qui engage le client : tout est fixé avant le premier atelier." },
-              { icon: Lock, t: 'Anonymes en public, vérifiables en privé', d: "Les cas restent anonymes parce que les clients l'ont voulu. Quand la discussion avance, un échange avec l'un d'eux s'organise sous accord de confidentialité." },
-            ].map(({ icon: Icon, t, d }) => (
-              <div key={t} style={{ ...cardStyle, borderTop: `3px solid ${c}` }}>
-                <div style={{ width: 44, height: 44, background: cLight, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 14 }}>
-                  <Icon size={22} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{t}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{d}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une rangée par règle, en pleine largeur */}
+          <Rangees items={[
+            { icon: BadgeCheck, titre: "Les fichiers du client comme matière", texte: "Ateliers et assistants partent des documents, des données et des outils du client ; un exemple générique ne sert qu'à expliquer une notion." },
+            { icon: ShieldCheck, titre: 'Une confidentialité écrite', texte: "Comptes professionnels sans réutilisation pour l'entraînement, règles d'usage, sources citées, une personne qui valide ce qui engage le client : tout est fixé avant le premier atelier." },
+            { icon: Lock, titre: 'Anonymes en public, vérifiables en privé', texte: "Les cas restent anonymes parce que les clients l'ont voulu. Quand la discussion avance, un échange avec l'un d'eux s'organise sous accord de confidentialité." },
+          ]} />
           <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '30px 0 0', maxWidth: 860 }}>
-            Pour un dispositif comparable, le point de départ dépend de votre situation. Le <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> donne une lecture courte, l'<Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> une lecture complète ; le <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> sert au comité de direction, l'<Link to="/accompagnement-ia" style={{ color: c, fontWeight: 600 }}>accompagnement IA</Link> à un déploiement par paliers, et la page sur les <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link> montre ce qui se construit. Les fourchettes de budget figurent sur la page <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link>. Côté compétences, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils, et la <Link to="/formation-ia-comex" style={{ color: c, fontWeight: 600 }}>formation IA du comité de direction</Link> a son format propre.
+            Pour un dispositif comparable, le point de départ dépend de votre situation. Le <Link to="/diagnostic-ia" style={{ color: c, fontWeight: 600 }}>diagnostic IA</Link> donne une lecture courte, l'<Link to="/audit-ia" style={{ color: c, fontWeight: 600 }}>audit IA</Link> une lecture complète ; le <Link to="/conseil-strategie-ia" style={{ color: c, fontWeight: 600 }}>conseil stratégie IA</Link> sert au comité de direction, l'<Link to="/accompagnement-ia" style={{ color: c, fontWeight: 600 }}>accompagnement IA</Link> à un déploiement par paliers, et la page sur les <Link to="/agents-ia-entreprise" style={{ color: c, fontWeight: 600 }}>agents IA en entreprise</Link> montre ce qui se construit.
+          </p>
+          <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.75, margin: '12px 0 0', maxWidth: 860 }}>
+            Les fourchettes de budget figurent sur la page <Link to="/prix-projet-ia" style={{ color: c, fontWeight: 600 }}>prix d'un projet IA</Link>. Côté compétences, le <Link to="/formation-intelligence-artificielle" style={{ color: c, fontWeight: 600 }}>catalogue de formations IA</Link> couvre tous les outils, et la <Link to="/formation-ia-comex" style={{ color: c, fontWeight: 600 }}>formation IA du comité de direction</Link> a son format propre.
           </p>
         </div>
       </section>
@@ -609,18 +597,18 @@ export default function EtudesDeCasIAPage() {
           <p style={leadStyle}>
             Chacune a pesé sur l'un des cas de cette page. Les prendre avant le premier atelier évite de construire un outil que personne ne portera.
           </p>
-          <ol style={{ listStyle: 'none', padding: 0, margin: '24px 0 0', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 16 }}>
-            {DECISIONS.map((d, i) => (
-              <li key={d.t} style={{ ...cardStyle, padding: 22, display: 'flex', flexDirection: 'column', gap: 8 }}>
-                <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 13, fontWeight: 800, color: c }}>{`0${i + 1}`}</span>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: 0 }}>{d.t}</h3>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{d.d}</p>
+          {/* Une rangée par décision, numérotée, avec son lien vers le cas */}
+          <RangeesLibres style={{ marginTop: 24 }} items={DECISIONS.map(d => ({
+            titre: d.t,
+            contenu: (
+              <>
+                <p style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: '0 0 8px' }}>{d.d}</p>
                 <a href={`#${d.ancre}`} style={{ fontSize: 13.5, fontWeight: 700, color: c, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 6 }}>
                   Revoir ce cas <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
                 </a>
-              </li>
-            ))}
-          </ol>
+              </>
+            ),
+          }))} />
         </div>
       </section>
 

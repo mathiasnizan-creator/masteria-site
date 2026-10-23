@@ -6,6 +6,7 @@ import {
   Receipt, Scale, CalendarClock, UserRound, MapPin, FileSignature,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import { Paras, PointsCles, Rangees } from '../components/Aere'
 
 /* ══════════════════════════════════════════════════════════════════
  * CHARTE COULEURS
@@ -404,19 +405,22 @@ export default function FinancementPage() {
             Par <Link to="/mathias-nizan" style={{ color: '#0A0A0A', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link>, fondateur de Masteria · Mis à jour en {LIBELLE_MISE_A_JOUR}
           </p>
 
-          <p id="financement-resume" style={{
-            fontSize: 'clamp(16.5px, 2.1vw, 19px)', color: '#3F3F46',
-            lineHeight: 1.65, maxWidth: 800, margin: '0 auto 16px',
-          }}>
-            L'OPCO de votre entreprise, l'opérateur de compétences de sa branche, peut financer la formation
-            IA de vos salariés si l'organisme qui la dispense est <strong>certifié Qualiopi</strong>, la
-            certification qualité que la loi exige pour ce financement. Masteria est certifié au titre des actions de formation
-            et forme à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI.
-            La prise en charge peut aller <strong>jusqu'à 100&nbsp;% du coût hors taxes</strong> selon les critères
-            de votre branche, et seul l'accord écrit de l'OPCO l'engage. Depuis le 1er octobre 2026, hors
-            exceptions, l'entreprise règle la facture toutes taxes comprises, puis l'OPCO lui rembourse
-            la part hors taxes.
-          </p>
+          {/* Réponse directe : 1re phrase en accroche, les suivantes en puces à pictos */}
+          <div id="financement-resume">
+            <p style={{
+              fontSize: 'clamp(16.5px, 2.1vw, 19px)', color: '#3F3F46',
+              lineHeight: 1.65, maxWidth: 800, margin: '0 auto 20px',
+            }}>
+              L'OPCO de votre entreprise, l'opérateur de compétences de sa branche, peut financer la formation
+              IA de vos salariés si l'organisme qui la dispense est <strong>certifié Qualiopi</strong>, la
+              certification qualité que la loi exige pour ce financement.
+            </p>
+            <PointsCles style={{ margin: '0 auto 16px', textAlign: 'left', maxWidth: 700 }} phrases={[
+              'Masteria est certifié au titre des actions de formation et forme à ChatGPT, Claude, Microsoft Copilot, Google Gemini et Mistral AI.',
+              <>La prise en charge peut aller <strong>jusqu'à 100&nbsp;% du coût hors taxes</strong> selon les critères de votre branche, et seul l'accord écrit de l'OPCO l'engage.</>,
+              "Depuis le 1er octobre 2026, hors exceptions, l'entreprise règle la facture toutes taxes comprises, puis l'OPCO lui rembourse la part hors taxes.",
+            ]} />
+          </div>
 
           {/* 3 repères vérifiés */}
           <div style={{
@@ -515,10 +519,8 @@ export default function FinancementPage() {
             l'organisme ou rembourse l'entreprise.
           </p>
 
-          <div style={{
-            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 16,
-          }}>
-            {[
+          {/* Une rangée par temps, numérotée (plus de cartes côte à côte) */}
+          <Rangees style={{ maxWidth: 820, margin: '0 auto' }} items={[
               {
                 step: '1', icon: FileText, title: 'Masteria prépare le programme et la convention',
                 desc: "Après l'analyse de votre besoin, Masteria rédige le programme, avec l'objectif professionnel et le contenu de la formation, puis la convention de formation que le Code du travail impose entre l'acheteur et l'organisme.",
@@ -531,31 +533,7 @@ export default function FinancementPage() {
                 step: '3', icon: Receipt, title: "L'OPCO décide, puis paie ou rembourse",
                 desc: "Le courrier d'accord fixe le montant et le mode de paiement. Soit l'OPCO règle Masteria à la place de l'entreprise (la subrogation), soit l'entreprise paie la facture et demande le remboursement de la part hors taxes, avec le certificat de réalisation qui atteste la formation.",
               },
-            ].map(({ step, icon: Icon, title, desc }) => (
-              <div key={title} style={{
-                background: '#fff', borderRadius: 16, padding: 28,
-                border: '1px solid #E5E7EB',
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                  <div style={{
-                    width: 48, height: 48, borderRadius: 12, background: BLUE_LIGHT_BG,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                  }}>
-                    <Icon size={24} color={BLUE} strokeWidth={2.2} />
-                  </div>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 28, color: BLUE, lineHeight: 1 }}>
-                    {step}
-                  </div>
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 18, color: '#0A0A0A', marginTop: 0, marginBottom: 8 }}>
-                  {title}
-                </h3>
-                <div style={{ color: '#4B5563', lineHeight: 1.6, fontSize: 14.5 }}>
-                  {desc}
-                </div>
-              </div>
-            ))}
-          </div>
+            ].map(({ title, desc }) => ({ titre: title, texte: desc }))} />
         </div>
       </section>
 
@@ -568,10 +546,13 @@ export default function FinancementPage() {
             <Scale size={15} color={BLUE} /> Réforme de la TVA des OPCO
           </div>
           <h2 style={H2}>Depuis le 1er octobre 2026, l'entreprise paie et l'OPCO rembourse</h2>
-          <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.7, maxWidth: 860, margin: '12px 0 32px' }}>
+          <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.7, maxWidth: 860, margin: '12px 0 14px' }}>
             Les règles de TVA applicables aux OPCO ont changé le 1er octobre 2026. Jusque-là, l'OPCO réglait
             souvent l'organisme de formation à la place de l'entreprise : c'est la subrogation de paiement.
-            Elle devient l'exception. Tous les OPCO sont concernés, chacun avec ses modalités, et le courrier
+            Elle devient l'exception.
+          </p>
+          <p style={{ color: '#374151', fontSize: 16, lineHeight: 1.7, maxWidth: 860, margin: '0 0 32px' }}>
+            Tous les OPCO sont concernés, chacun avec ses modalités, et le courrier
             d'accord de prise en charge indique celle qui s'applique à votre dossier. Voyons le cas d'Atlas,
             l'OPCO des services financiers et du conseil, dont la FAQ détaille chaque situation.
           </p>
@@ -743,11 +724,14 @@ export default function FinancementPage() {
               <div style={{ fontWeight: 700, color: '#0A0A0A', marginBottom: 4 }}>
                 La part prise en charge dépend de votre branche
               </div>
-              <div style={{ color: '#374151', fontSize: 14, lineHeight: 1.65 }}>
+              <div style={{ color: '#374151', fontSize: 14, lineHeight: 1.65, marginBottom: 10 }}>
                 Le conseil d'administration de chaque OPCO définit ce qu'il prend en charge (article L6332-17
                 du Code du travail). Chez Atlas, il fixe des forfaits ou des plafonds par dispositif et les révise
                 tout au long de l'année ; la règle applicable est celle en vigueur le jour où la demande arrive,
-                et les accords sont donnés dans la limite des fonds disponibles. Une journée à partir de 1&nbsp;980&nbsp;€&nbsp;HT peut
+                et les accords sont donnés dans la limite des fonds disponibles.
+              </div>
+              <div style={{ color: '#374151', fontSize: 14, lineHeight: 1.65 }}>
+                Une journée à partir de 1&nbsp;980&nbsp;€&nbsp;HT peut
                 donc être couverte en tout ou en partie : seul l'accord écrit de l'OPCO le dit.
               </div>
             </div>
@@ -764,10 +748,13 @@ export default function FinancementPage() {
             <Calculator size={14} color={BLUE} /> Mise en situation
           </div>
           <h2 style={H2}>Deux jours de formation, deux circuits de paiement : le calcul complet</h2>
-          <p style={{ color: '#374151', lineHeight: 1.7, fontSize: 16, maxWidth: 860, margin: '12px 0 28px' }}>
+          <p style={{ color: '#374151', lineHeight: 1.7, fontSize: 16, maxWidth: 860, margin: '12px 0 14px' }}>
             Deux cabinets de conseil adhérents d'Atlas, l'un de 30 salariés, l'autre de 80, forment chacun huit
             personnes à l'IA pendant deux jours, en intra : 2 × 1&nbsp;980&nbsp;€ = 3&nbsp;960&nbsp;€&nbsp;HT, soit 4&nbsp;752&nbsp;€ avec la TVA
-            de 20&nbsp;%. Supposons pour chacun un accord de prise en charge de 2&nbsp;000&nbsp;€&nbsp;HT. Ce montant est fictif :
+            de 20&nbsp;%.
+          </p>
+          <p style={{ color: '#374151', lineHeight: 1.7, fontSize: 16, maxWidth: 860, margin: '0 0 28px' }}>
+            Supposons pour chacun un accord de prise en charge de 2&nbsp;000&nbsp;€&nbsp;HT. Ce montant est fictif :
             seul votre OPCO fixe le vrai, selon votre branche. Pour le cabinet de 80 salariés, il viendrait de
             fonds de branche ou de versements volontaires.
           </p>
@@ -835,11 +822,14 @@ export default function FinancementPage() {
                 en principe sur le temps de travail, avec maintien du salaire, et son coût reste à la charge de
                 l'entreprise, hors la part que finance l'OPCO.
               </p>
-              <p style={{ color: '#374151', lineHeight: 1.65, margin: '0 0 16px' }}>
+              <p style={{ color: '#374151', lineHeight: 1.65, margin: '0 0 12px' }}>
                 Pour les entreprises de <strong>moins de 50 salariés</strong>, l'OPCO dispose de fonds mutualisés,
                 issus des contributions formation que versent les employeurs : la loi lui permet de payer les
                 coûts de formation, la rémunération des salariés formés et leurs frais annexes, et son conseil
-                d'administration fixe ce qu'il prend en charge. Depuis 2019, les
+                d'administration fixe ce qu'il prend en charge.
+              </p>
+              <p style={{ color: '#374151', lineHeight: 1.65, margin: '0 0 16px' }}>
+                Depuis 2019, les
                 entreprises de <strong>50 salariés et plus</strong> n'ont plus accès à ces fonds ; il leur reste les
                 budgets que certaines branches financent par une contribution conventionnelle, et les
                 versements volontaires à l'OPCO.
@@ -918,19 +908,14 @@ export default function FinancementPage() {
           <h2 style={H2}>Un projet de conseil ou de développement IA se finance hors OPCO</h2>
 
           {/* Réponse directe citable */}
-          <p style={{
-            fontSize: 16.5, color: '#0A0A0A', lineHeight: 1.7, maxWidth: 860,
-            margin: '12px 0 24px', fontWeight: 500,
+          <div style={{
+            maxWidth: 860, margin: '12px 0 24px',
             background: '#fff', border: '1px solid #E5E7EB',
             borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0',
             padding: '20px 24px',
           }}>
-            L'OPCO finance la formation des salariés. Pour les entreprises de moins de 50 salariés, l'article
-            L6332-17 du Code du travail liste ce qu'il peut payer, dont les coûts des formations, la
-            rémunération des salariés formés et des diagnostics en vue de former ; la conception d'un agent ou
-            d'un outil IA ne figure pas dans cette liste. Un projet de conseil ou de développement relève du
-            budget de l'entreprise, que certains dispositifs publics peuvent alléger selon sa nature.
-          </p>
+            <Paras max={2} style={{ fontSize: 16.5, color: '#0A0A0A', lineHeight: 1.7, margin: 0, fontWeight: 500 }} texte="L'OPCO finance la formation des salariés. Pour les entreprises de moins de 50 salariés, l'article L6332-17 du Code du travail liste ce qu'il peut payer, dont les coûts des formations, la rémunération des salariés formés et des diagnostics en vue de former ; la conception d'un agent ou d'un outil IA ne figure pas dans cette liste. Un projet de conseil ou de développement relève du budget de l'entreprise, que certains dispositifs publics peuvent alléger selon sa nature." />
+          </div>
 
           <p style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.7, maxWidth: 860, marginBottom: 32 }}>
             Masteria cite ces dispositifs par transparence. Aucun taux ni aucune prise en charge n'est promis :
@@ -938,26 +923,8 @@ export default function FinancementPage() {
             expert-comptable.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: 16, marginBottom: 28 }}>
-            {DISPOSITIFS_PROJET.map(({ icon: Icon, name, desc }) => (
-              <div key={name} style={{ background: '#fff', borderRadius: 14, padding: '24px 26px', border: '1px solid #E5E7EB' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
-                  <div style={{
-                    width: 42, height: 42, borderRadius: 10, background: BLUE_LIGHT_BG,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
-                  }}>
-                    <Icon size={21} color={BLUE} strokeWidth={2.2} />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#0A0A0A', margin: 0, lineHeight: 1.25 }}>
-                    {name}
-                  </h3>
-                </div>
-                <p style={{ color: '#374151', fontSize: 14, lineHeight: 1.65, margin: 0 }}>
-                  {nb(desc)}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Un dispositif par rangée, en pleine largeur */}
+          <Rangees style={{ marginBottom: 28 }} items={DISPOSITIFS_PROJET.map(({ icon, name, desc }) => ({ icon, titre: name, texte: nb(desc) }))} />
 
           <div style={{
             padding: '18px 24px', background: '#fff', borderRadius: 12, border: '1px solid #E5E7EB',
@@ -1183,9 +1150,9 @@ export default function FinancementPage() {
                 <span>{nb(item.q)}</span>
                 <span style={{ flexShrink: 0, color: BLUE, fontWeight: 800, fontSize: 22, lineHeight: 1 }}>+</span>
               </summary>
-              <p style={{ marginTop: 12, color: '#374151', lineHeight: 1.7, fontSize: 15.5 }}>
-                {nb(item.a)}
-              </p>
+              <div style={{ marginTop: 12 }}>
+                <Paras texte={nb(item.a)} max={2} style={{ margin: 0, color: '#374151', lineHeight: 1.7, fontSize: 15.5 }} />
+              </div>
             </details>
           ))}
         </div>

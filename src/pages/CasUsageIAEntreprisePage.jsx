@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, PointsCles, Reperes, lignesEnReperes } from '../components/Aere'
 
 /*
  * Page PILIER informationnel « cas d'usage IA en entreprise » (slug /cas-usage-ia-entreprise).
@@ -63,6 +64,16 @@ const EN_BREF = [
   { label: 'Origine', value: "Une partie vient de missions menées par Masteria en 2026, signalées par un lien vers leur récit" },
   { label: 'Méthode', value: "Un usage se teste sur une équipe et sur ses propres fichiers, se mesure, puis s'étend" },
   { label: 'Outils', value: "Indifférents ici : la plupart de ces usages tournent dans Claude, Gemini, ChatGPT, Vibe ou Microsoft Copilot" },
+]
+
+/* Les mêmes lignes en repères du héros : tête en gras, la suite en détail (mots inchangés) */
+const EN_BREF_REPERES = [
+  { label: 'Contenu', value: "Trente usages de l'IA décrits par ce que l'outil fait et ce que l'équipe y gagne", detail: 'Sans pourcentage ni promesse chiffrée' },
+  { label: 'Services', detail: EN_BREF[1].value },
+  { label: 'Solutions', detail: EN_BREF[2].value },
+  ...lignesEnReperes([EN_BREF[3]]),
+  { label: 'Méthode', value: EN_BREF[4].value },
+  ...lignesEnReperes([EN_BREF[5]]),
 ]
 
 /* ───────── Usages par FONCTION (8 services, 24 usages) ───────── */
@@ -488,6 +499,37 @@ function GainLine({ text, dark = false }) {
   )
 }
 
+/* Rangées verticales pleine largeur (même dessin que <Rangees>), avec étiquette, ligne « Pour l'équipe »
+   et lien : remplacent les cartes posées côte à côte. Le numéro d'usage passe dans la pastille. */
+function RangeesPlus({ items, sombre = false, Titre = 'h4', style }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', chiffre: '#60A5FA', lien: '#93C5FD' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', chiffre: c, lien: c }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
+      {items.map(({ titre, etiquette, texte, gain, lien, num, icon: Icon }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.chiffre, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, marginTop: -2 }}>
+            {Icon ? <Icon size={17} strokeWidth={1.75} /> : (num ?? i + 1)}
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 780, flex: 1 }}>
+            {etiquette && <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: t.chiffre, margin: '0 0 4px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{etiquette}</div>}
+            <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35, letterSpacing: '-0.01em' }}>{titre}</Titre>
+            <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />
+            {gain && <GainLine text={gain} dark={sombre} />}
+            {lien && (
+              <Link to={lien.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 14, color: t.lien, fontWeight: 700, textDecoration: 'none' }}>
+                {lien.label}
+                <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 /* FAQItem : réponse TOUJOURS dans le DOM (repli CSS), jamais {open && <p>}. */
 function FAQItem({ q, aStrong, aRest, color }) {
   const [open, setOpen] = useState(false)
@@ -506,9 +548,10 @@ function FAQItem({ q, aStrong, aRest, color }) {
         <span aria-hidden="true" style={{ fontSize: 22, color, flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform 0.2s' }}>+</span>
       </button>
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>
-          <strong style={{ color: '#0A0A0A' }}>{aStrong}</strong> {aRest}
-        </p>
+        <div style={{ padding: '0 0 20px' }}>
+          <p style={{ fontSize: 15, color: '#0A0A0A', lineHeight: 1.75, margin: '0 0 12px', fontWeight: 700 }}>{aStrong}</p>
+          <Paras texte={aRest} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -584,13 +627,15 @@ export default function CasUsageIAEntreprisePage() {
           </h1>
 
           {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            Trente <strong style={{ color: '#fff', fontWeight: 700 }}>exemples d'usage de l'IA au travail</strong> : vingt-quatre rangés par service, du marketing à la direction, puis six types de solution. Pour chacun, <strong style={{ color: '#fff', fontWeight: 700 }}>ce que fait l'outil, qui relit, et ce que l'équipe y gagne</strong>, sans chiffre de gain avancé.
+          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 740, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
+            Trente <strong style={{ color: '#fff', fontWeight: 700 }}>exemples d'usage de l'IA au travail</strong> : vingt-quatre rangés par service, du marketing à la direction, puis six types de solution.
           </p>
-
-          <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 680 }}>
-            Ces exemples d'utilisation de l'IA en entreprise viennent pour partie de missions menées en 2026, signalées par un lien vers leur récit. Les autres sont des usages que nous voyons revenir en atelier, quel que soit l'outil choisi.
-          </p>
+          {/* La suite de la réponse et l'origine des exemples, en puces à pictos */}
+          <PointsCles sombre style={{ margin: '0 0 36px', maxWidth: 760 }} phrases={[
+            <>Pour chacun, <strong style={{ color: '#fff', fontWeight: 700 }}>ce que fait l'outil, qui relit, et ce que l'équipe y gagne</strong>, sans chiffre de gain avancé.</>,
+            "Ces exemples d'utilisation de l'IA en entreprise viennent pour partie de missions menées en 2026, signalées par un lien vers leur récit.",
+            "Les autres sont des usages que nous voyons revenir en atelier, quel que soit l'outil choisi.",
+          ]} />
 
           <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', alignItems: 'center', marginBottom: 40 }}>
             <Link to={RDV} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: c, color: '#fff', padding: '14px 28px', borderRadius: 11, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>
@@ -603,17 +648,7 @@ export default function CasUsageIAEntreprisePage() {
           </div>
 
           {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 860 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>Mode d'emploi de la page</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 128px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <Reperes sombre titre="Mode d'emploi de la page" colonnes={3} style={{ margin: 0 }} items={EN_BREF_REPERES} />
         </div>
       </section>
 
@@ -649,21 +684,8 @@ export default function CasUsageIAEntreprisePage() {
                 <h3 style={{ ...h3Style, fontSize: 'clamp(18px, 2vw, 21px)', margin: 0 }}>{group.label}</h3>
                 <div aria-hidden="true" style={{ flex: 1, height: 1, background: '#E5E7EB' }} />
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 24 }}>
-                {group.cases.map(uc => (
-                  <div key={uc.title} style={{ ...cardStyle, padding: '24px 26px', display: 'flex', flexDirection: 'column' }}>
-                    <h4 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16.5, fontWeight: 800, color: '#0A0A0A', margin: '0 0 10px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{uc.num}. {uc.title}</h4>
-                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{uc.desc}</p>
-                    {uc.gain && <GainLine text={uc.gain} />}
-                    {uc.link && (
-                      <Link to={uc.link.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 14, fontSize: 14, color: c, fontWeight: 700, textDecoration: 'none' }}>
-                        {uc.link.label}
-                        <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par usage, numérotée en continu */}
+              <RangeesPlus items={group.cases.map(uc => ({ num: uc.num, titre: uc.title, texte: uc.desc, gain: uc.gain, lien: uc.link }))} />
             </div>
           ))}
         </div>
@@ -699,27 +721,8 @@ export default function CasUsageIAEntreprisePage() {
             ))}
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
-            {TYPE_CASES.map(uc => {
-              const Icon = uc.icon
-              return (
-                <div key={uc.title} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 28, display: 'flex', flexDirection: 'column' }}>
-                  <div aria-hidden="true" style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(37,99,235,0.16)', border: '1px solid rgba(37,99,235,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
-                    <Icon size={22} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
-                  </div>
-                  <h3 style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: '#F8FAFC', margin: '0 0 8px', letterSpacing: '-0.01em', lineHeight: 1.35 }}>{uc.num}. {uc.title}</h3>
-                  <p style={{ fontSize: 14.5, color: '#B4C0D3', lineHeight: 1.7, margin: 0 }}>{uc.desc}</p>
-                  {uc.gain && <GainLine text={uc.gain} dark />}
-                  {uc.link && (
-                    <Link to={uc.link.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 14, fontSize: 14, color: '#93C5FD', fontWeight: 700, textDecoration: 'none' }}>
-                      {uc.link.label}
-                      <ArrowRight size={15} strokeWidth={2.2} aria-hidden="true" />
-                    </Link>
-                  )}
-                </div>
-              )
-            })}
-          </div>
+          {/* Une rangée par brique, numérotée à la suite des usages par service */}
+          <RangeesPlus sombre Titre="h3" items={TYPE_CASES.map(uc => ({ num: uc.num, titre: uc.title, texte: uc.desc, gain: uc.gain, lien: uc.link }))} />
         </div>
       </section>
 
@@ -739,18 +742,13 @@ export default function CasUsageIAEntreprisePage() {
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: 20, marginBottom: 32 }}>
-                {PATH_STEPS.map((step, i) => (
-                  <div key={step.title} style={{ ...cardStyle, padding: 26 }}>
-                    <IconTile icon={step.icon} />
-                    <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: c, margin: '18px 0 4px', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Jalon {String(i + 1).padStart(2, '0')}</div>
-                    <h3 style={{ ...h3Style, fontSize: 17 }}>{step.title}</h3>
-                    <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
-                  </div>
-                ))}
-              </div>
+              {/* Un jalon par rangée */}
+              <RangeesPlus Titre="h3" style={{ marginBottom: 32 }} items={PATH_STEPS.map((step, i) => ({ icon: step.icon, etiquette: `Jalon ${String(i + 1).padStart(2, '0')}`, titre: step.title, texte: step.desc }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0 }}>
-                La mise en œuvre prend ensuite la forme d'une <Link to="/automatisation-ia" style={linkStyle}>automatisation entre vos logiciels</Link>, d'un <Link to="/agents-ia-entreprise" style={linkStyle}>agent qui enchaîne les actions</Link> ou d'un <Link to="/copilote-ia-interne" style={linkStyle}>assistant interne relié à vos données</Link>. Si l'usage repose sur vos documents, l'<Link to="/integration-llm-rag" style={linkStyle}>intégration d'un modèle avec recherche documentaire</Link> lui donne des réponses sourcées. Pour choisir par où commencer, le <Link to="/diagnostic-ia" style={linkStyle}>Diagnostic IA</Link> fait le tri.
+                La mise en œuvre prend ensuite la forme d'une <Link to="/automatisation-ia" style={linkStyle}>automatisation entre vos logiciels</Link>, d'un <Link to="/agents-ia-entreprise" style={linkStyle}>agent qui enchaîne les actions</Link> ou d'un <Link to="/copilote-ia-interne" style={linkStyle}>assistant interne relié à vos données</Link>.
+              </p>
+              <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '12px 0 0' }}>
+                Si l'usage repose sur vos documents, l'<Link to="/integration-llm-rag" style={linkStyle}>intégration d'un modèle avec recherche documentaire</Link> lui donne des réponses sourcées. Pour choisir par où commencer, le <Link to="/diagnostic-ia" style={linkStyle}>Diagnostic IA</Link> fait le tri.
               </p>
             </div>
           </div>
@@ -801,10 +799,16 @@ export default function CasUsageIAEntreprisePage() {
           <Kicker>D'où viennent ces exemples</Kicker>
           <h2 style={h2Style}>Une partie de ces usages sort de sept missions menées en 2026</h2>
           <p style={pStyle}>
-            Chez un distributeur IT de 58 salariés, dix référents formés en juin 2026 ont conçu des compétences Claude, dont celle qui prépare une cotation à partir du mail du client ; le reste de l'entreprise les recevra d'octobre à décembre 2026 (<Link to="/etudes-de-cas-ia#distribution" style={linkStyle}>le cas complet</Link>). Dans un cabinet de conseil financier, quatre assistants préparent les mémoires d'appels d'offres et interrogent le consultant avant d'écrire (<Link to="/etudes-de-cas-ia#conseil-financier" style={linkStyle}>le récit</Link>).
+            Chez un distributeur IT de 58 salariés, dix référents formés en juin 2026 ont conçu des compétences Claude, dont celle qui prépare une cotation à partir du mail du client ; le reste de l'entreprise les recevra d'octobre à décembre 2026 (<Link to="/etudes-de-cas-ia#distribution" style={linkStyle}>le cas complet</Link>).
           </p>
           <p style={pStyle}>
-            Chez un distributeur de panneaux photovoltaïques qui compte trois personnes, la consultation des transporteurs et le chargement dans Odoo de ce que l'entrepôt a reçu sont les deux premiers assistants à construire, avant une formation sur site prévue en octobre 2026 (<Link to="/etudes-de-cas-ia#photovoltaique" style={linkStyle}>le diagnostic</Link>). Les notes de frais et le comité de direction viennent d'une formation individuelle d'assistante de direction, le procès-verbal de bornage d'un géomètre-expert formé en août 2026. La voix de marque et les fiches tirées d'un texte réglementaire ont été travaillées avec une interprofession agricole, l'analyse d'un fichier de ventes avec la responsable études d'un groupe immobilier.
+            Dans un cabinet de conseil financier, quatre assistants préparent les mémoires d'appels d'offres et interrogent le consultant avant d'écrire (<Link to="/etudes-de-cas-ia#conseil-financier" style={linkStyle}>le récit</Link>).
+          </p>
+          <p style={pStyle}>
+            Chez un distributeur de panneaux photovoltaïques qui compte trois personnes, la consultation des transporteurs et le chargement dans Odoo de ce que l'entrepôt a reçu sont les deux premiers assistants à construire, avant une formation sur site prévue en octobre 2026 (<Link to="/etudes-de-cas-ia#photovoltaique" style={linkStyle}>le diagnostic</Link>).
+          </p>
+          <p style={pStyle}>
+            Les notes de frais et le comité de direction viennent d'une formation individuelle d'assistante de direction, le procès-verbal de bornage d'un géomètre-expert formé en août 2026. La voix de marque et les fiches tirées d'un texte réglementaire ont été travaillées avec une interprofession agricole, l'analyse d'un fichier de ventes avec la responsable études d'un groupe immobilier.
           </p>
           <p style={{ ...pStyle, marginBottom: 0 }}>
             Aucun de ces clients n'est nommé, à sa demande. Leurs récits complets, y compris ceux des missions de formation, se lisent sur la page <Link to="/etudes-de-cas-ia" style={linkStyle}>études de cas IA</Link>.
@@ -890,7 +894,10 @@ export default function CasUsageIAEntreprisePage() {
               Un cabinet qui voit ces usages naître en atelier
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria conseille, construit des outils et forme des équipes, sans autre sujet que l'IA. Mathias Nizan pilote chaque mission et s'appuie, selon le besoin, sur un réseau de formateurs indépendants (une vingtaine), de consultants (une dizaine) et de développeurs (près de cinq). Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> documentent ce travail.
+              Masteria conseille, construit des outils et forme des équipes, sans autre sujet que l'IA. Mathias Nizan pilote chaque mission et s'appuie, selon le besoin, sur un réseau de formateurs indépendants (une vingtaine), de consultants (une dizaine) et de développeurs (près de cinq).
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+              Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> documentent ce travail.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

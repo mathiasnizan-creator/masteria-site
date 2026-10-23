@@ -4,11 +4,12 @@ import {
   ArrowRight, FileText, MessagesSquare, Database, Search,
   ShieldCheck, Scale, Cpu, Boxes, Check, Lock, AlertTriangle,
   GraduationCap, Compass, BookOpen, ExternalLink, Landmark, Factory,
-  Sprout, Plug, Briefcase, Truck, Megaphone, Users, Wrench, Handshake,
+  Sprout, Plug, Briefcase, Truck, Megaphone, Users, Wrench, Handshake, CalendarDays,
 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
 import { PressMention } from '../components/FounderNote'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Accroche, Paras, Reponse, Reperes, Rangees, decouperPhrases } from '../components/Aere'
 
 /*
  * Page pilier « IA générative en entreprise » (slug /ia-generative-entreprise).
@@ -88,6 +89,17 @@ const EN_BREF = [
   { label: 'Garde-fous', value: "Version entreprise de l'outil, sources citées, relecture humaine de ce qui engage, règles RGPD et AI Act écrites" },
   { label: 'Modèles', value: "Claude, ChatGPT, Gemini, Mistral et Microsoft Copilot (anciennement Microsoft 365 Copilot) changent de version tous les deux ou trois mois ; repères datés du 7 octobre 2026 plus bas" },
   { label: 'Masteria', value: "Cabinet lyonnais spécialisé en IA depuis 2022 : conseil, construction d'outils et formation des équipes, sans lien avec un éditeur" },
+]
+
+/* Les mêmes lignes en repères du héros : tête en gras, la suite en détail ou en puces (mots inchangés) */
+const EN_BREF_REPERES = [
+  { label: 'Définition', detail: EN_BREF[0].value },
+  { label: 'Intégration', value: 'Trois niveaux, du plus simple au plus engageant :', liste: ["L'assistant d'entreprise ouvert aux équipes", 'La connexion à vos logiciels par API ou MCP', "L'outil construit sur mesure"] },
+  { label: 'Où elle rapporte', value: 'Les tâches fréquentes, documentées et faciles à relire :', detail: 'Courrier, recherche documentaire, préparation de réunions, analyse de tableaux, supports, code' },
+  { label: 'Déploiement', detail: EN_BREF[3].value },
+  { label: 'Garde-fous', detail: EN_BREF[4].value },
+  { label: 'Modèles', large: true, value: 'Claude, ChatGPT, Gemini, Mistral et Microsoft Copilot (anciennement Microsoft 365 Copilot) changent de version tous les deux ou trois mois', detail: 'Repères datés du 7 octobre 2026 plus bas' },
+  { label: 'Masteria', value: 'Cabinet lyonnais spécialisé en IA depuis 2022', detail: "Conseil, construction d'outils et formation des équipes, sans lien avec un éditeur" },
 ]
 
 /* ───────── Ce qu'elle apporte / ses limites ───────── */
@@ -273,6 +285,10 @@ const GLOSSARY = [
   },
 ]
 
+/* ───────── Calendrier de l'AI Act (texte de la section Données, rendu en liste datée) ───────── */
+
+const AI_ACT_JALONS = "La page de la Commission européenne mise à jour le 19 octobre 2026 donne ces jalons. Depuis le 2 février 2025, les pratiques interdites et l'article 4 sur la maîtrise de l'IA s'appliquent ; l'Omnibus, en vigueur depuis le 27 juillet 2026, a réécrit cet article 4 : l'entreprise prend des mesures qui aident ses équipes à maîtriser les outils, sans niveau garanti ni certificat imposé, et garder la trace des formations suivies permet de le montrer. Depuis le 2 août 2026, l'article 50 oblige à dire à une personne qu'elle échange avec une machine et à signaler les hypertrucages ; les autorités nationales contrôlent. Le 2 décembre 2026, le marquage des contenus générés devient exigible pour les systèmes déjà commercialisés au 2 août 2026, et une nouvelle interdiction ajoutée par l'Omnibus vise les images intimes fabriquées sans consentement. Les usages à haut risque de l'annexe III (embauche, notation des salariés, octroi de crédit, éducation) suivront le 2 décembre 2027, ceux des produits réglementés de l'annexe I le 2 août 2028."
+
 /* ───────── Sources de référence (liens d'autorité, aussi émis en JSON-LD) ───────── */
 
 const PAGE_CITATIONS = [
@@ -416,6 +432,39 @@ const extraJsonLd = [serviceJsonLd, definedTermSetJsonLd, articleJsonLd]
 
 /* ───────── Composants ───────── */
 
+/* Rangées verticales pleine largeur (même dessin que <Rangees>), au contenu libre :
+   étiquette au-dessus du titre, texte découpé, liste ou paragraphes, lien final.
+   Remplacent les cartes posées côte à côte. */
+function RangeesPlus({ items, sombre = false, Titre = 'h3', style }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', chiffre: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#4B5563', pastille: '#EFF4FF', chiffre: c }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
+      {items.map(({ titre, etiquette, texte, contenu, apres, lien, num, icon: Icon }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: t.pastille, color: t.chiffre, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, marginTop: -2 }}>
+            {Icon ? <Icon size={17} strokeWidth={1.75} /> : (num ?? i + 1)}
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 780, flex: 1 }}>
+            {etiquette && <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: t.chiffre, margin: '0 0 4px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{etiquette}</div>}
+            <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35, letterSpacing: '-0.01em' }}>{titre}</Titre>
+            {texte && <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />}
+            {contenu}
+            {apres}
+            {lien && (
+              <Link to={lien.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 14, color: t.chiffre, fontWeight: 700, textDecoration: 'none' }}>
+                {lien.label}
+                <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 function FAQItem({ q, a, color }) {
   const [open, setOpen] = useState(false)
   return (
@@ -434,7 +483,9 @@ function FAQItem({ q, a, color }) {
       </button>
       {/* Réponse TOUJOURS rendue dans le DOM (repli CSS via maxHeight) pour l'indexation */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1200 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, padding: '0 0 20px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 20px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15, color: '#374151', lineHeight: 1.75, margin: 0 }} />
+        </div>
       </div>
     </div>
   )
@@ -507,10 +558,9 @@ export default function IAGenerativeEntreprisePage() {
             Écrit par <Link to="/mathias-nizan" style={{ color: '#E2E8F0', fontWeight: 600, textDecoration: 'underline', textUnderlineOffset: 2 }}>Mathias Nizan</Link> · AI Act et connecteurs revus le 19 octobre 2026, modèles et prix relevés le 7 octobre
           </p>
 
-          {/* GEO : réponse directe citable, accroche */}
-          <p style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 28px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}>
-            <strong style={{ color: '#fff', fontWeight: 700 }}>L'IA générative en entreprise met au travail des modèles qui rédigent, résument, analysent un tableau ou écrivent du code à partir d'une demande en langage courant. On l'intègre à trois niveaux : un assistant d'entreprise administré, une connexion à vos logiciels par API ou par MCP, un outil sur mesure quand l'usage le demande. Elle rapporte quand elle s'appuie sur vos documents, sous des règles de données écrites, avec une relecture humaine de ce qui engage.</strong>
-          </p>
+          {/* GEO : réponse directe citable, 1re phrase en accroche, la suite en puces */}
+          <Accroche sombre style={{ fontSize: 'clamp(17px, 2.4vw, 20px)', fontWeight: 500, color: '#E2E8F0', lineHeight: 1.58, margin: '0 0 24px', maxWidth: 760, paddingLeft: 20, borderLeft: `3px solid ${c}` }}
+            texte="L'IA générative en entreprise met au travail des modèles qui rédigent, résument, analysent un tableau ou écrivent du code à partir d'une demande en langage courant. On l'intègre à trois niveaux : un assistant d'entreprise administré, une connexion à vos logiciels par API ou par MCP, un outil sur mesure quand l'usage le demande. Elle rapporte quand elle s'appuie sur vos documents, sous des règles de données écrites, avec une relecture humaine de ce qui engage." />
 
           <p style={{ fontSize: 15.5, color: '#94A3B8', lineHeight: 1.72, margin: '0 0 36px', maxWidth: 660 }}>
             Ce guide dit ce qu'elle sait faire, où elle se trompe, comment l'intégrer et la déployer, ce que fait chaque service et quelles règles s'appliquent au 19 octobre 2026. Masteria, que Mathias Nizan a ouvert à Lyon en 2022, accompagne ce travail de bout en bout : choix des usages, construction des outils, formation des utilisateurs.
@@ -539,18 +589,8 @@ export default function IAGenerativeEntreprisePage() {
             ))}
           </div>
 
-          {/* En bref : synthèse citable (GEO), carte sombre */}
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 820 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>À retenir</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 130px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 200, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : synthèse citable (GEO), en repères */}
+          <Reperes sombre titre="À retenir" colonnes={4} style={{ margin: 0 }} items={EN_BREF_REPERES} />
         </div>
       </section>
 
@@ -563,9 +603,7 @@ export default function IAGenerativeEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 L'IA générative en entreprise, c'est un modèle mis au travail sur vos dossiers
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>On parle d'IA générative en entreprise quand des modèles capables de produire du texte, du code, des images ou des tableaux sont branchés sur le travail d'une organisation. Leur valeur dépend de trois choses : les documents auxquels ils ont accès, les logiciels dans lesquels ils agissent, les règles qui encadrent leur usage.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="On parle d'IA générative en entreprise quand des modèles capables de produire du texte, du code, des images ou des tableaux sont branchés sur le travail d'une organisation. Leur valeur dépend de trois choses : les documents auxquels ils ont accès, les logiciels dans lesquels ils agissent, les règles qui encadrent leur usage." />
             </div>
 
             <div style={{ color: '#374151', fontSize: 16, lineHeight: 1.75 }}>
@@ -591,38 +629,17 @@ export default function IAGenerativeEntreprisePage() {
             Ce que l'IA générative sait faire pour vous, et là où elle trébuche
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Elle accélère l'écriture, la lecture de gros volumes, l'analyse de tableaux et la programmation. Elle se trompe parfois sans prévenir, ne connaît de votre entreprise que ce qu'on lui montre et ne décide de rien : ses apports supposent vos documents et une relecture.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Elle accélère l'écriture, la lecture de gros volumes, l'analyse de tableaux et la programmation. Elle se trompe parfois sans prévenir, ne connaît de votre entreprise que ce qu'on lui montre et ne décide de rien : ses apports supposent vos documents et une relecture." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Taire les limites prépare une déception au premier bilan. Les deux colonnes suivantes se lisent ensemble.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20, marginBottom: 44 }}>
-            {GAINS.map(item => (
-              <div key={item.title} style={{ ...cardStyle, padding: 26 }}>
-                <div style={{ marginBottom: 14 }}>
-                  <IconTile icon={item.icon} />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16, marginBottom: 8 }}>{item.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Apports puis limites, une rangée par point (plus de cartes côte à côte) */}
+          <Rangees style={{ marginBottom: 44 }} items={GAINS.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
 
           <h3 style={{ ...h3Style, fontSize: 18, marginBottom: 16 }}>Trois limites à connaître avant de commencer</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {LIMITES.map(item => (
-              <div key={item.title} style={{ ...cardStyle, padding: 24, borderLeft: `3px solid ${c}` }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
-                  <item.icon size={20} strokeWidth={2.2} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                  <h3 style={{ ...h3Style, fontSize: 15.5 }}>{item.title}</h3>
-                </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <Rangees niveau="h4" items={LIMITES.map(item => ({ titre: item.title, texte: item.desc, icon: item.icon }))} />
         </div>
       </section>
 
@@ -635,26 +652,21 @@ export default function IAGenerativeEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Ce que l'IA générative fait dans chaque service de l'entreprise
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Chaque service a des tâches fréquentes et faciles à vérifier. Un assistant d'entreprise suffit pour la direction, la finance ou le marketing ; le commercial et les opérations gagnent surtout quand l'outil se branche sur l'ERP ou le CRM. Commencez par la tâche qui revient le plus souvent dans la semaine.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Chaque service a des tâches fréquentes et faciles à vérifier. Un assistant d'entreprise suffit pour la direction, la finance ou le marketing ; le commercial et les opérations gagnent surtout quand l'outil se branche sur l'ERP ou le CRM. Commencez par la tâche qui revient le plus souvent dans la semaine." />
             </div>
 
             <div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-                {USAGES.map(item => (
-                  <div key={item.fn} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 10 }}>
-                      <IconTile icon={item.icon} />
-                      <h3 style={{ ...h3Style, fontSize: 15.5 }}>{item.fn}</h3>
-                    </div>
-                    <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '0 0 14px', flex: 1 }}>{item.desc}</p>
-                    <p style={{ fontSize: 12.5, color: c, fontWeight: 700, margin: 0, display: 'flex', alignItems: 'center', gap: 6 }}>
-                      <Plug size={13} strokeWidth={2.4} aria-hidden="true" /> Niveau d'intégration : {item.niveau}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {/* Une rangée par service, avec son niveau d'intégration */}
+              <RangeesPlus items={USAGES.map(item => ({
+                icon: item.icon,
+                titre: item.fn,
+                texte: item.desc,
+                apres: (
+                  <p style={{ fontSize: 13, color: c, fontWeight: 700, margin: '10px 0 0', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <Plug size={13} strokeWidth={1.75} aria-hidden="true" /> Niveau d'intégration : {item.niveau}
+                  </p>
+                ),
+              }))} />
               <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0' }}>
                 Quand une tâche demande d'enchaîner plusieurs actions dans vos logiciels, l'usage prend la forme d'un <Link to="/agents-ia-entreprise" style={aStyle}>agent IA d'entreprise</Link>. Trente exemples rangés métier par métier figurent dans notre <Link to="/cas-usage-ia-entreprise" style={aStyle}>panorama des cas d'usage</Link>, et les outils prêts à adapter dans nos <Link to="/solutions-ia" style={aStyle}>solutions IA types</Link>.
               </p>
@@ -671,34 +683,37 @@ export default function IAGenerativeEntreprisePage() {
             Intégrer l'IA générative en entreprise se joue à trois niveaux
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Le premier niveau ouvre un assistant d'entreprise aux équipes. Le deuxième le relie à vos logiciels, par API pour les traitements automatiques ou par MCP pour piloter un logiciel depuis l'assistant. Le troisième construit un outil sur mesure. Commencez au premier niveau, puis passez au deuxième sur les deux ou trois usages où vos équipes recopient le plus.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Le premier niveau ouvre un assistant d'entreprise aux équipes. Le deuxième le relie à vos logiciels, par API pour les traitements automatiques ou par MCP pour piloter un logiciel depuis l'assistant. Le troisième construit un outil sur mesure. Commencez au premier niveau, puis passez au deuxième sur les deux ou trois usages où vos équipes recopient le plus." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 20, marginTop: 36 }}>
-            {NIVEAUX.map(n => (
-              <article key={n.num} style={{ ...cardStyle, padding: 26, borderTop: `3px solid ${c}`, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <IconTile icon={n.icon} />
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Niveau {n.num}</span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5 }}>{n.title}</h3>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: 0 }}>{n.quoi}</p>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}><strong style={{ color: '#0A0A0A' }}>Pour quoi faire.</strong> {n.pour}</p>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: 0 }}><strong style={{ color: '#0A0A0A' }}>Sa limite.</strong> {n.limite}</p>
+          {/* Un niveau par rangée, en pleine largeur */}
+          <RangeesPlus style={{ marginTop: 36 }} items={NIVEAUX.map(n => ({
+            icon: n.icon,
+            etiquette: `Niveau ${n.num}`,
+            titre: n.title,
+            contenu: (
+              <div style={{ display: 'grid', gap: 10 }}>
+                <Paras texte={n.quoi} max={2} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.7, margin: 0 }} />
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}><strong style={{ color: '#0A0A0A' }}>Pour quoi faire.</strong> {n.pour}</p>
+                <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.65, margin: 0 }}><strong style={{ color: '#0A0A0A' }}>Sa limite.</strong> {n.limite}</p>
                 {n.cas && (
-                  <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.65, margin: '4px 0 0', paddingTop: 12, borderTop: '1px solid #E5E7EB' }}>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: '4px 0 0', paddingLeft: 14, borderLeft: `2px solid ${cLight}` }}>
                     {n.cas.text}{' '}
                     <Link to={n.cas.href} style={{ ...aStyle, whiteSpace: 'nowrap' }}>Lire la mission</Link>
                   </p>
                 )}
-              </article>
-            ))}
-          </div>
+              </div>
+            ),
+          }))} />
 
           <div style={{ color: '#374151', fontSize: 15.5, lineHeight: 1.75, maxWidth: 880, margin: '36px 0 0' }}>
             <p style={{ margin: '0 0 18px' }}>
-              <strong style={{ color: '#0A0A0A' }}>Où en sont les connecteurs MCP au 19 octobre 2026.</strong> Claude se branche par MCP sur les logiciels de l'entreprise. ChatGPT ouvre en bêta les connecteurs MCP complets, écriture comprise, aux offres Business, Enterprise et Edu, après activation par un administrateur. Microsoft Copilot Studio accepte les serveurs MCP en version stable, sous les mêmes règles de gouvernance que ses autres connecteurs. Mistral enregistre des connecteurs MCP personnalisés dans son Studio, en préversion publique depuis le 22 mai 2026. Le protocole et ses usages en entreprise sont détaillés dans notre article sur le <Link to="/blog/serveur-mcp-entreprise-connecter-ia-si" style={aStyle}>serveur MCP en entreprise</Link> ; la recherche dans vos documents et l'appel d'un modèle depuis vos applications, sur notre page <Link to="/integration-llm-rag" style={aStyle}>intégration LLM et RAG</Link>.
+              <strong style={{ color: '#0A0A0A' }}>Où en sont les connecteurs MCP au 19 octobre 2026.</strong> Claude se branche par MCP sur les logiciels de l'entreprise. ChatGPT ouvre en bêta les connecteurs MCP complets, écriture comprise, aux offres Business, Enterprise et Edu, après activation par un administrateur.
+            </p>
+            <p style={{ margin: '0 0 18px' }}>
+              Microsoft Copilot Studio accepte les serveurs MCP en version stable, sous les mêmes règles de gouvernance que ses autres connecteurs. Mistral enregistre des connecteurs MCP personnalisés dans son Studio, en préversion publique depuis le 22 mai 2026.
+            </p>
+            <p style={{ margin: '0 0 18px' }}>
+              Le protocole et ses usages en entreprise sont détaillés dans notre article sur le <Link to="/blog/serveur-mcp-entreprise-connecter-ia-si" style={aStyle}>serveur MCP en entreprise</Link> ; la recherche dans vos documents et l'appel d'un modèle depuis vos applications, sur notre page <Link to="/integration-llm-rag" style={aStyle}>intégration LLM et RAG</Link>.
             </p>
             <p style={{ margin: 0 }}>
               Le troisième niveau relève de notre équipe de développement : un <Link to="/outils-ia-sur-mesure" style={aStyle}>outil IA sur mesure</Link> se construit par livraisons utilisables, testées sur vos fichiers, et le code vous revient. Pour une application complète ou un agent qui agit dans plusieurs logiciels, voyez notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>.
@@ -706,17 +721,8 @@ export default function IAGenerativeEntreprisePage() {
           </div>
 
           <h3 style={{ ...h3Style, fontSize: 18, margin: '48px 0 16px' }}>Cinq pièges d'intégration, et comment les éviter</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 18 }}>
-            {PIEGES.map(p => (
-              <div key={p.title} style={{ ...cardStyle, padding: 22, borderLeft: `3px solid ${c}` }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                  <AlertTriangle size={18} strokeWidth={2.2} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                  <h4 style={{ ...h3Style, fontSize: 15 }}>{p.title}</h4>
-                </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.65, margin: 0 }}>{p.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Un piège par rangée, numéroté */}
+          <Rangees niveau="h4" items={PIEGES.map(p => ({ titre: p.title, texte: p.desc }))} />
         </div>
       </section>
 
@@ -732,9 +738,8 @@ export default function IAGenerativeEntreprisePage() {
             Déployer l'IA générative en entreprise prend quatre étapes
           </h2>
 
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Choisir un usage, le tester sur vos fichiers, l'installer dans vos logiciels, l'encadrer dans la durée. La troisième étape décide du sort du projet : un prototype applaudi qui n'a ni responsable ni place dans les outils du quotidien s'éteint en quelques mois.</strong>
-          </p>
+          <Reponse fort="#fff" courant="#CBD5E1" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${c}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, margin: '0 0 28px', maxWidth: 880 }}
+            texte="Choisir un usage, le tester sur vos fichiers, l'installer dans vos logiciels, l'encadrer dans la durée. La troisième étape décide du sort du projet : un prototype applaudi qui n'a ni responsable ni place dans les outils du quotidien s'éteint en quelques mois." />
 
           <p style={{ color: '#B4C0D3', fontSize: 15, marginBottom: 12, lineHeight: 1.7, maxWidth: 880 }}>
             Mettre en place l'IA générative ressemble davantage à un projet d'organisation qu'à un achat de logiciel. Le budget le plus sous-estimé est rarement celui des licences : c'est le temps passé à relier l'outil à vos données et à former ceux qui s'en servent.
@@ -776,21 +781,33 @@ export default function IAGenerativeEntreprisePage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Règles de données, RGPD et AI Act au 19 octobre 2026
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong>Trois règles de données suffisent pour démarrer : un compte d'entreprise, une liste de ce qui peut entrer dans l'outil, une relecture de ce qui en sort. Le RGPD s'applique dès le premier nom saisi. L'AI Act, modifié par le règlement (UE) 2026/1744, impose déjà la transparence de l'article 50 ; les usages à haut risque attendent le 2 décembre 2027.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Trois règles de données suffisent pour démarrer : un compte d'entreprise, une liste de ce qui peut entrer dans l'outil, une relecture de ce qui en sort. Le RGPD s'applique dès le premier nom saisi. L'AI Act, modifié par le règlement (UE) 2026/1744, impose déjà la transparence de l'article 50 ; les usages à haut risque attendent le 2 décembre 2027." />
             </div>
 
             <div style={{ color: '#374151', fontSize: 16, lineHeight: 1.75 }}>
               <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 10 }}>Ce qui peut entrer dans l'outil</h3>
-              <p style={{ marginTop: 0, marginBottom: 20 }}>
-                Rangez vos informations en trois familles. Le public peut aller dans tous les outils. L'interne va dans l'offre d'entreprise, où par défaut vos échanges n'entraînent pas les modèles. Le personnel et le confidentiel (paie, santé, dossiers clients nominatifs) n'y entrent que pour un usage précis, avec une base légale, une ligne au registre des traitements et, si le risque l'exige, une analyse d'impact. Regardez aussi où l'éditeur héberge les données : au 19 octobre 2026, les applications d'Anthropic n'ont pas de région européenne, et garder Claude en Europe suppose de l'appeler via AWS Bedrock ou Google Cloud Vertex AI.
-              </p>
+              <Paras style={{ marginTop: 0, marginBottom: 20 }} texte="Rangez vos informations en trois familles. Le public peut aller dans tous les outils. L'interne va dans l'offre d'entreprise, où par défaut vos échanges n'entraînent pas les modèles. Le personnel et le confidentiel (paie, santé, dossiers clients nominatifs) n'y entrent que pour un usage précis, avec une base légale, une ligne au registre des traitements et, si le risque l'exige, une analyse d'impact. Regardez aussi où l'éditeur héberge les données : au 19 octobre 2026, les applications d'Anthropic n'ont pas de région européenne, et garder Claude en Europe suppose de l'appeler via AWS Bedrock ou Google Cloud Vertex AI." />
 
               <h3 style={{ ...h3Style, fontSize: 17, marginBottom: 10 }}>Le calendrier de l'AI Act après l'Omnibus</h3>
-              <p style={{ marginTop: 0, marginBottom: 20 }}>
-                La page de la Commission européenne mise à jour le 19 octobre 2026 donne ces jalons. Depuis le 2 février 2025, les pratiques interdites et l'article 4 sur la maîtrise de l'IA s'appliquent ; l'Omnibus, en vigueur depuis le 27 juillet 2026, a réécrit cet article 4 : l'entreprise prend des mesures qui aident ses équipes à maîtriser les outils, sans niveau garanti ni certificat imposé, et garder la trace des formations suivies permet de le montrer. Depuis le 2 août 2026, l'article 50 oblige à dire à une personne qu'elle échange avec une machine et à signaler les hypertrucages ; les autorités nationales contrôlent. Le 2 décembre 2026, le marquage des contenus générés devient exigible pour les systèmes déjà commercialisés au 2 août 2026, et une nouvelle interdiction ajoutée par l'Omnibus vise les images intimes fabriquées sans consentement. Les usages à haut risque de l'annexe III (embauche, notation des salariés, octroi de crédit, éducation) suivront le 2 décembre 2027, ceux des produits réglementés de l'annexe I le 2 août 2028.
-              </p>
+              {/* Les jalons en liste datée : première phrase en tête, une phrase par jalon */}
+              {(() => {
+                const [tete, ...jalons] = decouperPhrases(AI_ACT_JALONS)
+                return (
+                  <>
+                    <p style={{ marginTop: 0, marginBottom: 12 }}>{tete}</p>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'grid', gap: 12 }}>
+                      {jalons.map(j => (
+                        <li key={j} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.7 }}>
+                          <span aria-hidden="true" style={{ flexShrink: 0, width: 28, height: 28, borderRadius: 8, marginTop: 1, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: '#EFF4FF' }}>
+                            <CalendarDays size={15} strokeWidth={1.75} style={{ color: c }} />
+                          </span>
+                          <span>{j}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )
+              })()}
               <p style={{ marginBottom: 20 }}>
                 Un assistant qui aide à écrire un mail ou à lire un tableau relève du risque minimal : aucune obligation propre, en dehors de l'article 4. Dans une entreprise d'au moins 50 salariés, un outil qui change la façon de travailler passe aussi par l'information et la consultation du CSE (article L2312-8 du Code du travail).
               </p>
@@ -810,25 +827,14 @@ export default function IAGenerativeEntreprisePage() {
             Cinq familles de modèles se partagent le marché, et aucune ne gagne partout
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Claude, ChatGPT, Gemini, Mistral et Microsoft Copilot se valent sur l'essentiel et se distinguent à l'usage : volume de documents accepté, intégration à vos logiciels, hébergement des données, prix par siège. Nous comparons sur vos fichiers et ne touchons aucune commission d'éditeur.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Claude, ChatGPT, Gemini, Mistral et Microsoft Copilot se valent sur l'essentiel et se distinguent à l'usage : volume de documents accepté, intégration à vos logiciels, hébergement des données, prix par siège. Nous comparons sur vos fichiers et ne touchons aucune commission d'éditeur." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Les fiches ci-dessous datent du 7 octobre 2026. Une nouvelle version sort chez l'un ou l'autre éditeur presque chaque mois : un choix d'outil se réexamine au moins une fois par an.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: 20 }}>
-            {MODELES.map(m => (
-              <div key={m.fam} style={{ ...cardStyle, padding: 24 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                  <Cpu size={18} strokeWidth={2.2} style={{ color: c, flexShrink: 0 }} aria-hidden="true" />
-                  <h3 style={{ ...h3Style, fontSize: 15.5 }}>{m.fam}</h3>
-                </div>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: 0 }}>{m.desc}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une famille de modèles par rangée */}
+          <Rangees items={MODELES.map(m => ({ titre: m.fam, texte: m.desc, icon: Cpu }))} />
 
           <p style={{ fontSize: 13.5, color: '#6B7280', lineHeight: 1.7, margin: '24px 0 0', maxWidth: 880 }}>
             Pour une comparaison détaillée par usage, notre page <Link to="/quel-outil-ia" style={aStyle}>quel outil d'IA choisir</Link> confronte les assistants tâche par tâche.
@@ -844,40 +850,30 @@ export default function IAGenerativeEntreprisePage() {
             Accompagnement, outils sur mesure et formation à l'IA générative
           </h2>
 
-          <p style={answerStyle}>
-            <strong>Trois métiers dans un même cabinet : l'accompagnement pour choisir les usages et poser les règles, le développement sur mesure pour brancher et construire les outils, la formation pour rendre les utilisateurs autonomes. Le code et les réglages livrés vous appartiennent.</strong>
-          </p>
+          <Reponse style={answerStyle} texte="Trois métiers dans un même cabinet : l'accompagnement pour choisir les usages et poser les règles, le développement sur mesure pour brancher et construire les outils, la formation pour rendre les utilisateurs autonomes. Le code et les réglages livrés vous appartiennent." />
 
           <p style={{ color: '#374151', fontSize: 15, marginBottom: 40, lineHeight: 1.7, maxWidth: 880 }}>
             Selon votre point de départ, un seul levier suffit ou les trois s'enchaînent.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 24 }}>
-            {LEVIERS.map((card, i) => (
-              <div key={card.title} style={{ ...cardStyle, padding: 30, display: 'flex', flexDirection: 'column', ...(i === 0 ? { borderTop: `3px solid ${c}` } : {}) }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
-                  <IconTile icon={card.icon} />
-                  <span style={{ background: i === 0 ? c : cLight, color: i === 0 ? '#fff' : c, padding: '4px 12px', borderRadius: 99, fontSize: 12, fontWeight: 700, letterSpacing: '0.02em' }}>
-                    {card.tag}
-                  </span>
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 10 }}>{card.title}</h3>
-                <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.7, margin: '0 0 16px' }}>{card.desc}</p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                  {card.points.map(pt => (
-                    <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13.5, color: '#374151', lineHeight: 1.55 }}>
-                      <Check size={16} strokeWidth={2.4} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
-                      <span>{pt}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to={card.href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 'auto' }}>
-                  {card.linkLabel}
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </div>
-            ))}
-          </div>
+          {/* Un levier par rangée : texte, points clés, lien vers l'offre */}
+          <RangeesPlus items={LEVIERS.map(card => ({
+            icon: card.icon,
+            etiquette: card.tag,
+            titre: card.title,
+            texte: card.desc,
+            apres: (
+              <ul style={{ listStyle: 'none', padding: 0, margin: '12px 0 0', display: 'flex', flexWrap: 'wrap', gap: '8px 22px' }}>
+                {card.points.map(pt => (
+                  <li key={pt} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 14, color: '#374151', lineHeight: 1.55 }}>
+                    <Check size={16} strokeWidth={2} style={{ color: c, flexShrink: 0, marginTop: 2 }} aria-hidden="true" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            ),
+            lien: { to: card.href, label: card.linkLabel },
+          }))} />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: '28px 0 0', maxWidth: 880 }}>
             Dans un déploiement, la formation arrive une fois l'outil en service, pour que chacun apprenne sur l'outil qu'il gardera. Une application complète ou un agent qui agit dans plusieurs logiciels passe par notre <Link to="/agence-developpement-ia" style={aStyle}>agence de développement IA</Link>.
@@ -942,9 +938,7 @@ export default function IAGenerativeEntreprisePage() {
             Un projet d'IA générative se paie en abonnements et en mise en œuvre
           </h2>
 
-          <p style={{ ...answerStyle, background: '#F9FAFB' }}>
-            <strong>Les abonnements entreprise des grands assistants coûtent de 15 € à 30 € environ par utilisateur et par mois (grilles du 7 octobre 2026). La mise en œuvre se chiffre au forfait : en milliers d'euros pour un prototype, en dizaines de milliers pour un outil raccordé à vos logiciels, au-delà de 100 000 € pour un déploiement sur plusieurs sites.</strong>
-          </p>
+          <Reponse style={{ ...answerStyle, background: '#F9FAFB' }} texte="Les abonnements entreprise des grands assistants coûtent de 15 € à 30 € environ par utilisateur et par mois (grilles du 7 octobre 2026). La mise en œuvre se chiffre au forfait : en milliers d'euros pour un prototype, en dizaines de milliers pour un outil raccordé à vos logiciels, au-delà de 100 000 € pour un déploiement sur plusieurs sites." />
 
           <p style={{ fontSize: 14.5, color: '#6B7280', lineHeight: 1.75, margin: 0, maxWidth: 880 }}>
             Ces fourchettes restent larges, parce que deux projets qui portent le même nom n'ont parfois rien en commun. Le détail de ce qui fait varier la facture figure dans notre guide du <Link to="/prix-projet-ia" style={aStyle}>prix d'un projet IA</Link>. Une demi-heure de cadrage, offerte, suffit à placer votre projet dans ces fourchettes.
@@ -960,23 +954,8 @@ export default function IAGenerativeEntreprisePage() {
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Un cabinet de conseil, un industriel, une interprofession : trois façons d'ancrer un modèle dans les documents de l'organisation. Les clients restent anonymes à leur demande.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 20 }}>
-            {CAS.map(({ href, icon: Icon, sector, text }) => (
-              <article key={href} style={{ ...cardStyle, borderTop: `3px solid ${c}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: cLight, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Icon size={18} strokeWidth={2.2} style={{ color: c }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: c, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{sector}</span>
-                </div>
-                <p style={{ fontSize: 14.5, color: '#374151', lineHeight: 1.7, margin: 0, flex: 1 }}>{text}</p>
-                <Link to={href} style={{ fontSize: 13.5, color: c, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Lire le récit de la mission
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </article>
-            ))}
-          </div>
+          {/* Une mission par rangée, avec le lien vers son récit */}
+          <RangeesPlus items={CAS.map(({ href, icon, sector, text }) => ({ icon, titre: sector, texte: text, lien: { to: href, label: 'Lire le récit de la mission' } }))} />
         </div>
       </section>
 
@@ -1055,7 +1034,10 @@ export default function IAGenerativeEntreprisePage() {
       <section style={{ padding: 'clamp(40px, 6vw, 56px) 24px', background: '#fff' }}>
         <div style={{ maxWidth: 880, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: 16 }}>
           <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-            Je relis ce guide chaque fois qu'un éditeur change de modèle ou que le droit européen bouge ; la dernière révision date du 19 octobre 2026. Depuis la création de Masteria en 2022, j'ai vu l'IA générative passer de la curiosité au poste de travail, et le même constat revient : les entreprises qui en tirent quelque chose ont d'abord choisi leurs usages. Mon parcours figure sur <Link to="/mathias-nizan" style={aStyle}>ma page de fondateur</Link>.
+            Je relis ce guide chaque fois qu'un éditeur change de modèle ou que le droit européen bouge ; la dernière révision date du 19 octobre 2026.
+          </p>
+          <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            Depuis la création de Masteria en 2022, j'ai vu l'IA générative passer de la curiosité au poste de travail, et le même constat revient : les entreprises qui en tirent quelque chose ont d'abord choisi leurs usages. Mon parcours figure sur <Link to="/mathias-nizan" style={aStyle}>ma page de fondateur</Link>.
           </p>
           <p style={{ fontSize: 14, color: '#6B7280', margin: 0, fontWeight: 600 }}>Mathias Nizan, fondateur de Masteria</p>
           <PressMention />
@@ -1101,7 +1083,10 @@ export default function IAGenerativeEntreprisePage() {
               Des praticiens qui déploient ces outils chaque semaine
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria ne travaille que sur l'intelligence artificielle. Pour chaque projet, Mathias Nizan constitue l'équipe utile parmi un réseau d'indépendants : une vingtaine de formateurs, une dizaine de consultants spécialisés et cinq développeurs environ. Aucun éditeur ne finance nos recommandations. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail daté et sourcé.
+              Masteria ne travaille que sur l'intelligence artificielle. Pour chaque projet, Mathias Nizan constitue l'équipe utile parmi un réseau d'indépendants : une vingtaine de formateurs, une dizaine de consultants spécialisés et cinq développeurs environ.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+              Aucun éditeur ne finance nos recommandations. Les <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et la <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail daté et sourcé.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

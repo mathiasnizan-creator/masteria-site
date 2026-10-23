@@ -8,6 +8,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import OfficialSources from '../components/OfficialSources'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras, Reperes, Rangees, decouperPhrases } from '../components/Aere'
 
 /*
  * Page pilier — « ROI de l'IA en entreprise » (slug /roi-ia-entreprise).
@@ -431,6 +432,63 @@ const articleJsonLd = {
 
 /* ───────── Sous-composants ───────── */
 
+/* Rangées verticales pleine largeur (même dessin que <Rangees>), au contenu libre :
+   texte découpé, paragraphes ou liste déjà écrits, ligne « Ce qu'on suit ». */
+function RangeesPlus({ items, sombre = false, Titre = 'h3', style }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', texte: '#CBD5E1', pastille: 'rgba(37,99,235,0.16)', chiffre: '#60A5FA' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', texte: '#374151', pastille: '#EFF4FF', chiffre: c }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${t.bord}`, ...style }}>
+      {items.map(({ titre, texte, contenu, apres, num, icon: Icon, fort }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${t.bord}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: fort ? c : t.pastille, color: fort ? '#fff' : t.chiffre, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, marginTop: -2 }}>
+            {Icon ? <Icon size={17} strokeWidth={1.75} /> : (num ?? i + 1)}
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 780, flex: 1 }}>
+            <Titre style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: t.titre, margin: '0 0 8px', lineHeight: 1.35, letterSpacing: '-0.01em' }}>{titre}</Titre>
+            {texte && <Paras texte={texte} max={2} budget={320} style={{ fontSize: 15.5, color: t.texte, lineHeight: 1.7, margin: 0 }} />}
+            {contenu}
+            {apres}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+/* Fiche d'étude en rangée pleine largeur : chiffre à gauche, périmètre, source et nuance à droite
+   (remplace les cartes posées côte à côte ; l'ordre du texte dans la page ne change pas). */
+function FichesChiffrees({ items, sombre = false, isDesktop }) {
+  const t = sombre
+    ? { bord: '#1E293B', titre: '#F8FAFC', source: '#7DA9F0', mesure: '#7A8699', chiffre: '#60A5FA', unite: '#E2E8F0', texte: '#94A3B8', fond: 'rgba(37,99,235,0.08)' }
+    : { bord: '#E5E7EB', titre: '#0A0A0A', source: c, mesure: '#6B7280', chiffre: c, unite: '#0A0A0A', texte: '#374151', fond: '#F2F7FF' }
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: '30px 0 0', borderTop: `1px solid ${t.bord}` }}>
+      {items.map(f => (
+        <li key={f.titre} style={{
+          ...(isDesktop ? { display: 'grid', gridTemplateColumns: 'minmax(0, 250px) minmax(0, 1fr)', gridTemplateAreas: '"chiffre tete" "chiffre nuance"', columnGap: 'clamp(24px, 4vw, 48px)', alignItems: 'start' } : {}),
+          padding: f.highlight ? '26px 20px' : '26px 0', borderBottom: `1px solid ${t.bord}`,
+          ...(f.highlight ? { background: t.fond, borderRadius: 12 } : {}),
+        }}>
+          <div style={{ gridArea: 'tete', maxWidth: 760 }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 16.5, color: t.titre }}>{f.titre}</div>
+            <div style={{ fontSize: 12.5, color: t.source, fontWeight: 700, marginTop: 3 }}>{f.source}</div>
+            <div style={{ fontSize: 13, color: t.mesure, marginTop: 6, lineHeight: 1.5 }}>Mesuré sur : {f.mesure}</div>
+          </div>
+          <div style={{ gridArea: 'chiffre', margin: isDesktop ? 0 : '16px 0 0' }}>
+            <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: t.chiffre, letterSpacing: '-0.03em', lineHeight: 1, margin: '0 0 8px' }}>{f.chiffre}</div>
+            <div style={{ fontSize: 14, color: t.unite, lineHeight: 1.55, fontWeight: 600 }}>{f.unite}</div>
+          </div>
+          <div style={{ gridArea: 'nuance', maxWidth: 760, marginTop: 14 }}>
+            <Paras texte={f.nuance} max={2} style={{ fontSize: 14.5, color: t.texte, lineHeight: 1.65, margin: 0 }} />
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 function FaqItem({ q, a }) {
   const [open, setOpen] = useState(false)
   return (
@@ -446,7 +504,9 @@ function FaqItem({ q, a }) {
       </button>
       {/* Réponse TOUJOURS dans le DOM (repli CSS maxHeight) pour rester citable par les LLM */}
       <div aria-hidden={!open} style={{ maxHeight: open ? 1600 : 0, overflow: 'hidden', transition: 'max-height 0.32s ease' }}>
-        <p style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.78, padding: '0 0 22px', margin: 0 }}>{a}</p>
+        <div style={{ padding: '0 0 22px' }}>
+          <Paras texte={a} max={2} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.78, margin: 0, maxWidth: 780 }} />
+        </div>
       </div>
     </div>
   )
@@ -576,17 +636,11 @@ export default function RoiIAEntreprisePage() {
             ))}
           </div>
 
-          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 'clamp(20px, 3vw, 28px)', maxWidth: 880 }}>
-            <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: 14 }}>En bref</div>
-            <dl style={{ margin: 0 }}>
-              {EN_BREF.map((row, i) => (
-                <div key={row.label} style={{ display: 'flex', gap: 16, flexWrap: 'wrap', padding: '10px 0', borderTop: i === 0 ? 'none' : '1px solid #1E293B' }}>
-                  <dt style={{ flex: '0 0 150px', fontWeight: 800, fontSize: 13.5, color: '#E2E8F0', fontFamily: 'Nunito, sans-serif' }}>{row.label}</dt>
-                  <dd style={{ margin: 0, flex: 1, minWidth: 220, fontSize: 14.5, color: '#94A3B8', lineHeight: 1.6 }}>{row.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          {/* En bref : faits clés en repères (1re phrase en valeur, la suite en détail) */}
+          <Reperes sombre titre="En bref" colonnes={3} style={{ margin: 0, maxWidth: 1000 }} items={EN_BREF.map(row => {
+            const ph = decouperPhrases(row.value)
+            return ph.length > 1 ? { label: row.label, value: ph[0], detail: ph.slice(1).join(' ') } : { label: row.label, detail: row.value }
+          })} />
         </div>
       </section>
 
@@ -601,9 +655,7 @@ export default function RoiIAEntreprisePage() {
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 900 }}>
             Le rapport contient deux entonnoirs. Le débat public n&apos;en cite qu&apos;un.
           </h2>
-          <p style={{ color: '#94A3B8', fontSize: 16, lineHeight: 1.75, maxWidth: 820, margin: '0 0 34px' }}>
-            L&apos;affirmation selon laquelle 95 % des projets d&apos;IA échoueraient provient d&apos;un rapport publié en juillet 2025 par le projet NANDA du MIT. Le document indique que 95 % des organisations interrogées n&apos;ont pas mesuré de retour sur leur compte de résultat, ce qui n&apos;est pas la même chose qu&apos;un taux d&apos;échec de pilotes. Ses propres données, page 6, décrivent deux parcours très différents.
-          </p>
+          <Paras max={2} style={{ color: '#94A3B8', fontSize: 16, lineHeight: 1.75, maxWidth: 820, margin: '0 0 34px' }} texte="L'affirmation selon laquelle 95 % des projets d'IA échoueraient provient d'un rapport publié en juillet 2025 par le projet NANDA du MIT. Le document indique que 95 % des organisations interrogées n'ont pas mesuré de retour sur leur compte de résultat, ce qui n'est pas la même chose qu'un taux d'échec de pilotes. Ses propres données, page 6, décrivent deux parcours très différents." />
 
           <div style={{ overflowX: 'auto', border: '1px solid #1E293B', borderRadius: 16, background: 'rgba(255,255,255,0.02)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 720 }}>
@@ -656,9 +708,7 @@ export default function RoiIAEntreprisePage() {
         <div style={wrap}>
           <Kicker>Pilier 1 · La preuve</Kicker>
           <h2 style={h2Style}>IA et productivité : les gains sont établis, et mal datés</h2>
-          <p style={{ ...pStyle, maxWidth: 880 }}>
-            Quatre essais contrôlés randomisés, publiés dans des revues à comité de lecture, mesurent l&apos;effet de l&apos;IA générative sur la productivité en entreprise. Ils convergent : le gain de productivité est réel, plus fort sur les profils juniors et sur les tâches standardisées. Quatre expériences de terrain, menées ensuite dans le travail ordinaire de grandes entreprises, confirment le gain unitaire et mesurent ce qui bouge autour de lui.
-          </p>
+          <Paras max={2} style={{ ...pStyle, maxWidth: 880 }} texte="Quatre essais contrôlés randomisés, publiés dans des revues à comité de lecture, mesurent l'effet de l'IA générative sur la productivité en entreprise. Ils convergent : le gain de productivité est réel, plus fort sur les profils juniors et sur les tâches standardisées. Quatre expériences de terrain, menées ensuite dans le travail ordinaire de grandes entreprises, confirment le gain unitaire et mesurent ce qui bouge autour de lui." />
           <div style={answerStyle}>
             Le point que les reprises omettent presque toujours : <strong>la date de publication n&apos;est pas la date de mesure</strong>. Ces quatre études portent sur des modèles antérieurs à 2024, sans raisonnement, sans exécution de code, sans lecture de corpus longs. Ce sont des planchers, pas des plafonds.
           </div>
@@ -669,30 +719,17 @@ export default function RoiIAEntreprisePage() {
           </p>
 
           <h3 id="terrain" style={{ ...h3Style, fontSize: 20, margin: '44px 0 12px', scrollMarginTop: 96 }}>Ce que les grandes expériences en entreprise ajoutent</h3>
-          <p style={{ ...pStyle, maxWidth: 880 }}>
-            Les quatre essais ci-dessus mesurent une tâche isolée. Une seconde génération d&apos;études a placé l&apos;outil dans le travail ordinaire de dizaines d&apos;entreprises, pendant des mois, sur des modèles de 2023 et 2024. Le gain unitaire se confirme. Il se confirme aussi que rien ne bouge autour de lui : le temps d&apos;e-mail baisse, le temps de réunion et le volume de documents produits ne changent pas.
-          </p>
+          <Paras style={{ ...pStyle, maxWidth: 880 }} texte="Les quatre essais ci-dessus mesurent une tâche isolée. Une seconde génération d'études a placé l'outil dans le travail ordinaire de dizaines d'entreprises, pendant des mois, sur des modèles de 2023 et 2024. Le gain unitaire se confirme. Il se confirme aussi que rien ne bouge autour de lui : le temps d'e-mail baisse, le temps de réunion et le volume de documents produits ne changent pas." />
           <EtudesTable rows={TERRAIN} head={['Terrain', 'Mesuré sur', 'Effet mesuré', "Ce que l'étude nuance"]} />
           <p style={srcStyle}>
             Les deux premières expériences sont randomisées au niveau individuel ou par équipe. Celle d&apos;Ant Group compare des départements appariés. Celle de Google porte sur une tâche unique. Les quatre mesurent des minutes gagnées au poste de travail, aucune ne mesure un effet sur le compte de résultat.
           </p>
 
-          <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 20 }}>
-            <div style={{ ...cardStyle, padding: 26 }}>
-              <IconTile icon={AlertTriangle} />
-              <h3 style={{ ...h3Style, margin: '16px 0 10px' }}>Une étude qui s&apos;est corrigée elle-même</h3>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#374151', margin: 0 }}>
-                En juillet 2025, l&apos;organisation METR mesurait 16 développeurs expérimentés 19 % plus lents avec l&apos;IA sur leurs propres dépôts, alors qu&apos;ils s&apos;estimaient 20 % plus rapides. En février 2026, les mêmes auteurs ont publié une mise à jour : les nouveaux intervalles de confiance franchissent zéro, un biais de sélection de 30 à 50 % a été identifié, et ils concluent que les développeurs sont probablement accélérés aujourd&apos;hui. Ils ont abandonné le protocole.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 26 }}>
-              <IconTile icon={Target} />
-              <h3 style={{ ...h3Style, margin: '16px 0 10px' }}>Ce que l&apos;obsolescence démontre</h3>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#374151', margin: 0 }}>
-                Entre ces mesures et aujourd&apos;hui, les modèles ont changé plusieurs fois de génération. La part d&apos;entreprises attribuant un effet significatif à leur résultat d&apos;exploitation est restée à 6 % d&apos;une année sur l&apos;autre. Si la capacité du modèle était le facteur limitant, ce chiffre aurait bougé. Il n&apos;a pas bougé, et c&apos;est la meilleure preuve que le goulot est organisationnel.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <Rangees style={{ marginTop: 40 }} items={[
+            { icon: AlertTriangle, titre: "Une étude qui s'est corrigée elle-même", texte: "En juillet 2025, l'organisation METR mesurait 16 développeurs expérimentés 19 % plus lents avec l'IA sur leurs propres dépôts, alors qu'ils s'estimaient 20 % plus rapides. En février 2026, les mêmes auteurs ont publié une mise à jour : les nouveaux intervalles de confiance franchissent zéro, un biais de sélection de 30 à 50 % a été identifié, et ils concluent que les développeurs sont probablement accélérés aujourd'hui. Ils ont abandonné le protocole." },
+            { icon: Target, titre: "Ce que l'obsolescence démontre", texte: "Entre ces mesures et aujourd'hui, les modèles ont changé plusieurs fois de génération. La part d'entreprises attribuant un effet significatif à leur résultat d'exploitation est restée à 6 % d'une année sur l'autre. Si la capacité du modèle était le facteur limitant, ce chiffre aurait bougé. Il n'a pas bougé, et c'est la meilleure preuve que le goulot est organisationnel." },
+          ]} />
 
           <div style={{ ...cardStyle, marginTop: 40, padding: 'clamp(22px, 3vw, 30px)', borderColor: '#0A0A0A' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 18 }}>
@@ -702,14 +739,11 @@ export default function RoiIAEntreprisePage() {
                 <p style={{ fontSize: 14, color: '#6B7280', margin: '4px 0 0' }}>Ils circulent dans les présentations sur le ROI de l&apos;IA. Aucun ne résiste à la lecture de sa source.</p>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 18 }}>
-              {A_NE_PLUS_CITER.map(item => (
-                <div key={item.chiffre} style={{ padding: '16px 18px', background: '#F9FAFB', borderRadius: 12, border: '1px solid #E5E7EB' }}>
-                  <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15, color: '#0A0A0A', textDecoration: 'line-through', textDecorationColor: c, textDecorationThickness: 2, marginBottom: 8 }}>{item.chiffre}</div>
-                  <p style={{ fontSize: 14, lineHeight: 1.65, color: '#374151', margin: 0 }}>{item.pourquoi}</p>
-                </div>
-              ))}
-            </div>
+            {/* Une rangée par chiffre, en pleine largeur */}
+            <Rangees niveau="div" items={A_NE_PLUS_CITER.map(item => ({
+              titre: <span style={{ textDecoration: 'line-through', textDecorationColor: c, textDecorationThickness: 2 }}>{item.chiffre}</span>,
+              texte: item.pourquoi,
+            }))} />
           </div>
         </div>
       </section>
@@ -723,30 +757,18 @@ export default function RoiIAEntreprisePage() {
             La plupart des organisations mesurent le premier étage sous forme de licences attribuées, et le cinquième sous forme de résultat d&apos;exploitation. Les trois du milieu restent vides, si bien qu&apos;aucune décision ne peut être prise sur ce qui se perd entre les deux.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 18, marginTop: 30 }}>
-            {CHAINE.map(step => (
-              <div
-                key={step.n}
-                style={{
-                  ...cardStyle,
-                  padding: 24,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  ...(step.leak ? { borderColor: c, boxShadow: `0 0 0 2px ${cLight}` } : {}),
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14 }}>
-                  <span aria-hidden="true" style={{ width: 34, height: 34, borderRadius: 10, background: c, color: '#fff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontWeight: 900, fontSize: 15 }}>{step.n}</span>
-                  <step.icon size={19} strokeWidth={2} style={{ color: c }} aria-hidden="true" />
-                </div>
-                <h3 style={{ ...h3Style, fontSize: 16.5, marginBottom: 9 }}>{step.title}</h3>
-                <p style={{ fontSize: 14.5, lineHeight: 1.65, color: '#374151', margin: '0 0 14px' }}>{step.desc}</p>
-                <div style={{ marginTop: 'auto', paddingTop: 12, borderTop: '1px solid #E5E7EB', fontSize: 13, color: '#6B7280', lineHeight: 1.55 }}>
-                  <strong style={{ color: c, fontWeight: 700 }}>Ce qu&apos;on suit&nbsp;:</strong> {step.kpi}
-                </div>
+          {/* Un étage par rangée ; le quatrième, point de fuite, a sa pastille pleine */}
+          <RangeesPlus style={{ marginTop: 30 }} items={CHAINE.map(step => ({
+            num: step.n,
+            fort: step.leak,
+            titre: step.title,
+            texte: step.desc,
+            apres: (
+              <div style={{ marginTop: 10, fontSize: 14, color: '#6B7280', lineHeight: 1.55 }}>
+                <strong style={{ color: c, fontWeight: 700 }}>Ce qu&apos;on suit&nbsp;:</strong> {step.kpi}
               </div>
-            ))}
-          </div>
+            ),
+          }))} />
 
           <div style={{ ...answerStyle, marginTop: 34, maxWidth: '100%' }}>
             <strong>Le point de fuite est presque toujours au quatrième étage.</strong> Cinq minutes gagnées quarante fois ne deviennent jamais un équivalent temps plein sans redécoupage du processus. La conversion est une décision de management, jamais un effet automatique de l&apos;outil. Personne ne convertit par accident. Notre <Link to="/calculateur-roi-ia" style={{ color: c, fontWeight: 700 }}>calculateur de ROI IA</Link> chiffre les cinq étages sur un de vos usages.
@@ -799,12 +821,8 @@ export default function RoiIAEntreprisePage() {
           </p>
 
           <h3 style={{ ...h3Style, fontSize: 20, margin: '40px 0 14px' }}>La frontière des tâches se déplace, et rien ne signale qu&apos;on la franchit</h3>
-          <p style={{ ...pStyle, maxWidth: 880 }}>
-            L&apos;étude menée auprès de 758 consultants a mis en évidence une frontière irrégulière entre les tâches où l&apos;IA améliore fortement la performance et celles où elle la dégrade. Sur la tâche située hors de cette frontière, les participants équipés ont produit 19 % de bonnes réponses en moins que le groupe travaillant sans IA. Cette tâche ne paraissait pas plus difficile que les autres, et le modèle y produisait une réponse plausible et fausse.
-          </p>
-          <p style={{ ...pStyle, maxWidth: 880 }}>
-            L&apos;expérience datant d&apos;avril 2023, un coauteur a précisé en mars 2026 que la frontière s&apos;était déplacée de façon substantielle et que des tâches alors hors du périmètre pouvaient s&apos;y trouver aujourd&apos;hui, et inversement. Le contrôle et le recalcul de données chiffrées, la recherche de sources ou le traitement de corpus longs ont largement basculé du bon côté. Ce qui reste dehors relève d&apos;une autre nature : une réponse plausible que rien ne permet de vérifier de l&apos;intérieur, une information que l&apos;organisation n&apos;a jamais écrite, une décision qui engage et se contrôle ligne à ligne.
-          </p>
+          <Paras max={2} style={{ ...pStyle, maxWidth: 880 }} texte="L'étude menée auprès de 758 consultants a mis en évidence une frontière irrégulière entre les tâches où l'IA améliore fortement la performance et celles où elle la dégrade. Sur la tâche située hors de cette frontière, les participants équipés ont produit 19 % de bonnes réponses en moins que le groupe travaillant sans IA. Cette tâche ne paraissait pas plus difficile que les autres, et le modèle y produisait une réponse plausible et fausse." />
+          <Paras max={2} style={{ ...pStyle, maxWidth: 880 }} texte="L'expérience datant d'avril 2023, un coauteur a précisé en mars 2026 que la frontière s'était déplacée de façon substantielle et que des tâches alors hors du périmètre pouvaient s'y trouver aujourd'hui, et inversement. Le contrôle et le recalcul de données chiffrées, la recherche de sources ou le traitement de corpus longs ont largement basculé du bon côté. Ce qui reste dehors relève d'une autre nature : une réponse plausible que rien ne permet de vérifier de l'intérieur, une information que l'organisation n'a jamais écrite, une décision qui engage et se contrôle ligne à ligne." />
           <div style={answerStyle}>
             La conséquence est plus exigeante que le constat initial. Le problème n&apos;est pas de savoir où passe la frontière, c&apos;est qu&apos;elle bouge tous les quelques mois. <strong>Une charte d&apos;usage figée devient fausse toute seule.</strong> Ce qui s&apos;installe n&apos;est pas une liste de tâches déléguables, c&apos;est une routine de test et de documentation à chaque changement de version.
           </div>
@@ -816,48 +834,41 @@ export default function RoiIAEntreprisePage() {
         <div style={wrap}>
           <div style={{ ...kickerStyle, color: '#60A5FA' }}>Qualité</div>
           <h2 style={{ ...h2Style, color: '#F8FAFC', maxWidth: 880 }}>La qualité suit la vitesse sur les tâches de création, pas sur les tâches de décision</h2>
-          <p style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.75, maxWidth: 860, margin: '0 0 12px' }}>
-            Le temps gagné ne dit rien de la valeur du livrable. Six travaux mesurent la qualité elle-même, avec des évaluateurs indépendants ou des indicateurs objectifs. Ils dessinent une ligne nette : quand l&apos;IA produit et que l&apos;humain choisit, la qualité monte. Quand l&apos;IA recommande et que l&apos;humain tranche, le binôme fait souvent moins bien que le meilleur des deux seuls.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 18, marginTop: 30 }}>
-            {QUALITE.map(q => (
-              <div key={q.domaine} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 24, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15.5, color: '#F8FAFC' }}>{q.domaine}</div>
-                <div style={{ fontSize: 12.5, color: '#7DA9F0', fontWeight: 700, marginTop: 3 }}>{q.source}</div>
-                <div style={{ fontSize: 13, color: '#7A8699', marginTop: 8, lineHeight: 1.5 }}>Mesuré sur : {q.mesure}</div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: '#60A5FA', letterSpacing: '-0.03em', lineHeight: 1, margin: '18px 0 6px' }}>{q.chiffre}</div>
-                <div style={{ fontSize: 14, color: '#E2E8F0', lineHeight: 1.55, fontWeight: 600 }}>{q.unite}</div>
-                <p style={{ fontSize: 14, color: '#94A3B8', lineHeight: 1.65, margin: '14px 0 0', paddingTop: 12, borderTop: '1px solid #1E293B' }}>{q.nuance}</p>
-              </div>
-            ))}
-          </div>
+          <Paras max={2} style={{ color: '#CBD5E1', fontSize: 16, lineHeight: 1.75, maxWidth: 860, margin: '0 0 12px' }} texte="Le temps gagné ne dit rien de la valeur du livrable. Six travaux mesurent la qualité elle-même, avec des évaluateurs indépendants ou des indicateurs objectifs. Ils dessinent une ligne nette : quand l'IA produit et que l'humain choisit, la qualité monte. Quand l'IA recommande et que l'humain tranche, le binôme fait souvent moins bien que le meilleur des deux seuls." />
+          {/* Une fiche par étude, en rangée pleine largeur */}
+          <FichesChiffrees sombre isDesktop={isDesktop} items={QUALITE.map(q => ({ titre: q.domaine, source: q.source, mesure: q.mesure, chiffre: q.chiffre, unite: q.unite, nuance: q.nuance }))} />
 
-          <div style={{ marginTop: 34, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 18 }}>
-            <div style={{ background: 'rgba(37,99,235,0.10)', border: '1px solid rgba(37,99,235,0.35)', borderRadius: 16, padding: 26 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                <GraduationCap size={20} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 17 }}>Le même outil forme ou désapprend selon la façon dont il est introduit</h3>
-              </div>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: '0 0 10px' }}>
-                Près d&apos;un millier de lycéens, GPT-4, automne 2023, publication dans les <em>PNAS</em> en 2025 : l&apos;accès libre à l&apos;assistant fait monter les résultats de 48 % pendant les exercices et les fait baisser de 17 % à l&apos;examen passé sans IA. La version tuteur, qui guide au lieu de donner la réponse, fait +127 % pendant les exercices et ne dégrade rien à l&apos;examen.
-              </p>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: 0 }}>
-                Chez 52 développeurs (Anthropic, prépublication de janvier 2026, assistant bâti sur GPT-4o), ceux qui ont appris une bibliothèque avec l&apos;assistant comprennent 50 % du code contre 67 % pour les autres, pour un gain de temps non significatif.
-              </p>
-            </div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid #1E293B', borderRadius: 16, padding: 26 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-                <Scale size={20} strokeWidth={2} style={{ color: '#60A5FA' }} aria-hidden="true" />
-                <h3 style={{ ...h3Style, color: '#F8FAFC', fontSize: 17 }}>Ce que cela change dans un déploiement</h3>
-              </div>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: '0 0 10px' }}>
-                La mesure de qualité se décide avant le pilote, avec un évaluateur qui ne sait pas quel livrable vient de l&apos;IA. Sur les tâches de création, l&apos;indicateur suit le gain de temps. Sur les tâches de décision, il faut un protocole : qui tranche, sur quelle base, et ce qui se passe quand l&apos;outil et la personne ne sont pas d&apos;accord.
-              </p>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: 0 }}>
-                Le garde-fou pédagogique compte autant que l&apos;outil. Un assistant qui donne la réponse produit un gain immédiat et une perte de compétence différée. Un assistant qui fait travailler produit les deux gains. C&apos;est une décision de conception, elle se prend au moment de la <Link to="/formation-ia-entreprise" style={{ color: '#93C5FD', fontWeight: 700 }}>formation des équipes</Link>.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus d'encadrés côte à côte) */}
+          <RangeesPlus sombre style={{ marginTop: 34 }} items={[
+            {
+              icon: GraduationCap,
+              titre: "Le même outil forme ou désapprend selon la façon dont il est introduit",
+              contenu: (
+                <>
+                  <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: '0 0 10px' }}>
+                    Près d&apos;un millier de lycéens, GPT-4, automne 2023, publication dans les <em>PNAS</em> en 2025 : l&apos;accès libre à l&apos;assistant fait monter les résultats de 48 % pendant les exercices et les fait baisser de 17 % à l&apos;examen passé sans IA. La version tuteur, qui guide au lieu de donner la réponse, fait +127 % pendant les exercices et ne dégrade rien à l&apos;examen.
+                  </p>
+                  <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: 0 }}>
+                    Chez 52 développeurs (Anthropic, prépublication de janvier 2026, assistant bâti sur GPT-4o), ceux qui ont appris une bibliothèque avec l&apos;assistant comprennent 50 % du code contre 67 % pour les autres, pour un gain de temps non significatif.
+                  </p>
+                </>
+              ),
+            },
+            {
+              icon: Scale,
+              titre: 'Ce que cela change dans un déploiement',
+              contenu: (
+                <>
+                  <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: '0 0 10px' }}>
+                    La mesure de qualité se décide avant le pilote, avec un évaluateur qui ne sait pas quel livrable vient de l&apos;IA. Sur les tâches de création, l&apos;indicateur suit le gain de temps. Sur les tâches de décision, il faut un protocole : qui tranche, sur quelle base, et ce qui se passe quand l&apos;outil et la personne ne sont pas d&apos;accord.
+                  </p>
+                  <p style={{ fontSize: 15, lineHeight: 1.72, color: '#CBD5E1', margin: 0 }}>
+                    Le garde-fou pédagogique compte autant que l&apos;outil. Un assistant qui donne la réponse produit un gain immédiat et une perte de compétence différée. Un assistant qui fait travailler produit les deux gains. C&apos;est une décision de conception, elle se prend au moment de la <Link to="/formation-ia-entreprise" style={{ color: '#93C5FD', fontWeight: 700 }}>formation des équipes</Link>.
+                  </p>
+                </>
+              ),
+            },
+          ]} />
           <p style={{ ...srcStyle, color: '#7A8699', maxWidth: 860 }}>
             Sources : Vaccaro, Almaatouq et Malone, <em>Nature Human Behaviour</em>, 2024 ; Doshi et Hauser, <em>Science Advances</em>, 2024 ; Goh et al., <em>JAMA Network Open</em>, 2024 et <em>Nature Medicine</em>, 2025 ; Schwarcz et al., <em>Journal of Law &amp; Empirical Analysis</em>, 2026 ; He et al., Carnegie Mellon, MSR 2026 ; Brynjolfsson, Li et Raymond, <em>QJE</em>, 2025 ; Bastani et al., <em>PNAS</em>, 2025 ; Shen et Tamkin, Anthropic, 2026.
           </p>
@@ -893,37 +904,47 @@ export default function RoiIAEntreprisePage() {
         <div style={wrap}>
           <Kicker>Allocation</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 880 }}>L&apos;argent va où l&apos;attribution est facile. Le retour est ailleurs.</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 20, marginTop: 26 }}>
-            <div style={{ ...cardStyle, padding: 28 }}>
-              <IconTile icon={Filter} />
-              <h3 style={{ ...h3Style, margin: '16px 0 12px' }}>Ce qui capte les budgets</h3>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#374151', margin: '0 0 12px' }}>
-                Les fonctions commerciales et marketing concentrent une part majoritaire des budgets d&apos;IA générative déclarés. L&apos;attribution y est simple, avec des indicateurs qui remontent bien en comité : volume de démonstrations, délai de réponse, taux de transformation.
-              </p>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#6B7280', margin: 0 }}>
-                Gains constatés dans le rapport : qualification des prospects 40 % plus rapide, rétention en hausse de 10 %.
-              </p>
-            </div>
-            <div style={{ ...cardStyle, padding: 28, borderColor: c, boxShadow: `0 0 0 2px ${cLight}` }}>
-              <IconTile icon={Receipt} />
-              <h3 style={{ ...h3Style, margin: '16px 0 12px' }}>Ce qui produit les économies</h3>
-              <ul style={{ margin: '0 0 12px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
-                {[
-                  'Sous-traitance de back-office remplacée : 2 à 10 millions de dollars par an',
-                  "Dépenses d'agences externes réduites de 30 %",
-                  'Contrôles de risque réinternalisés : un million de dollars par an',
-                ].map(li => (
-                  <li key={li} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15, lineHeight: 1.6, color: '#374151' }}>
-                    <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
-                    {li}
-                  </li>
-                ))}
-              </ul>
-              <p style={{ fontSize: 15, lineHeight: 1.72, color: '#0A0A0A', margin: 0, fontWeight: 600 }}>
-                Le rapport précise que ces gains sont venus de la réduction de dépenses externes, sans réduction d&apos;effectifs internes.
-              </p>
-            </div>
-          </div>
+          {/* Deux rangées pleine largeur (plus de cartes côte à côte) */}
+          <RangeesPlus style={{ marginTop: 26 }} items={[
+            {
+              icon: Filter,
+              titre: 'Ce qui capte les budgets',
+              contenu: (
+                <>
+                  <p style={{ fontSize: 15.5, lineHeight: 1.72, color: '#374151', margin: '0 0 12px' }}>
+                    Les fonctions commerciales et marketing concentrent une part majoritaire des budgets d&apos;IA générative déclarés. L&apos;attribution y est simple, avec des indicateurs qui remontent bien en comité : volume de démonstrations, délai de réponse, taux de transformation.
+                  </p>
+                  <p style={{ fontSize: 15.5, lineHeight: 1.72, color: '#6B7280', margin: 0 }}>
+                    Gains constatés dans le rapport : qualification des prospects 40 % plus rapide, rétention en hausse de 10 %.
+                  </p>
+                </>
+              ),
+            },
+            {
+              icon: Receipt,
+              fort: true,
+              titre: 'Ce qui produit les économies',
+              contenu: (
+                <>
+                  <ul style={{ margin: '0 0 12px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 9 }}>
+                    {[
+                      'Sous-traitance de back-office remplacée : 2 à 10 millions de dollars par an',
+                      "Dépenses d'agences externes réduites de 30 %",
+                      'Contrôles de risque réinternalisés : un million de dollars par an',
+                    ].map(li => (
+                      <li key={li} style={{ display: 'flex', gap: 9, alignItems: 'flex-start', fontSize: 15.5, lineHeight: 1.6, color: '#374151' }}>
+                        <Check size={16} strokeWidth={2.6} style={{ color: c, flexShrink: 0, marginTop: 3 }} aria-hidden="true" />
+                        {li}
+                      </li>
+                    ))}
+                  </ul>
+                  <p style={{ fontSize: 15.5, lineHeight: 1.72, color: '#0A0A0A', margin: 0, fontWeight: 600 }}>
+                    Le rapport précise que ces gains sont venus de la réduction de dépenses externes, sans réduction d&apos;effectifs internes.
+                  </p>
+                </>
+              ),
+            },
+          ]} />
           <p style={srcStyle}>Source : MIT NANDA, <em>The GenAI Divide</em>, juillet 2025, section consacrée aux organisations ayant obtenu un retour mesuré.</p>
         </div>
       </section>
@@ -955,9 +976,7 @@ export default function RoiIAEntreprisePage() {
             <p style={pStyle}>
               L&apos;écart ne s&apos;explique ni par la taille des entreprises ni par la composition sectorielle : la France est en retard dans chaque catégorie de taille et dans chacun des quatre grands secteurs. Le frein déclaré est spécifique, les entreprises françaises citant moins souvent le manque de compétences et plus souvent les préoccupations relatives aux données, à la vie privée et à l&apos;éthique.
             </p>
-            <p style={pStyle}>
-              Sur l&apos;emploi, la donnée contredit l&apos;intuition. Dans l&apos;industrie manufacturière et les services, les entreprises utilisant le plus intensivement l&apos;IA affichent des anticipations de croissance de l&apos;emploi plus élevées. Les auteurs précisent que ces résultats sont descriptifs et non causaux. Du côté français, l&apos;Insee mesure par ailleurs 18 % d&apos;entreprises de dix salariés ou plus utilisatrices d&apos;au moins une technologie d&apos;IA en 2025, contre 10 % en 2024, pour une moyenne européenne de 20 %.
-            </p>
+            <Paras max={2} style={pStyle} texte="Sur l'emploi, la donnée contredit l'intuition. Dans l'industrie manufacturière et les services, les entreprises utilisant le plus intensivement l'IA affichent des anticipations de croissance de l'emploi plus élevées. Les auteurs précisent que ces résultats sont descriptifs et non causaux. Du côté français, l'Insee mesure par ailleurs 18 % d'entreprises de dix salariés ou plus utilisatrices d'au moins une technologie d'IA en 2025, contre 10 % en 2024, pour une moyenne européenne de 20 %." />
           </div>
         </div>
       </section>
@@ -967,25 +986,18 @@ export default function RoiIAEntreprisePage() {
         <div style={wrap}>
           <Kicker>Changement d&apos;échelle</Kicker>
           <h2 style={{ ...h2Style, maxWidth: 900 }}>De 15 à 40 % par tâche à 1 % pour un pays : la chaîne de conversion vue de loin</h2>
-          <p style={{ ...pStyle, maxWidth: 880 }}>
-            Les essais contrôlés mesurent une tâche, chez des personnes qui utilisent l&apos;outil, pendant qu&apos;elles l&apos;utilisent. Les données de registres, les grands panels d&apos;entreprises et les enquêtes de dirigeants mesurent ce qui reste une fois l&apos;adoption partielle, la part des heures concernées et la conversion prises en compte. Le chiffre perd un ordre de grandeur à chaque changement d&apos;échelle, ce qui est exactement ce que prédit la chaîne à cinq étages.
-          </p>
+          <Paras max={2} style={{ ...pStyle, maxWidth: 880 }} texte="Les essais contrôlés mesurent une tâche, chez des personnes qui utilisent l'outil, pendant qu'elles l'utilisent. Les données de registres, les grands panels d'entreprises et les enquêtes de dirigeants mesurent ce qui reste une fois l'adoption partielle, la part des heures concernées et la conversion prises en compte. Le chiffre perd un ordre de grandeur à chaque changement d'échelle, ce qui est exactement ce que prédit la chaîne à cinq étages." />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 18, marginTop: 30 }}>
-            {MACRO.map(m => (
-              <div key={m.perimetre} style={{ ...cardStyle, padding: 24, display: 'flex', flexDirection: 'column', ...(m.highlight ? { borderColor: c, boxShadow: `0 0 0 2px ${cLight}` } : {}) }}>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800, fontSize: 15.5, color: '#0A0A0A' }}>{m.perimetre}</div>
-                <div style={{ fontSize: 12.5, color: c, fontWeight: 700, marginTop: 3 }}>{m.source}</div>
-                <div style={{ fontSize: 13, color: '#6B7280', marginTop: 8, lineHeight: 1.5 }}>Mesuré sur : {m.mesure}</div>
-                <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 32, fontWeight: 900, color: c, letterSpacing: '-0.03em', lineHeight: 1, margin: '18px 0 6px' }}>{m.chiffre}</div>
-                <div style={{ fontSize: 14, color: '#0A0A0A', lineHeight: 1.55, fontWeight: 600 }}>{m.unite}</div>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.65, margin: '14px 0 0', paddingTop: 12, borderTop: '1px solid #E5E7EB' }}>{m.nuance}</p>
-              </div>
-            ))}
-          </div>
+          {/* Une fiche par source, en rangée pleine largeur */}
+          <FichesChiffrees isDesktop={isDesktop} items={MACRO.map(m => ({ titre: m.perimetre, source: m.source, mesure: m.mesure, chiffre: m.chiffre, unite: m.unite, nuance: m.nuance, highlight: m.highlight }))} />
 
           <div style={{ ...answerStyle, marginTop: 34, maxWidth: '100%' }}>
-            <strong>La chute d&apos;un ordre de grandeur se calcule.</strong> Une fraction des salariés adopte, sur une fraction de leurs heures, avec un gain net inférieur au gain brut, dont une fraction seulement est convertie. Quatre multiplications par une fraction ramènent un +30 % par tâche à quelques pour cent d&apos;heures, puis à un point de productivité. Les travaux de cadrage macroéconomique arrivent au même ordre de grandeur par une autre voie : entre 0,5 et 0,7 % de productivité globale des facteurs sur dix ans pour Daron Acemoglu (MIT, 2024), entre 0,25 et 0,6 point par an pour l&apos;OCDE (2024), portés à 0,4 à 1,3 point de productivité du travail dans les pays les plus exposés dans sa mise à jour de 2025.
+            <p style={{ margin: '0 0 12px' }}>
+              <strong>La chute d&apos;un ordre de grandeur se calcule.</strong> Une fraction des salariés adopte, sur une fraction de leurs heures, avec un gain net inférieur au gain brut, dont une fraction seulement est convertie. Quatre multiplications par une fraction ramènent un +30 % par tâche à quelques pour cent d&apos;heures, puis à un point de productivité.
+            </p>
+            <p style={{ margin: 0 }}>
+              Les travaux de cadrage macroéconomique arrivent au même ordre de grandeur par une autre voie : entre 0,5 et 0,7 % de productivité globale des facteurs sur dix ans pour Daron Acemoglu (MIT, 2024), entre 0,25 et 0,6 point par an pour l&apos;OCDE (2024), portés à 0,4 à 1,3 point de productivité du travail dans les pays les plus exposés dans sa mise à jour de 2025.
+            </p>
           </div>
           <p style={srcStyle}>
             Les travaux danois et américains reposent sur des gains de temps déclarés par les travailleurs, les effets sur salaires et heures sur des registres administratifs. L&apos;étude BRI-BEI porte sur l&apos;IA au sens large. Les enquêtes de dirigeants et d&apos;administrations sont déclaratives. Aucune de ces sources ne contredit les essais contrôlés : elles mesurent ce qui en reste après conversion.
@@ -1090,7 +1102,10 @@ export default function RoiIAEntreprisePage() {
               Chaque chiffre de cette page a été vérifié sur sa source primaire
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Nous affichons l&apos;échantillon et la période de mesure, pas seulement la date de parution. Les chiffres retenus sont ceux des versions publiées, qui diffèrent parfois des prépublications reprises dans la presse. Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
+              Nous affichons l&apos;échantillon et la période de mesure, pas seulement la date de parution. Les chiffres retenus sont ceux des versions publiées, qui diffèrent parfois des prépublications reprises dans la presse.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+              Masteria, cabinet spécialisé en intelligence artificielle fondé à Lyon en 2022 par Mathias Nizan, est indépendante des éditeurs. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link> montrent ce travail en situation.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>

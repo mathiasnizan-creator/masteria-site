@@ -7,6 +7,7 @@ import {
 import SEOHead from '../components/SEOHead'
 import { FAQSection } from '../components/screens2'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Reponse, Rangees, paragraphes } from '../components/Aere'
 
 /* ───────── Jetons de style (charte cabinet) ───────── */
 
@@ -451,6 +452,36 @@ const h3EditorialStyle = {
   color: INK, marginTop: 36, marginBottom: 14, letterSpacing: '-0.01em',
 }
 
+/* Rangées verticales pleine largeur (même dessin que <Rangees>), avec étiquette, liste ou lien :
+   remplacent les cartes posées côte à côte. */
+function RangeesPlus({ items, style }) {
+  return (
+    <ol style={{ listStyle: 'none', padding: 0, margin: 0, borderTop: `1px solid ${BORDER}`, ...style }}>
+      {items.map(({ titre, etiquette, texte, apres, lien, icon: Icon }, i) => (
+        <li key={i} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '24px 0', borderBottom: `1px solid ${BORDER}` }}>
+          <span aria-hidden="true" style={{ flexShrink: 0, width: 34, height: 34, borderRadius: 99, background: '#EFF4FF', color: BLUE, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 15, fontWeight: 800, marginTop: -2 }}>
+            {Icon ? <Icon size={17} strokeWidth={1.75} /> : i + 1}
+          </span>
+          <div style={{ minWidth: 0, maxWidth: 780, flex: 1 }}>
+            {etiquette && <div style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12, fontWeight: 800, color: BLUE, margin: '0 0 4px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{etiquette}</div>}
+            <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: INK, margin: '0 0 8px', lineHeight: 1.35, letterSpacing: '-0.01em' }}>{titre}</h3>
+            {paragraphes(texte, 2, 320).map((t, j, l) => (
+              <p key={j} style={{ fontSize: 15.5, color: '#4B5563', lineHeight: 1.7, margin: j < l.length - 1 ? '0 0 12px' : 0 }}>{t}</p>
+            ))}
+            {apres}
+            {lien && (
+              <Link to={lien.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 12, fontSize: 14, color: BLUE, fontWeight: 700, textDecoration: 'none' }}>
+                {lien.label}
+                <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
+              </Link>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
 export default function ConseilIAPage() {
   const isDesktop = useIsDesktop()
   // Patron éditorial asymétrique réutilisable
@@ -565,9 +596,7 @@ export default function ConseilIAPage() {
               <h2 style={{ ...h2Style, marginBottom: 18 }}>
                 Que fait un cabinet de conseil en IA&nbsp;?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong style={{ color: INK }}>Le cabinet de conseil en IA observe comment votre entreprise travaille, repère les tâches où l'intelligence artificielle rend des heures pour un risque maîtrisé, puis organise leur mise en œuvre&nbsp;: outil, règles d'usage, formation et mesure. Son travail se juge sur ce que les équipes font encore avec l'outil trois mois plus tard.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte={"Le cabinet de conseil en IA observe comment votre entreprise travaille, repère les tâches où l'intelligence artificielle rend des heures pour un risque maîtrisé, puis organise leur mise en œuvre\u00a0: outil, règles d'usage, formation et mesure. Son travail se juge sur ce que les équipes font encore avec l'outil trois mois plus tard."} />
             </div>
 
             <div style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
@@ -585,7 +614,10 @@ export default function ConseilIAPage() {
                 ))}
               </ul>
               <p style={{ marginBottom: 0 }}>
-                Masteria prend en charge ces cinq sujets et va au-delà de la recommandation, puisque ses développeurs construisent les outils choisis. Si votre question porte d'abord sur les choix de direction (où investir, dans quel ordre, pour quel budget), la page <Link to="/conseil-strategie-ia" style={linkStyle}>conseil stratégie IA</Link> détaille ce volet. Si l'outil est déjà identifié, passez par notre <Link to="/agence-developpement-ia" style={linkStyle}>agence de développement IA</Link>. Chaque pôle est présenté plus bas, dans <a href="#services" style={linkStyle}>nos services</a>.
+                Masteria prend en charge ces cinq sujets et va au-delà de la recommandation, puisque ses développeurs construisent les outils choisis. Si votre question porte d'abord sur les choix de direction (où investir, dans quel ordre, pour quel budget), la page <Link to="/conseil-strategie-ia" style={linkStyle}>conseil stratégie IA</Link> détaille ce volet.
+              </p>
+              <p style={{ marginTop: 14, marginBottom: 0 }}>
+                Si l'outil est déjà identifié, passez par notre <Link to="/agence-developpement-ia" style={linkStyle}>agence de développement IA</Link>. Chaque pôle est présenté plus bas, dans <a href="#services" style={linkStyle}>nos services</a>.
               </p>
             </div>
           </div>
@@ -599,8 +631,10 @@ export default function ConseilIAPage() {
           <h2 style={{ ...h2Style, marginBottom: 16 }}>
             La recommandation devient un outil en service
           </h2>
+          <p style={{ fontSize: 16, color: GREY_700, lineHeight: 1.75, maxWidth: 820, marginBottom: 14 }}>
+            <strong style={{ color: INK }}>Une recommandation rangée dans un document ne rend d'heure à personne. Chez Masteria, le consultant qui a cadré le besoin suit la construction de l'outil jusqu'à sa mise en service.</strong>
+          </p>
           <p style={{ fontSize: 16, color: GREY_700, lineHeight: 1.75, maxWidth: 820, marginBottom: 36 }}>
-            <strong style={{ color: INK }}>Une recommandation rangée dans un document ne rend d'heure à personne. Chez Masteria, le consultant qui a cadré le besoin suit la construction de l'outil jusqu'à sa mise en service.</strong>{' '}
             Une fois la feuille de route validée, l'équipe de développement prend les chantiers retenus&nbsp;: assistant documentaire, agent qui prépare un devis, connexion à votre ERP, automatisation d'un reporting. Le consultant garde la main sur le périmètre décidé, et les développeurs livrent par étapes utilisables, avec un point chaque semaine.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 20, marginBottom: 36 }}>
@@ -645,41 +679,27 @@ export default function ConseilIAPage() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: 24,
-          }}>
-            {SERVICES.map((s, i) => (
-              <div key={i} style={{ ...cardStyle, display: 'flex', flexDirection: 'column' }}>
-                <div style={{ ...iconTileStyle, marginBottom: 20 }}>
-                  <s.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
+          {/* Un pôle par rangée, avec ses livrables (plus de cartes côte à côte) */}
+          <RangeesPlus style={{ maxWidth: 900, margin: '0 auto' }} items={SERVICES.map(s => ({
+            icon: s.Icon,
+            titre: s.title,
+            texte: s.desc,
+            apres: (
+              <div style={{ marginTop: 14 }}>
+                <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GREY_500, marginBottom: 8 }}>
+                  Livrables
                 </div>
-                <h3 style={{
-                  fontFamily: 'Nunito, sans-serif', fontSize: 19, fontWeight: 800,
-                  color: INK, marginBottom: 12, letterSpacing: '-0.01em',
-                }}>
-                  {s.title}
-                </h3>
-                <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, marginBottom: 18 }}>
-                  {s.desc}
-                </p>
-                <div style={{ borderTop: `1px solid ${BORDER}`, paddingTop: 16, marginTop: 'auto' }}>
-                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: GREY_500, marginBottom: 10 }}>
-                    Livrables
-                  </div>
-                  <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 7 }}>
-                    {s.deliverables.map((d, j) => (
-                      <li key={j} style={{ fontSize: 13, color: GREY_700, display: 'flex', alignItems: 'flex-start', gap: 8 }}>
-                        <Check size={16} color={BLUE} strokeWidth={2.5} aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }} />
-                        <span>{d}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '7px 24px' }}>
+                  {s.deliverables.map((d, j) => (
+                    <li key={j} style={{ fontSize: 14, color: GREY_700, display: 'flex', alignItems: 'flex-start', gap: 8, lineHeight: 1.55 }}>
+                      <Check size={16} color={BLUE} strokeWidth={2} aria-hidden="true" style={{ flexShrink: 0, marginTop: 2 }} />
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-            ))}
-          </div>
+            ),
+          }))} />
         </div>
       </section>
 
@@ -697,7 +717,10 @@ export default function ConseilIAPage() {
               Commencez par un diagnostic IA
             </h2>
             <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: 0, maxWidth: 700 }}>
-              Quand vous ne savez pas encore par quelle porte entrer, le diagnostic IA donne une première lecture&nbsp;: où en sont vos équipes, quelles tâches méritent un outil, quelle décision prendre d'abord. C'est une intervention courte, menée au contact des équipes. Nous fixons avec vous sa durée et son forfait au moment du cadrage (30 minutes offertes), d'après la taille de votre périmètre.
+              Quand vous ne savez pas encore par quelle porte entrer, le diagnostic IA donne une première lecture&nbsp;: où en sont vos équipes, quelles tâches méritent un outil, quelle décision prendre d'abord. C'est une intervention courte, menée au contact des équipes.
+            </p>
+            <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: '12px 0 0', maxWidth: 700 }}>
+              Nous fixons avec vous sa durée et son forfait au moment du cadrage (30 minutes offertes), d'après la taille de votre périmètre.
             </p>
           </div>
           <Link to="/diagnostic-ia" style={{
@@ -777,10 +800,14 @@ export default function ConseilIAPage() {
           <h2 id="choisir" style={{ ...h2Style, scrollMarginTop: 96, color: '#F8FAFC' }}>
             Cabinet de conseil IA, ESN généraliste ou freelance&nbsp;: que choisir&nbsp;?
           </h2>
-          <p style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
-            <strong style={{ color: '#fff' }}>Le bon partenaire dépend de la question posée. Un cabinet spécialisé en IA décide avec vous quoi faire et dans quel ordre, puis rend vos équipes autonomes&nbsp;; une ESN généraliste apporte des bras sur un projet long&nbsp;; un freelance règle un problème précis, déjà bien délimité.</strong>{' '}
-            Quand plusieurs services sont concernés et que le choix d'un outil engage des licences pour tout le personnel, le cabinet spécialisé évite de bâtir sur la mauvaise priorité.
-          </p>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid #1E293B', borderLeft: `3px solid ${BLUE}`, borderRadius: '0 12px 12px 0', padding: '20px 24px', fontSize: 16.5, lineHeight: 1.7, color: '#E2E8F0', margin: '0 0 28px', maxWidth: 880 }}>
+            <p style={{ margin: '0 0 12px' }}>
+              <strong style={{ color: '#fff' }}>Le bon partenaire dépend de la question posée. Un cabinet spécialisé en IA décide avec vous quoi faire et dans quel ordre, puis rend vos équipes autonomes&nbsp;; une ESN généraliste apporte des bras sur un projet long&nbsp;; un freelance règle un problème précis, déjà bien délimité.</strong>
+            </p>
+            <p style={{ margin: 0, color: '#CBD5E1' }}>
+              Quand plusieurs services sont concernés et que le choix d'un outil engage des licences pour tout le personnel, le cabinet spécialisé évite de bâtir sur la mauvaise priorité.
+            </p>
+          </div>
 
           <div style={{ overflowX: 'auto', border: '1px solid #1E293B', borderRadius: 16 }}>
             <table aria-label="Comparatif entre un cabinet de conseil IA spécialisé, une ESN généraliste et un freelance IA" style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, minWidth: 760 }}>
@@ -844,25 +871,8 @@ export default function ConseilIAPage() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: 24,
-          }}>
-            {POUR_QUI.map((p, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28 }}>
-                <div style={{ ...iconTileStyle, marginBottom: 18 }}>
-                  <p.Icon size={22} color={BLUE} strokeWidth={2} aria-hidden="true" />
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: INK, marginBottom: 10, letterSpacing: '-0.01em' }}>
-                  {p.title}
-                </h3>
-                <p style={{ fontSize: 14, color: GREY_700, lineHeight: 1.7, margin: 0 }}>
-                  {p.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Un public par rangée, en pleine largeur */}
+          <Rangees style={{ maxWidth: 860, margin: '0 auto' }} items={POUR_QUI.map(p => ({ titre: p.title, texte: p.desc, icon: p.Icon }))} />
         </div>
       </section>
 
@@ -880,22 +890,8 @@ export default function ConseilIAPage() {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: 24,
-          }}>
-            {DIFFERENCIATEURS.map((d, i) => (
-              <div key={i} style={{ ...cardStyle, padding: 28, borderTop: `3px solid ${BLUE}` }}>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 16, fontWeight: 800, color: INK, marginBottom: 8, letterSpacing: '-0.01em' }}>
-                  {d.title}
-                </h3>
-                <p style={{ fontSize: 13.5, color: GREY_700, lineHeight: 1.7, margin: 0 }}>
-                  {d.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+          {/* Un atout par rangée, en pleine largeur */}
+          <Rangees style={{ maxWidth: 860, margin: '0 auto' }} items={DIFFERENCIATEURS.map(d => ({ titre: d.title, texte: d.desc, icon: d.Icon }))} />
         </div>
       </section>
 
@@ -908,53 +904,84 @@ export default function ConseilIAPage() {
               <h2 id="pourquoi" style={{ ...h2Style, scrollMarginTop: 96, marginBottom: 18 }}>
                 Pourquoi recourir à un cabinet de conseil en intelligence artificielle&nbsp;?
               </h2>
-              <p style={{ ...answerStyle, maxWidth: 'none', margin: 0 }}>
-                <strong style={{ color: INK }}>Faire appel à un cabinet spécialisé sert à décider où investir avant de dépenser, à poser les règles d'usage qu'exigent les textes européens sur les données et sur l'IA, et à mesurer ce que rapporte chaque outil. Indépendant des éditeurs, le cabinet compare les solutions sans avoir intérêt à vendre l'une plutôt que l'autre.</strong>
-              </p>
+              <Reponse style={{ ...answerStyle, maxWidth: 'none', margin: 0 }} texte="Faire appel à un cabinet spécialisé sert à décider où investir avant de dépenser, à poser les règles d'usage qu'exigent les textes européens sur les données et sur l'IA, et à mesurer ce que rapporte chaque outil. Indépendant des éditeurs, le cabinet compare les solutions sans avoir intérêt à vendre l'une plutôt que l'autre." />
             </div>
 
             <div style={{ color: GREY_700, fontSize: 16, lineHeight: 1.75 }}>
               <p style={{ marginTop: 0, marginBottom: 20 }}>
-                Les grands assistants (ChatGPT, Claude, Gemini, Microsoft Copilot, Vibe de Mistral AI) sont à la portée de toutes les entreprises. Un siège ChatGPT Business affiche 21 € par mois en France, Microsoft Copilot Business 18,20 € HT en engagement annuel (grilles relevées début octobre 2026), et Gemini fait partie des forfaits Google Workspace. L'abonnement n'est donc plus l'obstacle. Ce qui manque presque partout, c'est la place de l'outil dans le travail&nbsp;: quelle tâche, quelles données, qui relit. Une mission de conseil répond à ces trois questions avant de <Link to="/ia-generative-entreprise" style={linkStyle}>déployer l'IA générative dans toute l'entreprise</Link>.
+                Les grands assistants (ChatGPT, Claude, Gemini, Microsoft Copilot, Vibe de Mistral AI) sont à la portée de toutes les entreprises. Un siège ChatGPT Business affiche 21 € par mois en France, Microsoft Copilot Business 18,20 € HT en engagement annuel (grilles relevées début octobre 2026), et Gemini fait partie des forfaits Google Workspace.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                L'abonnement n'est donc plus l'obstacle. Ce qui manque presque partout, c'est la place de l'outil dans le travail&nbsp;: quelle tâche, quelles données, qui relit. Une mission de conseil répond à ces trois questions avant de <Link to="/ia-generative-entreprise" style={linkStyle}>déployer l'IA générative dans toute l'entreprise</Link>.
               </p>
 
               <h3 style={h3EditorialStyle}>
                 L'IA est entrée dans vos bureaux avant toute règle
               </h3>
               <p style={{ marginBottom: 20 }}>
-                Selon le Baromètre du numérique 2026 du Crédoc, 48 % des personnes de 12 ans et plus utilisaient l'IA générative en juin 2025, contre 20 % en 2023. Une bonne partie de vos collaborateurs a donc déjà ses habitudes&nbsp;: comptes personnels, documents clients collés dans des outils que personne n'administre, autant de méthodes que de personnes. Un audit remet de l'ordre. Il recense ces usages, classe les tâches candidates d'après les heures qu'elles mobilisent, leur faisabilité et leur risque (données personnelles, secret des affaires, AI Act), puis propose une trajectoire que <strong style={{ color: INK }}>la direction arbitre en connaissant les coûts</strong>.
+                Selon le Baromètre du numérique 2026 du Crédoc, 48 % des personnes de 12 ans et plus utilisaient l'IA générative en juin 2025, contre 20 % en 2023. Une bonne partie de vos collaborateurs a donc déjà ses habitudes&nbsp;: comptes personnels, documents clients collés dans des outils que personne n'administre, autant de méthodes que de personnes.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Un audit remet de l'ordre. Il recense ces usages, classe les tâches candidates d'après les heures qu'elles mobilisent, leur faisabilité et leur risque (données personnelles, secret des affaires, AI Act), puis propose une trajectoire que <strong style={{ color: INK }}>la direction arbitre en connaissant les coûts</strong>.
               </p>
 
               <h3 style={h3EditorialStyle}>
                 Ce que l'AI Act demande à une entreprise qui utilise l'IA, au 7 octobre 2026
               </h3>
               <p style={{ marginBottom: 20 }}>
-                Le règlement (UE) 2024/1689, ou AI Act, en vigueur depuis le 1er août 2024, s'applique morceau par morceau. Son article 4 a pris effet le 2 février 2025, et l'Omnibus l'a réécrit en juillet 2026. Il attend désormais des entreprises qu'elles agissent pour faire progresser la culture IA de leurs équipes et des personnes qui utilisent ces outils pour leur compte. Aucun seuil individuel ni certificat n'est requis&nbsp;; garder trace des formations suivies dans un registre interne suffit. L'article 50 produit ses effets depuis le 2 août 2026 et oblige à prévenir le public qu'il converse avec un assistant automatique, ou qu'un contenu diffusé sort d'une IA. Les obligations qui visent les systèmes classés à haut risque par l'annexe III, par exemple le tri automatisé de candidatures, attendront décembre 2027&nbsp;: l'Omnibus sur l'IA, règlement (UE) 2026/1744, les a reportées. Rédiger un mail avec Copilot relève du risque minimal et n'entraîne aucune obligation propre à l'AI Act&nbsp;; le RGPD, lui, s'applique dès qu'une donnée personnelle passe dans l'outil. Nos missions posent donc <strong style={{ color: INK }}>une charte d'usage, la liste des données exclues, un référent et une relecture humaine</strong> des contenus envoyés à l'extérieur. Le détail figure sur notre page <Link to="/gouvernance-ia" style={linkStyle}>gouvernance de l'IA et conformité à l'AI Act</Link>.
+                Le règlement (UE) 2024/1689, ou AI Act, en vigueur depuis le 1er août 2024, s'applique morceau par morceau. Son article 4 a pris effet le 2 février 2025, et l'Omnibus l'a réécrit en juillet 2026.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Il attend désormais des entreprises qu'elles agissent pour faire progresser la culture IA de leurs équipes et des personnes qui utilisent ces outils pour leur compte. Aucun seuil individuel ni certificat n'est requis&nbsp;; garder trace des formations suivies dans un registre interne suffit.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                L'article 50 produit ses effets depuis le 2 août 2026 et oblige à prévenir le public qu'il converse avec un assistant automatique, ou qu'un contenu diffusé sort d'une IA. Les obligations qui visent les systèmes classés à haut risque par l'annexe III, par exemple le tri automatisé de candidatures, attendront décembre 2027&nbsp;: l'Omnibus sur l'IA, règlement (UE) 2026/1744, les a reportées.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Rédiger un mail avec Copilot relève du risque minimal et n'entraîne aucune obligation propre à l'AI Act&nbsp;; le RGPD, lui, s'applique dès qu'une donnée personnelle passe dans l'outil. Nos missions posent donc <strong style={{ color: INK }}>une charte d'usage, la liste des données exclues, un référent et une relecture humaine</strong> des contenus envoyés à l'extérieur. Le détail figure sur notre page <Link to="/gouvernance-ia" style={linkStyle}>gouvernance de l'IA et conformité à l'AI Act</Link>.
               </p>
 
               <h3 style={h3EditorialStyle}>
                 Le même responsable, de la recommandation à l'outil utilisé
               </h3>
               <p style={{ marginBottom: 20 }}>
-                Quand une mission de conseil s'arrête à la remise du rapport, le chantier repart chez un intégrateur qui n'a assisté à aucun entretien, et une partie du besoin se perd en route. Chez Masteria, les développeurs de notre <Link to="/agence-developpement-ia" style={linkStyle}>agence de développement IA</Link> construisent les outils retenus, puis les formateurs du réseau forment ceux qui s'en servent, du comité de direction (avec la <Link to="/formation-ia-dirigeants" style={linkStyle}>formation IA pour dirigeants</Link>) aux équipes de terrain. <strong style={{ color: INK }}>Le consultant qui a mené le diagnostic reste présent jusqu'au bilan.</strong> Conseil et développement se facturent au forfait&nbsp;; votre OPCO ne peut financer que la formation.
+                Quand une mission de conseil s'arrête à la remise du rapport, le chantier repart chez un intégrateur qui n'a assisté à aucun entretien, et une partie du besoin se perd en route. Chez Masteria, les développeurs de notre <Link to="/agence-developpement-ia" style={linkStyle}>agence de développement IA</Link> construisent les outils retenus, puis les formateurs du réseau forment ceux qui s'en servent, du comité de direction (avec la <Link to="/formation-ia-dirigeants" style={linkStyle}>formation IA pour dirigeants</Link>) aux équipes de terrain.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                <strong style={{ color: INK }}>Le consultant qui a mené le diagnostic reste présent jusqu'au bilan.</strong> Conseil et développement se facturent au forfait&nbsp;; votre OPCO ne peut financer que la formation.
               </p>
 
               <h3 style={h3EditorialStyle}>
                 Choisir un modèle sans s'enfermer chez un éditeur
               </h3>
               <p style={{ marginBottom: 20 }}>
-                L'offre bouge tous les mois. OpenAI, Anthropic, Google et Microsoft proposent des modèles propriétaires, accessibles seulement par leurs services&nbsp;; Mistral AI diffuse en plus des modèles à poids ouverts, que l'on peut installer sur ses propres machines&nbsp;; et chaque offre a ses règles d'hébergement des données. Le bon choix dépend de vos logiciels (Microsoft 365, Google Workspace, ERP, CRM), de la sensibilité de vos dossiers et du coût par utilisateur. Nous pesons ces critères <strong style={{ color: INK }}>sans préférence de marque</strong>. Quand la décision mène à un développement, nos développeurs écrivent les <Link to="/outils-ia-sur-mesure" style={linkStyle}>outils IA sur mesure</Link>&nbsp;; pour les tâches répétitives, notre <Link to="/agence-automatisation-ia" style={linkStyle}>agence d'automatisation IA</Link> monte les flux. Le consultant vérifie que ce qui est livré correspond à ce qui a été décidé.
+                L'offre bouge tous les mois. OpenAI, Anthropic, Google et Microsoft proposent des modèles propriétaires, accessibles seulement par leurs services&nbsp;; Mistral AI diffuse en plus des modèles à poids ouverts, que l'on peut installer sur ses propres machines&nbsp;; et chaque offre a ses règles d'hébergement des données.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Le bon choix dépend de vos logiciels (Microsoft 365, Google Workspace, ERP, CRM), de la sensibilité de vos dossiers et du coût par utilisateur. Nous pesons ces critères <strong style={{ color: INK }}>sans préférence de marque</strong>.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Quand la décision mène à un développement, nos développeurs écrivent les <Link to="/outils-ia-sur-mesure" style={linkStyle}>outils IA sur mesure</Link>&nbsp;; pour les tâches répétitives, notre <Link to="/agence-automatisation-ia" style={linkStyle}>agence d'automatisation IA</Link> monte les flux. Le consultant vérifie que ce qui est livré correspond à ce qui a été décidé.
               </p>
 
               <h3 style={h3EditorialStyle}>
                 Quels résultats une mission de conseil IA doit-elle laisser&nbsp;?
               </h3>
               <p style={{ marginBottom: 20 }}>
-                Une mission réussie laisse trois traces que l'on peut vérifier&nbsp;: des outils en service sur les tâches choisies, des personnes capables de les utiliser et de les faire évoluer, des indicateurs suivis par la direction. Les objectifs s'écrivent par tâche avant la formation (délai pour chiffrer une demande de prix, heures consacrées aux transporteurs, ressaisies évitées), la situation initiale se chiffre pendant la séance et le bilan arrive un mois plus tard. Les <a href="#etudes-de-cas" style={linkStyle}>quatre missions présentées plus bas</a> montrent ce déroulé, d'une équipe de trois personnes à un industriel de plusieurs milliers de salariés.
+                Une mission réussie laisse trois traces que l'on peut vérifier&nbsp;: des outils en service sur les tâches choisies, des personnes capables de les utiliser et de les faire évoluer, des indicateurs suivis par la direction.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Les objectifs s'écrivent par tâche avant la formation (délai pour chiffrer une demande de prix, heures consacrées aux transporteurs, ressaisies évitées), la situation initiale se chiffre pendant la séance et le bilan arrive un mois plus tard. Les <a href="#etudes-de-cas" style={linkStyle}>quatre missions présentées plus bas</a> montrent ce déroulé, d'une équipe de trois personnes à un industriel de plusieurs milliers de salariés.
               </p>
 
-              <p style={{ marginBottom: 0 }}>
-                Plusieurs portes d'entrée existent selon votre situation. Le <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link> donne une première lecture, courte, de votre maturité et de vos premiers chantiers. L'<Link to="/audit-ia" style={linkStyle}>audit IA complet</Link> s'adresse à la direction qui veut tout examiner avant d'investir&nbsp;: données, conformité, feuille de route chiffrée. L'<Link to="/accompagnement-ia" style={linkStyle}>accompagnement IA dans la durée</Link> suit le déploiement jusqu'aux habitudes prises, avec l'<Link to="/acculturation-ia" style={linkStyle}>acculturation des équipes</Link>. Pour les décisions de comité de direction, le <Link to="/conseil-strategie-ia" style={linkStyle}>conseil en stratégie IA</Link> produit une feuille de route que l'on peut arbitrer. Côté données, le <Link to="/conseil-data-ia" style={linkStyle}>conseil data et IA</Link> ne prépare que ce que vos cas d'usage exigent. Pour estimer un budget, partez des fourchettes de notre page <Link to="/prix-projet-ia" style={linkStyle}>prix d'un projet IA</Link>. Pour comparer les prestataires, lisez nos guides des <Link to="/prestataire-ia" style={linkStyle}>familles de prestataires IA</Link>, du <Link to="/meilleur-cabinet-conseil-ia" style={linkStyle}>meilleur cabinet de conseil IA</Link> et de la <Link to="/meilleure-agence-ia" style={linkStyle}>meilleure agence IA</Link>. Enfin, les <Link to="/ia-secteurs" style={linkStyle}>usages de l'IA classés par secteur</Link> donnent des exemples propres à votre métier.
+              <p style={{ marginBottom: 20 }}>
+                Plusieurs portes d'entrée existent selon votre situation. Le <Link to="/diagnostic-ia" style={linkStyle}>diagnostic IA</Link> donne une première lecture, courte, de votre maturité et de vos premiers chantiers. L'<Link to="/audit-ia" style={linkStyle}>audit IA complet</Link> s'adresse à la direction qui veut tout examiner avant d'investir&nbsp;: données, conformité, feuille de route chiffrée.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                L'<Link to="/accompagnement-ia" style={linkStyle}>accompagnement IA dans la durée</Link> suit le déploiement jusqu'aux habitudes prises, avec l'<Link to="/acculturation-ia" style={linkStyle}>acculturation des équipes</Link>. Pour les décisions de comité de direction, le <Link to="/conseil-strategie-ia" style={linkStyle}>conseil en stratégie IA</Link> produit une feuille de route que l'on peut arbitrer. Côté données, le <Link to="/conseil-data-ia" style={linkStyle}>conseil data et IA</Link> ne prépare que ce que vos cas d'usage exigent.
+              </p>
+              <p style={{ marginBottom: 20 }}>
+                Pour estimer un budget, partez des fourchettes de notre page <Link to="/prix-projet-ia" style={linkStyle}>prix d'un projet IA</Link>. Pour comparer les prestataires, lisez nos guides des <Link to="/prestataire-ia" style={linkStyle}>familles de prestataires IA</Link>, du <Link to="/meilleur-cabinet-conseil-ia" style={linkStyle}>meilleur cabinet de conseil IA</Link> et de la <Link to="/meilleure-agence-ia" style={linkStyle}>meilleure agence IA</Link>. Enfin, les <Link to="/ia-secteurs" style={linkStyle}>usages de l'IA classés par secteur</Link> donnent des exemples propres à votre métier.
               </p>
 
               <p style={{ marginBottom: 0, fontStyle: 'italic', color: GREY_700, borderLeft: `3px solid ${BLUE}`, paddingLeft: 16, marginTop: 32 }}>
@@ -1030,24 +1057,8 @@ export default function ConseilIAPage() {
           <p style={{ fontSize: 15.5, color: GREY_700, lineHeight: 1.75, margin: '0 0 28px', maxWidth: 820 }}>
             Chaque carte retient une leçon de méthode, illustrée par les faits d'une mission. Les entreprises ne sont pas nommées, à leur demande&nbsp;; secteur, taille et chiffres proviennent des dossiers de mission.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))', gap: 20 }}>
-            {CASE_LESSONS.map(k => (
-              <article key={k.id} style={{ ...cardStyle, borderTop: `3px solid ${BLUE}`, padding: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span aria-hidden="true" style={{ width: 36, height: 36, borderRadius: 10, background: BLUE_SOFT, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <k.Icon size={18} strokeWidth={2.2} style={{ color: BLUE }} />
-                  </span>
-                  <span style={{ fontFamily: 'Nunito, sans-serif', fontSize: 12.5, fontWeight: 800, color: BLUE, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{k.label}</span>
-                </div>
-                <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 17, fontWeight: 800, color: INK, margin: 0, lineHeight: 1.3, letterSpacing: '-0.01em' }}>{k.title}</h3>
-                <p style={{ fontSize: 14.5, color: GREY_700, lineHeight: 1.7, margin: 0, flex: 1 }}>{k.text}</p>
-                <Link to={`/etudes-de-cas-ia#${k.id}`} style={{ fontSize: 13.5, color: BLUE, fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: 6, textDecoration: 'none', marginTop: 4 }}>
-                  Lire ce cas en entier
-                  <ArrowRight size={14} strokeWidth={2.4} aria-hidden="true" />
-                </Link>
-              </article>
-            ))}
-          </div>
+          {/* Une mission par rangée, avec le lien vers son récit complet */}
+          <RangeesPlus items={CASE_LESSONS.map(k => ({ icon: k.Icon, etiquette: k.label, titre: k.title, texte: k.text, lien: { to: `/etudes-de-cas-ia#${k.id}`, label: 'Lire ce cas en entier' } }))} />
           <p style={{ fontSize: 14, color: GREY_500, lineHeight: 1.7, margin: '24px 0 0', maxWidth: 880 }}>
             Chaque mission est racontée en entier, méthode et résultats compris, sur notre page <Link to="/etudes-de-cas-ia" style={{ color: BLUE, fontWeight: 600 }}>études de cas IA</Link>. Si vous souhaitez échanger avec l'un de ces clients, nous pouvons organiser un appel confidentiel.
           </p>
@@ -1071,7 +1082,10 @@ export default function ConseilIAPage() {
               Et la formation des équipes&nbsp;?
             </h2>
             <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: 0, maxWidth: 680 }}>
-              Un outil ne sert que si chacun sait quand s'y fier et quand le contredire. Nous formons soit un groupe de votre entreprise, jusqu'à 12 participants, soit une personne seule&nbsp;; chaque journée démarre à 1 980 € HT, et un financement par l'OPCO dont vous dépendez reste possible, selon ses règles et ses fonds. Plus de 100 programmes figurent au catalogue, et nous les adaptons aux outils déployés pendant la mission.
+              Un outil ne sert que si chacun sait quand s'y fier et quand le contredire. Nous formons soit un groupe de votre entreprise, jusqu'à 12 participants, soit une personne seule&nbsp;; chaque journée démarre à 1 980 € HT, et un financement par l'OPCO dont vous dépendez reste possible, selon ses règles et ses fonds.
+            </p>
+            <p style={{ fontSize: 15, color: GREY_700, lineHeight: 1.7, margin: '12px 0 0', maxWidth: 680 }}>
+              Plus de 100 programmes figurent au catalogue, et nous les adaptons aux outils déployés pendant la mission.
             </p>
           </div>
           <Link to="/formation-intelligence-artificielle" style={{
@@ -1094,7 +1108,10 @@ export default function ConseilIAPage() {
               Une équipe composée pour chaque mission, pilotée par son fondateur
             </h2>
             <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: 0 }}>
-              Masteria est l'entreprise individuelle de Mathias Nizan, créée à Lyon en 2022 pour ne traiter que d'intelligence artificielle. Pour chaque mission, il réunit les profils utiles dans un réseau d'indépendants (consultants, développeurs, formateurs) et reste votre interlocuteur du cadrage au bilan, pour un site lyonnais comme pour une filiale européenne ou des équipes installées en Inde ou aux États-Unis. Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>, où figure un article des Échos, montrent ce travail de près.
+              Masteria est l'entreprise individuelle de Mathias Nizan, créée à Lyon en 2022 pour ne traiter que d'intelligence artificielle. Pour chaque mission, il réunit les profils utiles dans un réseau d'indépendants (consultants, développeurs, formateurs) et reste votre interlocuteur du cadrage au bilan, pour un site lyonnais comme pour une filiale européenne ou des équipes installées en Inde ou aux États-Unis.
+            </p>
+            <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.75, margin: '12px 0 0' }}>
+              Nos <Link to="/etudes-de-cas-ia" style={{ color: '#93C5FD', fontWeight: 600 }}>études de cas</Link> et notre <Link to="/presse" style={{ color: '#93C5FD', fontWeight: 600 }}>revue de presse</Link>, où figure un article des Échos, montrent ce travail de près.
             </p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: 'clamp(16px, 3vw, 36px)', flex: '1 1 420px' }}>
