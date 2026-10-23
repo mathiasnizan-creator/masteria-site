@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Check } from 'lucide-react';
 import { FadeIn, PrimaryBtn } from './components';
+import { Paras } from './Aere';
 
 export const FAQ_GENERAL = [
   { q: "Vos formations sont-elles certifiées Qualiopi ?", a: "Oui. Masteria est certifié Qualiopi, le référentiel national qualité pour les organismes de formation. Cette certification garantit la qualité de nos processus pédagogiques et est exigée pour toute prise en charge OPCO." },
@@ -42,8 +43,8 @@ export function FAQSection({ items, title = "Questions fréquentes", bg = "#F8F8
                 <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, fontWeight: 600, color: '#111', lineHeight: 1.4 }}>{item.q}</span>
                 <span style={{ fontSize: 20, color: open === i ? '#1C1C1C' : '#6B7280', flexShrink: 0, transform: open === i ? 'rotate(45deg)' : 'none', transition: 'transform 220ms ease', lineHeight: 1, fontWeight: 300 }}>+</span>
               </button>
-              <div style={{ maxHeight: open === i ? 300 : 0, overflow: 'hidden', transition: 'max-height 320ms ease' }}>
-                <p style={{ fontSize: 14, color: '#4A4A4A', lineHeight: 1.8, paddingBottom: 20 }}>{item.a}</p>
+              <div style={{ maxHeight: open === i ? 800 : 0, overflow: 'hidden', transition: 'max-height 320ms ease' }}>
+                <div style={{ paddingBottom: 20 }}><Paras texte={item.a} max={2} style={{ fontSize: 14, color: '#4A4A4A', lineHeight: 1.8, margin: 0 }} /></div>
               </div>
             </div>
           ))}

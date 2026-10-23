@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Compass, Cpu, GraduationCap, ArrowRight } from 'lucide-react'
 import { useIsDesktop } from '../hooks/useMediaQuery'
+import { Paras } from './Aere'
 
 /*
  * Bloc « L'équipe Masteria » : le réseau d'indépendants mobilisé selon le projet.
@@ -69,9 +70,7 @@ export default function EquipeMasteria({
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(28px, 3.4vw, 40px)', fontWeight: 900, letterSpacing: '-0.02em', color: '#0A0A0A', lineHeight: 1.15, margin: '0 0 18px' }}>
               {titre}
             </h2>
-            <p style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px' }}>
-              {intro}
-            </p>
+            <Paras texte={intro} max={2} style={{ fontSize: 16.5, color: '#374151', lineHeight: 1.75, margin: '0 0 28px' }} />
             {showFounder && (
               <Link to="/mathias-nizan" style={{ display: 'flex', alignItems: 'center', gap: 16, padding: 16, border: `1px solid ${LINE}`, borderRadius: 16, textDecoration: 'none', background: '#fff', maxWidth: 400 }}>
                 <img
