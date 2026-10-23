@@ -416,7 +416,7 @@ export default {
    },
    {
     "outil": "claude",
-    "texte": "Claude accepte des documents longs, comme le manuel d'évaluation ou le cahier des charges d'un appel à projets, et ses compétences (Skills) rangent une grille de relecture réutilisable. Les offres Team et Enterprise excluent d'office vos échanges de l'entraînement. Faute de région européenne dans les applications d'Anthropic, un DPO qui exige l'Europe fait passer Claude par AWS Bedrock ou Vertex AI. {/formation-claude-ia|Formation Claude}"
+    "texte": "Claude accepte des documents longs, comme le manuel d'évaluation ou le cahier des charges d'un appel à projets, et ses compétences (Skills) rangent une grille de relecture réutilisable. Les offres Team et Enterprise excluent d'office vos échanges de l'entraînement. Un DPO qui impose un hébergement en Europe passe par AWS Bedrock ou Vertex AI, les applications Claude n'offrant pas ce choix. {/formation-claude-ia|Formation Claude}"
    },
    {
     "outil": "gemini",

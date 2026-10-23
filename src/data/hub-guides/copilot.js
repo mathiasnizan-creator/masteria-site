@@ -11,7 +11,7 @@ export default {
   outilCourt: 'Microsoft Copilot',
   casIds: ['industrie'],
 
-  definition: "Une formation de deux jours où vos équipes se servent de Copilot dans Outlook, Teams, Word, Excel et PowerPoint, avec leurs fichiers de travail. Douze participants au maximum par groupe, ou une personne seule, dans vos locaux ou en visioconférence.",
+  definition: "Une formation de deux jours où vos équipes se servent de Copilot dans Outlook, Teams, Word, Excel et PowerPoint, avec leurs fichiers de travail. Un groupe réunit douze participants au plus ; la formation existe aussi en individuel, sur place comme en visioconférence.",
 
   intro: "Sous Microsoft 365, Copilot existe à deux niveaux. Copilot Chat, compris dans l'abonnement, travaille sur le web et sur les fichiers qu'on lui donne. La licence Microsoft Copilot lit en plus les mails, les réunions, l'agenda et les fichiers de chaque salarié. Copilot réécrit le document Word ouvert, remanie un classeur Excel et, avec Cowork (facturé à la consommation), mène une tâche jusqu'à l'envoi d'un mail après votre accord. La formation apprend à choisir le bon niveau, à formuler une demande précise et à contrôler ce que Copilot a modifié. Treize programmes couvrent les métiers, de la finance à la DSI, et la conception d'agents dans Copilot Studio.",
 
@@ -39,7 +39,7 @@ export default {
     },
     {
       title: "Cowork et les agents passent de la réponse à l'action",
-      body: "En disponibilité générale depuis le 16 juin 2026 pour les comptes professionnels qui ont la licence, une fois activé par l'administrateur, Copilot Cowork mène une tâche en plusieurs étapes : il envoie des mails, planifie des réunions, crée des fichiers Word, Excel, PowerPoint ou PDF et publie dans Teams. Avant chaque action sensible, il demande votre accord et en affiche le niveau de risque. Sa consommation se paie au-delà du prix de la licence. Pour un besoin plus simple, Agent Builder construit sans code un assistant ancré dans vos documents ; Copilot Studio prend la suite quand l'agent doit intervenir dans vos logiciels. La formation vous aide à placer chaque besoin au bon étage, avant d'engager un budget.",
+      body: "Copilot Cowork, ouvert le 16 juin 2026 à tous les titulaires de la licence dès qu'un administrateur l'active, conduit une tâche en plusieurs étapes : envoi de mails, planification de réunions, création de fichiers Word, Excel, PowerPoint ou PDF, publication dans Teams. Avant chaque action sensible, il demande votre accord et en affiche le niveau de risque. Sa consommation se paie au-delà du prix de la licence. Pour un besoin plus simple, Agent Builder construit sans code un assistant ancré dans vos documents ; Copilot Studio prend la suite quand l'agent doit intervenir dans vos logiciels. La formation vous aide à placer chaque besoin au bon étage, avant d'engager un budget.",
     },
   ],
 
@@ -79,7 +79,7 @@ export default {
 
   encart: {
     titre: 'Pour bâtir vos agents Copilot, passez à la formation agents IA',
-    avant: "Agent Builder suffit pour un assistant qui s'appuie sur quelques documents SharePoint. Un agent qui doit agir en plusieurs étapes dans vos logiciels se construit plutôt dans Copilot Studio, vendu à part : au 7 octobre 2026, 173,30 € HT par mois pour un pack de 25 000 crédits, ou un paiement à l'usage. Notre ",
+    avant: "Agent Builder suffit pour un assistant qui s'appuie sur quelques documents SharePoint. Un agent qui doit agir en plusieurs étapes dans vos logiciels se construit plutôt dans Copilot Studio, vendu à part : le pack mensuel de 25 000 crédits coûtait 173,30 € HT au 7 octobre 2026, et le paiement à l'usage reste possible. Notre ",
     ancre: 'formation agents IA',
     href: '/formation-agents-ia',
     apres: " consacre deux jours à ce travail : chacun bâtit un agent pour une tâche de son poste, le met à l'épreuve sur des cas difficiles et apprend à le superviser dans la durée.",
@@ -89,7 +89,7 @@ export default {
     titre: 'Quel programme Copilot pour votre équipe ?',
     paras: [
       "Regardez d'abord les licences. Une équipe qui n'a que Copilot Chat travaille sur des fichiers déposés, sur le web et sur des agents simples : le programme met alors l'accent sur la méthode de demande, la vérification et les règles de données. Une équipe dotée de la licence Microsoft Copilot peut aller jusqu'à Researcher, Analyst et Cowork. Choisissez ensuite le programme du métier le plus représenté ; si le groupe mélange plusieurs fonctions, nous gardons un tronc commun le matin et séparons les ateliers l'après-midi.",
-      "Une assistante de direction ou un dirigeant gagne souvent au format individuel, calé sur son agenda et ses dossiers. Chez un éditeur de logiciels, en septembre 2026, l'assistante du dirigeant a bâti en une journée un assistant de mails pour son dirigeant dans Agent Builder, avec une règle simple : ce qui est interne ou nominatif reste dans Copilot, ce qui est public ou anonymisé peut passer par Claude. À l'autre bout, un groupe international du packaging déploie Copilot palier par palier : 24 managers pilotes ont ouvert la marche, cinq sessions se sont tenues de juillet à fin septembre 2026, deux d'entre elles en anglais, et le parcours rejoindra ses sites américains et mexicains en octobre 2026, puis indiens en décembre.",
+      "Une assistante de direction ou un dirigeant gagne souvent au format individuel, calé sur son agenda et ses dossiers. Chez un éditeur de logiciels, en septembre 2026, l'assistante du dirigeant a bâti en une journée un assistant de mails pour son dirigeant dans Agent Builder, avec une règle simple : les contenus internes ou nominatifs restent dans Copilot, et seuls les textes publics ou anonymisés vont vers Claude. À l'autre bout, un groupe international du packaging déploie Copilot palier par palier : 24 managers pilotes ont ouvert la marche, cinq sessions se sont tenues de juillet à fin septembre 2026, deux d'entre elles en anglais, et le parcours rejoindra ses sites américains et mexicains en octobre 2026, puis indiens en décembre.",
     ],
   },
 
@@ -116,7 +116,7 @@ export default {
         "Agent Builder en atelier : un assistant bâti sur vos documents SharePoint, mis à l'épreuve avec une question dont ses sources ne contiennent pas la réponse",
         "Copilot Cowork : confier une tâche en plusieurs étapes, lire son plan, valider ou refuser chaque action sensible, et savoir ce que coûte son usage",
         "Compétences : écrire une procédure réutilisable pour Cowork ou PowerPoint, au format SKILL.md que d'autres assistants savent lire",
-        "Données et conformité : protection des données d'entreprise, partages SharePoint trop ouverts, RGPD, ce qui reste hors de Copilot, charte d'usage, et l'AI Act, dont l'article 4 demande d'aider le personnel à maîtriser l'IA",
+        "Données et conformité : protection des données d'entreprise, partages SharePoint trop ouverts, RGPD, ce qui reste hors de Copilot, charte d'usage, et l'AI Act, dont l'article 4 attend de l'entreprise des mesures pour la maîtrise de l'IA par son personnel",
         "Plan d'action à 30 jours : trois tâches outillées par participant, une bibliothèque de demandes partagée, un référent nommé et un point de mesure à un mois",
       ],
     },
@@ -130,7 +130,7 @@ export default {
 
   apres: {
     titre: 'Après la formation, Masteria construit vos agents Copilot',
-    texte: "Une fois l'équipe à l'aise, les demandes changent de nature : un agent qui répond aux salariés à partir de l'intranet RH, une compétence Cowork qui prépare le reporting du lundi, un agent Copilot Studio relié à votre logiciel métier. Masteria précise le besoin avec vous, construit l'agent dans votre environnement Microsoft 365, le teste sur vos cas et forme enfin ceux qui le feront vivre. Ce travail relève du développement : il est chiffré au forfait à l'issue du cadrage et n'est pas finançable par votre OPCO.",
+    texte: "Une fois l'équipe à l'aise, les demandes changent de nature : un agent qui répond aux salariés à partir de l'intranet RH, une compétence Cowork qui prépare le reporting du lundi, un agent Copilot Studio relié à votre logiciel métier. Masteria précise le besoin avec vous, construit l'agent dans votre environnement Microsoft 365, le teste sur vos cas et forme enfin ceux qui le feront vivre. Ce travail relève du développement : son forfait se fixe après le cadrage, et votre OPCO ne le finance pas.",
   },
 
   autresOutilsIntro: "Copilot donne sa pleine mesure quand l'entreprise vit dans Microsoft 365. Une équipe sous Google Workspace sera mieux servie par Gemini ; une équipe qui lit des dossiers de plusieurs centaines de pages peut préférer Claude, que Copilot propose aussi comme modèle quand l'administrateur l'active. Notre formation multi-outils place ces assistants côte à côte sur vos propres documents.",
@@ -166,7 +166,7 @@ export default {
     },
     {
       q: 'Un OPCO peut-il financer la formation Microsoft Copilot ?',
-      a: "Oui pour une entreprise française : comme Masteria détient la certification Qualiopi, l'opérateur de compétences dont elle relève peut financer la session, dans le respect de ses propres règles et des fonds qu'il lui reste. Côté prix, comptez à partir de 1 980 € HT la journée, donc dès 3 960 € HT pour le parcours complet d'un groupe de douze au maximum, et le même point de départ quand une seule personne suit la formation. Adapter les exercices à vos fichiers demande une préparation, que la proposition chiffre séparément. Nous préparons avec vous les pièces que l'opérateur demande avant la session. À Genève et à Bruxelles, où l'OPCO n'existe pas, nous chiffrons en euros hors taxes. Le développement d'un agent par Masteria se chiffre à part, hors financement OPCO.",
+      a: "Oui pour une entreprise française : comme Masteria détient la certification Qualiopi, l'opérateur de compétences dont elle relève peut financer la session, dans le respect de ses propres règles et des fonds qu'il lui reste. Le tarif part de 1 980 € HT par journée de groupe, soit dès 3 960 € HT pour les deux jours d'un groupe de douze au plus ; une personne seule part du même montant. Adapter les exercices à vos fichiers demande une préparation, que la proposition chiffre séparément. Nous préparons avec vous les pièces que l'opérateur demande avant la session. À Genève et à Bruxelles, où l'OPCO n'existe pas, nous chiffrons en euros hors taxes. Le développement d'un agent par Masteria se chiffre à part, hors financement OPCO.",
     },
     {
       q: 'Comment former à Copilot un groupe présent dans plusieurs pays ?',

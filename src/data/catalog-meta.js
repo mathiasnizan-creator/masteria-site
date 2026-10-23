@@ -86,7 +86,7 @@ export const HUBS = [
     author: true,
     claudeFaits: true,
     casIds: ['distribution'],
-    avisPriorite: ['Claude'],
+    avisPriorite: [],
     // Page propre : le gabarit masque les sections communes aux hubs et affiche les textes ci-dessous
     pagePropre: true,
     spokesIntro: "Onze programmes de deux jours, chacun bâti sur les documents d'un métier, un programme à part pour les développeurs et une journée sur Cowork pour déléguer des tâches sur vos fichiers. Choisissez celui de l'équipe à former ; pour un groupe qui mélange plusieurs fonctions, nous composons un programme commun à partir de ces modules.",
