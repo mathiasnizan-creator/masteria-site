@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.master-ia.fr/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/accueil.jpg</image:loc></image:image>
@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-intelligence-artificielle</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/conseil-intelligence-artificielle.jpg</image:loc></image:image>
@@ -31,63 +31,63 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-mistral-ai</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-mistral-ai.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-microsoft-copilot</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-microsoft-copilot.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-gemini-entreprise</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-gemini-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-sprint-ia</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-sprint-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-multi-outils</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-multi-outils.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/automatisation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/automatisation-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia.jpg</image:loc></image:image>
@@ -97,10 +97,11 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/agence-developpement-web.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/etudes-de-cas-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/etudes-de-cas-ia.jpg</image:loc></image:image>
@@ -177,49 +178,49 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-transformation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/conseil-transformation-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-ia-pme</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/conseil-ia-pme.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/chief-ai-officer</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/chief-ai-officer.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-gestion-de-projet</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-gestion-de-projet.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/roi-ia-entreprise</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/roi-ia-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-generative-entreprise</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-generative-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-automatisation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-automatisation-ia.jpg</image:loc></image:image>
@@ -233,21 +234,21 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleure-agence-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/meilleure-agence-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleur-cabinet-conseil-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/meilleur-cabinet-conseil-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/meilleure-formation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/meilleure-formation-ia.jpg</image:loc></image:image>
@@ -264,84 +265,88 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/developpeur-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-developpement-sur-mesure</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/agence-developpement-sur-mesure.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-developpement-application-web</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/agence-developpement-application-web.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/sous-traitance-developpement-web</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/sous-traitance-developpement-web.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/bibliotheque-de-prompts</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/bibliotheque-de-prompts.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/outils-ia-sur-mesure</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/outils-ia-sur-mesure.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-marketing</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-marketing.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-seo-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-seo-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-seo-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/audit-seo-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-geo-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/audit-geo-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/consultant-visibilite-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/consultant-visibilite-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-conformite-ai-act</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/audit-conformite-ai-act.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-lyon</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-lyon.jpg</image:loc></image:image>
@@ -362,7 +367,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-debutant</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-debutant.jpg</image:loc></image:image>
@@ -383,154 +388,154 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-lyon</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-lyon.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-secteurs</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-secteurs.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/solutions-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/solutions-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/diagnostic-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/diagnostic-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/audit-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/accompagnement-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/accompagnement-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/acculturation-ia</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/acculturation-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/conference-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/conference-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/atelier-intelligence-artificielle</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/atelier-intelligence-artificielle.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/sensibilisation-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/sensibilisation-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-entreprise</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-agents-ia</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-agents-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-comex</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-comex.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-n8n</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-n8n.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-make</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-make.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-zapier</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-zapier.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-cse-ia</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-cse-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-data-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-data-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-gouvernance-donnees</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-gouvernance-donnees.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/prestataire-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/prestataire-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/coaching-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/coaching-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/automatiser-sa-veille-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/automatiser-sa-veille-ia.jpg</image:loc></image:image>
@@ -543,7 +548,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-data-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/conseil-data-ia.jpg</image:loc></image:image>
@@ -557,21 +562,21 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/charte-ia-entreprise</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/charte-ia-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-responsable</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-responsable.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-et-rgpd</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-et-rgpd.jpg</image:loc></image:image>
@@ -585,91 +590,91 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/audit-ia-medico-social</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/audit-ia-medico-social.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-annecy</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-annecy.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-paris</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-paris.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-geneve</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-geneve.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-marseille</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-marseille.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-strasbourg</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-strasbourg.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agence-ia-nantes</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agence-ia-nantes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/conseil-strategie-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/conseil-strategie-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/calculateur-roi-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/calculateur-roi-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/cas-usage-ia-entreprise</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/cas-usage-ia-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/mathias-nizan</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/mathias-nizan.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/quel-opco</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/quel-opco.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/quel-outil-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/quel-outil-ia.jpg</image:loc></image:image>
@@ -683,112 +688,112 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/glossaire-ia</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/glossaire-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-paris</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-paris.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-marseille</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-marseille.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-geneve</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-geneve.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-bruxelles</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-bruxelles.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-nantes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-nantes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-nice</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-nice.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-lille</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-lille.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-bordeaux</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-bordeaux.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-toulouse</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-toulouse.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-strasbourg</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-strasbourg.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-rennes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-rennes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-grenoble</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-grenoble.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-annecy</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-annecy.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-aix-en-provence</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-aix-en-provence.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-ia-nimes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-ia-nimes.jpg</image:loc></image:image>
@@ -935,154 +940,154 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-banque-assurance</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-banque-assurance.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-industrie</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-industrie.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-sante-pharma</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-sante-pharma.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-juridique</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-juridique.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-retail-ecommerce</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-retail-ecommerce.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-logistique-transport</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-logistique-transport.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-immobilier-btp</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-immobilier-btp.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-secteur-public</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-secteur-public.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-services-conseil</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-services-conseil.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-tourisme-hotellerie</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-tourisme-hotellerie.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-agroalimentaire</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-agroalimentaire.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/ia-tech-saas</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/ia-tech-saas.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/copilote-ia-interne</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/copilote-ia-interne.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/assistant-documentaire-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/assistant-documentaire-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agent-support-client-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agent-support-client-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/automatisation-documentaire-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/automatisation-documentaire-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/agent-commercial-ia</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/agent-commercial-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/chatbot-ia-sur-mesure</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/chatbot-ia-sur-mesure.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/integration-llm-rag</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/integration-llm-rag.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/salons-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/salons-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/outils-veille-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/outils-veille-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-concurrentielle-ia</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/veille-concurrentielle-ia.jpg</image:loc></image:image>
@@ -1096,7 +1101,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/test-maturite-ia</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/test-maturite-ia.jpg</image:loc></image:image>
@@ -1348,133 +1353,133 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-paris</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-paris.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-lyon</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-lyon.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-marseille</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-marseille.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-geneve</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-geneve.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-bruxelles</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-bruxelles.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-paris</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-paris.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-lyon</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-lyon.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-marseille</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-marseille.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-geneve</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-geneve.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-bruxelles</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-bruxelles.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-rennes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-rennes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-claude-ia-nantes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-claude-ia-nantes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-rennes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-rennes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-nantes</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-nantes.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-nice</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-nice.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-bordeaux</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-bordeaux.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-toulouse</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-toulouse.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/formation-chatgpt-strasbourg</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/formation-chatgpt-strasbourg.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/methode-projet-ia</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/methode-projet-ia.jpg</image:loc></image:image>
@@ -1488,7 +1493,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/presse</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/presse.jpg</image:loc></image:image>
@@ -2180,18 +2185,53 @@
     <image:image><image:loc>https://www.master-ia.fr/og/blog--automatisation-ia-pme-processus-prioritaires.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/blog/creer-une-formation-avec-gemini</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--creer-une-formation-avec-gemini.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/fine-tuning-ou-rag</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--fine-tuning-ou-rag.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/ia-esn</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--ia-esn.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/exemples-agents-ia-entreprise</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--exemples-agents-ia-entreprise.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/prompts-skills-ia-methodes-equipe</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--prompts-skills-ia-methodes-equipe.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/blog/agents-ia-industrie-achats-cas-concrets</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/blog--agents-ia-industrie-achats-cas-concrets.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/blog/comite-gouvernance-ia</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://www.master-ia.fr/blog/quelle-ia-pour-excel</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--comite-gouvernance-ia.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--quelle-ia-pour-excel.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/copilot-cowork-claude-cowork-chatgpt-work</loc>
@@ -2201,48 +2241,6 @@
     <image:image><image:loc>https://www.master-ia.fr/og/blog--copilot-cowork-claude-cowork-chatgpt-work.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/blog/cout-agent-ia-entreprise</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--cout-agent-ia-entreprise.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/blog/creer-application-ia-sans-coder</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--creer-application-ia-sans-coder.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/blog/creer-une-formation-avec-gemini</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--creer-une-formation-avec-gemini.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/blog/exemples-agents-ia-entreprise</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--exemples-agents-ia-entreprise.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/blog/fine-tuning-ou-rag</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--fine-tuning-ou-rag.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/blog/ia-esn</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--ia-esn.jpg</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://www.master-ia.fr/blog/ia-medico-social-par-ou-commencer</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
@@ -2250,32 +2248,39 @@
     <image:image><image:loc>https://www.master-ia.fr/og/blog--ia-medico-social-par-ou-commencer.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/blog/creer-application-ia-sans-coder</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--creer-application-ia-sans-coder.jpg</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/blog/preparer-codir-comex-ia-methode-prompts</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/blog--preparer-codir-comex-ia-methode-prompts.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://www.master-ia.fr/blog/prompts-skills-ia-methodes-equipe</loc>
-    <lastmod>2026-10-22</lastmod>
+    <loc>https://www.master-ia.fr/blog/cout-agent-ia-entreprise</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--prompts-skills-ia-methodes-equipe.jpg</image:loc></image:image>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/blog/quelle-ia-pour-excel</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.50</priority>
-    <image:image><image:loc>https://www.master-ia.fr/og/blog--quelle-ia-pour-excel.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--cout-agent-ia-entreprise.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/superviser-agents-ia-production</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/blog--superviser-agents-ia-production.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/blog/comite-gouvernance-ia</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--comite-gouvernance-ia.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/creer-un-agent-ia-entreprise</loc>
@@ -2286,7 +2291,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/a-propos</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--a-propos.jpg</image:loc></image:image>
