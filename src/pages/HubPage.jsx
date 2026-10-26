@@ -19,7 +19,7 @@ import { PressMention } from '../components/FounderNote'
 import AvisGoogle from '../components/AvisGoogle'
 import ClaudeFactsBox from '../components/ClaudeFactsBox'
 import MissionsRecentes from '../components/MissionsRecentes'
-import { Paras, Reperes, Rangees } from '../components/Aere'
+import { Paras, Reperes, decouperPhrases } from '../components/Aere'
 
 const METIER_ICONS = {
   marketing:             Megaphone,
@@ -79,6 +79,35 @@ function FaqItem({ q, a }) {
   )
 }
 
+/* Points numérotés de la section « Pourquoi » : grille de cartes, deux phrases visibles,
+   le reste dans un dépliant (le texte reste dans la page pour les moteurs). */
+function BlocsNumerotes({ items, color }) {
+  return (
+    <ol className="hub-blocs" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+      {items.map((item, i) => {
+        const phrases = decouperPhrases(item.body || '')
+        const debut = phrases.slice(0, 2).join(' ')
+        const suite = phrases.slice(2).join(' ')
+        return (
+          <li key={i} style={{ background: '#fff', border: '1px solid #E5E7EB', borderTop: `3px solid ${color}`, borderRadius: 12, padding: '22px 24px' }}>
+            <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 10 }}>
+              <span aria-hidden="true" style={{ flexShrink: 0, width: 30, height: 30, borderRadius: 99, background: `${color}14`, color, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Nunito, sans-serif', fontSize: 14, fontWeight: 800 }}>{i + 1}</span>
+              <h3 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 18, fontWeight: 800, color: '#0A0A0A', margin: '3px 0 0', lineHeight: 1.35 }}>{item.title}</h3>
+            </div>
+            <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.65, margin: 0 }}>{debut}</p>
+            {suite && (
+              <details className="hub-bloc-suite" style={{ marginTop: 10 }}>
+                <summary style={{ cursor: 'pointer', fontSize: 14, fontWeight: 700, color, listStyle: 'none' }}>Lire la suite</summary>
+                <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.65, margin: '8px 0 0' }}>{suite}</p>
+              </details>
+            )}
+          </li>
+        )
+      })}
+    </ol>
+  )
+}
+
 export default function HubPage() {
   const location = useLocation()
   const hubSlug = location.pathname.replace(/^\//, '')
@@ -121,6 +150,14 @@ export default function HubPage() {
   const propre = Boolean(hub.pagePropre)
 
   const isSprintHub = hub.id === 'sprint-ia'
+
+  // Repères du haut de page : ceux du guide s'il en a, sinon les faits communs à tous les hubs
+  const reperes = hub.reperes || [
+    { icone: 'Clock', label: 'Durée', value: isSprintHub ? '3 heures' : '2 jours (14 h)', detail: 'Sur site ou à distance' },
+    { icone: 'UsersRound', label: 'Format', value: 'Intra, 12 au plus', detail: 'Ou en individuel avec le formateur' },
+    { icone: 'Layers', label: 'Programmes', value: `${spokes.length} programmes`, detail: isSprintHub ? 'Un par thème, du premier essai à la conformité' : 'Un par métier, sur ses propres documents' },
+    { icone: 'Wallet', label: 'Tarif', value: 'Dès 1 980 € HT', detail: `${isSprintHub ? 'La séance' : 'La journée'}, finançable par votre OPCO (Qualiopi)` },
+  ]
   const courseData = {
     name: hub.h1,
     description: hub.metaDesc,
@@ -240,7 +277,6 @@ export default function HubPage() {
             {hub.accroche}
           </p>
         )}
-        {hub.reperes && <Reperes items={hub.reperes} colonnes={3} style={{ maxWidth: 1000, margin: '0 auto 28px' }} />}
         {hub.definition && !hub.accroche && (
           <p id="definition" style={propre
             ? { fontSize: 'clamp(17px, 2vw, 20px)', color: '#1F2937', fontWeight: 500, maxWidth: 640, margin: '0 auto 16px', lineHeight: 1.6 }
@@ -248,6 +284,8 @@ export default function HubPage() {
             {hub.definition}
           </p>
         )}
+        {/* Faits clés en repères, sur tous les hubs (ceux du guide, sinon les repères communs) */}
+        <Reperes items={reperes} colonnes={reperes.length === 4 ? 4 : 3} compact={reperes.length === 4} style={{ maxWidth: 1040, margin: '0 auto 28px' }} />
         {/* Page propre : l'intro passe en chapeau de la section « Pourquoi », le hero reste court */}
         {!(propre && why.length > 0) && (
           <Paras texte={hub.intro} max={2} style={{ fontSize: 18, color: '#4B5563', maxWidth: 680, margin: '0 auto 16px', lineHeight: 1.7 }} />
@@ -265,13 +303,22 @@ export default function HubPage() {
           </p>
         )}
         {propre && <div style={{ height: 8 }} />}
-        <Link to="/contact" style={{
-          display: 'inline-block', background: hub.color, color: '#fff',
-          padding: '14px 32px', borderRadius: 8, textDecoration: 'none',
-          fontSize: 16, fontWeight: 700, boxShadow: `0 4px 12px ${hub.color}30`,
-        }}>
-          Contacter notre équipe
-        </Link>
+        <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', justifyContent: 'center' }}>
+          <a href="#formations" style={{
+            display: 'inline-block', background: hub.color, color: '#fff',
+            padding: '14px 32px', borderRadius: 8, textDecoration: 'none',
+            fontSize: 16, fontWeight: 700, boxShadow: `0 4px 12px ${hub.color}30`,
+          }}>
+            Voir les formations
+          </a>
+          <Link to="/contact" style={{
+            display: 'inline-block', background: '#fff', color: '#0A0A0A', border: '2px solid #0A0A0A',
+            padding: '12px 30px', borderRadius: 8, textDecoration: 'none',
+            fontSize: 16, fontWeight: 700,
+          }}>
+            Contacter notre équipe
+          </Link>
+        </div>
 
         {/* Badges réassurance */}
         {!propre && <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', justifyContent: 'center', marginTop: 40 }}>
@@ -313,46 +360,22 @@ export default function HubPage() {
       </section>
       )}
 
-      {/* POURQUOI SE FORMER */}
-      {why.length > 0 && (
-        <section style={{ padding: '80px 40px', background: '#fff' }}>
-          <div style={{ maxWidth: 860, margin: '0 auto' }}>
-            <h2 style={{
-              fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
-              fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
-            }}>
-              {titres.why || `Pourquoi former vos équipes à ${toolShort} ?`}
-            </h2>
-            {propre ? (
-              <Paras texte={hub.intro} max={2} style={{ color: '#374151', fontSize: 16.5, lineHeight: 1.75, margin: '0 0 44px', maxWidth: 760 }} />
-            ) : (
-              <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
-                Des bénéfices concrets, mesurables dès le retour en poste.
-              </p>
-            )}
-            {/* Une rangée par point, en pleine largeur (plus de cartes côte à côte) */}
-            <Rangees items={why.map(item => ({ titre: item.title, texte: item.body }))} />
-          </div>
-        </section>
-      )}
-
-      {hub.claudeFaits && <ClaudeFactsBox color={hub.color} bg="#fff" />}
 
       {/* GRILLE DES SPOKES */}
-      <section style={{ padding: '80px 40px', background: why.length ? '#F9FAFB' : '#fff', maxWidth: 1100, margin: '0 auto' }}>
+      <section id="formations" style={{ padding: '72px 40px', background: '#fff', maxWidth: 1100, margin: '0 auto', scrollMarginTop: 90 }}>
         <h2 style={{
           fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 800,
           fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
         }}>
           {titres.spokes || `${toolShort} adapté à chaque métier`}
         </h2>
-        <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: propre ? 760 : 600 }}>
+        <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 32, maxWidth: propre ? 760 : 600 }}>
           {propre && hub.spokesIntro ? hub.spokesIntro : "Chaque formation est construite autour des cas d'usage réels de votre fonction."}
         </p>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: 24,
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: 16,
         }}>
           {spokes.map(spoke => {
             const metierData = METIERS.find(m => m.slug === spoke.metierSlug)
@@ -375,34 +398,28 @@ export default function HubPage() {
               <Link
                 key={spoke.slug}
                 to={`/${spoke.slug}`}
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: 'none', display: 'block', height: '100%' }}
               >
                 <div style={{
-                  border: '2px solid #E5E7EB',
-                  borderRadius: 12, padding: 28,
-                  background: '#fff',
-                  transition: 'box-shadow 0.2s',
-                  cursor: 'pointer',
-                  position: 'relative',
+                  border: '1px solid #E5E7EB', borderRadius: 12, padding: '18px 20px',
+                  background: '#fff', height: '100%', boxSizing: 'border-box',
+                  display: 'flex', flexDirection: 'column', gap: 8,
                 }}>
-                  <div style={{
-                    width: 48, height: 48, borderRadius: 12,
-                    background: spoke.toolColorLight,
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    marginBottom: 14,
-                  }}>
-                    {(() => { const Icon = METIER_ICONS[spoke.metierSlug]; return Icon ? <Icon size={22} color={spoke.toolColor} strokeWidth={1.75} /> : null })()}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <span style={{
+                      flexShrink: 0, width: 36, height: 36, borderRadius: 10, background: spoke.toolColorLight,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                      {(() => { const Icon = METIER_ICONS[spoke.metierSlug] || (spoke.toolSlug === 'claude-code' ? Server : null); return Icon ? <Icon size={18} color={spoke.toolColor} strokeWidth={1.75} /> : null })()}
+                    </span>
+                    <h3 style={{ fontSize: 16, fontWeight: 800, color: '#0A0A0A', fontFamily: 'Nunito, sans-serif', margin: 0, lineHeight: 1.3 }}>
+                      {cardTitle}
+                    </h3>
                   </div>
-                  <h3 style={{
-                    fontSize: 18, fontWeight: 800, color: '#0A0A0A',
-                    fontFamily: 'Nunito, sans-serif', marginBottom: 8,
-                  }}>
-                    {cardTitle}
-                  </h3>
-                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.6, marginBottom: 16 }}>
+                  <p style={{ fontSize: 14, color: '#6B7280', lineHeight: 1.55, margin: 0, flex: 1 }}>
                     {(propre && hub.spokeDescs?.[spoke.slug]) || metierData?.desc || spoke.intro?.slice(0, 120) + '…'}
                   </p>
-                  <span style={{ color: spoke.toolColor, fontWeight: 700, fontSize: 14 }}>
+                  <span style={{ color: spoke.toolColor, fontWeight: 700, fontSize: 13.5 }}>
                     Voir le programme →
                   </span>
                 </div>
@@ -414,7 +431,7 @@ export default function HubPage() {
 
       {/* ENCART : formation dédiée à renvoyer depuis le hub (ex. Claude Code) */}
       {hub.encart && (
-        <section style={{ padding: '0 40px 56px', background: why.length ? '#F9FAFB' : '#fff' }}>
+        <section style={{ padding: '0 40px 56px', background: '#fff' }}>
           <div style={{ maxWidth: 1100, margin: '0 auto', background: '#fff', border: '1px solid #E5E7EB', borderLeft: `4px solid ${hub.color}`, borderRadius: 14, padding: '22px 26px' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 20, fontWeight: 800, color: '#0A0A0A', margin: '0 0 8px' }}>{hub.encart.titre}</h2>
             <p style={{ fontSize: 15, color: '#374151', lineHeight: 1.7, margin: 0 }}>
@@ -425,13 +442,38 @@ export default function HubPage() {
       )}
 
       {propre && hub.choisir && (
-        <section style={{ padding: '0 40px 64px', background: why.length ? '#F9FAFB' : '#fff' }}>
+        <section style={{ padding: '0 40px 64px', background: '#fff' }}>
           <div style={{ maxWidth: 860, margin: '0 auto' }}>
             <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 'clamp(21px, 2.8vw, 30px)', fontWeight: 800, color: '#0A0A0A', margin: '0 0 14px' }}>{hub.choisir.titre}</h2>
             {hub.choisir.paras.map((t, i) => <Paras key={i} texte={t} style={{ fontSize: 15.5, color: '#374151', lineHeight: 1.75, margin: '0 0 12px', maxWidth: 760 }} />)}
           </div>
         </section>
       )}
+
+      {/* POURQUOI SE FORMER */}
+      {why.length > 0 && (
+        <section style={{ padding: '80px 40px', background: '#F9FAFB', borderTop: '1px solid #E5E7EB' }}>
+          <div style={{ maxWidth: 1040, margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: 'clamp(22px, 3vw, 34px)', fontWeight: 800,
+              fontFamily: 'Nunito, sans-serif', marginBottom: 12, color: '#0A0A0A',
+            }}>
+              {titres.why || `Pourquoi former vos équipes à ${toolShort} ?`}
+            </h2>
+            {propre ? (
+              <Paras texte={hub.intro} max={2} style={{ color: '#374151', fontSize: 16.5, lineHeight: 1.75, margin: '0 0 44px', maxWidth: 760 }} />
+            ) : (
+              <p style={{ color: '#6B7280', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
+                Des bénéfices concrets, mesurables dès le retour en poste.
+              </p>
+            )}
+            {/* Grille de cartes numérotées : titre et début du texte visibles, la suite se déplie */}
+            <BlocsNumerotes items={why} color={hub.color} />
+          </div>
+        </section>
+      )}
+
+      {hub.claudeFaits && <ClaudeFactsBox color={hub.color} bg="#fff" />}
 
       {/* SECTION ÉQUIPE PLURIDISCIPLINAIRE — formation sur mesure */}
       {!propre && (
@@ -584,7 +626,7 @@ export default function HubPage() {
               {isSprintHub ? '3 heures · Format webinar ou présentiel · Certifié Qualiopi · Déployable à grande échelle' : '2 jours · 14 heures · Certifié Qualiopi · Adapté à votre secteur'}
             </p>
             )}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: 24 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(380px, 100%), 1fr))', gap: 24 }}>
               {programme.map((day, i) => (
                 <div key={i} style={{
                   background: '#fff', borderRadius: 12, padding: '28px 28px 32px',

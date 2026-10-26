@@ -131,3 +131,9 @@ a:focus-visible > .veille-ligne-archive { background: #F9FAFB; }
   .rp-grille.rp-m2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .rp-grille:not(.rp-m2) .rp-large { grid-column: auto; }
 }
+
+/* Hubs outils : points « Pourquoi » en grille de cartes (HubPage) */
+.hub-blocs { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+@media (max-width: 760px) { .hub-blocs { grid-template-columns: 1fr; } }
+.hub-bloc-suite > summary::-webkit-details-marker { display: none; }
+.hub-bloc-suite[open] > summary { display: none; }
