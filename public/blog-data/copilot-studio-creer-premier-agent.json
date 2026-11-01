@@ -1,0 +1,637 @@
+{
+  "slug": "copilot-studio-creer-premier-agent",
+  "title": "Copilot Studio : créer son premier agent pas à pas",
+  "metaTitle": "Microsoft Copilot Studio : créer son premier agent pas à pas",
+  "metaDesc": "Copilot Studio pas à pas : licence, prix des crédits, Agent Builder ou Studio, sources, outils, tests, publication dans Teams. Relevé du 01/11/2026.",
+  "tag": "Guide pratique",
+  "date": "1er novembre 2026",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-01",
+  "readTime": "26 min",
+  "formations": [
+    [
+      "Formation Copilot Studio",
+      "/formation-copilot-studio"
+    ],
+    [
+      "Formation Microsoft Copilot",
+      "/formation-microsoft-copilot"
+    ],
+    [
+      "Formation agents IA",
+      "/formation-agents-ia"
+    ]
+  ],
+  "keywords": [
+    "copilot studio",
+    "microsoft copilot studio",
+    "créer un agent copilot",
+    "copilot studio tutoriel",
+    "copilot studio prix",
+    "copilot studio licence",
+    "copilot studio gratuit",
+    "agent builder ou copilot studio",
+    "crédits Copilot",
+    "publier un agent copilot dans teams",
+    "environnement power platform"
+  ],
+  "excerpt": "Un tutoriel Copilot Studio pour qui n'écrit pas de code : l'accès et la licence, le prix des crédits Copilot, la frontière avec Agent Builder, puis huit étapes pour construire, essayer et publier dans Teams un agent branché sur SharePoint. Fonctions et prix vérifiés le 1er novembre 2026 sur Microsoft Learn et sur microsoft.com.",
+  "intro": "Copilot Studio est le portail web de Microsoft où l'on conçoit, sans programmer, des agents d'IA branchés sur les documents et les applications de l'entreprise, avant de les mettre à disposition dans Teams, dans Microsoft Copilot ou sur un site web. Pour créer un premier agent, il faut un accès à l'outil (licence Microsoft Copilot, licence Copilot Studio adossée à des crédits ou essai individuel), un environnement Power Platform réservé aux essais et une source de documents à jour, puis suivre huit étapes qui mènent de la description de l'agent à sa publication dans Teams. Dans le vocabulaire de Microsoft, un agent désigne un assistant qui suit des consignes écrites, cherche dans les sources qu'on lui attribue et peut déclencher des actions. Ce tutoriel Copilot Studio s'adresse aux salariés des métiers qui n'écrivent pas de code : il rassemble ce qu'il vaut mieux régler avant d'ouvrir l'outil (licences, frontière avec Agent Builder, crédits facturés à la consommation, environnements et gouvernance), puis déroule la construction d'un agent de procédures publié dans Teams. Fonctions, noms d'offres et prix ont été vérifiés le 1er novembre 2026 sur Microsoft Learn et sur microsoft.com.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "<strong>Ce que c'est :</strong> Microsoft Copilot Studio, à l'adresse copilotstudio.microsoft.com, sert à décrire un agent en langage courant, à lui confier des sources et des outils, à l'essayer puis à le publier. <strong>Accès :</strong> trois portes s'ouvrent à un salarié, la licence Microsoft Copilot (nouveau nom de Microsoft 365 Copilot), la licence d'utilisateur Copilot Studio, sans frais dès que l'entreprise dispose d'un pack de crédits, et l'essai individuel, qui ouvre la conception et les essais mais pas la publication. <strong>Prix :</strong> au 1er novembre 2026, microsoft.com/fr-fr affiche le pack mensuel de 25 000 crédits Copilot à 173,30 € HT, partagé par toute l'entreprise, et la licence Microsoft 365 Copilot à 26,00 € HT par mois et par utilisateur en paiement annuel. <strong>Consommation :</strong> avec le moteur standard, chaque réponse générée vaut 2 crédits et chaque action 5, sauf pour un salarié équipé de la licence Microsoft Copilot qui utilise un agent interne sous son propre compte. <strong>Frontière :</strong> Agent Builder, logé dans Microsoft Copilot et dans Teams, suffit pour répondre à partir de documents, et Copilot Studio devient nécessaire dès que l'agent doit inscrire des données dans un logiciel, servir des personnes sans licence ou passer par des environnements de test. <strong>Premier agent conseillé :</strong> un agent de questions-réponses branché sur un site SharePoint, bâti sur le moteur standard dans un environnement de développement, éprouvé sur une vingtaine de questions du terrain, puis publié dans Teams pour un groupe pilote."
+    },
+    {
+      "type": "h2",
+      "text": "Que fait Copilot Studio, et à qui s'adresse-t-il ?"
+    },
+    {
+      "type": "p",
+      "text": "Copilot Studio réunit dans une seule application web trois objets que l'on peut combiner. Les agents conversent et accomplissent des tâches. Les workflows sont des automatisations dessinées par glisser-déposer, dont chaque étape peut raisonner. Les flux d'agent, le format historique, ressemblent à Power Automate et s'attachent à un agent comme un outil. Microsoft range Copilot Studio parmi les outils low-code, ceux qui demandent peu ou pas de code : on décrit, on règle à la souris, on essaie. Les profils techniques y trouvent de quoi aller plus loin, avec des API REST ou des serveurs MCP, mais un premier agent s'en passe."
+    },
+    {
+      "type": "p",
+      "text": "Un agent Copilot Studio se compose de quelques briques. Les instructions fixent son rôle, son ton et ses limites. Les sources de connaissances (sites SharePoint, fichiers téléversés, sites publics, tables Dataverse, l'entrepôt de données de la Power Platform) lui fournissent de quoi répondre. Les outils lui permettent d'agir : créer un élément dans une liste, envoyer un mail, interroger un logiciel. Les canaux décident où les salariés le rencontrent, de Teams à Microsoft Copilot en passant par un site web ou une application mobile. Pour situer ces agents parmi les autres usages de l'IA dans les services, la page consacrée aux <a href='/agents-ia-entreprise'>agents IA en entreprise</a> donne des exemples par fonction."
+    },
+    {
+      "type": "p",
+      "text": "La page de prix française de Microsoft parle d'« assistants » là où la documentation, en anglais, écrit agents : il s'agit des mêmes objets. Dans ce guide, les boutons et réglages sont nommés tels que la documentation de Microsoft les écrit, en anglais, pour que vous puissiez les retrouver dans Microsoft Learn."
+    },
+    {
+      "type": "h3",
+      "text": "Le moteur d'exécution se choisit une fois pour toutes"
+    },
+    {
+      "type": "p",
+      "text": "Tout ce que l'on construit dans Copilot Studio tourne sur un moteur d'exécution, que Microsoft appelle harness : la couche placée entre votre agent et le modèle de langage qui raisonne. Ce moteur décide quand appeler le modèle, quel outil déclencher et comment compter la consommation. La page de présentation de Microsoft Learn en décrit trois. Le moteur standard s'en tient aux sujets (des parcours de conversation déclenchés par une intention de l'utilisateur) et aux règles fixées par le concepteur ; il vise les échanges prévisibles. Le moteur GitHub Copilot décompose un but en étapes, produit et retouche des documents Word, Excel, PowerPoint ou PDF, et gère des compétences et une mémoire. Le moteur conçu pour la relation client, encore en préversion le 1er novembre 2026, répond aux clients par chat ou par téléphone. La page de prix française en ajoute un quatrième, le moteur Copilot Chat, inclus avec Microsoft 365 Copilot."
+    },
+    {
+      "type": "p",
+      "text": "Le choix se fait au moment de créer l'agent et ne se défait pas : un agent né sur le moteur GitHub Copilot ne passe pas sur le moteur standard, et l'inverse non plus, Microsoft ne proposant qu'une mise à niveau du standard vers GitHub Copilot, en préversion. Pour un premier agent interne, le moteur standard offre deux avantages. Sa facturation démarre à la publication, et les échanges d'un salarié équipé de la licence Microsoft Copilot avec un agent interne ne consomment aucun crédit. Le moteur GitHub Copilot facture dès la conception : les aperçus, les essais et la génération d'évaluations puisent déjà dans les crédits."
+    },
+    {
+      "type": "h2",
+      "text": "Agent Builder ou Copilot Studio : par où commencer ?"
+    },
+    {
+      "type": "p",
+      "text": "Microsoft propose deux ateliers pour fabriquer des agents, et beaucoup de premiers besoins se règlent dans le plus simple des deux. On ouvre Agent Builder depuis l'application Microsoft Copilot (microsoft365.com/chat ou office.com/chat) et depuis Teams, sur ordinateur et dans le navigateur, mais pas sur mobile. On y décrit l'agent, on lui fixe des consignes, on lui attribue des sources, comme un site SharePoint ou un connecteur Copilot qui indexe un autre logiciel, on l'essaie, puis on le partage ou on le soumet au catalogue de l'organisation. Agent Builder ne sait pas écrire dans un service extérieur : pour une action, un connecteur ou un workflow, sa documentation invite à recopier l'agent dans Copilot Studio."
+    },
+    {
+      "type": "p",
+      "text": "Microsoft conseille de raisonner sur les capacités dont l'agent a besoin plutôt que sur la taille de son public. Un agent destiné à plusieurs services peut rester dans Agent Builder, qui se diffuse par partage et par le catalogue de l'organisation. Trois besoins font basculer vers Copilot Studio : répondre sur un canal extérieur comme le site de l'entreprise, agir dans un logiciel ou enchaîner des étapes, séparer le développement, le test et la production."
+    },
+    {
+      "type": "p",
+      "text": "La licence pèse aussi dans le choix. Un salarié qui ne dispose que de Microsoft Copilot Chat, le niveau sans supplément des abonnements Microsoft 365, peut utiliser des agents bâtis sur des consignes et sur le web. L'ancrage dans SharePoint ou dans les connecteurs Copilot exige la licence Microsoft Copilot, ou l'activation par l'entreprise du paiement à l'usage, décompté en crédits."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Critère",
+        "Agent Builder",
+        "Copilot Studio"
+      ],
+      "rows": [
+        [
+          "Où on le trouve",
+          "Application Microsoft Copilot et Teams, sur ordinateur et dans le navigateur",
+          "Portail copilotstudio.microsoft.com, plus une version réduite dans Teams incluse dans certains abonnements Microsoft 365"
+        ],
+        [
+          "Façon de construire",
+          "Description guidée en langage courant",
+          "Description en langage courant, puis réglage des instructions, des sources, des outils, des sujets et des canaux"
+        ],
+        [
+          "Sources de réponse",
+          "SharePoint, connecteurs Copilot et web ; mails, conversations et réunions Teams avec la licence Microsoft Copilot",
+          "SharePoint, fichiers, sites publics, tables Dataverse, connecteurs, et d'autres selon le moteur"
+        ],
+        [
+          "Action dans un logiciel",
+          "Aucune",
+          "Connecteurs Power Platform, flux, API REST, serveurs MCP, pilotage de l'ordinateur"
+        ],
+        [
+          "Diffusion",
+          "Partage et catalogue de l'organisation",
+          "Teams, Microsoft Copilot, site web, application mobile et d'autres canaux selon le moteur"
+        ],
+        [
+          "Console d'administration",
+          "Centre d'administration Microsoft 365",
+          "Centre d'administration Power Platform, avec ses environnements et ses stratégies de données"
+        ],
+        [
+          "Cycle de vie",
+          "Configurer, essayer, partager, soumettre au catalogue",
+          "Environnements distincts pour développer, tester et exploiter, solutions, évaluations, suivi de la consommation"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Pour passer d'Agent Builder à Copilot Studio, le bouton « Copy to Copilot Studio » du menu More options (…) recopie l'agent. La copie emporte le nom, la description, les instructions, les invites suggérées, l'icône, les fichiers, dossiers et sites SharePoint ainsi que les sites web déclarés comme sources. Elle laisse de côté les connecteurs Copilot, les fichiers intégrés, les conversations Teams et les mails ajoutés comme sources, et la création d'images. Copilot Studio en garde un instantané : l'agent d'origine reste en place, et ce que vous y changerez ensuite ne se reportera pas sur la copie."
+    },
+    {
+      "type": "h2",
+      "text": "Quelle licence faut-il pour utiliser Copilot Studio ?"
+    },
+    {
+      "type": "p",
+      "text": "Microsoft demande de vérifier séparément trois choses : l'accès de la personne qui construit l'agent, celui des personnes qui l'utiliseront, et la manière dont l'entreprise paiera la consommation. Pour la personne qui construit, la page Learn consacrée aux licences du moteur standard cite quatre configurations : la licence Microsoft Copilot ; la licence d'utilisateur Copilot Studio, sans frais, qu'un administrateur attribue une fois que l'entreprise a acheté un pack de crédits prépayé ; le rôle Copilot Studio authors, donné à un groupe de sécurité dans la console Power Platform ; la licence d'essai."
+    },
+    {
+      "type": "p",
+      "text": "Les noms ont bougé. Microsoft a renommé Microsoft 365 Copilot en Microsoft Copilot, et Microsoft 365 Copilot Chat en Microsoft Copilot Chat : sa page des prérequis, datée du 28 octobre 2026, l'indique, alors que la page de prix française affiche encore l'ancien nom au 1er novembre 2026. Il s'agit de la même licence."
+    },
+    {
+      "type": "p",
+      "text": "D'après cette page de prix française, la licence Microsoft 365 Copilot donne accès, dans Copilot Studio, aux moteurs Copilot Chat et standard pour des agents utilisés à l'intérieur de Microsoft 365. La licence Copilot Studio autonome, réglée en crédits, ajoute le moteur GitHub Copilot, la publication sur des canaux extérieurs et l'usage par des personnes sans licence. Une page Learn sur les licences rattache pourtant le moteur GitHub Copilot à la licence Microsoft 365 Copilot : faites confirmer ce point par votre revendeur avant de bâtir sur ce moteur."
+    },
+    {
+      "type": "p",
+      "text": "L'essai individuel s'ouvre depuis la page d'inscription de Copilot Studio, avec une adresse professionnelle ; une adresse personnelle est refusée. Il donne accès à la conception et au volet de test, sans publication possible, et se prolonge de 30 jours quand il expire. Un administrateur peut fermer cette inscription en libre-service, auquel cas l'inscription échoue et il faut lui demander l'accès. Les environnements d'essai expirent au bout de 30 jours, et leurs agents sont supprimés avec eux, sauf si l'environnement est converti en environnement de production avant l'échéance."
+    },
+    {
+      "type": "h2",
+      "text": "Combien coûte Copilot Studio ? Les crédits Copilot expliqués"
+    },
+    {
+      "type": "p",
+      "text": "L'unité de compte de Copilot Studio est le crédit Copilot, qui a remplacé les messages le 1er septembre 2025 sans modifier les quantités. Le nombre de crédits dépensés dépend de la conception de l'agent, de la fréquence de ses échanges et des fonctions qu'il sollicite. L'entreprise achète ces crédits de trois manières, que présente la page française de Microsoft au 1er novembre 2026."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le pack prépayé</strong> : 25 000 crédits par mois facturés 173,30 € HT, que tout le locataire (l'espace Microsoft de l'entreprise) se partage. Ce qui n'est pas consommé dans le mois est perdu.",
+        "<strong>Le paiement à l'usage</strong> : sans engagement, facturé chaque mois sur un abonnement Azure lié à l'environnement. La page Learn des compteurs Power Platform l'affiche au tarif de 0,01 dollar par crédit.",
+        "<strong>Le plan d'achat préalable</strong> : une enveloppe d'un an achetée dans le portail Azure, avec une remise qui peut atteindre 20 % selon la page française."
+      ]
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Ce que fait l'agent (moteur standard)",
+        "Crédits consommés",
+        "Salarié équipé de la licence Microsoft Copilot, agent interne"
+      ],
+      "rows": [
+        [
+          "Réponse rédigée à l'avance par le concepteur",
+          "1",
+          "Aucun crédit"
+        ],
+        [
+          "Réponse générée à partir des sources",
+          "2",
+          "Aucun crédit"
+        ],
+        [
+          "Action de l'agent : appel d'un outil, déclencheur, passage d'un sujet à l'autre",
+          "5",
+          "Aucun crédit"
+        ],
+        [
+          "Ancrage dans le graphe du locataire, par réponse",
+          "10",
+          "Aucun crédit"
+        ],
+        [
+          "Flux d'agent, par tranche de 100 actions",
+          "13",
+          "Aucun crédit si l'agent lance le flux pour ce salarié"
+        ],
+        [
+          "Modèle de raisonnement, en supplément",
+          "10 par tranche de 1 000 jetons",
+          "Aucun crédit"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La gratuité de la dernière colonne suppose un usage interne, par un salarié porteur de la licence Microsoft Copilot, connecté avec son propre compte, dans les limites d'usage raisonnable fixées par Microsoft. Un agent qui se déclenche seul sur un événement consomme des crédits, même si tous vos salariés ont la licence. Les jetons sont les fragments de texte que le modèle lit et écrit."
+    },
+    {
+      "type": "h3",
+      "text": "Un calcul de consommation, hypothèse par hypothèse"
+    },
+    {
+      "type": "p",
+      "text": "Prenons un agent de procédures qui reçoit 150 questions par jour ouvré de salariés sans licence Microsoft Copilot, chaque réponse étant générée à partir des sources. La journée consomme 300 crédits, le mois de 22 jours ouvrés 6 600, un peu plus du quart d'un pack de 25 000. Activez l'ancrage dans le graphe du locataire (une recherche par le sens dans l'ensemble des contenus Microsoft 365, facturée 10 crédits par réponse aux personnes sans licence) : la même activité passe à 12 crédits par réponse et à 39 600 crédits par mois, plus d'un pack et demi. Un seul réglage pèse donc autant que le nombre d'utilisateurs. Ces volumes sont une hypothèse de travail, à remplacer par les vôtres."
+    },
+    {
+      "type": "p",
+      "text": "Deux outils évitent la mauvaise surprise. L'administrateur peut poser une limite mensuelle sur chaque agent dans la console Power Platform, et Microsoft publie un estimateur d'usage qui chiffre un agent selon son type, son trafic, ses sources et ses outils. Sans ces précautions, la sanction tombe quand le locataire atteint 125 % de sa capacité prépayée : Copilot Studio bloque les agents de l'environnement, y compris au milieu d'une conversation, avec un message d'indisponibilité, sauf si l'environnement reporte le dépassement sur le paiement à l'usage. Le <a href='/blog/cout-agent-ia-entreprise'>budget complet d'un agent IA en entreprise</a>, construction et supervision comprises, fait l'objet d'un article à part."
+    },
+    {
+      "type": "h2",
+      "text": "Avant d'ouvrir Copilot Studio : cinq points à régler avec l'informatique"
+    },
+    {
+      "type": "p",
+      "text": "Les blocages d'un premier agent viennent rarement de l'outil lui-même. Ils tiennent à un accès manquant, à un environnement mal choisi ou à un site SharePoint ouvert trop largement. Cinq vérifications, faites avec la personne qui administre Microsoft 365 ou la Power Platform, évitent de les découvrir le jour de la publication."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>L'accès.</strong> Vérifiez par quelle porte vous entrez dans Copilot Studio (licence Microsoft Copilot, licence d'utilisateur, essai) et si l'inscription en libre-service est permise. Avec un simple essai, prévoyez qu'un collègue doté d'une licence publiera l'agent.",
+        "<strong>L'environnement.</strong> Un environnement est un compartiment de la Power Platform où vivent les agents, les flux, les données et leurs règles. Sans réglage particulier, chacun construit dans l'environnement par défaut, commun à tous les salariés, et Microsoft recommande un environnement de production distinct de celui-là pour tout agent destiné à servir. Si l'administrateur a activé le routage d'environnement (une option premium), Copilot Studio vous dépose dans votre propre environnement de développement, où le partage est limité à cinq personnes nommées.",
+        "<strong>La source.</strong> L'agent interroge SharePoint sous l'identité Entra de la personne qui pose la question et ne lui renvoie que les contenus qu'elle peut déjà lire. Un dossier ouvert à tort à tous les salariés devient donc lisible par tous à travers l'agent : faites relire les droits du site avant de le brancher, et retirez les versions périmées des documents.",
+        "<strong>Les stratégies de données.</strong> Depuis le début de 2025, les stratégies de données de la Power Platform (DLP, pour data loss prevention) s'appliquent à tous les agents, sans exemption. Elles peuvent fermer un connecteur, un canal de diffusion ou les déclencheurs d'événement ; Copilot Studio affiche alors l'élément désactivé et en donne la raison au survol.",
+        "<strong>Le groupe pilote et ses questions.</strong> Réunissez cinq à dix collègues du service et une vingtaine de questions qu'ils posent dans leur travail, dont quelques-unes sans réponse dans les documents. Elles serviront aux essais, puis à l'évaluation."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Créer un agent dans Copilot Studio en huit étapes"
+    },
+    {
+      "type": "p",
+      "text": "L'exemple suivi ici est un agent des achats : il répond aux questions sur la procédure de référencement des fournisseurs à partir d'un site SharePoint, puis enregistre une demande de référencement dans une liste. Le même déroulé vaut pour un agent RH, qualité ou juridique. Il repose sur le moteur standard, pour les raisons de coût exposées plus haut."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Ouvrir le bon environnement.</strong> Connectez-vous à copilotstudio.microsoft.com avec votre compte professionnel, puis vérifiez dans le sélecteur d'environnement, en haut de l'écran, que vous travaillez dans l'environnement prévu. Un agent appartient à l'environnement où il est créé : mieux vaut le créer d'emblée au bon endroit.",
+        "<strong>Choisir le moteur standard et décrire l'agent.</strong> La page d'accueil ouvre la nouvelle expérience, bâtie sur le moteur GitHub Copilot. Pour un agent sur le moteur standard, passez par « Other ways to build » sur cette page, ou par « Open classic experience » dans le menu (…) au bas de la barre latérale. Décrivez ensuite l'agent en une ou deux phrases, dans la limite de 1 024 caractères : Copilot Studio en déduit un nom, une description, des consignes, et propose des sources, des outils, des déclencheurs et des canaux, que vous gardez ou écartez. Ces propositions ne sont pas conservées au-delà de la session en cours.",
+        "<strong>Écrire les instructions.</strong> Remplacez le texte généré par des consignes qui disent qui l'agent sert, sur quelles sources il s'appuie, ce qu'il refuse et sous quelle forme il répond. Microsoft recommande d'exiger une citation de la source pour chaque affirmation : cette consigne rend les réponses ancrées plus régulières. L'encadré qui suit la liste fournit un modèle.",
+        "<strong>Brancher la source SharePoint.</strong> Dans la section Knowledge, ajoutez l'adresse du site ou de la bibliothèque des procédures achats. En orchestration générative, le mode actif par défaut où le modèle décide seul des sources et des outils à employer, un agent accepte jusqu'à 25 adresses SharePoint. Dans les réglages Generative AI, coupez « Allow ungrounded responses », qui laisse l'agent répondre avec les seules connaissances générales du modèle, et « Use information from the web », qui étend la recherche Bing à tout le web.",
+        "<strong>Essayer l'agent.</strong> Ouvrez le volet « Test your agent » par le bouton Test, posez vos vingt questions et suivez sur la carte d'activité (activity map) la source ou l'outil retenu à chaque tour. Une question que les documents ne couvrent pas doit produire un refus courtois, jamais une procédure inventée. L'icône Reset efface la conversation pour repartir de zéro après chaque modification.",
+        "<strong>Passer à l'évaluation.</strong> Le volet de test traite une question à la fois ; l'évaluation, disponible pour tous depuis mars 2026, rejoue un jeu de test complet et note chaque réponse. Importez vos questions dans un fichier CSV, faites-en générer à partir des sources ou saisissez-les, avec la réponse attendue quand elle existe. L'évaluation tourne sous le compte de la personne connectée : pour vérifier ce que voit un autre profil, il faut se reconnecter avec son compte.",
+        "<strong>Soigner l'accueil.</strong> Rédigez le message d'ouverture dans le sujet Conversation Start et ajoutez jusqu'à dix invites suggérées, ces questions toutes prêtes affichées dans Teams et dans Microsoft Copilot, invisibles dans le volet de test. Le canal Microsoft Copilot ignore le message d'ouverture et ne présente que les invites suggérées.",
+        "<strong>Publier, puis ouvrir le canal Teams.</strong> Sélectionnez Publish en haut de l'écran et confirmez. Dans Channels, ouvrez la vignette « Microsoft 365 and Microsoft Teams », laissez cochée la case « Make agent available in Microsoft Copilot » si l'agent doit aussi répondre dans Copilot, puis sélectionnez « Add channel ». Le bouton « See agent in Teams » installe l'agent pour vous seul : essayez-le dans Teams avant toute diffusion."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Instructions prêtes à adapter (agent des achats)",
+      "italic": false,
+      "text": "Rôle : tu aides les salariés à appliquer la procédure de référencement des fournisseurs de l'entreprise.<br>Sources : tu t'appuies uniquement sur le site SharePoint « Procédures achats ». Pour chaque affirmation, tu indiques le titre du document et la section concernée.<br>Forme : tu réponds en français, en étapes numérotées, cinq au plus, suivies du lien vers le document.<br>Limites : si aucun document ne répond, tu l'écris en une phrase et tu orientes vers l'équipe achats. Tu ne donnes jamais d'avis sur un fournisseur précis, ni de prix, ni de conditions négociées.<br>Demande de référencement : quand la personne veut référencer un fournisseur, tu recueilles la raison sociale, le numéro SIREN, la catégorie d'achat et le nom du demandeur, tu affiches le récapitulatif, puis tu attends son accord explicite avant d'enregistrer la demande."
+    },
+    {
+      "type": "h2",
+      "text": "Ajouter une première action : enregistrer une demande dans SharePoint"
+    },
+    {
+      "type": "p",
+      "text": "Un agent limité aux réponses pourrait souvent rester dans Agent Builder. Copilot Studio montre son intérêt avec le premier outil, cette capacité que l'agent appelle pour agir. Dans la page Tools de l'agent, le bouton « Add a tool » propose d'abord quatre types : flux d'agent, invite (prompt), serveur MCP (MCP : protocole ouvert qui relie un agent à des services tiers) et pilotage de l'ordinateur (computer use). Derrière « See all » s'ajoutent une API REST et un connecteur personnalisé, et les connecteurs prêts à l'emploi de la Power Platform couvrent des milliers de services de Microsoft et d'autres éditeurs. Pour relier un agent à un logiciel développé en interne, l'article consacré au <a href='/blog/serveur-mcp-entreprise-connecter-ia-si'>serveur MCP en entreprise</a> explique la démarche."
+    },
+    {
+      "type": "p",
+      "text": "Pour l'agent des achats, l'action Create item du connecteur SharePoint, classé standard dans Copilot Studio, crée un élément dans la liste « Demandes de référencement ». Trois réglages de la section Details décident de la sécurité de cette écriture."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Nom et description de l'outil</strong> : l'orchestration générative s'en sert pour décider quand l'appeler. « Enregistre une demande de référencement fournisseur après accord du demandeur » guide mieux l'agent que « Créer élément ».",
+        "<strong>Ask the end user before running</strong> : réglée sur No par défaut, cette option demande à l'utilisateur son accord avant chaque exécution. Passez-la sur Yes dès que l'outil écrit quelque part.",
+        "<strong>Authentication</strong> : par défaut, l'outil s'exécute avec les identifiants de l'utilisateur (End user), dont il ne dépasse jamais les droits. L'option Maker-provided emprunte le compte du concepteur et ne convient qu'à une ressource commune."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les champs de l'outil se remplissent par défaut avec l'option « Dynamically fill with AI » : l'agent cherche la valeur dans la conversation et, faute de la trouver, pose la question. Microsoft accepte jusqu'à 128 outils par agent et conseille de s'en tenir à 25 ou 30 ; un premier agent n'en demande qu'un. L'action change aussi la facture, puisque chaque appel d'outil compte comme une action de l'agent, à 5 crédits pour une personne sans licence Microsoft Copilot."
+    },
+    {
+      "type": "h2",
+      "text": "Comment publier un agent Copilot Studio dans Teams et le diffuser ?"
+    },
+    {
+      "type": "p",
+      "text": "La publication rend l'agent disponible, la diffusion décide qui le voit. Microsoft recommande de commencer par ajouter l'agent à son propre Teams avant de le partager, puis d'élargir par cercles. Le bouton Availability options de la vignette Teams offre trois niveaux."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Copy link</strong> copie un lien d'installation, réservé aux personnes qui ont accès à l'agent et inutilisable dans l'application mobile de Teams.",
+        "<strong>Show to my teammates and shared users</strong> place l'agent dans la rubrique Shared with you du magasin d'agents Microsoft 365, pour les personnes et les groupes avec qui vous l'avez partagé.",
+        "<strong>Show to everyone in my org</strong>, puis Submit to org catalog, envoie l'agent à l'approbation d'un administrateur, qui le fait apparaître dans Built for your org (magasin d'applications Teams) et Built by your org (magasin d'agents Microsoft 365)."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le partage se règle à part, par le menu (…) puis Share : un groupe de sécurité ou toute l'organisation pour converser avec l'agent, des personnes nommées pour le modifier. Un coauteur doit détenir le rôle de sécurité Environment Maker dans l'environnement de l'agent. Après l'approbation de l'administrateur, une nouvelle publication du contenu atteint les utilisateurs sans nouvelle demande ; un changement d'icône ou de description, en revanche, repasse par l'approbation."
+    },
+    {
+      "type": "p",
+      "text": "L'authentification compte autant que le canal. Un nouvel agent démarre avec l'option « Authenticate with Microsoft », qui connecte sans configuration les salariés dans Teams, SharePoint, Power Apps et Microsoft Copilot ; c'est l'option à retenir pour le canal Teams et Microsoft 365. L'option No authentication laisse converser quiconque possède le lien, et un administrateur peut l'interdire par une stratégie de données qui bloque la conversation sans authentification. Teams réserve enfin un piège aux conversations de groupe : dans un canal d'équipe ou une conversation à plusieurs, l'agent ne peut pas puiser dans une source qui exige l'authentification de l'utilisateur, comme SharePoint."
+    },
+    {
+      "type": "h2",
+      "text": "Gouvernance : ce que règle l'administrateur Power Platform"
+    },
+    {
+      "type": "p",
+      "text": "Copilot Studio s'administre dans le centre d'administration Power Platform, alors qu'Agent Builder relève de celui de Microsoft 365. Pour un premier agent, quatre réglages méritent une conversation avec la personne qui administre la plateforme."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Les environnements</strong> : l'agent naît en développement, passe en test, puis rejoint la production dans une solution, un paquet qui transporte l'agent et ses composants d'un environnement à l'autre.",
+        "<strong>Les stratégies de données</strong> : chaque connecteur y est classé en données professionnelles, données non professionnelles ou bloqué, et un même agent ne peut pas marier des connecteurs placés dans des groupes différents. Des connecteurs propres à Copilot Studio servent à fermer un canal (Teams et Microsoft 365, site web, SharePoint, WhatsApp, Facebook), les requêtes HTTP ou les déclencheurs d'événement.",
+        "<strong>L'identité de l'agent</strong> : chaque agent créé depuis juillet 2026 reçoit d'office son propre identifiant Microsoft Entra Agent ID, sans possibilité de s'y soustraire au niveau de l'environnement. L'administrateur peut ainsi lui appliquer ses propres règles d'accès conditionnel et ses propres droits sur les connecteurs.",
+        "<strong>Le budget</strong> : les crédits se répartissent entre environnements, une limite mensuelle peut viser chaque agent, et la consommation se lit dans Licensing, puis Copilot Studio, de la console."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Pour suivre les agents dans la durée (journaux, traçage, revue des droits), l'article sur la <a href='/blog/superviser-agents-ia-production'>supervision des agents IA en production</a> prend le relais."
+    },
+    {
+      "type": "h2",
+      "text": "Sept blocages fréquents d'un premier agent, et leur parade"
+    },
+    {
+      "type": "p",
+      "text": "La plupart des incidents d'un premier agent ont une cause que Microsoft documente. Le tableau associe chaque symptôme à son explication et au geste qui le corrige."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Ce que vous constatez",
+        "Cause décrite par Microsoft",
+        "Parade"
+      ],
+      "rows": [
+        [
+          "L'agent dit ne pas savoir alors que le document existe",
+          "Réponses non ancrées coupées : le modèle a trouvé la réponse sans la citer, et Copilot Studio la retient",
+          "Exiger une citation pour chaque affirmation dans les instructions et retirer toute consigne qui supprime les sources"
+        ],
+        [
+          "Un collègue n'obtient pas la réponse que vous obtenez",
+          "Les sources SharePoint répondent selon les droits propres à chaque utilisateur",
+          "Comparer les droits des deux comptes sur le site, puis corriger le partage"
+        ],
+        [
+          "L'agent reste muet sur SharePoint dans un canal d'équipe",
+          "Les sources authentifiées ne servent qu'en conversation individuelle",
+          "Inviter les salariés à lui écrire en tête-à-tête"
+        ],
+        [
+          "La modification publiée n'apparaît pas",
+          "La conversation déjà ouverte garde l'ancienne version",
+          "Taper « start over » ou ouvrir une nouvelle conversation"
+        ],
+        [
+          "Le lien d'installation échoue sur téléphone",
+          "Le lien ne fonctionne pas dans l'application mobile de Teams",
+          "Faire approuver l'agent pour le magasin d'applications Teams"
+        ],
+        [
+          "La publication est impossible",
+          "Licence d'essai, ou stratégie de données qui ferme un connecteur ou un canal",
+          "Obtenir une licence qui autorise la publication, ou télécharger le détail de l'erreur depuis Channels"
+        ],
+        [
+          "L'agent annonce avoir atteint sa limite d'usage",
+          "Consommation du locataire supérieure à 125 % du prépayé, ou limite mensuelle de l'agent atteinte",
+          "Réallouer des crédits, en acheter, ou lier l'environnement au paiement à l'usage"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Sur le terrain : de l'assistant Copilot à la Power Platform"
+    },
+    {
+      "type": "p",
+      "text": "Les missions de Masteria montrent où se situe la limite entre Agent Builder et Copilot Studio. Au sein d'un groupe industriel du packaging présent à l'international, 59 managers ont été formés à Microsoft 365 Copilot entre juillet et septembre 2026, au fil de cinq sessions de deux jours et de 13 ateliers bâtis sur les fichiers du groupe. Parmi les livrables figurent des assistants personnalisés créés sur le Microsoft 365 du groupe ; l'un d'eux prépare, à partir d'un mail, la fiche du fournisseur. Plusieurs participants ont ensuite réclamé l'étape d'après : travailler sur les données SAP, passer à la Power Platform, bâtir des assistants avancés. Masteria a cadré un module avancé en conséquence."
+    },
+    {
+      "type": "p",
+      "text": "À l'autre bout de l'échelle, une assistante de direction d'un éditeur de logiciels B2B s'est formée seule, à distance, pendant une journée en septembre 2026. Elle y a monté avec l'Agent Builder de Copilot un assistant « mail dirigeant ». Sa règle de tri tient en une ligne : ce qui est interne ou nominatif reste dans Copilot, ce qui est public ou anonymisé peut passer par Claude, et en cas de doute, Copilot l'emporte. Pour un assistant de rédaction au service d'une personne, Agent Builder suffit ; un agent qui écrit dans SAP ou dans une liste partagée relève de Copilot Studio. Les <a href='/etudes-de-cas-ia'>études de cas Masteria</a> détaillent d'autres missions."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire de Copilot Studio en dix termes"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Agent</strong> : assistant d'IA qui suit des instructions, cherche dans des sources et peut appeler des outils pour agir.",
+        "<strong>Moteur d'exécution (harness)</strong> : couche qui décide quand solliciter le modèle, quels outils employer et comment facturer ; Copilot Studio en compte plusieurs, dont le moteur standard et le moteur GitHub Copilot.",
+        "<strong>Orchestration générative</strong> : mode actif par défaut dans lequel le modèle choisit lui-même la source, le sujet ou l'outil qui traite une demande.",
+        "<strong>Source de connaissances</strong> : contenu où l'agent cherche ses réponses, comme un site SharePoint, un fichier, un site public ou une table Dataverse.",
+        "<strong>Outil</strong> : capacité que l'agent appelle pour agir, par exemple un connecteur, un flux d'agent, une API REST ou un serveur MCP.",
+        "<strong>Sujet (topic)</strong> : parcours de conversation écrit à l'avance, propre au moteur standard.",
+        "<strong>Canal</strong> : endroit où l'agent est publié, comme Teams, Microsoft Copilot, un site web ou une application mobile.",
+        "<strong>Environnement</strong> : compartiment de la Power Platform qui regroupe agents, flux, données et règles d'accès.",
+        "<strong>Stratégie de données (DLP)</strong> : règle d'administration qui autorise ou bloque connecteurs, canaux et déclencheurs pour un ou plusieurs environnements.",
+        "<strong>Crédit Copilot</strong> : unité de consommation des agents, achetée en pack mensuel, à l'usage ou par enveloppe annuelle."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Former ceux qui construisent avant d'ouvrir Copilot Studio au plus grand nombre"
+    },
+    {
+      "type": "p",
+      "text": "Un premier agent réussi tient à trois gestes : choisir le bon atelier, écrire des instructions qui bornent le périmètre, éprouver l'agent sur des questions du terrain avant de le diffuser. Chez Masteria, la <a href='/formation-copilot-studio'>formation Copilot Studio</a> entraîne à ces gestes pendant deux jours sur votre environnement Microsoft, du premier agent jusqu'aux règles de gouvernance et au budget en crédits. La <a href='/formation-microsoft-copilot'>formation Microsoft Copilot</a> apprend Agent Builder à tous les salariés, et la <a href='/formation-agents-ia'>formation agents IA</a> met plusieurs outils sans code côte à côte. Chaque formation est proposée à partir de 1 980 € HT la journée."
+    },
+    {
+      "type": "p",
+      "text": "Copilot Studio met la fabrication d'agents à portée des services. Il reste à chaque entreprise de désigner qui vérifie qu'un agent dit juste avant que les collègues s'y fient."
+    },
+    {
+      "type": "p",
+      "text": "<em>Pages officielles consultées le 1er novembre 2026 : <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio' target='_blank' rel='noopener'>présentation de Copilot Studio (Microsoft Learn, 27 octobre 2026)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/harnesses-overview' target='_blank' rel='noopener'>moteurs d'exécution (harnesses)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview' target='_blank' rel='noopener'>agents sur le moteur GitHub Copilot</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/switch-experiences' target='_blank' rel='noopener'>accès au moteur standard</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/overview-customer-conversation' target='_blank' rel='noopener'>moteur de conversation client (préversion)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-get-started' target='_blank' rel='noopener'>démarrage rapide sur le moteur standard</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-licensing-subscriptions' target='_blank' rel='noopener'>accès et essai</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/billing-licensing' target='_blank' rel='noopener'>licences du moteur standard</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management' target='_blank' rel='noopener'>barème des crédits et dépassements (30 octobre 2026)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/agents-experience/billing-credit-overview' target='_blank' rel='noopener'>consommation du moteur GitHub Copilot</a>, <a href='https://learn.microsoft.com/en-us/power-platform/admin/pay-as-you-go-meters' target='_blank' rel='noopener'>compteurs du paiement à l'usage</a>, <a href='https://www.microsoft.com/fr-fr/microsoft-365-copilot/pricing/copilot-studio' target='_blank' rel='noopener'>offres et prix de Copilot Studio (microsoft.com, France)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-copilot-requirements' target='_blank' rel='noopener'>prérequis de Microsoft Copilot et changement de nom (28 octobre 2026)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copilot-studio-experience' target='_blank' rel='noopener'>Agent Builder face à Copilot Studio</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/agent-builder' target='_blank' rel='noopener'>présentation d'Agent Builder</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/prerequisites' target='_blank' rel='noopener'>capacités des agents selon la licence</a>, <a href='https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/copy-agent-to-copilot-studio' target='_blank' rel='noopener'>copier un agent vers Copilot Studio</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/knowledge-copilot-studio' target='_blank' rel='noopener'>sources de connaissances</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-tools-custom-agent' target='_blank' rel='noopener'>ajouter des outils</a>, <a href='https://learn.microsoft.com/en-us/connectors/sharepointonline/' target='_blank' rel='noopener'>connecteur SharePoint</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-test-bot' target='_blank' rel='noopener'>volet de test</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/analytics-agent-evaluation-intro' target='_blank' rel='noopener'>évaluation des agents</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/publication-add-bot-to-microsoft-teams' target='_blank' rel='noopener'>publication dans Teams et Microsoft Copilot (29 octobre 2026)</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/configuration-end-user-authentication' target='_blank' rel='noopener'>authentification des utilisateurs</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-share-bots' target='_blank' rel='noopener'>partage des agents</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/environments-first-run-experience' target='_blank' rel='noopener'>environnements Power Platform</a>, <a href='https://learn.microsoft.com/en-us/power-platform/admin/default-environment-routing' target='_blank' rel='noopener'>routage d'environnement</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/admin-data-loss-prevention' target='_blank' rel='noopener'>stratégies de données des agents</a>, <a href='https://learn.microsoft.com/en-us/microsoft-copilot-studio/whats-new' target='_blank' rel='noopener'>nouveautés de Copilot Studio</a>.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Copilot Studio est-il gratuit ?",
+      "a": "Copilot Studio n'est gratuit que pour essayer. L'essai individuel, ouvert avec une adresse professionnelle, permet de construire un agent et de l'essayer dans le volet de test, sans le publier. Pour publier, il faut la licence Microsoft Copilot ou des crédits : au 1er novembre 2026, la page française affiche 173,30 € HT par mois le pack de 25 000 crédits, à côté du paiement à la consommation."
+    },
+    {
+      "q": "Quelle est la différence entre Agent Builder et Copilot Studio ?",
+      "a": "Agent Builder, intégré à l'application Microsoft Copilot et à Teams, monte en langage courant un agent qui répond à partir de documents, de connecteurs Copilot et du web, puis le partage dans l'organisation. Il n'agit dans aucun logiciel extérieur. Copilot Studio ajoute les outils, les flux, les canaux extérieurs comme un site web, et des environnements distincts pour développer, tester et exploiter."
+    },
+    {
+      "q": "La licence Microsoft 365 Copilot donne-t-elle accès à Copilot Studio ?",
+      "a": "Oui, pour des agents internes. D'après la page de prix française relevée le 1er novembre 2026, la licence Microsoft 365 Copilot, que Microsoft appelle désormais Microsoft Copilot, ouvre les moteurs Copilot Chat et standard, et ses porteurs ne consomment pas de crédits sur ces agents. Publier sur un canal extérieur, servir des salariés sans licence ou employer le moteur GitHub Copilot passe par des crédits Copilot."
+    },
+    {
+      "q": "Quel budget prévoir pour un agent Copilot Studio ?",
+      "a": "Le budget suit les échanges. Avec le moteur standard, une réponse générée vaut 2 crédits, une action 5, et rien pour un porteur de la licence Microsoft Copilot sur un agent interne. Avec 150 questions par jour ouvré de salariés sans licence, un agent consomme 6 600 crédits par mois, un peu plus du quart d'un pack de 25 000 facturé 173,30 € HT au 1er novembre 2026."
+    },
+    {
+      "q": "Peut-on créer un agent Copilot Studio sans savoir coder ?",
+      "a": "Oui, pour un premier agent. La description en langage courant, les instructions, la source SharePoint, le connecteur SharePoint, les essais et la publication dans Teams se règlent à la souris. Un profil technique devient utile pour une API REST, un serveur MCP ou un connecteur personnalisé vers un logiciel maison. Dans ce cas, un binôme avec l'équipe qui administre la Power Platform fait gagner du temps."
+    },
+    {
+      "q": "Comment publier un agent Copilot Studio dans Teams ?",
+      "a": "Publiez l'agent avec le bouton Publish, puis ouvrez Channels et la vignette Microsoft 365 and Microsoft Teams, et sélectionnez Add channel. See agent in Teams l'installe pour vous seul. Availability options permet ensuite de copier un lien d'installation, de montrer l'agent aux personnes avec qui il est partagé, ou de le soumettre à l'administrateur pour le catalogue de toute l'organisation."
+    },
+    {
+      "q": "Un agent Copilot Studio peut-il révéler des documents confidentiels ?",
+      "a": "Il ne renvoie que les contenus que l'utilisateur peut déjà ouvrir, car SharePoint, Dataverse et les connecteurs répondent sous l'identité Entra de la personne qui pose la question. Le risque vient des partages trop larges : un dossier ouvert par erreur à toute l'entreprise devient lisible par tous à travers l'agent. Faites relire les droits du site avant de le brancher comme source."
+    },
+    {
+      "q": "Peut-on changer le moteur d'un agent après sa création ?",
+      "a": "Non. Le moteur d'exécution se choisit à la création, et Microsoft Learn précise qu'un agent du moteur GitHub Copilot ne passe pas sur le moteur standard, ni l'inverse. Seule une mise à niveau du moteur standard vers le moteur GitHub Copilot est proposée, en préversion au 1er novembre 2026. Pour un premier agent interne, le moteur standard reste le choix le plus économique."
+    },
+    {
+      "q": "Que devient un agent créé pendant l'essai de Copilot Studio ?",
+      "a": "L'agent reste dans son environnement. Une licence d'essai qui expire se prolonge de 30 jours sans perte de données, mais un environnement d'essai expire, lui, au bout de 30 jours, et ses agents sont alors supprimés avec leurs flux. Pour garder le travail, faites convertir l'environnement d'essai en environnement de production, ou construisez dès le départ dans un environnement durable."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez construire votre premier agent Copilot Studio ?",
+    "desc": "Masteria forme les makers et la DSI sur votre environnement Microsoft : un agent ancré dans vos documents, essayé sur vos questions, publié dans Teams, avec ses garde-fous et son enveloppe de crédits.",
+    "buttons": [
+      {
+        "label": "Voir la formation Copilot Studio",
+        "href": "/formation-copilot-studio",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre projet",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Formation Copilot Studio : concevoir, publier et gouverner vos agents",
+      "href": "/formation-copilot-studio"
+    },
+    {
+      "label": "Formation Microsoft Copilot, Agent Builder compris",
+      "href": "/formation-microsoft-copilot"
+    },
+    {
+      "label": "Formation agents IA sans code",
+      "href": "/formation-agents-ia"
+    },
+    {
+      "label": "Combien coûte un agent IA en entreprise",
+      "href": "/blog/cout-agent-ia-entreprise"
+    },
+    {
+      "label": "Superviser des agents IA en production",
+      "href": "/blog/superviser-agents-ia-production"
+    },
+    {
+      "label": "Agents IA en entreprise : usages et garde-fous",
+      "href": "/agents-ia-entreprise"
+    },
+    {
+      "label": "Études de cas Masteria",
+      "href": "/etudes-de-cas-ia"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Le vocabulaire de Copilot Studio",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent",
+          "description": "Assistant d'IA qui suit des instructions, cherche dans des sources et peut appeler des outils pour agir."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Moteur d'exécution (harness)",
+          "description": "Couche qui décide quand solliciter le modèle, quels outils employer et comment facturer ; Copilot Studio en compte plusieurs, dont le moteur standard et le moteur GitHub Copilot."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Orchestration générative",
+          "description": "Mode actif par défaut dans lequel le modèle choisit lui-même la source, le sujet ou l'outil qui traite une demande."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Source de connaissances",
+          "description": "Contenu où l'agent cherche ses réponses, comme un site SharePoint, un fichier, un site public ou une table Dataverse."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Outil",
+          "description": "Capacité que l'agent appelle pour agir, par exemple un connecteur, un flux d'agent, une API REST ou un serveur MCP."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Sujet (topic)",
+          "description": "Parcours de conversation écrit à l'avance, propre au moteur standard."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Canal",
+          "description": "Endroit où l'agent est publié, comme Teams, Microsoft Copilot, un site web ou une application mobile."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Environnement",
+          "description": "Compartiment de la Power Platform qui regroupe agents, flux, données et règles d'accès."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Stratégie de données (DLP)",
+          "description": "Règle d'administration qui autorise ou bloque connecteurs, canaux et déclencheurs pour un ou plusieurs environnements."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Crédit Copilot",
+          "description": "Unité de consommation des agents, achetée en pack mensuel, à l'usage ou par enveloppe annuelle."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Créer un agent dans Copilot Studio en huit étapes",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Ouvrir le bon environnement"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Choisir le moteur standard et décrire l'agent"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Écrire les instructions"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Brancher la source SharePoint"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Essayer l'agent dans le volet de test"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Passer à l'évaluation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Soigner l'accueil"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Publier, puis ouvrir le canal Teams"
+        }
+      ]
+    }
+  ]
+}

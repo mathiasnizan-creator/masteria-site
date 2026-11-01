@@ -1,5 +1,15 @@
 [
   {
+    "slug": "copilot-studio-creer-premier-agent",
+    "title": "Copilot Studio : créer son premier agent pas à pas",
+    "tag": "Guide pratique",
+    "date": "1er novembre 2026",
+    "datePublished": "2026-11-01",
+    "dateModified": "2026-11-01",
+    "readTime": "26 min",
+    "excerpt": "Un tutoriel Copilot Studio pour qui n'écrit pas de code : l'accès et la licence, le prix des crédits Copilot, la frontière avec Agent Builder, puis huit étapes pour construire, essayer et publier dans Teams un agent branché sur SharePoint. Fonctions et prix vérifiés le 1er novembre 2026 sur Microsoft Learn et sur microsoft.com."
+  },
+  {
     "slug": "creer-une-formation-avec-gemini",
     "title": "Comment créer une formation avec Gemini : de l'objectif pédagogique au quiz",
     "tag": "Guide pratique",

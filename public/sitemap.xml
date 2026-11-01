@@ -2185,6 +2185,12 @@
     <image:image><image:loc>https://www.master-ia.fr/og/blog--automatisation-ia-pme-processus-prioritaires.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/blog/copilot-studio-creer-premier-agent</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/blog/creer-une-formation-avec-gemini</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
