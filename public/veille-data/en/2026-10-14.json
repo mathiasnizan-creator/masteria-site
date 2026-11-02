@@ -266,7 +266,12 @@
     "titreEditorial": "Meta places Muse Wonder just behind Claude",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-02",
+    "dateLongue": "Monday 2 November 2026",
+    "titreEditorial": "ChatGPT reaches a billion weekly users",
+    "nbItems": 13
+  },
   "nbItems": 13,
   "nbSources": 23,
   "nbSignes": 8518,

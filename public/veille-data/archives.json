@@ -3,12 +3,125 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-14",
-    "totalEditions": 56,
-    "totalItems": 753,
-    "totalSources": 1108
+    "derniereDate": "2026-11-02",
+    "totalEditions": 57,
+    "totalItems": 766,
+    "totalSources": 1124
   },
   "editions": [
+    {
+      "date": "2026-11-02",
+      "dateCourte": "lun. 2 nov.",
+      "dateAffichee": "2 novembre 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "ChatGPT atteint un milliard d'utilisateurs par semaine",
+      "chapeau": "Les marchés doutent de l'IA, de la chute de Kioxia aux mises en garde de Howard Marks, le jour même où ChatGPT franchit le milliard d'utilisateurs par semaine et où la Chine annonce que ses modèles servent plus qu'ils ne s'entraînent. OVHcloud défie Mistral sur l'IA souveraine, DeepSeek lance un « super agent » de programmation et Anthropic affirme que son IA a percé les défenses de Chrome, Safari et Linux.",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Frandroid",
+        "ZDNet",
+        "Clubic",
+        "Bloomberg (Howard Marks)",
+        "Bloomberg (Kioxia)",
+        "Bloomberg (bulle)",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "ChatGPT franchit le cap du milliard d'utilisateurs par semaine",
+          "z": "une",
+          "id": "chatgpt-franchit-le-cap-du-milliard-d-utilisateurs-par"
+        },
+        {
+          "t": "OVHcloud prépare un modèle souverain et attaque Mistral",
+          "z": "europe",
+          "id": "ovhcloud-prepare-un-modele-souverain-et-attaque-mistral"
+        },
+        {
+          "t": "Les grands laboratoires soutiennent un refus d'entraînement en une ligne",
+          "z": "europe",
+          "id": "les-grands-laboratoires-soutiennent-un-refus-d-entrainement"
+        },
+        {
+          "t": "L'Europe ouvre ses supercalculateurs au Canada",
+          "z": "europe",
+          "id": "l-europe-ouvre-ses-supercalculateurs-au-canada"
+        },
+        {
+          "t": "Le doute sur la bulle de l'IA s'installe à Wall Street",
+          "z": "international",
+          "id": "le-doute-sur-la-bulle-de-l-ia-s-installe-a-wall-street"
+        },
+        {
+          "t": "OpenAI signe une série d'accords aux Émirats arabes unis",
+          "z": "international",
+          "id": "openai-signe-une-serie-d-accords-aux-emirats-arabes-unis"
+        },
+        {
+          "t": "Le patron de Microsoft AI refuse de viser une IA consciente",
+          "z": "international",
+          "id": "le-patron-de-microsoft-ai-refuse-de-viser-une-ia-consciente"
+        },
+        {
+          "t": "L'IA d'Anthropic a trouvé et exploité des failles critiques",
+          "z": "international",
+          "id": "l-ia-d-anthropic-a-trouve-et-exploite-des-failles-critiques"
+        },
+        {
+          "t": "DeepSeek dévoile un « super agent » de programmation",
+          "z": "chine",
+          "id": "deepseek-devoile-un-super-agent-de-programmation"
+        },
+        {
+          "t": "En Chine, l'IA sert désormais plus qu'elle ne s'entraîne",
+          "z": "chine",
+          "id": "en-chine-l-ia-sert-desormais-plus-qu-elle-ne-s-entraine"
+        },
+        {
+          "t": "Un papier montre que les modèles cèdent à la majorité, même fausse",
+          "z": "recherche",
+          "id": "un-papier-montre-que-les-modeles-cedent-a-la-majorite-meme"
+        },
+        {
+          "t": "Andrej Karpathy fait coder son YouTube par une IA",
+          "z": "bref",
+          "id": "andrej-karpathy-fait-coder-son-youtube-par-une-ia"
+        },
+        {
+          "t": "La demande d'IA renchérit un composant de plus",
+          "z": "bref",
+          "id": "la-demande-d-ia-rencherit-un-composant-de-plus"
+        }
+      ]
+    },
     {
       "date": "2026-10-14",
       "dateCourte": "mer. 14 oct.",

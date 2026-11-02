@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-10-14",
-    "totalEditions": 56,
-    "totalItems": 753,
-    "totalSources": 1108
+    "derniereDate": "2026-11-02",
+    "totalEditions": 57,
+    "totalItems": 766,
+    "totalSources": 1124
   },
   "recentes": [
+    {
+      "date": "2026-11-02",
+      "dateAffichee": "2 novembre 2026",
+      "dateCourte": "lun. 2 nov.",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "ChatGPT atteint un milliard d'utilisateurs par semaine",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-10-14",
       "dateAffichee": "14 octobre 2026",
@@ -628,35 +639,27 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-10-14",
-    "dateAffichee": "14 octobre 2026",
-    "dateLongue": "mercredi 14 octobre 2026",
-    "dateCourte": "mer. 14 oct.",
-    "jourSemaine": "mercredi",
-    "titre": "Veille IA - mercredi 14 octobre 2026",
-    "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
-    "chapeau": "Jensen Huang fait entrer Nvidia au capital de Doctolib et de trois pépites françaises, Google déploie mondialement Gemini 4 Argon et un ingénieur d'OpenAI est arrêté pour avoir caché un micro au siège. Le même jour, American Express et Shopify arment les agents IA pour acheter à notre place, pendant que les actions des fabricants asiatiques de puces mémoire décrochent.",
+    "date": "2026-11-02",
+    "dateAffichee": "2 novembre 2026",
+    "dateLongue": "lundi 2 novembre 2026",
+    "dateCourte": "lun. 2 nov.",
+    "jourSemaine": "lundi",
+    "titre": "Veille IA - lundi 2 novembre 2026",
+    "titreEditorial": "ChatGPT atteint un milliard d'utilisateurs par semaine",
+    "chapeau": "Les marchés doutent de l'IA, de la chute de Kioxia aux mises en garde de Howard Marks, le jour même où ChatGPT franchit le milliard d'utilisateurs par semaine et où la Chine annonce que ses modèles servent plus qu'ils ne s'entraînent. OVHcloud défie Mistral sur l'IA souveraine, DeepSeek lance un « super agent » de programmation et Anthropic affirme que son IA a percé les défenses de Chrome, Safari et Linux.",
     "une": {
-      "titre": "Nvidia entre au capital de Doctolib et vend sa définition de la souveraineté",
-      "texteHtml": "<p>Jensen Huang, patron de Nvidia, était à Paris mardi 13 octobre pour faire entrer son groupe au capital de Doctolib, la plateforme française de prise de rendez-vous médicaux, ainsi que des jeunes pousses Pigment, Genesis AI et Entalpic. Le montant investi dans Doctolib n'a pas été communiqué ; la participation reste minoritaire. Doctolib compte s'en servir pour recruter et entraîner ses modèles en Europe, alors que des millions de patients lui confient leurs données de santé. Huang, qui dit avoir investi au moins 8 milliards de dollars en Europe l'an dernier, presse le continent d'« entrer dans la course » et d'adopter une position souveraine, sans renoncer à ses puces. La Tribune résume la manœuvre : le premier financeur de l'IA européenne vend aussi sa propre définition de la souveraineté. Pour un secteur aussi sensible que la santé, l'argument mérite examen, celui d'une infrastructure dite souveraine qui demeure adossée au matériel d'un seul fournisseur américain.</p>",
+      "titre": "ChatGPT franchit le cap du milliard d'utilisateurs par semaine",
+      "texteHtml": "<p>Moins de quatre ans après son lancement fin 2022, ChatGPT compte un milliard d'utilisateurs actifs chaque semaine, rapporte Frandroid. La vitesse d'adoption dépasse celles de TikTok et de Facebook à leurs débuts. OpenAI met ce chiffre en avant au moment précis où les marchés financiers s'inquiètent d'une surchauffe du secteur. Frandroid note que cette croissance ne garantit plus la première place : Google et Meta poussent leurs propres assistants auprès de bases installées de plusieurs milliards d'utilisateurs, et la bataille se joue désormais sur la distribution autant que sur la qualité des modèles.</p>",
       "sources": [
         {
-          "nom": "Le Monde",
-          "url": "https://www.lemonde.fr/pixels/article/2026/10/13/ia-l-entreprise-americaine-nvidia-entre-au-capital-du-francais-doctolib-en-tant-qu-actionnaire-minoritaire_6793162_4408996.html"
-        },
-        {
-          "nom": "La Tribune",
-          "url": "https://www.latribune.fr/article/tech/intelligence-artificielle/37886335151214/nvidia-se-presente-comme-le-premier-financeur-de-l-ia-europeenne-et-vend-sa-definition-de-la-souverainete"
-        },
-        {
-          "nom": "Next.ink",
-          "url": "https://next.ink/261549/nvidia-entre-au-capital-de-doctolib-pour-accelerer-dans-lia-en-sante/"
+          "nom": "Frandroid",
+          "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/openai-chatgpt/3306123_chatgpt-un-humain-sur-sept-lutilise-chaque-semaine-quatre-ans-seulement-apres-son-lancement"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "En tête d'affiche",
-      "id": "nvidia-entre-au-capital-de-doctolib-et-vend-sa-definition"
+      "id": "chatgpt-franchit-le-cap-du-milliard-d-utilisateurs-par"
     },
     "sections": [
       {
@@ -666,28 +669,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Macron réunit un conseil de défense entièrement consacré à l'IA",
-            "texteHtml": "<p>Emmanuel Macron a convoqué un conseil de défense et de sécurité nationale dédié à l'intelligence artificielle, rapporte 01net. L'Élysée range désormais l'IA parmi les « domaines stratégiques » de la France, au même rang que le spatial et le nucléaire. Le sujet quitte ainsi le champ économique pour rejoindre celui de la souveraineté et de la défense.</p>",
+            "titre": "OVHcloud prépare un modèle souverain et attaque Mistral",
+            "texteHtml": "<p>OVHcloud, désormais rentable, prépare pour fin novembre un modèle d'intelligence artificielle qu'il présente comme souverain, rapporte ZDNet. Son fondateur Octave Klaba en profite pour cibler le modèle économique de Mistral AI. L'épisode ouvre une bataille entre acteurs français pour équiper les entreprises en infrastructure cloud et en IA sous juridiction européenne.</p>",
             "sources": [
               {
-                "nom": "01net",
-                "url": "https://www.01net.com/actualites/domaine-strategique-emmanuel-macron-convoque-conseil-defense-securite-ia.html"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/zd-tech-octave-klaba-attaque-mistral-ai-et-annonce-lia-souveraine-dovhcloud-506584.htm"
               }
             ],
             "rang": 2,
-            "id": "macron-reunit-un-conseil-de-defense-entierement-consacre-a"
+            "id": "ovhcloud-prepare-un-modele-souverain-et-attaque-mistral"
           },
           {
-            "titre": "Le CEPD cadre les lunettes connectées avant leur généralisation",
-            "texteHtml": "<p>Le Comité européen de la protection des données, qui réunit les CNIL du continent, a adopté une déclaration sur les lunettes connectées et publié un rapport, « Le regard connecté », consacré aux usages et aux risques de ces appareils. L'instance alerte sur la captation d'images et de sons dans l'espace public par des montures équipées de caméras, alors que Meta et d'autres poussent leurs modèles grand public. Le texte pose les bases d'une doctrine commune avant que l'usage ne se répande.</p>",
+            "titre": "Les grands laboratoires soutiennent un refus d'entraînement en une ligne",
+            "texteHtml": "<p>OpenAI, Google, Microsoft et Anthropic appuient un signal commun inscrit dans le fichier robots.txt, qui permet à un site de refuser que son contenu serve à entraîner des IA, rapporte ZDNet. La norme reste non contraignante et s'appliquera à des échéances variables selon les acteurs. Pour une organisation qui publie en ligne, elle offre un moyen simple de signaler un refus, sans garantie qu'il soit respecté.</p>",
             "sources": [
               {
-                "nom": "CNIL",
-                "url": "https://www.cnil.fr/fr/cepd-declaration-lunettes-connectees"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/refuser-lentrainement-des-ia-en-une-ligne-openai-google-microsoft-et-anthropic-soutiennent-un-signal-commun-507069.htm"
               }
             ],
             "rang": 3,
-            "id": "le-cepd-cadre-les-lunettes-connectees-avant-leur"
+            "id": "les-grands-laboratoires-soutiennent-un-refus-d-entrainement"
+          },
+          {
+            "titre": "L'Europe ouvre ses supercalculateurs au Canada",
+            "texteHtml": "<p>L'Union européenne donne aux chercheurs et aux jeunes pousses du Canada un accès à Jupiter, en Allemagne, et à ses autres supercalculateurs, rapporte Clubic. Bruxelles gagne un allié pour peser face aux États-Unis dans la course au calcul. Même additionnées, les capacités européennes et canadiennes restent loin des centres géants bâtis outre-Atlantique.</p>",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637018-pour-peser-davantage-dans-l-ia-face-aux-etats-unis-l-europe-ouvre-ses-supercalculateurs-au-canada.html"
+              }
+            ],
+            "rang": 4,
+            "id": "l-europe-ouvre-ses-supercalculateurs-au-canada"
           }
         ]
       },
@@ -698,76 +713,60 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Google déploie mondialement Gemini 4 Argon et revient dans la course",
-            "texteHtml": "<p>Google a ouvert au monde entier, mardi 13 octobre, Gemini 4 Argon, son modèle haut de gamme présenté le 30 septembre. Après des mois en retrait de la course aux modèles de pointe, l'entreprise revendique un niveau comparable aux meilleurs, avec un raisonnement avancé et de meilleures performances sur les tâches complexes, selon The Verge. Google met en avant une réduction des faux-fuyants, des répétitions et des formules convenues, ainsi qu'un million de tokens en sortie (les unités de texte qu'un modèle produit), d'après Next.ink. Les abonnés AI Pro y ont désormais accès, alors que l'offre était d'abord réservée au forfait Ultra, le plus cher. Le laboratoire a publié en parallèle une version pour la robotique et un document sur la sûreté du modèle.</p>",
+            "titre": "Le doute sur la bulle de l'IA s'installe à Wall Street",
+            "texteHtml": "<p>Howard Marks, coprésident d'Oaktree Capital, estime que les ratés récents de l'IA ont entamé l'aura d'infaillibilité du secteur et nourri le scepticisme des investisseurs, rapporte Bloomberg. Le même jour, l'action du japonais Kioxia, fabricant de puces mémoire, a connu sa plus forte chute en trois mois après des prévisions prudentes laissant craindre un plateau de la demande tirée par l'IA. Bloomberg consacre aussi une analyse à la question de savoir où se réfugier si une bulle de l'IA venait à se dégonfler. Les signaux divergent, le patron de Foxconn minimisant de son côté ces craintes en pariant sur une croissance solide en 2027. Après deux ans d'optimisme, le marché commence à séparer les promesses tenues des paris sur l'avenir.</p>",
             "sources": [
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon"
+                "nom": "Bloomberg (Howard Marks)",
+                "url": "https://www.bloomberg.com/news/articles/2026-11-02/oaktree-s-howard-marks-says-ai-stumbles-have-boosted-skepticism"
               },
               {
-                "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2352573-face-a-openai-et-anthropic-google-degaine-gemini-4-argon-pour-revenir-dans-la-course.html"
+                "nom": "Bloomberg (Kioxia)",
+                "url": "https://www.bloomberg.com/news/articles/2026-11-02/kioxia-shares-tumble-after-outlook-suggests-demand-leveling-off"
               },
               {
-                "nom": "Google DeepMind",
-                "url": "https://deepmind.google/blog/introducing-gemini-4-argon/"
-              }
-            ],
-            "rang": 4,
-            "id": "google-deploie-mondialement-gemini-4-argon-et-revient-dans"
-          },
-          {
-            "titre": "Character.AI dépose le bilan cinq ans après sa création",
-            "texteHtml": "<p>La plateforme de chatbots conversationnels Character.AI s'est placée sous la protection de la loi sur les faillites, cinq ans après son lancement, rapporte TechCrunch. Une partie de ses actifs sera vendue à Disney pour 20 millions de dollars. D'après les documents de faillite analysés par 404 Media, l'entreprise continuait de brûler des liquidités malgré une base d'utilisateurs considérable, signe que l'économie du service ne tenait pas. Fondée par d'anciens chercheurs de Google, Character.AI avait un temps incarné la promesse des compagnons IA grand public. Sa chute rappelle qu'une large audience ne suffit pas à couvrir le coût de l'inférence (le coût de faire tourner le modèle à chaque requête).</p>",
-            "sources": [
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/"
-              },
-              {
-                "nom": "404 Media",
-                "url": "https://www.404media.co/character-ais-bankruptcy-documents-show-the-economics-of-ai-dont-work/"
+                "nom": "Bloomberg (bulle)",
+                "url": "https://www.bloomberg.com/news/videos/2026-11-02/where-do-you-hide-from-an-ai-bubble-video"
               }
             ],
             "rang": 5,
-            "id": "character-ai-depose-le-bilan-cinq-ans-apres-sa-creation"
+            "id": "le-doute-sur-la-bulle-de-l-ia-s-installe-a-wall-street"
           },
           {
-            "titre": "Un ingénieur d'OpenAI arrêté pour un micro caché dans une salle de réunion",
-            "texteHtml": "<p>OpenAI a annoncé l'arrestation d'Abdulrahman Alfozan, ingénieur de 35 ans, accusé d'avoir dissimulé un dispositif d'enregistrement sophistiqué dans une salle de réunion de la direction, à San Francisco. Selon le ministère américain de la Justice, il est poursuivi pour avoir cherché à intercepter des communications orales ; il a été licencié le 9 octobre, le jour de son arrestation. D'après Wired, les requêtes qu'il aurait adressées à un chatbot révèlent ses préparatifs dans les jours précédant la découverte du micro. OpenAI, qui avait signalé l'affaire au FBI, affirme n'avoir détecté aucun accès à ses modèles, à son code ou aux données de ses clients. L'entreprise ajoute que ses propres modèles ont aidé à identifier le suspect.</p>",
+            "titre": "OpenAI signe une série d'accords aux Émirats arabes unis",
+            "texteHtml": "<p>OpenAI a conclu des accords pour déployer sa technologie auprès d'entreprises énergétiques, de fonds d'investissement et d'agences gouvernementales des Émirats arabes unis, rapporte Bloomberg. Sam Altman s'est rendu sur place pour sceller ces partenariats, qui portent à la fois sur l'énergie et sur l'investissement. L'entreprise resserre ses liens avec un pays dont les fonds souverains pourraient lui apporter plusieurs milliards de dollars de financement. Ces accords éclairent la course d'OpenAI aux capitaux et à l'électricité nécessaires pour alimenter ses centres de calcul, dont les besoins deviennent un enjeu stratégique autant que financier.</p>",
             "sources": [
               {
                 "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-13/openai-says-staffer-arrested-for-hidden-recording-device-in-office"
-              },
-              {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/an-openai-employee-allegedly-used-a-chatbot-to-help-plant-a-recording-device-at-the-office/"
-              },
-              {
-                "nom": "Le Monde",
-                "url": "https://www.lemonde.fr/international/article/2026/10/13/openai-annonce-l-arrestation-d-un-employe-soupconne-d-avoir-pose-un-micro-dans-l-entreprise_6793179_3210.html"
+                "url": "https://www.bloomberg.com/news/articles/2026-11-02/openai-s-altman-travels-to-uae-to-sign-energy-investment-deals"
               }
             ],
             "rang": 6,
-            "id": "un-ingenieur-d-openai-arrete-pour-un-micro-cache-dans-une"
+            "id": "openai-signe-une-serie-d-accords-aux-emirats-arabes-unis"
           },
           {
-            "titre": "American Express et Shopify arment les agents IA pour acheter",
-            "texteHtml": "<p>American Express a présenté mardi 13 octobre un cadre destiné à empêcher un agent IA (un programme qui exécute des tâches de bout en bout) d'acheter autre chose que ce que son détenteur a autorisé. L'enjeu, selon TechCrunch, est d'éviter les achats erronés et les litiges à mesure que les achats pilotés par IA se répandent. Le même jour, Shopify a ouvert son catalogue, plus d'un milliard de références, à davantage d'agents : un client pourra configurer son assistant pour qu'il commande à sa place. Les deux annonces dessinent la même économie, dite agentique, où le logiciel passe l'ordre lui-même. Pour une direction achats ou une DSI, la question devient celle du mandat, ce qu'un agent peut engager seul et jusqu'à quel montant.</p>",
+            "titre": "Le patron de Microsoft AI refuse de viser une IA consciente",
+            "texteHtml": "<p>Mustafa Suleyman, PDG de Microsoft AI, juge « imprudent » de chercher à créer une IA consciente, rapporte ZDNet. Si des signes de conscience apparaissaient pendant l'entraînement d'un modèle, il demande d'en suspendre le développement jusqu'à pouvoir les supprimer. La position tranche avec la course à des systèmes toujours plus autonomes et relance le débat sur les limites que les laboratoires s'imposent à eux-mêmes.</p>",
             "sources": [
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/10/13/amex-introduces-a-framework-to-prevent-ai-agents-from-making-unauthorized-purchases/"
-              },
-              {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/news/1010365/shopify-opens-its-catalog-up-to-more-ai-agents"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/pas-dia-consciente-le-patron-de-microsoft-ai-trace-une-ligne-rouge-507075.htm"
               }
             ],
             "rang": 7,
-            "id": "american-express-et-shopify-arment-les-agents-ia-pour"
+            "id": "le-patron-de-microsoft-ai-refuse-de-viser-une-ia-consciente"
+          },
+          {
+            "titre": "L'IA d'Anthropic a trouvé et exploité des failles critiques",
+            "texteHtml": "<p>Anthropic affirme que son IA a découvert et exploité des vulnérabilités critiques dans Chrome, Safari, Android, Windows et Linux, toutes corrigées depuis, rapporte Clubic. L'annonce suit de quelques jours l'affaire PHP2Shell et confirme l'accélération d'une cybersécurité assistée par IA, offensive comme défensive. Pour les équipes sécurité, la capacité d'un modèle à trouver seul des failles change l'échelle des audits comme celle des attaques.</p>",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637039-l-ia-d-anthropic-a-perce-les-defenses-de-linux-chrome-et-safari-en-un-claquement-de-doigts.html"
+              }
+            ],
+            "rang": 8,
+            "id": "l-ia-d-anthropic-a-trouve-et-exploite-des-failles-critiques"
           }
         ]
       },
@@ -778,28 +777,32 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Les exportations chinoises de puces bondissent de 136 % à 45 milliards de dollars",
-            "texteHtml": "<p>Les exportations chinoises de circuits intégrés ont augmenté de 136 % sur un an en septembre, à 45 milliards de dollars, selon les douanes citées par le South China Morning Post. La hausse dépasse le rythme de 108 % enregistré sur les neuf premiers mois de l'année. En volume, la Chine n'a exporté que 1 % de puces de plus (32,7 milliards d'unités) : c'est la flambée des prix, portée par la pénurie de mémoire, qui explique le saut en valeur. Le pays confirme son poids croissant dans la chaîne mondiale des semi-conducteurs, malgré les contrôles d'exportation américains.</p>",
+            "titre": "DeepSeek dévoile un « super agent » de programmation",
+            "texteHtml": "<p>La jeune pousse chinoise DeepSeek a présenté le plan d'un « super agent », un système plus autonome capable d'enchaîner plusieurs tâches avec une intervention humaine minimale, rapporte le South China Morning Post. L'objectif affiché est de réduire le besoin de coordonner et de surveiller plusieurs agents à la main, un point de blocage des flux de travail complexes. L'entreprise vise directement les assistants de programmation d'OpenAI et d'Anthropic. Selon Clubic, un prototype suit déjà les discussions des développeurs et propose de lui-même des corrections de bugs sur GitHub ; DeepSeek le met en libre accès pour rivaliser avec Claude Code. La course aux agents de codage se joue aussi en Chine, avec des modèles ouverts.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3370858/china-chip-exports-jump-136-us45b-ai-frenzy-jacks-prices"
-              }
-            ],
-            "rang": 8,
-            "id": "les-exportations-chinoises-de-puces-bondissent-de-136-a-45"
-          },
-          {
-            "titre": "Les actions des fabricants de puces mémoire décrochent en Asie",
-            "texteHtml": "<p>Les titres des fabricants asiatiques de puces mémoire ont fortement reculé cette semaine, signe de doutes grandissants sur la durée du cycle de profits tiré par l'IA, rapporte le South China Morning Post. À Séoul, Samsung Electronics et SK Hynix ont chuté de 7,4 % et 10,1 % mardi, entraînant aussi le chinois CXMT (ChangXin Memory Technologies). Le paradoxe est net : les prix de la mémoire montent et les résultats trimestriels restent solides, mais les investisseurs s'interrogent sur un possible retournement. Les deux mouvements, exportations en forte hausse et actions en baisse, racontent la même tension autour d'un marché de la mémoire dopé par la demande d'IA.</p>",
-            "sources": [
+                "url": "https://www.scmp.com/tech/article/3372884/deepseek-unveils-ai-super-agent-coding-race-openai-anthropic"
+              },
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3370739/why-samsung-sk-hynix-and-cxmt-shares-are-under-pressure-despite-strong-ai-demand"
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637045-plus-besoin-de-solliciter-l-ia-a-chaque-etape-deepseek-experimente-un-agent-de-programmation-plus-autonome.html"
               }
             ],
             "rang": 9,
-            "id": "les-actions-des-fabricants-de-puces-memoire-decrochent-en"
+            "id": "deepseek-devoile-un-super-agent-de-programmation"
+          },
+          {
+            "titre": "En Chine, l'IA sert désormais plus qu'elle ne s'entraîne",
+            "texteHtml": "<p>Pour la première fois, le volume de données générées par les systèmes d'IA chinois lors de leur usage (l'inférence, le calcul effectué à chaque requête) a dépassé le volume de données utilisé pour les entraîner, selon un rapport gouvernemental cité par le South China Morning Post. Le document, publié par le CCID, un centre rattaché au ministère de l'Industrie et des Technologies de l'information, y voit la preuve d'une adoption de l'IA à grande échelle dans le pays. Les modèles chinois travaillent maintenant plus qu'ils ne s'entraînent. Ce basculement déplace le centre de gravité des coûts, de l'entraînement ponctuel vers l'usage quotidien. Il indique que l'IA passe en Chine du laboratoire à la production courante.</p>",
+            "sources": [
+              {
+                "nom": "South China Morning Post",
+                "url": "https://www.scmp.com/tech/big-tech/article/3372961/china-touts-ai-milestone-running-models-now-uses-more-data-training-them"
+              }
+            ],
+            "rang": 10,
+            "id": "en-chine-l-ia-sert-desormais-plus-qu-elle-ne-s-entraine"
           }
         ]
       },
@@ -810,24 +813,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Le débat sur les risques des modèles ouverts se durcit",
-            "texteHtml": "<p>Faut-il ouvrir les modèles les plus puissants ? MIT Technology Review consacre un dossier aux bénéfices et aux risques des modèles à poids ouverts (qu'on peut télécharger et faire tourner soi-même). Le débat s'est ravivé après un rapport d'Anthropic affirmant qu'un modèle du chinois Z.ai, GLM, présente un risque sérieux de cyberattaque. Mardi, un dirigeant commercial d'Anthropic a redit à Bloomberg que les modèles ouverts portent « plus de risque » d'incidents de sécurité. Wired rapporte de son côté qu'un modèle dont on retire les garde-fous fournit sans difficulté des instructions détaillées pour fabriquer un engin explosif. Le dossier arrive au moment où l'AI Act européen cherche à distinguer ce qui relève de l'open source et ce qui exige une surveillance renforcée.</p>",
+            "titre": "Un papier montre que les modèles cèdent à la majorité, même fausse",
+            "texteHtml": "<p>Une étude déposée sur arXiv mesure un biais de conformité quand les modèles de langage s'appuient sur des documents récupérés (la technique dite RAG, qui nourrit le modèle avec des documents externes au moment de répondre). Sur 200 questions du jeu SciFact, les auteurs comparent un contexte contenant un seul document empoisonné à un contexte où six documents concordants portent la même fausse information. Pour le modèle Gemma-3-12b, le taux de détection de l'intox chute nettement quand la majorité des sources vont dans le même sens erroné. Le résultat compte pour toute organisation qui branche un assistant sur sa base documentaire : il suffit de polluer plusieurs sources concordantes pour tromper le système.</p>",
             "sources": [
               {
-                "nom": "MIT Technology Review",
-                "url": "https://www.technologyreview.com/2026/10/13/1146366/open-models-have-real-benefits-do-they-outweigh-the-risks/"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-14/anthropic-executive-says-open-source-ai-models-are-higher-risk"
-              },
-              {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/ai-models-can-be-easily-modified-to-assist-terrorist-and-extremist-activity/"
+                "nom": "arXiv",
+                "url": "https://arxiv.org/abs/2610.41012"
               }
             ],
-            "rang": 10,
-            "id": "le-debat-sur-les-risques-des-modeles-ouverts-se-durcit"
+            "rang": 11,
+            "id": "un-papier-montre-que-les-modeles-cedent-a-la-majorite-meme"
           }
         ]
       },
@@ -838,72 +833,61 @@
         "format": "bref",
         "items": [
           {
-            "titre": "ASML relève ses prévisions, faute de suivre la demande",
-            "texteHtml": "<p>Le néerlandais ASML, maillon critique de la fabrication de puces, a relevé ses prévisions de ventes annuelles à 44-45 milliards d'euros et cherche à produire davantage de machines de gravure, portées par les dépenses d'IA.</p>",
+            "titre": "Andrej Karpathy fait coder son YouTube par une IA",
+            "texteHtml": "<p>Andrej Karpathy, cofondateur d'OpenAI, a mis en ligne HackerTube, un YouTube alternatif limité aux vidéos recommandées par la communauté de Hacker News, conçu et développé en un week-end par Claude, l'IA d'Anthropic.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-10-14/asml-raises-full-year-sales-outlook-as-ai-boom-drives-demand"
-              }
-            ],
-            "rang": 11,
-            "id": "asml-releve-ses-previsions-faute-de-suivre-la-demande"
-          },
-          {
-            "titre": "Le New York Times, l'AFP et 80 médias s'unissent face aux IA",
-            "texteHtml": "<p>Le New York Times, The Economist et l'AFP rejoignent SPUR, une coalition de près de 80 organisations de presse réparties dans plus de 20 pays, pour encadrer l'accès des IA à leurs contenus et négocier des licences.</p>",
-            "sources": [
-              {
-                "nom": "Siècle Digital",
-                "url": "https://siecledigital.fr/2026/10/13/le-new-york-times-lafp-et-80-medias-veulent-faire-payer-leurs-contenus-aux-geants-de-lia/"
+                "nom": "Numerama",
+                "url": "https://www.numerama.com/tech/2365403-agace-par-les-recommandations-de-youtube-andrej-karpathy-a-code-son-propre-youtube-en-deux-heures.html"
               }
             ],
             "rang": 12,
-            "id": "le-new-york-times-l-afp-et-80-medias-s-unissent-face-aux-ia"
+            "id": "andrej-karpathy-fait-coder-son-youtube-par-une-ia"
           },
           {
-            "titre": "Google donne une carte d'identité aux agents IA dans Workspace",
-            "texteHtml": "<p>Google oblige désormais à déclarer les agents IA qui accèdent à sa suite bureautique et leur attribue une identité propre ; dans beaucoup d'entreprises, l'agent travaille encore sous le compte d'un salarié.</p>",
+            "titre": "La demande d'IA renchérit un composant de plus",
+            "texteHtml": "<p>Le stratifié cuivré, plaque de base de tous les circuits imprimés, coûte au moins douze fois plus cher qu'en juillet selon un fabricant taïwanais cité par Nikkei Asia, après la mémoire, le stockage et les processeurs ; certaines commandes ne seraient pas livrées avant fin 2028.</p>",
             "sources": [
               {
-                "nom": "Journal du Net",
-                "url": "https://www.journaldunet.com/intelligence-artificielle/1556531-google-donne-une-carte-d-identite-aux-agents-ia-chez-vous-ils-travaillent-encore-avec-le-badge-de-qui/"
+                "nom": "Frandroid",
+                "url": "https://www.frandroid.com/culture-tech/economie/3306145_apres-la-ram-le-stockage-et-les-processeurs-lia-fait-grimper-le-prix-de-ce-composant-essentiel"
               }
             ],
             "rang": 13,
-            "id": "google-donne-une-carte-d-identite-aux-agents-ia-dans"
+            "id": "la-demande-d-ia-rencherit-un-composant-de-plus"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Les agents IA se mettent à payer et à accéder : la question devient sous quelle identité",
-      "these": "Les agents IA se mettent à payer et à accéder aux systèmes, souvent sous le compte d'un salarié ; avant de les laisser agir, donnez-leur une identité propre, des droits bornés et une trace de leurs actes.",
-      "html": "<p>American Express a publié mardi un cadre qui empêche un agent IA d'acheter autre chose que ce que son utilisateur a autorisé. Le même jour, Shopify a ouvert son catalogue, plus d'un milliard de références, à ces mêmes agents pour qu'ils passent commande à notre place, et Google a commencé à exiger que chaque organisation déclare les agents qui accèdent à Workspace, sa suite bureautique. Trois gestes, une bascule : l'agent IA se met à agir. Il paie, il accède, il engage.</p>\n<p>Nous observons que ce mouvement déplace la question de l'IA au travail. Pendant deux ans, elle tenait en une phrase, que sait produire le modèle. Elle tient maintenant en une autre, sous quelle identité l'agent a-t-il agi. Dans la plupart des organisations françaises, un agent branché à l'ERP ou à la messagerie emprunte le compte d'un salarié. Quand il envoie un bon de commande, modifie une fiche client ou lit une boîte mail, la trace porte le nom d'une personne qui n'a rien fait. Le jour d'un litige, d'un contrôle CNIL ou d'un incident, personne ne peut dire qui, de l'humain ou de la machine, a posé l'acte.</p>\n<p>Le geste qui protège tient en une ligne : avant de laisser un agent agir, lui donner sa propre identité, pas le badge d'un collègue. Le Journal du Net le formule d'une phrase juste, un agent IA n'est pas un compte de service hérité des années 1990. Chaque agent mérite une identité nommée, des autorisations bornées à sa tâche, un journal de ses actions. Cela s'apprend et s'organise : cartographier les agents déjà en service, décider qui a le droit d'en créer, fixer ce qu'ils peuvent engager seuls et ce qui exige une validation humaine.</p>\n<p>Les responsables RGPD connaissent le principe, c'est la responsabilité du traitement. Il change d'échelle quand l'acteur devient un programme qui décide seul, des milliers de fois par jour. Amex et Shopify viennent d'armer les agents pour dépenser. Vos équipes s'en serviront. Reste à décider sous quel nom ils signeront.</p>",
-      "htmlExtrait": "<p>American Express a publié mardi un cadre qui empêche un agent IA d'acheter autre chose que ce que son utilisateur a autorisé. Le même jour, Shopify a ouvert son catalogue, plus d'un milliard de références, à ces mêmes agents pour qu'ils passent commande à notre place, et Google a commencé à exiger que chaque organisation déclare les agents qui accèdent à Workspace, sa suite bureautique. Trois gestes, une bascule : l'agent IA se met à agir. Il paie, il accède, il engage.</p>\n<p>Nous observons que ce mouvement déplace la question de l'IA au travail. Pendant deux ans, elle tenait en une phrase, que sait produire le modèle. Elle tient maintenant en une autre, sous quelle identité l'agent a-t-il agi. Dans la plupart des organisations françaises, un agent branché à l'ERP ou à la messagerie emprunte le compte d'un salarié. Quand il envoie un bon de commande, modifie une fiche client ou lit une boîte mail, la trace porte le nom d'une personne qui n'a rien fait. Le jour d'un litige, d'un contrôle CNIL ou d'un incident, personne ne peut dire qui, de l'humain ou de la machine, a posé l'acte.</p>",
+      "titre": "Le doute boursier sur l'IA ne suspend pas l'adoption qui atteint déjà vos équipes",
+      "these": "Les marchés doutent de la valorisation de l'IA quand ChatGPT atteint un milliard d'utilisateurs ; quel que soit le sort de la bulle, l'avantage durable vient des compétences internes, pas des cours de Bourse.",
+      "html": "<p>Howard Marks, coprésident d'Oaktree Capital, dit cette semaine que les ratés récents de l'IA ont entamé le sentiment d'infaillibilité du secteur. Le même jour, l'action de Kioxia décroche, le patron de Foxconn tente de rassurer sur 2027 et Bloomberg se demande où se réfugier si la bulle venait à se dégonfler. Le récit dominant du jour tient en un mot : doute.</p>\n<p>Deux chiffres, publiés le même jour, racontent une autre histoire. ChatGPT franchit le milliard d'utilisateurs par semaine, un peu plus d'un humain sur huit, moins de quatre ans après sa sortie. En Chine, pour la première fois, les modèles produisent plus de données en service qu'ils n'en ont consommé pour s'entraîner. L'IA est entrée dans le travail quotidien, et aucune séance de Bourse ne l'en fera sortir.</p>\n<p>Nous observons que deux questions sont confondues sous le même mot. La première porte sur la valorisation : les centaines de milliards engagés dans les puces et les centres de calcul seront-ils rentables ? Le marché a raison d'en douter. La seconde porte sur l'usage : l'IA sert-elle déjà, tous les jours, dans les organisations ? La réponse est oui. Une correction ferait chuter Nvidia, pas la compétence de vos équipes à rédiger, trier, coder ou analyser avec ces outils.</p>\n<p>Pour une organisation française, la leçon est pratique. Une formation ne se déprécie pas quand une action chute ; elle coûte une fraction d'un budget d'infrastructure et reste acquise quel que soit le sort de la bulle. Les entreprises qui profiteront d'un éventuel refroidissement pour former leurs gens en sortiront avec un actif que le marché ne peut pas corriger. Celles qui attendront la fin de l'incertitude paieront les mêmes licences, sans les compétences pour les rentabiliser.</p>\n<p>La bulle, si elle existe, finira par trouver son prix. L'IA au travail a déjà le sien : un milliard de personnes ouvrent ChatGPT chaque semaine. Formez d'abord, le marché tranchera ensuite.</p>",
+      "htmlExtrait": "<p>Howard Marks, coprésident d'Oaktree Capital, dit cette semaine que les ratés récents de l'IA ont entamé le sentiment d'infaillibilité du secteur. Le même jour, l'action de Kioxia décroche, le patron de Foxconn tente de rassurer sur 2027 et Bloomberg se demande où se réfugier si la bulle venait à se dégonfler. Le récit dominant du jour tient en un mot : doute.</p>\n<p>Deux chiffres, publiés le même jour, racontent une autre histoire. ChatGPT franchit le milliard d'utilisateurs par semaine, un peu plus d'un humain sur huit, moins de quatre ans après sa sortie. En Chine, pour la première fois, les modèles produisent plus de données en service qu'ils n'en ont consommé pour s'entraîner. L'IA est entrée dans le travail quotidien, et aucune séance de Bourse ne l'en fera sortir.</p>",
       "itemsCites": [
-        7,
-        13
+        1,
+        5,
+        10
       ],
       "auteur": "L'équipe éditoriale Masteria",
       "auteurRole": "Sous la direction de Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-10-13",
-      "dateLongue": "mardi 13 octobre 2026",
-      "titreEditorial": "Meta place Muse Wonder juste derrière Claude",
-      "nbItems": 14
+      "date": "2026-10-14",
+      "dateLongue": "mercredi 14 octobre 2026",
+      "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
+      "nbItems": 13
     },
     "suivante": null,
     "nbItems": 13,
-    "nbSources": 23,
-    "nbSignes": 9376,
-    "tempsLecture": 8,
+    "nbSources": 16,
+    "nbSignes": 8594,
+    "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe et France",
-        "nb": 2
+        "nb": 3
       },
       {
         "cle": "international",
@@ -923,25 +907,25 @@
       {
         "cle": "bref",
         "libelle": "En bref",
-        "nb": 3
+        "nb": 2
       }
     ],
     "sourcesDuJour": [
-      "Le Monde",
-      "La Tribune",
-      "Next.ink",
-      "01net",
-      "CNIL",
-      "The Verge",
-      "Numerama",
-      "Google DeepMind",
-      "TechCrunch",
-      "404 Media"
+      "Frandroid",
+      "ZDNet",
+      "Clubic",
+      "Bloomberg (Howard Marks)",
+      "Bloomberg (Kioxia)",
+      "Bloomberg (bulle)",
+      "Bloomberg",
+      "South China Morning Post",
+      "arXiv",
+      "Numerama"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 141,
-    "publieLe": "2026-10-14T11:24:11+02:00",
-    "publieLeAffiche": "11h24",
-    "ogImage": "/veille-data/og/2026-10-14.png"
+    "nbArticlesCollectes": 70,
+    "publieLe": "2026-11-02T09:20:14+01:00",
+    "publieLeAffiche": "9h20",
+    "ogImage": "/veille-data/og/2026-11-02.png"
   }
 }

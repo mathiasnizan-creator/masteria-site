@@ -3,12 +3,125 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-14",
-    "totalEditions": 41,
-    "totalItems": 550,
-    "totalSources": 796
+    "derniereDate": "2026-11-02",
+    "totalEditions": 42,
+    "totalItems": 563,
+    "totalSources": 812
   },
   "editions": [
+    {
+      "date": "2026-11-02",
+      "dateCourte": "Mon 2 Nov",
+      "dateAffichee": "2 November 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "ChatGPT reaches a billion weekly users",
+      "chapeau": "Markets are doubting AI, from Kioxia's fall to Howard Marks's warnings, on the very day ChatGPT crosses a billion weekly users and China reports that its models now serve more than they train. OVHcloud takes on Mistral over sovereign AI, DeepSeek launches a coding \\\"super agent\\\", and Anthropic says its AI breached the defences of Chrome, Safari and Linux.",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 6,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "Frandroid",
+        "ZDNet",
+        "Clubic",
+        "Bloomberg (Howard Marks)",
+        "Bloomberg (Kioxia)",
+        "Bloomberg (bubble)",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv",
+        "Numerama"
+      ],
+      "items": [
+        {
+          "t": "ChatGPT crosses the mark of a billion weekly users",
+          "z": "une",
+          "id": "chatgpt-crosses-the-mark-of-a-billion-weekly-users"
+        },
+        {
+          "t": "OVHcloud readies a sovereign model and goes after Mistral",
+          "z": "europe",
+          "id": "ovhcloud-readies-a-sovereign-model-and-goes-after-mistral"
+        },
+        {
+          "t": "The major labs back a one-line opt-out from training",
+          "z": "europe",
+          "id": "the-major-labs-back-a-one-line-opt-out-from-training"
+        },
+        {
+          "t": "Europe opens its supercomputers to Canada",
+          "z": "europe",
+          "id": "europe-opens-its-supercomputers-to-canada"
+        },
+        {
+          "t": "Doubt about an AI bubble settles over Wall Street",
+          "z": "international",
+          "id": "doubt-about-an-ai-bubble-settles-over-wall-street"
+        },
+        {
+          "t": "OpenAI signs a run of deals in the United Arab Emirates",
+          "z": "international",
+          "id": "openai-signs-a-run-of-deals-in-the-united-arab-emirates"
+        },
+        {
+          "t": "The head of Microsoft AI refuses to aim for a conscious AI",
+          "z": "international",
+          "id": "the-head-of-microsoft-ai-refuses-to-aim-for-a-conscious-ai"
+        },
+        {
+          "t": "Anthropic's AI found and exploited critical flaws",
+          "z": "international",
+          "id": "anthropic-s-ai-found-and-exploited-critical-flaws"
+        },
+        {
+          "t": "DeepSeek unveils a coding \"super agent\"",
+          "z": "chine",
+          "id": "deepseek-unveils-a-coding-super-agent"
+        },
+        {
+          "t": "In China, AI now serves more than it trains",
+          "z": "chine",
+          "id": "in-china-ai-now-serves-more-than-it-trains"
+        },
+        {
+          "t": "A paper shows models cave to the majority, even a false one",
+          "z": "recherche",
+          "id": "a-paper-shows-models-cave-to-the-majority-even-a-false-one"
+        },
+        {
+          "t": "Andrej Karpathy has an AI code his own YouTube",
+          "z": "bref",
+          "id": "andrej-karpathy-has-an-ai-code-his-own-youtube"
+        },
+        {
+          "t": "AI demand drives up yet another component",
+          "z": "bref",
+          "id": "ai-demand-drives-up-yet-another-component"
+        }
+      ]
+    },
     {
       "date": "2026-10-14",
       "dateCourte": "Wed 14 Oct",

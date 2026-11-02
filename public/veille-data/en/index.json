@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-10-14",
-    "totalEditions": 41,
-    "totalItems": 550,
-    "totalSources": 796
+    "derniereDate": "2026-11-02",
+    "totalEditions": 42,
+    "totalItems": 563,
+    "totalSources": 812
   },
   "editions": [
+    {
+      "date": "2026-11-02",
+      "dateAffichee": "2 November 2026",
+      "dateCourte": "Mon 2 Nov",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "ChatGPT reaches a billion weekly users",
+      "nbItems": 13,
+      "nbSources": 16,
+      "tempsLecture": 6
+    },
     {
       "date": "2026-10-14",
       "dateAffichee": "14 October 2026",
