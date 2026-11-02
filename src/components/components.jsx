@@ -341,7 +341,9 @@ export function MasteriaHeader() {
   return (
     <header ref={headerRef} style={{ position: 'sticky', top: 0, background: '#fff', borderBottom: '1px solid #EFEFEF', zIndex: 200, transform: 'translateZ(0)', WebkitBackfaceVisibility: 'hidden' }}>
       <div style={{
-        maxWidth: 1080, margin: '0 auto',
+        // la nav large (recherche détaillée) réclame ~1 145 px avec le logo : dans 1 080 px
+        // elle débordait de 127 px à droite et collait le CTA au bord de l'écran (02/11/2026)
+        maxWidth: wideNav ? 1240 : 1080, margin: '0 auto',
         padding: isMobile ? '0 18px' : '0 32px',
         height: isMobile ? 64 : 80,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -396,7 +398,7 @@ export function MasteriaHeader() {
                 <div style={{
                   position: 'fixed', top: 84, left: '50%', transform: 'translateX(-50%)',
                   background: '#fff', borderRadius: 14, boxShadow: '0 12px 40px rgba(0,0,0,0.12)', border: '1px solid #EFEFEF',
-                  padding: '20px 24px 24px', width: 940, maxWidth: 'calc(100vw - 32px)',
+                  padding: '20px 24px 24px', width: 980, maxWidth: 'calc(100vw - 32px)',
                   zIndex: 300,
                 }}>
 
@@ -416,7 +418,9 @@ export function MasteriaHeader() {
                     <span style={{ fontSize: 16, color: '#92400E', fontWeight: 700 }}>→</span>
                   </Link>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr 280px', gap: 24 }}>
+                  {/* minmax(0, 1fr) : la colonne métiers ne pousse plus la 3e colonne hors du
+                      panneau (ses libellés sur une ligne réclamaient 372 px, 30 px de trop) */}
+                  <div style={{ display: 'grid', gridTemplateColumns: '220px minmax(0, 1fr) 280px', gap: 24 }}>
                   {/* COL 1 — Par outil IA */}
                   <div>
                     <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Par outil IA</p>
@@ -442,12 +446,12 @@ export function MasteriaHeader() {
                   {/* COL 2 — Par métier */}
                   <div>
                     <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B7280', marginBottom: 12 }}>Par métier</p>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px 4px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1px 4px' }}>
                       {METIERS_NAV.map(m => {
                         const Icon = METIER_ICONS_NAV[m.slug];
                         return (
                           <Link key={m.slug} to={`/${m.slug}`} onClick={() => setMenuOpen(false)}
-                            style={{ textDecoration: 'none', borderRadius: 7, padding: '5px 8px', display: 'flex', alignItems: 'center', gap: 7, transition: 'background 120ms' }}
+                            style={{ textDecoration: 'none', borderRadius: 7, padding: '5px 8px', display: 'flex', alignItems: 'center', gap: 7, minWidth: 0, transition: 'background 120ms' }}
                             onMouseEnter={e => e.currentTarget.style.background = '#F9FAFB'}
                             onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
                           >
