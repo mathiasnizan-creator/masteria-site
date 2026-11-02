@@ -1,0 +1,772 @@
+{
+  "slug": "notebooklm-entreprise-usages-limites-confidentialite",
+  "title": "NotebookLM en entreprise : usages, limites et confidentialité",
+  "metaTitle": "NotebookLM en entreprise : usages, limites, confidentialité",
+  "metaDesc": "NotebookLM, devenu Gemini Notebook : usages par métier, plafonds et confidentialité selon le compte personnel, Workspace ou Enterprise.",
+  "tag": "Guide pratique",
+  "date": "2 novembre 2026",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "readTime": "24 min",
+  "formations": [
+    [
+      "Formation NotebookLM (Gemini Notebook)",
+      "/formation-notebooklm"
+    ],
+    [
+      "Formation Gemini en entreprise",
+      "/formation-gemini-entreprise"
+    ],
+    [
+      "Formation Gemini pour les équipes informatiques",
+      "/formation-gemini-informatique"
+    ]
+  ],
+  "keywords": [
+    "notebooklm",
+    "notebooklm entreprise",
+    "notebooklm c'est quoi",
+    "notebooklm gratuit",
+    "notebooklm confidentialité",
+    "notebooklm google workspace",
+    "Gemini Notebook",
+    "NotebookLM Enterprise",
+    "Gemini Notebook Enterprise",
+    "comment utiliser notebooklm"
+  ],
+  "excerpt": "NotebookLM, rebaptisé Gemini Notebook, répond depuis vos documents en citant ses sources. Usages par métier, plafonds par compte et règles de confidentialité du compte personnel, de Google Workspace et de la version Enterprise de Google Cloud, relevés sur les pages officielles de Google le 1er novembre 2026.",
+  "intro": "NotebookLM est l'assistant de Google qui fonde ses réponses sur les seuls documents déposés dans un carnet et relie chaque affirmation à l'extrait qui la justifie ; depuis le 16 juillet 2026, Google l'appelle Gemini Notebook. En entreprise, il sert à interroger un dossier de travail (procédures, contrats, appels d'offres, documentation technique) et à en tirer des synthèses, des quiz ou des résumés audio, à une condition : choisir le bon compte. Un compte Google personnel, un compte Google Workspace et la version Enterprise vendue par Google Cloud n'appliquent ni les mêmes plafonds ni les mêmes règles à vos données. Ce guide rassemble ce que Google en écrit sur ses pages officielles, consultées le 1er novembre 2026 : les fonctions, les usages par métier, les limites, la confidentialité compte par compte, puis une grille pour choisir.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "<strong>Ce que c'est</strong> : un assistant de recherche de Google qui s'appuie sur les sources d'un carnet et montre l'extrait utilisé, nommé Gemini Notebook depuis le 16 juillet 2026. <strong>Gratuit</strong> : un compte Google personnel ouvre 100 carnets de 50 sources chacun, sous un quota de calcul renouvelé toutes les cinq heures. <strong>Google Workspace</strong> : l'outil fait partie des services principaux de la plupart des éditions, avec 50 sources par carnet en Business Starter et 300 à partir de Business Standard. <strong>Données en Workspace</strong> : sur les éditions à sécurité de niveau entreprise, fichiers, discussions et réponses échappent à toute relecture humaine et ne nourrissent pas les modèles d'IA générative. <strong>Compte personnel</strong> : un avis, le pouce placé sous une réponse, fait partir demandes, sources et réponses vers des relecteurs de Google, qui les conservent trois ans au plus. <strong>Version Enterprise</strong> : Gemini Notebook Enterprise, vendu par Google Cloud, stocke les carnets dans votre projet, aux États-Unis ou dans l'Union européenne, pour 9 dollars US par licence et par mois après 30 jours d'essai, quinze licences au minimum. <strong>Point de vigilance</strong> : dans Workspace, les régions de données choisies par l'organisation ne couvrent pas les copies de fichiers mises en cache par l'outil."
+    },
+    {
+      "type": "h2",
+      "text": "NotebookLM, c'est quoi ?"
+    },
+    {
+      "type": "p",
+      "text": "NotebookLM est un carnet de recherche assisté par l'IA : vous y versez des documents, vous posez une question, et la réponse s'appuie sur ces documents avec des renvois numérotés vers les passages cités. Présenté à la conférence Google I/O de 2023 sous l'appellation Project Tailwind, il porte le nom de Gemini Notebook depuis le 16 juillet 2026. L'outil garde son application propre, aussi accessible dans l'application Gemini. Lors du changement de nom, Google comptait plus de 30 millions d'utilisateurs, et plus de 600 000 organisations s'en servaient."
+    },
+    {
+      "type": "p",
+      "text": "Le mécanisme relève du RAG (de l'anglais retrieval-augmented generation : le système retrouve d'abord les extraits pertinents, puis rédige). L'aide de Google l'écrit en une phrase : les réponses du chat reposent uniquement sur les données de vos sources. Une demande qui sort du dossier, comme écrire un poème, peut donc rester sans réponse. Pour comprendre ce mécanisme et ses alternatives, lisez notre article <a href='/blog/fine-tuning-ou-rag'>fine-tuning ou RAG</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Un nouveau nom, des liens qui continuent de fonctionner"
+    },
+    {
+      "type": "p",
+      "text": "Le changement de nom s'est fait sans rupture : les carnets partagés et les liens existants sont redirigés, et Google n'a demandé aucune intervention aux administrateurs Workspace. Le 1er novembre 2026, l'ancienne adresse notebooklm.google.com renvoyait vers notebook.google.com. Les internautes cherchent encore l'outil sous son premier nom, et le centre d'aide officiel s'intitule toujours « Aide NotebookLM » : ce guide emploie donc les deux noms."
+    },
+    {
+      "type": "h3",
+      "text": "NotebookLM ou l'application Gemini : deux portes vers les mêmes carnets"
+    },
+    {
+      "type": "p",
+      "text": "Les carnets apparaissent dans la barre de navigation de Gemini, et une source ajoutée ou une consigne modifiée d'un côté se retrouve de l'autre. La réponse change pourtant de nature. Dans Gemini Notebook, elle reste ancrée dans les seules sources du carnet ; dans Gemini, elle peut y ajouter une recherche sur le web et d'autres outils. Les productions du panneau Studio (résumés audio et vidéo, présentations, infographies) se génèrent dans la seule application Gemini Notebook. Autre écart : Gemini n'affiche pas les carnets partagés, y compris ceux dont vous êtes propriétaire. Pour confronter une affirmation à un document, travaillez dans Gemini Notebook."
+    },
+    {
+      "type": "h2",
+      "text": "Que fait NotebookLM avec vos documents ?"
+    },
+    {
+      "type": "p",
+      "text": "Le travail dans NotebookLM suit trois temps : constituer le carnet, l'interroger, puis en tirer des supports. Chacun obéit à des règles que l'aide de Google décrit en détail."
+    },
+    {
+      "type": "h3",
+      "text": "Les sources qu'un carnet accepte"
+    },
+    {
+      "type": "p",
+      "text": "Un carnet reçoit des PDF, des fichiers Word et PowerPoint, du texte brut, du Markdown, des CSV et des ePub, des documents, présentations et feuilles Google, des images, des fichiers audio transcrits à l'import, des pages web, des vidéos YouTube, du texte collé et même des discussions Gemini. Le plafond par source est de 500 000 mots, ou de 200 Mo pour un fichier importé : plus de mille pages d'un texte dense tiennent dans une seule source. Une présentation Google est lue jusqu'à 100 diapositives, une feuille Google jusqu'à 100 000 jetons (les unités de texte que le modèle décompte)."
+    },
+    {
+      "type": "p",
+      "text": "Quelques règles évitent les mauvaises surprises. Un fichier Drive se resynchronise toutes les deux ou trois minutes, et il faut avoir au moins le droit de le lire pour l'ajouter. Un fichier Google perd à l'import ses commentaires et ses notes de bas de page. D'une page web, l'outil garde le seul texte, et il refuse les pages réservées aux abonnés. D'une vidéo YouTube, il retient la transcription, à condition qu'elle soit publique et sous-titrée. Une source devenue inaccessible, parce que son fichier a disparu ou que vos droits ont changé, occupe toujours une place dans le plafond du carnet. Gemini Notebook ne peut ni modifier ni supprimer le fichier d'origine dans Drive."
+    },
+    {
+      "type": "h3",
+      "text": "Le chat qui cite ses sources"
+    },
+    {
+      "type": "p",
+      "text": "Chaque réponse du chat porte des numéros de citation ; au survol, le passage exact de la source s'affiche, texte ou image. Vous cochez les sources à consulter pour une question, réglez la longueur des réponses et choisissez un style : Par défaut pour la recherche et le remue-méninges, Guide d'apprentissage pour comprendre pas à pas, Personnalisé pour fixer un rôle, un ton ou un format. Une réponse utile s'enregistre comme note en gardant sa mise en forme, tableaux et renvois cliquables inclus. L'historique des échanges reste attaché à votre seul compte et se supprime depuis le panneau Discussion."
+    },
+    {
+      "type": "p",
+      "text": "La même page d'aide signale des fonctions encore expérimentales : chercher sur le web, exécuter du code, créer des fichiers. Elles élargissent le champ de l'outil et obligent à distinguer, dans une réponse, ce qui vient du carnet de ce qui vient d'ailleurs."
+    },
+    {
+      "type": "h3",
+      "text": "Le panneau Studio, atelier des supports"
+    },
+    {
+      "type": "p",
+      "text": "Le panneau Studio transforme le carnet en supports à lire, à écouter ou à réviser. Le tableau reprend les productions que l'aide de Google documente, avec leurs restrictions relevées le 1er novembre 2026."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Production",
+        "Ce que vous obtenez",
+        "À savoir"
+      ],
+      "rows": [
+        [
+          "Rapport",
+          "Un document bâti sur un modèle ou un format suggéré, ou un rapport interactif",
+          "Le rapport interactif n'existe que sur le web"
+        ],
+        [
+          "Carte mentale",
+          "Les thèmes du carnet en arborescence ; un nœud sélectionné lance une question au chat",
+          "Téléchargeable, absente de l'application mobile pour l'instant"
+        ],
+        [
+          "Flashcards et quiz",
+          "Cartes de révision et questionnaires tirés des sources",
+          "Quotas quotidiens selon le compte, 10 par jour au niveau standard de Workspace"
+        ],
+        [
+          "Résumé audio",
+          "Quatre formats : Analyse approfondie, Briefing (une voix, moins de deux minutes), Critique, Débat",
+          "Français parmi plus de 80 langues ; mode interactif en anglais seulement"
+        ],
+        [
+          "Résumé vidéo",
+          "Trois formats : Explicatif, Court (une soixantaine de secondes), Cinématique",
+          "Explicatif et Court en français ; Cinématique en anglais pour les 18 ans et plus ; une génération dépasse parfois 30 minutes"
+        ],
+        [
+          "Présentation",
+          "Un diaporama tiré des sources, retouché diapositive par diapositive",
+          "Téléchargement en PDF ou en PowerPoint ; réservé aux 18 ans et plus"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Google assortit chaque production d'un avertissement : textes, voix et images générés peuvent contenir des inexactitudes. Une citation prouve qu'une phrase figure dans la source, sans dire si la source est encore à jour. Ce contrôle revient à la personne qui connaît le dossier."
+    },
+    {
+      "type": "h2",
+      "text": "Quels usages pour NotebookLM en entreprise ?"
+    },
+    {
+      "type": "p",
+      "text": "NotebookLM rend service aux équipes qui cherchent leurs réponses dans des documents déjà écrits. Un bon carnet couvre une seule question de travail avec des pièces qui font foi ; un carnet fourre-tout mêle les versions et brouille les citations. Le tableau propose un carnet type par équipe, la demande qu'on lui adresse et le contrôle à mener avant de diffuser."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Équipe",
+        "Carnet à constituer",
+        "Ce qu'on lui demande",
+        "Ce qu'on vérifie"
+      ],
+      "rows": [
+        [
+          "Avant-vente et appels d'offres",
+          "Règlement de consultation, cahier des clauses techniques, mémoires techniques déjà remis",
+          "La liste des exigences du cahier des charges, chacune associée au passage d'un ancien mémoire qui y répond",
+          "Chaque exigence relue dans le document de la consultation"
+        ],
+        [
+          "Support technique et SAV",
+          "Manuels produits, notes de version, fiches de dépannage",
+          "La marche à suivre pour une panne décrite par un client, étape par étape",
+          "La version du manuel citée"
+        ],
+        [
+          "Achats",
+          "Conditions générales des fournisseurs, contrats-cadres",
+          "Un tableau des délais de paiement, pénalités et clauses de révision, fournisseur par fournisseur",
+          "Montants et délais recopiés depuis le contrat"
+        ],
+        [
+          "Ressources humaines",
+          "Accords d'entreprise, règlement intérieur, notice de la mutuelle",
+          "La réponse à la question d'un salarié, avec l'article qui la fonde",
+          "La date de l'accord en vigueur"
+        ],
+        [
+          "Juridique",
+          "Contrats types, notes internes, décisions utiles",
+          "Les clauses d'un projet de contrat qui s'écartent du modèle validé",
+          "Le passage cité, lu dans son contexte"
+        ],
+        [
+          "Direction",
+          "Comptes rendus de comité, plans d'action, tableaux de suivi",
+          "Les décisions prises sur un sujet depuis janvier, chacune datée",
+          "La décision retrouvée dans le compte rendu approuvé"
+        ],
+        [
+          "Formation interne",
+          "Procédures, supports de cours, vidéos de démonstration",
+          "Un guide d'étude et un quiz pour l'arrivée d'un nouveau collaborateur",
+          "Les réponses du quiz, validées par le responsable de la procédure"
+        ],
+        [
+          "Marketing et veille",
+          "Études publiques, pages de concurrents, rapports sectoriels",
+          "Une synthèse comparée, puis un résumé audio à écouter en déplacement",
+          "Chaque chiffre repris, rapporté à sa source"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les consultations publiques ont leur méthode propre, décrite dans notre guide <a href='/blog/ia-pour-repondre-appels-doffres'>IA et appels d'offres</a>. Côté pédagogie, l'article <a href='/blog/creer-une-formation-avec-gemini'>créer une formation avec Gemini</a> montre comment un carnet porte le fond d'un module."
+    },
+    {
+      "type": "h3",
+      "text": "Deux carnets montés pendant des formations Masteria"
+    },
+    {
+      "type": "p",
+      "text": "Masteria a fait entrer NotebookLM dans deux de ses missions de formation de 2026. Le premier cas concerne un cabinet de géomètres-experts d'une vingtaine de personnes : son gérant, suivi en individuel et à distance pendant deux jours en août 2026, a rangé ses projets Claude par domaine et ouvert un carnet NotebookLM pour les textes dont la formulation exacte doit être citée. Le second se déroule en septembre 2026 au siège d'un réseau de franchise qui vend aux entreprises, équipé de Google Workspace Business Standard : l'équipe de direction a constitué un carnet qui rassemble le savoir-faire du réseau à partir des procédures et des fiches techniques, et l'a éprouvé avec des questions venues du terrain. La suite prévue sur 30, 60 puis 90 jours enchaîne l'activation de Gemini selon les profils, la publication de la charte, l'outillage de la base documentaire, et seulement ensuite l'ouverture du cadre aux franchisés. Les autres missions sont décrites sur notre page <a href='/etudes-de-cas-ia'>études de cas</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Ce que NotebookLM ne fait pas"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Il ne fouille pas votre Drive de lui-même.</strong> Seuls les fichiers ajoutés comme sources entrent dans ses réponses, en dehors des applications connectées que vous nommez dans une question, une fonction réservée au web.",
+        "<strong>Il ne touche pas aux originaux.</strong> Un fichier Drive importé reste tel quel, et une présentation téléchargée vit ensuite sa vie hors du carnet.",
+        "<strong>Il ne restaure pas une note effacée.</strong> L'aide indique qu'aucun moyen n'existe pour récupérer une note supprimée.",
+        "<strong>Il ne parle pas toutes les langues dans toutes ses fonctions.</strong> Le mode interactif des résumés audio et la vidéo Cinématique restent en anglais.",
+        "<strong>Il ne garantit pas l'exactitude.</strong> Google rappelle que l'outil peut se tromper et invite à vérifier ses réponses.",
+        "<strong>Il n'a pas toutes ses fonctions sur mobile.</strong> L'application Android et iOS n'en reprend qu'une partie ; la carte mentale, par exemple, n'y figure pas encore."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Quelles sont les limites de NotebookLM selon votre compte ?"
+    },
+    {
+      "type": "p",
+      "text": "Les plafonds de NotebookLM changent avec le compte, et Google les déclare révisables. Deux logiques coexistent au 1er novembre 2026. Depuis un déploiement commencé le 2 septembre 2026, les comptes personnels ont des quotas fondés sur la puissance de calcul consommée : le compteur se renouvelle toutes les cinq heures dans la limite d'un plafond hebdomadaire, et le panneau Studio affiche le coût prévu d'une production avant de la lancer. Google AI Plus double ces limites, Google AI Pro les quadruple, Google AI Ultra les porte à cinq ou vingt fois celles de Pro. Les éditions Workspace gardent des quotas quotidiens, classés par niveau d'accès dans l'aide aux administrateurs."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Compte ou édition",
+        "Carnets par personne",
+        "Sources par carnet",
+        "Discussions par jour",
+        "Résumés audio par jour"
+      ],
+      "rows": [
+        [
+          "Compte Google personnel gratuit",
+          "100",
+          "50",
+          "Quota de calcul",
+          "Quota de calcul"
+        ],
+        [
+          "Forfait Google AI Plus",
+          "200",
+          "100",
+          "Quota doublé",
+          "Quota doublé"
+        ],
+        [
+          "Forfait Google AI Pro",
+          "500",
+          "300",
+          "Quota quadruplé",
+          "Quota quadruplé"
+        ],
+        [
+          "Forfait Google AI Ultra",
+          "500",
+          "500 ou 600 selon l'offre",
+          "5 ou 20 fois Pro",
+          "5 ou 20 fois Pro"
+        ],
+        [
+          "Workspace Business Starter, Enterprise Starter et Essentials, Frontline, Nonprofits",
+          "100",
+          "50",
+          "50",
+          "3"
+        ],
+        [
+          "Workspace Enterprise Standard ou Plus, Business Standard ou Plus",
+          "500",
+          "300",
+          "500",
+          "20"
+        ],
+        [
+          "Module Workspace AI Expanded Access",
+          "500",
+          "400",
+          "1 000",
+          "40"
+        ],
+        [
+          "Module Workspace AI Ultra Access",
+          "500",
+          "600",
+          "5 000",
+          "200"
+        ],
+        [
+          "Gemini Notebook Enterprise (Google Cloud)",
+          "500",
+          "300",
+          "500 requêtes",
+          "20"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La taille d'une source varie peu : 500 000 mots ou 200 Mo pour un fichier importé, 500 Mo dans la version Enterprise. Partager un carnet ne modifie pas la limite de sources propre à chaque collaborateur. Pour connaître votre niveau, regardez à côté de votre photo de profil : un badge Pro, Plus, Expanded ou Ultra signale des limites plus hautes et des fonctions supplémentaires."
+    },
+    {
+      "type": "p",
+      "text": "Le palier de Business Starter mérite une attention particulière. Un dossier qui réunit manuel qualité, procédures et rapports d'audit peut dépasser cinquante pièces : il faut alors répartir le dossier entre plusieurs carnets, ou passer à une édition qui ouvre 300 sources."
+    },
+    {
+      "type": "h3",
+      "text": "Langues, âge et appareils"
+    },
+    {
+      "type": "p",
+      "text": "NotebookLM couvre plus de 80 langues, parmi lesquelles deux variantes du français, celle d'Europe et celle du Canada. La langue des réponses et des productions suit par défaut celle du compte Google et se change dans les paramètres, rubrique Langue de sortie. Certaines fonctions sont réservées aux 18 ans et plus : les présentations, la vidéo Cinématique, le chat vocal de l'application mobile. L'outil s'utilise dans le navigateur et dans une application pour Android, iPhone et iPad."
+    },
+    {
+      "type": "h2",
+      "text": "NotebookLM est-il confidentiel ? Trois régimes selon le compte"
+    },
+    {
+      "type": "p",
+      "text": "Le même carnet obéit à des règles de données différentes selon le compte qui l'a créé. Google distingue le compte personnel, le compte Workspace et l'accès par Google Cloud, et rattache chacun à ses propres conditions."
+    },
+    {
+      "type": "h3",
+      "text": "Compte Google personnel : les conditions générales de Google"
+    },
+    {
+      "type": "p",
+      "text": "Avec un compte Gmail ou un forfait Google AI, les conditions d'utilisation générales de Google s'appliquent. Selon Google, ce que contient un carnet ne sert pas directement à entraîner ses modèles d'IA de base, sauf si vous lui envoyez un avis. Un avis (le pouce vers le haut ou vers le bas sous une réponse) peut emporter vos demandes, vos sources, vos imports et les réponses, ainsi que les discussions Gemini rattachées au carnet, même quand l'Activité dans les applications Gemini est désactivée. Des équipes formées à cette tâche l'examinent après l'avoir dissocié de votre compte, et le gardent trois ans au maximum. Google demande de n'y mettre aucune information confidentielle."
+    },
+    {
+      "type": "p",
+      "text": "Un compte personnel partage un carnet avec 50 personnes au plus, jamais avec un groupe Google, et peut le rendre public : le carnet s'ouvre alors à toute personne dotée d'un compte Google, et ses productions partagées se consultent même sans connexion. Pour des documents d'entreprise, ce compte sert à tester l'outil sur des textes publics, et s'arrête là."
+    },
+    {
+      "type": "h3",
+      "text": "Google Workspace : contrat Google Cloud et protection de niveau entreprise"
+    },
+    {
+      "type": "p",
+      "text": "Dans Google Workspace, Gemini Notebook compte parmi les services principaux (ceux que couvre le contrat Workspace de l'entreprise) de la plupart des éditions, de Business Starter à Enterprise Plus, et Google le présente comme inclus dans tous ses forfaits Workspace. Le service relève alors des conditions de Google Cloud. Sur les éditions dotées de la sécurité et de la confidentialité de niveau entreprise, les fichiers importés, les discussions et les réponses du modèle ne passent devant aucun relecteur humain et ne servent pas à améliorer les modèles d'IA générative, avis compris. Google se réserve de traiter les données pour prévenir la fraude, les abus et les incidents techniques. L'aide aux administrateurs attribue au service les certifications SOC 1, SOC 2 et SOC 3, ISO/IEC 27001, 27017, 27018, 27701 et 9001, ainsi que BSI C5:2020."
+    },
+    {
+      "type": "p",
+      "text": "Quatre réserves sont à lire avant d'ouvrir le service à une équipe :"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le cache échappe aux régions de données.</strong> Pour répondre plus vite, Gemini Notebook conserve une copie en cache des fichiers Drive, et l'aide aux administrateurs précise que ces données traitées et mises en cache sortent du champ des régions de données fixées par l'organisation. Une entreprise tenue de garder certains documents en Europe tranche ce point avant de les autoriser comme sources.",
+        "<strong>Certaines éditions restent sous les conditions générales.</strong> Business Base, Essentials Starter et Workspace Individual reçoivent Gemini Notebook comme service supplémentaire, au niveau d'accès standard sans la mention de sécurité de niveau entreprise, et sous les conditions générales de Google.",
+        "<strong>Un avis venu d'un compte personnel est collecté.</strong> Si une personne connectée avec un compte Google personnel donne un avis sur un carnet qui appartient à votre organisation, son contenu est recueilli pour analyser le problème. Ouvrir un carnet à des invités extérieurs expose donc son contenu à cette collecte.",
+        "<strong>Partager un carnet donne accès à ses sources.</strong> Le rôle Lecteur consulte les sources et les notes, et le lien limité à la discussion masque les sources sans retirer l'accès. Retirez d'un carnet partagé toute pièce que l'un des destinataires n'a pas à connaître."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les réglages se font dans la console d'administration, menu IA générative puis Gemini Notebook, avec le privilège d'administrateur des paramètres Gemini. L'administrateur active le service pour toute l'organisation, pour une unité organisationnelle ou pour un groupe d'accès, puis choisit le partage hors de l'organisation : fermé, limité à une liste de domaines ou ouvert à toute adresse, avec en option les carnets publics. Un changement peut mettre jusqu'à 24 heures à s'appliquer. Ces choix reviennent à la DSI ; notre parcours <a href='/formation-gemini-informatique'>Gemini pour la DSI et le support informatique</a> les traite avec le reste de la console."
+    },
+    {
+      "type": "h3",
+      "text": "Gemini Notebook Enterprise : la version vendue par Google Cloud"
+    },
+    {
+      "type": "p",
+      "text": "NotebookLM Enterprise, que la documentation de Google Cloud nomme désormais Gemini Notebook Enterprise (ses rôles d'accès portent encore le nom NotebookLM), s'achète hors de Workspace, dans Google Cloud. Sa page produit affichait le 1er novembre 2026 un essai de 30 jours, puis 9 dollars US par licence et par mois, avec quinze licences au minimum ; l'outil est aussi compris dans les abonnements Gemini Enterprise Standard et Plus. Les salariés se connectent avec l'annuaire de l'entreprise : Cloud Identity de Google, ou un fournisseur d'identité tiers comme Microsoft Entra ID, Okta ou Ping. Une société restée sur Microsoft 365 peut ainsi ouvrir des carnets sans passer à Workspace."
+    },
+    {
+      "type": "p",
+      "text": "Les données restent dans votre projet Google Cloud, stockées dans la multirégion États-Unis ou Union européenne, et seul Gemini Notebook Enterprise y accède. La documentation liste les VPC Service Controls (un périmètre qui empêche les données de sortir du projet), le chiffrement par des clés que gère le client (CMEK), Model Armor, qui peut bloquer une demande ou une réponse où des données sensibles sont détectées, et des journaux d'audit de l'usage. Les droits passent par les rôles IAM (la gestion des accès de Google Cloud). Un carnet ne se partage qu'à l'intérieur du même projet, en lecture ou en écriture, et jamais en public. Les documents déposés relèvent des conditions de Google Cloud, dont les conditions spécifiques contiennent une clause, la section 18 dans leur version du 30 octobre 2026, qui interdit à Google d'entraîner ou d'affiner un modèle d'IA sur les données du client sans sa permission préalable."
+    },
+    {
+      "type": "p",
+      "text": "Cette version a ses contraintes. Dans un projet protégé par VPC Service Controls, l'ajout d'une page web comme source est bloqué, tandis que les documents Drive et les vidéos YouTube restent acceptés. Nano Banana, le modèle d'images de Google, n'y est pas pris en charge. Les carnets créés dans Workspace ne s'y transfèrent pas, et deux organisations Google Cloud ne s'échangent un carnet que par export puis import. En contrepartie, la version Enterprise accepte les classeurs Excel et propose des API pour créer des carnets, ajouter des sources et générer des résumés audio."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Critère",
+        "Compte Google personnel",
+        "Google Workspace (sécurité de niveau entreprise)",
+        "Gemini Notebook Enterprise"
+      ],
+      "rows": [
+        [
+          "Conditions applicables",
+          "Conditions générales de Google",
+          "Conditions de Google Cloud",
+          "Conditions de Google Cloud"
+        ],
+        [
+          "Relecture humaine",
+          "Oui pour les avis envoyés, dissociés du compte",
+          "Aucune, même après un avis",
+          "Non précisée par la documentation produit"
+        ],
+        [
+          "Entraînement des modèles",
+          "Pas d'usage direct, sauf avis envoyé",
+          "Aucun usage pour améliorer les modèles d'IA générative",
+          "Interdit sans permission préalable, section 18 des conditions spécifiques"
+        ],
+        [
+          "Conservation des avis",
+          "Jusqu'à trois ans",
+          "Pas de relecture des avis",
+          "Non précisée par la documentation produit"
+        ],
+        [
+          "Lieu des données",
+          "Non paramétrable",
+          "Régions de l'organisation, sauf le cache de Gemini Notebook",
+          "Votre projet, multirégion États-Unis ou UE"
+        ],
+        [
+          "Partage",
+          "50 personnes au plus, public possible",
+          "Interne, domaines autorisés ou ouvert, selon la console",
+          "Dans le même projet seulement, jamais public"
+        ],
+        [
+          "Connexion",
+          "Compte Google personnel",
+          "Compte Workspace",
+          "Cloud Identity ou fournisseur tiers (Entra ID, Okta, Ping)"
+        ],
+        [
+          "Prix au 1er novembre 2026",
+          "Gratuit, ou forfait Google AI",
+          "Inclus dans les forfaits Workspace",
+          "9 dollars US par licence et par mois, quinze licences au minimum"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Compte personnel, Workspace ou Enterprise : lequel choisir pour NotebookLM ?"
+    },
+    {
+      "type": "p",
+      "text": "Le choix du compte NotebookLM part de deux questions : la suite bureautique que l'entreprise utilise déjà, et le niveau d'exigence qui pèse sur les documents. La grille couvre les situations les plus courantes."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Votre situation",
+        "Compte à retenir",
+        "Pourquoi"
+      ],
+      "rows": [
+        [
+          "Vous découvrez l'outil seul, sur des documents publics",
+          "Compte Google personnel gratuit",
+          "100 carnets de 50 sources suffisent pour juger l'outil"
+        ],
+        [
+          "L'entreprise travaille sous Workspace Business Standard ou Plus",
+          "Workspace, déjà payé",
+          "300 sources par carnet, protection de niveau entreprise, réglages dans la console"
+        ],
+        [
+          "L'entreprise est en Business Starter et ses dossiers dépassent 50 pièces",
+          "Une édition Workspace supérieure, ou le module AI Expanded Access",
+          "Le niveau standard plafonne à 50 sources par carnet et 3 résumés audio par jour"
+        ],
+        [
+          "Un dirigeant seul ou un indépendant traite des dossiers clients",
+          "Une édition Workspace professionnelle, de Business Starter à Business Plus",
+          "Workspace Individual reste sous les conditions générales de Google"
+        ],
+        [
+          "L'entreprise vit sous Microsoft 365, sans Workspace",
+          "Gemini Notebook Enterprise, ou les outils de Microsoft",
+          "Connexion par Microsoft Entra ID ; à comparer avec Copilot avant d'ajouter un éditeur"
+        ],
+        [
+          "Vos documents restent dans l'UE et vous gérez vos clés de chiffrement",
+          "Gemini Notebook Enterprise",
+          "Multirégion UE, CMEK et VPC Service Controls"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Quel que soit le compte, le RGPD s'applique dès qu'un carnet contient des données personnelles : votre DPO (le délégué à la protection des données) documente l'usage avant le premier dépôt, et notre page <a href='/ia-et-rgpd'>IA et RGPD</a> rappelle les obligations. Pour des données de santé, notez que la liste de certifications publiée pour Gemini Notebook dans Workspace ne mentionne pas HDS, la certification des hébergeurs de données de santé exigée en France : le point se règle avec Google avant tout dépôt."
+    },
+    {
+      "type": "p",
+      "text": "Si la question porte sur la suite elle-même, notre comparatif <a href='/gemini-vs-copilot'>Gemini ou Copilot</a> met les deux écosystèmes côte à côte, et notre <a href='/blog/chatgpt-copilot-gemini-claude-mistral-lequel-choisir'>tour d'horizon des assistants du marché</a> élargit la comparaison à ChatGPT, Claude et Mistral."
+    },
+    {
+      "type": "h2",
+      "text": "Comment utiliser NotebookLM dans une équipe, sans perdre la main sur les documents ?"
+    },
+    {
+      "type": "p",
+      "text": "Un déploiement réussi de NotebookLM tient à six décisions prises avant le premier carnet partagé."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Contrôler le compte de chaque utilisateur.</strong> Le badge affiché près de la photo de profil indique le niveau d'accès ; aucun document interne ne part dans un compte personnel.",
+        "<strong>Régler le partage dans la console.</strong> Partage externe fermé ou limité à des domaines, carnets publics désactivés, sauf besoin écrit et validé.",
+        "<strong>Découper par question de travail.</strong> Un carnet par dossier, avec les seules versions en vigueur ; les sources grisées, devenues inaccessibles, se retirent, car elles prennent une place sans plus servir.",
+        "<strong>Ouvrir les citations qui engagent.</strong> Toute citation qui porte un chiffre, une date ou une obligation se lit dans son document, phrase voisine comprise, avant que la réponse circule.",
+        "<strong>Nommer un responsable par carnet.</strong> Il verse les nouvelles versions, retire les anciennes et relit les productions Studio avant leur diffusion. Dès que le carnet est ouvert à quatre personnes ou plus et a servi dans les sept derniers jours, ses statistiques d'usage s'affichent.",
+        "<strong>Automatiser l'alimentation quand le carnet vit.</strong> Depuis août 2026, Workspace Studio (l'outil d'automatisation sans code de Workspace) propose l'étape « Add a source to Gemini Notebook », qui verse du texte, des liens Drive, des vidéos YouTube ou des pages web dans un carnet au fil d'un flux récurrent."
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Demande type à coller dans le chat d'un carnet",
+      "italic": false,
+      "text": "Réponds en t'appuyant sur les seules sources cochées. Pour la question posée, cite le passage exact de chaque règle, donne le titre et la date du document d'où elle vient, et signale toute contradiction entre deux sources. Si les documents ne suffisent pas pour répondre, dis-le et nomme la pièce qui manque au carnet."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire de NotebookLM en dix termes"
+    },
+    {
+      "type": "p",
+      "text": "Dix termes reviennent dans la documentation de Google sur NotebookLM et dans ce guide."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Carnet</strong> : espace qui regroupe les sources d'un sujet, ses notes et ses productions ; l'interface dit aussi notebook.",
+        "<strong>Source</strong> : document ajouté au carnet, sur lequel le chat fonde ses réponses.",
+        "<strong>Citation</strong> : renvoi numéroté vers le passage exact d'une source.",
+        "<strong>Studio</strong> : panneau qui produit rapports, cartes mentales, quiz, résumés audio et vidéo, présentations.",
+        "<strong>Résumé audio</strong> : synthèse parlée tirée des sources, proposée en quatre formats.",
+        "<strong>Niveau d'accès</strong> : palier de quotas que Google attribue selon l'édition Workspace ou le module souscrit.",
+        "<strong>Avis</strong> : retour envoyé avec le pouce sous une réponse, qui transmet à Google le contexte de l'échange.",
+        "<strong>RAG</strong> : technique où le système retrouve d'abord les extraits pertinents d'un corpus, puis rédige à partir d'eux.",
+        "<strong>VPC Service Controls</strong> : périmètre de sécurité de Google Cloud qui empêche les données de quitter un projet.",
+        "<strong>CMEK</strong> : clés de chiffrement que le client gère lui-même dans Google Cloud."
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Se former à NotebookLM sur ses propres dossiers"
+    },
+    {
+      "type": "p",
+      "text": "Les boutons de NotebookLM se trouvent vite ; la tenue d'un carnet demande plus de méthode : retenir les documents de référence, lire une citation dans son contexte, régler le partage avant d'ouvrir. Masteria forme les équipes sur leurs documents et sur le compte qu'elles utilisent : la <a href='/formation-notebooklm'>formation NotebookLM (Gemini Notebook)</a> consacre une journée entière à l'outil, et la <a href='/formation-gemini-entreprise'>formation Gemini en entreprise</a> l'inscrit dans le reste de Workspace, de Gmail à Sheets. Comptez à partir de 1 980 € HT la journée."
+    },
+    {
+      "type": "p",
+      "text": "Un carnet bien tenu devient la mémoire vérifiable d'une équipe, où chaque réponse montre d'où elle vient. Reste à décider, avant le premier dépôt, sous quelles conditions cette mémoire est confiée à Google."
+    },
+    {
+      "type": "p",
+      "text": "<em>Sources consultées le 1er novembre 2026 : <a href='https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/' target='_blank' rel='noopener'>Google, annonce du changement de nom (16 juillet 2026)</a>, <a href='https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html' target='_blank' rel='noopener'>Workspace Updates, calendrier et redirections (16 juillet 2026)</a>, <a href='https://blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/' target='_blank' rel='noopener'>Google, nouvelles limites d'usage (28 août 2026)</a>, <a href='https://support.google.com/gemininotebook/answer/16215270?hl=fr' target='_blank' rel='noopener'>aide Gemini Notebook, ajouter des sources</a>, <a href='https://support.google.com/gemininotebook/answer/16179559?hl=fr' target='_blank' rel='noopener'>utiliser le chat</a>, <a href='https://support.google.com/gemininotebook/answer/16212820?hl=fr' target='_blank' rel='noopener'>résumés audio</a>, <a href='https://support.google.com/gemininotebook/answer/16454555?hl=fr' target='_blank' rel='noopener'>résumés vidéo</a>, <a href='https://support.google.com/gemininotebook/answer/16757456?hl=fr' target='_blank' rel='noopener'>présentations</a>, <a href='https://support.google.com/gemininotebook/answer/18323649?hl=fr' target='_blank' rel='noopener'>rapports</a>, <a href='https://support.google.com/gemininotebook/answer/16212283?hl=fr' target='_blank' rel='noopener'>cartes mentales</a>, <a href='https://support.google.com/gemininotebook/answer/16206563?hl=fr' target='_blank' rel='noopener'>partage d'un carnet</a>, <a href='https://support.google.com/gemininotebook/answer/16213268?hl=fr' target='_blank' rel='noopener'>forfaits</a>, <a href='https://support.google.com/gemininotebook/answer/17670842?hl=fr' target='_blank' rel='noopener'>limites d'utilisation</a>, <a href='https://support.google.com/gemininotebook/answer/16337734?hl=fr' target='_blank' rel='noopener'>compte professionnel ou scolaire</a>, <a href='https://support.google.com/gemininotebook/answer/17004255?hl=fr' target='_blank' rel='noopener'>confidentialité et conditions d'utilisation</a>, <a href='https://support.google.com/gemininotebook/answer/17003757?hl=fr' target='_blank' rel='noopener'>carnets dans les applications Gemini</a>, <a href='https://support.google.com/gemininotebook/answer/18784282?hl=fr' target='_blank' rel='noopener'>applications connectées</a>, <a href='https://support.google.com/gemininotebook/answer/16261963?hl=fr' target='_blank' rel='noopener'>langue de sortie</a>, <a href='https://support.google.com/gemininotebook/answer/16269187?hl=fr' target='_blank' rel='noopener'>questions fréquentes</a>, <a href='https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/turn-gemini-notebook-on-or-off-for-users' target='_blank' rel='noopener'>aide administrateur Workspace, activer Gemini Notebook (mise à jour du 26 octobre 2026)</a>, <a href='https://knowledge.workspace.google.com/admin/generative-ai/gemini-notebook/manage-gemini-notebook-sharing-settings' target='_blank' rel='noopener'>aide administrateur Workspace, réglages de partage (26 octobre 2026)</a>, <a href='https://workspaceupdates.googleblog.com/2026/08/automatically-add-sources-to-your-Gemini-Notebooks-in-Workspace-Studio.html' target='_blank' rel='noopener'>Workspace Updates, ajout automatique de sources (7 août 2026)</a>, <a href='https://workspace.google.com/products/notebooklm/' target='_blank' rel='noopener'>Google Workspace, page Gemini Notebook</a>, <a href='https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/overview' target='_blank' rel='noopener'>Google Cloud, présentation de Gemini Notebook Enterprise (30 octobre 2026)</a>, <a href='https://docs.cloud.google.com/gemini/enterprise/notebooklm-enterprise/docs/faq' target='_blank' rel='noopener'>questions fréquentes de la version Enterprise (28 octobre 2026)</a>, <a href='https://docs.cloud.google.com/gemini/enterprise/docs/choose-product' target='_blank' rel='noopener'>choisir entre Gemini Notebook Enterprise et Gemini Enterprise (30 octobre 2026)</a>, <a href='https://cloud.google.com/gemini-enterprise/gemini-notebook' target='_blank' rel='noopener'>Google Cloud, page produit et prix</a>, <a href='https://cloud.google.com/terms/service-terms' target='_blank' rel='noopener'>conditions spécifiques des services Google Cloud, section 18 (30 octobre 2026)</a>.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "NotebookLM est-il gratuit ?",
+      "a": "Oui, avec un compte Google personnel : 100 carnets, 50 sources par carnet et un quota de calcul renouvelé toutes les cinq heures, d'après l'aide de Google relevée le 1er novembre 2026. Les forfaits Google AI Plus, Pro et Ultra relèvent ces plafonds. En entreprise, Gemini Notebook est inclus dans les forfaits Google Workspace. Seule la version Enterprise de Google Cloud se paie à la licence."
+    },
+    {
+      "q": "Pourquoi NotebookLM s'appelle-t-il maintenant Gemini Notebook ?",
+      "a": "Google a renommé NotebookLM le 16 juillet 2026 en annonçant qu'il en ferait davantage dans son écosystème : les carnets sont accessibles dans l'application Gemini, synchronisés dans les deux sens, et leur arrivée dans le Mode IA de la recherche était annoncée. L'outil garde son application propre. Les anciens liens et les carnets partagés restent valables, redirigés vers la nouvelle adresse."
+    },
+    {
+      "q": "Google entraîne-t-il ses modèles sur les documents déposés dans NotebookLM ?",
+      "a": "Pas sur une édition Workspace dotée de la sécurité de niveau entreprise : fichiers, discussions et réponses ne servent pas à améliorer les modèles et aucun humain ne les relit, avis compris. Sur un compte personnel, les contenus ne servent pas directement à l'entraînement, sauf avis envoyé par le pouce : celui-ci est relu par des équipes de Google et conservé trois ans au plus."
+    },
+    {
+      "q": "Peut-on mettre des données clients ou des données personnelles dans NotebookLM ?",
+      "a": "Seulement dans un compte d'entreprise, après décision du responsable des données. Workspace applique les conditions de Google Cloud, mais le cache de Gemini Notebook échappe aux régions de données choisies. Pour garder les documents en Europe, la version Enterprise stocke tout dans un projet Google Cloud en multirégion UE. Le RGPD s'applique dans tous les cas : associez votre DPO avant le premier dépôt."
+    },
+    {
+      "q": "Combien de documents peut-on ajouter dans un carnet NotebookLM ?",
+      "a": "Au 1er novembre 2026 : 50 sources sur un compte gratuit ou en Business Starter, 300 sur les éditions Business Standard ou Plus et Enterprise Standard ou Plus, 400 avec AI Expanded Access, 600 avec AI Ultra Access, 300 dans la version Enterprise de Google Cloud. Une source est limitée à 500 000 mots, ou 200 Mo pour un fichier importé. Au-delà, répartissez le dossier entre plusieurs carnets."
+    },
+    {
+      "q": "NotebookLM fonctionne-t-il en français ?",
+      "a": "Oui. L'outil gère plus de 80 langues, parmi lesquelles le français d'Europe et du Canada, et la langue des réponses se règle dans les paramètres, rubrique Langue de sortie. Les résumés audio et les vidéos aux formats Explicatif et Court se génèrent en français. Le mode interactif des résumés audio et la vidéo Cinématique restent réservés à l'anglais."
+    },
+    {
+      "q": "Quelle différence entre NotebookLM et l'application Gemini ?",
+      "a": "Les deux ouvrent les mêmes carnets, synchronisés. Dans Gemini Notebook, la réponse reste ancrée dans les sources du carnet ; dans Gemini, elle peut s'enrichir d'une recherche web ou d'autres outils. Résumés audio et vidéo, présentations et infographies sont propres à Gemini Notebook, et Gemini n'affiche pas les carnets partagés. Pour vérifier un document, restez dans Gemini Notebook."
+    },
+    {
+      "q": "Une entreprise sous Microsoft 365 peut-elle utiliser NotebookLM ?",
+      "a": "Oui, par Gemini Notebook Enterprise, vendu par Google Cloud : les salariés se connectent via un fournisseur d'identité tiers comme Microsoft Entra ID, et l'outil accepte les fichiers Word, PowerPoint et Excel. Google affichait 9 dollars US par licence et par mois, quinze licences au minimum, après 30 jours d'essai. Comparez avec Copilot, déjà présent dans Microsoft 365, avant d'ajouter un second éditeur."
+    },
+    {
+      "q": "Comment activer NotebookLM dans Google Workspace ?",
+      "a": "L'administrateur ouvre la console d'administration, menu IA générative puis Gemini Notebook, avec le privilège d'administrateur des paramètres Gemini. Il active le service pour toute l'organisation, une unité organisationnelle ou un groupe d'accès, puis règle le partage hors de l'organisation. Un changement peut demander jusqu'à 24 heures. Le passage au nom Gemini Notebook n'exigeait aucune action de sa part."
+    },
+    {
+      "q": "NotebookLM a-t-il une API ?",
+      "a": "Oui pour la version Enterprise de Google Cloud : sa documentation décrit des API pour créer et gérer des carnets, ajouter des sources, générer des résumés audio et des podcasts. Pour les comptes personnels et Workspace, l'aide consultée ne décrit pas d'API. Dans Workspace, l'étape « Add a source to Gemini Notebook » de Workspace Studio automatise l'ajout de sources sans écrire de code."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez faire d'un dossier un carnet fiable ?",
+    "desc": "Masteria forme vos équipes sur leurs propres documents, avec le compte que l'entreprise utilise, et pose les règles de partage avant le premier carnet.",
+    "buttons": [
+      {
+        "label": "Voir la formation NotebookLM",
+        "href": "/formation-notebooklm",
+        "primary": true
+      },
+      {
+        "label": "Parler de vos dossiers",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Formation NotebookLM (Gemini Notebook) : une journée sur vos documents",
+      "href": "/formation-notebooklm"
+    },
+    {
+      "label": "Formation Gemini en entreprise",
+      "href": "/formation-gemini-entreprise"
+    },
+    {
+      "label": "Gemini ou Copilot : le comparatif",
+      "href": "/gemini-vs-copilot"
+    },
+    {
+      "label": "Créer une formation avec Gemini, étape par étape",
+      "href": "/blog/creer-une-formation-avec-gemini"
+    },
+    {
+      "label": "IA et RGPD : les obligations",
+      "href": "/ia-et-rgpd"
+    },
+    {
+      "label": "Études de cas de nos missions",
+      "href": "/etudes-de-cas-ia"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Glossaire : NotebookLM (Gemini Notebook) en entreprise",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Carnet",
+          "description": "Espace qui regroupe les sources d'un sujet, ses notes et ses productions ; l'interface dit aussi notebook."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Source",
+          "description": "Document ajouté au carnet, sur lequel le chat fonde ses réponses."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Citation",
+          "description": "Renvoi numéroté vers le passage exact d'une source."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Studio",
+          "description": "Panneau qui produit rapports, cartes mentales, quiz, résumés audio et vidéo, présentations."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Résumé audio",
+          "description": "Synthèse parlée tirée des sources, proposée en quatre formats."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Niveau d'accès",
+          "description": "Palier de quotas que Google attribue selon l'édition Workspace ou le module souscrit."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Avis",
+          "description": "Retour envoyé avec le pouce sous une réponse, qui transmet à Google le contexte de l'échange."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "RAG",
+          "description": "Technique où le système retrouve d'abord les extraits pertinents d'un corpus, puis rédige à partir d'eux."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "VPC Service Controls",
+          "description": "Périmètre de sécurité de Google Cloud qui empêche les données de quitter un projet."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "CMEK",
+          "description": "Clés de chiffrement que le client gère lui-même dans Google Cloud."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Déployer NotebookLM dans une équipe : six décisions",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Contrôler le compte de chaque utilisateur"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Régler le partage dans la console"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Découper par question de travail"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ouvrir les citations qui engagent"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Nommer un responsable par carnet"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Automatiser l'alimentation quand le carnet vit"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,15 @@
 [
   {
+    "slug": "notebooklm-entreprise-usages-limites-confidentialite",
+    "title": "NotebookLM en entreprise : usages, limites et confidentialité",
+    "tag": "Guide pratique",
+    "date": "2 novembre 2026",
+    "datePublished": "2026-11-02",
+    "dateModified": "2026-11-02",
+    "readTime": "24 min",
+    "excerpt": "NotebookLM, rebaptisé Gemini Notebook, répond depuis vos documents en citant ses sources. Usages par métier, plafonds par compte et règles de confidentialité du compte personnel, de Google Workspace et de la version Enterprise de Google Cloud, relevés sur les pages officielles de Google le 1er novembre 2026."
+  },
+  {
     "slug": "copilot-studio-creer-premier-agent",
     "title": "Copilot Studio : créer son premier agent pas à pas",
     "tag": "Guide pratique",
