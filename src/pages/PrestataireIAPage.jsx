@@ -176,7 +176,7 @@ const CASES = [
   {
     anchor: 'industrie',
     tag: 'Formation, puis décisions',
-    text: "Pour un groupe industriel aux sites répartis entre l'Europe, les États-Unis et l'Inde, le même prestataire a formé 24 managers pilotes, puis réuni le comité de direction pour une matinée de décisions. Les prochaines sessions auront lieu en octobre 2026 aux États-Unis et au Mexique, en décembre en Inde.",
+    text: "Pour un groupe industriel aux sites répartis entre l'Europe, les États-Unis et l'Inde, le même prestataire a formé 24 managers pilotes, puis réuni le comité de direction pour une matinée de décisions. Les sessions des États-Unis et du Mexique ont eu lieu en octobre 2026 ; celles de l'Inde auront lieu en janvier 2027.",
     link: 'Le déploiement par paliers',
   },
   {

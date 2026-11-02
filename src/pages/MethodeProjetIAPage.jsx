@@ -276,7 +276,7 @@ const METHODE_CASES = [
     sector: 'Packaging · groupe international',
     figure: '3',
     figureLabel: 'ajustements entre la session pilote et la suivante',
-    text: "Après la session pilote de l'été 2026, un bilan à chaud a conduit à vérifier les licences, à composer les tables par métier et à protéger du temps pour les assistants. Le dispositif gagne les États-Unis et le Mexique en octobre 2026, puis l'Inde en décembre.",
+    text: "Après la session pilote de l'été 2026, un bilan à chaud a conduit à vérifier les licences, à composer les tables par métier et à protéger du temps pour les assistants. Le dispositif a gagné les États-Unis et le Mexique en octobre 2026, puis gagnera l'Inde en janvier 2027.",
   },
   {
     id: 'conseil-financier',

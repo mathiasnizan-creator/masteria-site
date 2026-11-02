@@ -181,7 +181,7 @@ const CAS_HOME = [
     id: 'industrie',
     secteur: 'Packaging · groupe international',
     titre: 'Microsoft Copilot déployé par paliers, des managers pilotes aux sites étrangers',
-    ligne: "De juillet à septembre 2026, les managers ont suivi cinq sessions de deux jours, deux d'entre elles en anglais, et le comité de direction a eu sa matinée stratégique. Les sites américains et mexicains sont prévus en octobre 2026, les sites indiens en décembre.",
+    ligne: "De juillet à septembre 2026, les managers ont suivi cinq sessions de deux jours, deux d'entre elles en anglais, et le comité de direction a eu sa matinée stratégique. Les sites américains et mexicains ont suivi en octobre 2026 ; les sites indiens sont prévus en janvier 2027.",
   },
   {
     id: 'photovoltaique',

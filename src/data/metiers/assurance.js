@@ -449,7 +449,7 @@ export default {
  },
  "equipe": {
   "titre": "Des déploiements par étapes, menés dans de grandes organisations",
-  "texte": "Mathias Nizan supervise chaque session depuis le lancement de Masteria, en 2022 ; il l'anime lui-même ou l'attribue à un formateur indépendant du réseau, habitué aux métiers réglementés. Les déploiements par étapes lui sont familiers : chez un {/etudes-de-cas-ia#industrie|industriel de l'emballage implanté sur trois continents}, Copilot a d'abord été mis entre les mains de 24 managers pilotes, qui ont travaillé sur treize ateliers tirés des fichiers maison ; la phase internationale vise les États-Unis et le Mexique en octobre 2026, puis l'Inde au mois de décembre."
+  "texte": "Mathias Nizan supervise chaque session depuis le lancement de Masteria, en 2022 ; il l'anime lui-même ou l'attribue à un formateur indépendant du réseau, habitué aux métiers réglementés. Les déploiements par étapes lui sont familiers : chez un {/etudes-de-cas-ia#industrie|industriel de l'emballage implanté sur trois continents}, Copilot a d'abord été mis entre les mains de 24 managers pilotes, qui ont travaillé sur treize ateliers tirés des fichiers maison ; la phase internationale a gagné les États-Unis et le Mexique en octobre 2026 et vise l'Inde en janvier 2027."
  },
  "apres": {
   "titre": "Quand la maison veut un agent relié à ses systèmes",

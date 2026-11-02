@@ -280,7 +280,7 @@ export default {
   },
   terrain: {
     titre: "Dans un groupe industriel, le périmètre de Copilot a été fixé avec le Data manager avant toute session",
-    texte: "Les équipes informatiques d'un groupe international du packaging ont retenu Copilot à la place de leur assistant conversationnel maison, avec un déploiement à l'échelle du groupe pendant une migration vers S/4HANA. Avant les sessions des managers pilotes, Masteria a fixé avec le Data manager une règle simple : Copilot n'irait chercher que dans OneDrive et SharePoint, jamais dans les serveurs de fichiers partagés ; les licences de chaque participant ont été vérifiées avant le premier jour. Le Data manager porte depuis la politique d'usage, et le dispositif part vers les États-Unis et le Mexique en octobre 2026, puis l'Inde en décembre.",
+    texte: "Les équipes informatiques d'un groupe international du packaging ont retenu Copilot à la place de leur assistant conversationnel maison, avec un déploiement à l'échelle du groupe pendant une migration vers S/4HANA. Avant les sessions des managers pilotes, Masteria a fixé avec le Data manager une règle simple : Copilot n'irait chercher que dans OneDrive et SharePoint, jamais dans les serveurs de fichiers partagés ; les licences de chaque participant ont été vérifiées avant le premier jour. Le Data manager porte depuis la politique d'usage, et le dispositif est parti vers les États-Unis et le Mexique en octobre 2026, avant l'Inde en janvier 2027.",
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [

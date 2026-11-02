@@ -195,7 +195,7 @@ const TRANSFO_CASES = [
     sector: 'Industrie · groupe international',
     figure: '3 ajustements',
     figureLabel: 'apportés entre la session pilote et la suivante',
-    text: "Pour un groupe du packaging, le déploiement avance par paliers mesurés. Après la session pilote, trois corrections ont précédé la seconde : les licences ont été contrôlées, les tables regroupées par métier, et du temps réservé à la construction des assistants. Le Data manager du groupe est devenu le garant des règles d'usage et de la collection de prompts partagée par les 24 pilotes ; le dispositif gagne les sites américains et mexicains en octobre 2026, puis l'Inde en décembre.",
+    text: "Pour un groupe du packaging, le déploiement avance par paliers mesurés. Après la session pilote, trois corrections ont précédé la seconde : les licences ont été contrôlées, les tables regroupées par métier, et du temps réservé à la construction des assistants. Le Data manager du groupe est devenu le garant des règles d'usage et de la collection de prompts partagée par les 24 pilotes ; le dispositif a gagné les sites américains et mexicains en octobre 2026, puis gagnera l'Inde en janvier 2027.",
   },
   {
     id: 'distribution',

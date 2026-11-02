@@ -321,7 +321,7 @@ export default {
   },
   terrain: {
     titre: "Sur le terrain : des ateliers Excel bâtis sur les fichiers d'un groupe industriel",
-    texte: "Pour un groupe international du packaging qui déploie Copilot palier par palier, Masteria a monté ses exercices Excel sur les tarifs, les volumes d'activité et les coûts du groupe. Une responsable financière a suivi l'une des deux sessions animées en anglais en septembre 2026. Les équipes américaines et mexicaines reçoivent le même parcours en octobre 2026, les équipes indiennes en décembre.",
+    texte: "Pour un groupe international du packaging qui déploie Copilot palier par palier, Masteria a monté ses exercices Excel sur les tarifs, les volumes d'activité et les coûts du groupe. Une responsable financière a suivi l'une des deux sessions animées en anglais en septembre 2026. Les équipes américaines et mexicaines ont reçu le même parcours en octobre 2026, les équipes indiennes le recevront en janvier 2027.",
     lien: '/etudes-de-cas-ia#industrie',
   },
   casIds: ['industrie'],

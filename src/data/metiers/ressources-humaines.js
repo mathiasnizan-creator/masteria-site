@@ -530,7 +530,7 @@ export default {
  },
  "equipe": {
   "titre": "Un formateur choisi pour sa connaissance des RH",
-  "texte": "Mathias Nizan, fondateur de Masteria à Lyon depuis 2022, supervise chaque session RH ; il l'anime lui-même ou en charge un formateur indépendant qui connaît la fonction RH. Pour un {/etudes-de-cas-ia#industrie|groupe international du packaging}, deux premières sessions ont fait travailler 24 managers pilotes sur Copilot à partir des fichiers du groupe, base RH comprise, et trois autres ont suivi en septembre 2026 ; la suite se joue aux États-Unis et au Mexique en octobre, puis en Inde en décembre."
+  "texte": "Mathias Nizan, fondateur de Masteria à Lyon depuis 2022, supervise chaque session RH ; il l'anime lui-même ou en charge un formateur indépendant qui connaît la fonction RH. Pour un {/etudes-de-cas-ia#industrie|groupe international du packaging}, deux premières sessions ont fait travailler 24 managers pilotes sur Copilot à partir des fichiers du groupe, base RH comprise, et trois autres ont suivi en septembre 2026 ; la suite s'est jouée aux États-Unis et au Mexique en octobre, et se jouera en Inde en janvier 2027."
  },
  "apres": {
   "titre": "Et si les salariés interrogeaient vos procédures ?",

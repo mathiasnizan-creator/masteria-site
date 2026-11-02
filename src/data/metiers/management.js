@@ -457,7 +457,7 @@ export default {
  },
  "equipe": {
   "titre": "Des formateurs qui ont eux-mêmes encadré",
-  "texte": "Mathias Nizan, à l'origine de Masteria en 2022, conduit chaque session management ou la délègue à l'un des formateurs indépendants avec qui il travaille, choisi parce qu'il a lui-même encadré des équipes. Chez un {/etudes-de-cas-ia#industrie|groupe industriel du packaging} présent sur plusieurs continents, vingt-quatre managers pilotes, répartis en deux groupes, ont passé deux jours sur Copilot, en treize ateliers bâtis sur les fichiers de l'entreprise ; la première session a été évaluée à chaud et corrigée avant la deuxième. D'autres sessions ont eu lieu en septembre 2026, certaines en anglais, et le parcours gagne en octobre 2026 les sites américains et mexicains, puis indiens en décembre."
+  "texte": "Mathias Nizan, à l'origine de Masteria en 2022, conduit chaque session management ou la délègue à l'un des formateurs indépendants avec qui il travaille, choisi parce qu'il a lui-même encadré des équipes. Chez un {/etudes-de-cas-ia#industrie|groupe industriel du packaging} présent sur plusieurs continents, vingt-quatre managers pilotes, répartis en deux groupes, ont passé deux jours sur Copilot, en treize ateliers bâtis sur les fichiers de l'entreprise ; la première session a été évaluée à chaud et corrigée avant la deuxième. D'autres sessions ont eu lieu en septembre 2026, certaines en anglais, et le parcours a gagné en octobre 2026 les sites américains et mexicains ; les sites indiens suivent en janvier 2027."
  },
  "apres": {
   "titre": "Un assistant de pilotage pour tout le service",

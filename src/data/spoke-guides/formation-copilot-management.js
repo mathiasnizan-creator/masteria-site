@@ -284,7 +284,7 @@ export default {
     },
     {
       q: 'Comment former à Copilot des dizaines de managers ?',
-      a: "Par paliers. Dans un groupe d'emballage implanté sur trois continents, Masteria a commencé par 24 managers pilotes répartis en deux sessions de deux jours, évaluées à chaud et ajustées entre elles. Cinq sessions ont eu lieu de juillet à fin septembre 2026, deux en anglais. Le comité de direction a suivi une matinée stratégique. Viennent ensuite les équipes américaines et mexicaines, programmées en octobre 2026, puis indiennes en décembre. La même logique vaut pour une entreprise française de taille moyenne, à son échelle.",
+      a: "Par paliers. Dans un groupe d'emballage implanté sur trois continents, Masteria a commencé par 24 managers pilotes répartis en deux sessions de deux jours, évaluées à chaud et ajustées entre elles. Cinq sessions ont eu lieu de juillet à fin septembre 2026, deux en anglais. Le comité de direction a suivi une matinée stratégique. Sont venues ensuite les équipes américaines et mexicaines, en octobre 2026 ; les équipes indiennes suivront en janvier 2027. La même logique vaut pour une entreprise française de taille moyenne, à son échelle.",
     },
     {
       q: 'Comment financer la formation de nos managers ?',
@@ -311,7 +311,7 @@ export default {
   },
   terrain: {
     titre: 'Sur le terrain : 24 managers pilotes avant un déploiement international',
-    texte: "Un fabricant mondial d'emballages a retenu Copilot pour l'ensemble de ses sites. Masteria a d'abord formé deux groupes de managers pilotes sur des ateliers construits avec leurs fichiers, puis corrigé le parcours entre les deux sessions. Deux mois plus tard, un participant citait la présentation préparée pour un directeur d'usine parmi ses usages. Les membres du comité de direction ont consacré une matinée à la stratégie ; la phase internationale démarre en octobre 2026 en Amérique du Nord, avant l'Inde en décembre.",
+    texte: "Un fabricant mondial d'emballages a retenu Copilot pour l'ensemble de ses sites. Masteria a d'abord formé deux groupes de managers pilotes sur des ateliers construits avec leurs fichiers, puis corrigé le parcours entre les deux sessions. Deux mois plus tard, un participant citait la présentation préparée pour un directeur d'usine parmi ses usages. Les membres du comité de direction ont consacré une matinée à la stratégie ; la phase internationale a démarré en octobre 2026 en Amérique du Nord, avant l'Inde en janvier 2027.",
     lien: '/etudes-de-cas-ia#industrie',
   },
   casIds: ['industrie'],

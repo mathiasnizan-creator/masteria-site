@@ -650,7 +650,7 @@ function AboutScreen() {
               { year: '2025', title: "Le règlement européen sur l'IA s'applique", desc: "Le 2 février 2025, l'AI Act commence à s'appliquer : son article 4 demande aux employeurs de s'assurer que leurs salariés comprennent l'IA dont ils se servent. Les programmes Masteria intègrent l'usage responsable, RGPD et AI Act compris." },
               { year: '2026', title: 'Janvier : la certification Qualiopi', desc: "Le 29 janvier, Certifopac certifie Masteria pour les actions de formation. Les entreprises clientes peuvent désormais présenter leurs formations à leur OPCO." },
               { year: '2026', title: 'Juillet : des bureaux et une veille', desc: "Le cabinet s'installe rue d'Algérie, dans la presqu'île de Lyon, et publie sa première veille IA, une édition par jour ouvré." },
-              { year: '2026', title: "Septembre : l'international", desc: "Un groupe industriel suit deux sessions en anglais, prélude à ses sites étrangers : les sites mexicains et américains sont attendus en octobre, les sites indiens en décembre." },
+              { year: '2026', title: "Septembre : l'international", desc: "Un groupe industriel suit deux sessions en anglais, prélude à ses sites étrangers : Mexique et États-Unis en octobre, Inde en janvier 2027." },
             ].map((t, i) => (
               <FadeIn key={i} delay={i * 60}>
                 <div style={{

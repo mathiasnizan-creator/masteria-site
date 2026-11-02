@@ -256,7 +256,7 @@ export default {
   },
   terrain: {
     titre: "Sur le terrain : la veille concurrentielle entre dans le quotidien des managers",
-    texte: "Dans le groupe international du packaging que Masteria accompagne en 2026, les managers pilotes ont suivi deux jours de formation à Microsoft Copilot, au fil de cinq sessions tenues de juillet à septembre. Parmi les usages livrés figure une veille concurrentielle outillée, à côté des ateliers Excel et du traitement des mails. Les équipes américaines et mexicaines prendront le relais en octobre 2026, puis celles de l'Inde en décembre.",
+    texte: "Dans le groupe international du packaging que Masteria accompagne en 2026, les managers pilotes ont suivi deux jours de formation à Microsoft Copilot, au fil de cinq sessions tenues de juillet à septembre. Parmi les usages livrés figure une veille concurrentielle outillée, à côté des ateliers Excel et du traitement des mails. Les équipes américaines et mexicaines ont pris le relais en octobre 2026, celles de l'Inde le prendront en janvier 2027.",
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [

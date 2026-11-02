@@ -506,7 +506,7 @@ export const COMPARISONS = {
     terrain: {
       titre: "Les leçons tirées de nos sessions Copilot",
       paras: [
-        "Entre juillet et septembre 2026, un groupe international du packaging a suivi cinq sessions de deux jours sur Microsoft Copilot, dont deux en anglais ; les deux premières ont formé [24 managers pilotes](/etudes-de-cas-ia#industrie). Les treize ateliers partaient des fichiers du groupe (prix, coûts, base RH, présentations à la charte), jamais d'exemples tirés d'un manuel. Les implantations américaines et mexicaines suivent en octobre 2026, celles de l'Inde en décembre.",
+        "Entre juillet et septembre 2026, un groupe international du packaging a suivi cinq sessions de deux jours sur Microsoft Copilot, dont deux en anglais ; les deux premières ont formé [24 managers pilotes](/etudes-de-cas-ia#industrie). Les treize ateliers partaient des fichiers du groupe (prix, coûts, base RH, présentations à la charte), jamais d'exemples tirés d'un manuel. Les implantations américaines et mexicaines ont suivi en octobre 2026 ; celles de l'Inde passent en janvier 2027.",
         "Une [assistante de direction](/etudes-de-cas-ia#mission-assistanat-direction), employée par un éditeur de logiciels B2B, a appris en septembre 2026 à répartir son travail entre Copilot et Claude avec une règle simple : l'interne et le nominatif restent dans Copilot, le texte public ou anonymisé peut partir dans l'autre outil, et le moindre doute renvoie vers Copilot. Entre Copilot et ChatGPT, le raisonnement est le même : le périmètre des données se décide avant la qualité des réponses.",
       ],
     },

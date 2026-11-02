@@ -258,7 +258,7 @@ export default {
         "Les usages se construisent dans treize ateliers, à partir des fichiers du groupe : de gros tableaux Excel, des documents Word, la messagerie Outlook, des présentations PowerPoint à la charte.",
         "Deux ateliers portent sur des assistants ; l'un d'eux lit le mail d'un fournisseur et en tire les contacts, le RIB et l'extrait Kbis qui alimentent sa fiche dans SAP.",
         "Entre les deux sessions de managers, le bilan à chaud entraîne trois corrections : licences Copilot vérifiées, tables organisées par métier, plage protégée pour les assistants à la fin du second jour.",
-        "Le Data manager devient le gardien de la politique d'usage et des prompts partagés entre les 24 managers pilotes. Trois autres sessions se tiennent en septembre 2026, deux en anglais ; les sites américains et mexicains suivent en octobre, l'Inde en décembre.",
+        "Le Data manager devient le gardien de la politique d'usage et des prompts partagés entre les 24 managers pilotes. Trois autres sessions se sont tenues en septembre 2026, deux en anglais ; les sites américains et mexicains ont suivi en octobre, l'Inde viendra en janvier 2027.",
       ],
       resultat: "Une partie des participants réclame déjà la suite : les données SAP, Power Platform (les outils d'automatisation de Microsoft), des assistants plus poussés ; un module avancé est cadré pour y répondre. Cette demande montre où s'arrête le copilote du marché : il couvre les fichiers bureautiques, et l'accès aux données de gestion demande un travail de connexion.",
       lien: { href: "/etudes-de-cas-ia#industrie", label: "Le palier pilote du groupe du packaging" },

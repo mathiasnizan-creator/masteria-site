@@ -313,7 +313,7 @@ const CAS = [
   {
     id: 'industrie',
     titre: "Un groupe industriel confie la politique d'usage à son Data manager",
-    texte: "Dans un groupe international du packaging, Copilot s'est déployé par paliers : 24 managers pilotes, cinq sessions de juillet à fin septembre 2026, l'anglais étant la langue de deux d'entre elles, avant l'ouverture des sites mexicain et américain en octobre 2026 puis indien en décembre. La politique d'usage a un porteur, le Data manager du groupe, qui tient aussi la bibliothèque de prompts des pilotes ; le comité de direction est reparti de sa matinée stratégique avec ses décisions à prendre, dont les données exclues et l'audit des accès.",
+    texte: "Dans un groupe international du packaging, Copilot s'est déployé par paliers : 24 managers pilotes, cinq sessions de juillet à fin septembre 2026, l'anglais étant la langue de deux d'entre elles, avant l'ouverture des sites mexicain et américain en octobre 2026, puis du site indien en janvier 2027. La politique d'usage a un porteur, le Data manager du groupe, qui tient aussi la bibliothèque de prompts des pilotes ; le comité de direction est reparti de sa matinée stratégique avec ses décisions à prendre, dont les données exclues et l'audit des accès.",
   },
   {
     id: 'distribution',

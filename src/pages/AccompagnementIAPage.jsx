@@ -235,7 +235,7 @@ const CAS = [
     sector: 'Packaging · groupe international',
     figure: '24',
     figureLabel: 'managers pilotes avant tout passage à l\'échelle',
-    text: "Évaluée à chaud, la première session a changé trois choses dans la deuxième : contrôler les licences en amont, composer les tables par métier, garder du temps pour construire les assistants. Entre juillet et septembre 2026, le groupe a suivi cinq sessions de deux jours ; ses équipes américaines et mexicaines enchaînent en octobre, celles d'Inde en décembre.",
+    text: "Évaluée à chaud, la première session a changé trois choses dans la deuxième : contrôler les licences en amont, composer les tables par métier, garder du temps pour construire les assistants. Entre juillet et septembre 2026, le groupe a suivi cinq sessions de deux jours ; ses équipes américaines et mexicaines ont enchaîné en octobre, celles d'Inde enchaîneront en janvier 2027.",
   },
   {
     id: 'distribution',

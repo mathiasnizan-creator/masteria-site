@@ -250,7 +250,7 @@ const CASE_LESSONS = [
     Icon: Factory,
     label: 'Industrie · groupe international du packaging',
     title: 'Un déploiement par paliers se corrige avant la généralisation',
-    text: "Deux sessions pilotes ont formé 24 managers sur treize ateliers bâtis avec les fichiers du groupe, et trois ajustements ont séparé la première de la seconde. Le comité de direction a ensuite travaillé une matinée, en anglais, sur les décisions à prendre avant la phase internationale. Cinq sessions ont eu lieu entre juillet et septembre 2026, deux d'entre elles en anglais ; le dispositif doit gagner les équipes américaines et mexicaines en octobre 2026, puis indiennes en décembre.",
+    text: "Deux sessions pilotes ont formé 24 managers sur treize ateliers bâtis avec les fichiers du groupe, et trois ajustements ont séparé la première de la seconde. Le comité de direction a ensuite travaillé une matinée, en anglais, sur les décisions à prendre avant la phase internationale. Cinq sessions ont eu lieu entre juillet et septembre 2026, deux d'entre elles en anglais ; le dispositif a gagné les équipes américaines et mexicaines en octobre 2026, et gagnera les équipes indiennes en janvier 2027.",
   },
 ]
 

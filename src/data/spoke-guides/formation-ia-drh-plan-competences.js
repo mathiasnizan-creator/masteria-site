@@ -286,7 +286,7 @@ export default {
   },
   terrain: {
     titre: "Sur le terrain : un déploiement par étages, de la direction aux sites d'Amérique et d'Inde",
-    texte: "Pour un groupe international du packaging, Masteria accompagne palier par palier le déploiement de Microsoft Copilot. Le dispositif comprend une matinée de stratégie pour le comité de direction et deux jours de formation pour 24 managers pilotes, répartis en cinq sessions entre juillet et septembre 2026 (deux en anglais), à partir d'exercices taillés dans les classeurs et documents du groupe. Les sites américains et mexicains suivront en octobre 2026, l'Inde en décembre. Chaque palier a son public, ses ateliers et son calendrier : la grille même qu'un plan de compétences IA doit remplir.",
+    texte: "Pour un groupe international du packaging, Masteria accompagne palier par palier le déploiement de Microsoft Copilot. Le dispositif comprend une matinée de stratégie pour le comité de direction et deux jours de formation pour 24 managers pilotes, répartis en cinq sessions entre juillet et septembre 2026 (deux en anglais), à partir d'exercices taillés dans les classeurs et documents du groupe. Les sites américains et mexicains ont suivi en octobre 2026, l'Inde suivra en janvier 2027. Chaque palier a son public, ses ateliers et son calendrier : la grille même qu'un plan de compétences IA doit remplir.",
     lien: '/etudes-de-cas-ia#industrie',
   },
   liensAssocies: [

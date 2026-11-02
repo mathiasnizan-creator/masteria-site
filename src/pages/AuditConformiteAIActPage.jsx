@@ -297,7 +297,7 @@ const CAS = [
     sector: 'Industrie · groupe international',
     figure: '4',
     figureLabel: 'décisions mises sur la table du comité de direction',
-    text: "Lors d'une matinée en anglais, le comité de direction de ce groupe international du packaging a travaillé le cadre réglementaire européen avant de généraliser Microsoft Copilot. Il est reparti avec quatre arbitrages à rendre : quelles données tenir à l'écart, comment auditer les accès, quel premier agent tester, comment financer l'adoption. Le dispositif part aux États-Unis et au Mexique en octobre 2026, puis en Inde en décembre.",
+    text: "Lors d'une matinée en anglais, le comité de direction de ce groupe international du packaging a travaillé le cadre réglementaire européen avant de généraliser Microsoft Copilot. Il est reparti avec quatre arbitrages à rendre : quelles données tenir à l'écart, comment auditer les accès, quel premier agent tester, comment financer l'adoption. Le dispositif est parti aux États-Unis et au Mexique en octobre 2026 ; il part en Inde en janvier 2027.",
   },
 ]
 

@@ -89,7 +89,7 @@ export default {
     titre: 'Quel programme Copilot pour votre équipe ?',
     paras: [
       "Regardez d'abord les licences. Une équipe qui n'a que Copilot Chat travaille sur des fichiers déposés, sur le web et sur des agents simples : le programme met alors l'accent sur la méthode de demande, la vérification et les règles de données. Une équipe dotée de la licence Microsoft Copilot peut aller jusqu'à Researcher, Analyst et Cowork. Choisissez ensuite le programme du métier le plus représenté ; si le groupe mélange plusieurs fonctions, nous gardons un tronc commun le matin et séparons les ateliers l'après-midi.",
-      "Une assistante de direction ou un dirigeant gagne souvent au format individuel, calé sur son agenda et ses dossiers. Chez un éditeur de logiciels, en septembre 2026, l'assistante du dirigeant a bâti en une journée un assistant de mails pour son dirigeant dans Agent Builder, avec une règle simple : les contenus internes ou nominatifs restent dans Copilot, et seuls les textes publics ou anonymisés vont vers Claude. À l'autre bout, un groupe international du packaging déploie Copilot palier par palier : 24 managers pilotes ont ouvert la marche, cinq sessions se sont tenues de juillet à fin septembre 2026, deux d'entre elles en anglais, et le parcours rejoindra ses sites américains et mexicains en octobre 2026, puis indiens en décembre.",
+      "Une assistante de direction ou un dirigeant gagne souvent au format individuel, calé sur son agenda et ses dossiers. Chez un éditeur de logiciels, en septembre 2026, l'assistante du dirigeant a bâti en une journée un assistant de mails pour son dirigeant dans Agent Builder, avec une règle simple : les contenus internes ou nominatifs restent dans Copilot, et seuls les textes publics ou anonymisés vont vers Claude. À l'autre bout, un groupe international du packaging déploie Copilot palier par palier : 24 managers pilotes ont ouvert la marche, cinq sessions se sont tenues de juillet à fin septembre 2026, deux d'entre elles en anglais, et le parcours a rejoint ses sites américains et mexicains en octobre 2026, avant ses sites indiens en janvier 2027.",
     ],
   },
 
@@ -170,7 +170,7 @@ export default {
     },
     {
       q: 'Comment former à Copilot un groupe présent dans plusieurs pays ?',
-      a: "Par paliers, en mesurant chaque étape. Dans un groupe international du packaging, 24 managers pilotes sont passés en premier, et leurs retours ont corrigé les sessions suivantes : cinq sessions de deux jours au total, de juillet à fin septembre 2026, deux d'entre elles animées en anglais, avec des ateliers montés sur les fichiers du groupe. Le parcours doit partir sur les sites américains et mexicains en octobre 2026, puis sur les sites indiens en décembre, avec un formateur du réseau Masteria. Nous intervenons en France, dans le reste de l'Europe, en Inde et aux États-Unis.",
+      a: "Par paliers, en mesurant chaque étape. Dans un groupe international du packaging, 24 managers pilotes sont passés en premier, et leurs retours ont corrigé les sessions suivantes : cinq sessions de deux jours au total, de juillet à fin septembre 2026, deux d'entre elles animées en anglais, avec des ateliers montés sur les fichiers du groupe. Le parcours est parti sur les sites américains et mexicains en octobre 2026, avec un formateur du réseau Masteria ; les sites indiens suivent en janvier 2027. Nous intervenons en France, dans le reste de l'Europe, en Inde et aux États-Unis.",
     },
   ],
 }

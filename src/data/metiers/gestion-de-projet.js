@@ -458,7 +458,7 @@ export default {
  },
  "equipe": {
   "titre": "Des formateurs qui ont tenu des plannings",
-  "texte": "Mathias Nizan, créateur de Masteria (Lyon, 2022), répond de chaque session : il anime en personne ou confie le groupe à un formateur indépendant, choisi pour son expérience du pilotage de projet. Nos propres déploiements se conduisent comme des projets. Chez un {/etudes-de-cas-ia#industrie|fabricant d'emballages implanté en Europe, aux États-Unis et en Inde}, la session pilote a fait l'objet d'un bilan à chaud, puis trois corrections ont précédé la suivante (contrôle des licences, tables formées par métier, temps protégé pour construire les assistants) ; le même dispositif rejoint en octobre 2026 les implantations américaine et mexicaine, puis indienne en décembre."
+  "texte": "Mathias Nizan, créateur de Masteria (Lyon, 2022), répond de chaque session : il anime en personne ou confie le groupe à un formateur indépendant, choisi pour son expérience du pilotage de projet. Nos propres déploiements se conduisent comme des projets. Chez un {/etudes-de-cas-ia#industrie|fabricant d'emballages implanté en Europe, aux États-Unis et en Inde}, la session pilote a fait l'objet d'un bilan à chaud, puis trois corrections ont précédé la suivante (contrôle des licences, tables formées par métier, temps protégé pour construire les assistants) ; le même dispositif a rejoint en octobre 2026 les implantations américaine et mexicaine, et gagnera l'implantation indienne en janvier 2027."
  },
  "apres": {
   "titre": "Un assistant branché sur Jira ou Planner pour le flash hebdomadaire",

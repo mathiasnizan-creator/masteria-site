@@ -419,7 +419,7 @@ export default {
  },
  "equipe": {
   "titre": "Un fondateur aux commandes, un formateur habitué des ateliers",
-  "texte": "Chaque journée industrielle est préparée par Mathias Nizan, qui a créé Masteria en 2022 ; il la conduit en personne ou passe le relais à un formateur indépendant expérimenté qu'il choisit pour sa familiarité avec les ateliers. Exemple publié dans nos {/etudes-de-cas-ia#industrie|études de cas} : un groupe international de l'emballage, implanté en Europe, aux États-Unis et en Inde, a fait former 59 de ses managers à Copilot entre juillet et septembre 2026, en cinq sessions de deux jours dont deux en anglais, autour de 13 ateliers tirés des fichiers du groupe. Deux mois après, plusieurs d'entre eux citaient parmi leurs usages la préparation d'une présentation pour un directeur d'usine et l'étude d'un appel d'offres."
+  "texte": "Chaque journée industrielle est préparée par Mathias Nizan, qui a créé Masteria en 2022 ; il la conduit en personne ou passe le relais à un formateur indépendant expérimenté qu'il choisit pour sa familiarité avec les ateliers. Exemple publié dans nos {/etudes-de-cas-ia#industrie|études de cas} : un groupe international de l'emballage, implanté en Europe, aux États-Unis et en Inde, a fait former 58 de ses managers à Copilot entre juillet et septembre 2026, en cinq sessions de deux jours dont deux en anglais, autour de 13 ateliers tirés des fichiers du groupe. Deux mois après, plusieurs d'entre eux citaient parmi leurs usages la préparation d'une présentation pour un directeur d'usine et l'étude d'un appel d'offres."
  },
  "apres": {
   "titre": "Quand le site veut relier l'IA à ses données de production",

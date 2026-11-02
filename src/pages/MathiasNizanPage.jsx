@@ -86,7 +86,7 @@ const MISSIONS = [
     secteur: 'Industrie · groupe international',
     chiffre: '24',
     chiffreLabel: "managers pilotes avant l'ouverture aux sites étrangers",
-    texte: "Chez un industriel international du packaging, Copilot arrive par paliers. Il a cadré le dispositif avec le Data manager ; le comité de direction a reçu, en anglais, une matinée sur les agents, leur coût et le cadre légal. Les sites du Mexique et des États-Unis suivront en octobre 2026, ceux de l'Inde en décembre.",
+    texte: "Chez un industriel international du packaging, Copilot arrive par paliers. Il a cadré le dispositif avec le Data manager ; le comité de direction a reçu, en anglais, une matinée sur les agents, leur coût et le cadre légal. Les sites du Mexique et des États-Unis ont suivi en octobre 2026, ceux de l'Inde suivront en janvier 2027.",
   },
   {
     id: 'photovoltaique',

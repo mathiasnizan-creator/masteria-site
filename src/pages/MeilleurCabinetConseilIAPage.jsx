@@ -161,7 +161,7 @@ const CASES = [
   {
     anchor: 'industrie',
     criterion: 'Critère 6 · Suite',
-    text: "Dans un groupe industriel de l'emballage présent sur plusieurs continents, 24 managers pilotes ont suivi deux sessions de deux jours, dans treize ateliers construits à partir de leurs propres fichiers, puis le comité de direction a consacré une matinée aux décisions à prendre. Le parcours part en octobre 2026 vers l'Amérique du Nord (États-Unis, Mexique), en décembre vers l'Inde.",
+    text: "Dans un groupe industriel de l'emballage présent sur plusieurs continents, 24 managers pilotes ont suivi deux sessions de deux jours, dans treize ateliers construits à partir de leurs propres fichiers, puis le comité de direction a consacré une matinée aux décisions à prendre. Le parcours est parti en octobre 2026 vers l'Amérique du Nord (États-Unis, Mexique) ; il part en janvier 2027 vers l'Inde.",
     link: 'Le déploiement industriel en détail',
   },
   {

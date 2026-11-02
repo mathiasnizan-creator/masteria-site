@@ -306,7 +306,7 @@ const CAS = [
     id: 'industrie',
     icon: Factory,
     titre: 'Un groupe du packaging avance par paliers, de la direction aux sites étrangers',
-    texte: "Après vingt-quatre managers pilotes, réunis lors de deux premières sessions de deux jours, le groupe a tenu cinq sessions au total de juillet à fin septembre 2026, dont deux animées en anglais, plus une matinée réservée à son comité de direction. Le dispositif gagne en octobre 2026 les sites américains et mexicains ; l'Inde suit en décembre.",
+    texte: "Après vingt-quatre managers pilotes, réunis lors de deux premières sessions de deux jours, le groupe a tenu cinq sessions au total de juillet à fin septembre 2026, dont deux animées en anglais, plus une matinée réservée à son comité de direction. Le dispositif a gagné en octobre 2026 les sites américains et mexicains ; l'Inde suit en janvier 2027.",
   },
   {
     id: 'distribution',

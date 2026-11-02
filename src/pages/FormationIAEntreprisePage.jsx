@@ -296,7 +296,7 @@ const CAS = [
   {
     icon: Factory,
     secteur: 'Industrie · groupe international du packaging',
-    texte: "Vingt-quatre managers pilotes ont appris Microsoft Copilot sur des exercices tirés des tableaux de leur propre groupe. Entre juillet et septembre 2026, cinq sessions se sont tenues, deux d'entre elles en anglais ; les sites américains et mexicains suivent en octobre 2026, puis l'Inde en décembre.",
+    texte: "Vingt-quatre managers pilotes ont appris Microsoft Copilot sur des exercices tirés des tableaux de leur propre groupe. Entre juillet et septembre 2026, cinq sessions se sont tenues, deux d'entre elles en anglais ; les sites américains et mexicains ont suivi en octobre 2026, et l'Inde suit en janvier 2027.",
     href: '/etudes-de-cas-ia#industrie',
     lien: 'Lire le cas industriel',
   },

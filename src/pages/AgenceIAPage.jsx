@@ -169,9 +169,9 @@ const AGENCY_CASES = [
     id: 'industrie',
     icon: Factory,
     sector: 'Packaging · groupe industriel international',
-    figure: '59',
+    figure: '58',
     figureLabel: 'managers formés, sur treize ateliers bâtis avec les fichiers du groupe',
-    text: "Cinq sessions de deux jours se sont tenues de juillet à septembre 2026, deux d'entre elles en anglais, avec des assistants personnalisés dans Copilot. Octobre 2026 emmène le dispositif aux États-Unis et au Mexique ; l'Inde suivra en décembre.",
+    text: "Cinq sessions de deux jours se sont tenues de juillet à septembre 2026, deux d'entre elles en anglais, avec des assistants personnalisés dans Copilot. Octobre 2026 a emmené le dispositif aux États-Unis et au Mexique ; l'Inde suivra en janvier 2027.",
   },
 ]
 

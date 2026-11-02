@@ -165,12 +165,12 @@ export function CatalogueSuite({ isMobile, selectedTools = [], selectedMetiers =
           <div style={{ background: '#F3F7FF', border: '1px solid #DBEAFE', borderRadius: 20, padding: isMobile ? 26 : 44, display: isMobile ? 'block' : 'grid', gridTemplateColumns: '200px 1fr', gap: 40 }}>
             <div style={{ marginBottom: isMobile ? 18 : 0 }}>
               <div style={{ fontSize: 12, fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', color: c, marginBottom: 10, fontFamily: nunito }}>Étude de cas · Industrie</div>
-              <div style={{ fontFamily: nunito, fontSize: 84, fontWeight: 900, lineHeight: 0.95, color: c, letterSpacing: '-0.04em' }}>59</div>
+              <div style={{ fontFamily: nunito, fontSize: 84, fontWeight: 900, lineHeight: 0.95, color: c, letterSpacing: '-0.04em' }}>58</div>
               <div style={{ fontSize: 13.5, color: '#374151', lineHeight: 1.5, marginTop: 8 }}>managers formés à Copilot en 2026 dans un groupe industriel international</div>
             </div>
             <div>
               <p style={{ fontSize: 16, color: '#1F2937', lineHeight: 1.75, margin: '0 0 18px' }}>
-                Une matinée en anglais pour le comité de direction, puis cinq sessions de deux jours pour les managers, de juillet à septembre, dont deux en anglais, sur treize ateliers bâtis avec les fichiers du groupe. Les sites des États-Unis et du Mexique suivent en octobre, l'Inde en décembre.
+                Une matinée en anglais pour le comité de direction, puis cinq sessions de deux jours pour les managers, de juillet à septembre, dont deux en anglais, sur treize ateliers bâtis avec les fichiers du groupe. Les sites des États-Unis et du Mexique ont suivi en octobre ; l'Inde suit en janvier 2027.
               </p>
               <Link to="/etudes-de-cas-ia#industrie" style={{ color: c, fontWeight: 700, fontSize: 15, display: 'inline-flex', alignItems: 'center', gap: 6 }}>Lire l'étude de cas <ArrowRight size={15} aria-hidden="true" /></Link>
             </div>

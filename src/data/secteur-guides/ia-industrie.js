@@ -152,7 +152,7 @@ export default {
         "Le comité de direction consacre ensuite une matinée, en anglais, aux décisions qui lui reviennent : les données à exclure, l'audit des accès, le premier cas d'agent, le financement de l'adoption.",
       ],
       resultatLabel: "Deux mois plus tard.",
-      resultat: "Les managers citent des usages tirés de leur poste : un fichier d'activité passé au crible, une présentation préparée pour un directeur d'usine, un appel d'offres décortiqué avant la réponse. Une partie des participants réclame déjà le niveau suivant, avec les données SAP et la Power Platform. Le Data manager garde la main sur la politique d'usage et sur les prompts partagés. Trois sessions ont suivi en septembre 2026, dont deux en anglais ; les sites américains et mexicains sont programmés pour octobre 2026, le site indien pour décembre. Pour un autre industriel, l'enseignement tient en une règle : fixer le périmètre des droits d'accès avant le premier atelier.",
+      resultat: "Les managers citent des usages tirés de leur poste : un fichier d'activité passé au crible, une présentation préparée pour un directeur d'usine, un appel d'offres décortiqué avant la réponse. Une partie des participants réclame déjà le niveau suivant, avec les données SAP et la Power Platform. Le Data manager garde la main sur la politique d'usage et sur les prompts partagés. Trois sessions ont suivi en septembre 2026, dont deux en anglais ; les sites américains et mexicains ont été formés en octobre 2026, le site indien est programmé pour janvier 2027. Pour un autre industriel, l'enseignement tient en une règle : fixer le périmètre des droits d'accès avant le premier atelier.",
       lien: { href: "/etudes-de-cas-ia#industrie", label: "Le déploiement Copilot du groupe du packaging, palier par palier" },
     },
     pieges: [
@@ -206,7 +206,7 @@ export default {
     },
     {
       q: "Intervenez-vous sur plusieurs sites, en France et à l'étranger ?",
-      a: "Oui. Depuis nos bureaux de Lyon, nous venons dans l'usine pour le cadrage, l'observation des flux et la passation ; le reste du projet se mène à distance. Le groupe du packaging décrit plus haut a validé son dispositif en France, l'a repris en anglais en septembre 2026, et l'emmène sur ses sites américains et mexicains en octobre 2026, puis en Inde en décembre.",
+      a: "Oui. Depuis nos bureaux de Lyon, nous venons dans l'usine pour le cadrage, l'observation des flux et la passation ; le reste du projet se mène à distance. Le groupe du packaging décrit plus haut a validé son dispositif en France, l'a repris en anglais en septembre 2026, l'a emmené sur ses sites américains et mexicains en octobre 2026, et l'emmènera en Inde en janvier 2027.",
     },
     {
       q: "Qui garde la main sur l'outil après la mission ?",

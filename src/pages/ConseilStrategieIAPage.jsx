@@ -332,7 +332,7 @@ const STRATEGY_CASES = [
     sector: 'Industrie · groupe international',
     figure: '24',
     figureLabel: 'managers pilotes passés en formation avant le comité de direction',
-    text: "Ce groupe du packaging, présent sur trois continents, équipe ses managers de l'assistant Copilot de Microsoft, palier après palier. Une fois les pilotes formés, son comité de direction s'est réuni une matinée, en anglais, pour trancher : quelles données tenir à l'écart, comment contrôler les accès, quel agent construire d'abord, comment financer l'adoption. Les usines américaines et mexicaines suivent en octobre 2026, les sites indiens en décembre.",
+    text: "Ce groupe du packaging, présent sur trois continents, équipe ses managers de l'assistant Copilot de Microsoft, palier après palier. Une fois les pilotes formés, son comité de direction s'est réuni une matinée, en anglais, pour trancher : quelles données tenir à l'écart, comment contrôler les accès, quel agent construire d'abord, comment financer l'adoption. Les usines américaines et mexicaines ont suivi en octobre 2026, les sites indiens suivent en janvier 2027.",
   },
   {
     id: 'photovoltaique',

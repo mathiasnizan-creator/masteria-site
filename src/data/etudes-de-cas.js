@@ -67,9 +67,9 @@ export const CASES = [
     sector: 'Industrie · Groupe international',
     who: "Groupe industriel international du packaging · sites en Europe, aux États-Unis et en Inde · plusieurs milliers de salariés",
     title: "Du comité de direction aux managers pilotes, puis à l'international\u00a0: un déploiement Copilot par paliers",
-    teaser: "Cinq sessions de deux jours pour les managers entre juillet et septembre 2026, dont deux en anglais, sur 13 ateliers construits avec les fichiers du groupe ; une matinée stratégique pour le comité de direction ; puis les sites des États-Unis et du Mexique en octobre 2026 et de l'Inde en décembre.",
+    teaser: "Cinq sessions de deux jours pour les managers entre juillet et septembre 2026, dont deux en anglais, sur 13 ateliers construits avec les fichiers du groupe ; une matinée stratégique pour le comité de direction ; puis les sites des États-Unis et du Mexique en octobre 2026, avant l'Inde en janvier 2027.",
     stats: [
-      ['59', 'managers formés en cinq sessions de deux jours'],
+      ['58', 'managers formés en cinq sessions de deux jours'],
       ['13', 'ateliers construits sur les fichiers du groupe'],
       ['5', 'sessions de deux jours de juillet à septembre 2026, dont deux en anglais'],
       ['3', 'pays pour la phase internationale\u00a0: États-Unis, Inde, Mexique'],
@@ -82,10 +82,10 @@ export const CASES = [
       { num: '03', title: 'Session pilote mesurée, ajustée avant la deuxième', desc: "Bilan à chaud après la session pilote et trois ajustements avant la suivante\u00a0: licences vérifiées, tables composées par métier, temps protégé pour les assistants." },
       { num: '04', title: 'Deuxième groupe de managers', desc: "Même parcours de deux jours pour douze autres managers, avec les corrections de la session pilote. Supports en ligne accessibles à chaque stagiaire après la formation." },
       { num: '05', title: 'Matinée stratégique du comité de direction', desc: "Le comité de direction et le Data manager, en anglais\u00a0: le vocabulaire du modèle à l'agent, ce qui fait un travailleur augmenté plutôt que réduit, le cadre AI Act et RGPD, le coût des agents. Le comité repart avec les questions qui structurent sa feuille de route." },
-      { num: '06', title: 'Phase internationale « key leaders »', desc: "Après deux sessions en anglais en septembre 2026, le dispositif part sur les sites des États-Unis et du Mexique en octobre, puis de l'Inde en décembre, animé par un formateur du réseau Masteria." },
+      { num: '06', title: 'Phase internationale « key leaders »', desc: "Après deux sessions en anglais en septembre 2026, le dispositif est parti sur les sites des États-Unis et du Mexique en octobre, animé par un formateur du réseau Masteria en anglais et en espagnol. L'Inde suit en janvier 2027." },
     ],
     livrables: ['Ateliers Excel sur les données du groupe', 'Traitement du flux Outlook', 'Production PowerPoint et Word assistée', "Création d'assistants personnalisés", 'Veille concurrentielle outillée', 'Vision stratégique posée au comité de direction'],
-    resultat: "Les deux sessions pilotes ont été mesurées à chaud et corrigées de l'une à l'autre ; trois autres ont suivi en septembre 2026, dont deux en anglais. Deux mois après, des managers décrivent ce qu'ils en font\u00a0: l'analyse de fichiers et la préparation d'un retour sur investissement pour le déploiement d'outils RH, une présentation pour un directeur d'usine, l'analyse d'un appel d'offres. Le dispositif sert de socle aux sessions des États-Unis et du Mexique en octobre 2026, puis de l'Inde en décembre.",
+    resultat: "Les deux sessions pilotes ont été mesurées à chaud et corrigées de l'une à l'autre ; trois autres ont suivi en septembre 2026, dont deux en anglais. Deux mois après, des managers décrivent ce qu'ils en font\u00a0: l'analyse de fichiers et la préparation d'un retour sur investissement pour le déploiement d'outils RH, une présentation pour un directeur d'usine, l'analyse d'un appel d'offres. Ce socle a servi aux sessions des États-Unis et du Mexique en octobre 2026 ; l'Inde suit en janvier 2027.",
     verbatim: { text: "Beaucoup de nouvelles choses à mettre en pratique pour analyser des fichiers ou mettre en place un assistant basé sur les best practices existantes.", role: 'Une manager, fiche de satisfaction de la session pilote' },
     resultats: {
       equipes: [
@@ -102,7 +102,7 @@ export const CASES = [
     pillars: [
       { t: 'Conseil', d: "Une matinée stratégique avec le comité de direction\u00a0: vision, cadre d'usage, coût des agents, feuille de route à construire avant la généralisation à l'international." },
       { t: 'Construction', d: "Treize ateliers et des assistants personnalisés construits à partir des fichiers des managers, dans l'environnement Microsoft 365 du groupe." },
-      { t: 'Formation', d: "Deux sessions pilotes de deux jours, mesurées à chaud et corrigées de l'une à l'autre, puis trois sessions en septembre 2026, dont deux en anglais : 59 managers formés avant les sites internationaux." },
+      { t: 'Formation', d: "Deux sessions pilotes de deux jours, mesurées à chaud et corrigées de l'une à l'autre, puis trois sessions en septembre 2026, dont deux en anglais : 58 managers formés avant les sites internationaux." },
     ],
   },
   {

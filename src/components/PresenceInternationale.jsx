@@ -7,8 +7,8 @@ import { useIsDesktop } from '../hooks/useMediaQuery'
  * même projection que la page « Réseau international » des devis), remplacée le même jour
  * par une carte vectorielle à frontières (voir VUE). Pays d'intervention en bleu :
  * France, Belgique, Suisse, États-Unis, Mexique ; les repères sont dessinés ici.
- * Lieux : Lyon (siège), Belgique, Suisse, Washington (sessions Albéa d'octobre 2026),
- * Querétaro (Mexique, idem). L'Inde n'apparaît pas tant que Goa n'a pas eu lieu.
+ * Lieux : Lyon (siège), Belgique, Suisse, Washington, New Jersey (sessions Albéa d'octobre 2026),
+ * Querétaro (Mexique, idem). L'Inde n'apparaît pas tant que Goa n'a pas eu lieu (janvier 2027).
  * Refaite le même jour (« la carte fait petite ») : carte pleine largeur sous le titre,
  * étiquettes en HTML posées sur la carte (taille de texte fixe quel que soit l'écran),
  * lieux en quatre cartes sous la carte. Animation (sans les pointillés de trajet, jugés
@@ -35,7 +35,7 @@ const LYON = [820.0, 229.2]
 const REPERES = [
   { id: 'be', x: 817.0, y: 182.0 },
   { id: 'ch', x: 836.1, y: 218.7 },
-  { id: 'us', x: 314.6, y: 286.6 },
+  { id: 'us', x: 327.3, y: 271.7 },
   { id: 'mx', x: 170.4, y: 417.8 },
 ]
 
@@ -45,7 +45,7 @@ const ETIQUETTES = [
   { cle: 'be', nom: 'Belgique', x: 817.0, y: 182.0, dx: 16, dy: 0, ancre: 'gauche-milieu', europe: true },
   { cle: 'ch', nom: 'Suisse', x: 836.1, y: 218.7, dx: 16, dy: 0, ancre: 'gauche-milieu', europe: true },
   { cle: 'be', nom: 'Belgique · Suisse', x: 817.0, y: 182.0, dx: -8, dy: -8, ancre: 'droite-bas', mobile: true },
-  { cle: 'us', nom: 'Washington', sous: 'États-Unis', x: 314.6, y: 286.6, dx: 16, dy: 0, ancre: 'gauche-milieu' },
+  { cle: 'us', nom: 'New Jersey', sous: 'États-Unis', x: 327.3, y: 271.7, dx: 16, dy: 0, ancre: 'gauche-milieu' },
   { cle: 'mx', nom: 'Querétaro', sous: 'Mexique', x: 170.4, y: 417.8, dx: 16, dy: 0, ancre: 'gauche-milieu' },
 ]
 
@@ -60,7 +60,7 @@ const ANCRES = {
 const LIEUX = [
   { zone: 'Siège', titre: 'Lyon', langue: 'FR', desc: 'Conception des parcours, coordination des missions et du réseau de formateurs.', siege: true },
   { zone: 'Europe', titre: 'Belgique et Suisse', langue: 'FR', desc: 'Formations en présentiel et en classe virtuelle, en français.' },
-  { zone: 'Amérique du Nord', titre: 'Washington', langue: 'EN', desc: "Sessions animées en anglais pour les équipes d'un groupe industriel." },
+  { zone: 'Amérique du Nord', titre: 'New Jersey', langue: 'EN', desc: "Sessions animées en anglais pour les équipes d'un groupe industriel." },
   { zone: 'Amérique latine', titre: 'Querétaro', langue: 'ES', desc: 'Sessions animées en espagnol sur le site de production du même groupe.' },
 ]
 
