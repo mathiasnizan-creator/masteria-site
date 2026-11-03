@@ -1,5 +1,15 @@
 [
   {
+    "slug": "claude-skills-definition-mode-emploi",
+    "title": "Claude Skills : définition et mode d'emploi",
+    "tag": "Guide pratique",
+    "date": "3 novembre 2026",
+    "datePublished": "2026-11-03",
+    "dateModified": "2026-11-03",
+    "readTime": "24 min",
+    "excerpt": "Les Claude Skills apprennent une méthode à Claude dans un dossier SKILL.md qu'il ouvre au besoin. Définition, activation dans claude.ai, Claude Code et l'API, installation, création pas à pas avec un exemple complet, partage et sécurité."
+  },
+  {
     "slug": "notebooklm-entreprise-usages-limites-confidentialite",
     "title": "NotebookLM en entreprise : usages, limites et confidentialité",
     "tag": "Guide pratique",

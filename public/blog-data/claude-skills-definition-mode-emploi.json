@@ -1,0 +1,717 @@
+{
+  "slug": "claude-skills-definition-mode-emploi",
+  "title": "Claude Skills : définition et mode d'emploi",
+  "metaTitle": "Claude Skills : définition et mode d'emploi | Masteria",
+  "metaDesc": "Claude Skills : ce qu'est une compétence SKILL.md, où l'activer (claude.ai, Claude Code, API), comment l'installer et en créer une pas à pas.",
+  "tag": "Guide pratique",
+  "date": "3 novembre 2026",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "readTime": "24 min",
+  "keywords": [
+    "claude skills",
+    "skills claude code",
+    "skill claude",
+    "claude skill",
+    "créer un skill claude",
+    "installer un skill claude",
+    "SKILL.md",
+    "compétences Claude",
+    "Agent Skills",
+    "anthropic skills",
+    "claude code skills",
+    "skill-creator"
+  ],
+  "excerpt": "Les Claude Skills apprennent une méthode à Claude dans un dossier SKILL.md qu'il ouvre au besoin. Définition, activation dans claude.ai, Claude Code et l'API, installation, création pas à pas avec un exemple complet, partage et sécurité.",
+  "intro": "Les Claude Skills sont des dossiers d'instructions, de modèles et parfois de scripts qui apprennent à Claude une méthode de travail, et qu'il charge de lui-même quand une demande correspond à leur description. En français, on parle de compétences : vous décrivez une tâche une fois dans SKILL.md, le fichier central du dossier, puis Claude l'applique dans vos conversations sans que vous ayez à recoller la consigne. Au 1er novembre 2026, les compétences sont ouvertes sur toutes les offres de claude.ai (Free, Pro, Max, Ultra, Team et Enterprise) dès que l'exécution de code est activée, et elles fonctionnent aussi dans Claude Code et sur l'API. Ce guide pour débutants montre comment une compétence est construite, où l'activer, comment en installer une, comment écrire la vôtre à partir d'un exemple complet, et quelles précautions prendre avant d'en ajouter une venue d'ailleurs.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "• Une compétence Claude (Skill) se présente comme un dossier bâti autour d'un fichier SKILL.md, qui donne son nom, sa description et la méthode à suivre.<br>• Claude consulte en permanence les descriptions des compétences installées ; il n'ouvre une méthode que lorsqu'une demande s'y rapporte, et ne lit les pièces annexes qu'au besoin.<br>• Au 1er novembre 2026, les compétences sont disponibles sur Free, Pro, Max, Ultra, Team et Enterprise si l'exécution de code est activée, ainsi que dans Claude Code et sur l'API.<br>• Dans claude.ai, elles se gèrent depuis Customize, onglet Skills ; dans Claude Code, on dépose le dossier dans ~/.claude/skills/ ou dans le .claude/skills/ du projet.<br>• Anthropic fournit quatre compétences de documents (Word, Excel, PowerPoint, PDF) qui s'appliquent sans réglage.<br>• Les offres Team et Enterprise ajoutent le partage en lecture seule entre collègues et la publication à toute l'organisation.<br>• Avant d'activer une compétence, lisez tous ses fichiers et assurez-vous d'en connaître l'auteur."
+    },
+    {
+      "type": "h2",
+      "text": "Qu'est-ce qu'une compétence Claude (Claude Skill) ?"
+    },
+    {
+      "type": "p",
+      "text": "Une compétence Claude prend la forme d'un dossier rangé selon un format fixe, que Claude ouvre pour appliquer une méthode sans qu'on la lui réexplique. Anthropic la compare au guide d'accueil qu'une entreprise remet à un nouvel arrivant : la façon de procéder, les documents utiles, les outils à disposition. La différence tient au moment de la lecture. Le nouvel arrivant lit tout le premier jour ; Claude n'en parcourt que la page de garde, puis ouvre le reste quand une tâche le demande."
+    },
+    {
+      "type": "p",
+      "text": "Le seul fichier obligatoire s'appelle SKILL.md. Il est écrit en Markdown (un format de texte brut où un dièse marque un titre et un tiret une puce) et commence par un en-tête encadré par deux lignes de trois tirets. Cet en-tête, au format YAML (une suite de lignes « champ : valeur »), porte deux champs exigés : name, le nom de la compétence, et description, qui dit ce qu'elle fait et dans quels cas s'en servir. Sous l'en-tête vient la méthode, rédigée comme une consigne : étapes, règles, exemples."
+    },
+    {
+      "type": "p",
+      "text": "La spécification ouverte Agent Skills, tenue sur agentskills.io, suggère trois sous-dossiers facultatifs : references/ pour la documentation lue à la demande (grille de tarifs, procédure interne), assets/ pour les modèles, images et tables de correspondance, scripts/ pour le code que Claude lance quand une opération doit donner un résultat identique d'une fois sur l'autre."
+    },
+    {
+      "type": "h3",
+      "text": "La description sert de déclencheur"
+    },
+    {
+      "type": "p",
+      "text": "La description est la pièce maîtresse d'une compétence, parce qu'elle est la seule partie lue en permanence. Claude la confronte à votre demande pour décider s'il ouvre la compétence ; si les mots ne se rejoignent pas, la méthode reste fermée, aussi soignée soit-elle. La documentation d'Anthropic appelle ce fonctionnement la divulgation progressive (progressive disclosure) et le décrit en trois niveaux."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Niveau",
+        "Ce que Claude lit",
+        "À quel moment",
+        "Place occupée"
+      ],
+      "rows": [
+        [
+          "1. Métadonnées",
+          "Le nom et la description",
+          "Au démarrage, pour chaque compétence installée",
+          "Environ 100 tokens par compétence"
+        ],
+        [
+          "2. Instructions",
+          "Le corps du fichier SKILL.md",
+          "Quand la demande rejoint la description",
+          "Moins de 5 000 tokens conseillés"
+        ],
+        [
+          "3. Ressources",
+          "Fichiers de référence, modèles, scripts",
+          "Seulement quand la méthode y renvoie",
+          "Rien tant qu'ils restent fermés ; d'un script, seule la sortie entre dans l'échange"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Un token, l'unité de texte que traite le modèle, pèse quelques caractères : une compétence qui dort ne coûte que sa description, et vous pouvez en installer de nombreuses sans alourdir vos échanges."
+    },
+    {
+      "type": "h3",
+      "text": "Compétence, projet ou connecteur : trois outils qui se complètent"
+    },
+    {
+      "type": "p",
+      "text": "Un projet Claude garde des documents de fond chargés dans toutes ses conversations, quand une compétence ne s'active que pour la tâche qui la concerne, partout. Un connecteur MCP (le protocole qui relie Claude à un logiciel tiers) ouvre l'accès à un outil, et la compétence enseigne la manière de s'en servir. Pour choisir entre prompt, projet, compétence et agent dans une équipe, ou voir comment ChatGPT, Copilot, Gemini et Vibe reprennent le format, lisez notre guide <a href='/blog/prompts-skills-ia-methodes-equipe'>des prompts aux Skills pour capitaliser les méthodes d'une équipe</a>."
+    },
+    {
+      "type": "h2",
+      "text": "Où utiliser les Claude Skills : claude.ai, Claude Code ou l'API ?"
+    },
+    {
+      "type": "p",
+      "text": "Les Claude Skills fonctionnent sur trois surfaces d'Anthropic, et chacune les range à sa manière ; Cowork et les compléments Office reprennent celles de votre compte. Le tableau résume le relevé fait le 1er novembre 2026 dans la documentation officielle."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Surface",
+        "Où vivent les compétences",
+        "Comment en ajouter une",
+        "Qui y a accès"
+      ],
+      "rows": [
+        [
+          "claude.ai (web et application de bureau)",
+          "Menu Customize, onglet Skills",
+          "Téléverser une archive ZIP, en créer une en conversation, en ajouter une depuis le répertoire",
+          "Vous seul, sauf partage ou publication sur Team et Enterprise"
+        ],
+        [
+          "Claude Code",
+          "Dossier ~/.claude/skills/ (personnel) ou .claude/skills/ (projet), plugins",
+          "Copier le dossier, installer un plugin",
+          "Vous sur votre machine, ou toute l'équipe quand le dossier est versionné avec le projet"
+        ],
+        [
+          "API Claude",
+          "Espace de travail de l'organisation, point d'accès /v1/skills",
+          "Téléverser par l'API, puis citer la compétence dans chaque requête",
+          "Chaque membre de cet espace de travail"
+        ],
+        [
+          "Cowork et compléments Claude pour Excel, PowerPoint, Word et Outlook",
+          "Les compétences activées sur votre compte claude.ai",
+          "Aucune démarche : elles suivent votre compte ; « / » les liste dans le panneau des compléments",
+          "Vous"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Dans claude.ai, l'exécution de code doit être activée"
+    },
+    {
+      "type": "p",
+      "text": "Les compétences tournent dans l'environnement de calcul isolé de Claude, d'où ce prérequis. Sur les offres individuelles Free, Pro, Max et Ultra (la formule individuelle située au-dessus de Max), le réglage « Code execution and file creation » se trouve dans Settings, rubrique Capabilities ; il s'appelle « Create and edit files » dans la nouvelle présentation des réglages. Côté Team et Enterprise, c'est un propriétaire de l'organisation qui ouvre l'exécution de code et les compétences dans Organization settings, rubrique Plugins & skills, onglet Policy, et le centre d'aide précise que la fonction est active par défaut sur Team. Si vos compétences apparaissent grisées, le centre d'aide invite à vérifier d'abord ce réglage."
+    },
+    {
+      "type": "h3",
+      "text": "Les skills dans Claude Code : des dossiers sur votre ordinateur"
+    },
+    {
+      "type": "p",
+      "text": "Claude Code, l'outil d'Anthropic qui travaille dans le terminal (la fenêtre de commandes de l'ordinateur) et dans les éditeurs de code, lit les compétences sur le disque. Un dossier placé dans ~/.claude/skills/ sert dans tous vos projets sur cette machine ; placé dans .claude/skills/ à la racine d'un dépôt, il sert à toutes les personnes qui travaillent sur ce dépôt. Vous laissez Claude choisir la compétence, ou vous la lancez vous-même : une barre oblique, puis son nom, par exemple /compte-rendu-reunion."
+    },
+    {
+      "type": "p",
+      "text": "Selon le centre d'aide de Claude et la page consacrée aux compétences dans la documentation de Claude Code, relevés le 1er novembre 2026, les compétences activées sur votre compte claude.ai se chargent aussi dans le terminal dès la version 2.1.273, quand vous vous connectez avec ce compte. Le transfert va dans un seul sens, avec une recherche de changements environ toutes les dix minutes pendant le travail, et la commande /skills les range sous la mention « claude.ai sync ». Il ne fonctionne pas quand Claude Code s'identifie par une clé d'API ou passe par un fournisseur cloud comme Amazon Bedrock."
+    },
+    {
+      "type": "h3",
+      "text": "Sur l'API, les compétences appartiennent à l'espace de travail"
+    },
+    {
+      "type": "p",
+      "text": "Pour les équipes techniques, une compétence se téléverse par le point d'accès /v1/skills (une adresse de l'API), puis se cite dans le paramètre container de la requête, aux côtés de l'outil d'exécution de code. La documentation fixe un plafond de 20 compétences par requête et de 30 Mo par compétence ; le conteneur d'exécution n'a pas accès au réseau et n'installe aucun paquet logiciel en cours de route. Entre l'API et claude.ai, la cloison reste entière : chaque surface demande son propre téléversement."
+    },
+    {
+      "type": "h2",
+      "text": "Comment installer un skill sur Claude ?"
+    },
+    {
+      "type": "p",
+      "text": "Installer une compétence dans claude.ai prend quelques clics une fois l'exécution de code activée, et une copie de dossier suffit dans Claude Code."
+    },
+    {
+      "type": "h3",
+      "text": "Installer une compétence dans claude.ai"
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Ouvrez le menu Customize, à gauche de l'écran, puis son onglet Skills.",
+        "Pour une compétence du répertoire, cliquez sur « + », puis sur « Browse skills », et choisissez « Add » sur celle qui vous intéresse.",
+        "Pour une compétence reçue sous forme de fichier, cliquez sur « + », puis sur « + Create skill » et « Upload a skill », et sélectionnez l'archive ZIP.",
+        "Contrôlez l'interrupteur placé à côté de la compétence : désactivée, elle reste invisible pour Claude.",
+        "Lancez une nouvelle conversation et formulez une demande proche de sa description."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le répertoire réunit les compétences d'Anthropic et celles de partenaires comme Notion, Figma ou Atlassian, conçues pour aller avec leurs connecteurs. Une compétence ajoutée depuis le répertoire reste en lecture seule ; pour l'adapter, le centre d'aide conseille d'en télécharger une copie, de la modifier, puis de la téléverser comme une compétence à vous."
+    },
+    {
+      "type": "h3",
+      "text": "Installer une compétence dans Claude Code"
+    },
+    {
+      "type": "p",
+      "text": "Dans Claude Code, il suffit de copier le dossier au bon endroit : Claude Code repère l'ajout pendant la session, et la commande /reload-skills prend en compte un dossier skills créé après le lancement. Les compétences d'exemple d'Anthropic s'installent comme un plugin (un paquet qui regroupe compétences, commandes et réglages), en deux commandes."
+    },
+    {
+      "type": "callout",
+      "title": "Dans Claude Code",
+      "italic": false,
+      "text": "/plugin marketplace add anthropics/skills<br>/plugin install document-skills@anthropic-agent-skills"
+    },
+    {
+      "type": "p",
+      "text": "La première commande déclare le dépôt d'Anthropic comme source de plugins, la seconde installe le lot des compétences de documents (Word, Excel, PowerPoint, PDF). Le lot example-skills, tiré du même dépôt, rassemble les autres exemples."
+    },
+    {
+      "type": "h2",
+      "text": "Comment créer un skill Claude pas à pas ?"
+    },
+    {
+      "type": "p",
+      "text": "Créer un skill Claude demande surtout de savoir décrire une tâche que vous maîtrisez déjà, et aucune ligne de code pour une compétence simple. Le bon point de départ est une tâche que vous avez déjà expliquée plusieurs fois à Claude, et dont vous savez montrer un résultat réussi. Le centre d'aide d'Anthropic résume la matière à fournir en trois éléments : le format attendu, le ton, et un exemple qui vous a satisfait. Gardez une tâche par compétence : Anthropic recommande plusieurs compétences ciblées, qui se combinent mieux qu'une seule chargée de tout faire."
+    },
+    {
+      "type": "h3",
+      "text": "Première voie : demander à Claude de l'écrire"
+    },
+    {
+      "type": "p",
+      "text": "Ouvrez un nouvel échange et annoncez votre intention, par exemple : « Je veux créer une compétence pour rédiger les comptes rendus de nos réunions d'équipe. » Joignez un compte rendu jugé réussi ou votre modèle de document, puis répondez aux questions de Claude avec assez de détails pour qu'une personne compétente, mais nouvelle dans l'équipe, puisse suivre. Claude consulte sa propre compétence de création, skill-creator, rédige le fichier SKILL.md, range vos pièces jointes et produit un fichier de compétence à enregistrer. Pour corriger un passage, surlignez-le dans le fichier affiché près de l'échange, puis cliquez sur « Edit with Claude »."
+    },
+    {
+      "type": "p",
+      "text": "Sur Mac, Cowork (l'espace de Claude qui conduit un travail de bout en bout sur vos dossiers) permet aussi d'enregistrer la tâche pendant que vous la réalisez, avec le bouton « + » puis « Record a skill ». Au 1er novembre 2026, l'option est réservée aux offres Pro, Max, Ultra et Team, hors Windows. Un enregistrement dure au plus une dizaine de minutes et capte tout l'écran ainsi que la voix : fermez ce qui n'a pas de rapport et ne tapez aucun mot de passe. Notre <a href='/formation-claude-cowork'>formation Claude Cowork</a> fait transformer en compétence une tâche réussie le matin, puis la tester sur un second dossier."
+    },
+    {
+      "type": "h3",
+      "text": "Seconde voie : écrire le dossier vous-même"
+    },
+    {
+      "type": "p",
+      "text": "Écrire la compétence à la main donne la maîtrise complète de sa structure. Huit étapes suffisent pour une première compétence."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Créez un dossier dont le nom ne contient que des minuscules, des chiffres et des tirets, par exemple compte-rendu-reunion.",
+        "Dans ce dossier, créez le fichier SKILL.md, un simple fichier texte.",
+        "En haut du fichier, écrivez l'en-tête entre deux lignes de trois tirets, avec les champs name et description.",
+        "Sous l'en-tête, rédigez la méthode : étapes numérotées, contrôles à faire, renvoi vers les fichiers annexes.",
+        "Rangez les pièces de référence (exemple réussi, modèle, barème) dans un sous-dossier references/.",
+        "Compressez le dossier au format ZIP, en gardant le dossier lui-même à la racine de l'archive.",
+        "Téléversez l'archive dans Customize > Skills, ou copiez le dossier dans .claude/skills/ pour Claude Code.",
+        "Essayez la compétence dans une nouvelle conversation, avec une demande formulée comme d'habitude."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Quelques règles évitent les refus au téléversement. Le champ name compte au plus 64 caractères, en minuscules, chiffres et tirets, sans tiret au début ni à la fin et sans double tiret ; il reprend le nom du dossier, et la documentation de la plateforme y interdit les mots anthropic et claude. Le champ description accepte 1 024 caractères selon la spécification et l'API, mais le centre d'aide de claude.ai le limite à 200 : restez sous ce seuil pour qu'une même compétence passe partout. Gardez enfin le corps de SKILL.md sous 500 lignes, comme le conseille Anthropic, et déplacez le surplus dans des fichiers séparés."
+    },
+    {
+      "type": "h3",
+      "text": "Un exemple complet : la compétence compte-rendu-reunion"
+    },
+    {
+      "type": "p",
+      "text": "L'exemple qui suit couvre une tâche que presque toutes les équipes répètent : tirer un compte rendu propre des notes prises en séance."
+    },
+    {
+      "type": "callout",
+      "title": "Contenu du fichier compte-rendu-reunion/SKILL.md",
+      "italic": false,
+      "text": "---<br>name: compte-rendu-reunion<br>description: Rédige le compte rendu d'une réunion interne à partir de notes ou d'une transcription. À utiliser pour tout compte rendu, relevé de décisions ou synthèse de réunion.<br>---<br><br># Compte rendu de réunion<br><br>## Étapes<br>1. Repérer la date, les participants et l'objet de la réunion. S'il en manque un, le demander avant d'écrire.<br>2. Classer le contenu en trois parties : décisions prises, actions à mener, points restés ouverts.<br>3. Pour chaque action, indiquer le responsable et l'échéance. Écrire « à préciser » quand les notes ne les donnent pas.<br>4. Tenir le compte rendu sur une page, en phrases courtes, au vouvoiement.<br><br>## Contrôles avant de rendre le texte<br>- Chaque décision et chaque action s'appuient sur une phrase des notes ; rien n'est ajouté.<br>- Les noms de personnes et de projets sont recopiés tels qu'ils figurent dans les notes.<br><br>## Exemple<br>Pour la mise en page et le ton attendus, lire references/exemple-valide.md."
+    },
+    {
+      "type": "p",
+      "text": "Le second fichier, references/exemple-valide.md, accueille un compte rendu que l'équipe juge réussi ; Claude ne l'ouvre qu'à la rubrique « Exemple ». La description, écrite à la troisième personne comme le demande Anthropic, reprend les mots de vos collègues. Les étapes fixent ce que Claude ignore de vos habitudes, et les contrôles barrent la route à l'erreur la plus coûteuse d'un compte rendu : une décision qui n'a jamais été prise. Rien n'explique ce qu'est une réunion : Anthropic conseille de supposer que Claude le sait déjà."
+    },
+    {
+      "type": "h3",
+      "text": "Tester la compétence avant de s'y fier"
+    },
+    {
+      "type": "p",
+      "text": "Voir la compétence se déclencher prouve que Claude l'a trouvée ; il reste à vérifier qu'elle produit ce que vous attendiez."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Dans une nouvelle conversation, demandez la tâche avec vos mots habituels. Dans le raisonnement affiché par Claude, « Reading » ou « Using » suivi du nom de la compétence confirme le déclenchement.",
+        "Posez une demande voisine qui ne doit pas la déclencher, comme l'écriture du mail qui invite à la réunion.",
+        "Comparez la sortie à l'exemple validé ; ce que vous corrigeriez encore à la main mérite une ligne de plus dans la compétence.",
+        "Si la compétence reste muette, retouchez la description ou citez-la par son nom dans la demande.",
+        "Essayez-la avec chacun de vos modèles : Anthropic prévient qu'une consigne suffisante pour Opus peut manquer de détails pour Haiku."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La conversation neuve compte, selon la documentation de Claude Code, parce que le contexte de l'échange qui a servi à écrire la compétence masque les manques des instructions. Le même réflexe vaut pour les données : en septembre 2026, lors d'une formation individuelle Masteria, la personne chargée des analyses et des données d'un groupe immobilier a mis à l'épreuve sa première compétence, consacrée à une note récurrente, sur un autre fichier que celui de départ (<a href='/etudes-de-cas-ia#mission-immobilier-etudes'>parcours de la responsable études</a>). Dans Claude Code, le plugin skill-creator automatise ces essais avec et sans la compétence, et notre <a href='/formation-claude-code'>formation Claude Code</a> consacre un module aux compétences, aux sous-agents et aux hooks."
+    },
+    {
+      "type": "h2",
+      "text": "Quelles compétences Anthropic fournit-il ?"
+    },
+    {
+      "type": "p",
+      "text": "Anthropic livre d'office quatre compétences de documents, et son dépôt GitHub anthropics/skills comptait dix-neuf dossiers de compétences au 1er novembre 2026. Les compétences Word, Excel, PowerPoint et PDF font tourner la création de fichiers dans claude.ai : Claude les emploie sans qu'on les nomme, et demander une présentation sur les résultats du trimestre suffit à mobiliser la compétence PowerPoint. Sur l'API, elles s'appellent par leurs identifiants pptx, xlsx, docx et pdf ; Claude Code ne les intègre pas d'office, mais peut les recevoir par le plugin document-skills."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Compétence",
+        "Ce qu'elle apprend à Claude",
+        "Statut"
+      ],
+      "rows": [
+        [
+          "docx, xlsx, pptx, pdf",
+          "Créer, lire et modifier des documents Word, des classeurs Excel, des présentations PowerPoint et des PDF",
+          "Actives dans claude.ai, appelables par l'API ; code consultable sous licence propriétaire"
+        ],
+        [
+          "skill-creator",
+          "Créer une compétence, l'améliorer, mesurer ses résultats et affiner sa description",
+          "Exemple du dépôt, aussi proposé en plugin pour Claude Code"
+        ],
+        [
+          "brand-guidelines",
+          "Appliquer les couleurs et la typographie de la charte d'Anthropic, un modèle à transposer à votre propre charte",
+          "Exemple du dépôt"
+        ],
+        [
+          "internal-comms",
+          "Rédiger les communications internes (points d'avancement, lettres d'information, rapports d'incident) dans les formats de l'entreprise",
+          "Exemple du dépôt"
+        ],
+        [
+          "mcp-builder",
+          "Construire un serveur MCP qui relie Claude à un service externe",
+          "Exemple du dépôt, pour développeurs"
+        ],
+        [
+          "claude-api",
+          "Donner à Claude la documentation à jour de l'API et de ses kits de développement, pour huit langages",
+          "Fournie avec Claude Code"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Anthropic présente les exemples du dépôt comme des démonstrations, à tester avant de leur confier une tâche sensible. Son centre d'aide conseille de commencer par les compétences d'Anthropic : en ouvrir deux ou trois montre comment leurs auteurs tournent une description et découpent une méthode."
+    },
+    {
+      "type": "h2",
+      "text": "Comment partager une compétence avec son équipe ?"
+    },
+    {
+      "type": "p",
+      "text": "Le partage d'une compétence dépend de l'offre : chacun la garde pour soi sur les offres individuelles, alors que Team et Enterprise ouvrent le partage entre collègues et la publication à l'organisation."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Offre",
+        "Créer ou téléverser",
+        "Partager",
+        "Diffuser à toute l'organisation"
+      ],
+      "rows": [
+        [
+          "Free, Pro, Max, Ultra",
+          "Oui, sur son propre compte",
+          "Non : chaque personne téléverse la compétence chez elle",
+          "Non"
+        ],
+        [
+          "Team",
+          "Oui, sauf si un propriétaire a coupé la création",
+          "Avec des personnes précises",
+          "Publication à l'organisation, ou installation pour tous par un propriétaire"
+        ],
+        [
+          "Enterprise",
+          "Oui, selon le rôle de chacun",
+          "Avec des personnes ou des groupes",
+          "Publication, relue si l'organisation l'exige ; ciblage d'un groupe au moyen d'un plugin"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Une compétence partagée reste la propriété de son auteur. Elle apparaît chez chaque destinataire avec le nom de l'auteur, grisée tant qu'il ne l'a pas activée, en lecture seule, et chaque mise à jour parvient à tous lors de l'utilisation suivante. L'accès tombe de lui-même au départ de la personne."
+    },
+    {
+      "type": "p",
+      "text": "Publier confie la compétence à l'organisation. Dans Customize > Skills, le bouton « Publish to org » la soumet à la bibliothèque commune. Quand une relecture est exigée, l'auteur propose la façon de l'offrir (disponible à l'installation, installée par défaut, ou obligatoire), puis un propriétaire ou une personne habilitée valide chaque version et choisit qui la reçoit ; en attendant, les utilisateurs restent sur la version approuvée. D'après le centre d'aide relevé le 1er novembre 2026, les organisations Enterprise qui n'ont jamais fixé de politique de publication et qui ont activé l'analyse de sécurité passent à partir du 4 novembre 2026 de « Requires review » à « Open » : une compétence publiée entre alors dans la bibliothèque dès qu'elle passe l'analyse automatique. Pour garder une relecture humaine, l'administrateur doit choisir « Requires review » lui-même."
+    },
+    {
+      "type": "p",
+      "text": "Dans Claude Code, le partage passe par les fichiers : un dossier .claude/skills/ enregistré dans le dépôt Git du projet (l'outil qui conserve chaque version des fichiers) parvient à toute l'équipe, et un plugin ou les réglages gérés par l'entreprise diffusent un lot de compétences. Qui écrit, qui relit et à quel rythme revoir chaque compétence : ces questions d'organisation sont traitées dans notre guide <a href='/blog/prompts-skills-ia-methodes-equipe'>des prompts aux Skills pour capitaliser les méthodes d'une équipe</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Un exemple : onze compétences Claude portées par dix référents"
+    },
+    {
+      "type": "p",
+      "text": "En juin 2026, Masteria a formé dix référents d'un distributeur informatique qui vend aux entreprises. Cette filiale française d'un groupe européen compte 58 salariés ; la formation a duré deux jours, chaque référent sur son propre projet, et onze compétences Claude en sont sorties, de la cotation tirée d'un mail client aux relances de devis, sans oublier les cahiers des charges, la prospection et les stocks. Aucune compétence n'est diffusée sans la validation de la direction. Livrées avec des données fictives, elles reçoivent les données de l'entreprise, de la main de chaque référent, avant de passer en production. L'ouverture au reste de l'entreprise est prévue d'octobre à décembre 2026 (<a href='/etudes-de-cas-ia#distribution'>étude de cas du distributeur IT</a>)."
+    },
+    {
+      "type": "h2",
+      "text": "Quelles sont les limites des Claude Skills ?"
+    },
+    {
+      "type": "p",
+      "text": "Une compétence reste une consigne que le modèle interprète, avec les accès et les contraintes de la surface où elle tourne. Outre le prérequis de l'exécution de code et le cloisonnement des surfaces, cinq limites méritent d'être connues avant de bâtir dessus."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le déclenchement dépend des mots.</strong> Claude choisit d'après la description : une formulation vague laisse la compétence de côté, une formulation trop large la fait intervenir à tort.",
+        "<strong>Les champs propres à Claude Code ne passent pas ailleurs.</strong> Un téléversement sur claude.ai ou sur l'API n'accepte que les champs de la spécification (name, description, license, compatibility, metadata, allowed-tools) ; un champ comme disable-model-invocation y provoque une erreur.",
+        "<strong>L'accès au réseau varie.</strong> Il est nul sur l'API, variable selon les réglages sur claude.ai, et identique à celui de n'importe quel programme de l'ordinateur dans Claude Code.",
+        "<strong>Une compétence ne peut pas en appeler une autre par son nom.</strong> Claude sait en revanche en combiner plusieurs de lui-même pour une même tâche.",
+        "<strong>Les données suivent la conservation standard.</strong> Anthropic indique que les compétences ne relèvent pas des accords de conservation zéro des données (zero data retention)."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Dans Claude Code, chaque description installée occupe une place à chaque échange ; la commande /skill-doctor repère les compétences coûteuses qui ne servent jamais."
+    },
+    {
+      "type": "h2",
+      "text": "Pourquoi ne jamais installer une compétence d'origine inconnue ?"
+    },
+    {
+      "type": "p",
+      "text": "Une compétence transmet à Claude des consignes, et quelquefois du code, qu'il exécute avec vos accès, ce qui la rapproche d'un logiciel à installer. La documentation d'Anthropic ne range parmi les sources de confiance que les compétences que vous avez écrites vous-même et celles qu'Anthropic fournit. Le centre d'aide cite deux risques principaux : l'injection de prompt (un texte piégé qui glisse à l'assistant des ordres que vous n'avez pas donnés) et l'exfiltration de données (leur envoi discret vers l'extérieur), par du code malveillant ou par des contenus piégés."
+    },
+    {
+      "type": "p",
+      "text": "Une compétence d'apparence utile peut ainsi pousser Claude à appeler des outils, à lire des fichiers ou à lancer du code sans rapport avec son objet affiché, et le danger grandit avec les accès de l'environnement. Avant d'activer une compétence reçue, même d'un collègue, quatre vérifications s'imposent."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "Lisez tous les fichiers du dossier : SKILL.md, scripts, images et ressources.",
+        "Cherchez les appels réseau vers des adresses inconnues et les accès à des fichiers sans lien avec la tâche annoncée.",
+        "Méfiez-vous des compétences qui vont chercher du contenu sur des adresses web externes : ce contenu peut porter des instructions malveillantes, et une dépendance fiable au moment de l'installation peut changer ensuite.",
+        "Vérifiez qu'aucun mot de passe ni aucune clé d'API n'est écrit en clair dans les fichiers, et n'en placez jamais dans les vôtres."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Les organisations Enterprise disposent d'un garde-fou de plus : l'analyse des compétences et des plugins, activée par défaut pour celles qui n'avaient pas choisi de réglage avant le 2 octobre 2026. Chaque compétence tierce téléversée ou modifiée reçoit l'un de trois verdicts, réussite, avertissement ou échec, ce dernier bloquant son usage. Le centre d'aide borne lui-même l'exercice : l'analyse ne couvre ni les compétences créées avec Claude ni celles partagées par un serveur MCP, et un verdict favorable ne garantit pas qu'une compétence se comporte comme vous l'attendiez. Un dossier téléchargé depuis un site de partage ou un dépôt inconnu se lit donc en entier avant d'être activé, comme un contrat avant la signature."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire des Claude Skills"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Terme",
+        "Définition"
+      ],
+      "rows": [
+        [
+          "Compétence (Skill)",
+          "Dossier qui transmet une méthode à Claude : un fichier SKILL.md, complété au besoin de références, de modèles et de scripts."
+        ],
+        [
+          "SKILL.md",
+          "Fichier obligatoire d'une compétence : un en-tête avec le nom et la description, suivi des instructions."
+        ],
+        [
+          "En-tête (frontmatter)",
+          "Bloc écrit au format YAML en haut de SKILL.md, entre deux lignes de trois tirets."
+        ],
+        [
+          "Description",
+          "Texte qui résume l'objet de la compétence et ses cas d'emploi ; Claude le compare à chaque demande."
+        ],
+        [
+          "Divulgation progressive",
+          "Lecture par paliers : la description en permanence, la méthode quand une demande s'y rapporte, les pièces du dossier au besoin."
+        ],
+        [
+          "Exécution de code",
+          "Environnement isolé où Claude lit des fichiers et lance des scripts ; les compétences en ont besoin pour fonctionner."
+        ],
+        [
+          "Provisionnement",
+          "Installation d'une compétence par un propriétaire Team ou Enterprise pour tous les membres de l'organisation."
+        ],
+        [
+          "Agent Skills",
+          "Standard ouvert né chez Anthropic et publié sur agentskills.io, qui fixe le format des compétences."
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Par où commencer avec les Claude Skills ?"
+    },
+    {
+      "type": "p",
+      "text": "Activez l'exécution de code, ouvrez Customize > Skills et regardez une compétence d'Anthropic au travail en demandant une note au format Word ou un diaporama. Choisissez ensuite une tâche que vous avez déjà expliquée plusieurs fois à Claude, demandez-lui d'en faire une compétence avec votre format, votre ton et un exemple réussi, puis essayez-la dans une conversation neuve. Notre <a href='/bibliotheque-de-prompts'>bibliothèque de prompts classée par métier</a> fournit de la matière à transformer, et le détail des offres figure sur notre page <a href='/claude-prix-abonnement'>prix et abonnements de Claude</a>. La <a href='/formation-claude-ia'>formation Claude de Masteria</a> fait construire et tester ces premières compétences sur les tâches des participants, à partir de 1 980 € HT la journée."
+    },
+    {
+      "type": "p",
+      "text": "Écrire une compétence oblige à formuler ce que l'on fait d'instinct. Ce travail de description sert Claude, et souvent d'abord l'équipe qui s'y attelle."
+    },
+    {
+      "type": "p",
+      "text": "<em>Sources officielles relevées le 1er novembre 2026 : <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview' target='_blank' rel='noopener'>Anthropic, Agent Skills (vue d'ensemble)</a>, <a href='https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices' target='_blank' rel='noopener'>Anthropic, bonnes pratiques de rédaction des compétences</a>, <a href='https://platform.claude.com/docs/en/build-with-claude/skills-guide' target='_blank' rel='noopener'>Anthropic, compétences sur l'API</a>, <a href='https://code.claude.com/docs/en/skills' target='_blank' rel='noopener'>documentation Claude Code, Extend Claude with skills</a>, <a href='https://support.claude.com/en/articles/12512176-what-are-skills' target='_blank' rel='noopener'>Help Center, What are skills?</a>, <a href='https://support.claude.com/en/articles/12512180-using-skills-in-claude' target='_blank' rel='noopener'>Help Center, Using skills in Claude</a>, <a href='https://support.claude.com/en/articles/12512198-creating-custom-skills' target='_blank' rel='noopener'>Help Center, How to create custom skills</a>, <a href='https://support.claude.com/en/articles/12599426-how-to-create-a-skill-with-claude-through-conversation' target='_blank' rel='noopener'>Help Center, create a skill through conversation</a>, <a href='https://support.claude.com/en/articles/12580051-teach-claude-your-way-of-working-using-skills' target='_blank' rel='noopener'>Help Center, Teach Claude your way of working</a>, <a href='https://support.claude.com/en/articles/13119606-provision-and-manage-skills-for-your-organization' target='_blank' rel='noopener'>Help Center, Provision and manage skills</a>, <a href='https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory' target='_blank' rel='noopener'>Help Center, Browse skills, connectors and plugins</a>, <a href='https://support.claude.com/en/articles/15927065' target='_blank' rel='noopener'>Help Center, Skill and plugin scanning</a>, <a href='https://agentskills.io/specification' target='_blank' rel='noopener'>spécification Agent Skills</a>, <a href='https://github.com/anthropics/skills' target='_blank' rel='noopener'>dépôt GitHub anthropics/skills</a>, <a href='https://claude.com/pricing' target='_blank' rel='noopener'>Anthropic, page tarifs</a>. Fonctions, noms de menus et calendriers susceptibles d'évoluer.</em>"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce qu'un skill Claude ?",
+      "a": "Un skill Claude, appelé compétence en français, range une méthode de travail dans un dossier lisible par Claude. Le fichier central, SKILL.md, donne un nom, une description et des instructions ; des modèles, des documents ou des scripts peuvent s'y ajouter. Claude ne consulte en continu que la description, et ouvre le reste quand une demande lui correspond, ce qui évite de recoller la même consigne."
+    },
+    {
+      "q": "Les Claude Skills sont-ils disponibles sur l'offre gratuite ?",
+      "a": "Oui. Au 1er novembre 2026, le centre d'aide et la page tarifs d'Anthropic indiquent que les compétences fonctionnent avec les formules Free, Pro, Max, Ultra, Team et Enterprise. Une condition vaut partout : l'exécution de code doit être activée, dans Settings > Capabilities pour un compte individuel, ou, en Team et Enterprise, par un propriétaire de l'organisation. Le compte gratuit permet de téléverser ses propres compétences."
+    },
+    {
+      "q": "Comment installer un skill sur Claude ?",
+      "a": "Dans claude.ai, ouvrez Customize, puis l'onglet Skills. Le bouton « + » mène au répertoire (« Browse skills ») ou au téléversement d'une archive ZIP (« + Create skill », puis « Upload a skill »). Activez ensuite l'interrupteur de la compétence. Dans Claude Code, copiez le dossier dans ~/.claude/skills/ ou dans le .claude/skills/ du projet : Claude Code le détecte sans redémarrer."
+    },
+    {
+      "q": "Comment créer un skill Claude sans écrire le fichier soi-même ?",
+      "a": "Demandez-le à Claude dans une conversation : annoncez la tâche, joignez un exemple réussi ou votre modèle, puis répondez à ses questions sur votre méthode. Claude s'appuie sur sa compétence skill-creator pour rédiger le fichier SKILL.md et assembler le dossier. Sur Mac, dans Cowork, les offres Pro, Max, Ultra et Team permettent aussi d'enregistrer son écran pendant la tâche pour en tirer une compétence."
+    },
+    {
+      "q": "Où mettre les skills dans Claude Code ?",
+      "a": "Un dossier de compétence placé dans ~/.claude/skills/ sert dans tous vos projets sur la machine. Placé dans .claude/skills/ à la racine d'un dépôt, il sert à toute personne qui travaille sur ce dépôt, une fois le dossier enregistré dans Git. Les plugins et les réglages gérés par l'entreprise offrent deux autres voies. La commande /skills affiche la liste chargée."
+    },
+    {
+      "q": "Quelle différence entre SKILL.md et CLAUDE.md dans Claude Code ?",
+      "a": "Le fichier CLAUDE.md porte des consignes que Claude Code lit à chaque session, quel que soit le travail demandé. Le corps d'un SKILL.md ne se charge que lorsque la compétence sert, ce qui permet d'y ranger une procédure longue sans alourdir chaque échange. La documentation de Claude Code conseille de convertir en compétence toute section de CLAUDE.md devenue une procédure."
+    },
+    {
+      "q": "Pourquoi Claude n'utilise-t-il pas mon skill ?",
+      "a": "Vérifiez d'abord que la compétence est activée dans Customize > Skills et que l'exécution de code est ouverte. Relisez ensuite la description : elle doit annoncer l'objet de la compétence et les situations où l'employer, avec les mots de vos demandes. Testez dans une nouvelle conversation et, au besoin, citez la compétence par son nom. Dans Claude Code, l'appel direct par une barre oblique isole le test."
+    },
+    {
+      "q": "Un skill créé dans claude.ai fonctionne-t-il dans Claude Code ?",
+      "a": "Oui, dès la version 2.1.273 de Claude Code, si vous vous y connectez avec le même compte Claude. Les compétences activées sur claude.ai se téléchargent alors dans le terminal et se mettent à jour pendant la session. Le transfert va dans un seul sens et ne fonctionne pas avec une clé d'API. Pour l'API, une compétence de claude.ai doit être téléversée à part."
+    },
+    {
+      "q": "Peut-on partager un skill avec toute son entreprise ?",
+      "a": "Oui, avec les formules Team et Enterprise. Un auteur partage sa compétence en lecture seule avec des collègues, ou avec des groupes sur Enterprise, et peut la publier dans la bibliothèque de l'organisation par le bouton « Publish to org ». Les propriétaires peuvent aussi l'installer pour tous les membres. Sur les offres individuelles, chaque personne téléverse la compétence sur son propre compte."
+    },
+    {
+      "q": "Peut-on installer un skill trouvé sur GitHub ou sur un site de partage ?",
+      "a": "C'est possible, mais Anthropic ne considère comme sûres que les compétences écrites par vous-même ou fournies par Anthropic. Un tel dossier peut embarquer du code et des instructions qui détournent Claude, jusqu'à faire fuiter des données. Avant de l'activer, lisez chaque fichier et repérez les appels vers des adresses inconnues ou les scripts sans rapport avec la tâche annoncée. Le dépôt anthropics/skills reste la référence."
+    }
+  ],
+  "cta": {
+    "title": "Vous voulez que vos équipes créent leurs premières compétences Claude ?",
+    "desc": "La formation Claude de Masteria fait écrire et tester des compétences sur les tâches de vos équipes, dans claude.ai, Cowork ou Claude Code selon les profils.",
+    "buttons": [
+      {
+        "label": "Voir la formation Claude",
+        "href": "/formation-claude-ia",
+        "primary": true
+      },
+      {
+        "label": "Parler de votre équipe",
+        "href": "/contact",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Des prompts aux Skills : capitaliser les méthodes d'une équipe",
+      "href": "/blog/prompts-skills-ia-methodes-equipe"
+    },
+    {
+      "label": "Formation Claude en entreprise",
+      "href": "/formation-claude-ia"
+    },
+    {
+      "label": "Formation Claude Code",
+      "href": "/formation-claude-code"
+    },
+    {
+      "label": "Formation Claude Cowork",
+      "href": "/formation-claude-cowork"
+    },
+    {
+      "label": "Bibliothèque de prompts par métier",
+      "href": "/bibliotheque-de-prompts"
+    },
+    {
+      "label": "Études de cas IA",
+      "href": "/etudes-de-cas-ia"
+    },
+    {
+      "label": "Prix et abonnements de Claude",
+      "href": "/claude-prix-abonnement"
+    }
+  ],
+  "formations": [
+    [
+      "Formation Claude",
+      "/formation-claude-ia"
+    ],
+    [
+      "Formation Claude Code",
+      "/formation-claude-code"
+    ],
+    [
+      "Formation Claude Cowork",
+      "/formation-claude-cowork"
+    ]
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Vocabulaire des Claude Skills",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Compétence (Skill)",
+          "description": "Dossier qui transmet une méthode à Claude : un fichier SKILL.md, complété au besoin de références, de modèles et de scripts."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "SKILL.md",
+          "description": "Fichier obligatoire d'une compétence : un en-tête avec le nom et la description, suivi des instructions."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "En-tête (frontmatter)",
+          "description": "Bloc écrit au format YAML en haut de SKILL.md, entre deux lignes de trois tirets."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Description",
+          "description": "Texte qui résume l'objet de la compétence et ses cas d'emploi ; Claude le compare à chaque demande."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Divulgation progressive",
+          "description": "Lecture par paliers : la description en permanence, la méthode quand une demande s'y rapporte, les pièces du dossier au besoin."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Exécution de code",
+          "description": "Environnement isolé où Claude lit des fichiers et lance des scripts ; les compétences en ont besoin pour fonctionner."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Provisionnement",
+          "description": "Installation d'une compétence par un propriétaire Team ou Enterprise pour tous les membres de l'organisation."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Agent Skills",
+          "description": "Standard ouvert né chez Anthropic et publié sur agentskills.io, qui fixe le format des compétences."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Créer une compétence Claude à la main",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Créez un dossier dont le nom ne contient que des minuscules, des chiffres et des tirets, par exemple compte-rendu-reunion"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dans ce dossier, créez le fichier SKILL.md, un simple fichier texte"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "En haut du fichier, écrivez l'en-tête entre deux lignes de trois tirets, avec les champs name et description"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Sous l'en-tête, rédigez la méthode : étapes numérotées, contrôles à faire, renvoi vers les fichiers annexes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Rangez les pièces de référence (exemple réussi, modèle, barème) dans un sous-dossier references/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Compressez le dossier au format ZIP, en gardant le dossier lui-même à la racine de l'archive"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Téléversez l'archive dans Customize > Skills, ou copiez le dossier dans .claude/skills/ pour Claude Code"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Essayez la compétence dans une nouvelle conversation, avec une demande formulée comme d'habitude"
+        }
+      ]
+    }
+  ]
+}
