@@ -239,7 +239,12 @@
     "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-03",
+    "dateLongue": "mardi 3 novembre 2026",
+    "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 16,
   "nbSignes": 8594,

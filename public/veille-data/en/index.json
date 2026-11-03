@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-02",
-    "totalEditions": 42,
-    "totalItems": 563,
-    "totalSources": 812
+    "derniereDate": "2026-11-03",
+    "totalEditions": 43,
+    "totalItems": 577,
+    "totalSources": 830
   },
   "editions": [
+    {
+      "date": "2026-11-03",
+      "dateAffichee": "3 November 2026",
+      "dateCourte": "Tue 3 Nov",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Anthropic files to go public with its existential risks",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-02",
       "dateAffichee": "2 November 2026",

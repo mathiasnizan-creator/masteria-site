@@ -409,6 +409,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [3 novembre 2026 : Anthropic entre en Bourse avec ses risques existentiels](https://www.master-ia.fr/veille-ia/2026-11-03)
 - [2 novembre 2026 : ChatGPT atteint un milliard d'utilisateurs par semaine](https://www.master-ia.fr/veille-ia/2026-11-02)
 - [14 octobre 2026 : Les agents IA reçoivent un portefeuille et un badge](https://www.master-ia.fr/veille-ia/2026-10-14)
 - [13 octobre 2026 : Meta place Muse Wonder juste derrière Claude](https://www.master-ia.fr/veille-ia/2026-10-13)
@@ -418,5 +419,4 @@ https://www.master-ia.fr/sitemap.xml
 - [7 octobre 2026 : Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé](https://www.master-ia.fr/veille-ia/2026-10-07)
 - [6 octobre 2026 : Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver](https://www.master-ia.fr/veille-ia/2026-10-06)
 - [5 octobre 2026 : L'IA fait le premier jet de tout et érode le jugement de vos équipes : entraînez le discernement, pas seulement l'outil](https://www.master-ia.fr/veille-ia/2026-10-05)
-- [2 octobre 2026 : Mesurez qui sait réellement se servir de l'IA avant de nommer un responsable ou d'acheter une plateforme](https://www.master-ia.fr/veille-ia/2026-10-02)
 <!-- veille:editions:fin -->

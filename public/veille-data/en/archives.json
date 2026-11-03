@@ -3,12 +3,133 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-02",
-    "totalEditions": 42,
-    "totalItems": 563,
-    "totalSources": 812
+    "derniereDate": "2026-11-03",
+    "totalEditions": 43,
+    "totalItems": 577,
+    "totalSources": 830
   },
   "editions": [
+    {
+      "date": "2026-11-03",
+      "dateCourte": "Tue 3 Nov",
+      "dateAffichee": "3 November 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Anthropic files to go public with its existential risks",
+      "chapeau": "Anthropic is preparing its stock market debut by detailing 'catastrophic or existential' risks and says it is close to an AI that improves itself, while five French publisher organisations take Google's AI to court and the New York Times sues the Brave browser. The governor of the Banque de France warns of a bubble, OpenAI promises to protect the power grid around its compute centres, and Japan's Aisin unveils an AI chip that cuts its energy use fiftyfold.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "Nikkei Asia",
+        "Siècle Digital",
+        "Maddyness",
+        "Numerama",
+        "Next.ink",
+        "The Verge",
+        "OpenAI",
+        "MIT Technology Review",
+        "The Diplomat",
+        "arXiv",
+        "01net"
+      ],
+      "items": [
+        {
+          "t": "Anthropic files to go public and lists its own dangers",
+          "z": "une",
+          "id": "anthropic-files-to-go-public-and-lists-its-own-dangers"
+        },
+        {
+          "t": "Five French publisher organisations file a complaint against Google",
+          "z": "europe",
+          "id": "five-french-publisher-organisations-file-a-complaint"
+        },
+        {
+          "t": "The governor of the Banque de France warns of an AI bubble",
+          "z": "europe",
+          "id": "the-governor-of-the-banque-de-france-warns-of-an-ai-bubble"
+        },
+        {
+          "t": "PostgreSQL is buckling under the bugs AI finds for it",
+          "z": "europe",
+          "id": "postgresql-is-buckling-under-the-bugs-ai-finds-for-it"
+        },
+        {
+          "t": "Stack Overflow embraces a turn toward enterprises and agents",
+          "z": "europe",
+          "id": "stack-overflow-embraces-a-turn-toward-enterprises-and-agents"
+        },
+        {
+          "t": "The New York Times and other outlets sue the Brave browser",
+          "z": "international",
+          "id": "the-new-york-times-and-other-outlets-sue-the-brave-browser"
+        },
+        {
+          "t": "OpenAI promises to protect the power grid around its compute centres",
+          "z": "international",
+          "id": "openai-promises-to-protect-the-power-grid-around-its"
+        },
+        {
+          "t": "The \"agentic web\" is taking shape",
+          "z": "international",
+          "id": "the-agentic-web-is-taking-shape"
+        },
+        {
+          "t": "Japan's Aisin unveils a far more frugal AI chip",
+          "z": "chine",
+          "id": "japan-s-aisin-unveils-a-far-more-frugal-ai-chip"
+        },
+        {
+          "t": "China's compute centres head west, their tax revenue stays east",
+          "z": "chine",
+          "id": "china-s-compute-centres-head-west-their-tax-revenue-stays"
+        },
+        {
+          "t": "Pruning attention heads reduces verbatim memorisation",
+          "z": "recherche",
+          "id": "pruning-attention-heads-reduces-verbatim-memorisation"
+        },
+        {
+          "t": "OpenAI merges the usage quotas of ChatGPT and Codex",
+          "z": "bref",
+          "id": "openai-merges-the-usage-quotas-of-chatgpt-and-codex"
+        },
+        {
+          "t": "The price of DRAM doubles in 2026 under pressure from AI",
+          "z": "bref",
+          "id": "the-price-of-dram-doubles-in-2026-under-pressure-from-ai"
+        },
+        {
+          "t": "At Xbox, AI is reportedly already routine, quietly",
+          "z": "bref",
+          "id": "at-xbox-ai-is-reportedly-already-routine-quietly"
+        }
+      ]
+    },
     {
       "date": "2026-11-02",
       "dateCourte": "Mon 2 Nov",

@@ -239,7 +239,12 @@
     "titreEditorial": "AI agents get a wallet and a badge",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-03",
+    "dateLongue": "Tuesday 3 November 2026",
+    "titreEditorial": "Anthropic files to go public with its existential risks",
+    "nbItems": 14
+  },
   "nbItems": 13,
   "nbSources": 16,
   "nbSignes": 7779,

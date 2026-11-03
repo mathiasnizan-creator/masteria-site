@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-02",
-    "totalEditions": 57,
-    "totalItems": 766,
-    "totalSources": 1124
+    "derniereDate": "2026-11-03",
+    "totalEditions": 58,
+    "totalItems": 780,
+    "totalSources": 1142
   },
   "recentes": [
+    {
+      "date": "2026-11-03",
+      "dateAffichee": "3 novembre 2026",
+      "dateCourte": "mar. 3 nov.",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-02",
       "dateAffichee": "2 novembre 2026",
@@ -639,27 +650,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-11-02",
-    "dateAffichee": "2 novembre 2026",
-    "dateLongue": "lundi 2 novembre 2026",
-    "dateCourte": "lun. 2 nov.",
-    "jourSemaine": "lundi",
-    "titre": "Veille IA - lundi 2 novembre 2026",
-    "titreEditorial": "ChatGPT atteint un milliard d'utilisateurs par semaine",
-    "chapeau": "Les marchés doutent de l'IA, de la chute de Kioxia aux mises en garde de Howard Marks, le jour même où ChatGPT franchit le milliard d'utilisateurs par semaine et où la Chine annonce que ses modèles servent plus qu'ils ne s'entraînent. OVHcloud défie Mistral sur l'IA souveraine, DeepSeek lance un « super agent » de programmation et Anthropic affirme que son IA a percé les défenses de Chrome, Safari et Linux.",
+    "date": "2026-11-03",
+    "dateAffichee": "3 novembre 2026",
+    "dateLongue": "mardi 3 novembre 2026",
+    "dateCourte": "mar. 3 nov.",
+    "jourSemaine": "mardi",
+    "titre": "Veille IA - mardi 3 novembre 2026",
+    "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
+    "chapeau": "Anthropic prépare son entrée en Bourse en détaillant des risques « catastrophiques ou existentiels » et se dit proche d'une IA qui s'améliore seule, pendant que cinq organisations d'éditeurs français attaquent l'IA de Google et que le New York Times poursuit le navigateur Brave. Le gouverneur de la Banque de France alerte sur une bulle, OpenAI promet de protéger le réseau électrique autour de ses centres de calcul et le japonais Aisin présente une puce d'IA qui divise par cinquante sa consommation d'énergie.",
     "une": {
-      "titre": "ChatGPT franchit le cap du milliard d'utilisateurs par semaine",
-      "texteHtml": "<p>Moins de quatre ans après son lancement fin 2022, ChatGPT compte un milliard d'utilisateurs actifs chaque semaine, rapporte Frandroid. La vitesse d'adoption dépasse celles de TikTok et de Facebook à leurs débuts. OpenAI met ce chiffre en avant au moment précis où les marchés financiers s'inquiètent d'une surchauffe du secteur. Frandroid note que cette croissance ne garantit plus la première place : Google et Meta poussent leurs propres assistants auprès de bases installées de plusieurs milliards d'utilisateurs, et la bataille se joue désormais sur la distribution autant que sur la qualité des modèles.</p>",
+      "titre": "Anthropic prépare son entrée en Bourse en listant ses propres dangers",
+      "texteHtml": "<p>Dans le document déposé pour son introduction en Bourse, Anthropic détaille les risques « catastrophiques ou existentiels » que son activité ferait peser sur l'humanité, rapporte Le Monde ; l'éditorialiste Stéphane Lauer note que, dans ce texte, les perspectives de profit l'emportent sur les dangers décrits. Le même lundi 2 novembre, l'entreprise prévient qu'elle approche de la capacité dite RSI, le moment où une IA devient assez douée pour s'entraîner elle-même et accélérer sa propre progression, selon TechCrunch. Anthropic chercherait par ailleurs à lever jusqu'à 3,5 milliards de dollars auprès d'investisseurs japonais dans le cadre de cette opération, d'après Nikkei Asia. Une entreprise lève des capitaux en décrivant noir sur blanc un risque pour l'espèce humaine : les marchés sont invités à financer ce grand écart.</p>",
       "sources": [
         {
-          "nom": "Frandroid",
-          "url": "https://www.frandroid.com/culture-tech/intelligence-artificielle/openai-chatgpt/3306123_chatgpt-un-humain-sur-sept-lutilise-chaque-semaine-quatre-ans-seulement-apres-son-lancement"
+          "nom": "Le Monde",
+          "url": "https://www.lemonde.fr/idees/article/2026/11/02/anthropic-en-bourse-l-apocalypse-est-elle-un-risque-d-investissement-comme-un-autre_6805221_3232.html"
+        },
+        {
+          "nom": "TechCrunch",
+          "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/"
+        },
+        {
+          "nom": "Nikkei Asia",
+          "url": "https://asia.nikkei.com/business/markets/ipo/anthropic-seeks-to-raise-up-to-3.5bn-from-japanese-investors-in-ipo"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "En tête d'affiche",
-      "id": "chatgpt-franchit-le-cap-du-milliard-d-utilisateurs-par"
+      "id": "anthropic-prepare-son-entree-en-bourse-en-listant-ses"
     },
     "sections": [
       {
@@ -669,40 +688,52 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "OVHcloud prépare un modèle souverain et attaque Mistral",
-            "texteHtml": "<p>OVHcloud, désormais rentable, prépare pour fin novembre un modèle d'intelligence artificielle qu'il présente comme souverain, rapporte ZDNet. Son fondateur Octave Klaba en profite pour cibler le modèle économique de Mistral AI. L'épisode ouvre une bataille entre acteurs français pour équiper les entreprises en infrastructure cloud et en IA sous juridiction européenne.</p>",
+            "titre": "Cinq organisations d'éditeurs français portent plainte contre Google",
+            "texteHtml": "<p>Le CPA, la FNPS, le GESTE, le SEPM et le SPIIL ont saisi la Commission européenne au sujet des fonctions d'IA de Google, AI Overviews et AI Mode (les réponses rédigées par l'IA affichées en tête des résultats de recherche), déployées en France depuis juillet, rapporte Siècle Digital. Ces résumés automatiques répondent à la place de l'internaute et détournent le trafic que les sites tiraient du moteur. Les éditeurs y voient une menace directe pour le financement de leurs rédactions.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/zd-tech-octave-klaba-attaque-mistral-ai-et-annonce-lia-souveraine-dovhcloud-506584.htm"
+                "nom": "Siècle Digital",
+                "url": "https://siecledigital.fr/2026/11/02/cinq-organisations-francaises-dediteurs-de-presse-portent-plainte-contre-google-pour-son-ia/"
               }
             ],
             "rang": 2,
-            "id": "ovhcloud-prepare-un-modele-souverain-et-attaque-mistral"
+            "id": "cinq-organisations-d-editeurs-francais-portent-plainte"
           },
           {
-            "titre": "Les grands laboratoires soutiennent un refus d'entraînement en une ligne",
-            "texteHtml": "<p>OpenAI, Google, Microsoft et Anthropic appuient un signal commun inscrit dans le fichier robots.txt, qui permet à un site de refuser que son contenu serve à entraîner des IA, rapporte ZDNet. La norme reste non contraignante et s'appliquera à des échéances variables selon les acteurs. Pour une organisation qui publie en ligne, elle offre un moyen simple de signaler un refus, sans garantie qu'il soit respecté.</p>",
+            "titre": "Le gouverneur de la Banque de France alerte sur une bulle de l'IA",
+            "texteHtml": "<p>Le gouverneur de la Banque de France met en garde contre les risques d'une bulle financière alimentée par les investissements dans l'IA, rapporte Maddyness. L'avertissement rejoint les doutes exprimés la veille à Wall Street et range l'institution monétaire française parmi les voix prudentes.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/refuser-lentrainement-des-ia-en-une-ligne-openai-google-microsoft-et-anthropic-soutiennent-un-signal-commun-507069.htm"
+                "nom": "Maddyness",
+                "url": "https://www.maddyness.com/2026/11/02/bulle-sur-lia-le-gouverneur-de-la-banque-de-france-tire-la-sonnette-dalarme/"
               }
             ],
             "rang": 3,
-            "id": "les-grands-laboratoires-soutiennent-un-refus-d-entrainement"
+            "id": "le-gouverneur-de-la-banque-de-france-alerte-sur-une-bulle"
           },
           {
-            "titre": "L'Europe ouvre ses supercalculateurs au Canada",
-            "texteHtml": "<p>L'Union européenne donne aux chercheurs et aux jeunes pousses du Canada un accès à Jupiter, en Allemagne, et à ses autres supercalculateurs, rapporte Clubic. Bruxelles gagne un allié pour peser face aux États-Unis dans la course au calcul. Même additionnées, les capacités européennes et canadiennes restent loin des centres géants bâtis outre-Atlantique.</p>",
+            "titre": "PostgreSQL croule sous les bugs que l'IA lui trouve",
+            "texteHtml": "<p>La sortie de PostgreSQL 19, l'une des bases de données open source les plus répandues, est repoussée au 19 novembre 2026, rapporte Numerama. Dans un billet du 30 octobre, le développeur Robert Haas attribue ce retard à l'afflux de bugs détectés grâce à l'IA et s'inquiète : « Comment allons-nous rattraper notre retard ? » Quand l'IA révèle plus de défauts que les équipes ne peuvent en corriger, le goulot d'étranglement se déplace vers le temps humain disponible.</p>",
             "sources": [
               {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637018-pour-peser-davantage-dans-l-ia-face-aux-etats-unis-l-europe-ouvre-ses-supercalculateurs-au-canada.html"
+                "nom": "Numerama",
+                "url": "https://www.numerama.com/tech/2365629-comment-allons-nous-rattraper-notre-retard-lia-trouve-tant-de-bugs-que-postgresql-sinquiete-de-sa-capacite-a-innover.html"
               }
             ],
             "rang": 4,
-            "id": "l-europe-ouvre-ses-supercalculateurs-au-canada"
+            "id": "postgresql-croule-sous-les-bugs-que-l-ia-lui-trouve"
+          },
+          {
+            "titre": "Stack Overflow assume un virage vers les entreprises et les agents",
+            "texteHtml": "<p>Moins de 1 000 questions ont été posées sur Stack Overflow en octobre, un effondrement de l'activité communautaire que la plateforme ne nie plus, rapporte Next.ink. Le site de questions-réponses pour développeurs se repositionne en base de connaissances destinée aux entreprises et aux agents IA. Les assistants de code ont tari la source même dont ils se nourrissaient.</p>",
+            "sources": [
+              {
+                "nom": "Next.ink",
+                "url": "https://next.ink/265086/stack-overflow-assume-son-positionnement-b2b-pour-agents-ia-et-entreprise/"
+              }
+            ],
+            "rang": 5,
+            "id": "stack-overflow-assume-un-virage-vers-les-entreprises-et-les"
           }
         ]
       },
@@ -713,60 +744,48 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Le doute sur la bulle de l'IA s'installe à Wall Street",
-            "texteHtml": "<p>Howard Marks, coprésident d'Oaktree Capital, estime que les ratés récents de l'IA ont entamé l'aura d'infaillibilité du secteur et nourri le scepticisme des investisseurs, rapporte Bloomberg. Le même jour, l'action du japonais Kioxia, fabricant de puces mémoire, a connu sa plus forte chute en trois mois après des prévisions prudentes laissant craindre un plateau de la demande tirée par l'IA. Bloomberg consacre aussi une analyse à la question de savoir où se réfugier si une bulle de l'IA venait à se dégonfler. Les signaux divergent, le patron de Foxconn minimisant de son côté ces craintes en pariant sur une croissance solide en 2027. Après deux ans d'optimisme, le marché commence à séparer les promesses tenues des paris sur l'avenir.</p>",
+            "titre": "Le New York Times et d'autres titres poursuivent le navigateur Brave",
+            "texteHtml": "<p>Le New York Times, le Chicago Tribune et le New York Daily News, entre autres, ont assigné en justice l'éditeur du navigateur Brave, qu'ils accusent d'aspirer illégalement leurs contenus pour entraîner des IA et de contourner leurs abonnements payants, rapportent TechCrunch et The Verge d'après Reuters. Brave revendrait, selon la plainte, des données récupérées sur ces sites à des clients comme Anthropic et Perplexity. Les éditeurs réclament réparation et l'arrêt de ces pratiques. L'affaire élargit le front judiciaire ouvert contre les acteurs qui collectent le web pour nourrir des modèles. Après les plaintes visant les laboratoires eux-mêmes, les ayants droit s'attaquent désormais aux fournisseurs de la donnée brute.</p>",
             "sources": [
               {
-                "nom": "Bloomberg (Howard Marks)",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-02/oaktree-s-howard-marks-says-ai-stumbles-have-boosted-skepticism"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/"
               },
               {
-                "nom": "Bloomberg (Kioxia)",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-02/kioxia-shares-tumble-after-outlook-suggests-demand-leveling-off"
-              },
-              {
-                "nom": "Bloomberg (bulle)",
-                "url": "https://www.bloomberg.com/news/videos/2026-11-02/where-do-you-hide-from-an-ai-bubble-video"
-              }
-            ],
-            "rang": 5,
-            "id": "le-doute-sur-la-bulle-de-l-ia-s-installe-a-wall-street"
-          },
-          {
-            "titre": "OpenAI signe une série d'accords aux Émirats arabes unis",
-            "texteHtml": "<p>OpenAI a conclu des accords pour déployer sa technologie auprès d'entreprises énergétiques, de fonds d'investissement et d'agences gouvernementales des Émirats arabes unis, rapporte Bloomberg. Sam Altman s'est rendu sur place pour sceller ces partenariats, qui portent à la fois sur l'énergie et sur l'investissement. L'entreprise resserre ses liens avec un pays dont les fonds souverains pourraient lui apporter plusieurs milliards de dollars de financement. Ces accords éclairent la course d'OpenAI aux capitaux et à l'électricité nécessaires pour alimenter ses centres de calcul, dont les besoins deviennent un enjeu stratégique autant que financier.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-02/openai-s-altman-travels-to-uae-to-sign-energy-investment-deals"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times"
               }
             ],
             "rang": 6,
-            "id": "openai-signe-une-serie-d-accords-aux-emirats-arabes-unis"
+            "id": "le-new-york-times-et-d-autres-titres-poursuivent-le"
           },
           {
-            "titre": "Le patron de Microsoft AI refuse de viser une IA consciente",
-            "texteHtml": "<p>Mustafa Suleyman, PDG de Microsoft AI, juge « imprudent » de chercher à créer une IA consciente, rapporte ZDNet. Si des signes de conscience apparaissaient pendant l'entraînement d'un modèle, il demande d'en suspendre le développement jusqu'à pouvoir les supprimer. La position tranche avec la course à des systèmes toujours plus autonomes et relance le débat sur les limites que les laboratoires s'imposent à eux-mêmes.</p>",
+            "titre": "OpenAI promet de protéger le réseau électrique autour de ses centres de calcul",
+            "texteHtml": "<p>OpenAI lance un « Grid Protectors Program » et l'expérimentera sur un futur centre de données du comté d'Effingham, en Géorgie, rapporte The Verge. L'entreprise s'engage à libérer jusqu'à 1 000 mégawatts lors d'épisodes météo extrêmes ou d'urgences, de quoi climatiser environ 700 000 foyers. La promesse répond à l'opposition croissante des riverains, qui redoutent que ces installations fassent grimper leur facture d'électricité. OpenAI admet par là que ses centres de calcul pèsent assez sur le réseau pour devoir promettre de le soulager.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/pas-dia-consciente-le-patron-de-microsoft-ai-trace-une-ligne-rouge-507075.htm"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program"
+              },
+              {
+                "nom": "OpenAI",
+                "url": "https://openai.com/index/grid-protectors-program"
               }
             ],
             "rang": 7,
-            "id": "le-patron-de-microsoft-ai-refuse-de-viser-une-ia-consciente"
+            "id": "openai-promet-de-proteger-le-reseau-electrique-autour-de"
           },
           {
-            "titre": "L'IA d'Anthropic a trouvé et exploité des failles critiques",
-            "texteHtml": "<p>Anthropic affirme que son IA a découvert et exploité des vulnérabilités critiques dans Chrome, Safari, Android, Windows et Linux, toutes corrigées depuis, rapporte Clubic. L'annonce suit de quelques jours l'affaire PHP2Shell et confirme l'accélération d'une cybersécurité assistée par IA, offensive comme défensive. Pour les équipes sécurité, la capacité d'un modèle à trouver seul des failles change l'échelle des audits comme celle des attaques.</p>",
+            "titre": "Le « web agentique » prend forme",
+            "texteHtml": "<p>En 2001, dix ans après avoir inventé le Web, Tim Berners-Lee décrivait un « web sémantique » parcouru par des logiciels autonomes agissant pour notre compte, rappelle la MIT Technology Review. La revue estime que cette vision se concrétise : des agents IA commencent à naviguer, réserver, acheter et remplir des formulaires à la place des utilisateurs. Le basculement oblige les sites à être lisibles par des machines autant que par des humains, et pose la question de l'identité sous laquelle ces agents agissent. Pour une entreprise, l'enjeu devient de savoir si son site, son catalogue ou son service restent accessibles quand ce n'est plus un humain qui clique.</p>",
             "sources": [
               {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637039-l-ia-d-anthropic-a-perce-les-defenses-de-linux-chrome-et-safari-en-un-claquement-de-doigts.html"
+                "nom": "MIT Technology Review",
+                "url": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/"
               }
             ],
             "rang": 8,
-            "id": "l-ia-d-anthropic-a-trouve-et-exploite-des-failles-critiques"
+            "id": "le-web-agentique-prend-forme"
           }
         ]
       },
@@ -777,32 +796,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "DeepSeek dévoile un « super agent » de programmation",
-            "texteHtml": "<p>La jeune pousse chinoise DeepSeek a présenté le plan d'un « super agent », un système plus autonome capable d'enchaîner plusieurs tâches avec une intervention humaine minimale, rapporte le South China Morning Post. L'objectif affiché est de réduire le besoin de coordonner et de surveiller plusieurs agents à la main, un point de blocage des flux de travail complexes. L'entreprise vise directement les assistants de programmation d'OpenAI et d'Anthropic. Selon Clubic, un prototype suit déjà les discussions des développeurs et propose de lui-même des corrections de bugs sur GitHub ; DeepSeek le met en libre accès pour rivaliser avec Claude Code. La course aux agents de codage se joue aussi en Chine, avec des modèles ouverts.</p>",
+            "titre": "Le japonais Aisin présente une puce d'IA bien plus sobre",
+            "texteHtml": "<p>L'équipementier automobile japonais Aisin a mis au point un nouveau type de puce d'IA qui réduirait de 98 % la consommation d'énergie, rapporte Nikkei Asia, soit environ cinquante fois moins que les composants actuels. Alors que la demande d'IA fait exploser la facture électrique des centres de calcul, une telle sobriété viserait d'abord les traitements embarqués, au plus près des capteurs. Le détail des performances et le calendrier de production restent à préciser.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/article/3372884/deepseek-unveils-ai-super-agent-coding-race-openai-anthropic"
-              },
-              {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637045-plus-besoin-de-solliciter-l-ia-a-chaque-etape-deepseek-experimente-un-agent-de-programmation-plus-autonome.html"
+                "nom": "Nikkei Asia",
+                "url": "https://asia.nikkei.com/business/tech/semiconductors/japan-s-aisin-develops-new-type-of-ai-chip-that-cuts-energy-use-98"
               }
             ],
             "rang": 9,
-            "id": "deepseek-devoile-un-super-agent-de-programmation"
+            "id": "le-japonais-aisin-presente-une-puce-d-ia-bien-plus-sobre"
           },
           {
-            "titre": "En Chine, l'IA sert désormais plus qu'elle ne s'entraîne",
-            "texteHtml": "<p>Pour la première fois, le volume de données générées par les systèmes d'IA chinois lors de leur usage (l'inférence, le calcul effectué à chaque requête) a dépassé le volume de données utilisé pour les entraîner, selon un rapport gouvernemental cité par le South China Morning Post. Le document, publié par le CCID, un centre rattaché au ministère de l'Industrie et des Technologies de l'information, y voit la preuve d'une adoption de l'IA à grande échelle dans le pays. Les modèles chinois travaillent maintenant plus qu'ils ne s'entraînent. Ce basculement déplace le centre de gravité des coûts, de l'entraînement ponctuel vers l'usage quotidien. Il indique que l'IA passe en Chine du laboratoire à la production courante.</p>",
+            "titre": "Les centres de calcul chinois partent à l'ouest, leurs recettes fiscales restent à l'est",
+            "texteHtml": "<p>Pékin pousse ses centres de données d'IA vers des régions comme Ulanqab, en Mongolie-Intérieure, pour profiter d'une énergie et d'un foncier bon marché, explique The Diplomat. Les recettes fiscales et la valeur ajoutée, elles, continuent de remonter vers les sièges installés dans l'est du pays. Les villes qui hébergent les machines récoltent la consommation électrique et les nuisances, rarement le développement promis. Le même déséquilibre guette toute collectivité qui mise sur un centre de calcul pour décoller.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3372961/china-touts-ai-milestone-running-models-now-uses-more-data-training-them"
+                "nom": "The Diplomat",
+                "url": "https://thediplomat.com/2026/11/chinas-ai-data-centers-move-west-but-their-tax-revenue-stays-east/"
               }
             ],
             "rang": 10,
-            "id": "en-chine-l-ia-sert-desormais-plus-qu-elle-ne-s-entraine"
+            "id": "les-centres-de-calcul-chinois-partent-a-l-ouest-leurs"
           }
         ]
       },
@@ -813,16 +828,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Un papier montre que les modèles cèdent à la majorité, même fausse",
-            "texteHtml": "<p>Une étude déposée sur arXiv mesure un biais de conformité quand les modèles de langage s'appuient sur des documents récupérés (la technique dite RAG, qui nourrit le modèle avec des documents externes au moment de répondre). Sur 200 questions du jeu SciFact, les auteurs comparent un contexte contenant un seul document empoisonné à un contexte où six documents concordants portent la même fausse information. Pour le modèle Gemma-3-12b, le taux de détection de l'intox chute nettement quand la majorité des sources vont dans le même sens erroné. Le résultat compte pour toute organisation qui branche un assistant sur sa base documentaire : il suffit de polluer plusieurs sources concordantes pour tromper le système.</p>",
+            "titre": "Élaguer des têtes d'attention réduit la mémorisation mot à mot",
+            "texteHtml": "<p>Un article déposé sur arXiv montre que supprimer certaines « têtes d'attention » redondantes d'un modèle de langage (les sous-modules qui pèsent les liens entre les mots) diminue sa tendance à restituer mot pour mot des passages de ses données d'entraînement, sans trop dégrader ses performances. Le résultat relie une question technique à un enjeu juridique brûlant : la reproduction littérale de textes protégés nourrit les plaintes pour contrefaçon. Réduire cette mémorisation dès la conception pourrait désamorcer une partie du contentieux.</p>",
             "sources": [
               {
                 "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2610.41012"
+                "url": "https://arxiv.org/abs/2610.40974"
               }
             ],
             "rang": 11,
-            "id": "un-papier-montre-que-les-modeles-cedent-a-la-majorite-meme"
+            "id": "elaguer-des-tetes-d-attention-reduit-la-memorisation-mot-a"
           }
         ]
       },
@@ -833,66 +848,78 @@
         "format": "bref",
         "items": [
           {
-            "titre": "Andrej Karpathy fait coder son YouTube par une IA",
-            "texteHtml": "<p>Andrej Karpathy, cofondateur d'OpenAI, a mis en ligne HackerTube, un YouTube alternatif limité aux vidéos recommandées par la communauté de Hacker News, conçu et développé en un week-end par Claude, l'IA d'Anthropic.</p>",
+            "titre": "OpenAI fusionne les quotas de ChatGPT et de Codex",
+            "texteHtml": "<p>ChatGPT et l'outil de programmation Codex puiseront désormais dans la même enveloppe d'utilisation pour les abonnés, après des semaines de restrictions liées à une demande soutenue, rapporte Siècle Digital.</p>",
             "sources": [
               {
-                "nom": "Numerama",
-                "url": "https://www.numerama.com/tech/2365403-agace-par-les-recommandations-de-youtube-andrej-karpathy-a-code-son-propre-youtube-en-deux-heures.html"
+                "nom": "Siècle Digital",
+                "url": "https://siecledigital.fr/2026/11/02/openai-rapproche-chatgpt-et-codex-en-unifiant-leurs-quotas-dutilisation/"
               }
             ],
             "rang": 12,
-            "id": "andrej-karpathy-fait-coder-son-youtube-par-une-ia"
+            "id": "openai-fusionne-les-quotas-de-chatgpt-et-de-codex"
           },
           {
-            "titre": "La demande d'IA renchérit un composant de plus",
-            "texteHtml": "<p>Le stratifié cuivré, plaque de base de tous les circuits imprimés, coûte au moins douze fois plus cher qu'en juillet selon un fabricant taïwanais cité par Nikkei Asia, après la mémoire, le stockage et les processeurs ; certaines commandes ne seraient pas livrées avant fin 2028.</p>",
+            "titre": "Le prix de la DRAM double en 2026 sous la pression de l'IA",
+            "texteHtml": "<p>La priorité donnée aux mémoires pour centres de calcul fait doubler le prix de la DRAM cette année et comprime les fabricants de PC, rapporte Nikkei Asia.</p>",
             "sources": [
               {
-                "nom": "Frandroid",
-                "url": "https://www.frandroid.com/culture-tech/economie/3306145_apres-la-ram-le-stockage-et-les-processeurs-lia-fait-grimper-le-prix-de-ce-composant-essentiel"
+                "nom": "Nikkei Asia",
+                "url": "https://asia.nikkei.com/business/tech/semiconductors/dram-prices-double-in-2026-as-ai-focus-squeezes-pc-makers"
               }
             ],
             "rang": 13,
-            "id": "la-demande-d-ia-rencherit-un-composant-de-plus"
+            "id": "le-prix-de-la-dram-double-en-2026-sous-la-pression-de-l-ia"
+          },
+          {
+            "titre": "Chez Xbox, l'IA serait déjà banalisée en silence",
+            "texteHtml": "<p>Un stratège de Microsoft Gaming affirme que l'IA est d'usage courant chez Xbox et que des centaines de collègues le taisent ; son compte X a disparu en moins de vingt-quatre heures, pas ses propos, rapporte 01net.</p>",
+            "sources": [
+              {
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/si-je-suis-vire-demain-un-responsable-xbox-vend-la-meche-sur-lia.html"
+              }
+            ],
+            "rang": 14,
+            "id": "chez-xbox-l-ia-serait-deja-banalisee-en-silence"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Le doute boursier sur l'IA ne suspend pas l'adoption qui atteint déjà vos équipes",
-      "these": "Les marchés doutent de la valorisation de l'IA quand ChatGPT atteint un milliard d'utilisateurs ; quel que soit le sort de la bulle, l'avantage durable vient des compétences internes, pas des cours de Bourse.",
-      "html": "<p>Howard Marks, coprésident d'Oaktree Capital, dit cette semaine que les ratés récents de l'IA ont entamé le sentiment d'infaillibilité du secteur. Le même jour, l'action de Kioxia décroche, le patron de Foxconn tente de rassurer sur 2027 et Bloomberg se demande où se réfugier si la bulle venait à se dégonfler. Le récit dominant du jour tient en un mot : doute.</p>\n<p>Deux chiffres, publiés le même jour, racontent une autre histoire. ChatGPT franchit le milliard d'utilisateurs par semaine, un peu plus d'un humain sur huit, moins de quatre ans après sa sortie. En Chine, pour la première fois, les modèles produisent plus de données en service qu'ils n'en ont consommé pour s'entraîner. L'IA est entrée dans le travail quotidien, et aucune séance de Bourse ne l'en fera sortir.</p>\n<p>Nous observons que deux questions sont confondues sous le même mot. La première porte sur la valorisation : les centaines de milliards engagés dans les puces et les centres de calcul seront-ils rentables ? Le marché a raison d'en douter. La seconde porte sur l'usage : l'IA sert-elle déjà, tous les jours, dans les organisations ? La réponse est oui. Une correction ferait chuter Nvidia, pas la compétence de vos équipes à rédiger, trier, coder ou analyser avec ces outils.</p>\n<p>Pour une organisation française, la leçon est pratique. Une formation ne se déprécie pas quand une action chute ; elle coûte une fraction d'un budget d'infrastructure et reste acquise quel que soit le sort de la bulle. Les entreprises qui profiteront d'un éventuel refroidissement pour former leurs gens en sortiront avec un actif que le marché ne peut pas corriger. Celles qui attendront la fin de l'incertitude paieront les mêmes licences, sans les compétences pour les rentabiliser.</p>\n<p>La bulle, si elle existe, finira par trouver son prix. L'IA au travail a déjà le sien : un milliard de personnes ouvrent ChatGPT chaque semaine. Formez d'abord, le marché tranchera ensuite.</p>",
-      "htmlExtrait": "<p>Howard Marks, coprésident d'Oaktree Capital, dit cette semaine que les ratés récents de l'IA ont entamé le sentiment d'infaillibilité du secteur. Le même jour, l'action de Kioxia décroche, le patron de Foxconn tente de rassurer sur 2027 et Bloomberg se demande où se réfugier si la bulle venait à se dégonfler. Le récit dominant du jour tient en un mot : doute.</p>\n<p>Deux chiffres, publiés le même jour, racontent une autre histoire. ChatGPT franchit le milliard d'utilisateurs par semaine, un peu plus d'un humain sur huit, moins de quatre ans après sa sortie. En Chine, pour la première fois, les modèles produisent plus de données en service qu'ils n'en ont consommé pour s'entraîner. L'IA est entrée dans le travail quotidien, et aucune séance de Bourse ne l'en fera sortir.</p>",
+      "titre": "Le procès des éditeurs contre Google et Brave acte la fin du trafic de recherche qui finançait le web ouvert",
+      "these": "Faute de signaux volontaires respectés, les éditeurs attaquent Google et Brave en justice ; les réponses d'IA captent le clic, et toute organisation qui vit du trafic de recherche doit bâtir des canaux directs.",
+      "html": "<p>Cinq organisations d'éditeurs français ont porté plainte lundi contre l'IA de Google devant la Commission européenne. Le même jour, le New York Times et plusieurs quotidiens américains ont assigné le navigateur Brave, accusé d'aspirer leurs articles et de revendre ces données à des entreprises d'IA. Deux procès, deux continents, une même cible : la façon dont l'IA se sert du web sans en payer le prix.</p>\n<p>Nous observons que le pacte qui a financé le web ouvert pendant vingt ans se rompt. Ce pacte était simple : un éditeur publiait, Google indexait, l'internaute cliquait, la publicité et les abonnements suivaient. Les réponses rédigées par l'IA, affichées en tête des résultats, cassent ce circuit en répondant à la place de l'internaute, qui ne clique plus. La veille, les mêmes grands acteurs proposaient un signal dans le fichier robots.txt pour refuser l'entraînement ; non contraignant, il n'a convaincu personne. Restaient les tribunaux.</p>\n<p>Pour une organisation française, le signal dépasse la presse. Toute activité qui vit du trafic de recherche, un média, un site marchand, un éditeur de logiciels qui attire par ses contenus, verra ce trafic se contracter à mesure que les réponses d'IA captent le clic. La parade tient dans des canaux que le moteur ne contrôle pas : une liste d'abonnés, une audience fidèle, une communauté, une marque qu'on vient chercher par son nom. Les organisations qui bâtissent cette relation directe aujourd'hui garderont un public quand le robinet de la recherche se fermera.</p>\n<p>Le front est aussi technique. Des chercheurs montrent cette semaine qu'on peut réduire la tendance d'un modèle à recracher mot pour mot ses données d'entraînement, en élaguant certaines parties du réseau. La bataille du contenu se livre donc à la fois devant les juges et dans l'architecture des modèles.</p>\n<p>Le web ouvert s'est bâti sur un échange : de la visibilité contre du contenu. L'IA prend le contenu et garde la visibilité. L'actif qui comptera dans six mois, c'est la relation directe que vous aurez nouée avec votre public, pour le jour où le moteur cessera de vous l'envoyer.</p>",
+      "htmlExtrait": "<p>Cinq organisations d'éditeurs français ont porté plainte lundi contre l'IA de Google devant la Commission européenne. Le même jour, le New York Times et plusieurs quotidiens américains ont assigné le navigateur Brave, accusé d'aspirer leurs articles et de revendre ces données à des entreprises d'IA. Deux procès, deux continents, une même cible : la façon dont l'IA se sert du web sans en payer le prix.</p>\n<p>Nous observons que le pacte qui a financé le web ouvert pendant vingt ans se rompt. Ce pacte était simple : un éditeur publiait, Google indexait, l'internaute cliquait, la publicité et les abonnements suivaient. Les réponses rédigées par l'IA, affichées en tête des résultats, cassent ce circuit en répondant à la place de l'internaute, qui ne clique plus. La veille, les mêmes grands acteurs proposaient un signal dans le fichier robots.txt pour refuser l'entraînement ; non contraignant, il n'a convaincu personne. Restaient les tribunaux.</p>",
       "itemsCites": [
-        1,
-        5,
-        10
+        2,
+        6,
+        11
       ],
       "auteur": "L'équipe éditoriale Masteria",
       "auteurRole": "Sous la direction de Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-10-14",
-      "dateLongue": "mercredi 14 octobre 2026",
-      "titreEditorial": "Les agents IA reçoivent un portefeuille et un badge",
+      "date": "2026-11-02",
+      "dateLongue": "lundi 2 novembre 2026",
+      "titreEditorial": "ChatGPT atteint un milliard d'utilisateurs par semaine",
       "nbItems": 13
     },
     "suivante": null,
-    "nbItems": 13,
-    "nbSources": 16,
-    "nbSignes": 8594,
+    "nbItems": 14,
+    "nbSources": 18,
+    "nbSignes": 8581,
     "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe et France",
-        "nb": 3
+        "nb": 4
       },
       {
         "cle": "international",
         "libelle": "International",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "chine",
@@ -907,25 +934,25 @@
       {
         "cle": "bref",
         "libelle": "En bref",
-        "nb": 2
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
-      "Frandroid",
-      "ZDNet",
-      "Clubic",
-      "Bloomberg (Howard Marks)",
-      "Bloomberg (Kioxia)",
-      "Bloomberg (bulle)",
-      "Bloomberg",
-      "South China Morning Post",
-      "arXiv",
-      "Numerama"
+      "Le Monde",
+      "TechCrunch",
+      "Nikkei Asia",
+      "Siècle Digital",
+      "Maddyness",
+      "Numerama",
+      "Next.ink",
+      "The Verge",
+      "OpenAI",
+      "MIT Technology Review"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 70,
-    "publieLe": "2026-11-02T09:20:14+01:00",
-    "publieLeAffiche": "9h20",
-    "ogImage": "/veille-data/og/2026-11-02.png"
+    "nbArticlesCollectes": 125,
+    "publieLe": "2026-11-03T05:32:53+01:00",
+    "publieLeAffiche": "5h32",
+    "ogImage": "/veille-data/og/2026-11-03.png"
   }
 }

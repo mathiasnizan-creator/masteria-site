@@ -3,12 +3,133 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-02",
-    "totalEditions": 57,
-    "totalItems": 766,
-    "totalSources": 1124
+    "derniereDate": "2026-11-03",
+    "totalEditions": 58,
+    "totalItems": 780,
+    "totalSources": 1142
   },
   "editions": [
+    {
+      "date": "2026-11-03",
+      "dateCourte": "mar. 3 nov.",
+      "dateAffichee": "3 novembre 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
+      "chapeau": "Anthropic prépare son entrée en Bourse en détaillant des risques « catastrophiques ou existentiels » et se dit proche d'une IA qui s'améliore seule, pendant que cinq organisations d'éditeurs français attaquent l'IA de Google et que le New York Times poursuit le navigateur Brave. Le gouverneur de la Banque de France alerte sur une bulle, OpenAI promet de protéger le réseau électrique autour de ses centres de calcul et le japonais Aisin présente une puce d'IA qui divise par cinquante sa consommation d'énergie.",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 3
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "TechCrunch",
+        "Nikkei Asia",
+        "Siècle Digital",
+        "Maddyness",
+        "Numerama",
+        "Next.ink",
+        "The Verge",
+        "OpenAI",
+        "MIT Technology Review",
+        "The Diplomat",
+        "arXiv",
+        "01net"
+      ],
+      "items": [
+        {
+          "t": "Anthropic prépare son entrée en Bourse en listant ses propres dangers",
+          "z": "une",
+          "id": "anthropic-prepare-son-entree-en-bourse-en-listant-ses"
+        },
+        {
+          "t": "Cinq organisations d'éditeurs français portent plainte contre Google",
+          "z": "europe",
+          "id": "cinq-organisations-d-editeurs-francais-portent-plainte"
+        },
+        {
+          "t": "Le gouverneur de la Banque de France alerte sur une bulle de l'IA",
+          "z": "europe",
+          "id": "le-gouverneur-de-la-banque-de-france-alerte-sur-une-bulle"
+        },
+        {
+          "t": "PostgreSQL croule sous les bugs que l'IA lui trouve",
+          "z": "europe",
+          "id": "postgresql-croule-sous-les-bugs-que-l-ia-lui-trouve"
+        },
+        {
+          "t": "Stack Overflow assume un virage vers les entreprises et les agents",
+          "z": "europe",
+          "id": "stack-overflow-assume-un-virage-vers-les-entreprises-et-les"
+        },
+        {
+          "t": "Le New York Times et d'autres titres poursuivent le navigateur Brave",
+          "z": "international",
+          "id": "le-new-york-times-et-d-autres-titres-poursuivent-le"
+        },
+        {
+          "t": "OpenAI promet de protéger le réseau électrique autour de ses centres de calcul",
+          "z": "international",
+          "id": "openai-promet-de-proteger-le-reseau-electrique-autour-de"
+        },
+        {
+          "t": "Le « web agentique » prend forme",
+          "z": "international",
+          "id": "le-web-agentique-prend-forme"
+        },
+        {
+          "t": "Le japonais Aisin présente une puce d'IA bien plus sobre",
+          "z": "chine",
+          "id": "le-japonais-aisin-presente-une-puce-d-ia-bien-plus-sobre"
+        },
+        {
+          "t": "Les centres de calcul chinois partent à l'ouest, leurs recettes fiscales restent à l'est",
+          "z": "chine",
+          "id": "les-centres-de-calcul-chinois-partent-a-l-ouest-leurs"
+        },
+        {
+          "t": "Élaguer des têtes d'attention réduit la mémorisation mot à mot",
+          "z": "recherche",
+          "id": "elaguer-des-tetes-d-attention-reduit-la-memorisation-mot-a"
+        },
+        {
+          "t": "OpenAI fusionne les quotas de ChatGPT et de Codex",
+          "z": "bref",
+          "id": "openai-fusionne-les-quotas-de-chatgpt-et-de-codex"
+        },
+        {
+          "t": "Le prix de la DRAM double en 2026 sous la pression de l'IA",
+          "z": "bref",
+          "id": "le-prix-de-la-dram-double-en-2026-sous-la-pression-de-l-ia"
+        },
+        {
+          "t": "Chez Xbox, l'IA serait déjà banalisée en silence",
+          "z": "bref",
+          "id": "chez-xbox-l-ia-serait-deja-banalisee-en-silence"
+        }
+      ]
+    },
     {
       "date": "2026-11-02",
       "dateCourte": "lun. 2 nov.",

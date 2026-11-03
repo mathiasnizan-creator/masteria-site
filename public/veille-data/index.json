@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-02",
-    "totalEditions": 57,
-    "totalItems": 766,
-    "totalSources": 1124
+    "derniereDate": "2026-11-03",
+    "totalEditions": 58,
+    "totalItems": 780,
+    "totalSources": 1142
   },
   "editions": [
+    {
+      "date": "2026-11-03",
+      "dateAffichee": "3 novembre 2026",
+      "dateCourte": "mar. 3 nov.",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
+      "nbItems": 14,
+      "nbSources": 18,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-02",
       "dateAffichee": "2 novembre 2026",

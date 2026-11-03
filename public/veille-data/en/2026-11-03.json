@@ -1,0 +1,306 @@
+{
+  "schema": 2,
+  "date": "2026-11-03",
+  "dateAffichee": "3 November 2026",
+  "dateLongue": "Tuesday 3 November 2026",
+  "dateCourte": "Tue 3 Nov",
+  "jourSemaine": "Tuesday",
+  "titre": "AI Watch - Tuesday 3 November 2026",
+  "titreEditorial": "Anthropic files to go public with its existential risks",
+  "chapeau": "Anthropic is preparing its stock market debut by detailing 'catastrophic or existential' risks and says it is close to an AI that improves itself, while five French publisher organisations take Google's AI to court and the New York Times sues the Brave browser. The governor of the Banque de France warns of a bubble, OpenAI promises to protect the power grid around its compute centres, and Japan's Aisin unveils an AI chip that cuts its energy use fiftyfold.",
+  "une": {
+    "titre": "Anthropic files to go public and lists its own dangers",
+    "texteHtml": "<p>In the filing for its initial public offering, Anthropic details the \"catastrophic or existential\" risks its business would pose to humanity, Le Monde reports; columnist Stéphane Lauer notes that in this document the prospect of profit outweighs the dangers described. On the same Monday 2 November, the company warns that it is approaching the capability known as RSI, the point at which an AI becomes skilled enough to train itself and accelerate its own progress, according to TechCrunch. Anthropic is also said to be seeking to raise up to $3.5 billion from Japanese investors as part of the operation, per Nikkei Asia. A company is raising capital while describing in black and white a risk to the human species: the markets are invited to fund that contradiction.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/idees/article/2026/11/02/anthropic-en-bourse-l-apocalypse-est-elle-un-risque-d-investissement-comme-un-autre_6805221_3232.html"
+      },
+      {
+        "nom": "TechCrunch",
+        "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/"
+      },
+      {
+        "nom": "Nikkei Asia",
+        "url": "https://asia.nikkei.com/business/markets/ipo/anthropic-seeks-to-raise-up-to-3.5bn-from-japanese-investors-in-ipo"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "anthropic-files-to-go-public-and-lists-its-own-dangers"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Five French publisher organisations file a complaint against Google",
+          "texteHtml": "<p>The CPA, the FNPS, the GESTE, the SEPM and the SPIIL (French press publisher associations) have petitioned the European Commission over Google's AI features, AI Overviews and AI Mode (the AI-written answers shown at the top of search results), rolled out in France since July, Siècle Digital reports. These automatic summaries answer in the user's place and divert the traffic that sites drew from the search engine. The publishers see them as a direct threat to the funding of their newsrooms.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/11/02/cinq-organisations-francaises-dediteurs-de-presse-portent-plainte-contre-google-pour-son-ia/"
+            }
+          ],
+          "rang": 2,
+          "id": "five-french-publisher-organisations-file-a-complaint"
+        },
+        {
+          "titre": "The governor of the Banque de France warns of an AI bubble",
+          "texteHtml": "<p>The governor of the Banque de France (France's central bank) warns against the risk of a financial bubble fuelled by AI investment, Maddyness reports. The warning echoes the doubts voiced the day before on Wall Street and places the French monetary institution among the cautious voices.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/11/02/bulle-sur-lia-le-gouverneur-de-la-banque-de-france-tire-la-sonnette-dalarme/"
+            }
+          ],
+          "rang": 3,
+          "id": "the-governor-of-the-banque-de-france-warns-of-an-ai-bubble"
+        },
+        {
+          "titre": "PostgreSQL is buckling under the bugs AI finds for it",
+          "texteHtml": "<p>The release of PostgreSQL 19, one of the most widely used open source databases, has been pushed back to 19 November 2026, Numerama reports. In a 30 October post, developer Robert Haas blames the delay on the flood of bugs surfaced through AI and worries: \"How are we going to catch up?\" When AI reveals more defects than teams can fix, the bottleneck shifts to the human time available.</p>",
+          "sources": [
+            {
+              "nom": "Numerama",
+              "url": "https://www.numerama.com/tech/2365629-comment-allons-nous-rattraper-notre-retard-lia-trouve-tant-de-bugs-que-postgresql-sinquiete-de-sa-capacite-a-innover.html"
+            }
+          ],
+          "rang": 4,
+          "id": "postgresql-is-buckling-under-the-bugs-ai-finds-for-it"
+        },
+        {
+          "titre": "Stack Overflow embraces a turn toward enterprises and agents",
+          "texteHtml": "<p>Fewer than 1,000 questions were posted on Stack Overflow in October, a collapse in community activity that the platform no longer denies, Next.ink reports. The developer question-and-answer site is repositioning itself as a knowledge base for enterprises and AI agents. Code assistants have drained the very source that fed them.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/265086/stack-overflow-assume-son-positionnement-b2b-pour-agents-ia-et-entreprise/"
+            }
+          ],
+          "rang": 5,
+          "id": "stack-overflow-embraces-a-turn-toward-enterprises-and-agents"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The New York Times and other outlets sue the Brave browser",
+          "texteHtml": "<p>The New York Times, the Chicago Tribune and the New York Daily News, among others, have sued the publisher of the Brave browser, which they accuse of unlawfully scraping their content to train AI and of bypassing their paid subscriptions, TechCrunch and The Verge report, citing Reuters. According to the complaint, Brave resells data gathered from these sites to clients such as Anthropic and Perplexity. The publishers are seeking damages and an end to the practice. The case widens the legal front opened against the companies that harvest the web to feed models. After the complaints aimed at the labs themselves, rights holders are now going after the suppliers of the raw data.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/"
+            },
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times"
+            }
+          ],
+          "rang": 6,
+          "id": "the-new-york-times-and-other-outlets-sue-the-brave-browser"
+        },
+        {
+          "titre": "OpenAI promises to protect the power grid around its compute centres",
+          "texteHtml": "<p>OpenAI is launching a \"Grid Protectors Program\" and will pilot it at a future data centre in Effingham County, Georgia, The Verge reports. The company commits to freeing up to 1,000 megawatts during extreme weather or emergencies, enough to cool roughly 700,000 homes. The pledge answers growing opposition from residents, who fear these facilities will push up their electricity bills. In doing so, OpenAI admits that its compute centres weigh on the grid heavily enough to warrant a promise to relieve it.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program"
+            },
+            {
+              "nom": "OpenAI",
+              "url": "https://openai.com/index/grid-protectors-program"
+            }
+          ],
+          "rang": 7,
+          "id": "openai-promises-to-protect-the-power-grid-around-its"
+        },
+        {
+          "titre": "The \"agentic web\" is taking shape",
+          "texteHtml": "<p>In 2001, ten years after inventing the Web, Tim Berners-Lee described a \"semantic web\" traversed by autonomous software acting on our behalf, the MIT Technology Review recalls. The magazine reckons that vision is becoming reality: AI agents are starting to browse, book, buy and fill in forms in users' place. The shift forces sites to be readable by machines as much as by humans, and raises the question of the identity under which these agents act. For a business, the issue becomes whether its site, catalogue or service stays accessible when it is no longer a human doing the clicking.</p>",
+          "sources": [
+            {
+              "nom": "MIT Technology Review",
+              "url": "https://www.technologyreview.com/2026/11/02/1147846/the-agentic-web-is-here/"
+            }
+          ],
+          "rang": 8,
+          "id": "the-agentic-web-is-taking-shape"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Japan's Aisin unveils a far more frugal AI chip",
+          "texteHtml": "<p>Japanese automotive supplier Aisin has developed a new type of AI chip that it says cuts energy use by 98%, Nikkei Asia reports, roughly fifty times less than current components. As AI demand sends the electricity bill of compute centres soaring, such frugality would first target embedded processing, as close as possible to the sensors. The detail of the performance and the production timeline remain to be specified.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/tech/semiconductors/japan-s-aisin-develops-new-type-of-ai-chip-that-cuts-energy-use-98"
+            }
+          ],
+          "rang": 9,
+          "id": "japan-s-aisin-unveils-a-far-more-frugal-ai-chip"
+        },
+        {
+          "titre": "China's compute centres head west, their tax revenue stays east",
+          "texteHtml": "<p>Beijing is pushing its AI data centres toward regions such as Ulanqab, in Inner Mongolia, to take advantage of cheap energy and land, The Diplomat explains. The tax revenue and added value, meanwhile, keep flowing back to the headquarters based in the east of the country. The cities that host the machines reap the power consumption and the nuisance, rarely the development promised. The same imbalance awaits any local authority that bets on a compute centre to take off.</p>",
+          "sources": [
+            {
+              "nom": "The Diplomat",
+              "url": "https://thediplomat.com/2026/11/chinas-ai-data-centers-move-west-but-their-tax-revenue-stays-east/"
+            }
+          ],
+          "rang": 10,
+          "id": "china-s-compute-centres-head-west-their-tax-revenue-stays"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Pruning attention heads reduces verbatim memorisation",
+          "texteHtml": "<p>A paper posted on arXiv shows that removing certain redundant \"attention heads\" from a language model (the sub-modules that weigh the links between words) lowers its tendency to reproduce passages of its training data word for word, without degrading its performance too much. The result links a technical question to a pressing legal one: the literal reproduction of protected texts feeds copyright infringement claims. Reducing this memorisation at the design stage could defuse part of the litigation.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2610.40974"
+            }
+          ],
+          "rang": 11,
+          "id": "pruning-attention-heads-reduces-verbatim-memorisation"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "OpenAI merges the usage quotas of ChatGPT and Codex",
+          "texteHtml": "<p>ChatGPT and the Codex coding tool will now draw on the same usage allowance for subscribers, after weeks of restrictions tied to sustained demand, Siècle Digital reports.</p>",
+          "sources": [
+            {
+              "nom": "Siècle Digital",
+              "url": "https://siecledigital.fr/2026/11/02/openai-rapproche-chatgpt-et-codex-en-unifiant-leurs-quotas-dutilisation/"
+            }
+          ],
+          "rang": 12,
+          "id": "openai-merges-the-usage-quotas-of-chatgpt-and-codex"
+        },
+        {
+          "titre": "The price of DRAM doubles in 2026 under pressure from AI",
+          "texteHtml": "<p>The priority given to memory for compute centres is doubling the price of DRAM this year and squeezing PC makers, Nikkei Asia reports.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/business/tech/semiconductors/dram-prices-double-in-2026-as-ai-focus-squeezes-pc-makers"
+            }
+          ],
+          "rang": 13,
+          "id": "the-price-of-dram-doubles-in-2026-under-pressure-from-ai"
+        },
+        {
+          "titre": "At Xbox, AI is reportedly already routine, quietly",
+          "texteHtml": "<p>A Microsoft Gaming strategist claims that AI is in everyday use at Xbox and that hundreds of colleagues keep quiet about it; his X account vanished within twenty-four hours, his words did not, 01net reports.</p>",
+          "sources": [
+            {
+              "nom": "01net",
+              "url": "https://www.01net.com/actualites/si-je-suis-vire-demain-un-responsable-xbox-vend-la-meche-sur-lia.html"
+            }
+          ],
+          "rang": 14,
+          "id": "at-xbox-ai-is-reportedly-already-routine-quietly"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Publishers sue Google and Brave, closing the search traffic that funded the open web",
+    "these": "With voluntary signals ignored, publishers are taking Google and Brave to court; AI answers capture the click, and any organisation that lives on search traffic must build direct channels.",
+    "html": "<p>Five French publisher organisations filed a complaint on Monday against Google's AI before the European Commission. The same day, the New York Times and several American dailies sued the Brave browser, accused of scraping their articles and reselling that data to AI companies. Two lawsuits, two continents, one target: the way AI uses the web without paying for it.</p>\n<p>We see the bargain that funded the open web for twenty years coming apart. The bargain was simple: a publisher published, Google indexed, the user clicked, advertising and subscriptions followed. AI-written answers, displayed at the top of results, break that circuit by answering in the user's place, so the user no longer clicks. The day before, the same big players proposed a signal in the robots.txt file to refuse training; non-binding, it convinced no one. The courts were what remained.</p>\n<p>For a French organisation, the signal goes beyond the press. Any activity that lives on search traffic, a media outlet, an online store, a software vendor that draws visitors with its content, will see that traffic shrink as AI answers capture the click. The way out lies in channels the search engine does not control: a subscriber list, a loyal audience, a community, a brand people seek out by name. The organisations that build this direct relationship today will keep an audience when the search tap is turned off.</p>\n<p>The front is technical too. Researchers show this week that a model's tendency to spit out its training data word for word can be reduced by pruning certain parts of the network. The battle over content is being fought at once before the judges and in the architecture of the models.</p>\n<p>The open web was built on an exchange: visibility for content. AI takes the content and keeps the visibility. The asset that will matter in six months is the direct relationship you have built with your audience, for the day the search engine stops sending it your way.</p>\n<p>The Masteria editorial team.</p>",
+    "htmlExtrait": "<p>Five French publisher organisations filed a complaint on Monday against Google's AI before the European Commission. The same day, the New York Times and several American dailies sued the Brave browser, accused of scraping their articles and reselling that data to AI companies. Two lawsuits, two continents, one target: the way AI uses the web without paying for it.</p>\n<p>We see the bargain that funded the open web for twenty years coming apart. The bargain was simple: a publisher published, Google indexed, the user clicked, advertising and subscriptions followed. AI-written answers, displayed at the top of results, break that circuit by answering in the user's place, so the user no longer clicks. The day before, the same big players proposed a signal in the robots.txt file to refuse training; non-binding, it convinced no one. The courts were what remained.</p>",
+    "itemsCites": [
+      2,
+      6,
+      11
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-11-02",
+    "dateLongue": "Monday 2 November 2026",
+    "titreEditorial": "ChatGPT reaches a billion weekly users",
+    "nbItems": 13
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 18,
+  "nbSignes": 7918,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 4
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 3
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "TechCrunch",
+    "Nikkei Asia",
+    "Siècle Digital",
+    "Maddyness",
+    "Numerama",
+    "Next.ink",
+    "The Verge",
+    "OpenAI",
+    "MIT Technology Review"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 125,
+  "publieLe": "2026-11-03T05:34:20+01:00",
+  "publieLeAffiche": "5h34"
+}
