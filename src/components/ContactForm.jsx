@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Compass, Zap, Rocket, Target, Lightbulb, GraduationCap, SlidersHorizontal,
@@ -23,6 +23,9 @@ export default function ContactForm({
 }) {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  // Heure d'ouverture : un envoi en moins de 3 s vient d'un robot (rafales du 04/11/2026).
+  const startedAt = useRef(0);
+  useEffect(() => { startedAt.current = performance.now(); }, []);
   // Onglet contrôlé par la page (Contact lit ?type=projet) ou interne
   const [typeLocal, setTypeLocal] = useState('formation'); // 'formation' | 'projet'
   const demandeType = demandeTypeProp ?? typeLocal;
@@ -76,9 +79,14 @@ export default function ContactForm({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = new FormData(e.target);
+    // Robot (champ piège rempli ou envoi instantané) : on affiche le succès sans rien envoyer.
+    if (data.get('_gotcha') || e.timeStamp - startedAt.current < 3000) {
+      setSent(true);
+      return;
+    }
     setLoading(true);
     try {
-      const data = new FormData(e.target);
       if (source) data.set('source', source);
       // Type de demande (onglet actif) en champ caché transmis à Formspree
       data.set('type_demande', demandeType === 'projet' ? 'Conseil & projet sur mesure' : 'Formation');
@@ -161,6 +169,8 @@ export default function ContactForm({
       </div>
     ) : (
       <form onSubmit={handleSubmit}>
+        {/* Champ piège reconnu par Formspree : les envois qui le remplissent sont rejetés */}
+        <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
         <div style={{ marginBottom: 20 }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: '#0A0A0A', marginBottom: 6, letterSpacing: '-0.01em' }}>
             Demande de devis personnalisé
@@ -220,31 +230,31 @@ export default function ContactForm({
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
           <div style={grp}>
             <label style={lbl}>Prénom *</label>
-            <input name="prenom" style={inp} placeholder="Sophie" required onFocus={focus} onBlur={blur} />
+            <input name="prenom" maxLength={80} style={inp} placeholder="Sophie" required onFocus={focus} onBlur={blur} />
           </div>
           <div style={grp}>
             <label style={lbl}>Nom *</label>
-            <input name="nom" style={inp} placeholder="Martin" required onFocus={focus} onBlur={blur} />
+            <input name="nom" maxLength={80} style={inp} placeholder="Martin" required onFocus={focus} onBlur={blur} />
           </div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
           <div style={grp}>
             <label style={lbl}>Email professionnel *</label>
-            <input name="email" type="email" style={inp} placeholder="contact@entreprise.fr" required onFocus={focus} onBlur={blur} />
+            <input name="email" maxLength={200} type="email" style={inp} placeholder="contact@entreprise.fr" required onFocus={focus} onBlur={blur} />
           </div>
           <div style={grp}>
             <label style={lbl}>Téléphone</label>
-            <input name="telephone" type="tel" style={inp} placeholder="+33 6 12 34 56 78" onFocus={focus} onBlur={blur} />
+            <input name="telephone" maxLength={40} type="tel" style={inp} placeholder="+33 6 12 34 56 78" onFocus={focus} onBlur={blur} />
           </div>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 14 }}>
           <div style={grp}>
             <label style={lbl}>Entreprise *</label>
-            <input name="entreprise" style={inp} placeholder="Nom de votre entreprise" required onFocus={focus} onBlur={blur} />
+            <input name="entreprise" maxLength={150} style={inp} placeholder="Nom de votre entreprise" required onFocus={focus} onBlur={blur} />
           </div>
           <div style={grp}>
             <label style={lbl}>Votre fonction</label>
-            <input name="fonction" style={inp} placeholder="Ex : DRH, Directeur Marketing…" onFocus={focus} onBlur={blur} />
+            <input name="fonction" maxLength={120} style={inp} placeholder="Ex : DRH, Directeur Marketing…" onFocus={focus} onBlur={blur} />
           </div>
         </div>
 
@@ -544,7 +554,7 @@ export default function ContactForm({
 
         <div style={grp}>
           <label style={lbl}>Message <span style={{ fontWeight: 400, color: '#6B7280' }}>(optionnel)</span></label>
-          <textarea name="message" style={{ ...inp, resize: 'vertical' }} rows={4} placeholder="Décrivez votre contexte : outils déjà utilisés, objectifs, enjeux métiers spécifiques…" onFocus={focus} onBlur={blur} />
+          <textarea name="message" maxLength={5000} style={{ ...inp, resize: 'vertical' }} rows={4} placeholder="Décrivez votre contexte : outils déjà utilisés, objectifs, enjeux métiers spécifiques…" onFocus={focus} onBlur={blur} />
         </div>
 
         <div style={grp}>
