@@ -1,5 +1,15 @@
 [
   {
+    "slug": "shadow-ia-encadrer-usages-caches",
+    "title": "Shadow IA : repérer et encadrer les usages cachés de l'IA en entreprise",
+    "tag": "Guide pratique",
+    "date": "4 novembre 2026",
+    "datePublished": "2026-11-04",
+    "dateModified": "2026-11-04",
+    "readTime": "24 min",
+    "excerpt": "Comptes ChatGPT personnels, extensions, fonctions d'IA activées sans validation : le shadow IA fait sortir des documents de l'entreprise vers des services que personne n'a examinés. Ce guide chiffre le phénomène à partir d'études publiques, détaille les risques texte par texte, décrit un repérage respectueux des salariés et un plan pour ramener ces usages dans un cadre."
+  },
+  {
     "slug": "claude-skills-definition-mode-emploi",
     "title": "Claude Skills : définition et mode d'emploi",
     "tag": "Guide pratique",

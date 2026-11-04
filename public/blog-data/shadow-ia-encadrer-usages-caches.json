@@ -1,0 +1,882 @@
+{
+  "slug": "shadow-ia-encadrer-usages-caches",
+  "title": "Shadow IA : repérer et encadrer les usages cachés de l'IA en entreprise",
+  "metaTitle": "Shadow IA : repérer et encadrer les usages cachés | Masteria",
+  "metaDesc": "Shadow IA en entreprise : chiffres sourcés, risques (RGPD, secret des affaires, AI Act), repérage sans surveillance excessive et plan d'encadrement.",
+  "tag": "Guide pratique",
+  "date": "4 novembre 2026",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "readTime": "24 min",
+  "formations": [
+    [
+      "Formation sécurité IA",
+      "/formation-ia-securite"
+    ],
+    [
+      "Formation gouvernance IA",
+      "/formation-gouvernance-ia"
+    ],
+    [
+      "Formation AI Act",
+      "/formation-ai-act"
+    ]
+  ],
+  "keywords": [
+    "shadow ia",
+    "shadow ai",
+    "ia non autorisée entreprise",
+    "usage caché chatgpt salariés",
+    "shadow it",
+    "comptes personnels ia",
+    "byoai",
+    "article 4 ai act"
+  ],
+  "excerpt": "Comptes ChatGPT personnels, extensions, fonctions d'IA activées sans validation : le shadow IA fait sortir des documents de l'entreprise vers des services que personne n'a examinés. Ce guide chiffre le phénomène à partir d'études publiques, détaille les risques texte par texte, décrit un repérage respectueux des salariés et un plan pour ramener ces usages dans un cadre.",
+  "intro": "Le shadow IA, ou shadow AI en anglais, désigne l'usage au travail d'outils d'intelligence artificielle que l'entreprise n'a ni choisis ni encadrés : un compte ChatGPT personnel, une extension de navigateur qui résume les pages, une fonction d'IA activée dans un logiciel sans que personne l'ait validée. On le repère par une enquête anonyme et par les traces que l'informatique possède déjà ; on l'encadre en fournissant un outil d'entreprise au moins aussi utile, une règle courte sur les données, une formation et un circuit de validation qui répond vite. Ce guide s'adresse aux dirigeants, aux DSI, aux DPO et aux responsables RH. Il chiffre le phénomène à partir d'études publiques, détaille les risques texte par texte (RGPD, secret des affaires, propriété intellectuelle, AI Act) et propose un plan d'encadrement qui laisse l'informatique dans son rôle d'appui, sans en faire une police des écrans.",
+  "blocks": [
+    {
+      "type": "callout",
+      "title": "En bref",
+      "italic": false,
+      "text": "<strong>Définition :</strong> le shadow IA regroupe les usages d'IA au travail que l'entreprise n'a ni fournis ni autorisés, qu'il s'agisse de comptes personnels, d'applications mobiles, d'extensions ou de fonctions activées sans examen. <strong>Ampleur :</strong> 78 % des utilisateurs d'IA au travail apportaient leurs propres outils en 2024 selon Microsoft et LinkedIn, et en France un tiers seulement des salariés interrogés par Ipsos en mai 2025 disent s'en tenir toujours aux outils homologués par leur employeur. <strong>Risques :</strong> des données personnelles traitées hors contrat, un secret des affaires fragilisé, du code ou des documents de clients confiés à des tiers, et des usages qui échappent aux mesures de l'article 4 de l'AI Act. <strong>Repérage :</strong> une enquête anonyme d'abord, puis les journaux réseau lus par domaine, les applications connectées aux comptes de l'entreprise et, si besoin, des outils de sécurité dédiés, chaque dispositif annoncé aux salariés avant sa mise en place. <strong>Encadrement :</strong> un assistant d'entreprise qui exclut vos données de l'entraînement des modèles, un tri des données en trois niveaux, une charte courte, une formation tracée et un guichet qui répond en quelques jours. <strong>Posture :</strong> une interdiction sans outil de remplacement laisse le besoin intact et le pousse vers les téléphones personnels, là où l'entreprise perd toute visibilité."
+    },
+    {
+      "type": "h2",
+      "text": "Qu'est-ce que le shadow IA ?"
+    },
+    {
+      "type": "p",
+      "text": "Le shadow IA est la part de l'usage de l'intelligence artificielle qui échappe à l'entreprise. Le terme dérive du shadow IT, l'informatique de l'ombre (les logiciels installés ou souscrits sans l'accord de la DSI), dont il reprend la logique : un salarié règle seul un problème de travail avec un outil que personne n'a examiné. On croise aussi l'anglais shadow AI et l'acronyme BYOAI, pour bring your own AI (apporter sa propre IA), qu'emploient Microsoft et LinkedIn dans leur enquête de 2024. Six formes reviennent dans les inventaires :"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Le compte personnel</strong>, gratuit ou payé de sa poche, sur ChatGPT, Claude, Gemini, Vibe (anciennement Le Chat) ou un autre assistant, ouvert avec une adresse privée.",
+        "<strong>L'application mobile</strong>, assistant ou outil de transcription, qui enregistre une réunion ou photographie un document papier.",
+        "<strong>L'extension de navigateur</strong>, qui résume, traduit ou réécrit ce qui s'affiche dans l'onglet, et lit donc aussi l'écran du CRM ou du logiciel de paie.",
+        "<strong>La fonction d'IA d'un logiciel déjà acheté</strong>, comme le compte rendu automatique d'un outil de visioconférence, mise en service par un administrateur métier sans autre examen.",
+        "<strong>Le connecteur</strong>, service tiers autorisé d'un clic à lire la messagerie, l'agenda ou le Drive d'un salarié par un consentement OAuth (le protocole qui accorde ces accès sans transmettre le mot de passe).",
+        "<strong>L'appel direct à un modèle</strong> par un développeur ou un analyste, via l'API d'un éditeur (l'interface que les programmes utilisent pour dialoguer avec le modèle) et une clé personnelle."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces six formes ont un point commun : un contenu de l'entreprise part vers un service dont elle ignore le contrat, les réglages et la durée de conservation."
+    },
+    {
+      "type": "h3",
+      "text": "Shadow IA et shadow IT : ce que l'IA ajoute"
+    },
+    {
+      "type": "p",
+      "text": "Le shadow IT classique pose une question de stockage et d'accès : où se trouvent les fichiers, et qui peut les ouvrir. Avec l'IA, le contenu devient la matière première de l'outil. Le salarié qui colle un contrat dans un assistant lui confie le texte pour qu'il le lise et le transforme ; selon l'offre souscrite, l'éditeur le conserve, voire s'en sert pour améliorer son modèle."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Critère",
+        "Shadow IT",
+        "Shadow IA"
+      ],
+      "rows": [
+        [
+          "Ce qui sort de l'entreprise",
+          "Des fichiers déposés sur un service non validé",
+          "Le contenu des documents, collé ou téléversé pour être lu et transformé"
+        ],
+        [
+          "Effort pour le salarié",
+          "Une installation, souvent un abonnement",
+          "Une page web et une adresse mail, le temps d'une inscription"
+        ],
+        [
+          "Ce qui revient dans le travail",
+          "Les mêmes fichiers",
+          "Des textes, des chiffres et du code produits par un modèle, avec ses erreurs possibles"
+        ],
+        [
+          "Ce qui peut agir sans le salarié",
+          "Rarement quoi que ce soit",
+          "Un agent ou un connecteur qui envoie, classe ou modifie à sa place"
+        ],
+        [
+          "Ce qu'en dit l'AI Act",
+          "Rien, le règlement vise les systèmes d'IA",
+          "L'article 4 vise toute personne qui utilise l'IA pour le compte de l'entreprise"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Combien de salariés utilisent l'IA sans le dire ?"
+    },
+    {
+      "type": "p",
+      "text": "Les enquêtes publiques convergent : une large part de l'IA utilisée au travail passe par des outils que l'employeur n'a pas fournis, et une part notable de ces usages reste tue. Quatre études nommées, menées entre 2024 et 2025, situent l'ordre de grandeur."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Étude et date",
+        "Terrain",
+        "Ce qu'elle établit"
+      ],
+      "rows": [
+        [
+          "<a href='https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/' target='_blank' rel='noopener'>Microsoft et LinkedIn, Work Trend Index, 8 mai 2024</a>",
+          "31 000 personnes dans 31 pays",
+          "75 % des travailleurs du savoir utilisent l'IA au travail ; 78 % de ces utilisateurs apportent leurs propres outils"
+        ],
+        [
+          "KPMG et Université de Melbourne, avril 2025",
+          "Plus de 48 000 personnes dans 47 pays, interrogées de novembre 2024 à janvier 2025",
+          "57 % des salariés disent cacher leur usage de l'IA et présenter comme le leur un travail produit par elle ; 40 % disent que leur employeur a fixé une règle ou des consignes sur l'IA générative"
+        ],
+        [
+          "<a href='https://www.ipsos.com/fr-fr/ia-generative-au-bureau-entre-enthousiasme-usages-fantomes-et-crainte-du-remplacement' target='_blank' rel='noopener'>Ipsos pour greenworking, 19 juin 2025</a>",
+          "1 000 salariés du privé en France, hors ouvriers, interrogés du 5 au 16 mai 2025",
+          "Deux salariés sur trois utilisent l'IA générative ; 36 % disent que leur entreprise l'a déployée officiellement ; 32 % utilisent systématiquement des outils homologués ; 55 % disent en informer leur manager"
+        ],
+        [
+          "<a href='https://newsroom.ibm.com/2025-07-30-ibm-report-13-of-organizations-reported-breaches-of-ai-models-or-applications,-97-of-which-reported-lacking-proper-ai-access-controls' target='_blank' rel='noopener'>IBM et Ponemon Institute, Cost of a Data Breach, 30 juillet 2025</a>",
+          "600 organisations touchées par une violation de données entre mars 2024 et février 2025",
+          "Une organisation sur cinq a subi une violation due au shadow IA ; 37 % disposent de règles pour gérer l'IA ou détecter le shadow IA"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le chiffre français parle le plus. Ipsos ne précise pas la base des 32 % ; rapportés aux deux tiers de salariés qui se servent de l'IA générative, ils laissent dans tous les cas au moins la moitié des utilisateurs hors des outils homologués une partie du temps. Quant au manager, 55 % seulement disent l'en informer."
+    },
+    {
+      "type": "p",
+      "text": "IBM traduit ces usages en coût. Les organisations où le shadow IA est répandu ont payé leurs violations de données 670 000 dollars de plus, en moyenne, que celles où il reste faible ou absent. Rapporté au coût moyen mondial d'une violation dans la même étude, 4,44 millions de dollars, le surcoût avoisine 15 %. Les incidents liés au shadow IA y exposent aussi plus souvent des données personnelles (65 % des cas, contre 53 % en moyenne) et de la propriété intellectuelle (40 %, contre 33 %)."
+    },
+    {
+      "type": "p",
+      "text": "Ces enquêtes reposent sur des déclarations, dans des pays et des populations différents : leurs pourcentages ne s'additionnent pas. Elles décrivent une tendance. Pour votre entreprise, le seul chiffre qui compte sortira de votre propre inventaire."
+    },
+    {
+      "type": "h2",
+      "text": "Pourquoi les salariés passent-ils par des IA non autorisées ?"
+    },
+    {
+      "type": "p",
+      "text": "Un usage caché répond presque toujours à un besoin que l'organisation n'a pas servi. Le salarié qui ouvre un compte personnel a une tâche à finir, et un outil gratuit à portée de clic."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "<strong>Aucun outil fourni, ou un outil moins capable.</strong> Si l'assistant de l'entreprise n'existe pas, ou s'il échoue là où l'outil gratuit réussit, la comparaison se tranche en une minute.",
+        "<strong>Un circuit de validation trop lent.</strong> Une demande qui attend trois mois une réponse se règle en une soirée avec un compte privé.",
+        "<strong>La pression du volume.</strong> Un rapport à rendre le soir même pèse plus lourd qu'une consigne de sécurité lue le jour de l'embauche.",
+        "<strong>La crainte d'être jugé.</strong> Reconnaître qu'on s'aide de l'IA expose à voir son travail dévalué ; dans l'enquête KPMG, plus d'un salarié sur deux préfère taire cet usage.",
+        "<strong>Une frontière mal connue.</strong> Beaucoup ignorent qu'un compte personnel et un compte d'entreprise suivent des règles différentes pour les données saisies ; seuls 47 % des salariés de l'étude KPMG disent avoir reçu une formation à l'IA.",
+        "<strong>Une interdiction sans solution de rechange.</strong> Elle retire l'outil visible et laisse le besoin, qui se reporte sur le téléphone personnel."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Ces causes dessinent déjà la réponse. Un usage caché signale une demande qui n'a pas trouvé de guichet ; le traiter comme une faute fait disparaître l'information la plus précieuse, celle de ce dont les équipes ont besoin pour travailler."
+    },
+    {
+      "type": "h2",
+      "text": "Quels sont les risques du shadow IA pour l'entreprise ?"
+    },
+    {
+      "type": "p",
+      "text": "Le shadow IA expose l'entreprise sur six terrains, chacun régi par ses propres règles. Le tableau les résume ; les sections suivantes détaillent ceux qui engagent sa responsabilité juridique."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Risque",
+        "Ce qui se passe",
+        "Texte en jeu",
+        "Première parade"
+      ],
+      "rows": [
+        [
+          "Données personnelles",
+          "Un fichier clients ou un dossier RH part vers un service sans contrat de traitement",
+          "RGPD, articles 28 et 33",
+          "Un compte d'entreprise adossé à un contrat de sous-traitance"
+        ],
+        [
+          "Secret des affaires",
+          "Des prix, des marges ou un projet de produit sortent sans protection",
+          "Code de commerce, article L151-1",
+          "Une règle écrite sur les informations qui ne quittent jamais l'entreprise"
+        ],
+        [
+          "Propriété intellectuelle et contrats",
+          "Du code source ou le document confidentiel d'un client est confié à un tiers",
+          "Accords de confidentialité, droit d'auteur",
+          "La liste des contenus exclus de tout outil non validé"
+        ],
+        [
+          "Conformité AI Act",
+          "Des usages échappent aux mesures de maîtrise de l'IA, ou tombent dans une pratique interdite",
+          "Règlement (UE) 2024/1689, articles 4, 5 et 50",
+          "Inventaire, formation tracée, classement de chaque usage"
+        ],
+        [
+          "Sécurité",
+          "Une extension lit les écrans, un connecteur lit la messagerie, un compte survit au départ du salarié",
+          "Politique de sécurité interne, recommandations de l'ANSSI",
+          "La revue des applications connectées et des extensions"
+        ],
+        [
+          "Qualité des décisions",
+          "Une réponse inexacte entre dans un devis ou une note sans relecture",
+          "Responsabilité envers le client",
+          "Une relecture humaine avant tout envoi"
+        ]
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "Données personnelles : le RGPD s'applique dès la saisie"
+    },
+    {
+      "type": "p",
+      "text": "Coller un nom de client, un arrêt maladie ou un historique d'achats dans un assistant constitue un traitement de données personnelles. Sur un compte privé, l'entreprise n'a signé aucun contrat avec l'éditeur, alors que l'article 28 du RGPD l'impose avec tout prestataire qui traite des données pour son compte. La CNIL, dans les <a href='https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative' target='_blank' rel='noopener'>questions-réponses sur l'IA générative</a> qu'elle a publiées le 18 juillet 2024, rappelle que l'organisme utilisateur engage sa responsabilité en cas de mauvais usage par son personnel, et conseille de ne jamais partager d'informations confidentielles, données personnelles comprises, avec les services grand public."
+    },
+    {
+      "type": "p",
+      "text": "Quand la donnée est déjà partie, la CNIL parle de violation : toute perte de confidentialité de données personnelles, accidentelle ou illicite. L'entreprise documente alors l'incident en interne, quelle qu'en soit la gravité, et le <a href='https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles' target='_blank' rel='noopener'>signale à la CNIL sous 72 heures</a> s'il présente un risque pour la vie privée des personnes concernées ; le DPO apprécie ce risque au cas par cas. Notre page <a href='/ia-et-rgpd'>IA et RGPD</a> détaille les bases légales et les garanties à exiger des éditeurs."
+    },
+    {
+      "type": "h3",
+      "text": "Secret des affaires : la protection suppose des mesures"
+    },
+    {
+      "type": "p",
+      "text": "Le Code de commerce protège au titre du secret des affaires une information qui remplit trois conditions, dont la dernière pèse lourd ici : elle doit faire l'objet, de la part de son détenteur légitime, de « mesures de protection raisonnables, compte tenu des circonstances, pour en conserver le caractère secret » (<a href='https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037266553' target='_blank' rel='noopener'>article L151-1</a>). Une entreprise qui laisse ses grilles de prix ou ses projets de produits circuler dans des outils que personne n'a examinés aura plus de mal à prouver ces mesures devant un juge. Une règle écrite, un outil validé et une formation suivie forment le faisceau de preuves attendu ; votre conseil juridique en appréciera la portée dans votre situation."
+    },
+    {
+      "type": "h3",
+      "text": "Propriété intellectuelle et engagements envers les clients"
+    },
+    {
+      "type": "p",
+      "text": "Le code source, les plans, les documents qu'un client vous a remis sous accord de confidentialité ne vous appartiennent pas toujours, et vos contrats encadrent souvent leur communication à des tiers. Les verser dans un service d'IA non validé peut suffire à manquer à ces engagements. Samsung en a fait l'expérience : en avril 2023, des ingénieurs ont soumis du code source interne à ChatGPT, et le groupe a restreint l'usage des outils d'IA générative sur ses appareils et son réseau, selon une note interne <a href='https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak' target='_blank' rel='noopener'>rapportée par Bloomberg le 2 mai 2023</a>. Dans l'autre sens, un visuel produit par un outil grand public peut reprendre l'œuvre ou la marque d'un tiers, sans les garanties que certains éditeurs réservent à leurs clients professionnels, comme l'engagement sur le droit d'auteur (Customer Copyright Commitment) que Microsoft range parmi les protections de son <a href='https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection' target='_blank' rel='noopener'>offre Copilot pour les organisations</a>."
+    },
+    {
+      "type": "h3",
+      "text": "AI Act : l'article 4 vise aussi les usages invisibles"
+    },
+    {
+      "type": "p",
+      "text": "Depuis le 2 février 2025, l'article 4 du <a href='https://eur-lex.europa.eu/eli/reg/2024/1689/oj' target='_blank' rel='noopener'>règlement (UE) 2024/1689</a>, l'AI Act, oblige les déployeurs (les organisations qui utilisent un système d'IA dans leur activité professionnelle) à prendre des mesures qui favorisent la maîtrise de l'IA chez leur personnel et chez toute personne qui s'en sert pour leur compte. L'<a href='https://eur-lex.europa.eu/eli/reg/2026/1744/oj' target='_blank' rel='noopener'>Omnibus numérique</a>, en vigueur depuis le 27 juillet 2026, en a fait une obligation de moyens. Les <a href='https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers' target='_blank' rel='noopener'>questions-réponses de la Commission européenne</a>, revues le 20 octobre 2026, confirment qu'une entreprise dont les salariés rédigent avec ChatGPT est concernée, et que le contrôle de cette obligation par les autorités nationales, sanctions possibles à la clé, s'applique depuis le 2 août 2026."
+    },
+    {
+      "type": "p",
+      "text": "Le shadow IA ouvre ici un angle mort mécanique : un usage que l'entreprise ignore ne reçoit ni formation, ni consigne, ni ligne dans le registre interne des actions menées, que la Commission juge suffisant pour documenter l'article 4. Notre article sur <a href='/blog/ai-act-formation-ia-obligatoire-entreprise'>la formation à l'IA exigée par l'article 4</a> détaille ce que l'entreprise doit pouvoir montrer."
+    },
+    {
+      "type": "p",
+      "text": "Deux autres articles peuvent surgir d'un usage caché. L'<a href='https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-5' target='_blank' rel='noopener'>article 5</a> interdit depuis le 2 février 2025 de déduire les émotions des personnes sur le lieu de travail, sauf raisons médicales ou de sécurité : un outil de réunion qui lit les visages ou les voix des participants pour jauger leur humeur tombe sous cette interdiction, même activé par un seul manager. L'article 50 oblige depuis le 2 août 2026 à signaler les hypertrucages diffusés, ces images, sons ou vidéos réalistes fabriqués par IA. Le tri de candidatures confié à un assistant personnel, enfin, entre dans le recrutement, l'un des usages que l'annexe III classe à haut risque ; les obligations correspondantes s'appliqueront le 2 décembre 2027 selon le <a href='https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil' target='_blank' rel='noopener'>calendrier tenu par la CNIL</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Sécurité et qualité : les risques qu'on oublie"
+    },
+    {
+      "type": "p",
+      "text": "Une extension qui réécrit vos mails lit tout ce qui s'affiche dans l'onglet, l'écran de paie compris. Un connecteur autorisé d'un clic garde son accès à la messagerie tant que personne ne le révoque. Un compte personnel survit au départ du salarié, avec l'historique de ses conversations. Dans ses <a href='https://cyber.gouv.fr/sites/default/files/document/Recommandations_de_s%C3%A9curit%C3%A9_pour_un_syst%C3%A8me_d_IA_g%C3%A9n%C3%A9rative.pdf' target='_blank' rel='noopener'>recommandations de sécurité pour un système d'IA générative</a> datées du 29 avril 2024, l'ANSSI recommande de proscrire les outils d'IA générative accessibles sur Internet pour tout usage professionnel impliquant des données sensibles."
+    },
+    {
+      "type": "p",
+      "text": "Reste la qualité. Une réponse inventée par le modèle, ce qu'on appelle une hallucination, qui entre dans un devis sans relecture engage l'entreprise auprès de son client, et personne ne saura d'où vient l'erreur. Avec un assistant d'entreprise, le risque demeure, mais la règle de relecture peut être posée et l'erreur retrouvée. Les fichiers piégés qui glissent des ordres cachés à l'assistant, ce qu'on nomme injection de prompt, visent les outils qui lisent des documents venus de l'extérieur."
+    },
+    {
+      "type": "h2",
+      "text": "Comment repérer le shadow IA sans fliquer ses équipes ?"
+    },
+    {
+      "type": "p",
+      "text": "Le repérage du shadow IA porte sur des outils et des flux de données ; il ne cible aucun salarié et s'annonce avant de commencer. La CNIL, dans sa page du 9 juillet 2026 sur <a href='https://www.cnil.fr/fr/controle-de-lactivite-des-personnes-employees' target='_blank' rel='noopener'>le contrôle de l'activité des personnes employées</a>, pose trois conditions : tout dispositif est porté à la connaissance des salariés avant sa mise en place (article L1222-4 du Code du travail), il reste proportionné à l'objectif poursuivi, et le CSE est consulté au préalable dans les entreprises d'au moins cinquante salariés (article L2312-38). Elle juge excessive une surveillance constante. D'où un ordre de marche : partir de ce qui ne vise personne en particulier, et n'aller vers des outils plus fins que si le premier état des lieux le justifie."
+    },
+    {
+      "type": "h3",
+      "text": "Première source : l'enquête anonyme"
+    },
+    {
+      "type": "p",
+      "text": "Un questionnaire anonyme, annoncé comme sans conséquence disciplinaire, fait remonter ce qu'aucun journal informatique ne montre : les applications sur téléphone, les abonnements payés en direct, les tâches confiées à l'IA et les documents qui y passent. Restituez les réponses à l'échelle des équipes : leur sincérité dépend de la confiance que cette promesse inspire. Dix questions suffisent."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "Le mois dernier, de quels outils d'IA vous êtes-vous servi pour votre travail ?",
+        "Pour chacun, avec quel compte : fourni par l'entreprise, personnel gratuit, personnel payant ?",
+        "Sur quel appareil : poste de travail, téléphone professionnel, téléphone ou ordinateur personnel ?",
+        "Pour quelles tâches : rédiger, résumer, traduire, analyser des chiffres, coder, créer des visuels, autre ?",
+        "Quels contenus y avez-vous mis : documents publics, documents internes, données de clients, données de salariés, code ?",
+        "Avez-vous installé une extension, ou autorisé une application à lire votre messagerie, votre agenda ou vos fichiers ?",
+        "Une fonction d'IA s'est-elle activée dans un logiciel que vous utilisez, comme la visioconférence ou le CRM ?",
+        "Que vous manque-t-il dans les outils fournis par l'entreprise ?",
+        "Avez-vous renoncé à un usage de l'IA par crainte d'enfreindre une règle ?",
+        "Quel outil aimeriez-vous voir validé, et pour quel travail ?"
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Deux ou trois entretiens par service complètent le tableau là où les données sont sensibles : ressources humaines, finance, juridique, relation client."
+    },
+    {
+      "type": "h3",
+      "text": "Deuxième source : les traces que l'informatique possède déjà"
+    },
+    {
+      "type": "p",
+      "text": "Les journaux du pare-feu, du proxy ou des résolutions DNS (l'annuaire qui traduit un nom de site en adresse) indiquent quels domaines d'IA reçoivent du trafic depuis le réseau, et en quel volume. Lus par domaine et agrégés par site ou par service, ils répondent à la question utile, quels outils et dans quelles proportions, sans viser un individu. Les consoles d'administration complètent la carte : dans Google Workspace, la rubrique de contrôle des API liste les applications tierces qui ont accédé aux données de l'organisation, avec leurs autorisations et leur nombre d'utilisateurs, et l'administrateur peut approuver, limiter ou bloquer chacune d'elles (<a href='https://knowledge.workspace.google.com/admin/apps/control-which-apps-access-google-workspace-data?hl=fr' target='_blank' rel='noopener'>aide Google Workspace</a>, relevée le 1er novembre 2026). Les notes de frais révèlent enfin les abonnements réglés en direct, souvent les premiers à migrer vers une licence."
+    },
+    {
+      "type": "h3",
+      "text": "Troisième source : les outils de sécurité dédiés"
+    },
+    {
+      "type": "p",
+      "text": "Les éditeurs de sécurité ont ajouté l'IA générative à leurs CASB (courtiers de sécurité d'accès au cloud, qui analysent le trafic vers les services web). Chez Microsoft, au 1er novembre 2026, le catalogue de Defender for Cloud Apps se filtre sur une catégorie Generative AI, chaque application découverte peut être marquée autorisée ou non, et Purview détecte les informations sensibles collées ou téléversées sur des sites d'IA (<a href='https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-data-leak-shadow-ai-step1' target='_blank' rel='noopener'>guide Microsoft contre les fuites vers le shadow AI</a>) ; la <a href='https://learn.microsoft.com/en-us/entra/global-secure-access/concept-shadow-ai-discovery' target='_blank' rel='noopener'>découverte du shadow AI de Microsoft Entra</a> repère par le trafic réseau les assistants, les API de modèles et les serveurs MCP (les passerelles qui relient un assistant à d'autres logiciels). D'autres éditeurs de sécurité proposent des fonctions comparables."
+    },
+    {
+      "type": "p",
+      "text": "Ces outils n'ont pas tous le même degré d'intrusion. Savoir qu'un service d'IA reçoit du trafic depuis l'agence de Lyon relève de l'inventaire. Lire le contenu des requêtes envoyées aux assistants, ce que permettent certaines options d'inspection du trafic chiffré, revient à lire ce que les salariés écrivent : il y faut une justification écrite, l'information préalable de chacun, le CSE quand l'effectif l'impose et, si la surveillance devient constante, l'analyse d'impact que la <a href='https://www.cnil.fr/sites/default/files/atoms/files/liste-traitements-aipd-requise.pdf' target='_blank' rel='noopener'>liste de la CNIL</a> exige pour ce traitement."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Méthode",
+        "Ce qu'elle révèle",
+        "Ce qu'elle laisse dans l'ombre",
+        "Précaution"
+      ],
+      "rows": [
+        [
+          "Enquête anonyme et entretiens",
+          "Outils, comptes, tâches, besoins non couverts",
+          "Ce que les répondants préfèrent taire",
+          "Anonymat tenu, résultats rendus par équipe"
+        ],
+        [
+          "Journaux réseau lus par domaine",
+          "Services d'IA consultés depuis le réseau et leur volume",
+          "Le téléphone personnel en 4G, le télétravail hors VPN",
+          "Agrégation par site ou par service, salariés informés"
+        ],
+        [
+          "Revue des applications connectées et des extensions",
+          "Accès accordés aux messageries, agendas et fichiers",
+          "Les outils utilisés par simple copier-coller",
+          "Révocation expliquée aux utilisateurs concernés"
+        ],
+        [
+          "Notes de frais et achats",
+          "Abonnements payés en direct",
+          "Les comptes gratuits",
+          "Proposer une licence d'entreprise à la place du remboursement"
+        ],
+        [
+          "Découverte par un CASB",
+          "Liste des applications d'IA et leur score de risque",
+          "Le contenu des échanges",
+          "Information préalable, consultation du CSE dès cinquante salariés"
+        ],
+        [
+          "Prévention des pertes de données et inspection des contenus",
+          "Données sensibles envoyées vers des sites d'IA",
+          "Peu de chose, d'où son caractère intrusif",
+          "Justification écrite, proportionnalité, analyse d'impact si surveillance constante"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Comment encadrer le shadow IA, en six étapes"
+    },
+    {
+      "type": "p",
+      "text": "On encadre le shadow IA en rendant l'usage autorisé plus simple que le contournement. Chaque étape prend appui sur la précédente, d'où l'ordre proposé."
+    },
+    {
+      "type": "ol",
+      "items": [
+        "<strong>Annoncer une régularisation.</strong> La direction écrit que les usages existants seront recensés pour être encadrés, sans sanction pour ce qui a été fait de bonne foi avant la règle ; sans cette promesse, l'inventaire ne remonte que ce que chacun juge sans danger.",
+        "<strong>Fournir une alternative validée</strong>, qui couvre les tâches révélées par l'enquête, s'ouvre avec le compte professionnel et se ferme au départ du salarié.",
+        "<strong>Trier les données en trois niveaux</strong>, public, interne et confidentiel, chacun avec la liste des outils autorisés à le recevoir.",
+        "<strong>Écrire une règle courte</strong> qui nomme les outils permis, les données exclues de tout autre outil, la relecture attendue et la conduite à tenir après une erreur.",
+        "<strong>Former et garder la trace</strong> : compte personnel et compte d'entreprise, tri des données, limites des modèles ; la liste des sessions nourrit le registre de l'article 4.",
+        "<strong>Ouvrir un guichet et refaire l'inventaire</strong> : un référent répond aux demandes d'outils dans un délai annoncé, et l'enquête revient à date fixe pour mesurer le recul."
+      ]
+    },
+    {
+      "type": "h3",
+      "text": "L'alternative validée : ce que l'offre doit garantir"
+    },
+    {
+      "type": "p",
+      "text": "Un outil d'entreprise remplace le compte personnel à deux conditions : faire au moins aussi bien sur les tâches réelles, et apporter des garanties que le compte privé n'offre pas. Au 1er novembre 2026, les grands éditeurs inscrivent ces garanties dans leur documentation :"
+    },
+    {
+      "type": "ul",
+      "items": [
+        "OpenAI exclut par défaut de l'entraînement les données de ChatGPT Business, Enterprise et Edu, ainsi que celles de son API (<a href='https://help.openai.com/en/articles/8798634-managing-data-sharing-and-privacy-in-chatgpt-business' target='_blank' rel='noopener'>aide OpenAI</a>).",
+        "Anthropic n'utilise pas, par défaut, les échanges de ses offres commerciales, Claude for Work et l'API, pour entraîner ses modèles, sauf retour volontaire de l'utilisateur (<a href='https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training' target='_blank' rel='noopener'>centre de confidentialité Anthropic</a>).",
+        "Microsoft place Copilot et Copilot Chat, utilisés par une organisation, sous sa protection des données d'entreprise : prompts et réponses ne servent pas à entraîner ses modèles de fondation (<a href='https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection' target='_blank' rel='noopener'>documentation Microsoft</a>).",
+        "Google s'engage à ne pas utiliser le contenu de Google Workspace pour entraîner des modèles d'IA générative hors de votre domaine sans votre autorisation (<a href='https://knowledge.workspace.google.com/admin/gemini/generative-ai-in-google-workspace-privacy-hub?hl=fr' target='_blank' rel='noopener'>centre de confidentialité Google Workspace</a>)."
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Lisez aussi le reste du contrat : accord de traitement des données, lieu d'hébergement, durée de conservation, connexion unique par l'annuaire de l'entreprise (SSO), journaux d'activité accessibles à l'administrateur. Le choix d'un fournisseur européen ou souverain obéit à d'autres critères, qui méritent un examen à part."
+    },
+    {
+      "type": "h3",
+      "text": "Le tri des données en trois niveaux"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Niveau",
+        "Exemples",
+        "Outils qui peuvent le recevoir"
+      ],
+      "rows": [
+        [
+          "Public",
+          "Un communiqué publié, une offre d'emploi en ligne, une documentation produit diffusée",
+          "Tout outil autorisé par la charte, pour reformuler, traduire ou résumer"
+        ],
+        [
+          "Interne",
+          "Une procédure, un compte rendu de réunion, un projet de présentation",
+          "L'assistant d'entreprise, ouvert avec le compte professionnel"
+        ],
+        [
+          "Confidentiel",
+          "Données de santé, paie, dossiers disciplinaires, prix et marges, code source, documents de clients sous accord de confidentialité",
+          "Les seuls outils validés pour ce niveau, ou aucun outil d'IA"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "La règle gagne à tenir en une phrase. Une assistante de direction d'un éditeur de logiciels B2B, formée seule et à distance par Masteria en septembre 2026, en a retenu une pour ses deux outils : Copilot pour l'interne et le nominatif, Claude pour un texte public ou anonymisé, Copilot encore dès qu'un doute existe. Une consigne qu'on récite sans la relire a plus de chances d'être suivie qu'une politique de vingt pages."
+    },
+    {
+      "type": "h3",
+      "text": "La charte, la formation et le guichet"
+    },
+    {
+      "type": "p",
+      "text": "La charte fixe ces règles par écrit ; notre guide de la <a href='/charte-ia-entreprise'>charte IA d'entreprise</a> en détaille les huit rubriques. Face au shadow IA, trois clauses pèsent plus que les autres : la liste des outils autorisés, tenue en annexe ; l'interdiction de verser des données confidentielles dans tout outil absent de cette liste ; un signalement sans sanction pour qui a saisi une donnée par erreur."
+    },
+    {
+      "type": "p",
+      "text": "La formation donne aux règles leur raison d'être. Un salarié qui a comparé, sur son propre poste, les réglages d'un compte gratuit et ceux d'un compte d'entreprise n'a plus besoin qu'on lui interdise le premier. La <a href='/formation-ia-securite'>formation sécurité IA</a> de Masteria s'ouvre ainsi sur l'inventaire anonyme des usages du groupe, avant le tri des documents et les règles d'équipe. Le guichet, lui, évite la rechute : un référent IA instruit les demandes d'outils et répond dans le délai promis, et au-delà d'une certaine taille un comité tranche les cas sensibles, comme le décrit notre article <a href='/blog/comite-gouvernance-ia'>monter un comité de gouvernance IA</a>."
+    },
+    {
+      "type": "h3",
+      "text": "Interdire, tolérer ou encadrer : trois postures comparées"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Posture",
+        "Ce que deviennent les usages",
+        "Ce que devient le risque",
+        "Quand l'envisager"
+      ],
+      "rows": [
+        [
+          "Interdire tout outil d'IA",
+          "Ils migrent vers les téléphones et ordinateurs personnels",
+          "Il reste entier et devient invisible",
+          "En mesure d'attente courte, le temps de choisir un outil, comme Samsung en mai 2023"
+        ],
+        [
+          "Tolérer sans rien écrire",
+          "Ils se multiplient, chacun avec ses propres réglages",
+          "Il grandit à chaque compte ouvert",
+          "Quelques semaines au plus, pendant l'inventaire"
+        ],
+        [
+          "Encadrer : outil fourni, règles, formation",
+          "Ils se regroupent sur les comptes de l'entreprise",
+          "Il devient connu, mesuré et traité",
+          "Dès que l'IA sert au travail, quelle que soit la taille"
+        ]
+      ]
+    },
+    {
+      "type": "h2",
+      "text": "Que faire quand on découvre un usage caché ?"
+    },
+    {
+      "type": "p",
+      "text": "Chaque usage découvert appelle une décision parmi quatre, régulariser, encadrer, remplacer ou arrêter, et elle doit tomber vite pour que l'enquête garde son crédit."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Situation découverte",
+        "Décision",
+        "Action à mener"
+      ],
+      "rows": [
+        [
+          "Un service rédige ses offres avec un compte ChatGPT personnel, sans données de clients",
+          "Régulariser",
+          "Ouvrir des comptes d'entreprise, y reprendre les consignes utiles, abandonner le compte privé pour cet usage"
+        ],
+        [
+          "Une extension de traduction lit les pages du CRM",
+          "Remplacer",
+          "Proposer l'outil de traduction validé, retirer l'extension depuis la console de gestion des navigateurs"
+        ],
+        [
+          "Un manager trie des CV avec un assistant personnel",
+          "Arrêter, puis instruire",
+          "Suspendre l'usage et l'examiner au regard du RGPD et de l'annexe III de l'AI Act avant toute reprise"
+        ],
+        [
+          "Un fichier clients a été collé dans un outil gratuit",
+          "Traiter comme un incident",
+          "Faire supprimer la conversation, documenter, demander au DPO s'il faut notifier la CNIL sous 72 heures"
+        ],
+        [
+          "Le compte rendu automatique s'est activé dans l'outil de visioconférence",
+          "Encadrer",
+          "Vérifier le contrat et les réglages, prévenir les participants, inscrire l'usage au registre"
+        ]
+      ]
+    },
+    {
+      "type": "p",
+      "text": "Le premier pas peut rester modeste. Chez un distributeur de solutions photovoltaïques de trois personnes, l'IA était entrée par des comptes personnels avant toute règle. Le diagnostic que Masteria a remis à sa direction en septembre 2026 prévoit de les remplacer par un abonnement d'équipe administré par l'entreprise, réglé pour que les données ne servent pas à l'entraînement et inscrit au registre RGPD, d'adopter une charte signée avant la formation, et de confier à un référent la gestion des comptes et la collecte des erreurs signalées, avec un point chaque mois."
+    },
+    {
+      "type": "p",
+      "text": "Le shadow IA mesure l'avance que les équipes ont prise sur leur entreprise. Le cadre sert à la rattraper, puis à transformer cette avance en savoir-faire partagé."
+    },
+    {
+      "type": "h2",
+      "text": "Le vocabulaire du shadow IA"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Terme",
+        "Définition"
+      ],
+      "rows": [
+        [
+          "Shadow IA (shadow AI)",
+          "Usage au travail d'outils d'intelligence artificielle que l'entreprise n'a ni fournis ni autorisés."
+        ],
+        [
+          "Shadow IT",
+          "Informatique de l'ombre : logiciels et services utilisés sans l'accord de la DSI."
+        ],
+        [
+          "BYOAI",
+          "Bring your own AI : pratique du salarié qui apporte au travail son propre outil d'IA."
+        ],
+        [
+          "Compte d'entreprise",
+          "Abonnement souscrit et administré par l'organisation, couvert par un contrat et une console d'administration."
+        ],
+        [
+          "CASB",
+          "Courtier de sécurité d'accès au cloud : outil qui découvre et contrôle les services en ligne utilisés depuis l'entreprise."
+        ],
+        [
+          "DLP",
+          "Prévention des pertes de données : dispositif qui repère, voire bloque, l'envoi d'informations sensibles."
+        ],
+        [
+          "Consentement OAuth",
+          "Autorisation donnée par un utilisateur à une application tierce d'accéder à sa messagerie, son agenda ou ses fichiers."
+        ],
+        [
+          "Déployeur",
+          "Terme de l'AI Act désignant toute organisation qui utilise un système d'IA dans son activité professionnelle."
+        ],
+        [
+          "Maîtrise de l'IA",
+          "Compétences et connaissances que l'article 4 de l'AI Act demande de développer chez les utilisateurs."
+        ]
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Qu'est-ce que le shadow IA en entreprise ?",
+      "a": "Le shadow IA désigne l'usage au travail d'outils d'intelligence artificielle que l'entreprise n'a ni fournis ni autorisés : comptes ChatGPT ou Claude personnels, applications mobiles, extensions de navigateur, fonctions d'IA activées sans validation dans un logiciel, connecteurs branchés sur la messagerie. Le risque vient des documents confiés à des services dont l'entreprise ignore le contrat, les réglages et la durée de conservation."
+    },
+    {
+      "q": "Quelle différence entre shadow IA et shadow IT ?",
+      "a": "Le shadow IT couvre tout logiciel ou service utilisé sans l'accord de la DSI, comme un stockage en ligne personnel. Le shadow IA en est la branche consacrée à l'intelligence artificielle, avec trois traits propres : l'outil lit et transforme le contenu des documents, ses résultats reviennent dans le travail avec leurs erreurs possibles, et certains agents agissent seuls dans la messagerie ou les fichiers."
+    },
+    {
+      "q": "Le shadow IA est-il illégal ?",
+      "a": "Aucune loi n'interdit en soi d'utiliser un outil d'IA non validé. Tout dépend de ce qu'on y verse et de ce qu'on en fait : données personnelles traitées sans contrat (RGPD), secret des affaires fragilisé, clause de confidentialité d'un client rompue, pratique interdite par l'article 5 de l'AI Act. Selon la CNIL, l'organisme répond en principe du mauvais usage de son personnel."
+    },
+    {
+      "q": "Peut-on surveiller l'usage de ChatGPT par les salariés ?",
+      "a": "Oui, dans un cadre strict. Le dispositif est annoncé aux salariés avant sa mise en place (article L1222-4 du Code du travail), reste proportionné à son objectif et passe devant le CSE dans les entreprises d'au moins cinquante salariés (article L2312-38). La CNIL juge excessive une surveillance constante. Un inventaire des services consultés se justifie plus facilement que la lecture du contenu des requêtes."
+    },
+    {
+      "q": "Faut-il interdire ChatGPT et les autres IA en entreprise ?",
+      "a": "Une interdiction générale déplace les usages vers les téléphones et ordinateurs personnels, où l'entreprise perd toute visibilité. Elle se défend comme mesure d'attente courte, le temps de choisir un outil. La réponse durable associe un assistant d'entreprise qui exclut vos données de l'entraînement des modèles, un tri des données en trois niveaux, une charte courte et la formation des utilisateurs."
+    },
+    {
+      "q": "Comment savoir si mes salariés utilisent l'IA en cachette ?",
+      "a": "Lancez d'abord une enquête anonyme d'une dizaine de questions, annoncée sans conséquence disciplinaire. Lisez ensuite par domaine les journaux du pare-feu ou du proxy, passez en revue les applications tierces connectées aux comptes de l'entreprise et les abonnements remboursés en notes de frais. Les outils de sécurité dédiés, comme la découverte d'applications cloud, viennent après, si l'état des lieux le justifie."
+    },
+    {
+      "q": "Que faire si un salarié a collé des données clients dans un compte personnel ?",
+      "a": "Traitez-le comme un incident, sans chercher de coupable. Faites supprimer la conversation, notez ce qui est parti, vers quel service et à quelle date, puis demandez au DPO s'il s'agit d'une violation à notifier à la CNIL dans les 72 heures, ce qui dépend du risque pour les personnes concernées. Relisez aussi vos engagements de confidentialité envers ce client."
+    },
+    {
+      "q": "L'AI Act s'applique-t-il au shadow IA ?",
+      "a": "L'article 4 demande depuis le 2 février 2025 des mesures pour que les personnes qui utilisent l'IA pour le compte de l'entreprise en acquièrent la maîtrise, et les autorités nationales le contrôlent depuis le 2 août 2026. Un usage caché échappe à ces mesures. L'article 5 interdit en outre certains usages, comme la déduction des émotions des personnes au travail, quel que soit l'outil."
+    },
+    {
+      "q": "Une PME est-elle concernée par le shadow IA ?",
+      "a": "Oui. Une petite structure n'a souvent ni outil fourni ni DSI pour en choisir un, ce qui laisse chacun s'équiper seul. Le cadre se dimensionne à la taille : un abonnement d'équipe administré, une charte de deux pages, un référent qui gère les comptes et un point mensuel permettent de ramener les usages dans le périmètre de l'entreprise."
+    },
+    {
+      "q": "Quels outils d'IA autoriser à la place des comptes personnels ?",
+      "a": "Ceux qui couvrent les tâches relevées par l'enquête et apportent des garanties écrites : données exclues de l'entraînement des modèles, contrat de traitement, connexion avec le compte professionnel, console d'administration, journaux d'activité. Au 1er novembre 2026, les offres d'entreprise de ChatGPT, Claude, Copilot et Gemini prennent des engagements écrits sur l'usage de vos données pour l'entraînement ; comparez-les sur vos propres cas avant de choisir."
+    }
+  ],
+  "cta": {
+    "title": "Former vos équipes à utiliser l'IA sans exposer vos données ?",
+    "desc": "La formation sécurité IA de Masteria part de l'inventaire anonyme de vos usages, classe vos documents selon l'outil qui peut les recevoir et pose les règles d'équipe, en intra sur vos outils, à partir de 1 980 € HT la journée.",
+    "buttons": [
+      {
+        "label": "Voir la formation sécurité IA",
+        "href": "/formation-ia-securite",
+        "primary": true
+      },
+      {
+        "label": "Lire le guide de la charte IA",
+        "href": "/charte-ia-entreprise",
+        "primary": false
+      }
+    ]
+  },
+  "internalLinks": [
+    {
+      "label": "Charte IA d'entreprise : rubriques et méthode",
+      "href": "/charte-ia-entreprise"
+    },
+    {
+      "label": "Formation sécurité IA",
+      "href": "/formation-ia-securite"
+    },
+    {
+      "label": "Monter un comité de gouvernance IA",
+      "href": "/blog/comite-gouvernance-ia"
+    },
+    {
+      "label": "Article 4 de l'AI Act : la formation IA obligatoire",
+      "href": "/blog/ai-act-formation-ia-obligatoire-entreprise"
+    },
+    {
+      "label": "IA et RGPD",
+      "href": "/ia-et-rgpd"
+    }
+  ],
+  "sources": [
+    {
+      "label": "Microsoft et LinkedIn, Work Trend Index 2024 (8 mai 2024)",
+      "url": "https://news.microsoft.com/source/2024/05/08/microsoft-and-linkedin-release-the-2024-work-trend-index-on-the-state-of-ai-at-work/"
+    },
+    {
+      "label": "KPMG et Université de Melbourne, Trust, attitudes and use of AI, communiqué d'avril 2025",
+      "url": "https://kpmg.com/xx/en/media/press-releases/2025/04/trust-of-ai-remains-a-critical-challenge.html"
+    },
+    {
+      "label": "Ipsos pour greenworking, IA générative au bureau (19 juin 2025)",
+      "url": "https://www.ipsos.com/fr-fr/ia-generative-au-bureau-entre-enthousiasme-usages-fantomes-et-crainte-du-remplacement"
+    },
+    {
+      "label": "IBM, Cost of a Data Breach 2025, communiqué du 30 juillet 2025",
+      "url": "https://newsroom.ibm.com/2025-07-30-ibm-report-13-of-organizations-reported-breaches-of-ai-models-or-applications,-97-of-which-reported-lacking-proper-ai-access-controls"
+    },
+    {
+      "label": "Règlement (UE) 2024/1689 (AI Act), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"
+    },
+    {
+      "label": "Règlement (UE) 2026/1744 (Omnibus numérique), EUR-Lex",
+      "url": "https://eur-lex.europa.eu/eli/reg/2026/1744/oj"
+    },
+    {
+      "label": "Commission européenne, questions-réponses sur la maîtrise de l'IA (revues le 20 octobre 2026)",
+      "url": "https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers"
+    },
+    {
+      "label": "AI Act Service Desk, article 5 (pratiques interdites)",
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-5"
+    },
+    {
+      "label": "CNIL, calendrier d'application du règlement IA (mise à jour du 17 août 2026)",
+      "url": "https://www.cnil.fr/fr/entree-en-vigueur-du-reglement-europeen-sur-lia-les-premieres-questions-reponses-de-la-cnil"
+    },
+    {
+      "label": "CNIL, questions-réponses sur l'utilisation d'un système d'IA générative (18 juillet 2024)",
+      "url": "https://www.cnil.fr/fr/les-questions-reponses-de-la-cnil-sur-lutilisation-dun-systeme-dia-generative"
+    },
+    {
+      "label": "CNIL, le contrôle de l'activité des personnes employées (9 juillet 2026)",
+      "url": "https://www.cnil.fr/fr/controle-de-lactivite-des-personnes-employees"
+    },
+    {
+      "label": "CNIL, notifier une violation de données personnelles",
+      "url": "https://www.cnil.fr/fr/notifier-une-violation-de-donnees-personnelles"
+    },
+    {
+      "label": "CNIL, liste des traitements pour lesquels une analyse d'impact est requise",
+      "url": "https://www.cnil.fr/sites/default/files/atoms/files/liste-traitements-aipd-requise.pdf"
+    },
+    {
+      "label": "ANSSI, recommandations de sécurité pour un système d'IA générative (29 avril 2024)",
+      "url": "https://cyber.gouv.fr/sites/default/files/document/Recommandations_de_s%C3%A9curit%C3%A9_pour_un_syst%C3%A8me_d_IA_g%C3%A9n%C3%A9rative.pdf"
+    },
+    {
+      "label": "Code de commerce, article L151-1 (secret des affaires), Légifrance",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037266553"
+    },
+    {
+      "label": "Bloomberg, Samsung restreint l'IA générative après une fuite (2 mai 2023)",
+      "url": "https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak"
+    },
+    {
+      "label": "Microsoft Learn, découvrir les applications d'IA (shadow AI), relevé le 1er novembre 2026",
+      "url": "https://learn.microsoft.com/en-us/purview/deploymentmodels/depmod-data-leak-shadow-ai-step1"
+    },
+    {
+      "label": "Microsoft Learn, découverte du shadow AI dans Global Secure Access, relevé le 1er novembre 2026",
+      "url": "https://learn.microsoft.com/en-us/entra/global-secure-access/concept-shadow-ai-discovery"
+    },
+    {
+      "label": "Microsoft Learn, protection des données d'entreprise dans Copilot, relevé le 1er novembre 2026",
+      "url": "https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection"
+    },
+    {
+      "label": "Aide Google Workspace, contrôler les applications qui accèdent aux données, relevé le 1er novembre 2026",
+      "url": "https://knowledge.workspace.google.com/admin/apps/control-which-apps-access-google-workspace-data?hl=fr"
+    },
+    {
+      "label": "Google Workspace, confidentialité de l'IA générative, relevé le 1er novembre 2026",
+      "url": "https://knowledge.workspace.google.com/admin/gemini/generative-ai-in-google-workspace-privacy-hub?hl=fr"
+    },
+    {
+      "label": "Anthropic, utilisation des données pour l'entraînement (article du 18 août 2026)",
+      "url": "https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training"
+    },
+    {
+      "label": "OpenAI, données et confidentialité dans ChatGPT Business",
+      "url": "https://help.openai.com/en/articles/8798634-managing-data-sharing-and-privacy-in-chatgpt-business"
+    }
+  ],
+  "extraJsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "Vocabulaire du shadow IA",
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Shadow IA (shadow AI)",
+          "description": "Usage au travail d'outils d'intelligence artificielle que l'entreprise n'a ni fournis ni autorisés."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Shadow IT",
+          "description": "Informatique de l'ombre : logiciels et services utilisés sans l'accord de la DSI."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "BYOAI",
+          "description": "Bring your own AI : pratique du salarié qui apporte au travail son propre outil d'IA."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Compte d'entreprise",
+          "description": "Abonnement souscrit et administré par l'organisation, couvert par un contrat et une console d'administration."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "CASB",
+          "description": "Courtier de sécurité d'accès au cloud : outil qui découvre et contrôle les services en ligne utilisés depuis l'entreprise."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "DLP",
+          "description": "Prévention des pertes de données : dispositif qui repère, voire bloque, l'envoi d'informations sensibles."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Consentement OAuth",
+          "description": "Autorisation donnée par un utilisateur à une application tierce d'accéder à sa messagerie, son agenda ou ses fichiers."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Déployeur",
+          "description": "Terme de l'AI Act désignant toute organisation qui utilise un système d'IA dans son activité professionnelle."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Maîtrise de l'IA",
+          "description": "Compétences et connaissances que l'article 4 de l'AI Act demande de développer chez les utilisateurs."
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Encadrer le shadow IA en six étapes",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Annoncer une régularisation"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Fournir une alternative validée"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Trier les données en trois niveaux"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Écrire une règle courte"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Former et garder la trace"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Ouvrir un guichet et refaire l'inventaire"
+        }
+      ]
+    }
+  ]
+}
