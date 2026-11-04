@@ -255,7 +255,12 @@
     "titreEditorial": "ChatGPT atteint un milliard d'utilisateurs par semaine",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-04",
+    "dateLongue": "mercredi 4 novembre 2026",
+    "titreEditorial": "Revolut divise par dix sa facture d'IA",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 8581,

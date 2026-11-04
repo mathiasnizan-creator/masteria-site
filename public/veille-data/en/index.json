@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-03",
-    "totalEditions": 43,
-    "totalItems": 577,
-    "totalSources": 830
+    "derniereDate": "2026-11-04",
+    "totalEditions": 44,
+    "totalItems": 591,
+    "totalSources": 849
   },
   "editions": [
+    {
+      "date": "2026-11-04",
+      "dateAffichee": "4 November 2026",
+      "dateCourte": "Wed 4 Nov",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Revolut cuts its AI bill tenfold",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-03",
       "dateAffichee": "3 November 2026",

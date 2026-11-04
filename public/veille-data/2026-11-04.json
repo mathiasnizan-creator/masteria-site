@@ -1,0 +1,311 @@
+{
+  "schema": 2,
+  "date": "2026-11-04",
+  "dateAffichee": "4 novembre 2026",
+  "dateLongue": "mercredi 4 novembre 2026",
+  "dateCourte": "mer. 4 nov.",
+  "jourSemaine": "mercredi",
+  "titre": "Veille IA - mercredi 4 novembre 2026",
+  "titreEditorial": "Revolut divise par dix sa facture d'IA",
+  "chapeau": "Revolut annonce avoir divisé par dix sa facture d'intelligence artificielle en faisant tourner un modèle ouvert chinois sur ses propres serveurs, pendant que l'avocat général de la justice européenne encadre la reprise d'articles de presse par les chatbots et que Google coupe la recherche aux écoles américaines qui refusent son IA. Les doutes sur la rentabilité du secteur montent, d'OpenAI qui peine à boucler sa levée à Canva qui supprime un poste sur cinq, tandis que Tencent et Alibaba poussent l'open source depuis la Chine.",
+  "une": {
+    "titre": "Revolut dit avoir divisé par dix sa facture d'IA avec un modèle ouvert chinois",
+    "texteHtml": "<p>La banque en ligne européenne fait tourner GLM, un modèle à poids ouverts conçu en Chine (qu'on télécharge et qu'on exécute soi-même), sur des serveurs dédiés qu'elle contrôle, rapporte Numerama. Elle affirme avoir divisé par dix le coût de son intelligence artificielle tout en livrant ses fonctionnalités plus vite. L'argument du « sans culpabiliser » renvoie à la méfiance courante envers les modèles venus de Chine, que Revolut contourne en gardant l'exécution et les données chez elle. Le choix illustre une bascule discrète : pour une partie des usages, un modèle ouvert hébergé en interne devient une option de production crédible face aux grands services propriétaires facturés au jeton.</p>",
+    "sources": [
+      {
+        "nom": "Numerama",
+        "url": "https://www.numerama.com/tech/2366827-utiliser-lia-sans-culpabiliser-revolut-devoile-les-dessous-de-sa-bascule-vers-un-modele-chinois.html"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "En tête d'affiche",
+    "id": "revolut-dit-avoir-divise-par-dix-sa-facture-d-ia-avec-un"
+  },
+  "sections": [
+    {
+      "id": "europe-et-france",
+      "titre": "Europe et France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "La justice européenne pose ses premières limites au résumé d'articles par les chatbots",
+          "texteHtml": "<p>L'avocat général de la Cour de justice de l'Union européenne a rendu ses conclusions dans la première affaire liée à l'IA générative, rapportent Next.ink et Clubic. Selon lui, lorsqu'un chatbot comme Gemini aspire et réutilise des publications de presse pour produire ses réponses, il doit respecter le droit voisin des éditeurs : les contenus doivent avoir été obtenus légalement, donc sans franchir un paywall, et la réponse ne doit pas reprendre le style de l'article. L'avis ne lie pas encore la Cour, mais il trace la ligne que suivra probablement l'arrêt. Pour les éditeurs comme pour les fournisseurs d'IA, c'est un premier cadre sur ce qu'un assistant peut légalement faire d'un texte protégé.</p>",
+          "sources": [
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/265451/chatbots-ia-le-droit-europeen-interdirait-la-reprise-darticles-de-presse-sous-paywall/"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637429-un-chatbot-a-t-il-le-droit-de-resumer-un-article-de-presse-la-justice-europeenne-donne-enfin-une-reponse.html"
+            }
+          ],
+          "rang": 2,
+          "id": "la-justice-europeenne-pose-ses-premieres-limites-au-resume"
+        },
+        {
+          "titre": "Anthropic ouvre aux employeurs un tableau de bord de l'usage de Claude",
+          "texteHtml": "<p>Anthropic lance Smart Reports, un outil réservé aux clients Claude Enterprise qui analyse la façon dont les équipes se servent de l'IA et le coût pour l'entreprise, rapporte Clubic. Plusieurs observateurs y voient un instrument de surveillance des salariés, même si la documentation d'Anthropic pose des limites sur les données remontées. L'outil arrive alors que les directions cherchent à mesurer le retour d'un déploiement d'IA, au risque de confondre pilotage de la dépense et contrôle des personnes.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637498-cet-outil-permettra-a-votre-patron-de-surveiller-votre-travail-avec-claude.html"
+            }
+          ],
+          "rang": 3,
+          "id": "anthropic-ouvre-aux-employeurs-un-tableau-de-bord-de-l"
+        },
+        {
+          "titre": "Des essaims d'agents IA auraient compromis plus de cent organisations pour 50 dollars",
+          "texteHtml": "<p>Des chercheurs de NorForge décrivent une attaque qui détourne la plateforme open source Cairn pour orchestrer des agents IA autonomes, rapporte ZDNet. Ces agents corrèlent des micro-failles sans écrire le moindre logiciel malveillant, et auraient déjà touché plus de cent organisations pour un coût de départ d'environ 50 dollars. La technique abaisse le ticket d'entrée d'attaques jusqu'ici réservées à des équipes outillées.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/zd-tech-cybersecurite-comment-des-agents-ia-contournent-vos-pare-feux-pour-50-dollars-506827.htm"
+            }
+          ],
+          "rang": 4,
+          "id": "des-essaims-d-agents-ia-auraient-compromis-plus-de-cent"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI peine à boucler sa levée pendant qu'Anthropic voit ses marges se tendre",
+          "texteHtml": "<p>OpenAI n'aurait réuni qu'environ 11 milliards de dollars d'engagements sur les 30 milliards visés et doit courtiser de grandes fortunes pour compléter son tour de table, rapporte Clubic. Dans le même temps, TechCrunch note que les marges de calcul d'Anthropic se dégradent au moment où elles devraient s'améliorer, alors que l'entreprise prépare son entrée en Bourse avec une croissance plus rapide. Les deux laboratoires les plus en vue affrontent la même équation : le coût du calcul grimpe plus vite que les recettes. La question de la rentabilité, longtemps repoussée, s'installe au centre des discussions d'investisseurs.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637360-coup-de-froid-pour-openai-pourquoi-le-createur-de-chatgpt-peine-a-boucler-sa-mega-levee-de-fonds.html"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/"
+            }
+          ],
+          "rang": 5,
+          "id": "openai-peine-a-boucler-sa-levee-pendant-qu-anthropic-voit"
+        },
+        {
+          "titre": "Google coupe la recherche aux écoles américaines qui refusent son IA",
+          "texteHtml": "<p>Google a prévenu que ses outils d'IA seraient désactivés par défaut pour les comptes élèves de son offre éducation aux États-Unis (le programme K-12), sauf activation par l'administrateur, rapportent The Verge, TechCrunch et Next.ink. Un point crispe : un établissement qui refuse l'IA perd aussi l'accès à la recherche Google classique, désormais soudée aux réponses générées par Gemini. Il devient impossible d'activer une recherche sans IA pour ces comptes. L'arbitrage transforme une option en passage obligé et laisse peu de marge aux écoles soucieuses d'encadrer l'exposition de mineurs à ces outils.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features"
+            },
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/"
+            },
+            {
+              "nom": "Next.ink",
+              "url": "https://next.ink/265590/google-pas-de-recherche-sans-ia-dans-leducation-aux-etats-unis/"
+            }
+          ],
+          "rang": 6,
+          "id": "google-coupe-la-recherche-aux-ecoles-americaines-qui"
+        },
+        {
+          "titre": "Canva réorganise plus d'un cinquième de ses effectifs au nom de l'IA",
+          "texteHtml": "<p>L'éditeur australien d'outils de création graphique Canva a annoncé des suppressions de postes et des changements de fonction touchant plus d'un cinquième de ses effectifs, rapporte Bloomberg. L'entreprise présente ce remaniement comme une adaptation structurelle imposée par l'intelligence artificielle. Le cas marque l'un des premiers grands plans sociaux où une direction attribue ouvertement la réorganisation à l'IA, chez une des sociétés technologiques les plus en vue d'Australie. Le signal pèse pour tous les métiers de la création, où la production assistée redéfinit le volume de travail confié aux équipes.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-03/canva-announces-layoffs-job-changes-for-about-22-of-workforce"
+            }
+          ],
+          "rang": 7,
+          "id": "canva-reorganise-plus-d-un-cinquieme-de-ses-effectifs-au"
+        },
+        {
+          "titre": "AMD et Super Micro dépassent les attentes sur la demande de puces d'IA",
+          "texteHtml": "<p>AMD a livré des prévisions de ventes supérieures aux estimations des analystes, portée par la demande de processeurs pour centres de données, et se pose en principal rival de Nvidia, rapporte Bloomberg. Le fabricant de serveurs Super Micro a lui aussi relevé ses perspectives annuelles, signe d'une demande soutenue en machines bourrées de puces d'IA. Ces résultats contrastent avec les mises en garde du jour, dont celle d'AllianceBernstein qui invite les investisseurs à se diversifier au-delà des grandes valeurs de l'IA. La bascule entre euphorie des équipementiers et doute des gérants résume l'ambiance du marché.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-03/amd-sales-forecast-tops-estimates-on-soaring-ai-chip-demand"
+            },
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-03/super-micro-gives-outlook-that-tops-estimates-on-server-demand"
+            }
+          ],
+          "rang": 8,
+          "id": "amd-et-super-micro-depassent-les-attentes-sur-la-demande-de"
+        }
+      ]
+    },
+    {
+      "id": "chine-et-asie",
+      "titre": "Chine et Asie",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "Tencent dévoile Hy4, un modèle ouvert capable de lire les images",
+          "texteHtml": "<p>Le géant chinois Tencent a lancé mercredi 4 novembre Hy4, son nouveau modèle de langage phare à poids ouverts, pensé pour alimenter son écosystème logiciel d'entreprise, rapporte le South China Morning Post. Pour la première fois dans cette famille, le modèle comprend le visuel : il traite des images, analyse des graphiques complexes et mène un raisonnement mathématique à partir de schémas. Tencent met en avant des capacités agentiques renforcées, c'est-à-dire la faculté d'enchaîner des actions pour accomplir une tâche. La sortie l'aligne sur la course ouverte que mènent déjà DeepSeek, Z.ai et Alibaba.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/big-tech/article/3373227/tencent-unveils-hy4-open-weight-ai-race-deepseek-zai-alibaba-heats"
+            }
+          ],
+          "rang": 9,
+          "id": "tencent-devoile-hy4-un-modele-ouvert-capable-de-lire-les"
+        },
+        {
+          "titre": "Joe Tsai, patron d'Alibaba, fait de l'open source la voie officielle",
+          "texteHtml": "<p>Lors de la conférence mondiale de l'internet de Wuzhen, dans le Zhejiang, le président d'Alibaba Joe Tsai a défendu l'open source comme « la seule voie viable » pour bâtir une industrie de l'IA soutenable, rapporte le South China Morning Post. Il a souligné une convergence croissante des entreprises technologiques chinoises autour des écosystèmes ouverts, alors que la demande d'IA grimpe et que les pressions américaines sur l'accès aux composants s'accentuent. Le propos officialise une stratégie que le groupe pousse depuis des mois. Il contraste avec le verrouillage que pratiquent les grands laboratoires américains.</p>",
+          "sources": [
+            {
+              "nom": "South China Morning Post",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3373155/alibabas-joe-tsai-champions-open-source-ai-wuzhen-summit-amid-us-pushback"
+            }
+          ],
+          "rang": 10,
+          "id": "joe-tsai-patron-d-alibaba-fait-de-l-open-source-la-voie"
+        }
+      ]
+    },
+    {
+      "id": "recherche-et-publications",
+      "titre": "Recherche et publications",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Apprendre à un agent à gérer sa propre mémoire de contexte",
+          "texteHtml": "<p>Un article déposé sur arXiv présente MEMENTO, un agent conçu pour traiter de longs documents en gérant son contexte (la fenêtre de texte que le modèle garde sous les yeux à chaque étape). La méthode courante, dite de compaction, remplace l'historique par une note résumée que le modèle rédige lui-même ; or les modèles du commerce, y compris GPT-5.5 et GLM-5.3, écrivent souvent des notes peu utiles. Les auteurs entraînent un modèle plus petit, bâti sur Qwen3-8B, à prendre des notes efficaces, ce qui améliore le suivi d'informations sur de longues entrées.</p>",
+          "sources": [
+            {
+              "nom": "arXiv",
+              "url": "https://arxiv.org/abs/2611.00244"
+            }
+          ],
+          "rang": 11,
+          "id": "apprendre-a-un-agent-a-gerer-sa-propre-memoire-de-contexte"
+        }
+      ]
+    },
+    {
+      "id": "en-bref",
+      "titre": "En bref",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "ChatGPT atteindrait 20 % du volume de recherche de Google",
+          "texteHtml": "<p>Le volume de requêtes traitées par ChatGPT équivaut désormais à 20 % de celui de Google, a affirmé lors d'un évènement presse Adam Fry, responsable produit grand public de ChatGPT chez OpenAI, rapporte The Verge.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
+            }
+          ],
+          "rang": 12,
+          "id": "chatgpt-atteindrait-20-du-volume-de-recherche-de-google"
+        },
+        {
+          "titre": "Le piratage de Binance aurait détourné un outil d'IA interne",
+          "texteHtml": "<p>Binance décrit une campagne de plusieurs mois ayant touché environ 6,34 milliards de dollars d'actifs, mêlant faux entretien d'embauche, logiciel malveillant et détournement d'un outil d'IA interne, que le FBI attribue à la Corée du Nord, rapporte ZDNet.</p>",
+          "sources": [
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/piratage-de-binance-faux-recruteur-logiciel-malveillant-et-outil-dia-detourne-le-recit-dune-attaque-de-plusieurs-mois-507233.htm"
+            }
+          ],
+          "rang": 13,
+          "id": "le-piratage-de-binance-aurait-detourne-un-outil-d-ia-interne"
+        },
+        {
+          "titre": "Les clients chinois de Nvidia ne recevront que 1 % des puces commandées",
+          "texteHtml": "<p>Les développeurs d'IA chinois ne s'attendent à recevoir qu'une faible fraction des puces RTX qu'ils ont commandées à Nvidia dans les prochains mois, le fabricant peinant à augmenter sa production face à une demande mondiale saturée, rapporte Bloomberg.</p>",
+          "sources": [
+            {
+              "nom": "Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-11-04/nvidia-china-clients-to-get-1-of-70-billion-rtx-chips-ordered"
+            }
+          ],
+          "rang": 14,
+          "id": "les-clients-chinois-de-nvidia-ne-recevront-que-1-des-puces"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "Choisir et faire tourner un modèle ouvert devient la compétence qui décide de vos coûts d'IA",
+    "these": "Revolut a divisé par dix sa facture d'IA en exploitant un modèle ouvert chinois sur ses serveurs ; évaluer et opérer ces modèles devient la compétence qui arbitre à la fois les coûts et le contrôle des données.",
+    "html": "<p>Revolut a divisé par dix sa facture d'intelligence artificielle en faisant tourner GLM, un modèle à poids ouverts conçu en Chine, sur des serveurs qu'elle contrôle. La banque dit aussi livrer ses fonctionnalités plus vite depuis ce choix. Derrière l'anecdote se cache une décision que beaucoup d'équipes techniques françaises vont devoir trancher dans les mois qui viennent.</p>\n<p>Nous observons que le modèle fermé facturé au jeton cesse d'être l'évidence. Le même jour, OpenAI peine à réunir les 30 milliards de dollars visés et n'en rassemble qu'une dizaine ; Anthropic voit ses marges de calcul se dégrader au moment où elles devraient s'améliorer. Les fournisseurs propriétaires répercuteront tôt ou tard cette pression sur leurs tarifs. En face, l'offre ouverte s'étoffe : Tencent sort Hy4, Alibaba fait de l'open source sa ligne officielle. Un responsable qui cale son budget d'inférence pour 2027 sur les prix d'aujourd'hui surévalue sa dépense.</p>\n<p>La compétence qui décide tient à savoir choisir un modèle, mesurer sa qualité sur vos propres tâches, l'héberger et le maintenir. Revolut avait les équipes pour le faire. Beaucoup d'organisations françaises ne les ont pas encore, et l'écart se creuse là.</p>\n<p>Un point mérite d'être retourné. Faire tourner un modèle chinois sur ses propres serveurs garde les données chez soi, quand l'appel à une API étrangère les expédie au dehors. Le réflexe qui associe modèle chinois et risque se renverse : l'exécution locale d'un modèle ouvert donne davantage de contrôle sur la donnée qu'un service propriétaire hébergé ailleurs. Le délégué à la protection des données et l'architecte ont le même intérêt à regarder cette piste.</p>\n<p>Le prix de l'IA ne descendra pas tout seul. Il baisse pour qui sait choisir où tourne son modèle et sous quelles conditions ses données circulent. Cette compétence s'acquiert, et elle vaudra bientôt plus cher qu'un abonnement.</p>",
+    "htmlExtrait": "<p>Revolut a divisé par dix sa facture d'intelligence artificielle en faisant tourner GLM, un modèle à poids ouverts conçu en Chine, sur des serveurs qu'elle contrôle. La banque dit aussi livrer ses fonctionnalités plus vite depuis ce choix. Derrière l'anecdote se cache une décision que beaucoup d'équipes techniques françaises vont devoir trancher dans les mois qui viennent.</p>\n<p>Nous observons que le modèle fermé facturé au jeton cesse d'être l'évidence. Le même jour, OpenAI peine à réunir les 30 milliards de dollars visés et n'en rassemble qu'une dizaine ; Anthropic voit ses marges de calcul se dégrader au moment où elles devraient s'améliorer. Les fournisseurs propriétaires répercuteront tôt ou tard cette pression sur leurs tarifs. En face, l'offre ouverte s'étoffe : Tencent sort Hy4, Alibaba fait de l'open source sa ligne officielle. Un responsable qui cale son budget d'inférence pour 2027 sur les prix d'aujourd'hui surévalue sa dépense.</p>",
+    "itemsCites": [
+      1,
+      5,
+      9,
+      10
+    ],
+    "auteur": "L'équipe éditoriale Masteria",
+    "auteurRole": "Sous la direction de Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-11-03",
+    "dateLongue": "mardi 3 novembre 2026",
+    "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 19,
+  "nbSignes": 9193,
+  "tempsLecture": 8,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe et France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "Chine et Asie",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Recherche et publications",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "En bref",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Numerama",
+    "Next.ink",
+    "Clubic",
+    "ZDNet",
+    "TechCrunch",
+    "The Verge",
+    "Bloomberg",
+    "South China Morning Post",
+    "arXiv"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 116,
+  "publieLe": "2026-11-04T09:44:38+01:00",
+  "publieLeAffiche": "9h44",
+  "ogImage": "/veille-data/og/2026-11-04.png"
+}

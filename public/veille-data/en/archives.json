@@ -3,12 +3,129 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-03",
-    "totalEditions": 43,
-    "totalItems": 577,
-    "totalSources": 830
+    "derniereDate": "2026-11-04",
+    "totalEditions": 44,
+    "totalItems": 591,
+    "totalSources": 849
   },
   "editions": [
+    {
+      "date": "2026-11-04",
+      "dateCourte": "Wed 4 Nov",
+      "dateAffichee": "4 November 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Revolut cuts its AI bill tenfold",
+      "chapeau": "Revolut says it has cut its artificial intelligence bill tenfold by running an open Chinese model on its own servers, while an advocate general at the European Court of Justice sets limits on how chatbots reuse press articles and Google switches off search for US schools that refuse its AI. Doubts about the sector's profitability are rising, from OpenAI struggling to close its funding round to Canva cutting one role in five, while Tencent and Alibaba push open source from China.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "Next.ink",
+        "Clubic",
+        "ZDNet",
+        "TechCrunch",
+        "The Verge",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Revolut says it has cut its AI bill tenfold with an open Chinese model",
+          "z": "une",
+          "id": "revolut-says-it-has-cut-its-ai-bill-tenfold-with-an-open"
+        },
+        {
+          "t": "The European courts set their first limits on chatbots summarising articles",
+          "z": "europe",
+          "id": "the-european-courts-set-their-first-limits-on-chatbots"
+        },
+        {
+          "t": "Anthropic opens an employer dashboard tracking Claude usage",
+          "z": "europe",
+          "id": "anthropic-opens-an-employer-dashboard-tracking-claude-usage"
+        },
+        {
+          "t": "Swarms of AI agents reportedly compromised more than a hundred organisations for $50",
+          "z": "europe",
+          "id": "swarms-of-ai-agents-reportedly-compromised-more-than-a"
+        },
+        {
+          "t": "OpenAI struggles to close its round while Anthropic's margins tighten",
+          "z": "international",
+          "id": "openai-struggles-to-close-its-round-while-anthropic-s"
+        },
+        {
+          "t": "Google switches off search for US schools that refuse its AI",
+          "z": "international",
+          "id": "google-switches-off-search-for-us-schools-that-refuse-its-ai"
+        },
+        {
+          "t": "Canva reorganises more than a fifth of its workforce in the name of AI",
+          "z": "international",
+          "id": "canva-reorganises-more-than-a-fifth-of-its-workforce-in-the"
+        },
+        {
+          "t": "AMD and Super Micro beat expectations on AI chip demand",
+          "z": "international",
+          "id": "amd-and-super-micro-beat-expectations-on-ai-chip-demand"
+        },
+        {
+          "t": "Tencent unveils Hy4, an open model that can read images",
+          "z": "chine",
+          "id": "tencent-unveils-hy4-an-open-model-that-can-read-images"
+        },
+        {
+          "t": "Alibaba chairman Joe Tsai makes open source the official path",
+          "z": "chine",
+          "id": "alibaba-chairman-joe-tsai-makes-open-source-the-official"
+        },
+        {
+          "t": "Teaching an agent to manage its own context memory",
+          "z": "recherche",
+          "id": "teaching-an-agent-to-manage-its-own-context-memory"
+        },
+        {
+          "t": "ChatGPT is said to reach 20% of Google's search volume",
+          "z": "bref",
+          "id": "chatgpt-is-said-to-reach-20-of-google-s-search-volume"
+        },
+        {
+          "t": "The Binance hack reportedly hijacked an internal AI tool",
+          "z": "bref",
+          "id": "the-binance-hack-reportedly-hijacked-an-internal-ai-tool"
+        },
+        {
+          "t": "Nvidia's Chinese customers will receive only 1% of the chips they ordered",
+          "z": "bref",
+          "id": "nvidia-s-chinese-customers-will-receive-only-1-of-the-chips"
+        }
+      ]
+    },
     {
       "date": "2026-11-03",
       "dateCourte": "Tue 3 Nov",

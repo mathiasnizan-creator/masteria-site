@@ -2,6 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-11-04</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Veille IA Masteria</news:name>
+        <news:language>fr</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-04T09:44:38+01:00</news:publication_date>
+      <news:title>Veille IA du 4 novembre 2026 : Revolut divise par dix sa facture d&#x27;IA</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-11-03</loc>
     <news:news>
       <news:publication>
@@ -10,17 +21,6 @@
       </news:publication>
       <news:publication_date>2026-11-03T05:32:53+01:00</news:publication_date>
       <news:title>Veille IA du 3 novembre 2026 : Anthropic entre en Bourse avec ses risques existentiels</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://www.master-ia.fr/veille-ia/2026-11-02</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Veille IA Masteria</news:name>
-        <news:language>fr</news:language>
-      </news:publication>
-      <news:publication_date>2026-11-02T09:20:14+01:00</news:publication_date>
-      <news:title>Veille IA du 2 novembre 2026 : ChatGPT atteint un milliard d&#x27;utilisateurs par semaine</news:title>
     </news:news>
   </url>
 </urlset>

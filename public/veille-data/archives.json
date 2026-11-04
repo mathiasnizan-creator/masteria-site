@@ -3,12 +3,129 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-03",
-    "totalEditions": 58,
-    "totalItems": 780,
-    "totalSources": 1142
+    "derniereDate": "2026-11-04",
+    "totalEditions": 59,
+    "totalItems": 794,
+    "totalSources": 1161
   },
   "editions": [
+    {
+      "date": "2026-11-04",
+      "dateCourte": "mer. 4 nov.",
+      "dateAffichee": "4 novembre 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Revolut divise par dix sa facture d'IA",
+      "chapeau": "Revolut annonce avoir divisé par dix sa facture d'intelligence artificielle en faisant tourner un modèle ouvert chinois sur ses propres serveurs, pendant que l'avocat général de la justice européenne encadre la reprise d'articles de presse par les chatbots et que Google coupe la recherche aux écoles américaines qui refusent son IA. Les doutes sur la rentabilité du secteur montent, d'OpenAI qui peine à boucler sa levée à Canva qui supprime un poste sur cinq, tandis que Tencent et Alibaba poussent l'open source depuis la Chine.",
+      "nbItems": 14,
+      "nbSources": 19,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Numerama",
+        "Next.ink",
+        "Clubic",
+        "ZDNet",
+        "TechCrunch",
+        "The Verge",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv"
+      ],
+      "items": [
+        {
+          "t": "Revolut dit avoir divisé par dix sa facture d'IA avec un modèle ouvert chinois",
+          "z": "une",
+          "id": "revolut-dit-avoir-divise-par-dix-sa-facture-d-ia-avec-un"
+        },
+        {
+          "t": "La justice européenne pose ses premières limites au résumé d'articles par les chatbots",
+          "z": "europe",
+          "id": "la-justice-europeenne-pose-ses-premieres-limites-au-resume"
+        },
+        {
+          "t": "Anthropic ouvre aux employeurs un tableau de bord de l'usage de Claude",
+          "z": "europe",
+          "id": "anthropic-ouvre-aux-employeurs-un-tableau-de-bord-de-l"
+        },
+        {
+          "t": "Des essaims d'agents IA auraient compromis plus de cent organisations pour 50 dollars",
+          "z": "europe",
+          "id": "des-essaims-d-agents-ia-auraient-compromis-plus-de-cent"
+        },
+        {
+          "t": "OpenAI peine à boucler sa levée pendant qu'Anthropic voit ses marges se tendre",
+          "z": "international",
+          "id": "openai-peine-a-boucler-sa-levee-pendant-qu-anthropic-voit"
+        },
+        {
+          "t": "Google coupe la recherche aux écoles américaines qui refusent son IA",
+          "z": "international",
+          "id": "google-coupe-la-recherche-aux-ecoles-americaines-qui"
+        },
+        {
+          "t": "Canva réorganise plus d'un cinquième de ses effectifs au nom de l'IA",
+          "z": "international",
+          "id": "canva-reorganise-plus-d-un-cinquieme-de-ses-effectifs-au"
+        },
+        {
+          "t": "AMD et Super Micro dépassent les attentes sur la demande de puces d'IA",
+          "z": "international",
+          "id": "amd-et-super-micro-depassent-les-attentes-sur-la-demande-de"
+        },
+        {
+          "t": "Tencent dévoile Hy4, un modèle ouvert capable de lire les images",
+          "z": "chine",
+          "id": "tencent-devoile-hy4-un-modele-ouvert-capable-de-lire-les"
+        },
+        {
+          "t": "Joe Tsai, patron d'Alibaba, fait de l'open source la voie officielle",
+          "z": "chine",
+          "id": "joe-tsai-patron-d-alibaba-fait-de-l-open-source-la-voie"
+        },
+        {
+          "t": "Apprendre à un agent à gérer sa propre mémoire de contexte",
+          "z": "recherche",
+          "id": "apprendre-a-un-agent-a-gerer-sa-propre-memoire-de-contexte"
+        },
+        {
+          "t": "ChatGPT atteindrait 20 % du volume de recherche de Google",
+          "z": "bref",
+          "id": "chatgpt-atteindrait-20-du-volume-de-recherche-de-google"
+        },
+        {
+          "t": "Le piratage de Binance aurait détourné un outil d'IA interne",
+          "z": "bref",
+          "id": "le-piratage-de-binance-aurait-detourne-un-outil-d-ia-interne"
+        },
+        {
+          "t": "Les clients chinois de Nvidia ne recevront que 1 % des puces commandées",
+          "z": "bref",
+          "id": "les-clients-chinois-de-nvidia-ne-recevront-que-1-des-puces"
+        }
+      ]
+    },
     {
       "date": "2026-11-03",
       "dateCourte": "mar. 3 nov.",

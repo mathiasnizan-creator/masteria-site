@@ -255,7 +255,12 @@
     "titreEditorial": "ChatGPT reaches a billion weekly users",
     "nbItems": 13
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-04",
+    "dateLongue": "Wednesday 4 November 2026",
+    "titreEditorial": "Revolut cuts its AI bill tenfold",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 18,
   "nbSignes": 7918,
