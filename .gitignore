@@ -28,3 +28,8 @@ dist-ssr
 # (une image de plus par édition de veille, 21 Mo aujourd'hui). Seul le
 # manifeste src/data/og-cartes.js est versionné, SEOHead en dépend.
 public/og/
+
+# Secrets locaux (audit sécurité du 04/11/2026)
+.env
+.env.*
+!.env.example
