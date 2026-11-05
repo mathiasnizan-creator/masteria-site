@@ -2185,16 +2185,24 @@
     <image:image><image:loc>https://www.master-ia.fr/og/blog--automatisation-ia-pme-processus-prioritaires.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://www.master-ia.fr/blog/n8n-make-zapier-lequel-choisir</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+  <url>
     <loc>https://www.master-ia.fr/blog/shadow-ia-encadrer-usages-caches</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--shadow-ia-encadrer-usages-caches.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/claude-skills-definition-mode-emploi</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--claude-skills-definition-mode-emploi.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/notebooklm-entreprise-usages-limites-confidentialite</loc>
@@ -2688,12 +2696,14 @@
     <lastmod>2026-11-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--2026-11-04.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-11-03</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--2026-11-03.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-11-02</loc>
