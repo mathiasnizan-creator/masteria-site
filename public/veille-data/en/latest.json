@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-04",
-    "totalEditions": 44,
-    "totalItems": 591,
-    "totalSources": 849
+    "derniereDate": "2026-11-05",
+    "totalEditions": 45,
+    "totalItems": 605,
+    "totalSources": 870
   },
   "recentes": [
+    {
+      "date": "2026-11-05",
+      "dateAffichee": "5 November 2026",
+      "dateCourte": "Thu 5 Nov",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Data centres, the midterms' big losers",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-04",
       "dateAffichee": "4 November 2026",
@@ -496,27 +507,43 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-11-04",
-    "dateAffichee": "4 November 2026",
-    "dateLongue": "Wednesday 4 November 2026",
-    "dateCourte": "Wed 4 Nov",
-    "jourSemaine": "Wednesday",
-    "titre": "AI Watch - Wednesday 4 November 2026",
-    "titreEditorial": "Revolut cuts its AI bill tenfold",
-    "chapeau": "Revolut says it has cut its artificial intelligence bill tenfold by running an open Chinese model on its own servers, while an advocate general at the European Court of Justice sets limits on how chatbots reuse press articles and Google switches off search for US schools that refuse its AI. Doubts about the sector's profitability are rising, from OpenAI struggling to close its funding round to Canva cutting one role in five, while Tencent and Alibaba push open source from China.",
+    "date": "2026-11-05",
+    "dateAffichee": "5 November 2026",
+    "dateLongue": "Thursday 5 November 2026",
+    "dateCourte": "Thu 5 Nov",
+    "jourSemaine": "Thursday",
+    "titre": "AI Watch - Thursday 5 November 2026",
+    "titreEditorial": "Data centres, the midterms' big losers",
+    "chapeau": "The Democratic wave in the US midterm elections turned data centres into an electoral target: around thirty local measures are slowing their construction and Asian markets opened lower. Elsewhere, the economic promise of AI deflated another notch, from Uber counting only four rides booked by an agent to London cutting its projected gains by two thirds.",
     "une": {
-      "titre": "Revolut says it has cut its AI bill tenfold with an open Chinese model",
-      "texteHtml": "<p>The European online bank runs GLM, an open-weight model built in China (which you download and run yourself), on dedicated servers it controls, Numerama reports. It says it has cut the cost of its artificial intelligence tenfold while shipping its features faster. The \"without the guilt\" framing points to the common suspicion of models coming out of China, which Revolut sidesteps by keeping execution and data in-house. The choice shows a quiet shift: for a share of use cases, an open model hosted internally becomes a credible production option against the large proprietary services billed by the token.</p>",
+      "titre": "American voters rejected AI data centres en masse",
+      "texteHtml": "<p>The midterm elections of Tuesday 3 November carried a Democratic wave paired with a vote of distrust toward data centres, the server warehouses that run AI and swallow electricity and water. According to an NBC News exit poll reported by The Verge, 76% of the voters surveyed said they were worried about their siting. Around thirty local measures adopted in various places impose moratoriums or tighten construction rules, according to a still-provisional count relayed by Usbek &amp; Rica, 404 Media and Wired. Texas, which has become the epicentre of the large AI construction projects, swung Democratic on the Senate and governor seats, a direct threat to projects under way. The opposition crossed party lines: electricity prices and the strain on the grid weigh on voters in both camps.</p>",
       "sources": [
         {
-          "nom": "Numerama",
-          "url": "https://www.numerama.com/tech/2366827-utiliser-lia-sans-culpabiliser-revolut-devoile-les-dessous-de-sa-bascule-vers-un-modele-chinois.html"
+          "nom": "The Verge",
+          "url": "https://www.theverge.com/policy/1026365/data-centers-midterms-results"
+        },
+        {
+          "nom": "Wired",
+          "url": "https://www.wired.com/story/the-results-are-in-voters-hate-data-centers/"
+        },
+        {
+          "nom": "404 Media",
+          "url": "https://www.404media.co/american-voters-overwhelmingly-reject-ai-data-centers/"
+        },
+        {
+          "nom": "La Tribune",
+          "url": "https://www.latribune.fr/article/tech/62444462899353/data-centers-la-vague-bleue-des-midterms-porte-un-coup-a-l-ia-aux-etats-unis"
+        },
+        {
+          "nom": "Usbek & Rica",
+          "url": "https://usbeketrica.com/fr/article/midterms-les-data-centers-autres-grands-perdants-du-scrutin"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "revolut-says-it-has-cut-its-ai-bill-tenfold-with-an-open"
+      "id": "american-voters-rejected-ai-data-centres-en-masse"
     },
     "sections": [
       {
@@ -526,44 +553,60 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The European courts set their first limits on chatbots summarising articles",
-            "texteHtml": "<p>The advocate general at the Court of Justice of the European Union has delivered an opinion in the first case tied to generative AI, Next.ink and Clubic report. In their view, when a chatbot like Gemini ingests and reuses press publications to produce its answers, it must respect publishers' neighbouring rights: the content must have been obtained lawfully, so without crossing a paywall, and the answer must not reproduce the style of the article. The opinion does not yet bind the Court, but it traces the line the ruling is likely to follow. For publishers and AI providers alike, it is a first framework for what an assistant may lawfully do with a protected text.</p>",
+            "titre": "The EDPB and the CNIL launch a platform on children's privacy",
+            "texteHtml": "<p>The European Data Protection Board, the body that brings together Europe's national data protection authorities, has opened \"Privacy for Kids\" together with France's CNIL (the country's data protection authority), a platform devoted to digital literacy for the youngest users. The initiative accompanies a wider regulatory push on the protection of minors online: an independent study commissioned by the European Commission finds that one child aged 9 to 11 in three, across six European countries, reports holding a social media profile.</p>",
             "sources": [
               {
-                "nom": "Next.ink",
-                "url": "https://next.ink/265451/chatbots-ia-le-droit-europeen-interdirait-la-reprise-darticles-de-presse-sous-paywall/"
+                "nom": "CNIL",
+                "url": "https://www.cnil.fr/fr/cepd-privacy-for-kids"
               },
               {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637429-un-chatbot-a-t-il-le-droit-de-resumer-un-article-de-presse-la-justice-europeenne-donne-enfin-une-reponse.html"
+                "nom": "Commission européenne",
+                "url": "https://digital-strategy.ec.europa.eu/en/library/independent-study-impact-age-assurance-fundamental-rights-and-costs-businesses"
               }
             ],
             "rang": 2,
-            "id": "the-european-courts-set-their-first-limits-on-chatbots"
+            "id": "the-edpb-and-the-cnil-launch-a-platform-on-children-s"
           },
           {
-            "titre": "Anthropic opens an employer dashboard tracking Claude usage",
-            "texteHtml": "<p>Anthropic is launching Smart Reports, a tool reserved for Claude Enterprise customers that analyses how teams use AI and what it costs the company, Clubic reports. Several observers see it as an instrument for monitoring employees, even though Anthropic's documentation sets limits on the data reported. The tool arrives as management teams look to measure the return on an AI deployment, at the risk of confusing spending oversight with control of people.</p>",
+            "titre": "Anthropic proposes a cryptographic ID card for AI models",
+            "texteHtml": "<p>Anthropic has unveiled FlashProve, a tool that proves a response genuinely comes from the advertised model, rather than a degraded or substituted version behind the scenes, Clubic and 01net report. The need is concrete: when a company calls a model through a programming interface (an API), nothing today guarantees it is not being served a cheaper model under the promised label. Anthropic has, however, filed the tool under research, with no commitment to deploy it.</p>",
             "sources": [
               {
                 "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637498-cet-outil-permettra-a-votre-patron-de-surveiller-votre-travail-avec-claude.html"
+                "url": "https://www.clubic.com/actualite-637522-anthropic-developpe-un-systeme-pour-prouver-l-identite-des-modeles-d-ia.html"
+              },
+              {
+                "nom": "01net",
+                "url": "https://www.01net.com/actualites/anthropic-imagine-une-carte-didentite-pour-chaque-modele-dia.html"
               }
             ],
             "rang": 3,
-            "id": "anthropic-opens-an-employer-dashboard-tracking-claude-usage"
+            "id": "anthropic-proposes-a-cryptographic-id-card-for-ai-models"
           },
           {
-            "titre": "Swarms of AI agents reportedly compromised more than a hundred organisations for $50",
-            "texteHtml": "<p>Researchers at NorForge describe an attack that hijacks the open source platform Cairn to orchestrate autonomous AI agents, ZDNet reports. These agents correlate micro-flaws without writing a single piece of malware, and are said to have already hit more than a hundred organisations for a starting cost of about $50. The technique lowers the entry ticket for attacks that until now were reserved for well-equipped teams.</p>",
+            "titre": "\"LLMJacking\" turns stolen AI access into a parallel trade",
+            "texteHtml": "<p>Hackers resell access to the most expensive AI models on the cheap by hijacking corporate credentials, leaving the companies with the bill, sometimes up to a million dollars, Clubic reports. The method consists of stealing an organisation's access keys to an AI service, then selling that access to third parties for as long as the fraud goes unnoticed. The practice is growing and targets poorly protected business accounts.</p>",
             "sources": [
               {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/zd-tech-cybersecurite-comment-des-agents-ia-contournent-vos-pare-feux-pour-50-dollars-506827.htm"
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637579-abonnements-ia-a-prix-casses-pour-les-clients-factures-a-un-million-pour-les-entreprises-le-llmjacking-nouveau-business-des-pirates.html"
               }
             ],
             "rang": 4,
-            "id": "swarms-of-ai-agents-reportedly-compromised-more-than-a"
+            "id": "llmjacking-turns-stolen-ai-access-into-a-parallel-trade"
+          },
+          {
+            "titre": "Near Glasgow, HPE refurbishes the Nvidia chips discarded by the AI giants",
+            "texteHtml": "<p>La Tribune visited the centre in Erskine, Scotland, where Hewlett Packard Enterprise tests, repairs and returns to the market Nvidia graphics cards, the processors coveted since the AI rush. Two hundred staff recover components that large data centre operators are shedding. The site sheds light on a rarely seen side of the AI economy: a secondary market for hardware is taking shape as first-generation chips give way.</p>",
+            "sources": [
+              {
+                "nom": "La Tribune",
+                "url": "https://www.latribune.fr/article/tech/informatique/91020291994247/au-coeur-de-lusine-hpe-qui-reconditionne-les-puces-nvidia-et-les-composants-delaisses-par-les-geants-de-lia"
+              }
+            ],
+            "rang": 5,
+            "id": "near-glasgow-hpe-refurbishes-the-nvidia-chips-discarded-by"
           }
         ]
       },
@@ -574,68 +617,56 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "OpenAI struggles to close its round while Anthropic's margins tighten",
-            "texteHtml": "<p>OpenAI has reportedly raised only about $11 billion in commitments of the $30 billion targeted, and must court large fortunes to complete its round, Clubic reports. At the same time, TechCrunch notes that Anthropic's compute margins are deteriorating just when they should be improving, as the company prepares its stock market debut with faster growth. The two most prominent labs face the same equation: the cost of compute is climbing faster than revenue. The profitability question, long deferred, is settling at the centre of investor discussions.</p>",
-            "sources": [
-              {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637360-coup-de-froid-pour-openai-pourquoi-le-createur-de-chatgpt-peine-a-boucler-sa-mega-levee-de-fonds.html"
-              },
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/"
-              }
-            ],
-            "rang": 5,
-            "id": "openai-struggles-to-close-its-round-while-anthropic-s"
-          },
-          {
-            "titre": "Google switches off search for US schools that refuse its AI",
-            "texteHtml": "<p>Google has warned that its AI tools will be off by default for student accounts in its US education offering (the K-12 programme), unless an administrator turns them on, The Verge, TechCrunch and Next.ink report. One point stings: a school that refuses AI also loses access to standard Google search, now welded to answers generated by Gemini. It becomes impossible to enable an AI-free search for these accounts. The trade-off turns an option into a requirement and leaves little room for schools keen to limit minors' exposure to these tools.</p>",
+            "titre": "Uber recorded only four rides booked by an AI agent last quarter",
+            "texteHtml": "<p>At its earnings presentation on Wednesday, Uber revealed that third-party AI agents had arranged only four trips during its busiest week of the third quarter of 2026, The Verge and TechCrunch report. On the delivery side, Uber Eats counted \"around 500\" orders placed by agents over the same period. For a platform that handles tens of millions of rides, these volumes are close to nothing. Executives cited the figure to reassure on the risk of disintermediation, the fear of seeing AI assistants slip between Uber and its customers. The observation goes beyond Uber: autonomous booking by an agent, heavily announced, remains a marginal practice.</p>",
             "sources": [
               {
                 "nom": "The Verge",
-                "url": "https://www.theverge.com/tech/1025411/google-turn-off-search-ai-features"
+                "url": "https://www.theverge.com/transportation/1026306/uber-ai-agents-q3-earnings-disintermediation"
               },
               {
                 "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/11/03/google-will-let-schools-disable-its-ai-tools-but-not-without-sacrificing-search/"
-              },
-              {
-                "nom": "Next.ink",
-                "url": "https://next.ink/265590/google-pas-de-recherche-sans-ia-dans-leducation-aux-etats-unis/"
+                "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/"
               }
             ],
             "rang": 6,
-            "id": "google-switches-off-search-for-us-schools-that-refuse-its-ai"
+            "id": "uber-recorded-only-four-rides-booked-by-an-ai-agent-last"
           },
           {
-            "titre": "Canva reorganises more than a fifth of its workforce in the name of AI",
-            "texteHtml": "<p>The Australian graphic design software maker Canva has announced job cuts and role changes affecting more than a fifth of its workforce, Bloomberg reports. The company presents the reshuffle as a structural adjustment forced by artificial intelligence. The case is one of the first large layoff plans where management openly attributes the reorganisation to AI, at one of Australia's most prominent technology companies. The signal weighs on every creative profession, where assisted production is redefining the volume of work handed to teams.</p>",
+            "titre": "London cuts its £400 billion AI-benefit promise to under a third",
+            "texteHtml": "<p>The British government had claimed that AI would add £400 billion to its economy, a figure drawn mostly from an estimate supplied by Google, Wired reports. The minister responsible for AI now concedes that the realistic amount is under a third of that sum, on the order of £120 billion. The researchers cited point to slow adoption by companies as the main cause of the gap. The episode shows how easily an impact figure, taken up by the authorities, swells well beyond what real usage justifies.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-03/canva-announces-layoffs-job-changes-for-about-22-of-workforce"
+                "nom": "Wired",
+                "url": "https://www.wired.com/story/uk-officials-said-ai-would-add-400-billion-to-the-economy-that-figure-mainly-came-from-google/"
               }
             ],
             "rang": 7,
-            "id": "canva-reorganises-more-than-a-fifth-of-its-workforce-in-the"
+            "id": "london-cuts-its-400-billion-ai-benefit-promise-to-under-a"
           },
           {
-            "titre": "AMD and Super Micro beat expectations on AI chip demand",
-            "texteHtml": "<p>AMD has delivered a sales forecast above analyst estimates, lifted by demand for data-centre processors, and is positioning itself as Nvidia's main rival, Bloomberg reports. Server maker Super Micro also raised its annual outlook, a sign of sustained demand for machines packed with AI chips. These results contrast with the day's warnings, including one from AllianceBernstein urging investors to diversify beyond the large AI stocks. The swing between equipment makers' euphoria and fund managers' doubt sums up the market's mood.</p>",
+            "titre": "Google struggles to make AI pay as well as its search",
+            "texteHtml": "<p>Alphabet saw queries on its engine grow at their fastest pace in five years, but search advertising revenue growth slowed to 12% year on year in the third quarter, against roughly 17% the previous quarter, The Verge reports. AI-generated answers, the AI Overviews, sit at the top of the pages and divert some of the clicks that fed the ads. Google is now inserting advertising into those answers, without so far recovering the profitability of the classic blue link. The case raises a question common to every service provider: AI is costly to produce and, for now, earns less than what it replaces.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-03/amd-sales-forecast-tops-estimates-on-soaring-ai-chip-demand"
-              },
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-03/super-micro-gives-outlook-that-tops-estimates-on-server-demand"
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1024862/google-search-ai-overviews-alphabet-earnings-q3"
               }
             ],
             "rang": 8,
-            "id": "amd-and-super-micro-beat-expectations-on-ai-chip-demand"
+            "id": "google-struggles-to-make-ai-pay-as-well-as-its-search"
+          },
+          {
+            "titre": "Isomorphic Labs, an Alphabet subsidiary, is said to be raising nearly $5 billion for medical AI",
+            "texteHtml": "<p>Isomorphic Labs, the drug-discovery company spun out of Google DeepMind, is reportedly in talks to raise about $5 billion, Bloomberg reports. Led by Demis Hassabis, it applies to treatment design the methods that produced AlphaFold, the system that predicts the structure of proteins. The funding round, if confirmed, would rank among the largest in AI-applied healthcare. It shows that capital keeps flowing toward scientific uses, even as other parts of AI see their promises revised downward.</p>",
+            "sources": [
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-11-04/isomorphic-labs-in-talks-for-about-5-billion-in-funding"
+              }
+            ],
+            "rang": 9,
+            "id": "isomorphic-labs-an-alphabet-subsidiary-is-said-to-be"
           }
         ]
       },
@@ -646,28 +677,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Tencent unveils Hy4, an open model that can read images",
-            "texteHtml": "<p>Chinese giant Tencent launched Hy4 on Wednesday 4 November, its new flagship open-weight language model, designed to power its enterprise software ecosystem, the South China Morning Post reports. For the first time in this family, the model understands the visual: it processes images, analyses complex charts and carries out mathematical reasoning from diagrams. Tencent highlights stronger agentic capabilities, that is, the ability to chain actions together to accomplish a task. The release aligns it with the open race already run by DeepSeek, Z.ai and Alibaba.</p>",
+            "titre": "A DeepSeek engineer defends open AI toward AGI, despite the risks",
+            "texteHtml": "<p>At a panel of the World Internet Conference in Wuzhen on Tuesday, engineer Gao Xi reaffirmed DeepSeek's commitment to open source to speed the arrival of artificial general intelligence, an AI as versatile as a human, even if that openness increases safety risks, the South China Morning Post reports. He argues that open development fosters shared innovation and technical progress. The stance stands up to concerns voiced in both the United States and China, where the authorities are questioning the threat such a strategy would pose to national security. The Chinese lab is owning a line that runs against the caution displayed by several major players.</p>",
             "sources": [
               {
                 "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3373227/tencent-unveils-hy4-open-weight-ai-race-deepseek-zai-alibaba-heats"
-              }
-            ],
-            "rang": 9,
-            "id": "tencent-unveils-hy4-an-open-model-that-can-read-images"
-          },
-          {
-            "titre": "Alibaba chairman Joe Tsai makes open source the official path",
-            "texteHtml": "<p>At the World Internet Conference in Wuzhen, Zhejiang, Alibaba chairman Joe Tsai defended open source as \"the only viable path\" for building a sustainable AI industry, the South China Morning Post reports. He pointed to a growing convergence of Chinese technology companies around open ecosystems, as demand for AI climbs and US pressure on access to components intensifies. The remarks make official a strategy the group has been pushing for months. It contrasts with the lockdown practised by the large US labs.</p>",
-            "sources": [
-              {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/tech-trends/article/3373155/alibabas-joe-tsai-champions-open-source-ai-wuzhen-summit-amid-us-pushback"
+                "url": "https://www.scmp.com/tech/big-tech/article/3373262/deepseek-engineer-defends-push-open-source-ai-smarter-humans-despite-higher-risks"
               }
             ],
             "rang": 10,
-            "id": "alibaba-chairman-joe-tsai-makes-open-source-the-official"
+            "id": "a-deepseek-engineer-defends-open-ai-toward-agi-despite-the"
+          },
+          {
+            "titre": "Beijing blocks SoftBank's acquisition of ABB's robotics division",
+            "texteHtml": "<p>China has barred the sale to SoftBank of Swiss group ABB's industrial robotics unit, valued at $5.4 billion, Bloomberg reports. The veto thwarts the Japanese group's ambitions in physical AI, that is, robots equipped with AI capabilities. It illustrates Beijing's use of its merger review as leverage in the technological rivalry, mirroring the restrictions Washington imposes on semiconductors.</p>",
+            "sources": [
+              {
+                "nom": "Bloomberg",
+                "url": "https://www.bloomberg.com/news/articles/2026-11-05/china-blocks-softbank-s-acquisition-of-abb-industrial-robot-unit"
+              }
+            ],
+            "rang": 11,
+            "id": "beijing-blocks-softbank-s-acquisition-of-abb-s-robotics"
           }
         ]
       },
@@ -678,16 +709,16 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "Teaching an agent to manage its own context memory",
-            "texteHtml": "<p>A paper posted on arXiv presents MEMENTO, an agent designed to process long documents by managing its context (the window of text the model keeps in view at each step). The common method, called compaction, replaces the history with a summary note the model writes itself; yet commercial models, including GPT-5.5 and GLM-5.3, often write notes of little use. The authors train a smaller model, built on Qwen3-8B, to take effective notes, which improves information tracking over long inputs.</p>",
+            "titre": "SlackBench puts agents to the test of real teamwork",
+            "texteHtml": "<p>A paper posted on arXiv presents SlackBench, a benchmark that evaluates AI agents on collaborative projects anchored in real code repositories, the spaces where teams store and version their software. Where many tests rely on isolated tasks or artificial data, SlackBench reproduces the reality of office work: the useful information is scattered across conversations, private messages, code and successive decisions. To answer a simple question, the agent must find the right channels, reconstruct the context of long discussions and connect the pieces. The work measures a gap often hidden: knowing how to code does not guarantee knowing how to collaborate.</p>",
             "sources": [
               {
                 "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2611.00244"
+                "url": "https://arxiv.org/abs/2611.05512"
               }
             ],
-            "rang": 11,
-            "id": "teaching-an-agent-to-manage-its-own-context-memory"
+            "rang": 12,
+            "id": "slackbench-puts-agents-to-the-test-of-real-teamwork"
           }
         ]
       },
@@ -698,74 +729,62 @@
         "format": "bref",
         "items": [
           {
-            "titre": "ChatGPT is said to reach 20% of Google's search volume",
-            "texteHtml": "<p>The volume of queries handled by ChatGPT now equals 20% of Google's, said Adam Fry, consumer product lead for ChatGPT at OpenAI, at a press event, The Verge reports.</p>",
+            "titre": "Apple cuts its engineering teams' AI budget",
+            "texteHtml": "<p>Apple is reportedly sharply reducing the sums allocated to internal AI use by its engineers, TechCrunch reports, a sign of caution at a group already lagging on generative AI.</p>",
             "sources": [
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1025482/openai-says-chatgpt-is-catching-up-to-google-in-search"
-              }
-            ],
-            "rang": 12,
-            "id": "chatgpt-is-said-to-reach-20-of-google-s-search-volume"
-          },
-          {
-            "titre": "The Binance hack reportedly hijacked an internal AI tool",
-            "texteHtml": "<p>Binance describes a months-long campaign affecting about $6.34 billion in assets, combining a fake job interview, malware and the hijacking of an internal AI tool, which the FBI attributes to North Korea, ZDNet reports.</p>",
-            "sources": [
-              {
-                "nom": "ZDNet",
-                "url": "https://www.zdnet.fr/actualites/piratage-de-binance-faux-recruteur-logiciel-malveillant-et-outil-dia-detourne-le-recit-dune-attaque-de-plusieurs-mois-507233.htm"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/"
               }
             ],
             "rang": 13,
-            "id": "the-binance-hack-reportedly-hijacked-an-internal-ai-tool"
+            "id": "apple-cuts-its-engineering-teams-ai-budget"
           },
           {
-            "titre": "Nvidia's Chinese customers will receive only 1% of the chips they ordered",
-            "texteHtml": "<p>Chinese AI developers expect to receive only a small fraction of the RTX chips they ordered from Nvidia in the coming months, as the maker struggles to ramp up production against saturated global demand, Bloomberg reports.</p>",
+            "titre": "The \"hidden\" AI-related debt of US tech giants has reportedly doubled in six months",
+            "texteHtml": "<p>The off-balance-sheet debt of the major US technology groups tied to AI infrastructure has reportedly jumped 90% in six months, to reach $3.2 trillion, according to a count by Nikkei Asia.</p>",
             "sources": [
               {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-04/nvidia-china-clients-to-get-1-of-70-billion-rtx-chips-ordered"
+                "nom": "Nikkei Asia",
+                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months"
               }
             ],
             "rang": 14,
-            "id": "nvidia-s-chinese-customers-will-receive-only-1-of-the-chips"
+            "id": "the-hidden-ai-related-debt-of-us-tech-giants-has-reportedly"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "Choosing and running an open model becomes the skill that decides your AI costs",
-      "these": "Revolut cut its AI bill tenfold by running an open Chinese model on its own servers; evaluating and operating these models becomes the skill that governs both costs and data control.",
-      "html": "<p>Revolut cut its artificial intelligence bill tenfold by running GLM, an open-weight model built in China, on servers it controls. The bank also says it has shipped its features faster since making that choice. Behind the anecdote sits a decision many French technical teams will have to settle in the months ahead.</p>\n<p>We are watching the closed model billed by the token stop being the obvious default. On the same day, OpenAI struggles to raise the $30 billion targeted and gathers only around ten; Anthropic sees its compute margins deteriorate just when they should be improving. Proprietary providers will sooner or later pass this pressure on to their prices. On the other side, the open offering is filling out: Tencent is releasing Hy4, Alibaba is making open source its official line. A manager who sets a 2027 inference budget on today's prices is overestimating the spend.</p>\n<p>The decisive skill comes down to knowing how to choose a model, measure its quality on your own tasks, host it and maintain it. Revolut had the teams to do it. Many French organisations do not yet, and the gap is widening there.</p>\n<p>One point deserves to be turned around. Running a Chinese model on your own servers keeps the data at home, whereas a call to a foreign API sends it out. The reflex that ties a Chinese model to risk is reversed: running an open model locally gives more control over the data than a proprietary service hosted elsewhere. The data protection officer and the architect have the same interest in looking at this path.</p>\n<p>The price of AI will not come down on its own. It falls for those who know where their model runs and under what conditions their data flows. This skill can be learned, and it will soon be worth more than a subscription.</p>\n<p>The Masteria editorial team.</p>",
-      "htmlExtrait": "<p>Revolut cut its artificial intelligence bill tenfold by running GLM, an open-weight model built in China, on servers it controls. The bank also says it has shipped its features faster since making that choice. Behind the anecdote sits a decision many French technical teams will have to settle in the months ahead.</p>\n<p>We are watching the closed model billed by the token stop being the obvious default. On the same day, OpenAI struggles to raise the $30 billion targeted and gathers only around ten; Anthropic sees its compute margins deteriorate just when they should be improving. Proprietary providers will sooner or later pass this pressure on to their prices. On the other side, the open offering is filling out: Tencent is releasing Hy4, Alibaba is making open source its official line. A manager who sets a 2027 inference budget on today's prices is overestimating the spend.</p>",
+      "titre": "AI is announced everywhere, used little: closing that gap is a matter of organisation and skills",
+      "these": "Uber counts only four rides booked by an agent and London cuts its promised AI gains by two thirds; gaining access to a tool and actually using it are two steps, and the second is won through training.",
+      "html": "<p>Uber handled four rides booked by an AI agent during its busiest week of the quarter. Four. For a platform that records tens of millions of trips, that figure measures the gap between what AI can do and what it actually does.</p>\n<p>The same day, the signs of this gap pile up. The British government had promised £400 billion in gains for its economy; its minister now concedes under a third, for lack of adoption. Apple is cutting its engineering teams' AI budget. Google sees its queries grow at the fastest pace in five years without managing to make AI pay like its search. Model capability climbs, the value organisations draw from it stalls.</p>\n<p>What is at stake is the difference between having a tool and reorganising work around it. Deploying an assistant or an agent in a company takes an afternoon. Changing how a team writes a quote, processes a case or handles a complaint takes months, and assumes the people involved are trained. The first step is billed in licences, the second is won in skills. Almost no one has crossed the second.</p>\n<p>For a manager, the consequence is direct. The dashboard that counts the number of active AI licences measures nothing. Count the tasks instead: how many real operations have changed shape since the tool arrived, how many people know how to use it on their own work, how much time has been given back. Wherever these figures stay at zero, AI is an expense, not a gain.</p>\n<p>Uber's four rides measure a lead, that of technology over the organisations meant to absorb it. The advantage of the coming years will go to those who have done the thankless work of training their teams, while the others watched the capability curve rise. The tool is ready. The professions are getting to it.</p>\n<p>The Masteria editorial team.</p>",
+      "htmlExtrait": "<p>Uber handled four rides booked by an AI agent during its busiest week of the quarter. Four. For a platform that records tens of millions of trips, that figure measures the gap between what AI can do and what it actually does.</p>\n<p>The same day, the signs of this gap pile up. The British government had promised £400 billion in gains for its economy; its minister now concedes under a third, for lack of adoption. Apple is cutting its engineering teams' AI budget. Google sees its queries grow at the fastest pace in five years without managing to make AI pay like its search. Model capability climbs, the value organisations draw from it stalls.</p>",
       "itemsCites": [
-        1,
-        5,
-        9,
-        10
+        6,
+        7,
+        8,
+        13
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-11-03",
-      "dateLongue": "Tuesday 3 November 2026",
-      "titreEditorial": "Anthropic files to go public with its existential risks",
+      "date": "2026-11-04",
+      "dateLongue": "Wednesday 4 November 2026",
+      "titreEditorial": "Revolut cuts its AI bill tenfold",
       "nbItems": 14
     },
     "suivante": null,
     "nbItems": 14,
-    "nbSources": 19,
-    "nbSignes": 8276,
+    "nbSources": 21,
+    "nbSignes": 8702,
     "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe and France",
-        "nb": 3
+        "nb": 4
       },
       {
         "cle": "international",
@@ -785,23 +804,24 @@
       {
         "cle": "bref",
         "libelle": "In brief",
-        "nb": 3
+        "nb": 2
       }
     ],
     "sourcesDuJour": [
-      "Numerama",
-      "Next.ink",
-      "Clubic",
-      "ZDNet",
-      "TechCrunch",
       "The Verge",
-      "Bloomberg",
-      "South China Morning Post",
-      "arXiv"
+      "Wired",
+      "404 Media",
+      "La Tribune",
+      "Usbek & Rica",
+      "CNIL",
+      "Commission européenne",
+      "Clubic",
+      "01net",
+      "TechCrunch"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 116,
-    "publieLe": "2026-11-04T09:45:54+01:00",
-    "publieLeAffiche": "9h45"
+    "nbArticlesCollectes": 131,
+    "publieLe": "2026-11-05T09:55:23+01:00",
+    "publieLeAffiche": "9h55"
   }
 }

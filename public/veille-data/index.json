@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-04",
-    "totalEditions": 59,
-    "totalItems": 794,
-    "totalSources": 1161
+    "derniereDate": "2026-11-05",
+    "totalEditions": 60,
+    "totalItems": 808,
+    "totalSources": 1182
   },
   "editions": [
+    {
+      "date": "2026-11-05",
+      "dateAffichee": "5 novembre 2026",
+      "dateCourte": "jeu. 5 nov.",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Les data centers, grands perdants des midterms",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-11-04",
       "dateAffichee": "4 novembre 2026",

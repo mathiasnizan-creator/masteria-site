@@ -409,6 +409,7 @@ https://www.master-ia.fr/sitemap.xml
 
 <!-- veille:editions:debut -->
 ## Dernières éditions de la Veille IA (mis à jour à chaque publication)
+- [5 novembre 2026 : Les data centers, grands perdants des midterms](https://www.master-ia.fr/veille-ia/2026-11-05)
 - [4 novembre 2026 : Revolut divise par dix sa facture d'IA](https://www.master-ia.fr/veille-ia/2026-11-04)
 - [3 novembre 2026 : Anthropic entre en Bourse avec ses risques existentiels](https://www.master-ia.fr/veille-ia/2026-11-03)
 - [2 novembre 2026 : ChatGPT atteint un milliard d'utilisateurs par semaine](https://www.master-ia.fr/veille-ia/2026-11-02)
@@ -418,5 +419,4 @@ https://www.master-ia.fr/sitemap.xml
 - [9 octobre 2026 : L'IA grignote les premiers emplois des jeunes](https://www.master-ia.fr/veille-ia/2026-10-09)
 - [8 octobre 2026 : Prouver l'origine d'un contenu devient une fonction économique : l'organisation qui trace ce qu'elle publie et forme ses équipes à la provenance prend de l'avance sur la transparence qu'imposera l'AI Act](https://www.master-ia.fr/veille-ia/2026-10-08)
 - [7 octobre 2026 : Le prix de l'IA au travail bascule du siège au compteur : l'avantage va désormais à l'organisation qui forme ses équipes à tirer le plus de valeur par euro dépensé](https://www.master-ia.fr/veille-ia/2026-10-07)
-- [6 octobre 2026 : Un agent IA fait exactement ce que ses droits autorisent : donnez-lui le périmètre le plus étroit et un contrôle humain qui montre l'acte avant de l'approuver](https://www.master-ia.fr/veille-ia/2026-10-06)
 <!-- veille:editions:fin -->

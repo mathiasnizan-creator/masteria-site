@@ -3,12 +3,134 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-04",
-    "totalEditions": 44,
-    "totalItems": 591,
-    "totalSources": 849
+    "derniereDate": "2026-11-05",
+    "totalEditions": 45,
+    "totalItems": 605,
+    "totalSources": 870
   },
   "editions": [
+    {
+      "date": "2026-11-05",
+      "dateCourte": "Thu 5 Nov",
+      "dateAffichee": "5 November 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Data centres, the midterms' big losers",
+      "chapeau": "The Democratic wave in the US midterm elections turned data centres into an electoral target: around thirty local measures are slowing their construction and Asian markets opened lower. Elsewhere, the economic promise of AI deflated another notch, from Uber counting only four rides booked by an agent to London cutting its projected gains by two thirds.",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "The Verge",
+        "Wired",
+        "404 Media",
+        "La Tribune",
+        "Usbek & Rica",
+        "CNIL",
+        "Commission européenne",
+        "Clubic",
+        "01net",
+        "TechCrunch",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "American voters rejected AI data centres en masse",
+          "z": "une",
+          "id": "american-voters-rejected-ai-data-centres-en-masse"
+        },
+        {
+          "t": "The EDPB and the CNIL launch a platform on children's privacy",
+          "z": "europe",
+          "id": "the-edpb-and-the-cnil-launch-a-platform-on-children-s"
+        },
+        {
+          "t": "Anthropic proposes a cryptographic ID card for AI models",
+          "z": "europe",
+          "id": "anthropic-proposes-a-cryptographic-id-card-for-ai-models"
+        },
+        {
+          "t": "\"LLMJacking\" turns stolen AI access into a parallel trade",
+          "z": "europe",
+          "id": "llmjacking-turns-stolen-ai-access-into-a-parallel-trade"
+        },
+        {
+          "t": "Near Glasgow, HPE refurbishes the Nvidia chips discarded by the AI giants",
+          "z": "europe",
+          "id": "near-glasgow-hpe-refurbishes-the-nvidia-chips-discarded-by"
+        },
+        {
+          "t": "Uber recorded only four rides booked by an AI agent last quarter",
+          "z": "international",
+          "id": "uber-recorded-only-four-rides-booked-by-an-ai-agent-last"
+        },
+        {
+          "t": "London cuts its £400 billion AI-benefit promise to under a third",
+          "z": "international",
+          "id": "london-cuts-its-400-billion-ai-benefit-promise-to-under-a"
+        },
+        {
+          "t": "Google struggles to make AI pay as well as its search",
+          "z": "international",
+          "id": "google-struggles-to-make-ai-pay-as-well-as-its-search"
+        },
+        {
+          "t": "Isomorphic Labs, an Alphabet subsidiary, is said to be raising nearly $5 billion for medical AI",
+          "z": "international",
+          "id": "isomorphic-labs-an-alphabet-subsidiary-is-said-to-be"
+        },
+        {
+          "t": "A DeepSeek engineer defends open AI toward AGI, despite the risks",
+          "z": "chine",
+          "id": "a-deepseek-engineer-defends-open-ai-toward-agi-despite-the"
+        },
+        {
+          "t": "Beijing blocks SoftBank's acquisition of ABB's robotics division",
+          "z": "chine",
+          "id": "beijing-blocks-softbank-s-acquisition-of-abb-s-robotics"
+        },
+        {
+          "t": "SlackBench puts agents to the test of real teamwork",
+          "z": "recherche",
+          "id": "slackbench-puts-agents-to-the-test-of-real-teamwork"
+        },
+        {
+          "t": "Apple cuts its engineering teams' AI budget",
+          "z": "bref",
+          "id": "apple-cuts-its-engineering-teams-ai-budget"
+        },
+        {
+          "t": "The \"hidden\" AI-related debt of US tech giants has reportedly doubled in six months",
+          "z": "bref",
+          "id": "the-hidden-ai-related-debt-of-us-tech-giants-has-reportedly"
+        }
+      ]
+    },
     {
       "date": "2026-11-04",
       "dateCourte": "Wed 4 Nov",

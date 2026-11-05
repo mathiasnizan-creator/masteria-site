@@ -260,7 +260,12 @@
     "titreEditorial": "Anthropic entre en Bourse avec ses risques existentiels",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-05",
+    "dateLongue": "jeudi 5 novembre 2026",
+    "titreEditorial": "Les data centers, grands perdants des midterms",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 19,
   "nbSignes": 9193,

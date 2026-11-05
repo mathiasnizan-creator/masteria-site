@@ -3,12 +3,134 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-04",
-    "totalEditions": 59,
-    "totalItems": 794,
-    "totalSources": 1161
+    "derniereDate": "2026-11-05",
+    "totalEditions": 60,
+    "totalItems": 808,
+    "totalSources": 1182
   },
   "editions": [
+    {
+      "date": "2026-11-05",
+      "dateCourte": "jeu. 5 nov.",
+      "dateAffichee": "5 novembre 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Les data centers, grands perdants des midterms",
+      "chapeau": "La vague démocrate aux élections américaines de mi-mandat a fait des data centers une cible électorale : une trentaine de mesures locales freinent leur construction et les marchés asiatiques ont ouvert en baisse. Ailleurs, la promesse économique de l'IA se dégonfle d'un cran, d'Uber qui ne compte que quatre courses réservées par un agent à Londres qui divise par trois son estimation de retombées.",
+      "nbItems": 14,
+      "nbSources": 21,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 4
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 2
+        }
+      ],
+      "sources": [
+        "The Verge",
+        "Wired",
+        "404 Media",
+        "La Tribune",
+        "Usbek & Rica",
+        "CNIL",
+        "Commission européenne",
+        "Clubic",
+        "01net",
+        "TechCrunch",
+        "Bloomberg",
+        "South China Morning Post",
+        "arXiv",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Les électeurs américains ont massivement rejeté les data centers d'IA",
+          "z": "une",
+          "id": "les-electeurs-americains-ont-massivement-rejete-les-data"
+        },
+        {
+          "t": "Le CEPD et la CNIL lancent une plateforme sur la vie privée des enfants",
+          "z": "europe",
+          "id": "le-cepd-et-la-cnil-lancent-une-plateforme-sur-la-vie-privee"
+        },
+        {
+          "t": "Anthropic propose une carte d'identité cryptographique pour les modèles d'IA",
+          "z": "europe",
+          "id": "anthropic-propose-une-carte-d-identite-cryptographique-pour"
+        },
+        {
+          "t": "Le « LLMJacking » transforme les accès volés à l'IA en commerce parallèle",
+          "z": "europe",
+          "id": "le-llmjacking-transforme-les-acces-voles-a-l-ia-en-commerce"
+        },
+        {
+          "t": "Près de Glasgow, HPE reconditionne les puces Nvidia délaissées par les géants de l'IA",
+          "z": "europe",
+          "id": "pres-de-glasgow-hpe-reconditionne-les-puces-nvidia"
+        },
+        {
+          "t": "Uber n'a enregistré que quatre courses réservées par un agent IA au dernier trimestre",
+          "z": "international",
+          "id": "uber-n-a-enregistre-que-quatre-courses-reservees-par-un"
+        },
+        {
+          "t": "Londres ramène à moins d'un tiers sa promesse de 400 milliards de livres de retombées de l'IA",
+          "z": "international",
+          "id": "londres-ramene-a-moins-d-un-tiers-sa-promesse-de-400"
+        },
+        {
+          "t": "Google peine à faire payer l'IA aussi bien que sa recherche",
+          "z": "international",
+          "id": "google-peine-a-faire-payer-l-ia-aussi-bien-que-sa-recherche"
+        },
+        {
+          "t": "Isomorphic Labs, filiale d'Alphabet, lèverait près de 5 milliards de dollars pour l'IA médicale",
+          "z": "international",
+          "id": "isomorphic-labs-filiale-d-alphabet-leverait-pres-de-5"
+        },
+        {
+          "t": "Un ingénieur de DeepSeek défend l'IA ouverte vers l'AGI, malgré les risques",
+          "z": "chine",
+          "id": "un-ingenieur-de-deepseek-defend-l-ia-ouverte-vers-l-agi"
+        },
+        {
+          "t": "Pékin bloque le rachat par SoftBank de la division robotique d'ABB",
+          "z": "chine",
+          "id": "pekin-bloque-le-rachat-par-softbank-de-la-division"
+        },
+        {
+          "t": "SlackBench met les agents à l'épreuve du travail d'équipe réel",
+          "z": "recherche",
+          "id": "slackbench-met-les-agents-a-l-epreuve-du-travail-d-equipe"
+        },
+        {
+          "t": "Apple réduit le budget d'IA de ses équipes d'ingénierie",
+          "z": "bref",
+          "id": "apple-reduit-le-budget-d-ia-de-ses-equipes-d-ingenierie"
+        },
+        {
+          "t": "La dette « cachée » des géants tech américains liée à l'IA aurait doublé en six mois",
+          "z": "bref",
+          "id": "la-dette-cachee-des-geants-tech-americains-liee-a-l-ia"
+        }
+      ]
+    },
     {
       "date": "2026-11-04",
       "dateCourte": "mer. 4 nov.",
