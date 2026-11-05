@@ -86,6 +86,18 @@ function grouperHtml(unites, max = 3, budget = 380) {
 
 const parasHtml = (html, max, budget) => grouperHtml(phrasesHtml(html), max, budget)
 
+// Texte qui peut contenir des liens ou du gras : paragraphes courts rendus en HTML,
+// sinon <Paras> (texte brut). Évite d'afficher « <a href=…> » en clair.
+function ParasRiches({ texte, style, max = 3 }) {
+  if (typeof texte !== 'string' || !/<[a-z][^>]*>/i.test(texte)) return <Paras texte={texte} style={style} max={max} />
+  const morceaux = parasHtml(texte, max)
+  const dernier = morceaux.length - 1
+  const rendus = morceaux.map((h, i) => (
+    <p key={i} style={{ ...style, ...(i < dernier ? { marginBottom: 14 } : null) }} dangerouslySetInnerHTML={{ __html: h }} />
+  ))
+  return dernier === 0 ? rendus[0] : <div>{rendus}</div>
+}
+
 // Offres proposées par défaut sous le texte de `apres` (mêmes ancres que l'ancien encart).
 const APRES_LIENS = [
   { label: 'Diagnostic IA', href: '/diagnostic-ia' },
@@ -339,9 +351,7 @@ function Block({ b }) {
                     color: '#0A0A0A',
                     borderBottom: '1px solid #E5E7EB',
                     fontSize: 13,
-                  }}>
-                    {h}
-                  </th>
+                  }} dangerouslySetInnerHTML={{ __html: h }} />
                 ))}
               </tr>
             </thead>
@@ -360,9 +370,7 @@ function Block({ b }) {
                       color: '#2A2A2A',
                       lineHeight: 1.55,
                       verticalAlign: 'top',
-                    }}>
-                      {c}
-                    </td>
+                    }} dangerouslySetInnerHTML={{ __html: c }} />
                   ))}
                 </tr>
               ))}
@@ -635,7 +643,7 @@ function FaqArticle({ items, title, bg }) {
               </button>
               <div style={{ maxHeight: open === i ? 1400 : 0, overflow: 'hidden', transition: 'max-height 320ms ease' }}>
                 <div style={{ paddingBottom: 20 }}>
-                  <Paras texte={item.a} style={{ fontSize: 14, color: '#4A4A4A', lineHeight: 1.8, margin: 0 }} />
+                  <ParasRiches texte={item.a} style={{ fontSize: 14, color: '#4A4A4A', lineHeight: 1.8, margin: 0 }} />
                 </div>
               </div>
             </div>
@@ -907,7 +915,7 @@ export default function BlogArticlePage() {
             boxShadow: '0 1px 3px rgba(0,0,0,0.04)',
           }}>
             {/* Chapeau en paragraphes courts */}
-            <Paras texte={article.intro} max={2} style={{ margin: 0 }} />
+            <ParasRiches texte={article.intro} max={2} style={{ margin: 0 }} />
           </div>
         </div>
       </header>
