@@ -1,4 +1,36 @@
 import { useEffect, useRef, useState } from 'react';
+
+// Formulaire envoyé à la plateforme (vérification Cloudflare Turnstile côté serveur)
+// depuis le 05/11/2026 : l'adresse Formspree, lisible dans ce code, était bombardée
+// directement par des robots.
+const CONTACT_ENDPOINT = 'https://app.master-ia.fr/api/public/contact-site';
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFzZNH3wg9Osa1Pp';
+
+function Turnstile({ widgetKey }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    let id;
+    let cancelled = false;
+    const render = () => {
+      if (cancelled || !ref.current || !window.turnstile) return;
+      id = window.turnstile.render(ref.current, { sitekey: TURNSTILE_SITE_KEY });
+    };
+    if (window.turnstile) render();
+    else {
+      let s = document.getElementById('cf-turnstile-script');
+      if (!s) {
+        s = document.createElement('script');
+        s.id = 'cf-turnstile-script';
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true;
+        document.head.appendChild(s);
+      }
+      s.addEventListener('load', render);
+    }
+    return () => { cancelled = true; if (id && window.turnstile) window.turnstile.remove(id); };
+  }, [widgetKey]);
+  return <div ref={ref} style={{ minHeight: 65, marginBottom: 12 }} />;
+}
 import { Link } from 'react-router-dom';
 import {
   Compass, Zap, Rocket, Target, Lightbulb, GraduationCap, SlidersHorizontal,
@@ -15,7 +47,7 @@ import { trackEvent } from '../consent/ga4';
  *  - initialRdv : créneau de cadrage présélectionné (?rdv=30) ;
  *  - outils (slugs des hubs) et metiers (slugs) : présélection, suivie quand
  *    elle change (filtres de /catalogue) ;
- *  - source : envoyée à Formspree pour savoir d'où vient la demande.
+ *  - source : envoyée avec la demande pour savoir d'où elle vient.
  */
 export default function ContactForm({
   demandeType: demandeTypeProp, onDemandeTypeChange, initialRdv = false,
@@ -25,6 +57,7 @@ export default function ContactForm({
   const [loading, setLoading] = useState(false);
   // Heure d'ouverture : un envoi en moins de 3 s vient d'un robot (rafales du 04/11/2026).
   const startedAt = useRef(0);
+  const [captchaKey, setCaptchaKey] = useState(0);
   useEffect(() => { startedAt.current = performance.now(); }, []);
   // Onglet contrôlé par la page (Contact lit ?type=projet) ou interne
   const [typeLocal, setTypeLocal] = useState('formation'); // 'formation' | 'projet'
@@ -88,7 +121,7 @@ export default function ContactForm({
     setLoading(true);
     try {
       if (source) data.set('source', source);
-      // Type de demande (onglet actif) en champ caché transmis à Formspree
+      // Type de demande (onglet actif) en champ caché transmis avec la demande
       data.set('type_demande', demandeType === 'projet' ? 'Conseil & projet sur mesure' : 'Formation');
       if (demandeType === 'formation') {
         // Ajouter les sélections dynamiques (pas dans des vrais inputs)
@@ -99,17 +132,14 @@ export default function ContactForm({
         data.set('besoin', selectedBesoins.length ? besoinsLabel(selectedBesoins).join(', ') : 'À cadrer ensemble');
         data.set('premier_echange', PREMIER_ECHANGE.find(p => p.id === premierEchange)?.label || premierEchange);
       }
-      const res = await fetch('https://formspree.io/f/xzdyjbyn', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
+      const res = await fetch(CONTACT_ENDPOINT, { method: 'POST', body: data });
       if (res.ok) {
         setSent(true);
         trackEvent('generate_lead', { form: source ? 'catalogue' : 'contact' });
       } else {
         const body = await res.json().catch(() => ({}));
-        console.error('Formspree error:', res.status, body);
+        console.error('Contact error:', res.status, body);
+        setCaptchaKey(k => k + 1);
         alert(`Erreur ${res.status} : ${body.error || 'envoi impossible'}. Merci de réessayer dans quelques instants.`);
       }
     } catch (err) {
@@ -169,7 +199,7 @@ export default function ContactForm({
       </div>
     ) : (
       <form onSubmit={handleSubmit}>
-        {/* Champ piège reconnu par Formspree : les envois qui le remplissent sont rejetés */}
+        {/* Champ piège : les envois qui le remplissent sont ignorés côté serveur */}
         <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, opacity: 0 }} />
         <div style={{ marginBottom: 20 }}>
           <h2 style={{ fontFamily: 'Nunito, sans-serif', fontSize: 22, fontWeight: 900, color: '#0A0A0A', marginBottom: 6, letterSpacing: '-0.01em' }}>
@@ -564,6 +594,7 @@ export default function ContactForm({
           </label>
         </div>
 
+        <Turnstile widgetKey={captchaKey} />
         <button type="submit" disabled={loading} style={{
           width: '100%',
           background: loading ? '#93C5FD' : 'linear-gradient(135deg, #2563EB 0%, #1E40AF 100%)',
