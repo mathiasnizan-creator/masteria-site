@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-05",
-    "totalEditions": 45,
-    "totalItems": 605,
-    "totalSources": 870
+    "derniereDate": "2026-11-06",
+    "totalEditions": 46,
+    "totalItems": 619,
+    "totalSources": 890
   },
   "editions": [
+    {
+      "date": "2026-11-06",
+      "dateAffichee": "6 November 2026",
+      "dateCourte": "Fri 6 Nov",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Global AI stock crash, Wall Street to Asia",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-05",
       "dateAffichee": "5 November 2026",

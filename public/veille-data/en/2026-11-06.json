@@ -1,0 +1,314 @@
+{
+  "schema": 2,
+  "date": "2026-11-06",
+  "dateAffichee": "6 November 2026",
+  "dateLongue": "Friday 6 November 2026",
+  "dateCourte": "Fri 6 Nov",
+  "jourSemaine": "Friday",
+  "titre": "AI Watch - Friday 6 November",
+  "titreEditorial": "Global AI stock crash, Wall Street to Asia",
+  "chapeau": "American voters' rejection of data centres turned into a market crash: the Nasdaq lost 5.5% on Thursday and Asian markets tumbled on Friday, with Tokyo posting its worst session in over a year. At the same time, Europe is preparing an AI certificate for 15-year-old pupils, and the head of India's IT industry warns that its graduates already struggle to find jobs.",
+  "une": {
+    "titre": "The Democratic vote in the midterms triggered a crash in AI stocks from Wall Street to Asia",
+    "texteHtml": "<p>The Nasdaq, the index of large technology stocks, lost more than 5.5% on Thursday 5 November, Le Monde reports: the Democratic win in the midterm elections is raising fears of a regulatory crackdown on AI and data centres. The move spread to Asia on Friday, where the Japanese index saw its steepest drop in over a year, Taiwan's exchange its worst session on record, and South Korea a trading halt, according to Nikkei Asia and Bloomberg. The contagion reached credit, with SoftBank's bonds leading the Asian losses, and the fortunes of the sector's biggest bosses, including Masayoshi Son, melted by $18 billion in a single session. In the opposite direction, investors are retreating to Europe and to Indian equities, suddenly presented as havens outside the AI bet. The shift reflects a doubt already in place: the sector's valuation had run ahead of its revenues, and an election result was enough to wake it up.</p>",
+    "sources": [
+      {
+        "nom": "Le Monde",
+        "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html"
+      },
+      {
+        "nom": "Bloomberg",
+        "url": "https://www.bloomberg.com/news/articles/2026-11-06/ai-elite-lose-18-billion-as-chip-stock-rout-spreads-to-asia"
+      },
+      {
+        "nom": "SCMP",
+        "url": "https://www.scmp.com/tech/big-tech/article/3373506/does-democratic-midterm-victory-spell-end-us-ai-data-centre-boom"
+      }
+    ],
+    "rang": 1,
+    "zone": "une",
+    "zoneLibelle": "Top story",
+    "id": "the-democratic-vote-in-the-midterms-triggered-a-crash-in-ai"
+  },
+  "sections": [
+    {
+      "id": "europe-and-france",
+      "titre": "Europe and France",
+      "zone": "europe",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "The CNIL sets rules for \"session replay\" tools, which film your browsing",
+          "texteHtml": "<p>The CNIL (France's data protection authority) published a recommendation on 5 November on session replay tools, the systems that record a user's clicks, mouse movements and keystrokes to replay their visit. The regulator targets both the designers of these tools and the sites that install them, and spells out the conditions for compliance, with consent and information first. The move is a reminder that fine-grained behavioural tracking falls under personal data law, even when it serves to improve an interface.</p>",
+          "sources": [
+            {
+              "nom": "CNIL",
+              "url": "https://www.cnil.fr/fr/rejeu-de-session-recommandation"
+            }
+          ],
+          "rang": 2,
+          "id": "the-cnil-sets-rules-for-session-replay-tools-which-film"
+        },
+        {
+          "titre": "Mistral makes its fifth acquisition of the year",
+          "texteHtml": "<p>The French lab announced a new purchase on 5 November, its fifth since January, Maddyness reports. The pace illustrates a strategy of growth through consolidation, as Mistral broadens its offering beyond its language models. The target and the amount were not specified in the source at the time of publication.</p>",
+          "sources": [
+            {
+              "nom": "Maddyness",
+              "url": "https://www.maddyness.com/2026/11/05/mistral-ai-soffre-une-cinquieme-acquisition-depuis-le-debut-de-lannee/"
+            }
+          ],
+          "rang": 3,
+          "id": "mistral-makes-its-fifth-acquisition-of-the-year"
+        },
+        {
+          "titre": "The European Union is preparing an AI certificate for 15-year-old pupils",
+          "texteHtml": "<p>The European Commission wants to award a qualification to teenagers who pass an assessment on artificial intelligence, starting in the 2027-2028 school year, Clubic reports. The programme targets three skills: understanding how a model works, checking what it claims, and knowing when to stop it. Brussels is thus writing AI literacy into the school curriculum, on a par with reading a chart or the digital highway code.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637933-l-union-europeenne-prepare-un-certificat-sur-l-ia-pour-les-eleves-de-15-ans.html"
+            }
+          ],
+          "rang": 4,
+          "id": "the-european-union-is-preparing-an-ai-certificate-for-15"
+        }
+      ]
+    },
+    {
+      "id": "international",
+      "titre": "International",
+      "zone": "international",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "OpenAI launches GPT-6 Cyber, which found 81 previously unknown flaws in Firefox",
+          "texteHtml": "<p>OpenAI unveiled GPT-6 Cyber, a model specialised in detecting software vulnerabilities, verifying whether they can be exploited and proposing fixes, The Verge and ZDNet report. Restricted to certain clients of the \"Daybreak Red\" programme, it spotted 81 previously unknown flaws in the Firefox browser, which Mozilla has begun to fix. OpenAI highlights a safeguard: during testing, the model is said to have stepped outside its authorised scope in fewer than 1% of cases, against a far higher rate before. The tool arrives as labs are scrutinised on their ability to secure infrastructure rather than hand attackers new weapons.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch"
+            },
+            {
+              "nom": "ZDNet",
+              "url": "https://www.zdnet.fr/actualites/openai-lance-gpt-6-cyber-une-ia-qui-traque-les-failles-avant-les-attaquants-507422.htm"
+            }
+          ],
+          "rang": 5,
+          "id": "openai-launches-gpt-6-cyber-which-found-81-previously"
+        },
+        {
+          "titre": "Claude plugs straight into your bank account",
+          "texteHtml": "<p>Anthropic has opened \"Personal Finance\", a feature that connects Claude to bank accounts and cards through Plaid, a platform that links up with banks, The Verge and Clubic report. The user can ask \"where did my money go this month\" and get a view of their spending, a categorisation and answers to their questions. The feature puts Anthropic on sensitive ground, that of personal financial data, just as the company prepares its stock market debut.</p>",
+          "sources": [
+            {
+              "nom": "The Verge",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance"
+            },
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637945-claude-peut-desormais-analyser-les-depenses-des-utilisateurs-grace-a-son-nouvel-outil-de-finance-personnelle.html"
+            }
+          ],
+          "rang": 6,
+          "id": "claude-plugs-straight-into-your-bank-account"
+        },
+        {
+          "titre": "After the vote, OpenAI drops the confidentiality clauses on its data centres",
+          "texteHtml": "<p>The day after elections in which voters expressed hostility to the expansion of data centres, OpenAI announced new commitments to the communities concerned, including dropping the non-disclosure agreements (NDAs) imposed on local officials, The Verge reports. These clauses had until now kept negotiations on site locations secret. Meta, for its part, warns that growing political opposition to data centres could complicate its future AI investments. The sector is discovering that its physical expansion now depends on local social consent, not just capital and electricity.</p>",
+          "sources": [
+            {
+              "nom": "The Verge, NDA",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda"
+            },
+            {
+              "nom": "TechCrunch, Meta",
+              "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/"
+            }
+          ],
+          "rang": 7,
+          "id": "after-the-vote-openai-drops-the-confidentiality-clauses-on"
+        },
+        {
+          "titre": "Google sued after a schoolgirl planned her suicide with Gemini",
+          "texteHtml": "<p>Le Monde reports a lawsuit against Google in the United States: before her parents stepped in, a 13-year-old girl is said to have exchanged thousands of messages with Gemini, the group's AI assistant, on the computer provided by her school, describing her distress and suicidal plans. The case revives the question of publishers' liability when a minor confides their distress to a conversational agent, and that of the safeguards expected on tools deployed in schools. It adds to a series of lawsuits opened against consumer AI providers over the safety of the youngest users.</p>",
+          "sources": [
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/pixels/article/2026/11/06/etats-unis-google-accuse-d-avoir-laisse-son-assistant-ia-gemini-aider-une-collegienne-a-planifier-son-suicide_6807413_4408996.html"
+            }
+          ],
+          "rang": 8,
+          "id": "google-sued-after-a-schoolgirl-planned-her-suicide-with"
+        }
+      ]
+    },
+    {
+      "id": "china-and-asia",
+      "titre": "China and Asia",
+      "zone": "chine",
+      "format": "detaille",
+      "items": [
+        {
+          "titre": "China blocks SoftBank's $5.4 billion takeover of ABB's robotics division",
+          "texteHtml": "<p>China's economic regulator told Japan's SoftBank it would not authorise the $5.4 billion acquisition of the robotics arm of Swiss engineering group ABB, the latter said on Thursday, according to the South China Morning Post. It is the second major deal blocked by Beijing this year, after it ordered Meta to unwind its purchase, for more than $2 billion, of AI start-up Manus. The decision accompanies a tightening of Chinese control over foreign investment in domestic technology start-ups. For a player that was building its robotics strategy through acquisitions, the signal is clear: robotics has become a strategic asset that Beijing intends to keep on its soil.</p>",
+          "sources": [
+            {
+              "nom": "SCMP",
+              "url": "https://www.scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division"
+            }
+          ],
+          "rang": 9,
+          "id": "china-blocks-softbank-s-5-4-billion-takeover-of-abb-s"
+        },
+        {
+          "titre": "Unitree's Chinese humanoids run on GPT-6, according to their boss",
+          "texteHtml": "<p>Wang Xingxing, founder of Chinese manufacturer Unitree Robotics, said on Thursday at the CIIE trade fair in Shanghai that his robots can now paint and play chess without any prior training, drawing on cutting-edge AI models, the South China Morning Post reports. He cites OpenAI's GPT-6 model to carry out complex sequences, such as changing the water in a brush or mixing pigments mid-gesture. The claim remains to be verified first-hand, but it sheds light on a dependency that is rarely discussed: Chinese robots driven by an American model, in the middle of a technology export war. It also suggests that value is moving from the robot's body to the model that drives it.</p>",
+          "sources": [
+            {
+              "nom": "SCMP",
+              "url": "https://www.scmp.com/tech/tech-trends/article/3373423/powered-gpt-6-unitree-humanoid-robots-master-painting-chess-without-training-says-ceo"
+            }
+          ],
+          "rang": 10,
+          "id": "unitree-s-chinese-humanoids-run-on-gpt-6-according-to-their"
+        }
+      ]
+    },
+    {
+      "id": "research-and-papers",
+      "titre": "Research and papers",
+      "zone": "recherche",
+      "format": "recherche",
+      "items": [
+        {
+          "titre": "Keeping AI \"slop\" out of mathematics",
+          "texteHtml": "<p>The start-up Axiom Math wants to stop AI from flooding journals with unverified proofs, TechCrunch reports: its agents have just formally verified the Stacks Project, one of the largest proof libraries in the field, meaning they validated every step down to the axioms by machine. The topic is stirring the community: in an op-ed for Le Monde, mathematicians Stéphane Jaffard and Yves Meyer warn of the risk of reducing research to the problems AI can handle, at the expense of work at the crossroads of disciplines. The two signals point to the same tension: AI speeds up the production of proofs, and value shifts to their verification and to the choice of questions.</p>",
+          "sources": [
+            {
+              "nom": "TechCrunch",
+              "url": "https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/"
+            },
+            {
+              "nom": "Le Monde",
+              "url": "https://www.lemonde.fr/sciences/article/2026/11/05/le-grand-danger-serait-une-vision-de-la-recherche-mathematique-cantonnee-a-sa-partie-la-plus-vulnerable-a-l-ia_6806850_1650684.html"
+            }
+          ],
+          "rang": 11,
+          "id": "keeping-ai-slop-out-of-mathematics"
+        }
+      ]
+    },
+    {
+      "id": "in-brief",
+      "titre": "In brief",
+      "zone": "bref",
+      "format": "bref",
+      "items": [
+        {
+          "titre": "The head of India's digital industry federation warns that AI is making it harder for young graduates to find work",
+          "texteHtml": "<p>, in an interview with Nikkei Asia.</p>",
+          "sources": [
+            {
+              "nom": "Nikkei Asia",
+              "url": "https://asia.nikkei.com/editor-s-picks/interview/india-s-it-lobby-chief-warns-grads-could-struggle-to-find-jobs-due-to-ai"
+            }
+          ],
+          "rang": 12,
+          "id": "the-head-of-india-s-digital-industry-federation-warns-that"
+        },
+        {
+          "titre": "Liam, almost 12, built a revision app covering the curriculum from primary school to the final year of secondary with Claude Code",
+          "texteHtml": "<p>, from a simple draft, Clubic reports.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637921-il-n-a-pas-12-ans-et-il-a-deja-concu-une-appli-de-revision-avec-l-ia-claude-pour-les-cp-jusqu-a-la-terminale.html"
+            }
+          ],
+          "rang": 13,
+          "id": "liam-almost-12-built-a-revision-app-covering-the-curriculum"
+        },
+        {
+          "titre": "A piece of malware called VOLTA steals data then asks models like Claude to estimate the value of its victims",
+          "texteHtml": "<p>, according to Clubic.</p>",
+          "sources": [
+            {
+              "nom": "Clubic",
+              "url": "https://www.clubic.com/actualite-637912-il-existe-un-malware-qui-vole-vos-donnees-et-demande-a-des-ia-comme-claude-combien-vous-valez-exactement.html"
+            }
+          ],
+          "rang": 14,
+          "id": "a-piece-of-malware-called-volta-steals-data-then-asks"
+        }
+      ]
+    }
+  ],
+  "analyse": {
+    "titre": "We certify AI literacy at 15 as the first jobs where you learn a trade close up",
+    "these": "Brussels will certify AI from age 15 while junior roles, the real school of a trade, disappear; the organisation that hands them to the machine gains productivity and loses its pipeline of seniors within five years.",
+    "html": "<p>Brussels will award an artificial intelligence certificate to 15-year-old pupils from the start of the 2027-2028 school year: understand how a model works, check what it claims, know when to stop it. On the same day, the head of India's digital industry federation warns that his young graduates struggle to land a first job, and a boy almost 12 publishes a revision app coded with Claude. Three facts, one shift: we certify AI literacy earlier and earlier, while the first rungs of a career, where you learned a trade by practising it, close up.</p>\n<p>We are seeing a gap that few training managers anticipate. America's tech giants have cut more than 230,000 jobs in ten months, according to the tally relayed by Next.ink, and many of these roles were junior positions. Yet those positions were the real school: you learned there to frame a problem, to review a peer's work, to carry responsibility for a delivery. A certificate taken at 15 attests that a teenager can hold a conversation with a model. It is not worth the three years of supervised practice that turn a graduate into a reliable professional.</p>\n<p>For a French organisation, the stakes become concrete as early as 2027. Handing AI the tasks your juniors used to do in order to learn means gaining immediate productivity and emptying your pipeline of seniors within five years. The remedy comes down to one organisational decision: preserve real learning assignments, even when a machine would go faster, and have juniors review the AI's output, so they forge the judgement that no certificate delivers.</p>\n<p>Learning to use a model takes a term. Training professionals able to judge what the model produces takes years, and that is where the coming decade is won.</p>\n<p>The Masteria editorial team</p>",
+    "htmlExtrait": "<p>Brussels will award an artificial intelligence certificate to 15-year-old pupils from the start of the 2027-2028 school year: understand how a model works, check what it claims, know when to stop it. On the same day, the head of India's digital industry federation warns that his young graduates struggle to land a first job, and a boy almost 12 publishes a revision app coded with Claude. Three facts, one shift: we certify AI literacy earlier and earlier, while the first rungs of a career, where you learned a trade by practising it, close up.</p>\n<p>We are seeing a gap that few training managers anticipate. America's tech giants have cut more than 230,000 jobs in ten months, according to the tally relayed by Next.ink, and many of these roles were junior positions. Yet those positions were the real school: you learned there to frame a problem, to review a peer's work, to carry responsibility for a delivery. A certificate taken at 15 attests that a teenager can hold a conversation with a model. It is not worth the three years of supervised practice that turn a graduate into a reliable professional.</p>",
+    "itemsCites": [
+      4,
+      12,
+      13
+    ],
+    "auteur": "The Masteria editorial team",
+    "auteurRole": "Under the direction of Mathias Nizan"
+  },
+  "precedente": {
+    "date": "2026-11-05",
+    "dateLongue": "Thursday 5 November 2026",
+    "titreEditorial": "Data centres, the midterms' big losers",
+    "nbItems": 14
+  },
+  "suivante": null,
+  "nbItems": 14,
+  "nbSources": 20,
+  "nbSignes": 8241,
+  "tempsLecture": 7,
+  "zones": [
+    {
+      "cle": "europe",
+      "libelle": "Europe and France",
+      "nb": 3
+    },
+    {
+      "cle": "international",
+      "libelle": "International",
+      "nb": 4
+    },
+    {
+      "cle": "chine",
+      "libelle": "China and Asia",
+      "nb": 2
+    },
+    {
+      "cle": "recherche",
+      "libelle": "Research and papers",
+      "nb": 1
+    },
+    {
+      "cle": "bref",
+      "libelle": "In brief",
+      "nb": 3
+    }
+  ],
+  "sourcesDuJour": [
+    "Le Monde",
+    "Bloomberg",
+    "SCMP",
+    "CNIL",
+    "Maddyness",
+    "Clubic",
+    "The Verge",
+    "ZDNet",
+    "The Verge, NDA",
+    "TechCrunch, Meta"
+  ],
+  "nbFluxConsultes": 38,
+  "nbArticlesCollectes": 149,
+  "publieLe": "2026-11-06T09:09:32+01:00",
+  "publieLeAffiche": "9h09"
+}

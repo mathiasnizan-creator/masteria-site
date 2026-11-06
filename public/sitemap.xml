@@ -542,7 +542,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
@@ -1094,7 +1094,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.70</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch.jpg</image:loc></image:image>
@@ -1486,7 +1486,7 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/publications</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.60</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--publications.jpg</image:loc></image:image>
@@ -2189,6 +2189,7 @@
     <lastmod>2026-11-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/blog--n8n-make-zapier-lequel-choisir.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/blog/shadow-ia-encadrer-usages-caches</loc>
@@ -2329,6 +2330,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/veille-ia--a-propos.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/veille-ia/2026-11-06</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/veille-ia/2026-11-05</loc>
@@ -2692,16 +2699,23 @@
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/publications</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.50</priority>
     <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--publications.jpg</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://www.master-ia.fr/en/ai-watch/2026-11-06</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.40</priority>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-11-05</loc>
     <lastmod>2026-11-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
+    <image:image><image:loc>https://www.master-ia.fr/og/en--ai-watch--2026-11-05.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.master-ia.fr/en/ai-watch/2026-11-04</loc>

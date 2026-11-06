@@ -268,7 +268,12 @@
     "titreEditorial": "Revolut cuts its AI bill tenfold",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-06",
+    "dateLongue": "Friday 6 November 2026",
+    "titreEditorial": "Global AI stock crash, Wall Street to Asia",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 21,
   "nbSignes": 8702,

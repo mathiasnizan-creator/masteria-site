@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-05",
-    "totalEditions": 60,
-    "totalItems": 808,
-    "totalSources": 1182
+    "derniereDate": "2026-11-06",
+    "totalEditions": 61,
+    "totalItems": 822,
+    "totalSources": 1202
   },
   "editions": [
+    {
+      "date": "2026-11-06",
+      "dateAffichee": "6 novembre 2026",
+      "dateCourte": "ven. 6 nov.",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Krach mondial des valeurs IA, Wall Street à l'Asie",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 8
+    },
     {
       "date": "2026-11-05",
       "dateAffichee": "5 novembre 2026",

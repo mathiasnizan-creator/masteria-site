@@ -3,12 +3,132 @@
   "meta": {
     "premiereDate": "2026-07-20",
     "premiereDateAffichee": "20 juillet 2026",
-    "derniereDate": "2026-11-05",
-    "totalEditions": 60,
-    "totalItems": 808,
-    "totalSources": 1182
+    "derniereDate": "2026-11-06",
+    "totalEditions": 61,
+    "totalItems": 822,
+    "totalSources": 1202
   },
   "editions": [
+    {
+      "date": "2026-11-06",
+      "dateCourte": "ven. 6 nov.",
+      "dateAffichee": "6 novembre 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Krach mondial des valeurs IA, Wall Street à l'Asie",
+      "chapeau": "Le rejet des data centers par les électeurs américains a viré au krach boursier : le Nasdaq a perdu 5,5 % jeudi et les Bourses asiatiques ont dévissé vendredi, Tokyo signant sa pire séance en plus d'un an. Au même moment, l'Europe prépare un certificat d'IA pour les élèves de 15 ans et un patron du secteur indien prévient que ses diplômés peinent déjà à trouver un emploi.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 8,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Bloomberg",
+        "SCMP",
+        "CNIL",
+        "Maddyness",
+        "Clubic",
+        "The Verge",
+        "ZDNet",
+        "The Verge, NDA",
+        "TechCrunch, Meta",
+        "TechCrunch",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "Le vote démocrate aux midterms a déclenché un krach des valeurs IA de Wall Street à l'Asie",
+          "z": "une",
+          "id": "le-vote-democrate-aux-midterms-a-declenche-un-krach-des"
+        },
+        {
+          "t": "La CNIL encadre les outils de « rejeu de session », qui filment votre navigation",
+          "z": "europe",
+          "id": "la-cnil-encadre-les-outils-de-rejeu-de-session-qui-filment"
+        },
+        {
+          "t": "Mistral signe sa cinquième acquisition de l'année",
+          "z": "europe",
+          "id": "mistral-signe-sa-cinquieme-acquisition-de-l-annee"
+        },
+        {
+          "t": "L'Union européenne prépare un certificat d'IA pour les élèves de 15 ans",
+          "z": "europe",
+          "id": "l-union-europeenne-prepare-un-certificat-d-ia-pour-les"
+        },
+        {
+          "t": "OpenAI lance GPT-6 Cyber, qui a trouvé 81 failles inédites dans Firefox",
+          "z": "international",
+          "id": "openai-lance-gpt-6-cyber-qui-a-trouve-81-failles-inedites"
+        },
+        {
+          "t": "Claude se branche directement sur votre compte en banque",
+          "z": "international",
+          "id": "claude-se-branche-directement-sur-votre-compte-en-banque"
+        },
+        {
+          "t": "Après le vote, OpenAI renonce aux clauses de confidentialité sur ses data centers",
+          "z": "international",
+          "id": "apres-le-vote-openai-renonce-aux-clauses-de-confidentialite"
+        },
+        {
+          "t": "Google poursuivi après qu'une collégienne a planifié son suicide avec Gemini",
+          "z": "international",
+          "id": "google-poursuivi-apres-qu-une-collegienne-a-planifie-son"
+        },
+        {
+          "t": "La Chine bloque le rachat par SoftBank de la division robotique d'ABB, pour 5,4 milliards de dollars",
+          "z": "chine",
+          "id": "la-chine-bloque-le-rachat-par-softbank-de-la-division"
+        },
+        {
+          "t": "Les humanoïdes chinois d'Unitree tournent sous GPT-6, selon leur patron",
+          "z": "chine",
+          "id": "les-humanoides-chinois-d-unitree-tournent-sous-gpt-6-selon"
+        },
+        {
+          "t": "Garder le « slop » de l'IA hors des mathématiques",
+          "z": "recherche",
+          "id": "garder-le-slop-de-l-ia-hors-des-mathematiques"
+        },
+        {
+          "t": "Le patron de la fédération indienne du numérique prévient que l'IA complique l'accès à l'emploi des jeunes diplômés",
+          "z": "bref",
+          "id": "le-patron-de-la-federation-indienne-du-numerique-previent"
+        },
+        {
+          "t": "Liam, presque 12 ans, a conçu avec Claude Code une application de révision couvrant le programme du CP à la Terminale",
+          "z": "bref",
+          "id": "liam-presque-12-ans-a-concu-avec-claude-code-une"
+        },
+        {
+          "t": "Un logiciel malveillant baptisé VOLTA vole des données puis demande à des modèles comme Claude d'estimer la valeur de ses victimes",
+          "z": "bref",
+          "id": "un-logiciel-malveillant-baptise-volta-vole-des-donnees-puis"
+        }
+      ]
+    },
     {
       "date": "2026-11-05",
       "dateCourte": "jeu. 5 nov.",

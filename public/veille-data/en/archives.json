@@ -3,12 +3,132 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-05",
-    "totalEditions": 45,
-    "totalItems": 605,
-    "totalSources": 870
+    "derniereDate": "2026-11-06",
+    "totalEditions": 46,
+    "totalItems": 619,
+    "totalSources": 890
   },
   "editions": [
+    {
+      "date": "2026-11-06",
+      "dateCourte": "Fri 6 Nov",
+      "dateAffichee": "6 November 2026",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Global AI stock crash, Wall Street to Asia",
+      "chapeau": "American voters' rejection of data centres turned into a market crash: the Nasdaq lost 5.5% on Thursday and Asian markets tumbled on Friday, with Tokyo posting its worst session in over a year. At the same time, Europe is preparing an AI certificate for 15-year-old pupils, and the head of India's IT industry warns that its graduates already struggle to find jobs.",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 7,
+      "zones": [
+        {
+          "cle": "europe",
+          "nb": 3
+        },
+        {
+          "cle": "international",
+          "nb": 4
+        },
+        {
+          "cle": "chine",
+          "nb": 2
+        },
+        {
+          "cle": "recherche",
+          "nb": 1
+        },
+        {
+          "cle": "bref",
+          "nb": 3
+        }
+      ],
+      "sources": [
+        "Le Monde",
+        "Bloomberg",
+        "SCMP",
+        "CNIL",
+        "Maddyness",
+        "Clubic",
+        "The Verge",
+        "ZDNet",
+        "The Verge, NDA",
+        "TechCrunch, Meta",
+        "TechCrunch",
+        "Nikkei Asia"
+      ],
+      "items": [
+        {
+          "t": "The Democratic vote in the midterms triggered a crash in AI stocks from Wall Street to Asia",
+          "z": "une",
+          "id": "the-democratic-vote-in-the-midterms-triggered-a-crash-in-ai"
+        },
+        {
+          "t": "The CNIL sets rules for \"session replay\" tools, which film your browsing",
+          "z": "europe",
+          "id": "the-cnil-sets-rules-for-session-replay-tools-which-film"
+        },
+        {
+          "t": "Mistral makes its fifth acquisition of the year",
+          "z": "europe",
+          "id": "mistral-makes-its-fifth-acquisition-of-the-year"
+        },
+        {
+          "t": "The European Union is preparing an AI certificate for 15-year-old pupils",
+          "z": "europe",
+          "id": "the-european-union-is-preparing-an-ai-certificate-for-15"
+        },
+        {
+          "t": "OpenAI launches GPT-6 Cyber, which found 81 previously unknown flaws in Firefox",
+          "z": "international",
+          "id": "openai-launches-gpt-6-cyber-which-found-81-previously"
+        },
+        {
+          "t": "Claude plugs straight into your bank account",
+          "z": "international",
+          "id": "claude-plugs-straight-into-your-bank-account"
+        },
+        {
+          "t": "After the vote, OpenAI drops the confidentiality clauses on its data centres",
+          "z": "international",
+          "id": "after-the-vote-openai-drops-the-confidentiality-clauses-on"
+        },
+        {
+          "t": "Google sued after a schoolgirl planned her suicide with Gemini",
+          "z": "international",
+          "id": "google-sued-after-a-schoolgirl-planned-her-suicide-with"
+        },
+        {
+          "t": "China blocks SoftBank's $5.4 billion takeover of ABB's robotics division",
+          "z": "chine",
+          "id": "china-blocks-softbank-s-5-4-billion-takeover-of-abb-s"
+        },
+        {
+          "t": "Unitree's Chinese humanoids run on GPT-6, according to their boss",
+          "z": "chine",
+          "id": "unitree-s-chinese-humanoids-run-on-gpt-6-according-to-their"
+        },
+        {
+          "t": "Keeping AI \"slop\" out of mathematics",
+          "z": "recherche",
+          "id": "keeping-ai-slop-out-of-mathematics"
+        },
+        {
+          "t": "The head of India's digital industry federation warns that AI is making it harder for young graduates to find work",
+          "z": "bref",
+          "id": "the-head-of-india-s-digital-industry-federation-warns-that"
+        },
+        {
+          "t": "Liam, almost 12, built a revision app covering the curriculum from primary school to the final year of secondary with Claude Code",
+          "z": "bref",
+          "id": "liam-almost-12-built-a-revision-app-covering-the-curriculum"
+        },
+        {
+          "t": "A piece of malware called VOLTA steals data then asks models like Claude to estimate the value of its victims",
+          "z": "bref",
+          "id": "a-piece-of-malware-called-volta-steals-data-then-asks"
+        }
+      ]
+    },
     {
       "date": "2026-11-05",
       "dateCourte": "Thu 5 Nov",

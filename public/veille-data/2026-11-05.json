@@ -268,7 +268,12 @@
     "titreEditorial": "Revolut divise par dix sa facture d'IA",
     "nbItems": 14
   },
-  "suivante": null,
+  "suivante": {
+    "date": "2026-11-06",
+    "dateLongue": "vendredi 6 novembre 2026",
+    "titreEditorial": "Krach mondial des valeurs IA, Wall Street à l'Asie",
+    "nbItems": 14
+  },
   "nbItems": 14,
   "nbSources": 21,
   "nbSignes": 9611,

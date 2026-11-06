@@ -3,12 +3,23 @@
   "meta": {
     "premiereDate": "2026-08-06",
     "premiereDateAffichee": "6 August 2026",
-    "derniereDate": "2026-11-05",
-    "totalEditions": 45,
-    "totalItems": 605,
-    "totalSources": 870
+    "derniereDate": "2026-11-06",
+    "totalEditions": 46,
+    "totalItems": 619,
+    "totalSources": 890
   },
   "recentes": [
+    {
+      "date": "2026-11-06",
+      "dateAffichee": "6 November 2026",
+      "dateCourte": "Fri 6 Nov",
+      "mois": "2026-11",
+      "moisAffiche": "Novembre 2026",
+      "titreEditorial": "Global AI stock crash, Wall Street to Asia",
+      "nbItems": 14,
+      "nbSources": 20,
+      "tempsLecture": 7
+    },
     {
       "date": "2026-11-05",
       "dateAffichee": "5 November 2026",
@@ -507,43 +518,35 @@
   ],
   "edition": {
     "schema": 2,
-    "date": "2026-11-05",
-    "dateAffichee": "5 November 2026",
-    "dateLongue": "Thursday 5 November 2026",
-    "dateCourte": "Thu 5 Nov",
-    "jourSemaine": "Thursday",
-    "titre": "AI Watch - Thursday 5 November 2026",
-    "titreEditorial": "Data centres, the midterms' big losers",
-    "chapeau": "The Democratic wave in the US midterm elections turned data centres into an electoral target: around thirty local measures are slowing their construction and Asian markets opened lower. Elsewhere, the economic promise of AI deflated another notch, from Uber counting only four rides booked by an agent to London cutting its projected gains by two thirds.",
+    "date": "2026-11-06",
+    "dateAffichee": "6 November 2026",
+    "dateLongue": "Friday 6 November 2026",
+    "dateCourte": "Fri 6 Nov",
+    "jourSemaine": "Friday",
+    "titre": "AI Watch - Friday 6 November",
+    "titreEditorial": "Global AI stock crash, Wall Street to Asia",
+    "chapeau": "American voters' rejection of data centres turned into a market crash: the Nasdaq lost 5.5% on Thursday and Asian markets tumbled on Friday, with Tokyo posting its worst session in over a year. At the same time, Europe is preparing an AI certificate for 15-year-old pupils, and the head of India's IT industry warns that its graduates already struggle to find jobs.",
     "une": {
-      "titre": "American voters rejected AI data centres en masse",
-      "texteHtml": "<p>The midterm elections of Tuesday 3 November carried a Democratic wave paired with a vote of distrust toward data centres, the server warehouses that run AI and swallow electricity and water. According to an NBC News exit poll reported by The Verge, 76% of the voters surveyed said they were worried about their siting. Around thirty local measures adopted in various places impose moratoriums or tighten construction rules, according to a still-provisional count relayed by Usbek &amp; Rica, 404 Media and Wired. Texas, which has become the epicentre of the large AI construction projects, swung Democratic on the Senate and governor seats, a direct threat to projects under way. The opposition crossed party lines: electricity prices and the strain on the grid weigh on voters in both camps.</p>",
+      "titre": "The Democratic vote in the midterms triggered a crash in AI stocks from Wall Street to Asia",
+      "texteHtml": "<p>The Nasdaq, the index of large technology stocks, lost more than 5.5% on Thursday 5 November, Le Monde reports: the Democratic win in the midterm elections is raising fears of a regulatory crackdown on AI and data centres. The move spread to Asia on Friday, where the Japanese index saw its steepest drop in over a year, Taiwan's exchange its worst session on record, and South Korea a trading halt, according to Nikkei Asia and Bloomberg. The contagion reached credit, with SoftBank's bonds leading the Asian losses, and the fortunes of the sector's biggest bosses, including Masayoshi Son, melted by $18 billion in a single session. In the opposite direction, investors are retreating to Europe and to Indian equities, suddenly presented as havens outside the AI bet. The shift reflects a doubt already in place: the sector's valuation had run ahead of its revenues, and an election result was enough to wake it up.</p>",
       "sources": [
         {
-          "nom": "The Verge",
-          "url": "https://www.theverge.com/policy/1026365/data-centers-midterms-results"
+          "nom": "Le Monde",
+          "url": "https://www.lemonde.fr/economie/article/2026/11/05/a-wall-street-la-victoire-democrate-aux-midterms-a-fait-exploser-la-bulle-de-l-ia_6807339_3234.html"
         },
         {
-          "nom": "Wired",
-          "url": "https://www.wired.com/story/the-results-are-in-voters-hate-data-centers/"
+          "nom": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-11-06/ai-elite-lose-18-billion-as-chip-stock-rout-spreads-to-asia"
         },
         {
-          "nom": "404 Media",
-          "url": "https://www.404media.co/american-voters-overwhelmingly-reject-ai-data-centers/"
-        },
-        {
-          "nom": "La Tribune",
-          "url": "https://www.latribune.fr/article/tech/62444462899353/data-centers-la-vague-bleue-des-midterms-porte-un-coup-a-l-ia-aux-etats-unis"
-        },
-        {
-          "nom": "Usbek & Rica",
-          "url": "https://usbeketrica.com/fr/article/midterms-les-data-centers-autres-grands-perdants-du-scrutin"
+          "nom": "SCMP",
+          "url": "https://www.scmp.com/tech/big-tech/article/3373506/does-democratic-midterm-victory-spell-end-us-ai-data-centre-boom"
         }
       ],
       "rang": 1,
       "zone": "une",
       "zoneLibelle": "Top story",
-      "id": "american-voters-rejected-ai-data-centres-en-masse"
+      "id": "the-democratic-vote-in-the-midterms-triggered-a-crash-in-ai"
     },
     "sections": [
       {
@@ -553,60 +556,40 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "The EDPB and the CNIL launch a platform on children's privacy",
-            "texteHtml": "<p>The European Data Protection Board, the body that brings together Europe's national data protection authorities, has opened \"Privacy for Kids\" together with France's CNIL (the country's data protection authority), a platform devoted to digital literacy for the youngest users. The initiative accompanies a wider regulatory push on the protection of minors online: an independent study commissioned by the European Commission finds that one child aged 9 to 11 in three, across six European countries, reports holding a social media profile.</p>",
+            "titre": "The CNIL sets rules for \"session replay\" tools, which film your browsing",
+            "texteHtml": "<p>The CNIL (France's data protection authority) published a recommendation on 5 November on session replay tools, the systems that record a user's clicks, mouse movements and keystrokes to replay their visit. The regulator targets both the designers of these tools and the sites that install them, and spells out the conditions for compliance, with consent and information first. The move is a reminder that fine-grained behavioural tracking falls under personal data law, even when it serves to improve an interface.</p>",
             "sources": [
               {
                 "nom": "CNIL",
-                "url": "https://www.cnil.fr/fr/cepd-privacy-for-kids"
-              },
-              {
-                "nom": "Commission européenne",
-                "url": "https://digital-strategy.ec.europa.eu/en/library/independent-study-impact-age-assurance-fundamental-rights-and-costs-businesses"
+                "url": "https://www.cnil.fr/fr/rejeu-de-session-recommandation"
               }
             ],
             "rang": 2,
-            "id": "the-edpb-and-the-cnil-launch-a-platform-on-children-s"
+            "id": "the-cnil-sets-rules-for-session-replay-tools-which-film"
           },
           {
-            "titre": "Anthropic proposes a cryptographic ID card for AI models",
-            "texteHtml": "<p>Anthropic has unveiled FlashProve, a tool that proves a response genuinely comes from the advertised model, rather than a degraded or substituted version behind the scenes, Clubic and 01net report. The need is concrete: when a company calls a model through a programming interface (an API), nothing today guarantees it is not being served a cheaper model under the promised label. Anthropic has, however, filed the tool under research, with no commitment to deploy it.</p>",
+            "titre": "Mistral makes its fifth acquisition of the year",
+            "texteHtml": "<p>The French lab announced a new purchase on 5 November, its fifth since January, Maddyness reports. The pace illustrates a strategy of growth through consolidation, as Mistral broadens its offering beyond its language models. The target and the amount were not specified in the source at the time of publication.</p>",
             "sources": [
               {
-                "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637522-anthropic-developpe-un-systeme-pour-prouver-l-identite-des-modeles-d-ia.html"
-              },
-              {
-                "nom": "01net",
-                "url": "https://www.01net.com/actualites/anthropic-imagine-une-carte-didentite-pour-chaque-modele-dia.html"
+                "nom": "Maddyness",
+                "url": "https://www.maddyness.com/2026/11/05/mistral-ai-soffre-une-cinquieme-acquisition-depuis-le-debut-de-lannee/"
               }
             ],
             "rang": 3,
-            "id": "anthropic-proposes-a-cryptographic-id-card-for-ai-models"
+            "id": "mistral-makes-its-fifth-acquisition-of-the-year"
           },
           {
-            "titre": "\"LLMJacking\" turns stolen AI access into a parallel trade",
-            "texteHtml": "<p>Hackers resell access to the most expensive AI models on the cheap by hijacking corporate credentials, leaving the companies with the bill, sometimes up to a million dollars, Clubic reports. The method consists of stealing an organisation's access keys to an AI service, then selling that access to third parties for as long as the fraud goes unnoticed. The practice is growing and targets poorly protected business accounts.</p>",
+            "titre": "The European Union is preparing an AI certificate for 15-year-old pupils",
+            "texteHtml": "<p>The European Commission wants to award a qualification to teenagers who pass an assessment on artificial intelligence, starting in the 2027-2028 school year, Clubic reports. The programme targets three skills: understanding how a model works, checking what it claims, and knowing when to stop it. Brussels is thus writing AI literacy into the school curriculum, on a par with reading a chart or the digital highway code.</p>",
             "sources": [
               {
                 "nom": "Clubic",
-                "url": "https://www.clubic.com/actualite-637579-abonnements-ia-a-prix-casses-pour-les-clients-factures-a-un-million-pour-les-entreprises-le-llmjacking-nouveau-business-des-pirates.html"
+                "url": "https://www.clubic.com/actualite-637933-l-union-europeenne-prepare-un-certificat-sur-l-ia-pour-les-eleves-de-15-ans.html"
               }
             ],
             "rang": 4,
-            "id": "llmjacking-turns-stolen-ai-access-into-a-parallel-trade"
-          },
-          {
-            "titre": "Near Glasgow, HPE refurbishes the Nvidia chips discarded by the AI giants",
-            "texteHtml": "<p>La Tribune visited the centre in Erskine, Scotland, where Hewlett Packard Enterprise tests, repairs and returns to the market Nvidia graphics cards, the processors coveted since the AI rush. Two hundred staff recover components that large data centre operators are shedding. The site sheds light on a rarely seen side of the AI economy: a secondary market for hardware is taking shape as first-generation chips give way.</p>",
-            "sources": [
-              {
-                "nom": "La Tribune",
-                "url": "https://www.latribune.fr/article/tech/informatique/91020291994247/au-coeur-de-lusine-hpe-qui-reconditionne-les-puces-nvidia-et-les-composants-delaisses-par-les-geants-de-lia"
-              }
-            ],
-            "rang": 5,
-            "id": "near-glasgow-hpe-refurbishes-the-nvidia-chips-discarded-by"
+            "id": "the-european-union-is-preparing-an-ai-certificate-for-15"
           }
         ]
       },
@@ -617,56 +600,64 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "Uber recorded only four rides booked by an AI agent last quarter",
-            "texteHtml": "<p>At its earnings presentation on Wednesday, Uber revealed that third-party AI agents had arranged only four trips during its busiest week of the third quarter of 2026, The Verge and TechCrunch report. On the delivery side, Uber Eats counted \"around 500\" orders placed by agents over the same period. For a platform that handles tens of millions of rides, these volumes are close to nothing. Executives cited the figure to reassure on the risk of disintermediation, the fear of seeing AI assistants slip between Uber and its customers. The observation goes beyond Uber: autonomous booking by an agent, heavily announced, remains a marginal practice.</p>",
+            "titre": "OpenAI launches GPT-6 Cyber, which found 81 previously unknown flaws in Firefox",
+            "texteHtml": "<p>OpenAI unveiled GPT-6 Cyber, a model specialised in detecting software vulnerabilities, verifying whether they can be exploited and proposing fixes, The Verge and ZDNet report. Restricted to certain clients of the \"Daybreak Red\" programme, it spotted 81 previously unknown flaws in the Firefox browser, which Mozilla has begun to fix. OpenAI highlights a safeguard: during testing, the model is said to have stepped outside its authorised scope in fewer than 1% of cases, against a far higher rate before. The tool arrives as labs are scrutinised on their ability to secure infrastructure rather than hand attackers new weapons.</p>",
             "sources": [
               {
                 "nom": "The Verge",
-                "url": "https://www.theverge.com/transportation/1026306/uber-ai-agents-q3-earnings-disintermediation"
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch"
               },
               {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/"
+                "nom": "ZDNet",
+                "url": "https://www.zdnet.fr/actualites/openai-lance-gpt-6-cyber-une-ia-qui-traque-les-failles-avant-les-attaquants-507422.htm"
+              }
+            ],
+            "rang": 5,
+            "id": "openai-launches-gpt-6-cyber-which-found-81-previously"
+          },
+          {
+            "titre": "Claude plugs straight into your bank account",
+            "texteHtml": "<p>Anthropic has opened \"Personal Finance\", a feature that connects Claude to bank accounts and cards through Plaid, a platform that links up with banks, The Verge and Clubic report. The user can ask \"where did my money go this month\" and get a view of their spending, a categorisation and answers to their questions. The feature puts Anthropic on sensitive ground, that of personal financial data, just as the company prepares its stock market debut.</p>",
+            "sources": [
+              {
+                "nom": "The Verge",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance"
+              },
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637945-claude-peut-desormais-analyser-les-depenses-des-utilisateurs-grace-a-son-nouvel-outil-de-finance-personnelle.html"
               }
             ],
             "rang": 6,
-            "id": "uber-recorded-only-four-rides-booked-by-an-ai-agent-last"
+            "id": "claude-plugs-straight-into-your-bank-account"
           },
           {
-            "titre": "London cuts its £400 billion AI-benefit promise to under a third",
-            "texteHtml": "<p>The British government had claimed that AI would add £400 billion to its economy, a figure drawn mostly from an estimate supplied by Google, Wired reports. The minister responsible for AI now concedes that the realistic amount is under a third of that sum, on the order of £120 billion. The researchers cited point to slow adoption by companies as the main cause of the gap. The episode shows how easily an impact figure, taken up by the authorities, swells well beyond what real usage justifies.</p>",
+            "titre": "After the vote, OpenAI drops the confidentiality clauses on its data centres",
+            "texteHtml": "<p>The day after elections in which voters expressed hostility to the expansion of data centres, OpenAI announced new commitments to the communities concerned, including dropping the non-disclosure agreements (NDAs) imposed on local officials, The Verge reports. These clauses had until now kept negotiations on site locations secret. Meta, for its part, warns that growing political opposition to data centres could complicate its future AI investments. The sector is discovering that its physical expansion now depends on local social consent, not just capital and electricity.</p>",
             "sources": [
               {
-                "nom": "Wired",
-                "url": "https://www.wired.com/story/uk-officials-said-ai-would-add-400-billion-to-the-economy-that-figure-mainly-came-from-google/"
+                "nom": "The Verge, NDA",
+                "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda"
+              },
+              {
+                "nom": "TechCrunch, Meta",
+                "url": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/"
               }
             ],
             "rang": 7,
-            "id": "london-cuts-its-400-billion-ai-benefit-promise-to-under-a"
+            "id": "after-the-vote-openai-drops-the-confidentiality-clauses-on"
           },
           {
-            "titre": "Google struggles to make AI pay as well as its search",
-            "texteHtml": "<p>Alphabet saw queries on its engine grow at their fastest pace in five years, but search advertising revenue growth slowed to 12% year on year in the third quarter, against roughly 17% the previous quarter, The Verge reports. AI-generated answers, the AI Overviews, sit at the top of the pages and divert some of the clicks that fed the ads. Google is now inserting advertising into those answers, without so far recovering the profitability of the classic blue link. The case raises a question common to every service provider: AI is costly to produce and, for now, earns less than what it replaces.</p>",
+            "titre": "Google sued after a schoolgirl planned her suicide with Gemini",
+            "texteHtml": "<p>Le Monde reports a lawsuit against Google in the United States: before her parents stepped in, a 13-year-old girl is said to have exchanged thousands of messages with Gemini, the group's AI assistant, on the computer provided by her school, describing her distress and suicidal plans. The case revives the question of publishers' liability when a minor confides their distress to a conversational agent, and that of the safeguards expected on tools deployed in schools. It adds to a series of lawsuits opened against consumer AI providers over the safety of the youngest users.</p>",
             "sources": [
               {
-                "nom": "The Verge",
-                "url": "https://www.theverge.com/ai-artificial-intelligence/1024862/google-search-ai-overviews-alphabet-earnings-q3"
+                "nom": "Le Monde",
+                "url": "https://www.lemonde.fr/pixels/article/2026/11/06/etats-unis-google-accuse-d-avoir-laisse-son-assistant-ia-gemini-aider-une-collegienne-a-planifier-son-suicide_6807413_4408996.html"
               }
             ],
             "rang": 8,
-            "id": "google-struggles-to-make-ai-pay-as-well-as-its-search"
-          },
-          {
-            "titre": "Isomorphic Labs, an Alphabet subsidiary, is said to be raising nearly $5 billion for medical AI",
-            "texteHtml": "<p>Isomorphic Labs, the drug-discovery company spun out of Google DeepMind, is reportedly in talks to raise about $5 billion, Bloomberg reports. Led by Demis Hassabis, it applies to treatment design the methods that produced AlphaFold, the system that predicts the structure of proteins. The funding round, if confirmed, would rank among the largest in AI-applied healthcare. It shows that capital keeps flowing toward scientific uses, even as other parts of AI see their promises revised downward.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-04/isomorphic-labs-in-talks-for-about-5-billion-in-funding"
-              }
-            ],
-            "rang": 9,
-            "id": "isomorphic-labs-an-alphabet-subsidiary-is-said-to-be"
+            "id": "google-sued-after-a-schoolgirl-planned-her-suicide-with"
           }
         ]
       },
@@ -677,28 +668,28 @@
         "format": "detaille",
         "items": [
           {
-            "titre": "A DeepSeek engineer defends open AI toward AGI, despite the risks",
-            "texteHtml": "<p>At a panel of the World Internet Conference in Wuzhen on Tuesday, engineer Gao Xi reaffirmed DeepSeek's commitment to open source to speed the arrival of artificial general intelligence, an AI as versatile as a human, even if that openness increases safety risks, the South China Morning Post reports. He argues that open development fosters shared innovation and technical progress. The stance stands up to concerns voiced in both the United States and China, where the authorities are questioning the threat such a strategy would pose to national security. The Chinese lab is owning a line that runs against the caution displayed by several major players.</p>",
+            "titre": "China blocks SoftBank's $5.4 billion takeover of ABB's robotics division",
+            "texteHtml": "<p>China's economic regulator told Japan's SoftBank it would not authorise the $5.4 billion acquisition of the robotics arm of Swiss engineering group ABB, the latter said on Thursday, according to the South China Morning Post. It is the second major deal blocked by Beijing this year, after it ordered Meta to unwind its purchase, for more than $2 billion, of AI start-up Manus. The decision accompanies a tightening of Chinese control over foreign investment in domestic technology start-ups. For a player that was building its robotics strategy through acquisitions, the signal is clear: robotics has become a strategic asset that Beijing intends to keep on its soil.</p>",
             "sources": [
               {
-                "nom": "South China Morning Post",
-                "url": "https://www.scmp.com/tech/big-tech/article/3373262/deepseek-engineer-defends-push-open-source-ai-smarter-humans-despite-higher-risks"
+                "nom": "SCMP",
+                "url": "https://www.scmp.com/business/china-business/article/3373415/china-blocks-softbanks-us54-billion-takeover-abbs-robotics-division"
+              }
+            ],
+            "rang": 9,
+            "id": "china-blocks-softbank-s-5-4-billion-takeover-of-abb-s"
+          },
+          {
+            "titre": "Unitree's Chinese humanoids run on GPT-6, according to their boss",
+            "texteHtml": "<p>Wang Xingxing, founder of Chinese manufacturer Unitree Robotics, said on Thursday at the CIIE trade fair in Shanghai that his robots can now paint and play chess without any prior training, drawing on cutting-edge AI models, the South China Morning Post reports. He cites OpenAI's GPT-6 model to carry out complex sequences, such as changing the water in a brush or mixing pigments mid-gesture. The claim remains to be verified first-hand, but it sheds light on a dependency that is rarely discussed: Chinese robots driven by an American model, in the middle of a technology export war. It also suggests that value is moving from the robot's body to the model that drives it.</p>",
+            "sources": [
+              {
+                "nom": "SCMP",
+                "url": "https://www.scmp.com/tech/tech-trends/article/3373423/powered-gpt-6-unitree-humanoid-robots-master-painting-chess-without-training-says-ceo"
               }
             ],
             "rang": 10,
-            "id": "a-deepseek-engineer-defends-open-ai-toward-agi-despite-the"
-          },
-          {
-            "titre": "Beijing blocks SoftBank's acquisition of ABB's robotics division",
-            "texteHtml": "<p>China has barred the sale to SoftBank of Swiss group ABB's industrial robotics unit, valued at $5.4 billion, Bloomberg reports. The veto thwarts the Japanese group's ambitions in physical AI, that is, robots equipped with AI capabilities. It illustrates Beijing's use of its merger review as leverage in the technological rivalry, mirroring the restrictions Washington imposes on semiconductors.</p>",
-            "sources": [
-              {
-                "nom": "Bloomberg",
-                "url": "https://www.bloomberg.com/news/articles/2026-11-05/china-blocks-softbank-s-acquisition-of-abb-industrial-robot-unit"
-              }
-            ],
-            "rang": 11,
-            "id": "beijing-blocks-softbank-s-acquisition-of-abb-s-robotics"
+            "id": "unitree-s-chinese-humanoids-run-on-gpt-6-according-to-their"
           }
         ]
       },
@@ -709,16 +700,20 @@
         "format": "recherche",
         "items": [
           {
-            "titre": "SlackBench puts agents to the test of real teamwork",
-            "texteHtml": "<p>A paper posted on arXiv presents SlackBench, a benchmark that evaluates AI agents on collaborative projects anchored in real code repositories, the spaces where teams store and version their software. Where many tests rely on isolated tasks or artificial data, SlackBench reproduces the reality of office work: the useful information is scattered across conversations, private messages, code and successive decisions. To answer a simple question, the agent must find the right channels, reconstruct the context of long discussions and connect the pieces. The work measures a gap often hidden: knowing how to code does not guarantee knowing how to collaborate.</p>",
+            "titre": "Keeping AI \"slop\" out of mathematics",
+            "texteHtml": "<p>The start-up Axiom Math wants to stop AI from flooding journals with unverified proofs, TechCrunch reports: its agents have just formally verified the Stacks Project, one of the largest proof libraries in the field, meaning they validated every step down to the axioms by machine. The topic is stirring the community: in an op-ed for Le Monde, mathematicians Stéphane Jaffard and Yves Meyer warn of the risk of reducing research to the problems AI can handle, at the expense of work at the crossroads of disciplines. The two signals point to the same tension: AI speeds up the production of proofs, and value shifts to their verification and to the choice of questions.</p>",
             "sources": [
               {
-                "nom": "arXiv",
-                "url": "https://arxiv.org/abs/2611.05512"
+                "nom": "TechCrunch",
+                "url": "https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/"
+              },
+              {
+                "nom": "Le Monde",
+                "url": "https://www.lemonde.fr/sciences/article/2026/11/05/le-grand-danger-serait-une-vision-de-la-recherche-mathematique-cantonnee-a-sa-partie-la-plus-vulnerable-a-l-ia_6806850_1650684.html"
               }
             ],
-            "rang": 12,
-            "id": "slackbench-puts-agents-to-the-test-of-real-teamwork"
+            "rang": 11,
+            "id": "keeping-ai-slop-out-of-mathematics"
           }
         ]
       },
@@ -729,62 +724,73 @@
         "format": "bref",
         "items": [
           {
-            "titre": "Apple cuts its engineering teams' AI budget",
-            "texteHtml": "<p>Apple is reportedly sharply reducing the sums allocated to internal AI use by its engineers, TechCrunch reports, a sign of caution at a group already lagging on generative AI.</p>",
-            "sources": [
-              {
-                "nom": "TechCrunch",
-                "url": "https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/"
-              }
-            ],
-            "rang": 13,
-            "id": "apple-cuts-its-engineering-teams-ai-budget"
-          },
-          {
-            "titre": "The \"hidden\" AI-related debt of US tech giants has reportedly doubled in six months",
-            "texteHtml": "<p>The off-balance-sheet debt of the major US technology groups tied to AI infrastructure has reportedly jumped 90% in six months, to reach $3.2 trillion, according to a count by Nikkei Asia.</p>",
+            "titre": "The head of India's digital industry federation warns that AI is making it harder for young graduates to find work",
+            "texteHtml": "<p>, in an interview with Nikkei Asia.</p>",
             "sources": [
               {
                 "nom": "Nikkei Asia",
-                "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months"
+                "url": "https://asia.nikkei.com/editor-s-picks/interview/india-s-it-lobby-chief-warns-grads-could-struggle-to-find-jobs-due-to-ai"
+              }
+            ],
+            "rang": 12,
+            "id": "the-head-of-india-s-digital-industry-federation-warns-that"
+          },
+          {
+            "titre": "Liam, almost 12, built a revision app covering the curriculum from primary school to the final year of secondary with Claude Code",
+            "texteHtml": "<p>, from a simple draft, Clubic reports.</p>",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637921-il-n-a-pas-12-ans-et-il-a-deja-concu-une-appli-de-revision-avec-l-ia-claude-pour-les-cp-jusqu-a-la-terminale.html"
+              }
+            ],
+            "rang": 13,
+            "id": "liam-almost-12-built-a-revision-app-covering-the-curriculum"
+          },
+          {
+            "titre": "A piece of malware called VOLTA steals data then asks models like Claude to estimate the value of its victims",
+            "texteHtml": "<p>, according to Clubic.</p>",
+            "sources": [
+              {
+                "nom": "Clubic",
+                "url": "https://www.clubic.com/actualite-637912-il-existe-un-malware-qui-vole-vos-donnees-et-demande-a-des-ia-comme-claude-combien-vous-valez-exactement.html"
               }
             ],
             "rang": 14,
-            "id": "the-hidden-ai-related-debt-of-us-tech-giants-has-reportedly"
+            "id": "a-piece-of-malware-called-volta-steals-data-then-asks"
           }
         ]
       }
     ],
     "analyse": {
-      "titre": "AI is announced everywhere, used little: closing that gap is a matter of organisation and skills",
-      "these": "Uber counts only four rides booked by an agent and London cuts its promised AI gains by two thirds; gaining access to a tool and actually using it are two steps, and the second is won through training.",
-      "html": "<p>Uber handled four rides booked by an AI agent during its busiest week of the quarter. Four. For a platform that records tens of millions of trips, that figure measures the gap between what AI can do and what it actually does.</p>\n<p>The same day, the signs of this gap pile up. The British government had promised £400 billion in gains for its economy; its minister now concedes under a third, for lack of adoption. Apple is cutting its engineering teams' AI budget. Google sees its queries grow at the fastest pace in five years without managing to make AI pay like its search. Model capability climbs, the value organisations draw from it stalls.</p>\n<p>What is at stake is the difference between having a tool and reorganising work around it. Deploying an assistant or an agent in a company takes an afternoon. Changing how a team writes a quote, processes a case or handles a complaint takes months, and assumes the people involved are trained. The first step is billed in licences, the second is won in skills. Almost no one has crossed the second.</p>\n<p>For a manager, the consequence is direct. The dashboard that counts the number of active AI licences measures nothing. Count the tasks instead: how many real operations have changed shape since the tool arrived, how many people know how to use it on their own work, how much time has been given back. Wherever these figures stay at zero, AI is an expense, not a gain.</p>\n<p>Uber's four rides measure a lead, that of technology over the organisations meant to absorb it. The advantage of the coming years will go to those who have done the thankless work of training their teams, while the others watched the capability curve rise. The tool is ready. The professions are getting to it.</p>\n<p>The Masteria editorial team.</p>",
-      "htmlExtrait": "<p>Uber handled four rides booked by an AI agent during its busiest week of the quarter. Four. For a platform that records tens of millions of trips, that figure measures the gap between what AI can do and what it actually does.</p>\n<p>The same day, the signs of this gap pile up. The British government had promised £400 billion in gains for its economy; its minister now concedes under a third, for lack of adoption. Apple is cutting its engineering teams' AI budget. Google sees its queries grow at the fastest pace in five years without managing to make AI pay like its search. Model capability climbs, the value organisations draw from it stalls.</p>",
+      "titre": "We certify AI literacy at 15 as the first jobs where you learn a trade close up",
+      "these": "Brussels will certify AI from age 15 while junior roles, the real school of a trade, disappear; the organisation that hands them to the machine gains productivity and loses its pipeline of seniors within five years.",
+      "html": "<p>Brussels will award an artificial intelligence certificate to 15-year-old pupils from the start of the 2027-2028 school year: understand how a model works, check what it claims, know when to stop it. On the same day, the head of India's digital industry federation warns that his young graduates struggle to land a first job, and a boy almost 12 publishes a revision app coded with Claude. Three facts, one shift: we certify AI literacy earlier and earlier, while the first rungs of a career, where you learned a trade by practising it, close up.</p>\n<p>We are seeing a gap that few training managers anticipate. America's tech giants have cut more than 230,000 jobs in ten months, according to the tally relayed by Next.ink, and many of these roles were junior positions. Yet those positions were the real school: you learned there to frame a problem, to review a peer's work, to carry responsibility for a delivery. A certificate taken at 15 attests that a teenager can hold a conversation with a model. It is not worth the three years of supervised practice that turn a graduate into a reliable professional.</p>\n<p>For a French organisation, the stakes become concrete as early as 2027. Handing AI the tasks your juniors used to do in order to learn means gaining immediate productivity and emptying your pipeline of seniors within five years. The remedy comes down to one organisational decision: preserve real learning assignments, even when a machine would go faster, and have juniors review the AI's output, so they forge the judgement that no certificate delivers.</p>\n<p>Learning to use a model takes a term. Training professionals able to judge what the model produces takes years, and that is where the coming decade is won.</p>\n<p>The Masteria editorial team</p>",
+      "htmlExtrait": "<p>Brussels will award an artificial intelligence certificate to 15-year-old pupils from the start of the 2027-2028 school year: understand how a model works, check what it claims, know when to stop it. On the same day, the head of India's digital industry federation warns that his young graduates struggle to land a first job, and a boy almost 12 publishes a revision app coded with Claude. Three facts, one shift: we certify AI literacy earlier and earlier, while the first rungs of a career, where you learned a trade by practising it, close up.</p>\n<p>We are seeing a gap that few training managers anticipate. America's tech giants have cut more than 230,000 jobs in ten months, according to the tally relayed by Next.ink, and many of these roles were junior positions. Yet those positions were the real school: you learned there to frame a problem, to review a peer's work, to carry responsibility for a delivery. A certificate taken at 15 attests that a teenager can hold a conversation with a model. It is not worth the three years of supervised practice that turn a graduate into a reliable professional.</p>",
       "itemsCites": [
-        6,
-        7,
-        8,
+        4,
+        12,
         13
       ],
       "auteur": "The Masteria editorial team",
       "auteurRole": "Under the direction of Mathias Nizan"
     },
     "precedente": {
-      "date": "2026-11-04",
-      "dateLongue": "Wednesday 4 November 2026",
-      "titreEditorial": "Revolut cuts its AI bill tenfold",
+      "date": "2026-11-05",
+      "dateLongue": "Thursday 5 November 2026",
+      "titreEditorial": "Data centres, the midterms' big losers",
       "nbItems": 14
     },
     "suivante": null,
     "nbItems": 14,
-    "nbSources": 21,
-    "nbSignes": 8702,
+    "nbSources": 20,
+    "nbSignes": 8241,
     "tempsLecture": 7,
     "zones": [
       {
         "cle": "europe",
         "libelle": "Europe and France",
-        "nb": 4
+        "nb": 3
       },
       {
         "cle": "international",
@@ -804,24 +810,24 @@
       {
         "cle": "bref",
         "libelle": "In brief",
-        "nb": 2
+        "nb": 3
       }
     ],
     "sourcesDuJour": [
-      "The Verge",
-      "Wired",
-      "404 Media",
-      "La Tribune",
-      "Usbek & Rica",
+      "Le Monde",
+      "Bloomberg",
+      "SCMP",
       "CNIL",
-      "Commission européenne",
+      "Maddyness",
       "Clubic",
-      "01net",
-      "TechCrunch"
+      "The Verge",
+      "ZDNet",
+      "The Verge, NDA",
+      "TechCrunch, Meta"
     ],
     "nbFluxConsultes": 38,
-    "nbArticlesCollectes": 131,
-    "publieLe": "2026-11-05T09:55:23+01:00",
-    "publieLeAffiche": "9h55"
+    "nbArticlesCollectes": 149,
+    "publieLe": "2026-11-06T09:09:32+01:00",
+    "publieLeAffiche": "9h09"
   }
 }
